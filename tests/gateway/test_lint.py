@@ -338,3 +338,128 @@ def test_nlm_pending_skips_below_threshold(kb_root):
 def test_nlm_pending_no_registry_no_findings(kb_root):
     _write_source_in_raw("yt-anything", score=0.95, domain="d-test")
     assert nlm_pending.run() == []
+
+
+# --- missing-pages (M15) --------------------------------------------------
+
+
+from gateway.lint import missing_pages
+
+
+class _StubClient:
+    """Stub FilterClient that returns a canned response and records the prompt."""
+
+    def __init__(self, response: str):
+        self.response = response
+        self.prompts: list[str] = []
+
+    def call(self, prompt: str) -> str:
+        self.prompts.append(prompt)
+        return self.response
+
+
+def _write_moc(slug: str, *, domain: str = "d-test", body: str | None = None) -> Path:
+    front = {"type": "moc", "slug": slug, "domain": domain}
+    body = body or f"# {slug}\n\n## Overview\n\n"
+    target = paths.wiki_dir() / "mocs" / f"{slug}.md"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(fm.serialize(front, body))
+    return target
+
+
+def test_missing_pages_empty_wiki_makes_no_call(kb_root):
+    client = _StubClient(response='{"missing": []}')
+    findings = missing_pages.run(client=client)
+    assert findings == []
+    assert client.prompts == []
+
+
+def test_missing_pages_returns_findings_per_domain(kb_root):
+    _write_concept("a", domains=["d-x"])
+    _write_concept("b", domains=["d-x"])
+    _write_moc("d-x", domain="d-x")
+
+    client = _StubClient(
+        response='{"missing": [{"name": "Acme Corp", "kind": "entity", "slug": "acme-corp", "occurrences_estimate": 5, "rationale": "appears in 5 pages"}]}'
+    )
+    findings = missing_pages.run(client=client)
+    assert len(findings) == 1
+    assert findings[0].check == "missing-pages"
+    assert findings[0].metadata["domain"] == "d-x"
+    assert findings[0].metadata["slug"] == "acme-corp"
+    assert findings[0].metadata["kind"] == "entity"
+    assert "Acme Corp" in findings[0].message
+    assert "d-x" in findings[0].message
+    assert len(client.prompts) == 1
+    assert "Domain: d-x" in client.prompts[0]
+
+
+def test_missing_pages_calls_once_per_domain(kb_root):
+    _write_concept("a", domains=["d-x"])
+    _write_concept("c", domains=["d-y"])
+    _write_moc("d-x", domain="d-x")
+    _write_moc("d-y", domain="d-y")
+
+    client = _StubClient(response='{"missing": []}')
+    missing_pages.run(client=client)
+    assert len(client.prompts) == 2
+    assert any("Domain: d-x" in p for p in client.prompts)
+    assert any("Domain: d-y" in p for p in client.prompts)
+
+
+def test_missing_pages_drops_suggestions_that_already_exist(kb_root):
+    _write_concept("acme-corp", domains=["d-x"])  # already-existing slug
+    _write_concept("other", domains=["d-x"])
+    _write_moc("d-x", domain="d-x")
+
+    client = _StubClient(
+        response='{"missing": [{"name": "ACME Corp", "kind": "entity", "slug": "acme-corp"}, {"name": "Beta Lab", "kind": "concept", "slug": "beta-lab"}]}'
+    )
+    findings = missing_pages.run(client=client)
+    slugs = [f.metadata["slug"] for f in findings]
+    assert "acme-corp" not in slugs
+    assert "beta-lab" in slugs
+
+
+def test_missing_pages_dedups_within_response(kb_root):
+    _write_concept("a", domains=["d-x"])
+    _write_moc("d-x", domain="d-x")
+
+    client = _StubClient(
+        response='{"missing": [{"name": "Foo", "kind": "concept", "slug": "foo"}, {"name": "Foo", "kind": "concept", "slug": "foo"}]}'
+    )
+    findings = missing_pages.run(client=client)
+    assert len(findings) == 1
+
+
+def test_missing_pages_tolerates_code_fences(kb_root):
+    _write_concept("a", domains=["d-x"])
+    _write_moc("d-x", domain="d-x")
+
+    fenced = '```json\n{"missing": [{"name": "Foo", "kind": "concept", "slug": "foo"}]}\n```'
+    client = _StubClient(response=fenced)
+    findings = missing_pages.run(client=client)
+    assert len(findings) == 1
+
+
+def test_missing_pages_unparseable_response_yields_no_findings(kb_root):
+    _write_concept("a", domains=["d-x"])
+    _write_moc("d-x", domain="d-x")
+
+    client = _StubClient(response="I can't help with that.")
+    findings = missing_pages.run(client=client)
+    assert findings == []
+
+
+def test_missing_pages_client_failure_emits_warning(kb_root):
+    _write_concept("a", domains=["d-x"])
+    _write_moc("d-x", domain="d-x")
+
+    class _Failing:
+        def call(self, _prompt: str) -> str:
+            raise RuntimeError("network down")
+
+    findings = missing_pages.run(client=_Failing())
+    assert len(findings) == 1
+    assert findings[0].severity == "warning"
+    assert "d-x" in findings[0].message
