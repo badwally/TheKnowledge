@@ -1,6 +1,10 @@
 # ~/code/knowledge/ — Personal Knowledge Base
 
-Canonical knowledge base for all `~/code/*` projects. Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with a hybrid synthesis substrate — wiki canonical, NotebookLM as a synthesis service behind a gateway.
+Canonical knowledge base for all `~/code/*` projects. Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with three load-bearing integrations:
+
+- The **wiki** (this repo) is canonical — markdown + YAML frontmatter, citation-graph enforced by the gateway.
+- **NotebookLM** is the heavy-synthesis service called *through* the gateway (`wiki nlm-*`); artifacts file back to `wiki/artifacts/`.
+- **Obsidian** is the knowledge-graph visualization engine on top of the vault — same wikilink format, same markdown.
 
 This file is the agent control surface. `WIKI.md` is the conventions reference. Read `WIKI.md` before designing converters, page types, gateway operations, validator rules, or editorial policies. Read `index.md` and run `wiki status` to orient on live content. For human-facing usage, read `TUTORIAL.md`. For per-milestone delivery history, read `BUILD.md § 9`.
 

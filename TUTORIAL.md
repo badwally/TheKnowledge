@@ -7,6 +7,20 @@ cheat sheet at the end.
 
 ## 1. The mental model
 
+A personal knowledge base where every authored claim ties to a real
+source you ingested. Three load-bearing pieces work together:
+
+- The **wiki** (this repo) is canonical storage — local markdown +
+  YAML frontmatter under a single root.
+- **NotebookLM** is the heavy-synthesis service for whole-corpus
+  questions. The gateway invokes it via `wiki nlm-*`; every artifact
+  files back to `wiki/artifacts/` with bidirectional links so nothing
+  ends up siloed inside NotebookLM.
+- **Obsidian** is the knowledge-graph visualization engine. Open this
+  directory as an Obsidian vault and the `[[wikilinks]]` the gateway
+  enforces become a navigable graph of sources, concepts, and
+  syntheses.
+
 The repo is two layers stacked under a single root:
 
 ```

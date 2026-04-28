@@ -1,6 +1,26 @@
 # ~/code/knowledge/
 
-Canonical personal knowledge base. Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with a hybrid synthesis substrate — the wiki is canonical; NotebookLM is a synthesis service behind a gateway.
+A personal knowledge base where every answer ties to a real source you ingested — not training data, not a hallucination. Sources land as markdown in a local vault; queries return cited synthesis pages; NotebookLM artifacts file back to the same vault with bidirectional links; Obsidian renders the whole citation graph visually.
+
+Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with a hybrid synthesis substrate — the wiki is canonical, NotebookLM is the heavy-synthesis service behind the gateway, and Obsidian is the knowledge-graph visualization engine on top of the vault.
+
+## What you do
+
+- Drop a PDF, voice memo, audiobook, or URL into an inbox, or run `wiki ingest`.
+- Ask the corpus a question with `wiki query "<question>"` — semantic retrieval across mixed media, an agent writes a synthesis with every claim wikilinked to a source.
+- For whole-corpus work, route through NotebookLM via `wiki nlm-briefing` / `nlm-audio` / `nlm-slides` — artifacts file back as wiki pages, not silos.
+- Open the vault in Obsidian to navigate the citation graph visually; cite stable wiki paths from any other project, editor, or agent.
+
+## How it works with tools you already use
+
+- **Obsidian** is the knowledge-graph visualization engine. Open the vault and the wikilinks become a navigable graph of sources, concepts, and syntheses.
+- **NotebookLM** is the heavy-synthesis service behind the gateway, not a replacement. Every artifact files back to the vault.
+- **Voice memos and audiobooks** transcribe locally (mlx-whisper + speaker diarization on Apple Silicon).
+- **MCP** exposes every gateway operation as `wiki_*` tools to any other Claude Code project.
+
+## What's different
+
+Citations are mechanically enforced — the validator rejects any claim missing `[[sources/<id>]]`, so authored content can't drift into hallucination. Auditable claims, portable storage, one source of truth across your stack.
 
 **Start here:** [TUTORIAL.md](TUTORIAL.md) — the day-1 workflow guide.
 
