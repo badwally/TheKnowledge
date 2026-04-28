@@ -12,6 +12,9 @@ dependencies = [
     "trafilatura>=1.10",
     "watchdog>=4.0",
     "mcp>=1.0",
+    "youtube-transcript-api>=0.6",
+    "pdfplumber>=0.11",
+    "requests>=2.31",
 ]
 
 [project.optional-dependencies]

@@ -46,7 +46,12 @@ def ingest(
     with_plan: bool = False,
     draft: bool = False,
 ) -> OperationResult:
-    """Top-level dispatcher. Accepts a URL string or a filesystem path."""
+    """Top-level dispatcher. Accepts a URL string or a filesystem path.
+
+    URLs route to the URL converter family (youtube/arxiv/pubmed/web). Local
+    `.md` files are treated as already-canonical and validated directly. Local
+    files of other extensions (e.g. `.pdf`) route to a file converter.
+    """
     if isinstance(source, str) and source.startswith(("http://", "https://")):
         return ingest_url(
             source,
@@ -57,8 +62,47 @@ def ingest(
             draft=draft,
         )
     path = Path(source).expanduser() if isinstance(source, str) else source
+    if path.exists() and path.is_file() and path.suffix.lower() != ".md":
+        return ingest_file(
+            path,
+            domain=domain,
+            filter_client=filter_client,
+            plan_client=plan_client,
+            with_plan=with_plan,
+            draft=draft,
+        )
     return ingest_canonical(
         path,
+        domain=domain,
+        filter_client=filter_client,
+        plan_client=plan_client,
+        with_plan=with_plan,
+        draft=draft,
+    )
+
+
+def ingest_file(
+    path: Path,
+    *,
+    domain: str | None = None,
+    filter_client: FilterClient | None = None,
+    plan_client: PlanClient | None = None,
+    with_plan: bool = False,
+    draft: bool = False,
+) -> OperationResult:
+    """Dispatch a local non-canonical file to a file converter."""
+    try:
+        converter = converters.dispatch(str(path))
+    except converters.NoConverterError as e:
+        return OperationResult(success=False, errors=[str(e)])
+
+    try:
+        text = converter.convert(str(path))
+    except converters.ConversionError as e:
+        return OperationResult(success=False, errors=[f"conversion failed: {e}"])
+
+    return _ingest_canonical_text(
+        text,
         domain=domain,
         filter_client=filter_client,
         plan_client=plan_client,

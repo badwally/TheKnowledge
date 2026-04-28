@@ -31,15 +31,26 @@ def register(converter: Converter) -> None:
 def _ensure_registered() -> None:
     """Lazy registration of built-in converters.
 
-    Done lazily so `wiki --help` does not pay the import cost of trafilatura
-    et al., and so test code can register mock converters before built-ins.
+    Order matters: more-specific URL converters (youtube, arxiv, pubmed)
+    register before the catch-all WebConverter. Local-file converters
+    (pdf) are registered after URL ones — their `detect()` only matches
+    local paths so order is moot, but keeping URL converters first is a
+    natural reading order.
     """
     global _initialized
     if _initialized:
         return
+    from gateway.converters.youtube import YouTubeConverter
+    from gateway.converters.arxiv import ArxivConverter
+    from gateway.converters.pubmed import PubMedConverter
     from gateway.converters.web import WebConverter
+    from gateway.converters.pdf import PDFConverter
 
+    register(YouTubeConverter())
+    register(ArxivConverter())
+    register(PubMedConverter())
     register(WebConverter())
+    register(PDFConverter())
     _initialized = True
 
 
