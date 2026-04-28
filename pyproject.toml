@@ -21,6 +21,11 @@ dependencies = [
 dev = [
     "pytest>=8.0",
 ]
+whisper = [
+    "mlx-whisper>=0.4",
+    "pyannote.audio>=3.1",
+    "mutagen>=1.47",
+]
 
 [project.scripts]
 wiki = "gateway.cli:main"

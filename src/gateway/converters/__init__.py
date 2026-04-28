@@ -51,6 +51,20 @@ def _ensure_registered() -> None:
     register(PubMedConverter())
     register(WebConverter())
     register(PDFConverter())
+
+    # Voice / audiobook converters depend on the optional `[whisper]` extra.
+    # Register only when the heavy deps are importable so the default install
+    # stays light.
+    try:
+        from gateway.converters.audiobook import AudiobookConverter
+        from gateway.converters.voice import VoiceConverter
+    except ImportError:
+        pass
+    else:
+        # Audiobook before voice — m4b files match audiobook only; .mp3/.m4a
+        # files would match voice first if order were reversed.
+        register(AudiobookConverter())
+        register(VoiceConverter())
     _initialized = True
 
 

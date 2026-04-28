@@ -14,13 +14,21 @@ uv.lock
 # Knowledge base runtime state (regenerable / sensitive)
 .knowledge/locks/
 .knowledge/lint/
+.knowledge/watcher.*
 
 # Sidecar binaries (large; tracked separately if at all)
 raw/**/*.pdf
 raw/**/*.m4a
 raw/**/*.mp3
-raw/**/*.wav
 raw/**/*.mp4
+raw/**/*.wav
+raw/**/*.flac
+raw/**/*.ogg
+raw/**/*.aac
+raw/**/*.opus
+raw/**/*.aiff
+raw/**/*.m4b
+raw/**/*.caf
 
 # Editor swap files
 *.swp
