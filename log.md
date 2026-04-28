@@ -45,3 +45,11 @@ report=.knowledge/lint/2026-04-28T16-13-44Z-schema-drift.md
 ## [2026-04-28T16:27:42Z] lint | scope=schema-drift | schema-drift=0
 
 report=.knowledge/lint/2026-04-28T16-27-42Z-schema-drift.md
+
+## [2026-04-28T16:51:46Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-28T16-51-46Z-schema-drift.md
+
+## [2026-04-28T16:58:31Z] wiki-author | id=synthesis-query-what-is-known-about-glp-1 | updates=1 | draft=yes
+
+Synthesizes mesolimbic GLP-1 evidence from rodent neurochemistry/circuit work and human functional-connectivity imaging across the candidate corpus.

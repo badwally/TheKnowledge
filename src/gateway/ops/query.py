@@ -129,8 +129,14 @@ def query(
     *,
     domain: str | None = None,
     client: PlanClient | None = None,
+    draft: bool = False,
 ) -> OperationResult:
-    """Search the wiki and file a synthesis page answering `question`."""
+    """Search the wiki and file a synthesis page answering `question`.
+
+    `draft=True` downgrades the citation-grounding rule to a warning and
+    marks the resulting page as a draft until `wiki finalize` clears the
+    flag once citations are resolved.
+    """
     if client is None:
         from gateway.plan import ClaudeCLIPlanClient
 
@@ -173,4 +179,4 @@ def query(
             errors=[f"could not parse plan: {e}", f"raw response: {raw_response[:500]!r}"],
         )
 
-    return apply_plan(plan)
+    return apply_plan(plan, draft=draft)

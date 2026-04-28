@@ -159,6 +159,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_query = subparsers.add_parser("query", help=SUBCOMMANDS["query"])
     p_query.add_argument("question", help="Question to ask of the wiki")
     p_query.add_argument("--domain", default=None, help="Restrict scope to one domain")
+    p_query.add_argument(
+        "--draft",
+        action="store_true",
+        help="Allow partial citations on the synthesis; mark draft until finalized",
+    )
 
     # mcp-serve: start the MCP server (stdio)
     subparsers.add_parser("mcp-serve", help=SUBCOMMANDS["mcp-serve"])
@@ -496,7 +501,7 @@ def _run_finalize(ns: argparse.Namespace) -> int:
 def _run_query(ns: argparse.Namespace) -> int:
     from gateway.ops.query import query
 
-    return _emit_result(query(ns.question, domain=ns.domain))
+    return _emit_result(query(ns.question, domain=ns.domain, draft=ns.draft))
 
 
 def _run_mcp_serve(ns: argparse.Namespace) -> int:
