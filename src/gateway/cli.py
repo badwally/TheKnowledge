@@ -33,7 +33,18 @@ SUBCOMMANDS: dict[str, str] = {
     "watch": "Run the inbox watcher daemon in the foreground (used by launchd)",
 }
 
-IMPLEMENTED: set[str] = {"ingest", "filter", "filter-correct", "status", "watch"}
+IMPLEMENTED: set[str] = {
+    "ingest",
+    "filter",
+    "filter-correct",
+    "status",
+    "watch",
+    "nlm-add",
+    "nlm-slides",
+    "nlm-audio",
+    "nlm-briefing",
+    "nlm-revise",
+}
 
 
 def _not_yet_implemented(subcommand: str) -> int:
@@ -83,6 +94,36 @@ def build_parser() -> argparse.ArgumentParser:
     # watch (no args; runs foreground)
     subparsers.add_parser("watch", help=SUBCOMMANDS["watch"])
 
+    # nlm-add: add a source (already in raw/) to a domain's NotebookLM corpus
+    p_nlm_add = subparsers.add_parser("nlm-add", help=SUBCOMMANDS["nlm-add"])
+    p_nlm_add.add_argument("domain", help="Domain slug")
+    p_nlm_add.add_argument("source_id", help="Source id (e.g., yt-LfRiBJgD7sk)")
+
+    # nlm-slides
+    p_nlm_slides = subparsers.add_parser("nlm-slides", help=SUBCOMMANDS["nlm-slides"])
+    p_nlm_slides.add_argument("domain", help="Domain slug")
+    p_nlm_slides.add_argument("topic", help="Slide deck topic / focus")
+
+    # nlm-audio
+    p_nlm_audio = subparsers.add_parser("nlm-audio", help=SUBCOMMANDS["nlm-audio"])
+    p_nlm_audio.add_argument("domain", help="Domain slug")
+    p_nlm_audio.add_argument("topic", help="Audio overview topic / focus")
+
+    # nlm-briefing
+    p_nlm_briefing = subparsers.add_parser("nlm-briefing", help=SUBCOMMANDS["nlm-briefing"])
+    p_nlm_briefing.add_argument("domain", help="Domain slug")
+
+    # nlm-revise: revise a slide deck (multiple --slide flags allowed)
+    p_nlm_revise = subparsers.add_parser("nlm-revise", help=SUBCOMMANDS["nlm-revise"])
+    p_nlm_revise.add_argument("artifact_slug", help="Slug of an existing slide artifact")
+    p_nlm_revise.add_argument(
+        "--slide",
+        action="append",
+        required=True,
+        dest="slides",
+        help="Slide revision: '<slide-num> <instruction>' (repeatable)",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -115,6 +156,16 @@ def main(argv: list[str] | None = None) -> int:
         return _run_status(ns)
     if ns.subcommand == "watch":
         return _run_watch(ns)
+    if ns.subcommand == "nlm-add":
+        return _run_nlm_add(ns)
+    if ns.subcommand == "nlm-slides":
+        return _run_nlm_slides(ns)
+    if ns.subcommand == "nlm-audio":
+        return _run_nlm_audio(ns)
+    if ns.subcommand == "nlm-briefing":
+        return _run_nlm_briefing(ns)
+    if ns.subcommand == "nlm-revise":
+        return _run_nlm_revise(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -179,6 +230,36 @@ def _run_watch(ns: argparse.Namespace) -> int:
     from gateway.watcher import run_foreground
 
     return run_foreground()
+
+
+def _run_nlm_add(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_add
+
+    return _emit_result(nlm_add(ns.domain, ns.source_id))
+
+
+def _run_nlm_slides(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_slides
+
+    return _emit_result(nlm_slides(ns.domain, ns.topic))
+
+
+def _run_nlm_audio(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_audio
+
+    return _emit_result(nlm_audio(ns.domain, ns.topic))
+
+
+def _run_nlm_briefing(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_briefing
+
+    return _emit_result(nlm_briefing(ns.domain))
+
+
+def _run_nlm_revise(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_revise
+
+    return _emit_result(nlm_revise(ns.artifact_slug, ns.slides))
 
 
 if __name__ == "__main__":
