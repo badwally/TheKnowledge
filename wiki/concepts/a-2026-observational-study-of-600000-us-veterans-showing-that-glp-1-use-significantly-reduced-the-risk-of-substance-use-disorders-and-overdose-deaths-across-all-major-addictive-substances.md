@@ -7,9 +7,9 @@ canonical_name: A 2026 Observational Study Of 600000 Us Veterans Showing That Gl
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/a-2026-observational-study-of-600000-us-veterans-showing-that-glp-1-use-significantly-reduced-the-risk-of-substance-use-disorders-and-overdose-deaths-across-all-major-addictive-substances.md
   legacy_slug: a-2026-observational-study-of-600000-us-veterans-showing-that-glp-1-use-significantly-reduced-the-risk-of-substance-use-disorders-and-overdose-deaths-across-all-major-addictive-substances
   legacy_concept_type: method
@@ -19,8 +19,8 @@ tags:
 
 # A 2026 observational study of 600,000 US veterans showing that GLP-1 use significantly reduced the risk of substance use disorders and overdose deaths across all major addictive substances.
 
-**Branch:** [[addiction-and-substance-use-disorders|Addiction and Substance Use Disorders]]
-**Sub-branch:** [[human-clinical-trials-and-observational-studies-on-addiction|Human Clinical Trials and Observational Studies on Addiction]]
+**Branch:** [[mocs/addiction-and-substance-use-disorders|Addiction and Substance Use Disorders]]
+**Sub-branch:** [[concepts/human-clinical-trials-and-observational-studies-on-addiction|Human Clinical Trials and Observational Studies on Addiction]]
 
 ## Summary
 

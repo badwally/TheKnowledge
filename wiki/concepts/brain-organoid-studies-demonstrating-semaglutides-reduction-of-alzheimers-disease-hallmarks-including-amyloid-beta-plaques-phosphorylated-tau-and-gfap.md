@@ -6,9 +6,9 @@ canonical_name: Brain Organoid Studies Demonstrating Semaglutides Reduction Of A
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap.md
   legacy_slug: brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # Brain organoid studies demonstrating semaglutide's reduction of Alzheimer's disease hallmarks, including amyloid-beta plaques, phosphorylated tau, and GFAP.
 
-**Branch:** [[systemic-health-and-neuroprotection|Systemic Health and Neuroprotection]]
-**Sub-branch:** [[neurodegenerative-disease-prevention|Neurodegenerative Disease Prevention]]
+**Branch:** [[mocs/systemic-health-and-neuroprotection|Systemic Health and Neuroprotection]]
+**Sub-branch:** [[concepts/neurodegenerative-disease-prevention|Neurodegenerative Disease Prevention]]
 
 ## Summary
 

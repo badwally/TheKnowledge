@@ -3,7 +3,7 @@ type: moc
 slug: neurobiology-of-appetite-and-reward
 domain: glp1-reward-modulation
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/mocs/neurobiology-of-appetite-and-reward.md
   legacy_slug: neurobiology-of-appetite-and-reward
 ---
@@ -16,21 +16,21 @@ This area focuses on how GLP-1 receptor agonists interact with the brain's homeo
 
 Research examining how GLP-1 signaling dampens dopamine release in the ventral tegmental area and nucleus accumbens, thereby reducing anticipatory reward and food noise [1-3].
 
-**Concept:** [[mesolimbic-dopamine-system-modulation|Mesolimbic Dopamine System Modulation]]
+**Concept:** [[concepts/mesolimbic-dopamine-system-modulation|Mesolimbic Dopamine System Modulation]]
 
 **Methods:**
-- [[fast-scan-cyclic-voltammetry-used-to-measure-minute-to-minute-changes-and-spikes-in-real-time-dopamine-signaling|Fast-scan cyclic voltammetry, used to measure minute-to-minute changes and spikes in real-time dopamine signaling.]]
-- [[glp-1-neurons-in-the-nucleus-of-the-solitary-tract-project-directly-to-the-ventral-tegmental-area-and-nucleus-accumbens-to-control-for-food-intake-alhadeff-et-al-2012|"GLP-1 neurons in the nucleus of the solitary tract project directly to the ventral tegmental area and nucleus accumbens to control for food intake" (Alhadeff et al., 2012).]]
-- [[functional-mri-fmri-imaging-to-evaluate-less-excited-brain-responses-in-reward-centers-amygdala-insula-orbitofrontal-cortex-when-viewing-pictures-of-highly-palatable-food|Functional MRI (fMRI) imaging to evaluate less excited brain responses in reward centers (amygdala, insula, orbitofrontal cortex) when viewing pictures of highly palatable food.]]
+- [[concepts/fast-scan-cyclic-voltammetry-used-to-measure-minute-to-minute-changes-and-spikes-in-real-time-dopamine-signaling|Fast-scan cyclic voltammetry, used to measure minute-to-minute changes and spikes in real-time dopamine signaling.]]
+- [[concepts/glp-1-neurons-in-the-nucleus-of-the-solitary-tract-project-directly-to-the-ventral-tegmental-area-and-nucleus-accumbens-to-control-for-food-intake-alhadeff-et-al-2012|"GLP-1 neurons in the nucleus of the solitary tract project directly to the ventral tegmental area and nucleus accumbens to control for food intake" (Alhadeff et al., 2012).]]
+- [[concepts/functional-mri-fmri-imaging-to-evaluate-less-excited-brain-responses-in-reward-centers-amygdala-insula-orbitofrontal-cortex-when-viewing-pictures-of-highly-palatable-food|Functional MRI (fMRI) imaging to evaluate less excited brain responses in reward centers (amygdala, insula, orbitofrontal cortex) when viewing pictures of highly palatable food.]]
 
 ## Hypothalamic and Hindbrain Homeostatic Signaling
 
 Studies on how GLP-1 alters gene expression in the arcuate nucleus and slows gastric emptying via vagus nerve communication with the brainstem [8-10].
 
-**Concept:** [[hypothalamic-and-hindbrain-homeostatic-signaling|Hypothalamic and Hindbrain Homeostatic Signaling]]
+**Concept:** [[concepts/hypothalamic-and-hindbrain-homeostatic-signaling|Hypothalamic and Hindbrain Homeostatic Signaling]]
 
 **Methods:**
-- [[long-term-exendin-4-treatment-reduces-food-intake-and-body-weight-and-alters-expression-of-brain-homeostatic-and-reward-markers-yang-et-al-2014-evaluating-pomc-and-npy-gene-expression|"Long term exendin-4 treatment reduces food intake and body weight and alters expression of brain homeostatic and reward markers" (Yang et al., 2014), evaluating POMC and NPY gene expression.]]
+- [[concepts/long-term-exendin-4-treatment-reduces-food-intake-and-body-weight-and-alters-expression-of-brain-homeostatic-and-reward-markers-yang-et-al-2014-evaluating-pomc-and-npy-gene-expression|"Long term exendin-4 treatment reduces food intake and body weight and alters expression of brain homeostatic and reward markers" (Yang et al., 2014), evaluating POMC and NPY gene expression.]]
 
 ## Open Problems
 

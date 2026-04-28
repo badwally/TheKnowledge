@@ -6,9 +6,9 @@ domains:
 - glp1-reward-modulation
 question: '(legacy synthesis: compoundcomparison)'
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/synthesis/compoundcomparison.md
   legacy_slug: compoundcomparison
 ---
@@ -19,11 +19,11 @@ legacy_provenance:
 
 ## Related Branches
 
-- [[neurobiology-of-appetite-and-reward|Neurobiology of Appetite and Reward]]
-- [[addiction-and-substance-use-disorders|Addiction and Substance Use Disorders]]
-- [[systemic-health-and-neuroprotection|Systemic Health and Neuroprotection]]
-- [[mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
-- [[clinical-dosing-and-lifestyle-protocols|Clinical Dosing and Lifestyle Protocols]]
+- [[mocs/neurobiology-of-appetite-and-reward|Neurobiology of Appetite and Reward]]
+- [[mocs/addiction-and-substance-use-disorders|Addiction and Substance Use Disorders]]
+- [[mocs/systemic-health-and-neuroprotection|Systemic Health and Neuroprotection]]
+- [[mocs/mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
+- [[mocs/clinical-dosing-and-lifestyle-protocols|Clinical Dosing and Lifestyle Protocols]]
 
 ## Analysis
 

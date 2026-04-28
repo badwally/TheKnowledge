@@ -6,9 +6,9 @@ canonical_name: Application Of Glp 1 Plotters To Calculate Steady State Pharmaco
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/application-of-glp-1-plotters-to-calculate-steady-state-pharmacokinetics-drug-half-lives-and-maximum-circulating-concentrations.md
   legacy_slug: application-of-glp-1-plotters-to-calculate-steady-state-pharmacokinetics-drug-half-lives-and-maximum-circulating-concentrations
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # Application of GLP-1 plotters to calculate steady-state pharmacokinetics, drug half-lives, and maximum circulating concentrations.
 
-**Branch:** [[clinical-dosing-and-lifestyle-protocols|Clinical Dosing and Lifestyle Protocols]]
-**Sub-branch:** [[microdosing-and-dose-titration-strategies|Microdosing and Dose Titration Strategies]]
+**Branch:** [[mocs/clinical-dosing-and-lifestyle-protocols|Clinical Dosing and Lifestyle Protocols]]
+**Sub-branch:** [[concepts/microdosing-and-dose-titration-strategies|Microdosing and Dose Titration Strategies]]
 
 ## Summary
 

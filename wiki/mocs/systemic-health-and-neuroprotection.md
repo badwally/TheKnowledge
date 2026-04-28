@@ -3,7 +3,7 @@ type: moc
 slug: systemic-health-and-neuroprotection
 domain: glp1-reward-modulation
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/mocs/systemic-health-and-neuroprotection.md
   legacy_slug: systemic-health-and-neuroprotection
 ---
@@ -16,20 +16,20 @@ Investigations into the broader metabolic, cardiovascular, and neuroprotective b
 
 Studies evaluating the reduction of major adverse cardiovascular events independent of the total body weight lost by the patient [24].
 
-**Concept:** [[cardiovascular-outcomes|Cardiovascular Outcomes]]
+**Concept:** [[concepts/cardiovascular-outcomes|Cardiovascular Outcomes]]
 
 **Methods:**
-- [[the-select-trial-semaglutide-effects-on-cardiovascular-outcomes-which-tracked-over-17000-people-and-showed-a-20-reduction-in-heart-attacks-and-strokes|The SELECT Trial (Semaglutide Effects on Cardiovascular Outcomes), which tracked over 17,000 people and showed a 20% reduction in heart attacks and strokes.]]
+- [[concepts/the-select-trial-semaglutide-effects-on-cardiovascular-outcomes-which-tracked-over-17000-people-and-showed-a-20-reduction-in-heart-attacks-and-strokes|The SELECT Trial (Semaglutide Effects on Cardiovascular Outcomes), which tracked over 17,000 people and showed a 20% reduction in heart attacks and strokes.]]
 
 ## Neurodegenerative Disease Prevention
 
 Research into how GLP-1 drugs reduce neuroinflammation, amyloid-beta plaques, and brain volume loss in cognitive disorders [25].
 
-**Concept:** [[neurodegenerative-disease-prevention|Neurodegenerative Disease Prevention]]
+**Concept:** [[concepts/neurodegenerative-disease-prevention|Neurodegenerative Disease Prevention]]
 
 **Methods:**
-- [[brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap|Brain organoid studies demonstrating semaglutide's reduction of Alzheimer's disease hallmarks, including amyloid-beta plaques, phosphorylated tau, and GFAP.]]
-- [[liraglutide-clinical-trials-showing-nearly-50-less-brain-volume-loss-and-an-18-slower-decline-in-cognitive-function-in-alzheimers-patients|Liraglutide clinical trials showing nearly 50% less brain volume loss and an 18% slower decline in cognitive function in Alzheimer's patients.]]
+- [[concepts/brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap|Brain organoid studies demonstrating semaglutide's reduction of Alzheimer's disease hallmarks, including amyloid-beta plaques, phosphorylated tau, and GFAP.]]
+- [[concepts/liraglutide-clinical-trials-showing-nearly-50-less-brain-volume-loss-and-an-18-slower-decline-in-cognitive-function-in-alzheimers-patients|Liraglutide clinical trials showing nearly 50% less brain volume loss and an 18% slower decline in cognitive function in Alzheimer's patients.]]
 
 ## Open Problems
 

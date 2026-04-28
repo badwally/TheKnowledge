@@ -561,7 +561,8 @@ v1 (M0–M10) shipped in a single sustained session. M11+ tracks operational mil
 | M8 | `54f1021` | 172 | Real GLP-1 vault dry-run: 127 sources mapped (48 yt / 77 pubmed / 2 arxiv) |
 | M9 | `5bb5d81` | 193 | `wiki lint` on empty wiki → 0 findings across all 10 checks; report written |
 | M10 | `bebf319` | 217 | `wiki ingest https://arxiv.org/abs/2403.05530` → real Gemini 1.5 paper ingested; synthesized PDF preserved as sidecar |
-| M11 | _this commit_ | 217 | Real legacy migration phase 2 (GLP-1): 127 sources + 28 concepts + 5 MOCs + 3 synthesis written into `~/code/knowledge/`; 13/13 spot-check audit pass on title/authors/url/filter-score/body-content; research-notebook untouched |
+| M11 | `5c507eb` | 217 | Real legacy migration phase 2 (GLP-1): 127 sources + 28 concepts + 5 MOCs + 3 synthesis written into `~/code/knowledge/`; 13/13 spot-check audit pass on title/authors/url/filter-score/body-content; research-notebook untouched |
+| M12 | _this commit_ | 221 | Wikilink canonicalization across migrated content: 158 → 130 lint orphans (Δ-28; all concept orphans resolved); migration idempotency for creation-moment timestamps verified by re-running phase 2 with zero raw/ or wiki/sources/ churn |
 
 ### Key architectural properties locked in
 
@@ -590,12 +591,20 @@ v1 (M0–M10) shipped in a single sustained session. M11+ tracks operational mil
 
 ---
 
-## 10. M11 lessons → M12 candidate (wikilink canonicalization)
+## 10. Operational milestones (M11+)
 
-The phase 2 GLP-1 migration (M11) committed cleanly with high body-content fidelity (13/13 spot-check) but produced 158 orphan lint findings. Root cause: the legacy GLP-1 vault used **bare-slug wikilinks** (`[[mesolimbic-dopamine-system-modulation]]`) rather than the canonical type-prefixed form (`[[concepts/mesolimbic-dopamine-system-modulation]]`), and **numeric `[1, 2]` citations** rather than `[[sources/<id>]]` wikilinks. MIGRATION.md § 8 expects source-slug rewrites only and explicitly preserves concept/MOC link form — but the legacy form doesn't carry the type prefix that the orphans lint requires.
+**M11 — Phase 2 GLP-1 migration** (`5c507eb`). First real `--commit` run of `wiki batch-ingest --legacy-import` against `~/code/research-notebook/data/obsidian_glp1/`. 127 raw + 127 wiki/sources + 28 concepts + 5 MOCs + 3 synthesis written; 13/13 spot-check audit pass (title/authors/url/filter-score/body); research-notebook untouched. Initial lint reported 158 orphans driven by legacy bare-slug wikilinks.
 
-These gaps are characteristic of all three legacy vaults, not just GLP-1. Deferring per-phase fixups is the wrong shape; M12 is the right place to canonicalize wikilink form across all migrated content (phase 2 already migrated, phase 1 / phase 3 to follow).
+**M12 — Wikilink canonicalization + migration idempotency.** Extended `gateway/slugmap.py` with `wiki_page_mapping(legacy_vault_path)` returning `{bare-slug → type-prefixed-target}` from the legacy vault's `concepts/`, `synthesis/`, `mocs/` (and singular `moc/`) directories. `gateway/ops/migrate.py` merges this map into `citation_map` before concept/synthesis/MOC migration; source-slug entries override on collision. Re-running phase 2 dropped lint findings from 158 → 130 (Δ-28; all concept orphans resolved). Remaining orphans: 127 sources (legacy MOCs use numeric `[1, 2]` citations, no `[[sources/X]]` wikilinks) and 3 synthesis (legacy MOCs don't link them). Both are downstream wiki-authoring work, not migration scope.
 
-**M12 — Wikilink canonicalization (proposed).** Extend `gateway/slugmap.py` to build a {bare-slug → type-prefixed-target} map from the wiki/concepts/, wiki/mocs/, wiki/synthesis/ filesystems; extend `gateway/citations.rewrite_wikilinks` invocation in `gateway/ops/migrate.py` to run that map across all wiki/ pages during legacy import. Acceptance: migrated content has zero orphan warnings except for genuine entry-point pages (MOCs). One commit; lint deltas reported.
+Also addressed a migration-idempotency defect surfaced by the M12 re-run: `_now_iso()` was called on every migration run, rotating `ingested_at`, `legacy_provenance.imported_at`, `filter.decided_at`, `draft_started_at` across all migrated files (254 timestamp-only diffs on a re-run of phase 2). Added `_preserved_at(target, dotted_key, default)` helper that returns the existing file's value when present; used in all four migrate helpers (source / concept / synthesis / MOC). Tested by `test_migrate_vault_idempotent_for_creation_timestamps`. Re-run after the fix produced exactly 40 changed files (the legitimate wikilink-rewrite content delta), zero timestamp churn.
 
-After M12, the held phases (phase 1 ai-temporal-video, phase 3 edge-ai-agentic) can run with the canonicalization built in.
+**Held phases.** With M12 landed, phase 1 (ai-temporal-video, 86 sources) and phase 3 (edge-ai-agentic) can run cleanly. Each is its own milestone-shaped unit (M13, M14): dry-run sanity → `--commit` → lint → spot-check audit → commit. Both are smaller than phase 2 and exercise the same code path with no new fork.
+
+## 11. Downstream wiki-authoring work (post-migration)
+
+These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
+
+- **Concept body backfill.** Migrated concepts have stub sections (`## Summary _(needs population)_` etc.) because legacy concept pages had no body content beyond a "Methods" cross-reference list. Backfill is per-concept LLM work via `wiki query` or `wiki ingest --with-plan`.
+- **Source citation graph.** Legacy MOCs use numeric `[1, 2]` citations without a number→ID map. Resolving these into `[[sources/<id>]]` requires per-MOC LLM authorship that re-grounds claims. 127 source orphans persist until this is done.
+- **Synthesis backreferences.** 3 synthesis pages are orphan because no MOC references them. Either MOCs gain a "Synthesis pages" section linking each one, or this surfaces in a future `wiki lint --scope orphans --quiet-mocs` exclude rule.

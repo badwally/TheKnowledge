@@ -6,9 +6,9 @@ canonical_name: Fda And European Medicines Agency Ema Preliminary Safety Committ
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/fda-and-european-medicines-agency-ema-preliminary-safety-committee-assessments-monitoring-for-suicidal-thoughts.md
   legacy_slug: fda-and-european-medicines-agency-ema-preliminary-safety-committee-assessments-monitoring-for-suicidal-thoughts
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # FDA and European Medicines Agency (EMA) preliminary safety committee assessments monitoring for suicidal thoughts.
 
-**Branch:** [[mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
-**Sub-branch:** [[suicidality-and-depression-surveillance|Suicidality and Depression Surveillance]]
+**Branch:** [[mocs/mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
+**Sub-branch:** [[concepts/suicidality-and-depression-surveillance|Suicidality and Depression Surveillance]]
 
 ## Summary
 

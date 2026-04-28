@@ -3,7 +3,7 @@ type: moc
 slug: addiction-and-substance-use-disorders
 domain: glp1-reward-modulation
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/mocs/addiction-and-substance-use-disorders.md
   legacy_slug: addiction-and-substance-use-disorders
 ---
@@ -16,22 +16,22 @@ This area explores the efficacy of GLP-1 receptor agonists in attenuating the re
 
 Rodent studies demonstrating that GLP-1 analogs block the rewarding effects, consumption, and locomotor sensitization of various addictive substances [14, 15].
 
-**Concept:** [[preclinical-animal-models-of-addiction|Preclinical Animal Models of Addiction]]
+**Concept:** [[concepts/preclinical-animal-models-of-addiction|Preclinical Animal Models of Addiction]]
 
 **Methods:**
-- [[the-glucagon-like-peptide-1-analogue-exendin-4-attenuates-the-nicotine-induced-locomotor-stimulation-in-mice-egecioglu-et-al-2013|"The glucagon-like peptide 1 analogue Exendin-4 attenuates the nicotine-induced locomotor stimulation... in mice" (Egecioglu et al., 2013).]]
-- [[the-glucagon-like-peptide-1-analogue-exendin-4-attenuates-the-rewarding-properties-of-psychostimulant-drugs-in-mice-egecioglu-et-al-2013|"The glucagon-like peptide 1 analogue, exendin-4, attenuates the rewarding properties of psychostimulant drugs in mice" (Egecioglu et al., 2013).]]
-- [[role-of-appetite-regulating-peptides-in-the-pathophysiology-of-addiction-implications-for-pharmacotherapy-engel-jerlhag-2014|"Role of appetite-regulating peptides in the pathophysiology of addiction: implications for pharmacotherapy" (Engel & Jerlhag, 2014).]]
+- [[concepts/the-glucagon-like-peptide-1-analogue-exendin-4-attenuates-the-nicotine-induced-locomotor-stimulation-in-mice-egecioglu-et-al-2013|"The glucagon-like peptide 1 analogue Exendin-4 attenuates the nicotine-induced locomotor stimulation... in mice" (Egecioglu et al., 2013).]]
+- [[concepts/the-glucagon-like-peptide-1-analogue-exendin-4-attenuates-the-rewarding-properties-of-psychostimulant-drugs-in-mice-egecioglu-et-al-2013|"The glucagon-like peptide 1 analogue, exendin-4, attenuates the rewarding properties of psychostimulant drugs in mice" (Egecioglu et al., 2013).]]
+- [[concepts/role-of-appetite-regulating-peptides-in-the-pathophysiology-of-addiction-implications-for-pharmacotherapy-engel-jerlhag-2014|"Role of appetite-regulating peptides in the pathophysiology of addiction: implications for pharmacotherapy" (Engel & Jerlhag, 2014).]]
 
 ## Human Clinical Trials and Observational Studies on Addiction
 
 Large-scale cohort analyses and clinical trials assessing the reduction of alcohol, opioid, and nicotine consumption in humans taking GLP-1 medications [19, 20].
 
-**Concept:** [[human-clinical-trials-and-observational-studies-on-addiction|Human Clinical Trials and Observational Studies on Addiction]]
+**Concept:** [[concepts/human-clinical-trials-and-observational-studies-on-addiction|Human Clinical Trials and Observational Studies on Addiction]]
 
 **Methods:**
-- [[a-2026-observational-study-of-600000-us-veterans-showing-that-glp-1-use-significantly-reduced-the-risk-of-substance-use-disorders-and-overdose-deaths-across-all-major-addictive-substances|A 2026 observational study of 600,000 US veterans showing that GLP-1 use significantly reduced the risk of substance use disorders and overdose deaths across all major addictive substances.]]
-- [[penn-state-clinical-trials-using-liraglutide-which-demonstrated-a-40-reduction-in-opioid-cravings|Penn State clinical trials using Liraglutide, which demonstrated a 40% reduction in opioid cravings.]]
+- [[concepts/a-2026-observational-study-of-600000-us-veterans-showing-that-glp-1-use-significantly-reduced-the-risk-of-substance-use-disorders-and-overdose-deaths-across-all-major-addictive-substances|A 2026 observational study of 600,000 US veterans showing that GLP-1 use significantly reduced the risk of substance use disorders and overdose deaths across all major addictive substances.]]
+- [[concepts/penn-state-clinical-trials-using-liraglutide-which-demonstrated-a-40-reduction-in-opioid-cravings|Penn State clinical trials using Liraglutide, which demonstrated a 40% reduction in opioid cravings.]]
 
 ## Open Problems
 

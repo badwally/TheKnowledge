@@ -48,6 +48,29 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _preserved_at(target: Path, dotted_key: str, default: str) -> str:
+    """Return existing `dotted_key` value from target's frontmatter when set;
+    otherwise `default`.
+
+    Re-running a legacy migration must not rotate creation-moment timestamps
+    (`ingested_at`, `legacy_provenance.imported_at`, `filter.decided_at`,
+    `draft_started_at`). Without this, every wikilink-rewrite re-run produces
+    a noisy timestamp-only diff across every migrated file.
+    """
+    if not target.exists():
+        return default
+    try:
+        front, _ = fm.parse(target.read_text())
+    except (fm.FrontmatterError, OSError):
+        return default
+    cur: object = front
+    for key in dotted_key.split("."):
+        if not isinstance(cur, dict):
+            return default
+        cur = cur.get(key)
+    return cur if isinstance(cur, str) and cur else default
+
+
 def migrate_vault(
     legacy_vault_path: Path,
     domain_slug: str,
@@ -69,7 +92,12 @@ def migrate_vault(
         )
 
     audit_dir = paths.knowledge_internal() / "migrations"
-    citation_map = slugmap.citation_mapping(slug_map)
+    # Wiki-page mapping first (bare-slug → type-prefixed); source mapping
+    # overrides on collision. Legacy MOCs use bare `[[concept-slug]]` and
+    # `[[some-moc]]` wikilinks; without this the orphans lint flags every
+    # migrated concept.
+    citation_map = slugmap.wiki_page_mapping(legacy_vault_path)
+    citation_map.update(slugmap.citation_mapping(slug_map))
 
     if dry_run:
         audit_path = slugmap.save_slug_map(domain_slug, slug_map, audit_dir)
@@ -210,20 +238,24 @@ def _migrate_source(ls: slugmap.LegacySource, domain_slug: str) -> tuple[Path, P
     if _LEGACY_RECOVERY_NOTE not in body:
         body = f"{_LEGACY_RECOVERY_NOTE}\n\n{body}"
 
+    raw_target = paths.raw_source_path(ls.source_type, ls.canonical_id)
+    wiki_target = paths.wiki_source_path(ls.canonical_id)
+    now = _now_iso()
+
     canonical_front = {
         "id": ls.canonical_id,
         "type": ls.source_type,
         "title": legacy_front.get("title", ls.canonical_id),
         "url": legacy_front.get("url", ""),
         "authors": _coerce_authors(legacy_front.get("authors")),
-        "ingested_at": _now_iso(),
+        "ingested_at": _preserved_at(raw_target, "ingested_at", now),
         "content_hash": validator.compute_content_hash(body),
         "domains": [domain_slug],
         "nlm_corpus_ids": [],
         "wiki_pages": [],
         "meta": _legacy_meta(legacy_front, ls.source_type),
         "legacy_provenance": {
-            "imported_at": _now_iso(),
+            "imported_at": _preserved_at(raw_target, "legacy_provenance.imported_at", now),
             "legacy_path": str(ls.legacy_path),
             "legacy_slug": ls.legacy_slug,
         },
@@ -232,26 +264,24 @@ def _migrate_source(ls: slugmap.LegacySource, domain_slug: str) -> tuple[Path, P
         canonical_front["published_at"] = str(pub).split("T", 1)[0]
     filt = _legacy_relevance_to_filter(legacy_front, domain_slug)
     if filt is not None:
+        filt["decided_at"] = _preserved_at(raw_target, "filter.decided_at", filt["decided_at"])
         canonical_front["filter"] = filt
 
-    raw_target = paths.raw_source_path(ls.source_type, ls.canonical_id)
     raw_target.parent.mkdir(parents=True, exist_ok=True)
     write_atomic(raw_target, fm.serialize(canonical_front, body))
-
-    wiki_target = paths.wiki_source_path(ls.canonical_id)
-    write_atomic(wiki_target, _make_wiki_source_page(canonical_front))
+    write_atomic(wiki_target, _make_wiki_source_page(canonical_front, wiki_target))
 
     return raw_target, wiki_target
 
 
-def _make_wiki_source_page(front: dict) -> str:
+def _make_wiki_source_page(front: dict, wiki_target: Path) -> str:
     page_front = {
         "type": "source",
         "source_id": front["id"],
         "source_type": front["type"],
         "title": front["title"],
         "domains": front.get("domains", []),
-        "ingested_at": front["ingested_at"],
+        "ingested_at": _preserved_at(wiki_target, "ingested_at", front["ingested_at"]),
         "legacy_provenance": front.get("legacy_provenance"),
     }
     if "filter" in front and isinstance(front["filter"], dict):
@@ -311,15 +341,17 @@ def _migrate_concept(path: Path, citation_map: dict[str, str], domain_slug: str)
     schema = wiki_pages.PAGE_SCHEMAS["concept"]
     body = _ensure_required_sections(body, schema.required_sections)
 
+    target = paths.wiki_dir() / "concepts" / f"{path.stem}.md"
+    now = _now_iso()
     canonical_front = {
         "type": "concept",
         "slug": path.stem,
         "canonical_name": legacy_front.get("title") or path.stem.replace("-", " ").title(),
         "domains": [domain_slug],
         "draft": True,
-        "draft_started_at": _now_iso(),
+        "draft_started_at": _preserved_at(target, "draft_started_at", now),
         "legacy_provenance": {
-            "imported_at": _now_iso(),
+            "imported_at": _preserved_at(target, "legacy_provenance.imported_at", now),
             "legacy_path": str(path),
             "legacy_slug": path.stem,
             "legacy_concept_type": legacy_front.get("concept_type"),
@@ -328,7 +360,6 @@ def _migrate_concept(path: Path, citation_map: dict[str, str], domain_slug: str)
     if tags := legacy_front.get("tags"):
         canonical_front["tags"] = tags
 
-    target = paths.wiki_dir() / "concepts" / f"{path.stem}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
     write_atomic(target, fm.serialize(canonical_front, body))
     return target
@@ -344,6 +375,8 @@ def _migrate_synthesis(path: Path, citation_map: dict[str, str], domain_slug: st
     schema = wiki_pages.PAGE_SCHEMAS["synthesis"]
     body = _ensure_required_sections(body, schema.required_sections)
 
+    target = paths.wiki_dir() / "synthesis" / f"{path.stem}.md"
+    now = _now_iso()
     canonical_front = {
         "type": "synthesis",
         "slug": path.stem,
@@ -351,15 +384,14 @@ def _migrate_synthesis(path: Path, citation_map: dict[str, str], domain_slug: st
         "domains": [domain_slug],
         "question": legacy_front.get("question") or f"(legacy synthesis: {path.stem})",
         "draft": True,
-        "draft_started_at": _now_iso(),
+        "draft_started_at": _preserved_at(target, "draft_started_at", now),
         "legacy_provenance": {
-            "imported_at": _now_iso(),
+            "imported_at": _preserved_at(target, "legacy_provenance.imported_at", now),
             "legacy_path": str(path),
             "legacy_slug": path.stem,
         },
     }
 
-    target = paths.wiki_dir() / "synthesis" / f"{path.stem}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
     write_atomic(target, fm.serialize(canonical_front, body))
     return target
@@ -375,18 +407,18 @@ def _migrate_moc(path: Path, citation_map: dict[str, str], domain_slug: str) -> 
     schema = wiki_pages.PAGE_SCHEMAS["moc"]
     body = _ensure_required_sections(body, schema.required_sections)
 
+    target = paths.wiki_dir() / "mocs" / f"{path.stem}.md"
     canonical_front = {
         "type": "moc",
         "slug": path.stem,
         "domain": domain_slug,
         "legacy_provenance": {
-            "imported_at": _now_iso(),
+            "imported_at": _preserved_at(target, "legacy_provenance.imported_at", _now_iso()),
             "legacy_path": str(path),
             "legacy_slug": path.stem,
         },
     }
 
-    target = paths.wiki_dir() / "mocs" / f"{path.stem}.md"
     target.parent.mkdir(parents=True, exist_ok=True)
     write_atomic(target, fm.serialize(canonical_front, body))
     return target

@@ -6,9 +6,9 @@ canonical_name: The Select Trial Semaglutide Effects On Cardiovascular Outcomes 
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/the-select-trial-semaglutide-effects-on-cardiovascular-outcomes-which-tracked-over-17000-people-and-showed-a-20-reduction-in-heart-attacks-and-strokes.md
   legacy_slug: the-select-trial-semaglutide-effects-on-cardiovascular-outcomes-which-tracked-over-17000-people-and-showed-a-20-reduction-in-heart-attacks-and-strokes
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # The SELECT Trial (Semaglutide Effects on Cardiovascular Outcomes), which tracked over 17,000 people and showed a 20% reduction in heart attacks and strokes.
 
-**Branch:** [[systemic-health-and-neuroprotection|Systemic Health and Neuroprotection]]
-**Sub-branch:** [[cardiovascular-outcomes|Cardiovascular Outcomes]]
+**Branch:** [[mocs/systemic-health-and-neuroprotection|Systemic Health and Neuroprotection]]
+**Sub-branch:** [[concepts/cardiovascular-outcomes|Cardiovascular Outcomes]]
 
 ## Summary
 

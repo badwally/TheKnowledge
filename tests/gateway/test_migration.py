@@ -82,7 +82,9 @@ def synthetic_vault(tmp_path: Path) -> Path:
         ),
     )
 
-    # Concept page with wikilink to the YouTube source slug
+    # Concept page with wikilink to the YouTube source slug.
+    # Also exercises bare wikilinks to a sibling MOC and concept (which the
+    # canonicalization path must rewrite to type-prefixed targets).
     _write(
         vault / "concepts" / "food-noise.md",
         fm.serialize(
@@ -93,7 +95,18 @@ def synthetic_vault(tmp_path: Path) -> Path:
             },
             "# Food noise\n\n"
             "Food noise is reduced by GLP-1 RAs as discussed in [[_5qjj2CzBSw]] "
-            "and confirmed by [[arxiv_2404.01358]].\n",
+            "and confirmed by [[arxiv_2404.01358]].\n\n"
+            "**Branch:** [[test-domain|Test Domain]]\n\n"
+            "Related: [[reward-blunting|Reward blunting]].\n",
+        ),
+    )
+
+    # Sibling concept so the food-noise -> reward-blunting bare link resolves.
+    _write(
+        vault / "concepts" / "reward-blunting.md",
+        fm.serialize(
+            {"type": "concept", "concept_type": "phenomenon"},
+            "# Reward blunting\n\nObserved across [[pubmed_39847203]].\n",
         ),
     )
 
@@ -167,6 +180,25 @@ def test_citation_mapping_covers_bare_and_qualified(synthetic_vault):
     assert mapping["_5qjj2CzBSw"] == "sources/yt-_5qjj2CzBSw"
     assert mapping["sources/_5qjj2CzBSw"] == "sources/yt-_5qjj2CzBSw"
     assert mapping["arxiv_2404.01358"] == "sources/arxiv-2404.01358"
+
+
+def test_wiki_page_mapping_builds_from_legacy_dirs(synthetic_vault):
+    mapping = slugmap.wiki_page_mapping(synthetic_vault)
+    assert mapping["food-noise"] == "concepts/food-noise"
+    assert mapping["reward-blunting"] == "concepts/reward-blunting"
+    assert mapping["dose-response"] == "synthesis/dose-response"
+    assert mapping["test-domain"] == "mocs/test-domain"
+
+
+def test_wiki_page_mapping_handles_singular_moc_dir(tmp_path):
+    vault = tmp_path / "obsidian_singular"
+    _write(vault / "moc" / "alpha.md", fm.serialize({"type": "moc"}, "# Alpha\n"))
+    mapping = slugmap.wiki_page_mapping(vault)
+    assert mapping["alpha"] == "mocs/alpha"
+
+
+def test_wiki_page_mapping_missing_dirs_returns_empty(tmp_path):
+    assert slugmap.wiki_page_mapping(tmp_path / "nope") == {}
 
 
 def test_save_slug_map_writes_yaml(synthetic_vault, tmp_path):
@@ -258,10 +290,15 @@ def test_migrate_vault_rewrites_concept_citations(kb_root, synthetic_vault):
     front, body = fm.parse(concept.read_text())
     assert front["draft"] is True
     assert front["legacy_provenance"]["legacy_concept_type"] == "phenomenon"
-    # Citations rewritten
+    # Source citations rewritten to canonical IDs
     assert "[[sources/yt-_5qjj2CzBSw]]" in body
     assert "[[sources/arxiv-2404.01358]]" in body
     assert "[[_5qjj2CzBSw]]" not in body
+    # Bare-slug wiki-page links canonicalized to type-prefixed form
+    assert "[[mocs/test-domain|Test Domain]]" in body
+    assert "[[concepts/reward-blunting|Reward blunting]]" in body
+    assert "[[test-domain|" not in body
+    assert "[[reward-blunting|" not in body
     # Required sections backfilled
     assert "## Summary" in body
     assert "## Key claims" in body
@@ -293,9 +330,52 @@ def test_migrate_vault_moc_committed_with_required_sections(kb_root, synthetic_v
     front, body = fm.parse(moc.read_text())
     assert front["type"] == "moc"
     assert front["domain"] == "test-domain"
+    # Bare-slug concept link canonicalized
+    assert "[[concepts/food-noise|Food noise]]" in body
+    assert "[[food-noise|" not in body
     # Required MOC sections
     for s in ("Overview", "Key entities", "Key concepts", "Synthesis pages"):
         assert f"## {s}" in body
+
+
+def test_migrate_vault_idempotent_for_creation_timestamps(kb_root, synthetic_vault):
+    """Re-running migration must not rotate creation-moment timestamps in
+    raw/, wiki/sources/, wiki/concepts/, wiki/synthesis/, wiki/mocs/."""
+    migrate_vault(synthetic_vault, "test-domain")
+
+    raw_yt = paths.raw_source_path("youtube", "yt-_5qjj2CzBSw")
+    wiki_src = paths.wiki_source_path("yt-_5qjj2CzBSw")
+    concept = paths.wiki_dir() / "concepts" / "food-noise.md"
+    synthesis = paths.wiki_dir() / "synthesis" / "dose-response.md"
+    moc = paths.wiki_dir() / "mocs" / "test-domain.md"
+
+    snapshots = {
+        raw_yt: ("ingested_at", "legacy_provenance.imported_at", "filter.decided_at"),
+        wiki_src: ("ingested_at",),
+        concept: ("draft_started_at", "legacy_provenance.imported_at"),
+        synthesis: ("draft_started_at", "legacy_provenance.imported_at"),
+        moc: ("legacy_provenance.imported_at",),
+    }
+    before: dict = {}
+    for p, keys in snapshots.items():
+        front, _ = fm.parse(p.read_text())
+        for k in keys:
+            cur = front
+            for part in k.split("."):
+                cur = cur.get(part) if isinstance(cur, dict) else None
+            before[(p, k)] = cur
+
+    # Re-run; every creation-marker timestamp must match.
+    migrate_vault(synthetic_vault, "test-domain")
+    for p, keys in snapshots.items():
+        front, _ = fm.parse(p.read_text())
+        for k in keys:
+            cur = front
+            for part in k.split("."):
+                cur = cur.get(part) if isinstance(cur, dict) else None
+            assert cur == before[(p, k)], (
+                f"{p}#{k} rotated: {before[(p, k)]} -> {cur}"
+            )
 
 
 def test_migrate_vault_log_entry_recorded(kb_root, synthetic_vault):

@@ -7,9 +7,9 @@ canonical_name: Functional Mri Fmri Imaging To Evaluate Less Excited Brain Respo
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/functional-mri-fmri-imaging-to-evaluate-less-excited-brain-responses-in-reward-centers-amygdala-insula-orbitofrontal-cortex-when-viewing-pictures-of-highly-palatable-food.md
   legacy_slug: functional-mri-fmri-imaging-to-evaluate-less-excited-brain-responses-in-reward-centers-amygdala-insula-orbitofrontal-cortex-when-viewing-pictures-of-highly-palatable-food
   legacy_concept_type: method
@@ -19,8 +19,8 @@ tags:
 
 # Functional MRI (fMRI) imaging to evaluate less excited brain responses in reward centers (amygdala, insula, orbitofrontal cortex) when viewing pictures of highly palatable food.
 
-**Branch:** [[neurobiology-of-appetite-and-reward|Neurobiology of Appetite and Reward]]
-**Sub-branch:** [[mesolimbic-dopamine-system-modulation|Mesolimbic Dopamine System Modulation]]
+**Branch:** [[mocs/neurobiology-of-appetite-and-reward|Neurobiology of Appetite and Reward]]
+**Sub-branch:** [[concepts/mesolimbic-dopamine-system-modulation|Mesolimbic Dopamine System Modulation]]
 
 ## Summary
 

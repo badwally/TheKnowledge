@@ -3,7 +3,7 @@ type: moc
 slug: clinical-dosing-and-lifestyle-protocols
 domain: glp1-reward-modulation
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/mocs/clinical-dosing-and-lifestyle-protocols.md
   legacy_slug: clinical-dosing-and-lifestyle-protocols
 ---
@@ -16,20 +16,20 @@ The development of clinical strategies to optimize GLP-1 efficacy, minimize side
 
 The practice of using sub-therapeutic doses to maintain GLP-1 receptor sensitivity, prevent receptor down-regulation, and minimize gastrointestinal side effects [34, 35].
 
-**Concept:** [[microdosing-and-dose-titration-strategies|Microdosing and Dose Titration Strategies]]
+**Concept:** [[concepts/microdosing-and-dose-titration-strategies|Microdosing and Dose Titration Strategies]]
 
 **Methods:**
-- [[application-of-glp-1-plotters-to-calculate-steady-state-pharmacokinetics-drug-half-lives-and-maximum-circulating-concentrations|Application of GLP-1 plotters to calculate steady-state pharmacokinetics, drug half-lives, and maximum circulating concentrations.]]
+- [[concepts/application-of-glp-1-plotters-to-calculate-steady-state-pharmacokinetics-drug-half-lives-and-maximum-circulating-concentrations|Application of GLP-1 plotters to calculate steady-state pharmacokinetics, drug half-lives, and maximum circulating concentrations.]]
 
 ## Body Composition and Metabolic Support
 
 Protocols combining medication with specific nutritional targets to prevent the 25-40% loss of lean muscle mass often seen with rapid GLP-1 weight loss [33, 38].
 
-**Concept:** [[body-composition-and-metabolic-support|Body Composition and Metabolic Support]]
+**Concept:** [[concepts/body-composition-and-metabolic-support|Body Composition and Metabolic Support]]
 
 **Methods:**
-- [[high-protein-intake-protocols-prescribing-1-gram-of-protein-per-pound-of-target-body-weight-combined-with-resistance-training|High-protein intake protocols (prescribing 1 gram of protein per pound of target body weight) combined with resistance training.]]
-- [[the-diabetes-remission-clinical-trial-direct-examining-the-efficacy-of-low-fat-mediterranean-and-low-carb-diets-for-metabolic-health|The Diabetes Remission Clinical Trial (DiRECT) examining the efficacy of low-fat, Mediterranean, and low-carb diets for metabolic health.]]
+- [[concepts/high-protein-intake-protocols-prescribing-1-gram-of-protein-per-pound-of-target-body-weight-combined-with-resistance-training|High-protein intake protocols (prescribing 1 gram of protein per pound of target body weight) combined with resistance training.]]
+- [[concepts/the-diabetes-remission-clinical-trial-direct-examining-the-efficacy-of-low-fat-mediterranean-and-low-carb-diets-for-metabolic-health|The Diabetes Remission Clinical Trial (DiRECT) examining the efficacy of low-fat, Mediterranean, and low-carb diets for metabolic health.]]
 
 ## Open Problems
 

@@ -6,9 +6,9 @@ canonical_name: Fast Scan Cyclic Voltammetry Used To Measure Minute To Minute Ch
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/fast-scan-cyclic-voltammetry-used-to-measure-minute-to-minute-changes-and-spikes-in-real-time-dopamine-signaling.md
   legacy_slug: fast-scan-cyclic-voltammetry-used-to-measure-minute-to-minute-changes-and-spikes-in-real-time-dopamine-signaling
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # Fast-scan cyclic voltammetry, used to measure minute-to-minute changes and spikes in real-time dopamine signaling.
 
-**Branch:** [[neurobiology-of-appetite-and-reward|Neurobiology of Appetite and Reward]]
-**Sub-branch:** [[mesolimbic-dopamine-system-modulation|Mesolimbic Dopamine System Modulation]]
+**Branch:** [[mocs/neurobiology-of-appetite-and-reward|Neurobiology of Appetite and Reward]]
+**Sub-branch:** [[concepts/mesolimbic-dopamine-system-modulation|Mesolimbic Dopamine System Modulation]]
 
 ## Summary
 

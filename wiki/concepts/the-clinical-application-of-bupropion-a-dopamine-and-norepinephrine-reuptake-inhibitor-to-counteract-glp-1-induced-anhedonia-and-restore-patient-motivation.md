@@ -6,9 +6,9 @@ canonical_name: The Clinical Application Of Bupropion A Dopamine And Norepinephr
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/the-clinical-application-of-bupropion-a-dopamine-and-norepinephrine-reuptake-inhibitor-to-counteract-glp-1-induced-anhedonia-and-restore-patient-motivation.md
   legacy_slug: the-clinical-application-of-bupropion-a-dopamine-and-norepinephrine-reuptake-inhibitor-to-counteract-glp-1-induced-anhedonia-and-restore-patient-motivation
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # The clinical application of bupropion (a dopamine and norepinephrine reuptake inhibitor) to counteract GLP-1-induced anhedonia and restore patient motivation.
 
-**Branch:** [[mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
-**Sub-branch:** [[reward-deficit-and-anhedonia|Reward Deficit and Anhedonia]]
+**Branch:** [[mocs/mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
+**Sub-branch:** [[concepts/reward-deficit-and-anhedonia|Reward Deficit and Anhedonia]]
 
 ## Summary
 

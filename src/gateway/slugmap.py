@@ -129,6 +129,40 @@ def citation_mapping(slug_map: dict[str, LegacySource]) -> dict[str, str]:
     return mapping
 
 
+# Legacy vault wiki dirs → canonical wiki target prefix. Both `mocs/` and `moc/`
+# show up in the wild; both map to canonical `mocs/`.
+_WIKI_PAGE_DIRS: tuple[tuple[str, str], ...] = (
+    ("concepts", "concepts"),
+    ("synthesis", "synthesis"),
+    ("mocs", "mocs"),
+    ("moc", "mocs"),
+)
+
+
+def wiki_page_mapping(legacy_vault_path: Path) -> dict[str, str]:
+    """Build a {bare-slug: type-prefixed-target} map from the legacy vault's
+    wiki dirs.
+
+    Legacy MOCs and concepts use bare-slug wikilinks (`[[concept-slug]]`,
+    `[[some-moc]]`); the canonical schema requires `[[concepts/concept-slug]]`,
+    `[[mocs/some-moc]]`. This map drives the bulk rewrite during legacy import.
+
+    Both `<vault>/mocs/` and `<vault>/moc/` are scanned (legacy data uses both).
+
+    A bare slug that already collides with a source legacy_slug is NOT included
+    — the source mapping wins (filtered by the merge order in migrate_vault).
+    """
+    mapping: dict[str, str] = {}
+    for legacy_dir, target_prefix in _WIKI_PAGE_DIRS:
+        d = legacy_vault_path / legacy_dir
+        if not d.is_dir():
+            continue
+        for path in sorted(d.glob("*.md")):
+            slug = path.stem
+            mapping[slug] = f"{target_prefix}/{slug}"
+    return mapping
+
+
 def save_slug_map(domain_slug: str, slug_map: dict[str, LegacySource], target_dir: Path) -> Path:
     """Persist a slug-map audit artifact to `<target_dir>/<domain>-slug-map.yaml`."""
     target_dir.mkdir(parents=True, exist_ok=True)

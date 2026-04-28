@@ -6,9 +6,9 @@ canonical_name: The Diabetes Remission Clinical Trial Direct Examining The Effic
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/the-diabetes-remission-clinical-trial-direct-examining-the-efficacy-of-low-fat-mediterranean-and-low-carb-diets-for-metabolic-health.md
   legacy_slug: the-diabetes-remission-clinical-trial-direct-examining-the-efficacy-of-low-fat-mediterranean-and-low-carb-diets-for-metabolic-health
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # The Diabetes Remission Clinical Trial (DiRECT) examining the efficacy of low-fat, Mediterranean, and low-carb diets for metabolic health.
 
-**Branch:** [[clinical-dosing-and-lifestyle-protocols|Clinical Dosing and Lifestyle Protocols]]
-**Sub-branch:** [[body-composition-and-metabolic-support|Body Composition and Metabolic Support]]
+**Branch:** [[mocs/clinical-dosing-and-lifestyle-protocols|Clinical Dosing and Lifestyle Protocols]]
+**Sub-branch:** [[concepts/body-composition-and-metabolic-support|Body Composition and Metabolic Support]]
 
 ## Summary
 

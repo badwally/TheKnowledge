@@ -6,9 +6,9 @@ canonical_name: A 2025 Bmj Cohort Study And Post Hoc Analyses From Semaglutide T
 domains:
 - glp1-reward-modulation
 draft: true
-draft_started_at: '2026-04-28T14:44:47Z'
+draft_started_at: '2026-04-28T14:56:37Z'
 legacy_provenance:
-  imported_at: '2026-04-28T14:44:47Z'
+  imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/concepts/a-2025-bmj-cohort-study-and-post-hoc-analyses-from-semaglutide-trials-finding-no-increased-risk-of-suicidality-or-depression-compared-to-placebos.md
   legacy_slug: a-2025-bmj-cohort-study-and-post-hoc-analyses-from-semaglutide-trials-finding-no-increased-risk-of-suicidality-or-depression-compared-to-placebos
   legacy_concept_type: method
@@ -18,8 +18,8 @@ tags:
 
 # A 2025 BMJ cohort study and post-hoc analyses from semaglutide trials finding no increased risk of suicidality or depression compared to placebos.
 
-**Branch:** [[mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
-**Sub-branch:** [[suicidality-and-depression-surveillance|Suicidality and Depression Surveillance]]
+**Branch:** [[mocs/mental-health-and-emotional-regulation|Mental Health and Emotional Regulation]]
+**Sub-branch:** [[concepts/suicidality-and-depression-surveillance|Suicidality and Depression Surveillance]]
 
 ## Summary
 
