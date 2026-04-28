@@ -204,3 +204,183 @@ def validate_source_immutability(existing_body: str, new_body: str) -> Validatio
             )
         )
     return result
+
+
+# === M6: wiki page validation =============================================
+
+from gateway import citations as _citations  # noqa: E402  (kept here so M1 module is self-contained above)
+from gateway import wiki_pages as _wiki_pages  # noqa: E402
+
+
+def validate_wiki_page_frontmatter(front: dict, page_type: str) -> ValidationResult:
+    """Verify required fields per § 4 page type schema."""
+    result = ValidationResult()
+    schema = _wiki_pages.schema_for_type(page_type)
+    if schema is None:
+        result.errors.append(
+            ValidationError(
+                "wiki-page-type-unknown",
+                f"unknown wiki page type {page_type!r}; expected one of "
+                f"{sorted(_wiki_pages.PAGE_SCHEMAS)}",
+                "type",
+            )
+        )
+        return result
+
+    declared_type = front.get("type")
+    if declared_type != schema.type_name:
+        result.errors.append(
+            ValidationError(
+                "wiki-page-type-mismatch",
+                f"frontmatter type {declared_type!r} does not match expected {schema.type_name!r}",
+                "type",
+            )
+        )
+
+    for field_name in schema.required_fields:
+        if front.get(field_name) in (None, "", []):
+            result.errors.append(
+                ValidationError(
+                    "wiki-page-required-field",
+                    f"missing required field for {schema.type_name} page: {field_name}",
+                    field_name,
+                )
+            )
+
+    slug = front.get("slug")
+    if slug is not None and not _wiki_pages.is_valid_slug(str(slug)):
+        result.errors.append(
+            ValidationError(
+                "wiki-page-slug-format",
+                f"slug {slug!r} must be lowercase letters/digits/hyphens, no leading hyphen",
+                "slug",
+            )
+        )
+
+    return result
+
+
+def validate_wiki_page_sections(body: str, page_type: str) -> ValidationResult:
+    """Verify the page contains every required section header."""
+    result = ValidationResult()
+    schema = _wiki_pages.schema_for_type(page_type)
+    if schema is None:
+        return result
+
+    missing = _wiki_pages.missing_sections(body, schema.required_sections)
+    for s in missing:
+        result.errors.append(
+            ValidationError(
+                "wiki-page-section-missing",
+                f"{schema.type_name} page is missing required section: '## {s}'",
+            )
+        )
+    return result
+
+
+def validate_citation_grounding(
+    body: str,
+    page_type: str,
+    *,
+    draft: bool = False,
+) -> ValidationResult:
+    """Per § 5.2: every claim sentence in entity / concept / source / synthesis
+    pages must be followed by a `[[sources/<id>]]` citation.
+
+    Draft mode (`--draft` ingest, `draft: true` frontmatter) downgrades the
+    rule from rejection to a warning so partial work can be committed.
+    """
+    result = ValidationResult()
+    schema = _wiki_pages.schema_for_type(page_type)
+    if schema is None or not schema.citation_grounded:
+        return result
+
+    uncited = _citations.uncited_claims(body)
+    if not uncited:
+        return result
+
+    for c in uncited:
+        ve = ValidationError(
+            "citation-grounding",
+            f"line {c.line_no}: claim has no citation: {c.text[:120]}",
+        )
+        if draft:
+            result.warnings.append(ve)
+        else:
+            result.errors.append(ve)
+    return result
+
+
+_SLUG_SIMILARITY_THRESHOLD = 2  # Levenshtein distance
+
+
+def validate_slug_uniqueness(
+    new_slug: str,
+    existing_slugs: list[str],
+    *,
+    force_new: bool = False,
+) -> ValidationResult:
+    """Reject exact-duplicate slugs; warn on near-duplicates (Levenshtein ≤ 2).
+
+    `force_new=True` (the `--force-new-slug` flag) downgrades near-duplicate
+    rejection so users can intentionally introduce a similar slug.
+    """
+    result = ValidationResult()
+    if new_slug in existing_slugs:
+        result.errors.append(
+            ValidationError(
+                "wiki-page-slug-duplicate",
+                f"slug {new_slug!r} already exists",
+                "slug",
+            )
+        )
+        return result
+
+    similar = [
+        s
+        for s in existing_slugs
+        if 0 < _wiki_pages.levenshtein(new_slug, s) <= _SLUG_SIMILARITY_THRESHOLD
+    ]
+    if similar and not force_new:
+        result.warnings.append(
+            ValidationError(
+                "wiki-page-slug-similar",
+                f"slug {new_slug!r} is near-duplicate of: {', '.join(similar)} "
+                f"(use --force-new-slug to override)",
+                "slug",
+            )
+        )
+    return result
+
+
+def validate_wiki_page(
+    front: dict,
+    body: str,
+    page_type: str,
+    *,
+    draft: bool = False,
+    existing_slugs: list[str] | None = None,
+    force_new_slug: bool = False,
+) -> ValidationResult:
+    """One-shot validation of a wiki page: frontmatter + sections + citations + slug."""
+    result = ValidationResult()
+    result.merge(validate_wiki_page_frontmatter(front, page_type))
+    result.merge(validate_wiki_page_sections(body, page_type))
+
+    # Honor `draft: true` in frontmatter OR an explicit caller flag. To force
+    # strict mode (e.g., during finalize), strip the draft fields from front
+    # before calling.
+    is_draft = draft or bool(front.get("draft"))
+    result.merge(validate_citation_grounding(body, page_type, draft=is_draft))
+
+    slug = front.get("slug")
+    if slug and existing_slugs is not None:
+        result.merge(
+            validate_slug_uniqueness(
+                str(slug),
+                [s for s in existing_slugs if s != slug],
+                force_new=force_new_slug,
+            )
+        )
+
+    return result

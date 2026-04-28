@@ -44,6 +44,8 @@ IMPLEMENTED: set[str] = {
     "nlm-audio",
     "nlm-briefing",
     "nlm-revise",
+    "finalize",
+    "query",
 }
 
 
@@ -73,6 +75,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_ingest = subparsers.add_parser("ingest", help=SUBCOMMANDS["ingest"])
     p_ingest.add_argument("input", help="URL or path to canonical markdown source")
     p_ingest.add_argument("--domain", default=None, help="Domain slug for filter scoring")
+    p_ingest.add_argument(
+        "--with-plan",
+        action="store_true",
+        help="Invoke the wiki authorship agent to update entity/concept/synthesis pages",
+    )
+    p_ingest.add_argument(
+        "--draft",
+        action="store_true",
+        help="Allow partial citations on agent-generated pages; mark as draft",
+    )
 
     # filter (read-only scoring)
     p_filter = subparsers.add_parser("filter", help=SUBCOMMANDS["filter"])
@@ -124,6 +136,23 @@ def build_parser() -> argparse.ArgumentParser:
         help="Slide revision: '<slide-num> <instruction>' (repeatable)",
     )
 
+    # finalize: re-validate a draft page; clear draft flag if citations resolve
+    p_finalize = subparsers.add_parser("finalize", help=SUBCOMMANDS["finalize"])
+    p_finalize.add_argument(
+        "page_path",
+        help="Path to a draft page (relative to KNOWLEDGE_ROOT or absolute)",
+    )
+    p_finalize.add_argument(
+        "--abandon",
+        action="store_true",
+        help="Delete the draft page and remove its backlinks instead of finalizing",
+    )
+
+    # query: search the wiki and file a synthesis page
+    p_query = subparsers.add_parser("query", help=SUBCOMMANDS["query"])
+    p_query.add_argument("question", help="Question to ask of the wiki")
+    p_query.add_argument("--domain", default=None, help="Restrict scope to one domain")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -166,6 +195,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_nlm_briefing(ns)
     if ns.subcommand == "nlm-revise":
         return _run_nlm_revise(ns)
+    if ns.subcommand == "finalize":
+        return _run_finalize(ns)
+    if ns.subcommand == "query":
+        return _run_query(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -195,7 +228,14 @@ def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") ->
 def _run_ingest(ns: argparse.Namespace) -> int:
     from gateway.ops.ingest import ingest
 
-    return _emit_result(ingest(_resolve_input(ns.input), domain=ns.domain))
+    return _emit_result(
+        ingest(
+            _resolve_input(ns.input),
+            domain=ns.domain,
+            with_plan=getattr(ns, "with_plan", False),
+            draft=getattr(ns, "draft", False),
+        )
+    )
 
 
 def _run_filter(ns: argparse.Namespace) -> int:
@@ -260,6 +300,18 @@ def _run_nlm_revise(ns: argparse.Namespace) -> int:
     from gateway.ops.nlm import nlm_revise
 
     return _emit_result(nlm_revise(ns.artifact_slug, ns.slides))
+
+
+def _run_finalize(ns: argparse.Namespace) -> int:
+    from gateway.ops.finalize import finalize
+
+    return _emit_result(finalize(ns.page_path, abandon=ns.abandon))
+
+
+def _run_query(ns: argparse.Namespace) -> int:
+    from gateway.ops.query import query
+
+    return _emit_result(query(ns.question, domain=ns.domain))
 
 
 if __name__ == "__main__":

@@ -24,6 +24,14 @@ from gateway.filter import (
 )
 from gateway.filter.semantic import FilterClient
 from gateway.locking import file_lock
+from gateway.ops.apply_plan import apply_plan
+from gateway.plan import (
+    Plan,
+    PlanClient,
+    PlanError,
+    build_plan_prompt,
+    parse_plan_response,
+)
 
 
 # --- public entry points -----------------------------------------------------
@@ -34,12 +42,29 @@ def ingest(
     *,
     domain: str | None = None,
     filter_client: FilterClient | None = None,
+    plan_client: PlanClient | None = None,
+    with_plan: bool = False,
+    draft: bool = False,
 ) -> OperationResult:
     """Top-level dispatcher. Accepts a URL string or a filesystem path."""
     if isinstance(source, str) and source.startswith(("http://", "https://")):
-        return ingest_url(source, domain=domain, filter_client=filter_client)
+        return ingest_url(
+            source,
+            domain=domain,
+            filter_client=filter_client,
+            plan_client=plan_client,
+            with_plan=with_plan,
+            draft=draft,
+        )
     path = Path(source).expanduser() if isinstance(source, str) else source
-    return ingest_canonical(path, domain=domain, filter_client=filter_client)
+    return ingest_canonical(
+        path,
+        domain=domain,
+        filter_client=filter_client,
+        plan_client=plan_client,
+        with_plan=with_plan,
+        draft=draft,
+    )
 
 
 def ingest_canonical(
@@ -47,6 +72,9 @@ def ingest_canonical(
     *,
     domain: str | None = None,
     filter_client: FilterClient | None = None,
+    plan_client: PlanClient | None = None,
+    with_plan: bool = False,
+    draft: bool = False,
 ) -> OperationResult:
     """Ingest from a canonical markdown file path."""
     if not input_path.exists():
@@ -58,6 +86,9 @@ def ingest_canonical(
         input_path.read_text(),
         domain=domain,
         filter_client=filter_client,
+        plan_client=plan_client,
+        with_plan=with_plan,
+        draft=draft,
     )
 
 
@@ -66,6 +97,9 @@ def ingest_url(
     *,
     domain: str | None = None,
     filter_client: FilterClient | None = None,
+    plan_client: PlanClient | None = None,
+    with_plan: bool = False,
+    draft: bool = False,
 ) -> OperationResult:
     """Ingest from a URL via converter dispatch."""
     try:
@@ -82,6 +116,9 @@ def ingest_url(
         text,
         domain=domain,
         filter_client=filter_client,
+        plan_client=plan_client,
+        with_plan=with_plan,
+        draft=draft,
     )
 
 
@@ -93,6 +130,9 @@ def _ingest_canonical_text(
     *,
     domain: str | None = None,
     filter_client: FilterClient | None = None,
+    plan_client: PlanClient | None = None,
+    with_plan: bool = False,
+    draft: bool = False,
 ) -> OperationResult:
     """Validate canonical markdown, run filter, commit to raw/ + (if passed) wiki/sources/."""
     try:
@@ -197,12 +237,36 @@ def _ingest_canonical_text(
         if filter_decision in ("review", "rejected"):
             summary += f" — wiki page not created ({filter_decision})"
 
-        return OperationResult(
+        result_obj = OperationResult(
             success=True,
             paths_touched=paths_touched,
             summary=summary,
-            warnings=filter_warnings,
+            warnings=list(filter_warnings),
         )
+
+    # --- M6: optional agent-driven multi-page authorship ---
+    if with_plan and wiki_written:
+        plan_result = _invoke_plan_and_apply(
+            front=front,
+            body=body,
+            domain=effective_domain,
+            plan_client=plan_client,
+            draft=draft,
+        )
+        if plan_result.success:
+            result_obj.paths_touched.extend(plan_result.paths_touched)
+            result_obj.summary += f"; authorship: {plan_result.summary}"
+            result_obj.warnings.extend(plan_result.warnings)
+        else:
+            # Plan failure does not invalidate the source ingest itself; the
+            # source page is still committed. Surface plan errors as warnings
+            # so the user can investigate without losing the ingest.
+            result_obj.warnings.append(
+                "wiki authorship failed (source page still committed): "
+                + "; ".join(plan_result.errors)
+            )
+
+    return result_obj
 
 
 # --- filter integration -----------------------------------------------------
@@ -274,6 +338,79 @@ def _run_filter(
 def _first_domain(front: dict) -> str | None:
     domains = front.get("domains") or []
     return str(domains[0]) if domains else None
+
+
+# --- M6: agent-driven authorship --------------------------------------------
+
+
+_MAX_EXISTING_PAGES = 30
+_MAX_BODY_CHARS = 16000
+
+
+def _invoke_plan_and_apply(
+    *,
+    front: dict,
+    body: str,
+    domain: str | None,
+    plan_client: PlanClient | None,
+    draft: bool,
+) -> OperationResult:
+    if plan_client is None:
+        from gateway.plan import ClaudeCLIPlanClient
+
+        plan_client = ClaudeCLIPlanClient()
+
+    source_text = _format_source_for_plan(front, body)
+    existing_pages = _gather_existing_pages(domain)
+    prompt = build_plan_prompt(source_text, existing_pages)
+
+    try:
+        raw = plan_client.call(prompt)
+    except Exception as e:
+        return OperationResult(success=False, errors=[f"plan client failed: {e}"])
+
+    try:
+        plan = parse_plan_response(raw, expected_source_id=front["id"])
+    except PlanError as e:
+        return OperationResult(
+            success=False,
+            errors=[f"could not parse plan: {e}"],
+        )
+
+    return apply_plan(plan, draft=draft)
+
+
+def _format_source_for_plan(front: dict, body: str) -> str:
+    """Compact representation of the source for the planning prompt."""
+    head = body if len(body) <= _MAX_BODY_CHARS else body[:_MAX_BODY_CHARS] + "\n...[truncated]"
+    return fm.serialize(front, head)
+
+
+def _gather_existing_pages(domain: str | None) -> dict[str, str]:
+    """Collect existing entity/concept/synthesis pages relevant to the domain.
+
+    Without a domain, returns an empty map (the agent will create from scratch).
+    """
+    if not domain:
+        return {}
+    out: dict[str, str] = {}
+    for sub in ("entities", "concepts", "synthesis", "mocs"):
+        d = paths.wiki_dir() / sub
+        if not d.exists():
+            continue
+        for path in d.glob("*.md"):
+            try:
+                page_front, _ = fm.parse(path.read_text())
+            except fm.FrontmatterError:
+                continue
+            page_domains = list(page_front.get("domains") or [])
+            page_domain = page_front.get("domain") or (page_domains[0] if page_domains else None)
+            if page_domain == domain or domain in page_domains:
+                rel = str(path.relative_to(paths.knowledge_root()))
+                out[rel] = path.read_text()
+            if len(out) >= _MAX_EXISTING_PAGES:
+                return out
+    return out
 
 
 # --- wiki source page generation --------------------------------------------
