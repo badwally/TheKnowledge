@@ -46,6 +46,7 @@ IMPLEMENTED: set[str] = {
     "nlm-revise",
     "finalize",
     "query",
+    "mcp-serve",
 }
 
 
@@ -153,6 +154,9 @@ def build_parser() -> argparse.ArgumentParser:
     p_query.add_argument("question", help="Question to ask of the wiki")
     p_query.add_argument("--domain", default=None, help="Restrict scope to one domain")
 
+    # mcp-serve: start the MCP server (stdio)
+    subparsers.add_parser("mcp-serve", help=SUBCOMMANDS["mcp-serve"])
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -199,6 +203,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_finalize(ns)
     if ns.subcommand == "query":
         return _run_query(ns)
+    if ns.subcommand == "mcp-serve":
+        return _run_mcp_serve(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -312,6 +318,13 @@ def _run_query(ns: argparse.Namespace) -> int:
     from gateway.ops.query import query
 
     return _emit_result(query(ns.question, domain=ns.domain))
+
+
+def _run_mcp_serve(ns: argparse.Namespace) -> int:
+    from gateway.mcp_server import run
+
+    run()
+    return 0
 
 
 if __name__ == "__main__":
