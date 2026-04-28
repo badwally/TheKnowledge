@@ -1,0 +1,529 @@
+# BUILD.md — Gateway build plan
+
+Decomposition of the gateway implementation into reviewable milestones with module responsibilities. Pair with `WIKI.md` (canonical schema), `CLAUDE.md` (agent control surface), and `MIGRATION.md` (legacy migration plan).
+
+This is a planning artifact. Each milestone is a reviewable, mergeable unit of work that delivers a working slice. No code is written until this plan is approved.
+
+## Table of contents
+
+1. Approach
+2. Where the code lives
+3. Module layout
+4. Milestone overview
+5. Milestone details (M0–M10)
+6. Cross-cutting concerns
+7. Dependencies and packaging
+8. Open decisions
+
+---
+
+## 1. Approach
+
+**Smallest safe step at every milestone.** Each milestone is independently mergeable, leaves the system in a working state, and unlocks a specific user-facing capability. No milestone is so large it can't be reviewed in one sitting.
+
+**Build the spine first; layer features.** M1 establishes the Gateway/Validator/Log/Index spine on a single `wiki ingest` operation. Every subsequent milestone adds capabilities by extending the spine, not rebuilding it.
+
+**Validate fidelity early.** The semantic filter (M3) and NotebookLM gateway (M5) come before the convenience layers (incremental authorship, MCP, lint, migration). Both are user-flagged high-leverage components — proving them early de-risks the rest.
+
+**Migration is downstream.** Migration support (M8) layers on a stable gateway. The gateway gets exercised on hand-crafted sources during M1–M7; M8 turns the migration into a thin script.
+
+**No new abstractions for hypothetical futures.** YAGNI governs scope. Each module has a single concrete responsibility. Premature interface design is a risk; we pay the cost when a second concrete need shows up, not before.
+
+## 2. Where the code lives
+
+Single repository at `~/code/knowledge/`. Code, content, planning docs, tests, scripts, and migrations all live in one git repo with one Python project. The same pattern as the existing research-notebook repo (`src/` + `data/` together), applied to the new system.
+
+**Code package**: `src/gateway/`. The implementation of the gateway, validator, converters, watcher, MCP server, and operations.
+
+**CLI**: `wiki` (user-facing command, installed via `pip install -e .`). The package implementing it is named `gateway` to avoid collision with the content directory `wiki/`.
+
+**Content layer**: `raw/`, `wiki/`, `nlm/`, `index.md`, `log.md`, `.knowledge/` — all at the top level of the same repo. The gateway operates on these via absolute paths resolved through `gateway/paths.py`.
+
+**Research-notebook is preserved as a historical artifact.** It stays at `~/code/research-notebook/` indefinitely as a frozen reference — git history, design specs, original pipeline code, legacy data vaults all kept intact. The migration script (M8) reads from research-notebook's `data/obsidian*/` and `data/staged/` paths but never writes to them. After M8 lint passes clean, research-notebook receives no further changes.
+
+This implies: still-useful modules (`src/filter/`, `src/search/{arxiv,pubmed,youtube}.py`) are **copied** into `~/code/knowledge/src/gateway/` during M0, not moved. The copies are refactored to fit the canonical schema (policy.yaml, example bank, frontmatter contract). The originals stay in research-notebook unchanged.
+
+## 3. Module layout
+
+```
+~/code/knowledge/
+├── CLAUDE.md, WIKI.md, MIGRATION.md, BUILD.md, README.md
+├── pyproject.toml, .venv/, .git/
+├── src/
+│   └── gateway/
+│       ├── __init__.py
+│       ├── cli.py               # `wiki <subcommand>` entry point
+│       ├── core.py              # Gateway class — orchestrates every op
+│       ├── paths.py             # KNOWLEDGE_ROOT resolution and well-known subpaths
+│       ├── frontmatter.py       # YAML frontmatter parse/validate/mutate
+│       ├── validator.py         # WIKI.md § 11 rules as composable functions
+│       ├── citations.py         # parse [[wikilinks]], resolve, rewrite, density
+│       ├── slugmap.py           # source-type detection, ID generation, similarity
+│       ├── locking.py           # file locks under .knowledge/locks/
+│       ├── log.py               # log.md append + read API
+│       ├── index.py             # index.md rebuild + incremental update
+│       ├── filter/              # semantic filter (copied + refactored from research-notebook)
+│       │   ├── __init__.py
+│       │   ├── policy.py        # canonical policy.yaml loader
+│       │   ├── examples.py      # example bank manager
+│       │   └── semantic.py      # filter call; loads policy + examples
+│       ├── ops/                 # one module per gateway operation
+│       │   ├── __init__.py
+│       │   ├── ingest.py
+│       │   ├── batch_ingest.py
+│       │   ├── query.py
+│       │   ├── filter_op.py
+│       │   ├── nlm.py           # nlm-add, nlm-query, nlm-slides, nlm-audio, nlm-briefing, nlm-revise
+│       │   ├── finalize.py
+│       │   ├── lint.py
+│       │   ├── search.py
+│       │   ├── status.py
+│       │   ├── filter_correct.py
+│       │   └── migrate.py       # --legacy-import + slug map orchestration
+│       ├── converters/          # input → canonical markdown
+│       │   ├── __init__.py      # registry; dispatches by detected type
+│       │   ├── base.py          # Converter ABC
+│       │   ├── web.py
+│       │   ├── youtube.py       # uses _search/youtube.py for transcript fetch
+│       │   ├── arxiv.py         # uses _search/arxiv.py for abstract fetch
+│       │   ├── pubmed.py        # uses _search/pubmed.py for abstract fetch
+│       │   ├── pdf.py
+│       │   ├── voice.py
+│       │   └── _search/         # API helpers copied from research-notebook
+│       │       ├── arxiv.py
+│       │       ├── pubmed.py
+│       │       └── youtube.py
+│       ├── nlm_client.py        # subprocess wrapper around `nlm` CLI
+│       ├── watcher.py           # filesystem watcher daemon (raw/inbox/)
+│       ├── mcp_server.py        # MCP surface — delegates to gateway ops
+│       └── pollers/             # API-only-source pollers (M10+)
+├── tests/
+│   └── gateway/
+│       ├── fixtures/
+│       ├── test_ingest.py
+│       ├── test_validator.py
+│       ├── test_filter_integration.py
+│       ├── test_nlm.py
+│       ├── test_migration.py
+│       └── ...
+├── scripts/
+│   └── install_watcher.sh       # generates and loads launchd plist
+├── migrations/
+│   └── 0001-import-legacy-vaults.py
+├── index.md, log.md             # content layer begins here
+├── raw/
+│   ├── web/, youtube/, arxiv/, pubmed/, pdf/, voice/, audiobook/, note/, inbox/
+├── wiki/
+│   ├── entities/, concepts/, sources/, synthesis/, mocs/, artifacts/
+├── nlm/
+│   └── notebooks.yaml
+└── .knowledge/
+    ├── policies/                # editorial policies per domain (with example bank)
+    ├── locks/                   # file locks for concurrency safety
+    ├── lint/                    # lint reports
+    └── migrations/              # slug maps and migration audit trails
+```
+
+## 4. Milestone overview
+
+| # | Milestone | User-facing capability | Blocked by |
+|---|---|---|---|
+| M0 | Repo bootstrap | git repo, pyproject, `wiki` CLI on PATH (no-op stub), filter/search modules copied from research-notebook | — |
+| M1 | Gateway spine | `wiki ingest <canonical-markdown>` writes to raw/ + wiki/sources/, updates index.md, logs to log.md | M0 |
+| M2 | Converter framework + web converter | `wiki ingest <substack-url>` ingests via readability extraction | M1 |
+| M3 | Semantic filter integration | Ingest runs filter; populates filter: block; gates wiki-authorship by threshold | M1 (M2 helpful) |
+| M4 | Filesystem watcher | Drop a markdown file in raw/inbox/, it gets ingested automatically | M1 |
+| M5 | NotebookLM gateway | `wiki nlm-add`, `wiki nlm-slides`, `wiki nlm-audio`, `wiki nlm-briefing`, `wiki nlm-revise` — all atomically file artifacts back as wiki pages with bidirectional links | M1 |
+| M6 | Incremental wiki authorship | `wiki ingest` updates entity/concept/synthesis pages via agent-driven authorship; plan-before-write, citation grounding, draft mode all enforced | M1, M3 |
+| M7 | MCP server | All gateway operations available as native Claude Code tools alongside CLI | M1 (more useful after M5/M6) |
+| M8 | Migration support | `wiki batch-ingest --legacy-import <vault>` runs MIGRATION.md phases | M1, M3, plus youtube/arxiv/pubmed converters |
+| M9 | Full lint pass | `wiki lint` runs all 9 checks; report at .knowledge/lint/ | M1, M5, M6 |
+| M10 | Remaining converters and pollers | voice, audiobook, pdf converters; future API-only pollers (Apple Notes, Notion) bolt on via the same converter contract | M2 |
+
+Milestones M1–M5 should land before M6–M10. Within those bands, M3 and M5 are the highest-fidelity validations.
+
+## 5. Milestone details
+
+### M0 — Repo bootstrap
+
+**Goal.** A new git repo at `~/code/knowledge/` with a working Python project skeleton. `wiki` CLI on PATH (stub: prints "not yet implemented" for every subcommand). Still-useful modules from research-notebook copied into the new package layout. No data moved; research-notebook untouched.
+
+**Tasks.**
+
+- `git init` at `~/code/knowledge/`. Initial commit captures the existing planning docs (`CLAUDE.md`, `WIKI.md`, `MIGRATION.md`, `BUILD.md`).
+- Create `~/code/knowledge/.venv/` and activate.
+- `pyproject.toml` with `[project.scripts] wiki = "gateway.cli:main"` and basic dependency list (yaml, pytest).
+- `pip install -e .` so `wiki` is on PATH.
+- `src/gateway/__init__.py`, `src/gateway/cli.py` (argparse stub with subcommands listed; each prints "not yet implemented").
+- Copy `~/code/research-notebook/src/filter/` → `~/code/knowledge/src/gateway/filter/`. Light refactoring to fit the canonical policy.yaml schema (defer real policy loader to M3).
+- Copy `~/code/research-notebook/src/search/{arxiv.py,pubmed.py,youtube.py}` → `~/code/knowledge/src/gateway/converters/_search/`. Used as helpers by converters in M2/M8.
+- Add `~/code/research-notebook/CLAUDE.md` note: this codebase is now a frozen historical artifact; active development is at `~/code/knowledge/`.
+- Initial pytest config; `tests/gateway/test_smoke.py` confirms `wiki --version` runs.
+
+**Acceptance criteria.**
+
+- `which wiki` resolves to the new venv binary.
+- `wiki --help` lists all planned subcommands (per BUILD.md table).
+- `pytest tests/gateway/` passes (smoke test only).
+- Research-notebook `git status` clean — no changes there.
+- `git log` in `~/code/knowledge/` shows initial commits.
+
+**Out of scope.** Any actual gateway logic. M0 is pure scaffolding.
+
+**Estimated scope.** ~150–250 LOC + smoke tests.
+
+---
+
+### M1 — Gateway spine
+
+**Goal.** A working `wiki ingest <path-to-canonical-markdown>` that validates, writes, logs, and indexes — proving the architectural pattern end-to-end on a hand-crafted source.
+
+**Modules.**
+
+- `gateway/cli.py` — argparse-based CLI; `ingest` subcommand wired to real implementation.
+- `gateway/core.py` — `Gateway.execute(operation, args)` implements the WIKI.md § 9.2 contract (validate input, lock, execute, validate output, write atomically, update backlinks, log, release lock, return).
+- `gateway/paths.py` — `KNOWLEDGE_ROOT = Path(os.environ.get("KNOWLEDGE_ROOT", Path.home() / "code" / "knowledge"))`; subpath constants.
+- `gateway/frontmatter.py` — `parse(text) -> (frontmatter, body)`, `serialize(frontmatter, body) -> text`, `validate_against_schema(frontmatter, type)`.
+- `gateway/validator.py` — initial subset: required core fields (§ 11.1), source immutability check (§ 11.5), well-formed wikilinks (cheap subset of § 11.2). Citation grounding and Levenshtein checks deferred to later milestones.
+- `gateway/locking.py` — `with file_lock(path): ...` context manager.
+- `gateway/log.py` — `append(op, fields, summary)` writes a § 8 entry to `log.md`.
+- `gateway/index.py` — `rebuild()` and `update_for(path)`; M1 only does `update_for` (single source added); `rebuild` deferred.
+- `gateway/ops/ingest.py` — orchestrates: parse input → write `raw/<type>/<id>.md` → write `wiki/sources/<id>.md` summary page → return.
+
+**Acceptance criteria.**
+
+- `wiki ingest tests/gateway/fixtures/sample-canonical.md` succeeds: raw file copied, source page written, index.md updated, log.md appended.
+- Re-running on the same file is a no-op (content_hash idempotency).
+- Validator rejection on malformed frontmatter halts the operation with a structured error; no partial writes.
+- `pytest tests/gateway/test_ingest.py` passes (5–10 tests covering happy path, malformed frontmatter, content-hash idempotency, lock contention).
+
+**Out of scope.** Converters, filter integration, watcher, NotebookLM, agent-driven page updates beyond source page, full lint, MCP server, migration.
+
+**Estimated scope.** ~500–800 LOC, ~100–200 LOC tests.
+
+---
+
+### M2 — Converter framework + web converter
+
+**Goal.** `wiki ingest https://example.substack.com/p/article` works via readability-style extraction, producing canonical markdown in `raw/web/`.
+
+**Modules.**
+
+- `gateway/converters/__init__.py` — `register(converter)`, `dispatch(input) -> Converter` (selects by URL pattern, file extension, or explicit `--type` flag).
+- `gateway/converters/base.py` — `Converter` ABC: `detect(input) -> bool`, `convert(input) -> Path` (returns path to canonical markdown written to `raw/<type>/`).
+- `gateway/converters/web.py` — uses `trafilatura` or `readability-lxml` for content extraction; produces frontmatter (URL, title, authors via meta tags, published_at, content_hash) + body.
+- `gateway/ops/ingest.py` — extended: if input is not already in raw/, dispatch to a converter first; converter writes to raw/, then ingest proceeds as in M1.
+
+**Acceptance criteria.**
+
+- `wiki ingest <substack-url>` produces a canonical markdown file in `raw/web/` and a wiki source page.
+- `wiki ingest /path/to/clipped-article.md` (already canonical) bypasses converters.
+- Content extraction is faithful (test against 5 real URLs in test fixtures).
+- `pytest tests/gateway/test_converters_web.py` passes.
+
+**Out of scope.** Other source types (deferred to later milestones).
+
+**Estimated scope.** ~300–400 LOC + tests.
+
+---
+
+### M3 — Semantic filter integration
+
+**Goal.** Every ingest runs the semantic filter against the source frontmatter + body head, populates the `filter:` frontmatter block, and gates wiki-page creation by `threshold_include`. Below `threshold_review`, the source stays in `raw/` with rationale; above the threshold, ingest proceeds to wiki.
+
+**Modules.**
+
+- `gateway/filter/policy.py` — refactored from research-notebook copy: load `.knowledge/policies/<domain>/policy.yaml` (canonical schema per WIKI.md § 10.1).
+- `gateway/filter/examples.py` — NEW: `load_examples(domain, count, strategy) -> list[Example]`, `pin_example(domain, source_id, decision, rationale)`, `prune(domain, max_count)`.
+- `gateway/filter/semantic.py` — refactored: `score(frontmatter, body, domain) -> FilterResult` constructs prompt from policy + examples, calls Claude, parses response.
+- `gateway/ops/filter_op.py` — `wiki filter <path> [--domain <slug>]` for ad-hoc scoring (read-only, no wiki write).
+- `gateway/ops/filter_correct.py` — `wiki filter-correct <source-id> --include|--exclude --rationale "..."` updates source frontmatter and pins the corrected example.
+- `gateway/ops/ingest.py` — extended: after converter, before wiki-page creation, run filter; populate frontmatter `filter:` block; if score below threshold, halt before wiki write.
+
+**Acceptance criteria.**
+
+- `wiki ingest <url>` for a high-relevance source results in `filter.score >= threshold_include`, source page in `wiki/sources/`, source frontmatter has `filter:` populated.
+- `wiki ingest <url>` for a low-relevance source results in `filter.score < threshold_review`, raw/ file persisted with rationale, no wiki page written.
+- `wiki filter-correct <id> --include` flips the decision, pins example, updates frontmatter.
+- Example bank persists across runs (re-running ingest on a different source uses the bank).
+- `pytest tests/gateway/test_filter_integration.py` passes (4–8 tests).
+
+**Out of scope.** Fine-tuning loop (per WIKI.md § 10.4 roadmap; not v1).
+
+**Estimated scope.** ~400–600 LOC + tests. Reuses copied filter logic from research-notebook substantially.
+
+---
+
+### M4 — Filesystem watcher
+
+**Goal.** A drop in `raw/inbox/` triggers ingest within seconds. macOS launchd daemon.
+
+**Modules.**
+
+- `gateway/watcher.py` — uses `watchdog` (Python) for filesystem events. On new file in `raw/inbox/`, spawn `wiki ingest <path>` subprocess. Deduplication: compute content hash before spawn; skip if hash already in raw/.
+- `scripts/install_watcher.sh` — generates and loads a launchd plist (`~/Library/LaunchAgents/com.user.knowledge-watcher.plist`).
+- `gateway/ops/status.py` — extended: shows watcher state (running, last event, queue depth).
+
+**Acceptance criteria.**
+
+- `wiki status` reports watcher running.
+- `cp test.md ~/code/knowledge/raw/inbox/` triggers ingest within 5 seconds.
+- Watcher survives ingest failures (logs error, continues watching).
+- `launchctl unload com.user.knowledge-watcher` cleanly stops the daemon.
+
+**Out of scope.** API-only-source pollers (M10).
+
+**Estimated scope.** ~200–300 LOC + integration tests.
+
+---
+
+### M5 — NotebookLM gateway
+
+**Goal.** Every NotebookLM operation is mediated by `wiki nlm-*` commands that atomically file artifacts back as wiki pages. The Discipline Gate is enforced.
+
+**Modules.**
+
+- `gateway/nlm_client.py` — wraps `nlm` CLI via `subprocess`. Methods: `notebook_list()`, `notebook_create(domain)`, `source_add(notebook_id, raw_path)`, `query(notebook_id, question)`, `slides_create(notebook_id, topic)`, `audio_create(notebook_id, topic)`, `briefing_create(notebook_id)`, `artifact_revise(artifact_id, instructions)`, `artifact_download(artifact_id, dest)`. Stateless. All operations return structured results.
+- `gateway/ops/nlm.py` — implements each `wiki nlm-*` operation. Each:
+  1. Resolves domain → notebook_id via `nlm/notebooks.yaml`.
+  2. Calls nlm_client method.
+  3. Downloads artifact (where applicable) to `wiki/artifacts/<type>/`.
+  4. Writes wiki artifact page (per WIKI.md § 4.6) with bidirectional link (local file path + nlm_artifact_url).
+  5. Updates referenced source pages' `wiki_pages:` frontmatter.
+  6. Logs to log.md.
+  7. Returns structured result with paths and URLs.
+- `nlm/notebooks.yaml` — initialized empty; populated by `wiki nlm-add` (auto-creates notebook on first add per domain) or by migration (Phase 1 inventory).
+
+**Acceptance criteria.**
+
+- `wiki nlm-add glp1-reward-modulation <source-id>` adds the source to the domain's NotebookLM corpus, updates `nlm_corpus_ids` on the source frontmatter, logs.
+- `wiki nlm-slides <domain> "<topic>"` generates slides, downloads to `wiki/artifacts/slides/<slug>.marp.md`, writes wiki artifact page with bidirectional link, logs.
+- Direct calls to `nlm` CLI in committed wiki content fail CI grep check (pre-commit hook in M9).
+- `pytest tests/gateway/test_nlm.py` passes (mocked `nlm_client`, 6–10 tests).
+
+**Out of scope.** `wiki query` with NotebookLM corpus (deferred to M6 because it depends on agent-driven synthesis-page authorship).
+
+**Estimated scope.** ~600–800 LOC + tests.
+
+---
+
+### M6 — Incremental wiki authorship
+
+**Goal.** Single-source ingest flows through the gateway to update entity/concept/synthesis pages with agent-driven authorship. Plan-before-write, citation grounding, draft mode all enforced. Closes the wiki-authorship loop.
+
+**Modules.**
+
+- `gateway/validator.py` — extended with full WIKI.md § 11.2 rules: citation grounding (with draft-mode downgrade), bidirectional backlink integrity. Slug Levenshtein check (§ 11.3).
+- `gateway/ops/ingest.py` — extended: after source page is written, agent is invoked with source content + relevant existing wiki pages + schema; agent returns a Plan (pages to create + pages to update + cross-references); gateway validates the plan, applies writes atomically, logs.
+- `gateway/ops/finalize.py` — `wiki finalize <page-path> [--abandon]` per WIKI.md § 5.5.
+- `gateway/ops/query.py` — `wiki query "<question>"`: agent searches wiki via index.md + grep, may invoke `wiki nlm-query` for large-corpus questions, files good answers as synthesis pages.
+- `gateway/citations.py` — extended: citation density check, claim-sentence detection.
+
+**Acceptance criteria.**
+
+- `wiki ingest <url>` for a high-quality source produces source page + entity/concept page updates; plan is logged; citation grounding enforced.
+- `wiki ingest --draft <url>` produces partial pages with `draft: true`; lint surfaces unresolved-claim count; `wiki finalize <page>` succeeds when citations are added.
+- `wiki query "<question>"` against an established domain returns a synthesis page filed under `wiki/synthesis/`.
+- Plan-before-write rejection: ingest call without plan halts.
+- `pytest tests/gateway/test_authorship.py` passes (8–12 tests).
+
+**Out of scope.** Migration-mode authorship (M8, code-driven not agent-driven).
+
+**Estimated scope.** ~700–1000 LOC + tests. The largest milestone — touches the most architectural surface.
+
+---
+
+### M7 — MCP server
+
+**Goal.** Every gateway operation available as an MCP tool. Claude Code agents in any project use native tools instead of shelling out to CLI.
+
+**Modules.**
+
+- `gateway/mcp_server.py` — uses Anthropic MCP SDK. One MCP tool per gateway operation. Each tool delegates to the same `Gateway.execute()` as the CLI — no logic duplication.
+- `gateway/cli.py` — extended: `wiki mcp-serve` command starts the MCP server.
+- `~/.claude/mcp_servers.json` (or equivalent) — config snippet for adding the wiki MCP server.
+
+**Acceptance criteria.**
+
+- Claude Code session in `~/code/wyckoff-423/` can call `wiki_query` MCP tool and get a result from the canonical knowledge base.
+- All `wiki_*` tools work end-to-end with the same semantics as their CLI counterparts.
+- `pytest tests/gateway/test_mcp.py` passes (per-tool integration tests).
+
+**Out of scope.** Authentication (single-user local server; no auth needed in v1).
+
+**Estimated scope.** ~300–500 LOC + tests.
+
+---
+
+### M8 — Migration support
+
+**Goal.** `wiki batch-ingest --legacy-import <vault-path>` runs MIGRATION.md phases. AI temporal video and GLP-1 vaults migrated. edge_ai migrated after legacy run finishes.
+
+**Modules.**
+
+- `gateway/converters/youtube.py` — full transcript fetch via `youtube-transcript-api`; timestamp anchors. Uses `gateway/converters/_search/youtube.py` (copied from research-notebook).
+- `gateway/converters/arxiv.py` — abstract via arXiv API. Uses `gateway/converters/_search/arxiv.py`.
+- `gateway/converters/pubmed.py` — abstract via PubMed E-utilities. Uses `gateway/converters/_search/pubmed.py`.
+- `gateway/slugmap.py` — extended: legacy slug detection, type inference, canonical ID generation per MIGRATION.md § 6.
+- `gateway/citations.py` — extended: bulk rewrite given a slug map.
+- `gateway/ops/migrate.py` — orchestrates: build slug map → run sources through ingest with `--legacy-import` flag → migrate concepts/entities (with classification call) → migrate MOCs and synthesis with citation rewrite → backfill example bank from JSON checkpoints → set up policy.yaml from legacy config → update notebooks.yaml.
+- `gateway/ops/batch_ingest.py` — new: handles whole-vault and `--legacy-import` modes.
+- `migrations/0001-import-legacy-vaults.py` — script that invokes `wiki batch-ingest --legacy-import` per vault per phase. Reads from `~/code/research-notebook/data/obsidian*/` (research-notebook stays put).
+
+**Acceptance criteria.**
+
+- `wiki batch-ingest --legacy-import ~/code/research-notebook/data/obsidian/ --dry-run` produces a slug map at `.knowledge/migrations/ai-temporal-video-slug-map.yaml` plus a migration plan; no writes.
+- Real run completes; lint passes clean (zero broken citations, zero malformed pages).
+- 10% sample audit shows content fidelity vs. legacy.
+- All three legacy vaults migrated end-to-end. NotebookLM corpus IDs recorded. Example bank populated.
+- Research-notebook is unchanged after migration runs (read-only access only).
+- `pytest tests/gateway/test_migration.py` passes (per-phase tests with vault fixtures).
+
+**Out of scope.** Archive moves of legacy vaults (not happening — research-notebook stays as historical artifact per project decision).
+
+**Estimated scope.** ~700–1000 LOC + tests. Heavy reuse of the `_search/` API helpers.
+
+---
+
+### M9 — Full lint pass
+
+**Goal.** `wiki lint` runs all 9 checks per WIKI.md § 12.2; report at `.knowledge/lint/<timestamp>.md`. Cheap checks integrated into every ingest; full pass on demand.
+
+**Modules.**
+
+- `gateway/ops/lint.py` — orchestrator. Each check is a function in a sub-module:
+  - `gateway/lint/orphans.py` — wiki pages with no inbound wikilinks.
+  - `gateway/lint/stale_drafts.py` — pages with `draft: true` older than threshold.
+  - `gateway/lint/stale_claims.py` — claims whose cited source has been superseded.
+  - `gateway/lint/contradictions.py` — LLM-driven scan for contradictory claims.
+  - `gateway/lint/missing_pages.py` — terms in 3+ pages without their own page.
+  - `gateway/lint/citation_density.py` — per-page density vs. threshold.
+  - `gateway/lint/schema_drift.py` — frontmatter / section drift.
+  - `gateway/lint/filter_calibration.py` — re-score sample of past decisions; flag drift.
+  - `gateway/lint/inbox_pending.py` — count of `raw/inbox/` files awaiting routing.
+  - `gateway/lint/nlm_pending.py` — sources eligible for NotebookLM but not yet synced.
+- Pre-commit hook in `~/code/knowledge/.git/hooks/pre-commit` — fast checks (broken wikilinks, schema, source immutability) plus grep for raw `nlm` calls in committed content.
+
+**Acceptance criteria.**
+
+- `wiki lint` produces a structured report at `.knowledge/lint/<timestamp>.md` matching WIKI.md § 12.3.
+- `wiki lint --scope orphans` runs only one check.
+- Pre-commit hook blocks commits that fail the cheap checks.
+- `pytest tests/gateway/test_lint.py` passes (one test per check).
+
+**Out of scope.** Scheduled lint via launchd (manual `wiki lint` is sufficient v1; scheduling can be added trivially later).
+
+**Estimated scope.** ~600–900 LOC + tests.
+
+---
+
+### M10 — Remaining converters and pollers
+
+**Goal.** Source diversity matches the user's stated requirement: Web, YouTube, arXiv, PubMed, PDF, voice, audiobook all supported. API-only-source poller pattern established (template for Apple Notes, Notion, etc.).
+
+**Modules.**
+
+- `gateway/converters/pdf.py` — `pdfplumber` or `marker`. Sidecar PDF preserved.
+- `gateway/converters/voice.py` — Whisper local or API. Sidecar audio preserved.
+- `gateway/converters/audiobook.py` — Whisper-large for long audio; chapter index sidecar.
+- `gateway/pollers/` — `Poller` ABC, scheduled (cron/launchd) modules per source. M10 ships only the framework + a stub for one API source (e.g., Apple Notes via AppleScript) as proof of pattern.
+
+**Acceptance criteria.**
+
+- `wiki ingest <pdf-path>` produces canonical markdown + sidecar PDF.
+- `wiki ingest <m4a-path>` produces transcript + sidecar audio.
+- One poller (Apple Notes) runs on schedule and writes to `raw/note/`.
+- `pytest tests/gateway/test_converters_*.py` passes.
+
+**Out of scope.** Full poller suite (Notion, Slack, Gmail) — additive in future work.
+
+**Estimated scope.** ~500–800 LOC + tests.
+
+---
+
+## 6. Cross-cutting concerns
+
+### 6.1 Testing strategy
+
+- **Unit tests** for pure functions: validator rules, frontmatter parser, citation parser, slug map.
+- **Integration tests** for gateway operations: hand-crafted input, observed output, side effects checked (log, index, frontmatter mutations).
+- **Fixture corpus**: `tests/gateway/fixtures/sources/` with 5–10 hand-crafted canonical markdown files of different types. Used across milestones.
+- **End-to-end tests** in M5+ exercising full ingest + filter + wiki authorship flow (with mocked Claude calls for determinism).
+- **Migration tests** in M8 use a small synthetic legacy vault under `tests/gateway/fixtures/legacy_vault/` to validate migration without touching real data.
+
+`pytest -v tests/gateway/` runs the full suite. CI on commit: green required.
+
+### 6.2 Atomic write pattern (used everywhere)
+
+```python
+def write_atomic(path: Path, content: str) -> None:
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(content)
+    tmp.rename(path)  # POSIX atomic
+```
+
+All writes go through this helper. Half-written files are impossible.
+
+### 6.3 Idempotency
+
+Every operation that writes computes content hashes against existing state and skips no-ops. Running `wiki ingest <same-path>` twice is safe and silent.
+
+### 6.4 Error model
+
+- Validator failures: structured `ValidationError` with rule name, file path, offending content. CLI exits non-zero with the rule details.
+- Operational errors (network, NotebookLM unavailable, lock contention): `OperationalError` with retry guidance.
+- Schema violations on existing files (out-of-band edits): caught by validator on read; reported via lint.
+
+### 6.5 Logging
+
+Two layers:
+
+- `~/code/knowledge/log.md` — domain-level event log (ingests, queries, lint passes); user-readable.
+- Standard Python `logging` to stderr — debug/info for development; gated by `--verbose` CLI flag.
+
+## 7. Dependencies and packaging
+
+### 7.1 Python dependencies (in pyproject.toml)
+
+- `pyyaml` (frontmatter parsing)
+- `watchdog` (M4, filesystem events)
+- `trafilatura` or `readability-lxml` (M2, web content extraction)
+- `youtube-transcript-api` (M8, YouTube transcripts)
+- `pdfplumber` (M10, PDF extraction)
+- `openai-whisper` or `faster-whisper` (M10, voice transcription)
+- `mcp` (M7, MCP SDK)
+- `pytest` (dev)
+
+External binaries:
+
+- `nlm` (NotebookLM CLI) — already installed.
+- `fswatch` (optional; `watchdog` pure-Python suffices on macOS).
+- `ffmpeg` (M10 voice/audiobook).
+
+### 7.2 Packaging
+
+- `pyproject.toml` defines `[project.scripts] wiki = "gateway.cli:main"` so `wiki` is on PATH after `pip install -e .`.
+- `~/code/knowledge/.venv/` is the canonical environment. Research-notebook keeps its own `.venv/` for historical reproducibility.
+
+### 7.3 Configuration
+
+- `KNOWLEDGE_ROOT` env var points to wiki content (default `~/code/knowledge/`). Lets the gateway be tested against a fixture root in CI.
+- `~/code/knowledge/.knowledge/config.yaml` (M1+) for runtime settings: thresholds, watcher inclusions, lint cadence. Schema additive.
+
+## 8. Open decisions
+
+1. **Web extraction library**: `trafilatura` (heavier, better quality on edge cases) vs. `readability-lxml` (lighter, well-known). Suggest `trafilatura` for fidelity.
+2. **MCP SDK**: official Anthropic Python MCP SDK once stable, or a lightweight in-house implementation. Default: official SDK.
+3. **Watcher daemon framework**: pure-Python `watchdog` + launchd, or shell out to `fswatch`. Default: `watchdog` (one less moving part).
+4. **Per-domain lint frequency**: weekly `wiki lint` is enough? Or do we need automated runs? Default: manual until we feel pain.
+5. **Pre-commit hook scope**: just structural lints (cheap), or also run the full validator on touched files? Default: structural only, full lint on demand.
+
+These are non-blocking. Defaults above carry unless the review pushes back.
+
+---
+
+## Estimated total scope
+
+~5,000–7,000 LOC + ~1,500–2,500 LOC of tests across all 11 milestones (M0 through M10). Realistically a multi-week build at sustained focus, distributable across days if M1–M5 land first.
+
+The plan is intentionally aggressive on architecture and conservative on features. Every milestone delivers a working slice; every milestone is reviewable and reversible.
