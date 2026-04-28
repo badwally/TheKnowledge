@@ -37,3 +37,11 @@ arxiv=54, pubmed=77, youtube=232
 ## [2026-04-28T15:32:22Z] lint | scope=all | orphans=373 | stale-drafts=0 | stale-claims=0 | contradictions=0 | missing-pages=0 | citation-density=6 | schema-drift=0 | filter-calibration=0 | inbox-pending=0 | nlm-pending=0
 
 report=.knowledge/lint/2026-04-28T15-32-22Z.md
+
+## [2026-04-28T16:13:44Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-28T16-13-44Z-schema-drift.md
+
+## [2026-04-28T16:27:42Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-28T16-27-42Z-schema-drift.md

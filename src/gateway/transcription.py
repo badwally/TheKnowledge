@@ -107,18 +107,36 @@ def _pyannote_diarize(audio_path: Path, *, pipeline_name: str, hf_token: str):
         raise TranscriptionError(
             "pyannote.audio not installed; run: pip install -e \".[whisper]\""
         ) from e
+    # pyannote.audio 3.x and 4.x disagree on the auth kwarg, and downstream
+    # huggingface_hub 1.x dropped `use_auth_token` entirely. Set HF_TOKEN in
+    # the environment so the cached/passed token is picked up implicitly.
+    import os as _os
+    prior_token = _os.environ.get("HF_TOKEN")
+    _os.environ["HF_TOKEN"] = hf_token
+    pipeline = None
+    last_error: Exception | None = None
     try:
-        pipeline = Pipeline.from_pretrained(pipeline_name, token=hf_token)
-    except Exception as e:
-        raise TranscriptionError(
-            f"failed to load diarization pipeline {pipeline_name!r}: {e}. "
-            "Confirm the HF token is valid and that you have accepted the model's "
-            f"terms at https://huggingface.co/{pipeline_name}."
-        ) from e
+        for kwargs in ({}, {"token": hf_token}, {"use_auth_token": hf_token}):
+            try:
+                pipeline = Pipeline.from_pretrained(pipeline_name, **kwargs)
+                if pipeline is not None:
+                    break
+            except TypeError as e:
+                last_error = e
+                continue
+            except Exception as e:
+                last_error = e
+                break
+    finally:
+        if prior_token is None:
+            _os.environ.pop("HF_TOKEN", None)
+        else:
+            _os.environ["HF_TOKEN"] = prior_token
     if pipeline is None:
         raise TranscriptionError(
-            f"Pipeline.from_pretrained({pipeline_name!r}) returned None — "
-            "auth or model-acceptance issue."
+            f"failed to load diarization pipeline {pipeline_name!r}: {last_error}. "
+            "Confirm the HF token is valid and that you have accepted the model's "
+            f"terms at https://huggingface.co/{pipeline_name}."
         )
     try:
         return pipeline(str(audio_path))

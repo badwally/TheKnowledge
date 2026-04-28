@@ -23,7 +23,16 @@ dev = [
 ]
 whisper = [
     "mlx-whisper>=0.4",
-    "pyannote.audio>=3.1",
+    # pyannote.audio 3.x uses `pyannote/speaker-diarization-3.1` directly;
+    # 4.x adds a `pyannote/speaker-diarization-community-1` indirection that
+    # introduces an additional gated-model terms acceptance. Pin to 3.x for
+    # a single gate.
+    # huggingface_hub 1.x dropped the `use_auth_token` kwarg that pyannote 3.x
+    # still passes through; torchaudio 2.5+ removed `AudioMetaData` that
+    # pyannote 3.x imports. Pin both to compatible ranges.
+    "pyannote.audio>=3.1,<4.0",
+    "huggingface_hub<1.0",
+    "torchaudio<2.5",
     "mutagen>=1.47",
 ]
 
