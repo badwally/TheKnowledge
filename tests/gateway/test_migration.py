@@ -338,6 +338,41 @@ def test_migrate_vault_moc_committed_with_required_sections(kb_root, synthetic_v
         assert f"## {s}" in body
 
 
+def test_migrate_vault_skips_pre_existing_source_preserving_domains(kb_root, synthetic_vault, tmp_path):
+    """Source immutability: a source migrated under domain A keeps `domains: [A]`
+    even when a second vault references the same canonical ID under domain B.
+    Concepts/MOCs from B still migrate; wikilinks to the source still resolve."""
+    # First migration under domain A.
+    migrate_vault(synthetic_vault, "domain-a")
+    raw_yt = paths.raw_source_path("youtube", "yt-_5qjj2CzBSw")
+    front_a, body_a = fm.parse(raw_yt.read_text())
+    assert front_a["domains"] == ["domain-a"]
+
+    # Second vault: a fresh copy of the same source files (mimics cross-domain
+    # contamination — same canonical IDs reachable from another legacy vault).
+    second = tmp_path / "obsidian_second"
+    import shutil
+    shutil.copytree(synthetic_vault, second)
+
+    result = migrate_vault(second, "domain-b")
+    assert result.success
+    assert "3 pre-existing skipped" in result.summary
+
+    # Domain A still wins on the raw page.
+    front_b, _ = fm.parse(raw_yt.read_text())
+    assert front_b["domains"] == ["domain-a"]
+    # Body unchanged too.
+    assert (raw_yt.read_text().split("---\n", 2)[2]) == body_a
+
+    # Concepts under domain B still migrated and reference the source via the
+    # canonical wikilink (the slug map saw the legacy source even though the
+    # raw page wasn't re-written).
+    concept = paths.wiki_dir() / "concepts" / "food-noise.md"
+    front_c, body_c = fm.parse(concept.read_text())
+    assert front_c["domains"] == ["domain-b"]
+    assert "[[sources/yt-_5qjj2CzBSw]]" in body_c
+
+
 def test_migrate_vault_idempotent_for_creation_timestamps(kb_root, synthetic_vault):
     """Re-running migration must not rotate creation-moment timestamps in
     raw/, wiki/sources/, wiki/concepts/, wiki/synthesis/, wiki/mocs/."""

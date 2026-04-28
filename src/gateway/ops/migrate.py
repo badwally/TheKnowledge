@@ -109,6 +109,7 @@ def migrate_vault(
         return OperationResult(success=True, summary=summary, paths_touched=[audit_path])
 
     paths_touched: list[Path] = []
+    skipped_existing = 0
 
     with file_lock(f"migrate-{domain_slug}"):
         # Save audit slug map first so a partial run is debuggable.
@@ -117,7 +118,11 @@ def migrate_vault(
 
         # 1. Sources
         for ls in slug_map.values():
-            raw_path, wiki_path = _migrate_source(ls, domain_slug)
+            result = _migrate_source(ls, domain_slug)
+            if result is None:
+                skipped_existing += 1
+                continue
+            raw_path, wiki_path = result
             paths_touched.extend([raw_path, wiki_path])
 
         # 2. Concepts (also covers entities — user reclassifies later)
@@ -148,14 +153,20 @@ def migrate_vault(
                 "domain": domain_slug,
                 "vault": str(legacy_vault_path),
                 "sources": len(slug_map),
+                "skipped_existing": skipped_existing,
             },
             summary=_format_counts(_type_counts(slug_map)),
         )
 
     type_counts = _type_counts(slug_map)
+    written = len(slug_map) - skipped_existing
+    skip_note = f" ({skipped_existing} pre-existing skipped)" if skipped_existing else ""
     return OperationResult(
         success=True,
-        summary=f"migrated {legacy_vault_path.name} → {domain_slug}: {_format_counts(type_counts)}",
+        summary=(
+            f"migrated {legacy_vault_path.name} → {domain_slug}: "
+            f"{written} sources written{skip_note}; {_format_counts(type_counts)}"
+        ),
         paths_touched=paths_touched + [paths.log_path()],
     )
 
@@ -232,13 +243,26 @@ def _legacy_relevance_to_filter(legacy_front: dict, domain_slug: str) -> dict | 
     }
 
 
-def _migrate_source(ls: slugmap.LegacySource, domain_slug: str) -> tuple[Path, Path]:
+def _migrate_source(ls: slugmap.LegacySource, domain_slug: str) -> tuple[Path, Path] | None:
+    """Migrate one legacy source. Returns (raw, wiki) paths, or None if the
+    canonical raw target already exists (cross-domain duplicate; preserve
+    the prior domain marker rather than overwriting).
+
+    Source immutability: raw/<type>/<id>.md is written exactly once, by the
+    first phase to migrate that source. Subsequent phases that reference the
+    same canonical ID skip the write, leaving `domains:` and all other prior
+    frontmatter intact. Wikilinks rewritten in the new phase's concepts/MOCs
+    still resolve because the slug map sees the legacy source file.
+    """
+    raw_target = paths.raw_source_path(ls.source_type, ls.canonical_id)
+    if raw_target.exists():
+        return None
+
     legacy_front = ls.legacy_front
     body = ls.legacy_body.lstrip("\n")
     if _LEGACY_RECOVERY_NOTE not in body:
         body = f"{_LEGACY_RECOVERY_NOTE}\n\n{body}"
 
-    raw_target = paths.raw_source_path(ls.source_type, ls.canonical_id)
     wiki_target = paths.wiki_source_path(ls.canonical_id)
     now = _now_iso()
 
