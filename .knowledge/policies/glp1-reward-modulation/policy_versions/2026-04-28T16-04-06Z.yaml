@@ -1,0 +1,102 @@
+version: v2
+domain:
+  slug: glp1-reward-modulation
+  topic: GLP-1 receptor agonist effects on reward system and dosing optimization
+  field: neuroendocrinology and obesity pharmacology
+  description: Investigating the neurological mechanisms by which GLP-1 receptor agonists
+    (tirzepatide, semaglutide, liraglutide) modulate mesolimbic reward circuitry beyond
+    appetite suppression — specifically food noise reduction vs broader reward dampening
+    (anhedonia, reduced libido, flattened motivation) — and whether these effects
+    are dissociable through dosing strategy, compound selection, or adjunctive therapy.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Discusses GLP-1 or GIP/GLP-1 receptor agonist effects on dopaminergic reward pathways
+  (VTA, NAc, amygdala, broader mesolimbic circuitry)
+- Reports anhedonia, reward blunting, mood, or motivational changes as effects of
+  incretin therapy
+- Examines dose-response relationships for GLP-1 RA neurological or reward-relevant
+  behavioral effects
+- Compares pharmacological profiles of GLP-1 RAs (semaglutide, tirzepatide, liraglutide,
+  exendin-4, retatrutide) on reward-relevant outcomes
+- Discusses food noise, food-cue reactivity, or control of eating as a neurological
+  phenomenon distinct from generalized appetite
+- Proposes or evaluates dosing strategies (microdosing, extended intervals, titration
+  protocols)
+- Tests GLP-1 RA effects on non-food reward — alcohol, nicotine, cocaine, psychostimulants,
+  or sexual behavior
+- Identifies brain-region- or circuit-specific GLP-1R signaling relevant to reward,
+  motivation, or addiction
+- Aggregates real-world or self-reported reward, mood, or libido side effects of GLP-1
+  RAs from large-scale data sources
+exclusion_criteria:
+- Purely focused on weight loss outcomes without discussion of neurological or reward
+  mechanisms
+- Marketing or promotional content for specific GLP-1 RA brands
+- News or press coverage without substantive clinical or scientific discussion
+- Focused on diabetes management or glycemic control without relevance to reward/appetite
+  neuroscience
+- Anecdotal patient testimonials without clinical or mechanistic framing
+- Pharmacokinetic, ADME, formulation, or receptor structural-biology studies without
+  circuit-level neurological content
+- Peripheral safety or efficacy outcomes (cardiovascular, hepatic/NAFLD, pancreatic,
+  ophthalmologic, pregnancy, lean mass/body composition) with no reward-system content
+- Reward, anhedonia, or feeding-circuit research that does not involve GLP-1 signaling
+quality_signals:
+  channel_authority:
+    positive_signals:
+    - Board-certified endocrinologist, obesity medicine specialist, or neuroscientist
+    - Academic medical center or research institution affiliation
+    - Peer-reviewed publication track record in obesity or neuropharmacology
+    negative_signals:
+    - Wellness influencer without clinical credentials
+    - Channel primarily sells supplements or alternative therapies
+  speaker_expertise:
+    positive_signals:
+    - Cites specific research studies with authors and journals
+    - Discusses receptor pharmacology and neural circuitry with precision
+    - Differentiates between GLP-1, GIP, and glucagon receptor mechanisms
+    negative_signals:
+    - Conflates GLP-1 with other weight loss mechanisms without distinction
+    - Makes unsupported claims about microdosing or off-label protocols
+  content_depth:
+    positive_signals:
+    - Explores mechanism of action at receptor and circuit level
+    - Discusses dose-dependent effects with reference to clinical data
+    - Addresses individual variation in response
+    negative_signals:
+    - Surface-level overview without mechanistic detail
+    - Focuses on celebrity use or cultural trends rather than science
+  publication_venue:
+    positive_signals:
+    - Published in a peer-reviewed journal or top-tier conference
+    - Journal with established impact in endocrinology, neuroscience, or pharmacology
+    negative_signals:
+    - Predatory journal or pay-to-publish venue
+    - No venue information and no citation history
+  methodology_rigor:
+    positive_signals:
+    - Randomized controlled trial or systematic review
+    - Clearly reported methodology, sample size, and statistical analysis
+    - Pre-registered study or published protocol
+    negative_signals:
+    - Case report presented as generalizable evidence
+    - No comparison group or control condition
+distilled:
+  from_examples: 268
+  from_policy_version: v1
+  distilled_at: '2026-04-28T16:04:06Z'
+  summary: 'Included items consistently engage the GLP-1 system at the level of reward
+    circuitry: dopaminergic projections (NTS→VTA/NAc, amygdala), regional dissociability
+    of GLP-1R effects, and mechanistic links to non-food reward (alcohol, nicotine,
+    cocaine, sexual behavior) alongside food-cue and incentive-salience signaling.
+    Comparative pharmacology across marketed and tool GLP-1 RAs (semaglutide, liraglutide,
+    exendin-4, tirzepatide), dose-response on neurological endpoints, and real-world
+    or self-reported mood/reward side-effect data also recur. Exclusions are dominated
+    by pure glycemic-control and weight-loss efficacy trials (SUSTAIN, STEP), pharmacokinetic/ADME
+    and structural-biology work, peripheral safety outcomes (cardiovascular, hepatic,
+    ophthalmologic, pregnancy, body composition), and reward- or feeding-circuit research
+    that does not implicate GLP-1.'

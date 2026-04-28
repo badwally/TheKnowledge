@@ -19,6 +19,7 @@ SUBCOMMANDS: dict[str, str] = {
     "filter": "Run the semantic filter on a candidate source (read-only)",
     "filter-correct": "Override a past filter decision; pin as a corrected example",
     "backfill-examples": "Populate policy.yaml + example bank from legacy research-notebook artifacts",
+    "finetune": "Inspect or distill the per-domain example bank into a tighter policy candidate",
     "nlm-add": "Add a source to a NotebookLM corpus",
     "nlm-slides": "Generate a slide deck from a NotebookLM corpus; file as wiki artifact",
     "nlm-audio": "Generate an audio overview; file as wiki artifact",
@@ -39,6 +40,7 @@ IMPLEMENTED: set[str] = {
     "filter",
     "filter-correct",
     "backfill-examples",
+    "finetune",
     "status",
     "watch",
     "nlm-add",
@@ -217,6 +219,36 @@ def build_parser() -> argparse.ArgumentParser:
         help="Override the policy_version pinned on each example (default: <domain>-legacy-v1)",
     )
 
+    # finetune
+    p_finetune = subparsers.add_parser("finetune", help=SUBCOMMANDS["finetune"])
+    p_finetune.add_argument(
+        "--domain",
+        default=None,
+        help="Domain slug (omit with --check to inspect every domain)",
+    )
+    mode = p_finetune.add_mutually_exclusive_group()
+    mode.add_argument(
+        "--check",
+        action="store_true",
+        help="Report example counts vs trigger threshold (no LLM calls)",
+    )
+    mode.add_argument(
+        "--distill",
+        action="store_true",
+        help="Run a distillation call; writes a candidate policy_versions/<timestamp>.yaml",
+    )
+    p_finetune.add_argument(
+        "--threshold",
+        type=int,
+        default=None,
+        help="Override the trigger threshold (default: 500)",
+    )
+    p_finetune.add_argument(
+        "--force",
+        action="store_true",
+        help="With --distill: skip the threshold gate (use sparingly)",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -271,8 +303,59 @@ def main(argv: list[str] | None = None) -> int:
         return _run_lint(ns)
     if ns.subcommand == "backfill-examples":
         return _run_backfill_examples(ns)
+    if ns.subcommand == "finetune":
+        return _run_finetune(ns)
 
     return _not_yet_implemented(ns.subcommand)
+
+
+def _run_finetune(ns: argparse.Namespace) -> int:
+    from gateway.ops.finetune import (
+        DistillError,
+        distill_prompt,
+        trigger_state,
+        trigger_states_all,
+    )
+
+    threshold = ns.threshold if ns.threshold is not None else 500
+
+    if ns.distill:
+        if not ns.domain:
+            print("--distill requires --domain <slug>", file=sys.stderr)
+            return 2
+        try:
+            result = distill_prompt(
+                ns.domain,
+                threshold=threshold,
+                enforce_threshold=not ns.force,
+            )
+        except DistillError as e:
+            print(f"distill failed: {e}", file=sys.stderr)
+            return 1
+        print(f"ok: distilled candidate for {result.domain}")
+        print(f"  candidate: {result.candidate_path}")
+        print(f"  examples used: {result.examples_used}")
+        if result.summary:
+            print(f"  summary: {result.summary[:240]}")
+        return 0
+
+    # Default and --check: report state.
+    if ns.domain:
+        state = trigger_state(ns.domain, threshold=threshold)
+        readiness = "ready" if state.ready else "below threshold"
+        print(
+            f"{state.domain}: {state.count}/{state.threshold} examples — {readiness}"
+        )
+        return 0
+
+    states = trigger_states_all(threshold=threshold)
+    if not states:
+        print("no policies registered; run `wiki backfill-examples` first")
+        return 0
+    for s in states:
+        readiness = "ready" if s.ready else "below threshold"
+        print(f"  {s.domain}: {s.count}/{s.threshold} examples — {readiness}")
+    return 0
 
 
 def _run_backfill_examples(ns: argparse.Namespace) -> int:
