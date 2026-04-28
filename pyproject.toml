@@ -9,6 +9,7 @@ description = "Gateway for the canonical knowledge base at ~/code/knowledge/"
 requires-python = ">=3.11"
 dependencies = [
     "PyYAML>=6.0",
+    "trafilatura>=1.10",
 ]
 
 [project.optional-dependencies]

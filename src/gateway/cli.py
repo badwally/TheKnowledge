@@ -58,7 +58,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     # Real wiring for `ingest`
     p_ingest = subparsers.add_parser("ingest", help=SUBCOMMANDS["ingest"])
-    p_ingest.add_argument("input", help="Path to a canonical markdown source file (M1)")
+    p_ingest.add_argument(
+        "input",
+        help="URL (web; M2) or path to a canonical markdown source file (M1)",
+    )
 
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
@@ -90,11 +93,15 @@ def main(argv: list[str] | None = None) -> int:
 
 def _run_ingest(ns: argparse.Namespace) -> int:
     # Local import keeps `wiki --help` cheap and avoids loading PyYAML
-    # for users who only want to read help.
-    from gateway.ops.ingest import ingest_canonical
+    # / trafilatura for users who only want to read help.
+    from gateway.ops.ingest import ingest
 
-    input_path = Path(ns.input).expanduser().resolve()
-    result = ingest_canonical(input_path)
+    raw_input = ns.input
+    if raw_input.startswith(("http://", "https://")):
+        result = ingest(raw_input)
+    else:
+        input_path = Path(raw_input).expanduser().resolve()
+        result = ingest(input_path)
 
     if result.success:
         if result.no_op:

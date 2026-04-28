@@ -1,33 +1,62 @@
 """`wiki ingest` — ingest a single source into the canonical knowledge base.
 
-M1 scope: input is an already-canonical markdown file (frontmatter shape
-per WIKI.md § 3). Validates, copies into raw/<type>/<id>.md, generates a
-minimal wiki/sources/<id>.md page, updates index.md, appends log.md.
-
-M2 extends this op to call converters when the input is a URL or non-canonical
-file. M3 inserts the semantic filter between validate and write. M6 layers
-agent-driven multi-page authorship on top.
+M1: input is an already-canonical markdown file (frontmatter shape per WIKI.md § 3).
+M2: input may also be a URL — dispatched to a converter that returns canonical text.
+M3: filter runs between validation and wiki-page write.
+M6: agent-driven multi-page authorship layered on top.
 """
+
+from __future__ import annotations
 
 from pathlib import Path
 
-from gateway import frontmatter as fm
+from gateway import converters, frontmatter as fm
 from gateway import index, log, paths, validator
 from gateway.core import OperationResult, write_atomic
 from gateway.locking import file_lock
 
 
-def ingest_canonical(input_path: Path) -> OperationResult:
-    """Ingest a canonical markdown source file."""
+# --- public entry points -----------------------------------------------------
 
+
+def ingest(source: str | Path) -> OperationResult:
+    """Top-level dispatcher. Accepts a URL string or a filesystem path."""
+    if isinstance(source, str) and source.startswith(("http://", "https://")):
+        return ingest_url(source)
+    path = Path(source).expanduser() if isinstance(source, str) else source
+    return ingest_canonical(path)
+
+
+def ingest_canonical(input_path: Path) -> OperationResult:
+    """Ingest from a canonical markdown file path (M1 path)."""
     if not input_path.exists():
         return OperationResult(
             success=False,
             errors=[f"input not found: {input_path}"],
         )
+    return _ingest_canonical_text(input_path.read_text())
 
-    text = input_path.read_text()
 
+def ingest_url(url: str) -> OperationResult:
+    """Ingest from a URL via converter dispatch (M2 path)."""
+    try:
+        converter = converters.dispatch(url)
+    except converters.NoConverterError as e:
+        return OperationResult(success=False, errors=[str(e)])
+
+    try:
+        text = converter.convert(url)
+    except converters.ConversionError as e:
+        return OperationResult(success=False, errors=[f"conversion failed: {e}"])
+
+    return _ingest_canonical_text(text)
+
+
+# --- core ingest logic -------------------------------------------------------
+
+
+def _ingest_canonical_text(text: str) -> OperationResult:
+    """Validate canonical markdown text and commit to raw/ + wiki/sources/."""
     try:
         front, body = fm.parse(text)
     except fm.FrontmatterError as e:
@@ -50,7 +79,6 @@ def ingest_canonical(input_path: Path) -> OperationResult:
     wiki_target = paths.wiki_source_path(source_id)
 
     with file_lock(f"ingest-{source_id}"):
-        # Idempotency / immutability check against existing raw file
         if raw_target.exists():
             existing_text = raw_target.read_text()
             try:
@@ -75,15 +103,10 @@ def ingest_canonical(input_path: Path) -> OperationResult:
                     summary=f"already ingested (no-op): {source_id}",
                 )
 
-        # Write raw source (verbatim normalization through fm.serialize)
         canonical_text = fm.serialize(front, body)
         write_atomic(raw_target, canonical_text)
+        write_atomic(wiki_target, _make_source_page(front))
 
-        # Write the wiki source summary page
-        source_page = _make_source_page(front)
-        write_atomic(wiki_target, source_page)
-
-        # Index update
         index.update_for(
             source_id=source_id,
             source_type=source_type,
@@ -91,7 +114,6 @@ def ingest_canonical(input_path: Path) -> OperationResult:
             domains=front.get("domains", []),
         )
 
-        # Log entry
         domains = front.get("domains") or []
         log.append(
             op="ingest",
@@ -118,11 +140,13 @@ def ingest_canonical(input_path: Path) -> OperationResult:
         )
 
 
-def _make_source_page(front: dict) -> str:
-    """Build a minimal wiki/sources/<id>.md page from the source frontmatter.
+# --- wiki source page generation --------------------------------------------
 
-    M1 produces a stub page with metadata and placeholder sections. M3 fills
-    the filter rationale. M6 has the agent populate Summary / Key claims /
+
+def _make_source_page(front: dict) -> str:
+    """Build a minimal wiki/sources/<id>.md page from raw frontmatter.
+
+    M3 fills filter rationale. M6 has the agent populate Summary / Key claims /
     Cross-references with proper citations.
     """
     page_front = {
