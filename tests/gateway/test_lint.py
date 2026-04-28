@@ -463,3 +463,105 @@ def test_missing_pages_client_failure_emits_warning(kb_root):
     assert len(findings) == 1
     assert findings[0].severity == "warning"
     assert "d-x" in findings[0].message
+
+
+# --- filter-calibration (M16) ---------------------------------------------
+
+
+from gateway.lint import filter_calibration
+
+
+class _ScoredClient:
+    """Stub FilterClient returning JSON shape that filter.parse_response accepts."""
+
+    def __init__(self, score_value: float = 0.85, rationale: str = "ok"):
+        self.score_value = score_value
+        self.rationale = rationale
+        self.calls = 0
+
+    def call(self, _prompt: str) -> str:
+        self.calls += 1
+        import json as _json
+        return _json.dumps({"score": self.score_value, "rationale": self.rationale})
+
+
+def test_filter_calibration_no_sources_returns_empty(kb_root):
+    findings = filter_calibration.run(client=_ScoredClient())
+    assert findings == []
+
+
+def test_filter_calibration_skips_domain_without_policy(kb_root):
+    _write_source_in_raw("yt-no-policy", score=0.8, domain="d-without")
+    findings = filter_calibration.run(client=_ScoredClient())
+    assert any(
+        f.metadata.get("skipped") == "no_policy"
+        and f.metadata.get("domain") == "d-without"
+        for f in findings
+    )
+
+
+def test_filter_calibration_aligned_scores_no_outliers(kb_root):
+    _write_policy("d-cal")
+    _write_source_in_raw("yt-a", score=0.85, domain="d-cal")
+    _write_source_in_raw("yt-b", score=0.82, domain="d-cal")
+
+    client = _ScoredClient(score_value=0.85)  # within 0.20 of stored
+    findings = filter_calibration.run(sample_size=10, client=client)
+    summaries = [f for f in findings if f.severity == "info" and f.metadata.get("domain") == "d-cal"]
+    outliers = [f for f in findings if f.severity == "warning"]
+    assert len(summaries) == 1
+    assert summaries[0].metadata["sample_size"] == 2
+    assert outliers == []
+    assert client.calls == 2
+
+
+def test_filter_calibration_flags_outliers_above_threshold(kb_root):
+    _write_policy("d-cal")
+    _write_source_in_raw("yt-drift", score=0.20, domain="d-cal")  # stored low
+
+    client = _ScoredClient(score_value=0.95)  # delta = +0.75 -> outlier
+    findings = filter_calibration.run(sample_size=10, client=client)
+    outliers = [f for f in findings if f.severity == "warning"]
+    assert len(outliers) == 1
+    assert outliers[0].metadata["source_id"] == "yt-drift"
+    assert outliers[0].metadata["delta"] == 0.75
+
+
+def test_filter_calibration_score_failure_emits_warning(kb_root):
+    _write_policy("d-cal")
+    _write_source_in_raw("yt-broken", score=0.5, domain="d-cal")
+
+    class _Failing:
+        def call(self, _prompt: str) -> str:
+            raise RuntimeError("upstream down")
+
+    findings = filter_calibration.run(sample_size=10, client=_Failing())
+    assert any(
+        f.severity == "warning" and "yt-broken" in f.message
+        for f in findings
+    )
+
+
+def test_filter_calibration_sample_caps_at_population_size(kb_root):
+    _write_policy("d-cal")
+    _write_source_in_raw("yt-a", score=0.7, domain="d-cal")
+
+    client = _ScoredClient(score_value=0.7)
+    filter_calibration.run(sample_size=99, client=client)
+    assert client.calls == 1
+
+
+def test_filter_calibration_runs_independently_per_domain(kb_root):
+    _write_policy("d-x")
+    _write_source_in_raw("yt-x1", score=0.6, domain="d-x")
+    # d-y has source but no policy -> skipped, doesn't poison d-x
+    _write_source_in_raw("yt-y1", score=0.6, domain="d-y")
+
+    client = _ScoredClient(score_value=0.6)
+    findings = filter_calibration.run(sample_size=10, client=client)
+
+    skipped = [f for f in findings if f.metadata.get("skipped") == "no_policy"]
+    summaries = [f for f in findings if f.severity == "info" and f.metadata.get("sample_size")]
+    assert len(skipped) == 1 and skipped[0].metadata["domain"] == "d-y"
+    assert len(summaries) == 1 and summaries[0].metadata["domain"] == "d-x"
+    assert client.calls == 1
