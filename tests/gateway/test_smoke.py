@@ -31,7 +31,7 @@ def test_cli_version_via_subprocess():
 
 
 def test_cli_unimplemented_returns_nonzero():
-    # `lint` is still a stub at M6; should exit 2 with not-yet-implemented.
+    # `search` is still a stub at M9; should exit 2 with not-yet-implemented.
     # Update this list as subcommands move from stub to real wiring.
-    rc = cli.main(["lint"])
+    rc = cli.main(["search", "anything"])
     assert rc == 2

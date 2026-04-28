@@ -48,6 +48,7 @@ IMPLEMENTED: set[str] = {
     "query",
     "mcp-serve",
     "batch-ingest",
+    "lint",
 }
 
 
@@ -177,6 +178,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Build the slug map and report counts; do not write canonical files",
     )
 
+    # lint
+    p_lint = subparsers.add_parser("lint", help=SUBCOMMANDS["lint"])
+    p_lint.add_argument(
+        "--scope",
+        default=None,
+        help="Run a single check (e.g., orphans, schema-drift)",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -227,6 +236,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_mcp_serve(ns)
     if ns.subcommand == "batch-ingest":
         return _run_batch_ingest(ns)
+    if ns.subcommand == "lint":
+        return _run_lint(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -360,6 +371,12 @@ def _run_batch_ingest(ns: argparse.Namespace) -> int:
             dry_run=ns.dry_run,
         )
     )
+
+
+def _run_lint(ns: argparse.Namespace) -> int:
+    from gateway.ops.lint import lint
+
+    return _emit_result(lint(scope=ns.scope))
 
 
 if __name__ == "__main__":
