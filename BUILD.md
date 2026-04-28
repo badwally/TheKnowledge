@@ -524,7 +524,21 @@ These are non-blocking. Defaults above carry unless the review pushes back.
 
 ## Estimated total scope
 
-~5,000–7,000 LOC + ~1,500–2,500 LOC of tests across all 11 milestones (M0 through M10). Realistically a multi-week build at sustained focus, distributable across days if M1–M5 land first.
+~5,000–7,000 LOC + ~1,500–2,500 LOC of tests across all 11 milestones (M0 through M10).
+
+**Wall-clock estimate (LLM-paced execution against a locked-up-front architecture):** a single sustained session. Actual: M0–M10 shipped in one continuous build (see § 9 commit hashes). Drafting this plan with "multi-week" was a copy-paste from human-developer pacing heuristics — wrong for the actual constraints. The real cost drivers were:
+
+1. **Real-world hand-tests** — wall-clock latency on `claude -p`, arXiv API, Wikipedia, NotebookLM CLI, watchdog settle delays. ~1–3 minutes per milestone, not days.
+2. **Context window** — the limiting resource for an AI-paced build is conversation context, not engineer-hours. M0–M10 fit comfortably; the docs pass at the end started bumping up against it.
+3. **Architecture-up-front** — Phase 2 + Phase 3 (decisions + schema docs) ate the design cost before any code. Build phase was almost entirely mechanical translation of locked decisions into modules.
+4. **Mocking the expensive things** — full pytest suite runs in ~2.4s because NotebookLM, Whisper, and `claude -p` are all behind `*Client` Protocols with stub implementations.
+
+A future AI-paced rebuild of similar scope should be estimated by:
+- conversation context budget (build until context pressure forces a break)
+- count of distinct external surfaces requiring real hand-tests
+- count of human-decision forks that need pause-and-confirm
+
+NOT by LOC × developer-day rate. That heuristic is for a different mode of work.
 
 The plan is intentionally aggressive on architecture and conservative on features. Every milestone delivers a working slice; every milestone is reviewable and reversible.
 
