@@ -2,7 +2,9 @@
 
 Canonical knowledge base for all `~/code/*` projects. Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with a hybrid synthesis substrate — wiki canonical, NotebookLM as a synthesis service behind a gateway.
 
-This file is the agent control surface. `WIKI.md` is the conventions reference. Read `WIKI.md` before designing converters, page types, gateway operations, validator rules, or editorial policies. Read `index.md` first to orient on content.
+This file is the agent control surface. `WIKI.md` is the conventions reference. Read `WIKI.md` before designing converters, page types, gateway operations, validator rules, or editorial policies. Read `index.md` first to orient on content. For human-facing usage, read `TUTORIAL.md`.
+
+**Current state (post-M25, 2026-04-28):** 28 commits on `main`; 294 tests; 363 sources / 149 concepts / 18 MOCs / 18 synthesis pages across three domains (`ai-temporal-video`, `glp1-reward-modulation`, `edge-ai-agentic`). 13 query-driven syntheses cite 148/363 sources (41% coverage). Voice + audiobook converters operational with mlx-whisper + pyannote diarization (M3 Max).
 
 ## What you may do here
 
@@ -32,21 +34,23 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 
 | Task | Command |
 |---|---|
-| Ingest single source | `wiki ingest <path-or-url>` |
-| Ingest research domain (batch) | `wiki batch-ingest <domain-config>` |
-| Query the wiki | `wiki query "<question>"` |
+| Ingest single source (URL, PDF, audio, m4b) | `wiki ingest <path-or-url> [--domain X] [--with-plan] [--draft]` |
+| Ingest a whole vault | `wiki batch-ingest <vault> --legacy-import --domain <slug>` |
+| Query the wiki and file a synthesis | `wiki query "<question>" [--domain X] [--draft]` |
 | Generate slides from corpus | `wiki nlm-slides <domain> "<topic>"` |
 | Generate audio overview | `wiki nlm-audio <domain> "<topic>"` |
 | Generate briefing doc | `wiki nlm-briefing <domain>` |
-| Revise an artifact | `wiki nlm-revise <artifact-id> "<instructions>"` |
+| Revise an artifact | `wiki nlm-revise <slug> --slide N "<instructions>"` |
+| Add a source to a NotebookLM corpus | `wiki nlm-add <domain> <source-id>` |
 | Run filter on a source | `wiki filter <path>` |
+| Pin a corrected filter decision | `wiki filter-correct <id>` |
 | Finalize a draft page | `wiki finalize <page-path>` (`--abandon` to delete) |
-| Health check | `wiki lint` |
-| Rebuild index | `wiki index --rebuild` |
-| Search wiki + raw | `wiki search "<query>"` |
-| Status / pending queue | `wiki status` |
+| Backfill policy + example bank from legacy | `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` |
+| Inspect / distill the example bank | `wiki finetune [--check \| --domain X --distill [--force]]` |
+| Health check | `wiki lint [--scope <check>]` |
+| Status / watcher heartbeat / pending queue | `wiki status` |
 
-Full reference: `WIKI.md` § Gateway operations.
+`wiki index --rebuild`, `wiki search`, `wiki migrate <name>` remain stubs (operational sugar). Full reference: `WIKI.md` § Gateway operations.
 
 ## Adding a new source type
 
@@ -75,9 +79,10 @@ Write a converter under `~/code/research-notebook/src/search/` that outputs cano
 ## Forward-looking notes
 
 - **API-only-source pollers** (Apple Notes, Notion, Slack, Gmail) get bolt-on schedulers writing to `raw/<source>/` in the canonical format. Same downstream pipeline.
-- **Fine-tuning loop for the semantic filter** is on the roadmap. Trigger threshold ~500–1000 high-quality decisions per domain. Output: small fine-tuned classifier or distilled prompt extracted from accumulated examples. Replaces the prompt-based filter behind the same CLI/MCP interface. See `WIKI.md` § Filter and learning.
+- **Filter fine-tuning loop** shipped (M19 backfill + M20 distill). Trigger threshold per domain still 500 examples; GLP-1 currently at 268 (a v2 candidate has been generated via `--force` and lives at `.knowledge/policies/glp1-reward-modulation/policy_versions/2026-04-28T16-04-06Z.yaml` for human review). Open-weight classifier fine-tune (the second WIKI § 10.4 option) deferred until a domain crosses ~1000 high-quality decisions.
 - **qmd or similar BM25/vector index** gets dropped in if/when the wiki crosses ~10k pages. Markdown remains canonical; the index is derived state.
-- **Existing legacy vaults** (`~/code/research-notebook/data/obsidian/` and `data/obsidian_glp1/`) need migration into this canonical schema. Migration plan is separate work; until done, those vaults remain authoritative for their domains.
+- **Legacy vaults migrated.** All three research-notebook Obsidian vaults imported in M11–M14. The vaults at `~/code/research-notebook/data/obsidian*/` are now frozen historical artifacts.
+- **Citation graph still building.** ~41% of sources are cited by at least one synthesis page. The remaining 215 source orphans discharge via `wiki query` synthesis loops, not manual claim extraction.
 
 ## When to consult `WIKI.md`
 

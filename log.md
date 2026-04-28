@@ -117,3 +117,7 @@ Existing edge-ai synthesis covers quantization and inference infrastructure; thi
 ## [2026-04-28T17:31:29Z] lint | scope=orphans | orphans=232
 
 report=.knowledge/lint/2026-04-28T17-31-29Z-orphans.md
+
+## [2026-04-28T17:32:19Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-28T17-32-19Z-schema-drift.md
