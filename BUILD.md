@@ -562,7 +562,8 @@ v1 (M0–M10) shipped in a single sustained session. M11+ tracks operational mil
 | M9 | `5bb5d81` | 193 | `wiki lint` on empty wiki → 0 findings across all 10 checks; report written |
 | M10 | `bebf319` | 217 | `wiki ingest https://arxiv.org/abs/2403.05530` → real Gemini 1.5 paper ingested; synthesized PDF preserved as sidecar |
 | M11 | `5c507eb` | 217 | Real legacy migration phase 2 (GLP-1): 127 sources + 28 concepts + 5 MOCs + 3 synthesis written into `~/code/knowledge/`; 13/13 spot-check audit pass on title/authors/url/filter-score/body-content; research-notebook untouched |
-| M12 | _this commit_ | 221 | Wikilink canonicalization across migrated content: 158 → 130 lint orphans (Δ-28; all concept orphans resolved); migration idempotency for creation-moment timestamps verified by re-running phase 2 with zero raw/ or wiki/sources/ churn |
+| M12 | `87fb338` | 221 | Wikilink canonicalization across migrated content: 158 → 130 lint orphans (Δ-28; all concept orphans resolved); migration idempotency for creation-moment timestamps verified by re-running phase 2 with zero raw/ or wiki/sources/ churn |
+| M13 | _this commit_ | 221 | Real legacy migration phase 1 (ai-temporal-video): 86 youtube sources + 46 concepts + 5 MOCs + 3 synthesis added to `~/code/knowledge/`; 9/9 spot-check audit pass; zero cross-domain wiki collisions with phase 2; zero concept orphans (M12 canonicalization works on phase 1 data); research-notebook untouched |
 
 ### Key architectural properties locked in
 
