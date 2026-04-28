@@ -30,9 +30,10 @@ SUBCOMMANDS: dict[str, str] = {
     "status": "Show recent activity, watcher state, pending queues",
     "migrate": "Apply a schema or content migration script",
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
+    "watch": "Run the inbox watcher daemon in the foreground (used by launchd)",
 }
 
-IMPLEMENTED: set[str] = {"ingest", "filter", "filter-correct"}
+IMPLEMENTED: set[str] = {"ingest", "filter", "filter-correct", "status", "watch"}
 
 
 def _not_yet_implemented(subcommand: str) -> int:
@@ -76,6 +77,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_correct.add_argument("--rationale", required=True, help="Why the original decision was wrong")
     p_correct.add_argument("--domain", default=None, help="Domain slug if not in source frontmatter")
 
+    # status (no args)
+    subparsers.add_parser("status", help=SUBCOMMANDS["status"])
+
+    # watch (no args; runs foreground)
+    subparsers.add_parser("watch", help=SUBCOMMANDS["watch"])
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -104,6 +111,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_filter(ns)
     if ns.subcommand == "filter-correct":
         return _run_filter_correct(ns)
+    if ns.subcommand == "status":
+        return _run_status(ns)
+    if ns.subcommand == "watch":
+        return _run_watch(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -154,6 +165,20 @@ def _run_filter_correct(ns: argparse.Namespace) -> int:
             domain=ns.domain,
         )
     )
+
+
+def _run_status(ns: argparse.Namespace) -> int:
+    from gateway.ops.status import status
+
+    result = status()
+    print(result.summary)
+    return 0 if result.success else 1
+
+
+def _run_watch(ns: argparse.Namespace) -> int:
+    from gateway.watcher import run_foreground
+
+    return run_foreground()
 
 
 if __name__ == "__main__":
