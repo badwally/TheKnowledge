@@ -527,3 +527,48 @@ These are non-blocking. Defaults above carry unless the review pushes back.
 ~5,000–7,000 LOC + ~1,500–2,500 LOC of tests across all 11 milestones (M0 through M10). Realistically a multi-week build at sustained focus, distributable across days if M1–M5 land first.
 
 The plan is intentionally aggressive on architecture and conservative on features. Every milestone delivers a working slice; every milestone is reviewable and reversible.
+
+---
+
+## 9. Delivered status (post-build record)
+
+All 11 milestones shipped in a single sustained session. 217 passing tests, ~7,800 LOC under `src/gateway/`. Each milestone landed as one commit on `main`.
+
+| # | Commit | Tests | Hand-test |
+|---|---|---|---|
+| M0 | `48a7ac3` | 4 smoke | venv, CLI on PATH, `wiki --version` |
+| M1 | `1939233` | 30 | YouTube-shaped sample → raw/+ wiki/sources/, idempotent |
+| M2 | `1ffb11f` | 45 | `wiki ingest https://en.wikipedia.org/wiki/Memex` end-to-end |
+| M3 | `0c2445a` | 67 | Real `claude -p`: GLP-1 RCT 0.95, influencer testimonial 0.00 |
+| M4 | `2d7493b` | 78 | Drop file in `raw/inbox/`; ingested in ~3s; quarantine works |
+| M5 | `44d9195` | 98 | NotebookLM ops mocked end-to-end; subprocess wrapper smoke-tested |
+| M6 | `738f01f` | 134 | Plan → apply → finalize cycle with `StubPlanClient`; query files synthesis |
+| M7 | `4cdd0be` | 152 | `wiki mcp-serve` starts and exits cleanly under SIGTERM |
+| M8 | `54f1021` | 172 | Real GLP-1 vault dry-run: 127 sources mapped (48 yt / 77 pubmed / 2 arxiv) |
+| M9 | `5bb5d81` | 193 | `wiki lint` on empty wiki → 0 findings across all 10 checks; report written |
+| M10 | `bebf319` | 217 | `wiki ingest https://arxiv.org/abs/2403.05530` → real Gemini 1.5 paper ingested; synthesized PDF preserved as sidecar |
+
+### Key architectural properties locked in
+
+- **Plan-before-write** (M6): the agent's only path to `wiki/{entities,concepts,synthesis,mocs}` is to return a `Plan`; `apply_plan` validates atomically.
+- **Discipline Gate** (M5): `nlm` CLI is forbidden in committed wiki content; the `wiki nlm-*` family is the only sanctioned NotebookLM surface. Pre-commit hook (M9) greps for violations.
+- **Filter as injectable client** (M3): `FilterClient` Protocol; `ClaudeCLIFilterClient` default backend uses `claude -p` (Max-plan auth, no API key required); tests inject `StubClient`.
+- **Source immutability** (M1): once a source is in `raw/<type>/<id>.md`, the body cannot change. Frontmatter mutations are restricted to `filter:`, `nlm_corpus_ids`, `wiki_pages`, `domains`. Lint enforces.
+- **Atomic writes** (M1): every `wiki/` and `raw/` write goes through `core.write_atomic` (POSIX temp-then-rename).
+- **Idempotency by content hash** (M1): re-running any operation with unchanged inputs is a silent no-op.
+- **Single-backend, two-surface CLI/MCP** (M7): the same `gateway/ops/*.py` functions back both the `wiki` CLI and the `wiki_*` MCP tools — no behavioral drift possible.
+- **Filesystem-as-database** (whole build): markdown + YAML frontmatter is canonical; all retrieval primitives (`grep`, file walk, frontmatter parse) work without an SDK.
+
+### Hand-tests deferred (intentional)
+
+- M5 real NotebookLM artifact creation (would create real artifacts in user's account; ~5–15 min per artifact)
+- M6 real `claude -p` plan generation (~10–30s per source; mocks cover gateway logic)
+- M8 real legacy migration commit (hours-scale work; user-invoked when ready)
+
+### Stubs and follow-up work
+
+- **Lint stubs** (M9): `missing-pages`, `stale-claims`, `contradictions`, `filter-calibration` are registered but return `[]`. Real implementations are LLM-heavy or require sampling logic; deferred.
+- **Voice / audiobook converters** (M10): Whisper is a 2–5GB dep; user can wire in OpenAI's API or a local Whisper install when needed.
+- **Apple Notes AppleScript integration** (M10): poller framework ships; the AppleScript adapter is platform-specific follow-up.
+- **CLI stubs**: `index`, `search`, `migrate` (the migration command is replaced by `batch-ingest --legacy-import`; index and search are quality-of-life ops over the same content).
+- **Filter fine-tuning loop**: roadmap per WIKI § 10.4. Trigger threshold ~500–1000 high-quality decisions per domain.
