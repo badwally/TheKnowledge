@@ -1,0 +1,38 @@
+source_id: arxiv-2509.02121
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Halo brings batch query processing and DAG-level optimization to agentic
+  LLM workflows, with a cost model covering heterogeneous resource constraints, cache
+  reuse, and GPU placement; system-level contributions directly applicable to efficient
+  agentic serving at the edge.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Batch Query Processing and Optimization for Agentic Workflows
+  source_type: arxiv
+  authors:
+  - name: Junyi Shen
+    affiliation: null
+  - name: Noppanat Wadlom
+    affiliation: null
+  - name: Yao Lu
+    affiliation: null
+  published_at: '2025-09-02T09:17:40Z'
+  source_metadata:
+    arxiv_id: '2509.02121'
+    categories:
+    - cs.DB
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2509.02121v2.pdf
+    primary_category: cs.DB
+    comment: null
+    journal_ref: null
+content_excerpt: Large Language Models (LLMs) in agentic workflows combine multi-step
+  reasoning, heterogeneous tool use, and collaboration across multiple specialized
+  agents. Existing LLM serving engines optimize individual calls in isolation, while
+  multi-agent frameworks focus on orchestration without system-level performance planning.
+  As a result, repeated prompts, overlapping contexts, and fragmented CPU-GPU execution
+  create substantial redundancy and poor hardware utilization, especially in batch
+  analytics s

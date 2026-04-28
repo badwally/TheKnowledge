@@ -1,0 +1,49 @@
+source_id: arxiv-2509.16989
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: PTQTP decomposes LLM weights into dual ternary planes enabling multiplication-free
+  additive inference without architectural changes; enables constrained-hardware deployment
+  but lacks explicit edge device benchmarks.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'PTQTP: Post-Training Quantization to Trit-Planes for Large Language Models'
+  source_type: arxiv
+  authors:
+  - name: He Xiao
+    affiliation: null
+  - name: Runming Yang
+    affiliation: null
+  - name: Qingyao Yang
+    affiliation: null
+  - name: Wendong Xu
+    affiliation: null
+  - name: Zhen Li
+    affiliation: null
+  - name: Yupeng Su
+    affiliation: null
+  - name: Zhengwu Liu
+    affiliation: null
+  - name: Hongxia Yang
+    affiliation: null
+  - name: Ngai Wong
+    affiliation: null
+  published_at: '2025-09-21T09:07:20Z'
+  source_metadata:
+    arxiv_id: '2509.16989'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2509.16989v3.pdf
+    primary_category: cs.LG
+    comment: Ternary Quantization, Under review
+    journal_ref: null
+content_excerpt: Post-training quantization (PTQ) of large language models (LLMs)
+  to extremely low bit-widths remains challenging due to the fundamental trade-off
+  between computational efficiency and representational capacity. While existing ultra-low-bit
+  methods rely on binary approximations or quantization-aware training(QAT), they
+  often suffer from either limited representational capacity or huge training resource
+  overhead. We introduce PTQ to Trit-Planes (PTQTP), a structured PTQ framework that
+  decomposes we

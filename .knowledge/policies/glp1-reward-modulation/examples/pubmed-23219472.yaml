@@ -1,0 +1,64 @@
+source_id: pubmed-23219472
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Shows GLP-1 analogue attenuates alcohol-mediated behaviors in rodents,
+  relevant as reward-system analog demonstrating broader reward dampening.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide 1 analogue Exendin-4 attenuates alcohol mediated
+    behaviors in rodents.
+  source_type: pubmed
+  authors:
+  - name: Emil Egecioglu
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Pia Steensland
+    affiliation: null
+  - name: Ida Fredriksson
+    affiliation: null
+  - name: Kristin Feltmann
+    affiliation: null
+  - name: J&#xf6;rgen A Engel
+    affiliation: null
+  - name: Elisabet Jerlhag
+    affiliation: null
+  published_at: 2012 12 07
+  source_metadata:
+    pmid: '23219472'
+    doi: 10.1016/j.psyneuen.2012.11.009
+    journal: Psychoneuroendocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Choice Behavior
+    - Conditioning, Operant
+    - Conditioning, Psychological
+    - Dopamine
+    - Dose-Response Relationship, Drug
+    - Drug-Seeking Behavior
+    - Ethanol
+    - Exenatide
+    - Glucagon-Like Peptide 1
+    - Male
+    - Mice
+    - Motor Activity
+    - Nucleus Accumbens
+    - Peptides
+    - Rats
+    - Reward
+    - Self Administration
+    - Venoms
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Development of alcohol use disorders largely depends on the effects
+  of alcohol on the brain reward systems. Emerging evidence indicate that common mechanisms
+  regulate food and alcohol intake and raise the possibility that endocrine signals
+  from the gut may play an important role for alcohol consumption, alcohol-induced
+  reward and the motivation to consume alcohol. Glucagon-like peptide 1 (GLP-1), a
+  gastrointestinal peptide regulating food intake and glucose homeostasis, has recently
+  been shown t

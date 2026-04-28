@@ -1,0 +1,17 @@
+source_id: yt-aGOQIJJv1Tw
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 42-minute structured survey of edge device architectures, security, and
+  embedded AI concepts with interview-prep framing; covers relevant technical ground
+  but lacks agentic workflow angle.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 🧠 Edge Devices Explained | Edge vs IoT vs Embedded | Edge AI | Edge Computing
+    | TinyML | Interview
+  published_at: '2025-08-31T07:30:00Z'
+  channel: Tech-AD-venture
+content_excerpt: This video is a complete guide on Edge Devices, covering interview
+  questions, real-world examples, architectures, security, and ...

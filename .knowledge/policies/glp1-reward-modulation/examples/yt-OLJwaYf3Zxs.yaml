@@ -1,0 +1,15 @@
+source_id: yt-OLJwaYf3Zxs
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Portuguese; discusses semaglutide and substance use but limited accessibility.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Ozempic e Rybelsus reduziu risco de novos transtornos relacionados ao uso
+    de: Álcool e outras Drogas'
+  published_at: '2026-03-11T22:34:00Z'
+  channel: Meu Lado Não Médico
+content_excerpt: Vamos mergulhar no artigo "Glucagon-like peptide-1 receptor agonists
+  and risk of substance use disorders among US veterans ...

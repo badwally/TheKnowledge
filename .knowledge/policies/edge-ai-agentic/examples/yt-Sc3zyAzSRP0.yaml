@@ -1,0 +1,17 @@
+source_id: yt-Sc3zyAzSRP0
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 29-minute Microsoft Developer session on Qualcomm AI Stack for developers
+  at Build 2023 covers the developer toolchain for scaling on-device AI applications
+  — substantive and from a credible conference venue, though age (2023) is borderline
+  for the 12-month policy.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Qualcomm® AI Stack for developers and extension to on-device AI | BRKFP305H
+  published_at: '2023-05-26T10:14:24Z'
+  channel: Microsoft Developer
+content_excerpt: Ever wonder how Qualcomm® AI Stack is helping developers scale their
+  artificial intelligence applications? We'll look at how ...

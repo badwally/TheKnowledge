@@ -1,0 +1,14 @@
+source_id: yt-sV4Hg46Qa-A
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'CVPR 2023 : Post-Processing Temporal Action Detection'
+  published_at: '2023-06-01T22:41:15Z'
+  channel: Sauradip Nag
+content_excerpt: Existing Temporal Action Detection (TAD) methods typically take a
+  pre-processing step in converting an input varying-length video ...

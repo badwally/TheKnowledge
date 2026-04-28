@@ -1,0 +1,64 @@
+source_id: pubmed-24105414
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Tests VTA GLP-1R signaling mechanisms for food intake suppression, directly
+  relevant to understanding mesolimbic reward modulation specificity.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The food intake-suppressive effects of glucagon-like peptide-1 receptor signaling
+    in the ventral tegmental area are mediated by AMPA/kainate receptors.
+  source_type: pubmed
+  authors:
+  - name: Elizabeth G Mietlicki-Baase
+    affiliation: Translational Neuroscience Program and.
+  - name: Pavel I Ortinski
+    affiliation: null
+  - name: Laura E Rupprecht
+    affiliation: null
+  - name: Diana R Olivos
+    affiliation: null
+  - name: Amber L Alhadeff
+    affiliation: null
+  - name: R Christopher Pierce
+    affiliation: null
+  - name: Matthew R Hayes
+    affiliation: null
+  published_at: 2013 10 08
+  source_metadata:
+    pmid: '24105414'
+    doi: 10.1152/ajpendo.00413.2013
+    journal: American journal of physiology. Endocrinology and metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Appetite Depressants
+    - Appetite Regulation
+    - Diet, High-Fat
+    - Feeding Behavior
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Male
+    - Rats
+    - Rats, Sprague-Dawley
+    - Receptors, AMPA
+    - Receptors, Glucagon
+    - Kainic Acid Receptors
+    - Reward
+    - Signal Transduction
+    - Ventral Tegmental Area
+    pmc_id: PMC3882373
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882373/
+content_excerpt: Glucagon-like peptide-1 receptor (GLP-1R) activation in the ventral
+  tegmental area (VTA) is physiologically relevant for the control of palatable food
+  intake. Here, we tested whether the food intake-suppressive effects of VTA GLP-1R
+  activation are mediated by glutamatergic signaling within the VTA. Intra-VTA injections
+  of the GLP-1R agonist exendin-4 (Ex-4) reduced palatable high-fat food intake in
+  rats primarily by reducing meal size; these effects were mediated in part via glutamatergic
+  AMPA/k

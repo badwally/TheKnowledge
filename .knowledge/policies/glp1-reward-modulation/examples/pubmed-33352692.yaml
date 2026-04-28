@@ -1,0 +1,62 @@
+source_id: pubmed-33352692
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Brain site-specific inhibitory effects of exendin-4 on alcohol intake and
+  operant responding for palatable food — directly tests regional dissociation of
+  GLP-1 reward effects.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Brain Site-Specific Inhibitory Effects of the GLP-1 Analogue Exendin-4 on
+    Alcohol Intake and Operant Responding for Palatable Food.
+  source_type: pubmed
+  authors:
+  - name: Kayla J Colvin
+    affiliation: Department of Psychology, Reed College, 3203 SE Woodstock Blvd.,
+      Portland, OR 97202, USA.
+  - name: Henry S Killen
+    affiliation: Department of Psychology, Reed College, 3203 SE Woodstock Blvd.,
+      Portland, OR 97202, USA.
+  - name: Maxwell J Kanter
+    affiliation: Department of Psychology, Reed College, 3203 SE Woodstock Blvd.,
+      Portland, OR 97202, USA.
+  - name: Maximilian C Halperin
+    affiliation: Department of Psychology, Reed College, 3203 SE Woodstock Blvd.,
+      Portland, OR 97202, USA.
+  - name: Liv Engel
+    affiliation: Department of Psychology, Reed College, 3203 SE Woodstock Blvd.,
+      Portland, OR 97202, USA.
+  - name: Paul J Currie
+    affiliation: Department of Psychology, Reed College, 3203 SE Woodstock Blvd.,
+      Portland, OR 97202, USA.
+  published_at: 2020 12 19
+  source_metadata:
+    pmid: '33352692'
+    doi: 10.3390/ijms21249710
+    journal: International journal of molecular sciences
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Alcohol Drinking
+    - Animals
+    - Brain
+    - Conditioning, Operant
+    - Eating
+    - Exenatide
+    - Food
+    - Hypoglycemic Agents
+    - Male
+    - Rats
+    - Rats, Sprague-Dawley
+    pmc_id: PMC7766977
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7766977/
+content_excerpt: Approximately 14.4 million Americans are experiencing alcohol use
+  disorder (AUD) and about two-thirds of people who experience drug addiction will
+  relapse, highlighting the need to develop novel and effective treatments. Glucagon-like
+  peptide-1 (GLP-1) is a peptide hormone implicated in the mesocorticolimbic reward
+  system and has become a peptide of interest with respect to its putative inhibitory
+  effects on drug reward. In order to further develop treatments for those diagnosed
+  with AUD, the in

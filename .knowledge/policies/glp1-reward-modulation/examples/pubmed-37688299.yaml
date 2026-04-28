@@ -1,0 +1,42 @@
+source_id: pubmed-37688299
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide and pregnancy — no reward content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide and pregnancy.
+  source_type: pubmed
+  authors:
+  - name: Kenneth Skov
+    affiliation: Clinical Pharmacology Unit, Zealand University Hospital Roskilde,
+      Roskilde, Denmark.
+  - name: Ida Nikoline Mandic
+    affiliation: Pediatric Unit, Slagelse Hospital, Slagelse, Denmark.
+  - name: Kathinka Marie Nyborg
+    affiliation: Department of Obstetrics and Gynecology, Fetal Medicine Unit, Slagelse
+      Hospital, Slagelse, Denmark.
+  published_at: 2023 09 08
+  source_metadata:
+    pmid: '37688299'
+    doi: 10.1002/ijgo.15092
+    journal: 'International journal of gynaecology and obstetrics: the official organ
+      of the International Federation of Gynaecology and Obstetrics'
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Female
+    - Humans
+    - Pregnancy
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Hypoglycemic Agents
+    - Overweight
+    - Pregnancy Outcome
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: '[Abstract not available]'

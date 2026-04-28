@@ -1,0 +1,17 @@
+source_id: yt-aawk4l9W9YU
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Apple Developer / WWDC24 official session on Core ML deployment optimizations
+  (speed, memory, model conversion) with 18 minutes of technical depth from Apple
+  engineers — directly covers on-device inference optimization for a major competitive
+  platform the GPM candidate must understand.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'WWDC24: Deploy machine learning and AI models on-device with Core ML | Apple'
+  published_at: '2024-06-11T15:27:22Z'
+  channel: Apple Developer
+content_excerpt: Learn new ways to optimize speed and memory performance when you
+  convert and run machine learning and AI models through ...

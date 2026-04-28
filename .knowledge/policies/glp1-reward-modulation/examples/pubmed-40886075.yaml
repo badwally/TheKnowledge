@@ -1,0 +1,77 @@
+source_id: pubmed-40886075
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide and tirzepatide in HFpEF patients — cardiology focus.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide and Tirzepatide in Patients With Heart Failure With Preserved
+    Ejection Fraction.
+  source_type: pubmed
+  authors:
+  - name: Nils Kr&#xfc;ger
+    affiliation: Division of Pharmacoepidemiology and Pharmacoeconomics, Department
+      of Medicine, Brigham and Women's Hospital, Boston, Massachusetts.
+  - name: Sebastian Schneeweiss
+    affiliation: Division of Pharmacoepidemiology and Pharmacoeconomics, Department
+      of Medicine, Brigham and Women's Hospital, Boston, Massachusetts.
+  - name: Kenshiro Fuse
+    affiliation: Division of Pharmacoepidemiology and Pharmacoeconomics, Department
+      of Medicine, Brigham and Women's Hospital, Boston, Massachusetts.
+  - name: Sofiya Matseyko
+    affiliation: Department of Cardiology, German Heart Center Munich, Technical University
+      of Munich, Munich, Germany.
+  - name: Sushama Kattinakere Sreedhara
+    affiliation: Division of Pharmacoepidemiology and Pharmacoeconomics, Department
+      of Medicine, Brigham and Women's Hospital, Boston, Massachusetts.
+  - name: Georg Hahn
+    affiliation: Division of Pharmacoepidemiology and Pharmacoeconomics, Department
+      of Medicine, Brigham and Women's Hospital, Boston, Massachusetts.
+  - name: Heribert Schunkert
+    affiliation: Department of Cardiology, German Heart Center Munich, Technical University
+      of Munich, Munich, Germany.
+  - name: Shirley V Wang
+    affiliation: Division of Pharmacoepidemiology and Pharmacoeconomics, Department
+      of Medicine, Brigham and Women's Hospital, Boston, Massachusetts.
+  published_at: 2025 Oct 14
+  source_metadata:
+    pmid: '40886075'
+    doi: 10.1001/jama.2025.14092
+    journal: JAMA
+    peer_reviewed: true
+    publication_type:
+    - Comparative Study
+    - Journal Article
+    - Observational Study
+    mesh_terms:
+    - Aged
+    - Female
+    - Humans
+    - Male
+    - Middle Aged
+    - Cohort Studies
+    - Diabetes Mellitus, Type 2
+    - Heart Failure
+    - Hospitalization
+    - Sitagliptin Phosphate
+    - Stroke Volume
+    - Tirzepatide
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Glucagon-Like Peptide 1
+    - Follow-Up Studies
+    - Obesity
+    - Administrative Claims, Healthcare
+    - Semaglutide
+    pmc_id: PMC12400167
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12400167/
+content_excerpt: 'Heart failure with preserved ejection fraction (HFpEF) is a major
+  cause of hospitalization, often occurring in patients with cardiometabolic comorbidities
+  such as obesity and type 2 diabetes. Although early trials of semaglutide and tirzepatide
+  have shown promising results in improving symptoms, those findings were based on
+  few clinical events, leaving treatment recommendations uncertain.
+
+
+  To evaluate the effectiveness and safety of semaglutide and tirzepatide in patients
+  with cardiometabolic HF'

@@ -1,0 +1,16 @@
+source_id: yt-uWCX1h9YamI
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Google for Developers talk (38 minutes) on deploying generative
+  AI to mobile and web via Google AI Edge — directly covers on-device inference architecture,
+  the Google AI Edge stack, and deployment patterns that are core to the domain.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Generative AI on mobile and web with Google AI Edge
+  published_at: '2024-05-16T14:06:08Z'
+  channel: Google for Developers
+content_excerpt: Unlock the secrets of bringing cutting-edge generative AI directly
+  to your users' devices. We'll share how to seamlessly deploy ...

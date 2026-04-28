@@ -1,0 +1,43 @@
+source_id: pubmed-37640171
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide and cardiovascular disease from SELECT trial — pure cardiovascular.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Obesity, Cardiovascular Disease, and the Promising Role of Semaglutide:
+    Insights from the SELECT Trial.'
+  source_type: pubmed
+  authors:
+  - name: Hamza Irfan
+    affiliation: 'Department of Cardiology, Shaikh Khalifa Bin Zayed Al Nahyan Medical
+      and Dental College Lahore, Lahore, Punjab, Pakistan. Electronic address: Hamy.khr.hi@gmail.com.'
+  published_at: 2023 08 26
+  source_metadata:
+    pmid: '37640171'
+    doi: 10.1016/j.cpcardiol.2023.102060
+    journal: Current problems in cardiology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Adult
+    - Humans
+    - Hypoglycemic Agents
+    - Diabetes Mellitus, Type 2
+    - Cardiovascular Diseases
+    - Obesity
+    - Randomized Controlled Trials as Topic
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Cardiovascular disease (CVD) is a leading global cause of death,
+  with preventable risk factors like obesity contributing most to it. Obesity's association
+  with CVD originate from factors like inflammation, insulin resistance, and altered
+  lipid profiles. Obesity also raises the risk of atrial fibrillation (AF) and sudden
+  cardiac death. Semaglutide, a GLP-1 receptor agonist, initially used for weight
+  loss and diabetes, emerged as a breakthrough in CVD prevention. The SELECT trial
+  assessed semaglut

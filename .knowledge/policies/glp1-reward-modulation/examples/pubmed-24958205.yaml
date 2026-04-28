@@ -1,0 +1,49 @@
+source_id: pubmed-24958205
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of appetite-regulating peptides including GLP-1 in addiction pathophysiology,
+  with pharmacotherapy implications.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Role of appetite-regulating peptides in the pathophysiology of addiction:
+    implications for pharmacotherapy.'
+  source_type: pubmed
+  authors:
+  - name: J&#xf6;rgen A Engel
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, POB 431, 405 30, Gothenburg,
+      Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: null
+  published_at: 2014 Oct
+  source_metadata:
+    pmid: '24958205'
+    doi: 10.1007/s40263-014-0178-y
+    journal: CNS drugs
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Animals
+    - Appetite
+    - Behavior, Addictive
+    - Brain
+    - Ghrelin
+    - Glucagon-Like Peptide 1
+    - Humans
+    - Reward
+    - Substance-Related Disorders
+    pmc_id: PMC4181507
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4181507/
+content_excerpt: Food intake and appetite are regulated by various circulating hormones
+  including ghrelin and glucagon-like-peptide 1 (GLP-1). Ghrelin, mainly released
+  from the stomach, increases food intake, induces appetite, enhances adiposity as
+  well as releases growth hormone. Hypothalamic "ghrelin receptors" (GHS-R1A) have
+  a critical role in food intake regulation, but GHS-R1A are also expressed in reward
+  related areas. GLP-1 is produced in the intestinal mucosa as well as in the hindbrain
+  in response to nu

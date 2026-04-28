@@ -1,0 +1,43 @@
+source_id: arxiv-2401.12350
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Quantization-aware NAS (QA-NAS) scaled to large tasks for edge deployment,
+  presented at CODAI workshop; provides concrete benchmark results on mixed-precision
+  models for edge-targeted semantic segmentation.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Scaling Up Quantization-Aware Neural Architecture Search for Efficient Deep
+    Learning on the Edge
+  source_type: arxiv
+  authors:
+  - name: Yao Lu
+    affiliation: null
+  - name: Hiram Rayo Torres Rodriguez
+    affiliation: null
+  - name: Sebastian Vogel
+    affiliation: null
+  - name: Nick van de Waterlaat
+    affiliation: null
+  - name: Pavol Jancura
+    affiliation: null
+  published_at: '2024-01-22T20:32:31Z'
+  source_metadata:
+    arxiv_id: '2401.12350'
+    categories:
+    - cs.CV
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2401.12350v1.pdf
+    primary_category: cs.CV
+    comment: Accepted at Workshop on Compilers, Deployment, and Tooling for Edge AI
+      (CODAI '23 ), September 21, 2023, Hamburg, Germany
+    journal_ref: null
+content_excerpt: 'Neural Architecture Search (NAS) has become the de-facto approach
+  for designing accurate and efficient networks for edge devices. Since models are
+  typically quantized for edge deployment, recent work has investigated quantization-aware
+  NAS (QA-NAS) to search for highly accurate and efficient quantized models. However,
+  existing QA-NAS approaches, particularly few-bit mixed-precision (FB-MP) methods,
+  do not scale to larger tasks. Consequently, QA-NAS has mostly been limited to low-scale
+  tasks and '

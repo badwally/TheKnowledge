@@ -1,0 +1,54 @@
+source_id: pubmed-36578889
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Meta-analysis of semaglutide weight loss efficacy in non-diabetic obesity
+  — pure efficacy.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Efficacy and Safety of Semaglutide for Weight Loss in Obesity Without Diabetes:
+    A Systematic Review and Meta-Analysis.'
+  source_type: pubmed
+  authors:
+  - name: Hanna Clementine Tan
+    affiliation: Department of Medicine, St. Luke's Medical Center, Quezon City, Philippines.
+  - name: Oliver Allan Dampil
+    affiliation: Section of Endocrinology, Diabetes and Metabolism, Department of
+      Medicine, St. Luke's Medical Center, Quezon City, Philippines.
+  - name: Maricar Mae Marquez
+    affiliation: Department of Medicine, St. Luke's Medical Center, Quezon City, Philippines.
+  published_at: 2022 08 23
+  source_metadata:
+    pmid: '36578889'
+    doi: 10.15605/jafes.037.02.14
+    journal: Journal of the ASEAN Federation of Endocrine Societies
+    peer_reviewed: true
+    publication_type:
+    - Meta-Analysis
+    - Systematic Review
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Diabetes Mellitus, Type 2
+    - Hypoglycemic Agents
+    - Acute Disease
+    - Treatment Outcome
+    - Double-Blind Method
+    - Pancreatitis
+    - Weight Loss
+    - Obesity
+    - Randomized Controlled Trials as Topic
+    - Semaglutide
+    pmc_id: PMC9758543
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9758543/
+content_excerpt: 'The weight loss benefit of semaglutide in patients with diabetes
+  is well-documented, but its clinical utility in treating obesity among patients
+  without diabetes is less described. We therefore assessed the efficacy and safety
+  of subcutaneous semaglutide as treatment for obesity in patients without diabetes.
+
+
+  A comprehensive search of PubMed/MEDLINE, Cochrane and Google scholar was performed
+  to identify trials on the efficacy and safety of subcutaneous semaglutide on patients
+  with obesity withou'

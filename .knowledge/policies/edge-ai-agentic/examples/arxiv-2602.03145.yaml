@@ -1,0 +1,37 @@
+source_id: arxiv-2602.03145
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Proposes the 'Internet of Agentic AI' framework for heterogeneous agents
+  distributed across cloud and edge infrastructure with coalition formation over MCP;
+  directly addresses the edge+agentic intersection with formal modeling of network
+  locality, capability coverage, and decentralized coordination.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Internet of Agentic AI: Incentive-Compatible Distributed Teaming and Workflow'
+  source_type: arxiv
+  authors:
+  - name: Ya-Ting Yang
+    affiliation: null
+  - name: Quanyan Zhu
+    affiliation: null
+  published_at: '2026-02-03T06:00:34Z'
+  source_metadata:
+    arxiv_id: '2602.03145'
+    categories:
+    - cs.GT
+    - cs.AI
+    - cs.MA
+    pdf_url: http://arxiv.org/pdf/2602.03145v1.pdf
+    primary_category: cs.GT
+    comment: null
+    journal_ref: null
+content_excerpt: Large language models (LLMs) have enabled a new class of agentic
+  AI systems that reason, plan, and act by invoking external tools. However, most
+  existing agentic architectures remain centralized and monolithic, limiting scalability,
+  specialization, and interoperability. This paper proposes a framework for scalable
+  agentic intelligence, termed the Internet of Agentic AI, in which autonomous, heterogeneous
+  agents distributed across cloud and edge infrastructure dynamically form coalitions
+  to execu

@@ -1,0 +1,74 @@
+source_id: pubmed-26303264
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Liraglutide attenuates reinforcing properties of alcohol, comparative pharmacology
+  of a clinically used GLP-1 RA on reward.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide 1 receptor agonist liraglutide attenuates the reinforcing
+    properties of alcohol in rodents.
+  source_type: pubmed
+  authors:
+  - name: Daniel Vall&#xf6;f
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Sweden.
+  - name: Paola Maccioni
+    affiliation: Neuroscience Institute, Section of Cagliari, National Research Council
+      of Italy, Italy.
+  - name: Giancarlo Colombo
+    affiliation: Neuroscience Institute, Section of Cagliari, National Research Council
+      of Italy, Italy.
+  - name: Minja Mandrapa
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Sweden.
+  - name: Julia Winsa J&#xf6;rnulf
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Sweden.
+  - name: Emil Egecioglu
+    affiliation: Institute of Experimental Medical Sciences, Section of Diabetes and
+      Metabolism, Lund University, Sweden.
+  - name: J&#xf6;rgen A Engel
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Sweden.
+  published_at: 2015 08 25
+  source_metadata:
+    pmid: '26303264'
+    doi: 10.1111/adb.12295
+    journal: Addiction biology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Alcoholism
+    - Animals
+    - Central Nervous System Depressants
+    - Conditioning, Operant
+    - Disease Models, Animal
+    - Dopamine
+    - Ethanol
+    - Hypoglycemic Agents
+    - Liraglutide
+    - Mice
+    - Microdialysis
+    - Nucleus Accumbens
+    - Prostheses and Implants
+    - Rats
+    - Reinforcement, Psychology
+    - Reward
+    - Self Administration
+    pmc_id: PMC5049632
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5049632/
+content_excerpt: The incretin hormone, glucagon-like peptide 1 (GLP-1), regulates
+  gastric emptying, glucose-dependent stimulation of insulin secretion and glucagon
+  release, and GLP-1 analogs are therefore approved for treatment of type II diabetes.
+  GLP-1 receptors are expressed in reward-related areas such as the ventral tegmental
+  area and nucleus accumbens, and GLP-1 was recently shown to regulate several alcohol-mediated
+  behaviors as well as amphetamine-induced, cocaine-induced and nicotine-induced reward.
+  The

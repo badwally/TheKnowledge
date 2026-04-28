@@ -1,0 +1,15 @@
+source_id: yt-aCUsLuyjF7I
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Not relevant to GLP-1 reward/neurological effects; unrelated medical topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Glioblastoma Explained #mcmasteruniversity #glioblastoma @centrefordiscoveryincancer5040
+    #shorts'
+  published_at: '2023-10-06T14:45:47Z'
+  channel: McMaster University Health Sciences
+content_excerpt: Glioblastoma is the most common and deadly malignant primary brain
+  tumour in adults. It is very difficult to treat but scientists have ...

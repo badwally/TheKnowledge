@@ -1,0 +1,14 @@
+source_id: yt-qkhvIZk5csk
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Ozempic side effects; general, no reward mechanism depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Beware of this new problem with Ozempic !
+  published_at: '2023-09-13T13:51:11Z'
+  channel: Dr G Messina Aesthetic & Medicine
+content_excerpt: Ozempic is a drug initially created to treat type II diabetes. However,
+  it was found to cause significant weight loss and thus has ...

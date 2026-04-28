@@ -1,0 +1,16 @@
+source_id: yt-e2zIr_2JMbE
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Comprehensive 63-minute course covering 20 agentic AI design patterns —
+  broad architectural coverage of agent coordination patterns qualifies under the
+  broadening criteria, though lacks edge-specific content.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Master ALL 20 Agentic AI Design Patterns [Complete Course]
+  published_at: '2025-09-17T01:45:06Z'
+  channel: Mark Kashef
+content_excerpt: 'Join My Community to Level Up ➡ https://www.skool.com/earlyaidopters/about
+  Gumroad Link to Assets in the Video: ...'

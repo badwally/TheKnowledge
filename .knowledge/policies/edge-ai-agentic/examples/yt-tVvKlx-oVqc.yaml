@@ -1,0 +1,16 @@
+source_id: yt-tVvKlx-oVqc
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Staff SWE from Google presenting MediaPipe's cross-platform AI pipeline
+  approach for browser and mobile deployment (14 minutes, Chrome for Developers channel)
+  — covers Google's on-device AI runtime strategy with technical specifics.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MediaPipe Web: Bringing cross-platform AI tech to the browser'
+  published_at: '2024-11-30T18:00:38Z'
+  channel: Chrome for Developers
+content_excerpt: Tyler Mullen (Staff SWE, Google) will teach you about MediaPipe's
+  cross-platform approach to building AI pipelines and bringing ...

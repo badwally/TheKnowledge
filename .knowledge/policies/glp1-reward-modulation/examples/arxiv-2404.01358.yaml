@@ -1,0 +1,43 @@
+source_id: arxiv-2404.01358
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: AI analysis of GLP-1 RA adverse side effects from social media — may identify
+  reward-related and sexual side effects from large-scale data.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Utilizing AI and Social Media Analytics to Discover Adverse Side Effects
+    of GLP-1 Receptor Agonists
+  source_type: arxiv
+  authors:
+  - name: Alon Bartal
+    affiliation: null
+  - name: Kathleen M. Jagodnik
+    affiliation: null
+  - name: Nava Pliskin
+    affiliation: null
+  - name: Abraham Seidmann
+    affiliation: null
+  published_at: '2024-04-01T09:48:14Z'
+  source_metadata:
+    arxiv_id: '2404.01358'
+    categories:
+    - q-bio.QM
+    - cs.AI
+    - cs.CL
+    - cs.IR
+    - cs.LG
+    - cs.SI
+    pdf_url: http://arxiv.org/pdf/2404.01358v1.pdf
+    primary_category: q-bio.QM
+    comment: 19 pages, 7 figures, 3 tables, 1 Appendix table
+    journal_ref: null
+content_excerpt: 'Adverse side effects (ASEs) of drugs, revealed after FDA approval,
+  pose a threat to patient safety. To promptly detect overlooked ASEs, we developed
+  a digital health methodology capable of analyzing massive public data from social
+  media, published clinical research, manufacturers'' reports, and ChatGPT. We uncovered
+  ASEs associated with the glucagon-like peptide 1 receptor agonists (GLP-1 RA), a
+  market expected to grow exponentially to $133.5 billion USD by 2030. Using a Named
+  Entity Recognition '

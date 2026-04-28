@@ -1,0 +1,14 @@
+source_id: yt-UDj9hbwuHBU
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Object Tracking and Reidentification with FairMOT
+  published_at: '2022-09-14T15:12:08Z'
+  channel: LearnOpenCV
+content_excerpt: FairMOT is a model for multi-object tracking which consists of two
+  homogeneous branches to predict pixel-wise objectness scores ...

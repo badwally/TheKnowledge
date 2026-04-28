@@ -1,0 +1,39 @@
+source_id: arxiv-0706.1293
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Anhedonia in mice from social stress — no GLP-1 content, general depression
+  model.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Influence of experimental context on the development of anhedonia in male
+    mice imposed to chronic social stress
+  source_type: arxiv
+  authors:
+  - name: N. P. Bondar
+    affiliation: null
+  - name: I. L. Kovalenko
+    affiliation: null
+  - name: D. F. Avgustinovich
+    affiliation: null
+  - name: N. N. Kudryavtseva
+    affiliation: null
+  published_at: '2007-06-09T08:12:55Z'
+  source_metadata:
+    arxiv_id: '0706.1293'
+    categories:
+    - q-bio.OT
+    - q-bio.QM
+    pdf_url: http://arxiv.org/pdf/0706.1293v3.pdf
+    primary_category: q-bio.OT
+    comment: 9 pages, 3 figures, 1 table
+    journal_ref: null
+content_excerpt: 'Anhedonia is one of the key symptoms of depression in humans. Consumption
+  of 1% sucrose solution supplemented with 0.2% vanillin was studied in two experimental
+  contexts in male mice living under chronic social stress induced by daily experience
+  of defeats in agonistic interactions and leading to development of depression. In
+  the first experiment, vanillin sucrose solution was made available as an option
+  of water during 10 days to mice living in group home cages. Then the mice were subjected
+  to '

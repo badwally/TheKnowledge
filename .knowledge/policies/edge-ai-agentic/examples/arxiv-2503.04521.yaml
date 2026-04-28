@@ -1,0 +1,47 @@
+source_id: arxiv-2503.04521
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Directly addresses edge inference acceleration via DNN offloading from
+  end devices to edge servers, with a novel auction-based pricing mechanism (AERIA)
+  for multi-dimensional optimization of model partitioning, pricing, and resource
+  allocation. Accepted in IEEE Transactions on Mobile Computing with experimental
+  validation.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Dynamic Pricing for On-Demand DNN Inference in the Edge-AI Market
+  source_type: arxiv
+  authors:
+  - name: Songyuan Li
+    affiliation: null
+  - name: Jia Hu
+    affiliation: null
+  - name: Geyong Min
+    affiliation: null
+  - name: Haojun Huang
+    affiliation: null
+  - name: Jiwei Huang
+    affiliation: null
+  published_at: '2025-03-06T15:08:31Z'
+  source_metadata:
+    arxiv_id: '2503.04521'
+    categories:
+    - cs.AI
+    - cs.CE
+    - cs.DC
+    - cs.SE
+    pdf_url: http://arxiv.org/pdf/2503.04521v2.pdf
+    primary_category: cs.AI
+    comment: 'Accepted for publication in IEEE Transactions on Mobile Computing. Index
+      Terms: Edge-AI, DNN Inference Offloading, Resource Management, Dynamic Pricing,
+      Auction Mechanism'
+    journal_ref: null
+content_excerpt: The convergence of edge computing and Artificial Intelligence (AI)
+  gives rise to Edge-AI, which enables the deployment of real-time AI applications
+  at the network edge. A key research challenge in Edge-AI is edge inference acceleration,
+  which aims to realize low-latency high-accuracy Deep Neural Network (DNN) inference
+  by offloading partitioned inference tasks from end devices to edge servers. However,
+  existing research has yet to adopt a practical Edge-AI market perspective, which
+  would explore

@@ -1,0 +1,79 @@
+source_id: pubmed-40240532
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Cross-sectional analysis of male sexual dysfunction associated with GLP-1
+  RAs from FAERS data — directly quantifies sexual side effects across GLP-1 RA class.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Male sexual dysfunction associated with GLP-1 receptor agonists: a cross-sectional
+    analysis of FAERS data.'
+  source_type: pubmed
+  authors:
+  - name: Ashkan Pourabhari Langroudi
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA.
+  - name: Abby L Chen
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA.
+  - name: Satvir Basran
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA.
+  - name: Elijah R Sommer
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA.
+  - name: James Stinson
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA.
+  - name: Yu-Sheng Cheng
+    affiliation: Department of Urology, National Cheng Kung University Hospital, College
+      of Medicine, National Cheng Kung University, Tainan, Taiwan.
+  - name: Francesco Del Giuduce
+    affiliation: Department of Maternal Infant and Urologic Sciences, "Sapienza" University
+      of Rome, Policlinico Umberto I Hospital, Rome, Italy.
+  - name: Michael Scott
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA.
+  - name: Michael L Eisenberg
+    affiliation: Department of Urology, School of Medicine, Stanford University, Stanford,
+      CA, USA. eisenberg@stanford.edu.
+  published_at: 2025 04 16
+  source_metadata:
+    pmid: '40240532'
+    doi: 10.1038/s41443-025-01061-2
+    journal: International journal of impotence research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Male
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Middle Aged
+    - Cross-Sectional Studies
+    - Adult
+    - Exenatide
+    - Hypoglycemic Agents
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Adverse Drug Reaction Reporting Systems
+    - Aged
+    - Erectile Dysfunction
+    - Sexual Dysfunction, Physiological
+    - United States
+    - Liraglutide
+    - Immunoglobulin Fc Fragments
+    - Recombinant Fusion Proteins
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Glucagon-like peptide-1 (GLP-1) receptor agonists, widely prescribed
+  for type 2 diabetes and weight management, are known for their metabolic benefits
+  but may have unrecognized side effects. This study investigates the association
+  between GLP-1 receptor agonists and male sexual dysfunction using data from the
+  FDA Adverse Event Reporting System (FAERS). Reports from Q4 2003 to Q1 2024 were
+  analyzed using the OpenVigil 2.1 platform to identify male patients experiencing
+  orgasmic dysfunction, erect

@@ -1,0 +1,91 @@
+source_id: pubmed-39515485
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Systematic review of GLP-1 mono-agonist effects on brain functional connectivity
+  — directly examines neural target engagement relevant to reward networks.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'A systematic review in effects of glucagon-like peptide-1 (GLP-1) mono-agonists
+    on functional connectivity: Target engagement and rationale for the development
+    in mental disorders.'
+  source_type: pubmed
+  authors:
+  - name: Hezekiah C T Au
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada.
+      Electronic address: hezekiah.au@mail.utoronto.ca.'
+  - name: Yang Jing Zheng
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada.
+      Electronic address: yangjing.zheng@mail.utoronto.ca.'
+  - name: Gia Han Le
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada;
+      Mood Disorder Psychopharmacology Unit, University Health Network, Toronto, Ontario,
+      Canada; Institute of Medical Science, University of Toronto, Toronto, Ontario,
+      Canada. Electronic address: hanny.le@mail.utoronto.ca.'
+  - name: Sabrina Wong
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada;
+      Mood Disorder Psychopharmacology Unit, University Health Network, Toronto, Ontario,
+      Canada; Department of Pharmacology and Toxicology, University of Toronto, Toronto,
+      Ontario, Canada. Electronic address: sabrinal.wong@mail.utoronto.ca.'
+  - name: Lee Phan
+    affiliation: 'Mood Disorder Psychopharmacology Unit, University Health Network,
+      Toronto, Ontario, Canada. Electronic address: lee.phan@mail.utoronto.ca.'
+  - name: Kayla M Teopiz
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada.
+      Electronic address: kayla.teopiz@mail.utoronto.ca.'
+  - name: Angela T H Kwan
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada;
+      Faculty of Medicine, University of Ottawa, Ottawa, ON, Canada. Electronic address:
+      angela.kwan@mail.utoronto.ca.'
+  - name: Taeho Greg Rhee
+    affiliation: 'Department of Psychiatry, Yale School of Medicine, New Haven, CT,
+      USA; Department of Public Health Sciences, University of Connecticut School
+      of Medicine, Farmington, CT, USA. Electronic address: taeho.rhee@yale.edu.'
+  - name: Joshua D Rosenblat
+    affiliation: 'Mood Disorder Psychopharmacology Unit, University Health Network,
+      Toronto, Ontario, Canada; Institute of Medical Science, University of Toronto,
+      Toronto, Ontario, Canada; Department of Pharmacology and Toxicology, University
+      of Toronto, Toronto, Ontario, Canada; Department of Psychiatry, University of
+      Toronto, Toronto, Ontario, Canada. Electronic address: joshua.rosenblat@uhn.ca.'
+  - name: Roger Ho
+    affiliation: 'Division of Life Science (LIFS), Faculty of Science, Hong Kong University
+      of Science and Technology (HKUST), Hong Kong; Institute for Health Innovation
+      and Technology (iHealthtech), National University of Singapore, Singapore; Department
+      of Psychological Medicine, Yong Loo Lin School of Medicine, National University
+      of Singapore, Singapore. Electronic address: rogercmho@ust.hk.'
+  - name: Roger S McIntyre
+    affiliation: 'Brain and Cognition Discovery Foundation, Toronto, Ontario, Canada;
+      Department of Pharmacology and Toxicology, University of Toronto, Toronto, Ontario,
+      Canada; Department of Psychiatry, University of Toronto, Toronto, Ontario, Canada.
+      Electronic address: roger.mcintyre@bcdf.org.'
+  published_at: 2024 11 07
+  source_metadata:
+    pmid: '39515485'
+    doi: 10.1016/j.jad.2024.11.019
+    journal: Journal of affective disorders
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms:
+    - Humans
+    - Mental Disorders
+    - Glucagon-Like Peptide 1
+    - Brain
+    - Nerve Net
+    - Default Mode Network
+    - Adult
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'The mechanistic role of glucagon-like peptide-1 (GLP-1) and GLP-1
+  receptor agonists (GLP-1RAs) in modulating brain functional activity has been inadequately
+  examined. Mental disorders are characterized by dysregulated functional connectivity
+  in brain circuits that subserve phenomenology. We conducted a comprehensive synthesis
+  of known effects of GLP-1 and GLP-1RAs on functional connectivity.
+
+
+  We conducted a systematic review examining studies that investigate changes in functional
+  connectivity m'

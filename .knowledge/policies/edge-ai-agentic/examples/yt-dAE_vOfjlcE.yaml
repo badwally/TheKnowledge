@@ -1,0 +1,17 @@
+source_id: yt-dAE_vOfjlcE
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: EDGE AI FOUNDATION 43-minute panel from EDGE AI Taipei 2025 with Qualcomm,
+  Renesas, Advantech, and others discussing real-world edge AI deployment economics
+  (cloud bill vs. latency tradeoffs) — multi-vendor ecosystem panel with strategic
+  and technical specifics directly relevant to the competitive landscape.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Edge AI in Action: Qualcomm, Renesas, Enerzai, Kudrat AI &amp; Advantech'
+  published_at: '2025-12-03T15:01:27Z'
+  channel: EDGE AI FOUNDATION
+content_excerpt: When your cloud bill spikes and latency won't quit—it's time to bring
+  AI to the edge. In this dynamic EDGE AI Taipei 2025 panel, ...

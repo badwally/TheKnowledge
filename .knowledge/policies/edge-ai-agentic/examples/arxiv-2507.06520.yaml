@@ -1,0 +1,42 @@
+source_id: arxiv-2507.06520
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Presents Gradientsys, a multi-agent scheduler using typed Model Context
+  Protocol (MCP) and ReAct-based dynamic planning for parallel orchestration of heterogeneous
+  agents. Directly addresses MCP protocol design, agent scheduling topology, hybrid
+  sync/async execution, and observability — core agentic workflow architecture topics.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Gradientsys: A Multi-Agent LLM Scheduler with ReAct Orchestration'
+  source_type: arxiv
+  authors:
+  - name: Xinyuan Song
+    affiliation: null
+  - name: Zeyu Wang
+    affiliation: null
+  - name: Siyi Wu
+    affiliation: null
+  - name: Tianyu Shi
+    affiliation: null
+  - name: Lynn Ai
+    affiliation: null
+  published_at: '2025-07-09T03:40:56Z'
+  source_metadata:
+    arxiv_id: '2507.06520'
+    categories:
+    - cs.MA
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2507.06520v1.pdf
+    primary_category: cs.MA
+    comment: null
+    journal_ref: null
+content_excerpt: We present Gradientsys, a next-generation multi-agent scheduling
+  framework that coordinates diverse specialized AI agents using a typed Model-Context
+  Protocol (MCP) and a ReAct-based dynamic planning loop. At its core, Gradientsys
+  employs an LLM-powered scheduler for intelligent one-to-many task dispatch, enabling
+  parallel execution of heterogeneous agents such as PDF parsers, web search modules,
+  GUI controllers, and web builders. The framework supports hybrid synchronous/asynchronous
+  execution,

@@ -1,0 +1,17 @@
+source_id: yt-HcPegfd5-yo
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 27-minute AI Security Oxford session on trust degradation and model integrity
+  in distributed 6G edge-cloud AI architectures — directly addresses edge-cloud hybrid
+  deployment and security concerns, which are core domain topics, even though agentic
+  workflows are not explicitly covered.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Cloud and edge computing
+  published_at: '2025-06-02T13:40:20Z'
+  channel: AI SECURITY OXFORD
+content_excerpt: Trust Degradation and Model Integrity in Distributed 6G Edge-Cloud
+  AI Architectures This exercise lays the foundation for ...

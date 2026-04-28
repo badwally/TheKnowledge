@@ -1,0 +1,16 @@
+source_id: yt-4-FH09AMsp0
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology comparison of AI agents vs. Mixture of Experts architectures
+  covers model design tradeoffs relevant to constrained inference environments; moderate
+  technical substance but cloud-centric framing.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'AI Agents vs Mixture of Experts: AI Workflows Explained'
+  published_at: '2025-08-23T11:00:06Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx Data Scientist? Register now
+  and use code IBMTechYT20 for 20% off of your exam ...

@@ -1,0 +1,65 @@
+source_id: pubmed-28595561
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of sexual dysfunction and cardiovascular risk with pharmacotherapy
+  — general overview without specific GLP-1 reward mechanism content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Sexual Dysfunction, Cardiovascular Risk and Effects of Pharmacotherapy.
+  source_type: pubmed
+  authors:
+  - name: Konstantinos P Imprialos
+    affiliation: Second Propaedeutic Department of Internal Medicine, Medical School,
+      Aristotle University of Thessaloniki, Hippokration Hospital, Thessaloniki. Greece.
+  - name: Konstantinos Stavropoulos
+    affiliation: Second Propaedeutic Department of Internal Medicine, Medical School,
+      Aristotle University of Thessaloniki, Hippokration Hospital, Thessaloniki. Greece.
+  - name: Michael Doumas
+    affiliation: Second Propaedeutic Department of Internal Medicine, Medical School,
+      Aristotle University of Thessaloniki, Hippokration Hospital, Thessaloniki. Greece.
+  - name: Konstantinos Tziomalos
+    affiliation: First Propaedeutic Department of Medicine, Medical School, Aristotle
+      University of Thessaloniki, AHEPA Hospital, Thessaloniki. Greece.
+  - name: Asterios Karagiannis
+    affiliation: Second Propaedeutic Department of Internal Medicine, Medical School,
+      Aristotle University of Thessaloniki, Hippokration Hospital, Thessaloniki. Greece.
+  - name: Vasilios G Athyros
+    affiliation: Second Propaedeutic Department of Internal Medicine, Medical School,
+      Aristotle University of Thessaloniki, Hippokration Hospital, Thessaloniki. Greece.
+  published_at: 2018 Jan 26
+  source_metadata:
+    pmid: '28595561'
+    doi: 10.2174/1570161115666170609101502
+    journal: Current vascular pharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Cardiovascular Agents
+    - Cardiovascular Diseases
+    - Comorbidity
+    - Drug Interactions
+    - Erectile Dysfunction
+    - Female
+    - Humans
+    - Male
+    - Penile Erection
+    - Phosphodiesterase Inhibitors
+    - Polypharmacy
+    - Prevalence
+    - Risk Factors
+    - Sexual Behavior
+    - Treatment Outcome
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Sexual dysfunction affects millions of people with an increasing
+  prevalence, worldwide. The pathophysiology of the disease shares several similarities
+  with cardiovascular disease (CVD), including atherosclerosis, endothelial dysfunction,
+  structural vascular damage and subclinical inflammation. Erectile dysfunction (ED)
+  and female sexual dysfunction are common among patients with CVD and risk factors
+  such as hypertension, diabetes, obesity and metabolic syndrome. Given the common
+  pathogenesis of '

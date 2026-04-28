@@ -1,0 +1,17 @@
+source_id: yt-2czYyrTzILg
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AI Engineer conference talk (26 min) on multi-agent orchestration patterns
+  at scale — directly addresses distributed systems challenges of 50-agent systems,
+  a key agentic workflow problem with clear edge implications for a GPM candidate.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'From Chaos to Choreography: Multi-Agent Orchestration Patterns That Actually
+    Work — Sandipan Bhaumik'
+  published_at: '2026-04-08T10:23:12Z'
+  channel: AI Engineer
+content_excerpt: 'One AI agent is a feature. Fifty agents is a distributed systems
+  problem nobody''s discussing. I''ve seen this pattern: teams build one ...'

@@ -1,0 +1,16 @@
+source_id: yt-bsopLee3IKQ
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: NVIDIA Developer channel demo of OpenClaw running a Qwen 2B model locally
+  on Jetson via Ollama illustrates concrete on-device LLM inference on edge hardware,
+  but at 2m12s it is a short demo without architectural discussion.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Edge AI in Action: OpenClaw + Jetson Orin Nano Super'
+  published_at: '2026-03-10T21:06:03Z'
+  channel: NVIDIA Developer
+content_excerpt: Watch this quick walkthrough of OpenClaw running locally on NVIDIA
+  Jetson with Ollama and a compact Qwen 3.5 2B model, ...

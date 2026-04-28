@@ -1,0 +1,45 @@
+source_id: pubmed-40302255
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Emerging therapeutics for SUDs focusing on GLP-1R agonists, D3R antagonists
+  — comparative pharmacology for reward modulation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Emerging Therapeutics in the Treatment of Substance Use Disorders: A Focus
+    on GLP-1 Receptor Agonists, D3R Antagonists, and CRF Antagonists.'
+  source_type: pubmed
+  authors:
+  - name: Khaled Draghmeh
+    affiliation: Department of Research, VA Connecticut Healthcare System, West Haven,
+      CT 06516, USA.
+  - name: Brian Fuehrlein
+    affiliation: Department of Psychiatry, Yale School of Medicine, New Haven, CT
+      06510, USA.
+  published_at: 2025 Apr 24
+  source_metadata:
+    pmid: '40302255'
+    doi: 10.31083/JIN26361
+    journal: Journal of integrative neuroscience
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Substance-Related Disorders
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Receptors, Dopamine D3
+    - Corticotropin-Releasing Hormone
+    - Animals
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'The prevalence and rising use of alcohol, opioids, and stimulants
+  have led to substance use disorders (SUDs) that are a significant public health
+  challenge. Traditional treatments offer some benefit; however, they often limited
+  by efficacy, side effects, and accessibility, highlighting the urgent need for novel
+  therapeutics. This review explores the current literature surrounding three different
+  classes of novel treatments: glucagon-like peptide-1 (GLP-1) receptor agonists,
+  dopamine D3 receptor '

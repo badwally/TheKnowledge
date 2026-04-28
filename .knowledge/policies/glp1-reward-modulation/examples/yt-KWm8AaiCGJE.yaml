@@ -1,0 +1,13 @@
+source_id: yt-KWm8AaiCGJE
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Not relevant to GLP-1 reward/neurological effects; unrelated medical topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Why Is Crohn&#39;s So Dangerous?
+  published_at: '2024-06-26T19:34:00Z'
+  channel: Dr James Gill
+content_excerpt: Why Is Crohn's So Dangerous?

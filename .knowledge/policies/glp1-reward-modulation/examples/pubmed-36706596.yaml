@@ -1,0 +1,71 @@
+source_id: pubmed-36706596
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide inhibits cardiomyocyte apoptosis — cardiovascular mechanism,
+  no reward content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide inhibits ischemia/reperfusion-induced cardiomyocyte apoptosis
+    through activating PKG/PKCε/ERK1/2 pathway.
+  source_type: pubmed
+  authors:
+  - name: Qiuxia Zhu
+    affiliation: Department of Cardiology, The Affiliated Hospital of Southwest Medical
+      University, Number 25, Taiping Street. Jiangyang District, 400042, Luzhou, Sichuan,
+      China.
+  - name: Yong Luo
+    affiliation: Department of Cardiology, Chongqing University Jiangjin Hospital,
+      School of Medicine, Chongqing University, Number 725, Jiangzhou Avenue, Jiangjin
+      District, 402260, Chongqing, China.
+  - name: Yuetao Wen
+    affiliation: Department of Neurosurgery, Chongqing University Jiangjin Hospital,
+      School of Medicine, Chongqing University, Number 725, Jiangzhou Avenue, Jiangjin
+      District, 402260, Chongqing, China.
+  - name: Ding Wang
+    affiliation: Department of Cardiology, The Affiliated Hospital of Southwest Medical
+      University, Number 25, Taiping Street. Jiangyang District, 400042, Luzhou, Sichuan,
+      China.
+  - name: Jing Li
+    affiliation: Department of Cardiology, The Affiliated Hospital of Southwest Medical
+      University, Number 25, Taiping Street. Jiangyang District, 400042, Luzhou, Sichuan,
+      China.
+  - name: Zhongcai Fan
+    affiliation: 'Department of Cardiology, The Affiliated Hospital of Southwest Medical
+      University, Number 25, Taiping Street. Jiangyang District, 400042, Luzhou, Sichuan,
+      China. Electronic address: zhongcaifan1982@swmu.edu.cn.'
+  published_at: 2023 01 17
+  source_metadata:
+    pmid: '36706596'
+    doi: 10.1016/j.bbrc.2023.01.049
+    journal: Biochemical and biophysical research communications
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Rats
+    - Animals
+    - MAP Kinase Signaling System
+    - Myocytes, Cardiac
+    - Cyclic GMP-Dependent Protein Kinases
+    - Protein Kinase C-epsilon
+    - Apoptosis
+    - Myocardial Infarction
+    - Myocardial Reperfusion Injury
+    - Glucagon-Like Peptide 1
+    - Reperfusion
+    - Semaglutide
+    - Cyclic GMP
+    - Thionucleotides
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Apoptosis is a major pathophysiological change following myocardial
+  ischemia/reperfusion (I/R) injury. Glucagon-like peptide 1 (GLP-1) and its receptor
+  GLP-1R are widely expressed in the cardiovascular system and GLP-1/GLP-1R activates
+  the protein kinase G (PKG)-related signaling pathway. Therefore, this study tested
+  whether semaglutide, a new GLP-1 analog, inhibits I/R injury-induced cardiomyocyte
+  apoptosis by activating the PKG/PKCε/ERK1/2 pathway. We induced myocardial I/R injury
+  in rats and '

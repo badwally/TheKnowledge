@@ -1,0 +1,18 @@
+source_id: yt-ceP-x81XdjU
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 2-hour hands-on MLOps pipeline session for Azure IoT Edge with Raspberry
+  Pi deployment covers end-to-end edge MLOps with a concrete cloud-managed workflow
+  — substantive but from 2022 and Azure-centric, reducing strategic value for a Google-focused
+  GPM candidate.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MLOps for Azure IoT Edge | Setup #MLOps Pipeline for Azure #IOTEdge with
+    #raspberrypi deployment'
+  published_at: '2022-05-26T09:42:27Z'
+  channel: Kasam Shaikh
+content_excerpt: 'This video is the recording of the twelth session covering #MLOps
+  Pipeline for Azure IOT Edge #raspberrypi deployment of the ...'

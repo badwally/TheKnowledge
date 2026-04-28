@@ -1,0 +1,14 @@
+source_id: yt-icTEn_g8CvQ
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio-temporal processing algorithms of image(...)
+  published_at: '2014-12-27T03:18:29Z'
+  channel: CampusdoMar
+content_excerpt: Spatio-temporal processing algorithms of image sequences for automatic
+  recognition and registration of motion - Spatio-temporal ...

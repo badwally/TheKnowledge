@@ -1,0 +1,14 @@
+source_id: yt--7qKj6-523k
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: No discussion of GLP-1 or reward circuitry; outside research scope.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Wellbutrin: the good, the bad, the ugly. #psychiatrist #antidepressants
+    #psychiatricmedications'
+  published_at: '2023-09-23T21:12:47Z'
+  channel: Dr. Josef
+content_excerpt: ''

@@ -1,0 +1,58 @@
+source_id: pubmed-38549620
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Exendin-4 disrupts responding to reward-predictive incentive cues — directly
+  tests GLP-1 RA effects on cue-driven reward behavior, central to food noise question.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Synthetic exendin-4 disrupts responding to reward predictive incentive cues
+    in male rats.
+  source_type: pubmed
+  authors:
+  - name: Ken T Wakabayashi
+    affiliation: Neurocircuitry of Motivated Behavior Laboratory, Department of Psychology,
+      University of Nebraska-Lincoln, Lincoln, NE, United States.
+  - name: Ajay N Baindur
+    affiliation: Department of Pharmacology and Toxicology, Jacobs School of Medicine
+      and Biomedical Sciences, University at Buffalo, State University of New York,
+      Buffalo, NY, United States.
+  - name: Malte Feja
+    affiliation: Department of Pharmacology and Toxicology, Jacobs School of Medicine
+      and Biomedical Sciences, University at Buffalo, State University of New York,
+      Buffalo, NY, United States.
+  - name: Mauricio Suarez
+    affiliation: Department of Pharmacology and Toxicology, Jacobs School of Medicine
+      and Biomedical Sciences, University at Buffalo, State University of New York,
+      Buffalo, NY, United States.
+  - name: Karie Chen
+    affiliation: Department of Pharmacology and Toxicology, Jacobs School of Medicine
+      and Biomedical Sciences, University at Buffalo, State University of New York,
+      Buffalo, NY, United States.
+  - name: Kimberly Bernosky-Smith
+    affiliation: Department of Physician Assistant Studies, Canisius College, Buffalo,
+      NY, United States.
+  - name: Caroline E Bass
+    affiliation: Department of Pharmacology and Toxicology, Jacobs School of Medicine
+      and Biomedical Sciences, University at Buffalo, State University of New York,
+      Buffalo, NY, United States.
+  published_at: 2024 03 14
+  source_metadata:
+    pmid: '38549620'
+    doi: 10.3389/fnbeh.2024.1363497
+    journal: Frontiers in behavioral neuroscience
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC10976559
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10976559/
+content_excerpt: Synthetic exendin-4 (EX4, exenatide), is a GLP-1 receptor agonist
+  used clinically to treat glycemia in Type-2 diabetes mellitus. EX4 also promotes
+  weight loss and alters food reward-seeking behaviors in part due to activation of
+  GLP-1 receptors in the mesolimbic dopamine system. Evidence suggests that GLP-1
+  receptor activity can directly attenuate cue-induced reward seeking. Here, we tested
+  the effects of EX4 (0.6, 1.2, and 2.4 μg/kg, i.p.) on incentive cue (IC) responding,
+  using a task where ra

@@ -1,0 +1,47 @@
+source_id: pubmed-37178855
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of metabolic hormone action in VTA for reward-directed behavior
+  — directly examines how GLP-1 and other hormones modulate reward in VTA.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Metabolic hormone action in the VTA: Reward-directed behavior and mechanistic
+    insights.'
+  source_type: pubmed
+  authors:
+  - name: Caroline E Geisler
+    affiliation: 'Department of Psychiatry, Perelman School of Medicine, University
+      of Pennsylvania, Philadelphia, PA, USA. Electronic address: Caroline.Geisler@pennmedicine.upenn.edu.'
+  - name: Matthew R Hayes
+    affiliation: Department of Psychiatry, Perelman School of Medicine, University
+      of Pennsylvania, Philadelphia, PA, USA.
+  published_at: 2023 05 12
+  source_metadata:
+    pmid: '37178855'
+    doi: 10.1016/j.physbeh.2023.114236
+    journal: Physiology & behavior
+    peer_reviewed: true
+    publication_type:
+    - Review
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    mesh_terms:
+    - Humans
+    - Ventral Tegmental Area
+    - Signal Transduction
+    - Appetite
+    - Obesity
+    - Dopamine
+    - Reward
+    pmc_id: PMC10330780
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10330780/
+content_excerpt: Dysfunctional signaling in midbrain reward circuits perpetuates diseases
+  characterized by compulsive overconsumption of rewarding substances such as substance
+  abuse, binge eating disorder, and obesity. Ventral tegmental area (VTA) dopaminergic
+  activity serves as an index for how rewarding stimuli are perceived and triggers
+  behaviors necessary to obtain future rewards. The evolutionary linking of reward
+  with seeking and consuming palatable foods ensured an organism's survival, and hormone
+  systems

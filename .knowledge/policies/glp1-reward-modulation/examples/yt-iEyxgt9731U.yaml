@@ -1,0 +1,15 @@
+source_id: yt-iEyxgt9731U
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Mentions GLP-1 but focus is primarily weight loss, lifestyle, or general
+  overview.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'What Ozempic Actually Does to Your Brain #weightloss #glp1'
+  published_at: '2026-03-20T18:00:55Z'
+  channel: Dr Almerie
+content_excerpt: Our latest video explores how medications like ozempic extend their
+  influence beyond metabolism, impacting the brain's complex ...

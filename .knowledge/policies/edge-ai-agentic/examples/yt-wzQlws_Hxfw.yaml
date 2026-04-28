@@ -1,0 +1,17 @@
+source_id: yt-wzQlws_Hxfw
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Apple Developer WWDC25 session touring latest ML/AI framework updates across
+  Apple platforms — authoritative, recent, technically substantive coverage of Apple's
+  on-device AI stack from the primary competitive platform to Google's edge strategy.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'WWDC25: Discover machine learning &amp; AI frameworks on Apple platforms
+    | Apple'
+  published_at: '2025-06-09T23:24:22Z'
+  channel: Apple Developer
+content_excerpt: Tour the latest updates to machine learning and AI frameworks available
+  on Apple platforms. Whether you are an app developer ...

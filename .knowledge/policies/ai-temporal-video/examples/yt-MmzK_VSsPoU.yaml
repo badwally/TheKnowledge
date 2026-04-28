@@ -1,0 +1,15 @@
+source_id: yt-MmzK_VSsPoU
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'TGIF-QA: Toward Spatio-Temporal Reasoning in Visual Question Answering |
+    Spotlight 1-2C'
+  published_at: '2017-08-09T15:28:35Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: Yunseok Jang, Yale Song, Youngjae Yu, Youngjin Kim, Gunhee Kim Vision
+  and language understanding has emerged as a ...

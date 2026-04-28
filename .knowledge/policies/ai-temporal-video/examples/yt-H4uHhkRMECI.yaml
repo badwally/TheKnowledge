@@ -1,0 +1,15 @@
+source_id: yt-H4uHhkRMECI
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio-temporal Relation Modeling for Few-shot Action Recognition | CVPR
+    2022
+  published_at: '2022-08-19T14:36:33Z'
+  channel: Computer Vision Talks
+content_excerpt: 'Paper Abstract: Novel Few-shot action recognition framework, STRM,
+  is proposed for learning higher-order temporal ...'

@@ -1,0 +1,15 @@
+source_id: yt-hHWgunSDTNM
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'STINet: Spatio-Temporal-Interactive Network for Pedestrian Detection and
+    Trajectory Prediction'
+  published_at: '2020-07-17T10:27:20Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Zhishuai Zhang, Jiyang Gao, Junhua Mao, Yukai Liu, Dragomir
+  Anguelov, Congcong Li Description: Detecting ...'

@@ -1,0 +1,15 @@
+source_id: yt-Pc4NKS3eT8E
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: End-To-End Concept Word Detection for Video Captioning, Retrieval, and Q&amp;A
+    | Spotlight 2-2A
+  published_at: '2017-08-03T18:13:45Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: Youngjae Yu; Hyungjin Ko; Jongwook Choi; Gunhee Kim We propose a
+  high-level concept word detector that can be integrated ...

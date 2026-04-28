@@ -1,0 +1,14 @@
+source_id: yt-KiqbTLuYeT4
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'TransMOT: Spatial-Temporal Graph Transformer for Multiple Object Tracking'
+  published_at: '2024-01-30T04:25:03Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Chu, Peng*; Wang, Jiang; You, Quanzeng; Ling, Haibin; Liu,
+  Zicheng Description: Tracking multiple objects in videos ...'

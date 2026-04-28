@@ -1,0 +1,18 @@
+source_id: yt-pdKgcH9ZxtQ
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 6-minute demo of YOLO INT8 optimization achieving 60+ FPS on Jetson Orin
+  Nano shows concrete edge AI inference performance benchmarks on target hardware
+  — relevant to edge inference performance data, though CV-specific and from a low-authority
+  channel.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '🚀 60+ FPS YOLO on NVIDIA Jetson Orin Nano | Edge AI Optimization with TensorRT,
+    INT8 #new #invidia '
+  published_at: '2026-02-26T18:27:35Z'
+  channel: GenzRadio
+content_excerpt: Unlock true Edge AI power by optimizing YOLO models on the NVIDIA
+  Jetson Orin Nano! In this video, we show how to achieve ...

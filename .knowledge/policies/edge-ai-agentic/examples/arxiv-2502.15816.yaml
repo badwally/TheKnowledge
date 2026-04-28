@@ -1,0 +1,45 @@
+source_id: arxiv-2502.15816
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Comprehensive survey of GenAI deployment on edge devices covering software
+  optimization (quantization, pruning, distillation), hardware optimization, and frameworks;
+  presented at AAAI 2025 GenAI@Edge symposium and directly maps to the full edge AI
+  stack relevant to agentic deployments.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GenAI at the Edge: Comprehensive Survey on Empowering Edge Devices'
+  source_type: arxiv
+  authors:
+  - name: Mozhgan Navardi
+    affiliation: null
+  - name: Romina Aalishah
+    affiliation: null
+  - name: Yuzhe Fu
+    affiliation: null
+  - name: Yueqian Lin
+    affiliation: null
+  - name: Hai Li
+    affiliation: null
+  - name: Yiran Chen
+    affiliation: null
+  - name: Tinoosh Mohsenin
+    affiliation: null
+  published_at: '2025-02-19T20:43:14Z'
+  source_metadata:
+    arxiv_id: '2502.15816'
+    categories:
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2502.15816v1.pdf
+    primary_category: cs.DC
+    comment: 'AAAI 2025 Spring Symposium Series (SSS), GenAI@Edge: Empowering Generative
+      AI at the Edge Symposium'
+    journal_ref: null
+content_excerpt: Generative Artificial Intelligence (GenAI) applies models and algorithms
+  such as Large Language Model (LLM) and Foundation Model (FM) to generate new data.
+  GenAI, as a promising approach, enables advanced capabilities in various applications,
+  including text generation and image processing. In current practice, GenAI algorithms
+  run mainly on the cloud server, leading to high latency and raising security concerns.
+  Consequently, these challenges encourage the deployment of GenAI algorithms directly

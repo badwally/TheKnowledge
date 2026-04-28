@@ -1,0 +1,65 @@
+source_id: pubmed-34305810
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Safety review of semaglutide — includes side effect profiles but focuses
+  on GI/metabolic rather than reward/neurological.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Safety of Semaglutide.
+  source_type: pubmed
+  authors:
+  - name: Mark M Smits
+    affiliation: Diabetes Center, Department of Internal Medicine, Amsterdam University
+      Medical Center, Amsterdam, Netherlands.
+  - name: Dani&#xeb;l H Van Raalte
+    affiliation: Diabetes Center, Department of Internal Medicine, Amsterdam University
+      Medical Center, Amsterdam, Netherlands.
+  published_at: 2021 07 07
+  source_metadata:
+    pmid: '34305810'
+    doi: 10.3389/fendo.2021.645563
+    journal: Frontiers in endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Acute Kidney Injury
+    - Animals
+    - Blood Glucose
+    - Body Weight
+    - Cardiovascular System
+    - Cholelithiasis
+    - Clinical Trials as Topic
+    - Clinical Trials, Phase III as Topic
+    - Diabetes Mellitus, Type 2
+    - Diabetic Retinopathy
+    - Gallbladder
+    - Gastrointestinal Tract
+    - Glucagon-Like Peptide-1 Receptor
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Insulin
+    - Nausea
+    - Pancreas
+    - Pancreatic Neoplasms
+    - Pancreatitis
+    - Patient Safety
+    - Peptides
+    - Thyroid Neoplasms
+    - Time Factors
+    - Semaglutide
+    pmc_id: PMC8294388
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8294388/
+content_excerpt: The glucagon-like peptide-1 receptor agonist (GLP-1RA) semaglutide
+  is the most recently approved agent of this drug class, and the only GLP-1RA currently
+  available as both subcutaneous and oral formulation. While GLP-1RAs effectively
+  improve glycemic control and cause weight loss, potential safety concerns have arisen
+  over the years. For semaglutide, such concerns have been addressed in the extensive
+  phase 3 registration trials including cardiovascular outcome trials for both subcutaneous
+  (SUSTA

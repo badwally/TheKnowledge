@@ -1,0 +1,18 @@
+source_id: yt-EXB8HokGVMI
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 64-minute conference talk by Daniel Bourke on fine-tuning SLMs for iPhone
+  deployment directly addresses on-device model optimization and edge deployment strategy
+  with practical depth — highly relevant to Apple competitive positioning and on-device
+  AI.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Small Language Models (SLMs) Are the Future: Fine-Tuning AI That Runs on
+    Your iPhone'
+  published_at: '2026-03-13T08:09:38Z'
+  channel: Daniel Bourke
+content_excerpt: In this talk, I go over the rise of small language models (SLMs)
+  and how they can benefit your business or day to day life.

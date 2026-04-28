@@ -1,0 +1,122 @@
+source_id: pubmed-37030441
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: FGF21 required for liraglutide weight loss — metabolic mechanism without
+  reward focus.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Fibroblast growth factor-21 is required for weight loss induced by the glucagon-like
+    peptide-1 receptor agonist liraglutide in male mice fed high carbohydrate diets.
+  source_type: pubmed
+  authors:
+  - name: Thao D V Le
+    affiliation: 'Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA. Electronic
+      address: thao.d.le@vanderbilt.edu.'
+  - name: Payam Fathi
+    affiliation: 'Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA. Electronic
+      address: payam.fathi@vanderbilt.edu.'
+  - name: Amanda B Watters
+    affiliation: 'Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA. Electronic
+      address: awatters@tulane.edu.'
+  - name: Blair J Ellis
+    affiliation: Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA.
+  - name: Gai-Linn K Besing
+    affiliation: 'Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA. Electronic
+      address: gai-linn.besing.1@vanderbilt.edu.'
+  - name: Nadejda Bozadjieva-Kramer
+    affiliation: 'Department of Surgery, University of Michigan, 1500 E. Medical Center
+      Drive, Ann Arbor, MI 48109, USA; Veterans Affairs Ann Arbor Healthcare System,
+      Research Service, 2215 Fuller Road, Ann Arbor, MI 48105, USA. Electronic address:
+      nibozad@med.umich.edu.'
+  - name: Misty B Perez
+    affiliation: 'Department of Neuroscience and Pharmacology, University of Iowa
+      Carver College of Medicine, 375 Newton Road, Iowa City, IA 52242, USA. Electronic
+      address: misty-perez@uiowa.edu.'
+  - name: Andrew I Sullivan
+    affiliation: 'Department of Neuroscience and Pharmacology, University of Iowa
+      Carver College of Medicine, 375 Newton Road, Iowa City, IA 52242, USA. Electronic
+      address: andrew-sullivan-1@uiowa.edu.'
+  - name: Jesse P Rose
+    affiliation: 'Department of Neuroscience and Pharmacology, University of Iowa
+      Carver College of Medicine, 375 Newton Road, Iowa City, IA 52242, USA. Electronic
+      address: jesse-rose@uiowa.edu.'
+  - name: Laurie L Baggio
+    affiliation: 'Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Department
+      of Medicine, University of Toronto, 600 University Avenue, Toronto, Ontario
+      M5G 1X5, Canada. Electronic address: baggio@lunenfeld.ca.'
+  - name: Jacqueline Koehler
+    affiliation: Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Department
+      of Medicine, University of Toronto, 600 University Avenue, Toronto, Ontario
+      M5G 1X5, Canada.
+  - name: Jennifer L Brown
+    affiliation: Duke Molecular Physiology Institute, Duke University, 300 N. Duke
+      Street, Durham, NC 27701, USA.
+  - name: Michelle B Bales
+    affiliation: 'Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA. Electronic
+      address: bales@psy.fsu.edu.'
+  - name: Kaitlyn G Nwaba
+    affiliation: Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA.
+  - name: Jonathan E Campbell
+    affiliation: 'Duke Molecular Physiology Institute, Duke University, 300 N. Duke
+      Street, Durham, NC 27701, USA. Electronic address: jonathan.campbell@duke.edu.'
+  - name: Daniel J Drucker
+    affiliation: 'Lunenfeld Tanenbaum Research Institute, Mount Sinai Hospital, Department
+      of Medicine, University of Toronto, 600 University Avenue, Toronto, Ontario
+      M5G 1X5, Canada. Electronic address: drucker@lunenfeld.ca.'
+  - name: Matthew J Potthoff
+    affiliation: 'Department of Neuroscience and Pharmacology, University of Iowa
+      Carver College of Medicine, 375 Newton Road, Iowa City, IA 52242, USA. Electronic
+      address: matthew-potthoff@uiowa.edu.'
+  - name: Randy J Seeley
+    affiliation: 'Department of Surgery, University of Michigan, 1500 E. Medical Center
+      Drive, Ann Arbor, MI 48109, USA. Electronic address: seeleyrj@med.umich.edu.'
+  - name: Julio E Ayala
+    affiliation: 'Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, 2215 Garland Avenue, Nashville, TN 37232, USA; Vanderbilt
+      Mouse Metabolic Phenotyping Center, Vanderbilt University School of Medicine,
+      2215 Garland Avenue, Nashville, TN 37232, USA; Vanderbilt Center for Addiction
+      Research, Vanderbilt University School of Medicine, 2215 Garland Avenue, Nashville,
+      TN 37232, USA. Electronic address: julio.e.ayala@vanderbilt.edu.'
+  published_at: 2023 04 07
+  source_metadata:
+    pmid: '37030441'
+    doi: 10.1016/j.molmet.2023.101718
+    journal: Molecular metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    - Research Support, U.S. Gov't, Non-P.H.S.
+    mesh_terms:
+    - Animals
+    - Male
+    - Mice
+    - Carbohydrates
+    - Diet, High-Fat
+    - Fibroblast Growth Factors
+    - Glucagon-Like Peptide-1 Receptor
+    - Liraglutide
+    - Mice, Inbred C57BL
+    - Weight Loss
+    pmc_id: PMC10131131
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10131131/
+content_excerpt: 'Glucagon-like peptide-1 receptor (GLP-1R) agonists (GLP-1RA) and
+  fibroblast growth factor-21 (FGF21) confer similar metabolic benefits. GLP-1RA induce
+  FGF21, leading us to investigate mechanisms engaged by the GLP-1RA liraglutide to
+  increase FGF21 levels and the metabolic relevance of liraglutide-induced FGF21.
+
+
+  Circulating FGF21 levels were measured in fasted male C57BL/6J, neuronal GLP-1R
+  knockout, β-cell GLP-1R knockout, and liver peroxisome proliferator-activated receptor
+  alpha knockout mice'

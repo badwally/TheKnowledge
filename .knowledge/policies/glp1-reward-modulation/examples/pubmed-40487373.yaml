@@ -1,0 +1,46 @@
+source_id: pubmed-40487373
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Tirzepatide effects on sexual function in women — case report directly
+  relevant to sexual dysfunction from GLP-1-class drug.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Tirzepatide Affect Sexual Function in Women: Case Report.'
+  source_type: pubmed
+  authors:
+  - name: Ghada Farouk Mohammed
+    affiliation: Department of Dermatology, Venereology and Sexology, Faculty of Medicine,
+      Suez Canal University, Ismailia, Egypt.
+  - name: Mohammed Saleh Al-Dhubaibi
+    affiliation: Dermatology, Department of Medicine, College of Medicine, Shaqra
+      University, Dawadmi, Saudi Arabia.
+  - name: Saleh Salem Bahaj
+    affiliation: Department of Microbiology and Immunology, Faculty of Medicine and
+      Health Sciences, Sana'a University, Yemen.
+  - name: Rana Magdy Mohammed
+    affiliation: Department of Psychiatry, Abbassia Hospital for Mental Health, General
+      Secretariat of Mental Health, Ministry of Health and Population, Cairo, Egypt.
+  published_at: 2025 06 06
+  source_metadata:
+    pmid: '40487373'
+    doi: 10.1177/11795476251347753
+    journal: Clinical medicine insights. Case reports
+    peer_reviewed: true
+    publication_type:
+    - Case Reports
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC12144364
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12144364/
+content_excerpt: 'Tirzepatide is a new molecule capable of controlling blood glucose
+  levels by combining the dual agonism of glucose-dependent insulinotropic polypeptide
+  (GIP) and glucose-like peptide-1 (GLP-1) receptors. The Food and Drug Administration
+  approved tirzepatide subcutaneous injections as monotherapy or combination therapy,
+  with diet and physical exercise. Its influence on sexual behavior as an adverse
+  effect is not well known.
+
+
+  The purpose of this report was to present a case study of an obese femal'

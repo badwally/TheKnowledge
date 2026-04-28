@@ -1,0 +1,60 @@
+source_id: pubmed-22128031
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Directly maps GLP-1 NTS neuron projections to VTA and NAc, demonstrating
+  mesolimbic reward circuit engagement for food intake control.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1 neurons in the nucleus of the solitary tract project directly to the
+    ventral tegmental area and nucleus accumbens to control for food intake.
+  source_type: pubmed
+  authors:
+  - name: Amber L Alhadeff
+    affiliation: Department of Psychiatry, School of Medicine, University of Pennsylvania,
+      Philadelphia, Pennsylvania 19104, USA.
+  - name: Laura E Rupprecht
+    affiliation: null
+  - name: Matthew R Hayes
+    affiliation: null
+  published_at: 2011 11 29
+  source_metadata:
+    pmid: '22128031'
+    doi: 10.1210/en.2011-1443
+    journal: Endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Dose-Response Relationship, Drug
+    - Eating
+    - Exenatide
+    - Gene Expression Regulation
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Hypoglycemic Agents
+    - Male
+    - Neurons
+    - Nucleus Accumbens
+    - Peptides
+    - Rats
+    - Rats, Sprague-Dawley
+    - Receptors, Glucagon
+    - Signal Transduction
+    - Solitary Nucleus
+    - Venoms
+    - Ventral Tegmental Area
+    pmc_id: PMC3275387
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3275387/
+content_excerpt: Central glucagon-like-peptide-1 (GLP-1) receptor activation reduces
+  food intake; however, brain nuclei and mechanism(s) mediating this effect remain
+  poorly understood. Although central nervous system GLP-1 is produced almost exclusively
+  in the nucleus of the solitary tract in the hindbrain, GLP-1 receptors (GLP-1R)
+  are expressed throughout the brain, including nuclei in the mesolimbic reward system
+  (MRS), e.g. the ventral tegmental area (VTA) and the nucleus accumbens (NAc). Here,
+  we examine the

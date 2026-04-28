@@ -1,0 +1,41 @@
+source_id: arxiv-2007.01156
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Conceptual paper on blockchain + multi-access edge computing for distributed
+  robotic autonomy; addresses intelligence offloading and edge compute for autonomous
+  agents with 5G, though lacks experimental depth on AI inference specifically.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Enhancing Autonomy with Blockchain and Multi-Access Edge Computing in Distributed
+    Robotic Systems
+  source_type: arxiv
+  authors:
+  - name: Jorge Peña Queralta
+    affiliation: null
+  - name: Li Qingqing
+    affiliation: null
+  - name: Zhuo Zou
+    affiliation: null
+  - name: Tomi Westerlund
+    affiliation: null
+  published_at: '2020-07-01T16:41:36Z'
+  source_metadata:
+    arxiv_id: '2007.01156'
+    categories:
+    - cs.DC
+    - eess.SP
+    pdf_url: http://arxiv.org/pdf/2007.01156v1.pdf
+    primary_category: cs.DC
+    comment: Accepted to the Fifth International Conference on Fog and Mobile Edge
+      Computing (FMEC 2020)
+    journal_ref: null
+content_excerpt: This conceptual paper discusses how different aspects involving the
+  autonomous operation of robots and vehicles will change when they have access to
+  next-generation mobile networks. 5G and beyond connectivity is bringing together
+  a myriad of technologies and industries under its umbrella. High-bandwidth, low-latency
+  edge computing services through network slicing have the potential to support novel
+  application scenarios in different domains including robotics, autonomous vehicles,
+  and the Intern

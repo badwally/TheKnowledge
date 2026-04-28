@@ -1,0 +1,36 @@
+source_id: arxiv-2601.03290
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Surveys lightweight transformer architectures (MobileBERT, TinyBERT, EfficientFormer)
+  with benchmarks across NVIDIA Jetson, Qualcomm Snapdragon, Apple Neural Engine,
+  and ARM, covering TFLite, ONNX Runtime, CoreML, and PyTorch Mobile deployment frameworks.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Lightweight Transformer Architectures for Edge Devices in Real-Time Applications
+  source_type: arxiv
+  authors:
+  - name: Hema Hariharan Samson
+    affiliation: null
+  published_at: '2026-01-05T01:04:25Z'
+  source_metadata:
+    arxiv_id: '2601.03290'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2601.03290v1.pdf
+    primary_category: cs.LG
+    comment: 8 pages, 7 figures, 4 tables. Comprehensive study of lightweight transformer
+      architectures for edge computing with novel findings on memory-bandwidth tradeoffs,
+      quantization strategies, and hardware-specific optimizations. Includes detailed
+      benchmarks across NLP and vision tasks with practical deployment recommendations
+    journal_ref: null
+content_excerpt: The deployment of transformer-based models on resource-constrained
+  edge devices represents a critical challenge in enabling real-time artificial intelligence
+  applications. This comprehensive survey examines lightweight transformer architectures
+  specifically designed for edge deployment, analyzing recent advances in model compression,
+  quantization, pruning, and knowledge distillation techniques. We systematically
+  review prominent lightweight variants including MobileBERT, TinyBERT, DistilBERT,
+  Ef

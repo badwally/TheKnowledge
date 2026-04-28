@@ -1,0 +1,16 @@
+source_id: yt-hQQ8KuhXcwU
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 14-minute technical deep-dive on on-device LLM inference at 600 tokens/sec
+  using MediaPipe LLM Inference API; includes performance benchmarking data and open-source
+  deployment patterns directly relevant to edge inference evaluation.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'On-Device LLM Inference at 600 Tokens/Sec.: All Open Source'
+  published_at: '2024-03-30T11:14:59Z'
+  channel: AI Anytime
+content_excerpt: Dive into the future of on-device language model inference with the
+  MediaPipe LLM Inference API! This powerful and ...

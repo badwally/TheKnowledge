@@ -1,0 +1,16 @@
+source_id: yt-mFkw3p5qSuA
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 90-minute A2A crash course with real multi-agent examples covering the
+  ADK and full protocol walkthrough — high depth on Google's A2A implementation and
+  multi-agent coordination patterns.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Agent2Agent (A2A) Crash Course: Full Walkthrough With Real Multi-Agent Examples'
+  published_at: '2025-06-11T20:00:49Z'
+  channel: aiwithbrandon
+content_excerpt: 'Pre-order Shipkit.ai - AI dev toolkit for AI-driven development:
+  templates for chat, RAG, and ADK agents, a 14-module course, and ...'

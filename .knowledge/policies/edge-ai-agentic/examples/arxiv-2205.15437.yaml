@@ -1,0 +1,40 @@
+source_id: arxiv-2205.15437
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AMED automates mixed-precision quantization targeting specific edge hardware
+  constraints, challenging the assumption of a shared loss manifold across precisions;
+  published in an edge ML special issue.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'AMED: Automatic Mixed-Precision Quantization for Edge Devices'
+  source_type: arxiv
+  authors:
+  - name: Moshe Kimhi
+    affiliation: null
+  - name: Tal Rozen
+    affiliation: null
+  - name: Avi Mendelson
+    affiliation: null
+  - name: Chaim Baskin
+    affiliation: null
+  published_at: '2022-05-30T21:23:22Z'
+  source_metadata:
+    arxiv_id: '2205.15437'
+    categories:
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2205.15437v2.pdf
+    primary_category: cs.LG
+    comment: 'Published in special issue From Edge Devices to Cloud Computing and
+      Datacenters: Emerging Machine Learning Applications, Algorithms, and Optimizations
+      by MPDI mathematics'
+    journal_ref: null
+content_excerpt: Quantized neural networks are well known for reducing the latency,
+  power consumption, and model size without significant harm to the performance. This
+  makes them highly appropriate for systems with limited resources and low power capacity.
+  Mixed-precision quantization offers better utilization of customized hardware that
+  supports arithmetic operations at different bitwidths. Quantization methods either
+  aim to minimize the compression loss given a desired reduction or optimize a dependent
+  variabl

@@ -1,0 +1,14 @@
+source_id: yt-c25XccOQ7UQ
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Where Does It Exist: Spatio-Temporal Video Grounding for Multi-Form Sentences'
+  published_at: '2020-07-17T09:55:08Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Zhu Zhang, Zhou Zhao, Yang Zhao, Qi Wang, Huasheng Liu,
+  Lianli Gao Description: In this paper, we consider a novel ...'

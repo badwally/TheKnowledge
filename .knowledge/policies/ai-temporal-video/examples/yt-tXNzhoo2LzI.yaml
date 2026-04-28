@@ -1,0 +1,14 @@
+source_id: yt-tXNzhoo2LzI
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'OpenTAL: Towards Open Set Temporal Action Localization | CVPR 2022'
+  published_at: '2022-06-24T08:12:08Z'
+  channel: 'Artificial Intelligence '
+content_excerpt: The statement "If you have any copyright issues on video, please
+  send us an email at khawar512@gmail.com" is an invitation for ...

@@ -1,0 +1,34 @@
+source_id: pubmed-37672701
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide in early Type 1 diabetes — letter, no reward content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide in Early Type 1 Diabetes.
+  source_type: pubmed
+  authors:
+  - name: Paresh Dandona
+    affiliation: State University of New York at Buffalo, Williamsville, NY dandona@buffalo.edu.
+  - name: Ajay Chaudhuri
+    affiliation: State University of New York at Buffalo, Williamsville, NY dandona@buffalo.edu.
+  - name: Husam Ghanim
+    affiliation: State University of New York at Buffalo, Williamsville, NY dandona@buffalo.edu.
+  published_at: 2023 Sep 07
+  source_metadata:
+    pmid: '37672701'
+    doi: 10.1056/NEJMc2302677
+    journal: The New England journal of medicine
+    peer_reviewed: true
+    publication_type:
+    - Letter
+    mesh_terms:
+    - Humans
+    - Diabetes Mellitus, Type 1
+    - Glucagon-Like Peptides
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: '[Abstract not available]'

@@ -1,0 +1,15 @@
+source_id: yt-DJXJTnhdZfg
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Panoptic Segmentation of 4D LiDAR Using Spatio-Temporal Object Proposal Generation
+    and Aggregation
+  published_at: '2022-10-25T12:52:12Z'
+  channel: AVVision
+content_excerpt: '"4D-StOP: Panoptic Segmentation of 4D LiDAR using Spatio-temporal
+  Object Proposal Generation and Aggregation", Lars ...'

@@ -1,0 +1,56 @@
+source_id: pubmed-40843757
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 mechanisms in modulating craving and addiction with neurobiological
+  insights — directly addresses how GLP-1 RAs affect reward processing.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Mechanisms of GLP-1 in Modulating Craving and Addiction: Neurobiological
+    and Translational Insights.'
+  source_type: pubmed
+  authors:
+  - name: Gabriel Amorim Moreira Alves
+    affiliation: Faculty of Medicine, Humanitas University, Pieve Emanuele, 20072
+      Milan, Italy.
+  - name: Masatoki Teranishi
+    affiliation: Faculty of Medicine and Surgery, University of Milan, 20122 Milan,
+      Italy.
+  - name: Ana Claudia Teixeira de Castro Gon&#xe7;alves Ortega
+    affiliation: Faculty of Medicine, Humanitas University, Pieve Emanuele, 20072
+      Milan, Italy.
+  - name: Frank James
+    affiliation: Public Health Department, Lummi Nation Tribal Health Center, Bellingham,
+      WA 98226, USA.
+  - name: Arosh S Perera Molligoda Arachchige
+    affiliation: Emergency Service, GHOL H&#xf4;pital de Nyon, 1260 Nyon, Switzerland.
+  published_at: 2025 08 15
+  source_metadata:
+    pmid: '40843757'
+    doi: 10.3390/medsci13030136
+    journal: Medical sciences (Basel, Switzerland)
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Craving
+    - Substance-Related Disorders
+    - Glucagon-Like Peptide 1
+    - Animals
+    - Brain
+    - Behavior, Addictive
+    - Reward
+    - Glucagon-Like Peptide-1 Receptor
+    pmc_id: PMC12372146
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12372146/
+content_excerpt: Substance use disorders (SUDs) remain a major public health challenge,
+  with existing pharmacotherapies offering limited long-term efficacy. Traditional
+  treatments focus on dopaminergic systems but often overlook the complex interplay
+  between metabolic signals, neuroplasticity, and conditioned behaviors that perpetuate
+  addiction. Glucagon-like peptide-1 receptor agonists (GLP-1RAs), originally developed
+  for type 2 diabetes and obesity, have recently emerged as promising modulators of
+  reward-relat

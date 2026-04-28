@@ -1,0 +1,18 @@
+source_id: yt-G6V3vJ6ojMQ
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IEEE S&P 2023 conference presentation on ShadowNet, a secure on-device
+  CNN inference system, covers TEE-based model protection with experimental results
+  — peer-reviewed conference content directly addressing secure on-device inference
+  architecture, a core domain criterion.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional
+    Neural Networks'
+  published_at: '2023-07-01T14:55:31Z'
+  channel: IEEE Symposium on Security and Privacy
+content_excerpt: 'ShadowNet: A Secure and Efficient On-device Model Inference System
+  for Convolutional Neural Networks Zhichuang Sun ...'

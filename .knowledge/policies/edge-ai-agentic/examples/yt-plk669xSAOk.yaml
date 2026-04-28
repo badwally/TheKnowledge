@@ -1,0 +1,16 @@
+source_id: yt-plk669xSAOk
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Google for Developers demo of Gemma 2 on-device with MediaPipe
+  LLM Inference API; directly demonstrates Google's on-device GenAI deployment stack
+  across web and mobile with hands-on technical detail.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Demo: Gemma on-device with MediaPipe'
+  published_at: '2024-10-18T16:01:02Z'
+  channel: Google for Developers
+content_excerpt: Unleash the power of Gemma 2 on your web and mobile applications.
+  Explore how to leverage the MediaPipe LLM Inference API ...

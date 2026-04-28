@@ -1,0 +1,43 @@
+source_id: pubmed-29363040
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide first global approval review — regulatory/clinical overview
+  without reward mechanism discussion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Semaglutide: First Global Approval.'
+  source_type: pubmed
+  authors:
+  - name: Sohita Dhillon
+    affiliation: Springer, Private Bag 65901, Mairangi Bay, Auckland, 0754, New Zealand.
+      dru@adis.com.
+  published_at: 2018 Feb
+  source_metadata:
+    pmid: '29363040'
+    doi: 10.1007/s40265-018-0871-0
+    journal: Drugs
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Blood Glucose
+    - Diabetes Mellitus, Type 2
+    - Drug Approval
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Insulin
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Novo Nordisk has developed a subcutaneous formulation of semaglutide
+  (Ozempic), a modified human glucagon-like peptide-1 (GLP-1) analogue, for the treatment
+  of type 2 diabetes mellitus. It has been developed using Novo Nordisk''s proprietary
+  protein-acylation technology, and is administered using an injection device. Semaglutide
+  lowers blood glucose by stimulating the release of insulin and also lowers body
+  weight. Once-weekly subcutaneous semaglutide has recently been approved in the US,
+  Puerto '

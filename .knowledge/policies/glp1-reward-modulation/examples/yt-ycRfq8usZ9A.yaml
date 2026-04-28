@@ -1,0 +1,16 @@
+source_id: yt-ycRfq8usZ9A
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Book summary on diet, drugs, and dopamine covering GLP-1 and reward neuroscience;
+  7 min.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Diet, Drugs, and Dopamine: The New Science of Achieving a Healthy Weight
+    by David A. Kessler'
+  published_at: '2025-12-06T16:01:41Z'
+  channel: Readers AI Club
+content_excerpt: examine the interconnected biological and neurological factors influencing
+  obesity and compulsive eating behaviors, often ...

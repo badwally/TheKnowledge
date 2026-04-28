@@ -1,0 +1,54 @@
+source_id: pubmed-23874851
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Demonstrates exendin-4 attenuates rewarding properties of psychostimulants,
+  showing GLP-1 effects on non-food reward pathways.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide 1 analogue, exendin-4, attenuates the rewarding
+    properties of psychostimulant drugs in mice.
+  source_type: pubmed
+  authors:
+  - name: Emil Egecioglu
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      the Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: J&#xf6;rgen A Engel
+    affiliation: null
+  - name: Elisabet Jerlhag
+    affiliation: null
+  published_at: 2013 07 16
+  source_metadata:
+    pmid: '23874851'
+    doi: 10.1371/journal.pone.0069010
+    journal: PloS one
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Amphetamine
+    - Animals
+    - Central Nervous System Stimulants
+    - Cocaine
+    - Exenatide
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Liraglutide
+    - Male
+    - Mice
+    - Motor Activity
+    - Peptides
+    - Receptors, Glucagon
+    - Venoms
+    pmc_id: PMC3712951
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3712951/
+content_excerpt: Glucagon-like peptide 1 (GLP-1) is an incretine hormone that controls
+  consummatory behavior and glucose homeostasis. It is released in response to nutrient
+  ingestion from the intestine and production in the brain has also been identified.
+  Given that GLP-1 receptors are expressed in reward areas, such as the nucleus accumbens
+  and ventral tegmental area, and that common mechanisms regulate food and drug-induced
+  reward we hypothesize that GLP-1 receptors are involved in reward regulation. Herein
+  th

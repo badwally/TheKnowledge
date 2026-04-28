@@ -1,0 +1,79 @@
+source_id: pubmed-41498523
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 RA effects on male reproductive hormones, semen parameters — relevant
+  to sexual/endocrine effects but more metabolic than reward-focused.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Effects of glucagon-like peptide-1 receptor agonists on male reproductive
+    hormones, semen parameters, and metabolic outcomes: a systematic review.'
+  source_type: pubmed
+  authors:
+  - name: Mohammad Ghassab Deameh
+    affiliation: Department of Urology, Faculty of Medicine, Al-Balqa Applied University,
+      As-Salt 19117, Jordan.
+  - name: Mohamed Ramez
+    affiliation: Department of Urology, University of Texas MD Anderson Cancer Center,
+      Houston, TX 77030, United States.
+  - name: Rashed Rowaiee
+    affiliation: Department of Urology, Cleveland Clinic Abu Dhabi, Abu Dhabi 112412,
+      UAE.
+  - name: Baha' Aldeen Bani Irshid
+    affiliation: Department of Urology, Princess Basma Teaching Hospital, Irbid 21110,
+      Jordan.
+  - name: Hamza Mohamed
+    affiliation: Department of Urology, Faculty of Medicine, Assiut University, Assiut
+      71515, Egypt.
+  - name: Abdelrahman Abdelshafi
+    affiliation: Department of Urology, Faculty of Medicine, Assiut University, Assiut
+      71515, Egypt.
+  - name: Mohammad Ali Al-Osoufi
+    affiliation: Department of Urology, Prince Hamzah Hospital, Amman 11947, Jordan.
+  - name: Tarek Mohamed
+    affiliation: Urology Department, United Lincolnshire Hospitals NHS Trust, Lincoln
+      LN2 5QY, United Kingdom.
+  - name: Safa Botros Hegazin
+    affiliation: Department of General Surgery, Cleveland Clinic Abu Dhabi, Abu Dhabi
+      112412, UAE.
+  - name: Omer Raheem
+    affiliation: Department of Urology, Cleveland Clinic Abu Dhabi, Abu Dhabi 112412,
+      UAE.
+  published_at: 2026 Jan 07
+  source_metadata:
+    pmid: '41498523'
+    doi: 10.1093/jsxmed/qdaf381
+    journal: The journal of sexual medicine
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms:
+    - Humans
+    - Male
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Glucagon-Like Peptides
+    - Testosterone
+    - Hypoglycemic Agents
+    - Exenatide
+    - Semen Analysis
+    - Liraglutide
+    - Recombinant Fusion Proteins
+    - Follicle Stimulating Hormone
+    - Luteinizing Hormone
+    - Immunoglobulin Fc Fragments
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are antidiabetic
+  agents that also induce weight loss. Their widespread use has prompted investigation
+  of potential benefits beyond glycemic control, including effects on male sexual
+  and reproductive function. Emerging evidence suggests that they may improve male
+  reproductive parameters, particularly in men with metabolic dysfunction.
+
+
+  To systematically evaluate the effects of GLP-1RAs (liraglutide, semaglutide, dulaglutide,
+  and exenatide) on m'

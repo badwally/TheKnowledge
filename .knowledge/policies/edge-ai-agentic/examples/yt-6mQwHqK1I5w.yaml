@@ -1,0 +1,17 @@
+source_id: yt-6mQwHqK1I5w
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Google for Developers 14-minute tutorial building an AI agent
+  using MCP, ADK, and A2A on Google Cloud — directly covers the full Google agentic
+  protocol stack with hands-on architecture, essential context for a Google Edge AI
+  GPM.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: How to build an AI agent with MCP, ADK, and A2A on Google Cloud
+  published_at: '2025-12-02T17:00:25Z'
+  channel: Google for Developers
+content_excerpt: Explore the powerful tools and protocols for AI agent development
+  on Google Cloud. In this video, we dive into how to connect AI ...

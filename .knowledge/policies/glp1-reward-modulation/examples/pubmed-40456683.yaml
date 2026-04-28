@@ -1,0 +1,68 @@
+source_id: pubmed-40456683
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1R/Y-receptor triple agonist decreases fentanyl-evoked dopamine in
+  NAc — tests novel compound for selective reward modulation, directly relevant to
+  alternative compound strategies.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: A GLP-1R/Yreceptor/Yreceptor triple agonist decreases fentanyl-evoked dopamine
+    release in the nucleus accumbens and attenuates fentanyl taking and seeking in
+    rats.
+  source_type: pubmed
+  authors:
+  - name: Antonia Caffrey
+    affiliation: Department of Biobehavioral Health Sciences, School of Nursing, University
+      of Pennsylvania, Philadelphia, Pennsylvania, USA.
+  - name: Enzo Lavecchia
+    affiliation: Department of Biobehavioral Health Sciences, School of Nursing, University
+      of Pennsylvania, Philadelphia, Pennsylvania, USA.
+  - name: Kylie S Chichura
+    affiliation: Department of Chemistry, Syracuse University, Syracuse, New York,
+      USA.
+  - name: Matthew R Hayes
+    affiliation: Department of Psychiatry, Perelman School of Medicine, University
+      of Pennsylvania, Philadelphia, Pennsylvania, USA.
+  - name: Robert P Doyle
+    affiliation: Department of Chemistry, Syracuse University, Syracuse, New York,
+      USA.
+  - name: Heath D Schmidt
+    affiliation: Department of Biobehavioral Health Sciences, School of Nursing, University
+      of Pennsylvania, Philadelphia, Pennsylvania, USA.
+  published_at: 2025 06 02
+  source_metadata:
+    pmid: '40456683'
+    doi: 10.1111/bph.70096
+    journal: British journal of pharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Fentanyl
+    - Nucleus Accumbens
+    - Male
+    - Rats
+    - Rats, Sprague-Dawley
+    - Dopamine
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Receptors, Neuropeptide Y
+    - Self Administration
+    - Glucagon-Like Peptide-1 Receptor
+    - Drug-Seeking Behavior
+    - Analgesics, Opioid
+    - Dose-Response Relationship, Drug
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Emerging literature indicates that simultaneously targeting glucagon-like
+  peptide-1 receptors (GLP-1Rs) and neuropeptide Y receptors (Y/Y) may represent a
+  new pharmacotherapeutic approach to treating opioid use disorder (OUD). The overall
+  goal of this study was to screen the efficacy of GEP12, a novel GLP-1R/Yreceptor/Yreceptor
+  triple agonist, to reduce voluntary fentanyl taking and seeking.
+
+
+  Rats were allowed to self-administer fentanyl (2.5 μg kg, i.v.) for 21 days. Rats
+  were then pretreated w'

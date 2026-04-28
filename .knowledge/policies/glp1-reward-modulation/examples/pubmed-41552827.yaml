@@ -1,0 +1,44 @@
+source_id: pubmed-41552827
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Systematic review of GLP-1 RAs in substance use disorders — comprehensive
+  evidence synthesis on reward modulation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The potential role of GLP-1 receptor agonists in substance use disorders
+    - a systematic review.
+  source_type: pubmed
+  authors:
+  - name: K M V&#xf6;lker
+    affiliation: Department of Molecular Pharmacology and Experimental Therapeutics,
+      Mayo Clinic College of Medicine, Rochester, MN, United States.
+  - name: B L H Prechtl
+    affiliation: Department of Cardiology, Klinikum N&#xfc;rnberg, Nuremberg, Germany.
+  - name: N L Bormann
+    affiliation: Department of Psychiatry and Psychology, Mayo Clinic College of Medicine,
+      Rochester, MN, United States.
+  - name: D S Choi
+    affiliation: Department of Molecular Pharmacology and Experimental Therapeutics,
+      Mayo Clinic College of Medicine, Rochester, MN, United States.
+  published_at: 2026 01 02
+  source_metadata:
+    pmid: '41552827'
+    doi: 10.3389/fphar.2025.1702448
+    journal: Frontiers in pharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms: []
+    pmc_id: PMC12808432
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12808432/
+content_excerpt: Substance use disorders (SUDs) remain a major global health challenge
+  with limited pharmacological treatment options and high relapse rates. Glucagon-like
+  peptide-1 receptor agonists (GLP-1RAs), originally developed for type 2 diabetes
+  and obesity, have recently gained attention for their potential effects on addictive
+  behaviors. Preclinical and early clinical studies suggest that GLP-1RAs modulate
+  mesolimbic dopaminergic signaling and attenuate reward-driven behaviors, positioning
+  them as promi

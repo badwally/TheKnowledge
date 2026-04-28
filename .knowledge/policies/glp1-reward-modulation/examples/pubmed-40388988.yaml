@@ -1,0 +1,55 @@
+source_id: pubmed-40388988
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Ultra-processed food effects on hedonic and homeostatic appetite — relevant
+  context for understanding food noise and reward eating though not GLP-1 specific.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Impact of ultra-processed foods on hedonic and homeostatic appetite regulation:
+    A systematic review.'
+  source_type: pubmed
+  authors:
+  - name: Elif Ulug
+    affiliation: Department of Nutrition and Dietetics, Faculty of Health Sciences,
+      Hacettepe University, 06100, Ankara, Turkey; Department of Nutrition and Dietetics,
+      Faculty of Health Sciences, Ataturk University, 25240, Erzurum, Turkey.
+  - name: Aylin Acikgoz Pinar
+    affiliation: Department of Nutrition and Dietetics, Faculty of Health Sciences,
+      Hacettepe University, 06100, Ankara, Turkey.
+  - name: Bulent Okan Yildiz
+    affiliation: 'Division of Endocrinology and Metabolism, Department of Internal
+      Medicine, Hacettepe University School of Medicine, 06100, Ankara, Turkey. Electronic
+      address: byildiz@hacettepe.edu.tr.'
+  published_at: 2025 05 17
+  source_metadata:
+    pmid: '40388988'
+    doi: 10.1016/j.appet.2025.108139
+    journal: Appetite
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms:
+    - Humans
+    - Fast Foods
+    - Homeostasis
+    - Appetite Regulation
+    - Appetite
+    - Obesity
+    - Eating
+    - Feeding Behavior
+    - Female
+    - Male
+    - Food, Processed
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'The rapid rise in ultra-processed foods (UPF) consumption correlates
+  with the growing global obesity prevalence. Investigating the hedonic and homeostatic
+  mechanisms affected by UPF may provide insights for obesity prevention and appetite
+  regulation. This systematic review aimed to examine the current understanding of
+  the potential effects of UPF on appetite regulation and food intake, examining both
+  hedonic and homeostatic pathways. A search was performed in PubMed, Scopus, Web
+  of Science, and '

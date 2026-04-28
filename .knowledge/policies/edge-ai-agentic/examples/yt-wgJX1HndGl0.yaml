@@ -1,0 +1,18 @@
+source_id: yt-wgJX1HndGl0
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Apple Developer 34-minute WWDC-era deep dive on M5/A19 GPU acceleration
+  for ML workloads, covering Neural Engine usage and optimization — substantial technical
+  content on Apple's silicon-level on-device inference stack, directly relevant to
+  competitive positioning analysis.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Accelerate your machine learning workloads with the M5 and A19 GPUs | Apple
+    Developer
+  published_at: '2026-03-20T21:32:39Z'
+  channel: Apple Developer
+content_excerpt: Discover how to take advantage of the M5 and A19 GPUs to accelerate
+  machine learning. Find out how to use the Neural ...

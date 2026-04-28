@@ -1,0 +1,18 @@
+source_id: yt-k8cnVCMYmNc
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 78-minute AI Engineer conference session on building durable production-ready
+  agents with OpenAI + Temporal covers fault tolerance, orchestration architecture,
+  and production deployment patterns — high-value technical content for understanding
+  agentic workflow infrastructure.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'OpenAI + @Temporalio : Building Durable, Production Ready Agents - Cornelia
+    Davis, Temporal'
+  published_at: '2026-01-12T19:30:06Z'
+  channel: AI Engineer
+content_excerpt: Everyone is building AI Agents, and everyone is looking for ways
+  to build them more easily. Earlier this year, OpenAI released the ...

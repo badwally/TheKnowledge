@@ -1,0 +1,48 @@
+source_id: pubmed-41753300
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Incretin-based therapies in addiction treatment — relevant overview but
+  likely less mechanistically deep than other included reviews.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Incretin-Based Therapies: A Novel Pathway in Addiction Treatment.'
+  source_type: pubmed
+  authors:
+  - name: Rosiejka Dawid
+    affiliation: Department of Obesity Treatment, Metabolic Disorders and Clinical
+      Dietetics, Poznan University of Medical Sciences, 61-701 Poznan, Poland.
+  - name: Micha&#x142;owska Joanna
+    affiliation: Department of Obesity Treatment, Metabolic Disorders and Clinical
+      Dietetics, Poznan University of Medical Sciences, 61-701 Poznan, Poland.
+  - name: Marcickiewicz Justyna
+    affiliation: Department of Obesity Treatment, Metabolic Disorders and Clinical
+      Dietetics, Poznan University of Medical Sciences, 61-701 Poznan, Poland.
+  - name: Adela Bogda&#x144;ska
+    affiliation: Medical Education, Wroclaw Medical University, 50-367 Wroclaw, Poland.
+  - name: Wiktoria B&#x142;a&#x17c;ejewska
+    affiliation: Department of Obesity Treatment, Metabolic Disorders and Clinical
+      Dietetics, Poznan University of Medical Sciences, 61-701 Poznan, Poland.
+  - name: Monika Szuli&#x144;ska
+    affiliation: Department of Obesity Treatment, Metabolic Disorders and Clinical
+      Dietetics, Poznan University of Medical Sciences, 61-701 Poznan, Poland.
+  published_at: 2026 02 19
+  source_metadata:
+    pmid: '41753300'
+    doi: 10.3390/jcm15041613
+    journal: Journal of clinical medicine
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms: []
+    pmc_id: PMC12941627
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12941627/
+content_excerpt: 'Addiction poses a major global public health challenge. It is characterized
+  by high prevalence, chronic relapse and limited efficacy of available pharmacotherapies
+  across different substance use disorders. Increasing evidence demonstrates that
+  incretin-based therapies directly modulate metabolic signaling pathways that intercross
+  with central reward and motivational circuits, including hypothalamic-mesolimbic
+  networks and dopaminergic neurotransmission. As a result, agents such as glucagon-like '

@@ -1,0 +1,14 @@
+source_id: yt-LY4ZlXt_pXM
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 3 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'A*: Atrous Spatial Temporal Action Recognition for Real Time Applications'
+  published_at: '2024-01-30T04:55:17Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Myeongjun Kim; Federica Spinola; Philipp Benz; Tae-hoon
+  Kim Description: Deep learning has become a popular tool ...'

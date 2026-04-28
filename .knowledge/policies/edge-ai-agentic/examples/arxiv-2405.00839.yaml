@@ -1,0 +1,48 @@
+source_id: arxiv-2405.00839
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: ComDML balances training workloads across heterogeneous decentralized agents
+  in edge computing, enabling faster agents to absorb slower agents' compute via local-loss
+  split training; published at ICDCS 2024 with edge computing and federated learning
+  keywords.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Communication-Efficient Training Workload Balancing for Decentralized Multi-Agent
+    Learning
+  source_type: arxiv
+  authors:
+  - name: Seyed Mahmoud Sajjadi Mohammadabadi
+    affiliation: null
+  - name: Lei Yang
+    affiliation: null
+  - name: Feng Yan
+    affiliation: null
+  - name: Junshan Zhang
+    affiliation: null
+  published_at: '2024-05-01T20:03:37Z'
+  source_metadata:
+    arxiv_id: '2405.00839'
+    categories:
+    - cs.LG
+    - cs.AI
+    - cs.DC
+    - cs.MA
+    - cs.PF
+    pdf_url: http://arxiv.org/pdf/2405.00839v1.pdf
+    primary_category: cs.LG
+    comment: 'This paper has been accepted for presentation at ICDCS (44th IEEE International
+      Conference on Distributed Computing Systems). Keywords: decentralized multi-agent
+      learning, federated learning, edge computing, heterogeneous agents, workload
+      balancing, and communication-efficient training )'
+    journal_ref: 2024 IEEE 44th International Conference on Distributed Computing
+      Systems (ICDCS)
+content_excerpt: Decentralized Multi-agent Learning (DML) enables collaborative model
+  training while preserving data privacy. However, inherent heterogeneity in agents'
+  resources (computation, communication, and task size) may lead to substantial variations
+  in training time. This heterogeneity creates a bottleneck, lengthening the overall
+  training time due to straggler effects and potentially wasting spare resources of
+  faster agents. To minimize training time in heterogeneous environments, we present
+  a Communica

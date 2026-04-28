@@ -1,0 +1,14 @@
+source_id: yt-GNJOLqhnAM8
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Deep Learning - 037  Visual object tracking
+  published_at: '2021-04-28T14:55:38Z'
+  channel: TechPedia
+content_excerpt: Deep learning added a huge boost to the already rapidly developing
+  field of computer vision. With deep learning, a lot of new ...

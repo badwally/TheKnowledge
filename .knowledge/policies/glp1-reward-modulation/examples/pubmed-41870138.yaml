@@ -1,0 +1,52 @@
+source_id: pubmed-41870138
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 RA effects on sexual function in women and men — narrative review
+  directly addressing the sexual reward dampening question.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GLP-1 receptor agonists and sexual function in women and men: a narrative
+    review of emerging evidence and the need for further research.'
+  source_type: pubmed
+  authors:
+  - name: Zaher Merhi
+    affiliation: Department of Obstetrics and Gynecology, Division of Reproductive
+      Endocrinology and Infertility, Albert Einstein College of Medicine, Bronx, NY
+      10461, United States.
+  published_at: 2026 Jan 05
+  source_metadata:
+    pmid: '41870138'
+    doi: 10.1093/sxmrev/qeag015
+    journal: Sexual medicine reviews
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Male
+    - Female
+    - Exenatide
+    - Animals
+    - Sexual Behavior
+    - Libido
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Glucagon-like peptide-1 receptor agonists (GLP-1 RAs) may influence
+  reward-related and sexual behaviors.
+
+
+  To synthesize evidence from preclinical and clinical studies evaluating the impact
+  of GLP-1 RAs on libido and sexual function in both women and men.
+
+
+  A structured synthesis of published studies examining GLP-1 RAs in relation to sexual
+  behaviors, libido, and sexual parameters was performed using PubMed.
+
+
+  In animal models, the GLP-1 RA exendin-4 administration suppressed sexual interaction
+  be'

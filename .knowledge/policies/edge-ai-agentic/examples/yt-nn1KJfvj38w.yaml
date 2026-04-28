@@ -1,0 +1,16 @@
+source_id: yt-nn1KJfvj38w
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 66-minute panel on accelerating AI inference at the 5G edge from OpenNebula
+  covers near-edge cloud infrastructure, multi-stakeholder perspectives, and real-time
+  inference demand — substantive for GPM edge infrastructure context.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '[Panel Discussion] Accelerating AI Inference at the 5G Edge'
+  published_at: '2025-07-03T04:18:10Z'
+  channel: OpenNebula
+content_excerpt: With the demand for real-time data processing and intelligent services
+  continuing to grow, telco operators are seeking solutions ...

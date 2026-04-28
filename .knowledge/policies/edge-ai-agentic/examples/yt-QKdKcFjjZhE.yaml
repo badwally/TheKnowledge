@@ -1,0 +1,16 @@
+source_id: yt-QKdKcFjjZhE
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 25-minute Syntax podcast guide to local AI hardware and model setup covers
+  practical on-device inference configuration — relevant to edge deployment considerations,
+  though the practitioner/hobbyist framing limits strategic depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: You Guide To Local AI | Hardware, Setup and Models
+  published_at: '2026-03-12T14:00:11Z'
+  channel: Syntax
+content_excerpt: In this video CJ guides you through the wide world of local AI. He
+  shows how he set up his new 128GB memory mini PC and gives ...

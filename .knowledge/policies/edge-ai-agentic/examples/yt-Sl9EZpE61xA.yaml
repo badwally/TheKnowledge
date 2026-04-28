@@ -1,0 +1,16 @@
+source_id: yt-Sl9EZpE61xA
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Codebasics 13-minute explanation of Google's A2A protocol — accessible
+  but technically grounded overview of the protocol's architecture and how it differs
+  from MCP.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What is A2A (Agent to Agent Protocol)? | A2A Explained
+  published_at: '2025-04-10T13:02:11Z'
+  channel: codebasics
+content_excerpt: In this video, we will look at a very simple explanation of Google's
+  A2A - Agent to Agent protocol.

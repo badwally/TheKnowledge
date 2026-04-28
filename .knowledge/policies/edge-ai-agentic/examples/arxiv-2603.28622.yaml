@@ -1,0 +1,40 @@
+source_id: arxiv-2603.28622
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: G-TRAC directly addresses trust-aware routing for distributed generative
+  AI inference across heterogeneous edge devices, with a polynomial-time Risk-Bounded
+  Shortest Path algorithm achieving sub-millisecond median routing latency; this is
+  a precise technical contribution at the edge+agentic inference intersection with
+  benchmarks.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Trust-Aware Routing for Distributed Generative AI Inference at the Edge
+  source_type: arxiv
+  authors:
+  - name: Chanh Nguyen
+    affiliation: null
+  - name: Erik Elmroth
+    affiliation: null
+  published_at: '2026-03-30T16:07:11Z'
+  source_metadata:
+    arxiv_id: '2603.28622'
+    categories:
+    - cs.DC
+    - cs.AI
+    - cs.NI
+    pdf_url: http://arxiv.org/pdf/2603.28622v1.pdf
+    primary_category: cs.DC
+    comment: 11 pages, 10 figures. Preprint accepted at the 22nd Annual International
+      Conference on Distributed Computing in Smart Systems and the Internet of Things
+      (DCOSS-IoT 2026)
+    journal_ref: null
+content_excerpt: Emerging deployments of Generative AI increasingly execute inference
+  across decentralized and heterogeneous edge devices rather than on a single trusted
+  server. In such environments, a single device failure or misbehavior can disrupt
+  the entire inference process, making traditional best-effort peer-to-peer routing
+  insufficient. Coordinating distributed generative inference therefore requires mechanisms
+  that explicitly account for reliability, performance variability, and trust among
+  participatin

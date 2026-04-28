@@ -1,0 +1,14 @@
+source_id: yt-6sNhjBTHrlg
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: TODAY show on microdosing GLP-1; general news coverage.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Does Microdosing Weight Loss Drugs Actually Work and Is it Safe?
+  published_at: '2025-11-21T15:00:58Z'
+  channel: TODAY
+content_excerpt: In a growing trend, some users of GLP-1 medications are hailing their
+  results with microdosing, taking smaller-than-recommended ...

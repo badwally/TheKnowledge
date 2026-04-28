@@ -1,0 +1,57 @@
+source_id: arxiv-2602.13227
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Proposes an agentic AI control plane for 6G network slice orchestration
+  combining multiple cooperating AI agents with market-aware, distributed edge orchestration.
+  Directly addresses the agentic AI + edge/near-edge distributed systems intersection
+  in a concrete architectural design.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: An Agentic AI Control Plane for 6G Network Slice Orchestration, Monitoring,
+    and Trading
+  source_type: arxiv
+  authors:
+  - name: Eranga Bandara
+    affiliation: null
+  - name: Ross Gore
+    affiliation: null
+  - name: Sachin Shetty
+    affiliation: null
+  - name: Ravi Mukkamala
+    affiliation: null
+  - name: Tharaka Hewa
+    affiliation: null
+  - name: Abdul Rahman
+    affiliation: null
+  - name: Xueping Liang
+    affiliation: null
+  - name: Safdar H. Bouk
+    affiliation: null
+  - name: Amin Hass
+    affiliation: null
+  - name: Peter Foytik
+    affiliation: null
+  - name: Ng Wee Keong
+    affiliation: null
+  - name: Kasun De Zoysa
+    affiliation: null
+  published_at: '2026-01-27T09:50:57Z'
+  source_metadata:
+    arxiv_id: '2602.13227'
+    categories:
+    - cs.NI
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2602.13227v1.pdf
+    primary_category: cs.NI
+    comment: null
+    journal_ref: null
+content_excerpt: 6G networks are expected to be AI-native, intent-driven, and economically
+  programmable, requiring fundamentally new approaches to network slice orchestration.
+  Existing slicing frameworks, largely designed for 5G, rely on static policies and
+  manual workflows and are ill-suited for the dynamic, multi-domain, and service-centric
+  nature of emerging 6G environments. In this paper, we propose an agentic AI control
+  plane architecture for 6G network slice orchestration, monitoring, and trading that
+  trea

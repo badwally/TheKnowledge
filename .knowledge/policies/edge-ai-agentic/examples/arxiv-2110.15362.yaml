@@ -1,0 +1,39 @@
+source_id: arxiv-2110.15362
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: BitTrain introduces bitmap compression for activation memory during on-device
+  training, enabling full model retraining on memory-constrained edge devices; published
+  at ACM/IEEE SEC 2021.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'BitTrain: Sparse Bitmap Compression for Memory-Efficient Training on the
+    Edge'
+  source_type: arxiv
+  authors:
+  - name: Abdelrahman Hosny
+    affiliation: null
+  - name: Marina Neseem
+    affiliation: null
+  - name: Sherief Reda
+    affiliation: null
+  published_at: '2021-10-29T16:30:57Z'
+  source_metadata:
+    arxiv_id: '2110.15362'
+    categories:
+    - cs.LG
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2110.15362v1.pdf
+    primary_category: cs.LG
+    comment: 12 pages, 13 figures, to appear in the proceedings of The Sixth ACM/IEEE
+      Symposium on Edge Computing (SEC 2021)
+    journal_ref: null
+content_excerpt: Training on the Edge enables neural networks to learn continuously
+  from new data after deployment on memory-constrained edge devices. Previous work
+  is mostly concerned with reducing the number of model parameters which is only beneficial
+  for inference. However, memory footprint from activations is the main bottleneck
+  for training on the edge. Existing incremental training methods fine-tune the last
+  few layers sacrificing accuracy gains from re-training the whole model. In this
+  work, we investiga

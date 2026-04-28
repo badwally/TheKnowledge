@@ -1,0 +1,14 @@
+source_id: yt-lGMeXjF2s00
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Use of spatiotemporal information from high-accuracy positioning
+  published_at: '2019-12-26T08:07:32Z'
+  channel: NTT official channel
+content_excerpt: NTT labs approaches toward realizing the cloud-based GNSS positioning
+  architecture to expand coverage of high-accuracy ...

@@ -1,0 +1,48 @@
+source_id: pubmed-38952487
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Clinical pharmacokinetics of semaglutide systematic review — PK without
+  neurological content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Clinical Pharmacokinetics of Semaglutide: A Systematic Review.'
+  source_type: pubmed
+  authors:
+  - name: Xi-Ding Yang
+    affiliation: Department of Pharmacy, The Second Xiangya Hospital of Central South
+      University, Changsha, Hunan, People's Republic of China.
+  - name: Yong-Yu Yang
+    affiliation: Department of Pharmacy, The Second Xiangya Hospital of Central South
+      University, Changsha, Hunan, People's Republic of China.
+  published_at: 2024 06 25
+  source_metadata:
+    pmid: '38952487'
+    doi: 10.2147/DDDT.S470826
+    journal: Drug design, development and therapy
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms:
+    - Glucagon-Like Peptides
+    - Humans
+    - Administration, Oral
+    - Injections, Subcutaneous
+    - Hypoglycemic Agents
+    - Drug Interactions
+    - Semaglutide
+    pmc_id: PMC11215664
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11215664/
+content_excerpt: 'The aim of this review was to provide all the pharmacokinetic data
+  for semaglutide in humans concerning its pharmacokinetics after subcutaneously and
+  oral applications in healthy and diseased populations, to provide recommendations
+  for clinical use.
+
+
+  The PubMed and Embase databases were searched to screen studies associated with
+  the pharmacokinetics of semaglutide. The pharmacokinetic parameters included area
+  under the curve plasma concentrations (AUC), maximal plasma concentration (C), time
+  to '

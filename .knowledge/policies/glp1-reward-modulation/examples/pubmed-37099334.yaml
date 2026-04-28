@@ -1,0 +1,33 @@
+source_id: pubmed-37099334
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: JAMA news article on Ozempic popularity — general information without mechanistic
+  depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: As Ozempic's Popularity Soars, Here's What to Know About Semaglutide and
+    Weight Loss.
+  source_type: pubmed
+  authors:
+  - name: Melissa Suran
+    affiliation: null
+  published_at: 2023 May 16
+  source_metadata:
+    pmid: '37099334'
+    doi: 10.1001/jama.2023.2438
+    journal: JAMA
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Glucagon-Like Peptides
+    - Weight Loss
+    - Popular Culture
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: '[Abstract not available]'

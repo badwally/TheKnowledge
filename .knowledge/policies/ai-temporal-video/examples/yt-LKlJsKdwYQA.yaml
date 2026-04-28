@@ -1,0 +1,14 @@
+source_id: yt-LKlJsKdwYQA
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Local-Global Video-Text Interactions for Temporal Grounding
+  published_at: '2020-07-17T09:59:37Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Jonghwan Mun, Minsu Cho, Bohyung Han Description: This
+  paper addresses the problem of text-to-video temporal ...'

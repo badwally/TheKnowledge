@@ -1,0 +1,17 @@
+source_id: yt-QHBr8hekCzg
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 13-minute practical walkthrough of NVIDIA Jetson Orin Nano Super for edge
+  AI (driveway monitor application) covers hardware capabilities, setup, and real-world
+  edge inference deployment — grounded technical content on a key edge platform.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'NVIDIA&#39;s $249 Secret Weapon for Edge AI - Jetson Orin Nano Super: Driveway
+    Monitor'
+  published_at: '2024-12-17T14:00:21Z'
+  channel: Dave's Garage
+content_excerpt: Dave Plummer explores NVIDIA's Jetson Orin Nano Super, a compact
+  AI powerhouse with 1024 CUDA cores and 6 ARM cores ...

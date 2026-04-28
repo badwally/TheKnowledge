@@ -1,0 +1,18 @@
+source_id: yt-ZNPkUoPBU84
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 9-minute explainer on AI Mini PCs covering NPUs, local LLM deployment,
+  and on-device privacy from a recent 2026 publication — introduces the edge compute
+  hardware category relevant to private on-device inference, though lacks depth for
+  a technical audience.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'AI Mini PCs Explained: NPUs, Local LLMs, and the Future of Private On-Device
+    AI #aipc #npu'
+  published_at: '2026-02-28T22:34:51Z'
+  channel: TechWell AI
+content_excerpt: AI Mini PCs are the quiet, compact desktops built for on-device AI—packing
+  dedicated NPUs (Neural Processing Units) that ...

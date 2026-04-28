@@ -1,0 +1,14 @@
+source_id: yt-2LUi4_csxhQ
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Grounding Spatio-temporal Language with Transformers | JRC Workshop 2021
+  published_at: '2021-06-10T14:43:23Z'
+  channel: Microsoft Research
+content_excerpt: 'Artificial Intelligence (AI) 20 May 2021 Speaker: Laetitia Teodorescu,
+  INRIA (collaboration with Tristan Karch, Clément ...'

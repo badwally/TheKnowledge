@@ -1,0 +1,44 @@
+source_id: arxiv-2512.09309
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Distributed ViT inference framework using NVIDIA Jetson as edge orchestrator,
+  partitioning data across cloud servers for privacy-by-design; published at ACM/IEEE
+  SEC '25 with full system architecture and privacy/latency results.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: A Distributed Framework for Privacy-Enhanced Vision Transformers on the Edge
+  source_type: arxiv
+  authors:
+  - name: Zihao Ding
+    affiliation: null
+  - name: Mufeng Zhu
+    affiliation: null
+  - name: Zhongze Tang
+    affiliation: null
+  - name: Sheng Wei
+    affiliation: null
+  - name: Yao Liu
+    affiliation: null
+  published_at: '2025-12-10T04:37:07Z'
+  source_metadata:
+    arxiv_id: '2512.09309'
+    categories:
+    - cs.DC
+    - cs.CR
+    - cs.CV
+    pdf_url: http://arxiv.org/pdf/2512.09309v1.pdf
+    primary_category: cs.DC
+    comment: 16 pages, 7 figures. Published in the Proceedings of the Tenth ACM/IEEE
+      Symposium on Edge Computing (SEC '25), Dec 3-6, 2025, Washington, D.C., USA
+    journal_ref: Proceedings of the Tenth ACM/IEEE Symposium on Edge Computing (SEC
+      '25), 2025, Article 8, pp. 1-16
+content_excerpt: Nowadays, visual intelligence tools have become ubiquitous, offering
+  all kinds of convenience and possibilities. However, these tools have high computational
+  requirements that exceed the capabilities of resource-constrained mobile and wearable
+  devices. While offloading visual data to the cloud is a common solution, it introduces
+  significant privacy vulnerabilities during transmission and server-side computation.
+  To address this, we propose a novel distributed, hierarchical offloading framework
+  f

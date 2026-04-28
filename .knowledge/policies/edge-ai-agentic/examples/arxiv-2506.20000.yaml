@@ -1,0 +1,38 @@
+source_id: arxiv-2506.20000
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Guardian-FC introduces a two-layer agentic AI safety framework for federated
+  computing with FHE, MPC, and differential privacy backends; addresses agentic AI
+  control planes in distributed privacy-preserving environments with concrete DSL
+  and EP design.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Can One Safety Loop Guard Them All? Agentic Guard Rails for Federated Computing
+  source_type: arxiv
+  authors:
+  - name: Narasimha Raghavan Veeraragavan
+    affiliation: null
+  - name: Jan Franz Nygård
+    affiliation: null
+  published_at: '2025-06-24T20:39:49Z'
+  source_metadata:
+    arxiv_id: '2506.20000'
+    categories:
+    - cs.CR
+    - cs.DC
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2506.20000v1.pdf
+    primary_category: cs.CR
+    comment: Accepted at ICML 2025 Workshop on Collaborative and Federated Agentic
+      Workflows (CFAgentic@ICML'25)
+    journal_ref: null
+content_excerpt: We propose Guardian-FC, a novel two-layer framework for privacy preserving
+  federated computing that unifies safety enforcement across diverse privacy preserving
+  mechanisms, including cryptographic back-ends like fully homomorphic encryption
+  (FHE) and multiparty computation (MPC), as well as statistical techniques such as
+  differential privacy (DP). Guardian-FC decouples guard-rails from privacy mechanisms
+  by executing plug-ins (modular computation units), written in a backend-neutral,
+  domain-spec

@@ -1,0 +1,75 @@
+source_id: pubmed-38887265
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Lateral parabrachial nucleus astrocytes control food intake — brain region
+  relevant to feeding but not GLP-1 or reward specific.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Lateral parabrachial nucleus astrocytes control food intake.
+  source_type: pubmed
+  authors:
+  - name: Devesh Mishra
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Jennifer E Richard
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Ivana Maric
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Olesya T Shevchouk
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Stina B&#xf6;rchers
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Kim Eerola
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Jean-Philippe Krieger
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Karolina P Skibicka
+    affiliation: Department of Physiology/Metabolic Physiology, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy at the University of Gothenburg, Gothenburg,
+      Sweden.
+  published_at: 2024 06 03
+  source_metadata:
+    pmid: '38887265'
+    doi: 10.3389/fendo.2024.1389589
+    journal: Frontiers in endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Astrocytes
+    - Male
+    - Female
+    - Rats
+    - Eating
+    - Parabrachial Nucleus
+    - Anorexia
+    - Feeding Behavior
+    - Rats, Sprague-Dawley
+    - Glutamic Acid
+    - Receptors, N-Methyl-D-Aspartate
+    pmc_id: PMC11180714
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11180714/
+content_excerpt: Food intake behavior is under the tight control of the central nervous
+  system. Most studies to date focus on the contribution of neurons to this behavior.
+  However, although previously overlooked, astrocytes have recently been implicated
+  to play a key role in feeding control. Most of the recent literature has focused
+  on astrocytic contribution in the hypothalamus or the dorsal vagal complex. The
+  contribution of astrocytes located in the lateral parabrachial nucleus (lPBN) to
+  feeding behavior cont

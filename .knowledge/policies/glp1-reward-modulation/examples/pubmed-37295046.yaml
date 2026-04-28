@@ -1,0 +1,79 @@
+source_id: pubmed-37295046
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide reduces alcohol intake and relapse-like drinking — clinically
+  relevant GLP-1 RA with dose-response data on reward behavior.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide reduces alcohol intake and relapse-like drinking in male and
+    female rats.
+  source_type: pubmed
+  authors:
+  - name: Cajsa Aran&#xe4;s
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Christian E Edvardsson
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Olesya T Shevchouk
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Qian Zhang
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Sarah Witley
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Sebastian Blid Sk&#xf6;ldheden
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Lindsay Zentveld
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Daniel Vall&#xf6;f
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Maximilian Tufvesson-Alm
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: 'Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+      Electronic address: Elisabet.Jerlhag@pharm.gu.se.'
+  published_at: 2023 06 07
+  source_metadata:
+    pmid: '37295046'
+    doi: 10.1016/j.ebiom.2023.104642
+    journal: EBioMedicine
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Female
+    - Rats
+    - Mice
+    - Male
+    - Animals
+    - Exenatide
+    - Dopamine
+    - 3,4-Dihydroxyphenylacetic Acid
+    - Overweight
+    - Ethanol
+    - Alcoholism
+    - Alcohol Drinking
+    - Recurrence
+    - Semaglutide
+    pmc_id: PMC10363436
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10363436/
+content_excerpt: 'Glucagon-like peptide1 receptor (GLP-1R) agonists have been found
+  to reduce alcohol drinking in rodents and overweight patients with alcohol use disorder
+  (AUD). However, the probability of low semaglutide doses, an agonist with higher
+  potency and affinity for GLP-1R, to attenuate alcohol-related responses in rodents
+  and the underlying neuronal mechanisms is unknown.
+
+
+  In the intermittent access model, we examined the ability of semaglutide to decrease
+  alcohol intake and block relapse-like drinkin'

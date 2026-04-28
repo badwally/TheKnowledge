@@ -1,0 +1,72 @@
+source_id: pubmed-36063105
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1R in dentate gyrus mossy cells — interesting for GLP-1 brain function
+  but focused on hippocampal learning, not reward circuitry.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Glucagon-like peptide-1 receptor differentially controls mossy cell activity
+    across the dentate gyrus longitudinal axis.
+  source_type: pubmed
+  authors:
+  - name: Alex Steiner
+    affiliation: Department of Psychiatry and Behavioral Sciences, Vanderbilt University
+      Medical Center, Nashville, Tennessee, USA.
+  - name: Benjamin M Owen
+    affiliation: Department of Neurology, Vanderbilt University Medical Center, Nashville,
+      Tennessee, USA.
+  - name: James P Bauer
+    affiliation: Department of Psychiatry and Behavioral Sciences, Vanderbilt University
+      Medical Center, Nashville, Tennessee, USA.
+  - name: Leann Seanez
+    affiliation: Department of Psychiatry and Behavioral Sciences, Vanderbilt University
+      Medical Center, Nashville, Tennessee, USA.
+  - name: Sam Kwon
+    affiliation: Department of Psychiatry and Behavioral Sciences, Vanderbilt University
+      Medical Center, Nashville, Tennessee, USA.
+  - name: Jessica E Biddinger
+    affiliation: Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, Nashville, Tennessee, USA.
+  - name: Ragan Huffman
+    affiliation: Department of Neurology, Vanderbilt University Medical Center, Nashville,
+      Tennessee, USA.
+  - name: Julio E Ayala
+    affiliation: Department of Molecular Physiology and Biophysics, Vanderbilt University
+      School of Medicine, Nashville, Tennessee, USA.
+  - name: William P Nobis
+    affiliation: Department of Neurology, Vanderbilt University Medical Center, Nashville,
+      Tennessee, USA.
+  - name: Alan S Lewis
+    affiliation: Department of Psychiatry and Behavioral Sciences, Vanderbilt University
+      Medical Center, Nashville, Tennessee, USA.
+  published_at: 2022 09 05
+  source_metadata:
+    pmid: '36063105'
+    doi: 10.1002/hipo.23469
+    journal: Hippocampus
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Research Support, N.I.H., Extramural
+    mesh_terms:
+    - Animals
+    - Mice
+    - Glucagon-Like Peptide-1 Receptor
+    - Exenatide
+    - Mossy Fibers, Hippocampal
+    - Glucagon-Like Peptide 1
+    - Hippocampus
+    - Dentate Gyrus
+    pmc_id: PMC9675713
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9675713/
+content_excerpt: Understanding the role of dentate gyrus (DG) mossy cells (MCs) in
+  learning and memory has rapidly evolved due to increasingly precise methods for
+  targeting MCs and for in vivo recording and activity manipulation in rodents. These
+  studies have shown MCs are highly active in vivo, strongly remap to contextual manipulation,
+  and that their inhibition or hyperactivation impairs pattern separation and location
+  or context discrimination. Less well understood is how MC activity is modulated
+  by neurohorm

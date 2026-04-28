@@ -1,0 +1,18 @@
+source_id: yt-oaV_8ZSFblg
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 6-minute explainer on hardware requirements for running LLMs locally covers
+  GPU memory, quantization tradeoffs, and resource constraints — directly relevant
+  to edge inference feasibility, though it predates the 12-month window (August 2024)
+  and depth is limited.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'LLM System and Hardware Requirements - Running Large Language Models Locally
+    #systemrequirements'
+  published_at: '2024-08-09T20:42:45Z'
+  channel: AI Fusion
+content_excerpt: This is a great 100% free Tool I developed after uploading this video,
+  it will allow you to choose an LLM and see which GPUs ...

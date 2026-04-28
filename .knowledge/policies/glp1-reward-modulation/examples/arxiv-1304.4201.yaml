@@ -1,0 +1,37 @@
+source_id: arxiv-1304.4201
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Reward and adversity processing circuits with dopamine/serotonin — relevant
+  framework but no GLP-1 content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Reward and adversity processing circuits, their competition and interactions
+    with dopamine and serotonin signaling
+  source_type: arxiv
+  authors:
+  - name: Karin Vadovičová
+    affiliation: null
+  - name: Roberto Gasparotti
+    affiliation: null
+  published_at: '2013-04-15T19:05:50Z'
+  source_metadata:
+    arxiv_id: '1304.4201'
+    categories:
+    - q-bio.NC
+    pdf_url: http://arxiv.org/pdf/1304.4201v15.pdf
+    primary_category: q-bio.NC
+    comment: 'Reference [27] was updated to: Vadovičová K: Affective and cognitive
+      prefrontal cortex projections to the lateral habenula in humans. arXiv:1402.2196,
+      re-published in Front Hum Neurosci 2014, 8:819. doi: 10.3389/fnhum.2014.00819
+      Few English errors were corrected and the Abbreviations chapter was deleted'
+    journal_ref: null
+content_excerpt: We propose that dACC, AI and caudolateral OFC(clOFC) project to lateral
+  habenula (LHb) and D2 loop of ventral striatum (VS), forming a functional adversity
+  processing circuit, directed towards inhibitory avoidance and self-control. This
+  circuit learns what is bad or harmful to us and predicts risks, to stop us from
+  going/moving for bad or suboptimal choices that decrease our well-being and survival
+  chances. Proposed dACC role is to generate a WARNING signal when things are going
+  (or might end) b

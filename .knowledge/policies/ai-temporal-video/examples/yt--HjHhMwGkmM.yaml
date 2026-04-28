@@ -1,0 +1,14 @@
+source_id: yt--HjHhMwGkmM
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GCAN: Graph-based Class-level Attention Network for Long-term Action Detection'
+  published_at: '2024-01-30T04:34:01Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Wu, Yuankai*; Su, Xin; Chaudhari, Rahul Description: In
+  recent years, Action Detection has become an active research ...'

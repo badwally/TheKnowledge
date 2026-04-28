@@ -1,0 +1,16 @@
+source_id: yt-w-avC9c5GK4
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AWS certification module on ML inferencing at the edge covers edge deployment
+  concepts with structured depth — relevant to foundational edge inference knowledge,
+  though it is certification-course format rather than research-grade.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: AIF-C01 Module 1.9 - ML Inferencing at the Edge
+  published_at: '2024-11-06T04:26:45Z'
+  channel: CloudExpert Solutions
+content_excerpt: Welcome to the AWS Certified AI Practitioner Bootcamp! In this video,
+  we'll explore Machine Learning Inferencing at the edge, ...

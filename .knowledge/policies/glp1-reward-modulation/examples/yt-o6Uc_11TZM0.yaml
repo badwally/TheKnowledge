@@ -1,0 +1,14 @@
+source_id: yt-o6Uc_11TZM0
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Peter Attia clip; 2 min GLP-1 pros/cons without reward mechanism depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Pros &amp; cons of GLP-1 weight loss drugs |  Dr. Ralph DeFronzo
+  published_at: '2025-03-01T17:00:57Z'
+  channel: Peter Attia MD
+content_excerpt: 'This clip is from episode #337 – Insulin resistance masterclass:
+  The full body impact of metabolic dysfunction and prevention, ...'

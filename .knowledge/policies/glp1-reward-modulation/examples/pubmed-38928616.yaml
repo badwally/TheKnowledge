@@ -1,0 +1,58 @@
+source_id: pubmed-38928616
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Explores GLP-1 RA impact on substance use, compulsive behavior, AND libido
+  — directly addresses whether reward dampening extends beyond appetite to sexual
+  function.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Exploring the Potential Impact of GLP-1 Receptor Agonists on Substance Use,
+    Compulsive Behavior, and Libido: Insights from Social Media Using a Mixed-Methods
+    Approach.'
+  source_type: pubmed
+  authors:
+  - name: Davide Arillotta
+    affiliation: Department of Neurosciences, Psychology, Drug Research and Child
+      Health, Section of Pharmacology and Toxicology, University of Florence, 50121
+      Florence, Italy.
+  - name: Giuseppe Floresta
+    affiliation: Department of Drug and Health Sciences, University of Catania, 95124
+      Catania, Italy.
+  - name: G Duccio Papanti Pelletier
+    affiliation: Tolmezzo Community Mental Health Centre, ASUFC Mental Health Department,
+      Via Giuliano Bonanni, 2, 33028 Tolmezzo, Italy.
+  - name: Amira Guirguis
+    affiliation: Pharmacy, Faculty of Medicine, Health and Life Science, Swansea University,
+      Singleton Campus, Swansea SA2 8PP, Wales, UK.
+  - name: John Martin Corkery
+    affiliation: Psychopharmacology, Drug Misuse, and Novel Psychoactive Substances
+      Research Unit, University of Hertfordshire, College Lane Campus, Hatfield AL10
+      9AB, UK.
+  - name: Giovanni Martinotti
+    affiliation: Department of Neurosciences, Imaging and Clinical Sciences, University
+      of Chieti-Pescara, 66100 Chieti, Italy.
+  - name: Fabrizio Schifano
+    affiliation: Psychopharmacology, Drug Misuse, and Novel Psychoactive Substances
+      Research Unit, University of Hertfordshire, College Lane Campus, Hatfield AL10
+      9AB, UK.
+  published_at: 2024 06 20
+  source_metadata:
+    pmid: '38928616'
+    doi: 10.3390/brainsci14060617
+    journal: Brain sciences
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC11202225
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11202225/
+content_excerpt: Glucagon-like peptide-1 (GLP-1) is involved in a range of central
+  and peripheral pathways related to appetitive behavior. Hence, this study explored
+  the effects of glucagon-like peptide-1 receptor agonists (GLP-1 RAs) on substance
+  and behavioral addictions, including alcohol, caffeine, nicotine, cannabis, psychostimulants,
+  compulsive shopping, and sex drive/libido. Data were collected from various social
+  platforms. Keywords related to GLP-1 RAs and substance/behavioral addiction were
+  used to ext

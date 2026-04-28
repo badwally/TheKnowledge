@@ -1,0 +1,14 @@
+source_id: yt-UdCNiBttqR4
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Real Time Moving Vehicle detection using image processing Matlab| +91 9176206235(call/whatsapp)
+  published_at: '2021-05-13T09:19:54Z'
+  channel: 'AI - Research Support '
+content_excerpt: Motion-Based Multiple Object Tracking using MATLAB, Object Tracking
+  Using Kalman Filter in MATLAB, Track a Single Object ...

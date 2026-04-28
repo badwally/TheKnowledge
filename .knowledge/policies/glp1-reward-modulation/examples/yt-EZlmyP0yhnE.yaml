@@ -1,0 +1,15 @@
+source_id: yt-EZlmyP0yhnE
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Pharmacist discusses GLP-1 mood swings and emotional flatness; 4 min but
+  directly addresses mental health changes.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Ozempic Brain? GLP-1s, Mood Swings &amp; Mental Health Changes 🧠
+  published_at: '2025-05-15T14:30:09Z'
+  channel: Pharmacist Online
+content_excerpt: '"GLP-1s and Mental Health The Hidden Side Effects of Ozempic & Mounjaro"
+  Feeling emotionally flat on Ozempic or Mounjaro ...'

@@ -1,0 +1,15 @@
+source_id: yt-9I1QtA9C3TY
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Hour-long podcast on GLP-1 peptides including retatrutide; compares compounds.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Episode 29 - GLP-1 Peptides Explained: Ozempic, Retatrutide &amp; The Truth
+    About Fat Loss Drugs'
+  published_at: '2026-03-18T01:10:09Z'
+  channel: Fraser Bayley
+content_excerpt: The Truth About GLP-1 Weight Loss Drugs (What Most People Get Wrong)
+  GLP-1 peptides are everywhere right now. Ozempic.

@@ -1,0 +1,14 @@
+source_id: yt-I0ZCt-KIb2c
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Not relevant to GLP-1 reward/neurological effects; unrelated medical topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Hiccups  - Symptoms and causes
+  published_at: '2023-02-14T15:45:01Z'
+  channel: Doctor Mike Hansen
+content_excerpt: iccups may result from a large meal, alcoholic or carbonated beverages
+  or sudden excitement. In some cases, hiccups may be a ...

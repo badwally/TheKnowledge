@@ -1,0 +1,48 @@
+source_id: arxiv-2412.12178
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Directly targets LLM deployment on edge devices by exploiting activation
+  sparsity in FFN layers, which comprise ~2/3 of parameters. Orthogonal to quantization/pruning
+  and applicable to general LLMs, with peer-reviewed results at IEEE IPCCC 2024.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Activation Sparsity Opportunities for Compressing General Large Language
+    Models
+  source_type: arxiv
+  authors:
+  - name: Nobel Dhar
+    affiliation: null
+  - name: Bobin Deng
+    affiliation: null
+  - name: Md Romyull Islam
+    affiliation: null
+  - name: Kazi Fahim Ahmad Nasif
+    affiliation: null
+  - name: Liang Zhao
+    affiliation: null
+  - name: Kun Suo
+    affiliation: null
+  published_at: '2024-12-13T02:26:54Z'
+  source_metadata:
+    arxiv_id: '2412.12178'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2412.12178v2.pdf
+    primary_category: cs.LG
+    comment: 'pp. 1-9, doi: 10.1109/IPCCC59868.2024.10850382. keywords: {Accuracy;Prefetching;Large
+      language models;Computational modeling;Companies;Transformers;User experience;Time
+      factors;Tuning;Guidelines;Large Language Models (LLMs);AI Compression;Activation
+      Sparsity;Edge LLM},'
+    journal_ref: 2024 IEEE International Performance, Computing, and Communications
+      Conference (IPCCC), Orlando, FL, USA, 2024
+content_excerpt: Deploying local AI models, such as Large Language Models (LLMs),
+  to edge devices can substantially enhance devices' independent capabilities, alleviate
+  the server's burden, and lower the response time. Owing to these tremendous potentials,
+  many big tech companies have released several lightweight Small Language Models
+  (SLMs) to bridge this gap. However, we still have huge motivations to deploy more
+  powerful (LLMs) AI models on edge devices and enhance their smartness level. Unlike
+  the convention

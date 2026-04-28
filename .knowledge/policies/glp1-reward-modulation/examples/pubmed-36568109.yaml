@@ -1,0 +1,70 @@
+source_id: pubmed-36568109
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide in NAFLD mouse model — liver/metabolic outcomes, no reward
+  content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide ameliorates metabolism and hepatic outcomes in an NAFLD mouse
+    model.
+  source_type: pubmed
+  authors:
+  - name: Shu Niu
+    affiliation: Department of Internal Medicine, Hebei Medical University, Shijiazhuang,
+      Hebei, China.
+  - name: Shuchun Chen
+    affiliation: Department of Internal Medicine, Hebei Medical University, Shijiazhuang,
+      Hebei, China.
+  - name: Xing Chen
+    affiliation: Department of Internal Medical, Hebei General Hospital, Shijiazhuang,
+      Hebei, China.
+  - name: Qingjuan Ren
+    affiliation: Department of Endocrine, Shijiazhuang People's Hospital, Shijiazhuang,
+      Hebei, China.
+  - name: Lin Yue
+    affiliation: Department of Endocrine, The Third Hospital of Shijiazhuang, Shijiazhuang,
+      Hebei, China.
+  - name: Xiaoyu Pan
+    affiliation: Department of Internal Medicine, Hebei Medical University, Shijiazhuang,
+      Hebei, China.
+  - name: Huiying Zhao
+    affiliation: Department of Endocrine, Shijiazhuang People's Hospital, Shijiazhuang,
+      Hebei, China.
+  - name: Zelin Li
+    affiliation: Department of Internal Medicine, Hebei Medical University, Shijiazhuang,
+      Hebei, China.
+  - name: Xiaoyi Chen
+    affiliation: Department of Internal Medicine, Hebei Medical University, Shijiazhuang,
+      Hebei, China.
+  published_at: 2022 12 09
+  source_metadata:
+    pmid: '36568109'
+    doi: 10.3389/fendo.2022.1046130
+    journal: Frontiers in endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Mice
+    - Animals
+    - Non-alcoholic Fatty Liver Disease
+    - Blood Glucose
+    - Diet, High-Fat
+    - Disease Models, Animal
+    - Body Weight
+    - Semaglutide
+    pmc_id: PMC9780435
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9780435/
+content_excerpt: 'The aim of this study was to evaluate changes in body weight, liver
+  weight, blood glucose, liver injury markers, pro-inflammatory factors and oxidative
+  stress marker levels in obese mice with HFD induced NAFLD after semaglutide use.
+
+
+  The 24 C57BL6J mice were randomly divided into three groups (NCD, HFD and Sema)
+  for the assessment of metabolic status, inflammatory factor and oxidative stress
+  marker levels, liver histopathology in mice. Liver metabolomics was determined by
+  liquid chromatography/m'

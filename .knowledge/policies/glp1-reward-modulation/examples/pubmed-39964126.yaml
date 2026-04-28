@@ -1,0 +1,64 @@
+source_id: pubmed-39964126
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 and GIP receptor agonist effects on neurogenesis and psychiatric
+  applications — touches on mood/motivation effects.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'The effect of glucagon-like peptide-1 and glucose dependent insulinotropic
+    polypeptide receptor agonists on neurogenesis, differentiation, and plasticity
+    (Neuro-GDP): potential mechanistically informed therapeutics in the treatment
+    and prevention of mental disorders.'
+  source_type: pubmed
+  authors:
+  - name: Roger S McIntyre
+    affiliation: Department of Psychiatry, University of Toronto, Toronto, Canada.
+  - name: Natalie Rasgon
+    affiliation: Department of Psychiatry and Behavioral Sciences, Stanford School
+      of Medicine, Rockefeller University.
+  - name: Joseph Goldberg
+    affiliation: Icahn School of Medicine at Mount Sinai, New York, NY.
+  - name: Sabrina Wong
+    affiliation: Brain and Cognition Discovery Foundation, Toronto, Canada.
+  - name: Gia Han Le
+    affiliation: Brain and Cognition Discovery Foundation, Toronto, Canada.
+  - name: Rodrigo B Mansur
+    affiliation: Department of Psychiatry, University of Toronto, Toronto, Canada.
+  - name: Joshua D Rosenblat
+    affiliation: Department of Psychiatry, University of Toronto, Toronto, Canada.
+  - name: Kayla M Teopiz
+    affiliation: Brain and Cognition Discovery Foundation, Toronto, Canada.
+  - name: Stephen M Stahl
+    affiliation: Department of Psychiatry and Neuroscience, University of California
+      Riverside.
+  published_at: 2025 02 18
+  source_metadata:
+    pmid: '39964126'
+    doi: 10.1017/S1092852925000124
+    journal: CNS spectrums
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Mental Disorders
+    - Receptors, Gastrointestinal Hormone
+    - Neuronal Plasticity
+    - Glucagon-Like Peptide 1
+    - Neurogenesis
+    - Animals
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Cell Differentiation
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Glucagon-like peptide-1 (GLP-1) and glucose-dependent insulinotropic
+  polypeptide (GIP) receptor agonists (RAs) mimic naturally occurring GLP-1 and GIP
+  and are highly effective anti-diabetic and anti-obesity agents. In addition to their
+  robust acute and long-term effects on weight, metabolism, and blood pressure, these
+  agents also reduce cardiovascular mortality as well as stroke risk and associated
+  consequences. A replicated and convergent body of preclinical evidence also indicates
+  that increti

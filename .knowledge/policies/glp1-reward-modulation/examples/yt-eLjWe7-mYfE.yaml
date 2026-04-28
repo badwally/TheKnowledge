@@ -1,0 +1,16 @@
+source_id: yt-eLjWe7-mYfE
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Addiction neuroscience podcast; may touch GLP-1 but primary focus is general
+  addiction.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'How Addiction Rewires the Brain: Forensics, Neuroscience &amp; New Hope
+    | The Neurogenesis Project'
+  published_at: '2026-03-27T21:45:01Z'
+  channel: The NeuroGenesis Project
+content_excerpt: 'Braincast #12 — How Addiction Rewires the Brain: Forensics, Neuroscience
+  & New Hope | The Neurogenesis Project Dr. Sean ...'

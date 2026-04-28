@@ -1,0 +1,75 @@
+source_id: pubmed-38778151
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide prescribing associated with increased erectile dysfunction
+  risk — directly quantifies sexual dysfunction side effect, key for reward dampening
+  question.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Prescribing semaglutide for weight loss in non-diabetic, obese patients
+    is associated with an increased risk of erectile dysfunction: a TriNetX database
+    study.'
+  source_type: pubmed
+  authors:
+  - name: Corey Able
+    affiliation: Division of Urology, Department of Surgery, The University of Texas
+      Medical Branch at Galveston, Galveston, TX, USA.
+  - name: Brian Liao
+    affiliation: Division of Urology, Department of Surgery, The University of Texas
+      Medical Branch at Galveston, Galveston, TX, USA.
+  - name: Gal Saffati
+    affiliation: Scott Department of Urology, Baylor College of Medicine, Houston,
+      TX, USA.
+  - name: Ankith Maremanda
+    affiliation: The James Buchanan Brady Urological Institute, Johns Hopkins Medical
+      Institutions, Baltimore, MD, USA.
+  - name: James Applewhite
+    affiliation: Scott Department of Urology, Baylor College of Medicine, Houston,
+      TX, USA.
+  - name: Ali A Nasrallah
+    affiliation: Division of Urology, Department of Surgery, The University of Texas
+      Medical Branch at Galveston, Galveston, TX, USA.
+  - name: Joseph Sonstein
+    affiliation: Division of Urology, Department of Surgery, The University of Texas
+      Medical Branch at Galveston, Galveston, TX, USA.
+  - name: Laith Alzweri
+    affiliation: Division of Urology, Department of Surgery, The University of Texas
+      Medical Branch at Galveston, Galveston, TX, USA.
+  - name: Taylor P Kohn
+    affiliation: The James Buchanan Brady Urological Institute, Johns Hopkins Medical
+      Institutions, Baltimore, MD, USA. tpkohn@jhmi.edu.
+  published_at: 2024 05 22
+  source_metadata:
+    pmid: '38778151'
+    doi: 10.1038/s41443-024-00895-6
+    journal: International journal of impotence research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Male
+    - Erectile Dysfunction
+    - Obesity
+    - Middle Aged
+    - Adult
+    - Glucagon-Like Peptides
+    - Weight Loss
+    - Databases, Factual
+    - Phosphodiesterase 5 Inhibitors
+    - Young Adult
+    - Adolescent
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Semaglutide was approved in June 2021 for weight loss in non-diabetic,
+  obese patients. While package inserts include sexual dysfunction as a side effect,
+  no study has assessed the degree of this risk. The objective of our study is to
+  assess the risk of developing erectile dysfunction after semaglutide is prescribed
+  for weight loss in obese, non-diabetic men. The TriNetX Research database was used
+  to identify men without a diagnosis of diabetes ages 18 to 50 with BMI > 30 who
+  were prescribed sema

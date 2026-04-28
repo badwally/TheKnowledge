@@ -1,0 +1,53 @@
+source_id: arxiv-2104.03042
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Demonstrates on-device federated learning on smartphones and embedded devices
+  using the Flower framework, evaluating system costs (memory, compute, battery) on
+  real hardware. Published at MLSys On-device Intelligence Workshop 2021 — directly
+  addresses on-device training for edge FL with concrete hardware benchmarks.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: On-device Federated Learning with Flower
+  source_type: arxiv
+  authors:
+  - name: Akhil Mathur
+    affiliation: null
+  - name: Daniel J. Beutel
+    affiliation: null
+  - name: Pedro Porto Buarque de Gusmão
+    affiliation: null
+  - name: Javier Fernandez-Marques
+    affiliation: null
+  - name: Taner Topal
+    affiliation: null
+  - name: Xinchi Qiu
+    affiliation: null
+  - name: Titouan Parcollet
+    affiliation: null
+  - name: Yan Gao
+    affiliation: null
+  - name: Nicholas D. Lane
+    affiliation: null
+  published_at: '2021-04-07T10:42:14Z'
+  source_metadata:
+    arxiv_id: '2104.03042'
+    categories:
+    - cs.LG
+    - cs.AI
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2104.03042v1.pdf
+    primary_category: cs.LG
+    comment: 'Accepted at the 2nd On-device Intelligence Workshop @ MLSys 2021. arXiv
+      admin note: substantial text overlap with arXiv:2007.14390'
+    journal_ref: On-device Intelligence Workshop at the Fourth Conference on Machine
+      Learning and Systems (MLSys), April 9, 2021
+content_excerpt: Federated Learning (FL) allows edge devices to collaboratively learn
+  a shared prediction model while keeping their training data on the device, thereby
+  decoupling the ability to do machine learning from the need to store data in the
+  cloud. Despite the algorithmic advancements in FL, the support for on-device training
+  of FL algorithms on edge devices remains poor. In this paper, we present an exploration
+  of on-device FL on various smartphones and embedded devices using the Flower framework.
+  We al

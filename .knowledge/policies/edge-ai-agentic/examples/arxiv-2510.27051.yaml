@@ -1,0 +1,58 @@
+source_id: arxiv-2510.27051
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Presents a MAPE-driven data flywheel for continuous improvement of NVIDIA's
+  enterprise AI agent system (NVInfo), achieving 10x model size reduction (70B to
+  8B) and 70% latency improvement through fine-tuning. Demonstrates closed-loop MLOps
+  patterns for agentic AI with quantitative deployment results relevant to edge-adjacent
+  model efficiency.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Adaptive Data Flywheel: Applying MAPE Control Loops to AI Agent Improvement'
+  source_type: arxiv
+  authors:
+  - name: Aaditya Shukla
+    affiliation: null
+  - name: Sidney Knowles
+    affiliation: null
+  - name: Meenakshi Madugula
+    affiliation: null
+  - name: Dave Farris
+    affiliation: null
+  - name: Ryan Angilly
+    affiliation: null
+  - name: Santiago Pombo
+    affiliation: null
+  - name: Anbang Xu
+    affiliation: null
+  - name: Lu An
+    affiliation: null
+  - name: Abhinav Balasubramanian
+    affiliation: null
+  - name: Tan Yu
+    affiliation: null
+  - name: Jiaxiang Ren
+    affiliation: null
+  - name: Rama Akkiraju
+    affiliation: null
+  published_at: '2025-10-30T23:41:06Z'
+  source_metadata:
+    arxiv_id: '2510.27051'
+    categories:
+    - cs.AI
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2510.27051v1.pdf
+    primary_category: cs.AI
+    comment: 20 pages, 5 figures, 5 tables. Presents MAPE-K control loop application
+      to enterprise AI agent improvement with experimental validation on NVIDIA's
+      NVInfo AI system
+    journal_ref: null
+content_excerpt: Enterprise AI agents must continuously adapt to maintain accuracy,
+  reduce latency, and remain aligned with user needs. We present a practical implementation
+  of a data flywheel in NVInfo AI, NVIDIA's Mixture-of-Experts (MoE) Knowledge Assistant
+  serving over 30,000 employees. By operationalizing a MAPE-driven data flywheel,
+  we built a closed-loop system that systematically addresses failures in retrieval-augmented
+  generation (RAG) pipelines and enables continuous learning. Over a 3-month post-depl

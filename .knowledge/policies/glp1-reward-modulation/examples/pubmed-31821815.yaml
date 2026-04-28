@@ -1,0 +1,69 @@
+source_id: pubmed-31821815
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Phasic dopamine responses to food cues suppressed by exendin-4 — directly
+  measures GLP-1 RA effects on reward prediction signaling.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Phasic dopamine responses to a food-predictive cue are suppressed by the
+    glucagon-like peptide-1 receptor agonist Exendin-4.
+  source_type: pubmed
+  authors:
+  - name: Vaibhav R Konanur
+    affiliation: Graduate Program in Neuroscience, University of Illinois at Chicago,
+      Chicago, IL, United States.
+  - name: Ted M Hsu
+    affiliation: Department of Psychology, University of Illinois at Chicago, 1007W.
+      Harrison St., Chicago, IL 60607-7137, United States.
+  - name: Scott E Kanoski
+    affiliation: Department of Biological Sciences, Human and Evolutionary Biology
+      Section, University of Southern California, Los Angeles, CA, United States.
+  - name: Matthew R Hayes
+    affiliation: Department of Psychiatry, Perelman School of Medicine, University
+      of Pennsylvania, Philadelphia, PA, United States.
+  - name: Mitchell F Roitman
+    affiliation: 'Department of Psychology, University of Illinois at Chicago, 1007W.
+      Harrison St., Chicago, IL 60607-7137, United States. Electronic address: mroitman@uic.edu.'
+  published_at: 2019 12 09
+  source_metadata:
+    pmid: '31821815'
+    doi: 10.1016/j.physbeh.2019.112771
+    journal: Physiology & behavior
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    mesh_terms:
+    - Acoustic Stimulation
+    - Animals
+    - Cues
+    - Dopamine
+    - Dopaminergic Neurons
+    - Dose-Response Relationship, Drug
+    - Eating
+    - Exenatide
+    - Feeding Behavior
+    - Female
+    - Food
+    - Injections, Intraventricular
+    - Male
+    - Motivation
+    - Rats
+    - Rats, Long-Evans
+    - Sex Characteristics
+    - Sucrose
+    - Ventral Tegmental Area
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Glucagon-Like Peptide-1 Receptor
+    pmc_id: PMC8112128
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8112128/
+content_excerpt: Phasic dopamine activity is evoked by reliable predictors of food
+  reward and plays a role in cue-triggered, goal-directed behavior. While this important
+  signal is modulated by physiological state (e.g. hunger, satiety), the mechanisms
+  by which physiological state is integrated by dopamine neurons is only beginning
+  to be elucidated. Activation of central receptors for glucagon-like peptide-1 (GLP-1R)
+  via long-acting agonists (e.g., Exendin-4) suppresses food intake and food-directed
+  motivated beh

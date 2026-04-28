@@ -1,0 +1,13 @@
+source_id: yt--9jPC_bsqf0
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'UniVTG: Towards Unified Video-Language Temporal Grounding'
+  published_at: '2023-10-08T02:58:48Z'
+  channel: AI Journal Club
+content_excerpt: https://github.com/showlab/UniVTG.

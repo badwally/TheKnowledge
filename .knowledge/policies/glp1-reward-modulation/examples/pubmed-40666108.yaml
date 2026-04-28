@@ -1,0 +1,44 @@
+source_id: pubmed-40666108
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Case report of anorgasmia following GLP-1 agonist initiation — direct clinical
+  evidence of sexual reward dampening from GLP-1 RA.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Anorgasmia following initiation of GLP-1 agonist.
+  source_type: pubmed
+  authors:
+  - name: Vidya Visvabharathy
+    affiliation: Department of Obstetrics & Gynecology, Case Western Reserve University/MetroHealth
+      Medical Center, Cleveland, OH 44109, United States.
+  - name: Sally MacPhedran
+    affiliation: Department of Obstetrics & Gynecology, Case Western Reserve University/MetroHealth
+      Medical Center, Cleveland, OH 44109, United States.
+  - name: Katie Shupp
+    affiliation: Case Western Reserve University/MetroHealth Medical Center, Cleveland,
+      OH 44109, United States.
+  - name: Benjamin King
+    affiliation: Case Western Reserve University/MetroHealth Medical Center, Cleveland,
+      OH 44109, United States.
+  published_at: 2025 07 15
+  source_metadata:
+    pmid: '40666108'
+    doi: 10.1093/sexmed/qfaf047
+    journal: Sexual medicine
+    peer_reviewed: true
+    publication_type:
+    - Case Reports
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC12260840
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12260840/
+content_excerpt: According to the Obesity Medicine Association, obesity is a chronic,
+  progressive, relapsing, multifactorial and treatable neurobehavioral disease. A
+  small number of drugs have been approved by the Food & Drug Administration (FDA)
+  for weight loss. Liraglutide, Tirzepatide, and Semaglutide are GLP-1 agonists and
+  anti-diabetic drugs, and are some of the latest FDA-approved medications for weight
+  loss. Up to 50% of patients experience gastrointestinal (GI) distress, a common
+  side effect, while takin

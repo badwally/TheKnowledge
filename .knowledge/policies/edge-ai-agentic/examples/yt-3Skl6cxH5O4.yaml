@@ -1,0 +1,16 @@
+source_id: yt-3Skl6cxH5O4
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 8-minute video on Gemini Robotics On-Device covers on-device inference
+  for autonomous robotics — directly relevant to the edge+agentic intersection even
+  if framed through robotics rather than enterprise agents.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Gemini On-Device: How DeepMind Quietly Changed Robotics Forever'
+  published_at: '2025-07-17T04:52:18Z'
+  channel: 'AI Ascension '
+content_excerpt: DeepMind just changed the future of robotics. With Gemini Robotics
+  On-Device, AI can now live inside the robot—no cloud, ...

@@ -1,0 +1,14 @@
+source_id: yt-K2Vx4Fsxy0w
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Optimal Spatio-Temporal Path Discovery for Video Event Detection
+  published_at: '2011-06-18T20:11:55Z'
+  channel: Du Tran
+content_excerpt: will be presenting at the 2011 IEEE Computer Vision and Pattern Recognition
+  video web presentation section.

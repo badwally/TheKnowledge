@@ -1,0 +1,15 @@
+source_id: yt-ormyaLRTSoc
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: IJCAI 2020 - A Survey on Temporal Reasoning for Temporal Information Extraction
+    from Text (5 min).
+  published_at: '2020-12-15T16:01:47Z'
+  channel: Tuur
+content_excerpt: This is a very short 5-minute 'highlight' presentation for IJCAI
+  2020 about temporal reasoning in temporal information extraction ...

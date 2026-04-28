@@ -1,0 +1,47 @@
+source_id: arxiv-2402.05964
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Comprehensive survey of transformer compression (pruning, quantization,
+  distillation, Mamba/RetNet alternatives); covers the core compression toolkit needed
+  for edge LLM deployment.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: A Survey on Transformer Compression
+  source_type: arxiv
+  authors:
+  - name: Yehui Tang
+    affiliation: null
+  - name: Yunhe Wang
+    affiliation: null
+  - name: Jianyuan Guo
+    affiliation: null
+  - name: Zhijun Tu
+    affiliation: null
+  - name: Kai Han
+    affiliation: null
+  - name: Hailin Hu
+    affiliation: null
+  - name: Dacheng Tao
+    affiliation: null
+  published_at: '2024-02-05T12:16:28Z'
+  source_metadata:
+    arxiv_id: '2402.05964'
+    categories:
+    - cs.LG
+    - cs.CL
+    - cs.CV
+    pdf_url: http://arxiv.org/pdf/2402.05964v2.pdf
+    primary_category: cs.LG
+    comment: Model Compression, Transformer, Large Language Model, Large Vision Model,
+      LLM
+    journal_ref: null
+content_excerpt: 'Transformer plays a vital role in the realms of natural language
+  processing (NLP) and computer vision (CV), specially for constructing large language
+  models (LLM) and large vision models (LVM). Model compression methods reduce the
+  memory and computational cost of Transformer, which is a necessary step to implement
+  large language/vision models on practical devices. Given the unique architecture
+  of Transformer, featuring alternative attention and feedforward neural network (FFN)
+  modules, specific '

@@ -1,0 +1,88 @@
+source_id: pubmed-26072178
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1R agonist reduces cocaine self-administration, demonstrating non-food
+  reward dampening via GLP-1 system.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide 1 (GLP-1) receptor agonist exendin-4 reduces cocaine
+    self-administration in mice.
+  source_type: pubmed
+  authors:
+  - name: Gunnar S&#xf8;rensen
+    affiliation: Laboratory of Neuropsychiatry, Department of Neuroscience and Pharmacology,
+      University of Copenhagen, Denmark; Psychiatric Centre Copenhagen, University
+      of Copenhagen, Denmark.
+  - name: India A Reddy
+    affiliation: Neuroscience Graduate Program, Vanderbilt University Medical Center,
+      Nashville, TN, USA; Department of Molecular Physiology and Biophysics, Vanderbilt
+      University Medical Center, Nashville, TN, USA; Neuroscience Program in Substance
+      Abuse, Vanderbilt University Medical Center, Nashville, TN, USA.
+  - name: Pia Weikop
+    affiliation: Laboratory of Neuropsychiatry, Department of Neuroscience and Pharmacology,
+      University of Copenhagen, Denmark; Psychiatric Centre Copenhagen, University
+      of Copenhagen, Denmark.
+  - name: Devon L Graham
+    affiliation: Department of Biomedical Sciences, Florida State University College
+      of Medicine, Tallahassee FL, USA.
+  - name: Gregg D Stanwood
+    affiliation: Department of Biomedical Sciences, Florida State University College
+      of Medicine, Tallahassee FL, USA.
+  - name: Gitta Wortwein
+    affiliation: Laboratory of Neuropsychiatry, Department of Neuroscience and Pharmacology,
+      University of Copenhagen, Denmark; Department of Public Health, University of
+      Copenhagen, Denmark.
+  - name: Aurelio Galli
+    affiliation: Department of Molecular Physiology and Biophysics, Vanderbilt University
+      Medical Center, Nashville, TN, USA; Neuroscience Program in Substance Abuse,
+      Vanderbilt University Medical Center, Nashville, TN, USA.
+  - name: Anders Fink-Jensen
+    affiliation: 'Laboratory of Neuropsychiatry, Department of Neuroscience and Pharmacology,
+      University of Copenhagen, Denmark; Psychiatric Centre Copenhagen, University
+      of Copenhagen, Denmark. Electronic address: a.fink-jensen@dadlnet.dk.'
+  published_at: 2015 06 11
+  source_metadata:
+    pmid: '26072178'
+    doi: 10.1016/j.physbeh.2015.06.013
+    journal: Physiology & behavior
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Analysis of Variance
+    - Animals
+    - Benzazepines
+    - Cocaine
+    - Corpus Striatum
+    - Dopamine
+    - Dopamine Agonists
+    - Dopamine Uptake Inhibitors
+    - Dose-Response Relationship, Drug
+    - Exenatide
+    - Exploratory Behavior
+    - Gene Expression Regulation
+    - Hyperkinesis
+    - Hypoglycemic Agents
+    - Male
+    - Mice
+    - Microdialysis
+    - Motor Activity
+    - Peptides
+    - Proto-Oncogene Proteins c-fos
+    - Self Administration
+    - Time Factors
+    - Venoms
+    pmc_id: PMC4668599
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4668599/
+content_excerpt: Glucagon-like peptide 1 (GLP-1) analogues are used for the treatment
+  of type 2 diabetes. The ability of the GLP-1 system to decrease food intake in rodents
+  has been well described and parallels results from clinical trials. GLP-1 receptors
+  are expressed in the brain, including within the ventral tegmental area (VTA) and
+  the nucleus accumbens (NAc). Dopaminergic neurons in the VTA project to the NAc,
+  and these neurons play a pivotal role in the rewarding effects of drugs of abuse.
+  Based on the an

@@ -1,0 +1,42 @@
+source_id: pubmed-34955726
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Overview of appetite-regulatory peptides in addiction — systematic review
+  covering GLP-1 among multiple peptide systems in reward/addiction.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: An Overview of Appetite-Regulatory Peptides in Addiction Processes; From
+    Bench to Bed Side.
+  source_type: pubmed
+  authors:
+  - name: Olesya T Shevchouk
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Maximilian Tufvesson-Alm
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  published_at: 2021 12 09
+  source_metadata:
+    pmid: '34955726'
+    doi: 10.3389/fnins.2021.774050
+    journal: Frontiers in neuroscience
+    peer_reviewed: true
+    publication_type:
+    - Systematic Review
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC8695496
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8695496/
+content_excerpt: There is a substantial need for new pharmacological treatments of
+  addiction, and appetite-regulatory peptides are implied as possible candidates.
+  Appetite regulation is complex and involves anorexigenic hormones such as glucagon-like
+  peptide-1 (GLP-1) and amylin, and orexigenic peptides like ghrelin and all are well-known
+  for their effects on feeding behaviors. This overview will summarize more recent
+  physiological aspects of these peptides, demonstrating that they modulate various
+  aspects of ad

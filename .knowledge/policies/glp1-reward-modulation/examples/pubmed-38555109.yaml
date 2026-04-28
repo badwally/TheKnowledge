@@ -1,0 +1,57 @@
+source_id: pubmed-38555109
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Meta-analysis of acute pancreatitis risk with semaglutide — safety without
+  reward content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Acute pancreatitis due to different semaglutide regimens: An updated meta-analysis.'
+  source_type: pubmed
+  authors:
+  - name: Walter Masson
+    affiliation: 'Department of Cardiology, Hospital Italiano de Buenos Aires, Buenos
+      Aires, Argentina. Electronic address: walter.masson@hospitalitaliano.org.ar.'
+  - name: Mart&#xed;n Lobo
+    affiliation: Department of Cardiology, Hospital Militar Campo de Mayo, Buenos
+      Aires, Argentina.
+  - name: Leandro Barbagelata
+    affiliation: Department of Cardiology, Hospital Italiano de Buenos Aires, Buenos
+      Aires, Argentina.
+  - name: Augusto Lavalle-Cobo
+    affiliation: Department of Cardiology, Sanatorio Otamendi, Buenos Aires, Argentina.
+  - name: Juan P Nogueira
+    affiliation: Endocrinology, Nutrition and Metabolism Research Center, Faculty
+      of Health Sciences, Universidad Nacional de Formosa, Argentina; International
+      University of the Americas, San Jos&#xe9;, Costa Rica.
+  published_at: 2024 Mar
+  source_metadata:
+    pmid: '38555109'
+    doi: 10.1016/j.endien.2024.03.012
+    journal: Endocrinologia, diabetes y nutricion
+    peer_reviewed: true
+    publication_type:
+    - Meta-Analysis
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Acute Disease
+    - Glucagon-Like Peptides
+    - Pancreatitis
+    - Treatment Outcome
+    - Randomized Controlled Trials as Topic
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Some concerns persist regarding the safety of semaglutide. The objective
+  of this updated meta-analysis is to assess the risk of acute pancreatitis with the
+  use of semaglutide, assessing the results according to the different administration
+  regimens.
+
+
+  We performed an updated meta-analysis of randomised, placebo-controlled studies
+  of semaglutide therapy that report acute pancreatitis. This meta-analysis was performed
+  in line with PRISMA guidelines. A global and stratified analysis according to the'

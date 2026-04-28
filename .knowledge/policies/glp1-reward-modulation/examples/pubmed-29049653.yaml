@@ -1,0 +1,69 @@
+source_id: pubmed-29049653
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Phase II trial comparing oral vs subcutaneous semaglutide for T2D glycemic
+  control — pure diabetes efficacy, no reward discussion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Effect of Oral Semaglutide Compared With Placebo and Subcutaneous Semaglutide
+    on Glycemic Control in Patients With Type 2 Diabetes: A Randomized Clinical Trial.'
+  source_type: pubmed
+  authors:
+  - name: Melanie Davies
+    affiliation: Diabetes Research Centre, University of Leicester, Leicester, United
+      Kingdom.
+  - name: Thomas R Pieber
+    affiliation: Medical University of Graz, Graz, Austria.
+  - name: Marie-Louise Hartoft-Nielsen
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Oluf K H Hansen
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Serge Jabbour
+    affiliation: Thomas Jefferson University, Philadelphia, Pennsylvania.
+  - name: Julio Rosenstock
+    affiliation: Dallas Diabetes Research Center at Medical City, Dallas, Texas.
+  published_at: 2017 Oct 17
+  source_metadata:
+    pmid: '29049653'
+    doi: 10.1001/jama.2017.14752
+    journal: JAMA
+    peer_reviewed: true
+    publication_type:
+    - Clinical Trial, Phase II
+    - Comparative Study
+    - Journal Article
+    - Multicenter Study
+    - Randomized Controlled Trial
+    mesh_terms:
+    - Administration, Oral
+    - Blood Glucose
+    - Diabetes Mellitus, Type 2
+    - Dose-Response Relationship, Drug
+    - Female
+    - Glucagon-Like Peptides
+    - Glycated Hemoglobin
+    - Humans
+    - Hypoglycemia
+    - Hypoglycemic Agents
+    - Injections, Subcutaneous
+    - Male
+    - Middle Aged
+    - Nausea
+    - Semaglutide
+    pmc_id: PMC5817971
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5817971/
+content_excerpt: 'Glucagon-like peptide-1 (GLP-1) receptor agonists are effective
+  therapies for the treatment of type 2 diabetes and are all currently available as
+  an injection.
+
+
+  To compare the effects of oral semaglutide with placebo (primary) and open-label
+  subcutaneous semaglutide (secondary) on glycemic control in patients with type 2
+  diabetes.
+
+
+  Phase 2, randomized, parallel-group, dosage-finding, 26-week trial with 5-week follow-up
+  at 100 sites (hospital clinics, general practices, and clinical research cent'

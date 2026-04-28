@@ -1,0 +1,16 @@
+source_id: yt-ziTWFU19bfQ
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AWS re:Invent 2020 session on SageMaker Edge Manager covers MLOps for edge
+  devices including model packaging, deployment, and monitoring at fleet scale — relevant
+  to edge MLOps pattern, though aged and the service has since been discontinued.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'AWS re:Invent 2020:  MLOps for edge devices with Amazon SageMaker Edge Manager'
+  published_at: '2021-02-05T18:12:54Z'
+  channel: AWS Events
+content_excerpt: SageMaker Edge Manager is being discontinued on April 26th, 2024.
+  For more information about continuing to deploy your ...

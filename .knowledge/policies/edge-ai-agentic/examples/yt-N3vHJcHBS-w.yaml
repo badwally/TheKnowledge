@@ -1,0 +1,15 @@
+source_id: yt-N3vHJcHBS-w
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 20-minute MCP explanation by Shaw Talebi covering protocol mechanics and
+  use cases — adequate depth and duration for inclusion under broadening criteria.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Model Context Protocol (MCP) Explained in 20 Minutes
+  published_at: '2025-04-27T15:00:28Z'
+  channel: Shaw Talebi
+content_excerpt: 'Transform Your Business with AI: https://aibuilder.academy/yt/N3vHJcHBS-w
+  Get the (free) Claude Code Course: ...'

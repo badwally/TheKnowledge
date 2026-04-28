@@ -1,0 +1,17 @@
+source_id: yt-Y1Xr3EA7GxE
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 19-minute practical build of an agentic AI system (n8n + Ollama) running
+  on Jetson Nano hardware directly demonstrates edge agentic workflow orchestration
+  on constrained hardware — covers real deployment patterns, latency tradeoffs, and
+  agent-tool integration on-device.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Jetson Nano Agentic AI Update + New Case Setup (n8n Bot with Ollama)
+  published_at: '2025-07-20T14:29:11Z'
+  channel: Bijan Bowen
+content_excerpt: 'Timestamps: 00:00 - Intro 01:00 - Roboco Jetson Case 03:54 - n8n
+  Install 05:31 - n8n Setup 06:17 - n8n Discord Bot 07:25 ...'

@@ -1,0 +1,63 @@
+source_id: pubmed-41512288
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Patient perceptions of Ozempic for weight loss from online reviews — may
+  capture reports of food noise reduction, mood changes, and sexual effects from real
+  users.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Patient Perceptions of Ozempic (Semaglutide) for Weight Loss: Mixed Methods
+    Analysis of Online Medication Reviews.'
+  source_type: pubmed
+  authors:
+  - name: Abanoub J Armanious
+    affiliation: Department of Psychiatry, Rutgers Robert Wood Johnson Medical School,
+      Piscataway, NJ, United States.
+  - name: Rachel-Mae Hunter
+    affiliation: Department of Psychiatry, Rutgers Robert Wood Johnson Medical School,
+      Piscataway, NJ, United States.
+  - name: Kristi R Griffiths
+    affiliation: InsideOut Institute, Faculty of Medicine and Health, The University
+      of Sydney and Sydney Local Health District, Sydney, Australia.
+  - name: Hannah E Bowrey
+    affiliation: School of Psychology, Faculty of Science, The University of Sydney,
+      Camperdown, Australia.
+  - name: Robyn M Brown
+    affiliation: Department of Biochemistry and Pharmacology, The University of Melbourne,
+      Parkville, Australia.
+  - name: Morgan H James
+    affiliation: Department of Psychiatry, Rutgers Robert Wood Johnson Medical School,
+      Piscataway, NJ, United States.
+  published_at: 2026 01 09
+  source_metadata:
+    pmid: '41512288'
+    doi: 10.2196/78391
+    journal: Journal of medical Internet research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Weight Loss
+    - Internet
+    - Patient Satisfaction
+    - Female
+    - Male
+    - Middle Aged
+    - Adult
+    - Off-Label Use
+    pmc_id: PMC12904099
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12904099/
+content_excerpt: 'Ozempic (semaglutide) has received widespread attention for its
+  appetite-suppressing effects, leading to extensive off-label use for weight loss.
+  Although gastrointestinal side effects are well documented, less is known about
+  how users assess the trade-off between perceived benefits and adverse effects, or
+  how these assessments influence treatment discontinuation. Importantly, existing
+  insights are often limited to clinical trial populations and may not fully reflect
+  real-world experiences.
+
+
+  Thi'

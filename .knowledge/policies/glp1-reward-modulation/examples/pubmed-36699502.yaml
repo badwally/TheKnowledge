@@ -1,0 +1,41 @@
+source_id: pubmed-36699502
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of gut-brain axis in alcohol with focus on GLP-1, amylin, ghrelin
+  — substantive on reward mechanisms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Insight into the role of the gut-brain axis in alcohol-related responses:
+    Emphasis on GLP-1, amylin, and ghrelin.'
+  source_type: pubmed
+  authors:
+  - name: Maximilian Tufvesson-Alm
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+  - name: Olesya T Shevchouk
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+  published_at: 2023 01 09
+  source_metadata:
+    pmid: '36699502'
+    doi: 10.3389/fpsyt.2022.1092828
+    journal: Frontiers in psychiatry
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms: []
+    pmc_id: PMC9868418
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9868418/
+content_excerpt: Alcohol use disorder (AUD) contributes substantially to global morbidity
+  and mortality. Given the heterogenicity of this brain disease, available pharmacological
+  treatments only display efficacy in sub-set of individuals. The need for additional
+  treatment options is thus substantial and is the goal of preclinical studies unraveling
+  neurobiological mechanisms underlying AUD. Although these neurobiological processes
+  are complex and numerous, one system gaining recent attention is the gut-brain axi

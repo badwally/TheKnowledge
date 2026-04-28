@@ -1,0 +1,61 @@
+source_id: pubmed-38774967
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide for obesity in adolescents — pediatric weight management.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Semaglutide for management of obesity in adolescents: efficacy, safety,
+    and considerations for clinical practice.'
+  source_type: pubmed
+  authors:
+  - name: Megan O Bensignor
+    affiliation: Division of Pediatric Endocrinology and Diabetes, Center for Pediatric
+      Obesity Medicine, University of Minnesota Medical School, Minneapolis, Minnesota;
+      Division of Pediatric Endocrinology and Diabetes, University of Minnesota Medical
+      School, Minneapolis, Minnesota.
+  - name: Silva Arslanian
+    affiliation: Division of Pediatric Endocrinology, Diabetes, and Metabolism and
+      Center for Pediatric Research in Obesity and Metabolism, UPMC Children's Hospital
+      of Pittsburgh and University of Pittsburgh School of Medicine, Pittsburgh, Pennsylvania,
+      USA.
+  - name: Mary Ellen Vajravelu
+    affiliation: Division of Pediatric Endocrinology, Diabetes, and Metabolism and
+      Center for Pediatric Research in Obesity and Metabolism, UPMC Children's Hospital
+      of Pittsburgh and University of Pittsburgh School of Medicine, Pittsburgh, Pennsylvania,
+      USA.
+  published_at: 2024 05 15
+  source_metadata:
+    pmid: '38774967'
+    doi: 10.1097/MOP.0000000000001365
+    journal: Current opinion in pediatrics
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Glucagon-Like Peptides
+    - Adolescent
+    - Pediatric Obesity
+    - Anti-Obesity Agents
+    - Treatment Outcome
+    - Body Mass Index
+    - Cost-Benefit Analysis
+    - Injections, Subcutaneous
+    - Weight Loss
+    - Quality of Life
+    - Semaglutide
+    pmc_id: PMC11222026
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11222026/
+content_excerpt: 'The purpose of this review is to describe the existing limited data
+  related to the use of semaglutide in adolescents with obesity, supplementing with
+  findings from adult studies of semaglutide use.
+
+
+  Semaglutide, as a once weekly subcutaneous injection for weight management, effectively
+  reduces body mass index (BMI) while improving hyperglycemia, elevated alanine aminotransferase
+  levels, hyperlipidemia, and quality of life in youth with obesity. As of this review,
+  only one large randomized clinic'

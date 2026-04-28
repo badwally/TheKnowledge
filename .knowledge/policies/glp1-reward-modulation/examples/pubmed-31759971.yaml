@@ -1,0 +1,50 @@
+source_id: pubmed-31759971
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of alcohol-mediated behaviors and gut-brain axis with GLP-1 focus
+  — substantive on reward mechanisms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Alcohol-mediated behaviours and the gut-brain axis; with focus on glucagon-like
+    peptide-1.
+  source_type: pubmed
+  authors:
+  - name: Elisabet Jerlhag
+    affiliation: 'Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Medicinaregatan 13A,
+      SE-405 30 Gothenburg, Sweden. Electronic address: elisabet.jerlhag@pharm.gu.se.'
+  published_at: 2019 11 21
+  source_metadata:
+    pmid: '31759971'
+    doi: 10.1016/j.brainres.2019.146562
+    journal: Brain research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Alcoholism
+    - Animals
+    - Brain
+    - Dopamine
+    - Endocrine System
+    - Ethanol
+    - Gastrointestinal Tract
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Humans
+    - Mice
+    - Reward
+    pmc_id: null
+    full_text_url: null
+content_excerpt: The neurochemical mechanisms that regulate development of alcohol
+  use disorder (AUD) are complex, and gut-brain peptides were recently pinpointed
+  as novel modulators. Gut-brain peptides, such as glucagon-like peptide-1 (GLP-1),
+  are well known for their ability to regulate food intake and appetite. GLP-1 also
+  controls glucose homeostasis, which lead to the approval of GLP-1 receptor agonists
+  for treatment of diabetes type II. These pharmacotherapies, including exenatide/exendin-4(Ex4)
+  and liraglu

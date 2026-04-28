@@ -1,0 +1,119 @@
+source_id: pubmed-39180919
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Heat stress effects on broiler feeding preference — animal husbandry, completely
+  unrelated.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Effects of heat stress on the feeding preference of yellow-feathered broilers
+    and its possible mechanism.
+  source_type: pubmed
+  authors:
+  - name: Xiajie Feng
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Ziyuan Ye
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Kailai Xie
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Shuqing Zhu
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Xin Wu
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Zhonghua Sun
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Xiaohua Feng
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Yingfen Mo
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Jingwen Liang
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Gang Shu
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Songbo Wang
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Canjun Zhu
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Qingyan Jiang
+    affiliation: Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China.
+  - name: Lina Wang
+    affiliation: 'Guangdong Provincial Key Laboratory of Animal Nutrition Control,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China; National
+      Engineering Research Center for Breeding Swine Industry, College of Animal Science,
+      South China Agricultural University, Guangzhou, Guangdong, 510642, China. Electronic
+      address: wanglina@scau.edu.cn.'
+  published_at: 2024 08 17
+  source_metadata:
+    pmid: '39180919'
+    doi: 10.1016/j.jtherbio.2024.103959
+    journal: Journal of thermal biology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Chickens
+    - Male
+    - Heat-Shock Response
+    - Female
+    - Tenebrio
+    - Corticosterone
+    - Dopamine
+    - Nucleus Accumbens
+    - Ventral Tegmental Area
+    - Receptors, Glucocorticoid
+    - Feeding Behavior
+    - Insulin
+    - Receptor, Insulin
+    - Food Preferences
+    - Receptors, Corticotropin-Releasing Hormone
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Heat stress is the most critical factor affecting animal feeding
+  in summer. This experiment was conducted to investigate the effects of heat stress
+  on the feeding preference of yellow-feathered broilers and its possible mechanism.
+  As a result, the preference of yellow-feathered broilers for Tenebrio molitor was
+  significantly decreased, and the fear response and serum corticosterone of broilers
+  were significantly increased when the ambient temperatures are 35 °C (P < 0.05).
+  In the central nervous

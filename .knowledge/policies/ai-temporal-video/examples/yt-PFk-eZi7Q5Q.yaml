@@ -1,0 +1,14 @@
+source_id: yt-PFk-eZi7Q5Q
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'TubeTK: Adopting Tubes to Track Multi-Object in a One-Step Training Model'
+  published_at: '2020-07-17T06:03:57Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Bo Pang, Yizhuo Li, Yifan Zhang, Muchen Li, Cewu Lu Description:
+  Multi-object tracking is a fundamental vision problem ...'

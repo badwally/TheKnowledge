@@ -1,0 +1,67 @@
+source_id: pubmed-22492036
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Demonstrates exendin-4 reduces food reward value via mesolimbic GLP-1 receptors,
+  directly linking GLP-1 signaling to reward circuitry beyond appetite.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'The glucagon-like peptide 1 (GLP-1) analogue, exendin-4, decreases the rewarding
+    value of food: a new role for mesolimbic GLP-1 receptors.'
+  source_type: pubmed
+  authors:
+  - name: Suzanne L Dickson
+    affiliation: Department of Physiology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, SE-405 30 Gothenburg,
+      Sweden.
+  - name: Rozita H Shirazi
+    affiliation: null
+  - name: Caroline Hansson
+    affiliation: null
+  - name: Filip Bergquist
+    affiliation: null
+  - name: Hans Nissbrandt
+    affiliation: null
+  - name: Karolina P Skibicka
+    affiliation: null
+  published_at: 2012 Apr 04
+  source_metadata:
+    pmid: '22492036'
+    doi: 10.1523/JNEUROSCI.6326-11.2012
+    journal: 'The Journal of neuroscience : the official journal of the Society for
+      Neuroscience'
+    peer_reviewed: true
+    publication_type:
+    - Comparative Study
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Conditioning, Operant
+    - Diabetes Mellitus, Experimental
+    - Eating
+    - Exenatide
+    - Food
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Infusions, Intraventricular
+    - Limbic System
+    - Lizards
+    - Male
+    - Peptides
+    - Rats
+    - Rats, Sprague-Dawley
+    - Receptors, Glucagon
+    - Reward
+    - Venoms
+    pmc_id: PMC6620919
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6620919/
+content_excerpt: The glucagon-like peptide 1 (GLP-1) system is a recently established
+  target for type 2 diabetes treatment. In addition to regulating glucose homeostasis,
+  GLP-1 also reduces food intake. Previous studies demonstrate that the anorexigenic
+  effects of GLP-1 can be mediated through hypothalamic and brainstem circuits which
+  regulate homeostatic feeding. Here, we demonstrate an entirely novel neurobiological
+  mechanism for GLP-1-induced anorexia in rats, involving direct effects of a GLP-1
+  agonist, Exen

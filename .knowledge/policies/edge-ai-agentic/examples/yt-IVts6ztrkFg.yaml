@@ -1,0 +1,16 @@
+source_id: yt-IVts6ztrkFg
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: LangChain's own 7-minute introduction to 'Deep Agents' for long-horizon
+  tasks provides useful framing on agent architecture patterns, though lacks edge
+  or on-device focus and is borderline on depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What are Deep Agents?
+  published_at: '2025-11-24T07:14:25Z'
+  channel: LangChain
+content_excerpt: Deep Agents is a term we coined to describe agents capable of handling
+  complex, open-ended tasks over long time horizons.

@@ -1,0 +1,14 @@
+source_id: yt-W5HCIKn2YeA
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Not relevant to GLP-1 reward/neurological effects; unrelated medical topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The Surprising Side Effects of Antipsychotic Medications Revealed
+  published_at: '2023-10-02T13:00:21Z'
+  channel: Dr Syl
+content_excerpt: 'XXX Join the community: https://discord.gg/2zCSMYSxxd Thanks YouTube
+  Members: ...'

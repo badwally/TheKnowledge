@@ -1,0 +1,74 @@
+source_id: pubmed-39445596
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide association with Alzheimer's disease diagnosis — neurodegeneration
+  focus, not reward circuitry.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Associations of semaglutide with first-time diagnosis of Alzheimer''s disease
+    in patients with type 2 diabetes: Target trial emulation using nationwide real-world
+    data in the US.'
+  source_type: pubmed
+  authors:
+  - name: William Wang
+    affiliation: Center for Science, Health, and Society, Case Western Reserve University
+      School of Medicine, Cleveland, Ohio, USA.
+  - name: QuangQiu Wang
+    affiliation: Center for Artificial Intelligence in Drug Discovery, Case Western
+      Reserve University School of Medicine, Cleveland, Ohio, USA.
+  - name: Xin Qi
+    affiliation: Department of Physiology and Biophysics, Case Western Reserve University
+      School of Medicine, Cleveland, Ohio, USA.
+  - name: Mark Gurney
+    affiliation: Center for Artificial Intelligence in Drug Discovery, Case Western
+      Reserve University School of Medicine, Cleveland, Ohio, USA.
+  - name: George Perry
+    affiliation: Center for Artificial Intelligence in Drug Discovery, Case Western
+      Reserve University School of Medicine, Cleveland, Ohio, USA.
+  - name: Nora D Volkow
+    affiliation: National Institute on Drug Abuse, National Institutes of Health,
+      Maryland, USA.
+  - name: Pamela B Davis
+    affiliation: Center for Community Health Integration, Case Western Reserve University
+      School of Medicine, Cleveland, Ohio, USA.
+  - name: David C Kaelber
+    affiliation: Center for Clinical Informatics Research and Education, The MetroHealth
+      System, Ohio, USA.
+  - name: Rong Xu
+    affiliation: Center for Artificial Intelligence in Drug Discovery, Case Western
+      Reserve University School of Medicine, Cleveland, Ohio, USA.
+  published_at: 2024 10 24
+  source_metadata:
+    pmid: '39445596'
+    doi: 10.1002/alz.14313
+    journal: 'Alzheimer''s & dementia : the journal of the Alzheimer''s Association'
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Alzheimer Disease
+    - Female
+    - Male
+    - Aged
+    - Hypoglycemic Agents
+    - United States
+    - Middle Aged
+    - Aged, 80 and over
+    - Semaglutide
+    pmc_id: PMC11667504
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11667504/
+content_excerpt: 'Emerging preclinical evidence suggests that semaglutide, a glucagon-like
+  peptide receptor agonist (GLP-1RA) for type 2 diabetes mellitus (T2DM) and obesity,
+  protects against neurodegeneration and neuroinflammation. However, real-world evidence
+  for its ability to protect against Alzheimer''s disease (AD) is lacking.
+
+
+  We conducted emulation target trials based on a nationwide database of electronic
+  health records (EHRs) of 116 million US patients. Seven target trials were emulated
+  among 1,094,761 e'

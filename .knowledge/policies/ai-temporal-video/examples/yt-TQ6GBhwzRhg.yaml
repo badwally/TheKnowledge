@@ -1,0 +1,15 @@
+source_id: yt-TQ6GBhwzRhg
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '[ECCV&#39;24] Training-free Video Temporal Grounding using Large-scale Pre-trained
+    Models'
+  published_at: '2024-09-22T07:21:39Z'
+  channel: SlowScience
+content_excerpt: The 18th European Conference on Computer Vision ECCV 2024 Training-free
+  Video Temporal Grounding using Large-scale ...

@@ -1,0 +1,14 @@
+source_id: yt-VgcOdiRGIAU
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'TubeDETR: Spatio Temporal Video Grounding With Transformers | CVPR 2022'
+  published_at: '2022-06-23T04:49:34Z'
+  channel: 'Artificial Intelligence '
+content_excerpt: 'If you have any copyright issues on video, please send us an email
+  at khawar512@gmail.com Top CV and PR Conferences: ...'

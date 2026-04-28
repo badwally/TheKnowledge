@@ -1,0 +1,68 @@
+source_id: pubmed-41015576
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Crosstalk between AUD and obesity — examines shared neurobiological mechanisms
+  relevant to understanding whether GLP-1 modulates overlapping reward circuits.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Crosstalk between alcohol use disorder and obesity: two sides of the same
+    coin?'
+  source_type: pubmed
+  authors:
+  - name: Lorenzo Leggio
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program and National Institute on Alcohol Abuse and Alcoholism Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,
+      Baltimore, MD, USA. lorenzo.leggio@nih.gov.
+  - name: Mehdi Farokhnia
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program and National Institute on Alcohol Abuse and Alcoholism Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,
+      Baltimore, MD, USA.
+  - name: Paul J Kenny
+    affiliation: Nash Family Department of Neuroscience, Icahn School of Medicine
+      at Mount Sinai, New York, NY, USA.
+  - name: Marta Yanina Pepino
+    affiliation: Department of Food Science and Human Nutrition, and Division of Nutritional
+      Sciences, University of Illinois Urbana-Champaign, Urbana-Champaign, IL, USA.
+  - name: W Kyle Simmons
+    affiliation: Department of Pharmacology & Physiology and OSU Biomedical Imaging
+      Center, Oklahoma State University - Center for Health Sciences, Tulsa, OK, USA.
+  published_at: 2025 09 27
+  source_metadata:
+    pmid: '41015576'
+    doi: 10.1038/s41380-025-03259-8
+    journal: Molecular psychiatry
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Alcoholism
+    - Cardiovascular Diseases
+    - Liver Diseases, Alcoholic
+    - Non-alcoholic Fatty Liver Disease
+    - Obesity
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Bariatric Surgery
+    - Alcohol Drinking
+    - Brain-Gut Axis
+    - Genetic Predisposition to Disease
+    - Genome-Wide Association Study
+    - Behavior Therapy
+    - Alcohol Deterrents
+    - Comorbidity
+    pmc_id: PMC12602370
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12602370/
+content_excerpt: Investigating similarities and differences between alcohol use disorder
+  (AUD) and obesity is important because both AUD and obesity are public health concerns
+  and share neurobiological and periphery-brain mechanisms. Furthermore, AUD and obesity
+  often present with similar medical consequences related to organ damage, including
+  liver and cardiovascular diseases. There is also growing evidence of changes in
+  alcohol drinking in people who undergo bariatric surgery for obesity. In this non-systemati

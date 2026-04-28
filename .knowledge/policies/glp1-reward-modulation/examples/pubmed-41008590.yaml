@@ -1,0 +1,69 @@
+source_id: pubmed-41008590
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 RA impact on erectile function — comprehensive analysis
+  of sexual dysfunction mechanisms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'The Impact of Glucagon-like Peptide-1 Receptor Agonists on Erectile Function:
+    Friend or Foe?'
+  source_type: pubmed
+  authors:
+  - name: Dimitris Kounatidis
+    affiliation: Diabetes Center, First Department of Propaedeutic Internal Medicine,
+      Medical School, National and Kapodistrian University of Athens, Laiko General
+      Hospital, 11527 Athens, Greece.
+  - name: Natalia G Vallianou
+    affiliation: First Department of Internal Medicine, Sismanogleio General Hospital,
+      15126 Athens, Greece.
+  - name: Eleni Rebelos
+    affiliation: Diabetes Center, First Department of Propaedeutic Internal Medicine,
+      Medical School, National and Kapodistrian University of Athens, Laiko General
+      Hospital, 11527 Athens, Greece.
+  - name: Kalliopi Vallianou
+    affiliation: Clinic of Nephrology and Renal Transplantation, Medical School, National
+      and Kapodistrian University of Athens, Laiko General Hospital, 11527 Athens,
+      Greece.
+  - name: Evanthia Diakoumopoulou
+    affiliation: Diabetes Center, First Department of Propaedeutic Internal Medicine,
+      Medical School, National and Kapodistrian University of Athens, Laiko General
+      Hospital, 11527 Athens, Greece.
+  - name: Konstantinos Makrilakis
+    affiliation: Diabetes Center, First Department of Propaedeutic Internal Medicine,
+      Medical School, National and Kapodistrian University of Athens, Laiko General
+      Hospital, 11527 Athens, Greece.
+  - name: Nikolaos Tentolouris
+    affiliation: Diabetes Center, First Department of Propaedeutic Internal Medicine,
+      Medical School, National and Kapodistrian University of Athens, Laiko General
+      Hospital, 11527 Athens, Greece.
+  published_at: 2025 09 05
+  source_metadata:
+    pmid: '41008590'
+    doi: 10.3390/biom15091284
+    journal: Biomolecules
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Male
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Erectile Dysfunction
+    - Diabetes Mellitus, Type 2
+    - Hypoglycemic Agents
+    - Animals
+    - Glucagon-Like Peptide-1 Receptor
+    - Penile Erection
+    pmc_id: PMC12467596
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12467596/
+content_excerpt: Erectile dysfunction (ED) is a common yet frequently underrecognized
+  microvascular complication of diabetes, affecting up to three out of four individuals.
+  Key contributing factors include advancing age, long-standing disease duration,
+  and suboptimal glycemic control, as well as insulin resistance and androgen deficiency-the
+  latter being particularly common in men with type 2 diabetes (T2D) and obesity.
+  While numerous studies have investigated the effects of various antidiabetic therapies
+  on dia

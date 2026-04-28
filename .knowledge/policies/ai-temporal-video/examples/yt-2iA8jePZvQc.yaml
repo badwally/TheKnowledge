@@ -1,0 +1,14 @@
+source_id: yt-2iA8jePZvQc
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: MIC 2018 - Spatio-temporal Grounding in Visual Data
+  published_at: '2018-11-08T14:58:50Z'
+  channel: MIC Media
+content_excerpt: 'Bio: Sarah is a PhD candidate in the Image and Video Computing Group
+  in the Department of Computer Science at Boston ...'

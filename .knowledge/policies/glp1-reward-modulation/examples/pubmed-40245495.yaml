@@ -1,0 +1,67 @@
+source_id: pubmed-40245495
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Inhibitory GLP-1 circuit in lateral septum modulates reward processing
+  and alcohol intake — identifies specific circuit for GLP-1 reward modulation, key
+  for dissociability.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: An inhibitory GLP-1 circuit in the lateral septum modulates reward processing
+    and alcohol intake in rodents.
+  source_type: pubmed
+  authors:
+  - name: Christian E Edvardsson
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+  - name: Davide Cadeddu
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+  - name: Mia Ericson
+    affiliation: Addiction Biology Unit, Department of Psychiatry and Neurochemistry,
+      Institute of Neuroscience and Physiology, The Sahlgrenska Academy, University
+      of Gothenburg, Gothenburg, Sweden.
+  - name: Louise Adermark
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden; Addiction
+      Biology Unit, Department of Psychiatry and Neurochemistry, Institute of Neuroscience
+      and Physiology, The Sahlgrenska Academy, University of Gothenburg, Gothenburg,
+      Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: 'Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden. Electronic
+      address: elisabet.jerlhag@pharm.gu.se.'
+  published_at: 2025 04 17
+  source_metadata:
+    pmid: '40245495'
+    doi: 10.1016/j.ebiom.2025.105684
+    journal: EBioMedicine
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Reward
+    - Male
+    - Rats
+    - Alcohol Drinking
+    - Female
+    - Glucagon-Like Peptide-1 Receptor
+    - Glucagon-Like Peptide 1
+    - Septal Nuclei
+    - Exenatide
+    - Dopamine
+    - Signal Transduction
+    - Ethanol
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Behavior, Animal
+    pmc_id: PMC12044336
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12044336/
+content_excerpt: Alcohol use disorder (AUD) is a complex psychiatric condition with
+  limited effective treatment options. Glucagon-like peptide-1 receptor (GLP-1R) agonists
+  have emerged as potential AUD treatment, as they have been shown to modulate reward-related
+  behaviours, including those linked to alcohol consumption. However, the underlying
+  mechanisms and neurocircuitry remain unclear. This study investigated the role of
+  GLP-1R in the lateral septum (LS), a brain region highly expressing GLP-1R and implicate

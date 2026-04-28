@@ -1,0 +1,15 @@
+source_id: yt-8OihoI4tdPw
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: 3-hour lecture stream on Ozempic covering pharmacology and brain effects
+  in depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Ozempic Lecture Stream
+  published_at: '2024-11-24T00:55:13Z'
+  channel: Trouble Helix
+content_excerpt: 'Watch these lectures LIVE: https://www.twitch.tv/doughpamine Join
+  my DISCORD: https://discord.gg/zDRTPG3QNdSee my ...'

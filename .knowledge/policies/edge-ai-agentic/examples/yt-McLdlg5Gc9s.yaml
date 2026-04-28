@@ -1,0 +1,16 @@
+source_id: yt-McLdlg5Gc9s
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology's 5-minute vLLM explainer covers the leading open-source
+  inference server with PagedAttention and throughput optimization — relevant to efficient
+  inference runtime choices even if not edge-specific; borderline on depth given duration.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What is vLLM? Efficient AI Inference for Large Language Models
+  published_at: '2025-05-26T11:00:37Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx AI Assistant Engineer? Register
+  now and use code IBMTechYT20 for 20% off of your exam ...

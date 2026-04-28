@@ -1,0 +1,45 @@
+source_id: pubmed-40616879
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Novel pharmacological approaches for eating disorders comorbid with SUDs
+  — addresses shared reward mechanisms and GLP-1 as potential treatment.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Novel potential pharmacological approaches in treating eating disorders comorbid
+    with substance use disorders.
+  source_type: pubmed
+  authors:
+  - name: Zheng-Xiong Xi
+    affiliation: 'Addiction Biology Unit, Molecular Targets and Medications Discovery
+      Branch, National Institute on Drug Abuse, Intramural Research Program, Baltimore,
+      MD 21224, USA. Electronic address: zxi@mail.nih.gov.'
+  - name: Ewa Galaj
+    affiliation: Department of Psychological and Brain Sciences, Colgate University,
+      Hamilton, NY, USA.
+  published_at: 2025 07 04
+  source_metadata:
+    pmid: '40616879'
+    doi: 10.1016/j.biopha.2025.118327
+    journal: Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Substance-Related Disorders
+    - Feeding and Eating Disorders
+    - Comorbidity
+    - Animals
+    pmc_id: PMC12276861
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12276861/
+content_excerpt: Eating disorders (EDs), including anorexia nervosa (AN), bulimia
+  nervosa (BN), and binge eating disorder (BED), frequently co-occur with substance
+  use disorders (SUDs), affecting 20-30 % of individuals with either condition. This
+  significant overlap is driven by shared neurobiological mechanisms, such as disruptions
+  in dopamine, opioid, and cannabinoid systems, as well as by psychological traits
+  including impulsivity, anxiety, and stress. While AN is often characterized by restrictive
+  behaviors,

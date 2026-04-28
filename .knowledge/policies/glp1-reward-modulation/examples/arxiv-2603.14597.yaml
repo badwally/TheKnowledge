@@ -1,0 +1,34 @@
+source_id: arxiv-2603.14597
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: AI agent memory architecture inspired by dopamine — computational, not
+  pharmacological.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'D-MEM: Dopamine-Gated Agentic Memory via Reward Prediction Error Routing'
+  source_type: arxiv
+  authors:
+  - name: Yuru Song
+    affiliation: null
+  - name: Qi Xin
+    affiliation: null
+  published_at: '2026-03-15T20:44:43Z'
+  source_metadata:
+    arxiv_id: '2603.14597'
+    categories:
+    - q-bio.NC
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2603.14597v1.pdf
+    primary_category: q-bio.NC
+    comment: null
+    journal_ref: null
+content_excerpt: Autonomous LLM agents require structured long-term memory, yet current
+  "append-and-evolve" systems like A-MEM face O(N^2) write-latency and excessive token
+  costs. We introduce D-MEM (Dopamine-Gated Agentic Memory), a biologically inspired
+  architecture that decouples short-term interaction from cognitive restructuring
+  via a Fast/Slow routing system based on Reward Prediction Error (RPE). A lightweight
+  Critic Router evaluates stimuli for Surprise and Utility. Routine, low-RPE inputs
+  are bypassed o

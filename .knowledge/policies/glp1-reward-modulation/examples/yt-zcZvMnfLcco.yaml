@@ -1,0 +1,15 @@
+source_id: yt-zcZvMnfLcco
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Mentions GLP-1 but focus is primarily weight loss, lifestyle, or general
+  overview.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '💡 Did you hear the rumors about Mounjaro causing infertility? 🤔#Infertility
+    #WeightLoss #mounjaro'
+  published_at: '2023-05-27T22:25:41Z'
+  channel: Modern Endocrine
+content_excerpt: ''

@@ -1,0 +1,73 @@
+source_id: pubmed-27172659
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Liraglutide effect on eNOS in corpus cavernosum of diabetic rats — mechanistic
+  for erectile tissue but peripheral vascular, not reward circuitry.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '[Regulatory effect of liraglutide on the expression of eNOS in the corpus
+    cavernosum of diabetic rats].'
+  source_type: pubmed
+  authors:
+  - name: Ling Yue
+    affiliation: null
+  - name: Jin-ling Xu
+    affiliation: null
+  - name: Jing Dong
+    affiliation: null
+  - name: Guang-da Xjang
+    affiliation: null
+  - name: Lin Xiang
+    affiliation: null
+  - name: Lin-shuang Zhao
+    affiliation: null
+  - name: Jun-xia Zhang
+    affiliation: null
+  - name: Zhen-yan Zhai
+    affiliation: null
+  - name: Guang-ping Zhu
+    affiliation: null
+  - name: Min Liu
+    affiliation: null
+  - name: Jing Ni
+    affiliation: null
+  - name: Yong Wang
+    affiliation: null
+  published_at: 2016 Mar
+  source_metadata:
+    pmid: '27172659'
+    doi: null
+    journal: Zhonghua nan ke xue = National journal of andrology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Blotting, Western
+    - Diabetes Mellitus, Experimental
+    - Erectile Dysfunction
+    - Hypoglycemic Agents
+    - Liraglutide
+    - Male
+    - Nitric Oxide Synthase Type III
+    - Penile Erection
+    - Penis
+    - Random Allocation
+    - Rats
+    - Rats, Sprague-Dawley
+    - Testosterone
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'OCTOBER: To explore the effects of the glucagon-like peptide 1 (GLP-1)
+  liraglutide on the penile erectile function of rats with diabetic erectile dysfunction
+  (DED) by observing the impact of liraglutide on the expression of eNOS in the corpus
+  cavernosum of diabetic rats.
+
+
+  We randomly divided 30 six-week-old male SD rats into a normal control (n = 10)
+  and an experimental group (n = 20) , established models of diabetes mellitus (DM)
+  in the experimental rats, and subdivided them into a DM (n = 8) a'

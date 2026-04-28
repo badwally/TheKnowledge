@@ -1,0 +1,16 @@
+source_id: yt-W51GkdZMkUM
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Science teacher explains GLP-1 as addiction treatment via reward pathways;
+  3 min educational.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1 Agonists like Ozempic as Addiction Treatment Breakthroughs? (Science
+    Teacher Explains...)
+  published_at: '2025-11-05T18:58:37Z'
+  channel: The Neuromancer
+content_excerpt: In this video, I discuss the potential efficacy of Glucagon-Like
+  Peptide-1 Receptor agonists (GLP-1 RA's, e.g., semaglutide, ...

@@ -1,0 +1,16 @@
+source_id: yt-tzrwxLNHtRY
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Codebasics 15-minute explanation of MCP with reasonable depth on protocol
+  design and agent integration — meets inclusion threshold as MCP coverage per broadening
+  criteria, though from an educational rather than practitioner channel.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Model Context Protocol Clearly Explained | MCP Beyond the Hype
+  published_at: '2025-03-20T07:00:06Z'
+  channel: codebasics
+content_excerpt: This video contains a very simple explanation of MCP, also known
+  as Model Context Protocol. We will first understand what ...

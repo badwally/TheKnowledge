@@ -1,0 +1,15 @@
+source_id: yt-_5qjj2CzBSw
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Neuroscience channel; 55-min deep dive on GLP-1 brain effects including
+  reward and mental health changes.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Ozempic and the Brain: What GLP-1 Drugs Are Really Doing to Your Mind'
+  published_at: '2026-01-14T15:30:23Z'
+  channel: 'Dr. Leaf Show: Neuroscience & Mental Health'
+content_excerpt: Ozempic and other GLP-1 medications aren't just changing bodies.
+  They're changing brains too. In this episode, I unpack what's ...

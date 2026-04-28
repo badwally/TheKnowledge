@@ -1,0 +1,91 @@
+source_id: pubmed-37192005
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide reduces alcohol drinking and modulates central GABA neurotransmission
+  — demonstrates specific neurotransmitter mechanism for GLP-1 RA reward modulation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide-1 (GLP-1) analogue semaglutide reduces alcohol
+    drinking and modulates central GABA neurotransmission.
+  source_type: pubmed
+  authors:
+  - name: Vicky Chuong
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program (NIDA IRP) and National Institute on Alcohol Abuse and Alcoholism
+      Division of Intramural Clinical and Biological Research (NIAAA DICBR), NIH,
+      Baltimore and Bethesda, Maryland, USA.
+  - name: Mehdi Farokhnia
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program (NIDA IRP) and National Institute on Alcohol Abuse and Alcoholism
+      Division of Intramural Clinical and Biological Research (NIAAA DICBR), NIH,
+      Baltimore and Bethesda, Maryland, USA.
+  - name: Sophia Khom
+    affiliation: Department of Molecular Medicine, The Scripps Research Institute,
+      La Jolla, California, USA.
+  - name: Claire L Pince
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program (NIDA IRP) and National Institute on Alcohol Abuse and Alcoholism
+      Division of Intramural Clinical and Biological Research (NIAAA DICBR), NIH,
+      Baltimore and Bethesda, Maryland, USA.
+  - name: Sophie K Elvig
+    affiliation: Neurobiology of Addiction Section, NIDA IRP, NIH, Baltimore, Maryland,
+      USA.
+  - name: Roman Vlkolinsky
+    affiliation: Department of Molecular Medicine, The Scripps Research Institute,
+      La Jolla, California, USA.
+  - name: Renata Cn Marchette
+    affiliation: Neurobiology of Addiction Section, NIDA IRP, NIH, Baltimore, Maryland,
+      USA.
+  - name: George F Koob
+    affiliation: Neurobiology of Addiction Section, NIDA IRP, NIH, Baltimore, Maryland,
+      USA.
+  - name: Marisa Roberto
+    affiliation: Department of Molecular Medicine, The Scripps Research Institute,
+      La Jolla, California, USA.
+  - name: Leandro F Vendruscolo
+    affiliation: Stress and Addiction Neuroscience Unit, NIDA IRP and National Institute
+      on Alcohol Abuse and Alcoholism Division of Intramural Clinical and Biological
+      Research, National Institutes of Health, Baltimore, Maryland, USA.
+  - name: Lorenzo Leggio
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program (NIDA IRP) and National Institute on Alcohol Abuse and Alcoholism
+      Division of Intramural Clinical and Biological Research (NIAAA DICBR), NIH,
+      Baltimore and Bethesda, Maryland, USA.
+  published_at: 2023 06 22
+  source_metadata:
+    pmid: '37192005'
+    doi: 10.1172/jci.insight.170671
+    journal: JCI insight
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, N.I.H., Intramural
+    mesh_terms:
+    - Rats
+    - Mice
+    - Male
+    - Female
+    - Animals
+    - Glucagon-Like Peptide 1
+    - Alcohol Drinking
+    - Alcoholism
+    - Synaptic Transmission
+    - gamma-Aminobutyric Acid
+    - Semaglutide
+    pmc_id: PMC10371247
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10371247/
+content_excerpt: Growing evidence indicates that the glucagon-like peptide-1 (GLP-1)
+  system is involved in the neurobiology of addictive behaviors, and GLP-1 analogues
+  may be used for the treatment of alcohol use disorder (AUD). Here, we examined the
+  effects of semaglutide, a long-acting GLP-1 analogue, on biobehavioral correlates
+  of alcohol use in rodents. A drinking-in-the-dark procedure was used to test the
+  effects of semaglutide on binge-like drinking in male and female mice. We also tested
+  the effects of se

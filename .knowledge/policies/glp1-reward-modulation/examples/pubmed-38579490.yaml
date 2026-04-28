@@ -1,0 +1,54 @@
+source_id: pubmed-38579490
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of neurocircuitry for GLP-1 and PYY in suppression of food, drug-seeking,
+  and related behaviors — comprehensive circuit-level analysis.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Neurocircuitry underlying the actions of glucagon-like peptide 1 and peptide
+    YYin the suppression of food, drug-seeking, and anxiogenesis.
+  source_type: pubmed
+  authors:
+  - name: Yasmina Dumiaty
+    affiliation: 'Department of Neuroscience, Carleton University, 1125 Colonel By
+      Drive, Ottawa, ON K1S 5B6, Canada. Electronic address: yasminadumiaty@cmail.carleton.ca.'
+  - name: Brett M Underwood
+    affiliation: 'Department of Neuroscience, Carleton University, 1125 Colonel By
+      Drive, Ottawa, ON K1S 5B6, Canada. Electronic address: Brettunderwood@cmail.carleton.ca.'
+  - name: Jenny Phy-Lim
+    affiliation: 'Department of Neuroscience, Carleton University, 1125 Colonel By
+      Drive, Ottawa, ON K1S 5B6, Canada. Electronic address: jennyphylim@cmail.carleton.ca.'
+  - name: Melissa J Chee
+    affiliation: 'Department of Neuroscience, Carleton University, 1125 Colonel By
+      Drive, Ottawa, ON K1S 5B6, Canada. Electronic address: melissa.chee@carleton.ca.'
+  published_at: 2024 03 30
+  source_metadata:
+    pmid: '38579490'
+    doi: 10.1016/j.npep.2024.102427
+    journal: Neuropeptides
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Animals
+    - Peptide YY
+    - Glucagon-Like Peptide 1
+    - Anxiety
+    - Peptide Fragments
+    - Drug-Seeking Behavior
+    - Obesity
+    - Brain
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Obesity is a critical health condition worldwide that increases the
+  risks of comorbid chronic diseases, but it can be managed with weight loss. However,
+  conventional interventions relying on diet and exercise are inadequate for achieving
+  and maintaining weight loss, thus there is significant market interest for pharmaceutical
+  anti-obesity agents. For decades, receptor agonists for the gut peptide glucagon-like
+  peptide 1 (GLP-1) featured prominently in anti-obesity medications by suppressing
+  appe

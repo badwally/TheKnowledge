@@ -1,0 +1,18 @@
+source_id: yt-9O9zZ1lQWiI
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AWS re:Invent 2025 session (56 min) explicitly covers building scalable
+  self-orchestrating AI workflows using both A2A and MCP protocols — directly addresses
+  the edge+agentic protocol intersection at conference depth; essential for a GPM
+  candidate mapping the protocol landscape.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: AWS re:Invent 2025 - Building Scalable, Self-Orchestrating AI Workflows with
+    A2A and MCP (DEV415)
+  published_at: '2025-12-03T04:13:01Z'
+  channel: AWS Events
+content_excerpt: Learn how to build scalable, autonomous AI workflows using the Agent-to-Agent
+  (A2A) protocol and Model Context Protocol ...

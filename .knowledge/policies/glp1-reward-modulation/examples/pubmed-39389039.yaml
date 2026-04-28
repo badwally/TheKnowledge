@@ -1,0 +1,47 @@
+source_id: pubmed-39389039
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of gut hormones as possible mediators of addictive disorders — covers
+  GLP-1 among reward-modulating peptides.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Gut Hormones: Possible Mediators of Addictive Disorders?'
+  source_type: pubmed
+  authors:
+  - name: Liam J Nestor
+    affiliation: Department of Psychiatry, University of Cambridge, Cambridge, UK.
+  - name: Karen D Ersche
+    affiliation: Department of Psychiatry, University of Cambridge, Cambridge, UK.
+  published_at: 2024 10 10
+  source_metadata:
+    pmid: '39389039'
+    doi: 10.1159/000540743
+    journal: European addiction research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Ghrelin
+    - Substance-Related Disorders
+    - Glucagon-Like Peptide 1
+    - Gastrointestinal Hormones
+    - Reward
+    - Animals
+    - Behavior, Addictive
+    - Brain
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Alcohol and drug dependence are major health and economic burdens
+  to society. One of the major challenges to reducing this burden will be to develop
+  more effective and better tolerated medications that target alternative mechanisms
+  in the brain. While the dopamine system has been well characterized for mediating
+  the reward value of drugs, there is evidence that the endocrine system also conveys
+  signals to the same neural systems using gut hormones.
+
+
+  These gut hormones, produced in the stomach an'

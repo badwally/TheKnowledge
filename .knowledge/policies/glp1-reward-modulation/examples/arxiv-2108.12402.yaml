@@ -1,0 +1,33 @@
+source_id: arxiv-2108.12402
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Computational model of reward prediction errors — machine learning, not
+  pharmacological.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Representation learning with reward prediction errors
+  source_type: arxiv
+  authors:
+  - name: William H. Alexander
+    affiliation: null
+  - name: Samuel J. Gershman
+    affiliation: null
+  published_at: '2021-08-27T17:21:45Z'
+  source_metadata:
+    arxiv_id: '2108.12402'
+    categories:
+    - q-bio.NC
+    pdf_url: http://arxiv.org/pdf/2108.12402v3.pdf
+    primary_category: q-bio.NC
+    comment: null
+    journal_ref: null
+content_excerpt: The Reward Prediction Error hypothesis proposes that phasic activity
+  in the midbrain dopaminergic system reflects prediction errors needed for learning
+  in reinforcement learning. Besides the well-documented association between dopamine
+  and reward processing, dopamine is implicated in a variety of functions without
+  a clear relationship to reward prediction error. Fluctuations in dopamine levels
+  influence the subjective perception of time, dopamine bursts precede the generation
+  of motor responses,

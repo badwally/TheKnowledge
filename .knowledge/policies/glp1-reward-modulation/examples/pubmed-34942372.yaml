@@ -1,0 +1,52 @@
+source_id: pubmed-34942372
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide for obesity treatment review — mentions mechanisms but focused
+  on weight loss efficacy.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide for the treatment of obesity.
+  source_type: pubmed
+  authors:
+  - name: Ariana M Chao
+    affiliation: 'University of Pennsylvania School of Nursing, Department of Biobehavioral
+      Health Sciences; Perelman School of Medicine at the University of Pennsylvania,
+      Department of Psychiatry. Electronic address: arichao@upenn.edu.'
+  - name: Jena S Tronieri
+    affiliation: Perelman School of Medicine at the University of Pennsylvania, Department
+      of Psychiatry.
+  - name: Anastassia Amaro
+    affiliation: Perelman School of Medicine at the University of Pennsylvania, Division
+      of Endocrinology, Diabetes and Metabolism and Penn Metabolic Medicine.
+  - name: Thomas A Wadden
+    affiliation: Perelman School of Medicine at the University of Pennsylvania, Department
+      of Psychiatry.
+  published_at: 2021 12 21
+  source_metadata:
+    pmid: '34942372'
+    doi: 10.1016/j.tcm.2021.12.008
+    journal: Trends in cardiovascular medicine
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    - Research Support, N.I.H., Extramural
+    mesh_terms:
+    - Humans
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Obesity
+    - Weight Loss
+    - Hypoglycemic Agents
+    - Semaglutide
+    pmc_id: PMC9209591
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9209591/
+content_excerpt: Semaglutide is a glucagon-like peptide-1 receptor agonist that was
+  recently approved by the US Food and Drug Administration for chronic weight management.
+  This paper reviews data on the mechanism of action, weight-loss and cardiometabolic
+  efficacy, and safety of semaglutide 2.4 mg/week for obesity. Semaglutide has demonstrated
+  the largest weight loss of any obesity medication to date with reductions of approximately
+  15% of initial weight at 68 weeks, accompanied by improvements in cardiovascular

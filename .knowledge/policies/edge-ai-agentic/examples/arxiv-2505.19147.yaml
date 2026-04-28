@@ -1,0 +1,66 @@
+source_id: arxiv-2505.19147
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Position paper arguing for data-centric (input/context) compression over
+  model-centric compression to address quadratic attention costs; directly applicable
+  to reducing inference overhead in edge-deployed long-context agents.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Shifting AI Efficiency From Model-Centric to Data-Centric Compression
+  source_type: arxiv
+  authors:
+  - name: Xuyang Liu
+    affiliation: null
+  - name: Zichen Wen
+    affiliation: null
+  - name: Shaobo Wang
+    affiliation: null
+  - name: Junjie Chen
+    affiliation: null
+  - name: Zhishan Tao
+    affiliation: null
+  - name: Yubo Wang
+    affiliation: null
+  - name: Tailai Chen
+    affiliation: null
+  - name: Xiangqi Jin
+    affiliation: null
+  - name: Chang Zou
+    affiliation: null
+  - name: Yiyu Wang
+    affiliation: null
+  - name: Chenfei Liao
+    affiliation: null
+  - name: Xu Zheng
+    affiliation: null
+  - name: Honggang Chen
+    affiliation: null
+  - name: Weijia Li
+    affiliation: null
+  - name: Xuming Hu
+    affiliation: null
+  - name: Conghui He
+    affiliation: null
+  - name: Linfeng Zhang
+    affiliation: null
+  published_at: '2025-05-25T13:51:17Z'
+  source_metadata:
+    arxiv_id: '2505.19147'
+    categories:
+    - cs.CL
+    - cs.AI
+    - cs.CV
+    pdf_url: http://arxiv.org/pdf/2505.19147v3.pdf
+    primary_category: cs.CL
+    comment: 'Project: \url{https://github.com/xuyang-liu16/Awesome-Token-level-Model-Compression}'
+    journal_ref: null
+content_excerpt: 'The advancement of large language models (LLMs) and multi-modal
+  LLMs (MLLMs) has historically relied on scaling model parameters. However, as hardware
+  limits constrain further model growth, the primary computational bottleneck has
+  shifted to the quadratic cost of self-attention over increasingly long sequences
+  by ultra-long text contexts, high-resolution images, and extended videos. In this
+  position paper, \textbf{we argue that the focus of research for efficient artificial
+  intelligence (AI) is '

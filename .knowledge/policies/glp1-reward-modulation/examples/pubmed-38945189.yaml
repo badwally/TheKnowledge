@@ -1,0 +1,80 @@
+source_id: pubmed-38945189
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Systematic review of GLP-1 agonist effects on reward behavior — comprehensive
+  coverage of reward modulation evidence.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Glucagon-like peptide 1 agonist and effects on reward behaviour: A systematic
+    review.'
+  source_type: pubmed
+  authors:
+  - name: Sebastian Badulescu
+    affiliation: 'Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada. Electronic address: sebastian.badulescu@mail.utoronto.ca.'
+  - name: Aniqa Tabassum
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada.
+  - name: Gia Han Le
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada.
+  - name: Sabrina Wong
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Department of Pharmacology, University of Toronto, Toronto, ON, Canada.
+  - name: Lee Phan
+    affiliation: Mood Disorders Psychopharmacology Unit, University Health Network,
+      Toronto, ON, Canada.
+  - name: Hartej Gill
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada.
+  - name: Cristian-Daniel Llach
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada.
+  - name: Roger S McIntyre
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada; Department of Pharmacology, University of Toronto, Toronto, ON,
+      Canada.
+  - name: Joshua Rosenblat
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada; Department of Pharmacology, University of Toronto, Toronto, ON,
+      Canada.
+  - name: Rodrigo Mansur
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, ON,
+      Canada; Mood Disorders Psychopharmacology Unit, University Health Network, Toronto,
+      ON, Canada.
+  published_at: 2024 06 28
+  source_metadata:
+    pmid: '38945189'
+    doi: 10.1016/j.physbeh.2024.114622
+    journal: Physiology & behavior
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms:
+    - Humans
+    - Reward
+    - Glucagon-Like Peptide 1
+    - Animals
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'The roles of metabolic signals, including Glucagon-like peptide
+  1 (GLP-1), have been implicated in multiple domains outside metabolic regulation.
+  There is a growing interest in repurposing Glucagon-like peptide 1 receptor agonists
+  (GLP-1RAs) as therapeutics for motivation and reward-related behavioural disturbances.
+  Herein, we aim to systematically review the extant evidence on the potential effects
+  of GLP-1RAs on the reward system.
+
+
+  The study followed PRISMA guidelines using databases such as O'

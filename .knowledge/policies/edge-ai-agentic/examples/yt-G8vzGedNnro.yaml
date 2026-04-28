@@ -1,0 +1,17 @@
+source_id: yt-G8vzGedNnro
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 10-minute technical demo of MediaPipe LLM Inference with WebGPU acceleration
+  covers the Google on-device inference pipeline with implementation specifics; lacks
+  strategic depth but provides concrete technical grounding.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Blazingly Fast LLM Inference | WEBGPU  | On Device LLMs | MediaPipe LLM Inference
+    | Google Developer
+  published_at: '2024-04-03T20:48:49Z'
+  channel: Ayaansh Roy
+content_excerpt: Experience blazingly fast LLM Inference with MediaPipe's LLM Inference
+  project! Leveraging WEBGPU technology and ...

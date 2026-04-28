@@ -1,0 +1,38 @@
+source_id: arxiv-2604.04820
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: ANX presents a novel agent-native protocol integrating MCP, CLI, and Skill
+  with security and multi-agent SOP collaboration; directly benchmarked against MCP,
+  A2A, ANP, and other protocols across tooling, discovery, security, and coordination
+  dimensions.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'ANX: Protocol-First Design for AI Agent Interaction with a Supporting 3EX
+    Decoupled Architecture'
+  source_type: arxiv
+  authors:
+  - name: Xu Mingze
+    affiliation: null
+  published_at: '2026-04-06T16:24:07Z'
+  source_metadata:
+    arxiv_id: '2604.04820'
+    categories:
+    - cs.AI
+    - cs.CL
+    pdf_url: http://arxiv.org/pdf/2604.04820v1.pdf
+    primary_category: cs.AI
+    comment: 'This open-source AI agent interaction protocol (ANX) is benchmarked
+      against existing protocols (MCP, A2A, ANP, OpenCLI, SkillWeaver, CHEQ, COLLAB-LLM)
+      across four dimensions: tooling, discovery, security, and multi-agent SOP collaboration.
+      Code: https://github.com/mountorc/anx-protocol'
+    journal_ref: null
+content_excerpt: AI agents, autonomous digital actors, need agent-native protocols;
+  existing methods include GUI automation and MCP-based skills, with defects of high
+  token consumption, fragmented interaction, inadequate security, due to lacking a
+  unified top-level framework and key components, each independent module flawed.
+  To address these issues, we present ANX, an open, extensible, verifiable agent-native
+  protocol and top-level framework integrating CLI, Skill, MCP, resolving pain points
+  via protocol innova

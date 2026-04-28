@@ -1,0 +1,80 @@
+source_id: pubmed-39032839
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: IUPHAR review of GLP-1 as pharmacotherapeutic target for substance use
+  disorders — authoritative review of GLP-1 in reward/addiction with therapeutic perspective.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'IUPHAR review - Glucagon-like peptide-1 (GLP-1) and substance use disorders:
+    An emerging pharmacotherapeutic target.'
+  source_type: pubmed
+  authors:
+  - name: Nicolaus Bruns Vi
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program and National Institute on Alcohol Abuse and Alcoholism Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA;
+      Neurobiology of Addiction Section, Integrative Neuroscience Research Branch,
+      National Institute on Drug Abuse Intramural Research Program, National Institutes
+      of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA; Stress & Addiction Neuroscience
+      Unit, Integrative Neuroscience Research Branch, National Institute on Drug Abuse
+      Intramural Research Program and National Institute on Alcohol Abuse and Alcoholism
+      Division of Intramural Clinical and Biological Research, National Institutes
+      of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA.
+  - name: Elizabeth H Tressler
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program and National Institute on Alcohol Abuse and Alcoholism Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA;
+      Neurobiology of Addiction Section, Integrative Neuroscience Research Branch,
+      National Institute on Drug Abuse Intramural Research Program, National Institutes
+      of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA; Stress & Addiction Neuroscience
+      Unit, Integrative Neuroscience Research Branch, National Institute on Drug Abuse
+      Intramural Research Program and National Institute on Alcohol Abuse and Alcoholism
+      Division of Intramural Clinical and Biological Research, National Institutes
+      of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA.
+  - name: Leandro F Vendruscolo
+    affiliation: Stress & Addiction Neuroscience Unit, Integrative Neuroscience Research
+      Branch, National Institute on Drug Abuse Intramural Research Program and National
+      Institute on Alcohol Abuse and Alcoholism Division of Intramural Clinical and
+      Biological Research, National Institutes of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA.
+  - name: Lorenzo Leggio
+    affiliation: 'Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program and National Institute on Alcohol Abuse and Alcoholism Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA.
+      Electronic address: lorenzo.leggio@nih.gov.'
+  - name: Mehdi Farokhnia
+    affiliation: 'Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse Intramural
+      Research Program and National Institute on Alcohol Abuse and Alcoholism Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,&#xa0;Baltimore,&#xa0;MD,&#xa0;USA.
+      Electronic address: mehdi.farokhnia@nih.gov.'
+  published_at: 2024 07 18
+  source_metadata:
+    pmid: '39032839'
+    doi: 10.1016/j.phrs.2024.107312
+    journal: Pharmacological research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Animals
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Substance-Related Disorders
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    pmc_id: PMC11467891
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11467891/
+content_excerpt: Addiction is a chronic relapsing disease with high morbidity and
+  mortality. Treatments for addiction include pharmacological and psychosocial interventions;
+  however, currently available medications are limited in number and efficacy. The
+  glucagon-like-peptide-1 (GLP-1) system is emerging as a potential novel pharmacotherapeutic
+  target for alcohol and other substance use disorders (ASUDs). In this review, we
+  summarize and discuss the wealth of available evidence from testing GLP-1 receptor
+  (GLP-1

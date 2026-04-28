@@ -1,0 +1,43 @@
+source_id: arxiv-2007.06081
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: VAFL enables vertical federated learning with asynchronous updates suitable
+  for intermittent client connectivity, using perturbed local embeddings for privacy;
+  directly relevant to federated edge AI with convergence guarantees and privacy analysis.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'VAFL: a Method of Vertical Asynchronous Federated Learning'
+  source_type: arxiv
+  authors:
+  - name: Tianyi Chen
+    affiliation: null
+  - name: Xiao Jin
+    affiliation: null
+  - name: Yuejiao Sun
+    affiliation: null
+  - name: Wotao Yin
+    affiliation: null
+  published_at: '2020-07-12T20:09:25Z'
+  source_metadata:
+    arxiv_id: '2007.06081'
+    categories:
+    - cs.LG
+    - cs.DC
+    - math.OC
+    - stat.ML
+    pdf_url: http://arxiv.org/pdf/2007.06081v1.pdf
+    primary_category: cs.LG
+    comment: 'FL-ICML''20: Proc. of ICML Workshop on Federated Learning for User Privacy
+      and Data Confidentiality, July 2020'
+    journal_ref: Proc. of ICML Workshop on Federated Learning for User Privacy and
+      Data Confidentiality, July 2020
+content_excerpt: Horizontal Federated learning (FL) handles multi-client data that
+  share the same set of features, and vertical FL trains a better predictor that combine
+  all the features from different clients. This paper targets solving vertical FL
+  in an asynchronous fashion, and develops a simple FL method. The new method allows
+  each client to run stochastic gradient algorithms without coordination with other
+  clients, so it is suitable for intermittent connectivity of clients. This method
+  further uses a new te

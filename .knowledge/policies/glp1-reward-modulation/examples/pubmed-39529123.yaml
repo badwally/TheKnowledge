@@ -1,0 +1,70 @@
+source_id: pubmed-39529123
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 RAs for nicotine cessation in psychiatric populations — relevant
+  intersection of reward modulation and psychiatric symptoms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Glucagon-like peptide-1 receptor agonists (GLP-1RAs) as treatment for nicotine
+    cessation in psychiatric populations: a systematic review.'
+  source_type: pubmed
+  authors:
+  - name: Serene Lee
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Maggie Li
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Gia Han Le
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Kayla M Teopiz
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Maj Vinberg
+    affiliation: The Early Multimodular Prevention and Intervention Research Institution
+      (EMPIRI), Mental Health Centre, Northern Zealand, Copenhagen University Hospital-Mental
+      Health Services CPH, Copenhagen, Denmark.
+  - name: Roger Ho
+    affiliation: Department of Psychological Medicine, Yong Loo Lin School of Medicine,
+      Singapore, Singapore.
+  - name: Hezekiah C T Au
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Sabrina Wong
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Kyle Valentino
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Angela T H Kwan
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada.
+  - name: Joshua D Rosenblat
+    affiliation: Mood Disorder Psychopharmacology Unit, University Health Network,
+      Toronto, Canada.
+  - name: Roger S McIntyre
+    affiliation: Brain and Cognition Discovery Foundation, 77 Bloor Street West, Suite
+      617, Toronto, ON, M5S 1M2, Canada. roger.mcintyre@bcdf.org.
+  published_at: 2024 11 11
+  source_metadata:
+    pmid: '39529123'
+    doi: 10.1186/s12991-024-00527-9
+    journal: Annals of general psychiatry
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms: []
+    pmc_id: PMC11552190
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11552190/
+content_excerpt: Nicotine use and nicotine use disorder (NUD) are the leading causes
+  of preventable death in the United States. Persons with mental disorders  (e.g.,
+  bipolar disorder) are differentially susceptible to nicotine use. Glucagon-like
+  peptide-1 receptor agonists (GLP-1RAs) are indicated for type 2 diabetes mellitus
+  (T2DM) and obesity and show preliminary evidence of efficacy in addiction-related
+  behaviours. Herein, we synthesize extant preclinical and clinical evidence evaluating
+  the effect of GLP-1RA

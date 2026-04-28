@@ -1,0 +1,16 @@
+source_id: yt-voaKr_JHvF4
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Jack Herrington 12-minute technical deep dive into Google's A2A protocol
+  covering agent coordination architecture — substantive protocol explanation with
+  specifics on how A2A enables cross-platform agent collaboration.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What Makes Google&#39;s A2A Protocol REALLY POWERFUL (in 12 Minutes)
+  published_at: '2025-04-11T01:02:37Z'
+  channel: Jack Herrington
+content_excerpt: Learn all about the A2A, or Agent 2 Agent protocol, that allows AI
+  agents to coordinate to solve tasks on your behalf.

@@ -1,0 +1,14 @@
+source_id: yt-z72K2Ipjth0
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Best time to take GLP-1; practical dosing, not neuro.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What is the BEST TIME to take GLP-1 MEDICATION
+  published_at: '2023-04-06T14:00:42Z'
+  channel: SugarMD
+content_excerpt: Dr. Ahmet Ergin is an experienced endocrinologist and the founder
+  of SugarMD, an online platform offering comprehensive ...

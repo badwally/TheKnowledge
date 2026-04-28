@@ -1,0 +1,14 @@
+source_id: yt-1Np4_l4sYgs
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'VideoChat-R1: Enhancing Spatio-Temporal Perception (Apr 2025)'
+  published_at: '2025-04-15T14:25:44Z'
+  channel: AI Paper Slop
+content_excerpt: 'Title: VideoChat-R1: Enhancing Spatio-Temporal Perception via Reinforcement
+  Fine-Tuning (Apr 2025) Link: ...'

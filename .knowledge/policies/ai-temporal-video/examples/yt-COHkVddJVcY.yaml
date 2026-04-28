@@ -1,0 +1,14 @@
+source_id: yt-COHkVddJVcY
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'METAL: Minimum Effort Temporal Activity Localization in Untrimmed Videos'
+  published_at: '2020-07-17T02:52:51Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Da Zhang, Xiyang Dai, Yuan-Fang Wang Description: Existing
+  Temporal Activity Localization (TAL) methods largely ...'

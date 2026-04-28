@@ -1,0 +1,65 @@
+source_id: pubmed-28110911
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: SUSTAIN 1 phase III trial of semaglutide for T2D glycemic control — pure
+  diabetes efficacy, no reward discussion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Efficacy and safety of once-weekly semaglutide monotherapy versus placebo
+    in patients with type 2 diabetes (SUSTAIN 1): a double-blind, randomised, placebo-controlled,
+    parallel-group, multinational, multicentre phase 3a trial.'
+  source_type: pubmed
+  authors:
+  - name: Christopher Sorli
+    affiliation: 'Billings Clinic Research Center, Billings, MT, USA. Electronic address:
+      chrissorli@gmail.com.'
+  - name: Shin-Ichi Harashima
+    affiliation: Graduate School of Medicine, Kyoto University, Kyoto, Japan.
+  - name: George M Tsoukas
+    affiliation: Department of Medicine, McGill University, Montreal, QC, Canada.
+  - name: Jeffrey Unger
+    affiliation: Catalina Research Institute, Chino, CA, USA.
+  - name: Julie Derving Karsb&#xf8;l
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Thomas Hansen
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Stephen C Bain
+    affiliation: School of Medicine, Swansea University, Swansea, Wales, UK.
+  published_at: 2017 01 17
+  source_metadata:
+    pmid: '28110911'
+    doi: 10.1016/S2213-8587(17)30013-X
+    journal: The lancet. Diabetes & endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Clinical Trial, Phase III
+    - Journal Article
+    - Multicenter Study
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Body Weight
+    - Diabetes Mellitus, Type 2
+    - Double-Blind Method
+    - Female
+    - Glucagon-Like Peptides
+    - Glycated Hemoglobin
+    - Humans
+    - Hypoglycemic Agents
+    - Male
+    - Middle Aged
+    - Placebo Effect
+    - Treatment Outcome
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Despite a broad range of pharmacological options for the treatment
+  of type 2 diabetes, optimum glycaemic control remains challenging for many patients
+  and new therapies are necessary. Semaglutide is a glucagon-like peptide-1 (GLP-1)
+  analogue in phase 3 development for type 2 diabetes. We assessed the efficacy, safety,
+  and tolerability of semaglutide monotherapy, compared with placebo, in treatment-naive
+  patients with type 2 diabetes who had insufficient glycaemic control with diet and
+  exercise a

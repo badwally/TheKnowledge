@@ -1,0 +1,40 @@
+source_id: arxiv-2603.16104
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Helium is a workflow-aware LLM serving framework that treats agentic workloads
+  as query plans with proactive caching, cache-aware scheduling, and KV state reuse
+  across calls, achieving 1.56x speedup; directly addresses serving efficiency for
+  agentic workflows with system-level innovations applicable to resource-constrained
+  edge deployments.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Efficient LLM Serving for Agentic Workflows: A Data Systems Perspective'
+  source_type: arxiv
+  authors:
+  - name: Noppanat Wadlom
+    affiliation: null
+  - name: Junyi Shen
+    affiliation: null
+  - name: Yao Lu
+    affiliation: null
+  published_at: '2026-03-17T04:03:18Z'
+  source_metadata:
+    arxiv_id: '2603.16104'
+    categories:
+    - cs.MA
+    - cs.AI
+    - cs.DB
+    pdf_url: http://arxiv.org/pdf/2603.16104v1.pdf
+    primary_category: cs.MA
+    comment: null
+    journal_ref: null
+content_excerpt: Agentic workflows are composed of sequences of interdependent Large
+  Language Model (LLM) calls, and they have become a dominant workload in modern AI
+  systems. These workflows exhibit extensive redundancy from overlapping prompts and
+  intermediate results due to speculative and parallel exploration. Existing LLM serving
+  systems, such as vLLM, focus on optimizing individual inference calls and overlook
+  cross-call dependencies, leading to significant inefficiencies. This paper rethinks
+  LLM and agent

@@ -1,0 +1,13 @@
+source_id: yt-b1Ansu2NUu4
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Not relevant to GLP-1 reward/neurological effects; unrelated medical topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: If You Have An Autoimmune Condition, Watch This! 👉
+  published_at: '2024-10-03T03:55:22Z'
+  channel: KenDBerryMD
+content_excerpt: If You Have An Autoimmune Condition, Watch This!

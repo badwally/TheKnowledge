@@ -1,0 +1,54 @@
+source_id: arxiv-2505.14302
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Unified QAT scaling law across 268 experiments modeling quantization error
+  as a function of model size, training tokens, and group size at W4A4; directly informs
+  deployment decisions for edge-quantized LLMs.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Scaling Law for Quantization-Aware Training
+  source_type: arxiv
+  authors:
+  - name: Mengzhao Chen
+    affiliation: null
+  - name: Chaoyi Zhang
+    affiliation: null
+  - name: Jing Liu
+    affiliation: null
+  - name: Yutao Zeng
+    affiliation: null
+  - name: Zeyue Xue
+    affiliation: null
+  - name: Zhiheng Liu
+    affiliation: null
+  - name: Yunshui Li
+    affiliation: null
+  - name: Jin Ma
+    affiliation: null
+  - name: Jie Huang
+    affiliation: null
+  - name: Xun Zhou
+    affiliation: null
+  - name: Ping Luo
+    affiliation: null
+  published_at: '2025-05-20T12:54:43Z'
+  source_metadata:
+    arxiv_id: '2505.14302'
+    categories:
+    - cs.LG
+    - cs.CL
+    pdf_url: http://arxiv.org/pdf/2505.14302v1.pdf
+    primary_category: cs.LG
+    comment: A unified scaling law for QAT that models quantization error as a function
+      of model size, training data volume, and quantization group size
+    journal_ref: null
+content_excerpt: 'Large language models (LLMs) demand substantial computational and
+  memory resources, creating deployment challenges. Quantization-aware training (QAT)
+  addresses these challenges by reducing model precision while maintaining performance.
+  However, the scaling behavior of QAT, especially at 4-bit precision (W4A4), is not
+  well understood. Existing QAT scaling laws often ignore key factors such as the
+  number of training tokens and quantization granularity, which limits their applicability.
+  This paper '

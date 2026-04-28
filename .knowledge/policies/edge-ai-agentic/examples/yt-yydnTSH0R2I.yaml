@@ -1,0 +1,18 @@
+source_id: yt-yydnTSH0R2I
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 70-minute tinyML Talks session from Harvard's Vijay Janapa Reddi on MLOps
+  for TinyML at scale covers the unique challenges of operationalizing constrained-device
+  AI — authoritative speaker, technical depth, and directly relevant to the edge fleet
+  management dimension of the domain.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'tinyML Talks: MLOps for TinyML: Challenges &amp; Directions in Operationalizing
+    TinyML at Scale'
+  published_at: '2022-05-27T17:19:14Z'
+  channel: EDGE AI FOUNDATION
+content_excerpt: 'tinyML Talks MLOps for TinyML: Challenges & Directions in Operationalizing
+  TinyML at Scale Vijay Janapa Reddi Associate ...'

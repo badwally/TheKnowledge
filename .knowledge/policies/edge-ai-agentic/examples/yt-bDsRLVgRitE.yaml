@@ -1,0 +1,16 @@
+source_id: yt-bDsRLVgRitE
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 13-minute deep-dive on Copilot Studio agent orchestration with MCP servers
+  covers agentic protocol integration (MCP) in a concrete enterprise deployment —
+  relevant to protocol design even if Microsoft-centric and not explicitly edge-focused.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: AI AGENT ORCHESTRATION with Copilot Studio Agents and MCP Servers
+  published_at: '2025-09-01T17:58:24Z'
+  channel: All About Analytics
+content_excerpt: Dive deep into the future of enterprise AI with this comprehensive
+  breakdown of a Copilot Studio built AI Agent reaching MCP ...

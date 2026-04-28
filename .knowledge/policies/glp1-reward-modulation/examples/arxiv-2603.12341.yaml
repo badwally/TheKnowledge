@@ -1,0 +1,38 @@
+source_id: arxiv-2603.12341
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Self-reported side effects of semaglutide/tirzepatide from Reddit — may
+  capture real-world reports of reward dampening, mood changes, sexual effects.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Self-Reported Side Effects of Semaglutide and Tirzepatide in Online Communities
+  source_type: arxiv
+  authors:
+  - name: Neil K. R. Sehgal
+    affiliation: null
+  - name: Jena Shaw Tronieri
+    affiliation: null
+  - name: Lyle Ungar
+    affiliation: null
+  - name: Sharath Chandra Guntuku
+    affiliation: null
+  published_at: '2026-03-12T18:03:22Z'
+  source_metadata:
+    arxiv_id: '2603.12341'
+    categories:
+    - cs.SI
+    - q-bio.QM
+    pdf_url: http://arxiv.org/pdf/2603.12341v1.pdf
+    primary_category: cs.SI
+    comment: null
+    journal_ref: null
+content_excerpt: Social media can reveal patient experiences with glucagon-like peptide-1
+  receptor agonists (GLP-1 RAs) that extend beyond clinical trial data. We analyzed
+  410,198 Reddit posts (May 2019-June 2025) mentioning semaglutide or tirzepatide.
+  A total of 67,008 users self-reported using these medications, and 43.5% described
+  at least one side effect. Gastrointestinal symptoms predominated, including nausea
+  (36.9%), fatigue (16.7%), vomiting (16.3%), constipation (15.3%), and diarrhea (12.6%).
+  Notably, r

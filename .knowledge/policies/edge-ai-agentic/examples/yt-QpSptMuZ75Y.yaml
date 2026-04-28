@@ -1,0 +1,18 @@
+source_id: yt-QpSptMuZ75Y
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Google Cloud keynote at AI Infra Summit 2025 (30 min) explicitly addresses
+  foundations of AI inference infrastructure from an authoritative Google Cloud channel
+  — high probability of covering inference strategy, distributed compute, and ecosystem
+  positioning relevant to a GPM candidate.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Google Cloud Keynote at AI Infra Summit 2025: What&#39;s Next for the Foundations
+    of AI'
+  published_at: '2025-10-27T13:16:54Z'
+  channel: Google Cloud Events
+content_excerpt: 'Learn more about Google Cloud AI solutions: https://goo.gle/47EBSMp
+  Welcome to the age of inference. As AI breakthroughs ...'

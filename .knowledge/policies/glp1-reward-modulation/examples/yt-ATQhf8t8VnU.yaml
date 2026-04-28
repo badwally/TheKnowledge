@@ -1,0 +1,14 @@
+source_id: yt-ATQhf8t8VnU
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: German; discusses GLP-1 and addiction but limited accessibility.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Kann die Abnehmspritze auch gegen Sucht helfen?
+  published_at: '2026-03-20T15:15:01Z'
+  channel: Der ERCM Medizin Podcast
+content_excerpt: Hilft die „Abnehmspritze“ nicht nur gegen Kilos, sondern auch gegen
+  Alkoholsucht? Eine große Kohortenstudie, die im British ...

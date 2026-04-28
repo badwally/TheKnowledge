@@ -1,0 +1,54 @@
+source_id: pubmed-41794143
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Sugar addiction at crossroads of reward, metabolism, and culture — contextually
+  relevant for understanding food noise and hedonic eating.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Sugar addiction at the crossroads of reward, metabolism, and culture.
+  source_type: pubmed
+  authors:
+  - name: Valentin Skryabin
+    affiliation: 'Royal College of Psychiatrists, London, UK. Electronic address:
+      sardonios@yandex.ru.'
+  - name: Moazameh Sanjari Mijan
+    affiliation: Pirogov Russian National Research Medical University, Moscow, Russia.
+  - name: Negar Mehryar
+    affiliation: Pirogov Russian National Research Medical University, Moscow, Russia.
+  - name: Bita Farzadkia
+    affiliation: Pirogov Russian National Research Medical University, Moscow, Russia.
+  - name: Mariam Mahmmod
+    affiliation: Pirogov Russian National Research Medical University, Moscow, Russia.
+  - name: Sheida Savari
+    affiliation: Pirogov Russian National Research Medical University, Moscow, Russia.
+  - name: Mohammad Amin Dolatyar
+    affiliation: Pirogov Russian National Research Medical University, Moscow, Russia.
+  published_at: 2026 03 06
+  source_metadata:
+    pmid: '41794143'
+    doi: 10.1016/j.bbr.2026.116147
+    journal: Behavioural brain research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Reward
+    - Animals
+    - Behavior, Addictive
+    - Food Addiction
+    - Binge-Eating Disorder
+    - Sugars
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Sugar addiction has been proposed as a behavioural syndrome characterised
+  by craving, loss of control, escalation of intake, and continued use despite adverse
+  consequences. Although not formally recognised in current diagnostic systems, converging
+  evidence suggests that addictive-like responding is most plausible for refined,
+  rapidly delivered sugar vehicles (e.g., sugar-sweetened beverages) in vulnerable
+  individuals, and overlaps substantially with loss-of-control eating presentations,
+  includin

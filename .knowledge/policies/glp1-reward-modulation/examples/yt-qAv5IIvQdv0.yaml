@@ -1,0 +1,14 @@
+source_id: yt-qAv5IIvQdv0
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 microdosing risks/benefits; weight loss dosing focus.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GLP-1 Microdosing Explained: Nurse Michelle Reveals Risks &amp; Benefits'
+  published_at: '2025-07-23T18:53:42Z'
+  channel: RealSelf
+content_excerpt: Can a tiny dose really make a big impact? Join registered nurse Michelle
+  Malpic as she breaks down the science and strategy ...

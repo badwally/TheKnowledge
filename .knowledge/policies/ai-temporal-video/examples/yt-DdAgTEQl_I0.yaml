@@ -1,0 +1,14 @@
+source_id: yt-DdAgTEQl_I0
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio-Temporal Filter Analysis Improves 3D-CNN for Action Classification
+  published_at: '2024-01-30T04:55:17Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Takumi Kobayashi; Jiaxing Ye Description: As 2D-CNNs are
+  growing in image recognition literature, 3D-CNNs are ...'

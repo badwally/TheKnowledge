@@ -1,0 +1,13 @@
+source_id: yt-0824iHDsobc
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Self-Feedback DETR for Temporal Action Detection
+  published_at: '2024-06-23T08:14:42Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: Self-Feedback DETR for Temporal Action Detection.

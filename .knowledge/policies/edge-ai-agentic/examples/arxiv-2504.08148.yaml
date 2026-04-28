@@ -1,0 +1,48 @@
+source_id: arxiv-2504.08148
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Proposes a 'blueprint architecture' for compound AI systems using stream-based
+  orchestration to coordinate agents and data in enterprise settings, published at
+  ICDE 2025. Addresses multi-agent orchestration patterns and integration challenges
+  relevant to distributed agentic workflows, though the primary framing is cloud enterprise
+  rather than edge.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Orchestrating Agents and Data for Enterprise: A Blueprint Architecture for
+    Compound AI'
+  source_type: arxiv
+  authors:
+  - name: Eser Kandogan
+    affiliation: null
+  - name: Nikita Bhutani
+    affiliation: null
+  - name: Dan Zhang
+    affiliation: null
+  - name: Rafael Li Chen
+    affiliation: null
+  - name: Sairam Gurajada
+    affiliation: null
+  - name: Estevam Hruschka
+    affiliation: null
+  published_at: '2025-04-10T22:19:41Z'
+  source_metadata:
+    arxiv_id: '2504.08148'
+    categories:
+    - cs.AI
+    - cs.DB
+    - cs.DC
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2504.08148v1.pdf
+    primary_category: cs.AI
+    comment: null
+    journal_ref: First Workshop on Data-AI Systems (DAIS), ICDE 2025
+content_excerpt: Large language models (LLMs) have gained significant interest in
+  industry due to their impressive capabilities across a wide range of tasks. However,
+  the widespread adoption of LLMs presents several challenges, such as integration
+  into existing applications and infrastructure, utilization of company proprietary
+  data, models, and APIs, and meeting cost, quality, responsiveness, and other requirements.
+  To address these challenges, there is a notable shift from monolithic models to
+  compound AI syst

@@ -1,0 +1,55 @@
+source_id: arxiv-2502.00425
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Introduces MQuant, a post-training quantization framework for multimodal
+  LLMs addressing high inference latency and token distribution challenges. Quantization
+  for reduced inference latency is a core edge optimization technique, and the work
+  presents novel modality-specific static quantization with experimental results across
+  five MLLMs.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MQuant: Unleashing the Inference Potential of Multimodal Large Language
+    Models via Full Static Quantization'
+  source_type: arxiv
+  authors:
+  - name: JiangYong Yu
+    affiliation: null
+  - name: Sifan Zhou
+    affiliation: null
+  - name: Dawei Yang
+    affiliation: null
+  - name: Shuo Wang
+    affiliation: null
+  - name: Shuoyu Li
+    affiliation: null
+  - name: Xing Hu
+    affiliation: null
+  - name: Chen Xu
+    affiliation: null
+  - name: Zukang Xu
+    affiliation: null
+  - name: Changyong Shu
+    affiliation: null
+  - name: Zhihang Yuan
+    affiliation: null
+  published_at: '2025-02-01T13:08:02Z'
+  source_metadata:
+    arxiv_id: '2502.00425'
+    categories:
+    - cs.CV
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2502.00425v2.pdf
+    primary_category: cs.CV
+    comment: Accepted by ACM MM 2025. First PTQ solution for Multimodal large language
+      models applicable to 5 mainstream MLLMs
+    journal_ref: null
+content_excerpt: Multimodal large language models (MLLMs) have garnered widespread
+  attention due to their ability to understand multimodal input. However, their large
+  parameter sizes and substantial computational demands severely hinder their practical
+  deployment and application.While quantization is an effective way to reduce model
+  size and inference latency, its application to MLLMs remains underexplored. In this
+  paper, we propose MQuant, a post-training quantization (PTQ) framework designed
+  to tackle the uniq

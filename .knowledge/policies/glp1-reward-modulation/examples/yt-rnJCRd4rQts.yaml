@@ -1,0 +1,14 @@
+source_id: yt-rnJCRd4rQts
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: No discussion of GLP-1 or reward circuitry; outside research scope.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Neuroscientist: How To Control Food Addiction? | Andrew Huberman'
+  published_at: '2023-07-10T00:10:00Z'
+  channel: Pure Plate
+content_excerpt: This Short is a well-known neuroscientist and professor in Stanford
+  University, Andrew Hubberman, talks about how he loves ...

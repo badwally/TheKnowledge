@@ -1,0 +1,16 @@
+source_id: yt-W3h_-eCcmqc
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Google for Developers 25-minute video explaining both A2A and
+  MCP with ADK — comprehensive, authoritative treatment of Google's full agentic protocol
+  stack from the source team, directly relevant to the GPM role.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'A2A and MCP explained: with ADK'
+  published_at: '2025-12-10T00:00:39Z'
+  channel: Google for Developers
+content_excerpt: This video demystifies Agent-to-Agent (A2A) communication Protocol
+  and the Model Context Protocol (MCP), two key open ...

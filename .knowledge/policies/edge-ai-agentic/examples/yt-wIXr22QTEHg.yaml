@@ -1,0 +1,16 @@
+source_id: yt-wIXr22QTEHg
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology's 11-minute LLM compression explainer covers quantization,
+  pruning, and distillation with specifics — directly addresses on-device model optimization
+  techniques required for edge inference; good authority channel.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'LLM Compression Explained: Build Faster, Efficient AI Models'
+  published_at: '2026-03-31T11:01:08Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx AI Assistant Engineer? Register
+  now and use code IBMTechYT20 for 20% off of your exam ...

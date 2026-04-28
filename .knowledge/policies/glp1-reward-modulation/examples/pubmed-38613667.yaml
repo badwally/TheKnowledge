@@ -1,0 +1,82 @@
+source_id: pubmed-38613667
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Network meta-analysis tirzepatide vs semaglutide for T2D — efficacy comparison
+  without reward mechanisms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Subcutaneously administered tirzepatide vs semaglutide for adults with type
+    2 diabetes: a systematic review and network meta-analysis of randomised controlled
+    trials.'
+  source_type: pubmed
+  authors:
+  - name: Thomas Karagiannis
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece. tkaragian@auth.gr.
+  - name: Konstantinos Malandris
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Ioannis Avgerinos
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Athina Stamati
+    affiliation: School of Medicine, Faculty of Health Science, Aristotle University
+      of Thessaloniki, Thessaloniki, Greece.
+  - name: Panagiota Kakotrichi
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Aris Liakos
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Despoina Vasilakou
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Nikolaos Kakaletsis
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Apostolos Tsapas
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  - name: Eleni Bekiari
+    affiliation: Clinical Research and Evidence-Based Medicine Unit, Second Medical
+      Department, Aristotle University of Thessaloniki, Thessaloniki, Greece.
+  published_at: 2024 04 13
+  source_metadata:
+    pmid: '38613667'
+    doi: 10.1007/s00125-024-06144-1
+    journal: Diabetologia
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    - Network Meta-Analysis
+    mesh_terms:
+    - Diabetes Mellitus, Type 2
+    - Humans
+    - Hypoglycemic Agents
+    - Glucagon-Like Peptides
+    - Randomized Controlled Trials as Topic
+    - Glycated Hemoglobin
+    - Adult
+    - Blood Glucose
+    - Female
+    - Male
+    - Injections, Subcutaneous
+    - Glucagon-Like Peptide-2 Receptor
+    - Gastric Inhibitory Polypeptide
+    - Tirzepatide
+    - Semaglutide
+    pmc_id: PMC11153294
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11153294/
+content_excerpt: 'We conducted a systematic review and network meta-analysis to compare
+  the efficacy and safety of s.c. administered tirzepatide vs s.c. administered semaglutide
+  for adults of both sexes with type 2 diabetes mellitus.
+
+
+  We searched PubMed and Cochrane up to 11 November 2023 for RCTs with an intervention
+  duration of at least 12 weeks assessing s.c. tirzepatide at maintenance doses of
+  5 mg, 10 mg or 15 mg once weekly, or s.c. semaglutide at maintenance doses of 0.5
+  mg, 1.0 mg or 2.0 mg once weekly, i'

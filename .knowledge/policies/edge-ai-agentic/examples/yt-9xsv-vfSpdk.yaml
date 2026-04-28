@@ -1,0 +1,17 @@
+source_id: yt-9xsv-vfSpdk
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 18-minute NVIDIA conference talk on edge AI acceleration for computer vision
+  at YOLO Vision London 2025; covers NVIDIA Jetson ecosystem and hardware acceleration
+  specifics relevant to competitive landscape.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Edge AI with @NVIDIA: Accelerating Computer Vision Inference | Ultralytics
+    YOLO Vision London 2025'
+  published_at: '2026-01-27T13:30:19Z'
+  channel: Ultralytics
+content_excerpt: Join us for another keynote at YOLO Vision 2025, where NVIDIA's Developer
+  Relations Manager, Angus Siberry, takes the stage ...

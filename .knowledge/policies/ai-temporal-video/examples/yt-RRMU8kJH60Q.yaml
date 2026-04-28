@@ -1,0 +1,14 @@
+source_id: yt-RRMU8kJH60Q
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The basics of spatio-temporal graph neural networks
+  published_at: '2021-06-05T15:00:08Z'
+  channel: Jacob Heglund
+content_excerpt: Graph machine learning has become very popular in recent years in
+  the machine learning and engineering communities. In this ...

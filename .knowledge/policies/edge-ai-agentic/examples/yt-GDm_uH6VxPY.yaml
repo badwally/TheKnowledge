@@ -1,0 +1,16 @@
+source_id: yt-GDm_uH6VxPY
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Google Cloud Tech channel (official) covering AI agent design patterns
+  including multi-agent orchestration — directly relevant to agentic workflow architecture,
+  from an authoritative Google source, with links to technical labs.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: AI agent design patterns
+  published_at: '2026-02-27T17:00:34Z'
+  channel: Google Cloud Tech
+content_excerpt: Agentic Pattern lab→ https://goo.gle/agenticpattern Multi-Agent Pattern
+  blog → https://goo.gle/multiagentpattern Design agentic ...

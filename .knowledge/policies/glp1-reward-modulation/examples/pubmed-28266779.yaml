@@ -1,0 +1,75 @@
+source_id: pubmed-28266779
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Investigates semaglutide effects on appetite, energy intake, control of
+  eating and food preference — touches on food reward mechanisms beyond simple appetite.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Effects of once-weekly semaglutide on appetite, energy intake, control of
+    eating, food preference and body weight in subjects with obesity.
+  source_type: pubmed
+  authors:
+  - name: John Blundell
+    affiliation: Department of Psychology, University of Leeds, Leeds, UK.
+  - name: Graham Finlayson
+    affiliation: Department of Psychology, University of Leeds, Leeds, UK.
+  - name: Mads Axelsen
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Anne Flint
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Catherine Gibbons
+    affiliation: Department of Psychology, University of Leeds, Leeds, UK.
+  - name: Trine Kvist
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Julie B Hjerpsted
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  published_at: 2017 05 05
+  source_metadata:
+    pmid: '28266779'
+    doi: 10.1111/dom.12932
+    journal: Diabetes, obesity & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Adiposity
+    - Adult
+    - Appetite Depressants
+    - Appetite Regulation
+    - Basal Metabolism
+    - Body Mass Index
+    - Cross-Over Studies
+    - Dose-Response Relationship, Drug
+    - Double-Blind Method
+    - Drug Administration Schedule
+    - Energy Intake
+    - Feeding Behavior
+    - Female
+    - Food Preferences
+    - Glucagon-Like Peptide-1 Receptor
+    - Glucagon-Like Peptides
+    - Humans
+    - Injections, Subcutaneous
+    - Male
+    - Middle Aged
+    - Obesity
+    - Self Report
+    - Weight Loss
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Semaglutide
+    pmc_id: PMC5573908
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5573908/
+content_excerpt: 'The aim of this trial was to investigate the mechanism of action
+  for body weight loss with semaglutide.
+
+
+  This randomised, double-blind, placebo-controlled, two-period crossover trial investigated
+  the effects of 12 weeks of treatment with once-weekly subcutaneous semaglutide,
+  dose-escalated to 1.0 mg, in 30 subjects with obesity. Ad libitum energy intake,
+  ratings of appetite, thirst, nausea and well-being, control of eating, food preference,
+  resting metabolic rate, body weight and body compositio'

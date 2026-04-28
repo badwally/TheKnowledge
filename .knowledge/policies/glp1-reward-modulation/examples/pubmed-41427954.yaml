@@ -1,0 +1,58 @@
+source_id: pubmed-41427954
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: 'Review titled ''Beyond metabolism: sexual dysfunction and weight-loss
+  drugs'' — directly examines sexual dysfunction from GLP-1 RAs and related drugs.'
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Beyond metabolism: sexual dysfunction and weight-loss drugs.'
+  source_type: pubmed
+  authors:
+  - name: Jenyfer M Fuentes-Mendoza
+    affiliation: Grupo de Investigaci&#xf3;n en Neurociencias, Metabolismo, Efectividad
+      Cl&#xed;nica y Sanitaria, Universidad Cient&#xed;fica del Sur, Lima 15067, Peru.
+  - name: Marcio J Concepci&#xf3;n-Zavaleta
+    affiliation: Grupo de Investigaci&#xf3;n en Neurociencias, Metabolismo, Efectividad
+      Cl&#xed;nica y Sanitaria, Universidad Cient&#xed;fica del Sur, Lima 15067, Peru.
+  - name: Jeny J Mendoza-Godoy
+    affiliation: School of Medicine, Universidad Privada de Huancayo Franklin Roosevelt,
+      Huancayo 12001, Peru.
+  - name: Luis Concepci&#xf3;n-Urteaga
+    affiliation: School of Medicine, Universidad Nacional de Trujillo, Trujillo 13001,
+      Peru.
+  - name: Jos&#xe9; Paz-Ibarra
+    affiliation: School of Medicine, Universidad Nacional Mayor de San Marcos, Lima
+      15001, Peru.
+  - name: Julia C Coronado-Arroyo
+    affiliation: Cl&#xed;nica Internacional, Lima 11, Peru.
+  published_at: 2026 Jan 02
+  source_metadata:
+    pmid: '41427954'
+    doi: 10.1093/sxmrev/qeaf074
+    journal: Sexual medicine reviews
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Sexual Dysfunction, Physiological
+    - Male
+    - Female
+    - Obesity
+    - Anti-Obesity Agents
+    - Weight Loss
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Sexual dysfunction (SD) is a frequent and underrecognized complication
+  of obesity, mediated by a complex interplay of hormonal, vascular, metabolic, and
+  psychosocial pathways. Despite the established link between weight reduction and
+  improved sexual health, the specific effects of new pharmacological weight-loss
+  therapies on sexual function remain underexplored.
+
+
+  To critically evaluate the recent evidence on the impact of weight-loss medications
+  on sexual function, synthesizing clinical outcomes'

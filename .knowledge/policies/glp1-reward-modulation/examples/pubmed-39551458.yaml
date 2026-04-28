@@ -1,0 +1,65 @@
+source_id: pubmed-39551458
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide effects on testicular dysfunction and spermatogenesis in diabetic
+  rats — relevant to sexual function side effects though mechanism is metabolic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Unraveling the impact of semaglutide in a diabetic rat model of testicular
+    dysfunction: Insights into spermatogenesis pathways and miRNA-148a-5p.'
+  source_type: pubmed
+  authors:
+  - name: Basel A Abdel-Wahab
+    affiliation: 'Department of Pharmacology, College of Pharmacy, Najran University,
+      Najran P.O. Box 1988, Saudi Arabia. Electronic address: babdelnaem@nu.edu.sa.'
+  - name: Ehab A M El-Shoura
+    affiliation: 'Department of Clinical Pharmacy, Faculty of Pharmacy, Al-Azhar University,
+      Assiut Branch, Assiut 71524, Egypt. Electronic address: ehabel-shoura@azhar.edu.eg.'
+  - name: Mohammed S Habeeb
+    affiliation: 'Department of Pharmacology, College of Pharmacy, Najran University,
+      Najran P.O. Box 1988, Saudi Arabia. Electronic address: mshabeeb@nu.edu.sa.'
+  - name: Nayef A Aldabaan
+    affiliation: 'Department of Pharmacology, College of Pharmacy, Najran University,
+      Najran P.O. Box 1988, Saudi Arabia. Electronic address: naaldabaan@nu.edu.sa.'
+  - name: Yasmine H Ahmed
+    affiliation: 'Department of Cytology and Histology, Faculty of Veterinary Medicine,
+      Cairo University, Giza, Egypt. Electronic address: yasmine_hamdi@cu.edu.eg.'
+  - name: Dalia Zaafar
+    affiliation: 'Department of Pharmacology and Toxicology, Faculty of Pharmacy,
+      Cairo University, Cairo, Egypt. Electronic address: dr.moda88@gmail.com.'
+  published_at: 2024 11 17
+  source_metadata:
+    pmid: '39551458'
+    doi: 10.1016/j.steroids.2024.109537
+    journal: Steroids
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Male
+    - Spermatogenesis
+    - Rats
+    - Diabetes Mellitus, Experimental
+    - MicroRNAs
+    - Glucagon-Like Peptides
+    - Testis
+    - Rats, Sprague-Dawley
+    - Disease Models, Animal
+    - Testicular Diseases
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Diabetes has been a long-known risk factor for male sexual dysfunction,
+  which may be caused by persistent hyperglycemia, oxidative stress, and spermatogenesis
+  inhibition. This study explored the potential of Semaglutide (Sem) to alleviate
+  testicular dysfunction and spermatogenesis impairment in diabetic rats to understand
+  the molecular mechanism of this protective effect.
+
+
+  A controlled experiment was conducted where 28 adult male rats were divided into
+  four groups: control, Semaglutide, diabetic'

@@ -1,0 +1,14 @@
+source_id: yt-tfj4fZvHUeM
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Microdosing won't help weight loss; brief opinion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Microdosing GLP1 Won’t Help You Lose Weight
+  published_at: '2024-12-13T02:00:35Z'
+  channel: Mari Llewellyn
+content_excerpt: Microdosing GLP-1 medications, like Ozempic, may sound appealing
+  for weight loss, but it often fails to deliver the desired results.

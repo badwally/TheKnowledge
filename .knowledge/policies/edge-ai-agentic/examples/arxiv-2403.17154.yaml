@@ -1,0 +1,41 @@
+source_id: arxiv-2403.17154
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Empirically evaluates combinations of partitioning, quantization, and early
+  exit operators across mobile/edge/cloud tiers on CV models; provides actionable
+  MLOps guidance for edge AI deployment trade-offs with latency and accuracy data.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: On the Impact of Black-box Deployment Strategies for Edge AI on Latency and
+    Model Performance
+  source_type: arxiv
+  authors:
+  - name: Jaskirat Singh
+    affiliation: null
+  - name: Emad Fallahzadeh
+    affiliation: null
+  - name: Bram Adams
+    affiliation: null
+  - name: Ahmed E. Hassan
+    affiliation: null
+  published_at: '2024-03-25T20:09:46Z'
+  source_metadata:
+    arxiv_id: '2403.17154'
+    categories:
+    - cs.SE
+    - cs.AI
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2403.17154v4.pdf
+    primary_category: cs.SE
+    comment: null
+    journal_ref: null
+content_excerpt: Deciding what combination of operators to use across the Edge AI
+  tiers to achieve specific latency and model performance requirements is an open
+  question for MLOps engineers. This study aims to empirically assess the accuracy
+  vs inference time trade-off of different black-box Edge AI deployment strategies,
+  i.e., combinations of deployment operators and deployment tiers. In this paper,
+  we conduct inference experiments involving 3 deployment operators (i.e., Partitioning,
+  Quantization, Early Exit)

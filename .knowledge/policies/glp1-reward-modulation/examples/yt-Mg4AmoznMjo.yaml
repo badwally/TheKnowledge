@@ -1,0 +1,16 @@
+source_id: yt-Mg4AmoznMjo
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Russian language; discusses GLP-1 psychological dependency/neurobiology
+  but limited accessibility.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Оземпик и Мунджаро: Как GLP-1 препараты создают психологическую зависимость
+    | Нейробиология'
+  published_at: '2026-02-09T15:00:41Z'
+  channel: 'MIND CASE -0 '
+content_excerpt: 'ОЗЕМПИК И МУНДЖАРО: НЕЙРОБИОЛОГИЯ НОВОЙ ЗАВИСИМОСТИ За последние
+  3 года препараты для лечения ...'

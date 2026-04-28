@@ -1,0 +1,48 @@
+source_id: arxiv-2407.08462
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Distributed DRL-based gradient quantization for federated learning in vehicle
+  edge computing; combines FL, edge computing, and multi-agent coordination with empirical
+  latency results.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Distributed Deep Reinforcement Learning Based Gradient Quantization for Federated
+    Learning Enabled Vehicle Edge Computing
+  source_type: arxiv
+  authors:
+  - name: Cui Zhang
+    affiliation: null
+  - name: Wenjun Zhang
+    affiliation: null
+  - name: Qiong Wu
+    affiliation: null
+  - name: Pingyi Fan
+    affiliation: null
+  - name: Qiang Fan
+    affiliation: null
+  - name: Jiangzhou Wang
+    affiliation: null
+  - name: Khaled B. Letaief
+    affiliation: null
+  published_at: '2024-07-11T12:58:47Z'
+  source_metadata:
+    arxiv_id: '2407.08462'
+    categories:
+    - cs.LG
+    - cs.NI
+    pdf_url: http://arxiv.org/pdf/2407.08462v2.pdf
+    primary_category: cs.LG
+    comment: 'This paper has been accepted by IEEE Internet of Things Journal. The
+      source code has been released at: https://github.com/qiongwu86/Distributed-Deep-Reinforcement-Learning-Based-Gradient
+      Quantization-for-Federated-Learning-Enabled-Vehicle-Edge-Computing'
+    journal_ref: null
+content_excerpt: Federated Learning (FL) can protect the privacy of the vehicles in
+  vehicle edge computing (VEC) to a certain extent through sharing the gradients of
+  vehicles' local models instead of local data. The gradients of vehicles' local models
+  are usually large for the vehicular artificial intelligence (AI) applications, thus
+  transmitting such large gradients would cause large per-round latency. Gradient
+  quantization has been proposed as one effective approach to reduce the per-round
+  latency in FL enable

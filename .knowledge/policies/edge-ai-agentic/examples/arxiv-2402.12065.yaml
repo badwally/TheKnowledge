@@ -1,0 +1,47 @@
+source_id: arxiv-2402.12065
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: WKVQuant proposes joint quantization of weights and KV cache for LLMs,
+  reducing memory footprint and inference latency — both critical constraints for
+  edge deployment. Introduces past-only quantization and 2D quantization strategy
+  for KV cache distributions with experimental results.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'WKVQuant: Quantizing Weight and Key/Value Cache for Large Language Models
+    Gains More'
+  source_type: arxiv
+  authors:
+  - name: Yuxuan Yue
+    affiliation: null
+  - name: Zhihang Yuan
+    affiliation: null
+  - name: Haojie Duanmu
+    affiliation: null
+  - name: Sifan Zhou
+    affiliation: null
+  - name: Jianlong Wu
+    affiliation: null
+  - name: Liqiang Nie
+    affiliation: null
+  published_at: '2024-02-19T11:33:21Z'
+  source_metadata:
+    arxiv_id: '2402.12065'
+    categories:
+    - cs.LG
+    - cs.AI
+    - cs.CL
+    pdf_url: http://arxiv.org/pdf/2402.12065v2.pdf
+    primary_category: cs.LG
+    comment: Frist work to exclusively quantize weight and Key/Value cache for large
+      language models
+    journal_ref: null
+content_excerpt: 'Large Language Models (LLMs) face significant deployment challenges
+  due to their substantial memory requirements and the computational demands of auto-regressive
+  text generation process. This paper addresses these challenges by focusing on the
+  quantization of LLMs, a technique that reduces memory consumption by converting
+  model parameters and activations into low-bit integers. We critically analyze the
+  existing quantization approaches, identifying their limitations in balancing the
+  accuracy and '

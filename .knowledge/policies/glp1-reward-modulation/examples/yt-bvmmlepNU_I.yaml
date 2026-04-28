@@ -1,0 +1,15 @@
+source_id: yt-bvmmlepNU_I
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Explores GLP-1 brain effects with some depth, though may not focus specifically
+  on reward dissociation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1 Your Body and Your Brain
+  published_at: '2026-03-24T12:01:07Z'
+  channel: Craig Anderson, D.C.
+content_excerpt: This video explores the GLP-1 mechanism, discussing its role in metabolic
+  health and the nuances of agonist vs. physiology.

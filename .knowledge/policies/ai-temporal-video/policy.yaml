@@ -1,0 +1,56 @@
+version: 0.1.0
+domain:
+  slug: ai-temporal-video
+  topic: AI for longitudinal temporal video analysis
+  field: Computer Vision / Machine Learning
+  description: Research and applied work on using artificial intelligence — particularly
+    deep learning and computer vision — to analyze video data across extended time
+    periods. This includes temporal pattern recognition, activity detection over long
+    durations, change detection across video sequences, and systems that reason about
+    video content longitudinally rather than frame-by-frame.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Video discusses AI/ML methods applied to video analysis across time (not single-frame
+  image analysis)
+- Content addresses temporal reasoning, longitudinal patterns, or multi-frame analysis
+- Presentation includes technical substance — methods, architectures, results, or
+  detailed applications
+exclusion_criteria:
+- Pure product demos or marketing with no technical content
+- Tutorials on basic video editing or video production tools
+- Short news segments or hype pieces that mention AI + video without technical depth
+- Content focused exclusively on real-time/streaming inference with no longitudinal
+  component
+- Duplicate or re-uploaded content from another channel already in the corpus
+quality_signals:
+  channel_authority:
+    positive_signals:
+    - University, research lab, or conference channel (e.g., CVPR, NeurIPS, ICCV,
+      ECCV)
+    - Channel regularly publishes technical AI/ML content with consistent quality
+    - Channel associated with a known research group or company research division
+    negative_signals:
+    - Channel primarily produces clickbait or sensationalist AI content
+    - No other technical videos on the channel — isolated upload
+  speaker_expertise:
+    positive_signals:
+    - Speaker identifies as researcher, engineer, or practitioner in CV/ML
+    - Speaker references specific papers, methods, or datasets by name
+    - Presentation is from a conference, workshop, or academic seminar
+    negative_signals:
+    - Speaker provides no credentials and makes only general claims
+    - Content is narrated AI-generated voiceover with no identified author
+  content_depth:
+    positive_signals:
+    - Discusses specific architectures (transformers, RNNs, 3D CNNs, etc.) for temporal
+      analysis
+    - References or presents benchmark results, datasets, or evaluation metrics
+    - Covers failure modes, limitations, or open problems
+    - Duration >= 10 minutes (longer content correlates with depth for technical material)
+    negative_signals:
+    - Surface-level overview with no technical specifics
+    - Duration < 5 minutes (unlikely to cover technical depth adequately)

@@ -1,0 +1,14 @@
+source_id: yt-ndOZIRKGOgY
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Short clip on Ozempic beyond diabetes; too brief for depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Ozempic Isn’t Just For Diabetes. Here&#39;s Why:'
+  published_at: '2026-01-30T16:43:05Z'
+  channel: Dr. Rege
+content_excerpt: Most view GLP-1 agonists, such as Semaglutide and Liraglutide, Ozempic,
+  strictly as metabolic interventions for the management ...

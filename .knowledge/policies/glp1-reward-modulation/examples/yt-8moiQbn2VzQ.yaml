@@ -1,0 +1,14 @@
+source_id: yt-8moiQbn2VzQ
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Midi Health discusses microdosing GLP-1s; relevant to dosing strategy question.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Microdosing GLP-1s
+  published_at: '2025-01-22T20:24:20Z'
+  channel: Midi Health
+content_excerpt: 'What you need to know about microdosing GLP-1s #glp1 #weightloss
+  #menopause.'

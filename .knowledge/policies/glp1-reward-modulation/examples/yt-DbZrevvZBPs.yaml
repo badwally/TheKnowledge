@@ -1,0 +1,14 @@
+source_id: yt-DbZrevvZBPs
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Microdosing GLP-1 beyond weight loss; short, unclear depth on reward.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The Truth About Microdosing GLP-1s (Beyond Weight Loss)
+  published_at: '2025-05-15T14:03:43Z'
+  channel: Aesthetic Creator
+content_excerpt: Everyone is talking about Ozempic and GLP-1s right now, but most
+  people only see it as a weight loss drug with intense side ...

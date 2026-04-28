@@ -1,0 +1,14 @@
+source_id: yt-iB_aYjITWic
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Object Relational Graph With Teacher-Recommended Learning for Video Captioning
+  published_at: '2020-07-18T11:05:08Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Ziqi Zhang, Yaya Shi, Chunfeng Yuan, Bing Li, Peijin Wang,
+  Weiming Hu, Zheng-Jun Zha Description: Taking full ...'

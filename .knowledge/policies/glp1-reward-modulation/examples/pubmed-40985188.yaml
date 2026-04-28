@@ -1,0 +1,61 @@
+source_id: pubmed-40985188
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Neuroendocrinology meets addiction — emerging pharmacotherapies including
+  GLP-1 RAs for substance use disorders.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Neuroendocrinology meets addiction: Emerging pharmacotherapies on the horizon.'
+  source_type: pubmed
+  authors:
+  - name: Anna Loften
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse, Intramural
+      Research Program, and National Institute on Alcohol Abuse and Alcoholism, Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,
+      Baltimore, Maryland, USA.
+  - name: Mehdi Farokhnia
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse, Intramural
+      Research Program, and National Institute on Alcohol Abuse and Alcoholism, Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,
+      Baltimore, Maryland, USA.
+  - name: Leandro F Vendruscolo
+    affiliation: Stress and Addiction Neuroscience Unit, Integrative Neuroscience
+      Research Branch, National Institute on Drug Abuse, Intramural Research Program,
+      and National Institute on Alcohol Abuse and Alcoholism, Division of Intramural
+      Clinical and Biological Research, National Institutes of Health, Baltimore,
+      Maryland, USA.
+  - name: Lorenzo Leggio
+    affiliation: Clinical Psychoneuroendocrinology and Neuropsychopharmacology Section,
+      Translational Addiction Medicine Branch, National Institute on Drug Abuse, Intramural
+      Research Program, and National Institute on Alcohol Abuse and Alcoholism, Division
+      of Intramural Clinical and Biological Research, National Institutes of Health,
+      Baltimore, Maryland, USA.
+  published_at: 2025 09 23
+  source_metadata:
+    pmid: '40985188'
+    doi: 10.1111/joim.70021
+    journal: Journal of internal medicine
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Substance-Related Disorders
+    - Neuroendocrinology
+    - Pituitary-Adrenal System
+    - Hypothalamo-Hypophyseal System
+    pmc_id: PMC12522537
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12522537/
+content_excerpt: Alcohol and other substance use disorders (ASUDs) are prevalent and
+  major contributors to global morbidity and mortality. Their impact extends beyond
+  the individual, imposing significant burdens on families, communities, healthcare
+  systems, and society at large. Treatments include psychosocial, behavioral, and
+  pharmacological interventions. However, available pharmacological treatments remain
+  limited, primarily targeting alcohol, tobacco, and opioid use disorders, with a
+  lack of approved pharmac

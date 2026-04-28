@@ -1,0 +1,56 @@
+source_id: pubmed-33269530
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide 2.4mg effects on appetite, control of eating, and energy intake
+  — relevant for understanding dose-dependent appetite/reward modulation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The effect of semaglutide 2.4 mg once weekly on energy intake, appetite,
+    control of eating, and gastric emptying in adults with obesity.
+  source_type: pubmed
+  authors:
+  - name: Martin Friedrichsen
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Astrid Breitschaft
+    affiliation: Parexel International GmbH, Berlin, Germany.
+  - name: Sayeh Tadayon
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Alicja Wizert
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Dorthe Skovgaard
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  published_at: 2021 01 03
+  source_metadata:
+    pmid: '33269530'
+    doi: 10.1111/dom.14280
+    journal: Diabetes, obesity & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Adult
+    - Appetite
+    - Double-Blind Method
+    - Energy Intake
+    - Gastric Emptying
+    - Glucagon-Like Peptides
+    - Humans
+    - Obesity
+    - Prospective Studies
+    - Semaglutide
+    pmc_id: PMC7898914
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7898914/
+content_excerpt: 'To investigate the effects of once-weekly subcutaneous (s.c.) semaglutide
+  2.4 mg on gastric emptying, appetite, and energy intake in adults with obesity.
+
+
+  A double-blind, parallel-group trial was conducted in 72 adults with obesity, randomized
+  to once-weekly s.c. semaglutide (dose-escalated to 2.4 mg) or placebo for 20 weeks.
+  Gastric emptying was assessed using paracetamol absorption following a standardized
+  breakfast. Participant-reported appetite ratings and Control of Eating Questionnaire
+  (Co'

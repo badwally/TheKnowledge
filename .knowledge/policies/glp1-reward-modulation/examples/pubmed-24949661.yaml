@@ -1,0 +1,65 @@
+source_id: pubmed-24949661
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Long-term exendin-4 alters expression of both homeostatic and reward markers
+  in brain — directly relevant to dissociating food from reward effects.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Long term exendin-4 treatment reduces food intake and body weight and alters
+    expression of brain homeostatic and reward markers.
+  source_type: pubmed
+  authors:
+  - name: Yan Yang
+    affiliation: Department of Endocrinology (Y.Y.), Tongji Hospital, Tongji Medical
+      College, Huazhong University of Science and Technology, Wuhan, Hubei 430030,
+      China; Department of Psychiatry and Behavioral Sciences (Y.Y., A.A.M., Z.A.C.,
+      T.H.M.), Johns Hopkins University School of Medicine, Baltimore, Maryland 21205;
+      and Department of Psychology (N.C.L.), University of Illinois-Urbana Champaign,
+      Champaign, Illinois 61820.
+  - name: Alexander A Moghadam
+    affiliation: null
+  - name: Zachary A Cordner
+    affiliation: null
+  - name: Nu-Chu Liang
+    affiliation: null
+  - name: Timothy H Moran
+    affiliation: null
+  published_at: 2014 06 20
+  source_metadata:
+    pmid: '24949661'
+    doi: 10.1210/en.2014-1052
+    journal: Endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Biomarkers
+    - Body Weight
+    - Brain
+    - Eating
+    - Exenatide
+    - Homeostasis
+    - Humans
+    - Male
+    - Neuropeptide Y
+    - Obesity
+    - Peptides
+    - Pro-Opiomelanocortin
+    - Rats
+    - Rats, Sprague-Dawley
+    - Venoms
+    pmc_id: PMC4138563
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4138563/
+content_excerpt: Repeated administration of the long-acting glucagon-like peptide
+  1 receptor agonist exendin-4 (EX-4) has been shown to reduce food intake and body
+  weight and do so without a rebound increase in food intake after treatment termination.
+  The current study examines the neural mechanisms underlying these actions. After
+  6 weeks of maintenance on a standard chow or a high-fat (HF) diet, male Sprague
+  Dawley rats were treated with EX-4 (3.2 μg/kg, i.p., twice a day) or vehicle for
+  9 consecutive days. Foo

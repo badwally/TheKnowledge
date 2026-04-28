@@ -1,0 +1,16 @@
+source_id: yt-u9BL5viEPhU
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AI Makerspace 1-hour live event on on-premises agentic RAG with LlamaIndex
+  addresses the full edge/on-prem inference stack for enterprise — covers architecture,
+  privacy, and deployment tradeoffs directly aligned with the domain.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'On-Prem Agentic RAG: Report Generation with #llamaindex'
+  published_at: '2024-11-28T07:17:51Z'
+  channel: AI Makerspace
+content_excerpt: Get ready to bring LLM-powered innovation in-house! In this live
+  event, we're tackling the question of “On-Prem RAG” for ...

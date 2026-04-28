@@ -1,0 +1,15 @@
+source_id: yt-dMm-mVKP7hg
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: LiDAR-Based Online 3D Video Object Detection With Graph-Based Message Passing
+    and Spatiotemporal...
+  published_at: '2020-07-20T21:57:36Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Junbo Yin, Jianbing Shen, Chenye Guan, Dingfu Zhou, Ruigang
+  Yang Description: Existing LiDAR-based 3D object ...'

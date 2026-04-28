@@ -1,0 +1,130 @@
+source_id: pubmed-38574433
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide attenuates doxorubicin cardiotoxicity — cardioprotection mechanism,
+  no reward.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide attenuates doxorubicin-induced cardiotoxicity by ameliorating
+    BNIP3-Mediated mitochondrial dysfunction.
+  source_type: pubmed
+  authors:
+  - name: Xiaoping Li
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Wenbin Luo
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Yang Tang
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; College of Bioengineering,
+      Chongqing University, Chongqing, China.
+  - name: Jiangjiao Wu
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Junkai Zhang
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Shengnan Chen
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Lu Zhou
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Yu Tao
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Yuanjuan Tang
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China;
+      Department of Cardiology, The Third People's Hospital of Hospital of Chengdu,
+      Affiliated Hospital of Southwest Jiaotong University, Chengdu, China.
+  - name: Fengxian Wang
+    affiliation: Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China.
+  - name: Yu Huang
+    affiliation: Department of Biomedical Sciences, City University of Hong Kong,
+      Hong Kong Special Administrative Region, China.
+  - name: Pedro A Jose
+    affiliation: Division of Renal Diseases & Hypertension, The George Washington
+      University School of Medicine & Health Sciences, Washington, DC, USA.
+  - name: Li Guo
+    affiliation: 'Endocrinology Department, The First Affiliated Hospital of the Third
+      Military Medical University (Army Medical University), Chongqing, China. Electronic
+      address: dearpeardog@126.com.'
+  - name: Chunyu Zeng
+    affiliation: 'Department of Cardiology, Daping Hospital, Third Military Medical
+      University (Army Medical University), Chongqing, China; Key Laboratory of Geriatric
+      Cardiovascular and Cerebrovascular Disease Research, Ministry of Education of
+      China, Chongqing Key Laboratory for Hypertension Research, Chongqing Cardiovascular
+      Clinical Research Center, Chongqing Institute of Cardiology, Chongqing, China;
+      State Key Laboratory of Trauma, Burns and Combined Injury, Daping Hospital,
+      Third Military Medical University, Chongqing, China; Center of Chongqing College,
+      Chinese Academy of Sciences, University of Chinese Academy of Sciences, Chongqing,
+      China; Department of Cardiology, The First Affiliated Hospital of Kunming Medical
+      University, Kunming, Yunnan Province, China. Electronic address: zengchunyu@tmmu.edu.cn.'
+  published_at: 2024 03 19
+  source_metadata:
+    pmid: '38574433'
+    doi: 10.1016/j.redox.2024.103129
+    journal: Redox biology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Mice
+    - Cardiotoxicity
+    - Doxorubicin
+    - Membrane Proteins
+    - Glucagon-Like Peptides
+    - Mitochondria
+    - Myocytes, Cardiac
+    - Mitochondrial Proteins
+    - Male
+    - Signal Transduction
+    - Mice, Inbred C57BL
+    - Humans
+    - Semaglutide
+    pmc_id: PMC11000183
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11000183/
+content_excerpt: 'Doxorubicin is a powerful chemotherapeutic agent for cancer, whose
+  use is limited due to its potential cardiotoxicity. Semaglutide (SEMA), a novel
+  analog of glucagon-like peptide-1 (GLP-1), has received widespread attention for
+  the treatment of diabetes. However, increasing evidence has highlighted its potential
+  therapeutic benefits on cardiac function. Therefore, the objective of this study
+  was to examine the efficacy of semaglutide in ameliorating doxorubicin-induced cardiotoxicity.
+
+
+  Doxorubic'

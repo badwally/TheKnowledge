@@ -1,0 +1,39 @@
+source_id: pubmed-40722294
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 RAs as new frontier in treating AUD — reviews reward mechanisms but
+  likely overlaps substantially with other included reviews.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Glucagon-like Peptide-1 Receptor Agonists: A New Frontier in Treating Alcohol
+    Use Disorder.'
+  source_type: pubmed
+  authors:
+  - name: Tyler S Oesterle
+    affiliation: Department of Psychiatry and Psychology, Mayo Clinic, Rochester,
+      MN 55905, USA.
+  - name: Ming-Fen Ho
+    affiliation: Department of Psychiatry and Psychology, Mayo Clinic, Rochester,
+      MN 55905, USA.
+  published_at: 2025 06 29
+  source_metadata:
+    pmid: '40722294'
+    doi: 10.3390/brainsci15070702
+    journal: Brain sciences
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms: []
+    pmc_id: PMC12293269
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12293269/
+content_excerpt: Glucagon-like peptide-1 receptor agonists (GLP-1RAs), which were
+  originally developed for managing type 2 diabetes by enhancing insulin secretion
+  and reducing appetite, have emerged as promising candidates in alcohol use disorder
+  (AUD). These medications offer a dual mechanism of action that aligns with the multifaceted
+  nature of addiction by targeting both peripheral metabolic and central reward pathways.
+  This review focused on the current clinical trials and real-world evidence regarding
+  the e

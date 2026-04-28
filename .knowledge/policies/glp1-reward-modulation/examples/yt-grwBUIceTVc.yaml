@@ -1,0 +1,14 @@
+source_id: yt-grwBUIceTVc
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: 15-second CBS clip; too brief for any depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'What are the long-term effects of using GLP-1 drugs such as Ozempic for
+    weight loss? #shorts'
+  published_at: '2024-01-22T20:52:58Z'
+  channel: CBS Sunday Morning
+content_excerpt: 'ozempic #health #weightloss.'

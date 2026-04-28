@@ -1,0 +1,52 @@
+source_id: arxiv-2508.02866
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Introduces PROV-AGENT, a provenance model extending W3C PROV that leverages
+  Model Context Protocol (MCP) and data observability to track agent interactions
+  across federated, heterogeneous agentic workflows. Directly addresses MCP in agentic
+  pipeline observability with peer-reviewed publication at IEEE e-Science 2025.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic
+    Workflows'
+  source_type: arxiv
+  authors:
+  - name: Renan Souza
+    affiliation: null
+  - name: Amal Gueroudji
+    affiliation: null
+  - name: Stephen DeWitt
+    affiliation: null
+  - name: Daniel Rosendo
+    affiliation: null
+  - name: Tirthankar Ghosal
+    affiliation: null
+  - name: Robert Ross
+    affiliation: null
+  - name: Prasanna Balaprakash
+    affiliation: null
+  - name: Rafael Ferreira da Silva
+    affiliation: null
+  published_at: '2025-08-04T19:54:40Z'
+  source_metadata:
+    arxiv_id: '2508.02866'
+    categories:
+    - cs.DC
+    - cs.DB
+    pdf_url: http://arxiv.org/pdf/2508.02866v3.pdf
+    primary_category: cs.DC
+    comment: 'Paper accepted for publication in the Proceedings of the 2025 IEEE 21st
+      International Conference on e-Science. Cite it as: R. Souza, A. Gueroudji, S.
+      DeWitt, D. Rosendo, T. Ghosal, R. Ross, P. Balaprakash, R. F. da Silva, "PROV-AGENT:
+      Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows,"
+      IEEE International Conference on e-Science, Chicago, IL, USA, 2025'
+    journal_ref: null
+content_excerpt: Large Language Models (LLMs) and other foundation models are increasingly
+  used as the core of AI agents. In agentic workflows, these agents plan tasks, interact
+  with humans and peers, and influence scientific outcomes across federated and heterogeneous
+  environments. However, agents can hallucinate or reason incorrectly, propagating
+  errors when one agent's output becomes another's input. Thus, assuring that agents'
+  actions are transparent, traceable, reproducible, and reliable is critical to asse

@@ -1,0 +1,60 @@
+source_id: pubmed-24204788
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Shows exendin-4 attenuates nicotine-induced locomotor stimulation and accumbal
+  dopamine release, demonstrating GLP-1 modulation of dopamine reward signaling.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide 1 analogue Exendin-4 attenuates the nicotine-induced
+    locomotor stimulation, accumbal dopamine release, conditioned place preference
+    as well as the expression of locomotor sensitization in mice.
+  source_type: pubmed
+  authors:
+  - name: Emil Egecioglu
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: J&#xf6;rgen A Engel
+    affiliation: null
+  - name: Elisabet Jerlhag
+    affiliation: null
+  published_at: 2013 10 18
+  source_metadata:
+    pmid: '24204788'
+    doi: 10.1371/journal.pone.0077284
+    journal: PloS one
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Conditioning, Psychological
+    - Dopamine
+    - Eating
+    - Exenatide
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Incretins
+    - Limbic System
+    - Male
+    - Mice
+    - Motor Activity
+    - Nicotine
+    - Nucleus Accumbens
+    - Peptides
+    - Receptors, Glucagon
+    - Reward
+    - Tobacco Use Disorder
+    - Venoms
+    pmc_id: PMC3799694
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799694/
+content_excerpt: The gastrointestinal peptide glucagon-like peptide 1 (GLP-1) is known
+  to regulate consummatory behavior and is released in response to nutrient ingestion.
+  Analogues of this peptide recently emerged as novel pharmacotherapies for treatment
+  of type II diabetes since they reduce gastric emptying, glucagon secretion as well
+  as enhance glucose-dependent insulin secretion. The findings that GLP-1 targets
+  reward related areas including mesolimbic dopamine areas indicate that the physiological
+  role of G

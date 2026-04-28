@@ -1,0 +1,54 @@
+source_id: pubmed-34248838
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Efficacy of semaglutide subcutaneous and oral formulations for T2D — clinical
+  efficacy review.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Efficacy of Semaglutide in a Subcutaneous and an Oral Formulation.
+  source_type: pubmed
+  authors:
+  - name: Juris J Meier
+    affiliation: Diabetes Center Bochum-Hattingen, St. Josef-Hospital, Ruhr-University
+      Bochum, Bochum, Germany.
+  published_at: 2021 06 25
+  source_metadata:
+    pmid: '34248838'
+    doi: 10.3389/fendo.2021.645617
+    journal: Frontiers in endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Administration, Oral
+    - Body Weight
+    - Clinical Trials, Phase III as Topic
+    - Diabetes Mellitus, Type 2
+    - Diet
+    - Exercise Therapy
+    - Glucagon-Like Peptides
+    - Glycated Hemoglobin
+    - Humans
+    - Hypoglycemic Agents
+    - Injections, Subcutaneous
+    - Insulin
+    - Quality of Life
+    - Research Design
+    - Treatment Outcome
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Semaglutide
+    - Glucagon-Like Peptide-1 Receptor
+    pmc_id: PMC8269445
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8269445/
+content_excerpt: Despite the benefits of early and effective glycemic control in the
+  management of type 2 diabetes (T2D), achieving glycated hemoglobin (HbA) targets
+  is challenging in some patients. Glucagon-like peptide-1 receptor agonists (GLP-1RAs)
+  provide effective reductions in HbAand body weight. Semaglutide is the only GLP-1RA
+  that is available in both an injectable and oral formulation. The efficacy of once-weekly
+  subcutaneous semaglutide and once-daily oral semaglutide has been investigated in
+  the globa

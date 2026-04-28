@@ -1,0 +1,15 @@
+source_id: yt-qJrO3tc4edU
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Cites clinical review in Obesity Pillars on GLP-1 and sexual desire; research-based.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GLP-1 Medications and Sexual Desire: What the Research Actually Shows -
+    Fifty 410 Health |'
+  published_at: '2026-01-09T23:45:03Z'
+  channel: 'Fifty 410 Health '
+content_excerpt: A new clinical review in Obesity Pillars examines how GLP-1 obesity
+  medications may influence sexual desire using a ...

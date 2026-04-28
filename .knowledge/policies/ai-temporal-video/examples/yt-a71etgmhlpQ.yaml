@@ -1,0 +1,14 @@
+source_id: yt-a71etgmhlpQ
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio-Temporal Human-Object Interactions for Action Recognition
+  published_at: '2014-01-22T20:03:19Z'
+  channel: Victor Escorcia
+content_excerpt: We introduce a new method for representing the dynamics of human-object
+  interactions in videos. Previous algorithms tend to ...

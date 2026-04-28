@@ -1,0 +1,16 @@
+source_id: yt-EpKghZYqVW4
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Android Developers channel walkthrough of on-device GenAI with
+  Gemini Nano; directly covers Google's on-device inference stack with developer-facing
+  technical specifics relevant to the GPM role.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: A walkthrough for Android’s on-device GenAI solutions | Spotlight Week
+  published_at: '2024-10-01T21:28:48Z'
+  channel: Android Developers
+content_excerpt: Want to build AI-powered features into your Android apps? This video
+  explores on-device Generative AI with Gemini Nano, now ...

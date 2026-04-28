@@ -1,0 +1,15 @@
+source_id: yt-9XphWB9w7p8
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MS-TCN: Multi-Stage Temporal Convolutional Network for Action Segmentation
+    (CVPR 2019)'
+  published_at: '2019-06-14T08:07:30Z'
+  channel: Yazan Abu Farha
+content_excerpt: 'Qualitative results for the paper: MS-TCN: Multi-Stage Temporal
+  Convolutional Network for Action Segmentation Yazan Abu Farha ...'

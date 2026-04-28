@@ -1,0 +1,16 @@
+source_id: yt-Tud9HLTk8hg
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology 9-minute explanation of A2A protocol with focus on agent
+  collaboration patterns — technically substantive coverage of the protocol that defines
+  inter-agent communication in agentic workflows.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'A2A Protocol (Agent2Agent) Explained: How AI Agents Collaborate'
+  published_at: '2025-10-06T11:01:02Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx Generative AI Engineer - Associate?
+  Register now and use code IBMTechYT20 for 20% off ...

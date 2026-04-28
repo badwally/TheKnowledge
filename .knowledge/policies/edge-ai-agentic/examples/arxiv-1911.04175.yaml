@@ -1,0 +1,37 @@
+source_id: arxiv-1911.04175
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Proposes POSG formulation for multi-agent connected autonomous driving
+  with deep RL; addresses multi-agent coordination at the edge (vehicles as edge nodes)
+  with environment taxonomy and NeurIPS venue credibility.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Multi-Agent Connected Autonomous Driving using Deep Reinforcement Learning
+  source_type: arxiv
+  authors:
+  - name: Praveen Palanisamy
+    affiliation: null
+  published_at: '2019-11-11T10:55:25Z'
+  source_metadata:
+    arxiv_id: '1911.04175'
+    categories:
+    - cs.LG
+    - cs.AI
+    - cs.MA
+    - cs.RO
+    - stat.ML
+    pdf_url: http://arxiv.org/pdf/1911.04175v1.pdf
+    primary_category: cs.LG
+    comment: Accepted, Machine Learning for Autonomous Driving Workshop at the 33rd
+      Conference on Neural Information Processing Systems(NeurIPS 2019)
+    journal_ref: null
+content_excerpt: The capability to learn and adapt to changes in the driving environment
+  is crucial for developing autonomous driving systems that are scalable beyond geo-fenced
+  operational design domains. Deep Reinforcement Learning (RL) provides a promising
+  and scalable framework for developing adaptive learning based solutions. Deep RL
+  methods usually model the problem as a (Partially Observable) Markov Decision Process
+  in which an agent acts in a stationary environment to learn an optimal behavior
+  policy. Ho

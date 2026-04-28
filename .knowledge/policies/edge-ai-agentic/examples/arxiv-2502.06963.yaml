@@ -1,0 +1,41 @@
+source_id: arxiv-2502.06963
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Comprehensive review of DRL-based computational offloading for vehicular
+  edge computing, covering single-agent and multi-agent paradigms, centralized/distributed/hierarchical
+  architectures, with latency and energy trade-offs.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Intelligent Offloading in Vehicular Edge Computing: A Comprehensive Review
+    of Deep Reinforcement Learning Approaches and Architectures'
+  source_type: arxiv
+  authors:
+  - name: Ashab Uddin
+    affiliation: null
+  - name: Ahmed Hamdi Sakr
+    affiliation: null
+  - name: Ning Zhang
+    affiliation: null
+  published_at: '2025-02-10T19:02:20Z'
+  source_metadata:
+    arxiv_id: '2502.06963'
+    categories:
+    - cs.LG
+    - cs.AI
+    - cs.DC
+    - cs.MA
+    pdf_url: http://arxiv.org/pdf/2502.06963v2.pdf
+    primary_category: cs.LG
+    comment: 33 Pages, 6 Figures, 7 Tables. Machine Learning, Reinforcement Learning,
+      Multi Agent Reinforcement Learning, Computational Offloading and Edge Computing
+    journal_ref: null
+content_excerpt: The increasing complexity of Intelligent Transportation Systems (ITS)
+  has led to significant interest in computational offloading to external infrastructures
+  such as edge servers, vehicular nodes, and UAVs. These dynamic and heterogeneous
+  environments pose challenges for traditional offloading strategies, prompting the
+  exploration of Reinforcement Learning (RL) and Deep Reinforcement Learning (DRL)
+  as adaptive decision-making frameworks. This survey presents a comprehensive review
+  of recent adva

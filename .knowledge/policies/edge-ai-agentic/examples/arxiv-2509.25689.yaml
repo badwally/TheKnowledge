@@ -1,0 +1,49 @@
+source_id: arxiv-2509.25689
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Collaborative compression framework combining expert pruning, mixed-precision
+  quantization, and activation optimization to reduce DeepSeek-V3 from 1.3TB to 103GB
+  for edge platforms; first reported MoE edge deployment at this scale.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Collaborative Compression for Large-Scale MoE Deployment on Edge
+  source_type: arxiv
+  authors:
+  - name: Yixiao Chen
+    affiliation: null
+  - name: Yanyue Xie
+    affiliation: null
+  - name: Ruining Yang
+    affiliation: null
+  - name: Wei Jiang
+    affiliation: null
+  - name: Wei Wang
+    affiliation: null
+  - name: Yong He
+    affiliation: null
+  - name: Yue Chen
+    affiliation: null
+  - name: Pu Zhao
+    affiliation: null
+  - name: Yanzhi Wang
+    affiliation: null
+  published_at: '2025-09-30T02:46:03Z'
+  source_metadata:
+    arxiv_id: '2509.25689'
+    categories:
+    - cs.AI
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2509.25689v1.pdf
+    primary_category: cs.AI
+    comment: null
+    journal_ref: null
+content_excerpt: The Mixture of Experts (MoE) architecture is an important method
+  for scaling Large Language Models (LLMs). It increases model capacity while keeping
+  computation cost low. However, the ultra-large MoE models still have hundreds of
+  billions of parameters, requiring massive memory/storage and leading to difficulties
+  for deployment on resource-constrained edge platforms. Pruning or quantization alone
+  can hardly address the issue, because of the super-aggressive compression ratio
+  with significantly d

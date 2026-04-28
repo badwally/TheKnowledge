@@ -1,0 +1,74 @@
+source_id: pubmed-40184508
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Meta-analysis tirzepatide vs semaglutide weight loss in T2D — efficacy
+  comparison.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Tirzepatide Versus Semaglutide on Weight Loss in Type 2 Diabetes Patients:
+    A Systematic Review and Meta-Analysis of Direct Comparative Studies.'
+  source_type: pubmed
+  authors:
+  - name: Jimmy Wen
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Burhaan Syed
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Denise Nadora
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Christiane How-Volkman
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Ethan Bernstein
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Alina Truong
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Muzammil Akhtar
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Adam Razick
+    affiliation: University of California, Los Angeles, Los Angeles, California, USA.
+  - name: Jose Puglisi
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  - name: Eldo Frezza
+    affiliation: California Northstate University College of Medicine, Elk Grove,
+      California, USA.
+  published_at: 2025 May
+  source_metadata:
+    pmid: '40184508'
+    doi: 10.1002/edm2.70045
+    journal: Endocrinology, diabetes & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    - Meta-Analysis
+    - Comparative Study
+    mesh_terms:
+    - Humans
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Weight Loss
+    - Hypoglycemic Agents
+    - Tirzepatide
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: PMC11970626
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11970626/
+content_excerpt: 'Glucagon-like peptide-1 receptor agonists (GLP-1RAs) have emerged
+  as an efficacious treatment for type 2 diabetes mellitus (T2DM) and have demonstrated
+  substantial weight loss effects. This systematic review compares two prevalent GLP-1RAs,
+  tirzepatide and semaglutide, with their weight loss effects and rates of adverse
+  events (AEs).
+
+
+  Following the Preferred Reporting Items for Systematic Reviews and Meta-Analyses
+  (PRISMA), a systematic search was performed in PubMed, Embase and Cochrane Library'

@@ -1,0 +1,17 @@
+source_id: yt-EVg6g7fy4qE
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 15-minute complete guide to building multi-agent systems with Google's
+  A2A protocol in TypeScript — practical implementation coverage with real code, moderate
+  technical depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Build Multi-Agent AI Systems with Google&#39;s A2A Protocol - Complete Guide
+    with TypeScript
+  published_at: '2025-08-29T14:33:27Z'
+  channel: Nader Dabit
+content_excerpt: Google's Agent2Agent (A2A) protocol enables AI agents to communicate
+  across different platforms and vendors. This tutorial ...

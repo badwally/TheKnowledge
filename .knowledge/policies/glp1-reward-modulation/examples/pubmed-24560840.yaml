@@ -1,0 +1,68 @@
+source_id: pubmed-24560840
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Examines dopamine signaling in amygdala regulated by GLP-1, expanding understanding
+  of GLP-1 reward circuitry beyond VTA/NAc.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Dopamine signaling in the amygdala, increased by food ingestion and GLP-1,
+    regulates feeding behavior.
+  source_type: pubmed
+  authors:
+  - name: Rozita H Anderberg
+    affiliation: Department of Physiology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Sweden.
+  - name: Christine Anefors
+    affiliation: Department of Physiology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Sweden.
+  - name: Filip Bergquist
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Sweden.
+  - name: Hans Nissbrandt
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Sweden.
+  - name: Karolina P Skibicka
+    affiliation: 'Department of Physiology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy, University of Gothenburg, Sweden. Electronic address:
+      Karolina.Skibicka@neuro.gu.se.'
+  published_at: 2014 02 21
+  source_metadata:
+    pmid: '24560840'
+    doi: 10.1016/j.physbeh.2014.02.026
+    journal: Physiology & behavior
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - 3,4-Dihydroxyphenylacetic Acid
+    - Amygdala
+    - Analysis of Variance
+    - Animals
+    - Chromatography, High Pressure Liquid
+    - Conditioning, Operant
+    - Dopamine
+    - Dopamine Agents
+    - Eating
+    - Exenatide
+    - Feeding Behavior
+    - Glucagon-Like Peptide 1
+    - Male
+    - Motor Activity
+    - Peptides
+    - Rats
+    - Signal Transduction
+    - Time Factors
+    - Venoms
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Mesolimbic dopamine plays a critical role in food-related reward
+  processing and learning. The literature focuses primarily on the nucleus accumbens
+  as the key dopaminergic target in which enhanced dopamine signaling is associated
+  with reward. Here, we demonstrate a novel neurobiological mechanism by which dopamine
+  transmission in the amygdala regulates food intake and reward. We show that food
+  intake was associated with increased dopamine turnover in the amygdala. Next, we
+  assess the impact of d

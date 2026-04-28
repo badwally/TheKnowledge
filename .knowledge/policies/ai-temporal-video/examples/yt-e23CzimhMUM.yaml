@@ -1,0 +1,15 @@
+source_id: yt-e23CzimhMUM
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Consistent Cell Tracking in Multi-frames with Spatio-Temporal Context by
+    Object-Level Warping Loss
+  published_at: '2022-11-01T13:59:10Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Kazuya Nishimura (Kyushu University); Junya Hayashida (Kyushu
+  University)*; Ryoma Bise (Kyushu University) ...'

@@ -1,0 +1,16 @@
+source_id: yt-cWFOKWIDFJ4
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 14-minute step-by-step TensorRT tutorial covers inference optimization
+  with concrete implementation — relevant to edge model serving and deployment tooling,
+  though it is tutorial rather than strategic analysis.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Boost Deep Learning Inference Performance with TensorRT | Step-by-Step
+  published_at: '2024-02-22T03:16:23Z'
+  channel: Code With Aarohi
+content_excerpt: 'Learn how to increase inference performance for deep learning models
+  using NVIDIA TensorRT! In this tutorial, we cover: What ...'

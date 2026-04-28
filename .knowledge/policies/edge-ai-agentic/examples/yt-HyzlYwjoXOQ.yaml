@@ -1,0 +1,16 @@
+source_id: yt-HyzlYwjoXOQ
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Fireship 8-minute hands-on test of MCP from a technically credible channel
+  with large audience — demonstrates MCP integration in practice with code, qualifying
+  under agentic protocol coverage.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Claude&#39;s Model Context Protocol is here... Let&#39;s test it
+  published_at: '2025-03-31T15:00:31Z'
+  channel: Fireship
+content_excerpt: Deploy your app without complexity and $50 in free credits on Sevalla
+  https://sevalla.com/fireship Learn the fundamentals of ...

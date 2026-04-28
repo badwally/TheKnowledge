@@ -1,0 +1,18 @@
+source_id: yt-2P9DOtg4gP4
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology video covering federated learning combined with encrypted
+  AI agents — directly connects privacy-preserving distributed learning (an explicit
+  domain broadening criterion) with agentic AI, offering a meaningful bridge between
+  the two themes.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Federated Learning &amp; Encrypted AI Agents: Secure Data &amp; AI Made
+    Simple'
+  published_at: '2026-01-22T12:00:09Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified Architect - Cloud Pak for Data V4.7?
+  Register now and use code IBMTechYT20 for 20% off of your ...

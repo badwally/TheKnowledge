@@ -1,0 +1,14 @@
+source_id: yt-p-anpn0KLOg
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'WACV18: A Temporal Sequence Learning for Action Recognition and Prediction'
+  published_at: '2018-03-28T14:26:33Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: Sangwoo Cho, Hassan Foroosh In this work, we present a method to
+  represent a video with a sequence of words, and learn the ...

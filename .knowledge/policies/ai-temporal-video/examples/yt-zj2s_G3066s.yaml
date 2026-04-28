@@ -1,0 +1,14 @@
+source_id: yt-zj2s_G3066s
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '[CVPR 2023] Text-Visual Prompting for Efficient 2D Temporal Video Grounding'
+  published_at: '2023-05-27T23:48:50Z'
+  channel: Yimeng Zhang
+content_excerpt: In this paper, we study the problem of temporal video grounding (TVG),
+  which aims to predict the starting/ending time points of ...

@@ -1,0 +1,16 @@
+source_id: yt-AZ6257Ya_70
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: LangChain's walkthrough of rebuilding Deep Agents on LangChain 1.0 covers
+  agentic orchestration architecture decisions — useful for understanding framework
+  evolution, though no edge deployment angle.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Rewriting Deep Agents on top of LangChain 1.0
+  published_at: '2025-09-24T16:33:41Z'
+  channel: LangChain
+content_excerpt: In this video, we will walk through how we rebuilt deepagents on
+  top of LangChain 1.0. It will cover the basics of deep agents ...

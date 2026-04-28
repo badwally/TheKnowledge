@@ -1,0 +1,16 @@
+source_id: yt-FYL9e_aqZY0
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: NetworkChuck's 24-minute hands-on with NVIDIA DGX Spark covers near-edge
+  AI supercomputing — explores local inference at scale with practical deployment
+  framing, though entertainment-oriented presentation reduces strategic signal.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: This AI Supercomputer can fit on your desk...
+  published_at: '2025-10-14T15:02:20Z'
+  channel: NetworkChuck
+content_excerpt: 'Access your devices securely from anywhere with TwinGate: https://ntck.co/dgxspark
+  NVIDIA just sent me their smallest AI ...'

@@ -1,0 +1,102 @@
+version: 0.1.0
+domain:
+  slug: edge-ai-agentic
+  topic: Edge inference for agentic AI workflows
+  field: Edge AI, distributed systems, and AI infrastructure
+  description: Technical foundations and state of the art in running AI inference
+    at the edge (on-device, on-premise, near-edge) to support autonomous agentic workflows.
+    Covers model optimization for constrained environments (quantization, distillation,
+    pruning), agentic protocols for inter-agent communication (MCP, A2A/Agent2Agent),
+    orchestration frameworks adapted for edge deployment (LangChain, LlamaIndex, Vertex
+    AI Agent Builder), secure on-device data processing, and the strategic/business
+    implications of edge AI ecosystem decisions. Particular interest in Google's edge
+    AI stack (Gemini Nano, MediaPipe, Edge TPU, Android AI, Vertex AI) and competitive
+    positioning against Apple, Qualcomm, NVIDIA, Microsoft, and Meta.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Discusses AI inference running at or near the edge (on-device, on-premise, edge
+  cloud) — not purely centralized cloud inference
+- Contains technical substance — architectures, benchmarks, protocols, deployment
+  patterns, or strategic analysis with specifics
+- Covers agentic AI protocols (MCP, A2A, Agent2Agent) even if not explicitly edge-focused
+  — protocol design has direct edge implications
+- Discusses orchestration frameworks (LangChain, LlamaIndex, CrewAI, AutoGen) with
+  relevance to distributed or edge-adjacent deployment
+- Analyzes Google's AI infrastructure strategy, partnerships, or product roadmap with
+  edge relevance
+- 'Addresses on-device model optimization: quantization, distillation, pruning, speculative
+  decoding on constrained hardware'
+- 'Covers edge AI security: secure enclaves, federated learning, differential privacy,
+  on-device data sovereignty'
+- 'Examines DevOps/MLOps for edge AI: model serving, fleet management, OTA updates,
+  observability'
+- Discusses emerging standards, industry consortia, or forward-looking architectural
+  patterns for edge+agentic intersection
+- 'Competitive landscape analysis: Apple (Core ML, Apple Intelligence), Qualcomm (AI
+  Engine), NVIDIA (Jetson, TensorRT), Microsoft (ONNX, Windows AI), Meta (Llama on-device)'
+exclusion_criteria:
+- Purely cloud-hosted LLM inference with no edge, on-device, or hybrid component
+- Marketing or press releases without technical or strategic substance
+- Consumer product reviews focused on user experience without architectural or technical
+  discussion
+- Content older than 12 months unless seminal or foundational to the field
+- Tutorials on basic ML concepts with no edge or agentic relevance
+- Duplicate or re-uploaded content from another source already in the corpus
+quality_signals:
+  channel_authority:
+    positive_signals:
+    - Google AI, DeepMind, Google Cloud, or Android team official channels
+    - 'Conference channels: Google I/O, Cloud Next, NeurIPS, ICML, MLSys, MobiCom,
+      ISCA'
+    - 'Major industry lab channels: NVIDIA, Qualcomm AI Research, Apple ML, Microsoft
+      Research'
+    - Channel regularly publishes technical AI infrastructure or systems content
+    negative_signals:
+    - Channel primarily produces clickbait or sensationalist AI content
+    - No other technical content on the channel — isolated upload
+    - Channel monetizes through AI hype without substantive analysis
+  speaker_expertise:
+    positive_signals:
+    - Speaker is an engineer, researcher, or PM at a major AI infrastructure company
+    - References specific papers, benchmarks, or system architectures by name
+    - Presentation is from a technical conference, workshop, or industry summit
+    - Speaker has published in relevant venues (MLSys, MobiCom, OSDI, SOSP, NeurIPS)
+    negative_signals:
+    - Speaker provides no credentials and makes only general claims
+    - Content is AI-generated narration with no identified author or source
+  content_depth:
+    positive_signals:
+    - Discusses specific model architectures, hardware targets, or inference runtimes
+    - Presents benchmarks, latency measurements, or resource utilization data
+    - 'Covers system design tradeoffs: latency vs accuracy, privacy vs capability,
+      cost vs performance'
+    - Addresses failure modes, limitations, or open research problems
+    - Duration >= 15 minutes for talks; papers with experimental results
+    - Discusses multi-agent coordination patterns, protocol design, or orchestration
+      architecture
+    negative_signals:
+    - Surface-level overview with no technical specifics
+    - Duration < 5 minutes (unlikely to cover technical depth adequately)
+    - Presents opinions without evidence or reference to concrete implementations
+  publication_venue:
+    positive_signals:
+    - Published at MLSys, MobiCom, OSDI, SOSP, NeurIPS, ICML, ICLR, or similar top
+      venue
+    - Google Research blog, Google AI blog, or Vertex AI documentation
+    - Peer-reviewed journal in distributed systems, mobile computing, or AI infrastructure
+    negative_signals:
+    - Predatory journal or pay-to-publish venue
+    - No venue information and no citation history
+  strategic_relevance:
+    positive_signals:
+    - 'Analyzes ecosystem dynamics: who controls the stack, where value accrues'
+    - Discusses partnership or acquisition signals in edge AI
+    - Maps competitive positioning across hardware, runtime, and framework layers
+    - Identifies inflection points or emerging standards that reshape the landscape
+    negative_signals:
+    - Pure financial analysis without technical grounding
+    - Speculation without evidence or industry context

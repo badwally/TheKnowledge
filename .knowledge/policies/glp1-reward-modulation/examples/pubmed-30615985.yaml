@@ -1,0 +1,73 @@
+source_id: pubmed-30615985
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Comparative efficacy/safety/cardiovascular outcomes of semaglutide in T2D
+  — no reward discussion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Comparative efficacy, safety, and cardiovascular outcomes with once-weekly
+    subcutaneous semaglutide in the treatment of type 2 diabetes: Insights from the
+    SUSTAIN 1-7 trials.'
+  source_type: pubmed
+  authors:
+  - name: V R Aroda
+    affiliation: 'Brigham and Women''s Hospital, Harvard Medical School, Boston, MA,
+      USA. Electronic address: varoda@bwh.harvard.edu.'
+  - name: A Ahmann
+    affiliation: 'Harold Schnitzer Diabetes Health Center at Oregon Health and Science
+      University, Portland, OR, USA. Electronic address: ahmanna@ohsu.edu.'
+  - name: B Cariou
+    affiliation: 'L''institut du thorax, CHU de Nantes, CIC 1413, Inserm, Nantes,
+      France. Electronic address: bertrand.cariou@univ-nantes.fr.'
+  - name: F Chow
+    affiliation: 'Prince of Wales Hospital, The Chinese University of Hong Kong, Shatin,
+      NT, Hong Kong. Electronic address: b410773@mailserv.cuhk.edu.hk.'
+  - name: M J Davies
+    affiliation: 'Diabetes Research Centre, University of Leicester, Leicester, UK.
+      Electronic address: melanie.davies@uhl-tr.nhs.uk.'
+  - name: E J&#xf3;dar
+    affiliation: 'Hospital Universitario Quir&#xf3;n Salud Madrid, Facultad de Ciencias
+      de la Salud, Universidad Europea de Madrid, Madrid, Spain. Electronic address:
+      esteban.jodar@gmail.com.'
+  - name: R Mehta
+    affiliation: 'Unidad de Investigac&#xf3;n en Enfermedades Metabolicas, Departamento
+      de Endocrinologia y Metablismo, Instituto Nacional de Ciencias M&#xe9;dicas
+      y Nutrici&#xf3;n "Salvador Zubir&#xe1;n" Mexico City, Mexico. Electronic address:
+      roopamehta@yahoo.com.'
+  - name: V Woo
+    affiliation: 'Section of Endocrinology and Metabolism, Health Sciences Centre,
+      University of Manitoba, Winnipeg, MB, Canada. Electronic address: vwoo3@shaw.ca.'
+  - name: I Lingvay
+    affiliation: 'UT Southwestern Medical Center, Dallas, TX, USA. Electronic address:
+      Ildiko.Lingvay@UTSouthwestern.edu.'
+  published_at: 2019 01 04
+  source_metadata:
+    pmid: '30615985'
+    doi: 10.1016/j.diabet.2018.12.001
+    journal: Diabetes & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Incretins
+    - Injections, Subcutaneous
+    - Treatment Outcome
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: In individuals with type 2 diabetes, glycaemic control and cardiovascular
+  risk factor management reduces the likelihood of late-stage diabetic complications.
+  Guidelines recommend treatment goals targeting HbA, body weight, blood pressure,
+  and low-density lipoprotein cholesterol. Development of new treatments for type
+  2 diabetes requires an understanding of their mechanism and efficacy, as well as
+  their relative effects compared to other treatment choices, plus demonstration of
+  cardiovascular saf

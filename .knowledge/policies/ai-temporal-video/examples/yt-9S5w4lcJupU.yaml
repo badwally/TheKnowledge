@@ -1,0 +1,14 @@
+source_id: yt-9S5w4lcJupU
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 3 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio-Temporal Action Detection Under Large Motion
+  published_at: '2024-01-30T04:11:06Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Gurkirt Singh (ETH Zurich)*; Vasileios Choutas (ETH Zurich);
+  Suman Saha (ETH Zurich); Fisher Yu (ETH Zurich); Luc Van ...'

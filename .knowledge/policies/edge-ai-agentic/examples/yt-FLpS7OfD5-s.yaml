@@ -1,0 +1,16 @@
+source_id: yt-FLpS7OfD5-s
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Confluent Developer 11-minute lightboard explanation of MCP by Tim Berglund
+  (credible technical communicator) — covers protocol significance for agent integration
+  with external systems at moderate depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Why MCP really is a big deal | Model Context Protocol with Tim Berglund
+  published_at: '2025-05-27T12:01:02Z'
+  channel: Confluent Developer
+content_excerpt: 'Blog: https://www.confluent.io/blog/ai-agents-using-anthropic-mcp
+  | Tim Berglund is back at the lightboard with *MCP* (Model ...'

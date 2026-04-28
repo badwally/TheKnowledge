@@ -1,0 +1,50 @@
+source_id: arxiv-2505.05428
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Academy is a federated agents middleware designed for deployment across
+  heterogeneous distributed infrastructure (HPC, experimental facilities, data repositories)
+  with asynchronous execution, high-throughput data flows, and dynamic resource availability;
+  highly relevant to edge+distributed agentic systems with microbenchmarks and acceptance
+  at IPDPS.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Empowering Scientific Workflows with Federated Agents
+  source_type: arxiv
+  authors:
+  - name: Alok Kamatar
+    affiliation: null
+  - name: J. Gregory Pauloski
+    affiliation: null
+  - name: Yadu Babuji
+    affiliation: null
+  - name: Ryan Chard
+    affiliation: null
+  - name: Mansi Sakarvadia
+    affiliation: null
+  - name: Daniel Babnigg
+    affiliation: null
+  - name: Kyle Chard
+    affiliation: null
+  - name: Ian Foster
+    affiliation: null
+  published_at: '2025-05-08T17:15:39Z'
+  source_metadata:
+    arxiv_id: '2505.05428'
+    categories:
+    - cs.MA
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2505.05428v3.pdf
+    primary_category: cs.MA
+    comment: To appear at the IEEE International Parallel & Distributed Processing
+      Symposium (IPDPS '26)
+    journal_ref: null
+content_excerpt: Agentic systems, in which diverse agents cooperate to tackle challenging
+  problems, are exploding in popularity in the AI community. However, existing agentic
+  frameworks take a relatively narrow view of agents, apply a centralized model, and
+  target conversational, cloud-native applications (e.g., LLM-based AI chatbots).
+  In contrast, scientific applications require myriad agents be deployed and managed
+  across diverse cyberinfrastructure. Here we introduce Academy, a modular and extensible
+  middlewa

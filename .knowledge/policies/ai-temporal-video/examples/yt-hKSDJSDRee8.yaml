@@ -1,0 +1,14 @@
+source_id: yt-hKSDJSDRee8
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Multimodal Pretraining for Dense Video Captioning
+  published_at: '2020-12-06T02:33:11Z'
+  channel: Gabriel Huang
+content_excerpt: 'Presentation of our AACL 2020 paper "Multimodal Pretraining for
+  Dense Video Captioning". Slides: ...'

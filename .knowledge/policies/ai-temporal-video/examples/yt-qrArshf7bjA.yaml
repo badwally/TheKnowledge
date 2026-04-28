@@ -1,0 +1,14 @@
+source_id: yt-qrArshf7bjA
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Temporal Action Detection Using a Statistical Language Model
+  published_at: '2016-09-17T20:37:42Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: This video is about Temporal Action Detection Using a Statistical
+  Language Model.

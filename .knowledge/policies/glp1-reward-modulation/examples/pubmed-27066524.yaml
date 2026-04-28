@@ -1,0 +1,37 @@
+source_id: pubmed-27066524
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Directly titled 'GLP-1 influences food and drug reward' — reviews neural
+  substrates shared between food and drug reinforcement via GLP-1.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1 influences food and drug reward.
+  source_type: pubmed
+  authors:
+  - name: Matthew R Hayes
+    affiliation: Translational Neuroscience Program, Department of Psychiatry, Perelman
+      School of Medicine.
+  - name: Heath D Schmidt
+    affiliation: Department of Biobehavioral Health Sciences, School of Nursing, University
+      of Pennsylvania.
+  published_at: 2016 Jun
+  source_metadata:
+    pmid: '27066524'
+    doi: 10.1016/j.cobeha.2016.02.005
+    journal: Current opinion in behavioral sciences
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC4822543
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4822543/
+content_excerpt: Natural rewards, including food, water, sleep and social interactions,
+  are required to sustain life. The neural substrates that regulate the reinforcing
+  effects of these behaviors are also the same neurobiological mechanisms mediating
+  mood, motivation and the rewarding effects of pharmacological stimuli. That the
+  neuropeptide glucagon-like peptide-1 (GLP-1) is under investigation for both the
+  homeostatic and hedonic controls of feeding is not surprising or novel. However,
+  if the neural substrate

@@ -1,0 +1,77 @@
+source_id: pubmed-35131037
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: STEP trial of semaglutide for weight management in East Asian population
+  — regional efficacy study.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Semaglutide once a week in adults with overweight or obesity, with or without
+    type 2 diabetes in an east Asian population (STEP 6): a randomised, double-blind,
+    double-dummy, placebo-controlled, phase 3a trial.'
+  source_type: pubmed
+  authors:
+  - name: Takashi Kadowaki
+    affiliation: 'Toranomon Hospital, Tokyo, Japan. Electronic address: t-kadowaki@toranomon.kkr.or.jp.'
+  - name: Joakim Isendahl
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Usman Khalid
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Sang Yeoup Lee
+    affiliation: Family Medicine Clinic and Biomedical Research Institute, Pusan National
+      University Yangsan Hospital, Yangsan, South Korea; Department of Medical Education,
+      Pusan National University School of Medicine, Yangsan, South Korea.
+  - name: Tomoyuki Nishida
+    affiliation: Novo Nordisk Pharma, Tokyo, Japan.
+  - name: Wataru Ogawa
+    affiliation: Department of Internal Medicine, Division of Diabetes and Endocrinology,
+      Kobe University Graduate School of Medicine, Kobe, Japan.
+  - name: Kazuyuki Tobe
+    affiliation: First Department of Internal Medicine, Graduate School of Medicine
+      and Pharmaceutical Science for Research, University of Toyama, Toyama, Japan.
+  - name: Toshimasa Yamauchi
+    affiliation: Department of Diabetes and Metabolic Diseases, Graduate School of
+      Medicine, University of Tokyo, Tokyo, Japan.
+  - name: Soo Lim
+    affiliation: 'Department of Internal Medicine, Seoul National University Bundang
+      Hospital, Seoul National University College of Medicine, Seongnam, South Korea.
+      Electronic address: limsoo@snu.ac.kr.'
+  - name: ''
+    affiliation: null
+  published_at: 2022 02 04
+  source_metadata:
+    pmid: '35131037'
+    doi: 10.1016/S2213-8587(22)00008-0
+    journal: The lancet. Diabetes & endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Clinical Trial, Phase III
+    - Journal Article
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    - Equivalence Trial
+    mesh_terms:
+    - Adolescent
+    - Adult
+    - Diabetes Mellitus, Type 2
+    - Double-Blind Method
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Obesity
+    - Overweight
+    - Treatment Outcome
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Semaglutide 2·4 mg once weekly has been investigated for weight
+  management in global populations. Differences exist between Asian and non-Asian
+  populations in terms of body composition and definitions of obesity. In the Semaglutide
+  Treatment Effect in People with obesity (STEP) 6 trial, we assessed the effect of
+  semaglutide versus placebo for weight management in adults from east Asia with obesity,
+  with or without type 2 diabetes.
+
+
+  This randomised, double-blind, double-dummy, placebo-controlled,'

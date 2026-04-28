@@ -1,0 +1,17 @@
+source_id: yt-Fbr_Solax1w
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Google Cloud Tech introduction to the Agent2Agent (A2A) protocol
+  — directly covers Google's inter-agent communication standard with documentation
+  and SDK links, essential for a GPM candidate understanding Google's agentic AI ecosystem
+  strategy.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Introduction to Agent2Agent (A2A) Protocol
+  published_at: '2026-02-06T21:06:35Z'
+  channel: Google Cloud Tech
+content_excerpt: A2A Documentation → https://goo.gle/a2a A2A Python SDK → https://goo.gle/a2a-python-sdk
+  A2A Sample Code ...

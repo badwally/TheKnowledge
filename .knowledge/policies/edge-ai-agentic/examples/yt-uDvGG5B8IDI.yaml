@@ -1,0 +1,17 @@
+source_id: yt-uDvGG5B8IDI
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Google Cloud's 'Transform retail with edge AI analytics' directly addresses
+  vision AI and low-latency edge deployment in a real vertical; from an authoritative
+  channel. Docked to 3 due to short duration (1:52) suggesting limited architectural
+  depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Transform retail with edge AI analytics
+  published_at: '2025-07-10T19:51:06Z'
+  channel: Google Cloud
+content_excerpt: Enabling retail use cases that require vision AI, low latency, and
+  connectivity can be costly and resource intensive for retailers.

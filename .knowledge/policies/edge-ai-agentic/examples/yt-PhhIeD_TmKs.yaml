@@ -1,0 +1,18 @@
+source_id: yt-PhhIeD_TmKs
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 88-minute FLARE 2026 webinar covering NVIDIA FLARE's simplified API stack
+  for federated learning at edge and multicloud — substantive technical content on
+  federated learning infrastructure relevant to the domain's edge AI security criterion,
+  though the agentic angle is weak.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'FLARE 2026 Q1 Webinar: End-to-End Federated AI: From APIs to Multicloud
+    &amp; Edge'
+  published_at: '2026-01-28T04:30:01Z'
+  channel: SF Big Analytics
+content_excerpt: 'alk 1: Federated Learning Made Easy: NVIDIA FLARE''s Simplified
+  API Stack NVIDIA FLARE makes federated learning more ...'

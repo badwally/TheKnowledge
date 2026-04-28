@@ -1,0 +1,17 @@
+source_id: yt-41PKDlGM3oU
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Qualcomm Developer 63-minute live build-along with staff engineers running
+  LLMs locally on Qualcomm hardware using ExecuTorch — provides deep technical specifics
+  on on-device inference runtimes, hardware targeting, and model deployment on Snapdragon,
+  directly relevant to edge AI competitive landscape.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Build Along: Run LLMs Locally on Qualcomm Hardware Using ExecuTorch'
+  published_at: '2025-10-31T03:15:10Z'
+  channel: Qualcomm Developer
+content_excerpt: Join us for our next Live Build-Along Staff Engineer Derrick Johnson
+  and Senior AI/ML Engineer Kartikey Rawat will take you ...

@@ -1,0 +1,71 @@
+source_id: pubmed-28323117
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Absorption, metabolism and excretion pharmacokinetics of semaglutide —
+  no neurological relevance.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Absorption, metabolism and excretion of the GLP-1 analogue semaglutide in
+    humans and nonclinical species.
+  source_type: pubmed
+  authors:
+  - name: Lene Jensen
+    affiliation: 'Novo Nordisk A/S, S&#xf8;borg, Denmark. Electronic address: lejx@novonordisk.com.'
+  - name: Hans Helleberg
+    affiliation: 'Novo Nordisk A/S, Novo Nordisk Park, DK-2760, M&#xe5;l&#xf8;v, Denmark.
+      Electronic address: hhll@novonordisk.com.'
+  - name: Ad Roffel
+    affiliation: 'PRA Health Sciences Early Development Services, Van Swietenlaan
+      6, 9728 NZ Groningen, The Netherlands. Electronic address: roffelad@prahs.com.'
+  - name: Jan Jaap van Lier
+    affiliation: 'PRA Health Sciences Early Development Services, Van Swietenlaan
+      6, 9728 NZ Groningen, The Netherlands. Electronic address: lierjanjaapvan@prahs.com.'
+  - name: Inga Bj&#xf8;rnsdottir
+    affiliation: 'Novo Nordisk A/S, Novo Nordisk Park, DK-2760, M&#xe5;l&#xf8;v, Denmark.
+      Electronic address: inbj@novonordisk.com.'
+  - name: Palle Jacob Pedersen
+    affiliation: 'Novo Nordisk A/S, Novo Nordisk Park, DK-2760, M&#xe5;l&#xf8;v, Denmark.
+      Electronic address: pjcp@novonordisk.com.'
+  - name: Everton Rowe
+    affiliation: 'Novo Nordisk Inc., Princeton, NJ, USA. Electronic address: evertondrowe@gmail.com.'
+  - name: Julie Derving Karsb&#xf8;l
+    affiliation: 'Novo Nordisk A/S, S&#xf8;borg, Denmark. Electronic address: jdka@novonordisk.com.'
+  - name: Mette Lund Pedersen
+    affiliation: 'Novo Nordisk A/S, Novo Nordisk Park, DK-2760, M&#xe5;l&#xf8;v, Denmark.
+      Electronic address: mlup@novonordisk.com.'
+  published_at: 2017 03 16
+  source_metadata:
+    pmid: '28323117'
+    doi: 10.1016/j.ejps.2017.03.020
+    journal: 'European journal of pharmaceutical sciences : official journal of the
+      European Federation for Pharmaceutical Sciences'
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Area Under Curve
+    - Chromatography, High Pressure Liquid
+    - Feces
+    - Glucagon-Like Peptides
+    - Half-Life
+    - Humans
+    - Macaca fascicularis
+    - Male
+    - Middle Aged
+    - Rats
+    - Rats, Wistar
+    - Tritium
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Semaglutide is a human glucagon-like peptide-1 analogue in clinical
+  development for the treatment of type 2 diabetes. The absorption, metabolism and
+  excretion of a single 0.5mg/450μCi [16.7MBq] subcutaneous dose of [H]-radiolabelled
+  semaglutide was investigated in healthy human subjects and compared with data from
+  nonclinical studies. Radioactivity in blood, plasma, urine and faeces was determined
+  in humans, rats and monkeys; radioactivity in expired air was determined in humans
+  and rats. Metabo

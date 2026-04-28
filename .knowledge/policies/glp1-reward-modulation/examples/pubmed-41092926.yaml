@@ -1,0 +1,57 @@
+source_id: pubmed-41092926
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Global Burden of Disease study — epidemiology, completely unrelated.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Burden of 375 diseases and injuries, risk-attributable burden of 88 risk
+    factors, and healthy life expectancy in 204 countries and territories, including
+    660 subnational locations, 1990-2023: a systematic analysis for the Global Burden
+    of Disease Study 2023.'
+  source_type: pubmed
+  authors:
+  - name: ''
+    affiliation: null
+  published_at: 2025 10 12
+  source_metadata:
+    pmid: '41092926'
+    doi: 10.1016/S0140-6736(25)01637-X
+    journal: Lancet (London, England)
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Global Burden of Disease
+    - Life Expectancy
+    - Risk Factors
+    - Male
+    - Female
+    - Disability-Adjusted Life Years
+    - Wounds and Injuries
+    - Middle Aged
+    - Adult
+    - Global Health
+    - Child
+    - Aged
+    - Adolescent
+    - Infant
+    - Child, Preschool
+    - Young Adult
+    - Infant, Newborn
+    - COVID-19
+    - Persons with Disabilities
+    - Quality-Adjusted Life Years
+    - Aged, 80 and over
+    pmc_id: PMC12535840
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12535840/
+content_excerpt: For more than three decades, the Global Burden of Diseases, Injuries,
+  and Risk Factors Study (GBD) has provided a framework to quantify health loss due
+  to diseases, injuries, and associated risk factors. This paper presents GBD 2023
+  findings on disease and injury burden and risk-attributable health loss, offering
+  a global audit of the state of world health to inform public health priorities.
+  This work captures the evolving landscape of health metrics across age groups, sexes,
+  and locations, whil

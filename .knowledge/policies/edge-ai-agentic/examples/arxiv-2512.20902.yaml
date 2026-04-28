@@ -1,0 +1,41 @@
+source_id: arxiv-2512.20902
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Embodied AI agent (UAV) orchestrating IoMT edge computing with task offloading
+  and DRL-based optimization; covers edge inference and autonomous agent behavior
+  but is narrowly domain-specific to medical IoT.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Embodied AI-Enhanced IoMT Edge Computing: UAV Trajectory Optimization and
+    Task Offloading with Mobility Prediction'
+  source_type: arxiv
+  authors:
+  - name: Siqi Mu
+    affiliation: null
+  - name: Shuo Wen
+    affiliation: null
+  - name: Yang Lu
+    affiliation: null
+  - name: Ruihong Jiang
+    affiliation: null
+  - name: Bo Ai
+    affiliation: null
+  published_at: '2025-12-24T03:06:37Z'
+  source_metadata:
+    arxiv_id: '2512.20902'
+    categories:
+    - cs.NI
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2512.20902v1.pdf
+    primary_category: cs.NI
+    comment: null
+    journal_ref: null
+content_excerpt: Due to their inherent flexibility and autonomous operation, unmanned
+  aerial vehicles (UAVs) have been widely used in Internet of Medical Things (IoMT)
+  to provide real-time biomedical edge computing service for wireless body area network
+  (WBAN) users. In this paper, considering the time-varying task criticality characteristics
+  of diverse WBAN users and the dual mobility between WBAN users and UAV, we investigate
+  the dynamic task offloading and UAV flight trajectory optimization problem to minimiz

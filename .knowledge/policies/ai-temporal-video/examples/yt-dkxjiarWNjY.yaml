@@ -1,0 +1,13 @@
+source_id: yt-dkxjiarWNjY
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 754 - Coarse Temporal Attention Network (CTA-Net) for Driver’s Activity Recognition
+  published_at: '2021-02-03T20:59:21Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: ''

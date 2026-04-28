@@ -1,0 +1,41 @@
+source_id: arxiv-2601.20655
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: OnePiece is a distributed inference system using RDMA and microservice
+  decomposition for multi-stage AIGC workflows, achieving 16x GPU resource reduction;
+  addresses distributed inference infrastructure with concrete hardware-level optimizations
+  relevant to edge serving.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'OnePiece: A Large-Scale Distributed Inference System with RDMA for Complex
+    AI-Generated Content (AIGC) Workflows'
+  source_type: arxiv
+  authors:
+  - name: June Chen
+    affiliation: null
+  - name: Neal Xu
+    affiliation: null
+  - name: Gragas Huang
+    affiliation: null
+  - name: Bok Zhou
+    affiliation: null
+  - name: Stephen Liu
+    affiliation: null
+  published_at: '2026-01-28T14:38:16Z'
+  source_metadata:
+    arxiv_id: '2601.20655'
+    categories:
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2601.20655v1.pdf
+    primary_category: cs.DC
+    comment: 12 pages
+    journal_ref: null
+content_excerpt: 'The rapid growth of AI-generated content (AIGC) has enabled high-quality
+  creative production across diverse domains, yet existing systems face critical inefficiencies
+  in throughput, resource utilization, and scalability under concurrent workloads.
+  This paper introduces OnePiece, a large-scale distributed inference system with
+  RDMA optimized for multi-stage AIGC workflows. By decomposing pipelines into fine-grained
+  microservices and leveraging one-sided RDMA communication, OnePiece significantly '

@@ -1,0 +1,57 @@
+source_id: arxiv-2505.05530
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Comprehensive five-year survey of low-bit quantization for DNNs across
+  eight method categories; directly foundational for understanding on-device model
+  compression techniques required for edge deployment.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Low-bit Model Quantization for Deep Neural Networks: A Survey'
+  source_type: arxiv
+  authors:
+  - name: Kai Liu
+    affiliation: null
+  - name: Qian Zheng
+    affiliation: null
+  - name: Kaiwen Tao
+    affiliation: null
+  - name: Zhiteng Li
+    affiliation: null
+  - name: Haotong Qin
+    affiliation: null
+  - name: Wenbo Li
+    affiliation: null
+  - name: Yong Guo
+    affiliation: null
+  - name: Xianglong Liu
+    affiliation: null
+  - name: Linghe Kong
+    affiliation: null
+  - name: Guihai Chen
+    affiliation: null
+  - name: Yulun Zhang
+    affiliation: null
+  - name: Xiaokang Yang
+    affiliation: null
+  published_at: '2025-05-08T13:26:19Z'
+  source_metadata:
+    arxiv_id: '2505.05530'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2505.05530v1.pdf
+    primary_category: cs.LG
+    comment: We have systematically collected and reviewed the state-of-the-art quantization
+      methods from the past five years, categorizing them into eight distinct groups.
+      A curated list of model quantization is provided at https://github.com/Kai-Liu001/Awesome-Model-Quantization
+    journal_ref: null
+content_excerpt: 'With unprecedented rapid development, deep neural networks (DNNs)
+  have deeply influenced almost all fields. However, their heavy computation costs
+  and model sizes are usually unacceptable in real-world deployment. Model quantization,
+  an effective weight-lighting technique, has become an indispensable procedure in
+  the whole deployment pipeline. The essence of quantization acceleration is the conversion
+  from continuous floating-point numbers to discrete integer ones, which significantly
+  speeds up '

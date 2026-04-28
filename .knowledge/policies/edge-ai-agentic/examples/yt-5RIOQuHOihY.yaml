@@ -1,0 +1,16 @@
+source_id: yt-5RIOQuHOihY
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology's 7-minute explainer on Ollama covers local LLM inference
+  (running models on-device without cloud dependency) — directly relevant to edge
+  inference patterns, though lacks agentic or production deployment depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What is Ollama? Running Local LLMs Made Simple
+  published_at: '2025-04-08T11:00:14Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx AI Assistant Engineer? Register
+  now and use code IBMTechYT20 for 20% off of your exam ...

@@ -1,0 +1,71 @@
+source_id: pubmed-29397376
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: SUSTAIN 7 head-to-head semaglutide vs dulaglutide for T2D — pure efficacy
+  comparison without neurological discussion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Semaglutide versus dulaglutide once weekly in patients with type 2 diabetes
+    (SUSTAIN 7): a randomised, open-label, phase 3b trial.'
+  source_type: pubmed
+  authors:
+  - name: Richard E Pratley
+    affiliation: 'Florida Hospital Translational Research Institute for Metabolism
+      and Diabetes, Orlando, FL, USA. Electronic address: richard.pratley@flhosp.org.'
+  - name: Vanita R Aroda
+    affiliation: MedStar Health Research Institute, Hyattsville, MD, USA.
+  - name: Ildiko Lingvay
+    affiliation: UT Southwestern Medical Center, Dallas, TX, USA.
+  - name: J&#xf6;rg L&#xfc;demann
+    affiliation: diabetes-falkensee, Diabetes Centre and Centre for Clinical Studies,
+      Falkensee, Germany.
+  - name: Camilla Andreassen
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Andrea Navarria
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Adie Viljoen
+    affiliation: Lister Hospital, Stevenage, UK.
+  - name: ''
+    affiliation: null
+  published_at: 2018 02 01
+  source_metadata:
+    pmid: '29397376'
+    doi: 10.1016/S2213-8587(18)30024-X
+    journal: The lancet. Diabetes & endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Clinical Trial, Phase III
+    - Comparative Study
+    - Journal Article
+    - Multicenter Study
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    - Equivalence Trial
+    mesh_terms:
+    - Blood Glucose
+    - Body Weight
+    - Diabetes Mellitus, Type 2
+    - Female
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Immunoglobulin Fc Fragments
+    - Male
+    - Middle Aged
+    - Prognosis
+    - Recombinant Fusion Proteins
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Despite common mechanisms of actions, glucagon-like peptide-1 receptor
+  agonists differ in structure, pharmacokinetic profile, and clinical effects. This
+  head-to-head trial compared semaglutide with dulaglutide in patients with inadequately
+  controlled type 2 diabetes.
+
+
+  This was an open-label, parallel-group, phase 3b trial done at 194 hospitals, clinical
+  institutions or private practices in 16 countries. Eligible patients were aged 18
+  years or older and had type 2 diabetes with HbA7·0-10·5% (53·0'

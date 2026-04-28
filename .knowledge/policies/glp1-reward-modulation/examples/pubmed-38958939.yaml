@@ -1,0 +1,85 @@
+source_id: pubmed-38958939
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide and optic neuropathy risk — ophthalmologic safety.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Risk of Nonarteritic Anterior Ischemic Optic Neuropathy in Patients Prescribed
+    Semaglutide.
+  source_type: pubmed
+  authors:
+  - name: Jimena Tatiana Hathaway
+    affiliation: Harvard T.H. Chan School of Public Health, Boston, Massachusetts.
+  - name: Madhura P Shah
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: David B Hathaway
+    affiliation: Department of Psychiatry, Brigham and Women's Hospital, Boston, Massachusetts.
+  - name: Seyedeh Maryam Zekavat
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Drenushe Krasniqi
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: John W Gittinger
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Dean Cestari
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Robert Mallery
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Bardia Abbasi
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Marc Bouffard
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Bart K Chwalisz
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Tais Estrela
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  - name: Joseph F Rizzo
+    affiliation: Department of Ophthalmology, Massachusetts Eye and Ear, Harvard Medical
+      School, Boston.
+  published_at: 2024 Aug 01
+  source_metadata:
+    pmid: '38958939'
+    doi: 10.1001/jamaophthalmol.2024.2296
+    journal: JAMA ophthalmology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Female
+    - Male
+    - Retrospective Studies
+    - Glucagon-Like Peptides
+    - Middle Aged
+    - Optic Neuropathy, Ischemic
+    - Aged
+    - Incidence
+    - Risk Factors
+    - Diabetes Mellitus, Type 2
+    - Hypoglycemic Agents
+    - Semaglutide
+    pmc_id: PMC11223051
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11223051/
+content_excerpt: 'Anecdotal experience raised the possibility that semaglutide, a
+  glucagon-like peptide 1 receptor agonist (GLP-1 RA) with rapidly increasing use,
+  is associated with nonarteritic anterior ischemic optic neuropathy (NAION).
+
+
+  To investigate whether there is an association between semaglutide and risk of NAION.
+
+
+  In a retrospective matched cohort study using data from a centralized data registry
+  of patients evaluated by neuro-ophthalmologists at 1 academic institution from December
+  1, 2017, through No'

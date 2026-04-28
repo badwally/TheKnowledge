@@ -1,0 +1,47 @@
+source_id: pubmed-39818408
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Compares addiction risk between bariatric surgery (increased) and GLP-1
+  RAs (reduced) — directly relevant to whether GLP-1 RAs dampen reward broadly.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Weight loss therapy and addiction: Increased risk after bariatric surgery
+    but reduced risk with GLP-1 receptor agonists.'
+  source_type: pubmed
+  authors:
+  - name: Andr&#xe9; J Scheen
+    affiliation: 'Division of Diabetes, Nutrition and Metabolic Disorders, CHU Li&#xe8;ge,
+      Li&#xe8;ge, Belgium; Division of Clinical Pharmacology, Centre for Interdisciplinary
+      Research on Medicines (CIRM), Li&#xe8;ge University, Li&#xe8;ge, Belgium. Electronic
+      address: andre.scheen@chuliege.be.'
+  published_at: 2025 01 14
+  source_metadata:
+    pmid: '39818408'
+    doi: 10.1016/j.diabet.2025.101612
+    journal: Diabetes & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Bariatric Surgery
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Behavior, Addictive
+    - Obesity
+    - Weight Loss
+    - Substance-Related Disorders
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Obesity is an increasing public health problem because of its high
+  prevalence and associated morbidity and mortality. Two weight-loss strategies are
+  currently used, either bariatric surgery or pharmacological therapy with glucagon-like
+  peptide-1 receptor agonists (GLP-1RAs). Preclinical studies in rodents suggested
+  an increased risk of additive disorders after bariatric surgery contrasting with
+  a reduced risk with GLP-1RAs.
+
+
+  An extensive literature search to detect clinical studies that investig'

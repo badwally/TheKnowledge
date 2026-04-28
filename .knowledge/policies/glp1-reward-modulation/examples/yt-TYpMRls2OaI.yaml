@@ -1,0 +1,15 @@
+source_id: yt-TYpMRls2OaI
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 mental health side effect discussion; short but focused on the right
+  topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GLP-1s &amp; Mental Health: The Side Effect No One Warns You About'
+  published_at: '2025-09-27T04:00:28Z'
+  channel: Rx Explained
+content_excerpt: GLP-1 medications like Wegovy, Ozempic, and Zepbound are transforming
+  weight loss—but what about your mental health?

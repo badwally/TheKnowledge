@@ -1,0 +1,13 @@
+source_id: yt-YODyaExFKSU
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding'
+  published_at: '2025-10-07T14:17:26Z'
+  channel: Zuhao Yang
+content_excerpt: ''

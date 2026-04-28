@@ -1,0 +1,37 @@
+source_id: arxiv-2409.02134
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Evaluates structured pruning, unstructured pruning, and dynamic quantization
+  on edge devices for ConvNeXt models; provides direct edge deployment benchmarks
+  with compression ratios and accuracy trade-offs.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Edge AI: Evaluation of Model Compression Techniques for Convolutional Neural
+    Networks'
+  source_type: arxiv
+  authors:
+  - name: Samer Francy
+    affiliation: null
+  - name: Raghubir Singh
+    affiliation: null
+  published_at: '2024-09-02T11:48:19Z'
+  source_metadata:
+    arxiv_id: '2409.02134'
+    categories:
+    - cs.LG
+    - cs.AI
+    - cs.CV
+    pdf_url: http://arxiv.org/pdf/2409.02134v1.pdf
+    primary_category: cs.LG
+    comment: null
+    journal_ref: null
+content_excerpt: This work evaluates the compression techniques on ConvNeXt models
+  in image classification tasks using the CIFAR-10 dataset. Structured pruning, unstructured
+  pruning, and dynamic quantization methods are evaluated to reduce model size and
+  computational complexity while maintaining accuracy. The experiments, conducted
+  on cloud-based platforms and edge device, assess the performance of these techniques.
+  Results show significant reductions in model size, with up to 75% reduction achieved
+  using struc

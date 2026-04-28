@@ -1,0 +1,18 @@
+source_id: yt-xRV13YwBq0c
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 37-minute expert panel on privacy-first AI beyond the cloud in 2026 — directly
+  addresses SLMs, compression, on-prem inference, data sovereignty tradeoffs, and
+  enterprise edge deployment with real practitioner depth; squarely at the edge+privacy
+  intersection a GPM candidate must understand.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Privacy-First AI Beyond the Cloud: Small Language Models, Compression &amp;
+    On-Prem Inference (Panel)'
+  published_at: '2026-02-02T13:15:16Z'
+  channel: Merantix AI Campus
+content_excerpt: '"Beyond the Cloud" Building privacy-first AI in 2026 means making
+  hard trade-offs: latency, cost, sovereignty, and real enterprise ...'

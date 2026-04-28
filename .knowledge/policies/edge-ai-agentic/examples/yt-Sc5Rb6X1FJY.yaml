@@ -1,0 +1,16 @@
+source_id: yt-Sc5Rb6X1FJY
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 48-minute webinar on Edge AI with Google's Anthos platform covers Google-stack
+  edge deployment architecture — directly relevant to Google's edge strategy, though
+  the 2021 date means some content may be stale.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Digitizing The Real World: Edge AI with Anthos'
+  published_at: '2021-05-26T21:17:43Z'
+  channel: Qwinix
+content_excerpt: 'Webinar hosted on May 25: Digitizing The Real World with Edge AI
+  on Anthos David "Mac" Mcdaniel, VP of Professional Services ...'

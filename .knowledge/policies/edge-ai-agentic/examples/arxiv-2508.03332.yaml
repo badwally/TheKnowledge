@@ -1,0 +1,52 @@
+source_id: arxiv-2508.03332
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: LieQ is a hardware-native mixed-precision PTQ framework for sub-8B models
+  using geometry-driven sensitivity to assign per-layer precision; targets edge-relevant
+  memory and energy footprint with standard multiplication kernels.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Exploring Layer-wise Information Effectiveness for Post-Training Quantization
+    in Small Language Models
+  source_type: arxiv
+  authors:
+  - name: He Xiao
+    affiliation: null
+  - name: Qingyao Yang
+    affiliation: null
+  - name: Dirui Xie
+    affiliation: null
+  - name: Wendong Xu
+    affiliation: null
+  - name: Zunhai Su
+    affiliation: null
+  - name: Runming yang
+    affiliation: null
+  - name: Wenyong Zhou
+    affiliation: null
+  - name: Haobo Liu
+    affiliation: null
+  - name: Zhengwu Liu
+    affiliation: null
+  - name: Ngai Wong
+    affiliation: null
+  published_at: '2025-08-05T11:17:04Z'
+  source_metadata:
+    arxiv_id: '2508.03332'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2508.03332v2.pdf
+    primary_category: cs.LG
+    comment: low-bit quantization
+    journal_ref: null
+content_excerpt: 'Large language models with billions of parameters are often over-provisioned:
+  many layers contribute little unique information yet dominate the memory and energy
+  footprint during inference. We present LieQ Layer-wise information effectiveness
+  Quantization, a hardware-native, metric-driven post-training quantization framework
+  that addresses the critical challenge of maintaining accuracy in sub-8B models,
+  model parameters less than 8B, under extreme low-bit compression. LieQ keeps uniform
+  bit-widt'

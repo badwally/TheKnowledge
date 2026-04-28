@@ -1,0 +1,17 @@
+source_id: yt-67ev-6Xn30U
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: NVIDIA Developer webinar on TensorRT deployment via TRTorch covers inference
+  acceleration for edge targets with authority — relevant to edge inference runtimes,
+  though it is from 2020 and predates the 12-month window; included as potentially
+  foundational/seminal for TensorRT practitioners.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'NVAITC Webinar: Deploying Models with TensorRT'
+  published_at: '2020-11-30T17:08:26Z'
+  channel: NVIDIA Developer
+content_excerpt: Learn how to accelerate deep learning (DL) inference with TensorRT
+  via TRTorch library. https://developer.nvidia.com/tensorrt, ...

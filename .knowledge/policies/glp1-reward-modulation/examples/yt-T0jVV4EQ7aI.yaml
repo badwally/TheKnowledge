@@ -1,0 +1,15 @@
+source_id: yt-T0jVV4EQ7aI
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Explores GLP-1 brain effects with some depth, though may not focus specifically
+  on reward dissociation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: How Your Brain Changes on a GLP-1
+  published_at: '2025-09-01T16:01:50Z'
+  channel: Simply Taisha
+content_excerpt: If you're on a GLP-1 or thinking about starting, this video will
+  help you understand how your brain actually changes, beyond just ...

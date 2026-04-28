@@ -1,0 +1,43 @@
+source_id: arxiv-2601.11816
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: POLARIS provides governed agentic orchestration with typed DAG plan synthesis,
+  validator-gated execution, and compiled policy guardrails for enterprise workflows;
+  substantive agentic orchestration architecture with empirical results, though no
+  explicit edge deployment.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'POLARIS: Typed Planning and Governed Execution for Agentic AI in Back-Office
+    Automation'
+  source_type: arxiv
+  authors:
+  - name: Zahra Moslemi
+    affiliation: null
+  - name: Keerthi Koneru
+    affiliation: null
+  - name: Yen-Ting Lee
+    affiliation: null
+  - name: Sheethal Kumar
+    affiliation: null
+  - name: Ramesh Radhakrishnan
+    affiliation: null
+  published_at: '2026-01-16T22:38:21Z'
+  source_metadata:
+    arxiv_id: '2601.11816'
+    categories:
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2601.11816v1.pdf
+    primary_category: cs.AI
+    comment: 'Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks:
+      AAAI 2026'
+    journal_ref: null
+content_excerpt: Enterprise back office workflows require agentic systems that are
+  auditable, policy-aligned, and operationally predictable, capabilities that generic
+  multi-agent setups often fail to deliver. We present POLARIS (Policy-Aware LLM Agentic
+  Reasoning for Integrated Systems), a governed orchestration framework that treats
+  automation as typed plan synthesis and validated execution over LLM agents. A planner
+  proposes structurally diverse, type checked directed acyclic graphs (DAGs), a rubric
+  guided rea

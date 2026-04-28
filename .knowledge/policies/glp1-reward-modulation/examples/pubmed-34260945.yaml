@@ -1,0 +1,70 @@
+source_id: pubmed-34260945
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Structural biology of semaglutide-bound GLP-1R-Gs complexes — receptor
+  pharmacology but at molecular level, not circuit level.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Structure and dynamics of semaglutide- and taspoglutide-bound GLP-1R-Gs complexes.
+  source_type: pubmed
+  authors:
+  - name: Xin Zhang
+    affiliation: Drug Discovery Biology, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia; ARC Centre for Cryo-electron
+      Microscopy of Membrane Proteins, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia.
+  - name: Matthew J Belousoff
+    affiliation: Drug Discovery Biology, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia; ARC Centre for Cryo-electron
+      Microscopy of Membrane Proteins, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia.
+  - name: Yi-Lynn Liang
+    affiliation: Drug Discovery Biology, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia.
+  - name: Radostin Danev
+    affiliation: 'Graduate School of Medicine, University of Tokyo, S402, 7-3-1 Hongo,
+      Bunkyo-ku, 113-0033 Tokyo, Japan. Electronic address: rado@m.u-tokyo.ac.jp.'
+  - name: Patrick M Sexton
+    affiliation: 'Drug Discovery Biology, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia; ARC Centre for Cryo-electron
+      Microscopy of Membrane Proteins, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia. Electronic address: patrick.sexton@monash.edu.'
+  - name: Denise Wootten
+    affiliation: 'Drug Discovery Biology, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia; ARC Centre for Cryo-electron
+      Microscopy of Membrane Proteins, Monash Institute of Pharmaceutical Sciences,
+      Monash University, Parkville 3052, VIC, Australia. Electronic address: denise.wootten@monash.edu.'
+  published_at: 2021 Jul 13
+  source_metadata:
+    pmid: '34260945'
+    doi: 10.1016/j.celrep.2021.109374
+    journal: Cell reports
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Cell Line
+    - GTP-Binding Proteins
+    - Glucagon-Like Peptide-1 Receptor
+    - Glucagon-Like Peptides
+    - Humans
+    - Models, Molecular
+    - Multiprotein Complexes
+    - Peptides
+    - Protein Binding
+    - Protein Domains
+    - Structure-Activity Relationship
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: The glucagon-like peptide-1 receptor (GLP-1R) regulates insulin secretion,
+  carbohydrate metabolism, and appetite and is an important target for treatment of
+  type 2 diabetes and obesity. Multiple GLP-1R agonists have entered into clinical
+  trials, with some, such as semaglutide, progressing to approval. Others, including
+  taspoglutide, failed due to the high incidence of side effects or insufficient efficacy.
+  GLP-1R agonists have a broad spectrum of signaling profiles, but molecular understanding
+  i

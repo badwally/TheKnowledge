@@ -1,0 +1,16 @@
+source_id: yt-6H-FcTcfsv4
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Arm Software Developers 21-minute session on cloud-managed edge ML at IoT
+  scale covers fleet management and OTA model updates — directly addresses an edge
+  MLOps pattern in the domain config, from a credible channel.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Cloud-Managed Edge Machine Learning at IoT Scale
+  published_at: '2021-12-17T13:00:04Z'
+  channel: Arm Software Developers
+content_excerpt: Machine Learning (ML) technology is the heart of differentiated IoT
+  devices and defines what makes a device smart. Maintaining ...

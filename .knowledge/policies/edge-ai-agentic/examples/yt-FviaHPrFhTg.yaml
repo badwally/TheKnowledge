@@ -1,0 +1,17 @@
+source_id: yt-FviaHPrFhTg
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: CNBC 14-minute segment on Apple's A19/M5 chips enabling on-device AI covers
+  hardware-software integration for inference at the silicon level — useful competitive
+  context for a GPM candidate on Apple's chip strategy, though journalistic rather
+  than deeply technical.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: How Apple’s New iPhone Chips Enable On-Device AI
+  published_at: '2025-09-21T15:00:23Z'
+  channel: CNBC
+content_excerpt: 'iPhone Air was the big star unveiled by Apple in early September,
+  but inside was another hardware set launched that day: three ...'

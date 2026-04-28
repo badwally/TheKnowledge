@@ -1,0 +1,62 @@
+source_id: pubmed-24140429
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review explicitly addressing GLP-1 roles beyond energy homeostasis in food
+  and drug reward — directly on topic for dissociating appetite from reward.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Moving beyond energy homeostasis: new roles for glucagon-like peptide-1
+    in food and drug reward.'
+  source_type: pubmed
+  authors:
+  - name: India A Reddy
+    affiliation: 'Vanderbilt Brain Institute, Vanderbilt University Medical Center,
+      Nashville, TN, USA; Neuroscience Graduate Program, Vanderbilt University Medical
+      Center, Nashville, TN, USA; Neuroscience Program in Substance Abuse, Vanderbilt
+      University Medical Center, Nashville, TN, USA; Department of Molecular Physiology
+      and Biophysics, Vanderbilt University Medical Center, Nashville, TN, USA. Electronic
+      address: india.a.reddy@vanderbilt.edu.'
+  - name: Gregg D Stanwood
+    affiliation: Vanderbilt Brain Institute, Vanderbilt University Medical Center,
+      Nashville, TN, USA; Department of Pharmacology, Vanderbilt University Medical
+      Center, Nashville, TN, USA.
+  - name: Aurelio Galli
+    affiliation: 'Vanderbilt Brain Institute, Vanderbilt University Medical Center,
+      Nashville, TN, USA; Neuroscience Program in Substance Abuse, Vanderbilt University
+      Medical Center, Nashville, TN, USA; Department of Molecular Physiology and Biophysics,
+      Vanderbilt University Medical Center, Nashville, TN, USA. Electronic address:
+      aurelio.galli@vanderbilt.edu.'
+  published_at: 2013 10 16
+  source_metadata:
+    pmid: '24140429'
+    doi: 10.1016/j.neuint.2013.10.003
+    journal: Neurochemistry international
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Animals
+    - Dopamine
+    - Eating
+    - Energy Metabolism
+    - Glucagon-Like Peptide 1
+    - Homeostasis
+    - Humans
+    - Obesity
+    - Reward
+    - Substance-Related Disorders
+    pmc_id: PMC4120871
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4120871/
+content_excerpt: Glucagon-like peptide-1 (GLP-1), a hormone and neuropeptide, is known
+  to regulate energy homeostasis in part through an established central role in controlling
+  food intake. Historically this central role has largely been attributed to GLP-1
+  receptor signaling in the brainstem and hypothalamus. However, emerging data indicate
+  that GLP-1 also contributes to non-homeostatic regulation of food reward and motivated
+  behaviors in brain reward centers, including the ventral tegmental area and nucleus
+  ac

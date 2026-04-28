@@ -1,0 +1,16 @@
+source_id: yt-TSbl5ZxdbPk
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 15-minute walkthrough of Jetson Orin Nano Super from Gary Explains covers
+  edge AI hardware with comparative specs, offering moderate technical grounding on
+  a key NVIDIA edge platform relevant to the competitive landscape.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'NVIDIA Jetson Orin Nano SUPER Unleashed: Build an AI Super Cluster'
+  published_at: '2025-01-09T15:58:57Z'
+  channel: Gary Explains
+content_excerpt: Dive into the new NVIDIA Jetson Orin Nano Super development kit!
+  This video explores its features, compares it to its predecessor ...

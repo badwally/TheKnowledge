@@ -1,0 +1,16 @@
+source_id: yt-zRXC2pEbj5w
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Huberman Lab clip with Zachary Knight (UCSF neuroscientist) explaining
+  GLP-1 mechanism; 14 min with research basis.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: How Do Ozempic, Mounjaro &amp; Other GPL-1 Agonists Work? | Dr. Zachary Knight
+    &amp; Dr. Andrew Huberman
+  published_at: '2024-09-11T19:08:40Z'
+  channel: Huberman Lab Clips
+content_excerpt: Dr. Zachary Knight and Dr. Andrew Huberman discuss the development
+  of GLP-1 drugs like Ozempic for diabetes and weight loss ...

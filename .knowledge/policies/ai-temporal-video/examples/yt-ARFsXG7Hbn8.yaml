@@ -1,0 +1,14 @@
+source_id: yt-ARFsXG7Hbn8
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Towards Grounded Spatio-Temporal Reasoning
+  published_at: '2019-11-20T19:56:13Z'
+  channel: Microsoft Research
+content_excerpt: To develop an Artificial Intelligence (AI) system that can understand
+  the world around us, it needs to be able to interpret and ...

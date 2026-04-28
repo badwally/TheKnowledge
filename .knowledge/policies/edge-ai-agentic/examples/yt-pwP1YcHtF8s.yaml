@@ -1,0 +1,17 @@
+source_id: yt-pwP1YcHtF8s
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 47-minute Linux Foundation workshop on efficient, portable LLM inference
+  at the edge cloud covers WasmEdge runtime, portability tradeoffs, and deployment
+  architecture — substantive systems-level content from a credible technical venue.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Workshop: Efficient and Portable AI / LLM Inference on the Edge Cloud -
+    Xiaowei Hu, Second State'
+  published_at: '2024-06-27T14:39:47Z'
+  channel: The Linux Foundation
+content_excerpt: 'Workshop: Efficient and Portable AI / LLM Inference on the Edge
+  Cloud - Xiaowei Hu, Second State As AI applications gain ...'

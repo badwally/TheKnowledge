@@ -1,0 +1,15 @@
+source_id: yt-_JLe1bJG3KI
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: PA discusses GLP-1 effects on impulsive spending via dopamine; novel behavioral
+  dimension of reward dampening.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP1s Don’t Just Decrease Appetite, They Can Help You Save Money
+  published_at: '2025-10-16T22:47:07Z'
+  channel: 'The Better Living PA '
+content_excerpt: 'GLP-1 medications don''t just curb appetite—they can calm impulsive
+  spending too. Here''s the science: GLP-1s like ...'

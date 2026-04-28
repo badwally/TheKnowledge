@@ -1,0 +1,84 @@
+source_id: pubmed-33667417
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: STEP 2 trial of semaglutide for weight loss in T2D — efficacy focus without
+  mechanistic reward discussion.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Semaglutide 2·4 mg once a week in adults with overweight or obesity, and
+    type 2 diabetes (STEP 2): a randomised, double-blind, double-dummy, placebo-controlled,
+    phase 3 trial.'
+  source_type: pubmed
+  authors:
+  - name: Melanie Davies
+    affiliation: Diabetes Research Centre, University of Leicester, Leicester, UK;
+      NIHR Leicester Biomedical Research Centre, Leicester, UK.
+  - name: Louise F&#xe6;rch
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Ole K Jeppesen
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Arash Pakseresht
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Sue D Pedersen
+    affiliation: C-ENDO Diabetes and Endocrinology Clinic Calgary, Calgary, AB, Canada.
+  - name: Leigh Perreault
+    affiliation: University of Colorado Anschutz Medical Campus, Aurora, CO, USA.
+  - name: Julio Rosenstock
+    affiliation: Dallas Diabetes Research Center at Medical City, Dallas, TX, USA.
+  - name: Iichiro Shimomura
+    affiliation: Graduate School of Medicine, Osaka University, Suita, Osaka, Japan.
+  - name: Adie Viljoen
+    affiliation: Borthwick Diabetes Research Unit, Lister Hospital, Stevenage, UK.
+  - name: Thomas A Wadden
+    affiliation: Perelman School of Medicine, University of Pennsylvania, Philadelphia,
+      PA, USA.
+  - name: Ildiko Lingvay
+    affiliation: 'University of Texas Southwestern Medical Center, Dallas, TX, USA.
+      Electronic address: ildiko.lingvay@utsouthwestern.edu.'
+  - name: ''
+    affiliation: null
+  published_at: 2021 03 02
+  source_metadata:
+    pmid: '33667417'
+    doi: 10.1016/S0140-6736(21)00213-0
+    journal: Lancet (London, England)
+    peer_reviewed: true
+    publication_type:
+    - Clinical Trial, Phase III
+    - Journal Article
+    - Multicenter Study
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    - Equivalence Trial
+    mesh_terms:
+    - Adult
+    - Aged
+    - Diabetes Mellitus, Type 2
+    - Double-Blind Method
+    - Female
+    - Glucagon-Like Peptides
+    - Glycated Hemoglobin
+    - Humans
+    - Hypoglycemic Agents
+    - Injections, Subcutaneous
+    - Male
+    - Middle Aged
+    - Obesity
+    - Overweight
+    - Treatment Outcome
+    - Weight Loss
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'This trial assessed the efficacy and safety of the GLP-1 analogue
+  once a week subcutaneous semaglutide 2·4 mg versus semaglutide 1·0 mg (the dose
+  approved for diabetes treatment) and placebo for weight management in adults with
+  overweight or obesity, and type 2 diabetes.
+
+
+  This double-blind, double-dummy, phase 3, superiority study enrolled adults with
+  a body-mass index of at least 27 kg/mand glycated haemoglobin 7-10% (53-86 mmol/mol)
+  who had been diagnosed with type 2 diabetes at least 180 days'

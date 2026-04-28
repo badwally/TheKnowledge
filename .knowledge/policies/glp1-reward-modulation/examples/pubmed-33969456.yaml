@@ -1,0 +1,53 @@
+source_id: pubmed-33969456
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Clinical pharmacokinetics of oral semaglutide — pure PK without neurological
+  content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Clinical Pharmacokinetics of Oral Semaglutide: Analyses of Data from Clinical
+    Pharmacology Trials.'
+  source_type: pubmed
+  authors:
+  - name: Rune V Overgaard
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark. ruvo@novonordisk.com.
+  - name: Andrea Navarria
+    affiliation: Novo Nordisk A/S, Bagsvaerd, Denmark.
+  - name: Steen H Ingwersen
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Tine A B&#xe6;kdal
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  - name: Rasmus Juul Kildemoes
+    affiliation: Novo Nordisk A/S, S&#xf8;borg, Denmark.
+  published_at: 2021 05 10
+  source_metadata:
+    pmid: '33969456'
+    doi: 10.1007/s40262-021-01025-x
+    journal: Clinical pharmacokinetics
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Administration, Oral
+    - Clinical Trials as Topic
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Pharmacology, Clinical
+    - Semaglutide
+    pmc_id: PMC8505367
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8505367/
+content_excerpt: 'The absorption, distribution and elimination of oral semaglutide,
+  the first oral glucagon-like peptide-1 receptor agonist for treating type 2 diabetes,
+  was investigated using a population pharmacokinetic model based on data from clinical
+  pharmacology trials.
+
+
+  A previously developed, two-compartment pharmacokinetic model, based on subcutaneous
+  and intravenous semaglutide, was extended to include data from six oral semaglutide
+  trials conducted in either healthy volunteers or subjects with renal or'

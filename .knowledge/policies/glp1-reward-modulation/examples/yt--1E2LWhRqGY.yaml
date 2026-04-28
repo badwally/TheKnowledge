@@ -1,0 +1,14 @@
+source_id: yt--1E2LWhRqGY
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Disturbing Ozempic side effects; general reporting.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The Disturbing Side Effects of Ozempic
+  published_at: '2024-11-25T08:27:08Z'
+  channel: The Project
+content_excerpt: Drugs like Ozempic have been dubbed 'wonder drugs' for helping people
+  lose weight, but patients in the US are suing over ...

@@ -1,0 +1,65 @@
+source_id: pubmed-40614622
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Tirzepatide association with erectile dysfunction compared to other agents
+  — comparative data on sexual dysfunction across GLP-1 class.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Association of tirzepatide with erectile dysfunction in people with type
+    2 diabetes.
+  source_type: pubmed
+  authors:
+  - name: Kevin Cowart
+    affiliation: 'Taneja College of Pharmacy, University of South Florida, 560 Channelside
+      Dr., Tampa, FL 33602, USA; Morsani College of Medicine, University of South
+      Florida, 560 Channelside Dr., Tampa, FL 33602, USA; College of Public Health,
+      University of South Florida, 13201 Bruce B. Downs Blvd., Tampa, FL 33612, USA.
+      Electronic address: kcowart2@usf.edu.'
+  - name: Christopher Murphy
+    affiliation: Taneja College of Pharmacy, University of South Florida, 560 Channelside
+      Dr., Tampa, FL 33602, USA.
+  - name: Nicholas Carris
+    affiliation: Taneja College of Pharmacy, University of South Florida, 560 Channelside
+      Dr., Tampa, FL 33602, USA; Morsani College of Medicine, University of South
+      Florida, 560 Channelside Dr., Tampa, FL 33602, USA.
+  published_at: 2025 06 30
+  source_metadata:
+    pmid: '40614622'
+    doi: 10.1016/j.jdiacomp.2025.109116
+    journal: Journal of diabetes and its complications
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Male
+    - Diabetes Mellitus, Type 2
+    - Middle Aged
+    - Erectile Dysfunction
+    - Retrospective Studies
+    - Adult
+    - Aged
+    - Glucagon-Like Peptides
+    - Sitagliptin Phosphate
+    - Hypoglycemic Agents
+    - Recombinant Fusion Proteins
+    - Young Adult
+    - Adolescent
+    - Immunoglobulin Fc Fragments
+    - Tirzepatide
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'To evaluate the association between tirzepatide and the risk of
+  developing erectile dysfunction (ED) in men with type 2 diabetes (T2D), compared
+  with sitagliptin, injectable semaglutide, and dulaglutide.
+
+
+  This retrospective cohort study used the TriNetX global health research network
+  from May 13, 2022 to May 17, 2025. Male patients aged 18-70 with T2D and no prior
+  ED were included. Three 1:1 propensity score-matched comparisons were conducted:
+  tirzepatide vs. sitagliptin, injectable semaglutide,'

@@ -1,0 +1,16 @@
+source_id: yt-5oI_G8WL6rU
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: LangChain's Deep Agents video covers virtual filesystem abstraction (S3,
+  SQLite, local disk) for agent state management — touches on distributed storage
+  patterns relevant to edge agents operating across hybrid storage tiers.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'The Secret to Scalable AI Agents: Virtual Filesystems with Deep Agents'
+  published_at: '2026-02-04T16:05:29Z'
+  channel: LangChain
+content_excerpt: Your AI agent sees one filesystem. Under the hood? S3, SQLite, and
+  local disk, all working together. In this video, I show how ...

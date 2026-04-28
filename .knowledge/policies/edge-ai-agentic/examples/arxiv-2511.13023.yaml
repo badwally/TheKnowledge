@@ -1,0 +1,43 @@
+source_id: arxiv-2511.13023
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: SLMQuant is the first systematic benchmark of LLM quantization techniques
+  applied to small language models for edge deployment; reveals fundamental SLM-vs-LLM
+  quantization sensitivity differences with practical implications for edge model
+  selection.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: SLMQuant:Benchmarking Small Language Model Quantization for Practical Deployment
+  source_type: arxiv
+  authors:
+  - name: Jiacheng Wang
+    affiliation: null
+  - name: Yejun Zeng
+    affiliation: null
+  - name: Jinyang Guo
+    affiliation: null
+  - name: Yuqing Ma
+    affiliation: null
+  - name: Aishan Liu
+    affiliation: null
+  - name: Xianglong Liu
+    affiliation: null
+  published_at: '2025-11-17T06:20:33Z'
+  source_metadata:
+    arxiv_id: '2511.13023'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2511.13023v1.pdf
+    primary_category: cs.LG
+    comment: null
+    journal_ref: null
+content_excerpt: Despite the growing interest in Small Language Models (SLMs) as resource-efficient
+  alternatives to Large Language Models (LLMs), their deployment on edge devices remains
+  challenging due to unresolved efficiency gaps in model compression. While quantization
+  has proven effective for LLMs, its applicability to SLMs is significantly underexplored,
+  with critical questions about differing quantization bottlenecks and efficiency
+  profiles. This paper introduces SLMQuant, the first systematic benchmark f

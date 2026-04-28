@@ -1,0 +1,16 @@
+source_id: yt-9ozwh9EDGhU
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: NVIDIA Developer's Jetson AI Lab Agent Studio demo showing multimodal VLM
+  + function-calling LLM running on-device directly addresses the edge+agentic intersection
+  — agentic workflow orchestration on constrained Jetson hardware is core to the domain.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: JETSON AI LAB | Agent Studio - Multimodal VLM + Function-calling LLM
+  published_at: '2024-06-29T18:11:29Z'
+  channel: NVIDIA Developer
+content_excerpt: Quickly design and experiment with your own bots and multimodal agents
+  in the interactive Agent Studio tool ...

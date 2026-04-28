@@ -1,0 +1,17 @@
+source_id: yt-eB4cfa-JgeQ
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: TWIML AI Podcast 30-minute discussion of MLOps for high-stakes environments
+  (Toyota Research Institute context) covers edge deployment constraints and operational
+  rigor — moderate relevance to edge MLOps patterns for regulated or safety-critical
+  settings.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: MLOps for High-Stakes Environments
+  published_at: '2022-09-08T03:56:33Z'
+  channel: The TWIML AI Podcast with Sam Charrington
+content_excerpt: In this talk Sudeep will share an overview of the MLOps environment
+  developed at TRI and discuss some of the key ways MLOps ...

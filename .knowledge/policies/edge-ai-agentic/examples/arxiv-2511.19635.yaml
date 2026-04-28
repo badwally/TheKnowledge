@@ -1,0 +1,39 @@
+source_id: arxiv-2511.19635
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Agint is an agentic graph compiler with speculative evaluation, smaller/faster
+  model support, and lower latency through typed DAG compilation; the efficiency focus
+  — accelerated development with smaller models and lower context overhead — is directly
+  relevant to edge deployment constraints.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Agint: Agentic Graph Compilation for Software Engineering Agents'
+  source_type: arxiv
+  authors:
+  - name: Abhi Chivukula
+    affiliation: null
+  - name: Jay Somasundaram
+    affiliation: null
+  - name: Vijay Somasundaram
+    affiliation: null
+  published_at: '2025-11-24T19:10:47Z'
+  source_metadata:
+    arxiv_id: '2511.19635'
+    categories:
+    - cs.SE
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2511.19635v1.pdf
+    primary_category: cs.SE
+    comment: '18 pages, 5 figures, NeurIPS 2025: Deep Learning for Code in the Agentic
+      Era'
+    journal_ref: null
+content_excerpt: LLM-based coding agents are increasingly common but still face challenges
+  in context management, latency, reliability, reproducibility, and scalability. We
+  present Agint, an agentic graph compiler, interpreter, and runtime that incrementally
+  and hierarchically converts natural-language instructions into typed, effect-aware
+  code DAGs. Agint introduces explicit type floors (text to data to spec to code)
+  grounded in semantic graph transformations and a hybrid LLM and function-based JIT
+  runtime. Thi

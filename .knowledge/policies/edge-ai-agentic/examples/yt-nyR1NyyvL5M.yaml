@@ -1,0 +1,17 @@
+source_id: yt-nyR1NyyvL5M
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 55-minute Temporal talk on multi-agent orchestration covers coordination
+  patterns, durability, and production agent architecture in depth — directly addresses
+  the distributed systems layer of agentic workflows, relevant to orchestration on
+  constrained or distributed infrastructure.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Multi-Agent Orchestration: Coordinating the Agent Dance with Temporal'
+  published_at: '2025-12-11T16:15:19Z'
+  channel: Temporal
+content_excerpt: Multi-agent architectures help your agentic AI systems work smarter
+  by breaking complex problems into focused tasks that ...

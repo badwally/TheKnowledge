@@ -1,0 +1,17 @@
+source_id: yt-lsZvTixt1ZI
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: EDGE AI FOUNDATION 57-minute tinyML Talks session on running and managing
+  fleets of single-board computers at scale (Modzy) directly addresses edge fleet
+  MLOps with operational specifics — matches the DevOps/MLOps edge AI dimension in
+  the inclusion criteria.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'tinyML Talks: Running and Managing Fleets of Single Board Computers at Scale'
+  published_at: '2023-05-08T20:58:24Z'
+  channel: EDGE AI FOUNDATION
+content_excerpt: '"Running and Managing Fleets of Single Board Computers at Scale"
+  Seth Clark Co-founder & Head of Product Modzy The ...'

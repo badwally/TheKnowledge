@@ -1,0 +1,16 @@
+source_id: yt-GUozMSpnmcc
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: AI LABS 8-minute tutorial on Google A2A protocol with demo and MCP integration
+  — covers the practical intersection of A2A and MCP with moderate technical depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Google A2A Protocol Explained: Tutorial, Demo, &amp; How It Works with MCP
+    &amp; AI Agents'
+  published_at: '2025-04-22T19:28:18Z'
+  channel: AI LABS
+content_excerpt: 'Google A2A Protocol Explained: A Complete Tutorial, Demo, and MCP
+  Integration with AI Agents Google''s new A2A Protocol ...'

@@ -1,0 +1,14 @@
+source_id: yt-Rati_bdqdDY
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio-Temporal Graph for Video Captioning With Knowledge Distillation
+  published_at: '2020-07-17T10:01:59Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Boxiao Pan, Haoye Cai, De-An Huang, Kuan-Hui Lee, Adrien
+  Gaidon, Ehsan Adeli, Juan Carlos Niebles Description: ...'

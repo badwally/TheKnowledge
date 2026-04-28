@@ -1,0 +1,67 @@
+source_id: pubmed-33741445
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 analogues for stress-related eating and GLP-1 role in stress,
+  emotion, mood — addresses psychiatric/motivational dimensions of GLP-1.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'The therapeutic potential of GLP-1 analogues for stress-related eating and
+    role of GLP-1 in stress, emotion and mood: a review.'
+  source_type: pubmed
+  authors:
+  - name: Eva Guerrero-Hreins
+    affiliation: The Florey Institute of Neuroscience and Mental Health, Mental Health
+      Theme, Parkville, Melbourne, Australia; The Florey Department of Neuroscience
+      and Mental Health, University of Melbourne, Parkville, Melbourne, Australia;
+      PsychoNeuroEndocrinology Research Group, Centre for Neuropsychopharmacology,
+      Division of Psychiatry, and Computational, Cognitive and Clinical Neuroimaging
+      Laboratory, Department of Brain Sciences, Faculty of Medicine, Imperial College
+      London, Hammersmith Hospital, London, UK.
+  - name: Anthony P Goldstone
+    affiliation: PsychoNeuroEndocrinology Research Group, Centre for Neuropsychopharmacology,
+      Division of Psychiatry, and Computational, Cognitive and Clinical Neuroimaging
+      Laboratory, Department of Brain Sciences, Faculty of Medicine, Imperial College
+      London, Hammersmith Hospital, London, UK.
+  - name: Robyn M Brown
+    affiliation: The Florey Institute of Neuroscience and Mental Health, Mental Health
+      Theme, Parkville, Melbourne, Australia; The Florey Department of Neuroscience
+      and Mental Health, University of Melbourne, Parkville, Melbourne, Australia.
+  - name: Priya Sumithran
+    affiliation: 'Department of Medicine (St Vincent''s), University of Melbourne,
+      Victoria, Australia; Dept. of Endocrinology, Austin Health, Victoria, Australia.
+      Electronic address: priyas@unimelb.edu.au.'
+  published_at: 2021 03 16
+  source_metadata:
+    pmid: '33741445'
+    doi: 10.1016/j.pnpbp.2021.110303
+    journal: Progress in neuro-psychopharmacology & biological psychiatry
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Affect
+    - Animals
+    - Anti-Obesity Agents
+    - Brain-Gut Axis
+    - Clinical Trials, Phase III as Topic
+    - Emotions
+    - Exenatide
+    - Glucagon-Like Peptide 1
+    - Humans
+    - Hyperphagia
+    - Obesity
+    - Stress, Psychological
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Stress and low mood are powerful triggers for compulsive overeating,
+  a maladaptive form of eating leading to negative physical and mental health consequences.
+  Stress-vulnerable individuals, such as people with obesity, are particularly prone
+  to overconsumption of high energy foods and may use it as a coping mechanism for
+  general life stressors. Recent advances in the treatment of obesity and related
+  co-morbidities have focused on the therapeutic potential of anorexigenic gut hormones,
+  such as gl

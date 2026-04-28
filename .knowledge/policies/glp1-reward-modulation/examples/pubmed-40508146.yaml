@@ -1,0 +1,67 @@
+source_id: pubmed-40508146
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 analogues in neurobiology of addiction with translational
+  insights — comprehensive mechanistic and therapeutic perspective on reward modulation.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'GLP-1 Analogues in the Neurobiology of Addiction: Translational Insights
+    and Therapeutic Perspectives.'
+  source_type: pubmed
+  authors:
+  - name: Juan David Marquez-Meneses
+    affiliation: Pharmacology Unit, Department of Biomedical Sciences, School of Medicine
+      and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Santiago Arturo Olaya-Bonilla
+    affiliation: Pharmacology Unit, Department of Biomedical Sciences, School of Medicine
+      and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Samuel Barrera-Carre&#xf1;o
+    affiliation: Pharmacology Unit, Department of Biomedical Sciences, School of Medicine
+      and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Luc&#xed;a Catalina Tibaduiza-Ar&#xe9;valo
+    affiliation: Pharmacology Unit, Department of Biomedical Sciences, School of Medicine
+      and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Sara Forero-C&#xe1;rdenas
+    affiliation: Research Group in Applied Biomedical Sciences (UR Biomed), School
+      of Medicine and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Liliana Carrillo-Vaca
+    affiliation: ZONAMEDICA MR S.A.S., Av Kra. 45 No 105-21, Bogota 110111, Colombia.
+  - name: Luis Carlos Rojas-Rodr&#xed;guez
+    affiliation: Pharmacology Unit, Department of Biomedical Sciences, School of Medicine
+      and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Carlos Alberto Calderon-Ospina
+    affiliation: Pharmacology Unit, Department of Biomedical Sciences, School of Medicine
+      and Health Sciences, Universidad del Rosario, Bogota 111221, Colombia.
+  - name: Jes&#xfa;s Rodr&#xed;guez-Quintana
+    affiliation: Fundacion CardioInfantil-Instituto de Cardiolog&#xed;a, Bogota 111156,
+      Colombia.
+  published_at: 2025 06 01
+  source_metadata:
+    pmid: '40508146'
+    doi: 10.3390/ijms26115338
+    journal: International journal of molecular sciences
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Animals
+    - Substance-Related Disorders
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Translational Research, Biomedical
+    - Behavior, Addictive
+    - Glucagon-Like Peptide-1 Receptor
+    pmc_id: PMC12155186
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12155186/
+content_excerpt: Glucagon-like peptide-1 receptor agonists, originally developed for
+  the treatment of metabolic disorders, have recently emerged as promising candidates
+  for the management of substance use disorders. This review synthesizes preclinical,
+  clinical, and translational evidence on the effects of glucagon-like peptide-1 receptor
+  agonists across addiction models involving alcohol, nicotine, psychostimulants,
+  and opioids. In animal studies, glucagon-like peptide-1 receptor agonists consistently
+  reduce dr

@@ -1,0 +1,45 @@
+source_id: arxiv-2512.03383
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: UniQL unifies quantization and low-rank compression for Transformers, SSMs,
+  and hybrid models with on-device configurable pruning rates; introduces QA-SVD and
+  fused RoPE kernels specifically for mobile/edge LLM deployment.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'UniQL: Unified Quantization and Low-rank Compression for Adaptive Edge LLMs'
+  source_type: arxiv
+  authors:
+  - name: Hung-Yueh Chiang
+    affiliation: null
+  - name: Chi-Chih Chang
+    affiliation: null
+  - name: Yu-Chen Lu
+    affiliation: null
+  - name: Chien-Yu Lin
+    affiliation: null
+  - name: Kai-Chiang Wu
+    affiliation: null
+  - name: Mohamed S. Abdelfattah
+    affiliation: null
+  - name: Diana Marculescu
+    affiliation: null
+  published_at: '2025-12-03T02:33:39Z'
+  source_metadata:
+    arxiv_id: '2512.03383'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2512.03383v3.pdf
+    primary_category: cs.LG
+    comment: null
+    journal_ref: null
+content_excerpt: Deploying large language models (LLMs) on mobile platforms faces
+  significant challenges due to the limited memory and shared computational resources
+  of the device. Resource availability may be an issue as it is directly impacted
+  by the current device workload, adding to the uncertainty of model deployment. We
+  introduce UniQL, a unified post-training quantization and low-rank compression framework
+  with on-device configurable pruning rates for edge LLMs. UniQL is a general framework
+  that integrate

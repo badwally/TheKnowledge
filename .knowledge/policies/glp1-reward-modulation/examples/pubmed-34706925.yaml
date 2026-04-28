@@ -1,0 +1,53 @@
+source_id: pubmed-34706925
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Wegovy overview for weight loss — general review mentions mechanism of
+  action but lacks depth on reward circuitry.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Wegovy (semaglutide): a new weight loss drug for chronic weight management.'
+  source_type: pubmed
+  authors:
+  - name: Gurdeep Singh
+    affiliation: Internal Medicine, Our Lady of Lourdes Memorial Hospital, Binghamton,
+      New York, USA drgsingh803@gmail.com.
+  - name: Matthew Krauthamer
+    affiliation: Emergency Medicine, Our Lady of Lourdes Memorial Hospital, Binghamton,
+      New York, USA.
+  - name: Meghan Bjalme-Evans
+    affiliation: Endocrinology, Our Lady of Lourdes Memorial Hospital, Binghamton,
+      New York, USA.
+  published_at: 2021 10 27
+  source_metadata:
+    pmid: '34706925'
+    doi: 10.1136/jim-2021-001952
+    journal: 'Journal of investigative medicine : the official publication of the
+      American Federation for Clinical Research'
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Anti-Obesity Agents
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Glucagon-Like Peptides
+    - Glycated Hemoglobin
+    - Humans
+    - Hypoglycemic Agents
+    - Injections, Subcutaneous
+    - Obesity
+    - Weight Loss
+    - Semaglutide
+    pmc_id: PMC8717485
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8717485/
+content_excerpt: Obesity is a growing epidemic within the USA. Because weight gain
+  is associated with an increased risk of developing life-threatening comorbidities,
+  such as hypertension or type 2 diabetes, there is great interest in developing non-invasive
+  pharmacotherapeutics to help combat obesity. Glucagon-like peptide-1 (GLP-1) receptor
+  agonists are a class of antidiabetic medications that have shown promise in encouraging
+  glycemic control and promoting weight loss in patients with or without type 2 diabete

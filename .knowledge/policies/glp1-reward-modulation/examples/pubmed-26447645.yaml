@@ -1,0 +1,77 @@
+source_id: pubmed-26447645
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Liraglutide added to testosterone therapy improves erectile function in
+  diabetic men — relevant to libido/sexual function but mechanism is metabolic improvement,
+  not direct reward.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Adding liraglutide to lifestyle changes, metformin and testosterone therapy
+    boosts erectile function in diabetic obese men with overt hypogonadism.
+  source_type: pubmed
+  authors:
+  - name: V A Giagulli
+    affiliation: Outpatient Clinic for Endocrinology and Metabolic Diseases, Conversano
+      Hospital, Conversano, Italy.
+  - name: M D Carbone
+    affiliation: Institute of Clinical and Hormonal Research, Foggia, Italy.
+  - name: M I Ramunni
+    affiliation: Outpatient Clinic for Endocrinology and Metabolic Diseases, Conversano
+      Hospital, Conversano, Italy.
+  - name: B Licchelli
+    affiliation: Endocrinology and Metabolic Diseases, University of Bari, Bari, Italy.
+  - name: G De Pergola
+    affiliation: Nutrition Outpatient Clinic, Clinical Oncology Unit, University of
+      Bari, Bari, Italy.
+  - name: C Sabb&#xe0;
+    affiliation: Rare Diseases Center, University of Bari, Bari, Italy.
+  - name: E Guastamacchia
+    affiliation: Endocrinology and Metabolic Diseases, University of Bari, Bari, Italy.
+  - name: V Triggiani
+    affiliation: Endocrinology and Metabolic Diseases, University of Bari, Bari, Italy.
+  published_at: 2015 10 07
+  source_metadata:
+    pmid: '26447645'
+    doi: 10.1111/andr.12099
+    journal: Andrology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Observational Study
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Biomarkers
+    - Blood Glucose
+    - Diabetes Mellitus, Type 2
+    - Drug Therapy, Combination
+    - Erectile Dysfunction
+    - Glycated Hemoglobin
+    - Hormone Replacement Therapy
+    - Humans
+    - Hypoglycemic Agents
+    - Hypogonadism
+    - Incretins
+    - Liraglutide
+    - Male
+    - Metformin
+    - Middle Aged
+    - Obesity
+    - Penile Erection
+    - Retrospective Studies
+    - Risk Reduction Behavior
+    - Testosterone
+    - Time Factors
+    - Treatment Outcome
+    - Weight Loss
+    pmc_id: null
+    full_text_url: null
+content_excerpt: The aim of this retrospective observational study was to evaluate
+  whether adding liraglutide to lifestyle changes, metformin (Met) and testosterone
+  replacement therapy (TRT), by means of improving weight and glycaemic control, could
+  boost erectile function in type 2 diabetic obese men with overt hypogonadism and
+  erectile dysfunction (ED) in a 'real-life setting'. Forty-three obese, diabetic
+  and hypogonadal men (aged 45-59 years) were evaluated because of complaining about
+  the recent onset of ED.

@@ -1,0 +1,44 @@
+source_id: arxiv-2603.21389
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Presents a systematic task-specific efficiency analysis of 16 language
+  models using a novel Performance-Efficiency Ratio (PER) integrating accuracy, throughput,
+  memory, and latency, demonstrating that small models (0.5–3B) dominate in resource-constrained
+  deployment scenarios. Directly useful for edge model selection decisions.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Task-Specific Efficiency Analysis: When Small Language Models Outperform
+    Large Language Models'
+  source_type: arxiv
+  authors:
+  - name: Jinghan Cao
+    affiliation: null
+  - name: Yu Ma
+    affiliation: null
+  - name: Xinjin Li
+    affiliation: null
+  - name: Qingyang Ren
+    affiliation: null
+  - name: Xiangyun Chen
+    affiliation: null
+  published_at: '2026-03-22T20:19:45Z'
+  source_metadata:
+    arxiv_id: '2603.21389'
+    categories:
+    - cs.CL
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2603.21389v1.pdf
+    primary_category: cs.CL
+    comment: Accepted for publication at ESANN 2025. This is a task-specific efficiency
+      analysis comparing small language models
+    journal_ref: null
+content_excerpt: Large Language Models achieve remarkable performance but incur substantial
+  computational costs unsuitable for resource-constrained deployments. This paper
+  presents the first comprehensive task-specific efficiency analysis comparing 16
+  language models across five diverse NLP tasks. We introduce the Performance-Efficiency
+  Ratio (PER), a novel metric integrating accuracy, throughput, memory, and latency
+  through geometric mean normalization. Our systematic evaluation reveals that small
+  models (0.5--

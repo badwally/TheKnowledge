@@ -1,0 +1,15 @@
+source_id: yt-FUYdY3__-3k
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide vs tirzepatide comparison; weight loss focus without reward
+  depth.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Not All Weight Loss Shots Are Equal… '
+  published_at: '2025-06-03T01:38:58Z'
+  channel: Strong and Hard
+content_excerpt: Semaglutide (Ozempic, Wegovy) and Tirzepatide (Mounjaro, Zepbound)
+  are two of the most powerful tools for weight loss and ...

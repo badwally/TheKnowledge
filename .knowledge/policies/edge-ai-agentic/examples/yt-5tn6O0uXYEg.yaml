@@ -1,0 +1,16 @@
+source_id: yt-5tn6O0uXYEg
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 18-minute LangChain Deep Agents tutorial covering memory, tools, and long-horizon
+  task management provides meaningful agent architecture patterns, though remains
+  cloud-centric with no explicit edge framing.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Build a Research Agent with Deep Agents
+  published_at: '2025-11-20T17:02:01Z'
+  channel: LangChain
+content_excerpt: Deepagents is a simple, open source agent harness built by LangChain.
+  It uses some common principle seen in popular agents ...

@@ -1,0 +1,41 @@
+source_id: pubmed-41716526
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 RA effects on urological health case reports — peripheral effects,
+  limited reward circuitry content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Beyond weight loss: Effect of GLP-1 receptor agonist therapy on the urological
+    health.'
+  source_type: pubmed
+  authors:
+  - name: Arisha Tariq
+    affiliation: Department of Urology, Penn State Health, Hershey, PA, USA.
+  - name: Adrian Garza Gangemi
+    affiliation: Department of Urology, Penn State Health, Hershey, PA, USA.
+  - name: Jaime Herrera Caceres
+    affiliation: Department of Urology, Penn State Health, Hershey, PA, USA.
+  published_at: 2026 02 09
+  source_metadata:
+    pmid: '41716526'
+    doi: 10.1016/j.eucr.2026.103368
+    journal: Urology case reports
+    peer_reviewed: true
+    publication_type:
+    - Case Reports
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC12914309
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12914309/
+content_excerpt: 'Glucagon-like-peptide-1 receptor agonists (GLP-1-RA) are increasingly
+  prescribed medications with well-documented gastrointestinal adverse effects. Urologic
+  adverse effects remain poorly characterized.
+
+
+  A 40-year-old male developed reproducible urinary frequency, penile pruritus, dysuria,
+  pelvic/perineal pain, and sexual dysfunction 3-4 weeks after initiating tirzepatide
+  therapy. Comprehensive infectious evaluation remained negative. Symptoms improved
+  4 days after discontinuing tirzepatide with '

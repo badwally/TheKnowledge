@@ -1,0 +1,76 @@
+source_id: pubmed-31539622
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: SUSTAIN 10 semaglutide vs liraglutide efficacy/safety in T2D — clinical
+  efficacy without reward mechanism content.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Efficacy and safety of once-weekly semaglutide 1.0mg vs once-daily liraglutide
+    1.2mg as add-on to 1-3 oral antidiabetic drugs in subjects with type 2 diabetes
+    (SUSTAIN 10).
+  source_type: pubmed
+  authors:
+  - name: M S Capehorn
+    affiliation: 'Rotherham Institute for Obesity, Clifton Medical Centre, S65 1DA
+      Rotherham, South Yorkshire, UK. Electronic address: mcapehorn@yahoo.co.uk.'
+  - name: A-M Catarig
+    affiliation: Novo Nordisk A/S, DK-2860 S&#xf8;borg, Denmark.
+  - name: J K Furberg
+    affiliation: Novo Nordisk A/S, DK-2860 S&#xf8;borg, Denmark.
+  - name: A Janez
+    affiliation: Department of Endocrinology, Diabetes and Metabolic Diseases, University
+      Medical Centre Ljubljana, 1000 Ljubljana, Slovenia.
+  - name: H C Price
+    affiliation: West Hampshire Community Diabetes Service, SO43 7NG Lyndhurst, UK.
+  - name: S Tadayon
+    affiliation: Novo Nordisk A/S, DK-2860 S&#xf8;borg, Denmark.
+  - name: B Verg&#xe8;s
+    affiliation: CHU, 21000 Dijon, France.
+  - name: M Marre
+    affiliation: Clinique Ambroise Par&#xe9;, 27, boulevard Victor-Hugo, 92200 Neuilly-sur-Seine,
+      France.
+  published_at: 2019 09 17
+  source_metadata:
+    pmid: '31539622'
+    doi: 10.1016/j.diabet.2019.101117
+    journal: Diabetes & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Clinical Trial, Phase III
+    - Comparative Study
+    - Journal Article
+    - Multicenter Study
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Administration, Oral
+    - Aged
+    - Blood Glucose
+    - Diabetes Mellitus, Type 2
+    - Drug Therapy, Combination
+    - Female
+    - Glucagon-Like Peptides
+    - Glycated Hemoglobin
+    - Humans
+    - Hypoglycemic Agents
+    - Injections, Subcutaneous
+    - Liraglutide
+    - Male
+    - Metformin
+    - Middle Aged
+    - Treatment Outcome
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'SUSTAIN 10 compared the efficacy and safety of the anticipated most
+  frequent semaglutide dose (1.0mg) with the current most frequently prescribed liraglutide
+  dose in Europe (1.2mg), reflecting clinical practice.
+
+
+  In this phase 3b, open-label trial, 577 adults with type 2 diabetes (HbA7.0-11.0%)
+  on 1-3 oral antidiabetic drugs were randomized 1:1 to subcutaneous once-weekly semaglutide
+  1.0mg or subcutaneous once-daily liraglutide 1.2mg. Primary and confirmatory secondary
+  endpoints were changes in '

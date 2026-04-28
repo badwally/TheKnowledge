@@ -1,0 +1,87 @@
+source_id: pubmed-40635383
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Systematic review of GLP-1 RA efficacy for psychiatric symptoms — directly
+  examines mood, motivation, and behavioral effects beyond metabolism.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Efficacy and Safety of Glucagon-Like Peptide-1 Agonists for Psychiatric
+    Symptoms: A Systematic Review.'
+  source_type: pubmed
+  authors:
+  - name: Shakila Meshkat
+    affiliation: Interventional Psychiatry Program, St. Michael's Hospital, Toronto,
+      Ontario, Canada.
+  - name: Corinna Di Luciano
+    affiliation: Interventional Psychiatry Program, St. Michael's Hospital, Toronto,
+      Ontario, Canada.
+  - name: Alyssa Swiderski
+    affiliation: Interventional Psychiatry Program, St. Michael's Hospital, Toronto,
+      Ontario, Canada.
+  - name: Gloria Li
+    affiliation: Interventional Psychiatry Program, St. Michael's Hospital, Toronto,
+      Ontario, Canada.
+  - name: Reinhard Janssen Aguilar
+    affiliation: Interventional Psychiatry Program, St. Michael's Hospital, Toronto,
+      Ontario, Canada.
+  - name: Benjamin T Dunkley
+    affiliation: Neurosciences & Mental Health, Hospital for Sick Children Research
+      Institute, Toronto, Canada.
+  - name: Amy C Reichelt
+    affiliation: Department of Physiology and Pharmacology, Western University, London,
+      Canada.
+  - name: Yanbo Zhang
+    affiliation: Department of Psychiatry, University of Alberta, Edmonton, Alberta,
+      Canada.
+  - name: Andrew Greenshaw
+    affiliation: Department of Psychiatry, University of Alberta, Edmonton, Alberta,
+      Canada.
+  - name: Eric Vermetten
+    affiliation: Department of Psychiatry, Leiden University Medical Center, Leiden,
+      the Netherlands.
+  - name: Rakesh Jetly
+    affiliation: The Institute of Mental Health Research, University of Ottawa, Royal
+      Ottawa Hospital, Ontario, Canada.
+  - name: Satya Dash
+    affiliation: Department of Endocrinology, Toronto General Hospital and University
+      of Toronto, Toronto, Ontario, Canada.
+  - name: Sri Mahavir Agarwal
+    affiliation: Institute of Medical Science, University of Toronto, Toronto, Ontario,
+      Canada.
+  - name: Jennifer Swainson
+    affiliation: Department of Psychiatry, University of Alberta, Edmonton, Alberta,
+      Canada.
+  - name: Venkat Bhat
+    affiliation: Interventional Psychiatry Program, St. Michael's Hospital, Toronto,
+      Ontario, Canada.
+  published_at: 2025 Jul
+  source_metadata:
+    pmid: '40635383'
+    doi: 10.1002/brb3.70661
+    journal: Brain and behavior
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Systematic Review
+    mesh_terms:
+    - Humans
+    - Exenatide
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Glucagon-Like Peptides
+    - Mental Disorders
+    - Recombinant Fusion Proteins
+    - Immunoglobulin Fc Fragments
+    pmc_id: PMC12241715
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12241715/
+content_excerpt: 'Glucagon-like peptide-1 receptor agonists (GLP-1 RAs) have emerged
+  as potential therapeutic options for psychiatric symptoms due to their effects on
+  mood and behavior. However, their use has been primarily for metabolic diseases,
+  and limited research has evaluated their psychiatric efficacy. This systematic review
+  examined the impact of GLP-1 RAs on psychiatric symptoms, categorizing studies based
+  on whether psychiatric outcomes were primary or secondary.
+
+
+  A comprehensive search through OVID dat'

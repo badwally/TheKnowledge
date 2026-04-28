@@ -1,0 +1,61 @@
+source_id: pubmed-30771711
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Brain region-specific GLP-1R effects on alcohol intake in rodents — directly
+  addresses regional specificity of reward modulation, key for dissociability question.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Brain region specific glucagon-like peptide-1 receptors regulate alcohol-induced
+    behaviors in rodents.
+  source_type: pubmed
+  authors:
+  - name: Daniel Vall&#xf6;f
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Aimilia Lydia Kalafateli
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: 'Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+      Electronic address: Elisabet.Jerlhag@pharm.gu.se.'
+  published_at: 2019 02 08
+  source_metadata:
+    pmid: '30771711'
+    doi: 10.1016/j.psyneuen.2019.02.006
+    journal: Psychoneuroendocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Alcohol Drinking
+    - Alcoholism
+    - Animals
+    - Conditioning, Operant
+    - Conditioning, Psychological
+    - Ethanol
+    - Exenatide
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Male
+    - Mice
+    - Nucleus Accumbens
+    - Peptides
+    - Rats
+    - Rats, Wistar
+    - Receptors, Glucagon
+    - Reward
+    - Ventral Tegmental Area
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Glucagon-like peptide 1 (GLP-1), an incretin hormone that reduces
+  food intake, was recently established as a novel regulator of alcohol-mediated behaviors.
+  Clinically available analogues pass freely into the brain, but the mechanisms underlying
+  GLP-1-modulated alcohol reward remains largely unclear. GLP-1 receptors (GLP-1R)
+  are expressed throughout the nuclei of importance for acute and chronic effects
+  of alcohol, such as the laterodorsal tegmental area (LDTg), the ventral tegmental
+  area (VTA) a

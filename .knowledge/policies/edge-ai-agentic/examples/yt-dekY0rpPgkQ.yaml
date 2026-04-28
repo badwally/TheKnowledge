@@ -1,0 +1,16 @@
+source_id: yt-dekY0rpPgkQ
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 28-minute conference session on Small Language Models from Big Data LDN
+  covers SLM fundamentals with some depth — relevant to on-device/edge model selection,
+  though edge deployment is not the explicit focus.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Small Language Models Beginners course
+  published_at: '2025-11-06T10:10:18Z'
+  channel: Big Data LDN
+content_excerpt: AI, Data Science & MLOps Theatre Thursday, 25th Sep 13:20 - 13:50
+  In this session, we will explore the world of small language ...

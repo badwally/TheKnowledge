@@ -1,0 +1,14 @@
+source_id: yt-UxYPIgGRSjg
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: A Spatiotemporal Oriented Energy Network for Dynamic Texture Recognition
+  published_at: '2017-11-16T22:48:30Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: ICCV17 | 2680 | A Spatiotemporal Oriented Energy Network for Dynamic
+  Texture Recognition Isma Hadji (York University), ...

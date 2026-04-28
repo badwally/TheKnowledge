@@ -1,0 +1,14 @@
+source_id: yt-NKjOfR8vcas
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Brain hunger/satiety pathways; not GLP-1 specific.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The Brain&#39;s Hunger/Satiety Pathways and Obesity, Animation
+  published_at: '2019-07-02T18:11:27Z'
+  channel: Alila Medical Media
+content_excerpt: (USMLE topics, neurobiology) The appetite pathway in the brain, leptin,
+  and pathology of obesity. Purchase a license to download ...

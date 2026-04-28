@@ -1,0 +1,14 @@
+source_id: yt-HsxS0c1Qi4A
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MS-Temba: Revolutionizing Action Detection in Untrimmed Videos'
+  published_at: '2025-01-21T20:15:26Z'
+  channel: 'TalkTensors: AI Podcast Covering ML Papers'
+content_excerpt: Exploring the cutting-edge MS-Temba model for efficient temporal
+  action detection in long, untrimmed videos. This multi-scale ...

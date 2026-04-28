@@ -1,0 +1,40 @@
+source_id: pubmed-40916127
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 brain mechanisms beyond metabolic effects — directly examines
+  non-metabolic neurological actions.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Mechanisms of glucagon-like-peptide 1 in the brain beyond metabolic effects.
+  source_type: pubmed
+  authors:
+  - name: Kyu Sik Kim
+    affiliation: Department of Biomedical Sciences, Seoul National University College
+      of Medicine, Seoul, Korea.
+  - name: Joon Seok Park
+    affiliation: Department of Biomedical Sciences, Seoul National University College
+      of Medicine, Seoul, Korea.
+  - name: Hyung Jin Choi
+    affiliation: Department of Biomedical Sciences, Seoul National University College
+      of Medicine, Seoul, Korea.
+  published_at: 2025 08 31
+  source_metadata:
+    pmid: '40916127'
+    doi: 10.6065/apem.2448320.160
+    journal: Annals of pediatric endocrinology & metabolism
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms: []
+    pmc_id: PMC12415283
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12415283/
+content_excerpt: Ever since its discovery, glucagon-like-peptide 1 (GLP-1) and drugs
+  with similar function (collectively GLP-1s) have been used for type 2 diabetes mellitus
+  and have been effective for obesity. Their profound effect on weight loss has resulted
+  in widespread use of these medicines for treating obesity. Extensive studies have
+  shown that GLP-1s decrease body weight, lean mass, and other metabolic phenotypes.
+  These studies were supported by the mechanism of signaling pathways of GLP-1s in
+  cells and t

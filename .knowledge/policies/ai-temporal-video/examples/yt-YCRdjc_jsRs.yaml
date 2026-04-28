@@ -1,0 +1,15 @@
+source_id: yt-YCRdjc_jsRs
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long
+    Videos (CVPR 2025)'
+  published_at: '2025-06-01T19:54:01Z'
+  channel: Tanveer Hannan
+content_excerpt: 'Abstract: Large language models (LLMs) excel at retrieving information
+  from lengthy text, but their vision-language counterparts ...'

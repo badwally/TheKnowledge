@@ -1,0 +1,14 @@
+source_id: yt-HpyQV1Ux5NI
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Rui Hou - Action Recognition, Temporal Localization and Detection in Trimmed
+    and Untrimmed Videos
+  published_at: '2019-07-15T18:34:11Z'
+  channel: UCF CRCV
+content_excerpt: ''

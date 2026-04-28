@@ -1,0 +1,15 @@
+source_id: yt-qTMwU8S-sWE
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Real-Time Stampede Risk Prediction from Crowd Videos Using YOLOv8 and Spatio-Temporal
+    Modeling
+  published_at: '2026-03-10T10:17:57Z'
+  channel: Jack Sparrow Publishers
+content_excerpt: In this video, we present an advanced intelligent framework that
+  uses YOLOv8 and spatio-temporal modeling to analyze crowd ...

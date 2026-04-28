@@ -1,0 +1,15 @@
+source_id: yt-VChRPFUzJGA
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Jack Herrington 10-minute technical walkthrough of MCP as the key to agentic
+  AI — covers protocol creation and use with code examples at moderate depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Model Context Protocol (MCP): The Key To Agentic AI'
+  published_at: '2025-03-17T14:34:30Z'
+  channel: Jack Herrington
+content_excerpt: The Model Content Protocol is taking the AI world by storm. Find
+  out what MCP is, what it can be used for, how to create and use ...

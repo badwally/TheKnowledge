@@ -1,0 +1,14 @@
+source_id: yt-0YLpWqkFrB8
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Learning Temporal Co-Attention Models for Unsupervised Video Action Localization
+  published_at: '2021-05-14T15:10:38Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Guoqiang Gong, Xinghan Wang, Yadong Mu, Qi Tian Temporal
+  action localization (TAL) in untrimmed videos recently ...'

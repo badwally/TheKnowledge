@@ -1,0 +1,16 @@
+source_id: yt-X95MFcYH1_s
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology 8.5-minute comparison of MCP vs. RAG for AI agent data access
+  — useful architectural framing of how agents connect to information, relevant to
+  agentic workflow design.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MCP vs. RAG: How AI Agents &amp; LLMs Connect to Data'
+  published_at: '2025-11-17T12:01:09Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx AI Assistant Engineer? Register
+  now and use code IBMTechYT20 for 20% off of your exam ...

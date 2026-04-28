@@ -1,0 +1,13 @@
+source_id: yt-JTmSJ95_WXs
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: TAEN Temporal aware embedding network for few shot action recognition
+  published_at: '2021-06-18T14:33:56Z'
+  channel: Learning with Limited and Imperfect Data
+content_excerpt: ''

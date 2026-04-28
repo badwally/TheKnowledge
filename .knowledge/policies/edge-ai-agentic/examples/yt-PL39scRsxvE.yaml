@@ -1,0 +1,17 @@
+source_id: yt-PL39scRsxvE
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: HUB Security 2021 federated learning and AI data security summit covers
+  privacy-preserving distributed AI training, relevant to the federated learning dimension
+  of the domain's inclusion criteria, with panel format suggesting some technical
+  depth across the 111-minute runtime.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Federated Learning, AI &amp; Data Security Summit
+  published_at: '2021-05-10T07:17:14Z'
+  channel: HUB Security
+content_excerpt: 'HUB Security is excited to host a panel of leading experts at our
+  May 2021 summit. The panel will include the following topics: ...'

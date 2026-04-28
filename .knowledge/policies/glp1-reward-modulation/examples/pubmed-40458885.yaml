@@ -1,0 +1,44 @@
+source_id: pubmed-40458885
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide for cardiovascular-kidney-metabolic syndrome — metabolic focus.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Semaglutide: a key medication for managing cardiovascular-kidney-metabolic
+    syndrome.'
+  source_type: pubmed
+  authors:
+  - name: Richard J MacIsaac
+    affiliation: Director of Endocrinology & Diabetes, St Vincent's Hospital Melbourne
+      & Professorial Fellow University of Melbourne, Victoria, Australia.
+  published_at: 2025 06 03
+  source_metadata:
+    pmid: '40458885'
+    doi: 10.1080/14796678.2025.2511412
+    journal: Future cardiology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Glucagon-Like Peptides
+    - Cardiovascular Diseases
+    - Metabolic Syndrome
+    - Diabetes Mellitus, Type 2
+    - Hypoglycemic Agents
+    - Renal Insufficiency, Chronic
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: PMC12258229
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12258229/
+content_excerpt: 'Recent trials underscore the cardiovascular (CV), renal, and metabolic
+  benefits of semaglutide in individuals with and without type 2 diabetes (T2D). In
+  T2D, semaglutide enhances glycemic control, reduces major adverse CV events (MACE),
+  and slows chronic kidney disease (CKD) progression. The SUSTAIN-6 trial demonstrated
+  a 26% MACE reduction (HR 0.74; 95% CI: 0.58-0.95; = 0.02) in high CV-risk patients
+  with T2D using semaglutide (0.5 or 1.0 mg weekly). Similarly, the FLOW trial showed
+  a 24% reduc'

@@ -1,0 +1,15 @@
+source_id: yt-GgE_p7pP4Ig
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding
+    and Grounding (Jan'
+  published_at: '2026-01-19T20:20:33Z'
+  channel: AI Paper Slop
+content_excerpt: 'Title: Molmo2: Open Weights and Data for Vision-Language Models
+  with Video Understanding and Grounding (Jan 2026) Link: ...'

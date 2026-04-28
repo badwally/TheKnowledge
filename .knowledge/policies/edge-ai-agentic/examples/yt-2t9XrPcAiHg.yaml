@@ -1,0 +1,16 @@
+source_id: yt-2t9XrPcAiHg
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 14-minute technical comparison of Llama.cpp vs Ollama for local AI covers
+  runtime performance tradeoffs for on-device LLM inference — useful competitive landscape
+  for edge inference runtimes, though lacks agentic workflow framing.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Local AI just leveled up... Llama.cpp vs Ollama
+  published_at: '2025-11-14T16:33:32Z'
+  channel: Alex Ziskind
+content_excerpt: 'Llama.cpp Web UI + GGUF Setup Walkthrough and Ollama comparisons.
+  Check out ChatLLM: https://chatllm.abacus.ai/ltf My ...'

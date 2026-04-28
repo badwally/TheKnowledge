@@ -1,0 +1,14 @@
+source_id: yt-lEUluMdNHcc
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Video LLMs for Temporal Reasoning in Long Videos
+  published_at: '2025-01-03T23:20:00Z'
+  channel: Retrocausal AI
+content_excerpt: This video introduces TemporalVLM, a supervised approach that uses
+  Bidirectional LSTM aggregation to capture fine-grained, ...

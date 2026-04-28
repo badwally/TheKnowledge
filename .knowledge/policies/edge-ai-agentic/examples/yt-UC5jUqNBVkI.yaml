@@ -1,0 +1,17 @@
+source_id: yt-UC5jUqNBVkI
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Official Chrome for Developers 15-minute walkthrough of running Gemma 3/3n
+  LLMs in-browser via MediaPipe Web; covers Google's on-device inference stack with
+  specific API details, model families, and runtime architecture relevant to the GPM
+  role.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Running Google&#39;s Gemma LLMs in the browser with MediaPipe Web
+  published_at: '2025-11-26T20:54:19Z'
+  channel: Chrome for Developers
+content_excerpt: Google's Gemma 3 and Gemma 3n large language model (LLM) families
+  offer some of the most powerful LLMs yet for their ...

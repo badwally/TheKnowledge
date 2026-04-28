@@ -1,0 +1,14 @@
+source_id: yt-F4czRPFJBbU
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Not relevant to GLP-1 reward/neurological effects; unrelated medical topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Cocaine Withdrawal
+  published_at: '2023-06-06T13:00:15Z'
+  channel: Medical Centric Podcast
+content_excerpt: 'CocaineWithdrawal #DrugWithdrawal #SubstanceWithdrawal #AddictionRecovery
+  #DrugDetox #WithdrawalSymptoms ...'

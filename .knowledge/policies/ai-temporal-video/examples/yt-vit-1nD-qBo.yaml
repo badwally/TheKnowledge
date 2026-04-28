@@ -1,0 +1,15 @@
+source_id: yt-vit-1nD-qBo
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Multi Task Video Captioning with Visual and Textual Entailment  | Mohit Bansal
+    | ACL 2017
+  published_at: '2018-03-03T09:15:08Z'
+  channel: Artificial Intelligence - All in One
+content_excerpt: Stay Connected! Get the latest insights on Artificial Intelligence
+  (AI) , Natural Language Processing (NLP) , and Large ...

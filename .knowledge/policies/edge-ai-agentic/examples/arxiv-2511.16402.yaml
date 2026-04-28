@@ -1,0 +1,38 @@
+source_id: arxiv-2511.16402
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Argues that trustworthy agentic workflows require agent-first data infrastructure
+  and proposes Bauplan, a lakehouse reimplemented with MVCC-like isolation for agents;
+  provides a reference self-healing pipeline implementation with concrete correctness
+  guarantees.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Trustworthy AI in the Agentic Lakehouse: from Concurrency to Governance'
+  source_type: arxiv
+  authors:
+  - name: Jacopo Tagliabue
+    affiliation: null
+  - name: Federico Bianchi
+    affiliation: null
+  - name: Ciro Greco
+    affiliation: null
+  published_at: '2025-11-20T14:21:34Z'
+  source_metadata:
+    arxiv_id: '2511.16402'
+    categories:
+    - cs.AI
+    - cs.DB
+    pdf_url: http://arxiv.org/pdf/2511.16402v1.pdf
+    primary_category: cs.AI
+    comment: AAAI26, pre-print of paper accepted at the Trustworthy Agentic AI Workshop
+    journal_ref: null
+content_excerpt: 'Even as AI capabilities improve, most enterprises do not consider
+  agents trustworthy enough to work on production data. In this paper, we argue that
+  the path to trustworthy agentic workflows begins with solving the infrastructure
+  problem first: traditional lakehouses are not suited for agent access patterns,
+  but if we design one around transactions, governance follows. In particular, we
+  draw an operational analogy to MVCC in databases and show why a direct transplant
+  fails in a decoupled, multi-'

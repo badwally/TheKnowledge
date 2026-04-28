@@ -1,0 +1,15 @@
+source_id: yt-OHbyNcSWXqQ
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Discusses GLP-1 reducing drug/alcohol addiction risk from study; research-based.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Weight loss drugs like Ozempic may help reduce drug and alcohol addiction
+    risks Study
+  published_at: '2025-10-28T06:00:33Z'
+  channel: Medical Dialogues
+content_excerpt: 'wieghtloss #ozempic #alcoholaddiction Researchers have identified
+  Glucagon-Like Peptide-1 Receptor Agonists ...'

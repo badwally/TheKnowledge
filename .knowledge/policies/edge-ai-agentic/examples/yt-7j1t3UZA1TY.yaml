@@ -1,0 +1,16 @@
+source_id: yt-7j1t3UZA1TY
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology 13-minute substantive comparison of MCP vs. API for AI agent
+  data integration — covers protocol design tradeoffs, integration patterns, and scalability
+  considerations relevant to agentic systems.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MCP vs API: Simplifying AI Agent Integration with External Data'
+  published_at: '2025-05-05T11:00:12Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified Solution Implementer? Register now and
+  use code IBMTechYT20 for 20% off of your exam ...

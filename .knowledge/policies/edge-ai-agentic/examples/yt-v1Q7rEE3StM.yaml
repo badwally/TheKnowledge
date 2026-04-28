@@ -1,0 +1,17 @@
+source_id: yt-v1Q7rEE3StM
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Microsoft Developer's 25-minute talk on multi-agent systems in Azure AI
+  Foundry covers fleet-level orchestration, single-agent-to-production scaling, and
+  system design — substantive treatment of orchestration architecture directly relevant
+  to understanding the competitive landscape against Google.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: AI powered automation &amp; multi-agent orchestration in Foundry
+  published_at: '2025-12-10T22:07:54Z'
+  channel: Microsoft Developer
+content_excerpt: Build multi-agent systems the right way with Microsoft Foundry. Go
+  from single-agent prototypes to fleet-level orchestration using ...

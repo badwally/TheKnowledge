@@ -1,0 +1,14 @@
+source_id: yt-RkdhHDvj4UA
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Action Segmentation with Mixed Temporal Domain Adaptation
+  published_at: '2020-05-26T00:30:54Z'
+  channel: Min-Hung Chen
+content_excerpt: Min-Hung Chen, Baopu Li, Yingze Bao, and Ghassan AlRegib, “Action
+  Segmentation with Mixed Temporal Domain Adaptation”, ...

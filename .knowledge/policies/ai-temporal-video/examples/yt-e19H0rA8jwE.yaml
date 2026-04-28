@@ -1,0 +1,14 @@
+source_id: yt-e19H0rA8jwE
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Temporal Pyramid Network for Action Recognition
+  published_at: '2020-07-16T23:48:17Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Ceyuan Yang, Yinghao Xu, Jianping Shi, Bo Dai, Bolei Zhou
+  Description: Visual tempo characterizes the dynamics and ...'

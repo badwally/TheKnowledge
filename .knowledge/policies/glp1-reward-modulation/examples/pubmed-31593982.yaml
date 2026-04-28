@@ -1,0 +1,69 @@
+source_id: pubmed-31593982
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Insula-to-ventral-striatum projections in compulsive eating — relevant
+  circuit for understanding reward-driven eating though not GLP-1 specific.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Insula to ventral striatal projections mediate compulsive eating produced
+    by intermittent access to palatable food.
+  source_type: pubmed
+  authors:
+  - name: Samantha Spierling
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA. samspier@scripps.edu.
+  - name: Giordano de Guglielmo
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA.
+  - name: Dean Kirson
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA.
+  - name: Alison Kreisler
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA.
+  - name: Marisa Roberto
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA.
+  - name: Olivier George
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA.
+  - name: Eric P Zorrilla
+    affiliation: Department of Neuroscience, The Scripps Research Institute, The Scripps
+      Research Institute, 10550N. Torrey Pines Rd., La Jolla, CA, 92037, USA. ezorrill@scripps.edu.
+  published_at: 2019 10 08
+  source_metadata:
+    pmid: '31593982'
+    doi: 10.1038/s41386-019-0538-x
+    journal: 'Neuropsychopharmacology : official publication of the American College
+      of Neuropsychopharmacology'
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    mesh_terms:
+    - Animals
+    - Cerebral Cortex
+    - Compulsive Behavior
+    - Conditioning, Operant
+    - Feeding Behavior
+    - Female
+    - Food Addiction
+    - Nerve Net
+    - Neural Pathways
+    - Optogenetics
+    - Rats
+    - Rats, Wistar
+    - Time Factors
+    - Ventral Striatum
+    pmc_id: PMC7021713
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7021713/
+content_excerpt: Compulsive eating characterizes many binge-related eating disorders,
+  yet its neurobiological basis is poorly understood. The insular cortex subserves
+  visceral-emotional functions, including taste processing, and is implicated in drug
+  craving and relapse. Here, via optoinhibition, we implicate projections from the
+  anterior insular cortex to the nucleus accumbens as modulating highly compulsive-like
+  food self-administration behaviors that result from intermittent access to a palatable,
+  high-sucros

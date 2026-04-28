@@ -1,0 +1,15 @@
+source_id: yt-l93LrDpIJGY
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology 8-minute video on MCP in action for agent integration —
+  covers practical implementation patterns for connecting AI agents to real systems.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'MCP in Action: Revolutionizing AI Agent Integration'
+  published_at: '2025-07-29T11:01:16Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified Solution Implementer - DataPower Gateway?
+  Register now and use code IBMTechYT20 for 20% off ...

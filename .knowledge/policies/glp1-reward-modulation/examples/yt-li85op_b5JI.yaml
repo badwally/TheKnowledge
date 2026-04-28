@@ -1,0 +1,15 @@
+source_id: yt-li85op_b5JI
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Obesity doctor on when to microdose/split dose; focuses on weight loss
+  outcomes.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: When GLP-1 Microdosing/Split Dosing Might Be the Best Option? (Obesity Doctor)
+  published_at: '2025-06-30T17:00:56Z'
+  channel: Weight Medicine with Dr. Meghan MD
+content_excerpt: If you would like to fix the *one BIG thing* interfering with your
+  weight loss goals, I can help you with that. To schedule a consult ...

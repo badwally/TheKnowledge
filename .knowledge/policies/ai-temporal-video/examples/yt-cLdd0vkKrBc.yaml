@@ -1,0 +1,15 @@
+source_id: yt-cLdd0vkKrBc
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: iPerceive | Applying Common-Sense Reasoning to Dense Video Captioning and
+    Video Question Answering
+  published_at: '2020-06-10T07:50:06Z'
+  channel: Aman Chadha
+content_excerpt: 'For more: http://iperceive.amanchadha.com Most of the previous works
+  in visual understanding, rely solely on understanding the ...'

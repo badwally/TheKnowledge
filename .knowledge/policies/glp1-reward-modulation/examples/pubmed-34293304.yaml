@@ -1,0 +1,76 @@
+source_id: pubmed-34293304
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: SUSTAIN FORTE semaglutide 2.0 vs 1.0 mg for T2D — dose comparison for glycemic
+  control, not neurological.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Efficacy and safety of once-weekly semaglutide 2·0 mg versus 1·0 mg in patients
+    with type 2 diabetes (SUSTAIN FORTE): a double-blind, randomised, phase 3B trial.'
+  source_type: pubmed
+  authors:
+  - name: Juan P Fr&#xed;as
+    affiliation: 'Clinical Research, National Research Institute, Los Angeles, CA,
+      USA. Electronic address: juan.frias@nritrials.com.'
+  - name: Pernille Auerbach
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Harpreet S Bajaj
+    affiliation: LMC Diabetes and Endocrinology, Brampton, ON, Canada.
+  - name: Yasushi Fukushima
+    affiliation: Fukuwa Clinic, Tokyo, Japan.
+  - name: Ildiko Lingvay
+    affiliation: Department of Internal Medicine/Endocrinology, University of Texas
+      Southwestern Medical Center, Dallas, TX, USA; Department of Population and Data
+      Sciences, University of Texas Southwestern Medical Center, Dallas, TX, USA.
+  - name: Stanislava Macura
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Anette L S&#xf8;ndergaard
+    affiliation: Novo Nordisk, S&#xf8;borg, Denmark.
+  - name: Tsvetalina I Tankova
+    affiliation: Department of Endocrinology, Medical University of Sofia, Sofia,
+      Bulgaria.
+  - name: Nikolaos Tentolouris
+    affiliation: Diabetes Centre, First Department of Propaedeutic Internal Medicine,
+      Medical School, National and Kapodistrian University of Athens, Laiko General
+      Hospital, Athens, Greece.
+  - name: John B Buse
+    affiliation: Department of Medicine, University of North Carolina School of Medicine,
+      Chapel Hill, NC, USA.
+  published_at: 2021 07 21
+  source_metadata:
+    pmid: '34293304'
+    doi: 10.1016/S2213-8587(21)00174-1
+    journal: The lancet. Diabetes & endocrinology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Randomized Controlled Trial
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Diabetes Mellitus, Type 2
+    - Double-Blind Method
+    - Drug Therapy, Combination
+    - Female
+    - Glucagon-Like Peptides
+    - Humans
+    - Hypoglycemic Agents
+    - Male
+    - Metformin
+    - Middle Aged
+    - Sulfonylurea Compounds
+    - Treatment Outcome
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Semaglutide is an effective treatment for type 2 diabetes; however,
+  20-30% of patients given semaglutide 1·0 mg do not reach glycaemic treatment goals.
+  We aimed to investigate the efficacy and safety of once-weekly semaglutide 2·0 mg
+  versus 1·0 mg in adults with inadequately controlled type 2 diabetes on a stable
+  dose of metformin with or without a sulfonylurea.
+
+
+  We did a 40-week, randomised, active-controlled, parallel-group, double-blind, phase
+  3B trial (SUSTAIN FORTE) at 125 outpatient clinic'

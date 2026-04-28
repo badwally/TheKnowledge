@@ -1,0 +1,98 @@
+source_id: pubmed-37148870
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 and nicotine combination therapy engages hypothalamic and mesolimbic
+  pathways — shows crosstalk between GLP-1 and nicotinic reward circuits.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1 and nicotine combination therapy engages hypothalamic and mesolimbic
+    pathways to reverse obesity.
+  source_type: pubmed
+  authors:
+  - name: Sarah Falk
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Jonas Petersen
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark;
+      Department of Drug Design and Pharmacology, Faculty of Health and Medical Sciences,
+      University of Copenhagen, Copenhagen, Denmark.
+  - name: Charlotte Svendsen
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Cesar R Romero-Leguizam&#xf3;n
+    affiliation: Department of Drug Design and Pharmacology, Faculty of Health and
+      Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: S&#xf8;ren Heide J&#xf8;rgensen
+    affiliation: Department of Neuroscience, Faculty of Health and Medical Sciences,
+      University of Copenhagen, Copenhagen, Denmark.
+  - name: Nathalie Krauth
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark;
+      Department of Neuroscience, Faculty of Health and Medical Sciences, University
+      of Copenhagen, Copenhagen, Denmark.
+  - name: Mette Q Ludwig
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Kathrine Lund&#xf8;
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Urmas Roostalu
+    affiliation: Gubra, H&#xf8;rsholm, Denmark.
+  - name: Grethe Skovbjerg
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark;
+      Gubra, H&#xf8;rsholm, Denmark.
+  - name: Duy Anh Gurskov Nielsen
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Aske Lykke Ejdrup
+    affiliation: Department of Neuroscience, Faculty of Health and Medical Sciences,
+      University of Copenhagen, Copenhagen, Denmark.
+  - name: Tune H Pers
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Oksana Dmytriyeva
+    affiliation: Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Jacob Hecksher-S&#xf8;rensen
+    affiliation: Gubra, H&#xf8;rsholm, Denmark.
+  - name: Ulrik Gether
+    affiliation: Department of Neuroscience, Faculty of Health and Medical Sciences,
+      University of Copenhagen, Copenhagen, Denmark.
+  - name: Kristi A Kohlmeier
+    affiliation: Department of Drug Design and Pharmacology, Faculty of Health and
+      Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+  - name: Christoffer Clemmensen
+    affiliation: 'Novo Nordisk Foundation Center for Basic Metabolic Research, Faculty
+      of Health and Medical Sciences, University of Copenhagen, Copenhagen, Denmark.
+      Electronic address: chc@sund.ku.dk.'
+  published_at: 2023 05 05
+  source_metadata:
+    pmid: '37148870'
+    doi: 10.1016/j.celrep.2023.112466
+    journal: Cell reports
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Mice
+    - Animals
+    - Glucagon-Like Peptide 1
+    - Liraglutide
+    - Nicotine
+    - Dopamine
+    - Obesity
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Glucagon-like peptide-1 receptor (GLP-1R) agonists promote nicotine
+  avoidance. Here, we show that the crosstalk between GLP-1 and nicotine extends beyond
+  effects on nicotine self-administration and can be exploited pharmacologically to
+  amplify the anti-obesity effects of both signals. Accordingly, combined treatment
+  with nicotine and the GLP-1R agonist, liraglutide, inhibits food intake and increases
+  energy expenditure to lower body weight in obese mice. Co-treatment with nicotine
+  and liraglutid

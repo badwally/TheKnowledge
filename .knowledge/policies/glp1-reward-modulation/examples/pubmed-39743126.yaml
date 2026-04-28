@@ -1,0 +1,54 @@
+source_id: pubmed-39743126
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of tirzepatide and semaglutide for obesity-related diseases and
+  addictions — comparative pharmacology of different GLP-1 compounds on reward.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Anti-consumption agents: Tirzepatide and semaglutide for treating obesity-related
+    diseases and addictions, and improving life expectancy.'
+  source_type: pubmed
+  authors:
+  - name: James H O'Keefe
+    affiliation: 'Saint Luke''s Mid America Heart Institute and University of Missouri-Kansas
+      City, Kansas City, MO, United States of America. Electronic address: ljwilson@saintlukeskc.org.'
+  - name: W Grant Franco
+    affiliation: Saint Luke's Mid America Heart Institute and University of Missouri-Kansas
+      City, Kansas City, MO, United States of America.
+  - name: Evan L O'Keefe
+    affiliation: Saint Luke's Mid America Heart Institute and University of Missouri-Kansas
+      City, Kansas City, MO, United States of America.
+  published_at: 2024 12 30
+  source_metadata:
+    pmid: '39743126'
+    doi: 10.1016/j.pcad.2024.12.010
+    journal: Progress in cardiovascular diseases
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Obesity
+    - Glucagon-Like Peptides
+    - Life Expectancy
+    - Substance-Related Disorders
+    - Treatment Outcome
+    - Anti-Obesity Agents
+    - Behavior, Addictive
+    - Animals
+    - Tirzepatide
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: PMC12103286
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12103286/
+content_excerpt: 'American culture encourages overconsumption, fueled by ubiquitous
+  availability and pervasive marketing of ultra-processed foods and other addictive
+  substances. This chronic overindulgence has contributed to rising rates of obesity,
+  type 2 diabetes (T2D), substance abuse, mental health disorders and premature mortality.
+  Glucose-like peptide-1 agonists (GLP-1RAs) affect the brain''s reward pathway that
+  mediates addiction to foods and various other substances. Evolving data suggest
+  that tirzepatide '

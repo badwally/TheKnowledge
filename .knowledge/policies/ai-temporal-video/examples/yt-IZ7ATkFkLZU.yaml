@@ -1,0 +1,14 @@
+source_id: yt-IZ7ATkFkLZU
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Spatio temporal processing algorithms of image(.)
+  published_at: '2018-03-04T11:37:57Z'
+  channel: Josette Macky
+content_excerpt: Spatio-temporal processing algorithms of image sequences for automatic
+  recognition and registration of motion - Spatio-temporal ...

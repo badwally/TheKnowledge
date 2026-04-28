@@ -1,0 +1,60 @@
+source_id: pubmed-38629387
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Systematic review of semaglutide effects on lean mass — body composition
+  focus.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'A systematic review of the effect of semaglutide on lean mass: insights
+    from clinical trials.'
+  source_type: pubmed
+  authors:
+  - name: Alexia Bikou
+    affiliation: Laboratory of Hygiene and Environmental Protection, Department of
+      Medicine, Democritus University of Thrace, Alexandroupolis, Greece.
+  - name: Foteini Dermiki-Gkana
+    affiliation: Laboratory of Hygiene and Environmental Protection, Department of
+      Medicine, Democritus University of Thrace, Alexandroupolis, Greece.
+  - name: Michail Penteris
+    affiliation: Laboratory of Hygiene and Environmental Protection, Department of
+      Medicine, Democritus University of Thrace, Alexandroupolis, Greece.
+  - name: Theodoros K Constantinides
+    affiliation: Laboratory of Hygiene and Environmental Protection, Department of
+      Medicine, Democritus University of Thrace, Alexandroupolis, Greece.
+  - name: Christos Kontogiorgis
+    affiliation: Laboratory of Hygiene and Environmental Protection, Department of
+      Medicine, Democritus University of Thrace, Alexandroupolis, Greece.
+  published_at: 2024 04 18
+  source_metadata:
+    pmid: '38629387'
+    doi: 10.1080/14656566.2024.2343092
+    journal: Expert opinion on pharmacotherapy
+    peer_reviewed: true
+    publication_type:
+    - Systematic Review
+    - Journal Article
+    mesh_terms:
+    - Humans
+    - Glucagon-Like Peptides
+    - Weight Loss
+    - Obesity
+    - Randomized Controlled Trials as Topic
+    - Overweight
+    - Anti-Obesity Agents
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Semaglutide, a glucagon-like peptide-1 receptor agonist, is associated
+  with significant weight loss, yet its impact on lean body mass remains insufficiently
+  understood. This review investigates the effect of semaglutide on lean mass in the
+  context of obesity management.
+
+
+  This study investigates through different databases (PubMed, Elsevier, and Google
+  Scholar) from 2016 for randomized control trials (RCTs) or observational studies
+  that assessed the use of semaglutide in overweight or obese patie'

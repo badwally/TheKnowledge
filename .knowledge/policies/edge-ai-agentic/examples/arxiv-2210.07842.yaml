@@ -1,0 +1,44 @@
+source_id: arxiv-2210.07842
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: ENTS is an edge-native task scheduling system addressing latency, throughput,
+  and data locality for containerized workloads at the edge; technically substantive
+  (Kubernetes gaps, edge-native design) but predates AI inference workloads as the
+  primary use case.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'ENTS: An Edge-native Task Scheduling System for Collaborative Edge Computing'
+  source_type: arxiv
+  authors:
+  - name: Mingjin Zhang
+    affiliation: null
+  - name: Jiannong Cao
+    affiliation: null
+  - name: Lei Yang
+    affiliation: null
+  - name: Liang Zhang
+    affiliation: null
+  - name: Yuvraj Sahni
+    affiliation: null
+  - name: Shan Jiang
+    affiliation: null
+  published_at: '2022-10-14T14:13:35Z'
+  source_metadata:
+    arxiv_id: '2210.07842'
+    categories:
+    - cs.NI
+    - cs.DC
+    pdf_url: http://arxiv.org/pdf/2210.07842v1.pdf
+    primary_category: cs.NI
+    comment: The Seventh ACM/IEEE Symposium on Edge Computing (SEC), 2022
+    journal_ref: null
+content_excerpt: Collaborative edge computing (CEC) is an emerging paradigm enabling
+  sharing of the coupled data, computation, and networking resources among heterogeneous
+  geo-distributed edge nodes. Recently, there has been a trend to orchestrate and
+  schedule containerized application workloads in CEC, while Kubernetes has become
+  the de-facto standard broadly adopted by the industry and academia. However, Kubernetes
+  is not preferable for CEC because its design is not dedicated to edge computing
+  and neglects the

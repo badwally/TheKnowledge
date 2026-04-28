@@ -1,0 +1,16 @@
+source_id: yt-GuTcle5edjk
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: NetworkChuck 38-minute hands-on MCP tutorial featuring Docker MCP Catalog
+  — practical implementation coverage of MCP server deployment, relevant as protocol
+  infrastructure.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: you need to learn MCP RIGHT NOW!! (Model Context Protocol)
+  published_at: '2025-09-12T18:49:40Z'
+  channel: NetworkChuck
+content_excerpt: 'Try for FREE the Docker MCP Catalog: https://dockr.ly/3UFTCj4 🖥️
+  Download Docker Desktop: https://dockr.ly/3HgjIGj You need ...'

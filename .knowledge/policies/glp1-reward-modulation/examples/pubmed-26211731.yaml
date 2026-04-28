@@ -1,0 +1,59 @@
+source_id: pubmed-26211731
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Shows lithium chloride suppresses phasic dopamine via central GLP-1 receptors,
+  mechanistic insight into GLP-1-dopamine interaction in NAc.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The Aversive Agent Lithium Chloride Suppresses Phasic Dopamine Release Through
+    Central GLP-1 Receptors.
+  source_type: pubmed
+  authors:
+  - name: Samantha M Fortin
+    affiliation: Graduate Program in Neuroscience, University of Illinois at Chicago,
+      Chicago, IL, USA.
+  - name: Elena H Chartoff
+    affiliation: Department of Psychiatry, Harvard Medical School, McLean Hospital,
+      Belmont, MA, USA.
+  - name: Mitchell F Roitman
+    affiliation: Department of Psychology, University of Illinois at Chicago, Chicago,
+      IL, USA.
+  published_at: 2015 07 27
+  source_metadata:
+    pmid: '26211731'
+    doi: 10.1038/npp.2015.220
+    journal: 'Neuropsychopharmacology : official publication of the American College
+      of Neuropsychopharmacology'
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    mesh_terms:
+    - Analgesics, Opioid
+    - Animals
+    - Association Learning
+    - Avoidance Learning
+    - Diterpenes, Clerodane
+    - Dopamine
+    - Electric Stimulation
+    - Glucagon-Like Peptide-1 Receptor
+    - Lithium Chloride
+    - Male
+    - Nucleus Accumbens
+    - Psychotropic Drugs
+    - Rats, Sprague-Dawley
+    - Receptors, Opioid, kappa
+    - Reward
+    - Ventral Tegmental Area
+    pmc_id: PMC4707837
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4707837/
+content_excerpt: Unconditioned rewarding stimuli evoke phasic increases in dopamine
+  concentration in the nucleus accumbens (NAc) while discrete aversive stimuli elicit
+  pauses in dopamine neuron firing and reductions in NAc dopamine concentration. The
+  unconditioned effects of more prolonged aversive states on dopamine release dynamics
+  are not well understood and are investigated here using the malaise-inducing agent
+  lithium chloride (LiCl). We used fast-scan cyclic voltammetry to measure phasic
+  increases in NAc d

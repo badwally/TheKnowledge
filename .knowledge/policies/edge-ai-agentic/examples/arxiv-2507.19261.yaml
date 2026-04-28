@@ -1,0 +1,45 @@
+source_id: arxiv-2507.19261
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Knowledge grafting transfers selected features from large donor to small
+  rootstock model achieving 88.54% size reduction while improving accuracy; directly
+  targets resource-constrained device deployment with empirical results.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Knowledge Grafting: A Mechanism for Optimizing AI Model Deployment in Resource-Constrained
+    Environments'
+  source_type: arxiv
+  authors:
+  - name: Osama Almurshed
+    affiliation: null
+  - name: Ashish Kaushal
+    affiliation: null
+  - name: Asmail Muftah
+    affiliation: null
+  - name: Nitin Auluck
+    affiliation: null
+  - name: Omer Rana
+    affiliation: null
+  published_at: '2025-07-25T13:37:45Z'
+  source_metadata:
+    arxiv_id: '2507.19261'
+    categories:
+    - cs.AI
+    - cs.LG
+    - cs.PF
+    pdf_url: http://arxiv.org/pdf/2507.19261v1.pdf
+    primary_category: cs.AI
+    comment: 18 pages, 4 figures, ArXiv preprint - Novel "knowledge grafting" technique
+      achieving 88.54% AI model size reduction while improving accuracy for resource-constrained
+      deployment
+    journal_ref: null
+content_excerpt: The increasing adoption of Artificial Intelligence (AI) has led to
+  larger, more complex models with numerous parameters that require substantial computing
+  power -- resources often unavailable in many real-world application scenarios. Our
+  paper addresses this challenge by introducing knowledge grafting, a novel mechanism
+  that optimizes AI models for resource-constrained environments by transferring selected
+  features (the scion) from a large donor model to a smaller rootstock model. The
+  approach a

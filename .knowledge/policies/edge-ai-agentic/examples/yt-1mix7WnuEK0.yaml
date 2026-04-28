@@ -1,0 +1,17 @@
+source_id: yt-1mix7WnuEK0
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: WebGPU-based in-browser inference is a genuine edge deployment pattern
+  — running LLMs client-side without a server is architecturally relevant to on-device
+  inference. However, the channel is a personal brand monetized via courses and the
+  9-minute runtime limits depth.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: I Replaced My AI Server With A Browser Tab (WebGPU 2026 Setup)
+  published_at: '2026-04-07T12:35:00Z'
+  channel: Zen van Riel
+content_excerpt: 'Get the FREE browser AI project from the video: https://zenvanriel.com/open-source
+  ⚡ Become a high-earning AI engineer: ...'

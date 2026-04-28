@@ -1,0 +1,15 @@
+source_id: yt-HZZ4ZRsVP9w
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 5 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'ST-GCN: Spatial Temporal Graph Convolutional Networks for Skeleton-Based
+    Action Recognition'
+  published_at: '2023-10-20T23:00:40Z'
+  channel: Soroush Mehraban
+content_excerpt: ST-GCN is the first GCN-based method for the task of skeleton-based
+  action recognition. In this video, I explain how it works.

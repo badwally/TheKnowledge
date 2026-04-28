@@ -1,0 +1,49 @@
+source_id: arxiv-2509.11079
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: DAAO dynamically generates query-specific multi-agent workflows using difficulty
+  estimation, a modular operator allocator, and a cost- and performance-aware LLM
+  router; addresses efficiency-performance tradeoffs across heterogeneous LLMs relevant
+  to constrained deployment settings.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Difficulty-Aware Agentic Orchestration for Query-Specific Multi-Agent Workflows
+  source_type: arxiv
+  authors:
+  - name: Jinwei Su
+    affiliation: null
+  - name: Qizhen Lan
+    affiliation: null
+  - name: Yinghui Xia
+    affiliation: null
+  - name: Lifan Sun
+    affiliation: null
+  - name: Weiyou Tian
+    affiliation: null
+  - name: Tianyu Shi
+    affiliation: null
+  - name: Xinyuan Song
+    affiliation: null
+  - name: Lewei He
+    affiliation: null
+  - name: Yang Jingsong
+    affiliation: null
+  published_at: '2025-09-14T03:57:43Z'
+  source_metadata:
+    arxiv_id: '2509.11079'
+    categories:
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2509.11079v5.pdf
+    primary_category: cs.AI
+    comment: Accepted to WWW2026
+    journal_ref: null
+content_excerpt: Large Language Model (LLM)-based agentic systems have shown strong
+  capabilities across various tasks. However, existing multi-agent frameworks often
+  rely on static or task-level workflows, which either over-process simple queries
+  or underperform on complex ones, while also neglecting the efficiency-performance
+  trade-offs across heterogeneous LLMs. To address these limitations, we propose Difficulty-Aware
+  Agentic Orchestration (DAAO), which can dynamically generate query-specific multi-agent
+  work

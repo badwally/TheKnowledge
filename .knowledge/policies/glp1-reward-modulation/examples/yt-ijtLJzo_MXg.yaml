@@ -1,0 +1,14 @@
+source_id: yt-ijtLJzo_MXg
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: General GLP-1 explainer; 48 min but unclear depth on reward mechanisms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1s, Explained Clearly
+  published_at: '2026-03-09T20:55:48Z'
+  channel: SaaJLife Therapeutics Health Coaching with Shay
+content_excerpt: We break down what GLP-1 medications are, how they work in your brain
+  and gut, and why they can help you feel full sooner and ...

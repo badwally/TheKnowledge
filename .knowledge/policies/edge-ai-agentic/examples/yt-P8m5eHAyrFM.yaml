@@ -1,0 +1,16 @@
+source_id: yt-P8m5eHAyrFM
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: IBM Technology's 9-minute explainer on llama.cpp — the dominant local/edge
+  LLM inference engine — covers its architecture, quantization support, and why it
+  enables on-device inference; directly relevant to the edge inference runtime landscape.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: What Is Llama.cpp? The LLM Inference Engine for Local AI
+  published_at: '2026-03-16T11:00:48Z'
+  channel: IBM Technology
+content_excerpt: Ready to become a certified watsonx AI Assistant Engineer? Register
+  now and use code IBMTechYT20 for 20% off of your exam ...

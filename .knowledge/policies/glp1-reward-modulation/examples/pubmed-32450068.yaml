@@ -1,0 +1,58 @@
+source_id: pubmed-32450068
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Exendin-4 reduces sexual interaction behaviors in brain site-specific manner
+  — directly addresses GLP-1 RA effects on libido/sexual reward, essential for dissociability
+  question.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The glucagon-like peptide-1 receptor agonist, exendin-4, reduces sexual interaction
+    behaviors in a brain site-specific manner in sexually naïve male mice.
+  source_type: pubmed
+  authors:
+  - name: Jesper Vestlund
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: 'Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+      Electronic address: elisabet.jerlhag@pharm.gu.se.'
+  published_at: 2020 05 31
+  source_metadata:
+    pmid: '32450068'
+    doi: 10.1016/j.yhbeh.2020.104778
+    journal: Hormones and behavior
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Behavior, Animal
+    - Brain
+    - Exenatide
+    - Female
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Male
+    - Mice
+    - Mice, Inbred C57BL
+    - Nucleus Accumbens
+    - Organ Specificity
+    - Reward
+    - Sexual Behavior, Animal
+    - Social Behavior
+    - Ventral Tegmental Area
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Besides reducing food intake and controlling energy balance, glucagon-like
+  peptide-1 (GLP-1) suppresses the reinforcing properties of palatable foods and addictive
+  drugs. This reduction in reward involves activation of GLP-1 receptors (GLP-1R)
+  within areas processing natural and artificial rewards, including the laterodorsal
+  tegmental area (LDTg), ventral tegmental area (VTA) and nucleus accumbens (NAc)
+  shell. These areas are part of a neurocircuitry mediating reward from addictive
+  drugs and nat

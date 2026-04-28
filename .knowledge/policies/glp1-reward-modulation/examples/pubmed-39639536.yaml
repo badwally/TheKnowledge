@@ -1,0 +1,75 @@
+source_id: pubmed-39639536
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 and amylin receptor agonist combination reduces alcohol consumption
+  — comparative pharmacology of combined agonists on reward behavior.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The combination of a glucagon-like peptide-1 and amylin receptor agonists
+    reduces alcohol consumption in both male and female rats.
+  source_type: pubmed
+  authors:
+  - name: Cajsa Aran&#xe4;s
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Christian E Edvardsson
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Lindsay Zentveld
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Daniel Vall&#xf6;f
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Sarah Witley
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Maximilian Tufvesson-Alm
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Olesya T Shevchouk
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Jesper Vestlund
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  - name: Elisabet Jerlhag
+    affiliation: Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  published_at: 2024 12 06
+  source_metadata:
+    pmid: '39639536'
+    doi: 10.1017/neu.2024.58
+    journal: Acta neuropsychiatrica
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Animals
+    - Male
+    - Female
+    - Rats
+    - Alcohol Drinking
+    - Amylin Receptor Agonists
+    - Glucagon-Like Peptides
+    - Calcitonin
+    - Immunoglobulin Fc Fragments
+    - Glucagon-Like Peptide 1
+    - Drug Therapy, Combination
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Ethanol
+    - Glucagon-Like Peptide-1 Receptor
+    - Islet Amyloid Polypeptide
+    - Recombinant Fusion Proteins
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Combining different pharmaceuticals may be beneficial when treating
+  disorders with complex neurobiology, including alcohol use disorder (AUD). The gut-brain
+  peptides amylin and GLP-1 may be of potential interest as they individually reduce
+  alcohol intake in rodents. While the combination of amylin receptor (AMYR) and glucagon-like
+  peptide-1 receptor (GLP-1R) agonists have been found to decrease feeding and body
+  weight in obese male rats synergistically, their combined impact on alcohol intake
+  is

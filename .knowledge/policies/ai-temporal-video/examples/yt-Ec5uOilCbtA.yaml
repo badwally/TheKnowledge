@@ -1,0 +1,14 @@
+source_id: yt-Ec5uOilCbtA
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Video Captioning With Object Aware Spatio Temporal Correlation and Aggregation
+  published_at: '2020-06-29T10:06:42Z'
+  channel: IFoxProjects
+content_excerpt: Video Captioning With Object Aware Spatio Temporal Correlation and
+  Aggregation IEEE PROJECTS 2020-2021 TITLE LIST ...

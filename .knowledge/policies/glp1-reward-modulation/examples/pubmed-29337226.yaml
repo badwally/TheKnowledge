@@ -1,0 +1,47 @@
+source_id: pubmed-29337226
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 signaling and alcohol-mediated behaviors with preclinical
+  and clinical evidence — strong reward-system relevance.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: GLP-1 signaling and alcohol-mediated behaviors; preclinical and clinical
+    evidence.
+  source_type: pubmed
+  authors:
+  - name: Elisabet Jerlhag
+    affiliation: 'Department of Pharmacology, Institute of Neuroscience and Physiology,
+      The Sahlgrenska Academy at the University of Gothenburg, Medicinaregatan 13A,
+      SE-405 30 Gothenburg, Sweden. Electronic address: Elisabet.Jerlhag@pharm.gu.se.'
+  published_at: 2018 01 12
+  source_metadata:
+    pmid: '29337226'
+    doi: 10.1016/j.neuropharm.2018.01.013
+    journal: Neuropharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    - Review
+    mesh_terms:
+    - Alcohol Drinking
+    - Alcoholism
+    - Animals
+    - Central Nervous System Depressants
+    - Ethanol
+    - Glucagon-Like Peptide 1
+    - Glucagon-Like Peptide-1 Receptor
+    - Humans
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Alcohol addiction, affecting approximately four percent of the population,
+  contributes significantly to the global burden of diseases and is a substantial
+  cost to the society. The neurochemical mechanisms regulating alcohol mediated behaviors
+  is complex and in more recent years a new physiological role of the gut-brain peptides,
+  traditionally known to regulate appetite and food intake, have been suggested. Indeed,
+  regulators of alcohol-mediated behaviors. One of these gut-brain peptides is the
+  a

@@ -1,0 +1,16 @@
+source_id: yt-RBmOgQi4Fr0
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: CNBC 16-minute piece comparing NVIDIA, Google (TPU), and Amazon AI chips
+  with concrete financial and architectural context; the competitive chip landscape
+  is directly relevant to a GPM candidate understanding edge AI ecosystem positioning.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: How Nvidia GPUs Compare To Google’s And Amazon’s AI Chips
+  published_at: '2025-11-21T17:00:52Z'
+  channel: CNBC
+content_excerpt: Nvidia's blowout earnings Wednesday affirmed its place as the world's
+  most valuable company, thanks to “off the charts” sales of ...

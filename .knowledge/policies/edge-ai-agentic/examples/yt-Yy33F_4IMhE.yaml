@@ -1,0 +1,16 @@
+source_id: yt-Yy33F_4IMhE
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Substantive 1-hour webinar benchmarking AI inference at the edge using
+  BrainChip Akida neuromorphic hardware and Edge Impulse tooling; technical depth
+  and benchmarking data meet the threshold despite the 2023 date.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Benchmarking AI Inference at the Edge
+  published_at: '2023-04-14T15:04:51Z'
+  channel: Edge Impulse
+content_excerpt: Watch this webinar to discover how you leverage Edge Impulse's FOMO
+  object detection algorithm with BrainChip's Akida ...

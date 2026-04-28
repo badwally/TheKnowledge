@@ -1,0 +1,14 @@
+source_id: yt-7-yt-dvaE_Y
+domain: ai-temporal-video
+decision: include
+score: 0.6
+policy_version: ai-temporal-video-legacy-v1
+rationale: Addresses temporal video analysis topic
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Molmo2: Open-Source Vision-Language Models with State-of-the-Art Video Grounding'
+  published_at: '2026-01-01T14:13:12Z'
+  channel: BazAI
+content_excerpt: We present Molmo2, a new family of fully open state-of-the-art vision-language
+  models (VLMs) developed by the Allen Institute for ...

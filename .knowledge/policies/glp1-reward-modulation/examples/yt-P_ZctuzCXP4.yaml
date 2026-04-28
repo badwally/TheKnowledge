@@ -1,0 +1,13 @@
+source_id: yt-P_ZctuzCXP4
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Dr. Nadolsky on GLP-1 libido impact; 1.5 min, credentialed.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Do GLP-1s impact libido?
+  published_at: '2025-08-05T18:00:20Z'
+  channel: Dr. Spencer Nadolsky
+content_excerpt: ''

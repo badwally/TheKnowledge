@@ -1,0 +1,36 @@
+source_id: pubmed-37063267
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review of GLP-1 therapeutic potential for addiction based on preclinical
+  and clinical findings — comprehensive reward-related coverage.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: The therapeutic potential of glucagon-like peptide-1 for persons with addictions
+    based on findings from preclinical and clinical studies.
+  source_type: pubmed
+  authors:
+  - name: Elisabet Jerlhag
+    affiliation: Institute of Neuroscience and Physiology, Department of Pharmacology,
+      The Sahlgrenska Academy at the University of Gothenburg, Gothenburg, Sweden.
+  published_at: 2023 03 30
+  source_metadata:
+    pmid: '37063267'
+    doi: 10.3389/fphar.2023.1063033
+    journal: Frontiers in pharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms: []
+    pmc_id: PMC10097922
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10097922/
+content_excerpt: Although the multifaceted mechanisms underlying alcohol use disorder
+  (AUD) have been partially defined, the neurobiological complexity of this disorder
+  is yet to be unraveled. One of the systems that have gained attention in recent
+  times is the gut-brain axis. Although numerous peptides participate in this axis,
+  glucagon-like peptide-1 (GLP-1) plays a central role. GLP-1 is a crucial anorexigenic
+  peptide, with potent abilities to reduce food intake and body weight. The physiological
+  complexity o

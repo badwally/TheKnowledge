@@ -1,0 +1,14 @@
+source_id: yt-wQVDdcOQBDU
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.4
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 pharmacology explainer; general mechanism, not reward-specific.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: How do GLP-1 Agonists Work?  (EASY Pharmacology)
+  published_at: '2025-04-18T15:01:28Z'
+  channel: Drug Chug
+content_excerpt: How do GLP-1 Agonists work? Semaglutide , Exenatide, Liraglutide
+  and Tirzepatide are injectable diabetic medication to help ...

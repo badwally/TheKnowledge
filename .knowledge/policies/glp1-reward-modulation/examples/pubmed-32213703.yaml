@@ -1,0 +1,105 @@
+source_id: pubmed-32213703
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Semaglutide reduces body weight via distributed neural pathways — identifies
+  specific brain regions including reward areas activated by semaglutide.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Semaglutide lowers body weight in rodents via distributed neural pathways.
+  source_type: pubmed
+  authors:
+  - name: Sanaz Gabery
+    affiliation: Global Drug Discovery and
+  - name: Casper G Salinas
+    affiliation: Global Drug Discovery and
+  - name: Sarah J Paulsen
+    affiliation: Global Drug Discovery and
+  - name: Jonas Ahnfelt-R&#xf8;nne
+    affiliation: Global Drug Discovery and
+  - name: Tomas Alanentalo
+    affiliation: Global Drug Discovery and
+  - name: Arian F Baquero
+    affiliation: Institute of Experimental Medicine Hungarian Academy of Sciences,
+      Budapest, Hungary.
+  - name: Stephen T Buckley
+    affiliation: Global Research Technologies, Novo Nordisk A/S, M&#xe5;l&#xf8;v,
+      Denmark, and Seattle, Washington, USA.
+  - name: Erzs&#xe9;bet Farkas
+    affiliation: Institute of Experimental Medicine Hungarian Academy of Sciences,
+      Budapest, Hungary.
+  - name: Csaba Fekete
+    affiliation: Institute of Experimental Medicine Hungarian Academy of Sciences,
+      Budapest, Hungary.
+  - name: Klaus S Frederiksen
+    affiliation: Global Drug Discovery and
+  - name: Hans Christian C Helms
+    affiliation: Global Research Technologies, Novo Nordisk A/S, M&#xe5;l&#xf8;v,
+      Denmark, and Seattle, Washington, USA.
+  - name: Jacob F Jeppesen
+    affiliation: Global Drug Discovery and
+  - name: Linu M John
+    affiliation: Global Drug Discovery and
+  - name: Charles Pyke
+    affiliation: Global Drug Discovery and
+  - name: Jane N&#xf8;hr
+    affiliation: Global Drug Discovery and
+  - name: Tess T Lu
+    affiliation: Global Drug Discovery and
+  - name: Joseph Polex-Wolf
+    affiliation: Global Drug Discovery and
+  - name: Vincent Prevot
+    affiliation: Inserm, Laboratory of Development and Plasticity of the Neuroendocrine
+      Brain, Jean-Pierre Aubert Research Centre, Lille, France.
+  - name: Kirsten Raun
+    affiliation: Global Drug Discovery and
+  - name: Lotte Simonsen
+    affiliation: Global Drug Discovery and
+  - name: Gao Sun
+    affiliation: Global Research Technologies, Novo Nordisk A/S, M&#xe5;l&#xf8;v,
+      Denmark, and Seattle, Washington, USA.
+  - name: Anett Szilv&#xe1;sy-Szab&#xf3;
+    affiliation: Institute of Experimental Medicine Hungarian Academy of Sciences,
+      Budapest, Hungary.
+  - name: Hanni Willenbrock
+    affiliation: Global Research Technologies, Novo Nordisk A/S, M&#xe5;l&#xf8;v,
+      Denmark, and Seattle, Washington, USA.
+  - name: Anna Secher
+    affiliation: Global Drug Discovery and
+  - name: Lotte Bjerre Knudsen
+    affiliation: Global Drug Discovery and
+  - name: Wouter Frederik Johan Hogendorf
+    affiliation: Institute of Experimental Medicine Hungarian Academy of Sciences,
+      Budapest, Hungary.
+  published_at: 2020 03 26
+  source_metadata:
+    pmid: '32213703'
+    doi: 10.1172/jci.insight.133429
+    journal: JCI insight
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Animals
+    - Body Weight
+    - Brain
+    - Eating
+    - Energy Metabolism
+    - Glucagon-Like Peptide-1 Receptor
+    - Glucagon-Like Peptides
+    - Mice
+    - Neural Pathways
+    - Rats
+    - Semaglutide
+    pmc_id: PMC7213778
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7213778/
+content_excerpt: Semaglutide, a glucagon-like peptide 1 (GLP-1) analog, induces weight
+  loss, lowers glucose levels, and reduces cardiovascular risk in patients with diabetes.
+  Mechanistic preclinical studies suggest weight loss is mediated through GLP-1 receptors
+  (GLP-1Rs) in the brain. The findings presented here show that semaglutide modulated
+  food preference, reduced food intake, and caused weight loss without decreasing
+  energy expenditure. Semaglutide directly accessed the brainstem, septal nucleus,
+  and hypot

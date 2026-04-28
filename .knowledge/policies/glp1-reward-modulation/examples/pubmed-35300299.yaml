@@ -1,0 +1,49 @@
+source_id: pubmed-35300299
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Reviews possible mechanisms of GLP-1R agonist effects on cocaine use disorder
+  — directly examines reward pathway mechanisms.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Possible Mechanisms Underlying the Effects of Glucagon-Like Peptide-1 Receptor
+    Agonist on Cocaine Use Disorder.
+  source_type: pubmed
+  authors:
+  - name: Changliang Zhu
+    affiliation: Department of Neurosurgery, General Hospital of Ningxia Medical University,
+      Yinchuan, China.
+  - name: Hailiang Li
+    affiliation: Department of Neurosurgery, General Hospital of Ningxia Medical University,
+      Yinchuan, China.
+  - name: Xuerui Kong
+    affiliation: Ningxia Key Laboratory of Cerebrocranial Disease, Yinchuan, China.
+  - name: Yezhong Wang
+    affiliation: Department of Neurosurgery, The Second Affiliated Hospital of Guangzhou
+      Medical University, Guangzhou, China.
+  - name: Tao Sun
+    affiliation: Department of Neurosurgery, General Hospital of Ningxia Medical University,
+      Yinchuan, China.
+  - name: Feng Wang
+    affiliation: Ningxia Key Laboratory of Cerebrocranial Disease, Yinchuan, China.
+  published_at: 2022 03 01
+  source_metadata:
+    pmid: '35300299'
+    doi: 10.3389/fphar.2022.819470
+    journal: Frontiers in pharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms: []
+    pmc_id: PMC8921771
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8921771/
+content_excerpt: Cocaine use disorder (CUD) is a major public health challenge with
+  a high relapse rate and lack of effective pharmacotherapies; therefore, there is
+  a substantial need to identify novel medications to treat this epidemic. Since the
+  advent of glucagon-like peptide-1 (GLP-1) receptors (GLP-1Rs) agonists (GLP-1RAs),
+  their potential has been extensively explored and expanded. In this review, we first
+  summarized the biological effects of GLP-1, GLP-1Rs, and GLP-1RAs. Subsequently,
+  the recent literatur

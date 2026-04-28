@@ -1,0 +1,15 @@
+source_id: yt-qbRtQJj7z2M
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Directly addresses neurobiological mechanisms of GLP-1 on food preference
+  and aversion; 9 min focused topic.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Neurobiological Mechanisms of GLP-1 Agonists on Food Preference and Aversion
+  published_at: '2025-06-07T05:26:58Z'
+  channel: g Fun Facts online
+content_excerpt: This podcast episode explores how GLP-1 receptor agonists, weight-loss
+  drugs, reshape food preferences by reducing cravings ...

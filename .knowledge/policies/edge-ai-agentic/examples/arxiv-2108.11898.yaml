@@ -1,0 +1,41 @@
+source_id: arxiv-2108.11898
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Proposes supervised feature compression for split computing between on-device
+  and edge server, using knowledge distillation to compress intermediate representations;
+  addresses core split-inference architecture for resource-constrained devices (WACV
+  2022).
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Supervised Compression for Resource-Constrained Edge Computing Systems
+  source_type: arxiv
+  authors:
+  - name: Yoshitomo Matsubara
+    affiliation: null
+  - name: Ruihan Yang
+    affiliation: null
+  - name: Marco Levorato
+    affiliation: null
+  - name: Stephan Mandt
+    affiliation: null
+  published_at: '2021-08-21T11:10:29Z'
+  source_metadata:
+    arxiv_id: '2108.11898'
+    categories:
+    - cs.CV
+    - cs.LG
+    pdf_url: http://arxiv.org/pdf/2108.11898v3.pdf
+    primary_category: cs.CV
+    comment: Accepted to WACV 2022. Code and models are available at https://github.com/yoshitomo-matsubara/supervised-compression
+    journal_ref: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+      2022
+content_excerpt: There has been much interest in deploying deep learning algorithms
+  on low-powered devices, including smartphones, drones, and medical sensors. However,
+  full-scale deep neural networks are often too resource-intensive in terms of energy
+  and storage. As a result, the bulk part of the machine learning operation is therefore
+  often carried out on an edge server, where the data is compressed and transmitted.
+  However, compressing data (such as images) leads to transmitting information irrelevant
+  to the

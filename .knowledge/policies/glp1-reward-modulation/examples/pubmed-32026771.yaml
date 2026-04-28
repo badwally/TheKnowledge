@@ -1,0 +1,50 @@
+source_id: pubmed-32026771
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Hippocampal inhibitory learning in eating and drug taking — discusses shared
+  mechanisms but GLP-1 is not the primary focus.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Hippocampal-Dependent Inhibitory Learning and Memory Processes in the Control
+    of Eating and Drug Taking.
+  source_type: pubmed
+  authors:
+  - name: Matthew M Clasen
+    affiliation: Department of Psychology, Program in Neuroscience, Williams College,
+      Williamstown, MA 01267, United States.
+  - name: Anthony L Riley
+    affiliation: Department of Neuroscience, Center for Behavioral Neuroscience, American
+      University, Washington, DC 20016, United States.
+  - name: Terry L Davidson
+    affiliation: Department of Neuroscience, Center for Behavioral Neuroscience, American
+      University, Washington, DC 20016, United States.
+  published_at: '2020'
+  source_metadata:
+    pmid: '32026771'
+    doi: 10.2174/1381612826666200206091447
+    journal: Current pharmaceutical design
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Research Support, N.I.H., Extramural
+    - Research Support, Non-U.S. Gov't
+    mesh_terms:
+    - Brain
+    - Eating
+    - Hippocampus
+    - Humans
+    - Memory
+    - Obesity
+    - Pharmaceutical Preparations
+    pmc_id: null
+    full_text_url: null
+content_excerpt: As manifestations of excessive and uncontrolled intake, obesity and
+  drug addiction have generated much research aimed at identifying common neuroadaptations
+  that could underlie both disorders. Much work has focused on changes in brain reward
+  and motivational circuitry that can overexcite eating and drug-taking behaviors.
+  We suggest that the regulation of both behaviors depends on balancing excitation
+  produced by stimuli associated with food and drug rewards with the behavioral inhibition
+  produce

@@ -1,0 +1,57 @@
+source_id: pubmed-41253199
+domain: glp1-reward-modulation
+decision: include
+score: 1.0
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Review titled 'Psychotropic effects of GLP-1R agonists' — directly examines
+  psychiatric and behavioral effects including potential anhedonia and mood changes.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Psychotropic effects of GLP-1R agonists.
+  source_type: pubmed
+  authors:
+  - name: Loredana Bucciarelli
+    affiliation: Pio Albergo Trivulzio, Milan, Italy; International Center for T1D,
+      Pediatric Clinical Research Center Romeo ed Enrica Invernizzi, DIBIC, Universit&#xe0;
+      di Milano, Italy.
+  - name: Vincenzo Cimino
+    affiliation: International Center for T1D, Pediatric Clinical Research Center
+      Romeo ed Enrica Invernizzi, DIBIC, Universit&#xe0; di Milano, Italy; Division
+      of Endocrinology, ASST Fatebenefratelli-Sacco, Milan, Italy.
+  - name: Bernardo Dell'Osso
+    affiliation: Department of Biomedical and Clinical Sciences, University of Milan,
+      Italy; Department of Mental Health and Addictions, ASST Fatebenefratelli-Sacco,
+      Milan, Italy; Department of Psychiatry and Beahvioural Sciences, Stanford University,
+      CA, USA.
+  - name: Paolo Fiorina
+    affiliation: 'International Center for T1D, Pediatric Clinical Research Center
+      Romeo ed Enrica Invernizzi, DIBIC, Universit&#xe0; di Milano, Italy; Division
+      of Endocrinology, ASST Fatebenefratelli-Sacco, Milan, Italy; Nephrology Division,
+      Boston Children''s Hospital, Harvard Medical School, Boston, MA, USA. Electronic
+      address: Paolo.Fiorina@childrens.harvard.edu.'
+  published_at: 2025 11 16
+  source_metadata:
+    pmid: '41253199'
+    doi: 10.1016/j.phrs.2025.108036
+    journal: Pharmacological research
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Animals
+    - Psychotropic Drugs
+    - Mental Disorders
+    - Glucagon-Like Peptide-1 Receptor
+    pmc_id: null
+    full_text_url: null
+content_excerpt: The use of Glucagon-like peptide-1 receptor agonists (GLP-1RAs) is
+  an established therapy for type 2 diabetes (T2D) and obesity, providing effective
+  glycemic control, weight loss, and cardiovascular and renal benefits. Evidence is
+  emerging on the potential neuropsychiatric and neuroprotective effects mediated
+  via central GLP-1R. This review summarizes preclinical, clinical, and real-world
+  findings on the use of GLP-1R agonists in depression, anxiety, binge eating disorder
+  (BED), cognitive impair

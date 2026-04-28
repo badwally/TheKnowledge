@@ -1,0 +1,46 @@
+source_id: arxiv-2508.07329
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Proposes Hessian-Aware Quantization with CPU-GPU collaborative inference
+  for MoE models on edge devices; addresses both quantization accuracy (joint 8-bit
+  weight/activation) and memory-constrained expert offloading with latency measurements.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Efficient Edge LLMs Deployment via HessianAware Quantization and CPU GPU
+    Collaborative
+  source_type: arxiv
+  authors:
+  - name: Tuo Zhang
+    affiliation: null
+  - name: Ning Li
+    affiliation: null
+  - name: Xin Yuan
+    affiliation: null
+  - name: Wenchao Xu
+    affiliation: null
+  - name: Quan Chen
+    affiliation: null
+  - name: Song Guo
+    affiliation: null
+  - name: Haijun Zhang
+    affiliation: null
+  published_at: '2025-08-10T12:59:57Z'
+  source_metadata:
+    arxiv_id: '2508.07329'
+    categories:
+    - cs.LG
+    - cs.AI
+    pdf_url: http://arxiv.org/pdf/2508.07329v1.pdf
+    primary_category: cs.LG
+    comment: null
+    journal_ref: null
+content_excerpt: 'With the breakthrough progress of large language models (LLMs) in
+  natural language processing and multimodal tasks, efficiently deploying them on
+  resource-constrained edge devices has become a critical challenge. The Mixture of
+  Experts (MoE) architecture enhances model capacity through sparse activation, but
+  faces two major difficulties in practical deployment: (1) The presence of numerous
+  outliers in activation distributions leads to severe degradation in quantization
+  accuracy for both activati'

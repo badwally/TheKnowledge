@@ -1,0 +1,76 @@
+source_id: pubmed-39046272
+domain: glp1-reward-modulation
+decision: exclude
+score: 0.2
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Meta-analysis of semaglutide safety profile — general safety without reward
+  specificity.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Evaluating the safety profile of semaglutide: an updated meta-analysis.'
+  source_type: pubmed
+  authors:
+  - name: Frederick Berro Rivera
+    affiliation: Department of Medicine, Lincoln Medical Center, New York, NY, USA.
+  - name: Eloise Arias-Aguirre
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: Zedrick Aguirre
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: Mc John C Yba&#xf1;ez
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: Janos Marc M Rubia
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: Danica Janine Galang
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: Grace Nooriza Lumbang
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: Jade Monica Marie J Ruyeras
+    affiliation: Cebu Institute of Medicine, Cebu City, Philippines.
+  - name: John Vincent Magalong
+    affiliation: College of Medicine, San Beda University, Manila, Philippines.
+  - name: Polyn Luz Pine
+    affiliation: Ateneo School of Medicine and Public Health, Manila, Philippines.
+  - name: John Andrew C Amigo
+    affiliation: Ateneo School of Medicine and Public Health, Manila, Philippines.
+  - name: Marie Francesca M Ansay
+    affiliation: Department of Family Medicine, University of Pittsburgh Medical Center
+      (UPMC) McKeesport, McKeesport, PA, USA.
+  - name: Nenad Zelenkov
+    affiliation: Department of Family Medicine, University of Pittsburgh Medical Center
+      (UPMC) McKeesport, McKeesport, PA, USA.
+  - name: Steve Samuel Thomas
+    affiliation: Arizona State University, Tempe, AZ, USA.
+  - name: Krishnaswami Vijayaraghavan
+    affiliation: University of Arizona, Tucson, AZ, USA.
+  published_at: 2024 07 27
+  source_metadata:
+    pmid: '39046272'
+    doi: 10.1080/03007995.2024.2383731
+    journal: Current medical research and opinion
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Meta-Analysis
+    mesh_terms:
+    - Female
+    - Humans
+    - Male
+    - Diabetes Mellitus, Type 2
+    - Glucagon-Like Peptides
+    - Hypoglycemic Agents
+    - Obesity
+    - Randomized Controlled Trials as Topic
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Semaglutide
+    pmc_id: null
+    full_text_url: null
+content_excerpt: 'Semaglutide is increasingly used in the management of type 2 diabetes
+  mellitus and obesity. Ensuring the safety of this medication is crucial for its
+  clinical use. This meta-analysis evaluates the safety profile of semaglutide across
+  patient populations and treatment durations.
+
+
+  Randomized controlled trials assessing the safety of semaglutideplacebo, with specified
+  treatment durations were identified. The primary outcome was occurrence of any cardiovascular
+  adverse events. Secondary outcomes inc'

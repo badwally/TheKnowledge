@@ -18,6 +18,7 @@ SUBCOMMANDS: dict[str, str] = {
     "query": "Query the wiki; may invoke NotebookLM for large-corpus questions",
     "filter": "Run the semantic filter on a candidate source (read-only)",
     "filter-correct": "Override a past filter decision; pin as a corrected example",
+    "backfill-examples": "Populate policy.yaml + example bank from legacy research-notebook artifacts",
     "nlm-add": "Add a source to a NotebookLM corpus",
     "nlm-slides": "Generate a slide deck from a NotebookLM corpus; file as wiki artifact",
     "nlm-audio": "Generate an audio overview; file as wiki artifact",
@@ -37,6 +38,7 @@ IMPLEMENTED: set[str] = {
     "ingest",
     "filter",
     "filter-correct",
+    "backfill-examples",
     "status",
     "watch",
     "nlm-add",
@@ -186,6 +188,35 @@ def build_parser() -> argparse.ArgumentParser:
         help="Run a single check (e.g., orphans, schema-drift)",
     )
 
+    # backfill-examples
+    p_backfill = subparsers.add_parser(
+        "backfill-examples", help=SUBCOMMANDS["backfill-examples"]
+    )
+    p_backfill.add_argument(
+        "--domain",
+        required=True,
+        help="Canonical domain slug (e.g., glp1-reward-modulation)",
+    )
+    p_backfill.add_argument(
+        "--legacy-config",
+        type=Path,
+        default=None,
+        help="Path to a legacy `config/domains/<slug>.yaml` to convert into policy.yaml",
+    )
+    p_backfill.add_argument(
+        "--json",
+        type=Path,
+        action="append",
+        default=[],
+        dest="json_paths",
+        help="Path to a legacy staged JSON checkpoint (repeat for multiple files)",
+    )
+    p_backfill.add_argument(
+        "--policy-version",
+        default=None,
+        help="Override the policy_version pinned on each example (default: <domain>-legacy-v1)",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -238,8 +269,40 @@ def main(argv: list[str] | None = None) -> int:
         return _run_batch_ingest(ns)
     if ns.subcommand == "lint":
         return _run_lint(ns)
+    if ns.subcommand == "backfill-examples":
+        return _run_backfill_examples(ns)
 
     return _not_yet_implemented(ns.subcommand)
+
+
+def _run_backfill_examples(ns: argparse.Namespace) -> int:
+    from gateway.ops.example_bank import backfill
+
+    if ns.legacy_config is None and not ns.json_paths:
+        print(
+            "backfill-examples needs at least one of --legacy-config or --json",
+            file=sys.stderr,
+        )
+        return 2
+
+    summary = backfill(
+        domain_slug=ns.domain,
+        legacy_config_path=ns.legacy_config,
+        json_paths=ns.json_paths,
+        policy_version=ns.policy_version,
+    )
+
+    print(f"ok: backfill {summary['domain']}")
+    if "policy" in summary:
+        print(f"  policy: {summary['policy']}")
+    if "examples_written" in summary:
+        print(f"  examples written: {summary['examples_written']}")
+        print(f"  examples skipped: {summary['examples_skipped']}")
+        if summary["errors"]:
+            print(f"  errors: {len(summary['errors'])}")
+            for e in summary["errors"][:5]:
+                print(f"    - {e}", file=sys.stderr)
+    return 0
 
 
 def _resolve_input(raw: str) -> str | Path:

@@ -1,0 +1,14 @@
+source_id: yt-mwqOeTJDyx4
+domain: ai-temporal-video
+decision: include
+score: 1.0
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation with 2 architecture terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'G-TAD: Sub-Graph Localization for Temporal Action Detection'
+  published_at: '2020-07-17T09:37:34Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Mengmeng Xu, Chen Zhao, David S. Rojas, Ali Thabet, Bernard
+  Ghanem Description: Temporal action detection is a ...'

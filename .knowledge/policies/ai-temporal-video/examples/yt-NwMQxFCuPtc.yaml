@@ -1,0 +1,13 @@
+source_id: yt-NwMQxFCuPtc
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Technical content with 2 relevant architecture/method terms
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Spatiotemporal Fusion in 3D CNNs: A Probabilistic View'
+  published_at: '2020-06-14T15:30:11Z'
+  channel: Microsoft Research
+content_excerpt: 'Learn all the ways Microsoft is a part of CVPR 2020: https://www.microsoft.com/en-us/research/event/cvpr-2020/'

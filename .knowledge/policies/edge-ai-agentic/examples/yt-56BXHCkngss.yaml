@@ -1,0 +1,16 @@
+source_id: yt-56BXHCkngss
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Krish Naik 24-minute comparative analysis of A2A vs. MCP protocols with
+  reference to the Google developers blog — covers protocol design differences, use
+  cases, and interoperability with enough depth for a GPM candidate.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: All You Need To Know About Google Agent2Agent Protocol- A2A Vs MCP
+  published_at: '2025-04-16T08:43:52Z'
+  channel: Krish Naik
+content_excerpt: https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/
+  A2A is an open protocol that complements ...

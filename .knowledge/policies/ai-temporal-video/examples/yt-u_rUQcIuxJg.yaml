@@ -1,0 +1,14 @@
+source_id: yt-u_rUQcIuxJg
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'AttTrack: Online Deep Attention Transfer for Multi-object Tracking'
+  published_at: '2024-01-30T04:27:15Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Nalaie, Keivan*; Zheng, Rong Description: Multi-object
+  tracking (MOT) is a vital component of intelligent video analytics ...'

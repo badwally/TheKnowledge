@@ -1,0 +1,16 @@
+source_id: yt-aHCDrAbH_go
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Harrison Chase's 31-minute walkthrough of LangGraph agent patterns (workflows
+  vs. agents) provides substantive orchestration concepts applicable to edge-adjacent
+  deployments, but lacks explicit edge inference or on-device framing.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Building Effective Agents with LangGraph
+  published_at: '2025-01-27T17:09:52Z'
+  channel: LangChain
+content_excerpt: Anthropic's recent blog post on "Building Effective Agents" lays
+  out the difference between "agents" and "workflows", and presents ...

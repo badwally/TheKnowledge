@@ -1,0 +1,35 @@
+source_id: arxiv-2601.00848
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Demonstrates QLoRA fine-tuning of security models for detecting attack
+  patterns in multi-agent workflow traces on resource-constrained ARM64 hardware;
+  addresses agentic AI security with on-device training relevance, though depth is
+  limited by single-author preprint quality.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Temporal Attack Pattern Detection in Multi-Agent AI Workflows: An Open Framework
+    for Training Trace-Based Security Models'
+  source_type: arxiv
+  authors:
+  - name: Ron F. Del Rosario
+    affiliation: null
+  published_at: '2025-12-29T09:41:22Z'
+  source_metadata:
+    arxiv_id: '2601.00848'
+    categories:
+    - cs.AI
+    - cs.CR
+    pdf_url: http://arxiv.org/pdf/2601.00848v1.pdf
+    primary_category: cs.AI
+    comment: '26 pages, 3 figures, 7 tables. Datasets and code: https://huggingface.co/guerilla7/agentic-safety-gguf'
+    journal_ref: null
+content_excerpt: We present an openly documented methodology for fine-tuning language
+  models to detect temporal attack patterns in multi-agent AI workflows using OpenTelemetry
+  trace analysis. We curate a dataset of 80,851 examples from 18 public cybersecurity
+  sources and 35,026 synthetic OpenTelemetry traces. We apply iterative QLoRA fine-tuning
+  on resource-constrained ARM64 hardware (NVIDIA DGX Spark) through three training
+  iterations with strategic augmentation. Our custom benchmark accuracy improves from
+  42.8

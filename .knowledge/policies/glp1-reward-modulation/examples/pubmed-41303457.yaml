@@ -1,0 +1,51 @@
+source_id: pubmed-41303457
+domain: glp1-reward-modulation
+decision: include
+score: 0.8
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: GLP-1 RA therapeutic potential for binge eating disorder — examines reward
+  mechanisms specific to compulsive eating behavior.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'Neurobiological Mechanisms and Therapeutic Potential of Glucagon-like Peptide-1
+    Receptor Agonists in Binge Eating Disorder: A Narrative Review.'
+  source_type: pubmed
+  authors:
+  - name: Sujitra Tongta
+    affiliation: Faculty of Medicine Ramathibodi Hospital, Mahidol University, Bangkok
+      10400, Thailand.
+  - name: Titiwat Sungkaworn
+    affiliation: Chakri Naruebodindra Medical Institute, Faculty of Medicine Ramathibodi
+      Hospital, Mahidol University, Samut Prakan 10540, Thailand.
+  - name: Nutthapoom Pathomthongtaweechai
+    affiliation: Chakri Naruebodindra Medical Institute, Faculty of Medicine Ramathibodi
+      Hospital, Mahidol University, Samut Prakan 10540, Thailand.
+  published_at: 2025 11 13
+  source_metadata:
+    pmid: '41303457'
+    doi: 10.3390/ijms262210974
+    journal: International journal of molecular sciences
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    - Review
+    mesh_terms:
+    - Humans
+    - Binge-Eating Disorder
+    - Glucagon-Like Peptide-1 Receptor Agonists
+    - Animals
+    - Glucagon-Like Peptide-1 Receptor
+    - Reward
+    - Liraglutide
+    - Glucagon-Like Peptide 1
+    - Semaglutide
+    pmc_id: PMC12652136
+    full_text_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12652136/
+content_excerpt: Binge eating disorder (BED) is a prevalent eating disorder lacking
+  adequate pharmacological interventions. This review examines the therapeutic potential
+  of glucagon-like peptide-1 receptor agonists (GLP-1RAs), medications approved for
+  type 2 diabetes and obesity now being investigated for eating disorders through
+  their modulation of metabolic and reward pathways. A narrative review was conducted
+  using PubMed/MEDLINE, through May 2025, to examine GLP-1RA effects on BED, including
+  preclinical and

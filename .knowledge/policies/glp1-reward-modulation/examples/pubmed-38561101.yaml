@@ -1,0 +1,56 @@
+source_id: pubmed-38561101
+domain: glp1-reward-modulation
+decision: include
+score: 0.6
+policy_version: glp1-reward-modulation-legacy-v1
+rationale: Liraglutide relieves depressive symptoms via neurogenesis and inflammation
+  reduction — relevant to mood/motivation effects of GLP-1 RAs.
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Liraglutide and Naringenin relieve depressive symptoms in mice by enhancing
+    Neurogenesis and reducing inflammation.
+  source_type: pubmed
+  authors:
+  - name: Yara S Abdelkawy
+    affiliation: Department of Pharmacology and Toxicology, Faculty of Pharmacy, Damanhour
+      University, Damanhour 22514, Egypt.
+  - name: Mona Elharoun
+    affiliation: Department of Pharmacology and Toxicology, Faculty of Pharmacy, Damanhour
+      University, Damanhour 22514, Egypt.
+  - name: Eman Sheta
+    affiliation: Department of Pathology, Faculty of Medicine, Alexandria University,
+      Alexandria 21131, Egypt.
+  - name: Ihab Talat Abdel-Raheem
+    affiliation: Department of Pharmacology and Toxicology, Faculty of Pharmacy, Damanhour
+      University, Damanhour 22514, Egypt.
+  - name: Hisham A Nematalla
+    affiliation: 'Department of Pharmacology and Toxicology, Faculty of Pharmacy,
+      Damanhour University, Damanhour 22514, Egypt. Electronic address: hisham.nematalla@pharm.dmu.edu.eg.'
+  published_at: 2024 03 30
+  source_metadata:
+    pmid: '38561101'
+    doi: 10.1016/j.ejphar.2024.176525
+    journal: European journal of pharmacology
+    peer_reviewed: true
+    publication_type:
+    - Journal Article
+    mesh_terms:
+    - Mice
+    - Animals
+    - Depression
+    - Liraglutide
+    - Antidepressive Agents
+    - Inflammation
+    - Neurogenesis
+    - Dexamethasone
+    - Flavanones
+    pmc_id: null
+    full_text_url: null
+content_excerpt: Depression is a debilitating mental disease that negatively impacts
+  individuals' lives and society. Novel hypotheses have been recently proposed to
+  improve our understanding of depression pathogenesis. Impaired neuroplasticity and
+  upregulated neuro-inflammation add-on to the disturbance in monoamine neurotransmitters
+  and therefore require novel anti-depressants to target them simultaneously. Recent
+  reports demonstrate the antidepressant effect of the anti-diabetic drug liraglutide.
+  Similarly, th

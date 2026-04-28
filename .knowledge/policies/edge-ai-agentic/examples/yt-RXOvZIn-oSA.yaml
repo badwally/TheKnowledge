@@ -1,0 +1,18 @@
+source_id: yt-RXOvZIn-oSA
+domain: edge-ai-agentic
+decision: include
+score: 0.6
+policy_version: edge-ai-agentic-legacy-v1
+rationale: 52-minute hands-on LangGraph multi-agent tutorial covers agent design patterns
+  in depth using a major orchestration framework; relevant per the broadening criteria
+  on orchestration frameworks, though it lacks explicit edge or distributed deployment
+  framing.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: Multi Agent Systems - a complete guide with hands-on using LangGraph | Agent
+    Design Pattern
+  published_at: '2025-10-22T16:37:06Z'
+  channel: AI Bites
+content_excerpt: In this video we are going to look into Multi-agent systems. We will
+  start with why we need. multi-agent systems in today's world.

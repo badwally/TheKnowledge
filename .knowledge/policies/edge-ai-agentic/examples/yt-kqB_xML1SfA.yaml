@@ -1,0 +1,17 @@
+source_id: yt-kqB_xML1SfA
+domain: edge-ai-agentic
+decision: include
+score: 0.8
+policy_version: edge-ai-agentic-legacy-v1
+rationale: Agentic AI Foundation session with LlamaIndex VP comparing MCP vs. ACP
+  vs. A2A protocols (17 minutes) — expert comparative analysis of competing agent
+  protocol standards with strategic ecosystem implications.
+pinned_at: '2026-04-28T15:58:51Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: '[Session] MCP vs  ACP vs  A2A: Comparing Agent Protocols with Laurie Voss
+    from LlamaIndex'
+  published_at: '2025-06-05T12:15:08Z'
+  channel: Agentic AI Foundation
+content_excerpt: 'MCP vs ACP vs A2A: Comparing Agent Protocols Laurie Voss, VP Developer
+  Relations - LlamaIndex MCP is gaining a ton of ...'

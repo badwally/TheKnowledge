@@ -1,0 +1,14 @@
+source_id: yt-NOnEazQD654
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'WACV18: ActionFlowNet: Learning Motion Representation for Action Recognition'
+  published_at: '2018-03-28T14:34:36Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: Joe Yue-Hei Ng, Jonghyun Choi, Jan Neumann, Larry Davis We present
+  a data-efficient representation learning approach to ...

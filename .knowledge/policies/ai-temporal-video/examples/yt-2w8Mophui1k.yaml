@@ -1,0 +1,15 @@
+source_id: yt-2w8Mophui1k
+domain: ai-temporal-video
+decision: include
+score: 0.8
+policy_version: ai-temporal-video-legacy-v1
+rationale: Conference presentation addressing temporal video analysis
+pinned_at: '2026-04-28T15:58:50Z'
+pinned_by: legacy-backfill
+frontmatter_snapshot:
+  title: 'AutoTrack: Towards High-Performance Visual Tracking for UAV With Automatic
+    Spatio-Temporal Regula...'
+  published_at: '2020-07-20T21:57:27Z'
+  channel: ComputerVisionFoundation Videos
+content_excerpt: 'Authors: Yiming Li, Changhong Fu, Fangqiang Ding, Ziyuan Huang,
+  Geng Lu Description: Most existing trackers based on ...'
