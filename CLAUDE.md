@@ -2,9 +2,7 @@
 
 Canonical knowledge base for all `~/code/*` projects. Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with a hybrid synthesis substrate — wiki canonical, NotebookLM as a synthesis service behind a gateway.
 
-This file is the agent control surface. `WIKI.md` is the conventions reference. Read `WIKI.md` before designing converters, page types, gateway operations, validator rules, or editorial policies. Read `index.md` first to orient on content. For human-facing usage, read `TUTORIAL.md`.
-
-**Current state (post-M25, 2026-04-28):** 28 commits on `main`; 294 tests; 363 sources / 149 concepts / 18 MOCs / 18 synthesis pages across three domains (`ai-temporal-video`, `glp1-reward-modulation`, `edge-ai-agentic`). 13 query-driven syntheses cite 148/363 sources (41% coverage). Voice + audiobook converters operational with mlx-whisper + pyannote diarization (M3 Max).
+This file is the agent control surface. `WIKI.md` is the conventions reference. Read `WIKI.md` before designing converters, page types, gateway operations, validator rules, or editorial policies. Read `index.md` and run `wiki status` to orient on live content. For human-facing usage, read `TUTORIAL.md`. For per-milestone delivery history, read `BUILD.md § 9`.
 
 ## What you may do here
 
@@ -79,10 +77,10 @@ Write a converter under `~/code/research-notebook/src/search/` that outputs cano
 ## Forward-looking notes
 
 - **API-only-source pollers** (Apple Notes, Notion, Slack, Gmail) get bolt-on schedulers writing to `raw/<source>/` in the canonical format. Same downstream pipeline.
-- **Filter fine-tuning loop** shipped (M19 backfill + M20 distill). Trigger threshold per domain still 500 examples; GLP-1 currently at 268 (a v2 candidate has been generated via `--force` and lives at `.knowledge/policies/glp1-reward-modulation/policy_versions/2026-04-28T16-04-06Z.yaml` for human review). Open-weight classifier fine-tune (the second WIKI § 10.4 option) deferred until a domain crosses ~1000 high-quality decisions.
+- **Filter fine-tuning loop** is shipped: trigger detection + distilled-prompt extraction (`wiki finetune`). Default threshold is 500 high-quality decisions per domain. Open-weight classifier fine-tune (the second WIKI § 10.4 option) is deferred until a domain crosses ~1000 decisions.
 - **qmd or similar BM25/vector index** gets dropped in if/when the wiki crosses ~10k pages. Markdown remains canonical; the index is derived state.
-- **Legacy vaults migrated.** All three research-notebook Obsidian vaults imported in M11–M14. The vaults at `~/code/research-notebook/data/obsidian*/` are now frozen historical artifacts.
-- **Citation graph still building.** ~41% of sources are cited by at least one synthesis page. The remaining 215 source orphans discharge via `wiki query` synthesis loops, not manual claim extraction.
+- **Legacy migration** (M11–M14) is the only path that imports research-notebook Obsidian vaults. The vaults at `~/code/research-notebook/data/obsidian*/` are read-only inputs to the migrate script.
+- **Source-orphan tail** discharges via `wiki query` synthesis loops, not manual claim extraction. Each query produces a draft synthesis page citing N sources via `[[sources/<id>]]`. Run `wiki lint --scope orphans` to see how many sources still lack inbound citations.
 
 ## When to consult `WIKI.md`
 

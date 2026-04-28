@@ -79,33 +79,9 @@ wiki --help
 
 `wiki index` / `wiki search` / `wiki migrate` remain stubs (operational sugar).
 
-## Content state
-
-| Domain | Sources | Wiki concepts | MOCs | Synthesis pages |
-|---|---:|---:|---:|---:|
-| ai-temporal-video | 86 | 46 | 5 | 3 + 4 query-driven |
-| glp1-reward-modulation | 127 | 28 | 5 | 3 + 5 query-driven |
-| edge-ai-agentic | 150 | 75 | 8 | 4 + 4 query-driven |
-| **Total** | **363** | **149** | **18** | **18 (10 legacy + 8 query-driven\*)** |
-
-\*M23–M25 ran 13 query-driven syntheses across the three domains, citing **148 of 363 sources (41%)**. Source-orphan lint findings dropped 363 → 215.
-
-See [BUILD.md § 9](BUILD.md) for per-milestone delivery records.
-
 ## Status
 
-**Feature-complete + content-active.** 28 commits on `main`, 294 tests pass in ~2.7s.
-
-| Layer | State |
-|---|---|
-| Gateway v1 (M0–M10) | Shipped |
-| Real legacy migrations (M11–M14) | Shipped — three vaults, 363 sources |
-| Wikilink canonicalization + migration idempotency (M12) | Shipped |
-| Lint check stubs (M15–M18: missing-pages, filter-calibration, contradictions, stale-claims) | Shipped |
-| Filter fine-tuning loop (M19 backfill + M20 distill) | Shipped — GLP-1 v2 candidate generated |
-| Voice / audiobook converters with mlx-whisper + diarization (M21–M22) | Shipped — Apple Silicon Metal-native |
-| Synthesis-driven citation-graph build-out (M23–M25) | Shipped — 41% source coverage across all three domains |
-| Optional integrations (watcher, MCP, pre-commit hook) | Active |
+**v1 + operational integrations shipped.** See [BUILD.md § 9](BUILD.md) for the per-milestone delivery record (commits, tests, hand-tests). For live content state, run `wiki status` and read `index.md`.
 
 ### Deferred items (not load-bearing)
 
@@ -113,4 +89,3 @@ See [BUILD.md § 9](BUILD.md) for per-milestone delivery records.
 - Apple Notes AppleScript poller (framework ships; platform-specific adapter pending)
 - Open-weight classifier fine-tune (the second WIKI § 10.4 option) — useful only when a domain crosses ~1000 high-quality decisions
 - Slug-rename op for query-driven synthesis pages with auto-derived slugs
-- Second-pass synthesis queries to push per-domain citation coverage past 70%

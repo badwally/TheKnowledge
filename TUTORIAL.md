@@ -36,19 +36,18 @@ discipline layer; the data is the README.
 
 Open these in order with your editor or `bat`/`less`:
 
-1. **`index.md`** — content index. The fastest "what's in here" view.
-2. **`wiki/mocs/`** — domain entry points. One MOC per topic area.
-   Currently three GLP-1 MOCs (`neurobiology-of-appetite-and-reward`,
-   `addiction-and-substance-use-disorders`, etc.), 5 ai-temporal-video
-   MOCs, and 8 edge-ai-agentic MOCs.
-3. **`wiki/synthesis/`** — answer pages. Currently 18 synthesis docs
-   covering specific questions across the three domains. Open
-   `wiki/synthesis/what-is-known-about-glp-1.md` for a worked example
-   of the format.
+1. **`index.md`** — live content index. The fastest "what's in here" view.
+2. **`wiki/mocs/`** — domain entry points (one MOC per topic area).
+3. **`wiki/synthesis/`** — answer pages. Pick any one as a worked example
+   of the format: claim sentences anchored by `[[sources/<id>]]`
+   wikilinks, with frontmatter declaring the domain and any draft state.
 4. **`wiki/sources/<canonical-id>.md`** — summary card per source.
    Click any `[[sources/...]]` wikilink in a synthesis to land here.
 5. **`raw/<type>/<canonical-id>.md`** — the immutable origin. Wiki
    summaries link here via `[[raw/<type>/<id>]]`.
+
+For the live counts and per-domain breakdown, run `wiki status` and
+read `index.md`.
 
 **Navigation shortcuts:**
 
@@ -131,7 +130,7 @@ After a follow-up authoring pass adds citations (or removes
 unresolvable meta-claims):
 
 ```sh
-wiki finalize wiki/synthesis/what-is-known-about-glp-1.md
+wiki finalize wiki/synthesis/<slug>.md
 ```
 
 This re-runs the strict validator. If all claims are now cited, the
@@ -153,7 +152,7 @@ project's CLAUDE.md, README, or notes:
 
 ```markdown
 The reward-circuit synthesis lives at
-`~/code/knowledge/wiki/synthesis/what-is-known-about-glp-1.md`.
+`~/code/knowledge/wiki/synthesis/<slug>.md`.
 ```
 
 For agent access from another Claude Code session, the MCP server is
