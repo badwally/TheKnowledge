@@ -53,3 +53,27 @@ report=.knowledge/lint/2026-04-28T16-51-46Z-schema-drift.md
 ## [2026-04-28T16:58:31Z] wiki-author | id=synthesis-query-what-is-known-about-glp-1 | updates=1 | draft=yes
 
 Synthesizes mesolimbic GLP-1 evidence from rodent neurochemistry/circuit work and human functional-connectivity imaging across the candidate corpus.
+
+## [2026-04-28T16:59:43Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-28T16-59-43Z-schema-drift.md
+
+## [2026-04-28T17:02:40Z] wiki-author | id=synthesis-query-glp-1-receptor-agonists-in-alcohol | updates=1 | draft=yes
+
+Question asks for a structured synthesis across preclinical mechanisms and human clinical evidence for GLP-1 RAs in AUD/SUD; candidates contain enough primary, review, and observational sources to ground each claim.
+
+## [2026-04-28T17:04:39Z] wiki-author | id=synthesis-query-glp-1-dosing-strategies-titration-protocols | updates=1 | draft=yes
+
+Consolidate scattered preclinical, clinical, and community evidence on GLP-1 dose-response, titration, and compound selection into a single navigable synthesis page tied to source citations.
+
+## [2026-04-28T17:06:57Z] wiki-author | id=synthesis-query-glp-1-receptor-agonist-effects-on | updates=1 | draft=yes
+
+Five sub-questions (anhedonia, mood, libido, motivation, suicidality) span the mental-health surface of the glp1-reward-modulation domain and warrant a single integrated synthesis page citing the available reviews, mechanistic studies, observational mining, and clinical-commentary sources.
+
+## [2026-04-28T17:08:35Z] wiki-author | id=synthesis-query-glp-1-systemic-effects-cardiovascular-outcomes | updates=1 | draft=yes
+
+Capture what the wiki currently grounds about GLP-1 systemic effects (CV, neuroprotection, AD, brain volume) and explicitly flag the primary-trial sources still missing from the corpus.
+
+## [2026-04-28T17:13:32Z] lint | scope=orphans | orphans=327
+
+report=.knowledge/lint/2026-04-28T17-13-32Z-orphans.md
