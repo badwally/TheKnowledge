@@ -109,3 +109,7 @@ wiki --help
 - Apple Notes AppleScript poller (framework ships; platform-specific adapter pending)
 - Open-weight classifier fine-tune (the second WIKI § 10.4 option) — useful only when a domain crosses ~1000 high-quality decisions
 - Slug-rename op for query-driven synthesis pages with auto-derived slugs
+
+## License
+
+MIT — see [LICENSE](LICENSE).
