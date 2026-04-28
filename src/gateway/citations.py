@@ -14,6 +14,9 @@ import re
 # `[[ target | optional alias ]]` — capture the target.
 _WIKILINK_RE = re.compile(r"\[\[([^\]\|]+?)(?:\|[^\]]+)?\]\]")
 
+# Same shape but with the alias as a separate captured group so we can rebuild.
+_WIKILINK_REWRITE_RE = re.compile(r"\[\[([^\]\|]+?)(\|[^\]]+)?\]\]")
+
 # Markdown fenced code blocks — used to skip code from citation-grounding rules.
 _FENCE_RE = re.compile(r"```")
 
@@ -148,3 +151,32 @@ def citation_density(body: str) -> tuple[int, int, float]:
 def uncited_claims(body: str) -> list[ClaimSentence]:
     """Return only the claim sentences that are missing a source citation."""
     return [c for c in find_claim_sentences(body) if not c.has_citation]
+
+
+# --- bulk rewrite (used by migration) --------------------------------------
+
+
+def rewrite_wikilinks(text: str, mapping: dict[str, str]) -> str:
+    """Rewrite `[[old-target]]` (and `[[old-target|alias]]`, `[[old-target#anchor]]`)
+    to `[[new-target]]` using a {old: new} mapping.
+
+    Targets not in the mapping are left untouched. Aliases and anchors are
+    preserved verbatim.
+    """
+    if not mapping:
+        return text
+
+    def _replace(match: re.Match) -> str:
+        target = match.group(1).strip()
+        alias = match.group(2) or ""
+
+        anchor = ""
+        bare_target = target
+        if "#" in target:
+            bare_target, _, anchor = target.partition("#")
+            anchor = f"#{anchor}"
+
+        new_target = mapping.get(bare_target, bare_target)
+        return f"[[{new_target}{anchor}{alias}]]"
+
+    return _WIKILINK_REWRITE_RE.sub(_replace, text)

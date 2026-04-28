@@ -47,6 +47,7 @@ IMPLEMENTED: set[str] = {
     "finalize",
     "query",
     "mcp-serve",
+    "batch-ingest",
 }
 
 
@@ -157,6 +158,25 @@ def build_parser() -> argparse.ArgumentParser:
     # mcp-serve: start the MCP server (stdio)
     subparsers.add_parser("mcp-serve", help=SUBCOMMANDS["mcp-serve"])
 
+    # batch-ingest: vault-scoped operations (M8 supports --legacy-import)
+    p_batch = subparsers.add_parser("batch-ingest", help=SUBCOMMANDS["batch-ingest"])
+    p_batch.add_argument("vault", help="Path to the vault to migrate / batch-process")
+    p_batch.add_argument(
+        "--legacy-import",
+        action="store_true",
+        help="Treat <vault> as a legacy research-notebook Obsidian vault and migrate it",
+    )
+    p_batch.add_argument(
+        "--domain",
+        default=None,
+        help="Canonical domain slug for the migrated content",
+    )
+    p_batch.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Build the slug map and report counts; do not write canonical files",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -205,6 +225,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_query(ns)
     if ns.subcommand == "mcp-serve":
         return _run_mcp_serve(ns)
+    if ns.subcommand == "batch-ingest":
+        return _run_batch_ingest(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -325,6 +347,19 @@ def _run_mcp_serve(ns: argparse.Namespace) -> int:
 
     run()
     return 0
+
+
+def _run_batch_ingest(ns: argparse.Namespace) -> int:
+    from gateway.ops.batch_ingest import batch_ingest
+
+    return _emit_result(
+        batch_ingest(
+            ns.vault,
+            legacy_import=ns.legacy_import,
+            domain=ns.domain,
+            dry_run=ns.dry_run,
+        )
+    )
 
 
 if __name__ == "__main__":
