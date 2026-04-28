@@ -670,3 +670,129 @@ def test_contradictions_client_failure_emits_warning(kb_root):
 
     findings = contradictions.run(client=_Failing())
     assert any(f.severity == "warning" and "failed" in f.message for f in findings)
+
+
+# --- stale-claims (M18) ---------------------------------------------------
+
+
+from gateway.lint import stale_claims
+
+
+def _write_academic_source(canonical_id: str, *, source_type: str, year: int, domain: str = "d-test", title: str = "") -> Path:
+    front = {
+        "id": canonical_id,
+        "type": source_type,
+        "title": title or canonical_id,
+        "url": f"https://example.com/{canonical_id}",
+        "ingested_at": "2026-04-28T00:00:00Z",
+        "content_hash": "sha256:" + "0" * 64,
+        "domains": [domain],
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+        "published_at": f"{year}-01-01",
+    }
+    target = paths.raw_source_path(source_type, canonical_id)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(fm.serialize(front, "abstract body"))
+    return target
+
+
+def _write_concept_citing(slug: str, sentence: str, cited_id: str, *, domain: str = "d-test") -> Path:
+    body = (
+        f"# {slug}\n\n"
+        f"## Summary\n\n{sentence} [[sources/{cited_id}]]\n\n"
+        f"## Key claims\n\n- {sentence} [[sources/{cited_id}]]\n\n"
+        f"## Sources\n\n- [[sources/{cited_id}]]\n\n"
+        f"## Related\n\n"
+    )
+    front = {"type": "concept", "slug": slug, "canonical_name": slug, "domains": [domain]}
+    target = paths.wiki_dir() / "concepts" / f"{slug}.md"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(fm.serialize(front, body))
+    return target
+
+
+def test_stale_claims_no_data_returns_empty(kb_root):
+    assert stale_claims.run() == []
+
+
+def test_stale_claims_no_candidates_returns_empty(kb_root):
+    _write_academic_source("pubmed-1", source_type="pubmed", year=2020)
+    _write_concept_citing("c1", "A solid finding from 2020 reported widely.", "pubmed-1")
+    # No newer same-domain candidate -> no findings.
+    assert stale_claims.run() == []
+
+
+def test_stale_claims_default_emits_deterministic_count_per_domain(kb_root):
+    _write_academic_source("pubmed-1", source_type="pubmed", year=2018)
+    _write_academic_source("pubmed-2", source_type="pubmed", year=2024)  # newer same-type same-domain
+    _write_concept_citing("c1", "An important claim about a phenomenon under study.", "pubmed-1")
+
+    findings = stale_claims.run()
+    assert len(findings) == 1
+    assert findings[0].severity == "info"
+    assert findings[0].metadata == {"domain": "d-test", "candidate_count": 1}
+
+
+def test_stale_claims_skips_youtube_citations(kb_root):
+    # Wire a youtube cite + a newer pubmed source. Should not be flagged
+    # because youtube is not academic supersedable.
+    _write_academic_source("yt-old", source_type="youtube", year=2018)
+    _write_academic_source("pubmed-newer", source_type="pubmed", year=2024)
+    _write_concept_citing("c1", "Something about the ecosystem worth studying.", "yt-old")
+
+    assert stale_claims.run() == []
+
+
+def test_stale_claims_llm_mode_calls_per_sample(kb_root):
+    _write_academic_source("pubmed-old", source_type="pubmed", year=2018, title="Old work")
+    _write_academic_source("pubmed-new", source_type="pubmed", year=2024, title="New work")
+    _write_concept_citing("c1", "A specific empirical claim derived from the cited work.", "pubmed-old")
+
+    response = '{"superseded_by": "pubmed-new", "rationale": "stronger 2024 design"}'
+    client = _StubClient(response=response)
+    findings = stale_claims.run(client=client, sample_size=5)
+
+    warnings = [f for f in findings if f.severity == "warning" and "stale claim" in f.message]
+    infos = [f for f in findings if f.severity == "info"]
+    assert len(infos) == 1
+    assert len(warnings) == 1
+    assert warnings[0].metadata["superseded_by"] == "pubmed-new"
+    assert len(client.prompts) == 1
+
+
+def test_stale_claims_llm_returns_null_no_warning(kb_root):
+    _write_academic_source("pubmed-old", source_type="pubmed", year=2018)
+    _write_academic_source("pubmed-new", source_type="pubmed", year=2024)
+    _write_concept_citing("c1", "An empirical observation cited from the prior work.", "pubmed-old")
+
+    client = _StubClient(response='{"superseded_by": null, "rationale": "tangential"}')
+    findings = stale_claims.run(client=client, sample_size=5)
+    warnings = [f for f in findings if f.severity == "warning"]
+    assert warnings == []
+
+
+def test_stale_claims_llm_invalid_id_dropped(kb_root):
+    _write_academic_source("pubmed-old", source_type="pubmed", year=2018)
+    _write_academic_source("pubmed-new", source_type="pubmed", year=2024)
+    _write_concept_citing("c1", "A cited claim from the older paper here.", "pubmed-old")
+
+    client = _StubClient(response='{"superseded_by": "pubmed-fake-not-listed", "rationale": "x"}')
+    findings = stale_claims.run(client=client, sample_size=5)
+    warnings = [f for f in findings if f.severity == "warning" and "stale claim" in f.message]
+    assert warnings == []
+
+
+def test_stale_claims_llm_client_failure_emits_warning(kb_root):
+    _write_academic_source("pubmed-old", source_type="pubmed", year=2018)
+    _write_academic_source("pubmed-new", source_type="pubmed", year=2024)
+    _write_concept_citing("c1", "Empirical claim cited from older paper.", "pubmed-old")
+
+    class _Failing:
+        def call(self, _prompt: str) -> str:
+            raise RuntimeError("upstream timeout")
+
+    findings = stale_claims.run(client=_Failing(), sample_size=5)
+    failures = [f for f in findings if f.severity == "warning" and "failed" in f.message]
+    assert len(failures) == 1
