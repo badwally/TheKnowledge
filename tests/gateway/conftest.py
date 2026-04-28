@@ -45,7 +45,7 @@ def make_canonical_source(
         "published_at": published_at,
         "ingested_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "content_hash": validator.compute_content_hash(body),
-        "domains": domains if domains is not None else ["test-domain"],
+        "domains": domains if domains is not None else [],
         "nlm_corpus_ids": [],
         "wiki_pages": [],
         "meta": meta if meta is not None else {"channel": "Test Channel", "duration_seconds": 600},

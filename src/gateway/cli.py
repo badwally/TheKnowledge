@@ -1,7 +1,8 @@
 """`wiki` CLI entry point.
 
-`ingest` is wired to the M1 implementation. All other subcommands print
-"not yet implemented" and exit 2 until their milestone lands. See BUILD.md.
+Implemented at the current milestone: ingest, filter, filter-correct.
+Other subcommands print "not yet implemented" and exit 2 until their
+milestone lands. See BUILD.md.
 """
 
 import argparse
@@ -31,7 +32,7 @@ SUBCOMMANDS: dict[str, str] = {
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
 }
 
-IMPLEMENTED: set[str] = {"ingest"}
+IMPLEMENTED: set[str] = {"ingest", "filter", "filter-correct"}
 
 
 def _not_yet_implemented(subcommand: str) -> int:
@@ -56,12 +57,24 @@ def build_parser() -> argparse.ArgumentParser:
 
     subparsers = parser.add_subparsers(dest="subcommand", metavar="<subcommand>")
 
-    # Real wiring for `ingest`
+    # ingest
     p_ingest = subparsers.add_parser("ingest", help=SUBCOMMANDS["ingest"])
-    p_ingest.add_argument(
-        "input",
-        help="URL (web; M2) or path to a canonical markdown source file (M1)",
-    )
+    p_ingest.add_argument("input", help="URL or path to canonical markdown source")
+    p_ingest.add_argument("--domain", default=None, help="Domain slug for filter scoring")
+
+    # filter (read-only scoring)
+    p_filter = subparsers.add_parser("filter", help=SUBCOMMANDS["filter"])
+    p_filter.add_argument("input", help="URL or path to a source to score")
+    p_filter.add_argument("--domain", default=None, help="Domain slug for the policy to apply")
+
+    # filter-correct
+    p_correct = subparsers.add_parser("filter-correct", help=SUBCOMMANDS["filter-correct"])
+    p_correct.add_argument("source_id", help="Source id (e.g., yt-LfRiBJgD7sk)")
+    decision = p_correct.add_mutually_exclusive_group(required=True)
+    decision.add_argument("--include", action="store_true", help="Override decision to include")
+    decision.add_argument("--exclude", action="store_true", help="Override decision to exclude")
+    p_correct.add_argument("--rationale", required=True, help="Why the original decision was wrong")
+    p_correct.add_argument("--domain", default=None, help="Domain slug if not in source frontmatter")
 
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
@@ -87,37 +100,60 @@ def main(argv: list[str] | None = None) -> int:
 
     if ns.subcommand == "ingest":
         return _run_ingest(ns)
+    if ns.subcommand == "filter":
+        return _run_filter(ns)
+    if ns.subcommand == "filter-correct":
+        return _run_filter_correct(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
 
-def _run_ingest(ns: argparse.Namespace) -> int:
-    # Local import keeps `wiki --help` cheap and avoids loading PyYAML
-    # / trafilatura for users who only want to read help.
-    from gateway.ops.ingest import ingest
+def _resolve_input(raw: str) -> str | Path:
+    """URL strings pass through; everything else is treated as a filesystem path."""
+    if raw.startswith(("http://", "https://")):
+        return raw
+    return Path(raw).expanduser().resolve()
 
-    raw_input = ns.input
-    if raw_input.startswith(("http://", "https://")):
-        result = ingest(raw_input)
-    else:
-        input_path = Path(raw_input).expanduser().resolve()
-        result = ingest(input_path)
 
+def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") -> int:
     if result.success:
-        if result.no_op:
-            print(f"no-op: {result.summary}")
-        else:
-            print(f"ok: {result.summary}")
-            for p in result.paths_touched:
-                print(f"  touched: {p}")
+        prefix = no_op_label if result.no_op else ok_label
+        print(f"{prefix}: {result.summary}")
+        for p in result.paths_touched:
+            print(f"  touched: {p}")
         for w in result.warnings:
             print(f"warning: {w}", file=sys.stderr)
         return 0
-
-    print("ingest failed:", file=sys.stderr)
+    print("operation failed:", file=sys.stderr)
     for e in result.errors:
         print(f"  - {e}", file=sys.stderr)
     return 1
+
+
+def _run_ingest(ns: argparse.Namespace) -> int:
+    from gateway.ops.ingest import ingest
+
+    return _emit_result(ingest(_resolve_input(ns.input), domain=ns.domain))
+
+
+def _run_filter(ns: argparse.Namespace) -> int:
+    from gateway.ops.filter_op import filter_source
+
+    return _emit_result(filter_source(_resolve_input(ns.input), domain=ns.domain))
+
+
+def _run_filter_correct(ns: argparse.Namespace) -> int:
+    from gateway.ops.filter_correct import filter_correct
+
+    decision = "include" if ns.include else "exclude"
+    return _emit_result(
+        filter_correct(
+            ns.source_id,
+            decision=decision,
+            rationale=ns.rationale,
+            domain=ns.domain,
+        )
+    )
 
 
 if __name__ == "__main__":

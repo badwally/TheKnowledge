@@ -1,178 +1,239 @@
-# src/filter/semantic.py
-"""Semantic filtering: construct prompts and parse Claude's scoring responses."""
+"""Filter call: build prompt, invoke Claude, parse response.
 
+The default `FilterClient` shells out to `claude -p` so the user's Max-plan
+auth is reused without an `ANTHROPIC_API_KEY`. Tests inject mocks via
+`score(..., client=MyMockClient())`.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from datetime import datetime, timezone
 import json
+import re
+import subprocess
+from typing import Protocol
+
 import yaml
 
+from gateway.filter.examples import Example
+from gateway.filter.policy import Policy
 
-def build_filter_prompt(merged_policy: dict, videos: list[dict]) -> str:
-    """Build the full prompt for Claude to evaluate a batch of videos.
 
-    Args:
-        merged_policy: Merged editorial policy (template + domain config).
-        videos: List of normalized video metadata dicts from Stage 1a.
+class FilterError(RuntimeError):
+    """Raised when the filter call fails or returns an unparseable response."""
 
-    Returns:
-        Formatted prompt string ready for Claude evaluation.
+
+@dataclass
+class FilterResult:
+    score: float
+    rationale: str
+    policy_version: str
+    decided_at: str
+
+    def to_frontmatter_block(self) -> dict:
+        """Shape per WIKI.md § 3.1 `filter:` block (without user_correction)."""
+        return {
+            "score": round(self.score, 3),
+            "policy_version": self.policy_version,
+            "rationale": self.rationale,
+            "decided_at": self.decided_at,
+            "user_correction": None,
+        }
+
+
+class FilterClient(Protocol):
+    """Anything that takes a prompt string and returns a response string."""
+
+    def call(self, prompt: str) -> str: ...
+
+
+class ClaudeCLIFilterClient:
+    """Default backend: `claude -p <prompt>` subprocess call.
+
+    Reuses the user's Claude Code Max-plan authentication. Slow per call
+    (~5–30s) but correct for the use case (single source per ingest).
     """
-    policy_yaml = yaml.dump(merged_policy, default_flow_style=False, sort_keys=False)
 
-    video_json = json.dumps(videos, indent=2)
+    def __init__(self, executable: str = "claude", timeout_s: float = 120.0):
+        self._exe = executable
+        self._timeout = timeout_s
 
-    return f"""## Editorial Policy
+    def call(self, prompt: str) -> str:
+        try:
+            result = subprocess.run(
+                [self._exe, "-p", prompt],
+                capture_output=True,
+                text=True,
+                timeout=self._timeout,
+                check=False,
+            )
+        except FileNotFoundError as e:
+            raise FilterError(f"`{self._exe}` not found on PATH; install Claude Code or inject a FilterClient") from e
+        except subprocess.TimeoutExpired as e:
+            raise FilterError(f"`{self._exe} -p` timed out after {self._timeout}s") from e
 
+        if result.returncode != 0:
+            raise FilterError(
+                f"`{self._exe} -p` exited {result.returncode}: {result.stderr.strip()[:300]}"
+            )
+        return result.stdout
+
+
+# --- prompt construction ----------------------------------------------------
+
+
+_PROMPT_TEMPLATE = """\
+You are a semantic relevance filter for a personal research knowledge base.
+Score the source below against the editorial policy and respond with a single JSON object.
+
+## Editorial policy
+
+```yaml
 {policy_yaml}
+```
 
-## Videos to Evaluate
+## Past decisions for calibration
 
-{video_json}
+{examples_section}
+
+## Source under evaluation
+
+{source_section}
 
 ## Instructions
 
-Evaluate each video against the editorial policy above. For each video, return a JSON array where each element has:
-- "video_id": the video's ID
-- "relevance_score": integer 1-5 per the scoring rubric
-- "inclusion_rationale": 1-2 sentences explaining your score
-- "included": boolean (true if relevance_score >= {merged_policy['scoring_rubric']['inclusion_threshold']})
+Score the source's relevance to the editorial policy on a 0.0–1.0 scale where:
 
-Return ONLY the JSON array, no other text."""
+- 1.0 — strongly matches inclusion criteria, high-quality, must include
+- 0.7 — clearly relevant, should be included
+- 0.5 — ambiguous; merits human review
+- 0.3 — marginal relevance
+- 0.0 — clearly fails (violates exclusion criteria, low quality, off-topic)
+
+Respond with ONLY a JSON object, no surrounding text or code fences:
+{{"score": <0.0-1.0>, "rationale": "<1-2 sentences explaining the score>"}}
+"""
 
 
-def parse_filter_response(response_text: str) -> list[dict]:
-    """Parse Claude's filter response into a list of scoring dicts.
+def build_prompt(
+    policy: Policy,
+    examples: list[Example],
+    front: dict,
+    body_head: str,
+) -> str:
+    policy_yaml = yaml.safe_dump(policy.raw, sort_keys=False, default_flow_style=False, allow_unicode=True).rstrip()
+    return _PROMPT_TEMPLATE.format(
+        policy_yaml=policy_yaml,
+        examples_section=_format_examples(examples),
+        source_section=_format_source(front, body_head),
+    )
 
-    Args:
-        response_text: Claude's response (should be a JSON array).
 
-    Returns:
-        List of dicts with video_id, relevance_score, inclusion_rationale, included.
+def _format_examples(examples: list[Example]) -> str:
+    if not examples:
+        return "_(no past examples yet — apply the policy directly)_"
+    blocks = []
+    for ex in examples:
+        blocks.append(
+            f"- **{ex.decision}** ({ex.score:.2f}, {ex.pinned_by}): "
+            f"{ex.rationale.strip() or '(no rationale)'} "
+            f"[id={ex.source_id}]"
+        )
+    return "\n".join(blocks)
 
-    Raises:
-        ValueError: If response cannot be parsed as valid JSON.
-    """
-    text = response_text.strip()
-    # Strip markdown code fences if present
-    if text.startswith("```"):
-        lines = text.split("\n")
-        text = "\n".join(lines[1:-1]) if lines[-1].strip() == "```" else "\n".join(lines[1:])
-        text = text.strip()
+
+def _format_source(front: dict, body_head: str) -> str:
+    interesting_fields = {
+        k: front.get(k)
+        for k in ("type", "title", "url", "authors", "published_at", "domains", "meta")
+        if front.get(k) not in (None, [], {})
+    }
+    front_yaml = yaml.safe_dump(interesting_fields, sort_keys=False, allow_unicode=True).rstrip()
+    return f"### Frontmatter\n\n```yaml\n{front_yaml}\n```\n\n### Body (truncated)\n\n{body_head}"
+
+
+def _truncate(body: str, max_chars: int) -> str:
+    if len(body) <= max_chars:
+        return body
+    return body[:max_chars].rstrip() + "\n\n... [truncated for filter scoring]"
+
+
+# --- response parsing -------------------------------------------------------
+
+
+_JSON_OBJECT_RE = re.compile(r"\{[^{}]*\}", re.DOTALL)
+
+
+def parse_response(text: str) -> tuple[float, str]:
+    """Pull (score, rationale) out of a Claude response string."""
+    if not text or not text.strip():
+        raise FilterError("empty response from filter client")
+
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        # strip code-fence wrapper if present
+        lines = cleaned.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].startswith("```"):
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+
+    obj = None
+    try:
+        obj = json.loads(cleaned)
+    except json.JSONDecodeError:
+        match = _JSON_OBJECT_RE.search(cleaned)
+        if match:
+            try:
+                obj = json.loads(match.group(0))
+            except json.JSONDecodeError as e:
+                raise FilterError(f"could not parse JSON in filter response: {e}") from e
+
+    if not isinstance(obj, dict):
+        raise FilterError(f"filter response did not contain a JSON object: {cleaned[:200]!r}")
+    if "score" not in obj or "rationale" not in obj:
+        raise FilterError(f"filter response missing 'score' or 'rationale': {obj!r}")
 
     try:
-        scores = json.loads(text)
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to parse Claude's filter response as JSON: {e}")
+        score = float(obj["score"])
+    except (TypeError, ValueError) as e:
+        raise FilterError(f"score not a number: {obj['score']!r}") from e
 
-    if not isinstance(scores, list):
-        raise ValueError(f"Expected JSON array, got {type(scores).__name__}")
+    if not 0.0 <= score <= 1.0:
+        raise FilterError(f"score out of range [0.0, 1.0]: {score}")
 
-    return scores
+    rationale = str(obj["rationale"]).strip()
+    if not rationale:
+        rationale = "(no rationale provided)"
 
-
-def apply_scores(videos: list[dict], scores: list[dict]) -> list[dict]:
-    """Merge Claude's scores back into the video metadata.
-
-    Args:
-        videos: Original normalized video metadata.
-        scores: Claude's scoring output (from parse_filter_response).
-
-    Returns:
-        Videos with relevance_score, inclusion_rationale, and included fields added.
-    """
-    score_map = {s["video_id"]: s for s in scores}
-
-    result = []
-    for video in videos:
-        vid = video["video_id"]
-        if vid in score_map:
-            scored = dict(video)
-            scored["relevance_score"] = score_map[vid]["relevance_score"]
-            scored["inclusion_rationale"] = score_map[vid]["inclusion_rationale"]
-            scored["included"] = score_map[vid]["included"]
-            result.append(scored)
-
-    return result
+    return score, rationale
 
 
-def _source_guidance(source_type: str) -> str:
-    """Return evaluation guidance for a source type."""
-    guidance = {
-        "youtube": "Evaluate channel authority, speaker expertise, and content depth. Prefer substantive technical content over news or hype.",
-        "arxiv": "Evaluate methodology rigor, novelty, and relevance to research criteria. Note whether the paper has been peer-reviewed (check journal_ref in source_metadata). Preprints without peer review should still be included if methodology is sound.",
-        "pubmed": "Evaluate peer review status, journal quality, and methodology. Prioritize systematic reviews and meta-analyses. Check publication_type in source_metadata.",
-        "semantic_scholar": "Evaluate citation impact and field relevance. High citation count with recent influential citations indicates established work.",
-    }
-    return guidance.get(source_type, "Evaluate based on general quality signals in the editorial policy.")
+# --- public score function --------------------------------------------------
 
 
-def build_item_filter_prompt(merged_policy: dict, items: list[dict]) -> str:
-    """Build filter prompt for multi-source items.
+def score(
+    front: dict,
+    body: str,
+    policy: Policy,
+    examples: list[Example] | None = None,
+    client: FilterClient | None = None,
+    body_head_chars: int = 16000,
+) -> FilterResult:
+    """Run the filter end-to-end and return a structured result."""
+    examples = examples if examples is not None else []
+    client = client or ClaudeCLIFilterClient()
 
-    Groups items by source_type and includes source-specific evaluation
-    guidance so Claude applies appropriate quality signals.
+    body_head = _truncate(body, body_head_chars)
+    prompt = build_prompt(policy, examples, front, body_head)
+    raw = client.call(prompt)
+    s, rationale = parse_response(raw)
 
-    Args:
-        merged_policy: Merged editorial policy (template + domain config).
-        items: List of normalized item dicts (ITEM_REQUIRED_FIELDS format).
-
-    Returns:
-        Formatted prompt string ready for Claude evaluation.
-    """
-    policy_yaml = yaml.dump(merged_policy, default_flow_style=False, sort_keys=False)
-
-    # Build source-type preamble
-    source_types = sorted(set(item["source_type"] for item in items))
-    preamble_parts = []
-    for st in source_types:
-        count = sum(1 for item in items if item["source_type"] == st)
-        guidance = _source_guidance(st)
-        preamble_parts.append(f"- **{st}** ({count} items): {guidance}")
-    preamble = "\n".join(preamble_parts)
-
-    items_json = json.dumps(items, indent=2)
-
-    return f"""## Editorial Policy
-
-{policy_yaml}
-
-## Source Types in This Batch
-
-{preamble}
-
-## Items to Evaluate
-
-{items_json}
-
-## Instructions
-
-Evaluate each item against the editorial policy above, applying source-appropriate quality signals. For each item, return a JSON array where each element has:
-- "item_id": the item's ID
-- "relevance_score": integer 1-5 per the scoring rubric
-- "inclusion_rationale": 1-2 sentences explaining your score
-- "included": boolean (true if relevance_score >= {merged_policy['scoring_rubric']['inclusion_threshold']})
-
-Return ONLY the JSON array, no other text."""
-
-
-def apply_item_scores(items: list[dict], scores: list[dict]) -> list[dict]:
-    """Merge Claude's scores back into item metadata.
-
-    Args:
-        items: Original normalized item metadata.
-        scores: Claude's scoring output (from parse_filter_response).
-
-    Returns:
-        Scored items only. Items without a matching score in the response are dropped.
-    """
-    score_map = {s["item_id"]: s for s in scores}
-
-    result = []
-    for item in items:
-        iid = item["item_id"]
-        if iid in score_map:
-            scored = dict(item)
-            scored["relevance_score"] = score_map[iid]["relevance_score"]
-            scored["inclusion_rationale"] = score_map[iid]["inclusion_rationale"]
-            scored["included"] = score_map[iid]["included"]
-            result.append(scored)
-
-    return result
+    return FilterResult(
+        score=s,
+        rationale=rationale,
+        policy_version=f"{policy.domain_slug}-{policy.version}",
+        decided_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    )
