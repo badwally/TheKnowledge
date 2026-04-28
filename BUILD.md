@@ -546,7 +546,7 @@ The plan is intentionally aggressive on architecture and conservative on feature
 
 ## 9. Delivered status (post-build record)
 
-All 11 milestones shipped in a single sustained session. 217 passing tests, ~7,800 LOC under `src/gateway/`. Each milestone landed as one commit on `main`.
+v1 (M0–M10) shipped in a single sustained session. M11+ tracks operational milestones: real legacy migrations, follow-up on deferred stubs. 217 passing tests, ~7,800 LOC under `src/gateway/`. Each milestone landed as one commit on `main`.
 
 | # | Commit | Tests | Hand-test |
 |---|---|---|---|
@@ -561,6 +561,7 @@ All 11 milestones shipped in a single sustained session. 217 passing tests, ~7,8
 | M8 | `54f1021` | 172 | Real GLP-1 vault dry-run: 127 sources mapped (48 yt / 77 pubmed / 2 arxiv) |
 | M9 | `5bb5d81` | 193 | `wiki lint` on empty wiki → 0 findings across all 10 checks; report written |
 | M10 | `bebf319` | 217 | `wiki ingest https://arxiv.org/abs/2403.05530` → real Gemini 1.5 paper ingested; synthesized PDF preserved as sidecar |
+| M11 | _this commit_ | 217 | Real legacy migration phase 2 (GLP-1): 127 sources + 28 concepts + 5 MOCs + 3 synthesis written into `~/code/knowledge/`; 13/13 spot-check audit pass on title/authors/url/filter-score/body-content; research-notebook untouched |
 
 ### Key architectural properties locked in
 
@@ -577,7 +578,7 @@ All 11 milestones shipped in a single sustained session. 217 passing tests, ~7,8
 
 - M5 real NotebookLM artifact creation (would create real artifacts in user's account; ~5–15 min per artifact)
 - M6 real `claude -p` plan generation (~10–30s per source; mocks cover gateway logic)
-- M8 real legacy migration commit (hours-scale work; user-invoked when ready)
+- M11 / phase 1 (ai-temporal-video) and phase 3 (edge-ai-agentic) — held until phase 2 lessons applied (see § 10)
 
 ### Stubs and follow-up work
 
@@ -586,3 +587,15 @@ All 11 milestones shipped in a single sustained session. 217 passing tests, ~7,8
 - **Apple Notes AppleScript integration** (M10): poller framework ships; the AppleScript adapter is platform-specific follow-up.
 - **CLI stubs**: `index`, `search`, `migrate` (the migration command is replaced by `batch-ingest --legacy-import`; index and search are quality-of-life ops over the same content).
 - **Filter fine-tuning loop**: roadmap per WIKI § 10.4. Trigger threshold ~500–1000 high-quality decisions per domain.
+
+---
+
+## 10. M11 lessons → M12 candidate (wikilink canonicalization)
+
+The phase 2 GLP-1 migration (M11) committed cleanly with high body-content fidelity (13/13 spot-check) but produced 158 orphan lint findings. Root cause: the legacy GLP-1 vault used **bare-slug wikilinks** (`[[mesolimbic-dopamine-system-modulation]]`) rather than the canonical type-prefixed form (`[[concepts/mesolimbic-dopamine-system-modulation]]`), and **numeric `[1, 2]` citations** rather than `[[sources/<id>]]` wikilinks. MIGRATION.md § 8 expects source-slug rewrites only and explicitly preserves concept/MOC link form — but the legacy form doesn't carry the type prefix that the orphans lint requires.
+
+These gaps are characteristic of all three legacy vaults, not just GLP-1. Deferring per-phase fixups is the wrong shape; M12 is the right place to canonicalize wikilink form across all migrated content (phase 2 already migrated, phase 1 / phase 3 to follow).
+
+**M12 — Wikilink canonicalization (proposed).** Extend `gateway/slugmap.py` to build a {bare-slug → type-prefixed-target} map from the wiki/concepts/, wiki/mocs/, wiki/synthesis/ filesystems; extend `gateway/citations.rewrite_wikilinks` invocation in `gateway/ops/migrate.py` to run that map across all wiki/ pages during legacy import. Acceptance: migrated content has zero orphan warnings except for genuine entry-point pages (MOCs). One commit; lint deltas reported.
+
+After M12, the held phases (phase 1 ai-temporal-video, phase 3 edge-ai-agentic) can run with the canonicalization built in.
