@@ -31,5 +31,7 @@ def test_cli_version_via_subprocess():
 
 
 def test_cli_unimplemented_returns_nonzero():
-    rc = cli.main(["ingest", "some-fake-arg"])
+    # `query` is still a stub at M1; should exit 2 with not-yet-implemented.
+    # Update this list as subcommands move from stub to real wiring.
+    rc = cli.main(["query", "what is x"])
     assert rc == 2

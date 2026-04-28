@@ -1,16 +1,17 @@
 """`wiki` CLI entry point.
 
-M0 stub: every subcommand prints "not yet implemented" and exits non-zero.
-Subcommands are wired to real implementations in subsequent milestones (M1+).
+`ingest` is wired to the M1 implementation. All other subcommands print
+"not yet implemented" and exit 2 until their milestone lands. See BUILD.md.
 """
 
 import argparse
 import sys
+from pathlib import Path
 
 from gateway import __version__
 
 
-SUBCOMMANDS = {
+SUBCOMMANDS: dict[str, str] = {
     "ingest": "Ingest a single source (path or URL) into the canonical wiki",
     "batch-ingest": "Ingest a whole vault or directory; supports --legacy-import",
     "query": "Query the wiki; may invoke NotebookLM for large-corpus questions",
@@ -30,11 +31,12 @@ SUBCOMMANDS = {
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
 }
 
+IMPLEMENTED: set[str] = {"ingest"}
+
 
 def _not_yet_implemented(subcommand: str) -> int:
-    """Stub handler used by every subcommand at M0."""
     print(
-        f"`wiki {subcommand}` is not yet implemented at M0 (repo bootstrap).\n"
+        f"`wiki {subcommand}` is not yet implemented at the current milestone.\n"
         f"See BUILD.md for the milestone that lands this command.",
         file=sys.stderr,
     )
@@ -50,18 +52,23 @@ def build_parser() -> argparse.ArgumentParser:
             "See WIKI.md for the contract."
         ),
     )
-    parser.add_argument(
-        "--version", action="version", version=f"wiki {__version__}"
-    )
+    parser.add_argument("--version", action="version", version=f"wiki {__version__}")
 
     subparsers = parser.add_subparsers(dest="subcommand", metavar="<subcommand>")
 
+    # Real wiring for `ingest`
+    p_ingest = subparsers.add_parser("ingest", help=SUBCOMMANDS["ingest"])
+    p_ingest.add_argument("input", help="Path to a canonical markdown source file (M1)")
+
+    # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
+        if name in IMPLEMENTED:
+            continue
         sub = subparsers.add_parser(name, help=help_text)
         sub.add_argument(
             "args",
             nargs=argparse.REMAINDER,
-            help="(arguments forwarded to the subcommand; not parsed at M0)",
+            help="(arguments forwarded to the subcommand; not parsed yet)",
         )
 
     return parser
@@ -75,7 +82,35 @@ def main(argv: list[str] | None = None) -> int:
         parser.print_help()
         return 0
 
+    if ns.subcommand == "ingest":
+        return _run_ingest(ns)
+
     return _not_yet_implemented(ns.subcommand)
+
+
+def _run_ingest(ns: argparse.Namespace) -> int:
+    # Local import keeps `wiki --help` cheap and avoids loading PyYAML
+    # for users who only want to read help.
+    from gateway.ops.ingest import ingest_canonical
+
+    input_path = Path(ns.input).expanduser().resolve()
+    result = ingest_canonical(input_path)
+
+    if result.success:
+        if result.no_op:
+            print(f"no-op: {result.summary}")
+        else:
+            print(f"ok: {result.summary}")
+            for p in result.paths_touched:
+                print(f"  touched: {p}")
+        for w in result.warnings:
+            print(f"warning: {w}", file=sys.stderr)
+        return 0
+
+    print("ingest failed:", file=sys.stderr)
+    for e in result.errors:
+        print(f"  - {e}", file=sys.stderr)
+    return 1
 
 
 if __name__ == "__main__":
