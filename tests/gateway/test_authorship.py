@@ -567,64 +567,47 @@ def _seed_concept_page(slug: str, *, domain: str, claim_keyword: str = "dose"):
     page.write_text(fm.serialize(front, body))
 
 
-def test_query_files_synthesis_via_plan(kb_root, make_source):
-    # Need a source that the synthesis can cite
+def test_query_files_synthesis_via_notebooklm(kb_root, make_source):
+    # The rebuilt query op asks the persistent NotebookLM corpus and
+    # files the answer; the old plan-client-driven path is gone.
+    from gateway import nlm_registry
     raw = paths.raw_source_path("youtube", "yt-x")
     raw.parent.mkdir(parents=True, exist_ok=True)
     raw.write_text(make_source(id_="yt-x", domains=["d-q"]))
 
-    _seed_concept_page("dose-response", domain="d-q")
+    nlm_registry.register("d-q", "nb-test-1")
 
-    synthesis_content = fm.serialize(
-        {
-            "type": "synthesis",
-            "slug": "what-is-the-dose-response",
-            "title": "What is the dose response",
-            "domains": ["d-q"],
-            "question": "What is the dose response?",
-        },
-        (
-            "# What is the dose response\n\n"
-            "## Synthesis\n\nDose response is a documented effect [[sources/yt-x]].\n\n"
-            "## Sources cited\n\n- [[sources/yt-x]]\n"
-        ),
+    # Seed source-map cache so [[sources/yt-x]] resolves.
+    cache_dir = paths.knowledge_root() / "nlm" / "source_maps"
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    import json as _json
+    (cache_dir / "nb-test-1.json").write_text(
+        _json.dumps({"nlm-1": "raw/youtube/yt-x"})
     )
 
-    response = (
-        '{"source_id": "synthesis-query-what-is-the-dose-response", '
-        '"rationale": "stub", '
-        '"updates": [{'
-        '"target_path": "wiki/synthesis/what-is-the-dose-response.md", '
-        '"update_kind": "create", '
-        f'"content": {repr(synthesis_content)}'
-        '}]}'
-    ).replace("'", '"')
+    class _Stub:
+        def notebook_query(self, notebook_id, question):
+            return {
+                "answer": "Dose response is a documented effect [1].",
+                "citations": {1: "nlm-1"},
+                "sources_used": ["nlm-1"],
+            }
 
-    # repr() uses single quotes; JSON wants doubles. Build the JSON manually:
-    import json as _json
-    response = _json.dumps({
-        "source_id": "synthesis-query-what-is-the-dose-response",
-        "rationale": "stub",
-        "updates": [{
-            "target_path": "wiki/synthesis/what-is-the-dose-response.md",
-            "update_kind": "create",
-            "content": synthesis_content,
-        }],
-    })
-
-    client = StubPlanClient(response=response)
-    result = query("What is the dose response?", domain="d-q", client=client)
+    result = query(
+        "What is the dose response?", domain="d-q", nlm_client=_Stub()
+    )
     assert result.success, result.errors
-    assert "dose response" in client.last_prompt
-    assert (paths.wiki_dir() / "synthesis" / "what-is-the-dose-response.md").exists()
+    pages = list((paths.wiki_dir() / "synthesis").glob("*-what-is-the-dose-response.md"))
+    assert pages, "expected a synthesis page"
 
 
-def test_query_no_matches_errors(kb_root):
-    client = StubPlanClient(response="should-not-be-called")
-    result = query("anything", client=client)
+def test_query_without_notebook_errors(kb_root):
+    # No persistent notebook for 'undefined' → error pointing at `wiki research`.
+    result = query("anything", domain="undefined")
     assert not result.success
-    assert any("no wiki pages matched" in e for e in result.errors)
-    assert client.last_prompt is None
+    joined = " ".join(result.errors)
+    assert "no notebook" in joined
+    assert "wiki research" in joined
 
 
 # --- ingest --with-plan integration ----------------------------------------

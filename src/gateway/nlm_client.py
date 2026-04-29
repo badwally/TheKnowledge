@@ -63,6 +63,8 @@ class NlmClient(Protocol):
 
     def download_report(self, notebook_id: str, dest: Path, *, artifact_id: str | None = None) -> None: ...
 
+    def notebook_query(self, notebook_id: str, question: str) -> dict: ...
+
 
 # --- subprocess implementation ---------------------------------------------
 
@@ -248,6 +250,32 @@ class NlmCLIClient:
 
     def download_report(self, notebook_id: str, dest: Path, *, artifact_id: str | None = None) -> None:
         self._download("report", notebook_id, dest, artifact_id)
+
+    # --- query -------------------------------------------------------------
+
+    def notebook_query(self, notebook_id: str, question: str) -> dict:
+        """Ask the notebook a question; return parsed answer + citations.
+
+        Ports `query_notebook` from research-notebook/src/research/query.py.
+        The `nlm notebook query` command emits JSON on stdout by default; the
+        response is either `{value: {...}}` or the inner shape directly.
+        """
+        args = ["notebook", "query", notebook_id, question]
+        result = self._run(args)
+        self._check(result, args=args)
+        try:
+            raw = json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            raise NlmError(
+                f"could not parse `{self._exe} {' '.join(args)}` stdout as JSON: "
+                f"{e}; stdout={result.stdout.strip()[:500]!r}"
+            ) from e
+        value = raw.get("value", raw) if isinstance(raw, dict) else {}
+        return {
+            "answer": value.get("answer", ""),
+            "citations": value.get("citations", {}),
+            "sources_used": value.get("sources_used", []),
+        }
 
 
 def notebook_url(notebook_id: str) -> str:

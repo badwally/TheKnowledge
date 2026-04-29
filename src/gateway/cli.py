@@ -37,6 +37,7 @@ SUBCOMMANDS: dict[str, str] = {
     "promote-domain": "Bless a draft domain proposal: write policy + back-tag sources",
     "demote-domain": "Reverse a promotion: remove tags + delete auto-generated policy",
     "reject-proposal": "Delete a draft domain proposal",
+    "research": "Corpus-constructive research: fan out search, filter, build a NotebookLM session, file syntheses",
 }
 
 IMPLEMENTED: set[str] = {
@@ -61,6 +62,7 @@ IMPLEMENTED: set[str] = {
     "promote-domain",
     "demote-domain",
     "reject-proposal",
+    "research",
 }
 
 
@@ -163,14 +165,55 @@ def build_parser() -> argparse.ArgumentParser:
         help="Delete the draft page and remove its backlinks instead of finalizing",
     )
 
-    # query: search the wiki and file a synthesis page
+    # query: ask the persistent NotebookLM corpus and file a synthesis page
     p_query = subparsers.add_parser("query", help=SUBCOMMANDS["query"])
-    p_query.add_argument("question", help="Question to ask of the wiki")
-    p_query.add_argument("--domain", default=None, help="Restrict scope to one domain")
+    p_query.add_argument("question", help="Question to ask the persistent domain corpus")
+    p_query.add_argument(
+        "--domain",
+        required=True,
+        help="Domain slug whose persistent NotebookLM corpus to query",
+    )
     p_query.add_argument(
         "--draft",
         action="store_true",
         help="Allow partial citations on the synthesis; mark draft until finalized",
+    )
+
+    # research: corpus-constructive research loop
+    p_research = subparsers.add_parser("research", help=SUBCOMMANDS["research"])
+    p_research.add_argument("prompt", help="Research prompt / question")
+    p_research.add_argument(
+        "--domain",
+        default=None,
+        help="Domain slug (omit to let the gateway infer one from the prompt)",
+    )
+    p_research.add_argument(
+        "--include-local",
+        action="append",
+        default=None,
+        dest="include_local",
+        help="Path or glob to include via the local-files adapter (repeatable)",
+    )
+    p_research.add_argument(
+        "--trust-local",
+        action="store_true",
+        help="Skip the semantic filter for local-source items",
+    )
+    p_research.add_argument(
+        "--max-results",
+        type=int,
+        default=50,
+        help="Max candidates each adapter is allowed to return (default 50)",
+    )
+    p_research.add_argument(
+        "--draft",
+        action="store_true",
+        help="File synthesis pages with draft=true (citation rule downgraded)",
+    )
+    p_research.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Skip NotebookLM creation; report a structured plan only",
     )
 
     # mcp-serve: start the MCP server (stdio)
@@ -381,6 +424,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_demote_domain(ns)
     if ns.subcommand == "reject-proposal":
         return _run_reject_proposal(ns)
+    if ns.subcommand == "research":
+        return _run_research(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -630,6 +675,22 @@ def _run_reject_proposal(ns: argparse.Namespace) -> int:
     from gateway.ops.reject_proposal import reject_proposal
 
     return _emit_result(reject_proposal(ns.proposal_slug))
+
+
+def _run_research(ns: argparse.Namespace) -> int:
+    from gateway.research.orchestrator import research
+
+    return _emit_result(
+        research(
+            ns.prompt,
+            domain=ns.domain,
+            include_local=ns.include_local,
+            trust_local=ns.trust_local,
+            max_results_per_adapter=ns.max_results,
+            draft=ns.draft,
+            dry_run=ns.dry_run,
+        )
+    )
 
 
 if __name__ == "__main__":
