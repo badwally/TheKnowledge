@@ -88,7 +88,7 @@ Every source in `raw/` and every wiki page begins with YAML frontmatter delimite
 ```yaml
 ---
 id: <type>-<short-id>          # stable, unique across raw/. Examples below.
-type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|docx|xlsx|pptx|other
+type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|docx|xlsx|pptx|image|other
 title: "<source title>"
 url: "<canonical URL, optional>"
 authors: ["<name>", ...]
@@ -207,6 +207,15 @@ meta:
   subject: "<core_properties.subject if set>"
   original_filename: "<basename.pptx>"
   extraction_tool: "python-pptx"
+
+# type: image
+meta:
+  width: 1920
+  height: 1080
+  format: "PNG" | "JPEG" | "GIF" | "WEBP" | "TIFF" | "BMP" | "HEIC"
+  mode: "RGB" | "RGBA" | "L" | ...
+  original_filename: "<basename.png>"
+  extraction_tool: "Pillow + claude-vision"
 ```
 
 Add new types by extending this list. The validator schema is the source of truth at runtime; this document defines the human-readable contract.
@@ -554,6 +563,7 @@ Stable, type-prefixed, short. Never derived from titles (titles change; IDs must
 | docx | `docx-<author-year-shortname>` or `docx-<sha256-prefix-12>` | `docx-grant-2026-architecture` |
 | xlsx | `xlsx-<author-year-shortname>` or `xlsx-<sha256-prefix-12>` | `xlsx-grant-2026-budget` |
 | pptx | `pptx-<author-year-shortname>` or `pptx-<sha256-prefix-12>` | `pptx-grant-2026-launch` |
+| image | `image-<YYYY-MM-DD>-<sha256-prefix-12>` | `image-2026-04-29-a3b4c5d6e7f8` |
 
 ### 6.2 Wiki entity / concept slugs
 

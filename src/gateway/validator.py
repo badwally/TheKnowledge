@@ -34,6 +34,7 @@ ALLOWED_SOURCE_TYPES: set[str] = {
     "docx",
     "xlsx",
     "pptx",
+    "image",
     "other",
 }
 
@@ -58,6 +59,7 @@ ID_PATTERNS: dict[str, re.Pattern[str]] = {
     "docx": re.compile(r"^docx-[a-z0-9-]+$"),
     "xlsx": re.compile(r"^xlsx-[a-z0-9-]+$"),
     "pptx": re.compile(r"^pptx-[a-z0-9-]+$"),
+    "image": re.compile(r"^image-\d{4}-\d{2}-\d{2}-[a-f0-9]{12}$"),
     "other": re.compile(r"^.+$"),
 }
 

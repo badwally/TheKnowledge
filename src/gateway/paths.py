@@ -20,6 +20,7 @@ SOURCE_TYPES: tuple[str, ...] = (
     "docx",
     "xlsx",
     "pptx",
+    "image",
     "other",
 )
 
