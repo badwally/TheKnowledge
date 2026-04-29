@@ -48,6 +48,7 @@ def _ensure_registered() -> None:
     from gateway.converters.csv import CSVConverter
     from gateway.converters.docx import DocxConverter
     from gateway.converters.xlsx import XlsxConverter
+    from gateway.converters.pptx import PptxConverter
 
     register(YouTubeConverter())
     register(ArxivConverter())
@@ -57,6 +58,7 @@ def _ensure_registered() -> None:
     register(CSVConverter())
     register(DocxConverter())
     register(XlsxConverter())
+    register(PptxConverter())
 
     # Voice / audiobook converters depend on the optional `[whisper]` extra.
     # Register only when the heavy deps are importable so the default install
