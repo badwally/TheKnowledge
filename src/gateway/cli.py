@@ -33,6 +33,10 @@ SUBCOMMANDS: dict[str, str] = {
     "migrate": "Apply a schema or content migration script",
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
     "watch": "Run the inbox watcher daemon in the foreground (used by launchd)",
+    "discover-domains": "Cluster source pages into draft domain proposals (M36)",
+    "promote-domain": "Bless a draft domain proposal: write policy + back-tag sources",
+    "demote-domain": "Reverse a promotion: remove tags + delete auto-generated policy",
+    "reject-proposal": "Delete a draft domain proposal",
 }
 
 IMPLEMENTED: set[str] = {
@@ -53,6 +57,10 @@ IMPLEMENTED: set[str] = {
     "mcp-serve",
     "batch-ingest",
     "lint",
+    "discover-domains",
+    "promote-domain",
+    "demote-domain",
+    "reject-proposal",
 }
 
 
@@ -254,6 +262,54 @@ def build_parser() -> argparse.ArgumentParser:
         help="With --distill: skip the threshold gate (use sparingly)",
     )
 
+    # discover-domains (M36)
+    p_discover = subparsers.add_parser(
+        "discover-domains", help=SUBCOMMANDS["discover-domains"]
+    )
+    p_discover.add_argument(
+        "--scope",
+        default=None,
+        help="Glob (relative to repo root) restricting candidate sources, "
+        "e.g. 'wiki/sources/pdf-*'",
+    )
+    p_discover.add_argument(
+        "--since",
+        default=None,
+        help="ISO-8601 prefix; only sources ingested at-or-after this timestamp",
+    )
+    p_discover.add_argument(
+        "--untagged",
+        action="store_true",
+        help="Only include sources with empty/missing 'domains:' frontmatter",
+    )
+
+    # promote-domain (M36)
+    p_promote = subparsers.add_parser(
+        "promote-domain", help=SUBCOMMANDS["promote-domain"]
+    )
+    p_promote.add_argument(
+        "proposal_slug",
+        help="Slug of the proposal page (e.g. 'proposal-investing-letters')",
+    )
+
+    # demote-domain (M36)
+    p_demote = subparsers.add_parser(
+        "demote-domain", help=SUBCOMMANDS["demote-domain"]
+    )
+    p_demote.add_argument(
+        "domain_slug",
+        help="The proposed_domain slug to reverse",
+    )
+
+    # reject-proposal (M36)
+    p_reject = subparsers.add_parser(
+        "reject-proposal", help=SUBCOMMANDS["reject-proposal"]
+    )
+    p_reject.add_argument(
+        "proposal_slug",
+        help="Slug of the proposal page to delete",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -310,6 +366,14 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_examples(ns)
     if ns.subcommand == "finetune":
         return _run_finetune(ns)
+    if ns.subcommand == "discover-domains":
+        return _run_discover_domains(ns)
+    if ns.subcommand == "promote-domain":
+        return _run_promote_domain(ns)
+    if ns.subcommand == "demote-domain":
+        return _run_demote_domain(ns)
+    if ns.subcommand == "reject-proposal":
+        return _run_reject_proposal(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -528,6 +592,32 @@ def _run_lint(ns: argparse.Namespace) -> int:
     from gateway.ops.lint import lint
 
     return _emit_result(lint(scope=ns.scope))
+
+
+def _run_discover_domains(ns: argparse.Namespace) -> int:
+    from gateway.ops.discover_domains import discover_domains
+
+    return _emit_result(
+        discover_domains(scope=ns.scope, since=ns.since, untagged=ns.untagged)
+    )
+
+
+def _run_promote_domain(ns: argparse.Namespace) -> int:
+    from gateway.ops.promote_domain import promote_domain
+
+    return _emit_result(promote_domain(ns.proposal_slug))
+
+
+def _run_demote_domain(ns: argparse.Namespace) -> int:
+    from gateway.ops.demote_domain import demote_domain
+
+    return _emit_result(demote_domain(ns.domain_slug))
+
+
+def _run_reject_proposal(ns: argparse.Namespace) -> int:
+    from gateway.ops.reject_proposal import reject_proposal
+
+    return _emit_result(reject_proposal(ns.proposal_slug))
 
 
 if __name__ == "__main__":

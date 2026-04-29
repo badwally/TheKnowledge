@@ -49,6 +49,10 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Finalize a draft page | `wiki finalize <page-path>` (`--abandon` to delete) |
 | Backfill policy + example bank from legacy | `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` |
 | Inspect / distill the example bank | `wiki finetune [--check \| --domain X --distill [--force]]` |
+| Discover candidate domains in an unsorted corpus | `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` |
+| Bless a draft proposal as a real domain | `wiki promote-domain <proposal-slug>` |
+| Reverse a promotion (undo policy + back-tags) | `wiki demote-domain <domain-slug>` |
+| Delete a draft proposal | `wiki reject-proposal <proposal-slug>` |
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
 
