@@ -34,6 +34,7 @@ raw/**/*.caf
 raw/**/*.csv
 raw/**/*.tsv
 raw/**/*.docx
+raw/**/*.xlsx
 
 # Editor swap files
 *.swp

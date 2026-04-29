@@ -88,7 +88,7 @@ Every source in `raw/` and every wiki page begins with YAML frontmatter delimite
 ```yaml
 ---
 id: <type>-<short-id>          # stable, unique across raw/. Examples below.
-type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|docx|other
+type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|docx|xlsx|other
 title: "<source title>"
 url: "<canonical URL, optional>"
 authors: ["<name>", ...]
@@ -189,6 +189,16 @@ meta:
   subject: "<core_properties.subject if set>"
   original_filename: "<basename.docx>"
   extraction_tool: "python-docx"
+
+# type: xlsx
+meta:
+  sheet_count: 3
+  sheets:
+    - {name: "Sheet1", rows: 1284, columns: 12}
+    - {name: "Summary", rows: 12, columns: 4}
+  total_data_rows: 1296
+  original_filename: "<basename.xlsx>"
+  extraction_tool: "openpyxl"
 ```
 
 Add new types by extending this list. The validator schema is the source of truth at runtime; this document defines the human-readable contract.
@@ -534,6 +544,7 @@ Stable, type-prefixed, short. Never derived from titles (titles change; IDs must
 | note | `note-<source-app>-<remote-id-or-hash>` | `note-apple-A1B2` |
 | csv | `csv-<sha256-prefix-12>` | `csv-3a9f8e2b1c4d` |
 | docx | `docx-<author-year-shortname>` or `docx-<sha256-prefix-12>` | `docx-grant-2026-architecture` |
+| xlsx | `xlsx-<author-year-shortname>` or `xlsx-<sha256-prefix-12>` | `xlsx-grant-2026-budget` |
 
 ### 6.2 Wiki entity / concept slugs
 

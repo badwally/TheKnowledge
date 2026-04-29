@@ -32,6 +32,7 @@ ALLOWED_SOURCE_TYPES: set[str] = {
     "note",
     "csv",
     "docx",
+    "xlsx",
     "other",
 }
 
@@ -54,6 +55,7 @@ ID_PATTERNS: dict[str, re.Pattern[str]] = {
     "note": re.compile(r"^note-[a-z0-9-]+-[A-Za-z0-9_-]+$"),
     "csv": re.compile(r"^csv-[a-f0-9]{12}$"),
     "docx": re.compile(r"^docx-[a-z0-9-]+$"),
+    "xlsx": re.compile(r"^xlsx-[a-z0-9-]+$"),
     "other": re.compile(r"^.+$"),
 }
 
