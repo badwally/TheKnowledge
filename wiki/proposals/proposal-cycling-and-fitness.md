@@ -3,9 +3,23 @@ type: domain-proposal
 slug: proposal-cycling-and-fitness
 title: Cycling and Endurance Fitness
 proposed_domain: cycling-and-fitness
-status: draft
-member_sources: [pdf-21a07e2e3e63, pdf-432fe168a2d1, pdf-95753e942ede, pdf-a5ea98378b0a, pdf-a78b30f3c6c3, pdf-a96a6a5b955a, pdf-b51938faf250, pdf-d2f73a919c86, pdf-f03d709c7ff7, pdf-f13aa755f8e2, pdf-c985b0372d8a, pdf-8dee6c5cd58d]
-rationale: Cycling-specific physiology and training literature, Corsica cycling tour materials, Studio Velo shop receipts, SRAM/eTap component manuals, plus a kettlebell training calendar — all centered on endurance training and cycling gear.
+status: blessed
+member_sources:
+- pdf-21a07e2e3e63
+- pdf-432fe168a2d1
+- pdf-95753e942ede
+- pdf-a5ea98378b0a
+- pdf-a78b30f3c6c3
+- pdf-a96a6a5b955a
+- pdf-b51938faf250
+- pdf-d2f73a919c86
+- pdf-f03d709c7ff7
+- pdf-f13aa755f8e2
+- pdf-c985b0372d8a
+- pdf-8dee6c5cd58d
+rationale: Cycling-specific physiology and training literature, Corsica cycling tour
+  materials, Studio Velo shop receipts, SRAM/eTap component manuals, plus a kettlebell
+  training calendar — all centered on endurance training and cycling gear.
 ---
 
 ## Rationale

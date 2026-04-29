@@ -220,6 +220,29 @@ def _ingest_canonical_text(
                 )
 
             if existing_front.get("content_hash") == front["content_hash"]:
+                # Source body unchanged. If --with-plan, still run the
+                # authorship loop against the existing canonical text —
+                # otherwise the plan never runs for back-tagged-after-ingest
+                # sources (M36 promote → --with-plan flow needs this).
+                if with_plan:
+                    plan_result = _invoke_plan_and_apply(
+                        front=existing_front,
+                        body=existing_body,
+                        domain=domain
+                        or (existing_front.get("domains") or [None])[0],
+                        plan_client=plan_client,
+                        draft=draft,
+                    )
+                    return OperationResult(
+                        success=plan_result.success,
+                        paths_touched=plan_result.paths_touched,
+                        warnings=plan_result.warnings,
+                        errors=plan_result.errors,
+                        summary=(
+                            f"already ingested; ran --with-plan: "
+                            f"{plan_result.summary}"
+                        ),
+                    )
                 return OperationResult(
                     success=True,
                     no_op=True,

@@ -7,9 +7,14 @@ authors: []
 ingested_at: '2026-04-29T16:12:29Z'
 content_hash: sha256:4e4d8f1230b00e0913536863d07cb09a3be5dab234f535086f7a6838d2bd1a70
 source_path: raw/pdf/pdf-a78b30f3c6c3.pdf
-domains: []
+domains:
+- cycling-and-fitness
 nlm_corpus_ids: []
-wiki_pages: []
+wiki_pages:
+- wiki/entities/europe-active.md
+- wiki/entities/cycling-corsica-self-guided-luxury.md
+- wiki/concepts/self-guided-cycling-tour.md
+- wiki/entities/corsica.md
 meta:
   page_count: 8
   extraction_tool: pdfplumber

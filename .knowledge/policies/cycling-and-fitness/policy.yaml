@@ -1,0 +1,22 @@
+# Auto-generated policy from a domain-proposal (M36).
+# Flesh out inclusion_criteria / exclusion_criteria before running
+# `wiki filter` against this domain.
+
+version: v0.1.0-auto
+auto_generated: true
+auto_generated_from_proposal: true
+domain:
+  slug: cycling-and-fitness
+  topic: Cycling and Endurance Fitness
+  field: ''
+  description: "Cycling-specific physiology and training literature, Corsica cycling\
+    \ tour materials, Studio Velo shop receipts, SRAM/eTap component manuals, plus\
+    \ a kettlebell training calendar \u2014 all centered on endurance training and\
+    \ cycling gear."
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria: []
+exclusion_criteria: []

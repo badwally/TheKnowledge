@@ -7,9 +7,17 @@ authors: []
 ingested_at: '2026-04-29T16:26:32Z'
 content_hash: sha256:024aab17d1f0d7892003edc845cb3f426dfcc279563fbcf60d0fec4de394850a
 source_path: raw/pdf/pdf-a5ea98378b0a.pdf
-domains: []
+domains:
+- cycling-and-fitness
 nlm_corpus_ids: []
-wiki_pages: []
+wiki_pages:
+- wiki/entities/studio-velo.md
+- wiki/entities/parlee-z-zero-xd.md
+- wiki/entities/schwalbe.md
+- wiki/entities/schwalbe-g-one-speed.md
+- wiki/entities/park-tool.md
+- wiki/entities/park-tool-bbt-9.md
+- wiki/entities/trico-case.md
 meta:
   page_count: 1
   extraction_tool: pdfplumber

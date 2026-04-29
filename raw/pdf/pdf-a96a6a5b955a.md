@@ -7,7 +7,8 @@ authors: []
 ingested_at: '2026-04-29T16:21:54Z'
 content_hash: sha256:53dcab30041689834dd46358ea02dac13d353f2a1a54b3a6209d490feb62db57
 source_path: raw/pdf/pdf-a96a6a5b955a.pdf
-domains: []
+domains:
+- cycling-and-fitness
 nlm_corpus_ids: []
 wiki_pages: []
 meta:

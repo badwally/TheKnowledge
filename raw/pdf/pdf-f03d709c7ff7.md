@@ -7,9 +7,17 @@ authors: []
 ingested_at: '2026-04-29T16:12:10Z'
 content_hash: sha256:1a09780f9d1b2b82e1332ddb40f80aedffc65d9edb28301593fd20f04b669e86
 source_path: raw/pdf/pdf-f03d709c7ff7.pdf
-domains: []
+domains:
+- cycling-and-fitness
 nlm_corpus_ids: []
-wiki_pages: []
+wiki_pages:
+- wiki/entities/marmot-tours.md
+- wiki/entities/corsican-highlights.md
+- wiki/entities/col-de-bavella.md
+- wiki/entities/col-de-vergio.md
+- wiki/concepts/flexible-route-cycling-tour.md
+- wiki/entities/corsica.md
+- wiki/concepts/cyclotourism.md
 meta:
   page_count: 9
   extraction_tool: pdfplumber

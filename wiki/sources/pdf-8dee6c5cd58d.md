@@ -3,7 +3,8 @@ type: source
 source_id: pdf-8dee6c5cd58d
 source_type: pdf
 title: DFW KB Remix calendar /u/Bethskw.docx
-domains: []
+domains:
+- cycling-and-fitness
 ingested_at: '2026-04-29T16:16:37Z'
 ---
 # DFW KB Remix calendar /u/Bethskw.docx

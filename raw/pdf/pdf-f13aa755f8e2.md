@@ -7,9 +7,19 @@ authors: []
 ingested_at: '2026-04-29T16:13:14Z'
 content_hash: sha256:f0c363996d0b3ac1cd1e2d8a61909c346bd04ebfb9978dbd97c2d7af55c888a3
 source_path: raw/pdf/pdf-f13aa755f8e2.pdf
-domains: []
+domains:
+- cycling-and-fitness
 nlm_corpus_ids: []
-wiki_pages: []
+wiki_pages:
+- wiki/entities/sram-etap-axs.md
+- wiki/entities/sram.md
+- wiki/concepts/brake-bed-in.md
+- wiki/entities/sram-axs-blipbox.md
+- wiki/entities/sram-axs-app.md
+- wiki/concepts/axs-button.md
+- wiki/concepts/axs-system-pairing.md
+- wiki/concepts/enhanced-shifting.md
+- wiki/concepts/multi-shift.md
 meta:
   page_count: 130
   extraction_tool: pdfplumber

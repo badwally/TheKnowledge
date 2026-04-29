@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:16:37Z'
 content_hash: sha256:290cec3336ccbfe294c179901470b463da87f5e2c3aab96e2b6dfb5940a7e57b
 source_path: raw/pdf/pdf-8dee6c5cd58d.pdf
-domains: []
+domains:
+- cycling-and-fitness
 nlm_corpus_ids: []
-wiki_pages: []
+wiki_pages:
+- wiki/entities/dfw-kettleballs-remix.md
+- wiki/entities/bethskw.md
+- wiki/entities/strongfirst.md
+- wiki/entities/dry-fighting-weight.md
+- wiki/entities/kettleballs-subreddit.md
+- wiki/concepts/kettlebell.md
+- wiki/concepts/clean-and-press.md
+- wiki/concepts/front-squat.md
+- wiki/concepts/kettlebell-swing.md
+- wiki/concepts/ladder-set-protocol.md
+- wiki/concepts/rep-max.md
 meta:
   page_count: 1
   extraction_tool: pdfplumber

@@ -1,0 +1,114 @@
+WITH_PLAN_START 2026-04-29T18:08:33Z
+===ATCORSICA_3volets_velo_UK (4).pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-432fe168a2d1: 5 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gt-20.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/corsica.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/corsica-cyclo-gt-20.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cyclotourism.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cyclosportive.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===Studio Velo Receipt For Order #137065.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-95753e942ede: 5 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/studio-velo.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/parlee.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/parlee-z-zero-xd.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/speedplay.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram-etap-axs.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===Studio Velo Receipt For Order #137715.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-a5ea98378b0a: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/studio-velo.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/parlee-z-zero-xd.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/schwalbe.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/schwalbe-g-one-speed.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/park-tool.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/park-tool-bbt-9.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/trico-case.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===cycling-corsica-self-guided-luxury.pdf===
+operation failed:
+  - plan client failed: `claude -p` timed out after 300.0s
+---
+===Hino_Burke_2020.pdf===
+ok: already ingested; ran --with-plan: plan for pdf-a96a6a5b955a contains no updates
+---
+===sram-hrd-hose-shortening-and-bleed-manual.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-b51938faf250: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram-hrd.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hydraulic-disc-brake.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/brake-bleed.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bleeding-edge.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stealth-a-majig.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/monoblock-caliper.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/brake-bed-in.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram-etap-axs.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===SC-Cycling.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-d2f73a919c86: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/phil-mosley.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/strength-and-conditioning-for-cyclists.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cycling-periodization-phases.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/squat.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/single-leg-cycling-strength.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/glute-bridge.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cycling-core-stability.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/plyometrics-cycling.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cyclist-upper-body-strength.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cycling-injury-prevention.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cycling-flexibility.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===CCC-TripNotes-July24-1.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-f03d709c7ff7: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/marmot-tours.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/corsican-highlights.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/col-de-bavella.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/col-de-vergio.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/flexible-route-cycling-tour.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/corsica.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cyclotourism.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===etap-axs-systems-manual.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-f13aa755f8e2: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram-etap-axs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/brake-bed-in.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram-axs-blipbox.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sram-axs-app.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/axs-button.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/axs-system-pairing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/enhanced-shifting.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-shift.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===carte GT20 kakemono.pdf===
+warning: update[3] (wiki/entities/gr20.md): [wiki-page-slug-similar] slug: slug 'gr20' is near-duplicate of: gt-20 (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-c985b0372d8a: 4 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gt-20.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/corsica.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/col-de-vergio.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gr20.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===FallbackPDF__8dee6c5c.pdf===
+ok: already ingested; ran --with-plan: applied plan for pdf-8dee6c5cd58d: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dfw-kettleballs-remix.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bethskw.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/strongfirst.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dry-fighting-weight.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/kettleballs-subreddit.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/kettlebell.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/clean-and-press.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/front-squat.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/kettlebell-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ladder-set-protocol.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/rep-max.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+WITH_PLAN_DONE 2026-04-29T18:43:58Z

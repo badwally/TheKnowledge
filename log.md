@@ -1721,3 +1721,87 @@ error: PDF not found: /Users/andrewgrant/code/knowledge/file:/Users/andrewgrant/
 ## [2026-04-29T17:52:18Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=convert | target=file:///Users/andrewgrant/code/knowledge/raw/pdf/pdf-04854302f962.pdf
 
 error: PDF not found: /Users/andrewgrant/code/knowledge/file:/Users/andrewgrant/code/knowledge/raw/pdf/pdf-04854302f962.pdf
+
+## [2026-04-29T17:52:43Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-52-43Z-schema-drift.md
+
+## [2026-04-29T17:52:54Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=start | domain=ai-temporal-video
+
+start research session for prompt 'Test smoke run for orchestrator wiring'
+
+## [2026-04-29T17:52:54Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | target=web
+
+error: FIRECRAWL_API_KEY not set
+
+## [2026-04-29T17:52:54Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | target=youtube
+
+error: YOUTUBE_API_KEY not set
+
+## [2026-04-29T17:52:54Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | adapter=local | n=3
+
+adapter local returned 3 candidates
+
+## [2026-04-29T17:52:54Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | adapter=arxiv | n=3
+
+adapter arxiv returned 3 candidates
+
+## [2026-04-29T17:52:55Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | adapter=pubmed | n=0
+
+adapter pubmed returned 0 candidates
+
+## [2026-04-29T17:52:55Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=merge | n=6
+
+merged 6 candidate(s) across adapters
+
+## [2026-04-29T17:53:16Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=filter | n=3
+
+3 candidate(s) cleared threshold
+
+## [2026-04-29T18:03:52Z] promote-domain | proposal=proposal-cycling-and-fitness | domain=cycling-and-fitness | members=12
+
+blessed proposal proposal-cycling-and-fitness → domain cycling-and-fitness
+
+## [2026-04-29T18:08:12Z] wiki-author | id=pdf-21a07e2e3e63 | updates=11 | draft=no
+
+First substantive cycling physiology source; seeds the cycling-and-fitness domain with author entities, the three energy systems, and core training-science concepts (FTP, lactate, aerobic capacity, TrainingPeaks metrics).
+
+## [2026-04-29T18:09:57Z] wiki-author | id=pdf-432fe168a2d1 | updates=5 | draft=no
+
+This is a Corsica cycle-tourism brochure — orthogonal to the existing physiology pages — so I'm seeding new entity/concept pages for the GT 20 route, the Corsica Cyclo event, the destination itself, and the two route-types it implies (cyclotourism, cyclosportive).
+
+## [2026-04-29T18:11:48Z] wiki-author | id=pdf-95753e942ede | updates=5 | draft=no
+
+The receipt is a primary record of a 2019 custom bike build, naming a bike shop, a frame manufacturer, a specific custom-geometry bike, a groupset, and a cleat brand — all warranting their own entity pages.
+
+## [2026-04-29T18:15:16Z] wiki-author | id=pdf-a5ea98378b0a | updates=7 | draft=no
+
+September 2019 Studio Velo receipt adds product detail (Schwalbe G-One Speed, Park Tool BBT-9, Trico case) and extends the Studio Velo / Parlee XD storyline with a paid bike-pack-for-shipping job one month after the original Z-Zero XD build.
+
+## [2026-04-29T18:24:24Z] wiki-author | id=pdf-b51938faf250 | updates=9 | draft=no
+
+The SRAM HRD service manual is the first source in the wiki on hydraulic road disc brakes, so it seeds entries for SRAM as an organization, the HRD product line, and the brake-system concepts (hydraulic disc brake, bleed, Bleeding Edge, Stealth-a-majig, Monoblock, bed-in) the manual documents, plus a back-link from the existing SRAM eTap AXS entity to its parent.
+
+## [2026-04-29T18:28:37Z] wiki-author | id=pdf-d2f73a919c86 | updates=11 | draft=no
+
+The source is a 18-page cycling strength & conditioning guide by Phil Mosley covering ~21 exercises plus periodization framing — it justifies a new author entity, an overarching S&C concept, a periodization-phases concept, and concept pages clustering the exercises by training intent (squat, single-leg, posterior chain, core, plyometrics, upper body) plus injury prevention and flexibility framing concepts.
+
+## [2026-04-29T18:33:22Z] wiki-author | id=pdf-f03d709c7ff7 | updates=7 | draft=no
+
+The source is a 6-day Marmot Tours cycling-holiday brochure for Corsica that introduces a new commercial operator, a named multi-day route, two notable cols, and a flexible-route tour format — none of which are currently in the wiki — while also enriching the existing Corsica and cyclotourism pages.
+
+## [2026-04-29T18:37:36Z] wiki-author | id=pdf-f13aa755f8e2 | updates=9 | draft=no
+
+The SRAM eTap AXS Systems User Manual is the canonical install guide for the AXS groupset — it deepens the existing eTap AXS and SRAM entities and supplies enough new material to seed dedicated pages for the AXS Button, System Pairing, Enhanced Shifting, Multi-shift, the BlipBox aero option, and the SRAM AXS App, plus a second citation on the existing brake bed-in concept.
+
+## [2026-04-29T18:40:32Z] wiki-author | id=pdf-c985b0372d8a | updates=4 | draft=no
+
+The kakemono is a 2019 promotional banner of the GT20 route — it confirms Corsican-language place names along the cycling itinerary, surfaces additional towns not in the existing 12-stage breakdown, depicts the GR20 walking trail running alongside, and gives the Corsican name 'Bocca a Verghju' for the Col de Vergio.
+
+## [2026-04-29T18:43:58Z] wiki-author | id=pdf-8dee6c5cd58d | updates=11 | draft=no
+
+The source is a 5-week paired-kettlebell program calendar (DFW Kettleballs Remix by /u/Bethskw, derived from StrongFirst's Dry Fighting Weight) — it introduces a new program, its author, the upstream organization, the upstream program, the host community, and the core kettlebell movements / set-structure / load-prescription concepts it relies on, none of which exist in the wiki yet.
+
+## [2026-04-29T18:48:39Z] wiki-author | id=pdf-a78b30f3c6c3 | updates=4 | draft=no
+
+The brochure introduces a new commercial cycling-tour operator (Europe Active) and a distinct self-guided 7-day Corsica route, plus rich place-detail along the Cap Corse / Désert des Agriates / La Balagne corridor that augments the existing Corsica entity.
