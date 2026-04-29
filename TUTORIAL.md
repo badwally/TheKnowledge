@@ -87,16 +87,35 @@ filter scores it against the policy, the wiki summary page is created.
 For arxiv / pubmed / youtube URLs, a domain-specific converter handles
 metadata extraction.
 
-### 3b. A local PDF or voice memo
+### 3b. A local document — PDF, Word, Excel, PowerPoint, CSV
 
 ```sh
 # Drop into the watcher inbox; the launchd agent ingests automatically
 cp ~/Downloads/paper.pdf ~/code/knowledge/raw/inbox/
-cp ~/Documents/Voice\ Memos/idea.m4a ~/code/knowledge/raw/inbox/
+cp ~/Downloads/notes.docx ~/code/knowledge/raw/inbox/
+cp ~/Downloads/budget.xlsx ~/code/knowledge/raw/inbox/
+cp ~/Downloads/deck.pptx ~/code/knowledge/raw/inbox/
+cp ~/Downloads/data.csv ~/code/knowledge/raw/inbox/
 
 # Or invoke directly
 wiki ingest ~/Downloads/paper.pdf --domain glp1-reward-modulation
+wiki ingest ~/Downloads/notes.docx
+```
+
+What each converter does:
+- **PDF** (`pdfplumber`): page-by-page text extraction; sidecar `.pdf` preserved.
+- **Word `.docx`** (`python-docx`): paragraphs and tables in document order; `Heading 1-6` styles map to `#`/`##`/`###`/etc. Author / title / created date pulled from core properties.
+- **Excel `.xlsx`** (`openpyxl`, read-only mode for streaming over large workbooks): each sheet becomes a `## <sheet-name>` section with a preview table (first 50 rows × 20 columns; full data in the sidecar).
+- **PowerPoint `.pptx`** (`python-pptx`): each slide becomes `## Slide N: <title>`; speaker notes when present render as `> **Speaker notes:** ...` block.
+- **CSV / TSV** (stdlib): dialect-sniffed delimiter, preview-row (50) and preview-col (20) truncation, pipe-character escaping for markdown safety.
+
+Embedded images inside Office documents and PDFs are intentionally skipped — for prose-heavy sources (scientific papers, technical writing) the author's text typically describes figures more accurately than a VLM would, and the original file is preserved as a sidecar so on-demand inspection works via the citation chain. If a specific figure carries primary content, extract it and ingest it separately as an image (§ 3d).
+
+### 3c. A voice memo or audiobook
+
+```sh
 wiki ingest ~/Documents/Voice\ Memos/idea.m4a
+wiki ingest ~/Audiobooks/thinking-fast-slow.m4b
 ```
 
 Voice memos transcribe via mlx-whisper (`large-v3-turbo`, ~5× real-time
@@ -104,14 +123,38 @@ on M3 Max) and diarize via pyannote — output is a speaker-labeled
 markdown body with timestamp anchors. Audiobooks (`.m4b`) split by
 embedded chapters.
 
-The watcher writes the new file to `raw/<type>/<id>.<ext>` and a
-canonical markdown to `raw/<type>/<id>.md`. Failed ingests land in
-`raw/inbox/_failed/` with an error sidecar.
+### 3d. An image — chart, diagram, screenshot, photo
 
-### 3c. A note you wrote in another tool
+```sh
+wiki ingest ~/Downloads/q1-sales-chart.png
+wiki ingest ~/Pictures/whiteboard-2026-04-29.heic
+```
+
+Multimodal ingest. Pillow extracts metadata (dimensions, format, mode); Claude vision runs a structured prompt to produce a citable description with four sections (Overview / Visible text / Key elements / Domain-specific content). The image becomes searchable and linkable just like any other source — `[[sources/image-<YYYY-MM-DD>-<hash>]]` resolves to the description page; the original is preserved as a sidecar at `raw/image/<id>.<ext>`.
+
+Cost is real: ~1¢ per image, ~10–30s per call. Fine for one-off ingests; consider whether you actually need image-by-image VLM for a folder of hundreds of screenshots.
+
+Supported extensions: `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.tiff`, `.bmp`, `.heic`, `.heif`. Vector formats (SVG) are out of scope in v1.
+
+### 3e. A note you wrote in another tool
 
 If it's already markdown with reasonable frontmatter, just put it in
 `raw/inbox/`. Otherwise, voice-memo it.
+
+### 3f. An API-only source — pollers
+
+For sources without a watchable filesystem (Apple Notes today; Notion / Slack / Gmail queued), pollers fetch new items on a schedule and write them to `raw/note/`:
+
+```sh
+wiki poll --list                # see registered pollers
+wiki poll apple-notes           # fetch new notes since last cursor
+```
+
+Each poller maintains its own cursor under `.knowledge/pollers/<name>/cursor.yaml`, so re-runs only fetch what's new. The first run for Apple Notes prompts macOS for Automation access to Notes.app; subsequent runs are silent. Pollers don't bypass the pipeline — they only produce canonical markdown in `raw/note/`, and the filter / validator / citation-grounding rules apply unchanged downstream.
+
+The watcher writes the new file to `raw/<type>/<id>.<ext>` and a
+canonical markdown to `raw/<type>/<id>.md`. Failed ingests land in
+`raw/inbox/_failed/` with an error sidecar.
 
 ## 4. Ask a question — the synthesis loop
 
@@ -270,6 +313,8 @@ wiki nlm-revise <slug> --slide <n> "<instructions>"
 wiki status
 wiki watch                                         # foreground; usually launchd runs this
 wiki lint [--scope <check>]
+wiki poll <name>                                   # run a registered poller (e.g. apple-notes)
+wiki poll --list                                   # show registered pollers
 wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>
 wiki finetune [--check | --domain X --distill [--force]]
 

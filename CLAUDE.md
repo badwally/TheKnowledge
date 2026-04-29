@@ -49,6 +49,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Finalize a draft page | `wiki finalize <page-path>` (`--abandon` to delete) |
 | Backfill policy + example bank from legacy | `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` |
 | Inspect / distill the example bank | `wiki finetune [--check \| --domain X --distill [--force]]` |
+| Run a registered poller (e.g. Apple Notes) | `wiki poll <name>` (`wiki poll --list` to see registered) |
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
 
@@ -56,7 +57,20 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 
 ## Adding a new source type
 
-Write a converter under `~/code/research-notebook/src/search/` that outputs canonical markdown to `raw/<type>/<slug>.md` per the frontmatter schema in `WIKI.md`. No pipeline changes required. Pollers (for API-only sources like Apple Notes, Notion) follow the same contract — they write to `raw/` on a schedule.
+Write a converter under `src/gateway/converters/<type>.py` that outputs canonical markdown to `raw/<type>/<slug>.md` per the frontmatter schema in `WIKI.md`. Six steps lock the pattern (M29 onward):
+
+1. Add the type string to `paths.SOURCE_TYPES`
+2. Add it to `validator.ALLOWED_SOURCE_TYPES` and define an `ID_PATTERNS` regex
+3. Implement the converter as a `Converter` subclass with `detect()` + `convert()`
+4. Register it in `gateway.converters.__init__._ensure_registered`
+5. Update `WIKI.md` § 3.1 (type enum), § 3.2 (meta block), § 6.1 (ID format)
+6. Tests at `tests/gateway/test_converters_<type>.py` (mirror an existing converter's shape)
+
+No pipeline changes required.
+
+Source types currently supported: `web`, `youtube`, `arxiv`, `pubmed`, `pdf`, `voice`, `audiobook`, `note`, `csv`, `docx`, `xlsx`, `pptx`, `image`.
+
+Pollers (API-only sources without a watchable filesystem — Apple Notes, Notion, Slack, Gmail) follow a parallel contract under `src/gateway/pollers/<name>.py`: subclass `Poller`, implement `run()`, register in `pollers.__init__._REGISTRY`. Pollers write canonical markdown to `raw/<type>/` on a schedule (or on-demand via `wiki poll <name>`); the watcher / `wiki ingest` picks up from there.
 
 ## Where things live
 
@@ -80,7 +94,7 @@ Write a converter under `~/code/research-notebook/src/search/` that outputs cano
 
 ## Forward-looking notes
 
-- **API-only-source pollers** (Apple Notes, Notion, Slack, Gmail) get bolt-on schedulers writing to `raw/<source>/` in the canonical format. Same downstream pipeline.
+- **API-only-source pollers.** Apple Notes shipped (M34). Notion, Slack, Gmail queued. All bolt onto the same downstream pipeline — pollers only produce canonical markdown in `raw/`.
 - **Filter fine-tuning loop** is shipped: trigger detection + distilled-prompt extraction (`wiki finetune`). Default threshold is 500 high-quality decisions per domain. Open-weight classifier fine-tune (the second WIKI § 10.4 option) is deferred until a domain crosses ~1000 decisions.
 - **qmd or similar BM25/vector index** gets dropped in if/when the wiki crosses ~10k pages. Markdown remains canonical; the index is derived state.
 - **Legacy migration** (M11–M14) is the only path that imports research-notebook Obsidian vaults. The vaults at `~/code/research-notebook/data/obsidian*/` are read-only inputs to the migrate script.
