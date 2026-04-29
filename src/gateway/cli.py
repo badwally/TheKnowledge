@@ -33,6 +33,7 @@ SUBCOMMANDS: dict[str, str] = {
     "migrate": "Apply a schema or content migration script",
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
     "watch": "Run the inbox watcher daemon in the foreground (used by launchd)",
+    "poll": "Run a registered poller (e.g. apple-notes) to fetch new items into raw/",
 }
 
 IMPLEMENTED: set[str] = {
@@ -53,6 +54,7 @@ IMPLEMENTED: set[str] = {
     "mcp-serve",
     "batch-ingest",
     "lint",
+    "poll",
 }
 
 
@@ -254,6 +256,20 @@ def build_parser() -> argparse.ArgumentParser:
         help="With --distill: skip the threshold gate (use sparingly)",
     )
 
+    # poll
+    p_poll = subparsers.add_parser("poll", help=SUBCOMMANDS["poll"])
+    p_poll.add_argument(
+        "name",
+        nargs="?",
+        default=None,
+        help="Poller name (e.g. apple-notes); omit with --list",
+    )
+    p_poll.add_argument(
+        "--list",
+        action="store_true",
+        help="List registered pollers and exit",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -310,8 +326,41 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_examples(ns)
     if ns.subcommand == "finetune":
         return _run_finetune(ns)
+    if ns.subcommand == "poll":
+        return _run_poll(ns)
 
     return _not_yet_implemented(ns.subcommand)
+
+
+def _run_poll(ns: argparse.Namespace) -> int:
+    from gateway import pollers
+
+    if ns.list or ns.name is None:
+        names = pollers.list_pollers()
+        if not names:
+            print("no pollers registered")
+            return 0
+        print("registered pollers:")
+        for n in names:
+            print(f"  {n}")
+        return 0 if ns.list else 2
+
+    try:
+        poller = pollers.get_poller(ns.name)
+    except pollers.UnknownPollerError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 2
+
+    result = poller.run()
+    if not result.success:
+        for err in result.errors:
+            print(f"error: {err}", file=sys.stderr)
+        return 1
+
+    print(result.summary or f"{ns.name}: ok")
+    if result.fetched or result.skipped:
+        print(f"  fetched={result.fetched} skipped={result.skipped}")
+    return 0
 
 
 def _run_finetune(ns: argparse.Namespace) -> int:
