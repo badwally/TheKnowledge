@@ -291,10 +291,18 @@ def test_ingest_file_pdf_end_to_end(kb_root, tmp_path):
 # --- pollers ---------------------------------------------------------------
 
 
-def test_apple_notes_poller_default_run_is_noop(kb_root):
-    from gateway.pollers.apple_notes import AppleNotesPoller
+def test_apple_notes_poller_run_is_noop_when_osascript_returns_empty(kb_root, monkeypatch):
+    """With no notes from Notes.app, run() succeeds with 0 fetched.
 
-    result = AppleNotesPoller().run()
+    M34 wired a real JXA adapter behind `_run_osascript`. We mock it here
+    so the test doesn't invoke the real Notes app or require Automation
+    permission.
+    """
+    from gateway.pollers import apple_notes as ap_mod
+
+    monkeypatch.setattr(ap_mod, "_run_osascript", lambda script, **_kw: "[]")
+
+    result = ap_mod.AppleNotesPoller().run()
     assert result.success
     assert result.fetched == 0
 
