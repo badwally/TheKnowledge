@@ -85,7 +85,20 @@ def test_page_type_for_path():
     assert wiki_pages.page_type_for_path("wiki/entities/semaglutide.md") == "entity"
     assert wiki_pages.page_type_for_path("wiki/concepts/food-noise.md") == "concept"
     assert wiki_pages.page_type_for_path("wiki/sources/yt-abc.md") == "source"
+    assert wiki_pages.page_type_for_path("wiki/proposals/health.md") == "domain-proposal"
     assert wiki_pages.page_type_for_path("raw/youtube/yt-abc.md") is None
+
+
+def test_domain_proposal_schema_registered():
+    schema = wiki_pages.schema_for_type("domain-proposal")
+    assert schema is not None
+    assert schema.directory == "wiki/proposals"
+    assert "proposed_domain" in schema.required_fields
+    assert "status" in schema.required_fields
+    assert "member_sources" in schema.required_fields
+    assert "Rationale" in schema.required_sections
+    assert "Member sources" in schema.required_sections
+    assert schema.citation_grounded is False
 
 
 def test_missing_sections_for_concept_template():
@@ -144,6 +157,43 @@ def test_validate_wiki_page_missing_section():
     body_no_related = body.replace("## Related\n\n- [[concepts/reward-blunting]]\n", "")
     result = v.validate_wiki_page(front, body_no_related, "concept")
     assert any("section-missing" in e.rule for e in result.errors)
+
+
+def _good_domain_proposal_page() -> tuple[dict, str]:
+    front = {
+        "type": "domain-proposal",
+        "slug": "proposal-investing-letters",
+        "title": "Investing letters and macro commentary",
+        "proposed_domain": "investing-letters",
+        "status": "draft",
+        "member_sources": ["pdf-abc", "pdf-def", "pdf-ghi"],
+        "rationale": "Hedge fund letters and macro commentary recur across the Apple Notes corpus.",
+    }
+    body = (
+        "# Investing letters and macro commentary\n\n"
+        "## Rationale\n\n"
+        "Cluster of investor letters and macro commentary, distinct from "
+        "trading-mechanics material in scope and tone.\n\n"
+        "## Member sources\n\n"
+        "- [[sources/pdf-abc]]: Ambrus Capital Q3 letter\n"
+        "- [[sources/pdf-def]]: Druckenmiller speech\n"
+        "- [[sources/pdf-ghi]]: BII Global Outlook\n"
+    )
+    return front, body
+
+
+def test_validate_domain_proposal_happy_path():
+    front, body = _good_domain_proposal_page()
+    result = v.validate_wiki_page(front, body, "domain-proposal")
+    assert result.ok, [str(e) for e in result.errors]
+
+
+def test_validate_domain_proposal_missing_member_sources():
+    front, body = _good_domain_proposal_page()
+    del front["member_sources"]
+    result = v.validate_wiki_page(front, body, "domain-proposal")
+    assert not result.ok
+    assert any("required-field" in e.rule and e.field_name == "member_sources" for e in result.errors)
 
 
 def test_citation_grounding_rejects_uncited_claim():
