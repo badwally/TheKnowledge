@@ -88,7 +88,7 @@ Every source in `raw/` and every wiki page begins with YAML frontmatter delimite
 ```yaml
 ---
 id: <type>-<short-id>          # stable, unique across raw/. Examples below.
-type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|other
+type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|docx|other
 title: "<source title>"
 url: "<canonical URL, optional>"
 authors: ["<name>", ...]
@@ -181,6 +181,14 @@ meta:
   encoding: "utf-8" | "utf-8-sig" | "latin-1"
   original_filename: "<basename.csv>"
   extraction_tool: "csv (stdlib)"
+
+# type: docx
+meta:
+  paragraph_count: 142
+  table_count: 3
+  subject: "<core_properties.subject if set>"
+  original_filename: "<basename.docx>"
+  extraction_tool: "python-docx"
 ```
 
 Add new types by extending this list. The validator schema is the source of truth at runtime; this document defines the human-readable contract.
@@ -525,6 +533,7 @@ Stable, type-prefixed, short. Never derived from titles (titles change; IDs must
 | audiobook | `audio-<asin-or-shortname>` | `audio-thinking-fast-slow` |
 | note | `note-<source-app>-<remote-id-or-hash>` | `note-apple-A1B2` |
 | csv | `csv-<sha256-prefix-12>` | `csv-3a9f8e2b1c4d` |
+| docx | `docx-<author-year-shortname>` or `docx-<sha256-prefix-12>` | `docx-grant-2026-architecture` |
 
 ### 6.2 Wiki entity / concept slugs
 
