@@ -30,6 +30,7 @@ ALLOWED_SOURCE_TYPES: set[str] = {
     "voice",
     "audiobook",
     "note",
+    "csv",
     "other",
 }
 
@@ -50,6 +51,7 @@ ID_PATTERNS: dict[str, re.Pattern[str]] = {
     "voice": re.compile(r"^voice-\d{4}-\d{2}-\d{2}T\d{4}$"),
     "audiobook": re.compile(r"^audio-[a-z0-9-]+$"),
     "note": re.compile(r"^note-[a-z0-9-]+-[A-Za-z0-9_-]+$"),
+    "csv": re.compile(r"^csv-[a-f0-9]{12}$"),
     "other": re.compile(r"^.+$"),
 }
 

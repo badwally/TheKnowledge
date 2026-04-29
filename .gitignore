@@ -30,6 +30,10 @@ raw/**/*.aiff
 raw/**/*.m4b
 raw/**/*.caf
 
+# Tabular data sidecars (canonical preview lives in raw/csv/<id>.md)
+raw/**/*.csv
+raw/**/*.tsv
+
 # Editor swap files
 *.swp
 *~

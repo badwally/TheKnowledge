@@ -16,6 +16,7 @@ SOURCE_TYPES: tuple[str, ...] = (
     "voice",
     "audiobook",
     "note",
+    "csv",
     "other",
 )
 
