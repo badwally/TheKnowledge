@@ -667,6 +667,7 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Status | `wiki status` | `wiki_status` |
 | Filter correction | `wiki filter-correct <source-id> --include\|--exclude --rationale "<why>"` | `wiki_filter_correct` |
 | Finalize a draft | `wiki finalize <page-path> [--abandon]` | `wiki_finalize` |
+| Run a registered poller | `wiki poll <name>` (`--list` to enumerate) | (CLI only) |
 | Migrate frontmatter | `wiki migrate <migration-name>` | (CLI only) |
 
 ### 9.2 Operation contract (every operation)
