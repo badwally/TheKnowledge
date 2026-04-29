@@ -1,0 +1,24 @@
+---
+type: source
+source_id: pdf-ed56b074fb11
+source_type: pdf
+title: Q2 2022 - Market Commentary & Outlook
+domains: []
+ingested_at: '2026-04-29T16:24:11Z'
+---
+# Q2 2022 - Market Commentary & Outlook
+
+**Source:** [[raw/pdf/pdf-ed56b074fb11]] · pdf
+**Authors:** (unknown)
+
+## Summary
+
+_(summary not yet generated — agent-driven authorship lands in M6)_
+
+## Key claims
+
+_(claims not yet extracted)_
+
+## Cross-references
+
+_(no cross-references yet)_

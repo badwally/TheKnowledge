@@ -1,0 +1,75 @@
+---
+id: pdf-c29c838aa20b
+type: pdf
+title: FallbackPDF__c29c838a
+url: ''
+authors:
+- Grant
+- Andrew
+ingested_at: '2026-04-29T16:18:38Z'
+content_hash: sha256:3bfe172ad29beabd3bd06c82a0171b4522bdb387ca29dafc8ce1b40a40d3cb87
+source_path: raw/pdf/pdf-c29c838aa20b.pdf
+domains: []
+nlm_corpus_ids: []
+wiki_pages: []
+meta:
+  page_count: 2
+  extraction_tool: pdfplumber
+  pdf_metadata_subject: ''
+  pdf_metadata_keywords: ''
+  original_path: /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__c29c838a.pdf
+published_at: '2025'
+---
+Description:
+xCD-1 presents Dolby with opportunity to establish a material position in the evolution of the ~$2BN1 (4.7% CAGR)
+global market for internet entertainment delivery and the $1.9BN (17.4% CAGR) market for media analytics2. xCD-1
+solves the critical problems of performance and reliability that challenge online video services as they attempt to
+meet audience Quality of Experience (QoE) in-line with traditional delivery methods like broadcast and payTV.
+Insight into network, device, content, and service viewing behavior in the form of analytics is central to the xCD-1
+solution. xCD-1 codec-agnostic content delivery, playback, and intelligence capabilities deliver independent value,
+with or without integration into other Dolby services. Combined with our established codec(s) business and the
+media processing capabilities of Hybrik, xCD-1 offers Dolby a path to the development of an end-to-end media
+services business with significant growth opportunity.
+Using the combination of a new multi-path, multi-source media format – based on network coding – and player
+analytics, the xCD-1 “CDN overlay” provides global Subscription VOD, Ad VOD, and vMVPD services with material
+improvements to QoE (as measured by industry-standard KPIs including rebuffering, start time, service availability,
+and reliability) without requiring use of any specific audio or video format or any change to their current content
+delivery network (CDN) strategy.
+Cost Profile:
+FY20 FY21 FY22 FY23
+Revenue ($M) $0.00 $3.67 $23.18 $44.68
+COGS $0.08 $0.27 $1.71 $2.61
+$
+GM $ (0.08) $ 3.40 21.47 $ 42.07
+Opex $6.28 $9.42 $14.62 $16.76
+R&D $4,300 $6,785 $9,975 $11,440
+S&M $1,108 $2,045 $3,420 $4,170
+Infrastructure $876 $590 $1,225 $1,145
+Sub Total $6,284 $9,420 $14,620 $16,755
+Contribution -$6.36 -$6.02 $6.85 $25.31
+HC 27 43 64 73
+Profile at Success:
+xCD-1 has a multi-phased approach to market success:
+In Phase One (FY2020-23+) , Dolby will offer xCD-1 delivery and analytics as-a-service to OTT and vMVPD
+entertainment services in the form of a CDN “overlay”3. From FY21 onward we scale both the number of service
+1 https://www.spglobal.com/marketintelligence/en/news-insights/blog/video-cdn-revenue-to-reach-2-2-billion-in-2022
+2 https://www.marketsandmarkets.com/Market-Reports/tv-analytics-market-99504651.html
+3 Based on primary research of more than 300 OTT and vMVPD services, we modeled that services would be willing to pay a premium of 8%-12%
+on top of their current CDN bills to assure their video cost-performance KPIs are met by their contracted commodity CDN services.
+
+providers and the number of device types supported to eventually address a majority of the top 1000 internet
+video properties through direct and indirect sales channels. The only costs and revenues projected in this plan are
+for Phase One and based on a bottoms-up model incorporating a small subset of the addressable market.
+In Phase Two (FY2-24+) Dolby will extend the overlay to the edge of managed networks to deliver value directly to
+network operators (MVPDs, MNOs) through improvements in audio/video data flow and associated improvements
+in network resource utilization. This software-based (network) edge service/platform that will leverage feedback
+from the network, playback device, playback environment (via IoT sensors) and user-preferences to directly
+improve network resource utilization and subscriber experiences. The customer universe and GTM expands in this
+phase to include network operators and their ecosystem partners such as Ericsson, Huawei, et al.
+In Phase Three (~FY23+), Dolby will explore augmenting the overlay model with direct responsibility for end-to-
+end delivery. This is a larger more speculative long-term opportunity with a larger cost model.
+In all three phases, long term competitive defensibility requires rapid integration of xCD-1 into network services to
+minimize the traction of technical alternatives in the market. Sufficient lock-up with CodeOn and use of RLNC is in
+the critical path for success starting with Phase One.4
+4 Integration of RLNC will increase the stickiness of xCD-1 as media networks evolve around our first-order solutions for delivery, analytics, and
+network resource utilization. In effect, our Phase One-Two solutions will shape subsequent network evolution to our long-term advantage.

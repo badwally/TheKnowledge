@@ -1,0 +1,197 @@
+---
+id: pdf-6f1b02bd49dd
+type: pdf
+title: PowerPoint
+url: ''
+authors: []
+ingested_at: '2026-04-29T16:15:59Z'
+content_hash: sha256:d97d67410f3cd4e51d08d752324be1a985417757a2642d5000516b8bfd3171a2
+source_path: raw/pdf/pdf-6f1b02bd49dd.pdf
+domains: []
+nlm_corpus_ids: []
+wiki_pages: []
+meta:
+  page_count: 13
+  extraction_tool: pdfplumber
+  pdf_metadata_subject: ''
+  pdf_metadata_keywords: ''
+  original_path: /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__6f1b02bd.pdf
+published_at: '2025'
+---
+Dolby Media Cloud
+Business Plan
+Overview for Interim Review
+10 Feb 2021
+
+• Dolby Media Cloud will enter the market in June 2021 with a v1 PaaS system focused on
+improving the quality of content delivery through use of xCD.
+• We will scale to 1-3 paying customers by end of CY2021 (one of which is a ‘tier-one’ service) and support for a
+class of 3-5 connected device platforms.
+• By end of FY21 we will have an operational system capable of supporting more than 10m simultaneous
+streams with 24/7 support
+• We will show a positive operating margin on a per-user-session basis in FY22.
+• Our system will be capable of ”experiential decisioning” – data-driven use of Dolby processing functions on a
+per-session basis – by mid CY22, with the expectation that these component functions will be monetized
+independently.
+• How many % do we improve QoEfor a given session; more features improve QoE; what is material is the outcome of QoEor
+Engagement and processing functions are tools to drive that. TF, don’t monetize them independently
+• We are in a better position to monetize if we are directly aligned with how our customers measure success
+• One model is turn on/off features and drive a corresponding increase in “token” per bandwidth unit.
+
+Business Model
+• Dolby Media Cloud is a Platform-as-a-Service (PaaS) offering, monetized based on tiered bandwidth commitments.
+• Target is MRR of $100K/customer and >1 month to recover CAC
+• Focus on per-stream profitability based on a comprehensive variable cost model
+• P&L driven requires integration of usage analytics –tag for follow-up with Ashley on how to implement
+• See hybrikOPEX formula; COGS formula
+• New customers will incur an annual platform fee of $TBD (~$50K).
+• This includes training, on-boarding, the device SDK (~for the first (X) platforms), system use, and minimal analytics engine.
+• Monthly upfront commitments for bandwidth utilization.
+• The Dolby Analytics engine will serve as the audited agent for collection of usage data.
+• We aim to structure the business model and associated contracts such that we recognize most revenue on a monthly basis.
+• Value-added features to be packaged and monetized ad hoc
+• Dolby Insights -Near real-time analytics dashboard
+• Dolby Processing Bundles on a Tiered Basis
+• E.g. “Audio Enhancements” including Dialog Intelligibility, etc.
+• NEED TO WORK THROUGH THIS WITH TORSTEN, GILES
+• Who is on the other side of the contract?
+• NW ops vs. product vs. marketing
+• Focus should be on top-line rev teams
+• Support contracts to match industry standard
+• Silver/Gold/Platinum
+• Integration, 24/7 support, etc
+
+Go-To-Market
+• DMC will address “Premium Media” services in North America and Europe until
+we have achieved success with 3 active customers of a TBD contract duration.
+• We will sell directly into these service providers using a combination of Dolby CP,
+CEG BD, and the possible use of outside consultants until CY22.
+• We will market the platform with a graduated digital program of evangelism,
+thought-leadership, and lead-generation through FY21.
+• We will develop an ecosystem of CE device, OS, and media software providers for
+product development, service delivery, and indirect sales.
+• Immediate success will be measured on our ability to source, on-board, and
+maintain an active customer base of at least 7 customers by end of CY22 with an
+ARPU >$500K per customer per year.
+• Aggregate traffic is perhaps a more important success criteria (not just ‘we have Disney’ but
+‘we have 75% of Disney traffic)
+• Define this on a “Content hours per month” basis – i.e. 100M HPM from Disney, etc etc
+
+Competitive Analysis
+• DMC competes on at least two fronts:
+• CDN “Control Systems” - e.g. Conviva Precision, Cedexis Open Mix, DIY
+• Performance Analytics Suites for QoE/QoS – e.g. Mux Data, Conviva Experience
+Insights, etc., NPAW, et al.
+• DMC Integrates with a variety of ecosystem technologies
+• Encoding pipelines – e.g. Bitmovin, Unified Streaming, Hybrik, et al.
+• Data pipelines - TBD
+• Player Providers – THEOPlayer, JWPlayer, etc
+• Cloud Infrastructure Providers – AWS, Google Cloud, Azure, etc.
+• As part of the business planning process, we will rapidly develop and
+deliver a comprehensive market map and integration landscape by EO June
+2021.
+
+Opportunity Sizing
+• We need to deliver a comprehensive TAM analysis and SAM
+segmentation prior to the first ELT update.
+• This includes:
+• Updated Media CDN sizing
+• Media Analytics sizing
+• QoE management sizing
+• Cloud media processing sizing
+
+Marketing
+• DMC will rely on a digital-first approach to target marketing
+• Narrative arc that covers the year
+• Identify the people that matter
+• Open with XCD in the context of Dolby Media Cloud Services
+• Position XCD in the context of a broader story (what is that story? When are we prepared to reveal this to the market?)
+• Defining “Quality” at an industry level
+• Technical Thought-leadership:
+• Innovations in network-aware media formats based on our willingness and ability to share detail on the XCD approaches (IP dependent)
+• Agreement on scope of external XCD discussions w/o NDA by EOMarch
+• Dynamic experience creation and delivery based on NW, device, and context awareness
+• The relationship b/t experiential processing and behavioral outcomes
+• Using industry insider
+• Well-connected evangelists that spread the message to the buy side of the market (e.g. Janet, Mitch Singer, et al)
+• END OF JULY –the list of the 200 people in the industry we need to contact with their details
+• Industry-leading documentation (this is a separate element, even if part of PPP)
+• We will focus on understanding the “Enterprise Developer” and how these individuals and teams intend to engage with our process
+• Different from dolby.iobut draws on a similar model
+• Demo Development
+• Core Priority is a lightweight demo and use-case video (from the end-consumer perspective)
+• Implementation channel development
+• MDF to drive integration of our SDK into in-market player technologies
+• Competitive Analysis and Content Services
+• To support competitive analysis with other CDN suites and support A/B testing of processing features, we will develop a plan fora Dolby-led content service by end of May 2021.
+• Dolby as a customer; Dolby Experience App
+
+Sales
+• Dolby CP is the primary channel to market for managed premium accounts
+• CEG Cloud BD will serve as the key driver of these efforts
+• DMC must be part of the GOAL structure for FY22
+• NAM and EU (and India) need to be fully trained on Phase One messaging by May 2021
+• Technical Account Management
+• DMC will have both operational overhead in the first phase
+• On-boarding, support, and up-sell/integration strategies require development before EOFY21
+• Sales Operations
+• Fully system scoping by April 2021
+• Initial customers (CY21)
+• Scale (CY22+)
+• Use third-party technology where required
+• Determine where the costs fall in the event that speed requires moving beyond the scope of Dolby sales ops
+
+Operations
+• Dolby Media Cloud is a 24/7 operation
+• Internal and External operational planning requires HIGH PRIORITY
+ATTENTION
+• First draft of the operational plan is in Confluence, but really only a v0.2
+• Extensive survey of best-in-class, all-digital, competitive approaches is required to
+support a viable plan
+• We need a single point of leadership for Cloud operations
+• Scope and staffing of this team is TBD
+• Operational overhead needs to decline over time on a per-customer basis;
+linear scaling costs are not best-in-class
+
+Ecosystem Development
+• DMC aspires to become a platform for media services and application
+development
+• Key Ecosystem categories require mapping by July 2021 with
+associated engagement plans activated prior to FY22
+• Cloud Infrastructures (AWS, GOOG, AZURE)
+• OEM/OS (Roku, AMZ, Samsung, Android, et al)
+• Player tech
+• Data Services
+• Scope and Staffing TBD
+
+Legal
+• Dolby Media Cloud will aim for a minimal contract structure,
+prioritizing streamlined agreements and (wherever possible and
+appropriate) alignment with the contractual approaches of the year-
+one premium media customers
+• NDA process has already streamlined
+• IP creation is a priority
+• IP Legal directly engaged
+• ATG pipeline in place (XCD patents filed and XCD issued)
+• CEG ENG needs to focus on novel methods and approaches so that we can
+shore up the IP portfolio related to CEG Clouds.
+
+Data
+• Data infrastructure is critical to the success of the DMC program.
+• Clear external narrative by March 2021
+• Cost structures mapped by April 2021
+• Integration, Tenancy, Security
+• Mapped by April 2021
+• Security Audit and SOC2 certification for launch
+• Data visualization is a key element of the product
+• Scope data science and data operations resourcing by July 2021
+• Data Privacy and Data Protection is critical to success
+• We are a “Data Processor” for the purposes of GDPR, CCPA
+• GTM focus on these regulatory environments will minimize data risk and compliance overhead
+• Legal, INFOSEC, and IP/Legal will closely cooperate here
+• Data “abstraction” to allow first- and third-party use of customer data derivatives for system
+operations, training, and application development is a critical success criteria over the longer
+term
+• Best practices defined by SEPT 2021
+
+Notes from Discussion 2/10

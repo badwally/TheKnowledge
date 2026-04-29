@@ -1,0 +1,817 @@
+---
+id: pdf-peter-belcak-2025-small-language-models
+type: pdf
+title: Small Language Models are the Future of Agentic AI
+url: ''
+authors:
+- Peter Belcak
+- Greg Heinrich
+- Shizhe Diao
+- Yonggan Fu
+- Xin Dong
+- Saurav Muralidharan
+- Yingyan Celine Lin
+- Pavlo Molchanov
+ingested_at: '2026-04-29T16:13:46Z'
+content_hash: sha256:746a4e63f6f9efe2098c22155fa3d030016d6bdb4d6e66e0d969e93b6c6deb3b
+source_path: raw/pdf/pdf-peter-belcak-2025-small-language-models.pdf
+domains: []
+nlm_corpus_ids: []
+wiki_pages: []
+meta:
+  page_count: 17
+  extraction_tool: pdfplumber
+  pdf_metadata_subject: ''
+  pdf_metadata_keywords: ''
+  original_path: /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__1e3d7106.pdf
+published_at: '2025'
+---
+Small Language Models are the Future of Agentic AI
+PeterBelcak1 GregHeinrich1 ShizheDiao1 YongganFu1 XinDong1
+SauravMuralidharan1 YingyanCelineLin1,2 PavloMolchanov1
+1NVIDIAResearch 2GeorgiaInstituteofTechnology
+agents-research@nvidia.com
+Abstract
+Largelanguagemodels(LLMs)areoftenpraisedforexhibitingnear-humanper-
+formanceonawiderangeoftasksandvaluedfortheirabilitytoholdageneral
+conversation. TheriseofagenticAIsystemsis,however,usheringinamassof
+applicationsinwhichlanguagemodelsperformasmallnumberofspecializedtasks
+repetitivelyandwithlittlevariation.
+Herewelayoutthepositionthatsmalllanguagemodels(SLMs)aresufficiently
+powerful, inherently more suitable, and necessarily more economical for many
+invocations in agentic systems, and are therefore the future of agentic AI. Our
+argumentationisgroundedinthecurrentlevelofcapabilitiesexhibitedbySLMs,
+thecommonarchitecturesofagenticsystems,andtheeconomyofLMdeployment.
+Wefurtherarguethatinsituationswheregeneral-purposeconversationalabilities
+areessential,heterogeneousagenticsystems(i.e.,agentsinvokingmultipledifferent
+models)arethenaturalchoice. Wediscussthepotentialbarriersfortheadoption
+ofSLMsinagenticsystemsandoutlineageneralLLM-to-SLMagentconversion
+algorithm.
+Our position1, formulated as a value statement, highlights the significance of
+the operational and economic impact even a partial shift from LLMs to SLMs
+is to have on the AI agent industry. We aim to stimulate the discussion on
+the effective use of AI resources and hope to advance the efforts to lower
+the costs of AI of the present day. Calling for both contributions to and cri-
+tique of our position, we commit to publishing all such correspondence at
+research.nvidia.com/labs/lpr/slm-agents.
+1 Introduction
+Thedeploymentofagenticartificialintelligenceisonameteoricrise. Recentsurveysshowthatmore
+thanahalfoflargeITenterprisesareactivelyusingAIagents,with21%havingadoptedjustwithin
+thelastyear[14]. Asidefromtheusers,marketsalsoseesubstantialeconomicvalueinAIagents: As
+oflate2024,theagenticAIsectorhadseenmorethanUSD2bninstartupfunding,wasvaluedat
+USD5.2bn,andwasexpectedtogrowtonearlyUSD200bnby2034[46,51]. Putplainly,thereisa
+growingexpectationthatAIagentswillplayasubstantialroleinthemoderneconomy.
+ThecorecomponentspoweringmostmodernAIagentsare(very)largelanguagemodels[52,48]. It
+istheLLMsthatprovidethefoundationalintelligencethatenablesagentstomakestrategicdecisions
+aboutwhenandhowtouseavailabletools,controltheflowofoperationsneededtocompletetasks,
+and,ifnecessary,tobreakdowncomplextasksintomanageablesubtasksandtoperformreasoning
+foractionplanningandproblem-solving[52,17]. AtypicalAIagentthensimplycommunicateswith
+achosenLLMAPIendpointbymakingrequeststocentralizedcloudinfrastructurethathoststhese
+models[52].
+1Theviewsandpositionsexpressedinthispaperarethoseoftheauthorsanddonotnecessarilyreflectthe
+viewsorpositionsofanyentitiestheyrepresent.
+Preprint.Underreview.
+5202
+peS
+51
+]IA.sc[
+2v35120.6052:viXra
+
+LLMAPIendpointsarespecificallydesignedtoservealargevolumeofdiverserequestsusingone
+generalist LLM. This operational model is deeply ingrained in the industry. In fact, it forms the
+foundationofsubstantialcapitalinvestmentinthehostingcloudinfrastructure–estimatedatUSD
+57bn[16]. Itisanticipatedthatthisoperationalmodelwillremainthecornerstoneoftheindustryand
+thatthelargeinitialinvestmentwilldeliverreturnscomparabletotraditionalsoftwareandinternet
+solutionswithin3-4years[57].
+Inthiswork,werecognizethedominanceofthestandardoperationalmodelbutverballychallenge
+oneofitsaspects,namelythecustomthattheagents’requeststoaccesslanguageintelligenceare–
+inspiteoftheircomparativesimplicity–handledbysingletonchoicesofgeneralistLLMs. Westate
+(Section2),argue(Section3),anddefend(Section4)thepositionthatthesmall,ratherthanlarge,
+languagemodelsarethefutureofagenticAI.We,however,recognizethebusinesscommitment
+andthenow-legacypraxisthatisthecauseforthecontrarystateofthepresent(Section5). Inremedy,
+weprovideanoutlineofaconversionalgorithmforthemigrationofagenticapplicationsfromLLMs
+toSLMs(Section6),andcallforawiderdiscussion(Section7). Ifneededtoconcretizeourstance,
+weattachasetofshortcasestudiesestimatingthepotentialextentofLLM-to-SLMreplacementin
+selectedpopularopen-sourceagents(SectionB).
+2 Position
+2.1 Definitions
+Forthepurposeofconcretizingourposition,weusethefollowingworkingdefinitions:
+WD1 ASLMisaLMthatcanfitontoacommonconsumerelectronicdeviceandperforminference
+withlatencysufficientlylowtobepracticalwhenservingtheagenticrequestsofoneuser.
+WD2 AnLLMisaLMthatisnotaSLM.
+WejustifythewordingofthesedefinitionsinSectionA,butnotethattheirchoicehaslittlebearing
+ontheessenceofourposition. Wenotethatasof2025,wewouldbecomfortablewithconsidering
+mostmodelsbelow10bnparametersinsizetobeSLMs.
+Weusethewordsagentandagenticsysteminterchangeably,preferringtheformerwhenemphasizing
+thesoftwarewithsomeagencyasawhole(e.g.,“asseeninpopularcodingagents”)andthelatter
+whenhighlightingthesystemsaspectoftheagenticapplicationasasumofitscomponents(e.g.,
+“notallLMsofanagenticsystemarereplaceablebySLMs”). Forbrevity,wefocusonLMsasthe
+bedrockofagenticapplicationsanddonotexplicitlyconsidervision-languagemodels,althoughwe
+notethatourpositionandmostofourargumentsreadilyextendtovision-languagemodelsaswell.
+2.2 Statement
+WecontendthatSLMsare
+V1 principallysufficientlypowerfultohandlelanguagemodelingerrandsofagenticappli-
+cations;
+V2 inherentlymoreoperationallysuitableforuseinagenticsystemsthanLLMs;
+V3 necessarilymoreeconomicalforthevastmajorityofLMusesinagenticsystemsthan
+theirgeneral-purposeLLMcounterpartsbythevirtueoftheirsmallersize;
+andthatonthebasisofviewsV1–V3SLMsarethefutureofagenticAI.
+Thephrasingofourpositionisdeliberate. Initsstatement,wewishtoconveythatthedescribed
+future development is ultimately a necessary consequence of the differences between SLMs and
+LLMsifthenaturalprioritiesarefollowed. Wedonotmakearecommendationortrytoimposean
+obligation—wemakeastatementofwhatweseeasafaithfulreflectionofthecommunity’svalues
+inthiscontext.
+2.3 Elaboration
+WeassertthatthedominanceofLLMsinthedesignofAIagentsisbothexcessiveandmisaligned
+withthefunctionaldemandsofmostagenticusecases. WhileLLMsofferimpressivegeneralityand
+2
+
+conversationalfluency,themajorityofagenticsubtasksindeployedagenticsystemsarerepetitive,
+scoped,andnon-conversational—callingformodelsthatareefficient,predictable,andinexpensive.
+Inthiscontext,SLMsnotonlysuffice,butareoftenpreferable. Theyofferseveraladvantages: lower
+latency,reducedmemoryandcomputationalrequirements,andsignificantlyloweroperationalcosts,
+allwhilemaintainingadequatetaskperformanceinconstraineddomains.
+Ourpositionstemsfromapragmaticviewoflanguagemodelusagepatternswithinagenticarchitec-
+tures. Thesesystemstypicallydecomposecomplexgoalsintomodularsub-tasks,eachofwhichcan
+bereliablyhandledbyspecializedorfine-tunedSLMs. WearguethatinsistingonLLMsforallsuch
+tasksreflectsamisallocationofcomputationalresources—onethatiseconomicallyinefficientand
+environmentallyunsustainableatscale.
+Moreover,incaseswheregeneralreasoningoropen-domaindialogueisessential,weadvocatefor
+heterogeneousagenticsystems,whereSLMsareusedbydefaultandLLMsareinvokedselectively
+andsparingly. Thismodularcomposition—combiningtheprecisionandefficiencyofSLMswith
+thegeneralityofLLMs—enablestheconstructionofagentsthatarebothcost-effectiveandcapable.
+Ultimately, we observe that shifting the paradigm from LLM-centric to SLM-first architectures
+represents to many not only a technical refinement but also a Humean moral ought. As the AI
+community grapples with rising infrastructure costs and environmental concerns, adopting and
+normalizingtheuseofSLMsinagenticworkflowscanplayacrucialroleinpromotingresponsible
+andsustainableAIdeployment.
+3 PositionArguments
+WesupportviewsV1–V3bythefollowingnon-exclusivearguments.
+3.1 SLMsarealreadysufficientlypowerfulforuseinagents
+A1 SLMsaresufficientlypowerfultotaketheplaceofLLMsinagenticsystems. Thisargument
+standsinsupportofviewV1.
+Over the past few years, the capabilities of small language models have advanced significantly.
+AlthoughtheLMscalinglawsremainobserved,thescalingcurvebetweenmodelsizeandcapabilities
+is becoming increasingly steeper, implying that the capabilities of newer small language models
+are much closer to those of previous large language models. Indeed, recent advances show that
+well-designedsmalllanguagemodelscanmeetorexceedthetaskperformancepreviouslyattributed
+onlytomuchlargermodels.
+Extensivecomparisonswithlargemodelshavebeenconductedintheindividualworkscitedbelow,
+butnotallcapabilitiesassessedbybenchmarksareessentialtotheirdeploymentintheagenticcontext.
+Herewehighlighttheiraptitudeforcommonsensereasoning(anindicatorofbasicunderstanding),
+toolcallingandcodegeneration(bothindicatorsoftheabilitytocorrectlycommunicateacrossthe
+model→tool/codeinterface;seeFigure1;[77,78]),andinstructionfollowing(abilitytocorrectly
+respondbackacrossthecode←modelinterface; [83]). Ineachcase,wealsoquotetheefficiency
+increaseifstatedbytheauthors.
+• Microsoft Phi series. Phi-2 (2.7bn) achieves commonsense reasoning scores and code
+generationscoresonparwith30bnmodelswhilerunning 15 faster[37]. Phi-3small
+→ ↑
+(7bn)[3]achieveslanguageunderstandingandcommonsensereasoningonparwithand
+codegenerationscoresrunningupto70bnmodelsofthesamegeneration.
+• NVIDIANemotron-Hfamily. The2/4.8/9bnhybridMamba-Transformermodelsachieve
+instructionfollowingandcode-generationaccuracycomparabletodense30bnLLMsofthe
+samegenerationatanorder-of-magnitudefractionoftheinferenceFLOPs[9].
+• HuggingfaceSmolLM2series. SmolLM2familyofcompactlanguagemodelswithsizes
+rangingfrom125mnto1.7bnparameters[6]eachrunupintheirlanguageunderstanding,
+toolcalling,andinstructionfollowingperformanceto14bncontemporarieswhilematching
+70bnmodelsof2yearsprior.
+3
+
+Figure1: Anillustrationofagenticsystemswithdifferentmodesofagency. Left: Languagemodel
+agency. ThelanguagemodelactsbothastheHCIandtheorchestratoroftoolcallstocarryouta
+task. Right: Codeagency. ThelanguagemodelfillstheroleoftheHCI(optionally)whileadedicated
+controllercodeorchestratesallinteractions.
+• NVIDIA Hymba-1.5B. This Mamba-attention hybrid-head SLM demonstrates best in-
+structionaccuracyand3.5 greatertokenthroughputthancomparably-sizedtransformer
+↑
+models[23]. Oninstructionfollowing,itoutperformslarger13bnmodels.
+• DeepSeek-R1-Distillseries. DeepSeek-R1-Distillisafamilyofreasoningmodelsfeaturing
+1.5-8bnsizes,trainedonsamplesgeneratedbyDeepSeek-R1[19]. Theydemonstratestrong
+commonsensereasoningcapabilities. Notably,theDeepSeek-R1-Distill-Qwen-7Bmodel
+outperformslargeproprietarymodelssuchasClaude-3.5-Sonnet-1022andGPT-4o-0513.
+• DeepMindRETRO-7.5B:Retrieval-EnhancedTransformer(RETRO)isa7.5bnparam-
+eter model augmented with an extensive external text database, achieving performance
+comparabletoGPT-3(175B)onlanguagemodelingwhileusing25!fewerparameters[10].
+• Salesforce xLAM-2-8B. The 8bn model achieves state-of-the-art performance on tool
+callingdespiteisrelativelymodestsize,surpassingfrontiermodelslikeGPT-4oandClaude
+3.5[81].
+Notethatontopofcompetitiveoff-the-shelfperformance,thereasoningcapabilitiesofSLMscan
+be enhanced by light-weight selective finetuning [45] or at inference time with self-consistency,
+verifier feedback, or tool augmentation — e.g., Toolformer (6.7bn) outperforms GPT-3 (175bn)
+via API use [65], and 1-3bn models have rivaled 30bn+ LLMs on math problems via structured
+reasoning[84].
+Insum,withmoderntraining,prompting,andagenticaugmentationtechniques,capability—not
+theparametercount—isthebindingconstraint. SLMsnowsupplysufficientreasoningpowerfor
+asubstantialportionofagenticinvocations,makingthemnotjustviable,butcomparativelymore
+suitablethanLLMsformodularandscalableagenticsystems.
+3.2 SLMsaremoreeconomicalinagenticsystems
+A2 SLMsaremoreeconomicalthanLLMsinagenticsystems. ThisargumentsupportsviewV3.
+Smallmodelsprovidesignificantbenefitsincost-efficiency,adaptability,anddeploymentflexibility.
+Theseadvantagesarespecificallyvaluableinagenticworkflowswherespecializationanditerative
+refinementarecritical. Section3.1detailedanumberofefficiencycomparisonsofthelistedSLMsto
+relevantLLMs. HerewedrawamoreencompassingpicturetosupportargumentA2.
+• Inferenceefficiency. Servinga7bnSLMis10–30 cheaper(inlatency,energyconsump-
+↑
+tion, and FLOPs) than a 70–175bn LLM, enabling real-time agentic responses at scale
+[70, 68, 36, 53]. Recent advances in inference operating systems such as NVIDIA Dy-
+namo[24]explicitlyprovidesupportforhigh-throughput,low-latencySLMinferencein
+bothcloudandedgedeployments. Inaddition,sinceSLMsrequirelessornoparallelization
+acrossGPUsandnodes,themaintenanceandoperationoftheservinginfrastructurecomes
+atalowerexpenseaswell(seecounter-argumentCA4andargumentA13).
+4
+
+• Fine-tuningagility. Parameter-efficient(e.g.,LoRA[33]andDoRA[43]),low-resource[7],
+andfull-parameterfinetuningforSLMsrequireonlyafewGPU-hours,allowingbehaviors
+tobeadded,fixed,orspecializedovernightratherthanoverweeks[70].
+• Edgedeployment. Advancesinon-deviceinferencesystemssuchasChatRTX[59]demon-
+strate local execution of SLMs on consumer-grade GPUs, showcasing real-time, offline
+agenticinferencewithlowerlatencyandstrongerdatacontrol.
+• Parameter and embedding space utilization. At the outset, LLMs appear to operate
+asmonolithsinvolvingalargeamountofparametersrepresentingswathesofcompressed
+information in the production of their outputs. On a closer look, however, many of the
+embeddingspassingthroughthesesystemsareverysparse,engagingonlyafractionoftheir
+parametersforanysingleinput[69,44]andbeingeffectivelycompressible[8,29]. That
+thisbehaviorappearstobemoresubduedinSLMs[69,75]suggeststhatSLMsmaybe
+fundamentallymoreefficientbythevirtueofhavingasmallerproportionoftheirparameters
+contributetotheinferencecostwithoutatangibleeffectontheoutput.
+Modularsystemdesign. Thepositionoutlinedin[56]presentsathoroughargumentinfavorof
+compositeagenticsystems. Herewenotethattheapproachofleveragingseveralmodelsofvarying
+sizes aligns well with the real-world heterogeneity of agentic tasks and is already slowly being
+incorporatedintomajorsoftwaredevelopmentframeworks[28]. Furthermore,thisnewlydiscovered
+senseformodularityinthecontextofagentsallowsfortheeasyadditionofnewskillsandtheability
+toadapttochangingrequirements,andisconsistentwiththepushformodularityinlanguagemodel
+design[27,12,40].
+Theabove-mentioned“Lego-like”compositionofagenticintelligence—scalingoutbyaddingsmall,
+specializedexpertsinsteadofscalingupmonolithicmodels—yieldssystemsthatarecheaper,faster
+to debug, easier to deploy, and better aligned with the operational diversity of real-world agents.
+Whencombinedwithtoolcalling,caching,andfine-grainedrouting,SLM-firstarchitecturesappear
+toofferthebestpathforwardforcost-effective,modular,andsustainableagenticAI.
+3.3 SLMsaremoreflexible
+A3 SLMspossessgreateroperationalflexibilityincomparisontoLLMs. Thisargumentstands
+insupportofviewsV2andV3.
+Duetotheirsmallsizeandtheassociatedreductioninpre-trainingandfine-tuningcosts(Section3.2),
+SLMsareinherentlymoreflexiblethantheirlargecounterpartswhenappearinginagenticsystems.As
+such,itbecomesmuchmoreaffordableandpracticaltotrain,adapt,anddeploymultiplespecialized
+expertmodelsfordifferentagenticroutines. Thisefficiencyenablesrapiditerationandadaptation,
+makingitfeasibletoaddressevolvinguserneeds,includingsupportingnewbehaviors,meetingnew
+outputformattingrequirements,andcomplyingwithchanginglocalregulationinselectedmarkets
+[73,41,72].
+Democratization. OneparticularlynotableanddesirableconsequenceofSLMflexibilitywhenput
+inplaceofLLMsistheensuingdemocratizationofagents. Whenmoreindividualsandorganizations
+canparticipateindevelopinglanguagemodelswiththeaimfordeploymentinagenticsystems,the
+aggregatepopulationofagentsismorelikelytorepresentamorediverserangeofperspectivesand
+societalneeds. Thisdiversitycanthenhelpwithreducingtheriskofsystemicbiasesandencourage
+competitionandinnovation. Withmoreactorsenteringthefieldtocreateandrefinemodels,thefield
+willadvancemorerapidly[38].
+3.4 AgentsexposeonlyverynarrowLMfunctionality
+A4 AgenticapplicationsareinterfacestoalimitedsubsetofLMcapabilities. Thissupports
+viewsV1andV2.
+AnAIagentisessentiallyaheavilyinstructedandexternallychoreographedgatewaytoalanguage
+modelfeaturingahuman-computerinterfaceandaselectionoftoolsthat,whenengagedcorrectly,
+dosomethingofutility[73]. Fromthisperspective,theunderlyinglargelanguagemodelthatwas
+engineeredtobeapowerfulgeneralististhroughasetoftediouslywrittenpromptsandmeticulously
+5
+
+orchestratedcontextmanagementrestrictedtooperatewithinasmallsectionofitsotherwiselarge
+palletofskills. Thus,wearguethataSLMappropriatelyfine-tunedfortheselectedpromptswould
+sufficewhilehavingtheabove-mentionedbenefitsofincreasedefficiencyandgreaterflexibility.
+ItcouldbearguedbackthatthecarefulinterfacingwithageneralistLLMisnecessaryforstrong
+performanceonthenarrowtaskbecauseoftheLLM’sbetterunderstandingofthebroaderlanguage
+andtheworld(alternativeviewAV1). ThisisaddressedinSection4.1.
+3.5 Agenticinteractionsnecessitateclosebehavioralalignment
+A5 Agenticinteractionsnecessitateclosebehavioralalignment. ThisalignswithviewV2.
+AtypicalAIagenthasfrequentinteractionswithcode,beitthroughLMtoolcallingorbyreturning
+outputthatistobeparsedbyapieceofagenticcodethatmakestheLMcall[52]. Itisessentialfor
+thesuccessoftheseinteractionsthatthegeneratedtoolcallandthegeneratedoutputconformtostrict
+formattingrequirementsimposedonitbytheorder,typing,andnatureofthetool’sparameters,and
+theexpectationofthecodeinvokingtheLM,respectively. Insuchcases,itbecomesunnecessary
+for the model to handle multiple different formats (e.g. JSON/XML/Python for tool calls and
+XML/YAML/Markdown/Latexforoutput[54]),asonlyonewouldbechosenforconsistencyacross
+theagenticapplication. Itisalsoundesirableforthemodeltomaketheoccasionalhallucinatory
+mistakeandrespondinaformatdifferentfromthatbeingexpectedbythe“codeparts”oftheagentic
+system. ItisbecauseofthisthattheSLMtrainedwithasingleformattingdecisionenforcedduring
+its post-training or encouraged through additional fine-tuning at a low cost is preferable over a
+general-purposeLLMinthecontextofAIagents.
+3.6 Agenticsystemsarenaturallyheterogeneous
+A6 Agenticsystemsnaturallyallowforheterogeneityintheselectionofmodelsthattheyuse.
+ThisalignswithviewV2.
+Alanguagemodelcanitselfbeatoolcalledbyanotherlanguagemodel. Likewise,everytimethe
+agent’scodeinvokesalanguagemodel, itcan, inprinciple, chooseanylanguagemodel. Thisis
+illustratedinFigure1. Wearguethatincorporatingmultiplelanguagemodelsofdifferentsizesand
+capabilitiesforqueriesoroperationsofdifferentlevelsofcomplexityoffersanaturalwayforthe
+introduction of SLMs. In the context of Figure 1-Left, an LLM can be used for the model with
+therootagency, whileaSLMcouldbeusedforthesubordinateLM.InFigure1-Right, allLMs
+could in principle be specialized SLMs: one for conversationality, another one for carrying out
+controller-definedlanguagemodelingtasks.
+3.7 Agenticinteractionsarenaturalpathwaysforgatheringdataforfutureimprovement
+A7 Agentic interactions are a good source for data for future model improvement. This is
+fundamentallysupportiveofviewV2.
+As noted in Section 3.4, invocations of tools and language models during an agentic process are
+oftenaccompaniedbycarefulpromptingthatfocusesthelanguagemodelondeliveringthenarrow
+functionalitythatisrequiredatthetime. Eachoneoftheseinvocationsisitselfanaturalsourceof
+dataforfutureimprovement(underthenecessaryassumptionthatnonon-retainableconfidential
+dataisbeingprocessed). Alistenerdecoratingthetool/modelcallinterfacecangatherspecialized
+instructiondatathatcanlaterbeusedtoproduceafine-tuneanexpertSLMandlowerthecostofthat
+callinthefuture(seeloggerinFigure1). Wearguethatthisavenueisenabledbythearchitecture
+ofagents[52]andproduceshigh-qualityorganicdata(thatcanbefurtherpost-filteredbyconsidering
+theoverallsuccessoftheworkflow),thusmakingtheproductionofexpertSLMstostandinplaceof
+LLMsanaturalstepinagentdeployment—notjustanauxiliaryeffort.
+4 AlternativeViews
+Thefollowingsignificantalternativeviewshavebeenexpressedintheacademicandpopularliterature.
+6
+
+4.1 LLMgeneralistswillalwayshavetheadvantageofmoregenerallanguageunderstanding
+AV1 Let beasingletaskusinggenerallanguageandletL,S bealargeandasmalllanguage
+T
+modelofthesamegeneration,respectively. TheperformanceofLon willalwaystrump
+T
+thatofS.
+ThisalternativeviewdisputesviewV2andrestsonthefollowingcounter-arguments:
+CA1 Thereisanon-negligiblebodyofempiricalevidenceofthesuperiorityoflargelanguage
+modelsingenerallanguageunderstandingoversmalllanguagemodelsofthesamegenera-
+tion. LLMsacquiretheirlanguageunderstandingcapabilitiesinaccordancewithscaling
+laws[18]. Theirlargerscalethenenablesthemtodemonstratebetterperformanceacrossa
+widearrayofspecializednaturallanguagetasks,includingtextgeneration,translation,and
+reasoning,outperformingsmallmodelstrainedboth(a)inthesamegeneralfashionand(b)
+fromscratchspecificallyforthesetasks[58]. Itcanthenbesaidthattoclaimotherwiseisto
+contradicttheLMscalinglaws[32,31].
+CA2 Moreover, recent studies also purport that LLMs possess a “semantic hub” mechanism,
+whichhasbeenhypothesizedtoenablethemtointegrateandabstractsemanticinformation
+fromvariousmodalitiesandlanguagesinageneralizedmanner[80]. Iftrue,LLMscouldbe
+thoughttogeneralizeknowledgeacrosslanguagesanddomainsfarmoreeffectivelythan
+smallermodels,whichunderthesamestudylackthecapacityforthepresenceofsucha
+hub[80]. Itcanthenarguedthatwhilesmalllanguagemodelsmaybeefficientfornarrowly
+definedorhighlyspecializedtasks,theirlimitedscalefundamentallyrestrictstheirability
+toachievethesamelevelofgenerallanguageunderstandinginthesespecializedasLLMs
+becauseofthelackofroomfortheinternalizationofcomplexabstractions.
+AconclusioncanbethendrawnthatLLMgeneralistmodelswillalwaysretaintheadvantageof
+universally better performance on language tasks, no matter how narrowly defined, over small
+languagemodelsofthesamegeneration. ThistobetotheiradvantageoverSLMswhendeployedin
+agenticapplications.
+Rebuttal. TheabovealternativeviewisthemostpopularlycitedbeliefagainsttheuseofSLMs,
+evenwhenonlyanarrowlanguagetaskneedstobeperformed[2,71,30,1].
+Webelievethatcounter-argumentCA1istoolimitedtoattackviewV2,namelybecause
+A8 Popularscalinglawstudiesassumethemodelarchitecturetobekeptconstant[32,31]within
+thesamegeneration,whereastherecentworkonsmalllanguagemodeltrainingdemonstrates
+thattherearedistinctperformancebenefitstoconsideringdifferentarchitecturesfordifferent
+modelsizes[23,9].
+A9 Theflexibilityofsmalllanguagemodels(Section3.3)comestotherescue.Asmalllanguage
+modelcanbeeasilyfine-tunedforthetask ofalternativeviewAV1toperformtothe
+T
+desiredlevelofreliability. Thisisunaccountedforinscalinglawstudies.
+A10 Reasoning(or,moregenerally,test-timecomputescaling;seeSection3.2)issignificantly
+moreaffordable. Asmalllanguagemodel,stillretainingitsbenefitsofgreatercross-device
+agilitycanbereasonableexpectedtobescalableatinferencetimetothedesiredlevelof
+reliability.
+Wealsobelievethatcounter-argumentCA2istooarcanetoattackviewV2because
+A11 Theutilityofthepurported“semantichub”showsitselfwhentasksorinputsathandtobe
+processedbytheLMarecomplex.However,advancedagenticsystemsareeitherdesignedin
+theirentiretyoratleastactivelypromptedtoperformdecompositionsofcomplexproblems
+andinputs[52,17]. Therefore,wearguetothecontrarythatinvocationsofsmalllanguage
+modelswithinagenticsystemswouldbeonappropriatelybroken-downintosub-tasksso
+simplethatanygeneralabstractunderstandingduetothehubwouldbeoflittleutility.
+4.2 LLMinferencewillstillbecheaperbecauseoftheircentralization
+AV2 The per-token inference cost benefit of the smallness of specialized SLMs in agentic
+applicationsisdwarfedbytheeconomyofscale.
+7
+
+ItcouldbearguedthattheanalysisinargumentA2thatputforthinfavorofviewV3wasignorantof
+thewiderbusinessofAImodeldeployment:
+CA3 ItismoredifficulttofullyutilizeandproperlybalancetheloadforanexpertSLMinference
+endpointthanitisforageneralistLLMendpoint[70,25].
+CA4 Thecostsofinferenceinfrastructuresetupcombinedwiththecostsofacquiringandretain-
+ingtalentforitsupkeepareoftenomittedininferencecostcalculationsbutfiguremore
+prominentlyifthedeploymentof(S)LMsbecametheresponsibilityoftheagentservicede-
+veloper. Earlyindustrialreportspointtoconsiderablecostsassociatedwiththeseoperations
+[39,13,67].
+Acknowledgment. We acknowledge that alternative view AV2 is a valid view, with the exact
+economicalconsiderationsbeinghighlycase-specific.Webelievethatthejuryisstilloutonalternative
+viewAV2,butthatseveralfactorshintthatviewV3mightprevail:
+A12 Recentimprovementsininferenceschedulingandlargeinferencesystemmodularization
+offerunprecedentedlevelsofinferencesystemflexibilityinmonolithiccomputingclusters
+[85,60,50],counteringthetraditionalstanceexpressedincounter-argumentCA3.
+A13 Themostrecentanalysesontheset-upcostsofinferenceinfrastructureindicateaconsistent
+fallingtrendduetounderlyingtechnologicalreasons[82,4].
+4.3 Equallypossibleworlds
+AV3 BoththeagenticworldutilizingSLMsandagenticworldutilizingLLMsareequallypossible
+worlds,butthe“LLMagenticworld”hasaconsiderableheadstartintermsofdeployment
+practiceandoptimization,andtheindustryinertiaalreadyfunnelseffortsintoinnovation
+solelyinthatdirection.
+Acknowledgment. WeacknowledgealternativeviewAV3asadistinctpossibility,butmaintainthe
+positionthattheweightofadvantagesdescribedacrossargumentsA1–A7canplausibilyoverturnthe
+presentstateofaffairs.
+5 BarrierstoAdoption
+Itwouldbeprudenttoaskoneself: IftheargumentsA1–A7aretrulycompelling,whydotheever
+newergenerationsofagentsseeminglyjustperpetuatethestatusquoofusinggeneralistLLMs?
+Webelievethefollowingtobeamongthetoday’smainbarrierstowide-spreadadoptionofSLMs:
+B1 LargeamountsofupfrontinvestmentincentralizedLLMinferenceinfrastructure. As
+detailedinSection1,largecapitalbetshavebeenmadeonthecentralizedLLMinference
+beingtheleadingparadigminprovidingAIservicesinthefuture. Assuch,theindustry
+has been much quicker at building the tools and infrastructure to that end, omitting any
+considerationsforthepossibilitythatmoredecentralizedSLMoron-deviceinferencemight
+beequallyfeasibleinthenearfuture.
+B2 Use of generalist benchmarks in SLM training, design, and evaluation. It must be
+pointedoutthatmuchoftheworkonSLMdesignanddevelopmentfollowsthetracksof
+LLMdesign,focusingonthesamegeneralistbenchmarksintheirdevelopment[47,61]. On
+thispoint,[23]notesthatifonefocusessolelyonbenchmarksmeasuringtheagenticutility
+ofagents,thestudiedSLMseasilyoutperformlargermodels.
+B3 Lackofpopularawareness. SLMsoftendonotreceivethelevelofmarketingintensity
+andpressattentionLLMsdo,despitetheirbettersuitabilityinmanyindustrialscenarios.
+WenotethatbarriersB1–B3arepracticalhurdlesandfarfrombeingfundamentalflawsoftheSLM
+technologyinthecontextofagenticAI.WithadvancedinferenceschedulingsystemssuchasDynamo
+[24], barrierB1isbeingreducedtoamereeffectofinertia. barrierB2isbecomingincreasingly
+recognized in the field [23, 37], and it would be natural for barrier B3 to fall once the economic
+benefitsofSLMdeploymentinagenticapplications(argumentA2)arebetterknown. Withtheinertia
+ofbarrierB1inparticular,wedonotendeavortogiveatimelinefortheretreatofthesebarriersor
+thepopularadoptionofSLMs.
+8
+
+6 LLM-to-SLMAgentConversionAlgorithm
+TheverynatureofagenticapplicationsenablesthemtoeventuallyswitchfromusingLLMgeneralists
+tousingSLMspecialistsatmanyoftheirinterfaces. Inthefollowingsteps,weoutlineanalgorithm
+thatdescribesonepossiblewaytocarryoutthechangeoftheunderlyingmodelpainlessly.
+S1 Secureusagedatacollection. Theinitialstepinvolvesdeployinginstrumentationtolog
+allnon-HCIagentcalls,capturinginputprompts,outputresponses,contentsofindividual
+tool calls, and optionally latency metrics for a later targeted optimization. In terms of
+implementation,itistherecommendedpracticetosetupencryptedloggingpipelineswith
+role-basedaccesscontrols[55]andanonymizealldatawithrespecttoitsoriginsbefore
+storage[74]. SeeloggerinFigure1foranillustration.
+S2 Datacurationandfiltering. BegincollectingdatathroughthepipelinesofstepS1. Once
+asatisfactoryamountofdatahasbeencollected(10k-100kexamplesbeingsufficientfor
+fine-tuningofsmallmodelsasaruleofthumb[5,22]),itisnecessarytoremoveanyPII,
+PHI, or any other application-specific sensitive data that could cause a data leak across
+useraccountsonceusedtoproduceaSLMspecialist. Manytypicalvarietiesofsensitive
+data can be detected and masked or removed using popular automated tools for dataset
+preparation [64, 62]. Application specific inputs (e.g. legal or internal documents) can
+beoftenbeautomaticallyparaphrasedtoobfuscatenamedentitiesandnumericaldetails
+withoutcompromisingthegeneralinformationcontent[11,79,76].
+S3 Task clustering. Employ unsupervised clustering techniques on the collected prompts
+and agent actions to identify recurring patterns of requests or internal agent operations
+[35, 42, 21]. These clusters help define candidate tasks for SLM specialization. The
+granularityoftaskswilldependonthediversityofoperations;commonexamplesinclude
+intent recognition, data extraction, summarization of specific document types, or code
+generationwithrespecttotoolsavailabletotheagent.
+S4 SLMselection. Foreachidentifiedtask,selectoneormorecandidateSLMs. Criteriafor
+selection include the SLM’s inherent capabilities (e.g., instruction following, reasoning,
+contextwindowsize),itsperformanceonrelevantbenchmarksforthetasktype,itslicensing,
+anditsdeploymentfootprint(memory,computationalrequirements). ModelsofSection3.2
+serveasgoodstartingcandidates.
+S5 SpecializedSLMfine-tuning. ForeachselectedtaskandcorrespondingSLMcandidate,
+prepareatask-specificdatasetfromthecurateddatacollectedinstepsS2andS3. Then,fine-
+tunethechosenSLMsonthesespecializeddatasets. PEFTtechniquessuchasLoRA[34]
+orQLoRA[20]canbeleveragedtoreducecomputationalcostsandmemoryrequirements
+associatedwithfine-tuning,makingtheprocessmoreaccessible. Fullfine-tuningcanalso
+beconsideredifresourcespermitandmaximaladaptationisrequired. Insomecases,itmay
+bebeneficialtouseknowledgedistillation,wherethespecialistSLMistrainedtomimic
+theoutputsofthemorepowerfulgeneralistLLMonthetask-specificdataset. Thiscanhelp
+transfersomeofthemorenuancedcapabilitiesoftheLLMtotheSLM.
+S6 Iterationandrefinement. OnemayretraintheSLMsandtheroutermodelperiodically
+withnewdatatomaintainperformanceandadapttoevolvingusagepatterns. Thisformsa
+continuousimprovementloop,returningtostepS2orstepS4asappropriate.
+7 CallforDiscussion
+TheagenticAIindustryisshowingthesignsofapromisetohaveatransformativeeffectonwhite
+collarworkandbeyond.
+ItistheviewoftheauthorsthatanyexpensesavingsorimprovementsonthesustainabilityofAI
+infrastructurewouldactasacatalystforthistransformation,andthatitisthuseminentlydesirableto
+explorealloptionsfordoingso.
+We therefore call for both contributions to and critique of our position, to be di-
+rected to agents@nvidia.com, and commit to publishing all such correspondence at
+research.nvidia.com/labs/lpr/slm-agents.
+9
+
+References
+[1] Aashima. Smalllanguagemodelsvs.llms: Findingtherightfitforyourneeds,October2024.
+Accessed: 2025-05-09.
+[2] ABBYY. Small language models vs. large language models, November 2024. Accessed:
+2025-05-09.
+[3] MarahAbdin,JyotiAneja,HanyAwadalla,AhmedAwadallah,AmmarAhmadAwan,Nguyen
+Bach,AmitBahree,ArashBakhtiari,JianminBao,HarkiratBehl,etal. Phi-3technicalreport:
+Ahighlycapablelanguagemodellocallyonyourphone. arXivpreprintarXiv:2404.14219,
+2024.
+[4] Adyog. The economics of ai training and inference: How deepseek broke the cost curve,
+February2025. Accessed: 2025-05-09.
+[5] IshikaAgarwal,KrishnatejaKillamsetty,LucianPopa,andMarinaDanilevksy. Delift: Data
+efficientlanguagemodelinstructionfinetuning. arXivpreprintarXiv:2411.04425,2024.
+[6] LoubnaBenAllal,AntonLozhkov,ElieBakouch,GabrielMartínBlázquez,GuilhermePenedo,
+LewisTunstall,AndrésMarafioti,HynekKydlícˇek,AgustínPiqueresLajarín,VaibhavSrivastav,
+JoshuaLochner,CalebFahlgren,Xuan-SonNguyen,ClémentineFourrier,BenBurtenshaw,
+HugoLarcher,HaojunZhao,CyrilZakka,MathieuMorlon,ColinRaffel,LeandrovonWerra,
+andThomasWolf. Smollm2: Whensmolgoesbig–data-centrictrainingofasmalllanguage
+model,2025.
+[7] PeterBelcak,GregHeinrich,JanKautz,andPavloMolchanov. Minifinetuning: Low-datagen-
+erationdomainadaptationthroughcorrectiveself-distillation. arXivpreprintarXiv:2506.15702,
+2025.
+[8] PeterBelcakandRogerWattenhofer. Tinytransformersexcelatsentencecompression. arXiv
+preprintarXiv:2410.23510,2024.
+[9] AaronBlakeman,AartiBasant,AbhinavKhattar,AdithyaRenduchintala,AkhiadBercovich,
+AleksanderFicek,AlexisBjorlin,AliTaghibakhshi,AmalaSanjayDeshmukh,AmeyaSunil
+Mahabaleshwarkar, et al. Nemotron-h: A family of accurate and efficient hybrid mamba-
+transformermodels. arXivpreprintarXiv:2504.03624,2025.
+[10] SebastianBorgeaud,ArthurMensch,JordanHoffmann,TrevorCai,ElizaRutherford,Katie
+Millican,GeorgevandenDriessche,BogdanDamoc,AidanClark,JanKramár,etal. Improving
+languagemodelsbyretrievingfromtrillionsoftokens. arXivpreprintarXiv:2112.04426,2022.
+[11] MichaelBrennan,SadiaAfroz,andRachelGreenstadt. Adversarialstylometry: Circumventing
+authorshiprecognitiontopreserveprivacyandanonymity. ACMTransactionsonInformation
+andSystemSecurity(TISSEC),15(3):1–22,2012.
+[12] RuisiCai,SauravMuralidharan,GregHeinrich,HongxuYin,ZhangyangWang,JanKautz,and
+PavloMolchanov. Flextron: Many-in-oneflexiblelargelanguagemodel. InProceedingsofthe
+41stInternationalConferenceonMachineLearning(ICML2024),2024.
+[13] MichaelChui,BryceHall,HelenMayhew,AlexSingla,andAlexanderSukharevsky. Thestate
+ofaiin2022—andahalfdecadeinreview,December2022. Accessed: 2025-05-09.
+[14] Cloudera,Inc. 96%ofenterprisesareexpandinguseofaiagents,accordingtolatestdatafrom
+cloudera,April2025. Accessed: 2025-05-08.
+[15] PlanckCollaborationetal. Planck2018results.vi.cosmologicalparameters. Astronomy&
+Astrophysics,641:A6,2020.
+[16] Colliers. 2025datacentermarketplace: Balancingunprecedentedopportunitywithstrategic
+risk. U.s.researchreport,Colliers,2025.
+[17] DAIR.AI. Llmagents,April2024. Accessed: 2025-05-08.
+10
+
+[18] BadhanChandraDas,MHadiAmini,andYanzhaoWu. Securityandprivacychallengesof
+largelanguagemodels: Asurvey. ACMComputingSurveys,57(6):1–39,2025.
+[19] DeepSeek-AI. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement
+learning,2025.
+[20] Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer. Qlora: Efficient
+finetuningofquantizedllms. Advancesinneuralinformationprocessingsystems,36:10088–
+10115,2023.
+[21] Shizhe Diao, Yu Yang, Yonggan Fu, Xin Dong, Dan Su, Markus Kliegl, Zijia Chen, Peter
+Belcak, Yoshi Suhara, Hongxu Yin, et al. Climb: Clustering-based iterative data mixture
+bootstrappingforlanguagemodelpre-training. arXivpreprintarXiv:2504.13161,2025.
+[22] NingDing,YujiaQin,GuangYang,FuchaoWei,ZonghanYang,YushengSu,ShengdingHu,
+YulinChen,Chi-MinChan,WeizeChen,etal. Parameter-efficientfine-tuningoflarge-scale
+pre-trainedlanguagemodels. NatureMachineIntelligence,5(3):220–235,2023.
+[23] XinDong,YongganFu,ShizheDiao,WonminByeon,ZijiaChen,AmeyaSunilMahabalesh-
+warkar,Shih-YangLiu,MatthijsVanKeirsbilck,Min-HungChen,YoshiSuhara,etal. Hymba:
+Ahybrid-headarchitectureforsmalllanguagemodels. arXivpreprintarXiv:2411.13676,2024.
+[24] AmrElmeleegyetal.Introducingnvidiadynamo,alow-latencydistributedinferenceframework
+forscalingreasoningaimodels,March2025. NVIDIATechnicalBlog.
+[25] HenryEvans. Llmsvs.slms: Balancingcomprehensivenessandsmartresource-saving,April
+2025. Accessed: 2025-05-09.
+[26] BarbaraAFerguson,TimothyADreisbach,CatherineGParks,GregoryMFilip,andCraigL
+Schmitt. Coarse-scalepopulationstructureofpathogenicarmillariaspeciesinamixed-conifer
+forest in the blue mountains of northeast oregon. Canadian Journal of Forest Research,
+33(4):612–623,2003.
+[27] YongganFu,ZhongzhiYu,JunweiLi,JiayiQian,YonganZhang,XiangchiYuan,DachuanShi,
+RomanYakunin,andYingyanCelineLin. Amoeballm: Constructingany-shapelargelanguage
+modelsforefficientandinstantdeployment. InProceedingsofthe38thAnnualConferenceon
+NeuralInformationProcessingSystems(NeurIPS2024),2024.
+[28] google. GitHub-google/A2A:Anopenprotocolenablingcommunicationandinteroperability
+betweenopaqueagenticapplications.
+[29] David Gu, Peter Belcak, and Roger Wattenhofer. Text compression for efficient language
+generation. arXivpreprintarXiv:2503.11426,2025.
+[30] HarrisonClarke. Largelanguagemodelsvs.smalllanguagemodels,March2024. Accessed:
+2025-05-09.
+[31] Danny Hernandez, Jared Kaplan, Tom Henighan, and Sam McCandlish. Scaling laws for
+transfer. arXivpreprintarXiv:2102.01293,2021.
+[32] JordanHoffmann,SebastianBorgeaud,ArthurMensch,ElenaBuchatskaya,TrevorCai,Eliza
+Rutherford, DiegodeLasCasas, LisaAnneHendricks, JohannesWelbl, AidanClark, etal.
+Trainingcompute-optimallargelanguagemodels. arXivpreprintarXiv:2203.15556,2022.
+[33] Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang,
+LuWang,andWeizhuChen. Lora: Low-rankadaptationoflargelanguagemodels.arxiv2021.
+arXivpreprintarXiv:2106.09685,2021.
+[34] Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang,
+LuWang,WeizhuChen,etal. Lora: Low-rankadaptationoflargelanguagemodels. ICLR,
+1(2):3,2022.
+[35] ShaohanHuang,FuruWei,LeiCui,XingxingZhang,andMingZhou.Unsupervisedfine-tuning
+for text clustering. In Proceedings of the 28th international conference on computational
+linguistics,pages5530–5534,2020.
+11
+
+[36] InvisibleTechnologies. Howsmalllanguagemodelscanoutperformllms,March2025. Ac-
+cessed: 2025-05-21.
+[37] MojanJavaheripiandSébastienBubeck. Phi-2:Thesurprisingpowerofsmalllanguagemodels,
+2023. MicrosoftResearchBlog.
+[38] Andreas Jungherr. Artificial intelligence and democracy: A conceptual framework. Social
+media+society,9(3):20563051231186353,2023.
+[39] AvivKaufmann. Understandingthetotalcostofinferencinglargelanguagemodels. Technical
+report,EnterpriseStrategyGroup,April2024. CommissionedbyDellTechnologies.Accessed:
+2025-05-09.
+[40] Sneha Kudugunta, Aditya Kusupati, Tim Dettmers, Kaifeng Chen, Inderjit Dhillon, Yulia
+Tsvetkov, Hannaneh Hajishirzi, Sham Kakade, Ali Farhadi, Prateek Jain, et al. Matformer:
+Nestedtransformerforelasticinference. arXivpreprintarXiv:2310.07707,2023.
+[41] AkshiKumar. Fromlargetosmall: Theriseofsmalllanguagemodels(slms)intextanalytics.
+2025.
+[42] LuyingLiu,JianchuKang,JingYu,andZhongliangWang.Acomparativestudyonunsupervised
+feature selection methods for text clustering. In 2005 International Conference on Natural
+LanguageProcessingandKnowledgeEngineering,pages597–601.IEEE,2005.
+[43] Shih-Yang Liu, Chien-Yi Wang, Hongxu Yin, Pavlo Molchanov, Yu-Chiang Frank Wang,
+Kwang-TingCheng,andMin-HungChen. Dora: Weight-decomposedlow-rankadaptation.
+arXivpreprintarXiv:2402.09353,2024.
+[44] ZichangLiu,JueWang,TriDao,TianyiZhou,BinhangYuan,ZhaoSong,AnshumaliShrivas-
+tava,CeZhang,YuandongTian,ChristopherRe,etal. Dejavu: Contextualsparsityforefficient
+llmsatinferencetime. InInternationalConferenceonMachineLearning,pages22137–22176.
+PMLR,2023.
+[45] NunzioLore,SepehrIlami,andBabakHeydari. Largemodelstrategicthinking,smallmodelef-
+ficiency:transferringtheoryofmindinlargelanguagemodels.arXivpreprintarXiv:2408.05241,
+2024.
+[46] JeffLoucks,GillianCrossan,BarisSarer,ChinaWidener,andArianeBucaille. Autonomous
+generative ai agents: Under development. Deloitte Insights, November 2024. Accessed:
+2025-05-08.
+[47] ZhenyanLu,XiangLi,DongqiCai,RongjieYi,FangmingLiu,XiwenZhang,NicholasDLane,
+andMengweiXu. Smalllanguagemodels: Survey,measurements,andinsights. arXivpreprint
+arXiv:2409.15790,2024.
+[48] Junyu Luo, Weizhi Zhang, Ye Yuan, Yusheng Zhao, Junwei Yang, Yiyang Gu, Bohan Wu,
+Binqi Chen, Ziyue Qiao, Qingqing Long, et al. Large language model agent: A survey on
+methodology,applicationsandchallenges. arXivpreprintarXiv:2503.21460,2025.
+[49] GeorginaMMace,PaulHHarvey,andTimothyHClutton-Brock. Brainsizeandecologyin
+smallmammals. JournalofZoology,193(3):333–354,1981.
+[50] TobiasMann. Acloserlookatdynamo,nvidia’s’operatingsystem’foraiinference,March
+2025. Accessed: 2025-05-09.
+[51] Market.us. Global agentic ai market size, share analysis by product type, agent role, agent
+system,enduser,regionandcompanies–industrysegmentoutlook,marketassessment,compe-
+titionscenario,trendsandforecast2025–2034,March2025. Accessed: 2025-05-08.
+[52] TulaMasterman,SandiBesen,MasonSawtell,andAlexChao. Thelandscapeofemerging
+ai agent architectures for reasoning, planning, and tool calling: A survey. arXiv preprint
+arXiv:2404.11584,2024.
+[53] SourabhMehta. Howmuchenergydollmsconsume? unveilingthepowerbehindai,July2024.
+Accessed: 2025-05-21.
+12
+
+[54] Meta Platforms, Inc. Model cards and prompt formats: Llama 3.3, April 2025. Accessed:
+2025-05-08.
+[55] Metomic. Understandingaiagents&datasecurity,2025. Accessed: 2025-05-13.
+[56] ErikMiehling,KarthikeyanNatesanRamamurthy,KushRVarshney,MatthewRiemer,Djallel
+Bouneffouf,JohnTRichards,AmitDhurandhar,ElizabethMDaly,MichaelHind,Prasanna
+Sattigeri,etal. Agenticaineedsasystemstheory. arXivpreprintarXiv:2503.00237,2025.
+[57] MorganStanley. Genairevenuegrowthandprofitability,April2025. Accessed: 2025-05-08.
+[58] Humza Naveed, Asad Ullah Khan, Shi Qiu, Muhammad Saqib, Saeed Anwar, Muhammad
+Usman,NaveedAkhtar,NickBarnes,andAjmalMian. Acomprehensiveoverviewoflarge
+languagemodels. arXivpreprintarXiv:2307.06435,2023.
+[59] NVIDIA. Chatrtx,2024. NVIDIAAIProduct.
+[60] NVIDIA. Nvidiadynamo: Adatacenterscaledistributedinferenceservingframework. https:
+//github.com/ai-dynamo/dynamo,2025. Accessed: 2025-05-09.
+[61] Felipe Maia Polo, Lucas Weber, Leshem Choshen, Yuekai Sun, Gongjun Xu, and Mikhail
+Yurochkin. tinybenchmarks: evaluating llms with fewer examples. arXiv preprint
+arXiv:2402.14992,2024.
+[62] Lakshmi Radhakrishnan, Gundolf Schenk, Kathleen Muenzen, Boris Oskotsky, Habibeh
+AshouriChoshali,ThomasPlunkett,SharatIsrani,andAtulJButte. Acertifiedde-identification
+system for all clinical text documents for information extraction at scale. JAMIA open,
+6(3):ooad045,2023.
+[63] MartinJRees. BeforetheBeginning: OurUniverseandOthers. Addison-Wesley,1997.
+[64] JudithSáinz-PardoDíazandÁlvaroLópezGarcía. Anopensourcepythonlibraryforanonymiz-
+ingsensitivedata. Scientificdata,11(1):1289,2024.
+[65] TimoSchick,JaneDwivedi-Yu,RobertoDessì,RobertaRaileanu,MariaLomeli,LukeZettle-
+moyer, Nicola Cancedda, and Thomas Scialom. Toolformer: Language models can teach
+themselvestousetools. InAdvancesinNeuralInformationProcessingSystems(NeurIPS),
+2023.
+[66] JWilliamSchopf. Microfossilsoftheearlyarcheanapexchert: Newevidenceoftheantiquity
+oflife. Science,260(5108):640–646,1993.
+[67] TanyaSeda. Cloudllmcostmodel: Breakdownformid-marketbusinesses,2024. Accessed:
+2025-05-09.
+[68] OliviaShone. Exploreaimodels: Keydifferencesbetweensmalllanguagemodelsandlarge
+languagemodels,November2024. Accessed: 2025-05-21.
+[69] YixinSong,ZeyuMi,HaotongXie,andHaiboChen. Powerinfer: Fastlargelanguagemodel
+servingwithaconsumer-gradegpu. InProceedingsoftheACMSIGOPS30thSymposiumon
+OperatingSystemsPrinciples,pages590–606,2024.
+[70] ShreyasSubramanian,VikramElango,andMecitGungor. Smalllanguagemodels(slms)can
+stillpackapunch: Asurvey. arXivpreprintarXiv:2501.05465,2025.
+[71] Synergy Technical. Small language models vs. large language models, 2025. Accessed:
+2025-05-09.
+[72] Brian G. Thamm. Trustworthy and secure ai: How small language models strengthen data
+security. ServiceContractorMagazine,October2024. Accessed: 2025-05-08.
+[73] FaliWang,ZhiweiZhang,XianrenZhang,ZongyuWu,TzuhaoMo,QiuhaoLu,WanjingWang,
+RuiLi,JunjieXu,XianfengTang,etal. Acomprehensivesurveyofsmalllanguagemodelsin
+theeraoflargelanguagemodels: Techniques,enhancements,applications,collaborationwith
+llms,andtrustworthiness. arXivpreprintarXiv:2411.03350,2024.
+13
+
+[74] WorkOS. Buildsecureaiagents,2025. Accessed: 2025-05-13.
+[75] ZhenliangXue,YixinSong,ZeyuMi,XinruiZheng,YubinXia,andHaiboChen. Powerinfer-2:
+Fastlargelanguagemodelinferenceonasmartphone. arXivpreprintarXiv:2406.06282,2024.
+[76] Biwei Yan, Kun Li, Minghui Xu, Yueyan Dong, Yue Zhang, Zhaochun Ren, and Xiuzhen
+Cheng.Onprotectingthedataprivacyoflargelanguagemodels(llms):Asurvey.arXivpreprint
+arXiv:2403.05156,2024.
+[77] FanjiaYan,HuanzhiMao,CharlieCheng-JieJi,TianjunZhang,ShishirG.Patil,IonStoica,and
+JosephE.Gonzalez.Berkeleyfunctioncallingleaderboard.https://gorilla.cs.berkeley.
+edu/blogs/8_berkeley_function_calling_leaderboard.html,2024.
+[78] ShunyuYao,NoahShinn,PedramRazavi,andKarthikNarasimhan. Tau-bench: Abenchmark
+fortool-agent-userinteractioninreal-worlddomains. arXivpreprintarXiv:2406.12045,2024.
+[79] DaYu,PeterKairouz,SewoongOh,andZhengXu. Privacy-preservinginstructionsforaligning
+largelanguagemodels. arXivpreprintarXiv:2402.13659,2024.
+[80] AdamZewe. Likehumanbrains,largelanguagemodelsreasonaboutdiversedatainageneral
+way. MITNews,February192025. Accessed: 2025-05-09.
+[81] JianguoZhang,TianLan,MingZhu,ZuxinLiu,ThaiHoang,ShirleyKokane,WeiranYao,
+JuntaoTan,AksharaPrabhakar,HaolinChen,etal. xlam: Afamilyoflargeactionmodelsto
+empoweraiagentsystems. arXivpreprintarXiv:2409.03215,2024.
+[82] KevinZhang. Adeepdiveonaiinferencestartups,2024. Accessed: 2025-05-09.
+[83] JeffreyZhou,TianjianLu,SwaroopMishra,SiddharthaBrahma,SujoyBasu,YiLuan,Denny
+Zhou,andLeHou. Instruction-followingevaluationforlargelanguagemodels. arXivpreprint
+arXiv:2311.07911,2023.
+[84] XuezhiZhou,NathanaelSchärli,YujieHou,JasonWei,DennyZhou,QuocV.Le,andDouwe
+Kiela. Least-to-mostpromptingenablescomplexreasoninginsmalllanguagemodels. arXiv
+preprintarXiv:2205.10625,2022.
+[85] DavidZierandHarryKim. Introducingnvidiadynamo,alow-latencydistributedinference
+frameworkforscalingreasoningaimodels,March2025. Accessed: 2025-05-09.
+14
+
+A Definitions
+ThisappendixprovidestwojustificationsforthechoiceofdefinitionsinSection2.1.
+A.1 Pragmaticargument
+ItisdesirabletohaveadefinitionofSLMsthatmeetsthreekeycriteria:
+• Timelessness. The definition should be timeless: It should avoiding dependence on
+hardware-specificmetricslikeparametercountorFLOPs,whichquicklybecomeobsolete
+astechnologyadvances—whatqualifiesas“small”todaymaybe“large”tomorrow.
+• Practicality. The definition is likely to have much wider generality if it is grounded in
+practicaluse,reflectingthereal-worldgoalofdeployingSLMsonwidelyavailableconsumer
+devices,wheretheycanservetheuserintheirproximitywithlow-latencyinference.
+• Motivation alignment. The definition should capture the fundamental motivation that
+drivesthetrainingofSLMsinthefirstplace,whichistoenablecapablelanguagemodels
+thatcanrunon-deviceorwithinsignificantlyconstrainedbudgetscomparedtoLLMs.
+WefinddefinitionWD1topossessallthree. DefinitionWD2isthenphrasedtocomplementtheset
+ofalllanguagemodels.
+A.2 Limitargument
+ToexplorethedistinctionbetweensmallandlargelanguagemodelsinthecontextofagenticAI,let
+usadopttheuncompromisinglensofanextremalist,forwhomintelligencemustbeeithermaximally
+smallormaximallylarge.
+Imagine a super-intelligent system spanning galactic scales, marshaling all available matter to
+optimize its computations. Such a system, while theoretically capable of addressing profound
+questionswouldfaceinsurmountablephysicalconstraints. Thespeedoflightlimitscommunication,
+withround-tripdelaysacrossagalaxypotentiallyspanningtensofthousandsofyears[63]. This
+latencyprecludesreal-timecoordination,fragmentingthesystemintolooselycoupledcomponents
+ratherthanaunified"mind". Atcosmologicalscales,spanningmillionsorbillionsoflight-years,
+communicationdelayscouldapproachorexceedtheuniverse’sageof13.8billionyears[15]. Sucha
+system,whilevast,wouldbeimpracticalforhuman-relevantapplications,itscomputationsunfolding
+overeons.
+Conversely,consideraninfinitelysmallintelligentsystem,reducedtotheminimalsubstratecapable
+ofcomputation. Suchasystem,akintothesimplestbiologicalorganisms,wouldlackthesensors,
+effectors,orcomputationalcapacitytomeaningfullyinteractwithitsenvironment. Itsintelligence
+wouldbeconstrainedtorudimentaryevolution,muchlikeearlylifeformsthatemerged3.5billion
+yearsago[66]. Yet,eveninnature,scalevariesdramatically: livingorganismsrangefrombacteria
+(hundredsofnanometers)tobluewhales(upto30meters),theheaviestonesbeinglimitedbyheat
+dissipationduetotheirhighvolume-to-surfaceratio[26]. Atthecosmicscale, allterrestriallife
+appearsmicroscopic,suggestingthatabsolutesizeislesscriticalthanfunctionaladaptability.
+Hereby:Humans,oftenregardedasapinnacleofintelligence,offerausefulanchorfordefiningSLMs
+andLLMs.Withabrain-to-bodymassratiosurpassedonlybysmallmammalslikemice[49],humans
+balancecomputationalefficiencywithpracticalembodiment.SLMs,byanalogy,aresystemscompact
+enoughtorunonpersonaldevices,betrainedwithmodesthumaninteraction,orperformconstrained,
+verifiabletasks.LLMs,incontrast,demanddatacenter-scaleinfrastructure,organization-leveltraining,
+andextensivevalidation,reflectingtheircomputationalload. Theextremalistperspectivehintsata
+profoundtruth: intelligenceisnotdefinedbysizealonebutbythebalanceofcapability,efficiency,
+andcontext. Foragenticworkflows,SLMsmayofferagilityandaccessibility,whileLLMsprovide
+depthatthecostofscale.
+Itisbecauseofthisapparentcontinuumthat,ifpressedtoprovideadefinitionofSLMs,wechooseto
+anchoritincharacteristicsofamodelthatcanbedeployedinadistributedfashionwithpresent-day
+technologyandbeinteractiveenoughwhenengagingwithahumantobeofutility. Proceedingin
+suchaway,thecontemporaryinstancesofthedefinitionwillevolveasthetechnologyunderpinning
+thesemodelsadvances,makingthedefinitionsufficientlytimelesstobepractical.
+15
+
+B LLM-to-SLMReplacementCaseStudies
+Thisappendixassessesthepotentialextentofreplacinglargelanguagemodelinvocationswithsmall
+languagemodelsinthreepopularopen-sourceagents: MetaGPT,OpenOperator,andCradle. Each
+case study examines the use of LLMs, evaluates where SLMs may be viable replacements, and
+concludeswithanestimatedpercentageofreplaceablequeries.
+B.1 Casestudy1: MetaGPT
+Name. MetaGPT
+License. Apache2.0
+Purpose. MetaGPTisamulti-agentframeworkdesignedtoemulateasoftwarecompany. Itassigns
+rolessuchasProductManager,Architect,Engineer,andQAEngineertocollaborativelyhandletasks
+includingrequirementdrafting,systemdesign,implementation,andtesting.
+LLMInvocations.
+• Role-BasedActions. EachagentroleinvokesLLMstofulfillitsspecializedresponsibilities
+(e.g.,coding,documentation).
+• PromptTemplates. Structuredpromptsusedforconsistentoutputs.
+• DynamicIntelligence. Usedforplanning,reasoning,andadaptation.
+• Retrieval-AugmentedGeneration(RAG).Retrievesrelevantdocumentstoenhancegenera-
+tion.
+Assessment for SLM Replacement. SLMs would be well-suited for routine code generation
+andboilerplatetasks,aswellasforproducingstructuredresponsesbasedonpredefinedtemplates.
+However,theywouldrequirefurtherfine-tuningdatatoreliablyperformmorecomplextasks,suchas
+architecturalreasoningandadaptiveplanningordebugging,whichwouldinitiallybenefitfromthe
+broadercontextualunderstandingandthegeneralityofLLMs.
+Conclusion. InthecaseofMetaGPT,weestimatethatabout60%ofitsLLMqueriescouldbe
+reliablyhandledbyappropriatelyspecializedSLMs.
+B.2 Casestudy2: OpenOperator
+Name. OpenOperator
+License. MITLicense
+Purpose. OpenOperatorisaworkflowautomationagentenablinguserstodefinebehavioursof
+agentsthatcanperformtaskslikeAPIcalls,monitoring,andorchestrationusingtoolsandservices.
+LLMInvocations
+• NaturalLanguageProcessing. Parsesuserintent.
+• DecisionMaking. Guidesexecutionflow.
+• ContentGeneration. Writessummaries,reports.
+AssessmentforSLMReplacement SLMswouldbewell-suitedfortaskssuchassimplecommand
+parsing and routing, as well as generating messages based on predefined templates. They could
+bemeetingtheirlimitationswhendealingwithmorecomplextasksthatwouldrequiremulti-step
+reasoningortheabilitytomaintainconversationflowandcontextovertime—areaswhereLLMs
+wouldcontinuetooffersignificantadvantages.
+16
+
+Conclusion. InthecaseofOpenOperator,weestimatethatabout40%ofitsLLMqueriescouldbe
+reliablyhandledbyappropriatelyspecializedSLMs.
+B.3 Casestudy3: Cradle
+Name. Cradle
+License. MITLicense
+Purpose CradleisdesignedforGeneralComputerControl(GCC),enablingagentstooperateGUI
+applicationsviascreenshotinputandsimulateduserinteraction.
+LLMInvocations.
+• InterfaceInterpretation. Understandsvisualcontext.
+• TaskExecutionPlanning. DeterminessequencesofGUIactions.
+• ErrorHandling. Diagnosesandreactstounexpectedsoftwarestates.
+Assessment for SLM Replacement SLMs would be well-suited for handling repetitive GUI
+interactionworkflowsandtheexecutionofpre-learnedclicksequences. However,theywouldface
+challengeswhenitcomestotasksinvolvingdynamicGUIadaptationorunstructurederrorresolution,
+whichwouldrequireahigherdegreeofcontextualunderstandingtypicallyprovidedbyLLMs.
+Conclusion InthecaseofCradle,weestimatethatabout70%ofitsLLMqueriescouldbereliably
+handledbyappropriatelyspecializedSLMs.
+17

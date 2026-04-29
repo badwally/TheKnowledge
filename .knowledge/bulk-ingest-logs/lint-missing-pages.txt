@@ -1,0 +1,5 @@
+ok: lint: 24 finding(s)
+  missing-pages: 24
+report: /Users/andrewgrant/code/knowledge/.knowledge/lint/2026-04-29T16-29-39Z-missing-pages.md
+  touched: /Users/andrewgrant/code/knowledge/.knowledge/lint/2026-04-29T16-29-39Z-missing-pages.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
