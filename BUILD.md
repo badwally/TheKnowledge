@@ -619,6 +619,44 @@ Also addressed a migration-idempotency defect surfaced by the M12 re-run: `_now_
 
 **M14 — Phase 3 edge-ai-agentic.** Surfaced legacy data contamination: the edge_ai_agentic legacy vault contained 363 source files, of which 213 were pre-existing duplicates of phases 1 (86) and 2 (127). The 150 phase-3-unique sources are correctly scoped to edge-AI/agentic content (LLM inference, transformer compression, NPU mini PCs, blockchain edge computing). Added a "skip if canonical raw target exists" guard to `_migrate_source` enforcing source-immutability across cross-domain re-imports — sources retain the domain marker of the first phase that migrated them. 15/15 spot-check audit on phase-3-unique sources; concepts/MOCs/synthesis layer disjoint from prior phases (75 + 8 + 4 added cleanly). Future enhancement candidate: legitimate cross-domain sources (a single source belonging to multiple research domains) would benefit from `domains:` merging rather than skip; deferred until a real use case appears.
 
+**M36 — Bottom-up domain discovery.** Closes the gap between "ingest a pile of unsorted sources" and "grow the citation graph against named domains." Surfaced by a hand-test that bulk-ingested 360 PDFs from Apple Notes attachments without `--domain` and without `--with-plan` (cost-aware), producing 360 graph-island source pages with no concept extraction and no domain affiliation — the existing tooling assumed top-down authorship (human picks domain → policy → sources land *under* that policy → agent extracts claims into entity/concept pages). M36 adds the inverse path: discover candidate domains from an untagged corpus, bless the useful ones, back-tag member sources atomically, and reverse on demand.
+
+Page type added: `domain-proposal` (`wiki/proposals/<slug>.md`) with required fields `proposed_domain`, `status` (draft|blessed|rejected), `member_sources`, `rationale` and required sections `Rationale` / `Member sources`. Not citation-grounded — proposals describe clusters, not claims. Four new ops:
+
+- `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged] [--timeout SECONDS]` — single-shot LLM clustering pass. Reuses `apply_plan()` so all proposals validate before any write — atomicity is automatic. Default 300s plan-client timeout is tight for 200+ source corpora; pass `--timeout 1500` for the full 360-PDF case.
+- `wiki promote-domain <proposal-slug>` — writes minimal-viable `policy.yaml` (marked `auto_generated_from_proposal: true`, default thresholds, empty inclusion criteria pending hand-authoring), back-tags every member source's `domains:` in BOTH `raw/<type>/<id>.md` and `wiki/sources/<id>.md` (frontmatter-only mutation; body bytes preserved → source-immutability holds), flips proposal `status: draft → blessed`. Atomic across all writes.
+- `wiki demote-domain <domain-slug>` — exact inverse of promote. Removes `<slug>` from every source's `domains:`, deletes the auto-generated policy, flips matching blessed proposal back to draft. Refuses to delete a policy lacking `auto_generated_from_proposal: true` (protects hand-authored work).
+- `wiki reject-proposal <proposal-slug>` — deletes a draft proposal page. Refuses blessed; caller must demote first.
+
+Lint: new scope `untagged-sources` walks `wiki/sources/*.md` and reports the count of pages with empty/missing `domains:` plus a remediation hint pointing at `wiki discover-domains --untagged`.
+
+Reversibility levels (per "make it reversible if it fails" requirement):
+1. **In-flight** — every op stages writes in memory, validates the full set, then commits under the `wiki-author` lock. Validation failure → zero on-disk changes.
+2. **Post-success** — `wiki demote-domain` + `wiki reject-proposal` reverse promotion / discovery cleanly.
+3. **Code-level** — all M36 work landed on branch `m36-domain-discovery` with each step in its own commit; broken state recoverable via `git reset` to any prior commit.
+4. **Corpus-level** — the 360-PDF bulk-ingest was committed as its own commit (`5fed394`) before any M36 code, so the corpus and the M36 toolchain are independently revertable.
+
+Hand-test: 32-source subset (`--scope 'wiki/sources/pdf-a*'`) → LLM produced 6 sensible clusters (trading-markets, cycling-endurance, ai-ml-research, philosophy-human-rights, health-medical, miscellany), each with 4-8 members and human-readable rationale. Reject + promote + demote round-tripped cleanly.
+
+Full 360-PDF run (`--scope 'wiki/sources/pdf-*' --untagged --timeout 3600`): 8 clusters, **100% coverage** (every source assigned to exactly one cluster), single LLM call. Distribution:
+
+| Cluster | Members |
+|---|---|
+| miscellany | 143 |
+| trading-and-markets | 95 |
+| health-and-longevity | 29 |
+| ai-and-agents | 26 |
+| audio-and-streaming-tech | 22 |
+| cold-plunge-and-home-build | 18 |
+| philosophy-spirituality-psychology | 15 |
+| cycling-and-fitness | 12 |
+
+Trading and miscellany dominate (40% + 26%) but the niche clusters are sharp. Notably the LLM annotated `trading-and-markets` with "should likely split later into sub-domains (ICT methodology, trading psychology, macro outlooks, academic finance) once volume warrants it" — the cluster discovery output flagged its own next decomposition step. The 300s default `claude -p` timeout was insufficient for 360 sources; the run completed inside the 3600s `--timeout` budget.
+
+Tests: 19 new (4 schema + 5 discover + 11 promote/demote/reject + 3 untagged-sources lint). 309 → 331.
+
+Out of scope for M36: embedding-based clustering for corpora that exceed the single-shot prompt budget (deferred to M37 if needed); per-cluster `--with-plan` graph-growing (separate milestone). The TB-scale sidecar crawler (Dropbox/Drive/iCloud → cluster manifests → gateway) is a separate `~/code/archivist/` project, not a gateway milestone.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

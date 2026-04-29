@@ -1,0 +1,5 @@
+ok: lint: 1 finding(s)
+  untagged-sources: 1
+report: /Users/andrewgrant/code/knowledge/.knowledge/lint/2026-04-29T17-51-20Z-untagged-sources.md
+  touched: /Users/andrewgrant/code/knowledge/.knowledge/lint/2026-04-29T17-51-20Z-untagged-sources.md
+  touched: /Users/andrewgrant/code/knowledge/log.md

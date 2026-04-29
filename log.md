@@ -1609,3 +1609,115 @@ raw=raw/pdf/pdf-sriram-krishnan-2019-untitled.md wiki=wiki/sources/pdf-sriram-kr
 ## [2026-04-29T16:29:39Z] lint | scope=missing-pages | missing-pages=24
 
 report=.knowledge/lint/2026-04-29T16-29-39Z-missing-pages.md
+
+## [2026-04-29T17:08:40Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-08-40Z-schema-drift.md
+
+## [2026-04-29T17:11:17Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-11-17Z-schema-drift.md
+
+## [2026-04-29T17:14:12Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-14-12Z-schema-drift.md
+
+## [2026-04-29T17:18:41Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-18-41Z-schema-drift.md
+
+## [2026-04-29T17:21:37Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-21-37Z-schema-drift.md
+
+## [2026-04-29T17:24:23Z] wiki-author | id=discover-2026-04-29T17-22-14Z | updates=6 | draft=no
+
+Grouped by inferable theme from title/author metadata (since summaries are stubs); 5 thematic clusters plus a miscellany bucket for fallback-named PDFs whose theme can't be derived without body-text inspection.
+
+## [2026-04-29T17:24:40Z] reject-proposal | proposal=proposal-miscellany
+
+rejected proposal proposal-miscellany
+
+## [2026-04-29T17:24:47Z] promote-domain | proposal=proposal-cycling-endurance | domain=cycling-endurance | members=4
+
+blessed proposal proposal-cycling-endurance → domain cycling-endurance
+
+## [2026-04-29T17:25:05Z] demote-domain | domain=cycling-endurance | untagged_sources=8
+
+demoted domain cycling-endurance
+
+## [2026-04-29T17:25:21Z] reject-proposal | proposal=proposal-ai-ml-research
+
+rejected proposal proposal-ai-ml-research
+
+## [2026-04-29T17:25:21Z] reject-proposal | proposal=proposal-cycling-endurance
+
+rejected proposal proposal-cycling-endurance
+
+## [2026-04-29T17:25:21Z] reject-proposal | proposal=proposal-health-medical
+
+rejected proposal proposal-health-medical
+
+## [2026-04-29T17:25:21Z] reject-proposal | proposal=proposal-philosophy-human-rights
+
+rejected proposal proposal-philosophy-human-rights
+
+## [2026-04-29T17:25:21Z] reject-proposal | proposal=proposal-trading-markets
+
+rejected proposal proposal-trading-markets
+
+## [2026-04-29T17:32:14Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T17-32-14Z-schema-drift.md
+
+## [2026-04-29T17:50:35Z] wiki-author | id=discover-2026-04-29T17-34-52Z | updates=8 | draft=no
+
+Grouped 360 unsorted PDFs by dominant theme inferred from titles and authors: trading/markets, AI & agents, health/longevity, cycling/fitness, cold-plunge & DIY builds, audio/streaming/media-tech, philosophy/spiritual, and a miscellany cluster for fallback PDFs and admin material with no thematic signal.
+
+## [2026-04-29T17:51:20Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-04-29T17-51-20Z-untagged-sources.md
+
+## [2026-04-29T17:51:45Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=start | domain=ai-temporal-video
+
+start research session for prompt 'Test smoke run for orchestrator wiring'
+
+## [2026-04-29T17:51:45Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | target=web
+
+error: FIRECRAWL_API_KEY not set
+
+## [2026-04-29T17:51:45Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | target=youtube
+
+error: YOUTUBE_API_KEY not set
+
+## [2026-04-29T17:51:45Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | adapter=local | n=3
+
+adapter local returned 3 candidates
+
+## [2026-04-29T17:51:46Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | adapter=pubmed | n=0
+
+adapter pubmed returned 0 candidates
+
+## [2026-04-29T17:51:51Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=search | adapter=arxiv | n=3
+
+adapter arxiv returned 3 candidates
+
+## [2026-04-29T17:51:51Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=merge | n=6
+
+merged 6 candidate(s) across adapters
+
+## [2026-04-29T17:52:18Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=filter | n=3
+
+3 candidate(s) cleared threshold
+
+## [2026-04-29T17:52:18Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=convert | target=file:///Users/andrewgrant/code/knowledge/raw/pdf/pdf-fac2ee1bbc71.pdf
+
+error: PDF not found: /Users/andrewgrant/code/knowledge/file:/Users/andrewgrant/code/knowledge/raw/pdf/pdf-fac2ee1bbc71.pdf
+
+## [2026-04-29T17:52:18Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=convert | target=file:///Users/andrewgrant/code/knowledge/raw/pdf/pdf-619e7fbc6084.pdf
+
+error: PDF not found: /Users/andrewgrant/code/knowledge/file:/Users/andrewgrant/code/knowledge/raw/pdf/pdf-619e7fbc6084.pdf
+
+## [2026-04-29T17:52:18Z] research | session_id=2026-04-29-test-smoke-run-for-orchestrator-wiring | step=convert | target=file:///Users/andrewgrant/code/knowledge/raw/pdf/pdf-04854302f962.pdf
+
+error: PDF not found: /Users/andrewgrant/code/knowledge/file:/Users/andrewgrant/code/knowledge/raw/pdf/pdf-04854302f962.pdf
