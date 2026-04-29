@@ -33,6 +33,7 @@ raw/**/*.caf
 # Tabular data sidecars (canonical preview lives in raw/csv/<id>.md)
 raw/**/*.csv
 raw/**/*.tsv
+raw/**/*.docx
 
 # Editor swap files
 *.swp
