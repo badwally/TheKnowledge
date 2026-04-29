@@ -45,12 +45,14 @@ def _ensure_registered() -> None:
     from gateway.converters.pubmed import PubMedConverter
     from gateway.converters.web import WebConverter
     from gateway.converters.pdf import PDFConverter
+    from gateway.converters.csv import CSVConverter
 
     register(YouTubeConverter())
     register(ArxivConverter())
     register(PubMedConverter())
     register(WebConverter())
     register(PDFConverter())
+    register(CSVConverter())
 
     # Voice / audiobook converters depend on the optional `[whisper]` extra.
     # Register only when the heavy deps are importable so the default install

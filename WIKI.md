@@ -88,7 +88,7 @@ Every source in `raw/` and every wiki page begins with YAML frontmatter delimite
 ```yaml
 ---
 id: <type>-<short-id>          # stable, unique across raw/. Examples below.
-type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|other
+type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|other
 title: "<source title>"
 url: "<canonical URL, optional>"
 authors: ["<name>", ...]
@@ -171,6 +171,16 @@ meta:
   source_app: "apple-notes" | "notion" | "obsidian-vault"
   source_id: "<remote-id-from-source-app>"
   imported_at: "YYYY-MM-DDThh:mm:ssZ"
+
+# type: csv
+meta:
+  row_count: 1284
+  column_count: 12
+  columns: ["timestamp", "user_id", "event", ...]   # first 20 column names
+  delimiter: "," | "\t" | ";" | "|"
+  encoding: "utf-8" | "utf-8-sig" | "latin-1"
+  original_filename: "<basename.csv>"
+  extraction_tool: "csv (stdlib)"
 ```
 
 Add new types by extending this list. The validator schema is the source of truth at runtime; this document defines the human-readable contract.
@@ -514,6 +524,7 @@ Stable, type-prefixed, short. Never derived from titles (titles change; IDs must
 | voice | `voice-<YYYY-MM-DDThhmm>` | `voice-2026-04-27T1432` |
 | audiobook | `audio-<asin-or-shortname>` | `audio-thinking-fast-slow` |
 | note | `note-<source-app>-<remote-id-or-hash>` | `note-apple-A1B2` |
+| csv | `csv-<sha256-prefix-12>` | `csv-3a9f8e2b1c4d` |
 
 ### 6.2 Wiki entity / concept slugs
 
