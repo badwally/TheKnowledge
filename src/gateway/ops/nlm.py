@@ -180,12 +180,13 @@ def nlm_add(
         return OperationResult(success=False, errors=[f"frontmatter: {e}"])
 
     url = front.get("url")
-    if not url:
+    has_body = bool(body and body.strip())
+    if not url and not has_body:
         return OperationResult(
             success=False,
             errors=[
-                f"source {source_id} has no `url` in frontmatter; "
-                "M5 supports URL-based sources only (text/drive add comes in M8/M10)"
+                f"source {source_id} has no `url` and empty body; "
+                "nothing to add to NotebookLM"
             ],
         )
 
@@ -203,10 +204,22 @@ def nlm_add(
         )
 
     with file_lock(f"ingest-{source_id}"):
-        try:
-            client.source_add_url(notebook_id, url)
-        except NlmError as e:
-            return OperationResult(success=False, errors=[f"nlm add url failed: {e}"])
+        if url:
+            try:
+                client.source_add_url(notebook_id, url)
+            except NlmError as e:
+                return OperationResult(success=False, errors=[f"nlm add url failed: {e}"])
+            log_summary = f"url={url}"
+        else:
+            # M37 fallback: PDF / note / voice / docx — no URL, but the
+            # canonical body holds the extracted text. Send it as a text
+            # source, titled by the source's frontmatter title.
+            title = str(front.get("title") or source_id)
+            try:
+                client.source_add_text(notebook_id, body, title=title)
+            except NlmError as e:
+                return OperationResult(success=False, errors=[f"nlm add text failed: {e}"])
+            log_summary = f"text={len(body)}b title={title!r}"
 
         front["nlm_corpus_ids"] = existing_corpus_ids + [notebook_id]
         domains = list(front.get("domains") or [])
@@ -225,7 +238,7 @@ def nlm_add(
                 "notebook_id": notebook_id,
                 "type": source_type,
             },
-            summary=f"url={url}",
+            summary=log_summary,
         )
 
     return OperationResult(

@@ -45,6 +45,7 @@ class MockNlmClient:
 
     notebooks_created: list[str] = field(default_factory=list)
     sources_added: list[tuple[str, str]] = field(default_factory=list)
+    text_sources_added: list[tuple[str, str, str | None]] = field(default_factory=list)
     artifact_creates: list[tuple[str, str, str | None]] = field(default_factory=list)
     revisions: list[tuple[str, list[tuple[int, str]]]] = field(default_factory=list)
     downloads: list[tuple[str, str, Path, str | None]] = field(default_factory=list)
@@ -57,7 +58,7 @@ class MockNlmClient:
         self.sources_added.append((notebook_id, url))
 
     def source_add_text(self, notebook_id, content, *, title=None):
-        raise NotImplementedError
+        self.text_sources_added.append((notebook_id, content, title))
 
     def slides_create(self, notebook_id, *, focus=None) -> ArtifactInfo:
         self.artifact_creates.append(("slides", notebook_id, focus))
@@ -88,6 +89,12 @@ class MockNlmClient:
 
     def download_report(self, notebook_id, dest, *, artifact_id=None):
         self._do_download("report", notebook_id, dest, artifact_id)
+
+    def notebook_query(self, notebook_id, question):
+        # Stub — concrete tests inject their own MockClient with canned
+        # answers. Default returns an empty payload so any op that
+        # exercises the query path doesn't crash on protocol checks.
+        return {"answer": "", "citations": {}, "sources_used": []}
 
 
 # --- fixtures ---------------------------------------------------------------
@@ -157,7 +164,7 @@ def test_registry_persists_yaml_shape(kb_root):
     nlm_registry.register("beta", "nb-b")
     raw = yaml.safe_load(nlm_registry.notebooks_yaml_path().read_text())
     assert "notebooks" in raw
-    assert raw["notebooks"]["alpha"]["notebook_id"] == "nb-a"
+    assert raw["notebooks"]["alpha"]["persistent"]["notebook_id"] == "nb-a"
 
 
 # --- nlm-add ---------------------------------------------------------------
@@ -197,15 +204,35 @@ def test_nlm_add_unknown_source(kb_root, mock_client):
     assert any("no raw source" in e for e in result.errors)
 
 
-def test_nlm_add_source_without_url(kb_root, make_source, mock_client):
+def test_nlm_add_source_without_url_falls_back_to_text(kb_root, make_source, mock_client):
+    """M37: PDF/note sources have no URL; fall back to source_add_text using
+    the canonical body and frontmatter title."""
     raw_path = _make_youtube_source(kb_root, make_source, source_id="yt-noUrlABC1", domain="d1")
     front, body = fm.parse(raw_path.read_text())
     del front["url"]
+    front["title"] = "Test Source Title"
     raw_path.write_text(fm.serialize(front, body))
 
     result = nlm_add("d1", "yt-noUrlABC1", client=mock_client)
+    assert result.success, result.errors
+    assert mock_client.sources_added == []
+    assert len(mock_client.text_sources_added) == 1
+    nb_id, content, title = mock_client.text_sources_added[0]
+    assert nb_id == mock_client.next_notebook_id
+    assert content == body
+    assert title == "Test Source Title"
+
+
+def test_nlm_add_source_without_url_or_body_errors(kb_root, make_source, mock_client):
+    """If the source has neither url nor body, there's nothing to send."""
+    raw_path = _make_youtube_source(kb_root, make_source, source_id="yt-emptySrc", domain="d1")
+    front, body = fm.parse(raw_path.read_text())
+    del front["url"]
+    raw_path.write_text(fm.serialize(front, ""))
+
+    result = nlm_add("d1", "yt-emptySrc", client=mock_client)
     assert not result.success
-    assert any("no `url`" in e for e in result.errors)
+    assert any("no `url` and empty body" in e for e in result.errors)
 
 
 # --- nlm-slides / nlm-audio / nlm-briefing ---------------------------------
