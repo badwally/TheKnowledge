@@ -9,7 +9,8 @@ content_hash: sha256:024aab17d1f0d7892003edc845cb3f426dfcc279563fbcf60d0fec4de39
 source_path: raw/pdf/pdf-a5ea98378b0a.pdf
 domains:
 - cycling-and-fitness
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 9671b541-5a90-4cf6-b089-961398de31f2
 wiki_pages:
 - wiki/entities/studio-velo.md
 - wiki/entities/parlee-z-zero-xd.md

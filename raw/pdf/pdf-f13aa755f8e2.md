@@ -9,7 +9,8 @@ content_hash: sha256:f0c363996d0b3ac1cd1e2d8a61909c346bd04ebfb9978dbd97c2d7af55c
 source_path: raw/pdf/pdf-f13aa755f8e2.pdf
 domains:
 - cycling-and-fitness
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 9671b541-5a90-4cf6-b089-961398de31f2
 wiki_pages:
 - wiki/entities/sram-etap-axs.md
 - wiki/entities/sram.md

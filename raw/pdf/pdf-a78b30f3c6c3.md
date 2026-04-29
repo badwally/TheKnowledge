@@ -9,7 +9,8 @@ content_hash: sha256:4e4d8f1230b00e0913536863d07cb09a3be5dab234f535086f7a6838d2b
 source_path: raw/pdf/pdf-a78b30f3c6c3.pdf
 domains:
 - cycling-and-fitness
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 9671b541-5a90-4cf6-b089-961398de31f2
 wiki_pages:
 - wiki/entities/europe-active.md
 - wiki/entities/cycling-corsica-self-guided-luxury.md

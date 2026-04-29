@@ -1,0 +1,15 @@
+===briefing===
+ok: briefing: 2026-04-29-cycling-and-fitness-briefing-doc-briefing (notebook=9671b541-5a90-4cf6-b089-961398de31f2)
+  touched: /Users/andrewgrant/code/knowledge/wiki/artifacts/briefing/2026-04-29-cycling-and-fitness-briefing-doc-briefing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/artifacts/briefing/2026-04-29-cycling-and-fitness-briefing-doc-briefing.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===audio===
+operation failed:
+  - download failed after retries: `nlm download audio 9671b541-5a90-4cf6-b089-961398de31f2 --output /Users/andrewgrant/code/knowledge/wiki/artifacts/audio/2026-04-29-training-methodology-and-ride-planning-audio.m4a --id 4637685b-25d2-4e9d-9728-4c87c8c9bc71` exited 1: Error: Download failed for audio.
+---
+===slides===
+operation failed:
+  - download failed after retries: `nlm download slide-deck 9671b541-5a90-4cf6-b089-961398de31f2 --output /Users/andrewgrant/code/knowledge/wiki/artifacts/slides/2026-04-29-endurance-training-plan-principles-slides.pdf --id f9f6f5f3-e379-42b7-910f-94ed5638d6af --no-progress` exited 1: Error: Download failed for slide_deck.
+---
+ARTIFACTS_DONE 2026-04-29T19:26:02Z

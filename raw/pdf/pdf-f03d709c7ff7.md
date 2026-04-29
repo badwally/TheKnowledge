@@ -9,7 +9,8 @@ content_hash: sha256:1a09780f9d1b2b82e1332ddb40f80aedffc65d9edb28301593fd20f04b6
 source_path: raw/pdf/pdf-f03d709c7ff7.pdf
 domains:
 - cycling-and-fitness
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 9671b541-5a90-4cf6-b089-961398de31f2
 wiki_pages:
 - wiki/entities/marmot-tours.md
 - wiki/entities/corsican-highlights.md

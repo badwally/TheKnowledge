@@ -1,0 +1,11 @@
+===audio===
+operation failed:
+  - audio did not reach 'completed' within 10min (last status='unknown', artifact=d106bef6-2fca-48ff-97f2-774c85c85584)
+---
+===slides===
+ok: slides: 2026-04-29-successful-endurance-training-principles-slides (notebook=9671b541-5a90-4cf6-b089-961398de31f2)
+  touched: /Users/andrewgrant/code/knowledge/wiki/artifacts/slides/2026-04-29-successful-endurance-training-principles-slides.pdf
+  touched: /Users/andrewgrant/code/knowledge/wiki/artifacts/slides/2026-04-29-successful-endurance-training-principles-slides.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+ARTIFACTS_DONE 2026-04-29T19:49:04Z

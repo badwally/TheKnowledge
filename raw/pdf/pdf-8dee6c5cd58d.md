@@ -9,7 +9,8 @@ content_hash: sha256:290cec3336ccbfe294c179901470b463da87f5e2c3aab96e2b6dfb5940a
 source_path: raw/pdf/pdf-8dee6c5cd58d.pdf
 domains:
 - cycling-and-fitness
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 9671b541-5a90-4cf6-b089-961398de31f2
 wiki_pages:
 - wiki/entities/dfw-kettleballs-remix.md
 - wiki/entities/bethskw.md

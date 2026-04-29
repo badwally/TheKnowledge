@@ -9,7 +9,8 @@ content_hash: sha256:53dcab30041689834dd46358ea02dac13d353f2a1a54b3a6209d490feb6
 source_path: raw/pdf/pdf-a96a6a5b955a.pdf
 domains:
 - cycling-and-fitness
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 9671b541-5a90-4cf6-b089-961398de31f2
 wiki_pages: []
 meta:
   page_count: 31

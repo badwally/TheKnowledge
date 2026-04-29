@@ -1,0 +1,13 @@
+===briefing===
+operation failed:
+  - download failed: `nlm download report 9671b541-5a90-4cf6-b089-961398de31f2 --output /Users/andrewgrant/code/knowledge/wiki/artifacts/briefing/2026-04-29-cycling-and-fitness-briefing-doc-briefing.md --id cd0dc2c8-c7f2-484b-a4bd-037c31a0e24c` exited 1: Error: Download failed for report.
+---
+===audio===
+operation failed:
+  - download failed: `nlm download audio 9671b541-5a90-4cf6-b089-961398de31f2 --output /Users/andrewgrant/code/knowledge/wiki/artifacts/audio/2026-04-29-training-methodology-and-ride-planning-audio.m4a --id 8c3200f8-d319-4e3f-a4e2-495b026de66b` exited 1: Error: Download failed for audio.
+---
+===slides===
+operation failed:
+  - download failed: `nlm download slide-deck 9671b541-5a90-4cf6-b089-961398de31f2 --output /Users/andrewgrant/code/knowledge/wiki/artifacts/slides/2026-04-29-what-makes-a-successful-endurance-training-slides.pdf --id e85e8a6c-6015-46bb-9894-27431d1cdb41 --no-progress` exited 1: Error: Download failed for slide_deck.
+---
+ARTIFACTS_DONE 2026-04-29T19:15:21Z

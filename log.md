@@ -1805,3 +1805,75 @@ The source is a 5-week paired-kettlebell program calendar (DFW Kettleballs Remix
 ## [2026-04-29T18:48:39Z] wiki-author | id=pdf-a78b30f3c6c3 | updates=4 | draft=no
 
 The brochure introduces a new commercial cycling-tour operator (Europe Active) and a distinct self-guided 7-day Corsica route, plus rich place-detail along the Cap Corse / Désert des Agriates / La Balagne corridor that augments the existing Corsica entity.
+
+## [2026-04-29T18:49:52Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T18-49-52Z-schema-drift.md
+
+## [2026-04-29T19:03:22Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T19-03-22Z-schema-drift.md
+
+## [2026-04-29T19:10:27Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T19-10-27Z-schema-drift.md
+
+## [2026-04-29T19:11:54Z] nlm-add | id=pdf-21a07e2e3e63 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-21a07e2e3e63.pdf title='Cycling+Physiology+&+Training+Science+Guide'
+
+## [2026-04-29T19:12:04Z] nlm-add | id=pdf-432fe168a2d1 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-432fe168a2d1.pdf title='ATCORSICA_3volets_velo_UK (4)'
+
+## [2026-04-29T19:12:10Z] nlm-add | id=pdf-95753e942ede | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-95753e942ede.pdf title='Studio Velo Receipt For Order #137065'
+
+## [2026-04-29T19:12:16Z] nlm-add | id=pdf-a5ea98378b0a | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-a5ea98378b0a.pdf title='Studio Velo Receipt For Order #137715'
+
+## [2026-04-29T19:12:26Z] nlm-add | id=pdf-a78b30f3c6c3 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-a78b30f3c6c3.pdf title='cycling-corsica-self-guided-luxury'
+
+## [2026-04-29T19:12:36Z] nlm-add | id=pdf-a96a6a5b955a | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-a96a6a5b955a.pdf title='Hino_Burke_2020'
+
+## [2026-04-29T19:13:07Z] nlm-add | id=pdf-b51938faf250 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-b51938faf250.pdf title='sram-hrd-hose-shortening-and-bleed-manual'
+
+## [2026-04-29T19:13:20Z] nlm-add | id=pdf-d2f73a919c86 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-d2f73a919c86.pdf title='Cyclists Strength & Conditioning Guide (PPT working file).pptx'
+
+## [2026-04-29T19:13:27Z] nlm-add | id=pdf-f03d709c7ff7 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-f03d709c7ff7.pdf title='CCC-TripNotes-July24-1'
+
+## [2026-04-29T19:14:18Z] nlm-add | id=pdf-f13aa755f8e2 | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-f13aa755f8e2.pdf title='etap-axs-systems-manual'
+
+## [2026-04-29T19:14:29Z] nlm-add | id=pdf-c985b0372d8a | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-c985b0372d8a.pdf title='carte GT20 kakemono'
+
+## [2026-04-29T19:14:35Z] nlm-add | id=pdf-8dee6c5cd58d | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | type=pdf
+
+file=pdf-8dee6c5cd58d.pdf title='DFW KB Remix calendar /u/Bethskw.docx'
+
+## [2026-04-29T19:18:07Z] nlm-briefing | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | artifact_id=f443267f-be81-4e5f-a6ed-d44029b36970 | topic=cycling-and-fitness briefing doc
+
+local=wiki/artifacts/briefing/2026-04-29-cycling-and-fitness-briefing-doc-briefing.md url=https://notebooklm.google.com/notebook/9671b541-5a90-4cf6-b089-961398de31f2/artifact/f443267f-be81-4e5f-a6ed-d44029b36970
+
+## [2026-04-29T19:49:03Z] nlm-slides | domain=cycling-and-fitness | notebook_id=9671b541-5a90-4cf6-b089-961398de31f2 | artifact_id=658f3798-4daa-40e4-90e6-76ae2df8dd9c | topic=successful endurance training principles
+
+local=wiki/artifacts/slides/2026-04-29-successful-endurance-training-principles-slides.pdf url=https://notebooklm.google.com/notebook/9671b541-5a90-4cf6-b089-961398de31f2/artifact/658f3798-4daa-40e4-90e6-76ae2df8dd9c
+
+## [2026-04-29T19:51:40Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-04-29T19-51-40Z-schema-drift.md
