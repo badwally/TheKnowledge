@@ -46,6 +46,7 @@ class MockNlmClient:
     notebooks_created: list[str] = field(default_factory=list)
     sources_added: list[tuple[str, str]] = field(default_factory=list)
     text_sources_added: list[tuple[str, str, str | None]] = field(default_factory=list)
+    file_sources_added: list[tuple[str, Path, str | None]] = field(default_factory=list)
     artifact_creates: list[tuple[str, str, str | None]] = field(default_factory=list)
     revisions: list[tuple[str, list[tuple[int, str]]]] = field(default_factory=list)
     downloads: list[tuple[str, str, Path, str | None]] = field(default_factory=list)
@@ -59,6 +60,14 @@ class MockNlmClient:
 
     def source_add_text(self, notebook_id, content, *, title=None):
         self.text_sources_added.append((notebook_id, content, title))
+
+    def source_add_file(self, notebook_id, file_path, *, title=None):
+        self.file_sources_added.append((notebook_id, file_path, title))
+
+    def artifact_status(self, notebook_id, artifact_id):
+        # Tests don't exercise NotebookLM's async generation; return
+        # 'completed' so the artifact-create flow proceeds to download.
+        return "completed"
 
     def slides_create(self, notebook_id, *, focus=None) -> ArtifactInfo:
         self.artifact_creates.append(("slides", notebook_id, focus))
@@ -224,7 +233,7 @@ def test_nlm_add_source_without_url_falls_back_to_text(kb_root, make_source, moc
 
 
 def test_nlm_add_source_without_url_or_body_errors(kb_root, make_source, mock_client):
-    """If the source has neither url nor body, there's nothing to send."""
+    """If the source has no url, no sidecar, and no body — nothing to send."""
     raw_path = _make_youtube_source(kb_root, make_source, source_id="yt-emptySrc", domain="d1")
     front, body = fm.parse(raw_path.read_text())
     del front["url"]
@@ -232,7 +241,33 @@ def test_nlm_add_source_without_url_or_body_errors(kb_root, make_source, mock_cl
 
     result = nlm_add("d1", "yt-emptySrc", client=mock_client)
     assert not result.success
-    assert any("no `url` and empty body" in e for e in result.errors)
+    assert any("nothing to add to NotebookLM" in e for e in result.errors)
+
+
+def test_nlm_add_uploads_sidecar_file_when_present(kb_root, make_source, mock_client):
+    """M37: PDF / docx / image sources have a sidecar binary at source_path —
+    prefer file upload over text upload (preserves layout / figures / native
+    NotebookLM processing)."""
+    raw_path = _make_youtube_source(
+        kb_root, make_source, source_id="yt-withSidecar", domain="d1"
+    )
+    front, body = fm.parse(raw_path.read_text())
+    del front["url"]
+    sidecar_rel = "raw/youtube/yt-withSidecar.pdf"
+    sidecar_abs = paths.knowledge_root() / sidecar_rel
+    sidecar_abs.write_bytes(b"%PDF-1.4 stub binary")
+    front["source_path"] = sidecar_rel
+    front["title"] = "Sidecar Test"
+    raw_path.write_text(fm.serialize(front, body))
+
+    result = nlm_add("d1", "yt-withSidecar", client=mock_client)
+    assert result.success, result.errors
+    assert mock_client.text_sources_added == []
+    assert mock_client.sources_added == []
+    assert len(mock_client.file_sources_added) == 1
+    nb_id, path, title = mock_client.file_sources_added[0]
+    assert path == sidecar_abs
+    assert title == "Sidecar Test"
 
 
 # --- nlm-slides / nlm-audio / nlm-briefing ---------------------------------

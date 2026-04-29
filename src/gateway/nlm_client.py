@@ -49,6 +49,8 @@ class NlmClient(Protocol):
 
     def source_add_text(self, notebook_id: str, content: str, *, title: str | None = None) -> None: ...
 
+    def source_add_file(self, notebook_id: str, file_path: Path, *, title: str | None = None) -> None: ...
+
     def slides_create(self, notebook_id: str, *, focus: str | None = None) -> ArtifactInfo: ...
 
     def slides_revise(self, artifact_id: str, slide_revisions: list[tuple[int, str]]) -> ArtifactInfo: ...
@@ -64,6 +66,8 @@ class NlmClient(Protocol):
     def download_report(self, notebook_id: str, dest: Path, *, artifact_id: str | None = None) -> None: ...
 
     def notebook_query(self, notebook_id: str, question: str) -> dict: ...
+
+    def artifact_status(self, notebook_id: str, artifact_id: str) -> str: ...
 
 
 # --- subprocess implementation ---------------------------------------------
@@ -161,21 +165,39 @@ class NlmCLIClient:
         self._check(result, args=args)
 
     def source_add_text(self, notebook_id: str, content: str, *, title: str | None = None) -> None:
-        args = ["add", "text", notebook_id]
+        # Use the modern `nlm source add --text VALUE` form. The legacy
+        # `nlm add text NOTEBOOK TEXT` accepts text only as a positional
+        # argv element, which mangles long bodies; the flag form is safe.
+        args = ["source", "add", notebook_id, "--text", content, "--wait"]
         if title:
             args.extend(["--title", title])
-        try:
-            result = subprocess.run(
-                [self._exe, *args],
-                input=content,
-                capture_output=True,
-                text=True,
-                timeout=self._timeout,
-                check=False,
-            )
-        except FileNotFoundError as e:
-            raise NlmError(f"`{self._exe}` not found on PATH") from e
+        result = self._run(args)
         self._check(result, args=args)
+
+    def source_add_file(self, notebook_id: str, file_path: Path, *, title: str | None = None) -> None:
+        args = ["source", "add", notebook_id, "--file", str(file_path), "--wait"]
+        if title:
+            args.extend(["--title", title])
+        result = self._run(args)
+        self._check(result, args=args)
+
+    # --- artifact status (M37) ---------------------------------------------
+
+    def artifact_status(self, notebook_id: str, artifact_id: str) -> str:
+        """Return the status of one artifact in a notebook ('completed' / 'in_progress' / 'unknown' / 'failed' / '')."""
+        args = ["studio", "status", notebook_id]
+        result = self._run(args, timeout_s=60.0)
+        self._check(result, args=args)
+        try:
+            data = json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            raise NlmError(f"could not parse `{self._exe} {' '.join(args)}` stdout: {e}") from e
+        if not isinstance(data, list):
+            raise NlmError(f"expected JSON array from studio status, got {type(data).__name__}")
+        for item in data:
+            if isinstance(item, dict) and item.get("id") == artifact_id:
+                return str(item.get("status") or "")
+        return ""
 
     # --- artifacts ---------------------------------------------------------
 

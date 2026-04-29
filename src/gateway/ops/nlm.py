@@ -19,6 +19,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 import re
+import time
 
 from gateway import frontmatter as fm
 from gateway import log, nlm_registry, paths
@@ -181,11 +182,17 @@ def nlm_add(
 
     url = front.get("url")
     has_body = bool(body and body.strip())
-    if not url and not has_body:
+    sidecar_rel = front.get("source_path")
+    sidecar_path: Path | None = None
+    if sidecar_rel:
+        candidate = paths.knowledge_root() / str(sidecar_rel)
+        if candidate.exists():
+            sidecar_path = candidate
+    if not url and not has_body and sidecar_path is None:
         return OperationResult(
             success=False,
             errors=[
-                f"source {source_id} has no `url` and empty body; "
+                f"source {source_id} has no `url`, no sidecar binary, and empty body; "
                 "nothing to add to NotebookLM"
             ],
         )
@@ -204,17 +211,25 @@ def nlm_add(
         )
 
     with file_lock(f"ingest-{source_id}"):
+        title = str(front.get("title") or source_id)
         if url:
             try:
                 client.source_add_url(notebook_id, url)
             except NlmError as e:
                 return OperationResult(success=False, errors=[f"nlm add url failed: {e}"])
             log_summary = f"url={url}"
+        elif sidecar_path is not None:
+            # M37 preferred path for PDF/docx/xlsx/pptx/image/voice: upload
+            # the sidecar binary so NotebookLM gets layout, figures, and
+            # native processing rather than just the gateway's extracted text.
+            try:
+                client.source_add_file(notebook_id, sidecar_path, title=title)
+            except NlmError as e:
+                return OperationResult(success=False, errors=[f"nlm add file failed: {e}"])
+            log_summary = f"file={sidecar_path.name} title={title!r}"
         else:
-            # M37 fallback: PDF / note / voice / docx — no URL, but the
-            # canonical body holds the extracted text. Send it as a text
-            # source, titled by the source's frontmatter title.
-            title = str(front.get("title") or source_id)
+            # M37 fallback: source has only the canonical extracted text
+            # (note, web-no-url, etc.). Send body as a text source.
             try:
                 client.source_add_text(notebook_id, body, title=title)
             except NlmError as e:
@@ -281,6 +296,39 @@ def _create_artifact(
     artifact_dir = paths.wiki_dir() / "artifacts" / artifact_type
     artifact_dir.mkdir(parents=True, exist_ok=True)
     local_file = artifact_dir / f"{slug}{extension}"
+
+    # M37: poll artifact status before downloading. Audio can take 5+ min
+    # to generate; slides 2-4 min; briefings sub-minute. Status values
+    # observed in the wild: "in_progress", "completed", "unknown" (often
+    # an early-state quirk that resolves to completed), "failed".
+    poll_deadline = time.monotonic() + 600.0   # 10 min hard cap
+    poll_delay = 10.0
+    last_status = ""
+    while time.monotonic() < poll_deadline:
+        try:
+            last_status = client.artifact_status(notebook_id, info.artifact_id or "")
+        except NlmError:
+            last_status = ""
+        if last_status == "completed":
+            break
+        if last_status == "failed":
+            return OperationResult(
+                success=False,
+                errors=[
+                    f"{artifact_type} generation failed on NotebookLM "
+                    f"(notebook={notebook_id} artifact={info.artifact_id})"
+                ],
+            )
+        time.sleep(poll_delay)
+        poll_delay = min(poll_delay * 1.5, 30.0)
+    if last_status != "completed":
+        return OperationResult(
+            success=False,
+            errors=[
+                f"{artifact_type} did not reach 'completed' within 10min "
+                f"(last status={last_status!r}, artifact={info.artifact_id})"
+            ],
+        )
 
     try:
         download_fn(notebook_id, local_file, artifact_id=info.artifact_id or None)
