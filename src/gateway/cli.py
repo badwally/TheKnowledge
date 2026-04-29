@@ -282,6 +282,13 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Only include sources with empty/missing 'domains:' frontmatter",
     )
+    p_discover.add_argument(
+        "--timeout",
+        type=float,
+        default=None,
+        help="Plan-client wall-clock budget in seconds (default 300; "
+        "use 900+ for 200+ source corpora)",
+    )
 
     # promote-domain (M36)
     p_promote = subparsers.add_parser(
@@ -598,7 +605,12 @@ def _run_discover_domains(ns: argparse.Namespace) -> int:
     from gateway.ops.discover_domains import discover_domains
 
     return _emit_result(
-        discover_domains(scope=ns.scope, since=ns.since, untagged=ns.untagged)
+        discover_domains(
+            scope=ns.scope,
+            since=ns.since,
+            untagged=ns.untagged,
+            timeout_s=ns.timeout,
+        )
     )
 
 

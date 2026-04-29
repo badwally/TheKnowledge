@@ -31,6 +31,7 @@ def discover_domains(
     scope: str | None = None,
     since: str | None = None,
     untagged: bool = False,
+    timeout_s: float | None = None,
     client: PlanClient | None = None,
 ) -> OperationResult:
     """Cluster source pages into draft domain proposals.
@@ -40,13 +41,21 @@ def discover_domains(
     - `since`: ISO-8601 prefix; sources with `ingested_at < since` are skipped
     - `untagged`: only include sources with empty/missing `domains` frontmatter
 
+    Tuning:
+    - `timeout_s`: override the plan client's wall-clock budget. The default
+      ClaudeCLIPlanClient ships at 300s, which is tight for 200+ sources;
+      pass 900s for a full 360-source corpus.
+
     Atomic: the plan client returns one proposal page per cluster; either
     all proposals validate and write together, or none do.
     """
     if client is None:
         from gateway.plan import ClaudeCLIPlanClient
 
-        client = ClaudeCLIPlanClient()
+        if timeout_s is not None:
+            client = ClaudeCLIPlanClient(timeout_s=timeout_s)
+        else:
+            client = ClaudeCLIPlanClient()
 
     sources = _collect_sources(scope=scope, since=since, untagged=untagged)
     if not sources:
