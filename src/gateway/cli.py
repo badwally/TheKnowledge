@@ -181,7 +181,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     # research: corpus-constructive research loop
     p_research = subparsers.add_parser("research", help=SUBCOMMANDS["research"])
-    p_research.add_argument("prompt", help="Research prompt / question")
+    p_research.add_argument(
+        "prompt",
+        nargs="?",
+        default=None,
+        help="Research prompt / question (omit when using --execute)",
+    )
     p_research.add_argument(
         "--domain",
         default=None,
@@ -214,6 +219,46 @@ def build_parser() -> argparse.ArgumentParser:
         "--dry-run",
         action="store_true",
         help="Skip NotebookLM creation; report a structured plan only",
+    )
+    p_research.add_argument(
+        "--review",
+        action="store_true",
+        help=(
+            "Generate the per-adapter query plan, persist it to "
+            "nlm/query_plans/<session-id>.yaml, and stop. Edit the YAML, "
+            "then resume with --execute <session-id>."
+        ),
+    )
+    p_research.add_argument(
+        "--execute",
+        dest="execute_session",
+        default=None,
+        metavar="SESSION_ID",
+        help=(
+            "Resume from a persisted query plan (e.g. one written by "
+            "--review). Loads the plan, marks edited:true if the YAML "
+            "was touched after generation, and proceeds to fan-out."
+        ),
+    )
+    p_research.add_argument(
+        "--queries",
+        dest="external_plan_path",
+        default=None,
+        metavar="PATH",
+        help=(
+            "Use a hand-authored query plan YAML at PATH instead of "
+            "generating one. Mutually exclusive with --execute."
+        ),
+    )
+    p_research.add_argument(
+        "--no-plan",
+        dest="no_plan",
+        action="store_true",
+        help=(
+            "Disable the runtime per-adapter query planner; dispatch the "
+            "prompt verbatim to every adapter (M37 behavior). Useful for "
+            "offline runs or when no Claude CLI is available."
+        ),
     )
 
     # mcp-serve: start the MCP server (stdio)
@@ -678,7 +723,10 @@ def _run_reject_proposal(ns: argparse.Namespace) -> int:
 
 
 def _run_research(ns: argparse.Namespace) -> int:
+    from gateway.plan import ClaudeCLIPlanClient
     from gateway.research.orchestrator import research
+
+    plan_client = None if ns.no_plan else ClaudeCLIPlanClient()
 
     return _emit_result(
         research(
@@ -687,8 +735,12 @@ def _run_research(ns: argparse.Namespace) -> int:
             include_local=ns.include_local,
             trust_local=ns.trust_local,
             max_results_per_adapter=ns.max_results,
+            plan_client=plan_client,
             draft=ns.draft,
             dry_run=ns.dry_run,
+            review=ns.review,
+            execute_session=ns.execute_session,
+            external_plan_path=ns.external_plan_path,
         )
     )
 
