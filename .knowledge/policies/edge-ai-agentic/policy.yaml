@@ -38,6 +38,17 @@ inclusion_criteria:
   patterns for edge+agentic intersection
 - 'Competitive landscape analysis: Apple (Core ML, Apple Intelligence), Qualcomm (AI
   Engine), NVIDIA (Jetson, TensorRT), Microsoft (ONNX, Windows AI), Meta (Llama on-device)'
+- 'Covers RAG (retrieval-augmented generation) over proprietary first-party data in
+  on-prem or edge deployments: local vector databases (Chroma, Weaviate, Milvus, LanceDB,
+  pgvector, Qdrant), encrypted or sovereign indices, privacy-preserving retrieval,
+  DLP-aware chunking, hybrid search over private corpora, edge embedding models'
+- 'Discusses multi-agent enterprise workflows: integration of agents with proprietary
+  knowledge systems (Salesforce, SAP, ServiceNow, enterprise search, internal APIs),
+  back-office and business-process automation, policy/governance gates, audit trails,
+  data lineage and provenance for agent actions'
+- 'Examines deployment of MCP and A2A servers as enterprise infrastructure: securing
+  tool surfaces, AuthN/AuthZ, secrets management, multi-tenant edge deployment, exposing
+  internal APIs as MCP resources, fleet rollout patterns for customer-deployed agents'
 exclusion_criteria:
 - Purely cloud-hosted LLM inference with no edge, on-device, or hybrid component
 - Marketing or press releases without technical or strategic substance
