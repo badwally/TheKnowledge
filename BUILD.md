@@ -663,6 +663,11 @@ Out of scope for M36: embedding-based clustering for corpora that exceed the sin
 
 A `git rebase -i ... reword` of the misnamed commit was attempted and aborted (CLAUDE.md forbids `-i`; non-interactive cherry-pick alternative tangled on a working-tree race). Leaving the misnamed commit as-is; this paragraph is the canonical disambiguation.
 
+**M37 hand-test findings (2026-04-30).** Two limitations surfaced when attempting a wide scoping `wiki research --dry-run` against `edge-ai-agentic`:
+
+1. *No per-adapter query planning.* The orchestrator at `gateway/research/orchestrator.py:619` passes the user's research prompt verbatim through `_fan_out_search` → `_safe_search` → `adapter.search(prompt, …)`. The `policy.yaml` schema has no query block; the `plan_client` (Claude) is plumbed in but only used for `_infer_domain` (slug routing). The result is that every adapter receives the same prompt as its literal search query, with no per-adapter idiom adaptation and no expansion into multiple queries. Anything beyond a ~10–15-word focused question collapses recall (YouTube `search.list` returns 0; arXiv times out at 30s; Firecrawl gets a degraded query). Workaround: hand-condense to a short focused question. Permanent fix is M37.1 — runtime per-adapter query expansion via `plan_client`, with persistence at `nlm/query_plans/<session-id>.yaml` for ad-hoc review and improvement, and a few-shot loop from edited plans. Plan: `~/.claude/plans/m37.1-runtime-query-expansion.md`.
+2. *Local-files adapter cannot survey existing `raw/`.* `gateway.research.adapters.local.LocalAdapter._converter_for` dispatches via `gateway.converters.dispatch`, which only registers handlers for unconverted source types (`.pdf`, `.mp3`, etc.). Already-ingested `raw/<type>/*.md` files are silently skipped, so `--include-local 'raw/pdf/*.md'` cannot be used for an internal-corpus scoping pass. An "inventory existing raw/ against a thesis" workflow would need a different surface — e.g., a `wiki research --inventory-only` mode or a new `wiki survey` op. Out of scope for M37.1.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
