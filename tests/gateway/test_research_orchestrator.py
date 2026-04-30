@@ -350,3 +350,333 @@ def test_no_adapters_no_op(monkeypatch: pytest.MonkeyPatch, policy_kb: Path):
     assert result.success
     assert result.no_op
     assert "no candidates" in result.summary
+
+
+# --- M37.1 query plan integration ------------------------------------------
+
+
+class _StubPlanClient:
+    """PlanClient stub that returns a canned per-adapter JSON response."""
+
+    def __init__(self, response: str):
+        self.response = response
+        self.last_prompt: str | None = None
+
+    def call(self, prompt: str) -> str:
+        self.last_prompt = prompt
+        return self.response
+
+
+def test_planner_generates_and_persists_plan(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """When a plan_client is configured, queries are generated, persisted,
+    and the per-adapter list is what gets fanned out."""
+    captured_queries: list[str] = []
+
+    @dataclass
+    class _Recording:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            captured_queries.append(query)
+            return [_candidate(f"https://example.com/{query[:5]}")]
+
+    adapter = _Recording()
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+
+    plan_client = _StubPlanClient(
+        '{"web": ["query alpha", "query beta"]}'
+    )
+
+    result = orch.research(
+        "test prompt",
+        domain="alpha",
+        plan_client=plan_client,
+        dry_run=True,
+    )
+    assert result.success, result.errors
+
+    # Plan persisted
+    qpdir = policy_kb / "nlm" / "query_plans"
+    persisted = list(qpdir.glob("*.yaml"))
+    assert len(persisted) == 1
+    parsed = yaml.safe_load(persisted[0].read_text())
+    assert parsed["queries"]["web"] == ["query alpha", "query beta"]
+    assert parsed["edited"] is False
+    assert parsed["domain"] == "alpha"
+
+    # Both queries reached the adapter
+    assert "query alpha" in captured_queries
+    assert "query beta" in captured_queries
+
+
+def test_review_gate_stops_before_fan_out(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    captured_queries: list[str] = []
+
+    @dataclass
+    class _Recording:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            captured_queries.append(query)
+            return []
+
+    _patch_adapters(monkeypatch, [_Recording()])
+    plan_client = _StubPlanClient('{"web": ["q1", "q2"]}')
+
+    result = orch.research(
+        "test prompt",
+        domain="alpha",
+        plan_client=plan_client,
+        review=True,
+    )
+    assert result.success
+    assert "review-gate" in result.summary
+    assert "--execute" in result.summary
+
+    # Plan persisted, but no adapter call
+    qpdir = policy_kb / "nlm" / "query_plans"
+    assert len(list(qpdir.glob("*.yaml"))) == 1
+    assert captured_queries == []
+
+
+def test_execute_resumes_from_persisted_plan(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """`--execute <session-id>` loads the YAML and uses its queries."""
+    from gateway.research import query_plan_store as qps
+
+    persisted = qps.QueryPlan(
+        session_id="2026-04-30-prior-run",
+        domain="alpha",
+        prompt="prior prompt",
+        generated_at=datetime(2026, 4, 30, 10, 0, 0, tzinfo=timezone.utc),
+        queries={"web": ["resumed query"]},
+    )
+    qps.save(persisted)
+
+    captured: list[str] = []
+
+    @dataclass
+    class _Recording:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            captured.append(query)
+            return [_candidate(f"https://r/{query[:8]}")]
+
+    _patch_adapters(monkeypatch, [_Recording()])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+
+    result = orch.research(
+        prompt=None,
+        execute_session="2026-04-30-prior-run",
+        dry_run=True,
+    )
+    assert result.success, result.errors
+    assert captured == ["resumed query"]
+    # session_id reused — no new plan file
+    qpdir = policy_kb / "nlm" / "query_plans"
+    assert {p.stem for p in qpdir.glob("*.yaml")} == {"2026-04-30-prior-run"}
+
+
+def test_execute_stamps_edited_when_mtime_advances(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    import os
+    import time
+    from gateway.research import query_plan_store as qps
+
+    past = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    persisted = qps.QueryPlan(
+        session_id="touched-session",
+        domain="alpha",
+        prompt="p",
+        generated_at=past,
+        queries={"web": ["q"]},
+    )
+    qps.save(persisted)
+    target = qps.path_for("touched-session")
+    now_ts = time.time()
+    os.utime(target, (now_ts, now_ts))
+
+    @dataclass
+    class _Stub:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            return []
+
+    _patch_adapters(monkeypatch, [_Stub()])
+    orch.research(
+        prompt=None,
+        execute_session="touched-session",
+        dry_run=True,
+    )
+    reloaded = qps.load("touched-session")
+    assert reloaded.edited is True
+
+
+def test_queries_path_loads_external_yaml(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path, tmp_path: Path
+):
+    """`--queries <path>` adopts the external plan; new session is created."""
+    external = tmp_path / "curated.yaml"
+    external.write_text(
+        yaml.safe_dump(
+            {
+                "version": 1,
+                "session_id": "irrelevant",
+                "domain": "irrelevant",
+                "prompt": "irrelevant",
+                "generated_at": "2026-01-01T00:00:00Z",
+                "queries": {"web": ["external q"]},
+                "edited": True,
+            }
+        )
+    )
+
+    captured: list[str] = []
+
+    @dataclass
+    class _Recording:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            captured.append(query)
+            return []
+
+    _patch_adapters(monkeypatch, [_Recording()])
+
+    result = orch.research(
+        "fresh prompt",
+        domain="alpha",
+        external_plan_path=str(external),
+        review=True,
+    )
+    assert result.success
+    # New plan persisted under fresh session id (not "irrelevant")
+    qpdir = policy_kb / "nlm" / "query_plans"
+    persisted = list(qpdir.glob("*.yaml"))
+    assert len(persisted) == 1
+    assert persisted[0].stem != "irrelevant"
+    parsed = yaml.safe_load(persisted[0].read_text())
+    assert parsed["queries"]["web"] == ["external q"]
+    assert parsed["domain"] == "alpha"
+    assert parsed["prompt"] == "fresh prompt"
+
+
+def test_execute_and_queries_are_mutually_exclusive(policy_kb: Path):
+    result = orch.research(
+        prompt=None,
+        execute_session="x",
+        external_plan_path="y",
+    )
+    assert not result.success
+    assert any("mutually exclusive" in e for e in result.errors)
+
+
+def test_execute_with_missing_plan_errors(policy_kb: Path):
+    result = orch.research(
+        prompt=None,
+        execute_session="does-not-exist",
+    )
+    assert not result.success
+    assert any("query plan" in e for e in result.errors)
+
+
+def test_no_plan_client_falls_back_to_verbatim(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """M37 backwards-compat: without a plan_client, prompt is dispatched
+    verbatim and no plan is persisted."""
+    captured: list[str] = []
+
+    @dataclass
+    class _Recording:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            captured.append(query)
+            return []
+
+    _patch_adapters(monkeypatch, [_Recording()])
+    orch.research(
+        "verbatim prompt",
+        domain="alpha",
+        plan_client=None,
+        dry_run=True,
+    )
+    assert captured == ["verbatim prompt"]
+    # No plan persisted on the offline path
+    qpdir = policy_kb / "nlm" / "query_plans"
+    assert not qpdir.exists() or not list(qpdir.glob("*.yaml"))
+
+
+def test_planner_failure_falls_back_to_verbatim(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """If the plan_client returns garbage, the run continues using the
+    prompt verbatim — slop-but-running beats hard-fail."""
+    captured: list[str] = []
+
+    @dataclass
+    class _Recording:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            captured.append(query)
+            return []
+
+    _patch_adapters(monkeypatch, [_Recording()])
+    plan_client = _StubPlanClient("totally not JSON")
+
+    orch.research(
+        "fallback test",
+        domain="alpha",
+        plan_client=plan_client,
+        dry_run=True,
+    )
+    assert captured == ["fallback test"]
+
+
+def test_history_examples_seeded_into_planner_prompt(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """`recent_edited` results are passed into the planner so future runs
+    learn from past curation."""
+    from gateway.research import query_plan_store as qps
+
+    history = qps.QueryPlan(
+        session_id="curated",
+        domain="alpha",
+        prompt="curated prior prompt",
+        generated_at=datetime(2026, 4, 1, tzinfo=timezone.utc),
+        queries={"web": ["pinned good query"]},
+        edited=True,
+    )
+    qps.save(history)
+
+    @dataclass
+    class _Stub:
+        name: str = "web"
+
+        def search(self, query, *, max_results=50, **kwargs):
+            return []
+
+    _patch_adapters(monkeypatch, [_Stub()])
+    plan_client = _StubPlanClient('{"web": ["new q"]}')
+    orch.research(
+        "follow-up",
+        domain="alpha",
+        plan_client=plan_client,
+        dry_run=True,
+    )
+    assert plan_client.last_prompt is not None
+    assert "pinned good query" in plan_client.last_prompt

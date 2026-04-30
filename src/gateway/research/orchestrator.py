@@ -24,6 +24,7 @@ import concurrent.futures as _futures
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import TYPE_CHECKING
 
 from gateway import converters, frontmatter as fm
@@ -34,6 +35,8 @@ from gateway.filter.semantic import FilterClient, FilterError, score as filter_s
 from gateway.filter import load_all as _load_examples, select as _select_examples
 from gateway.ops.apply_plan import apply_plan
 from gateway.plan import Plan, PlanClient, WikiUpdate
+from gateway.research import query_plan_store as _qp_store
+from gateway.research import query_planner as _query_planner
 from gateway.research import session as _session
 from gateway.research import source_map as _source_map
 from gateway.research.adapters import (
@@ -126,12 +129,18 @@ class _MaterializedSource:
 
 def _fan_out_search(
     adapters: list[SearchAdapter],
-    prompt: str,
+    query_plan: dict[str, list[str]],
     *,
     max_results_per_adapter: int,
     session_id: str,
 ) -> list[CandidateItem]:
     """Run every adapter in a thread pool; merge results, dedup by URL.
+
+    `query_plan` maps adapter name → list of search queries. Each adapter
+    is invoked once per query; per-query result cap is computed so the
+    aggregate stays under `max_results_per_adapter`. The local-files
+    adapter ignores the query string (it enumerates user-supplied paths)
+    and is invoked exactly once if present, regardless of plan.
 
     A single adapter raising `AdapterError` (or any other exception) is
     logged to stderr + log.md and dropped — the rest of the run
@@ -140,16 +149,36 @@ def _fan_out_search(
     if not adapters:
         return []
 
+    work: list[tuple[SearchAdapter, list[str], int]] = []
+    for adapter in adapters:
+        if adapter.name == "local":
+            # local enumerates paths; the query is unused. One call.
+            work.append((adapter, [""], max_results_per_adapter))
+            continue
+        queries = query_plan.get(adapter.name, [])
+        if not queries:
+            log.append(
+                "research",
+                fields={
+                    "session_id": session_id,
+                    "step": "search",
+                    "adapter": adapter.name,
+                    "n": 0,
+                },
+                summary=f"adapter {adapter.name} skipped (no queries in plan)",
+            )
+            continue
+        per_query = max(5, max_results_per_adapter // len(queries))
+        work.append((adapter, queries, per_query))
+
+    if not work:
+        return []
+
     candidates: list[CandidateItem] = []
-    with _futures.ThreadPoolExecutor(max_workers=max(1, len(adapters))) as pool:
+    with _futures.ThreadPoolExecutor(max_workers=max(1, len(work))) as pool:
         future_to_adapter = {
-            pool.submit(
-                _safe_search,
-                adapter,
-                prompt,
-                max_results_per_adapter,
-            ): adapter
-            for adapter in adapters
+            pool.submit(_safe_search, adapter, queries, per_query): adapter
+            for adapter, queries, per_query in work
         }
         for fut in _futures.as_completed(future_to_adapter):
             adapter = future_to_adapter[fut]
@@ -184,11 +213,14 @@ def _fan_out_search(
 
 def _safe_search(
     adapter: SearchAdapter,
-    prompt: str,
-    max_results: int,
+    queries: list[str],
+    per_query_max: int,
 ) -> list[CandidateItem]:
-    """Wrap one adapter call. Reraises so the executor surfaces it."""
-    return list(adapter.search(prompt, max_results=max_results))
+    """Iterate `queries` against one adapter. Reraises on adapter failure."""
+    out: list[CandidateItem] = []
+    for q in queries:
+        out.extend(adapter.search(q, max_results=per_query_max))
+    return out
 
 
 # --- filter -----------------------------------------------------------------
@@ -555,11 +587,156 @@ def _coerce_citations(raw: dict) -> dict[int, str]:
     return out
 
 
+# --- query plan resolution --------------------------------------------------
+
+
+def _now_utc() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def _resolve_query_plan(
+    *,
+    prompt: str,
+    domain: str,
+    policy: _policy.Policy,
+    adapters: list[SearchAdapter],
+    plan_client: PlanClient | None,
+    session_id: str,
+    resumed_plan: _qp_store.QueryPlan | None,
+    is_execute: bool,
+) -> tuple[_qp_store.QueryPlan, bool]:
+    """Pick a query plan for this run.
+
+    Returns ``(plan, plan_was_generated)``. ``plan_was_generated`` is
+    True when the orchestrator just produced the plan (and should
+    therefore persist it post-resolution); False when we resumed from
+    disk.
+
+    Resolution order:
+      1. ``--execute`` (resumed_plan + is_execute=True) — reuse the
+         persisted plan; if its mtime exceeds ``generated_at``, stamp
+         ``edited: true`` and re-save so future few-shot scans pick
+         it up.
+      2. ``--queries`` (resumed_plan + is_execute=False) — adopt the
+         external YAML's queries, but rewrite ``session_id`` /
+         ``prompt`` / ``domain`` / ``generated_at`` so the artifact
+         lands as a fresh plan in this session's slot.
+      3. ``plan_client`` present — call the planner; fresh plan.
+      4. ``plan_client`` is None — M37 backwards-compat: synthesize a
+         single-query-per-adapter plan with the verbatim prompt. Not
+         persisted (preserves M37 behavior of not creating
+         ``nlm/query_plans/`` for offline runs).
+    """
+    if resumed_plan and is_execute:
+        # --execute path. Mark edited if the YAML was touched after generation.
+        target = _qp_store.path_for(session_id)
+        edited = resumed_plan.edited
+        if not edited and target.is_file():
+            mtime = datetime.fromtimestamp(
+                target.stat().st_mtime, tz=timezone.utc
+            )
+            if (mtime - resumed_plan.generated_at).total_seconds() > 2.0:
+                edited = True
+        if edited and not resumed_plan.edited:
+            resumed_plan.edited = True
+            try:
+                _qp_store.save(resumed_plan)
+            except OSError:
+                # Stamping is best-effort; the run continues.
+                pass
+        return resumed_plan, False
+
+    if resumed_plan and not is_execute:
+        # --queries path. Adopt queries; rebrand as this session's plan.
+        new_plan = _qp_store.QueryPlan(
+            session_id=session_id,
+            domain=domain,
+            prompt=prompt,
+            generated_at=_now_utc(),
+            queries=dict(resumed_plan.queries),
+            target_counts=dict(resumed_plan.target_counts),
+            plan_client_model=resumed_plan.plan_client_model,
+            edited=False,
+        )
+        return new_plan, True
+
+    non_local = [a.name for a in adapters if a.name != "local"]
+
+    if plan_client is not None and non_local:
+        history = _qp_store.recent_edited(domain, n=5)
+        try:
+            result = _query_planner.plan_per_adapter_queries(
+                prompt,
+                domain=domain,
+                policy=policy,
+                adapter_names=non_local,
+                plan_client=plan_client,
+                history_examples=history,
+            )
+        except _query_planner.PlannerError as e:
+            log.append(
+                "research",
+                fields={"session_id": session_id, "step": "plan", "n": 0},
+                summary=f"planner failed; falling back to verbatim: {e}",
+            )
+            queries = {name: [prompt] for name in non_local}
+            target_counts: dict[str, int] = {}
+        else:
+            queries = result.queries
+            target_counts = result.target_counts
+        plan = _qp_store.QueryPlan(
+            session_id=session_id,
+            domain=domain,
+            prompt=prompt,
+            generated_at=_now_utc(),
+            queries=queries,
+            target_counts=target_counts,
+        )
+        return plan, True
+
+    # No plan_client and no resumed plan — verbatim fallback. Build an
+    # in-memory plan but do not persist it (M37 parity for offline runs).
+    fallback = _qp_store.QueryPlan(
+        session_id=session_id,
+        domain=domain,
+        prompt=prompt,
+        generated_at=_now_utc(),
+        queries={name: [prompt] for name in non_local},
+        target_counts={},
+    )
+    return fallback, False
+
+
+def _load_external_plan(path: str) -> _qp_store.QueryPlan:
+    """Read a hand-authored query plan YAML from an arbitrary path.
+
+    Reuses the same parser as `query_plan_store.load` but bypasses the
+    `nlm/query_plans/<session-id>.yaml` path convention so users can
+    keep curated plans wherever they want.
+    """
+    import yaml as _yaml
+
+    target = Path(path).expanduser()
+    if not target.is_file():
+        raise _qp_store.QueryPlanError(f"no query plan at {target}")
+    try:
+        raw = _yaml.safe_load(target.read_text(encoding="utf-8"))
+    except _yaml.YAMLError as e:
+        raise _qp_store.QueryPlanError(
+            f"malformed query plan {target}: {e}"
+        ) from e
+    if not isinstance(raw, dict):
+        raise _qp_store.QueryPlanError(
+            f"query plan {target} is not a mapping"
+        )
+    return _qp_store._parse(raw, source=target)  # noqa: SLF001 — internal reuse
+
+
 # --- public entry point -----------------------------------------------------
 
 
 def research(
-    prompt: str,
+    prompt: str | None,
     *,
     domain: str | None = None,
     include_local: list[str] | None = None,
@@ -570,8 +747,41 @@ def research(
     filter_client: FilterClient | None = None,
     draft: bool = False,
     dry_run: bool = False,
+    review: bool = False,
+    execute_session: str | None = None,
+    external_plan_path: str | None = None,
 ) -> OperationResult:
     """Run the full corpus-constructive research loop. See module docstring."""
+    # Resume modes: --execute loads a persisted plan; --queries loads an
+    # external YAML. In both cases the prompt and (for --execute) domain
+    # come from the plan file, not the call args.
+    resumed_plan: _qp_store.QueryPlan | None = None
+    if execute_session and external_plan_path:
+        return OperationResult(
+            success=False,
+            errors=["--execute and --queries are mutually exclusive"],
+        )
+    if execute_session:
+        try:
+            resumed_plan = _qp_store.load(execute_session)
+        except _qp_store.QueryPlanError as e:
+            return OperationResult(
+                success=False,
+                errors=[f"could not load query plan for --execute: {e}"],
+            )
+        prompt = resumed_plan.prompt
+        domain = resumed_plan.domain
+    elif external_plan_path:
+        try:
+            resumed_plan = _load_external_plan(external_plan_path)
+        except _qp_store.QueryPlanError as e:
+            return OperationResult(
+                success=False,
+                errors=[f"could not load --queries file: {e}"],
+            )
+        # external plans contribute queries; prompt/domain still come
+        # from call args (validated below).
+
     if not prompt or not prompt.strip():
         return OperationResult(
             success=False,
@@ -606,19 +816,65 @@ def research(
             errors=[f"policy load failed for {effective_domain!r}: {e}"],
         )
 
-    # Step 3 — session id.
-    session_id = _session.make_session_id(prompt)
+    # Step 3 — session id. On --execute we reuse the plan's session id so
+    # all log lines remain grep-able by the same key.
+    session_id = (
+        execute_session
+        if execute_session
+        else _session.make_session_id(prompt)
+    )
     log.append(
         "research",
         fields={"session_id": session_id, "step": "start", "domain": effective_domain},
         summary=f"start research session for prompt {prompt!r}",
     )
 
-    # Step 4 — fan out search.
+    # Step 3.5 — query plan: generate (default), load (--execute), import
+    # (--queries), or fall back to verbatim (no plan_client).
     adapters = enabled_adapters(include_local=include_local)
+    plan, plan_was_generated = _resolve_query_plan(
+        prompt=prompt,
+        domain=effective_domain,
+        policy=policy,
+        adapters=adapters,
+        plan_client=plan_client,
+        session_id=session_id,
+        resumed_plan=resumed_plan,
+        is_execute=bool(execute_session),
+    )
+    if plan_was_generated:
+        try:
+            _qp_store.save(plan)
+            log.append(
+                "research",
+                fields={
+                    "session_id": session_id,
+                    "step": "plan",
+                    "n": sum(len(v) for v in plan.queries.values()),
+                },
+                summary=f"query plan written to nlm/query_plans/{session_id}.yaml",
+            )
+        except OSError as e:
+            return OperationResult(
+                success=False,
+                errors=[f"persist query plan: {e}"],
+            )
+
+    if review:
+        path = _qp_store.path_for(session_id)
+        return OperationResult(
+            success=True,
+            paths_touched=[path],
+            summary=(
+                f"review-gate: query plan written to {path.relative_to(paths.knowledge_root())}; "
+                f"edit and resume with `wiki research --execute {session_id}`"
+            ),
+        )
+
+    # Step 4 — fan out search using the resolved plan.
     candidates = _fan_out_search(
         adapters,
-        prompt,
+        plan.queries,
         max_results_per_adapter=max_results_per_adapter,
         session_id=session_id,
     )
