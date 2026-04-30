@@ -668,6 +668,48 @@ A `git rebase -i ... reword` of the misnamed commit was attempted and aborted (C
 1. *No per-adapter query planning.* The orchestrator at `gateway/research/orchestrator.py:619` passes the user's research prompt verbatim through `_fan_out_search` → `_safe_search` → `adapter.search(prompt, …)`. The `policy.yaml` schema has no query block; the `plan_client` (Claude) is plumbed in but only used for `_infer_domain` (slug routing). The result is that every adapter receives the same prompt as its literal search query, with no per-adapter idiom adaptation and no expansion into multiple queries. Anything beyond a ~10–15-word focused question collapses recall (YouTube `search.list` returns 0; arXiv times out at 30s; Firecrawl gets a degraded query). Workaround: hand-condense to a short focused question. Permanent fix is M37.1 — runtime per-adapter query expansion via `plan_client`, with persistence at `nlm/query_plans/<session-id>.yaml` for ad-hoc review and improvement, and a few-shot loop from edited plans. Plan: `~/.claude/plans/m37.1-runtime-query-expansion.md`.
 2. *Local-files adapter cannot survey existing `raw/`.* `gateway.research.adapters.local.LocalAdapter._converter_for` dispatches via `gateway.converters.dispatch`, which only registers handlers for unconverted source types (`.pdf`, `.mp3`, etc.). Already-ingested `raw/<type>/*.md` files are silently skipped, so `--include-local 'raw/pdf/*.md'` cannot be used for an internal-corpus scoping pass. An "inventory existing raw/ against a thesis" workflow would need a different surface — e.g., a `wiki research --inventory-only` mode or a new `wiki survey` op. Out of scope for M37.1.
 
+### M37.1 — Runtime per-adapter query expansion
+
+Closes the load-bearing M37 gap (above, finding #1) by adding a runtime query-planning step to `wiki research`. The user's research prompt is no longer dispatched verbatim to every adapter; instead `plan_client` (Claude) generates idiomatic per-adapter query lists from the prompt + domain policy + recent curated examples.
+
+**What's new.**
+
+- `gateway.research.query_plan_store` — persistent store for `QueryPlan` artifacts at `nlm/query_plans/<session-id>.yaml`. Surfaces `save`, `load`, `exists`, `is_edited`, `recent_edited(domain, n)`. The `is_edited` check is filesystem-aware: a YAML whose mtime exceeds its `generated_at` by more than 2s is treated as user-edited. The `recent_edited` scan returns plans with `edited: true` for use as few-shot seeds in subsequent runs.
+
+- `gateway.research.query_planner.plan_per_adapter_queries` — calls the configured `PlanClient` with the prompt, a policy excerpt (topic/field/top inclusion criteria), the adapter manifest, target counts (default: youtube=20, arxiv=8, web=15, pubmed=5, local=0), and any few-shot examples from `recent_edited`. Per-adapter idiom guidance is baked into the planner prompt: short keyword phrases for YouTube, paper-language for arXiv, vendor/framework terms for web, biomedical mesh-style for PubMed (with explicit instruction to return `[]` when not applicable). Response parsing tolerates markdown fences and leading prose.
+
+- `wiki research` orchestrator (`research()` in `orchestrator.py`) gains a new step between policy-load and fan-out: resolve a query plan via one of four paths:
+  1. `--execute <session-id>` → load the persisted plan; if mtime > `generated_at`, stamp `edited: true` and re-save so future few-shot scans can pick it up.
+  2. `--queries <path>` → adopt an external YAML's queries; rebrand under this session's id/prompt/domain.
+  3. default with `plan_client` available → call the planner; persist the new plan; auto-advance to fan-out.
+  4. `--no-plan` (or `plan_client=None`) → M37 verbatim fallback; no plan persisted.
+
+  `--review` returns immediately after persistence with a summary pointing at the YAML path; user edits, then resumes via `--execute`.
+
+- `_fan_out_search` and `_safe_search` refactored to take a query plan (`dict[adapter_name, list[query]]`) instead of a single prompt. Each non-local adapter is invoked once per query in its list with `per_query_max = max(5, max_results_per_adapter // len(queries))` so the global cap holds. The local adapter is special-cased — it ignores queries (it enumerates user-supplied paths) and is invoked exactly once.
+
+- Planner failure (malformed JSON, empty response, etc.) logs and falls back to verbatim. Slop-but-running beats hard-fail.
+
+- New CLI flags on `wiki research`: `--review`, `--execute SESSION_ID`, `--queries PATH`, `--no-plan`. The positional `prompt` is now `nargs='?'` since `--execute` loads it from the persisted plan. Default behavior instantiates `ClaudeCLIPlanClient()` so the planner activates without extra config.
+
+**Hand-test (dry-run).** `wiki research "RAG over proprietary first-party data on edge devices" --domain edge-ai-agentic --review` produced a 48-query plan in ~12s (8 arxiv + 20 youtube + 15 web + 0 pubmed) with high-quality idiomatic queries per adapter — `"on-device RAG llama.cpp"`, `"federated retrieval augmented generation"`, `"LanceDB edge deployment"`, etc. Hand-edited one query to `"EDITED MCP enterprise integration patterns"`, advanced mtime, then ran `wiki research --execute <session-id> --no-plan --dry-run`. Result: plan loaded cleanly, `edited: true` stamped, fan-out hit arxiv with all 8 queries (returned 48 candidates → 33 after merge dedup → 3 cleared filter threshold). YouTube and Firecrawl skipped due to missing API keys (expected); orchestrator continued without them. Materialized 3 sources to `raw/arxiv/`.
+
+**Hand-test (live external + NotebookLM).** Deferred. The Firecrawl key the user disclosed in the M37 hand-test session was flagged for rotation; live-run validation is a supervised step after rotation. Note that the live path tests M37's NotebookLM session/promotion machinery, not M37.1's new code — the dry-run hand-test already validates the full M37.1 surface (planner, persistence, review-gate, --execute, edit detection, fan-out cardinality).
+
+**Tests.** 38 new tests across three files:
+- `tests/gateway/test_research_query_plan_store.py` (13): round-trip, missing/malformed handling, mtime-based edit detection, domain+flag filtering, on-disk YAML layout.
+- `tests/gateway/test_research_query_planner.py` (15): happy path, fence stripping, prose extraction, missing keys, malformed shapes, target overrides, few-shot rendering, inclusion criteria propagation, adapter idiom guidance presence.
+- `tests/gateway/test_research_orchestrator.py` (10 new): planner generates and persists plan, review-gate stops before fan-out, --execute resume, edit-detection stamping, --queries import, mutual exclusion, missing-plan error, plan_client=None fallback, planner-failure fallback, history-seeding.
+
+All 8 pre-existing M37 orchestrator tests pass unchanged (backwards-compat invariant). Full gateway suite: 410 → 448 tests passing.
+
+**Out of scope for M37.1.**
+
+- A `wiki query-plan-pin` op for promoting curated queries into `policy.yaml` (the alternative-feedback-loop path C from the design discussion). Few-shot from edited plans is M37.1's chosen feedback path; pin-to-policy can be a future M37.2 if few-shot proves insufficient.
+- A `wiki survey` op for inventorying `raw/` against a thesis (M37 hand-test finding #2). Separate concern, separate milestone.
+- Per-adapter query-quality telemetry (which queries returned the highest-filter-score candidates). Useful but not load-bearing.
+- A long-form integration test that exercises real adapters end-to-end. The dry-run hand-test covers it; the regression suite covers it; an automated end-to-end test would be useful but not gating.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
