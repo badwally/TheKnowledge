@@ -88,11 +88,42 @@ def test_arxiv_extract_id_handles_url_forms():
     assert arxiv_mod.extract_arxiv_id("https://example.com/foo") is None
 
 
+def test_arxiv_extract_id_handles_bare_and_shorthand_forms():
+    # bare new-style IDs
+    assert arxiv_mod.extract_arxiv_id("2403.12345") == "2403.12345"
+    assert arxiv_mod.extract_arxiv_id("2403.12345v2") == "2403.12345"
+    # arxiv: shorthand
+    assert arxiv_mod.extract_arxiv_id("arxiv:2403.12345") == "2403.12345"
+    assert arxiv_mod.extract_arxiv_id("arxiv:2403.12345v2") == "2403.12345"
+    # old-style IDs (pre-2007)
+    assert arxiv_mod.extract_arxiv_id("cond-mat/0207270") == "cond-mat/0207270"
+    assert arxiv_mod.extract_arxiv_id("cond-mat/0207270v1") == "cond-mat/0207270"
+    assert arxiv_mod.extract_arxiv_id("https://arxiv.org/abs/cond-mat/0207270") == "cond-mat/0207270"
+    # negatives
+    assert arxiv_mod.extract_arxiv_id("not an id") is None
+    assert arxiv_mod.extract_arxiv_id("12345") is None
+    assert arxiv_mod.extract_arxiv_id("") is None
+
+
 def test_arxiv_detect():
     c = arxiv_mod.ArxivConverter()
     assert c.detect("https://arxiv.org/abs/2403.12345")
     assert not c.detect("https://arxiv.org/list/cs.LG/2024")
     assert not c.detect("/local/file.md")
+
+
+def test_arxiv_detect_accepts_bare_and_shorthand_forms():
+    c = arxiv_mod.ArxivConverter()
+    assert c.detect("2403.12345")
+    assert c.detect("2403.12345v2")
+    assert c.detect("arxiv:2403.12345")
+    assert c.detect("cond-mat/0207270")
+    assert c.detect("https://arxiv.org/abs/cond-mat/0207270")
+    # negatives — must not swallow non-arxiv strings
+    assert not c.detect("not an id")
+    assert not c.detect("https://example.com/foo")
+    assert not c.detect("/some/local/file.txt")
+    assert not c.detect("12345")
 
 
 def test_arxiv_convert_produces_canonical(monkeypatch):
@@ -116,12 +147,232 @@ def test_arxiv_convert_produces_canonical(monkeypatch):
     assert "GLP-1 receptor agonists" in body
 
 
+def test_arxiv_convert_captures_extension_metadata(monkeypatch):
+    """primary_category, journal_ref, comment from the Atom arxiv: namespace
+    are written to front[meta]."""
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "T",
+        "abstract": "Abstract body.",
+        "published_at": "2024-04-02",
+        "authors": ["J. Liu"],
+        "categories": ["q-bio.NC", "q-bio.QM"],
+        "doi": "10.1234/x",
+        "primary_category": "q-bio.NC",
+        "journal_ref": "Nature Neuroscience 2024",
+        "comment": "10 pages, 4 figures",
+    })
+
+    text = arxiv_mod.ArxivConverter().convert("2403.12345")
+    front, _ = fm.parse(text)
+    assert front["meta"]["primary_category"] == "q-bio.NC"
+    assert front["meta"]["journal_ref"] == "Nature Neuroscience 2024"
+    assert front["meta"]["comment"] == "10 pages, 4 figures"
+
+
+def test_arxiv_fetch_metadata_parses_extension_elements(monkeypatch):
+    """The real _fetch_metadata extracts arxiv: namespace fields from the Atom feed."""
+    sample_atom = """<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <entry>
+    <id>http://arxiv.org/abs/2403.12345v1</id>
+    <title>Sample title</title>
+    <summary>Sample abstract.</summary>
+    <published>2024-04-02T00:00:00Z</published>
+    <author><name>J. Liu</name></author>
+    <category term="q-bio.NC"/>
+    <arxiv:primary_category term="q-bio.NC"/>
+    <arxiv:doi>10.1234/x</arxiv:doi>
+    <arxiv:journal_ref>Nature Neuroscience 2024</arxiv:journal_ref>
+    <arxiv:comment>10 pages, 4 figures</arxiv:comment>
+  </entry>
+</feed>
+"""
+
+    class _FakeResponse:
+        status_code = 200
+        text = sample_atom
+
+    monkeypatch.setattr(arxiv_mod.requests, "get", lambda *a, **kw: _FakeResponse())
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    meta = arxiv_mod._fetch_metadata("2403.12345")
+    assert meta["primary_category"] == "q-bio.NC"
+    assert meta["journal_ref"] == "Nature Neuroscience 2024"
+    assert meta["comment"] == "10 pages, 4 figures"
+    assert meta["doi"] == "10.1234/x"
+
+
+def test_arxiv_rate_limit_sleeps_between_calls(monkeypatch):
+    """Two _fetch_metadata calls within the rate window force a sleep on the second.
+
+    Mocks time.monotonic so the test is deterministic and instant.
+    """
+    sleeps: list[float] = []
+    times: list[float] = [100.0]
+    monkeypatch.setattr(arxiv_mod.time, "sleep", lambda s: sleeps.append(s))
+    monkeypatch.setattr(arxiv_mod.time, "monotonic", lambda: times[0])
+
+    class _FakeResponse:
+        status_code = 200
+        text = (
+            '<?xml version="1.0"?>'
+            '<feed xmlns="http://www.w3.org/2005/Atom">'
+            '<entry><id>http://arxiv.org/abs/x</id><title>t</title>'
+            '<summary>s</summary></entry></feed>'
+        )
+
+    monkeypatch.setattr(arxiv_mod.requests, "get", lambda *a, **kw: _FakeResponse())
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    arxiv_mod._fetch_metadata("2403.12345")
+    times[0] = 100.5  # only 0.5s has elapsed
+    arxiv_mod._fetch_metadata("2404.99999")
+
+    # First call: no prior request, no sleep. Second call: must sleep ~2.5s.
+    assert sleeps, "expected at least one sleep on the second call"
+    assert sleeps[-1] >= 2.4, f"expected ~2.5s sleep, got {sleeps[-1]}"
+
+
+def test_arxiv_rate_limit_no_sleep_when_window_elapsed(monkeypatch):
+    """If 3+ seconds have elapsed since last call, no sleep is needed."""
+    sleeps: list[float] = []
+    times: list[float] = [100.0]
+    monkeypatch.setattr(arxiv_mod.time, "sleep", lambda s: sleeps.append(s))
+    monkeypatch.setattr(arxiv_mod.time, "monotonic", lambda: times[0])
+
+    class _FakeResponse:
+        status_code = 200
+        text = (
+            '<?xml version="1.0"?>'
+            '<feed xmlns="http://www.w3.org/2005/Atom">'
+            '<entry><id>http://arxiv.org/abs/x</id><title>t</title>'
+            '<summary>s</summary></entry></feed>'
+        )
+
+    monkeypatch.setattr(arxiv_mod.requests, "get", lambda *a, **kw: _FakeResponse())
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    arxiv_mod._fetch_metadata("2403.12345")
+    times[0] = 105.0  # 5s elapsed — well past the 3s window
+    arxiv_mod._fetch_metadata("2404.99999")
+
+    assert sleeps == [], f"expected no sleeps, got {sleeps}"
+
+
 def test_arxiv_convert_no_abstract_raises(monkeypatch):
     monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
         "title": "T", "abstract": "", "published_at": "", "authors": [], "categories": [], "doi": "",
     })
     with pytest.raises(ConversionError):
         arxiv_mod.ArxivConverter().convert("https://arxiv.org/abs/2403.12345")
+
+
+def test_arxiv_convert_with_pdf_extracts_full_text(kb_root, monkeypatch):
+    """convert_with_pdf downloads the PDF, extracts full text, saves sidecar.
+
+    Mocks _download_pdf to drop a synthesized one-page PDF at the target path,
+    so pdfplumber gets real bytes to extract.
+    """
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "Quantum Foo",
+        "abstract": "This is the abstract.",
+        "published_at": "2024-04-02",
+        "authors": ["J. Liu"],
+        "categories": ["q-bio.NC"],
+        "doi": "10.1234/x",
+        "primary_category": "q-bio.NC",
+        "journal_ref": "",
+        "comment": "",
+    })
+
+    def _fake_download(arxiv_id, target):
+        _build_minimal_pdf(target, text="Full paper body text here.")
+
+    monkeypatch.setattr(arxiv_mod, "_download_pdf", _fake_download)
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    text = arxiv_mod.ArxivConverter().convert_with_pdf("2403.12345")
+    front, body = fm.parse(text)
+
+    assert front["id"] == "arxiv-2403.12345"
+    assert front["type"] == "arxiv"
+    assert front["meta"]["arxiv_id"] == "2403.12345"
+    assert front["meta"]["abstract_only"] is False
+    assert front["meta"]["primary_category"] == "q-bio.NC"
+    assert "Full paper body text here." in body
+    # abstract should NOT be the body when in PDF mode
+    assert "This is the abstract." not in body
+
+    # Sidecar PDF lives at raw/arxiv/<id>.pdf
+    sidecar = paths.raw_dir_for("arxiv") / "arxiv-2403.12345.pdf"
+    assert sidecar.exists()
+    assert front["source_path"] == "raw/arxiv/arxiv-2403.12345.pdf"
+
+
+def test_arxiv_convert_with_pdf_download_http_failure_raises(kb_root, monkeypatch):
+    """A non-200 from arxiv.org/pdf surfaces as ConversionError."""
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "T", "abstract": "A.", "published_at": "",
+        "authors": [], "categories": [], "doi": "",
+        "primary_category": "", "journal_ref": "", "comment": "",
+    })
+
+    class _NotFound:
+        status_code = 404
+        content = b""
+
+    # Patch the lower-level requests.get inside _download_pdf
+    monkeypatch.setattr(arxiv_mod.requests, "get", lambda *a, **kw: _NotFound())
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    with pytest.raises(ConversionError, match="404"):
+        arxiv_mod.ArxivConverter().convert_with_pdf("2403.12345")
+
+
+def test_arxiv_convert_with_pdf_empty_extraction_raises(kb_root, monkeypatch, tmp_path):
+    """If the downloaded PDF yields no extractable text, raise ConversionError."""
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "T", "abstract": "A.", "published_at": "",
+        "authors": [], "categories": [], "doi": "",
+        "primary_category": "", "journal_ref": "", "comment": "",
+    })
+
+    def _fake_download(arxiv_id, target):
+        # Write a minimal but text-empty "PDF" — pdfplumber will return empty body
+        target.write_bytes(b"%PDF-1.4\n%%EOF\n")
+
+    monkeypatch.setattr(arxiv_mod, "_download_pdf", _fake_download)
+    # Stub _extract_pdf to deterministically return empty body
+    from gateway.converters import pdf as pdf_mod
+    monkeypatch.setattr(pdf_mod, "_extract_pdf", lambda p: ("", {}))
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    with pytest.raises(ConversionError, match="no extractable text"):
+        arxiv_mod.ArxivConverter().convert_with_pdf("2403.12345")
+
+
+def test_arxiv_convert_with_pdf_old_style_id_sanitizes_slashes(kb_root, monkeypatch):
+    """Old-style ids like cond-mat/0207270 must produce a slash-free filename."""
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "T", "abstract": "A.", "published_at": "",
+        "authors": [], "categories": [], "doi": "",
+        "primary_category": "", "journal_ref": "", "comment": "",
+    })
+
+    def _fake_download(arxiv_id, target):
+        _build_minimal_pdf(target, text="Old-style PDF body.")
+
+    monkeypatch.setattr(arxiv_mod, "_download_pdf", _fake_download)
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    text = arxiv_mod.ArxivConverter().convert_with_pdf("cond-mat/0207270")
+    front, _ = fm.parse(text)
+
+    assert front["id"] == "arxiv-cond-mat-0207270"
+    assert front["meta"]["arxiv_id"] == "cond-mat/0207270"  # original preserved
+    sidecar = paths.raw_dir_for("arxiv") / "arxiv-cond-mat-0207270.pdf"
+    assert sidecar.exists()
 
 
 # --- pubmed ----------------------------------------------------------------
