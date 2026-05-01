@@ -960,19 +960,52 @@ def research(
     # From here on out, any failure must mark the session abandoned.
     try:
         # Step 10 — push sources to session notebook.
+        # Per-source failures (e.g. private/removed YouTube videos, dead
+        # URLs, NotebookLM rate-limit hiccups) are logged and skipped —
+        # one bad source must not sink the whole research run.
+        pushed_n = 0
+        skipped_n = 0
         for ms in materialized:
             url = ms.front.get("url") or ""
-            if isinstance(url, str) and url:
-                nlm_client.source_add_url(session_nb_id, url)
-            else:
-                # Source has no URL; push the canonical text body.
-                target = paths.knowledge_root() / f"{ms.raw_path}.md"
-                content = target.read_text() if target.exists() else ""
-                title = ms.front.get("title") or ms.raw_path
-                nlm_client.source_add_text(session_nb_id, content, title=title)
+            try:
+                if isinstance(url, str) and url:
+                    nlm_client.source_add_url(session_nb_id, url)
+                else:
+                    target = paths.knowledge_root() / f"{ms.raw_path}.md"
+                    content = target.read_text() if target.exists() else ""
+                    title = ms.front.get("title") or ms.raw_path
+                    nlm_client.source_add_text(
+                        session_nb_id, content, title=title
+                    )
+            except Exception as e:  # noqa: BLE001 — per-source isolation
+                _emit_step_error(
+                    session_id, "source_add", url or ms.raw_path, str(e)
+                )
+                skipped_n += 1
+                continue
             nlm_registry.increment_session_sources(
                 effective_domain, session_id, n=1
             )
+            pushed_n += 1
+
+        if pushed_n == 0:
+            raise RuntimeError(
+                f"step 10: no sources successfully pushed "
+                f"({skipped_n} failed, 0 succeeded)"
+            )
+        log.append(
+            "research",
+            fields={
+                "session_id": session_id,
+                "step": "source_add",
+                "n": pushed_n,
+                "skipped": skipped_n,
+            },
+            summary=(
+                f"pushed {pushed_n} source(s) to session notebook "
+                f"({skipped_n} skipped)"
+            ),
+        )
 
         # Step 11 — source map.
         smap = _source_map.build_source_map(session_nb_id, client=nlm_client)

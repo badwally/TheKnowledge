@@ -67,6 +67,7 @@ class ClaudeCLIFilterClient:
                 text=True,
                 timeout=self._timeout,
                 check=False,
+                stdin=subprocess.DEVNULL,
             )
         except FileNotFoundError as e:
             raise FilterError(f"`{self._exe}` not found on PATH; install Claude Code or inject a FilterClient") from e
