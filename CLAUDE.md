@@ -55,6 +55,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Reverse a promotion (undo policy + back-tags) | `wiki demote-domain <domain-slug>` |
 | Delete a draft proposal | `wiki reject-proposal <proposal-slug>` |
 | Multi-adapter research search | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` |
+| Start the local web UI (FastAPI + React) | `wiki serve [--port 7474] [--bind 127.0.0.1]` |
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
 

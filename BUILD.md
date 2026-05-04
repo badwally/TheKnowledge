@@ -760,6 +760,35 @@ Restores the predecessor's green-field research workflow. Before M39, starting r
 - Auto-bootstrapping a NotebookLM persistent notebook on first `wiki research --domain <slug>` — already handled by the research orchestrator.
 - Migrating legacy `auto_generated_from_proposal` policies to the new schema — lenient validator keeps them loading; explicit migration deferred.
 
+### M40 — Web UI Foundation
+
+Local browser front-end (`wiki serve`) wrapping the gateway's daily ops, domain ops, and lint dashboard. Sidebar navigation, hierarchical dashboard with 4 stat cards plus monospace activity feed, dedicated form pages with inline result panels. Long-running ops (ingest --with-plan, query, bootstrap-domain, discover-domains) use a submit-then-poll pattern with an in-memory task store; short ops (finalize, filter-correct, promote/demote/reject) execute synchronously. Complementary to Obsidian: the UI focuses on operations and state Obsidian can't show; wiki content browsing remains in Obsidian.
+
+**Architecture.** FastAPI backend in `src/gateway/web/` thinly adapts existing `gateway.ops.*` functions over HTTP. Vite + React + TypeScript SPA in `web/` is built once and committed as static assets to `web/dist/`, served by FastAPI at `/`. Localhost-only by default; `--bind 0.0.0.0` opt-in for LAN access.
+
+**What's new.**
+
+- `gateway.web.app` — FastAPI app construction. `create_app()` registers routers and mounts the React frontend at `/` with SPA fallback for client-side navigation.
+- `gateway.web.tasks.TaskStore` — process-local in-memory task registry with `create`, `get`, `mark_running/done/failed`, and `run_in_thread` (daemon-thread executor that works under the synchronous TestClient). `run_async` is also retained for future async-native callers.
+- `gateway.web.routes.status` — GET /api/status, /api/log, /api/lint.
+- `gateway.web.routes.domains` — GET /api/domains, /api/proposals; POST /api/domains/{slug}/{promote,demote,reject}. Defines `_to_response` and `_serialize_authorship_report` helpers reused by ops.
+- `gateway.web.routes.ops` — POST /api/ops/{ingest,query,bootstrap-domain,discover-domains} (async, return 202 + task_id) and /api/ops/{finalize,filter-correct} (sync).
+- `gateway.web.routes.tasks` — GET /api/tasks/{id}.
+- `web/` — Vite + React + TypeScript SPA. Built artifacts at `web/dist/` are served by FastAPI as static files. Sidebar nav with Wiki/Domains/System groups. 9 page components (Dashboard, Ingest, Query, Finalize, FilterCorrect, Bootstrap, Discover, Promote, Lint). Shared `TaskRunner` component wraps the submit-then-poll loop; `ResultPanel` renders `OperationResult` with color-coded success/error/no-op styling.
+- `wiki serve [--port 7474] [--bind 127.0.0.1]` CLI subcommand.
+
+**Tests.** 13 web app tests (`test_web_app.py`) covering health, status/log/lint endpoints, domain endpoints, sync ops, async ops with task_id polling. 8 task store tests (`test_web_tasks.py`). 2 CLI tests (`test_cli_serve.py`). Full gateway suite: 481 → 504 tests passing.
+
+**Hand-test.** Started server on port 7475, verified via curl: `/api/health` returns `{"status":"ok"}`, `/api/status` reports watcher running with 731 sources / 173 drafts / 6 domains, `/api/domains` lists all 6 with notebook flags, `/` serves React HTML, `/assets/*.js` serves the Vite-bundled JS with correct content-type.
+
+**Out of scope (deferred to M41/M42).**
+
+- Research orchestration UI with `--review` gate flow.
+- NLM artifact triggers (briefing, audio, slides, revise).
+- Review consoles: drafts list, contradictions list, source orphans, filter-band sources.
+- Live updates via SSE/WebSocket — deferred indefinitely; manual refresh suffices for single-user.
+- Authentication — localhost-only by design.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

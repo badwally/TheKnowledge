@@ -101,6 +101,7 @@ wiki --help
 | `wiki lint [--scope <check>]` | Run health checks; report at `.knowledge/lint/<timestamp>.md` |
 | `wiki status` | Watcher heartbeat, inbox queue, recent activity |
 | `wiki watch` | Inbox watcher daemon (foreground; launchd usually runs this) |
+| `wiki serve [--port 7474] [--bind 127.0.0.1]` | Local browser UI wrapping the gateway (FastAPI + React) |
 | `wiki mcp-serve` | Start the MCP server (stdio) — exposes every gateway op as `wiki_*` tools |
 
 `wiki index` / `wiki search` / `wiki migrate` remain stubs (operational sugar).
