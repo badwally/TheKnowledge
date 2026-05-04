@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
+from gateway.web.routes import status as status_routes
 from gateway.web.schemas import HealthResponse
 
 
@@ -14,6 +15,7 @@ def create_app() -> FastAPI:
     def health() -> HealthResponse:
         return HealthResponse(status="ok")
 
+    app.include_router(status_routes.router)
     return app
 
 
