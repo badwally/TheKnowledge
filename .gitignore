@@ -39,3 +39,4 @@ raw/**/*.tsv
 *~
 .firecrawl/
 docs/
+.superpowers/
