@@ -323,6 +323,22 @@ def test_build_plan_prompt_includes_source_and_existing():
     assert "wiki/concepts/x.md" in prompt
 
 
+def test_build_plan_prompt_includes_contradiction_instructions():
+    prompt = build_plan_prompt("source body", {"wiki/concepts/x.md": "existing"})
+    assert "contradictions" in prompt.lower()
+    assert "existing_page" in prompt
+    assert "existing_claim" in prompt
+    assert "new_claim" in prompt
+    assert "severity" in prompt
+
+
+def test_build_plan_prompt_includes_update_priority():
+    prompt = build_plan_prompt("source body", {"wiki/concepts/x.md": "existing"})
+    # Should instruct to prioritize updates over creates
+    assert "prioritize" in prompt.lower() or "prefer" in prompt.lower()
+    assert "update" in prompt.lower()
+
+
 # --- AuthorshipReport ------------------------------------------------------
 
 

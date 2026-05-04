@@ -202,9 +202,9 @@ class ClaudeCLIPlanClient:
 
 _PLAN_PROMPT_TEMPLATE = """\
 You are the wiki authorship agent for a personal knowledge base. Your job is
-to produce a structured Plan that updates entity / concept / synthesis pages
-based on a newly-ingested source. The gateway will validate every update
-against schema rules; reject anything that fails citation grounding.
+to produce a structured Plan that updates entity / concept pages based on a
+newly-ingested source, and to detect contradictions between the new source and
+existing wiki claims.
 
 ## Conventions you must follow
 
@@ -242,38 +242,74 @@ against schema rules; reject anything that fails citation grounding.
 
 ## Your task
 
+### 1. Update or create pages
+
+**Prioritize updating existing pages over creating new ones.** For every
+entity or concept mentioned in the source, check the existing pages above.
+If a matching page exists, produce an `"update"` that integrates the new
+claims (preserving all existing claims and citations). Only create a new
+page when no existing page covers the entity or concept.
+
+When updating, merge carefully:
+- Keep all existing claims and their citations intact.
+- Add new claims from this source with `[[sources/<id>]]` citations.
+- Update the Sources section to include the new source.
+- Update the Related section if new cross-references are warranted.
+
+### 2. Detect contradictions
+
+Compare claims in the new source against claims in the existing pages.
+A contradiction is when the new source asserts something that conflicts
+with an existing claim. Report ALL contradictions you find — do not
+silently resolve them.
+
+Severity levels:
+- `"minor"` — difference in emphasis, framing, or degree
+- `"moderate"` — conflicting factual claims that could both be correct in different contexts
+- `"major"` — direct factual contradiction where one claim must be wrong
+
+### 3. Return JSON
+
 Return ONLY a JSON object:
 
 ```
-{{
+{{{{
   "source_id": "<exact source_id from the source frontmatter>",
   "rationale": "<one sentence: why these updates>",
   "updates": [
-    {{
+    {{{{
       "target_path": "wiki/entities/<slug>.md",
       "update_kind": "create" | "update",
       "content": "<FULL canonical markdown for the page (frontmatter + body)>",
       "rationale": "<why this page changes>"
-    }},
-    ...
+    }}}}
+  ],
+  "contradictions": [
+    {{{{
+      "existing_page": "wiki/concepts/<slug>.md",
+      "existing_claim": "<the existing claim text>",
+      "new_claim": "<the conflicting claim from the new source>",
+      "source_id": "<source_id of the new source>",
+      "severity": "minor" | "moderate" | "major"
+    }}}}
   ]
-}}
+}}}}
 ```
 
 Touch as many pages as the source genuinely informs (typically 5–15).
 For `update`s, the `content` field replaces the page entirely — preserve
 existing claims and citations and integrate the new ones.
 
+If no contradictions are found, return an empty `"contradictions": []`.
+
 **Per-source plans must ONLY produce entity (`wiki/entities/`) and concept
 (`wiki/concepts/`) pages.** Do NOT generate:
 
 - `wiki/sources/<id>.md` — managed by the gateway.
 - `wiki/synthesis/...` — synthesis is by definition cross-source. Generate
-  via `wiki query` or future cross-source ops, not from a single source's
-  ingest plan. Single-source synthesis fails citation grounding because the
-  agent often emits speculative "Open questions" without citation backing.
+  via `wiki query`, not from a single source's ingest plan.
 - `wiki/mocs/<domain>.md` — MOCs are domain-scoped, edited by separate
-  curation operations. A per-source plan cannot produce a complete MOC.
+  curation operations.
 
 If the source genuinely warrants a new entity/concept, create it. Otherwise
 update the existing one. Concept and entity pages must have every claim
