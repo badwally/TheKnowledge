@@ -70,8 +70,8 @@ def _patch_fetch(
     """Patch `subprocess.run` in source_map to dispatch by notebook id."""
 
     def fake_run(args, **kwargs):
-        # args = ["nlm", "notebook", "source", "list", <id>, "--json"]
-        nb_id = args[4]
+        # args = ["nlm", "source", "list", <id>, "--json"]
+        nb_id = args[3]
         sources = by_notebook.get(nb_id, [])
         return _FakeCompleted(stdout=json.dumps(sources))
 

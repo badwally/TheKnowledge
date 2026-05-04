@@ -209,7 +209,7 @@ def test_invokes_nlm_with_expected_args(
     # Anchor the contract: subcommand + flag must match the `nlm` CLI
     # we ship against (matches `~/code/research-notebook/src/output/source_map.py`).
     assert argv[0] == "nlm"
-    assert argv[1:] == ["notebook", "source", "list", "nb-args-check", "--json"]
+    assert argv[1:] == ["source", "list", "nb-args-check", "--json"]
 
 
 def test_fetch_raises_on_nonzero_exit(
