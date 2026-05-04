@@ -1,0 +1,51 @@
+version: v1
+policy_schema_version: 1
+domain:
+  slug: patagonian-glacier-hydrology
+  topic: Glacier hydrology and meltwater dynamics in Patagonia
+  field: Glaciology, hydrology, and climate science
+  description: Field measurements, remote sensing, and modeling of glacier mass
+    balance and meltwater flow in the Patagonian ice fields, with focus on
+    seasonal variability and downstream water-resource implications.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+  - Discusses glacier mass balance measurements (GPS, GRACE, in-situ stake networks)
+    in Patagonian ice fields
+  - Covers meltwater discharge modeling with hydrological coupling to downstream
+    river systems
+  - Reports remote-sensing methodologies (satellite altimetry, SAR, optical) applied
+    to glacier surface change detection
+  - Examines seasonal or interannual variability in glacial runoff with quantified
+    measurements
+exclusion_criteria:
+  - Generic climate-change advocacy without specific glaciological measurements
+  - Tourism or expedition narratives without scientific content
+  - Studies of non-Patagonian glaciers unless used for direct methodological comparison
+quality_signals:
+  publication_venue:
+    positive_signals:
+      - Peer-reviewed glaciology, hydrology, or cryosphere journals (Journal of
+        Glaciology, The Cryosphere, Hydrological Processes)
+      - Conference proceedings from IGS, AGU, EGU
+    negative_signals:
+      - Predatory open-access venues with no peer review
+      - Press releases without underlying paper reference
+  methodology_rigor:
+    positive_signals:
+      - Reports field campaigns with stake networks, GPS surveys, or repeat photography
+      - Cross-validates remote-sensing results against in-situ measurements
+      - Quantifies measurement uncertainty
+    negative_signals:
+      - Single-source data without independent validation
+      - No discussion of error bounds or limitations
+  content_depth:
+    positive_signals:
+      - Presents multi-year time series with statistical analysis
+      - Discusses physical mechanisms driving observed trends
+    negative_signals:
+      - Surface-level summaries without underlying data
+      - Pure modeling work with no observational grounding
