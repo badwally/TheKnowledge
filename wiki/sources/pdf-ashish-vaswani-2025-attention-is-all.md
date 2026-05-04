@@ -3,7 +3,8 @@ type: source
 source_id: pdf-ashish-vaswani-2025-attention-is-all
 source_type: pdf
 title: Attention is All you Need
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:14:28Z'
 ---
 # Attention is All you Need

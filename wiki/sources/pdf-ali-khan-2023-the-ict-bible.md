@@ -3,7 +3,8 @@ type: source
 source_id: pdf-ali-khan-2023-the-ict-bible
 source_type: pdf
 title: The ICT Bible
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:26:33Z'
 ---
 # The ICT Bible

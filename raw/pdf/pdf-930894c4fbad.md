@@ -7,9 +7,18 @@ authors: []
 ingested_at: '2026-04-29T16:12:50Z'
 content_hash: sha256:25c762e5be47886f7b065f3edeeb03a31e01c5dc4cde2a06d8699003b8294c3d
 source_path: raw/pdf/pdf-930894c4fbad.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/hopiplaka.md
+- wiki/concepts/po3-dealing-range.md
+- wiki/concepts/tesla-vortex-3-6-9.md
+- wiki/concepts/goldbach-levels.md
+- wiki/concepts/hippo-look-back.md
+- wiki/concepts/fractal-po3.md
+- wiki/entities/inner-circle-trader.md
 meta:
   page_count: 149
   extraction_tool: pdfplumber

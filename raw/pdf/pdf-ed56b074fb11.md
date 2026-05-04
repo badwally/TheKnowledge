@@ -7,9 +7,22 @@ authors: []
 ingested_at: '2026-04-29T16:24:11Z'
 content_hash: sha256:7653f4ebdab369656dc4d014ad7129e80af7377720f4bc5c599e3ea6807eae3c
 source_path: raw/pdf/pdf-ed56b074fb11.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/kai-volatility.md
+- wiki/entities/lyndon-b-johnson.md
+- wiki/entities/richard-nixon.md
+- wiki/entities/william-mcchesney-martin.md
+- wiki/concepts/inflationary-psychology-theory.md
+- wiki/concepts/anguish-of-central-banking.md
+- wiki/concepts/great-society-fiscal-program.md
+- wiki/concepts/william-mcchesney-martin-moment.md
+- wiki/concepts/populism-as-inflation-driver.md
+- wiki/concepts/monetary-policy-dominance-era.md
+- wiki/concepts/wage-price-spiral.md
 meta:
   page_count: 22
   extraction_tool: pdfplumber

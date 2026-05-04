@@ -3,7 +3,8 @@ type: source
 source_id: pdf-ec9fdef2193c
 source_type: pdf
 title: SSRN-id2585056
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:25:48Z'
 ---
 # SSRN-id2585056

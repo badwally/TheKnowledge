@@ -8,9 +8,21 @@ authors:
 ingested_at: '2026-04-29T16:26:21Z'
 content_hash: sha256:898db87f756c4fd075b56a764c470b01389e188507872eca78dee7dc51258d18
 source_path: raw/pdf/pdf-sugsu-2020-microsoft-word-hfholdem.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/yan-lu.md
+- wiki/entities/sandra-mortal.md
+- wiki/entities/sugata-ray.md
+- wiki/entities/hendon-mob.md
+- wiki/entities/david-einhorn.md
+- wiki/entities/steve-cohen.md
+- wiki/entities/sac-capital-management.md
+- wiki/concepts/poker-skill-fund-performance-correlation.md
+- wiki/concepts/tournament-win-flow-response.md
+- wiki/concepts/skill-signal-alpha-erosion.md
 meta:
   page_count: 61
   extraction_tool: pdfplumber

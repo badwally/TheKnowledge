@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:27:24Z'
 content_hash: sha256:78bacc9c091d348694c39f829c5848c5d598ea83381749b917df3b848845c7fa
 source_path: raw/pdf/pdf-4dbe002c1c7a.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/daron-acemoglu.md
+- wiki/entities/alex-he.md
+- wiki/entities/daniel-le-maire.md
+- wiki/entities/nber.md
+- wiki/concepts/business-manager-effect.md
+- wiki/concepts/rent-sharing.md
+- wiki/concepts/labor-share-decline.md
+- wiki/concepts/manager-diffusion-iv.md
+- wiki/concepts/role-model-college-major-iv.md
+- wiki/concepts/business-education-socialization.md
 meta:
   page_count: 92
   extraction_tool: pdfplumber

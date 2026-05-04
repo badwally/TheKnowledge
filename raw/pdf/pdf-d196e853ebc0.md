@@ -7,9 +7,22 @@ authors: []
 ingested_at: '2026-04-29T16:11:03Z'
 content_hash: sha256:e5154631330867c5f7c6b3ca7ba3e5030a151413aec834965e1f1ec4607ad5db
 source_path: raw/pdf/pdf-d196e853ebc0.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/torsten-slok.md
+- wiki/entities/apollo-global-management.md
+- wiki/entities/federal-reserve.md
+- wiki/concepts/soft-landing-thesis.md
+- wiki/concepts/sticky-vs-flexible-cpi.md
+- wiki/concepts/goods-vs-services-inflation-divergence.md
+- wiki/concepts/60-40-portfolio-2022-collapse.md
+- wiki/concepts/private-credit-historic-entry-2023.md
+- wiki/concepts/us-eu-inflation-near-identical.md
+- wiki/concepts/demand-vs-supply-driven-inflation.md
+- wiki/concepts/capital-scarce-expensive-regime.md
 meta:
   page_count: 24
   extraction_tool: pdfplumber

@@ -9,9 +9,25 @@ authors:
 ingested_at: '2026-04-29T16:11:44Z'
 content_hash: sha256:b974ccd0197c9328d57f731012ac8839de6bc82f52ec8de69da85eed309f553e
 source_path: raw/pdf/pdf-7acc9c92267c.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/michael-mauboussin.md
+- wiki/entities/dan-callahan.md
+- wiki/entities/counterpoint-global.md
+- wiki/entities/morgan-stanley.md
+- wiki/entities/sp-500.md
+- wiki/entities/msci-all-country-world-index.md
+- wiki/entities/hendrik-bessembinder.md
+- wiki/concepts/stock-market-concentration.md
+- wiki/concepts/magnificent-seven.md
+- wiki/concepts/economic-profit.md
+- wiki/concepts/counterfactual-concentration.md
+- wiki/concepts/wealth-creation-distribution.md
+- wiki/concepts/benchmark-relative-active-management.md
+- wiki/concepts/index-committee-construction.md
 meta:
   page_count: 18
   extraction_tool: pdfplumber

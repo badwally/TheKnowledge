@@ -9,9 +9,21 @@ authors:
 ingested_at: '2026-04-29T16:16:37Z'
 content_hash: sha256:05892934c137d50ad0759d725c1e32c78a9cb298aac8e3cc8ab0d2d0fb80caf9
 source_path: raw/pdf/pdf-danny-hernandez-2025-measuring-the-algorithmic.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/danny-hernandez.md
+- wiki/entities/tom-brown.md
+- wiki/entities/openai.md
+- wiki/concepts/algorithmic-efficiency.md
+- wiki/concepts/training-compute-scaling.md
+- wiki/concepts/effective-training-compute.md
+- wiki/concepts/moores-law.md
+- wiki/concepts/alexnet-benchmark.md
+- wiki/concepts/scaling-laws.md
+- wiki/concepts/mixed-integer-programming-progress.md
 meta:
   page_count: 20
   extraction_tool: pdfplumber

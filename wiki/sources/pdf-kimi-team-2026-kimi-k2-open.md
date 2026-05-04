@@ -3,7 +3,8 @@ type: source
 source_id: pdf-kimi-team-2026-kimi-k2-open
 source_type: pdf
 title: 'Kimi K2: Open Agentic Intelligence'
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:17:14Z'
 ---
 # Kimi K2: Open Agentic Intelligence

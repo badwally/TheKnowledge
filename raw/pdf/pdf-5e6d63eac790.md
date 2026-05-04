@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:15:21Z'
 content_hash: sha256:16ca2cacf505ccf1aba836615329014c4f6a9d9cad76450d52be1434ea1eab76
 source_path: raw/pdf/pdf-5e6d63eac790.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/daniel-galvin.md
+- wiki/entities/chloe-thurston.md
+- wiki/entities/northwestern-university.md
+- wiki/entities/institute-for-policy-research.md
+- wiki/concepts/policy-feedback-theory.md
+- wiki/concepts/limits-of-policy-feedback.md
+- wiki/concepts/self-reinforcing-vs-self-undermining-feedback.md
+- wiki/concepts/submerged-policies.md
+- wiki/concepts/policy-building-vs-party-building.md
+- wiki/concepts/motivated-reasoning.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

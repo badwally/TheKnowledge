@@ -3,7 +3,8 @@ type: source
 source_id: pdf-2248d6cdc39f
 source_type: pdf
 title: 'The Study: 2-Day AVWAP Rule + Momentum Signal in Day Trading'
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:26:38Z'
 ---
 # The Study: 2-Day AVWAP Rule + Momentum Signal in Day Trading

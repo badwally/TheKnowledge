@@ -7,9 +7,19 @@ authors: []
 ingested_at: '2026-04-29T16:11:43Z'
 content_hash: sha256:774c6a21a847d6e4fb950ecafdd5a05507a521c40c000865f0d3213d48924251
 source_path: raw/pdf/pdf-bf1afc73ac8f.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/andrew-slimmon.md
+- wiki/entities/jim-caron.md
+- wiki/entities/eric-stein.md
+- wiki/entities/federal-reserve.md
+- wiki/concepts/long-and-variable-lags.md
+- wiki/concepts/fed-pivot-trade.md
+- wiki/concepts/megacap-regulatory-headwind.md
+- wiki/concepts/equal-weighted-vs-cap-weighted-breadth.md
 meta:
   page_count: 39
   extraction_tool: pdfplumber

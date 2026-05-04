@@ -7,9 +7,20 @@ authors: []
 ingested_at: '2026-04-29T16:26:38Z'
 content_hash: sha256:cc6230f5bf7150ffacffdddea75317e0eca63d243e4db6723217d95479f2a124
 source_path: raw/pdf/pdf-2248d6cdc39f.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/matthew-ryan.md
+- wiki/entities/tradytics.md
+- wiki/concepts/anchored-vwap.md
+- wiki/concepts/two-day-avwap-rule.md
+- wiki/concepts/stochastic-momentum-signal.md
+- wiki/concepts/market-net-flow.md
+- wiki/concepts/trend-confluence.md
+- wiki/concepts/bracket-order-risk-management.md
+- wiki/concepts/scale-out-profit-taking.md
 meta:
   page_count: 14
   extraction_tool: pdfplumber

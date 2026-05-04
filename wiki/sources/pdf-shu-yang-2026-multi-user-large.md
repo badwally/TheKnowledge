@@ -3,7 +3,8 @@ type: source
 source_id: pdf-shu-yang-2026-multi-user-large
 source_type: pdf
 title: Multi-User Large Language Model Agents
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:14:31Z'
 ---
 # Multi-User Large Language Model Agents

@@ -11,9 +11,22 @@ authors:
 ingested_at: '2026-04-29T16:13:25Z'
 content_hash: sha256:5ebf4d257afd4da47888aa81ba6e329d7253f009c6a046dd3493914a31d4e9b3
 source_path: raw/pdf/pdf-zhuo-yang-2026-detailed-balance-in.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/zhuo-yang-song.md
+- wiki/entities/qing-hong-cao.md
+- wiki/entities/ming-xing-luo.md
+- wiki/entities/hua-xing-zhu.md
+- wiki/entities/peking-university.md
+- wiki/entities/beijing-computational-science-research-center.md
+- wiki/concepts/detailed-balance-in-llm-agents.md
+- wiki/concepts/least-action-principle-llm.md
+- wiki/concepts/potential-function-llm.md
+- wiki/concepts/exploration-exploitation-llm.md
+- wiki/concepts/macroscopic-dynamics-of-llms.md
 meta:
   page_count: 20
   extraction_tool: pdfplumber

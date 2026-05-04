@@ -7,9 +7,23 @@ authors: []
 ingested_at: '2026-04-29T16:26:37Z'
 content_hash: sha256:cd78118a3189b636a0373e3c6f9f23d9b8ec6f87a7f58c91e6acf3e8521ef660
 source_path: raw/pdf/pdf-fb3e28ab676a.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/daron-acemoglu.md
+- wiki/concepts/task-based-ai-macro-framework.md
+- wiki/concepts/hultens-theorem-for-ai.md
+- wiki/concepts/easy-vs-hard-to-learn-tasks.md
+- wiki/concepts/ai-capital-labor-income-gap.md
+- wiki/concepts/ai-new-bad-tasks.md
+- wiki/concepts/ai-task-complementarity.md
+- wiki/concepts/labor-share-decline.md
+- wiki/concepts/productivity-inequality-from-ai.md
+- wiki/entities/nber.md
+- wiki/concepts/ai-automation-displacement-effect.md
+- wiki/concepts/ai-macro-forecast-skepticism.md
 meta:
   page_count: 57
   extraction_tool: pdfplumber

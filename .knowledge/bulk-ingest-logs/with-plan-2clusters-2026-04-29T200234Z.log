@@ -1,0 +1,486 @@
+WITH_PLAN_START 2026-04-29T20:02:34Z total=     121
+===[1] ai-and-agen s	pdf-22a560609b73	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/FallbackPDF__22a56060.pdf
+---
+===[2] ai-and-agen s	pdf-5bec4feeb233	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/FallbackPDF__5bec4fee.pdf
+---
+===[3] ai-and-agen s	pdf-822d5467c24e	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/2304_Japan’s AI Whitepaper_Etrans.pdf
+---
+===[4] ai-and-agen s	pdf-83c3ccfff1f1	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/FallbackPDF__83c3ccff.pdf
+---
+===[5] ai-and-agen s	pdf-ai-2023-japan-s-ai	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/20230413_japan's ai whitepaper_summary_etrans.pdf
+---
+===[6] ai-and-agen s	pdf-ali-modarressi-2025-nolima-long-con===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/ext	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__2d1e08cb.pdf
+---
+===[7] ai-and-agen s	pdf-ashish-vaswani-2025-a===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/tention-is-all	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__42854f3a.pdf
+---
+===[8] ai-and-agen s	pdf-danny-hernandez-2025-measuring-===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/he-algorithmic	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__8c18ea1c.pdf
+---
+===[9] ai-and-agen s	pdf-e7ff11e4ad9b	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/Leopold-Aschenbrenner_Existential-risk-and-growth_.pdf
+---
+===[10] ai-and-agen s	pdf-f478e5f11837	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/FallbackPDF__f478e5f1.pdf
+---
+===[11] ai-and-agen s	pdf-james-evans-2026-agen===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/ic-ai-and	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__17a00f38.pdf
+---
+===[12] ai-and-agen s	pdf-jenny-zhang-2026-hyperagen===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__8764fc54.pdf
+---
+===[13] ai-and-agen s	pdf-julien-delavande-2025-video-killed-===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/he	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__1b710a6e.pdf
+---
+===[14] ai-and-agen s	pdf-kimi-===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/eam-2026-kimi-k2-open	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__947f6c4c.pdf
+---
+===[15] ai-and-agen s	pdf-nenad-===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/oma-2026-intelligent-ai-delegation	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__fa80507e.pdf
+---
+===[16] ai-and-agen s	pdf-ngor-luong-2026-===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/wo-loops-how	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__4d5f400f.pdf
+---
+===[17] ai-and-agen s	pdf-pe===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/er-belcak-2025-small-language-models	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__1e3d7106.pdf
+---
+===[18] ai-and-agen s	pdf-shu-yang-2026-mul===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/i-user-large	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__450887d2.pdf
+---
+===[19] ai-and-agen s	pdf-s===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/anford-2026-the-stanford-emerging	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__38c1aafb.pdf
+---
+===[20] ai-and-agen s	pdf-vaishak-belle-2026-===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/he-future-is	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__be6c6b08.pdf
+---
+===[21] ai-and-agen s	pdf-wen===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/ao-zhang-2026-autogenesis-a-self	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__f6167676.pdf
+---
+===[22] ai-and-agen s	pdf-zhengding-hu-2026-pancake-hierarchical-memory	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/FallbackPDF__e939804a.pdf
+---
+===[23] ai-and-agen s	pdf-zhuo-yang-2026-de===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/ailed-balance-in	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__0a871750.pdf
+---
+===[24] ai-and-agen s	pdf-752c8824b750	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/2106.14204.pdf
+---
+===[25] ai-and-agen s	pdf-806192f007eb	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/2405.12768.pdf
+---
+===[26] ai-and-agen s	pdf-f4016087ee51	/Users/andrewgran===
+operation failed:
+  - input not found: /code/apple-notes/pdfs/FallbackPDF__f4016087.pdf
+---
+===[27]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-042302b20a5d	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_9_Order_Blocks_2.pdf
+---
+===[28]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-04854302f962	/Users/andrewgrant/code/apple-notes/pdfs/Ambrus Capital - Volatility and the Changing Market Structure Driving U.S. Equities.pdf
+---
+===[29]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-05df32dcb03e	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id1630903.pdf
+---
+===[30]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-075e9932265b	/Users/andrewgrant/code/apple-notes/pdfs/Lesson 12 - Daily, Weekly, Monthly, Opens (Power of 3 - Simplified).pdf
+---
+===[31]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-08bcb2d549ba	/Users/andrewgrant/code/apple-notes/pdfs/the_ict_mentorship_core__thread_by_trader_theory___jan 5, 23_from_rattibha.pdf
+---
+===[32]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-13d51286c4cc	/Users/andrewgrant/code/apple-notes/pdfs/the_ict_mentorship_core__thread_by_trader_theory___oct 17, 22_from_rattibha.pdf
+---
+===[33]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-1590d4650297	/Users/andrewgrant/code/apple-notes/pdfs/BEST-LOSER-WINS-1.pdf
+---
+===[34]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-1662a4368954	/Users/andrewgrant/code/apple-notes/pdfs/ssrn-4879527.pdf
+---
+===[35]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-19445750a197	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id4166640.pdf
+---
+===[36]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-19ce7da9ecfc	/Users/andrewgrant/code/apple-notes/pdfs/Lesson 11 - Divergence.pdf
+---
+===[37]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-1ab14c833d75	/Users/andrewgrant/code/apple-notes/pdfs/demystifying_ict_113.pdf
+---
+===[38]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-2248d6cdc39f	/Users/andrewgrant/code/apple-notes/pdfs/The Study_ 2-Day AVWAP Rule Momentum Signal in Day.2r Trading__2248d6cd.pdf
+---
+===[39]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-2329b8b436f2	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id4835311.pdf
+---
+===[40]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-2698a38c6fa5	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_4_Fair_Value_Gap_FVG.pdf
+---
+===[41]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-2742492120a8	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id3760365.pdf
+---
+===[42]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-291109666e00	/Users/andrewgrant/code/apple-notes/pdfs/Brass_Monkey_DCE_eBook.pdf
+---
+===[43]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-2b2d34f2b0ff	/Users/andrewgrant/code/apple-notes/pdfs/mi-investment-outlook-ce-en.pdf
+---
+===[44]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-3a3f6480ad77	/Users/andrewgrant/code/apple-notes/pdfs/ICT 2022 Mentorship Key Points.pdf
+---
+===[45]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-3a510f58854c	/Users/andrewgrant/code/apple-notes/pdfs/Trading_Models_And_Checklist (1).pdf
+---
+===[46]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-3d3d42a0717a	/Users/andrewgrant/code/apple-notes/pdfs/document-1208817-1652548252608.pdf
+---
+===[47]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-3eea925a6037	/Users/andrewgrant/code/apple-notes/pdfs/73dc960b-75e6-4e36-b517-787ce5c73c0c.pdf
+---
+===[48]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-40482428d656	/Users/andrewgrant/code/apple-notes/pdfs/Balanced Price Ranges.pdf
+---
+===[49]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-46c6dd54d41e	/Users/andrewgrant/code/apple-notes/pdfs/high probability conditions.pdf
+---
+===[50]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-4b87a8059b38	/Users/andrewgrant/code/apple-notes/pdfs/LBEX-LL 3356480-3356609.pdf
+---
+===[51]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-4dbe002c1c7a	/Users/andrewgrant/code/apple-notes/pdfs/w29874.pdf
+---
+===[52]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-4e80c02052f4	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_3_Market_Structure_Shifts_intro_.pdf
+---
+===[53]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-503a04772afb	/Users/andrewgrant/code/apple-notes/pdfs/document-1231497-1662152072164.pdf
+---
+===[54]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-50a1f07b475f	/Users/andrewgrant/code/apple-notes/pdfs/COVID GMV - Part 2.pdf
+---
+===[55]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-57b1d100694e	/Users/andrewgrant/code/apple-notes/pdfs/the_ict_mentorship_core__thread_by_trader_theory___oct 25, 22_from_rattibha.pdf
+---
+===[56]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-5a5936689043	/Users/andrewgrant/code/apple-notes/pdfs/Nikonomics - The Options Trading Guide to Success.pdf
+---
+===[57]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-5a6062a63a4b	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id3042173.pdf
+---
+===[58]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-5bef1fceb745	/Users/andrewgrant/code/apple-notes/pdfs/COVID GMV - Part 1.pdf
+---
+===[59]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-5e6d63eac790	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__5e6d63ea.pdf
+---
+===[60]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-5ef2018823c8	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id2289097.pdf
+---
+===[61]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-67b6fe78b28c	/Users/andrewgrant/code/apple-notes/pdfs/the_ict_mentorship_core__thread_by_trader_theory___sep 28, 22_from_rattibha.pdf
+---
+===[62]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-69a1f97797ce	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_5_Order_Blocks.pdf
+---
+===[63]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-6ae97b9c27c7	/Users/andrewgrant/code/apple-notes/pdfs/zoltan-pozsar-aug-2-war-and-interest-rates-1.pdf
+---
+===[64]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-6ba2dc608ac8	/Users/andrewgrant/code/apple-notes/pdfs/The Study_ 2-Day AVWAP Rule Momentum Signal in Day.2r Trading.pdf
+---
+===[65]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-704c439723d0	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_1_Price_and_Liquidity_.pdf
+---
+===[66]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-734e612fdf31	/Users/andrewgrant/code/apple-notes/pdfs/Core_Content_Month_5_.pdf
+---
+===[67]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-7663c24d3159	/Users/andrewgrant/code/apple-notes/pdfs/65392592bb96259e6c00f4f7_Math of the Multi-Manager_CA.pdf
+---
+===[68]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-7acc9c92267c	/Users/andrewgrant/code/apple-notes/pdfs/article_stockmarketconcentration.pdf
+---
+===[69]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-81305d181382	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_2_Market_Structure_.pdf
+---
+===[70]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-853a7755a470	/Users/andrewgrant/code/apple-notes/pdfs/Q3-2022-IACFM-Presentation.pdf
+---
+===[71]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-869163b2f118	/Users/andrewgrant/code/apple-notes/pdfs/Ari Kiev - 1998 - Trading To Win - The Psychology Of Mastering The Markets - Isbn 0471248428 - 26.pdf
+---
+===[72]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-87087198976b	/Users/andrewgrant/code/apple-notes/pdfs/ING_global_outlook_2023_Dec_2022_OT.pdf
+---
+===[73]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-8f021296560c	/Users/andrewgrant/code/apple-notes/pdfs/2209270_cs_io_2023_en_rgb_digital.pdf
+---
+===[74]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-90e7f9350657	/Users/andrewgrant/code/apple-notes/pdfs/annual_outlook_2023.pdf
+---
+===[75]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-930894c4fbad	/Users/andrewgrant/code/apple-notes/pdfs/demystifying_ict_109.pdf
+---
+===[76]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-9495a5abb859	/Users/andrewgrant/code/apple-notes/pdfs/WEEKLY BIAS FORM__9495a5ab.pdf
+---
+===[77]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-94cecf7a170a	/Users/andrewgrant/code/apple-notes/pdfs/demystifying_ict_111.pdf
+---
+===[78]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-9613f301a3b5	/Users/andrewgrant/code/apple-notes/pdfs/BobaTrader_DaytradeGuide.pdf
+---
+===[79]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-9da6062f0265	/Users/andrewgrant/code/apple-notes/pdfs/beatthemarket.pdf
+---
+===[80]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-a0072c763cf8	/Users/andrewgrant/code/apple-notes/pdfs/Scott-Redler-Moving-Averages-eBook.pdf
+---
+===[81]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-a25e1c0d5f08	/Users/andrewgrant/code/apple-notes/pdfs/sr677.pdf
+---
+===[82]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-a3789262265a	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_8_Power_of_3.pdf
+---
+===[83]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-a98b496e5936	/Users/andrewgrant/code/apple-notes/pdfs/ict’s_2022_mentorship_summarized___thread_by_trader_theory___sep 22, 22_from_rattibha.pdf
+---
+===[84]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-b72c5d424466	/Users/andrewgrant/code/apple-notes/pdfs/I'm profitable, now what.pdf
+---
+===[85]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-b8cec9d1ec0c	/Users/andrewgrant/code/apple-notes/pdfs/w28967.pdf
+---
+===[86]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-be69dd282a8c	/Users/andrewgrant/code/apple-notes/pdfs/2014-Two-centuries-of-trend-following.pdf
+---
+===[87]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-bf1afc73ac8f	/Users/andrewgrant/code/apple-notes/pdfs/article_2023investmentoutlook_enin.pdf
+---
+===[88]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-c25a6984aba0	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__c25a6984.pdf
+---
+===[89]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-c57b9a32c399	/Users/andrewgrant/code/apple-notes/pdfs/Trading Models And Checklist.pdf
+---
+===[90]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-c9b8f466ea39	/Users/andrewgrant/code/apple-notes/pdfs/akash-position.pdf
+---
+===[91]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-cce4b539ce1c	/Users/andrewgrant/code/apple-notes/pdfs/Draw On Liqudity PDF By daytradingrauf.pdf
+---
+===[92]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-d0b9b7e97b5c	/Users/andrewgrant/code/apple-notes/pdfs/Joel-Greenblatt-Class.pdf
+---
+===[93]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-d196e853ebc0	/Users/andrewgrant/code/apple-notes/pdfs/2023-apollo-economic-and-capital-markets-outlook-white-paper.pdf
+---
+===[94]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-d7094631fbf1	/Users/andrewgrant/code/apple-notes/pdfs/MMXM_Market_Maker_Models.pdf
+---
+===[95]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-e2068d89c2a7	/Users/andrewgrant/code/apple-notes/pdfs/ssrn_id4501707_code759326.pdf
+---
+===[96]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-e63407c2b4f4	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id4416622.pdf
+---
+===[97]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-e8351bcf5615	/Users/andrewgrant/code/apple-notes/pdfs/COVID GMV - Part 3.pdf
+---
+===[98]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-ea646c451aae	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__ea646c45.pdf
+---
+===[99]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-ec9fdef2193c	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id2585056.pdf
+---
+===[100]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-ed56b074fb11	/Users/andrewgrant/code/apple-notes/pdfs/Q2 2022 - Market Commentary & Outlook.pdf
+---
+===[101]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-f073cccdbfe6	/Users/andrewgrant/code/apple-notes/pdfs/WEEKLY BIAS FORM.pdf
+---
+===[102]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-f139d7bd1924	/Users/andrewgrant/code/apple-notes/pdfs/Deleveraging.pdf
+---
+===[103]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-f2565310670c	/Users/andrewgrant/code/apple-notes/pdfs/Lesson_6_Equilibrium_Discount_and_Premium.pdf
+---
+===[104]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-fa83c61dfa2d	/Users/andrewgrant/code/apple-notes/pdfs/RevisitingFedRobbery.pdf
+---
+===[105]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-fb3e28ab676a	/Users/andrewgrant/code/apple-notes/pdfs/The Simple Macroeconomics of AI.pdf
+---
+===[106]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-girquark-2022-global-economics-analyst	/Users/andrewgrant/code/apple-notes/pdfs/report.pdf
+---
+===[107]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-lasse-pedersen-2011-title-how-to	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id2089463.pdf
+---
+===[108]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-eric-benhamou-2021-powerpoint-presentation	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id3953589.pdf
+---
+===[109]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-bd-2002-microsoft-word-dow	/Users/andrewgrant/code/apple-notes/pdfs/2002DowAwardb.pdf
+---
+===[110]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-ari-kiev-2005-stocks-commodities-v	/Users/andrewgrant/code/apple-notes/pdfs/CENTERD.pdf
+---
+===[111]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-ali-khan-2023-the-ict-bible	/Users/andrewgrant/code/apple-notes/pdfs/The ICT Bible - V1 - By Ali Khan.pdf
+---
+===[112]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-alberto-frizziero-2023-thenorthloop-intro-eng	/Users/andrewgrant/code/apple-notes/pdfs/TheNorthLoop_intro_ENG.pdf
+---
+===[113]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-sqzme-2020-the-implied-order	/Users/andrewgrant/code/apple-notes/pdfs/The_Implied_Order_Book.pdf
+---
+===[114]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-sugsu-2020-microsoft-word-hfholdem	/Users/andrewgrant/code/apple-notes/pdfs/SSRN-id3392130.pdf
+---
+===[115]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-won-2022-bii-global-outlook	/Users/andrewgrant/code/apple-notes/pdfs/bii-global-outlook-2023.pdf
+---
+===[116]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-judy-2022-primer-adjusted-a	/Users/andrewgrant/code/apple-notes/pdfs/how_to_think_about_the_economy.pdf
+---
+===[117]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-tw-2007-3379-pdf	/Users/andrewgrant/code/apple-notes/pdfs/Dolby_LTD Claim Application_Standard.pdf
+---
+===[118]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-ned-augenblick-2025-overinference-from-weak	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__efc403c5.pdf
+---
+===[119]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-silicon-valley-2025-state-of-the	/Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__ef131b6f.pdf
+---
+===[120]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-matthew-notowidigdo-2020-gkno-manuscript-1025	/Users/andrewgrant/code/apple-notes/pdfs/w27734.pdf
+---
+===[121]  rading-and-marke===
+operation failed:
+  - input not found: /Users/andrewgrant/code/knowledge/s	pdf-munger-2021-revised-psychology-of	/Users/andrewgrant/code/apple-notes/pdfs/The+Psychology+of+Human+Misjudment.pdf
+---
+WITH_PLAN_DONE 2026-04-29T20:02:41Z

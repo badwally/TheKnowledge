@@ -10,9 +10,21 @@ authors:
 ingested_at: '2026-04-29T16:21:30Z'
 content_hash: sha256:fb3bc83f7799c9bf4b7d5690d1997eb85e10a75a3abe0f93a7b0d0de4932123e
 source_path: raw/pdf/pdf-nenad-toma-2026-intelligent-ai-delegation.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/nenad-tomasev.md
+- wiki/entities/matija-franklin.md
+- wiki/entities/simon-osindero.md
+- wiki/entities/google-deepmind.md
+- wiki/concepts/intelligent-ai-delegation.md
+- wiki/concepts/principal-agent-problem.md
+- wiki/concepts/span-of-control.md
+- wiki/concepts/authority-gradient.md
+- wiki/concepts/reward-misspecification.md
+- wiki/concepts/deceptive-alignment.md
 meta:
   page_count: 42
   extraction_tool: pdfplumber

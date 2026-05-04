@@ -7,9 +7,22 @@ authors: []
 ingested_at: '2026-04-29T16:23:58Z'
 content_hash: sha256:8d16ae9b62e3940ad2a3c91ef1c122fa01661b3b66cb23d0e16aff4c4d38326c
 source_path: raw/pdf/pdf-2b2d34f2b0ff.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/jp-morgan-asset-management.md
+- wiki/entities/karen-ward.md
+- wiki/entities/european-central-bank.md
+- wiki/entities/bank-of-england.md
+- wiki/concepts/housing-led-monetary-transmission.md
+- wiki/concepts/mortgage-rate-fixation.md
+- wiki/concepts/european-gas-storage-buffer.md
+- wiki/concepts/china-reopening-supply-chain-easing.md
+- wiki/concepts/wage-led-inflation-persistence.md
+- wiki/concepts/quantitative-tightening.md
+- wiki/concepts/fixed-income-reset.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

@@ -3,7 +3,8 @@ type: source
 source_id: pdf-alberto-frizziero-2023-thenorthloop-intro-eng
 source_type: pdf
 title: TheNorthLoop_intro_ENG
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:26:57Z'
 ---
 # TheNorthLoop_intro_ENG

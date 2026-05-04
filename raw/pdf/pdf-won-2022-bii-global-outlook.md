@@ -9,9 +9,25 @@ authors:
 ingested_at: '2026-04-29T16:11:55Z'
 content_hash: sha256:bb2e4a4d7bc01648865c5322dbc237978cc9318716896c0d24b17aabf7da358d
 source_path: raw/pdf/pdf-won-2022-bii-global-outlook.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/blackrock-investment-institute.md
+- wiki/entities/philipp-hildebrand.md
+- wiki/entities/jean-boivin.md
+- wiki/entities/wei-li-bii.md
+- wiki/entities/scott-thiel.md
+- wiki/concepts/great-moderation-end.md
+- wiki/concepts/production-constraints-inflation.md
+- wiki/concepts/stock-bond-correlation-regime-shift.md
+- wiki/concepts/pricing-the-damage-matrix.md
+- wiki/concepts/cyclical-vs-structural-inflation.md
+- wiki/concepts/60-40-portfolio-2022-collapse.md
+- wiki/entities/federal-reserve.md
+- wiki/concepts/great-reflation.md
+- wiki/concepts/2022-bond-bear-market.md
 meta:
   page_count: 16
   extraction_tool: pdfplumber

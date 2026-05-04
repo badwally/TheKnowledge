@@ -9,9 +9,22 @@ authors:
 ingested_at: '2026-04-29T16:18:34Z'
 content_hash: sha256:fd5a53d1ee64003cc36fb5acced44f31c205f50b0d72250717e6dd9ded2ea981
 source_path: raw/pdf/pdf-vaishak-belle-2026-the-future-is.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/vaishak-belle.md
+- wiki/entities/gary-marcus.md
+- wiki/concepts/neuro-symbolic-ai.md
+- wiki/concepts/scaling-hypothesis.md
+- wiki/concepts/statistical-relational-learning.md
+- wiki/concepts/symbol-emergence.md
+- wiki/concepts/distribution-drift.md
+- wiki/entities/deepproblog.md
+- wiki/entities/logic-tensor-networks.md
+- wiki/concepts/differential-program-induction.md
+- wiki/concepts/semantic-loss.md
 meta:
   page_count: 8
   extraction_tool: pdfplumber

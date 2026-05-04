@@ -7,9 +7,16 @@ authors: []
 ingested_at: '2026-04-29T16:19:07Z'
 content_hash: sha256:216f1fff6e946e10f4add23aafc00a4970443e41144b61f575ce71a6f623e852
 source_path: raw/pdf/pdf-ea646c451aae.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/concepts/dealer-short-gamma-mechanics.md
+- wiki/concepts/gamma-squeeze-into-close.md
+- wiki/concepts/iron-condor-dealer-positioning.md
+- wiki/concepts/pinning-at-strike-expiration.md
+- wiki/concepts/blow-off-top-into-close.md
 meta:
   page_count: 2
   extraction_tool: pdfplumber

@@ -8,9 +8,17 @@ authors:
 ingested_at: '2026-04-29T16:25:30Z'
 content_hash: sha256:2da8cf4e018a914e2ddb2d086129ada5c6c384c6395b458cc2a8611c463810c0
 source_path: raw/pdf/pdf-lasse-pedersen-2011-title-how-to.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/tobias-moskowitz.md
+- wiki/entities/yao-hua-ooi.md
+- wiki/entities/lasse-h-pedersen.md
+- wiki/concepts/time-series-momentum.md
+- wiki/concepts/speculator-hedger-momentum-transfer.md
+- wiki/entities/university-of-chicago-booth.md
 meta:
   page_count: 62
   extraction_tool: pdfplumber

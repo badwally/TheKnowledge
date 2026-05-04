@@ -3,7 +3,8 @@ type: source
 source_id: pdf-ned-augenblick-2025-overinference-from-weak
 source_type: pdf
 title: Overinference from Weak Signals and Underinference from Strong Signals
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:19:44Z'
 ---
 # Overinference from Weak Signals and Underinference from Strong Signals

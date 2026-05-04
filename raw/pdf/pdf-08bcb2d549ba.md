@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:26:39Z'
 content_hash: sha256:3f23db676ae2aafbc24c2203df76981d3a7aa1f07d22c5f4476f91488f9f4f5f
 source_path: raw/pdf/pdf-08bcb2d549ba.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/concepts/interest-rate-triad.md
+- wiki/concepts/smart-money-accumulation-distribution.md
+- wiki/concepts/external-range-liquidity.md
+- wiki/concepts/internal-range-liquidity.md
+- wiki/concepts/liquidity-based-bias.md
+- wiki/concepts/liquidity-pool.md
+- wiki/concepts/fair-value-gap.md
+- wiki/concepts/liquidity-raid.md
+- wiki/entities/trader-theory.md
+- wiki/entities/inner-circle-trader.md
 meta:
   page_count: 16
   extraction_tool: pdfplumber

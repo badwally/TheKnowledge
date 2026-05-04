@@ -7,9 +7,20 @@ authors: []
 ingested_at: '2026-04-29T16:11:26Z'
 content_hash: sha256:3807cfda181eaed4c345f4d2106e7b1bbc5e74f2d61041b6aa217850cf1d357d
 source_path: raw/pdf/pdf-c9b8f466ea39.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/akash-network.md
+- wiki/entities/overclock-labs.md
+- wiki/concepts/decentralized-cloud-marketplace.md
+- wiki/concepts/cloud-spot-market.md
+- wiki/concepts/akash-deployment-fulfillment-order.md
+- wiki/concepts/akash-staking-mechanism.md
+- wiki/concepts/manifest-based-deployment.md
+- wiki/concepts/cloud-provider-lock-in.md
+- wiki/concepts/server-underutilization.md
 meta:
   page_count: 15
   extraction_tool: pdfplumber

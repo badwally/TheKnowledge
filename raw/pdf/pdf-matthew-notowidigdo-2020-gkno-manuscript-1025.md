@@ -8,9 +8,21 @@ authors:
 ingested_at: '2026-04-29T16:27:17Z'
 content_hash: sha256:ecf350170f42b468ca813186f9c8c16058215746997cdbe0759e66c4eb23504a
 source_path: raw/pdf/pdf-matthew-notowidigdo-2020-gkno-manuscript-1025.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/craig-garthwaite.md
+- wiki/entities/jordan-keener.md
+- wiki/entities/matthew-notowidigdo.md
+- wiki/entities/nicole-ozminkowski.md
+- wiki/entities/ncaa.md
+- wiki/entities/northwestern-university.md
+- wiki/concepts/amateurism-rents.md
+- wiki/concepts/college-sports-rent-sharing.md
+- wiki/concepts/power-five-business-model.md
+- wiki/concepts/amateurism-regressive-transfer.md
 meta:
   page_count: 63
   extraction_tool: pdfplumber

@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:25:28Z'
 content_hash: sha256:bd7509ac0d84049c3d2a449a89ad1d33f1c1943d864eb5e114c487f7f135a5db
 source_path: raw/pdf/pdf-05df32dcb03e.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/concepts/trend-following-trading-rule.md
+- wiki/concepts/bull-bear-switching-model.md
+- wiki/concepts/wonham-filter.md
+- wiki/concepts/all-in-all-out-strategy.md
+- wiki/concepts/contra-trend-strategy.md
+- wiki/concepts/optimal-trading-thresholds.md
+- wiki/entities/min-dai.md
+- wiki/entities/zhou-yang.md
+- wiki/entities/qing-zhang.md
+- wiki/entities/qiji-jim-zhu.md
 meta:
   page_count: 20
   extraction_tool: pdfplumber

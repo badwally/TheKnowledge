@@ -3,7 +3,8 @@ type: source
 source_id: pdf-zhengding-hu-2026-pancake-hierarchical-memory
 source_type: pdf
 title: 'Pancake: Hierarchical Memory System for Multi-Agent LLM Serving'
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:19:07Z'
 ---
 # Pancake: Hierarchical Memory System for Multi-Agent LLM Serving

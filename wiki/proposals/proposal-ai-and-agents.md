@@ -3,9 +3,37 @@ type: domain-proposal
 slug: proposal-ai-and-agents
 title: AI and Agentic Systems
 proposed_domain: ai-and-agents
-status: draft
-member_sources: [pdf-22a560609b73, pdf-5bec4feeb233, pdf-822d5467c24e, pdf-83c3ccfff1f1, pdf-ai-2023-japan-s-ai, pdf-ali-modarressi-2025-nolima-long-context, pdf-ashish-vaswani-2025-attention-is-all, pdf-danny-hernandez-2025-measuring-the-algorithmic, pdf-e7ff11e4ad9b, pdf-f478e5f11837, pdf-james-evans-2026-agentic-ai-and, pdf-jenny-zhang-2026-hyperagents, pdf-julien-delavande-2025-video-killed-the, pdf-kimi-team-2026-kimi-k2-open, pdf-nenad-toma-2026-intelligent-ai-delegation, pdf-ngor-luong-2026-two-loops-how, pdf-peter-belcak-2025-small-language-models, pdf-shu-yang-2026-multi-user-large, pdf-stanford-2026-the-stanford-emerging, pdf-vaishak-belle-2026-the-future-is, pdf-wentao-zhang-2026-autogenesis-a-self, pdf-zhengding-hu-2026-pancake-hierarchical-memory, pdf-zhuo-yang-2026-detailed-balance-in, pdf-752c8824b750, pdf-806192f007eb, pdf-f4016087ee51]
-rationale: Foundation models, transformer architecture, agentic systems, multi-agent research, model efficiency, AI policy, and the macro/strategic implications of AI. Mostly arXiv-style papers and industry reports from 2024–2026.
+status: blessed
+member_sources:
+- pdf-22a560609b73
+- pdf-5bec4feeb233
+- pdf-822d5467c24e
+- pdf-83c3ccfff1f1
+- pdf-ai-2023-japan-s-ai
+- pdf-ali-modarressi-2025-nolima-long-context
+- pdf-ashish-vaswani-2025-attention-is-all
+- pdf-danny-hernandez-2025-measuring-the-algorithmic
+- pdf-e7ff11e4ad9b
+- pdf-f478e5f11837
+- pdf-james-evans-2026-agentic-ai-and
+- pdf-jenny-zhang-2026-hyperagents
+- pdf-julien-delavande-2025-video-killed-the
+- pdf-kimi-team-2026-kimi-k2-open
+- pdf-nenad-toma-2026-intelligent-ai-delegation
+- pdf-ngor-luong-2026-two-loops-how
+- pdf-peter-belcak-2025-small-language-models
+- pdf-shu-yang-2026-multi-user-large
+- pdf-stanford-2026-the-stanford-emerging
+- pdf-vaishak-belle-2026-the-future-is
+- pdf-wentao-zhang-2026-autogenesis-a-self
+- pdf-zhengding-hu-2026-pancake-hierarchical-memory
+- pdf-zhuo-yang-2026-detailed-balance-in
+- pdf-752c8824b750
+- pdf-806192f007eb
+- pdf-f4016087ee51
+rationale: Foundation models, transformer architecture, agentic systems, multi-agent
+  research, model efficiency, AI policy, and the macro/strategic implications of AI.
+  Mostly arXiv-style papers and industry reports from 2024–2026.
 ---
 
 ## Rationale

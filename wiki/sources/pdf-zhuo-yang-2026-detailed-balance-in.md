@@ -3,7 +3,8 @@ type: source
 source_id: pdf-zhuo-yang-2026-detailed-balance-in
 source_type: pdf
 title: Detailed balance in large language model-driven agents
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:13:25Z'
 ---
 # Detailed balance in large language model-driven agents

@@ -3,7 +3,8 @@ type: source
 source_id: pdf-munger-2021-revised-psychology-of
 source_type: pdf
 title: Revised Psychology of Human Misjudment
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:26:57Z'
 ---
 # Revised Psychology of Human Misjudment

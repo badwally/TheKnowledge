@@ -3,7 +3,8 @@ type: source
 source_id: pdf-matthew-notowidigdo-2020-gkno-manuscript-1025
 source_type: pdf
 title: GKNO_Manuscript_1025
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:27:17Z'
 ---
 # GKNO_Manuscript_1025

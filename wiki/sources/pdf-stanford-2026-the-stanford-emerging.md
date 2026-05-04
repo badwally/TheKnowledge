@@ -3,7 +3,8 @@ type: source
 source_id: pdf-stanford-2026-the-stanford-emerging
 source_type: pdf
 title: The Stanford Emerging Technology Review 2026
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:14:21Z'
 ---
 # The Stanford Emerging Technology Review 2026

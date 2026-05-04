@@ -8,9 +8,23 @@ authors:
 ingested_at: '2026-04-29T16:14:51Z'
 content_hash: sha256:fe617ed4e75ba3d5846a8e49f06784d3a9be5568dd2ce795300142171e417b82
 source_path: raw/pdf/pdf-ngor-luong-2026-two-loops-how.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/ngor-luong.md
+- wiki/entities/uscc.md
+- wiki/entities/alibaba.md
+- wiki/entities/qwen.md
+- wiki/entities/deepseek.md
+- wiki/entities/deepseek-r1.md
+- wiki/concepts/open-weight-models.md
+- wiki/concepts/two-loops-framework.md
+- wiki/concepts/general-ai-gai.md
+- wiki/concepts/innovation-flywheel.md
+- wiki/concepts/data-as-factor-of-production.md
+- wiki/concepts/scaling-laws.md
 meta:
   page_count: 30
   extraction_tool: pdfplumber

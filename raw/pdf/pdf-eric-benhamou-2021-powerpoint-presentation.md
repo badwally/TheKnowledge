@@ -8,9 +8,14 @@ authors:
 ingested_at: '2026-04-29T16:26:24Z'
 content_hash: sha256:312250ba8af8c33eb38388a9fc1cde87ea31fb70d8baba554ada5a6bf3137ea9
 source_path: raw/pdf/pdf-eric-benhamou-2021-powerpoint-presentation.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/eric-benhamou.md
+- wiki/entities/remy-belmonte.md
+- wiki/entities/universite-paris-dauphine.md
 meta:
   page_count: 40
   extraction_tool: pdfplumber

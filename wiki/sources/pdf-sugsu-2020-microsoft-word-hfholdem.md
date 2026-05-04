@@ -3,7 +3,8 @@ type: source
 source_id: pdf-sugsu-2020-microsoft-word-hfholdem
 source_type: pdf
 title: Microsoft Word - HFHoldem SSRN
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:26:21Z'
 ---
 # Microsoft Word - HFHoldem SSRN

@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:25:48Z'
 content_hash: sha256:f0dc4ccca7593c04e4fa301db4232e5278ec6f806dc8dac6f20d3208b5d55d8c
 source_path: raw/pdf/pdf-ec9fdef2193c.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/valeriy-zakamulin.md
+- wiki/entities/university-of-agder.md
+- wiki/concepts/anatomy-of-moving-average-rules.md
+- wiki/concepts/weighted-moving-average-of-price-changes.md
+- wiki/concepts/moving-average-types.md
+- wiki/concepts/momentum-rule.md
+- wiki/concepts/price-minus-moving-average-rule.md
+- wiki/concepts/moving-average-change-of-direction-rule.md
+- wiki/concepts/double-crossover-method.md
+- wiki/concepts/weighting-function-shape-determines-performance.md
 meta:
   page_count: 33
   extraction_tool: pdfplumber

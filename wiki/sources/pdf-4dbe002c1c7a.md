@@ -3,7 +3,8 @@ type: source
 source_id: pdf-4dbe002c1c7a
 source_type: pdf
 title: w29874
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:27:24Z'
 ---
 # w29874

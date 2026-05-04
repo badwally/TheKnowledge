@@ -8,9 +8,21 @@ authors:
 ingested_at: '2026-04-29T16:19:51Z'
 content_hash: sha256:d695101d4d7f6d117803254d43d2cd9499282da1e8cd72faefd3b61d1cb219e5
 source_path: raw/pdf/pdf-wentao-zhang-2026-autogenesis-a-self.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/wentao-zhang.md
+- wiki/entities/nanyang-technological-university.md
+- wiki/entities/autogenesis-protocol.md
+- wiki/concepts/self-evolving-agent.md
+- wiki/concepts/resource-substrate-protocol-layer.md
+- wiki/concepts/self-evolution-protocol-layer.md
+- wiki/concepts/protocol-registered-resource.md
+- wiki/concepts/closed-loop-evolution-operators.md
+- wiki/concepts/autogenesis-system.md
+- wiki/concepts/connectivity-vs-evolution-protocols.md
 meta:
   page_count: 24
   extraction_tool: pdfplumber

@@ -10,9 +10,23 @@ authors:
 ingested_at: '2026-04-29T16:13:42Z'
 content_hash: sha256:783a2a990942a9f2fd787b63ec1975dc65df141a38b9e567c4318df8128e5da9
 source_path: raw/pdf/pdf-james-evans-2026-agentic-ai-and.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/james-evans.md
+- wiki/entities/benjamin-bratton.md
+- wiki/entities/blaise-aguera-y-arcas.md
+- wiki/entities/santa-fe-institute.md
+- wiki/entities/antikythera.md
+- wiki/concepts/society-of-thought.md
+- wiki/concepts/human-ai-centaur.md
+- wiki/concepts/plurality-model-of-intelligence.md
+- wiki/concepts/institutional-alignment.md
+- wiki/concepts/cultural-ratchet.md
+- wiki/concepts/recursive-agent-society.md
+- wiki/concepts/agent-governance.md
 meta:
   page_count: 5
   extraction_tool: pdfplumber

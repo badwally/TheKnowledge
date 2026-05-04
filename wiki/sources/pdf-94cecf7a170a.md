@@ -3,7 +3,8 @@ type: source
 source_id: pdf-94cecf7a170a
 source_type: pdf
 title: demystifying_ict
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:12:52Z'
 ---
 # demystifying_ict

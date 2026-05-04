@@ -8,9 +8,21 @@ authors:
 ingested_at: '2026-04-29T16:21:57Z'
 content_hash: sha256:daff5dc6929bc8500b7e49ef59e40febdf5aed82cf43d8581c48de4cf565c65a
 source_path: raw/pdf/pdf-judy-2022-primer-adjusted-a.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/per-bylund.md
+- wiki/entities/mises-institute.md
+- wiki/entities/frederic-bastiat.md
+- wiki/entities/carl-menger.md
+- wiki/entities/ludwig-von-mises.md
+- wiki/concepts/spontaneous-order.md
+- wiki/concepts/action-axiom.md
+- wiki/concepts/economic-calculation.md
+- wiki/concepts/austrian-business-cycle-theory.md
+- wiki/concepts/seen-unseen-unrealized.md
 meta:
   page_count: 130
   extraction_tool: pdfplumber

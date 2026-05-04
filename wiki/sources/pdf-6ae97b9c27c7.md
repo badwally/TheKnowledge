@@ -3,7 +3,8 @@ type: source
 source_id: pdf-6ae97b9c27c7
 source_type: pdf
 title: zoltan-pozsar-aug-2-war-and-interest-rates-1
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:27:28Z'
 ---
 # zoltan-pozsar-aug-2-war-and-interest-rates-1

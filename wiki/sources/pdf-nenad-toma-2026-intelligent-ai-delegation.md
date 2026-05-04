@@ -3,7 +3,8 @@ type: source
 source_id: pdf-nenad-toma-2026-intelligent-ai-delegation
 source_type: pdf
 title: Intelligent AI Delegation
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:21:30Z'
 ---
 # Intelligent AI Delegation

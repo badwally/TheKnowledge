@@ -8,9 +8,26 @@ authors:
 ingested_at: '2026-04-29T16:26:33Z'
 content_hash: sha256:28f2938908ae4e6ab6f2ec00f7ccb9e139980ecdc76b689b109a69ca3bc42481
 source_path: raw/pdf/pdf-ali-khan-2023-the-ict-bible.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/ali-khan.md
+- wiki/entities/inner-circle-trader.md
+- wiki/concepts/ipda.md
+- wiki/concepts/amd-cycle.md
+- wiki/concepts/fair-value-gap.md
+- wiki/concepts/killzones.md
+- wiki/concepts/order-block.md
+- wiki/concepts/power-of-3.md
+- wiki/concepts/pd-array.md
+- wiki/concepts/smt-divergence.md
+- wiki/concepts/displacement.md
+- wiki/concepts/swing-high-swing-low-three-candle.md
+- wiki/concepts/consequent-encroachment.md
+- wiki/concepts/volume-imbalance.md
+- wiki/concepts/gap-imbalance.md
 meta:
   page_count: 37
   extraction_tool: pdfplumber

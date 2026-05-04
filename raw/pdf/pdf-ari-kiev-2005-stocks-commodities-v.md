@@ -9,9 +9,13 @@ authors:
 ingested_at: '2026-04-29T16:12:11Z'
 content_hash: sha256:07ecc993e6ea6625d7e670ab0eaf62f4940145e1d6554583ad22e2c3c334c693
 source_path: raw/pdf/pdf-ari-kiev-2005-stocks-commodities-v.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/ari-kiev.md
+- wiki/concepts/centering.md
 meta:
   page_count: 3
   extraction_tool: pdfplumber

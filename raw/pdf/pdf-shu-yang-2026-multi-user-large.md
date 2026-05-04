@@ -15,9 +15,22 @@ authors:
 ingested_at: '2026-04-29T16:14:31Z'
 content_hash: sha256:8b82c1258790b2ca8bfc8c82014af674d0221f59541314b67f5cd58fa6eb8d34
 source_path: raw/pdf/pdf-shu-yang-2026-multi-user-large.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/shu-yang.md
+- wiki/entities/jiaxin-pei.md
+- wiki/entities/michiel-bakker.md
+- wiki/entities/alex-pentland.md
+- wiki/entities/kaust.md
+- wiki/entities/stanford-university.md
+- wiki/concepts/multi-user-llm-agents.md
+- wiki/concepts/multi-principal-decision-problem.md
+- wiki/concepts/principal-agent-problem.md
+- wiki/concepts/selective-context-visibility.md
+- wiki/concepts/single-user-chat-template.md
 meta:
   page_count: 23
   extraction_tool: pdfplumber

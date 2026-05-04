@@ -7,9 +7,14 @@ authors: []
 ingested_at: '2026-04-29T16:27:25Z'
 content_hash: sha256:2d02d5895d16ee94fc4f0bd0cefe5d048466cb79f134dadd75c43c72d6ef47f4
 source_path: raw/pdf/pdf-f073cccdbfe6.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/swingalgo-plus.md
+- wiki/entities/payhip.md
+- wiki/entities/tradingview.md
 meta:
   page_count: 5
   extraction_tool: pdfplumber

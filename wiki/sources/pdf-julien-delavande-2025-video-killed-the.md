@@ -4,7 +4,8 @@ source_id: pdf-julien-delavande-2025-video-killed-the
 source_type: pdf
 title: 'Video Killed the Energy Budget: Characterizing the Latency and Power Regimes
   of Open Text-to-Video Models'
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:13:45Z'
 ---
 # Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models

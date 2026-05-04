@@ -7,9 +7,21 @@ authors: []
 ingested_at: '2026-04-29T16:26:41Z'
 content_hash: sha256:cea16d800873d501302c38837ff0bf15c333695bc85296f3e754826d0f075502
 source_path: raw/pdf/pdf-67b6fe78b28c.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/trader-theory.md
+- wiki/concepts/expansion-retracement-reversal-consolidation.md
+- wiki/concepts/daily-range-structure.md
+- wiki/concepts/true-day-daily-range.md
+- wiki/concepts/judas-swing.md
+- wiki/concepts/equilibrium-discount-premium.md
+- wiki/concepts/liquidity-void.md
+- wiki/concepts/fair-valuation.md
+- wiki/concepts/low-resistance-liquidity-run.md
+- wiki/concepts/market-efficiency-paradigm.md
 meta:
   page_count: 27
   extraction_tool: pdfplumber

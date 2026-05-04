@@ -3,7 +3,8 @@ type: source
 source_id: pdf-ali-modarressi-2025-nolima-long-context
 source_type: pdf
 title: 'NoLiMa: Long-Context Evaluation Beyond Literal Matching'
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:13:59Z'
 ---
 # NoLiMa: Long-Context Evaluation Beyond Literal Matching

@@ -7,9 +7,23 @@ authors: []
 ingested_at: '2026-04-29T16:27:19Z'
 content_hash: sha256:adc69b89dee01f8035192f263c16215432a435d9648bbd793c66e93a860d2e70
 source_path: raw/pdf/pdf-b8cec9d1ec0c.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/xavier-gabaix.md
+- wiki/entities/ralph-koijen.md
+- wiki/entities/nber.md
+- wiki/concepts/inelastic-markets-hypothesis.md
+- wiki/concepts/market-multiplier.md
+- wiki/concepts/granular-instrumental-variables.md
+- wiki/concepts/aggregate-equity-demand-elasticity.md
+- wiki/concepts/mandate-constrained-funds.md
+- wiki/concepts/flow-driven-asset-pricing.md
+- wiki/concepts/qe-for-stocks.md
+- wiki/concepts/corporate-finance-of-inelastic-markets.md
+- wiki/concepts/macro-vs-micro-elasticity-puzzle.md
 meta:
   page_count: 54
   extraction_tool: pdfplumber

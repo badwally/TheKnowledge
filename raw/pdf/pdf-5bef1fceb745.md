@@ -7,9 +7,20 @@ authors: []
 ingested_at: '2026-04-29T16:12:27Z'
 content_hash: sha256:f36028d5296a48cb49aa8427876d9d29712d6687ceb983aad0ee536f07a66843
 source_path: raw/pdf/pdf-5bef1fceb745.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/carla-kuon.md
+- wiki/entities/ucsf-osher-center-for-integrative-health.md
+- wiki/entities/environmental-working-group.md
+- wiki/concepts/long-covid-four-buckets-of-fatigue.md
+- wiki/concepts/anti-inflammatory-diet-long-covid.md
+- wiki/concepts/cytokine-storm.md
+- wiki/concepts/lectin-elimination-diet.md
+- wiki/concepts/molecular-mimicry-food-lectins.md
+- wiki/concepts/low-histamine-diet.md
 meta:
   page_count: 9
   extraction_tool: pdfplumber

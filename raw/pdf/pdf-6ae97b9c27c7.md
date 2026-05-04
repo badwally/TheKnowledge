@@ -9,9 +9,22 @@ authors:
 ingested_at: '2026-04-29T16:27:28Z'
 content_hash: sha256:e790af2479d21b7229bd5ae4f2138fe4bf338ec72ecc8813ed05e4959c5ec367
 source_path: raw/pdf/pdf-6ae97b9c27c7.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/zoltan-pozsar.md
+- wiki/entities/federal-reserve.md
+- wiki/entities/pippa-malmgren.md
+- wiki/entities/jerome-powell.md
+- wiki/entities/arthur-burns.md
+- wiki/concepts/three-pillars-low-inflation.md
+- wiki/concepts/four-prices-of-money.md
+- wiki/concepts/general-mobilization.md
+- wiki/concepts/cyclical-vs-structural-inflation.md
+- wiki/concepts/g-sibs-of-commodities-and-factories.md
+- wiki/concepts/war-economy-macro-investing.md
 meta:
   page_count: 10
   extraction_tool: pdfplumber

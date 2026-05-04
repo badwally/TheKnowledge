@@ -8,8 +8,10 @@ authors:
 ingested_at: '2026-04-29T16:26:57Z'
 content_hash: sha256:96630768d6cdeebbffdd76dc99fbc92b193a74f34e6c8713f4cf6b69f19702ee
 source_path: raw/pdf/pdf-alberto-frizziero-2023-thenorthloop-intro-eng.pdf
-domains: []
-nlm_corpus_ids: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
 wiki_pages: []
 meta:
   page_count: 2

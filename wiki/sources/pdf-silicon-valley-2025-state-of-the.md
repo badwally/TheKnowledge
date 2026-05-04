@@ -3,7 +3,8 @@ type: source
 source_id: pdf-silicon-valley-2025-state-of-the
 source_type: pdf
 title: State of the Markets H2 2025
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:19:37Z'
 ---
 # State of the Markets H2 2025

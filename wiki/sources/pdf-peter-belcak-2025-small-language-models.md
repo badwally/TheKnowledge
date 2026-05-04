@@ -3,7 +3,8 @@ type: source
 source_id: pdf-peter-belcak-2025-small-language-models
 source_type: pdf
 title: Small Language Models are the Future of Agentic AI
-domains: []
+domains:
+- ai-and-agents
 ingested_at: '2026-04-29T16:13:46Z'
 ---
 # Small Language Models are the Future of Agentic AI

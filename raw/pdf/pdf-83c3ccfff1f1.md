@@ -8,9 +8,22 @@ authors: []
 ingested_at: '2026-04-29T16:16:14Z'
 content_hash: sha256:dda99bfb7b3784d5c96e3313b637140a28d69e07ad7a35d374033c1596592868
 source_path: raw/pdf/pdf-83c3ccfff1f1.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/concepts/agentic-ai.md
+- wiki/concepts/autonomous-ai-systems.md
+- wiki/concepts/goal-directed-ai.md
+- wiki/concepts/agentic-ai-vs-traditional-ai.md
+- wiki/concepts/reinforcement-learning.md
+- wiki/concepts/adaptive-control-mechanisms.md
+- wiki/concepts/agentic-ai-applications.md
+- wiki/concepts/agentic-ai-ethical-challenges.md
+- wiki/entities/deepak-bhaskaracharya.md
+- wiki/entities/karthigeyan-kuppan.md
+- wiki/entities/b-divya.md
 meta:
   page_count: 25
   extraction_tool: pdfplumber

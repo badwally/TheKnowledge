@@ -3,7 +3,8 @@ type: source
 source_id: pdf-bd-2002-microsoft-word-dow
 source_type: pdf
 title: Microsoft Word - Dow Award Paper.doc
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:09:53Z'
 ---
 # Microsoft Word - Dow Award Paper.doc

@@ -8,9 +8,25 @@ authors:
 ingested_at: '2026-04-29T16:26:57Z'
 content_hash: sha256:4b7b9f3a53e3e5daf7313b68a847224c1a6f10fbae81fdf1213c5fca6ca7801c
 source_path: raw/pdf/pdf-munger-2021-revised-psychology-of.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/charles-munger.md
+- wiki/entities/robert-cialdini.md
+- wiki/entities/stanley-milgram.md
+- wiki/concepts/munger-twenty-five-tendencies.md
+- wiki/concepts/incentive-caused-bias.md
+- wiki/concepts/lollapalooza-effect.md
+- wiki/concepts/deprival-superreaction-tendency.md
+- wiki/concepts/social-proof-tendency.md
+- wiki/concepts/inconsistency-avoidance-tendency.md
+- wiki/concepts/man-with-a-hammer-tendency.md
+- wiki/concepts/contrast-misreaction-tendency.md
+- wiki/concepts/availability-misweighing-tendency.md
+- wiki/concepts/reciprocation-tendency.md
+- wiki/concepts/authority-misinfluence-tendency.md
 meta:
   page_count: 52
   extraction_tool: pdfplumber

@@ -3,7 +3,8 @@ type: source
 source_id: pdf-won-2022-bii-global-outlook
 source_type: pdf
 title: BII Global outlook
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:11:55Z'
 ---
 # BII Global outlook

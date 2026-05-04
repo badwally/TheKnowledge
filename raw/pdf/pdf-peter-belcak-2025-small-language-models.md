@@ -15,9 +15,21 @@ authors:
 ingested_at: '2026-04-29T16:13:46Z'
 content_hash: sha256:746a4e63f6f9efe2098c22155fa3d030016d6bdb4d6e66e0d969e93b6c6deb3b
 source_path: raw/pdf/pdf-peter-belcak-2025-small-language-models.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/peter-belcak.md
+- wiki/entities/nvidia-research.md
+- wiki/concepts/small-language-model.md
+- wiki/concepts/heterogeneous-agentic-system.md
+- wiki/concepts/llm-to-slm-conversion.md
+- wiki/entities/nemotron-h.md
+- wiki/entities/hymba.md
+- wiki/entities/smollm2.md
+- wiki/entities/xlam-2-8b.md
+- wiki/entities/nvidia-dynamo.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

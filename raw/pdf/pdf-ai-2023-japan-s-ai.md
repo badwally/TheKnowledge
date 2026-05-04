@@ -8,9 +8,23 @@ authors:
 ingested_at: '2026-04-29T16:11:04Z'
 content_hash: sha256:98a9967d67980d50db665921112eeaebdea73483c320211384a6dd9c7a69ec75
 source_path: raw/pdf/pdf-ai-2023-japan-s-ai.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/japan-ldp-ai-project-team.md
+- wiki/entities/yutaka-matsuo.md
+- wiki/entities/kazuto-ataka.md
+- wiki/entities/hiroaki-kitano.md
+- wiki/concepts/llm-social-implementation.md
+- wiki/concepts/foundation-models.md
+- wiki/concepts/ai-regulatory-divergence.md
+- wiki/concepts/cultural-bias-in-ai-data.md
+- wiki/concepts/national-ai-investment-programs.md
+- wiki/concepts/ai-in-government.md
+- wiki/concepts/ai-literacy-education.md
+- wiki/concepts/ai-high-risk-domains.md
 meta:
   page_count: 28
   extraction_tool: pdfplumber

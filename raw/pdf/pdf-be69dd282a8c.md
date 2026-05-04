@@ -7,9 +7,22 @@ authors: []
 ingested_at: '2026-04-29T16:09:55Z'
 content_hash: sha256:91c5866ba6bdf713afb623397d42243b2bc386ddfce2fef15ab0fcf8fe8e3755
 source_path: raw/pdf/pdf-be69dd282a8c.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/jean-philippe-bouchaud.md
+- wiki/entities/y-lemperiere.md
+- wiki/entities/c-deremble.md
+- wiki/entities/p-seager.md
+- wiki/entities/m-potters.md
+- wiki/concepts/two-centuries-trend-anomaly.md
+- wiki/concepts/trend-saturation-effect.md
+- wiki/concepts/trend-following-long-vol-correlation.md
+- wiki/concepts/constant-risk-trend-signal.md
+- wiki/concepts/short-vs-long-trends-degradation.md
+- wiki/concepts/extrapolative-expectations.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

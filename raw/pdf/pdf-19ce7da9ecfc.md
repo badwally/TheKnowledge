@@ -7,9 +7,16 @@ authors: []
 ingested_at: '2026-04-29T16:23:45Z'
 content_hash: sha256:9c7ae5aa003f1376b9d9511e06e09742e8732a0ed8fb8e2e50b45664c7eedb35
 source_path: raw/pdf/pdf-19ce7da9ecfc.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/concepts/smt-divergence.md
+- wiki/concepts/sibling-asset-pairs.md
+- wiki/concepts/ict-trade-checklist.md
+- wiki/concepts/bearish-smt-divergence.md
+- wiki/concepts/bullish-smt-divergence.md
 meta:
   page_count: 5
   extraction_tool: pdfplumber

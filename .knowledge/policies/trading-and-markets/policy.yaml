@@ -1,0 +1,24 @@
+# Auto-generated policy from a domain-proposal (M36).
+# Flesh out inclusion_criteria / exclusion_criteria before running
+# `wiki filter` against this domain.
+
+version: v0.1.0-auto
+auto_generated: true
+auto_generated_from_proposal: true
+domain:
+  slug: trading-and-markets
+  topic: Trading and Markets
+  field: ''
+  description: "Largest cluster \u2014 ICT/SMC trading curricula (Trader Theory threads,\
+    \ demystifying-ICT lessons, order blocks, fair-value gaps, market structure),\
+    \ trading psychology (Kiev, Best Loser Wins, Munger), macro and market commentary\
+    \ (Apollo, ING, Goldman, JPM, Pozsar), and SSRN/NBER finance research. Author\
+    \ handles like Trader Theory, ICT mentorship, Greenblatt, Asness, and Pedersen\
+    \ anchor the theme."
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria: []
+exclusion_criteria: []

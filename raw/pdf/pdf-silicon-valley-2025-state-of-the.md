@@ -8,9 +8,21 @@ authors:
 ingested_at: '2026-04-29T16:19:37Z'
 content_hash: sha256:731466e7fc02271168d1587eae03c8810517b85858e1e2fcb3a85821368fd301
 source_path: raw/pdf/pdf-silicon-valley-2025-state-of-the.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/silicon-valley-bank.md
+- wiki/entities/marc-cadieux.md
+- wiki/entities/mark-gallagher.md
+- wiki/concepts/ai-vc-valuation-premium.md
+- wiki/concepts/mega-deal-vc-distortion.md
+- wiki/concepts/vc-graduation-rate-decline.md
+- wiki/concepts/foreign-born-founder-impact.md
+- wiki/concepts/venture-institutionalization.md
+- wiki/concepts/dot-com-ai-parallel.md
+- wiki/concepts/risk-free-rate-vc-crowding.md
 meta:
   page_count: 34
   extraction_tool: pdfplumber

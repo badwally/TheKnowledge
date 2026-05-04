@@ -7,9 +7,23 @@ authors: []
 ingested_at: '2026-04-29T16:23:44Z'
 content_hash: sha256:9d7bb87643bbc1432e7097acd1c33f89590d972635a248ca33ba80ea911bebfc
 source_path: raw/pdf/pdf-e7ff11e4ad9b.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/leopold-aschenbrenner.md
+- wiki/entities/global-priorities-institute.md
+- wiki/entities/philip-trammell.md
+- wiki/concepts/existential-risk.md
+- wiki/concepts/time-of-perils.md
+- wiki/concepts/environmental-kuznets-curve.md
+- wiki/concepts/directed-technical-change.md
+- wiki/concepts/scale-effect-existential-risk.md
+- wiki/concepts/differential-technological-development.md
+- wiki/concepts/value-of-life-economics.md
+- wiki/concepts/endogenous-growth-model.md
+- wiki/concepts/ai-existential-risk.md
 meta:
   page_count: 99
   extraction_tool: pdfplumber

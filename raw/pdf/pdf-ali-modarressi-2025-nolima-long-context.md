@@ -14,9 +14,20 @@ authors:
 ingested_at: '2026-04-29T16:13:59Z'
 content_hash: sha256:01754197d9d85be7c16eb8bc60514c9bc33b0c04bee80e27ccc839f4f46d922f
 source_path: raw/pdf/pdf-ali-modarressi-2025-nolima-long-context.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/concepts/nolima-benchmark.md
+- wiki/concepts/needle-in-a-haystack.md
+- wiki/concepts/long-context-llm-evaluation.md
+- wiki/concepts/latent-associative-reasoning.md
+- wiki/concepts/literal-matching-shortcut.md
+- wiki/concepts/chain-of-thought-prompting.md
+- wiki/entities/ali-modarressi.md
+- wiki/entities/hinrich-schutze.md
+- wiki/entities/adobe-research.md
 meta:
   page_count: 15
   extraction_tool: pdfplumber

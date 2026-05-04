@@ -11,9 +11,22 @@ authors:
 ingested_at: '2026-04-29T16:13:45Z'
 content_hash: sha256:317ce6f78fc0916a7932b19809d3cb789c4b5f9fa62960db90ddca5684f864ae
 source_path: raw/pdf/pdf-julien-delavande-2025-video-killed-the.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/julien-delavande.md
+- wiki/entities/regis-pierrard.md
+- wiki/entities/sasha-luccioni.md
+- wiki/entities/hugging-face.md
+- wiki/entities/wan21-t2v.md
+- wiki/entities/codecarbon.md
+- wiki/concepts/text-to-video-generation.md
+- wiki/concepts/diffusion-transformer.md
+- wiki/concepts/compute-bound-execution.md
+- wiki/concepts/generative-ai-energy-footprint.md
+- wiki/concepts/t2v-scaling-laws.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

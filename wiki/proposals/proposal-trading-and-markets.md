@@ -3,9 +3,108 @@ type: domain-proposal
 slug: proposal-trading-and-markets
 title: Trading and Markets
 proposed_domain: trading-and-markets
-status: draft
-member_sources: [pdf-042302b20a5d, pdf-04854302f962, pdf-05df32dcb03e, pdf-075e9932265b, pdf-08bcb2d549ba, pdf-13d51286c4cc, pdf-1590d4650297, pdf-1662a4368954, pdf-19445750a197, pdf-19ce7da9ecfc, pdf-1ab14c833d75, pdf-2248d6cdc39f, pdf-2329b8b436f2, pdf-2698a38c6fa5, pdf-2742492120a8, pdf-291109666e00, pdf-2b2d34f2b0ff, pdf-3a3f6480ad77, pdf-3a510f58854c, pdf-3d3d42a0717a, pdf-3eea925a6037, pdf-40482428d656, pdf-46c6dd54d41e, pdf-4b87a8059b38, pdf-4dbe002c1c7a, pdf-4e80c02052f4, pdf-503a04772afb, pdf-50a1f07b475f, pdf-57b1d100694e, pdf-5a5936689043, pdf-5a6062a63a4b, pdf-5bef1fceb745, pdf-5e6d63eac790, pdf-5ef2018823c8, pdf-67b6fe78b28c, pdf-69a1f97797ce, pdf-6ae97b9c27c7, pdf-6ba2dc608ac8, pdf-704c439723d0, pdf-734e612fdf31, pdf-7663c24d3159, pdf-7acc9c92267c, pdf-81305d181382, pdf-853a7755a470, pdf-869163b2f118, pdf-87087198976b, pdf-8f021296560c, pdf-90e7f9350657, pdf-930894c4fbad, pdf-9495a5abb859, pdf-94cecf7a170a, pdf-9613f301a3b5, pdf-9da6062f0265, pdf-a0072c763cf8, pdf-a25e1c0d5f08, pdf-a3789262265a, pdf-a98b496e5936, pdf-b72c5d424466, pdf-b8cec9d1ec0c, pdf-be69dd282a8c, pdf-bf1afc73ac8f, pdf-c25a6984aba0, pdf-c57b9a32c399, pdf-c9b8f466ea39, pdf-cce4b539ce1c, pdf-d0b9b7e97b5c, pdf-d196e853ebc0, pdf-d7094631fbf1, pdf-e2068d89c2a7, pdf-e63407c2b4f4, pdf-e8351bcf5615, pdf-ea646c451aae, pdf-ec9fdef2193c, pdf-ed56b074fb11, pdf-f073cccdbfe6, pdf-f139d7bd1924, pdf-f2565310670c, pdf-fa83c61dfa2d, pdf-fb3e28ab676a, pdf-girquark-2022-global-economics-analyst, pdf-lasse-pedersen-2011-title-how-to, pdf-eric-benhamou-2021-powerpoint-presentation, pdf-bd-2002-microsoft-word-dow, pdf-ari-kiev-2005-stocks-commodities-v, pdf-ali-khan-2023-the-ict-bible, pdf-alberto-frizziero-2023-thenorthloop-intro-eng, pdf-sqzme-2020-the-implied-order, pdf-sugsu-2020-microsoft-word-hfholdem, pdf-won-2022-bii-global-outlook, pdf-judy-2022-primer-adjusted-a, pdf-tw-2007-3379-pdf, pdf-ned-augenblick-2025-overinference-from-weak, pdf-silicon-valley-2025-state-of-the, pdf-matthew-notowidigdo-2020-gkno-manuscript-1025, pdf-munger-2021-revised-psychology-of]
-rationale: Largest cluster — ICT/SMC trading curricula (Trader Theory threads, demystifying-ICT lessons, order blocks, fair-value gaps, market structure), trading psychology (Kiev, Best Loser Wins, Munger), macro and market commentary (Apollo, ING, Goldman, JPM, Pozsar), and SSRN/NBER finance research. Author handles like Trader Theory, ICT mentorship, Greenblatt, Asness, and Pedersen anchor the theme.
+status: blessed
+member_sources:
+- pdf-042302b20a5d
+- pdf-04854302f962
+- pdf-05df32dcb03e
+- pdf-075e9932265b
+- pdf-08bcb2d549ba
+- pdf-13d51286c4cc
+- pdf-1590d4650297
+- pdf-1662a4368954
+- pdf-19445750a197
+- pdf-19ce7da9ecfc
+- pdf-1ab14c833d75
+- pdf-2248d6cdc39f
+- pdf-2329b8b436f2
+- pdf-2698a38c6fa5
+- pdf-2742492120a8
+- pdf-291109666e00
+- pdf-2b2d34f2b0ff
+- pdf-3a3f6480ad77
+- pdf-3a510f58854c
+- pdf-3d3d42a0717a
+- pdf-3eea925a6037
+- pdf-40482428d656
+- pdf-46c6dd54d41e
+- pdf-4b87a8059b38
+- pdf-4dbe002c1c7a
+- pdf-4e80c02052f4
+- pdf-503a04772afb
+- pdf-50a1f07b475f
+- pdf-57b1d100694e
+- pdf-5a5936689043
+- pdf-5a6062a63a4b
+- pdf-5bef1fceb745
+- pdf-5e6d63eac790
+- pdf-5ef2018823c8
+- pdf-67b6fe78b28c
+- pdf-69a1f97797ce
+- pdf-6ae97b9c27c7
+- pdf-6ba2dc608ac8
+- pdf-704c439723d0
+- pdf-734e612fdf31
+- pdf-7663c24d3159
+- pdf-7acc9c92267c
+- pdf-81305d181382
+- pdf-853a7755a470
+- pdf-869163b2f118
+- pdf-87087198976b
+- pdf-8f021296560c
+- pdf-90e7f9350657
+- pdf-930894c4fbad
+- pdf-9495a5abb859
+- pdf-94cecf7a170a
+- pdf-9613f301a3b5
+- pdf-9da6062f0265
+- pdf-a0072c763cf8
+- pdf-a25e1c0d5f08
+- pdf-a3789262265a
+- pdf-a98b496e5936
+- pdf-b72c5d424466
+- pdf-b8cec9d1ec0c
+- pdf-be69dd282a8c
+- pdf-bf1afc73ac8f
+- pdf-c25a6984aba0
+- pdf-c57b9a32c399
+- pdf-c9b8f466ea39
+- pdf-cce4b539ce1c
+- pdf-d0b9b7e97b5c
+- pdf-d196e853ebc0
+- pdf-d7094631fbf1
+- pdf-e2068d89c2a7
+- pdf-e63407c2b4f4
+- pdf-e8351bcf5615
+- pdf-ea646c451aae
+- pdf-ec9fdef2193c
+- pdf-ed56b074fb11
+- pdf-f073cccdbfe6
+- pdf-f139d7bd1924
+- pdf-f2565310670c
+- pdf-fa83c61dfa2d
+- pdf-fb3e28ab676a
+- pdf-girquark-2022-global-economics-analyst
+- pdf-lasse-pedersen-2011-title-how-to
+- pdf-eric-benhamou-2021-powerpoint-presentation
+- pdf-bd-2002-microsoft-word-dow
+- pdf-ari-kiev-2005-stocks-commodities-v
+- pdf-ali-khan-2023-the-ict-bible
+- pdf-alberto-frizziero-2023-thenorthloop-intro-eng
+- pdf-sqzme-2020-the-implied-order
+- pdf-sugsu-2020-microsoft-word-hfholdem
+- pdf-won-2022-bii-global-outlook
+- pdf-judy-2022-primer-adjusted-a
+- pdf-tw-2007-3379-pdf
+- pdf-ned-augenblick-2025-overinference-from-weak
+- pdf-silicon-valley-2025-state-of-the
+- pdf-matthew-notowidigdo-2020-gkno-manuscript-1025
+- pdf-munger-2021-revised-psychology-of
+rationale: Largest cluster — ICT/SMC trading curricula (Trader Theory threads, demystifying-ICT
+  lessons, order blocks, fair-value gaps, market structure), trading psychology (Kiev,
+  Best Loser Wins, Munger), macro and market commentary (Apollo, ING, Goldman, JPM,
+  Pozsar), and SSRN/NBER finance research. Author handles like Trader Theory, ICT
+  mentorship, Greenblatt, Asness, and Pedersen anchor the theme.
 ---
 
 ## Rationale

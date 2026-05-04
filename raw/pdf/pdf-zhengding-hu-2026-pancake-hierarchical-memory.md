@@ -16,9 +16,24 @@ authors:
 ingested_at: '2026-04-29T16:19:07Z'
 content_hash: sha256:edf7510dbfd04aca8db4e14c3a60a62e609fd8b604f9561bc35c7d57c974e7f4
 source_path: raw/pdf/pdf-zhengding-hu-2026-pancake-hierarchical-memory.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/pancake-system.md
+- wiki/entities/zhengding-hu.md
+- wiki/entities/yufei-ding.md
+- wiki/entities/steven-swanson.md
+- wiki/entities/uc-san-diego.md
+- wiki/entities/mem-gpt.md
+- wiki/entities/a-mem.md
+- wiki/concepts/agentic-memory.md
+- wiki/concepts/approximate-nearest-neighbor-search.md
+- wiki/concepts/multi-tier-memory-system.md
+- wiki/concepts/intra-agent-locality.md
+- wiki/concepts/step-wise-memory-locality.md
+- wiki/concepts/scattered-cluster-problem.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

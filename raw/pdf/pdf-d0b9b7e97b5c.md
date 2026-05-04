@@ -7,9 +7,25 @@ authors: []
 ingested_at: '2026-04-29T16:23:28Z'
 content_hash: sha256:b40e0f4d0ae91272635d1d16fcc0da30088c9747c6b8fd4a84026df35154fe84
 source_path: raw/pdf/pdf-d0b9b7e97b5c.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/joel-greenblatt.md
+- wiki/entities/gotham-capital.md
+- wiki/entities/columbia-business-school.md
+- wiki/entities/richard-pzena.md
+- wiki/entities/james-oshaughnessy.md
+- wiki/entities/value-investors-club.md
+- wiki/concepts/mr-market.md
+- wiki/concepts/margin-of-safety.md
+- wiki/concepts/divergence-prices-values.md
+- wiki/concepts/special-situation-investing.md
+- wiki/concepts/circle-of-competence.md
+- wiki/concepts/concentrated-portfolio-investing.md
+- wiki/concepts/valuation-methodologies-greenblatt.md
+- wiki/concepts/value-investing-cycle.md
 meta:
   page_count: 312
   extraction_tool: pdfplumber

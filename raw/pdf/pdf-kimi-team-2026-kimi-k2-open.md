@@ -176,9 +176,22 @@ authors:
 ingested_at: '2026-04-29T16:17:14Z'
 content_hash: sha256:66c0e532f13bd96ea2b68d07ab701d2bd52e5cdd35fd3a5fd5eaa3e81cfa09d0
 source_path: raw/pdf/pdf-kimi-team-2026-kimi-k2-open.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/kimi-k2.md
+- wiki/entities/moonshot-ai.md
+- wiki/concepts/muonclip-optimizer.md
+- wiki/concepts/qk-clip.md
+- wiki/concepts/muon-optimizer.md
+- wiki/concepts/multi-head-latent-attention.md
+- wiki/concepts/mixture-of-experts.md
+- wiki/concepts/agentic-data-synthesis.md
+- wiki/concepts/verifiable-rewards-rl.md
+- wiki/concepts/self-critique-rubric-reward.md
+- wiki/concepts/token-efficiency-pretraining.md
 meta:
   page_count: 32
   extraction_tool: pdfplumber

@@ -8,9 +8,24 @@ authors:
 ingested_at: '2026-04-29T16:18:37Z'
 content_hash: sha256:6e6492a571c0ea466804ea6b57fec419ecd9d03dae29dfb0434c87a059d1711c
 source_path: raw/pdf/pdf-c25a6984aba0.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/cliff-asness.md
+- wiki/entities/aqr-capital-management.md
+- wiki/entities/eugene-fama.md
+- wiki/entities/ken-french.md
+- wiki/entities/john-liew.md
+- wiki/entities/journal-of-portfolio-management.md
+- wiki/concepts/less-efficient-market-hypothesis.md
+- wiki/concepts/joint-hypothesis-problem.md
+- wiki/concepts/value-spread.md
+- wiki/concepts/speed-vs-accuracy-efficiency.md
+- wiki/concepts/asness-bubble-criteria.md
+- wiki/concepts/grossman-stiglitz-paradox.md
+- wiki/concepts/reasonable-emh-standard.md
 meta:
   page_count: 24
   extraction_tool: pdfplumber

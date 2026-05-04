@@ -7,9 +7,23 @@ authors: []
 ingested_at: '2026-04-29T16:15:19Z'
 content_hash: sha256:e43d2aed2e73fbc677af4083da097027959369890a57f937a0f6ab4c67470d21
 source_path: raw/pdf/pdf-5bec4feeb233.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/innovation-endeavors.md
+- wiki/entities/davis-treybig.md
+- wiki/entities/cursor.md
+- wiki/entities/github-copilot.md
+- wiki/entities/midjourney.md
+- wiki/entities/evo-2.md
+- wiki/concepts/inference-time-compute.md
+- wiki/concepts/reasoning-models.md
+- wiki/concepts/model-depreciation.md
+- wiki/concepts/foundation-model-training-economics.md
+- wiki/entities/openai.md
+- wiki/entities/deepseek.md
 meta:
   page_count: 126
   extraction_tool: pdfplumber

@@ -8,8 +8,10 @@ authors:
 ingested_at: '2026-04-29T16:24:18Z'
 content_hash: sha256:1f8a6df77deef69514fb8f8132d9b73fd01797f1a510bbb77ca1f1f34226f682
 source_path: raw/pdf/pdf-girquark-2022-global-economics-analyst.pdf
-domains: []
-nlm_corpus_ids: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
 wiki_pages: []
 meta:
   page_count: 24

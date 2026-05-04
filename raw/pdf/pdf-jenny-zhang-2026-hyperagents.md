@@ -15,9 +15,25 @@ authors:
 ingested_at: '2026-04-29T16:16:27Z'
 content_hash: sha256:93cd012f943a2520553b9d6c013d55594851658a5dfe52b58a7ed471b72b16a2
 source_path: raw/pdf/pdf-jenny-zhang-2026-hyperagents.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- ai-and-agents
+nlm_corpus_ids:
+- 7eac1296-b611-422e-85bb-6c36f5c8872b
+wiki_pages:
+- wiki/entities/jenny-zhang.md
+- wiki/entities/jakob-foerster.md
+- wiki/entities/jeff-clune.md
+- wiki/entities/tatiana-shavrina.md
+- wiki/entities/fair-at-meta.md
+- wiki/entities/meta-superintelligence-labs.md
+- wiki/entities/vector-institute.md
+- wiki/concepts/hyperagent.md
+- wiki/concepts/darwin-godel-machine.md
+- wiki/concepts/dgm-hyperagents.md
+- wiki/concepts/metacognitive-self-modification.md
+- wiki/concepts/self-referential-agent.md
+- wiki/concepts/recursive-self-improvement.md
+- wiki/concepts/open-ended-self-improvement.md
 meta:
   page_count: 60
   extraction_tool: pdfplumber

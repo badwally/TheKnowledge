@@ -1,0 +1,21 @@
+# Auto-generated policy from a domain-proposal (M36).
+# Flesh out inclusion_criteria / exclusion_criteria before running
+# `wiki filter` against this domain.
+
+version: v0.1.0-auto
+auto_generated: true
+auto_generated_from_proposal: true
+domain:
+  slug: ai-and-agents
+  topic: AI and Agentic Systems
+  field: ''
+  description: "Foundation models, transformer architecture, agentic systems, multi-agent\
+    \ research, model efficiency, AI policy, and the macro/strategic implications\
+    \ of AI. Mostly arXiv-style papers and industry reports from 2024\u20132026."
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria: []
+exclusion_criteria: []

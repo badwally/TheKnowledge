@@ -3,7 +3,8 @@ type: source
 source_id: pdf-ea646c451aae
 source_type: pdf
 title: Generic view of today's close
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:19:07Z'
 ---
 # Generic view of today's close

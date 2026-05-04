@@ -8,9 +8,15 @@ authors:
 ingested_at: '2026-04-29T16:09:53Z'
 content_hash: sha256:e7c3de519b414db6e3234832c6acf4ae0fa1dc4d24418688a132ec760ae9be2b
 source_path: raw/pdf/pdf-bd-2002-microsoft-word-dow.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/paul-desmond.md
+- wiki/entities/lowrys-reports.md
+- wiki/concepts/ninety-percent-days.md
+- wiki/concepts/lowry-supply-demand-framework.md
 meta:
   page_count: 17
   extraction_tool: pdfplumber

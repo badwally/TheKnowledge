@@ -7,9 +7,20 @@ authors: []
 ingested_at: '2026-04-29T16:24:19Z'
 content_hash: sha256:db5c9329387a3c2aabf49a54ececcbb9ed2b1067d719542abef261a142f53e94
 source_path: raw/pdf/pdf-fa83c61dfa2d.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/quincy-data.md
+- wiki/entities/riadh-zaatour.md
+- wiki/entities/stephane-tyc.md
+- wiki/entities/nanex.md
+- wiki/entities/virtu-financial.md
+- wiki/entities/fia-ptg.md
+- wiki/concepts/fomc-news-release-mechanism.md
+- wiki/concepts/speed-of-light-latency-constraint.md
+- wiki/concepts/winner-takes-all-microstructure.md
 meta:
   page_count: 11
   extraction_tool: pdfplumber

@@ -8,9 +8,17 @@ authors:
 ingested_at: '2026-04-29T16:26:54Z'
 content_hash: sha256:a24f09c1150f54cc31da80849bc5b1c333234c32b67081514cb7e9dfdc78b6ea
 source_path: raw/pdf/pdf-sqzme-2020-the-implied-order.pdf
-domains: []
-nlm_corpus_ids: []
-wiki_pages: []
+domains:
+- trading-and-markets
+nlm_corpus_ids:
+- ccbda94f-7251-42bb-864f-0e1c9850f7ad
+wiki_pages:
+- wiki/entities/squeezemetrics.md
+- wiki/concepts/implied-order-book.md
+- wiki/concepts/gamma-exposure-gex.md
+- wiki/concepts/vanna-exposure-vex.md
+- wiki/concepts/dealer-directional-open-interest.md
+- wiki/concepts/negative-gamma-exposure.md
 meta:
   page_count: 12
   extraction_tool: pdfplumber

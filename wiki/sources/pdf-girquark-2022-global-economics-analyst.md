@@ -3,7 +3,8 @@ type: source
 source_id: pdf-girquark-2022-global-economics-analyst
 source_type: pdf
 title: Global Economics Analyst Macro Outlook 2023 This Cycle Is Different
-domains: []
+domains:
+- trading-and-markets
 ingested_at: '2026-04-29T16:24:18Z'
 ---
 # Global Economics Analyst Macro Outlook 2023 This Cycle Is Different
