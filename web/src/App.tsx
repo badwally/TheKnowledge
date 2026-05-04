@@ -1,5 +1,7 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import Finalize from "./pages/Finalize";
+import FilterCorrect from "./pages/FilterCorrect";
 import Ingest from "./pages/Ingest";
 import Query from "./pages/Query";
 
@@ -41,8 +43,8 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/ops/ingest" element={<Ingest />} />
           <Route path="/ops/query" element={<Query />} />
-          <Route path="/ops/finalize" element={<Placeholder name="Finalize" />} />
-          <Route path="/ops/filter-correct" element={<Placeholder name="Filter correct" />} />
+          <Route path="/ops/finalize" element={<Finalize />} />
+          <Route path="/ops/filter-correct" element={<FilterCorrect />} />
           <Route path="/domains/bootstrap" element={<Placeholder name="Bootstrap domain" />} />
           <Route path="/domains/discover" element={<Placeholder name="Discover domains" />} />
           <Route path="/domains/promote" element={<Placeholder name="Promote / Demote / Reject" />} />
