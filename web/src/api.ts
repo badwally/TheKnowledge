@@ -2,7 +2,11 @@ import type {
   DomainSummary,
   LogEntry,
   OperationResult,
+  ProgressResponse,
   ProposalSummary,
+  ResearchPlanQueries,
+  ResearchSessionDetail,
+  ResearchSessionSummary,
   StatusResponse,
   TaskResponse,
 } from "./types";
@@ -74,4 +78,26 @@ export const api = {
       body: JSON.stringify(body),
     }),
   getTask: (id: string) => request<TaskResponse>(`/api/tasks/${id}`),
+
+  // Research (M41)
+  listSessions: () => request<ResearchSessionSummary[]>("/api/research/sessions"),
+  getSession: (id: string) =>
+    request<ResearchSessionDetail>(`/api/research/sessions/${id}`),
+  createSession: (body: object) =>
+    request<{ task_id: string; status: string }>("/api/research/sessions", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+  updatePlan: (id: string, queries: ResearchPlanQueries) =>
+    request<ResearchSessionDetail>(`/api/research/sessions/${id}/plan`, {
+      method: "PUT",
+      body: JSON.stringify({ queries }),
+    }),
+  executeSession: (id: string, body: object = {}) =>
+    request<{ task_id: string; status: string }>(
+      `/api/research/sessions/${id}/execute`,
+      { method: "POST", body: JSON.stringify(body) },
+    ),
+  getProgress: (id: string) =>
+    request<ProgressResponse>(`/api/research/sessions/${id}/progress`),
 };

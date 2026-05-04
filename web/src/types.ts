@@ -70,3 +70,48 @@ export interface TaskResponse {
   result: OperationResult | null;
   error: string | null;
 }
+
+export interface ResearchPlanQueries {
+  arxiv: string[];
+  youtube: string[];
+  web: string[];
+  pubmed: string[];
+}
+
+export interface ResearchPlan {
+  queries: ResearchPlanQueries;
+  target_counts: Record<string, number>;
+}
+
+export interface ResearchSessionSummary {
+  session_id: string;
+  prompt: string;
+  domain: string;
+  state: "plan_only" | "edited" | "running" | "done" | "abandoned";
+  generated_at: string;
+  edited: boolean;
+  query_count: number;
+  sources_count: number | null;
+}
+
+export interface ResearchSessionDetail {
+  session_id: string;
+  prompt: string;
+  domain: string;
+  state: "plan_only" | "edited" | "running" | "done" | "abandoned";
+  generated_at: string;
+  edited: boolean;
+  plan: ResearchPlan;
+  sources_count: number | null;
+}
+
+export interface ProgressStep {
+  name: string;
+  status: "queued" | "running" | "done" | "failed";
+  summary: string;
+  timestamp: string | null;
+}
+
+export interface ProgressResponse {
+  steps: ProgressStep[];
+}
