@@ -710,6 +710,30 @@ All 8 pre-existing M37 orchestrator tests pass unchanged (backwards-compat invar
 - Per-adapter query-quality telemetry (which queries returned the highest-filter-score candidates). Useful but not load-bearing.
 - A long-form integration test that exercises real adapters end-to-end. The dry-run hand-test covers it; the regression suite covers it; an automated end-to-end test would be useful but not gating.
 
+### M38 — Smart authorship: contradiction detection + post-ingest feedback
+
+Addresses two weaknesses identified in a panel-of-experts UX review (W2: no connection between new source and existing knowledge at ingest time; W7: post-ingest feedback doesn't communicate knowledge impact). The authorship agent now detects contradictions between new sources and existing wiki claims, prioritizes updating existing pages over creating new ones, and emits a structured report of everything it did.
+
+**What's new.**
+
+- `gateway.plan.Contradiction` — new dataclass representing a conflict between a new source's claim and an existing wiki page. Fields: `existing_page`, `existing_claim`, `new_claim`, `source_id`, `severity` (minor/moderate/major). Carried on `Plan.contradictions` and parsed from the agent's JSON response; malformed items are skipped gracefully.
+
+- `gateway.core.AuthorshipReport` — structured summary attached to `OperationResult.authorship_report`. Tracks `pages_created`, `pages_updated`, `contradictions`. Provides `format_summary()` (one-liner: "2 created, 1 updated, 1 contradiction(s) found") and `format_detail()` (CLI-renderable lines with `+`/`~`/`!` prefixes for created/updated/contradictions).
+
+- `apply_plan()` builds the report from plan execution results and passes it through to the caller. Log entries now include `created`, `updated`, and `contradictions` counts.
+
+- `_emit_result()` in `cli.py` renders the authorship report when present: summary line + detail lines showing exactly what pages were created/updated and any contradictions detected.
+
+- `ingest()` propagates `authorship_report` from the plan result to the ingest result, so `wiki ingest --with-plan` shows the full report.
+
+- Authorship prompt rewritten with three explicit instructions: (1) prioritize updating existing pages over creating new ones, with merge guidance; (2) detect and report all contradictions with severity classification; (3) return contradictions in the JSON response alongside updates.
+
+**Tests.** 11 new tests in `test_authorship.py`: contradiction parsing (2), AuthorshipReport formatting (3), apply_plan report population (2), log entry with contradictions (1), ingest report propagation (1), full end-to-end flow (1), prompt content verification (2). Full authorship suite: 40 → 51 tests passing.
+
+**Commits.** `19545d0`..`2a09b13` (7 commits).
+
+**Files modified.** `plan.py` (Contradiction + prompt), `core.py` (AuthorshipReport + OperationResult field), `apply_plan.py` (report construction + log fields), `cli.py` (report rendering), `ingest.py` (report propagation), `test_authorship.py` (11 tests).
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
