@@ -165,3 +165,38 @@ def test_put_plan_unknown_session_returns_404(client, kb_root):
         json={"queries": {"arxiv": [], "youtube": [], "web": [], "pubmed": []}},
     )
     assert resp.status_code == 404
+
+
+def test_execute_returns_task_id(client, kb_root, monkeypatch):
+    """POST /api/research/sessions/{id}/execute returns 202 + task_id."""
+    _seed_query_plan(
+        "2026-05-04-exec",
+        domain="d-test",
+        prompt="x",
+        queries={"arxiv": ["q"], "youtube": [], "web": [], "pubmed": []},
+    )
+
+    # Stub the orchestrator's research() to avoid real network/NLM calls.
+    from gateway.research import orchestrator
+    from gateway.core import OperationResult
+
+    captured_kwargs = {}
+
+    def fake_research(prompt=None, **kwargs):
+        captured_kwargs.update(kwargs)
+        return OperationResult(
+            success=True,
+            summary=f"stubbed research (execute_session={kwargs.get('execute_session')})",
+            paths_touched=[],
+        )
+
+    monkeypatch.setattr(orchestrator, "research", fake_research)
+
+    resp = client.post(
+        "/api/research/sessions/2026-05-04-exec/execute",
+        json={"dry_run": False, "draft": False},
+    )
+    assert resp.status_code == 202
+    body = resp.json()
+    assert "task_id" in body
+    assert body["status"] == "queued"

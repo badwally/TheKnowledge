@@ -157,3 +157,8 @@ class CreateSessionRequest(BaseModel):
 
 class UpdatePlanRequest(BaseModel):
     queries: ResearchPlanQueries
+
+
+class ExecuteSessionRequest(BaseModel):
+    dry_run: bool = False
+    draft: bool = False

@@ -17,6 +17,7 @@ from gateway.research.query_plan_store import QueryPlan, save as save_plan
 from gateway.research.session import make_session_id
 from gateway.web.schemas import (
     CreateSessionRequest,
+    ExecuteSessionRequest,
     ResearchPlan,
     ResearchPlanQueries,
     ResearchSessionDetail,
@@ -273,3 +274,44 @@ def put_plan(session_id: str, req: UpdatePlanRequest) -> ResearchSessionDetail:
 
     # Return the refreshed detail
     return get_session(session_id)
+
+
+@router.post("/sessions/{session_id}/execute", status_code=202)
+async def execute_session(
+    session_id: str, req: ExecuteSessionRequest, request: Request
+) -> JSONResponse:
+    plans_dir = paths.knowledge_root() / "nlm" / "query_plans"
+    path = plans_dir / f"{session_id}.yaml"
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail=f"unknown session: {session_id}")
+
+    store = request.app.state.task_store
+    record = store.create("research-execute")
+
+    captured_session_id = session_id
+    captured_dry_run = req.dry_run
+    captured_draft = req.draft
+
+    def run() -> dict:
+        from gateway.research import orchestrator
+
+        result = orchestrator.research(
+            None,  # prompt loaded from persisted plan via execute_session
+            execute_session=captured_session_id,
+            dry_run=captured_dry_run,
+            draft=captured_draft,
+        )
+        return {
+            "success": result.success,
+            "summary": result.summary,
+            "paths_touched": [str(p) for p in result.paths_touched],
+            "warnings": list(result.warnings),
+            "errors": list(result.errors),
+            "no_op": result.no_op,
+        }
+
+    store.run_in_thread(record.task_id, run)
+    return JSONResponse(
+        status_code=202,
+        content={"task_id": record.task_id, "status": "queued"},
+    )
