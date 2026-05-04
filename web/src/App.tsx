@@ -1,8 +1,11 @@
 import { NavLink, Route, Routes } from "react-router-dom";
+import Bootstrap from "./pages/Bootstrap";
 import Dashboard from "./pages/Dashboard";
+import Discover from "./pages/Discover";
 import Finalize from "./pages/Finalize";
 import FilterCorrect from "./pages/FilterCorrect";
 import Ingest from "./pages/Ingest";
+import Promote from "./pages/Promote";
 import Query from "./pages/Query";
 
 function Sidebar() {
@@ -45,9 +48,9 @@ export default function App() {
           <Route path="/ops/query" element={<Query />} />
           <Route path="/ops/finalize" element={<Finalize />} />
           <Route path="/ops/filter-correct" element={<FilterCorrect />} />
-          <Route path="/domains/bootstrap" element={<Placeholder name="Bootstrap domain" />} />
-          <Route path="/domains/discover" element={<Placeholder name="Discover domains" />} />
-          <Route path="/domains/promote" element={<Placeholder name="Promote / Demote / Reject" />} />
+          <Route path="/domains/bootstrap" element={<Bootstrap />} />
+          <Route path="/domains/discover" element={<Discover />} />
+          <Route path="/domains/promote" element={<Promote />} />
           <Route path="/system/lint" element={<Placeholder name="Lint" />} />
         </Routes>
       </main>
