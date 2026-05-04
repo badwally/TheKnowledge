@@ -33,15 +33,27 @@ class WikiUpdate:
 
 
 @dataclass
+class Contradiction:
+    """A conflict between a new source's claim and an existing wiki page."""
+
+    existing_page: str
+    existing_claim: str
+    new_claim: str
+    source_id: str
+    severity: str = "moderate"  # "minor" | "moderate" | "major"
+
+
+@dataclass
 class Plan:
     """The agent's plan for a single source ingest."""
 
     source_id: str
     rationale: str = ""
     updates: list[WikiUpdate] = field(default_factory=list)
+    contradictions: list[Contradiction] = field(default_factory=list)
 
     def __bool__(self) -> bool:
-        return bool(self.updates)
+        return bool(self.updates) or bool(self.contradictions)
 
 
 # --- response parsing ------------------------------------------------------
@@ -122,10 +134,29 @@ def parse_plan_response(text: str, *, expected_source_id: str | None = None) -> 
             )
         )
 
+    raw_contradictions = obj.get("contradictions", [])
+    if not isinstance(raw_contradictions, list):
+        raw_contradictions = []
+
+    contradictions: list[Contradiction] = []
+    for item in raw_contradictions:
+        if not isinstance(item, dict):
+            continue
+        contradictions.append(
+            Contradiction(
+                existing_page=str(item.get("existing_page", "")).strip(),
+                existing_claim=str(item.get("existing_claim", "")).strip(),
+                new_claim=str(item.get("new_claim", "")).strip(),
+                source_id=str(item.get("source_id", "")).strip(),
+                severity=str(item.get("severity", "moderate")).strip(),
+            )
+        )
+
     return Plan(
         source_id=source_id,
         rationale=str(obj.get("rationale", "")).strip(),
         updates=updates,
+        contradictions=contradictions,
     )
 
 
@@ -231,8 +262,22 @@ Return ONLY a JSON object:
 
 Touch as many pages as the source genuinely informs (typically 5–15).
 For `update`s, the `content` field replaces the page entirely — preserve
-existing claims and citations and integrate the new ones. Do NOT include
-sources pages (`wiki/sources/<id>.md`) — those are managed by the gateway.
+existing claims and citations and integrate the new ones.
+
+**Per-source plans must ONLY produce entity (`wiki/entities/`) and concept
+(`wiki/concepts/`) pages.** Do NOT generate:
+
+- `wiki/sources/<id>.md` — managed by the gateway.
+- `wiki/synthesis/...` — synthesis is by definition cross-source. Generate
+  via `wiki query` or future cross-source ops, not from a single source's
+  ingest plan. Single-source synthesis fails citation grounding because the
+  agent often emits speculative "Open questions" without citation backing.
+- `wiki/mocs/<domain>.md` — MOCs are domain-scoped, edited by separate
+  curation operations. A per-source plan cannot produce a complete MOC.
+
+If the source genuinely warrants a new entity/concept, create it. Otherwise
+update the existing one. Concept and entity pages must have every claim
+followed by `[[sources/<id>]]` linking to a source already on disk.
 """
 
 
@@ -242,6 +287,10 @@ def build_plan_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
     `existing_pages` maps relative-path (e.g. "wiki/concepts/food-noise.md")
     to the page's current canonical text. The prompt embeds these so the
     agent can revise rather than overwrite.
+
+    Strips embedded null bytes from `source_text` before embedding —
+    pdfplumber occasionally extracts NUL characters from malformed PDFs
+    and `subprocess.run` rejects them with `embedded null byte`.
     """
     if not existing_pages:
         existing_section = "_(no existing wiki pages yet for this domain)_"
@@ -252,6 +301,6 @@ def build_plan_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
         existing_section = "\n\n".join(blocks)
 
     return _PLAN_PROMPT_TEMPLATE.format(
-        source_text=source_text,
+        source_text=source_text.replace("\x00", ""),
         existing_pages_section=existing_section,
     )

@@ -18,6 +18,7 @@ from gateway.ops.finalize import finalize
 from gateway.ops.ingest import ingest
 from gateway.ops.query import query
 from gateway.plan import (
+    Contradiction,
     Plan,
     PlanError,
     WikiUpdate,
@@ -284,6 +285,35 @@ def test_parse_plan_response_rejects_bad_update_kind():
     raw = '{"source_id": "yt-1", "rationale": "r", "updates": [{"target_path": "wiki/entities/x.md", "update_kind": "patch", "content": "x"}]}'
     with pytest.raises(PlanError):
         parse_plan_response(raw)
+
+
+def test_parse_plan_response_parses_contradictions():
+    import json as _json
+    raw = _json.dumps({
+        "source_id": "yt-1",
+        "rationale": "r",
+        "updates": [],
+        "contradictions": [
+            {
+                "existing_page": "wiki/concepts/food-noise.md",
+                "existing_claim": "Food noise is universally reduced by GLP-1 RAs",
+                "new_claim": "Food noise reduction varies by receptor subtype",
+                "source_id": "yt-1",
+                "severity": "moderate",
+            }
+        ],
+    })
+    plan = parse_plan_response(raw)
+    assert len(plan.contradictions) == 1
+    c = plan.contradictions[0]
+    assert c.existing_page == "wiki/concepts/food-noise.md"
+    assert c.severity == "moderate"
+
+
+def test_parse_plan_response_defaults_empty_contradictions():
+    raw = '{"source_id": "yt-1", "rationale": "r", "updates": []}'
+    plan = parse_plan_response(raw)
+    assert plan.contradictions == []
 
 
 def test_build_plan_prompt_includes_source_and_existing():
