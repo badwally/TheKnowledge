@@ -46,6 +46,7 @@ def enabled_adapters(
         ("youtube", "gateway.research.adapters.youtube", "YouTubeAdapter"),
         ("web", "gateway.research.adapters.web", "WebAdapter"),
         ("pubmed", "gateway.research.adapters.pubmed", "PubMedAdapter"),
+        ("semantic_scholar", "gateway.research.adapters.semantic_scholar", "SemanticScholarAdapter"),
     ]
 
     for name, module_path, class_name in _network_specs:
