@@ -367,3 +367,4 @@ first to orient before drilling into specific pages.
 - [[sources/pdf-23eaf3fa1bbb]] · pdf · white_paper
 - [[sources/pdf-6ae97b9c27c7]] · pdf · zoltan-pozsar-aug-2-war-and-interest-rates-1
 - [[sources/pdf-sriram-krishnan-2019-untitled]] · pdf · Untitled
+- [[sources/pdf-d4797e8f4981]] · pdf · 9_Designing+End-to-End+Retrieval-Augmented+Generation(RAG)+Workflows+for+Knowledge-Intensive+Applications
