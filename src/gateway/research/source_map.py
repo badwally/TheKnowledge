@@ -61,7 +61,7 @@ def fetch_nlm_sources(notebook_id: str) -> list[dict]:
     but is not required for matching (we match `raw/` URLs against the
     NLM-side title-or-URL and trust either side).
     """
-    args = [*NLM_CMD, "notebook", "source", "list", notebook_id, "--json"]
+    args = [*NLM_CMD, "source", "list", notebook_id, "--json"]
     try:
         result = subprocess.run(
             args,
