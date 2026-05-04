@@ -62,3 +62,26 @@ def test_list_sessions_sorted_newest_first(client, kb_root):
     sessions = resp.json()
     assert sessions[0]["session_id"] == "2026-05-04-new"
     assert sessions[1]["session_id"] == "2026-05-01-old"
+
+
+def test_get_session_returns_full_plan(client, kb_root):
+    _seed_query_plan(
+        "2026-05-04-detail",
+        domain="d-test",
+        prompt="detail test prompt",
+        queries={"arxiv": ["a1", "a2"], "youtube": ["y1"], "web": [], "pubmed": []},
+    )
+    resp = client.get("/api/research/sessions/2026-05-04-detail")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["session_id"] == "2026-05-04-detail"
+    assert body["domain"] == "d-test"
+    assert body["prompt"] == "detail test prompt"
+    assert body["plan"]["queries"]["arxiv"] == ["a1", "a2"]
+    assert body["plan"]["queries"]["youtube"] == ["y1"]
+    assert body["state"] == "plan_only"
+
+
+def test_get_unknown_session_returns_404(client):
+    resp = client.get("/api/research/sessions/nonexistent")
+    assert resp.status_code == 404

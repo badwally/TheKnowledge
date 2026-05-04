@@ -6,10 +6,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 
 from gateway import nlm_registry, paths
-from gateway.web.schemas import ResearchSessionSummary
+from gateway.web.schemas import (
+    ResearchPlan,
+    ResearchPlanQueries,
+    ResearchSessionDetail,
+    ResearchSessionSummary,
+)
 
 
 router = APIRouter(prefix="/api/research", tags=["research"])
@@ -111,3 +116,53 @@ def _sources_count(domain: str, session_id: str) -> int | None:
         return int(val)
     except (TypeError, ValueError):
         return None
+
+
+@router.get("/sessions/{session_id}", response_model=ResearchSessionDetail)
+def get_session(session_id: str) -> ResearchSessionDetail:
+    plans_dir = paths.knowledge_root() / "nlm" / "query_plans"
+    path = plans_dir / f"{session_id}.yaml"
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail=f"unknown session: {session_id}")
+
+    try:
+        data = yaml.safe_load(path.read_text()) or {}
+    except yaml.YAMLError as e:
+        raise HTTPException(status_code=500, detail=f"invalid plan YAML: {e}")
+    if not isinstance(data, dict):
+        raise HTTPException(status_code=500, detail="plan YAML is not a mapping")
+
+    domain = str(data.get("domain") or "")
+    prompt = str(data.get("prompt") or "")
+    generated_at = str(data.get("generated_at") or "")
+    queries_raw = data.get("queries") or {}
+    if not isinstance(queries_raw, dict):
+        queries_raw = {}
+
+    queries = ResearchPlanQueries(
+        arxiv=list(queries_raw.get("arxiv") or []),
+        youtube=list(queries_raw.get("youtube") or []),
+        web=list(queries_raw.get("web") or []),
+        pubmed=list(queries_raw.get("pubmed") or []),
+    )
+    target_counts_raw = data.get("target_counts") or {}
+    if isinstance(target_counts_raw, dict):
+        target_counts = {
+            k: int(v) for k, v in target_counts_raw.items() if isinstance(v, (int, float))
+        }
+    else:
+        target_counts = {}
+
+    edited = _is_edited(path, generated_at)
+    state = _derive_state(domain, session_id, edited)
+
+    return ResearchSessionDetail(
+        session_id=session_id,
+        prompt=prompt,
+        domain=domain,
+        state=state,
+        generated_at=generated_at,
+        edited=edited,
+        plan=ResearchPlan(queries=queries, target_counts=target_counts),
+        sources_count=_sources_count(domain, session_id),
+    )

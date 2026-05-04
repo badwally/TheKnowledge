@@ -124,3 +124,26 @@ class ResearchSessionSummary(BaseModel):
     edited: bool = False
     query_count: int = 0
     sources_count: int | None = None
+
+
+class ResearchPlanQueries(BaseModel):
+    arxiv: list[str] = []
+    youtube: list[str] = []
+    web: list[str] = []
+    pubmed: list[str] = []
+
+
+class ResearchPlan(BaseModel):
+    queries: ResearchPlanQueries
+    target_counts: dict[str, int] = {}
+
+
+class ResearchSessionDetail(BaseModel):
+    session_id: str
+    prompt: str
+    domain: str
+    state: str
+    generated_at: str
+    edited: bool = False
+    plan: ResearchPlan
+    sources_count: int | None = None
