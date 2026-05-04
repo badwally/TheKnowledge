@@ -125,6 +125,9 @@ def apply_plan(
             fields={
                 "id": plan.source_id,
                 "updates": len(plan.updates),
+                "created": sum(1 for u, _, _, _ in parsed if u.update_kind == "create"),
+                "updated": sum(1 for u, _, _, _ in parsed if u.update_kind == "update"),
+                "contradictions": len(plan.contradictions),
                 "draft": "yes" if draft else "no",
             },
             summary=plan.rationale or "(no rationale provided)",

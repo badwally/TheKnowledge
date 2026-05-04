@@ -802,3 +802,74 @@ def test_ingest_with_plan_failure_still_commits_source(kb_root, make_source, tmp
     # source page committed despite plan failure
     assert paths.wiki_source_path("yt-ingPlanFailX_AB").exists()
     assert any("authorship failed" in w for w in result.warnings)
+
+
+def test_apply_plan_log_includes_contradictions(kb_root, make_source):
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="test log",
+        updates=[_make_concept_update("log-concept", "yt-applyTest1A")],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/old.md",
+                existing_claim="Old statement",
+                new_claim="New conflicting statement",
+                source_id="yt-applyTest1A",
+                severity="major",
+            ),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success
+
+    log_text = paths.log_path().read_text()
+    assert "contradictions=1" in log_text
+
+
+def test_ingest_with_plan_propagates_authorship_report(kb_root, make_source, tmp_path):
+    import json as _json
+
+    text = make_source(id_="yt-reportTest_AB", domains=[])
+    src = tmp_path / "in.md"
+    src.write_text(text)
+
+    update_content = fm.serialize(
+        {
+            "type": "concept",
+            "slug": "reported-concept",
+            "canonical_name": "Reported concept",
+            "domains": ["any"],
+        },
+        (
+            "# Reported concept\n\n"
+            "## Summary\n\nA concept with a citation [[sources/yt-reportTest_AB]].\n\n"
+            "## Key claims\n\n- Key claim here [[sources/yt-reportTest_AB]].\n\n"
+            "## Sources\n\n- [[sources/yt-reportTest_AB]]\n\n"
+            "## Related\n\n- [[concepts/other]]\n"
+        ),
+    )
+
+    plan_response = _json.dumps({
+        "source_id": "yt-reportTest_AB",
+        "rationale": "stub with report",
+        "updates": [{
+            "target_path": "wiki/concepts/reported-concept.md",
+            "update_kind": "create",
+            "content": update_content,
+        }],
+        "contradictions": [{
+            "existing_page": "wiki/concepts/old-concept.md",
+            "existing_claim": "Old claim",
+            "new_claim": "New claim",
+            "source_id": "yt-reportTest_AB",
+            "severity": "minor",
+        }],
+    })
+
+    client = StubPlanClient(response=plan_response)
+    result = ingest(src, with_plan=True, plan_client=client)
+    assert result.success, result.errors
+    assert result.authorship_report is not None
+    assert len(result.authorship_report.pages_created) == 1
+    assert len(result.authorship_report.contradictions) == 1

@@ -102,6 +102,13 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Allow partial citations on agent-generated pages; mark as draft",
     )
+    p_ingest.add_argument(
+        "--plan-timeout",
+        type=float,
+        default=None,
+        help="Plan-client wall-clock budget in seconds (default 300; bump for "
+        "large source bodies — 50KB+ PDFs often need 600+).",
+    )
 
     # filter (read-only scoring)
     p_filter = subparsers.add_parser("filter", help=SUBCOMMANDS["filter"])
@@ -567,6 +574,11 @@ def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") ->
         print(f"{prefix}: {result.summary}")
         for p in result.paths_touched:
             print(f"  touched: {p}")
+        if result.authorship_report is not None:
+            report = result.authorship_report
+            print(f"  authorship: {report.format_summary()}")
+            for line in report.format_detail():
+                print(line)
         for w in result.warnings:
             print(f"warning: {w}", file=sys.stderr)
         return 0
@@ -578,6 +590,10 @@ def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") ->
 
 def _run_ingest(ns: argparse.Namespace) -> int:
     from gateway.ops.ingest import ingest
+    from gateway.plan import ClaudeCLIPlanClient
+
+    timeout_s = getattr(ns, "plan_timeout", None)
+    plan_client = ClaudeCLIPlanClient(timeout_s=timeout_s) if timeout_s else None
 
     return _emit_result(
         ingest(
@@ -585,6 +601,7 @@ def _run_ingest(ns: argparse.Namespace) -> int:
             domain=ns.domain,
             with_plan=getattr(ns, "with_plan", False),
             draft=getattr(ns, "draft", False),
+            plan_client=plan_client,
         )
     )
 

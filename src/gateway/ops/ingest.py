@@ -363,6 +363,7 @@ def _ingest_canonical_text(
             result_obj.paths_touched.extend(plan_result.paths_touched)
             result_obj.summary += f"; authorship: {plan_result.summary}"
             result_obj.warnings.extend(plan_result.warnings)
+            result_obj.authorship_report = plan_result.authorship_report
         else:
             # Plan failure does not invalidate the source ingest itself; the
             # source page is still committed. Surface plan errors as warnings
