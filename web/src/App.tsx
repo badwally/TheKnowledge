@@ -5,6 +5,7 @@ import Discover from "./pages/Discover";
 import Finalize from "./pages/Finalize";
 import FilterCorrect from "./pages/FilterCorrect";
 import Ingest from "./pages/Ingest";
+import Lint from "./pages/Lint";
 import Promote from "./pages/Promote";
 import Query from "./pages/Query";
 
@@ -51,7 +52,7 @@ export default function App() {
           <Route path="/domains/bootstrap" element={<Bootstrap />} />
           <Route path="/domains/discover" element={<Discover />} />
           <Route path="/domains/promote" element={<Promote />} />
-          <Route path="/system/lint" element={<Placeholder name="Lint" />} />
+          <Route path="/system/lint" element={<Lint />} />
         </Routes>
       </main>
     </div>
