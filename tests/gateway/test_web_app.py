@@ -123,3 +123,19 @@ def test_list_proposals(client, kb_root):
 def test_promote_domain_returns_error_for_missing_proposal(client, kb_root):
     resp = client.post("/api/domains/nonexistent/promote")
     assert resp.status_code == 400
+
+
+def test_finalize_endpoint_rejects_missing_path(client, kb_root):
+    resp = client.post(
+        "/api/ops/finalize",
+        json={"page_path": "wiki/concepts/nonexistent.md", "abandon": False},
+    )
+    assert resp.status_code == 400
+
+
+def test_filter_correct_endpoint_returns_error_for_missing_source(client, kb_root):
+    resp = client.post(
+        "/api/ops/filter-correct",
+        json={"source_id": "yt-nonexistent", "decision": "include", "rationale": "r"},
+    )
+    assert resp.status_code == 400

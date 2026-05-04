@@ -66,3 +66,14 @@ class OperationResultResponse(BaseModel):
     errors: list[str] = []
     no_op: bool = False
     authorship_report: dict[str, Any] | None = None
+
+
+class FinalizeRequest(BaseModel):
+    page_path: str
+    abandon: bool = False
+
+
+class FilterCorrectRequest(BaseModel):
+    source_id: str
+    decision: str  # "include" | "exclude"
+    rationale: str
