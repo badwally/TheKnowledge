@@ -102,12 +102,16 @@ def fetch_nlm_sources(notebook_id: str) -> list[dict]:
 # --- raw/ index -------------------------------------------------------------
 
 
-def _index_raw_pages() -> tuple[dict[str, str], dict[str, str]]:
-    """Walk `raw/<type>/<slug>.md` and bucket by URL and title.
+def _index_raw_pages() -> tuple[dict[str, str], dict[str, str], dict[str, str]]:
+    """Walk `raw/<type>/<slug>.md` and bucket by URL, title, and filename.
 
-    Returns `(url_to_path, title_to_path)`, where each path is the
-    canonical relative form `raw/<type>/<slug>` (no extension, forward
-    slashes — wikilink-ready).
+    Returns `(url_to_path, title_to_path, filename_to_path)`, where each
+    path is the canonical relative form `raw/<type>/<slug>` (no extension,
+    forward slashes — wikilink-ready).
+
+    The filename index maps patterns like ``<slug>.pdf`` and ``<slug>.md``
+    to their path, since NotebookLM titles are often the uploaded filename
+    rather than the human-readable title from frontmatter.
 
     Pages without a parseable frontmatter are skipped silently rather
     than aborting the whole map build; one malformed source shouldn't
@@ -115,10 +119,11 @@ def _index_raw_pages() -> tuple[dict[str, str], dict[str, str]]:
     """
     url_to_path: dict[str, str] = {}
     title_to_path: dict[str, str] = {}
+    filename_to_path: dict[str, str] = {}
 
     raw_root = paths.raw_dir()
     if not raw_root.is_dir():
-        return url_to_path, title_to_path
+        return url_to_path, title_to_path, filename_to_path
 
     for source_type in paths.SOURCE_TYPES:
         type_dir = raw_root / source_type
@@ -135,16 +140,16 @@ def _index_raw_pages() -> tuple[dict[str, str], dict[str, str]]:
 
             url = front.get("url")
             if isinstance(url, str) and url:
-                # First write wins; later duplicates would only happen
-                # on a content-hash collision and the validator catches
-                # those at ingest time.
                 url_to_path.setdefault(url, rel)
 
             title = front.get("title")
             if isinstance(title, str) and title:
                 title_to_path.setdefault(title, rel)
 
-    return url_to_path, title_to_path
+            for ext in ("pdf", "md", "m4a", "m4b", "mp3", "wav"):
+                filename_to_path.setdefault(f"{slug}.{ext}", rel)
+
+    return url_to_path, title_to_path, filename_to_path
 
 
 # --- public API -------------------------------------------------------------
@@ -171,7 +176,7 @@ def build_source_map(
     del client  # reserved for the protocol-bearing future
 
     nlm_sources = fetch_nlm_sources(notebook_id)
-    url_to_path, title_to_path = _index_raw_pages()
+    url_to_path, title_to_path, filename_to_path = _index_raw_pages()
 
     source_map: dict[str, str] = {}
     for src in nlm_sources:
@@ -185,8 +190,12 @@ def build_source_map(
             continue
 
         title = src.get("title")
-        if isinstance(title, str) and title and title in title_to_path:
-            source_map[nlm_id] = title_to_path[title]
+        if isinstance(title, str) and title:
+            if title in title_to_path:
+                source_map[nlm_id] = title_to_path[title]
+                continue
+            if title in filename_to_path:
+                source_map[nlm_id] = filename_to_path[title]
 
     _write_cache(notebook_id, source_map)
     return source_map
