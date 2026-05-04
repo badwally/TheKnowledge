@@ -32,7 +32,7 @@ Citations are mechanically enforced — the validator rejects any claim missing 
 | [CLAUDE.md](CLAUDE.md) | Agent control surface — auto-loaded by Claude Code sessions in this directory |
 | [WIKI.md](WIKI.md) | Conventions reference — the contract every component codes against |
 | [MIGRATION.md](MIGRATION.md) | Legacy Obsidian vault migration plan (executed M11–M14) |
-| [BUILD.md](BUILD.md) | Gateway build plan and per-milestone delivery record (M0–M25) |
+| [BUILD.md](BUILD.md) | Gateway build plan and per-milestone delivery record |
 | [SESSION_TRANSCRIPT.md](SESSION_TRANSCRIPT.md) | Chronological narrative of the design-and-build session that produced v1 |
 
 ## Layout
@@ -84,6 +84,11 @@ wiki --help
 | `wiki filter-correct <id>` | Override a past filter decision; pin as a `user-correction` example |
 | `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/...]]` citations |
 | `wiki finalize <page> [--abandon]` | Promote a draft page to strict (or delete it) |
+| `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | Cluster untagged sources into domain proposals |
+| `wiki promote-domain <proposal-slug>` | Bless a proposal — writes policy, back-tags member sources |
+| `wiki demote-domain <domain-slug>` | Reverse a promotion — removes tags, deletes auto-generated policy |
+| `wiki reject-proposal <proposal-slug>` | Delete a draft proposal |
+| `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` | Multi-adapter search with per-adapter query expansion; `--review` pauses for plan editing |
 | `wiki nlm-add <domain> <source-id>` | Add a raw source to the domain's NotebookLM corpus |
 | `wiki nlm-briefing <domain>` | Generate a briefing doc → file as `wiki/artifacts/...` |
 | `wiki nlm-audio <domain> "<topic>"` | Audio overview → `wiki/artifacts/` |

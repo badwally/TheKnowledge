@@ -53,6 +53,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Bless a draft proposal as a real domain | `wiki promote-domain <proposal-slug>` |
 | Reverse a promotion (undo policy + back-tags) | `wiki demote-domain <domain-slug>` |
 | Delete a draft proposal | `wiki reject-proposal <proposal-slug>` |
+| Multi-adapter research search | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` |
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
 
@@ -60,7 +61,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 
 ## Adding a new source type
 
-Write a converter under `~/code/research-notebook/src/search/` that outputs canonical markdown to `raw/<type>/<slug>.md` per the frontmatter schema in `WIKI.md`. No pipeline changes required. Pollers (for API-only sources like Apple Notes, Notion) follow the same contract — they write to `raw/` on a schedule.
+Write a converter under `src/gateway/converters/` that outputs canonical markdown to `raw/<type>/<slug>.md` per the frontmatter schema in `WIKI.md`. No pipeline changes required. Pollers (for API-only sources like Apple Notes, Notion) follow the same contract — they write to `raw/` on a schedule.
 
 ## Where things live
 
@@ -77,9 +78,12 @@ Write a converter under `~/code/research-notebook/src/search/` that outputs cano
 │   ├── sources/       # one summary page per ingested source
 │   ├── synthesis/     # cross-source analyses (compound from queries)
 │   ├── mocs/          # maps of content per domain
+│   ├── proposals/     # domain proposals from discover-domains (draft → blessed → promoted)
 │   └── artifacts/     # NotebookLM-generated outputs (slides, audio, briefings)
 └── nlm/
-    └── notebooks.yaml # domain ↔ NotebookLM notebook ID map
+    ├── notebooks.yaml # domain ↔ NotebookLM notebook ID map
+    ├── query_plans/   # persistent per-session research query plans
+    └── source_maps/   # NLM title → source-id resolution maps
 ```
 
 ## Forward-looking notes
