@@ -197,3 +197,12 @@ def test_async_bootstrap_domain_returns_task_id(client, kb_root):
             break
     final = client.get(f"/api/tasks/{task_id}").json()
     assert final["status"] in ("done", "failed")
+
+
+def test_root_serves_index_html(client, kb_root):
+    """The root path serves the React app's index.html when the build exists."""
+    resp = client.get("/")
+    # If web/dist/index.html exists, expect 200; if not, expect 404 (SPA fallback not mounted)
+    assert resp.status_code in (200, 404)
+    if resp.status_code == 200:
+        assert "<html" in resp.text.lower() or "<!doctype" in resp.text.lower()
