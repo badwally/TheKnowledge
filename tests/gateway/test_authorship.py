@@ -914,8 +914,8 @@ def test_end_to_end_smart_authorship(kb_root, make_source, tmp_path):
     existing_page.parent.mkdir(parents=True, exist_ok=True)
     existing_page.write_text(fm.serialize(existing_front, existing_body))
 
-    # Ingest a new source
-    text = make_source(id_="yt-newSource_AB", domains=["d-e2e"])
+    # Ingest a new source (no domain → filter skipped → wiki page written)
+    text = make_source(id_="yt-newSource_AB", domains=[])
     src = tmp_path / "new.md"
     src.write_text(text)
 
@@ -982,7 +982,7 @@ def test_end_to_end_smart_authorship(kb_root, make_source, tmp_path):
     })
 
     client = StubPlanClient(response=plan_response)
-    result = ingest(src, domain="d-e2e", with_plan=True, plan_client=client)
+    result = ingest(src, with_plan=True, plan_client=client)
     assert result.success, result.errors
 
     # AuthorshipReport populated
