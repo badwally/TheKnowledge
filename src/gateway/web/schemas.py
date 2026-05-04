@@ -153,3 +153,7 @@ class CreateSessionRequest(BaseModel):
     prompt: str
     domain: str
     max_results: int = 50
+
+
+class UpdatePlanRequest(BaseModel):
+    queries: ResearchPlanQueries

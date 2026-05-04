@@ -21,6 +21,7 @@ from gateway.web.schemas import (
     ResearchPlanQueries,
     ResearchSessionDetail,
     ResearchSessionSummary,
+    UpdatePlanRequest,
 )
 
 
@@ -245,3 +246,30 @@ async def create_session(req: CreateSessionRequest, request: Request) -> JSONRes
         status_code=202,
         content={"task_id": record.task_id, "status": "queued"},
     )
+
+
+@router.put("/sessions/{session_id}/plan", response_model=ResearchSessionDetail)
+def put_plan(session_id: str, req: UpdatePlanRequest) -> ResearchSessionDetail:
+    plans_dir = paths.knowledge_root() / "nlm" / "query_plans"
+    path = plans_dir / f"{session_id}.yaml"
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail=f"unknown session: {session_id}")
+
+    try:
+        data = yaml.safe_load(path.read_text()) or {}
+    except yaml.YAMLError as e:
+        raise HTTPException(status_code=500, detail=f"invalid plan YAML: {e}")
+    if not isinstance(data, dict):
+        raise HTTPException(status_code=500, detail="plan YAML is not a mapping")
+
+    data["queries"] = {
+        "arxiv": list(req.queries.arxiv),
+        "youtube": list(req.queries.youtube),
+        "web": list(req.queries.web),
+        "pubmed": list(req.queries.pubmed),
+    }
+
+    path.write_text(yaml.safe_dump(data, sort_keys=False))
+
+    # Return the refreshed detail
+    return get_session(session_id)

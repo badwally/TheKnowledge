@@ -133,3 +133,35 @@ def test_create_session_returns_task_id(client, kb_root, monkeypatch):
             break
     final = client.get(f"/api/tasks/{task_id}").json()
     assert final["status"] == "done", final
+
+
+def test_put_plan_updates_yaml(client, kb_root):
+    _seed_query_plan(
+        "2026-05-04-update",
+        domain="d-test",
+        prompt="x",
+        queries={"arxiv": ["original"], "youtube": [], "web": [], "pubmed": []},
+    )
+    resp = client.put(
+        "/api/research/sessions/2026-05-04-update/plan",
+        json={
+            "queries": {
+                "arxiv": ["updated 1", "updated 2"],
+                "youtube": ["new"],
+                "web": [],
+                "pubmed": [],
+            },
+        },
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["plan"]["queries"]["arxiv"] == ["updated 1", "updated 2"]
+    assert body["plan"]["queries"]["youtube"] == ["new"]
+
+
+def test_put_plan_unknown_session_returns_404(client, kb_root):
+    resp = client.put(
+        "/api/research/sessions/nonexistent/plan",
+        json={"queries": {"arxiv": [], "youtube": [], "web": [], "pubmed": []}},
+    )
+    assert resp.status_code == 404
