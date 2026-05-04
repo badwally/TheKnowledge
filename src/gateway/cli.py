@@ -39,6 +39,7 @@ SUBCOMMANDS: dict[str, str] = {
     "reject-proposal": "Delete a draft domain proposal",
     "research": "Corpus-constructive research: fan out search, filter, build a NotebookLM session, file syntheses",
     "bootstrap-domain": "Author a starter policy.yaml from a natural-language domain description",
+    "serve": "Start the local web UI (FastAPI + React)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -65,6 +66,7 @@ IMPLEMENTED: set[str] = {
     "reject-proposal",
     "research",
     "bootstrap-domain",
+    "serve",
 }
 
 
@@ -396,6 +398,20 @@ def build_parser() -> argparse.ArgumentParser:
         help="Slug of the proposal page (e.g. 'proposal-investing-letters')",
     )
 
+    # serve (M40)
+    p_serve = subparsers.add_parser("serve", help=SUBCOMMANDS["serve"])
+    p_serve.add_argument(
+        "--port",
+        type=int,
+        default=7474,
+        help="Port to bind (default 7474)",
+    )
+    p_serve.add_argument(
+        "--bind",
+        default="127.0.0.1",
+        help="Host to bind (default 127.0.0.1; use 0.0.0.0 for LAN access)",
+    )
+
     # bootstrap-domain (M39)
     p_bootstrap = subparsers.add_parser(
         "bootstrap-domain", help=SUBCOMMANDS["bootstrap-domain"]
@@ -494,6 +510,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_promote_domain(ns)
     if ns.subcommand == "bootstrap-domain":
         return _run_bootstrap_domain(ns)
+    if ns.subcommand == "serve":
+        return _run_serve(ns)
     if ns.subcommand == "demote-domain":
         return _run_demote_domain(ns)
     if ns.subcommand == "reject-proposal":
@@ -759,6 +777,19 @@ def _run_bootstrap_domain(ns: argparse.Namespace) -> int:
             force=ns.force,
         )
     )
+
+
+def _run_serve(ns: argparse.Namespace) -> int:
+    import uvicorn
+
+    print(f"wiki serve · http://{ns.bind}:{ns.port}", flush=True)
+    uvicorn.run(
+        "gateway.web.app:app",
+        host=ns.bind,
+        port=ns.port,
+        log_level="info",
+    )
+    return 0
 
 
 def _run_demote_domain(ns: argparse.Namespace) -> int:
