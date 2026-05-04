@@ -16,6 +16,8 @@ dependencies = [
     "youtube-transcript-api>=0.6",
     "pdfplumber>=0.11",
     "requests>=2.31",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
 ]
 
 [project.optional-dependencies]
