@@ -38,6 +38,7 @@ SUBCOMMANDS: dict[str, str] = {
     "demote-domain": "Reverse a promotion: remove tags + delete auto-generated policy",
     "reject-proposal": "Delete a draft domain proposal",
     "research": "Corpus-constructive research: fan out search, filter, build a NotebookLM session, file syntheses",
+    "bootstrap-domain": "Author a starter policy.yaml from a natural-language domain description",
 }
 
 IMPLEMENTED: set[str] = {
@@ -63,6 +64,7 @@ IMPLEMENTED: set[str] = {
     "demote-domain",
     "reject-proposal",
     "research",
+    "bootstrap-domain",
 }
 
 
@@ -394,6 +396,24 @@ def build_parser() -> argparse.ArgumentParser:
         help="Slug of the proposal page (e.g. 'proposal-investing-letters')",
     )
 
+    # bootstrap-domain (M39)
+    p_bootstrap = subparsers.add_parser(
+        "bootstrap-domain", help=SUBCOMMANDS["bootstrap-domain"]
+    )
+    p_bootstrap.add_argument(
+        "description",
+        help="Natural-language description of the new domain (1-3 paragraphs)",
+    )
+    p_bootstrap.add_argument(
+        "slug",
+        help="Slug for the new domain (lowercase, hyphenated)",
+    )
+    p_bootstrap.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite an existing non-promoted policy at this slug",
+    )
+
     # demote-domain (M36)
     p_demote = subparsers.add_parser(
         "demote-domain", help=SUBCOMMANDS["demote-domain"]
@@ -472,6 +492,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_discover_domains(ns)
     if ns.subcommand == "promote-domain":
         return _run_promote_domain(ns)
+    if ns.subcommand == "bootstrap-domain":
+        return _run_bootstrap_domain(ns)
     if ns.subcommand == "demote-domain":
         return _run_demote_domain(ns)
     if ns.subcommand == "reject-proposal":
@@ -725,6 +747,18 @@ def _run_promote_domain(ns: argparse.Namespace) -> int:
     from gateway.ops.promote_domain import promote_domain
 
     return _emit_result(promote_domain(ns.proposal_slug))
+
+
+def _run_bootstrap_domain(ns: argparse.Namespace) -> int:
+    from gateway.ops.bootstrap_domain import bootstrap_domain
+
+    return _emit_result(
+        bootstrap_domain(
+            description=ns.description,
+            slug=ns.slug,
+            force=ns.force,
+        )
+    )
 
 
 def _run_demote_domain(ns: argparse.Namespace) -> int:
