@@ -3868,3 +3868,43 @@ report=.knowledge/lint/2026-05-04T20-01-15Z-schema-drift.md
 ## [2026-05-04T20:19:32Z] lint | scope=schema-drift | schema-drift=0
 
 report=.knowledge/lint/2026-05-04T20-19-32Z-schema-drift.md
+
+## [2026-05-04T20:21:23Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-21-23Z-schema-drift.md
+
+## [2026-05-04T20:29:41Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-29-41Z-schema-drift.md
+
+## [2026-05-04T20:31:35Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-31-35Z-schema-drift.md
+
+## [2026-05-04T20:32:51Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-32-51Z-schema-drift.md
+
+## [2026-05-04T20:33:57Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-33-57Z-schema-drift.md
+
+## [2026-05-04T20:43:20Z] ingest | id=pdf-d4797e8f4981 | type=pdf | domains=- | filter=no-domain
+
+raw=raw/pdf/pdf-d4797e8f4981.md wiki=wiki/sources/pdf-d4797e8f4981.md
+
+## [2026-05-04T20:45:11Z] ingest | id=pdf-6f4c9082252e | type=pdf | domains=edge-ai-agentic | filter=rejected | domain=edge-ai-agentic | score=0.1
+
+raw=raw/pdf/pdf-6f4c9082252e.md (wiki not written: filter decision=rejected)
+
+## [2026-05-04T20:46:27Z] filter-correction | id=pdf-6f4c9082252e | domain=edge-ai-agentic | decision=include | original_score=0.1
+
+rationale='Semantic Scholar API docs are reference material for the research gateway adapter'
+
+## [2026-05-04T20:47:03Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-47-03Z-schema-drift.md
+
+## [2026-05-04T20:47:05Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T20-47-05Z-schema-drift.md
