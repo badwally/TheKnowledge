@@ -549,6 +549,54 @@ def test_apply_plan_rejects_path_outside_wiki(kb_root, make_source):
     assert any("not under a known wiki page-type directory" in e for e in result.errors)
 
 
+def test_apply_plan_populates_authorship_report(kb_root, make_source):
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="test report",
+        updates=[
+            _make_concept_update("report-concept-a", "yt-applyTest1A", kind="create"),
+        ],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/old-thing.md",
+                existing_claim="Old claim here",
+                new_claim="New conflicting claim",
+                source_id="yt-applyTest1A",
+                severity="major",
+            ),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success, result.errors
+    assert result.authorship_report is not None
+    assert "wiki/concepts/report-concept-a.md" in result.authorship_report.pages_created
+    assert len(result.authorship_report.contradictions) == 1
+    assert result.authorship_report.contradictions[0].severity == "major"
+
+
+def test_apply_plan_report_distinguishes_create_and_update(kb_root, make_source):
+    _seed_source(kb_root, make_source)
+    # First, create the page
+    plan1 = Plan(
+        source_id="yt-applyTest1A",
+        updates=[_make_concept_update("evolving-concept", "yt-applyTest1A", kind="create")],
+    )
+    result1 = apply_plan(plan1)
+    assert result1.success
+
+    # Now update it
+    plan2 = Plan(
+        source_id="yt-applyTest1A",
+        updates=[_make_concept_update("evolving-concept", "yt-applyTest1A", kind="update")],
+    )
+    result2 = apply_plan(plan2)
+    assert result2.success
+    assert result2.authorship_report is not None
+    assert "wiki/concepts/evolving-concept.md" in result2.authorship_report.pages_updated
+    assert result2.authorship_report.pages_created == []
+
+
 # --- finalize --------------------------------------------------------------
 
 
