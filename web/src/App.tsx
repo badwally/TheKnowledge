@@ -1,5 +1,7 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import Ingest from "./pages/Ingest";
+import Query from "./pages/Query";
 
 function Sidebar() {
   return (
@@ -37,8 +39,8 @@ export default function App() {
       <main className="content">
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/ops/ingest" element={<Placeholder name="Ingest" />} />
-          <Route path="/ops/query" element={<Placeholder name="Query" />} />
+          <Route path="/ops/ingest" element={<Ingest />} />
+          <Route path="/ops/query" element={<Query />} />
           <Route path="/ops/finalize" element={<Placeholder name="Finalize" />} />
           <Route path="/ops/filter-correct" element={<Placeholder name="Filter correct" />} />
           <Route path="/domains/bootstrap" element={<Placeholder name="Bootstrap domain" />} />
