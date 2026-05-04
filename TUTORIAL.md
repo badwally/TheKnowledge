@@ -155,7 +155,7 @@ This re-runs the strict validator. If all claims are now cited, the
 | Need | Command |
 |---|---|
 | Quick answer based on existing wiki content | `wiki query "..." --domain X` |
-| Full corpus answer using NotebookLM | `wiki nlm-briefing <domain>` (see § 6 — large-scale path) |
+| Full corpus answer using NotebookLM | `wiki nlm-briefing <domain>` (see § 7 — large-scale path) |
 | One-shot ingest + query in a single turn | `wiki ingest <url> --with-plan --domain X` |
 | Slides for a meeting | `wiki nlm-slides <domain> "topic"` |
 
@@ -174,7 +174,61 @@ already registered globally (see `~/.claude/mcp_servers.json`). Tools
 appear as `wiki_query`, `wiki_ingest`, `wiki_nlm_*`, etc. in any CC
 project. **Restart Claude Code** once after install for them to load.
 
-## 6. NotebookLM workflow (for whole-domain synthesis)
+## 6. Open a new research domain
+
+Two paths, depending on what you have:
+
+**Top-down (you have a question, no sources yet).** Describe the domain
+to Claude in a sentence or two and let `wiki bootstrap-domain` author a
+starter `policy.yaml`:
+
+```sh
+wiki bootstrap-domain \
+  "On-device LLM inference for autonomous agentic workflows: edge runtimes,
+   quantization, and inter-agent protocols. Focus on production deployment
+   patterns and competitive ecosystem analysis." \
+  edge-ai-agentic
+```
+
+This writes `.knowledge/policies/edge-ai-agentic/policy.yaml` with topic,
+field, description, inclusion/exclusion criteria, and quality signals —
+all derived from your description. Claude validates against a strict
+schema (≥3 inclusion criteria, ≥1 exclusion, ≥2 quality-signal categories);
+under-specified responses trigger one retry, then save a
+`policy.draft.yaml` for hand-editing.
+
+Refuses on collisions:
+- Existing promoted policy → run `wiki demote-domain <slug>` first
+- Existing draft proposal → run `wiki promote-domain` or `wiki reject-proposal`
+- Existing non-promoted policy → pass `--force` to overwrite
+
+**Bottom-up (you've accumulated sources without a domain yet).** Cluster
+untagged sources into draft proposals, then bless one:
+
+```sh
+wiki discover-domains --untagged
+wiki promote-domain <proposal-slug>
+```
+
+This produces a minimal auto-generated policy with empty inclusion
+criteria — you'll hand-edit them or run bootstrap-domain `--force` to
+re-author from a description.
+
+**Either way**, once a policy exists, `wiki research` can populate the
+domain:
+
+```sh
+wiki research "<your research question>" --domain <slug> --review
+# review/edit the per-adapter query plan in nlm/query_plans/<session-id>.yaml
+wiki research --execute <session-id>
+```
+
+This fans out across arXiv/YouTube/PubMed/web/Semantic Scholar, runs
+each candidate through the semantic filter, materializes accepted
+sources to `raw/`, builds a NotebookLM session, and files synthesis
+pages to `wiki/synthesis/`.
+
+## 7. NotebookLM workflow (for whole-domain synthesis)
 
 Use NotebookLM when the question spans dozens of sources and a single
 in-context call would lose detail. The gateway treats NotebookLM as a
@@ -193,7 +247,7 @@ forbidden in committed wiki content; the pre-commit hook (M9) blocks
 commits that contain raw `nlm ` invocations. Always go through
 `wiki nlm-*`.
 
-## 7. Operational habits
+## 8. Operational habits
 
 ```sh
 wiki status            # watcher heartbeat, inbox queue, recent activity
@@ -217,7 +271,7 @@ v2 policy under `.knowledge/policies/<domain>/policy_versions/`.
 Review and copy to `policy.yaml` if good — the candidate never
 overwrites the live policy.
 
-## 8. The watcher
+## 9. The watcher
 
 The launchd agent runs `wiki watch` continuously and ingests anything
 dropped in `raw/inbox/`.
@@ -232,7 +286,7 @@ scripts/install_watcher.sh                      # reinstall
 If the watcher dies and doesn't restart, kill its pid via
 `pkill -f "wiki watch"` and rerun the install script.
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
 | Symptom | Diagnosis |
 |---|---|
@@ -244,7 +298,7 @@ If the watcher dies and doesn't restart, kill its pid via
 | MCP `wiki_*` tools not visible in another CC session | Restart Claude Code after `scripts/install_mcp.sh` |
 | Lint reports 215+ source orphans | Expected — legacy migrations don't wikilink sources from MOCs; discharge via `wiki query` synthesis loops |
 
-## 10. Cheat sheet
+## 11. Cheat sheet
 
 ```sh
 # Read
@@ -258,6 +312,12 @@ wiki query "<question>" --domain X [--draft]
 wiki filter <path>                                 # read-only score
 wiki filter-correct <source-id>                    # pin a corrected example
 wiki finalize <page-path> [--abandon]
+
+# New domain
+wiki bootstrap-domain "<description>" <slug>       # top-down policy from a description
+wiki discover-domains [--untagged]                  # bottom-up clustering of orphan sources
+wiki promote-domain <proposal-slug>                 # bless a draft proposal
+wiki research "<prompt>" --domain <slug> [--review] [--execute ID]
 
 # NotebookLM (gateway-mediated)
 wiki nlm-add <domain> <source-id>
@@ -277,7 +337,7 @@ wiki finetune [--check | --domain X --distill [--force]]
 wiki batch-ingest <vault> --legacy-import --domain <slug> [--dry-run]
 ```
 
-## 11. Where to read more
+## 12. Where to read more
 
 - `CLAUDE.md` — agent control surface (auto-loaded by every CC session here)
 - `WIKI.md` — full schema reference for frontmatter, page types, lint rules

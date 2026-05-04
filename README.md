@@ -84,7 +84,8 @@ wiki --help
 | `wiki filter-correct <id>` | Override a past filter decision; pin as a `user-correction` example |
 | `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/...]]` citations |
 | `wiki finalize <page> [--abandon]` | Promote a draft page to strict (or delete it) |
-| `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | Cluster untagged sources into domain proposals |
+| `wiki bootstrap-domain "<description>" <slug> [--force]` | Author a starter `policy.yaml` from a natural-language domain description (top-down green-field path) |
+| `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | Cluster untagged sources into domain proposals (bottom-up path) |
 | `wiki promote-domain <proposal-slug>` | Bless a proposal — writes policy, back-tags member sources |
 | `wiki demote-domain <domain-slug>` | Reverse a promotion — removes tags, deletes auto-generated policy |
 | `wiki reject-proposal <proposal-slug>` | Delete a draft proposal |
