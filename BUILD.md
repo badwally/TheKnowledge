@@ -734,6 +734,32 @@ Addresses two weaknesses identified in a panel-of-experts UX review (W2: no conn
 
 **Files modified.** `plan.py` (Contradiction + prompt), `core.py` (AuthorshipReport + OperationResult field), `apply_plan.py` (report construction + log fields), `cli.py` (report rendering), `ingest.py` (report propagation), `test_authorship.py` (11 tests).
 
+### M39 — Top-down domain bootstrap
+
+Restores the predecessor's green-field research workflow. Before M39, starting research on a new domain required either accumulating sources first and running `wiki discover-domains` → `wiki promote-domain` (which produced empty-criteria auto-policies), or hand-editing `.knowledge/policies/<slug>/policy.yaml` directly. M39 adds `wiki bootstrap-domain "<description>" <slug>` which has Claude draft a starter policy from a natural-language description.
+
+**What's new.**
+
+- `gateway.ops.bootstrap_domain` — calls the plan client with the user's description, a single synthetic reference policy ("Patagonian glacier hydrology" — fictional, prevents cargo-culting from real domains), and a strict requirement schema. Validates the response, retries once on under-specified output, draft-saves to `policy.draft.yaml` if the retry also fails.
+
+- `gateway.ops.policy_validator` — strict + lenient modes. Strict enforces minimum specificity (≥3 inclusion criteria, ≥1 exclusion, ≥2 quality_signals categories with ≥2 signals each), threshold ranges, slug regex, schema version. Lenient runs structural checks only — used for legacy policy load (existing `auto_generated_from_proposal` policies don't need migration).
+
+- `_bootstrap_reference_policy.yaml` — checked-in synthetic example used as the only few-shot in the bootstrap prompt. A round-trip test (`test_reference_policy_passes_strict_validation`) ensures schema additions break the test until the reference is updated, preventing schema drift from silently accumulating.
+
+- Collision handling: refuses if `auto_generated_from_proposal: true` exists at the target path (points at `wiki demote-domain`); refuses if a draft proposal exists at `wiki/proposals/<slug>.md` (points at `wiki promote-domain` or `wiki reject-proposal`); allows `--force` only for non-promoted, non-proposal collisions.
+
+- `policy_schema_version: 1` stamped on every bootstrap output. `bootstrapped_from_description_hash` records a SHA-prefix of the description for re-run idempotency tracking.
+
+**Tests.** 21 new tests across `test_policy_validator.py` (10) and `test_bootstrap_domain.py` (11). Full gateway suite: 460 → 481 tests passing.
+
+**Commits.** `6dc531f`..`cae1acd` (4 commits + a test-fix commit `38e2f29` for stale `nlm` argv expectations from the earlier source_map fix).
+
+**Out of scope for M39.**
+
+- `wiki refine-domain` (re-run bootstrap against existing policy as the reference) — natural follow-up but separate milestone.
+- Auto-bootstrapping a NotebookLM persistent notebook on first `wiki research --domain <slug>` — already handled by the research orchestrator.
+- Migrating legacy `auto_generated_from_proposal` policies to the new schema — lenient validator keeps them loading; explicit migration deferred.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
