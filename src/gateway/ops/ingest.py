@@ -351,7 +351,11 @@ def _ingest_canonical_text(
         )
 
     # --- M6: optional agent-driven multi-page authorship ---
-    if with_plan and wiki_written:
+    # Run plan whenever --with-plan is set and the source was committed, even if
+    # the filter decision was "skipped" (no policy) or "review"/"rejected". The
+    # authorship layer operates on existing wiki pages and does not require the
+    # wiki source page to have been written by this ingest.
+    if with_plan and filter_decision not in ("errored",):
         plan_result = _invoke_plan_and_apply(
             front=front,
             body=body,

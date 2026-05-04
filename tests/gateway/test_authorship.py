@@ -889,3 +889,118 @@ def test_ingest_with_plan_propagates_authorship_report(kb_root, make_source, tmp
     assert result.authorship_report is not None
     assert len(result.authorship_report.pages_created) == 1
     assert len(result.authorship_report.contradictions) == 1
+
+
+def test_end_to_end_smart_authorship(kb_root, make_source, tmp_path):
+    """Full flow: ingest -> plan with create + update + contradiction -> report + log."""
+    import json as _json
+
+    # Seed an existing concept page in the wiki
+    _seed_source(kb_root, make_source, source_id="yt-oldSource_AB", domain="d-e2e")
+    existing_front = {
+        "type": "concept",
+        "slug": "existing-mechanism",
+        "canonical_name": "Existing mechanism",
+        "domains": ["d-e2e"],
+    }
+    existing_body = (
+        "# Existing mechanism\n\n"
+        "## Summary\n\nThis mechanism is irreversible [[sources/yt-oldSource_AB]].\n\n"
+        "## Key claims\n\n- The effect is permanent [[sources/yt-oldSource_AB]].\n\n"
+        "## Sources\n\n- [[sources/yt-oldSource_AB]]\n\n"
+        "## Related\n\n- [[concepts/other]]\n"
+    )
+    existing_page = paths.wiki_dir() / "concepts" / "existing-mechanism.md"
+    existing_page.parent.mkdir(parents=True, exist_ok=True)
+    existing_page.write_text(fm.serialize(existing_front, existing_body))
+
+    # Ingest a new source
+    text = make_source(id_="yt-newSource_AB", domains=["d-e2e"])
+    src = tmp_path / "new.md"
+    src.write_text(text)
+
+    # Prepare plan response: update existing + create new + one contradiction
+    updated_content = fm.serialize(
+        {
+            "type": "concept",
+            "slug": "existing-mechanism",
+            "canonical_name": "Existing mechanism",
+            "domains": ["d-e2e"],
+        },
+        (
+            "# Existing mechanism\n\n"
+            "## Summary\n\nThis mechanism is irreversible [[sources/yt-oldSource_AB]]. "
+            "However, recent evidence suggests partial reversibility [[sources/yt-newSource_AB]].\n\n"
+            "## Key claims\n\n"
+            "- The effect is permanent [[sources/yt-oldSource_AB]].\n"
+            "- Partial reversal observed after 12 weeks [[sources/yt-newSource_AB]].\n\n"
+            "## Sources\n\n- [[sources/yt-oldSource_AB]]\n- [[sources/yt-newSource_AB]]\n\n"
+            "## Related\n\n- [[concepts/other]]\n- [[concepts/new-entity]]\n"
+        ),
+    )
+    new_content = fm.serialize(
+        {
+            "type": "entity",
+            "slug": "new-entity",
+            "canonical_name": "New entity",
+            "entity_kind": "drug",
+            "domains": ["d-e2e"],
+        },
+        (
+            "# New entity\n\n"
+            "## Summary\n\nA newly discovered entity [[sources/yt-newSource_AB]].\n\n"
+            "## Key facts\n\n- First documented in 2026 [[sources/yt-newSource_AB]].\n\n"
+            "## Sources\n\n- [[sources/yt-newSource_AB]]\n\n"
+            "## Related\n\n- [[concepts/existing-mechanism]]\n"
+        ),
+    )
+
+    plan_response = _json.dumps({
+        "source_id": "yt-newSource_AB",
+        "rationale": "integrates new evidence on mechanism reversibility",
+        "updates": [
+            {
+                "target_path": "wiki/concepts/existing-mechanism.md",
+                "update_kind": "update",
+                "content": updated_content,
+            },
+            {
+                "target_path": "wiki/entities/new-entity.md",
+                "update_kind": "create",
+                "content": new_content,
+            },
+        ],
+        "contradictions": [
+            {
+                "existing_page": "wiki/concepts/existing-mechanism.md",
+                "existing_claim": "The effect is permanent",
+                "new_claim": "Partial reversal observed after 12 weeks",
+                "source_id": "yt-newSource_AB",
+                "severity": "major",
+            },
+        ],
+    })
+
+    client = StubPlanClient(response=plan_response)
+    result = ingest(src, domain="d-e2e", with_plan=True, plan_client=client)
+    assert result.success, result.errors
+
+    # AuthorshipReport populated
+    report = result.authorship_report
+    assert report is not None
+    assert "wiki/entities/new-entity.md" in report.pages_created
+    assert "wiki/concepts/existing-mechanism.md" in report.pages_updated
+    assert len(report.contradictions) == 1
+    assert report.contradictions[0].severity == "major"
+
+    # Wiki pages written
+    assert (paths.wiki_dir() / "entities" / "new-entity.md").exists()
+    updated_text = existing_page.read_text()
+    assert "partial reversibility" in updated_text.lower()
+
+    # Log entry includes contradiction count
+    log_text = paths.log_path().read_text()
+    assert "contradictions=1" in log_text
+
+    # Summary includes authorship info
+    assert "authorship" in result.summary
