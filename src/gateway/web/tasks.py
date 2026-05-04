@@ -78,3 +78,22 @@ class TaskStore:
             self.mark_done(task_id, result=payload)
         except Exception as e:  # noqa: BLE001 — capture all
             self.mark_failed(task_id, error=f"{type(e).__name__}: {e}")
+
+    def run_in_thread(self, task_id: str, fn: Callable[[], Any]) -> None:
+        """Spawn a daemon thread to run `fn`, updating the task record on completion.
+
+        Unlike `run_async`, this works in both async and sync contexts (including
+        the synchronous TestClient used in tests).
+        """
+
+        def _worker() -> None:
+            self.mark_running(task_id)
+            try:
+                result = fn()
+                payload = result if isinstance(result, dict) else {"value": result}
+                self.mark_done(task_id, result=payload)
+            except Exception as e:  # noqa: BLE001 — capture all
+                self.mark_failed(task_id, error=f"{type(e).__name__}: {e}")
+
+        t = threading.Thread(target=_worker, daemon=True)
+        t.start()

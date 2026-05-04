@@ -139,3 +139,61 @@ def test_filter_correct_endpoint_returns_error_for_missing_source(client, kb_roo
         json={"source_id": "yt-nonexistent", "decision": "include", "rationale": "r"},
     )
     assert resp.status_code == 400
+
+
+import time
+
+
+def test_async_ingest_returns_task_id(client, kb_root, tmp_path):
+    """POST /api/ops/ingest returns 202 + task_id; GET /api/tasks/{id} reports completion."""
+    src = tmp_path / "input.md"
+    src.write_text(
+        "---\nid: yt-asyncTest_AB\ntype: youtube\ntitle: t\n"
+        "url: https://x\nauthors: []\n"
+        "ingested_at: 2026-01-01T00:00:00Z\n"
+        "content_hash: sha256:abc\ndomains: []\nnlm_corpus_ids: []\n"
+        "wiki_pages: []\nmeta: {}\n---\nbody\n"
+    )
+
+    resp = client.post(
+        "/api/ops/ingest",
+        json={"input": str(src), "with_plan": False, "draft": False},
+    )
+    assert resp.status_code == 202
+    body = resp.json()
+    assert "task_id" in body
+    assert body["status"] == "queued"
+
+    task_id = body["task_id"]
+    for _ in range(50):
+        time.sleep(0.1)
+        get_resp = client.get(f"/api/tasks/{task_id}")
+        if get_resp.json()["status"] in ("done", "failed"):
+            break
+    final = client.get(f"/api/tasks/{task_id}").json()
+    assert final["status"] == "done", final
+
+
+def test_get_unknown_task_returns_404(client, kb_root):
+    resp = client.get("/api/tasks/nonexistent")
+    assert resp.status_code == 404
+
+
+def test_async_bootstrap_domain_returns_task_id(client, kb_root):
+    """Bootstrap with invalid slug should fail-fast inside the op."""
+    resp = client.post(
+        "/api/ops/bootstrap-domain",
+        json={
+            "description": "x",
+            "slug": "Bad_Slug",
+            "force": False,
+        },
+    )
+    assert resp.status_code == 202
+    task_id = resp.json()["task_id"]
+    for _ in range(20):
+        time.sleep(0.1)
+        if client.get(f"/api/tasks/{task_id}").json()["status"] in ("done", "failed"):
+            break
+    final = client.get(f"/api/tasks/{task_id}").json()
+    assert final["status"] in ("done", "failed")

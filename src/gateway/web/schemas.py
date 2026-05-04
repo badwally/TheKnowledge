@@ -77,3 +77,39 @@ class FilterCorrectRequest(BaseModel):
     source_id: str
     decision: str  # "include" | "exclude"
     rationale: str
+
+
+class IngestRequest(BaseModel):
+    input: str
+    domain: str | None = None
+    with_plan: bool = False
+    draft: bool = False
+    plan_timeout: float | None = None
+
+
+class QueryRequest(BaseModel):
+    question: str
+    domain: str
+    draft: bool = False
+
+
+class BootstrapDomainRequest(BaseModel):
+    description: str
+    slug: str
+    force: bool = False
+
+
+class DiscoverDomainsRequest(BaseModel):
+    scope: str | None = None
+    since: str | None = None
+    untagged: bool = False
+
+
+class TaskResponse(BaseModel):
+    task_id: str
+    op_name: str
+    status: str
+    started_at: str | None = None
+    finished_at: str | None = None
+    result: dict[str, Any] | None = None
+    error: str | None = None
