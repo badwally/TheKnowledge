@@ -323,6 +323,63 @@ def test_build_plan_prompt_includes_source_and_existing():
     assert "wiki/concepts/x.md" in prompt
 
 
+# --- AuthorshipReport ------------------------------------------------------
+
+
+def test_authorship_report_summary_formatting():
+    from gateway.core import AuthorshipReport
+    from gateway.plan import Contradiction
+
+    report = AuthorshipReport(
+        pages_created=["wiki/entities/semaglutide.md", "wiki/concepts/food-noise.md"],
+        pages_updated=["wiki/concepts/reward-blunting.md"],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/reward-blunting.md",
+                existing_claim="Reward blunting is permanent",
+                new_claim="Reward blunting reverses after discontinuation",
+                source_id="pubmed-123",
+                severity="major",
+            )
+        ],
+    )
+    summary = report.format_summary()
+    assert "2 created" in summary
+    assert "1 updated" in summary
+    assert "1 contradiction" in summary
+
+
+def test_authorship_report_empty():
+    from gateway.core import AuthorshipReport
+
+    report = AuthorshipReport()
+    summary = report.format_summary()
+    assert "0 created" in summary
+
+
+def test_authorship_report_detail_formatting():
+    from gateway.core import AuthorshipReport
+    from gateway.plan import Contradiction
+
+    report = AuthorshipReport(
+        pages_created=["wiki/entities/drug-x.md"],
+        pages_updated=["wiki/concepts/mechanism-y.md"],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/mechanism-y.md",
+                existing_claim="Effect is permanent",
+                new_claim="Effect reverses in 12 weeks",
+                source_id="pubmed-456",
+                severity="major",
+            )
+        ],
+    )
+    lines = report.format_detail()
+    assert any("+ wiki/entities/drug-x.md" in l for l in lines)
+    assert any("~ wiki/concepts/mechanism-y.md" in l for l in lines)
+    assert any("CONTRADICTION" in l and "major" in l for l in lines)
+
+
 # --- apply_plan ------------------------------------------------------------
 
 
