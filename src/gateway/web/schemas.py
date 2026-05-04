@@ -147,3 +147,9 @@ class ResearchSessionDetail(BaseModel):
     edited: bool = False
     plan: ResearchPlan
     sources_count: int | None = None
+
+
+class CreateSessionRequest(BaseModel):
+    prompt: str
+    domain: str
+    max_results: int = 50

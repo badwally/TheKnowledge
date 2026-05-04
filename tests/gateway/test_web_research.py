@@ -85,3 +85,51 @@ def test_get_session_returns_full_plan(client, kb_root):
 def test_get_unknown_session_returns_404(client):
     resp = client.get("/api/research/sessions/nonexistent")
     assert resp.status_code == 404
+
+
+def test_create_session_returns_task_id(client, kb_root, monkeypatch):
+    """POST /api/research/sessions starts a planner task and returns 202."""
+    import time
+    from gateway.research import query_planner
+
+    # Stub plan_per_adapter_queries (the planner) so we don't need a real Claude
+    class StubResult:
+        queries = {"arxiv": ["stub q"], "youtube": [], "web": [], "pubmed": []}
+        target_counts = {"arxiv": 8, "youtube": 20, "web": 15, "pubmed": 5}
+        plan_client_model = None
+
+    def fake_plan(*args, **kwargs):
+        return StubResult()
+
+    monkeypatch.setattr(query_planner, "plan_per_adapter_queries", fake_plan)
+
+    # Stub policy.load_policy too — no real policy file exists in the test KB
+    from gateway.filter import policy as _policy
+
+    class StubPolicy:
+        domain_slug = "d-test"
+        domain_topic = "test"
+        domain_field = "test"
+        domain_description = "test"
+        inclusion_criteria = ["a", "b", "c"]
+
+    monkeypatch.setattr(_policy, "load_policy", lambda domain: StubPolicy())
+
+    resp = client.post(
+        "/api/research/sessions",
+        json={"prompt": "test prompt", "domain": "d-test"},
+    )
+    assert resp.status_code == 202
+    body = resp.json()
+    assert "task_id" in body
+    assert body["status"] == "queued"
+
+    # Wait for the task to complete
+    task_id = body["task_id"]
+    for _ in range(30):
+        time.sleep(0.1)
+        t_resp = client.get(f"/api/tasks/{task_id}")
+        if t_resp.json()["status"] in ("done", "failed"):
+            break
+    final = client.get(f"/api/tasks/{task_id}").json()
+    assert final["status"] == "done", final
