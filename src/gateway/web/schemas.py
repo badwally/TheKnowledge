@@ -113,3 +113,14 @@ class TaskResponse(BaseModel):
     finished_at: str | None = None
     result: dict[str, Any] | None = None
     error: str | None = None
+
+
+class ResearchSessionSummary(BaseModel):
+    session_id: str
+    prompt: str
+    domain: str
+    state: str  # plan_only | edited | running | done | abandoned
+    generated_at: str
+    edited: bool = False
+    query_count: int = 0
+    sources_count: int | None = None
