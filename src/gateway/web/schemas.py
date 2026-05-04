@@ -162,3 +162,14 @@ class UpdatePlanRequest(BaseModel):
 class ExecuteSessionRequest(BaseModel):
     dry_run: bool = False
     draft: bool = False
+
+
+class ProgressStep(BaseModel):
+    name: str
+    status: str  # queued | running | done | failed
+    summary: str = ""
+    timestamp: str | None = None
+
+
+class ProgressResponse(BaseModel):
+    steps: list[ProgressStep]

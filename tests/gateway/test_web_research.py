@@ -200,3 +200,42 @@ def test_execute_returns_task_id(client, kb_root, monkeypatch):
     body = resp.json()
     assert "task_id" in body
     assert body["status"] == "queued"
+
+
+def test_progress_returns_step_states(client, kb_root):
+    """Progress endpoint parses log.md for the session and returns step states."""
+    _seed_query_plan("2026-05-04-prog", domain="d-test", prompt="x")
+
+    log_path = paths.log_path()
+    log_path.write_text(
+        "# log\n\n"
+        "## [2026-05-04T12:00:00Z] research | session_id=2026-05-04-prog | step=start | domain=d-test\n\n"
+        "started\n\n"
+        "## [2026-05-04T12:00:05Z] research | session_id=2026-05-04-prog | step=search | adapter=arxiv | n=10\n\n"
+        "arxiv: 10 candidates\n\n"
+        "## [2026-05-04T12:00:10Z] research | session_id=2026-05-04-prog | step=search | adapter=youtube | n=20\n\n"
+        "youtube: 20 candidates\n\n"
+        "## [2026-05-04T12:00:15Z] research | session_id=2026-05-04-prog | step=merge | n=28\n\n"
+        "deduped\n\n"
+    )
+
+    resp = client.get("/api/research/sessions/2026-05-04-prog/progress")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert "steps" in body
+    steps = {s["name"]: s["status"] for s in body["steps"]}
+    assert steps["start"] == "done"
+    assert steps["search.arxiv"] == "done"
+    assert steps["search.youtube"] == "done"
+    assert steps["merge"] == "done"
+    # Steps not yet observed remain queued
+    assert steps["filter"] == "queued"
+    assert steps["materialize"] == "queued"
+
+
+def test_progress_unknown_session_returns_empty(client, kb_root):
+    """Unknown session returns 200 with all steps queued (not 404)."""
+    resp = client.get("/api/research/sessions/nonexistent/progress")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert all(s["status"] == "queued" for s in body["steps"])

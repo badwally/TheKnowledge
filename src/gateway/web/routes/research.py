@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,6 +19,8 @@ from gateway.research.session import make_session_id
 from gateway.web.schemas import (
     CreateSessionRequest,
     ExecuteSessionRequest,
+    ProgressResponse,
+    ProgressStep,
     ResearchPlan,
     ResearchPlanQueries,
     ResearchSessionDetail,
@@ -315,3 +318,110 @@ async def execute_session(
         status_code=202,
         content={"task_id": record.task_id, "status": "queued"},
     )
+
+
+# Canonical pipeline step list (in execution order).
+_PIPELINE_STEPS = [
+    "start",
+    "plan",
+    "search.arxiv",
+    "search.youtube",
+    "search.web",
+    "search.pubmed",
+    "merge",
+    "filter",
+    "materialize",
+    "nlm_persistent",
+    "nlm_session",
+    "source_add",
+    "source_map",
+    "analysis",
+    "apply_plan",
+    "promoted",
+]
+
+
+_LOG_HEADER_RE = re.compile(
+    r"^## \[(?P<ts>[^\]]+)\] (?P<op>[a-z0-9-]+)(?: \| (?P<fields>.*))?$"
+)
+
+
+@router.get("/sessions/{session_id}/progress", response_model=ProgressResponse)
+def get_progress(session_id: str) -> ProgressResponse:
+    log_path = paths.log_path()
+    observed: dict[str, ProgressStep] = {}
+    abandoned = False
+
+    if log_path.is_file():
+        text = log_path.read_text()
+        for entry in _parse_research_entries(text, session_id):
+            step_name = entry["fields"].get("step", "")
+            if not step_name:
+                continue
+            if step_name == "abandon":
+                abandoned = True
+                continue
+            adapter = entry["fields"].get("adapter")
+            if step_name == "search" and adapter:
+                key = f"search.{adapter}"
+            else:
+                key = step_name
+            observed[key] = ProgressStep(
+                name=key,
+                status="done",
+                summary=entry["summary"][:160],
+                timestamp=entry["timestamp"],
+            )
+
+    out: list[ProgressStep] = []
+    seen_first_unobserved = False
+    for name in _PIPELINE_STEPS:
+        if name in observed:
+            out.append(observed[name])
+        elif abandoned and not seen_first_unobserved:
+            # First unobserved step after an abandon is the failure point
+            out.append(ProgressStep(name=name, status="failed"))
+            seen_first_unobserved = True
+        else:
+            out.append(ProgressStep(name=name, status="queued"))
+
+    return ProgressResponse(steps=out)
+
+
+def _parse_research_entries(text: str, session_id: str) -> list[dict]:
+    """Return matching entries with op='research' and matching session_id."""
+    entries: list[dict] = []
+    current: dict | None = None
+    summary_lines: list[str] = []
+    for line in text.splitlines():
+        m = _LOG_HEADER_RE.match(line)
+        if m:
+            if current is not None:
+                current["summary"] = "\n".join(summary_lines).strip()
+                if (
+                    current["op"] == "research"
+                    and current["fields"].get("session_id") == session_id
+                ):
+                    entries.append(current)
+            fields_dict: dict[str, str] = {}
+            raw_fields = m.group("fields") or ""
+            for pair in raw_fields.split(" | "):
+                if "=" in pair:
+                    k, v = pair.split("=", 1)
+                    fields_dict[k.strip()] = v.strip()
+            current = {
+                "timestamp": m.group("ts"),
+                "op": m.group("op"),
+                "fields": fields_dict,
+            }
+            summary_lines = []
+        elif current is not None:
+            summary_lines.append(line)
+    if current is not None:
+        current["summary"] = "\n".join(summary_lines).strip()
+        if (
+            current["op"] == "research"
+            and current["fields"].get("session_id") == session_id
+        ):
+            entries.append(current)
+    return entries
