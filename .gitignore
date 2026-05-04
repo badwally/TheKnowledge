@@ -40,3 +40,6 @@ raw/**/*.tsv
 .firecrawl/
 docs/
 .superpowers/
+
+# Frontend
+node_modules/
