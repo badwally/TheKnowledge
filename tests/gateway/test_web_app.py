@@ -70,3 +70,56 @@ def test_get_lint(client, kb_root):
     assert resp.status_code == 200
     body = resp.json()
     assert "summary" in body
+
+
+def test_list_domains(client, kb_root):
+    """GET /api/domains returns each policy as a summary."""
+    from gateway import paths
+
+    pol = paths.policies_dir() / "test-domain" / "policy.yaml"
+    pol.parent.mkdir(parents=True, exist_ok=True)
+    pol.write_text(
+        "version: v1\npolicy_schema_version: 1\n"
+        "domain:\n  slug: test-domain\n  topic: Test\n  field: T\n  description: d\n"
+        "filter:\n  threshold_include: 0.7\n  threshold_review: 0.5\n"
+        "inclusion_criteria: [a, b, c]\nexclusion_criteria: [x]\n"
+        "quality_signals: {q: {positive_signals: [p, q], negative_signals: [n, m]}}\n"
+    )
+
+    resp = client.get("/api/domains")
+    assert resp.status_code == 200
+    domains = resp.json()
+    assert any(d["slug"] == "test-domain" for d in domains)
+
+
+def test_list_proposals(client, kb_root):
+    """GET /api/proposals returns draft proposals."""
+    from gateway import frontmatter as fm
+    from gateway import paths
+
+    prop = paths.wiki_dir() / "proposals" / "test-prop.md"
+    prop.parent.mkdir(parents=True, exist_ok=True)
+    prop.write_text(
+        fm.serialize(
+            {
+                "type": "domain-proposal",
+                "slug": "test-prop",
+                "title": "Test prop",
+                "proposed_domain": "test-prop",
+                "status": "draft",
+                "member_sources": ["yt-1"],
+                "rationale": "r",
+            },
+            "## Rationale\n\nr\n## Member sources\n\n- [[sources/yt-1]]\n",
+        )
+    )
+
+    resp = client.get("/api/proposals")
+    assert resp.status_code == 200
+    proposals = resp.json()
+    assert any(p["slug"] == "test-prop" for p in proposals)
+
+
+def test_promote_domain_returns_error_for_missing_proposal(client, kb_root):
+    resp = client.post("/api/domains/nonexistent/promote")
+    assert resp.status_code == 400

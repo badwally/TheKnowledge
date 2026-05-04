@@ -41,3 +41,28 @@ class LintResponse(BaseModel):
     summary: str
     report_path: str | None = None
     issues: list[dict[str, Any]] = []
+
+
+class DomainSummary(BaseModel):
+    slug: str
+    topic: str = ""
+    sources_count: int = 0
+    has_notebook: bool = False
+
+
+class ProposalSummary(BaseModel):
+    slug: str
+    title: str
+    proposed_domain: str
+    status: str
+    member_sources_count: int
+
+
+class OperationResultResponse(BaseModel):
+    success: bool
+    summary: str = ""
+    paths_touched: list[str] = []
+    warnings: list[str] = []
+    errors: list[str] = []
+    no_op: bool = False
+    authorship_report: dict[str, Any] | None = None
