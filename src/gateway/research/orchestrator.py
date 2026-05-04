@@ -914,6 +914,15 @@ def research(
 
     # Step 7 — materialize.
     materialized = _materialize(accepted, session_id=session_id)
+    log.append(
+        "research",
+        fields={
+            "session_id": session_id,
+            "step": "materialize",
+            "n": len(materialized),
+        },
+        summary=f"materialized {len(materialized)} source(s) to raw/",
+    )
     if not materialized:
         return OperationResult(
             success=True,
@@ -942,6 +951,15 @@ def research(
                 errors=[f"create persistent notebook: {e}"],
             )
         nlm_registry.register(effective_domain, persistent_id)
+    log.append(
+        "research",
+        fields={
+            "session_id": session_id,
+            "step": "nlm_persistent",
+            "notebook_id": persistent_id,
+        },
+        summary=f"persistent notebook {persistent_id}",
+    )
 
     # Step 9 — session notebook.
     try:
@@ -955,6 +973,15 @@ def research(
         )
     nlm_registry.register_session(
         effective_domain, session_id, session_nb_id, query=prompt
+    )
+    log.append(
+        "research",
+        fields={
+            "session_id": session_id,
+            "step": "nlm_session",
+            "notebook_id": session_nb_id,
+        },
+        summary=f"created session notebook {session_nb_id}",
     )
 
     # From here on out, any failure must mark the session abandoned.
@@ -1009,6 +1036,15 @@ def research(
 
         # Step 11 — source map.
         smap = _source_map.build_source_map(session_nb_id, client=nlm_client)
+        log.append(
+            "research",
+            fields={
+                "session_id": session_id,
+                "step": "source_map",
+                "n": len(smap or {}),
+            },
+            summary=f"built source map ({len(smap or {})} entries)",
+        )
 
         # Step 12 — analysis.
         if _analysis is None:
@@ -1021,6 +1057,15 @@ def research(
             domain=effective_domain,
             research_query=prompt,
             client=nlm_client,
+        )
+        log.append(
+            "research",
+            fields={
+                "session_id": session_id,
+                "step": "analysis",
+                "branches": len(getattr(analysis_result, "branches", []) or []),
+            },
+            summary=f"analysis complete ({len(getattr(analysis_result, 'branches', []) or [])} branch(es))",
         )
 
         # Step 13/14 — build the plan with citations resolved.
@@ -1040,6 +1085,15 @@ def research(
                 "apply_plan rejected the synthesis: "
                 + "; ".join(plan_result.errors)
             )
+        log.append(
+            "research",
+            fields={
+                "session_id": session_id,
+                "step": "apply_plan",
+                "pages": len(plan_result.paths_touched),
+            },
+            summary=f"applied plan: {plan_result.summary}",
+        )
 
         # Step 16 — promote.
         try:
