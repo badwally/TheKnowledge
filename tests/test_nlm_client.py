@@ -87,6 +87,30 @@ def test_notebook_query_nonzero_exit_raises_nlm_error():
     assert "boom: auth failed" in str(exc.value)
 
 
+def test_notebook_query_not_found_translates_to_empty_corpus_hint():
+    """NotebookLM returns NOT_FOUND when querying an empty notebook; the
+    nlm CLI mislabels this as an auth problem. We translate the error to
+    point at the real cause (zero sources) and a remediation path."""
+    stderr = (
+        "Error: Google rejected the query (error code 5: NOT_FOUND). "
+        "This may indicate account-level restrictions on programmatic access. "
+        "Try re-authenticating with 'nlm login' or using a different account."
+    )
+    client = NlmCLIClient()
+    with patch(
+        "gateway.nlm_client.subprocess.run",
+        return_value=_completed(stdout="", stderr=stderr, returncode=1),
+    ):
+        with pytest.raises(NlmError) as exc:
+            client.notebook_query("nb-empty", "q")
+
+    msg = str(exc.value)
+    assert "NOT_FOUND" in msg
+    assert "nb-empty" in msg
+    assert "wiki nlm-add" in msg
+    assert "auth-related advice is misleading" in msg
+
+
 def test_notebook_query_unparseable_json_raises_nlm_error():
     client = NlmCLIClient()
     with patch(

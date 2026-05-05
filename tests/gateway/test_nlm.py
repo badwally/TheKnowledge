@@ -30,6 +30,7 @@ from gateway.ops.nlm import (
     nlm_briefing,
     nlm_revise,
     nlm_slides,
+    nlm_sync,
 )
 
 
@@ -104,6 +105,14 @@ class MockNlmClient:
         # answers. Default returns an empty payload so any op that
         # exercises the query path doesn't crash on protocol checks.
         return {"answer": "", "citations": {}, "sources_used": []}
+
+    # `notebook_sources` is consulted by `nlm_sync` to reconcile NotebookLM
+    # state. Tests override `pre_loaded_sources` to simulate sources that
+    # are already on the NotebookLM side (e.g., from a prior partial run).
+    pre_loaded_sources: dict[str, list[dict]] = field(default_factory=dict)
+
+    def notebook_sources(self, notebook_id):
+        return list(self.pre_loaded_sources.get(notebook_id, []))
 
 
 # --- fixtures ---------------------------------------------------------------
@@ -268,6 +277,150 @@ def test_nlm_add_uploads_sidecar_file_when_present(kb_root, make_source, mock_cl
     nb_id, path, title = mock_client.file_sources_added[0]
     assert path == sidecar_abs
     assert title == "Sidecar Test"
+
+
+# --- nlm-sync --------------------------------------------------------------
+
+
+def test_nlm_sync_no_op_when_domain_has_no_sources(kb_root, mock_client):
+    result = nlm_sync("empty-domain", client=mock_client)
+    assert result.success
+    assert result.no_op
+    assert mock_client.notebooks_created == []
+    assert mock_client.sources_added == []
+
+
+def test_nlm_sync_dry_run_lists_candidates_without_calling_client(kb_root, make_source, mock_client):
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncDryA1", domain="ds")
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncDryB2", domain="ds")
+    _make_youtube_source(kb_root, make_source, source_id="yt-otherDom1", domain="other")
+
+    result = nlm_sync("ds", dry_run=True, client=mock_client)
+
+    assert result.success
+    assert "would sync 2 source(s)" in result.summary
+    assert "yt-syncDryA1" in result.summary
+    assert "yt-syncDryB2" in result.summary
+    assert "yt-otherDom1" not in result.summary  # filtered by domain
+    assert mock_client.notebooks_created == []
+    assert mock_client.sources_added == []
+
+
+def test_nlm_sync_adds_every_tagged_source_and_skips_already_synced(kb_root, make_source, mock_client):
+    # Two fresh sources tagged with the domain.
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncFresh1", domain="ds")
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncFresh2", domain="ds")
+    # A third source already synced — should be counted as skipped.
+    raw_third = _make_youtube_source(kb_root, make_source, source_id="yt-syncAlready", domain="ds")
+    nlm_add("ds", "yt-syncAlready", client=mock_client)
+    sources_before = list(mock_client.sources_added)
+
+    progress_calls: list[tuple] = []
+    result = nlm_sync(
+        "ds",
+        client=mock_client,
+        progress=lambda i, n, sid, status, detail: progress_calls.append((i, n, sid, status)),
+    )
+
+    assert result.success, result.errors
+    assert "2 added" in result.summary
+    assert "1 already in corpus" in result.summary
+    assert "0 failed" in result.summary
+
+    # Only the two fresh sources caused new client calls.
+    new_calls = mock_client.sources_added[len(sources_before):]
+    assert {url for _, url in new_calls} == {
+        "https://www.youtube.com/watch?v=yt-syncFresh1",
+        "https://www.youtube.com/watch?v=yt-syncFresh2",
+    }
+
+    # Each fresh source's frontmatter now carries the persistent notebook id.
+    for sid in ("yt-syncFresh1", "yt-syncFresh2"):
+        front, _ = fm.parse(paths.raw_source_path("youtube", sid).read_text())
+        assert mock_client.next_notebook_id in front["nlm_corpus_ids"]
+
+    # progress callback fires once per source, in stable order.
+    assert [c[2] for c in progress_calls] == ["yt-syncAlready", "yt-syncFresh1", "yt-syncFresh2"]
+    statuses = {c[2]: c[3] for c in progress_calls}
+    assert statuses == {
+        "yt-syncAlready": "skipped",
+        "yt-syncFresh1": "added",
+        "yt-syncFresh2": "added",
+    }
+    # raw_third still parses cleanly post-run.
+    fm.parse(raw_third.read_text())
+
+
+def test_nlm_sync_continues_after_individual_source_failure(kb_root, make_source, mock_client):
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncOk1", domain="ds")
+    # Source with empty body, no url, no sidecar — `nlm_add` rejects this.
+    bad_text = make_source(
+        id_="yt-syncBad1", domains=["ds"], body="", url=""
+    )
+    bad_path = paths.raw_source_path("youtube", "yt-syncBad1")
+    bad_path.write_text(bad_text)
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncOk2", domain="ds")
+
+    result = nlm_sync("ds", client=mock_client)
+
+    assert not result.success  # one failure → success=False
+    assert "2 added" in result.summary
+    assert "1 failed" in result.summary
+    assert any("yt-syncBad1" in e for e in result.errors)
+    # The good sources before AND after the failing one both got synced.
+    urls_added = {url for _, url in mock_client.sources_added}
+    assert "https://www.youtube.com/watch?v=yt-syncOk1" in urls_added
+    assert "https://www.youtube.com/watch?v=yt-syncOk2" in urls_added
+
+
+def test_nlm_sync_reconciles_sources_already_in_notebook(kb_root, make_source, mock_client):
+    """If a source is already on the NotebookLM side (e.g., from a prior
+    partial run before we updated frontmatter) `nlm_sync` should detect
+    that via title signature, fix the frontmatter, and skip the add — no
+    duplicate."""
+    # First, attach the persistent notebook to the domain so reconciliation
+    # has somewhere to look.
+    from gateway import nlm_registry as registry_module
+    registry_module.register("ds", "nb-existing")
+
+    # An arxiv source whose URL contains the canonical arxiv id.
+    arxiv_text = make_source(
+        id_="arxiv-2401.12345",
+        type_="arxiv",
+        domains=["ds"],
+        url="http://arxiv.org/abs/2401.12345v2",
+        title="Some long enough title for fallback matching",
+    )
+    arxiv_path = paths.raw_source_path("arxiv", "arxiv-2401.12345")
+    arxiv_path.write_text(arxiv_text)
+
+    # Mark the notebook as already containing the arxiv source — simulated by
+    # NotebookLM-side title that embeds the arxiv id (this is exactly the
+    # title shape NotebookLM uses for arxiv ingests).
+    mock_client.pre_loaded_sources["nb-existing"] = [
+        {"id": "src-abc", "title": "[2401.12345v1] Some Edge Inference Paper"}
+    ]
+
+    result = nlm_sync("ds", client=mock_client)
+
+    assert result.success, result.errors
+    assert "1 reconciled" in result.summary
+    # No actual adds happened — reconciliation took the place of the add.
+    assert mock_client.sources_added == []
+    # Frontmatter now records the persistent notebook id, so a re-run is a no-op.
+    front, _ = fm.parse(arxiv_path.read_text())
+    assert "nb-existing" in front["nlm_corpus_ids"]
+
+
+def test_nlm_sync_respects_limit(kb_root, make_source, mock_client):
+    for i in range(5):
+        _make_youtube_source(kb_root, make_source, source_id=f"yt-syncLim{i}A", domain="ds")
+
+    result = nlm_sync("ds", limit=2, client=mock_client)
+
+    assert result.success
+    assert "2 added" in result.summary
+    assert len(mock_client.sources_added) == 2
 
 
 # --- nlm-slides / nlm-audio / nlm-briefing ---------------------------------

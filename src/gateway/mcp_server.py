@@ -161,6 +161,23 @@ def wiki_nlm_add(domain: str, source_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
+def wiki_nlm_sync(
+    domain: str,
+    *,
+    limit: int | None = None,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    """Sync every raw source tagged with `domain` into its persistent
+    NotebookLM corpus. Idempotent and resumable: per-source failures are
+    collected and the run continues. Use `dry_run=True` to preview the
+    candidate list before paying the network cost.
+    """
+    from gateway.ops.nlm import nlm_sync
+
+    return _serialize(nlm_sync(domain, dry_run=dry_run, limit=limit))
+
+
+@mcp.tool()
 def wiki_nlm_slides(domain: str, topic: str) -> dict[str, Any]:
     """Generate a slide deck from a domain's NotebookLM corpus and file it
     back as a wiki artifact page with bidirectional links.

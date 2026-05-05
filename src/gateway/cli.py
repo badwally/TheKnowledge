@@ -21,6 +21,7 @@ SUBCOMMANDS: dict[str, str] = {
     "backfill-examples": "Populate policy.yaml + example bank from legacy research-notebook artifacts",
     "finetune": "Inspect or distill the per-domain example bank into a tighter policy candidate",
     "nlm-add": "Add a source to a NotebookLM corpus",
+    "nlm-sync": "Sync every raw source tagged with a domain into its NotebookLM corpus",
     "nlm-slides": "Generate a slide deck from a NotebookLM corpus; file as wiki artifact",
     "nlm-audio": "Generate an audio overview; file as wiki artifact",
     "nlm-briefing": "Generate a briefing doc; file as wiki artifact",
@@ -51,6 +52,7 @@ IMPLEMENTED: set[str] = {
     "status",
     "watch",
     "nlm-add",
+    "nlm-sync",
     "nlm-slides",
     "nlm-audio",
     "nlm-briefing",
@@ -138,6 +140,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_nlm_add = subparsers.add_parser("nlm-add", help=SUBCOMMANDS["nlm-add"])
     p_nlm_add.add_argument("domain", help="Domain slug")
     p_nlm_add.add_argument("source_id", help="Source id (e.g., yt-LfRiBJgD7sk)")
+
+    # nlm-sync: bulk-add every raw source tagged with a domain into its corpus
+    p_nlm_sync = subparsers.add_parser("nlm-sync", help=SUBCOMMANDS["nlm-sync"])
+    p_nlm_sync.add_argument("domain", help="Domain slug")
+    p_nlm_sync.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Process at most N sources (useful for smoke-testing)",
+    )
+    p_nlm_sync.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="List sources that would be synced; do not call NotebookLM",
+    )
 
     # nlm-slides
     p_nlm_slides = subparsers.add_parser("nlm-slides", help=SUBCOMMANDS["nlm-slides"])
@@ -482,6 +499,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_watch(ns)
     if ns.subcommand == "nlm-add":
         return _run_nlm_add(ns)
+    if ns.subcommand == "nlm-sync":
+        return _run_nlm_sync(ns)
     if ns.subcommand == "nlm-slides":
         return _run_nlm_slides(ns)
     if ns.subcommand == "nlm-audio":
@@ -684,6 +703,24 @@ def _run_nlm_add(ns: argparse.Namespace) -> int:
     from gateway.ops.nlm import nlm_add
 
     return _emit_result(nlm_add(ns.domain, ns.source_id))
+
+
+def _run_nlm_sync(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_sync
+
+    def _progress(idx: int, total: int, source_id: str, status: str, detail: str) -> None:
+        marker = {"added": "+", "skipped": "·", "failed": "x"}.get(status, "?")
+        # Trim long detail lines so progress stays readable.
+        detail_short = (detail or "")[:80]
+        print(f"  [{idx:>3}/{total}] {marker} {source_id:<28} {detail_short}", flush=True)
+
+    result = nlm_sync(
+        ns.domain,
+        dry_run=ns.dry_run,
+        limit=ns.limit,
+        progress=None if ns.dry_run else _progress,
+    )
+    return _emit_result(result)
 
 
 def _run_nlm_slides(ns: argparse.Namespace) -> int:

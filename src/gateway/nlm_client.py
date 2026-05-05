@@ -69,6 +69,8 @@ class NlmClient(Protocol):
 
     def artifact_status(self, notebook_id: str, artifact_id: str) -> str: ...
 
+    def notebook_sources(self, notebook_id: str) -> list[dict]: ...
+
 
 # --- subprocess implementation ---------------------------------------------
 
@@ -160,8 +162,13 @@ class NlmCLIClient:
     # --- sources -----------------------------------------------------------
 
     def source_add_url(self, notebook_id: str, url: str) -> None:
-        args = ["add", "url", notebook_id, url]
-        result = self._run(args)
+        # Modern form: `nlm source add NOTEBOOK_ID --url URL --wait`. The
+        # legacy `nlm add url NOTEBOOK URL` form was removed when the CLI
+        # consolidated source-creation under `source add` with explicit
+        # flags. `--wait` blocks until NotebookLM has indexed the source,
+        # so query-time failures don't masquerade as add-time successes.
+        args = ["source", "add", notebook_id, "--url", url, "--wait"]
+        result = self._run(args, timeout_s=max(self._timeout, 660.0))
         self._check(result, args=args)
 
     def source_add_text(self, notebook_id: str, content: str, *, title: str | None = None) -> None:
@@ -180,6 +187,24 @@ class NlmCLIClient:
             args.extend(["--title", title])
         result = self._run(args)
         self._check(result, args=args)
+
+    def notebook_sources(self, notebook_id: str) -> list[dict]:
+        """Return the list of source dicts (id, title, url?) currently in
+        the notebook. Used by `nlm_sync` to reconcile NotebookLM-side state
+        against frontmatter so partially-loaded corpora don't get duplicated.
+        """
+        args = ["notebook", "get", notebook_id]
+        result = self._run(args, timeout_s=60.0)
+        self._check(result, args=args)
+        try:
+            data = json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            raise NlmError(
+                f"could not parse `{self._exe} notebook get` output: {e}"
+            ) from e
+        value = data.get("value", data) if isinstance(data, dict) else {}
+        sources = value.get("sources") or []
+        return [s for s in sources if isinstance(s, dict)]
 
     # --- artifact status (M37) ---------------------------------------------
 
@@ -284,6 +309,18 @@ class NlmCLIClient:
         """
         args = ["notebook", "query", notebook_id, question]
         result = self._run(args)
+        if result.returncode != 0:
+            stderr = result.stderr or ""
+            if "NOT_FOUND" in stderr or "error code 5" in stderr:
+                raise NlmError(
+                    f"notebook {notebook_id} returned NOT_FOUND. The notebook is "
+                    "reachable but its corpus is empty or unindexed — "
+                    "NotebookLM rejects queries against zero-source notebooks. "
+                    "Verify with `nlm notebook get <id>`; if source_count is 0, "
+                    "sync sources via `wiki nlm-add <domain> <source-id>` "
+                    "before querying. The CLI's auth-related advice is misleading "
+                    "in this case."
+                )
         self._check(result, args=args)
         try:
             raw = json.loads(result.stdout)

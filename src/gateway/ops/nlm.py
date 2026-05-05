@@ -263,6 +263,198 @@ def nlm_add(
     )
 
 
+# --- nlm-sync --------------------------------------------------------------
+
+
+def _iter_sources_for_domain(domain: str) -> list[tuple[str, Path, str]]:
+    """Walk raw/ and return [(source_id, raw_path, source_type)] for every
+    source whose frontmatter `domains:` list contains `domain`.
+
+    Sorted by (source_type, source_id) so dry-run output is stable.
+    """
+    matches: list[tuple[str, Path, str]] = []
+    for source_type in paths.SOURCE_TYPES:
+        type_dir = paths.raw_dir_for(source_type)
+        if not type_dir.is_dir():
+            continue
+        for raw_path in sorted(type_dir.glob("*.md")):
+            try:
+                front, _ = fm.parse(raw_path.read_text())
+            except (OSError, fm.FrontmatterError):
+                continue
+            domains = front.get("domains") or []
+            if not isinstance(domains, list):
+                continue
+            if domain in domains:
+                matches.append((raw_path.stem, raw_path, source_type))
+    matches.sort(key=lambda t: (t[2], t[0]))
+    return matches
+
+
+_ARXIV_ID_RE = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})")
+_YT_ID_RE = re.compile(r"[?&]v=([A-Za-z0-9_-]{11})|youtu\.be/([A-Za-z0-9_-]{11})")
+
+
+def _signatures_for(front: dict) -> list[str]:
+    """Identifying substrings to look for in NotebookLM-side titles when
+    deciding whether a raw source has already been loaded. arxiv and
+    youtube are precise; everything else falls back to a long title prefix
+    which is good enough for partial matches."""
+    sigs: list[str] = []
+    url = str(front.get("url") or "")
+    if (m := _ARXIV_ID_RE.search(url)):
+        sigs.append(m.group(1))
+    if (m := _YT_ID_RE.search(url)):
+        sigs.append(m.group(1) or m.group(2))
+    title = str(front.get("title") or "").strip()
+    if len(title) >= 16:
+        sigs.append(title[:48])
+    return [s for s in sigs if s]
+
+
+def _reconcile_already_loaded(
+    domain: str,
+    notebook_id: str,
+    sources: list[tuple[str, Path, str]],
+    client: NlmClient,
+) -> int:
+    """For each raw source whose URL/title signature appears in the
+    notebook's existing source list, add the notebook_id to its
+    `nlm_corpus_ids` frontmatter so the main loop skips it. Returns the
+    number reconciled. Best-effort: if we can't fetch the NotebookLM-side
+    list, returns 0 and the main loop proceeds (which may create duplicates).
+    """
+    try:
+        nlm_sources = client.notebook_sources(notebook_id)
+    except NlmError:
+        return 0
+    nlm_blob = "\n".join(
+        f"{s.get('title', '')} {s.get('url', '')}" for s in nlm_sources
+    )
+    if not nlm_blob.strip():
+        return 0
+
+    reconciled = 0
+    for source_id, raw_path, _ in sources:
+        try:
+            front, body = fm.parse(raw_path.read_text())
+        except (OSError, fm.FrontmatterError):
+            continue
+        if notebook_id in (front.get("nlm_corpus_ids") or []):
+            continue
+        sigs = _signatures_for(front)
+        if not sigs or not any(sig in nlm_blob for sig in sigs):
+            continue
+        front["nlm_corpus_ids"] = list(front.get("nlm_corpus_ids") or []) + [notebook_id]
+        domains = list(front.get("domains") or [])
+        if domain not in domains:
+            domains.append(domain)
+            front["domains"] = domains
+        write_atomic(raw_path, fm.serialize(front, body))
+        nlm_registry.increment_sources(domain)
+        reconciled += 1
+    return reconciled
+
+
+def nlm_sync(
+    domain: str,
+    *,
+    dry_run: bool = False,
+    limit: int | None = None,
+    client: NlmClient | None = None,
+    progress=None,
+) -> OperationResult:
+    """Sync every raw source tagged with `domain` into the domain's
+    persistent NotebookLM notebook.
+
+    Idempotent: each source is added only if its frontmatter doesn't
+    already list the persistent notebook in `nlm_corpus_ids`. Resumable:
+    a Ctrl+C mid-run leaves committed sources tagged so a re-run skips
+    them. Per-source failures are collected and the loop continues so
+    one bad source can't block the rest.
+
+    `progress(idx, total, source_id, status, detail)` is called once per
+    source if provided; the CLI uses this to print live output.
+    """
+    if not domain:
+        return OperationResult(success=False, errors=["domain is required"])
+
+    sources = _iter_sources_for_domain(domain)
+    if not sources:
+        return OperationResult(
+            success=True,
+            no_op=True,
+            summary=f"no raw sources tagged with domain {domain!r}",
+        )
+
+    if limit is not None and limit > 0:
+        sources = sources[:limit]
+
+    if dry_run:
+        lines = [f"would sync {len(sources)} source(s) to {domain!r}:"]
+        for source_id, _, source_type in sources[:50]:
+            lines.append(f"  {source_type}/{source_id}")
+        if len(sources) > 50:
+            lines.append(f"  ... and {len(sources) - 50} more")
+        return OperationResult(success=True, summary="\n".join(lines))
+
+    client = client or NlmCLIClient()
+
+    # Reconcile against NotebookLM-side state first: sources whose URL/title
+    # signature already appears in the notebook get their frontmatter updated
+    # in-place so the main loop counts them as skipped (no duplicate adds).
+    reconciled = 0
+    notebook_id = nlm_registry.get_notebook_id(domain)
+    if notebook_id:
+        reconciled = _reconcile_already_loaded(domain, notebook_id, sources, client)
+
+    added = 0
+    skipped = 0
+    failed: list[str] = []
+    paths_touched: list[Path] = []
+
+    for idx, (source_id, _raw_path, _source_type) in enumerate(sources, start=1):
+        try:
+            r = nlm_add(domain, source_id, client=client)
+        except Exception as e:  # noqa: BLE001 — never let one source kill the run
+            failed.append(f"{source_id}: {e}")
+            if progress:
+                progress(idx, len(sources), source_id, "failed", str(e))
+            continue
+
+        if not r.success:
+            failed.append(f"{source_id}: {'; '.join(r.errors)}")
+            if progress:
+                progress(idx, len(sources), source_id, "failed", "; ".join(r.errors))
+            continue
+
+        if r.no_op:
+            skipped += 1
+            if progress:
+                progress(idx, len(sources), source_id, "skipped", r.summary or "")
+        else:
+            added += 1
+            if progress:
+                progress(idx, len(sources), source_id, "added", r.summary or "")
+            paths_touched.extend(r.paths_touched or [])
+
+    summary_parts = [
+        f"sync {domain}: {added} added",
+        f"{skipped} already in corpus",
+    ]
+    if reconciled:
+        summary_parts.append(f"{reconciled} reconciled (already in NotebookLM)")
+    summary_parts.append(f"{len(failed)} failed")
+    summary_parts.append(f"(out of {len(sources)} candidates)")
+    summary = ", ".join(summary_parts[:-1]) + " " + summary_parts[-1]
+    return OperationResult(
+        success=len(failed) == 0,
+        summary=summary,
+        errors=failed,
+        paths_touched=paths_touched,
+    )
+
+
 # --- nlm-slides / nlm-audio / nlm-briefing ---------------------------------
 
 
