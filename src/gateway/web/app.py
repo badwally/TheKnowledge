@@ -9,6 +9,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from gateway.web.routes import domains as domain_routes
+from gateway.web.routes import nlm as nlm_routes
 from gateway.web.routes import ops as ops_routes
 from gateway.web.routes import research as research_routes
 from gateway.web.routes import review as review_routes
@@ -35,6 +36,7 @@ def create_app() -> FastAPI:
     app.include_router(task_routes.router)
     app.include_router(research_routes.router)
     app.include_router(review_routes.router)
+    app.include_router(nlm_routes.router)
 
     if _FRONTEND_DIST.is_dir():
         app.mount(

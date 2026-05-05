@@ -209,3 +209,16 @@ class FilterBandSource(BaseModel):
     threshold_review: float = 0.0
     threshold_include: float = 0.0
     domain: str = ""
+
+
+class NlmAddRequest(BaseModel):
+    source_id: str
+
+
+class ArtifactSummary(BaseModel):
+    slug: str
+    type: str  # "briefing" | "audio" | "slides"
+    title: str
+    domain: str
+    created_at: str
+    nlm_artifact_url: str | None = None
