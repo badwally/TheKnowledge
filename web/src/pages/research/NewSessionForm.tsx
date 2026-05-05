@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { api } from "../../api";
+import type { DomainSummary } from "../../types";
 
 interface Props {
   onCreated: () => void;
@@ -14,13 +15,18 @@ export default function NewSessionForm({ onCreated, onCancel }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [taskId, setTaskId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [domains, setDomains] = useState<DomainSummary[]>([]);
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
+    api.domains().then(setDomains).catch(() => {});
     return () => {
       if (intervalRef.current) window.clearInterval(intervalRef.current);
     };
   }, []);
+
+  const slugs = new Set(domains.map((d) => d.slug));
+  const domainKnown = domain === "" || slugs.has(domain);
 
   async function onSubmit() {
     if (!prompt.trim() || !domain.trim()) {
@@ -104,9 +110,11 @@ export default function NewSessionForm({ onCreated, onCancel }: Props) {
       </label>
       <input
         type="text"
+        list="new-session-domains"
         value={domain}
         onChange={(e) => setDomain(e.target.value)}
-        placeholder="edge-ai-agentic"
+        placeholder="start typing or pick from list"
+        autoComplete="off"
         style={{
           width: "100%",
           fontSize: 12,
@@ -117,6 +125,18 @@ export default function NewSessionForm({ onCreated, onCancel }: Props) {
         }}
         disabled={submitting}
       />
+      <datalist id="new-session-domains">
+        {domains.map((d) => (
+          <option key={d.slug} value={d.slug}>
+            {d.topic} ({d.sources_count})
+          </option>
+        ))}
+      </datalist>
+      {!domainKnown && (
+        <div style={{ marginTop: 4, color: "#b45309", fontSize: 11 }}>
+          "{domain}" is not an existing domain — submission will fail unless this slug exists
+        </div>
+      )}
 
       <button
         onClick={() => setAdvanced((v) => !v)}

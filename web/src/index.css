@@ -90,6 +90,9 @@ body {
 .op-form textarea { min-height: 80px; resize: vertical; }
 .op-form .checkbox-row { display: flex; gap: 12px; margin: 8px 0; }
 .op-form .checkbox-row label { display: inline-flex; align-items: center; gap: 6px; text-transform: none; color: inherit; font-size: 13px; margin: 0; }
+.op-form .form-hint { font-size: 11px; margin: 4px 0 0; text-transform: none; }
+.op-form .form-hint-warn { color: #b45309; }
+.op-form .form-hint-error { color: #dc2626; }
 .btn-primary {
   background: #1a4c8e;
   color: white;
