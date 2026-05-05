@@ -847,6 +847,30 @@ Adds a Review sidebar entry to `wiki serve` with four tabs (Drafts, Contradictio
 - Aggregating contradictions by affected page.
 - Backfill of pre-M42 contradictions from `log.md` summaries — the JSONL log accumulates from M42 onward only.
 
+### M43 — NLM Artifacts UI
+
+Adds a new Artifacts page under the Domains sidebar group at `/domains/artifacts`. Wraps the existing `wiki nlm-{add,sync,briefing,audio,slides,revise}` ops in HTTP endpoints. Confirmation modal before every LLM-calling op (per the artifact-generation-is-opt-in memory rule). Async generation via M40's TaskStore + 3s polling.
+
+**What's new.**
+
+- `gateway.web.routes.nlm` — 7 endpoints: nlm-add (sync); sync/briefing/audio/slides/revise (async, return 202+task_id); GET artifacts list per domain.
+- `web/src/pages/Artifacts.tsx` — single page with domain dropdown (filtered to `has_notebook=true`), add-source form, sync button, three artifact-generation cards (briefing/audio/slides), per-row revise on slide-deck artifacts. Confirmation modal before every async op via local `useAsyncOp` hook + `OpStatus` component.
+- Sidebar gains an "Artifacts" entry under the Domains group.
+- No changes to underlying `gateway.ops.nlm.*` functions — endpoints are thin adapters that reuse `_serialize_op_result` from M40's ops route and `_to_response` from M40's domains route.
+
+**Tests.** 8 new tests in `test_web_nlm.py`: artifacts list (empty, multi-domain filter, sort), nlm-add error path, async briefing/audio/slides/sync (with stubbed ops), revise (artifact-slug routing). Full gateway suite: 527 → 541 tests passing.
+
+**Hand-test.** Started server on port 7475, verified `/api/nlm/domains/cycling-and-fitness/artifacts` returns 2 real on-disk artifacts (slides + briefing); `/api/nlm/domains/glp1-reward-modulation/artifacts` returns 0; `/domains/artifacts` SPA route serves React HTML at 200. Live NLM generation skipped to avoid burning quota — TestClient stubs cover the contract.
+
+**Out of scope (M44+).**
+
+- Bulk actions on review tabs.
+- Filter/search within review tabs.
+- Obsidian:// deep-links for synthesis pages.
+- Custom artifact types beyond what NotebookLM exposes.
+- Artifact deletion from the UI (delete the wiki page directly).
+- In-browser audio playback or slide-deck rendering.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

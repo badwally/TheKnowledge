@@ -44,6 +44,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Generate briefing doc | `wiki nlm-briefing <domain>` |
 | Revise an artifact | `wiki nlm-revise <slug> --slide N "<instructions>"` |
 | Add a source to a NotebookLM corpus | `wiki nlm-add <domain> <source-id>` |
+| Bulk-sync every raw source tagged with a domain into its corpus | `wiki nlm-sync <domain> [--limit N] [--dry-run]` |
 | Run filter on a source | `wiki filter <path>` |
 | Pin a corrected filter decision | `wiki filter-correct <id>` |
 | Finalize a draft page | `wiki finalize <page-path>` (`--abandon` to delete) |
@@ -55,7 +56,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Reverse a promotion (undo policy + back-tags) | `wiki demote-domain <domain-slug>` |
 | Delete a draft proposal | `wiki reject-proposal <proposal-slug>` |
 | Multi-adapter research search | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` |
-| Start the local web UI (FastAPI + React) | `wiki serve [--port 7474] [--bind 127.0.0.1]` (visit `/research` for orchestration UI; `/review` for curation queues) |
+| Start the local web UI (FastAPI + React) | `wiki serve [--port 7474] [--bind 127.0.0.1]` (visit `/research`, `/review`, `/domains/artifacts`) |
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
 
