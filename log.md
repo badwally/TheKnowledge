@@ -3952,3 +3952,767 @@ report=.knowledge/lint/2026-05-04T21-26-37Z-schema-drift.md
 ## [2026-05-04T21:27:10Z] lint | scope=schema-drift | schema-drift=0
 
 report=.knowledge/lint/2026-05-04T21-27-10Z-schema-drift.md
+
+## [2026-05-04T21:56:16Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T21-56-16Z-schema-drift.md
+
+## [2026-05-04T21:57:41Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T21-57-41Z-schema-drift.md
+
+## [2026-05-04T21:59:17Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T21-59-17Z-schema-drift.md
+
+## [2026-05-04T22:01:35Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-01-35Z-schema-drift.md
+
+## [2026-05-04T22:03:51Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-03-51Z-schema-drift.md
+
+## [2026-05-04T22:05:26Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-05-26Z-schema-drift.md
+
+## [2026-05-04T22:08:48Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-08-48Z-schema-drift.md
+
+## [2026-05-04T22:10:35Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-10-35Z-schema-drift.md
+
+## [2026-05-04T22:13:53Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-13-53Z-schema-drift.md
+
+## [2026-05-04T22:15:54Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-15-54Z-schema-drift.md
+
+## [2026-05-04T22:17:04Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-17-04Z-schema-drift.md
+
+## [2026-05-04T22:18:22Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-18-22Z-schema-drift.md
+
+## [2026-05-04T22:19:32Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-19-32Z-schema-drift.md
+
+## [2026-05-04T22:20:45Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-20-45Z-schema-drift.md
+
+## [2026-05-04T22:22:22Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-22-22Z-schema-drift.md
+
+## [2026-05-04T22:23:23Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-23-23Z-schema-drift.md
+
+## [2026-05-04T22:24:45Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T22-24-45Z-schema-drift.md
+
+## [2026-05-04T23:46:02Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-46-02Z-schema-drift.md
+
+## [2026-05-04T23:48:46Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-48-46Z-schema-drift.md
+
+## [2026-05-04T23:50:14Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-50-14Z-schema-drift.md
+
+## [2026-05-04T23:52:14Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-52-14Z-schema-drift.md
+
+## [2026-05-04T23:53:31Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-53-31Z-schema-drift.md
+
+## [2026-05-04T23:55:17Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-55-17Z-schema-drift.md
+
+## [2026-05-04T23:57:54Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-57-54Z-schema-drift.md
+
+## [2026-05-04T23:59:02Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-04T23-59-02Z-schema-drift.md
+
+## [2026-05-05T00:00:14Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-00-14Z-schema-drift.md
+
+## [2026-05-05T00:01:57Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-01-57Z-schema-drift.md
+
+## [2026-05-05T00:03:09Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-03-09Z-schema-drift.md
+
+## [2026-05-05T00:04:07Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-04-07Z-schema-drift.md
+
+## [2026-05-05T00:05:12Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-05-12Z-schema-drift.md
+
+## [2026-05-05T00:06:20Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-06-20Z-schema-drift.md
+
+## [2026-05-05T00:19:15Z] ingest | id=web-2026-04-11-879 | type=web | domains=- | filter=skipped | domain=knowledge-base
+
+raw=raw/web/web-2026-04-11-879.md (wiki not written: filter decision=skipped)
+
+## [2026-05-05T00:22:50Z] wiki-author | id=web-2026-04-11-879 | updates=11 | created=11 | updated=0 | contradictions=0 | draft=yes
+
+WikiLoom describes a tool architecturally adjacent to this knowledge base (LLM wiki pattern, Karpathy-inspired); creating one entity for the project, two for cited people/artifacts, and concept pages for each load-bearing mechanism (deterministic linking, structural provenance, human-edit protection, lifecycle, per-chunk context, budget check, auto-commit) gives the wiki a comparable-systems anchor.
+
+## [2026-05-05T00:39:16Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-39-16Z-schema-drift.md
+
+## [2026-05-05T00:41:08Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-41-08Z-schema-drift.md
+
+## [2026-05-05T00:42:27Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-42-27Z-schema-drift.md
+
+## [2026-05-05T00:44:04Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-44-04Z-schema-drift.md
+
+## [2026-05-05T00:45:51Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-45-51Z-schema-drift.md
+
+## [2026-05-05T00:46:50Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-46-50Z-schema-drift.md
+
+## [2026-05-05T00:48:10Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-48-10Z-schema-drift.md
+
+## [2026-05-05T00:49:12Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-49-12Z-schema-drift.md
+
+## [2026-05-05T00:50:26Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-50-26Z-schema-drift.md
+
+## [2026-05-05T00:51:41Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-51-41Z-schema-drift.md
+
+## [2026-05-05T00:52:57Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-52-57Z-schema-drift.md
+
+## [2026-05-05T00:54:18Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T00-54-18Z-schema-drift.md
+
+## [2026-05-05T01:13:44Z] nlm-add | id=arxiv-1911.04175 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/1911.04175v1
+
+## [2026-05-05T01:17:26Z] nlm-add | id=arxiv-2412.12178 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2412.12178v2
+
+## [2026-05-05T01:17:30Z] nlm-add | id=arxiv-2502.00425 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2502.00425v2
+
+## [2026-05-05T01:17:35Z] nlm-add | id=arxiv-2502.06963 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2502.06963v2
+
+## [2026-05-05T01:17:39Z] nlm-add | id=arxiv-2502.15816 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2502.15816v1
+
+## [2026-05-05T01:17:44Z] nlm-add | id=arxiv-2503.04521 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2503.04521v2
+
+## [2026-05-05T01:17:48Z] nlm-add | id=arxiv-2504.08148 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2504.08148v1
+
+## [2026-05-05T01:17:52Z] nlm-add | id=arxiv-2505.05428 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2505.05428v3
+
+## [2026-05-05T01:17:57Z] nlm-add | id=arxiv-2505.05530 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2505.05530v1
+
+## [2026-05-05T01:18:02Z] nlm-add | id=arxiv-2505.14302 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2505.14302v1
+
+## [2026-05-05T01:18:06Z] nlm-add | id=arxiv-2505.19147 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2505.19147v3
+
+## [2026-05-05T01:18:10Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-18-10Z-schema-drift.md
+
+## [2026-05-05T01:18:11Z] nlm-add | id=arxiv-2506.20000 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2506.20000v1
+
+## [2026-05-05T01:18:16Z] nlm-add | id=arxiv-2507.06520 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2507.06520v1
+
+## [2026-05-05T01:18:20Z] nlm-add | id=arxiv-2507.19261 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2507.19261v1
+
+## [2026-05-05T01:18:25Z] nlm-add | id=arxiv-2508.02866 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2508.02866v3
+
+## [2026-05-05T01:18:30Z] nlm-add | id=arxiv-2508.03332 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2508.03332v2
+
+## [2026-05-05T01:18:34Z] nlm-add | id=arxiv-2508.07329 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2508.07329v1
+
+## [2026-05-05T01:18:39Z] nlm-add | id=arxiv-2509.02121 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2509.02121v2
+
+## [2026-05-05T01:18:44Z] nlm-add | id=arxiv-2509.11079 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2509.11079v5
+
+## [2026-05-05T01:18:49Z] nlm-add | id=arxiv-2509.16989 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2509.16989v3
+
+## [2026-05-05T01:18:53Z] nlm-add | id=arxiv-2509.25689 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2509.25689v1
+
+## [2026-05-05T01:18:58Z] nlm-add | id=arxiv-2510.27051 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2510.27051v1
+
+## [2026-05-05T01:19:03Z] nlm-add | id=arxiv-2511.13023 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2511.13023v1
+
+## [2026-05-05T01:19:07Z] nlm-add | id=arxiv-2511.16402 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2511.16402v1
+
+## [2026-05-05T01:19:12Z] nlm-add | id=arxiv-2511.19635 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2511.19635v1
+
+## [2026-05-05T01:19:17Z] nlm-add | id=arxiv-2512.03383 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2512.03383v3
+
+## [2026-05-05T01:19:21Z] nlm-add | id=arxiv-2512.09309 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2512.09309v1
+
+## [2026-05-05T01:19:26Z] nlm-add | id=arxiv-2512.20902 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2512.20902v1
+
+## [2026-05-05T01:19:30Z] nlm-add | id=arxiv-2601.00848 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2601.00848v1
+
+## [2026-05-05T01:19:34Z] nlm-add | id=arxiv-2601.03290 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2601.03290v1
+
+## [2026-05-05T01:19:39Z] nlm-add | id=arxiv-2601.11816 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2601.11816v1
+
+## [2026-05-05T01:19:44Z] nlm-add | id=arxiv-2601.20655 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2601.20655v1
+
+## [2026-05-05T01:19:48Z] nlm-add | id=arxiv-2602.03145 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2602.03145v1
+
+## [2026-05-05T01:19:53Z] nlm-add | id=arxiv-2602.13227 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2602.13227v1
+
+## [2026-05-05T01:19:57Z] nlm-add | id=arxiv-2603.16104 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2603.16104v1
+
+## [2026-05-05T01:20:01Z] nlm-add | id=arxiv-2603.21389 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2603.21389v1
+
+## [2026-05-05T01:20:02Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-20-02Z-schema-drift.md
+
+## [2026-05-05T01:20:06Z] nlm-add | id=arxiv-2603.28622 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2603.28622v1
+
+## [2026-05-05T01:20:11Z] nlm-add | id=arxiv-2604.04820 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=arxiv
+
+url=http://arxiv.org/abs/2604.04820v1
+
+## [2026-05-05T01:20:18Z] nlm-add | id=pdf-6f4c9082252e | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=pdf
+
+file=pdf-6f4c9082252e.pdf title='semanticscholarapi'
+
+## [2026-05-05T01:20:28Z] nlm-add | id=pdf-d4797e8f4981 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=pdf
+
+file=pdf-d4797e8f4981.pdf title='9_Designing+End-to-End+Retrieval-Augmented+Generation(RAG)+Workflows+for+Knowledge-Intensive+Applications'
+
+## [2026-05-05T01:20:32Z] nlm-add | id=yt-0Wwn5IEqFcg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=0Wwn5IEqFcg
+
+## [2026-05-05T01:20:35Z] nlm-add | id=yt-1mix7WnuEK0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=1mix7WnuEK0
+
+## [2026-05-05T01:20:38Z] nlm-add | id=yt-2P9DOtg4gP4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=2P9DOtg4gP4
+
+## [2026-05-05T01:20:41Z] nlm-add | id=yt-2czYyrTzILg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=2czYyrTzILg
+
+## [2026-05-05T01:20:45Z] nlm-add | id=yt-2t9XrPcAiHg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=2t9XrPcAiHg
+
+## [2026-05-05T01:20:48Z] nlm-add | id=yt-3Skl6cxH5O4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=3Skl6cxH5O4
+
+## [2026-05-05T01:20:52Z] nlm-add | id=yt-4-FH09AMsp0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=4-FH09AMsp0
+
+## [2026-05-05T01:20:56Z] nlm-add | id=yt-41PKDlGM3oU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=41PKDlGM3oU
+
+## [2026-05-05T01:20:59Z] nlm-add | id=yt-56BXHCkngss | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=56BXHCkngss
+
+## [2026-05-05T01:20:59Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-20-59Z-schema-drift.md
+
+## [2026-05-05T01:21:02Z] nlm-add | id=yt-5RIOQuHOihY | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=5RIOQuHOihY
+
+## [2026-05-05T01:21:07Z] nlm-add | id=yt-5oI_G8WL6rU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=5oI_G8WL6rU
+
+## [2026-05-05T01:21:12Z] nlm-add | id=yt-5tn6O0uXYEg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=5tn6O0uXYEg
+
+## [2026-05-05T01:21:15Z] nlm-add | id=yt-67ev-6Xn30U | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=67ev-6Xn30U
+
+## [2026-05-05T01:21:18Z] nlm-add | id=yt-6H-FcTcfsv4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=6H-FcTcfsv4
+
+## [2026-05-05T01:21:21Z] nlm-add | id=yt-6mQwHqK1I5w | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=6mQwHqK1I5w
+
+## [2026-05-05T01:21:24Z] nlm-add | id=yt-7j1t3UZA1TY | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=7j1t3UZA1TY
+
+## [2026-05-05T01:21:29Z] nlm-add | id=yt-9O9zZ1lQWiI | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=9O9zZ1lQWiI
+
+## [2026-05-05T01:21:34Z] nlm-add | id=yt-9ozwh9EDGhU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=9ozwh9EDGhU
+
+## [2026-05-05T01:21:37Z] nlm-add | id=yt-9xsv-vfSpdk | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=9xsv-vfSpdk
+
+## [2026-05-05T01:21:41Z] nlm-add | id=yt-AZ6257Ya_70 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=AZ6257Ya_70
+
+## [2026-05-05T01:21:44Z] nlm-add | id=yt-EVg6g7fy4qE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=EVg6g7fy4qE
+
+## [2026-05-05T01:21:48Z] nlm-add | id=yt-EXB8HokGVMI | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=EXB8HokGVMI
+
+## [2026-05-05T01:21:51Z] nlm-add | id=yt-EpKghZYqVW4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=EpKghZYqVW4
+
+## [2026-05-05T01:21:55Z] nlm-add | id=yt-FLpS7OfD5-s | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=FLpS7OfD5-s
+
+## [2026-05-05T01:21:58Z] nlm-add | id=yt-FYL9e_aqZY0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=FYL9e_aqZY0
+
+## [2026-05-05T01:22:01Z] nlm-add | id=yt-Fbr_Solax1w | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Fbr_Solax1w
+
+## [2026-05-05T01:22:05Z] nlm-add | id=yt-FviaHPrFhTg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=FviaHPrFhTg
+
+## [2026-05-05T01:22:08Z] nlm-add | id=yt-G6V3vJ6ojMQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=G6V3vJ6ojMQ
+
+## [2026-05-05T01:22:11Z] nlm-add | id=yt-G8vzGedNnro | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=G8vzGedNnro
+
+## [2026-05-05T01:22:14Z] nlm-add | id=yt-GDm_uH6VxPY | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=GDm_uH6VxPY
+
+## [2026-05-05T01:22:18Z] nlm-add | id=yt-GUozMSpnmcc | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=GUozMSpnmcc
+
+## [2026-05-05T01:22:21Z] nlm-add | id=yt-GuTcle5edjk | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=GuTcle5edjk
+
+## [2026-05-05T01:22:25Z] nlm-add | id=yt-HcPegfd5-yo | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=HcPegfd5-yo
+
+## [2026-05-05T01:22:28Z] nlm-add | id=yt-HyzlYwjoXOQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=HyzlYwjoXOQ
+
+## [2026-05-05T01:22:31Z] nlm-add | id=yt-IVts6ztrkFg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=IVts6ztrkFg
+
+## [2026-05-05T01:22:34Z] nlm-add | id=yt-McLdlg5Gc9s | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=McLdlg5Gc9s
+
+## [2026-05-05T01:22:37Z] nlm-add | id=yt-N3vHJcHBS-w | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=N3vHJcHBS-w
+
+## [2026-05-05T01:22:41Z] nlm-add | id=yt-OFq_CvRCpA0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=OFq_CvRCpA0
+
+## [2026-05-05T01:22:45Z] nlm-add | id=yt-P8m5eHAyrFM | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=P8m5eHAyrFM
+
+## [2026-05-05T01:22:49Z] nlm-add | id=yt-PL39scRsxvE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=PL39scRsxvE
+
+## [2026-05-05T01:22:54Z] nlm-add | id=yt-PhhIeD_TmKs | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=PhhIeD_TmKs
+
+## [2026-05-05T01:22:57Z] nlm-add | id=yt-QHBr8hekCzg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=QHBr8hekCzg
+
+## [2026-05-05T01:23:01Z] nlm-add | id=yt-QKdKcFjjZhE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=QKdKcFjjZhE
+
+## [2026-05-05T01:23:04Z] nlm-add | id=yt-QpSptMuZ75Y | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=QpSptMuZ75Y
+
+## [2026-05-05T01:23:08Z] nlm-add | id=yt-RBmOgQi4Fr0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=RBmOgQi4Fr0
+
+## [2026-05-05T01:23:12Z] nlm-add | id=yt-RXOvZIn-oSA | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=RXOvZIn-oSA
+
+## [2026-05-05T01:23:16Z] nlm-add | id=yt-Sc3zyAzSRP0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Sc3zyAzSRP0
+
+## [2026-05-05T01:23:20Z] nlm-add | id=yt-Sc5Rb6X1FJY | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Sc5Rb6X1FJY
+
+## [2026-05-05T01:23:23Z] nlm-add | id=yt-Sl9EZpE61xA | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Sl9EZpE61xA
+
+## [2026-05-05T01:23:26Z] nlm-add | id=yt-TSbl5ZxdbPk | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=TSbl5ZxdbPk
+
+## [2026-05-05T01:23:30Z] nlm-add | id=yt-Tud9HLTk8hg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Tud9HLTk8hg
+
+## [2026-05-05T01:23:35Z] nlm-add | id=yt-UC5jUqNBVkI | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=UC5jUqNBVkI
+
+## [2026-05-05T01:23:38Z] nlm-add | id=yt-VChRPFUzJGA | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=VChRPFUzJGA
+
+## [2026-05-05T01:23:41Z] nlm-add | id=yt-W3h_-eCcmqc | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=W3h_-eCcmqc
+
+## [2026-05-05T01:23:44Z] nlm-add | id=yt-X95MFcYH1_s | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=X95MFcYH1_s
+
+## [2026-05-05T01:23:47Z] nlm-add | id=yt-Y1Xr3EA7GxE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Y1Xr3EA7GxE
+
+## [2026-05-05T01:23:51Z] nlm-add | id=yt-Yy33F_4IMhE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=Yy33F_4IMhE
+
+## [2026-05-05T01:23:54Z] nlm-add | id=yt-ZNPkUoPBU84 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=ZNPkUoPBU84
+
+## [2026-05-05T01:23:58Z] nlm-add | id=yt-aGOQIJJv1Tw | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=aGOQIJJv1Tw
+
+## [2026-05-05T01:23:59Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-23-59Z-schema-drift.md
+
+## [2026-05-05T01:24:01Z] nlm-add | id=yt-aHCDrAbH_go | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=aHCDrAbH_go
+
+## [2026-05-05T01:24:05Z] nlm-add | id=yt-aawk4l9W9YU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=aawk4l9W9YU
+
+## [2026-05-05T01:24:10Z] nlm-add | id=yt-bDsRLVgRitE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=bDsRLVgRitE
+
+## [2026-05-05T01:24:14Z] nlm-add | id=yt-bsopLee3IKQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=bsopLee3IKQ
+
+## [2026-05-05T01:24:17Z] nlm-add | id=yt-cWFOKWIDFJ4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=cWFOKWIDFJ4
+
+## [2026-05-05T01:24:22Z] nlm-add | id=yt-ceP-x81XdjU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=ceP-x81XdjU
+
+## [2026-05-05T01:24:26Z] nlm-add | id=yt-dAE_vOfjlcE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=dAE_vOfjlcE
+
+## [2026-05-05T01:24:32Z] nlm-add | id=yt-dekY0rpPgkQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=dekY0rpPgkQ
+
+## [2026-05-05T01:24:36Z] nlm-add | id=yt-e2zIr_2JMbE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=e2zIr_2JMbE
+
+## [2026-05-05T01:24:39Z] nlm-add | id=yt-eB4cfa-JgeQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=eB4cfa-JgeQ
+
+## [2026-05-05T01:24:42Z] nlm-add | id=yt-eur8dUO9mvE | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=eur8dUO9mvE
+
+## [2026-05-05T01:24:46Z] nlm-add | id=yt-hQQ8KuhXcwU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=hQQ8KuhXcwU
+
+## [2026-05-05T01:24:50Z] nlm-add | id=yt-k8cnVCMYmNc | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=k8cnVCMYmNc
+
+## [2026-05-05T01:24:54Z] nlm-add | id=yt-kTnfJszFxCg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=kTnfJszFxCg
+
+## [2026-05-05T01:24:59Z] nlm-add | id=yt-kqB_xML1SfA | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=kqB_xML1SfA
+
+## [2026-05-05T01:25:03Z] nlm-add | id=yt-l93LrDpIJGY | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=l93LrDpIJGY
+
+## [2026-05-05T01:25:07Z] nlm-add | id=yt-lsZvTixt1ZI | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=lsZvTixt1ZI
+
+## [2026-05-05T01:25:09Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-25-09Z-schema-drift.md
+
+## [2026-05-05T01:25:11Z] nlm-add | id=yt-mFkw3p5qSuA | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=mFkw3p5qSuA
+
+## [2026-05-05T01:25:15Z] nlm-add | id=yt-nn1KJfvj38w | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=nn1KJfvj38w
+
+## [2026-05-05T01:25:19Z] nlm-add | id=yt-nyR1NyyvL5M | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=nyR1NyyvL5M
+
+## [2026-05-05T01:25:23Z] nlm-add | id=yt-oaV_8ZSFblg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=oaV_8ZSFblg
+
+## [2026-05-05T01:25:26Z] nlm-add | id=yt-pdKgcH9ZxtQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=pdKgcH9ZxtQ
+
+## [2026-05-05T01:25:29Z] nlm-add | id=yt-plk669xSAOk | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=plk669xSAOk
+
+## [2026-05-05T01:25:33Z] nlm-add | id=yt-pwP1YcHtF8s | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=pwP1YcHtF8s
+
+## [2026-05-05T01:25:38Z] nlm-add | id=yt-tVvKlx-oVqc | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=tVvKlx-oVqc
+
+## [2026-05-05T01:25:42Z] nlm-add | id=yt-tzrwxLNHtRY | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=tzrwxLNHtRY
+
+## [2026-05-05T01:25:46Z] nlm-add | id=yt-u9BL5viEPhU | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=u9BL5viEPhU
+
+## [2026-05-05T01:25:49Z] nlm-add | id=yt-uDvGG5B8IDI | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=uDvGG5B8IDI
+
+## [2026-05-05T01:25:53Z] nlm-add | id=yt-uWCX1h9YamI | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=uWCX1h9YamI
+
+## [2026-05-05T01:25:57Z] nlm-add | id=yt-v1Q7rEE3StM | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=v1Q7rEE3StM
+
+## [2026-05-05T01:26:00Z] nlm-add | id=yt-voaKr_JHvF4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=voaKr_JHvF4
+
+## [2026-05-05T01:26:04Z] nlm-add | id=yt-w-avC9c5GK4 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=w-avC9c5GK4
+
+## [2026-05-05T01:26:07Z] nlm-add | id=yt-wIXr22QTEHg | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=wIXr22QTEHg
+
+## [2026-05-05T01:26:12Z] nlm-add | id=yt-wgJX1HndGl0 | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=wgJX1HndGl0
+
+## [2026-05-05T01:26:15Z] nlm-add | id=yt-wzQlws_Hxfw | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=wzQlws_Hxfw
+
+## [2026-05-05T01:26:19Z] nlm-add | id=yt-xRV13YwBq0c | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=xRV13YwBq0c
+
+## [2026-05-05T01:26:23Z] nlm-add | id=yt-yydnTSH0R2I | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=yydnTSH0R2I
+
+## [2026-05-05T01:26:27Z] nlm-add | id=yt-ziTWFU19bfQ | domain=edge-ai-agentic | notebook_id=e7f21255-0787-4091-ab69-5f79669e1501 | type=youtube
+
+url=https://youtube.com/watch?v=ziTWFU19bfQ
+
+## [2026-05-05T01:27:45Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-27-45Z-schema-drift.md
+
+## [2026-05-05T01:27:52Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-27-52Z-schema-drift.md
+
+## [2026-05-05T01:28:01Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-28-01Z-schema-drift.md
+
+## [2026-05-05T01:28:09Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T01-28-09Z-schema-drift.md
