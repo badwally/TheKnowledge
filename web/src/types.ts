@@ -151,3 +151,12 @@ export interface FilterBandSource {
   threshold_include: number;
   domain: string;
 }
+
+export interface ArtifactSummary {
+  slug: string;
+  type: string;
+  title: string;
+  domain: string;
+  created_at: string;
+  nlm_artifact_url: string | null;
+}

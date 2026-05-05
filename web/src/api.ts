@@ -1,4 +1,5 @@
 import type {
+  ArtifactSummary,
   ContradictionRecord,
   DomainSummary,
   DraftSummary,
@@ -112,4 +113,38 @@ export const api = {
   listOrphans: () => request<OrphanSource[]>("/api/review/orphans"),
   listFilterBand: () =>
     request<FilterBandSource[]>("/api/review/filter-band"),
+
+  // NLM artifacts (M43)
+  nlmAdd: (slug: string, source_id: string) =>
+    request<OperationResult>(`/api/nlm/domains/${slug}/add`, {
+      method: "POST",
+      body: JSON.stringify({ source_id }),
+    }),
+  nlmSync: (slug: string, body: { dry_run?: boolean; limit?: number } = {}) =>
+    request<{ task_id: string; status: string }>(
+      `/api/nlm/domains/${slug}/sync`,
+      { method: "POST", body: JSON.stringify(body) },
+    ),
+  nlmBriefing: (slug: string) =>
+    request<{ task_id: string; status: string }>(
+      `/api/nlm/domains/${slug}/briefing`,
+      { method: "POST", body: JSON.stringify({}) },
+    ),
+  nlmAudio: (slug: string, topic: string) =>
+    request<{ task_id: string; status: string }>(
+      `/api/nlm/domains/${slug}/audio`,
+      { method: "POST", body: JSON.stringify({ topic }) },
+    ),
+  nlmSlides: (slug: string, topic: string) =>
+    request<{ task_id: string; status: string }>(
+      `/api/nlm/domains/${slug}/slides`,
+      { method: "POST", body: JSON.stringify({ topic }) },
+    ),
+  nlmRevise: (artifact_slug: string, instructions: string[]) =>
+    request<{ task_id: string; status: string }>(
+      `/api/nlm/artifacts/${artifact_slug}/revise`,
+      { method: "POST", body: JSON.stringify({ instructions }) },
+    ),
+  listArtifacts: (slug: string) =>
+    request<ArtifactSummary[]>(`/api/nlm/domains/${slug}/artifacts`),
 };
