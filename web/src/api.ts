@@ -1,7 +1,11 @@
 import type {
+  ContradictionRecord,
   DomainSummary,
+  DraftSummary,
+  FilterBandSource,
   LogEntry,
   OperationResult,
+  OrphanSource,
   ProgressResponse,
   ProposalSummary,
   ResearchPlanQueries,
@@ -100,4 +104,12 @@ export const api = {
     ),
   getProgress: (id: string) =>
     request<ProgressResponse>(`/api/research/sessions/${id}/progress`),
+
+  // Review (M42)
+  listDrafts: () => request<DraftSummary[]>("/api/review/drafts"),
+  listContradictions: () =>
+    request<ContradictionRecord[]>("/api/review/contradictions"),
+  listOrphans: () => request<OrphanSource[]>("/api/review/orphans"),
+  listFilterBand: () =>
+    request<FilterBandSource[]>("/api/review/filter-band"),
 };

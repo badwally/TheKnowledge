@@ -115,3 +115,39 @@ export interface ProgressStep {
 export interface ProgressResponse {
   steps: ProgressStep[];
 }
+
+export interface DraftSummary {
+  path: string;
+  type: string;
+  slug: string;
+  draft_started_at: string;
+  draft_unresolved_claims: number;
+  age_days: number;
+}
+
+export interface ContradictionRecord {
+  source_id: string;
+  existing_page: string;
+  existing_claim: string;
+  new_claim: string;
+  severity: string;
+  recorded_at: string;
+}
+
+export interface OrphanSource {
+  source_id: string;
+  source_type: string;
+  title: string;
+  ingested_at: string;
+  domains: string[];
+}
+
+export interface FilterBandSource {
+  source_id: string;
+  source_type: string;
+  title: string;
+  score: number;
+  threshold_review: number;
+  threshold_include: number;
+  domain: string;
+}
