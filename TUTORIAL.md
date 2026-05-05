@@ -328,7 +328,7 @@ wiki nlm-revise <slug> --slide <n> "<instructions>"
 
 # Operate
 wiki status
-wiki serve [--port 7474]                           # local browser UI; /research for orchestration
+wiki serve [--port 7474]                           # local browser UI; /research orchestration · /review curation queues
 wiki watch                                         # foreground; usually launchd runs this
 wiki lint [--scope <check>]
 wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>

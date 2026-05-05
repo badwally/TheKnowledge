@@ -814,6 +814,39 @@ Adds a Research sidebar entry to `wiki serve` that exposes the existing `wiki re
 - Session deletion / cleanup ops.
 - `--queries` external YAML import — CLI-only.
 
+### M42 — Review consoles + structured contradiction persistence
+
+Adds a Review sidebar entry to `wiki serve` with four tabs (Drafts, Contradictions, Orphans, Filter-band). Drafts and Filter-band have inline actions (Finalize/Abandon, Include/Exclude). Contradictions and Orphans are read-only with click-through. Adds structured contradiction persistence: `apply_plan` writes JSONL records to `.knowledge/contradictions/log.jsonl` whenever it commits a plan with non-empty `plan.contradictions`.
+
+**What's new.**
+
+- `gateway.contradictions_log` — append-only JSONL helper. `append_contradictions(records)` writes one line per record with `recorded_at`. `read_records()` returns parsed records sorted newest-first; tolerates malformed lines.
+- `gateway.ops.apply_plan` — calls `contradictions_log.append_contradictions(plan.contradictions)` inside the existing Phase 2 lock when contradictions are non-empty. Plans without contradictions don't touch the file.
+- `gateway.web.routes.review` — four GET endpoints: `/api/review/drafts`, `/api/review/contradictions`, `/api/review/orphans`, `/api/review/filter-band`. Each derives state from existing on-disk artifacts (wiki/ frontmatter, raw/ frontmatter, .knowledge/contradictions/log.jsonl, .knowledge/policies/*/policy.yaml).
+- `web/src/pages/review/` — Review page shell with 4 tabs. DraftsTab + FilterBandTab have inline actions; ContradictionsTab uses accordion-expand for claim detail; OrphansTab links to `/ops/query?domain=...` for discharge.
+- `web/src/pages/Query.tsx` (M40) — extended to read `?domain=...` URL param and prefill the form on mount.
+
+**Lifecycle / data sources.**
+
+| Tab | Source | Sort |
+|---|---|---|
+| Drafts | wiki/{entities,concepts,synthesis,mocs}/*.md with `draft: true` frontmatter | oldest first (by `draft_started_at`) |
+| Contradictions | `.knowledge/contradictions/log.jsonl` | newest first (by `recorded_at`) |
+| Orphans | raw/<type>/*.md with empty `wiki_pages` | newest first (by `ingested_at`) |
+| Filter-band | raw/<type>/*.md where `threshold_review ≤ filter.score < threshold_include` for any domain policy | score ascending |
+
+**Tests.** 12 new tests across `test_web_review.py` (10) and `test_authorship.py` (2). Full gateway suite: 515 → 527 tests passing.
+
+**Hand-test.** Started server on port 7475, verified via curl: 184 drafts, 0 contradictions (expected — JSONL log starts empty for pre-M42 state), 602 orphans, 173 in-band sources. `/review` SPA route serves React HTML at 200.
+
+**Out of scope (M43+).**
+
+- NLM artifact triggers (briefing, audio, slides, revise) per-domain page with confirmation modals.
+- Bulk actions in review tabs (select multiple drafts, batch finalize).
+- Filter/search within tabs.
+- Aggregating contradictions by affected page.
+- Backfill of pre-M42 contradictions from `log.md` summaries — the JSONL log accumulates from M42 onward only.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
