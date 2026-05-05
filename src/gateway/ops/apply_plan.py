@@ -11,6 +11,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
+from gateway import contradictions_log
 from gateway import frontmatter as fm
 from gateway import log, paths, validator, wiki_pages
 from gateway.core import AuthorshipReport, OperationResult, write_atomic
@@ -119,6 +120,10 @@ def apply_plan(
 
         # Update the source's `wiki_pages:` so backlinks are tracked.
         _record_backlinks(plan.source_id, [u.target_path for u in plan.updates])
+
+        # M42: persist contradictions to JSONL log for the Review console.
+        if plan.contradictions:
+            contradictions_log.append_contradictions(plan.contradictions)
 
         log.append(
             op="wiki-author",

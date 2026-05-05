@@ -891,6 +891,74 @@ def test_ingest_with_plan_propagates_authorship_report(kb_root, make_source, tmp
     assert len(result.authorship_report.contradictions) == 1
 
 
+def test_apply_plan_writes_contradictions_to_jsonl(kb_root, make_source):
+    """When plan.contradictions is non-empty, apply_plan appends one JSONL record per contradiction."""
+    import json as _json
+    from gateway import paths
+
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="contradictions persistence test",
+        updates=[
+            _make_concept_update("jsonl-test-concept", "yt-applyTest1A"),
+        ],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/old.md",
+                existing_claim="Original claim text",
+                new_claim="Conflicting claim text",
+                source_id="yt-applyTest1A",
+                severity="major",
+            ),
+            Contradiction(
+                existing_page="wiki/concepts/other.md",
+                existing_claim="Another original claim",
+                new_claim="Another conflicting claim",
+                source_id="yt-applyTest1A",
+                severity="minor",
+            ),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success, result.errors
+
+    log_path = paths.knowledge_root() / ".knowledge" / "contradictions" / "log.jsonl"
+    assert log_path.is_file()
+
+    lines = [
+        line for line in log_path.read_text().splitlines() if line.strip()
+    ]
+    assert len(lines) == 2
+    records = [_json.loads(line) for line in lines]
+    assert records[0]["source_id"] == "yt-applyTest1A"
+    assert records[0]["existing_page"] == "wiki/concepts/old.md"
+    assert records[0]["severity"] == "major"
+    assert "recorded_at" in records[0]
+    assert records[1]["severity"] == "minor"
+
+
+def test_apply_plan_no_jsonl_write_when_no_contradictions(kb_root, make_source):
+    """Plans without contradictions don't create the JSONL file."""
+    from gateway import paths
+
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="no contradictions",
+        updates=[
+            _make_concept_update("no-contradictions-concept", "yt-applyTest1A"),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success
+
+    log_path = paths.knowledge_root() / ".knowledge" / "contradictions" / "log.jsonl"
+    if log_path.is_file():
+        lines = [l for l in log_path.read_text().splitlines() if l.strip()]
+        assert lines == []
+
+
 def test_end_to_end_smart_authorship(kb_root, make_source, tmp_path):
     """Full flow: ingest -> plan with create + update + contradiction -> report + log."""
     import json as _json
