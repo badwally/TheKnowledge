@@ -6,9 +6,10 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter
 
+from gateway import contradictions_log
 from gateway import frontmatter as fm
 from gateway import paths
-from gateway.web.schemas import DraftSummary
+from gateway.web.schemas import ContradictionRecord, DraftSummary
 
 
 router = APIRouter(prefix="/api/review", tags=["review"])
@@ -53,4 +54,22 @@ def list_drafts() -> list[DraftSummary]:
             )
     # Oldest first (largest age_days first)
     out.sort(key=lambda d: d.age_days, reverse=True)
+    return out
+
+
+@router.get("/contradictions", response_model=list[ContradictionRecord])
+def list_contradictions() -> list[ContradictionRecord]:
+    records = contradictions_log.read_records()
+    out: list[ContradictionRecord] = []
+    for r in records:
+        out.append(
+            ContradictionRecord(
+                source_id=str(r.get("source_id") or ""),
+                existing_page=str(r.get("existing_page") or ""),
+                existing_claim=str(r.get("existing_claim") or ""),
+                new_claim=str(r.get("new_claim") or ""),
+                severity=str(r.get("severity") or "moderate"),
+                recorded_at=str(r.get("recorded_at") or ""),
+            )
+        )
     return out

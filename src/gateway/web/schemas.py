@@ -182,3 +182,12 @@ class DraftSummary(BaseModel):
     draft_started_at: str
     draft_unresolved_claims: int = 0
     age_days: float = 0.0
+
+
+class ContradictionRecord(BaseModel):
+    source_id: str = ""
+    existing_page: str = ""
+    existing_claim: str = ""
+    new_claim: str = ""
+    severity: str = "moderate"
+    recorded_at: str = ""

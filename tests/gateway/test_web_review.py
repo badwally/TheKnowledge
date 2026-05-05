@@ -74,3 +74,49 @@ def test_drafts_skips_non_draft_pages(client, kb_root):
     slugs = [d["slug"] for d in drafts]
     assert "is-draft" in slugs
     assert "non-draft" not in slugs
+
+
+def test_contradictions_returns_empty_when_no_log(client, kb_root):
+    resp = client.get("/api/review/contradictions")
+    assert resp.status_code == 200
+    assert resp.json() == []
+
+
+def test_contradictions_returns_log_records_newest_first(client, kb_root):
+    log_path = paths.knowledge_root() / ".knowledge" / "contradictions" / "log.jsonl"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    log_path.write_text(
+        '{"source_id": "yt-old", "existing_page": "wiki/concepts/a.md", '
+        '"existing_claim": "old claim", "new_claim": "new claim", '
+        '"severity": "minor", "recorded_at": "2026-04-01T00:00:00Z"}\n'
+        '{"source_id": "yt-new", "existing_page": "wiki/concepts/b.md", '
+        '"existing_claim": "another old", "new_claim": "another new", '
+        '"severity": "major", "recorded_at": "2026-05-04T00:00:00Z"}\n'
+    )
+
+    resp = client.get("/api/review/contradictions")
+    assert resp.status_code == 200
+    records = resp.json()
+    assert len(records) == 2
+    # Newest first
+    assert records[0]["source_id"] == "yt-new"
+    assert records[0]["severity"] == "major"
+    assert records[1]["source_id"] == "yt-old"
+
+
+def test_contradictions_skips_malformed_lines(client, kb_root):
+    log_path = paths.knowledge_root() / ".knowledge" / "contradictions" / "log.jsonl"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    log_path.write_text(
+        'this is not json\n'
+        '{"source_id": "yt-good", "existing_page": "wiki/concepts/x.md", '
+        '"existing_claim": "a", "new_claim": "b", "severity": "moderate", '
+        '"recorded_at": "2026-05-04T00:00:00Z"}\n'
+        '{}\n'  # Empty object passes JSON parse but lacks expected fields; still returned as-is
+    )
+
+    resp = client.get("/api/review/contradictions")
+    assert resp.status_code == 200
+    records = resp.json()
+    # Two valid JSON lines (empty object is JSON; non-json line skipped)
+    assert len(records) == 2
