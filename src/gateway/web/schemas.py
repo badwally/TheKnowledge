@@ -173,3 +173,12 @@ class ProgressStep(BaseModel):
 
 class ProgressResponse(BaseModel):
     steps: list[ProgressStep]
+
+
+class DraftSummary(BaseModel):
+    path: str
+    type: str
+    slug: str
+    draft_started_at: str
+    draft_unresolved_claims: int = 0
+    age_days: float = 0.0
