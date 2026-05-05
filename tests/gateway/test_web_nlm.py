@@ -63,3 +63,125 @@ def test_artifacts_list_filters_by_domain(client, kb_root):
     assert slugs == {"alpha-slides", "beta-briefing"}
     # Newest first
     assert artifacts[0]["slug"] == "beta-briefing"
+
+
+import time
+
+
+def test_briefing_returns_task_id(client, kb_root, monkeypatch):
+    """POST /api/nlm/domains/{slug}/briefing returns 202 + task_id."""
+    from gateway.ops import nlm as _nlm
+    from gateway.core import OperationResult
+
+    def fake_briefing(domain, **kwargs):
+        return OperationResult(success=True, summary=f"stubbed briefing for {domain}")
+
+    monkeypatch.setattr(_nlm, "nlm_briefing", fake_briefing)
+
+    resp = client.post("/api/nlm/domains/d-test/briefing", json={})
+    assert resp.status_code == 202
+    body = resp.json()
+    assert "task_id" in body
+    assert body["status"] == "queued"
+
+
+def test_audio_takes_topic(client, kb_root, monkeypatch):
+    from gateway.ops import nlm as _nlm
+    from gateway.core import OperationResult
+
+    captured = {}
+
+    def fake_audio(domain, topic, **kwargs):
+        captured["domain"] = domain
+        captured["topic"] = topic
+        return OperationResult(success=True, summary="stub")
+
+    monkeypatch.setattr(_nlm, "nlm_audio", fake_audio)
+
+    resp = client.post(
+        "/api/nlm/domains/d-test/audio",
+        json={"topic": "endurance training"},
+    )
+    assert resp.status_code == 202
+
+    task_id = resp.json()["task_id"]
+    for _ in range(20):
+        time.sleep(0.1)
+        if client.get(f"/api/tasks/{task_id}").json()["status"] in ("done", "failed"):
+            break
+    assert captured["domain"] == "d-test"
+    assert captured["topic"] == "endurance training"
+
+
+def test_slides_takes_topic(client, kb_root, monkeypatch):
+    from gateway.ops import nlm as _nlm
+    from gateway.core import OperationResult
+
+    def fake_slides(domain, topic, **kwargs):
+        return OperationResult(success=True, summary=f"stubbed slides {domain}/{topic}")
+
+    monkeypatch.setattr(_nlm, "nlm_slides", fake_slides)
+
+    resp = client.post(
+        "/api/nlm/domains/d-test/slides",
+        json={"topic": "test topic"},
+    )
+    assert resp.status_code == 202
+
+
+def test_sync_takes_optional_args(client, kb_root, monkeypatch):
+    from gateway.ops import nlm as _nlm
+    from gateway.core import OperationResult
+
+    captured = {}
+
+    def fake_sync(domain, *, dry_run=False, limit=None, **kwargs):
+        captured["domain"] = domain
+        captured["dry_run"] = dry_run
+        captured["limit"] = limit
+        return OperationResult(success=True, summary="stub sync")
+
+    monkeypatch.setattr(_nlm, "nlm_sync", fake_sync)
+
+    resp = client.post(
+        "/api/nlm/domains/d-test/sync",
+        json={"dry_run": True, "limit": 10},
+    )
+    assert resp.status_code == 202
+
+    task_id = resp.json()["task_id"]
+    for _ in range(20):
+        time.sleep(0.1)
+        if client.get(f"/api/tasks/{task_id}").json()["status"] in ("done", "failed"):
+            break
+    assert captured["domain"] == "d-test"
+    assert captured["dry_run"] is True
+    assert captured["limit"] == 10
+
+
+def test_revise_takes_artifact_slug_and_instructions(client, kb_root, monkeypatch):
+    from gateway.ops import nlm as _nlm
+    from gateway.core import OperationResult
+
+    captured = {}
+
+    def fake_revise(artifact_slug, instructions, **kwargs):
+        captured["slug"] = artifact_slug
+        captured["instructions"] = instructions
+        return OperationResult(success=True, summary="stub revise")
+
+    monkeypatch.setattr(_nlm, "nlm_revise", fake_revise)
+
+    resp = client.post(
+        "/api/nlm/artifacts/some-slides/revise",
+        json={"instructions": ["slide 2: tighten the mechanism diagram"]},
+    )
+    assert resp.status_code == 202
+
+    task_id = resp.json()["task_id"]
+    for _ in range(20):
+        time.sleep(0.1)
+        if client.get(f"/api/tasks/{task_id}").json()["status"] in ("done", "failed"):
+            break
+    assert captured["slug"] == "some-slides"
+    assert captured["instructions"] == ["slide 2: tighten the mechanism diagram"]

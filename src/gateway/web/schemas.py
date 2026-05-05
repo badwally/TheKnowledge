@@ -222,3 +222,17 @@ class ArtifactSummary(BaseModel):
     domain: str
     created_at: str
     nlm_artifact_url: str | None = None
+
+
+class NlmSyncRequest(BaseModel):
+    dry_run: bool = False
+    limit: int | None = None
+
+
+class NlmTopicRequest(BaseModel):
+    """Used for audio + slides — both take a topic string."""
+    topic: str
+
+
+class NlmReviseRequest(BaseModel):
+    instructions: list[str]
