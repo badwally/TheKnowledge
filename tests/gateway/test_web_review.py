@@ -151,3 +151,60 @@ def test_orphans_empty_when_no_sources(client, kb_root):
     resp = client.get("/api/review/orphans")
     assert resp.status_code == 200
     assert resp.json() == []
+
+
+def test_filter_band_returns_sources_between_thresholds(client, kb_root, make_source):
+    """A source with filter.score between threshold_review and threshold_include shows up."""
+    # Seed a policy with thresholds
+    policy_yaml = paths.policies_dir() / "d-band" / "policy.yaml"
+    policy_yaml.parent.mkdir(parents=True, exist_ok=True)
+    policy_yaml.write_text(
+        "version: v1\n"
+        "domain:\n"
+        "  slug: d-band\n"
+        "  topic: t\n"
+        "  field: f\n"
+        "  description: d\n"
+        "filter:\n"
+        "  threshold_include: 0.7\n"
+        "  threshold_review: 0.5\n"
+        "inclusion_criteria: [a]\nexclusion_criteria: [b]\n"
+    )
+
+    # Source in the band (score 0.6, between 0.5 and 0.7)
+    in_band_text = make_source(
+        id_="yt-band_AB",
+        domains=["d-band"],
+        extra_front={"filter": {"score": 0.6, "policy_version": "v1", "rationale": "x", "decided_at": "2026-05-01T00:00:00Z"}},
+    )
+    (paths.raw_source_path("youtube", "yt-band_AB")).write_text(in_band_text)
+
+    # Source above threshold_include (score 0.9 — included, not in band)
+    above_text = make_source(
+        id_="yt-above_AB",
+        domains=["d-band"],
+        extra_front={"filter": {"score": 0.9, "policy_version": "v1", "rationale": "x", "decided_at": "2026-05-01T00:00:00Z"}},
+    )
+    (paths.raw_source_path("youtube", "yt-above_AB")).write_text(above_text)
+
+    # Source below threshold_review (score 0.3 — rejected, not in band)
+    below_text = make_source(
+        id_="yt-below_AB",
+        domains=["d-band"],
+        extra_front={"filter": {"score": 0.3, "policy_version": "v1", "rationale": "x", "decided_at": "2026-05-01T00:00:00Z"}},
+    )
+    (paths.raw_source_path("youtube", "yt-below_AB")).write_text(below_text)
+
+    resp = client.get("/api/review/filter-band")
+    assert resp.status_code == 200
+    band = resp.json()
+    ids = {b["source_id"] for b in band}
+    assert "yt-band_AB" in ids
+    assert "yt-above_AB" not in ids
+    assert "yt-below_AB" not in ids
+
+
+def test_filter_band_empty_when_no_policies(client, kb_root):
+    resp = client.get("/api/review/filter-band")
+    assert resp.status_code == 200
+    assert resp.json() == []

@@ -199,3 +199,13 @@ class OrphanSource(BaseModel):
     title: str = ""
     ingested_at: str = ""
     domains: list[str] = []
+
+
+class FilterBandSource(BaseModel):
+    source_id: str
+    source_type: str
+    title: str = ""
+    score: float = 0.0
+    threshold_review: float = 0.0
+    threshold_include: float = 0.0
+    domain: str = ""
