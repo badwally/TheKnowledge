@@ -120,3 +120,34 @@ def test_contradictions_skips_malformed_lines(client, kb_root):
     records = resp.json()
     # Two valid JSON lines (empty object is JSON; non-json line skipped)
     assert len(records) == 2
+
+
+def test_orphans_returns_sources_without_wiki_pages(client, kb_root, make_source):
+    """A source with empty `wiki_pages` is an orphan."""
+    # Seed an orphan
+    orphan_text = make_source(id_="yt-orphan_AB", domains=["d-test"])
+    orphan_path = paths.raw_source_path("youtube", "yt-orphan_AB")
+    orphan_path.parent.mkdir(parents=True, exist_ok=True)
+    orphan_path.write_text(orphan_text)
+
+    # Seed a non-orphan (has wiki_pages populated)
+    text = make_source(
+        id_="yt-cited_CD",
+        domains=["d-test"],
+        extra_front={"wiki_pages": ["wiki/concepts/x.md"]},
+    )
+    cited_path = paths.raw_source_path("youtube", "yt-cited_CD")
+    cited_path.write_text(text)
+
+    resp = client.get("/api/review/orphans")
+    assert resp.status_code == 200
+    orphans = resp.json()
+    ids = {o["source_id"] for o in orphans}
+    assert "yt-orphan_AB" in ids
+    assert "yt-cited_CD" not in ids
+
+
+def test_orphans_empty_when_no_sources(client, kb_root):
+    resp = client.get("/api/review/orphans")
+    assert resp.status_code == 200
+    assert resp.json() == []

@@ -191,3 +191,11 @@ class ContradictionRecord(BaseModel):
     new_claim: str = ""
     severity: str = "moderate"
     recorded_at: str = ""
+
+
+class OrphanSource(BaseModel):
+    source_id: str
+    source_type: str
+    title: str = ""
+    ingested_at: str = ""
+    domains: list[str] = []

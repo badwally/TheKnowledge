@@ -9,7 +9,7 @@ from fastapi import APIRouter
 from gateway import contradictions_log
 from gateway import frontmatter as fm
 from gateway import paths
-from gateway.web.schemas import ContradictionRecord, DraftSummary
+from gateway.web.schemas import ContradictionRecord, DraftSummary, OrphanSource
 
 
 router = APIRouter(prefix="/api/review", tags=["review"])
@@ -72,4 +72,36 @@ def list_contradictions() -> list[ContradictionRecord]:
                 recorded_at=str(r.get("recorded_at") or ""),
             )
         )
+    return out
+
+
+@router.get("/orphans", response_model=list[OrphanSource])
+def list_orphans() -> list[OrphanSource]:
+    raw = paths.raw_dir()
+    if not raw.exists():
+        return []
+    out: list[OrphanSource] = []
+    for source_type in paths.SOURCE_TYPES:
+        d = raw / source_type
+        if not d.is_dir():
+            continue
+        for path in sorted(d.glob("*.md")):
+            try:
+                front, _ = fm.parse(path.read_text())
+            except (fm.FrontmatterError, OSError):
+                continue
+            wiki_pages = front.get("wiki_pages") or []
+            if isinstance(wiki_pages, list) and len(wiki_pages) > 0:
+                continue
+            out.append(
+                OrphanSource(
+                    source_id=str(front.get("id") or path.stem),
+                    source_type=str(front.get("type") or source_type),
+                    title=str(front.get("title") or ""),
+                    ingested_at=str(front.get("ingested_at") or ""),
+                    domains=list(front.get("domains") or []),
+                )
+            )
+    # Newest first
+    out.sort(key=lambda o: o.ingested_at, reverse=True)
     return out
