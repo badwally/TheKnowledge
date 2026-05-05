@@ -15,8 +15,8 @@ notebooks:
     persistent:
       notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
       created_at: '2026-04-30T17:28:33Z'
-      sources_count: 0
-      last_sync: '2026-04-30T17:28:33Z'
+      sources_count: 151
+      last_sync: '2026-05-05T01:26:27Z'
     sessions:
     - session_id: 2026-04-30-state-of-the-art-in-enterprise
       notebook_id: 02492ea8-c6ed-4acf-967e-cd45d6b2de6e
