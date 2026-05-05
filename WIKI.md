@@ -618,6 +618,7 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Query the wiki | `wiki query "<question>" [--scope <domain>]` | `wiki_query` |
 | Run filter on a candidate (read-only) | `wiki filter <path> [--domain <slug>]` | `wiki_filter` |
 | Add source to NotebookLM corpus | `wiki nlm-add <domain> <source-id>` | `wiki_nlm_add` |
+| Bulk-sync every raw source tagged with a domain | `wiki nlm-sync <domain> [--limit N] [--dry-run]` | `wiki_nlm_sync` |
 | Generate slide deck | `wiki nlm-slides <domain> "<topic>"` | `wiki_nlm_slides` |
 | Generate audio overview | `wiki nlm-audio <domain> "<topic>"` | `wiki_nlm_audio` |
 | Generate briefing doc | `wiki nlm-briefing <domain>` | `wiki_nlm_briefing` |
