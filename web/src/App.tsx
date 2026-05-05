@@ -8,6 +8,7 @@ import Ingest from "./pages/Ingest";
 import Lint from "./pages/Lint";
 import Promote from "./pages/Promote";
 import Query from "./pages/Query";
+import Research from "./pages/research/Research";
 
 function Sidebar() {
   return (
@@ -19,6 +20,8 @@ function Sidebar() {
       <NavLink to="/ops/query">Query</NavLink>
       <NavLink to="/ops/finalize">Finalize</NavLink>
       <NavLink to="/ops/filter-correct">Filter correct</NavLink>
+      <div className="sidebar-group-label">Research</div>
+      <NavLink to="/research" end>Research</NavLink>
       <div className="sidebar-group-label">Domains</div>
       <NavLink to="/domains/bootstrap">Bootstrap</NavLink>
       <NavLink to="/domains/discover">Discover</NavLink>
@@ -49,6 +52,8 @@ export default function App() {
           <Route path="/ops/query" element={<Query />} />
           <Route path="/ops/finalize" element={<Finalize />} />
           <Route path="/ops/filter-correct" element={<FilterCorrect />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/research/:sessionId" element={<Research />} />
           <Route path="/domains/bootstrap" element={<Bootstrap />} />
           <Route path="/domains/discover" element={<Discover />} />
           <Route path="/domains/promote" element={<Promote />} />
