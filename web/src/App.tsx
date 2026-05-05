@@ -1,4 +1,5 @@
 import { NavLink, Route, Routes } from "react-router-dom";
+import Artifacts from "./pages/Artifacts";
 import Bootstrap from "./pages/Bootstrap";
 import Dashboard from "./pages/Dashboard";
 import Discover from "./pages/Discover";
@@ -27,6 +28,7 @@ function Sidebar() {
       <NavLink to="/domains/bootstrap">Bootstrap</NavLink>
       <NavLink to="/domains/discover">Discover</NavLink>
       <NavLink to="/domains/promote">Promote</NavLink>
+      <NavLink to="/domains/artifacts">Artifacts</NavLink>
       <div className="sidebar-group-label">Review</div>
       <NavLink to="/review">Review</NavLink>
       <div className="sidebar-group-label">System</div>
@@ -61,6 +63,7 @@ export default function App() {
           <Route path="/domains/bootstrap" element={<Bootstrap />} />
           <Route path="/domains/discover" element={<Discover />} />
           <Route path="/domains/promote" element={<Promote />} />
+          <Route path="/domains/artifacts" element={<Artifacts />} />
           <Route path="/system/lint" element={<Lint />} />
         </Routes>
       </main>
