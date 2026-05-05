@@ -1,0 +1,70 @@
+version: 1
+session_id: 2026-04-30-state-of-the-art-in-enterprise
+domain: edge-ai-agentic
+prompt: 'State of the art in enterprise edge-AI agent stacks: how are local LLMs/SLMs,
+  multi-agent frameworks, and RAG systems over proprietary first-party data composed
+  for production deployment? Survey the canonical 2026 stack layer by layer — hardware,
+  runtimes and quantization, model selection, RAG infrastructure, agent frameworks,
+  inter-agent protocols (MCP/A2A), orchestration, observability, and governance —
+  citing concrete open-source and vendor implementations, and noting the 2025-2026
+  advances that made each layer practical.'
+generated_at: '2026-04-30T16:52:24Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+queries:
+  arxiv:
+  - small language models on-device inference
+  - quantization aware training large language models
+  - speculative decoding edge inference
+  - retrieval augmented generation enterprise deployment
+  - multi-agent orchestration framework benchmark
+  - model context protocol agent interoperability
+  - local LLM serving runtime optimization
+  - observability tracing large language model agents
+  youtube:
+  - Ollama production deployment
+  - llama.cpp enterprise
+  - vLLM local inference
+  - MLX Apple Silicon LLM
+  - NVIDIA NIM microservices
+  - Qualcomm AI Hub LLM
+  - Jetson Orin agent
+  - LangGraph multi-agent
+  - CrewAI production
+  - AutoGen enterprise
+  - LlamaIndex RAG enterprise
+  - Model Context Protocol tutorial
+  - A2A Agent2Agent protocol
+  - Anthropic MCP servers
+  - LangSmith observability
+  - Arize Phoenix LLM tracing
+  - Phi-3 quantized inference
+  - Gemma 2 on-device
+  - Llama 3 enterprise RAG
+  - sqlite-vec local vector
+  - LanceDB edge
+  - Ollama MCP integration
+  - Pydantic AI agents
+  - Haystack production RAG
+  web:
+  - enterprise edge AI agent stack
+  - local LLM deployment patterns
+  - Ollama enterprise on-premise
+  - vLLM production serving guide
+  - NVIDIA NIM edge deployment
+  - model context protocol enterprise
+  - A2A agent interoperability protocol
+  - LangGraph production architecture
+  - LlamaIndex enterprise RAG architecture
+  - quantization GGUF AWQ comparison
+  - Qualcomm AI Hub deployment
+  - Apple MLX enterprise inference
+  - LangSmith Arize observability LLM
+  - governance guardrails LLM agents
+  - fleet management edge LLM
+  pubmed: []
+edited: false

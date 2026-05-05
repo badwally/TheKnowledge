@@ -20,6 +20,8 @@ dependencies = [
     "python-pptx>=1.0",
     "Pillow>=10.0",
     "requests>=2.31",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
 ]
 
 [project.optional-dependencies]

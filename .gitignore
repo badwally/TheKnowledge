@@ -52,3 +52,9 @@ raw/**/*.heif
 # Editor swap files
 *.swp
 *~
+.firecrawl/
+docs/
+.superpowers/
+
+# Frontend
+node_modules/

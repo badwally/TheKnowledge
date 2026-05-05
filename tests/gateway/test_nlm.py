@@ -30,6 +30,7 @@ from gateway.ops.nlm import (
     nlm_briefing,
     nlm_revise,
     nlm_slides,
+    nlm_sync,
 )
 
 
@@ -45,6 +46,8 @@ class MockNlmClient:
 
     notebooks_created: list[str] = field(default_factory=list)
     sources_added: list[tuple[str, str]] = field(default_factory=list)
+    text_sources_added: list[tuple[str, str, str | None]] = field(default_factory=list)
+    file_sources_added: list[tuple[str, Path, str | None]] = field(default_factory=list)
     artifact_creates: list[tuple[str, str, str | None]] = field(default_factory=list)
     revisions: list[tuple[str, list[tuple[int, str]]]] = field(default_factory=list)
     downloads: list[tuple[str, str, Path, str | None]] = field(default_factory=list)
@@ -57,7 +60,15 @@ class MockNlmClient:
         self.sources_added.append((notebook_id, url))
 
     def source_add_text(self, notebook_id, content, *, title=None):
-        raise NotImplementedError
+        self.text_sources_added.append((notebook_id, content, title))
+
+    def source_add_file(self, notebook_id, file_path, *, title=None):
+        self.file_sources_added.append((notebook_id, file_path, title))
+
+    def artifact_status(self, notebook_id, artifact_id):
+        # Tests don't exercise NotebookLM's async generation; return
+        # 'completed' so the artifact-create flow proceeds to download.
+        return "completed"
 
     def slides_create(self, notebook_id, *, focus=None) -> ArtifactInfo:
         self.artifact_creates.append(("slides", notebook_id, focus))
@@ -88,6 +99,20 @@ class MockNlmClient:
 
     def download_report(self, notebook_id, dest, *, artifact_id=None):
         self._do_download("report", notebook_id, dest, artifact_id)
+
+    def notebook_query(self, notebook_id, question):
+        # Stub — concrete tests inject their own MockClient with canned
+        # answers. Default returns an empty payload so any op that
+        # exercises the query path doesn't crash on protocol checks.
+        return {"answer": "", "citations": {}, "sources_used": []}
+
+    # `notebook_sources` is consulted by `nlm_sync` to reconcile NotebookLM
+    # state. Tests override `pre_loaded_sources` to simulate sources that
+    # are already on the NotebookLM side (e.g., from a prior partial run).
+    pre_loaded_sources: dict[str, list[dict]] = field(default_factory=dict)
+
+    def notebook_sources(self, notebook_id):
+        return list(self.pre_loaded_sources.get(notebook_id, []))
 
 
 # --- fixtures ---------------------------------------------------------------
@@ -157,7 +182,7 @@ def test_registry_persists_yaml_shape(kb_root):
     nlm_registry.register("beta", "nb-b")
     raw = yaml.safe_load(nlm_registry.notebooks_yaml_path().read_text())
     assert "notebooks" in raw
-    assert raw["notebooks"]["alpha"]["notebook_id"] == "nb-a"
+    assert raw["notebooks"]["alpha"]["persistent"]["notebook_id"] == "nb-a"
 
 
 # --- nlm-add ---------------------------------------------------------------
@@ -197,15 +222,205 @@ def test_nlm_add_unknown_source(kb_root, mock_client):
     assert any("no raw source" in e for e in result.errors)
 
 
-def test_nlm_add_source_without_url(kb_root, make_source, mock_client):
+def test_nlm_add_source_without_url_falls_back_to_text(kb_root, make_source, mock_client):
+    """M37: PDF/note sources have no URL; fall back to source_add_text using
+    the canonical body and frontmatter title."""
     raw_path = _make_youtube_source(kb_root, make_source, source_id="yt-noUrlABC1", domain="d1")
     front, body = fm.parse(raw_path.read_text())
     del front["url"]
+    front["title"] = "Test Source Title"
     raw_path.write_text(fm.serialize(front, body))
 
     result = nlm_add("d1", "yt-noUrlABC1", client=mock_client)
+    assert result.success, result.errors
+    assert mock_client.sources_added == []
+    assert len(mock_client.text_sources_added) == 1
+    nb_id, content, title = mock_client.text_sources_added[0]
+    assert nb_id == mock_client.next_notebook_id
+    assert content == body
+    assert title == "Test Source Title"
+
+
+def test_nlm_add_source_without_url_or_body_errors(kb_root, make_source, mock_client):
+    """If the source has no url, no sidecar, and no body — nothing to send."""
+    raw_path = _make_youtube_source(kb_root, make_source, source_id="yt-emptySrc", domain="d1")
+    front, body = fm.parse(raw_path.read_text())
+    del front["url"]
+    raw_path.write_text(fm.serialize(front, ""))
+
+    result = nlm_add("d1", "yt-emptySrc", client=mock_client)
     assert not result.success
-    assert any("no `url`" in e for e in result.errors)
+    assert any("nothing to add to NotebookLM" in e for e in result.errors)
+
+
+def test_nlm_add_uploads_sidecar_file_when_present(kb_root, make_source, mock_client):
+    """M37: PDF / docx / image sources have a sidecar binary at source_path —
+    prefer file upload over text upload (preserves layout / figures / native
+    NotebookLM processing)."""
+    raw_path = _make_youtube_source(
+        kb_root, make_source, source_id="yt-withSidecar", domain="d1"
+    )
+    front, body = fm.parse(raw_path.read_text())
+    del front["url"]
+    sidecar_rel = "raw/youtube/yt-withSidecar.pdf"
+    sidecar_abs = paths.knowledge_root() / sidecar_rel
+    sidecar_abs.write_bytes(b"%PDF-1.4 stub binary")
+    front["source_path"] = sidecar_rel
+    front["title"] = "Sidecar Test"
+    raw_path.write_text(fm.serialize(front, body))
+
+    result = nlm_add("d1", "yt-withSidecar", client=mock_client)
+    assert result.success, result.errors
+    assert mock_client.text_sources_added == []
+    assert mock_client.sources_added == []
+    assert len(mock_client.file_sources_added) == 1
+    nb_id, path, title = mock_client.file_sources_added[0]
+    assert path == sidecar_abs
+    assert title == "Sidecar Test"
+
+
+# --- nlm-sync --------------------------------------------------------------
+
+
+def test_nlm_sync_no_op_when_domain_has_no_sources(kb_root, mock_client):
+    result = nlm_sync("empty-domain", client=mock_client)
+    assert result.success
+    assert result.no_op
+    assert mock_client.notebooks_created == []
+    assert mock_client.sources_added == []
+
+
+def test_nlm_sync_dry_run_lists_candidates_without_calling_client(kb_root, make_source, mock_client):
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncDryA1", domain="ds")
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncDryB2", domain="ds")
+    _make_youtube_source(kb_root, make_source, source_id="yt-otherDom1", domain="other")
+
+    result = nlm_sync("ds", dry_run=True, client=mock_client)
+
+    assert result.success
+    assert "would sync 2 source(s)" in result.summary
+    assert "yt-syncDryA1" in result.summary
+    assert "yt-syncDryB2" in result.summary
+    assert "yt-otherDom1" not in result.summary  # filtered by domain
+    assert mock_client.notebooks_created == []
+    assert mock_client.sources_added == []
+
+
+def test_nlm_sync_adds_every_tagged_source_and_skips_already_synced(kb_root, make_source, mock_client):
+    # Two fresh sources tagged with the domain.
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncFresh1", domain="ds")
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncFresh2", domain="ds")
+    # A third source already synced — should be counted as skipped.
+    raw_third = _make_youtube_source(kb_root, make_source, source_id="yt-syncAlready", domain="ds")
+    nlm_add("ds", "yt-syncAlready", client=mock_client)
+    sources_before = list(mock_client.sources_added)
+
+    progress_calls: list[tuple] = []
+    result = nlm_sync(
+        "ds",
+        client=mock_client,
+        progress=lambda i, n, sid, status, detail: progress_calls.append((i, n, sid, status)),
+    )
+
+    assert result.success, result.errors
+    assert "2 added" in result.summary
+    assert "1 already in corpus" in result.summary
+    assert "0 failed" in result.summary
+
+    # Only the two fresh sources caused new client calls.
+    new_calls = mock_client.sources_added[len(sources_before):]
+    assert {url for _, url in new_calls} == {
+        "https://www.youtube.com/watch?v=yt-syncFresh1",
+        "https://www.youtube.com/watch?v=yt-syncFresh2",
+    }
+
+    # Each fresh source's frontmatter now carries the persistent notebook id.
+    for sid in ("yt-syncFresh1", "yt-syncFresh2"):
+        front, _ = fm.parse(paths.raw_source_path("youtube", sid).read_text())
+        assert mock_client.next_notebook_id in front["nlm_corpus_ids"]
+
+    # progress callback fires once per source, in stable order.
+    assert [c[2] for c in progress_calls] == ["yt-syncAlready", "yt-syncFresh1", "yt-syncFresh2"]
+    statuses = {c[2]: c[3] for c in progress_calls}
+    assert statuses == {
+        "yt-syncAlready": "skipped",
+        "yt-syncFresh1": "added",
+        "yt-syncFresh2": "added",
+    }
+    # raw_third still parses cleanly post-run.
+    fm.parse(raw_third.read_text())
+
+
+def test_nlm_sync_continues_after_individual_source_failure(kb_root, make_source, mock_client):
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncOk1", domain="ds")
+    # Source with empty body, no url, no sidecar — `nlm_add` rejects this.
+    bad_text = make_source(
+        id_="yt-syncBad1", domains=["ds"], body="", url=""
+    )
+    bad_path = paths.raw_source_path("youtube", "yt-syncBad1")
+    bad_path.write_text(bad_text)
+    _make_youtube_source(kb_root, make_source, source_id="yt-syncOk2", domain="ds")
+
+    result = nlm_sync("ds", client=mock_client)
+
+    assert not result.success  # one failure → success=False
+    assert "2 added" in result.summary
+    assert "1 failed" in result.summary
+    assert any("yt-syncBad1" in e for e in result.errors)
+    # The good sources before AND after the failing one both got synced.
+    urls_added = {url for _, url in mock_client.sources_added}
+    assert "https://www.youtube.com/watch?v=yt-syncOk1" in urls_added
+    assert "https://www.youtube.com/watch?v=yt-syncOk2" in urls_added
+
+
+def test_nlm_sync_reconciles_sources_already_in_notebook(kb_root, make_source, mock_client):
+    """If a source is already on the NotebookLM side (e.g., from a prior
+    partial run before we updated frontmatter) `nlm_sync` should detect
+    that via title signature, fix the frontmatter, and skip the add — no
+    duplicate."""
+    # First, attach the persistent notebook to the domain so reconciliation
+    # has somewhere to look.
+    from gateway import nlm_registry as registry_module
+    registry_module.register("ds", "nb-existing")
+
+    # An arxiv source whose URL contains the canonical arxiv id.
+    arxiv_text = make_source(
+        id_="arxiv-2401.12345",
+        type_="arxiv",
+        domains=["ds"],
+        url="http://arxiv.org/abs/2401.12345v2",
+        title="Some long enough title for fallback matching",
+    )
+    arxiv_path = paths.raw_source_path("arxiv", "arxiv-2401.12345")
+    arxiv_path.write_text(arxiv_text)
+
+    # Mark the notebook as already containing the arxiv source — simulated by
+    # NotebookLM-side title that embeds the arxiv id (this is exactly the
+    # title shape NotebookLM uses for arxiv ingests).
+    mock_client.pre_loaded_sources["nb-existing"] = [
+        {"id": "src-abc", "title": "[2401.12345v1] Some Edge Inference Paper"}
+    ]
+
+    result = nlm_sync("ds", client=mock_client)
+
+    assert result.success, result.errors
+    assert "1 reconciled" in result.summary
+    # No actual adds happened — reconciliation took the place of the add.
+    assert mock_client.sources_added == []
+    # Frontmatter now records the persistent notebook id, so a re-run is a no-op.
+    front, _ = fm.parse(arxiv_path.read_text())
+    assert "nb-existing" in front["nlm_corpus_ids"]
+
+
+def test_nlm_sync_respects_limit(kb_root, make_source, mock_client):
+    for i in range(5):
+        _make_youtube_source(kb_root, make_source, source_id=f"yt-syncLim{i}A", domain="ds")
+
+    result = nlm_sync("ds", limit=2, client=mock_client)
+
+    assert result.success
+    assert "2 added" in result.summary
+    assert len(mock_client.sources_added) == 2
 
 
 # --- nlm-slides / nlm-audio / nlm-briefing ---------------------------------

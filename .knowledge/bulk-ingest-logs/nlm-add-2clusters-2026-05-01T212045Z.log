@@ -1,0 +1,39 @@
+NLM_ADD_START 2026-05-01T21:20:45Z total=     121
+===[1] ai-and-agents pdf-22a560609b73===
+ok: added: pdf-22a560609b73 → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-22a560609b73.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[2] ai-and-agents pdf-5bec4feeb233===
+ok: added: pdf-5bec4feeb233 → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5bec4feeb233.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[3] ai-and-agents pdf-822d5467c24e===
+ok: added: pdf-822d5467c24e → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-822d5467c24e.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[4] ai-and-agents pdf-83c3ccfff1f1===
+ok: added: pdf-83c3ccfff1f1 → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-83c3ccfff1f1.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[5] ai-and-agents pdf-ai-2023-japan-s-ai===
+---
+===[6] ai-and-agents pdf-ali-modarressi-2025-nolima-long-context===
+ok: added: pdf-ali-modarressi-2025-nolima-long-context → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ali-modarressi-2025-nolima-long-context.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[7] ai-and-agents pdf-ashish-vaswani-2025-attention-is-all===
+ok: added: pdf-ashish-vaswani-2025-attention-is-all → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ashish-vaswani-2025-attention-is-all.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[8] ai-and-agents pdf-danny-hernandez-2025-measuring-the-algorithmic===
+ok: added: pdf-danny-hernandez-2025-measuring-the-algorithmic → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-danny-hernandez-2025-measuring-the-algorithmic.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[9] ai-and-agents pdf-e7ff11e4ad9b===

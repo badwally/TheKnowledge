@@ -1,0 +1,933 @@
+WITH_PLAN_START 2026-05-01T15:47:59Z total=      83
+===[1] ai-and-agents pdf-5bec4feeb233===
+ok: already ingested; ran --with-plan: applied plan for pdf-5bec4feeb233: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/innovation-endeavors.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/davis-treybig.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/cursor.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/github-copilot.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/midjourney.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/evo-2.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/inference-time-compute.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reasoning-models.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/model-depreciation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/foundation-model-training-economics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/openai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/deepseek.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[2] ai-and-agents pdf-shu-yang-2026-multi-user-large===
+warning: update[0] (wiki/entities/shu-yang.md): [wiki-page-slug-similar] slug: slug 'shu-yang' is near-duplicate of: zhou-yang (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-shu-yang-2026-multi-user-large: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/shu-yang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jiaxin-pei.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/michiel-bakker.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/alex-pentland.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/kaust.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/stanford-university.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-user-llm-agents.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-principal-decision-problem.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/principal-agent-problem.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/selective-context-visibility.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/single-user-chat-template.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[3] trading-and-markets pdf-2742492120a8===
+ok: already ingested; ran --with-plan: applied plan for pdf-2742492120a8: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/guido-baltussen.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zhi-da.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sten-lammers.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/martin-martens.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/erasmus-school-of-economics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/robeco-quantitative-investing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-intraday-momentum.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/short-gamma-hedging.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/negative-gamma-exposure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/leveraged-etf-rebalancing-demand.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/u-shape-intraday-volume.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/transitory-price-pressure.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[4] trading-and-markets pdf-291109666e00===
+ok: already ingested; ran --with-plan: applied plan for pdf-291109666e00: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/brass-monkey.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/wim-hof.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/wim-hof-method.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/andrew-huberman.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/rhonda-patrick.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cold-water-immersion.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/deliberate-cold-exposure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hormesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/catecholamine-release-cold-exposure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/brown-fat-thermogenesis.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[5] trading-and-markets pdf-2b2d34f2b0ff===
+ok: already ingested; ran --with-plan: applied plan for pdf-2b2d34f2b0ff: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jp-morgan-asset-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/karen-ward.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/european-central-bank.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bank-of-england.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/housing-led-monetary-transmission.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mortgage-rate-fixation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/european-gas-storage-buffer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/china-reopening-supply-chain-easing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/wage-led-inflation-persistence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/quantitative-tightening.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fixed-income-reset.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[6] trading-and-markets pdf-3a3f6480ad77===
+ok: already ingested; ran --with-plan: applied plan for pdf-3a3f6480ad77: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/inner-circle-trader.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tanja-miketic.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-shift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/displacement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/intermediate-term-high-low.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/judas-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/midnight-opening-price.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/smt-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/purge-and-revert.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/new-york-lunch-stop-run.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bias-vs-narrative.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[7] trading-and-markets pdf-3a510f58854c===
+ok: already ingested; ran --with-plan: applied plan for pdf-3a510f58854c: 8 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ttrades.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ttrades-entry-models.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/break-of-structure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/htf-poi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/optimal-trade-entry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/failed-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/box-setup.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-grab.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[8] trading-and-markets pdf-3d3d42a0717a===
+ok: already ingested; ran --with-plan: applied plan for pdf-3d3d42a0717a: 15 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zoltan-pozsar.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/credit-suisse.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bill-dudley.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/paul-volcker.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ben-bernanke.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/mary-daly.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/volcker-moment.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fed-call-vs-fed-put.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/negative-wealth-effects.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/helicopter-drops-of-money.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fed-impossible-trinity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/active-vs-passive-qt.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/volatility-by-design.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/strong-balance-sheets-cyclical-bad.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[9] trading-and-markets pdf-3eea925a6037===
+ok: already ingested; ran --with-plan: plan for pdf-3eea925a6037 contains no updates
+---
+===[10] trading-and-markets pdf-40482428d656===
+ok: already ingested; ran --with-plan: applied plan for pdf-40482428d656: 2 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/balanced-price-range.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/braveheart-trading.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[11] trading-and-markets pdf-46c6dd54d41e===
+warning: update[0] (wiki/entities/amtrades.md): [wiki-page-slug-similar] slug: slug 'amtrades' is near-duplicate of: ttrades (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-46c6dd54d41e: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/amtrades.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/news-event-blackout-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/daily-consolidation-profile.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/engineering-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/overnight-range-expansion.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/inside-day-trapped-order-flow.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/external-vs-internal-range-participation.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[12] trading-and-markets pdf-4b87a8059b38===
+ok: already ingested; ran --with-plan: applied plan for pdf-4b87a8059b38: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/lehman-brothers.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fx-spot-transaction.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fx-value-date.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fx-forward-contract.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/forward-points.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fx-swap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cross-rate.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bid-offer-spread.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fx-vanilla-option.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/option-greeks.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/exotic-fx-options.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bretton-woods-accord.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[13] trading-and-markets pdf-4dbe002c1c7a===
+ok: already ingested; ran --with-plan: applied plan for pdf-4dbe002c1c7a: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/daron-acemoglu.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/alex-he.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/daniel-le-maire.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nber.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/business-manager-effect.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/rent-sharing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/labor-share-decline.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/manager-diffusion-iv.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/role-model-college-major-iv.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/business-education-socialization.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[14] trading-and-markets pdf-4e80c02052f4===
+ok: already ingested; ran --with-plan: applied plan for pdf-4e80c02052f4: 5 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/swing-high-swing-low.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/imbalance.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/price-delivery-cycle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mss-fvg-reentry.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[15] trading-and-markets pdf-503a04772afb===
+ok: already ingested; ran --with-plan: applied plan for pdf-503a04772afb: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zoltan-pozsar.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dale-copeland.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/niall-ferguson.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/chimerica.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/eurussia.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/chussia.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/tricks-alliance.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/theory-of-trade-expectations.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/lowflation-regime.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/pax-americana.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/great-reflation.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[16] trading-and-markets pdf-50a1f07b475f===
+ok: already ingested; ran --with-plan: applied plan for pdf-50a1f07b475f: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/carla-kuon.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ucsf-osher-center-for-integrative-health.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/environmental-working-group.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-covid.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/yanuck-phased-immuno-physiologic-approach.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-covid-basic-supplement-protocol.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mast-cell-stabilization-protocol.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-covid-nutrient-deficit-panel.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/two-month-taper-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/toxin-overload-thesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dirty-dozen-clean-fifteen.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anti-inflammatory-diet.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[17] trading-and-markets pdf-57b1d100694e===
+ok: already ingested; ran --with-plan: applied plan for pdf-57b1d100694e: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/trader-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/timeframe-trader-mapping.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/institutional-sponsorship-criteria.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dxy-smt-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/institutional-market-structure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trendline-phantoms.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/head-shoulders-as-trap.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[18] trading-and-markets pdf-5a5936689043===
+ok: already ingested; ran --with-plan: applied plan for pdf-5a5936689043: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nikonomics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/webull.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/options-premium-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/option-contract-anatomy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/otm-vs-itm-strikes.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/paper-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/candlestick-chart-day-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/price-action-screen-time.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cash-account-day-trade-loophole.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[19] trading-and-markets pdf-5a6062a63a4b===
+ok: already ingested; ran --with-plan: applied plan for pdf-5a6062a63a4b: 15 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/thierry-roncalli.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/paul-jusselin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/edmond-lezmi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tung-lam-dao.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/amundi-asset-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/momentum-risk-premium.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-following-strategy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bruder-gaussel-framework.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/lookback-straddle-trend-payoff.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-following-hit-ratio.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/option-profile-vs-trading-impact.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/volatility-term-structure-trend.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-following-hedging-properties.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multivariate-trend-following.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/time-series-vs-cross-section-momentum.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[20] trading-and-markets pdf-5bef1fceb745===
+ok: already ingested; ran --with-plan: applied plan for pdf-5bef1fceb745: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/carla-kuon.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ucsf-osher-center-for-integrative-health.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/environmental-working-group.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-covid-four-buckets-of-fatigue.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anti-inflammatory-diet-long-covid.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cytokine-storm.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/lectin-elimination-diet.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/molecular-mimicry-food-lectins.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/low-histamine-diet.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[21] trading-and-markets pdf-5e6d63eac790===
+ok: already ingested; ran --with-plan: applied plan for pdf-5e6d63eac790: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/daniel-galvin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/chloe-thurston.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/northwestern-university.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/institute-for-policy-research.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/policy-feedback-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/limits-of-policy-feedback.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-reinforcing-vs-self-undermining-feedback.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/submerged-policies.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/policy-building-vs-party-building.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/motivated-reasoning.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[22] trading-and-markets pdf-5ef2018823c8===
+ok: already ingested; ran --with-plan: applied plan for pdf-5ef2018823c8: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/lyxor-asset-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/benjamin-bruder.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jean-charles-richard.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/thierry-roncalli.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-filtering.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/linear-filter-convolution.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/causal-filter.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/moving-average-crossover.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-cycle-decomposition.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/denoising-bias-tradeoff.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[23] trading-and-markets pdf-67b6fe78b28c===
+warning: update[6] (wiki/concepts/liquidity-void.md): [wiki-page-slug-similar] slug: slug 'liquidity-void' is near-duplicate of: liquidity-raid (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-67b6fe78b28c: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/trader-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/expansion-retracement-reversal-consolidation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/daily-range-structure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/true-day-daily-range.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/judas-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/equilibrium-discount-premium.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-void.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-valuation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/low-resistance-liquidity-run.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-efficiency-paradigm.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[24] trading-and-markets pdf-69a1f97797ce===
+ok: already ingested; ran --with-plan: applied plan for pdf-69a1f97797ce: 6 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/displacement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-shift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-grab.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/htf-point-of-interest.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[25] trading-and-markets pdf-6ae97b9c27c7===
+ok: already ingested; ran --with-plan: applied plan for pdf-6ae97b9c27c7: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zoltan-pozsar.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/pippa-malmgren.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jerome-powell.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/arthur-burns.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/three-pillars-low-inflation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/four-prices-of-money.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/general-mobilization.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cyclical-vs-structural-inflation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/g-sibs-of-commodities-and-factories.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/war-economy-macro-investing.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[26] trading-and-markets pdf-6ba2dc608ac8===
+ok: already ingested; ran --with-plan: applied plan for pdf-6ba2dc608ac8: 8 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/matthew-ryan.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tradytics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/two-day-avwap-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stochastic-momentum-signal.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-net-flow.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-confluence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bracket-order-risk-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scale-out-profit-taking.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[27] trading-and-markets pdf-704c439723d0===
+ok: already ingested; ran --with-plan: applied plan for pdf-704c439723d0: 6 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/buyside-sellside-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/swing-high-swing-low-three-candle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/equal-highs-equal-lows.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/algorithmic-price-delivery.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/htf-liquidity-cascade.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-vs-support-resistance.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[28] trading-and-markets pdf-734e612fdf31===
+ok: already ingested; ran --with-plan: applied plan for pdf-734e612fdf31: 6 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stop-run.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/failure-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/breaker-swing-point.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/institutional-reference-points.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trapped-positions-repricing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/two-paths-to-entry.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[29] trading-and-markets pdf-7663c24d3159===
+ok: already ingested; ran --with-plan: applied plan for pdf-7663c24d3159: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/brian-hurst.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/clearalpha.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/barclays.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/goldman-sachs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-manager-fund.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/full-pass-through-expense-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cash-efficient-implementation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/excess-return-aggregation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/strategy-count-sharpe-relationship.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/correlation-sensitivity-risk.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/rock-star-pm-myth.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[30] trading-and-markets pdf-7acc9c92267c===
+ok: already ingested; ran --with-plan: applied plan for pdf-7acc9c92267c: 14 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/michael-mauboussin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dan-callahan.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/counterpoint-global.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/morgan-stanley.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sp-500.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/msci-all-country-world-index.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hendrik-bessembinder.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stock-market-concentration.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/magnificent-seven.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/economic-profit.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/counterfactual-concentration.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/wealth-creation-distribution.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/benchmark-relative-active-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/index-committee-construction.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[31] trading-and-markets pdf-81305d181382===
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+ok: already ingested; ran --with-plan: applied plan for pdf-81305d181382: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/imbalance-displacement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bullish-order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bearish-order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/buyside-vs-sellside-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/point-of-interest.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-trading-checklist.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/expansion-consolidation-cycle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/failed-displacement-reversal-signal.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[32] trading-and-markets pdf-853a7755a470===
+ok: already ingested; ran --with-plan: applied plan for pdf-853a7755a470: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/christopher-waller.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stagflation-monetary-policy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/volcker-vs-burns-policy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cpi-vs-pce-scope-differences.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/core-services-inflation-persistence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/shelter-inflation-persistence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trimmed-mean-inflation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/inflation-expectations-unanchoring.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[33] trading-and-markets pdf-869163b2f118===
+ok: already ingested; ran --with-plan: applied plan for pdf-869163b2f118: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ari-kiev.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/steve-cohen.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sac-capital-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trading-to-win-framework.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/master-trader-traits.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/proactive-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trader-equanimity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/musical-chairs-market-timing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/admitting-vulnerability-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/conviction-without-stubbornness.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/daily-trade-review.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[34] trading-and-markets pdf-87087198976b===
+ok: already ingested; ran --with-plan: applied plan for pdf-87087198976b: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/carsten-brzeski.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/james-knightley.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/iris-pang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/european-central-bank.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bank-of-england.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/different-shades-of-recession.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/zeitenwende.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dollar-topped-debate.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/2022-bond-bear-market.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[35] trading-and-markets pdf-8f021296560c===
+ok: already ingested; ran --with-plan: applied plan for pdf-8f021296560c: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/michael-strobaek.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nannette-hechler-fayd-herbe.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/philipp-lisibach.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/swiss-national-bank.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fundamental-reset-2023.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/great-transition.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multipolar-world-trade-reorganization.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/equities-tale-of-two-halves-2023.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fixed-income-2023-revival.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[36] trading-and-markets pdf-90e7f9350657===
+ok: already ingested; ran --with-plan: applied plan for pdf-90e7f9350657: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/fidelity-international.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/anne-richards.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/andrew-mccaffery.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/salman-ahmed.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/henk-jan-rikkerink.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/polycrisis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/inflation-bust.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dispersion-of-returns.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/deglobalization-reshoring.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[37] trading-and-markets pdf-930894c4fbad===
+ok: already ingested; ran --with-plan: applied plan for pdf-930894c4fbad: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hopiplaka.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/po3-dealing-range.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/tesla-vortex-3-6-9.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/goldbach-levels.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hippo-look-back.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fractal-po3.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/inner-circle-trader.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[38] trading-and-markets pdf-9495a5abb859===
+ok: already ingested; ran --with-plan: applied plan for pdf-9495a5abb859: 1 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/swingalgo-plus.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[39] trading-and-markets pdf-94cecf7a170a===
+ok: already ingested; ran --with-plan: applied plan for pdf-94cecf7a170a: 6 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hopiplaka.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/po3-dealing-range.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/tesla-vortex-3-6-9.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hippo-look-back.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/goldbach-levels.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fractal-po3.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[40] trading-and-markets pdf-9613f301a3b5===
+ok: already ingested; ran --with-plan: applied plan for pdf-9613f301a3b5: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bobatrader.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/morning-sd-zone-reversal.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dte-strike-selection-by-weekday.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/supply-demand-zone-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/support-resistance-flip.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reversal-vs-breakout.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hard-stop-vs-technical-stop.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/incremental-position-sizing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/setup-specialization-edge.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[41] trading-and-markets pdf-9da6062f0265===
+ok: already ingested; ran --with-plan: applied plan for pdf-9da6062f0265: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/edward-thorp.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sheen-kassouf.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/uc-irvine.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/warrant-stock-diagram.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/basic-system-thorp-kassouf-hedge.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reverse-hedging.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/avalanche-effect.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/convertible-securities-arbitrage.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/random-walk-evidence-vs-chart-reading.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[42] trading-and-markets pdf-a0072c763cf8===
+ok: already ingested; ran --with-plan: applied plan for pdf-a0072c763cf8: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/scott-redler.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/t3-live.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/8-21-day-ema-roadmap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/simple-vs-exponential-ma.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/portfolio-vs-tactical-approach.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ma-reclaim-as-strength-signal.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/moving-average-as-roadmap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/50-day-ema-intermediate-trend.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/200-day-ema-long-term-trend.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[43] trading-and-markets pdf-a25e1c0d5f08===
+ok: already ingested; ran --with-plan: applied plan for pdf-a25e1c0d5f08: 8 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/allan-malz.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve-bank-of-new-york.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/stephen-figlewski.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/risk-neutral-distribution.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/breeden-litzenberger-theorem.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/option-implied-volatility-smile.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/clamped-cubic-spline-interpolation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/no-arbitrage-restrictions-on-options.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[44] trading-and-markets pdf-a3789262265a===
+ok: already ingested; ran --with-plan: applied plan for pdf-a3789262265a: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/amd-cycle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-sell-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-buy-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/killzones.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/htf-poi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-shift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/buyside-sellside-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[45] trading-and-markets pdf-a98b496e5936===
+ok: already ingested; ran --with-plan: applied plan for pdf-a98b496e5936: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/trader-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/judas-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/optimal-trade-entry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/three-drives-pattern.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/halving-risk-after-loss.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scaled-stop-trailing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/single-market-mastery.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/news-as-volatility-not-direction.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fvg-selection-and-stops.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[46] trading-and-markets pdf-b72c5d424466===
+ok: already ingested; ran --with-plan: applied plan for pdf-b72c5d424466: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/traderedge.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/alex-traderedge.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/simon-sinek.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/morgan-housel.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/infinite-game-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trading-as-business-mindset.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/pay-yourself-trader-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/extended-emergency-fund.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/eighty-twenty-spending-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/sleep-trading-performance.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/alcohol-sleep-quality.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[47] trading-and-markets pdf-b8cec9d1ec0c===
+ok: already ingested; ran --with-plan: applied plan for pdf-b8cec9d1ec0c: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/xavier-gabaix.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ralph-koijen.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nber.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/inelastic-markets-hypothesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-multiplier.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/granular-instrumental-variables.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/aggregate-equity-demand-elasticity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mandate-constrained-funds.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/flow-driven-asset-pricing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/qe-for-stocks.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/corporate-finance-of-inelastic-markets.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/macro-vs-micro-elasticity-puzzle.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[48] trading-and-markets pdf-be69dd282a8c===
+ok: already ingested; ran --with-plan: applied plan for pdf-be69dd282a8c: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jean-philippe-bouchaud.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/y-lemperiere.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/c-deremble.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/p-seager.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/m-potters.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/two-centuries-trend-anomaly.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-saturation-effect.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-following-long-vol-correlation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/constant-risk-trend-signal.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/short-vs-long-trends-degradation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/extrapolative-expectations.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[49] trading-and-markets pdf-bf1afc73ac8f===
+ok: already ingested; ran --with-plan: applied plan for pdf-bf1afc73ac8f: 8 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/andrew-slimmon.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jim-caron.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/eric-stein.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-and-variable-lags.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fed-pivot-trade.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/megacap-regulatory-headwind.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/equal-weighted-vs-cap-weighted-breadth.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[50] trading-and-markets pdf-c25a6984aba0===
+ok: already ingested; ran --with-plan: applied plan for pdf-c25a6984aba0: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/cliff-asness.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/aqr-capital-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/eugene-fama.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ken-french.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/john-liew.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/journal-of-portfolio-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/less-efficient-market-hypothesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/joint-hypothesis-problem.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/value-spread.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/speed-vs-accuracy-efficiency.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/asness-bubble-criteria.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/grossman-stiglitz-paradox.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reasonable-emh-standard.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[51] trading-and-markets pdf-c57b9a32c399===
+warning: update[0] (wiki/entities/ttrades.md): [wiki-page-slug-similar] slug: slug 'ttrades' is near-duplicate of: amtrades (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-c57b9a32c399: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ttrades.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ttrades-entry-models.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/break-of-structure.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/optimal-trade-entry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-grab.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/displacement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/htf-poi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/failed-swing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/smt-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[52] trading-and-markets pdf-c9b8f466ea39===
+ok: already ingested; ran --with-plan: applied plan for pdf-c9b8f466ea39: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/akash-network.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/overclock-labs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/decentralized-cloud-marketplace.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cloud-spot-market.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/akash-deployment-fulfillment-order.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/akash-staking-mechanism.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/manifest-based-deployment.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cloud-provider-lock-in.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/server-underutilization.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[53] trading-and-markets pdf-cce4b539ce1c===
+warning: update[9] (wiki/concepts/stop-hunt.md): [wiki-page-slug-similar] slug: slug 'stop-hunt' is near-duplicate of: stop-run (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-cce4b539ce1c: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/daytradingrauf.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/vela-exchange.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/draw-on-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/buy-stops-sell-stops.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-pairing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/failure-swing-pattern.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-line-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/external-to-internal-range-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stop-hunt.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/htf-order-flow-confluence.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[54] trading-and-markets pdf-d0b9b7e97b5c===
+ok: already ingested; ran --with-plan: applied plan for pdf-d0b9b7e97b5c: 14 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/joel-greenblatt.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gotham-capital.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/columbia-business-school.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/richard-pzena.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/james-oshaughnessy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/value-investors-club.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mr-market.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/margin-of-safety.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/divergence-prices-values.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/special-situation-investing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/circle-of-competence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/concentrated-portfolio-investing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/valuation-methodologies-greenblatt.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/value-investing-cycle.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[55] trading-and-markets pdf-d196e853ebc0===
+ok: already ingested; ran --with-plan: applied plan for pdf-d196e853ebc0: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/torsten-slok.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/apollo-global-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/federal-reserve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/soft-landing-thesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/sticky-vs-flexible-cpi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/goods-vs-services-inflation-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/60-40-portfolio-2022-collapse.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/private-credit-historic-entry-2023.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/us-eu-inflation-near-identical.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/demand-vs-supply-driven-inflation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/capital-scarce-expensive-regime.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[56] trading-and-markets pdf-d7094631fbf1===
+warning: update[11] (wiki/concepts/internal-range-liquidity.md): [wiki-page-slug-similar] slug: slug 'internal-range-liquidity' is near-duplicate of: external-range-liquidity (use --force-new-slug to override)
+warning: update[12] (wiki/concepts/external-range-liquidity.md): [wiki-page-slug-similar] slug: slug 'external-range-liquidity' is near-duplicate of: internal-range-liquidity (use --force-new-slug to override)
+ok: already ingested; ran --with-plan: applied plan for pdf-d7094631fbf1: 15 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/inner-circle-trader.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-buy-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-sell-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/draw-on-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/optimal-trade-entry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-shift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ipda.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/low-resistance-liquidity-run.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/displacement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/internal-range-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/external-range-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/silver-bullet-second-entry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/offset-distribution.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[57] trading-and-markets pdf-e2068d89c2a7===
+ok: already ingested; ran --with-plan: applied plan for pdf-e2068d89c2a7: 8 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bryan-kelly.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dacheng-xiu.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/yale-school-of-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/university-of-chicago-booth.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/prices-are-predictions.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/large-conditioning-information-sets.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/functional-form-ambiguity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/financial-machine-learning-definition.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[58] trading-and-markets pdf-e63407c2b4f4===
+ok: already ingested; ran --with-plan: applied plan for pdf-e63407c2b4f4: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/carlo-zarattini.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/andrew-aziz.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/concretum-research.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/peak-capital-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bear-bull-traders.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/opening-range-breakout-strategy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/intraday-leverage-constraint.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/leveraged-etf-amplification.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/asymmetric-risk-reward-ratio.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/retail-day-trading-skepticism.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[59] trading-and-markets pdf-e8351bcf5615===
+ok: already ingested; ran --with-plan: applied plan for pdf-e8351bcf5615: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/carla-kuon.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/osher-center.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gamma-core.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/vagus-nerve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-covid-vagal-dysfunction.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/vagal-toning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/four-seven-eight-breath.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/transcutaneous-vagal-nerve-stimulation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-covid-pacing.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hormetic-exercise-stress.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/neuroinflammation-stress-loop.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/group-medical-visits.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[60] trading-and-markets pdf-ea646c451aae===
+ok: already ingested; ran --with-plan: applied plan for pdf-ea646c451aae: 5 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dealer-short-gamma-mechanics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/gamma-squeeze-into-close.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/iron-condor-dealer-positioning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/pinning-at-strike-expiration.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/blow-off-top-into-close.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[61] trading-and-markets pdf-ec9fdef2193c===
+ok: already ingested; ran --with-plan: applied plan for pdf-ec9fdef2193c: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/valeriy-zakamulin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/university-of-agder.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anatomy-of-moving-average-rules.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/weighted-moving-average-of-price-changes.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/moving-average-types.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/momentum-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/price-minus-moving-average-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/moving-average-change-of-direction-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/double-crossover-method.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/weighting-function-shape-determines-performance.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[62] trading-and-markets pdf-ed56b074fb11===
+ok: already ingested; ran --with-plan: applied plan for pdf-ed56b074fb11: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/kai-volatility.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/lyndon-b-johnson.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/richard-nixon.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/william-mcchesney-martin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/inflationary-psychology-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anguish-of-central-banking.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/great-society-fiscal-program.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/william-mcchesney-martin-moment.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/populism-as-inflation-driver.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/monetary-policy-dominance-era.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/wage-price-spiral.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[63] trading-and-markets pdf-f073cccdbfe6===
+ok: already ingested; ran --with-plan: applied plan for pdf-f073cccdbfe6: 3 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/swingalgo-plus.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/payhip.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tradingview.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[64] trading-and-markets pdf-f139d7bd1924===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[65] trading-and-markets pdf-f2565310670c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[66] trading-and-markets pdf-fa83c61dfa2d===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[67] trading-and-markets pdf-fb3e28ab676a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[68] trading-and-markets pdf-girquark-2022-global-economics-analyst===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[69] trading-and-markets pdf-lasse-pedersen-2011-title-how-to===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[70] trading-and-markets pdf-eric-benhamou-2021-powerpoint-presentation===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[71] trading-and-markets pdf-bd-2002-microsoft-word-dow===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[72] trading-and-markets pdf-ari-kiev-2005-stocks-commodities-v===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[73] trading-and-markets pdf-ali-khan-2023-the-ict-bible===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[74] trading-and-markets pdf-alberto-frizziero-2023-thenorthloop-intro-eng===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[75] trading-and-markets pdf-sqzme-2020-the-implied-order===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[76] trading-and-markets pdf-sugsu-2020-microsoft-word-hfholdem===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[77] trading-and-markets pdf-won-2022-bii-global-outlook===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[78] trading-and-markets pdf-judy-2022-primer-adjusted-a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[79] trading-and-markets pdf-tw-2007-3379-pdf===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[80] trading-and-markets pdf-ned-augenblick-2025-overinference-from-weak===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[81] trading-and-markets pdf-silicon-valley-2025-state-of-the===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[82] trading-and-markets pdf-matthew-notowidigdo-2020-gkno-manuscript-1025===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[83] trading-and-markets pdf-munger-2021-revised-psychology-of===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+WITH_PLAN_DONE 2026-05-01T20:00:03Z

@@ -87,7 +87,14 @@ wiki --help
 | `wiki filter-correct <id>` | Override a past filter decision; pin as a `user-correction` example |
 | `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/...]]` citations |
 | `wiki finalize <page> [--abandon]` | Promote a draft page to strict (or delete it) |
+| `wiki bootstrap-domain "<description>" <slug> [--force]` | Author a starter `policy.yaml` from a natural-language domain description (top-down green-field path) |
+| `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | Cluster untagged sources into domain proposals (bottom-up path) |
+| `wiki promote-domain <proposal-slug>` | Bless a proposal — writes policy, back-tags member sources |
+| `wiki demote-domain <domain-slug>` | Reverse a promotion — removes tags, deletes auto-generated policy |
+| `wiki reject-proposal <proposal-slug>` | Delete a draft proposal |
+| `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` | Multi-adapter search with per-adapter query expansion; `--review` pauses for plan editing |
 | `wiki nlm-add <domain> <source-id>` | Add a raw source to the domain's NotebookLM corpus |
+| `wiki nlm-sync <domain> [--limit N] [--dry-run]` | Bulk-add every raw source tagged with the domain; idempotent + resumable |
 | `wiki nlm-briefing <domain>` | Generate a briefing doc → file as `wiki/artifacts/...` |
 | `wiki nlm-audio <domain> "<topic>"` | Audio overview → `wiki/artifacts/` |
 | `wiki nlm-slides <domain> "<topic>"` | Slide deck → `wiki/artifacts/` |
@@ -99,6 +106,7 @@ wiki --help
 | `wiki lint [--scope <check>]` | Run health checks; report at `.knowledge/lint/<timestamp>.md` |
 | `wiki status` | Watcher heartbeat, inbox queue, recent activity |
 | `wiki watch` | Inbox watcher daemon (foreground; launchd usually runs this) |
+| `wiki serve [--port 7474] [--bind 127.0.0.1]` | Local browser UI: `/` dashboard, `/ops/*` ops, `/research` orchestration, `/review` curation queues, `/domains/artifacts` NotebookLM artifact triggers |
 | `wiki mcp-serve` | Start the MCP server (stdio) — exposes every gateway op as `wiki_*` tools |
 
 `wiki index` / `wiki search` / `wiki migrate` remain stubs (operational sugar).

@@ -1,12 +1,13 @@
 """Wiki page type schemas and section requirements per WIKI § 4.
 
-Five page types live under wiki/:
-- entity      (wiki/entities/<slug>.md)
-- concept     (wiki/concepts/<slug>.md)
-- source      (wiki/sources/<id>.md)
-- synthesis   (wiki/synthesis/<slug>.md)
-- moc         (wiki/mocs/<slug>.md)
-- artifact    (wiki/artifacts/<type>/<slug>.md)
+Seven page types live under wiki/:
+- entity          (wiki/entities/<slug>.md)
+- concept         (wiki/concepts/<slug>.md)
+- source          (wiki/sources/<id>.md)
+- synthesis       (wiki/synthesis/<slug>.md)
+- moc             (wiki/mocs/<slug>.md)
+- artifact        (wiki/artifacts/<type>/<slug>.md)
+- domain-proposal (wiki/proposals/<slug>.md)  [M36 — bottom-up domain discovery]
 
 Each has a required-fields/required-sections schema. The validator
 (M6) enforces these on every wiki write.
@@ -78,6 +79,21 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
             "local_file",
         ),
         required_sections=("Local file", "NotebookLM (live, editable)", "Sources used"),
+        citation_grounded=False,
+    ),
+    "domain-proposal": PageTypeSchema(
+        type_name="domain-proposal",
+        directory="wiki/proposals",
+        required_fields=(
+            "type",
+            "slug",
+            "title",
+            "proposed_domain",
+            "status",
+            "member_sources",
+            "rationale",
+        ),
+        required_sections=("Rationale", "Member sources"),
         citation_grounded=False,
     ),
 }

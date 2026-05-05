@@ -1,0 +1,870 @@
+WITH_PLAN_START 2026-04-30T14:46:46Z total=     121
+===[1] ai-and-agents pdf-22a560609b73 (already done)===
+ok: skipped (already processed in sanity-check)
+---
+===[2] ai-and-agents pdf-5bec4feeb233===
+operation failed:
+  - plan client failed: `claude -p` timed out after 300.0s
+---
+===[3] ai-and-agents pdf-822d5467c24e===
+ok: already ingested; ran --with-plan: applied plan for pdf-822d5467c24e: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/foundation-models.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/llm-social-implementation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ai-regulatory-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cultural-bias-in-ai-data.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/national-ai-investment-programs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/japan-ldp-ai-project-team.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/masaaki-taira.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/yutaka-matsuo.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/kazuto-ataka.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hiroaki-kitano.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[4] ai-and-agents pdf-83c3ccfff1f1===
+ok: already ingested; ran --with-plan: applied plan for pdf-83c3ccfff1f1: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agentic-ai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/autonomous-ai-systems.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/goal-directed-ai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agentic-ai-vs-traditional-ai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reinforcement-learning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/adaptive-control-mechanisms.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agentic-ai-applications.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agentic-ai-ethical-challenges.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/deepak-bhaskaracharya.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/karthigeyan-kuppan.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/b-divya.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[5] ai-and-agents pdf-ai-2023-japan-s-ai===
+ok: already ingested; ran --with-plan: applied plan for pdf-ai-2023-japan-s-ai: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/japan-ldp-ai-project-team.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/yutaka-matsuo.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/kazuto-ataka.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hiroaki-kitano.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/llm-social-implementation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/foundation-models.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ai-regulatory-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cultural-bias-in-ai-data.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/national-ai-investment-programs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ai-in-government.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ai-literacy-education.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ai-high-risk-domains.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[6] ai-and-agents pdf-ali-modarressi-2025-nolima-long-context===
+ok: already ingested; ran --with-plan: applied plan for pdf-ali-modarressi-2025-nolima-long-context: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/nolima-benchmark.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/needle-in-a-haystack.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/long-context-llm-evaluation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/latent-associative-reasoning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/literal-matching-shortcut.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/chain-of-thought-prompting.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ali-modarressi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hinrich-schutze.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/adobe-research.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[7] ai-and-agents pdf-ashish-vaswani-2025-attention-is-all===
+ok: already ingested; ran --with-plan: applied plan for pdf-ashish-vaswani-2025-attention-is-all: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ashish-vaswani.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/noam-shazeer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/google-brain.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/transformer-architecture.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-attention.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scaled-dot-product-attention.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-head-attention.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/positional-encoding.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/encoder-decoder-architecture.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[8] ai-and-agents pdf-danny-hernandez-2025-measuring-the-algorithmic===
+ok: already ingested; ran --with-plan: applied plan for pdf-danny-hernandez-2025-measuring-the-algorithmic: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/danny-hernandez.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tom-brown.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/openai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/algorithmic-efficiency.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/training-compute-scaling.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/effective-training-compute.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/moores-law.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/alexnet-benchmark.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scaling-laws.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mixed-integer-programming-progress.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[9] ai-and-agents pdf-e7ff11e4ad9b===
+ok: already ingested; ran --with-plan: applied plan for pdf-e7ff11e4ad9b: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/leopold-aschenbrenner.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/global-priorities-institute.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/philip-trammell.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/existential-risk.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/time-of-perils.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/environmental-kuznets-curve.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/directed-technical-change.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scale-effect-existential-risk.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/differential-technological-development.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/value-of-life-economics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/endogenous-growth-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ai-existential-risk.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[10] ai-and-agents pdf-f478e5f11837===
+ok: already ingested; ran --with-plan: applied plan for pdf-f478e5f11837: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/anthropic.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-agent-system.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/orchestrator-worker-pattern.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/subagent.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/parallel-tool-calling.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/extended-thinking.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/retrieval-augmented-generation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/llm-as-judge-evaluation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agent-evaluation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agent-prompt-engineering.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/tool-design-for-agents.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[11] ai-and-agents pdf-james-evans-2026-agentic-ai-and===
+ok: already ingested; ran --with-plan: applied plan for pdf-james-evans-2026-agentic-ai-and: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/james-evans.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/benjamin-bratton.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/blaise-aguera-y-arcas.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/santa-fe-institute.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/antikythera.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/society-of-thought.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/human-ai-centaur.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/plurality-model-of-intelligence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/institutional-alignment.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cultural-ratchet.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/recursive-agent-society.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agent-governance.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[12] ai-and-agents pdf-jenny-zhang-2026-hyperagents===
+ok: already ingested; ran --with-plan: applied plan for pdf-jenny-zhang-2026-hyperagents: 14 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jenny-zhang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jakob-foerster.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jeff-clune.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tatiana-shavrina.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/fair-at-meta.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/meta-superintelligence-labs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/vector-institute.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hyperagent.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/darwin-godel-machine.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dgm-hyperagents.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/metacognitive-self-modification.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-referential-agent.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/recursive-self-improvement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/open-ended-self-improvement.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[13] ai-and-agents pdf-julien-delavande-2025-video-killed-the===
+ok: already ingested; ran --with-plan: applied plan for pdf-julien-delavande-2025-video-killed-the: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/julien-delavande.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/regis-pierrard.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/sasha-luccioni.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hugging-face.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/wan21-t2v.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/codecarbon.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/text-to-video-generation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/diffusion-transformer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/compute-bound-execution.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/generative-ai-energy-footprint.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/t2v-scaling-laws.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[14] ai-and-agents pdf-kimi-team-2026-kimi-k2-open===
+ok: already ingested; ran --with-plan: applied plan for pdf-kimi-team-2026-kimi-k2-open: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/kimi-k2.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/moonshot-ai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/muonclip-optimizer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/qk-clip.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/muon-optimizer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-head-latent-attention.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mixture-of-experts.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agentic-data-synthesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/verifiable-rewards-rl.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-critique-rubric-reward.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/token-efficiency-pretraining.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[15] ai-and-agents pdf-nenad-toma-2026-intelligent-ai-delegation===
+ok: already ingested; ran --with-plan: applied plan for pdf-nenad-toma-2026-intelligent-ai-delegation: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nenad-tomasev.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/matija-franklin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/simon-osindero.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/google-deepmind.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/intelligent-ai-delegation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/principal-agent-problem.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/span-of-control.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/authority-gradient.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reward-misspecification.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/deceptive-alignment.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[16] ai-and-agents pdf-ngor-luong-2026-two-loops-how===
+ok: already ingested; ran --with-plan: applied plan for pdf-ngor-luong-2026-two-loops-how: 12 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ngor-luong.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/uscc.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/alibaba.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/qwen.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/deepseek.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/deepseek-r1.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/open-weight-models.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/two-loops-framework.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/general-ai-gai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/innovation-flywheel.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/data-as-factor-of-production.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scaling-laws.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[17] ai-and-agents pdf-peter-belcak-2025-small-language-models===
+ok: already ingested; ran --with-plan: applied plan for pdf-peter-belcak-2025-small-language-models: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/peter-belcak.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nvidia-research.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/small-language-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/heterogeneous-agentic-system.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/llm-to-slm-conversion.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nemotron-h.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hymba.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/smollm2.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/xlam-2-8b.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nvidia-dynamo.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[18] ai-and-agents pdf-shu-yang-2026-multi-user-large===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[19] ai-and-agents pdf-stanford-2026-the-stanford-emerging===
+ok: already ingested; ran --with-plan: applied plan for pdf-stanford-2026-the-stanford-emerging: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/stanford-emerging-technology-review-2026.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/stanford-university.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hoover-institution.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/stanford-hai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/condoleezza-rice.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jennifer-widom.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/amy-zegart.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/herbert-lin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/basic-research.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/federal-rd-funding-decline.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/china-us-basic-research-competition.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/academic-industry-ai-talent-migration.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/deepseek.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[20] ai-and-agents pdf-vaishak-belle-2026-the-future-is===
+ok: already ingested; ran --with-plan: applied plan for pdf-vaishak-belle-2026-the-future-is: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/vaishak-belle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gary-marcus.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/neuro-symbolic-ai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scaling-hypothesis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/statistical-relational-learning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/symbol-emergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/distribution-drift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/deepproblog.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/logic-tensor-networks.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/differential-program-induction.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/semantic-loss.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[21] ai-and-agents pdf-wentao-zhang-2026-autogenesis-a-self===
+ok: already ingested; ran --with-plan: applied plan for pdf-wentao-zhang-2026-autogenesis-a-self: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/wentao-zhang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nanyang-technological-university.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/autogenesis-protocol.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-evolving-agent.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/resource-substrate-protocol-layer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-evolution-protocol-layer.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/protocol-registered-resource.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/closed-loop-evolution-operators.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/autogenesis-system.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/connectivity-vs-evolution-protocols.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[22] ai-and-agents pdf-zhengding-hu-2026-pancake-hierarchical-memory===
+ok: already ingested; ran --with-plan: applied plan for pdf-zhengding-hu-2026-pancake-hierarchical-memory: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/pancake-system.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zhengding-hu.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/yufei-ding.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/steven-swanson.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/uc-san-diego.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/mem-gpt.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/a-mem.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/agentic-memory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/approximate-nearest-neighbor-search.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-tier-memory-system.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/intra-agent-locality.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/step-wise-memory-locality.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scattered-cluster-problem.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[23] ai-and-agents pdf-zhuo-yang-2026-detailed-balance-in===
+ok: already ingested; ran --with-plan: applied plan for pdf-zhuo-yang-2026-detailed-balance-in: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zhuo-yang-song.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/qing-hong-cao.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ming-xing-luo.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hua-xing-zhu.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/peking-university.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/beijing-computational-science-research-center.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/detailed-balance-in-llm-agents.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/least-action-principle-llm.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/potential-function-llm.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/exploration-exploitation-llm.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/macroscopic-dynamics-of-llms.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[24] ai-and-agents pdf-752c8824b750===
+ok: already ingested; ran --with-plan: applied plan for pdf-752c8824b750: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/nassim-nicholas-taleb.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/bitcoin.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/universa-investments.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/blockchain.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/proof-of-work.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/numeraire.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cumulative-ruin-principle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/path-dependence-stores-of-value.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/byzantine-generals-problem.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[25] ai-and-agents pdf-806192f007eb===
+ok: already ingested; ran --with-plan: applied plan for pdf-806192f007eb: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/philippe-van-der-beck.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jean-philippe-bouchaud.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dario-villamaina.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/capital-fund-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/archegos-capital-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/self-inflated-returns.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fund-illiquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ponzi-flows.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/flow-induced-price-impact.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/endogenous-price-spiral.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/flow-performance-relationship.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/portfolio-concentration.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/etf-arbitrage-mechanism.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[26] ai-and-agents pdf-f4016087ee51===
+ok: already ingested; ran --with-plan: applied plan for pdf-f4016087ee51: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/macocache.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/fangxin-wang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/jiangchuan-liu.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/simon-fraser-university.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/iqiyi.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mobile-edge-caching.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/multi-agent-deep-reinforcement-learning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/cooperative-edge-caching.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/independent-q-learning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/policy-fingerprint.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[27] trading-and-markets pdf-042302b20a5d===
+ok: already ingested; ran --with-plan: applied plan for pdf-042302b20a5d: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/breaker-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/order-block.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-shift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/youtube-2022-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-raid.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/mean-threshold.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[28] trading-and-markets pdf-04854302f962===
+ok: already ingested; ran --with-plan: applied plan for pdf-04854302f962: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reflexivity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/gamma-reflexivity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-fragility.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/portfolio-insurance.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/option-skew.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/opex-effect.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/dealer-concentration-risk.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ambrus-capital.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/george-soros.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/lor-associates.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/dodd-frank-act.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[29] trading-and-markets pdf-05df32dcb03e===
+ok: already ingested; ran --with-plan: applied plan for pdf-05df32dcb03e: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-following-trading-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bull-bear-switching-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/wonham-filter.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/all-in-all-out-strategy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/contra-trend-strategy.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/optimal-trading-thresholds.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/min-dai.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/zhou-yang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/qing-zhang.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/qiji-jim-zhu.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[30] trading-and-markets pdf-075e9932265b===
+ok: already ingested; ran --with-plan: applied plan for pdf-075e9932265b: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/power-of-3.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/midnight-open.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/weekly-open.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/monthly-open.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/buyside-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/sellside-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/optimal-trade-entry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-buy-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-sell-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/discount-and-premium.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hammer-candle.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/order-block.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[31] trading-and-markets pdf-08bcb2d549ba===
+ok: already ingested; ran --with-plan: applied plan for pdf-08bcb2d549ba: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/interest-rate-triad.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/smart-money-accumulation-distribution.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/external-range-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/internal-range-liquidity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-based-bias.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-pool.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/liquidity-raid.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/trader-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/inner-circle-trader.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[32] trading-and-markets pdf-13d51286c4cc===
+ok: already ingested; ran --with-plan: applied plan for pdf-13d51286c4cc: 8 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/reward-to-risk-ratio.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/compounding-small-accounts.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/top-down-analysis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/process-oriented-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-maker-trap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ipda.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/trader-theory.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/inner-circle-trader.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[33] trading-and-markets pdf-1590d4650297===
+ok: already ingested; ran --with-plan: applied plan for pdf-1590d4650297: 11 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tom-hougaard.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/paul-maclean.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/best-loser-wins.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trader-failure-rate.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/triune-brain-model.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/loss-aversion-asymmetry.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/assume-you-are-wrong.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/expect-to-be-uncomfortable.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/counter-emotional-positioning.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/pre-trade-ritual.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trading-roadblocks.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[34] trading-and-markets pdf-1662a4368954===
+ok: already ingested; ran --with-plan: applied plan for pdf-1662a4368954: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/carlo-zarattini.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/marios-stamatoudis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/concretum-research.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/overnight-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/post-earnings-announcement-drift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/discretionary-vs-algorithmic-trading.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trader-intuition.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trade-micromanagement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anonymized-chart-experiment.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/pre-gap-anticipatory-drift.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[35] trading-and-markets pdf-19445750a197===
+ok: already ingested; ran --with-plan: applied plan for pdf-19445750a197: 13 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/rajeev-bhargava.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/xiaoxia-lou.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gideon-ozik.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/ronnie-sadka.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/travis-whitmore.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/robert-shiller.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/state-street-associates.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/mkt-mediastats.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/narrative-economics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/narrative-intensity.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-crash-narrative.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/narrative-based-asset-allocation.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/narrative-beta-portfolio.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[36] trading-and-markets pdf-19ce7da9ecfc===
+ok: already ingested; ran --with-plan: applied plan for pdf-19ce7da9ecfc: 5 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/smt-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/sibling-asset-pairs.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ict-trade-checklist.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bearish-smt-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bullish-smt-divergence.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[37] trading-and-markets pdf-1ab14c833d75===
+ok: already ingested; ran --with-plan: applied plan for pdf-1ab14c833d75: 7 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/hopiplaka.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/inner-circle-trader.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/po3-dealing-range.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/goldbach-levels.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/hippo-look-back.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/tesla-vortex-3-6-9.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fractal-po3.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[38] trading-and-markets pdf-2248d6cdc39f===
+ok: already ingested; ran --with-plan: applied plan for pdf-2248d6cdc39f: 9 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/matthew-ryan.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/tradytics.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anchored-vwap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/two-day-avwap-rule.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/stochastic-momentum-signal.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-net-flow.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/trend-confluence.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/bracket-order-risk-management.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/scale-out-profit-taking.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[39] trading-and-markets pdf-2329b8b436f2===
+ok: already ingested; ran --with-plan: applied plan for pdf-2329b8b436f2: 10 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/alex-kim.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/maximilian-muhn.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/valeri-nikolaev.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/university-of-chicago-booth.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/entities/gpt-4-turbo.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/llm-financial-statement-analysis.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/chain-of-thought-prompting-finance.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/direction-of-earnings-changes-prediction.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/anonymized-financial-statements.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/ann-earnings-prediction.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[40] trading-and-markets pdf-2698a38c6fa5===
+ok: already ingested; ran --with-plan: applied plan for pdf-2698a38c6fa5: 5 update(s)
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fair-value-gap.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/displacement.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/imbalance.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/market-structure-shift.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/concepts/fvg-trader-confluence.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+---
+===[41] trading-and-markets pdf-2742492120a8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[42] trading-and-markets pdf-291109666e00===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[43] trading-and-markets pdf-2b2d34f2b0ff===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[44] trading-and-markets pdf-3a3f6480ad77===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[45] trading-and-markets pdf-3a510f58854c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[46] trading-and-markets pdf-3d3d42a0717a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[47] trading-and-markets pdf-3eea925a6037===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[48] trading-and-markets pdf-40482428d656===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[49] trading-and-markets pdf-46c6dd54d41e===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[50] trading-and-markets pdf-4b87a8059b38===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[51] trading-and-markets pdf-4dbe002c1c7a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[52] trading-and-markets pdf-4e80c02052f4===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[53] trading-and-markets pdf-503a04772afb===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[54] trading-and-markets pdf-50a1f07b475f===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[55] trading-and-markets pdf-57b1d100694e===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[56] trading-and-markets pdf-5a5936689043===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[57] trading-and-markets pdf-5a6062a63a4b===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[58] trading-and-markets pdf-5bef1fceb745===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[59] trading-and-markets pdf-5e6d63eac790===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[60] trading-and-markets pdf-5ef2018823c8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[61] trading-and-markets pdf-67b6fe78b28c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[62] trading-and-markets pdf-69a1f97797ce===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[63] trading-and-markets pdf-6ae97b9c27c7===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[64] trading-and-markets pdf-6ba2dc608ac8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[65] trading-and-markets pdf-704c439723d0===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[66] trading-and-markets pdf-734e612fdf31===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[67] trading-and-markets pdf-7663c24d3159===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[68] trading-and-markets pdf-7acc9c92267c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[69] trading-and-markets pdf-81305d181382===
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[70] trading-and-markets pdf-853a7755a470===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[71] trading-and-markets pdf-869163b2f118===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[72] trading-and-markets pdf-87087198976b===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[73] trading-and-markets pdf-8f021296560c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[74] trading-and-markets pdf-90e7f9350657===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[75] trading-and-markets pdf-930894c4fbad===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[76] trading-and-markets pdf-9495a5abb859===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[77] trading-and-markets pdf-94cecf7a170a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[78] trading-and-markets pdf-9613f301a3b5===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[79] trading-and-markets pdf-9da6062f0265===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[80] trading-and-markets pdf-a0072c763cf8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[81] trading-and-markets pdf-a25e1c0d5f08===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[82] trading-and-markets pdf-a3789262265a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[83] trading-and-markets pdf-a98b496e5936===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[84] trading-and-markets pdf-b72c5d424466===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[85] trading-and-markets pdf-b8cec9d1ec0c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[86] trading-and-markets pdf-be69dd282a8c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[87] trading-and-markets pdf-bf1afc73ac8f===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[88] trading-and-markets pdf-c25a6984aba0===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[89] trading-and-markets pdf-c57b9a32c399===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[90] trading-and-markets pdf-c9b8f466ea39===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[91] trading-and-markets pdf-cce4b539ce1c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[92] trading-and-markets pdf-d0b9b7e97b5c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[93] trading-and-markets pdf-d196e853ebc0===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[94] trading-and-markets pdf-d7094631fbf1===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[95] trading-and-markets pdf-e2068d89c2a7===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[96] trading-and-markets pdf-e63407c2b4f4===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[97] trading-and-markets pdf-e8351bcf5615===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[98] trading-and-markets pdf-ea646c451aae===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[99] trading-and-markets pdf-ec9fdef2193c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[100] trading-and-markets pdf-ed56b074fb11===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[101] trading-and-markets pdf-f073cccdbfe6===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[102] trading-and-markets pdf-f139d7bd1924===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[103] trading-and-markets pdf-f2565310670c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[104] trading-and-markets pdf-fa83c61dfa2d===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[105] trading-and-markets pdf-fb3e28ab676a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[106] trading-and-markets pdf-girquark-2022-global-economics-analyst===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[107] trading-and-markets pdf-lasse-pedersen-2011-title-how-to===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[108] trading-and-markets pdf-eric-benhamou-2021-powerpoint-presentation===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[109] trading-and-markets pdf-bd-2002-microsoft-word-dow===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[110] trading-and-markets pdf-ari-kiev-2005-stocks-commodities-v===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[111] trading-and-markets pdf-ali-khan-2023-the-ict-bible===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[112] trading-and-markets pdf-alberto-frizziero-2023-thenorthloop-intro-eng===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[113] trading-and-markets pdf-sqzme-2020-the-implied-order===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[114] trading-and-markets pdf-sugsu-2020-microsoft-word-hfholdem===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[115] trading-and-markets pdf-won-2022-bii-global-outlook===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[116] trading-and-markets pdf-judy-2022-primer-adjusted-a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[117] trading-and-markets pdf-tw-2007-3379-pdf===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[118] trading-and-markets pdf-ned-augenblick-2025-overinference-from-weak===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[119] trading-and-markets pdf-silicon-valley-2025-state-of-the===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[120] trading-and-markets pdf-matthew-notowidigdo-2020-gkno-manuscript-1025===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[121] trading-and-markets pdf-munger-2021-revised-psychology-of===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+WITH_PLAN_DONE 2026-04-30T17:17:40Z

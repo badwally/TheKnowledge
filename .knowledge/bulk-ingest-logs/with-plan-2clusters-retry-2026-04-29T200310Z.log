@@ -1,0 +1,524 @@
+WITH_PLAN_START 2026-04-29T20:03:10Z total=     121
+===[1] ai-and-agents pdf-22a560609b73===
+operation failed:
+  - update[8] (wiki/synthesis/ai-impact-on-real-world-rd.md): [citation-grounding] line 19: claim has no citation: Does the inequality finding generalize beyond materials science to softer-evaluation domains where ground truth is harde
+  - update[8] (wiki/synthesis/ai-impact-on-real-world-rd.md): [citation-grounding] line 20: claim has no citation: How durable is the satisfaction decline as scientists adapt to the new task mix and as future cohorts self-select into A
+  - update[8] (wiki/synthesis/ai-impact-on-real-world-rd.md): [citation-grounding] line 21: claim has no citation: How much of the "judgment premium" reflects pre-AI domain study versus on-the-job learning of evaluation, and which is m
+  - update[8] (wiki/synthesis/ai-impact-on-real-world-rd.md): [citation-grounding] line 22: claim has no citation: What organizational designs (hiring criteria, team composition, training programs) most efficiently exploit AI-driven ju
+  - update[8] (wiki/synthesis/ai-impact-on-real-world-rd.md): [citation-grounding] line 23: claim has no citation: Do the results replicate in settings without a single, well-defined firm objective — e.g., academic research where novel
+---
+===[2] ai-and-agents pdf-5bec4feeb233===
+operation failed:
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-required-field] domain: missing required field for moc page: domain
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Overview'
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key entities'
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key concepts'
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Synthesis pages'
+---
+===[3] ai-and-agents pdf-822d5467c24e===
+operation failed:
+  - update[9] (wiki/synthesis/japan-ai-competitiveness-gap.md): [citation-grounding] line 22: claim has no citation: Did the proposed standalone AI strategy actually replace the "chapter of the Integrated Innovation Strategy" framing, or
+  - update[9] (wiki/synthesis/japan-ai-competitiveness-gap.md): [citation-grounding] line 23: claim has no citation: How did Japan's regulatory posture evolve relative to the EU AI Act and US executive actions through 2024–2025?
+  - update[9] (wiki/synthesis/japan-ai-competitiveness-gap.md): [citation-grounding] line 24: claim has no citation: Did the "AI hub" recommendation result in a concrete institutional body, and with what budget?
+  - update[9] (wiki/synthesis/japan-ai-competitiveness-gap.md): [citation-grounding] line 25: claim has no citation: How tractable is the data-format-unification problem in practice, particularly in the medical-data case the whitepaper h
+---
+===[4] ai-and-agents pdf-83c3ccfff1f1===
+operation failed:
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-required-field] domain: missing required field for moc page: domain
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Overview'
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key entities'
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key concepts'
+  - update[10] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Synthesis pages'
+---
+===[5] ai-and-agents pdf-ai-2023-japan-s-ai===
+operation failed:
+  - update[10] (wiki/synthesis/japan-ai-policy-stance-2023.md): [citation-grounding] line 22: claim has no citation: How did the LDP whitepaper's recommendations translate into formal policy or budget allocations after April 2023?
+  - update[10] (wiki/synthesis/japan-ai-policy-stance-2023.md): [citation-grounding] line 23: claim has no citation: How did the proposed risk-tiered regulatory approach evolve relative to the EU AI Act and US executive actions?
+  - update[10] (wiki/synthesis/japan-ai-policy-stance-2023.md): [citation-grounding] line 24: claim has no citation: What measurable progress was made on Japanese-language corpus construction and on closing the Digital Competitiveness ga
+---
+===[6] ai-and-agents pdf-ali-modarressi-2025-nolima-long-context===
+operation failed:
+  - update[9] (wiki/mocs/ai-and-agents.md): [wiki-page-required-field] domain: missing required field for moc page: domain
+  - update[9] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Overview'
+  - update[9] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key entities'
+  - update[9] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key concepts'
+  - update[9] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Synthesis pages'
+---
+===[7] ai-and-agents pdf-ashish-vaswani-2025-attention-is-all===
+operation failed:
+  - plan client failed: embedded null byte
+---
+===[8] ai-and-agents pdf-danny-hernandez-2025-measuring-the-algorithmic===
+operation failed:
+  - update[9] (wiki/synthesis/drivers-of-ai-progress.md): [citation-grounding] line 20: claim has no citation: How far do efficiency-doubling trends extend beyond image classification, Go, Dota, and machine translation — and can th
+  - update[9] (wiki/synthesis/drivers-of-ai-progress.md): [citation-grounding] line 21: claim has no citation: Are new capabilities (rather than efficiency on existing ones) a larger share of progress, as Hernandez and Brown sugges
+  - update[9] (wiki/synthesis/drivers-of-ai-progress.md): [citation-grounding] line 22: claim has no citation: Do scaling-law-based extrapolations for inferred efficiency gains hold up when the underlying loss-vs-compute fits are e
+---
+===[9] ai-and-agents pdf-e7ff11e4ad9b===
+operation failed:
+  - update[9] (wiki/synthesis/growth-and-existential-risk-tradeoff.md): [citation-grounding] line 18: claim has no citation: The "doomed regardless" regime — large scale effect, fast-diminishing research returns, fast-diminishing marginal utilit
+  - update[9] (wiki/synthesis/growth-and-existential-risk-tradeoff.md): [citation-grounding] line 18: claim has no citation: Is there an empirical case that AI risk specifically belongs to that regime, and how would that change the policy prescr
+---
+===[10] ai-and-agents pdf-f478e5f11837===
+operation failed:
+  - update[10] (wiki/synthesis/token-economics-of-multi-agent-research.md): [citation-grounding] line 18: claim has no citation: At what point does the 15× token premium dominate the value of the result for typical knowledge-work queries, and where 
+  - update[10] (wiki/synthesis/token-economics-of-multi-agent-research.md): [citation-grounding] line 19: claim has no citation: Does the BrowseComp finding (token usage explaining 80% of variance) generalize to non-search agentic workloads, or is s
+  - update[10] (wiki/synthesis/token-economics-of-multi-agent-research.md): [citation-grounding] line 20: claim has no citation: What modifications would extend the orchestrator-worker pattern to coding workloads, given Anthropic's concession that r
+  - update[10] (wiki/synthesis/token-economics-of-multi-agent-research.md): [citation-grounding] line 21: claim has no citation: Does the 4× single-agent and 15× multi-agent token premium hold across providers and tasks, or is it specific to Anthrop
+---
+===[11] ai-and-agents pdf-james-evans-2026-agentic-ai-and===
+operation failed:
+  - update[13] (wiki/synthesis/agentic-ai-as-social-intelligence.md): [citation-grounding] line 21: claim has no citation: Which "institutional templates" port from human institutions to mixed human-AI ecologies, and which break under non-huma
+  - update[13] (wiki/synthesis/agentic-ai-as-social-intelligence.md): [citation-grounding] line 22: claim has no citation: Can institutional alignment be empirically benchmarked against RLHF on hard cases such as deception, collusion, and dual
+  - update[14] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Overview'
+  - update[14] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key entities'
+  - update[14] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Key concepts'
+  - update[14] (wiki/mocs/ai-and-agents.md): [wiki-page-section-missing] moc page is missing required section: '## Synthesis pages'
+---
+===[12] ai-and-agents pdf-jenny-zhang-2026-hyperagents===
+operation failed:
+  - update[10] (wiki/synthesis/self-improving-ai-cross-domain-transfer.md): [citation-grounding] line 20: claim has no citation: **Point of view.** Within the evidence currently in the wiki (one source), the cross-domain transfer claim is plausible 
+  - update[10] (wiki/synthesis/self-improving-ai-cross-domain-transfer.md): [citation-grounding] line 20: claim has no citation: The most defensible reading is narrow: when both the task agent and the meta agent are foundation-model programs editabl
+  - update[10] (wiki/synthesis/self-improving-ai-cross-domain-transfer.md): [citation-grounding] line 20: claim has no citation: Stronger claims about "any computable task" remain extrapolation.
+---
+===[13] ai-and-agents pdf-julien-delavande-2025-video-killed-the===
+operation failed:
+  - update[9] (wiki/synthesis/sustainability-of-open-text-to-video-models.md): [citation-grounding] line 18: claim has no citation: How much energy do diffusion caching and quantization actually save in deployed T2V workloads, and at what perceptual-qu
+  - update[9] (wiki/synthesis/sustainability-of-open-text-to-video-models.md): [citation-grounding] line 19: claim has no citation: Do the same scaling regimes hold on consumer GPUs, where memory-bound effects are more likely than on data-center H100s?
+  - update[9] (wiki/synthesis/sustainability-of-open-text-to-video-models.md): [citation-grounding] line 20: claim has no citation: How does perceptual quality (which the benchmark deliberately did not measure) trade off against the energy/latency prof
+---
+===[14] ai-and-agents pdf-kimi-team-2026-kimi-k2-open===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[15] ai-and-agents pdf-nenad-toma-2026-intelligent-ai-delegation===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[16] ai-and-agents pdf-ngor-luong-2026-two-loops-how===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[17] ai-and-agents pdf-peter-belcak-2025-small-language-models===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[18] ai-and-agents pdf-shu-yang-2026-multi-user-large===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[19] ai-and-agents pdf-stanford-2026-the-stanford-emerging===
+operation failed:
+  - plan client failed: embedded null byte
+---
+===[20] ai-and-agents pdf-vaishak-belle-2026-the-future-is===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[21] ai-and-agents pdf-wentao-zhang-2026-autogenesis-a-self===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[22] ai-and-agents pdf-zhengding-hu-2026-pancake-hierarchical-memory===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[23] ai-and-agents pdf-zhuo-yang-2026-detailed-balance-in===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[24] ai-and-agents pdf-752c8824b750===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[25] ai-and-agents pdf-806192f007eb===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[26] ai-and-agents pdf-f4016087ee51===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[27] trading-and-markets pdf-042302b20a5d===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[28] trading-and-markets pdf-04854302f962===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[29] trading-and-markets pdf-05df32dcb03e===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[30] trading-and-markets pdf-075e9932265b===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[31] trading-and-markets pdf-08bcb2d549ba===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[32] trading-and-markets pdf-13d51286c4cc===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[33] trading-and-markets pdf-1590d4650297===
+operation failed:
+  - plan client failed: embedded null byte
+---
+===[34] trading-and-markets pdf-1662a4368954===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[35] trading-and-markets pdf-19445750a197===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[36] trading-and-markets pdf-19ce7da9ecfc===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[37] trading-and-markets pdf-1ab14c833d75===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[38] trading-and-markets pdf-2248d6cdc39f===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[39] trading-and-markets pdf-2329b8b436f2===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[40] trading-and-markets pdf-2698a38c6fa5===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[41] trading-and-markets pdf-2742492120a8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[42] trading-and-markets pdf-291109666e00===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[43] trading-and-markets pdf-2b2d34f2b0ff===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[44] trading-and-markets pdf-3a3f6480ad77===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[45] trading-and-markets pdf-3a510f58854c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[46] trading-and-markets pdf-3d3d42a0717a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[47] trading-and-markets pdf-3eea925a6037===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[48] trading-and-markets pdf-40482428d656===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[49] trading-and-markets pdf-46c6dd54d41e===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[50] trading-and-markets pdf-4b87a8059b38===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[51] trading-and-markets pdf-4dbe002c1c7a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[52] trading-and-markets pdf-4e80c02052f4===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[53] trading-and-markets pdf-503a04772afb===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[54] trading-and-markets pdf-50a1f07b475f===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[55] trading-and-markets pdf-57b1d100694e===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[56] trading-and-markets pdf-5a5936689043===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[57] trading-and-markets pdf-5a6062a63a4b===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[58] trading-and-markets pdf-5bef1fceb745===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[59] trading-and-markets pdf-5e6d63eac790===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[60] trading-and-markets pdf-5ef2018823c8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[61] trading-and-markets pdf-67b6fe78b28c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[62] trading-and-markets pdf-69a1f97797ce===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[63] trading-and-markets pdf-6ae97b9c27c7===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[64] trading-and-markets pdf-6ba2dc608ac8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[65] trading-and-markets pdf-704c439723d0===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[66] trading-and-markets pdf-734e612fdf31===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[67] trading-and-markets pdf-7663c24d3159===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[68] trading-and-markets pdf-7acc9c92267c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[69] trading-and-markets pdf-81305d181382===
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[70] trading-and-markets pdf-853a7755a470===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[71] trading-and-markets pdf-869163b2f118===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[72] trading-and-markets pdf-87087198976b===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[73] trading-and-markets pdf-8f021296560c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[74] trading-and-markets pdf-90e7f9350657===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[75] trading-and-markets pdf-930894c4fbad===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[76] trading-and-markets pdf-9495a5abb859===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[77] trading-and-markets pdf-94cecf7a170a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[78] trading-and-markets pdf-9613f301a3b5===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[79] trading-and-markets pdf-9da6062f0265===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[80] trading-and-markets pdf-a0072c763cf8===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[81] trading-and-markets pdf-a25e1c0d5f08===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[82] trading-and-markets pdf-a3789262265a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[83] trading-and-markets pdf-a98b496e5936===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[84] trading-and-markets pdf-b72c5d424466===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[85] trading-and-markets pdf-b8cec9d1ec0c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[86] trading-and-markets pdf-be69dd282a8c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[87] trading-and-markets pdf-bf1afc73ac8f===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[88] trading-and-markets pdf-c25a6984aba0===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[89] trading-and-markets pdf-c57b9a32c399===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[90] trading-and-markets pdf-c9b8f466ea39===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[91] trading-and-markets pdf-cce4b539ce1c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[92] trading-and-markets pdf-d0b9b7e97b5c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[93] trading-and-markets pdf-d196e853ebc0===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[94] trading-and-markets pdf-d7094631fbf1===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[95] trading-and-markets pdf-e2068d89c2a7===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[96] trading-and-markets pdf-e63407c2b4f4===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[97] trading-and-markets pdf-e8351bcf5615===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[98] trading-and-markets pdf-ea646c451aae===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[99] trading-and-markets pdf-ec9fdef2193c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[100] trading-and-markets pdf-ed56b074fb11===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[101] trading-and-markets pdf-f073cccdbfe6===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[102] trading-and-markets pdf-f139d7bd1924===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[103] trading-and-markets pdf-f2565310670c===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[104] trading-and-markets pdf-fa83c61dfa2d===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[105] trading-and-markets pdf-fb3e28ab676a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[106] trading-and-markets pdf-girquark-2022-global-economics-analyst===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[107] trading-and-markets pdf-lasse-pedersen-2011-title-how-to===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[108] trading-and-markets pdf-eric-benhamou-2021-powerpoint-presentation===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[109] trading-and-markets pdf-bd-2002-microsoft-word-dow===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[110] trading-and-markets pdf-ari-kiev-2005-stocks-commodities-v===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[111] trading-and-markets pdf-ali-khan-2023-the-ict-bible===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[112] trading-and-markets pdf-alberto-frizziero-2023-thenorthloop-intro-eng===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[113] trading-and-markets pdf-sqzme-2020-the-implied-order===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[114] trading-and-markets pdf-sugsu-2020-microsoft-word-hfholdem===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[115] trading-and-markets pdf-won-2022-bii-global-outlook===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[116] trading-and-markets pdf-judy-2022-primer-adjusted-a===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[117] trading-and-markets pdf-tw-2007-3379-pdf===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[118] trading-and-markets pdf-ned-augenblick-2025-overinference-from-weak===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[119] trading-and-markets pdf-silicon-valley-2025-state-of-the===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[120] trading-and-markets pdf-matthew-notowidigdo-2020-gkno-manuscript-1025===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+===[121] trading-and-markets pdf-munger-2021-revised-psychology-of===
+operation failed:
+  - plan client failed: `claude -p` exited 1: 
+---
+WITH_PLAN_DONE 2026-04-29T20:53:29Z

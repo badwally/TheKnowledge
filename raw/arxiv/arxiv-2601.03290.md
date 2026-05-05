@@ -9,7 +9,8 @@ ingested_at: '2026-04-28T15:31:59Z'
 content_hash: sha256:086a4e1359e6eb8dc7251d3c7425e90cafb1429ca77bc78fe1fae0e000f3461d
 domains:
 - edge-ai-agentic
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- e7f21255-0787-4091-ab69-5f79669e1501
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

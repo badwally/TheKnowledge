@@ -657,6 +657,7 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Query the wiki | `wiki query "<question>" [--scope <domain>]` | `wiki_query` |
 | Run filter on a candidate (read-only) | `wiki filter <path> [--domain <slug>]` | `wiki_filter` |
 | Add source to NotebookLM corpus | `wiki nlm-add <domain> <source-id>` | `wiki_nlm_add` |
+| Bulk-sync every raw source tagged with a domain | `wiki nlm-sync <domain> [--limit N] [--dry-run]` | `wiki_nlm_sync` |
 | Generate slide deck | `wiki nlm-slides <domain> "<topic>"` | `wiki_nlm_slides` |
 | Generate audio overview | `wiki nlm-audio <domain> "<topic>"` | `wiki_nlm_audio` |
 | Generate briefing doc | `wiki nlm-briefing <domain>` | `wiki_nlm_briefing` |
@@ -667,6 +668,12 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Status | `wiki status` | `wiki_status` |
 | Filter correction | `wiki filter-correct <source-id> --include\|--exclude --rationale "<why>"` | `wiki_filter_correct` |
 | Finalize a draft | `wiki finalize <page-path> [--abandon]` | `wiki_finalize` |
+| Bootstrap a new domain (top-down) | `wiki bootstrap-domain "<description>" <slug> [--force]` | (CLI only) |
+| Discover candidate domains (bottom-up) | `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | (CLI only) |
+| Promote a draft proposal | `wiki promote-domain <proposal-slug>` | (CLI only) |
+| Demote a promoted domain | `wiki demote-domain <domain-slug>` | (CLI only) |
+| Reject a draft proposal | `wiki reject-proposal <proposal-slug>` | (CLI only) |
+| Multi-adapter research | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` | (CLI only) |
 | Run a registered poller | `wiki poll <name>` (`--list` to enumerate) | (CLI only) |
 | Migrate frontmatter | `wiki migrate <migration-name>` | (CLI only) |
 
@@ -703,6 +710,8 @@ Agents must not call `nlm` CLI or NotebookLM MCP tools directly. The schema doc 
 Per-domain YAML at `.knowledge/policies/<domain>/policy.yaml`. Versioned by Git; archived versions in `policy_versions/`. Schema follows research-notebook's existing pattern (inclusion criteria, exclusion criteria, quality signals: channel/speaker/methodology/venue), extended with:
 
 ```yaml
+version: v1
+policy_schema_version: 1   # added M39; lenient validator allows missing for legacy
 domain:
   slug: glp1-reward-modulation
   topic: "GLP-1 receptor agonist effects on reward system and dosing optimization"
@@ -726,6 +735,14 @@ quality_signals:
   publication_venue: {...}
   methodology_rigor: {...}
 ```
+
+Three authorship paths produce a `policy.yaml`:
+
+1. **`wiki bootstrap-domain "<description>" <slug>`** (M39, top-down) — Claude drafts the full policy from a natural-language description; output passes the strict validator (≥3 inclusion criteria, ≥1 exclusion, ≥2 quality_signals categories with ≥2 signals each).
+2. **`wiki promote-domain <proposal-slug>`** (M36, bottom-up) — minimal policy with empty criteria, marked `auto_generated_from_proposal: true`. User hand-edits or re-bootstraps with `--force` after running `demote-domain`.
+3. **Hand-authored** — write the YAML directly. Validator runs in lenient mode on load, so this works even without `policy_schema_version`.
+
+The strict validator (`gateway.ops.policy_validator`) runs only on `bootstrap-domain` output. Existing policies — including legacy auto-generated ones — load through the lenient path without modification.
 
 ### 10.2 Example bank
 

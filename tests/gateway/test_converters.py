@@ -217,6 +217,89 @@ def test_ingest_url_idempotent(kb_root, monkeypatch):
     assert second.no_op
 
 
+def _build_minimal_pdf(path, *, text: str) -> None:
+    """Synthesize a one-page PDF for tests. Copy of the helper in test_converters_m10."""
+    try:
+        from reportlab.pdfgen import canvas  # type: ignore[import-not-found]
+        from reportlab.lib.pagesizes import letter  # type: ignore[import-not-found]
+        c = canvas.Canvas(str(path), pagesize=letter)
+        c.drawString(72, 720, text)
+        c.save()
+    except ImportError:
+        content = (
+            "%PDF-1.4\n"
+            "1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj\n"
+            "2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj\n"
+            "3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+            "/Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >> endobj\n"
+            f"4 0 obj << /Length {12 + len(text)} >> stream\n"
+            f"BT /F1 12 Tf 72 720 Td ({text}) Tj ET\nendstream endobj\n"
+            "5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj\n"
+            "xref\n0 6\n0000000000 65535 f \n"
+            "trailer << /Size 6 /Root 1 0 R >>\nstartxref\n0\n%%EOF\n"
+        )
+        path.write_bytes(content.encode("latin-1"))
+
+
+def test_ingest_arxiv_url_with_fetch_pdf_uses_pdf_body(kb_root, monkeypatch):
+    """`ingest(url, fetch_pdf=True)` routes through ArxivConverter.convert_with_pdf."""
+    from gateway.converters import arxiv as arxiv_mod
+
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "T", "abstract": "Just an abstract.",
+        "published_at": "2024-04-02", "authors": ["A"], "categories": [],
+        "doi": "", "primary_category": "", "journal_ref": "", "comment": "",
+    })
+
+    def _fake_download(aid, target):
+        _build_minimal_pdf(target, text="Full PDF body content.")
+
+    monkeypatch.setattr(arxiv_mod, "_download_pdf", _fake_download)
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    result = ingest("https://arxiv.org/abs/2403.12345", fetch_pdf=True)
+    assert result.success, result.errors
+
+    raw = paths.raw_source_path("arxiv", "arxiv-2403.12345").read_text()
+    front, body = fm.parse(raw)
+    assert "Full PDF body content." in body
+    assert "Just an abstract." not in body
+    assert front["meta"]["abstract_only"] is False
+
+
+def test_ingest_arxiv_bare_id_routes_to_arxiv_converter(kb_root, monkeypatch):
+    """`ingest("2403.12345")` (non-URL string) dispatches through arxiv."""
+    from gateway.converters import arxiv as arxiv_mod
+
+    monkeypatch.setattr(arxiv_mod, "_fetch_metadata", lambda aid: {
+        "title": "T", "abstract": "Bare-id abstract.",
+        "published_at": "2024-04-02", "authors": [], "categories": [],
+        "doi": "", "primary_category": "", "journal_ref": "", "comment": "",
+    })
+    arxiv_mod._reset_rate_limit_for_tests()
+
+    result = ingest("2403.12345")
+    assert result.success, result.errors
+
+    raw = paths.raw_source_path("arxiv", "arxiv-2403.12345").read_text()
+    front, body = fm.parse(raw)
+    assert front["type"] == "arxiv"
+    assert "Bare-id abstract." in body
+
+
+def test_ingest_fetch_pdf_unsupported_for_web_returns_error(kb_root, monkeypatch):
+    """fetch_pdf=True against a non-arxiv source returns a clear error."""
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html/>",
+        body="Web body.\n",
+        metadata={"title": "T", "author": None, "date": "2026-01-01"},
+    )
+    result = ingest("https://example.com/article", fetch_pdf=True)
+    assert not result.success
+    assert any("fetch_pdf" in e or "convert_with_pdf" in e for e in result.errors)
+
+
 def test_ingest_url_page_changed_immutability(kb_root, monkeypatch):
     _install_fake_trafilatura(
         monkeypatch,

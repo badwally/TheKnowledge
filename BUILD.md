@@ -626,6 +626,258 @@ Also addressed a migration-idempotency defect surfaced by the M12 re-run: `_now_
 
 **M14 — Phase 3 edge-ai-agentic.** Surfaced legacy data contamination: the edge_ai_agentic legacy vault contained 363 source files, of which 213 were pre-existing duplicates of phases 1 (86) and 2 (127). The 150 phase-3-unique sources are correctly scoped to edge-AI/agentic content (LLM inference, transformer compression, NPU mini PCs, blockchain edge computing). Added a "skip if canonical raw target exists" guard to `_migrate_source` enforcing source-immutability across cross-domain re-imports — sources retain the domain marker of the first phase that migrated them. 15/15 spot-check audit on phase-3-unique sources; concepts/MOCs/synthesis layer disjoint from prior phases (75 + 8 + 4 added cleanly). Future enhancement candidate: legitimate cross-domain sources (a single source belonging to multiple research domains) would benefit from `domains:` merging rather than skip; deferred until a real use case appears.
 
+**M36 — Bottom-up domain discovery.** Closes the gap between "ingest a pile of unsorted sources" and "grow the citation graph against named domains." Surfaced by a hand-test that bulk-ingested 360 PDFs from Apple Notes attachments without `--domain` and without `--with-plan` (cost-aware), producing 360 graph-island source pages with no concept extraction and no domain affiliation — the existing tooling assumed top-down authorship (human picks domain → policy → sources land *under* that policy → agent extracts claims into entity/concept pages). M36 adds the inverse path: discover candidate domains from an untagged corpus, bless the useful ones, back-tag member sources atomically, and reverse on demand.
+
+Page type added: `domain-proposal` (`wiki/proposals/<slug>.md`) with required fields `proposed_domain`, `status` (draft|blessed|rejected), `member_sources`, `rationale` and required sections `Rationale` / `Member sources`. Not citation-grounded — proposals describe clusters, not claims. Four new ops:
+
+- `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged] [--timeout SECONDS]` — single-shot LLM clustering pass. Reuses `apply_plan()` so all proposals validate before any write — atomicity is automatic. Default 300s plan-client timeout is tight for 200+ source corpora; pass `--timeout 1500` for the full 360-PDF case.
+- `wiki promote-domain <proposal-slug>` — writes minimal-viable `policy.yaml` (marked `auto_generated_from_proposal: true`, default thresholds, empty inclusion criteria pending hand-authoring), back-tags every member source's `domains:` in BOTH `raw/<type>/<id>.md` and `wiki/sources/<id>.md` (frontmatter-only mutation; body bytes preserved → source-immutability holds), flips proposal `status: draft → blessed`. Atomic across all writes.
+- `wiki demote-domain <domain-slug>` — exact inverse of promote. Removes `<slug>` from every source's `domains:`, deletes the auto-generated policy, flips matching blessed proposal back to draft. Refuses to delete a policy lacking `auto_generated_from_proposal: true` (protects hand-authored work).
+- `wiki reject-proposal <proposal-slug>` — deletes a draft proposal page. Refuses blessed; caller must demote first.
+
+Lint: new scope `untagged-sources` walks `wiki/sources/*.md` and reports the count of pages with empty/missing `domains:` plus a remediation hint pointing at `wiki discover-domains --untagged`.
+
+Reversibility levels (per "make it reversible if it fails" requirement):
+1. **In-flight** — every op stages writes in memory, validates the full set, then commits under the `wiki-author` lock. Validation failure → zero on-disk changes.
+2. **Post-success** — `wiki demote-domain` + `wiki reject-proposal` reverse promotion / discovery cleanly.
+3. **Code-level** — all M36 work landed on branch `m36-domain-discovery` with each step in its own commit; broken state recoverable via `git reset` to any prior commit.
+4. **Corpus-level** — the 360-PDF bulk-ingest was committed as its own commit (`5fed394`) before any M36 code, so the corpus and the M36 toolchain are independently revertable.
+
+Hand-test: 32-source subset (`--scope 'wiki/sources/pdf-a*'`) → LLM produced 6 sensible clusters (trading-markets, cycling-endurance, ai-ml-research, philosophy-human-rights, health-medical, miscellany), each with 4-8 members and human-readable rationale. Reject + promote + demote round-tripped cleanly.
+
+Full 360-PDF run (`--scope 'wiki/sources/pdf-*' --untagged --timeout 3600`): 8 clusters, **100% coverage** (every source assigned to exactly one cluster), single LLM call. Distribution:
+
+| Cluster | Members |
+|---|---|
+| miscellany | 143 |
+| trading-and-markets | 95 |
+| health-and-longevity | 29 |
+| ai-and-agents | 26 |
+| audio-and-streaming-tech | 22 |
+| cold-plunge-and-home-build | 18 |
+| philosophy-spirituality-psychology | 15 |
+| cycling-and-fitness | 12 |
+
+Trading and miscellany dominate (40% + 26%) but the niche clusters are sharp. Notably the LLM annotated `trading-and-markets` with "should likely split later into sub-domains (ICT methodology, trading psychology, macro outlooks, academic finance) once volume warrants it" — the cluster discovery output flagged its own next decomposition step. The 300s default `claude -p` timeout was insufficient for 360 sources; the run completed inside the 3600s `--timeout` budget.
+
+Tests: 19 new (4 schema + 5 discover + 11 promote/demote/reject + 3 untagged-sources lint). 309 → 331.
+
+Out of scope for M36: embedding-based clustering for corpora that exceed the single-shot prompt budget (deferred to M37 if needed); per-cluster `--with-plan` graph-growing (separate milestone). The TB-scale sidecar crawler (Dropbox/Drive/iCloud → cluster manifests → gateway) is a separate `~/code/archivist/` project, not a gateway milestone.
+
+**Commit-history disambiguation.** Two commits on this branch carry an "M37" prefix:
+- `f51fb19 M37: nlm-add fallback to source_add_text for non-URL sources` — **misnamed; this is an M36 hand-test fix**, not a new milestone. It surfaced when `wiki nlm-add` choked on the cycling-and-fitness PDF (no `url:` frontmatter). Same fix-loop produced `7c0f08a M36 hand-test fix: poll artifact status before download` (correctly labeled).
+- `14f372e M37: Corpus-constructive research orchestrator` — **the real M37**, separate workstream parallel to M36. Adds `wiki research` op + `gateway/research/` module + persistent NotebookLM corpus query path.
+
+A `git rebase -i ... reword` of the misnamed commit was attempted and aborted (CLAUDE.md forbids `-i`; non-interactive cherry-pick alternative tangled on a working-tree race). Leaving the misnamed commit as-is; this paragraph is the canonical disambiguation.
+
+**M37 hand-test findings (2026-04-30).** Two limitations surfaced when attempting a wide scoping `wiki research --dry-run` against `edge-ai-agentic`:
+
+1. *No per-adapter query planning.* The orchestrator at `gateway/research/orchestrator.py:619` passes the user's research prompt verbatim through `_fan_out_search` → `_safe_search` → `adapter.search(prompt, …)`. The `policy.yaml` schema has no query block; the `plan_client` (Claude) is plumbed in but only used for `_infer_domain` (slug routing). The result is that every adapter receives the same prompt as its literal search query, with no per-adapter idiom adaptation and no expansion into multiple queries. Anything beyond a ~10–15-word focused question collapses recall (YouTube `search.list` returns 0; arXiv times out at 30s; Firecrawl gets a degraded query). Workaround: hand-condense to a short focused question. Permanent fix is M37.1 — runtime per-adapter query expansion via `plan_client`, with persistence at `nlm/query_plans/<session-id>.yaml` for ad-hoc review and improvement, and a few-shot loop from edited plans. Plan: `~/.claude/plans/m37.1-runtime-query-expansion.md`.
+2. *Local-files adapter cannot survey existing `raw/`.* `gateway.research.adapters.local.LocalAdapter._converter_for` dispatches via `gateway.converters.dispatch`, which only registers handlers for unconverted source types (`.pdf`, `.mp3`, etc.). Already-ingested `raw/<type>/*.md` files are silently skipped, so `--include-local 'raw/pdf/*.md'` cannot be used for an internal-corpus scoping pass. An "inventory existing raw/ against a thesis" workflow would need a different surface — e.g., a `wiki research --inventory-only` mode or a new `wiki survey` op. Out of scope for M37.1.
+
+### M37.1 — Runtime per-adapter query expansion
+
+Closes the load-bearing M37 gap (above, finding #1) by adding a runtime query-planning step to `wiki research`. The user's research prompt is no longer dispatched verbatim to every adapter; instead `plan_client` (Claude) generates idiomatic per-adapter query lists from the prompt + domain policy + recent curated examples.
+
+**What's new.**
+
+- `gateway.research.query_plan_store` — persistent store for `QueryPlan` artifacts at `nlm/query_plans/<session-id>.yaml`. Surfaces `save`, `load`, `exists`, `is_edited`, `recent_edited(domain, n)`. The `is_edited` check is filesystem-aware: a YAML whose mtime exceeds its `generated_at` by more than 2s is treated as user-edited. The `recent_edited` scan returns plans with `edited: true` for use as few-shot seeds in subsequent runs.
+
+- `gateway.research.query_planner.plan_per_adapter_queries` — calls the configured `PlanClient` with the prompt, a policy excerpt (topic/field/top inclusion criteria), the adapter manifest, target counts (default: youtube=20, arxiv=8, web=15, pubmed=5, local=0), and any few-shot examples from `recent_edited`. Per-adapter idiom guidance is baked into the planner prompt: short keyword phrases for YouTube, paper-language for arXiv, vendor/framework terms for web, biomedical mesh-style for PubMed (with explicit instruction to return `[]` when not applicable). Response parsing tolerates markdown fences and leading prose.
+
+- `wiki research` orchestrator (`research()` in `orchestrator.py`) gains a new step between policy-load and fan-out: resolve a query plan via one of four paths:
+  1. `--execute <session-id>` → load the persisted plan; if mtime > `generated_at`, stamp `edited: true` and re-save so future few-shot scans can pick it up.
+  2. `--queries <path>` → adopt an external YAML's queries; rebrand under this session's id/prompt/domain.
+  3. default with `plan_client` available → call the planner; persist the new plan; auto-advance to fan-out.
+  4. `--no-plan` (or `plan_client=None`) → M37 verbatim fallback; no plan persisted.
+
+  `--review` returns immediately after persistence with a summary pointing at the YAML path; user edits, then resumes via `--execute`.
+
+- `_fan_out_search` and `_safe_search` refactored to take a query plan (`dict[adapter_name, list[query]]`) instead of a single prompt. Each non-local adapter is invoked once per query in its list with `per_query_max = max(5, max_results_per_adapter // len(queries))` so the global cap holds. The local adapter is special-cased — it ignores queries (it enumerates user-supplied paths) and is invoked exactly once.
+
+- Planner failure (malformed JSON, empty response, etc.) logs and falls back to verbatim. Slop-but-running beats hard-fail.
+
+- New CLI flags on `wiki research`: `--review`, `--execute SESSION_ID`, `--queries PATH`, `--no-plan`. The positional `prompt` is now `nargs='?'` since `--execute` loads it from the persisted plan. Default behavior instantiates `ClaudeCLIPlanClient()` so the planner activates without extra config.
+
+**Hand-test (dry-run).** `wiki research "RAG over proprietary first-party data on edge devices" --domain edge-ai-agentic --review` produced a 48-query plan in ~12s (8 arxiv + 20 youtube + 15 web + 0 pubmed) with high-quality idiomatic queries per adapter — `"on-device RAG llama.cpp"`, `"federated retrieval augmented generation"`, `"LanceDB edge deployment"`, etc. Hand-edited one query to `"EDITED MCP enterprise integration patterns"`, advanced mtime, then ran `wiki research --execute <session-id> --no-plan --dry-run`. Result: plan loaded cleanly, `edited: true` stamped, fan-out hit arxiv with all 8 queries (returned 48 candidates → 33 after merge dedup → 3 cleared filter threshold). YouTube and Firecrawl skipped due to missing API keys (expected); orchestrator continued without them. Materialized 3 sources to `raw/arxiv/`.
+
+**Hand-test (live external + NotebookLM).** Deferred. The Firecrawl key the user disclosed in the M37 hand-test session was flagged for rotation; live-run validation is a supervised step after rotation. Note that the live path tests M37's NotebookLM session/promotion machinery, not M37.1's new code — the dry-run hand-test already validates the full M37.1 surface (planner, persistence, review-gate, --execute, edit detection, fan-out cardinality).
+
+**Tests.** 38 new tests across three files:
+- `tests/gateway/test_research_query_plan_store.py` (13): round-trip, missing/malformed handling, mtime-based edit detection, domain+flag filtering, on-disk YAML layout.
+- `tests/gateway/test_research_query_planner.py` (15): happy path, fence stripping, prose extraction, missing keys, malformed shapes, target overrides, few-shot rendering, inclusion criteria propagation, adapter idiom guidance presence.
+- `tests/gateway/test_research_orchestrator.py` (10 new): planner generates and persists plan, review-gate stops before fan-out, --execute resume, edit-detection stamping, --queries import, mutual exclusion, missing-plan error, plan_client=None fallback, planner-failure fallback, history-seeding.
+
+All 8 pre-existing M37 orchestrator tests pass unchanged (backwards-compat invariant). Full gateway suite: 410 → 448 tests passing.
+
+**Out of scope for M37.1.**
+
+- A `wiki query-plan-pin` op for promoting curated queries into `policy.yaml` (the alternative-feedback-loop path C from the design discussion). Few-shot from edited plans is M37.1's chosen feedback path; pin-to-policy can be a future M37.2 if few-shot proves insufficient.
+- A `wiki survey` op for inventorying `raw/` against a thesis (M37 hand-test finding #2). Separate concern, separate milestone.
+- Per-adapter query-quality telemetry (which queries returned the highest-filter-score candidates). Useful but not load-bearing.
+- A long-form integration test that exercises real adapters end-to-end. The dry-run hand-test covers it; the regression suite covers it; an automated end-to-end test would be useful but not gating.
+
+### M38 — Smart authorship: contradiction detection + post-ingest feedback
+
+Addresses two weaknesses identified in a panel-of-experts UX review (W2: no connection between new source and existing knowledge at ingest time; W7: post-ingest feedback doesn't communicate knowledge impact). The authorship agent now detects contradictions between new sources and existing wiki claims, prioritizes updating existing pages over creating new ones, and emits a structured report of everything it did.
+
+**What's new.**
+
+- `gateway.plan.Contradiction` — new dataclass representing a conflict between a new source's claim and an existing wiki page. Fields: `existing_page`, `existing_claim`, `new_claim`, `source_id`, `severity` (minor/moderate/major). Carried on `Plan.contradictions` and parsed from the agent's JSON response; malformed items are skipped gracefully.
+
+- `gateway.core.AuthorshipReport` — structured summary attached to `OperationResult.authorship_report`. Tracks `pages_created`, `pages_updated`, `contradictions`. Provides `format_summary()` (one-liner: "2 created, 1 updated, 1 contradiction(s) found") and `format_detail()` (CLI-renderable lines with `+`/`~`/`!` prefixes for created/updated/contradictions).
+
+- `apply_plan()` builds the report from plan execution results and passes it through to the caller. Log entries now include `created`, `updated`, and `contradictions` counts.
+
+- `_emit_result()` in `cli.py` renders the authorship report when present: summary line + detail lines showing exactly what pages were created/updated and any contradictions detected.
+
+- `ingest()` propagates `authorship_report` from the plan result to the ingest result, so `wiki ingest --with-plan` shows the full report.
+
+- Authorship prompt rewritten with three explicit instructions: (1) prioritize updating existing pages over creating new ones, with merge guidance; (2) detect and report all contradictions with severity classification; (3) return contradictions in the JSON response alongside updates.
+
+**Tests.** 11 new tests in `test_authorship.py`: contradiction parsing (2), AuthorshipReport formatting (3), apply_plan report population (2), log entry with contradictions (1), ingest report propagation (1), full end-to-end flow (1), prompt content verification (2). Full authorship suite: 40 → 51 tests passing.
+
+**Commits.** `19545d0`..`2a09b13` (7 commits).
+
+**Files modified.** `plan.py` (Contradiction + prompt), `core.py` (AuthorshipReport + OperationResult field), `apply_plan.py` (report construction + log fields), `cli.py` (report rendering), `ingest.py` (report propagation), `test_authorship.py` (11 tests).
+
+### M39 — Top-down domain bootstrap
+
+Restores the predecessor's green-field research workflow. Before M39, starting research on a new domain required either accumulating sources first and running `wiki discover-domains` → `wiki promote-domain` (which produced empty-criteria auto-policies), or hand-editing `.knowledge/policies/<slug>/policy.yaml` directly. M39 adds `wiki bootstrap-domain "<description>" <slug>` which has Claude draft a starter policy from a natural-language description.
+
+**What's new.**
+
+- `gateway.ops.bootstrap_domain` — calls the plan client with the user's description, a single synthetic reference policy ("Patagonian glacier hydrology" — fictional, prevents cargo-culting from real domains), and a strict requirement schema. Validates the response, retries once on under-specified output, draft-saves to `policy.draft.yaml` if the retry also fails.
+
+- `gateway.ops.policy_validator` — strict + lenient modes. Strict enforces minimum specificity (≥3 inclusion criteria, ≥1 exclusion, ≥2 quality_signals categories with ≥2 signals each), threshold ranges, slug regex, schema version. Lenient runs structural checks only — used for legacy policy load (existing `auto_generated_from_proposal` policies don't need migration).
+
+- `_bootstrap_reference_policy.yaml` — checked-in synthetic example used as the only few-shot in the bootstrap prompt. A round-trip test (`test_reference_policy_passes_strict_validation`) ensures schema additions break the test until the reference is updated, preventing schema drift from silently accumulating.
+
+- Collision handling: refuses if `auto_generated_from_proposal: true` exists at the target path (points at `wiki demote-domain`); refuses if a draft proposal exists at `wiki/proposals/<slug>.md` (points at `wiki promote-domain` or `wiki reject-proposal`); allows `--force` only for non-promoted, non-proposal collisions.
+
+- `policy_schema_version: 1` stamped on every bootstrap output. `bootstrapped_from_description_hash` records a SHA-prefix of the description for re-run idempotency tracking.
+
+**Tests.** 21 new tests across `test_policy_validator.py` (10) and `test_bootstrap_domain.py` (11). Full gateway suite: 460 → 481 tests passing.
+
+**Commits.** `6dc531f`..`cae1acd` (4 commits + a test-fix commit `38e2f29` for stale `nlm` argv expectations from the earlier source_map fix).
+
+**Out of scope for M39.**
+
+- `wiki refine-domain` (re-run bootstrap against existing policy as the reference) — natural follow-up but separate milestone.
+- Auto-bootstrapping a NotebookLM persistent notebook on first `wiki research --domain <slug>` — already handled by the research orchestrator.
+- Migrating legacy `auto_generated_from_proposal` policies to the new schema — lenient validator keeps them loading; explicit migration deferred.
+
+### M40 — Web UI Foundation
+
+Local browser front-end (`wiki serve`) wrapping the gateway's daily ops, domain ops, and lint dashboard. Sidebar navigation, hierarchical dashboard with 4 stat cards plus monospace activity feed, dedicated form pages with inline result panels. Long-running ops (ingest --with-plan, query, bootstrap-domain, discover-domains) use a submit-then-poll pattern with an in-memory task store; short ops (finalize, filter-correct, promote/demote/reject) execute synchronously. Complementary to Obsidian: the UI focuses on operations and state Obsidian can't show; wiki content browsing remains in Obsidian.
+
+**Architecture.** FastAPI backend in `src/gateway/web/` thinly adapts existing `gateway.ops.*` functions over HTTP. Vite + React + TypeScript SPA in `web/` is built once and committed as static assets to `web/dist/`, served by FastAPI at `/`. Localhost-only by default; `--bind 0.0.0.0` opt-in for LAN access.
+
+**What's new.**
+
+- `gateway.web.app` — FastAPI app construction. `create_app()` registers routers and mounts the React frontend at `/` with SPA fallback for client-side navigation.
+- `gateway.web.tasks.TaskStore` — process-local in-memory task registry with `create`, `get`, `mark_running/done/failed`, and `run_in_thread` (daemon-thread executor that works under the synchronous TestClient). `run_async` is also retained for future async-native callers.
+- `gateway.web.routes.status` — GET /api/status, /api/log, /api/lint.
+- `gateway.web.routes.domains` — GET /api/domains, /api/proposals; POST /api/domains/{slug}/{promote,demote,reject}. Defines `_to_response` and `_serialize_authorship_report` helpers reused by ops.
+- `gateway.web.routes.ops` — POST /api/ops/{ingest,query,bootstrap-domain,discover-domains} (async, return 202 + task_id) and /api/ops/{finalize,filter-correct} (sync).
+- `gateway.web.routes.tasks` — GET /api/tasks/{id}.
+- `web/` — Vite + React + TypeScript SPA. Built artifacts at `web/dist/` are served by FastAPI as static files. Sidebar nav with Wiki/Domains/System groups. 9 page components (Dashboard, Ingest, Query, Finalize, FilterCorrect, Bootstrap, Discover, Promote, Lint). Shared `TaskRunner` component wraps the submit-then-poll loop; `ResultPanel` renders `OperationResult` with color-coded success/error/no-op styling.
+- `wiki serve [--port 7474] [--bind 127.0.0.1]` CLI subcommand.
+
+**Tests.** 13 web app tests (`test_web_app.py`) covering health, status/log/lint endpoints, domain endpoints, sync ops, async ops with task_id polling. 8 task store tests (`test_web_tasks.py`). 2 CLI tests (`test_cli_serve.py`). Full gateway suite: 481 → 504 tests passing.
+
+**Hand-test.** Started server on port 7475, verified via curl: `/api/health` returns `{"status":"ok"}`, `/api/status` reports watcher running with 731 sources / 173 drafts / 6 domains, `/api/domains` lists all 6 with notebook flags, `/` serves React HTML, `/assets/*.js` serves the Vite-bundled JS with correct content-type.
+
+**Out of scope (deferred to M41/M42).**
+
+- Research orchestration UI with `--review` gate flow.
+- NLM artifact triggers (briefing, audio, slides, revise).
+- Review consoles: drafts list, contradictions list, source orphans, filter-band sources.
+- Live updates via SSE/WebSocket — deferred indefinitely; manual refresh suffices for single-user.
+- Authentication — localhost-only by design.
+
+### M41 — Research Orchestration UI
+
+Adds a Research sidebar entry to `wiki serve` that exposes the existing `wiki research` orchestrator (M37/M37.1) over HTTP. Two-pane sessions-list + detail layout. Each session walks through three phases: prompt+domain → query plan (structured per-adapter editor) → execute. Long-running execution shows per-step progress sourced from filtered `log.md` entries.
+
+**What's new.**
+
+- `gateway.web.routes.research` — six endpoints: list sessions (`GET /api/research/sessions`), get session detail (`GET /api/research/sessions/{id}`), create session (`POST /api/research/sessions` — runs planner via TaskStore), update plan (`PUT /api/research/sessions/{id}/plan`), execute (`POST /api/research/sessions/{id}/execute` — runs orchestrator via TaskStore with `execute_session=session_id`), get progress (`GET /api/research/sessions/{id}/progress` — parses `log.md` filtered to session_id).
+- `gateway.research.orchestrator` — six new `log.append("research", step=<name>)` calls (materialize, nlm_persistent, nlm_session, source_map, analysis, apply_plan) so the progress endpoint can render every named pipeline stage.
+- `web/src/pages/research/` — 6 components: Research (page shell), SessionsList (status badges, click-to-route), NewSessionForm (inline expandable, planner spinner), SessionDetail (phase router), PlanEditor (per-adapter structured editor with × delete + add + edited-row highlights), ProgressView (3s polling, 16 canonical steps with state glyphs).
+- Sidebar gains a Research group entry between Wiki and Domains.
+
+**Lifecycle states (derived):** `plan_only` (YAML exists, not edited, not executed) · `edited` (YAML mtime > generated_at + 2s) · `running` (active task) · `done` (registry session.status == promoted) · `abandoned` (registry session.status == abandoned).
+
+**Tests.** 11 new tests in `test_web_research.py` covering all six endpoints. Full gateway suite: 504 → 515 tests passing.
+
+**Hand-test.** Started server on port 7475, verified via curl: list endpoint returns all 3 existing query plans with correct states (one `edited`, one `abandoned`, one `plan_only`); detail endpoint returns the full per-adapter plan structure; progress endpoint correctly reconstructs the historical abandoned run from log.md (search.arxiv done, search.youtube/web queued, pubmed done-via-empty); `/research` SPA route serves React HTML at 200.
+
+**Out of scope (deferred to M42).**
+
+- NLM artifact triggers (briefing, audio, slides, revise) per-domain page.
+- Review consoles (drafts list, contradictions, source orphans, filter-band sources).
+- `obsidian://` deep-link for synthesis pages on done sessions — basic display only in M41.
+- Session deletion / cleanup ops.
+- `--queries` external YAML import — CLI-only.
+
+### M42 — Review consoles + structured contradiction persistence
+
+Adds a Review sidebar entry to `wiki serve` with four tabs (Drafts, Contradictions, Orphans, Filter-band). Drafts and Filter-band have inline actions (Finalize/Abandon, Include/Exclude). Contradictions and Orphans are read-only with click-through. Adds structured contradiction persistence: `apply_plan` writes JSONL records to `.knowledge/contradictions/log.jsonl` whenever it commits a plan with non-empty `plan.contradictions`.
+
+**What's new.**
+
+- `gateway.contradictions_log` — append-only JSONL helper. `append_contradictions(records)` writes one line per record with `recorded_at`. `read_records()` returns parsed records sorted newest-first; tolerates malformed lines.
+- `gateway.ops.apply_plan` — calls `contradictions_log.append_contradictions(plan.contradictions)` inside the existing Phase 2 lock when contradictions are non-empty. Plans without contradictions don't touch the file.
+- `gateway.web.routes.review` — four GET endpoints: `/api/review/drafts`, `/api/review/contradictions`, `/api/review/orphans`, `/api/review/filter-band`. Each derives state from existing on-disk artifacts (wiki/ frontmatter, raw/ frontmatter, .knowledge/contradictions/log.jsonl, .knowledge/policies/*/policy.yaml).
+- `web/src/pages/review/` — Review page shell with 4 tabs. DraftsTab + FilterBandTab have inline actions; ContradictionsTab uses accordion-expand for claim detail; OrphansTab links to `/ops/query?domain=...` for discharge.
+- `web/src/pages/Query.tsx` (M40) — extended to read `?domain=...` URL param and prefill the form on mount.
+
+**Lifecycle / data sources.**
+
+| Tab | Source | Sort |
+|---|---|---|
+| Drafts | wiki/{entities,concepts,synthesis,mocs}/*.md with `draft: true` frontmatter | oldest first (by `draft_started_at`) |
+| Contradictions | `.knowledge/contradictions/log.jsonl` | newest first (by `recorded_at`) |
+| Orphans | raw/<type>/*.md with empty `wiki_pages` | newest first (by `ingested_at`) |
+| Filter-band | raw/<type>/*.md where `threshold_review ≤ filter.score < threshold_include` for any domain policy | score ascending |
+
+**Tests.** 12 new tests across `test_web_review.py` (10) and `test_authorship.py` (2). Full gateway suite: 515 → 527 tests passing.
+
+**Hand-test.** Started server on port 7475, verified via curl: 184 drafts, 0 contradictions (expected — JSONL log starts empty for pre-M42 state), 602 orphans, 173 in-band sources. `/review` SPA route serves React HTML at 200.
+
+**Out of scope (M43+).**
+
+- NLM artifact triggers (briefing, audio, slides, revise) per-domain page with confirmation modals.
+- Bulk actions in review tabs (select multiple drafts, batch finalize).
+- Filter/search within tabs.
+- Aggregating contradictions by affected page.
+- Backfill of pre-M42 contradictions from `log.md` summaries — the JSONL log accumulates from M42 onward only.
+
+### M43 — NLM Artifacts UI
+
+Adds a new Artifacts page under the Domains sidebar group at `/domains/artifacts`. Wraps the existing `wiki nlm-{add,sync,briefing,audio,slides,revise}` ops in HTTP endpoints. Confirmation modal before every LLM-calling op (per the artifact-generation-is-opt-in memory rule). Async generation via M40's TaskStore + 3s polling.
+
+**What's new.**
+
+- `gateway.web.routes.nlm` — 7 endpoints: nlm-add (sync); sync/briefing/audio/slides/revise (async, return 202+task_id); GET artifacts list per domain.
+- `web/src/pages/Artifacts.tsx` — single page with domain dropdown (filtered to `has_notebook=true`), add-source form, sync button, three artifact-generation cards (briefing/audio/slides), per-row revise on slide-deck artifacts. Confirmation modal before every async op via local `useAsyncOp` hook + `OpStatus` component.
+- Sidebar gains an "Artifacts" entry under the Domains group.
+- No changes to underlying `gateway.ops.nlm.*` functions — endpoints are thin adapters that reuse `_serialize_op_result` from M40's ops route and `_to_response` from M40's domains route.
+
+**Tests.** 8 new tests in `test_web_nlm.py`: artifacts list (empty, multi-domain filter, sort), nlm-add error path, async briefing/audio/slides/sync (with stubbed ops), revise (artifact-slug routing). Full gateway suite: 527 → 541 tests passing.
+
+**Hand-test.** Started server on port 7475, verified `/api/nlm/domains/cycling-and-fitness/artifacts` returns 2 real on-disk artifacts (slides + briefing); `/api/nlm/domains/glp1-reward-modulation/artifacts` returns 0; `/domains/artifacts` SPA route serves React HTML at 200. Live NLM generation skipped to avoid burning quota — TestClient stubs cover the contract.
+
+**Out of scope (M44+).**
+
+- Bulk actions on review tabs.
+- Filter/search within review tabs.
+- Obsidian:// deep-links for synthesis pages.
+- Custom artifact types beyond what NotebookLM exposes.
+- Artifact deletion from the UI (delete the wiki page directly).
+- In-browser audio playback or slide-deck rendering.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

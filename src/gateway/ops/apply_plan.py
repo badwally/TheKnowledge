@@ -11,9 +11,10 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
+from gateway import contradictions_log
 from gateway import frontmatter as fm
 from gateway import log, paths, validator, wiki_pages
-from gateway.core import OperationResult, write_atomic
+from gateway.core import AuthorshipReport, OperationResult, write_atomic
 from gateway.locking import file_lock
 from gateway.plan import Plan, WikiUpdate
 
@@ -120,21 +121,40 @@ def apply_plan(
         # Update the source's `wiki_pages:` so backlinks are tracked.
         _record_backlinks(plan.source_id, [u.target_path for u in plan.updates])
 
+        # M42: persist contradictions to JSONL log for the Review console.
+        if plan.contradictions:
+            contradictions_log.append_contradictions(plan.contradictions)
+
         log.append(
             op="wiki-author",
             fields={
                 "id": plan.source_id,
                 "updates": len(plan.updates),
+                "created": sum(1 for u, _, _, _ in parsed if u.update_kind == "create"),
+                "updated": sum(1 for u, _, _, _ in parsed if u.update_kind == "update"),
+                "contradictions": len(plan.contradictions),
                 "draft": "yes" if draft else "no",
             },
             summary=plan.rationale or "(no rationale provided)",
         )
+
+    # --- Phase 3: build authorship report ---
+    report = AuthorshipReport(
+        pages_created=[
+            u.target_path for u, pt, f, b in parsed if u.update_kind == "create"
+        ],
+        pages_updated=[
+            u.target_path for u, pt, f, b in parsed if u.update_kind == "update"
+        ],
+        contradictions=list(plan.contradictions),
+    )
 
     return OperationResult(
         success=True,
         paths_touched=paths_touched + [paths.log_path()],
         summary=f"applied plan for {plan.source_id}: {len(plan.updates)} update(s)",
         warnings=warnings,
+        authorship_report=report,
     )
 
 

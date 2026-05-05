@@ -1,0 +1,66 @@
+version: 1
+session_id: 2026-05-01-state-of-the-art-in-enterprise
+domain: edge-ai-agentic
+prompt: 'State of the art in enterprise edge-AI agent stacks: how are local LLMs/SLMs,
+  multi-agent frameworks, and RAG systems over proprietary first-party data composed
+  for production deployment? Survey the canonical 2026 stack layer by layer — hardware,
+  runtimes and quantization, model selection, RAG infrastructure, agent frameworks,
+  inter-agent protocols (MCP/A2A), orchestration, observability, and governance —
+  citing concrete open-source and vendor implementations, and noting the 2025-2026
+  advances that made each layer practical.'
+generated_at: '2026-05-01T15:42:09Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+queries:
+  arxiv:
+  - small language models for agentic inference
+  - on-device large language model quantization
+  - speculative decoding edge inference
+  - retrieval augmented generation enterprise deployment
+  - multi-agent orchestration framework large language models
+  - model context protocol agent interoperability
+  - tool-use agents local inference
+  - mixture of experts edge deployment
+  youtube:
+  - Ollama enterprise deployment
+  - vLLM local inference
+  - llama.cpp production
+  - LangGraph multi-agent
+  - CrewAI tutorial
+  - AutoGen agents
+  - MCP server tutorial
+  - Agent2Agent protocol
+  - LlamaIndex agentic RAG
+  - NVIDIA NIM edge
+  - Qualcomm AI Hub agents
+  - Apple MLX agents
+  - Phi-3 agent stack
+  - Gemma 2 local agents
+  - Llama 3 enterprise
+  - Mistral local deployment
+  - GGUF quantization tutorial
+  - AWQ GPTQ quantization
+  - LangSmith observability
+  - agent evaluation framework
+  web:
+  - enterprise edge AI agent stack 2026
+  - MCP server implementation guide
+  - A2A protocol Google specification
+  - LangGraph production deployment
+  - Ollama enterprise on-premise
+  - vLLM serving benchmarks
+  - NVIDIA NIM microservices edge
+  - small language model agent benchmarks
+  - LlamaIndex enterprise RAG architecture
+  - agentic RAG production patterns
+  - local LLM observability tools
+  - agent governance enterprise compliance
+  - Qualcomm Cloud AI 100 inference
+  - TensorRT-LLM edge deployment
+  - fleet management edge AI agents
+  pubmed: []
+edited: false

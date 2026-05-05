@@ -1,0 +1,40 @@
+notebooks:
+  ai-and-agents:
+    persistent:
+      notebook_id: 7eac1296-b611-422e-85bb-6c36f5c8872b
+      created_at: '2026-05-01T21:20:46Z'
+      sources_count: 25
+      last_sync: '2026-05-01T21:44:34Z'
+  cycling-and-fitness:
+    persistent:
+      notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2
+      created_at: '2026-04-29T19:08:10Z'
+      sources_count: 12
+      last_sync: '2026-04-29T19:49:03Z'
+  edge-ai-agentic:
+    persistent:
+      notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
+      created_at: '2026-04-30T17:28:33Z'
+      sources_count: 151
+      last_sync: '2026-05-05T01:26:27Z'
+    sessions:
+    - session_id: 2026-04-30-state-of-the-art-in-enterprise
+      notebook_id: 02492ea8-c6ed-4acf-967e-cd45d6b2de6e
+      query: "State of the art in enterprise edge-AI agent stacks: how are local LLMs/SLMs,\
+        \ multi-agent frameworks, and RAG systems over proprietary first-party data\
+        \ composed for production deployment? Survey the canonical 2026 stack layer\
+        \ by layer \u2014 hardware, runtimes and quantization, model selection, RAG\
+        \ infrastructure, agent frameworks, inter-agent protocols (MCP/A2A), orchestration,\
+        \ observability, and governance \u2014 citing concrete open-source and vendor\
+        \ implementations, and noting the 2025-2026 advances that made each layer\
+        \ practical."
+      created_at: '2026-04-30T17:28:34Z'
+      status: abandoned
+      sources_count: 0
+      promoted_at: null
+  trading-and-markets:
+    persistent:
+      notebook_id: ccbda94f-7251-42bb-864f-0e1c9850f7ad
+      created_at: '2026-05-01T21:44:35Z'
+      sources_count: 95
+      last_sync: '2026-05-01T22:06:54Z'

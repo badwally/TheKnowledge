@@ -21,6 +21,7 @@ SUBCOMMANDS: dict[str, str] = {
     "backfill-examples": "Populate policy.yaml + example bank from legacy research-notebook artifacts",
     "finetune": "Inspect or distill the per-domain example bank into a tighter policy candidate",
     "nlm-add": "Add a source to a NotebookLM corpus",
+    "nlm-sync": "Sync every raw source tagged with a domain into its NotebookLM corpus",
     "nlm-slides": "Generate a slide deck from a NotebookLM corpus; file as wiki artifact",
     "nlm-audio": "Generate an audio overview; file as wiki artifact",
     "nlm-briefing": "Generate a briefing doc; file as wiki artifact",
@@ -33,6 +34,13 @@ SUBCOMMANDS: dict[str, str] = {
     "migrate": "Apply a schema or content migration script",
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
     "watch": "Run the inbox watcher daemon in the foreground (used by launchd)",
+    "discover-domains": "Cluster source pages into draft domain proposals (M36)",
+    "promote-domain": "Bless a draft domain proposal: write policy + back-tag sources",
+    "demote-domain": "Reverse a promotion: remove tags + delete auto-generated policy",
+    "reject-proposal": "Delete a draft domain proposal",
+    "research": "Corpus-constructive research: fan out search, filter, build a NotebookLM session, file syntheses",
+    "bootstrap-domain": "Author a starter policy.yaml from a natural-language domain description",
+    "serve": "Start the local web UI (FastAPI + React)",
     "poll": "Run a registered poller (e.g. apple-notes) to fetch new items into raw/",
 }
 
@@ -45,6 +53,7 @@ IMPLEMENTED: set[str] = {
     "status",
     "watch",
     "nlm-add",
+    "nlm-sync",
     "nlm-slides",
     "nlm-audio",
     "nlm-briefing",
@@ -54,6 +63,13 @@ IMPLEMENTED: set[str] = {
     "mcp-serve",
     "batch-ingest",
     "lint",
+    "discover-domains",
+    "promote-domain",
+    "demote-domain",
+    "reject-proposal",
+    "research",
+    "bootstrap-domain",
+    "serve",
     "poll",
 }
 
@@ -94,6 +110,13 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Allow partial citations on agent-generated pages; mark as draft",
     )
+    p_ingest.add_argument(
+        "--plan-timeout",
+        type=float,
+        default=None,
+        help="Plan-client wall-clock budget in seconds (default 300; bump for "
+        "large source bodies — 50KB+ PDFs often need 600+).",
+    )
 
     # filter (read-only scoring)
     p_filter = subparsers.add_parser("filter", help=SUBCOMMANDS["filter"])
@@ -119,6 +142,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_nlm_add = subparsers.add_parser("nlm-add", help=SUBCOMMANDS["nlm-add"])
     p_nlm_add.add_argument("domain", help="Domain slug")
     p_nlm_add.add_argument("source_id", help="Source id (e.g., yt-LfRiBJgD7sk)")
+
+    # nlm-sync: bulk-add every raw source tagged with a domain into its corpus
+    p_nlm_sync = subparsers.add_parser("nlm-sync", help=SUBCOMMANDS["nlm-sync"])
+    p_nlm_sync.add_argument("domain", help="Domain slug")
+    p_nlm_sync.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Process at most N sources (useful for smoke-testing)",
+    )
+    p_nlm_sync.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="List sources that would be synced; do not call NotebookLM",
+    )
 
     # nlm-slides
     p_nlm_slides = subparsers.add_parser("nlm-slides", help=SUBCOMMANDS["nlm-slides"])
@@ -157,14 +195,100 @@ def build_parser() -> argparse.ArgumentParser:
         help="Delete the draft page and remove its backlinks instead of finalizing",
     )
 
-    # query: search the wiki and file a synthesis page
+    # query: ask the persistent NotebookLM corpus and file a synthesis page
     p_query = subparsers.add_parser("query", help=SUBCOMMANDS["query"])
-    p_query.add_argument("question", help="Question to ask of the wiki")
-    p_query.add_argument("--domain", default=None, help="Restrict scope to one domain")
+    p_query.add_argument("question", help="Question to ask the persistent domain corpus")
+    p_query.add_argument(
+        "--domain",
+        required=True,
+        help="Domain slug whose persistent NotebookLM corpus to query",
+    )
     p_query.add_argument(
         "--draft",
         action="store_true",
         help="Allow partial citations on the synthesis; mark draft until finalized",
+    )
+
+    # research: corpus-constructive research loop
+    p_research = subparsers.add_parser("research", help=SUBCOMMANDS["research"])
+    p_research.add_argument(
+        "prompt",
+        nargs="?",
+        default=None,
+        help="Research prompt / question (omit when using --execute)",
+    )
+    p_research.add_argument(
+        "--domain",
+        default=None,
+        help="Domain slug (omit to let the gateway infer one from the prompt)",
+    )
+    p_research.add_argument(
+        "--include-local",
+        action="append",
+        default=None,
+        dest="include_local",
+        help="Path or glob to include via the local-files adapter (repeatable)",
+    )
+    p_research.add_argument(
+        "--trust-local",
+        action="store_true",
+        help="Skip the semantic filter for local-source items",
+    )
+    p_research.add_argument(
+        "--max-results",
+        type=int,
+        default=50,
+        help="Max candidates each adapter is allowed to return (default 50)",
+    )
+    p_research.add_argument(
+        "--draft",
+        action="store_true",
+        help="File synthesis pages with draft=true (citation rule downgraded)",
+    )
+    p_research.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Skip NotebookLM creation; report a structured plan only",
+    )
+    p_research.add_argument(
+        "--review",
+        action="store_true",
+        help=(
+            "Generate the per-adapter query plan, persist it to "
+            "nlm/query_plans/<session-id>.yaml, and stop. Edit the YAML, "
+            "then resume with --execute <session-id>."
+        ),
+    )
+    p_research.add_argument(
+        "--execute",
+        dest="execute_session",
+        default=None,
+        metavar="SESSION_ID",
+        help=(
+            "Resume from a persisted query plan (e.g. one written by "
+            "--review). Loads the plan, marks edited:true if the YAML "
+            "was touched after generation, and proceeds to fan-out."
+        ),
+    )
+    p_research.add_argument(
+        "--queries",
+        dest="external_plan_path",
+        default=None,
+        metavar="PATH",
+        help=(
+            "Use a hand-authored query plan YAML at PATH instead of "
+            "generating one. Mutually exclusive with --execute."
+        ),
+    )
+    p_research.add_argument(
+        "--no-plan",
+        dest="no_plan",
+        action="store_true",
+        help=(
+            "Disable the runtime per-adapter query planner; dispatch the "
+            "prompt verbatim to every adapter (M37 behavior). Useful for "
+            "offline runs or when no Claude CLI is available."
+        ),
     )
 
     # mcp-serve: start the MCP server (stdio)
@@ -256,6 +380,93 @@ def build_parser() -> argparse.ArgumentParser:
         help="With --distill: skip the threshold gate (use sparingly)",
     )
 
+    # discover-domains (M36)
+    p_discover = subparsers.add_parser(
+        "discover-domains", help=SUBCOMMANDS["discover-domains"]
+    )
+    p_discover.add_argument(
+        "--scope",
+        default=None,
+        help="Glob (relative to repo root) restricting candidate sources, "
+        "e.g. 'wiki/sources/pdf-*'",
+    )
+    p_discover.add_argument(
+        "--since",
+        default=None,
+        help="ISO-8601 prefix; only sources ingested at-or-after this timestamp",
+    )
+    p_discover.add_argument(
+        "--untagged",
+        action="store_true",
+        help="Only include sources with empty/missing 'domains:' frontmatter",
+    )
+    p_discover.add_argument(
+        "--timeout",
+        type=float,
+        default=None,
+        help="Plan-client wall-clock budget in seconds (default 300; "
+        "use 900+ for 200+ source corpora)",
+    )
+
+    # promote-domain (M36)
+    p_promote = subparsers.add_parser(
+        "promote-domain", help=SUBCOMMANDS["promote-domain"]
+    )
+    p_promote.add_argument(
+        "proposal_slug",
+        help="Slug of the proposal page (e.g. 'proposal-investing-letters')",
+    )
+
+    # serve (M40)
+    p_serve = subparsers.add_parser("serve", help=SUBCOMMANDS["serve"])
+    p_serve.add_argument(
+        "--port",
+        type=int,
+        default=7474,
+        help="Port to bind (default 7474)",
+    )
+    p_serve.add_argument(
+        "--bind",
+        default="127.0.0.1",
+        help="Host to bind (default 127.0.0.1; use 0.0.0.0 for LAN access)",
+    )
+
+    # bootstrap-domain (M39)
+    p_bootstrap = subparsers.add_parser(
+        "bootstrap-domain", help=SUBCOMMANDS["bootstrap-domain"]
+    )
+    p_bootstrap.add_argument(
+        "description",
+        help="Natural-language description of the new domain (1-3 paragraphs)",
+    )
+    p_bootstrap.add_argument(
+        "slug",
+        help="Slug for the new domain (lowercase, hyphenated)",
+    )
+    p_bootstrap.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite an existing non-promoted policy at this slug",
+    )
+
+    # demote-domain (M36)
+    p_demote = subparsers.add_parser(
+        "demote-domain", help=SUBCOMMANDS["demote-domain"]
+    )
+    p_demote.add_argument(
+        "domain_slug",
+        help="The proposed_domain slug to reverse",
+    )
+
+    # reject-proposal (M36)
+    p_reject = subparsers.add_parser(
+        "reject-proposal", help=SUBCOMMANDS["reject-proposal"]
+    )
+    p_reject.add_argument(
+        "proposal_slug",
+        help="Slug of the proposal page to delete",
+    )
+
     # poll
     p_poll = subparsers.add_parser("poll", help=SUBCOMMANDS["poll"])
     p_poll.add_argument(
@@ -304,6 +515,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_watch(ns)
     if ns.subcommand == "nlm-add":
         return _run_nlm_add(ns)
+    if ns.subcommand == "nlm-sync":
+        return _run_nlm_sync(ns)
     if ns.subcommand == "nlm-slides":
         return _run_nlm_slides(ns)
     if ns.subcommand == "nlm-audio":
@@ -326,6 +539,20 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_examples(ns)
     if ns.subcommand == "finetune":
         return _run_finetune(ns)
+    if ns.subcommand == "discover-domains":
+        return _run_discover_domains(ns)
+    if ns.subcommand == "promote-domain":
+        return _run_promote_domain(ns)
+    if ns.subcommand == "bootstrap-domain":
+        return _run_bootstrap_domain(ns)
+    if ns.subcommand == "serve":
+        return _run_serve(ns)
+    if ns.subcommand == "demote-domain":
+        return _run_demote_domain(ns)
+    if ns.subcommand == "reject-proposal":
+        return _run_reject_proposal(ns)
+    if ns.subcommand == "research":
+        return _run_research(ns)
     if ns.subcommand == "poll":
         return _run_poll(ns)
 
@@ -455,6 +682,11 @@ def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") ->
         print(f"{prefix}: {result.summary}")
         for p in result.paths_touched:
             print(f"  touched: {p}")
+        if result.authorship_report is not None:
+            report = result.authorship_report
+            print(f"  authorship: {report.format_summary()}")
+            for line in report.format_detail():
+                print(line)
         for w in result.warnings:
             print(f"warning: {w}", file=sys.stderr)
         return 0
@@ -466,6 +698,10 @@ def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") ->
 
 def _run_ingest(ns: argparse.Namespace) -> int:
     from gateway.ops.ingest import ingest
+    from gateway.plan import ClaudeCLIPlanClient
+
+    timeout_s = getattr(ns, "plan_timeout", None)
+    plan_client = ClaudeCLIPlanClient(timeout_s=timeout_s) if timeout_s else None
 
     return _emit_result(
         ingest(
@@ -473,6 +709,7 @@ def _run_ingest(ns: argparse.Namespace) -> int:
             domain=ns.domain,
             with_plan=getattr(ns, "with_plan", False),
             draft=getattr(ns, "draft", False),
+            plan_client=plan_client,
         )
     )
 
@@ -515,6 +752,24 @@ def _run_nlm_add(ns: argparse.Namespace) -> int:
     from gateway.ops.nlm import nlm_add
 
     return _emit_result(nlm_add(ns.domain, ns.source_id))
+
+
+def _run_nlm_sync(ns: argparse.Namespace) -> int:
+    from gateway.ops.nlm import nlm_sync
+
+    def _progress(idx: int, total: int, source_id: str, status: str, detail: str) -> None:
+        marker = {"added": "+", "skipped": "·", "failed": "x"}.get(status, "?")
+        # Trim long detail lines so progress stays readable.
+        detail_short = (detail or "")[:80]
+        print(f"  [{idx:>3}/{total}] {marker} {source_id:<28} {detail_short}", flush=True)
+
+    result = nlm_sync(
+        ns.domain,
+        dry_run=ns.dry_run,
+        limit=ns.limit,
+        progress=None if ns.dry_run else _progress,
+    )
+    return _emit_result(result)
 
 
 def _run_nlm_slides(ns: argparse.Namespace) -> int:
@@ -577,6 +832,85 @@ def _run_lint(ns: argparse.Namespace) -> int:
     from gateway.ops.lint import lint
 
     return _emit_result(lint(scope=ns.scope))
+
+
+def _run_discover_domains(ns: argparse.Namespace) -> int:
+    from gateway.ops.discover_domains import discover_domains
+
+    return _emit_result(
+        discover_domains(
+            scope=ns.scope,
+            since=ns.since,
+            untagged=ns.untagged,
+            timeout_s=ns.timeout,
+        )
+    )
+
+
+def _run_promote_domain(ns: argparse.Namespace) -> int:
+    from gateway.ops.promote_domain import promote_domain
+
+    return _emit_result(promote_domain(ns.proposal_slug))
+
+
+def _run_bootstrap_domain(ns: argparse.Namespace) -> int:
+    from gateway.ops.bootstrap_domain import bootstrap_domain
+
+    return _emit_result(
+        bootstrap_domain(
+            description=ns.description,
+            slug=ns.slug,
+            force=ns.force,
+        )
+    )
+
+
+def _run_serve(ns: argparse.Namespace) -> int:
+    import uvicorn
+
+    print(f"wiki serve · http://{ns.bind}:{ns.port}", flush=True)
+    uvicorn.run(
+        "gateway.web.app:app",
+        host=ns.bind,
+        port=ns.port,
+        log_level="info",
+    )
+    return 0
+
+
+def _run_demote_domain(ns: argparse.Namespace) -> int:
+    from gateway.ops.demote_domain import demote_domain
+
+    return _emit_result(demote_domain(ns.domain_slug))
+
+
+def _run_reject_proposal(ns: argparse.Namespace) -> int:
+    from gateway.ops.reject_proposal import reject_proposal
+
+    return _emit_result(reject_proposal(ns.proposal_slug))
+
+
+def _run_research(ns: argparse.Namespace) -> int:
+    from gateway.plan import ClaudeCLIPlanClient
+    from gateway.research.orchestrator import research
+
+    plan_client = None if ns.no_plan else ClaudeCLIPlanClient()
+
+    return _emit_result(
+        research(
+            ns.prompt,
+            domain=ns.domain,
+            include_local=ns.include_local,
+            trust_local=ns.trust_local,
+            max_results_per_adapter=ns.max_results,
+            plan_client=plan_client,
+            draft=ns.draft,
+            dry_run=ns.dry_run,
+            review=ns.review,
+            execute_session=ns.execute_session,
+            external_plan_path=ns.external_plan_path,
+        )
+    )
 
 
 if __name__ == "__main__":

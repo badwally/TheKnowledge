@@ -18,6 +18,7 @@ from gateway.lint import (
     orphans,
     schema_drift,
     stale_drafts,
+    untagged_sources,
 )
 from gateway.ops.lint import KNOWN_CHECKS, lint
 
@@ -93,6 +94,7 @@ def test_known_checks_includes_all_documented_checks():
         "filter-calibration",
         "inbox-pending",
         "nlm-pending",
+        "untagged-sources",
     }
     assert KNOWN_CHECKS == expected
 
@@ -796,3 +798,45 @@ def test_stale_claims_llm_client_failure_emits_warning(kb_root):
     findings = stale_claims.run(client=_Failing(), sample_size=5)
     failures = [f for f in findings if f.severity == "warning" and "failed" in f.message]
     assert len(failures) == 1
+
+
+# --- untagged-sources (M36) -----------------------------------------------
+
+
+def _write_wiki_source(source_id: str, *, domains: list[str] | None = None):
+    front = {
+        "type": "source",
+        "source_id": source_id,
+        "source_type": "pdf",
+        "title": source_id,
+        "ingested_at": "2026-04-29T00:00:00Z",
+    }
+    if domains is not None:
+        front["domains"] = domains
+    body = "# title\n\n## Summary\n\nx\n\n## Key claims\n\nx\n\n## Cross-references\n\nx\n"
+    path = paths.wiki_dir() / "sources" / f"{source_id}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(fm.serialize(front, body))
+
+
+def test_untagged_sources_flags_sources_with_no_domains(kb_root):
+    _write_wiki_source("pdf-aaa", domains=[])
+    _write_wiki_source("pdf-bbb")  # no domains key at all
+    _write_wiki_source("pdf-ccc", domains=["existing-domain"])
+
+    findings = untagged_sources.run()
+    assert len(findings) == 1
+    assert findings[0].metadata["count"] == 2
+    assert "pdf-aaa" in findings[0].metadata["examples"]
+    assert "pdf-bbb" in findings[0].metadata["examples"]
+    assert "pdf-ccc" not in findings[0].metadata["examples"]
+
+
+def test_untagged_sources_empty_when_all_tagged(kb_root):
+    _write_wiki_source("pdf-tagged", domains=["d"])
+    findings = untagged_sources.run()
+    assert findings == []
+
+
+def test_untagged_sources_registered_in_known_checks():
+    assert "untagged-sources" in KNOWN_CHECKS

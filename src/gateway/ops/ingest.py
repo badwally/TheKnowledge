@@ -45,12 +45,19 @@ def ingest(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    fetch_pdf: bool = False,
 ) -> OperationResult:
-    """Top-level dispatcher. Accepts a URL string or a filesystem path.
+    """Top-level dispatcher. Accepts a URL string, a non-URL identifier (e.g. a
+    bare arxiv id like ``2403.12345``), or a filesystem path.
 
-    URLs route to the URL converter family (youtube/arxiv/pubmed/web). Local
-    `.md` files are treated as already-canonical and validated directly. Local
-    files of other extensions (e.g. `.pdf`) route to a file converter.
+    URLs and recognized identifiers route to the URL converter family
+    (youtube/arxiv/pubmed/web). Local `.md` files are treated as already-
+    canonical and validated directly. Local files of other extensions (e.g.
+    `.pdf`) route to a file converter.
+
+    `fetch_pdf=True` asks converters that support it (currently arxiv) to
+    download the source PDF and use its full text as the body instead of the
+    abstract. Returns an error for source types that don't support it.
     """
     if isinstance(source, str) and source.startswith(("http://", "https://")):
         return ingest_url(
@@ -60,7 +67,25 @@ def ingest(
             plan_client=plan_client,
             with_plan=with_plan,
             draft=draft,
+            fetch_pdf=fetch_pdf,
         )
+    # Non-URL string that a converter recognizes (e.g. bare arxiv ID,
+    # `arxiv:<id>` shorthand) — treat it like a URL dispatch.
+    if isinstance(source, str):
+        try:
+            converters.dispatch(source)
+        except converters.NoConverterError:
+            pass
+        else:
+            return ingest_url(
+                source,
+                domain=domain,
+                filter_client=filter_client,
+                plan_client=plan_client,
+                with_plan=with_plan,
+                draft=draft,
+                fetch_pdf=fetch_pdf,
+            )
     path = Path(source).expanduser() if isinstance(source, str) else source
     if path.exists() and path.is_file() and path.suffix.lower() != ".md":
         return ingest_file(
@@ -144,6 +169,7 @@ def ingest_url(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    fetch_pdf: bool = False,
 ) -> OperationResult:
     """Ingest from a URL via converter dispatch."""
     try:
@@ -151,8 +177,21 @@ def ingest_url(
     except converters.NoConverterError as e:
         return OperationResult(success=False, errors=[str(e)])
 
+    if fetch_pdf:
+        method = getattr(converter, "convert_with_pdf", None)
+        if method is None:
+            return OperationResult(
+                success=False,
+                errors=[
+                    f"fetch_pdf=True is not supported for source type "
+                    f"{converter.type_name!r} (no convert_with_pdf method)"
+                ],
+            )
+    else:
+        method = converter.convert
+
     try:
-        text = converter.convert(url)
+        text = method(url)
     except converters.ConversionError as e:
         return OperationResult(success=False, errors=[f"conversion failed: {e}"])
 
@@ -220,6 +259,29 @@ def _ingest_canonical_text(
                 )
 
             if existing_front.get("content_hash") == front["content_hash"]:
+                # Source body unchanged. If --with-plan, still run the
+                # authorship loop against the existing canonical text —
+                # otherwise the plan never runs for back-tagged-after-ingest
+                # sources (M36 promote → --with-plan flow needs this).
+                if with_plan:
+                    plan_result = _invoke_plan_and_apply(
+                        front=existing_front,
+                        body=existing_body,
+                        domain=domain
+                        or (existing_front.get("domains") or [None])[0],
+                        plan_client=plan_client,
+                        draft=draft,
+                    )
+                    return OperationResult(
+                        success=plan_result.success,
+                        paths_touched=plan_result.paths_touched,
+                        warnings=plan_result.warnings,
+                        errors=plan_result.errors,
+                        summary=(
+                            f"already ingested; ran --with-plan: "
+                            f"{plan_result.summary}"
+                        ),
+                    )
                 return OperationResult(
                     success=True,
                     no_op=True,
@@ -301,6 +363,7 @@ def _ingest_canonical_text(
             result_obj.paths_touched.extend(plan_result.paths_touched)
             result_obj.summary += f"; authorship: {plan_result.summary}"
             result_obj.warnings.extend(plan_result.warnings)
+            result_obj.authorship_report = plan_result.authorship_report
         else:
             # Plan failure does not invalidate the source ingest itself; the
             # source page is still committed. Surface plan errors as warnings

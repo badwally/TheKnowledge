@@ -1,0 +1,60 @@
+version: 1
+session_id: 2026-04-30-rag-over-proprietary-first-party-data
+domain: edge-ai-agentic
+prompt: RAG over proprietary first-party data on edge devices
+generated_at: '2026-04-30T16:34:56Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+queries:
+  arxiv:
+  - retrieval augmented generation on edge devices
+  - on-device RAG inference optimization
+  - private RAG vector database mobile
+  - federated retrieval augmented generation
+  - quantized embedding models edge inference
+  - local RAG knowledge base small language models
+  - RAG latency optimization resource-constrained devices
+  - secure enclave retrieval augmented generation
+  youtube:
+  - on-device RAG tutorial
+  - local RAG llama.cpp
+  - private RAG proprietary data
+  - Ollama RAG local
+  - RAG mobile app
+  - edge RAG deployment
+  - LlamaIndex local inference
+  - LangChain on-device
+  - RAG quantized embeddings
+  - sqlite-vec RAG
+  - Chroma local RAG
+  - FAISS edge device
+  - Apple MLX RAG
+  - Qualcomm AI edge RAG
+  - NVIDIA Jetson RAG
+  - RAG enterprise on-premise
+  - small language model RAG
+  - Phi-3 RAG local
+  - Gemma on-device RAG
+  - MCP retrieval augmented generation
+  web:
+  - on-device RAG architecture
+  - local vector database edge
+  - private enterprise RAG deployment
+  - RAG on-premise proprietary data
+  - edge RAG embedding models
+  - sqlite-vec local RAG implementation
+  - LanceDB edge deployment
+  - Ollama RAG pipeline
+  - llama.cpp embeddings RAG
+  - ObjectBox vector search mobile
+  - Qualcomm AI Hub RAG
+  - MLX RAG Apple Silicon
+  - federated RAG enterprise
+  - RAG data sovereignty compliance
+  - EDITED MCP enterprise integration patterns
+  pubmed: []
+edited: true

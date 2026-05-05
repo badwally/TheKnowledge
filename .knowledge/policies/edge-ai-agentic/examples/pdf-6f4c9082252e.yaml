@@ -1,0 +1,29 @@
+source_id: pdf-6f4c9082252e
+domain: edge-ai-agentic
+decision: include
+score: 1.0
+policy_version: edge-ai-agentic-0.1.0
+rationale: Semantic Scholar API docs are reference material for the research gateway
+  adapter
+pinned_at: '2026-05-04T20:46:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: semanticscholarapi
+  authors: []
+  url: ''
+content_excerpt: 'The Semantic Scholar Open Data Platform
+
+  RodneyKinney,ChloeAnastasiades,RussellAuthur∗,IzBeltagy∗,JonathanBragg,
+
+  AlexandraBuraczynski,IsabelCachola∗,StefanCandra,YoganandChandrasekhar∗,
+
+  ArmanCohan∗,MilesCrawford∗,DougDowney,JasonDunkelberger,OrenEtzioni∗,
+
+  RobEvans,SergeyFeldman,ChristopherFiorelli∗,DanielKing∗,JosephGorney∗,
+
+  DavidGraham,DanyHaddad,FangzhouHu,ReganHuff,DanielKing∗,
+
+  SebastianKohlmeier∗,BaileyKuehl,MichaelLangan,DanielLin,HaokunLiu∗,
+
+  KyleLo,JaronLochner,KelseyMacMillan,TylerMurray,C'

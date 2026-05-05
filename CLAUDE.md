@@ -44,11 +44,19 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Generate briefing doc | `wiki nlm-briefing <domain>` |
 | Revise an artifact | `wiki nlm-revise <slug> --slide N "<instructions>"` |
 | Add a source to a NotebookLM corpus | `wiki nlm-add <domain> <source-id>` |
+| Bulk-sync every raw source tagged with a domain into its corpus | `wiki nlm-sync <domain> [--limit N] [--dry-run]` |
 | Run filter on a source | `wiki filter <path>` |
 | Pin a corrected filter decision | `wiki filter-correct <id>` |
 | Finalize a draft page | `wiki finalize <page-path>` (`--abandon` to delete) |
 | Backfill policy + example bank from legacy | `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` |
 | Inspect / distill the example bank | `wiki finetune [--check \| --domain X --distill [--force]]` |
+| Bootstrap a new domain from a natural-language description | `wiki bootstrap-domain "<description>" <slug>` |
+| Discover candidate domains in an unsorted corpus | `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` |
+| Bless a draft proposal as a real domain | `wiki promote-domain <proposal-slug>` |
+| Reverse a promotion (undo policy + back-tags) | `wiki demote-domain <domain-slug>` |
+| Delete a draft proposal | `wiki reject-proposal <proposal-slug>` |
+| Multi-adapter research search | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` |
+| Start the local web UI (FastAPI + React) | `wiki serve [--port 7474] [--bind 127.0.0.1]` (visit `/research`, `/review`, `/domains/artifacts`) |
 | Run a registered poller (e.g. Apple Notes) | `wiki poll <name>` (`wiki poll --list` to see registered) |
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
@@ -87,9 +95,12 @@ Pollers (API-only sources without a watchable filesystem — Apple Notes, Notion
 │   ├── sources/       # one summary page per ingested source
 │   ├── synthesis/     # cross-source analyses (compound from queries)
 │   ├── mocs/          # maps of content per domain
+│   ├── proposals/     # domain proposals from discover-domains (draft → blessed → promoted)
 │   └── artifacts/     # NotebookLM-generated outputs (slides, audio, briefings)
 └── nlm/
-    └── notebooks.yaml # domain ↔ NotebookLM notebook ID map
+    ├── notebooks.yaml # domain ↔ NotebookLM notebook ID map
+    ├── query_plans/   # persistent per-session research query plans
+    └── source_maps/   # NLM title → source-id resolution maps
 ```
 
 ## Forward-looking notes

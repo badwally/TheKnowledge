@@ -1,0 +1,212 @@
+---
+type: domain-proposal
+slug: proposal-trading-and-markets
+title: Trading and Markets
+proposed_domain: trading-and-markets
+status: blessed
+member_sources:
+- pdf-042302b20a5d
+- pdf-04854302f962
+- pdf-05df32dcb03e
+- pdf-075e9932265b
+- pdf-08bcb2d549ba
+- pdf-13d51286c4cc
+- pdf-1590d4650297
+- pdf-1662a4368954
+- pdf-19445750a197
+- pdf-19ce7da9ecfc
+- pdf-1ab14c833d75
+- pdf-2248d6cdc39f
+- pdf-2329b8b436f2
+- pdf-2698a38c6fa5
+- pdf-2742492120a8
+- pdf-291109666e00
+- pdf-2b2d34f2b0ff
+- pdf-3a3f6480ad77
+- pdf-3a510f58854c
+- pdf-3d3d42a0717a
+- pdf-3eea925a6037
+- pdf-40482428d656
+- pdf-46c6dd54d41e
+- pdf-4b87a8059b38
+- pdf-4dbe002c1c7a
+- pdf-4e80c02052f4
+- pdf-503a04772afb
+- pdf-50a1f07b475f
+- pdf-57b1d100694e
+- pdf-5a5936689043
+- pdf-5a6062a63a4b
+- pdf-5bef1fceb745
+- pdf-5e6d63eac790
+- pdf-5ef2018823c8
+- pdf-67b6fe78b28c
+- pdf-69a1f97797ce
+- pdf-6ae97b9c27c7
+- pdf-6ba2dc608ac8
+- pdf-704c439723d0
+- pdf-734e612fdf31
+- pdf-7663c24d3159
+- pdf-7acc9c92267c
+- pdf-81305d181382
+- pdf-853a7755a470
+- pdf-869163b2f118
+- pdf-87087198976b
+- pdf-8f021296560c
+- pdf-90e7f9350657
+- pdf-930894c4fbad
+- pdf-9495a5abb859
+- pdf-94cecf7a170a
+- pdf-9613f301a3b5
+- pdf-9da6062f0265
+- pdf-a0072c763cf8
+- pdf-a25e1c0d5f08
+- pdf-a3789262265a
+- pdf-a98b496e5936
+- pdf-b72c5d424466
+- pdf-b8cec9d1ec0c
+- pdf-be69dd282a8c
+- pdf-bf1afc73ac8f
+- pdf-c25a6984aba0
+- pdf-c57b9a32c399
+- pdf-c9b8f466ea39
+- pdf-cce4b539ce1c
+- pdf-d0b9b7e97b5c
+- pdf-d196e853ebc0
+- pdf-d7094631fbf1
+- pdf-e2068d89c2a7
+- pdf-e63407c2b4f4
+- pdf-e8351bcf5615
+- pdf-ea646c451aae
+- pdf-ec9fdef2193c
+- pdf-ed56b074fb11
+- pdf-f073cccdbfe6
+- pdf-f139d7bd1924
+- pdf-f2565310670c
+- pdf-fa83c61dfa2d
+- pdf-fb3e28ab676a
+- pdf-girquark-2022-global-economics-analyst
+- pdf-lasse-pedersen-2011-title-how-to
+- pdf-eric-benhamou-2021-powerpoint-presentation
+- pdf-bd-2002-microsoft-word-dow
+- pdf-ari-kiev-2005-stocks-commodities-v
+- pdf-ali-khan-2023-the-ict-bible
+- pdf-alberto-frizziero-2023-thenorthloop-intro-eng
+- pdf-sqzme-2020-the-implied-order
+- pdf-sugsu-2020-microsoft-word-hfholdem
+- pdf-won-2022-bii-global-outlook
+- pdf-judy-2022-primer-adjusted-a
+- pdf-tw-2007-3379-pdf
+- pdf-ned-augenblick-2025-overinference-from-weak
+- pdf-silicon-valley-2025-state-of-the
+- pdf-matthew-notowidigdo-2020-gkno-manuscript-1025
+- pdf-munger-2021-revised-psychology-of
+rationale: Largest cluster — ICT/SMC trading curricula (Trader Theory threads, demystifying-ICT
+  lessons, order blocks, fair-value gaps, market structure), trading psychology (Kiev,
+  Best Loser Wins, Munger), macro and market commentary (Apollo, ING, Goldman, JPM,
+  Pozsar), and SSRN/NBER finance research. Author handles like Trader Theory, ICT
+  mentorship, Greenblatt, Asness, and Pedersen anchor the theme.
+---
+
+## Rationale
+
+The largest concentration of sources covers active trading, technical analysis (especially ICT/SMC concepts: order blocks, fair-value gaps, liquidity, power of three, market structure shifts), trading psychology, and the broader macro / capital-markets context that traders consume. It also folds in academic finance papers (SSRN, NBER) and macro outlooks from sell-side and asset-management shops, since those flow directly into discretionary trading decisions.
+
+This cluster should likely split later into sub-domains (ICT methodology, trading psychology, macro outlooks, academic finance) once volume warrants it, but for first-pass discovery the unifying theme is markets/trading practice.
+
+## Member sources
+
+- [[sources/pdf-042302b20a5d]]: ICT lesson 9 — order blocks 2.
+- [[sources/pdf-04854302f962]]: Ambrus Capital paper on volatility and changing market structure in U.S. equities.
+- [[sources/pdf-05df32dcb03e]]: SSRN finance paper (id1630903).
+- [[sources/pdf-075e9932265b]]: ICT lesson 12 — daily/weekly/monthly opens, simplified power of 3.
+- [[sources/pdf-08bcb2d549ba]]: Trader Theory thread on price action.
+- [[sources/pdf-13d51286c4cc]]: Trader Theory thread on market structure.
+- [[sources/pdf-1590d4650297]]: Best Loser Wins — trading psychology book.
+- [[sources/pdf-1662a4368954]]: SSRN finance paper (4879527).
+- [[sources/pdf-19445750a197]]: SSRN finance paper (4166640).
+- [[sources/pdf-19ce7da9ecfc]]: ICT lesson 11 — divergence.
+- [[sources/pdf-1ab14c833d75]]: Demystifying ICT, vol. 113.
+- [[sources/pdf-2248d6cdc39f]]: 2-day AVWAP rule and momentum signal in day trading.
+- [[sources/pdf-2329b8b436f2]]: SSRN finance paper (4835311).
+- [[sources/pdf-2698a38c6fa5]]: ICT lesson 4 — fair value gap.
+- [[sources/pdf-2742492120a8]]: SSRN finance paper (3760365).
+- [[sources/pdf-291109666e00]]: Brass Monkey DCE eBook — trading methodology.
+- [[sources/pdf-2b2d34f2b0ff]]: JPM Asset Management Portfolio Insights.
+- [[sources/pdf-3a3f6480ad77]]: ICT 2022 mentorship key points.
+- [[sources/pdf-3a510f58854c]]: Trading models and checklist v1.
+- [[sources/pdf-3d3d42a0717a]]: Sell-side macro doc (Amodeo / VPRU).
+- [[sources/pdf-3eea925a6037]]: ICT-style trading PDF (73dc960b).
+- [[sources/pdf-40482428d656]]: Balanced price ranges (ICT).
+- [[sources/pdf-46c6dd54d41e]]: High-probability trading conditions.
+- [[sources/pdf-4b87a8059b38]]: Lehman Brothers internal document (LBEX-LL).
+- [[sources/pdf-4dbe002c1c7a]]: NBER working paper w29874.
+- [[sources/pdf-4e80c02052f4]]: ICT lesson 3 — market structure shifts.
+- [[sources/pdf-503a04772afb]]: Sell-side macro doc (Amodeo / VPRU).
+- [[sources/pdf-50a1f07b475f]]: COVID GMV part 2 — markets analysis.
+- [[sources/pdf-57b1d100694e]]: Trader Theory thread.
+- [[sources/pdf-5a5936689043]]: Nikonomics options trading guide.
+- [[sources/pdf-5a6062a63a4b]]: SSRN finance paper (3042173).
+- [[sources/pdf-5bef1fceb745]]: COVID GMV part 1.
+- [[sources/pdf-5e6d63eac790]]: Working paper wp-18-16.
+- [[sources/pdf-5ef2018823c8]]: SSRN finance paper (2289097).
+- [[sources/pdf-67b6fe78b28c]]: Trader Theory thread.
+- [[sources/pdf-69a1f97797ce]]: ICT lesson 5 — order blocks.
+- [[sources/pdf-6ae97b9c27c7]]: Zoltan Pozsar — war and interest rates.
+- [[sources/pdf-6ba2dc608ac8]]: 2-day AVWAP rule, momentum signal.
+- [[sources/pdf-704c439723d0]]: ICT lesson 1 — price and liquidity.
+- [[sources/pdf-734e612fdf31]]: Trading curriculum core content month 5.
+- [[sources/pdf-7663c24d3159]]: Math of the multi-manager hedge fund.
+- [[sources/pdf-7acc9c92267c]]: Article on stock-market concentration.
+- [[sources/pdf-81305d181382]]: ICT lesson 2 — market structure.
+- [[sources/pdf-853a7755a470]]: Q3 2022 IACFM presentation.
+- [[sources/pdf-869163b2f118]]: Ari Kiev — Trading to Win (psychology).
+- [[sources/pdf-87087198976b]]: ING global outlook 2023.
+- [[sources/pdf-8f021296560c]]: Credit Suisse investment outlook 2023.
+- [[sources/pdf-90e7f9350657]]: Annual macro outlook 2023.
+- [[sources/pdf-930894c4fbad]]: Demystifying ICT vol. 109.
+- [[sources/pdf-9495a5abb859]]: ICT weekly bias form.
+- [[sources/pdf-94cecf7a170a]]: Demystifying ICT (base volume).
+- [[sources/pdf-9613f301a3b5]]: BobaTrader — guide to consistent daytrading.
+- [[sources/pdf-9da6062f0265]]: Beat the Market.
+- [[sources/pdf-a0072c763cf8]]: Scott Redler moving averages eBook.
+- [[sources/pdf-a25e1c0d5f08]]: Federal Reserve staff report sr677.
+- [[sources/pdf-a3789262265a]]: ICT lesson 8 — power of 3.
+- [[sources/pdf-a98b496e5936]]: Trader Theory thread.
+- [[sources/pdf-b72c5d424466]]: 'I'm profitable, now what?' trading playbook.
+- [[sources/pdf-b8cec9d1ec0c]]: NBER working paper w28967.
+- [[sources/pdf-be69dd282a8c]]: Two centuries of trend following.
+- [[sources/pdf-bf1afc73ac8f]]: 2023 investment outlook.
+- [[sources/pdf-c25a6984aba0]]: Cliff Asness essay.
+- [[sources/pdf-c57b9a32c399]]: Trading models and checklist (2022).
+- [[sources/pdf-c9b8f466ea39]]: Akash position memo.
+- [[sources/pdf-cce4b539ce1c]]: Draw on liquidity (daytradingrauf).
+- [[sources/pdf-d0b9b7e97b5c]]: Joel Greenblatt class notes.
+- [[sources/pdf-d196e853ebc0]]: Apollo 2023 economic & capital markets outlook.
+- [[sources/pdf-d7094631fbf1]]: ICT MMXM market-maker models.
+- [[sources/pdf-e2068d89c2a7]]: SSRN finance paper (4501707).
+- [[sources/pdf-e63407c2b4f4]]: SSRN finance paper (4416622).
+- [[sources/pdf-e8351bcf5615]]: COVID GMV part 3.
+- [[sources/pdf-ea646c451aae]]: Generic close-of-day market view.
+- [[sources/pdf-ec9fdef2193c]]: SSRN finance paper (2585056).
+- [[sources/pdf-ed56b074fb11]]: Q2 2022 market commentary and outlook.
+- [[sources/pdf-f073cccdbfe6]]: Weekly bias form (ICT).
+- [[sources/pdf-f139d7bd1924]]: Andrew Constan — Deleveraging.
+- [[sources/pdf-f2565310670c]]: ICT lesson 6 — equilibrium, discount, premium.
+- [[sources/pdf-fa83c61dfa2d]]: Revisiting the Fed Robbery thesis.
+- [[sources/pdf-fb3e28ab676a]]: Acemoglu — simple macroeconomics of AI.
+- [[sources/pdf-girquark-2022-global-economics-analyst]]: Goldman Global Economics Analyst — macro outlook 2023.
+- [[sources/pdf-lasse-pedersen-2011-title-how-to]]: Lasse Pedersen — managing managed futures.
+- [[sources/pdf-eric-benhamou-2021-powerpoint-presentation]]: Eric Benhamou markets deck.
+- [[sources/pdf-bd-2002-microsoft-word-dow]]: Dow Award paper.
+- [[sources/pdf-ari-kiev-2005-stocks-commodities-v]]: Ari Kiev on centered trading.
+- [[sources/pdf-ali-khan-2023-the-ict-bible]]: Ali Khan — The ICT Bible.
+- [[sources/pdf-alberto-frizziero-2023-thenorthloop-intro-eng]]: Frizziero — The North Loop trading intro.
+- [[sources/pdf-sqzme-2020-the-implied-order]]: The implied order book.
+- [[sources/pdf-sugsu-2020-microsoft-word-hfholdem]]: Hedge fund poker (HFHoldem) SSRN paper.
+- [[sources/pdf-won-2022-bii-global-outlook]]: BlackRock Investment Institute global outlook.
+- [[sources/pdf-judy-2022-primer-adjusted-a]]: Trading primer.
+- [[sources/pdf-tw-2007-3379-pdf]]: Academic markets paper 3379.
+- [[sources/pdf-ned-augenblick-2025-overinference-from-weak]]: Augenblick — overinference from weak signals.
+- [[sources/pdf-silicon-valley-2025-state-of-the]]: SVB state of the markets H2 2025.
+- [[sources/pdf-matthew-notowidigdo-2020-gkno-manuscript-1025]]: Notowidigdo — GKNO economics manuscript.
+- [[sources/pdf-munger-2021-revised-psychology-of]]: Munger — psychology of human misjudgment.

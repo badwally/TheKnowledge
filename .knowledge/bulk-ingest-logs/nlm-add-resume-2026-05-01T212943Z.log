@@ -1,0 +1,571 @@
+NLM_ADD_START 2026-05-01T21:29:43Z total=     114
+===[1] ai-and-agents pdf-ai-2023-japan-s-ai===
+ok: added: pdf-ai-2023-japan-s-ai → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ai-2023-japan-s-ai.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[2] ai-and-agents pdf-e7ff11e4ad9b===
+ok: added: pdf-e7ff11e4ad9b → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e7ff11e4ad9b.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[3] ai-and-agents pdf-f478e5f11837===
+ok: added: pdf-f478e5f11837 → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f478e5f11837.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[4] ai-and-agents pdf-james-evans-2026-agentic-ai-and===
+ok: added: pdf-james-evans-2026-agentic-ai-and → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-james-evans-2026-agentic-ai-and.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[5] ai-and-agents pdf-jenny-zhang-2026-hyperagents===
+ok: added: pdf-jenny-zhang-2026-hyperagents → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-jenny-zhang-2026-hyperagents.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[6] ai-and-agents pdf-julien-delavande-2025-video-killed-the===
+ok: added: pdf-julien-delavande-2025-video-killed-the → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-julien-delavande-2025-video-killed-the.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[7] ai-and-agents pdf-kimi-team-2026-kimi-k2-open===
+ok: added: pdf-kimi-team-2026-kimi-k2-open → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-kimi-team-2026-kimi-k2-open.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[8] ai-and-agents pdf-nenad-toma-2026-intelligent-ai-delegation===
+ok: added: pdf-nenad-toma-2026-intelligent-ai-delegation → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-nenad-toma-2026-intelligent-ai-delegation.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[9] ai-and-agents pdf-ngor-luong-2026-two-loops-how===
+ok: added: pdf-ngor-luong-2026-two-loops-how → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ngor-luong-2026-two-loops-how.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[10] ai-and-agents pdf-peter-belcak-2025-small-language-models===
+ok: added: pdf-peter-belcak-2025-small-language-models → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-peter-belcak-2025-small-language-models.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[11] ai-and-agents pdf-shu-yang-2026-multi-user-large===
+ok: added: pdf-shu-yang-2026-multi-user-large → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-shu-yang-2026-multi-user-large.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[12] ai-and-agents pdf-stanford-2026-the-stanford-emerging===
+operation failed:
+  - nlm add file failed: `nlm source add 7eac1296-b611-422e-85bb-6c36f5c8872b --file /Users/andrewgrant/code/knowledge/raw/pdf/pdf-stanford-2026-the-stanford-emerging.pdf --wait --title The Stanford Emerging Technology Review 2026` timed out after 600.0s
+---
+===[13] ai-and-agents pdf-vaishak-belle-2026-the-future-is===
+ok: added: pdf-vaishak-belle-2026-the-future-is → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-vaishak-belle-2026-the-future-is.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[14] ai-and-agents pdf-wentao-zhang-2026-autogenesis-a-self===
+ok: added: pdf-wentao-zhang-2026-autogenesis-a-self → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-wentao-zhang-2026-autogenesis-a-self.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[15] ai-and-agents pdf-zhengding-hu-2026-pancake-hierarchical-memory===
+ok: added: pdf-zhengding-hu-2026-pancake-hierarchical-memory → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-zhengding-hu-2026-pancake-hierarchical-memory.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[16] ai-and-agents pdf-zhuo-yang-2026-detailed-balance-in===
+ok: added: pdf-zhuo-yang-2026-detailed-balance-in → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-zhuo-yang-2026-detailed-balance-in.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[17] ai-and-agents pdf-752c8824b750===
+ok: added: pdf-752c8824b750 → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-752c8824b750.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[18] ai-and-agents pdf-806192f007eb===
+ok: added: pdf-806192f007eb → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-806192f007eb.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[19] ai-and-agents pdf-f4016087ee51===
+ok: added: pdf-f4016087ee51 → ai-and-agents (7eac1296-b611-422e-85bb-6c36f5c8872b)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f4016087ee51.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[20] trading-and-markets pdf-042302b20a5d===
+ok: added: pdf-042302b20a5d → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-042302b20a5d.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[21] trading-and-markets pdf-04854302f962===
+ok: added: pdf-04854302f962 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-04854302f962.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[22] trading-and-markets pdf-05df32dcb03e===
+ok: added: pdf-05df32dcb03e → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-05df32dcb03e.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[23] trading-and-markets pdf-075e9932265b===
+ok: added: pdf-075e9932265b → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-075e9932265b.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[24] trading-and-markets pdf-08bcb2d549ba===
+ok: added: pdf-08bcb2d549ba → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-08bcb2d549ba.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[25] trading-and-markets pdf-13d51286c4cc===
+ok: added: pdf-13d51286c4cc → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-13d51286c4cc.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[26] trading-and-markets pdf-1590d4650297===
+ok: added: pdf-1590d4650297 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1590d4650297.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[27] trading-and-markets pdf-1662a4368954===
+ok: added: pdf-1662a4368954 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1662a4368954.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[28] trading-and-markets pdf-19445750a197===
+ok: added: pdf-19445750a197 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-19445750a197.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[29] trading-and-markets pdf-19ce7da9ecfc===
+ok: added: pdf-19ce7da9ecfc → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-19ce7da9ecfc.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[30] trading-and-markets pdf-1ab14c833d75===
+ok: added: pdf-1ab14c833d75 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1ab14c833d75.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[31] trading-and-markets pdf-2248d6cdc39f===
+ok: added: pdf-2248d6cdc39f → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2248d6cdc39f.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[32] trading-and-markets pdf-2329b8b436f2===
+ok: added: pdf-2329b8b436f2 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2329b8b436f2.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[33] trading-and-markets pdf-2698a38c6fa5===
+ok: added: pdf-2698a38c6fa5 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2698a38c6fa5.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[34] trading-and-markets pdf-2742492120a8===
+ok: added: pdf-2742492120a8 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2742492120a8.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[35] trading-and-markets pdf-291109666e00===
+ok: added: pdf-291109666e00 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-291109666e00.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[36] trading-and-markets pdf-2b2d34f2b0ff===
+ok: added: pdf-2b2d34f2b0ff → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2b2d34f2b0ff.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[37] trading-and-markets pdf-3a3f6480ad77===
+ok: added: pdf-3a3f6480ad77 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3a3f6480ad77.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[38] trading-and-markets pdf-3a510f58854c===
+ok: added: pdf-3a510f58854c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3a510f58854c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[39] trading-and-markets pdf-3d3d42a0717a===
+ok: added: pdf-3d3d42a0717a → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3d3d42a0717a.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[40] trading-and-markets pdf-3eea925a6037===
+ok: added: pdf-3eea925a6037 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3eea925a6037.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[41] trading-and-markets pdf-40482428d656===
+ok: added: pdf-40482428d656 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-40482428d656.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[42] trading-and-markets pdf-46c6dd54d41e===
+ok: added: pdf-46c6dd54d41e → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-46c6dd54d41e.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[43] trading-and-markets pdf-4b87a8059b38===
+ok: added: pdf-4b87a8059b38 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4b87a8059b38.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[44] trading-and-markets pdf-4dbe002c1c7a===
+ok: added: pdf-4dbe002c1c7a → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4dbe002c1c7a.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[45] trading-and-markets pdf-4e80c02052f4===
+ok: added: pdf-4e80c02052f4 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4e80c02052f4.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[46] trading-and-markets pdf-503a04772afb===
+ok: added: pdf-503a04772afb → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-503a04772afb.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[47] trading-and-markets pdf-50a1f07b475f===
+ok: added: pdf-50a1f07b475f → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-50a1f07b475f.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[48] trading-and-markets pdf-57b1d100694e===
+ok: added: pdf-57b1d100694e → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-57b1d100694e.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[49] trading-and-markets pdf-5a5936689043===
+ok: added: pdf-5a5936689043 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5a5936689043.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[50] trading-and-markets pdf-5a6062a63a4b===
+ok: added: pdf-5a6062a63a4b → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5a6062a63a4b.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[51] trading-and-markets pdf-5bef1fceb745===
+ok: added: pdf-5bef1fceb745 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5bef1fceb745.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[52] trading-and-markets pdf-5e6d63eac790===
+ok: added: pdf-5e6d63eac790 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5e6d63eac790.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[53] trading-and-markets pdf-5ef2018823c8===
+ok: added: pdf-5ef2018823c8 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5ef2018823c8.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[54] trading-and-markets pdf-67b6fe78b28c===
+ok: added: pdf-67b6fe78b28c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-67b6fe78b28c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[55] trading-and-markets pdf-69a1f97797ce===
+ok: added: pdf-69a1f97797ce → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-69a1f97797ce.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[56] trading-and-markets pdf-6ae97b9c27c7===
+ok: added: pdf-6ae97b9c27c7 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6ae97b9c27c7.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[57] trading-and-markets pdf-6ba2dc608ac8===
+ok: added: pdf-6ba2dc608ac8 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6ba2dc608ac8.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[58] trading-and-markets pdf-704c439723d0===
+ok: added: pdf-704c439723d0 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-704c439723d0.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[59] trading-and-markets pdf-734e612fdf31===
+ok: added: pdf-734e612fdf31 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-734e612fdf31.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[60] trading-and-markets pdf-7663c24d3159===
+ok: added: pdf-7663c24d3159 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7663c24d3159.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[61] trading-and-markets pdf-7acc9c92267c===
+ok: added: pdf-7acc9c92267c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7acc9c92267c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[62] trading-and-markets pdf-81305d181382===
+ok: added: pdf-81305d181382 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-81305d181382.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[63] trading-and-markets pdf-853a7755a470===
+ok: added: pdf-853a7755a470 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-853a7755a470.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[64] trading-and-markets pdf-869163b2f118===
+ok: added: pdf-869163b2f118 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-869163b2f118.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[65] trading-and-markets pdf-87087198976b===
+ok: added: pdf-87087198976b → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-87087198976b.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[66] trading-and-markets pdf-8f021296560c===
+ok: added: pdf-8f021296560c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8f021296560c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[67] trading-and-markets pdf-90e7f9350657===
+ok: added: pdf-90e7f9350657 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-90e7f9350657.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[68] trading-and-markets pdf-930894c4fbad===
+ok: added: pdf-930894c4fbad → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-930894c4fbad.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[69] trading-and-markets pdf-9495a5abb859===
+ok: added: pdf-9495a5abb859 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9495a5abb859.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[70] trading-and-markets pdf-94cecf7a170a===
+ok: added: pdf-94cecf7a170a → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-94cecf7a170a.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[71] trading-and-markets pdf-9613f301a3b5===
+ok: added: pdf-9613f301a3b5 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9613f301a3b5.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[72] trading-and-markets pdf-9da6062f0265===
+ok: added: pdf-9da6062f0265 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9da6062f0265.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[73] trading-and-markets pdf-a0072c763cf8===
+ok: added: pdf-a0072c763cf8 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a0072c763cf8.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[74] trading-and-markets pdf-a25e1c0d5f08===
+ok: added: pdf-a25e1c0d5f08 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a25e1c0d5f08.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[75] trading-and-markets pdf-a3789262265a===
+ok: added: pdf-a3789262265a → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a3789262265a.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[76] trading-and-markets pdf-a98b496e5936===
+ok: added: pdf-a98b496e5936 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a98b496e5936.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[77] trading-and-markets pdf-b72c5d424466===
+ok: added: pdf-b72c5d424466 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b72c5d424466.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[78] trading-and-markets pdf-b8cec9d1ec0c===
+ok: added: pdf-b8cec9d1ec0c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b8cec9d1ec0c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[79] trading-and-markets pdf-be69dd282a8c===
+ok: added: pdf-be69dd282a8c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-be69dd282a8c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[80] trading-and-markets pdf-bf1afc73ac8f===
+ok: added: pdf-bf1afc73ac8f → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bf1afc73ac8f.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[81] trading-and-markets pdf-c25a6984aba0===
+ok: added: pdf-c25a6984aba0 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c25a6984aba0.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[82] trading-and-markets pdf-c57b9a32c399===
+ok: added: pdf-c57b9a32c399 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c57b9a32c399.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[83] trading-and-markets pdf-c9b8f466ea39===
+ok: added: pdf-c9b8f466ea39 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c9b8f466ea39.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[84] trading-and-markets pdf-cce4b539ce1c===
+ok: added: pdf-cce4b539ce1c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-cce4b539ce1c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[85] trading-and-markets pdf-d0b9b7e97b5c===
+ok: added: pdf-d0b9b7e97b5c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d0b9b7e97b5c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[86] trading-and-markets pdf-d196e853ebc0===
+ok: added: pdf-d196e853ebc0 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d196e853ebc0.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[87] trading-and-markets pdf-d7094631fbf1===
+ok: added: pdf-d7094631fbf1 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d7094631fbf1.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[88] trading-and-markets pdf-e2068d89c2a7===
+ok: added: pdf-e2068d89c2a7 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e2068d89c2a7.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[89] trading-and-markets pdf-e63407c2b4f4===
+ok: added: pdf-e63407c2b4f4 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e63407c2b4f4.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[90] trading-and-markets pdf-e8351bcf5615===
+ok: added: pdf-e8351bcf5615 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e8351bcf5615.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[91] trading-and-markets pdf-ea646c451aae===
+ok: added: pdf-ea646c451aae → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ea646c451aae.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[92] trading-and-markets pdf-ec9fdef2193c===
+ok: added: pdf-ec9fdef2193c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ec9fdef2193c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[93] trading-and-markets pdf-ed56b074fb11===
+ok: added: pdf-ed56b074fb11 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ed56b074fb11.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[94] trading-and-markets pdf-f073cccdbfe6===
+ok: added: pdf-f073cccdbfe6 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f073cccdbfe6.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[95] trading-and-markets pdf-f139d7bd1924===
+ok: added: pdf-f139d7bd1924 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f139d7bd1924.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[96] trading-and-markets pdf-f2565310670c===
+ok: added: pdf-f2565310670c → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f2565310670c.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[97] trading-and-markets pdf-fa83c61dfa2d===
+ok: added: pdf-fa83c61dfa2d → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fa83c61dfa2d.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[98] trading-and-markets pdf-fb3e28ab676a===
+ok: added: pdf-fb3e28ab676a → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fb3e28ab676a.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[99] trading-and-markets pdf-girquark-2022-global-economics-analyst===
+ok: added: pdf-girquark-2022-global-economics-analyst → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-girquark-2022-global-economics-analyst.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[100] trading-and-markets pdf-lasse-pedersen-2011-title-how-to===
+ok: added: pdf-lasse-pedersen-2011-title-how-to → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-lasse-pedersen-2011-title-how-to.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[101] trading-and-markets pdf-eric-benhamou-2021-powerpoint-presentation===
+ok: added: pdf-eric-benhamou-2021-powerpoint-presentation → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-eric-benhamou-2021-powerpoint-presentation.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[102] trading-and-markets pdf-bd-2002-microsoft-word-dow===
+ok: added: pdf-bd-2002-microsoft-word-dow → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bd-2002-microsoft-word-dow.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[103] trading-and-markets pdf-ari-kiev-2005-stocks-commodities-v===
+ok: added: pdf-ari-kiev-2005-stocks-commodities-v → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ari-kiev-2005-stocks-commodities-v.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[104] trading-and-markets pdf-ali-khan-2023-the-ict-bible===
+ok: added: pdf-ali-khan-2023-the-ict-bible → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ali-khan-2023-the-ict-bible.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[105] trading-and-markets pdf-alberto-frizziero-2023-thenorthloop-intro-eng===
+ok: added: pdf-alberto-frizziero-2023-thenorthloop-intro-eng → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-alberto-frizziero-2023-thenorthloop-intro-eng.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[106] trading-and-markets pdf-sqzme-2020-the-implied-order===
+ok: added: pdf-sqzme-2020-the-implied-order → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-sqzme-2020-the-implied-order.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[107] trading-and-markets pdf-sugsu-2020-microsoft-word-hfholdem===
+ok: added: pdf-sugsu-2020-microsoft-word-hfholdem → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-sugsu-2020-microsoft-word-hfholdem.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[108] trading-and-markets pdf-won-2022-bii-global-outlook===
+ok: added: pdf-won-2022-bii-global-outlook → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-won-2022-bii-global-outlook.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[109] trading-and-markets pdf-judy-2022-primer-adjusted-a===
+ok: added: pdf-judy-2022-primer-adjusted-a → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-judy-2022-primer-adjusted-a.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[110] trading-and-markets pdf-tw-2007-3379-pdf===
+ok: added: pdf-tw-2007-3379-pdf → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-tw-2007-3379-pdf.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[111] trading-and-markets pdf-ned-augenblick-2025-overinference-from-weak===
+ok: added: pdf-ned-augenblick-2025-overinference-from-weak → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ned-augenblick-2025-overinference-from-weak.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[112] trading-and-markets pdf-silicon-valley-2025-state-of-the===
+ok: added: pdf-silicon-valley-2025-state-of-the → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-silicon-valley-2025-state-of-the.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[113] trading-and-markets pdf-matthew-notowidigdo-2020-gkno-manuscript-1025===
+ok: added: pdf-matthew-notowidigdo-2020-gkno-manuscript-1025 → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-matthew-notowidigdo-2020-gkno-manuscript-1025.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+===[114] trading-and-markets pdf-munger-2021-revised-psychology-of===
+ok: added: pdf-munger-2021-revised-psychology-of → trading-and-markets (ccbda94f-7251-42bb-864f-0e1c9850f7ad)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-munger-2021-revised-psychology-of.md
+  touched: /Users/andrewgrant/code/knowledge/nlm/notebooks.yaml
+---
+NLM_ADD_DONE 2026-05-01T22:06:55Z

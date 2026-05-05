@@ -26,6 +26,7 @@ from gateway.lint import (
     schema_drift,
     stale_claims,
     stale_drafts,
+    untagged_sources,
 )
 
 
@@ -41,6 +42,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("filter-calibration", filter_calibration.run),
     ("inbox-pending", inbox_pending.run),
     ("nlm-pending", nlm_pending.run),
+    ("untagged-sources", untagged_sources.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

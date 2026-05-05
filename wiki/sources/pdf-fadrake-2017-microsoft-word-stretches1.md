@@ -1,0 +1,24 @@
+---
+type: source
+source_id: pdf-fadrake-2017-microsoft-word-stretches1
+source_type: pdf
+title: Microsoft Word - Stretches1
+domains: []
+ingested_at: '2026-04-29T16:21:45Z'
+---
+# Microsoft Word - Stretches1
+
+**Source:** [[raw/pdf/pdf-fadrake-2017-microsoft-word-stretches1]] · pdf · 2017
+**Authors:** fadrake
+
+## Summary
+
+_(summary not yet generated — agent-driven authorship lands in M6)_
+
+## Key claims
+
+_(claims not yet extracted)_
+
+## Cross-references
+
+_(no cross-references yet)_

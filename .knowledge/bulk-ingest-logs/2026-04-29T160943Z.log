@@ -1,0 +1,3037 @@
+BULK_INGEST_START total=396 at 2026-04-29T16:09:43Z
+===[1/396] 011277054.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a3f540369652 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a3f540369652.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a3f540369652.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[2/396] 1-How-to-plan-prepare-and-practise-a-3-day-water-fast.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c714fd09a0e2 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c714fd09a0e2.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c714fd09a0e2.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[3/396] 1-s2.0-S2667257X22001000-main.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-arman-fesharaki-2022-clinical-experience-with (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-arman-fesharaki-2022-clinical-experience-with.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-arman-fesharaki-2022-clinical-experience-with.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[4/396] 1603404947556_Andrew_Grant_TestOrders_1603404700095.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7210efe61aca (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7210efe61aca.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7210efe61aca.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[5/396] 19e025e3-6805-46e6-aad5-a64996f0313a.pdf.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ffa7cb0d676b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ffa7cb0d676b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ffa7cb0d676b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[6/396] 1K-Clear-Acrylic_en-US.pdf===
+operation failed:
+  - conversion failed: pdfplumber failed on /Users/andrewgrant/code/apple-notes/pdfs/1K-Clear-Acrylic_en-US.pdf: No /Root object! - Is this really a PDF?
+---
+===[7/396] 2-Natural-methods-for-the-relief-of-detox-symptoms-while-fasting.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-12efc067b9c4 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-12efc067b9c4.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-12efc067b9c4.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[8/396] 2002DowAwardb.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-bd-2002-microsoft-word-dow (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bd-2002-microsoft-word-dow.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-bd-2002-microsoft-word-dow.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[9/396] 2014-Two-centuries-of-trend-following.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-be69dd282a8c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-be69dd282a8c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-be69dd282a8c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[10/396] 2017-East-Bay-11x17-with-sponsorsV418.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-76e772f87e3e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-76e772f87e3e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-76e772f87e3e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[11/396] 2020_07_15_15_44_29.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/2020_07_15_15_44_29.pdf
+---
+===[12/396] 2022-Streaming-Summit-Netflix.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-722fa9c1c3ec (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-722fa9c1c3ec.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-722fa9c1c3ec.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[13/396] 2022+Install+++Measure.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-22db99a820c9 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-22db99a820c9.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-22db99a820c9.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[14/396] 2023-apollo-economic-and-capital-markets-outlook-white-paper.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d196e853ebc0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d196e853ebc0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d196e853ebc0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[15/396] 20230413_japan's ai whitepaper_summary_etrans.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ai-2023-japan-s-ai (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ai-2023-japan-s-ai.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ai-2023-japan-s-ai.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[16/396] 2106.14204.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-752c8824b750 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-752c8824b750.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-752c8824b750.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[17/396] 2209270_cs_io_2023_en_rgb_digital.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8f021296560c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8f021296560c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8f021296560c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[18/396] 2304_Japan’s AI Whitepaper_Etrans.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-822d5467c24e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-822d5467c24e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-822d5467c24e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[19/396] 2405.12768.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-806192f007eb (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-806192f007eb.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-806192f007eb.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[20/396] 2632504.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-790fb6d5b7a9 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-790fb6d5b7a9.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-790fb6d5b7a9.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[21/396] 650e450994ef9ab775e16acf_Neural_Network_Newsletter_Foundational_Fitness_Protocol.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-619e7fbc6084 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-619e7fbc6084.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-619e7fbc6084.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[22/396] 65392592bb96259e6c00f4f7_Math of the Multi-Manager_CA.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7663c24d3159 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7663c24d3159.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7663c24d3159.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[23/396] 6602custbill07082024.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-pro-api-2024-pro-document (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-pro-api-2024-pro-document.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-pro-api-2024-pro-document.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[24/396] 73dc960b-75e6-4e36-b517-787ce5c73c0c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3eea925a6037 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3eea925a6037.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3eea925a6037.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[25/396] 769240999537-8698880769-ticket.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f12a60b2c8fa (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f12a60b2c8fa.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f12a60b2c8fa.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[26/396] 8651_paper_YaE6zR98.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ae7c68b9e007 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ae7c68b9e007.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ae7c68b9e007.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[27/396] 88dcf98f-e787-4751-a8e9-8f2d700c5d3f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e5aced8b7d48 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e5aced8b7d48.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e5aced8b7d48.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[28/396] aa7737b3645178c0b746a57f1bdff2cd_MIT6_441S10_lec01.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-muriel-m-2004-6-441-information (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-muriel-m-2004-6-441-information.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-muriel-m-2004-6-441-information.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[29/396] akash-position.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c9b8f466ea39 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c9b8f466ea39.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c9b8f466ea39.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[30/396] Ambrus Capital - Volatility and the Changing Market Structure Driving U.S. Equities.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-04854302f962 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-04854302f962.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-04854302f962.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[31/396] annual_outlook_2023.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-90e7f9350657 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-90e7f9350657.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-90e7f9350657.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[32/396] Anti_Aging_Performance_Protocol.pdf===
+operation failed:
+  - conversion failed: pdfplumber failed on /Users/andrewgrant/code/apple-notes/pdfs/Anti_Aging_Performance_Protocol.pdf: No /Root object! - Is this really a PDF?
+---
+===[33/396] Ari Kiev - 1998 - Trading To Win - The Psychology Of Mastering The Markets - Isbn 0471248428 - 26.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-869163b2f118 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-869163b2f118.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-869163b2f118.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[34/396] article_2023investmentoutlook_enin.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-bf1afc73ac8f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bf1afc73ac8f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-bf1afc73ac8f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[35/396] article_stockmarketconcentration.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7acc9c92267c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7acc9c92267c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7acc9c92267c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[36/396] ATCORSICA_3volets_velo_UK (4).pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-432fe168a2d1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-432fe168a2d1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-432fe168a2d1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[37/396] Autophagy-Protocol-v3.3.1-1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-tom-bunker-2022-the-autophagy-protocol (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-tom-bunker-2022-the-autophagy-protocol.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-tom-bunker-2022-the-autophagy-protocol.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[38/396] Balanced Price Ranges.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-40482428d656 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-40482428d656.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-40482428d656.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[39/396] baum.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/baum.pdf
+---
+===[40/396] beatthemarket.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9da6062f0265 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9da6062f0265.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9da6062f0265.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[41/396] BEST-LOSER-WINS-1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-1590d4650297 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1590d4650297.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-1590d4650297.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[42/396] bii-global-outlook-2023.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-won-2022-bii-global-outlook (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-won-2022-bii-global-outlook.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-won-2022-bii-global-outlook.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[43/396] BobaTrader_DaytradeGuide.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9613f301a3b5 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9613f301a3b5.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9613f301a3b5.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[44/396] Bodyblade-Exercise-Guide_Wallchart.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e4972167d950 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e4972167d950.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e4972167d950.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[45/396] BR_-_Unicorn.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a6abe93bb85c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a6abe93bb85c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a6abe93bb85c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[46/396] brain-care-score.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b2b01a5ad215 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b2b01a5ad215.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b2b01a5ad215.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[47/396] Brass_Monkey_DCE_eBook.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-291109666e00 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-291109666e00.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-291109666e00.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[48/396] carte GT20 kakemono.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c985b0372d8a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c985b0372d8a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c985b0372d8a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[49/396] Cbot - A Six-Part Study Guide To Market Profile.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 4 '[[' vs 0 ']]'
+---
+===[50/396] CCC-TripNotes-July24-1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f03d709c7ff7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f03d709c7ff7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f03d709c7ff7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[51/396] CENTERD.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ari-kiev-2005-stocks-commodities-v (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ari-kiev-2005-stocks-commodities-v.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ari-kiev-2005-stocks-commodities-v.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[52/396] Cervial Stretch.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7488305fe64d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7488305fe64d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7488305fe64d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[53/396] cia-manual-trickery-deception-20091.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-h-keith-2015-the-official-cia (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-h-keith-2015-the-official-cia.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-h-keith-2015-the-official-cia.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[54/396] cloooyff101h3b88z8ob8gate.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-adrian-alberts-2023-via-optionality-a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-adrian-alberts-2023-via-optionality-a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-adrian-alberts-2023-via-optionality-a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[55/396] Core_Content_Month_5_.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-734e612fdf31 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-734e612fdf31.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-734e612fdf31.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[56/396] COVID GMV - Part 1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5bef1fceb745 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5bef1fceb745.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5bef1fceb745.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[57/396] COVID GMV - Part 2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-50a1f07b475f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-50a1f07b475f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-50a1f07b475f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[58/396] COVID GMV - Part 3.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e8351bcf5615 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e8351bcf5615.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e8351bcf5615.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[59/396] Crackle Fan TV _Execution Version 10.22.13_.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-tfreed-2013-microsoft-word-crackle (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-tfreed-2013-microsoft-word-crackle.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-tfreed-2013-microsoft-word-crackle.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[60/396] cycling-corsica-self-guided-luxury.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a78b30f3c6c3 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a78b30f3c6c3.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a78b30f3c6c3.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[61/396] Cycling+Physiology+&+Training+Science+Guide.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-21a07e2e3e63 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-21a07e2e3e63.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-21a07e2e3e63.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[62/396] Datazoom_White Paper_Fall2021.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-datazoom-2022-datazoom-white-paper (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-datazoom-2022-datazoom-white-paper.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-datazoom-2022-datazoom-white-paper.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[63/396] DE2500E__0f67256d.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-0f67256d2a46 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-0f67256d2a46.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-0f67256d2a46.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[64/396] DE2500E__5458c384.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5458c384bd4e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5458c384bd4e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5458c384bd4e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[65/396] DE2500E__8ced6e47.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8ced6e4710cc (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8ced6e4710cc.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8ced6e4710cc.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[66/396] DE2500E__e5f64ceb.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e5f64ceb7435 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e5f64ceb7435.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e5f64ceb7435.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[67/396] DE2500E.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-da63389cb4c7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-da63389cb4c7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-da63389cb4c7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[68/396] DE2501.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-bd335db7e921 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bd335db7e921.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-bd335db7e921.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[69/396] DE2525A.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b98c88d710d6 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b98c88d710d6.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b98c88d710d6.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[70/396] DE2593.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a29e93f8e3d0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a29e93f8e3d0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a29e93f8e3d0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[71/396] DE429D.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-94d14a737c1c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-94d14a737c1c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-94d14a737c1c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[72/396] Deleveraging.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f139d7bd1924 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f139d7bd1924.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f139d7bd1924.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[73/396] demystifying_ict_109.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-930894c4fbad (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-930894c4fbad.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-930894c4fbad.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[74/396] demystifying_ict_111.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-94cecf7a170a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-94cecf7a170a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-94cecf7a170a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[75/396] demystifying_ict_113.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-1ab14c833d75 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1ab14c833d75.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-1ab14c833d75.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[76/396] Diagram of laser cut for wok table.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2a01d855e4a8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2a01d855e4a8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2a01d855e4a8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[77/396] DIY_Cold_Plunge_Parts_Components_List.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-dee0cc8161e1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-dee0cc8161e1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-dee0cc8161e1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[78/396] DIY-Cold-Plunge-Version2-Framing-Update.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4585c877938f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4585c877938f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4585c877938f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[79/396] document-1208817-1652548252608.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3d3d42a0717a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3d3d42a0717a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3d3d42a0717a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[80/396] document-1231497-1662152072164.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-503a04772afb (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-503a04772afb.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-503a04772afb.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[81/396] Dolby_LTD Claim Application_Standard.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-tw-2007-3379-pdf (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-tw-2007-3379-pdf.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-tw-2007-3379-pdf.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[82/396] Dr._Kristy_Vermeulen_TestOrder__6c93ebb1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6c93ebb15d0f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6c93ebb15d0f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6c93ebb15d0f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[83/396] Dr._Kristy_Vermeulen_TestOrder.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3955e8a75816 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3955e8a75816.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3955e8a75816.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[84/396] Draw On Liqudity PDF By daytradingrauf.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-cce4b539ce1c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-cce4b539ce1c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-cce4b539ce1c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[85/396] Druckenmiller-Speech.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/Druckenmiller-Speech.pdf
+---
+===[86/396] EKO_I.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c1cde2a9cc90 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c1cde2a9cc90.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c1cde2a9cc90.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[87/396] emm201482.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-chi-young-2019-ebv-driven-b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-chi-young-2019-ebv-driven-b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-chi-young-2019-ebv-driven-b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[88/396] etap-axs-systems-manual.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f13aa755f8e2 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f13aa755f8e2.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f13aa755f8e2.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[89/396] f162245.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3b79b4901728 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3b79b4901728.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3b79b4901728.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[90/396] FallbackPDF__0211e21e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-0211e21ea4aa (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-0211e21ea4aa.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-0211e21ea4aa.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[91/396] FallbackPDF__033174a2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-033174a2de42 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-033174a2de42.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-033174a2de42.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[92/396] FallbackPDF__0924107c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-walter-andrew-2025-03022021-dmc-bp (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-walter-andrew-2025-03022021-dmc-bp.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-walter-andrew-2025-03022021-dmc-bp.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[93/396] FallbackPDF__09462f04.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-june-marie-2025-paper-no-200000 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-june-marie-2025-paper-no-200000.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-june-marie-2025-paper-no-200000.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[94/396] FallbackPDF__094f1d9d.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-094f1d9d6548 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-094f1d9d6548.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-094f1d9d6548.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[95/396] FallbackPDF__0a871750.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-zhuo-yang-2026-detailed-balance-in (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-zhuo-yang-2026-detailed-balance-in.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-zhuo-yang-2026-detailed-balance-in.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[96/396] FallbackPDF__0a9b334e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-0a9b334e1c2d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-0a9b334e1c2d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-0a9b334e1c2d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[97/396] FallbackPDF__0b290e83.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-0b290e83f755 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-0b290e83f755.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-0b290e83f755.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[98/396] FallbackPDF__0b9f2b87.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-weyerhaeuser-2025-specifier-s-guide (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-weyerhaeuser-2025-specifier-s-guide.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-weyerhaeuser-2025-specifier-s-guide.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[99/396] FallbackPDF__0d38103a.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__0d38103a.pdf
+---
+===[100/396] FallbackPDF__0e6b5368.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-0e6b5368a076 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-0e6b5368a076.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-0e6b5368a076.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[101/396] FallbackPDF__118e23fb.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-118e23fb0ce8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-118e23fb0ce8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-118e23fb0ce8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[102/396] FallbackPDF__127a2885.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-127a2885bd13 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-127a2885bd13.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-127a2885bd13.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[103/396] FallbackPDF__13db284f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-13db284f8534 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-13db284f8534.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-13db284f8534.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[104/396] FallbackPDF__17529aba.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-17529aba7cce (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-17529aba7cce.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-17529aba7cce.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[105/396] FallbackPDF__17a00f38.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-james-evans-2026-agentic-ai-and (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-james-evans-2026-agentic-ai-and.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-james-evans-2026-agentic-ai-and.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[106/396] FallbackPDF__17e6e6e0.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-17e6e6e01f3b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-17e6e6e01f3b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-17e6e6e01f3b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[107/396] FallbackPDF__1b710a6e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-julien-delavande-2025-video-killed-the (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-julien-delavande-2025-video-killed-the.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-julien-delavande-2025-video-killed-the.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[108/396] FallbackPDF__1c2fdf80.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-1c2fdf801c6b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1c2fdf801c6b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-1c2fdf801c6b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[109/396] FallbackPDF__1e3d7106.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-peter-belcak-2025-small-language-models (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-peter-belcak-2025-small-language-models.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-peter-belcak-2025-small-language-models.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[110/396] FallbackPDF__1fa5e543.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-1fa5e543fab6 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1fa5e543fab6.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-1fa5e543fab6.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[111/396] FallbackPDF__21e4a1af.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-21e4a1afe49d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-21e4a1afe49d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-21e4a1afe49d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[112/396] FallbackPDF__22a56060.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-22a560609b73 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-22a560609b73.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-22a560609b73.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[113/396] FallbackPDF__26c630d7.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-microsoft-2025-lakehouse-analytics-with (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-microsoft-2025-lakehouse-analytics-with.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-microsoft-2025-lakehouse-analytics-with.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[114/396] FallbackPDF__27d519c0.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-27d519c0e40e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-27d519c0e40e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-27d519c0e40e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[115/396] FallbackPDF__2810e83d.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-anonymous-2025-untitled (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-anonymous-2025-untitled.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-anonymous-2025-untitled.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[116/396] FallbackPDF__288c9244.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-288c92444b7b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-288c92444b7b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-288c92444b7b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[117/396] FallbackPDF__2910126e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ari-kohen-2025-the-possibility-of (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ari-kohen-2025-the-possibility-of.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ari-kohen-2025-the-possibility-of.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[118/396] FallbackPDF__2a41ed54.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2a41ed54b530 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2a41ed54b530.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2a41ed54b530.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[119/396] FallbackPDF__2c7e2623.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2c7e26235f7e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2c7e26235f7e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2c7e26235f7e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[120/396] FallbackPDF__2d1e08cb.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ali-modarressi-2025-nolima-long-context (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ali-modarressi-2025-nolima-long-context.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ali-modarressi-2025-nolima-long-context.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[121/396] FallbackPDF__2e350b47.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2e350b47338f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2e350b47338f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2e350b47338f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[122/396] FallbackPDF__2e3c4f48.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2e3c4f48c406 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2e3c4f48c406.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2e3c4f48c406.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[123/396] FallbackPDF__34da750c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-34da750c8df9 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-34da750c8df9.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-34da750c8df9.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[124/396] FallbackPDF__35254d4f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-35254d4f46e5 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-35254d4f46e5.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-35254d4f46e5.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[125/396] FallbackPDF__36010c5f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-36010c5f79c7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-36010c5f79c7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-36010c5f79c7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[126/396] FallbackPDF__363bd16a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-363bd16a840b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-363bd16a840b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-363bd16a840b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[127/396] FallbackPDF__389750b6.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-389750b6b88a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-389750b6b88a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-389750b6b88a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[128/396] FallbackPDF__38c1aafb.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-stanford-2026-the-stanford-emerging (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-stanford-2026-the-stanford-emerging.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-stanford-2026-the-stanford-emerging.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[129/396] FallbackPDF__3b145fe5.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3b145fe51a1c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3b145fe51a1c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3b145fe51a1c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[130/396] FallbackPDF__3c418ffa.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3c418ffaad94 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3c418ffaad94.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3c418ffaad94.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[131/396] FallbackPDF__3d1d7b85.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3d1d7b855dd1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3d1d7b855dd1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3d1d7b855dd1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[132/396] FallbackPDF__3feca562.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3feca5629643 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3feca5629643.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3feca5629643.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[133/396] FallbackPDF__41bef100.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-41bef100a5b8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-41bef100a5b8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-41bef100a5b8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[134/396] FallbackPDF__42854f3a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ashish-vaswani-2025-attention-is-all (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ashish-vaswani-2025-attention-is-all.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ashish-vaswani-2025-attention-is-all.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[135/396] FallbackPDF__450887d2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-shu-yang-2026-multi-user-large (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-shu-yang-2026-multi-user-large.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-shu-yang-2026-multi-user-large.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[136/396] FallbackPDF__45ff4497.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-45ff4497a4fa (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-45ff4497a4fa.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-45ff4497a4fa.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[137/396] FallbackPDF__46e231d2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-46e231d277c1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-46e231d277c1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-46e231d277c1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[138/396] FallbackPDF__48c7d3ed.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 4 '[[' vs 0 ']]'
+---
+===[139/396] FallbackPDF__4b3c91cf.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4b3c91cf8a4b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4b3c91cf8a4b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4b3c91cf8a4b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[140/396] FallbackPDF__4c4d8990.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4c4d8990038c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4c4d8990038c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4c4d8990038c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[141/396] FallbackPDF__4d169c08.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4d169c0820d1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4d169c0820d1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4d169c0820d1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[142/396] FallbackPDF__4d5f400f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ngor-luong-2026-two-loops-how (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ngor-luong-2026-two-loops-how.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ngor-luong-2026-two-loops-how.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[143/396] FallbackPDF__4e652426.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__4e652426.pdf
+---
+===[144/396] FallbackPDF__5125a4af.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5125a4afa6b9 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5125a4afa6b9.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5125a4afa6b9.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[145/396] FallbackPDF__524e0daa.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-microsoft-office-2025-verizon-all-in (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-microsoft-office-2025-verizon-all-in.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-microsoft-office-2025-verizon-all-in.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[146/396] FallbackPDF__52b4ed55.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-52b4ed5501ea (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-52b4ed5501ea.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-52b4ed5501ea.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[147/396] FallbackPDF__52c6bed0.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-52c6bed0a109 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-52c6bed0a109.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-52c6bed0a109.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[148/396] FallbackPDF__53c7fc83.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-53c7fc83287b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-53c7fc83287b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-53c7fc83287b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[149/396] FallbackPDF__541468a2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-541468a248a7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-541468a248a7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-541468a248a7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[150/396] FallbackPDF__556aed08.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-556aed08cdc5 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-556aed08cdc5.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-556aed08cdc5.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[151/396] FallbackPDF__558c0dd2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-558c0dd2a984 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-558c0dd2a984.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-558c0dd2a984.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[152/396] FallbackPDF__559346de.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-559346dec38e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-559346dec38e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-559346dec38e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[153/396] FallbackPDF__55f3199c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-55f3199cb90d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-55f3199cb90d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-55f3199cb90d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[154/396] FallbackPDF__58fa2c63.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-58fa2c637329 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-58fa2c637329.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-58fa2c637329.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[155/396] FallbackPDF__591f388e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-591f388e741a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-591f388e741a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-591f388e741a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[156/396] FallbackPDF__5add0d29.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5add0d29d90b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5add0d29d90b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5add0d29d90b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[157/396] FallbackPDF__5bc5e791.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__5bc5e791.pdf
+---
+===[158/396] FallbackPDF__5bec4fee.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5bec4feeb233 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5bec4feeb233.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5bec4feeb233.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[159/396] FallbackPDF__5d0a37a8.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-loisn-2025-microsoft-powerpoint-ssimwave (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-loisn-2025-microsoft-powerpoint-ssimwave.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-loisn-2025-microsoft-powerpoint-ssimwave.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[160/396] FallbackPDF__5e6d63ea.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5e6d63eac790 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5e6d63eac790.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5e6d63eac790.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[161/396] FallbackPDF__5ecb549c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5ecb549cf629 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5ecb549cf629.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5ecb549cf629.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[162/396] FallbackPDF__60d4aba6.pdf===
+no-op: already ingested (no-op): pdf-ashish-vaswani-2025-attention-is-all
+---
+===[163/396] FallbackPDF__61846557.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6184655703a4 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6184655703a4.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6184655703a4.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[164/396] FallbackPDF__61ed8424.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-61ed8424c5e2 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-61ed8424c5e2.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-61ed8424c5e2.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[165/396] FallbackPDF__62159731.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-tony-cavaliere-2025-powerpoint-presentation (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-tony-cavaliere-2025-powerpoint-presentation.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-tony-cavaliere-2025-powerpoint-presentation.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[166/396] FallbackPDF__622d3289.pdf===
+no-op: already ingested (no-op): pdf-james-evans-2026-agentic-ai-and
+---
+===[167/396] FallbackPDF__62bb5ad6.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-grant-2025-ceg-cloud-strategy (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-grant-2025-ceg-cloud-strategy.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-grant-2025-ceg-cloud-strategy.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[168/396] FallbackPDF__62c72309.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__62c72309.pdf
+---
+===[169/396] FallbackPDF__63c667f1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-63c667f14a2e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-63c667f14a2e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-63c667f14a2e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[170/396] FallbackPDF__67a2bd6f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-67a2bd6f0f29 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-67a2bd6f0f29.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-67a2bd6f0f29.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[171/396] FallbackPDF__689849af.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-sallyw-2025-8611-pmd (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-sallyw-2025-8611-pmd.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-sallyw-2025-8611-pmd.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[172/396] FallbackPDF__68ddac8b.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 1 '[[' vs 0 ']]'
+---
+===[173/396] FallbackPDF__6ac87798.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6ac87798c7cc (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6ac87798c7cc.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6ac87798c7cc.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[174/396] FallbackPDF__6af25b3c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-chinthaka-wijebahu-2025-welcome-to-your (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-chinthaka-wijebahu-2025-welcome-to-your.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-chinthaka-wijebahu-2025-welcome-to-your.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[175/396] FallbackPDF__6b4cdd6c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6b4cdd6cf0b7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6b4cdd6cf0b7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6b4cdd6cf0b7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[176/396] FallbackPDF__6d8fa8a0.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6d8fa8a07cc7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6d8fa8a07cc7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6d8fa8a07cc7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[177/396] FallbackPDF__6f1b02bd.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6f1b02bd49dd (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6f1b02bd49dd.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6f1b02bd49dd.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[178/396] FallbackPDF__702ae85d.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-aetna-2025-summary-of-benefits (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-aetna-2025-summary-of-benefits.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-aetna-2025-summary-of-benefits.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[179/396] FallbackPDF__72d01ba8.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-72d01ba8e76e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-72d01ba8e76e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-72d01ba8e76e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[180/396] FallbackPDF__754a715a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-louise-pigott-2025-how-healing-happens (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-louise-pigott-2025-how-healing-happens.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-louise-pigott-2025-how-healing-happens.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[181/396] FallbackPDF__76c2d283.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-76c2d2834830 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-76c2d2834830.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-76c2d2834830.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[182/396] FallbackPDF__7816642d.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7816642d1569 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7816642d1569.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7816642d1569.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[183/396] FallbackPDF__7900a5ff.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7900a5ff606e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7900a5ff606e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7900a5ff606e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[184/396] FallbackPDF__82f65366.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-82f653667e9a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-82f653667e9a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-82f653667e9a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[185/396] FallbackPDF__83c3ccff.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-83c3ccfff1f1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-83c3ccfff1f1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-83c3ccfff1f1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[186/396] FallbackPDF__84607874.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8460787494f1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8460787494f1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8460787494f1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[187/396] FallbackPDF__848991f8.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-848991f80471 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-848991f80471.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-848991f80471.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[188/396] FallbackPDF__84c216d5.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-84c216d52d04 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-84c216d52d04.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-84c216d52d04.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[189/396] FallbackPDF__876233dd.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-876233dd0d49 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-876233dd0d49.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-876233dd0d49.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[190/396] FallbackPDF__8764fc54.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-jenny-zhang-2026-hyperagents (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-jenny-zhang-2026-hyperagents.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-jenny-zhang-2026-hyperagents.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[191/396] FallbackPDF__895bb1dd.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-895bb1ddd34b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-895bb1ddd34b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-895bb1ddd34b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[192/396] FallbackPDF__89eef967.pdf===
+operation failed:
+  - [source-immutability] source body has changed since previous ingest; sources in raw/ are immutable after creation
+---
+===[193/396] FallbackPDF__8be12149.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8be12149d4a1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8be12149d4a1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8be12149d4a1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[194/396] FallbackPDF__8c18ea1c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-danny-hernandez-2025-measuring-the-algorithmic (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-danny-hernandez-2025-measuring-the-algorithmic.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-danny-hernandez-2025-measuring-the-algorithmic.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[195/396] FallbackPDF__8dee6c5c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8dee6c5cd58d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8dee6c5cd58d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8dee6c5cd58d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[196/396] FallbackPDF__8f89445b.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/FallbackPDF__8f89445b.pdf
+---
+===[197/396] FallbackPDF__8fbf2b36.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8fbf2b364865 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8fbf2b364865.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8fbf2b364865.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[198/396] FallbackPDF__904aa725.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ari-kohen-2025-the-problem-of (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ari-kohen-2025-the-problem-of.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ari-kohen-2025-the-problem-of.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[199/396] FallbackPDF__93899144.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-938991442a23 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-938991442a23.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-938991442a23.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[200/396] FallbackPDF__947f6c4c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-kimi-team-2026-kimi-k2-open (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-kimi-team-2026-kimi-k2-open.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-kimi-team-2026-kimi-k2-open.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[201/396] FallbackPDF__94c73255.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-karak-2025-7d4c9e10 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-karak-2025-7d4c9e10.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-karak-2025-7d4c9e10.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[202/396] FallbackPDF__9751fb2d.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9751fb2dd798 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9751fb2dd798.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9751fb2dd798.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[203/396] FallbackPDF__977a670e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-977a670e03f0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-977a670e03f0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-977a670e03f0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[204/396] FallbackPDF__9953c0c8.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9953c0c8f2cf (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9953c0c8f2cf.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9953c0c8f2cf.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[205/396] FallbackPDF__9af46fc9.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9af46fc95b67 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9af46fc95b67.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9af46fc95b67.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[206/396] FallbackPDF__9ddd831e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9ddd831efdf7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9ddd831efdf7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9ddd831efdf7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[207/396] FallbackPDF__9eb27283.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9eb272833703 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9eb272833703.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9eb272833703.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[208/396] FallbackPDF__a0e32117.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a0e321177c90 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a0e321177c90.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a0e321177c90.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[209/396] FallbackPDF__a11e1f62.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a11e1f621db0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a11e1f621db0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a11e1f621db0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[210/396] FallbackPDF__a2cd445c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a2cd445ca148 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a2cd445ca148.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a2cd445ca148.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[211/396] FallbackPDF__a52b398e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a52b398e6f19 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a52b398e6f19.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a52b398e6f19.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[212/396] FallbackPDF__a7975804.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a79758041dbd (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a79758041dbd.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a79758041dbd.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[213/396] FallbackPDF__abc1e5ec.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-abc1e5ec17ac (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-abc1e5ec17ac.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-abc1e5ec17ac.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[214/396] FallbackPDF__ad9e06b6.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-rschapir-2025-microsoft-word-perry (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-rschapir-2025-microsoft-word-perry.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-rschapir-2025-microsoft-word-perry.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[215/396] FallbackPDF__aeb6b92c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-aeb6b92cf01f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-aeb6b92cf01f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-aeb6b92cf01f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[216/396] FallbackPDF__b28cec1c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b28cec1c663b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b28cec1c663b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b28cec1c663b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[217/396] FallbackPDF__b34b5a10.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b34b5a100b39 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b34b5a100b39.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b34b5a100b39.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[218/396] FallbackPDF__b7937163.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b79371635e09 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b79371635e09.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b79371635e09.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[219/396] FallbackPDF__b7b2b3d8.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b7b2b3d880c3 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b7b2b3d880c3.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b7b2b3d880c3.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[220/396] FallbackPDF__b89dc71b.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b89dc71b2509 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b89dc71b2509.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b89dc71b2509.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[221/396] FallbackPDF__bbe54d7e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-bbe54d7e147c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bbe54d7e147c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-bbe54d7e147c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[222/396] FallbackPDF__be6c6b08.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-vaishak-belle-2026-the-future-is (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-vaishak-belle-2026-the-future-is.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-vaishak-belle-2026-the-future-is.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[223/396] FallbackPDF__bf6b5e90.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-bf6b5e90754a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bf6b5e90754a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-bf6b5e90754a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[224/396] FallbackPDF__c11926ce.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c11926cea46f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c11926cea46f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c11926cea46f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[225/396] FallbackPDF__c25a6984.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c25a6984aba0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c25a6984aba0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c25a6984aba0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[226/396] FallbackPDF__c29c838a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c29c838aa20b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c29c838aa20b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c29c838aa20b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[227/396] FallbackPDF__c2bbfa09.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c2bbfa097edc (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c2bbfa097edc.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c2bbfa097edc.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[228/396] FallbackPDF__c3353c6a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c3353c6a032a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c3353c6a032a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c3353c6a032a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[229/396] FallbackPDF__c614fd9b.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-grant-2025-12072020-v4-dolby (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-grant-2025-12072020-v4-dolby.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-grant-2025-12072020-v4-dolby.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[230/396] FallbackPDF__c8485929.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c84859291fb5 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c84859291fb5.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c84859291fb5.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[231/396] FallbackPDF__ca1d151a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ca1d151a5416 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ca1d151a5416.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ca1d151a5416.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[232/396] FallbackPDF__cb3a9579.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-marketing-penguin-2026-controller-setup-2 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-marketing-penguin-2026-controller-setup-2.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-marketing-penguin-2026-controller-setup-2.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[233/396] FallbackPDF__cb5c5933.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-cb5c59336180 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-cb5c59336180.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-cb5c59336180.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[234/396] FallbackPDF__cb610093.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-cb610093096f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-cb610093096f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-cb610093096f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[235/396] FallbackPDF__d22f3645.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d22f364536d6 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d22f364536d6.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d22f364536d6.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[236/396] FallbackPDF__d243bac1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-karak-2025-55f39988 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-karak-2025-55f39988.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-karak-2025-55f39988.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[237/396] FallbackPDF__d482d752.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ingeborg-walter-2025-high-absolute-bioavailability (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ingeborg-walter-2025-high-absolute-bioavailability.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ingeborg-walter-2025-high-absolute-bioavailability.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[238/396] FallbackPDF__d4f44fa5.pdf===
+no-op: already ingested (no-op): pdf-james-evans-2026-agentic-ai-and
+---
+===[239/396] FallbackPDF__d6e18241.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d6e18241c650 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d6e18241c650.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d6e18241c650.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[240/396] FallbackPDF__d723f602.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d723f6028f6f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d723f6028f6f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d723f6028f6f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[241/396] FallbackPDF__d86b1aa6.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d86b1aa6c865 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d86b1aa6c865.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d86b1aa6c865.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[242/396] FallbackPDF__dc4baf18.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 0 '[[' vs 1 ']]'
+---
+===[243/396] FallbackPDF__dce04675.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-dce04675e7ba (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-dce04675e7ba.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-dce04675e7ba.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[244/396] FallbackPDF__dfb891f5.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-dfb891f5063d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-dfb891f5063d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-dfb891f5063d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[245/396] FallbackPDF__e041755b.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e041755b97ee (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e041755b97ee.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e041755b97ee.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[246/396] FallbackPDF__e19096af.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e19096af61b2 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e19096af61b2.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e19096af61b2.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[247/396] FallbackPDF__e28cca5e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e28cca5e1126 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e28cca5e1126.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e28cca5e1126.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[248/396] FallbackPDF__e44972f8.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e44972f87a27 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e44972f87a27.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e44972f87a27.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[249/396] FallbackPDF__e7b345b9.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e7b345b98541 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e7b345b98541.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e7b345b98541.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[250/396] FallbackPDF__e861f9dd.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e861f9dd545b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e861f9dd545b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e861f9dd545b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[251/396] FallbackPDF__e939804a.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-zhengding-hu-2026-pancake-hierarchical-memory (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-zhengding-hu-2026-pancake-hierarchical-memory.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-zhengding-hu-2026-pancake-hierarchical-memory.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[252/396] FallbackPDF__ea646c45.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ea646c451aae (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ea646c451aae.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ea646c451aae.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[253/396] FallbackPDF__ead4392c.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ead4392c4bf5 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ead4392c4bf5.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ead4392c4bf5.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[254/396] FallbackPDF__edf7bd6d.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 0 '[[' vs 18 ']]'
+---
+===[255/396] FallbackPDF__ef131b6f.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-silicon-valley-2025-state-of-the (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-silicon-valley-2025-state-of-the.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-silicon-valley-2025-state-of-the.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[256/396] FallbackPDF__efc403c5.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ned-augenblick-2025-overinference-from-weak (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ned-augenblick-2025-overinference-from-weak.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ned-augenblick-2025-overinference-from-weak.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[257/396] FallbackPDF__f0bdc0d0.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f0bdc0d01b69 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f0bdc0d01b69.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f0bdc0d01b69.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[258/396] FallbackPDF__f2a51509.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f2a5150933db (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f2a5150933db.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f2a5150933db.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[259/396] FallbackPDF__f4016087.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f4016087ee51 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f4016087ee51.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f4016087ee51.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[260/396] FallbackPDF__f478e5f1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f478e5f11837 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f478e5f11837.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f478e5f11837.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[261/396] FallbackPDF__f6167676.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-wentao-zhang-2026-autogenesis-a-self (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-wentao-zhang-2026-autogenesis-a-self.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-wentao-zhang-2026-autogenesis-a-self.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[262/396] FallbackPDF__f9194abe.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ir-2025-activities-and-capabilities (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ir-2025-activities-and-capabilities.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ir-2025-activities-and-capabilities.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[263/396] FallbackPDF__f9a314e4.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f9a314e4fd77 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f9a314e4fd77.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f9a314e4fd77.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[264/396] FallbackPDF__f9fdfe90.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f9fdfe90be1b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f9fdfe90be1b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f9fdfe90be1b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[265/396] FallbackPDF__fa24f218.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-nawfal-2025-city-council-report (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-nawfal-2025-city-council-report.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-nawfal-2025-city-council-report.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[266/396] FallbackPDF__fa80507e.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-nenad-toma-2026-intelligent-ai-delegation (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-nenad-toma-2026-intelligent-ai-delegation.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-nenad-toma-2026-intelligent-ai-delegation.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[267/396] FallbackPDF__fac2ee1b.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-fac2ee1bbc71 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fac2ee1bbc71.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-fac2ee1bbc71.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[268/396] FallbackPDF__fb2e9724.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-fb2e97246010 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fb2e97246010.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-fb2e97246010.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[269/396] FallbackPDF__ff158d49.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ff158d49ddab (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ff158d49ddab.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ff158d49ddab.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[270/396] FallbackPDF__ff720bad.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ff720bad942e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ff720bad942e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ff720bad942e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[271/396] FallbackPDF.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4021a37e1354 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4021a37e1354.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4021a37e1354.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[272/396] FC8AEB056C2C32F10AFC327BA91F4A45_The_Bohemian_Grove_and_Other_Retreats.rtf.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4794e17fbb8d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4794e17fbb8d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4794e17fbb8d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[273/396] FEAR.pdf===
+operation failed:
+  - [source-immutability] source body has changed since previous ingest; sources in raw/ are immutable after creation
+---
+===[274/396] Filtration-Sanitation-System-Update-031823.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7cc82e1da425 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7cc82e1da425.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7cc82e1da425.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[275/396] Free_Top_Deck_Plan.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-063e4f708828 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-063e4f708828.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-063e4f708828.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[276/396] GDSv2_Richardson.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-114cf7d0e529 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-114cf7d0e529.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-114cf7d0e529.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[277/396] Grant Andrew 202110141955000747.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-397258475bac (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-397258475bac.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-397258475bac.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[278/396] Grant-Cademenos-2024 tax letter and forms for action items.pdf===
+operation failed:
+  - conversion failed: pdfplumber failed on /Users/andrewgrant/code/apple-notes/pdfs/Grant-Cademenos-2024 tax letter and forms for action items.pdf: 
+---
+===[279/396] Grant-Cademenos-2024 tax returns for records.pdf===
+operation failed:
+  - conversion failed: pdfplumber failed on /Users/andrewgrant/code/apple-notes/pdfs/Grant-Cademenos-2024 tax returns for records.pdf: 
+---
+===[280/396] HA stretches.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-fadrake-2017-microsoft-word-stretches1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fadrake-2017-microsoft-word-stretches1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-fadrake-2017-microsoft-word-stretches1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[281/396] Hanuman-Chalisa-Verses-1-40.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-83f79df08f23 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-83f79df08f23.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-83f79df08f23.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[282/396] Harry D Schultz - Bear Market Investing Strategies.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 1 '[[' vs 0 ']]'
+---
+===[283/396] HEM-ANKLE-REHAB.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/HEM-ANKLE-REHAB.pdf
+---
+===[284/396] high probability conditions.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-46c6dd54d41e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-46c6dd54d41e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-46c6dd54d41e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[285/396] Hino_Burke_2020.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a96a6a5b955a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a96a6a5b955a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a96a6a5b955a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[286/396] how_to_think_about_the_economy.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-judy-2022-primer-adjusted-a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-judy-2022-primer-adjusted-a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-judy-2022-primer-adjusted-a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[287/396] I'm profitable, now what.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b72c5d424466 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b72c5d424466.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b72c5d424466.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[288/396] ICT 2022 Mentorship Key Points.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3a3f6480ad77 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3a3f6480ad77.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3a3f6480ad77.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[289/396] ict’s_2022_mentorship_summarized___thread_by_trader_theory___sep 22, 22_from_rattibha.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a98b496e5936 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a98b496e5936.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a98b496e5936.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[290/396] ING_global_outlook_2023_Dec_2022_OT.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-87087198976b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-87087198976b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-87087198976b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[291/396] Installation-Guide-634M.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7924870991a0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7924870991a0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7924870991a0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[292/396] Installation-Guide-EZ80N.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-865171447a5f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-865171447a5f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-865171447a5f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[293/396] Installation-Guide-HB80RL.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6afe62f3662b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6afe62f3662b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6afe62f3662b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[294/396] Invocation Shlokas.pdf===
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e050817e9316 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e050817e9316.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e050817e9316.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[295/396] italy train ticket.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2f62ecbcd930 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2f62ecbcd930.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2f62ecbcd930.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[296/396] Joel-Greenblatt-Class.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d0b9b7e97b5c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d0b9b7e97b5c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d0b9b7e97b5c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[297/396] Kitchari+Cleanse.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ce80fb8c4e8d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ce80fb8c4e8d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ce80fb8c4e8d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[298/396] LAB ORDER FOR AG.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/LAB ORDER FOR AG.pdf
+---
+===[299/396] LAB ORDER SLIP FOR AG__3ff39648.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/LAB ORDER SLIP FOR AG__3ff39648.pdf
+---
+===[300/396] LAB ORDER SLIP FOR AG.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/LAB ORDER SLIP FOR AG.pdf
+---
+===[301/396] LBEX-LL 3356480-3356609.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4b87a8059b38 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4b87a8059b38.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4b87a8059b38.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[302/396] lecture5-market-wireframing-design.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c1b04b12481d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c1b04b12481d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c1b04b12481d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[303/396] lennytraderstrengthsweaknesses.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/lennytraderstrengthsweaknesses.pdf
+---
+===[304/396] Leopold-Aschenbrenner_Existential-risk-and-growth_.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e7ff11e4ad9b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e7ff11e4ad9b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e7ff11e4ad9b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[305/396] Lesson 11 - Divergence.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-19ce7da9ecfc (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-19ce7da9ecfc.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-19ce7da9ecfc.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[306/396] Lesson 12 - Daily, Weekly, Monthly, Opens (Power of 3 - Simplified).pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-075e9932265b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-075e9932265b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-075e9932265b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[307/396] Lesson_1_Price_and_Liquidity_.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-704c439723d0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-704c439723d0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-704c439723d0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[308/396] Lesson_2_Market_Structure_.pdf===
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-81305d181382 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-81305d181382.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-81305d181382.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[309/396] Lesson_3_Market_Structure_Shifts_intro_.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4e80c02052f4 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4e80c02052f4.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4e80c02052f4.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[310/396] Lesson_4_Fair_Value_Gap_FVG.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2698a38c6fa5 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2698a38c6fa5.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2698a38c6fa5.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[311/396] Lesson_5_Order_Blocks.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-69a1f97797ce (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-69a1f97797ce.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-69a1f97797ce.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[312/396] Lesson_6_Equilibrium_Discount_and_Premium.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f2565310670c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f2565310670c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f2565310670c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[313/396] Lesson_8_Power_of_3.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a3789262265a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a3789262265a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a3789262265a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[314/396] Lesson_9_Order_Blocks_2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-042302b20a5d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-042302b20a5d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-042302b20a5d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[315/396] Long-Covid-SymptomsV2.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-eb11fad6322d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-eb11fad6322d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-eb11fad6322d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[316/396] Lux Q1 Letter 2022.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/Lux Q1 Letter 2022.pdf
+---
+===[317/396] LX150Parts.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-operatore12-2005-633492-vespa-lx (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-operatore12-2005-633492-vespa-lx.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-operatore12-2005-633492-vespa-lx.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[318/396] LX150Workshop.pdf===
+operation failed:
+  - [wikilink-malformed] unbalanced wikilink brackets: 0 '[[' vs 8 ']]'
+---
+===[319/396] mi-investment-outlook-ce-en.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2b2d34f2b0ff (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2b2d34f2b0ff.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2b2d34f2b0ff.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[320/396] MMXM_Market_Maker_Models.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d7094631fbf1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d7094631fbf1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d7094631fbf1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[321/396] mpw_bamboo_scroll_34.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d494901e58f0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d494901e58f0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d494901e58f0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[322/396] MVRS_8.5X11_Compost_Cart_Poster_Web1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-760efe06b85d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-760efe06b85d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-760efe06b85d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[323/396] MVRS_8.5X11_Garbage_Cart_Web1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b9f0455e9aea (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b9f0455e9aea.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b9f0455e9aea.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[324/396] MVRS-8.5X11_Commercial_Recycling_Cart.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-35db27800a83 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-35db27800a83.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-35db27800a83.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[325/396] Nikonomics - The Options Trading Guide to Success.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5a5936689043 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5a5936689043.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5a5936689043.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[326/396] Note.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2499ff5a11f9 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2499ff5a11f9.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2499ff5a11f9.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[327/396] NVDP_howtoskate.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/NVDP_howtoskate.pdf
+---
+===[328/396] Pasted Graphic 1.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/Pasted Graphic 1.pdf
+---
+===[329/396] Pasted Graphic.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/Pasted Graphic.pdf
+---
+===[330/396] pelvic_-_the_pelvic_clock_exercise.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-807417152f53 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-807417152f53.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-807417152f53.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[331/396] Peptide Guide.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4787181c2475 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4787181c2475.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4787181c2475.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[332/396] Playa-Pew-Assembly.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-usd11142-2007-playa-pew-sheet1 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-usd11142-2007-playa-pew-sheet1.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-usd11142-2007-playa-pew-sheet1.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[333/396] PLUNGE_FULL_PROTOCOLS.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d75f7b825487 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d75f7b825487.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d75f7b825487.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[334/396] Pump-Chiller-Plumbing-DIY-Cold-Plunge.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ae6946f2d209 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ae6946f2d209.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ae6946f2d209.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[335/396] Q2 2022 - Market Commentary & Outlook.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ed56b074fb11 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ed56b074fb11.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ed56b074fb11.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[336/396] Q3-2022-IACFM-Presentation.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-853a7755a470 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-853a7755a470.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-853a7755a470.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[337/396] Queens Road Glass.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-011cf224a58d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-011cf224a58d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-011cf224a58d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[338/396] REDEF ORIGINAL- Netflix Is a Product & ...any (Netflix Misunderstandings, Pt. 2).pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-095a21801328 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-095a21801328.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-095a21801328.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[339/396] REDEF ORIGINAL- Netflix Isn’t Being Rec...res (Netflix Misunderstandings, Pt. 3).pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-20fc3718c3b0 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-20fc3718c3b0.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-20fc3718c3b0.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[340/396] report.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-girquark-2022-global-economics-analyst (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-girquark-2022-global-economics-analyst.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-girquark-2022-global-economics-analyst.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[341/396] return_GYRCVFqutW.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-7f978a42b3b4 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-7f978a42b3b4.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-7f978a42b3b4.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[342/396] RevisitingFedRobbery.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-fa83c61dfa2d (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fa83c61dfa2d.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-fa83c61dfa2d.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[343/396] s41467-019-12227-0.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-adam-waytz-2019-ideological-differences-in (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-adam-waytz-2019-ideological-differences-in.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-adam-waytz-2019-ideological-differences-in.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[344/396] SC-Cycling.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d2f73a919c86 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d2f73a919c86.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d2f73a919c86.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[345/396] Scott-Redler-Moving-Averages-eBook.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a0072c763cf8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a0072c763cf8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a0072c763cf8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[346/396] SN_Goenka-The_Discourse_Summaries.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-s-n-2012-the-discourse-summaries (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-s-n-2012-the-discourse-summaries.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-s-n-2012-the-discourse-summaries.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[347/396] sr677.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a25e1c0d5f08 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a25e1c0d5f08.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a25e1c0d5f08.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[348/396] sram-hrd-hose-shortening-and-bleed-manual.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b51938faf250 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b51938faf250.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b51938faf250.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[349/396] SSIMWAVE - Project Pixel - Dolby.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d74e7c9bfdc7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d74e7c9bfdc7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d74e7c9bfdc7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[350/396] ssrn_id4501707_code759326.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e2068d89c2a7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e2068d89c2a7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e2068d89c2a7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[351/396] ssrn-4879527.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-1662a4368954 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-1662a4368954.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-1662a4368954.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[352/396] SSRN-id1078363.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-eric-j-2007-microsoft-word-sympathetic (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-eric-j-2007-microsoft-word-sympathetic.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-eric-j-2007-microsoft-word-sympathetic.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[353/396] SSRN-id1630903.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-05df32dcb03e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-05df32dcb03e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-05df32dcb03e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[354/396] SSRN-id2089463.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-lasse-pedersen-2011-title-how-to (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-lasse-pedersen-2011-title-how-to.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-lasse-pedersen-2011-title-how-to.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[355/396] SSRN-id2289097.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5ef2018823c8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5ef2018823c8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5ef2018823c8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[356/396] SSRN-id2585056.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ec9fdef2193c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ec9fdef2193c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ec9fdef2193c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[357/396] SSRN-id3042173.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-5a6062a63a4b (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-5a6062a63a4b.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-5a6062a63a4b.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[358/396] SSRN-id3392130.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-sugsu-2020-microsoft-word-hfholdem (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-sugsu-2020-microsoft-word-hfholdem.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-sugsu-2020-microsoft-word-hfholdem.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[359/396] SSRN-id3760365.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2742492120a8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2742492120a8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2742492120a8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[360/396] SSRN-id3953589.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-eric-benhamou-2021-powerpoint-presentation (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-eric-benhamou-2021-powerpoint-presentation.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-eric-benhamou-2021-powerpoint-presentation.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[361/396] SSRN-id3953786.pdf===
+operation failed:
+  - [source-immutability] source body has changed since previous ingest; sources in raw/ are immutable after creation
+---
+===[362/396] SSRN-id3954600.pdf===
+operation failed:
+  - [source-immutability] source body has changed since previous ingest; sources in raw/ are immutable after creation
+---
+===[363/396] SSRN-id4166640.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-19445750a197 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-19445750a197.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-19445750a197.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[364/396] SSRN-id4416622.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-e63407c2b4f4 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-e63407c2b4f4.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-e63407c2b4f4.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[365/396] SSRN-id4835311.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2329b8b436f2 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2329b8b436f2.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2329b8b436f2.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[366/396] Streaming_in_the_Time_of_Coronavirus_FINAL.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-bf8fb2766629 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-bf8fb2766629.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-bf8fb2766629.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[367/396] Studio Velo Receipt For Order #137065.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-95753e942ede (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-95753e942ede.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-95753e942ede.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[368/396] Studio Velo Receipt For Order #137715.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-a5ea98378b0a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-a5ea98378b0a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-a5ea98378b0a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[369/396] The ICT Bible - V1 - By Ali Khan.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-ali-khan-2023-the-ict-bible (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-ali-khan-2023-the-ict-bible.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-ali-khan-2023-the-ict-bible.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[370/396] The Simple Macroeconomics of AI.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-fb3e28ab676a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-fb3e28ab676a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-fb3e28ab676a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[371/396] The Study_ 2-Day AVWAP Rule Momentum Signal in Day.2r Trading__2248d6cd.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-2248d6cdc39f (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-2248d6cdc39f.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-2248d6cdc39f.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[372/396] The Study_ 2-Day AVWAP Rule Momentum Signal in Day.2r Trading.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6ba2dc608ac8 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6ba2dc608ac8.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6ba2dc608ac8.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[373/396] the_ict_mentorship_core__thread_by_trader_theory___jan 5, 23_from_rattibha.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-08bcb2d549ba (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-08bcb2d549ba.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-08bcb2d549ba.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[374/396] the_ict_mentorship_core__thread_by_trader_theory___oct 17, 22_from_rattibha.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-13d51286c4cc (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-13d51286c4cc.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-13d51286c4cc.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[375/396] the_ict_mentorship_core__thread_by_trader_theory___oct 25, 22_from_rattibha.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-57b1d100694e (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-57b1d100694e.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-57b1d100694e.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[376/396] the_ict_mentorship_core__thread_by_trader_theory___sep 28, 22_from_rattibha.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-67b6fe78b28c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-67b6fe78b28c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-67b6fe78b28c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[377/396] The_Implied_Order_Book.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-sqzme-2020-the-implied-order (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-sqzme-2020-the-implied-order.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-sqzme-2020-the-implied-order.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[378/396] The+Psychology+of+Human+Misjudment.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-munger-2021-revised-psychology-of (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-munger-2021-revised-psychology-of.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-munger-2021-revised-psychology-of.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[379/396] TheNorthLoop_intro_ENG.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-alberto-frizziero-2023-thenorthloop-intro-eng (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-alberto-frizziero-2023-thenorthloop-intro-eng.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-alberto-frizziero-2023-thenorthloop-intro-eng.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[380/396] Thrive-scenarios-for-resilient-leaders.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6415241c1c51 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6415241c1c51.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6415241c1c51.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[381/396] Timothy-Leary-Psychedelic-Prayers.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f1a591bace1c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f1a591bace1c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f1a591bace1c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[382/396] TP_LivingProofLongevityChallenge_2024__8f8106c6.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-8f8106c6aa36 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-8f8106c6aa36.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-8f8106c6aa36.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[383/396] TP_LivingProofLongevityChallenge_2024.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-0e4bb22e80df (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-0e4bb22e80df.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-0e4bb22e80df.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[384/396] Trading Models And Checklist.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-c57b9a32c399 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-c57b9a32c399.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-c57b9a32c399.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[385/396] Trading_Models_And_Checklist (1).pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-3a510f58854c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-3a510f58854c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-3a510f58854c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[386/396] umos-4.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-41066580ca43 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-41066580ca43.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-41066580ca43.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[387/396] vol20-no3-191.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-d3247b9071cf (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-d3247b9071cf.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-d3247b9071cf.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[388/396] Volatility Checklist.pdf===
+operation failed:
+  - conversion failed: no extractable text in /Users/andrewgrant/code/apple-notes/pdfs/Volatility Checklist.pdf
+---
+===[389/396] w27734.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-matthew-notowidigdo-2020-gkno-manuscript-1025 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-matthew-notowidigdo-2020-gkno-manuscript-1025.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-matthew-notowidigdo-2020-gkno-manuscript-1025.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[390/396] w28967.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-b8cec9d1ec0c (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-b8cec9d1ec0c.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-b8cec9d1ec0c.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[391/396] w29874.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-4dbe002c1c7a (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-4dbe002c1c7a.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-4dbe002c1c7a.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[392/396] WEEKLY BIAS FORM__9495a5ab.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-9495a5abb859 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-9495a5abb859.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-9495a5abb859.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[393/396] WEEKLY BIAS FORM.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-f073cccdbfe6 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-f073cccdbfe6.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-f073cccdbfe6.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[394/396] white_paper.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-23eaf3fa1bbb (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-23eaf3fa1bbb.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-23eaf3fa1bbb.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[395/396] zoltan-pozsar-aug-2-war-and-interest-rates-1.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-6ae97b9c27c7 (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-6ae97b9c27c7.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-6ae97b9c27c7.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+===[396/396] zuck-unity.pdf===
+warning: no domain in frontmatter and no --domain flag; filter skipped, source ingested with wiki page (low-stakes incremental path)
+ok: ingested: pdf-sriram-krishnan-2019-untitled (pdf)
+  touched: /Users/andrewgrant/code/knowledge/raw/pdf/pdf-sriram-krishnan-2019-untitled.md
+  touched: /Users/andrewgrant/code/knowledge/log.md
+  touched: /Users/andrewgrant/code/knowledge/wiki/sources/pdf-sriram-krishnan-2019-untitled.md
+  touched: /Users/andrewgrant/code/knowledge/index.md
+---
+BULK_INGEST_DONE at 2026-04-29T16:27:29Z

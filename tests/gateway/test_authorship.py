@@ -18,6 +18,7 @@ from gateway.ops.finalize import finalize
 from gateway.ops.ingest import ingest
 from gateway.ops.query import query
 from gateway.plan import (
+    Contradiction,
     Plan,
     PlanError,
     WikiUpdate,
@@ -85,7 +86,20 @@ def test_page_type_for_path():
     assert wiki_pages.page_type_for_path("wiki/entities/semaglutide.md") == "entity"
     assert wiki_pages.page_type_for_path("wiki/concepts/food-noise.md") == "concept"
     assert wiki_pages.page_type_for_path("wiki/sources/yt-abc.md") == "source"
+    assert wiki_pages.page_type_for_path("wiki/proposals/health.md") == "domain-proposal"
     assert wiki_pages.page_type_for_path("raw/youtube/yt-abc.md") is None
+
+
+def test_domain_proposal_schema_registered():
+    schema = wiki_pages.schema_for_type("domain-proposal")
+    assert schema is not None
+    assert schema.directory == "wiki/proposals"
+    assert "proposed_domain" in schema.required_fields
+    assert "status" in schema.required_fields
+    assert "member_sources" in schema.required_fields
+    assert "Rationale" in schema.required_sections
+    assert "Member sources" in schema.required_sections
+    assert schema.citation_grounded is False
 
 
 def test_missing_sections_for_concept_template():
@@ -144,6 +158,43 @@ def test_validate_wiki_page_missing_section():
     body_no_related = body.replace("## Related\n\n- [[concepts/reward-blunting]]\n", "")
     result = v.validate_wiki_page(front, body_no_related, "concept")
     assert any("section-missing" in e.rule for e in result.errors)
+
+
+def _good_domain_proposal_page() -> tuple[dict, str]:
+    front = {
+        "type": "domain-proposal",
+        "slug": "proposal-investing-letters",
+        "title": "Investing letters and macro commentary",
+        "proposed_domain": "investing-letters",
+        "status": "draft",
+        "member_sources": ["pdf-abc", "pdf-def", "pdf-ghi"],
+        "rationale": "Hedge fund letters and macro commentary recur across the Apple Notes corpus.",
+    }
+    body = (
+        "# Investing letters and macro commentary\n\n"
+        "## Rationale\n\n"
+        "Cluster of investor letters and macro commentary, distinct from "
+        "trading-mechanics material in scope and tone.\n\n"
+        "## Member sources\n\n"
+        "- [[sources/pdf-abc]]: Ambrus Capital Q3 letter\n"
+        "- [[sources/pdf-def]]: Druckenmiller speech\n"
+        "- [[sources/pdf-ghi]]: BII Global Outlook\n"
+    )
+    return front, body
+
+
+def test_validate_domain_proposal_happy_path():
+    front, body = _good_domain_proposal_page()
+    result = v.validate_wiki_page(front, body, "domain-proposal")
+    assert result.ok, [str(e) for e in result.errors]
+
+
+def test_validate_domain_proposal_missing_member_sources():
+    front, body = _good_domain_proposal_page()
+    del front["member_sources"]
+    result = v.validate_wiki_page(front, body, "domain-proposal")
+    assert not result.ok
+    assert any("required-field" in e.rule and e.field_name == "member_sources" for e in result.errors)
 
 
 def test_citation_grounding_rejects_uncited_claim():
@@ -236,11 +287,113 @@ def test_parse_plan_response_rejects_bad_update_kind():
         parse_plan_response(raw)
 
 
+def test_parse_plan_response_parses_contradictions():
+    import json as _json
+    raw = _json.dumps({
+        "source_id": "yt-1",
+        "rationale": "r",
+        "updates": [],
+        "contradictions": [
+            {
+                "existing_page": "wiki/concepts/food-noise.md",
+                "existing_claim": "Food noise is universally reduced by GLP-1 RAs",
+                "new_claim": "Food noise reduction varies by receptor subtype",
+                "source_id": "yt-1",
+                "severity": "moderate",
+            }
+        ],
+    })
+    plan = parse_plan_response(raw)
+    assert len(plan.contradictions) == 1
+    c = plan.contradictions[0]
+    assert c.existing_page == "wiki/concepts/food-noise.md"
+    assert c.severity == "moderate"
+
+
+def test_parse_plan_response_defaults_empty_contradictions():
+    raw = '{"source_id": "yt-1", "rationale": "r", "updates": []}'
+    plan = parse_plan_response(raw)
+    assert plan.contradictions == []
+
+
 def test_build_plan_prompt_includes_source_and_existing():
     prompt = build_plan_prompt("source body", {"wiki/concepts/x.md": "existing content"})
     assert "source body" in prompt
     assert "existing content" in prompt
     assert "wiki/concepts/x.md" in prompt
+
+
+def test_build_plan_prompt_includes_contradiction_instructions():
+    prompt = build_plan_prompt("source body", {"wiki/concepts/x.md": "existing"})
+    assert "contradictions" in prompt.lower()
+    assert "existing_page" in prompt
+    assert "existing_claim" in prompt
+    assert "new_claim" in prompt
+    assert "severity" in prompt
+
+
+def test_build_plan_prompt_includes_update_priority():
+    prompt = build_plan_prompt("source body", {"wiki/concepts/x.md": "existing"})
+    # Should instruct to prioritize updates over creates
+    assert "prioritize" in prompt.lower() or "prefer" in prompt.lower()
+    assert "update" in prompt.lower()
+
+
+# --- AuthorshipReport ------------------------------------------------------
+
+
+def test_authorship_report_summary_formatting():
+    from gateway.core import AuthorshipReport
+    from gateway.plan import Contradiction
+
+    report = AuthorshipReport(
+        pages_created=["wiki/entities/semaglutide.md", "wiki/concepts/food-noise.md"],
+        pages_updated=["wiki/concepts/reward-blunting.md"],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/reward-blunting.md",
+                existing_claim="Reward blunting is permanent",
+                new_claim="Reward blunting reverses after discontinuation",
+                source_id="pubmed-123",
+                severity="major",
+            )
+        ],
+    )
+    summary = report.format_summary()
+    assert "2 created" in summary
+    assert "1 updated" in summary
+    assert "1 contradiction" in summary
+
+
+def test_authorship_report_empty():
+    from gateway.core import AuthorshipReport
+
+    report = AuthorshipReport()
+    summary = report.format_summary()
+    assert "0 created" in summary
+
+
+def test_authorship_report_detail_formatting():
+    from gateway.core import AuthorshipReport
+    from gateway.plan import Contradiction
+
+    report = AuthorshipReport(
+        pages_created=["wiki/entities/drug-x.md"],
+        pages_updated=["wiki/concepts/mechanism-y.md"],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/mechanism-y.md",
+                existing_claim="Effect is permanent",
+                new_claim="Effect reverses in 12 weeks",
+                source_id="pubmed-456",
+                severity="major",
+            )
+        ],
+    )
+    lines = report.format_detail()
+    assert any("+ wiki/entities/drug-x.md" in l for l in lines)
+    assert any("~ wiki/concepts/mechanism-y.md" in l for l in lines)
+    assert any("CONTRADICTION" in l and "major" in l for l in lines)
 
 
 # --- apply_plan ------------------------------------------------------------
@@ -412,6 +565,54 @@ def test_apply_plan_rejects_path_outside_wiki(kb_root, make_source):
     assert any("not under a known wiki page-type directory" in e for e in result.errors)
 
 
+def test_apply_plan_populates_authorship_report(kb_root, make_source):
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="test report",
+        updates=[
+            _make_concept_update("report-concept-a", "yt-applyTest1A", kind="create"),
+        ],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/old-thing.md",
+                existing_claim="Old claim here",
+                new_claim="New conflicting claim",
+                source_id="yt-applyTest1A",
+                severity="major",
+            ),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success, result.errors
+    assert result.authorship_report is not None
+    assert "wiki/concepts/report-concept-a.md" in result.authorship_report.pages_created
+    assert len(result.authorship_report.contradictions) == 1
+    assert result.authorship_report.contradictions[0].severity == "major"
+
+
+def test_apply_plan_report_distinguishes_create_and_update(kb_root, make_source):
+    _seed_source(kb_root, make_source)
+    # First, create the page
+    plan1 = Plan(
+        source_id="yt-applyTest1A",
+        updates=[_make_concept_update("evolving-concept", "yt-applyTest1A", kind="create")],
+    )
+    result1 = apply_plan(plan1)
+    assert result1.success
+
+    # Now update it
+    plan2 = Plan(
+        source_id="yt-applyTest1A",
+        updates=[_make_concept_update("evolving-concept", "yt-applyTest1A", kind="update")],
+    )
+    result2 = apply_plan(plan2)
+    assert result2.success
+    assert result2.authorship_report is not None
+    assert "wiki/concepts/evolving-concept.md" in result2.authorship_report.pages_updated
+    assert result2.authorship_report.pages_created == []
+
+
 # --- finalize --------------------------------------------------------------
 
 
@@ -517,64 +718,47 @@ def _seed_concept_page(slug: str, *, domain: str, claim_keyword: str = "dose"):
     page.write_text(fm.serialize(front, body))
 
 
-def test_query_files_synthesis_via_plan(kb_root, make_source):
-    # Need a source that the synthesis can cite
+def test_query_files_synthesis_via_notebooklm(kb_root, make_source):
+    # The rebuilt query op asks the persistent NotebookLM corpus and
+    # files the answer; the old plan-client-driven path is gone.
+    from gateway import nlm_registry
     raw = paths.raw_source_path("youtube", "yt-x")
     raw.parent.mkdir(parents=True, exist_ok=True)
     raw.write_text(make_source(id_="yt-x", domains=["d-q"]))
 
-    _seed_concept_page("dose-response", domain="d-q")
+    nlm_registry.register("d-q", "nb-test-1")
 
-    synthesis_content = fm.serialize(
-        {
-            "type": "synthesis",
-            "slug": "what-is-the-dose-response",
-            "title": "What is the dose response",
-            "domains": ["d-q"],
-            "question": "What is the dose response?",
-        },
-        (
-            "# What is the dose response\n\n"
-            "## Synthesis\n\nDose response is a documented effect [[sources/yt-x]].\n\n"
-            "## Sources cited\n\n- [[sources/yt-x]]\n"
-        ),
+    # Seed source-map cache so [[sources/yt-x]] resolves.
+    cache_dir = paths.knowledge_root() / "nlm" / "source_maps"
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    import json as _json
+    (cache_dir / "nb-test-1.json").write_text(
+        _json.dumps({"nlm-1": "raw/youtube/yt-x"})
     )
 
-    response = (
-        '{"source_id": "synthesis-query-what-is-the-dose-response", '
-        '"rationale": "stub", '
-        '"updates": [{'
-        '"target_path": "wiki/synthesis/what-is-the-dose-response.md", '
-        '"update_kind": "create", '
-        f'"content": {repr(synthesis_content)}'
-        '}]}'
-    ).replace("'", '"')
+    class _Stub:
+        def notebook_query(self, notebook_id, question):
+            return {
+                "answer": "Dose response is a documented effect [1].",
+                "citations": {1: "nlm-1"},
+                "sources_used": ["nlm-1"],
+            }
 
-    # repr() uses single quotes; JSON wants doubles. Build the JSON manually:
-    import json as _json
-    response = _json.dumps({
-        "source_id": "synthesis-query-what-is-the-dose-response",
-        "rationale": "stub",
-        "updates": [{
-            "target_path": "wiki/synthesis/what-is-the-dose-response.md",
-            "update_kind": "create",
-            "content": synthesis_content,
-        }],
-    })
-
-    client = StubPlanClient(response=response)
-    result = query("What is the dose response?", domain="d-q", client=client)
+    result = query(
+        "What is the dose response?", domain="d-q", nlm_client=_Stub()
+    )
     assert result.success, result.errors
-    assert "dose response" in client.last_prompt
-    assert (paths.wiki_dir() / "synthesis" / "what-is-the-dose-response.md").exists()
+    pages = list((paths.wiki_dir() / "synthesis").glob("*-what-is-the-dose-response.md"))
+    assert pages, "expected a synthesis page"
 
 
-def test_query_no_matches_errors(kb_root):
-    client = StubPlanClient(response="should-not-be-called")
-    result = query("anything", client=client)
+def test_query_without_notebook_errors(kb_root):
+    # No persistent notebook for 'undefined' → error pointing at `wiki research`.
+    result = query("anything", domain="undefined")
     assert not result.success
-    assert any("no wiki pages matched" in e for e in result.errors)
-    assert client.last_prompt is None
+    joined = " ".join(result.errors)
+    assert "no notebook" in joined
+    assert "wiki research" in joined
 
 
 # --- ingest --with-plan integration ----------------------------------------
@@ -634,3 +818,257 @@ def test_ingest_with_plan_failure_still_commits_source(kb_root, make_source, tmp
     # source page committed despite plan failure
     assert paths.wiki_source_path("yt-ingPlanFailX_AB").exists()
     assert any("authorship failed" in w for w in result.warnings)
+
+
+def test_apply_plan_log_includes_contradictions(kb_root, make_source):
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="test log",
+        updates=[_make_concept_update("log-concept", "yt-applyTest1A")],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/old.md",
+                existing_claim="Old statement",
+                new_claim="New conflicting statement",
+                source_id="yt-applyTest1A",
+                severity="major",
+            ),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success
+
+    log_text = paths.log_path().read_text()
+    assert "contradictions=1" in log_text
+
+
+def test_ingest_with_plan_propagates_authorship_report(kb_root, make_source, tmp_path):
+    import json as _json
+
+    text = make_source(id_="yt-reportTest_AB", domains=[])
+    src = tmp_path / "in.md"
+    src.write_text(text)
+
+    update_content = fm.serialize(
+        {
+            "type": "concept",
+            "slug": "reported-concept",
+            "canonical_name": "Reported concept",
+            "domains": ["any"],
+        },
+        (
+            "# Reported concept\n\n"
+            "## Summary\n\nA concept with a citation [[sources/yt-reportTest_AB]].\n\n"
+            "## Key claims\n\n- Key claim here [[sources/yt-reportTest_AB]].\n\n"
+            "## Sources\n\n- [[sources/yt-reportTest_AB]]\n\n"
+            "## Related\n\n- [[concepts/other]]\n"
+        ),
+    )
+
+    plan_response = _json.dumps({
+        "source_id": "yt-reportTest_AB",
+        "rationale": "stub with report",
+        "updates": [{
+            "target_path": "wiki/concepts/reported-concept.md",
+            "update_kind": "create",
+            "content": update_content,
+        }],
+        "contradictions": [{
+            "existing_page": "wiki/concepts/old-concept.md",
+            "existing_claim": "Old claim",
+            "new_claim": "New claim",
+            "source_id": "yt-reportTest_AB",
+            "severity": "minor",
+        }],
+    })
+
+    client = StubPlanClient(response=plan_response)
+    result = ingest(src, with_plan=True, plan_client=client)
+    assert result.success, result.errors
+    assert result.authorship_report is not None
+    assert len(result.authorship_report.pages_created) == 1
+    assert len(result.authorship_report.contradictions) == 1
+
+
+def test_apply_plan_writes_contradictions_to_jsonl(kb_root, make_source):
+    """When plan.contradictions is non-empty, apply_plan appends one JSONL record per contradiction."""
+    import json as _json
+    from gateway import paths
+
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="contradictions persistence test",
+        updates=[
+            _make_concept_update("jsonl-test-concept", "yt-applyTest1A"),
+        ],
+        contradictions=[
+            Contradiction(
+                existing_page="wiki/concepts/old.md",
+                existing_claim="Original claim text",
+                new_claim="Conflicting claim text",
+                source_id="yt-applyTest1A",
+                severity="major",
+            ),
+            Contradiction(
+                existing_page="wiki/concepts/other.md",
+                existing_claim="Another original claim",
+                new_claim="Another conflicting claim",
+                source_id="yt-applyTest1A",
+                severity="minor",
+            ),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success, result.errors
+
+    log_path = paths.knowledge_root() / ".knowledge" / "contradictions" / "log.jsonl"
+    assert log_path.is_file()
+
+    lines = [
+        line for line in log_path.read_text().splitlines() if line.strip()
+    ]
+    assert len(lines) == 2
+    records = [_json.loads(line) for line in lines]
+    assert records[0]["source_id"] == "yt-applyTest1A"
+    assert records[0]["existing_page"] == "wiki/concepts/old.md"
+    assert records[0]["severity"] == "major"
+    assert "recorded_at" in records[0]
+    assert records[1]["severity"] == "minor"
+
+
+def test_apply_plan_no_jsonl_write_when_no_contradictions(kb_root, make_source):
+    """Plans without contradictions don't create the JSONL file."""
+    from gateway import paths
+
+    _seed_source(kb_root, make_source)
+    plan = Plan(
+        source_id="yt-applyTest1A",
+        rationale="no contradictions",
+        updates=[
+            _make_concept_update("no-contradictions-concept", "yt-applyTest1A"),
+        ],
+    )
+    result = apply_plan(plan)
+    assert result.success
+
+    log_path = paths.knowledge_root() / ".knowledge" / "contradictions" / "log.jsonl"
+    if log_path.is_file():
+        lines = [l for l in log_path.read_text().splitlines() if l.strip()]
+        assert lines == []
+
+
+def test_end_to_end_smart_authorship(kb_root, make_source, tmp_path):
+    """Full flow: ingest -> plan with create + update + contradiction -> report + log."""
+    import json as _json
+
+    # Seed an existing concept page in the wiki
+    _seed_source(kb_root, make_source, source_id="yt-oldSource_AB", domain="d-e2e")
+    existing_front = {
+        "type": "concept",
+        "slug": "existing-mechanism",
+        "canonical_name": "Existing mechanism",
+        "domains": ["d-e2e"],
+    }
+    existing_body = (
+        "# Existing mechanism\n\n"
+        "## Summary\n\nThis mechanism is irreversible [[sources/yt-oldSource_AB]].\n\n"
+        "## Key claims\n\n- The effect is permanent [[sources/yt-oldSource_AB]].\n\n"
+        "## Sources\n\n- [[sources/yt-oldSource_AB]]\n\n"
+        "## Related\n\n- [[concepts/other]]\n"
+    )
+    existing_page = paths.wiki_dir() / "concepts" / "existing-mechanism.md"
+    existing_page.parent.mkdir(parents=True, exist_ok=True)
+    existing_page.write_text(fm.serialize(existing_front, existing_body))
+
+    # Ingest a new source (no domain → filter skipped → wiki page written)
+    text = make_source(id_="yt-newSource_AB", domains=[])
+    src = tmp_path / "new.md"
+    src.write_text(text)
+
+    # Prepare plan response: update existing + create new + one contradiction
+    updated_content = fm.serialize(
+        {
+            "type": "concept",
+            "slug": "existing-mechanism",
+            "canonical_name": "Existing mechanism",
+            "domains": ["d-e2e"],
+        },
+        (
+            "# Existing mechanism\n\n"
+            "## Summary\n\nThis mechanism is irreversible [[sources/yt-oldSource_AB]]. "
+            "However, recent evidence suggests partial reversibility [[sources/yt-newSource_AB]].\n\n"
+            "## Key claims\n\n"
+            "- The effect is permanent [[sources/yt-oldSource_AB]].\n"
+            "- Partial reversal observed after 12 weeks [[sources/yt-newSource_AB]].\n\n"
+            "## Sources\n\n- [[sources/yt-oldSource_AB]]\n- [[sources/yt-newSource_AB]]\n\n"
+            "## Related\n\n- [[concepts/other]]\n- [[concepts/new-entity]]\n"
+        ),
+    )
+    new_content = fm.serialize(
+        {
+            "type": "entity",
+            "slug": "new-entity",
+            "canonical_name": "New entity",
+            "entity_kind": "drug",
+            "domains": ["d-e2e"],
+        },
+        (
+            "# New entity\n\n"
+            "## Summary\n\nA newly discovered entity [[sources/yt-newSource_AB]].\n\n"
+            "## Key facts\n\n- First documented in 2026 [[sources/yt-newSource_AB]].\n\n"
+            "## Sources\n\n- [[sources/yt-newSource_AB]]\n\n"
+            "## Related\n\n- [[concepts/existing-mechanism]]\n"
+        ),
+    )
+
+    plan_response = _json.dumps({
+        "source_id": "yt-newSource_AB",
+        "rationale": "integrates new evidence on mechanism reversibility",
+        "updates": [
+            {
+                "target_path": "wiki/concepts/existing-mechanism.md",
+                "update_kind": "update",
+                "content": updated_content,
+            },
+            {
+                "target_path": "wiki/entities/new-entity.md",
+                "update_kind": "create",
+                "content": new_content,
+            },
+        ],
+        "contradictions": [
+            {
+                "existing_page": "wiki/concepts/existing-mechanism.md",
+                "existing_claim": "The effect is permanent",
+                "new_claim": "Partial reversal observed after 12 weeks",
+                "source_id": "yt-newSource_AB",
+                "severity": "major",
+            },
+        ],
+    })
+
+    client = StubPlanClient(response=plan_response)
+    result = ingest(src, with_plan=True, plan_client=client)
+    assert result.success, result.errors
+
+    # AuthorshipReport populated
+    report = result.authorship_report
+    assert report is not None
+    assert "wiki/entities/new-entity.md" in report.pages_created
+    assert "wiki/concepts/existing-mechanism.md" in report.pages_updated
+    assert len(report.contradictions) == 1
+    assert report.contradictions[0].severity == "major"
+
+    # Wiki pages written
+    assert (paths.wiki_dir() / "entities" / "new-entity.md").exists()
+    updated_text = existing_page.read_text()
+    assert "partial reversibility" in updated_text.lower()
+
+    # Log entry includes contradiction count
+    log_text = paths.log_path().read_text()
+    assert "contradictions=1" in log_text
+
+    # Summary includes authorship info
+    assert "authorship" in result.summary

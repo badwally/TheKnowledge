@@ -49,6 +49,8 @@ class NlmClient(Protocol):
 
     def source_add_text(self, notebook_id: str, content: str, *, title: str | None = None) -> None: ...
 
+    def source_add_file(self, notebook_id: str, file_path: Path, *, title: str | None = None) -> None: ...
+
     def slides_create(self, notebook_id: str, *, focus: str | None = None) -> ArtifactInfo: ...
 
     def slides_revise(self, artifact_id: str, slide_revisions: list[tuple[int, str]]) -> ArtifactInfo: ...
@@ -62,6 +64,12 @@ class NlmClient(Protocol):
     def download_audio(self, notebook_id: str, dest: Path, *, artifact_id: str | None = None) -> None: ...
 
     def download_report(self, notebook_id: str, dest: Path, *, artifact_id: str | None = None) -> None: ...
+
+    def notebook_query(self, notebook_id: str, question: str) -> dict: ...
+
+    def artifact_status(self, notebook_id: str, artifact_id: str) -> str: ...
+
+    def notebook_sources(self, notebook_id: str) -> list[dict]: ...
 
 
 # --- subprocess implementation ---------------------------------------------
@@ -154,26 +162,67 @@ class NlmCLIClient:
     # --- sources -----------------------------------------------------------
 
     def source_add_url(self, notebook_id: str, url: str) -> None:
-        args = ["add", "url", notebook_id, url]
-        result = self._run(args)
+        # Modern form: `nlm source add NOTEBOOK_ID --url URL --wait`. The
+        # legacy `nlm add url NOTEBOOK URL` form was removed when the CLI
+        # consolidated source-creation under `source add` with explicit
+        # flags. `--wait` blocks until NotebookLM has indexed the source,
+        # so query-time failures don't masquerade as add-time successes.
+        args = ["source", "add", notebook_id, "--url", url, "--wait"]
+        result = self._run(args, timeout_s=max(self._timeout, 660.0))
         self._check(result, args=args)
 
     def source_add_text(self, notebook_id: str, content: str, *, title: str | None = None) -> None:
-        args = ["add", "text", notebook_id]
+        # Use the modern `nlm source add --text VALUE` form. The legacy
+        # `nlm add text NOTEBOOK TEXT` accepts text only as a positional
+        # argv element, which mangles long bodies; the flag form is safe.
+        args = ["source", "add", notebook_id, "--text", content, "--wait"]
         if title:
             args.extend(["--title", title])
-        try:
-            result = subprocess.run(
-                [self._exe, *args],
-                input=content,
-                capture_output=True,
-                text=True,
-                timeout=self._timeout,
-                check=False,
-            )
-        except FileNotFoundError as e:
-            raise NlmError(f"`{self._exe}` not found on PATH") from e
+        result = self._run(args)
         self._check(result, args=args)
+
+    def source_add_file(self, notebook_id: str, file_path: Path, *, title: str | None = None) -> None:
+        args = ["source", "add", notebook_id, "--file", str(file_path), "--wait"]
+        if title:
+            args.extend(["--title", title])
+        result = self._run(args)
+        self._check(result, args=args)
+
+    def notebook_sources(self, notebook_id: str) -> list[dict]:
+        """Return the list of source dicts (id, title, url?) currently in
+        the notebook. Used by `nlm_sync` to reconcile NotebookLM-side state
+        against frontmatter so partially-loaded corpora don't get duplicated.
+        """
+        args = ["notebook", "get", notebook_id]
+        result = self._run(args, timeout_s=60.0)
+        self._check(result, args=args)
+        try:
+            data = json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            raise NlmError(
+                f"could not parse `{self._exe} notebook get` output: {e}"
+            ) from e
+        value = data.get("value", data) if isinstance(data, dict) else {}
+        sources = value.get("sources") or []
+        return [s for s in sources if isinstance(s, dict)]
+
+    # --- artifact status (M37) ---------------------------------------------
+
+    def artifact_status(self, notebook_id: str, artifact_id: str) -> str:
+        """Return the status of one artifact in a notebook ('completed' / 'in_progress' / 'unknown' / 'failed' / '')."""
+        args = ["studio", "status", notebook_id]
+        result = self._run(args, timeout_s=60.0)
+        self._check(result, args=args)
+        try:
+            data = json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            raise NlmError(f"could not parse `{self._exe} {' '.join(args)}` stdout: {e}") from e
+        if not isinstance(data, list):
+            raise NlmError(f"expected JSON array from studio status, got {type(data).__name__}")
+        for item in data:
+            if isinstance(item, dict) and item.get("id") == artifact_id:
+                return str(item.get("status") or "")
+        return ""
 
     # --- artifacts ---------------------------------------------------------
 
@@ -248,6 +297,44 @@ class NlmCLIClient:
 
     def download_report(self, notebook_id: str, dest: Path, *, artifact_id: str | None = None) -> None:
         self._download("report", notebook_id, dest, artifact_id)
+
+    # --- query -------------------------------------------------------------
+
+    def notebook_query(self, notebook_id: str, question: str) -> dict:
+        """Ask the notebook a question; return parsed answer + citations.
+
+        Ports `query_notebook` from research-notebook/src/research/query.py.
+        The `nlm notebook query` command emits JSON on stdout by default; the
+        response is either `{value: {...}}` or the inner shape directly.
+        """
+        args = ["notebook", "query", notebook_id, question]
+        result = self._run(args)
+        if result.returncode != 0:
+            stderr = result.stderr or ""
+            if "NOT_FOUND" in stderr or "error code 5" in stderr:
+                raise NlmError(
+                    f"notebook {notebook_id} returned NOT_FOUND. The notebook is "
+                    "reachable but its corpus is empty or unindexed — "
+                    "NotebookLM rejects queries against zero-source notebooks. "
+                    "Verify with `nlm notebook get <id>`; if source_count is 0, "
+                    "sync sources via `wiki nlm-add <domain> <source-id>` "
+                    "before querying. The CLI's auth-related advice is misleading "
+                    "in this case."
+                )
+        self._check(result, args=args)
+        try:
+            raw = json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            raise NlmError(
+                f"could not parse `{self._exe} {' '.join(args)}` stdout as JSON: "
+                f"{e}; stdout={result.stdout.strip()[:500]!r}"
+            ) from e
+        value = raw.get("value", raw) if isinstance(raw, dict) else {}
+        return {
+            "answer": value.get("answer", ""),
+            "citations": value.get("citations", {}),
+            "sources_used": value.get("sources_used", []),
+        }
 
 
 def notebook_url(notebook_id: str) -> str:
