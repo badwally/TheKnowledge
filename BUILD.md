@@ -789,6 +789,31 @@ Local browser front-end (`wiki serve`) wrapping the gateway's daily ops, domain 
 - Live updates via SSE/WebSocket — deferred indefinitely; manual refresh suffices for single-user.
 - Authentication — localhost-only by design.
 
+### M41 — Research Orchestration UI
+
+Adds a Research sidebar entry to `wiki serve` that exposes the existing `wiki research` orchestrator (M37/M37.1) over HTTP. Two-pane sessions-list + detail layout. Each session walks through three phases: prompt+domain → query plan (structured per-adapter editor) → execute. Long-running execution shows per-step progress sourced from filtered `log.md` entries.
+
+**What's new.**
+
+- `gateway.web.routes.research` — six endpoints: list sessions (`GET /api/research/sessions`), get session detail (`GET /api/research/sessions/{id}`), create session (`POST /api/research/sessions` — runs planner via TaskStore), update plan (`PUT /api/research/sessions/{id}/plan`), execute (`POST /api/research/sessions/{id}/execute` — runs orchestrator via TaskStore with `execute_session=session_id`), get progress (`GET /api/research/sessions/{id}/progress` — parses `log.md` filtered to session_id).
+- `gateway.research.orchestrator` — six new `log.append("research", step=<name>)` calls (materialize, nlm_persistent, nlm_session, source_map, analysis, apply_plan) so the progress endpoint can render every named pipeline stage.
+- `web/src/pages/research/` — 6 components: Research (page shell), SessionsList (status badges, click-to-route), NewSessionForm (inline expandable, planner spinner), SessionDetail (phase router), PlanEditor (per-adapter structured editor with × delete + add + edited-row highlights), ProgressView (3s polling, 16 canonical steps with state glyphs).
+- Sidebar gains a Research group entry between Wiki and Domains.
+
+**Lifecycle states (derived):** `plan_only` (YAML exists, not edited, not executed) · `edited` (YAML mtime > generated_at + 2s) · `running` (active task) · `done` (registry session.status == promoted) · `abandoned` (registry session.status == abandoned).
+
+**Tests.** 11 new tests in `test_web_research.py` covering all six endpoints. Full gateway suite: 504 → 515 tests passing.
+
+**Hand-test.** Started server on port 7475, verified via curl: list endpoint returns all 3 existing query plans with correct states (one `edited`, one `abandoned`, one `plan_only`); detail endpoint returns the full per-adapter plan structure; progress endpoint correctly reconstructs the historical abandoned run from log.md (search.arxiv done, search.youtube/web queued, pubmed done-via-empty); `/research` SPA route serves React HTML at 200.
+
+**Out of scope (deferred to M42).**
+
+- NLM artifact triggers (briefing, audio, slides, revise) per-domain page.
+- Review consoles (drafts list, contradictions, source orphans, filter-band sources).
+- `obsidian://` deep-link for synthesis pages on done sessions — basic display only in M41.
+- Session deletion / cleanup ops.
+- `--queries` external YAML import — CLI-only.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
