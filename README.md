@@ -1,54 +1,92 @@
 # ~/code/knowledge/
 
-A personal knowledge base where every answer ties to a real source you ingested — not training data, not a hallucination. Sources land as markdown in a local vault; queries return cited synthesis pages; NotebookLM artifacts file back to the same vault with bidirectional links; Obsidian renders the whole citation graph visually.
+A personal knowledge base. Sources land as markdown + YAML on the local filesystem. Queries return cited synthesis pages. NotebookLM artifacts file back to the same vault. Obsidian renders the citation graph.
 
-Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`) with a hybrid synthesis substrate — the wiki is canonical, NotebookLM is the heavy-synthesis service behind the gateway, and Obsidian is the knowledge-graph visualization engine on top of the vault.
+Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`).
 
-## What you do
+## Architecture
 
-- Drop a PDF, Word doc, Excel sheet, PowerPoint, CSV, image, voice memo, audiobook, or URL into an inbox, or run `wiki ingest`. Images go through Claude vision and produce structured citable descriptions.
-- Pull from API-only sources (Apple Notes today; Notion / Slack / Gmail queued) via `wiki poll <name>` — same downstream pipeline.
-- Ask the corpus a question with `wiki query "<question>"` — semantic retrieval across mixed media, an agent writes a synthesis with every claim wikilinked to a source.
-- For whole-corpus work, route through NotebookLM via `wiki nlm-briefing` / `nlm-audio` / `nlm-slides` — artifacts file back as wiki pages, not silos.
-- Open the vault in Obsidian to navigate the citation graph visually; cite stable wiki paths from any other project, editor, or agent.
+Three layers, one substrate.
 
-## How it works with tools you already use
+- **Wiki** — canonical. Markdown + YAML, citation graph enforced by the gateway.
+- **NotebookLM** — heavy-synthesis service called *through* the gateway. Artifacts file back to `wiki/artifacts/` with bidirectional links.
+- **Obsidian** — visualization over the same vault. Same wikilinks, same markdown, no separate index.
 
-- **Obsidian** is the knowledge-graph visualization engine. Open the vault and the wikilinks become a navigable graph of sources, concepts, and syntheses.
-- **NotebookLM** is the heavy-synthesis service behind the gateway, not a replacement. Every artifact files back to the vault.
-- **Office documents** (Word, Excel, PowerPoint) ingest via pure-Python parsers (`python-docx` / `openpyxl` / `python-pptx`); originals preserved as sidecars.
-- **Images** ingest via Pillow + Claude vision — structured descriptions (overview / visible text / key elements / domain content) make figures citable like any other source.
-- **Voice memos and audiobooks** transcribe locally (mlx-whisper + speaker diarization on Apple Silicon).
-- **MCP** exposes every gateway operation as `wiki_*` tools to any other Claude Code project.
+The validator rejects any claim missing `[[sources/<id>]]`, so authored content cannot drift into hallucination. Drafts (`--draft`) downgrade the rule to a lint warning until `wiki finalize` runs.
 
-## What's different
+All writes go through the gateway. Direct edits to `raw/` or `wiki/` are blocked by validator + pre-commit hook.
 
-Citations are mechanically enforced — the validator rejects any claim missing `[[sources/<id>]]`, so authored content can't drift into hallucination. Auditable claims, portable storage, one source of truth across your stack.
+## Workflow
 
-**Start here:** [TUTORIAL.md](TUTORIAL.md) — the day-1 workflow guide.
+1. **Ingest.** Drop a file or URL into `raw/inbox/` (watched), or run `wiki ingest <input>`. Type-specific converters dispatch on filename / URL pattern. API-only sources (Apple Notes today) ingest via `wiki poll <name>`.
+2. **Query.** `wiki query "<question>" [--domain X]` runs semantic retrieval across mixed media and files a synthesis page grounded in `[[sources/<id>]]` citations.
+3. **Synthesize at corpus scale.** `wiki nlm-briefing | nlm-audio | nlm-slides` route to NotebookLM and file the artifact back as a wiki page.
+4. **Browse.** Open the vault in Obsidian, or run `wiki serve` for the [web UI](#web-ui).
+
+**Start here:** [TUTORIAL.md](TUTORIAL.md).
+
+## Web UI
+
+`wiki serve` runs a local FastAPI + React app at `http://127.0.0.1:7474`. Every long-running gateway op (ingest, query, research execution, NotebookLM generation) submits to an in-memory task store and the UI polls for completion — the browser stays responsive while work runs server-side.
+
+| Route | Surface |
+|---|---|
+| `/` | Dashboard — watcher heartbeat, inbox queue, source / draft / domain counts, recent activity |
+| `/ops/ingest`, `/ops/query`, `/ops/finalize`, `/ops/filter-correct` | Forms for the per-source operations |
+| `/ops/bootstrap`, `/ops/discover`, `/ops/promote` | Domain authorship (top-down + bottom-up paths) |
+| `/ops/lint` | Run health checks, view the report inline |
+| `/research` | Multi-adapter research orchestration. Sessions list + detail; structured per-adapter plan editor; per-step progress streamed from `log.md` |
+| `/review` | Curation queues: drafts (inline finalize / abandon), contradictions (severity-tagged, expandable), orphans (discharge via query), filter-band (rationale-driven include / exclude) |
+| `/domains/artifacts` | NotebookLM artifact triggers per domain — confirmation modals on every LLM-calling op, per-slide revise modal |
+
+Async ops surface their `task_id` in the UI; refreshing or navigating away does not lose state. Confirmation modals gate every NotebookLM call (cost-sensitive, opt-in by design).
+
+The UI is built into `web/dist/` and served as static files by FastAPI; no separate frontend dev server is required for users. Source for the SPA lives at `web/src/` (Vite + React 18 + TypeScript).
+
+## Source types
+
+Markdown converters dispatch on filename / URL pattern. Each lives at `src/gateway/converters/<type>.py` and emits canonical markdown to `raw/<type>/<slug>.md`.
+
+| Type | Source | Extraction |
+|---|---|---|
+| `web` | Any URL | Firecrawl + boilerplate strip |
+| `youtube`, `arxiv`, `pubmed` | Domain-matched URLs | Per-source API + transcript / abstract |
+| `pdf` | Local file | `pdfminer.six` |
+| `voice` | `.m4a` / `.mp3` / `.wav` | `mlx-whisper` + pyannote diarization (Apple Silicon) |
+| `audiobook` | `.m4b` | Same as voice with chapter-aware segmentation |
+| `note` | Apple Notes (poller) | JXA bridge → markdown |
+| `csv` / `docx` / `xlsx` / `pptx` | Local file | `csv` (stdlib) / `python-docx` / `openpyxl` / `python-pptx` |
+| `image` | `.png` / `.jpg` / `.heic` / etc. | Pillow + Claude vision (structured description) |
+
+Adding a new type: see [CLAUDE.md](CLAUDE.md) § "Adding a new source type". Pollers for additional API-only sources (Notion, Slack, Gmail) share the `Poller` framework.
 
 ## Documentation
 
 | Doc | Purpose |
 |---|---|
-| [TUTORIAL.md](TUTORIAL.md) | How to actually use the KB — read, ingest, query, finalize, MCP from other projects |
-| [CLAUDE.md](CLAUDE.md) | Agent control surface — auto-loaded by Claude Code sessions in this directory |
+| [TUTORIAL.md](TUTORIAL.md) | Day-1 workflow guide |
+| [CLAUDE.md](CLAUDE.md) | Agent control surface — auto-loaded by Claude Code in this directory |
 | [WIKI.md](WIKI.md) | Conventions reference — the contract every component codes against |
-| [MIGRATION.md](MIGRATION.md) | Legacy Obsidian vault migration plan (executed M11–M14) |
 | [BUILD.md](BUILD.md) | Gateway build plan and per-milestone delivery record |
-| [SESSION_TRANSCRIPT.md](SESSION_TRANSCRIPT.md) | Chronological narrative of the design-and-build session that produced v1 |
+| [MIGRATION.md](MIGRATION.md) | Legacy Obsidian vault migration plan |
+| [SESSION_TRANSCRIPT.md](SESSION_TRANSCRIPT.md) | Chronological narrative of the v1 design-and-build session |
 
 ## Layout
 
-- `src/gateway/` — gateway implementation (Python package)
-- `tests/gateway/` — pytest suite
-- `migrations/` — schema and content migration scripts
-- `scripts/` — operational scripts (watcher install, MCP install, pre-commit hook)
-- `raw/` — immutable sources (markdown + frontmatter, optional binary sidecars)
-- `wiki/` — LLM-authored knowledge layer (entities, concepts, sources, synthesis, MOCs, artifacts)
-- `nlm/` — NotebookLM bookkeeping
-- `index.md` / `log.md` — content index and chronological event log
-- `.knowledge/` — runtime state (policies, examples, locks, lint reports, migration audit, poller cursors, watcher state)
+```
+~/code/knowledge/
+├── src/gateway/    gateway implementation (Python package)
+├── tests/gateway/  pytest suite
+├── migrations/     schema and content migration scripts
+├── scripts/        operational scripts (watcher, MCP, pre-commit hook)
+├── web/            Vite + React + TypeScript SPA (built artifacts in web/dist/)
+├── raw/            immutable sources (markdown + frontmatter, optional binary sidecars)
+├── wiki/           LLM-authored knowledge layer (entities, concepts, sources, synthesis, MOCs, artifacts)
+├── nlm/            NotebookLM bookkeeping (notebooks.yaml, query plans, source maps)
+├── index.md        content index
+├── log.md          chronological event log (append-only)
+└── .knowledge/     runtime state (policies, examples, locks, lint reports, watcher / poller cursors)
+```
 
 ## Install
 
@@ -58,7 +96,7 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-For voice / audiobook converters and speaker diarization (M3 Max recommended; ~3 GB of model weights):
+For voice / audiobook converters and speaker diarization (Apple Silicon recommended; ~3 GB of model weights):
 
 ```sh
 pip install -e ".[whisper]"
@@ -66,7 +104,7 @@ hf auth login                 # paste a Hugging Face token (Read scope)
 # Accept terms once at https://huggingface.co/pyannote/speaker-diarization-3.1
 ```
 
-`wiki` is now on PATH. Optional operational integrations:
+`wiki` is now on PATH. Optional integrations:
 
 ```sh
 scripts/install_watcher.sh           # launchd agent: raw/inbox/ → auto-ingest
@@ -80,48 +118,61 @@ scripts/install_pre_commit_hook.sh   # blocks commits on schema-drift or raw `nl
 wiki --help
 ```
 
+### Ingest and query
+
 | Command | What it does |
 |---|---|
-| `wiki ingest <input> [--domain X] [--with-plan] [--draft]` | Ingest URL or local file. PDFs / audio / m4b route to type-specific converters. `--with-plan` runs the wiki authorship agent in the same call. `--draft` allows partial citations. |
+| `wiki ingest <input> [--domain X] [--with-plan] [--draft]` | Ingest a URL or local file. `--with-plan` runs the wiki authorship agent in the same call. `--draft` allows partial citations. |
+| `wiki batch-ingest <vault> --legacy-import --domain <slug>` | Migrate a research-notebook Obsidian vault |
 | `wiki filter <input>` | Read-only filter score against the domain policy (no writes) |
 | `wiki filter-correct <id>` | Override a past filter decision; pin as a `user-correction` example |
-| `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/...]]` citations |
-| `wiki finalize <page> [--abandon]` | Promote a draft page to strict (or delete it) |
-| `wiki bootstrap-domain "<description>" <slug> [--force]` | Author a starter `policy.yaml` from a natural-language domain description (top-down green-field path) |
-| `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | Cluster untagged sources into domain proposals (bottom-up path) |
-| `wiki promote-domain <proposal-slug>` | Bless a proposal — writes policy, back-tags member sources |
-| `wiki demote-domain <domain-slug>` | Reverse a promotion — removes tags, deletes auto-generated policy |
-| `wiki reject-proposal <proposal-slug>` | Delete a draft proposal |
+| `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/<id>]]` citations |
+| `wiki finalize <page> [--abandon]` | Promote a draft to strict (or delete it) |
 | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` | Multi-adapter search with per-adapter query expansion; `--review` pauses for plan editing |
+
+### Domain authorship
+
+| Command | What it does |
+|---|---|
+| `wiki bootstrap-domain "<description>" <slug> [--force]` | Author a starter `policy.yaml` from a natural-language description (top-down) |
+| `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | Cluster untagged sources into draft proposals (bottom-up) |
+| `wiki promote-domain <proposal-slug>` | Bless a proposal — write policy, back-tag member sources |
+| `wiki demote-domain <domain-slug>` | Reverse a promotion — remove tags, delete auto-generated policy |
+| `wiki reject-proposal <proposal-slug>` | Delete a draft proposal |
+
+### NotebookLM
+
+| Command | What it does |
+|---|---|
 | `wiki nlm-add <domain> <source-id>` | Add a raw source to the domain's NotebookLM corpus |
-| `wiki nlm-sync <domain> [--limit N] [--dry-run]` | Bulk-add every raw source tagged with the domain; idempotent + resumable |
-| `wiki nlm-briefing <domain>` | Generate a briefing doc → file as `wiki/artifacts/...` |
+| `wiki nlm-sync <domain> [--limit N] [--dry-run]` | Bulk-add every raw source tagged with the domain; idempotent and resumable |
+| `wiki nlm-briefing <domain>` | Briefing doc → `wiki/artifacts/...` |
 | `wiki nlm-audio <domain> "<topic>"` | Audio overview → `wiki/artifacts/` |
 | `wiki nlm-slides <domain> "<topic>"` | Slide deck → `wiki/artifacts/` |
 | `wiki nlm-revise <slug> --slide N "<instructions>"` | Revise an existing artifact |
-| `wiki batch-ingest <vault> --legacy-import --domain <slug>` | Migrate a research-notebook Obsidian vault |
-| `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` | Populate the policy + example bank from legacy artifacts |
+
+### Operations
+
+| Command | What it does |
+|---|---|
+| `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` | Populate policy + example bank from legacy artifacts |
 | `wiki finetune [--check \| --domain X --distill [--force]]` | Inspect example-bank readiness or distill a v2 policy candidate |
-| `wiki poll <name>` | Run a registered poller (e.g. `apple-notes`); writes new items to `raw/note/`. `--list` shows registered. |
+| `wiki poll <name> [--list]` | Run a registered poller (e.g. `apple-notes`) for API-only sources |
 | `wiki lint [--scope <check>]` | Run health checks; report at `.knowledge/lint/<timestamp>.md` |
 | `wiki status` | Watcher heartbeat, inbox queue, recent activity |
 | `wiki watch` | Inbox watcher daemon (foreground; launchd usually runs this) |
-| `wiki serve [--port 7474] [--bind 127.0.0.1]` | Local browser UI: `/` dashboard, `/ops/*` ops, `/research` orchestration, `/review` curation queues, `/domains/artifacts` NotebookLM artifact triggers |
+| `wiki serve [--port 7474] [--bind 127.0.0.1]` | Local browser [web UI](#web-ui) |
 | `wiki mcp-serve` | Start the MCP server (stdio) — exposes every gateway op as `wiki_*` tools |
 
-`wiki index` / `wiki search` / `wiki migrate` remain stubs (operational sugar).
+`wiki index --rebuild`, `wiki search`, and `wiki migrate <name>` remain stubs.
 
-## Status
+## State
 
-**v1 + operational integrations shipped.** See [BUILD.md § 9](BUILD.md) for the per-milestone delivery record (commits, tests, hand-tests). For live content state, run `wiki status` and read `index.md`.
+Live state lives at runtime, not in this file:
 
-### Deferred items (not load-bearing)
-
-- `wiki index --rebuild`, `wiki search`, `wiki migrate <name>` — operational sugar
-- Notion / Slack / Gmail pollers (Apple Notes shipped in M34; the others share the same `Poller` framework)
-- BM25 / vector index sidecar — relevant when the wiki crosses ~10k pages; markdown stays canonical, the index is derived state
-- Open-weight classifier fine-tune (the second WIKI § 10.4 option) — useful only when a domain crosses ~1000 high-quality decisions
-- Slug-rename op for query-driven synthesis pages with auto-derived slugs
+- `wiki status` — watcher heartbeat, queue depth, recent activity
+- `index.md` — content index
+- [BUILD.md](BUILD.md) — per-milestone delivery record (commits, tests, hand-tests)
 
 ## License
 

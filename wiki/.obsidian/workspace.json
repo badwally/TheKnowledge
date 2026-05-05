@@ -11,10 +11,14 @@
             "id": "d363b318d8b001f4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "synthesis/agentic-ai-workflows-orchestration-patterns-mcp.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "agentic-ai-workflows-orchestration-patterns-mcp"
             }
           }
         ]
@@ -181,6 +185,19 @@
   },
   "active": "d363b318d8b001f4",
   "lastOpenFiles": [
+    "synthesis/2026-05-05-what-is-the-state-of-the.md",
+    "entities/inner-circle-trader.md",
+    "concepts/auto-commit-pattern.md",
+    "concepts/pre-flight-budget-check.md",
+    "concepts/per-chunk-page-context.md",
+    "concepts/page-lifecycle.md",
+    "concepts/human-edit-protection.md",
+    "concepts/structural-provenance.md",
+    "concepts/deterministic-linking.md",
+    "concepts/llm-wiki-pattern.md",
+    "entities/karpathy-llm-wiki-gist.md",
+    "entities/do-y-lee.md",
+    "entities/wikiloom.md",
     "sources/pdf-6f4c9082252e.md",
     "sources/pdf-d4797e8f4981.md",
     "raw/pdf/semanticscholarapi.pdf",
@@ -196,19 +213,6 @@
     "2026-05-04.md",
     "raw/pdf/9_Designing+End-to-End+Retrieval-Augmented+Generation(RAG)+Workflows+for+Knowledge-Intensive+Applications.pdf",
     "concepts/authority-misinfluence-tendency.md",
-    "concepts/reciprocation-tendency.md",
-    "concepts/availability-misweighing-tendency.md",
-    "concepts/contrast-misreaction-tendency.md",
-    "concepts/man-with-a-hammer-tendency.md",
-    "concepts/inconsistency-avoidance-tendency.md",
-    "concepts/social-proof-tendency.md",
-    "concepts/deprival-superreaction-tendency.md",
-    "concepts/lollapalooza-effect.md",
-    "concepts/incentive-caused-bias.md",
-    "concepts/munger-twenty-five-tendencies.md",
-    "entities/stanley-milgram.md",
-    "entities/robert-cialdini.md",
-    "entities/charles-munger.md",
     "raw/pdf",
     "raw"
   ]
