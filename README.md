@@ -6,7 +6,8 @@ Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f
 
 ## What you do
 
-- Drop a PDF, voice memo, audiobook, or URL into an inbox, or run `wiki ingest`.
+- Drop a PDF, Word doc, Excel sheet, PowerPoint, CSV, image, voice memo, audiobook, or URL into an inbox, or run `wiki ingest`. Images go through Claude vision and produce structured citable descriptions.
+- Pull from API-only sources (Apple Notes today; Notion / Slack / Gmail queued) via `wiki poll <name>` — same downstream pipeline.
 - Ask the corpus a question with `wiki query "<question>"` — semantic retrieval across mixed media, an agent writes a synthesis with every claim wikilinked to a source.
 - For whole-corpus work, route through NotebookLM via `wiki nlm-briefing` / `nlm-audio` / `nlm-slides` — artifacts file back as wiki pages, not silos.
 - Open the vault in Obsidian to navigate the citation graph visually; cite stable wiki paths from any other project, editor, or agent.
@@ -15,6 +16,8 @@ Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f
 
 - **Obsidian** is the knowledge-graph visualization engine. Open the vault and the wikilinks become a navigable graph of sources, concepts, and syntheses.
 - **NotebookLM** is the heavy-synthesis service behind the gateway, not a replacement. Every artifact files back to the vault.
+- **Office documents** (Word, Excel, PowerPoint) ingest via pure-Python parsers (`python-docx` / `openpyxl` / `python-pptx`); originals preserved as sidecars.
+- **Images** ingest via Pillow + Claude vision — structured descriptions (overview / visible text / key elements / domain content) make figures citable like any other source.
 - **Voice memos and audiobooks** transcribe locally (mlx-whisper + speaker diarization on Apple Silicon).
 - **MCP** exposes every gateway operation as `wiki_*` tools to any other Claude Code project.
 
@@ -99,6 +102,7 @@ wiki --help
 | `wiki batch-ingest <vault> --legacy-import --domain <slug>` | Migrate a research-notebook Obsidian vault |
 | `wiki backfill-examples --domain X --legacy-config <yaml> --json <staged.json>` | Populate the policy + example bank from legacy artifacts |
 | `wiki finetune [--check \| --domain X --distill [--force]]` | Inspect example-bank readiness or distill a v2 policy candidate |
+| `wiki poll <name>` | Run a registered poller (e.g. `apple-notes`); writes new items to `raw/note/`. `--list` shows registered. |
 | `wiki lint [--scope <check>]` | Run health checks; report at `.knowledge/lint/<timestamp>.md` |
 | `wiki status` | Watcher heartbeat, inbox queue, recent activity |
 | `wiki watch` | Inbox watcher daemon (foreground; launchd usually runs this) |
@@ -114,7 +118,8 @@ wiki --help
 ### Deferred items (not load-bearing)
 
 - `wiki index --rebuild`, `wiki search`, `wiki migrate <name>` — operational sugar
-- Apple Notes AppleScript poller (framework ships; platform-specific adapter pending)
+- Notion / Slack / Gmail pollers (Apple Notes shipped in M34; the others share the same `Poller` framework)
+- BM25 / vector index sidecar — relevant when the wiki crosses ~10k pages; markdown stays canonical, the index is derived state
 - Open-weight classifier fine-tune (the second WIKI § 10.4 option) — useful only when a domain crosses ~1000 high-quality decisions
 - Slug-rename op for query-driven synthesis pages with auto-derived slugs
 
