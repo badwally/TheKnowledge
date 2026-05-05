@@ -9,6 +9,7 @@ import Lint from "./pages/Lint";
 import Promote from "./pages/Promote";
 import Query from "./pages/Query";
 import Research from "./pages/research/Research";
+import Review from "./pages/review/Review";
 
 function Sidebar() {
   return (
@@ -26,6 +27,8 @@ function Sidebar() {
       <NavLink to="/domains/bootstrap">Bootstrap</NavLink>
       <NavLink to="/domains/discover">Discover</NavLink>
       <NavLink to="/domains/promote">Promote</NavLink>
+      <div className="sidebar-group-label">Review</div>
+      <NavLink to="/review">Review</NavLink>
       <div className="sidebar-group-label">System</div>
       <NavLink to="/system/lint">Lint</NavLink>
     </nav>
@@ -54,6 +57,7 @@ export default function App() {
           <Route path="/ops/filter-correct" element={<FilterCorrect />} />
           <Route path="/research" element={<Research />} />
           <Route path="/research/:sessionId" element={<Research />} />
+          <Route path="/review/*" element={<Review />} />
           <Route path="/domains/bootstrap" element={<Bootstrap />} />
           <Route path="/domains/discover" element={<Discover />} />
           <Route path="/domains/promote" element={<Promote />} />
