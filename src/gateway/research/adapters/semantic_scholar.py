@@ -60,7 +60,6 @@ _CITATION_FIELDS = ",".join([
     "year",
     "citationCount",
     "influentialCitationCount",
-    "tldr",
     "fieldsOfStudy",
 ])
 
