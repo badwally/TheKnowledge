@@ -16,7 +16,7 @@ Value investor, founder of Gotham Capital, and adjunct professor at Columbia Bus
 ## Key facts
 
 - Taught the Special Situation Investing classes at Columbia University Business School, with the class notes covering 2002 through 2006 [[sources/pdf-d0b9b7e97b5c]].
-- Began his first class on September 7, 2005 by framing his goal as "to teach you the course that I never had and that I wish I had" [[sources/pdf-d0b9b7e97b5c]].
+- Began the September 7, 2005 session (the first class captured in the auditor's notes, mid-way through his 2002-2006 teaching run) by framing his goal as "to teach you the course that I never had and that I wish I had" [[sources/pdf-d0b9b7e97b5c]].
 - Started in business school 25 years before the 2005 class — i.e., around 1980 — and learned investing on his own through reading and making mistakes [[sources/pdf-d0b9b7e97b5c]].
 - Founded and runs Gotham Capital, which has averaged 40% per year for 20 years; per his class, $1,000 invested at inception would have grown to $836,683 [[sources/pdf-d0b9b7e97b5c]].
 - Defines his job to his 11-year-old son via a story about a boy named Jason selling gum, concluding: "I sit around trying to figure out what businesses are worth, and then I try to pay a lot less for them" [[sources/pdf-d0b9b7e97b5c]].

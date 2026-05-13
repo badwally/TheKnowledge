@@ -16,7 +16,7 @@ Head of Investor Coverage at SVB Commercial Bank; co-lead author (with Marc Cadi
 ## Key facts
 
 - Title: Head of Investor Coverage, SVB Commercial Bank; contact: mgallagher@svb.com [[sources/pdf-silicon-valley-2025-state-of-the]].
-- Co-head of the investor coverage practice; he and his team provide tailored services, industry insights, and strategic guidance to top investors in the innovation economy [[sources/pdf-silicon-valley-2025-state-of-the]].
+- The same source's biographical line refers to him as "co-head of the investor coverage practice" — reflecting shared practice leadership consistent with the individual title "Head of Investor Coverage" given on line above; he and his team provide tailored services, industry insights, and strategic guidance to top investors in the innovation economy [[sources/pdf-silicon-valley-2025-state-of-the]].
 - Together with Marc Cadieux, brings over a half-century of industry knowledge and experience working with many of the top companies and investors across the innovation economy [[sources/pdf-silicon-valley-2025-state-of-the]].
 
 ## Sources
