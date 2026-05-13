@@ -368,3 +368,99 @@ first to orient before drilling into specific pages.
 - [[sources/pdf-6ae97b9c27c7]] · pdf · zoltan-pozsar-aug-2-war-and-interest-rates-1
 - [[sources/pdf-sriram-krishnan-2019-untitled]] · pdf · Untitled
 - [[sources/pdf-d4797e8f4981]] · pdf · 9_Designing+End-to-End+Retrieval-Augmented+Generation(RAG)+Workflows+for+Knowledge-Intensive+Applications
+- [[sources/docx-bf4965d0d33a]] · docx · condo_capital_infra_synthesis_2026-05-08 · condo-capital-infra
+- [[sources/web-2026-01-01-818]] · web · SIRS Reporting and Database · condo-capital-infra
+- [[sources/web-2024-07-09-f2a]] · web · Inspections - DBPR Condominium Information & Resources · condo-capital-infra
+- [[sources/web-2025-01-01-246]] · web · DAVIS-STIRLING ACT · condo-capital-infra
+- [[sources/web-2013-11-28-cda]] · web · Strata depreciation report requirements · condo-capital-infra
+- [[sources/web-2010-01-01-6c4]] · web · 61B-22 : FINANCIAL AND ACCOUNTING REQUIREMENTS; BUDGETS, RESERVES, AND GUARANTEES - Florida Administrative Rules, Law, Code, Register · condo
+- [[sources/web-2010-01-01-d36]] · web · 61B-23 : THE ASSOCIATION - Florida Administrative Rules, Law, Code, Register · condo
+- [[sources/web-2025-04-30-984]] · web · The Florida Senate · condo
+- [[sources/pdf-house-bill-2025-h0913er-docx]] · pdf · _h0913er.docx · condo
+- [[sources/web-2026-01-01-361]] · web · SIRS Reporting and Database · condo
+- [[sources/web-2024-01-11-e67]] · web · New Jersey Enacts Stringent New Inspection, Evaluation, and Maintenance Requirements for Condominium and Co-Op Buildings · condo
+- [[sources/web-2026-05-06-9cd]] · web · Repair Requirements Vary Across Markets! - Façade Maintenance Laws · condo
+- [[sources/web-1998-01-01-7e4]] · web · Building Maintenance Solutions - BuildingLink Canada · condo
+- [[sources/web-2022-01-01-e0b]] · web · Chapter 14 Inspection, Testing, and Maintenance: Fire Alarm Code, 2022 | UpCodes · condo
+- [[sources/web-2024-06-01-906]] · web · NULL - Risk Logic · condo
+- [[sources/web-2024-10-15-6c9]] · web · Condo & HOA Maintenance Tracking · condo
+- [[sources/web-2025-01-01-6b5]] · web · LL87: Energy Audits & Retro Commissioning · condo
+- [[sources/web-2025-02-27-05e]] · web · Local Law 11 | FISP | Facade Inspection Safety Program | NYC | SUPERSTRUCTURES · condo
+- [[sources/web-2025-08-01-8c2]] · web · How One NYC Condo Cut Water Damage Risk—and Insurance Premiums—With Smart Detection · condo
+- [[sources/web-2025-10-13-a40]] · web · Best Practices Reports - Foundation for Community Association Research · condo
+- [[sources/web-2025-11-24-619]] · web · Bill 16 | Guide to Comply with Bill 16 in Quebec in 2026 · condo
+- [[sources/web-2025-12-08-df6]] · web · California Balcony Inspection Law: SB 721 & SB 326 Guide 2026 · condo
+- [[sources/web-2026-01-01-58c]] · web · Chicago | FacadeOrdinance.com · condo
+- [[sources/web-2026-01-01-93d]] · web · Electrical Preventative Maintenance · condo
+- [[sources/web-2026-02-18-dff]] · web · Facility Manager · condo
+- [[sources/web-2026-02-20-0f3]] · web · Prism: CRE’s #1 Building Operations Platform | Building Engines · condo
+- [[sources/web-2026-03-29-4b9]] · web · Strata maintenance guides - VISOA - Vancouver Island Strata Owners Association · condo
+- [[sources/web-2000-01-01-bf7]] · web · The Florida Senate · condo
+- [[sources/web-2014-06-25-7b4]] · web · Submeters Effective Way to Gather Hard Data · condo
+- [[sources/web-2018-07-01-1cf]] · web · The Florida Senate · condo
+- [[sources/web-2018-09-17-ca9]] · web · Bill Text · condo
+- [[sources/web-2024-01-01-ac1]] · web · The Florida Senate · condo
+- [[sources/web-2024-05-23-ea9]] · web · Condominiums : responsibility for repair and maintenance · condo
+- [[sources/web-2024-06-04-fd1]] · web · The Essential Guide to the Key Points of Bill 16 · condo
+- [[sources/web-2025-01-01-742]] · web · Façade Inspection & Safety Program (FISP) Filing Instructions · condo
+- [[sources/web-2026-01-01-927]] · web · Resources · condo
+- [[sources/web-2026-01-07-3f3]] · web · PRESS RELEASES · condo
+- [[sources/web-2026-01-13-360]] · web · Law 16 Quebec: 2025 Compliance Guide for Condo Owners · condo
+- [[sources/web-2026-02-23-5ef]] · web · ASME A17.1-2025: Safety Code for Elevators and Escalators - ANSI Blog · condo
+- [[sources/pdf-6302e90be3b6]] · pdf · boma-best-murb · condo
+- [[sources/pdf-6b0d49e91108]] · pdf · PCI Maintenance Manual for Precast Parking Structures · condo
+- [[sources/pdf-bc-housing-2021-maintenance-matters-20]] · pdf · Maintenance Matters - 20 - Managing Internal Water Systems · condo
+- [[sources/pdf-db0621cb54d0]] · pdf · boma-best-4-1-all-assets · condo
+- [[sources/pdf-ede594f9f127]] · pdf · BestPracticesReport-Maintenance · condo
+- [[sources/web-2024-04-17-715]] · web · Reserve funds : Condominium Property Act · condo-capital-infra
+- [[sources/pdf-bc-housing-2020-maintenance-matters-06]] · pdf · Maintenance Matters - 06 - Deck and Balcony Maintenance Essentials · condo-capital-infra
+- [[sources/pdf-bc-housing-2020-maintenance-matters-11]] · pdf · Maintenance Matters - 11 - Building Envelope Maintenance Program Guide · condo-capital-infra
+- [[sources/web-2026-05-10-f34]] · web · Service life dataset for non-structural building envelope materials - NRC Digital Repository · condo-capital-infra
+- [[sources/pdf-bc-housing-2020-maintenance-matters-02]] · pdf · Maintenance Matters - 02 - Roof Maintenance Tips for Long-Term Protection · condo-capital-infra
+- [[sources/web-2026-05-10-nsa]] · web · Nova Scotia Open Data - Active Condominium Corporations · condo-capital-infra
+- [[sources/csv-7e5affc7bb1b]] · csv · hrm-pplc-building-permits · condo-capital-infra
+- [[sources/web-2026-05-11-852]] · web · Reference Service Life Dataset for non-structural building envelope materials: current state, knowledge gaps and inconsistencies - NRC Publications Archive · condo-capital-infra
+- [[sources/web-2011-08-18-1e7]] · web · https://www.assembly.nl.ca/legislation/sr/annualregs/2011/nr110080.htm · condo-capital-infra
+- [[sources/web-2017-07-26-1f3]] · web · Frequently Asked Questions · condo-capital-infra
+- [[sources/web-2018-03-31-c63]] · web · New-Brunswick-Fact-Sheet · condo-capital-infra
+- [[sources/pdf-fletcher-olivia-2025-h0913c-com]] · pdf · h0913c.COM · condo-capital-infra
+- [[sources/pdf-b922a12f47f0]] · pdf · fl-dbpr-sirs-reporting-form · condo-capital-infra
+- [[sources/pdf-dre-2010-reserve-study-guidelines]] · pdf · Reserve Study Guidelines for Homeowner Association Budgets · condo-capital-infra
+- [[sources/pdf-condominium-authority-2024-report-on-resrve]] · pdf · Report on Resrve Fund Survey Findings · condo-capital-infra
+- [[sources/pdf-national-assembly-2020-bill-16-assented]] · pdf · Bill 16 - Assented to (2019, chapter 28) · condo-capital-infra
+- [[sources/pdf-e3717ebcf2bc]] · pdf · Condominium Act · condo-capital-infra
+- [[sources/web-2026-01-01-577]] · web · Changes to the Condominium Act have been Proclaimed · condo-capital-infra
+- [[sources/web-2024-08-30-283]] · web · N.S. Reg. 60/71 — Condominium Regulations (Nova Scotia), Part K: Reserve-fund Studies (ss. 77-81) · condo-capital-infra
+- [[sources/web-2017-01-13-f20]] · web · Condominium Reserve Fund Studies – Regulated Requirements (Nova Scotia) · condo-capital-infra
+- [[sources/web-2018-01-09-945]] · web · PIPEDA requirements in brief · condo-capital-infra
+- [[sources/web-2023-05-02-683]] · web · CINC Systems Announces Partnership with SmartProperty's Living Reserve Study™ · condo-capital-infra
+- [[sources/web-2023-12-14-8ec]] · web · CINC Systems Secures Meaningful Strategic Investment From Hg to Accelerate Its Growth as a Premier Software Provider to the Community Association Management Industry · condo-capital-infra
+- [[sources/web-2026-04-16-4c4]] · web · CINC Expands Cephai With New AI Capabilities, Single Sign-On, and a Unified Operating Experience for Community Association Management · condo-capital-infra
+- [[sources/docx-818ed0a0ce55]] · docx · predictive-analytics-canadian-condo-2026-05-11 · condo-capital-infra
+- [[sources/web-2026-02-04-5bb]] · web · FirstService (FSV) Q4 2025 Earnings Transcript | The Motley Fool · condo-capital-infra
+- [[sources/web-2025-05-08-91b]] · web · FirstService Residential Acquires Core Real Estate Group · condo-capital-infra
+- [[sources/web-2026-02-18-2af]] · web · News · condo-capital-infra
+- [[sources/web-2025-10-24-c1b]] · web · Elliman sells property management arm to Associa for $85M · condo-capital-infra
+- [[sources/web-2025-01-03-c5d]] · web · Proptech Valuation Multiples: 2025 Insights & Trends | Finro · condo-capital-infra
+- [[sources/web-2026-05-11-f34]] · web · Service life dataset for non-structural building envelope materials - NRC Digital Repository · condo-capital-infra
+- [[sources/web-2026-05-11-4ef]] · web · Service life dataset for non-structural building envelope materials - NRC Digital Repository · condo-capital-infra
+- [[sources/web-2015-12-11-313]] · web · Menu · condo-capital-infra
+- [[sources/web-2024-06-27-ed9]] · web · - Condominium Property Act · condo-capital-infra
+- [[sources/web-2018-03-31-9ad]] · web · Prince-Edward-Island-Fact-Sheet · condo-capital-infra
+- [[sources/web-2018-03-31-a5d]] · web · Newfoundland-and-Labrador-Fact-Sheet · condo-capital-infra
+- [[sources/web-1998-01-01-da9]] · web · About BuildingLink Canada- Condo & Strata Property Management Software · condo-capital-infra
+- [[sources/web-2007-05-15-70e]] · web · Brookfield Residential Services, Ltd., Canada's Largest Condominium Management Company, Selects Yardi Voyager™ · condo-capital-infra
+- [[sources/pdf-3c6b4345c8c4]] · pdf · summergardens-reservestudy · condo-capital-infra
+- [[sources/web-2024-03-12-012]] · web · Yardi Breeze Premier: Unlocking a New Era in Condo and Strata Market in Canada · condo-capital-infra
+- [[sources/web-2025-02-10-057]] · web · NGBR - Sustainable & Smart Building Certification Program - BOMA BEST · condo-capital-infra
+- [[sources/web-2026-03-26-dd1]] · web · Natural Resources Canada's national building energy benchmarking initiative · condo-capital-infra
+- [[sources/web-2025-01-01-14d]] · web · Reserve Study Software for HOAs & Condo Associations | SmartProperty
+- [[sources/web-2025-04-12-ca4]] · web · The Percent Funded Myth - Why Reserve Study Math Fails the Test - HOA Detective™ Blog
+- [[sources/web-2026-03-09-423]] · web · Structural Integrity Reserve Study Explained for Florida Condominiums
+- [[sources/web-2025-01-01-cc2]] · web · RCW 64.90.550
+- [[sources/web-2026-01-01-970]] · web · Reserve Study Standards
+- [[sources/web-2023-03-20-7a4]] · web · What is Full Funding and Baseline Funding?
+- [[sources/web-2025-07-09-b13]] · web · HOA Special Assessment Limits in California: Homeowner Protections | LS Carlson Law
+- [[sources/web-2023-06-26-652]] · web · Changes to CAI’s Reserve Study Standards Explained
+- [[sources/web-1995-01-01-0ff]] · web · https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML
+- [[sources/web-2025-10-29-056]] · web · Washington State Reserve Study Requirements: Your HOA/Condo Compliance Roadmap

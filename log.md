@@ -4732,3 +4732,6011 @@ report=.knowledge/lint/2026-05-05T01-28-58Z-schema-drift.md
 ## [2026-05-05T01:29:29Z] lint | scope=schema-drift | schema-drift=0
 
 report=.knowledge/lint/2026-05-05T01-29-29Z-schema-drift.md
+
+## [2026-05-05T04:00:25Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T04-00-25Z-schema-drift.md
+
+## [2026-05-05T04:22:41Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T04-22-41Z-schema-drift.md
+
+## [2026-05-05T15:54:15Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-05T15-54-15Z-schema-drift.md
+
+## [2026-05-08T18:51:36Z] bootstrap-domain | slug=condo | inclusion_count=7 | exclusion_count=5
+
+authored policy for condo from description
+
+## [2026-05-08T18:51:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-08T18:52:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-08-how-should-a-condo-hoa-integrate.yaml
+
+## [2026-05-08T18:59:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-08T18:59:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-08T18:59:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=web
+
+error: FIRECRAWL_API_KEY not set
+
+## [2026-05-08T18:59:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=youtube
+
+error: YOUTUBE_API_KEY not set
+
+## [2026-05-08T18:59:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=semantic_scholar
+
+error: S2 API rate limit exceeded; set S2_API_KEY for higher limits
+
+## [2026-05-08T18:59:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-08T18:59:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=42
+
+merged 42 candidate(s) across adapters
+
+## [2026-05-08T19:06:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-09T17:59:45Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-09T17-59-45Z-schema-drift.md
+
+## [2026-05-09T19:37:59Z] bootstrap-domain | slug=condo-capital-infra | inclusion_count=6 | exclusion_count=5
+
+authored policy for condo-capital-infra from description
+
+## [2026-05-09T19:38:19Z] ingest | id=docx-bf4965d0d33a | type=docx | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/docx/docx-bf4965d0d33a.md wiki=wiki/sources/docx-bf4965d0d33a.md
+
+## [2026-05-09T19:42:50Z] wiki-author | id=docx-bf4965d0d33a | updates=12 | created=12 | updated=0 | contradictions=0 | draft=no
+
+Seed the condo-capital-infra wiki with the foundational entities (FL SIRS, the four reserve-study-native and one smart-building vendor on the synthesis short-list, and CAI standards) and the load-bearing concepts (probabilistic modeling, six-component scope, business shape, regime-switching escalation, and CMMS-as-covariates) that downstream Condo artifacts will need to cite.
+
+## [2026-05-09T21:17:23Z] ingest | id=web-2026-01-01-818 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2026-01-01-818.md wiki=wiki/sources/web-2026-01-01-818.md
+
+## [2026-05-09T21:19:57Z] wiki-author | id=web-2026-01-01-818 | updates=2 | created=1 | updated=1 | contradictions=1 | draft=no
+
+Primary FL DBPR source enumerates the eight statutorily-required SIRS structural elements, fixes the Jul 2024 / Oct 2025 / Dec 2025 reporting deadlines, names the Division as administrator, and exposes the public SIRS Reporting Database — material that florida-sirs.md asserted but did not enumerate, and a regulator entity worth standing up on its own.
+
+## [2026-05-09T21:20:11Z] ingest | id=web-2024-07-09-f2a | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2024-07-09-f2a.md wiki=wiki/sources/web-2024-07-09-f2a.md
+
+## [2026-05-09T21:24:54Z] wiki-author | id=web-2024-07-09-f2a | updates=4 | created=1 | updated=3 | contradictions=1 | draft=no
+
+DBPR's primary-source Inspections page is the authoritative reference for both the Florida milestone inspection regime (currently underspecified in the wiki) and several SIRS administrative details (eight elements, performer qualifications, funding-waiver windows, combined SIRS/MI deadlines), warranting a new milestone-inspection entity plus targeted updates to florida-sirs, dbpr-condominiums-division, and cai-reserve-study-standards.
+
+## [2026-05-09T21:25:29Z] ingest | id=web-2025-01-01-246 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2025-01-01-246.md wiki=wiki/sources/web-2025-01-01-246.md
+
+## [2026-05-09T21:28:23Z] wiki-author | id=web-2025-01-01-246 | updates=4 | created=1 | updated=3 | contradictions=1 | draft=no
+
+Source is the primary statutory text of California Civil Code § 5550 (Davis-Stirling Act), an in-scope regulatory regime not yet in the wiki — create a dedicated regulation entity and add cross-links from the closest peers (Florida SIRS, CAI standards).
+
+## [2026-05-09T21:28:48Z] ingest | id=web-2013-11-28-cda | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2013-11-28-cda.md wiki=wiki/sources/web-2013-11-28-cda.md
+
+## [2026-05-09T21:33:18Z] wiki-author | id=web-2013-11-28-cda | updates=5 | created=1 | updated=4 | contradictions=0 | draft=no
+
+Authoritative BC government statement of Strata Property Act depreciation report requirements creates a new entity for the BC SPA regime and informs cross-jurisdictional and methodology-mandate framing on existing pages.
+
+## [2026-05-09T21:33:33Z] ingest | id=web-2024-04-17-715 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2024-04-17-715.md (wiki not written: filter decision=review)
+
+## [2026-05-09T21:56:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-09T21:56:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-09T21:56:36Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-09T21:56:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=youtube | n=100
+
+adapter youtube returned 100 candidates
+
+## [2026-05-09T21:56:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-09T21:57:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-09T21:57:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=220
+
+merged 220 candidate(s) across adapters
+
+## [2026-05-09T22:04:54Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=start | domain=condo
+
+start research session for prompt "Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op buildings in the United States and Canada, OUTSIDE reserve study requirements: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking deck), regulatory PM drivers (NYC LL11/FISP, SF/CA balcony, FL HB 913 operational layer, Ontario Condo Act §94 maintenance, BC SPA, Quebec Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink, ConciergePlus, Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly, UpKeep, Limble, Maintainx), predictive / condition-based PM in residential CRE, and insurance / loss-control PM checklists for high-rise residential."
+
+## [2026-05-09T22:05:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-09-best-practices-for-proactive-and-preventive.yaml
+
+## [2026-05-09T22:16:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=start | domain=condo
+
+start research session for prompt "Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op buildings in the United States and Canada, OUTSIDE reserve study requirements: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking deck), regulatory PM drivers (NYC LL11/FISP, SF/CA balcony, FL HB 913 operational layer, Ontario Condo Act §94 maintenance, BC SPA, Quebec Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink, ConciergePlus, Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly, UpKeep, Limble, Maintainx), predictive / condition-based PM in residential CRE, and insurance / loss-control PM checklists for high-rise residential."
+
+## [2026-05-09T22:16:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-09T22:16:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-09T22:16:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=youtube | n=77
+
+adapter youtube returned 77 candidates
+
+## [2026-05-09T22:16:42Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-09T22:16:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-09T22:16:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=merge | n=201
+
+merged 201 candidate(s) across adapters
+
+## [2026-05-09T22:26:16Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://eptura.com/discover-more/blog/integrated-facilities-management-guide/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:16Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=C9OXzUuLNO4
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=npwgHDOoOnU
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.ibm.com/think/topics/integrated-facilities-management
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=fltEB3_SUGg
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.buildinglink.io/blog/6-game-changing-condo-management-software-integrations
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=qRviuR6aFBQ
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:27Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.gofmx.com/blog/integrated-facilities-management/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:29Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=SvsYkkqreZY
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:30Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.reserveadvisors.com/resources/blog/long-lived-assets/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=ABUrA7_S5nM
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:33Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://reservestudyfl.com/reserve-study-items-useful-life/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=8B7dO7NxSTM
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:36Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.camsmgt.com/cams-blog/how-reserve-studies-prepare-community-associations-for-the-future
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=RFVN7sN5pN0
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://camcomgmt.com/what-is-a-reserve-study-a-simple-guide-to-protecting-your-propertys-future/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | n=42
+
+42 candidate(s) cleared threshold
+
+## [2026-05-09T22:26:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://doi.org/10.3390/su13179575
+
+error: could not fetch https://doi.org/10.3390/su13179575
+
+## [2026-05-09T22:26:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://doi.org/10.1061/40798(190)52
+
+error: could not fetch https://doi.org/10.1061/40798(190)52
+
+## [2026-05-09T22:26:42Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=KRj3ThV3ts8
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=Rw-Ngtpnht4
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:49Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=P3FcdOoFHEA
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:52Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=7PXs65HqOv0
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.youtube.com/watch?v=fddJ6CXIwyU
+
+error: oEmbed lookup failed: 401
+
+## [2026-05-09T22:26:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=Psj8j7luFCg
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:26:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+## [2026-05-09T22:26:59Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-09T22:26:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=SXQISczDBr0
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:02Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+## [2026-05-09T22:27:03Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=4YUPqwrrQ34
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://reservestudysoftware.com/wp-content/uploads/2021/09/Calculations.pdf
+
+error: no extractable content at https://reservestudysoftware.com/wp-content/uploads/2021/09/Calculations.pdf
+
+## [2026-05-09T22:27:06Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=6RgFW8xPfv4
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=JtTZHeAIxt0
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:12Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=VEWiI3vsoGk
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:16Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=nyKyen7jKwc
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=OZEmRqz4FJw
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+## [2026-05-09T22:27:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=materialize | n=34
+
+materialized 34 source(s) to raw/
+
+## [2026-05-09T22:27:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-09T22:27:22Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_session | notebook_id=a0b35624-66ba-46d9-a16e-ba136b3cd470
+
+created session notebook a0b35624-66ba-46d9-a16e-ba136b3cd470
+
+## [2026-05-09T22:27:22Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=kf6F2Gw_qOw
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:25Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=_j-Av10l4hc
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:29Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=iTCqDPFmSTg
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=kFZCRjm_VWk
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=wFxIiI-Exmo
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:38Z] ingest | id=web-2025-02-27-05e | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-02-27-05e.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:27:39Z] ingest | id=web-2025-01-01-742 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-01-01-742.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:27:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=O3nAx6uf_ms
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:43Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=X0cE-OL3lOE
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=3EqBOU6QhrY
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:49Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=mt3CFRK8Jz4
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:53Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=Z_6oDo9WHkE
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=i_7uMPzMdIY
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:27:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=VPhH-H3A8hQ
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:03Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=8YHfe8ziyi8
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:06Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=zP4YDfaELNk
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=WGcq9cmqA0o
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:12Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=fT7OTh6xVcI
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:16Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=BhkC5ILTe6k
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=Wyxx_1KVVzk
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:22Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=m9fcZeKaXl0
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:25Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=ywIdRo-paBU
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:28Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=y09GyWUApUw
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | target=https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML
+
+error: `nlm source add a0b35624-66ba-46d9-a16e-ba136b3cd470 --url https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML --wait` exited 1: Adding https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-09T22:28:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=iKae8qw_FiI
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:33Z] filter-correction | id=web-2025-02-27-05e | domain=condo | decision=include | original_score=?
+
+rationale='NYC FISP / Local Law 11 is a primary regulatory PM driver for high-rise residential - directly in scope for condo preventive maintenance corpus'
+
+## [2026-05-09T22:28:33Z] filter-correction | id=web-2025-01-01-742 | domain=condo | decision=include | original_score=?
+
+rationale='NYC DOB FISP filing instructions are a primary regulatory PM driver for high-rise residential - directly in scope'
+
+## [2026-05-09T22:28:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=MgSNPYEEh18
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=ZOtsUPy0bIs
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=t0UGhjMEphc
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:49Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=63gs6qU0ifo
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:53Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=nV9R3OInuig
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:28:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=xpsLXmntINE
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:01Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=fBRtD3Crfxc
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=l8pXwqEUoWY
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:07Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=eQrBxXZcLHc
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:10Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=shkxyRzGZRk
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=g45T8OfV3Bg
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=PDgfnGqPj1c
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://help-staff.buildinglink.com/en/support/solutions/articles/42000106596-maintenance-training-outline
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.buildinglink.io/solutions/maintenance/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://help-staff.buildinglink.com/en/support/solutions/articles/42000108456-maintenance-settings
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:30Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://help-staff.buildinglink.com/en/support/solutions/articles/42000099152-new-maintenance-request
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:33Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://help-staff.buildinglink.com/en/support/solutions/articles/42000108282-recurring-tasks
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://facilio.com/product/cmms-software/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:40Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://facilio.com/reimagined-cmms/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:43Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://facilio.com/blog/building-owners-cmms-needs/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:47Z] ingest | id=web-2018-09-17-ca9 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2018-09-17-ca9.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:29:47Z] ingest | id=web-2025-12-08-df6 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-12-08-df6.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:29:47Z] ingest | id=web-2025-01-01-6b5 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-01-01-6b5.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:29:47Z] ingest | id=web-2025-11-24-619 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-11-24-619.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:29:48Z] ingest | id=web-2026-01-13-360 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-13-360.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:29:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://facilio.com/learn/what-is-cmms/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:51Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://facilio.com/product/property-maintenance-software/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.buildingengines.com/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:29:58Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://app.buildingengines.com/geofire/login
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:00Z] ingest | id=web-2026-01-01-93d | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-93d.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:01Z] ingest | id=web-2024-05-23-ea9 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2024-05-23-ea9.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:01Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.buildingengines.com/platform/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:04Z] ingest | id=web-2026-03-29-4b9 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-03-29-4b9.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://app.buildingengines.com/geofire/login?Submit=Logout
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:05Z] ingest | id=web-2025-08-01-8c2 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-08-01-8c2.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:07Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.buildingengines.com/resources/knowledge-center/page/25/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | n=33 | skipped=1
+
+pushed 33 source(s) to session notebook (1 skipped)
+
+## [2026-05-09T22:30:09Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_map | n=34
+
+built source map (34 entries)
+
+## [2026-05-09T22:30:10Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nyc.gov/site/buildings/safety/facade-local-law.page
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fsresidential.com/new-york/news-events/articles-and-news/facade-inspection-safety-program-fisp-understandin/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:18Z] ingest | id=web-2024-01-11-e67 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2024-01-11-e67.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:18Z] ingest | id=web-1998-01-01-7e4 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-1998-01-01-7e4.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:18Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nyc.gov/assets/buildings/html/Facade_Filings_Cycle.html
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:18Z] ingest | id=web-2024-10-15-6c9 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2024-10-15-6c9.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:18Z] ingest | id=web-2026-05-06-9cd | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-05-06-9cd.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:19Z] ingest | id=web-2026-01-01-58c | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-58c.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.oandsassociates.com/news/how-the-new-changes-to-fisp-local-law-11-cycle-9-will-impact-building-owners-2
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:24Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.locallaw11.com/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:27Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.elcerrito.gov/1680/California-Balcony-Laws---SB-326-SB-721
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:31Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.burlingame.org/1298/SB-721-and-SB-326---Balcony-Laws
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:33Z] ingest | id=web-2024-06-01-906 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2024-06-01-906.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:33Z] ingest | id=web-2022-01-01-e0b | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2022-01-01-e0b.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:33Z] ingest | id=web-2026-02-20-0f3 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-02-20-0f3.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://american-apartment-owners-association.org/property-management/what-are-sb721-and-sb-326/?srsltid=AfmBOorSL7gANelwmayCtikXpWt_lo1la-MSU86oKx02MHmuR76G6_BB
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:38Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://sdinspect.com/deck-and-balcony-inspections/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:38Z] ingest | id=web-2026-02-18-dff | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-02-18-dff.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:41Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://rimkus.com/article/california-balcony-inspection/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.flsenate.gov/Committees/BillSummaries/2025/html/913
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://castlegroup.com/blog/floridas-new-milestone-inspection-law-hb-913-what-your-association-needs-to-know-for-2025/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:51Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://flengineeringllc.com/florida-hb-913-condominium-safety-2025/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:53Z] ingest | id=web-2026-02-23-5ef | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-02-23-5ef.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:54Z] ingest | id=web-2024-06-04-fd1 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2024-06-04-fd1.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:30:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://buildingmavens.com/blog/florida-milestone-inspection-guide-deadlines-process-costs/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:30:58Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.highlandbeach.us/DocumentCenter/View/877/CS_CS-HB-913-Summary
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:01Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.condoauthorityontario.ca/before-you-buy-or-rent-a-condo/how-condos-work/condo-operations/reserve-funds/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://acmo.org/publications/cm-magazine/article/513
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ontario.ca/laws/statute/98c19
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://larlyn.com/v1/wp-content/uploads/2017/10/Ontario-Condo-Act-Changes-Oct-2017-v.3.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://dhacondolaw.ca/condo-law-news/the-theory-of-reserve-fund-planning-a-primer/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:18Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www2.gov.bc.ca/gov/content/housing-tenancy/strata-housing/operating-a-strata/repairs-and-maintenance
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fsresidential.com/british-columbia/news-events/articles/demystifying-maintenance-and-repair-roles-for-resi/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:24Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www2.gov.bc.ca/gov/content/housing-tenancy/strata-housing/operating-a-strata/repairs-and-maintenance/division-of-repair-duties
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:28Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://wiki.clicklaw.bc.ca/index.php?title=Duty_to_Repair_and_Maintain_(22:XIV)
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:31Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://stratastaffglobal.com/ca/repair-maintenance-responsibilities/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:34Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://genispec.com/en/blog/bill-16-effective-date/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://krblaw.ca/legal-updates-for-quebec-divided-co-ownership-new-compliance-regulations-under-bill-16-and-related-provisions/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:40Z] ingest | id=web-2014-06-25-7b4 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2014-06-25-7b4.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:31:41Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://rgcq.org/en/bill-16-reforms
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:41Z] ingest | id=web-2025-10-13-a40 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2025-10-13-a40.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:31:44Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://condostrategis.ca/en/blogue/law-16/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:47Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://genispec.com/en/what-is-bill-16/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:50Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://bomabestfieldguide.org/wp-content/uploads/2024/06/E6.0-Template.docx
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:53Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.boma.org/BOMA/BOMA/Research-Resources/Publication_Pages/Preventive%20Maintenance%20Guidebook.aspx
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:31:57Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://icap.sustainability.illinois.edu/files/projectupdate/2289/Project%20Lifespan%20Estimates.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:32:00Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://boma.org/resources-publications/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:32:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.bomampls.org/application/files/3016/9280/9786/BOMA_360_Checklist_and_FAQ_2024.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:32:07Z] ingest | id=web-2026-01-01-076 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-076.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:32:07Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ifma.org/about/what-is-fm/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:32:10Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ifma.org/news/whats-new-at-ifma-new/ifma-launches-fm-framework-training-with-industry-partners/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:32:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://ifma.foleon.com/credentials/domains-of-facility-management/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:00Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ifma.org/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:00Z] ingest | id=web-2026-01-01-720 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-720.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:33:00Z] ingest | id=web-2026-01-01-ff4 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-ff4.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:33:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://ifmahuntsville.org/images/downloads/facility_management_training_and_development_framework.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://cai.caionline.org/eWeb/DynamicPage.aspx?site=CAI&WebCode=storeItemDetail&parentKey=52ad38d8-63f0-4b66-ad7c-8bf00ce2ef9f
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.caionline.org/getmedia/1391a064-ef30-4c89-af51-3951d70a20e5/bestpracticescamaintenance-final2_.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://hub.associaonline.com/blog/the-5-essential-steps-to-developing-a-community-maintenance-program-that-works
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://neighborhoodmanagement.com/preventive-maintenance-tips-for-hoa-communities/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.santaclaraassociationmanagement.com/blog/from-inspections-to-action-building-an-effective-hoa-maintenance-plan
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:24Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.choa.bc.ca/wp-content/uploads/400-508-SAMPLE-Operations-Planning-Chart-July-2020.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:29Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://choa.bc.ca/wp-content/uploads/pdf/200/200-013%20Repair%20and%20Maintenance%20to%20Common%20Property.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www2.gov.bc.ca/gov/content/housing-tenancy/strata-housing/operating-a-strata/repairs-and-maintenance/repair-and-maintenance-documentation
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=Xzebe73jRm8
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:40Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.choa.bc.ca/wp-content/uploads/Copy-of-200-220-supplement-SAMPLE-Operations-Planning-Chart.xlsx
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:33:40Z] filter-correction | id=web-2025-12-08-df6 | domain=condo | decision=include | original_score=?
+
+rationale='California SB 721/SB 326 balcony inspection law — primary regulatory PM driver for 100+ unit condos in California, directly in scope'
+
+## [2026-05-09T22:33:40Z] filter-correction | id=web-2018-09-17-ca9 | domain=condo | decision=include | original_score=?
+
+rationale='California SB 721 primary statutory text — balcony / elevated exterior element inspection mandate, Tier-1 CA jurisdiction source'
+
+## [2026-05-09T22:33:40Z] filter-correction | id=web-2025-11-24-619 | domain=condo | decision=include | original_score=?
+
+rationale="Quebec Bill 16 carnet d'entretien compliance guide — primary regulatory PM driver for Quebec condos, directly in scope"
+
+## [2026-05-09T22:33:40Z] filter-correction | id=web-2026-01-13-360 | domain=condo | decision=include | original_score=?
+
+rationale='Quebec Law 16 compliance guide for condo owners — regulatory PM driver for Quebec, directly in scope'
+
+## [2026-05-09T22:33:40Z] filter-correction | id=web-2025-01-01-6b5 | domain=condo | decision=include | original_score=?
+
+rationale='NYC LL87 energy audit and retro-commissioning requirements — regulatory PM driver for high-rise residential, directly in scope'
+
+## [2026-05-09T22:33:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://acmo.org/publications/cm-magazine/article/450
+
+error: `claude -p` exited 1: SessionEnd hook [node "${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs" SessionEnd] failed: Hook cancelled
+
+## [2026-05-09T22:34:10Z] filter-correction | id=web-2026-01-01-93d | domain=condo | decision=include | original_score=?
+
+rationale='ACMO Ontario electrical preventative maintenance article for condominium properties — Tier-1 Ontario jurisdiction source'
+
+## [2026-05-09T22:34:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://acmo.org/acmo-2000-certification/overview
+
+error: `claude -p` exited 1: SessionEnd hook [node "${CLAUDE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs" SessionEnd] failed: Hook cancelled
+
+## [2026-05-09T22:34:37Z] filter-correction | id=web-2024-05-23-ea9 | domain=condo | decision=include | original_score=?
+
+rationale='Alberta open.alberta.ca condominiums responsibility for repair and maintenance — Tier-2 Alberta jurisdiction source, directly in scope'
+
+## [2026-05-09T22:34:37Z] filter-correction | id=web-2024-01-11-e67 | domain=condo | decision=include | original_score=?
+
+rationale='New Jersey stringent condo inspection evaluation and maintenance requirements law — Tier-2 NJ jurisdiction source, reserve provisions to be tagged condo-capital-infra separately'
+
+## [2026-05-09T22:34:37Z] filter-correction | id=web-2026-03-29-4b9 | domain=condo | decision=include | original_score=?
+
+rationale='VISOA BC strata maintenance guides — CHOA-equivalent BC strata PM resource, Tier-1 BC jurisdiction source'
+
+## [2026-05-09T22:34:37Z] filter-correction | id=web-2025-08-01-8c2 | domain=condo | decision=include | original_score=?
+
+rationale='Leak detection / water telemetry case study for NYC condo — condition-based PM practice in residential, directly in scope'
+
+## [2026-05-09T22:34:40Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://taft-forward.com/condominium-management-standards/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:34:44Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=dlHhzXzGiQA
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:34:47Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.larlyn.com/client-education/mean-certified-acmo/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:34:50Z] filter-correction | id=web-2026-01-01-58c | domain=condo | decision=include | original_score=?
+
+rationale='Chicago FacadeOrdinance.com — Chicago facade ordinance regulatory PM driver, Tier-2 Illinois jurisdiction source'
+
+## [2026-05-09T22:34:50Z] filter-correction | id=web-2026-02-18-dff | domain=condo | decision=include | original_score=?
+
+rationale='Yardi Facility Manager product — CMMS/EAM stack for high-rise residential PM; flag CRE-transferable note'
+
+## [2026-05-09T22:34:50Z] filter-correction | id=web-1998-01-01-7e4 | domain=condo | decision=include | original_score=?
+
+rationale='BuildingLink Canada CMMS / maintenance management for condominiums — CMMS/EAM landscape source, directly in scope'
+
+## [2026-05-09T22:34:50Z] filter-correction | id=web-2024-10-15-6c9 | domain=condo | decision=include | original_score=?
+
+rationale='CondoControl preventive maintenance tracking for condo/HOA — CMMS stack for residential PM, directly in scope'
+
+## [2026-05-09T22:34:50Z] filter-correction | id=web-2026-05-06-9cd | domain=condo | decision=include | original_score=?
+
+rationale='Facade maintenance laws across markets — Chicago cooperative news, multi-jurisdiction facade PM regulatory comparison'
+
+## [2026-05-09T22:34:50Z] filter-correction | id=web-2026-02-20-0f3 | domain=condo | decision=include | original_score=?
+
+rationale='Building Engines Prism CRE building operations platform — CMMS transferable to residential; note CRE-first per brief'
+
+## [2026-05-09T22:34:52Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.greatamericaninsurancegroup.com/content-hub/loss-control/details/safety-inspection-checklist
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:34:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.workingre.com/loss-prevention-checklist/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:34:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://ibhs.org/guidance/commercial-loss-control-tools/
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:35:02Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.janeckainsurance.com/docs/default-source/default-document-library/home-loss-prevention-checklist.pdf?sfvrsn=46fd44c4_0
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:35:04Z] filter-correction | id=web-2025-10-13-a40 | domain=condo | decision=include | original_score=?
+
+rationale='CAI Foundation best practices reports index page — anchor source for CAI community association maintenance standards'
+
+## [2026-05-09T22:35:04Z] filter-correction | id=web-2024-06-04-fd1 | domain=condo | decision=include | original_score=?
+
+rationale="Quebec Law 16 key points guide (gestiontoolbox) — carnet d'entretien maintenance logbook requirements for Quebec condos"
+
+## [2026-05-09T22:35:04Z] filter-correction | id=web-2026-02-23-5ef | domain=condo | decision=include | original_score=?
+
+rationale='ASME A17.1-2025 Safety Code for Elevators — primary elevator code standard, directly in scope for elevator PM cadences'
+
+## [2026-05-09T22:35:04Z] filter-correction | id=web-2014-06-25-7b4 | domain=condo | decision=include | original_score=?
+
+rationale='ASHRAE Standard 180 HVAC inspection and maintenance guide — HVAC PM standard for commercial/residential buildings, directly in scope'
+
+## [2026-05-09T22:35:04Z] filter-correction | id=web-2022-01-01-e0b | domain=condo | decision=include | original_score=?
+
+rationale='NFPA 72 Chapter 14 ITM requirements — fire alarm system inspection testing maintenance code, directly in scope for fire-life-safety PM'
+
+## [2026-05-09T22:35:04Z] filter-correction | id=web-2024-06-01-906 | domain=condo | decision=include | original_score=?
+
+rationale='FM Global vs NFPA 25 comparison for water-based fire protection ITM — insurance/loss-control PM source, directly in scope'
+
+## [2026-05-09T22:35:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.craneagency.com/wp-content/uploads/2021/06/Crane-Loss-Control-Checklist.pdf
+
+error: `claude -p` exited 1: 
+
+## [2026-05-09T22:35:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | n=2
+
+2 candidate(s) cleared threshold
+
+## [2026-05-09T22:35:06Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://doi.org/10.1007/s41024-024-00433-3
+
+error: could not fetch https://doi.org/10.1007/s41024-024-00433-3
+
+## [2026-05-09T22:35:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=materialize | n=1
+
+materialized 1 source(s) to raw/
+
+## [2026-05-09T22:35:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-09T22:35:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=nlm_session | notebook_id=10d00168-d4c3-49a5-a09e-cbd25a170a19
+
+created session notebook 10d00168-d4c3-49a5-a09e-cbd25a170a19
+
+## [2026-05-09T22:35:18Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=source_add | n=1 | skipped=0
+
+pushed 1 source(s) to session notebook (0 skipped)
+
+## [2026-05-09T22:35:30Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=source_map | n=1
+
+built source map (1 entries)
+
+## [2026-05-09T22:36:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-09T22:36:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 3: claim has no citation: **Origin question:** Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op b; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 9: claim has no citation: Based on the source provided, I cannot identify any cross-cutting architectures or techniques such as transformers or gr; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 11: claim has no citation: Just as with your previous query, the only source text available in this notebook is an error and navigation page from a; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 11: claim has no citation: It does not contain any actual research papers, methodologies, or architectural details to analyze.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 17: claim has no citation: Based on the provided source, I cannot identify any benchmark datasets, video types, annotations, or the research areas ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 19: claim has no citation: Just as with your previous queries, the only source material provided in this notebook is a website error and navigation; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 19: claim has no citation: It does not contain any research papers or data to answer your question.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 25: claim has no citation: As with your previous queries, the provided source is simply an error and navigation page from a journal publisher's web; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 25: claim has no citation: It does not contain any research papers, methodologies, or information regarding machine learning trade-offs such as acc; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 27: claim has no citation: If you would like, I can search the public web for research discussing these fundamental trade-offs in machine learning ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 27: claim has no citation: Let me know if you would like me to initiate this search!
+
+## [2026-05-09T22:37:52Z] nlm-add | id=web-2025-02-27-05e | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.locallaw11.com/
+
+## [2026-05-09T22:38:53Z] nlm-add | id=web-2018-09-17-ca9 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB721
+
+## [2026-05-09T22:38:53Z] nlm-add | id=web-2025-01-01-742 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.nyc.gov/site/buildings/safety/facade-inspection-safety-program-fisp-filing-instructions.page
+
+## [2026-05-09T22:38:55Z] nlm-add | id=web-2025-12-08-df6 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://rimkus.com/article/california-balcony-inspection/
+
+## [2026-05-09T22:38:55Z] nlm-add | id=web-2025-01-01-6b5 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.nyc.gov/site/buildings/codes/ll87-energy-audits-retro-commissioning.page
+
+## [2026-05-09T22:38:57Z] nlm-add | id=web-2025-11-24-619 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://genispec.com/en/what-is-bill-16/
+
+## [2026-05-09T22:38:58Z] nlm-add | id=web-2026-01-13-360 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://condostrategis.ca/en/blogue/law-16/
+
+## [2026-05-09T22:39:24Z] nlm-add | id=web-2026-01-01-93d | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://acmo.org/publications/cm-magazine/article/430
+
+## [2026-05-09T22:39:24Z] nlm-add | id=web-2025-08-01-8c2 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.prosentry.com/blog/condo-case-study
+
+## [2026-05-09T22:39:25Z] nlm-add | id=web-2024-05-23-ea9 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://open.alberta.ca/publications/condominiums-responsibility-for-repair-and-maintenance
+
+## [2026-05-09T22:39:26Z] nlm-add | id=web-2026-03-29-4b9 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://visoa.bc.ca/resources/strata-maintenance-guides/
+
+## [2026-05-09T22:39:27Z] nlm-add | id=web-2024-01-11-e67 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://ansell.law/new-jersey-enacts-stringent-new-inspection-evaluation-and-maintenance-requirements-for-condominium-and-co-op-buildings/
+
+## [2026-05-09T22:39:56Z] nlm-add | id=web-2026-02-18-dff | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.yardi.com/product/facility-manager/
+
+## [2026-05-09T22:40:00Z] nlm-add | id=web-1998-01-01-7e4 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.buildinglink.io/en-ca/solutions/maintenance
+
+## [2026-05-09T22:40:01Z] nlm-add | id=web-2026-02-20-0f3 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.buildingengines.com/platform/
+
+## [2026-05-09T22:40:02Z] nlm-add | id=web-2026-01-01-58c | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.facadeordinance.com/chicago
+
+## [2026-05-09T22:40:03Z] nlm-add | id=web-2024-10-15-6c9 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.condocontrol.com/maintenance/preventive-maintenance/
+
+## [2026-05-09T22:40:08Z] nlm-add | id=web-2026-05-06-9cd | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://chicago.cooperatornews.com/article/facade-maintenance-laws
+
+## [2026-05-09T22:40:33Z] nlm-add | id=web-2022-01-01-e0b | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://up.codes/viewer/nfpa/nfpa-72-2022/chapter/14/inspection-testing-and-maintenance
+
+## [2026-05-09T22:40:35Z] nlm-add | id=web-2026-02-23-5ef | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://blog.ansi.org/ansi/asme-a17-1-2025-safety-code-elevator-csa-b44/
+
+## [2026-05-09T22:40:35Z] nlm-add | id=web-2024-06-01-906 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://risklogic.com/comparing-nfpa-25-vs-fm-global-property-loss-prevention-data-sheet-2-81-requirements-for-inspection-testing-and-maintenance-of-water-based-fire-protection-systems/
+
+## [2026-05-09T22:40:37Z] nlm-add | id=web-2014-06-25-7b4 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.facilitiesnet.com/hvac/article/ASHRAE-Standard-180-A-Guide-to-HVAC-System-Inspection-and-Maintenance--15085
+
+## [2026-05-09T22:40:37Z] nlm-add | id=web-2025-10-13-a40 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://foundation.caionline.org/research/best-practices/
+
+## [2026-05-09T22:40:38Z] nlm-add | id=web-2024-06-04-fd1 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://gestiontoolbox.com/en/the-key-points-of-law-16/
+
+## [2026-05-09T22:42:19Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-09T22:42:23Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 11: claim has no citation: Based on the sources provided, the specific methods, models, and frameworks discussed within the research area of **Rese; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 16: claim has no citation: These methods govern how physical properties are evaluated and how the initial capital expenditure data model is constru; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 19: claim has no citation: **Key Contribution:** Establishes the foundational, comprehensive capital expenditure plan and component inventory from ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 20: claim has no citation: **Core Technical Approach:** The reserve specialist starts with a "blank sheet of paper" to physically inventory, evalua; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 20: claim has no citation: The analysis calculates the useful life, remaining useful life, and current replacement cost for every major project [4]; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 21: claim has no citation: **Reported Benchmark Results:** This rigorous baseline study typically only needs to be performed once in an association; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 24: claim has no citation: **Key Contribution:** Adjusts long-term projections by evaluating actual physical wear and tear against the expected det; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 25: claim has no citation: **Core Technical Approach:** The reserve specialist returns to the property to visually assess the condition of componen; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 25: claim has no citation: The specialist observes whether elements are deteriorating faster or slower than originally modeled and updates the fina; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 26: claim has no citation: **Reported Benchmark Results:** National standards and statutory best practices dictate that this on-site update must be; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 29: claim has no citation: **Key Contribution:** Provides a highly cost-effective, annual course correction to keep the financial plan and funding ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 30: claim has no citation: **Core Technical Approach:** Adjusts financial numbers based purely on elapsed time, current inflation rates, interest e; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 30: claim has no citation: It does not involve a physical site inspection [2].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 31: claim has no citation: **Reported Benchmark Results:** Approximately 60% of clients utilize this method to update their studies annually in off; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 34: claim has no citation: These methods define the mathematical targets used to calculate annual homeowner assessments over a 30-year planning hor; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 37: claim has no citation: **Key Contribution:** A conservative financial target designed to completely offset property deterioration and provide m; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 38: claim has no citation: **Core Technical Approach:** Calibrates the required annual contribution rates with the goal of reaching a 100% funded s; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 39: claim has no citation: **Reported Benchmark Results:** The target metric is explicitly maintaining a 100% funded status [11].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 42: claim has no citation: **Key Contribution:** Determines the absolute minimum viable funding required to avoid running out of cash [11, 12].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 43: claim has no citation: **Core Technical Approach:** Sets the annual contribution rate just high enough to ensure the reserve balance never drop; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 44: claim has no citation: **Reported Benchmark Results:** The target metric is maintaining a >$0 balance while avoiding any unplanned special asse; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 47: claim has no citation: **Key Contribution:** Allows flexibility in paying for varying capital replacements by grouping funds rather than restri; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 48: claim has no citation: **Core Technical Approach:** Pools all reserve funds into a single account balance that can be utilized for *any* item o; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 49: claim has no citation: **Reported Benchmark Results:** Because project replacement lifespans are naturally staggered, associations using the po; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 52: claim has no citation: These are mathematical formulas used by analysts, buyers, and lenders to measure an HOA's risk profile.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 55: claim has no citation: **Key Contribution:** Measures the overall financial health of an association and calculates its explicit risk of requir; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 56: claim has no citation: **Core Technical Approach:** Calculated as the ratio of the actual reserve account balance to the ideal fully funded bal; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 56: claim has no citation: The ideal balance assumes funds are saved at the exact rate the component depreciates.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 56: claim has no citation: For example, a $200,000 roof that is 60% through its useful life has an ideal accumulated balance of $120,000; if the HO; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 58: claim has no citation: **0–30% Funded (Weak/Poorly Funded):** High risk of special assessments (roughly a 50% chance) [18-20].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 58: claim has no citation: About 34% of associations currently fall into this critical range [21].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 59: claim has no citation: **30–70% Funded (Fairly Funded):** Moderate health.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 59: claim has no citation: About 40% of associations are in this range [17, 18, 21].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 60: claim has no citation: **70–130% Funded (Strong/Well Funded):** Low risk, providing smooth sailing for projects.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 60: claim has no citation: Only about 26% of associations successfully maintain this range [17, 18, 21].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 63: claim has no citation: **Key Contribution:** Sets an immediate benchmark for the percentage of the operating budget that should be transferred ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 64: claim has no citation: **Core Technical Approach:** Isolates the predictable cost of ongoing deterioration as an expected expense, allocating a; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 65: claim has no citation: **Reported Benchmark Results:** Historically, 15% to 45% of an association's total budget should be dedicated to reserve; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 65: claim has no citation: Mortgage lenders strictly enforce this metric: while the historic requirement was a 10% minimum, Fannie Mae and Freddie ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 71: claim has no citation: While the criteria of "computational efficiency" and "scalability to longer videos or larger datasets" are typically use; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 76: claim has no citation: These methods dictate how data is gathered and modeled to forecast capital expenditures.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 79: claim has no citation: **Level 1 (Full):** Provides the highest baseline accuracy.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 79: claim has no citation: It starts from a "blank sheet of paper" to physically quantify and evaluate all common area components (e.g., measuring ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 80: claim has no citation: **Level 2 (Update with Site Visit):** Highly accurate for course-correcting the timeline of existing models.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 80: claim has no citation: It does not re-measure quantities but physically validates if components are deteriorating faster or slower than initial; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 81: claim has no citation: **Level 3 (Update with No Site Visit):** The least accurate physically, as it relies purely on financial forecasting (ad; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 83: claim has no citation: **Level 3** is highly efficient, serving as an "inexpensive update" that can be computed quickly to tweak funding rates ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 84: claim has no citation: **Level 1 and 2** are labor-intensive and slow, requiring engineers or reserve specialists to physically traverse proper; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 85: claim has no citation: **Scalability to Larger Datasets:** For large-scale communities or complex high-rises with vast datasets (hundreds of co; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 85: claim has no citation: However, the industry is increasingly utilizing **AI, GIS, and drone imagery** to rapidly quantify components (like mass; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 87: claim has no citation: *Level 1* is essential for building the initial data model but is too expensive to do annually [3].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 88: claim has no citation: *Level 3* is a cost-effective way to keep the financial trajectory accurate year-over-year [4], but its weakness is that; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 91: claim has no citation: These mathematical targets define how an association saves money over a standard 30-year projection period.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 94: claim has no citation: **Full Funding:** Offers the best performance in mitigating risk.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 94: claim has no citation: It targets a 100% funded status over 30 years, giving the highest level of financial security [11].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 95: claim has no citation: **Baseline Funding:** Lower performance in risk mitigation.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 95: claim has no citation: It models assessments to ensure the reserve balance simply never drops below zero during the 30-year projection [11].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 97: claim has no citation: **Pooled (Cash Flow) Funding:** This is highly efficient from a cash-management perspective.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 97: claim has no citation: Instead of segregating cash into strictly defined "buckets" for specific components, all reserve funds are pooled into a; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 97: claim has no citation: Because replacement years for various components naturally stagger, an association does not need to be 100% funded to su; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 99: claim has no citation: *Full Funding* is the safest approach and heavily protects the association from special assessments, but its weakness is; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 100: claim has no citation: *Baseline Funding* keeps immediate monthly assessments low, but its critical weakness is that it leaves zero margin for ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 103: claim has no citation: These formulas are used to instantly evaluate an HOA's financial stability.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 106: claim has no citation: **Percent Funded:** This metric is highly accurate as an indicator of specific risk.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 106: claim has no citation: It calculates the ratio between the actual cash on hand and the ideal fully funded balance (based on exact component dep; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 106: claim has no citation: For instance, a $200,000 roof with an 8-year remaining life (out of 20) is 60% depreciated; thus, the ideal balance is $; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 107: claim has no citation: **Percentage of Budget:** This is a broad benchmark (recommending 15% to 45% of the total budget go to reserves, with an; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 107: claim has no citation: While useful, it lacks the precision of the Percent Funded calculation because it does not account for the specific life; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 109: claim has no citation: **Percent Funded** scales exceptionally well and becomes *more reliable* as the dataset of property components grows.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 109: claim has no citation: With a large dataset (50-100 reserve items), the metric serves as a highly reliable indicator of financial health [12].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 110: claim has no citation: *Weakness regarding small datasets:* A notable weakness of Percent Funded is that it can yield a "false positive" on sma; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 110: claim has no citation: If an association only has one or two massive components (like just a roof), being 90% funded sounds great, but that 10%; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 112: claim has no citation: *Percent Funded* allows boards to definitively prove their financial health to owners, lenders, and buyers, rather than ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 112: claim has no citation: Its primary weakness is that it requires a professionally calculated "ideal balance" to exist in the first place, meanin; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 119: claim has no citation: **The Inaccuracy of 30-Year Inflation Forecasting:** A major limitation in current financial modeling is that 30-year fo; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 119: claim has no citation: Because models rely on long-term averages (e.g., 5-year or 10-year smoothing) to avoid compounding high short-term rates; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 119: claim has no citation: Furthermore, because "nobody can forecast perfectly," reality will always eventually diverge from the financial plan, re; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 120: claim has no citation: **"False Positives" in Financial Health Metrics:** The industry-standard "Percent Funded" metric has a critical limitati; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 120: claim has no citation: If an association only manages a few massive components (such as a single large roof), the model might show the HOA as 9; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 120: claim has no citation: If that single roof needs replacement the following year, the 10% cash shortage can still trigger a severe special asses; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 123: claim has no citation: **Failure to Follow Funding Guidance:** The most common failing in reserve planning is that boards simply do not follow ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 123: claim has no citation: Data shows that 80% of reserve studies reveal an association is underfunded [4].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 123: claim has no citation: When boards ignore recommendations for years, reality diverges so far from the plan that course correction becomes incre; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 124: claim has no citation: **Untrained Volunteer Leadership:** A systemic flaw in HOA financial planning is that multi-million dollar, non-profit r; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 124: claim has no citation: Boards frequently misunderstand the nature of reserve funding, treating it as an "optional" contribution for the future ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 124: claim has no citation: Boards frequently choose to waive reserve funding year after year to keep monthly assessments artificially low and avoid; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 125: claim has no citation: **Blind Adherence to Forecasts:** Conversely, a secondary problem occurs when proactive boards blindly follow a reserve ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 125: claim has no citation: Associations sometimes replace components precisely on the forecasted year, even if the component has remaining life, fa; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 128: claim has no citation: **The "Non-Financeable" Death Spiral:** When deferred maintenance inevitably catches up to a severely underfunded associ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 128: claim has no citation: Fannie Mae and Freddie Mac maintain confidential blacklists of condominium buildings that suffer from underfunded reserv; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 128: claim has no citation: Once blacklisted, buyers cannot secure mortgages, and current owners cannot secure Home Equity Lines of Credit (HELOCs) ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 128: claim has no citation: This traps owners in a cash-only market where property values collapse [16, 17].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 129: claim has no citation: **Involuntary Foreclosures and Forced Terminations:** The gap between the actual cost of deferred maintenance and an own; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 129: claim has no citation: In extreme cases where the math simply does not work, the ultimate unsolved problem is forced "termination," where devel; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 132: claim has no citation: **AI and Predictive Data Processing:** The industry is still in the "early stage" of leveraging Artificial Intelligence ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 132: claim has no citation: A key future research direction involves utilizing massive proprietary datasets of historical reserve studies to train A; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-financial-planning.md): [citation-grounding] line 132: claim has no citation: These AI models are being tested to automatically review newly produced capital forecasts, guide engineers toward more a; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 11: claim has no citation: Within the research area of **Structural Integrity and Capital Maintenance Compliance**, the sources outline several sta; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 16: claim has no citation: **Name and Key Contribution:** Phase-One and Phase-Two Milestone Inspections.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 16: claim has no citation: Mandated by Florida's Senate Bill 4-D following the Surfside collapse, this methodology systematically enforces structur; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 18: claim has no citation: **Phase-One:** A licensed architect or engineer conducts a comprehensive visual examination of habitable and nonhabitabl; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 19: claim has no citation: **Phase-Two:** If substantial deterioration is detected, Phase-Two is triggered.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 19: claim has no citation: This phase utilizes destructive or non-destructive testing—such as ground penetrating radar, material probing, and remov; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 20: claim has no citation: **Reported Benchmark Results:** Historically, local recertification methods targeted buildings at the 40-year mark [5].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 20: claim has no citation: Under the new legislation, milestone inspections are required for buildings three stories or higher when they reach 30 y; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 20: claim has no citation: Any necessary repairs identified in Phase-Two must be initiated within 365 days of receiving the report [4, 9].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 23: claim has no citation: **Name and Key Contribution:** Structural Integrity Reserve Studies (SIRS).; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 23: claim has no citation: This is a hybrid engineering and financial framework that explicitly links physical life-safety components to un-waivabl; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 24: claim has no citation: **Core Technical Approach:** Unlike traditional reserve studies where anyone can perform the inspection, the visual insp; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 24: claim has no citation: The model specifically targets designated life-safety items (roof, load-bearing walls, floor, foundation, fireproofing, ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 24: claim has no citation: It evaluates their remaining useful life and estimated replacement cost, and strictly strips the association's ability t; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 25: claim has no citation: **Reported Benchmark Results:** The initial SIRS must be completed by December 31, 2024, and must be updated every 10 ye; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 25: claim has no citation: Typical reported costs for implementing a SIRS range from $5,000–$15,000 for a small condominium building, $10,000–$30,0; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 28: claim has no citation: **Name and Key Contribution:** Exterior Elevated Element Inspections (e.g., California's SB 326 "Balcony Bill").; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 28: claim has no citation: This method focuses heavily on evaluating the structural integrity and waterproofing of cantilevered load-bearing struct; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 29: claim has no citation: **Core Technical Approach:** Inspections are carried out by architects or structural engineers to determine if elevated ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 29: claim has no citation: The methodology specifically differentiates between "non-emergency repairs" (which boards can address at their discretio; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 30: claim has no citation: **Reported Benchmark Results:** While quantitative benchmarks like percentage accuracy are not discussed, the framework ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 30: claim has no citation: Specifically, state real estate inspection laws prohibit the inspection company from bidding on or performing the remedi; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 36: claim has no citation: Because the criteria of "computational efficiency" and "scalability to longer videos or larger datasets" originate from ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 41: claim has no citation: These methods represent a tiered diagnostic approach to identifying substantial structural deterioration in aging buildi; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 44: claim has no citation: **Phase-One** relies on a qualitative visual assessment of major structural components [2].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 44: claim has no citation: Its performance is tuned to act as a broad filtering mechanism to detect visible distress, but it cannot see inside conc; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 45: claim has no citation: **Phase-Two** provides drastically higher accuracy by utilizing non-destructive and destructive testing—such as ground p; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 47: claim has no citation: **Phase-One** is highly efficient, completed rapidly through visual walkthroughs without disturbing residents.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 48: claim has no citation: **Phase-Two** is highly inefficient and massively disruptive.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 48: claim has no citation: It requires cutting into walls and drilling core samples [3].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 49: claim has no citation: **Scalability to Larger Datasets (Building Size):** Phase-Two struggles to scale across a massive high-rise due to the s; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 49: claim has no citation: To compensate, inspectors must optimize scalability by selecting specific testing locations that are "the least disrupti; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 50: claim has no citation: **Strengths and Weaknesses:** The primary strength of this tiered system is that it prevents unnecessary destructive tes; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 50: claim has no citation: The weakness is that Phase-Two repairs are strictly time-bound (must commence within 365 days of the report) [4], which ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 53: claim has no citation: SIRS is a specialized financial-engineering framework that differs fundamentally from traditional reserve studies by foc; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 55: claim has no citation: **Accuracy and Performance Differences:** SIRS provides a higher degree of structural performance safety because, unlike; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 55: claim has no citation: It restricts the dataset strictly to critical components (roof, load-bearing walls, fireproofing, plumbing, electrical, ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 56: claim has no citation: **Efficiency and Speed (Cost to Implement):** Traditional reserve updates can be done cheaply without a site visit, but ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 56: claim has no citation: Implementing a SIRS costs between $5,000 for a small condo building up to $60,000+ for large high-rise developments [7].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 57: claim has no citation: **Scalability to Larger Datasets:** SIRS is designed to scale across the state's most vulnerable infrastructure, specifi; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 59: claim has no citation: *Strength:* It legally forces proactive maintenance.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 59: claim has no citation: Under SIRS, unit-owner-controlled associations are strictly prohibited from voting to waive or reduce reserve funding fo; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 60: claim has no citation: *Weakness:* The immediate financial shock.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 60: claim has no citation: Because boards historically voted to waive reserves to keep monthly assessments artificially low [10, 11], the sudden im; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 63: claim has no citation: This comparison focuses on the methodologies used to evaluate cantilevered structures (like balconies under California's; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 65: claim has no citation: **Accuracy and Performance Differences:** True engineering-led EEE inspections isolate specific performance failures, di; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 65: claim has no citation: Contractor-led assessments frequently manipulate this performance data, falsely categorizing non-emergencies as emergenc; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 66: claim has no citation: **Efficiency and Speed:** Obtaining competitive bids from independent contractors based on a neutral engineer's scope of; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 67: claim has no citation: **Scalability:** Independent EEE evaluations scale better across an HOA's vendor management system because they allow th; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 69: claim has no citation: *Strength of Independent Assessment:* It guarantees no conflicts of interest.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 69: claim has no citation: The structural engineer writes the report on the waterproofing and structural safety, but is strictly separated from the; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 70: claim has no citation: *Weakness of Current EEE Legislation:* A major identified loophole in SB 326 is that, unlike standard home inspection la; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 70: claim has no citation: This leaves HOAs highly vulnerable to predatory contractors acting as inspectors to write themselves a "blank check" out; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 77: claim has no citation: A major limitation in current structural maintenance legislation is the failure to protect HOAs from predatory contracto; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 77: claim has no citation: For example, while standard real estate laws prohibit a home inspector from bidding on the repairs they recommend, Calif; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 77: claim has no citation: This loophole allows unscrupulous contractors to perform initial inspections and falsely categorize non-emergency repair; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 80: claim has no citation: A massive unsolved challenge is the collision between new statutory safety mandates and the financial realities of aging; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 80: claim has no citation: Laws like Florida’s Senate Bill 4-D and the requirement for Structural Integrity Reserve Studies (SIRS) explicitly remov; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 80: claim has no citation: For associations that historically waived these fees to keep costs low, the sudden implementation of fully funded budget; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 80: claim has no citation: Because many owners—particularly retirees on fixed incomes—cannot afford these sudden increases or the accompanying spec; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 83: claim has no citation: Current frameworks struggle with a "chicken-and-egg" funding gap.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 83: claim has no citation: Fannie Mae and Freddie Mac maintain confidential blacklists of condominium buildings that have failed structural milesto; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 83: claim has no citation: Once a building is blacklisted, prospective buyers cannot secure mortgages, and current owners cannot secure home equity; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 83: claim has no citation: This traps the HOA in a cash-only market where property values collapse, preventing them from raising the capital needed; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 86: claim has no citation: When the gap between the cost of structural compliance and the owners' ability to pay becomes insurmountable, the ultima; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 86: claim has no citation: Real estate developers track distressed buildings and purchase foreclosed units at steep discounts at auction [17].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 86: claim has no citation: Once developers control enough voting shares in the association, they can force a vote to dissolve the HOA, demolish the; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 89: claim has no citation: From an engineering perspective, accurately assessing internal structural decay before a catastrophic failure remains a ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 89: claim has no citation: As seen in the Surfside collapse, water pooling and penetrating concrete can cause rebar corrosion and concrete spalling; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 89: claim has no citation: Furthermore, if substantial deterioration is suspected, Phase Two testing is required, which relies on highly destructiv; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 89: claim has no citation: Additionally, factors like differential settlement (subsidence), where parts of a foundation sink at different rates, co; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 92: claim has no citation: The sudden enactment of statewide inspection and reserve study deadlines has created a massive bottleneck in the supply ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 92: claim has no citation: Engineering firms and reserve study providers are experiencing unprecedented demand, making it difficult for HOAs to sec; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 95: claim has no citation: Even when local governments extend deadlines or do not mandate certain life-safety retrofits (such as retrofitting older; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 95: claim has no citation: Insurers view buildings with deferred structural maintenance or failed inspections as catastrophic risks and are either ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-capital-maintenance-compliance.md): [citation-grounding] line 95: claim has no citation: This forces HOAs to scramble for compliance outside of governmental planning horizons, passing massive, unbudgeted insur; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 12: claim has no citation: **Name and Key Contribution:** The International Capital Budgeting Institute (ICBI) Generally Accepted Reserve Study Pri; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 12: claim has no citation: These frameworks provide independent, authoritative benchmarks that establish the ethical, methodological, and reporting; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 13: claim has no citation: **Core Technical Approach:** The ICBI framework is structured into two integrated components: *Principles* (which define; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 13: claim has no citation: Similarly, the recently updated APRA Adequacy Framework approaches long-term funding sufficiency through a mathematicall; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 14: claim has no citation: **Reported Benchmark Results:** The ICBI framework was developed by a multidisciplinary group of 16 professionals from s; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 17: claim has no citation: **Name and Key Contribution:** The Business Judgment Rule.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 17: claim has no citation: This legal and governance methodology protects layperson board members from personal liability and breach of fiduciary d; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 18: claim has no citation: **Core Technical Approach:** Because most condo board members are laypeople without technical expertise in engineering o; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 18: claim has no citation: Instead, the board must actively hire independent, qualified experts, pay for their professional opinion, and make their; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 18: claim has no citation: Board members must also formally document their independent votes (the "ayes" and "nays") in the meeting minutes and tra; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 19: claim has no citation: **Reported Benchmark Results:** When boards successfully employ the Business Judgment Rule and rely on expert due dilige; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 19: claim has no citation: Conversely, failure to use this approach—such as blindly following a "bully" board president without expert consultation; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 22: claim has no citation: **Name and Key Contribution:** Independent Procurement and Separation of Duties.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 22: claim has no citation: This procurement method prevents predatory contractors from acting as inspectors, falsely categorizing non-emergency rep; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 23: claim has no citation: **Core Technical Approach:** The HOA procures a licensed, neutral architect or structural engineer to perform the initia; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 23: claim has no citation: The methodology demands a strict "no conflicts of interest guarantee," meaning the inspecting entity is legally or contr; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 23: claim has no citation: Once the neutral scope of work is written, the board adheres to best practices by soliciting at least three independent ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 24: claim has no citation: **Reported Benchmark Results:** This methodology relies on standard real estate inspection benchmarks, such as Californi; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 24: claim has no citation: Utilizing this method prevents contractors with multiple "complaint disclosures" (e.g., for exceeding contract amounts o; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 30: claim has no citation: Because the criteria of "computational efficiency" and "scalability to larger datasets" originate from computer science,; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 35: claim has no citation: These methodologies establish the standardized rules for conducting and reporting reserve studies.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 37: claim has no citation: **Accuracy and Performance Differences:** These frameworks provide the highest level of accuracy and performance regardi; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 37: claim has no citation: They promote strict methodological consistency and financial transparency, ensuring that funding projections are reliabl; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 38: claim has no citation: **Computational Efficiency and Speed (Implementation Time):** Implementing a standardized study is initially slower and ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 38: claim has no citation: However, once the initial baseline is established, it heavily improves the efficiency of future financial updates [6, 7]; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 39: claim has no citation: **Scalability to Larger Datasets (Association Size):** These frameworks scale perfectly across associations of any size.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 39: claim has no citation: The International Capital Budgeting Institute (ICBI) framework acts as an authoritative, independent international bench; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 41: claim has no citation: *Strength:* Provides independent, objective expertise that protects the public interest and minimizes the board's legal ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 42: claim has no citation: *Weakness:* Utilizing these standards requires the association to pay for credentialed professional services, which typi; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 45: claim has no citation: This legal governance methodology dictates how volunteer board members must make decisions regarding complex property as; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 47: claim has no citation: **Accuracy and Performance Differences (Liability Protection):** This method offers the highest performance in legal ris; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 47: claim has no citation: By relying strictly on the documented advice of independent, qualified experts (such as engineers or attorneys) rather t; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 48: claim has no citation: **Computational Efficiency and Speed (Decision-Making Speed):** This method severely decreases the speed and efficiency ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 48: claim has no citation: A board cannot quickly vote to fix a major issue on their own; they must pause the process, allocate funds to hire an ex; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 49: claim has no citation: **Scalability to Larger Datasets (Project Complexity):** This rule is essential for scaling up to massive capital projec; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 49: claim has no citation: While a board might successfully guess how to fix a minor landscaping issue, they cannot scale that layperson guesswork ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 51: claim has no citation: *Strength:* It provides an absolute shield against personal liability.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 51: claim has no citation: If the board relies on a qualified expert and the decision ultimately proves to be wrong, the board members are fully pr; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 52: claim has no citation: *Weakness:* When boards ignore this rule—often because "experts cost money"—or act as "sheep" blindly following a board ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 55: claim has no citation: This procurement methodology defines how an HOA should safely contract with vendors for physical property repairs.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 57: claim has no citation: **Accuracy and Performance Differences:** This approach yields highly accurate, objective scopes of work.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 57: claim has no citation: Because the structural engineer or architect performing the inspection is prohibited from bidding on the repairs, there ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 58: claim has no citation: **Computational Efficiency and Speed (Procurement Timeline):** This is a slower, more deliberate process.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 58: claim has no citation: It forces the board to perform procurement in two distinct phases: first procuring the neutral inspection/scope of work,; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 58: claim has no citation: This is far less "efficient" than hiring a single contractor to inspect and immediately fix a problem.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 59: claim has no citation: **Scalability to Larger Datasets (Vendor Management):** This methodology scales excellently for large-scale vendor manag; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 59: claim has no citation: Providing a standardized, engineered scope of work to multiple bidders ensures apples-to-apples comparisons on multi-mil; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 61: claim has no citation: *Strength:* It completely eliminates conflicts of interest and prevents predatory contractors with a history of code vio; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 62: claim has no citation: *Weakness:* A critical weakness lies in current legislative gaps.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 62: claim has no citation: For example, while standard home inspection laws strictly prohibit an inspector from offering to perform repairs, certai; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 62: claim has no citation: This loophole forces the HOA to self-police the separation of duties because the law currently does not mandate it for t; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 69: claim has no citation: A fundamental, systemic limitation in current HOA management is that multi-million dollar, non-profit real estate corpor; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 69: claim has no citation: Because these laypeople typically lack engineering, construction, or financial expertise [3, 4], they struggle to make i; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 70: claim has no citation: **Misplaced Reliance on Property Managers:** Boards frequently abdicate their fiduciary duties by relying on their prope; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 71: claim has no citation: **The "Bully" President and "Sheep" Board Dynamic:** Governance often breaks down when boards fail to exercise independe; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 71: claim has no citation: This failure to invoke the Business Judgment Rule—which requires boards to seek and rely on qualified independent expert; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 72: claim has no citation: **Loss of Institutional Knowledge:** Constant board turnover creates extreme inconsistency, making it highly difficult t; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 75: claim has no citation: Current methods struggle against the behavioral limitation of cost reluctance.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 75: claim has no citation: Boards are consistently reluctant to raise maintenance assessments to match the true, ongoing cost of physical deteriora; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 75: claim has no citation: Furthermore, boards frequently hesitate to hire the independent engineers or attorneys required to protect the associati; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 78: claim has no citation: A major unresolved challenge in vendor management is the persistent lack of statutory protection against predatory contr; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 79: claim has no citation: **The Inspection-to-Remediation Loophole:** While standard real estate laws strictly prohibit a home inspector from bidd; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 79: claim has no citation: This gap leaves the door wide open for unscrupulous contractors to perform an initial inspection, falsely categorize non; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 79: claim has no citation: These predatory vendors effectively use their own inspection reports to write themselves a "blank check" out of the asso; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 80: claim has no citation: **Vendor Vetting Failures:** Boards frequently lack the sophisticated procurement systems necessary to identify contract; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 83: claim has no citation: Despite legal frameworks outlining fiduciary duty, the execution of financial policies remains heavily flawed at the boa; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 84: claim has no citation: **Commingling and "Slush Fund" Usage:** A common readiness gap, particularly in smaller self-managed communities, is the; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 84: claim has no citation: Boards frequently face the temptation to improperly use dedicated reserve funds as a general "slush fund" for daily main; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-fiduciary-duty-governance-and-vendor-management.md): [citation-grounding] line 85: claim has no citation: **Undisclosed Pecuniary Interests:** Boards still face challenges in maintaining transparent procurement processes, such; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 11: claim has no citation: Within the research area of **Emerging Technology in Property Assessment**, the sources detail several advanced hardware; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 16: claim has no citation: **Name and Key Contribution:** Unmanned Aerial Vehicles (Drones) and Photogrammetry.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 16: claim has no citation: This method replaces the need for expensive, dangerous, and time-consuming manual traversing or scaffolding, particularl; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 17: claim has no citation: **Core Technical Approach:** Engineers deploy drone technology to remotely access and visually assess difficult-to-reach; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 17: claim has no citation: This is often paired with photogrammetry (using overlapping photographs to create 3D models and measurements) to accurat; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 18: claim has no citation: **Reported Benchmark Results:** While exact quantitative benchmarks are not provided, this technology drastically reduce; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 18: claim has no citation: The adoption of this technology allows communities to complete assessments "faster and at a cheaper cost" while yielding; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 21: claim has no citation: **Name and Key Contribution:** GIS and Geospatial Data Quantification.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 21: claim has no citation: This method eliminates the need to measure physical assets by hand, drastically improving the speed and precision of bui; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 22: claim has no citation: **Core Technical Approach:** Analysts utilize tools like GIS mapping, Google Earth, and advanced satellite imagery to re; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 22: claim has no citation: Using these systems to create digital measurement models avoids the high error rates associated with traditional hand-me; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 23: claim has no citation: **Reported Benchmark Results:** Industry experts report that over the last 18 months, the rate of increase in the accura; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 26: claim has no citation: **Name and Key Contribution:** AI-Driven Cost Estimate Review and Guidance Models.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 26: claim has no citation: This method leverages massive historical datasets to automate the review of capital forecasts, ensuring that the enginee; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 27: claim has no citation: **Core Technical Approach:** Reserve study firms aggregate "mountains of information" from thousands of historically com; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 27: claim has no citation: They use this proprietary data to train AI models.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 27: claim has no citation: When a human engineer produces a new reserve study, the AI model reviews the projections and provides "course correction; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 28: claim has no citation: **Reported Benchmark Results:** The industry is currently in the "early stage" of testing these models.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 28: claim has no citation: The reported benchmarks are increased internal operational efficiency and "slightly more accurate forecasts and projecti; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 31: claim has no citation: **Name and Key Contribution:** Ground Penetrating Radar (GPR) and Ultrasonic Testing.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 31: claim has no citation: This method allows structural engineers to scientifically detect hidden internal deterioration (like rusted rebar inside; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 32: claim has no citation: **Core Technical Approach:** Deployed heavily during "Phase-Two" statutory milestone inspections (such as those mandated; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 32: claim has no citation: This allows them to "see" beneath the surface to fully assess areas of structural distress and map out the extent of int; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 33: claim has no citation: **Reported Benchmark Results:** These NDT methods allow engineers to seamlessly and accurately estimate repair extents, ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 39: claim has no citation: While the criteria of "computational efficiency" and "scalability to longer videos or larger datasets" are native to com; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 44: claim has no citation: This compares the use of Unmanned Aerial Vehicles (UAVs) against traditional human traversing and scaffolding for physic; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 46: claim has no citation: **Accuracy and Performance Differences:** Drones provide highly comprehensive visual performance, granting access to dif; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 46: claim has no citation: When paired with photogrammetry, it yields accurate visual models for deterioration detection [3].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 47: claim has no citation: **Computational Efficiency and Speed (Field Efficiency):** Drones are vastly more efficient.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 47: claim has no citation: They drastically reduce the massive "manpower and time" historically required for a human to visually inspect an entire ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 48: claim has no citation: **Scalability to Larger Datasets (Building Size):** This technology scales exceptionally well to mid-rise and high-rise ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 48: claim has no citation: Where manual inspection becomes exponentially more expensive and slower as a building gets taller, a drone scales vertic; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 50: claim has no citation: *Strength:* Opens up vast benefits for high-rise facade inspections by safely capturing data faster and cheaper than hum; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 51: claim has no citation: *Weakness:* Drones provide strictly visual data; they cannot see internal structural damage hiding beneath the surface o; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 54: claim has no citation: This compares remote geospatial quantification against engineers physically hand-measuring property assets (e.g., using ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 56: claim has no citation: **Accuracy and Performance Differences:** The industry has seen an "amazing" rate of increase in the precision and accur; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 57: claim has no citation: **Efficiency and Speed:** GIS is remarkably efficient, allowing analysts to quantify external assets in a fraction of th; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 58: claim has no citation: **Scalability to Larger Datasets (Community Sprawl):** GIS scales perfectly to massive horizontal datasets.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 58: claim has no citation: For example, if a community has "miles and miles and miles of fencing" or massive paving areas, GIS can instantly map an; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 60: claim has no citation: *Strength:* Provides incredibly rapid and precise quantities of large-scale physical assets [4].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 61: claim has no citation: *Weakness:* It is limited to quantifying the *size* and *footprint* of exterior assets; it cannot evaluate the actual ph; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 64: claim has no citation: This compares the use of Artificial Intelligence models trained on historical data against traditional, purely human-led; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 66: claim has no citation: **Accuracy and Performance Differences:** AI models are utilized to review the initial projections produced by human eng; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 67: claim has no citation: **Computational Efficiency and Speed:** Deploying AI massively improves the internal efficiency of reserve study firms, ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 68: claim has no citation: **Scalability to Larger Datasets:** AI is uniquely suited for this criterion.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 68: claim has no citation: The methodology relies on leveraging a "mountain of information" consisting of thousands of historically completed reser; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 68: claim has no citation: The larger the dataset of historical costs, the better the AI can be trained to recognize patterns and output reliable g; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 70: claim has no citation: *Strength:* By relying on massive datasets of historical realities, AI smooths out human error and builds board confiden; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 71: claim has no citation: *Weakness:* The technology is still in the "early stage" of exploration and testing, meaning the industry is still learn; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 74: claim has no citation: This compares advanced internal scanning hardware against traditional demolition-based structural diagnostics.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 76: claim has no citation: **Accuracy and Performance Differences:** Methods like Ground Penetrating Radar (GPR) and ultrasonic testing provide hig; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 76: claim has no citation: This performs vastly better than visual inspections, which cannot see beneath the surface.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 77: claim has no citation: **Efficiency and Speed (Diagnostic Disruption):** NDT is highly efficient and minimally disruptive compared to "destruct; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 78: claim has no citation: **Scalability:** Because NDT avoids the heavy labor and repair costs associated with destructive demolition, it scales m; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 80: claim has no citation: *Strength:* Allows for a safe, cost-effective resolution by accurately mapping out internal structural distress before i; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 81: claim has no citation: *Weakness:* These methods require highly specialized, licensed engineering personnel and expensive hardware to conduct a; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 88: claim has no citation: While drones, photogrammetry, and Geospatial Information Systems (GIS) have vastly improved the efficiency of data colle; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 88: claim has no citation: These remote tools cannot see beneath the surface of concrete or masonry to detect hidden, internal structural decay—suc; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 88: claim has no citation: Furthermore, while GIS and satellite imagery are highly effective at rapidly quantifying the size and footprint of large; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 91: claim has no citation: The integration of Artificial Intelligence to process historical capital costs and refine long-term financial forecastin; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 91: claim has no citation: While leading reserve study providers possess "mountains of information" regarding historical component lifespans and co; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 94: claim has no citation: Advanced technological diagnostics—such as ground penetrating radar, ultrasonic testing, and materials probing—solve the; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 94: claim has no citation: However, this technology faces scalability and implementation challenges because it is not automated; it requires highly; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 97: claim has no citation: A major limitation in current HOA planning architectures is that volunteer boards frequently rely on "manually updating ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 98: claim has no citation: **Data Inaccuracy:** In-house spreadsheet models frequently rely on layperson assumptions rather than real-time industry; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 99: claim has no citation: **Loss of Institutional Knowledge:** Because volunteer board turnover is high, relying on manual files or disjointed doc; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 101: claim has no citation: While newer purpose-built software platforms are emerging to move boards off of manual spreadsheets and tie 30-year fund; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-emerging-technology-in-property-assessment.md): [citation-grounding] line 101: claim has no citation: Volunteer boards still struggle to translate dense, highly technical engineering reports into actionable vendor scopes, ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 9: claim has no citation: The provided sources do not contain information on computer science or machine learning architectures such as Transforme; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 9: claim has no citation: The corpus focuses entirely on condominium homeowner association (HOA) management, structural engineering compliance, re; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 11: claim has no citation: However, applying the concept of "cross-cutting architectures or techniques" to the frameworks present in this corpus re; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: **Adapted for Traditional Reserve Studies:** The visual inspection (known as a Level 1 or Level 2 study) is broadly scop; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: A reserve specialist walks the property to assess the general physical condition of all common elements—from carpets and; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: **Adapted for Statutory Safety (Milestone Inspections):** Under laws like Florida's SB 4-D, the visual inspection is ada; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: It must be performed by a licensed architect or engineer, and its purpose is not financial budgeting, but solely to dete; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 19: claim has no citation: **Adapted for Structural Integrity Reserve Studies (SIRS):** SIRS blends the two concepts.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 19: claim has no citation: The visual inspection must be performed by an engineer or architect (like a milestone inspection), but it evaluates the ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 22: claim has no citation: The mathematical framework used to forecast capital expenditures over a 30-year horizon is a core "architecture" utilize; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 23: claim has no citation: **Adapted for General Financial Governance:** In traditional HOA management, 30-year models are used as a flexible plann; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 23: claim has no citation: They calculate the annual contributions needed to offset ongoing deterioration based on different goals, such as a "Full; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 23: claim has no citation: Boards historically had the discretion to vote to waive or reduce these recommended contributions to keep monthly dues l; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: **Adapted for Statutory Structural Compliance:** In response to building collapses, states have adapted this 30-year fin; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: For example, under Washington's WUCIOA, the 30-year projection with both full and baseline funding plans is legally mand; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: In Florida, the 30-year SIRS financial model is adapted to explicitly restrict governance: condo boards are legally proh; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 27: claim has no citation: Advanced diagnostic technologies—such as ground penetrating radar, ultrasonic testing, and materials probing—are utilize; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 28: claim has no citation: **Adapted for Forensic Property Assessment:** In general forensic assessments, these techniques are used to "see" beneat; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 29: claim has no citation: **Adapted for Tiered Statutory Enforcement (Phase-Two):** In the context of Florida's structural safety laws, these diag; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 29: claim has no citation: This adaptation may involve highly destructive testing (cutting into walls, drilling core samples) to scientifically con; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 32: claim has no citation: Remote data collection hardware and software are utilized across both structural engineering and reserve study inventory; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 33: claim has no citation: **Adapted for Structural Evaluation:** Unmanned Aerial Vehicles (drones) and photogrammetry are adapted to evaluate high; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 33: claim has no citation: They replace expensive and dangerous scaffolding, allowing engineers to safely capture 3D models and visually detect ext; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 34: claim has no citation: **Adapted for Financial Data Collection:** Geospatial Information Systems (GIS) and satellite imagery are adapted for th; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 34: claim has no citation: Analysts use this technology to remotely measure and quantify massive horizontal property assets (e.g., miles of fencing; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 37: claim has no citation: While the corpus notes that Artificial Intelligence is still in its "early stage" in this industry, the underlying techn; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 38: claim has no citation: **Adapted for Cost Estimation Course Correction:** Reserve study firms aggregate proprietary data from thousands of hist; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 38: claim has no citation: These models are adapted to automatically review the capital forecasts and cost estimates produced by human engineers, p; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 46: claim has no citation: As noted in our previous exchanges, the source material does not cover computer science, machine learning, or computer v; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 47: claim has no citation: **Condominium Homeowner Association (HOA) management and governance** [1-3].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 48: claim has no citation: **Reserve fund management, mathematical funding models, and capital planning** [4-7].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 49: claim has no citation: **Statutory compliance and structural safety inspections** (such as Florida's Senate Bill 4-D, Washington's WUCIOA, and ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 50: claim has no citation: **The forensic engineering and aftermath of the Surfside condominium collapse** [11, 12].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 52: claim has no citation: Because the provided text is entirely focused on real estate legislation, structural engineering, and HOA finance, it do; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 54: claim has no citation: If you have questions related to HOA legislation, reserve study frameworks, or structural integrity compliance, I would ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 60: claim has no citation: As noted in our previous conversations, the provided sources focus exclusively on real estate, homeowner association (HO; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 60: claim has no citation: **The corpus does not contain information on machine learning, computer vision, or artificial intelligence research area; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 60: claim has no citation: self-supervised approaches" or video-based "temporal modeling" do not exist in this text.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 65: claim has no citation: **Reserve Study Methodologies:** A Level 1 (Full) Reserve Study provides the highest level of physical accuracy because ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 65: claim has no citation: A Level 3 (No Site Visit) update is computationally efficient and inexpensive because it merely updates the financial nu; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 66: claim has no citation: **Structural Safety Diagnostics:** A Phase-One milestone inspection relies on a visual assessment of structural members.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 66: claim has no citation: It is highly efficient and non-disruptive, but it cannot see inside the concrete to detect internal decay.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 66: claim has no citation: To achieve true scientific accuracy regarding internal structural deterioration, engineers must trigger a Phase-Two insp; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 66: claim has no citation: Phase-Two utilizes destructive testing—such as probing materials or cutting into walls—which provides exact diagnostic a; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 68: claim has no citation: Global Temporal Modeling (Short-Term Needs vs.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 69: claim has no citation: **Financial Planning Horizons:** "Local" temporal modeling is equivalent to a board focusing only on immediate, short-te; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 69: claim has no citation: "Global" modeling is represented by the statutory 30-year reserve study.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 69: claim has no citation: These global models forecast the exact timeline of deterioration and replacement costs over three decades to ensure the ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 69: claim has no citation: Because "global" 30-year forecasts rely on long-term averages for inflation, they may be slow to react to immediate "loc; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 72: claim has no citation: **Not Applicable:** There are no models, training datasets, or machine learning algorithms discussed in the sources that; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 75: claim has no citation: **Funding Targets:** A highly generalized approach to financial health is the mortgage industry's "rule of thumb," which; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 75: claim has no citation: While easy to apply, this generalized model lacks precision.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 75: claim has no citation: A highly complex model is a formal Reserve Study or Structural Integrity Reserve Study (SIRS).; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 75: claim has no citation: These studies require a licensed engineer or reserve specialist to build a custom data model that calculates the precise; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 77: claim has no citation: Offline Accuracy (Reactive Special Assessments vs.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: **The Cost of Deterioration:** The ultimate trade-off in HOA management is how the community pays for inevitable physica; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: "Real-time" reaction relies on special assessments or bank loans to cover the cost of a failed component precisely when ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: While this keeps monthly dues artificially low in the short term, it creates severe financial shocks that can trap owner; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: "Offline accuracy" is achieved through proactive budgeted funding.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: This method calculates the invisible, daily "monthly bill" of ongoing deterioration and collects funds gradually over ti; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: While proactive budgeting prevents special assessments, it requires homeowners to pay accurately high monthly fees in th
+
+## [2026-05-09T22:45:31Z] ingest | id=web-2026-01-01-161 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-161.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:45:45Z] ingest | id=web-2026-01-01-361 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2026-01-01-361.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T22:47:22Z] filter-correction | id=web-2026-01-01-361 | domain=condo | decision=include | original_score=?
+
+rationale='Florida DBPR Condominiums and Cooperatives regulatory resource — FL operational layer for HB 913 milestone inspection and PM requirements, Tier-1 FL source'
+
+## [2026-05-09T22:47:37Z] nlm-add | id=web-2026-01-01-361 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.myfloridalicense.com/DBPR/condominiums-and-cooperatives/
+
+## [2026-05-09T22:49:25Z] query | domain=condo | unresolved_citations=4,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-09T22:49:26Z] wiki-author | id=query-2026-05-09-how-do-the-major-u-s | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-09T22:51:56Z] query | domain=condo | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,42,43,44,45,46,55,56,57,58,67,68,69,70,71,72,73,76,77,108,109,110,111,112,113,114,115,124,125,126
+
+lint-warning: query response cited 56 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-09T22:51:56Z] wiki-author | id=query-2026-05-09-what-are-the-established-best-practices | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-09T22:54:15Z] nlm-briefing | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | artifact_id=084109f4-0192-47af-a374-976b19970f5e | topic=condo briefing doc
+
+local=wiki/artifacts/briefing/2026-05-09-condo-briefing-doc-briefing.md url=https://notebooklm.google.com/notebook/3a25d83f-94d9-49d1-8756-cfd112c753ca/artifact/084109f4-0192-47af-a374-976b19970f5e
+
+## [2026-05-09T23:09:33Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-09T23-09-33Z-stale-drafts.md
+
+## [2026-05-09T23:09:52Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-09T23-09-52Z-untagged-sources.md
+
+## [2026-05-09T23:10:06Z] lint | scope=nlm-pending | nlm-pending=0
+
+report=.knowledge/lint/2026-05-09T23-10-06Z-nlm-pending.md
+
+## [2026-05-09T23:10:06Z] query | domain=condo | unresolved_citations=1,2,3,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-09T23:10:06Z] wiki-author | id=query-2026-05-09-what-does-percent-funded-mean-for | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-09T23:10:17Z] lint | scope=orphans | orphans=393
+
+report=.knowledge/lint/2026-05-09T23-10-17Z-orphans.md
+
+## [2026-05-09T23:11:04Z] query | domain=condo | unresolved_citations=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-09T23:11:04Z] wiki-author | id=query-2026-05-09-what-are-the-documented-integration-gaps | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-09T23:12:06Z] query | domain=condo | unresolved_citations=1,5,10,12,13,14,15,16
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-09T23:12:06Z] wiki-author | id=query-2026-05-09-what-does-the-2021-surfside-champlain | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-09T23:15:51Z] lint | scope=inbox-pending | inbox-pending=0
+
+report=.knowledge/lint/2026-05-09T23-15-51Z-inbox-pending.md
+
+## [2026-05-09T23:15:51Z] lint | scope=nlm-pending | nlm-pending=0
+
+report=.knowledge/lint/2026-05-09T23-15-51Z-nlm-pending.md
+
+## [2026-05-09T23:16:33Z] lint | scope=all | orphans=392 | stale-drafts=172 | stale-claims=2 | contradictions=122 | missing-pages=10 | citation-density=14 | schema-drift=0 | filter-calibration=20 | inbox-pending=0 | nlm-pending=0 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-09T23-16-33Z.md
+
+## [2026-05-09T23:20:09Z] finalize | page=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md
+
+finalized wiki/synthesis/2026-05-09-how-do-the-major-u-s.md
+
+## [2026-05-09T23:23:22Z] research | session_id=2026-05-09-comprehensive-corpus-of-preventive-and-proactive | step=start | domain=condo
+
+start research session for prompt "Comprehensive corpus of preventive and proactive maintenance best practices for 100+ unit condominium / strata / co-op buildings in the US and Canada — covering scheduled inspections, vendor service contracts, work-order and CMMS systems, asset registers, building-system PM cadences (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking-deck waterproofing, generators, pumps, garage exhaust), regulatory PM drivers (NYC LL11/FISP, Chicago façade, SF façade, FL milestone-inspection operational interpretation, elevator code ASME A17.1/B44, NFPA 25/72, boiler/pressure-vessel inspections), Canadian-specific obligations (ON Condo Act §94 maintenance plans, BC SPA, AB, QC Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, IREM, CAI, CHOA, ACMO, RECO, CCI), CMMS/EAM stacks deployed in residential CRE, predictive/condition-based programs (vibration, IR thermography, ultrasonic, water-loss telemetry, leak detection, IAQ monitoring), insurance-driven PM checklists (AIG, Travelers, FM Global, Zurich), and board governance practices that operationalize PM. Explicitly exclude reserve-study methodology, % funded calculations, single-family HOA disputes, generic commercial-office FM unless transferable to high-rise residential, and rental multifamily playbooks."
+
+## [2026-05-09T23:23:59Z] research | session_id=2026-05-09-comprehensive-corpus-of-preventive-and-proactive | step=start | domain=condo
+
+start research session for prompt "Comprehensive corpus of preventive and proactive maintenance best practices for 100+ unit condominium / strata / co-op buildings in the US and Canada — covering scheduled inspections, vendor service contracts, work-order and CMMS systems, asset registers, building-system PM cadences (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking-deck waterproofing, generators, pumps, garage exhaust), regulatory PM drivers (NYC LL11/FISP, Chicago façade, SF façade, FL milestone-inspection operational interpretation, elevator code ASME A17.1/B44, NFPA 25/72, boiler/pressure-vessel inspections), Canadian-specific obligations (ON Condo Act §94 maintenance plans, BC SPA, AB, QC Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, IREM, CAI, CHOA, ACMO, RECO, CCI), CMMS/EAM stacks deployed in residential CRE, predictive/condition-based programs (vibration, IR thermography, ultrasonic, water-loss telemetry, leak detection, IAQ monitoring), insurance-driven PM checklists (AIG, Travelers, FM Global, Zurich), and board governance practices that operationalize PM. Explicitly exclude reserve-study methodology, % funded calculations, single-family HOA disputes, generic commercial-office FM unless transferable to high-rise residential, and rental multifamily playbooks."
+
+## [2026-05-09T23:31:35Z] ingest | id=web-2018-07-01-1cf | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2018-07-01-1cf.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:31:35Z] ingest | id=pdf-ede594f9f127 | type=pdf | domains=- | filter=errored | domain=condo
+
+raw=raw/pdf/pdf-ede594f9f127.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:32:30Z] ingest | id=web-2024-01-01-ac1 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2024-01-01-ac1.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:32:41Z] ingest | id=pdf-db0621cb54d0 | type=pdf | domains=- | filter=errored | domain=condo
+
+raw=raw/pdf/pdf-db0621cb54d0.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:33:27Z] ingest | id=web-2000-01-01-bf7 | type=web | domains=- | filter=errored | domain=condo
+
+raw=raw/web/web-2000-01-01-bf7.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:33:41Z] ingest | id=pdf-6302e90be3b6 | type=pdf | domains=- | filter=errored | domain=condo
+
+raw=raw/pdf/pdf-6302e90be3b6.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:33:50Z] filter-correction | id=web-2018-07-01-1cf | domain=condo | decision=include | original_score=?
+
+rationale='Primary FL statute text — Fla. Stat. §718.112 (2024) full bylaws section including (2)(g) maintenance plan mandate, (2)(f) reserve funding requirements, and inspection subsections. Directly in scope for condo domain operational-PM layer.'
+
+## [2026-05-09T23:33:57Z] filter-correction | id=web-2024-01-01-ac1 | domain=condo | decision=include | original_score=?
+
+rationale='Primary FL statute text — Fla. Stat. §718.113 (2024) Maintenance, alterations, additions to condominiums. Governs board maintenance obligations and common-area repair duties. Operational-PM layer for condo domain.'
+
+## [2026-05-09T23:33:57Z] filter-correction | id=web-2000-01-01-bf7 | domain=condo | decision=include | original_score=?
+
+rationale='Primary FL statute text — Fla. Stat. §718.301 (2024) Transition of association control from developer to unit owners. Developer-to-board PM handoff obligations; operational-PM transition layer.'
+
+## [2026-05-09T23:34:14Z] nlm-add | id=web-2018-07-01-1cf | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flsenate.gov/Laws/Statutes/2024/718.112
+
+## [2026-05-09T23:34:20Z] nlm-add | id=web-2024-01-01-ac1 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flsenate.gov/Laws/Statutes/2024/718.113
+
+## [2026-05-09T23:34:26Z] nlm-add | id=web-2000-01-01-bf7 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flsenate.gov/Laws/Statutes/2024/718.301
+
+## [2026-05-09T23:34:39Z] ingest | id=pdf-bc-housing-2021-maintenance-matters-20 | type=pdf | domains=- | filter=errored | domain=condo
+
+raw=raw/pdf/pdf-bc-housing-2021-maintenance-matters-20.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:35:33Z] ingest | id=pdf-6b0d49e91108 | type=pdf | domains=- | filter=errored | domain=condo
+
+raw=raw/pdf/pdf-6b0d49e91108.md (wiki not written: filter decision=errored)
+
+## [2026-05-09T23:35:54Z] filter-correction | id=pdf-ede594f9f127 | domain=condo | decision=include | original_score=?
+
+rationale='CAI Foundation 2023 Best Practices Community Association Maintenance — primary industry standard for condo PM best practices, synthesis anchor for Brief-0003 §§3 and 7'
+
+## [2026-05-09T23:36:00Z] filter-correction | id=pdf-db0621cb54d0 | domain=condo | decision=include | original_score=?
+
+rationale='BOMA BEST Sustainable Buildings 4.1 All Asset Classes Field Guide (2024) — comprehensive building operations and maintenance standard applicable to multi-unit residential PM cadences'
+
+## [2026-05-09T23:36:03Z] filter-correction | id=pdf-6302e90be3b6 | domain=condo | decision=include | original_score=?
+
+rationale='BOMA BEST 4.0 MURB (Multi-Unit Residential Building) Sustainable Field Guide — residential-specific BOMA standard for building maintenance, directly applicable to condo common-element PM programs'
+
+## [2026-05-09T23:36:08Z] filter-correction | id=pdf-bc-housing-2021-maintenance-matters-20 | domain=condo | decision=include | original_score=?
+
+rationale='BC Housing Maintenance Matters No. 20 — Internal Water Systems: authoritative BC Housing guide on plumbing maintenance for multi-unit residential buildings, covers pipe inspection cadences, leak detection, and preventive water system programs'
+
+## [2026-05-09T23:36:11Z] filter-correction | id=pdf-6b0d49e91108 | domain=condo | decision=include | original_score=?
+
+rationale='PCI Parking Structure Maintenance Manual — Precast/Prestressed Concrete Institute guide for parking structure maintenance programs, PM cadences for joints, waterproofing, concrete, and structural elements'
+
+## [2026-05-09T23:36:30Z] nlm-add | id=pdf-ede594f9f127 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-ede594f9f127.pdf title='BestPracticesReport-Maintenance'
+
+## [2026-05-09T23:36:37Z] ingest | id=web-2010-01-01-6c4 | type=web | domains=condo | filter=included | domain=condo | score=0.85
+
+raw=raw/web/web-2010-01-01-6c4.md wiki=wiki/sources/web-2010-01-01-6c4.md
+
+## [2026-05-09T23:37:00Z] nlm-add | id=pdf-db0621cb54d0 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-db0621cb54d0.pdf title='boma-best-4-1-all-assets'
+
+## [2026-05-09T23:37:24Z] ingest | id=web-2010-01-01-d36 | type=web | domains=condo | filter=included | domain=condo | score=0.85
+
+raw=raw/web/web-2010-01-01-d36.md wiki=wiki/sources/web-2010-01-01-d36.md
+
+## [2026-05-09T23:37:59Z] nlm-add | id=pdf-6302e90be3b6 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-6302e90be3b6.pdf title='boma-best-murb'
+
+## [2026-05-09T23:38:12Z] nlm-add | id=pdf-bc-housing-2021-maintenance-matters-20 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-bc-housing-2021-maintenance-matters-20.pdf title='Maintenance Matters - 20 - Managing Internal Water Systems'
+
+## [2026-05-09T23:38:20Z] filter-correction | id=web-2010-01-01-6c4 | domain=condo | decision=include | original_score=0.85
+
+rationale='FL Administrative Code Rule Chapter 61B-22 — Financial and Accounting Requirements; Budgets, Reserves, and Guarantees. Implementing rules for Fla. Stat. §718 financial obligations including reserves. Reserve rules (61B-22.005) belong to condo-capital-infra; the chapter index is condo-domain anchor for understanding the reserve/operations boundary.'
+
+## [2026-05-09T23:38:20Z] filter-correction | id=web-2010-01-01-d36 | domain=condo | decision=include | original_score=0.85
+
+rationale='FL Administrative Code Rule Chapter 61B-23 — The Association. Implementing rules for condominium association operations under Fla. Stat. §718. Directly in scope for condo domain operational layer.'
+
+## [2026-05-09T23:38:23Z] nlm-add | id=pdf-6b0d49e91108 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-6b0d49e91108.pdf title='PCI Maintenance Manual for Precast Parking Structures'
+
+## [2026-05-09T23:38:25Z] wiki-author | id=web-2010-01-01-d36 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+The Florida Administrative Code Chapter 61B-23 is a primary regulatory source defining condo association operations, fiduciary duty, elections, recalls, developer transition, and contract bidding — warranting a new entity for the rule chapter and concept pages for the operational governance regime that complements Florida's SIRS structural mandate.
+
+## [2026-05-09T23:38:30Z] nlm-add | id=web-2010-01-01-6c4 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flrules.org/gateway/ChapterHome.asp?Chapter=61B-22
+
+## [2026-05-09T23:38:34Z] nlm-add | id=web-2010-01-01-d36 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flrules.org/gateway/ChapterHome.asp?Chapter=61B-23
+
+## [2026-05-09T23:38:39Z] nlm-add | id=web-2010-01-01-d36 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flrules.org/gateway/ChapterHome.asp?Chapter=61B-23
+
+## [2026-05-09T23:38:54Z] ingest | id=web-2026-01-07-3f3 | type=web | domains=condo | filter=rejected | domain=condo | score=0.25
+
+raw=raw/web/web-2026-01-07-3f3.md (wiki not written: filter decision=rejected)
+
+## [2026-05-09T23:39:02Z] filter-correction | id=web-2026-01-07-3f3 | domain=condo | decision=include | original_score=0.25
+
+rationale='DBPR official press release documenting HB 913 (2025) implementation outcomes: 16,104 associations created mandatory online accounts, CTMH hosted 92 educational sessions reaching 41,000 attendees. Primary source for DBPR operational guidance delivery mechanism (webinars/education) vs published rulebooks. Directly in scope for condo domain.'
+
+## [2026-05-09T23:39:08Z] nlm-add | id=web-2026-01-07-3f3 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www2.myfloridalicense.com/florida-dbpr-highlights-2025-accomplishments/
+
+## [2026-05-09T23:40:33Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=start | domain=condo
+
+start research session for prompt "Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op buildings in the United States and Canada, OUTSIDE reserve study requirements: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking deck), regulatory PM drivers (NYC LL11/FISP, SF/CA balcony, FL HB 913 operational layer, Ontario Condo Act §94 maintenance, BC SPA, Quebec Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink, ConciergePlus, Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly, UpKeep, Limble, Maintainx), predictive / condition-based PM in residential CRE, and insurance / loss-control PM checklists for high-rise residential."
+
+## [2026-05-09T23:40:33Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-09T23:40:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-09T23:40:41Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-09T23:40:44Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=youtube | n=77
+
+adapter youtube returned 77 candidates
+
+## [2026-05-09T23:40:47Z] ingest | id=web-2026-01-01-927 | type=web | domains=condo | filter=rejected | domain=condo | score=0.4
+
+raw=raw/web/web-2026-01-01-927.md (wiki not written: filter decision=rejected)
+
+## [2026-05-09T23:40:51Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-09T23-40-51Z-stale-drafts.md
+
+## [2026-05-09T23:40:51Z] lint | scope=orphans | orphans=396
+
+report=.knowledge/lint/2026-05-09T23-40-51Z-orphans.md
+
+## [2026-05-09T23:41:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=web | n=205
+
+adapter web returned 205 candidates
+
+## [2026-05-09T23:41:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=merge | n=373
+
+merged 373 candidate(s) across adapters
+
+## [2026-05-09T23:41:55Z] ingest | id=web-2025-04-30-984 | type=web | domains=condo | filter=included | domain=condo | score=0.95
+
+raw=raw/web/web-2025-04-30-984.md wiki=wiki/sources/web-2025-04-30-984.md
+
+## [2026-05-09T23:42:55Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-09T23-42-55Z-stale-drafts.md
+
+## [2026-05-09T23:44:08Z] lint | scope=orphans | orphans=397
+
+report=.knowledge/lint/2026-05-09T23-44-08Z-orphans.md
+
+## [2026-05-09T23:44:12Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-09T23-44-12Z-untagged-sources.md
+
+## [2026-05-09T23:44:19Z] lint | scope=nlm-pending | nlm-pending=1
+
+report=.knowledge/lint/2026-05-09T23-44-19Z-nlm-pending.md
+
+## [2026-05-09T23:44:27Z] filter-correction | id=web-2025-04-30-984 | domain=condo | decision=include | original_score=0.95
+
+rationale='FL HB 913 (2025) bill summary page from flsenate.gov. Enacted legislation amending Fla. Stat. Chapter 718 — mandatory structural inspections, SIRS reserve requirements, mandatory online accounts for associations. Primary legislative source for HB 913 implementation scope. In-scope for condo domain.'
+
+## [2026-05-09T23:44:35Z] nlm-add | id=web-2025-04-30-984 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www.flsenate.gov/Session/Bill/2025/913
+
+## [2026-05-09T23:44:45Z] lint | scope=missing-pages | missing-pages=92
+
+report=.knowledge/lint/2026-05-09T23-44-45Z-missing-pages.md
+
+## [2026-05-09T23:44:48Z] wiki-author | id=web-2025-04-30-984 | updates=4 | created=4 | updated=0 | contradictions=3 | draft=no
+
+The Florida Senate's primary-source page for CS/CS/HB 913 (2025), Chapter 2025-175, describes a community-association-manager licensure and DBPR online-account regime — content not previously captured in any entity/concept page; this requires creating dedicated entity pages for the bill and DBPR plus concept pages for CAM licensure and the online licensure account, and surfaces a scope mismatch with existing synthesis pages that treat HB 913 as the SIRS statute.
+
+## [2026-05-09T23:44:56Z] ingest | id=pdf-house-bill-2025-h0913er-docx | type=pdf | domains=condo | filter=included | domain=condo | score=1.0
+
+raw=raw/pdf/pdf-house-bill-2025-h0913er-docx.md wiki=wiki/sources/pdf-house-bill-2025-h0913er-docx.md
+
+## [2026-05-09T23:47:57Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1590/s1982-21702024000100022
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:48:39Z] nlm-add | id=pdf-house-bill-2025-h0913er-docx | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-house-bill-2025-h0913er-docx.pdf title='_h0913er.docx'
+
+## [2026-05-09T23:48:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.32996/jcsts.2025.7.129
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:49:13Z] nlm-add | id=web-2026-01-01-927 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=web
+
+url=https://www2.myfloridalicense.com/DBPR/condominiums-timeshares-mobile-homes/
+
+## [2026-05-09T23:49:28Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-09T23-49-28Z-stale-drafts.md
+
+## [2026-05-09T23:49:29Z] lint | scope=nlm-pending | nlm-pending=0
+
+report=.knowledge/lint/2026-05-09T23-49-29Z-nlm-pending.md
+
+## [2026-05-09T23:49:29Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-09T23-49-29Z-untagged-sources.md
+
+## [2026-05-09T23:49:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.2172/2006858
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:50:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/35627663/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:50:54Z] lint | scope=orphans | orphans=397
+
+report=.knowledge/lint/2026-05-09T23-50-54Z-orphans.md
+
+## [2026-05-09T23:51:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.32866/001c.126421
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:51:57Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/su131810363
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:52:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/buildings11010005
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:53:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1109/ACCESS.2024.3360209
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:54:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.69855/sipil.v1i2.315
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:55:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/buildings15030304
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:55:17Z] ingest | id=web-2026-01-01-361 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-361.md wiki=wiki/sources/web-2026-01-01-361.md
+
+## [2026-05-09T23:55:17Z] ingest | id=web-2024-01-11-e67 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-01-11-e67.md wiki=wiki/sources/web-2024-01-11-e67.md
+
+## [2026-05-09T23:56:00Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/su172410919
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:56:08Z] query | domain=condo | unresolved_citations=5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,43,44,45,46,49,50,51,52,53,54,55,56,57,58,59,62,63,65,66,68,69,70,71,73,74,75,76,77,78,79,80,81,82,83,84,85
+
+lint-warning: query response cited 73 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-09T23:56:08Z] wiki-author | id=query-2026-05-09-what-are-the-quantified-preventive-maintenance | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-09T23:56:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1088/1757-899X/1333/1/012002
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:57:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.37721/kalibrasi.v8i2.1660
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:58:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.semanticscholar.org/paper/69672623
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-09T23:59:15Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.semanticscholar.org/paper/56778215
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:00:02Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1108/jqme-03-2020-0015
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:00:51Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.semanticscholar.org/paper/114749207
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:01:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.63282/3117-5481/aijcst-v6i2p107
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:02:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/en18246522
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:03:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.semanticscholar.org/paper/15965151
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:03:40Z] ingest | id=web-2026-05-06-9cd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-06-9cd.md wiki=wiki/sources/web-2026-05-06-9cd.md
+
+## [2026-05-10T00:04:12Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/buildings15224129
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:04:21Z] cite | page=wiki/synthesis/2026-05-09-what-does-the-2021-surfside-champlain.md | additions=5 | sources=3
+
+added 5 citation(s) to wiki/synthesis/2026-05-09-what-does-the-2021-surfside-champlain.md
+
+## [2026-05-10T00:05:02Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1007/s41024-024-00433-3
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:05:51Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1061/41082(362)6
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:06:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.1061/40753(171)230
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:07:13Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-10T00-07-13Z-stale-drafts.md
+
+## [2026-05-10T00:07:17Z] lint | scope=orphans | orphans=398
+
+report=.knowledge/lint/2026-05-10T00-07-17Z-orphans.md
+
+## [2026-05-10T00:07:17Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-10T00-07-17Z-untagged-sources.md
+
+## [2026-05-10T00:07:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/app14166947
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:08:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.semanticscholar.org/paper/111211480
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:09:01Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.55041/ijsrem58776
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:09:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.3390/app9235068
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:10:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.55041/ijsrem55321
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:11:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://doi.org/10.30574/wjarr.2025.26.3.2328
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:28:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://rimkus.com/article/california-balcony-inspection/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:29:34Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.flsenate.gov/Committees/BillSummaries/2025/html/913
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:30:28Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://castlegroup.com/blog/floridas-new-milestone-inspection-law-hb-913-what-your-association-needs-to-know-for-2025/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:31:16Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://flengineeringllc.com/florida-hb-913-condominium-safety-2025/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T00:32:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=start | domain=condo
+
+start research session for prompt "Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op buildings in the United States and Canada, OUTSIDE reserve study requirements: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking deck), regulatory PM drivers (NYC LL11/FISP, SF/CA balcony, FL HB 913 operational layer, Ontario Condo Act §94 maintenance, BC SPA, Quebec Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink, ConciergePlus, Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly, UpKeep, Limble, Maintainx), predictive / condition-based PM in residential CRE, and insurance / loss-control PM checklists for high-rise residential."
+
+## [2026-05-10T00:32:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T00:32:40Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T00:32:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T00:32:49Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=youtube | n=77
+
+adapter youtube returned 77 candidates
+
+## [2026-05-10T00:32:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=web | n=205
+
+adapter web returned 205 candidates
+
+## [2026-05-10T00:32:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=merge | n=373
+
+merged 373 candidate(s) across adapters
+
+## [2026-05-10T00:38:11Z] ingest | id=web-1998-01-01-7e4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-1998-01-01-7e4.md wiki=wiki/sources/web-1998-01-01-7e4.md
+
+## [2026-05-10T00:40:48Z] ingest | id=web-2022-01-01-e0b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-01-01-e0b.md wiki=wiki/sources/web-2022-01-01-e0b.md
+
+## [2026-05-10T00:40:55Z] ingest | id=web-2024-06-01-906 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-06-01-906.md wiki=wiki/sources/web-2024-06-01-906.md
+
+## [2026-05-10T00:40:55Z] ingest | id=web-2024-10-15-6c9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-10-15-6c9.md wiki=wiki/sources/web-2024-10-15-6c9.md
+
+## [2026-05-10T00:40:55Z] ingest | id=web-2025-01-01-6b5 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-01-6b5.md wiki=wiki/sources/web-2025-01-01-6b5.md
+
+## [2026-05-10T00:40:55Z] ingest | id=web-2025-02-27-05e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-02-27-05e.md wiki=wiki/sources/web-2025-02-27-05e.md
+
+## [2026-05-10T00:41:02Z] ingest | id=web-2025-08-01-8c2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-08-01-8c2.md wiki=wiki/sources/web-2025-08-01-8c2.md
+
+## [2026-05-10T00:41:02Z] ingest | id=web-2025-10-13-a40 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-13-a40.md wiki=wiki/sources/web-2025-10-13-a40.md
+
+## [2026-05-10T00:41:02Z] ingest | id=web-2025-11-24-619 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-24-619.md wiki=wiki/sources/web-2025-11-24-619.md
+
+## [2026-05-10T00:41:02Z] ingest | id=web-2025-12-08-df6 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-12-08-df6.md wiki=wiki/sources/web-2025-12-08-df6.md
+
+## [2026-05-10T00:41:02Z] ingest | id=web-2026-01-01-58c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-58c.md wiki=wiki/sources/web-2026-01-01-58c.md
+
+## [2026-05-10T00:41:08Z] ingest | id=web-2026-01-01-93d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-93d.md wiki=wiki/sources/web-2026-01-01-93d.md
+
+## [2026-05-10T00:41:08Z] ingest | id=web-2026-02-18-dff | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-18-dff.md wiki=wiki/sources/web-2026-02-18-dff.md
+
+## [2026-05-10T00:41:08Z] ingest | id=web-2026-02-20-0f3 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-20-0f3.md wiki=wiki/sources/web-2026-02-20-0f3.md
+
+## [2026-05-10T00:41:08Z] ingest | id=web-2026-03-29-4b9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-03-29-4b9.md wiki=wiki/sources/web-2026-03-29-4b9.md
+
+## [2026-05-10T00:41:29Z] ingest | id=web-2000-01-01-bf7 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2000-01-01-bf7.md wiki=wiki/sources/web-2000-01-01-bf7.md
+
+## [2026-05-10T00:41:29Z] ingest | id=web-2014-06-25-7b4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2014-06-25-7b4.md wiki=wiki/sources/web-2014-06-25-7b4.md
+
+## [2026-05-10T00:41:29Z] ingest | id=web-2018-07-01-1cf | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-07-01-1cf.md wiki=wiki/sources/web-2018-07-01-1cf.md
+
+## [2026-05-10T00:41:29Z] ingest | id=web-2018-09-17-ca9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-09-17-ca9.md wiki=wiki/sources/web-2018-09-17-ca9.md
+
+## [2026-05-10T00:41:30Z] ingest | id=web-2024-01-01-ac1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-01-01-ac1.md wiki=wiki/sources/web-2024-01-01-ac1.md
+
+## [2026-05-10T00:41:35Z] ingest | id=web-2024-05-23-ea9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-05-23-ea9.md wiki=wiki/sources/web-2024-05-23-ea9.md
+
+## [2026-05-10T00:41:36Z] ingest | id=web-2024-06-04-fd1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-06-04-fd1.md wiki=wiki/sources/web-2024-06-04-fd1.md
+
+## [2026-05-10T00:41:36Z] ingest | id=web-2025-01-01-742 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-01-742.md wiki=wiki/sources/web-2025-01-01-742.md
+
+## [2026-05-10T00:41:36Z] ingest | id=web-2026-01-01-927 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-927.md wiki=wiki/sources/web-2026-01-01-927.md
+
+## [2026-05-10T00:41:36Z] ingest | id=web-2026-01-07-3f3 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-07-3f3.md wiki=wiki/sources/web-2026-01-07-3f3.md
+
+## [2026-05-10T00:41:53Z] ingest | id=web-2026-01-13-360 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-13-360.md wiki=wiki/sources/web-2026-01-13-360.md
+
+## [2026-05-10T00:41:53Z] ingest | id=web-2026-02-23-5ef | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-23-5ef.md wiki=wiki/sources/web-2026-02-23-5ef.md
+
+## [2026-05-10T00:41:58Z] ingest | id=pdf-6302e90be3b6 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-6302e90be3b6.md wiki=wiki/sources/pdf-6302e90be3b6.md
+
+## [2026-05-10T00:41:59Z] ingest | id=pdf-6b0d49e91108 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-6b0d49e91108.md wiki=wiki/sources/pdf-6b0d49e91108.md
+
+## [2026-05-10T00:41:59Z] ingest | id=pdf-bc-housing-2021-maintenance-matters-20 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-bc-housing-2021-maintenance-matters-20.md wiki=wiki/sources/pdf-bc-housing-2021-maintenance-matters-20.md
+
+## [2026-05-10T00:42:05Z] ingest | id=pdf-db0621cb54d0 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-db0621cb54d0.md wiki=wiki/sources/pdf-db0621cb54d0.md
+
+## [2026-05-10T00:42:05Z] ingest | id=pdf-ede594f9f127 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-ede594f9f127.md wiki=wiki/sources/pdf-ede594f9f127.md
+
+## [2026-05-10T00:42:06Z] ingest | id=web-2024-04-17-715 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-04-17-715.md wiki=wiki/sources/web-2024-04-17-715.md
+
+## [2026-05-10T00:42:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-10T00:42:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T00:42:37Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T00:42:38Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T00:42:38Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T00:42:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-10T00:42:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=164
+
+merged 164 candidate(s) across adapters
+
+## [2026-05-10T00:45:28Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md | additions=7 | sources=1
+
+added 7 citation(s) to wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md
+
+## [2026-05-10T00:45:32Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md | additions=6 | sources=4
+
+added 6 citation(s) to wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md
+
+## [2026-05-10T00:45:49Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md | additions=4 | sources=3
+
+added 4 citation(s) to wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md
+
+## [2026-05-10T00:45:55Z] finalize | page=wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md
+
+finalized wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md
+
+## [2026-05-10T00:47:04Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md | additions=7 | sources=2
+
+added 7 citation(s) to wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md
+
+## [2026-05-10T00:47:13Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md | additions=9 | sources=9
+
+added 9 citation(s) to wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md
+
+## [2026-05-10T00:47:20Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md | additions=8 | sources=7
+
+added 8 citation(s) to wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md
+
+## [2026-05-10T00:47:26Z] cite | page=wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md | additions=5 | sources=2
+
+added 5 citation(s) to wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md
+
+## [2026-05-10T00:47:32Z] finalize | page=wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md
+
+finalized wiki/synthesis/2026-05-09-what-are-the-established-best-practices.md
+
+## [2026-05-10T00:49:58Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-10T00-49-58Z-stale-drafts.md
+
+## [2026-05-10T00:50:17Z] lint | scope=orphans | orphans=414
+
+report=.knowledge/lint/2026-05-10T00-50-17Z-orphans.md
+
+## [2026-05-10T00:50:19Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-10T00-50-19Z-untagged-sources.md
+
+## [2026-05-10T00:52:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-10T00:52:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T00:52:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-10T00:52:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T00:52:51Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T00:52:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T00:52:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=164
+
+merged 164 candidate(s) across adapters
+
+## [2026-05-10T01:06:13Z] wiki-author | id=docx-bf4965d0d33a | updates=12 | created=12 | updated=0 | contradictions=1 | draft=no
+
+Source is the canonical engagement synthesis for the condo-capital-infra domain; creates the 12 entity/concept entry points named in the source frontmatter and flags a framing conflict with the existing HB 913 page.
+
+## [2026-05-10T01:11:26Z] wiki-author | id=pdf-6302e90be3b6 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=no
+
+BOMA BEST 4.0 MURB is the sustainable-buildings standard explicitly referenced across the existing PM-cadence and reserve-study synthesis pages, but no entity/concept pages yet exist for the standard itself, its publishing organization, the referenced ASHRAE 180-2018 and ISO 50001 standards, or the three baseline practices (Energy/Carbon Assessment, Energy Management Plan, Preventive Maintenance Plan) that anchor BOMA BEST's operational framework — these are the citable hooks future Condo PM and reserve work will need.
+
+## [2026-05-10T01:14:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | n=32
+
+32 candidate(s) cleared threshold
+
+## [2026-05-10T01:14:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+## [2026-05-10T01:14:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-10T01:14:51Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+## [2026-05-10T01:14:52Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://reservestudysoftware.com/wp-content/uploads/2021/09/Calculations.pdf
+
+error: no extractable content at https://reservestudysoftware.com/wp-content/uploads/2021/09/Calculations.pdf
+
+## [2026-05-10T01:15:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+## [2026-05-10T01:15:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://oakmontvillage.com/wp-content/uploads/2025/05/HOA-Management-RFP-Sample.docx
+
+error: no extractable content at https://oakmontvillage.com/wp-content/uploads/2025/05/HOA-Management-RFP-Sample.docx
+
+## [2026-05-10T01:15:22Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://doi.org/10.3390/su13179575
+
+error: could not fetch https://doi.org/10.3390/su13179575
+
+## [2026-05-10T01:15:22Z] wiki-author | id=pdf-6b0d49e91108 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+PCI MNL-136-04 is the canonical industry guide for precast parking structure maintenance and is already invoked by Condo synthesis pages (parking-deck sealer, snow removal, structural audit cadences) without a citable entity backing those references; this plan creates the missing PCI organization, manual, referenced standards, and the parking-specific maintenance category, housekeeping, and snow-removal concepts.
+
+## [2026-05-10T01:15:23Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=materialize | n=25
+
+materialized 25 source(s) to raw/
+
+## [2026-05-10T01:15:23Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-10T01:17:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-10T01:17:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T01:17:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-10T01:17:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T01:17:22Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T01:17:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T01:17:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=164
+
+merged 164 candidate(s) across adapters
+
+## [2026-05-10T01:24:52Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.tarion.com/sites/default/files/2022-12/Print%20Condo%20Warranty%20Brochure%20-%20FINAL.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:24:52Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | n=69
+
+69 candidate(s) cleared threshold
+
+## [2026-05-10T01:24:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1108/jfep-03-2023-0071
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:25:52Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.46754/jssm.2024.10.002
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:26:42Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.54728/jfmg.202407.00079
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:27:32Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/28141673/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:28:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.17559/tv-20181015174733
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:29:11Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1080/10511482.2018.1530273
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:33:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=start | domain=condo
+
+start research session for prompt "Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op buildings in the United States and Canada, OUTSIDE reserve study requirements: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies, parking deck), regulatory PM drivers (NYC LL11/FISP, SF/CA balcony, FL HB 913 operational layer, Ontario Condo Act §94 maintenance, BC SPA, Quebec Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA, CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink, ConciergePlus, Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly, UpKeep, Limble, Maintainx), predictive / condition-based PM in residential CRE, and insurance / loss-control PM checklists for high-rise residential."
+
+## [2026-05-10T01:33:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T01:33:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-10T01:33:41Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T01:33:52Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | adapter=web | n=205
+
+adapter web returned 205 candidates
+
+## [2026-05-10T01:34:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-10T01:34:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=merge | n=254
+
+merged 254 candidate(s) across adapters
+
+## [2026-05-10T01:34:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-10T01:34:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T01:34:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-10T01:34:09Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T01:34:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T01:34:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T01:34:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=164
+
+merged 164 candidate(s) across adapters
+
+## [2026-05-10T01:44:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://sdinspect.com/deck-and-balcony-inspections/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:45:29Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://rimkus.com/article/california-balcony-inspection/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:50:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ifma.org/about/what-is-fm/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:50:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ifma.org/news/whats-new-at-ifma-new/ifma-launches-fm-framework-training-with-industry-partners/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:51:40Z] query | domain=condo | unresolved_citations=1,2,3,4,5,6,7,8,9,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39
+
+lint-warning: query response cited 37 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-10T01:51:40Z] wiki-author | id=query-2026-05-10-what-is-the-best-practice-for | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-10T01:51:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://ifma.foleon.com/credentials/domains-of-facility-management/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:52:38Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ifma.org/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:52:45Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=start | domain=edge-ai-agentic
+
+start research session for prompt 'State of the art in enterprise edge-AI agent stacks: how are local LLMs/SLMs, multi-agent frameworks, and RAG systems over proprietary first-party data composed for production deployment? Survey the canonical 2026 stack layer by layer — hardware, runtimes and quantization, model selection, RAG infrastructure, agent frameworks, inter-agent protocols (MCP/A2A), orchestration, observability, and governance — citing concrete open-source and vendor implementations, and noting the 2025-2026 advances that made each layer practical.'
+
+## [2026-05-10T01:52:45Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T01:52:45Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-05-10T01:52:46Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-10T01:52:51Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T01:53:01Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T01:53:01Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=merge | n=120
+
+merged 120 candidate(s) across adapters
+
+## [2026-05-10T01:53:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://ifmahuntsville.org/images/downloads/facility_management_training_and_development_framework.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:53:50Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2504.19565
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:54:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://cai.caionline.org/eWeb/DynamicPage.aspx?site=CAI&WebCode=storeItemDetail&parentKey=52ad38d8-63f0-4b66-ad7c-8bf00ce2ef9f
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:54:39Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2603.21389
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:55:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.caionline.org/getmedia/1391a064-ef30-4c89-af51-3951d70a20e5/bestpracticescamaintenance-final2_.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:55:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | n=33
+
+33 candidate(s) cleared threshold
+
+## [2026-05-10T01:55:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+## [2026-05-10T01:55:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-10T01:55:26Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+## [2026-05-10T01:55:28Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2302.05406
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:55:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://reservestudysoftware.com/wp-content/uploads/2021/09/Calculations.pdf
+
+error: no extractable content at https://reservestudysoftware.com/wp-content/uploads/2021/09/Calculations.pdf
+
+## [2026-05-10T01:55:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+## [2026-05-10T01:55:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://oakmontvillage.com/wp-content/uploads/2025/05/HOA-Management-RFP-Sample.docx
+
+error: no extractable content at https://oakmontvillage.com/wp-content/uploads/2025/05/HOA-Management-RFP-Sample.docx
+
+## [2026-05-10T01:55:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://doi.org/10.3390/su13179575
+
+error: could not fetch https://doi.org/10.3390/su13179575
+
+## [2026-05-10T01:55:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=materialize | n=26
+
+materialized 26 source(s) to raw/
+
+## [2026-05-10T01:55:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-10T01:55:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_session | notebook_id=ff5edbf5-75ae-4846-8997-011d4d8ba6e3
+
+created session notebook ff5edbf5-75ae-4846-8997-011d4d8ba6e3
+
+## [2026-05-10T01:55:53Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://hub.associaonline.com/blog/the-5-essential-steps-to-developing-a-community-maintenance-program-that-works
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:56:17Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2505.08588
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:56:32Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | target=https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML
+
+error: `nlm source add ff5edbf5-75ae-4846-8997-011d4d8ba6e3 --url https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML --wait` exited 1: Adding https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-10T01:56:44Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://neighborhoodmanagement.com/preventive-maintenance-tips-for-hoa-communities/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:57:06Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2503.23037
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:57:34Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.santaclaraassociationmanagement.com/blog/from-inspections-to-action-building-an-effective-hoa-maintenance-plan
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:57:55Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2601.12538
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:58:22Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.choa.bc.ca/wp-content/uploads/400-508-SAMPLE-Operations-Planning-Chart-July-2020.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:58:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | n=25 | skipped=1
+
+pushed 25 source(s) to session notebook (1 skipped)
+
+## [2026-05-10T01:58:26Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_map | n=26
+
+built source map (26 entries)
+
+## [2026-05-10T01:58:46Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2402.11651
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:59:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://choa.bc.ca/wp-content/uploads/pdf/200/200-013%20Repair%20and%20Maintenance%20to%20Common%20Property.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T01:59:34Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2310.00034
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:00:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www2.gov.bc.ca/gov/content/housing-tenancy/strata-housing/operating-a-strata/repairs-and-maintenance/repair-and-maintenance-documentation
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:00:28Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2312.10793
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:00:53Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=Xzebe73jRm8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:01:18Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2304.12244
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:01:41Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.choa.bc.ca/wp-content/uploads/Copy-of-200-220-supplement-SAMPLE-Operations-Planning-Chart.xlsx
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:02:08Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2402.12065
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:02:31Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://acmo.org/publications/cm-magazine/article/450
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:02:56Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2410.05265
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:03:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://acmo.org/acmo-2000-certification/overview
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:03:46Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2508.17739
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:04:07Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://taft-forward.com/condominium-management-standards/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:04:37Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2203.16487
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:04:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.youtube.com/watch?v=dlHhzXzGiQA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:05:28Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2605.01106
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:05:47Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.larlyn.com/client-education/mean-certified-acmo/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:06:16Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2503.00491
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:06:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.greatamericaninsurancegroup.com/content-hub/loss-control/details/safety-inspection-checklist
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:07:07Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2603.18016
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:07:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.workingre.com/loss-prevention-checklist/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:07:55Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-10T02:07:55Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 12: claim has no citation: **Name and key contribution:** **Full Funding** is the most conservative funding strategy, with the goal of attaining an; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 13: claim has no citation: **Core technical approach:** This method calculates a "fully funded balance" (FFB) for each item by multiplying the repl; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 13: claim has no citation: The association's total funding target is the sum of the FFB for all components in the schedule [1, 2].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 14: claim has no citation: **Reported benchmark results:** In practice, there is almost no justification for keeping 100% of the fully funded balan; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 14: claim has no citation: It is only mathematically necessary in the extremely rare scenario where all component repairs come due at the exact sam; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 17: claim has no citation: **Name and key contribution:** **Threshold Funding** is the most commonly recommended financial strategy; its goal is to; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 18: claim has no citation: **Core technical approach:** This method projects cash inflows and outflows over time.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 18: claim has no citation: Contribution inflows are set at an adequate, stable level ensuring that the reserve balance never drops below the set th; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 19: claim has no citation: **Reported benchmark results:** Considered ideal for most communities because it provides stable funding, ensures equita; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 22: claim has no citation: **Name and key contribution:** **Baseline Funding** is a riskier cash-flow strategy where the funding goal is simply to ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 23: claim has no citation: **Core technical approach:** It operates similarly to threshold funding by mapping out future cash flows, but the plan i; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 24: claim has no citation: **Reported benchmark results:** This strategy leaves absolutely no cushion on cash flow and is generally only acceptable; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 24: claim has no citation: If a capital project comes due early or costs more than projected, baseline funding will immediately force the associati; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 27: claim has no citation: **Name and key contribution:** **Statutory Funding** is a non-negotiable compliance strategy that dictates the minimum a; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 28: claim has no citation: **Core technical approach:** The calculation is purely legislative rather than strictly mathematical or engineering-base; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 28: claim has no citation: For example, Michigan requires associations to maintain a noncumulative reserve fund equal to a minimum of 10% of the an; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 29: claim has no citation: **Reported benchmark results:** While mandatory where applicable, these statutory minimums are often generic and not spe; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 32: claim has no citation: **Name and key contribution:** The **Percent Funded** metric (or Percent of Fully Funded) is the traditional Community A; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 33: claim has no citation: **Core technical approach:** Uses the formula `FFB = Replacement Cost x (Effective Age / Useful Life)`.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 33: claim has no citation: The overall percent funded is then determined by dividing the actual reserve balance by the total Fully Funded Balance [; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 33: claim has no citation: In some software architectures, the percent funded is calculated by averaging the percentage levels of individual compon; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 34: claim has no citation: **Reported benchmark results:** This model is heavily criticized for failing real-world tests because it assumes buildin; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 34: claim has no citation: In reality, degradation is exponential or step-wise.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 34: claim has no citation: Furthermore, averaging component percentages can wildly distort the association's actual cash position, rendering the me; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 37: claim has no citation: **Name and key contribution:** The **Cash Flow Method** (or pooled accounting) simplifies contribution calculations by t; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 38: claim has no citation: **Core technical approach:** Instead of calculating individual component depreciation, this method schedules funding str; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 39: claim has no citation: **Reported benchmark results:** While praised for its simplicity, critics note its core flaw is that it completely ignor; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 39: claim has no citation: This creates an "illusion of adequacy" characterized by artificially stable graphs, allowing an association to look fina; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 42: claim has no citation: **Name and key contribution:** **Actuarial and Probabilistic Modeling** is an advanced, proposed framework that treats t; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 43: claim has no citation: **Core technical approach:** This architecture abandons 20th-century straight-line spreadsheet math.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 43: claim has no citation: It utilizes probabilistic models and actuarial science to calculate reserve spending liability, acknowledging the nonlin; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 44: claim has no citation: **Reported benchmark results:** By separating short-term cashflow readiness from long-term capital adequacy, this method; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 50: claim has no citation: When comparing the different methods within the research area of **Reserve Fund Financial Planning and Funding Strategie; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 50: claim has no citation: Therefore, the criteria regarding **"computational efficiency and speed"** and **"scalability to longer videos or larger; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 52: claim has no citation: However, the sources do provide a clear comparison of the financial **accuracy and performance** of these models, as wel; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 57: claim has no citation: These methods govern how much cash an association aims to keep on hand.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 60: claim has no citation: **Full Funding** calculates liability by aiming for a 100% funded balance based on the fraction of each component's life; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 60: claim has no citation: However, it performs poorly in real-world application because it assumes all components will need replacement simultaneo; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 61: claim has no citation: **Threshold Funding** performs with much higher practical accuracy for real-world cash flow, balancing inflows and outfl; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 62: claim has no citation: **Baseline Funding** is the least accurate and most dangerous for financial performance; it aims to keep the balance jus; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 64: claim has no citation: **Full Funding:** Highly conservative and minimizes virtually all financial risk [1].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 65: claim has no citation: **Threshold Funding:** Considered the "ideal" strategy for most communities because it provides stable funding, equitabl; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 67: claim has no citation: **Full Funding:** Over-burdens current homeowners by hoarding excess cash [1].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 68: claim has no citation: **Baseline Funding:** Highly risky; generally only acceptable for distressed communities, as any deviation from the plan; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 71: claim has no citation: These methods dictate the underlying mathematical formulas used to evaluate the health of the reserve fund and project f; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 73: claim has no citation: **Accuracy and Performance:** The traditional **Percent Funded** metric relies on a "fictional" linear depreciation mode; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 73: claim has no citation: The sources note this fails the test of accuracy because real-world degradation for major components like roofs and asph; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 73: claim has no citation: In contrast, **Actuarial and Probabilistic Modeling** is argued to be far more accurate because it utilizes probabilisti; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 75: claim has no citation: **Percent Funded (Linear):** It is the traditional, widely used standard endorsed by the Community Associations Institut; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 76: claim has no citation: **Actuarial/Probabilistic:** Accurately separates short-term cash flow readiness from long-term capital adequacy, treati; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 78: claim has no citation: **Percent Funded (Linear):** Averages of component funding percentages can wildly distort the true cash position of the ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 78: claim has no citation: It also conflates accumulated depreciation with future expenditures, meaning you cannot accurately backsolve your actual; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 81: claim has no citation: This method consolidates all funds into a single bucket to cover anticipated future expenses rather than tracking indivi; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 83: claim has no citation: **Accuracy and Performance:** While it maps out future cash expenditures, it performs poorly at reflecting the true econ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 84: claim has no citation: **Strengths:** Praised for its flexibility and computational simplicity, as it just schedules funding based on anticipat; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 85: claim has no citation: **Weaknesses:** It creates an "illusion of adequacy" [9].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 85: claim has no citation: Because it ignores the underlying physical deterioration of the assets, the math can produce artificially stable financi; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 88: claim has no citation: This strategy relies on minimum thresholds dictated by state law.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 90: claim has no citation: **Accuracy and Performance:** This method is the least tailored to a specific property's performance.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 90: claim has no citation: For example, some states may mandate a flat percentage of the annual budget be kept in reserves [10].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 91: claim has no citation: **Strengths:** Ensures strict legal compliance with state mandates [10].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 92: claim has no citation: **Weaknesses:** The required funding amounts are often generic and not specific to the actual physical degradation, life; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 98: claim has no citation: The current methodologies for reserve fund financial planning and funding strategies suffer from significant mathematica; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 101: claim has no citation: **The Linear Depreciation Fallacy:** The traditional Community Associations Institute (CAI) "Percent Funded" metric is h; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 101: claim has no citation: In reality, components like roofs, boilers, and asphalt experience exponential or stepwise deterioration, which means th; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 102: claim has no citation: **Distorted Component Averaging:** Some software applications calculate funding health by averaging the percent-funded l; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 102: claim has no citation: This can wildly distort the true cash position, making an HOA appear 50% funded on average even if it lacks the actual c; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 103: claim has no citation: **The "Illusion of Adequacy" in Cash Flow Models:** The popular "cash flow" (or pooled) funding method completely ignore; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 103: claim has no citation: Because it only maps out anticipated future cash expenditures, it masks the true economic loss of the property over time; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 104: claim has no citation: **Inability to Backsolve Liability:** The traditional framework conflates accumulated depreciation with future expenditu; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 107: claim has no citation: **Full Funding:** This strategy aims for a 100% funded balance but is highly inefficient in practice.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 107: claim has no citation: It forces current homeowners to hoard massive amounts of cash unnecessarily, as it is exceedingly rare for all component; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 108: claim has no citation: **Baseline Funding:** This strategy aims to keep the reserve balance just above $0 and is considered highly risky [7].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 108: claim has no citation: It leaves absolutely no cash-flow cushion; if a project comes early or exceeds estimated costs, the HOA immediately fall; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 109: claim has no citation: **Statutory Funding:** Mandated state minimums (such as Michigan's requirement to hold 10% of the annual budget in reser; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 109: claim has no citation: They are generic thresholds that fail to account for the unique physical degradation or distinct capital needs of indivi; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 112: claim has no citation: **Board Inexperience and Turnover:** Internally prepared, "DIY" reserve studies rely on volunteer boards lacking enginee; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 112: claim has no citation: This leads to inaccurate assumptions, missed deadlines, and inconsistent methodologies when board members turn over, inc; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 113: claim has no citation: **Mismanagement of Funds:** Smaller, self-managed communities frequently struggle with basic financial hygiene, such as ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 114: claim has no citation: **Capacity and Compliance Bottlenecks:** New, strict legislative mandates—such as Florida's Senate Bill 4-D, which prohi; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 114: claim has no citation: Compounding this challenge is a massive market shortage of licensed architects and engineers available to conduct these ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 117: claim has no citation: To address these gaps, critics argue that the industry must abandon "20th-century spreadsheet math" and develop sophisti; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 118: claim has no citation: **Actuarial and Probabilistic Modeling:** Future software models should utilize actuarial science and probabilistic mode; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 119: claim has no citation: **Insurance-Based Framework:** The planning system should treat the reserve fund less like a traditional savings account; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-financial-planning-and-funding.md): [citation-grounding] line 120: claim has no citation: **Bifurcated Financial Tracking:** A modernized system must close existing accounting gaps by successfully separating an; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 12: claim has no citation: **Name and key contribution:** Milestone Structural Inspections (or Recertifications).; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 12: claim has no citation: This method's key contribution is establishing legally mandated, phased engineering assessments to identify substantial ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 13: claim has no citation: **Core technical approach:** This architecture relies on age-triggered evaluations—typically when a building reaches 30 ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 14: claim has no citation: *Phase 1:* A licensed architect or engineer performs a qualitative visual examination of habitable and non-habitable are; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 15: claim has no citation: *Phase 2:* If Phase 1 identifies "substantial structural deterioration," Phase 2 is triggered.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 15: claim has no citation: This phase utilizes destructive or non-destructive testing at the inspector's discretion.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 15: claim has no citation: The testing must be as extensive as necessary to fully assess structural distress, confirm life safety, and outline a re; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 16: claim has no citation: **Reported benchmark results:** The benchmarks for this method are strict operational and compliance timelines: Phase 1 ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 16: claim has no citation: If a Phase 2 report identifies necessary repairs, the association must commence those repairs within 365 days; failure t; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 19: claim has no citation: **Name and key contribution:** Structural Integrity Reserve Studies (SIRS).; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 19: claim has no citation: Its key contribution is bridging the gap between physical structural engineering and long-horizon financial planning by ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 20: claim has no citation: **Core technical approach:** SIRS integrates visual engineering inspections conducted by licensed architects or engineer; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 20: claim has no citation: The system rigidly targets a specific data model of high-risk structural elements: the roof, load-bearing walls, floors,; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 20: claim has no citation: The method calculates the estimated remaining useful life and replacement cost to determine the necessary annual reserve; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 21: claim has no citation: **Reported benchmark results:** Unlike traditional models, the statutory benchmark for SIRS dictates that associations a; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 21: claim has no citation: Typical reported cost benchmarks for executing a SIRS range from $5,000–$15,000 for a small condo building to $25,000–$6; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 24: claim has no citation: **Name and key contribution:** Triennial Physical Inspections (Level II Reserve Study Updates).; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 24: claim has no citation: This method contributes a short-interval, on-site feedback loop to dynamically correct long-term capital planning based ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 25: claim has no citation: **Core technical approach:** Conducted at least every 36 months (three years), this framework requires a credentialed re; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 25: claim has no citation: The inspector reviews the general conformance of component quantities, conducts detailed condition assessments, and reca; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 25: claim has no citation: The financial analysis is then updated to create a new 30-year funding plan based on the current physical realities [23,; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 26: claim has no citation: **Reported benchmark results:** The core benchmark for this method is reliability; the sources report that material cond; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 26: claim has no citation: Financially, an initial Level I study benchmarks between $3,000–$8,000 depending on complexity, while these triennial Le; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 29: claim has no citation: **Name and key contribution:** Non-linear Degradation Modeling.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 29: claim has no citation: Its key contribution is discarding fictional straight-line depreciation math in favor of a more realistic life-cycle mod; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 30: claim has no citation: **Core technical approach:** Instead of assuming building components degrade evenly over time, this method utilizes prob; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 30: claim has no citation: It tracks component lifecycles by acknowledging that major assets (like roofs, boilers, and asphalt) exhibit exponential; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 31: claim has no citation: **Reported benchmark results:** Benchmarked against the traditional CAI "Percent Funded" method, non-linear modeling clo; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 31: claim has no citation: The traditional straight-line benchmark mathematically fails real-world tests because it creates an immediate mismatch b; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 37: claim has no citation: Similar to the financial strategies discussed previously, the methods within the **Structural Integrity and Preventive M; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 37: claim has no citation: Therefore, criteria such as **"computational efficiency and speed"** and **"scalability to longer videos or larger datas; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 39: claim has no citation: However, we can compare these methods based on their **accuracy in assessing physical building performance**, their **op; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 44: claim has no citation: The accuracy of these methods is measured by how effectively they identify actual physical deterioration and translate i; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 46: claim has no citation: **Triennial Physical Inspections (Level II Updates):** This method offers high ongoing performance for general capital p; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 46: claim has no citation: By updating theoretical financial projections with real-world physical site data every three years, it ensures that long; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 46: claim has no citation: However, these are generally visual inspections that may not catch hidden, deep structural flaws.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 47: claim has no citation: **Milestone Structural Inspections:** This two-phased approach is highly accurate at diagnosing critical safety risks, b; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 47: claim has no citation: Phase 1 is a qualitative visual assessment, which might miss hidden deterioration.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 47: claim has no citation: However, if "substantial structural deterioration" is identified, Phase 2 is triggered, which utilizes highly accurate d; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 48: claim has no citation: **Structural Integrity Reserve Studies (SIRS):** SIRS acts as a highly specialized hybrid, combining the visual inspecti; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 48: claim has no citation: Because it forces an association to focus exclusively on high-risk elements, it performs much better at ensuring structu; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 51: claim has no citation: While computational speed does not apply, these methods face severe operational constraints regarding the speed of execu; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 53: claim has no citation: **Triennial Physical Inspections:** These are highly efficient and scalable.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 53: claim has no citation: Because they are updates to a baseline Level I study, they require less time and cost less to execute (an initial study ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 54: claim has no citation: **Milestone Inspections and SIRS:** These methods face significant scalability and efficiency bottlenecks.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 54: claim has no citation: Because new legislation (like Florida's SB 4-D) mandates these comprehensive studies statewide for buildings three stori; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 54: claim has no citation: Consequently, securing a contract is difficult, and the speed at which an association can comply is severely hampered by; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 54: claim has no citation: Furthermore, a SIRS does not scale cheaply to larger properties; while a small condo might cost $5,000 to $15,000, scali; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 59: claim has no citation: **Strengths:** Creates a rigid, legally enforceable backstop to prevent catastrophic failures like the Surfside collapse; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 59: claim has no citation: It forces action, requiring Phase 1 inspections to be completed within 180 days of notice, and Phase 2 repairs to commen; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 60: claim has no citation: **Weaknesses:** It is heavily age-dependent.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 60: claim has no citation: Because these inspections are generally only triggered when a building reaches 25 or 30 years of age (and every 10 years; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 63: claim has no citation: **Strengths:** Bridges the gap between structural engineering and financial planning.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 63: claim has no citation: Its greatest strength is the legal prohibition against waiving or underfunding reserves for critical structural and life; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 63: claim has no citation: This ensures predictable capital planning and reduces the risk of catastrophic failure [17].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 64: claim has no citation: **Weaknesses:** It can cause immense, immediate financial distress for communities that have historically underfunded th; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 64: claim has no citation: Implementing a SIRS often forces boards to dramatically increase monthly assessments or issue massive special assessment; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 67: claim has no citation: **Strengths:** Ideal for keeping an association's long-horizon plan proactive.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 67: claim has no citation: By recalibrating the remaining useful life of components every three years, it actively prevents the "illusion of adequa; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 68: claim has no citation: **Weaknesses:** Because it is primarily a visual and financial review, it lacks the deep, destructive testing protocols ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 68: claim has no citation: Therefore, it relies heavily on the reserve analyst's assumptions and may not definitively prove the underlying structur; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 74: claim has no citation: The sources identify several critical limitations, unsolved problems, and systemic gaps in how condo HOAs currently mana; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 77: claim has no citation: Statutory milestone inspections, such as those mandated by Florida's Senate Bill 4-D, are highly age-dependent [1].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 77: claim has no citation: These evaluations are typically not required until a building reaches 25 or 30 years of age, with subsequent inspections; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 77: claim has no citation: This creates a massive, multi-decade gap during a building's early and mid-life where latent structural degradation—such; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 80: claim has no citation: A major diagnostic limitation is that standard reserve studies (Levels I and II) and Phase 1 Milestone Inspections rely ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 80: claim has no citation: Visual inspections often fail to detect deep-seated, hidden structural flaws.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 80: claim has no citation: For example, in the Surfside collapse, the long-term degradation of reinforced concrete was occurring out of sight benea; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 80: claim has no citation: Because Phase 2 destructive or non-destructive testing is only triggered if a Phase 1 visual inspection identifies "subs; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 80: claim has no citation: Furthermore, Level III reserve study updates are conducted without any site visit at all, relying on the untrained eye o; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 83: claim has no citation: The sudden introduction of mandatory Structural Integrity Reserve Studies (SIRS) and milestone inspections has exposed a; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 83: claim has no citation: There is exceptionally high demand for these specialized studies, coupled with limited near-term availability of license; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 83: claim has no citation: This shortage makes it incredibly difficult for associations to secure contracts, leading to missed statutory deadlines,; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 86: claim has no citation: Current structural safety frameworks do not scale universally.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 86: claim has no citation: Legislation like Florida's SB 4-D specifically targets condominium and cooperative buildings that are three stories or h; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 86: claim has no citation: Single-family homes, low-rise condos, and smaller buildings (e.g., three or fewer habitable stories) are entirely exempt; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 86: claim has no citation: Consequently, there is a legislative gap where low-rise communities remain vulnerable to the same structural neglect and; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 89: claim has no citation: The sources highlight a critical gap in communication and data integration between day-to-day vendor observations and lo; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 89: claim has no citation: Prior to the Surfside collapse, a maintenance manager noted possible excessive saltwater intrusion, and a pool contracto; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 89: claim has no citation: However, there is no systematic software or integrated planning framework mentioned in the sources that automatically fo; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 92: claim has no citation: Strict new mandates prevent boards from voting to waive or partially fund reserves for critical structural items [18], [; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 92: claim has no citation: While this closes a legislative loophole, it presents an enormous challenge for historically underfunded associations.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 92: claim has no citation: When forced to transition from theoretical, under-funded spreadsheets to mandatory structural funding plans, communities; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-structural-integrity-and-preventive-maintenance.md): [citation-grounding] line 92: claim has no citation: If a community simply cannot meet the funding recommendations outlined in a SIRS, there are limited options available, l; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 12: claim has no citation: **Name and key contribution:** The **Community Associations Institute (CAI) Reserve Study Standards** establish a standa; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 14: claim has no citation: *Level I (Full Reserve Study):* The most exhaustive tier, requiring a credentialed specialist to conduct a complete phys; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 15: claim has no citation: *Level II (Update with Site Visit):* Designed to keep plans up to date by performing a physical site inspection to verif; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 16: claim has no citation: *Level III (Update without Site Visit):* A strictly financial update where the analyst does not visit the site.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 16: claim has no citation: The existing funding plan is recalculated based on the current bank balance and capital projects that were completed sin; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 17: claim has no citation: *Level IV (Future Communities):* A budgeting tool for developers calculating a 30-year funding plan using architectural ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 18: claim has no citation: **Reported benchmark results:** An initial Level I study benchmarks between $3,000–$8,000 depending on the community's s; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 18: claim has no citation: To maintain reliability, states like Washington and California statutorily mandate that associations benchmark their upd; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 21: claim has no citation: **Name and key contribution:** The **International Capital Budgeting Institute (ICBI) and Association of Professional Re; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 21: claim has no citation: The key contribution is the **Adequacy Framework**, which defines long-term funding sufficiency by balancing principles,; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 22: claim has no citation: **Core technical approach:** The ICBI/APRA architecture is built on two integrated components: *Generally Accepted Reser; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 22: claim has no citation: The methodology standardizes definitions for metrics like Reserve Fund Status, Starting Balance, and Extended Useful Lif; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 23: claim has no citation: **Reported benchmark results:** This framework serves as the authoritative, neutral benchmark for the profession, distin; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 26: claim has no citation: **Name and key contribution:** **Useful Life Forecasting** is the technical method used by reserve analysts to predict t; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 26: claim has no citation: Its key contribution is providing the underlying cost and lifespan data necessary to build the financial projection.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 28: claim has no citation: *Published Data:* Utilizing massive industry building handbooks, such as Marshall & Swift, RS Means, or the National Bui; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 29: claim has no citation: *Past History:* Evaluating the community's actual historical costs and performance, as heavy usage or severe weather (e.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 30: claim has no citation: *Local Contractor Consultation:* Interviewing highly specialized local experts to accurately price obscure components th; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 31: claim has no citation: **Reported benchmark results:** Because predicting degradation is highly subjective and depends on climate, maintenance,; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 34: claim has no citation: **Name and key contribution:** The **WUCIOA Reserve Mandate** contributes a rigid statutory architecture defining exactl; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 35: claim has no citation: **Core technical approach:** By law, the analyst must model a **30-year projection period** encompassing every reserve c; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 35: claim has no citation: The study is required to simultaneously output two separate financial models for the board to compare: a *Full Funding P; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 36: claim has no citation: **Reported benchmark results:** This bifurcated modeling approach provides a clear benchmark to the membership showing t; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 42: claim has no citation: Because the methodologies and standards discussed in the sources refer to professional reporting frameworks, physical in; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 44: claim has no citation: However, we can compare these methodologies based on their **accuracy in financial and physical forecasting**, their **o; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 47: claim has no citation: These levels govern the scope and thoroughness of the reserve study engagement.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 50: claim has no citation: **Level I (Full Reserve Study)** is the most accurate baseline, as it requires a credentialed specialist to conduct a co; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 51: claim has no citation: **Level II (Update with Site Visit)** offers high ongoing accuracy by physically verifying the general conformance of th; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 52: claim has no citation: **Level III (Update without Site Visit)** is the least accurate regarding physical conditions, as it relies purely on fi; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 54: claim has no citation: **Level I** provides the complete, exhaustive "Full Picture" necessary for associations initiating their first study [1]; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 55: claim has no citation: **Level II** is cost-effective for keeping a plan up to date, ensuring theoretical projections match actual physical deg; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 56: claim has no citation: **Level III** is highly cost-effective and suitable for tight economic conditions [3].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 58: claim has no citation: **Level I** is the most expensive and time-consuming approach due to the detailed quantification required [2].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 59: claim has no citation: **Level II** is most effective when continuity is maintained with the same firm, as switching providers can cause challe; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 60: claim has no citation: **Level III** is risky because it lacks professional physical verification; it should never serve as a permanent replace; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 63: claim has no citation: These are the data gathering methods analysts use to predict how long a component will last and how much it will cost to; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 66: claim has no citation: **Published Data** (e.g., Marshall & Swift, RS Means) provides standard theoretical baselines, but can be inaccurate bec; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 67: claim has no citation: **Past History** is significantly more accurate for predicting a specific community's needs because it accounts for actu; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 68: claim has no citation: **Local Contractor Consultation** performs best for generating highly accurate pricing and lifespan data for obscure, sp; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 69: claim has no citation: **Strengths:** Published data is easily accessible and standardized; past history reflects real-world community wear-and; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 70: claim has no citation: **Weaknesses:** Theoretical published data often deviates substantially from actual useful lives [5].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 70: claim has no citation: Past history is only viable for older communities that have actively tracked their historical costs [5].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 70: claim has no citation: To achieve the highest accuracy, a reserve analyst cannot rely on just one method; they must blend or average figures fr; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 73: claim has no citation: This compares the overarching frameworks that govern professional reserve study execution.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 75: claim has no citation: **Accuracy and Performance Differences:** The **ICBI/APRA Standards** utilize a comprehensive "Adequacy Framework" that ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 75: claim has no citation: Its performance is derived from its independence—it provides a neutral, defensible framework rather than serving as trad; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 76: claim has no citation: **Strengths:** Because the ICBI framework was developed by a multidisciplinary group of engineers, accountants, board me; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 76: claim has no citation: It promotes clarity, methodological consistency, and transparent reporting [9, 10].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 77: claim has no citation: **Weaknesses:** The sources do not identify inherent weaknesses in the ICBI/APRA standards, though adhering to such stri; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 80: claim has no citation: This compares WUCIOA's mandated dual-model financial projection framework.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 82: claim has no citation: **Accuracy and Performance Differences:** WUCIOA's framework performs with high financial transparency by statutorily ma; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 83: claim has no citation: **Strengths:** This bifurcated modeling approach shows the exact financial trade-offs between implementing higher monthl; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 83: claim has no citation: It is backed by strict statutory compliance that requires physical inspections every 36 months, keeping the long-term pl; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 84: claim has no citation: **Weaknesses:** It forces associations into rigid, heavily regulated compliance [15].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 84: claim has no citation: If a board fails to obtain and update this specific style of study, any unit owner can sue the association to enforce sp; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 91: claim has no citation: The standard methodologies used by analysts to calculate reserve liability rely on the fiction of linear depreciation, w; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 91: claim has no citation: In reality, infrastructure deterioration is exponential or stepwise, causing an immediate mismatch between a calculated ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 91: claim has no citation: Additionally, some software architectures severely distort financial health by averaging the percent-funded levels of in; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 91: claim has no citation: This can result in an association appearing adequately funded on average while entirely lacking the cash needed for an i; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 91: claim has no citation: Finally, current mathematical methods conflate future expenditures with accumulated depreciation, meaning boards cannot ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 94: claim has no citation: While the standardized tiers of reserve studies dictate how often plans are updated, Level III studies (updates without ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 94: claim has no citation: Because the professional analyst does not physically inspect the property, the methodology relies entirely on the "untra; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 94: claim has no citation: This creates a severe data gap where the theoretical financial schedules drift away from actual physical deterioration, ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 97: claim has no citation: Associations attempting to circumvent professional methodologies by preparing studies in-house face immense challenges [; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 97: claim has no citation: Volunteer boards generally lack the engineering and construction expertise required to understand building systems and c; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 97: claim has no citation: As a result, internally prepared studies rely on assumptions rather than verifiable industry data, leading to severe und; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 97: claim has no citation: Furthermore, inevitable board turnover causes a constant loss of institutional knowledge, making it impossible to mainta; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 100: claim has no citation: The sources identify an ongoing structural tension regarding who writes the standards that govern reserve studies.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 100: claim has no citation: There is a recognized need to distinguish between standards issued by trade organizations—which primarily serve as advoc; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 100: claim has no citation: Frameworks like the International Capital Budgeting Institute (ICBI) were explicitly developed by a coalition of enginee; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 103: claim has no citation: To close these methodological gaps, the sources argue that the industry must abandon "20th Century spreadsheet math" [8]; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 104: claim has no citation: Utilize **probabilistic models and actuarial science** to accurately calculate reserve spending liability, acknowledging; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 105: claim has no citation: Avoid using clustered, lump-sum replacement cost estimates or arbitrary spending allowances [9].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 106: claim has no citation: Bifurcate its analytics to explicitly separate **short-term cash flow readiness** from **long-term capital adequacy** [9; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-methodologies-and-standards.md): [citation-grounding] line 107: claim has no citation: Shift its underlying framework to treat the reserve fund as an **insurance vehicle** rather than a standard savings acco; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 12: claim has no citation: **Name and key contribution:** The Florida Senate Bill 4-D (and SB 154) Legislative Framework [1, 2].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 12: claim has no citation: Its key contribution is bridging physical engineering risk with financial planning by explicitly outlawing the underfund; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 13: claim has no citation: **Core technical approach:** This statutory architecture mandates a two-pronged compliance program for condominium and c; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 13: claim has no citation: First, it requires Milestone Structural Inspections conducted by licensed engineers/architects to determine structural s; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 13: claim has no citation: Second, it requires a Structural Integrity Reserve Study (SIRS) focusing exclusively on critical elements (e.g., roof, l; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 13: claim has no citation: The defining mechanic of this law is that condo associations are legally prohibited from waiving or reducing reserve fun; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 14: claim has no citation: **Reported benchmark results:** Milestone inspections are triggered when a building turns 30 years old (or 25 years if w; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 14: claim has no citation: A SIRS must be completed every 10 years, and targets any deferred maintenance structural component exceeding a $10,000 r; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 14: claim has no citation: The non-waivable funding mandate took effect on December 31, 2024 [5, 11].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 17: claim has no citation: **Name and key contribution:** WUCIOA (RCW 64.90) Dual-Funding Framework [13-15].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 17: claim has no citation: Its key contribution is standardizing financial transparency by forcing associations to explicitly model and present the; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 18: claim has no citation: **Core technical approach:** This framework regulates reserve accounts and studies across most common interest communiti; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 18: claim has no citation: Rather than allowing boards to present a single, arbitrary budget, the statute requires the reserve analyst to calculate; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 18: claim has no citation: To ensure data is current, the architecture requires dynamic updates via continuous physical and financial intervals [17; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 19: claim has no citation: **Reported benchmark results:** The study must project a 30-year timeframe and include every component with a lifespan u; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 19: claim has no citation: The compliance cycle requires annual financial updates and a full visual site inspection at least every 36 months (three; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 19: claim has no citation: Failure to comply allows any unit owner to sue for specific performance, exposing the HOA to prevailing-party attorney's; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 19: claim has no citation: Exemptions are narrowly benchmarked to nonresidential communities, or cases where the study cost exceeds 10% of the annu; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 22: claim has no citation: **Name and key contribution:** Utah Code (Sections 57-8-7.5 and 57-8a-211) Reserve Mandates [29, 30].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 22: claim has no citation: Its key contribution is integrating disaster-recovery flexibility into reserve fund restrictions while establishing stri; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 23: claim has no citation: **Core technical approach:** This statutory mechanism requires associations to conduct and update reserve analyses, whil; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 23: claim has no citation: However, it features a unique "state of emergency" architectural bypass: if specific conditions are met, the board may d; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 23: claim has no citation: Furthermore, it builds in an immediate unit-owner veto mechanism over the mandated reserve fund line item [32, 34].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 24: claim has no citation: **Reported benchmark results:** The standard study interval requires a reserve analysis no less frequently than every 6 ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 24: claim has no citation: The emergency bypass is benchmarked to statewide declarations of emergency where more than 10% of non-board unit owners ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 24: claim has no citation: The unit-owner veto power benchmarks at a 51% vote of the allocated voting interests, which must be executed within 45 d; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 27: claim has no citation: **Name and key contribution:** California Davis-Stirling Act Financial Disclosure Framework [40, 41].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 27: claim has no citation: Its key contribution is establishing a rigid, high-frequency disclosure architecture that forces boards to reveal deferr; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 28: claim has no citation: **Core technical approach:** Under California law, an association must distribute a heavily structured Annual Budget Rep; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 28: claim has no citation: This report acts as a comprehensive planning package, legally requiring the inclusion of a pro forma budget, a reserves ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 29: claim has no citation: **Reported benchmark results:** The compliance timeline requires this disclosure package to be distributed 30 to 90 days; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 29: claim has no citation: For associations with gross income exceeding $75,000, a Review of Financial Statement by a licensed accountant must be d; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 29: claim has no citation: State law also statutorily mandates physical reserve studies to be performed tri-annually [43].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 35: claim has no citation: Because the methods discussed in the "Legislative and Statutory Compliance Frameworks" research area consist of state la; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 37: claim has no citation: Instead, these frameworks can be compared based on their **accuracy in financial and physical risk assessment**, their *; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 42: claim has no citation: **Accuracy and Performance:** This framework performs with the highest accuracy regarding physical life-safety because i; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 42: claim has no citation: Instead of relying on a reserve analyst's theoretical spreadsheets, it explicitly targets high-risk structural elements ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 43: claim has no citation: **Operational Scalability:** This framework scales very poorly.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 43: claim has no citation: Because it suddenly mandates highly specialized engineering studies across the state, it has created a massive market bo; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 43: claim has no citation: Furthermore, it does not scale to all property types; buildings under three habitable stories are entirely exempt from t; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 44: claim has no citation: **Strengths:** Its greatest strength is its rigid safety backstop.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 44: claim has no citation: It legally prohibits associations and homeowners from voting to waive or partially fund reserve contributions for critic; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 45: claim has no citation: **Weaknesses:** It can cause immediate, catastrophic financial shock.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 45: claim has no citation: Because communities can no longer underfund these items, boards are often forced to drastically increase monthly dues or; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 45: claim has no citation: Additionally, the age-based triggers (inspections at 25 or 30 years) leave a multi-decade blind spot where early structu; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 48: claim has no citation: **Accuracy and Performance:** WUCIOA ensures high financial performance and forecasting accuracy by requiring a professi; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 48: claim has no citation: This tight feedback loop prevents the long-term plan from drifting away from the actual physical conditions of the prope; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 49: claim has no citation: **Operational Scalability:** It is highly scalable, as WUCIOA's reserve study requirements apply broadly to almost all c; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 50: claim has no citation: **Strengths:** It enforces unparalleled financial transparency by requiring the analyst to produce two separate 30-year ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 50: claim has no citation: This clearly illustrates the trade-offs of underfunding to the homeowners [17, 22, 23].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 50: claim has no citation: It also strictly mandates that reserve funds be kept in separate, uncommingled bank accounts requiring two signatures fo; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 51: claim has no citation: **Weaknesses:** It contains a flexible loophole allowing boards to withdraw reserve funds for non-reserve expenses, prov; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 51: claim has no citation: While regulated, this still allows the potential for short-term fund diversion.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 54: claim has no citation: **Accuracy and Performance:** Utah's framework requires less frequent oversight than Washington, making it more suscepti; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 54: claim has no citation: It mandates a reserve analysis only every six years, with updates every three years [26, 27].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 55: claim has no citation: **Strengths:** It strictly prohibits boards from using reserve funds for daily maintenance expenses [28, 29].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 55: claim has no citation: However, it offers unique operational flexibility by allowing boards to divert reserve funds to cover general budget sho; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 56: claim has no citation: **Weaknesses:** A major weakness is that it grants homeowners excessive veto power.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 56: claim has no citation: Within 45 days after the board adopts the annual budget, a 51% majority vote of the unit owners can completely veto the ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 56: claim has no citation: This fundamentally undermines proactive planning, as homeowners can collectively block necessary capital funding to arti; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 59: claim has no citation: **Accuracy and Performance:** This framework excels in high-frequency financial disclosure performance.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 60: claim has no citation: **Strengths:** It requires a heavily structured Annual Budget Report to be distributed 30 to 90 days before the end of t; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 60: claim has no citation: Crucially, it forces the board to explicitly disclose any decision to defer or not undertake certain component repairs [; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 60: claim has no citation: This ensures that deferred maintenance decisions are transparent and documented for all owners.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 61: claim has no citation: **Weaknesses:** The sources primarily highlight its disclosure requirements [35-37] rather than rigid, non-waivable fund; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 61: claim has no citation: Therefore, its weakness lies in relying on transparency to encourage good behavior rather than statutorily forcing assoc; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 67: claim has no citation: The sources identify several critical limitations, statutory loopholes, and unintended consequences within existing **Le; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 70: claim has no citation: A major operational limitation of aggressive new frameworks, such as Florida's Senate Bill 4-D (which mandates Milestone; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 70: claim has no citation: There is exceptionally high demand for these newly mandated studies, but a limited near-term availability of licensed ar; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 70: claim has no citation: This shortage makes it difficult for communities to secure contracts, risking missed statutory deadlines and compliance ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 73: claim has no citation: Strict compliance frameworks can trigger paralyzing financial distress.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 73: claim has no citation: Florida's mandate explicitly prohibits associations from voting to waive or partially fund reserves for critical structu; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 73: claim has no citation: For historically underfunded associations, this creates an immediate financial crisis, forcing boards to implement drast; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 73: claim has no citation: If a community simply cannot meet these statutory funding requirements, the law provides limited viable options, leaving; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 73: claim has no citation: Compounding this challenge, the post-Surfside environment has seen condominium insurance rates skyrocket—sometimes by ov; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 77: claim has no citation: **The Age Blind Spot:** Florida's milestone inspections are generally only triggered when a building reaches 30 years of; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 77: claim has no citation: This creates a multi-decade gap where early-stage structural degradation (e.g., saltwater corrosion, wind load stress) g; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 78: claim has no citation: **The Size Exemption:** Florida’s SB 4-D and mandatory SIRS apply only to buildings three stories or higher [11, 13].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 78: claim has no citation: Single-family homes, low-rise condos, and smaller buildings are entirely exempt, leaving them vulnerable to the same def; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 79: claim has no citation: **Cost and "Nominal" Exemptions:** In Washington state, small communities can be legally exempt from WUCIOA reserve stud; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 83: claim has no citation: **The Homeowner Veto (Utah):** Utah Code specifically grants homeowners excessive veto power.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 83: claim has no citation: Within 45 days of the board adopting an annual budget, a 51% majority vote of unit owners can veto the reserve fund line; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 83: claim has no citation: This allows homeowners to collectively block necessary capital funding to artificially suppress their dues.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 84: claim has no citation: **The Emergency Bypass (Utah):** Utah allows boards to divert reserve funds to cover general operating budget shortfalls; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 85: claim has no citation: **The Borrowing Loophole (Washington):** Under WUCIOA, boards are technically allowed to withdraw reserve funds for unfo; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 85: claim has no citation: This creates the risk of treating the reserve account as a general slush fund.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 88: claim has no citation: Some statutory frameworks lack proactive state oversight, relying instead on internal friction for enforcement.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 88: claim has no citation: For example, under Washington's WUCIOA, there is no regulatory agency actively auditing HOA compliance.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 88: claim has no citation: Instead, enforcement relies on a "fee-shifting" mechanism where any individual unit owner can sue the association for sp; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 91: claim has no citation: The corpus highlights a fundamental disconnect between state-mandated engineering inspections (which occur every 10 year; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 91: claim has no citation: For instance, just 36 hours before the Surfside collapse, a commercial pool contractor photographed standing water and s; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legislative-and-statutory-compliance-frameworks.md): [citation-grounding] line 93: claim has no citation: A major gap remains in creating a **purpose-built integrated planning system** that can automatically ingest real-time, ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 9: claim has no citation: The provided corpus focuses exclusively on condominium and HOA reserve fund management, structural integrity laws, and f; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 11: claim has no citation: However, looking across the actual research areas in this corpus—**Financial Planning, Structural Integrity & Maintenanc; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 16: claim has no citation: Physical site inspections serve as the foundational data-gathering technique across almost all areas of the corpus, but ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: **In Reserve Study Methodologies:** Visual inspections are used to establish a financial baseline.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: In a Level I (Full) Reserve Study, the inspection is adapted to quantify and measure all components, assess their genera; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: In a Level II update, the inspection is adapted simply to verify the general conformance of those quantities and adjust ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: **In Legislative Structural Safety (Milestone Inspections):** Under Florida law, the visual inspection is adapted strict; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: Phase 1 of a Milestone Inspection requires an architect or engineer to visually examine habitable and nonhabitable areas; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: If found, it triggers Phase 2, which adapts the inspection to include destructive or non-destructive testing to assess s; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 19: claim has no citation: **In Structural Integrity Reserve Studies (SIRS):** Here, the visual inspection technique bridges engineering and financ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 19: claim has no citation: It is adapted to focus *exclusively* on high-risk structural elements (e.g., roofs, load-bearing walls, fireproofing, pl; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 22: claim has no citation: The architectural framework of projecting capital needs over a 30-year horizon is a standard accounting technique that h; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 23: claim has no citation: **In General Financial Strategy:** Financial analysts use 30-year modeling to apply different funding goals based on an ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 23: claim has no citation: The techniques include **Full Funding** (conservatively aiming to keep the balance at 100% of accumulated depreciation),; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: **In Legislative Compliance (WUCIOA):** Washington state adapted these specific mathematical models into a mandatory tra; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: Under WUCIOA, an HOA's reserve study is legally required to project exactly 30 years into the future and must simultaneo; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: This cross-cutting adaptation forces boards to explicitly show homeowners the financial trade-offs of their budgeting de; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 27: claim has no citation: Traditional reserve studies heavily rely on linear depreciation (the "Percent Funded" model), which assumes components d; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 27: claim has no citation: However, advanced probabilistic modeling is identified as a necessary cross-cutting technique to fix systemic failures i; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 28: claim has no citation: **In Component Forecasting:** Because physical assets like roofs, boilers, and asphalt exhibit exponential or stepwise d; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 29: claim has no citation: **In Financial Planning:** Rather than treating a reserve fund like a standard savings account based on average componen; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 29: claim has no citation: This allows analysts to mathematically separate an association's short-term cash flow readiness from its long-term capit; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 32: claim has no citation: To determine how long a building component will last and what it will cost to replace, reserve analysts use a triangulat; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 33: claim has no citation: **Adaptation of Data Sources:** Analysts synthesize **Published Data** (theoretical lifespans from industry building man; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 33: claim has no citation: Averaging these distinct data streams is necessary to build a defensible, real-world financial projection [17].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 39: claim has no citation: Based on the provided sources and our conversation history, there are no benchmark datasets, video types, or annotations; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 41: claim has no citation: The sources focus exclusively on condominium and HOA reserve-fund management, structural integrity engineering (such as ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 41: claim has no citation: Because the corpus does not contain information related to artificial intelligence, machine learning, or video analysis,; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: As I noted in our previous exchanges, the provided sources focus entirely on condominium and HOA reserve-fund management; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: Because the corpus does not contain any information related to machine learning, artificial intelligence, video processi; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: global temporal modeling**, **supervised vs.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: self-supervised approaches**, and **real-time vs.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: offline accuracy** are not present in the text.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 47: claim has no citation: However, there are several fundamental, real-world trade-offs that recur across the actual research areas in this corpus; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 50: claim has no citation: **The Trade-off:** HOAs must balance the need to hold enough cash in reserve to securely cover future repairs against th; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 51: claim has no citation: **Examples:** The **Full Funding** goal aims to keep the reserve balance at 100% of accumulated depreciation.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 51: claim has no citation: While this is the most conservative and secure approach, it forces current owners to hoard massive amounts of cash unnec; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 51: claim has no citation: Conversely, **Baseline Funding** is a risky strategy that aims to keep the balance just above zero; this minimizes curre; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 51: claim has no citation: **Threshold Funding** is presented as the ideal trade-off, balancing stable, equitable contributions with adequate funds; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 54: claim has no citation: **The Trade-off:** Lawmakers and HOA boards must balance the necessity of mandating structural safety to prevent catastr; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 55: claim has no citation: **Examples:** Following the tragic Surfside collapse [4, 5], Florida passed legislation mandating Structural Integrity R; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 55: claim has no citation: A key element of this law is that condo associations are legally prohibited from voting to waive or partially fund reser; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 55: claim has no citation: While this trade-off ensures predictable capital planning and reduces the risk of structural failure [9], the inability ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 55: claim has no citation: Washington State's WUCIOA framework forces a transparency trade-off, requiring analysts to present both a Full Funding p; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 58: claim has no citation: **The Trade-off:** The reserve study industry relies on standardized mathematical formulas to project 30-year costs, but; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 59: claim has no citation: **Examples:** The traditional "Percent Funded" metric relies on a linear depreciation formula, assuming physical compone; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 59: claim has no citation: However, real-world degradation for heavy infrastructure (like roofs or asphalt) is exponential or step-wise, creating a; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 59: claim has no citation: Furthermore, the popular "cash flow" method simplifies accounting by scheduling funding based on anticipated future expe; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 61: claim has no citation: Cost of Professional Assessment vs.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 62: claim has no citation: **The Trade-off:** Associations must balance the high financial cost of hiring credentialed engineers to physically insp; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 63: claim has no citation: **Examples:** A **Level I (Full) Reserve Study** is highly accurate because it includes a complete physical inspection a; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 63: claim has no citation: To save money, associations can use **Level III updates** (financial updates without a site visit), but this trades away; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 63: claim has no citation: To enforce a safe trade-off, states like Washington mandate a compromise: associations can utilize inexpensive annual fi
+
+## [2026-05-10T02:07:56Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/1411.3958
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:08:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://ibhs.org/guidance/commercial-loss-control-tools/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:08:45Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2506.06962
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:09:03Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.janeckainsurance.com/docs/default-source/default-document-library/home-loss-prevention-checklist.pdf?sfvrsn=46fd44c4_0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:09:34Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2504.13684
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:09:51Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.craneagency.com/wp-content/uploads/2021/06/Crane-Loss-Control-Checklist.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:10:26Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2504.17204
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:10:40Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.appa.org/abstract-facilities-condition-assessment
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:11:16Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2504.14689
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:11:29Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=http://www1.appa.org/files/FMArticles/(30-35)%20FM_JA18_F3.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:12:07Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2411.18583
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:12:18Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www1.appa.org/files/FMArticles/FM091006_Feature_FCI.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:12:59Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2402.12317
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:13:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://oxmaint.com/industries/facility-management/facility-condition-index-fci-building-assessment
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:13:49Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2512.13930
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:13:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.gordian.com/resources/facilities-condition-assessment-must-identify/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:14:37Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2203.08975
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:14:47Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://cci.ca/resource-centre/view/1601
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:15:29Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/1311.5108
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:15:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ccinorthalberta.com/maintenance-protects-budget/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:16:18Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2512.06196
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:16:24Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://cci.ca/lcci/maintenance-renewal
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:17:06Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2409.02645
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:17:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://cci-grc.ca/five-questions-you-should-be-asking-your-winter-service-provider/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:17:54Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2602.20493
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:18:00Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.scribd.com/document/935413083/RECO-Information-Guide
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:18:42Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2508.00007
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:18:50Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=91021O3O.TXT
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:19:30Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2505.02279
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:19:39Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://files.ontario.ca/condo_act_stage_2_solutions_report_en.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:20:21Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2308.11066
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:20:27Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.facebook.com/groups/147797665302601/posts/6209903489091958/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:21:11Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2507.19570
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:21:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://app.collierclerk.com/LFBMR/DocView.aspx?id=13052&dbid=0&repo=BMRPROD
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:22:02Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2401.16216
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:22:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.irem.org/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:22:51Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2305.09349
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:22:57Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.irem.org/certifications/for-individuals/arm-accredited-residential-manager
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:23:41Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2405.07551
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:23:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.irem.org/online-course/id-odcmnts-0322hq01/residential_maintenance_operations_risk_management
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:24:32Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2602.13713
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:24:34Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.irem.org/courses
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:25:21Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2602.04518
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:25:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.iremlearning.org/local/catalog/view/product.php?productid=17
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:26:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://fpat.com/florida-condo-reserve-study-vs-milestone-inspection-2026/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:26:11Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2602.15006
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:26:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://buildingmavens.com/blog/florida-2025-sirs-law-changes-hb913/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:26:59Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2602.09258
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:27:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.m2e.com/blog/florida-milestone-inspections-guide/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:27:49Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2402.14800
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:28:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.withum.com/resources/key-changes-from-florida-house-bill-913-explained-inspections-reserves-and-more/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:28:38Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2410.17954
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:29:25Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.flsenate.gov/Session/Bill/2025/913/Analyses/h0913c.COM.PDF
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:29:29Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/2312.04693
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:30:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.millionluxury.com/news/post-surfside-condo-safety-what-luxury-buyers-should-know-about-inspections-and-maintenance
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:30:17Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/abs/1806.08200
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:31:03Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nbcmiami.com/news/local/florida-lawmakers-approve-changes-to-condo-safety-law-passed-after-surfside-collapse/3604327/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:31:06Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.spectrocloud.com/blog/enterprise-ai-2026-trends
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:31:54Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.reddit.com/r/AI_Agents/comments/1rqnv3a/what_is_your_full_ai_agent_stack_in_2026/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:31:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.iccsafe.org/building-safety-journal/bsj-dives/how-building-codes-are-being-updated-and-driving-development-after-the-surfside-condo-collapse/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:32:43Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.facebook.com/NewsNationNow/posts/new-laws-enacted-after-the-2021-collapse-of-the-champlain-towers-in-surfside-flo/517043570702665/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:32:44Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.kai-waehner.de/blog/2026/04/06/enterprise-agentic-ai-landscape-2026-trust-flexibility-and-vendor-lock-in/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:33:31Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.reddit.com/r/HOA/comments/1jyh88y/fl_condo_did_the_condominium_law_reforms_enacted/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:33:34Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.linkedin.com/pulse/ai-edge-may-2026-jiri-kram-8f28f
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:34:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.davis-stirling.com/HOME/Statutes/Civil-Code-5550
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:34:22Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://thenewstack.io/choosing-your-ai-orchestration-stack-for-2026/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:35:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.davis-stirling.com/HOME/E/Elevated-Structure-Inspections-SB-326-Balconies-Stairs
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:35:13Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://modelcontextprotocol.info/docs/best-practices/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:35:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://legiscan.com/CA/text/SB326/id/2050964
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:36:03Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://heeki.medium.com/building-an-mcp-server-as-an-api-developer-cfc162d06a83
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:36:47Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.propfusion.com/law-guide/california-reserve-study-requirements
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:36:52Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://github.com/cyanheads/model-context-protocol-resources/blob/main/guides/mcp-server-development-guide.md
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:37:36Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=5550.
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:37:42Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.youtube.com/watch?v=Zw3sfAIpeH8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:38:25Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nfpa.org/news-blogs-and-articles/blogs/2024/08/26/nfpa-25-and-properly-maintaining-a-sprinkler-system
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:38:31Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://blog.modelcontextprotocol.io/posts/2025-11-03-using-server-instructions/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:39:13Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://usmadesupply.com/resources/building-codes-standards/fire-suppression-standards/nfpa-25
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:39:19Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:40:02Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://nfsa.org/wp-content/uploads/2025/03/Beyond-NFPA-25-10FEB2025.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:40:07Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://github.com/a2aproject/A2A
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:40:51Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.campusfiresafety.org/LinkClick.aspx?fileticket=hJwk-c0hltw%3D&tabid=184&portalid=0&mid=496
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:40:55Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://a2a-protocol.org/latest/specification/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:41:40Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://hillgrp.com/wp-content/uploads/2021/06/NFPA-25-ITM-Quick-Reference-Guide.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:41:43Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://codelabs.developers.google.com/intro-a2a-purchasing-concierge
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:42:29Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://csafire.com/nfpa-72-fire-alarm-requirements-multi-family/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:42:32Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.youtube.com/watch?v=Fbr_Solax1w
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:43:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://integrityfiresafetyservices.com/staying-ahead-of-the-flame-the-fire-safety-inspection-cycle-for-multifamily-properties/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:43:21Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.langchain.com/langsmith/deployment
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:44:06Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nfpa.org/codes-and-standards/nfpa-72-standard-development/72
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:44:10Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.reddit.com/r/AI_Agents/comments/1ricz9m/how_are_you_deploying_langchainlanggraph_agents/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:44:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.pottersignal.com/resources/conference/presentations/nfpa-72.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:44:58Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://docs.langchain.com/oss/python/langgraph/local-server
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:45:44Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.cibaservices.com/post/fire-safety-in-multi-family-dwellings-a-guide-for-property-owners
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:45:51Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://medium.com/heurislabs/building-and-deploying-a-virtual-assistant-with-langgraph-5c68dabd82db
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:46:33Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://blog.ansi.org/ansi/asme-a17-1-2025-safety-code-elevator-csa-b44/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:46:42Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://dev.to/aws/building-production-ready-ai-agents-with-langgraph-and-amazon-bedrock-agentcore-4h5k
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:47:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://files.asme.org/catalog/codes/printbook/29151.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:47:36Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.reddit.com/r/LocalLLaMA/comments/1nhl58m/advice_on_building_an_enterprisescale/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:48:12Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://up.codes/viewer/florida/asme-a17.1-2019
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:48:30Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://medium.com/@lawrenceteixeira/revolutionizing-corporate-ai-with-ollama-how-local-llms-boost-privacy-efficiency-and-cost-52757390bf26
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:49:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.flhouse.gov/Statutes/2024/0399.02/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:49:18Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.linkedin.com/pulse/command-a-ollama-empowering-enterprise-ai-local-deployment-jha-oncrc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:49:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.stanleyelevator.com/elevator-safety-code/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:50:07Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://hyperion-consulting.io/en/insights/ollama-enterprise-deployment-guide-2026
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:50:43Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ashrae.org/technical-resources/bookstore/ansi-ashrae-standard-188-2021-legionellosis-risk-management-for-building-water-systems
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:50:55Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://amazeng.com.tr/en/blog/on-premise-ai-solutions-with-ollama
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:51:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ashrae.org/file%20library/technical%20resources/standards%20and%20guidelines/standards%20addenda/188_2015_h_20180628.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:51:44Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://docs.vllm.ai/en/latest/api/vllm/benchmarks/serve/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:52:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://towerwater.com/ashrae-188-water-management-plan-guide/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:52:33Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://github.com/vllm-project/vllm/blob/main/benchmarks/benchmark_serving.py
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:53:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.cdc.gov/control-legionella/media/pdfs/toolkit.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:53:21Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://docs.vllm.ai/en/stable/cli/bench/serve/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:53:58Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ashrae.org/about/news/2025/ashrae-highlights-resources-to-address-legionella-risk-and-water-supply-management
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:54:10Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://medium.com/@kimdoil1211/benchmarking-llm-serving-performance-a-comprehensive-guide-db94b1bfe8cf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:54:49Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://singleplyroofingexperts.com/maintenance-service-needs-for-single-ply-roofing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:55:00Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://docs.vllm.ai/en/latest/benchmarking/cli/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:55:38Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://aboveroofing.com/the-essential-guide-roof-maintenance-for-condo-associations/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:55:49Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:56:28Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://saturnfiveroofingservices.com/keep-single-ply-membrane-roof-top-shape/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:56:38Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://developer.nvidia.com/nim
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:57:16Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://j2consultants.com/wp-content/uploads/2020/06/DIY-Condominium-Guide-by-J2-Building-Consultants_20200103.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:57:29Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.edge-ai-vision.com/2024/08/build-vlm-powered-visual-ai-agents-using-nvidia-nim-and-nvidia-via-microservices/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:58:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.secondnature.com/blog/preventive-maintenance-checklist-for-property-management
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:58:19Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.nvidia.com/en-us/ai/nim-for-telco/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:58:55Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://primepowerrentals.com/how-often-should-a-generator-load-tested/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:59:08Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://infohub.delltechnologies.com/p/the-evolution-of-edge-inferencing-with-nvidia-nim-and-dell-nativeedge/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:59:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.bcew.com/blogs/news/load-bank-testing-guide
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T02:59:57Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/pdf/2506.02153
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:00:33Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.gentechusa.com/insights/home-standby-generators/nows-the-time-to-schedule-your-load-bank-tests/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:00:45Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://cobusgreyling.substack.com/p/why-small-language-models-slms-are
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:01:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.jointcommission.org/en-us/knowledge-library/support-center/standards-interpretation/standards-faqs/000001265
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:01:35Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://github.com/zhangxjohn/LLM-Agent-Benchmark-List
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:02:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.wpowerproducts.com/blog/generator-operation-maintenance/load-bank-test-procedure/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:02:26Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://developer.nvidia.com/blog/how-small-language-models-are-key-to-scalable-agentic-ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:03:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.moen.com/smart-home/leak-detector/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:03:14Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.marktechpost.com/2026/04/26/top-7-benchmarks-that-actually-matter-for-agentic-reasoning-in-large-language-models/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:03:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www2.alertlabs.com/water-leak-sensor
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:04:06Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.llamaindex.ai/blog/4-ways-llamacloud-scales-enterprise-rag
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:04:45Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.alertlabs.com/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:05:03Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.llamaindex.ai/blog/agentic-rag-with-llamaindex-2721b8a49ff6
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:05:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.homedepot.com/p/MOEN-Smart-Leak-Detectors-1-Pack-920-004/312855333
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:05:56Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://amritessh.medium.com/llamaindex-the-complete-guide-from-beginner-to-advanced-rag-applications-f132d1f16997
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:06:25Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.reddit.com/r/homeautomation/comments/1ds1zap/talk_me_out_of_getting_a_phyn_water_shutoff_system/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:06:47Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://x.com/llama_index/status/1751291798843212111
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:07:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://apexelectricms.com/the-role-of-infrared-thermography-in-preventive-electrical-maintenance/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:07:37Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://aws.amazon.com/blogs/machine-learning/build-powerful-rag-pipelines-with-llamaindex-and-amazon-bedrock/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:08:03Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://lippoliselectric.com/maintenance/infrared-thermography/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:08:27Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://pub.towardsai.net/a-beginners-guide-to-production-grade-agentic-rag-6-rag-patterns-explained-with-examples-ffe26d4a1c87
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:08:52Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.assuredndt.com/post/nfpa-70b-2023-update-annual-infrared-thermography-inspections-now-required
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:09:17Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://eagleeyethinker.medium.com/from-naive-to-agentic-the-complete-rag-evolution-in-21-patterns-5b5039468a52
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:09:42Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://switchgearpowersolutions.com/thermography.php
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:10:10Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.reddit.com/r/learnmachinelearning/comments/1s7vite/compiled_20_production_agentic_ai_patterns/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:10:30Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.flir.com/discover/industrial/nfpa-70b-2023-new-guidelines-for-electric-inspections/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:10:59Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://dedicatted.com/insights/agentic-rag-architecture-patterns-that-actually-work-for-enterprise-ai
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:11:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fm.com/Resources/fm-data-sheets
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:11:52Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://maven.com/damien-benveniste/agentic-rag
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:12:07Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fm.com/Resources/more-resources/standards-and-certification
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:12:42Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.reddit.com/r/LangChain/comments/1neh5sw/what_are_the_best_open_source_llm_observability/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:12:56Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://fireprotectionsupport.nl/wp-content/uploads/2020/11/FMDS0281-2020-10-Inspection-testing-and-maintenance.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:13:31Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://posthog.com/blog/best-open-source-llm-observability-tools
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:13:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fm.com/FMAApi/data/ApprovalStandardsDownload?itemId=%7BA69E3C6C-5989-4A4B-9178-23C6820A008A%7D
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:14:21Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://medium.com/@hitorunajp/bringing-observability-to-local-llms-first-experiments-with-mlflow-tracing-and-ollama-8f2f18cf9968
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:14:38Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.roofingcontractor.com/articles/83928-fm-global-property-loss-prevention-data-sheet-1-29-revised-october-1998
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:15:09Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://mlflow.org/top-5-agent-observability-tools
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:15:27Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.travelers.com/resources/business-topics/facilities-management/property-loss-prevention-plan
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:16:04Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://developer.ibm.com/tutorials/llm-observability-instana-local/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:16:19Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.aig.com/content/dam/aig-apps/america-canada/us-pcg/documents/nonsecure/brochure/residentialengineeringservices-brochure.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:16:55Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/governance-security-across-organization
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:17:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.zurich.com/sustainability/customers
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:17:48Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://zenity.io/blog/security/ai-agent-governance
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:17:58Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.zurichna.com/industries/construction/property-and-inland-marine-coverages
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:18:36Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.paloaltonetworks.com/cyberpedia/what-is-agentic-ai-governance
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:18:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.clydeco.com/en/news/2024/12/advising-zurich-on-its-acquisition-of-aig
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:19:24Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.flowable.com/blog/business/governing-enterprise-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:19:35Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.chicago.gov/content/dam/city/depts/dol/rulesandregs/MaintenanceofHighRiseExteriorWallsandEnclosures.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:20:21Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://witness.ai/blog/agentic-ai-governance-framework/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:20:24Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.thorntontomasetti.com/chicago-facade-ordinance
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:21:14Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.qualcomm.com/artificial-intelligence/data-center/cloud-ai-100-ultra
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:21:15Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.facadeordinance.com/chicago
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:22:04Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.qualcomm.com/developer/blog/2024/01/train-anywhere-infer-qualcomm-cloud-ai-100
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:22:06Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://rimkus.com/article/how-facade-ordinances-help-protect-aging-building-infrastructure/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:22:55Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.qualcomm.com/developer/blog/2024/01/qualcomm-cloud-ai-100-accelerates-large-language-model-inference-2x-using-microscaling-mx
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:22:57Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.kleinandhoffman.com/our-services/evaluation-assessment/facade-ordinance-inspections/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:23:46Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://arxiv.org/html/2507.00418v1
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:23:46Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.sfgov.org/sfc/esip/facade-maintenance-program
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:24:36Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.reddit.com/r/mlscaling/comments/1pe0g75/serving_llms_in_hpc_clusters_a_comparative_study/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:24:38Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.sgh.com/insight/san-francisco-facade-inspection/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:25:27Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://nvidia.github.io/TensorRT-Edge-LLM/0.4.0/developer_guide/01.1_Overview.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:25:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://codelibrary.amlegal.com/codes/san_francisco/latest/sf_building/0-0-0-96476
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:26:15Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://github.com/NVIDIA/TensorRT-Edge-LLM
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:26:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.facadeordinance.com/san-francisco
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:27:05Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://developer.nvidia.com/blog/build-next-gen-physical-ai-with-edge%E2%80%91first-llms-for-autonomous-vehicles-and-robotics/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:27:11Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://up.codes/viewer/san_francisco/ca-existing-building-code-2025/chapter/new_5F/building-facade-inspection-and-maintenance-retroactive-provisions
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:27:54Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.nexastack.ai/blog/optimizing-tensorrt-llm
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:27:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nyc.gov/site/buildings/codes/ll87-energy-audits-retro-commissioning.page
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:28:44Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://forums.developer.nvidia.com/t/tensorrt-edge-llm-on-the-agx-thor/351979
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:28:49Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://energo.com/blog/local-law-87-explained-nyc-energy-audits-retro-commissioning-and-the-10-year-compliance-cycle/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:29:33Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://aws.amazon.com/blogs/industries/multi-agent-ai-solution-for-vehicle-fleet-data-discovery-and-edge-case-classification/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:29:37Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.ny-engineers.com/blog/local-law-84-and-87
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:30:22Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://observo.ai/post/feature-deep-dive-observo-ai-edge-collector-and-fleet-management-at-scale
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:30:27Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nyc.gov/site/buildings/codes/ll84-benchmarking-law.page
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:31:10Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.meegle.com/en_us/topics/edge-ai-solutions/edge-ai-for-fleet-management
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:31:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://enpg.com/services/local-law-compliance/new-york-city/local-law-87/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:31:59Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://www.linkedin.com/posts/agsft_fleetmanagement-ai-edgecomputing-activity-7359295586438696960-M-JI
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:32:05Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nj.gov/dca/codes/codreg/pdf_regs/njac_5_26.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:32:51Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | target=https://gomotive.com/blog/ai-agents-for-fleet-management/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:32:51Z] research | session_id=2026-05-01-state-of-the-art-in-enterprise | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-10T03:32:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nj.gov/dca/codes/offices/pred.shtml
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:33:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.stark-stark.com/news/the-legal-authorities-governing-condominium-associations-in-new-jersey/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:34:42Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.greenbaumlaw.com/media/publication/67_Regulation_Common_Interest.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:35:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fsresidential.com/new-jersey/news-events/articles/how-the-nj-condominium-act-municipal-services-act/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:36:23Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://law.lis.virginia.gov/vacodepopularnames/property-owners-association-act/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:37:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://law.lis.virginia.gov/vacode/title55.1/chapter18/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:38:04Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.vahoalaw.com/maintenance-responsibilities/maintenance-responsibilities-supposed
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:39:00Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.fsresidential.com/virginia/news-events/articles/virginia-property-owners-association-act/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:39:48Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | target=https://www.nrp.management/condo-repair/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T03:42:58Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=filter | n=27
+
+27 candidate(s) cleared threshold
+
+## [2026-05-10T03:42:59Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://doi.org/10.1007/s41024-024-00433-3
+
+error: could not fetch https://doi.org/10.1007/s41024-024-00433-3
+
+## [2026-05-10T03:43:08Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://www.highlandbeach.us/DocumentCenter/View/877/CS_CS-HB-913-Summary
+
+error: no extractable content at https://www.highlandbeach.us/DocumentCenter/View/877/CS_CS-HB-913-Summary
+
+## [2026-05-10T03:43:09Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://www.ontario.ca/laws/statute/98c19
+
+error: no extractable content at https://www.ontario.ca/laws/statute/98c19
+
+## [2026-05-10T03:43:14Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://bomabestfieldguide.org/wp-content/uploads/2024/06/E6.0-Template.docx
+
+error: no extractable content at https://bomabestfieldguide.org/wp-content/uploads/2024/06/E6.0-Template.docx
+
+## [2026-05-10T03:43:15Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://icap.sustainability.illinois.edu/files/projectupdate/2289/Project%20Lifespan%20Estimates.pdf
+
+error: no extractable content at https://icap.sustainability.illinois.edu/files/projectupdate/2289/Project%20Lifespan%20Estimates.pdf
+
+## [2026-05-10T03:43:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://www.mbmllc.com/massachusetts-condominium-act.pdf
+
+error: no extractable content at https://www.mbmllc.com/massachusetts-condominium-act.pdf
+
+## [2026-05-10T03:43:17Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/ccico/pdfs/cpa-full-act-january-1-2025.pdf
+
+error: no extractable content at https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/ccico/pdfs/cpa-full-act-january-1-2025.pdf
+
+## [2026-05-10T03:43:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=convert | target=https://www.cplea.ca/wp-content/uploads/reservefundguide.pdf
+
+error: no extractable content at https://www.cplea.ca/wp-content/uploads/reservefundguide.pdf
+
+## [2026-05-10T03:43:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=materialize | n=19
+
+materialized 19 source(s) to raw/
+
+## [2026-05-10T03:43:20Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-10T03:43:21Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=nlm_session | notebook_id=de24a5b8-fc85-487d-8237-a96c45a53cfa
+
+created session notebook de24a5b8-fc85-487d-8237-a96c45a53cfa
+
+## [2026-05-10T03:45:31Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=source_add | n=19 | skipped=0
+
+pushed 19 source(s) to session notebook (0 skipped)
+
+## [2026-05-10T03:45:32Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=source_map | n=19
+
+built source map (19 entries)
+
+## [2026-05-10T03:52:25Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-10T03:52:26Z] research | session_id=2026-05-09-best-practices-for-proactive-and-preventive | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 3: claim has no citation: **Origin question:** Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op b; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 11: claim has no citation: Based on the sources, the "methods and architectures" within the research area of **Regulatory and Statutory Drivers for; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 16: claim has no citation: **Name and Key Contribution**: NYC FISP is a mandatory assessment framework designed to prevent hazardous exterior build; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 17: claim has no citation: **Core Technical Approach**: The law requires buildings taller than six stories to undergo "critical examinations" of th; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 17: claim has no citation: These inspections must be performed by a Qualified Exterior Wall Inspector (QEWI)—specifically a licensed Professional E; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 17: claim has no citation: The QEWI files an electronic technical report classifying the facade as Safe, Safe with a repair and maintenance program; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 17: claim has no citation: Buildings with Unsafe classifications must immediately install public protective measures (like sidewalk sheds or struct; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 19: claim has no citation: Inspections are mandated on a strict **5-year cycle** [3].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 20: claim has no citation: **Unsafe** conditions must be repaired within **90 days** of filing the report, and an amended report must be filed with; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 20: claim has no citation: Extensions require a formal request if repairs take longer than 104 days [6].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 21: claim has no citation: **SWARMP** conditions must be corrected within the 5-year cycle; if left uncorrected by the next inspection, they are au; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 24: claim has no citation: **Name and Key Contribution**: SB 326 (Condominiums) and SB 721 (Multifamily Rentals) provide a structural safety inspec; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 25: claim has no citation: **Core Technical Approach**: Multi-unit buildings with 3 or more dwelling units must hire a licensed professional (struc; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 25: claim has no citation: The inspection determines if the elements are structurally sound and free from decay, corrosion, or active water intrusi; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 27: claim has no citation: For condominiums (SB 326), inspections must be completed by **January 1, 2025**, and subsequently at least once every **; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 28: claim has no citation: For multifamily rentals (SB 721), the initial deadline was extended to **January 1, 2026** (via AB 2579), with subsequen; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 29: claim has no citation: If non-emergency repairs are required, owners must apply for a permit within **120 days** and complete the corrective wo; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 32: claim has no citation: **Name and Key Contribution**: FL HB 913 contributes an operational tracking and financial baseline architecture to prev; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 33: claim has no citation: **Core Technical Approach**: Mandates that local enforcement agencies track and report structural "milestone inspections; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 33: claim has no citation: To ensure financial readiness, boards must complete a Structural Integrity Reserve Study (SIRS) that specifically differ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 33: claim has no citation: It allows SIRS reserves to be funded via the pooling accounting method or straight-line accounting method [17].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 35: claim has no citation: Applies to buildings that are **3 "habitable" stories or higher** [16, 17].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 36: claim has no citation: Mandatory repairs resulting from a phase two milestone inspection must commence within **365 days** of receiving the rep; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 37: claim has no citation: The monetary threshold requiring an item to be included in reserves was increased from $10,000 to **$25,000** [20].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 38: claim has no citation: The deadline to complete a required SIRS is **December 31, 2025** [17].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 41: claim has no citation: **Name and Key Contribution**: Quebec Bill 16 introduces a standardized, professionalized approach to documenting buildi; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 42: claim has no citation: **Core Technical Approach**: Syndicates must maintain a "maintenance logbook" prepared by an independent authorized prof; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 42: claim has no citation: This logbook lists all building components, details their condition, and outlines timelines and cost estimates for inter; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 42: claim has no citation: The data from the logbook directly feeds into a mandatory reserve fund study to determine actual funding needs based on ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 44: claim has no citation: Takes effect August 14, 2025, with a final compliance deadline of **August 14, 2028** [23, 27, 28].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 45: claim has no citation: The logbook must include a major repair plan projecting over at least **25 years** [25, 29].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 46: claim has no citation: The logbook requires **annual updates** and a full professional review every **5 years** (or every 10 years for "small" ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 47: claim has no citation: Reserve fund studies must be reviewed every **5 years** [22, 26].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 50: claim has no citation: **Name and Key Contribution**: Ontario's Condominium Act provides a multi-tiered study architecture to accurately predic; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 51: claim has no citation: **Core Technical Approach**: The legislation divides reserve fund studies into three tiers: Class 1 (Comprehensive study; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 51: claim has no citation: Boards must review the study and formally propose a "plan for future funding" [34].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 53: claim has no citation: A Class 1 study is required within the **first year** of registration.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 53: claim has no citation: Afterward, Class 2 and Class 3 studies must alternate at least every **3 years** [33].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 54: claim has no citation: Financial projections must cover a period of at least **30 consecutive years** [35, 36].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 55: claim has no citation: The "component inventory" evaluated by the study must include common element items expected to require major repair and ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 56: claim has no citation: Boards must propose their funding plan within **120 days** of receiving the study, send a notice to owners within **15 d; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 59: claim has no citation: **Name and Key Contribution**: The BC SPA establishes a legal architecture delineating maintenance responsibilities betw; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 60: claim has no citation: **Core Technical Approach**: The strata corporation is legally bound to maintain common property (e.g., building envelop; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 60: claim has no citation: This requires gathering "as-built" plans, handover documents, and maintenance manuals from the owner-developer at the fi; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 60: claim has no citation: The SPA allows corporations to assign the maintenance of "limited common property" to owners via bylaws, provided it is ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 62: claim has no citation: Depreciation reports must project repair and renewal costs over a **30-year time span** [47].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 63: claim has no citation: By law, the strata corporation remains responsible for limited common property maintenance that occurs **less frequently; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 64: claim has no citation: Handover warranties from developers must cover defects in materials/labor for **2 years**, building envelopes for **5 ye; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 70: claim has no citation: While the criteria you provided—such as "computational efficiency," "speed," and "scalability to longer videos or larger; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 72: claim has no citation: Therefore, these technical metrics do not directly apply to building codes and laws.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 72: claim has no citation: However, we can translate these concepts into real-world administrative equivalents: **accuracy** (predictive reliabilit; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 77: claim has no citation: In the context of building maintenance, "accuracy" refers to how reliably a framework assesses building conditions and p; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 78: claim has no citation: **Quebec Bill 16 & Ontario Condo Act:** These methods have high "accuracy" in long-term financial forecasting because th; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 78: claim has no citation: Ontario requires a 30-year reserve fund projection [1], while Quebec requires a 25-year projection based on a mandatory ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 79: claim has no citation: **NYC Local Law 11 (FISP):** Offers high performance in localized safety tracking.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 79: claim has no citation: It accurately categorizes facades as Safe, Safe with a repair and maintenance program (SWARMP), or Unsafe [4, 5].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 79: claim has no citation: Its mechanism automatically downgrades any uncorrected SWARMP conditions to "Unsafe" by the next 5-year cycle, ensuring ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 80: claim has no citation: **Florida HB 913:** Forces high financial accuracy by mandating Structural Integrity Reserve Studies (SIRS) that specifi; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 83: claim has no citation: Instead of "computational speed," these frameworks dictate the speed of administrative compliance and mandatory repair t; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 84: claim has no citation: **NYC FISP:** Very aggressive repair speed.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 84: claim has no citation: Unsafe facade conditions must be repaired within **90 days** of filing a report, and an amended report must be filed wit; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 85: claim has no citation: **California Balcony Laws (SB 326 & SB 721):** Requires action within **120 days** to apply for a permit for non-emergen; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 86: claim has no citation: **Florida HB 913:** Mandates that repairs resulting from a phase two milestone inspection must commence within **365 day; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 87: claim has no citation: **Quebec Bill 16:** Highly efficient for real estate transactions.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 87: claim has no citation: Syndicates must deliver a Co-ownership Certificate (detailing financials, planned work, and disputes) within just **15 d; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 90: claim has no citation: "Scalability" in this context refers to how these laws adapt to different building sizes and long-term planning horizons; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 91: claim has no citation: **Height and Size Scaling:** Several laws scale their requirements based on the risk profile of larger structures.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 91: claim has no citation: **NYC FISP** applies only to buildings taller than six stories [12].; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 91: claim has no citation: **FL HB 913** scales its milestone inspections and SIRS requirements to buildings that are three habitable stories or hi; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 91: claim has no citation: **CA Balcony Laws** scale to exterior elevated elements located more than six feet above grade in buildings with 3 or mo; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 92: claim has no citation: **Administrative Scaling (Quebec & Ontario):** **Quebec Bill 16** scales its administrative burden based on size: large ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 92: claim has no citation: Reg 48/01)** scales its study intensity over time by using a tiered system: after an initial Class 1 comprehensive study; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 97: claim has no citation: **Strengths:** Highly specialized and effective at protecting the public from catastrophic failures (e.g., falling mason; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 98: claim has no citation: **Weaknesses:** They are narrow in scope.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 98: claim has no citation: They focus strictly on the exterior envelope and elevated elements, ignoring the proactive maintenance of internal syste; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 101: claim has no citation: The mandatory "Maintenance Logbook" bridges the gap between day-to-day operations and long-term capital replacements, re; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 102: claim has no citation: **Weaknesses:** High administrative and financial burden on condo boards, requiring continuous professional oversight (e; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 105: claim has no citation: **Strengths:** Eliminates the ability of condo boards to continuously underfund structural safety.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 105: claim has no citation: It legally binds structural milestone inspections to the reserve funding (SIRS), ensuring money is actually available fo; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 106: claim has no citation: **Weaknesses:** Can cause severe financial shock.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 106: claim has no citation: Because boards can no longer waive or ignore these structural reserves, owners in older, underfunded buildings may face ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 109: claim has no citation: **Strengths:** Provides a very clear legal delineation of repair duties.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 109: claim has no citation: For example, it defines that the strata corporation is responsible for limited common property maintenance if it occurs ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 110: claim has no citation: **Weaknesses:** The definition of boundaries (e.g., windows, doors, and skylights) can be highly fact-dependent, frequen; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 116: claim has no citation: Based on the sources, several unsolved problems, limitations, and gaps remain within the "Regulatory and Statutory Drive; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 116: claim has no citation: These challenges span legislative ambiguities, unintended consequences of safety mandates, and ongoing financial complia; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 120: claim has no citation: **Ontario (Undefined "Adequacy"):** Section 94 of Ontario's Condominium Act requires reserve fund plans to be "adequate"; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 120: claim has no citation: However, the Act and Regulations currently lack a legal definition of what "adequate" actually means, leaving room for d; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 121: claim has no citation: **British Columbia (Boundary Disputes):** The Strata Property Act (SPA) definition of "common property" does not explici; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 121: claim has no citation: This creates a significant gap, making the division of repair duties highly fact-dependent and frequently leading to dis; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 122: claim has no citation: **Quebec (Pending Bill 16 Regulations):** Although Bill 16 enacted major reforms in 2019, key measures such as the perio; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 126: claim has no citation: **New York (Proliferation of Sidewalk Sheds):** A major limitation of NYC's Façade Inspection & Safety Program (FISP / L; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 126: claim has no citation: Because repairs often take extensive time, these sheds end up occupying valuable public space for long periods.; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 126: claim has no citation: The City recently launched the "Get Sheds Down" plan and partnered with an engineering firm to research evidence-based w; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 127: claim has no citation: **California (Shifting Compliance Deadlines):** The rollout of mandatory balcony and exterior elevated element inspectio; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 131: claim has no citation: **Quebec (The Adjustment Grace Period Gap):** While Bill 16 sets a firm 2028 deadline for syndicates to obtain a reserve; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 131: claim has no citation: This creates a massive challenge for syndicates that historically underfunded their reserves (e.g., relying on the minim; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 132: claim has no citation: **Alberta (The "Gray Area" of Categorization):** Boards face an ongoing challenge in determining whether a repair crosse; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 132: claim has no citation: "Major restorative repairs" blur the line, and misallocating funds leads to auditor red flags, compliance violations, an; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 132: claim has no citation: Furthermore, new developments face a "dangerous cycle" where boards keep initial condo fees artificially low, starving t; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 133: claim has no citation: Long-Term Needs):** The recent HB 913 highlights the tension between fully funding Structural Integrity Reserve Studies ; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 133: claim has no citation: The law had to introduce a mechanism allowing associations to temporarily pause or reduce reserve contributions for up t; update[1] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-regulatory-and-statutory-drivers-for-proactive.md): [citation-grounding] line 136: claim has no citation: While most regulations aim to prevent underfunding, Ontario sources identify a limitation regarding reserve fund plans t; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 3: claim has no citation: **Origin question:** Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op b; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 11: claim has no citation: Based on the provided sources, the methods and architectures within the research area of **Operational Preventive Mainte; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 16: claim has no citation: **Name and Key Contribution**: The Categorical Expense Classification Policy (or "Threshold Approach") provides a struct; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 17: claim has no citation: **Core Technical Approach**: This method classifies maintenance tasks based on **frequency** and **scope**.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 17: claim has no citation: Tasks that restore functionality without addressing systemic issues, and which recur annually or more frequently, are as; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 17: claim has no citation: To implement this, boards establish specific internal policies, such as setting hard dollar thresholds (e.g., any repair; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 19: claim has no citation: The primary frequency benchmark for an operational PM task is that it occurs **annually or more often** (e.g., annual fu; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 20: claim has no citation: If a repair exceeds a predefined percentage of a system's total replacement cost (e.g., exceeding **20-30%** of replacem; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 23: claim has no citation: **Name and Key Contribution**: Strata Council Delegation is a governance and administrative architecture used in British; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 24: claim has no citation: **Core Technical Approach**: The strata council acts as the central hub, developing a formal "maintenance plan" by gathe; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 24: claim has no citation: Because volunteer boards often lack technical expertise, the actual execution of physical inspections and routine mainte; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 24: claim has no citation: This method also relies on legally registered easements or bylaws that require owners and tenants to provide physical ac; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 26: claim has no citation: The baseline documentation for the operational plan (handover material, as-built plans, and manuals) must be delivered b; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 27: claim has no citation: Initial maintenance scheduling is benchmarked against mandatory developer warranties, which cover defects in materials a; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 30: claim has no citation: **Name and Key Contribution**: The "Reasonableness" Standard is a legal and operational framework that dictates the mini; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 31: claim has no citation: **Core Technical Approach**: Rather than relying on a strict checklist, this method evaluates the strata's operational e; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 31: claim has no citation: It requires proactive, routine physical inspections and prompt servicing of critical infrastructure (like common propert; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 33: claim has no citation: There is no exact mathematical benchmark, but case law (e.g., *The Owners, Strata Plan LMS 3539 v Ng*) establishes that ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 36: claim has no citation: **Name and Key Contribution**: Defined in Massachusetts General Laws, this method allows boards to integrate sustainabil; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 37: claim has no citation: **Core Technical Approach**: The organization of unit owners actively implements "reasonable measures to facilitate ener; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 37: claim has no citation: This includes the operational installation of utility sub-meters, low-flow toilets, showerheads, faucet aerators, and st; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 37: claim has no citation: By legally classifying these not as capital "improvements," the board bypasses certain restrictions, allowing for rapid ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 39: claim has no citation: If approved by a **majority of unit owners** at a duly noticed meeting, the costs of these operational installations can; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 45: claim has no citation: Just as with the regulatory drivers, evaluating "methods" like the **Categorical Expense Classification Policy**, **Stra; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 47: claim has no citation: Here is how these operational preventive maintenance (PM) frameworks compare based on financial precision (accuracy), ad; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 50: claim has no citation: In the context of operational PM, "accuracy" refers to how reliably a framework categorizes expenses and prevents the mi; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 51: claim has no citation: **Categorical Expense Classification (Threshold Approach):** Provides high "accuracy" by using strict rule-based thresho; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 51: claim has no citation: By defining operating expenses through frequency (e.g., tasks occurring annually or more) and scope (e.g., repairing les; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 51: claim has no citation: This prevents compliance violations and auditor red flags [4, 5].; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 52: claim has no citation: **The "Reasonableness" Standard:** Has lower predictive accuracy because it relies on a subjective, legal baseline of do; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 52: claim has no citation: However, its performance in protecting owners is high, as it holds the corporation strictly accountable for preventing n; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 55: claim has no citation: These frameworks dictate the speed at which maintenance decisions are made and executed by the board.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 56: claim has no citation: **Proactive Energy Savings Integration (Mass.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 56: claim has no citation: By legally classifying specific installations—like utility sub-meters, low-flow fixtures, storm windows, and EV charging; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 56: claim has no citation: The board can execute these with a simple majority vote of unit owners in attendance, rapidly speeding up modernization ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 57: claim has no citation: **Categorical Expense Classification:** High administrative speed for day-to-day operations.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 57: claim has no citation: When boards implement clear internal policies—such as allowing the property manager to automatically approve emergency o; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 58: claim has no citation: **Strata Council Delegation:** Increases execution speed by shifting the physical inspection and maintenance tracking bu; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 61: claim has no citation: Scalability refers to how easily the framework adapts to 100+ unit buildings with diverse infrastructure and mixed-use c; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 62: claim has no citation: **Strata Council Delegation (Sections and Types):** Highly scalable to massive, complex developments.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 62: claim has no citation: The BC Strata Property Act allows large corporations to create "sections" (e.g., separating residential units from non-r; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 62: claim has no citation: This allows the corporation to scale its operational budget accurately by allocating specific maintenance costs (like re; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 63: claim has no citation: **Categorical Expense Classification:** Easily scales to large buildings because it relies directly on the Component Inv; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 63: claim has no citation: As the building's infrastructure grows, the inventory scales with it, providing a ready-made dictionary for the board to; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 68: claim has no citation: **Strengths:** Creates exceptional financial consistency.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 68: claim has no citation: By clearly defining what comes from the operating fund (e.g., filling potholes, fixing a single fence picket) versus the; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 69: claim has no citation: **Weaknesses:** Struggles with "gray areas." Major restorative repairs (e.g., patching 30% of a roof membrane to extend ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 72: claim has no citation: **Strengths:** Offloads complex logistical burdens from volunteers to professionals, ensuring maintenance is properly as; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 73: claim has no citation: **Weaknesses:** Highly vulnerable to turnover.; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 73: claim has no citation: Because strata council members and management companies frequently change, the delegation framework fails if the corpora; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 76: claim has no citation: **Strengths:** Flexible and adapts to the specific needs of any building without needing every possible scenario written; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 76: claim has no citation: It forces the board to proactively inspect and maintain critical infrastructure [6].; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 77: claim has no citation: Case law (e.g., *The Owners, Strata Plan LMS 3539 v Ng*) dictates that if a board fails to proactively maintain common p; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 80: claim has no citation: **Strengths:** Allows buildings to quickly integrate modern sustainability and utility-saving measures, with the unique ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 81: claim has no citation: It can only be used for specific energy efficiency and greenhouse gas reduction measures [7].; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 87: claim has no citation: The sources identify several unsolved problems, limitations, and ongoing challenges that affect Operational Preventive M; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 87: claim has no citation: These gaps primarily stem from the difficulty of cleanly categorizing expenses, the vulnerability of volunteer boards to; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 90: claim has no citation: A major limitation of the **Categorical Expense Classification Policy** is that the distinction between an operational r; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 91: claim has no citation: **Major Restorative Repairs:** The sources note that "major restorative repairs" (e.g., patching 30% of a roof membrane ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 91: claim has no citation: These types of repairs challenge boards because they do not fit neatly into annual operating budgets, yet they may not c; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 92: claim has no citation: **The "Low Fee" Trap in New Developments:** During the first few years of a new building's operation, boards face immens; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 92: claim has no citation: Because the reserve fund starts near zero, deferred operational and reserve contributions create a "dangerous cycle" of ; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 95: claim has no citation: The **Strata Council Delegation and Maintenance Planning** framework relies heavily on consistent execution and record-k; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 96: claim has no citation: **Knowledge Gaps:** Volunteer condo boards experience regular turnover as owners rotate on and off the board, creating k; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 97: claim has no citation: **Documentation Loss:** Because both strata council members and strata management companies frequently change, the entir; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 100: claim has no citation: While the legal **"Reasonableness" Standard** dictates that a strata corporation must do all that can reasonably be done; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 101: claim has no citation: **Windows, Doors, and Skylights:** The British Columbia Strata Property Act (SPA) definition of "common property" does n; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 101: claim has no citation: Deciding who is responsible for their maintenance is highly fact-dependent (based on where they are installed), frequent; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 102: claim has no citation: **Bare Land Strata Plans:** In bare land strata plans, boundaries are determined by survey markers rather than the midpo; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 102: claim has no citation: Consequently, the exterior walls, roofs, windows, and doors technically form part of the owner's lot, meaning the strata; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 105: claim has no citation: The **Proactive Energy Savings Maintenance Integration** method—which allows boards to legally classify certain upgrades; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 106: claim has no citation: **Exclusion of Solar Energy:** Under Massachusetts General Laws c.183A § 10, while boards can rapidly approve utility su; update[2] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-operational-preventive-maintenance-pm-frameworks.md): [citation-grounding] line 106: claim has no citation: Solar installations remain classified as capital improvements, limiting a board's ability to seamlessly integrate them i; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 3: claim has no citation: **Origin question:** Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op b; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 11: claim has no citation: Within the research area of **Component Life-Cycle and Categorization Methods**, the sources discuss several frameworks ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 16: claim has no citation: **Name and Key Contribution**: The Frequency and Scope Evaluation framework provides a clear decision matrix for condomi; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 16: claim has no citation: Its key contribution is preventing the commingling of funds, which creates compliance risks, triggers auditor red flags,; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 17: claim has no citation: **The Core Technical Approach**: This method utilizes a Reserve Fund Study's "Component Inventory" to guide classificati; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 17: claim has no citation: Expenses are evaluated based on **frequency** (how often the task occurs) and **scope** (the percentage of the building ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 17: claim has no citation: If an item is listed in the component inventory and the repair affects a substantial portion of the system, it is classi; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 17: claim has no citation: Minor repairs that restore functionality without addressing systemic issues belong to the operating budget [6].; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 17: claim has no citation: Boards are advised to establish clear internal policies with specific dollar and scope thresholds to automate these deci; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 19: claim has no citation: Tasks expected to occur **annually or more frequently** (e.g., snow removal, minor repairs) are operating expenses [5, 8; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 20: claim has no citation: If a proposed repair exceeds **20% to 30%** of the estimated replacement cost of a component, it is likely a reserve exp; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 21: claim has no citation: Internal board policies often set a hard threshold, such as requiring any single repair exceeding **$5,000** or affectin; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 24: claim has no citation: **Name and Key Contribution**: The Major Restorative Repair Assessment categorizes significant work that blurs the line ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 24: claim has no citation: Its contribution is allowing boards to legally fund massive life-extending repairs through reserve funds rather than bur; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 25: claim has no citation: **The Core Technical Approach**: This approach assesses mid-life repairs to determine if they significantly extend the r; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 25: claim has no citation: To qualify as a reserve expense under this framework, the repair must involve substantial capital expenditure, occur inf; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 27: claim has no citation: To be classified as a major restorative repair, the cost generally must exceed **1% to 2%** of the component's total rep; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 28: claim has no citation: An example benchmark is patching **30%** of a roof membrane's surface to extend the entire roof's useful life by **15 ye; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 31: claim has no citation: **Name and Key Contribution**: Code-Mandated Upgrade Integration provides a legal distinction between voluntary building; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 32: claim has no citation: **The Core Technical Approach**: Generally, reserve funds are strictly restricted to repairing or replacing existing com; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 32: claim has no citation: However, this method evaluates whether a modernization is required by current building codes.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 32: claim has no citation: If new safety features or system upgrades are legally mandated during a replacement, the entire project is classified as; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 33: claim has no citation: **Reported Benchmark Results**: The classic benchmark for this method is an **elevator replacement**, where modern safet; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 36: claim has no citation: **Name and Key Contribution**: Outlined in Massachusetts General Laws, this statutory method allows organizations of uni; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 37: claim has no citation: **The Core Technical Approach**: The law explicitly reclassifies the installation of specific utility-saving devices—suc; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 37: claim has no citation: It allows the board to install these in common areas or individual units and assess the cost as a special assessment dir; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 39: claim has no citation: Approval requires only a **majority vote of unit owners in attendance** at a duly noticed meeting, rather than an absolu; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 40: claim has no citation: A firm limitation is that **solar energy systems are strictly excluded** from this framework and must still be processed; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 46: claim has no citation: Just as with the regulatory frameworks, evaluating "methods" in real estate maintenance using criteria like "computation; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 51: claim has no citation: In this context, "accuracy" refers to how precisely a method categorizes expenses to prevent the commingling of funds, w; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 52: claim has no citation: **Frequency and Scope Evaluation (Threshold Approach):** Highly accurate for day-to-day operations.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 52: claim has no citation: By relying on a Reserve Fund Study's component inventory, boards can categorize repairs with high precision [3, 4].; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 52: claim has no citation: If an item is not in the inventory, or if the repair occurs annually or more frequently, it is an operating expense [4, ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 52: claim has no citation: This strict categorization protects the board from compliance violations [2, 6].; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 53: claim has no citation: **Code-Mandated Upgrade Integration:** Provides high legal "accuracy" for modernization.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 53: claim has no citation: Generally, reserve funds are strictly restricted to repairing or replacing existing components to their original conditi; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 53: claim has no citation: However, this method accurately identifies when a modernization (like adding new elevator safety features) is mandated b; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 56: claim has no citation: This translates to how quickly and easily a board can execute a maintenance decision without requiring complex owner vot; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 57: claim has no citation: **Proactive Energy Savings and Modernization Integration:** Exceptionally efficient.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 57: claim has no citation: Under Massachusetts General Laws, specific energy-saving upgrades (like EV charging stations, low-flow fixtures, and sub; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 57: claim has no citation: Instead of needing an absolute majority of all owners, these items can be approved by a simple majority of unit owners *; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 58: claim has no citation: **Frequency and Scope Evaluation:** Highly efficient when internal policies establish predefined dollar or scope thresho; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 58: claim has no citation: This allows property managers to execute routine work rapidly without waiting for full board approval [11].; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 59: claim has no citation: **Major Restorative Repair Assessment:** Low efficiency (computationally "expensive").; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 59: claim has no citation: Evaluating whether a mid-life repair—like patching 30% of a roof to extend its life by 15 years—qualifies for reserve fu; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 62: claim has no citation: Scalability measures how well the method adapts to massive 100+ unit complexes and long-term 25-to-30-year planning cycl; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 63: claim has no citation: **Frequency and Scope Evaluation:** Highly scalable.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 63: claim has no citation: Because this method uses the Reserve Fund Study's component inventory as its primary dictionary, it naturally scales wit; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 63: claim has no citation: As new systems are added or the building ages, the lifecycle cost analysis—including remaining useful life and replaceme; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 64: claim has no citation: **Major Restorative Repair Assessment:** Highly scalable over time.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 64: claim has no citation: It allows boards to stretch the lifespan of massive infrastructure components safely, delaying full replacements (which ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 65: claim has no citation: **Proactive Energy Savings Integration:** Highly scalable across multi-unit residential spaces.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 65: claim has no citation: The law specifically allows the cost of installing these devices to be assessed as a special assessment to individual un; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 70: claim has no citation: **Strengths:** Creates financial consistency and serves as a clear roadmap for volunteer boards and property managers, e; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 71: claim has no citation: **Weaknesses:** Fails in "gray areas." It struggles to classify significant restorative work that blurs the line between; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 74: claim has no citation: **Strengths:** Allows boards to legally fund massive, necessary life-extending repairs through reserve funds rather than; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 75: claim has no citation: **Weaknesses:** Highly subjective without professional help.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 75: claim has no citation: Boards often require costly engineering reports or assessments to legally justify drawing from the reserve fund for work; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 78: claim has no citation: **Strengths:** Provides a vital legal loophole allowing aging buildings to modernize their infrastructure (e.g., new HVA; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 79: claim has no citation: If a building wants to add a new amenity or improvement that is *not* mandated by code (e.g., adding a completely new ho; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 82: claim has no citation: **Strengths:** Dramatically accelerates a building's ability to reduce greenhouse gas emissions and utility costs by leg; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 83: claim has no citation: **Weaknesses:** Very narrow statutory scope.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 83: claim has no citation: For instance, Massachusetts law explicitly excludes solar energy systems from this fast-track framework, meaning solar p; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 92: claim has no citation: The most persistent challenge in expense categorization is that the line between an operating repair and a reserve repla; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 93: claim has no citation: **Major Restorative Repairs:** Boards struggle to classify significant mid-life interventions, such as patching 30% of a; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 94: claim has no citation: Replacements:** There is ongoing uncertainty about whether all or part of a reserve fund expenditure constitutes a capit; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 94: claim has no citation: While reserve funds are generally restricted to repairing or replacing existing components to their original condition [; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 94: claim has no citation: Misallocating these funds leads to auditor red flags, qualified audit opinions, and potential legal challenges from unit; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 97: claim has no citation: A major gap in current regulatory frameworks is the lack of a legal definition for long-term funding targets.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 97: claim has no citation: For example, Section 94 of Ontario's *Condominium Act* requires that a reserve fund plan result in an "adequate" fund wi; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 97: claim has no citation: This legislative ambiguity leaves room for debate among boards and professionals, forcing them to rely on their own inte; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 100: claim has no citation: Current life-cycle planning methods face a severe behavioral and economic limitation in newly constructed buildings.; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 100: claim has no citation: When developers hand over a building to the owner-elected board, the reserve fund often starts at or near $0 [11].; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 100: claim has no citation: During the initial 3-to-5-year build-up phase, boards face immense pressure to categorize costs favorably to keep initia; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 100: claim has no citation: This creates a "dangerous cycle" where major components begin aging without adequate savings, inevitably leading to a cr; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 103: claim has no citation: While most life-cycle categorization focuses on the dangers of underfunding, a significant limitation identified in the ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 103: claim has no citation: If a board aggressively increases annual reserve contributions to establish a "natural balance" after an unexpected expe; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 103: claim has no citation: These "higher than natural" fees can negatively impact the market values of the units and force current owners to pay a ; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 106: claim has no citation: Methods designed to reclassify modernization efforts to bypass strict capital improvement voting have highly specific le; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 106: claim has no citation: For example, under Massachusetts law, boards can rapidly approve utility-saving devices (like sub-meters, low-flow fixtu; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 106: claim has no citation: However, the law explicitly dictates that "such measures and devices shall not include solar energy systems" [15].; update[3] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-component-life-cycle-and-categorization-methods.md): [citation-grounding] line 106: claim has no citation: This gap leaves solar installations legally bound to the slower, traditional capital improvement approval process, limit; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 3: claim has no citation: **Origin question:** Best practices for proactive and preventive maintenance of 100+ unit condominium / strata / co-op b; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 9: claim has no citation: Based on the sources provided, there is no mention of machine learning architectures (such as transformers or graph neur; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 11: claim has no citation: The entire corpus is focused on real estate law and property management—specifically, the regulations, financial framewo; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 11: claim has no citation: The "architectures" and "methods" discussed in these sources refer to legal and administrative frameworks (such as reser; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 13: claim has no citation: If you have a different set of sources related to computer vision or machine learning architectures, please provide them; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 17: claim has no citation: As noted in our previous exchange, the provided sources do not contain any information about computer vision, machine le; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 19: claim has no citation: The entire corpus focuses exclusively on real estate law, condominium regulations, and property maintenance frameworks i; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 21: claim has no citation: If you have questions related to these real estate topics, or if you provide a different set of sources related to compu; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 25: claim has no citation: As noted in our previous conversations, the provided corpus is focused exclusively on real estate law, condominium regul; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 27: claim has no citation: Because the text deals with legal statutes, reserve fund planning, and maintenance logbooks rather than computer science; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 34: claim has no citation: While we previously translated broad terms like "accuracy" and "computational efficiency" into administrative equivalent; update[4] (wiki/synthesis/2026-05-09-best-practices-for-proactive-and-preventive-cross-cutting.md): [citation-grounding] line 36: claim has no citation: If you have a different set of sources that pertain to computer vision, machine learning, or software architectures, ple
+
+## [2026-05-10T22:26:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-10T22:26:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T22:26:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T22:26:55Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T22:26:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=youtube | n=100
+
+adapter youtube returned 100 candidates
+
+## [2026-05-10T22:27:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T22:27:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=262
+
+merged 262 candidate(s) across adapters
+
+## [2026-05-10T22:36:18Z] ingest | id=pdf-bc-housing-2020-maintenance-matters-02 | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/pdf/pdf-bc-housing-2020-maintenance-matters-02.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T22:36:39Z] filter-correction | id=pdf-bc-housing-2020-maintenance-matters-02 | domain=condo-capital-infra | decision=include | original_score=0.35
+
+rationale='BC Housing is the authoritative provincial housing body for BC strata. MM-02 explicitly references the BC SPA contingency reserve fund, making it a regulatory-context source. It provides inspection intervals, service-life guidance, and failure-mode checklists for roofing — directly grounds the roof component prior calibration in synthesis §1 PM cadences and the six-component engine design. The filter penalized absence of actuarial methodology, but authoritative provincial operational guidance is a valid primary source category for the condo-capital-infra domain.'
+
+## [2026-05-10T22:36:53Z] ingest | id=pdf-bc-housing-2020-maintenance-matters-06 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.85
+
+raw=raw/pdf/pdf-bc-housing-2020-maintenance-matters-06.md wiki=wiki/sources/pdf-bc-housing-2020-maintenance-matters-06.md
+
+## [2026-05-10T22:39:56Z] ingest | id=pdf-bc-housing-2020-maintenance-matters-11 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.85
+
+raw=raw/pdf/pdf-bc-housing-2020-maintenance-matters-11.md wiki=wiki/sources/pdf-bc-housing-2020-maintenance-matters-11.md
+
+## [2026-05-10T22:40:16Z] wiki-author | id=pdf-bc-housing-2020-maintenance-matters-06 | updates=4 | created=3 | updated=1 | contradictions=0 | draft=no
+
+BC Housing's Maintenance Matters No. 6 supplies authoritative prior-calibration data (service-life ranges, inspection cadence, failure modes) for the building envelope and parking deck/podium components of the six-probabilistic-component scope; the source's institutional context warrants a BC Housing organization entity and a Maintenance Matters series entity to anchor future MM bulletins.
+
+## [2026-05-10T22:41:14Z] ingest | id=web-2026-05-10-f34 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.92
+
+raw=raw/web/web-2026-05-10-f34.md wiki=wiki/sources/web-2026-05-10-f34.md
+
+## [2026-05-10T22:43:20Z] ingest | id=pdf-bc-housing-2020-maintenance-matters-02 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-bc-housing-2020-maintenance-matters-02.md wiki=wiki/sources/pdf-bc-housing-2020-maintenance-matters-02.md
+
+## [2026-05-10T22:43:54Z] wiki-author | id=web-2026-05-10-f34 | updates=7 | created=3 | updated=4 | contradictions=0 | draft=no
+
+NRC Canada's 2025 Reference Service Life dataset for non-structural building envelope materials is a national-laboratory primary source for envelope-component prior calibration in the condo-capital-infra engine; create the dataset/publisher entities and RSL concept, then cross-reference into existing envelope and component pages.
+
+## [2026-05-10T22:43:58Z] wiki-author | id=pdf-bc-housing-2020-maintenance-matters-11 | updates=4 | created=1 | updated=3 | contradictions=0 | draft=no
+
+BC Housing's Maintenance Matters #11 is an authoritative provincial bulletin that operationalizes BC Strata Property Act obligations into a structured Plan / Program / Depreciation Report framework with a four-tier maturity scale and explicit record-keeping guidance — directly informing the BC SPA entity page, the six-probabilistic-components scope (building envelope), CMMS work-order covariates, and warranting a new concept page for the Strata Maintenance and Renewals Program framework.
+
+## [2026-05-10T22:44:11Z] ingest | id=web-2026-04-09-63c | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.45
+
+raw=raw/web/web-2026-04-09-63c.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T22:46:56Z] wiki-author | id=pdf-bc-housing-2020-maintenance-matters-02 | updates=4 | created=1 | updated=3 | contradictions=2 | draft=no
+
+BC Housing MM-02 is the primary Canadian authoritative source for roof-component prior calibration — service-life ranges, inspection cadence, roof-system taxonomy, and a structured failure-mode list directly feed the roof component RUL distribution in the six-component engine.
+
+## [2026-05-10T22:47:11Z] nlm-add | id=docx-bf4965d0d33a | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=docx
+
+file=docx-bf4965d0d33a.docx title='condo_capital_infra_synthesis_2026-05-08'
+
+## [2026-05-10T22:47:17Z] nlm-add | id=pdf-bc-housing-2020-maintenance-matters-02 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-bc-housing-2020-maintenance-matters-02.pdf title='Maintenance Matters - 02 - Roof Maintenance Tips for Long-Term Protection'
+
+## [2026-05-10T22:47:24Z] nlm-add | id=pdf-bc-housing-2020-maintenance-matters-06 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-bc-housing-2020-maintenance-matters-06.pdf title='Maintenance Matters - 06 - Deck and Balcony Maintenance Essentials'
+
+## [2026-05-10T22:47:34Z] nlm-add | id=pdf-bc-housing-2020-maintenance-matters-11 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-bc-housing-2020-maintenance-matters-11.pdf title='Maintenance Matters - 11 - Building Envelope Maintenance Program Guide'
+
+## [2026-05-10T22:47:39Z] nlm-add | id=web-2013-11-28-cda | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www2.gov.bc.ca/gov/content/housing-tenancy/strata-housing/operating-a-strata/repairs-and-maintenance/depreciation-reports/depreciation-report-requirements
+
+## [2026-05-10T22:47:44Z] nlm-add | id=web-2024-04-17-715 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://open.alberta.ca/publications/reserve-funds-condominium-property-act
+
+## [2026-05-10T22:47:49Z] nlm-add | id=web-2024-07-09-f2a | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://condos.myfloridalicense.com/inspections/
+
+## [2026-05-10T22:47:53Z] nlm-add | id=web-2025-01-01-246 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.davis-stirling.com/HOME/Statutes/Civil-Code-5550
+
+## [2026-05-10T22:48:01Z] nlm-add | id=web-2026-01-01-818 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www2.myfloridalicense.com/condos-timeshares-mobile-homes/condominiums-and-cooperatives-sirs-reporting/
+
+## [2026-05-10T22:48:05Z] ingest | id=web-2026-05-10-nsa | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.78
+
+raw=raw/web/web-2026-05-10-nsa.md wiki=wiki/sources/web-2026-05-10-nsa.md
+
+## [2026-05-10T22:48:14Z] nlm-add | id=web-2026-05-10-f34 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://doi.org/10.4224/40003877
+
+## [2026-05-10T22:48:32Z] ingest | id=csv-2bfb1a74edee | type=csv | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/csv/csv-2bfb1a74edee.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T22:49:00Z] filter-correction | id=csv-2bfb1a74edee | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale='Raw market-sizing data for NS condominium universe (Active Condominium Corporations registry by county, total units). Filter is correctly cautious about reserve-study methodology relevance, but per Brief-0006 and ADR-0004 this is the load-bearing Atlantic-Canada market-frame anchor for the Halifax design-partner engagement (Brief-0004) and the Y1-Y2 expansion path. Raw data dumps that calibrate market sizing should not be evaluated under the same semantic threshold as research-content sources.'
+
+## [2026-05-10T22:49:04Z] ingest | id=csv-28f1842c4cbb | type=csv | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/csv/csv-28f1842c4cbb.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T22:49:39Z] wiki-author | id=web-2026-05-10-nsa | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source is the NS provincial open-data registry of active condominium corporations — primary market-frame data warranting two new entity pages (dataset + publishing Registrar). It does not touch existing methodology, component-prior, or vendor pages.
+
+## [2026-05-10T22:50:34Z] nlm-add | id=csv-28f1842c4cbb | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=csv
+
+file=csv-28f1842c4cbb.csv title='eq9a-ayyh'
+
+## [2026-05-10T22:50:55Z] ingest | id=csv-7e5affc7bb1b | type=csv | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.85
+
+raw=raw/csv/csv-7e5affc7bb1b.md wiki=wiki/sources/csv-7e5affc7bb1b.md
+
+## [2026-05-10T22:54:48Z] wiki-author | id=csv-7e5affc7bb1b | updates=3 | created=2 | updated=1 | contradictions=0 | draft=no
+
+New raw HRM building-permits dataset (17,803 rows) supplies the municipal-tier construction-pipeline complement to the provincial NS Active Condo Corporations Dataset; create the dataset entity, the HRM jurisdiction entity, and add the cross-reference to the existing NS Registrar dataset page.
+
+## [2026-05-10T22:56:47Z] lint | scope=orphans | orphans=412
+
+report=.knowledge/lint/2026-05-10T22-56-47Z-orphans.md
+
+## [2026-05-10T22:56:47Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-10T22-56-47Z-stale-drafts.md
+
+## [2026-05-10T22:56:48Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-10T22-56-48Z-untagged-sources.md
+
+## [2026-05-10T22:56:48Z] lint | scope=nlm-pending | nlm-pending=2
+
+report=.knowledge/lint/2026-05-10T22-56-48Z-nlm-pending.md
+
+## [2026-05-10T23:00:15Z] ingest | id=web-2026-05-10-852 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.62
+
+raw=raw/web/web-2026-05-10-852.md (wiki not written: filter decision=review)
+
+## [2026-05-10T23:00:35Z] nlm-add | id=pdf-bc-housing-2020-maintenance-matters-02 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-bc-housing-2020-maintenance-matters-02.pdf title='Maintenance Matters - 02 - Roof Maintenance Tips for Long-Term Protection'
+
+## [2026-05-10T23:00:38Z] ingest | id=web-2024-06-27-ed9 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/web/web-2024-06-27-ed9.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:00:45Z] nlm-add | id=pdf-bc-housing-2020-maintenance-matters-06 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-bc-housing-2020-maintenance-matters-06.pdf title='Maintenance Matters - 06 - Deck and Balcony Maintenance Essentials'
+
+## [2026-05-10T23:01:02Z] nlm-add | id=pdf-bc-housing-2020-maintenance-matters-11 | domain=condo | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca | type=pdf
+
+file=pdf-bc-housing-2020-maintenance-matters-11.pdf title='Maintenance Matters - 11 - Building Envelope Maintenance Program Guide'
+
+## [2026-05-10T23:01:15Z] ingest | id=web-2017-07-26-1f3 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2017-07-26-1f3.md (wiki not written: filter decision=review)
+
+## [2026-05-10T23:01:52Z] ingest | id=pdf-gordon-wright-2024-condominium-act | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/pdf/pdf-gordon-wright-2024-condominium-act.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:02:19Z] ingest | id=pdf-gordon-wright-2018-condominium-act-regulations | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/pdf/pdf-gordon-wright-2018-condominium-act-regulations.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:02:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | n=57
+
+57 candidate(s) cleared threshold
+
+## [2026-05-10T23:02:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://doi.org/10.3390/su13179575
+
+error: could not fetch https://doi.org/10.3390/su13179575
+
+## [2026-05-10T23:02:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://doi.org/10.1061/40798(190)52
+
+error: could not fetch https://doi.org/10.1061/40798(190)52
+
+## [2026-05-10T23:02:39Z] ingest | id=web-2011-08-18-1e7 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.65
+
+raw=raw/web/web-2011-08-18-1e7.md (wiki not written: filter decision=review)
+
+## [2026-05-10T23:02:44Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.youtube.com/watch?v=fddJ6CXIwyU
+
+error: oEmbed lookup failed: 401
+
+## [2026-05-10T23:02:48Z] lint | scope=orphans | orphans=412
+
+report=.knowledge/lint/2026-05-10T23-02-48Z-orphans.md
+
+## [2026-05-10T23:02:49Z] lint | scope=nlm-pending | nlm-pending=2
+
+report=.knowledge/lint/2026-05-10T23-02-49Z-nlm-pending.md
+
+## [2026-05-10T23:02:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+## [2026-05-10T23:02:49Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-10T23-02-49Z-untagged-sources.md
+
+## [2026-05-10T23:02:50Z] lint | scope=stale-drafts | stale-drafts=172
+
+report=.knowledge/lint/2026-05-10T23-02-50Z-stale-drafts.md
+
+## [2026-05-10T23:02:52Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-10T23:02:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+## [2026-05-10T23:02:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.dre.ca.gov/files/pdf/re25.pdf
+
+error: no extractable content at https://www.dre.ca.gov/files/pdf/re25.pdf
+
+## [2026-05-10T23:02:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Funding-Plan-What-is-Full-Funding-and-Baseline-Funding-1.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Funding-Plan-What-is-Full-Funding-and-Baseline-Funding-1.pdf
+
+## [2026-05-10T23:03:05Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/c1ff52eb-702e-4b4c-a1f0-e2608628b325/UCIOA_Final_08_with-Comments_Updated.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/c1ff52eb-702e-4b4c-a1f0-e2608628b325/UCIOA_Final_08_with-Comments_Updated.pdf
+
+## [2026-05-10T23:03:05Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+## [2026-05-10T23:03:10Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Studies-101-Webinar-Outline.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Studies-101-Webinar-Outline.pdf
+
+## [2026-05-10T23:03:15Z] ingest | id=pdf-4e6be23fff80 | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.45
+
+raw=raw/pdf/pdf-4e6be23fff80.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:03:36Z] ingest | id=web-2015-12-11-313 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.05
+
+raw=raw/web/web-2015-12-11-313.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:03:37Z] ingest | id=web-2018-03-31-c63 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2018-03-31-c63.md (wiki not written: filter decision=review)
+
+## [2026-05-10T23:03:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reserveanalyst.com/index.php/hashtagtwo/funding-discussions/national-reserve-study-standards
+
+error: could not fetch https://www.reserveanalyst.com/index.php/hashtagtwo/funding-discussions/national-reserve-study-standards
+
+## [2026-05-10T23:03:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=materialize | n=45
+
+materialized 45 source(s) to raw/
+
+## [2026-05-10T23:03:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-10T23:03:41Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_session | notebook_id=311f9069-6a83-41b9-b272-352be65e92ef
+
+created session notebook 311f9069-6a83-41b9-b272-352be65e92ef
+
+## [2026-05-10T23:03:58Z] ingest | id=web-2018-03-31-9ad | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2018-03-31-9ad.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:04:16Z] ingest | id=web-2018-03-31-a5d | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/web/web-2018-03-31-a5d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:04:29Z] query | domain=condo | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-10T23:04:29Z] wiki-author | id=query-2026-05-10-update-the-existing-quantified-pm-cadences | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-10T23:04:43Z] ingest | id=web-2025-02-10-057 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2025-02-10-057.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:05:01Z] ingest | id=web-2026-03-26-dd1 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.15
+
+raw=raw/web/web-2026-03-26-dd1.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:05:18Z] ingest | id=web-2018-09-06-e6b | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2018-09-06-e6b.md (wiki not written: filter decision=rejected)
+
+## [2026-05-10T23:05:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | target=https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML
+
+error: `nlm source add 311f9069-6a83-41b9-b272-352be65e92ef --url https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML --wait` exited 1: Adding https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-10T23:07:26Z] filter-correction | id=web-2011-08-18-1e7 | domain=condo-capital-infra | decision=include | original_score=0.65
+
+rationale="Newfoundland & Labrador Condominium Regulations NLR 80/11 — primary regulatory source for Atlantic Canada province under ADR-0004 Canada-first GTM sequence. Required cite anchor for NL section of Brief-0006 inventory; sibling to ON/BC/AB/QC primary sources already in the corpus. Policy filter didn't flag NL because Atlantic Canada provinces weren't explicit in condo-capital-infra-v1 inclusion list pre-ADR-0004."
+
+## [2026-05-10T23:07:26Z] filter-correction | id=web-2017-07-26-1f3 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale='Service New Brunswick condominium FAQ — operational/regulator-side content for NB jurisdiction expanded into scope per ADR-0004 Canada-first sequence reorder. Anchors NB section of Brief-0006 / Atlantic Canada inventory.'
+
+## [2026-05-10T23:07:26Z] filter-correction | id=web-2018-03-31-c63 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale='CMHC New Brunswick provincial condominium fact sheet — federal Canadian-housing-agency content with NB market context. In scope under ADR-0004 Canada-first sequence reorder. Used as a regulatory + market-sizing reference per Brief-0006 § 2.2.'
+
+## [2026-05-10T23:07:26Z] filter-correction | id=web-2026-05-10-852 | domain=condo-capital-infra | decision=include | original_score=0.62
+
+rationale="NRC Construction Research Centre companion dataset (10.4224/40003911) — engineering reference-service-life data, sibling to web-2026-05-10-f34 (already included at 0.92). Falls into review band 0.62 only because Atlantic Canada / Canadian-federal regulatory scope isn't explicitly in condo-capital-infra-v1 policy inclusion list, but ADR-0004 sequence reorder expanded scope to Canada-first. Methodology-grade data, same publisher as the included primary, same calibration target (envelope components)."
+
+## [2026-05-10T23:07:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | n=44 | skipped=1
+
+pushed 44 source(s) to session notebook (1 skipped)
+
+## [2026-05-10T23:07:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_map | n=45
+
+built source map (45 entries)
+
+## [2026-05-10T23:19:22Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-10T23:19:22Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 12: claim has no citation: **Name and key claim:** The **"Percent Funded"** metric is the primary industry standard used by reserve professionals t; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 13: claim has no citation: **Core approach or mechanism:** It compares the cash an association actually has in the bank against the cash it *should; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 13: claim has no citation: The FFB is a mathematical representation of the deterioration that has already occurred, calculated as: *Replacement Cos; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 14: claim has no citation: **Concrete details:** A Percent Funded ratio of **100% means the fund is perfectly balanced** with the rate of deteriora; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 14: claim has no citation: Associations in the **70% to 130% range are considered "strong"** and rarely face special assessments [3].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 14: claim has no citation: Associations in the **0% to 30% range are considered "weak"** and face a roughly 50% statistical probability of needing ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 17: claim has no citation: **Name and key claim:** The National Reserve Study Standards establish **four distinct strategic funding goals** that bo; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 18: claim has no citation: **Core approach or mechanism:** Each strategy balances the community's risk tolerance against the financial burden place; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 20: claim has no citation: **Full Funding:** The most conservative goal, aiming to maintain a 100% Percent Funded level at all times [10].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 21: claim has no citation: **Threshold Funding:** The most commonly recommended approach, designed to keep the cash balance above a specific, safe ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 22: claim has no citation: **Baseline Funding:** A highly risky strategy where the fund is allowed to drop close to a $0 balance at its lowest poin; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 23: claim has no citation: **Statutory Funding:** Non-negotiable state-mandated funding minimums, such as Michigan's requirement that associations ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 26: claim has no citation: **Name and key claim:** A highly conservative investment framework designed to safely yield commercial-sized returns on ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 27: claim has no citation: **Core approach or mechanism:** The approach heavily prioritizes the safety of the principal and liquidity for upcoming ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 28: claim has no citation: **Concrete details:** The standard framework **keeps 10% of the association's reserves liquid** in a money market accoun; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 28: claim has no citation: A typical ladder might spread funds across 6-, 12-, 18-, 24-, 30-, and 36-month CDs [17, 18].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 28: claim has no citation: To maintain FDIC protection, investments must be strictly kept under the $250,000 limit per financial institution, meani; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 31: claim has no citation: **Name and key claim:** A critical framework arguing that standard Community Associations Institute (CAI) reserve math i; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 32: claim has no citation: **Core approach or mechanism:** The standard Fully Funded Balance formula assumes components degrade in a straight line,; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 32: claim has no citation: Furthermore, modern "pooled" funding methods calculate contributions based purely on anticipated cash outlays rather tha; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 33: claim has no citation: **Concrete details:** Instead of 20th-century spreadsheet math, the critique suggests that purpose-built systems should ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 33: claim has no citation: Furthermore, averaging the percent funded level across multiple components can heavily distort the metrics; a fund might; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 36: claim has no citation: **Name and key claim:** External frameworks driven by government-backed lenders and empirical data dictate how much of a; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 37: claim has no citation: **Core approach or mechanism:** Mother Nature and deterioration, rather than legislation, dictate the true cost of maint; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 37: claim has no citation: Because reserve needs are so substantial, lenders enforce strict budget percentage minimums to protect their mortgages f; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 38: claim has no citation: **Concrete details:** Historically, Fannie Mae and Freddie Mac required associations to set aside a minimum of **10% of ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 38: claim has no citation: However, empirical data from over 100,000 reserve studies shows that **adequate reserve funding actually requires 15% to; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 38: claim has no citation: At the component level, Washington state enforces a "1% Rule," mandating that any component whose replacement cost excee; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 44: claim has no citation: Within the theme of "Reserve Study Frameworks and Financial Management," the sources highlight several competing methodo; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 49: claim has no citation: The most significant clash in the sources is between the standard Community Associations Institute (CAI) methodology for; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 51: claim has no citation: **The Standard "Percent Funded" Framework:** The CAI standard calculates the "Fully Funded Balance" (FFB) using a straig; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 51: claim has no citation: Under this framework, 100% is considered perfectly balanced [2].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 51: claim has no citation: Associations at 70% to 130% are "strong" (special assessments are rare), while those at 0% to 30% are "weak" (special as; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 52: claim has no citation: *Strengths:* It provides a simple, easily understood industry benchmark to communicate special assessment risk to homeow; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 53: claim has no citation: **The Actuarial/Probabilistic Critique:** Critics argue that calculating depreciation in a linear fashion is a "fiction,; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 53: claim has no citation: Furthermore, modern "pooled" cash flow methods schedule funding based purely on anticipated cash outlays rather than the; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 54: claim has no citation: *Weaknesses of the Standard:* By averaging the "Percent Funded" across all components, software can distort the metrics;; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 54: claim has no citation: The traditional method creates an "illusion of adequacy" [7].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 55: claim has no citation: *Alternative Approach:* Instead of static spreadsheet math, purpose-built systems should utilize probabilistic models an; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 58: claim has no citation: When determining how much cash to actually collect from homeowners, the National Reserve Study Standards offer four dist; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 60: claim has no citation: **Full Funding:** Aims to maintain a 100% funded balance at all times [11].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 61: claim has no citation: *Strengths/Weaknesses:* It is the most conservative approach, but it is often criticized for unnecessarily hoarding mass; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 62: claim has no citation: **Threshold Funding:** Aims to keep the cash balance above a predetermined safe minimum amount [12].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 63: claim has no citation: *Strengths/Trade-offs:* This is the most commonly recommended strategy; it represents the optimal trade-off by ensuring ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 64: claim has no citation: **Baseline Funding:** Allows the cash balance to drop close to $0 at its lowest point during the 30-year study [13].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 65: claim has no citation: *Weaknesses/Context:* This is a highly risky strategy with absolutely no margin for error [13].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 65: claim has no citation: If a project costs more or fails early, the HOA is instantly in a deficit [13].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 65: claim has no citation: It is generally only applied in distressed situations where the alternative is deferring critical life-safety repairs [1; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 66: claim has no citation: **Statutory Funding:** Follows non-negotiable state mandates, such as Michigan's requirement to hold a minimum of 10% of; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 69: claim has no citation: There is a stark contrast between what external regulatory/lending frameworks require for compliance and what empirical ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 71: claim has no citation: **Lender Mandates (Fannie Mae/Freddie Mac):** Historically, government-backed lenders have required HOAs to allocate a m; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 72: claim has no citation: *Weaknesses:* Relying on the lender mandate as a planning goal is dangerous.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 72: claim has no citation: While 10-15% secures loan eligibility, it drastically underfunds the actual mathematical cost of deterioration [16].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 73: claim has no citation: **Empirical Evidence:** Data drawn from over 100,000 reserve studies reveals that effectively offsetting physical deteri; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 74: claim has no citation: *Outcomes:* Associations budgeting closer to the 5-10% lender minimum are essentially guaranteed to fall into the "weak"; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 77: claim has no citation: Once capital is collected, boards must decide how to manage the cash.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 77: claim has no citation: The sources compare basic liquid holding accounts to active "laddering" strategies.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 79: claim has no citation: **CD Laddering:** This framework keeps 10% of the association's funds highly liquid in money market accounts, while stag; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 80: claim has no citation: *Strengths:* It safely yields commercial-sized returns without exposing the principal to market risk, as long as funds a; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 80: claim has no citation: As shorter-term CDs mature, they are reinvested into higher-yielding longer-term CDs, boosting overall portfolio yield [; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 81: claim has no citation: *Trade-offs/Context:* Laddering only works if the reserve study accurately projects that major expenses are years away [; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 81: claim has no citation: If an association faces a massive, imminent expense in the first year, laddering is inappropriate, and the bulk of the f; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 81: claim has no citation: Furthermore, for HOAs with large reserves (e.g., over $500,000), managing FDIC limits across multiple banks becomes high; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 87: claim has no citation: While the sources outline various methodologies for calculating and managing reserve funds, several critical gaps, unans; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 90: claim has no citation: The corpus presents a harsh critique of the standard Community Associations Institute (CAI) linear depreciation formula,; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 90: claim has no citation: The proposed solution is to use **"probabilistic models and actuarial science"** to calculate reserve spending liability; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 91: claim has no citation: **The Gap:** The sources **do not provide the actual mathematical frameworks, formulas, or data models** required to exe; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 91: claim has no citation: A reader is left knowing that linear math is flawed, but has no blueprint for how an integrated software system should c; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 94: claim has no citation: Modern prop-tech solutions are described as transforming static PDFs into "live" systems that dynamically update as the ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 94: claim has no citation: For example, the software Solume claims to connect reserve study data directly with the "operating budget, your vendor c; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 95: claim has no citation: **The Gap:** The corpus **lacks technical details on the underlying data models and reconciliation mechanics.** How exac; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 95: claim has no citation: What is the accounting workflow to separate day-to-day operating maintenance from long-term capital reserve depletion wi; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 95: claim has no citation: The sources pitch the *concept* of integration but omit the *execution*.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 97: claim has no citation: Resolving the "Cash Flow" vs.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 98: claim has no citation: There is a direct contradiction in the sources regarding acceptable funding strategies.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 98: claim has no citation: "Threshold Funding" is presented as the most commonly recommended and ideal strategy for communities because it ensures ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 98: claim has no citation: Conversely, critics argue that the "cash flow method" completely ignores actual structural depreciation, creating a dang; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 99: claim has no citation: **The Unanswered Tension:** The corpus does not explain **how a purpose-built system should reconcile these two realitie; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 102: claim has no citation: Statutory frameworks, such as Washington State law, explicitly require reserve studies to disclose "interest and inflati; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 102: claim has no citation: Furthermore, the corpus notes that inflation heavily impacts replacement costs [8, 9], and investment strategies like "C; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 103: claim has no citation: **The Gap:** The sources **do not address how forecasting algorithms should model 30-year economic volatility.** Should ; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 103: claim has no citation: The corpus leaves unresolved how software should automatically stress-test budgets against periods of hyper-inflation or; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 106: claim has no citation: The sources acknowledge that recovering from severe underfunding is difficult.; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 106: claim has no citation: Mild solutions are offered, such as the "$10 solution" (gradually increasing dues by $10 per month each year) [12].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 106: claim has no citation: However, new legislation (like Florida's SB 154) strictly prohibits associations from waiving or reducing reserves for c; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 106: claim has no citation: This abrupt legal mandate is triggering a wave of "involuntary foreclosures" among residents on fixed incomes [15, 16].; update[1] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-study-frameworks-and-financial-management.md): [citation-grounding] line 107: claim has no citation: **The Gap:** The corpus **fails to address how an integrated planning system can mathematically solve for legal complian; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 14: claim has no citation: **Name and key claim:** The principle that reactive maintenance is exponentially more expensive than a proactive, preven; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 15: claim has no citation: **Core approach or mechanism:** Neglecting routine, preventative maintenance activities leads to premature component fai; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 16: claim has no citation: **Concrete details:** The sources explicitly report that **reactive maintenance costs three to nine times more over time; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 16: claim has no citation: For example, if a $20,000 component with a 10-year life undergoes preventative maintenance that extends its life by 30% ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 16: claim has no citation: Maintenance plans should combine time-based (e.g., weekly inspections) and usage-based (e.g., mileage) schedules [5].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 19: claim has no citation: **Name and key claim:** "Familiarity blindness" is a psychological phenomenon where residents and board members stop not; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 20: claim has no citation: **Core approach or mechanism:** Because deterioration caused by "Mother Nature and Father Time" happens slowly—like sand; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 20: claim has no citation: Overcoming this requires hiring independent professionals for objective visual site inspections [7, 10].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 21: claim has no citation: **Concrete details:** Residents may ignore severe issues like rusted pipes, cracked structural elements, or sagging reta; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 21: claim has no citation: Independent reserve analysts look for specific "tells" that locals miss, such as "alligatoring" or spiderweb cracking in; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 24: claim has no citation: **Name and key claim:** The structural deterioration process of reinforced concrete, known as "spalling," driven by wate; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 25: claim has no citation: **Core approach or mechanism:** Concrete is porous; when water (especially chloride-laden coastal saltwater) penetrates ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 25: claim has no citation: The steel rusts and expands in volume, creating internal pressure that cracks and breaks the concrete from the inside ou; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 26: claim has no citation: **Concrete details:** Spalling manifests in several specific ways: "vertical spalls" on walls, "full depth spalls" where; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 26: claim has no citation: To prevent this, concrete must be regularly painted and protected with waterproofing coatings, which typically only last; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 29: claim has no citation: **Name and key claim:** The specific engineering failure mechanism that triggered the Champlain Towers South collapse, c; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 30: claim has no citation: **Core approach or mechanism:** A progressive structural failure caused by a combination of original design flaws, const; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 31: claim has no citation: **Concrete details:** Forensic engineering analysis found that the original pool deck slab design was severely deficient; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 31: claim has no citation: The "effective depth" of the slab was reduced from 8.125 inches to 7 inches because the top rebar was placed too deep in; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 31: claim has no citation: The association later added heavy unbudgeted loads, including concrete pavers set in sand beds and large planters, pushi; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 34: claim has no citation: **Name and key claim:** Specific, escalating physical warning signs that preceded the Surfside collapse, demonstrating t; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 35: claim has no citation: **Core approach or mechanism:** When a structure is nearing a critical failure threshold (like punching shear), it begin; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 37: claim has no citation: Approximately one month prior, a sliding glass door in Unit 111 (directly over the failing column) jammed and broke its ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 38: claim has no citation: Three weeks prior, severe cracking and a 2.5-inch vertical drop were documented in a heavy masonry planter wall on the p; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 39: claim has no citation: One week prior, an adjacent pool gate dropped 1 inch vertically, rendering it permanently jammed [32, 33].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 40: claim has no citation: Just hours before the collapse, a resident reported a water leak in the garage ceiling directly below the pool deck that; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 47: claim has no citation: **Differences in claims and outcomes:** The sources highlight a stark mathematical contrast between these approaches: re; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 47: claim has no citation: Proactive maintenance extends a component's useful life (e.g., extending a 10-year component to 13 years), which signifi; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 47: claim has no citation: Conversely, reactive maintenance leads to "scope creep," where small, ignored issues become major multi-trade projects (; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 48: claim has no citation: **Trade-offs and Contexts:** Preventative maintenance requires consistent upfront funding, labor, and a disciplined trac; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 48: claim has no citation: Deferred maintenance is generally discouraged, but the sources concede it may be the "only viable option" when an associ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 51: claim has no citation: **Strengths and Weaknesses:** Relying on board members and residents to monitor the building's condition is highly flawe; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 52: claim has no citation: **Outcomes:** Independent professional inspections act as a countermeasure to this blindness.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 52: claim has no citation: External reserve analysts and engineers provide objective evaluations, catching subtle "tells" (like asphalt alligatorin; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 55: claim has no citation: **Differences in frameworks and claims:** Traditional reserve studies focus on general common area components and, histo; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 55: claim has no citation: The collapse of Champlain Towers South proved that applying this flexible financial framework to critical infrastructure; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 55: claim has no citation: In response, Florida introduced the Structural Integrity Reserve Study (SIRS), which creates a rigid, non-negotiable fra; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 56: claim has no citation: **Trade-offs and Outcomes:** SIRS strictly isolates eight critical life-safety elements (such as roofs, load-bearing wal; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 56: claim has no citation: While the **strength** of SIRS is that it forces structural safety and prevents progressive collapses [15, 18], its mass; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 56: claim has no citation: By forcing immediate, fully-funded compliance on buildings that have deferred maintenance for decades, this framework is; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 58: claim has no citation: **Phase 1 Visual Inspections vs.; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 59: claim has no citation: **Differences in approach:** Under new structural safety mandates, building evaluations are broken into two distinct met; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 59: claim has no citation: Phase 1 is a qualitative, visual examination of habitable and nonhabitable areas by an architect or engineer [21, 22].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 60: claim has no citation: **Contexts and Trade-offs:** If a Phase 1 visual inspection flags "substantial structural deterioration," it legally tri; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 60: claim has no citation: Phase 2 transitions from observation to destructive testing, requiring engineers to drill core samples, cut into walls, ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 61: claim has no citation: **Strengths and Weaknesses:** The strength of Phase 2 is that it provides definitive, diagnostic proof of structural saf; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 61: claim has no citation: The weakness is the extreme cost and disruption; Phase 2 testing can cost hundreds of thousands of dollars merely to dia; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 68: claim has no citation: **The Unresolved Gap:** The sources extensively document that catastrophic structural failures do not happen without war; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 68: claim has no citation: For example, before the Champlain Towers South collapse, residents and workers experienced a jammed sliding glass door b; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 68: claim has no citation: Forensic engineers noted these visible signs of slab distress were "missed and/or never diagnosed" [5].; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 69: claim has no citation: **What is missing:** The corpus completely fails to address *how* an integrated planning system should capture, aggregat; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 69: claim has no citation: A careful reader building a software platform would want to know how to create a diagnostic data model that connects iso; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 72: claim has no citation: **The Unanswered Tension:** The corpus highlights a massive legal and operational loophole regarding mandated structural; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 72: claim has no citation: Unethical contractors are acting as inspection firms, writing reports that falsely classify non-emergency repairs as "em; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 72: claim has no citation: The law currently lacks a prohibition against an inspector bidding on their own repair recommendations, creating a sever; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 73: claim has no citation: **What is missing:** The sources identify the risk but do not address how a purpose-built integrated software system cou; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 73: claim has no citation: It leaves unanswered how software could enforce a strict "firewall" between the inspection module and the vendor procure; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 76: claim has no citation: **The Unresolved Gap:** When discussing how to implement a preventative maintenance strategy, the sources recommend util; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 77: claim has no citation: **What is missing:** The corpus offers no practical frameworks, data models, or IoT (Internet of Things) integration str; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 77: claim has no citation: While tracking mileage on an HOA-owned truck is simple, the sources do not explain how software should track the "usage ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 80: claim has no citation: **The Unanswered Tension:** The sources establish that proactive, preventative maintenance lowers the annual cost of own; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 80: claim has no citation: Simultaneously, the sources note that new legislation like Florida's Structural Integrity Reserve Study (SIRS) isolates ; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 81: claim has no citation: **What is missing:** The corpus does not explain how these two concepts interact mathematically or legally within a long; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 81: claim has no citation: If an HOA spends heavily from its daily operating budget on excellent preventative maintenance that successfully extends; update[2] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-maintenance-practices-and-structural-integrity.md): [citation-grounding] line 81: claim has no citation: The sources fail to address how software should reconcile dynamic, real-time maintenance success with rigidly legislated; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 14: claim has no citation: **Name and key claim:** The statutory fiduciary obligation of board members and the protection of the Business Judgment ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 14: claim has no citation: The core claim is that volunteer board members must act in good faith and with due care; if they fail to do so, they can; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 15: claim has no citation: **Core approach or mechanism:** Because HOA board members are typically untrained volunteers managing multi-million-doll; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 15: claim has no citation: Instead, the "business judgment rule" protects them from personal liability *only if* they perform due diligence by hiri; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 16: claim has no citation: **Concrete details:** Directors and Officers (D&O) insurance claims against HOAs are highly prevalent [1].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 16: claim has no citation: If a board acts arbitrarily—such as a Maui HOA board that ignored Fair Housing laws and fined a legally blind resident $; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 16: claim has no citation: In cases of severe negligence, D&O insurance carriers will issue a "reservation of rights" and drop coverage, leaving bo; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 16: claim has no citation: For example, following the Marco Polo condo fire, the board president and vice president were held personally liable and; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 16: claim has no citation: To track liability and conflicts of interest, board meeting minutes must specifically record which members voted "aye" a; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 19: claim has no citation: **Name and key claim:** California's Davis-Stirling Common Interest Development Act sets strict statutory boundaries on ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 20: claim has no citation: **Core approach or mechanism:** To protect homeowners from unchecked financial strain and poor board planning, the law c; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 21: claim has no citation: Civil Code §5605, an HOA board **cannot impose a special assessment that exceeds 5% of the association's budgeted gross ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 21: claim has no citation: Furthermore, regular annual assessments (dues) can only be raised by a maximum of 20% per year without a membership vote; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 21: claim has no citation: Reserve funds are legally restricted to repairing or replacing major components identified in the reserve study (or rela; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 21: claim has no citation: If the board temporarily borrows from reserves, they must document a repayment plan to be fulfilled within one year [13]; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 24: claim has no citation: **Name and key claim:** Florida Senate Bills 4-D and 154 represent a rigid, non-negotiable statutory framework enacted a; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 25: claim has no citation: **Core approach or mechanism:** The legislation entirely revokes a condo board's historic legal ability to vote to waive; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 25: claim has no citation: It forces communities into a strict compliance cadence combining visual engineering inspections with mandatory capital s; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 26: claim has no citation: **Concrete details:** Condos three stories or higher must complete a Structural Integrity Reserve Study (SIRS) by Decemb; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 26: claim has no citation: The SIRS strictly isolates **eight critical structural elements** (roofs, load-bearing walls, fireproofing, plumbing, el; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 26: claim has no citation: Effective December 31, 2024, boards are legally prohibited from waiving or reducing reserve contributions for these elem; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 26: claim has no citation: Additionally, buildings must undergo a "Milestone Inspection" by an architect or engineer at 30 years of age (or 25 year; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 26: claim has no citation: Failing to complete these studies is defined by statute as a direct breach of the board's fiduciary duty [22].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 29: claim has no citation: **Name and key claim:** Washington State's WUCIOA (RCW 64.90) mandates universal reserve study compliance and strict fin; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 30: claim has no citation: **Core approach or mechanism:** The law creates a rolling compliance mechanism that ties reserve study completion direct; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 31: claim has no citation: **Concrete details:** Washington requires an updated reserve study annually, with an independent visual site inspection ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 31: claim has no citation: The law enforces a **"1% Rule,"** requiring the study to include any component whose replacement cost exceeds 1% of the ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 31: claim has no citation: The study must mathematically present three scenarios to the board: a baseline funding plan, a full funding plan, and th; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 31: claim has no citation: If an association does not have a current study, they must explicitly state this failure on all unit resale certificates; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 31: claim has no citation: Effective January 1, 2026, these mandates apply universally to all Washington HOAs and condos, regardless of when they w; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 34: claim has no citation: **Name and key claim:** The intersection of government-backed lending requirements and HOA legal collection powers, whic; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 35: claim has no citation: **Core approach or mechanism:** External lender compliance rules often act as the ultimate enforcer of HOA governance.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 35: claim has no citation: When statutory mandates (like Florida's SIRS) force massive, immediate special assessments on underfunded buildings, own; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 36: claim has no citation: **Concrete details:** Lenders like Fannie Mae and Freddie Mac maintain confidential "blacklists" of properties [30].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 36: claim has no citation: To maintain project eligibility for conventional financing, they require associations to budget a minimum of 10% of thei; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 36: claim has no citation: If a building is blacklisted due to underfunded reserves or failed structural inspections, the units become "cash-only,"; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 36: claim has no citation: If an owner cannot afford a sudden $100,000 special assessment to fix the building, Florida law allows the HOA to record; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 36: claim has no citation: This is predicted to trigger a wave of "involuntary foreclosures," allowing developers to buy up units at pennies on the; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 42: claim has no citation: Within the theme of "Legal Compliance and Board Governance," the sources reveal a fundamental tension between protecting; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 42: claim has no citation: The corpus contrasts several legislative frameworks and governance approaches, highlighting their differing mechanisms, ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 46: claim has no citation: Homeowner Financial Protection (California) vs.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 47: claim has no citation: **The Comparison:** California's Davis-Stirling Act restricts board power to protect homeowner wallets, whereas Florida’; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 48: claim has no citation: **Differences in Approach:** California law forbids an HOA board from unilaterally imposing a special assessment greater; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 48: claim has no citation: Conversely, Florida’s Structural Integrity Reserve Study (SIRS) mandate explicitly prohibits boards and homeowners from ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 50: claim has no citation: *California’s Strength/Weakness:* The CA framework successfully protects residents from arbitrary, sudden financial shoc; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 51: claim has no citation: *Florida’s Strength/Weakness:* Florida ensures catastrophic collapses like Surfside cannot happen again due to deferred ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 51: claim has no citation: However, this rigid framework is causing a massive financial crisis.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 51: claim has no citation: By forcing fully-funded budgets overnight, it is triggering extreme special assessments that lead to "involuntary forecl; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 53: claim has no citation: Enforcement Mechanisms: Market Transparency (Washington) vs.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 54: claim has no citation: **The Comparison:** How states enforce compliance with reserve study mandates.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 55: claim has no citation: **Differences in Approach:** Under Washington's Uniform Common Interest Ownership Act (WUCIOA), compliance is largely en; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 55: claim has no citation: The law mandates reserve studies every three years [9], but its primary enforcement mechanism is the requirement that a ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 55: claim has no citation: Florida relies on hard statutory deadlines, requiring all buildings three stories or higher to complete milestone inspec; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 57: claim has no citation: *Washington:* The strength of the WA approach is that it forces transparency without immediately bankrupting the associa; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 58: claim has no citation: *Florida:* The weakness of FL's rigid deadline approach is the creation of "blacklisted" buildings.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 58: claim has no citation: Because of strict Fannie Mae and Freddie Mac lending rules, buildings that fail inspections or lack required reserve fun; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 58: claim has no citation: These units become "cash-only," causing property values to collapse (e.g., from $400,000 to $150,000), leaving owners tr; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 60: claim has no citation: Board Liability: Untrained Volunteer Decisions vs.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 61: claim has no citation: **The Comparison:** How volunteer boards make decisions versus how the law expects them to make decisions to avoid perso; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 62: claim has no citation: **Differences in Claims and Evidence:** HOA boards are composed of untrained volunteers managing multi-million dollar re; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 62: claim has no citation: When boards act arbitrarily—such as a Maui board that ignored Fair Housing laws and fined a legally blind resident $65/d; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 63: claim has no citation: **The Mechanism (Business Judgment Rule):** To mitigate this, the "Business Judgment Rule" provides a safe harbor.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 63: claim has no citation: It dictates that volunteer board members will not be held personally liable for poor outcomes *if* they perform due dili; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 64: claim has no citation: **Outcomes:** If boards fail to rely on experts and breach their fiduciary duty through gross negligence, Directors & Of; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 64: claim has no citation: This leaves individual board members personally liable for the damages, as occurred in the Marco Polo fire where the boa; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 66: claim has no citation: Special Assessment Processes: Membership Votes vs.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 67: claim has no citation: **The Comparison:** The standard process for levying assessments versus the exploitation of emergency powers.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 68: claim has no citation: **Differences in Approach:** Under typical statutory frameworks (like California's), planned capital improvements and la; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 68: claim has no citation: However, the law provides an exception: a membership vote is not required for "emergency assessments" addressing immedia; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 69: claim has no citation: **Weaknesses and Trade-offs:** The sources identify this emergency exception as a major vulnerability for homeowners.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 69: claim has no citation: Boards sometimes misuse emergency powers to bypass democratic homeowner approval, wrongly categorizing non-urgent capita; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 75: claim has no citation: While the sources detail the complex legal requirements and fiduciary risks associated with HOA governance, several crit; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 78: claim has no citation: **The Context:** The corpus reveals that state laws dictate fundamentally different approaches to HOA governance.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 78: claim has no citation: California focuses on homeowner financial protection, capping special assessments at 5% of the budget and requiring memb; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 78: claim has no citation: Florida prioritizes absolute structural safety, outright prohibiting boards from waiving reserves for critical elements ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 78: claim has no citation: Meanwhile, Washington relies on market transparency, mandating that the presence or absence of a reserve study be explic; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 79: claim has no citation: **The Gap:** The sources **do not address how a single, integrated software platform can accommodate these clashing stat; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 82: claim has no citation: **The Context:** Untrained volunteer boards are protected from massive personal liability (such as the $1.9 million judg; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 82: claim has no citation: Failure to do so can cause Directors and Officers (D&O) insurance carriers to drop coverage, leaving board members perso; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 83: claim has no citation: **The Gap:** The corpus **does not explain how a data model should digitally track and enforce this legal safe harbor.**; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 85: claim has no citation: Resolving the Fiduciary Duty vs.; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 86: claim has no citation: **The Context:** In Florida, new laws force condo boards to fully fund reserves for life-safety infrastructure [5, 14].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 86: claim has no citation: Because associations have chronically underfunded for decades, this sudden legal compliance is causing monthly dues to t; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 86: claim has no citation: This forces the HOA to execute "involuntary foreclosures" against its own residents [18-20].; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 87: claim has no citation: **The Gap:** The sources highlight this tragic collision of laws but **offer no governance frameworks or integrated plan; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 90: claim has no citation: **The Context:** In California, boards can bypass the 5% special assessment cap and avoid a homeowner vote if they decla; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 90: claim has no citation: However, the sources note that boards frequently abuse this loophole to illegally fund non-emergency items like aestheti; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 91: claim has no citation: **The Gap:** The corpus **does not address how an integrated system can programmatically prevent this abuse of power.** ; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 91: claim has no citation: A careful reader would want to know if a purpose-built system could lock the assessment-generation module unless a licen; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 94: claim has no citation: **The Context:** The sources suggest conservative investment frameworks, such as FDIC-insured "CD laddering" across mult; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 95: claim has no citation: **The Gap:** The corpus **does not explore the legal and statutory limitations of automating these financial movements w; update[3] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-legal-compliance-and-board-governance.md): [citation-grounding] line 95: claim has no citation: The integration of active investment management into a daily operations platform is left unexplored.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 12: claim has no citation: **Name and key claim:** **Solume**, an AI-powered all-in-one community management platform, claims to solve the fundamen; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 13: claim has no citation: **Core approach or mechanism:** The software transforms static reserve documents into "live," real-time financial projec; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 13: claim has no citation: It achieves this by directly connecting reserve study data with the association's day-to-day operating budget, vendor co; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 14: claim has no citation: **Concrete details:** By integrating these previously siloed workflows, the software replaces "five different spreadshee; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 14: claim has no citation: It provides a dynamic dashboard that shows the board and owners exactly where the reserve fund stands and how percent-fu; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 17: claim has no citation: **Name and key claim:** **SmartProperty** utilizes a "Living Reserve Study" to function as a holistic asset lifecycle ma; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 18: claim has no citation: **Core approach or mechanism:** The platform attempts to bridge the gap between maintenance and long-term capital needs ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 18: claim has no citation: It syncs third-party financial information to provide deeper clarity into monthly cash flow and build a roadmap for futu; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 19: claim has no citation: **Concrete details:** The software's data model operates at a massive scale, currently managing over 4,000 "Living Reser; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 22: claim has no citation: **Name and key claim:** **CommunityPay** addresses the complex, shifting landscape of state-specific HOA regulations by ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 23: claim has no citation: **Core approach or mechanism:** The software features a "legal compliance dashboard" designed specifically for property ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 23: claim has no citation: It automatically tracks reserve study requirements and statutory thresholds, detecting changes to underlying state laws ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 24: claim has no citation: **Concrete details:** The platform integrates fund accounting, enforcement guardrails, and audit-ready governance [5].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 24: claim has no citation: For example, when Washington state enacted ESSB 5129—forcing older communities to universally comply with the Washington; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 27: claim has no citation: **Name and key claim:** The sources document a massive legal and operational gap in the vendor procurement process, spec; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 27: claim has no citation: Unethical contractors are exploiting the lack of vendor "firewalls" to write themselves blank checks [9, 10].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 28: claim has no citation: **Core approach or mechanism:** Contractors offer to act as the official balcony inspection firm, but they use the resul; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 28: claim has no citation: They intentionally misclassify standard, non-emergency maintenance as life-safety "emergencies," threatening boards with; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 29: claim has no citation: **Concrete details:** While California real estate law (Section 7197) strictly prohibits a home inspector from bidding o; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 29: claim has no citation: As a result, HOAs are targeted by contractors who have active "complaint disclosures" on their state licenses for violat; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 29: claim has no citation: This highlights a major gap where an integrated software system could programmatically enforce independent bidding (e.g.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 36: claim has no citation: **The Comparison:** The sources contrast software platforms built around physical asset lifecycles (SmartProperty, Solum; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 37: claim has no citation: **Differences in Approach and Claims:** **Solume** and **SmartProperty** focus on the concept of a "Living Reserve Study; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 37: claim has no citation: Their core approach is to integrate day-to-day maintenance tasks, vendor costs, and operating budgets directly into a dy; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 37: claim has no citation: SmartProperty claims this approach successfully tracks 217,000 assets and manages $6.9 billion in anticipated capital ex; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 37: claim has no citation: Conversely, **CommunityPay** focuses heavily on "statutory-aligned HOA accounting infrastructure" [5].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 37: claim has no citation: Instead of emphasizing daily asset maintenance, it provides a legal compliance dashboard designed to track shifting stat; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 38: claim has no citation: **Strengths, Weaknesses, and Trade-offs:** The strength of the Solume/SmartProperty model is its ability to bridge the g; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 38: claim has no citation: However, the sources do not specify if these platforms automatically track complex legislative shifts.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 38: claim has no citation: The strength of CommunityPay is its enforcement guardrails for property managers needing to ensure strict statutory comp; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 41: claim has no citation: **The Comparison:** The traditional method of delivering reserve studies as disconnected files versus the modern approac; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 42: claim has no citation: **Differences in Outcomes:** Traditionally, reserve studies are delivered as static PDFs or Excel spreadsheets [1].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 42: claim has no citation: The massive weakness of this approach is that the data becomes outdated almost immediately when real-world costs shift, ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 42: claim has no citation: Furthermore, as volunteer board members and property managers turn over, this institutional knowledge is often lost in a; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 43: claim has no citation: **Strengths of the Software Approach:** Platforms like Solume address this by using AI to create a dynamic dashboard tha; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 43: claim has no citation: The strength of this approach is that it centralizes data, connects isolated workflows (dues collections, maintenance tr; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 47: claim has no citation: **Differences in Evidence and System Gaps:** While software like Solume successfully integrates "vendor costs" into its ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 47: claim has no citation: Specifically, under mandated structural inspection laws like California's SB 326 (the balcony bill), unethical contracto; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 48: claim has no citation: **Weaknesses Noted:** Because the law lacks a prohibition against inspectors bidding on their own reports, these contrac; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 48: claim has no citation: While best practices dictate receiving a minimum of three independent bids for non-emergency work [12], the sources do n; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 55: claim has no citation: **The Context:** Modern prop-tech solutions market themselves as a technological leap over traditional methods.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 55: claim has no citation: Solume is described as an "all-in-one community management platform powered by AI" that creates "dynamic updates as your; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 55: claim has no citation: Similarly, SmartProperty claims to drive better outcomes by "seamlessly syncing third-party information" [3, 4].; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 56: claim has no citation: **The Gap:** The corpus **completely lacks technical details on the underlying data models, API structures, or specific ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 56: claim has no citation: A careful reader would want to know *how* the AI functions—does it use machine learning to predict component failure cur; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 56: claim has no citation: Furthermore, the sources do not explain the integration mechanics for syncing legacy accounting software (like QuickBook; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 59: claim has no citation: **The Context:** The sources document a severe operational and legal vulnerability regarding mandated inspections, such ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 59: claim has no citation: Unethical contractors are acting as both the inspection firm and the repair vendor, intentionally misclassifying standar; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 59: claim has no citation: Unlike home inspection laws, condo inspection laws currently lack a prohibition against this conflict of interest [7, 8]; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 60: claim has no citation: **The Gap:** While the corpus identifies this vendor exploitation, it **does not address how an integrated software syst; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 63: claim has no citation: **The Context:** The corpus highlights that state laws dictate fundamentally different approaches to HOA governance.; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 63: claim has no citation: Platforms like CommunityPay offer a "legal compliance dashboard" designed to track shifting state laws, such as Washingt; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 64: claim has no citation: **The Gap:** The sources **do not explain how a unified data model can reconcile extreme statutory contradictions betwee; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 64: claim has no citation: The corpus leaves unanswered whether an integrated system requires siloed, state-specific compliance modules or a univer; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 67: claim has no citation: **The Context:** The sources heavily critique traditional reserve studies for being trapped in "five different spreadshe; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 68: claim has no citation: **The Gap:** The corpus **entirely omits the operational challenge of data migration and onboarding.** A careful reader ; update[4] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-software-approaches-and-system-gaps.md): [citation-grounding] line 68: claim has no citation: There is no methodology provided for how an integrated system ingests, normalizes, and digitizes decades of scattered in; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 3: claim has no citation: **Origin question:** How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 3: claim has no citation: Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built int; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 9: claim has no citation: **The Principle of Proactive Planning vs.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 10: claim has no citation: This pattern emphasizes that delaying action—whether financial or physical—exponentially increases costs and risks.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 10: claim has no citation: It is adapted across themes as a fundamental shift away from the "kick the can down the road" mentality.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 11: claim has no citation: **Maintenance Practices and Structural Integrity:** Applied physically, this principle dictates that **reactive maintena; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 11: claim has no citation: Delaying routine work leads to "scope creep," such as failing to paint wood trim, which eventually requires expensive ca; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 12: claim has no citation: **Reserve Study Frameworks and Financial Management:** Applied financially, this approach treats deterioration as a cont; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 12: claim has no citation: Proactive funding (budgeting to offset ongoing deterioration) minimizes the likelihood of special assessments or needing; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 13: claim has no citation: **Legal Compliance and Board Governance:** Applied statutorily, state laws are increasingly forcing HOAs to be proactive; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 13: claim has no citation: Florida's Structural Integrity Reserve Study (SIRS) mandate explicitly **revokes the ability of boards and owners to dem; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 16: claim has no citation: Because HOAs are multi-million-dollar real estate entities managed by untrained volunteers, a cross-cutting framework re; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: **Legal Compliance and Board Governance:** The **Business Judgment Rule** is the legal framework that protects volunteer; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 17: claim has no citation: Boards are only protected if they perform due diligence by hiring and relying on independent experts, like engineers and; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: **Maintenance Practices and Structural Integrity:** Independent reserve analysts and engineers are required to overcome ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 18: claim has no citation: Independent inspections ensure objective evaluation of structural distress [22].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 19: claim has no citation: **Integrated Software Approaches and System Gaps:** The lack of independent oversight creates a severe vulnerability in ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 19: claim has no citation: Without systems enforcing a firewall between inspectors and vendors, unethical contractors perform mandated safety inspe; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 20: claim has no citation: **Reserve Study Frameworks and Financial Management:** Industry standards and laws (like Washington's WUCIOA) demand tha; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 23: claim has no citation: This concept recognizes that "Mother Nature and Father Time" degrade buildings continuously and dynamically, exposing th; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: **Reserve Study Frameworks and Financial Management:** Deterioration does not happen on a straight line; it is often exp; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: Traditional reserve math (linear "percent funded" calculations and pooled cash flow methods) creates an **"illusion of a; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 24: claim has no citation: Deterioration is continuous, like sand falling through an hourglass [6].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 25: claim has no citation: **Integrated Software Approaches and System Gaps:** Traditional reserve studies are delivered as static PDFs or spreadsh; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 25: claim has no citation: Modern software adapts to continuous deterioration by offering **"Living Reserve Studies"** or dynamic dashboards that r; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 26: claim has no citation: **Maintenance Practices and Structural Integrity:** Ignoring continuous deterioration leads to catastrophic failure.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 26: claim has no citation: Concrete is porous, and as water continuously penetrates it, the embedded steel rebar rusts and expands, causing the con; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 26: claim has no citation: The Surfside collapse demonstrated how continuous water intrusion and unmitigated added loads eventually trigger progres; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 29: claim has no citation: Across the corpus, there is a recurring tension between the desire of homeowners to keep their living costs low and the ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 30: claim has no citation: **Legal Compliance and Board Governance:** Historically, boards and owners would repeatedly vote to waive reserve contri; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 30: claim has no citation: The collision of Florida's new strict SIRS funding mandates with decades of deferred maintenance is causing dues to doub; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 31: claim has no citation: **Reserve Study Frameworks and Financial Management:** Boards are generally reluctant to raise rates, but offsetting the; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 31: claim has no citation: Failing to meet this threshold places communities on lender "blacklists," destroying property values and making units un; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 32: claim has no citation: **Maintenance Practices and Structural Integrity:** "Deferred maintenance" is a strategy employed specifically when an a; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 32: claim has no citation: However, prioritizing artificially low assessments over building safety leads to severe structural decay, rendering the ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 38: claim has no citation: Based on the corpus, there are several foundational frameworks, legislative acts, and primary investigations that serve ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 43: claim has no citation: **What it is and what it contains:** Originally published in 1998 by the Community Associations Institute (CAI) and regu; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 43: claim has no citation: It establishes the "three-part test" to determine if a component qualifies for reserve funding (it must be an associatio; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 43: claim has no citation: It also defines the universally used "Percent Funded" calculation and the four acceptable funding goals: Full Funding, T; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 44: claim has no citation: **Themes drawing on it:** *Reserve Study Frameworks and Financial Management*; *Integrated Software Approaches*.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: **Why it is foundational:** It is the mathematical baseline for the entire HOA industry.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 45: claim has no citation: Whether an author is explaining how to calculate financial health, building a software dashboard to project capital expe; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 48: claim has no citation: **What it is and what it contains:** Passed in response to the Surfside collapse, these Florida statutes strictly mandat; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 48: claim has no citation: The law explicitly prohibits condo boards and owners from voting to waive or reduce reserve funding for eight critical s; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 49: claim has no citation: **Themes drawing on it:** *Legal Compliance and Board Governance*; *Maintenance Practices and Structural Integrity*; *Re; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 50: claim has no citation: **Why it is foundational:** These bills represent a historic paradigm shift from democratic, flexible HOA financial gove; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 50: claim has no citation: They are treated as the catalyst for the current "involuntary foreclosure" crisis, illustrating the severe real-world co; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 53: claim has no citation: **What it is and what it contains:** Enacted in 1985, this comprehensive body of law (Civil Code Sections 4000 through 6; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 53: claim has no citation: It mandates reserve studies every three years and requires strict annual disclosures of the "percent funded" number [29,; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 53: claim has no citation: Crucially, it caps special assessments at 5% of the gross budgeted expenses and limits regular assessment increases to 2; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 54: claim has no citation: **Themes drawing on it:** *Legal Compliance and Board Governance*; *Reserve Study Frameworks*.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 55: claim has no citation: **Why it is foundational:** The Davis-Stirling Act is the premier benchmark for balancing homeowner financial protection; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 55: claim has no citation: It anchors discussions regarding the limits of special assessments, the legal requirement for financial transparency, an; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 58: claim has no citation: **What it is and what it contains:** These are the strict lending and underwriting guidelines enforced by the government; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 58: claim has no citation: They evaluate the structural and financial health of buildings, requiring associations to dedicate at least 10% of their; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 59: claim has no citation: **Themes drawing on it:** *Reserve Study Frameworks and Financial Management*; *Legal Compliance and Board Governance*.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 60: claim has no citation: **Why it is foundational:** Fannie Mae and Freddie Mac act as the ultimate, inescapable enforcers of financial preparedn; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 60: claim has no citation: The sources treat these guidelines as load-bearing because failing to meet them lands a building on a "blacklist," rende; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 63: claim has no citation: **What it is and what it contains:** The official federal investigation by the National Institute of Standards and Techn; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 63: claim has no citation: These engineering datasets detail the specific failure mechanisms of the 2021 Surfside collapse, documenting massive des; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 64: claim has no citation: **Themes drawing on it:** *Maintenance Practices and Structural Integrity*; *Legal Compliance and Board Governance*.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 65: claim has no citation: **Why it is foundational:** The empirical data from these investigations provides the physical justification for why pro; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 65: claim has no citation: It anchors the concept of "familiarity blindness" and proves that ignoring warning signs like concrete spalling or water; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 68: claim has no citation: **What it is and what it contains:** Washington State's statutory framework requiring all common interest communities to; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 68: claim has no citation: It establishes the "1% Rule," requiring the inclusion of any component whose replacement cost exceeds 1% of the annual b; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 68: claim has no citation: Furthermore, it strictly ties a community's compliance status to unit resale certificates [57].; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 69: claim has no citation: **Themes drawing on it:** *Legal Compliance and Board Governance*; *Integrated Software Approaches and System Gaps*.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 70: claim has no citation: **Why it is foundational:** It serves as the primary example of an indirect, market-driven enforcement mechanism.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 70: claim has no citation: Instead of imposing direct fines, WUCIOA forces associations to disclose their lack of preparation to every buyer, title; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 70: claim has no citation: It also serves as the prime use-case for why property managers require specialized, statutory-aligned compliance softwar; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 77: claim has no citation: This is the most pervasive tension in the corpus, contrasting the desire to keep monthly living costs low with the mathe; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: **Reserve Study Frameworks & Financial Management:** Boards are highly reluctant to charge homeowners the true cost of m; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 78: claim has no citation: Boards frequently attempt to run their multi-million dollar real estate corporations "on fumes" to avoid unpopular dues ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 79: claim has no citation: **Legal Compliance & Governance:** In Florida, decades of prioritizing affordability over safety led to the Champlain To; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 79: claim has no citation: In response, the state passed rigid mandates (SB 4-D and SB 154) that **legally prohibit condo boards from waiving or re; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 79: claim has no citation: This sudden shift from artificial affordability to mandatory safety is causing severe financial shocks, with dues doubli; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 80: claim has no citation: **Maintenance Practices:** A proactive, preventative maintenance approach extends component life and lowers the annualiz; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 80: claim has no citation: Conversely, "deferred maintenance" is used to save money in the short term, but is ultimately a false economy because **; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 83: claim has no citation: This tension highlights the conflict between allowing communities to self-govern their finances and imposing external, n; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 84: claim has no citation: **Legal Compliance & Governance:** California’s Davis-Stirling Act relies heavily on democratic flexibility and homeowne; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 84: claim has no citation: It **caps special assessments at 5% of the gross budget** and requires a majority membership vote to exceed that amount,; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 84: claim has no citation: Conversely, Florida's Structural Integrity Reserve Study (SIRS) mandate completely strips away this democratic control, ; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 85: claim has no citation: **Reserve Study Frameworks:** Even if state laws grant associations the flexibility to democratically underfund their re; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 85: claim has no citation: Government-backed lenders like Fannie Mae and Freddie Mac actively enforce financial minimums (historically 10% of the b; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 85: claim has no citation: If an association democratically chooses not to meet these requirements, they are placed on lender **"blacklists," makin; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 88: claim has no citation: This trade-off contrasts the use of simple, easily understood financial models with the complex, non-linear reality of p; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 89: claim has no citation: **Reserve Study Frameworks:** The industry-standard "Percent Funded" calculation relies on a simple, straight-line linea; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 89: claim has no citation: The trade-off is that this **linear math creates an "illusion of adequacy."** Real-world assets like roofs, asphalt, and; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 90: claim has no citation: **Integrated Software Approaches:** Traditionally, reserve studies are delivered as static PDFs or Excel spreadsheets up; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 90: claim has no citation: While these are simple to generate and store, they **become outdated the moment real-world costs shift or emergency repa; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 90: claim has no citation: The emerging alternative—dynamic, AI-driven software platforms like Solume or SmartProperty—trades this simplicity for "; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 93: claim has no citation: This tension surfaces when boards must balance the need to act quickly during crises against the legal requirement to be; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 94: claim has no citation: **Legal Compliance & Governance:** Under California law, formal checks and balances require boards to provide 30 to 60 d; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 94: claim has no citation: However, the law provides an exception for "emergency assessments" (e.g., immediate threats to health and safety or cour; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 95: claim has no citation: **The Tensions in Practice:** This necessary agility is frequently exploited as a loophole.; update[5] (wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md): [citation-grounding] line 95: claim has no citation: **Boards sometimes misuse emergency powers to bypass democratic homeowner approval**, wrongly categorizing non-urgent ca
+
+## [2026-05-10T23:20:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=start | domain=condo
+
+start research session for prompt 'How should a condo HOA integrate reserve-fund management, special-assessment policy, and long-term preventive + capital maintenance and vendor management into a single proactive long-horizon planning system? Survey best practices, frameworks, data models, and existing software approaches; identify gaps that a purpose-built integrated planning system could close.'
+
+## [2026-05-10T23:20:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-10T23:20:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-10T23:20:26Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-10T23:20:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-10T23:20:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=search | adapter=youtube | n=100
+
+adapter youtube returned 100 candidates
+
+## [2026-05-10T23:20:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=merge | n=262
+
+merged 262 candidate(s) across adapters
+
+## [2026-05-10T23:29:10Z] nlm-add | id=pdf-4e6be23fff80 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-4e6be23fff80.pdf title='Consultation Paper - Condo Act.cdr'
+
+## [2026-05-10T23:32:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://findhoalaw.com/regular-and-special-assessments/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:33:09Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.rocketmortgage.com/learn/hoa-special-assessment
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:33:57Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://oakmontvillage.com/wp-content/uploads/2025/05/HOA-Management-RFP-Sample.docx
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:34:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.hoalife.com/blog/hoa-rfp
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:35:37Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.condocontrol.com/template/hoa-vendor-contracts/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:36:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.hoaleader.com/members/SAMPLE-RFP-for-HOA-Management-Company-Provided-by-Jenny-Key-RealManage.cfm
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:37:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.aapa.org/wp-content/uploads/2017/01/Template_Request_for_Proposal.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:38:03Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.managemate.app/en-us/post/condo-maintenance-checklist
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:38:51Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.securitymutual.com/wp-content/uploads/2023/11/Condominium-Owner-PM-Checklist.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:39:39Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.reserveadvisors.com/resources/blog/preventative-maintenance-in-community-associations/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:40:27Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.fsresidential.com/tennessee/news-events/articles/preventive-maintenance-plan/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:41:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.thesilverlining.com/hubfs/pdfs/Technical_Bulletins/WB-2987%20Maintenance%20Requirements%20(table)%20tech%20bulletin%205-21.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:42:02Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.structuremag.org/article/the-champlain-towers-south-collapsea-forensicengineering-analysis/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:42:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pmc.ncbi.nlm.nih.gov/articles/PMC9868448/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:43:38Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.nist.gov/disaster-failure-studies/champlain-towers-south-collapse
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:44:27Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.reddit.com/r/agedlikemilk/comments/12tlzzv/extremely_well_maintained_building_collapsed_22/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:45:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.palmbeachpost.com/picture-gallery/news/2021/07/01/condo-collapse-victims-photos-surfside-miami-florida/7832693002/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:46:03Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.cushmanwakefield.com/en/united-states/services/global-occupier-services/integrated-facilities-management
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:46:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.jll.com/en-us/services/facilities-management/integrated
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:47:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.ibm.com/think/topics/integrated-facilities-management
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:48:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://eptura.com/discover-more/blog/integrated-facilities-management-guide/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:49:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.buildinglink.io/blog/6-game-changing-condo-management-software-integrations
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:50:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.reserveadvisors.com/resources/blog/what-is-a-reserve-study-and-why-is-it-important/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:50:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Studies-101-Webinar-Outline.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:51:41Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://americanhoamanagement.net/glossary-of-reserve-study-terms/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:52:30Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.reserveanalyst.com/index.php/hashtagtwo/funding-discussions/national-reserve-study-standards
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:53:18Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.semanticscholar.org/paper/198112088
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:54:05Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.34293/management.v7i3.1620
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:54:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.semanticscholar.org/paper/166434390
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:55:41Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.semanticscholar.org/paper/108606824
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:56:33Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.semanticscholar.org/paper/111615931
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:57:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.22495/jgrv14i2siart10
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:58:10Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.20448/ijsam.v9i2.7937
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:58:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1108/jfep-03-2023-0071
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-10T23:59:48Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.46754/jssm.2024.10.002
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:00:36Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.54728/jfmg.202407.00079
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:01:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/28141673/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:02:12Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.17559/tv-20181015174733
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:03:01Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1080/10511482.2018.1530273
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:03:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.2478/v10189-010-0018-0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:04:37Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1093/geroni/igad104.0755
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:05:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1108/14630010610714871
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:06:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1109/CEPSI66359.2025.11403076
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:07:03Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.3390/su13179575
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:07:51Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.17323/2587-814x.2025.1.50.71
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:08:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1080/03461238.2025.2450387
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:09:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1108/jfm-01-2020-0004
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:10:18Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.3390/su162410892
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:11:06Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1007/s43615-024-00499-8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:11:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1016/j.energy.2023.126829
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:12:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.3390/su17135820
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:13:33Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/39845680/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:14:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.5430/afr.v14n2p40
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:15:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1007/s00187-025-00404-w
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:15:57Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/37851651/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:16:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.30688/janzssa.2025-1-03
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:17:38Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.3390/en13123125
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:18:26Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.semanticscholar.org/paper/16983677
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:19:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.3390/BUILDINGS9050111
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:20:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1016/J.BUILDENV.2016.05.001
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:20:56Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1061/40798(190)52
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:21:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1088/1742-6596/2042/1/012169
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:22:33Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.31305/trjtm2024.v04.n02.001
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:23:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.24818/mer/2022.06-04
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:24:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.22214/ijraset.2019.9127
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:24:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/34290196/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:25:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1016/j.tust.2025.106882
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:26:35Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.63125/njg70d76
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:27:23Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/14643803/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:28:11Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/12970216/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:29:01Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1002/qre.70102
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:29:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.55529/jipirs.45.25.40
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:30:38Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.33430/v30n3thie-2022-0053
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:31:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.3389/fbuil.2022.959475
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:32:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.semanticscholar.org/paper/171087516
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:33:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://doi.org/10.1177/1478077116663345
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:33:56Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=4vbuCxZm9Rw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:34:44Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=6gV1FTlFfhc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:35:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=zyzHRxlEK7c
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:36:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=X8DSNFIgCas
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:37:08Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=J_WnocfFpXM
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:37:55Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=gRpJM6wUJ_Q
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:38:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=1hUOvGepMNQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:39:34Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=u1v7AULwiSs
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:40:21Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=QA_WQotNOoE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:41:10Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=TUAaBS2ov1Q
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:41:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=7Fjtw10eKxw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:42:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=UDJN92rwVJc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:43:35Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=kv_deOrhFUE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:44:23Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=QgLTylE0pvk
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:45:10Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=ncWTjTPQLaw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:45:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=y1kxZJfiOUE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:46:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=8Ko2A2TRpEQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:47:35Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=raoRGUNnQJs
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:48:26Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=gFqOm9IOub4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:49:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=jo7af7EJz70
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:50:03Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=lg2T9TmDVU0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:50:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=mFBhhR9rpDQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:51:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=8B2KGqEXIjY
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:52:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=hucfTz4sPfU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:53:17Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=lip7cIdcdP0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:54:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=BabGudg0DMI
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:54:52Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=vl2slq8wUqU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:55:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=XHzUBX56CLI
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:56:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=Oz7S9q8WxB8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:57:17Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=4bAyrCIymv8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:58:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=lW4_1kbhl44
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:58:54Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=cpPpaAkXFp8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T00:59:43Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=JJzxwWRjMJ4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:00:31Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=2-yA91digp0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:01:19Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=5c9QHo06g2U
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:02:09Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=MPlrR010Ugc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:02:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=nnuML-QkkoM
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:03:46Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=XYqBhVAXHvQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:04:36Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=5UaKsM3T230
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:05:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=IvI7c91XBaI
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:06:16Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=XR1ed0Indug
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:07:05Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=OfzcO-NGt58
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:07:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=e8Ix_9c9fnU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:08:42Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=HgAm4gIq3y4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:09:30Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=_7z-C4L1-fE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:10:19Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=iWuz7l0JxhI
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:11:07Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=j71w_lCiam4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:11:56Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=QEL24NPS9pg
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:12:45Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=WezZjWkiCiY
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:13:33Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=JE85A70AFLA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:14:22Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=ooCZmQxW4pE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:15:10Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=mQP0wqNT_DI
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:15:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=Vhstcm04a9c
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:16:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=Jqfg70H4qSQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:17:42Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=DxBclk9ad6M
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:18:30Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=CW-jf3vxdVk
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:19:18Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=TthJ2XOgaZM
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:20:05Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=dj3tfg-Jn3U
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:20:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=WXgPneSKzrA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:21:44Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=-KuCNT4FZiU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:22:34Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=Lhi9MD4M8sQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:23:24Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=esFj11HWSAk
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:24:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=1m3lYnl7fz8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:25:03Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=QJ41EAh8-eY
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:25:56Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=peBFJGIatgA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:26:44Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=p1cXIQrL6Mg
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:27:32Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=PEPyE2h6P4k
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:28:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=EeJD0-Dg4K0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:29:09Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=pgz5Xq4GUio
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:29:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=GzS0IWcnP9g
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:30:47Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=uOye5PLTA8E
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:31:35Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=mP1D_h4g4Mo
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:32:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=rueRn0PLT4c
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:33:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=D7V1OmBCVG8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:34:01Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=HUK0XFR_q0g
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:34:49Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=fddJ6CXIwyU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:35:37Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=hALwSeLRPVU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:36:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=eKDsewwBodQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:37:14Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=it2zHEQasFE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:38:03Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=QOFWkDR3OFQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:38:52Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=n6pOiJQuinE
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:39:39Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=g1c1cazxVfA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:40:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=mKTyOiheJS8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:41:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=mn05oCjzutU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:42:09Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=eYwKX_P8YkU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:43:02Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=fm4hxh3_19o
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:43:50Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=gDfhNGMO_0g
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:44:40Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=eCbzOqn6w7M
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:45:28Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=s5cuYsYjcfw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:46:16Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=TQTpO_HC-UU
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:47:04Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=KL_Tm64AJF4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:47:53Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=SMYDm2rNtGQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:48:41Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=hw9YGqwERbQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:49:32Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=3o0ESz9Udiw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:50:20Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=1xSuzKXcLb0
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:51:07Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=7BNr-_3isu8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:51:55Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | target=https://www.youtube.com/watch?v=-QD92k8joB4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T01:51:55Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=filter | n=30
+
+30 candidate(s) cleared threshold
+
+## [2026-05-11T01:51:56Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+## [2026-05-11T01:51:58Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-11T01:52:00Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Reserve-Fund-Strength-What-Exactly-is-Percent-Funded.pdf
+
+## [2026-05-11T01:52:00Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.dre.ca.gov/files/pdf/re25.pdf
+
+error: no extractable content at https://www.dre.ca.gov/files/pdf/re25.pdf
+
+## [2026-05-11T01:52:01Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2018/12/Funding-Plan-What-is-Full-Funding-and-Baseline-Funding-1.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2018/12/Funding-Plan-What-is-Full-Funding-and-Baseline-Funding-1.pdf
+
+## [2026-05-11T01:52:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/c1ff52eb-702e-4b4c-a1f0-e2608628b325/UCIOA_Final_08_with-Comments_Updated.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/c1ff52eb-702e-4b4c-a1f0-e2608628b325/UCIOA_Final_08_with-Comments_Updated.pdf
+
+## [2026-05-11T01:52:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=convert | target=https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/4cebbffb-2761-4c42-98d3-0404098782de/Summary-of-State-Reserve-Fund-Laws-Sept24.pdf
+
+## [2026-05-11T01:52:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=materialize | n=23
+
+materialized 23 source(s) to raw/
+
+## [2026-05-11T01:52:13Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_persistent | notebook_id=3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+persistent notebook 3a25d83f-94d9-49d1-8756-cfd112c753ca
+
+## [2026-05-11T01:52:15Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=nlm_session | notebook_id=65279680-797a-4f5e-909f-9d7bb9e55888
+
+created session notebook 65279680-797a-4f5e-909f-9d7bb9e55888
+
+## [2026-05-11T01:54:25Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_add | n=23 | skipped=0
+
+pushed 23 source(s) to session notebook (0 skipped)
+
+## [2026-05-11T01:54:26Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=source_map | n=23
+
+built source map (23 entries)
+
+## [2026-05-11T02:04:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-11T02:04:29Z] wiki-author | id=research-2026-05-08-how-should-a-condo-hoa-integrate | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+corpus-constructive research session for condo
+
+## [2026-05-11T02:04:29Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-05-08-how-should-a-condo-hoa-integrate: 6 update(s)
+
+## [2026-05-11T02:06:43Z] research | session_id=2026-05-08-how-should-a-condo-hoa-integrate | step=abandon
+
+abandoned session: promote: `nlm source add 3a25d83f-94d9-49d1-8756-cfd112c753ca --url https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML --wait` exited 1: Adding https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-11T17:06:35Z] finalize | page=wiki/mocs/condo.md
+
+finalized wiki/mocs/condo.md
+
+## [2026-05-11T17:10:29Z] filter-correction | id=web-2024-04-17-715 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale='Open Alberta provincial fact sheet on Condominium Property Act reserve-fund obligations. AB is in scope under ADR-0004 Canada-first sequence reorder; the fact sheet anchors AB inventory in Brief-0006 § 3.3. Pointer-to-statute is acceptable as a secondary source — complementary to having the CPA statute proper.'
+
+## [2026-05-11T17:11:20Z] ingest | id=web-2026-05-11-852 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.82
+
+raw=raw/web/web-2026-05-11-852.md wiki=wiki/sources/web-2026-05-11-852.md
+
+## [2026-05-11T17:13:33Z] wiki-author | id=web-2026-05-11-852 | updates=4 | created=0 | updated=4 | contradictions=2 | draft=no
+
+NRC Sadeghi methodology paper accompanying the previously-ingested envelope RSL dataset reveals significant EPD data-quality limitations (half of EPDs lack RSL; many default to unjustified 75-year lifespans; identical products show widely varying values) that must be added to the dataset entity, the RSL concept, and the deck/balcony prior calibration concept — and that materially qualify the prior framing that the dataset is 'directly ingestible'.
+
+## [2026-05-11T17:13:45Z] ingest | id=web-2011-08-18-1e7 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2011-08-18-1e7.md wiki=wiki/sources/web-2011-08-18-1e7.md
+
+## [2026-05-11T17:18:13Z] wiki-author | id=web-2011-08-18-1e7 | updates=4 | created=2 | updated=2 | contradictions=0 | draft=no
+
+NLR 80/11 is a primary Atlantic Canada reserve-fund-study regulation with no existing wiki coverage; creates the NL sibling pages to BC SPA / CA Davis-Stirling / FL SIRS and cross-links them.
+
+## [2026-05-11T17:18:27Z] ingest | id=web-2017-07-26-1f3 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2017-07-26-1f3.md wiki=wiki/sources/web-2017-07-26-1f3.md
+
+## [2026-05-11T17:21:56Z] wiki-author | id=web-2017-07-26-1f3 | updates=5 | created=1 | updated=4 | contradictions=0 | draft=no
+
+Service NB FAQ establishes the New Brunswick Condominium Property Act (c16.05) reserve-fund-study regime — a new statutory regulation entity — and provides Atlantic Canada comparator material that warrants cross-references on the existing BC SPA, CA Davis-Stirling § 5550, NL Condominium Act 2009, and NL Condominium Regulations NLR 80/11 pages.
+
+## [2026-05-11T17:22:03Z] ingest | id=web-2018-03-31-c63 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-03-31-c63.md wiki=wiki/sources/web-2018-03-31-c63.md
+
+## [2026-05-11T17:26:58Z] wiki-author | id=web-2018-03-31-c63 | updates=5 | created=0 | updated=5 | contradictions=1 | draft=no
+
+CMHC's NB fact sheet authoritatively expands the NB Act entity with disclosure/sale, lien, special-assessment, dispute-resolution, and substantial-change reserve-fund scope claims, and corroborates the NB comparator claims already standing on the BC SPA, CA Davis-Stirling, NL Act, and NLR 80/11 pages.
+
+## [2026-05-11T17:27:47Z] ingest | id=pdf-fletcher-olivia-2025-h0913c-com | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/pdf/pdf-fletcher-olivia-2025-h0913c-com.md wiki=wiki/sources/pdf-fletcher-olivia-2025-h0913c-com.md
+
+## [2026-05-11T17:30:10Z] nlm-add | id=pdf-gordon-wright-2018-condominium-act-regulations | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-gordon-wright-2018-condominium-act-regulations.pdf title='Condominium Act Regulations'
+
+## [2026-05-11T17:30:19Z] nlm-add | id=pdf-gordon-wright-2024-condominium-act | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-gordon-wright-2024-condominium-act.pdf title='Condominium Act'
+
+## [2026-05-11T17:31:03Z] wiki-author | id=pdf-fletcher-olivia-2025-h0913c-com | updates=4 | created=1 | updated=3 | contradictions=1 | draft=no
+
+Florida House staff analysis of CS/CS/HB 913 (2025) provides authoritative statutory detail on SIRS thresholds, reserve-pooling, alternative funding, conflict-of-interest, milestone-inspection enforcement, and DBPR rulemaking — directly grounding and substantially expanding the FL-SIRS, DBPR, milestone-inspection entity pages, and creating a new comprehensive bill entity.
+
+## [2026-05-11T17:31:17Z] ingest | id=pdf-b922a12f47f0 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.85
+
+raw=raw/pdf/pdf-b922a12f47f0.md wiki=wiki/sources/pdf-b922a12f47f0.md
+
+## [2026-05-11T17:39:56Z] wiki-author | id=pdf-b922a12f47f0 | updates=4 | created=1 | updated=3 | contradictions=0 | draft=no
+
+Integrate the Florida DBPR SIRS Reporting Form (Revised 9/2024) as a new regulatory-artifact entity and propagate its form-level data fields, preparer-credential taxonomy, submission mechanics, and statutory cite anchoring into the SIRS, DBPR Division, and HB 913 entity pages.
+
+## [2026-05-11T17:40:18Z] ingest | id=pdf-dre-2010-reserve-study-guidelines | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.92
+
+raw=raw/pdf/pdf-dre-2010-reserve-study-guidelines.md wiki=wiki/sources/pdf-dre-2010-reserve-study-guidelines.md
+
+## [2026-05-11T17:46:04Z] wiki-author | id=pdf-dre-2010-reserve-study-guidelines | updates=6 | created=4 | updated=2 | contradictions=0 | draft=no
+
+Source is the California DRE's official 2010 interpretive guidance on Civil Code § 1365 / § 1365.5 (predecessor to Davis-Stirling § 5550); updates anchor the predecessor-regime context on the § 5550 entity, document state-government adoption of CAI methodology baseline, and create publisher/publication/professional-body entities plus a foundational two-part reserve-study-structure concept that supports the Y2 California expansion arc.
+
+## [2026-05-11T17:46:24Z] ingest | id=pdf-condominium-authority-2024-report-on-resrve | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.88
+
+raw=raw/pdf/pdf-condominium-authority-2024-report-on-resrve.md wiki=wiki/sources/pdf-condominium-authority-2024-report-on-resrve.md
+
+## [2026-05-11T17:51:24Z] wiki-author | id=pdf-condominium-authority-2024-report-on-resrve | updates=5 | created=3 | updated=2 | contradictions=0 | draft=no
+
+CAO 2024 survey is the first authoritative ON regulator primary source in the wiki — introduces three new ON entities (CAO regulator, Condominium Act 1998 statute, the survey publication) and provides empirical inflation-drift and contribution-adequacy data anchoring the Year-2 ON expansion arm of the Canada-first GTM under ADR-0004.
+
+## [2026-05-11T17:51:42Z] ingest | id=pdf-national-assembly-2020-bill-16-assented | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/pdf/pdf-national-assembly-2020-bill-16-assented.md wiki=wiki/sources/pdf-national-assembly-2020-bill-16-assented.md
+
+## [2026-05-11T17:56:50Z] wiki-author | id=pdf-national-assembly-2020-bill-16-assented | updates=6 | created=2 | updated=4 | contradictions=0 | draft=no
+
+Quebec Bill 16 (2019, c.28) is the operative statutory anchor for the QC Civil Code reserve-fund-study (contingency fund study) regime explicitly named in the policy and ADR-0004 Canada-first sequence; create the QC Bill 16 entity and the QC Civil Code divided-co-ownership reserve-fund-study entity, and update the cross-jurisdictional comparator pages (BC SPA, ON Condo Act 1998, NB CPA c16.05, NL Condominium Regulations NLR 80/11) to incorporate Quebec into the Canadian reserve-study statutory cluster.
+
+## [2026-05-11T17:57:07Z] nlm-add | id=pdf-fletcher-olivia-2025-h0913c-com | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-fletcher-olivia-2025-h0913c-com.pdf title='h0913c.COM'
+
+## [2026-05-11T17:57:14Z] nlm-add | id=pdf-b922a12f47f0 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-b922a12f47f0.pdf title='fl-dbpr-sirs-reporting-form'
+
+## [2026-05-11T17:57:23Z] nlm-add | id=pdf-dre-2010-reserve-study-guidelines | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-dre-2010-reserve-study-guidelines.pdf title='Reserve Study Guidelines for Homeowner Association Budgets'
+
+## [2026-05-11T17:57:33Z] nlm-add | id=pdf-condominium-authority-2024-report-on-resrve | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-condominium-authority-2024-report-on-resrve.pdf title='Report on Resrve Fund Survey Findings'
+
+## [2026-05-11T17:57:39Z] nlm-add | id=pdf-national-assembly-2020-bill-16-assented | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-national-assembly-2020-bill-16-assented.pdf title='Bill 16 - Assented to (2019, chapter 28)'
+
+## [2026-05-11T18:40:41Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-11T18:41:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-11-what-is-the-established-methodology-stack.yaml
+
+## [2026-05-11T18:41:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-11T18:41:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-11T18:41:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-11T18:41:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-11T18:41:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-11T18:41:49Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-11T18:41:49Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-11T19:00:25Z] query | domain=condo | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,46,47,48,49,50
+
+lint-warning: query response cited 48 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-11T19:00:25Z] wiki-author | id=query-2026-05-11-what-are-the-best-practices-for | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo corpus
+
+## [2026-05-11T19:08:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | n=24
+
+24 candidate(s) cleared threshold
+
+## [2026-05-11T19:08:02Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1177/03611981221088222
+
+error: could not fetch https://doi.org/10.1177/03611981221088222
+
+## [2026-05-11T19:08:02Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1111/mice.13497
+
+error: no extractable content at https://doi.org/10.1111/mice.13497
+
+## [2026-05-11T19:08:02Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1109/ACCESS.2019.2955932
+
+error: could not fetch https://doi.org/10.1109/ACCESS.2019.2955932
+
+## [2026-05-11T19:08:02Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.semanticscholar.org/paper/271965301
+
+error: could not fetch https://www.semanticscholar.org/paper/271965301
+
+## [2026-05-11T19:10:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-11T19:10:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-11T19:10:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-11T19:10:13Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-11T19:10:17Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-11T19:10:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-11T19:10:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-11T19:21:15Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ascmo.copernicus.org/articles/11/23/2025/ascmo-11-23-2025.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:22:09Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/html/2504.01781v1
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:23:00Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.astm.org/e0917-17e01.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:23:48Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://faculty.cnr.ncsu.edu/yuanyao/wp-content/uploads/sites/14/2019/05/Life-Cycle-Cost-Analysis.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:24:38Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://users.encs.concordia.ca/~raojw/crd/reference/reference000822.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:25:27Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://webstore.ansi.org/standards/astm/astme91715?srsltid=AfmBOoraPEoZLtSEWO9QqHDio33RB_mdPZwQnzbHzlp7Z5wmGLmJpq3r
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:26:16Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.fs.usda.gov/t-d/pubs/htmlpubs/htm08732839/page01.htm
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:28:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-11T19:28:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-11T19:28:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-11T19:28:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-11T19:28:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-11T19:28:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-11T19:28:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-11T19:29:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-11T19:29:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-11T19:29:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-11T19:29:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-11T19:29:46Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-11T19:29:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-11T19:29:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-11T19:30:07Z] lint | scope=all | orphans=419 | stale-drafts=173 | stale-claims=2 | contradictions=23 | missing-pages=53 | citation-density=36 | schema-drift=0 | filter-calibration=11 | inbox-pending=0 | nlm-pending=3 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-11T19-30-07Z.md
+
+## [2026-05-11T19:35:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2003.14118
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:36:50Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2603.12422
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:37:37Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1902.04347
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:38:25Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1510.06971
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:39:13Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/physics/0306182
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:40:00Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1105.1697
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:40:48Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/hep-lat/0202016
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:41:35Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1712.03246
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:42:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1607.02299
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:43:10Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2002.10783
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:43:57Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1508.01657
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:44:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1803.09650
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:45:32Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1009.3247
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:46:20Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1402.5300
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:47:07Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1712.05676
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:47:55Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2110.15025
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:48:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1510.03146
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:49:30Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2407.00650
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:50:17Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2504.01781
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:51:04Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/0710.3183
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:51:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1912.05642
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:52:39Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2410.09133
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:53:26Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:54:14Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:55:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.researchgate.net/publication/245306224_Modeling_Bridge_Deterioration_with_Markov_Chains
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:55:49Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:56:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://connect.ncdot.gov/projects/research/RNAProjDocs/2014-07FinalReport.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:57:24Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:58:11Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2009.04547
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:58:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://par.nsf.gov/servlets/purl/10335672
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T19:59:46Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ideas.repec.org/a/eee/reensy/v130y2014icp214-224.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:00:33Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.research-collection.ethz.ch/bitstreams/392e1baf-3b28-4720-8b2e-61d38ce59d6c/download
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:01:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://sites.stat.washington.edu/raftery/Research/PDF/Gneiting2007jasa.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:02:08Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.tandfonline.com/doi/abs/10.1198/016214506000001437
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:02:56Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://apps.dtic.mil/sti/pdfs/ADA459827.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:03:43Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ascmo.copernicus.org/articles/11/23/2025/ascmo-11-23-2025.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:04:30Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/html/2504.01781v1
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:05:17Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.astm.org/e0917-17e01.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:06:04Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://faculty.cnr.ncsu.edu/yuanyao/wp-content/uploads/sites/14/2019/05/Life-Cycle-Cost-Analysis.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:06:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://users.encs.concordia.ca/~raojw/crd/reference/reference000822.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:07:38Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://webstore.ansi.org/standards/astm/astme91715?srsltid=AfmBOoraPEoZLtSEWO9QqHDio33RB_mdPZwQnzbHzlp7Z5wmGLmJpq3r
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:08:25Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.fs.usda.gov/t-d/pubs/htmlpubs/htm08732839/page01.htm
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:09:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.wbdg.org/FFC/DOD/UFC/ufc_1_201_02_2014.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:09:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.army.mil/article/117669/dod_adopts_army_corps_of_engineers_builder_sms_standard_for_all_facility_condition_assessments
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:10:47Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.wbdg.org/FFC/DOD/UFC/ufs_1_201_02_2025.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:11:34Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://4bt.us/dod-fsrm-builder-sms-and-the-legacy-of-wasteful-politics/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:12:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://static1.squarespace.com/static/5c132fc912b13fa9299787a3/t/5fff470ee7242f711d21b825/1610565393077/Notes+on+the+Builder+Condition+Assessment+System+20210204.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:13:08Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832017304076
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:13:55Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/journal/reliability-engineering-and-system-safety/special-issue/102RPZ4PR1Z
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:14:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.mdpi.com/2073-8994/16/10/1364
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:15:30Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ieeexplore.ieee.org/document/9694399/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:16:17Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.researchgate.net/publication/268239111_Assessment_of_the_system_degradation_level_using_the_Bayesian_approach
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:17:04Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.tandfonline.com/doi/abs/10.1080/23789689.2022.2067950
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:17:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ascelibrary.org/toc/jitse4/8/2
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:18:39Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:19:27Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://ascelibrary.org/doi/abs/10.1061/%28ASCE%29IS.1943-555X.0000242
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:20:18Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://demstedpprodaue12.blob.core.windows.net/mesac-public/resources/files/4356106/RB9100096.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:21:06Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/science/article/abs/pii/S019689042300701X
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:21:53Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://biozoojournals.ro/oscsn/cont/31_2/03_Kosova.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:22:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.youtube.com/watch?v=AGv9mSUR8kQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:23:27Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://zhijingeu.medium.com/building-a-probabilistic-risk-estimate-using-monte-carlo-simulations-with-python-mcerp-7d57e63112fa
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:24:15Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.nature.com/articles/s41598-024-77427-1
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:25:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/science/article/abs/pii/S0020025523013804
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:25:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://pmc.ncbi.nlm.nih.gov/articles/PMC11174398/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:26:38Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://research.chalmers.se/en/publication/548776
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:27:25Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://asmedigitalcollection.asme.org/computingengineering/article/26/4/040802/1231944/A-Review-on-the-Remaining-Useful-Life-Prediction
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:28:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832025005903
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:28:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://asmedigitalcollection.asme.org/mechanicaldesign/article/137/6/061405/375446/A-Vine-Copula-Based-Reliability-Analysis-Method
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:29:46Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.scipedia.com/wd/images/b/b7/Draft_content_545297368I250022.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:30:34Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2020.571911/full
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:31:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.emerald.com/ijsi/article/doi/10.1108/IJSI-06-2025-0155/1332685/System-reliability-based-topology-optimization
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:32:08Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.iso.org/standard/75066.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:32:55Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.ap238.org/iso23247/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:33:43Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.nist.gov/publications/analysis-new-iso-23247-series-standards-digital-twin-framework-manufacturing
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:34:30Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.iso.org/standard/87426.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:35:17Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2508.14580
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:36:04Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.swpc.noaa.gov/sites/default/files/images/u30/Ensemble%20Forecast%20Verification.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:36:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://charts.ecmwf.int/products/mofc_multi_verification_probability_family_reliability
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:37:38Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.rdocumentation.org/packages/SpecsVerification/versions/0.5-3/topics/ReliabilityDiagram
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:38:25Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.weather.gov/media/owp/oh/rfcdev/docs/probver_doh2004_kevin.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:39:13Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://rdrr.io/cran/SpecsVerification/man/ReliabilityDiagram.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:40:00Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.14416/j.kmutnb.2023.01.001
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:40:47Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1177/03611981221088222
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:41:34Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1111/mice.13497
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:42:22Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.28991/cej-2024-010-09-012
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:43:09Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1088/1757-899X/812/1/012012
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:43:56Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1109/ISEMC58300.2023.10370700
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:44:43Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1016/J.COMPGEO.2020.103963
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:45:30Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1016/j.buildenv.2021.108349
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:46:17Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2412.14339
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:47:05Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1109/ACCESS.2019.2955932
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:47:52Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1063/5.0276110
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:48:39Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/38472418/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:49:26Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2508.05908
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:50:13Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.4043/35709-ms
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:51:00Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.3390/app152212315
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:51:47Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.semanticscholar.org/paper/271965301
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:52:35Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/2603.11884
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:53:22Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.semanticscholar.org/paper/271895101
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:54:10Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.semanticscholar.org/paper/252050124
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:54:57Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1198/016214506000001437
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:55:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://arxiv.org/abs/1102.5031
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:56:32Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.semanticscholar.org/paper/14530697
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:57:19Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/40866559/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:58:06Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.46254/eu08.20250374
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:58:53Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/39297474/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T20:59:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1007/s00362-022-01345-5
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:00:27Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1080/03610918.2024.2306541
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:01:14Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/28048581/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:02:02Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1118/1.2241189
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:02:49Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.semanticscholar.org/paper/12107700
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:03:36Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.3390/su14074334
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:04:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1016/J.ENCONMAN.2016.04.038
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:05:11Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://doi.org/10.1080/00036846.2024.2305615
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:05:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | target=https://www.semanticscholar.org/paper/248980779
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-11T21:06:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-11T21:06:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-11T21:06:42Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-11T21:06:46Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-11T21:06:50Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-11T21:06:52Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-11T21:06:52Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-11T21:10:42Z] wiki-author | id=query-2026-05-11-produce-a-supplementary-update-to-the | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+query against condo corpus
+
+## [2026-05-11T21:11:09Z] finalize-abandon | page=wiki/synthesis/2026-05-10-update-the-existing-quantified-pm-cadences.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-10-update-the-existing-quantified-pm-cadences.md
+
+## [2026-05-11T21:13:50Z] ingest | id=pdf-e3717ebcf2bc | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/pdf/pdf-e3717ebcf2bc.md wiki=wiki/sources/pdf-e3717ebcf2bc.md
+
+## [2026-05-11T21:13:52Z] lint | scope=stale-drafts | stale-drafts=173
+
+report=.knowledge/lint/2026-05-11T21-13-52Z-stale-drafts.md
+
+## [2026-05-11T21:19:03Z] ingest | id=web-2026-01-01-577 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.82
+
+raw=raw/web/web-2026-01-01-577.md wiki=wiki/sources/web-2026-01-01-577.md
+
+## [2026-05-11T21:20:32Z] wiki-author | id=pdf-e3717ebcf2bc | updates=4 | created=1 | updated=3 | contradictions=0 | draft=yes
+
+Primary NS statute text — create the missing NS Condominium Act entity (load-bearing for the Halifax engagement and Year-1 GTM), anchor the existing NS Registrar and Active Corporations Dataset pages to its statutory authority (Parts I-II, §§3-10), and surface NS into the Atlantic-Canada cluster framing on NL Condominium Act 2009.
+
+## [2026-05-11T21:23:42Z] wiki-author | id=web-2026-01-01-577 | updates=5 | created=2 | updated=3 | contradictions=0 | draft=yes
+
+Source establishes the load-bearing May 23, 2023 proclamation of Nova Scotia Condominium Act amendments (including the more-frequent reserve-fund-study requirement) — the primary statutory anchor for the Year-1 NS arm of the Canada-first GTM under ADR-0004, which has no dedicated entity in the wiki yet; this plan creates the NS Act entity and its publishing chapter (CCI-Nova Scotia), updates the existing NS Registrar entity to anchor the responsible minister and the proclamation context, and propagates cross-references through the Atlantic-Canada cluster siblings (NB CPA c16.05, NL Condominium Act 2009).
+
+## [2026-05-11T21:26:31Z] ingest | id=web-2024-08-30-283 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/web/web-2024-08-30-283.md wiki=wiki/sources/web-2024-08-30-283.md
+
+## [2026-05-11T21:28:41Z] ingest | id=web-2017-01-13-f20 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2017-01-13-f20.md wiki=wiki/sources/web-2017-01-13-f20.md
+
+## [2026-05-11T21:28:41Z] ingest | id=web-2018-01-09-945 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.15
+
+raw=raw/web/web-2018-01-09-945.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:30:39Z] ingest | id=web-2018-01-09-945 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-01-09-945.md wiki=wiki/sources/web-2018-01-09-945.md
+
+## [2026-05-11T21:31:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | n=22
+
+22 candidate(s) cleared threshold
+
+## [2026-05-11T21:31:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+error: could not fetch https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+## [2026-05-11T21:31:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+error: could not fetch https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+## [2026-05-11T21:31:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.researchgate.net/publication/245306224_Modeling_Bridge_Deterioration_with_Markov_Chains
+
+error: could not fetch https://www.researchgate.net/publication/245306224_Modeling_Bridge_Deterioration_with_Markov_Chains
+
+## [2026-05-11T21:31:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+## [2026-05-11T21:31:32Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://connect.ncdot.gov/projects/research/RNAProjDocs/2014-07FinalReport.pdf
+
+error: no extractable content at https://connect.ncdot.gov/projects/research/RNAProjDocs/2014-07FinalReport.pdf
+
+## [2026-05-11T21:31:32Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+## [2026-05-11T21:31:33Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://par.nsf.gov/servlets/purl/10335672
+
+error: no extractable content at https://par.nsf.gov/servlets/purl/10335672
+
+## [2026-05-11T21:31:43Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://webstore.ansi.org/standards/astm/astme91715?srsltid=AfmBOoraPEoZLtSEWO9QqHDio33RB_mdPZwQnzbHzlp7Z5wmGLmJpq3r
+
+error: could not fetch https://webstore.ansi.org/standards/astm/astme91715?srsltid=AfmBOoraPEoZLtSEWO9QqHDio33RB_mdPZwQnzbHzlp7Z5wmGLmJpq3r
+
+## [2026-05-11T21:31:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://static1.squarespace.com/static/5c132fc912b13fa9299787a3/t/5fff470ee7242f711d21b825/1610565393077/Notes+on+the+Builder+Condition+Assessment+System+20210204.pdf
+
+error: no extractable content at https://static1.squarespace.com/static/5c132fc912b13fa9299787a3/t/5fff470ee7242f711d21b825/1610565393077/Notes+on+the+Builder+Condition+Assessment+System+20210204.pdf
+
+## [2026-05-11T21:31:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.mdpi.com/2073-8994/16/10/1364
+
+error: could not fetch https://www.mdpi.com/2073-8994/16/10/1364
+
+## [2026-05-11T21:31:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.tandfonline.com/doi/abs/10.1080/23789689.2022.2067950
+
+error: could not fetch https://www.tandfonline.com/doi/abs/10.1080/23789689.2022.2067950
+
+## [2026-05-11T21:31:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+## [2026-05-11T21:31:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://ascelibrary.org/doi/abs/10.1061/%28ASCE%29IS.1943-555X.0000242
+
+error: could not fetch https://ascelibrary.org/doi/abs/10.1061/%28ASCE%29IS.1943-555X.0000242
+
+## [2026-05-11T21:31:44Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832025005903
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0951832025005903
+
+## [2026-05-11T21:31:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1111/mice.13497
+
+error: no extractable content at https://doi.org/10.1111/mice.13497
+
+## [2026-05-11T21:31:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.semanticscholar.org/paper/271965301
+
+error: could not fetch https://www.semanticscholar.org/paper/271965301
+
+## [2026-05-11T21:31:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1061/jcemd4.coeng-15598
+
+error: could not fetch https://doi.org/10.1061/jcemd4.coeng-15598
+
+## [2026-05-11T21:31:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1139/L93-077
+
+error: could not fetch https://doi.org/10.1139/L93-077
+
+## [2026-05-11T21:31:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=materialize | n=4
+
+materialized 4 source(s) to raw/
+
+## [2026-05-11T21:31:45Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-11T21:31:46Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_session | notebook_id=2453dfa5-84db-4c80-bedb-fc78fb0f036a
+
+created session notebook 2453dfa5-84db-4c80-bedb-fc78fb0f036a
+
+## [2026-05-11T21:31:58Z] ingest | id=web-2023-05-02-683 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.82
+
+raw=raw/web/web-2023-05-02-683.md wiki=wiki/sources/web-2023-05-02-683.md
+
+## [2026-05-11T21:32:05Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_add | n=4 | skipped=0
+
+pushed 4 source(s) to session notebook (0 skipped)
+
+## [2026-05-11T21:32:07Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_map | n=4
+
+built source map (4 entries)
+
+## [2026-05-11T21:34:27Z] wiki-author | id=web-2023-05-02-683 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+Creates the missing CINC Systems entity page (primary acquirer target per ADR-0004 exit thesis) and adds Surfside-provenance plus multi-state regulatory cascade context to the Florida SIRS page.
+
+## [2026-05-11T21:36:35Z] ingest | id=web-2023-12-14-8ec | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.78
+
+raw=raw/web/web-2023-12-14-8ec.md wiki=wiki/sources/web-2023-12-14-8ec.md
+
+## [2026-05-11T21:36:43Z] wiki-author | id=web-2023-05-02-683 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+CINC Systems is the project's primary acquirer target but has no wiki page yet; this press release is the load-bearing primary source on CINC's scale, ownership, leadership, and its May 2023 SmartProperty reserve-study integration. It also adds the Surfside date and four new cross-jurisdictional spillover states (CO/HI/GA/MD) to the Florida SIRS regulatory-wave narrative.
+
+## [2026-05-11T21:38:36Z] wiki-author | id=web-2023-12-14-8ec | updates=3 | created=2 | updated=1 | contradictions=1 | draft=yes
+
+Source is the definitive press release for the Hg strategic growth investment in CINC Systems — the load-bearing acquirer-thesis fact for the Condo project — and provides updated scale, product, and board data that extends the May 2023 CINC entity page and warrants standalone Hg and Spectrum Equity entity pages.
+
+## [2026-05-11T21:38:47Z] ingest | id=web-2026-02-04-5bb | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/web/web-2026-02-04-5bb.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:39:09Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-11T21:39:09Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 3: claim has no citation: **Origin question:** What is the established methodology stack for probabilistic component-level capital forecasting in ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 3: claim has no citation: Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 3: claim has no citation: Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 12: claim has no citation: **Name and the key claim or contribution:** Infinite horizon POMDPs for structural inspection and maintenance.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 12: claim has no citation: The key claim is that POMDPs uniquely address the conundrum of optimally planning real-time inspection, monitoring, and ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 13: claim has no citation: **The core approach, mechanism, or supporting evidence:** The framework relies on stochastic optimal control where struc; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 13: claim has no citation: It accounts for uncertain observations, uncertain action outcomes, non-periodic inspections, and choice availability of ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 14: claim has no citation: **Any concrete details:** Papakonstantinou and Shinozuka (2014) applied a distinct, infinite horizon POMDP formulation c; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 14: claim has no citation: To find the minimum life-cycle cost policy, the problem was solved using a point-based value iteration solver [1].; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 17: claim has no citation: **Name and the key claim or contribution:** Dynamic Bayesian Network-POMDP joint framework.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 17: claim has no citation: The contribution is providing a principled mathematical methodology that overcomes the limitations of evaluating pre-def; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 18: claim has no citation: **The core approach, mechanism, or supporting evidence:** Rather than simplifying the decision problem with heuristic ru; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 19: claim has no citation: **Any concrete details:** Morato et al.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 19: claim has no citation: implemented and tested this methodology on a structural component subject to **fatigue deterioration** [2].; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 19: claim has no citation: The numerical experiments demonstrated that state-of-the-art point-based POMDP solvers achieved substantially **lower co; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 22: claim has no citation: **Name and the key claim or contribution:** Statistical deterioration forecasting using Hidden Markov Models (HMM) [3].; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 22: claim has no citation: The claim is that HMMs provide an established probabilistic method for structural deterioration forecasting.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 23: claim has no citation: **The core approach, mechanism, or supporting evidence:** The model utilizes Hidden Markov processes to predict unobserv; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 24: claim has no citation: **Any concrete details:** Developed by Kobayashi, Kaito, and Lethanh (2012), this method was explicitly designed as a st; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 27: claim has no citation: **Name and the key claim or contribution:** Competing Markov model for cracking prediction [3].; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 27: claim has no citation: The key claim is that specific physical deterioration mechanisms, such as cracking, can be mathematically modeled using ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 28: claim has no citation: **The core approach, mechanism, or supporting evidence:** The framework deploys a competing Markov process to predict th; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 29: claim has no citation: **Any concrete details:** Published by Kobayashi, Kaito, and Lethanh (2014), the model was successfully directed at pred; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 32: claim has no citation: **Name and the key claim or contribution:** Empirical-mechanistic model of overlay crack progression [3].; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 32: claim has no citation: The key contribution is synthesizing structural mechanics with empirical data to track pavement deterioration.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 33: claim has no citation: **The core approach, mechanism, or supporting evidence:** The methodology bridges physical structural mechanics with emp; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 34: claim has no citation: **Any concrete details:** Authored by Nakat, Madanat, Farshidi, and Harvey (2006), the model was developed utilizing rea; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 40: claim has no citation: Within the theme of **Component-Level Degradation Modeling**, the provided sources and our conversation history highligh; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 40: claim has no citation: The literature primarily contrasts advanced dynamic programming approaches against simpler heuristic rules, while also d; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 40: claim has no citation: corrosion) and the nature of the data available.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 45: claim has no citation: The most explicit methodological comparison in the corpus is between **Partially Observable Markov Decision Processes (P; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 47: claim has no citation: **Strengths & Weaknesses:** Morato et al.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 47: claim has no citation: note that traditional risk-based methodologies rely on pre-defined heuristic rules to simplify complex sequential decisi; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 47: claim has no citation: The major weakness of these heuristics is that the resulting policies are compromised by the "limited space considered i; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 47: claim has no citation: In contrast, POMDPs provide a principled mathematical methodology where optimal actions are prescribed based on the *ent; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 48: claim has no citation: **Outcomes & Evidence:** Morato et al.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 48: claim has no citation: ran numerical experiments on a structural component subject to fatigue deterioration.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 48: claim has no citation: Their results demonstrate that state-of-the-art point-based POMDP solvers achieve **substantially lower costs** compared; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 48: claim has no citation: Similarly, Papakonstantinou and Shinozuka state that their infinite-horizon POMDP yields an optimized policy consisting ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 49: claim has no citation: **Trade-offs:** The primary trade-off is computational complexity.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 49: claim has no citation: To solve highly complex POMDPs, researchers must resort to advanced algorithms like point-based value iteration solvers,; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 52: claim has no citation: Both **Hidden Markov Models (HMMs)** and **POMDPs** are utilized when structural states are partially unobservable, but ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 54: claim has no citation: **Differences in Approach:** As previously established, HMMs (e.g., Kobayashi et al., 2012) are utilized strictly as a s; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 54: claim has no citation: They link statistically observable condition data to underlying, unobservable infrastructure deterioration states.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 54: claim has no citation: POMDPs, however, go a step further by integrating this unobservability directly into an optimal control framework.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 55: claim has no citation: **Contexts:** POMDPs not only account for uncertain observations but also model uncertain action outcomes, non-periodic ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 55: claim has no citation: Therefore, HMMs are stronger when the primary goal is pure degradation *forecasting*, whereas POMDPs (and their joint us; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 58: claim has no citation: The sources detail different modeling architectures specifically tailored to the physical characteristics of the degrada; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 60: claim has no citation: **Corrosion (Highly Granular State Spaces):** For corroding reinforced concrete structures, Papakonstantinou and Shinozu; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 60: claim has no citation: This demonstrates that modeling chemical deterioration like corrosion requires a highly granular, infinite-horizon formu; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 61: claim has no citation: **Fatigue (Dynamic Bayesian Integration):** To model fatigue deterioration, Morato et al.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 61: claim has no citation: combined POMDPs with **Dynamic Bayesian Networks (DBNs)** [1].; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 61: claim has no citation: This joint framework acts as a strength when modeling structural fatigue, as it allows researchers to build both finite ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 62: claim has no citation: Competing Markov):** As noted in our previous discussion, cracking is modeled either by bridging physical mechanics with; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 62: claim has no citation: using the Washington State PMS) or through **Competing Markov Models** (Kobayashi et al., 2014), which mathematically ca; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 62: claim has no citation: The trade-off here is data reliance: empirical-mechanistic models require rich, pre-existing database observations, wher; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 73: claim has no citation: The sources explicitly identify a major limitation in traditional risk-based inspection methodologies: their reliance on; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 73: claim has no citation: note that to simplify the complex sequential decision-making required for deteriorating structures, practitioners often ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 73: claim has no citation: The unresolved tension here is that the resulting maintenance policies are inherently compromised by the "limited space ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 76: claim has no citation: While Partially Observable Markov Decision Processes (POMDPs) address the limitations of heuristics by prescribing optim; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 76: claim has no citation: Papakonstantinou and Shinozuka highlight that formulating an infinite horizon POMDP for a corroding structure required 3; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 76: claim has no citation: To actually solve a problem of this magnitude, the authors had to "resort to a point-based value iteration solver" and c; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 76: claim has no citation: This highlights an ongoing tension between the desired granularity of the deterioration model and the computational feas; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 83: claim has no citation: The entirety of the primary degradation modeling examples provided in the text are drawn from heavy civil, transportatio; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 83: claim has no citation: The sources mention "bridges to offshore platforms and wind turbines" [1], "highway bridge networks" (Pontis) [3], "pave; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 83: claim has no citation: The corpus does not address whether these highly complex, data-intensive state-space models (like a 332-state POMDP for ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 86: claim has no citation: Your research question outlines a specific methodology stack for component-level degradation, but the current corpus is ; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 87: claim has no citation: Weibull and lognormal survival models.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 88: claim has no citation: Bayesian hierarchical degradation for sparse component data.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 89: claim has no citation: Hybrid physics-ML and Physics-Informed Neural Networks (PINN) gray-box models.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 90: claim has no citation: Gaussian process regression for condition trajectories.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 91: claim has no citation: Deep Remaining Useful Life (RUL) methods like LSTMs or transformers.; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 94: claim has no citation: You specifically requested a prioritization of negative-result studies where deep learning underperformed Weibull or Bay; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 94: claim has no citation: The provided corpus contains no mentions of machine learning, deep learning, neural networks, or direct benchmark tests ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 3: claim has no citation: **Origin question:** What is the established methodology stack for probabilistic component-level capital forecasting in ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 3: claim has no citation: Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 3: claim has no citation: Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 12: claim has no citation: **Name and the key claim or contribution:** Infinite-horizon POMDPs for structural inspection and maintenance.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 12: claim has no citation: The central claim is that POMDPs effectively address the conundrum of planning optimal inspection, monitoring, and maint; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 13: claim has no citation: **The core approach, mechanism, or supporting evidence:** The methodology utilizes stochastic optimal control to process; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 13: claim has no citation: The framework explicitly supports uncertain action outcomes, uncertain observations, non-periodic inspections, and evalu; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 14: claim has no citation: **Any concrete details:** Papakonstantinou and Shinozuka explicitly formulated a 332-state infinite-horizon POMDP applie; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 14: claim has no citation: To calculate the minimum life-cycle cost, they utilized a point-based value iteration solver [1].; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 14: claim has no citation: They concluded that the resulting optimum policy was a "complex combination of a variety of actions, which cannot be ach; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 17: claim has no citation: **Name and the key claim or contribution:** Joint DBN-POMDP optimal planning framework.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 17: claim has no citation: The key contribution is providing a principled mathematical methodology that avoids the severe limitations of standard r; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 18: claim has no citation: **The core approach, mechanism, or supporting evidence:** Rather than artificially limiting the decision space with heur; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 19: claim has no citation: **Any concrete details:** Morato et al.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 19: claim has no citation: implemented and tested this methodology on a structural component subject to fatigue deterioration [2].; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 19: claim has no citation: By employing state-of-the-art point-based POMDP solvers for the numerical experiments, the researchers demonstrated that; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 25: claim has no citation: Based on the provided sources and our conversation history, the literature addressing the "Data Ingestion, Updating, and; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 30: claim has no citation: The most prominent methodological comparison in the corpus is between standard risk-based inspection methodologies (whic; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 32: claim has no citation: **Differences in Claims and Strengths:** Traditional risk-based methodologies evaluate pre-defined heuristic decision ru; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 32: claim has no citation: The inherent weakness of this approach is that the resulting policies are compromised by the artificially limited decisi; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 32: claim has no citation: In stark contrast, POMDPs provide a principled mathematical methodology that prescribes optimal actions as a function of; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 32: claim has no citation: POMDPs uniquely possess the strength to simultaneously handle uncertain action outcomes, uncertain observations, non-per; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 33: claim has no citation: **Evidence and Outcomes:** Morato et al.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 33: claim has no citation: thoroughly compared heuristic-based policies against their proposed POMDP framework through numerical experiments on a s; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 33: claim has no citation: The stated outcome was that POMDPs achieved **substantially lower costs** compared to heuristic-based counterparts, even; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 33: claim has no citation: Similarly, Papakonstantinou and Shinozuka state that solving their POMDP model yields an optimal policy containing a "co; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 36: claim has no citation: While both Papakonstantinou & Shinozuka and Morato et al.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 36: claim has no citation: advocate for POMDPs to ingest data and schedule inspections, their specific architectural approaches and application con; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 38: claim has no citation: **Contexts and Deterioration Modes:** Papakonstantinou and Shinozuka formulated a distinct, standalone infinite-horizon ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 38: claim has no citation: Morato et al., however, developed a joint framework combining **Dynamic Bayesian Networks (DBNs)** with POMDPs to model ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 39: claim has no citation: **Strengths in Integration:** Morato et al.’s joint DBN-POMDP approach specifically leverages the strengths of DBNs for ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 42: claim has no citation: Across both primary frameworks (standalone POMDPs and DBN-POMDPs), the major trade-off compared to simpler baselines is ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 44: claim has no citation: **Trade-offs Noted:** While heuristic decision rules or simpler Markov Decision Processes (MDPs) are computationally lig; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 44: claim has no citation: To actually realize the cost-saving benefits of POMDPs under uncertain data ingestion, researchers must resort to comple; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 44: claim has no citation: Both Papakonstantinou and Morato explicitly note the necessity of utilizing **point-based value iteration solvers** to e; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 44: claim has no citation: Papakonstantinou explicitly compared the performance and solution quality of these advanced point-based solvers against ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 47: claim has no citation: While these dynamic programming frameworks are highly advanced for data ingestion and inspection updating, the sources s; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 47: claim has no citation: The corpus does not currently provide evidence on how these highly granular models (like a 332-state POMDP) perform unde; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 56: claim has no citation: The sources explicitly identify a major limitation in traditional risk-based methodologies for scheduling inspections an; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 56: claim has no citation: point out that to simplify complex sequential decision-making, conventional approaches evaluate "a set of pre-defined he; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 56: claim has no citation: The unresolved tension here is that the resulting inspection and maintenance policies are inherently "compromised by the; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 59: claim has no citation: While Partially Observable Markov Decision Processes (POMDPs) solve the heuristic limitation by ingesting dynamically up; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 59: claim has no citation: Papakonstantinou and Shinozuka note that applying an infinite-horizon POMDP to just a single corroding reinforced concre; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 59: claim has no citation: To process this level of uncertain structural data and observation-gathering actions, researchers must resort to complex; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 59: claim has no citation: This highlights a tension between the theoretical optimality of the data-updating model and the computational feasibilit; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 66: claim has no citation: The corpus does not address how these advanced inspection updating frameworks scale to multi-unit residential buildings.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 66: claim has no citation: The primary evidence for these models relies strictly on heavy "civil and maritime engineering systems," explicitly list; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 66: claim has no citation: A careful reader would want to know if a 332-state POMDP is computationally or practically viable for the hundreds of va; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 69: claim has no citation: Your methodology stack specifically seeks methods for sensor fusion involving Building Automation Systems (BAS), IoT, vi; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 69: claim has no citation: The corpus entirely fails to address these modern data ingestion pipelines.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 69: claim has no citation: While Papakonstantinou and Shinozuka mention processing "uncertain observations" and evaluating different "inspection/mo; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 72: claim has no citation: For practical data ingestion in facility management, leveraging historical maintenance data is crucial.; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 72: claim has no citation: The corpus does not address how to ingest, format, or utilize work-order logs or Computerized Maintenance Management Sys; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 75: claim has no citation: The prompt specifically references digital-twin standards (NIST and ISO 23247) as part of the data ingestion and updatin; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-updating-and-inspection-scheduling.md): [citation-grounding] line 75: claim has no citation: The provided literature on ASTM standards (E917 for Life-Cycle Costs) [3-5] and dynamic programming [1, 2] contains no r; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 3: claim has no citation: **Origin question:** What is the established methodology stack for probabilistic component-level capital forecasting in ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 3: claim has no citation: Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 3: claim has no citation: Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 12: claim has no citation: **Name and the key claim or contribution:** **ASTM E917 Life-Cycle Cost (LCC) Analysis**.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 12: claim has no citation: The key contribution is establishing a standardized economic method for evaluating building project alternatives over a ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 13: claim has no citation: **The core approach, mechanism, or supporting evidence:** The LCC method calculates the sum of all relevant costs associ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 13: claim has no citation: The fundamental mechanism relies on the premise that future costs are just as important to an investor as present costs ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 13: claim has no citation: It is specifically used to determine whether a higher initial capital cost is economically justified by long-term reduct; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 14: claim has no citation: **Any concrete details:** The standard (referenced in the corpus via versions like **E917-99** and **E917-17e1**) mandat; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 14: claim has no citation: The standard also explicitly establishes a negative-result decision rule: if an alternative has both a lower initial cos; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 17: claim has no citation: **Name and the key claim or contribution:** **The "Do Nothing" Alternative**.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 17: claim has no citation: The key claim is that non-essential or discretionary capital investment projects must be measured against a baseline of ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 18: claim has no citation: **The core approach, mechanism, or supporting evidence:** For optional system upgrades, the proposed project's life-cycl; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 18: claim has no citation: This financial framing mechanism models the "do nothing" baseline as requiring zero initial investment cost, but incurri; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 19: claim has no citation: **Any concrete details:** The sources provide a highly specific, concrete example for this framework: evaluating the rep; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 22: claim has no citation: **Name and the key claim or contribution:** **Complementary ASTM Standard Economic Protocols**.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 22: claim has no citation: The contribution is a suite of referenced guidelines that provide additional mathematical frameworks for financial measu; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 23: claim has no citation: **The core approach, mechanism, or supporting evidence:** Rather than relying solely on overall LCC, this framework inte; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 24: claim has no citation: **Any concrete details:** The corpus names several specific, numbered protocols designed to work alongside E917, includi; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 30: claim has no citation: **Comprehensive Life-Cycle Costing (E917) vs.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 31: claim has no citation: **Differences in Claims and Contexts:** The core claim of the ASTM E917 method is that an investor must calculate and su; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 31: claim has no citation: However, the standard explicitly outlines an exception where this rigorous evaluation is unnecessary: if an alternative ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 32: claim has no citation: **Trade-offs, Strengths, and Weaknesses:** The primary strength of a full E917 LCC analysis is its ability to mathematic; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 32: claim has no citation: The weakness is the analytical burden of forecasting the entire lifecycle.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 32: claim has no citation: The "dominant choice" rule acts as a necessary heuristic trade-off, saving analytical effort in scenarios where an optio; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 35: claim has no citation: **Differences in Approach and Contexts:** Financial framing differs significantly based on whether a project is essentia; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 35: claim has no citation: For essential systems that fulfill required functional needs, the LCC method simply compares the costs of alternative ne; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 35: claim has no citation: Conversely, for non-essential or discretionary projects (e.g., replacing existing single-pane windows with new double-pa; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 36: claim has no citation: **Trade-offs and Outcomes:** The "do nothing" baseline models a specific financial trade-off: it assumes zero initial in; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 36: claim has no citation: The outcome of this specific framing determines whether the discretionary capital outlay is truly cost-effective compare; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 38: claim has no citation: **Pure Cost Minimization (E917) vs.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 39: claim has no citation: **Differences in Scope and Strengths:** ASTM E917 evaluates options based strictly on which alternative yields the lowes; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 39: claim has no citation: However, the corpus notes that this single-metric approach has limitations, which are addressed by a suite of complement; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 41: claim has no citation: While E917 minimizes total cost [2], **ASTM E1121** (Practice for Measuring Payback) and **ASTM E1057** (Internal Rate o; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 42: claim has no citation: While E917 assumes predictable costs [4, 7], **ASTM E1946** (Practice for Measuring Cost Risk) applies when future capit; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 43: claim has no citation: While E917 is strictly monetary [4], **ASTM E1765** integrates the Analytical Hierarchy Process (AHP) for Multiattribute; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 52: claim has no citation: The corpus explicitly identifies that a standard E917 LCC analysis, which simply measures the sum of all present and fut; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 52: claim has no citation: The unresolved tension of relying purely on total cost minimization is evidenced by the standard's reliance on a suite o; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 52: claim has no citation: Specifically, the standard acknowledges that investors may need to measure **cost risk** (addressed by ASTM E1946), prio; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 55: claim has no citation: The sources identify a financial framing tension when dealing with non-essential building upgrades.; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 55: claim has no citation: If a capital project is not essential to the ongoing building operation (such as replacing existing single-pane windows ; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 55: claim has no citation: The tension here is that this baseline assumes zero initial investment cost, placing a high analytical burden on the pro; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 62: claim has no citation: While the ASTM E917 standard dictates that future costs (operating, maintenance, repair, and replacement) must be summed; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 62: claim has no citation: Your methodology stack specifically asks for **ENR cost-escalation indices** and **autoregressive forecasts**, but the p; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 65: claim has no citation: Your research question explicitly looks for frameworks handling **regime-switching for insurance shocks**, a critical fi; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 65: claim has no citation: The provided corpus contains no mentions of insurance premiums, catastrophic financial shocks, structural regime-switchi; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 68: claim has no citation: While the corpus frames repair-vs-replace decisions using standard present-value life-cycle costing and mentions cost ri; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 68: claim has no citation: A careful reader looking for advanced probabilistic capital forecasting would want to know how to mathematically value t; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 71: claim has no citation: The financial framing in the corpus is entirely generic, applying broadly to "buildings and building systems" or generic; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 71: claim has no citation: It completely fails to address the unique financial environment of condominium reserve studies, such as modeling statuto; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 3: claim has no citation: **Origin question:** What is the established methodology stack for probabilistic component-level capital forecasting in ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 3: claim has no citation: Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 3: claim has no citation: Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 11: claim has no citation: Based on the provided sources, the corpus documents several specific frameworks and historical instances detailing how o; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 16: claim has no citation: **Name and the key claim or contribution:** Point-based value iteration solvers for Partially Observable Markov Decision; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 16: claim has no citation: The key claim is that solving highly complex, stochastic life-cycle cost problems requires advanced algorithmic solvers,; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 17: claim has no citation: **The core approach, mechanism, or supporting evidence:** Rather than treating a structure as a simple set of heuristic ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 18: claim has no citation: **Any concrete details:** Papakonstantinou and Shinozuka (2014) explicitly applied this solver to a distinct, infinite-h; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 18: claim has no citation: The sources state this framework yielded a "complex combination of a variety of actions, which cannot be achieved by any; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 21: claim has no citation: **Name and the key claim or contribution:** Network-level management systems (e.g., Pontis).; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 21: claim has no citation: The core contribution is the historical demonstration that mathematical maintenance optimization can be successfully sca; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 22: claim has no citation: **The core approach, mechanism, or supporting evidence:** The foundational mechanism aggregates component-level inspecti; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 23: claim has no citation: **Any concrete details:** The corpus cites canonical primary implementations of these aggregated systems, specifically t; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 23: claim has no citation: Furthermore, foundational work by Madanat and Ben-Akiva (1994) is cited for establishing optimal inspection and repair p; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 26: claim has no citation: **Name and the key claim or contribution:** Multi-structure and joint iterative optimization frameworks.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 26: claim has no citation: The key claim is that mathematical programming can be explicitly extended from single-component analysis to joint, syste; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 27: claim has no citation: **The core approach, mechanism, or supporting evidence:** These approaches rely on integrating distinct maintenance, reh; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 28: claim has no citation: **Any concrete details:** The sources list several specific academic frameworks advancing this scaling, including Faddou; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 28: claim has no citation: It also cites Lee and Madanat's (2015) "joint bottom-up solution methodology for system-level pavement rehabilitation" a; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 35: claim has no citation: **Differences in Approach and Contexts:** The corpus highlights a significant divergence in how scale is handled.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 35: claim has no citation: On one end, **infinite-horizon POMDPs** provide highly granular, deep-state probabilistic control for individual assets.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 35: claim has no citation: For example, Papakonstantinou and Shinozuka engineered a massive 332-state model just to handle a single corroding reinf; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 35: claim has no citation: On the other end, **network-wide infrastructure management systems** focus on aggregating component deterioration to man; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 35: claim has no citation: Canonical examples include the Pontis system developed by Golabi and Shepard for "US Bridge Networks" and the Statewide ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 36: claim has no citation: **Trade-offs:** The primary trade-off is depth versus breadth.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 36: claim has no citation: POMDPs are built to handle profound, real-time uncertainty regarding observation data and action outcomes for a highly s; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 36: claim has no citation: Conversely, network-level implementations establish optimal repair policies under uncertain facility deterioration rates; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 39: claim has no citation: **Differences in Claims and Strengths:** The sources track a methodological evolution from treating assets as isolated o; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 39: claim has no citation: explicitly focus on the **"Extension of dynamic programming models for management optimization from single structure to ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 40: claim has no citation: **Outcomes and Evidence:** Rather than optimizing a single building or bridge in a vacuum, researchers advocate for join; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 40: claim has no citation: Lee and Madanat demonstrate a **"joint bottom-up solution methodology for system-level pavement rehabilitation,"** while; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 40: claim has no citation: present a **"general iterative approach for the system-level joint optimization"** that cohesive schedules maintenance, ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 40: claim has no citation: The strength of the joint approach is its ability to align competing constraints and decisions across a broader portfoli; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 42: claim has no citation: **Advanced Value Iteration Solvers vs.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 43: claim has no citation: **Differences in Evidence and Strengths:** As stochastic optimization scales to cover more states and components, the co; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 43: claim has no citation: Papakonstantinou and Shinozuka argue that achieving a true optimal policy under uncertain data requires advanced **point; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 44: claim has no citation: **Trade-offs and Contexts:** When models expand into multi-component systems, the computational load of pure POMDP solve; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 44: claim has no citation: To navigate this trade-off, the literature introduces structural workarounds to scale the mathematical programming.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 44: claim has no citation: Özgür-Ünlüakın and Bilgiç propose an **"aggregation and disaggregation solution procedure to obtain a maintenance plan f; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 44: claim has no citation: test **"factored POMDPs"** to evaluate maintenance policies for complex mechanical systems [3].; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 44: claim has no citation: The weakness of factored or approximate solvers is a potential deviation from the absolute minimum life-cycle cost, trad; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 53: claim has no citation: The corpus highlights a severe mathematical and computational tension when moving from single-component dynamic programm; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 53: claim has no citation: Papakonstantinou and Shinozuka demonstrate that achieving a true optimal policy for just a *single* corroding reinforced; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 53: claim has no citation: The unresolved tension is how to practically scale this highly granular, deep-state probabilistic control to entire netw; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 56: claim has no citation: To handle the computational burden at the portfolio scale, the literature reveals a tension between maintaining mathemat; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 56: claim has no citation: As optimal decision-making scales to "partially observable multi-component systems," researchers must abandon exact solv; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 56: claim has no citation: For instance, the corpus identifies the need for approximation methodologies, such as Özgür-Ünlüakın and Bilgiç's "aggre; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 56: claim has no citation: These approximations trade away the absolute minimum life-cycle cost guarantee (the primary strength of pure POMDPs) for; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 63: claim has no citation: Your methodology stack specifically seeks the use of "copulas and vine copulas for correlated failures and cohort effect; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 63: claim has no citation: A careful reader would want to know how to statistically model the dependency or correlated failure timelines between si; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 66: claim has no citation: The requested stack explicitly looks for "Monte Carlo over component distributions to fund-level cash flow." The current; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 66: claim has no citation: There are no references to utilizing Monte Carlo simulations to aggregate these probabilistic component distributions in; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 69: claim has no citation: The portfolio aggregation examples in the corpus exclusively address massive public or heavy-civil infrastructures, such; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 69: claim has no citation: The corpus fails to translate these network-level aggregation models to the private, multi-unit residential sector.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-portfolio-aggregation-and-policy-optimization.md): [citation-grounding] line 69: claim has no citation: It does not address how portfolio optimization integrates with condominium-specific financial realities, such as statuto; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 3: claim has no citation: **Origin question:** What is the established methodology stack for probabilistic component-level capital forecasting in ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 3: claim has no citation: Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 3: claim has no citation: Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 10: claim has no citation: **Themes Used:** Component-Level Degradation Modeling, Data Ingestion and Updating, and Portfolio Aggregation.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 12: claim has no citation: In **Component-Level Degradation Modeling**, POMDPs are utilized to map the highly complex physical deterioration of str; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 12: claim has no citation: For example, Papakonstantinou and Shinozuka cast a 332-state infinite horizon POMDP specifically to model a corroding re; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 13: claim has no citation: In **Data Ingestion and Updating**, POMDPs serve as the stochastic control mechanism to handle the reality of uncertain ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 13: claim has no citation: Instead of relying on static rules, POMDPs ingest uncertain action outcomes and non-periodic observations to dynamically; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 14: claim has no citation: In **Portfolio Aggregation**, the dynamic programming inherent in POMDPs is scaled to manage multi-component systems or ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 17: claim has no citation: **Themes Used:** Cost and Financial Framing, Component-Level Degradation Modeling, and Portfolio Aggregation.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 19: claim has no citation: In **Cost and Financial Framing**, LCC minimization is codified through the ASTM E917 standard.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 19: claim has no citation: It establishes a strict financial procedure for summing all relevant costs—including designing, purchasing, installing, ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 20: claim has no citation: In **Component-Level Degradation Modeling** and **Portfolio Aggregation**, LCC serves as the mathematical objective func; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 20: claim has no citation: When solving the 332-state POMDP or executing multi-component optimization, the explicit goal is to discover the structu; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 23: claim has no citation: **Themes Used:** Component-Level Degradation Modeling, and Data Ingestion and Updating.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 25: claim has no citation: In **Component-Level Degradation Modeling**, DBNs are employed in a structural reliability context to evaluate a compone; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 26: claim has no citation: In **Data Ingestion and Updating**, DBNs are used as an updating mechanism.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 26: claim has no citation: Instead of simplifying inspection planning with pre-defined heuristic rules, DBNs are combined with POMDPs into a joint ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 28: claim has no citation: **Baseline Counterfactuals ("Do Nothing" vs.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 29: claim has no citation: **Themes Used:** Cost and Financial Framing, and Data Ingestion and Updating.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 31: claim has no citation: In **Cost and Financial Framing**, when evaluating non-essential or discretionary upgrades (like replacing single-pane w; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 31: claim has no citation: This baseline is modeled as having zero initial investment but higher future costs [5].; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 32: claim has no citation: In **Data Ingestion and Updating**, a similar baseline comparison principle is used to validate advanced frameworks.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 32: claim has no citation: measure the success of their joint DBN-POMDP optimal planning model by thoroughly comparing its costs against **"pre-def; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 38: claim has no citation: Based on the provided sources and our conversation history, the corpus relies on several core standards, primary referen; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 43: claim has no citation: **What it is and what it contains:** ASTM E917 (referenced as E917-99 and E917-17e1) is an established economic standard; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 43: claim has no citation: It contains the mathematical parameters for combining present and future costs—such as designing, purchasing, installing; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 44: claim has no citation: **Which themes draw on it:** Cost and Financial Framing, Component-Level Degradation Modeling, and Portfolio Aggregation; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 45: claim has no citation: **Why it is treated as foundational:** It establishes the ultimate objective function for the entire capital forecasting; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 45: claim has no citation: While "Cost and Financial Framing" uses E917 to justify discretionary vs.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 45: claim has no citation: essential projects [3, 5], the standard's core metric—Life-Cycle Cost (LCC) minimization—serves as the mathematical goal; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 48: claim has no citation: **What it is and what it contains:** A canonical primary study titled *Planning structural inspection and maintenance po; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 48: claim has no citation: It contains a complete formulation and solution of an advanced, infinite-horizon Partially Observable Markov Decision Pr; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 49: claim has no citation: **Which themes draw on it:** Component-Level Degradation Modeling, Data Ingestion and Updating, and Portfolio Aggregatio; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 50: claim has no citation: **Why it is treated as foundational:** This paper is load-bearing because it proves that highly complex physical deterio; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 50: claim has no citation: It establishes the blueprint for applying stochastic optimal control to structural management, demonstrating the necessi; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 53: claim has no citation: **What it is and what it contains:** A primary research paper titled *Optimal Inspection and Maintenance Planning for De; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 53: claim has no citation: It contains a joint mathematical framework that unites Dynamic Bayesian Networks (DBNs) with POMDPs to model and control; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 54: claim has no citation: **Which themes draw on it:** Component-Level Degradation Modeling, and Data Ingestion and Updating.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 55: claim has no citation: **Why it is treated as foundational:** This study serves as the primary empirical evidence discrediting traditional heur; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 55: claim has no citation: It comprehensively compares policies derived from state-of-the-art point-based POMDP solvers against standard pre-define; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 58: claim has no citation: **What it is and what it contains:** A cluster of heavily cited historical papers documenting the first successful netwo; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 58: claim has no citation: This includes Golabi and Shepard's (1997) paper on *Pontis: A System for Maintenance Optimization and Improvement of US ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 59: claim has no citation: **Which themes draw on it:** Portfolio Aggregation and Policy Optimization, and Component-Level Degradation Modeling.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 60: claim has no citation: **Why it is treated as foundational:** These works act as the historical proof-of-concept that optimal decision-making a; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 60: claim has no citation: They provide the anchor for modeling network-wide optimal repair policies under uncertain facility deterioration rates [; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 67: claim has no citation: A major tension across the corpus is the desire to calculate perfectly optimal maintenance policies versus the computati; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 68: claim has no citation: **In Component-Level Degradation Modeling and Data Ingestion:** To achieve absolute mathematical optimality when handlin; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 68: claim has no citation: POMDPs prescribe optimal actions based on the "entire, dynamically updated, state probability distribution" rather than ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 68: claim has no citation: However, this precision comes at an extreme computational cost.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 68: claim has no citation: For example, Papakonstantinou and Shinozuka had to formulate a massive 332-state POMDP model and utilize an advanced "po; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 69: claim has no citation: **In Portfolio Aggregation:** When decision-making scales from a single component to multi-component systems or whole fa; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 69: claim has no citation: As noted in the conversation history, this forces a trade-off where researchers must abandon exact optimality for approx; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 69: claim has no citation: The tension is explicitly between guaranteeing the absolute minimum life-cycle cost and having a model flexible enough t; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 72: claim has no citation: Across financial and operational planning, the sources highlight a recurring trade-off between conducting highly rigorou; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 73: claim has no citation: **In Cost and Financial Framing:** The ASTM E917 standard mandates a highly formal, rigorous procedure for Life-Cycle Co; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 73: claim has no citation: It requires measuring the "sum of all relevant costs," which encompasses "designing, purchasing/leasing, constructing/in; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 73: claim has no citation: Because this is analytically burdensome, the standard outlines a context-dependent heuristic exception: if a proposed al; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 74: claim has no citation: **In Data Ingestion and Inspection Scheduling:** Traditional risk-based methodologies attempt to save computational and ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 74: claim has no citation: explicitly note the trade-off: while heuristics are agile, the resulting maintenance policies are inherently "compromise; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 74: claim has no citation: By abandoning these heuristics for a mathematically rigorous joint Dynamic Bayesian Network and POMDP framework, practit; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 77: claim has no citation: The literature navigates a tension between modeling the deep, specific physical reality of individual building elements ; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 78: claim has no citation: **In Component-Level Degradation Modeling:** Frameworks dive incredibly deep into specific physical deterioration modes.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 78: claim has no citation: As seen in Papakonstantinou and Shinozuka’s work, a framework can be uniquely engineered to process uncertain action out; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 78: claim has no citation: This provides immense precision for isolated critical assets.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 79: claim has no citation: **In Portfolio Aggregation:** Managing a broader portfolio requires a context shift where single-component depth is trad; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 79: claim has no citation: Canonical implementations like the Pontis system prioritize the "improvement of US Bridge Networks" [6], and other metho; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 79: claim has no citation: At this level, individual 332-state models for every single structural element are impractical; instead, deterioration p
+
+## [2026-05-11T21:39:24Z] ingest | id=web-2026-02-18-2af | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.15
+
+raw=raw/web/web-2026-02-18-2af.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:39:25Z] ingest | id=web-2025-05-08-91b | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/web/web-2025-05-08-91b.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:39:51Z] ingest | id=web-2025-10-24-c1b | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.25
+
+raw=raw/web/web-2025-10-24-c1b.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:39:51Z] ingest | id=web-2025-01-03-c5d | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.15
+
+raw=raw/web/web-2025-01-03-c5d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:40:23Z] ingest | id=web-2026-01-01-084 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.65
+
+raw=raw/web/web-2026-01-01-084.md (wiki not written: filter decision=review)
+
+## [2026-05-11T21:41:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-11T21:41:03Z] wiki-author | id=query-2026-05-11-what-is-the-established-academic-and | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-11T21:41:13Z] ingest | id=web-2026-04-16-4c4 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.78
+
+raw=raw/web/web-2026-04-16-4c4.md wiki=wiki/sources/web-2026-04-16-4c4.md
+
+## [2026-05-11T21:45:32Z] ingest | id=note-2026-05-11-elevator-pitch | type=note | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.15
+
+raw=raw/note/note-2026-05-11-elevator-pitch.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:45:39Z] ingest | id=note-2026-05-11-seed-deck-brief | type=note | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/note/note-2026-05-11-seed-deck-brief.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T21:46:04Z] filter-correction | id=note-2026-05-11-elevator-pitch | domain=condo-capital-infra | decision=include | original_score=0.15
+
+rationale='Project-internal canonical pitch document for Condo Capital Infrastructure. Synthesizes ADR-0004 sequence reorder + acquirer mapping + engine v0.5 validation + Brief-0004 Halifax wedge into a single 60-second-to-7-section narrative used for investor + acquirer + co-founder conversations. Filed for citation grounding from future project artifacts (deck variants, prospect-call notes, board memos).'
+
+## [2026-05-11T21:46:04Z] filter-correction | id=note-2026-05-11-seed-deck-brief | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale='Project-internal canonical seed-deck brief, sibling to elevator pitch. Halifax-chair / seed-investor specific framing. Filed alongside elevator pitch for citation continuity across pitch artifacts.'
+
+## [2026-05-11T21:46:07Z] nlm-add | id=note-2026-05-11-elevator-pitch | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=note
+
+text=11943b title='Elevator Pitch — Condo Capital Infrastructure'
+
+## [2026-05-11T21:46:11Z] nlm-add | id=note-2026-05-11-seed-deck-brief | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=note
+
+text=35626b title='Seed Deck Brief — Halifax-Chair / Seed-Investor'
+
+## [2026-05-11T21:58:59Z] ingest | id=docx-818ed0a0ce55 | type=docx | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.92
+
+raw=raw/docx/docx-818ed0a0ce55.md wiki=wiki/sources/docx-818ed0a0ce55.md
+
+## [2026-05-11T22:04:18Z] wiki-author | id=docx-818ed0a0ce55 | updates=10 | created=7 | updated=3 | contradictions=3 | draft=no
+
+Project-internal synthesis on Canadian condo predictive analytics — extends existing provincial reserve-fund regulation pages (ON cadence detail, NS cadence, QC horizon/terminology), adds AB/MB comparator entities, adds the Eli Report transactional-data platform, and creates four methodology concept pages (Weibull failure, ML fault detection, Monte Carlo confidence intervals, contribution smoothing) that anchor the probabilistic-engine architecture.
+
+## [2026-05-11T22:04:43Z] nlm-add | id=docx-818ed0a0ce55 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=docx
+
+file=docx-818ed0a0ce55.docx title='predictive-analytics-canadian-condo-2026-05-11'
+
+## [2026-05-11T22:59:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,4
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-11T23:00:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-11T23:00:30Z] wiki-author | id=query-2026-05-11-reconcile-the-reserve-fund-study-contingency | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-11T23:01:16Z] nlm-add | id=web-2018-03-31-c63 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.cmhc-schl.gc.ca/consumers/home-buying/buying-guides/condominium/provincial-fact-sheets/new-brunswick-fact-sheet
+
+## [2026-05-11T23:03:05Z] filter-correction | id=web-2026-02-04-5bb | domain=condo-capital-infra | decision=include | original_score=0.35
+
+rationale='FirstService Residential Q4 2025 earnings disclose M acquisition spend; load-bearing for FSV-as-backup-acquirer thesis in gtm/exit-thesis-acquirer-mapping.md §2.8 / §3.2. M&A competitive-intelligence inclusion criterion (condo-capital-infra-v1) applies — named primary/backup acquirer target.'
+
+## [2026-05-11T23:03:11Z] filter-correction | id=web-2025-05-08-91b | domain=condo-capital-infra | decision=include | original_score=0.35
+
+rationale="FirstService Residential acquires Edmonton's Core Real Estate Group (15K+ units, pushing FSV Canadian portfolio past 250K units); load-bearing for Canadian-expansion signal in gtm/exit-thesis-acquirer-mapping.md §1 / §2.8. M&A competitive-intelligence inclusion criterion (condo-capital-infra-v1) applies — named backup acquirer target."
+
+## [2026-05-11T23:03:18Z] filter-correction | id=web-2026-02-18-2af | domain=condo-capital-infra | decision=include | original_score=0.15
+
+rationale='Yardi corporate news page; resolves Rob Teel CEO transition Jan 2026 — highest-density M&A signal in candidate set per gtm/exit-thesis-acquirer-mapping.md §1 / §2.11 / §4.3. M&A competitive-intelligence inclusion criterion (condo-capital-infra-v1) applies — named primary acquirer target.'
+
+## [2026-05-11T23:03:26Z] filter-correction | id=web-2025-10-24-c1b | domain=condo-capital-infra | decision=include | original_score=0.25
+
+rationale='Associa acquires Douglas Elliman property-management arm for M Oct 2025; largest US PM M&A event in 2025; load-bearing for Associa-as-acquirer thesis in gtm/exit-thesis-acquirer-mapping.md §2.9 / §4.4. M&A competitive-intelligence inclusion criterion (condo-capital-infra-v1) applies — named backup acquirer target.'
+
+## [2026-05-11T23:03:33Z] filter-correction | id=web-2025-01-03-c5d | domain=condo-capital-infra | decision=include | original_score=0.15
+
+rationale='PropTech M&A multiples 2025: 4–8x ARR with 35–40% compression from 2021 peaks; load-bearing for the 3–5x exit-multiple defensibility math in gtm/exit-thesis-acquirer-mapping.md §7.1 / §8.3 and gtm/canada-first-revenue-model.md §8. M&A competitive-intelligence inclusion criterion (condo-capital-infra-v1) applies — PropTech valuation-multiples data (Finro).'
+
+## [2026-05-11T23:04:33Z] ingest | id=web-2026-02-04-5bb | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-04-5bb.md wiki=wiki/sources/web-2026-02-04-5bb.md
+
+## [2026-05-11T23:06:58Z] wiki-author | id=web-2026-02-04-5bb | updates=2 | created=2 | updated=0 | contradictions=0 | draft=yes
+
+FirstService Q4 2025 earnings transcript creates two new acquirer-side entities (parent FSV + operating division FSR) that anchor the secondary-acquirer-target side of the condo-capital-infra exit thesis; source is silent on existing entities so updates are net-new creates.
+
+## [2026-05-11T23:07:06Z] ingest | id=web-2025-05-08-91b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-05-08-91b.md wiki=wiki/sources/web-2025-05-08-91b.md
+
+## [2026-05-11T23:10:02Z] wiki-author | id=web-2025-05-08-91b | updates=3 | created=2 | updated=1 | contradictions=0 | draft=yes
+
+Press release documents FirstService Residential's May 2025 acquisition of Edmonton-based Core Real Estate Group, pushing its Canadian portfolio past 250,000 units — load-bearing competitive-intelligence signal on the named secondary acquirer target in the condo-capital-infra exit thesis; updates FirstService Residential, creates Core Real Estate Group and the parent FirstService Corporation (resolving an existing dangling Related link).
+
+## [2026-05-11T23:10:08Z] ingest | id=web-2026-02-18-2af | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-18-2af.md wiki=wiki/sources/web-2026-02-18-2af.md
+
+## [2026-05-11T23:13:03Z] wiki-author | id=web-2026-02-18-2af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Source resolves the next-CEO-transition signal flagged in gtm/exit-thesis-acquirer-mapping.md as the highest-density M&A trigger for the tertiary acquirer target Yardi, and surfaces the Yardi Virtuoso AI platform and the Yardi Matrix 2026 multifamily-completions forecast — but no Yardi entity page exists yet, so a new entity is required to anchor competitive-intelligence citations rather than amending unrelated existing pages.
+
+## [2026-05-11T23:13:14Z] ingest | id=web-2025-10-24-c1b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-24-c1b.md wiki=wiki/sources/web-2025-10-24-c1b.md
+
+## [2026-05-11T23:15:13Z] wiki-author | id=web-2025-10-24-c1b | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+Source confirms Associa's October 2025 $85M acquisition of Douglas Elliman's property management arm via wholly-owned subsidiary PMG Holdings — the operative primary-source validation of Associa's named-backup-acquirer-target framing in the condo-capital-infra exit-thesis-acquirer-mapping. No existing pages cover Associa, Douglas Elliman, or PMG Holdings, so three new entity pages are created.
+
+## [2026-05-11T23:15:18Z] ingest | id=web-2025-01-03-c5d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-03-c5d.md wiki=wiki/sources/web-2025-01-03-c5d.md
+
+## [2026-05-11T23:22:13Z] wiki-author | id=web-2025-01-03-c5d | updates=6 | created=1 | updated=5 | contradictions=0 | draft=yes
+
+Finro's 2025 PropTech valuation analysis establishes the macro market frame (8.8x average revenue multiple, EV/Revenue + EV/EBITDA + DCF method set, 8-niche taxonomy) against which the project's 3-5x exit-multiple Year-3 thesis under ADR-0004 must be defended; warrants a new concept page plus Related cross-links from the five acquirer-side entities.
+
+## [2026-05-11T23:22:29Z] ingest | id=web-2026-05-11-f34 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2026-05-11-f34.md wiki=wiki/sources/web-2026-05-11-f34.md
+
+## [2026-05-11T23:23:25Z] wiki-author | id=web-2026-05-11-f34 | updates=2 | created=0 | updated=2 | contradictions=0 | draft=yes
+
+New source web-2026-05-11-f34 is a 2026-05-11 re-fetch of the same NRC DOI 10.4224/40003877 record already captured under web-2026-05-10-f34; it independently confirms the dataset's metadata (authors, ORCIDs, publication date, record identifier, format, subject keywords) and warrants supplementary citation on the two existing entity pages that anchor on that record.
+
+## [2026-05-11T23:23:42Z] ingest | id=web-2026-05-11-4ef | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/web/web-2026-05-11-4ef.md wiki=wiki/sources/web-2026-05-11-4ef.md
+
+## [2026-05-11T23:25:03Z] wiki-author | id=web-2026-05-11-4ef | updates=2 | created=0 | updated=2 | contradictions=0 | draft=yes
+
+Third URL/access path to the already-documented NRC envelope-RSL dataset (DOI 10.4224/40003877); add as additional citation alongside existing dataset-record sources on the two NRC entity pages — no new claims, no contradictions.
+
+## [2026-05-11T23:28:20Z] wiki-author | id=web-2026-05-11-852 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=yes
+
+Source (NRC envelope-RSL methodology paper, Sadeghi 2026, DOI 10.4224/40003911) is already fully integrated into the two NRC entity pages from prior sibling-source ingest; the two listed concept-page targets (reference-service-life, deck-balcony-component-priors) are referenced by multiple existing entity pages but not present in the existing-pages context, indicating they need creation as the concept-layer surface for the RSL methodology and envelope-prior claims.
+
+## [2026-05-11T23:28:33Z] ingest | id=web-2015-12-11-313 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2015-12-11-313.md wiki=wiki/sources/web-2015-12-11-313.md
+
+## [2026-05-11T23:33:07Z] wiki-author | id=web-2018-03-31-c63 | updates=4 | created=0 | updated=4 | contradictions=0 | draft=yes
+
+Re-ingestion under upgraded filter score (1.0, Brief-0006 market-frame). Source previously integrated into 5 wiki pages; this pass adds the previously-unsurfaced NB two-tier reserve regime (small-corporation 100%-of-operating-budget alternative for <11-unit corporations) and the NB conversion-condominium disclosure asymmetry (building inspection report ≤10 units / reserve fund study ≥11 units) to four cross-jurisdictional comparator pages.
+
+## [2026-05-11T23:33:22Z] ingest | id=web-2024-06-27-ed9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-06-27-ed9.md wiki=wiki/sources/web-2024-06-27-ed9.md
+
+## [2026-05-11T23:36:10Z] wiki-author | id=web-2024-06-27-ed9 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+The source is the New Brunswick Condominium Property Act itself, providing the statutory definition of 'reserve fund study' and foundational Section 1(1) definitions; this primary-source text grounds the previously-secondary-sourced NB CPA entity page that is forward-referenced from many existing pages but does not yet exist in the wiki.
+
+## [2026-05-11T23:36:23Z] filter-correction | id=web-2024-06-27-ed9 | domain=condo-capital-infra | decision=include | original_score=0.35
+
+rationale='Primary statutory text for NB Condominium Property Act C-16.05; in-scope Atlantic Canada jurisdiction per ADR-0004 Canada-first strategy. Policy exclusion_criteria jurisdiction list updated 2026-05-11 to include NS/NB/PEI/NL.'
+
+## [2026-05-11T23:39:49Z] wiki-author | id=web-2017-07-26-1f3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+The source is the Service NB primary-source FAQ for the NB Condominium Property Act c16.05 (the operative Atlantic-Canada reserve-fund statute referenced as a cross-jurisdictional comparator across BC SPA, CA Davis-Stirling, NL NLR 80/11, and NS Act pages); the canonical NB entity page is the load-bearing missing artifact since multiple existing pages already link to [[entities/nb-condominium-property-act]] but no body exists.
+
+## [2026-05-11T23:40:02Z] ingest | id=web-2018-03-31-9ad | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-03-31-9ad.md wiki=wiki/sources/web-2018-03-31-9ad.md
+
+## [2026-05-11T23:44:17Z] wiki-author | id=web-2018-03-31-9ad | updates=4 | created=1 | updated=3 | contradictions=0 | draft=yes
+
+Source provides null-comparator value as the only Canadian provincial regime in the wiki's comparator set with no mandatory reserve fund, no reserve-fund-study cadence, and no special-assessment rules — useful as the 'minimal-statutory-framework' outlier against BC SPA, ON Condo Act 1998, NB CPA c16.05, NL NLR 80/11, NS Condominium Act, MB, AB, and QC Civil Code Bill 16; creates a thin PEI entity page and adds PEI-as-outlier bullets to the three closest comparator pages.
+
+## [2026-05-11T23:44:29Z] filter-correction | id=web-2018-03-31-9ad | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale='CMHC PEI fact sheet; documents absence of statutory reserve-fund mandate in PEI — direct comparator for the Atlantic Canada regulatory-landscape sweep per Brief-0006. In-scope Atlantic Canada jurisdiction per ADR-0004.'
+
+## [2026-05-11T23:44:48Z] ingest | id=web-2018-03-31-a5d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-03-31-a5d.md wiki=wiki/sources/web-2018-03-31-a5d.md
+
+## [2026-05-11T23:56:08Z] filter-correction | id=web-2011-08-18-1e7 | domain=condo-capital-infra | decision=include | original_score=0.65
+
+rationale='NL Condominium Regulations NLR 80/11; primary statutory regulation for NL reserve-fund-study mandate (10-yr cycle, 30-yr horizon, 10+ units). In-scope Atlantic Canada jurisdiction per ADR-0004 Canada-first strategy.'
+
+## [2026-05-11T23:56:17Z] filter-correction | id=web-2018-03-31-a5d | domain=condo-capital-infra | decision=include | original_score=0.35
+
+rationale='CMHC NL fact sheet; documents NL reserve-fund-study mandate (10-yr cycle, 30-yr horizon, P.Eng. or CRP qualification). In-scope Atlantic Canada jurisdiction per ADR-0004 Canada-first strategy and updated jurisdiction list in policy.'
+
+## [2026-05-11T23:56:30Z] ingest | id=web-1998-01-01-da9 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-1998-01-01-da9.md (wiki not written: filter decision=rejected)
+
+## [2026-05-11T23:56:46Z] filter-correction | id=web-1998-01-01-da9 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='BuildingLink Canada about-us; documents Toronto-headquartered Canadian subsidiary since 2012, 7,000+ communities globally, Aware IoT product since 2017. Primary CMMS data-relationship and acquirer-adjacent conversation candidate per Brief-0006 §4. M&A competitive-intelligence and Canadian residential-condo CMMS footprint — included per updated policy criterion.'
+
+## [2026-05-11T23:56:51Z] ingest | id=web-1998-01-01-da9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-1998-01-01-da9.md wiki=wiki/sources/web-1998-01-01-da9.md
+
+## [2026-05-11T23:57:39Z] wiki-author | id=web-1998-01-01-da9 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Source is the BuildingLink Canada corporate 'About' page; no existing entity covers BuildingLink, so create a new entity page constrained to the founding-story claims actually present in the source body.
+
+## [2026-05-11T23:57:58Z] ingest | id=web-2007-05-15-70e | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.35
+
+raw=raw/web/web-2007-05-15-70e.md (wiki not written: filter decision=rejected)
+
+## [2026-05-12T02:38:09Z] filter-correction | id=web-2007-05-15-70e | domain=condo-capital-infra | decision=include | original_score=0.35
+
+rationale='Yardi-Brookfield Residential Services Voyager adoption press release; load-bearing for Yardi-as-acquirer thesis via Brookfield Canadian channel per gtm/exit-thesis-acquirer-mapping.md §2.11 + Brief-0006 §4. M&A competitive-intelligence inclusion criterion per updated condo-capital-infra-v1 policy.'
+
+## [2026-05-12T02:39:03Z] ingest | id=web-2007-05-15-70e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2007-05-15-70e.md wiki=wiki/sources/web-2007-05-15-70e.md
+
+## [2026-05-12T02:39:12Z] ingest | id=pdf-3c6b4345c8c4 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/pdf/pdf-3c6b4345c8c4.md wiki=wiki/sources/pdf-3c6b4345c8c4.md
+
+## [2026-05-12T02:41:08Z] wiki-author | id=web-2007-05-15-70e | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+2007 Yardi press release establishes Yardi's long-standing Canadian-condo-channel relationship via Brookfield Residential Services (Canada's largest condo manager at the time, 50K+ Toronto units) and surfaces the Yardi Voyager Condo, Co-op and HOA product line — both load-bearing for the Yardi-as-acquirer thesis in the condo-capital-infra exit-thesis-acquirer-mapping under ADR-0004.
+
+## [2026-05-12T02:41:29Z] ingest | id=web-2024-03-12-012 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.78
+
+raw=raw/web/web-2024-03-12-012.md wiki=wiki/sources/web-2024-03-12-012.md
+
+## [2026-05-12T02:43:27Z] wiki-author | id=web-2024-03-12-012 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=yes
+
+Mid-timeline (2024) Yardi Canadian-condo product-investment evidence fills the gap between the 2007 Brookfield/Voyager anchor and the 2026 CEO transition in yardi.md, with no new entities warranted.
+
+## [2026-05-12T02:43:51Z] ingest | id=web-2026-03-23-47c | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2026-03-23-47c.md (wiki not written: filter decision=rejected)
+
+## [2026-05-12T02:44:12Z] ingest | id=web-2019-03-07-ade | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.45
+
+raw=raw/web/web-2019-03-07-ade.md (wiki not written: filter decision=rejected)
+
+## [2026-05-12T02:44:39Z] ingest | id=web-2023-06-23-15a | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.65
+
+raw=raw/web/web-2023-06-23-15a.md (wiki not written: filter decision=review)
+
+## [2026-05-12T02:46:22Z] wiki-author | id=pdf-3c6b4345c8c4 | updates=6 | created=4 | updated=2 | contradictions=2 | draft=no
+
+First primary-source NS reserve fund study in the wiki — resolves the previously-open NS reserve-fund-study cadence question (5-year, not 10-year), documents Bill 106 (2022) as the substantive statutory revision, surfaces statutory and operational study conventions (20-year physical-analysis minimum, $5K itemization threshold, 5-15% contingency/PM markup, HST inclusion, IAF funding plan), and introduces Halifax Cond Corp 130 / Summer Gardens, Sense Engineering, BRK Engineering, and Real Estate 360 as load-bearing NS-market entities for the Year-1 Halifax engagement (Brief-0004).
+
+## [2026-05-12T02:46:35Z] ingest | id=pdf-1c554d4c6512 | type=pdf | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/pdf/pdf-1c554d4c6512.md (wiki not written: filter decision=review)
+
+## [2026-05-12T02:47:04Z] filter-correction | id=pdf-1c554d4c6512 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale="Summer Gardens HOA board email — direct operational record of the warm-lead Halifax design partner (per Brief-0004 + ADR-0004). Filter-rejected because it doesn't read like research content, but this is operational ground-truth for the engagement plan. Filed alongside the Summer Gardens reserve study (pdf-3c6b4345c8c4) for engagement context."
+
+## [2026-05-12T02:47:41Z] ingest | id=web-2025-02-10-057 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-02-10-057.md wiki=wiki/sources/web-2025-02-10-057.md
+
+## [2026-05-12T02:48:18Z] ingest | id=web-2026-03-26-dd1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-03-26-dd1.md wiki=wiki/sources/web-2026-03-26-dd1.md
+
+## [2026-05-12T02:49:00Z] ingest | id=web-2021-01-01-4e4 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.15
+
+raw=raw/web/web-2021-01-01-4e4.md (wiki not written: filter decision=rejected)
+
+## [2026-05-12T19:03:24Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=start | domain=condo-capital-infra
+
+start research session for prompt 'Reserve study firms explaining their methodology and presenting results to HOA or condo boards — explainer videos, webinars, client presentations from SmartProperty, PropFusion, Association Reserves, Reserve Data Analyst, ReserveWise, or similar firms'
+
+## [2026-05-12T19:03:41Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=plan | n=55
+
+query plan written to nlm/query_plans/2026-05-12-reserve-study-firms-explaining-their-methodology.yaml
+
+## [2026-05-12T19:04:06Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=start | domain=condo-capital-infra
+
+start research session for prompt 'Reserve study firms explaining their methodology and presenting results to HOA or condo boards — explainer videos, webinars, client presentations from SmartProperty, PropFusion, Association Reserves, Reserve Data Analyst, ReserveWise, or similar firms'
+
+## [2026-05-12T19:04:06Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-12T19:04:06Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-12T19:04:06Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-05-12T19:04:20Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=youtube | n=115
+
+adapter youtube returned 115 candidates
+
+## [2026-05-12T19:04:26Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-12T19:04:26Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=merge | n=179
+
+merged 179 candidate(s) across adapters
+
+## [2026-05-12T19:24:58Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=start | domain=condo-capital-infra
+
+start research session for prompt 'Reserve study firms explaining their methodology and presenting results to HOA or condo boards — explainer videos, webinars, client presentations from SmartProperty, PropFusion, Association Reserves, Reserve Data Analyst, ReserveWise, or similar firms'
+
+## [2026-05-12T19:24:58Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-12T19:24:58Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-12T19:24:58Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-05-12T19:25:05Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-12T19:25:11Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=search | adapter=youtube | n=115
+
+adapter youtube returned 115 candidates
+
+## [2026-05-12T19:25:11Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=merge | n=178
+
+merged 178 candidate(s) across adapters
+
+## [2026-05-12T20:12:06Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=filter | n=6
+
+6 candidate(s) cleared threshold
+
+## [2026-05-12T20:12:08Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=convert | target=https://www.caionline.org/getmedia/688ad625-5fa7-40c4-a1cb-5db1d60133b9/CAI-Reserve-Study-Standards-July-2023-FINAL.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/688ad625-5fa7-40c4-a1cb-5db1d60133b9/CAI-Reserve-Study-Standards-July-2023-FINAL.pdf
+
+## [2026-05-12T20:12:11Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=convert | target=https://www.capterra.com/p/10026702/PropFusion/
+
+error: could not fetch https://www.capterra.com/p/10026702/PropFusion/
+
+## [2026-05-12T20:12:11Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-12T20:12:11Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=materialize | n=3
+
+materialized 3 source(s) to raw/
+
+## [2026-05-12T20:12:11Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-12T20:12:12Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=nlm_session | notebook_id=86bb54de-34f1-4bdb-ba80-6f12926209c1
+
+created session notebook 86bb54de-34f1-4bdb-ba80-6f12926209c1
+
+## [2026-05-12T20:12:25Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=source_add | n=3 | skipped=0
+
+pushed 3 source(s) to session notebook (0 skipped)
+
+## [2026-05-12T20:12:27Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=source_map | n=3
+
+built source map (3 entries)
+
+## [2026-05-12T20:17:25Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=analysis | branches=3
+
+analysis complete (3 branch(es))
+
+## [2026-05-12T20:17:25Z] wiki-author | id=research-2026-05-12-reserve-study-firms-explaining-their-methodology | updates=5 | created=5 | updated=0 | contradictions=0 | draft=yes
+
+corpus-constructive research session for condo-capital-infra
+
+## [2026-05-12T20:17:25Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=apply_plan | pages=6
+
+applied plan: applied plan for research-2026-05-12-reserve-study-firms-explaining-their-methodology: 5 update(s)
+
+## [2026-05-12T20:17:37Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=promoted | added=2 | failed=0
+
+promoted 2 source(s) into persistent notebook
+
+## [2026-05-12T20:35:15Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=filter | n=8
+
+8 candidate(s) cleared threshold
+
+## [2026-05-12T20:35:17Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=convert | target=https://www.caionline.org/getmedia/688ad625-5fa7-40c4-a1cb-5db1d60133b9/CAI-Reserve-Study-Standards-July-2023-FINAL.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/688ad625-5fa7-40c4-a1cb-5db1d60133b9/CAI-Reserve-Study-Standards-July-2023-FINAL.pdf
+
+## [2026-05-12T20:35:20Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-12T20:35:20Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=materialize | n=6
+
+materialized 6 source(s) to raw/
+
+## [2026-05-12T20:35:20Z] research | session_id=2026-05-12-reserve-study-firms-explaining-their-methodology | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-12T21:03:25Z] ingest | id=web-2025-01-01-14d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-01-14d.md wiki=wiki/sources/web-2025-01-01-14d.md
+
+## [2026-05-12T22:43:24Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-12T22:43:24Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-12T22:43:24Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-12T22:43:25Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-12T22:43:33Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-12T22:43:37Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-12T22:43:37Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=123
+
+merged 123 candidate(s) across adapters
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2025-04-12-ca4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-04-12-ca4.md wiki=wiki/sources/web-2025-04-12-ca4.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2026-03-09-423 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-03-09-423.md wiki=wiki/sources/web-2026-03-09-423.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2025-01-01-cc2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-01-cc2.md wiki=wiki/sources/web-2025-01-01-cc2.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2026-01-01-970 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-970.md wiki=wiki/sources/web-2026-01-01-970.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2023-03-20-7a4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-03-20-7a4.md wiki=wiki/sources/web-2023-03-20-7a4.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2025-07-09-b13 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-07-09-b13.md wiki=wiki/sources/web-2025-07-09-b13.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2023-06-26-652 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-06-26-652.md wiki=wiki/sources/web-2023-06-26-652.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-1995-01-01-0ff | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-1995-01-01-0ff.md wiki=wiki/sources/web-1995-01-01-0ff.md
+
+## [2026-05-12T22:46:16Z] ingest | id=web-2025-10-29-056 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-29-056.md wiki=wiki/sources/web-2025-10-29-056.md
+
+## [2026-05-12T22:46:24Z] cite | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md | additions=10 | sources=6
+
+added 10 citation(s) to wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md
+
+## [2026-05-12T22:46:27Z] cite | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks.md | additions=5 | sources=4
+
+added 5 citation(s) to wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks.md
+
+## [2026-05-12T22:46:29Z] cite | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best.md | additions=3 | sources=3
+
+added 3 citation(s) to wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best.md
+
+## [2026-05-12T22:46:31Z] cite | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies.md | additions=5 | sources=3
+
+added 5 citation(s) to wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies.md
+
+## [2026-05-12T22:46:32Z] cite | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation.md | additions=5 | sources=2
+
+added 5 citation(s) to wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation.md
+
+## [2026-05-12T22:46:48Z] finalize | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md
+
+finalized wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting.md
+
+## [2026-05-12T22:46:48Z] finalize | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks.md
+
+finalized wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks.md
+
+## [2026-05-12T22:46:48Z] finalize | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best.md
+
+finalized wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best.md
+
+## [2026-05-12T22:46:48Z] finalize | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies.md
+
+finalized wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies.md
+
+## [2026-05-12T22:46:49Z] finalize | page=wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation.md
+
+finalized wiki/synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation.md
+
+## [2026-05-12T22:55:58Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | n=18
+
+18 candidate(s) cleared threshold
+
+## [2026-05-12T22:55:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1177/03611981221088222
+
+error: could not fetch https://doi.org/10.1177/03611981221088222
+
+## [2026-05-12T22:55:59Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.semanticscholar.org/paper/271965301
+
+error: could not fetch https://www.semanticscholar.org/paper/271965301
+
+## [2026-05-12T22:56:00Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+error: could not fetch https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+## [2026-05-12T22:56:02Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+## [2026-05-12T22:56:03Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+## [2026-05-12T22:56:03Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://par.nsf.gov/servlets/purl/10441107
+
+error: no extractable content at https://par.nsf.gov/servlets/purl/10441107
+
+## [2026-05-12T22:56:09Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://webstore.ansi.org/standards/astm/astme91715?srsltid=ARcRdnpk4Rc1_NmAuQzcy9UR-hDumkmcLXROUXA-F4eLX6nFqUUVvsdx
+
+error: could not fetch https://webstore.ansi.org/standards/astm/astme91715?srsltid=ARcRdnpk4Rc1_NmAuQzcy9UR-hDumkmcLXROUXA-F4eLX6nFqUUVvsdx
+
+## [2026-05-12T22:56:09Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+## [2026-05-12T22:56:10Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://link.springer.com/article/10.1007/s12205-010-0343-x
+
+error: could not fetch https://link.springer.com/article/10.1007/s12205-010-0343-x
+
+## [2026-05-12T22:56:11Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.scitepress.org/Papers/2021/107099/107099.pdf
+
+error: no extractable content at https://www.scitepress.org/Papers/2021/107099/107099.pdf
+
+## [2026-05-12T22:56:11Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=materialize | n=8
+
+materialized 8 source(s) to raw/
+
+## [2026-05-12T22:56:11Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-12T22:56:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_session | notebook_id=9d5d27a3-17cc-4d75-8c63-ec2825b3d9bb
+
+created session notebook 9d5d27a3-17cc-4d75-8c63-ec2825b3d9bb
+
+## [2026-05-12T22:56:48Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_add | n=8 | skipped=0
+
+pushed 8 source(s) to session notebook (0 skipped)
+
+## [2026-05-12T22:56:49Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_map | n=8
+
+built source map (8 entries)
+
+## [2026-05-12T23:04:11Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-12T23:04:12Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 56: claim has no citation: The provided sources identify several specific limitations and methodological tensions regarding component-level degrada; update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md): [citation-grounding] line 66: claim has no citation: **Absence of Machine Learning and Sparse Data Evaluations:** The corpus does not address the data requirements for deep ; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md): [citation-grounding] line 37: claim has no citation: **Items Compared:** The standard ASTM E917 Life-Cycle Cost (LCC) analysis is compared against the Building for Environme; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md): [citation-grounding] line 43: claim has no citation: **Items Compared:** Within the ASTM E917 framework, evaluating completely new or alternative system designs is contraste; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md): [citation-grounding] line 48: claim has no citation: **Items Compared:** Contexts where LCCA is highly beneficial versus contexts where conducting an LCCA is deemed a waste ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-integrated-frameworks-for-building-performance.md): [citation-grounding] line 30: claim has no citation: In the context of "Integrated Frameworks for Building Performance," the sources do not present competing methodologies, ; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-integrated-frameworks-for-building-performance.md): [citation-grounding] line 33: claim has no citation: **Items Compared:** The overarching BEES technique is contrasted with the standalone standards it relies upon: ISO 14040; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-integrated-frameworks-for-building-performance.md): [citation-grounding] line 39: claim has no citation: **Items Compared:** Two fundamental ASTM standards used within the BEES methodology to process and organize data: Multia; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 10: claim has no citation: **Themes Used In:** Component-Level Degradation Modeling, Optimal Inspection and Maintenance Planning.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 14: claim has no citation: **Themes Used In:** Cost and Financial Framing, Integrated Frameworks for Building Performance, Optimal Inspection and M; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 18: claim has no citation: **Themes Used In:** Cost and Financial Framing, Integrated Frameworks for Building Performance.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 22: claim has no citation: **Themes Used In:** Cost and Financial Framing, Optimal Inspection and Maintenance Planning.; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 31: claim has no citation: **Which themes draw on it:** "Cost and Financial Framing" and "Integrated Frameworks for Building Performance".; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 36: claim has no citation: **Which themes draw on it:** "Component-Level Degradation Modeling" and "Optimal Inspection and Maintenance Planning".; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 41: claim has no citation: **Which themes draw on it:** "Component-Level Degradation Modeling" and (as a foundational predecessor) "Optimal Inspect; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 46: claim has no citation: **Which themes draw on it:** "Cost and Financial Framing", "Integrated Frameworks for Building Performance", and "Optima; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 53: claim has no citation: Based on the provided sources, several recurring trade-offs and tensions surface across the different methodological the; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 56: claim has no citation: A major tension exists between using simplified methods to make problems easily solvable versus deploying highly complex; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 61: claim has no citation: There is a clear tension between optimizing solely for the lowest monetary cost versus attempting to balance multiple, s; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 66: claim has no citation: Across the corpus, decision-makers face the fundamental temporal trade-off of whether to spend more money now to avoid s; update[5] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 71: claim has no citation: The sources highlight that the rigorous application of complex frameworks is context-dependent, and sometimes formal ana
+
+## [2026-05-13T00:41:48Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T00-41-48Z-schema-drift.md

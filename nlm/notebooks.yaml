@@ -5,6 +5,95 @@ notebooks:
       created_at: '2026-05-01T21:20:46Z'
       sources_count: 25
       last_sync: '2026-05-01T21:44:34Z'
+  condo:
+    persistent:
+      notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
+      created_at: '2026-05-09T18:04:46Z'
+      sources_count: 44
+      last_sync: '2026-05-12T18:41:42Z'
+    sessions:
+    - session_id: 2026-05-08-how-should-a-condo-hoa-integrate
+      notebook_id: 65279680-797a-4f5e-909f-9d7bb9e55888
+      query: How should a condo HOA integrate reserve-fund management, special-assessment
+        policy, and long-term preventive + capital maintenance and vendor management
+        into a single proactive long-horizon planning system? Survey best practices,
+        frameworks, data models, and existing software approaches; identify gaps that
+        a purpose-built integrated planning system could close.
+      created_at: '2026-05-11T01:52:15Z'
+      status: promoted
+      sources_count: 23
+      promoted_at: '2026-05-12T18:41:42Z'
+    - session_id: 2026-05-09-best-practices-for-proactive-and-preventive
+      notebook_id: de24a5b8-fc85-487d-8237-a96c45a53cfa
+      query: "Best practices for proactive and preventive maintenance of 100+ unit\
+        \ condominium / strata / co-op buildings in the United States and Canada,\
+        \ OUTSIDE reserve study requirements: PM cadences by building system (HVAC,\
+        \ elevators, plumbing risers, fire-life-safety, envelope, roofing, balconies,\
+        \ parking deck), regulatory PM drivers (NYC LL11/FISP, SF/CA balcony, FL HB\
+        \ 913 operational layer, Ontario Condo Act \xA794 maintenance, BC SPA, Quebec\
+        \ Bill 16 carnet d'entretien), industry-standard frameworks (BOMA, IFMA, APPA,\
+        \ CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink, ConciergePlus,\
+        \ Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly, UpKeep,\
+        \ Limble, Maintainx), predictive / condition-based PM in residential CRE,\
+        \ and insurance / loss-control PM checklists for high-rise residential."
+      created_at: '2026-05-10T03:43:21Z'
+      status: abandoned
+      sources_count: 19
+      promoted_at: null
+  condo-capital-infra:
+    persistent:
+      notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
+      created_at: '2026-05-10T22:47:04Z'
+      sources_count: 25
+      last_sync: '2026-05-12T20:17:37Z'
+    sessions:
+    - session_id: 2026-05-11-what-is-the-established-methodology-stack
+      notebook_id: 9d5d27a3-17cc-4d75-8c63-ec2825b3d9bb
+      query: "What is the established methodology stack for probabilistic component-level\
+        \ capital forecasting in condominium / multi-unit residential reserve studies,\
+        \ covering the six method families: (1) component-level degradation modeling\
+        \ \u2014 Markov chain deterioration following Madanat/Golabi/Mishalani DOT\
+        \ bridge and pavement work, Weibull and lognormal survival models, Bayesian\
+        \ hierarchical degradation for sparse component data, physics-based corrosion\
+        \ and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian\
+        \ process regression for condition trajectories, Hidden Markov and state-space\
+        \ models under partial observation; (2) time-to-failure and replacement timing\
+        \ \u2014 hazard functions and competing risks, Cox proportional hazards and\
+        \ accelerated failure time models with covariates, renewal processes for repeatedly-replaced\
+        \ components, deep RUL methods (LSTM, transformer) and their data requirements\
+        \ including negative-result reports; (3) cost and financial framing \u2014\
+        \ ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching\
+        \ for insurance shocks, real options for repair-vs-replace decisions; (4)\
+        \ portfolio aggregation \u2014 Monte Carlo over component distributions to\
+        \ fund-level cash flow, copulas and vine copulas for correlated failures and\
+        \ cohort effects, stochastic optimization for replacement scheduling, Bayesian\
+        \ decision theory for inspect-repair-replace; (5) data ingestion and updating\
+        \ \u2014 sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with\
+        \ inspection events, POMDP framing for inspection scheduling (Papakonstantinou\
+        \ et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS\
+        \ history as covariates in survival models; (6) validation and calibration\
+        \ \u2014 backtesting against realized expenditures, CRPS and PIT and reliability\
+        \ diagrams for probabilistic forecast verification (Gneiting and Raftery),\
+        \ out-of-sample testing under data scarcity. Prioritize survey papers, canonical\
+        \ primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result\
+        \ studies where deep learning underperformed Weibull or Bayesian baselines\
+        \ under sparse data, and validation-framework primaries. Deprioritize vendor\
+        \ white papers and single-site deep-learning case studies without sample-size\
+        \ or generalization detail."
+      created_at: '2026-05-12T22:56:12Z'
+      status: abandoned
+      sources_count: 8
+      promoted_at: null
+    - session_id: 2026-05-12-reserve-study-firms-explaining-their-methodology
+      notebook_id: 86bb54de-34f1-4bdb-ba80-6f12926209c1
+      query: "Reserve study firms explaining their methodology and presenting results\
+        \ to HOA or condo boards \u2014 explainer videos, webinars, client presentations\
+        \ from SmartProperty, PropFusion, Association Reserves, Reserve Data Analyst,\
+        \ ReserveWise, or similar firms"
+      created_at: '2026-05-12T20:12:12Z'
+      status: promoted
+      sources_count: 3
+      promoted_at: '2026-05-12T20:17:37Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2
@@ -32,6 +121,12 @@ notebooks:
       status: abandoned
       sources_count: 0
       promoted_at: null
+  local-models:
+    persistent:
+      notebook_id: 6f3c74b9-7a75-492f-be4d-54ee0bc69b37
+      created_at: '2026-05-09T18:03:51Z'
+      sources_count: 0
+      last_sync: '2026-05-09T18:03:51Z'
   trading-and-markets:
     persistent:
       notebook_id: ccbda94f-7251-42bb-864f-0e1c9850f7ad
