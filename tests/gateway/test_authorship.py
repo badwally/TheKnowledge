@@ -73,6 +73,77 @@ def test_citation_density_counts_cited_vs_uncited():
     assert 0.49 < ratio < 0.51
 
 
+def test_footnote_style_citations_count_as_cited():
+    """NotebookLM-rendered synthesis pages cite via in-text [N] refs that
+    resolve to page-level `[^N]: [[sources/<id>]]` definitions. The
+    validator must recognize this pattern."""
+    body = (
+        "## Specifics\n"
+        "\n"
+        "This claim asserts a non-trivial fact about the corpus [1].\n"
+        "Another claim with two footnote refs in one sentence [2, 3].\n"
+        "Range form covers consecutive refs in one go [4-6].\n"
+        "\n"
+        "[^1]: [[sources/web-2026-03-09-423]] [^2]: [[sources/web-1995-01-01-0ff]] "
+        "[^3]: [[sources/web-2022-07-20-7d3]] [^4]: [[sources/web-2026-01-01-970]] "
+        "[^5]: [[sources/web-2023-06-26-652]] [^6]: [[sources/web-2025-10-29-056]]\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == [], f"expected no uncited claims, got: {[u.text for u in uncited]}"
+
+
+def test_footnote_ref_without_definition_still_flagged():
+    """A `[N]` reference whose footnote is not defined as
+    `[[sources/<id>]]` does NOT count as a citation."""
+    body = (
+        "This claim has a stray bracket reference with no definition [99].\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1
+
+
+def test_synthesis_metadata_lines_skipped():
+    """`**Origin question:**`, `**Session:**`, `**Branch:**` are page
+    metadata, not claims — the validator must not flag them."""
+    body = (
+        "**Origin question:** What is the best practice for X in domain Y?\n"
+        "**Session:** 2026-05-08-foo-bar-baz\n"
+        "**Branch:** Some Branch Name\n"
+        "\n"
+        "## Specifics\n"
+        "\n"
+        "Real claim sentence that should still be detected [1].\n"
+        "\n"
+        "[^1]: [[sources/web-2026-01-01-aaa]]\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == []
+
+
+def test_bold_only_lines_treated_as_headers():
+    """Lines that are entirely wrapped in `**...**` (used as visual
+    sub-headers in synthesis comparison sections) are not claims."""
+    body = (
+        "**1. Scope and Component Inclusion: Subjective Best Practices vs. Objective Statutory Rules**\n"
+        "\n"
+        "This is a real claim that follows the bold header [1].\n"
+        "\n"
+        "[^1]: [[sources/web-2026-01-01-aaa]]\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == []
+
+
+def test_bold_label_followed_by_text_is_still_a_claim():
+    """Bold inline-label lines (`**The Comparison:** <claim text>`)
+    are NOT pure bold headers — the text after the label still counts."""
+    body = (
+        "**The Comparison:** This is a substantive claim that needs a citation source.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1
+
+
 # --- wiki_pages.py ---------------------------------------------------------
 
 

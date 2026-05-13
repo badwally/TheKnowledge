@@ -73,7 +73,7 @@ def promote(
     session_notebook_id: str,
     client: "NlmClient",
     nlm_registry,
-) -> int:
+) -> tuple[int, list[tuple[str, str]]]:
     """Push session sources into the persistent notebook. Dedup by URL.
 
     Steps:
@@ -82,15 +82,17 @@ def promote(
       3. For each session source not already in the persistent corpus
          (URL-keyed where available, title-keyed otherwise), call
          `client.source_add_url` (or `source_add_text` for sources
-         without a URL).
+         without a URL). Per-source failures are collected, not raised —
+         one stale URL must not sink promotion of the remaining N-1.
       4. Mark the session promoted in the registry, bumping the
          persistent corpus's `sources_count` by the number actually added.
 
-    Returns the count of newly-added sources.
+    Returns ``(added, failed)`` where ``added`` is the count of
+    newly-added sources and ``failed`` is a list of ``(target, error)``
+    pairs (target = url or title).
 
-    Errors from individual `source_add_*` calls propagate to the caller
-    so the orchestrator can mark the session abandoned and surface the
-    failure in its `OperationResult`.
+    Fundamental failures (e.g. fetch_nlm_sources / mark_promoted raising)
+    propagate to the caller.
     """
     session_sources = _source_map.fetch_nlm_sources(session_notebook_id)
     persistent_sources = _source_map.fetch_nlm_sources(persistent_notebook_id)
@@ -106,13 +108,18 @@ def promote(
             seen_titles.add(title)
 
     added = 0
+    failed: list[tuple[str, str]] = []
     for src in session_sources:
         url = src.get("url")
         title = src.get("title")
         if isinstance(url, str) and url:
             if url in seen_urls:
                 continue
-            client.source_add_url(persistent_notebook_id, url)
+            try:
+                client.source_add_url(persistent_notebook_id, url)
+            except Exception as e:  # noqa: BLE001 — per-source isolation
+                failed.append((url, str(e)))
+                continue
             seen_urls.add(url)
             added += 1
             continue
@@ -124,14 +131,18 @@ def promote(
             # only material we have. The session-notebook source itself
             # already carries the content NotebookLM-side; this branch
             # is the "non-URL" tail (e.g., text-only notes).
-            client.source_add_text(
-                persistent_notebook_id, content="", title=title
-            )
+            try:
+                client.source_add_text(
+                    persistent_notebook_id, content="", title=title
+                )
+            except Exception as e:  # noqa: BLE001 — per-source isolation
+                failed.append((title, str(e)))
+                continue
             seen_titles.add(title)
             added += 1
 
     nlm_registry.mark_promoted(domain, session_id, sources_added=added)
-    return added
+    return added, failed
 
 
 # --- abandon ---------------------------------------------------------------

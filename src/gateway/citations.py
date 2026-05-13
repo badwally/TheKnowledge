@@ -55,6 +55,24 @@ _NUMBERED_RE = re.compile(r"^\s*\d+\.\s+")
 _BLANK_RE = re.compile(r"^\s*$")
 _CITATION_LINE_RE = re.compile(r"\[\[sources/[^\]]+\]\]")
 
+# Lines that are pure bold-wrapped text (used as visual sub-headers in
+# orchestrator-rendered syntheses): "**1. Scope ... vs. Foo**".
+_BOLD_HEADER_RE = re.compile(r"^\*\*.+\*\*$")
+
+# Orchestrator-emitted metadata at the top of each synthesis page.
+_SYNTHESIS_META_RE = re.compile(
+    r"^\*\*(?:Origin question|Session|Branch):\*\*\s"
+)
+
+# Markdown footnote definition pointing into sources/: `[^12]: [[sources/<id>]]`.
+# Multiple definitions can share a line (NotebookLM-rendered syntheses do this).
+_FOOTNOTE_DEF_RE = re.compile(
+    r"\[\^(\d+)\]:\s*(\[\[sources/[^\]]+\]\])"
+)
+# In-text footnote reference: `[12]`, `[1, 2]`, `[3-5]`, `[1, 4-6, 9]`.
+# Negative lookbehind/lookahead exclude `[[wikilinks]]` and footnote defs.
+_FOOTNOTE_REF_RE = re.compile(r"(?<!\[)\[(\d+(?:\s*[,\-]\s*\d+)*)\](?!:)")
+
 # Heuristics for distinguishing claims from prose:
 # A "claim" is a sentence containing at least 5 words that ends in
 # `.`, `!`, or `?`, and is NOT inside a code fence, header, or
@@ -84,6 +102,58 @@ def _strip_code_fences(text: str) -> tuple[list[str], list[bool]]:
     return lines, mask
 
 
+def _build_footnote_map(body: str) -> dict[int, str]:
+    """Return ``{footnote_number: source-wikilink}`` for all
+    ``[^N]: [[sources/<id>]]`` definitions found anywhere in `body`.
+
+    Multiple definitions may share a line; each is captured independently.
+    """
+    out: dict[int, str] = {}
+    for m in _FOOTNOTE_DEF_RE.finditer(body):
+        try:
+            out[int(m.group(1))] = m.group(2)
+        except ValueError:
+            continue
+    return out
+
+
+def _parse_footnote_ref_numbers(raw: str) -> list[int]:
+    """Expand a footnote-ref body like ``1, 4-6, 9`` to ``[1, 4, 5, 6, 9]``."""
+    numbers: list[int] = []
+    for chunk in raw.split(","):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        if "-" in chunk:
+            lo_s, _, hi_s = chunk.partition("-")
+            try:
+                lo, hi = int(lo_s.strip()), int(hi_s.strip())
+            except ValueError:
+                continue
+            if lo <= hi:
+                numbers.extend(range(lo, hi + 1))
+        else:
+            try:
+                numbers.append(int(chunk))
+            except ValueError:
+                continue
+    return numbers
+
+
+def _line_cites_via_footnote(raw_line: str, footnote_map: dict[int, str]) -> bool:
+    """Return True if `raw_line` references any footnote that resolves to a
+    ``[[sources/...]]`` definition in `footnote_map`."""
+    if not footnote_map:
+        return False
+    # Remove footnote definitions on this line so they don't self-match as refs.
+    stripped = _FOOTNOTE_DEF_RE.sub("", raw_line)
+    for m in _FOOTNOTE_REF_RE.finditer(stripped):
+        for n in _parse_footnote_ref_numbers(m.group(1)):
+            if n in footnote_map:
+                return True
+    return False
+
+
 def find_claim_sentences(body: str) -> list[ClaimSentence]:
     """Locate sentences in `body` that look like factual claims.
 
@@ -96,9 +166,13 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
 
     The remaining sentences (split on `.!?`) are evaluated; sentences with
     ≥ MIN_CLAIM_WORDS are returned with line numbers and a flag indicating
-    whether the same line contains a `[[sources/...]]` citation.
+    whether the source is cited — either by a direct `[[sources/...]]` on
+    the same line, or by an in-text footnote reference (`[N]`, `[N, M]`,
+    `[N-M]`) that resolves to a `[^N]: [[sources/<id>]]` definition
+    elsewhere in the page.
     """
     lines, code_mask = _strip_code_fences(body)
+    footnote_map = _build_footnote_map(body)
     out: list[ClaimSentence] = []
     for idx, raw_line in enumerate(lines):
         if code_mask[idx]:
@@ -114,6 +188,16 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
         if not stripped:
             continue
 
+        # Skip orchestrator-rendered synthesis metadata
+        # (`**Origin question:** ...`, `**Session:** ...`, `**Branch:** ...`).
+        if _SYNTHESIS_META_RE.match(stripped):
+            continue
+
+        # Skip lines that are fully bold-wrapped (used as visual sub-headers
+        # by `_make_branch_synthesis_update`'s comparison sections).
+        if _BOLD_HEADER_RE.match(stripped):
+            continue
+
         # Skip lines that are only wikilinks (cross-reference lists).
         bare = _WIKILINK_RE.sub("", stripped).strip(" ·:-,;")
         if len(bare) < 3:
@@ -126,10 +210,16 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
                 continue
             if not sentence.endswith((".", "!", "?")):
                 continue
+            # Rhetorical questions (which NotebookLM uses as framing devices
+            # like "How do planners decide ... ?") are not factual claims.
+            if sentence.endswith("?"):
+                continue
             words = sentence.split()
             if len(words) < _MIN_CLAIM_WORDS:
                 continue
-            has_citation = bool(_CITATION_LINE_RE.search(raw_line))
+            has_citation = bool(_CITATION_LINE_RE.search(raw_line)) or (
+                _line_cites_via_footnote(raw_line, footnote_map)
+            )
             out.append(ClaimSentence(text=sentence, line_no=idx + 1, has_citation=has_citation))
     return out
 

@@ -21,6 +21,7 @@ through the existing `write_atomic` helpers, wiki pages go through
 from __future__ import annotations
 
 import concurrent.futures as _futures
+import os
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -226,6 +227,9 @@ def _safe_search(
 # --- filter -----------------------------------------------------------------
 
 
+_FILTER_MAX_WORKERS = int(os.environ.get("WIKI_FILTER_MAX_WORKERS", "8"))
+
+
 def _run_filter(
     candidates: list[CandidateItem],
     *,
@@ -234,21 +238,28 @@ def _run_filter(
     trust_local: bool,
     filter_client: FilterClient | None,
     session_id: str,
+    max_workers: int | None = None,
 ) -> list[tuple[CandidateItem, float]]:
-    """Score every candidate; keep only those clearing `threshold_include`.
+    """Score every candidate in parallel; keep only those clearing `threshold_include`.
 
     `trust_local=True` waves through items with `source_type == "local"`
     or `file://` URLs without a model call. Useful for pre-vetted local
     archives the user is folding into a search.
+
+    M44.1: each candidate's filter call runs in its own `ThreadPoolExecutor`
+    worker so 100+ candidates don't serialize at ~15–45s per Haiku call.
+    Defaults to 8 workers (set via `WIKI_FILTER_MAX_WORKERS`); turn down if
+    you hit Max-plan rate limits. Accepted candidates are returned in the
+    same order as `candidates` to keep logging and downstream behaviour
+    deterministic.
     """
     examples = _select_examples(_load_examples(domain), policy)
-    accepted: list[tuple[CandidateItem, float]] = []
+    scores: list[float | None] = [None] * len(candidates)
+    workers = max(1, max_workers if max_workers is not None else _FILTER_MAX_WORKERS)
 
-    for item in candidates:
+    def _score_one(idx: int, item: CandidateItem) -> tuple[int, float | None]:
         if trust_local and _is_local(item):
-            accepted.append((item, 1.0))
-            continue
-
+            return idx, 1.0
         front = _candidate_front(item, domain)
         body_head = item.description or item.title
         try:
@@ -257,11 +268,23 @@ def _run_filter(
             )
         except FilterError as e:
             _emit_step_error(session_id, "filter", item.url, str(e))
-            continue
+            return idx, None
+        return idx, result.score
 
-        if result.score >= policy.threshold_include:
-            accepted.append((item, result.score))
-    return accepted
+    if not candidates:
+        return []
+
+    with _futures.ThreadPoolExecutor(max_workers=min(workers, len(candidates))) as pool:
+        futures = [pool.submit(_score_one, i, item) for i, item in enumerate(candidates)]
+        for fut in _futures.as_completed(futures):
+            idx, score = fut.result()
+            scores[idx] = score
+
+    return [
+        (candidates[i], score)
+        for i, score in enumerate(scores)
+        if score is not None and score >= policy.threshold_include
+    ]
 
 
 def _is_local(item: CandidateItem) -> bool:
@@ -406,8 +429,8 @@ def _make_moc_update(
             body_lines.append(f"- **{name}** — {desc}")
             for sub in branch.get("sub_branches", []) or []:
                 sub_name = sub.get("name", "(unnamed)")
-                methods = ", ".join(sub.get("methods", []) or []) or "(no methods listed)"
-                body_lines.append(f"  - {sub_name}: {methods}")
+                points = ", ".join(sub.get("points") or sub.get("methods") or []) or "(no points listed)"
+                body_lines.append(f"  - {sub_name}: {points}")
     else:
         body_lines.append("_(taxonomy empty — analysis returned no branches)_")
     body_lines.extend(["", "## Synthesis pages", ""])
@@ -455,9 +478,9 @@ def _make_branch_synthesis_update(
         "",
     ]
     for label, key in (
-        ("Methods", "methods"),
+        ("Specifics", "specifics"),
         ("Comparisons", "comparisons"),
-        ("Open Problems", "open_problems"),
+        ("Gaps", "gaps"),
     ):
         sections.append(f"### {label}")
         sections.append("")
@@ -984,7 +1007,10 @@ def research(
         summary=f"created session notebook {session_nb_id}",
     )
 
-    # From here on out, any failure must mark the session abandoned.
+    # Through apply_plan, any failure marks the session abandoned. After
+    # apply_plan succeeds, the wiki pages are on disk and the post-apply
+    # promote step (step 16) is best-effort — its failures become warnings,
+    # not abandons.
     try:
         # Step 10 — push sources to session notebook.
         # Per-source failures (e.g. private/removed YouTube videos, dead
@@ -1058,14 +1084,15 @@ def research(
             research_query=prompt,
             client=nlm_client,
         )
+        branch_count = len(analysis_result.findings or {})
         log.append(
             "research",
             fields={
                 "session_id": session_id,
                 "step": "analysis",
-                "branches": len(getattr(analysis_result, "branches", []) or []),
+                "branches": branch_count,
             },
-            summary=f"analysis complete ({len(getattr(analysis_result, 'branches', []) or [])} branch(es))",
+            summary=f"analysis complete ({branch_count} branch(es))",
         )
 
         # Step 13/14 — build the plan with citations resolved.
@@ -1094,19 +1121,6 @@ def research(
             },
             summary=f"applied plan: {plan_result.summary}",
         )
-
-        # Step 16 — promote.
-        try:
-            promoted_n = _session.promote(
-                effective_domain,
-                session_id,
-                persistent_notebook_id=persistent_id,
-                session_notebook_id=session_nb_id,
-                client=nlm_client,
-                nlm_registry=nlm_registry,
-            )
-        except Exception as e:  # noqa: BLE001
-            raise RuntimeError(f"promote: {e}") from e
     except Exception as e:  # noqa: BLE001
         try:
             _session.abandon(
@@ -1124,15 +1138,53 @@ def research(
             errors=[f"research session {session_id} aborted: {e}"],
         )
 
-    log.append(
-        "research",
-        fields={
-            "session_id": session_id,
-            "step": "promoted",
-            "added": promoted_n,
-        },
-        summary=f"promoted {promoted_n} source(s) into persistent notebook",
-    )
+    # Step 16 — promote (post-apply_plan).
+    #
+    # apply_plan has succeeded; wiki pages are on disk and the session is
+    # semantically complete. Promotion (copying session sources into the
+    # persistent domain corpus) is a best-effort enrichment — failures here
+    # (stale URLs, NotebookLM rate limits, transient network errors) must
+    # NOT trigger session abandon, because that would leave the wiki pages
+    # orphaned in disk-vs-registry disagreement.
+    promote_warnings: list[str] = []
+    promoted_n = 0
+    promoted_failed: list[tuple[str, str]] = []
+    try:
+        promoted_n, promoted_failed = _session.promote(
+            effective_domain,
+            session_id,
+            persistent_notebook_id=persistent_id,
+            session_notebook_id=session_nb_id,
+            client=nlm_client,
+            nlm_registry=nlm_registry,
+        )
+    except Exception as e:  # noqa: BLE001 — promote failures are non-fatal
+        promote_warnings.append(f"promote: {e}")
+        log.append(
+            "research",
+            fields={"session_id": session_id, "step": "promote_failed"},
+            summary=f"promote failed but wiki was authored: {e}",
+        )
+    else:
+        for target, err in promoted_failed:
+            promote_warnings.append(f"promote source {target}: {err}")
+        log.append(
+            "research",
+            fields={
+                "session_id": session_id,
+                "step": "promoted",
+                "added": promoted_n,
+                "failed": len(promoted_failed),
+            },
+            summary=(
+                f"promoted {promoted_n} source(s) into persistent notebook"
+                + (
+                    f" ({len(promoted_failed)} failed)"
+                    if promoted_failed
+                    else ""
+                )
+            ),
+        )
 
     summary_lines = [
         f"research session {session_id} ({effective_domain})",
@@ -1144,7 +1196,9 @@ def research(
         success=True,
         paths_touched=plan_result.paths_touched,
         summary="\n".join(summary_lines),
-        warnings=list(plan_result.warnings) + list(analysis_result.errors),
+        warnings=list(plan_result.warnings)
+        + list(analysis_result.errors)
+        + promote_warnings,
     )
 
 

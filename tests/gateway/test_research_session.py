@@ -130,7 +130,7 @@ def test_promote_dedups_by_url(monkeypatch: pytest.MonkeyPatch):
     client = _RecordingClient()
     registry = _RegistryStub()
 
-    added = _session.promote(
+    added, failed = _session.promote(
         "alpha",
         "2026-04-29-x",
         persistent_notebook_id="nb-persistent",
@@ -140,6 +140,7 @@ def test_promote_dedups_by_url(monkeypatch: pytest.MonkeyPatch):
     )
 
     assert added == 1
+    assert failed == []
     # Only the new URL was added.
     assert client.add_url_calls == [("nb-persistent", "https://b.example/")]
     assert registry.promoted == [("alpha", "2026-04-29-x", 1)]
@@ -163,7 +164,7 @@ def test_promote_falls_back_to_text_when_no_url(monkeypatch: pytest.MonkeyPatch)
     client = _RecordingClient()
     registry = _RegistryStub()
 
-    added = _session.promote(
+    added, failed = _session.promote(
         "alpha",
         "sess-1",
         persistent_notebook_id="nb-persistent",
@@ -173,6 +174,7 @@ def test_promote_falls_back_to_text_when_no_url(monkeypatch: pytest.MonkeyPatch)
     )
 
     assert added == 1
+    assert failed == []
     # Note two routed via text; Note one was deduped.
     assert client.add_url_calls == []
     assert client.add_text_calls == [("nb-persistent", "", "Note two")]
@@ -195,7 +197,7 @@ def test_promote_records_correct_sources_added_count(
     client = _RecordingClient()
     registry = _RegistryStub()
 
-    added = _session.promote(
+    added, failed = _session.promote(
         "d1",
         "sess-2",
         persistent_notebook_id="nb-persistent",
@@ -205,6 +207,7 @@ def test_promote_records_correct_sources_added_count(
     )
 
     assert added == 3
+    assert failed == []
     assert registry.promoted == [("d1", "sess-2", 3)]
 
 
@@ -219,7 +222,7 @@ def test_promote_empty_session_does_nothing(monkeypatch: pytest.MonkeyPatch):
     client = _RecordingClient()
     registry = _RegistryStub()
 
-    added = _session.promote(
+    added, failed = _session.promote(
         "d1",
         "sess-3",
         persistent_notebook_id="nb-persistent",
@@ -228,8 +231,53 @@ def test_promote_empty_session_does_nothing(monkeypatch: pytest.MonkeyPatch):
         nlm_registry=registry,
     )
     assert added == 0
+    assert failed == []
     assert client.add_url_calls == []
     assert registry.promoted == [("d1", "sess-3", 0)]
+
+
+def test_promote_isolates_per_source_failures(monkeypatch: pytest.MonkeyPatch):
+    """One bad URL must not sink promotion of the rest."""
+    _patch_fetch(
+        monkeypatch,
+        by_notebook={
+            "nb-session": [
+                {"id": "s1", "url": "https://good-a.example/"},
+                {"id": "s2", "url": "https://stale.example/"},
+                {"id": "s3", "url": "https://good-b.example/"},
+            ],
+            "nb-persistent": [],
+        },
+    )
+
+    @dataclass
+    class _PickyClient(_RecordingClient):
+        def source_add_url(self, notebook_id: str, url: str) -> None:
+            if "stale" in url:
+                raise RuntimeError("Could not add url source.")
+            super().source_add_url(notebook_id, url)
+
+    client = _PickyClient()
+    registry = _RegistryStub()
+
+    added, failed = _session.promote(
+        "d1",
+        "sess-isolated",
+        persistent_notebook_id="nb-persistent",
+        session_notebook_id="nb-session",
+        client=client,
+        nlm_registry=registry,
+    )
+
+    assert added == 2
+    assert failed == [("https://stale.example/", "Could not add url source.")]
+    assert client.add_url_calls == [
+        ("nb-persistent", "https://good-a.example/"),
+        ("nb-persistent", "https://good-b.example/"),
+    ]
+    # Registry still marked promoted with the actual added count — session
+    # is not stuck ephemeral on a single stale URL.
+    assert registry.promoted == [("d1", "sess-isolated", 2)]
 
 
 # --- abandon ---------------------------------------------------------------

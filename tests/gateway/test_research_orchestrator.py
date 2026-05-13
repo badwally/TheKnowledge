@@ -333,6 +333,190 @@ def test_analysis_failure_marks_session_abandoned(
     assert sessions[0]["status"] == "abandoned"
 
 
+# --- post-apply_plan promote failure does NOT abandon ----------------------
+
+
+def test_promote_failure_does_not_abandon_session(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """apply_plan success + promote failure → warning, not abandon.
+
+    Regression for the 2026-05-11 incident: one stale URL inside
+    `session.promote()` raised, the orchestrator caught it as a fatal
+    error, and the session was marked abandoned even though apply_plan
+    had already written 7 wiki pages to disk."""
+    adapter = _StubAdapter(name="web", items=[_candidate("https://x.example/")])
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+    monkeypatch.setattr(sm, "fetch_nlm_sources", lambda nb_id: [])
+
+    # analysis returns a minimal successful AnalysisResult.
+    from gateway.research.analysis import AnalysisResult
+
+    def _ok_analyze(notebook_id, *, domain, research_query, client, **_):
+        return AnalysisResult(
+            domain=domain,
+            research_query=research_query,
+            notebook_id=notebook_id,
+            taxonomy={"field": research_query, "branches": []},
+            findings={},
+            synthesis={},
+        )
+
+    assert orch._analysis is not None, "analysis module must be importable"
+    monkeypatch.setattr(orch._analysis, "analyze", _ok_analyze)
+
+    # apply_plan returns success with a synthetic touched path.
+    from gateway.core import OperationResult
+
+    def _ok_apply(plan, *, draft=False, force_new_slug=False):
+        return OperationResult(
+            success=True,
+            paths_touched=[policy_kb / "wiki" / "mocs" / "alpha.md"],
+            summary=f"applied plan for {plan.source_id}",
+        )
+
+    monkeypatch.setattr(orch, "apply_plan", _ok_apply)
+
+    # promote raises — simulates the stale-URL failure.
+    def _boom_promote(*args, **kwargs):
+        raise RuntimeError("Could not add url source.")
+
+    monkeypatch.setattr(orch._session, "promote", _boom_promote)
+
+    nlm = _MockNlm()
+    result = orch.research("test prompt", domain="alpha", nlm_client=nlm)
+
+    # The wiki was authored — overall result must be success.
+    assert result.success, result.errors
+    # Promote failure surfaced as a warning, not as a session abort.
+    assert any(
+        "Could not add url source" in w for w in result.warnings
+    ), f"expected promote warning in: {result.warnings}"
+
+    # Session must NOT be abandoned — pages are on disk.
+    from gateway import nlm_registry
+
+    sessions = nlm_registry.list_sessions("alpha")
+    assert sessions, "session should have been registered"
+    assert sessions[0]["status"] != "abandoned", (
+        f"session was abandoned after apply_plan succeeded: {sessions[0]}"
+    )
+
+
+def test_promote_partial_failure_surfaces_as_warnings(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """Per-source promote failures (e.g. one stale URL in N) → warnings,
+    not session abort. The session is marked promoted with the actual
+    added count."""
+    adapter = _StubAdapter(name="web", items=[_candidate("https://x.example/")])
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+    monkeypatch.setattr(sm, "fetch_nlm_sources", lambda nb_id: [])
+
+    from gateway.research.analysis import AnalysisResult
+
+    def _ok_analyze(notebook_id, *, domain, research_query, client, **_):
+        return AnalysisResult(
+            domain=domain,
+            research_query=research_query,
+            notebook_id=notebook_id,
+            taxonomy={"field": research_query, "branches": []},
+            findings={},
+            synthesis={},
+        )
+
+    monkeypatch.setattr(orch._analysis, "analyze", _ok_analyze)
+
+    from gateway.core import OperationResult
+
+    def _ok_apply(plan, *, draft=False, force_new_slug=False):
+        return OperationResult(
+            success=True,
+            paths_touched=[policy_kb / "wiki" / "mocs" / "alpha.md"],
+            summary=f"applied plan for {plan.source_id}",
+        )
+
+    monkeypatch.setattr(orch, "apply_plan", _ok_apply)
+
+    # promote returns partial-success — 2 added, 1 stale URL failed.
+    def _partial_promote(*args, **kwargs):
+        return 2, [("https://stale.example/", "Could not add url source.")]
+
+    monkeypatch.setattr(orch._session, "promote", _partial_promote)
+
+    nlm = _MockNlm()
+    result = orch.research("test prompt", domain="alpha", nlm_client=nlm)
+
+    assert result.success, result.errors
+    assert any("stale.example" in w for w in result.warnings), result.warnings
+
+
+def test_analysis_log_records_actual_branch_count(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """log.append for step=analysis records len(findings), not 0.
+
+    Regression for the pre-2026-05-12 `branches=0` bug where the
+    orchestrator looked up a non-existent `branches` attribute on
+    AnalysisResult."""
+    adapter = _StubAdapter(name="web", items=[_candidate("https://x.example/")])
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+    monkeypatch.setattr(sm, "fetch_nlm_sources", lambda nb_id: [])
+
+    from gateway.research.analysis import AnalysisResult
+
+    def _ok_analyze(notebook_id, *, domain, research_query, client, **_):
+        return AnalysisResult(
+            domain=domain,
+            research_query=research_query,
+            notebook_id=notebook_id,
+            taxonomy={"field": research_query, "branches": []},
+            findings={"branch-a": {}, "branch-b": {}, "branch-c": {}},
+            synthesis={},
+        )
+
+    monkeypatch.setattr(orch._analysis, "analyze", _ok_analyze)
+
+    from gateway.core import OperationResult
+
+    def _ok_apply(plan, *, draft=False, force_new_slug=False):
+        return OperationResult(
+            success=True,
+            paths_touched=[policy_kb / "wiki" / "mocs" / "alpha.md"],
+            summary="applied",
+        )
+
+    monkeypatch.setattr(orch, "apply_plan", _ok_apply)
+    monkeypatch.setattr(orch._session, "promote", lambda *a, **kw: (0, []))
+
+    captured: list[dict] = []
+    real_append = orch.log.append
+
+    def capturing_append(event_type, *, fields, summary):
+        captured.append({"event": event_type, "fields": dict(fields), "summary": summary})
+        return real_append(event_type, fields=fields, summary=summary)
+
+    monkeypatch.setattr(orch.log, "append", capturing_append)
+
+    nlm = _MockNlm()
+    result = orch.research("test prompt", domain="alpha", nlm_client=nlm)
+    assert result.success, result.errors
+
+    analysis_entries = [
+        c for c in captured
+        if c["event"] == "research" and c["fields"].get("step") == "analysis"
+    ]
+    assert len(analysis_entries) == 1, captured
+    assert analysis_entries[0]["fields"]["branches"] == 3, analysis_entries[0]
+    assert "3 branch(es)" in analysis_entries[0]["summary"]
+
+
 # --- empty prompt ----------------------------------------------------------
 
 
@@ -680,3 +864,147 @@ def test_history_examples_seeded_into_planner_prompt(
     )
     assert plan_client.last_prompt is not None
     assert "pinned good query" in plan_client.last_prompt
+
+
+# --- M44.1: parallel filter -------------------------------------------------
+
+
+def _make_candidate(idx: int) -> CandidateItem:
+    return CandidateItem(
+        source_type="web",
+        item_id=f"c{idx}",
+        url=f"https://example.com/{idx}",
+        title=f"Candidate {idx}",
+        description=f"body for {idx}",
+        authors=[],
+        publish_date="",
+        source_metadata={},
+    )
+
+
+def test_run_filter_parallel_threshold_preserves_input_order(policy_kb, monkeypatch):
+    """Accepted candidates must come back in input order regardless of scheduling."""
+    from gateway.filter import policy as _policy
+
+    candidates = [_make_candidate(i) for i in range(20)]
+
+    # Score every other candidate above the include threshold (0.5).
+    scores = [0.9 if i % 2 == 0 else 0.1 for i in range(20)]
+
+    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+        idx = int(front["url"].rsplit("/", 1)[-1])
+        return FilterResult(
+            score=scores[idx],
+            rationale="stub",
+            policy_version=f"{policy.domain_slug}-v1",
+            decided_at="2026-05-12T00:00:00Z",
+        )
+
+    monkeypatch.setattr(orch, "filter_score", _score)
+    policy = _policy.load_policy("alpha")
+
+    accepted = orch._run_filter(
+        candidates,
+        domain="alpha",
+        policy=policy,
+        trust_local=False,
+        filter_client=None,
+        session_id="test-session",
+        max_workers=8,
+    )
+
+    assert [int(c.url.rsplit("/", 1)[-1]) for c, _ in accepted] == [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+    assert all(s == 0.9 for _, s in accepted)
+
+
+def test_run_filter_actually_runs_concurrently(policy_kb, monkeypatch):
+    """8 workers must enter `filter_score` simultaneously (verified via barrier)."""
+    import threading
+    from gateway.filter import policy as _policy
+
+    n = 8
+    enter_barrier = threading.Barrier(n + 1, timeout=5.0)  # +1 for main thread
+
+    def _slow_score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+        enter_barrier.wait()  # blocks until all n workers + main reach this point
+        return FilterResult(
+            score=0.9,
+            rationale="stub",
+            policy_version=f"{policy.domain_slug}-v1",
+            decided_at="2026-05-12T00:00:00Z",
+        )
+
+    monkeypatch.setattr(orch, "filter_score", _slow_score)
+    policy = _policy.load_policy("alpha")
+    candidates = [_make_candidate(i) for i in range(n)]
+
+    import concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+        fut = pool.submit(
+            orch._run_filter,
+            candidates,
+            domain="alpha",
+            policy=policy,
+            trust_local=False,
+            filter_client=None,
+            session_id="test-session",
+            max_workers=n,
+        )
+        # Will deadlock (barrier timeout fires as BrokenBarrierError) if
+        # _run_filter is sequential — only 1 worker enters at a time.
+        enter_barrier.wait()
+        accepted = fut.result(timeout=10.0)
+
+    assert len(accepted) == n
+
+
+def test_run_filter_isolates_per_item_errors(policy_kb, monkeypatch):
+    """One bad candidate should not sink the batch."""
+    from gateway.filter import policy as _policy
+    from gateway.filter.semantic import FilterError
+
+    candidates = [_make_candidate(i) for i in range(5)]
+
+    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+        idx = int(front["url"].rsplit("/", 1)[-1])
+        if idx == 2:
+            raise FilterError("boom")
+        return FilterResult(
+            score=0.9,
+            rationale="ok",
+            policy_version=f"{policy.domain_slug}-v1",
+            decided_at="2026-05-12T00:00:00Z",
+        )
+
+    monkeypatch.setattr(orch, "filter_score", _score)
+    policy = _policy.load_policy("alpha")
+
+    accepted = orch._run_filter(
+        candidates,
+        domain="alpha",
+        policy=policy,
+        trust_local=False,
+        filter_client=None,
+        session_id="test-session",
+        max_workers=4,
+    )
+
+    # Indexes 0, 1, 3, 4 accepted; index 2 dropped due to FilterError.
+    assert [int(c.url.rsplit("/", 1)[-1]) for c, _ in accepted] == [0, 1, 3, 4]
+
+
+def test_run_filter_empty_candidates_returns_empty(policy_kb):
+    from gateway.filter import policy as _policy
+
+    policy = _policy.load_policy("alpha")
+    assert (
+        orch._run_filter(
+            [],
+            domain="alpha",
+            policy=policy,
+            trust_local=False,
+            filter_client=None,
+            session_id="test-session",
+        )
+        == []
+    )
