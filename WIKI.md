@@ -362,6 +362,17 @@ question: "How does GLP-1 RA dose affect the tradeoff between weight loss effica
 created_at: "..."
 last_updated: "..."
 sources_consulted: 18
+# M45 (optional): explicit enumeration of constituent works. When present
+# with ≥2 entries (and a matching `## Included works` body section), the
+# first claim-shaped sentence of each `## ` section that matches the
+# aggregate-framing-opener allowlist is exempt from per-claim citation —
+# the page's enumerated constituent set grounds it. See § 5.2.
+# One-level strict typing: ALL `sources/<slug>` (first-derivative) OR
+# ALL `synthesis/<slug>` (second-derivative). Never mixed.
+synthesizes:
+  - sources/yt-LfRiBJgD7sk
+  - sources/pubmed-39847203
+  - sources/arxiv-2403.12345
 nlm_artifact: "wiki/artifacts/briefings/2026-04-27-glp1-dose-tradeoff.md"  # optional
 nlm_notebook_id: "nb_abc123"
 nlm_artifact_url: "https://notebooklm.google.com/notebook/<id>"  # bidirectional link
@@ -388,7 +399,7 @@ nlm_artifact_url: "https://notebooklm.google.com/notebook/<id>"  # bidirectional
 - Live: <URL>
 ```
 
-Required sections: Synthesis, Sources cited. Optional: Open questions, Disagreements, NotebookLM artifact (when applicable).
+Required sections: Synthesis, Sources cited. Optional: Open questions, Disagreements, NotebookLM artifact (when applicable), **Included works** (required when `synthesizes:` is set in frontmatter; must mirror the list 1:1).
 
 ### 4.5 MOC — Map of Content (`wiki/mocs/<domain>.md`)
 
@@ -505,6 +516,8 @@ Examples NOT subject to the rule:
 - Section headers
 - Cross-reference lists ("Related concepts: ...")
 - Open questions (which are *un*answered claims)
+- NotebookLM-emitted structural-frame bullets in synthesis pages (`**Themes Used In:**`, `**Items Compared:**`, `**Which themes draw on it:**`, `**Name and key claim:**`, `**Core approach/mechanism:**`, `**Concrete details:**`, `**Differences in Evidence:**`, `**Trade-offs and Contexts:**`, `**Strengths and Weaknesses:**`, `**Context:**`, `**Gap Identified:**`, `**Limitation Identified:**`, `**Tension Identified:**`) — these describe the analysis frame, not claims about the world. The allowlist lives in `gateway/citations.py:_STRUCTURAL_FRAME_LABELS`; extend it when NotebookLM introduces a new frame label. When the label sits on its own line and the value is on the next line (or after a blank line), the value line is also exempted — the validator tracks one continuation slot per label.
+- **(M45) Aggregate-framing openers** on synthesis pages with `synthesizes:` enumerated (≥2 entries) and a `## Included works` section that mirrors the list. The first claim-shaped sentence of each `## ` section that matches the opener allowlist (`Based on the provided sources…`, `Across the corpus…`, `Looking across…`, `Aggregating across…`, etc.) is exempt — it's a legitimate aggregate observation backed by the enumerated constituent set, modeled on Cochrane / PRISMA's "Characteristics of included studies" convention. Bounded: one opener per section; subsequent claims still need direct citation. Allowlist in `gateway/citations.py:_AGGREGATE_FRAMING_OPENERS_RE`; pinned by tests. `wiki lint --scope citation-chains` surfaces synthesis pages with aggregate framing but no `synthesizes:` enumeration. The `[[corpus]]` token is forbidden by design (citation-laundering anti-pattern).
 
 ### 5.3 Citation density
 
@@ -519,6 +532,8 @@ When an agent updates a wiki page to cite source `<id>`, the gateway also update
 Draft mode lets an agent commit a page with incomplete citations. It applies to entity, concept, source, and synthesis pages — the four types subject to the citation grounding rule. MOC and artifact pages have no draft mode (they have nothing to soften).
 
 **Entering draft mode.** Pass `--draft` to a gateway write operation (`wiki ingest --draft`, `wiki query --draft`, `wiki nlm-* --draft`). The gateway sets `draft: true` in the page frontmatter and adds a `draft_started_at` ISO datetime. The validator downgrades the citation grounding rule from rejection to warning. All other validator rules (frontmatter shape, link resolution, slug uniqueness, source immutability, page-shape, plan-before-write) remain hard rejections — drafts are *partial* not *unstructured*.
+
+**`wiki research` defaults to draft (M45.1, 2026-05-13).** NotebookLM's synthesis prose routinely emits interpretive openers (e.g., *"The provided sources detail…"*, *"There is an unanswered tension…"*) and mid-section aggregate claims that fail strict citation grounding even with M45's `synthesizes:` + `## Included works` discipline in place. Extending the opener allowlist to chase every NotebookLM phrasing variant is whack-a-mole. The cleaner default is to commit synthesis pages as drafts and finalize them by hand: keep the default, follow up with `wiki cite` and `wiki finalize` per page once the framing prose has been attributed. Pass `--no-draft` to force strict-mode validation if you have reason to believe the run will produce cleanly-cited prose (e.g., narrow firm-explainer queries with clear single-source citations).
 
 **While in draft mode.** Subsequent writes to the same page may be done in either mode. Lint reports list drafts and the count of unresolved claim sentences. Drafts older than the staleness threshold (default 7 days; configurable per domain) are surfaced in lint as `stale_drafts`.
 

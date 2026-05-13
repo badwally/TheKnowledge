@@ -1008,3 +1008,107 @@ def test_run_filter_empty_candidates_returns_empty(policy_kb):
         )
         == []
     )
+
+
+# --- M45: synthesizes emission --------------------------------------------
+
+
+def test_branch_synthesis_update_emits_synthesizes_and_included_works():
+    """Per-branch synthesis page (`first-derivative`) emits `synthesizes:`
+    listing the constituent sources plus a `## Included works` section."""
+    from gateway import frontmatter as fm
+
+    branch_findings = {
+        "specifics": {
+            "answer": "Specifics body.",
+            "citations": {1: "nlm-id-1", 2: "nlm-id-2"},
+            "sources_used": [],
+        },
+        "comparisons": {
+            "answer": "Comparisons body.",
+            "citations": {1: "nlm-id-3"},
+            "sources_used": [],
+        },
+    }
+    source_map = {
+        "nlm-id-1": "raw/web/web-aaa",
+        "nlm-id-2": "raw/web/web-bbb",
+        "nlm-id-3": "raw/web/web-ccc",
+    }
+    update = orch._make_branch_synthesis_update(
+        domain="alpha",
+        session_id="sess-1",
+        branch_name="Some Theme",
+        branch_findings=branch_findings,
+        research_query="rq",
+        source_map=source_map,
+    )
+    front, body = fm.parse(update.content)
+    assert front.get("synthesizes") == [
+        "sources/web-aaa",
+        "sources/web-bbb",
+        "sources/web-ccc",
+    ]
+    assert "## Included works" in body
+    for slug in ("web-aaa", "web-bbb", "web-ccc"):
+        assert f"[[sources/{slug}]]" in body
+
+
+def test_branch_synthesis_omits_synthesizes_when_no_citations():
+    """Branch with no resolvable citations does not emit `synthesizes:`."""
+    from gateway import frontmatter as fm
+
+    update = orch._make_branch_synthesis_update(
+        domain="alpha",
+        session_id="sess-1",
+        branch_name="Empty Branch",
+        branch_findings={"specifics": {"answer": "ok", "citations": {}, "sources_used": []}},
+        research_query="rq",
+        source_map={},
+    )
+    front, body = fm.parse(update.content)
+    assert "synthesizes" not in front
+    assert "## Included works" not in body
+
+
+def test_cross_cutting_synthesis_lists_per_branch_synthesis_slugs():
+    """Cross-cutting page is second-derivative — `synthesizes:` lists
+    `synthesis/<slug>` entries for each branch, never raw sources."""
+    from gateway import frontmatter as fm
+
+    update = orch._make_cross_cutting_update(
+        domain="alpha",
+        session_id="sess-1",
+        research_query="rq",
+        synthesis={"recurring_patterns": {"answer": "ok", "citations": {}, "sources_used": []}},
+        source_map={},
+        branch_names=["Theme One", "Theme Two", "Theme Three"],
+    )
+    front, body = fm.parse(update.content)
+    expected = sorted({
+        "synthesis/sess-1-theme-one",
+        "synthesis/sess-1-theme-two",
+        "synthesis/sess-1-theme-three",
+    })
+    assert front.get("synthesizes") == expected
+    assert "## Included works" in body
+    for slug in expected:
+        assert f"[[{slug}]]" in body
+    # One-level strict typing: no raw sources in cross-cutting synthesizes
+    assert not any(s.startswith("sources/") for s in front["synthesizes"])
+
+
+def test_cross_cutting_synthesis_omits_synthesizes_when_one_branch():
+    """One-branch corpus doesn't aggregate — exemption requires ≥2 entries."""
+    from gateway import frontmatter as fm
+
+    update = orch._make_cross_cutting_update(
+        domain="alpha",
+        session_id="sess-1",
+        research_query="rq",
+        synthesis={},
+        source_map={},
+        branch_names=["Only Branch"],
+    )
+    front, _ = fm.parse(update.content)
+    assert "synthesizes" not in front

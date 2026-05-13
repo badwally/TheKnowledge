@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -10,8 +11,10 @@ import yaml
 from gateway import frontmatter as fm
 from gateway import paths
 from gateway.filter import (
+    ClaudeCLIFilterClient,
     Example,
     FilterClient,
+    FilterError,
     Policy,
     PolicyError,
     build_prompt,
@@ -368,3 +371,156 @@ def test_filter_correct_unknown_source_errors(kb_root):
     )
     assert not result.success
     assert any("no raw source" in e for e in result.errors)
+
+
+# --- ClaudeCLIFilterClient retry behavior -----------------------------------
+
+
+def _fake_completed(returncode: int, stdout: str = "", stderr: str = ""):
+    return subprocess.CompletedProcess(
+        args=["claude", "-p", "<prompt>"],
+        returncode=returncode,
+        stdout=stdout,
+        stderr=stderr,
+    )
+
+
+def test_claude_cli_retries_then_succeeds(monkeypatch):
+    sleeps: list[float] = []
+    calls = {"n": 0}
+
+    def fake_run(*_args, **_kwargs):
+        calls["n"] += 1
+        if calls["n"] < 3:
+            return _fake_completed(1, stderr="rate_limit_error: 429")
+        return _fake_completed(0, stdout='{"score": 0.9, "rationale": "ok"}')
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    client = ClaudeCLIFilterClient(retry_base_s=0.01, sleep=sleeps.append)
+    out = client.call("prompt")
+    assert '"score": 0.9' in out
+    assert calls["n"] == 3
+    assert len(sleeps) == 2
+    assert sleeps[0] == pytest.approx(0.01)
+    assert sleeps[1] == pytest.approx(0.02)
+
+
+def test_claude_cli_raises_after_max_retries(monkeypatch):
+    sleeps: list[float] = []
+
+    def fake_run(*_args, **_kwargs):
+        return _fake_completed(1, stderr="overloaded_error: 529")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    client = ClaudeCLIFilterClient(max_retries=2, retry_base_s=0.01, sleep=sleeps.append)
+    with pytest.raises(FilterError, match="3 attempts"):
+        client.call("prompt")
+    assert len(sleeps) == 2  # 2 retries between 3 total attempts
+
+
+# --- M44: split-prompt path + Haiku routing --------------------------------
+
+
+class SplitStubClient(FilterClient):
+    """Stub that implements both `call` and `call_split` for M44 assertions."""
+
+    def __init__(self, response: str):
+        self.response = response
+        self.split_calls: list[tuple[str, str]] = []
+        self.plain_calls: list[str] = []
+
+    def call(self, prompt: str) -> str:
+        self.plain_calls.append(prompt)
+        return self.response
+
+    def call_split(self, *, system: str, user: str) -> str:
+        self.split_calls.append((system, user))
+        return self.response
+
+
+def test_score_prefers_call_split_when_available(kb_root):
+    write_policy("test-domain")
+    policy = load_policy("test-domain")
+    client = SplitStubClient('{"score": 0.81, "rationale": "ok"}')
+    score({"type": "youtube", "title": "T"}, "body", policy, client=client)
+    assert len(client.split_calls) == 1
+    assert client.plain_calls == []
+    system, user = client.split_calls[0]
+    assert "Editorial policy" in system
+    assert "slug: test-domain" in system
+    assert "Source under evaluation" in user
+    assert "body" in user
+    # Policy should NOT appear in user payload — wasted tokens
+    assert "Editorial policy" not in user
+
+
+def test_score_falls_back_to_call_for_legacy_stubs(kb_root):
+    write_policy("test-domain")
+    policy = load_policy("test-domain")
+    client = StubClient('{"score": 0.81, "rationale": "ok"}')
+    score({"type": "youtube", "title": "T"}, "body", policy, client=client)
+    assert len(client.prompts) == 1
+    # Backwards-compat path: system + user concatenated into one string
+    assert "Editorial policy" in client.prompts[0]
+    assert "Source under evaluation" in client.prompts[0]
+
+
+def test_claude_cli_filter_client_argv_has_bare_tools_empty_haiku(monkeypatch):
+    captured: list[list[str]] = []
+
+    def fake_run(argv, *_a, **_kwargs):
+        captured.append(list(argv))
+        return _fake_completed(0, stdout='{"score": 0.9, "rationale": "ok"}')
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    client = ClaudeCLIFilterClient(retry_base_s=0.01, sleep=lambda _s: None)
+    client.call_split(system="SYS", user="USR")
+
+    argv = captured[0]
+    assert "--bare" not in argv  # --bare bypasses Max OAuth
+    assert "--no-session-persistence" in argv
+    assert "--tools" in argv
+    assert argv[argv.index("--tools") + 1] == ""
+    assert "--model" in argv
+    assert argv[argv.index("--model") + 1] == "claude-haiku-4-5-20251001"
+    assert argv[argv.index("--system-prompt") + 1] == "SYS"
+    assert argv[-1] == "USR"
+
+
+def test_claude_cli_filter_client_call_prompt_omits_system_prompt_flag(monkeypatch):
+    """Legacy `call(prompt)` entry point: no --system-prompt, single positional."""
+    captured: list[list[str]] = []
+    monkeypatch.setattr(
+        subprocess,
+        "run",
+        lambda argv, *_a, **_k: (captured.append(list(argv)) or _fake_completed(0, stdout='{"score":0.5,"rationale":"x"}')),
+    )
+    ClaudeCLIFilterClient(retry_base_s=0.01, sleep=lambda _s: None).call("monolithic")
+    argv = captured[0]
+    assert "--system-prompt" not in argv
+    assert argv[-1] == "monolithic"
+
+
+def test_claude_cli_strips_anthropic_api_key_from_subprocess_env(monkeypatch):
+    """Regression: the gateway's `claude -p` subprocess invocations must drop
+    `ANTHROPIC_API_KEY` so the Claude CLI uses the user's Max-plan OAuth login
+    instead of billing against API credits. Filter, plan, and VLM all funnel
+    through the same `claude_cli_env()` helper."""
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-fake-should-not-leak")
+    captured_envs: list[dict] = []
+
+    def fake_run(*_args, env=None, **_kwargs):
+        captured_envs.append(env or {})
+        return _fake_completed(0, stdout='{"score": 0.9, "rationale": "ok"}')
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    client = ClaudeCLIFilterClient(retry_base_s=0.01, sleep=lambda _s: None)
+    client.call("prompt")
+
+    assert len(captured_envs) == 1
+    assert "ANTHROPIC_API_KEY" not in captured_envs[0], (
+        "ANTHROPIC_API_KEY leaked into claude -p subprocess env — "
+        "Max plan would be bypassed in favor of API billing"
+    )
+    # Other env vars should still be present
+    assert captured_envs[0].get("PATH") is not None

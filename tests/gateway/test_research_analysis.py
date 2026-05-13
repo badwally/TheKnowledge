@@ -54,35 +54,45 @@ class FakeClient:
 
 
 _TAXONOMY_ANSWER_FIVE_BRANCHES = """
-AREA: Branch One
+THEME: Branch One
 DESCRIPTION: First branch description.
-  SUB: Sub A
+  SUBTHEME: Sub A
   DESCRIPTION: First sub of branch one.
-    METHOD: Method 1A
-AREA: Branch Two
+    POINT: Point 1A
+THEME: Branch Two
 DESCRIPTION: Second branch description.
-  SUB: Sub B
+  SUBTHEME: Sub B
   DESCRIPTION: First sub of branch two.
-    METHOD: Method 2A
-AREA: Branch Three
+    POINT: Point 2A
+THEME: Branch Three
 DESCRIPTION: Third branch description.
-  SUB: Sub C
+  SUBTHEME: Sub C
   DESCRIPTION: First sub of branch three.
-    METHOD: Method 3A
-AREA: Branch Four
+    POINT: Point 3A
+THEME: Branch Four
 DESCRIPTION: Fourth branch description.
-  SUB: Sub D
+  SUBTHEME: Sub D
   DESCRIPTION: First sub of branch four.
-    METHOD: Method 4A
-AREA: Branch Five
+    POINT: Point 4A
+THEME: Branch Five
 DESCRIPTION: Fifth branch description.
-  SUB: Sub E
+  SUBTHEME: Sub E
   DESCRIPTION: First sub of branch five.
-    METHOD: Method 5A
+    POINT: Point 5A
 """.strip()
 
 
 _TAXONOMY_ANSWER_ONE_BRANCH = """
+THEME: Only Branch
+DESCRIPTION: A single branch.
+  SUBTHEME: The Sub
+  DESCRIPTION: The only sub.
+    POINT: Single Point
+""".strip()
+
+
+# Legacy fixture retained for backward-compatibility regression test.
+_LEGACY_TAXONOMY_ANSWER_ONE_BRANCH = """
 AREA: Only Branch
 DESCRIPTION: A single branch.
   SUB: The Sub
@@ -115,19 +125,19 @@ def test_analyze_happy_path_runs_all_three_phases():
         # Phase 1 — taxonomy: anchor on the unique research-query string.
         "compare frobnication": _taxonomy_response(_TAXONOMY_ANSWER_ONE_BRANCH),
         # Phase 2 — investigate the single branch (3 templated queries).
-        'for the research area "Only Branch"': _branch_response("Only Branch", "methods"),
+        'for the theme "Only Branch"': _branch_response("Only Branch", "specifics"),
         # Phase 3 — synthesis (3 default queries).
-        "architectures or techniques appear in multiple sub-fields": {
-            "answer": "shared architectures answer",
-            "citations": {1: "nlm-shared-1"},
-            "sources_used": ["nlm-shared-1"],
+        "frameworks, patterns, principles, or approaches appear in multiple sub-areas": {
+            "answer": "recurring patterns answer",
+            "citations": {1: "nlm-pat-1"},
+            "sources_used": ["nlm-pat-1"],
         },
-        "benchmark datasets are referenced": {
-            "answer": "common datasets answer",
-            "citations": {1: "nlm-data-1"},
-            "sources_used": ["nlm-data-1"],
+        "authoritative sources, standards, primary references": {
+            "answer": "shared anchors answer",
+            "citations": {1: "nlm-anc-1"},
+            "sources_used": ["nlm-anc-1"],
         },
-        "fundamental trade-offs": {
+        "recurring trade-offs or tensions surface": {
             "answer": "tradeoffs answer",
             "citations": {1: "nlm-trade-1"},
             "sources_used": ["nlm-trade-1"],
@@ -153,19 +163,19 @@ def test_analyze_happy_path_runs_all_three_phases():
     branch = result.taxonomy["branches"][0]
     assert branch["name"] == "Only Branch"
     assert branch["description"] == "A single branch."
-    assert branch["sub_branches"][0]["methods"] == ["Single Method"]
+    assert branch["sub_branches"][0]["points"] == ["Single Point"]
 
     # Findings — one branch with all three sub-queries.
     assert "Only Branch" in result.findings
     findings = result.findings["Only Branch"]
     assert findings["branch"] == "Only Branch"
-    for key in ("methods", "comparisons", "open_problems"):
+    for key in ("specifics", "comparisons", "gaps"):
         assert key in findings, f"missing {key}"
         # All three sub-queries hit the same branch fallback above; "error" must NOT be present.
         assert "error" not in findings[key]
 
     # Synthesis — all three default queries present, none erroring.
-    assert set(result.synthesis.keys()) == {"shared_architectures", "common_datasets", "recurring_tradeoffs"}
+    assert set(result.synthesis.keys()) == {"recurring_patterns", "shared_anchors", "recurring_tradeoffs"}
     for v in result.synthesis.values():
         assert "error" not in v
 
@@ -236,7 +246,7 @@ def test_analyze_continues_past_branch_failure():
 
     # Branches 1, 2, 4, 5 ran their three sub-queries normally.
     for ok in ("Branch One", "Branch Two", "Branch Four", "Branch Five"):
-        for key in ("methods", "comparisons", "open_problems"):
+        for key in ("specifics", "comparisons", "gaps"):
             assert key in result.findings[ok]
 
     # One error recorded, naming the failed branch.
@@ -251,20 +261,20 @@ def test_analyze_continues_past_synthesis_query_failure():
     """One synthesis query raises; the other two still run."""
     responses = {
         "synth failure test": _taxonomy_response(_TAXONOMY_ANSWER_ONE_BRANCH),
-        "benchmark datasets are referenced": {
-            "answer": "datasets ok",
-            "citations": {1: "nlm-d-1"},
-            "sources_used": ["nlm-d-1"],
+        "authoritative sources, standards, primary references": {
+            "answer": "anchors ok",
+            "citations": {1: "nlm-a-1"},
+            "sources_used": ["nlm-a-1"],
         },
-        "fundamental trade-offs": {
+        "recurring trade-offs or tensions surface": {
             "answer": "tradeoffs ok",
             "citations": {1: "nlm-t-1"},
             "sources_used": ["nlm-t-1"],
         },
     }
     raise_when = {
-        "architectures or techniques appear in multiple sub-fields": RuntimeError(
-            "shared_architectures down"
+        "frameworks, patterns, principles, or approaches appear in multiple sub-areas": RuntimeError(
+            "recurring_patterns down"
         ),
     }
     client = FakeClient(responses, raise_when=raise_when)
@@ -276,16 +286,16 @@ def test_analyze_continues_past_synthesis_query_failure():
         client=client,
     )
 
-    assert "shared_architectures" in result.synthesis
-    assert result.synthesis["shared_architectures"]["error"] == "shared_architectures down"
-    assert result.synthesis["shared_architectures"]["answer"] == ""
+    assert "recurring_patterns" in result.synthesis
+    assert result.synthesis["recurring_patterns"]["error"] == "recurring_patterns down"
+    assert result.synthesis["recurring_patterns"]["answer"] == ""
 
     # The other two synthesis queries succeeded.
-    assert result.synthesis["common_datasets"]["answer"] == "datasets ok"
+    assert result.synthesis["shared_anchors"]["answer"] == "anchors ok"
     assert result.synthesis["recurring_tradeoffs"]["answer"] == "tradeoffs ok"
 
     # Recorded in errors.
-    assert any("synthesis[shared_architectures]" in e for e in result.errors)
+    assert any("synthesis[recurring_patterns]" in e for e in result.errors)
 
 
 # --- custom prompt injection ------------------------------------------------
@@ -324,8 +334,8 @@ def test_custom_synthesis_queries_replace_defaults():
 
     # None of the default synthesis prompts were called.
     for default_prompt in (
-        analysis._SHARED_ARCHITECTURES_PROMPT,
-        analysis._COMMON_DATASETS_PROMPT,
+        analysis._RECURRING_PATTERNS_PROMPT,
+        analysis._SHARED_ANCHORS_PROMPT,
         analysis._RECURRING_TRADEOFFS_PROMPT,
     ):
         assert all(default_prompt != q for _nb, q in client.calls)
@@ -376,9 +386,9 @@ def test_custom_investigation_templates_extend_defaults():
 
     findings = result.findings["Only Branch"]
     # Defaults still ran.
-    assert "methods" in findings
+    assert "specifics" in findings
     assert "comparisons" in findings
-    assert "open_problems" in findings
+    assert "gaps" in findings
     # Plus the extra template.
     assert findings["extra"]["answer"] == "extra answer"
 
@@ -402,22 +412,22 @@ def test_citation_dicts_preserved_unchanged():
             "citations": tax_citations,
             "sources_used": list(tax_citations.values()),
         },
-        'for the research area "Only Branch"': {
+        'for the theme "Only Branch"': {
             "answer": "branch answer",
             "citations": branch_citations,
             "sources_used": list(branch_citations.values()),
         },
-        "architectures or techniques appear in multiple sub-fields": {
+        "frameworks, patterns, principles, or approaches appear in multiple sub-areas": {
             "answer": "x",
             "citations": synth_shared,
             "sources_used": list(synth_shared.values()),
         },
-        "benchmark datasets are referenced": {
+        "authoritative sources, standards, primary references": {
             "answer": "y",
             "citations": synth_data,
             "sources_used": list(synth_data.values()),
         },
-        "fundamental trade-offs": {
+        "recurring trade-offs or tensions surface": {
             "answer": "z",
             "citations": synth_trade,
             "sources_used": list(synth_trade.values()),
@@ -436,11 +446,11 @@ def test_citation_dicts_preserved_unchanged():
     assert result.taxonomy["citations"] == tax_citations
     # Each branch sub-query carries the same branch citations dict
     # (FakeClient returned the same payload for all three templates).
-    for key in ("methods", "comparisons", "open_problems"):
+    for key in ("specifics", "comparisons", "gaps"):
         assert result.findings["Only Branch"][key]["citations"] == branch_citations
     # Synthesis citations preserved exactly.
-    assert result.synthesis["shared_architectures"]["citations"] == synth_shared
-    assert result.synthesis["common_datasets"]["citations"] == synth_data
+    assert result.synthesis["recurring_patterns"]["citations"] == synth_shared
+    assert result.synthesis["shared_anchors"]["citations"] == synth_data
     assert result.synthesis["recurring_tradeoffs"]["citations"] == synth_trade
 
 
@@ -488,3 +498,111 @@ def test_default_investigation_templates_include_research_query():
     assert len(branch_questions) == 3
     for q in branch_questions:
         assert "ANCHOR-TOKEN-INVEST" in q
+
+
+# --- backward compat: parser accepts legacy AREA/SUB/METHOD --------------
+
+
+def test_parser_accepts_legacy_area_sub_method_labels():
+    """Backward-compat: NotebookLM responses using the legacy AREA / SUB /
+    METHOD labels (from the prior research-notebook tool's prompt style)
+    must still parse correctly so a stale custom_taxonomy_prompt does not
+    break analysis."""
+    branches = analysis._parse_taxonomy_response(_LEGACY_TAXONOMY_ANSWER_ONE_BRANCH)
+    assert len(branches) == 1
+    branch = branches[0]
+    assert branch["name"] == "Only Branch"
+    assert branch["description"] == "A single branch."
+    # Internal key is now `points`; legacy `METHOD:` lines populate it.
+    assert branch["sub_branches"][0]["points"] == ["Single Method"]
+
+
+# --- default prompts are domain-neutral ----------------------------------
+
+
+def test_default_taxonomy_prompt_has_no_ml_anchor_terms():
+    """Regression: ML/video-specific anchor terms must not appear in the
+    default prompts. Earlier versions ported verbatim ML examples like
+    `transformers`, `video captioning`, `benchmark datasets`,
+    `graph neural networks`, `temporal action detection` and caused
+    `branches=0` for every non-ML domain."""
+    anchor_terms = (
+        "transformer",
+        "graph neural",
+        "video captioning",
+        "action detection",
+        "action recognition",
+        "video object tracking",
+        "temporal action",
+        "benchmark dataset",
+    )
+    bodies = (
+        analysis._TAXONOMY_PROMPT,
+        analysis._SPECIFICS_TEMPLATE,
+        analysis._COMPARISONS_TEMPLATE,
+        analysis._GAPS_TEMPLATE,
+        analysis._RECURRING_PATTERNS_PROMPT,
+        analysis._SHARED_ANCHORS_PROMPT,
+        analysis._RECURRING_TRADEOFFS_PROMPT,
+    )
+    for body in bodies:
+        lower = body.lower()
+        for term in anchor_terms:
+            assert term not in lower, (
+                f"anchor term '{term}' leaked into a default prompt; "
+                f"non-ML domains will produce 0 branches"
+            )
+
+
+def test_default_taxonomy_prompt_uses_neutral_ontology_labels():
+    """The default taxonomy prompt instructs the model to emit THEME /
+    SUBTHEME / POINT — the generic ontology that fits all domain shapes
+    audited (condo, glp1, trading, cycling, ai-and-agents)."""
+    body = analysis._TAXONOMY_PROMPT
+    assert "THEME:" in body
+    assert "SUBTHEME:" in body
+    assert "POINT:" in body
+    # Legacy labels must not appear in the new default prompt.
+    assert "AREA:" not in body
+    assert "METHOD:" not in body
+
+
+# --- M44.2: citation directive is injected into every claim-emitting prompt --
+
+
+def test_citation_directive_injected_into_branch_prompts():
+    """The citation directive (footnote-ref discipline) reaches the
+    NotebookLM client for every branch query (specifics/comparisons/gaps)."""
+    client = FakeClient({"": {"answer": "", "citations": {}, "sources_used": []}})
+    branch = {"name": "B1", "description": "desc", "sub_branches": []}
+    analysis._investigate_branch(
+        "nb-1",
+        client,
+        branch,
+        analysis._DEFAULT_INVESTIGATION_TEMPLATES,
+        research_query="rq",
+    )
+    assert len(client.calls) == 3  # specifics, comparisons, gaps
+    for _, prompt in client.calls:
+        assert "footnote reference" in prompt.lower()
+        assert "[[sources/<id>]]" in prompt
+
+
+def test_citation_directive_injected_into_synthesis_prompts():
+    """Cross-cutting synthesis queries also carry the citation directive."""
+    client = FakeClient({"": {"answer": "", "citations": {}, "sources_used": []}})
+    analysis._synthesize_themes("nb-1", client, analysis._DEFAULT_SYNTHESIS_QUERIES)
+    assert len(client.calls) == 3  # recurring_patterns, shared_anchors, recurring_tradeoffs
+    for _, prompt in client.calls:
+        assert "footnote reference" in prompt.lower()
+        assert "[[sources/<id>]]" in prompt
+
+
+def test_citation_directive_skipped_for_custom_query_without_placeholder():
+    """A caller-supplied custom synthesis query without `{citation_directive}`
+    must be sent verbatim (no KeyError on missing format key)."""
+    client = FakeClient({"": {"answer": "", "citations": {}, "sources_used": []}})
+    custom = {"custom": "Plain custom synthesis query with no placeholder."}
+    analysis._synthesize_themes("nb-1", client, custom)
+    assert len(client.calls) == 1
+    assert client.calls[0][1] == "Plain custom synthesis query with no placeholder."

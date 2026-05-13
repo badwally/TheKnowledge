@@ -128,7 +128,7 @@ wiki --help
 | `wiki filter-correct <id>` | Override a past filter decision; pin as a `user-correction` example |
 | `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/<id>]]` citations |
 | `wiki finalize <page> [--abandon]` | Promote a draft to strict (or delete it) |
-| `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` | Multi-adapter search with per-adapter query expansion; `--review` pauses for plan editing |
+| `wiki research "<prompt>" [--domain X] [--review] [--execute ID] [--no-draft]` | Multi-adapter search with per-adapter query expansion. Filter routes to Haiku 4.5 in parallel (`WIKI_FILTER_MAX_WORKERS`, default 8). Synthesis pages commit with `draft: true` by default (`--no-draft` for strict citation grounding at apply_plan). `--review` pauses for plan editing. |
 
 ### Domain authorship
 

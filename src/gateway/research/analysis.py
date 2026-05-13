@@ -41,83 +41,106 @@ _TAXONOMY_PROMPT = """Analyze all sources in this notebook in the context of the
 
 "{research_query}"
 
-Identify the major research areas, method categories, and architectural families discussed in the sources that are relevant to that question. Scope the taxonomy to what was actually researched — do not invent areas not present in the corpus.
+Identify the major themes, sub-themes, and specific points discussed in the sources that are relevant to that question. Scope the taxonomy to what is actually present in the corpus — do not invent themes not supported by the sources.
 
 Organize your response as a structured hierarchy with these levels:
-1. Top-level research areas (e.g., "Temporal Action Detection", "Video Object Tracking")
-2. For each area, list the sub-categories or method families
-3. For each sub-category, name 1-3 specific methods or papers discussed in the sources
+1. Top-level themes (the main conceptual areas the corpus addresses)
+2. For each theme, list the sub-themes or sub-areas
+3. For each sub-theme, name 1-3 specific points, instances, mechanisms, or findings discussed in the sources
 
-Format your response as a structured list using this exact pattern for each area:
+Format your response as a structured list using this exact pattern for each theme:
 
-AREA: [area name]
+THEME: [theme name]
 DESCRIPTION: [1-2 sentence description]
-  SUB: [sub-category name]
+  SUBTHEME: [sub-theme name]
   DESCRIPTION: [1 sentence description]
-    METHOD: [specific method name]
-    METHOD: [specific method name]
-  SUB: [sub-category name]
+    POINT: [specific point, instance, or finding]
+    POINT: [specific point, instance, or finding]
+  SUBTHEME: [sub-theme name]
   DESCRIPTION: [1 sentence description]
-    METHOD: [specific method name]
+    POINT: [specific point, instance, or finding]
 
-Cover ALL major areas relevant to the research question. Be comprehensive."""
-
-
-_METHODS_TEMPLATE = """In the context of the research question "{research_query}", and for the research area "{branch_name}" ({branch_description}), what specific methods and architectures are discussed in the sources? For each method, describe:
-- Its name and key contribution
-- The core technical approach
-- Any reported benchmark results
-
-Be specific and cite sources."""
+Cover ALL major themes relevant to the research question. Be comprehensive."""
 
 
-_COMPARISONS_TEMPLATE = """In the context of the research question "{research_query}", and for the research area "{branch_name}", how do the different methods compare? Consider:
-- Accuracy and performance differences
-- Computational efficiency and speed
-- Scalability to longer videos or larger datasets
-- Strengths and weaknesses of each approach
-
-Be specific about which methods you are comparing and cite sources."""
-
-
-_OPEN_PROBLEMS_TEMPLATE = """In the context of the research question "{research_query}", and for the research area "{branch_name}", what unsolved problems, limitations, or future research directions are identified in the sources? What gaps remain? What challenges do current methods still face?
-
-Be specific and cite sources."""
-
-
-_SHARED_ARCHITECTURES_PROMPT = """Looking across ALL research areas in this corpus, what architectures or techniques appear in multiple sub-fields? For example, do transformers appear in both action detection and video captioning? Do graph neural networks appear in both tracking and action recognition?
-
-Identify the cross-cutting architectures and explain how they are adapted for different tasks. Cite sources."""
-
-
-_COMMON_DATASETS_PROMPT = """What benchmark datasets are referenced across multiple research areas in this corpus? For each dataset, describe:
-- What it contains (video types, annotations)
-- Which research areas use it
-- Why it is considered important
-
-Cite sources."""
+_CITATION_DIRECTIVE = (
+    "Citation rules (the validator rejects pages that break them):\n"
+    "- Every interpretive sentence — including concluding statements, tensions, "
+    "and trade-off summaries — MUST end with an inline footnote reference like "
+    "`[1]` (or `[2, 3]`, `[4-6]`).\n"
+    "- Every `[N]` reference must resolve to a `[^N]: [[sources/<id>]]` definition "
+    "you include at the end of your response.\n"
+    "- Structural-frame bullets like `**Themes Used In:**`, `**Items Compared:**`, "
+    "or `**Which themes draw on it:**` describe the analysis frame and do not need "
+    "per-line citations — but any prose sentence following them does.\n"
+    "- A single opening sentence per `##` section MAY aggregate across the corpus "
+    "(e.g., \"Based on the provided sources, several patterns emerge…\") without "
+    "inline citation; the page's enumerated constituent list grounds it. All "
+    "subsequent prose still requires inline `[N]` citations. Never use `[[corpus]]` "
+    "or similar hand-wave aggregate tokens — the validator rejects them."
+)
 
 
-_RECURRING_TRADEOFFS_PROMPT = """What fundamental trade-offs recur across different methods and research areas in this corpus? Consider:
-- Accuracy vs computational efficiency
-- Local temporal modeling vs global temporal modeling
-- Supervised vs self-supervised approaches
-- Model complexity vs generalization
-- Real-time capability vs offline accuracy
+_SPECIFICS_TEMPLATE = """In the context of the research question "{research_query}", and for the theme "{branch_name}" ({branch_description}), what specific points, instances, mechanisms, frameworks, or findings does the corpus document? For each one, describe:
+- Its name and the key claim or contribution
+- The core approach, mechanism, or supporting evidence
+- Any concrete details (numbers, examples, named protocols, outcomes) the sources report
 
-For each trade-off, give specific examples from different research areas. Cite sources."""
+Be specific.
+
+{citation_directive}"""
+
+
+_COMPARISONS_TEMPLATE = """In the context of the research question "{research_query}", and for the theme "{branch_name}", how do the different points, frameworks, or approaches compare? Consider:
+- Differences in evidence, outcomes, or stated claims
+- Trade-offs or contexts where each applies
+- Strengths and weaknesses noted in the sources
+
+Be specific about which items you are comparing.
+
+{citation_directive}"""
+
+
+_GAPS_TEMPLATE = """In the context of the research question "{research_query}", and for the theme "{branch_name}", what unresolved questions, limitations, gaps in coverage, or unanswered tensions are identified in the sources? What does the corpus NOT address that a careful reader would want answered?
+
+Be specific.
+
+{citation_directive}"""
+
+
+_RECURRING_PATTERNS_PROMPT = """Looking across ALL themes in this corpus, what frameworks, patterns, principles, or approaches appear in multiple sub-areas? For each cross-cutting element, identify which themes use it and explain how it is adapted or applied across those themes.
+
+{citation_directive}"""
+
+
+_SHARED_ANCHORS_PROMPT = """What authoritative sources, standards, primary references, datasets, or foundational works are cited across multiple themes in this corpus? For each shared anchor, describe:
+- What it is and what it contains
+- Which themes draw on it
+- Why it is treated as foundational or load-bearing for those themes
+
+{citation_directive}"""
+
+
+_RECURRING_TRADEOFFS_PROMPT = """What recurring trade-offs or tensions surface across different themes and approaches in this corpus? Consider:
+- Competing objectives (e.g., precision vs. flexibility, cost vs. coverage, formality vs. agility)
+- Context-dependent choices where the right answer changes
+- Trade-offs noted explicitly in the sources
+
+For each trade-off, give specific examples from different themes.
+
+{citation_directive}"""
 
 
 _DEFAULT_INVESTIGATION_TEMPLATES: dict[str, str] = {
-    "methods": _METHODS_TEMPLATE,
+    "specifics": _SPECIFICS_TEMPLATE,
     "comparisons": _COMPARISONS_TEMPLATE,
-    "open_problems": _OPEN_PROBLEMS_TEMPLATE,
+    "gaps": _GAPS_TEMPLATE,
 }
 
 
 _DEFAULT_SYNTHESIS_QUERIES: dict[str, str] = {
-    "shared_architectures": _SHARED_ARCHITECTURES_PROMPT,
-    "common_datasets": _COMMON_DATASETS_PROMPT,
+    "recurring_patterns": _RECURRING_PATTERNS_PROMPT,
+    "shared_anchors": _SHARED_ANCHORS_PROMPT,
     "recurring_tradeoffs": _RECURRING_TRADEOFFS_PROMPT,
 }
 
@@ -310,6 +333,7 @@ def _investigate_branch(
             branch_name=name,
             branch_description=desc,
             research_query=research_query,
+            citation_directive=_CITATION_DIRECTIVE,
         )
         try:
             findings[query_name] = client.notebook_query(notebook_id, prompt)
@@ -339,6 +363,10 @@ def _synthesize_themes(
     """
     synthesis: dict[str, dict] = {}
     for query_name, prompt in queries.items():
+        # `{citation_directive}` is the only placeholder in default queries;
+        # custom queries that don't use it still work via the conditional.
+        if "{citation_directive}" in prompt:
+            prompt = prompt.format(citation_directive=_CITATION_DIRECTIVE)
         try:
             synthesis[query_name] = client.notebook_query(notebook_id, prompt)
         except Exception as e:  # noqa: BLE001
@@ -357,11 +385,15 @@ def _synthesize_themes(
 
 
 def _parse_taxonomy_response(answer: str) -> list[dict]:
-    """Parse the structured AREA / SUB / METHOD response into branches.
+    """Parse the structured THEME / SUBTHEME / POINT response into branches.
 
-    Ported verbatim from research-notebook's `_parse_taxonomy_response`.
-    Tolerant of trailing markdown emphasis (`*name*`) on AREA / SUB
-    headers, which NotebookLM occasionally emits.
+    Accepts the legacy AREA / SUB / METHOD labels too (used by older
+    prompts and any stale fixtures) so the parser is resilient to label
+    drift in either direction. Tolerant of trailing markdown emphasis
+    (`*name*`) on theme / sub-theme headers.
+
+    Internal dict keys remain stable: each branch has
+    `{name, description, sub_branches: [{name, description, points: [...]}]}`.
     """
     branches: list[dict] = []
     current_branch: dict | None = None
@@ -372,7 +404,7 @@ def _parse_taxonomy_response(answer: str) -> list[dict]:
         if not line:
             continue
 
-        if line.startswith("AREA:"):
+        if line.startswith("THEME:") or line.startswith("AREA:"):
             if current_branch is not None:
                 if current_sub is not None:
                     current_branch["sub_branches"].append(current_sub)
@@ -389,16 +421,16 @@ def _parse_taxonomy_response(answer: str) -> list[dict]:
                 current_sub["description"] = desc
             else:
                 current_branch["description"] = desc
-        elif line.startswith("SUB:") and current_branch is not None:
+        elif (line.startswith("SUBTHEME:") or line.startswith("SUB:")) and current_branch is not None:
             if current_sub is not None:
                 current_branch["sub_branches"].append(current_sub)
             current_sub = {
                 "name": line.split(":", 1)[1].strip().strip("*"),
                 "description": "",
-                "methods": [],
+                "points": [],
             }
-        elif line.startswith("METHOD:") and current_sub is not None:
-            current_sub["methods"].append(line.split(":", 1)[1].strip())
+        elif (line.startswith("POINT:") or line.startswith("METHOD:")) and current_sub is not None:
+            current_sub["points"].append(line.split(":", 1)[1].strip())
 
     if current_sub is not None and current_branch is not None:
         current_branch["sub_branches"].append(current_sub)

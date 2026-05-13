@@ -3,6 +3,12 @@
 The default `FilterClient` shells out to `claude -p` so the user's Max-plan
 auth is reused without an `ANTHROPIC_API_KEY`. Tests inject mocks via
 `score(..., client=MyMockClient())`.
+
+M44: the default client now delegates to `gateway.llm.ClaudeCLIClient` with
+``--bare --tools "" --model <Haiku> --system-prompt <policy+examples>`` to
+strip the Claude Code agent harness per call and route filter to Haiku 4.5
+(binary triage). The `FilterClient` Protocol is unchanged so injected stubs
+and lint callers (which build their own prompts) continue to work.
 """
 
 from __future__ import annotations
@@ -11,13 +17,14 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 import json
 import re
-import subprocess
-from typing import Protocol
+import time
+from typing import Callable, Protocol
 
 import yaml
 
 from gateway.filter.examples import Example
 from gateway.filter.policy import Policy
+from gateway.llm import ClaudeCLIClient, LLMError, model_for
 
 
 class FilterError(RuntimeError):
@@ -53,40 +60,75 @@ class ClaudeCLIFilterClient:
 
     Reuses the user's Claude Code Max-plan authentication. Slow per call
     (~5–30s) but correct for the use case (single source per ingest).
+
+    M44: delegates argv construction, retry, and the subprocess call itself
+    to `gateway.llm.ClaudeCLIClient`. Exposes both:
+
+    - ``call(prompt)`` — Protocol-compatible: sends the whole prompt as the
+      user positional with no system prompt. Used by lint callers that
+      build their own prompts.
+    - ``call_split(system, user)`` — optimized: sends ``system`` via
+      ``--system-prompt`` (stripped of agent harness via ``--bare --tools \"\"``)
+      and ``user`` as the positional. Used by ``score()`` to cut per-call
+      token cost.
+
+    Routes to Haiku 4.5 by default (binary triage). Override via ``model=``.
     """
 
-    def __init__(self, executable: str = "claude", timeout_s: float = 120.0):
-        self._exe = executable
-        self._timeout = timeout_s
+    def __init__(
+        self,
+        executable: str = "claude",
+        timeout_s: float = 120.0,
+        max_retries: int = 3,
+        retry_base_s: float = 5.0,
+        sleep: Callable[[float], None] = time.sleep,
+        *,
+        model: str | None = None,
+        cli: ClaudeCLIClient | None = None,
+    ):
+        self._model = model or model_for("filter")
+        self._cli = cli or ClaudeCLIClient(
+            executable=executable,
+            timeout_s=timeout_s,
+            max_retries=max_retries,
+            retry_base_s=retry_base_s,
+            sleep=sleep,
+        )
 
     def call(self, prompt: str) -> str:
-        try:
-            result = subprocess.run(
-                [self._exe, "-p", prompt],
-                capture_output=True,
-                text=True,
-                timeout=self._timeout,
-                check=False,
-                stdin=subprocess.DEVNULL,
-            )
-        except FileNotFoundError as e:
-            raise FilterError(f"`{self._exe}` not found on PATH; install Claude Code or inject a FilterClient") from e
-        except subprocess.TimeoutExpired as e:
-            raise FilterError(f"`{self._exe} -p` timed out after {self._timeout}s") from e
+        """Backwards-compatible single-string entry point (no system split)."""
+        return self._invoke(system_prompt=None, user_prompt=prompt)
 
-        if result.returncode != 0:
-            raise FilterError(
-                f"`{self._exe} -p` exited {result.returncode}: {result.stderr.strip()[:300]}"
+    def call_split(self, *, system: str, user: str) -> str:
+        """M44 optimized entry: system prefix via --system-prompt."""
+        return self._invoke(system_prompt=system, user_prompt=user)
+
+    def _invoke(self, *, system_prompt: str | None, user_prompt: str) -> str:
+        try:
+            return self._cli.call(
+                user_prompt=user_prompt,
+                system_prompt=system_prompt,
+                model=self._model,
+                tools="",
             )
-        return result.stdout
+        except LLMError as e:
+            raise FilterError(str(e)) from e
 
 
 # --- prompt construction ----------------------------------------------------
+#
+# M44 splits the prompt into two pieces: a static system prefix (policy +
+# examples + instructions, identical across all candidates in a research run)
+# and a per-item user payload (frontmatter + body head). Passed to the CLI as
+# `--system-prompt <prefix>` plus the positional user prompt. `build_prompt()`
+# is preserved as a backwards-compatible concat for callers that still want
+# one string.
 
 
-_PROMPT_TEMPLATE = """\
+_SYSTEM_PROMPT_TEMPLATE = """\
 You are a semantic relevance filter for a personal research knowledge base.
-Score the source below against the editorial policy and respond with a single JSON object.
+Score the source provided in the user message against the editorial policy
+and respond with a single JSON object.
 
 ## Editorial policy
 
@@ -97,10 +139,6 @@ Score the source below against the editorial policy and respond with a single JS
 ## Past decisions for calibration
 
 {examples_section}
-
-## Source under evaluation
-
-{source_section}
 
 ## Instructions
 
@@ -117,18 +155,40 @@ Respond with ONLY a JSON object, no surrounding text or code fences:
 """
 
 
+_USER_PROMPT_TEMPLATE = """\
+## Source under evaluation
+
+{source_section}
+"""
+
+
+def build_system_prompt(policy: Policy, examples: list[Example]) -> str:
+    """Static prefix: policy + examples + scoring instructions.
+
+    Identical across all candidates in a single research run.
+    """
+    policy_yaml = yaml.safe_dump(policy.raw, sort_keys=False, default_flow_style=False, allow_unicode=True).rstrip()
+    return _SYSTEM_PROMPT_TEMPLATE.format(
+        policy_yaml=policy_yaml,
+        examples_section=_format_examples(examples),
+    )
+
+
+def build_user_prompt(front: dict, body_head: str) -> str:
+    """Per-item payload: source frontmatter + body head."""
+    return _USER_PROMPT_TEMPLATE.format(
+        source_section=_format_source(front, body_head),
+    )
+
+
 def build_prompt(
     policy: Policy,
     examples: list[Example],
     front: dict,
     body_head: str,
 ) -> str:
-    policy_yaml = yaml.safe_dump(policy.raw, sort_keys=False, default_flow_style=False, allow_unicode=True).rstrip()
-    return _PROMPT_TEMPLATE.format(
-        policy_yaml=policy_yaml,
-        examples_section=_format_examples(examples),
-        source_section=_format_source(front, body_head),
-    )
+    """Backwards-compatible monolithic prompt (system + user concatenated)."""
+    return build_system_prompt(policy, examples) + "\n" + build_user_prompt(front, body_head)
 
 
 def _format_examples(examples: list[Example]) -> str:
@@ -223,13 +283,27 @@ def score(
     client: FilterClient | None = None,
     body_head_chars: int = 16000,
 ) -> FilterResult:
-    """Run the filter end-to-end and return a structured result."""
+    """Run the filter end-to-end and return a structured result.
+
+    M44: prefers the client's `call_split(system, user)` if available so
+    the policy + examples prefix is sent via ``--system-prompt`` (stripped
+    of the Claude Code agent harness via ``--bare --tools \"\"``). Falls
+    back to single-prompt `call(prompt)` for stubs and clients that don't
+    implement the split path.
+    """
     examples = examples if examples is not None else []
     client = client or ClaudeCLIFilterClient()
 
     body_head = _truncate(body, body_head_chars)
-    prompt = build_prompt(policy, examples, front, body_head)
-    raw = client.call(prompt)
+    system = build_system_prompt(policy, examples)
+    user = build_user_prompt(front, body_head)
+
+    call_split = getattr(client, "call_split", None)
+    if callable(call_split):
+        raw = call_split(system=system, user=user)
+    else:
+        raw = client.call(system + "\n" + user)
+
     s, rationale = parse_response(raw)
 
     return FilterResult(

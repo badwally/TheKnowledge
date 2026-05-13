@@ -293,19 +293,25 @@ def validate_citation_grounding(
     page_type: str,
     *,
     draft: bool = False,
+    front: dict | None = None,
 ) -> ValidationResult:
     """Per § 5.2: every claim sentence in entity / concept / source / synthesis
     pages must be followed by a `[[sources/<id>]]` citation.
 
     Draft mode (`--draft` ingest, `draft: true` frontmatter) downgrades the
     rule from rejection to a warning so partial work can be committed.
+
+    M45: when `front` carries `synthesizes:` (≥2 entries) and `body` has
+    `## Included works` mirroring that list, the first claim-shaped line
+    of each `## ` section that matches the aggregate-framing opener
+    allowlist is exempted (handled inside `_citations.uncited_claims`).
     """
     result = ValidationResult()
     schema = _wiki_pages.schema_for_type(page_type)
     if schema is None or not schema.citation_grounded:
         return result
 
-    uncited = _citations.uncited_claims(body)
+    uncited = _citations.uncited_claims(body, front)
     if not uncited:
         return result
 
@@ -318,6 +324,72 @@ def validate_citation_grounding(
             result.warnings.append(ve)
         else:
             result.errors.append(ve)
+    return result
+
+
+def validate_synthesizes_integrity(front: dict, body: str) -> ValidationResult:
+    """M45: when `synthesizes:` is present on a page, verify its shape.
+
+    Checks:
+    - every entry matches `(sources|synthesis)/<slug>` format
+    - all entries are same tier (one-level strict typing; M45 § 3.6 inv. 1)
+    - `## Included works` section exists and mirrors the list 1:1
+
+    Does NOT verify on-disk existence — that's a `wiki lint --scope
+    citation-chains` concern (cross-page integrity, not in-page shape).
+    """
+    result = ValidationResult()
+    synth = front.get("synthesizes") if isinstance(front, dict) else None
+    if synth is None:
+        return result
+    if not isinstance(synth, list):
+        result.errors.append(
+            ValidationError(
+                "synthesizes-shape",
+                f"`synthesizes:` must be a list, got {type(synth).__name__}",
+                "synthesizes",
+            )
+        )
+        return result
+    if len(synth) == 0:
+        return result  # empty list is no-op; treat as if field absent
+
+    bad_entries = [
+        e for e in synth
+        if not isinstance(e, str) or not _citations._SYNTHESIZES_ENTRY_RE.match(e)
+    ]
+    if bad_entries:
+        result.errors.append(
+            ValidationError(
+                "synthesizes-shape",
+                f"`synthesizes:` entries must be `sources/<slug>` or `synthesis/<slug>`; "
+                f"invalid: {bad_entries[:3]!r}",
+                "synthesizes",
+            )
+        )
+        return result
+
+    tiers = {e.split("/", 1)[0] for e in synth}
+    if len(tiers) != 1:
+        result.errors.append(
+            ValidationError(
+                "synthesizes-mixed-tier",
+                f"`synthesizes:` must be all `sources/` or all `synthesis/`, "
+                f"never mixed (got both: {sorted(tiers)})",
+                "synthesizes",
+            )
+        )
+        return result
+
+    if not _citations._included_works_mirrors_synthesizes(body, synth):
+        result.errors.append(
+            ValidationError(
+                "synthesizes-included-works-drift",
+                "`## Included works` section is missing or its wikilinks "
+                "do not mirror the `synthesizes:` frontmatter list 1:1",
+                "synthesizes",
+            )
+        )
     return result
 
 
@@ -381,7 +453,8 @@ def validate_wiki_page(
     # strict mode (e.g., during finalize), strip the draft fields from front
     # before calling.
     is_draft = draft or bool(front.get("draft"))
-    result.merge(validate_citation_grounding(body, page_type, draft=is_draft))
+    result.merge(validate_citation_grounding(body, page_type, draft=is_draft, front=front))
+    result.merge(validate_synthesizes_integrity(front, body))
 
     slug = front.get("slug")
     if slug and existing_slugs is not None:

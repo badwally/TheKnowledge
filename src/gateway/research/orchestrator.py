@@ -445,6 +445,33 @@ def _make_moc_update(
     )
 
 
+def _collect_constituent_sources(
+    findings: dict,
+    source_map: dict[str, str],
+) -> list[str]:
+    """M45: enumerate the `sources/<slug>` constituent set for a synthesis
+    page, deduplicated and sorted. Used to fill `synthesizes:` frontmatter
+    on first-derivative (per-branch) synthesis pages.
+
+    `findings` may be either a single finding dict (`{answer, citations,
+    sources_used}`) or a dict of named findings.
+    """
+    seen: set[str] = set()
+    pool: list[dict]
+    if "answer" in findings or "citations" in findings:
+        pool = [findings]
+    else:
+        pool = [v for v in findings.values() if isinstance(v, dict)]
+    for finding in pool:
+        cites = _coerce_citations(finding.get("citations", {}))
+        resolved = _source_map.resolve_citations(cites, source_map)
+        for link in resolved.values():
+            # link looks like `[[sources/<slug>]]` or `[[nlm:<id>]]`
+            if link.startswith("[[sources/") and link.endswith("]]"):
+                seen.add(link[2:-2])
+    return sorted(seen)
+
+
 def _make_branch_synthesis_update(
     *,
     domain: str,
@@ -454,9 +481,17 @@ def _make_branch_synthesis_update(
     research_query: str,
     source_map: dict[str, str],
 ) -> WikiUpdate:
-    """Per-branch synthesis page — Methods / Comparisons / Open Problems."""
+    """Per-branch (first-derivative) synthesis page.
+
+    M45: emits `synthesizes:` listing the source pages this branch drew
+    from, plus a `## Included works` section mirroring that list. Enables
+    the aggregate-framing exemption at validate-time (M45 § 3.2) so
+    NotebookLM's opening framing sentences pass citation grounding.
+    """
     branch_slug = _slugify(branch_name) or "branch"
     rel = f"wiki/synthesis/{session_id}-{branch_slug}.md"
+
+    constituents = _collect_constituent_sources(branch_findings, source_map)
 
     front = {
         "type": "synthesis",
@@ -466,6 +501,8 @@ def _make_branch_synthesis_update(
         "question": research_query,
         "created_at": _now_iso(),
     }
+    if constituents:
+        front["synthesizes"] = constituents
 
     sections = [
         f"# {branch_name} — investigation",
@@ -492,6 +529,13 @@ def _make_branch_synthesis_update(
     sections.extend(_render_sources_cited(branch_findings, source_map))
     sections.append("")
 
+    if constituents:
+        sections.append("## Included works")
+        sections.append("")
+        for target in constituents:
+            sections.append(f"- [[{target}]]")
+        sections.append("")
+
     return WikiUpdate(
         target_path=rel,
         update_kind="create",
@@ -507,9 +551,25 @@ def _make_cross_cutting_update(
     research_query: str,
     synthesis: dict[str, dict],
     source_map: dict[str, str],
+    branch_names: list[str] | None = None,
 ) -> WikiUpdate:
-    """One synthesis page covering the corpus-wide cross-cutting queries."""
+    """One synthesis page covering the corpus-wide cross-cutting queries.
+
+    M45: cross-cutting is a second-derivative synthesis — it aggregates
+    across the per-branch synthesis pages, not directly across raw
+    sources. `synthesizes:` therefore lists `synthesis/<slug>` entries
+    (the per-branch pages produced by `_make_branch_synthesis_update`),
+    matching one-level strict typing (M45 § 3.6 invariant 1).
+    """
     rel = f"wiki/synthesis/{session_id}-cross-cutting.md"
+
+    constituents: list[str] = []
+    if branch_names:
+        constituents = sorted({
+            f"synthesis/{session_id}-{_slugify(name) or 'branch'}"
+            for name in branch_names
+        })
+
     front = {
         "type": "synthesis",
         "slug": f"{session_id}-cross-cutting",
@@ -518,6 +578,8 @@ def _make_cross_cutting_update(
         "question": research_query,
         "created_at": _now_iso(),
     }
+    if len(constituents) >= 2:
+        front["synthesizes"] = constituents
 
     sections = [
         f"# Cross-cutting themes — {session_id}",
@@ -538,6 +600,13 @@ def _make_cross_cutting_update(
     sections.append("")
     sections.extend(_render_sources_cited(synthesis, source_map))
     sections.append("")
+
+    if len(constituents) >= 2:
+        sections.append("## Included works")
+        sections.append("")
+        for target in constituents:
+            sections.append(f"- [[{target}]]")
+        sections.append("")
 
     return WikiUpdate(
         target_path=rel,
@@ -1264,6 +1333,7 @@ def _build_plan(
             research_query=prompt,
             synthesis=analysis.synthesis or {},
             source_map=source_map,
+            branch_names=list((analysis.findings or {}).keys()),
         )
     )
     return Plan(

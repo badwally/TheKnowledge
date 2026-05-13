@@ -259,10 +259,40 @@ def _ingest_canonical_text(
                 )
 
             if existing_front.get("content_hash") == front["content_hash"]:
-                # Source body unchanged. If --with-plan, still run the
-                # authorship loop against the existing canonical text —
-                # otherwise the plan never runs for back-tagged-after-ingest
-                # sources (M36 promote → --with-plan flow needs this).
+                # Source body unchanged. Convergent idempotency: if the
+                # wiki/sources page is missing but the source is not
+                # explicitly excluded, backfill the page. Covers the case
+                # where research / batch-ingest / sync materialized the
+                # raw file without writing the wiki summary (e.g., when
+                # the orchestrator skipped that step). A subsequent
+                # `wiki ingest <path>` then converges to the canonical
+                # state instead of returning a misleading no-op.
+                backfilled_paths: list[Path] = []
+                if not wiki_target.exists() and not _is_user_excluded(existing_front):
+                    write_atomic(wiki_target, _make_source_page(existing_front))
+                    index.update_for(
+                        source_id=source_id,
+                        source_type=source_type,
+                        title=existing_front.get("title", "(untitled)"),
+                        domains=existing_front.get("domains", []),
+                    )
+                    backfilled_paths = [wiki_target, paths.index_path()]
+                    log.append(
+                        op="ingest",
+                        fields={
+                            "id": source_id,
+                            "type": source_type,
+                            "backfilled_wiki_page": "true",
+                        },
+                        summary=(
+                            f"already ingested; backfilled wiki page: "
+                            f"raw={raw_target.relative_to(paths.knowledge_root())} "
+                            f"wiki={wiki_target.relative_to(paths.knowledge_root())}"
+                        ),
+                    )
+
+                # If --with-plan, run the authorship loop against the
+                # existing canonical text (M36 promote → --with-plan flow).
                 if with_plan:
                     plan_result = _invoke_plan_and_apply(
                         front=existing_front,
@@ -274,13 +304,20 @@ def _ingest_canonical_text(
                     )
                     return OperationResult(
                         success=plan_result.success,
-                        paths_touched=plan_result.paths_touched,
+                        paths_touched=[*backfilled_paths, *plan_result.paths_touched],
                         warnings=plan_result.warnings,
                         errors=plan_result.errors,
                         summary=(
                             f"already ingested; ran --with-plan: "
                             f"{plan_result.summary}"
                         ),
+                    )
+
+                if backfilled_paths:
+                    return OperationResult(
+                        success=True,
+                        paths_touched=[*backfilled_paths, paths.log_path()],
+                        summary=f"already ingested; backfilled wiki page: {source_id}",
                     )
                 return OperationResult(
                     success=True,
@@ -469,10 +506,18 @@ def _invoke_plan_and_apply(
 
     source_text = _format_source_for_plan(front, body)
     existing_pages = _gather_existing_pages(domain)
-    prompt = build_plan_prompt(source_text, existing_pages)
 
+    call_split = getattr(plan_client, "call_split", None)
     try:
-        raw = plan_client.call(prompt)
+        if callable(call_split):
+            from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
+
+            raw = call_split(
+                system=build_plan_system_prompt(),
+                user=build_plan_user_prompt(source_text, existing_pages),
+            )
+        else:
+            raw = plan_client.call(build_plan_prompt(source_text, existing_pages))
     except Exception as e:
         return OperationResult(success=False, errors=[f"plan client failed: {e}"])
 
@@ -521,6 +566,12 @@ def _gather_existing_pages(domain: str | None) -> dict[str, str]:
 
 
 # --- wiki source page generation --------------------------------------------
+
+
+def _is_user_excluded(front: dict) -> bool:
+    """True if the source has an explicit `filter.user_correction.decision == 'exclude'`."""
+    user_correction = (front.get("filter") or {}).get("user_correction") or {}
+    return user_correction.get("decision") == "exclude"
 
 
 def _make_source_page(front: dict) -> str:

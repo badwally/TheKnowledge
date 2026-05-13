@@ -64,6 +64,71 @@ _SYNTHESIS_META_RE = re.compile(
     r"^\*\*(?:Origin question|Session|Branch):\*\*\s"
 )
 
+# NotebookLM-emitted structural-frame labels in synthesis pages. Lines of the
+# form `**<label>:** <content>` where `<label>` is one of these are metadata
+# about the synthesis structure (which themes are being compared, what
+# foundational sources are shared) — they describe the analysis frame, not
+# claims about the world, so they do not need per-line citation.
+#
+# This is an explicit allowlist (not a heuristic) so a real claim hiding as
+# `**Finding:** Drug X causes Y` still gets flagged. Extend the set when
+# NotebookLM introduces a new frame label.
+_STRUCTURAL_FRAME_LABELS = frozenset({
+    "Themes Used In",
+    "Which themes draw on it",
+    "Which themes use it",
+    "Items Compared",
+    "Name and key claim",
+    "Core approach/mechanism",
+    "Concrete details",
+    "Differences in Evidence",
+    "Trade-offs and Contexts",
+    "Strengths and Weaknesses",
+    "Context",
+    # M45.1 (2026-05-13): observed in the ML-models-for-reserve-studies run.
+    # NotebookLM uses these as structural sub-headers under "Gaps" /
+    # "Limitations" / "Tensions" sections to call out the specific issue.
+    "Gap Identified",
+    "Limitation Identified",
+    "Tension Identified",
+})
+
+_STRUCTURAL_FRAME_LABEL_RE = re.compile(r"^\*\*([^*]+?):\*\*\s")
+
+
+# M45: aggregate-framing opener allowlist. The first claim sentence of a
+# `## ` section is exempt from per-claim citation when the page declares
+# `synthesizes:` (with ≥2 entries) and the corresponding `## Included works`
+# section mirrors that list. The exemption is bounded — only one opener per
+# section — so subsequent claims in the same paragraph still require direct
+# citation. Patterns observed empirically on NotebookLM cross-cutting
+# branches (2026-05-12, 2026-05-13 runs); extend as new patterns appear.
+_AGGREGATE_FRAMING_OPENERS_RE = re.compile(
+    r"^(?:"
+    r"Based on the (?:provided sources|corpus|previous thematic analysis|conversation history)"
+    r"|Across the corpus"
+    r"|Across (?:all )?(?:the )?(?:sources|themes)"
+    r"|Looking across (?:all )?(?:the )?(?:themes|sources)"
+    r"|Aggregating across (?:all )?(?:the )?(?:themes|sources)"
+    r"|Across the (?:provided )?sources"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+# M45: a synthesizes: list entry like `sources/web-...` or `synthesis/<slug>`.
+# Mixed types within one list are forbidden by the validator (one-level
+# strict typing; see M45 design § 3.6 invariant 1).
+_SYNTHESIZES_ENTRY_RE = re.compile(r"^(sources|synthesis)/[A-Za-z0-9][A-Za-z0-9_-]*$")
+
+
+def is_aggregate_framing_opener(sentence: str) -> bool:
+    """Return True if `sentence` matches the M45 aggregate-framing opener
+    allowlist — patterns that legitimately aggregate across a page's
+    `synthesizes:` set without per-source citation.
+    """
+    return bool(_AGGREGATE_FRAMING_OPENERS_RE.match(sentence.lstrip()))
+
 # Markdown footnote definition pointing into sources/: `[^12]: [[sources/<id>]]`.
 # Multiple definitions can share a line (NotebookLM-rendered syntheses do this).
 _FOOTNOTE_DEF_RE = re.compile(
@@ -163,6 +228,9 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
     - bullet items that are just `[[wikilinks]]` cross-reference lists
     - blank lines
     - frontmatter-style key: value lines
+    - NotebookLM structural-frame labels (allowlist in
+      `_STRUCTURAL_FRAME_LABELS`) and the continuation line that carries
+      their value when NotebookLM splits label/value across two lines
 
     The remaining sentences (split on `.!?`) are evaluated; sentences with
     ≥ MIN_CLAIM_WORDS are returned with line numbers and a flag indicating
@@ -174,6 +242,12 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
     lines, code_mask = _strip_code_fences(body)
     footnote_map = _build_footnote_map(body)
     out: list[ClaimSentence] = []
+    # M44.3: track whether the most recent non-blank line was a bare
+    # structural-frame label (e.g., `**Which themes use it:**` on its own
+    # line). When True, the next non-blank line is the label's value and
+    # also gets the structural exemption. Blank lines do NOT clear the
+    # flag — markdown often inserts one between label and value.
+    expect_continuation = False
     for idx, raw_line in enumerate(lines):
         if code_mask[idx]:
             continue
@@ -181,6 +255,7 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
         if not line:
             continue
         if _HEADER_RE.match(raw_line):
+            expect_continuation = False
             continue
 
         stripped = _LIST_BULLET_RE.sub("", raw_line, count=1)
@@ -191,12 +266,38 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
         # Skip orchestrator-rendered synthesis metadata
         # (`**Origin question:** ...`, `**Session:** ...`, `**Branch:** ...`).
         if _SYNTHESIS_META_RE.match(stripped):
+            expect_continuation = False
+            continue
+
+        # Multi-line continuation: the previous non-blank line was a bare
+        # structural-frame label, so this line is its value — exempt it
+        # the same way we exempt the label itself.
+        if expect_continuation:
+            expect_continuation = False
             continue
 
         # Skip lines that are fully bold-wrapped (used as visual sub-headers
-        # by `_make_branch_synthesis_update`'s comparison sections).
+        # by `_make_branch_synthesis_update`'s comparison sections). When the
+        # bold inner text is a structural-frame label with a trailing colon,
+        # also expect the next non-blank line to be its value.
         if _BOLD_HEADER_RE.match(stripped):
+            inner = stripped[2:-2]
+            if inner.endswith(":") and inner[:-1].strip() in _STRUCTURAL_FRAME_LABELS:
+                expect_continuation = True
             continue
+
+        # Skip NotebookLM structural-frame labels (e.g.,
+        # `**Themes Used In:** Component-Level Degradation Modeling, ...`).
+        # These describe the analysis structure, not claims about the world.
+        # Restricted to a small allowlist so real claims still get flagged.
+        frame_match = _STRUCTURAL_FRAME_LABEL_RE.match(stripped)
+        if frame_match and frame_match.group(1).strip() in _STRUCTURAL_FRAME_LABELS:
+            expect_continuation = False
+            continue
+
+        # Past the structural-frame checks — if we reach here, this line
+        # is a claim candidate and should reset the continuation flag.
+        expect_continuation = False
 
         # Skip lines that are only wikilinks (cross-reference lists).
         bare = _WIKILINK_RE.sub("", stripped).strip(" ·:-,;")
@@ -238,9 +339,104 @@ def citation_density(body: str) -> tuple[int, int, float]:
     return cited, total, cited / total
 
 
-def uncited_claims(body: str) -> list[ClaimSentence]:
-    """Return only the claim sentences that are missing a source citation."""
-    return [c for c in find_claim_sentences(body) if not c.has_citation]
+def uncited_claims(body: str, front: dict | None = None) -> list[ClaimSentence]:
+    """Return only the claim sentences that are missing a source citation.
+
+    M45: when `front` is supplied and contains a valid `synthesizes:` list
+    (≥2 entries, mirrored by `## Included works`), the first claim
+    sentence of each `## ` section that matches the aggregate-framing
+    opener allowlist (`is_aggregate_framing_opener`) is exempt — it's a
+    legitimate aggregate observation backed by the enumerated constituent
+    set rather than a single source.
+    """
+    exempt_lines = aggregate_exempt_lines(body, front or {})
+    return [
+        c for c in find_claim_sentences(body)
+        if not c.has_citation and c.line_no not in exempt_lines
+    ]
+
+
+# --- M45: synthesizes / Included works helpers ------------------------------
+
+
+def aggregate_exempt_lines(body: str, front: dict) -> set[int]:
+    """Return the set of 1-indexed line numbers that are exempt from
+    citation grounding under the M45 aggregate-framing rule.
+
+    Conditions (all must hold):
+    - `front['synthesizes']` is a list with ≥ 2 entries
+    - all entries are validly-shaped `(sources|synthesis)/<slug>`
+    - all entries are same tier (all `sources/` or all `synthesis/`)
+    - `## Included works` section exists and mirrors the list 1:1
+
+    For each `## ` section in the body, the FIRST claim-shaped line that
+    matches the aggregate-framing opener allowlist is exempt; later
+    claims in the same section are not.
+    """
+    synth = front.get("synthesizes") if isinstance(front, dict) else None
+    if not isinstance(synth, list) or len(synth) < 2:
+        return set()
+    if not all(
+        isinstance(e, str) and _SYNTHESIZES_ENTRY_RE.match(e) for e in synth
+    ):
+        return set()
+    tiers = {e.split("/", 1)[0] for e in synth}
+    if len(tiers) != 1:
+        return set()
+    if not _included_works_mirrors_synthesizes(body, synth):
+        return set()
+
+    exempt: set[int] = set()
+    lines = body.split("\n")
+    seen_opener_in_section = True  # nothing exempted before the first `## ` section
+    for idx, raw_line in enumerate(lines):
+        if _HEADER_RE.match(raw_line):
+            seen_opener_in_section = False
+            continue
+        if seen_opener_in_section:
+            continue
+        stripped = _LIST_BULLET_RE.sub("", raw_line, count=1)
+        stripped = _NUMBERED_RE.sub("", stripped, count=1).strip()
+        if not stripped:
+            continue
+        # Take the first sentence on this line.
+        first_sentence = _SENTENCE_END_RE.split(stripped, 1)[0].strip()
+        if first_sentence and is_aggregate_framing_opener(first_sentence):
+            exempt.add(idx + 1)
+            seen_opener_in_section = True
+    return exempt
+
+
+def _included_works_mirrors_synthesizes(body: str, synthesizes: list[str]) -> bool:
+    """Return True if `## Included works` section body has wikilinks that
+    exactly match `synthesizes`."""
+    section_body = _extract_section_body(body, "Included works")
+    if section_body is None:
+        return False
+    targets: set[str] = set()
+    for m in _WIKILINK_RE.finditer(section_body):
+        target = m.group(1).strip().split("#", 1)[0]  # drop #anchor
+        targets.add(target)
+    return targets == set(synthesizes)
+
+
+def _extract_section_body(body: str, section_name: str) -> str | None:
+    """Return the text between `## <section_name>` and the next `## ` header,
+    or None if the section is absent."""
+    section_header_re = re.compile(
+        rf"^\s*##\s+{re.escape(section_name)}\s*$"
+    )
+    next_section_re = re.compile(r"^\s*##\s+")
+    in_section = False
+    out: list[str] = []
+    for line in body.split("\n"):
+        if in_section:
+            if next_section_re.match(line):
+                break
+            out.append(line)
+        elif section_header_re.match(line):
+            in_section = True
+    return "\n".join(out) if in_section else None
 
 
 # --- bulk rewrite (used by migration) --------------------------------------

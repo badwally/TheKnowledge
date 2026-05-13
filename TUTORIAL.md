@@ -248,6 +248,12 @@ The web app at `/research` is the right place for this work. You see the plan as
 wiki research --execute <session-id>   # run a paused session from the CLI
 ```
 
+**Filter and synthesis behavior (M44 / M45):**
+
+- **Filter routes to Haiku 4.5 in parallel.** A 200-candidate run finishes in 5–10 minutes (8 workers × ~16 s per Haiku call). Tune via `WIKI_FILTER_MAX_WORKERS=4` if you hit Max-plan rate limits.
+- **Synthesis pages commit as drafts by default.** NotebookLM's synthesis prose routinely emits interpretive framing (*"The provided sources detail…"*, *"There is an unanswered tension…"*) that fails strict per-claim citation grounding. The `wiki research` command therefore defaults to `--draft` — pages land with `draft: true` and `draft_unresolved_claims: N` so you can finish citations later. Pass `--no-draft` to opt into strict validation (recommended only for narrow firm-explainer queries where every claim is single-source).
+- **Finishing a draft** (M45 chain). Pages produced by `wiki research` carry `synthesizes:` frontmatter (an explicit list of constituent `sources/<id>` or `synthesis/<slug>`) and a `## Included works` body section, modeled on Cochrane's "Characteristics of included studies" convention. After the run, attribute any remaining uncited claims via `wiki cite <page>` (adds `[[sources/<id>]]` tokens to specific lines), then `wiki finalize <page>` to clear `draft: true`. `wiki lint --scope citation-chains` reports dangling refs and pages that aggregate without an enumerated set.
+
 ## 8. NotebookLM workflow
 
 Use NotebookLM when the question spans dozens of sources and a single in-context call would lose detail. The gateway treats NotebookLM as a synthesis service — you never invoke `nlm` directly (the pre-commit hook blocks committed content that contains raw `nlm ` invocations).

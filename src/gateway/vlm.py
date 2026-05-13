@@ -4,14 +4,26 @@ The default `VLMClient` shells out to `claude -p` so the user's Max-plan
 auth is reused without an `ANTHROPIC_API_KEY`. Callers (the image converter)
 inject a `StubVLMClient` in tests.
 
-Mirrors the `gateway/filter/semantic.py` Protocol + ClaudeCLI + Stub pattern.
+M44: delegates to `gateway.llm.ClaudeCLIClient` for ``--bare``,
+``--system-prompt``, and explicit ``--model claude-opus-4-7``. Keeps the
+Read tool enabled (via ``tools="Read"``) so Claude Code can still attach
+the image referenced by absolute path; ``--dangerously-skip-permissions``
+suppresses the interactive prompt for reading outside cwd.
 """
 
 from __future__ import annotations
 
-import subprocess
 from pathlib import Path
 from typing import Protocol
+
+from gateway.llm import ClaudeCLIClient, LLMError, model_for
+
+
+_VLM_SYSTEM_PROMPT = (
+    "You are an image-description assistant. When given the absolute path to an "
+    "image in the user message, read the image, then return ONLY the description "
+    "requested — no preamble, no apology, no markdown fences."
+)
 
 
 class VLMError(RuntimeError):
@@ -25,49 +37,51 @@ class VLMClient(Protocol):
 
 
 class ClaudeCLIVLMClient:
-    """Default backend: `claude -p <prompt>` subprocess call.
+    """Default backend: `claude -p` via the shared `ClaudeCLIClient`.
 
-    Includes the absolute image path in the prompt body. Claude Code attaches
-    file paths referenced this way as multimodal content. Slow per call
-    (~10-30s) but correct for the use case (one image per ingest).
+    The caller-supplied `prompt` is folded into the system prompt (since it's
+    a describe directive that doesn't vary per image within a converter run).
+    The image absolute path is the user positional; Claude Code's Read tool
+    picks it up as multimodal content.
+
+    Slow per call (~10–30s) but correct for the use case (one image per ingest).
     """
 
-    def __init__(self, executable: str = "claude", timeout_s: float = 180.0):
-        self._exe = executable
-        self._timeout = timeout_s
+    def __init__(
+        self,
+        executable: str = "claude",
+        timeout_s: float = 180.0,
+        *,
+        model: str | None = None,
+        cli: ClaudeCLIClient | None = None,
+    ):
+        self._model = model or model_for("vlm")
+        self._cli = cli or ClaudeCLIClient(
+            executable=executable,
+            timeout_s=timeout_s,
+            max_retries=0,
+        )
 
     def describe(self, image_path: str, prompt: str) -> str:
-        # Resolve to absolute path so claude -p can find it regardless of cwd.
         abs_path = str(Path(image_path).expanduser().resolve())
-        full_prompt = f"{prompt}\n\nImage path: {abs_path}"
-        # `--dangerously-skip-permissions` is necessary so the subprocess can
-        # use the Read tool to attach the image without an interactive prompt.
-        # Safe in this context: the prompt only asks Claude to describe one
-        # specific image, the path was explicitly passed by the user via
-        # `wiki ingest`, and the subprocess output is captured then discarded.
-        cmd = [self._exe, "-p", full_prompt, "--dangerously-skip-permissions"]
+        # `--dangerously-skip-permissions` lets the Read tool open a file
+        # outside cwd without an interactive prompt. Safe here: the path
+        # was explicitly passed by the user via `wiki ingest`, the prompt
+        # is constrained to image description, and stdout is captured.
         try:
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=self._timeout,
-                check=False,
+            text = self._cli.call(
+                user_prompt=f"Image path: {abs_path}",
+                system_prompt=f"{_VLM_SYSTEM_PROMPT}\n\n{prompt}",
+                model=self._model,
+                tools="Read",
+                extra_args=["--dangerously-skip-permissions"],
             )
-        except FileNotFoundError as e:
-            raise VLMError(
-                f"`{self._exe}` not found on PATH; install Claude Code or inject a VLMClient"
-            ) from e
-        except subprocess.TimeoutExpired as e:
-            raise VLMError(f"`{self._exe} -p` timed out after {self._timeout}s") from e
+        except LLMError as e:
+            raise VLMError(str(e)) from e
 
-        if result.returncode != 0:
-            raise VLMError(
-                f"`{self._exe} -p` exited {result.returncode}: {result.stderr.strip()[:300]}"
-            )
-        text = result.stdout.strip()
+        text = text.strip()
         if not text:
-            raise VLMError(f"`{self._exe} -p` returned an empty description")
+            raise VLMError("claude -p returned an empty description")
         return text
 
 

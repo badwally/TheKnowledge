@@ -136,12 +136,437 @@ def test_bold_only_lines_treated_as_headers():
 
 def test_bold_label_followed_by_text_is_still_a_claim():
     """Bold inline-label lines (`**The Comparison:** <claim text>`)
-    are NOT pure bold headers — the text after the label still counts."""
+    are NOT pure bold headers — the text after the label still counts.
+    Labels NOT in the structural-frame allowlist must be flagged."""
     body = (
         "**The Comparison:** This is a substantive claim that needs a citation source.\n"
     )
     uncited = cit.uncited_claims(body)
     assert len(uncited) == 1
+
+
+# --- M44.2: structural-frame labels exempted from citation grounding -------
+
+
+def test_structural_frame_labels_skipped():
+    """NotebookLM-emitted synthesis-frame bullets like `**Themes Used In:**`
+    are metadata about the analysis structure, not claims about the world.
+    Restricted to an explicit allowlist so real claims still get flagged."""
+    body = (
+        "## Cross-cutting\n"
+        "\n"
+        "**Themes Used In:** Component-Level Degradation Modeling, Optimal Inspection.\n"
+        "**Which themes draw on it:** Cost and Financial Framing, Integrated Frameworks.\n"
+        "**Items Compared:** ASTM E917 is compared against BEES methodology.\n"
+        "**Name and key claim:** CAI Reserve Study Standards Framework.\n"
+        "**Core approach/mechanism:** Probabilistic component-level forecasting.\n"
+        "**Concrete details:** Standards originally published in 1998.\n"
+        "\n"
+        "A real interpretive claim with no citation still gets flagged here.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    # Only the real interpretive claim should remain
+    assert len(uncited) == 1
+    assert "real interpretive claim" in uncited[0].text
+
+
+def test_structural_frame_label_allowlist_is_strict():
+    """`**Finding:** Drug X causes Y.` must NOT be exempted just because
+    it follows the `**Label:** content` shape — the label is not in the
+    allowlist, so the content still counts as a claim."""
+    body = (
+        "**Finding:** Drug X causes effect Y in patients with condition Z.\n"
+        "**Implication:** This means policy A should change to align with B.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 2
+
+
+def test_structural_frame_labels_allowlist_pinned():
+    """Pin every label currently in the allowlist with a test case so
+    drift in `_STRUCTURAL_FRAME_LABELS` is caught."""
+    expected = {
+        "Themes Used In",
+        "Which themes draw on it",
+        "Which themes use it",
+        "Items Compared",
+        "Name and key claim",
+        "Core approach/mechanism",
+        "Concrete details",
+        "Differences in Evidence",
+        "Trade-offs and Contexts",
+        "Strengths and Weaknesses",
+        "Context",
+        # M45.1 additions
+        "Gap Identified",
+        "Limitation Identified",
+        "Tension Identified",
+    }
+    assert cit._STRUCTURAL_FRAME_LABELS == expected
+    for label in expected:
+        body = f"**{label}:** content that follows the structural label here.\n"
+        uncited = cit.uncited_claims(body)
+        assert uncited == [], f"label {label!r} should be exempt, got: {[u.text for u in uncited]}"
+
+
+# --- M44.3: multi-line continuation of structural-frame labels -------------
+
+
+def test_structural_label_value_on_next_line_exempt():
+    """`**Which themes use it:**` on one line, value on the next — the value
+    line gets the structural exemption too. Matches the multi-line layout
+    NotebookLM uses for shared-anchor responses."""
+    body = (
+        "## Cross-cutting\n"
+        "\n"
+        "**Which themes use it:**\n"
+        "Component-Level Degradation Modeling and Data Ingestion; Cost and Financial Framing.\n"
+        "\n"
+        "A real interpretive claim with enough words to count here.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1
+    assert "real interpretive claim" in uncited[0].text
+
+
+def test_structural_label_value_after_blank_line_exempt():
+    """NotebookLM sometimes inserts a blank line between label and value.
+    Blank lines must NOT reset the continuation flag."""
+    body = (
+        "**Themes Used In:**\n"
+        "\n"
+        "Component-Level Degradation Modeling and Data Ingestion; Cost and Financial Framing.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == []
+
+
+def test_structural_label_continuation_does_not_cascade():
+    """The continuation flag is consumed by ONE value line — the second line
+    after the label is a normal claim candidate again."""
+    body = (
+        "**Which themes use it:**\n"
+        "Theme A; Theme B; Theme C.\n"
+        "This second line after the value is a real claim and must be flagged.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1
+    assert "second line after the value" in uncited[0].text
+
+
+def test_non_allowlisted_bold_header_does_not_arm_continuation():
+    """A fully-bold header that is NOT in the structural-frame allowlist
+    (e.g., a numbered comparison heading) must not arm the continuation
+    flag — the next line is a normal claim candidate."""
+    body = (
+        "**1. Scope and Component Inclusion: Subjective vs. Objective Rules**\n"
+        "This line right after a non-allowlisted bold header must be flagged as a claim.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1
+    assert "right after a non-allowlisted" in uncited[0].text
+
+
+def test_consecutive_structural_labels_chain_continuation():
+    """Two structural labels in a row: each consumes one continuation slot."""
+    body = (
+        "**Which themes use it:**\n"
+        "Theme A; Theme B.\n"
+        "**Themes Used In:**\n"
+        "Theme C; Theme D.\n"
+        "\n"
+        "An actual claim sentence that should still be flagged here.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1
+    assert "actual claim sentence" in uncited[0].text
+
+
+# --- M45: synthesizes + aggregate-framing exemption -----------------------
+
+
+def _synth_body_with_framing(opener_sentence: str) -> str:
+    """Body fixture with `## Included works` mirroring 2 sources plus a `##
+    Synthesis` section whose first claim is the aggregate-framing opener."""
+    return (
+        "## Synthesis\n"
+        "\n"
+        f"{opener_sentence}\n"
+        "A later sentence in the same section that should still be flagged.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-2026-01-01-aaa]]\n"
+        "- [[sources/web-2026-02-02-bbb]]\n"
+    )
+
+
+def test_aggregate_framing_opener_exempted_when_synthesizes_present():
+    """Opening sentence matching `Based on the provided sources...` is exempt
+    when `synthesizes:` has ≥2 entries mirrored by `## Included works`."""
+    body = _synth_body_with_framing(
+        "Based on the provided sources, several specific patterns emerge across themes."
+    )
+    front = {"synthesizes": ["sources/web-2026-01-01-aaa", "sources/web-2026-02-02-bbb"]}
+    uncited = cit.uncited_claims(body, front)
+    # Only the LATER sentence should remain uncited; the opener is exempt
+    assert len(uncited) == 1
+    assert "later sentence" in uncited[0].text
+
+
+def test_aggregate_framing_opener_NOT_exempted_without_synthesizes():
+    """Without `synthesizes:` frontmatter, the opener IS flagged."""
+    body = _synth_body_with_framing(
+        "Based on the provided sources, several specific patterns emerge across themes."
+    )
+    uncited = cit.uncited_claims(body)  # no front
+    # Both the opener AND the later sentence are flagged
+    assert len(uncited) == 2
+
+
+def test_aggregate_framing_opener_NOT_exempted_when_included_works_missing():
+    """`synthesizes:` set but `## Included works` absent → no exemption."""
+    body = (
+        "## Synthesis\n"
+        "\n"
+        "Based on the provided sources, several patterns emerge across themes.\n"
+    )
+    front = {"synthesizes": ["sources/web-2026-01-01-aaa", "sources/web-2026-02-02-bbb"]}
+    uncited = cit.uncited_claims(body, front)
+    assert len(uncited) == 1
+
+
+def test_aggregate_framing_opener_NOT_exempted_when_included_works_drift():
+    """`## Included works` exists but lists different entries from
+    `synthesizes:` — no exemption (citation laundering anti-pattern)."""
+    body = (
+        "## Synthesis\n"
+        "\n"
+        "Based on the corpus, several patterns emerge.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-different-1]]\n"
+        "- [[sources/web-different-2]]\n"
+    )
+    front = {"synthesizes": ["sources/web-2026-01-01-aaa", "sources/web-2026-02-02-bbb"]}
+    uncited = cit.uncited_claims(body, front)
+    assert len(uncited) == 1
+    assert "patterns emerge" in uncited[0].text
+
+
+def test_aggregate_framing_opener_NOT_exempted_when_only_one_synthesis():
+    """`synthesizes:` with a single entry doesn't aggregate — exemption
+    requires ≥2 (one source is just a normal citation, not an aggregate)."""
+    body = (
+        "## Synthesis\n"
+        "\n"
+        "Based on the provided sources, several patterns emerge.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-2026-01-01-aaa]]\n"
+    )
+    front = {"synthesizes": ["sources/web-2026-01-01-aaa"]}
+    uncited = cit.uncited_claims(body, front)
+    assert len(uncited) == 1
+
+
+def test_aggregate_framing_opener_one_per_section_bound():
+    """Exemption is bounded: only the FIRST opener-shaped sentence per
+    section is exempt; a second opener in the same section is flagged."""
+    body = (
+        "## Synthesis\n"
+        "\n"
+        "Based on the provided sources, the first pattern is clear.\n"
+        "Across the corpus, a second aggregate observation appears later.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-2026-01-01-aaa]]\n"
+        "- [[sources/web-2026-02-02-bbb]]\n"
+    )
+    front = {"synthesizes": ["sources/web-2026-01-01-aaa", "sources/web-2026-02-02-bbb"]}
+    uncited = cit.uncited_claims(body, front)
+    assert len(uncited) == 1
+    assert "second aggregate" in uncited[0].text
+
+
+def test_aggregate_framing_per_section_independence():
+    """Each `##` section gets its own opener exemption."""
+    body = (
+        "## Section A\n"
+        "\n"
+        "Based on the provided sources, pattern A emerges across the corpus.\n"
+        "\n"
+        "## Section B\n"
+        "\n"
+        "Across the corpus, pattern B emerges in a complementary way here.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-2026-01-01-aaa]]\n"
+        "- [[sources/web-2026-02-02-bbb]]\n"
+    )
+    front = {"synthesizes": ["sources/web-2026-01-01-aaa", "sources/web-2026-02-02-bbb"]}
+    uncited = cit.uncited_claims(body, front)
+    assert uncited == []
+
+
+def test_aggregate_framing_synthesis_tier_works_too():
+    """`synthesizes:` with `synthesis/<slug>` entries (second-derivative)
+    also enables the exemption."""
+    body = (
+        "## Cross-cutting\n"
+        "\n"
+        "Based on the previous thematic analysis, four anchors emerge across themes.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[synthesis/2026-05-11-component-degradation]]\n"
+        "- [[synthesis/2026-05-11-cost-and-financial-framing]]\n"
+    )
+    front = {
+        "synthesizes": [
+            "synthesis/2026-05-11-component-degradation",
+            "synthesis/2026-05-11-cost-and-financial-framing",
+        ]
+    }
+    uncited = cit.uncited_claims(body, front)
+    assert uncited == []
+
+
+def test_aggregate_framing_mixed_tier_rejected():
+    """`synthesizes:` with mixed `sources/` and `synthesis/` violates the
+    one-level strict-typing invariant — no exemption."""
+    body = (
+        "## Synthesis\n"
+        "\n"
+        "Based on the corpus, a pattern emerges across the sources.\n"
+        "\n"
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-2026-01-01-aaa]]\n"
+        "- [[synthesis/2026-05-11-component-degradation]]\n"
+    )
+    front = {
+        "synthesizes": [
+            "sources/web-2026-01-01-aaa",
+            "synthesis/2026-05-11-component-degradation",
+        ]
+    }
+    uncited = cit.uncited_claims(body, front)
+    assert len(uncited) == 1
+
+
+def test_aggregate_framing_invalid_synthesizes_entry_no_exemption():
+    """A malformed entry in `synthesizes:` disables the exemption entirely."""
+    body = _synth_body_with_framing(
+        "Based on the provided sources, patterns emerge."
+    )
+    front = {"synthesizes": ["not-a-valid-entry", "sources/web-2026-02-02-bbb"]}
+    uncited = cit.uncited_claims(body, front)
+    # All claims flagged; exemption gated on shape
+    assert len(uncited) == 2
+
+
+def test_is_aggregate_framing_opener_allowlist_pinned():
+    """Pin the M45 aggregate-opener allowlist so drift is caught."""
+    accepted = [
+        "Based on the provided sources, X.",
+        "Based on the corpus, Y.",
+        "Based on the previous thematic analysis, Z.",
+        "Based on the conversation history, W.",
+        "Across the corpus, A.",
+        "Across all the sources, B.",
+        "Looking across all the themes, C.",
+        "Aggregating across the themes, D.",
+        "Across the provided sources, E.",
+    ]
+    for s in accepted:
+        assert cit.is_aggregate_framing_opener(s), f"should match: {s!r}"
+    rejected = [
+        "The drug X causes effect Y in patients.",
+        "Finding: drug X causes Y.",
+        "**Themes Used In:** A; B.",
+    ]
+    for s in rejected:
+        assert not cit.is_aggregate_framing_opener(s), f"should NOT match: {s!r}"
+
+
+# --- M45: validate_synthesizes_integrity ----------------------------------
+
+
+def test_synthesizes_integrity_passes_when_absent():
+    """Pages without `synthesizes:` skip the integrity check entirely."""
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"type": "synthesis", "slug": "s", "title": "t", "domains": ["d"], "question": "q"}
+    body = "## Synthesis\n\nA claim that doesn't need synthesizes integrity.\n"
+    result = validate_synthesizes_integrity(front, body)
+    assert not result.errors
+
+
+def test_synthesizes_integrity_rejects_bad_entry_shape():
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"synthesizes": ["sources/ok-1", "INVALID ENTRY"]}
+    body = "## Included works\n\n- [[sources/ok-1]]\n"
+    result = validate_synthesizes_integrity(front, body)
+    assert any(e.rule == "synthesizes-shape" for e in result.errors)
+
+
+def test_synthesizes_integrity_rejects_mixed_tier():
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"synthesizes": ["sources/web-aaa", "synthesis/foo-bar"]}
+    body = (
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-aaa]]\n"
+        "- [[synthesis/foo-bar]]\n"
+    )
+    result = validate_synthesizes_integrity(front, body)
+    assert any(e.rule == "synthesizes-mixed-tier" for e in result.errors)
+
+
+def test_synthesizes_integrity_rejects_included_works_drift():
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"synthesizes": ["sources/web-aaa", "sources/web-bbb"]}
+    body = (
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-aaa]]\n"
+    )
+    result = validate_synthesizes_integrity(front, body)
+    assert any(e.rule == "synthesizes-included-works-drift" for e in result.errors)
+
+
+def test_synthesizes_integrity_accepts_correct_mirror():
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"synthesizes": ["sources/web-aaa", "sources/web-bbb"]}
+    body = (
+        "## Included works\n"
+        "\n"
+        "- [[sources/web-aaa]]\n"
+        "- [[sources/web-bbb]]\n"
+    )
+    result = validate_synthesizes_integrity(front, body)
+    assert result.errors == []
+
+
+def test_synthesizes_integrity_accepts_empty_list_as_noop():
+    """`synthesizes: []` is treated as no-op (same as field absent)."""
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"synthesizes": []}
+    body = "## Synthesis\n\nNo Included works needed.\n"
+    result = validate_synthesizes_integrity(front, body)
+    assert result.errors == []
+
+
+def test_synthesizes_integrity_rejects_non_list_value():
+    from gateway.validator import validate_synthesizes_integrity
+    front = {"synthesizes": "sources/web-aaa"}  # string, not list
+    body = "## Included works\n\n- [[sources/web-aaa]]\n"
+    result = validate_synthesizes_integrity(front, body)
+    assert any(e.rule == "synthesizes-shape" for e in result.errors)
 
 
 # --- wiki_pages.py ---------------------------------------------------------

@@ -16,6 +16,7 @@ from gateway import log, paths
 from gateway.core import OperationResult
 from gateway.lint import LintFinding
 from gateway.lint import (
+    citation_chains,
     citation_density,
     contradictions,
     filter_calibration,
@@ -38,6 +39,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("contradictions", contradictions.run),
     ("missing-pages", missing_pages.run),
     ("citation-density", citation_density.run),
+    ("citation-chains", citation_chains.run),
     ("schema-drift", schema_drift.run),
     ("filter-calibration", filter_calibration.run),
     ("inbox-pending", inbox_pending.run),

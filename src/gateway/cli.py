@@ -27,6 +27,7 @@ SUBCOMMANDS: dict[str, str] = {
     "nlm-briefing": "Generate a briefing doc; file as wiki artifact",
     "nlm-revise": "Revise an existing NotebookLM artifact",
     "finalize": "Finalize a draft page (re-run validator with citation rule restored)",
+    "cite": "Add [[sources/<id>]] citation tokens to specific lines of a wiki page",
     "lint": "Run health checks across the wiki",
     "index": "Rebuild or update the content index",
     "search": "Search wiki + raw sources",
@@ -59,6 +60,7 @@ IMPLEMENTED: set[str] = {
     "nlm-briefing",
     "nlm-revise",
     "finalize",
+    "cite",
     "query",
     "mcp-serve",
     "batch-ingest",
@@ -195,6 +197,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="Delete the draft page and remove its backlinks instead of finalizing",
     )
 
+    # cite: add [[sources/<id>]] citation tokens to specific lines of a wiki page
+    p_cite = subparsers.add_parser("cite", help=SUBCOMMANDS["cite"])
+    p_cite.add_argument(
+        "page_path",
+        help="Path to the wiki page to cite into (relative to KNOWLEDGE_ROOT or absolute)",
+    )
+    p_cite.add_argument(
+        "additions",
+        nargs="+",
+        metavar="LINE:SOURCE_ID",
+        help="One or more LINE:SOURCE_ID pairs (e.g., 26:web-2026-01-01-361). LINE is 1-indexed into the on-disk file.",
+    )
+
     # query: ask the persistent NotebookLM corpus and file a synthesis page
     p_query = subparsers.add_parser("query", help=SUBCOMMANDS["query"])
     p_query.add_argument("question", help="Question to ask the persistent domain corpus")
@@ -242,8 +257,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_research.add_argument(
         "--draft",
-        action="store_true",
-        help="File synthesis pages with draft=true (citation rule downgraded)",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help=(
+            "File synthesis pages with draft=true (citation rule downgraded "
+            "to warning). Default ON for `wiki research` — NotebookLM's "
+            "synthesis prose routinely emits interpretive openers and "
+            "mid-section aggregate claims that fail strict citation grounding. "
+            "Pass --no-draft to force strict-mode validation (apply_plan "
+            "rejects on uncited claims). Recommended workflow: keep the "
+            "draft default, follow up with `wiki cite` and `wiki finalize` "
+            "per page once the framing prose has been attributed."
+        ),
     )
     p_research.add_argument(
         "--dry-run",
@@ -527,6 +552,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_nlm_revise(ns)
     if ns.subcommand == "finalize":
         return _run_finalize(ns)
+    if ns.subcommand == "cite":
+        return _run_cite(ns)
     if ns.subcommand == "query":
         return _run_query(ns)
     if ns.subcommand == "mcp-serve":
@@ -800,6 +827,30 @@ def _run_finalize(ns: argparse.Namespace) -> int:
     from gateway.ops.finalize import finalize
 
     return _emit_result(finalize(ns.page_path, abandon=ns.abandon))
+
+
+def _run_cite(ns: argparse.Namespace) -> int:
+    from gateway.ops.cite import cite
+
+    additions: list[tuple[int, str]] = []
+    for token in ns.additions:
+        if ":" not in token:
+            print(
+                f"error: invalid LINE:SOURCE_ID token (missing ':'): {token}",
+                file=sys.stderr,
+            )
+            return 2
+        line_str, _, sid = token.partition(":")
+        try:
+            ln = int(line_str)
+        except ValueError:
+            print(
+                f"error: line number is not an integer: {line_str!r} (in {token})",
+                file=sys.stderr,
+            )
+            return 2
+        additions.append((ln, sid.strip()))
+    return _emit_result(cite(ns.page_path, additions))
 
 
 def _run_query(ns: argparse.Namespace) -> int:

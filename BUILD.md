@@ -878,6 +878,59 @@ Adds a new Artifacts page under the Domains sidebar group at `/domains/artifacts
 - Artifact deletion from the UI (delete the wiki page directly).
 - In-browser audio playback or slide-deck rendering.
 
+### M44 — Token-efficient LLM clients for research runs
+
+Replaces the per-stage `claude -p` subprocess wrappers (`filter/semantic.py`, `plan.py`, `vlm.py`) with a shared `gateway.llm.ClaudeCLIClient` that invokes `claude -p --no-session-persistence --tools "" --model <id> --system-prompt <prefix> <user_prompt>`. Strips the Claude Code agent harness (tool declarations + default system prompt) on every call, routes filter to Haiku 4.5 (binary triage), keeps plan and VLM on Opus 4.7. VLM uses `--tools "Read"` to retain image attachment. Auth: `claude_cli_env()` drops `ANTHROPIC_API_KEY` so Max-plan OAuth is honored. **No `--bare`** — per `claude --help` it forces API-key auth and is incompatible with Max billing (discovered the hard way during sanity-check).
+
+**M44.1 — Parallel filter (2026-05-12).** `_run_filter` in `research/orchestrator.py` uses `ThreadPoolExecutor`; default 8 workers (configurable via `WIKI_FILTER_MAX_WORKERS`). One-shot per-item `FilterError` isolation; accepted candidates returned in input order. Real-world: 178-candidate run, 47 min sequential → 12 min 34 s at 4 workers (2.6× wall-clock speedup; effective ~7.7× vs original Opus+sequential baseline including the Haiku token savings).
+
+**M44.2 — Synthesis citation-grounding fixes (2026-05-13).** Validator extended with `_STRUCTURAL_FRAME_LABELS` (11-label allowlist for NotebookLM-emitted bullet labels like `**Themes Used In:**`, `**Items Compared:**`); analysis prompts gained an explicit footnote-ref directive demanding `[N]` → `[^N]: [[sources/<id>]]` resolution on interpretive sentences.
+
+**M44.3 — Multi-line continuation + draft workflow (2026-05-13).** Validator tracks one continuation slot per structural-frame label so the value line (when NotebookLM splits label/value across two lines) inherits the exemption. Framing prose like *"Based on the provided sources, the corpus presents…"* is accepted as the `--draft` workflow's responsibility — WIKI.md § 5.5 documents `wiki research --draft` for synthesis-heavy runs with `wiki cite` / `wiki finalize` follow-up.
+
+**Tests.** 25 new tests across `test_llm_client.py` (12), `test_filter.py` (4), `test_plan_client.py` (10 — covers plan + VLM argv), `test_research_orchestrator.py` (4 — parallel filter), `test_authorship.py` (8 — citation allowlist + multi-line continuation), `test_research_analysis.py` (3 — prompt-directive injection). Full gateway suite: 741 → 766 passing.
+
+**Hand-tested.** Single-source sanity check (Summer Gardens reserve study, score 1.00 with on-policy rationale); full end-to-end runs on `wiki research --execute 2026-05-12-…` (firm-explainer plan, 178 cand → 6 accepted → 6 wiki pages → 2 promoted) and `2026-05-11-…` (methodology plan, 181 cand → 18 accepted; apply_plan rejects on Category B framing prose, expected — re-run with `--draft` per M44.3 workflow).
+
+**Out of scope (M44+).**
+
+- Local-classifier replacement for filter (deferred per WIKI § 10.4, triggered at ~1000 pinned decisions per domain).
+- Anthropic API-key billing path (`cache_control` prompt caching) — user constraint: stay on Max.
+- Multi-item batched filter calls — would amortize per-call fixed cost further but compromises per-item isolation and the `wiki filter-correct` fine-tuning bank.
+- Idempotent `register_session` for re-execute on `status=promoted` (a separate gateway-ops-idempotent fix).
+- Filter score not written to raw/ frontmatter on the research path (the ingest path does; orchestrator's `_materialize` doesn't — pre-existing).
+
+### M45 — `synthesizes:` and the followable citation chain
+
+Resolves the residual citation-grounding failure surfaced in M44.3: synthesis pages emit legitimate aggregate observations like *"Based on the provided sources, four primary anchors emerge…"* that cannot point at a single source. Strict per-source citation rejects them. The fix adopts **Cochrane / PRISMA's load-bearing convention**: explicitly enumerate every constituent work, then derive aggregate claims from the enumerated set.
+
+**Design pivoted from a web-research survey** (see `feedback_survey_formal_practice_before_design.md` memory). The original sketch (`derivative: 1|2` integer + `[[corpus]]` token) was internally coherent but had no precedent in CiTO, FRBR, FaBiO, BIBO, or any surveyed PKM tool — and `[[corpus]]` would have reintroduced the documented citation-laundering anti-pattern. The pivot to `synthesizes:` + `## Included works` mirrors Cochrane's "Characteristics of included studies" table.
+
+**What's new.**
+
+- `synthesizes:` optional frontmatter field on synthesis pages — list of `sources/<slug>` (first-derivative) OR `synthesis/<slug>` (second-derivative). One-level strict typing; never mixed.
+- `## Included works` required body section when `synthesizes:` is set — must mirror the list 1:1 (validator enforces).
+- Aggregate-framing-opener allowlist in `gateway/citations.py:_AGGREGATE_FRAMING_OPENERS_RE` — first claim-shaped sentence of each `## ` section matching the allowlist is exempt from per-claim citation, bounded to one per section, only when `synthesizes:` ≥ 2 and Included works mirrors.
+- `validate_synthesizes_integrity` rejects malformed entries, mixed-tier lists, and Included-works drift.
+- `wiki lint --scope citation-chains` surfaces dangling `synthesizes:` refs (cross-page) and synthesis pages with aggregate framing but no `synthesizes:` (legacy pages predating M45).
+- Orchestrator emits `synthesizes:` + `## Included works` mechanically from the branch's known constituent sources — does NOT depend on NotebookLM compliance (the failure mode that hobbled M44.2's footnote-ref directive).
+- Cross-cutting synthesis pages get `synthesizes: [synthesis/...]` listing the per-theme branches — the second-derivative case.
+- `[[corpus]]` token forbidden by design; validator rejects as unknown wikilink target.
+
+**Tests.** 23 new tests across `test_authorship.py` (18: aggregate-framing exemption variants, synthesizes-integrity), `test_research_orchestrator.py` (4: orchestrator emission of synthesizes + Included works for per-branch and cross-cutting), `test_lint_citation_chains.py` (5: dangling refs, legacy framing, second-derivative resolution). Full gateway suite: 766 → 789 passing.
+
+**Hand-test.** Backfill script `scripts/m45_backfill_synthesizes.py` retrofitted the 5 draft pages from the 2026-05-13 M44.3 validation run. 2 of 5 now validate cleanly in non-draft mode; 3 still have uncited substantive content claims (e.g., bullet items like `**BEES Technique:** A multi-attribute evaluation framework developed by…`) that are real claims missing citations, not framing prose. Those need `wiki cite` to attach attributions, then `wiki finalize`. Lint surfaces the pre-existing pre-M45 cross-cutting page in the condo domain as warning-only.
+
+**M45.1 — `--draft` default on `wiki research` + 3 structural labels (2026-05-13).** The fresh-prompt end-to-end run surfaced that NotebookLM's opener phrasing varies more than the M45 allowlist can keep up with (`"The provided sources detail…"`, `"There is an unanswered tension…"`, etc.). Rather than chase each variant (whack-a-mole; see `feedback_survey_formal_practice_before_design.md` discipline), `wiki research` now defaults to `--draft` mode (`argparse.BooleanOptionalAction`, pass `--no-draft` to opt into strict). Recommended workflow: keep the draft default, then `wiki cite` + `wiki finalize` per page once framing prose is attributed. Three new structural-frame labels (`**Gap Identified:**`, `**Limitation Identified:**`, `**Tension Identified:**`) added to M44.2's allowlist; they're genuine metadata, safe addition.
+
+**Out of scope (M45+).**
+
+- `wiki cite` / `wiki edit` op for hand-editing `synthesizes:` and `## Included works` (relates to `gateway_edit_path_open_question.md` memory).
+- N-derivative transitive closure baked into individual pages — `synthesizes:` is one-level strict.
+- Quality assessment / weighting within `synthesizes:` (Cochrane has GRADE; we don't).
+- `cito:` predicate typing on individual citations (heavyweight; binary cited/uncited + aggregate exemption is sufficient).
+- Backfilling all historical synthesis pages predating M45 — only the 5 M44.3 drafts. Older pages stay; lint surfaces them but doesn't gate.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

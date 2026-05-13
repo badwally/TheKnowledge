@@ -14,7 +14,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 import json
 import re
-import subprocess
+
+from gateway.llm import ClaudeCLIClient, LLMError, model_for
 from typing import Protocol
 
 
@@ -170,37 +171,55 @@ class PlanClient(Protocol):
 
 
 class ClaudeCLIPlanClient:
-    """Default backend: subprocess to `claude -p`. Reuses Max-plan auth."""
+    """Default backend: subprocess to `claude -p`. Reuses Max-plan auth.
 
-    def __init__(self, executable: str = "claude", timeout_s: float = 300.0):
-        self._exe = executable
-        self._timeout = timeout_s
+    M44: delegates to `gateway.llm.ClaudeCLIClient` so plan invocations get
+    ``--bare --tools "" --model claude-opus-4-7`` and a clean
+    ``--system-prompt`` slot. Exposes both Protocol-compatible ``call(prompt)``
+    and the optimized ``call_split(system, user)``. Plan stays on Opus 4.7
+    (synthesis-grade reasoning); only filter routes to Haiku.
+    """
+
+    def __init__(
+        self,
+        executable: str = "claude",
+        timeout_s: float = 300.0,
+        *,
+        max_retries: int = 0,
+        model: str | None = None,
+        cli: ClaudeCLIClient | None = None,
+    ):
+        self._model = model or model_for("plan")
+        self._cli = cli or ClaudeCLIClient(
+            executable=executable,
+            timeout_s=timeout_s,
+            max_retries=max_retries,
+        )
 
     def call(self, prompt: str) -> str:
-        try:
-            result = subprocess.run(
-                [self._exe, "-p", prompt],
-                capture_output=True,
-                text=True,
-                timeout=self._timeout,
-                check=False,
-            )
-        except FileNotFoundError as e:
-            raise PlanError(f"`{self._exe}` not found on PATH; install Claude Code or inject a PlanClient") from e
-        except subprocess.TimeoutExpired as e:
-            raise PlanError(f"`{self._exe} -p` timed out after {self._timeout}s") from e
+        """Protocol-compatible single-string entry point."""
+        return self._invoke(system_prompt=None, user_prompt=prompt)
 
-        if result.returncode != 0:
-            raise PlanError(
-                f"`{self._exe} -p` exited {result.returncode}: {result.stderr.strip()[:300]}"
+    def call_split(self, *, system: str, user: str) -> str:
+        """M44 optimized: system prefix via --system-prompt."""
+        return self._invoke(system_prompt=system, user_prompt=user)
+
+    def _invoke(self, *, system_prompt: str | None, user_prompt: str) -> str:
+        try:
+            return self._cli.call(
+                user_prompt=user_prompt,
+                system_prompt=system_prompt,
+                model=self._model,
+                tools="",
             )
-        return result.stdout
+        except LLMError as e:
+            raise PlanError(str(e)) from e
 
 
 # --- prompt construction ---------------------------------------------------
 
 
-_PLAN_PROMPT_TEMPLATE = """\
+_PLAN_SYSTEM_PROMPT = """\
 You are the wiki authorship agent for a personal knowledge base. Your job is
 to produce a structured Plan that updates entity / concept pages based on a
 newly-ingested source, and to detect contradictions between the new source and
@@ -209,12 +228,12 @@ existing wiki claims.
 ## Conventions you must follow
 
 - Page types live under `wiki/`:
-  - `wiki/entities/<slug>.md` — drugs, people, papers, organizations
-  - `wiki/concepts/<slug>.md` — mechanisms, phenomena, frameworks
+  - `wiki/entities/<slug>.md` — people, organizations, products, statutes, papers, named artifacts (domain-dependent)
+  - `wiki/concepts/<slug>.md` — mechanisms, frameworks, patterns, principles, phenomena (domain-dependent)
   - `wiki/synthesis/<slug>.md` — cross-source narrative analyses
   - `wiki/mocs/<domain>.md` — domain map of content
 
-- Slugs: lowercase, hyphenated, semantic (e.g., `food-noise`, `nucleus-accumbens`).
+- Slugs: lowercase, hyphenated, semantic; reflect the entity/concept's canonical short name (e.g., `<topic-name>`, `<framework-name>`, `<statute-id>`).
 
 - Citation grounding is mandatory. Every factual claim in entity / concept /
   synthesis pages must be followed by `[[sources/<id>]]` linking to the
@@ -230,22 +249,16 @@ existing wiki claims.
   - concept:   type, slug, canonical_name, domains
   - synthesis: type, slug, title, domains, question
 
-## Source under evaluation
-
-```
-{source_text}
-```
-
-## Existing wiki pages relevant to this source
-
-{existing_pages_section}
-
 ## Your task
+
+The user message contains a newly-ingested source and the existing wiki
+pages relevant to it. Produce a Plan that updates or creates entity/concept
+pages and reports any contradictions.
 
 ### 1. Update or create pages
 
 **Prioritize updating existing pages over creating new ones.** For every
-entity or concept mentioned in the source, check the existing pages above.
+entity or concept mentioned in the source, check the existing pages provided.
 If a matching page exists, produce an `"update"` that integrates the new
 claims (preserving all existing claims and citations). Only create a new
 page when no existing page covers the entity or concept.
@@ -273,27 +286,27 @@ Severity levels:
 Return ONLY a JSON object:
 
 ```
-{{{{
+{{
   "source_id": "<exact source_id from the source frontmatter>",
   "rationale": "<one sentence: why these updates>",
   "updates": [
-    {{{{
+    {{
       "target_path": "wiki/entities/<slug>.md",
       "update_kind": "create" | "update",
       "content": "<FULL canonical markdown for the page (frontmatter + body)>",
       "rationale": "<why this page changes>"
-    }}}}
+    }}
   ],
   "contradictions": [
-    {{{{
+    {{
       "existing_page": "wiki/concepts/<slug>.md",
       "existing_claim": "<the existing claim text>",
       "new_claim": "<the conflicting claim from the new source>",
       "source_id": "<source_id of the new source>",
       "severity": "minor" | "moderate" | "major"
-    }}}}
+    }}
   ]
-}}}}
+}}
 ```
 
 Touch as many pages as the source genuinely informs (typically 5–15).
@@ -317,12 +330,26 @@ followed by `[[sources/<id>]]` linking to a source already on disk.
 """
 
 
-def build_plan_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
-    """Construct the planning prompt.
+_PLAN_USER_TEMPLATE = """\
+## Source under evaluation
 
-    `existing_pages` maps relative-path (e.g. "wiki/concepts/food-noise.md")
-    to the page's current canonical text. The prompt embeds these so the
-    agent can revise rather than overwrite.
+```
+{source_text}
+```
+
+## Existing wiki pages relevant to this source
+
+{existing_pages_section}
+"""
+
+
+def build_plan_system_prompt() -> str:
+    """Static prefix: conventions + task instructions + JSON schema."""
+    return _PLAN_SYSTEM_PROMPT
+
+
+def build_plan_user_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
+    """Per-item payload: the source and the relevant existing wiki pages.
 
     Strips embedded null bytes from `source_text` before embedding —
     pdfplumber occasionally extracts NUL characters from malformed PDFs
@@ -336,7 +363,21 @@ def build_plan_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
             blocks.append(f"### {path}\n\n```\n{existing_pages[path]}\n```")
         existing_section = "\n\n".join(blocks)
 
-    return _PLAN_PROMPT_TEMPLATE.format(
+    return _PLAN_USER_TEMPLATE.format(
         source_text=source_text.replace("\x00", ""),
         existing_pages_section=existing_section,
+    )
+
+
+def build_plan_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
+    """Backwards-compatible: concatenated system + user prompt.
+
+    Callers that pre-date M44 still get one big string. The ingest path
+    uses `build_plan_system_prompt()` + `build_plan_user_prompt()` via
+    `call_split` for the agent-harness savings.
+    """
+    return (
+        build_plan_system_prompt()
+        + "\n"
+        + build_plan_user_prompt(source_text, existing_pages)
     )

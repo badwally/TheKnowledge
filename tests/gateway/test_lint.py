@@ -90,6 +90,7 @@ def test_known_checks_includes_all_documented_checks():
         "contradictions",
         "missing-pages",
         "citation-density",
+        "citation-chains",
         "schema-drift",
         "filter-calibration",
         "inbox-pending",
