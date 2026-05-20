@@ -22,6 +22,8 @@ no external ID fall through to `web` type with the S2 or DOI URL.
 from __future__ import annotations
 
 import os
+import threading
+import time
 from typing import Any
 
 import requests
@@ -35,6 +37,20 @@ from gateway.research.adapters.base import (
 
 _BASE_URL = "https://api.semanticscholar.org/graph/v1"
 _TIMEOUT_SECONDS = 30
+
+_MIN_INTERVAL_SECONDS = 1.1
+_MAX_RETRIES_ON_429 = 4
+_BACKOFF_BASE_SECONDS = 2.0
+_rate_lock = threading.Lock()
+_last_call_at: list[float] = [0.0]
+
+
+def _throttle() -> None:
+    with _rate_lock:
+        elapsed = time.monotonic() - _last_call_at[0]
+        if elapsed < _MIN_INTERVAL_SECONDS:
+            time.sleep(_MIN_INTERVAL_SECONDS - elapsed)
+        _last_call_at[0] = time.monotonic()
 
 _SEARCH_FIELDS = ",".join([
     "paperId",
@@ -74,15 +90,31 @@ def _headers() -> dict[str, str]:
 
 def _get(path: str, params: dict[str, Any] | None = None) -> dict:
     url = f"{_BASE_URL}{path}"
-    try:
-        resp = requests.get(url, params=params, headers=_headers(), timeout=_TIMEOUT_SECONDS)
-    except requests.RequestException as e:
-        raise AdapterError(f"S2 API request failed: {e}") from e
-    if resp.status_code == 429:
-        raise AdapterError("S2 API rate limit exceeded; set S2_API_KEY for higher limits")
-    if resp.status_code != 200:
-        raise AdapterError(f"S2 API returned HTTP {resp.status_code}: {resp.text[:300]}")
-    return resp.json()
+    last_429: Exception | None = None
+    for attempt in range(_MAX_RETRIES_ON_429 + 1):
+        _throttle()
+        try:
+            resp = requests.get(url, params=params, headers=_headers(), timeout=_TIMEOUT_SECONDS)
+        except requests.RequestException as e:
+            raise AdapterError(f"S2 API request failed: {e}") from e
+        if resp.status_code == 429:
+            retry_after_header = resp.headers.get("Retry-After")
+            try:
+                retry_after = float(retry_after_header) if retry_after_header else 0.0
+            except (TypeError, ValueError):
+                retry_after = 0.0
+            backoff = max(retry_after, _BACKOFF_BASE_SECONDS * (2 ** attempt))
+            last_429 = AdapterError(
+                f"S2 API rate limit (429) on attempt {attempt + 1}/{_MAX_RETRIES_ON_429 + 1}; backing off {backoff:.1f}s"
+            )
+            if attempt < _MAX_RETRIES_ON_429:
+                time.sleep(backoff)
+                continue
+            raise AdapterError("S2 API rate limit exceeded after retries; set S2_API_KEY for higher limits") from last_429
+        if resp.status_code != 200:
+            raise AdapterError(f"S2 API returned HTTP {resp.status_code}: {resp.text[:300]}")
+        return resp.json()
+    raise AdapterError("S2 API rate limit exceeded after retries") from last_429
 
 
 def _truncate(text: str, max_length: int = 1000) -> str:
