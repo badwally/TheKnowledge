@@ -213,11 +213,38 @@ def nlm_add(
     with file_lock(f"ingest-{source_id}"):
         title = str(front.get("title") or source_id)
         if url:
+            url_err: NlmError | None = None
             try:
                 client.source_add_url(notebook_id, url)
+                log_summary = f"url={url}"
             except NlmError as e:
-                return OperationResult(success=False, errors=[f"nlm add url failed: {e}"])
-            log_summary = f"url={url}"
+                url_err = e
+            if url_err is not None:
+                # M46-followup Fix B: NotebookLM's URL crawler is blocked by
+                # some publishers (Substack, Cloudflare bot-protection). The
+                # raw markdown body is what NLM ultimately indexes anyway, so
+                # fall back to --text when --url fails. Only attempt the
+                # fallback if the body is non-empty — otherwise there's
+                # nothing to send and we surface the URL failure.
+                if body.strip():
+                    try:
+                        client.source_add_text(notebook_id, body, title=title)
+                        log_summary = (
+                            f"url-failed-fell-back-to-text url={url} text={len(body)}b"
+                        )
+                    except NlmError as text_err:
+                        return OperationResult(
+                            success=False,
+                            errors=[
+                                f"nlm add url failed: {url_err}",
+                                f"nlm add text fallback also failed: {text_err}",
+                            ],
+                        )
+                else:
+                    return OperationResult(
+                        success=False,
+                        errors=[f"nlm add url failed: {url_err}"],
+                    )
         elif sidecar_path is not None:
             # M37 preferred path for PDF/docx/xlsx/pptx/image/voice: upload
             # the sidecar binary so NotebookLM gets layout, figures, and

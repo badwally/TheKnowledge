@@ -56,11 +56,27 @@ class MockNlmClient:
         self.notebooks_created.append(title)
         return self.next_notebook_id
 
+    # Optional failure injections for testing fallback paths.
+    fail_url_add: bool = False
+    fail_text_add: bool = False
+
     def source_add_url(self, notebook_id: str, url: str) -> None:
         self.sources_added.append((notebook_id, url))
+        if self.fail_url_add:
+            from gateway.nlm_client import NlmError
+            raise NlmError(
+                f"`nlm source add {notebook_id} --url {url} --wait` exited 1: "
+                "Error: Could not add url source."
+            )
 
     def source_add_text(self, notebook_id, content, *, title=None):
         self.text_sources_added.append((notebook_id, content, title))
+        if self.fail_text_add:
+            from gateway.nlm_client import NlmError
+            raise NlmError(
+                f"`nlm source add {notebook_id} --text ... --wait` exited 1: "
+                "Error: Could not add text source."
+            )
 
     def source_add_file(self, notebook_id, file_path, *, title=None):
         self.file_sources_added.append((notebook_id, file_path, title))
@@ -277,6 +293,75 @@ def test_nlm_add_uploads_sidecar_file_when_present(kb_root, make_source, mock_cl
     nb_id, path, title = mock_client.file_sources_added[0]
     assert path == sidecar_abs
     assert title == "Sidecar Test"
+
+
+# --- M46-followup Fix B: URL → text fallback -------------------------------
+
+
+def test_nlm_add_falls_back_to_text_when_url_add_fails(kb_root, make_source, mock_client):
+    """When NotebookLM's URL crawler is blocked (e.g., Substack, Cloudflare),
+    the `source_add_url` call exits non-zero. We must retry with `--text`
+    using the raw markdown body we already have, rather than failing the
+    whole add. The retry needs to succeed and the operation should report
+    success — the user shouldn't see this as a corpus gap."""
+    raw_path = _make_youtube_source(
+        kb_root, make_source, source_id="yt-urlBlk1AB", domain="d1"
+    )
+    front, body = fm.parse(raw_path.read_text())
+    front["title"] = "Crawler-Blocked Source"
+    raw_path.write_text(fm.serialize(front, body))
+    mock_client.fail_url_add = True
+
+    result = nlm_add("d1", "yt-urlBlk1AB", client=mock_client)
+
+    assert result.success, result.errors
+    # URL add was attempted first (and the mock records the call before raising)
+    assert len(mock_client.sources_added) == 1
+    # Text add was used as the fallback
+    assert len(mock_client.text_sources_added) == 1
+    nb_id, content, title = mock_client.text_sources_added[0]
+    assert content == body
+    assert title == "Crawler-Blocked Source"
+    # Frontmatter was updated to reflect successful corpus add
+    front_after, _ = fm.parse(raw_path.read_text())
+    assert mock_client.next_notebook_id in front_after["nlm_corpus_ids"]
+
+
+def test_nlm_add_url_fallback_to_text_skipped_when_body_empty(kb_root, make_source, mock_client):
+    """If URL add fails AND the body is empty, there's nothing to fall back
+    on. The operation must surface the URL failure rather than silently
+    succeeding with empty text content."""
+    raw_path = _make_youtube_source(
+        kb_root, make_source, source_id="yt-urlBlkEmpty", domain="d1"
+    )
+    front, _ = fm.parse(raw_path.read_text())
+    # url stays present; body is wiped
+    raw_path.write_text(fm.serialize(front, "   \n  "))
+    mock_client.fail_url_add = True
+
+    result = nlm_add("d1", "yt-urlBlkEmpty", client=mock_client)
+
+    assert not result.success
+    assert any("nlm add url failed" in e for e in result.errors)
+    # No text fallback was attempted (nothing to send)
+    assert mock_client.text_sources_added == []
+
+
+def test_nlm_add_url_and_text_both_fail_returns_combined_error(kb_root, make_source, mock_client):
+    """If both URL add and text fallback fail, the operation surfaces both
+    error messages so the operator can see the full failure mode."""
+    raw_path = _make_youtube_source(
+        kb_root, make_source, source_id="yt-urlAndTxt", domain="d1"
+    )
+    mock_client.fail_url_add = True
+    mock_client.fail_text_add = True
+
+    result = nlm_add("d1", "yt-urlAndTxt", client=mock_client)
+
+    assert not result.success
+    combined = " | ".join(result.errors)
+    assert "url" in combined.lower()
+    assert "text" in combined.lower()
 
 
 # --- nlm-sync --------------------------------------------------------------
