@@ -2,42 +2,118 @@
 type: moc
 slug: ai-native-business
 domain: ai-native-business
-last_updated: '2026-05-23T18:08:12Z'
+last_updated: '2026-05-23T20:10:00Z'
 draft: true
-draft_started_at: '2026-05-23T18:08:12Z'
-draft_unresolved_claims: 18
+draft_started_at: '2026-05-23T20:10:00Z'
+draft_unresolved_claims: 0
 ---
 # ai-native-business — Map of Content
 
-## Overview
+> **Operator playbook for a solo founder + AI, substrate-first.** Three archetypes, four pillars. What it means to build a company where AI is the *substrate* the business runs on — not just a bolt-on feature, not necessarily an AI product itself.
 
-Auto-generated from the corpus-constructive research loop. Anchored on the most recent `wiki research` run.
+## How to read this
 
-## Key entities
+1. **Start with the concept anchor** to lock the substrate-first framing.
+2. **Read the four pillars in order** — org → economics → tech → GTM.
+3. **Then read the archetype that matches what you're building.**
+4. Skim the cross-cutting pages last for triangulation.
 
-- [[sources/web-2024-02-07-3a2]] — The One-person Billion-dollar Company - Every
-- [[sources/web-2026-04-23-e4c]] — The Solo Founder AI Agent Stack That Is Replacing Entire Startup ...
-- [[sources/web-2026-04-10-562]] — AI's Unsustainable Economics: The Path to Positive Margins
-- [[sources/yt-msfECL74sIA]] — How Pieter Levels Makes Millions From Nomad List - YouTube
-- [[sources/web-2025-02-14-794]] — AI Is Driving A Shift Towards Outcome-Based Pricing
-- [[sources/web-2025-10-04-aae]] — The Emerging AI-Native GTM Playbook: 6 Patterns from companies ...
-- [[sources/yt-I08ZeY7QcrE]] — How Top 1% AI-Native Organizations Actually Make Money - YouTube
+Drafts; the citation chain has known render bugs (see `docs/M46-followup-items.md` #2). Source pages and `synthesizes:` frontmatter are authoritative.
 
-## Key concepts
+## Concept anchor
 
-- **Economic Infrastructure and Capital Efficiency** — The emergence of AI-native operations has fundamentally inverted the traditional cost structure and pricing dynamics of startups. This shift enables teams to scale rapidly with minimal headcount while navigating new margin pressures.
-  - Lean Headcount and High Leverage: A solo founder's AI stack, utilizing tools like Cursor, Claude, Make, and Intercom Fin, costs roughly $300 to $500 per month, effectively replacing functions that would require $80,000 to $120,000 in monthly human payroll [1, 2]., High-growth AI companies employ unique organizational designs to limit management overhead; for example, Gamma uses a "player-coach" model where leaders actively code and design, while Surge AI achieved $1 billion ARR with around 110 employees by exclusively hiring high-agency "doers" [3-5].
-  - New Pricing Dynamics and Variable Costs: As software increasingly functions as automated labor, the traditional "per-seat" pricing model is becoming obsolete, prompting AI-native companies like Decagon to adopt outcome-based pricing (per-resolution) or usage-based pricing [6-8]., To offset the ballooning GPU and compute costs that cause negative margins, successful AI companies like Canva build "margin-friendly" features, such as low-compute analytics or editing suites, that justify premium pricing without heavy inference costs [9-11].
-- **Role Taxonomy and the Human-Agent Divide** — A new operational paradigm has emerged where founders focus on high-level direction and judgment, while AI models handle routine execution and scalable problem-solving. Success is determined by how effectively a company can orchestrate and allocate these different types of intelligence.
-  - Allocating Intelligence and Judgment: Human judgment remains the irreplaceable core of the business, as AI agents cannot reliably validate target markets, make strategic pricing decisions, or decide which client relationships to sever [12, 13]., The importance of human judgment was demonstrated in a Harvard study on Kenyan entrepreneurs, where AI assistance improved the outcomes of high-performing founders who knew how to filter advice, but actively harmed struggling founders who lacked the judgment to identify bad AI advice [14-16].
-  - Context Engineering and Agent Orchestration: Founders must establish documented workflows, retrieval systems, and clear priority hierarchies so that agents can reliably execute complex, multi-step tasks [17, 18]., Solo founders deploy specialized multi-agent systems—such as Aaron Sneed’s "Council" of 15 distinct agents handling legal, HR, and operations—which require explicit, human-authored governance rules to resolve conflicts when agents provide contradictory advice [18].
-- **Execution Strategy and Automation Sequencing** — Bootstrapped and solo founders deploy systematic frameworks to test ideas, implement automation incrementally, and grow their platforms. This involves specific rules for what gets automated first and how human oversight is maintained.
-  - Triage and Incremental Automation: Founders are advised to first automate highly formulaic tasks where mistakes cause low damage, while retaining complex, high-risk judgments for themselves [19]., Effective implementation requires dedicating about two weeks of front-loaded training per agent and thoroughly documenting a workflow before automating it, as agents running undocumented processes will generate errors that are difficult to catch [19, 20]., Human oversight remains a permanent part of the loop; the financial advantage of AI agents relies on the fact that human oversight of AI work is far cheaper than human execution, not that oversight is unnecessary [20, 21].
-  - Rapid Experimentation and Compounding Growth: Solo founder Pieter Levels built a $3 million ARR portfolio with zero employees by testing numerous ideas quickly (launching 12 startups in 12 months) and aggressively automating manual tasks like data gathering and community meetup creation using code [22-26]., Rather than relying on paid acquisition, solo companies use low-overhead, compounding marketing flywheels, such as generating hundreds of programmatic SEO pages from database filters or building in public [27, 28].
-- **AI-Native Go-To-Market (GTM) and Distribution** — AI-native startups are rewriting the traditional SaaS go-to-market playbook by prioritizing distribution and momentum over immediate product defensibility. Distribution is built directly into the product and organization architecture.
-  - Product-Led Self-Distribution: Gamma embeds "Made with Gamma" badges on free presentations, turning every user's output into a casual contact loop and an advertisement [29]., Mercor engineered a data flywheel by choosing AI labs as a strategic initial wedge customer; the rapid feedback loop from these demanding clients forced Mercor to automate vetting, ensuring that every successful candidate placement continuously improves their underlying matching algorithm [30, 31].
-  - Social Distribution as Core Infrastructure: Cluely leverages controversial, founder-led social media presence to generate enterprise contracts without a sales team, relying on "momentum as a moat" rather than traditional defensibility [32, 33]., Genspark operates a decentralized network of over 60 contract content creators paid per-video, blurring organic and paid promotion to generate massive algorithmic momentum (20 million views in two weeks) independent of traditional employee headcount [5, 34].
+- [[synthesis/2026-05-23-define-ai-as-substrate-precisely-as]] — **AI as substrate vs. AI as feature vs. AI as product.** Definition, structural differences (organizational/economic/technical), why substrate-first is the solo-founder operative frame, boundary cases (Cursor, Genspark pivot, the "Pets.com dilemma" of pure-AI margins).
 
-## Synthesis pages
+## Pillar 1 — Org & operating model
 
-_(populated as `wiki research` and `wiki query` runs file syntheses)_
+How a solo + N agents team is structured, what gets automated first, when to add a human vs. an agent.
+
+- [[synthesis/2026-05-23-what-does-the-org-and-operating-role-taxonomy-and-the-human-agent]] — Allocating intelligence and judgment; human-in-loop patterns; Aaron Sneed's 15-agent "Council"; HBS Kenyan-entrepreneur study showing AI helps high-performers and hurts low-performers.
+- [[synthesis/2026-05-23-what-does-the-org-and-operating-execution-strategy-and-automation-sequencing]] — Triage and incremental automation ("automate low-stakes formulaic first"); Pieter Levels' 12-startups-in-12-months as the experimentation flywheel; "Drop of AI" minimalist injection strategy.
+- [[synthesis/2026-05-23-what-does-the-org-and-operating-cross-cutting]] — How org-design, automation sequencing, and GTM interact.
+
+## Pillar 2 — Economics & capital path
+
+Cost structure, gross margin, revenue-per-human, bootstrapped vs. seed paths. Most of Pillar 2 is covered inside the Pillar 1 economic-infrastructure page and the Pillar 3 unit-economics page.
+
+- [[synthesis/2026-05-23-what-does-the-org-and-operating-economic-infrastructure-and-capital-efficiency]] — **The $300–$500/month solo-founder AI stack** replacing $80K–$120K/month in human payroll. Surge AI: $1B ARR at ~110 employees ($9.1M per person) vs. Scale AI's $870K/person. Lovable: $50M ARR with <30 employees. Decagon, Gamma, Lovable usage/credit/outcome pricing.
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical-unit-economics-and-cost-predictability]] — Inference-cost dynamics; the "Canva playbook" of margin-friendly low-compute features around the AI core; how to escape the "Pets.com dilemma" of $20K/user serving cost on commoditized output.
+
+## Pillar 3 — Tech stack & build-vs-buy
+
+Model selection, evals as a core operating function, observability, compose-vendor-primitives default, where proprietary infra is actually warranted.
+
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical]] — **Top-level synthesis** across the technical pillar (overview).
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical-model-selection-optimization-and-orchestration]] — Frontier vs. cheap-and-fast vs. open-weight; orchestration patterns.
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical-evals-and-observability-as-core-operating]] — Evals discipline; production observability for agentic systems.
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical-build-vs-buy-defaults-and-infrastructure]] — When to compose vendor primitives, when to build proprietary; serverless / vector store / queue / trace defaults.
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical-data-flywheels-and-startup-defensibility-moats]] — Data flywheels: real moats vs. cope.
+- [[synthesis/2026-05-23-what-is-the-ai-native-technical-cross-cutting]] — How tech-stack choices cascade into economics and defensibility.
+
+## Pillar 4 — GTM, pricing & defensibility
+
+Acquisition channels for solo AI-native, pricing axes, where moats actually form when models commoditize. Distributed across Pillar 1 GTM, Pillar 3 data-flywheels, and the per-archetype pages.
+
+- [[synthesis/2026-05-23-what-does-the-org-and-operating-ai-native-go-to-market-gtm]] — **Product-led self-distribution** (Gamma "Made with Gamma" badges, Mercor's data-flywheel via AI-labs wedge customer); social distribution as core infra (Cluely "momentum as moat", Genspark's 60-contractor content network).
+- See also: the per-archetype defensibility sections below.
+
+## Three archetypes
+
+### A. Indie SaaS / vertical agent
+
+Solo founder shipping software where AI is both substrate and offering. PLG, low-touch, usage-based pricing.
+
+- [[synthesis/2026-05-23-what-is-the-ai-native-indie]] — **Top-level archetype synthesis.** Funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Sierra, Decagon) vs. solo-buildable (Pieter Levels, Marc Lou). Defensibility: workflow lock-in, integration depth, eval moat.
+- [[synthesis/2026-05-23-what-is-the-ai-native-indie-cross-cutting]] — How the four pillars specialize for indie SaaS.
+
+### B. Services firm
+
+One operator + agents doing client work. Hourly/retainer collapses as AI substrate replaces hours.
+
+- [[synthesis/2026-05-23-what-is-the-ai-native-services]] — **Top-level archetype synthesis.** "Service as software" framing.
+- [[synthesis/2026-05-23-what-is-the-ai-native-services-defining-the-ai-native-services-archetype]] — What this archetype is and isn't (AI-native marketing studio, bookkeeping, recruiting, paralegal, content production).
+- [[synthesis/2026-05-23-what-is-the-ai-native-services-the-economic-pivot-economics-pillar]] — Hourly/retainer collapse; pricing pivot to outcomes.
+- [[synthesis/2026-05-23-what-is-the-ai-native-services-organization-and-technology-org-tech-pillars]] — Solo operator + agent org shape; tech stack defaults for services.
+- [[synthesis/2026-05-23-what-is-the-ai-native-services-go-to-market-strategies-and-signals]] — Founder-led acquisition for services firms.
+- [[synthesis/2026-05-23-what-is-the-ai-native-services-defensibility-and-moats-in-ai-services]] — Client relationships, workflow integration, reputation as moat — not data.
+- [[synthesis/2026-05-23-what-is-the-ai-native-services-cross-cutting]] — Cross-pillar synthesis.
+
+### C. Marketplace / aggregator
+
+AI mediates supply/demand or aggregates fragmented work. Hardest archetype for solo operators.
+
+- [[synthesis/2026-05-23-what-is-the-ai-native-marketplace]] — **Definition + worked examples.** Named: Mercor (recruiting), Juicebox, Jack & Jill (recruiting), Medvi (health brokering), Harper (insurance matching). Economics: variable cost per transaction (if vetting takes 500 inference calls per match, margin collapses). Defensibility: liquidity moat + integration depth. Conservative go/no-go signals (asymmetric supply wedge, high-volume objective matching) vs. fallacies (subjective high-liability matching, "browsing" semantic-search, low-margin/high-vetting-cost ratio).
+
+## Corpus summary
+
+| Layer | Count | Notes |
+|---|---:|---|
+| Substrate-first concept page | 1 | Filed at `wiki/synthesis/` (no `wiki concept-add` path; M46 followup) |
+| Pillar 1 syntheses | 5 | Auto-branched from one `wiki research` run |
+| Pillar 3 syntheses | 7 | 6 auto-branched + 1 query-style consolidation |
+| Archetype A (indie SaaS) | 2 | Cross-cutting + query-style consolidation |
+| Archetype B (services firm) | 7 | 6 auto-branched + 1 query-style consolidation |
+| Archetype C (marketplace) | 1 | Query-style; research executes with auto-branching hit rate limits |
+| **Total synthesis pages** | **23** | All drafts |
+| Source pages | ~30 | Including 2 YouTube transcripts (Pieter Levels, HBS) |
+| Raw source corpus | 23 | Tagged `ai-native-business`; ~19 actually in NotebookLM (Substack bot-block on 11) |
+
+## Known gaps and followups
+
+Filed at `docs/M46-followup-items.md`:
+
+- NLM crawler bot-block on Substack/custom-domain pages (11 of 18 substack URLs in raw/ but missing from NLM)
+- Bootstrap-domain policy too strict for industry-context inclusion (mitigated mid-session via threshold lowering + 2 new inclusion criteria)
+- arxiv + YouTube search adapters fail hard on HTTP 429 instead of backoff
+- Stale auto-MoC across reruns (this MoC was hand-authored as a one-time exception)
+- `wiki query` files as synthesis even when concept page is requested (no `wiki concept-add` path)
+- Citation chain renders `[[sources/<num>]]` instead of `[[sources/<slug>]]` for some refs (pre-existing M46 #2 — affects citation finalize)
+- Session `register_session` blocks ephemeral re-runs (pre-existing M46 #3 — hit and worked around via `mark_abandoned`)
+
+## What this playbook does NOT cover (deferred to followups)
+
+- Investor / diligence framework — out of scope per `docs/superpowers/specs/2026-05-23-ai-native-business-playbook-design.md` § 8.
+- Comparative benchmark vs. incumbents — out of scope.
+- Productized-expertise archetype (e.g., AI-leveraged courses, analyst-as-product) — explicitly declined in brainstorming.
+- Long-horizon (>12 month) projections.
+- NotebookLM artifacts (briefing, audio, slides) — opt-in only per memory.
