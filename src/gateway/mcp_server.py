@@ -144,6 +144,41 @@ def wiki_finalize(page_path: str, abandon: bool = False) -> dict[str, Any]:
     return _serialize(finalize(page_path, abandon=abandon))
 
 
+@mcp.tool()
+def wiki_concept_add(
+    slug: str,
+    canonical_name: str,
+    body: str,
+    domain: str,
+    *,
+    draft: bool = False,
+    cite_sources: list[str] | None = None,
+    force: bool = False,
+) -> dict[str, Any]:
+    """Author a `wiki/concepts/<slug>.md` page from a markdown body.
+
+    `body` is the page body (no frontmatter). Frontmatter is constructed
+    from the args. Validates against the concept schema (frontmatter +
+    required sections + citation grounding); refuses to overwrite without
+    `force=True`. `cite_sources` populates the `synthesizes:` list as
+    `["sources/<id>", ...]`; when set, body must include a matching
+    `## Included works` section per the M45 § 3.6 invariant.
+    """
+    from gateway.ops.concept_add import concept_add
+
+    return _serialize(
+        concept_add(
+            slug,
+            canonical_name=canonical_name,
+            body=body,
+            domain=domain,
+            draft=draft,
+            cite_sources=cite_sources,
+            force=force,
+        )
+    )
+
+
 # --- NotebookLM gateway ----------------------------------------------------
 
 

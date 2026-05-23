@@ -28,6 +28,7 @@ SUBCOMMANDS: dict[str, str] = {
     "nlm-revise": "Revise an existing NotebookLM artifact",
     "finalize": "Finalize a draft page (re-run validator with citation rule restored)",
     "cite": "Add [[sources/<id>]] citation tokens to specific lines of a wiki page",
+    "concept-add": "Author a wiki/concepts/<slug>.md page from a markdown body",
     "lint": "Run health checks across the wiki",
     "index": "Rebuild or update the content index",
     "search": "Search wiki + raw sources",
@@ -61,6 +62,7 @@ IMPLEMENTED: set[str] = {
     "nlm-revise",
     "finalize",
     "cite",
+    "concept-add",
     "query",
     "mcp-serve",
     "batch-ingest",
@@ -208,6 +210,41 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="+",
         metavar="LINE:SOURCE_ID",
         help="One or more LINE:SOURCE_ID pairs (e.g., 26:web-2026-01-01-361). LINE is 1-indexed into the on-disk file.",
+    )
+
+    # concept-add: author wiki/concepts/<slug>.md from a markdown body
+    p_concept = subparsers.add_parser("concept-add", help=SUBCOMMANDS["concept-add"])
+    p_concept.add_argument("slug", help="Concept slug (kebab-case)")
+    p_concept.add_argument(
+        "--domain",
+        required=True,
+        help="Domain slug this concept belongs to",
+    )
+    p_concept.add_argument(
+        "--canonical-name",
+        required=True,
+        help='Human-readable name (e.g., "AI as Substrate")',
+    )
+    p_concept.add_argument(
+        "--content-from",
+        help="Path to a markdown file containing the body. Reads from stdin if omitted.",
+    )
+    p_concept.add_argument(
+        "--draft",
+        action="store_true",
+        help="File with draft=true; downgrades citation grounding to warning",
+    )
+    p_concept.add_argument(
+        "--cite-source",
+        action="append",
+        dest="cite_sources",
+        metavar="SOURCE_ID",
+        help="Source ID to add to synthesizes: list (repeatable, e.g. --cite-source web-2024-02-07-3a2)",
+    )
+    p_concept.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite an existing concept page with the same slug",
     )
 
     # query: ask the persistent NotebookLM corpus and file a synthesis page
@@ -554,6 +591,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_finalize(ns)
     if ns.subcommand == "cite":
         return _run_cite(ns)
+    if ns.subcommand == "concept-add":
+        return _run_concept_add(ns)
     if ns.subcommand == "query":
         return _run_query(ns)
     if ns.subcommand == "mcp-serve":
@@ -851,6 +890,36 @@ def _run_cite(ns: argparse.Namespace) -> int:
             return 2
         additions.append((ln, sid.strip()))
     return _emit_result(cite(ns.page_path, additions))
+
+
+def _run_concept_add(ns: argparse.Namespace) -> int:
+    from gateway.ops.concept_add import concept_add
+
+    if ns.content_from:
+        try:
+            body = open(ns.content_from, encoding="utf-8").read()
+        except OSError as e:
+            print(f"error: cannot read --content-from {ns.content_from!r}: {e}", file=sys.stderr)
+            return 2
+    else:
+        body = sys.stdin.read()
+    if not body.strip():
+        print(
+            "error: concept body is empty (read from stdin or --content-from)",
+            file=sys.stderr,
+        )
+        return 2
+    return _emit_result(
+        concept_add(
+            ns.slug,
+            canonical_name=ns.canonical_name,
+            body=body,
+            domain=ns.domain,
+            draft=ns.draft,
+            cite_sources=ns.cite_sources,
+            force=ns.force,
+        )
+    )
 
 
 def _run_query(ns: argparse.Namespace) -> int:
