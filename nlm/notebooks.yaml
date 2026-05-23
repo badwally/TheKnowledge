@@ -198,8 +198,8 @@ notebooks:
     persistent:
       notebook_id: 67857df4-7231-45b0-805e-96bffa063205
       created_at: '2026-05-23T16:31:19Z'
-      sources_count: 29
-      last_sync: '2026-05-23T20:46:23Z'
+      sources_count: 51
+      last_sync: '2026-05-23T22:30:39Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2

@@ -16835,3 +16835,443 @@ report=.knowledge/lint/2026-05-23T20-32-34Z-untagged-sources.md
 ## [2026-05-23T20:35:00Z] domain-shipped | slug=ai-native-business | syntheses=22 | entities=17 | sources=~30 | moc=hand-authored
 
 ai-native-business v1: substrate-first solo-founder operator playbook. 4 pillars (org/operating, economics, tech-stack, GTM) × 3 archetypes (indie SaaS / vertical agent, services firm, marketplace) plus a substrate-vs-feature-vs-product concept anchor. 22 draft syntheses (auto-branched + query-style). 17 hand-authored entity stubs for the most-cited named companies. Hand-authored top-level MoC under one-time hard-rule #1 exception authorized this session (the wiki research auto-MoC pipeline can't converge across multiple sessions in one domain). Spec at docs/superpowers/specs/2026-05-23-ai-native-business-playbook-design.md; plan at docs/superpowers/plans/2026-05-23-ai-native-business-playbook.md. Known blockers carrying over: M46 #2 (citation-chain rendering) blocks finalize on all syntheses; NLM crawler bot-block on 11 of 18 Substack URLs (filed as M46 followup); arxiv + YouTube search adapters fail hard on HTTP 429 (filed); register_session rejects re-runs of ephemeral sessions (worked around mid-session via mark_abandoned).
+
+## [2026-05-23T20:34:04Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T20-34-04Z-schema-drift.md
+
+## [2026-05-23T20:34:44Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T20-34-44Z-schema-drift.md
+
+## [2026-05-23T20:35:10Z] wiki-author | id=web-2023-10-01-d55 | updates=7 | created=6 | updated=1 | contradictions=0 | draft=no
+
+O. Reg. 48/01 is the primary regulatory instrument operationalizing the ON Condominium Act, 1998 — its definitions of 'core record,' the three-tier reserve study classification, and the s. 94(8) board funding plan are load-bearing for any condo-software page that touches Ontario records, reserves, or disclosure obligations; no contradictions with existing claims.
+
+## [2026-05-23T20:38:41Z] wiki-author | id=web-2011-06-02-7ff | updates=6 | created=5 | updated=1 | contradictions=0 | draft=no
+
+The new source is the canonical regulatory text of Alta Reg 168/2000 (Part 2), which dramatically expands the existing wiki coverage from investment-only provisions to the full capital-replacement-reserve-fund regime (§§21–25); the existing Alberta page is updated and four new concept/entity pages are created for the parent Act, reserve fund study, qualified-person definition, 12-unit self-study exemption, and the board-approved plan.
+
+## [2026-05-23T20:40:10Z] ingest | id=web-2010-04-07-c59 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2010-04-07-c59.md (wiki not written: filter decision=review)
+
+## [2026-05-23T20:40:27Z] filter-correction | id=web-2010-04-07-c59 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='NS Trustee Act is the statutory authority that NS Condominium Act s.31 delegates reserve fund investment power to — making it the load-bearing primary source for Understanding that NS adopted prudent investor standard (s.3, s.3A) in 2002 c.10 amendment. This directly corrects Finding-0027 §3 NS row which implied a conservative pre-2000 legal list. While general trustee law, in the NS context it IS the jurisdictional reserve-fund investment authority for condo corporations. Analogous to BC Strata Property Regulation s.6.11 which is also a general property regulation applied specifically to CRFs.'
+
+## [2026-05-23T20:40:34Z] ingest | id=web-2010-04-07-c59 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2010-04-07-c59.md wiki=wiki/sources/web-2010-04-07-c59.md
+
+## [2026-05-23T20:44:34Z] wiki-author | id=web-2010-04-07-c59 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+NS Trustee Act establishes prudent-investor standard via 2002 c.10 amendment, which is the operative investment authority for NS condo reserve funds; create one entity for the statute and four concept pages for its key mechanisms.
+
+## [2026-05-23T20:45:01Z] nlm-add | id=web-2010-04-07-c59 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=http://web.archive.org/web/20100412060422/http://www.canlii.org:80/en/ns/laws/stat/rsns-1989-c-479/latest/rsns-1989-c-479.html
+
+## [2026-05-23T20:45:12Z] nlm-add | id=web-2011-06-02-7ff | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=http://web.archive.org/web/20110606022424/http://www.canlii.org:80/en/ab/laws/regu/alta-reg-168-2000/latest/alta-reg-168-2000.html
+
+## [2026-05-23T20:45:16Z] nlm-add | id=web-2012-09-17-797 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.qp.alberta.ca/1266.cfm?page=2000_168.cfm&leg_type=Regs&isbncln=9780779742226
+
+## [2026-05-23T20:45:19Z] nlm-add | id=web-2014-07-16-7c3 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.bclaws.gov.bc.ca/civix/document/id/loo93/loo93/43_2000anif68_2014
+
+## [2026-05-23T20:45:53Z] nlm-add | id=web-2023-10-01-0bc | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://web.archive.org/web/20240924224346/https://www.canlii.org/en/on/laws/regu/o-reg-48-01/latest/o-reg-48-01.html
+
+## [2026-05-23T20:46:15Z] nlm-add | id=web-2023-10-01-d55 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://web.archive.org/web/2026/https://www.canlii.org/en/on/laws/regu/o-reg-48-01/latest/o-reg-48-01.html
+
+## [2026-05-23T20:46:23Z] nlm-add | id=web-2024-04-01-048 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.cdic.ca/depositors/whats-covered/deposits-held-in-trust/
+
+## [2026-05-23T20:51:01Z] ingest | id=web-2024-09-05-60d | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2024-09-05-60d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T20:53:36Z] ingest | id=web-2014-07-24-031 | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2014-07-24-031.md wiki=wiki/sources/web-2014-07-24-031.md
+
+## [2026-05-23T20:58:48Z] wiki-author | id=web-2014-07-24-031 | updates=5 | created=5 | updated=0 | contradictions=0 | draft=no
+
+The Ontario Condominium Act, 1998 (S.O. 1998, c. 19) is the primary statutory authority underpinning many existing Ontario-jurisdiction wiki pages but lacks its own entity page in the provided relevant set; this plan creates the entity page plus four foundational concept pages grounded in the consolidated text's Part I definitions, regulatory-delegation architecture, and table-of-contents structure visible in the archived e-Laws capture.
+
+## [2026-05-23T21:01:25Z] ingest | id=web-2022-09-02-033 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2022-09-02-033.md wiki=wiki/sources/web-2022-09-02-033.md
+
+## [2026-05-23T21:02:09Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T21-02-09Z-schema-drift.md
+
+## [2026-05-23T21:03:17Z] wiki-author | id=web-2022-09-02-033 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source is the Civil Code of Québec (chapter CCQ-1991) — the foundational Québec civil-law statute and primary statutory authority for divided co-ownership (Québec's equivalent of condominium ownership); excerpt contains the statute's structural framing (preliminary provision + Book One Titles One–Two on general civil rights and personality rights) and the full table of 19 regulations made under the Code, including CCQ, r. 4.1 (the divided co-ownership insurance regulation), but does not include the substantive divided-co-ownership provisions themselves.
+
+## [2026-05-23T21:03:56Z] ingest | id=web-2025-07-30-00d | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2025-07-30-00d.md wiki=wiki/sources/web-2025-07-30-00d.md
+
+## [2026-05-23T21:04:49Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T21-04-49Z-schema-drift.md
+
+## [2026-05-23T21:05:26Z] nlm-add | id=web-2026-05-22-574 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa text=13184b
+
+## [2026-05-23T21:05:33Z] nlm-add | id=web-2026-05-22-587 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://www.bigtechnology.com/p/ais-public-relations-emergency text=5787b
+
+## [2026-05-23T21:05:40Z] nlm-add | id=web-2026-05-22-a21 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://www.productmarketfit.tech/p/how-the-fastest-teams-actually-ship text=9579b
+
+## [2026-05-23T21:05:49Z] nlm-add | id=web-2026-05-22-eb1 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://www.notboring.co/p/weekly-dose-of-optimism-194 text=14356b
+
+## [2026-05-23T21:05:55Z] nlm-add | id=web-2026-05-22-ed5 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://michaeljburry.substack.com/p/the-heretics-guide-to-ais-stars-part text=1199b
+
+## [2026-05-23T21:06:02Z] nlm-add | id=web-2026-05-22-f7b | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://natesnewsletter.substack.com/p/ai-organize-files-before-writing text=3301b
+
+## [2026-05-23T21:06:10Z] nlm-add | id=web-2026-05-23-366 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://www.latent.space/p/ainews-all-model-labs-are-now-agent text=13031b
+
+## [2026-05-23T21:06:18Z] nlm-add | id=web-2026-05-23-4c1 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://reboundcapital.substack.com/p/ai-vs-saas-peak-pessimism text=4113b
+
+## [2026-05-23T21:06:25Z] nlm-add | id=web-2026-05-23-66d | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://www.productmarketfit.tech/p/the-marc-andreessen-agent-with-claude text=2030b
+
+## [2026-05-23T21:06:33Z] nlm-add | id=web-2026-05-23-697 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://nlp.elvissaravia.com/p/ai-agents-weekly-gemini-35-flash text=1970b
+
+## [2026-05-23T21:06:43Z] nlm-add | id=web-2026-05-23-6c2 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url-failed-fell-back-to-text url=https://news.aiinvestinghq.com/p/smart-money-thesis-scanner text=1307b
+
+## [2026-05-23T21:07:05Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T21-07-05Z-schema-drift.md
+
+## [2026-05-23T21:08:29Z] wiki-author | id=web-2025-07-30-00d | updates=9 | created=8 | updated=1 | contradictions=0 | draft=no
+
+Source is the RGCQ explainer of the July 30, 2025 Gazette officielle regulation operationalizing Bill 16 (as enhanced by Bill 31) for Quebec divided co-ownerships effective August 14, 2025; it establishes a substantive QC condo-regulatory regime (maintenance logbook, 5-year contingency fund study, buyer certificate, trustee deposits) where the existing wiki has only an insurance-only Quebec entity and no Quebec concept pages.
+
+## [2026-05-23T21:09:36Z] ingest | id=web-2019-03-07-e42 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.8
+
+raw=raw/web/web-2019-03-07-e42.md wiki=wiki/sources/web-2019-03-07-e42.md
+
+## [2026-05-23T21:14:25Z] wiki-author | id=web-2019-03-07-e42 | updates=8 | created=6 | updated=2 | contradictions=1 | draft=no
+
+Source documents BC Order in Council 101/2019 amending Strata Property Regulation §1.1 and §6.11 to clarify partial deposit-insurance eligibility; touches existing BC SPA + CUDIC entities and warrants new entity pages for the OIC instrument, BCLI, and the author, plus concept pages for the new statutory definition, the CDIC $100K limit, and the partial-eligibility compliance principle.
+
+## [2026-05-23T21:15:32Z] ingest | id=web-2026-01-01-040 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-01-01-040.md wiki=wiki/sources/web-2026-01-01-040.md
+
+## [2026-05-23T21:19:12Z] wiki-author | id=web-2026-01-01-040 | updates=9 | created=8 | updated=1 | contradictions=0 | draft=no
+
+Source adds Ontario-specific §115(5) eligible-securities mechanics, introduces DICO and CCI Golden Horseshoe Chapter as new wiki entities, and documents a GIC laddering investment pattern used by Ontario reserve funds.
+
+## [2026-05-23T21:19:52Z] nlm-add | id=web-2014-07-24-031 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://web.archive.org/web/20240124112053/https://www.ontario.ca/laws/statute/98c19
+
+## [2026-05-23T21:19:57Z] nlm-add | id=web-2019-03-07-e42 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.bcli.org/strata-property-regulation-amendment-clarifies-deposit-insurance-requirements/
+
+## [2026-05-23T21:20:28Z] nlm-add | id=web-2022-09-02-033 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://web.archive.org/web/20230113175547/https://www.legisquebec.gouv.qc.ca/en/document/cs/CCQ-1991
+
+## [2026-05-23T21:20:34Z] nlm-add | id=web-2024-09-05-60d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://web.archive.org/web/20260101000000*/canlii.org/en/on/laws/stat/so-1998-c-19/latest/so-1998-c-19.html
+
+## [2026-05-23T21:20:39Z] nlm-add | id=web-2025-07-30-00d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://rgcq.org/en/news/adoption-of-the-regulation-implementing-bill-16
+
+## [2026-05-23T21:20:45Z] nlm-add | id=web-2026-01-01-040 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://cci.ca/resource-centre/view/1268
+
+## [2026-05-23T21:20:50Z] nlm-add | id=web-2026-04-21-260 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url-failed-fell-back-to-text url=https://www.habitatmag.com/Publication-Content/Bricks-Bucks/2026/March-2026/fannie-freddie-mac-condo-rules text=3574b
+
+## [2026-05-23T21:24:15Z] ingest | id=web-2022-02-01-597 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2022-02-01-597.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T21:24:48Z] filter-correction | id=web-2022-02-01-597 | domain=condo-software | decision=include | original_score=0.3
+
+rationale='Primary FSRA regulatory authority source for ON credit union deposit insurance coverage (K non-registered / unlimited registered). Cited in Finding-0029 §7.3 for the ON FSRA deposit insurance figure. Generic framing is structural — FSRA publishes consumer-facing pages without condo-specific copy. The coverage limits and DIRF mechanism are directly cited in reserve-fund investment analysis for Ontario condos per Condo Act s.115(5) O.Reg 123/17 authorized-institution list.'
+
+## [2026-05-23T21:24:54Z] ingest | id=web-2022-02-01-597 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-02-01-597.md wiki=wiki/sources/web-2022-02-01-597.md
+
+## [2026-05-23T21:27:12Z] wiki-author | id=web-2022-02-01-597 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=no
+
+Source introduces FSRA, the Deposit Insurance Reserve Fund (DIRF), and the Ontario credit union deposit insurance regime ($250K non-registered / unlimited registered) — all previously unrepresented in the wiki but referenced as parallel mechanisms in CDIC/CUDIC/Ontario eligible-reserve-securities pages.
+
+## [2026-05-23T21:27:54Z] ingest | id=web-2025-01-01-423 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2025-01-01-423.md (wiki not written: filter decision=review)
+
+## [2026-05-23T21:29:03Z] ingest | id=web-2000-01-01-611 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2000-01-01-611.md (wiki not written: filter decision=review)
+
+## [2026-05-23T21:29:18Z] filter-correction | id=web-2000-01-01-611 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='CUDGC is the statutory AB deposit-guarantee authority under the Alberta Credit Union Act. Source describes 100% guarantee on all deposit types (chequing/savings/term/registered/non-registered) at AB credit unions, three-level protection structure, and 12 active AB credit unions. This is the primary citable source for AB=100% unlimited deposit coverage in Finding-0029 §7.4. Condo reserve funds held at AB credit unions — a common practice given the CA prohibitive CDIC beneficiary-naming complexity — qualify as insurable deposits. Same apply-calibration-precedent logic as FSRA (K non-registered / unlimited registered) which was included at 0.3.'
+
+## [2026-05-23T21:29:23Z] ingest | id=web-2000-01-01-611 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2000-01-01-611.md wiki=wiki/sources/web-2000-01-01-611.md
+
+## [2026-05-23T21:31:28Z] wiki-author | id=web-2000-01-01-611 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+CUDGC source is the primary citable authority for Alberta credit union deposit coverage; creates the AB-side counterpart to the existing CDIC, CUDIC, and FSRA deposit-insurer entities and grounds the three-level statutory protection structure under the Alberta Credit Union Act.
+
+## [2026-05-23T21:31:52Z] nlm-add | id=pdf-e3717ebcf2bc | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-e3717ebcf2bc.pdf title='Condominium Act'
+
+## [2026-05-23T21:32:07Z] nlm-add | id=web-2024-08-30-283 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://novascotia.ca/just/regulations/regs/conregs.htm
+
+## [2026-05-23T21:32:36Z] nlm-add | id=web-2000-01-01-611 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://cudgc.ab.ca/our-role/
+
+## [2026-05-23T21:32:41Z] nlm-add | id=web-2022-02-01-597 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.fsrao.ca/consumers/credit-unions-and-deposit-insurance
+
+## [2026-05-23T21:32:47Z] nlm-add | id=web-2025-01-01-423 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://cudgc.ab.ca/
+
+## [2026-05-23T21:56:23Z] ingest | id=web-2026-01-01-962 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.72
+
+raw=raw/web/web-2026-01-01-962.md wiki=wiki/sources/web-2026-01-01-962.md
+
+## [2026-05-23T21:59:55Z] wiki-author | id=web-2026-01-01-962 | updates=10 | created=10 | updated=0 | contradictions=2 | draft=no
+
+Source is a vendor-authored product page that establishes Western Alliance Bank's WA ConnectLive as a named US HOA banking platform with 11 CAM integrations and three treasury services; creating central entity (Western Alliance Bank), the product (WA ConnectLive), the named customer testimonial chain (Dennis Abbott + Carolinas FirstService Residential), the previously-undocumented CAM integration partners, and the Integrated Payables concept gives Finding-0027 §4 grounded entities to cite against.
+
+## [2026-05-23T22:00:34Z] ingest | id=web-2020-01-02-b60 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2020-01-02-b60.md wiki=wiki/sources/web-2020-01-02-b60.md
+
+## [2026-05-23T22:02:43Z] wiki-author | id=web-2020-01-02-b60 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=no
+
+The source documents the January 1, 2020 CIT Bank acquisition of Mutual of Omaha Bank — a $1B M&A event that consolidated the market-leading community association banking franchise into CIT, with $4.5B of HOA deposits as the central strategic asset; this warrants new entity pages for CIT Group, Mutual of Omaha Bank, and CEO Ellen Alemany, plus a concept page for the lower-cost community-association-deposit channel as a structural fact about HOA banking economics.
+
+## [2026-05-23T22:03:31Z] ingest | id=web-2026-01-01-33e | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-01-01-33e.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T22:03:53Z] filter-correction | id=web-2026-01-01-33e | domain=condo-software | decision=include | original_score=0.2
+
+rationale='Primary source for First Citizens HOA loan product table: specific terms (quick-term 5/7/10yr fixed up to $3M 3-day approval; traditional 5-15yr fixed no-max 10-day; LOC demand prime+1% $25K-$250K), fee schedules ($500 docs; 1% origination; no brokerage fee), and 25-unit minimums. These are independently verifiable product parameters from the Mutual-of-Omaha/CIT/First Citizens lineage (the largest US HOA deposit franchise), load-bearing for Finding-0030 §5.6 and the LL-2026-03 lending landscape. Thin page format does not negate the data — the table IS the substance.'
+
+## [2026-05-23T22:03:59Z] ingest | id=web-2026-01-01-33e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-33e.md wiki=wiki/sources/web-2026-01-01-33e.md
+
+## [2026-05-23T22:06:49Z] wiki-author | id=web-2026-01-01-33e | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source is the primary product page for First Citizens Bank's HOA lending product line — independently verifiable per-product parameters (rates, terms, fees, eligibility) that anchor the bank's entity page and establish a three-archetype taxonomy for US community-association capital project lending.
+
+## [2026-05-23T22:07:36Z] ingest | id=web-2026-04-14-940 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.6
+
+raw=raw/web/web-2026-04-14-940.md (wiki not written: filter decision=review)
+
+## [2026-05-23T22:07:50Z] filter-correction | id=web-2026-04-14-940 | domain=condo-software | decision=include | original_score=0.6
+
+rationale='Secondary editorial source from First Citizens Bank (April 2026) authored with named expert Jeff Barnett, Director of Community Association Banking Services. Provides board-facing framing of loan-vs-special-assessment-vs-reserve-drawdown decision logic and confirms the three loan product types with underwriting requirements (25-unit minimum, effective collection policy, current financials). Complements Source 3 (web-2026-01-01-33e) data table with contextual rationale. Load-bearing for Finding-0030 §5.6 and the Longspan board-pitch framing of reserve-compliance options. Filter 0.6 reflects appropriate caution on marketing content but the named expert, published date, and independently verifiable underwriting criteria meet the substantive standard for inclusion.'
+
+## [2026-05-23T22:07:54Z] ingest | id=web-2026-04-14-940 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-14-940.md wiki=wiki/sources/web-2026-04-14-940.md
+
+## [2026-05-23T22:10:23Z] wiki-author | id=web-2026-04-14-940 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Source introduces First Citizens Bank's HOA lending program, named expert Jeff Barnett, three structured loan products with parameters, underwriting criteria, and a board-facing capital-project funding decision framework (loan vs special assessment vs reserve drawdown) — all load-bearing for Finding-0030 §5.6 and complementary to existing money-flow vendor entities.
+
+## [2026-05-23T22:10:40Z] nlm-add | id=web-2020-01-02-b60 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://newsroom.firstcitizens.com/2020-01-02-CIT-Completes-Acquisition-of-Mutual-of-Omaha-Bank
+
+## [2026-05-23T22:10:49Z] nlm-add | id=web-2026-01-01-33e | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.firstcitizens.com/commercial/solutions/community-association-banking/hoa-lending-solutions
+
+## [2026-05-23T22:10:54Z] nlm-add | id=web-2026-01-01-962 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.westernalliancebancorporation.com/expertise/homeowners-associations/technology/connectlive
+
+## [2026-05-23T22:11:05Z] nlm-add | id=web-2026-04-14-940 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.firstcitizens.com/commercial/insights/cab-insights/hoa-financing-options
+
+## [2026-05-23T22:13:23Z] ingest | id=web-2022-05-20-5f1 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2022-05-20-5f1.md (wiki not written: filter decision=review)
+
+## [2026-05-23T22:13:44Z] filter-correction | id=web-2022-05-20-5f1 | domain=condo-software | decision=include | original_score=0.5
+
+rationale="Sponsored content flag acknowledged, but this is the only primary-source confirmation of AAB's 80-employee headcount, all-50-states operational scope, ConnectLive brand name, and Steve Curley as president — all four facts are directly cited in Finding-0030 §2.2. The filter penalized recency (2022, outside 24-month window) and sponsorship, but the factual payload is non-duplicatable from independent sources and load-bearing for the HOA-banking competitive profile."
+
+## [2026-05-23T22:13:50Z] ingest | id=web-2022-05-20-5f1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-05-20-5f1.md wiki=wiki/sources/web-2022-05-20-5f1.md
+
+## [2026-05-23T22:16:56Z] wiki-author | id=web-2022-05-20-5f1 | updates=5 | created=3 | updated=2 | contradictions=0 | draft=no
+
+Source is the only primary-source confirmation of AAB's 80-employee headcount, all-50-states operational scope, ConnectLive brand lineage at the AAB division level, Steve Curley as AAB President, and Kenneth Vecchione as Western Alliance Bank President/CEO — load-bearing for the HOA-banking competitive profile and the WA ConnectLive product genealogy.
+
+## [2026-05-23T22:17:26Z] ingest | id=web-2025-08-28-b49 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2025-08-28-b49.md wiki=wiki/sources/web-2025-08-28-b49.md
+
+## [2026-05-23T22:21:32Z] wiki-author | id=web-2025-08-28-b49 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=no
+
+Source documents a named M&A event in the US HOA banking landscape (Pacific Premier + Umpqua → Columbia Bank, $70B combined assets, Aug 31 2025) plus the named continuity commitments (accounts, routing, lockbox, Smartwebs API, IntraFi CDARS/ICS); creates the bank-pair entities and the HOA-segment continuity concepts that the existing condo-software corpus references but does not yet ground.
+
+## [2026-05-23T22:22:08Z] ingest | id=web-2026-05-23-34b | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2026-05-23-34b.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T22:22:25Z] filter-correction | id=web-2026-05-23-34b | domain=condo-software | decision=include | original_score=0.0
+
+rationale="Filter correctly identified thin vendor support content, but missed the load-bearing negative signal: the explicit 'Not be a strata or condominium corporation' eligibility exclusion is the only primary-source confirmation that Wealthsimple Business categorically excludes condo/strata corporations. This single exclusion line is structurally significant for the Canadian multi-institution sweep gap finding (Finding-0030 §1) — it closes off Wealthsimple as a potential Canadian analog to IntraFi ICS/CDARS, confirming that the white space is structural and not merely a product-gap. The exclusion criterion 'vendor marketing copy with no independently verifiable claims' does not apply: an explicit legal-eligibility exclusion is independently verifiable and architecture-determinative. Corrected to include."
+
+## [2026-05-23T22:22:30Z] ingest | id=web-2026-05-23-34b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-34b.md wiki=wiki/sources/web-2026-05-23-34b.md
+
+## [2026-05-23T22:23:59Z] wiki-author | id=web-2026-05-23-34b | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Wealthsimple is not yet in the wiki; the load-bearing finding is the explicit strata/condo eligibility exclusion which closes off Wealthsimple as a Canadian sweep-deposit analog — captured as a product entity plus a parent-org entity.
+
+## [2026-05-23T22:24:30Z] ingest | id=web-2026-04-26-bf8 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2026-04-26-bf8.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T22:24:41Z] filter-correction | id=web-2026-04-26-bf8 | domain=condo-software | decision=include | original_score=0.3
+
+rationale="Filter correctly flagged thin vendor-marketing content, but missed the structural significance: FirstOntario's Condominium Services page is the only named Canadian condo-specific banking product surfaced across the entire Wave 1.4 research sweep (Big 5, EQ Bank, Neo Financial, Wealthsimple, credit unions). Its existence — a 10-year reserve-fund investment planning tool from a Canadian credit union explicitly branded for condos — is itself the load-bearing fact for Finding-0030 §1 (Canadian banking gap) and §5 (FirstOntario profile). The filter criterion 'vendor marketing copy with no independently verifiable claims' applies to sources claiming unmeasurable competitive advantages; here the independently verifiable claim is product existence in a named jurisdiction (Ontario) with a named service type (reserve fund investment planning, 10-year horizon, custom rates). This closes the question of whether any Canadian institution offers a condo-specialist product."
+
+## [2026-05-23T22:24:44Z] ingest | id=web-2026-04-26-bf8 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-26-bf8.md wiki=wiki/sources/web-2026-04-26-bf8.md
+
+## [2026-05-23T22:25:45Z] wiki-author | id=web-2026-04-26-bf8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source surfaces FirstOntario Credit Union as the only named Canadian condo-specialist banking product in scope; create a new entity page capturing the named product (Reserve Fund Investment Planning Tool), the deposit/lending posture, and the resident-benefits component.
+
+## [2026-05-23T22:26:04Z] nlm-add | id=web-2022-05-20-5f1 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://caikeystone.org/chapter-news/the-spotlight-shines-on-alliance-association-bank/
+
+## [2026-05-23T22:26:09Z] nlm-add | id=web-2025-08-28-b49 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url-failed-fell-back-to-text url=https://communityfinancials.com/pacific-premier-bank-to-merge-with-umpqua-bank-and-rebrand-to-columbia-bank-what-it-means-for-hoas-and-condos/ text=2216b
+
+## [2026-05-23T22:26:16Z] nlm-add | id=web-2026-04-26-bf8 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.firstontario.com/business/condominium-services
+
+## [2026-05-23T22:26:25Z] nlm-add | id=web-2026-05-23-34b | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://help.wealthsimple.com/hc/en-ca/articles/46530672013851-Open-a-Business-chequing-account
+
+## [2026-05-23T22:29:10Z] ingest | id=web-2020-01-31-b26 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2020-01-31-b26.md (wiki not written: filter decision=review)
+
+## [2026-05-23T22:30:04Z] ingest | id=web-2025-12-18-86f | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.35
+
+raw=raw/web/web-2025-12-18-86f.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T22:30:33Z] nlm-add | id=web-2020-01-31-b26 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/cit-launches-hoa-premium-reserve-solution-for-community-associations-300996808.html
+
+## [2026-05-23T22:30:39Z] nlm-add | id=web-2025-12-18-86f | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.hoaloanservices.com/post/fannie-mae-freddie-mac-condo-guideline-changes-2026-2027-hoa-guide
+
+## [2026-05-23T22:36:51Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T22-36-51Z-schema-drift.md
+
+## [2026-05-23T22:42:24Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T22-42-24Z-schema-drift.md
+
+## [2026-05-23T22:50:46Z] ingest | id=web-2025-12-31-dae | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2025-12-31-dae.md (wiki not written: filter decision=review)
+
+## [2026-05-23T22:51:09Z] filter-correction | id=web-2025-12-31-dae | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Primary IRS statutory source: Instructions for Form 1120-H (2025). Authoritative federal tax guidance on §528 election, 60%/90%/85% threshold tests, 30% flat rate, and  deduction. Load-bearing for Finding-0031 §2 (US federal tax framework for HOA reserve interest). Domain: condo-software.'
+
+## [2026-05-23T22:51:17Z] ingest | id=web-2025-12-31-dae | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-12-31-dae.md wiki=wiki/sources/web-2025-12-31-dae.md
+
+## [2026-05-23T22:54:36Z] wiki-author | id=web-2025-12-31-dae | updates=9 | created=9 | updated=0 | contradictions=0 | draft=no
+
+IRS Form 1120-H instructions are the authoritative federal source on §528 HOA tax classification, the 60%/90% threshold tests, the 30%/32% flat tax rate, and the treatment of reserve/sinking-fund interest as non-exempt income — load-bearing for the US federal tax framework on HOA reserve interest, with no existing wiki pages covering this material.
+
+## [2026-05-23T22:55:04Z] ingest | id=web-2026-05-23-ffb | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2026-05-23-ffb.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T22:57:03Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T22-57-03Z-schema-drift.md
+
+## [2026-05-23T22:58:17Z] ingest | id=web-2002-09-05-ce9 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.35
+
+raw=raw/web/web-2002-09-05-ce9.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T22:58:34Z] filter-correction | id=web-2002-09-05-ce9 | domain=condo-software | decision=include | original_score=0.35
+
+rationale='Primary CRA interpretation bulletin IT-304R2 on Canadian condominium corporation tax status under s.149(1)(l) of the Income Tax Act. Load-bearing for Finding-0031 §1: establishes the NPO exemption framework that makes reserve fund interest generally non-taxable for qualifying Canadian condo corporations. Paragraph 4 is the key citation. Archived bulletin remains authoritative as the primary CRA statement on condo NPO status — no superseding IT has been issued. Domain: condo-software (tax treatment of reserve interest, Canadian jurisdiction).'
+
+## [2026-05-23T22:58:41Z] ingest | id=web-2002-09-05-ce9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2002-09-05-ce9.md wiki=wiki/sources/web-2002-09-05-ce9.md
