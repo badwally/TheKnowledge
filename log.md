@@ -10740,3 +10740,6098 @@ abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/
 ## [2026-05-13T00:41:48Z] lint | scope=schema-drift | schema-drift=0
 
 report=.knowledge/lint/2026-05-13T00-41-48Z-schema-drift.md
+
+## [2026-05-13T00:42:12Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T00-42-12Z-schema-drift.md
+
+## [2026-05-13T14:18:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-13T14:18:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-13T14:18:41Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-13T14:18:46Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-13T14:18:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-13T14:18:52Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-13T14:18:52Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-13T14:31:11Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T14-31-11Z-schema-drift.md
+
+## [2026-05-13T14:37:20Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | n=18
+
+18 candidate(s) cleared threshold
+
+## [2026-05-13T14:37:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+error: could not fetch https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+## [2026-05-13T14:37:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+error: could not fetch https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+## [2026-05-13T14:37:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.researchgate.net/publication/245306224_Modeling_Bridge_Deterioration_with_Markov_Chains
+
+error: could not fetch https://www.researchgate.net/publication/245306224_Modeling_Bridge_Deterioration_with_Markov_Chains
+
+## [2026-05-13T14:37:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+## [2026-05-13T14:37:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+## [2026-05-13T14:37:22Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://par.nsf.gov/servlets/purl/10441107
+
+error: no extractable content at https://par.nsf.gov/servlets/purl/10441107
+
+## [2026-05-13T14:37:23Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.researchgate.net/publication/344200517_Optimal_Inspection_and_Maintenance_Planning_for_Deteriorating_Structures_through_Dynamic_Bayesian_Networks_and_Markov_Decision_Processes
+
+error: could not fetch https://www.researchgate.net/publication/344200517_Optimal_Inspection_and_Maintenance_Planning_for_Deteriorating_Structures_through_Dynamic_Bayesian_Networks_and_Markov_Decision_Processes
+
+## [2026-05-13T14:37:27Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://webstore.ansi.org/standards/astm/astme91715?srsltid=ARcRdnpk4Rc1_NmAuQzcy9UR-hDumkmcLXROUXA-F4eLX6nFqUUVvsdx
+
+error: could not fetch https://webstore.ansi.org/standards/astm/astme91715?srsltid=ARcRdnpk4Rc1_NmAuQzcy9UR-hDumkmcLXROUXA-F4eLX6nFqUUVvsdx
+
+## [2026-05-13T14:37:28Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+## [2026-05-13T14:37:29Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://link.springer.com/article/10.1007/s12205-010-0343-x
+
+error: could not fetch https://link.springer.com/article/10.1007/s12205-010-0343-x
+
+## [2026-05-13T14:37:29Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0950061813005734
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0950061813005734
+
+## [2026-05-13T14:37:29Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1177/03611981221088222
+
+error: could not fetch https://doi.org/10.1177/03611981221088222
+
+## [2026-05-13T14:37:29Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1061/jcemd4.coeng-15598
+
+error: could not fetch https://doi.org/10.1061/jcemd4.coeng-15598
+
+## [2026-05-13T14:37:29Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=materialize | n=5
+
+materialized 5 source(s) to raw/
+
+## [2026-05-13T14:37:29Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-13T14:37:30Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_session | notebook_id=627c62f6-0845-4e03-ae35-0072e05e52f6
+
+created session notebook 627c62f6-0845-4e03-ae35-0072e05e52f6
+
+## [2026-05-13T14:37:53Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_add | n=5 | skipped=0
+
+pushed 5 source(s) to session notebook (0 skipped)
+
+## [2026-05-13T14:37:54Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_map | n=5
+
+built source map (5 entries)
+
+## [2026-05-13T14:44:39Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=analysis | branches=3
+
+analysis complete (3 branch(es))
+
+## [2026-05-13T14:44:39Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling-and-data.md): [citation-grounding] line 75: claim has no citation: Based on the provided sources, the corpus presents several specific limitations, unresolved tensions, and significant ga; update[2] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing.md): [citation-grounding] line 69: claim has no citation: Based on the provided sources, the corpus presents specific limitations, unresolved tensions, and significant gaps in co; update[3] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-maintenance-optimization-aggregation-and-policy-validation.md): [citation-grounding] line 72: claim has no citation: Based on the provided sources, the corpus presents several specific limitations, unresolved tensions, and significant ga; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 9: claim has no citation: Based on the corpus and our conversation history, several foundational frameworks, principles, and patterns act as conne; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 41: claim has no citation: Based on the corpus and our previous thematic analysis, four primary anchors—ranging from authoritative standards to can; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 49: claim has no citation: Component-Level Degradation Modeling and Data Ingestion; Cost and Financial Framing; Maintenance Optimization, Aggregati; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 57: claim has no citation: Cost and Financial Framing; Maintenance Optimization, Aggregation, and Policy Validation.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 65: claim has no citation: Component-Level Degradation Modeling and Data Ingestion; Maintenance Optimization, Aggregation, and Policy Validation.; update[4] (wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md): [citation-grounding] line 73: claim has no citation: Component-Level Degradation Modeling and Data Ingestion; Maintenance Optimization, Aggregation, and Policy Validation.
+
+## [2026-05-13T15:27:50Z] lint | scope=orphans | orphans=436
+
+report=.knowledge/lint/2026-05-13T15-27-50Z-orphans.md
+
+## [2026-05-13T15:27:56Z] lint | scope=stale-drafts | stale-drafts=185
+
+report=.knowledge/lint/2026-05-13T15-27-56Z-stale-drafts.md
+
+## [2026-05-13T15:27:59Z] lint | scope=stale-claims | stale-claims=2
+
+report=.knowledge/lint/2026-05-13T15-27-59Z-stale-claims.md
+
+## [2026-05-13T15:32:06Z] lint | scope=citation-density | citation-density=62
+
+report=.knowledge/lint/2026-05-13T15-32-06Z-citation-density.md
+
+## [2026-05-13T15:32:09Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T15-32-09Z-schema-drift.md
+
+## [2026-05-13T15:32:11Z] lint | scope=inbox-pending | inbox-pending=0
+
+report=.knowledge/lint/2026-05-13T15-32-11Z-inbox-pending.md
+
+## [2026-05-13T15:32:13Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-13T15-32-13Z-untagged-sources.md
+
+## [2026-05-13T15:37:34Z] lint | scope=nlm-pending | nlm-pending=14
+
+report=.knowledge/lint/2026-05-13T15-37-34Z-nlm-pending.md
+
+## [2026-05-13T15:55:56Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What is the established methodology stack for probabilistic component-level capital forecasting in condominium / multi-unit residential reserve studies, covering the six method families: (1) component-level degradation modeling — Markov chain deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull and lognormal survival models, Bayesian hierarchical degradation for sparse component data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box models, Gaussian process regression for condition trajectories, Hidden Markov and state-space models under partial observation; (2) time-to-failure and replacement timing — hazard functions and competing risks, Cox proportional hazards and accelerated failure time models with covariates, renewal processes for repeatedly-replaced components, deep RUL methods (LSTM, transformer) and their data requirements including negative-result reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices, autoregressive forecasts, regime-switching for insurance shocks, real options for repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component distributions to fund-level cash flow, copulas and vine copulas for correlated failures and cohort effects, stochastic optimization for replacement scheduling, Bayesian decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events, POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin standards NIST and ISO 23247, work-order and CMMS history as covariates in survival models; (6) validation and calibration — backtesting against realized expenditures, CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers, canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result studies where deep learning underperformed Weibull or Bayesian baselines under sparse data, and validation-framework primaries. Deprioritize vendor white papers and single-site deep-learning case studies without sample-size or generalization detail.'
+
+## [2026-05-13T15:55:56Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-13T15:55:56Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-13T15:56:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-13T15:56:06Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=semantic_scholar | n=65
+
+adapter semantic_scholar returned 65 candidates
+
+## [2026-05-13T15:56:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-13T15:56:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=merge | n=181
+
+merged 181 candidate(s) across adapters
+
+## [2026-05-13T16:05:18Z] lint | scope=filter-calibration | filter-calibration=13
+
+report=.knowledge/lint/2026-05-13T16-05-18Z-filter-calibration.md
+
+## [2026-05-13T16:11:38Z] lint | scope=missing-pages | missing-pages=36
+
+report=.knowledge/lint/2026-05-13T16-11-38Z-missing-pages.md
+
+## [2026-05-13T16:15:00Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=filter | n=18
+
+18 candidate(s) cleared threshold
+
+## [2026-05-13T16:15:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+error: could not fetch https://ascelibrary.org/doi/10.1061/%28ASCE%291076-0342%281995%291%3A2%28120%29
+
+## [2026-05-13T16:15:01Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+error: could not fetch https://www.sciencedirect.com/science/article/pii/S1093968726022772
+
+## [2026-05-13T16:15:03Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://rosap.ntl.bts.gov/view/dot/60551/dot_60551_DS1.pdf
+
+error: no extractable content at https://rosap.ntl.bts.gov/view/dot/60551/dot_60551_DS1.pdf
+
+## [2026-05-13T16:15:03Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/abs/10.1111/mice.12976
+
+## [2026-05-13T16:15:03Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+## [2026-05-13T16:15:13Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://arxiv.org/abs/2009.04547
+
+error: arxiv API lookup failed: 429
+
+## [2026-05-13T16:15:14Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.researchgate.net/publication/344200517_Optimal_Inspection_and_Maintenance_Planning_for_Deteriorating_Structures_through_Dynamic_Bayesian_Networks_and_Markov_Decision_Processes
+
+error: could not fetch https://www.researchgate.net/publication/344200517_Optimal_Inspection_and_Maintenance_Planning_for_Deteriorating_Structures_through_Dynamic_Bayesian_Networks_and_Markov_Decision_Processes
+
+## [2026-05-13T16:15:18Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://faculty.cnr.ncsu.edu/yuanyao/wp-content/uploads/sites/14/2019/05/Life-Cycle-Cost-Analysis.pdf
+
+error: no extractable content at https://faculty.cnr.ncsu.edu/yuanyao/wp-content/uploads/sites/14/2019/05/Life-Cycle-Cost-Analysis.pdf
+
+## [2026-05-13T16:15:20Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://webstore.ansi.org/standards/astm/astme91715?srsltid=ARcRdnpk4Rc1_NmAuQzcy9UR-hDumkmcLXROUXA-F4eLX6nFqUUVvsdx
+
+error: could not fetch https://webstore.ansi.org/standards/astm/astme91715?srsltid=ARcRdnpk4Rc1_NmAuQzcy9UR-hDumkmcLXROUXA-F4eLX6nFqUUVvsdx
+
+## [2026-05-13T16:15:20Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/full/10.1111/mice.12976
+
+## [2026-05-13T16:15:20Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0950061813005734
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0950061813005734
+
+## [2026-05-13T16:15:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://doi.org/10.1109/ACCESS.2019.2955932
+
+error: could not fetch https://doi.org/10.1109/ACCESS.2019.2955932
+
+## [2026-05-13T16:15:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=convert | target=https://www.semanticscholar.org/paper/252050124
+
+error: could not fetch https://www.semanticscholar.org/paper/252050124
+
+## [2026-05-13T16:15:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=materialize | n=5
+
+materialized 5 source(s) to raw/
+
+## [2026-05-13T16:15:21Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-13T16:15:22Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=nlm_session | notebook_id=8d821a9d-c87c-4ebe-b2c0-4a3c560b8cf8
+
+created session notebook 8d821a9d-c87c-4ebe-b2c0-4a3c560b8cf8
+
+## [2026-05-13T16:15:51Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_add | n=5 | skipped=0
+
+pushed 5 source(s) to session notebook (0 skipped)
+
+## [2026-05-13T16:15:53Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=source_map | n=5
+
+built source map (5 entries)
+
+## [2026-05-13T16:25:39Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-13T16:25:40Z] wiki-author | id=research-2026-05-11-what-is-the-established-methodology-stack | updates=6 | created=5 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for condo-capital-infra
+
+## [2026-05-13T16:25:40Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-05-11-what-is-the-established-methodology-stack: 6 update(s)
+
+## [2026-05-13T16:26:10Z] research | session_id=2026-05-11-what-is-the-established-methodology-stack | step=promoted | added=5 | failed=0
+
+promoted 5 source(s) into persistent notebook
+
+## [2026-05-13T17:04:33Z] lint | scope=citation-chains | citation-chains=7
+
+report=.knowledge/lint/2026-05-13T17-04-33Z-citation-chains.md
+
+## [2026-05-13T17:07:53Z] lint | scope=citation-chains | citation-chains=23
+
+report=.knowledge/lint/2026-05-13T17-07-53Z-citation-chains.md
+
+## [2026-05-13T17:19:57Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=start | domain=condo-capital-infra
+
+start research session for prompt 'What ML models would be most appropriate for use in development of a probabilistic data model used to predict the probability of failure among the 8 key capital infrastructure components for a condo complex (as found in most reserve studies)? What are the analogous data models and architectures used in adjacent spaces (if any) for similar prediction?'
+
+## [2026-05-13T17:20:13Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=plan | n=61
+
+query plan written to nlm/query_plans/2026-05-13-what-ml-models-would-be-most.yaml
+
+## [2026-05-13T17:20:13Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-13T17:20:22Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-13T17:20:24Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=search | adapter=semantic_scholar | n=70
+
+adapter semantic_scholar returned 70 candidates
+
+## [2026-05-13T17:20:25Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=search | adapter=youtube | n=100
+
+adapter youtube returned 100 candidates
+
+## [2026-05-13T17:20:29Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-13T17:20:29Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=merge | n=293
+
+merged 293 candidate(s) across adapters
+
+## [2026-05-13T17:50:09Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=filter | n=24
+
+24 candidate(s) cleared threshold
+
+## [2026-05-13T17:50:10Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1061/(ASCE)1076-0342(2007)13:3(195)
+
+error: could not fetch https://doi.org/10.1061/(ASCE)1076-0342(2007)13:3(195)
+
+## [2026-05-13T17:50:10Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1061/40799(213)3
+
+error: could not fetch https://doi.org/10.1061/40799(213)3
+
+## [2026-05-13T17:50:11Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.semanticscholar.org/paper/55669546
+
+error: could not fetch https://www.semanticscholar.org/paper/55669546
+
+## [2026-05-13T17:50:12Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1504/IJCIS.2014.062965
+
+error: could not fetch https://doi.org/10.1504/IJCIS.2014.062965
+
+## [2026-05-13T17:50:12Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1061/(ASCE)CF.1943-5509.0001663
+
+error: could not fetch https://doi.org/10.1061/(ASCE)CF.1943-5509.0001663
+
+## [2026-05-13T17:50:13Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1016/j.jobe.2021.103232
+
+error: no extractable content at https://doi.org/10.1016/j.jobe.2021.103232
+
+## [2026-05-13T17:50:13Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1016/j.ejor.2024.06.032
+
+error: no extractable content at https://doi.org/10.1016/j.ejor.2024.06.032
+
+## [2026-05-13T17:50:13Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.1016/J.PROBENGMECH.2014.06.002
+
+error: no extractable content at https://doi.org/10.1016/J.PROBENGMECH.2014.06.002
+
+## [2026-05-13T17:50:13Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://doi.org/10.23940/IJPE.15.3.P213.MAG
+
+error: could not fetch https://doi.org/10.23940/IJPE.15.3.P213.MAG
+
+## [2026-05-13T17:50:15Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://ascelibrary.org/doi/10.1061/%28ASCE%29CF.1943-5509.0000124
+
+error: could not fetch https://ascelibrary.org/doi/10.1061/%28ASCE%29CF.1943-5509.0000124
+
+## [2026-05-13T17:50:15Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://escholarship.org/uc/item/6c94v984
+
+error: could not fetch https://escholarship.org/uc/item/6c94v984
+
+## [2026-05-13T17:50:15Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0167473021000631
+
+## [2026-05-13T17:50:15Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.tandfonline.com/doi/abs/10.1080/15732479.2018.1439973
+
+error: could not fetch https://www.tandfonline.com/doi/abs/10.1080/15732479.2018.1439973
+
+## [2026-05-13T17:50:16Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://par.nsf.gov/servlets/purl/10441107
+
+error: no extractable content at https://par.nsf.gov/servlets/purl/10441107
+
+## [2026-05-13T17:50:17Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.nature.com/articles/s41598-026-36808-4
+
+error: could not fetch https://www.nature.com/articles/s41598-026-36808-4
+
+## [2026-05-13T17:50:17Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0278612515000734
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0278612515000734
+
+## [2026-05-13T17:50:17Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://ascelibrary.org/doi/10.1061/%28ASCE%29CP.1943-5487.0001066
+
+error: could not fetch https://ascelibrary.org/doi/10.1061/%28ASCE%29CP.1943-5487.0001066
+
+## [2026-05-13T17:50:18Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+error: no extractable content at https://www.reservestudy.com/wp-content/uploads/2019/01/NRSS-998-CAI-version-updated-2016.pdf
+
+## [2026-05-13T17:50:18Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+error: no extractable content at https://www.caionline.org/getmedia/7b5f1422-d10b-4cad-87b7-d1339c0f0ee8/explanation-of-reserve-study-standards-2025-final.pdf
+
+## [2026-05-13T17:50:20Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=convert | target=https://faculty.cnr.ncsu.edu/yuanyao/wp-content/uploads/sites/14/2019/05/Life-Cycle-Cost-Analysis.pdf
+
+error: no extractable content at https://faculty.cnr.ncsu.edu/yuanyao/wp-content/uploads/sites/14/2019/05/Life-Cycle-Cost-Analysis.pdf
+
+## [2026-05-13T17:50:20Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=materialize | n=4
+
+materialized 4 source(s) to raw/
+
+## [2026-05-13T17:50:20Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=nlm_persistent | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+persistent notebook effe1f58-e6ce-4ff0-8728-35c885bff6f4
+
+## [2026-05-13T17:50:21Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=nlm_session | notebook_id=e9fdfa53-83ab-4386-a1cb-2253f28cd9e2
+
+created session notebook e9fdfa53-83ab-4386-a1cb-2253f28cd9e2
+
+## [2026-05-13T17:50:57Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=source_add | n=4 | skipped=0
+
+pushed 4 source(s) to session notebook (0 skipped)
+
+## [2026-05-13T17:50:58Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=source_map | n=4
+
+built source map (4 entries)
+
+## [2026-05-13T17:58:31Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=analysis | branches=3
+
+analysis complete (3 branch(es))
+
+## [2026-05-13T17:58:32Z] research | session_id=2026-05-13-what-ml-models-would-be-most | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 12: claim has no citation: The provided sources detail several probabilistic frameworks and machine learning mechanisms used to model system deteri; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 81: claim has no citation: A significant gap in the provided literature involves the mismatch between the data required by the highlighted machine ; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 84: claim has no citation: **Gap Identified:** Lack of applicability to non-continuous, low-frequency inspection data.; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 89: claim has no citation: The provided sources detail predictive models optimized for isolated or single-type structural degradation, leaving an u; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 92: claim has no citation: **Gap Identified:** Aggregating diverse infrastructure components into a unified probabilistic model.; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 97: claim has no citation: The texts identify specific mathematical constraints within the current probabilistic frameworks that limit their abilit; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 100: claim has no citation: **Limitation Identified:** Rigid Markovian state transition assumptions.; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 105: claim has no citation: There is an unanswered tension regarding the practical implementation of these advanced mathematical models within the r; update[1] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-machine-learning-and-probabilistic-data-models.md): [citation-grounding] line 108: claim has no citation: **Tension Identified:** Lack of integration between advanced predictive analytics and industry-standard financial planni; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 12: claim has no citation: The provided sources detail a variety of predictive maintenance frameworks, probabilistic models, and stochastic control; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 50: claim has no citation: When comparing the contexts where these predictive models apply, civil infrastructure models are designed for macro-leve; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 58: claim has no citation: The frameworks utilize vastly different evidence inputs regarding observation frequency, dictating the environments wher; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 66: claim has no citation: The stated claims and primary outcomes of these frameworks diverge drastically between financial optimization and precis; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 82: claim has no citation: The provided texts reveal a significant limitation regarding the computational feasibility of scaling analogous structur; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 85: claim has no citation: **Gap Identified:** The computational unfeasibility of scaling advanced macro-level probabilistic models to manage multi; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 90: claim has no citation: A major unanswered tension exists between the continuous high-frequency data required by analogous mechanical models and; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 93: claim has no citation: **Gap Identified:** The lack of a unifying architecture capable of bridging continuous mechanical telemetry with periodi; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 98: claim has no citation: The analogous modeling frameworks are constrained by foundational mathematical assumptions that struggle to perfectly re; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 101: claim has no citation: **Limitation Identified:** The inflexibility of standard Markovian assumptions when forecasting long-term sojourn times ; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 106: claim has no citation: The sources do not address how to mathematically model the cascading, interactive risks between fundamentally different ; update[2] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-analogous-data-models-in-adjacent-spaces.md): [citation-grounding] line 109: claim has no citation: **Gap Identified:** Failure to model the cross-domain impacts between macro-level structural degradation and subsequent ; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 12: claim has no citation: The provided texts outline the regulatory standards and financial planning mechanisms used to manage and forecast the de; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 31: claim has no citation: The provided text illustrates an evolution in the community association industry's approach to reserve planning, shiftin; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 39: claim has no citation: The updated reserve study frameworks highlight a necessary integration between multiyear financial budgeting models and ; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 53: claim has no citation: The provided sources detail procedural mandates for capital planning but reveal a critical gap regarding the actual quan; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 56: claim has no citation: **Gap Identified:** The complete absence of defined mathematical models, machine learning algorithms, or statistical dis; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 61: claim has no citation: A major unanswered tension exists regarding how to bridge qualitative physical engineering inspections with quantitative; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 64: claim has no citation: **Gap Identified:** A lack of methodologies explaining how to seamlessly convert periodic structural inspections into st; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 69: claim has no citation: The literature lists various infrastructure elements but fails to explain how to model a diverse, interdependent portfol; update[3] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-condo-capital-infrastructure-and-reserve-studies.md): [citation-grounding] line 72: claim has no citation: **Gap Identified:** The failure to address how diverse, distinct common area components are mathematically aggregated or; update[4] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-cross-cutting.md): [citation-grounding] line 10: claim has no citation: Markov processes serve as a foundational mathematical architecture applied across vastly different environments to model; update[4] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-cross-cutting.md): [citation-grounding] line 17: claim has no citation: The imperative to proactively minimize long-term financial expenditures while maintaining asset integrity acts as a unif; update[4] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-cross-cutting.md): [citation-grounding] line 24: claim has no citation: The persistent challenge of tracking physical deterioration that cannot be directly seen by operators or inspectors driv; update[4] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-cross-cutting.md): [citation-grounding] line 70: claim has no citation: A significant tension exists between predictive frameworks requiring continuous sensor telemetry and environments constr; update[4] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-cross-cutting.md): [citation-grounding] line 77: claim has no citation: There is a recurring trade-off between the mathematical precision of advanced stochastic control techniques and the feas; update[4] (wiki/synthesis/2026-05-13-what-ml-models-would-be-most-cross-cutting.md): [citation-grounding] line 84: claim has no citation: The sources reveal a persistent tension between mathematically optimizing long-term financial costs and ensuring the str
+
+## [2026-05-13T18:37:23Z] cite | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md
+
+## [2026-05-13T18:39:09Z] cite | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md
+
+## [2026-05-13T18:39:10Z] cite | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision.md
+
+## [2026-05-13T18:39:10Z] cite | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation.md | additions=2 | sources=1
+
+added 2 citation(s) to wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation.md
+
+## [2026-05-13T18:39:27Z] finalize | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md
+
+finalized wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling.md
+
+## [2026-05-13T18:39:27Z] finalize | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md
+
+finalized wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle.md
+
+## [2026-05-13T18:39:28Z] finalize | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md
+
+finalized wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting.md
+
+## [2026-05-13T18:39:28Z] finalize | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision.md
+
+finalized wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision.md
+
+## [2026-05-13T18:39:28Z] finalize | page=wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation.md
+
+finalized wiki/synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation.md
+
+## [2026-05-13T18:43:25Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T18-43-25Z-schema-drift.md
+
+## [2026-05-13T18:43:46Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T18-43-46Z-schema-drift.md
+
+## [2026-05-13T18:56:53Z] lint | scope=contradictions | contradictions=45
+
+report=.knowledge/lint/2026-05-13T18-56-53Z-contradictions.md
+
+## [2026-05-13T22:06:22Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T22-06-22Z-schema-drift.md
+
+## [2026-05-13T22:14:37Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-13T22-14-37Z-schema-drift.md
+
+## [2026-05-13T22:16:42Z] lint | scope=citation-density | citation-density=62
+
+report=.knowledge/lint/2026-05-13T22-16-42Z-citation-density.md
+
+## [2026-05-18T20:23:09Z] ingest | id=web-2026-01-01-ba8 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/web/web-2026-01-01-ba8.md (wiki not written: filter decision=review)
+
+## [2026-05-18T20:27:26Z] filter-correction | id=web-2026-01-01-ba8 | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale='PropFusion is an explicitly named competitor in condo-capital-infra CI scope. This page provides confirmed pricing tiers (Core $85/mo + $94/report; Pro $395/mo + $70/report; Enterprise custom; free board-member plan) and documents the enterprise feature set. Pricing model data is primary competitive-intelligence, not generic marketing copy. Named-vendor CI inclusion criterion is satisfied.'
+
+## [2026-05-18T20:27:37Z] ingest | id=web-2026-01-01-ba8 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-ba8.md wiki=wiki/sources/web-2026-01-01-ba8.md
+
+## [2026-05-18T20:29:55Z] wiki-author | id=web-2026-01-01-ba8 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+PropFusion pricing/product page is primary-source CI on a named competitor — informs the propfusion entity with confirmed ReservePulse tiering, service-level taxonomy, standalone pricing ($79/m), and self-reported operating scale (4,000+ studies); no other entity/concept page receives new claims from this narrowly-scoped vendor pricing source.
+
+## [2026-05-18T20:30:13Z] ingest | id=web-2026-01-01-47b | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.9
+
+raw=raw/web/web-2026-01-01-47b.md wiki=wiki/sources/web-2026-01-01-47b.md
+
+## [2026-05-18T20:32:29Z] ingest | id=web-2026-04-27-33b | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/web/web-2026-04-27-33b.md (wiki not written: filter decision=review)
+
+## [2026-05-18T20:33:02Z] ingest | id=web-2026-05-18-f80 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2026-05-18-f80.md (wiki not written: filter decision=review)
+
+## [2026-05-18T20:33:24Z] wiki-author | id=web-2026-01-01-47b | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Source is a 2026 PropFusion platform-page surfacing operational feature claims (Field Mode, Component Library, funding-plan modes, One-click Update, Enterprise white-label/Portfolio Intelligence/Bulk RFPs, Lead Generator at 300–500 HOA inquiries/year, 3-level CAI + SIRS support) that update the existing PropFusion competitive-intelligence entity page; no other page is the primary informational target.
+
+## [2026-05-18T20:33:25Z] filter-correction | id=web-2026-04-27-33b | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale='PropFusion law-guide page provides vendor-curated authoritative interpretation of FL HB 913 (2025) SIRS amendments: consolidated 8-category component list with $25K threshold, extended deadlines, DBPR reporting tightening. This is regulatory-substance content from a named CI vendor whose jurisdiction library is itself a competitive-intelligence data point (multi-state coverage FL/CA/TX/GA/MI/MD/NJ, no Canadian content). Satisfies regulatory-substance inclusion criterion and named-vendor CI criterion simultaneously.'
+
+## [2026-05-18T20:33:29Z] filter-correction | id=web-2026-05-18-f80 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale="SaaSWorthy is an independent third-party aggregator providing evidence-2 corroboration of PropFusion pricing tiers and — critically — the documented absence of a public API as of October 2025, sourced independently of PropFusion's own marketing. The no-API finding is a specific, verifiable competitive-intelligence data point (no CMMS or accounting integrations) that the primary product pages do not state as explicitly. Named-vendor CI inclusion criterion satisfied via independent corroboration."
+
+## [2026-05-18T20:33:36Z] ingest | id=web-2026-04-27-33b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-27-33b.md wiki=wiki/sources/web-2026-04-27-33b.md
+
+## [2026-05-18T20:35:37Z] ingest | id=web-2026-05-18-f80 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-18-f80.md wiki=wiki/sources/web-2026-05-18-f80.md
+
+## [2026-05-18T20:37:07Z] wiki-author | id=web-2026-05-18-f80 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+SaaSWorthy provides independent third-party corroboration of PropFusion pricing tiers and documents the absence of a public API — a verifiable CI data point not explicit in PropFusion's own marketing.
+
+## [2026-05-18T20:37:47Z] wiki-author | id=web-2026-04-27-33b | updates=3 | created=0 | updated=3 | contradictions=0 | draft=no
+
+PropFusion's vendor-curated FL SIRS 2026 guide adds CI-significant vendor-perspective citations on the DBPR registry/affidavit/disclosure cascade, the CAI-credentialed RS/PRA qualified-preparer recognition under FL statute, and the form's credential-category mapping to the statutory three preparer categories plus a fourth catch-all.
+
+## [2026-05-18T20:39:23Z] wiki-author | id=web-2026-01-01-ba8 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+PropFusion's official pricing/positioning page provides primary-source pricing and feature data for the named competitor and warrants integration into the existing PropFusion entity page.
+
+## [2026-05-18T20:41:39Z] wiki-author | id=web-2026-01-01-47b | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Update PropFusion entity with platform-page-level product, workflow, lead-generation, and operational-scale claims from the vendor's own marketing surface — sharpening the CI profile of the named US-multi-state competitor in the condo-capital-infra acquirer/competitive set.
+
+## [2026-05-18T20:42:57Z] wiki-author | id=web-2026-05-18-f80 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+SaaSWorthy provides independent third-party corroboration of PropFusion pricing tiers and the documented absence of a public API as of late 2025 — a load-bearing competitive-intelligence data point that updates the PropFusion entity with vendor-pricing detail, integration-surface posture (no API → no CMMS or accounting integrations), and corporate-location data not present in PropFusion's primary marketing materials.
+
+## [2026-05-18T20:48:19Z] cite | page=wiki/entities/propfusion.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/entities/propfusion.md
+
+## [2026-05-18T20:50:14Z] finalize | page=wiki/entities/propfusion.md
+
+finalized wiki/entities/propfusion.md
+
+## [2026-05-18T20:52:06Z] ingest | id=web-2025-11-15-556 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2025-11-15-556.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T20:53:03Z] ingest | id=web-2025-11-08-926 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2025-11-08-926.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T20:53:44Z] ingest | id=web-2025-01-23-a1d | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2025-01-23-a1d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T20:54:25Z] ingest | id=web-2026-01-01-488 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.25
+
+raw=raw/web/web-2026-01-01-488.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T20:55:02Z] ingest | id=web-2025-01-07-b6e | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2025-01-07-b6e.md (wiki not written: filter decision=review)
+
+## [2026-05-18T20:55:31Z] filter-correction | id=web-2025-11-15-556 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale="Vendor-watch CI target: Solume Nov 15 2025 public launch press release. The filter correctly flags absence of pricing/methodology depth, but for a vendor-watch ingest the marketing surface claims ARE the CI — specifically the 'living forecast' / 'automated reserve study management that updates in real time' language establishes the deterministic-with-real-time-updates positioning that is the competitive contrast with our probabilistic engine. Product launch date (Nov 2025) confirms Solume was pre-launch in the synthesis baseline. These verbatim claims are load-bearing for the entities/solume.md competitive profile."
+
+## [2026-05-18T20:55:37Z] filter-correction | id=web-2025-11-08-926 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='Vendor-watch CI target: Solume Nov 8 2025 launch coverage (Endowment Lock). Third-party editorial coverage confirms product launch timing and provides the platform feature inventory (ARC workflows, dues collection, budget tools, vendor payments, financial reconciliation, LLM document-Q&A AI assistant). The AI-scope confirmation — governing-document / policy-language interpretation only, no predictive condition modeling — is the key competitive-differentiation data point against our probabilistic engine. Filter penalizes absence of methodology depth, but the feature taxonomy itself is the CI for vendor-watch purposes.'
+
+## [2026-05-18T20:55:44Z] filter-correction | id=web-2025-01-23-a1d | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale="Vendor-watch CI target: Solume FL-specific landing page at getsolume.com/florida-reserve-study. Confirms active FL SIRS / HB 913 GTM — the vendor has a dedicated FL landing page, establishing that Solume is directly competing in the FL statutory compliance market that Condo Capital's Y2 channel partnership targets. The positioning language ('converts outdated PDF reserve studies into interactive financial dashboards that adapt to Florida unique maintenance needs') characterizes the deterministic-to-dashboard methodology and confirms no probabilistic/Monte Carlo layer. Filter penalizes thin marketing content, but the GTM geographic signal is load-bearing CI."
+
+## [2026-05-18T20:55:50Z] filter-correction | id=web-2026-01-01-488 | domain=condo-capital-infra | decision=include | original_score=0.25
+
+rationale="Vendor-watch CI target: Solume core reserve-study product page at community.solume.com/reserve-study. Primary-source feature claims from the vendor's own marketing surface — the canonical product positioning for the reserve module, including integration with budget and vendor data and the AI assistant framing. Filter penalizes marketing content, but primary-source vendor product pages are the standard evidence tier for competitor feature profiles in vendor-watch ingests (consistent with SmartProperty and PropFusion vendor-watch override precedent in this domain)."
+
+## [2026-05-18T20:55:57Z] filter-correction | id=web-2025-01-07-b6e | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale='Vendor-watch CI target: Solume multi-state reserve-study state-requirements blog page. Key CI is geographic footprint via negative evidence — 32-minute read covering US state-by-state requirements (CA, FL, TX, etc.) with zero Canadian content (no BC SPA, no ON Condo Act, no NS Act, no depreciation-report terminology). Confirms Solume is a US-only platform with no current Canada-market positioning. This geographic signal is material to the competitive-landscape assessment under ADR-0004 Canada-first sequence. Filter correctly notes absence of probabilistic/methodology depth, but the geographic footprint boundary is the CI target.'
+
+## [2026-05-18T20:56:02Z] ingest | id=web-2025-11-15-556 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-15-556.md wiki=wiki/sources/web-2025-11-15-556.md
+
+## [2026-05-18T20:58:06Z] wiki-author | id=web-2025-11-15-556 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Solume Nov 15 2025 public launch press release establishes the deterministic-with-real-time-updates 'living forecast' positioning, Atlanta HQ, and product feature surface — load-bearing competitive-intelligence claims for the Solume vendor profile.
+
+## [2026-05-18T20:58:06Z] ingest | id=web-2025-11-08-926 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-08-926.md wiki=wiki/sources/web-2025-11-08-926.md
+
+## [2026-05-18T20:59:32Z] wiki-author | id=web-2025-11-08-926 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Third-party editorial coverage of Solume's Nov 8 2025 launch confirms timing, platform feature inventory (ARC workflows, dues collection, budget tools, vendor payments, financial reconciliation, LLM document-Q&A AI assistant), and the AI-scope boundary (governing-document / policy-language interpretation only, no predictive condition modeling) — the key competitive-differentiation data point against the probabilistic engine.
+
+## [2026-05-18T20:59:40Z] ingest | id=web-2025-01-23-a1d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-23-a1d.md wiki=wiki/sources/web-2025-01-23-a1d.md
+
+## [2026-05-18T21:01:42Z] ingest | id=web-2026-01-01-488 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-488.md wiki=wiki/sources/web-2026-01-01-488.md
+
+## [2026-05-18T21:01:47Z] wiki-author | id=web-2025-01-23-a1d | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Vendor-watch CI update to Solume entity: the Florida-specific landing page is load-bearing primary-source evidence of active FL SIRS / HB 913 GTM and confirms a deterministic-to-dashboard methodology with no probabilistic layer.
+
+## [2026-05-18T21:03:56Z] ingest | id=web-2025-01-07-b6e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-07-b6e.md wiki=wiki/sources/web-2025-01-07-b6e.md
+
+## [2026-05-18T21:04:03Z] wiki-author | id=web-2026-01-01-488 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Solume's primary-source product page is the vendor-watch CI anchor for Solume's reserve-study module positioning; updates the Solume entity page with marketing-tier feature claims, methodology-disclosure gaps, and the marketing-vs-FAQ internal tension on whether Solume replaces or supplements professional reserve studies.
+
+## [2026-05-18T21:08:10Z] wiki-author | id=web-2025-11-15-556 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Solume Nov 15 2025 launch PR confirms vendor's post-synthesis product launch and establishes the verbatim 'living forecast' / 'updates in real time' deterministic-with-continuous-refresh positioning that is the load-bearing competitive contrast with our probabilistic engine.
+
+## [2026-05-18T21:08:38Z] wiki-author | id=web-2025-01-07-b6e | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Solume vendor-blog corroborates CA § 5550 statutory contents and adds net-new FL SIRS predecessor-legislation context (SB 4-D 2022, SB 154 2023) plus 14-year records-retention requirement; geographic-footprint CI on Solume itself recommended for separate vendor-watch update (Solume page not surfaced in gateway context).
+
+## [2026-05-18T21:09:59Z] wiki-author | id=web-2025-11-08-926 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Endowment Lock press release coverage of Solume's Nov 8 2025 launch provides primary-source confirmation of launch date, HQ location, feature inventory, and — critically — the AI-scope boundary (governing-document interpretation only, no predictive condition modeling) that is the key competitive-differentiation data point against the condo-capital-infra probabilistic engine.
+
+## [2026-05-18T21:14:06Z] wiki-author | id=web-2025-01-23-a1d | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Solume's FL-specific landing page is load-bearing CI evidence of active FL SIRS GTM by a named vendor-watch target — directly informs the condo-capital-infra Year-2 FL channel partnership competitive perimeter under ADR-0004.
+
+## [2026-05-18T21:14:41Z] wiki-author | id=web-2025-01-07-b6e | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Solume's January 2025 multi-state reserve-study state-requirements blog is fundamentally a vendor-watch CI source on Solume itself — its US-only geographic footprint and 13-state coverage are the load-bearing competitive intelligence, with secondary value as a vendor-curated regulatory-interpretation cross-reference parallel to PropFusion.
+
+## [2026-05-18T21:17:47Z] wiki-author | id=web-2025-11-08-926 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Nov 8, 2025 third-party launch coverage confirms Solume's product launch date, bounded AI scope (governing-document interpretation only, no predictive condition modeling), and full feature inventory — the key CI differentiation point against the probabilistic-engine moat.
+
+## [2026-05-18T21:18:16Z] wiki-author | id=web-2025-11-15-556 | updates=1 | created=0 | updated=1 | contradictions=2 | draft=no
+
+November 15, 2025 Solume launch press release confirms vendor's deterministic-with-real-time-updates positioning ('living forecast', dynamic projection updates from operating data/budgets/vendor info) — direct competitive contrast with the probabilistic engine and load-bearing for the Solume competitive profile.
+
+## [2026-05-18T21:21:06Z] wiki-author | id=web-2026-01-01-488 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Integrate primary-source vendor product page claims (AI-platform framing, dashboard architecture, vendor-curated cadence/cost framing, legal-compliance positioning) into the Solume entity page alongside existing Jan 2025 multi-state guide and FL landing page evidence.
+
+## [2026-05-18T21:23:33Z] wiki-author | id=web-2025-11-15-556 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Integrate Solume's November 15, 2025 public launch press release claims into the Solume entity page — establishing the launch date, the 'living forecast' / real-time-updating deterministic positioning, and the expanded product surface (automated reserve study, AI governance assistant, ARC, financial management, communications, maintenance, records) as the operative Nov-2025 competitive baseline.
+
+## [2026-05-18T21:25:58Z] wiki-author | id=web-2025-11-08-926 | updates=1 | created=0 | updated=1 | contradictions=2 | draft=no
+
+Solume Nov 8 2025 launch coverage adds product-level CI (feature inventory, AI-scope confirmation as governing-doc interpretation only, Atlanta HQ, contact metadata) to the existing Solume entity page where prior content captured regulatory-interpretation content from Solume's Jan 2025 multi-state guide and FL landing page.
+
+## [2026-05-18T21:32:49Z] ingest | id=web-2015-01-01-3e6 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2015-01-01-3e6.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T21:32:55Z] filter-correction | id=web-2015-01-01-3e6 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='Vendor-watch CI source: Facilio asset-lifecycle-management product page. Verbatim feature claims (multi-year CapEx forecasting, replacement schedules, condition assessment) are primary evidence for threat-tier reassessment in condo-capital-infra competitive intelligence. Matches SmartProperty, PropFusion, Solume filter-correct precedents in this domain.'
+
+## [2026-05-18T21:32:59Z] ingest | id=web-2015-01-01-3e6 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2015-01-01-3e6.md wiki=wiki/sources/web-2015-01-01-3e6.md
+
+## [2026-05-18T21:34:34Z] wiki-author | id=web-2015-01-01-3e6 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio's asset-lifecycle-management product page is named-CI-vendor primary evidence for the Facilio entity page in the condo-capital-infra vendor-watch competitive intelligence; integrate verbatim product-positioning and feature-set claims to strengthen threat-tier assessment vs. SmartProperty, PropFusion, Solume, and ReserveWise.
+
+## [2026-05-18T21:35:12Z] ingest | id=web-2015-01-01-599 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/web/web-2015-01-01-599.md wiki=wiki/sources/web-2015-01-01-599.md
+
+## [2026-05-18T21:37:18Z] wiki-author | id=web-2015-01-01-599 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio's primary-source EAM product page documents the platform's asset-lifecycle, MTTR/MTBF, work-order-automation, contractor-performance, and ERP/BMS/finance/IoT integration capabilities — the operating-data shape the condo-capital-infra engine targets as work-order ingest covariates and the competitive-intelligence reference frame for the CMMS/EAM-as-eventual-acquirer posture under ADR-0004.
+
+## [2026-05-18T21:46:55Z] wiki-author | id=web-2015-01-01-599 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio product page documents EAM capabilities (MTTR/MTBF, asset lifecycle costs, work-order automation, ERP/BMS/IoT integration) that map directly to the condo-capital-infra engine's CMMS work-order covariate set and strengthen the Facilio-as-eventual-acquirer framing under ADR-0004.
+
+## [2026-05-18T21:47:24Z] ingest | id=web-2015-01-01-170 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.72
+
+raw=raw/web/web-2015-01-01-170.md wiki=wiki/sources/web-2015-01-01-170.md
+
+## [2026-05-18T21:48:47Z] ingest | id=web-2026-02-11-bc9 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2026-02-11-bc9.md (wiki not written: filter decision=review)
+
+## [2026-05-18T21:49:41Z] wiki-author | id=web-2015-01-01-170 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+The Facilio Atom AI-suite product page informs the existing Facilio entity page with named-agent product structure (Mira/Luca/FM Copilot/OpsVision), use-case taxonomy, and integration/deployment positioning — extending the project's vendor competitive-intelligence on Facilio from CMMS/asset-lifecycle into agentic-AI overlay. No relevant existing facilio page content was surfaced in the retrieval context, so this update is structured around the Atom-specific claims this source supports; the merge step should integrate with any prior facilio.md content rather than replace it wholesale.
+
+## [2026-05-18T21:51:38Z] wiki-author | id=web-2015-01-01-170 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+The source is Facilio's product page for the Atom AI agent suite, providing new product-positioning facts (five vertical use-case domains, four named AI agents, integration posture, deployment claims) that augment the existing Facilio competitive-intelligence entity in the condo-capital-infra domain.
+
+## [2026-05-18T21:51:45Z] filter-correction | id=web-2026-02-11-bc9 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale="Vendor-watch CI source: primary datestamped PR Newswire announcement for Facilio Atom launch (Feb 11 2026). This is the canonical provenance anchor for the launch date of Facilio's agentic AI suite — a strategic event that advances Facilio toward Tier 3 boundary. The filter's 0.55 score correctly notes absence of reserve-study language in the press release itself; however, the parent dispatch explicitly designates this as the datestamped primary source for the Atom launch event, consistent with SmartProperty, PropFusion, Solume filter-correct precedents in this domain where vendor AI expansion is the strategic signal."
+
+## [2026-05-18T21:51:49Z] ingest | id=web-2026-02-11-bc9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-11-bc9.md wiki=wiki/sources/web-2026-02-11-bc9.md
+
+## [2026-05-18T22:01:09Z] wiki-author | id=web-2026-02-11-bc9 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio Atom launch (Feb 11 2026) is the datestamped primary-source vendor-watch CI anchor for Facilio's transition into the agentic-AI tier; the source updates the Facilio entity page with the Atom Autonomous AI Agent Suite launch facts and surfaces a vendor-investor cross-reference to Brookfield.
+
+## [2026-05-18T22:03:58Z] finalize | page=wiki/entities/solume.md
+
+finalized wiki/entities/solume.md
+
+## [2026-05-18T22:09:28Z] wiki-author | id=web-2015-01-01-3e6 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Vendor-watch CI primary source: Facilio's Asset Lifecycle Management product page surfaces verbatim feature claims (portfolio-wide 360° asset-lifecycle visualization, performance optimization, renewals/audits/compliance, fault detection, asset visualization) that update the Facilio entity page with vendor-stated capabilities relevant to threat-tier reassessment alongside SmartProperty / PropFusion / Solume / ReserveWise.
+
+## [2026-05-18T22:10:29Z] wiki-author | id=web-2015-01-01-599 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Source is Facilio's EAM product page documenting MTTR/MTBF/lifecycle-cost KPIs, automated work-order triggers, asset-ID QR/barcode tracking, and ERP/BMS/IoT integrations — direct vendor-self-described evidence of capabilities relevant to the condo-capital-infra work-order-ingest and component-condition telemetry data layer.
+
+## [2026-05-18T22:12:44Z] wiki-author | id=web-2015-01-01-170 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio's Atom agentic-AI suite page is a vendor CI product-evolution signal for the named Facilio entity — adds four named AI agents, an FM-operations use-case taxonomy, and explicit ERP/CMMS integration claims that update the Facilio vendor profile beyond the prior asset-lifecycle / reserve-study positioning.
+
+## [2026-05-18T22:14:55Z] wiki-author | id=web-2026-02-11-bc9 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Vendor-watch CI source documenting Facilio's February 11, 2026 launch of Facilio Atom (Autonomous AI Agent Suite) — the load-bearing primary-source provenance anchor for Facilio's strategic move from CMMS-system-of-record to autonomous workflow execution, materially advancing the Facilio vendor-watch position toward Tier-3 boundary in the condo-capital-infra competitive set.
+
+## [2026-05-18T22:16:14Z] wiki-author | id=web-2015-01-01-599 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio's primary-source product page documents the EAM platform's asset KPIs (MTTR/MTBF), CMMS work-order automation, lifecycle cost tracking, and integration scope — load-bearing vendor-curated detail for the Facilio entity page and the engine's CMMS-workorder-covariate scoping.
+
+## [2026-05-18T22:18:05Z] wiki-author | id=web-2015-01-01-170 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio Atom product page adds concrete claims about Facilio's named AI agent suite (Mira, Luca, FM Copilot, OpsVision) and integration/deployment posture; updates the existing Facilio CI page with the company's current AI-suite positioning while preserving prior asset-lifecycle / CI claims from web-2015-01-01-3e6.
+
+## [2026-05-18T22:19:36Z] wiki-author | id=web-2015-01-01-3e6 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Vendor-watch CI ingest: Facilio's Asset Lifecycle Management product page surfaces the company's portfolio-wide asset-visualization, performance-optimization, and renewals/audits/compliance pillars — primary-source evidence for threat-tier reassessment of Facilio in the condo-capital-infra competitive set.
+
+## [2026-05-18T22:23:28Z] wiki-author | id=web-2015-01-01-599 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Facilio EAM product page is a primary-source vendor-watch artifact that documents Facilio's MTTR/MTBF tracking, asset-lifecycle cost capture, condition-based work-order automation, and ERP/BMS/finance/IoT integration — all directly informing the Facilio entity page's CI profile and its role as a CMMS-ingest-pathway reference for the engine.
+
+## [2026-05-18T22:30:24Z] ingest | id=web-2026-01-01-d10 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2026-01-01-d10.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T22:30:31Z] filter-correction | id=web-2026-01-01-d10 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='Vendor competitive intelligence — REcollab Technologies, AI-driven reserve study platform, direct competitor in Canada-first GTM lane; required for condo-capital-infra vendor watch CI workflow'
+
+## [2026-05-18T22:30:35Z] ingest | id=web-2026-01-01-d10 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-d10.md wiki=wiki/sources/web-2026-01-01-d10.md
+
+## [2026-05-18T22:32:23Z] wiki-author | id=web-2026-01-01-d10 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+REcollab Technologies is a previously-uncatalogued AI-driven reserve study platform marketing to property managers across North America — a direct competitor in the condo-capital-infra vendor watch set requiring a new entity page plus cross-linking to existing ReserveWise vendor coverage.
+
+## [2026-05-18T22:32:48Z] ingest | id=web-2025-07-03-d90 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.0
+
+raw=raw/web/web-2025-07-03-d90.md (wiki not written: filter decision=rejected)
+
+## [2026-05-18T22:32:51Z] filter-correction | id=web-2025-07-03-d90 | domain=condo-capital-infra | decision=include | original_score=0.0
+
+rationale="USPTO patent disambiguation source — US12462305B2 assigned to Trete Inc, not REcollab Technologies; required to anchor the negative-evidence note on REcollab's NRC patent claim in condo-capital-infra vendor watch"
+
+## [2026-05-18T22:32:55Z] ingest | id=web-2025-07-03-d90 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-07-03-d90.md wiki=wiki/sources/web-2025-07-03-d90.md
+
+## [2026-05-18T22:34:34Z] wiki-author | id=web-2025-07-03-d90 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is a USPTO patent disambiguation primary record (US12462305B2, assigned to Trete Inc) ingested solely to anchor a negative-evidence note refuting any attribution of this patent to REcollab Technologies in the condo-capital-infra vendor watch.
+
+## [2026-05-18T22:40:32Z] wiki-author | id=web-2026-01-01-d10 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Vendor CI ingest: create the REcollab Technologies entity page to anchor the AI-positioned DIY/SaaS reserve-planning competitor in the condo-capital-infra vendor watch set (the parallel reservewise.md cross-reference is already in place).
+
+## [2026-05-18T22:43:34Z] wiki-author | id=web-2025-07-03-d90 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Anchor USPTO patent US12462305B2 as a Trete Inc fintech / digital-securities asset-onboarding patent — out of scope for reserve-study methodology — and attach the negative-evidence disambiguation to the existing REcollab Technologies discussion on the reservewise vendor-watch page.
+
+## [2026-05-18T22:44:12Z] finalize | page=wiki/entities/recollab.md
+
+finalized wiki/entities/recollab.md
+
+## [2026-05-18T22:44:26Z] cite | page=wiki/entities/us-patent-12462305b2.md | additions=4 | sources=1
+
+added 4 citation(s) to wiki/entities/us-patent-12462305b2.md
+
+## [2026-05-18T22:44:28Z] finalize | page=wiki/entities/us-patent-12462305b2.md
+
+finalized wiki/entities/us-patent-12462305b2.md
+
+## [2026-05-18T22:44:33Z] lint | scope=stale-drafts | stale-drafts=200
+
+report=.knowledge/lint/2026-05-18T22-44-33Z-stale-drafts.md
+
+## [2026-05-19T00:48:52Z] research | session_id=2026-05-19-governingdocs-dev-reserve-study | step=start | domain=condo-capital-infra
+
+start research session for prompt 'GoverningDocs.dev reserve study'
+
+## [2026-05-19T00:49:10Z] research | session_id=2026-05-19-governingdocs-dev-reserve-study | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-19-governingdocs-dev-reserve-study.yaml
+
+## [2026-05-19T01:20:59Z] ingest | id=web-2024-10-07-033 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2024-10-07-033.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T01:21:09Z] filter-correction | id=web-2024-10-07-033 | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale='Primary-source press release for Eli Report (OctoAI Technologies Corp.) freemium North America launch October 2024. Contains CEO quote, 25,000 reports scale claim, corporate identity confirmation. Highest single-source priority for the eli-report entity rewrite. Vendor intelligence — consistent with filter-correct precedent applied on SmartProperty, PropFusion, Solume, Facilio, REcollab.'
+
+## [2026-05-19T01:21:12Z] ingest | id=web-2024-10-07-033 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-10-07-033.md wiki=wiki/sources/web-2024-10-07-033.md
+
+## [2026-05-19T01:23:05Z] wiki-author | id=web-2024-10-07-033 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Primary-source press release for the Eli Report freemium launch (Oct 7, 2024) supplies corporate-owner identity (OctoAI Technologies Corp, Vancouver BC), CEO name (Thomas Beattie), scale metric (25,000+ reports), AI-stack composition (proprietary + ChatGPT), product surface (side-by-side viewer, Annual Benchmark Report), and expanded user-segment scope — load-bearing entity-rewrite content for eli-report and the basis for a new octoai-technologies-corp entity page.
+
+## [2026-05-19T01:23:47Z] ingest | id=web-2024-10-31-4cf | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2024-10-31-4cf.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T01:23:50Z] filter-correction | id=web-2024-10-31-4cf | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='Canonical product page for Eli Report condo document review. Feature inventory, provincial city pages, verbatim product description. Primary source for product-suite section of eli-report entity. Vendor intelligence — consistent with filter-correct precedent applied today.'
+
+## [2026-05-19T01:23:53Z] ingest | id=web-2024-10-31-4cf | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-10-31-4cf.md wiki=wiki/sources/web-2024-10-31-4cf.md
+
+## [2026-05-19T01:25:52Z] wiki-author | id=web-2024-10-31-4cf | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+Canonical Eli Report product page enumerates the explicit six-section condo-document-review feature inventory (governing-document/bylaws decoding, meeting-minutes screening, inspection-report summarization, budget benchmarking, insurance-policy evaluation, special-assessment forecasting) — substantially extending the marketing-tier framing the wiki currently carries only from the October 7, 2024 freemium press release.
+
+## [2026-05-19T01:26:40Z] ingest | id=web-2023-10-19-a69 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.8
+
+raw=raw/web/web-2023-10-19-a69.md wiki=wiki/sources/web-2023-10-19-a69.md
+
+## [2026-05-19T01:30:28Z] wiki-author | id=web-2023-10-19-a69 | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+The 2023 source is the earliest-attested launch of Eli Report's Special Levy Forecasting Tool and the primary-source articulation of its three-input deterministic methodology — material that deepens the existing eli-report and octoai-technologies-corp pages without contradicting prior evidence.
+
+## [2026-05-19T01:31:26Z] ingest | id=web-2020-12-11-687 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.55
+
+raw=raw/web/web-2020-12-11-687.md (wiki not written: filter decision=review)
+
+## [2026-05-19T01:31:33Z] filter-correction | id=web-2020-12-11-687 | domain=condo-capital-infra | decision=include | original_score=0.55
+
+rationale='Canonical pricing page for Eli Report. Complete pricing structure: Free, Pro /report, Enterprise /report; subscriptions .99/.99/.99/year; Annual Benchmark Report /unit. Primary source for pricing section of eli-report entity. Vendor intelligence — consistent with filter-correct precedent applied today.'
+
+## [2026-05-19T01:31:36Z] ingest | id=web-2020-12-11-687 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2020-12-11-687.md wiki=wiki/sources/web-2020-12-11-687.md
+
+## [2026-05-19T01:31:54Z] wiki-author | id=web-2023-10-19-a69 | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Integrates October 2023 Eli Report Special Levy Forecast launch as the earliest primary-source evidence for the feature later catalogued as Section 6 of the October 2024 canonical product page, with detailed methodology (three named inputs), output format, and 15+ enumerated failure modes that materially expand the existing entity page beyond the Oct 2024 marketing-tier framing.
+
+## [2026-05-19T01:34:51Z] ingest | id=web-2026-03-03-bbe | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.85
+
+raw=raw/web/web-2026-03-03-bbe.md wiki=wiki/sources/web-2026-03-03-bbe.md
+
+## [2026-05-19T01:37:00Z] ingest | id=web-2019-12-11-cab | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/web/web-2019-12-11-cab.md (wiki not written: filter decision=review)
+
+## [2026-05-19T01:37:07Z] filter-correction | id=web-2019-12-11-cab | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale='Primary source: BC founding press release December 11 2019. Jamie Hankinson founding CEO quote. Eli Technologies Corp original legal entity name. 500+ realtors at launch across 75+ Metro Vancouver / Victoria brokerages. Establishes founding date and original corporate identity. Vendor intelligence — consistent with filter-correct precedent applied today.'
+
+## [2026-05-19T01:37:16Z] ingest | id=web-2019-12-11-cab | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2019-12-11-cab.md wiki=wiki/sources/web-2019-12-11-cab.md
+
+## [2026-05-19T01:40:31Z] ingest | id=web-2021-04-23-77c | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/web/web-2021-04-23-77c.md wiki=wiki/sources/web-2021-04-23-77c.md
+
+## [2026-05-19T01:42:56Z] ingest | id=web-2025-07-03-321 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.58
+
+raw=raw/web/web-2025-07-03-321.md (wiki not written: filter decision=review)
+
+## [2026-05-19T01:43:05Z] filter-correction | id=web-2025-07-03-321 | domain=condo-capital-infra | decision=include | original_score=0.58
+
+rationale='AISIX Solutions Inc. (TSX-V: AISX) climate-risk data partnership renewal with OctoAI Technologies Corp (Eli Report), June 2025. Climate-risk data licensing (wildfire, heat, precipitation, wind). BC-only scope. Primary channel-partnership evidence for Eli Report integrations section. Vendor intelligence — consistent with filter-correct precedent applied today.'
+
+## [2026-05-19T01:43:09Z] ingest | id=web-2025-07-03-321 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-07-03-321.md wiki=wiki/sources/web-2025-07-03-321.md
+
+## [2026-05-19T01:45:53Z] ingest | id=web-2024-05-17-2fd | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.62
+
+raw=raw/web/web-2024-05-17-2fd.md (wiki not written: filter decision=review)
+
+## [2026-05-19T01:46:04Z] filter-correction | id=web-2024-05-17-2fd | domain=condo-capital-infra | decision=include | original_score=0.62
+
+rationale='Annual Benchmark Report launch page May 2024 from Eli Report / OctoAI. B2B product for boards and PMs. /unit pricing. 30-year special levy forecast capability. Explicit recommendation to commission professional reserve fund studies every 3 years with P.Eng. or CRP — strategic anchor for channel-partner thesis. Vendor intelligence — consistent with filter-correct precedent applied today.'
+
+## [2026-05-19T01:46:08Z] ingest | id=web-2024-05-17-2fd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-05-17-2fd.md wiki=wiki/sources/web-2024-05-17-2fd.md
+
+## [2026-05-19T01:49:09Z] ingest | id=web-2024-08-06-5e3 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.45
+
+raw=raw/web/web-2024-08-06-5e3.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T01:49:14Z] filter-correction | id=web-2024-08-06-5e3 | domain=condo-capital-infra | decision=include | original_score=0.45
+
+rationale="Real Estate Magazine article on Thomas Beattie and OctoAI Technologies founding narrative. Contains verbatim Beattie methodology quote: 'We're very confident we are not going to hallucinate... The system extracts relevant data, with all results manually reviewed by the leadership team before release.' Confirms human-admin verification step. Founding narrative context. Vendor intelligence — consistent with filter-correct precedent applied today."
+
+## [2026-05-19T01:49:18Z] ingest | id=web-2024-08-06-5e3 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-08-06-5e3.md wiki=wiki/sources/web-2024-08-06-5e3.md
+
+## [2026-05-19T01:55:09Z] wiki-author | id=web-2024-10-07-033 | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Source is the canonical October 7, 2024 PRWeb freemium-launch press release for Eli Report (OctoAI Technologies Corp); both relevant entity pages already integrate this source comprehensively, so updates preserve existing claims and citations.
+
+## [2026-05-19T14:45:14Z] ingest | id=web-2025-10-21-a7b | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/web/web-2025-10-21-a7b.md (wiki not written: filter decision=review)
+
+## [2026-05-19T14:45:31Z] ingest | id=pdf-c974b5dbd563 | type=pdf | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.68
+
+raw=raw/pdf/pdf-c974b5dbd563.md (wiki not written: filter decision=review)
+
+## [2026-05-19T14:45:49Z] ingest | id=web-2026-05-19-00f | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.1
+
+raw=raw/web/web-2026-05-19-00f.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T14:46:15Z] filter-correction | id=web-2026-05-19-00f | domain=condo-capital-infra | decision=include | original_score=0.1
+
+rationale="BC Assessment Assessment Search FAQ page contains the operative commercial-use prohibition directly load-bearing for the can-pilot tos.py adapter: 'Assessment search is a publicly available online service for private, personal, non-commercial use. Businesses wishing to learn more about commercial access to assessment information should contact BC Assessment.' The FAQ also enumerates per-property fields (year_built, building_storeys, number_of_apartment_units, strata_area) that define the BC covariate adapter schema. Domain relevance is narrow but high-signal on access rights and available fields — both required before the Vancouver wave can proceed."
+
+## [2026-05-19T14:46:21Z] ingest | id=web-2026-05-19-00f | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-19-00f.md wiki=wiki/sources/web-2026-05-19-00f.md
+
+## [2026-05-19T14:46:21Z] ingest | id=web-2025-02-05-f51 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.62
+
+raw=raw/web/web-2025-02-05-f51.md (wiki not written: filter decision=review)
+
+## [2026-05-19T14:48:18Z] wiki-author | id=web-2026-05-19-00f | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+New source establishes BC Assessment as the BC provincial property-valuation authority and documents the Assessment Search service's commercial-use prohibition plus the per-property field schema — both load-bearing for the can-pilot ToS adapter and the BC covariate ingest design.
+
+## [2026-05-19T14:48:21Z] ingest | id=web-2022-03-01-ef4 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2022-03-01-ef4.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T14:48:46Z] ingest | id=web-2026-01-02-6fe | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2026-01-02-6fe.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T14:48:58Z] filter-correction | id=pdf-c974b5dbd563 | domain=condo-capital-infra | decision=include | original_score=0.68
+
+rationale='CAO Best Practices Guide on ON reserve fund studies is the canonical practitioner reference for Ontario Condo Act §94 + O. Reg. 48/01 compliance. It defines the Class 1/2/3 study schema, qualified-preparer requirements, component-inventory minimum, 30-year funding plan structure, and notice-of-future-funding procedure — all load-bearing for the ON regulatory sub-section of the can-pilot extraction schema (Brief-0011 Wave B). Distinct from the empirical CAO 2024 survey at pdf-condominium-authority-2024-report-on-resrve; this is the regulatory how-to guide. Secondary use: serves as the cross-province comparator anchor for NS and BC regulatory triangulation in Finding-0017 §7C.'
+
+## [2026-05-19T14:49:03Z] filter-correction | id=web-2026-01-02-6fe | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale="BC Assessment property-information-trends page contains an explicit commercial-use prohibition notice directly cited in Finding-0017 §7B: 'Any commercial use of this data in whole or in part, directly or indirectly, including the use of such data for business, residential address or telephone directory services or any solicitation service is specifically prohibited.' This is a distinct prohibition notice from the FAQ page (web-2026-05-19-00f) — it appears on the data-product inventory page that confirms bulk Data Advice commercial licensing as the only defensible route to province-wide BC strata covariates. The can-pilot Vancouver wave tos.py adapter must encode both prohibition notices. Finding-0017 §7B explicitly identifies this URL as the data-product inventory confirming the bulk licensing route. Filter correction warranted: the relevance is narrow but load-bearing for the pipeline access-rights decision."
+
+## [2026-05-19T14:49:07Z] ingest | id=web-2026-01-02-6fe | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-02-6fe.md wiki=wiki/sources/web-2026-01-02-6fe.md
+
+## [2026-05-19T14:49:07Z] filter-correction | id=web-2025-02-05-f51 | domain=condo-capital-infra | decision=include | original_score=0.62
+
+rationale='Condo Control cross-provincial reserve fund requirements summary (ON/AB/BC) is a secondary regulatory triangulation source for Finding-0017 §7C and Brief-0011. Specifically: confirms ON Class 1/2/3 cycle, AB 5-year cycle + 12-unit DIY exception, BC July 1 2024 deferral elimination + 5-year cycle + six qualified-provider categories (P.Eng, architect, applied science technologist, AACI appraiser, CRP, quantity surveyor) effective July 1 2025. The BC section correctly states the July 1 2026 Metro Vancouver / Fraser Valley / CRD deadline and the July 1 2027 other-BC deadline — making this the clearest single-source qualified-provider and deadline cross-reference available without navigating BC regulation text. NS is not covered, which limits its utility for the Halifax wave, but it is the practitioner standard for the Toronto and Vancouver waves in Brief-0011.'
+
+## [2026-05-19T14:49:14Z] filter-correction | id=web-2022-03-01-ef4 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='PVSC data-disclosure policy page is operationally load-bearing for the can-pilot NS covariate adapter despite lacking reserve-study methodology content. Key signals: (1) confirms bulk-data access route runs through the Geographic Information Services (GIS) Division of the Office of Service Nova Scotia — not PVSC directly — which is the correct procurement contact for the NS covariate seed file; (2) confirms datazONE open-data portal as the public-facing release channel; (3) establishes the FOIPOP Act as the governing disclosure framework and enumerates exclusion categories (personal info, third-party business harms, safety). These three points collectively define the NS covariate access pathway that the can-pilot Halifax wave must navigate before bulk assessment data can be ingested. Narrow but non-substitutable for the Halifax implementation.'
+
+## [2026-05-19T14:49:20Z] ingest | id=pdf-c974b5dbd563 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-c974b5dbd563.md wiki=wiki/sources/pdf-c974b5dbd563.md
+
+## [2026-05-19T14:51:42Z] wiki-author | id=web-2026-01-02-6fe | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Source confirms BC Assessment as the organization publishing both the Search Service and a broader data-product portfolio, surfaces 2026 assessment-roll headline statistics, and contains a second distinct commercial-use prohibition notice load-bearing for the can-pilot Vancouver wave ToS adapter.
+
+## [2026-05-19T14:54:23Z] ingest | id=web-2025-11-06-4cc | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2025-11-06-4cc.md (wiki not written: filter decision=rejected)
+
+## [2026-05-19T14:54:36Z] filter-correction | id=web-2025-11-06-4cc | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale="Condominium Authority of Ontario (CAO) Registry Search is the authoritative seed-list source for the can-pilot Ontario wave (Brief-0011 Wave C1/C2). Finding-0017 §1.2 explicitly cites this registry as the free searchable database providing address, voting unit count, board director names, and management company for ~12,000 ON condo corporations. The 'personal purposes only' restriction is the substantive policy finding — it means the can-pilot ON wave seed-list must be built via individual lookups or CAO data-sharing agreement rather than automated bulk scrape, exactly analogous to the BC Assessment commercial-use restriction. The registry URL and access terms are both load-bearing for tos.py adapter logic. NLM-sync gap expected: this is a JS-rendered SPA; trafilatura captured minimal content. Raw committed; wiki page needed for citation."
+
+## [2026-05-19T14:54:40Z] ingest | id=web-2025-11-06-4cc | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-06-4cc.md wiki=wiki/sources/web-2025-11-06-4cc.md
+
+## [2026-05-19T14:56:13Z] wiki-author | id=web-2025-11-06-4cc | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+The CAO Condo Registry page is the load-bearing primary-source ToS surface for Ontario's authoritative ~12,000-corporation condo registry — the structural analog to the BC Assessment Search Service ToS surface already in the wiki — and needs its own entity page so the can-pilot ON wave tos.py adapter can cite the personal-use restriction directly.
+
+## [2026-05-19T14:56:53Z] filter-correction | id=web-2025-10-21-a7b | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale="City of Toronto Apartment Building Registration open dataset (Open Government Licence — Toronto) is the canonical free covariate anchor for the can-pilot Ontario wave (Brief-0011 Wave C1/C2). Fields include year_built, no_of_storeys, no_of_units, site_address, property_type — directly feeding the ON covariate schema. Published by Municipal Licensing & Standards / RentSafeTO program; covers all rental apartment buildings with 3+ storeys and 10+ units. Download available as CSV (1.6 MB). MATERIAL FINDING: the dataset is marked 'Retired' as of scrape date (last refreshed 2026-05-05, refreshed monthly). Retirement status must be recorded in the wiki source as it affects can-pilot Wave C reliability — a successor dataset search is needed before the ON adapter builds against these fields. Filter score 0.5 (review) should be include: covariate schema + access terms + retirement status are all substantive findings load-bearing for the can-pilot pipeline."
+
+## [2026-05-19T14:56:57Z] ingest | id=web-2025-10-21-a7b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-21-a7b.md wiki=wiki/sources/web-2025-10-21-a7b.md
+
+## [2026-05-19T14:58:08Z] wiki-author | id=web-2025-10-21-a7b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source surfaces a new Ontario-tier open dataset (City of Toronto Apartment Building Registration) that anchors the can-pilot Ontario covariate schema, with a load-bearing finding that the dataset is now marked Retired — material to the can-pilot Wave C reliability framing.
+
+## [2026-05-19T15:02:42Z] wiki-author | id=pdf-c974b5dbd563 | updates=6 | created=2 | updated=4 | contradictions=2 | draft=no
+
+CAO Best Practices Guide is the practitioner-reference regulatory anchor for ON reserve fund studies; create the publication entity + Class 1/2/3 concept, and cross-reference into cao-2024-survey (same publisher), cai-standards (ON deterministic-methodology baseline), and the NS/BC entities for comparator framing.
+
+## [2026-05-19T15:02:51Z] ingest | id=web-2025-02-05-f51 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-02-05-f51.md wiki=wiki/sources/web-2025-02-05-f51.md
+
+## [2026-05-19T15:12:06Z] wiki-author | id=web-2025-02-05-f51 | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Condo Control practitioner-standard ON/AB/BC summary provides clearest single-source BC qualified-provider and 2026/2027-deadline cross-reference, plus new BC contribution-rule facts (10% Nov 2023 minimum, increased owner-developer formula, 3-cash-flow-models requirement) not yet captured in BC SPA page.
+
+## [2026-05-19T15:12:12Z] ingest | id=web-2022-03-01-ef4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-03-01-ef4.md wiki=wiki/sources/web-2022-03-01-ef4.md
+
+## [2026-05-19T15:13:35Z] wiki-author | id=web-2022-03-01-ef4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+PVSC Data Disclosure policy is operationally load-bearing as the canonical primary-source definition of the NS property-assessment bulk-data access pathway (GIS Division of Service Nova Scotia + datazONE portal + FOIPOP Act exclusion categories) that the can-pilot Halifax wave's NS covariate adapter must navigate; no existing PVSC entity exists in the wiki, so this creates the entity page.
+
+## [2026-05-19T15:15:32Z] ingest | id=docx-f70cc64d728a | type=docx | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/docx/docx-f70cc64d728a.md wiki=wiki/sources/docx-f70cc64d728a.md
+
+## [2026-05-19T15:19:27Z] wiki-author | id=docx-f70cc64d728a | updates=3 | created=2 | updated=1 | contradictions=0 | draft=no
+
+BCFSA Advisory 24-014 adds the issuing-regulator layer (BCFSA), the prior-cycle historical fact (3 years before the July 2024 amendment), the Order in Council 204-2024 transitional-provisions instrument, and the REDMA disclosure-statement amendment pathway for developers — all of which extend the BC SPA regulatory evidence base without contradicting existing claims.
+
+## [2026-05-19T15:35:52Z] ingest | id=docx-ea451e0d4901 | type=docx | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/docx/docx-ea451e0d4901.md (wiki not written: filter decision=review)
+
+## [2026-05-19T15:36:10Z] filter-correction | id=docx-ea451e0d4901 | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale="BCFSA is the BC regulator for strata financial regulation and the primary authoritative source for qualified-provider rule changes. This blog post (Jan 26 2026) is the regulator's own announcement of the Oct 27 2025 expansion of eligible depreciation-report providers to include professional licensees engineering (APEGBC), architectural technologists (AIBC), and certified technicians (ASTTBC). It closes the H3 date-discrepancy in Finding-0018, is the BCFSA-source cite required for any customer-facing BC regulatory citation chain, and is load-bearing for the can-pilot BC wave delivery-partner qualification screening. The filter's methodology/engine framing is too narrow — regulatory compliance and delivery-partner qualification are both explicitly in-scope per the domain policy."
+
+## [2026-05-19T15:36:15Z] ingest | id=docx-ea451e0d4901 | type=docx | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/docx/docx-ea451e0d4901.md wiki=wiki/sources/docx-ea451e0d4901.md
+
+## [2026-05-19T15:40:37Z] wiki-author | id=docx-ea451e0d4901 | updates=2 | created=0 | updated=2 | contradictions=1 | draft=no
+
+BCFSA primary-source confirmation of Oct 27, 2025 expansion of qualified-provider categories for strata depreciation reports and electrical planning reports; resolves date discrepancy in existing wiki claims and adds the EPR regulatory regime as a new surface area within the BC strata regulatory frame.
+
+## [2026-05-19T15:41:18Z] ingest | id=web-2013-11-28-88b | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/web/web-2013-11-28-88b.md wiki=wiki/sources/web-2013-11-28-88b.md
+
+## [2026-05-19T15:51:38Z] ingest | id=web-2025-10-21-9f1 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.75
+
+raw=raw/web/web-2025-10-21-9f1.md wiki=wiki/sources/web-2025-10-21-9f1.md
+
+## [2026-05-19T15:52:41Z] wiki-author | id=web-2025-10-21-9f1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is a JS-rendered Toronto Open Data Portal landing page for the Apartment Building Evaluation dataset; trafilatura extracted only field labels with no values, so only a minimal landing-page entity is defensible. No contradictions surfaced against existing wiki claims.
+
+## [2026-05-20T16:45:47Z] bootstrap-domain | slug=risksystems | inclusion_count=10 | exclusion_count=6
+
+authored policy for risksystems from description
+
+## [2026-05-20T16:48:03Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=start | domain=risksystems
+
+start research session for prompt "What is the state of the art in Bayesian hierarchical and survival models for infrastructure deterioration and capital-asset reliability? Specifically: partial-pooling architectures for sparse multi-jurisdiction / multi-cohort component data; engineer-judgement-as-prior elicitation (expert elicitation under SHELF, Cooke method, Hora protocols); Weibull / lognormal / Cox PH and gamma-process survival under right-censoring; mixed-effects survival with covariates such as wind-driven-rain load, chloride exposure, freeze-thaw cycles; calibration of structure-type-cohort priors when leaf cohorts are sparse and pooling chains matter (POOLED → jurisdiction → structure-family → structure-type); posterior predictive checks and calibration diagnostics that hold up under licensed-professional sign-off. Map the methodological frontier against the Longspan v1.1 architecture: a Bayesian / Weibull / lognormal / Monte Carlo engine with structure-type cohort calibration (60-building BC concrete-frame highrise sample, 108-816 observations per component class), engineer's point estimate blended 1:1 with the cohort Weibull EUL draw, cost drawn from the cohort lognormal, 10,000 MC simulations per building. Surface seminal authors (Madanat, Mishalani, Golabi, Frangopol, Faber, Sundararajan), reference applied systems (HDM-4, AASHTO TAMP, KANEW, AWARE-P, Pontis), and recent (2020-2026) refinements."
+
+## [2026-05-20T16:48:16Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=start | domain=risksystems
+
+start research session for prompt "What is the state of the art in physics-informed machine learning (PINNs) and hybrid mechanistic-statistical models (SciML) for built-environment deterioration mechanisms, and how does it transfer to a probabilistic reserve-study engine? Specifically: PINNs and neural-ODE methods for chloride ingress in reinforced concrete (Fick's law + corrosion initiation); carbonation depth modeling; freeze-thaw damage accumulation; fatigue and stress-cycle prediction; moisture-transport and wind-driven-rain (WDR) penetration on building envelopes including face-sealed precast and EIFS; corrosion-current modeling for plumbing risers (low-pH supply, copper / galvanized / PEX failure modes); EPDM / TPO / SBS roofing membrane life prediction from UV / thermal-cycling first-principles. Also: hybrid mechanistic-statistical (gray-box) models where a physics-based deterioration kernel is fit per-building from sparse inspection observations using Bayesian inference; differentiable physics simulators that can be conditioned on work-order events; uncertainty propagation through coupled mechanism models. Frame for Longspan: today the engine treats EUL as a pure cohort-Weibull draw blended with engineer judgement, with no first-principles deterioration kernel — the question is which mechanisms repay a physics-informed extension first (envelope WDR, plumbing-riser pitting, roof UV, parking-deck chloride). Surface ASHRAE 160 (moisture envelope), ASCE 7, RILEM technical committee outputs, and the SciML / DeepXDE / NeuralPDE literature where applicable."
+
+## [2026-05-20T16:48:24Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-20-what-is-the-state-of-the.yaml
+
+## [2026-05-20T16:48:27Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=start | domain=risksystems
+
+start research session for prompt "What is the state of the art in Gaussian processes, state-space methods (Kalman / extended-Kalman / unscented / particle filters), and tabular ML ensembles for online conditioning of asset condition on inspection and work-order data — and what are the strongest counter-arguments to a Bayesian survival architecture from the boosted-tree and tabular-foundation-model side? Specifically: GP regression and GP latent-variable models for sparse longitudinal inspection data; multi-task GPs across correlated component classes; deep kernel learning when the input space includes both engineering covariates and free-text inspection notes; Kalman / EKF / UKF / particle filter formulations for hidden-condition state from noisy sensor and work-order streams; online learning when work orders arrive irregularly; XGBoost / LightGBM / CatBoost ensembles trained on tabular component-class panels; TabPFN, SAINT, FT-Transformer and other tabular-foundation-model baselines for sparse / mixed-feature data; the calibration question (Platt / isotonic / conformal prediction) when boosted-tree outputs are pushed into a probabilistic decision pipeline. Frame for Longspan v2: today the engine is fully offline (no work-order conditioning), with cohort-level priors fixed at calibration time. Brief-0004 Phase 4 wants to ingest Summer Gardens' work-order history; the question is whether that goes through a state-space filter, a GP-conditioned posterior update, or an ensemble surrogate that re-fits the cohort prior. Surface PHM Society canon, ASCE prognostics literature, and Bayesian-optimal-experimental-design references applicable to inspect-repair-replace value-of-information."
+
+## [2026-05-20T16:48:37Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-20-what-is-the-state-of-the.yaml
+
+## [2026-05-20T16:48:39Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=start | domain=risksystems
+
+start research session for prompt "What is the state of the art in foundation-model / LLM approaches to structured extraction from engineering and reserve-study documents, decision-narrative generation for licensed-professional sign-off, and causal inference / counterfactual reasoning for capital-project overrun attribution? Specifically: LLM-as-judge and LLM-with-tools for extracting structured component-level data (component class, EUL, RUL, effective age, present cost, condition rating) from heterogeneous PDF reserve studies and depreciation reports; retrieval-augmented and citation-grounded extraction with quality / hallucination controls; constrained-decoding and schema-bound extraction (Outlines, Pydantic-LLM); LLM-generated decision narrative built on top of a deterministic probabilistic engine, including the failure mode where vendors ship 'AI narrative on a deterministic engine' as a substitute for probabilistic methodology (the 'AI narrative is table stakes' competitive frame). Separately: causal inference frameworks (DoWhy, EconML, CausalML), target trial emulation, instrumental variables, difference-in-differences, regression discontinuity, double-machine-learning, when applied to retrospective questions like 'did this maintenance regime defer this failure', 'what would the assessment have been under intervention X', 'how much of this cost overrun is attributable to scope-creep vs cost-escalation vs deterioration vs vendor pricing'. POMDP and Bayesian decision theory for inspect-repair-replace under uncertainty, with quantified value-of-information. Frame for Longspan v2/v3: the engine today produces P10/P50/P90 bands but no causal narrative; the question is what role LLM/foundation-model approaches play (extraction yes, methodology no), and which causal-inference primitives become a v3 deliverable for board-facing retrospective questions."
+
+## [2026-05-20T16:48:45Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-20-what-is-the-state-of-the.yaml
+
+## [2026-05-20T16:48:58Z] research | session_id=2026-05-20-what-is-the-state-of-the | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-20-what-is-the-state-of-the.yaml
+
+## [2026-05-20T16:52:03Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=start | domain=risksystems
+
+start research session for prompt 'Risksystems Q1 Bayesian hierarchical survival mapping vs Longspan v1.1'
+
+## [2026-05-20T16:52:03Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=plan | n=54
+
+query plan written to nlm/query_plans/2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping.yaml
+
+## [2026-05-20T16:52:03Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T16:52:09Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=search | target=semantic_scholar
+
+error: S2 API rate limit exceeded; set S2_API_KEY for higher limits
+
+## [2026-05-20T16:52:11Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=search | adapter=youtube | n=54
+
+adapter youtube returned 54 candidates
+
+## [2026-05-20T16:52:18Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T16:52:33Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-20T16:52:33Z] research | session_id=2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping | step=merge | n=113
+
+merged 113 candidate(s) across adapters
+
+## [2026-05-20T16:56:23Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=start | domain=risksystems
+
+start research session for prompt "Risksystems Q1 of 4 — state of the art in Bayesian hierarchical and survival\nmodels for infrastructure deterioration and capital-asset reliability. Map\nthe methodological frontier against the Longspan v1.1 architecture: a\nBayesian / Weibull / lognormal / Monte Carlo engine with structure-type\ncohort calibration (60-building BC concrete-frame highrise sample, 108-816\nobservations per component class), engineer's point estimate blended 1:1\nwith the cohort Weibull EUL draw, cost drawn from the cohort lognormal,\nfallback chain POOLED → jurisdiction → structure-family → structure-type,\n10,000 MC simulations per building. Specifically: partial-pooling\narchitectures for sparse multi-jurisdiction component data; engineer-\njudgement-as-prior elicitation (SHELF, Cooke, Hora); Weibull / lognormal /\nCox PH / gamma-process survival under right-censoring; mixed-effects\nsurvival with engineering covariates (WDR load, chloride exposure, freeze-\nthaw cycles); posterior predictive checks and calibration diagnostics that\nhold up under licensed-professional sign-off. Seminal authors: Madanat,\nMishalani, Golabi (DOT pavement/bridge); Frangopol, Faber, Sundararajan\n(structural reliability + LCC); Cooke (expert elicitation); Gelman, Hoffman\n(Bayesian hierarchical practice). Reference systems: HDM-4, AASHTO TAMP,\nPontis, KANEW, AWARE-P. Recent (2020-2026) refinements explicitly in scope.\n"
+
+## [2026-05-20T16:56:23Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T16:56:28Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T16:56:28Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | target=semantic_scholar
+
+error: S2 API rate limit exceeded; set S2_API_KEY for higher limits
+
+## [2026-05-20T16:56:31Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=youtube | n=54
+
+adapter youtube returned 54 candidates
+
+## [2026-05-20T16:56:53Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-20T16:56:53Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=merge | n=113
+
+merged 113 candidate(s) across adapters
+
+## [2026-05-20T17:02:31Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=filter | n=10
+
+10 candidate(s) cleared threshold
+
+## [2026-05-20T17:02:33Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.ispor.org/docs/default-source/euro2021/europe21oakley.pdf?sfvrsn=c258f04f_0
+
+error: no extractable content at https://www.ispor.org/docs/default-source/euro2021/europe21oakley.pdf?sfvrsn=c258f04f_0
+
+## [2026-05-20T17:02:36Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.wsdot.wa.gov/research/reports/fullreports/588.1.pdf
+
+error: no extractable content at https://www.wsdot.wa.gov/research/reports/fullreports/588.1.pdf
+
+## [2026-05-20T17:02:42Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=materialize | n=8
+
+materialized 8 source(s) to raw/
+
+## [2026-05-20T17:25:10Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=start | domain=risksystems
+
+start research session for prompt "Risksystems Q1 of 4 — state of the art in Bayesian hierarchical and survival\nmodels for infrastructure deterioration and capital-asset reliability. Map\nthe methodological frontier against the Longspan v1.1 architecture: a\nBayesian / Weibull / lognormal / Monte Carlo engine with structure-type\ncohort calibration (60-building BC concrete-frame highrise sample, 108-816\nobservations per component class), engineer's point estimate blended 1:1\nwith the cohort Weibull EUL draw, cost drawn from the cohort lognormal,\nfallback chain POOLED → jurisdiction → structure-family → structure-type,\n10,000 MC simulations per building. Specifically: partial-pooling\narchitectures for sparse multi-jurisdiction component data; engineer-\njudgement-as-prior elicitation (SHELF, Cooke, Hora); Weibull / lognormal /\nCox PH / gamma-process survival under right-censoring; mixed-effects\nsurvival with engineering covariates (WDR load, chloride exposure, freeze-\nthaw cycles); posterior predictive checks and calibration diagnostics that\nhold up under licensed-professional sign-off. Seminal authors: Madanat,\nMishalani, Golabi (DOT pavement/bridge); Frangopol, Faber, Sundararajan\n(structural reliability + LCC); Cooke (expert elicitation); Gelman, Hoffman\n(Bayesian hierarchical practice). Reference systems: HDM-4, AASHTO TAMP,\nPontis, KANEW, AWARE-P. Recent (2020-2026) refinements explicitly in scope.\n"
+
+## [2026-05-20T17:25:10Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T17:25:15Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T17:25:18Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-20T17:25:18Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=youtube | n=54
+
+adapter youtube returned 54 candidates
+
+## [2026-05-20T17:25:26Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=search | adapter=semantic_scholar | n=67
+
+adapter semantic_scholar returned 67 candidates
+
+## [2026-05-20T17:25:26Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=merge | n=231
+
+merged 231 candidate(s) across adapters
+
+## [2026-05-20T17:36:26Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=filter | n=41
+
+41 candidate(s) cleared threshold
+
+## [2026-05-20T17:36:29Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.journals.uchicago.edu/doi/full/10.1093/reep/rex022
+
+error: could not fetch https://www.journals.uchicago.edu/doi/full/10.1093/reep/rex022
+
+## [2026-05-20T17:36:29Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.tandfonline.com/doi/abs/10.1080/15732470500253164
+
+error: could not fetch https://www.tandfonline.com/doi/abs/10.1080/15732470500253164
+
+## [2026-05-20T17:36:30Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.wsdot.wa.gov/research/reports/fullreports/588.1.pdf
+
+error: no extractable content at https://www.wsdot.wa.gov/research/reports/fullreports/588.1.pdf
+
+## [2026-05-20T17:36:46Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1111/mice.70159
+
+error: no extractable content at https://doi.org/10.1111/mice.70159
+
+## [2026-05-20T17:36:47Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1109/ICCA66035.2025.11431033
+
+error: could not fetch https://doi.org/10.1109/ICCA66035.2025.11431033
+
+## [2026-05-20T17:36:47Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1080/15732479.2016.1217888
+
+error: could not fetch https://doi.org/10.1080/15732479.2016.1217888
+
+## [2026-05-20T17:36:50Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1007/s12046-025-02928-2
+
+error: could not fetch https://doi.org/10.1007/s12046-025-02928-2
+
+## [2026-05-20T17:36:52Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.3390/su141811435
+
+error: could not fetch https://doi.org/10.3390/su141811435
+
+## [2026-05-20T17:36:52Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1061/40799(213)3
+
+error: could not fetch https://doi.org/10.1061/40799(213)3
+
+## [2026-05-20T17:36:52Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1061/(ASCE)1076-0342(2007)13:3(195)
+
+error: could not fetch https://doi.org/10.1061/(ASCE)1076-0342(2007)13:3(195)
+
+## [2026-05-20T17:36:53Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1016/J.TRB.2011.03.002
+
+error: no extractable content at https://doi.org/10.1016/J.TRB.2011.03.002
+
+## [2026-05-20T17:36:53Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.semanticscholar.org/paper/55669546
+
+error: could not fetch https://www.semanticscholar.org/paper/55669546
+
+## [2026-05-20T17:36:54Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1016/J.STRUSAFE.2010.05.002
+
+error: no extractable content at https://doi.org/10.1016/J.STRUSAFE.2010.05.002
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1016/J.STRUSAFE.2009.06.005
+
+error: no extractable content at https://doi.org/10.1016/J.STRUSAFE.2009.06.005
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1061/(ASCE)0733-9445(2004)130:11(1704)
+
+error: could not fetch https://doi.org/10.1061/(ASCE)0733-9445(2004)130:11(1704)
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1080/15732479.2020.1815807
+
+error: could not fetch https://doi.org/10.1080/15732479.2020.1815807
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1016/J.RESS.2020.107242
+
+error: no extractable content at https://doi.org/10.1016/J.RESS.2020.107242
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1016/j.ress.2020.107117
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2020.107117
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1016/J.MARSTRUC.2012.05.001
+
+error: no extractable content at https://doi.org/10.1016/J.MARSTRUC.2012.05.001
+
+## [2026-05-20T17:36:55Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://www.semanticscholar.org/paper/106544968
+
+error: could not fetch https://www.semanticscholar.org/paper/106544968
+
+## [2026-05-20T17:36:56Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1007/978-1-4615-1771-9
+
+error: could not fetch https://doi.org/10.1007/978-1-4615-1771-9
+
+## [2026-05-20T17:36:57Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1007/978-1-4615-1771-9_12
+
+error: could not fetch https://doi.org/10.1007/978-1-4615-1771-9_12
+
+## [2026-05-20T17:36:58Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1007/978-1-4615-1771-9_9
+
+error: could not fetch https://doi.org/10.1007/978-1-4615-1771-9_9
+
+## [2026-05-20T17:36:58Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=convert | target=https://doi.org/10.1115/1.3264392
+
+error: could not fetch https://doi.org/10.1115/1.3264392
+
+## [2026-05-20T17:36:58Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=materialize | n=17
+
+materialized 17 source(s) to raw/
+
+## [2026-05-20T17:36:59Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T17:37:00Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=nlm_session | notebook_id=1908c20b-9f7a-4910-bd87-b0ef7f3f31c0
+
+created session notebook 1908c20b-9f7a-4910-bd87-b0ef7f3f31c0
+
+## [2026-05-20T17:37:38Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=source_add | target=https://structurae.net/fr/litterature/periodiques/structural-safety/75089-2025-3
+
+error: `nlm source add 1908c20b-9f7a-4910-bd87-b0ef7f3f31c0 --url https://structurae.net/fr/litterature/periodiques/structural-safety/75089-2025-3 --wait` exited 1: Adding 
+https://structurae.net/fr/litterature/periodiques/structural-safety/75089-2025-3
+and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-20T17:38:44Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=source_add | n=16 | skipped=1
+
+pushed 16 source(s) to session notebook (1 skipped)
+
+## [2026-05-20T17:38:45Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=source_map | n=16
+
+built source map (16 entries)
+
+## [2026-05-20T17:49:04Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-20T17:49:05Z] wiki-author | id=research-2026-05-20-risksystems-01-bayesian-hierarchical-survival | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+corpus-constructive research session for risksystems
+
+## [2026-05-20T17:49:05Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-05-20-risksystems-01-bayesian-hierarchical-survival: 6 update(s)
+
+## [2026-05-20T17:49:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=start | domain=risksystems
+
+start research session for prompt "Risksystems Q2 of 4 — state of the art in physics-informed machine learning\n(PINNs) and hybrid mechanistic-statistical models (SciML) for built-environment\ndeterioration. Frame for Longspan: today the engine treats EUL as a pure cohort-\nWeibull draw blended with engineer judgement, with no first-principles\ndeterioration kernel. The question is which mechanisms repay a physics-informed\nextension first (envelope WDR, plumbing-riser pitting, roof UV, parking-deck\nchloride). Specifically: PINNs and neural-ODE methods for chloride ingress in\nreinforced concrete (Fick's second law + corrosion initiation, Tuutti model);\ncarbonation depth modeling; freeze-thaw damage accumulation (Powers, Litvan);\nfatigue and stress-cycle prediction; moisture-transport and wind-driven-rain\n(WDR) penetration on building envelopes including face-sealed precast and EIFS\n(ASHRAE 160, WUFI, HAMFitPlus); corrosion-current modeling for plumbing risers\n(low-pH supply, copper / galvanized / PEX failure modes); EPDM / TPO / SBS\nroofing membrane life prediction from UV / thermal-cycling. Also: hybrid\nmechanistic-statistical (gray-box) models where a physics-based kernel is fit\nper-building from sparse inspection observations using Bayesian inference;\ndifferentiable physics simulators conditionable on work-order events;\nuncertainty propagation through coupled mechanism models. Relevant venues:\nRILEM TCs, Building and Environment, Cement and Concrete Research, JOSE,\nSciML / DeepXDE / NeuralPDE / NVIDIA Modulus literature.\n"
+
+## [2026-05-20T17:49:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T17:49:41Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=youtube | n=57
+
+adapter youtube returned 57 candidates
+
+## [2026-05-20T17:49:47Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T17:49:49Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=semantic_scholar | n=73
+
+adapter semantic_scholar returned 73 candidates
+
+## [2026-05-20T17:49:51Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=arxiv | n=70
+
+adapter arxiv returned 70 candidates
+
+## [2026-05-20T17:49:51Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=merge | n=249
+
+merged 249 candidate(s) across adapters
+
+## [2026-05-20T17:51:03Z] research | session_id=2026-05-20-risksystems-01-bayesian-hierarchical-survival | step=promoted | added=15 | failed=2
+
+promoted 15 source(s) into persistent notebook (2 failed)
+
+## [2026-05-20T18:02:14Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=filter | n=14
+
+14 candidate(s) cleared threshold
+
+## [2026-05-20T18:02:14Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://www.mdpi.com/2075-5309/15/5/666
+
+error: could not fetch https://www.mdpi.com/2075-5309/15/5/666
+
+## [2026-05-20T18:02:15Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://link.springer.com/article/10.1007/s11709-022-0830-4
+
+error: could not fetch https://link.springer.com/article/10.1007/s11709-022-0830-4
+
+## [2026-05-20T18:02:17Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1016/j.cscm.2025.e05475
+
+error: no extractable content at https://doi.org/10.1016/j.cscm.2025.e05475
+
+## [2026-05-20T18:02:17Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1016/j.compstruc.2026.108120
+
+error: no extractable content at https://doi.org/10.1016/j.compstruc.2026.108120
+
+## [2026-05-20T18:02:18Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1016/j.engappai.2023.106691
+
+error: no extractable content at https://doi.org/10.1016/j.engappai.2023.106691
+
+## [2026-05-20T18:02:33Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://arxiv.org/abs/2205.03478
+
+error: arxiv API network error for 2205.03478: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-20T18:02:33Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.3390/app16073194
+
+error: could not fetch https://doi.org/10.3390/app16073194
+
+## [2026-05-20T18:02:33Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1109/TII.2024.3495776
+
+error: could not fetch https://doi.org/10.1109/TII.2024.3495776
+
+## [2026-05-20T18:02:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.5006/c2025-00400
+
+error: could not fetch https://doi.org/10.5006/c2025-00400
+
+## [2026-05-20T18:02:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1177/17442591231163459
+
+error: could not fetch https://doi.org/10.1177/17442591231163459
+
+## [2026-05-20T18:02:52Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://arxiv.org/abs/2410.07205
+
+error: arxiv API network error for 2410.07205: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-20T18:02:52Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=materialize | n=3
+
+materialized 3 source(s) to raw/
+
+## [2026-05-20T18:02:52Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T18:02:53Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=nlm_session | notebook_id=92565b21-bd84-4e10-9f86-3c3a40e1d87c
+
+created session notebook 92565b21-bd84-4e10-9f86-3c3a40e1d87c
+
+## [2026-05-20T18:03:06Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=source_add | n=3 | skipped=0
+
+pushed 3 source(s) to session notebook (0 skipped)
+
+## [2026-05-20T18:03:08Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=source_map | n=3
+
+built source map (3 entries)
+
+## [2026-05-20T18:07:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=analysis | branches=2
+
+analysis complete (2 branch(es))
+
+## [2026-05-20T18:07:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-20-risksystems-02-physics-informed-sciml-statistical-modeling-of-infrastructure-deterioration.md): [synthesizes-shape] synthesizes: `synthesizes:` entries must be `sources/<slug>` or `synthesis/<slug>`; invalid: ['sources/arxiv-2508.13359']
+
+## [2026-05-20T18:08:55Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=start | domain=risksystems
+
+start research session for prompt "Risksystems Q3 of 4 — state of the art in Gaussian processes, state-space\nmethods (Kalman / EKF / UKF / particle filters), and tabular ML ensembles for\nonline conditioning of asset condition on inspection and work-order data, and\nthe strongest counter-arguments to a Bayesian survival architecture from the\nboosted-tree and tabular-foundation-model side. Frame for Longspan v2: today\nthe engine is fully offline (no work-order conditioning), with cohort-level\npriors fixed at calibration time. Brief-0004 Phase 4 wants to ingest Summer\nGardens' work-order history (vendor invoices, recurring repairs, podium\nprogram, sealant program); the open question is whether that goes through a\nstate-space filter, a GP-conditioned posterior update, or an ensemble\nsurrogate that re-fits the cohort prior. Specifically: GP regression and GP\nlatent-variable models for sparse longitudinal inspection data; multi-task\nGPs across correlated component classes; deep kernel learning when the input\nspace mixes engineering covariates and free-text inspection notes; Kalman /\nEKF / UKF / particle filter formulations for hidden-condition state from\nnoisy work-order streams; online learning when work orders arrive irregularly;\nXGBoost / LightGBM / CatBoost on tabular component-class panels; TabPFN /\nSAINT / FT-Transformer as tabular foundation-model baselines; calibration\n(Platt / isotonic / conformal prediction) when boosted-tree outputs feed a\nprobabilistic decision pipeline. PHM Society canon, ASCE prognostics\nliterature, Bayesian optimal experimental design for inspect-repair-replace.\n"
+
+## [2026-05-20T18:08:55Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T18:09:02Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=search | adapter=youtube | n=58
+
+adapter youtube returned 58 candidates
+
+## [2026-05-20T18:09:10Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-20T18:09:11Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=search | adapter=semantic_scholar | n=75
+
+adapter semantic_scholar returned 75 candidates
+
+## [2026-05-20T18:09:11Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T18:09:11Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=merge | n=193
+
+merged 193 candidate(s) across adapters
+
+## [2026-05-20T18:18:40Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=filter | n=15
+
+15 candidate(s) cleared threshold
+
+## [2026-05-20T18:18:40Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.3390/pr10010036
+
+error: could not fetch https://doi.org/10.3390/pr10010036
+
+## [2026-05-20T18:18:41Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1016/j.ifacol.2020.11.056
+
+error: no extractable content at https://doi.org/10.1016/j.ifacol.2020.11.056
+
+## [2026-05-20T18:18:41Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1007/s12205-018-0014-x
+
+error: no extractable content at https://doi.org/10.1007/s12205-018-0014-x
+
+## [2026-05-20T18:18:42Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.3390/machines13111058
+
+error: could not fetch https://doi.org/10.3390/machines13111058
+
+## [2026-05-20T18:18:42Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1061/(ASCE)IS.1943-555X.0000178
+
+error: could not fetch https://doi.org/10.1061/(ASCE)IS.1943-555X.0000178
+
+## [2026-05-20T18:18:43Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1177/1748006X211020151
+
+error: could not fetch https://doi.org/10.1177/1748006X211020151
+
+## [2026-05-20T18:18:43Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1111/mice.12178
+
+error: no extractable content at https://doi.org/10.1111/mice.12178
+
+## [2026-05-20T18:18:43Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1061/(ASCE)CF.1943-5509.0000216
+
+error: could not fetch https://doi.org/10.1061/(ASCE)CF.1943-5509.0000216
+
+## [2026-05-20T18:18:43Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1109/TIE.2020.3009593
+
+error: could not fetch https://doi.org/10.1109/TIE.2020.3009593
+
+## [2026-05-20T18:18:44Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1109/TR.2026.3667980
+
+error: could not fetch https://doi.org/10.1109/TR.2026.3667980
+
+## [2026-05-20T18:18:44Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://www.semanticscholar.org/paper/239001591
+
+error: could not fetch https://www.semanticscholar.org/paper/239001591
+
+## [2026-05-20T18:18:44Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=convert | target=https://doi.org/10.1080/00295639.2024.2303165
+
+error: could not fetch https://doi.org/10.1080/00295639.2024.2303165
+
+## [2026-05-20T18:18:46Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=materialize | n=3
+
+materialized 3 source(s) to raw/
+
+## [2026-05-20T18:18:46Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T18:18:47Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=nlm_session | notebook_id=3ea84060-aaf6-4dc2-b386-747988538376
+
+created session notebook 3ea84060-aaf6-4dc2-b386-747988538376
+
+## [2026-05-20T18:19:03Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=source_add | n=3 | skipped=0
+
+pushed 3 source(s) to session notebook (0 skipped)
+
+## [2026-05-20T18:19:04Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=source_map | n=3
+
+built source map (3 entries)
+
+## [2026-05-20T18:25:42Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=analysis | branches=3
+
+analysis complete (3 branch(es))
+
+## [2026-05-20T18:25:43Z] wiki-author | id=research-2026-05-20-risksystems-03-gp-state-space-ensembles | updates=5 | created=4 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for risksystems
+
+## [2026-05-20T18:25:43Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=apply_plan | pages=6
+
+applied plan: applied plan for research-2026-05-20-risksystems-03-gp-state-space-ensembles: 5 update(s)
+
+## [2026-05-20T18:25:52Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=start | domain=risksystems
+
+start research session for prompt 'Risksystems Q4 of 4 — foundation-model / LLM approaches to structured extraction\nfrom engineering and reserve-study documents, decision-narrative generation for\nlicensed-professional sign-off, and causal inference / counterfactual reasoning\nfor capital-project overrun attribution. Frame: Longspan v1.1 produces P10/P50/P90\nbands but no causal narrative; the question is what role LLM/foundation-model\napproaches play (extraction yes, methodology no) and which causal-inference\nprimitives become a v3 deliverable for board-facing retrospective questions.\nSpecifically: LLM-as-judge + LLM-with-tools for structured extraction;\nconstrained decoding (Outlines, Pydantic-AI, Instructor, BAML); RAG quality +\nhallucination controls (RAGAS, RAGTruth, citation-grounded retrieval); LLM\nnarrative on top of a probabilistic engine including the "AI narrative is table\nstakes" competitive frame; causal inference under DoWhy / EconML / CausalML;\ntarget trial emulation (Hernan); difference-in-differences and regression\ndiscontinuity for retrospective maintenance-intervention effect estimation;\ndouble-ML; POMDP + Bayesian decision theory for inspect-repair-replace with\nquantified value-of-information.\n'
+
+## [2026-05-20T18:25:52Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T18:26:01Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=search | adapter=youtube | n=69
+
+adapter youtube returned 69 candidates
+
+## [2026-05-20T18:26:01Z] research | session_id=2026-05-20-risksystems-03-gp-state-space-ensembles | step=promoted | added=3 | failed=0
+
+promoted 3 source(s) into persistent notebook
+
+## [2026-05-20T18:26:04Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=search | adapter=arxiv | n=60
+
+adapter arxiv returned 60 candidates
+
+## [2026-05-20T18:26:06Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T18:26:09Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=search | adapter=semantic_scholar | n=67
+
+adapter semantic_scholar returned 67 candidates
+
+## [2026-05-20T18:26:09Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=merge | n=254
+
+merged 254 candidate(s) across adapters
+
+## [2026-05-20T18:37:43Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=filter | n=12
+
+12 candidate(s) cleared threshold
+
+## [2026-05-20T18:37:48Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S095183202100541X
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S095183202100541X
+
+## [2026-05-20T18:37:49Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://inldigitallibrary.inl.gov/sites/sti/sti/Sort_65875.pdf
+
+error: no extractable content at https://inldigitallibrary.inl.gov/sites/sti/sti/Sort_65875.pdf
+
+## [2026-05-20T18:37:51Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://homepages.laas.fr/echanthe/Articles/challenge_pomdp08.pdf
+
+error: no extractable content at https://homepages.laas.fr/echanthe/Articles/challenge_pomdp08.pdf
+
+## [2026-05-20T18:37:53Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://www.fhwa.dot.gov/asset/pubs/hif13047.pdf
+
+error: no extractable content at https://www.fhwa.dot.gov/asset/pubs/hif13047.pdf
+
+## [2026-05-20T18:37:58Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://doi.org/10.1016/j.oceaneng.2020.108286
+
+error: no extractable content at https://doi.org/10.1016/j.oceaneng.2020.108286
+
+## [2026-05-20T18:37:59Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://doi.org/10.1007/s00158-024-03902-y
+
+error: could not fetch https://doi.org/10.1007/s00158-024-03902-y
+
+## [2026-05-20T18:37:59Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=convert | target=https://doi.org/10.1016/j.ress.2023.109214
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2023.109214
+
+## [2026-05-20T18:37:59Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=materialize | n=5
+
+materialized 5 source(s) to raw/
+
+## [2026-05-20T18:37:59Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T18:38:00Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=nlm_session | notebook_id=bd11f26a-12f7-4692-8409-9550d1b13419
+
+created session notebook bd11f26a-12f7-4692-8409-9550d1b13419
+
+## [2026-05-20T18:38:30Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=source_add | n=5 | skipped=0
+
+pushed 5 source(s) to session notebook (0 skipped)
+
+## [2026-05-20T18:38:32Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=source_map | n=5
+
+built source map (5 entries)
+
+## [2026-05-20T18:44:57Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=analysis | branches=3
+
+analysis complete (3 branch(es))
+
+## [2026-05-20T18:44:58Z] wiki-author | id=research-2026-05-20-risksystems-04-foundation-models-causal | updates=5 | created=4 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for risksystems
+
+## [2026-05-20T18:44:58Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=apply_plan | pages=6
+
+applied plan: applied plan for research-2026-05-20-risksystems-04-foundation-models-causal: 5 update(s)
+
+## [2026-05-20T18:45:20Z] research | session_id=2026-05-20-risksystems-04-foundation-models-causal | step=promoted | added=3 | failed=1
+
+promoted 3 source(s) into persistent notebook (1 failed)
+
+## [2026-05-20T18:45:27Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=start | domain=risksystems
+
+start research session for prompt "Risksystems Q2 of 4 — state of the art in physics-informed machine learning\n(PINNs) and hybrid mechanistic-statistical models (SciML) for built-environment\ndeterioration. Frame for Longspan: today the engine treats EUL as a pure cohort-\nWeibull draw blended with engineer judgement, with no first-principles\ndeterioration kernel. The question is which mechanisms repay a physics-informed\nextension first (envelope WDR, plumbing-riser pitting, roof UV, parking-deck\nchloride). Specifically: PINNs and neural-ODE methods for chloride ingress in\nreinforced concrete (Fick's second law + corrosion initiation, Tuutti model);\ncarbonation depth modeling; freeze-thaw damage accumulation (Powers, Litvan);\nfatigue and stress-cycle prediction; moisture-transport and wind-driven-rain\n(WDR) penetration on building envelopes including face-sealed precast and EIFS\n(ASHRAE 160, WUFI, HAMFitPlus); corrosion-current modeling for plumbing risers\n(low-pH supply, copper / galvanized / PEX failure modes); EPDM / TPO / SBS\nroofing membrane life prediction from UV / thermal-cycling. Also: hybrid\nmechanistic-statistical (gray-box) models where a physics-based kernel is fit\nper-building from sparse inspection observations using Bayesian inference;\ndifferentiable physics simulators conditionable on work-order events;\nuncertainty propagation through coupled mechanism models. Relevant venues:\nRILEM TCs, Building and Environment, Cement and Concrete Research, JOSE,\nSciML / DeepXDE / NeuralPDE / NVIDIA Modulus literature.\n"
+
+## [2026-05-20T18:45:27Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T18:45:28Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=arxiv | n=70
+
+adapter arxiv returned 70 candidates
+
+## [2026-05-20T18:45:32Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T18:45:34Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=youtube | n=57
+
+adapter youtube returned 57 candidates
+
+## [2026-05-20T18:45:43Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=search | adapter=semantic_scholar | n=73
+
+adapter semantic_scholar returned 73 candidates
+
+## [2026-05-20T18:45:43Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=merge | n=249
+
+merged 249 candidate(s) across adapters
+
+## [2026-05-20T18:57:49Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=filter | n=15
+
+15 candidate(s) cleared threshold
+
+## [2026-05-20T18:57:53Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://dl.astm.org/jte/article/39/1/77/19630/A-Review-of-ASHRAE-Standard-160-Criteria-for
+
+error: could not fetch https://dl.astm.org/jte/article/39/1/77/19630/A-Review-of-ASHRAE-Standard-160-Criteria-for
+
+## [2026-05-20T18:57:54Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://www.mdpi.com/2075-5309/15/5/666
+
+error: could not fetch https://www.mdpi.com/2075-5309/15/5/666
+
+## [2026-05-20T18:57:54Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1155/2024/5532909
+
+error: could not fetch https://doi.org/10.1155/2024/5532909
+
+## [2026-05-20T18:57:55Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1016/j.cscm.2025.e05475
+
+error: no extractable content at https://doi.org/10.1016/j.cscm.2025.e05475
+
+## [2026-05-20T18:57:55Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1016/j.compstruc.2026.108120
+
+error: no extractable content at https://doi.org/10.1016/j.compstruc.2026.108120
+
+## [2026-05-20T18:57:55Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.1016/j.engappai.2023.106691
+
+error: no extractable content at https://doi.org/10.1016/j.engappai.2023.106691
+
+## [2026-05-20T18:57:56Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.3390/app16073194
+
+error: could not fetch https://doi.org/10.3390/app16073194
+
+## [2026-05-20T18:57:57Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.5006/c2025-00400
+
+error: could not fetch https://doi.org/10.5006/c2025-00400
+
+## [2026-05-20T18:57:57Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://doi.org/10.3390/buildings15050666
+
+error: could not fetch https://doi.org/10.3390/buildings15050666
+
+## [2026-05-20T18:57:57Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=convert | target=https://www.semanticscholar.org/paper/107228066
+
+error: could not fetch https://www.semanticscholar.org/paper/107228066
+
+## [2026-05-20T18:57:58Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=materialize | n=5
+
+materialized 5 source(s) to raw/
+
+## [2026-05-20T18:57:58Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T18:57:59Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=nlm_session | notebook_id=db858c02-180a-40a9-9032-c6ad47ec95f7
+
+created session notebook db858c02-180a-40a9-9032-c6ad47ec95f7
+
+## [2026-05-20T18:58:23Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=source_add | n=5 | skipped=0
+
+pushed 5 source(s) to session notebook (0 skipped)
+
+## [2026-05-20T18:58:25Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=source_map | n=5
+
+built source map (5 entries)
+
+## [2026-05-20T19:03:39Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=analysis | branches=2
+
+analysis complete (2 branch(es))
+
+## [2026-05-20T19:03:39Z] wiki-author | id=research-2026-05-20-risksystems-02-physics-informed-sciml | updates=4 | created=3 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for risksystems
+
+## [2026-05-20T19:03:39Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=apply_plan | pages=5
+
+applied plan: applied plan for research-2026-05-20-risksystems-02-physics-informed-sciml: 4 update(s)
+
+## [2026-05-20T19:03:59Z] research | session_id=2026-05-20-risksystems-02-physics-informed-sciml | step=promoted | added=4 | failed=0
+
+promoted 4 source(s) into persistent notebook
+
+## [2026-05-20T19:05:46Z] ingest | id=arxiv-2204.12404 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2204.12404.md wiki=wiki/sources/arxiv-2204.12404.md
+
+## [2026-05-20T19:07:44Z] wiki-author | id=arxiv-2204.12404 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=yes
+
+The paper introduces a hierarchical Bayesian multitask learning framework for engineering fleets that is already heavily referenced in risksystems syntheses but lacks dedicated concept/entity pages; create canonical pages so future ingests have authoritative anchors.
+
+## [2026-05-20T19:07:44Z] ingest | id=web-2026-05-13-b67 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-13-b67.md wiki=wiki/sources/web-2026-05-13-b67.md
+
+## [2026-05-20T19:09:44Z] wiki-author | id=web-2026-05-13-b67 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Source is the canonical SHELF homepage providing primary claims about the framework, its developers, software package, and originating project — none of which have dedicated entity/concept pages yet.
+
+## [2026-05-20T19:09:44Z] ingest | id=arxiv-2512.09163 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2512.09163.md wiki=wiki/sources/arxiv-2512.09163.md
+
+## [2026-05-20T19:11:34Z] wiki-author | id=arxiv-2512.09163 | updates=6 | created=5 | updated=1 | contradictions=0 | draft=yes
+
+Introduce dedicated entity/concept pages for the WTNN paper, its three authors, and the WTNN framework; backfill engineering-fleet-management with the military-vehicle survival-analysis use case.
+
+## [2026-05-20T19:11:34Z] ingest | id=web-2012-01-01-57d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2012-01-01-57d.md wiki=wiki/sources/web-2012-01-01-57d.md
+
+## [2026-05-20T19:14:15Z] wiki-author | id=web-2012-01-01-57d | updates=10 | created=10 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces AWARE-P, its predecessor EU projects (CARE-W, CARE-S), supporting Portuguese institutions (LNEC, ERSAR), key authors (Vitorino, Alegre), and the system-centric IAM concept stack — none of which have entity/concept pages despite being heavily referenced by existing synthesis pages.
+
+## [2026-05-20T19:14:15Z] ingest | id=arxiv-2508.13359 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2508.13359.md wiki=wiki/sources/arxiv-2508.13359.md
+
+## [2026-05-20T19:16:30Z] wiki-author | id=arxiv-2508.13359 | updates=8 | created=7 | updated=1 | contradictions=0 | draft=yes
+
+Source introduces a new bounded transformed gamma process (BTGP) model for infrastructure deterioration; creates author entities, paper entity, core stochastic-process concepts, and extends the IAM concept beyond its water-only framing to cover bridge-deterioration modelling.
+
+## [2026-05-20T19:16:30Z] ingest | id=web-2026-01-13-6bf | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-13-6bf.md wiki=wiki/sources/web-2026-01-13-6bf.md
+
+## [2026-05-20T19:18:46Z] wiki-author | id=web-2026-01-13-6bf | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces LLM-based agents for cleaning maintenance logs as a Predictive Maintenance data-quality intervention — a new sub-area for the risksystems domain with no existing pages.
+
+## [2026-05-20T19:18:46Z] ingest | id=arxiv-2505.20725 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2505.20725.md wiki=wiki/sources/arxiv-2505.20725.md
+
+## [2026-05-20T19:21:02Z] wiki-author | id=arxiv-2505.20725 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces a Double-Deep-Q-Network RL agent operating on a gamma-degradation process with increasingly imperfect repairs — new authors, paper, and concept territory (RL-for-maintenance, DDQN, gamma degradation, imperfect repairs) not covered by existing risksystems pages.
+
+## [2026-05-20T19:21:02Z] ingest | id=web-2025-11-10-fd9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-10-fd9.md wiki=wiki/sources/web-2025-11-10-fd9.md
+
+## [2026-05-20T19:22:56Z] wiki-author | id=web-2025-11-10-fd9 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=yes
+
+New DX 2025 paper introduces a data-driven particle filter for system-level RUL prediction; create author pages, the paper page, and concept pages for the methods and field it covers, none of which exist in the provided wiki context.
+
+## [2026-05-20T19:22:56Z] ingest | id=web-2024-10-20-950 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-10-20-950.md wiki=wiki/sources/web-2024-10-20-950.md
+
+## [2026-05-20T19:24:16Z] wiki-author | id=web-2024-10-20-950 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Source is a 2024 journal article introducing a multivariate Bayesian dynamic linear model for bridge performance degradation; create paper entity, five new author entities, and two new concept pages (multivariate BDLM and bridge performance degradation); no overlap with existing wiki pages so all are new creates.
+
+## [2026-05-20T19:24:16Z] ingest | id=web-2026-03-04-157 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-03-04-157.md wiki=wiki/sources/web-2026-03-04-157.md
+
+## [2026-05-20T19:28:24Z] wiki-author | id=web-2026-03-04-157 | updates=13 | created=13 | updated=0 | contradictions=0 | draft=yes
+
+Establish authorship and method pages for a 2026 hierarchical Bayesian rail-surface-defect prediction paper, covering five new authors, the paper itself, and seven domain concepts (HPP, HBM, MCMC, partial pooling, rail surface defects, visual inspection, inspection planning decision support).
+
+## [2026-05-20T19:28:24Z] ingest | id=arxiv-0708.0293 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-0708.0293.md wiki=wiki/sources/arxiv-0708.0293.md
+
+## [2026-05-20T19:29:46Z] wiki-author | id=arxiv-0708.0293 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=yes
+
+Source is an abstract-only arXiv record for a 2006 Statistical Science rejoinder; create paper and three author entities, with no substantive content to update existing risksystems pages.
+
+## [2026-05-20T19:29:46Z] ingest | id=arxiv-1102.5239 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-1102.5239.md wiki=wiki/sources/arxiv-1102.5239.md
+
+## [2026-05-20T19:30:53Z] wiki-author | id=arxiv-1102.5239 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+Source is a 2011 arXiv/Applied Mathematics and Computation paper by Kucerova & Sykora applying Bayesian inference to coupled heat-and-moisture transport in heterogeneous materials; no existing pages cover its authors, the paper itself, or the methodological concepts it invokes, so create author entities, a paper entity, and supporting concept pages.
+
+## [2026-05-20T19:30:53Z] ingest | id=arxiv-2205.03478 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2205.03478.md wiki=wiki/sources/arxiv-2205.03478.md
+
+## [2026-05-20T19:32:52Z] wiki-author | id=arxiv-2205.03478 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces a comparative methodological paper on Bayesian filtering for structural deterioration; no existing pages cover its authors, the paper itself, or its specific concepts (IBIS, on-line vs off-line filtering for time-invariant parameters), so create paper, author, and concept entities.
+
+## [2026-05-20T19:32:53Z] ingest | id=web-2025-06-07-869 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-06-07-869.md wiki=wiki/sources/web-2025-06-07-869.md
+
+## [2026-05-20T19:35:32Z] wiki-author | id=web-2025-06-07-869 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces a novel PINN-based damage-identification method for RC bridge piers; no existing wiki pages cover the author, paper, or the specific methodological concepts (PINN, stacked bilinear rotational spring model, Newmark-β, ductility factor, shaking table validation), so create dedicated entity and concept pages.
+
+## [2026-05-20T19:35:32Z] ingest | id=web-2025-01-31-943 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-31-943.md wiki=wiki/sources/web-2025-01-31-943.md
+
+## [2026-05-20T19:37:36Z] wiki-author | id=web-2025-01-31-943 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=yes
+
+Capture authorship and core methodological framing of this new Gamma-process reliability paper for reinforced concrete bridges, creating author entities, a paper entity, and concept pages tied to existing risksystems references.
+
+## [2026-05-20T19:37:36Z] ingest | id=web-2023-01-05-939 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-01-05-939.md wiki=wiki/sources/web-2023-01-05-939.md
+
+## [2026-05-20T19:38:08Z] wiki-author | id=web-2023-01-05-939 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+Source is a thin landing page; extract only the two organizations and the dataset repository it directly references, with no contradictions of existing wiki claims.
+
+## [2026-05-20T19:38:08Z] ingest | id=web-2026-02-01-5c9 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-01-5c9.md wiki=wiki/sources/web-2026-02-01-5c9.md
+
+## [2026-05-20T19:40:01Z] wiki-author | id=web-2026-02-01-5c9 | updates=11 | created=11 | updated=0 | contradictions=0 | draft=yes
+
+New review paper on asphalt pavement life-cycle performance introduces five authors, two acknowledged organizations (LTPP, FHWA), and the core framing of probabilistic life-cycle management under aleatory and epistemic uncertainty — none covered by existing wiki pages.
+
+## [2026-05-20T19:40:02Z] ingest | id=web-2007-06-28-abf | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2007-06-28-abf.md wiki=wiki/sources/web-2007-06-28-abf.md
+
+## [2026-05-20T19:40:41Z] wiki-author | id=web-2007-06-28-abf | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Source body did not render beyond 'Skip to main content'; only the title, DOI, date, and excerpt yield citable facts, so a single minimal entity page for the 2007 structural-reliability volume is created and no existing page can be substantively extended.
+
+## [2026-05-20T19:40:41Z] ingest | id=web-2025-08-21-7a6 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-08-21-7a6.md wiki=wiki/sources/web-2025-08-21-7a6.md
+
+## [2026-05-20T19:42:45Z] wiki-author | id=web-2025-08-21-7a6 | updates=13 | created=13 | updated=0 | contradictions=0 | draft=yes
+
+Source is a publisher catalog page for the MVUQ Vol. 3 proceedings (IMAC 43rd, 2025) highlighting Article 5 on miter-gate degradation correction — create the proceedings volume, the paper, its four authors, the four editors, and the SEM organization, plus concept pages for miter gates and hybrid modeling with recursive Bayesian state estimation.
+
+## [2026-05-20T19:42:45Z] ingest | id=web-2025-10-14-bcb | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-14-bcb.md wiki=wiki/sources/web-2025-10-14-bcb.md
+
+## [2026-05-20T19:44:55Z] wiki-author | id=web-2025-10-14-bcb | updates=11 | created=11 | updated=0 | contradictions=0 | draft=yes
+
+New 2025 ITcon paper introduces a BIM/SHM/ANN integration framework with the Rio Claro Viaduct case study; no existing pages cover its authors, institution, case-study viaduct, or core concepts (SHM, BIM, modal-curvature damage indices, ANN damage assessment), so I'm creating fresh entity and concept pages.
+
+## [2026-05-20T19:44:56Z] ingest | id=yt-WJ1BvfOm-94 | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-WJ1BvfOm-94.md wiki=wiki/sources/yt-WJ1BvfOm-94.md
+
+## [2026-05-20T19:49:54Z] wiki-author | id=yt-WJ1BvfOm-94 | updates=13 | created=13 | updated=0 | contradictions=0 | draft=yes
+
+This methodological talk by Sophia Rabe-Hesketh introduces predictive information criteria (DIC, WAIC, LOO) for hierarchical Bayesian models, with key distinctions (marginal vs conditional likelihood, posterior vs mixed predictive distributions) that are directly applicable to the risksystems domain's deterioration, reliability, and structural-health-monitoring work; no concept pages yet exist for these foundational statistical methods.
+
+## [2026-05-20T19:49:54Z] ingest | id=yt-vx6ATEoEuUE | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-vx6ATEoEuUE.md wiki=wiki/sources/yt-vx6ATEoEuUE.md
+
+## [2026-05-20T19:53:56Z] wiki-author | id=yt-vx6ATEoEuUE | updates=13 | created=13 | updated=0 | contradictions=0 | draft=yes
+
+The source is a BayesWorks presentation on a state-space + kernel-regression deterioration framework extended from element to network scale on Quebec's ~10,000-bridge inventory; it warrants new entity pages for the publisher and the case-study network, plus concept pages for the methodological building blocks (kinematic model, SSM, SSM-KR, Kalman filtering, inspector uncertainty, bounded-unbounded transformation, intervention modelling, missing-intervention handling, aggregation, network-scale analysis, visual-inspection monitoring) that are not yet covered by existing risksystems pages.
+
+## [2026-05-20T19:53:56Z] ingest | id=pubmed-35595821 | type=pubmed | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pubmed/pubmed-35595821.md wiki=wiki/sources/pubmed-35595821.md
+
+## [2026-05-20T19:56:12Z] wiki-author | id=pubmed-35595821 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces a new author team, paper, and the survival-analysis/predictive-maintenance concept cluster (censoring, hazard functions, Generalized-gamma) that is not yet covered by existing risksystems pages.
+
+## [2026-05-20T19:56:12Z] ingest | id=web-2024-11-01-b9d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-11-01-b9d.md wiki=wiki/sources/web-2024-11-01-b9d.md
+
+## [2026-05-20T19:56:26Z] ingest | id=web-2025-01-07-4bf | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-07-4bf.md wiki=wiki/sources/web-2025-01-07-4bf.md
+
+## [2026-05-20T20:00:36Z] wiki-author | id=web-2025-01-07-4bf | updates=10 | created=8 | updated=2 | contradictions=0 | draft=yes
+
+Source is a table of contents for the March 2025 JCSS-themed special issue of Structural Safety; create entities for the journal, the special issue, JCSS, and recurring authors, and update existing author pages (Frangopol, Straub) with their contributions to this issue.
+
+## [2026-05-20T20:02:39Z] wiki-author | id=query-2026-05-20-cross-cutting-comparison-longspan-v1-1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against risksystems corpus
+
+## [2026-05-20T20:09:28Z] lint | scope=orphans | orphans=462
+
+report=.knowledge/lint/2026-05-20T20-09-28Z-orphans.md
+
+## [2026-05-20T20:51:18Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=start | domain=risksystems
+
+start research session for prompt 'Risksystems Q5 — dedicated drilldown on the Bounded Gamma Process (BGP)\ndeterioration kernel as a Longspan v3 candidate. Three explicit research\nthreads:\n\n(A) **Reference mathematical models.** What are the canonical formulations\nof the gamma process for monotonic deterioration? Specifically: the\nstationary gamma process (Abdel-Hameed 1975); the non-stationary /\ntime-transformed gamma process (van Noortwijk 2009 RESS review);\nhierarchical Bayesian gamma processes with covariates (Pandey, Yuan,\nvan Noortwijk); inverse Gaussian as a competing monotonic model;\nBounded Transformed Gamma Process (BTGP) per arxiv-2508.13359 already\nin the corpus; Tweedie / generalized-gamma extensions; and the\ninference machinery (MCMC, expectation-maximization, Bayesian\nhierarchical fits) used to estimate parameters from sparse inspection\ndata. Want the full lineage: math, identifiability, prior structure,\nfailure-time distribution derivations, censoring handling.\n\n(B) **SOTA ML implementations.** How has BGP / gamma-process deterioration\nbeen implemented in modern ML systems? At what scale (dataset size,\nproblem domain), with what results (calibration metrics, predictive\naccuracy, value of information), and in what problem areas? Specifically:\nbridge deck deterioration (Frangopol, Pandey, Yuan); pavement (Madanat,\nMishalani); pipeline corrosion; nuclear-pressure-vessel reliability\n(Bagdonavičius, Nikulin); offshore-platform fatigue; aerospace fatigue;\nbuilding infrastructure deterioration including roofing and concrete.\nInclude hybrid Gamma-PINN, neural-ODE-with-gamma-noise, Gaussian-\nprocess-conditioned gamma, and any deep-learning-meets-monotonic-\nstochastic-process variants.\n\n(C) **Corpus + labeling for Longspan six-component implementation.** What\nis the minimum viable dataset (size, structure, labels) to fit a BGP\nfor each of the six probabilistic components — roof, building envelope,\nplumbing risers, HVAC central plant, elevators, parking deck / podium?\nSpecifically: required time-series of condition observations (CAI 0-10\nrating, ASCE FCI, RECI, or component-specific scales); inspection\ncadence assumptions (annual, biennial); covariate set (effective age,\nmaterial class, climate exposure — WDR / chloride / freeze-thaw,\njurisdiction, structure type); event-data (replacements, major repairs)\nfor right-censoring; minimum n per component class for defensible\nestimates; published benchmarks of dataset sizes that produced\npublishable BGP fits in adjacent domains (bridges: HDM-4, Pontis,\nAASHTO; water: KANEW, AWARE-P).\n\nFrame: Longspan v1.1 today fits Weibull EUL distributions from the\n60-building BC concrete-frame highrise sample (108-816 observations per\ncomponent class). The BGP would replace or augment the Weibull with a\nfirst-principles monotonic stochastic kernel. The defensible question\nis whether the existing sample sizes support BGP estimation, what extra\ndata needs to be collected, and what the calibration / validation\ncadence looks like. The output of this research thread feeds the v3\nengine-architecture decision in Q3 2026.\n'
+
+## [2026-05-20T20:51:18Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-20T20:51:20Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-20T20:51:29Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=search | adapter=arxiv | n=75
+
+adapter arxiv returned 75 candidates
+
+## [2026-05-20T20:51:32Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T20:51:38Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=search | adapter=semantic_scholar | n=83
+
+adapter semantic_scholar returned 83 candidates
+
+## [2026-05-20T20:51:38Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=merge | n=184
+
+merged 184 candidate(s) across adapters
+
+## [2026-05-20T21:00:10Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=filter | n=59
+
+59 candidate(s) cleared threshold
+
+## [2026-05-20T21:00:39Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832007001111
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0951832007001111
+
+## [2026-05-20T21:00:39Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.researchgate.net/publication/257391847_Gamma_processes_and_peaks-over-threshold_distributions_for_time-dependent_reliability_Reliability_Engineering_System_Safety_9212_1651-1658
+
+error: could not fetch https://www.researchgate.net/publication/257391847_Gamma_processes_and_peaks-over-threshold_distributions_for_time-dependent_reliability_Reliability_Engineering_System_Safety_9212_1651-1658
+
+## [2026-05-20T21:00:39Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832006002584
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0951832006002584
+
+## [2026-05-20T21:00:44Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://filelist.tudelft.nl/TBM/Over%20faculteit/Afdelingen/Values%2C%20Technology%20and%20Innovation/People/Full%20Professors/Pieter%20van%20Gelder/Citations/citatie137.pdf
+
+error: no extractable content at https://filelist.tudelft.nl/TBM/Over%20faculteit/Afdelingen/Values%2C%20Technology%20and%20Innovation/People/Full%20Professors/Pieter%20van%20Gelder/Citations/citatie137.pdf
+
+## [2026-05-20T21:00:44Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://onlinelibrary.wiley.com/doi/abs/10.1002/pse.180
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/abs/10.1002/pse.180
+
+## [2026-05-20T21:00:46Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://engineering.purdue.edu/~frosch/ftp/Talbott/11%20-%20References/files/ASCE%20Structures%20Congress%202004/PDFs/1st04-5211.pdf
+
+error: no extractable content at https://engineering.purdue.edu/~frosch/ftp/Talbott/11%20-%20References/files/ASCE%20Structures%20Congress%202004/PDFs/1st04-5211.pdf
+
+## [2026-05-20T21:00:49Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://arpi.unipi.it/retrieve/fc93a187-8b9e-4968-a034-7d2f6d1f23fb/10.1201_9781003323020-303_chapterpdf.pdf
+
+error: no extractable content at https://arpi.unipi.it/retrieve/fc93a187-8b9e-4968-a034-7d2f6d1f23fb/10.1201_9781003323020-303_chapterpdf.pdf
+
+## [2026-05-20T21:00:49Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.sciencedirect.com/science/article/pii/S1110016825002005
+
+error: could not fetch https://www.sciencedirect.com/science/article/pii/S1110016825002005
+
+## [2026-05-20T21:00:49Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.emerald.com/bepam/article/12/6/853/14532/Markov-chain-pavement-deterioration-prediction
+
+error: could not fetch https://www.emerald.com/bepam/article/12/6/853/14532/Markov-chain-pavement-deterioration-prediction
+
+## [2026-05-20T21:00:49Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://ascelibrary.org/doi/10.1061/%28ASCE%29IS.1943-555X.0000242
+
+error: could not fetch https://ascelibrary.org/doi/10.1061/%28ASCE%29IS.1943-555X.0000242
+
+## [2026-05-20T21:00:49Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.researchgate.net/publication/394583374_Probabilistic_Modeling_of_Pavement_Performance_Using_Markov_Chains_A_Critical_Review
+
+error: could not fetch https://www.researchgate.net/publication/394583374_Probabilistic_Modeling_of_Pavement_Performance_Using_Markov_Chains_A_Critical_Review
+
+## [2026-05-20T21:00:50Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.nature.com/articles/s41598-025-92469-9
+
+error: could not fetch https://www.nature.com/articles/s41598-025-92469-9
+
+## [2026-05-20T21:00:51Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.hkv.nl/wp-content/uploads/2020/08/Gammaprocessmodelforreliabilityanalysisandreplacementofaging_JvN1.pdf
+
+error: no extractable content at https://www.hkv.nl/wp-content/uploads/2020/08/Gammaprocessmodelforreliabilityanalysisandreplacementofaging_JvN1.pdf
+
+## [2026-05-20T21:00:53Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://onlinelibrary.wiley.com/doi/full/10.1002/qre.3167
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/full/10.1002/qre.3167
+
+## [2026-05-20T21:00:53Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832026003285
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0951832026003285
+
+## [2026-05-20T21:00:53Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832013000896
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0951832013000896
+
+## [2026-05-20T21:00:54Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.tara.tcd.ie/bitstreams/cc8b0437-34ea-4293-b1f5-c3741176be8f/download
+
+error: could not fetch https://www.tara.tcd.ie/bitstreams/cc8b0437-34ea-4293-b1f5-c3741176be8f/download
+
+## [2026-05-20T21:00:55Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://onlinelibrary.wiley.com/doi/abs/10.1002/asmb.2824
+
+error: could not fetch https://onlinelibrary.wiley.com/doi/abs/10.1002/asmb.2824
+
+## [2026-05-20T21:00:55Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.mdpi.com/1999-4893/16/1/54
+
+error: could not fetch https://www.mdpi.com/1999-4893/16/1/54
+
+## [2026-05-20T21:00:55Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.sciencedirect.com/science/article/abs/pii/S0951832021006773
+
+error: could not fetch https://www.sciencedirect.com/science/article/abs/pii/S0951832021006773
+
+## [2026-05-20T21:00:56Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://inldigitallibrary.inl.gov/sites/sti/sti/Sort_65875.pdf
+
+error: no extractable content at https://inldigitallibrary.inl.gov/sites/sti/sti/Sort_65875.pdf
+
+## [2026-05-20T21:00:58Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.research-collection.ethz.ch/server/api/core/bitstreams/31410646-5f7c-4c2e-bb42-0d7b194bf4c4/content
+
+error: no extractable content at https://www.research-collection.ethz.ch/server/api/core/bitstreams/31410646-5f7c-4c2e-bb42-0d7b194bf4c4/content
+
+## [2026-05-20T21:00:58Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://ascelibrary.org/doi/abs/10.1061/%28ASCE%29CF.1943-5509.0000358
+
+error: could not fetch https://ascelibrary.org/doi/abs/10.1061/%28ASCE%29CF.1943-5509.0000358
+
+## [2026-05-20T21:00:58Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.mdpi.com/2075-5309/15/15/2799
+
+error: could not fetch https://www.mdpi.com/2075-5309/15/15/2799
+
+## [2026-05-20T21:00:59Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/j.promfg.2020.01.218
+
+error: no extractable content at https://doi.org/10.1016/j.promfg.2020.01.218
+
+## [2026-05-20T21:00:59Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1002/asmb.70054
+
+error: could not fetch https://doi.org/10.1002/asmb.70054
+
+## [2026-05-20T21:00:59Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/j.ress.2018.06.019
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2018.06.019
+
+## [2026-05-20T21:00:59Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1002/qre.3069
+
+error: could not fetch https://doi.org/10.1002/qre.3069
+
+## [2026-05-20T21:01:01Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1080/15732470601012154
+
+error: could not fetch https://doi.org/10.1080/15732470601012154
+
+## [2026-05-20T21:01:01Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1155/2014/829597
+
+error: could not fetch https://doi.org/10.1155/2014/829597
+
+## [2026-05-20T21:01:02Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/j.conbuildmat.2020.120316
+
+error: no extractable content at https://doi.org/10.1016/j.conbuildmat.2020.120316
+
+## [2026-05-20T21:01:02Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1080/15732479.2021.2023589
+
+error: could not fetch https://doi.org/10.1080/15732479.2021.2023589
+
+## [2026-05-20T21:01:03Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/J.TRB.2014.06.008
+
+error: no extractable content at https://doi.org/10.1016/J.TRB.2014.06.008
+
+## [2026-05-20T21:01:03Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://www.semanticscholar.org/paper/199559046
+
+error: could not fetch https://www.semanticscholar.org/paper/199559046
+
+## [2026-05-20T21:01:03Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1061/(ASCE)0733-947X(2003)129:6(635)
+
+error: could not fetch https://doi.org/10.1061/(ASCE)0733-947X(2003)129:6(635)
+
+## [2026-05-20T21:01:05Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/S0965-8564(01)00020-9
+
+error: no extractable content at https://doi.org/10.1016/S0965-8564(01)00020-9
+
+## [2026-05-20T21:01:05Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.3390/app10062040
+
+error: could not fetch https://doi.org/10.3390/app10062040
+
+## [2026-05-20T21:01:05Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1080/15732479.2017.1377737
+
+error: could not fetch https://doi.org/10.1080/15732479.2017.1377737
+
+## [2026-05-20T21:01:06Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1080/15732479.2020.1833046
+
+error: could not fetch https://doi.org/10.1080/15732479.2020.1833046
+
+## [2026-05-20T21:01:06Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.3390/BUILDINGS9050111
+
+error: could not fetch https://doi.org/10.3390/BUILDINGS9050111
+
+## [2026-05-20T21:01:08Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1007/s10479-024-06334-5
+
+error: could not fetch https://doi.org/10.1007/s10479-024-06334-5
+
+## [2026-05-20T21:01:08Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1002/qre.70065
+
+error: could not fetch https://doi.org/10.1002/qre.70065
+
+## [2026-05-20T21:01:08Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1109/PHM-Paris.2019.00040
+
+error: could not fetch https://doi.org/10.1109/PHM-Paris.2019.00040
+
+## [2026-05-20T21:01:08Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/J.RESS.2021.107912
+
+error: no extractable content at https://doi.org/10.1016/J.RESS.2021.107912
+
+## [2026-05-20T21:01:10Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1007/s12205-022-2121-y
+
+error: no extractable content at https://doi.org/10.1007/s12205-022-2121-y
+
+## [2026-05-20T21:01:10Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=convert | target=https://doi.org/10.1016/j.ress.2016.05.014
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2016.05.014
+
+## [2026-05-20T21:01:10Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=materialize | n=13
+
+materialized 13 source(s) to raw/
+
+## [2026-05-20T21:01:10Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T21:01:12Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=nlm_session | notebook_id=8d8d68e1-b903-4c2a-b700-9e8bc6fe2b85
+
+created session notebook 8d8d68e1-b903-4c2a-b700-9e8bc6fe2b85
+
+## [2026-05-20T21:03:00Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=source_add | target=https://jtte.chd.edu.cn/cn/article/doi/10.1016/j.jtte.2018.11.001?viewType=citedby-info
+
+error: `nlm source add 8d8d68e1-b903-4c2a-b700-9e8bc6fe2b85 --url https://jtte.chd.edu.cn/cn/article/doi/10.1016/j.jtte.2018.11.001?viewType=citedby-info --wait` exited 1: Adding 
+https://jtte.chd.edu.cn/cn/article/doi/10.1016/j.jtte.2018.11.001?viewType=cited
+by-info and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-20T21:03:43Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=source_add | n=12 | skipped=1
+
+pushed 12 source(s) to session notebook (1 skipped)
+
+## [2026-05-20T21:03:45Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=source_map | n=12
+
+built source map (12 entries)
+
+## [2026-05-20T21:06:42Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-20T21:06:42Z] wiki-author | id=research-2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for risksystems
+
+## [2026-05-20T21:06:42Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=apply_plan | pages=3
+
+applied plan: applied plan for research-2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel: 2 update(s)
+
+## [2026-05-20T21:07:30Z] research | session_id=2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel | step=promoted | added=9 | failed=1
+
+promoted 9 source(s) into persistent notebook (1 failed)
+
+## [2026-05-20T21:08:04Z] ingest | id=web-2022-07-07-ac2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-07-07-ac2.md wiki=wiki/sources/web-2022-07-07-ac2.md
+
+## [2026-05-20T21:09:31Z] wiki-author | id=web-2022-07-07-ac2 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces a bounded transformed gamma process model and three new authors not yet covered in the wiki, distinct from the unbounded gamma degradation process referenced by existing pages.
+
+## [2026-05-20T21:09:31Z] ingest | id=web-2021-03-20-b9c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2021-03-20-b9c.md wiki=wiki/sources/web-2021-03-20-b9c.md
+
+## [2026-05-20T21:10:48Z] wiki-author | id=web-2021-03-20-b9c | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+Creates entity pages for the paper, its three authors, and its journal; adds a concept page for the extended gamma process — none of which existed previously and all of which sit cleanly alongside the existing gamma-process and reliability pages in the risksystems domain.
+
+## [2026-05-20T21:10:48Z] ingest | id=web-2025-04-07-e6e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-04-07-e6e.md wiki=wiki/sources/web-2025-04-07-e6e.md
+
+## [2026-05-20T21:12:40Z] wiki-author | id=web-2025-04-07-e6e | updates=11 | created=11 | updated=0 | contradictions=0 | draft=yes
+
+Source introduces a new predictive maintenance paper on nonstationary gamma processes with novel SMDP-based optimization; no existing pages cover its authors, the paper, or its specific methodological concepts.
+
+## [2026-05-20T21:12:40Z] ingest | id=web-2018-12-12-ce5 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-12-12-ce5.md wiki=wiki/sources/web-2018-12-12-ce5.md
+
+## [2026-05-20T21:14:54Z] wiki-author | id=web-2018-12-12-ce5 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Source is a foundational 2018 paper introducing Gamma stochastic process modelling for aging bridge resistance updating; warrants new paper entity, four new author entities, and three new concept pages anchoring the gamma-process bridge-reliability cluster.
+
+## [2026-05-20T21:14:55Z] ingest | id=web-2026-05-01-6b7 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-01-6b7.md wiki=wiki/sources/web-2026-05-01-6b7.md
+
+## [2026-05-20T21:16:32Z] wiki-author | id=web-2026-05-01-6b7 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=yes
+
+New source introduces wind turbine reliability domain to the risksystems wiki via a Bayesian hierarchical AFT model, requiring author entities, paper entity, and supporting concept pages with no direct overlap with existing pages.
+
+## [2026-05-20T21:16:32Z] ingest | id=arxiv-2508.02749 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2508.02749.md wiki=wiki/sources/arxiv-2508.02749.md
+
+## [2026-05-20T21:18:17Z] wiki-author | id=arxiv-2508.02749 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=yes
+
+Source is a 2024 Transportation Research Record paper applying GNNs to pavement deterioration on the Texas PMIS dataset; creates new author, organization, dataset, paper, and methods pages and connects to existing pavement infrastructure literature.
+
+## [2026-05-20T21:18:17Z] ingest | id=arxiv-2507.01056 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2507.01056.md wiki=wiki/sources/arxiv-2507.01056.md
+
+## [2026-05-20T21:20:09Z] wiki-author | id=arxiv-2507.01056 | updates=11 | created=10 | updated=1 | contradictions=0 | draft=yes
+
+New paper on flood-driven pavement deterioration shares an author (Lu Gao) and methodological lineage (TxDOT PMIS data) with existing risksystems pages; updates Lu Gao and creates entity/concept pages for the new paper, co-authors, dataset, IRI metric, and XAI methods (SHAP, LIME).
+
+## [2026-05-20T21:20:09Z] ingest | id=web-1998-09-20-413 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-1998-09-20-413.md wiki=wiki/sources/web-1998-09-20-413.md
+
+## [2026-05-20T21:23:19Z] wiki-author | id=web-1998-09-20-413 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Foundational 1998 Madanat-Mishalani paper on selectivity bias in pavement M&R effectiveness modelling — creates author, paper, INDOT data-provider entities and the core selectivity-bias / switching-model / self-selected-sample concepts; no existing pages match.
+
+## [2026-05-20T21:23:19Z] ingest | id=web-2008-01-01-8c5 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2008-01-01-8c5.md wiki=wiki/sources/web-2008-01-01-8c5.md
+
+## [2026-05-20T21:23:28Z] ingest | id=web-2008-01-01-451 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2008-01-01-451.md wiki=wiki/sources/web-2008-01-01-451.md
+
+## [2026-05-20T21:25:47Z] wiki-author | id=query-2026-05-20-bounded-gamma-process-bgp-deterioration-kernel | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against risksystems corpus
+
+## [2026-05-20T21:51:28Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-20T21-51-28Z-schema-drift.md
+
+## [2026-05-20T22:00:14Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=start | domain=risksystems
+
+start research session for prompt 'Risksystems Q6 — dedicated drilldown on Weibull-Tailored Neural Networks\n(WTNN) as a Longspan v3 candidate. Three explicit research threads:\n\n(A) **Reference mathematical lineage.** What is the canonical formulation\nof WTNN and the lineage that precedes it? Specifically: the classical\nWeibull accelerated-failure-time (AFT) model and Cox proportional-hazards\nmodel; the first wave of deep-survival architectures (DeepSurv per\nKatzman et al. 2018; DeepHit per Lee et al. 2018; RNN-Surv / Recurrent\nNeural Weibull / WTTE-RNN per Martinsson 2017); parametric vs\nnon-parametric deep survival; the WTNN architecture per arxiv-2512.09163\n(Rives, Lopez, Bousquet) — how exactly are the Weibull shape (β) and\nscale (η) parameters constrained as functions of time-dependent\ncovariates? what loss function (negative log-likelihood with censoring,\nBrier score, integrated Brier, concordance)? what monotonicity / shape\nconstraints? how is qualitative prior knowledge about influential\ncovariates baked into the architecture (input-feature gating, sign\nconstraints, monotonic neural network layers, partial monotonic\nnetworks)? Identifiability under right-censoring; calibration; the\naudit story for a P.Eng. — can the trained network produce a\nhuman-readable explanation of why a coastal-exposed envelope\ncomponent has its specific Weibull(β, η) fitted curve?\n\n(B) **SOTA ML implementations — scale + results + problem domain.** How\nhave Weibull / deep-survival neural networks been implemented at scale\nin modern reliability and prognostics-and-health-management (PHM)\nsystems? Specifically: wind-turbine fleet AFT (web-2026-05-01-6b7\nalready in corpus, 8,000+ turbines / 64,000 operating years); NASA\nC-MAPSS turbofan remaining-useful-life benchmark (Saxena et al.) —\nwhat\'s the published n, RMSE, and architecture lineage for Weibull-\nconditioned deep models vs deterministic point estimates? Backblaze\nhard-drive survival; battery degradation neural Weibull;\nrolling-bearing PHM; healthcare clinical-survival benchmarks\n(SUPPORT, METABRIC, GBSG) and their architecture lessons. What\'s the\nminimum-viable n for a successfully published deep-survival fit —\nthe Longspan analog to the diesel-cylinder-liner BGP benchmark\n(web-2022-07-07-ac2 fit on dozens of wear measures)? What are the\nfailure modes — overfitting on small n, calibration drift,\nmiscalibration of the variance of the predicted Weibull(β, η)?\n\n(C) **Corpus + labeling for Longspan six-component implementation.** What\nis the minimum viable dataset and covariate inventory to fit a WTNN\nfor each of the six probabilistic components — roof, building\nenvelope, plumbing risers, HVAC central plant, elevators, parking\ndeck / podium? Specifically: required event-data (replacement /\nmajor repair as failure event, right-censored at last inspection);\ncovariate inventory (effective age, material class, building-level\nper-face WDR / chloride / freeze-thaw cycles already computed for\nthe Halifax pilot — see research/findings/0020 + the HRM polygon\npipeline, jurisdiction, structure type, work-order frequency,\nambient cycling load); cohort sample-size feasibility against the\nexisting 60-building BC concrete-frame highrise sample (108-816\nobs per class) + the can-pilot 2,154-row multi-jurisdiction add;\nablation of which of the six components is best served by WTNN vs\nthe Phase-1 BGP kernel (parking deck / envelope / roof) vs the\nimperfect-repair RL framework. Critical question: which Phase-2\ncomponents (HVAC central plant, elevators, plumbing risers) does\nWTNN unlock that BGP cannot, given their non-monotonic failure\nprofiles and their richer covariate landscape (work-order frequency,\nfault codes, telemetry)?\n\nFrame: Longspan v1.1 today fits Weibull EUL distributions from the\n60-building BC concrete-frame highrise sample with a static engineer-\nto-data 1:1 blend. The cross-cutting Longspan-vs-SOA synthesis\n(~/code/knowledge/wiki/synthesis/2026-05-20-cross-cutting-comparison-longspan-v1-1.md)\nidentified WTNN as the second v3 methodological moat (after BGP) —\nthe framing is "we use AI, but our AI is strictly governed by\nreliability engineering physics." This drilldown is the dedicated\nevaluation: does WTNN unlock the Phase-2 mechanical components that\nBGP cannot handle, and what\'s the data-collection cost? Output\nfeeds the v3 engine-architecture decision in Q3 2026. Audience:\nfounder + technical co-founder + Mercer P.Eng. credibility\ncredential. Render the math without Bayesian jargon — plain\nlanguage.\n'
+
+## [2026-05-20T22:00:14Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-20T22:00:17Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=search | target=pubmed
+
+error: PubMed efetch returned HTTP 429
+
+## [2026-05-20T22:00:29Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=search | adapter=web | n=60
+
+adapter web returned 60 candidates
+
+## [2026-05-20T22:00:34Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=search | adapter=semantic_scholar | n=90
+
+adapter semantic_scholar returned 90 candidates
+
+## [2026-05-20T22:00:44Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-20T22:00:44Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=merge | n=146
+
+merged 146 candidate(s) across adapters
+
+## [2026-05-20T22:09:16Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=filter | n=18
+
+18 candidate(s) cleared threshold
+
+## [2026-05-20T22:09:17Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://www.researchgate.net/publication/398560116_WTNN_Weibull-Tailored_Neural_Networks_for_survival_analysis
+
+error: could not fetch https://www.researchgate.net/publication/398560116_WTNN_Weibull-Tailored_Neural_Networks_for_survival_analysis
+
+## [2026-05-20T22:09:35Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://cran.r-project.org/web/packages/survivalmodels/survivalmodels.pdf
+
+error: no extractable content at https://cran.r-project.org/web/packages/survivalmodels/survivalmodels.pdf
+
+## [2026-05-20T22:09:36Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://jmlr.csail.mit.edu/papers/volume21/20-729/20-729.pdf
+
+error: no extractable content at https://jmlr.csail.mit.edu/papers/volume21/20-729/20-729.pdf
+
+## [2026-05-20T22:09:39Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.1007/s00521-022-07667-7
+
+error: could not fetch https://doi.org/10.1007/s00521-022-07667-7
+
+## [2026-05-20T22:09:40Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.1111/mice.13436
+
+error: no extractable content at https://doi.org/10.1111/mice.13436
+
+## [2026-05-20T22:09:40Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.1016/j.ress.2025.110906
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2025.110906
+
+## [2026-05-20T22:09:40Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.1016/j.ress.2025.110866
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2025.110866
+
+## [2026-05-20T22:09:40Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.1016/j.cma.2023.116172
+
+error: no extractable content at https://doi.org/10.1016/j.cma.2023.116172
+
+## [2026-05-20T22:09:41Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.1016/j.ress.2025.111724
+
+error: no extractable content at https://doi.org/10.1016/j.ress.2025.111724
+
+## [2026-05-20T22:09:42Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=convert | target=https://doi.org/10.3390/app152312509
+
+error: could not fetch https://doi.org/10.3390/app152312509
+
+## [2026-05-20T22:09:42Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=materialize | n=8
+
+materialized 8 source(s) to raw/
+
+## [2026-05-20T22:09:42Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=nlm_persistent | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+persistent notebook dee0eae4-b11f-4df2-a418-d10fffd42c7e
+
+## [2026-05-20T22:09:43Z] research | session_id=2026-05-20-risksystems-06-weibull-tailored-neural-networks | step=nlm_session | notebook_id=e4fe0593-7f83-4cdc-98a4-45dcba1453c5
+
+created session notebook e4fe0593-7f83-4cdc-98a4-45dcba1453c5
+
+## [2026-05-20T22:14:43Z] nlm-add | id=arxiv-2512.09163 | domain=risksystems | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e | type=arxiv
+
+url=https://arxiv.org/abs/2512.09163
+
+## [2026-05-20T22:14:49Z] nlm-add | id=arxiv-0708.0293 | domain=risksystems | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e | type=arxiv
+
+url=https://arxiv.org/abs/0708.0293
+
+## [2026-05-20T22:14:55Z] nlm-add | id=arxiv-1102.5239 | domain=risksystems | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e | type=arxiv
+
+url=https://arxiv.org/abs/1102.5239
+
+## [2026-05-20T22:15:02Z] nlm-add | id=pubmed-35595821 | domain=risksystems | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e | type=pubmed
+
+url=https://pubmed.ncbi.nlm.nih.gov/35595821/
+
+## [2026-05-20T22:19:12Z] wiki-author | id=query-2026-05-20-weibull-tailored-neural-networks-wtnn-drilldown | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against risksystems corpus
+
+## [2026-05-21T00:26:02Z] lint | scope=all | orphans=462 | stale-drafts=230 | stale-claims=2 | contradictions=35 | missing-pages=55 | citation-density=100 | citation-chains=24 | schema-drift=0 | filter-calibration=15 | inbox-pending=0 | nlm-pending=23 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-21T00-26-02Z.md
+
+## [2026-05-21T00:26:36Z] lint | scope=all | orphans=462 | stale-drafts=230 | stale-claims=2 | contradictions=43 | missing-pages=59 | citation-density=100 | citation-chains=24 | schema-drift=0 | filter-calibration=15 | inbox-pending=0 | nlm-pending=23 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-21T00-26-36Z.md
+
+## [2026-05-21T19:40:35Z] ingest | id=web-2025-01-06-1e2 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.68
+
+raw=raw/web/web-2025-01-06-1e2.md (wiki not written: filter decision=review)
+
+## [2026-05-21T19:41:18Z] ingest | id=web-2025-09-16-709 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.4
+
+raw=raw/web/web-2025-09-16-709.md (wiki not written: filter decision=rejected)
+
+## [2026-05-21T19:42:02Z] ingest | id=web-2025-08-05-4b5 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.8
+
+raw=raw/web/web-2025-08-05-4b5.md wiki=wiki/sources/web-2025-08-05-4b5.md
+
+## [2026-05-21T19:45:36Z] wiki-author | id=web-2025-08-05-4b5 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Aug 2025 CINC Cephai+ momentum announcement supplies a new product-anchor entity (Cephai+) with concrete traction milestones (100+ management companies, 31K+ invoices, 5 active agents, 2 forthcoming) and a substantive Farouk Hussein/Hg quote framing Cephai+ as among the strongest customer demand in Hg's AI portfolio — directly strengthening the CINC-as-primary-acquirer thesis.
+
+## [2026-05-21T19:46:09Z] ingest | id=web-2025-10-14-ce0 | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/web/web-2025-10-14-ce0.md wiki=wiki/sources/web-2025-10-14-ce0.md
+
+## [2026-05-21T19:51:58Z] ingest | id=web-2024-07-22-f1f | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/web/web-2024-07-22-f1f.md wiki=wiki/sources/web-2024-07-22-f1f.md
+
+## [2026-05-21T19:56:46Z] wiki-author | id=web-2024-07-22-f1f | updates=6 | created=4 | updated=2 | contradictions=0 | draft=no
+
+July 2024 CINC press release adds load-bearing scale metrics, post-Hg leadership build-out, the Cephai precursor product (predating Cephai+), and a new payments-industry board member — all material to the CINC-as-primary-acquirer thesis under ADR-0004.
+
+## [2026-05-21T19:57:12Z] filter-correction | id=web-2025-01-06-1e2 | domain=condo-capital-infra | decision=include | original_score=0.68
+
+rationale="CINC's first confirmed acquisition event; directly confirms the acquisition playbook Longspan targets (capability-gap buy, founders retained as shareholders, technical integration prioritized). Contains authoritative scale metrics (50K+ associations as of Jan 2025) that update the cinc-systems entity. Per Finding-0025 ingest plan §7, this is a priority Batch 1 source for the cinc-systems entity refresh."
+
+## [2026-05-21T19:57:14Z] filter-correction | id=web-2025-09-16-709 | domain=condo-capital-infra | decision=include | original_score=0.4
+
+rationale="CINC Connect launch at CINC Up 2025 establishes that the resident engagement gap (the one ONR was acquired to fill) is now closed. Load-bearing for Longspan strategic positioning: confirms CINC's non-probabilistic product surface and that Longspan should not build a resident portal. Also confirms 6M doors scale metric and 650+ attendee conference as primary product-launch venue. Per Finding-0025 ingest plan §7 Batch 1."
+
+## [2026-05-21T19:57:22Z] ingest | id=web-2025-01-06-1e2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-06-1e2.md wiki=wiki/sources/web-2025-01-06-1e2.md
+
+## [2026-05-21T20:06:53Z] wiki-author | id=web-2025-01-06-1e2 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Create ONR Applications entity for the acquired company and update Hg Capital to integrate the January 6, 2025 ONR acquisition as the load-bearing first confirmed CINC M&A event under Hg ownership, slotting between the documented July 2024 Cephai launch and August 2025 Cephai+ momentum disclosure.
+
+## [2026-05-21T20:06:57Z] ingest | id=web-2025-09-16-709 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-09-16-709.md wiki=wiki/sources/web-2025-09-16-709.md
+
+## [2026-05-21T20:16:09Z] wiki-author | id=web-2025-09-16-709 | updates=3 | created=1 | updated=2 | contradictions=0 | draft=no
+
+CINC Connect launch confirms CINC's two-engines product surface (Cephai+ AI + resident engagement) closes the ONR-integration arc and leaves capital-planning unoccupied — strengthening the CINC-as-primary-acquirer thesis.
+
+## [2026-05-21T20:27:36Z] wiki-author | id=web-2025-10-14-ce0 | updates=8 | created=6 | updated=2 | contradictions=0 | draft=no
+
+October 14, 2025 CINC executive appointments + Payables+ launch + CINC Circle expansion extend the Hg-sponsored post-investment cadence to ~22 months and surface a new CTO (Chitayat), departing CTO (Yang on sabbatical), new GM role (Cohen), new CMO (Dolan), and two new Cephai+-powered products warranting first-class entity pages; Colombia-based tech operations from ONR acquisition is novel detail for the ONR page.
+
+## [2026-05-21T20:28:10Z] ingest | id=web-2025-10-15-7aa | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.0
+
+raw=raw/web/web-2025-10-15-7aa.md (wiki not written: filter decision=rejected)
+
+## [2026-05-21T20:28:26Z] filter-correction | id=web-2025-10-15-7aa | domain=condo-capital-infra | decision=include | original_score=0.0
+
+rationale="Vantaca is identified in Finding-0025 as the single biggest competitive surprise vs. the 2023-vintage entity: a .25B unicorn (M Cove Hill raise, Oct 2025) serving 6M+ doors and 500+ management companies — directly comparable scale to CINC. Per Finding-0025 §7 and the exit-thesis-acquirer-mapping, Vantaca must be added to the acquirer watch list as Tier-2. This PR is the authoritative source for the .25B valuation, the Cove Hill partnership, and Vantaca's AI-first market positioning. The filter policy did not include Vantaca as a named acquirer target; this correction reflects the Finding-0025 decision to add it."
+
+## [2026-05-21T20:28:29Z] ingest | id=web-2025-10-15-7aa | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-15-7aa.md wiki=wiki/sources/web-2025-10-15-7aa.md
+
+## [2026-05-21T20:31:22Z] wiki-author | id=web-2025-10-15-7aa | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Vantaca is a newly-surfaced Tier-2 acquirer target (per Finding-0025) requiring new entity pages for the company, its product platform, lead investor Cove Hill Partners, existing investor JMI Equity, and the three named principals on the October 2025 transaction.
+
+## [2026-05-21T20:32:26Z] ingest | id=web-2024-11-20-cd8 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.38
+
+raw=raw/web/web-2024-11-20-cd8.md (wiki not written: filter decision=rejected)
+
+## [2026-05-21T20:32:35Z] filter-correction | id=web-2024-11-20-cd8 | domain=condo-capital-infra | decision=include | original_score=0.38
+
+rationale="Vantaca is now a named Tier-2 acquirer target per Finding-0025 §7 (the filter policy hasn't been updated to reflect this). The HOAi acquisition is the load-bearing AI capability event for Vantaca: it establishes HOAi's 1M tasks/month automation throughput and voice-agent capability, which defines the AI baseline Longspan's probabilistic reserve module would compete against or integrate with if Vantaca becomes the acquirer. Required for the Vantaca entity's competitive intelligence section."
+
+## [2026-05-21T20:32:38Z] ingest | id=web-2024-11-20-cd8 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-11-20-cd8.md wiki=wiki/sources/web-2024-11-20-cd8.md
+
+## [2026-05-21T20:36:50Z] wiki-author | id=web-2024-11-20-cd8 | updates=5 | created=3 | updated=2 | contradictions=0 | draft=no
+
+Vantaca's November 2024 HOAi acquisition is the load-bearing AI capability event predating the October 2025 Cove Hill financing — update Vantaca + Ben Currin and create HOAi, Haoyu Zha, and Scout entities to ground the AI baseline referenced in Finding-0025.
+
+## [2026-05-21T20:37:28Z] ingest | id=web-2024-05-15-1b2 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2024-05-15-1b2.md (wiki not written: filter decision=rejected)
+
+## [2026-05-21T20:37:42Z] filter-correction | id=web-2024-05-15-1b2 | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale="PayHOA is included in Finding-0025 §4.6 and the ingest plan §7 Batch 2 specifically to establish the self-managed HOA segment as a distinct and non-competing category. The .5M Series A and 622K homeowners coverage confirms this is a meaningfully differentiated market (boards without management companies) that Longspan does not target. This source is required for the payhoa entity, which frames Longspan's ICP exclusions. Per Finding-0025 §7 rationale: 'confirms self-managed HOA segment is meaningfully distinct; useful for framing Longspan ICP exclusions.'"
+
+## [2026-05-21T20:37:45Z] ingest | id=web-2024-05-15-1b2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-05-15-1b2.md wiki=wiki/sources/web-2024-05-15-1b2.md
+
+## [2026-05-21T20:41:29Z] wiki-author | id=web-2024-05-15-1b2 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+Establishes the self-managed-HOA segment as a structurally distinct, fundable category from the professionally-managed-HOA market — load-bearing for framing Longspan's ICP exclusions under ADR-0004.
+
+## [2026-05-21T20:42:12Z] ingest | id=web-2026-02-26-870 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.4
+
+raw=raw/web/web-2026-02-26-870.md (wiki not written: filter decision=rejected)
+
+## [2026-05-21T20:42:23Z] filter-correction | id=web-2026-02-26-870 | domain=condo-capital-infra | decision=include | original_score=0.4
+
+rationale="Payables+ is load-bearing for the CINC platform revenue model: it establishes the AP-to-revenue-sharing mechanic (management companies generate incremental revenue from digital payment transactions), which directly impacts CINC's underlying revenue thesis. Per Finding-0025 §1, Payables+ is the February 2026 product that converts AP from a cost center to a revenue line — a multi-stream revenue model insight required for the acquirer thesis valuation math. Per Finding-0025 §7 Batch 2."
+
+## [2026-05-21T20:42:27Z] ingest | id=web-2026-02-26-870 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-26-870.md wiki=wiki/sources/web-2026-02-26-870.md
+
+## [2026-05-21T20:48:19Z] wiki-author | id=web-2026-02-26-870 | updates=4 | created=3 | updated=1 | contradictions=1 | draft=no
+
+Feb 26, 2026 Payables+ official launch is the next milestone in the Hg-sponsored CINC narrative cadence (~26 months post-close) and introduces AvidXchange as named third-party payments partner plus a named customer reference; integrates the AP-to-revenue-sharing mechanic central to the CINC acquirer thesis revenue model.
+
+## [2026-05-21T20:49:08Z] ingest | id=web-2020-06-10-363 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.4
+
+raw=raw/web/web-2020-06-10-363.md (wiki not written: filter decision=rejected)
+
+## [2026-05-21T20:49:18Z] filter-correction | id=web-2020-06-10-363 | domain=condo-capital-infra | decision=include | original_score=0.4
+
+rationale="The Spectrum 2020 investment is the anchor event that begins the CINC capitalization timeline: it establishes when Spectrum joined (June 2020), what CINC's scale was at that point (16K HOAs, 2M homes, 26 states), and who Ryan Davis is (appointed President & CEO at this announcement). These are the base-state metrics from which the 2023 and 2026 scale can be compared. It also announces CINC Capital (banking product) which is the predecessor to TresRE. Required to complete the cap-table history section of the cinc-systems entity per Finding-0025 §7 Batch 2."
+
+## [2026-05-21T20:49:20Z] ingest | id=web-2020-06-10-363 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2020-06-10-363.md wiki=wiki/sources/web-2020-06-10-363.md
+
+## [2026-05-21T20:53:50Z] wiki-author | id=web-2020-06-10-363 | updates=9 | created=8 | updated=1 | contradictions=1 | draft=no
+
+Anchor event establishing CINC's pre-Hg base-state metrics (16K HOAs / 2M homes / 26 states / 18-bank partners as of June 2020), Spectrum's initial entry, Ryan Davis's CEO appointment, board composition at deal close, and the public launch of CINC Capital (predecessor to TresRE) — completing the cap-table history section of the cinc-systems entity per Finding-0025 §7 Batch 2.
+
+## [2026-05-21T20:58:59Z] wiki-author | id=web-2025-01-06-1e2 | updates=6 | created=5 | updated=1 | contradictions=1 | draft=no
+
+First confirmed CINC acquisition event (ONR Applications, Jan 6 2025) refreshes the cinc-systems primary-acquirer entity with January 2025 scale metrics (~50K associations, 275+ employees), confirms the Hg January 2024 investment, and seeds named ONR/Ardoor/CEO entities relevant to the condo-capital-infra exit-thesis acquirer set.
+
+## [2026-05-21T21:03:49Z] wiki-author | id=web-2025-09-16-709 | updates=5 | created=4 | updated=1 | contradictions=0 | draft=no
+
+Source documents CINC Connect launch (Sep 16, 2025) at CINC Up 2025, confirming CINC's non-probabilistic post-ONR product surface (resident-engagement, amenity bookings, communications) and surfacing a mid-period 50K communities / 6M doors scale snapshot between the June 2020 Spectrum anchor and the April 2026 Cephai+ framing.
+
+## [2026-05-21T21:13:26Z] wiki-author | id=web-2025-08-05-4b5 | updates=7 | created=5 | updated=2 | contradictions=1 | draft=no
+
+CINC Systems August 2025 Cephai+ adoption announcement is the load-bearing primary-source data point for Cephai+ early-adoption metrics (100+ management companies, 31,000+ invoices), surfaces new CINC executive and Hg board personnel (Berenson CPO, Hussein Partner/board member), confirms continued Hg+Spectrum dual-sponsor governance, and provides earlier-than-existing customer testimony from RISE Management Group's Jason Delgado with a title discrepancy worth flagging.
+
+## [2026-05-21T21:13:57Z] finalize | page=wiki/entities/cinc-systems.md
+
+finalized wiki/entities/cinc-systems.md
+
+## [2026-05-21T21:37:17Z] nlm-add | id=docx-ea451e0d4901 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=docx
+
+file=docx-ea451e0d4901.docx title='bcfsa-blog-more-professionals-2026-01-26'
+
+## [2026-05-21T21:37:23Z] nlm-add | id=docx-f70cc64d728a | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=docx
+
+file=docx-f70cc64d728a.docx title='bcfsa-advisory-24-014'
+
+## [2026-05-21T21:37:30Z] nlm-add | id=pdf-1c554d4c6512 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-1c554d4c6512.pdf title='2025-05-12 from Ron Anaka and Reply'
+
+## [2026-05-21T21:37:46Z] nlm-add | id=pdf-3c6b4345c8c4 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-3c6b4345c8c4.pdf title='summergardens-reservestudy'
+
+## [2026-05-21T21:37:56Z] nlm-add | id=pdf-c974b5dbd563 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-c974b5dbd563.pdf title='cao-reserve-fund-guide-2024'
+
+## [2026-05-21T21:38:02Z] nlm-add | id=pdf-e3717ebcf2bc | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-e3717ebcf2bc.pdf title='Condominium Act'
+
+## [2026-05-21T21:38:09Z] nlm-add | id=web-1998-01-01-da9 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.buildinglink.io/en-ca/about-us
+
+## [2026-05-21T21:38:15Z] nlm-add | id=web-2007-05-15-70e | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.yardi.com/news/press-releases/brookfield-residential-services-ltd-canadas-largest-condominium-management-company-selects-yardi-voyager/
+
+## [2026-05-21T21:38:20Z] nlm-add | id=web-2011-08-18-1e7 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.assembly.nl.ca/legislation/sr/annualregs/2011/nr110080.htm
+
+## [2026-05-21T21:38:25Z] nlm-add | id=web-2013-11-28-88b | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www2.gov.bc.ca/gov/content/housing-tenancy/strata-housing/operating-a-strata/repairs-and-maintenance/depreciation-reports/choosing-a-depreciation-report-provider
+
+## [2026-05-21T21:38:33Z] nlm-add | id=web-2015-01-01-170 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://facilio.com/ai-suite/
+
+## [2026-05-21T21:38:40Z] nlm-add | id=web-2015-01-01-3e6 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://facilio.com/solutions/asset-lifecycle-management/
+
+## [2026-05-21T21:38:48Z] nlm-add | id=web-2015-01-01-599 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://facilio.com/product/enterprise-asset-management-software/
+
+## [2026-05-21T21:39:00Z] nlm-add | id=web-2017-01-13-f20 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.bluenoseengineering.com/condominium-reserve-fund-studies-regulated-requirements-nova-scotia
+
+## [2026-05-21T21:39:06Z] nlm-add | id=web-2017-07-26-1f3 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www2.snb.ca/content/snb/en/sites/condominium/faq.html
+
+## [2026-05-21T21:39:12Z] nlm-add | id=web-2018-01-09-945 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/pipeda_brief/
+
+## [2026-05-21T21:39:22Z] nlm-add | id=web-2018-03-31-9ad | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.cmhc-schl.gc.ca/consumers/home-buying/buying-guides/condominium/provincial-fact-sheets/Prince-Edward-Island-Fact-Sheet
+
+## [2026-05-21T21:39:29Z] nlm-add | id=web-2018-03-31-a5d | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.cmhc-schl.gc.ca/consumers/home-buying/buying-guides/condominium/provincial-fact-sheets/Newfoundland-and-Labrador-Fact-Sheet
+
+## [2026-05-21T21:39:33Z] nlm-add | id=web-2018-09-06-e6b | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://coxandpalmerlaw.com/services/condominium-law/
+
+## [2026-05-21T21:39:40Z] nlm-add | id=web-2019-03-07-ade | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://nrc.canada.ca/en/research-development/research-collaboration/research-centres/construction-research-centre
+
+## [2026-05-21T21:39:46Z] nlm-add | id=web-2019-12-11-cab | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://elireport.com/resource-center/press-release-helping-to-better-inform-condo-buyers/
+
+## [2026-05-21T21:39:53Z] nlm-add | id=web-2020-06-10-363 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-receives-growth-investment-from-spectrum-equity-and-announces-new-senior-executives-301073333.html
+
+## [2026-05-21T21:39:58Z] nlm-add | id=web-2020-12-11-687 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://elireport.com/pricing-plans/
+
+## [2026-05-21T21:40:04Z] nlm-add | id=web-2021-01-01-4e4 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://ifma.simplarbenchmarking.org/
+
+## [2026-05-21T21:40:10Z] nlm-add | id=web-2021-04-23-77c | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.newswire.ca/news-releases/ai-condo-document-review-platform-eli-report-expands-distribution-through-estratahub-integration-817841557.html
+
+## [2026-05-21T21:40:15Z] nlm-add | id=web-2022-03-01-ef4 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.pvsc.ca/data-disclosure
+
+## [2026-05-21T21:40:22Z] nlm-add | id=web-2023-05-02-683 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-announces-partnership-with-smartpropertys-living-reserve-study-301813805.html
+
+## [2026-05-21T21:40:29Z] nlm-add | id=web-2023-06-23-15a | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://nrc.canada.ca/en/research-development/nrc-facilities/building-durability-resiliency-lab
+
+## [2026-05-21T21:40:34Z] nlm-add | id=web-2023-10-19-a69 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://elireport.com/products/special-levy-forecast/
+
+## [2026-05-21T21:40:40Z] nlm-add | id=web-2023-12-14-8ec | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://web.archive.org/web/2023/https://www.businesswire.com/news/home/20231214355778/en/
+
+## [2026-05-21T21:40:47Z] nlm-add | id=web-2024-03-12-012 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.yardi.com/news/press-releases/yardi-breeze-premier-unlocking-a-new-era-in-condo-and-strata-market-in-canada/
+
+## [2026-05-21T21:40:50Z] nlm-add | id=web-2024-05-15-1b2 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://techcrunch.com/2024/05/15/meet-payhoa-a-profitable-and-once-bootstrapped-hoa-software-startup-that-just-landed-a-27-5m-series-a/
+
+## [2026-05-21T21:40:56Z] nlm-add | id=web-2024-05-17-2fd | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://elireport.com/resource-center/introducing-your-annual-benchmark-report/
+
+## [2026-05-21T21:41:03Z] nlm-add | id=web-2024-06-27-ed9 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://laws.gnb.ca/en/document/cs/C-16.05
+
+## [2026-05-21T21:41:12Z] nlm-add | id=web-2024-07-22-f1f | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-bolsters-leadership-amid-record-breaking-growth-302202818.html
+
+## [2026-05-21T21:41:17Z] nlm-add | id=web-2024-08-06-5e3 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://realestatemagazine.ca/vancouver-startup-revolutionizes-condo-and-townhome-assessment-with-ai-powered-tool/
+
+## [2026-05-21T21:41:26Z] nlm-add | id=web-2024-08-30-283 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://novascotia.ca/just/regulations/regs/conregs.htm
+
+## [2026-05-21T21:41:34Z] nlm-add | id=web-2024-10-07-033 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prweb.com/releases/eli-report-launches-free-condo-document-review-across-north-america-302266695.html
+
+## [2026-05-21T21:41:39Z] nlm-add | id=web-2024-10-31-4cf | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://elireport.com/products/condo-document-review/
+
+## [2026-05-21T21:41:46Z] nlm-add | id=web-2024-11-20-cd8 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/vantaca-acquires-hoai-to-unlock-a-new-era-of-hoa-community-management-with-cutting-edge-ai-302310780.html
+
+## [2026-05-21T21:41:53Z] nlm-add | id=web-2025-01-03-c5d | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.finrofca.com/news/proptech-valuation-multiples-2025
+
+## [2026-05-21T21:42:02Z] nlm-add | id=web-2025-01-06-1e2 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-acquires-onr-applications-inc-to-deliver-the-preeminent-hoa-management-experience-302342106.html
+
+## [2026-05-21T21:42:10Z] nlm-add | id=web-2025-01-07-b6e | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.community.solume.com/blog/reserv-study-state-requirements
+
+## [2026-05-21T21:42:17Z] nlm-add | id=web-2025-01-23-a1d | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.getsolume.com/florida-reserve-study
+
+## [2026-05-21T21:42:27Z] nlm-add | id=web-2025-02-05-f51 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.condocontrol.com/template/canada-condo-strata-reserve-fund-requirements/
+
+## [2026-05-21T21:42:37Z] nlm-add | id=web-2025-02-10-057 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://bomabest.org/publications-and-ngbr/
+
+## [2026-05-21T21:42:45Z] nlm-add | id=web-2025-07-03-321 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.stocktitan.net/news/AISXF/aisix-solutions-inc-extends-climate-risk-data-partnership-with-octo-iymt4668g0mj.html
+
+## [2026-05-21T21:42:57Z] nlm-add | id=web-2025-07-03-d90 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://patents.google.com/patent/US12462305B2/en
+
+## [2026-05-21T21:43:05Z] nlm-add | id=web-2025-08-05-4b5 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-accelerates-industry-leading-ai-momentum-with-100-management-companies-signed-up-for-cephai-302520008.html
+
+## [2026-05-21T21:43:13Z] nlm-add | id=web-2025-09-16-709 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-redefines-community-association-management-with-launch-of-cinc-connect-302557803.html
+
+## [2026-05-21T21:43:20Z] nlm-add | id=web-2025-10-14-ce0 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-appoints-new-executives-to-accelerate-companys-growth-with-ai-powered-platform-expansion-302583159.html
+
+## [2026-05-21T21:43:27Z] nlm-add | id=web-2025-10-15-7aa | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/vantaca-secures-300m-growth-investment-at-1-25b-valuation-to-cement-ai-first-market-leadership-302584948.html
+
+## [2026-05-21T21:43:33Z] nlm-add | id=web-2025-10-21-9f1 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://open.toronto.ca/dataset/apartment-building-evaluation/
+
+## [2026-05-21T21:43:39Z] nlm-add | id=web-2025-10-21-a7b | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://open.toronto.ca/dataset/apartment-building-registration/
+
+## [2026-05-21T21:43:54Z] nlm-add | id=web-2025-11-06-4cc | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.condoauthorityontario.ca/condo-registry-search/
+
+## [2026-05-21T21:44:01Z] nlm-add | id=web-2025-11-08-926 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://endowmentlock.com/2025/11/08/solume-launches-ai-software-for-easier-hoa-management/
+
+## [2026-05-21T21:44:06Z] nlm-add | id=web-2025-11-15-556 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://kingnewswire.com/solume-launches-ai-driven-reserve-study-management-for-hoas-25111537122/
+
+## [2026-05-21T21:44:15Z] nlm-add | id=web-2026-01-01-084 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.cincsystems.com/news/
+
+## [2026-05-21T21:44:22Z] nlm-add | id=web-2026-01-01-47b | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.propfusion.com/platform
+
+## [2026-05-21T21:44:30Z] nlm-add | id=web-2026-01-01-488 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.community.solume.com/reserve-study
+
+## [2026-05-21T21:44:35Z] nlm-add | id=web-2026-01-01-577 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://ccinovascotia.ca/news/view/changes-to-the-condominium-act-have-been-proclaimed
+
+## [2026-05-21T21:44:41Z] nlm-add | id=web-2026-01-01-ba8 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.propfusion.com/pricing
+
+## [2026-05-21T21:44:47Z] nlm-add | id=web-2026-01-01-d10 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://recollab.ai
+
+## [2026-05-21T21:45:00Z] nlm-add | id=web-2026-01-02-6fe | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://info.bcassessment.ca/property-information-trends
+
+## [2026-05-21T21:45:41Z] nlm-add | id=web-2026-02-04-5bb | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.fool.com/earnings/call-transcripts/2026/02/04/firstservice-fsv-q4-2025-earnings-transcript/
+
+## [2026-05-21T21:45:48Z] nlm-add | id=web-2026-02-11-bc9 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/facilio-launches-autonomous-ai-agents-to-automate-manual-back-office-work-in-facilities-management-302685168.html
+
+## [2026-05-21T21:45:56Z] nlm-add | id=web-2026-02-18-2af | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.yardi.com/news/
+
+## [2026-05-21T21:46:03Z] nlm-add | id=web-2026-02-26-870 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-unveils-payables-ai-powered-accounts-payable-solution-302698610.html
+
+## [2026-05-21T21:46:10Z] nlm-add | id=web-2026-03-03-bbe | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.einpresswire.com/article/896180440/bc-condo-owners-to-face-costly-levies-while-ontario-pays-now-new-data-reveals-canada-s-condo-funding-divide-octoai
+
+## [2026-05-21T21:46:19Z] nlm-add | id=web-2026-03-23-47c | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.platuni.com/enterprise-resources/blog-and-insights/top-10-best-canada-property-management-software
+
+## [2026-05-21T21:46:30Z] nlm-add | id=web-2026-03-26-dd1 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://natural-resources.canada.ca/energy-efficiency/energy-star/buildings/natural-resources-canada-s-national-building-energy-benchmarking-initiative
+
+## [2026-05-21T21:47:17Z] nlm-add | id=web-2026-04-16-4c4 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://web.archive.org/web/2026/https://www.morningstar.com/news/pr-newswire/20260416cl36473/cinc-expands-cephai-with-new-ai-capabilities-single-sign-on-and-a-unified-operating-experience-for-community-association-management
+
+## [2026-05-21T21:47:23Z] nlm-add | id=web-2026-04-27-33b | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.propfusion.com/law-guide/florida-sirs-requirements
+
+## [2026-05-21T21:47:29Z] nlm-add | id=web-2026-05-10-852 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://doi.org/10.4224/40003911
+
+## [2026-05-21T21:47:41Z] nlm-add | id=web-2026-05-11-852 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://doi.org/10.4224/40003911
+
+## [2026-05-21T21:47:46Z] nlm-add | id=web-2026-05-18-f80 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.saasworthy.com/product/propfusion
+
+## [2026-05-21T21:47:52Z] nlm-add | id=web-2026-05-19-00f | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://info.bcassessment.ca/Pages/Property-FAQ.aspx
+
+## [2026-05-21T22:32:08Z] wiki-author | id=query-2026-05-21-synthesis-cinc-systems-2024-2026-competitive | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-21T22:37:23Z] finalize | page=wiki/synthesis/2026-05-21-synthesis-cinc-systems-2024-2026-competitive.md
+
+finalized wiki/synthesis/2026-05-21-synthesis-cinc-systems-2024-2026-competitive.md
+
+## [2026-05-23T15:39:48Z] bootstrap-domain | slug=condo-software | inclusion_count=6 | exclusion_count=4
+
+authored policy for condo-software from description
+
+## [2026-05-23T16:05:51Z] ingest | id=web-2008-01-01-0ad | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2008-01-01-0ad.md (wiki not written: filter decision=review)
+
+## [2026-05-23T16:06:36Z] filter-correction | id=web-2008-01-01-0ad | domain=condo-software | decision=include | original_score=0.5
+
+rationale="Source explains FDIC pass-through insurance mechanics, network deposit placement architecture (demand deposit vs. money market vs. CD), and liquidity options. These are verifiable structural claims matching inclusion criterion 5 (FDIC sweep structures, ICS/CDARS). The 'vendor marketing copy' exclusion does not apply — the K per-bank split mechanics and network placement process are operationally specific, not puffery."
+
+## [2026-05-23T16:06:51Z] ingest | id=web-2008-01-01-0ad | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2008-01-01-0ad.md wiki=wiki/sources/web-2008-01-01-0ad.md
+
+## [2026-05-23T16:08:39Z] wiki-author | id=web-2008-01-01-0ad | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+First source in the condo-software domain establishing the IntraFi ICS/CDARS network as the canonical FDIC pass-through deposit-placement infrastructure relevant to HOA/condo reserve-fund cash management.
+
+## [2026-05-23T16:09:39Z] ingest | id=web-2026-01-01-21d | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-01-01-21d.md (wiki not written: filter decision=review)
+
+## [2026-05-23T16:09:59Z] filter-correction | id=web-2026-01-01-21d | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Source is from Alliance Association Bank (a named HOA banking partner in policy inclusion criteria) and explicitly applies ICS/CDARS to HOA, CID, and PUD accounts — directly evidencing money-flow architecture criterion 2 and banking-partner criterion 5. The lockbox payment-rail mention and Relationship Rate specifics are verifiable product claims, not generic puffery. Thin content is acknowledged; citation value is the explicit HOA-banking-partner application of the ICS/CDARS infrastructure documented in web-2008-01-01-0ad.'
+
+## [2026-05-23T16:10:06Z] ingest | id=web-2026-01-01-21d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-21d.md wiki=wiki/sources/web-2026-01-01-21d.md
+
+## [2026-05-23T16:12:12Z] wiki-author | id=web-2026-01-01-21d | updates=6 | created=1 | updated=5 | contradictions=0 | draft=no
+
+Source is the Alliance Association Bank product page applying IntraFi ICS/CDARS specifically to HOA/CID/PUD funds; updates existing IntraFi/ICS/CDARS/FDIC pages with HOA-banking-partner application and adds clarifying terminology (SMDIA) plus settlement-window and bank-exclusion mechanics, and creates the Alliance Association Bank entity as a named HOA banking partner.
+
+## [2026-05-23T16:13:57Z] ingest | id=pdf-fc88aa6c2822 | type=pdf | domains=condo-software | filter=review | domain=condo-software | score=0.6
+
+raw=raw/pdf/pdf-fc88aa6c2822.md (wiki not written: filter decision=review)
+
+## [2026-05-23T16:14:13Z] filter-correction | id=pdf-fc88aa6c2822 | domain=condo-software | decision=include | original_score=0.6
+
+rationale="CAI is explicitly named in the policy's positive quality signals ('CAI publications, Community Associations Institute white papers'). Source covers all 5 US jurisdictions in policy scope (FL, CA, NY, NJ, VA) with current (Sept 2024) statutory citations, notes post-Surfside changes to FL/MD/TN law, and distinguishes study-vs-funding requirements by state — matching inclusion criterion 4 precisely. The Canadian gap is real but not disqualifying; the policy covers 10 jurisdictions including both US and Canadian, and this source covers its 5 US jurisdictions authoritatively. Title is generic ('cai-reserve-fund'); recommend tagging entity as CAI-Summary-State-Reserve-Fund-Laws-Sept24."
+
+## [2026-05-23T16:14:19Z] ingest | id=pdf-fc88aa6c2822 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-fc88aa6c2822.md wiki=wiki/sources/pdf-fc88aa6c2822.md
+
+## [2026-05-23T16:17:08Z] wiki-author | id=pdf-fc88aa6c2822 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=no
+
+CAI Sept 2024 summary of state reserve fund laws is the first wiki-grounded source for US statutory reserve-study and reserve-funding requirements; creates baseline entity/concept coverage for the five US jurisdictions in policy scope (FL/CA/NY/NJ/VA) plus key non-scope states with material doctrine, and the publishing organization itself.
+
+## [2026-05-23T16:20:33Z] ingest | id=pdf-aa9367a8a4a9 | type=pdf | domains=condo-software | filter=review | domain=condo-software | score=0.6
+
+raw=raw/pdf/pdf-aa9367a8a4a9.md (wiki not written: filter decision=review)
+
+## [2026-05-23T16:20:47Z] filter-correction | id=pdf-aa9367a8a4a9 | domain=condo-software | decision=include | original_score=0.6
+
+rationale="CMRAO is the Ontario condominium manager regulator — a primary-source authority for ON Condo Act §93-95 (financial obligations), §94 (reserve fund study mandates), and §115 (fiduciary duties). The policy domain definition explicitly includes 'jurisdictional fiduciary regulation' and inclusion criterion 4 explicitly targets 'ON Condo Act §94' by section number. At 59 pages, this is substantive operational guidance that defines what financial-management software must accommodate in the Ontario market — exactly the regulatory constraint layer that shapes the software ecosystem. The filter's concern about 'software vendor analysis vs. regulatory reference' is a false dichotomy for this domain; regulatory requirements ARE the design constraints for the software."
+
+## [2026-05-23T16:20:54Z] ingest | id=pdf-aa9367a8a4a9 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-aa9367a8a4a9.md wiki=wiki/sources/pdf-aa9367a8a4a9.md
+
+## [2026-05-23T16:26:14Z] wiki-author | id=pdf-aa9367a8a4a9 | updates=12 | created=12 | updated=0 | contradictions=0 | draft=no
+
+CMRAO's February 2025 Practice Guide is the authoritative Ontario regulator artifact for condominium financial management; it establishes a parallel ON regulatory framework (Condo Act 1998, CMSA 2015, RFS regime, NOFF process, 8-class planner qualification) alongside the existing US-centric reserve-law corpus.
+
+## [2026-05-23T16:31:32Z] nlm-add | id=pdf-aa9367a8a4a9 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-aa9367a8a4a9.pdf title='cmrao-financial-management-2025-02'
+
+## [2026-05-23T16:31:38Z] nlm-add | id=pdf-fc88aa6c2822 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-fc88aa6c2822.pdf title='cai-reserve-fund'
+
+## [2026-05-23T16:31:45Z] nlm-add | id=web-2008-01-01-0ad | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.intrafi.com/ics-cdars
+
+## [2026-05-23T16:31:49Z] nlm-add | id=web-2026-01-01-21d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.westernalliancebancorporation.com/alliance-association-bank/hoa-banking/hoa-deposit-accounts/hoa-intrafi-network-deposits
+
+## [2026-05-23T16:32:55Z] ingest | id=web-2026-01-01-3bf | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-01-01-3bf.md (wiki not written: filter decision=review)
+
+## [2026-05-23T16:33:05Z] filter-correction | id=web-2026-01-01-3bf | domain=condo-software | decision=include | original_score=0.5
+
+rationale='CCI-National is the primary Canadian condo industry body; this article is authoritative cross-jurisdictional analysis of reserve fund investment vehicle rules (ON vs BC vs AB), directly grounding Finding-0027 §3. Primary regulatory-intelligence source for condo-software domain.'
+
+## [2026-05-23T16:33:14Z] ingest | id=web-2026-01-01-3bf | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-3bf.md wiki=wiki/sources/web-2026-01-01-3bf.md
+
+## [2026-05-23T16:37:14Z] wiki-author | id=web-2026-01-01-3bf | updates=8 | created=5 | updated=3 | contradictions=0 | draft=no
+
+CCI Toronto Fall 2017 article grounds the Ontario reserve-fund investment regime (Section 115(5) eligible securities and Section 115(8) investment plan obligation) and provides cross-jurisdictional anchors for BC and Alberta — gaps the existing wiki (CMRAO Practice Guide + CAI US summary) does not cover.
+
+## [2026-05-23T16:49:55Z] wiki-author | id=pdf-c974b5dbd563 | updates=8 | created=3 | updated=5 | contradictions=0 | draft=no
+
+The CAO Best Practices Guide is the canonical ON practitioner reference; it adds statutory grounding (§115(2), §93(4), O. Reg. 48/01 §29(2)-(3)), Class 1/2/3 cadence detail, the $500 component-inventory threshold, the pre-first-RFS contribution rule, and conflict-of-interest disqualifications — all of which extend existing ON RFS pages and warrant two new concept pages plus a CAO entity page.
+
+## [2026-05-23T16:53:35Z] ingest | id=pdf-dheide-2022-microsoft-word-600 | type=pdf | domains=condo-software | filter=included | domain=condo-software | score=0.82
+
+raw=raw/pdf/pdf-dheide-2022-microsoft-word-600.md wiki=wiki/sources/pdf-dheide-2022-microsoft-word-600.md
+
+## [2026-05-23T16:57:57Z] wiki-author | id=pdf-dheide-2022-microsoft-word-600 | updates=8 | created=7 | updated=1 | contradictions=0 | draft=no
+
+CHOA Bulletin 600-003 is the operational primary source for BC Strata Property Regulation §6.11 — it supplies the full statutory text of §6.11 (including the July 16, 2014 amendment, the five permitted-investment categories with their numeric thresholds, and the grandfather clause), names CHOA/SPA/CDIC/CUDIC-BC/DBRS as referenceable entities, and operationalizes BC strata council and strata manager trust-fund obligations that the existing BC entry only summarized at a single bullet of generality.
+
+## [2026-05-23T16:58:20Z] nlm-add | id=pdf-dheide-2022-microsoft-word-600 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-dheide-2022-microsoft-word-600.pdf title='Microsoft Word - 600-003 Investing CRF Guide_with most of ND comments (002)'
+
+## [2026-05-23T16:58:26Z] nlm-add | id=web-2026-01-01-3bf | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://cci.ca/resource-centre/view/234
+
+## [2026-05-23T17:02:11Z] nlm-add | id=pdf-c974b5dbd563 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-c974b5dbd563.pdf title='cao-reserve-fund-guide-2024'
+
+## [2026-05-23T17:02:53Z] ingest | id=web-2026-01-01-2db | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2026-01-01-2db.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T17:03:43Z] ingest | id=web-2026-01-01-9ac | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2026-01-01-9ac.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T17:04:28Z] ingest | id=web-2026-01-01-2fd | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.55
+
+raw=raw/web/web-2026-01-01-2fd.md (wiki not written: filter decision=review)
+
+## [2026-05-23T17:04:41Z] filter-correction | id=web-2026-01-01-2fd | domain=condo-software | decision=include | original_score=0.55
+
+rationale='AppFolio HOA Financials page explicitly names five HOA-banking integration partners (Alliance Association Bank, Pacific Premier Bank, First Citizens Bank, SmartStreet / Banc of California, CheckAlt) plus payment-rail specifics (ACH, lockbox, eCheck, BillPay, Positive Pay, auto-reconciliation). These named banking relationships are the primary load-bearing data for Finding-0027 §4 CAM-platform money-flow segment-ownership table. The source is vendor-authored but the named bank relationships are independently verifiable and constitute direct primary evidence of the US HOA banking-rail architecture. Per Dispatch A/B pattern on sources with concrete integration-surface specificity, override at review band.'
+
+## [2026-05-23T17:04:45Z] ingest | id=web-2026-01-01-2fd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-2fd.md wiki=wiki/sources/web-2026-01-01-2fd.md
+
+## [2026-05-23T17:07:00Z] wiki-author | id=web-2026-01-01-2fd | updates=9 | created=8 | updated=1 | contradictions=0 | draft=no
+
+AppFolio HOA Financials page is the primary source for the AppFolio CAM-platform banking partner roster (Alliance Association Bank, Pacific Premier Bank, First Citizens Bank, SmartStreet/Banc of California, CheckAlt, Columbia Bank) and the payment-rail feature set (ACH, lockbox, eCheck, BillPay, Positive Pay), feeding the CAM-platform money-flow segment-ownership table.
+
+## [2026-05-23T17:07:46Z] ingest | id=web-2023-06-06-844 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.65
+
+raw=raw/web/web-2023-06-06-844.md (wiki not written: filter decision=review)
+
+## [2026-05-23T17:08:05Z] filter-correction | id=web-2023-06-06-844 | domain=condo-software | decision=include | original_score=0.65
+
+rationale="TresRE launch announcement contains load-bearing structural intelligence for Finding-0027 §4: (1) establishes TresRE as a distinct bank-facing treasury middleware product (not just CINC feature), (2) names Valley Bank as launch partner, (3) documents Jenark and FRONTSTEPS Caliber as integration targets, (4) provides verifiable metrics (B annual payment volume, 14 lockbox locations, 99.74% match rate), (5) frames the 'swivel chair' problem as the competitive moat narrative. Recency concern noted but the architectural and product-identity facts are durable — TresRE's existence and structural positioning don't expire on a 24-month cycle. CINC is the project's named primary acquirer target. Override at review band per Dispatch A/B pattern for sources with concrete, named integration-surface specificity."
+
+## [2026-05-23T17:08:11Z] ingest | id=web-2023-06-06-844 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-06-06-844.md wiki=wiki/sources/web-2023-06-06-844.md
+
+## [2026-05-23T17:12:36Z] wiki-author | id=web-2023-06-06-844 | updates=12 | created=12 | updated=0 | contradictions=0 | draft=no
+
+Source is the canonical June 2023 launch announcement for TresRE — establishes CINC Systems (the project's named primary acquirer target), its product taxonomy (CINC accounting / Paygami / TresRE), key executives, financial metrics ($6B annual payments, 14 lockbox locations, 99.74% match rate), Spectrum Equity capital event, and named integration partners (Valley Bank, Jenark, FRONTSTEPS Caliber) — none of which currently have wiki pages; all updates are creates of entity and concept anchors needed for Finding-0027 §4 grounding.
+
+## [2026-05-23T17:12:54Z] nlm-add | id=web-2023-06-06-844 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-announces-the-launch-of-tresre-a-suite-of-treasury-solutions-designed-to-help-banks-provide-real-estate-companies-the-ability-to-bank-within-their-accounting-software-301842320.html
+
+## [2026-05-23T17:13:00Z] nlm-add | id=web-2026-01-01-2db | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.caionline.org/advocacy/public-policies/effective-collection-of-assessments/
+
+## [2026-05-23T17:13:07Z] nlm-add | id=web-2026-01-01-2fd | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.appfolio.com/markets/hoa/financials
+
+## [2026-05-23T17:13:14Z] nlm-add | id=web-2026-01-01-9ac | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.vantaca.com/pay
+
+## [2026-05-23T17:47:18Z] bootstrap-domain | slug=ai-native-business | inclusion_count=7 | exclusion_count=5
+
+authored policy for ai-native-business from description
+
+## [2026-05-23T17:48:06Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-23T17-48-06Z-schema-drift.md
+
+## [2026-05-23T17:48:38Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=start | domain=ai-native-business
+
+start research session for prompt "What does the org and operating model of an AI-native solo-founder / tiny-team business look like in 2026? Cover: role taxonomy for humans vs. agents, what gets automated first and in what order, agent-in-the-loop patterns (review gates, evals, escalation), decision cadence (async-default, sync exceptions), and the 'when to add a human vs. add an agent' decision rule. Include case studies of named AI-native companies (Anysphere/Cursor, Cognition, Sierra, Lindy, Crosby, Mercor, Harvey, Decagon) and solo operators (Pieter Levels, Marc Lou). Include academic productivity research (Brynjolfsson, Mollick, GitHub Copilot studies, BCG×Harvard AI experiment) and founder podcast appearances (Acquired, Lenny's, Latent Space, 20VC, AI Native Dojo)."
+
+## [2026-05-23T17:48:56Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-23-what-does-the-org-and-operating.yaml
+
+## [2026-05-23T17:49:37Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=start | domain=ai-native-business
+
+start research session for prompt "What does the org and operating model of an AI-native solo-founder / tiny-team business look like in 2026? Cover: role taxonomy for humans vs. agents, what gets automated first and in what order, agent-in-the-loop patterns (review gates, evals, escalation), decision cadence (async-default, sync exceptions), and the 'when to add a human vs. add an agent' decision rule. Include case studies of named AI-native companies (Anysphere/Cursor, Cognition, Sierra, Lindy, Crosby, Mercor, Harvey, Decagon) and solo operators (Pieter Levels, Marc Lou). Include academic productivity research (Brynjolfsson, Mollick, GitHub Copilot studies, BCG×Harvard AI experiment) and founder podcast appearances (Acquired, Lenny's, Latent Space, 20VC, AI Native Dojo)."
+
+## [2026-05-23T17:49:37Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T17:49:37Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-23T17:49:43Z] research | session_id=2026-05-23-what-are-the-economics-and-capital | step=start | domain=ai-native-business
+
+start research session for prompt "What are the economics and capital path of an AI-native solo-founder / tiny-team business in 2026? Cover: cost structure (compute, vendor primitives like model APIs and embeddings, data, human time), gross margin profile vs. legacy SaaS / legacy services / legacy marketplace, revenue-per-human benchmarks (Anysphere, Midjourney, Telegram, Plenty of Fish, Craigslist as comparators), time-to-revenue norms, and bootstrapped vs. revenue-financed vs. seed-funding paths. Include the 'AI compute as variable cost' reshaping of unit economics. Sources: VC pieces (a16z, Sequoia, Benchmark, Felicis) on AI-native economics, operator essays on capital efficiency, Stripe/First Round / Lenny content on AI-native unit economics, academic work on AI productivity gains (Brynjolfsson, BCG×Harvard), and named-company financial disclosures."
+
+## [2026-05-23T17:49:45Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=search | target=youtube
+
+error: youtube search returned HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per minute' of service 'youtube.googleapis.com' for consumer 'project_number:
+
+## [2026-05-23T17:49:54Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T17:49:58Z] research | session_id=2026-05-23-what-are-the-economics-and-capital | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-23-what-are-the-economics-and-capital.yaml
+
+## [2026-05-23T17:50:03Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native technical stack and build-vs-buy default in 2026 for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Resist becoming a tool list — focus on selection criteria. Sources: AI Engineer Summit talks, Latent Space episodes on production AI, operator blogs on evals and observability, vendor case studies (Anthropic, OpenAI, LangSmith, Braintrust), AI Engineer essays."
+
+## [2026-05-23T17:50:21Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-23-what-is-the-ai-native-technical.yaml
+
+## [2026-05-23T17:50:21Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-23T17:50:21Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=merge | n=121
+
+merged 121 candidate(s) across adapters
+
+## [2026-05-23T17:50:23Z] research | session_id=2026-05-23-how-does-an-ai-native-solo | step=start | domain=ai-native-business
+
+start research session for prompt "How does an AI-native solo or tiny-team business approach GTM, pricing, and defensibility in 2026? Cover: acquisition channels that work for a solo AI-native (PLG, founder-led content, embedded distribution, agent-marketplace listings); pricing axes (per-seat vs. usage vs. outcome) and when each fits which archetype; where moats actually form when foundation models are commoditized (workflow lock-in, data flywheels, distribution, brand, switching cost, integration depth); the 'thin wrapper' critique and when it's fair vs. lazy; defensibility for services-firm and marketplace archetypes (where moats differ from SaaS). Sources: VC essays on AI moats (a16z, Sequoia, Benchmark), operator essays on AI pricing (Kyle Poyar, Lenny, First Round, ProductLed), named-company pricing disclosures, AI-native services / marketplace case studies."
+
+## [2026-05-23T17:50:41Z] research | session_id=2026-05-23-how-does-an-ai-native-solo | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-23-how-does-an-ai-native-solo.yaml
+
+## [2026-05-23T17:50:53Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native indie SaaS / vertical agent archetype for a solo founder in 2026? Cover: definition (what this archetype is and isn't), funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Crosby, Decagon, Sierra) and solo-buildable variants (Pieter Levels with Nomad List and Photo AI, Marc Lou's portfolio, other single-operator vertical agents); how the four pillars (org, economics, tech, GTM) specialize for this archetype; defensibility specific to vertical agents (workflow lock-in, integration depth, eval moat); pricing trajectory (seat → usage → outcome); go/no-go signals for a solo founder. Include a worked example walked through the four pillars."
+
+## [2026-05-23T17:51:14Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=plan | n=56
+
+query plan written to nlm/query_plans/2026-05-23-what-is-the-ai-native-indie.yaml
+
+## [2026-05-23T17:51:16Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native services firm archetype for a solo or tiny-team operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping shop, recruiting firm, paralegal services, content production); referents at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator end (one-person agencies, AI-leveraged consultancies, productized services); how the four pillars (org, economics, tech, GTM) specialize — especially economics (hourly/retainer collapse as AI substrate replaces hours, pricing pivot to outcomes) and defensibility (client relationships, workflow integration, reputation — not data); go/no-go signals; worked example. Include the 'service as software' framing and the productized-service vs. project-services spectrum."
+
+## [2026-05-23T17:51:36Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-23-what-is-the-ai-native-services.yaml
+
+## [2026-05-23T17:51:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching, content-rights aggregation; how the four pillars specialize — especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals; worked example. Include comparison to pre-AI marketplaces (Craigslist, Thumbtack, Upwork) to clarify what 'AI-native' adds."
+
+## [2026-05-23T17:52:15Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-23-what-is-the-ai-native-marketplace.yaml
+
+## [2026-05-23T17:56:21Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=filter | n=8
+
+8 candidate(s) cleared threshold
+
+## [2026-05-23T17:56:22Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=convert | target=https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+error: could not fetch https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+## [2026-05-23T17:56:28Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=materialize | n=7
+
+materialized 7 source(s) to raw/
+
+## [2026-05-23T17:56:29Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T17:56:30Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=nlm_session | notebook_id=f388291f-740b-4b94-a158-e4813dfe4c59
+
+created session notebook f388291f-740b-4b94-a158-e4813dfe4c59
+
+## [2026-05-23T17:57:09Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=source_add | n=7 | skipped=0
+
+pushed 7 source(s) to session notebook (0 skipped)
+
+## [2026-05-23T17:57:11Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=source_map | n=7
+
+built source map (7 entries)
+
+## [2026-05-23T18:02:17Z] ingest | id=web-2024-01-01-4d7 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2024-01-01-4d7.md wiki=wiki/sources/web-2024-01-01-4d7.md
+
+## [2026-05-23T18:05:57Z] wiki-author | id=web-2024-01-01-4d7 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=no
+
+Florida Statute §718.111 introduces the first FL condominium-association statutory entity in the wiki, anchoring fiduciary duties, kickback prohibition, abandoned-unit access, replacement-cost insurance, and the 250-year windstorm PML standard — concepts with no prior coverage in the existing condo-software corpus.
+
+## [2026-05-23T18:06:57Z] ingest | id=web-2018-07-01-694 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2018-07-01-694.md wiki=wiki/sources/web-2018-07-01-694.md
+
+## [2026-05-23T18:08:12Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-23T18:08:13Z] wiki-author | id=research-2026-05-23-what-does-the-org-and-operating | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+corpus-constructive research session for ai-native-business
+
+## [2026-05-23T18:08:13Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-05-23-what-does-the-org-and-operating: 6 update(s)
+
+## [2026-05-23T18:08:48Z] research | session_id=2026-05-23-what-does-the-org-and-operating | step=promoted | added=5 | failed=2
+
+promoted 5 source(s) into persistent notebook (2 failed)
+
+## [2026-05-23T18:09:53Z] wiki-author | id=web-2018-07-01-694 | updates=7 | created=6 | updated=1 | contradictions=0 | draft=no
+
+Florida Statute §718.112 (Bylaws) is a distinct, citable section of Chapter 718 that defines board composition, meeting procedures, voting/proxy mechanics, and board-member term limits — create the section-level entity, augment the Chapter 718 page with concrete §718.112 provisions, and capture the term-limit and limited-proxy mechanisms as concepts.
+
+## [2026-05-23T18:12:23Z] ingest | id=web-2026-03-18-a4e | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2026-03-18-a4e.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:12:41Z] filter-correction | id=web-2026-03-18-a4e | domain=condo-software | decision=include | original_score=0.4
+
+rationale="CAI Advocacy is the primary-adjacent grounding source for Fannie Mae LL-2026-03 + Freddie Mac Bulletin 2026-C. LL-2026-03 is a load-bearing regulatory driver in Finding-0028: 15% reserve minimum (Jan 2027), baseline-funding prohibition (Aug 2026), Limited Review retirement — all directly shape the reserve-study SaaS market opportunity and lender-pull product positioning. Primary PDF (singlefamily.fanniemae.com) is blocked at wiki gateway; this CAI source authored by CAI's Chief Advocacy Officer is the best accessible substitute for grounding LL-2026-03 claims."
+
+## [2026-05-23T18:12:48Z] ingest | id=web-2026-03-18-a4e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-03-18-a4e.md wiki=wiki/sources/web-2026-03-18-a4e.md
+
+## [2026-05-23T18:15:46Z] wiki-author | id=web-2026-03-18-a4e | updates=10 | created=9 | updated=1 | contradictions=0 | draft=no
+
+New CAI Advocacy source establishes the load-bearing federal GSE policy regime (Fannie Mae LL-2026-03, Freddie Mac Bulletin 2026-C) that imposes the 15% reserve-funding floor, retires Limited Review, and caps insurance deductibles — requiring new entities for the GSEs and the lender letter, new concepts for each policy lever, and an update to CAI to reflect its advocacy role.
+
+## [2026-05-23T18:16:27Z] ingest | id=web-2026-05-23-01f | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-05-23-01f.md wiki=wiki/sources/web-2026-05-23-01f.md
+
+## [2026-05-23T18:17:44Z] wiki-author | id=web-2026-05-23-01f | updates=3 | created=3 | updated=0 | contradictions=0 | draft=no
+
+New Virginia POAA primary-source statute introduces VA into the multi-jurisdiction reserve-law corpus; no existing entity covers Title 55.1 / Chapter 18 / §55.1-1826, so create the statute entities and the VA-specific reserve-study concept.
+
+## [2026-05-23T18:18:07Z] nlm-add | id=web-2018-07-01-694 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.flsenate.gov/laws/statutes/2024/718.112
+
+## [2026-05-23T18:18:15Z] nlm-add | id=web-2024-01-01-4d7 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.flsenate.gov/laws/statutes/2024/718.111
+
+## [2026-05-23T18:18:21Z] nlm-add | id=web-2026-03-18-a4e | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://advocacy.caionline.org/fannie-freddie-update031826/
+
+## [2026-05-23T18:18:27Z] nlm-add | id=web-2026-05-23-01f | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://law.lis.virginia.gov/vacode/title55.1/chapter18/section55.1-1826/
+
+## [2026-05-23T18:22:40Z] ingest | id=web-2026-05-23-1d6 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.6
+
+raw=raw/web/web-2026-05-23-1d6.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:23:14Z] filter-correction | id=web-2026-05-23-1d6 | domain=condo-software | decision=include | original_score=0.6
+
+rationale='VA DPOR/CICB Chapter 50 admin code is the primary trust-accounting regulatory text for VA community-association managers. Section 160 governs maintenance and management of accounts — the direct fiduciary trust-account requirement for VA PMs. This is primary regulatory authority for one of the 10 in-scope US-5 jurisdictions (VA) and satisfies inclusion criterion 4 (jurisdiction-specific reserve-fund and fiduciary regulations).'
+
+## [2026-05-23T18:23:32Z] ingest | id=web-2026-05-23-1d6 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-1d6.md wiki=wiki/sources/web-2026-05-23-1d6.md
+
+## [2026-05-23T18:25:27Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-23T18-25-27Z-schema-drift.md
+
+## [2026-05-23T18:25:44Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native indie SaaS / vertical agent archetype for a solo founder in 2026? Cover: definition (what this archetype is and isn't), funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Crosby, Decagon, Sierra) and solo-buildable variants (Pieter Levels with Nomad List and Photo AI, Marc Lou's portfolio, other single-operator vertical agents); how the four pillars (org, economics, tech, GTM) specialize for this archetype; defensibility specific to vertical agents (workflow lock-in, integration depth, eval moat); pricing trajectory (seat → usage → outcome); go/no-go signals for a solo founder. Include a worked example walked through the four pillars."
+
+## [2026-05-23T18:25:44Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:25:45Z] wiki-author | id=web-2026-05-23-1d6 | updates=3 | created=2 | updated=1 | contradictions=0 | draft=no
+
+Anchor VA's manager-side trust-accounting regulatory regime (18VAC48-50) with one regulation entity, one Standards-of-Conduct concept page, and a cross-reference from the existing VA POA Act entity; conservative scope because the source body is the TOC only.
+
+## [2026-05-23T18:25:46Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native services firm archetype for a solo or tiny-team operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping shop, recruiting firm, paralegal services, content production); referents at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator end (one-person agencies, AI-leveraged consultancies, productized services); how the four pillars (org, economics, tech, GTM) specialize — especially economics (hourly/retainer collapse as AI substrate replaces hours, pricing pivot to outcomes) and defensibility (client relationships, workflow integration, reputation — not data); go/no-go signals; worked example. Include the 'service as software' framing and the productized-service vs. project-services spectrum."
+
+## [2026-05-23T18:25:46Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:25:46Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | target=web
+
+error: Firecrawl search HTTP error: HTTPSConnectionPool(host='api.firecrawl.dev', port=443): Max retries exceeded with url: /v1/search (Caused by NewConnectionError("HTTPSConnection(host='api.firecrawl.dev', port=443): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+## [2026-05-23T18:25:47Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching, content-rights aggregation; how the four pillars specialize — especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals; worked example. Include comparison to pre-AI marketplaces (Craigslist, Thumbtack, Upwork) to clarify what 'AI-native' adds."
+
+## [2026-05-23T18:25:47Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:25:48Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | target=youtube
+
+error: youtube search returned HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per minute' of service 'youtube.googleapis.com' for consumer 'project_number:
+
+## [2026-05-23T18:25:49Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | target=youtube
+
+error: youtube search returned HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per minute' of service 'youtube.googleapis.com' for consumer 'project_number:
+
+## [2026-05-23T18:25:49Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | target=youtube
+
+error: youtube search returned HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per minute' of service 'youtube.googleapis.com' for consumer 'project_number:
+
+## [2026-05-23T18:25:49Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native technical stack and build-vs-buy default in 2026 for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Resist becoming a tool list — focus on selection criteria. Sources: AI Engineer Summit talks, Latent Space episodes on production AI, operator blogs on evals and observability, vendor case studies (Anthropic, OpenAI, LangSmith, Braintrust), AI Engineer essays."
+
+## [2026-05-23T18:25:49Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:25:51Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-23T18:25:51Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-23T18:25:51Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | target=youtube
+
+error: youtube search returned HTTP 429: {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Search Queries' and limit 'Search Queries per minute' of service 'youtube.googleapis.com' for consumer 'project_number:
+
+## [2026-05-23T18:25:51Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-23T18:25:51Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | target=arxiv
+
+error: arxiv API returned HTTP 429
+
+## [2026-05-23T18:25:59Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=semantic_scholar | n=43
+
+adapter semantic_scholar returned 43 candidates
+
+## [2026-05-23T18:25:59Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-23T18:25:59Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=merge | n=50
+
+merged 50 candidate(s) across adapters
+
+## [2026-05-23T18:26:00Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-23T18:26:01Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=web | n=80
+
+adapter web returned 80 candidates
+
+## [2026-05-23T18:26:01Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=merge | n=123
+
+merged 123 candidate(s) across adapters
+
+## [2026-05-23T18:26:02Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T18:26:02Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=merge | n=120
+
+merged 120 candidate(s) across adapters
+
+## [2026-05-23T18:26:03Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-23T18:26:04Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T18:26:04Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=merge | n=125
+
+merged 125 candidate(s) across adapters
+
+## [2026-05-23T18:26:19Z] ingest | id=web-2025-06-10-ddd | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2025-06-10-ddd.md wiki=wiki/sources/web-2025-06-10-ddd.md
+
+## [2026-05-23T18:28:45Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-23T18:29:40Z] wiki-author | id=web-2025-06-10-ddd | updates=9 | created=9 | updated=0 | contradictions=0 | draft=no
+
+Source is a NJ-specific statutory alert on S3992/S2760 reserve-funding amendments; no existing pages cover NJ, so all touchpoints are net-new entity/concept pages anchored to this single grounding source.
+
+## [2026-05-23T18:30:17Z] ingest | id=web-2018-08-01-f87 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2018-08-01-f87.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:30:30Z] filter-correction | id=web-2018-08-01-f87 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='HOACPA CPA-authored explanation of CA §5305 audit/review thresholds (Davis-Stirling). Load-bearing corrective: Finding-0027 §5.2 misattributed FL revenue thresholds to CA; this source provides the authoritative CA-specific thresholds used by CPA practitioners. CA is one of the 10 in-scope US-5 jurisdictions; §5305 governs annual financial reporting requirements for HOAs and directly constrains PM-software audit-trail and reporting features. Inclusion criterion 4 (jurisdiction-specific reserve-fund regulations) satisfied despite 2018 publication date — §5305 thresholds unchanged.'
+
+## [2026-05-23T18:30:34Z] ingest | id=web-2018-08-01-f87 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-08-01-f87.md wiki=wiki/sources/web-2018-08-01-f87.md
+
+## [2026-05-23T18:32:09Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | n=2
+
+2 candidate(s) cleared threshold
+
+## [2026-05-23T18:32:10Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=materialize | n=2
+
+materialized 2 source(s) to raw/
+
+## [2026-05-23T18:32:10Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T18:32:11Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=nlm_session | notebook_id=98aa0af2-11ff-42b9-9faf-a6a6c9ddc5ea
+
+created session notebook 98aa0af2-11ff-42b9-9faf-a6a6c9ddc5ea
+
+## [2026-05-23T18:32:23Z] wiki-author | id=web-2018-08-01-f87 | updates=5 | created=5 | updated=0 | contradictions=0 | draft=no
+
+Source provides authoritative CA Davis-Stirling Act §5305 financial Review/Audit thresholds plus HOACPA's CPA-firm guidance on circumstances warranting voluntary Review/Audit; no existing wiki pages cover Davis-Stirling, §5305, or HOACPA, so all five pages are net-new entities and concepts.
+
+## [2026-05-23T18:32:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=source_add | n=2 | skipped=0
+
+pushed 2 source(s) to session notebook (0 skipped)
+
+## [2026-05-23T18:32:28Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=source_map | n=2
+
+built source map (2 entries)
+
+## [2026-05-23T18:32:38Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=filter | n=2
+
+2 candidate(s) cleared threshold
+
+## [2026-05-23T18:32:40Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=materialize | n=2
+
+materialized 2 source(s) to raw/
+
+## [2026-05-23T18:32:40Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T18:32:41Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=nlm_session | notebook_id=92cefb57-6859-48df-8eca-38928651a06c
+
+created session notebook 92cefb57-6859-48df-8eca-38928651a06c
+
+## [2026-05-23T18:32:45Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_add | target=https://newsletter.pragmaticengineer.com/p/cursor
+
+error: `nlm source add 92cefb57-6859-48df-8eca-38928651a06c --url https://newsletter.pragmaticengineer.com/p/cursor --wait` exited 1: Adding https://newsletter.pragmaticengineer.com/p/cursor and waiting for 
+processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T18:32:45Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_add | n=1 | skipped=1
+
+pushed 1 source(s) to session notebook (1 skipped)
+
+## [2026-05-23T18:32:47Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_map | n=1
+
+built source map (1 entries)
+
+## [2026-05-23T18:33:14Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | n=12
+
+12 candidate(s) cleared threshold
+
+## [2026-05-23T18:33:15Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=convert | target=https://doi.org/10.2139/ssrn.6446158
+
+error: could not fetch https://doi.org/10.2139/ssrn.6446158
+
+## [2026-05-23T18:33:17Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=convert | target=https://www.reddit.com/r/SideProject/comments/1fsgqzi/my_humble_analysis_on_how_levelsio_grew_photoai/
+
+error: no extractable content at https://www.reddit.com/r/SideProject/comments/1fsgqzi/my_humble_analysis_on_how_levelsio_grew_photoai/
+
+## [2026-05-23T18:33:25Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=materialize | n=10
+
+materialized 10 source(s) to raw/
+
+## [2026-05-23T18:33:25Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T18:33:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=nlm_session | notebook_id=8f7e0bd5-e18b-43a2-8e1e-5ec139e20ca5
+
+created session notebook 8f7e0bd5-e18b-43a2-8e1e-5ec139e20ca5
+
+## [2026-05-23T18:34:03Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG
+
+error: `nlm source add 8f7e0bd5-e18b-43a2-8e1e-5ec139e20ca5 --url https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG --wait` exited 1: Adding 
+https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month
+-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T18:34:06Z] ingest | id=web-2026-04-15-f75 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-04-15-f75.md wiki=wiki/sources/web-2026-04-15-f75.md
+
+## [2026-05-23T18:34:08Z] ingest | id=web-2026-05-23-366 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.45
+
+raw=raw/web/web-2026-05-23-366.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:34:12Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-llm-costs-in-production-with-real-numbers-3f53dfe4bc9d
+
+error: `nlm source add 8f7e0bd5-e18b-43a2-8e1e-5ec139e20ca5 --url https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-llm-costs-in-production-with-real-numbers-3f53dfe4bc9d --wait` exited 1: Adding 
+https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-l
+lm-costs-in-production-with-real-numbers-3f53dfe4bc9d and waiting for 
+processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T18:34:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | n=8 | skipped=2
+
+pushed 8 source(s) to session notebook (2 skipped)
+
+## [2026-05-23T18:34:29Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_map | n=8
+
+built source map (8 entries)
+
+## [2026-05-23T18:34:41Z] ingest | id=web-2026-05-22-574 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.48
+
+raw=raw/web/web-2026-05-22-574.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:35:16Z] ingest | id=web-2026-05-22-eb1 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.43
+
+raw=raw/web/web-2026-05-22-eb1.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:35:38Z] ingest | id=web-2026-05-22-03d | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.35
+
+raw=raw/web/web-2026-05-22-03d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:36:03Z] ingest | id=web-2026-05-22-2dd | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.1
+
+raw=raw/web/web-2026-05-22-2dd.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:36:26Z] ingest | id=web-2026-05-22-ed5 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.2
+
+raw=raw/web/web-2026-05-22-ed5.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:36:49Z] ingest | id=web-2026-05-22-587 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.1
+
+raw=raw/web/web-2026-05-22-587.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:37:15Z] ingest | id=web-2026-05-22-f7b | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.35
+
+raw=raw/web/web-2026-05-22-f7b.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:37:49Z] ingest | id=web-2026-05-22-a21 | type=web | domains=ai-native-business | filter=review | domain=ai-native-business | score=0.55
+
+raw=raw/web/web-2026-05-22-a21.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:38:16Z] ingest | id=web-2026-05-23-66d | type=web | domains=ai-native-business | filter=review | domain=ai-native-business | score=0.4
+
+raw=raw/web/web-2026-05-23-66d.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-23-366 | domain=ai-native-business | decision=include | original_score=0.45
+
+rationale='AI industry/model-market analysis informing operator tech-stack and capital-efficiency decisions — fits the expanded inclusion criterion added 2026-05-23.'
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-22-574 | domain=ai-native-business | decision=include | original_score=0.48
+
+rationale='AI infra primitives (Exa, Modal, TurboPuffer) directly relevant to build-vs-buy defaults for solo operators.'
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-22-eb1 | domain=ai-native-business | decision=include | original_score=0.43
+
+rationale='AI industry/model-market analysis informing operator tech-stack and capital-efficiency decisions — fits the expanded inclusion criterion added 2026-05-23.'
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-22-03d | domain=ai-native-business | decision=include | original_score=0.35
+
+rationale='AI industry/model-market analysis informing operator tech-stack and capital-efficiency decisions — fits the expanded inclusion criterion added 2026-05-23.'
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-22-ed5 | domain=ai-native-business | decision=include | original_score=0.2
+
+rationale='AI economics analysis on commoditization, moats, and capital efficiency — material for the economics and defensibility pillars.'
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-22-587 | domain=ai-native-business | decision=include | original_score=0.1
+
+rationale='AI public-perception dynamics that materially shape GTM for AI-native businesses.'
+
+## [2026-05-23T18:38:51Z] filter-correction | id=web-2026-05-22-f7b | domain=ai-native-business | decision=include | original_score=0.35
+
+rationale='Solo-operator agent-workflow recipe — concrete operating model for a tiny team.'
+
+## [2026-05-23T18:38:51Z] ingest | id=web-2026-05-23-479 | type=web | domains=ai-native-business | filter=review | domain=ai-native-business | score=0.42
+
+raw=raw/web/web-2026-05-23-479.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:39:28Z] ingest | id=web-2026-05-22-6cd | type=web | domains=ai-native-business | filter=included | domain=ai-native-business | score=0.72
+
+raw=raw/web/web-2026-05-22-6cd.md wiki=wiki/sources/web-2026-05-22-6cd.md
+
+## [2026-05-23T18:40:08Z] ingest | id=web-2026-05-23-4c1 | type=web | domains=ai-native-business | filter=review | domain=ai-native-business | score=0.38
+
+raw=raw/web/web-2026-05-23-4c1.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:40:41Z] ingest | id=web-2026-05-22-e40 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.3
+
+raw=raw/web/web-2026-05-22-e40.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:41:33Z] ingest | id=web-2026-05-22-caf | type=web | domains=ai-native-business | filter=included | domain=ai-native-business | score=0.56
+
+raw=raw/web/web-2026-05-22-caf.md wiki=wiki/sources/web-2026-05-22-caf.md
+
+## [2026-05-23T18:41:54Z] ingest | id=web-2026-05-23-6c2 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.15
+
+raw=raw/web/web-2026-05-23-6c2.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:42:19Z] ingest | id=web-2026-05-22-113 | type=web | domains=ai-native-business | filter=rejected | domain=ai-native-business | score=0.25
+
+raw=raw/web/web-2026-05-22-113.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T18:42:46Z] ingest | id=web-2026-05-23-697 | type=web | domains=ai-native-business | filter=review | domain=ai-native-business | score=0.38
+
+raw=raw/web/web-2026-05-23-697.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:42:55Z] nlm-add | id=web-2026-05-22-03d | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://thezvi.substack.com/p/gemini-35-flash-looks-good-for-how
+
+## [2026-05-23T18:43:02Z] nlm-add | id=web-2026-05-22-113 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://pmresearcher.substack.com/p/will-ai-replace-systems-thinking
+
+## [2026-05-23T18:43:13Z] nlm-add | id=web-2026-05-22-2dd | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://www.dwarkesh.com/p/reiner-pope-2
+
+## [2026-05-23T18:43:29Z] nlm-add | id=web-2026-05-22-6cd | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://www.enginesofchange.ai/p/components-not-solutions
+
+## [2026-05-23T18:43:44Z] nlm-add | id=web-2026-05-22-caf | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://departmentofproduct.substack.com/p/google-search-now-generates-ui-on
+
+## [2026-05-23T18:43:51Z] nlm-add | id=web-2026-05-22-e40 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://backofmind.substack.com/p/meet-the-new-economy-same-as-the
+
+## [2026-05-23T18:44:18Z] nlm-add | id=web-2026-05-23-479 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://www.enginesofchange.ai/p/when-the-human-layer-is-the-control
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-22-a21 | domain=ai-native-business | decision=include | original_score=0.55
+
+rationale='Concrete operator/agent-workflow pattern relevant to solo-founder operating model.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-23-66d | domain=ai-native-business | decision=include | original_score=0.4
+
+rationale='Concrete operator/agent-workflow pattern relevant to solo-founder operating model.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-23-479 | domain=ai-native-business | decision=include | original_score=0.42
+
+rationale='Concrete operator/agent-workflow pattern relevant to solo-founder operating model.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-23-4c1 | domain=ai-native-business | decision=include | original_score=0.38
+
+rationale='AI economics, defensibility, or capital-efficiency analysis material to the economics and moats pillars.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-23-697 | domain=ai-native-business | decision=include | original_score=0.38
+
+rationale='AI industry/model-market analysis informing operator strategic decisions (model selection, build-vs-buy, capital efficiency).'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-22-e40 | domain=ai-native-business | decision=include | original_score=0.3
+
+rationale='AI economics, defensibility, or capital-efficiency analysis material to the economics and moats pillars.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-23-6c2 | domain=ai-native-business | decision=include | original_score=0.15
+
+rationale='Concrete operator/agent-workflow pattern relevant to solo-founder operating model.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-22-113 | domain=ai-native-business | decision=include | original_score=0.25
+
+rationale='Concrete operator/agent-workflow pattern relevant to solo-founder operating model.'
+
+## [2026-05-23T18:46:12Z] filter-correction | id=web-2026-05-22-2dd | domain=ai-native-business | decision=exclude | original_score=0.1
+
+rationale='Chip-design history; too far from solo-operator AI-native business playbook scope.'
+
+## [2026-05-23T18:46:38Z] ingest | id=web-2026-05-23-366 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-366.md wiki=wiki/sources/web-2026-05-23-366.md
+
+## [2026-05-23T18:46:38Z] ingest | id=web-2026-05-22-574 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-574.md wiki=wiki/sources/web-2026-05-22-574.md
+
+## [2026-05-23T18:46:39Z] ingest | id=web-2026-05-22-eb1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-eb1.md wiki=wiki/sources/web-2026-05-22-eb1.md
+
+## [2026-05-23T18:46:40Z] ingest | id=web-2026-05-22-03d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-03d.md wiki=wiki/sources/web-2026-05-22-03d.md
+
+## [2026-05-23T18:46:40Z] ingest | id=web-2026-05-22-ed5 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-ed5.md wiki=wiki/sources/web-2026-05-22-ed5.md
+
+## [2026-05-23T18:46:41Z] ingest | id=web-2026-05-22-587 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-587.md wiki=wiki/sources/web-2026-05-22-587.md
+
+## [2026-05-23T18:46:41Z] ingest | id=web-2026-05-22-f7b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-f7b.md wiki=wiki/sources/web-2026-05-22-f7b.md
+
+## [2026-05-23T18:46:42Z] ingest | id=web-2026-05-22-a21 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-a21.md wiki=wiki/sources/web-2026-05-22-a21.md
+
+## [2026-05-23T18:46:42Z] ingest | id=web-2026-05-23-66d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-66d.md wiki=wiki/sources/web-2026-05-23-66d.md
+
+## [2026-05-23T18:46:43Z] ingest | id=web-2026-05-23-479 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-479.md wiki=wiki/sources/web-2026-05-23-479.md
+
+## [2026-05-23T18:46:44Z] ingest | id=web-2026-05-23-4c1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-4c1.md wiki=wiki/sources/web-2026-05-23-4c1.md
+
+## [2026-05-23T18:46:45Z] ingest | id=web-2026-05-22-e40 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-e40.md wiki=wiki/sources/web-2026-05-22-e40.md
+
+## [2026-05-23T18:46:46Z] ingest | id=web-2026-05-23-6c2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-6c2.md wiki=wiki/sources/web-2026-05-23-6c2.md
+
+## [2026-05-23T18:46:46Z] ingest | id=web-2026-05-22-113 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-22-113.md wiki=wiki/sources/web-2026-05-22-113.md
+
+## [2026-05-23T18:48:08Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native technical stack and build-vs-buy default in 2026 for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Resist becoming a tool list — focus on selection criteria. Sources: AI Engineer Summit talks, Latent Space episodes on production AI, operator blogs on evals and observability, vendor case studies (Anthropic, OpenAI, LangSmith, Braintrust), AI Engineer essays."
+
+## [2026-05-23T18:48:08Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T18:48:08Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T18:48:08Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:48:14Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T18:48:18Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-23T18:48:18Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=merge | n=125
+
+merged 125 candidate(s) across adapters
+
+## [2026-05-23T18:48:31Z] ingest | id=web-2014-03-01-97d | type=web | domains=ai-native-business | filter=review | domain=ai-native-business | score=0.4
+
+raw=raw/web/web-2014-03-01-97d.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:48:49Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-23T18-48-49Z-schema-drift.md
+
+## [2026-05-23T18:48:53Z] nlm-add | id=web-2018-08-01-f87 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://hoacpa.com/wp-content/uploads/2018/09/CA_when-is-a-review-or-audit-required-or-recommended.html
+
+## [2026-05-23T18:48:58Z] nlm-add | id=web-2025-06-10-ddd | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.greenbaumlaw.com/insights-alerts-New-Jersey-Enacts-Legislation-to-Amend-Capital-Reserve-Funding-Requirements-for-Planned-Real-Estate-Developments.html
+
+## [2026-05-23T18:49:02Z] ingest | id=web-2024-03-29-a63 | type=web | domains=ai-native-business | filter=included | domain=ai-native-business | score=0.78
+
+raw=raw/web/web-2024-03-29-a63.md wiki=wiki/sources/web-2024-03-29-a63.md
+
+## [2026-05-23T18:49:04Z] nlm-add | id=web-2026-04-15-f75 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://eclipsecommunities.com/2026-fannie-freddie-condo-requirements/
+
+## [2026-05-23T18:49:09Z] nlm-add | id=web-2026-05-23-1d6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://law.lis.virginia.gov/admincode/title18/agency48/chapter50/
+
+## [2026-05-23T18:49:45Z] ingest | id=web-2023-07-30-b4c | type=web | domains=ai-native-business | filter=included | domain=ai-native-business | score=0.58
+
+raw=raw/web/web-2023-07-30-b4c.md wiki=wiki/sources/web-2023-07-30-b4c.md
+
+## [2026-05-23T18:50:21Z] filter-correction | id=web-2014-03-01-97d | domain=ai-native-business | decision=include | original_score=0.4
+
+rationale="Pieter Levels '12 Startups in 12 Months' — canonical solo-operator manifesto cited throughout the indie SaaS / AI-native solo founder archetype."
+
+## [2026-05-23T18:50:22Z] ingest | id=web-2023-09-20-3cb | type=web | domains=ai-native-business | filter=included | domain=ai-native-business | score=0.58
+
+raw=raw/web/web-2023-09-20-3cb.md wiki=wiki/sources/web-2023-09-20-3cb.md
+
+## [2026-05-23T18:51:26Z] ingest | id=web-2023-01-19-b4a | type=web | domains=ai-native-business | filter=included | domain=ai-native-business | score=0.8
+
+raw=raw/web/web-2023-01-19-b4a.md wiki=wiki/sources/web-2023-01-19-b4a.md
+
+## [2026-05-23T18:51:40Z] nlm-add | id=web-2014-03-01-97d | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://levels.io/12-startups-12-months/
+
+## [2026-05-23T18:51:48Z] nlm-add | id=web-2023-01-19-b4a | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://a16z.com/who-owns-the-generative-ai-platform/
+
+## [2026-05-23T18:51:56Z] nlm-add | id=web-2023-07-30-b4c | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://eugeneyan.com/writing/llm-patterns/
+
+## [2026-05-23T18:52:02Z] nlm-add | id=web-2023-09-20-3cb | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://www.sequoiacap.com/article/generative-ai-act-two/
+
+## [2026-05-23T18:52:08Z] nlm-add | id=web-2024-03-29-a63 | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=web
+
+url=https://hamel.dev/blog/posts/evals/
+
+## [2026-05-23T18:53:01Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-23T18-53-01Z-schema-drift.md
+
+## [2026-05-23T18:53:09Z] ingest | id=web-2014-03-01-97d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2014-03-01-97d.md wiki=wiki/sources/web-2014-03-01-97d.md
+
+## [2026-05-23T18:53:27Z] lint | scope=schema-drift | schema-drift=0
+
+report=.knowledge/lint/2026-05-23T18-53-27Z-schema-drift.md
+
+## [2026-05-23T18:54:48Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=filter | n=15
+
+15 candidate(s) cleared threshold
+
+## [2026-05-23T18:54:59Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=materialize | n=15
+
+materialized 15 source(s) to raw/
+
+## [2026-05-23T18:54:59Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T18:55:10Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native indie SaaS / vertical agent archetype for a solo founder in 2026? Cover: definition (what this archetype is and isn't), funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Crosby, Decagon, Sierra) and solo-buildable variants (Pieter Levels with Nomad List and Photo AI, Marc Lou's portfolio, other single-operator vertical agents); how the four pillars (org, economics, tech, GTM) specialize for this archetype; defensibility specific to vertical agents (workflow lock-in, integration depth, eval moat); pricing trajectory (seat → usage → outcome); go/no-go signals for a solo founder. Include a worked example walked through the four pillars."
+
+## [2026-05-23T18:55:10Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T18:55:10Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T18:55:10Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:55:16Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=web | n=80
+
+adapter web returned 80 candidates
+
+## [2026-05-23T18:55:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=semantic_scholar | n=43
+
+adapter semantic_scholar returned 43 candidates
+
+## [2026-05-23T18:55:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=merge | n=123
+
+merged 123 candidate(s) across adapters
+
+## [2026-05-23T18:55:40Z] wiki-author | id=web-2026-04-15-f75 | updates=6 | created=3 | updated=3 | contradictions=0 | draft=no
+
+Source confirms existing CAI-grounded GSE policy claims and adds Surfside causal context, prior 4-unit waiver threshold, master-association restriction on 5-10 unit projects, CAI Foundation survey statistics, and the warrantable/non-warrantable concept.
+
+## [2026-05-23T18:56:17Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native technical stack and build-vs-buy default in 2026 for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Resist becoming a tool list — focus on selection criteria. Sources: AI Engineer Summit talks, Latent Space episodes on production AI, operator blogs on evals and observability, vendor case studies (Anthropic, OpenAI, LangSmith, Braintrust), AI Engineer essays."
+
+## [2026-05-23T18:56:17Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T18:56:17Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T18:56:17Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T18:56:25Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T18:56:30Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-23T18:56:30Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=merge | n=125
+
+merged 125 candidate(s) across adapters
+
+## [2026-05-23T18:57:01Z] ingest | id=web-2026-04-21-260 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-04-21-260.md (wiki not written: filter decision=review)
+
+## [2026-05-23T18:57:20Z] filter-correction | id=web-2026-04-21-260 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='NYC-market reporting with load-bearing expert quotes: Orest Tomaselli (Strategic Inspections CEO) gives reserve-study cost range (,500–,500), demand-generation mechanism (15% floor vs. reserve-study carve-out trade-off), and confirms ineligibility-designation cascade across jumbo/commercial lenders. Per-market NYC co-op/condo context directly supports Finding-0028 market-sizing and demand-driver analysis. Score 0.5 reflects secondary reporting status; inclusion warranted under criterion 4 (reserve-fund regulation market impact) and criterion 3 (demand-driver for reserve-study SaaS).'
+
+## [2026-05-23T18:57:27Z] ingest | id=web-2026-04-21-260 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-21-260.md wiki=wiki/sources/web-2026-04-21-260.md
+
+## [2026-05-23T18:58:35Z] wiki-author | id=query-2026-05-23-define-ai-as-substrate-precisely-as | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-23T19:01:00Z] wiki-author | id=web-2026-04-21-260 | updates=8 | created=6 | updated=2 | contradictions=0 | draft=no
+
+Habitat Magazine's NYC-market reporting confirms and extends the March 2026 GSE rulemaking with load-bearing expert commentary from Strategic Inspections CEO Orest Tomaselli (reserve-study cost range, ineligibility-cascade-to-jumbo-and-commercial, limited-review skirt-through behavior, insurance relief) and Moritt Hock & Hamroff partner David Fitzhenry (board sticker-shock framing, time-limited nature of the reserve-study workaround), which materially enrich the GSE entity pages and warrant new entities for the cited experts, firms, publication, and author.
+
+## [2026-05-23T19:01:51Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | n=28
+
+28 candidate(s) cleared threshold
+
+## [2026-05-23T19:01:51Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=convert | target=https://aakashgupta.medium.com/how-solo-founders-are-building-1m-saas-businesses-using-only-ai-complete-playbook-3ab2f11fb6db
+
+error: could not fetch https://aakashgupta.medium.com/how-solo-founders-are-building-1m-saas-businesses-using-only-ai-complete-playbook-3ab2f11fb6db
+
+## [2026-05-23T19:01:51Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=convert | target=https://www.reddit.com/r/SideProject/comments/1fsgqzi/my_humble_analysis_on_how_levelsio_grew_photoai/
+
+error: no extractable content at https://www.reddit.com/r/SideProject/comments/1fsgqzi/my_humble_analysis_on_how_levelsio_grew_photoai/
+
+## [2026-05-23T19:01:59Z] ingest | id=web-2026-03-24-bb6 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-03-24-bb6.md wiki=wiki/sources/web-2026-03-24-bb6.md
+
+## [2026-05-23T19:02:00Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=convert | target=https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+error: could not fetch https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+## [2026-05-23T19:02:06Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=convert | target=https://doi.org/10.2139/ssrn.6446158
+
+error: could not fetch https://doi.org/10.2139/ssrn.6446158
+
+## [2026-05-23T19:02:11Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=materialize | n=24
+
+materialized 24 source(s) to raw/
+
+## [2026-05-23T19:02:11Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T19:02:12Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=nlm_session | notebook_id=a42a6d0a-03be-4544-ba1b-8261692f45a3
+
+created session notebook a42a6d0a-03be-4544-ba1b-8261692f45a3
+
+## [2026-05-23T19:02:29Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG
+
+error: `nlm source add a42a6d0a-03be-4544-ba1b-8261692f45a3 --url https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG --wait` exited 1: Adding 
+https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month
+-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:02:40Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://www.linkedin.com/posts/marclouvion_i-made-48921-in-july-2025-codefast-activity-7356665943072141312-jotF
+
+error: `nlm source add a42a6d0a-03be-4544-ba1b-8261692f45a3 --url https://www.linkedin.com/posts/marclouvion_i-made-48921-in-july-2025-codefast-activity-7356665943072141312-jotF --wait` exited 1: Adding 
+https://www.linkedin.com/posts/marclouvion_i-made-48921-in-july-2025-codefast-ac
+tivity-7356665943072141312-jotF and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:00Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=filter | n=15
+
+15 candidate(s) cleared threshold
+
+## [2026-05-23T19:03:04Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=convert | target=https://cursor.com/blog
+
+error: could not fetch https://cursor.com/blog
+
+## [2026-05-23T19:03:10Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=materialize | n=14
+
+materialized 14 source(s) to raw/
+
+## [2026-05-23T19:03:10Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T19:03:11Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=nlm_session | notebook_id=51ae20c9-5cbc-42ea-8c2e-7edd039845a6
+
+created session notebook 51ae20c9-5cbc-42ea-8c2e-7edd039845a6
+
+## [2026-05-23T19:03:19Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_add | target=https://newsletter.pragmaticengineer.com/p/cursor
+
+error: `nlm source add 51ae20c9-5cbc-42ea-8c2e-7edd039845a6 --url https://newsletter.pragmaticengineer.com/p/cursor --wait` exited 1: Adding https://newsletter.pragmaticengineer.com/p/cursor and waiting for 
+processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:35Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_add | target=https://medium.com/boundlessai/data-is-like-a-moat-and-other-bad-ways-to-talk-about-data-and-ai-3aa9268db605
+
+error: `nlm source add 51ae20c9-5cbc-42ea-8c2e-7edd039845a6 --url https://medium.com/boundlessai/data-is-like-a-moat-and-other-bad-ways-to-talk-about-data-and-ai-3aa9268db605 --wait` exited 1: Adding 
+https://medium.com/boundlessai/data-is-like-a-moat-and-other-bad-ways-to-talk-ab
+out-data-and-ai-3aa9268db605 and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:36Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://www.exponentialview.co/p/x-raying-openais-unit-economics
+
+error: `nlm source add a42a6d0a-03be-4544-ba1b-8261692f45a3 --url https://www.exponentialview.co/p/x-raying-openais-unit-economics --wait` exited 1: Adding https://www.exponentialview.co/p/x-raying-openais-unit-economics and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:37Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-llm-costs-in-production-with-real-numbers-3f53dfe4bc9d
+
+error: `nlm source add a42a6d0a-03be-4544-ba1b-8261692f45a3 --url https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-llm-costs-in-production-with-real-numbers-3f53dfe4bc9d --wait` exited 1: Adding 
+https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-l
+lm-costs-in-production-with-real-numbers-3f53dfe4bc9d and waiting for 
+processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:40Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_add | target=https://newsletter.pucek.com/p/the-ai-primitives-mess-the-400-million
+
+error: `nlm source add 51ae20c9-5cbc-42ea-8c2e-7edd039845a6 --url https://newsletter.pucek.com/p/the-ai-primitives-mess-the-400-million --wait` exited 1: Adding https://newsletter.pucek.com/p/the-ai-primitives-mess-the-400-million and
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:51Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://medium.com/@rhelenius/genai-when-to-build-vs-buy-11941f061c62
+
+error: `nlm source add a42a6d0a-03be-4544-ba1b-8261692f45a3 --url https://medium.com/@rhelenius/genai-when-to-build-vs-buy-11941f061c62 --wait` exited 1: Adding https://medium.com/@rhelenius/genai-when-to-build-vs-buy-11941f061c62 and
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:03:59Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | target=https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-generative-artificial-intelligence-bbf1a7646483
+
+error: `nlm source add a42a6d0a-03be-4544-ba1b-8261692f45a3 --url https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-generative-artificial-intelligence-bbf1a7646483 --wait` exited 1: Adding 
+https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-genera
+tive-artificial-intelligence-bbf1a7646483 and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:04:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_add | n=18 | skipped=6
+
+pushed 18 source(s) to session notebook (6 skipped)
+
+## [2026-05-23T19:04:27Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=source_map | n=18
+
+built source map (18 entries)
+
+## [2026-05-23T19:04:31Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_add | n=11 | skipped=3
+
+pushed 11 source(s) to session notebook (3 skipped)
+
+## [2026-05-23T19:04:32Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=source_map | n=11
+
+built source map (11 entries)
+
+## [2026-05-23T19:05:32Z] wiki-author | id=web-2026-03-24-bb6 | updates=5 | created=3 | updated=2 | contradictions=0 | draft=no
+
+KSN Law Firm blog (Bernie Gonzalez, March 24, 2026) adds quantitative market-structure facts and impact ranges to the FNMA LL-2026-03 narrative (75% FNMA-governed condo mortgages, 80-90% secondary-market sale share, 5-30% value decrease for unwarrantable associations), introduces Ginnie Mae alongside FNMA/FHLMC, and establishes KSN as a Midwest/FL community-association law firm tracking the GSE update.
+
+## [2026-05-23T19:06:16Z] nlm-add | id=pdf-house-bill-2025-h0913er-docx | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-house-bill-2025-h0913er-docx.pdf title='_h0913er.docx'
+
+## [2026-05-23T19:06:35Z] nlm-add | id=pdf-dre-2010-reserve-study-guidelines | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-dre-2010-reserve-study-guidelines.pdf title='Reserve Study Guidelines for Homeowner Association Budgets'
+
+## [2026-05-23T19:06:48Z] nlm-add | id=web-2026-03-24-bb6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.ksnlaw.com/blog/fannie-mae-updates-reserve-requirements-for-condominium-associations-impact-to-budgeting-eligibility-and-property-values/
+
+## [2026-05-23T19:08:09Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-23T19:08:09Z] wiki-author | id=research-2026-05-23-what-is-the-ai-native-indie | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for ai-native-business
+
+## [2026-05-23T19:08:09Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=apply_plan | pages=3
+
+applied plan: applied plan for research-2026-05-23-what-is-the-ai-native-indie: 2 update(s)
+
+## [2026-05-23T19:09:57Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=promoted | added=16 | failed=6
+
+promoted 16 source(s) into persistent notebook (6 failed)
+
+## [2026-05-23T19:10:07Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native services firm archetype for a solo or tiny-team operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping shop, recruiting firm, paralegal services, content production); referents at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator end (one-person agencies, AI-leveraged consultancies, productized services); how the four pillars (org, economics, tech, GTM) specialize — especially economics (hourly/retainer collapse as AI substrate replaces hours, pricing pivot to outcomes) and defensibility (client relationships, workflow integration, reputation — not data); go/no-go signals; worked example. Include the 'service as software' framing and the productized-service vs. project-services spectrum."
+
+## [2026-05-23T19:10:07Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T19:10:07Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T19:10:07Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T19:10:22Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T19:10:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-23T19:10:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=merge | n=125
+
+merged 125 candidate(s) across adapters
+
+## [2026-05-23T19:16:35Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | n=16
+
+16 candidate(s) cleared threshold
+
+## [2026-05-23T19:16:36Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=convert | target=https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+error: could not fetch https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+## [2026-05-23T19:16:43Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=materialize | n=15
+
+materialized 15 source(s) to raw/
+
+## [2026-05-23T19:16:43Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T19:16:44Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=nlm_session | notebook_id=8c5cd8c1-69b2-4f2b-a7dc-891c7c37ff2b
+
+created session notebook 8c5cd8c1-69b2-4f2b-a7dc-891c7c37ff2b
+
+## [2026-05-23T19:18:05Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=source_add | target=https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-generative-artificial-intelligence-bbf1a7646483
+
+error: `nlm source add 8c5cd8c1-69b2-4f2b-a7dc-891c7c37ff2b --url https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-generative-artificial-intelligence-bbf1a7646483 --wait` exited 1: Adding 
+https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-genera
+tive-artificial-intelligence-bbf1a7646483 and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:18:16Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=source_add | n=14 | skipped=1
+
+pushed 14 source(s) to session notebook (1 skipped)
+
+## [2026-05-23T19:18:18Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=source_map | n=14
+
+built source map (14 entries)
+
+## [2026-05-23T19:19:17Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-05-23T19:19:18Z] wiki-author | id=research-2026-05-23-what-is-the-ai-native-technical | updates=7 | created=6 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for ai-native-business
+
+## [2026-05-23T19:19:18Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-05-23-what-is-the-ai-native-technical: 7 update(s)
+
+## [2026-05-23T19:20:13Z] research | session_id=2026-05-23-what-is-the-ai-native-technical | step=promoted | added=7 | failed=7
+
+promoted 7 source(s) into persistent notebook (7 failed)
+
+## [2026-05-23T19:20:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native indie SaaS / vertical agent archetype for a solo founder in 2026? Cover: definition (what this archetype is and isn't), funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Crosby, Decagon, Sierra) and solo-buildable variants (Pieter Levels with Nomad List and Photo AI, Marc Lou's portfolio, other single-operator vertical agents); how the four pillars (org, economics, tech, GTM) specialize for this archetype; defensibility specific to vertical agents (workflow lock-in, integration depth, eval moat); pricing trajectory (seat → usage → outcome); go/no-go signals for a solo founder. Include a worked example walked through the four pillars."
+
+## [2026-05-23T19:20:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T19:20:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T19:20:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T19:20:39Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=semantic_scholar | n=43
+
+adapter semantic_scholar returned 43 candidates
+
+## [2026-05-23T19:20:42Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=search | adapter=web | n=80
+
+adapter web returned 80 candidates
+
+## [2026-05-23T19:20:42Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=merge | n=123
+
+merged 123 candidate(s) across adapters
+
+## [2026-05-23T19:21:34Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2201.04200
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:35Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.63544/ijss.v4i4.183
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:36Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2604.16338
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:37Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.5753/sbsi.2026.248680
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:37Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1299/KIKAIC.70.539
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:37Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2501.00881
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:38Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1080/09720510.2011.10701559
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:21:38Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.2139/ssrn.6446158
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:24Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.14419/k0sr8689
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.3991/ijet.v15i13.14885
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/41445476/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:29Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1158/1538-7445.sabcs23-po2-29-02
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:29Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.36407/jmsab.v8i2.1765
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:30Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.22815/jes.2025.6.1.91
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:30Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2507.07019
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:22:32Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1108/jchmsd-12-2023-0209
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:14Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.19105/pjce.v6i2.15821
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:16Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2506.14046
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:16Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.36948/ijfmr.2024.v06i06.33981
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:20Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1109/ACCESS.2025.3632404
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:20Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1101/2025.03.17.25324157
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:21Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2504.02867
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:21Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.25300/misq/2018/13640
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:23:22Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.15276/hait.07.2024.23
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:03Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1109/ICICT64582.2025.00071
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:05Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.semanticscholar.org/paper/7063766
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:05Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1016/J.APENERGY.2019.01.067
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:10Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2503.18419
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:11Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2503.24334
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:11Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.3390/knowledge5040022
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:12Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2510.07829
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:13Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1145/3706598.3713778
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:53Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2602.13033
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:54Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/39207243/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:24:54Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1177/18758789241296755
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:00Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.36871/ek.up.p.r.2026.02.13.008
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:01Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1556/1848.2023.00730
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:02Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2404.10179
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:02Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2503.18238
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:03Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.1007/s40751-024-00161-w
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:43Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://doi.org/10.18775/ijmsba.1849-5664-5419.2014.121.1001
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:44Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/abs/2506.05520
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:45Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.semanticscholar.org/paper/282890707
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:50Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.futurice.com/blog/ai-native-operating-model
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:52Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://online.hbs.edu/blog/post/ai-native
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:52Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://bizzdesign.com/blog/designing-ai-native-enterprise
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:53Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://lilt.com/blog/building-an-ai-native-enterprise-for-global-scale
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:25:57Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.cognizant.com/us/en/aem-i/how-to-think-and-act-like-an-ai-native-business
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:33Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://productled.com/blog/the-solo-founder-playbook-how-to-run-a-1m-arr-saas-with-one-person
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:34Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.reddit.com/r/microsaas/comments/1rur7if/start_an_ai_business_a_practical_playbook_for/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:35Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://aakashgupta.medium.com/how-solo-founders-are-building-1m-saas-businesses-using-only-ai-complete-playbook-3ab2f11fb6db
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:41Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.youtube.com/watch?v=2i0mZevfErY
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:42Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://aifundingtracker.com/top-ai-agent-startups/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:42Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://guptadeepak.com/ebooks/solo-founder-ai-playbook/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:42Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.geekwire.com/2026/the-rise-of-vertical-ai-agents-and-the-startups-racing-to-build-them/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:26:47Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.ycombinator.com/companies/industry/ai-assistant
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:22Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/pulse/rise-vertical-ai-agents-big-opportunity-startups-geekwire-ibwsc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:25Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://wearepresta.com/vertical-ai-startup-ideas-2026-dominating-industry-specific-niches/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:25Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.reddit.com/r/SideProject/comments/1fsgqzi/my_humble_analysis_on_how_levelsio_grew_photoai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:32Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://news.ycombinator.com/item?id=39886361
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:32Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://getlatka.com/companies/photoai.io
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:33Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.indiehackers.com/post/tech/pieter-levels-just-passed-100-000-a-month-in-revenue-with-photoai-NToMGI3ZjwSBOfTywZnG
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:33Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.facebook.com/thestartupjourney/posts/pieter-levels-a-38-year-old-entrepreneur-built-an-ai-powered-business-and-made-r/1065268395621403/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:27:36Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://blog.startupstash.com/the-marc-lou-playbook-15-ship-fast-truths-for-the-modern-solopreneur-075ed612a4d7
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:12Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://getlatka.com/companies/shipfa.st
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:15Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://shipfa.st/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:15Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.highsignal.io/how-marc-lou-makes-millions-from-great-marketing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:22Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://getlatka.com/companies/cursor.com
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:22Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/marclouvion_i-made-48921-in-july-2025-codefast-activity-7356665943072141312-jotF
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:23Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://techcrunch.com/2025/06/05/cursors-anysphere-nabs-9-9b-valuation-soars-past-500m-arr/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:23Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/peterjameswalker_startups-did-not-go-from-1-million-1-activity-7408582032269701120-zpsP
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:28:25Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://sacra.com/research/cursor-at-100m-arr/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:01Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.cnbc.com/2025/11/13/cursor-ai-startup-funding-round-valuation.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:05Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.zendesk.com/blog/ai/agentic-ai/outcome-based-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:05Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://sierra.ai/blog/outcome-based-pricing-for-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:12Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://a16z.com/newsletter/december-2024-enterprise-newsletter-ai-is-driving-a-shift-towards-outcome-based-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:13Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://metronome.com/blog/what-is-outcome-based-pricing-and-how-can-you-use-it
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:14Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.braintrust.dev/articles/eval-driven-development
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:15Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.pragmaticinstitute.com/resources/articles/product/understanding-outcome-based-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:17Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:53Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://github.com/Azure-Samples/eval-driven-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:54Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://developers.redhat.com/articles/2026/03/23/eval-driven-development-build-evaluate-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:29:56Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/html/2411.13768v2
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:01Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:02Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/nicholasxthompson_the-most-interesting-thing-in-tech-a-man-activity-7445604524268052480-3VpA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:04Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.reddit.com/r/Futurism/comments/1scq3k8/a_guy_just_built_a_18_billion_company_with_2/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:06Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://every.to/napkin-math/the-one-person-billion-dollar-company
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:06Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.forbes.com/sites/markminevich/2025/08/20/the-billion-dollar-company-of-one-is-coming-faster-than-you-think/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:42Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.langchain.com/langgraph
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:44Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.reddit.com/r/LangChain/comments/1onoufx/building_a_langchainlanggraph_multiagent/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:45Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://medium.com/@akankshasinha247/agent-orchestration-when-to-use-langchain-langgraph-autogen-or-build-an-agentic-rag-system-cc298f785ea4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:50Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.ibm.com/think/topics/langgraph
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:54Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/pulse/vertical-saas-vs-ai-distinction-key-difference-andrew-oved-zb9wc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:55Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.reddit.com/r/startups/comments/1ilkg43/ai_will_obsolete_most_young_vertical_saas/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:55Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.tidemarkcap.com/post/ai-extinction-or-evolution
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:30:56Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://docs.langchain.com/oss/python/langgraph/overview
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:32Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.stax.com/insights/how-ai-is-reshaping-vertical-saas
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:34Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.mayfield.com/why-ai-margins-matter-more-than-you-think/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:34Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.l40.com/insights/vertical-ai-saas
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:39Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.exponentialview.co/p/x-raying-openais-unit-economics
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:43Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://medium.com/@KloudedgeApex/the-unit-economics-of-ai-agents-how-i-budget-llm-costs-in-production-with-real-numbers-3f53dfe4bc9d
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:44Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-05-23T19:31:45Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.softwareseni.com/why-ai-gross-margins-are-so-much-lower-than-saas-and-what-that-means-for-your-business/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:45Z] wiki-author | id=research-2026-05-23-what-is-the-ai-native-services | updates=7 | created=6 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for ai-native-business
+
+## [2026-05-23T19:31:45Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-05-23-what-is-the-ai-native-services: 7 update(s)
+
+## [2026-05-23T19:31:46Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://aisera.com/blog/llm-strategy-build-buy/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:31:46Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/pulse/unit-economics-ai-agents-how-i-model-cost-margin-payback-aryan-rajput-ll3nc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:20Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://writer.com/blog/build-vs-buy-generative-ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:24Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://medium.com/@rhelenius/genai-when-to-build-vs-buy-11941f061c62
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:24Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.tonic.ai/guides/build-vs-buy-synthetic-data-with-llms
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://arxiv.org/html/2602.13033v1
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:32Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.flexera.com/blog/saas-management/from-seats-to-consumption-why-saas-pricing-has-entered-its-hybrid-era/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:35Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.reddit.com/r/SaaS/comments/1rm9x4g/our_perseat_pricing_model_is_breaking_not_sure/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:35Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://medium.com/@cosgn/the-death-of-seat-based-pricing-navigating-the-shift-to-outcome-driven-saas-models-in-2026-a4a658f72642
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:36Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.quotapath.com/blog/usage-based-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:32:44Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=promoted | added=9 | failed=1
+
+promoted 9 source(s) into persistent notebook (1 failed)
+
+## [2026-05-23T19:32:54Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching, content-rights aggregation; how the four pillars specialize — especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals; worked example. Include comparison to pre-AI marketplaces (Craigslist, Thumbtack, Upwork) to clarify what 'AI-native' adds."
+
+## [2026-05-23T19:32:54Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T19:32:54Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T19:32:54Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T19:33:00Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T19:33:05Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-23T19:33:05Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=merge | n=120
+
+merged 120 candidate(s) across adapters
+
+## [2026-05-23T19:33:11Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/kyle-poyar_the-most-disruptive-ai-pricing-apr-26-edition-activity-7453410273215868928-TP8J
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:14Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://andrewchen.substack.com/p/revenge-of-the-gpt-wrappers-defensibility
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:15Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/andrewchen_revenge-of-the-gpt-wrappers-defensibility-activity-7292625754314444800-kMZp
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:16Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://defensibility.io/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:24Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.wing.vc/content/leveraging-large-language-models-to-build-a-defensible-startup
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:26Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-generative-artificial-intelligence-bbf1a7646483
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:27Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://allisonpickens.substack.com/p/outselling-with-ai-how-founders-are
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:28Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/martinalauchengco_startups-ai-productmanagement-activity-7443310890587684864-4xYd
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:57Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/marketplace-100/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:59Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://andrewchen.com/wp-content/uploads/2022/01/ColdStartProb_9780062969743_AS0928_cc20_Final.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:33:59Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/category/consumer/marketplaces/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:00Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.amazon.com/Cold-Start-Problem-Andrew-Chen/dp/0062969749
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/category/special-reports/marketplace-100/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/books/the-cold-start-problem/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/marketplaces-in-the-age-of-ai-take-two-graveyard-to-greenfield/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=tk_EyUrwMAg
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:05Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://news.crunchbase.com/ai/ai-native-founder-advantages-becker-antler/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:07Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://crmswitch.com/buying-crm/ai-native-crm/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:07Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | target=https://www.linkedin.com/posts/turnernovak_this-founder-just-raised-27-million-and-activity-7440806966131793920-xlua
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:07Z] research | session_id=2026-05-23-what-is-the-ai-native-indie | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-23T19:34:22Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native services firm archetype for a solo or tiny-team operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping shop, recruiting firm, paralegal services, content production); referents at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator end (one-person agencies, AI-leveraged consultancies, productized services); how the four pillars (org, economics, tech, GTM) specialize — especially economics (hourly/retainer collapse as AI substrate replaces hours, pricing pivot to outcomes) and defensibility (client relationships, workflow integration, reputation — not data); go/no-go signals; worked example. Include the 'service as software' framing and the productized-service vs. project-services spectrum."
+
+## [2026-05-23T19:34:22Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T19:34:22Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T19:34:22Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T19:34:28Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T19:34:33Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-23T19:34:33Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=merge | n=125
+
+merged 125 candidate(s) across adapters
+
+## [2026-05-23T19:34:48Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.francescacortesi.com/blog/my-main-takeaways-from-andrew-chens-the-cold-start-problem
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:51Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.amazon.com/Platform-Revolution-Networked-Markets-Transforming/dp/0393249131
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:51Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=TSnYO34b3TA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:52Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://platformthinkinglabs.com/materials/platform-revolution/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:54Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=DnowXYA3nlw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:55Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=http://103.44.149.34/elib/assets/buku/Platfrom_revolution.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:55Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://en.wikipedia.org/wiki/Sangeet_Paul_Choudary
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:34:56Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.lennysnewsletter.com/p/the-most-important-marketplace-metrics
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:26Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.wipro.com/ventures/articles/reimagining-services-as-software-wipro-ventures-investment-thesis/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:28Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/pulse/rise-service-as-a-software-software-works-you-richard-kerby-tzuic
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:28Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://theainativefirm.com/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:29Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.tanayj.com/p/three-archetypes-of-ai-application
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:29Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/posts/skohli1_enterpriseai-activity-7460705541368094720-nIYi
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:29Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://diginomica.com/how-build-ai-first-firm-wins-next-decade
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:30Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.emcap.com/thoughts/the-ai-native-services-playbook
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:31Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://jakobnielsenphd.substack.com/p/service-as-software
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:42Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=NwiIY3dZr1k
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:43Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://andrewchen.com/grow-marketplace-supply/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.alexanderjarvis.com/marketplace-metrics-and-reading-for-startups/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=hhbUzjquNJ4
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:49Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://medium.com/@rushabtated4/3m-an-year-pieter-levels-d6f6808a6a02
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:49Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.fast-saas.com/blog/pieter-levels-success-story/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:50Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.reddit.com/r/digitalnomad/comments/ifmulc/pieter_levels_makes_600k_a_year_from_nomad_list/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:35:53Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/posts/andros-wong-2b066943_pieter-levels-is-one-of-the-most-successful-activity-7357099950561746945-GsA8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:19Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://sequoiacap.com/article/services-the-new-software/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:19Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.thoughtworks.com/en-us/insights/blog/generative-ai/service-as-software-a-new-economic-model-for-age-of-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:21Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/Futurism/comments/1scq3k8/a_guy_just_built_a_18_billion_company_with_2/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:22Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/posts/nicholasxthompson_the-most-interesting-thing-in-tech-a-man-activity-7445604524268052480-3VpA
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.nytimes.com/2026/04/02/technology/ai-billion-dollar-company-medvi.html
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:24Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.forbes.com/sites/markminevich/2025/08/20/the-billion-dollar-company-of-one-is-coming-faster-than-you-think/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:26Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://businessmodelcanvastemplate.com/blogs/how-it-works/mercor-how-it-works
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:27Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://every.to/napkin-math/the-one-person-billion-dollar-company
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:35Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://news.ycombinator.com/item?id=16482674
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:37Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/posts/zohairhyder_i-guess-i-was-living-under-a-rock-but-i-only-activity-7308578767067578368-EDU2
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:39Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.mercor.com/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:41Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.forbes.com/sites/richardnieva/2025/09/03/ais-next-job-recruiting-people-to-train-more-ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:41Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.reddit.com/r/ArtificialInteligence/comments/1onvdcp/mercor_ai_what_the_actual_hell_is_going_on/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:42Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://businessmodelcanvastemplate.com/blogs/how-it-works/mercor-how-it-works
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:43Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.nfx.com/post/ai-first-marketplace
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:36:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=GMSwxuR8N64
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:11Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.mercor.com/blog/secret-master-plan/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:12Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.mercor.com/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:12Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://gadallon.substack.com/p/is-mercor-the-future-of-the-white
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:15Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/ArtificialInteligence/comments/1onvdcp/mercor_ai_what_the_actual_hell_is_going_on/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:15Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/legaltech/comments/1qvwswa/pricing_harvey_v_claude_v_legora_v_cocounsel_from/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:16Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.harvey.ai/roi-calculator/law-firm
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:18Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.harvey.ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:20Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://purple.law/blog/harvey-vs-legora-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://medium.com/@dcirl/the-7-ai-native-opportunities-everyones-missing-in-2026-4ed283fca195
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:28Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/pulse/ai-native-brands-new-amazon-marketplace-goldrush-kiri-masters-iqgpf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:31Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://origami-marketplace.com/en-gb/marketplace-take-rate-a-guide-for-marketplace-operators/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:32Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.nauticalcommerce.com/glossary/take-rate
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:34Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.wallstreetprep.com/knowledge/take-rate/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:34Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.tanayj.com/p/marketplace-take-rates-factors
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:35Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.startups.com/questions/2800/i-m-running-a-two-sided-marketplace-should-i-charge-subscription-fee-on-supply
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:37:37Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://messari.io/copilot/share/understanding-liquidity-bootstrapping-f797cd4f-83fa-4caa-8c65-af9912457387
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:01Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.paxton.ai/compare/harvey-alternative
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:04Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://sakasandcompany.com/custom-vs-productized-services/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:05Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/agency/comments/193eomu/discussion_on_productized_servicessubscription/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:06Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://sarahmoon.net/blog/productized-services-vs-intensives
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:08Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://2bobs.com/podcast/productized-vs-customized-services-and-monthly-recurring-revenue
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:08Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://scopestack.io/blog/how-to-productize-your-services-complete-guide-for-it-project-managers
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:09Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=http://tianpan.co/forum/t/business-models-unit-economics-of-ai-native-companies/100
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:11Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.wipro.com/newsroom/press-releases/2026/wipro-announces-ai-native-business-and-platforms-unit-to-complement-core-services-and-drive-next-phase-of-growth/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:17Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/come-for-the-tool-stay-for-the-exchange-bootstrapping-liquidity-in-the-private-markets/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:19Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://messyproblems.substack.com/p/single-sided-liquidity-provisioning
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:23Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://phemex.com/academy/what-is-liquidity-bootstrapping-pool-lbp-crypto
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:24Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=1OtcO4lWBiw
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:25Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=BI-MNjm1tTQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:27Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/posts/majjiinspires_agenticai-aiagents-founders-activity-7378664268075827201-kXGt
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:27Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://blog.alexanderfyoung.com/7-vertical-ai-agent-ideas-you-can-build-as-a-solo-founder/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:29Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.solo.io/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:52Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/pulse/unit-economics-ai-agents-how-i-model-cost-margin-payback-aryan-rajput-ll3nc
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:56Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.themasters.ai/articles/ai-native-business
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:58Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://acropolium.com/blog/ai-agent-unit-economics/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:58Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://a16z.com/newsletter/december-2024-enterprise-newsletter-ai-is-driving-a-shift-towards-outcome-based-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:38:59Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://sierra.ai/blog/outcome-based-pricing-for-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:01Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.pragmaticinstitute.com/resources/articles/product/understanding-outcome-based-pricing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:02Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://metronome.com/blog/what-is-outcome-based-pricing-and-how-can-you-use-it
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:03Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/pulse/ai-pricing-driving-shift-towards-outcome-based-flycodehq-jvdwf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:10Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=ASABxNenD_U
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:10Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/posts/yusean_gartner-predicts-90-15-trillion-of-b2b-activity-7445032993154424832-_Rjt
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:15Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.idc.com/resource-center/blog/ai-mediated-buying-journeys-how-buyers-decide-whos-worth-their-time/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:16Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.sourceready.com/blog/ai-supplier-matching-tools
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:17Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=R26HqCQ2nNk
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:19Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://sajalsharma.com/posts/product-defensibility-ai-applications/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:19Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://procuresaathi.com/ai-b2b-procurement-platform-guide
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:21Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.ark-invest.com/articles/analyst-research/are-marketplaces-defensible-in-the-age-of-ai-purchasing-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:43Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://nocodeexits.substack.com/p/5-things-solo-founders-do-with-ai
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:49Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://medium.com/startup-insider-edge/the-solo-founders-tech-stack-essential-tools-for-2026-a737b01777bd
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:50Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/SaaS/comments/172nuv6/im_a_solo_founder_here_is_my_tech_stack_modern/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:51Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.youtube.com/watch?v=xv2bnnpbLmQ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:52Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://blog.mean.ceo/the-solo-founder-ai-agent-stack-that-is-replacing-entire-startup-teams/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:54Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.articsledge.com/post/ai-agency-business-model
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:55Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.insidesales.com/fortune-500-company-ai-boost-revenue/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:39:56Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://mukh.one/case-studies
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:00Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://breadcrumb.vc/defensibility-x-scalability-the-marketplace-matrix-9d8b02a1e6fa
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://andrewchen.substack.com/p/revenge-of-the-gpt-wrappers-defensibility
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:07Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/posts/qaisallafi_tldr-ai-product-strategy-is-not-saas-activity-7461104857211416577-elNJ
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:09Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://abovethecrowd.com/2012/11/13/all-markets-are-not-created-equal-10-factors-to-consider-when-evaluating-digital-marketplaces/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:10Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://abovethecrowd.com/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:11Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://macro-ops.com/the-bill-gurley-chronicles-an-above-the-crowd-mba-on-vcs-marketplaces-and-early-stage-investing/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:12Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.hustlefund.vc/post/angel-squad-bill-gurley-investments-what-the-uber-backer-teaches-about-market-analysis-done-right
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:14Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://virtaventures.substack.com/p/lessons-from-the-greats-bill-gurley
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:34Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.youtube.com/watch?v=W3UOz_mIBrk
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:39Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.mindstudio.ai/blog/ceo-revenue-capacity/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:42Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://decagon.ai/blog/pricing-ai-agents
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:42Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://decagon.ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:45Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://decagon.ai/glossary/what-is-resolution-based-pricing
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:46Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.eesel.ai/blog/decagon-pricing
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:46Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://fin.ai/learn/ai-customer-service-agent-pricing-comparison
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:47Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://crosby.ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:52Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.reddit.com/r/startups/comments/1jzst85/playbook_yc_startups_use_to_add_2m_arr_in_3/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:52Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.linkedin.com/posts/rubendominguezibar_y-combinator-just-dropped-its-2026-startup-activity-7425128582106075136-tQOr
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:40:58Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://playbook.samaltman.com/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=bk46OxGjOFo
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:01Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.ycombinator.com/library/OX-the-playbook-for-building-an-ai-native-company
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:03Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://digitalcontentnext.org/blog/2025/03/06/ai-content-licensing-lessons-from-factiva-and-time/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:03Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.forbes.com/sites/billrosenblatt/2024/07/18/the-media-industrys-race-to-license-content-for-ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:06Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://contenseo.com/how-generative-ai-firms-license-content-from-copyright-holders/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:25Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://baincapitalventures.com/insight/crosby-is-redefining-legal-work-with-ai-powered-contract-automation/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:31Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.forbes.com/sites/rashishrivastava/2026/03/31/why-this-ai-law-firm-is-ditching-the-billable-hour/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:34Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://sequoiacap.com/companies/crosby/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:34Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.facebook.com/forbes/posts/new-york-based-startup-crosbys-ai-agents-and-lawyers-work-together-to-review-con/1322510283072292/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:37Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.zeni.ai/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:37Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.intuit.com/blog/innovative-thinking/best-ai-accounting-software-tools/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:39Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://mercury.com/blog/AI-bookkeeping-best-practices-for-startups-and-small-businesses
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:39Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.truewind.ai/blog/top-5-ai-bookkeeping-software-for-accounting-firms-in-2025
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:43Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://sr.ithaka.org/our-work/generative-ai-licensing-agreement-tracker/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:44Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.maverickpublishingconsultants.com/blog/licensing-content-to-genai-platforms
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:49Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2210.00340
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:53Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2508.07241
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:54Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1177/10591478241245143
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:55Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2504.21536
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:56Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2510.27342
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:41:57Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.47191/etj/v10i07.36
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:17Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/Bookkeeping/comments/1htycu5/how_are_you_using_ai_in_bookkeeping/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/posts/harjivsingh_ai-marketingstrategy-martech-activity-7439809343115399168-MBXH
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:25Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://fadedigital.ca/playbooks/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:27Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://peppercontentinc.substack.com/p/exclusive-openais-ai-marketing-playbook
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:27Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://writer.com/blog/ai-native-marketing-platform/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:29Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.reddit.com/r/startups/comments/1of593v/the_only_airesistant_startup_marketing_playbook/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:30Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://andrewchen.substack.com/p/revenge-of-the-gpt-wrappers-defensibility
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:30Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.linkedin.com/pulse/building-ai-moats-era-commoditized-models-dhcb-p9k5e
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:34Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2511.01923
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:35Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.47191/etj/v10i07.39
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:40Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2104.01966
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:44Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://arxiv.org/abs/2201.04561
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:47Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.3846/btp.2025.22454
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:47Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.54254/2754-1169/2024.ld19010
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:48Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.3390/agriculture15232472
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:42:49Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.61838/kman.jspsich.3.1.20
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:07Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://medium.com/@flo.seemann/defensibility-in-the-application-layer-of-generative-artificial-intelligence-bbf1a7646483
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:13Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://sajalsharma.com/posts/product-defensibility-ai-applications/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:17Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.edisonpartners.com/blog/ai-where-it-actually-matters-part-3-what-actually-creates-defensibility-in-mission-critical-ai
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:19Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1108/jhtt-04-2024-0261
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:19Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://arxiv.org/abs/2601.02398
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:20Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://arxiv.org/abs/2603.20300
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:21Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1108/jbim-03-2024-0205
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:21Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.5585/2025.27943
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:25Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.33102/mjsl.vol13no3.669
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.2139/ssrn.6730284
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:31Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.2139/SSRN.3310477
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:35Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.3390/electronics15071405
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.24052/jbrmr/v13is03/art-11
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/38634535/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:40Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.70177/rjl.v3i2.2216
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:40Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.37547/tajssei/volume08issue02-08
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:43:57Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.2139/ssrn.4811728
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:04Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/280026368
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:08Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1007/s40593-025-00528-z
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:10Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.13052/jwe1540-9589.2313
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:11Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1016/j.jval.2025.09.1838
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:11Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1109/ACIT62333.2024.10712506
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:12Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1109/IAECST68792.2025.11415174
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:13Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://arxiv.org/abs/2506.02055
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:16Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1146/ANNUREV-SOC-090820-020800
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:18Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.36871/ek.up.p.r.2025.09.09.014
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:21Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.7440/res89.2024.04
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1109/TrustCom56396.2022.00092
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:28Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.55041/isjem07442
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:31Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.semanticscholar.org/paper/166511952
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:31Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.29244/jcs.10.2.276-298
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:32Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1007/0-387-23392-X_7
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:47Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://arxiv.org/abs/2510.21370
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:44:56Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.7759/s44389-025-07459-9
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:01Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1007/s11846-023-00696-z
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:02Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1016/j.im.2020.103289
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:02Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.3390/su15119020
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:03Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1111/isj.12102
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:04Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.3217/jucs-018-11-1501
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:04Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://arxiv.org/abs/2505.12058
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:07Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/39955633/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:08Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/40456328/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:12Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/30011311/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:17Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1007/s11123-021-00616-x
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:19Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://pubmed.ncbi.nlm.nih.gov/34909261/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:23Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1023/A:1019273427930
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:23Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1007/s11187-024-00873-8
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:24Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1108/ejm-01-2024-0040
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:37Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/285542890
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:48Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/248988928
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:52Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/17052734
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:54Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/262005383
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:55Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/285257216
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:56Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1109/CAI64502.2025.00016
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:57Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.70924/f83n6wqz/jtxxbeza
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:57Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.59188/eduvest.v5i6.50139
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:45:59Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.62823/ijaer/02.02.208
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:00Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.semanticscholar.org/paper/282722875
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:03Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.22399/ijcesen.4304
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:08Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1080/21670811.2018.1496025
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:10Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1002/nav.22248
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:13Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://doi.org/10.1109/ICRAMET51080.2020.9298635
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:14Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.semanticscholar.org/paper/106914247
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:14Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.semanticscholar.org/paper/106628303
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:14Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-23T19:46:27Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1111/isj.12420
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:38Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1145/3748825.3748859
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:41Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.15407/jai2023.03.094
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:44Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.2478/emj-2025-0018
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:45Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.65644/eiie.079.01.0051
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:47Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.20517/ais.2025.09
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:47Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.33422/icbmf.v2i1.1070
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:46:47Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.2139/ssrn.6174760
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:16Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1109/ICSME58846.2023.00050
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:28Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.29138/ijebd.v9i1.3505
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:31Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.52783/jisem.v10i26s.4261
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:33Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://arxiv.org/abs/2502.18506
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:34Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.53894/ijirss.v8i1.4802
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:37Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.34190/eckm.26.1.3733
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:37Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1149/ma2025-027989mtgabs
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:47:38Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.2139/ssrn.6291500
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:48:05Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1108/josm-10-2023-0438
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:48:16Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.1177/20438869251360813
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:48:19Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.17130/ijmeb.1144105
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:48:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://doi.org/10.37394/23207.2023.20.211
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:48:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | target=https://www.semanticscholar.org/paper/121174540
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:48:23Z] research | session_id=2026-05-23-what-is-the-ai-native-services | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-23T19:48:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=start | domain=ai-native-business
+
+start research session for prompt "What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching, content-rights aggregation; how the four pillars specialize — especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals; worked example. Include comparison to pre-AI marketplaces (Craigslist, Thumbtack, Upwork) to clarify what 'AI-native' adds."
+
+## [2026-05-23T19:48:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-05-23T19:48:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=youtube | n=0
+
+adapter youtube skipped (no queries in plan)
+
+## [2026-05-23T19:48:38Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-23T19:48:44Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-23T19:48:50Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-23T19:48:50Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=merge | n=120
+
+merged 120 candidate(s) across adapters
+
+## [2026-05-23T19:49:41Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/category/special-reports/marketplace-100/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:44Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/marketplace-100/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/marketplaces-in-the-age-of-ai-take-two-graveyard-to-greenfield/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://andrewchen.com/wp-content/uploads/2022/01/ColdStartProb_9780062969743_AS0928_cc20_Final.pdf
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/books/the-cold-start-problem/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.amazon.com/Cold-Start-Problem-Andrew-Chen/dp/0062969749
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:45Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://a16z.com/category/consumer/marketplaces/
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:49:46Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | target=https://www.youtube.com/watch?v=tk_EyUrwMAg
+
+error: `claude -p` failed after 4 attempts; last stderr: 
+
+## [2026-05-23T19:55:19Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=filter | n=10
+
+10 candidate(s) cleared threshold
+
+## [2026-05-23T19:55:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=convert | target=https://www.ycombinator.com/library/OX-the-playbook-for-building-an-ai-native-company
+
+error: no extractable content at https://www.ycombinator.com/library/OX-the-playbook-for-building-an-ai-native-company
+
+## [2026-05-23T19:55:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=materialize | n=9
+
+materialized 9 source(s) to raw/
+
+## [2026-05-23T19:55:26Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=nlm_persistent | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+persistent notebook a66c272c-5af9-4f34-ab22-6ca53764ba7e
+
+## [2026-05-23T19:55:27Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=nlm_session | notebook_id=366c8dab-43f8-4712-bd86-72bb35056e72
+
+created session notebook 366c8dab-43f8-4712-bd86-72bb35056e72
+
+## [2026-05-23T19:55:34Z] research | session_id=2026-05-23-what-is-the-ai-native-marketplace | step=source_add | target=https://medium.com/@rushabtated4/3m-an-year-pieter-levels-d6f6808a6a02
+
+error: `nlm source add 366c8dab-43f8-4712-bd86-72bb35056e72 --url https://medium.com/@rushabtated4/3m-an-year-pieter-levels-d6f6808a6a02 --wait` exited 1: Adding https://medium.com/@rushabtated4/3m-an-year-pieter-levels-d6f6808a6a02 
+and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-05-23T19:57:50Z] query | domain=ai-native-business | unresolved_citations=3,6,7,8,9,10,11,13,17,19,21,23,24,25,28,31,33,34,37,38,39,40,41,42,43,45,46
+
+lint-warning: query response cited 27 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-23T19:57:50Z] wiki-author | id=query-2026-05-23-what-is-the-ai-native-technical | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-23T19:59:12Z] query | domain=ai-native-business | unresolved_citations=1,2,3,7,8,9,10,11,12,15,16,17,20,21,22,23,24,25,26,36,37,38,39,41,42,43,44,45,46,48,49,50,51,52,57,58,59
+
+lint-warning: query response cited 37 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-23T19:59:12Z] wiki-author | id=query-2026-05-23-what-is-the-ai-native-indie | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-23T20:00:34Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+
+lint-warning: query response cited 29 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-23T20:00:34Z] wiki-author | id=query-2026-05-23-what-is-the-ai-native-services | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-23T20:01:52Z] query | domain=ai-native-business | unresolved_citations=1,2,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-23T20:01:53Z] wiki-author | id=query-2026-05-23-what-is-the-ai-native-marketplace | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-23T20:02:07Z] ingest | id=yt-msfECL74sIA | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-msfECL74sIA.md wiki=wiki/sources/yt-msfECL74sIA.md
+
+## [2026-05-23T20:02:09Z] ingest | id=yt-I08ZeY7QcrE | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-I08ZeY7QcrE.md wiki=wiki/sources/yt-I08ZeY7QcrE.md
+
+## [2026-05-23T20:03:04Z] ingest | id=web-2024-02-07-3a2 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-02-07-3a2.md wiki=wiki/sources/web-2024-02-07-3a2.md
+
+## [2026-05-23T20:03:05Z] ingest | id=web-2025-02-14-794 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-02-14-794.md wiki=wiki/sources/web-2025-02-14-794.md
+
+## [2026-05-23T20:03:06Z] ingest | id=web-2025-10-04-aae | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-04-aae.md wiki=wiki/sources/web-2025-10-04-aae.md
+
+## [2026-05-23T20:03:07Z] ingest | id=web-2026-04-10-562 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-10-562.md wiki=wiki/sources/web-2026-04-10-562.md
+
+## [2026-05-23T20:03:08Z] ingest | id=web-2026-04-23-e4c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-23-e4c.md wiki=wiki/sources/web-2026-04-23-e4c.md
+
+## [2026-05-23T20:19:27Z] ingest | id=web-2024-04-01-048 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2024-04-01-048.md (wiki not written: filter decision=review)
+
+## [2026-05-23T20:19:48Z] filter-correction | id=web-2024-04-01-048 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Primary CDIC regulatory source grounding per-beneficiary trust coverage mechanics (Finding-0029 §9.1). Grounds the condo reserve fund deposit insurance analysis: the K/beneficiary limit is the load-bearing claim in the Canada-5 investment vehicle comparison. Source is authoritative and necessary even without explicit condo mention — the condo application is derived from the trust mechanics described here.'
+
+## [2026-05-23T20:19:58Z] ingest | id=web-2024-04-01-048 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-04-01-048.md wiki=wiki/sources/web-2024-04-01-048.md
+
+## [2026-05-23T20:22:05Z] wiki-author | id=web-2024-04-01-048 | updates=3 | created=1 | updated=2 | contradictions=0 | draft=no
+
+CDIC trust-deposit page grounds the per-beneficiary coverage mechanic that underwrites Canadian condo reserve-fund deposit insurance — load-bearing for the Canada-5 investment vehicle comparison and the CDIC/CUDIC eligibility prong of BC Strata Property Regulation §6.11.
+
+## [2026-05-23T20:22:51Z] ingest | id=web-2014-07-16-7c3 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.9
+
+raw=raw/web/web-2014-07-16-7c3.md wiki=wiki/sources/web-2014-07-16-7c3.md
+
+## [2026-05-23T20:25:05Z] ingest | id=web-2012-09-17-797 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2012-09-17-797.md (wiki not written: filter decision=review)
+
+## [2026-05-23T20:25:05Z] wiki-author | id=web-2014-07-16-7c3 | updates=3 | created=0 | updated=3 | contradictions=0 | draft=no
+
+The new source is the primary regulatory text of BC Strata Property Regulation §6.11 (as substituted by B.C. Reg. 68/2014, effective July 16, 2014), which several existing wiki pages reference as secondary commentary via the CHOA Bulletin; updates ground the §6.11 entity in primary law and add primary-source citations to CUDIC and DBRS pages that reference §6.11 thresholds.
+
+## [2026-05-23T20:26:41Z] ingest | id=web-2023-10-01-d55 | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2023-10-01-d55.md wiki=wiki/sources/web-2023-10-01-d55.md
+
+## [2026-05-23T20:28:15Z] ingest | id=web-2023-10-01-0bc | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2023-10-01-0bc.md wiki=wiki/sources/web-2023-10-01-0bc.md
+
+## [2026-05-23T20:30:10Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T20-30-10Z-schema-drift.md
+
+## [2026-05-23T20:31:01Z] wiki-author | id=web-2023-10-01-d55 | updates=8 | created=7 | updated=1 | contradictions=0 | draft=no
+
+O Reg 48/01 is the principal regulation under Ontario's Condominium Act, 1998, supplying the operational definitions (core records, comprehensive reserve fund study, periodic information certificate, condo corporation classes) and the request-for-records procedure that directly constrain condo-software design; one existing entity (NOFF) needs to be augmented because the §94(8) plan it announces is independently classified as a core record under the regulation.
+
+## [2026-05-23T20:31:50Z] ingest | id=web-2011-06-02-7ff | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2011-06-02-7ff.md wiki=wiki/sources/web-2011-06-02-7ff.md
+
+## [2026-05-23T20:32:07Z] wiki-author | id=web-2023-10-01-0bc | updates=5 | created=4 | updated=1 | contradictions=0 | draft=no
+
+O Reg 48/01 is the omnibus general regulation under Ontario's Condominium Act, 1998 — it grounds reserve-fund study typology, the core-record disclosure list, and the standard-condominium-corporation classification, all of which are load-bearing for the condo-software domain and previously uncited in the wiki.
+
+## [2026-05-23T20:32:16Z] lint | scope=orphans | orphans=507
+
+report=.knowledge/lint/2026-05-23T20-32-16Z-orphans.md
+
+## [2026-05-23T20:32:17Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T20-32-17Z-schema-drift.md
+
+## [2026-05-23T20:32:31Z] lint | scope=citation-chains | citation-chains=25
+
+report=.knowledge/lint/2026-05-23T20-32-31Z-citation-chains.md
+
+## [2026-05-23T20:32:32Z] lint | scope=stale-drafts | stale-drafts=226
+
+report=.knowledge/lint/2026-05-23T20-32-32Z-stale-drafts.md
+
+## [2026-05-23T20:32:33Z] lint | scope=nlm-pending | nlm-pending=7
+
+report=.knowledge/lint/2026-05-23T20-32-33Z-nlm-pending.md
+
+## [2026-05-23T20:32:34Z] lint | scope=untagged-sources | untagged-sources=1
+
+report=.knowledge/lint/2026-05-23T20-32-34Z-untagged-sources.md
+
+## [2026-05-23T20:35:00Z] domain-shipped | slug=ai-native-business | syntheses=22 | entities=17 | sources=~30 | moc=hand-authored
+
+ai-native-business v1: substrate-first solo-founder operator playbook. 4 pillars (org/operating, economics, tech-stack, GTM) × 3 archetypes (indie SaaS / vertical agent, services firm, marketplace) plus a substrate-vs-feature-vs-product concept anchor. 22 draft syntheses (auto-branched + query-style). 17 hand-authored entity stubs for the most-cited named companies. Hand-authored top-level MoC under one-time hard-rule #1 exception authorized this session (the wiki research auto-MoC pipeline can't converge across multiple sessions in one domain). Spec at docs/superpowers/specs/2026-05-23-ai-native-business-playbook-design.md; plan at docs/superpowers/plans/2026-05-23-ai-native-business-playbook.md. Known blockers carrying over: M46 #2 (citation-chain rendering) blocks finalize on all syntheses; NLM crawler bot-block on 11 of 18 Substack URLs (filed as M46 followup); arxiv + YouTube search adapters fail hard on HTTP 429 (filed); register_session rejects re-runs of ephemeral sessions (worked around mid-session via mark_abandoned).
