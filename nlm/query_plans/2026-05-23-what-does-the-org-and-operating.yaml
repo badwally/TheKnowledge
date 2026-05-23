@@ -1,0 +1,80 @@
+version: 1
+session_id: 2026-05-23-what-does-the-org-and-operating
+domain: ai-native-business
+prompt: 'What does the org and operating model of an AI-native solo-founder / tiny-team
+  business look like in 2026? Cover: role taxonomy for humans vs. agents, what gets
+  automated first and in what order, agent-in-the-loop patterns (review gates, evals,
+  escalation), decision cadence (async-default, sync exceptions), and the ''when to
+  add a human vs. add an agent'' decision rule. Include case studies of named AI-native
+  companies (Anysphere/Cursor, Cognition, Sierra, Lindy, Crosby, Mercor, Harvey, Decagon)
+  and solo operators (Pieter Levels, Marc Lou). Include academic productivity research
+  (Brynjolfsson, Mollick, GitHub Copilot studies, BCG×Harvard AI experiment) and founder
+  podcast appearances (Acquired, Lenny''s, Latent Space, 20VC, AI Native Dojo).'
+generated_at: '2026-05-23T17:48:56Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - AI agents in organizational structure
+  - human-AI team composition productivity
+  - large language model workplace productivity experiment
+  - generative AI knowledge worker productivity
+  - AI augmentation labor substitution effects
+  - agent orchestration enterprise workflow
+  - human-in-the-loop AI agent evaluation
+  - LLM-based autonomous business process automation
+  youtube:
+  - Pieter Levels solo founder AI
+  - Marc Lou indie hacker AI
+  - Anysphere Cursor founders interview
+  - Cognition Devin demo
+  - Sierra AI Bret Taylor
+  - Lindy AI agents
+  - Harvey AI legal
+  - Decagon AI customer support
+  - Mercor AI hiring
+  - Lenny's podcast AI native
+  - Latent Space podcast
+  - Acquired podcast Anysphere
+  - 20VC AI founders
+  - AI Native Dojo
+  - one person unicorn
+  - Sam Altman one person billion dollar company
+  - agent orchestration patterns
+  - AI startup operating model
+  - build vs buy AI agents
+  - AI evals founder talk
+  web:
+  - AI-native company operating model
+  - one person billion dollar company
+  - solo founder AI agents stack
+  - tiny team AI startup unit economics
+  - Anysphere Cursor revenue per employee
+  - Pieter Levels Nomad List operations
+  - Marc Lou ship fast AI
+  - AI agent review gates evals
+  - outcome-based pricing AI agents
+  - founder-led GTM AI native
+  - AI startup moat commoditized models
+  - build vs buy AI agent orchestration
+  - async default decision cadence startup
+  - when to hire vs agent
+  - revenue per human AI native business
+  pubmed: []
+  semantic_scholar:
+  - generative AI productivity field experiment
+  - GitHub Copilot developer productivity study
+  - BCG Harvard AI consultants experiment
+  - large language models workplace augmentation
+  - AI agents knowledge work substitution
+  - Brynjolfsson generative AI call center
+  - human AI collaboration team performance
+  - AI-augmented software engineering productivity
+  - autonomous agents business process
+  - LLM agents enterprise deployment evaluation
+edited: false
