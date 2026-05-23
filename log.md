@@ -17275,3 +17275,19 @@ rationale='Primary CRA interpretation bulletin IT-304R2 on Canadian condominium 
 ## [2026-05-23T22:58:41Z] ingest | id=web-2002-09-05-ce9 | type=web | backfilled_wiki_page=true
 
 already ingested; backfilled wiki page: raw=raw/web/web-2002-09-05-ce9.md wiki=wiki/sources/web-2002-09-05-ce9.md
+
+## [2026-05-23T23:00:06Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T23-00-06Z-schema-drift.md
+
+## [2026-05-23T23:02:19Z] wiki-author | id=web-2002-09-05-ce9 | updates=11 | created=11 | updated=0 | contradictions=0 | draft=no
+
+Source establishes the Canadian federal income tax framework for condominium corporations (NPO exemption under ITA s.149(1)(l), T2+T1044 filing obligations, reserve fund interest treatment, Quebec syndicate parity) — a layer not previously represented in the wiki and load-bearing for Finding-0031 §1 on Canadian reserve-fund interest tax treatment.
+
+## [2026-05-23T23:03:22Z] ingest | id=web-2014-08-18-d79 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.75
+
+raw=raw/web/web-2014-08-18-d79.md wiki=wiki/sources/web-2014-08-18-d79.md
+
+## [2026-05-23T23:04:37Z] ingest | id=web-2026-05-23-697 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-697.md wiki=wiki/sources/web-2026-05-23-697.md
