@@ -1,0 +1,100 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: ai-native-business
+  topic: AI-native business design for solo founders and tiny teams running on AI
+    substrate
+  field: Startup operating models, founder economics, and applied AI for business
+    building
+  description: "The technical, operational, and economic substrate of companies where\
+    \ AI is the operating layer rather than a bolt-on feature, focused on the one-operator-plus-many-agents\
+    \ archetype across bootstrapped and pre-seed paths. Covers org and operating model,\
+    \ unit economics and capital strategy, tech stack and build-vs-buy decisions,\
+    \ and GTM, pricing, and defensibility. Spans three archetypes \u2014 AI-native\
+    \ indie SaaS / vertical agent, AI-native services firm, and AI-native marketplace/aggregator\
+    \ \u2014 under a substrate-first framing where the offering may or may not be\
+    \ AI itself but the operating model assumes it."
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Describes concrete operating models for solo-founder or tiny-team companies where
+  AI agents perform work historically done by employees, with named roles, automation
+  order, or decision cadence
+- Reports unit economics, gross margin, revenue-per-human, or cost structure for AI-native
+  businesses, including bootstrapped, revenue-financed, or pre-seed paths with specific
+  numbers
+- "Covers tech-stack and build-vs-buy decisions for AI-native operators \u2014 model\
+  \ selection, evals as a core function, observability, agent orchestration, or vendor-primitive\
+  \ composition \u2014 with implementation detail beyond marketing claims"
+- Examines GTM, pricing (seat, usage, outcome), PLG, founder-led acquisition, or defensibility
+  and moat formation when underlying models are commoditized
+- Case studies of named AI-native companies (e.g. Anysphere/Cursor, Pieter Levels
+  operations, AI-native services firms, AI-native marketplaces) with operational,
+  financial, or product specifics
+- Founder, operator, or VC essays and primary-signal accounts (podcasts, conference
+  talks, longform posts) that document lived experience running an AI-native business
+- Academic productivity research on AI-augmented work, agent-human team composition,
+  or substitution effects with measurable outcomes
+exclusion_criteria:
+- Generic "AI will change everything" thought-leadership without operating detail,
+  numbers, or named-company specifics
+- Enterprise AI-transformation content aimed at large-company CIOs and digital-transformation
+  programs (not solo or tiny-team relevant)
+- AI-feature launches or product announcements where AI is a bolt-on to an existing
+  non-AI-native business
+- Pure model-capability research (benchmarks, architectures, training) with no business-operating
+  implications drawn out
+- Hype-cycle commentary, predictions, or punditry without first-hand operator perspective
+  or grounded evidence
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Founder or operator longform on personal sites or Substack with first-hand operating
+      detail (e.g. Levels.io, Patio11, Every, Lenny's Newsletter operator interviews)
+    - Tier-one VC essays grounded in portfolio data (a16z, Sequoia, USV, Benchmark,
+      First Round Review)
+    - Peer-reviewed or working-paper academic research on AI productivity, agent-human
+      teaming, or firm-level AI economics (NBER, SSRN, top management/economics journals)
+    - Books by practitioners on AI-native business building or solo-operator playbooks
+    - Founder-led podcasts and conference talks with substantive operating content
+      (e.g. Acquired, Invest Like the Best, Lenny's Podcast, SaaStr, MicroConf)
+    negative_signals:
+    - SEO-farm "Top 10 AI tools" listicles
+    - Vendor-sponsored content masquerading as operator essays
+    - LinkedIn thought-leadership posts without underlying data or first-hand operating
+      experience
+    - Aggregator news rewrites of original sources
+  methodology_rigor:
+    positive_signals:
+    - Quantifies headcount, revenue, margin, burn, or agent-task throughput with specific
+      numbers
+    - Identifies the operator behind the numbers and the time window of the data
+    - Distinguishes between claimed and demonstrated AI capability in the operating
+      model
+    - Triangulates founder claims against revenue, hiring, or product evidence
+    negative_signals:
+    - Anonymous "AI-native company" anecdotes with no verifiable specifics
+    - Aspirational projections presented as current operating reality
+    - Survivor-bias case studies with no base-rate or failure context
+  content_depth:
+    positive_signals:
+    - Decomposes the operating model into specific roles, workflows, or agent responsibilities
+      a reader could replicate
+    - Connects org/operating choices to unit economics or GTM with explicit causal
+      claims
+    - Engages tradeoffs across the four pillars (org, economics, stack, GTM) rather
+      than a single dimension
+    - Discusses defensibility and moat formation under model-commoditization assumptions
+      with specifics
+    negative_signals:
+    - Surface-level "I use ChatGPT for X" tip lists without operating consequence
+    - Single-pillar coverage that ignores how decisions cascade (e.g. pricing claims
+      with no cost-structure grounding)
+    - Pure framework or 2x2 content with no instantiated examples
+bootstrapped_from_description_hash: ea113c82eadc039e
