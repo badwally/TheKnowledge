@@ -1,0 +1,27 @@
+source_id: web-2014-03-01-97d
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Pieter Levels '12 Startups in 12 Months' — canonical solo-operator manifesto
+  cited throughout the indie SaaS / AI-native solo founder archetype.
+pinned_at: '2026-05-23T18:50:21Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: I'm Launching 12 Startups in 12 Months
+  authors:
+  - Levelsio
+  url: https://levels.io/12-startups-12-months/
+content_excerpt: 'I liked the idea of Jennifer Dewalt’s 180 websites in 180 days.
+  However, unlike Jennifer who learned web development from scratch, I can already
+  build stuff. My challenge is to actually finish and launch my projects. So for the
+  next 12 months, I’ve set the goal to launch 12 startups in 12 months.
+
+
+  ## Problem one: finishing
+
+
+  We creatives have one common problem: finishing things. From musicians to writers
+  to developers, we are perfectionists and projects simply never are “just done”.
+  There’s alwa'
