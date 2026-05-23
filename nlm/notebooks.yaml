@@ -9,8 +9,8 @@ notebooks:
     persistent:
       notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
       created_at: '2026-05-23T17:56:29Z'
-      sources_count: 49
-      last_sync: '2026-05-23T19:32:44Z'
+      sources_count: 60
+      last_sync: '2026-05-23T21:06:43Z'
     sessions:
     - session_id: 2026-05-23-what-does-the-org-and-operating
       notebook_id: f388291f-740b-4b94-a158-e4813dfe4c59
@@ -198,8 +198,8 @@ notebooks:
     persistent:
       notebook_id: 67857df4-7231-45b0-805e-96bffa063205
       created_at: '2026-05-23T16:31:19Z'
-      sources_count: 22
-      last_sync: '2026-05-23T19:06:48Z'
+      sources_count: 29
+      last_sync: '2026-05-23T20:46:23Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2
