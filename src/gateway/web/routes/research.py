@@ -208,7 +208,10 @@ async def create_session(req: CreateSessionRequest, request: Request) -> JSONRes
                 "errors": [f"no policy for domain {domain!r}: {e}"],
                 "summary": "create_session failed: policy missing",
             }
-        plan_client = ClaudeCLIPlanClient()
+        # M46-followup Fix E: this client is used for per-adapter query
+        # planning only — Sonnet 4.6 is the right tier.
+        from gateway.llm import model_for
+        plan_client = ClaudeCLIPlanClient(model=model_for("plan_query_planner"))
         try:
             result = _qp.plan_per_adapter_queries(
                 prompt,

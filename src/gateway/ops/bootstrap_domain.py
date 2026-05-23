@@ -144,9 +144,13 @@ def bootstrap_domain(
             )
 
     if plan_client is None:
+        from gateway.llm import model_for
         from gateway.plan import ClaudeCLIPlanClient
 
-        plan_client = ClaudeCLIPlanClient()
+        # M46-followup Fix E: bootstrap-domain is bounded structural
+        # authoring (policy.yaml generation). Sonnet handles it well
+        # at lower cost; reserve Opus for multi-page wiki authorship.
+        plan_client = ClaudeCLIPlanClient(model=model_for("plan_bootstrap_domain"))
 
     warnings: list[str] = []
     if len(description.split()) < _SHORT_DESCRIPTION_THRESHOLD:

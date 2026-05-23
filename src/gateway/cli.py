@@ -1011,10 +1011,18 @@ def _run_reject_proposal(ns: argparse.Namespace) -> int:
 
 
 def _run_research(ns: argparse.Namespace) -> int:
+    from gateway.llm import model_for
     from gateway.plan import ClaudeCLIPlanClient
     from gateway.research.orchestrator import research
 
-    plan_client = None if ns.no_plan else ClaudeCLIPlanClient()
+    # M46-followup Fix E: research's plan_client is used for query planning
+    # (and domain inference), not multi-page authorship. Bounded fan-out
+    # generation — Sonnet handles it well at lower cost than Opus.
+    plan_client = (
+        None
+        if ns.no_plan
+        else ClaudeCLIPlanClient(model=model_for("plan_query_planner"))
+    )
 
     return _emit_result(
         research(
