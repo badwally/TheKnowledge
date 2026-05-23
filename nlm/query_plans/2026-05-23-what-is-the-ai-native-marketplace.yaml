@@ -1,0 +1,47 @@
+version: 1
+session_id: 2026-05-23-what-is-the-ai-native-marketplace
+domain: ai-native-business
+prompt: "What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching, content-rights aggregation; how the four pillars specialize \u2014 especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals; worked example. Include comparison to pre-AI marketplaces (Craigslist, Thumbtack, Upwork) to clarify what 'AI-native' adds."
+generated_at: '2026-05-23T17:52:15Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv: []
+  youtube: []
+  web:
+  - a16z marketplace 100 framework
+  - Andrew Chen cold start problem book
+  - Sangeet Paul Choudary platform revolution
+  - Lenny Rachitsky marketplace metrics benchmarks
+  - Pieter Levels Remote OK revenue stack
+  - Mercor AI recruiting marketplace business model
+  - AI native marketplace examples 2026
+  - marketplace take rate vs subscription pricing
+  - two-sided liquidity bootstrap tactics
+  - vertical AI aggregator solo operator
+  - AI-mediated B2B supplier matching
+  - marketplace defensibility AI commoditization moat
+  - Bill Gurley above the crowd marketplaces
+  - YC marketplace startup playbook AI
+  - content licensing aggregator AI platform
+  pubmed: []
+  semantic_scholar:
+  - two-sided platform cold start liquidity
+  - AI matching algorithms labor marketplaces
+  - marketplace take rate pricing economics
+  - platform network effects defensibility moat
+  - algorithmic intermediation digital labor
+  - automated trust reputation online platforms
+  - vertical marketplace specialization performance
+  - solo founder bootstrap platform strategy
+  - AI agent mediated transaction marketplaces
+  - content aggregator platform business model
+edited: true
+edits:
+- at: '2026-05-23T18:47:12.306056Z'
+  note: Disabled arxiv + youtube adapters (HTTP 429 daily-quota burnout from earlier parallel run).

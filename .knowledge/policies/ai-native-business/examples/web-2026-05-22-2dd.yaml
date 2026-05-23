@@ -1,0 +1,32 @@
+source_id: web-2026-05-22-2dd
+domain: ai-native-business
+decision: exclude
+score: 0.0
+policy_version: ai-native-business-v1
+rationale: Chip-design history; too far from solo-operator AI-native business playbook
+  scope.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reiner Pope – Chip design from the bottom up
+  authors:
+  - Dwarkesh Patel
+  url: https://www.dwarkesh.com/p/reiner-pope-2
+content_excerpt: 'New blackboard lecture with Reiner Pope: how do chips actually work
+  - starting with basic logic gates, and working up to why GPUs, TPUs, FPGAs, and
+  the human brain each look the way they do.
+
+
+  Reiner is CEO of MatX, a new chip startup (full disclosure - I’m an angel investor).
+  He was previously at Google, where he worked on software efficiency, compilers,
+  and TPU architecture.
+
+
+  Watch this one on YouTube so you can see the chalkboard.
+
+
+  ## Sponsors
+
+
+  Crusoe was one of only five GPU clouds that made '

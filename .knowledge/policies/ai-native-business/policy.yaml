@@ -18,8 +18,8 @@ domain:
     \ \u2014 under a substrate-first framing where the offering may or may not be\
     \ AI itself but the operating model assumes it."
 filter:
-  threshold_include: 0.7
-  threshold_review: 0.5
+  threshold_include: 0.55
+  threshold_review: 0.35
   example_count_in_prompt: 12
   example_strategy: balanced
 inclusion_criteria:
@@ -41,6 +41,13 @@ inclusion_criteria:
   talks, longform posts) that document lived experience running an AI-native business
 - Academic productivity research on AI-augmented work, agent-human team composition,
   or substitution effects with measurable outcomes
+- AI industry, model-market, infrastructure-economics, or pricing-dynamics analysis
+  that materially informs solo-operator strategic decisions (model selection, build-vs-buy
+  defaults, moat formation, capital efficiency) even when the source itself is not
+  an operator account
+- Substantive analysis of named AI-native company moves, fundraises, valuations, or
+  market structure that surfaces concrete operating, economic, or defensibility implications
+  for AI-native businesses
 exclusion_criteria:
 - Generic "AI will change everything" thought-leadership without operating detail,
   numbers, or named-company specifics

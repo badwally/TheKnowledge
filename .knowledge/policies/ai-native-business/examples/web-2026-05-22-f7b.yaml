@@ -1,0 +1,25 @@
+source_id: web-2026-05-22-f7b
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Solo-operator agent-workflow recipe — concrete operating model for a tiny
+  team.
+pinned_at: '2026-05-23T18:38:51Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Build the room before you write the memo. Grab the 4-prompt project room
+    kit: source inventory, duplicate log, missing-context list, grounded draft.'
+  authors:
+  - Nate
+  url: https://natesnewsletter.substack.com/p/ai-organize-files-before-writing
+content_excerpt: 'When AI produces a mediocre draft from a messy folder, the prompt
+  is almost never the problem. The room is.
+
+
+  The model has been handed a strategy doc, two slightly different versions of the
+  operating plan, a transcript with two meetings in it, and a deck that no longer
+  matches reality. It is asked to write a memo. To do that, it has to do two jobs
+  at once: figure out what the project actually is, then produce the artifact. The
+  first job is the hard one. The second job is the one that shows up in'

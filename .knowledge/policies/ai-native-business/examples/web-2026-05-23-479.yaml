@@ -1,0 +1,24 @@
+source_id: web-2026-05-23-479
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Concrete operator/agent-workflow pattern relevant to solo-founder operating
+  model.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: When the Human Layer Is the Control Layer
+  authors:
+  - David Sugg
+  url: https://www.enginesofchange.ai/p/when-the-human-layer-is-the-control
+content_excerpt: '*David Sugg has spent 26 years building and operating media supply
+  chains at major studios. He''s led large technology programs, managed teams of hundreds,
+  and learned most of what matters by being in the room when things went wrong. He
+  now consults on technology implementations, supply chain strategy, and operations,
+  with a particular focus on how technology actually performs in production environments.*
+
+
+  MIT reported in August 2025 that 95% of corporate GenAI pilots are failing. The
+  cause is no'

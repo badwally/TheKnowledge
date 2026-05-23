@@ -1,0 +1,47 @@
+version: 1
+session_id: 2026-05-23-what-is-the-ai-native-technical
+domain: ai-native-business
+prompt: "What is the AI-native technical stack and build-vs-buy default in 2026 for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Resist becoming a tool list \u2014 focus on selection criteria. Sources: AI Engineer Summit talks, Latent Space episodes on production AI, operator blogs on evals and observability, vendor case studies (Anthropic, OpenAI, LangSmith, Braintrust), AI Engineer essays."
+generated_at: '2026-05-23T17:50:21Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv: []
+  youtube: []
+  web:
+  - AI engineer compound systems architecture
+  - evals as core function startup
+  - LLM observability best practices 2026
+  - build vs buy AI infrastructure
+  - Braintrust LangSmith Langfuse comparison
+  - Modal Inngest serverless AI
+  - Cursor Anysphere engineering blog
+  - data flywheel moat AI startup
+  - vendor primitives composition AI stack
+  - model selection frontier open weight
+  - agent orchestration framework comparison
+  - Latent Space production AI essays
+  - Hamel Husain evals blog
+  - AI native company unit economics
+  - tiny team AI substrate operating model
+  pubmed: []
+  semantic_scholar:
+  - AI agent orchestration production systems
+  - LLM evaluation methodology benchmarks
+  - retrieval augmented generation enterprise
+  - small language model fine-tuning cost
+  - AI-augmented software development productivity
+  - prompt engineering systematic evaluation
+  - multi-agent system reliability
+  - observability machine learning production
+  - data flywheel competitive advantage AI
+  - build versus buy AI infrastructure
+edited: true
+edits:
+- at: '2026-05-23T18:47:12.378705Z'
+  note: Disabled arxiv + youtube adapters (HTTP 429 daily-quota burnout from earlier parallel run).

@@ -1,0 +1,29 @@
+source_id: web-2026-05-22-e40
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: AI economics, defensibility, or capital-efficiency analysis material to
+  the economics and moats pillars.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: meet the new economy, same as the old economy
+  authors:
+  - Dan Davies
+  url: https://backofmind.substack.com/p/meet-the-new-economy-same-as-the
+content_excerpt: '# meet the new economy, same as the old economy
+
+
+  ### moats and their discontents
+
+
+  I was worrying about this on social media during the week, and thought I might get
+  some interesting discussion … first, have a look at this story about Google’s plans
+  to migrate its famous search product to an AI-driven “intelligent search box”.
+
+
+  Lots of people are very much “gahh, enshittification, I just want my weblinks”,
+  but I’m not - I do think this is potentially very useful. Being able to carry out
+  a semanti'

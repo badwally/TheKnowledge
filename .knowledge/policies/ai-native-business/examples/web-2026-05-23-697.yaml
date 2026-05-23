@@ -1,0 +1,46 @@
+source_id: web-2026-05-23-697
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: AI industry/model-market analysis informing operator strategic decisions
+  (model selection, build-vs-buy, capital efficiency).
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: '🤖 AI Agents Weekly: Gemini 3.5 Flash, Antigravity 2.0, Codex Thursday, Cohere
+    Command A+, Qwen3.7-Max, and More'
+  authors:
+  - May
+  url: https://nlp.elvissaravia.com/p/ai-agents-weekly-gemini-35-flash
+content_excerpt: '# 🤖 AI Agents Weekly: Gemini 3.5 Flash, Antigravity 2.0, Codex Thursday,
+  Cohere Command A+, Qwen3.7-Max, and More
+
+
+  ### Gemini 3.5 Flash, Antigravity 2.0, Codex Thursday, Cohere Command A+, Qwen3.7-Max,
+  and More
+
+
+  In today’s issue:
+
+
+  Google ships Gemini 3.5 Flash for agents
+
+
+  Antigravity 2.0 becomes a full agent platform
+
+
+  OpenAI ships Appshots and /goal in Codex
+
+
+  Cohere open-sources Command A+ on Apache 2.0
+
+
+  Qwen3.7-Max runs agents for 35 hours straight
+
+
+  NVIDIA verifies agent skills
+
+
+  Cursor Composer'

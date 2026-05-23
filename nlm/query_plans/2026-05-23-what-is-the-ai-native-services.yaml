@@ -1,0 +1,47 @@
+version: 1
+session_id: 2026-05-23-what-is-the-ai-native-services
+domain: ai-native-business
+prompt: "What is the AI-native services firm archetype for a solo or tiny-team operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping shop, recruiting firm, paralegal services, content production); referents at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator end (one-person agencies, AI-leveraged consultancies, productized services); how the four pillars (org, economics, tech, GTM) specialize \u2014 especially economics (hourly/retainer collapse as AI substrate replaces hours, pricing pivot to outcomes) and defensibility (client relationships, workflow integration, reputation \u2014 not data); go/no-go signals; worked example. Include the 'service as software' framing and the productized-service vs. project-services spectrum."
+generated_at: '2026-05-23T17:51:36Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv: []
+  youtube: []
+  web:
+  - AI native services firm archetype
+  - service as software thesis
+  - one person billion dollar company
+  - Mercor talent marketplace business model
+  - Harvey AI law firm pricing
+  - productized services vs project services
+  - AI native business unit economics
+  - outcome based pricing AI services
+  - solo founder AI operating stack
+  - AI agency case study revenue
+  - Decagon agentic AI pricing
+  - Crosby AI contract review
+  - AI bookkeeping firm operations
+  - AI native marketing studio playbook
+  - defensibility AI services commoditized models
+  pubmed: []
+  semantic_scholar:
+  - AI native firm organizational design
+  - generative AI professional services productivity
+  - autonomous agents replacing knowledge workers
+  - service as software business model
+  - tiny team unit economics AI
+  - AI augmented consulting firm
+  - outcome based pricing artificial intelligence services
+  - solo founder AI tooling productivity
+  - defensibility AI startups foundation models
+  - productized service business model SaaS
+edited: true
+edits:
+- at: '2026-05-23T18:47:12.231917Z'
+  note: Disabled arxiv + youtube adapters (HTTP 429 daily-quota burnout from earlier parallel run).

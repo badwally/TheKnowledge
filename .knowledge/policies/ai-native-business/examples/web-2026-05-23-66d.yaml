@@ -1,0 +1,32 @@
+source_id: web-2026-05-23-66d
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Concrete operator/agent-workflow pattern relevant to solo-founder operating
+  model.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Marc Andreessen Agent with Claude
+  authors:
+  - Guillermo Flor
+  url: https://www.productmarketfit.tech/p/the-marc-andreessen-agent-with-claude
+content_excerpt: '# The Marc Andreessen Agent with Claude
+
+
+  ### How to scrape his entire public catalog, build the system prompt and ask the
+  questions that actually matter
+
+
+  **Imagine having Marc Andreessen on speed dial. **
+
+
+  Ask him whether to raise now or wait. Whether to rebuild for AI or add features.
+  Whether the big tech competitor that just announced your product is a threat or
+  a validation. Most founders will never get that access. But with Claude, you can
+  get surprisingly close.
+
+
+  Marc has published more tha'

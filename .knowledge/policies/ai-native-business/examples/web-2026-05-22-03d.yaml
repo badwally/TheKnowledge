@@ -1,0 +1,29 @@
+source_id: web-2026-05-22-03d
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: AI industry/model-market analysis informing operator tech-stack and capital-efficiency
+  decisions — fits the expanded inclusion criterion added 2026-05-23.
+pinned_at: '2026-05-23T18:38:51Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Gemini 3.5 Flash Looks Good For How Fast It Is
+  authors:
+  - Zvi Mowshowitz
+  url: https://thezvi.substack.com/p/gemini-35-flash-looks-good-for-how
+content_excerpt: '# Gemini 3.5 Flash Looks Good For How Fast It Is
+
+
+  Google once again has a model worth at least some consideration. Gemini 3.5 Flash
+  is likely the best model out there at its particular speed point, as long as you
+  don’t mind that it is a Gemini model. So for cases where speed kills, this can be
+  a reasonable choice. Otherwise, I don’t see signs you would want to use it over
+  Opus 4.7 or GPT-5.5.
+
+
+  Google also had some other offerings for I/O Day, which this post will also cover.
+
+
+  #### Introducing Go'

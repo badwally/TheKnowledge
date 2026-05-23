@@ -1,0 +1,59 @@
+source_id: web-2026-05-23-6c2
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Concrete operator/agent-workflow pattern relevant to solo-founder operating
+  model.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Smart money thesis scanner.
+  authors:
+  - Compound
+  url: https://news.aiinvestinghq.com/p/smart-money-thesis-scanner
+content_excerpt: '# Smart money thesis scanner.
+
+
+  ### Use claude to save 4 hours of research
+
+
+  You found a new stock.
+
+
+  You open Claude.
+
+
+  One click.
+
+
+  Minutes later, you see:
+
+
+  Who owns it
+
+
+  Why they bought it
+
+
+  What they believe will drive the stock retunrs
+
+
+  ans questions you should answer before investing
+
+
+
+  Instead of starting from zero...
+
+
+  you start with years of investor research
+
+
+  Here’s a short video showing what the final result looks like (sound on).
+
+
+  ### Borrow the Research, Not the Conviction
+
+
+  This system turns'

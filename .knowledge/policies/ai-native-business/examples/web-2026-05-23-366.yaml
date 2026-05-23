@@ -1,0 +1,31 @@
+source_id: web-2026-05-23-366
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: AI industry/model-market analysis informing operator tech-stack and capital-efficiency
+  decisions — fits the expanded inclusion criterion added 2026-05-23.
+pinned_at: '2026-05-23T18:38:51Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: '[AINews] All Model Labs are now Agent Labs'
+  authors:
+  - Latent Space
+  url: https://www.latent.space/p/ainews-all-model-labs-are-now-agent
+content_excerpt: '# [AINews] All Model Labs are now Agent Labs
+
+
+  ### a quiet day lets us tie together a few quotes as all model labs become agent
+  labs
+
+
+  Ahead of OpenAI’s likely IPO filing next week, Greg makes the latest in a series
+  of comments where Model Labs are increasingly also building Agents as the product:
+
+
+  The quote is a big reversal of stance from a position ~uniformly held by anyone
+  who worked at **Team Big Model**, including his previous head of OpenAI Labs:
+
+
+  This comes with the shuttering of AI21’s mo'

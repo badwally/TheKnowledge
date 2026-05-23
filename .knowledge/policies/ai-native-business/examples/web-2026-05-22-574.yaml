@@ -1,0 +1,33 @@
+source_id: web-2026-05-22-574
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: AI infra primitives (Exa, Modal, TurboPuffer) directly relevant to build-vs-buy
+  defaults for solo operators.
+pinned_at: '2026-05-23T18:38:51Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: '[AINews] New AI Infra unicorns: Exa, Modal, TurboPuffer'
+  authors:
+  - Latent Space
+  url: https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa
+content_excerpt: '# [AINews] New AI Infra unicorns: Exa, Modal, TurboPuffer
+
+
+  ### a quiet day lets us feature fundraises!
+
+
+  *Take the 2026 AI Engineering Survey and get >$2k in credits and AIE WF tickets!*
+
+
+  Congrats to all our past guests who reached huge milestones this week:
+
+
+  **Turbopuffer**: $100M ARR and profitable (our podcast)**Exa**: $250M@$2.2B Series
+  C (our podcast)**Modal**: $355M@$4.7B Series C (our podcast)
+
+
+  We really need to be raising that Latent Space fund soon… but meanwhile.. **help
+  us out** by tak'

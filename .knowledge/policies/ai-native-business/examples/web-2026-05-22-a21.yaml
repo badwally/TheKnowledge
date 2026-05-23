@@ -1,0 +1,31 @@
+source_id: web-2026-05-22-a21
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Concrete operator/agent-workflow pattern relevant to solo-founder operating
+  model.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: How the Fastest Teams Actually Ship Code with AI
+  authors:
+  - Guillermo Flor; Paul Sanglé-Ferrière
+  url: https://www.productmarketfit.tech/p/how-the-fastest-teams-actually-ship
+content_excerpt: '# How the Fastest Teams Actually Ship Code with AI
+
+
+  ### The AI coding workflow that outships teams with 100x your headcount, from the
+  team that built the #1 code review tool in the world
+
+
+  Welcome to Product Market Fit! Today’s issue is * free* and
+
+
+  *.*
+
+
+  **open to everyone***This week we host Paul Sanglé-Ferrière, CEO of cubic (YC).
+  His team has built the leading AI code review tool, ranked #1 on every independent
+  benchmark and beating tools from Anthropic and OpenAI by a large margin. They build'

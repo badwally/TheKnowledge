@@ -1,0 +1,48 @@
+version: 1
+session_id: 2026-05-23-what-is-the-ai-native-indie
+domain: ai-native-business
+prompt: "What is the AI-native indie SaaS / vertical agent archetype for a solo founder in 2026? Cover: definition (what this archetype is and isn't), funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Crosby, Decagon, Sierra) and solo-buildable variants (Pieter Levels with Nomad List and Photo AI, Marc Lou's portfolio, other single-operator vertical agents); how the four pillars (org, economics, tech, GTM) specialize for this archetype; defensibility specific to vertical agents (workflow lock-in, integration depth, eval moat); pricing trajectory (seat \u2192 usage \u2192 outcome); go/no-go signals for a solo founder. Include a worked example walked through the four pillars."
+generated_at: '2026-05-23T17:51:14Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv: []
+  youtube: []
+  web:
+  - AI native business operating model
+  - solo founder AI SaaS playbook
+  - vertical AI agent startups 2026
+  - Pieter Levels Photo AI revenue
+  - Marc Lou ShipFast revenue numbers
+  - Cursor Anysphere revenue ARR growth
+  - outcome based pricing AI agents
+  - eval driven development production agents
+  - one person billion dollar company
+  - agent orchestration LangGraph framework
+  - vertical SaaS AI replacement workflow
+  - AI agent gross margins unit economics
+  - build vs buy LLM infrastructure
+  - seat usage outcome pricing transition
+  - defensibility AI startup commoditized models
+  - founder led sales AI native
+  pubmed: []
+  semantic_scholar:
+  - AI augmented productivity solo entrepreneur
+  - vertical AI agent business model
+  - unit economics of AI native software companies
+  - defensibility in foundation model era startups
+  - evaluation methodologies for production LLM applications
+  - outcome based pricing software as a service
+  - generative AI substitution effects knowledge work
+  - build versus buy AI infrastructure decisions
+  - tiny team scaling with AI agents
+  - solo founder bootstrapped SaaS economics
+edited: true
+edits:
+- at: '2026-05-23T18:47:12.160566Z'
+  note: Disabled arxiv + youtube adapters (HTTP 429 daily-quota burnout from earlier parallel run).

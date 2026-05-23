@@ -1,0 +1,29 @@
+source_id: web-2026-05-22-113
+domain: ai-native-business
+decision: include
+score: 1.0
+policy_version: ai-native-business-v1
+rationale: Concrete operator/agent-workflow pattern relevant to solo-founder operating
+  model.
+pinned_at: '2026-05-23T18:46:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Will AI Replace Systems Thinking?
+  authors:
+  - Nicole Williams
+  url: https://pmresearcher.substack.com/p/will-ai-replace-systems-thinking
+content_excerpt: 'No. AI will not replace systems thinking. But it will absolutely
+  change how systems thinking is practiced.
+
+
+  AI is very good at pattern recognition, summarizing complexity, generating scenarios,
+  mapping dependencies, and surfacing weak signals across large bodies of information.
+  It can help us build causal loop diagrams, stakeholder maps, risk registers, scenario
+  trees, assumption logs, and impact analyses faster than before.
+
+
+  That makes AI a powerful assistant for systems thinkers.
+
+
+  But systems '
