@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import concurrent.futures as _futures
 import os
+import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -616,6 +617,35 @@ def _make_cross_cutting_update(
     )
 
 
+_NLM_SOURCES_FOOTNOTE_DEF_RE = re.compile(
+    r"^\s*\[\^\d+\]:\s*\[\[sources/[^\]\s]+\]\]\s*$",
+    re.MULTILINE,
+)
+
+
+def _strip_nlm_emitted_sources_footnotes(answer: str) -> str:
+    """Drop `[^N]: [[sources/<anything>]]` footnote-def lines from the answer.
+
+    NotebookLM is prompted to emit `[^N]: [[sources/<id>]]` definitions
+    at the end of its response (so unattributed prose looks attributed
+    on the NLM side). It doesn't know the gateway-side wiki slugs, so
+    it substitutes either the citation number (`[[sources/1]]`) or the
+    raw NLM source UUID (`[[sources/nlm-uuid-aaaa]]`) — both of which
+    are broken wikilinks against `wiki/sources/<gateway-slug>.md`.
+
+    The orchestrator's own resolve_citations + cite_line append-pass is
+    authoritative: it uses the source_map to emit the correct
+    `[^N]: [[sources/<gateway-slug>]]` (or `[[nlm:<id>]]` fallback per
+    source_map docstring). So we strip the NLM-emitted defs first to
+    avoid a parallel broken footnote block on the rendered page.
+
+    Surgical: only strips lines that match the footnote-def shape;
+    bullets, headings, and prose containing `[[sources/...]]` inline
+    are preserved untouched.
+    """
+    return _NLM_SOURCES_FOOTNOTE_DEF_RE.sub("", answer)
+
+
 def _render_finding_block(
     finding: dict | None,
     source_map: dict[str, str],
@@ -628,6 +658,8 @@ def _render_finding_block(
     answer = (finding.get("answer") or "").strip()
     if not answer:
         return "_(empty answer)_"
+
+    answer = _strip_nlm_emitted_sources_footnotes(answer).strip()
 
     resolved = _source_map.resolve_citations(
         _coerce_citations(finding.get("citations", {})),
