@@ -171,3 +171,71 @@ def test_search_raises_adapter_error_on_malformed_xml(monkeypatch):
 
     with pytest.raises(AdapterError):
         arxiv_mod.ArxivAdapter().search("anything")
+
+
+# --- 429 backoff tests (M46-followup Fix A) ------------------------------
+
+
+class _RecordingResponse:
+    def __init__(self, status_code, text="ok", headers=None):
+        self.status_code = status_code
+        self.text = text
+        self.headers = headers or {}
+
+
+def test_fetch_feed_retries_on_429_then_succeeds(monkeypatch):
+    """A 429 followed by a 200 should retry once and return the body."""
+    calls: list[int] = []
+    sleeps: list[float] = []
+
+    def fake_get(url, params=None, timeout=None):
+        calls.append(1)
+        if len(calls) == 1:
+            return _RecordingResponse(429, text="rate limited")
+        return _RecordingResponse(200, text=_ATOM_RESPONSE)
+
+    monkeypatch.setattr(arxiv_mod.requests, "get", fake_get)
+    monkeypatch.setattr(arxiv_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    body = arxiv_mod._fetch_feed("anything", max_results=10, sort_by="relevance")
+
+    assert "GLP-1" in body
+    assert len(calls) == 2
+    # First backoff should be the base interval, not zero.
+    assert sleeps and sleeps[0] > 0
+
+
+def test_fetch_feed_honors_retry_after_header_on_429(monkeypatch):
+    """If the 429 response has a Retry-After header, sleep at least that long."""
+    sleeps: list[float] = []
+    calls: list[int] = []
+
+    def fake_get(url, params=None, timeout=None):
+        calls.append(1)
+        if len(calls) == 1:
+            return _RecordingResponse(429, headers={"Retry-After": "7"})
+        return _RecordingResponse(200, text=_ATOM_RESPONSE)
+
+    monkeypatch.setattr(arxiv_mod.requests, "get", fake_get)
+    monkeypatch.setattr(arxiv_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    arxiv_mod._fetch_feed("q", max_results=10, sort_by="relevance")
+
+    assert sleeps and sleeps[0] >= 7.0
+
+
+def test_fetch_feed_raises_after_429_retries_exhausted(monkeypatch):
+    """All-429 should eventually raise AdapterError mentioning 429."""
+    sleeps: list[float] = []
+
+    def fake_get(url, params=None, timeout=None):
+        return _RecordingResponse(429, text="rate limited")
+
+    monkeypatch.setattr(arxiv_mod.requests, "get", fake_get)
+    monkeypatch.setattr(arxiv_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    with pytest.raises(AdapterError) as excinfo:
+        arxiv_mod._fetch_feed("q", max_results=10, sort_by="relevance")
+    assert "429" in str(excinfo.value)
+    # Must have slept at least once between retries.
+    assert len(sleeps) >= 1

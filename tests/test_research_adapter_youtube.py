@@ -217,3 +217,93 @@ def test_search_forwards_filter_hints_to_search_params(monkeypatch):
     assert params["videoDuration"] == "long"
     assert params["relevanceLanguage"] == "en"
     assert "ignored_hint" not in params
+
+
+# --- 429 backoff tests (M46-followup Fix A) ------------------------------
+
+
+class _Recording429Response:
+    def __init__(self, status_code, payload=None, headers=None):
+        self.status_code = status_code
+        self._payload = payload or {}
+        self.text = "" if status_code == 200 else "rate limited"
+        self.headers = headers or {}
+
+    def json(self):
+        return self._payload
+
+
+def test_search_videos_retries_on_429_then_succeeds(monkeypatch):
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake-key")
+    calls: list[int] = []
+    sleeps: list[float] = []
+
+    def fake_get(url, params=None, timeout=None):
+        calls.append(1)
+        if len(calls) == 1:
+            return _Recording429Response(429)
+        return _Recording429Response(200, payload=_SEARCH_RESPONSE)
+
+    monkeypatch.setattr(yt_mod.requests, "get", fake_get)
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    items = yt_mod._search_videos("fake-key", "anything", max_results=10)
+
+    assert items  # got search items back
+    assert len(calls) == 2
+    assert sleeps and sleeps[0] > 0
+
+
+def test_search_videos_honors_retry_after_header(monkeypatch):
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake-key")
+    sleeps: list[float] = []
+    calls: list[int] = []
+
+    def fake_get(url, params=None, timeout=None):
+        calls.append(1)
+        if len(calls) == 1:
+            return _Recording429Response(429, headers={"Retry-After": "5"})
+        return _Recording429Response(200, payload=_SEARCH_RESPONSE)
+
+    monkeypatch.setattr(yt_mod.requests, "get", fake_get)
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    yt_mod._search_videos("fake-key", "q", max_results=10)
+
+    assert sleeps and sleeps[0] >= 5.0
+
+
+def test_search_videos_raises_after_429_retries_exhausted(monkeypatch):
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake-key")
+    sleeps: list[float] = []
+
+    def fake_get(url, params=None, timeout=None):
+        return _Recording429Response(429)
+
+    monkeypatch.setattr(yt_mod.requests, "get", fake_get)
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    with pytest.raises(AdapterError) as excinfo:
+        yt_mod._search_videos("fake-key", "q", max_results=10)
+    assert "429" in str(excinfo.value)
+    assert len(sleeps) >= 1
+
+
+def test_get_video_details_retries_on_429_then_succeeds(monkeypatch):
+    sleeps: list[float] = []
+    calls: list[int] = []
+
+    def fake_get(url, params=None, timeout=None):
+        calls.append(1)
+        if len(calls) == 1:
+            return _Recording429Response(429)
+        return _Recording429Response(200, payload=_VIDEOS_RESPONSE)
+
+    monkeypatch.setattr(yt_mod.requests, "get", fake_get)
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    details = yt_mod._get_video_details("fake-key", ["abc123XYZ__"])
+
+    assert details
+    assert len(calls) == 2
+    assert sleeps and sleeps[0] > 0

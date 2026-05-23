@@ -20,6 +20,7 @@ per call); per-video transcript material is fetched downstream by
 from __future__ import annotations
 
 import os
+import time
 
 import requests
 
@@ -32,6 +33,14 @@ from gateway.research.adapters.base import (
 
 YOUTUBE_API_BASE = "https://www.googleapis.com/youtube/v3"
 
+# 429-aware retry. Mirrors the `semantic_scholar` adapter pattern
+# (commit 1dd03ff). YouTube Data API v3 has a per-minute search-query
+# quota that the orchestrator's parallel fan-out trips routinely; we
+# back off (honoring Retry-After when present) and retry rather than
+# failing hard.
+_MAX_RETRIES_ON_429 = 4
+_BACKOFF_BASE_SECONDS = 2.0
+
 
 def _get_api_key() -> str:
     """Return the API key or raise `AdapterError` if it is missing."""
@@ -39,6 +48,47 @@ def _get_api_key() -> str:
     if not api_key:
         raise AdapterError("YOUTUBE_API_KEY not set")
     return api_key
+
+
+def _get_with_backoff(
+    url: str,
+    *,
+    params: dict,
+    operation: str,
+) -> requests.Response:
+    """Issue a GET with 429-aware retry/backoff.
+
+    `operation` is a short label (e.g. ``"youtube search"``) used in
+    error messages so failures from `search.list` and `videos.list`
+    remain distinguishable.
+    """
+    last_429: Exception | None = None
+    for attempt in range(_MAX_RETRIES_ON_429 + 1):
+        try:
+            response = requests.get(url, params=params, timeout=30)
+        except requests.RequestException as exc:
+            raise AdapterError(f"{operation} request failed: {exc}") from exc
+        if response.status_code == 429:
+            retry_after_header = response.headers.get("Retry-After")
+            try:
+                retry_after = float(retry_after_header) if retry_after_header else 0.0
+            except (TypeError, ValueError):
+                retry_after = 0.0
+            backoff = max(retry_after, _BACKOFF_BASE_SECONDS * (2 ** attempt))
+            last_429 = AdapterError(
+                f"{operation} returned HTTP 429 on attempt "
+                f"{attempt + 1}/{_MAX_RETRIES_ON_429 + 1}; backing off {backoff:.1f}s"
+            )
+            if attempt < _MAX_RETRIES_ON_429:
+                time.sleep(backoff)
+                continue
+            raise AdapterError(
+                f"{operation} returned HTTP 429 after retries exhausted"
+            ) from last_429
+        return response
+    raise AdapterError(
+        f"{operation} returned HTTP 429 after retries exhausted"
+    ) from last_429
 
 
 def _search_videos(
@@ -59,10 +109,11 @@ def _search_videos(
     if extra_params:
         params.update(extra_params)
 
-    try:
-        response = requests.get(f"{YOUTUBE_API_BASE}/search", params=params, timeout=30)
-    except requests.RequestException as exc:
-        raise AdapterError(f"youtube search request failed: {exc}") from exc
+    response = _get_with_backoff(
+        f"{YOUTUBE_API_BASE}/search",
+        params=params,
+        operation="youtube search",
+    )
     if response.status_code != 200:
         raise AdapterError(
             f"youtube search returned HTTP {response.status_code}: {response.text[:200]}"
@@ -84,10 +135,11 @@ def _get_video_details(api_key: str, video_ids: list[str]) -> dict[str, dict]:
         # YouTube's videos.list takes up to 50 IDs per call.
         "id": ",".join(video_ids[:50]),
     }
-    try:
-        response = requests.get(f"{YOUTUBE_API_BASE}/videos", params=params, timeout=30)
-    except requests.RequestException as exc:
-        raise AdapterError(f"youtube videos.list request failed: {exc}") from exc
+    response = _get_with_backoff(
+        f"{YOUTUBE_API_BASE}/videos",
+        params=params,
+        operation="youtube videos.list",
+    )
     if response.status_code != 200:
         raise AdapterError(
             f"youtube videos.list returned HTTP {response.status_code}: {response.text[:200]}"

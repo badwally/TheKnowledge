@@ -15,6 +15,7 @@ support are kept; `categories` and `sort_by` are read from
 
 from __future__ import annotations
 
+import time
 from xml.etree import ElementTree as ET
 
 import requests
@@ -32,6 +33,13 @@ _ARXIV_NS = {
     "arxiv": "http://arxiv.org/schemas/atom",
 }
 _VALID_SORTS = {"relevance", "lastUpdatedDate", "submittedDate"}
+
+# 429-aware retry. Mirrors the `semantic_scholar` adapter pattern (commit
+# 1dd03ff). arXiv's published rate limit is ~1 request per 3 seconds; the
+# orchestrator's parallel fan-out routinely trips it, so we back off
+# (honoring Retry-After when present) and retry rather than failing hard.
+_MAX_RETRIES_ON_429 = 4
+_BACKOFF_BASE_SECONDS = 3.0
 
 
 def _build_query(search_terms: str, categories: list[str] | None) -> str:
@@ -68,13 +76,33 @@ def _fetch_feed(
         "sortBy": sort_param,
         "sortOrder": "descending",
     }
-    try:
-        response = requests.get(ARXIV_API_URL, params=params, timeout=30)
-    except requests.RequestException as exc:  # network-level failure
-        raise AdapterError(f"arxiv API request failed: {exc}") from exc
-    if response.status_code != 200:
-        raise AdapterError(f"arxiv API returned HTTP {response.status_code}")
-    return response.text
+    last_429: Exception | None = None
+    for attempt in range(_MAX_RETRIES_ON_429 + 1):
+        try:
+            response = requests.get(ARXIV_API_URL, params=params, timeout=30)
+        except requests.RequestException as exc:  # network-level failure
+            raise AdapterError(f"arxiv API request failed: {exc}") from exc
+        if response.status_code == 429:
+            retry_after_header = response.headers.get("Retry-After")
+            try:
+                retry_after = float(retry_after_header) if retry_after_header else 0.0
+            except (TypeError, ValueError):
+                retry_after = 0.0
+            backoff = max(retry_after, _BACKOFF_BASE_SECONDS * (2 ** attempt))
+            last_429 = AdapterError(
+                f"arxiv API returned HTTP 429 on attempt "
+                f"{attempt + 1}/{_MAX_RETRIES_ON_429 + 1}; backing off {backoff:.1f}s"
+            )
+            if attempt < _MAX_RETRIES_ON_429:
+                time.sleep(backoff)
+                continue
+            raise AdapterError(
+                "arxiv API returned HTTP 429 after retries exhausted"
+            ) from last_429
+        if response.status_code != 200:
+            raise AdapterError(f"arxiv API returned HTTP {response.status_code}")
+        return response.text
+    raise AdapterError("arxiv API returned HTTP 429 after retries exhausted") from last_429
 
 
 def _parse_entries(xml_text: str) -> list[dict]:
