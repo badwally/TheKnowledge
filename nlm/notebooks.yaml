@@ -5,6 +5,95 @@ notebooks:
       created_at: '2026-05-01T21:20:46Z'
       sources_count: 25
       last_sync: '2026-05-01T21:44:34Z'
+  ai-native-business:
+    persistent:
+      notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
+      created_at: '2026-05-23T17:56:29Z'
+      sources_count: 49
+      last_sync: '2026-05-23T19:32:44Z'
+    sessions:
+    - session_id: 2026-05-23-what-does-the-org-and-operating
+      notebook_id: f388291f-740b-4b94-a158-e4813dfe4c59
+      query: "What does the org and operating model of an AI-native solo-founder /\
+        \ tiny-team business look like in 2026? Cover: role taxonomy for humans vs.\
+        \ agents, what gets automated first and in what order, agent-in-the-loop patterns\
+        \ (review gates, evals, escalation), decision cadence (async-default, sync\
+        \ exceptions), and the 'when to add a human vs. add an agent' decision rule.\
+        \ Include case studies of named AI-native companies (Anysphere/Cursor, Cognition,\
+        \ Sierra, Lindy, Crosby, Mercor, Harvey, Decagon) and solo operators (Pieter\
+        \ Levels, Marc Lou). Include academic productivity research (Brynjolfsson,\
+        \ Mollick, GitHub Copilot studies, BCG\xD7Harvard AI experiment) and founder\
+        \ podcast appearances (Acquired, Lenny's, Latent Space, 20VC, AI Native Dojo)."
+      created_at: '2026-05-23T17:56:30Z'
+      status: promoted
+      sources_count: 7
+      promoted_at: '2026-05-23T18:08:48Z'
+    - session_id: 2026-05-23-what-is-the-ai-native-marketplace
+      notebook_id: 366c8dab-43f8-4712-bd86-72bb35056e72
+      query: "What is the AI-native marketplace / aggregator archetype for a solo\
+        \ or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand\
+        \ or aggregates fragmented work; operator runs the platform, AI does matching,\
+        \ vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work\
+        \ brokering, supplier matching, content-rights aggregation; how the four pillars\
+        \ specialize \u2014 especially economics (variable cost per transaction, take\
+        \ rate vs. SaaS subscription) and defensibility (liquidity moat, integration\
+        \ depth, workflow lock-in); why this is the hardest archetype for solo operators\
+        \ (cold-start problem, two-sided liquidity); explicit conservative go/no-go\
+        \ signals; worked example. Include comparison to pre-AI marketplaces (Craigslist,\
+        \ Thumbtack, Upwork) to clarify what 'AI-native' adds."
+      created_at: '2026-05-23T19:55:27Z'
+      status: ephemeral
+      sources_count: 2
+      promoted_at: null
+    - session_id: 2026-05-23-what-is-the-ai-native-technical
+      notebook_id: 51ae20c9-5cbc-42ea-8c2e-7edd039845a6
+      query: "What is the AI-native technical stack and build-vs-buy default in 2026\
+        \ for a solo or tiny-team operator? Cover: model selection discipline (frontier\
+        \ vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a\
+        \ core operating function, observability for agentic systems, the 'compose\
+        \ vendor primitives until proven wrong' default, when proprietary infra is\
+        \ actually warranted, data flywheels (real moats vs. cope), and AI-native\
+        \ infra defaults (serverless, vector stores, queueing, trace tooling). Resist\
+        \ becoming a tool list \u2014 focus on selection criteria. Sources: AI Engineer\
+        \ Summit talks, Latent Space episodes on production AI, operator blogs on\
+        \ evals and observability, vendor case studies (Anthropic, OpenAI, LangSmith,\
+        \ Braintrust), AI Engineer essays."
+      created_at: '2026-05-23T19:03:11Z'
+      status: promoted
+      sources_count: 11
+      promoted_at: '2026-05-23T19:20:13Z'
+    - session_id: 2026-05-23-what-is-the-ai-native-indie
+      notebook_id: a42a6d0a-03be-4544-ba1b-8261692f45a3
+      query: "What is the AI-native indie SaaS / vertical agent archetype for a solo\
+        \ founder in 2026? Cover: definition (what this archetype is and isn't), funded\
+        \ exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Crosby, Decagon, Sierra)\
+        \ and solo-buildable variants (Pieter Levels with Nomad List and Photo AI,\
+        \ Marc Lou's portfolio, other single-operator vertical agents); how the four\
+        \ pillars (org, economics, tech, GTM) specialize for this archetype; defensibility\
+        \ specific to vertical agents (workflow lock-in, integration depth, eval moat);\
+        \ pricing trajectory (seat \u2192 usage \u2192 outcome); go/no-go signals\
+        \ for a solo founder. Include a worked example walked through the four pillars."
+      created_at: '2026-05-23T19:02:12Z'
+      status: promoted
+      sources_count: 18
+      promoted_at: '2026-05-23T19:09:57Z'
+    - session_id: 2026-05-23-what-is-the-ai-native-services
+      notebook_id: 8c5cd8c1-69b2-4f2b-a7dc-891c7c37ff2b
+      query: "What is the AI-native services firm archetype for a solo or tiny-team\
+        \ operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping\
+        \ shop, recruiting firm, paralegal services, content production); referents\
+        \ at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator\
+        \ end (one-person agencies, AI-leveraged consultancies, productized services);\
+        \ how the four pillars (org, economics, tech, GTM) specialize \u2014 especially\
+        \ economics (hourly/retainer collapse as AI substrate replaces hours, pricing\
+        \ pivot to outcomes) and defensibility (client relationships, workflow integration,\
+        \ reputation \u2014 not data); go/no-go signals; worked example. Include the\
+        \ 'service as software' framing and the productized-service vs. project-services\
+        \ spectrum."
+      created_at: '2026-05-23T19:16:44Z'
+      status: promoted
+      sources_count: 14
+      promoted_at: '2026-05-23T19:32:44Z'
   condo:
     persistent:
       notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
@@ -44,11 +133,11 @@ notebooks:
     persistent:
       notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
       created_at: '2026-05-10T22:47:04Z'
-      sources_count: 25
-      last_sync: '2026-05-12T20:17:37Z'
+      sources_count: 109
+      last_sync: '2026-05-21T21:47:52Z'
     sessions:
     - session_id: 2026-05-11-what-is-the-established-methodology-stack
-      notebook_id: 9d5d27a3-17cc-4d75-8c63-ec2825b3d9bb
+      notebook_id: 8d821a9d-c87c-4ebe-b2c0-4a3c560b8cf8
       query: "What is the established methodology stack for probabilistic component-level\
         \ capital forecasting in condominium / multi-unit residential reserve studies,\
         \ covering the six method families: (1) component-level degradation modeling\
@@ -80,10 +169,10 @@ notebooks:
         \ under sparse data, and validation-framework primaries. Deprioritize vendor\
         \ white papers and single-site deep-learning case studies without sample-size\
         \ or generalization detail."
-      created_at: '2026-05-12T22:56:12Z'
-      status: abandoned
-      sources_count: 8
-      promoted_at: null
+      created_at: '2026-05-13T16:15:22Z'
+      status: promoted
+      sources_count: 5
+      promoted_at: '2026-05-13T16:26:10Z'
     - session_id: 2026-05-12-reserve-study-firms-explaining-their-methodology
       notebook_id: 86bb54de-34f1-4bdb-ba80-6f12926209c1
       query: "Reserve study firms explaining their methodology and presenting results\
@@ -94,6 +183,23 @@ notebooks:
       status: promoted
       sources_count: 3
       promoted_at: '2026-05-12T20:17:37Z'
+    - session_id: 2026-05-13-what-ml-models-would-be-most
+      notebook_id: e9fdfa53-83ab-4386-a1cb-2253f28cd9e2
+      query: What ML models would be most appropriate for use in development of a
+        probabilistic data model used to predict the probability of failure among
+        the 8 key capital infrastructure components for a condo complex (as found
+        in most reserve studies)? What are the analogous data models and architectures
+        used in adjacent spaces (if any) for similar prediction?
+      created_at: '2026-05-13T17:50:21Z'
+      status: abandoned
+      sources_count: 4
+      promoted_at: null
+  condo-software:
+    persistent:
+      notebook_id: 67857df4-7231-45b0-805e-96bffa063205
+      created_at: '2026-05-23T16:31:19Z'
+      sources_count: 22
+      last_sync: '2026-05-23T19:06:48Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2
@@ -127,6 +233,227 @@ notebooks:
       created_at: '2026-05-09T18:03:51Z'
       sources_count: 0
       last_sync: '2026-05-09T18:03:51Z'
+  risksystems:
+    persistent:
+      notebook_id: dee0eae4-b11f-4df2-a418-d10fffd42c7e
+      created_at: '2026-05-20T17:36:59Z'
+      sources_count: 38
+      last_sync: '2026-05-20T22:15:02Z'
+    sessions:
+    - session_id: 2026-05-20-risksystems-01-bayesian-hierarchical-survival
+      notebook_id: 1908c20b-9f7a-4910-bd87-b0ef7f3f31c0
+      query: "Risksystems Q1 of 4 \u2014 state of the art in Bayesian hierarchical\
+        \ and survival\nmodels for infrastructure deterioration and capital-asset\
+        \ reliability. Map\nthe methodological frontier against the Longspan v1.1\
+        \ architecture: a\nBayesian / Weibull / lognormal / Monte Carlo engine with\
+        \ structure-type\ncohort calibration (60-building BC concrete-frame highrise\
+        \ sample, 108-816\nobservations per component class), engineer's point estimate\
+        \ blended 1:1\nwith the cohort Weibull EUL draw, cost drawn from the cohort\
+        \ lognormal,\nfallback chain POOLED \u2192 jurisdiction \u2192 structure-family\
+        \ \u2192 structure-type,\n10,000 MC simulations per building. Specifically:\
+        \ partial-pooling\narchitectures for sparse multi-jurisdiction component data;\
+        \ engineer-\njudgement-as-prior elicitation (SHELF, Cooke, Hora); Weibull\
+        \ / lognormal /\nCox PH / gamma-process survival under right-censoring; mixed-effects\n\
+        survival with engineering covariates (WDR load, chloride exposure, freeze-\n\
+        thaw cycles); posterior predictive checks and calibration diagnostics that\n\
+        hold up under licensed-professional sign-off. Seminal authors: Madanat,\n\
+        Mishalani, Golabi (DOT pavement/bridge); Frangopol, Faber, Sundararajan\n\
+        (structural reliability + LCC); Cooke (expert elicitation); Gelman, Hoffman\n\
+        (Bayesian hierarchical practice). Reference systems: HDM-4, AASHTO TAMP,\n\
+        Pontis, KANEW, AWARE-P. Recent (2020-2026) refinements explicitly in scope.\n"
+      created_at: '2026-05-20T17:37:00Z'
+      status: promoted
+      sources_count: 16
+      promoted_at: '2026-05-20T17:51:03Z'
+    - session_id: 2026-05-20-risksystems-02-physics-informed-sciml
+      notebook_id: db858c02-180a-40a9-9032-c6ad47ec95f7
+      query: "Risksystems Q2 of 4 \u2014 state of the art in physics-informed machine\
+        \ learning\n(PINNs) and hybrid mechanistic-statistical models (SciML) for\
+        \ built-environment\ndeterioration. Frame for Longspan: today the engine treats\
+        \ EUL as a pure cohort-\nWeibull draw blended with engineer judgement, with\
+        \ no first-principles\ndeterioration kernel. The question is which mechanisms\
+        \ repay a physics-informed\nextension first (envelope WDR, plumbing-riser\
+        \ pitting, roof UV, parking-deck\nchloride). Specifically: PINNs and neural-ODE\
+        \ methods for chloride ingress in\nreinforced concrete (Fick's second law\
+        \ + corrosion initiation, Tuutti model);\ncarbonation depth modeling; freeze-thaw\
+        \ damage accumulation (Powers, Litvan);\nfatigue and stress-cycle prediction;\
+        \ moisture-transport and wind-driven-rain\n(WDR) penetration on building envelopes\
+        \ including face-sealed precast and EIFS\n(ASHRAE 160, WUFI, HAMFitPlus);\
+        \ corrosion-current modeling for plumbing risers\n(low-pH supply, copper /\
+        \ galvanized / PEX failure modes); EPDM / TPO / SBS\nroofing membrane life\
+        \ prediction from UV / thermal-cycling. Also: hybrid\nmechanistic-statistical\
+        \ (gray-box) models where a physics-based kernel is fit\nper-building from\
+        \ sparse inspection observations using Bayesian inference;\ndifferentiable\
+        \ physics simulators conditionable on work-order events;\nuncertainty propagation\
+        \ through coupled mechanism models. Relevant venues:\nRILEM TCs, Building\
+        \ and Environment, Cement and Concrete Research, JOSE,\nSciML / DeepXDE /\
+        \ NeuralPDE / NVIDIA Modulus literature.\n"
+      created_at: '2026-05-20T18:57:59Z'
+      status: promoted
+      sources_count: 5
+      promoted_at: '2026-05-20T19:03:59Z'
+    - session_id: 2026-05-20-risksystems-03-gp-state-space-ensembles
+      notebook_id: 3ea84060-aaf6-4dc2-b386-747988538376
+      query: "Risksystems Q3 of 4 \u2014 state of the art in Gaussian processes, state-space\n\
+        methods (Kalman / EKF / UKF / particle filters), and tabular ML ensembles\
+        \ for\nonline conditioning of asset condition on inspection and work-order\
+        \ data, and\nthe strongest counter-arguments to a Bayesian survival architecture\
+        \ from the\nboosted-tree and tabular-foundation-model side. Frame for Longspan\
+        \ v2: today\nthe engine is fully offline (no work-order conditioning), with\
+        \ cohort-level\npriors fixed at calibration time. Brief-0004 Phase 4 wants\
+        \ to ingest Summer\nGardens' work-order history (vendor invoices, recurring\
+        \ repairs, podium\nprogram, sealant program); the open question is whether\
+        \ that goes through a\nstate-space filter, a GP-conditioned posterior update,\
+        \ or an ensemble\nsurrogate that re-fits the cohort prior. Specifically: GP\
+        \ regression and GP\nlatent-variable models for sparse longitudinal inspection\
+        \ data; multi-task\nGPs across correlated component classes; deep kernel learning\
+        \ when the input\nspace mixes engineering covariates and free-text inspection\
+        \ notes; Kalman /\nEKF / UKF / particle filter formulations for hidden-condition\
+        \ state from\nnoisy work-order streams; online learning when work orders arrive\
+        \ irregularly;\nXGBoost / LightGBM / CatBoost on tabular component-class panels;\
+        \ TabPFN /\nSAINT / FT-Transformer as tabular foundation-model baselines;\
+        \ calibration\n(Platt / isotonic / conformal prediction) when boosted-tree\
+        \ outputs feed a\nprobabilistic decision pipeline. PHM Society canon, ASCE\
+        \ prognostics\nliterature, Bayesian optimal experimental design for inspect-repair-replace.\n"
+      created_at: '2026-05-20T18:18:47Z'
+      status: promoted
+      sources_count: 3
+      promoted_at: '2026-05-20T18:26:01Z'
+    - session_id: 2026-05-20-risksystems-04-foundation-models-causal
+      notebook_id: bd11f26a-12f7-4692-8409-9550d1b13419
+      query: "Risksystems Q4 of 4 \u2014 foundation-model / LLM approaches to structured\
+        \ extraction\nfrom engineering and reserve-study documents, decision-narrative\
+        \ generation for\nlicensed-professional sign-off, and causal inference / counterfactual\
+        \ reasoning\nfor capital-project overrun attribution. Frame: Longspan v1.1\
+        \ produces P10/P50/P90\nbands but no causal narrative; the question is what\
+        \ role LLM/foundation-model\napproaches play (extraction yes, methodology\
+        \ no) and which causal-inference\nprimitives become a v3 deliverable for board-facing\
+        \ retrospective questions.\nSpecifically: LLM-as-judge + LLM-with-tools for\
+        \ structured extraction;\nconstrained decoding (Outlines, Pydantic-AI, Instructor,\
+        \ BAML); RAG quality +\nhallucination controls (RAGAS, RAGTruth, citation-grounded\
+        \ retrieval); LLM\nnarrative on top of a probabilistic engine including the\
+        \ \"AI narrative is table\nstakes\" competitive frame; causal inference under\
+        \ DoWhy / EconML / CausalML;\ntarget trial emulation (Hernan); difference-in-differences\
+        \ and regression\ndiscontinuity for retrospective maintenance-intervention\
+        \ effect estimation;\ndouble-ML; POMDP + Bayesian decision theory for inspect-repair-replace\
+        \ with\nquantified value-of-information.\n"
+      created_at: '2026-05-20T18:38:00Z'
+      status: promoted
+      sources_count: 5
+      promoted_at: '2026-05-20T18:45:20Z'
+    - session_id: 2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel
+      notebook_id: 8d8d68e1-b903-4c2a-b700-9e8bc6fe2b85
+      query: "Risksystems Q5 \u2014 dedicated drilldown on the Bounded Gamma Process\
+        \ (BGP)\ndeterioration kernel as a Longspan v3 candidate. Three explicit research\n\
+        threads:\n\n(A) **Reference mathematical models.** What are the canonical\
+        \ formulations\nof the gamma process for monotonic deterioration? Specifically:\
+        \ the\nstationary gamma process (Abdel-Hameed 1975); the non-stationary /\n\
+        time-transformed gamma process (van Noortwijk 2009 RESS review);\nhierarchical\
+        \ Bayesian gamma processes with covariates (Pandey, Yuan,\nvan Noortwijk);\
+        \ inverse Gaussian as a competing monotonic model;\nBounded Transformed Gamma\
+        \ Process (BTGP) per arxiv-2508.13359 already\nin the corpus; Tweedie / generalized-gamma\
+        \ extensions; and the\ninference machinery (MCMC, expectation-maximization,\
+        \ Bayesian\nhierarchical fits) used to estimate parameters from sparse inspection\n\
+        data. Want the full lineage: math, identifiability, prior structure,\nfailure-time\
+        \ distribution derivations, censoring handling.\n\n(B) **SOTA ML implementations.**\
+        \ How has BGP / gamma-process deterioration\nbeen implemented in modern ML\
+        \ systems? At what scale (dataset size,\nproblem domain), with what results\
+        \ (calibration metrics, predictive\naccuracy, value of information), and in\
+        \ what problem areas? Specifically:\nbridge deck deterioration (Frangopol,\
+        \ Pandey, Yuan); pavement (Madanat,\nMishalani); pipeline corrosion; nuclear-pressure-vessel\
+        \ reliability\n(Bagdonavi\u010Dius, Nikulin); offshore-platform fatigue; aerospace\
+        \ fatigue;\nbuilding infrastructure deterioration including roofing and concrete.\n\
+        Include hybrid Gamma-PINN, neural-ODE-with-gamma-noise, Gaussian-\nprocess-conditioned\
+        \ gamma, and any deep-learning-meets-monotonic-\nstochastic-process variants.\n\
+        \n(C) **Corpus + labeling for Longspan six-component implementation.** What\n\
+        is the minimum viable dataset (size, structure, labels) to fit a BGP\nfor\
+        \ each of the six probabilistic components \u2014 roof, building envelope,\n\
+        plumbing risers, HVAC central plant, elevators, parking deck / podium?\nSpecifically:\
+        \ required time-series of condition observations (CAI 0-10\nrating, ASCE FCI,\
+        \ RECI, or component-specific scales); inspection\ncadence assumptions (annual,\
+        \ biennial); covariate set (effective age,\nmaterial class, climate exposure\
+        \ \u2014 WDR / chloride / freeze-thaw,\njurisdiction, structure type); event-data\
+        \ (replacements, major repairs)\nfor right-censoring; minimum n per component\
+        \ class for defensible\nestimates; published benchmarks of dataset sizes that\
+        \ produced\npublishable BGP fits in adjacent domains (bridges: HDM-4, Pontis,\n\
+        AASHTO; water: KANEW, AWARE-P).\n\nFrame: Longspan v1.1 today fits Weibull\
+        \ EUL distributions from the\n60-building BC concrete-frame highrise sample\
+        \ (108-816 observations per\ncomponent class). The BGP would replace or augment\
+        \ the Weibull with a\nfirst-principles monotonic stochastic kernel. The defensible\
+        \ question\nis whether the existing sample sizes support BGP estimation, what\
+        \ extra\ndata needs to be collected, and what the calibration / validation\n\
+        cadence looks like. The output of this research thread feeds the v3\nengine-architecture\
+        \ decision in Q3 2026.\n"
+      created_at: '2026-05-20T21:01:12Z'
+      status: promoted
+      sources_count: 12
+      promoted_at: '2026-05-20T21:07:30Z'
+    - session_id: 2026-05-20-risksystems-06-weibull-tailored-neural-networks
+      notebook_id: e4fe0593-7f83-4cdc-98a4-45dcba1453c5
+      query: "Risksystems Q6 \u2014 dedicated drilldown on Weibull-Tailored Neural\
+        \ Networks\n(WTNN) as a Longspan v3 candidate. Three explicit research threads:\n\
+        \n(A) **Reference mathematical lineage.** What is the canonical formulation\n\
+        of WTNN and the lineage that precedes it? Specifically: the classical\nWeibull\
+        \ accelerated-failure-time (AFT) model and Cox proportional-hazards\nmodel;\
+        \ the first wave of deep-survival architectures (DeepSurv per\nKatzman et\
+        \ al. 2018; DeepHit per Lee et al. 2018; RNN-Surv / Recurrent\nNeural Weibull\
+        \ / WTTE-RNN per Martinsson 2017); parametric vs\nnon-parametric deep survival;\
+        \ the WTNN architecture per arxiv-2512.09163\n(Rives, Lopez, Bousquet) \u2014\
+        \ how exactly are the Weibull shape (\u03B2) and\nscale (\u03B7) parameters\
+        \ constrained as functions of time-dependent\ncovariates? what loss function\
+        \ (negative log-likelihood with censoring,\nBrier score, integrated Brier,\
+        \ concordance)? what monotonicity / shape\nconstraints? how is qualitative\
+        \ prior knowledge about influential\ncovariates baked into the architecture\
+        \ (input-feature gating, sign\nconstraints, monotonic neural network layers,\
+        \ partial monotonic\nnetworks)? Identifiability under right-censoring; calibration;\
+        \ the\naudit story for a P.Eng. \u2014 can the trained network produce a\n\
+        human-readable explanation of why a coastal-exposed envelope\ncomponent has\
+        \ its specific Weibull(\u03B2, \u03B7) fitted curve?\n\n(B) **SOTA ML implementations\
+        \ \u2014 scale + results + problem domain.** How\nhave Weibull / deep-survival\
+        \ neural networks been implemented at scale\nin modern reliability and prognostics-and-health-management\
+        \ (PHM)\nsystems? Specifically: wind-turbine fleet AFT (web-2026-05-01-6b7\n\
+        already in corpus, 8,000+ turbines / 64,000 operating years); NASA\nC-MAPSS\
+        \ turbofan remaining-useful-life benchmark (Saxena et al.) \u2014\nwhat's\
+        \ the published n, RMSE, and architecture lineage for Weibull-\nconditioned\
+        \ deep models vs deterministic point estimates? Backblaze\nhard-drive survival;\
+        \ battery degradation neural Weibull;\nrolling-bearing PHM; healthcare clinical-survival\
+        \ benchmarks\n(SUPPORT, METABRIC, GBSG) and their architecture lessons. What's\
+        \ the\nminimum-viable n for a successfully published deep-survival fit \u2014\
+        \nthe Longspan analog to the diesel-cylinder-liner BGP benchmark\n(web-2022-07-07-ac2\
+        \ fit on dozens of wear measures)? What are the\nfailure modes \u2014 overfitting\
+        \ on small n, calibration drift,\nmiscalibration of the variance of the predicted\
+        \ Weibull(\u03B2, \u03B7)?\n\n(C) **Corpus + labeling for Longspan six-component\
+        \ implementation.** What\nis the minimum viable dataset and covariate inventory\
+        \ to fit a WTNN\nfor each of the six probabilistic components \u2014 roof,\
+        \ building\nenvelope, plumbing risers, HVAC central plant, elevators, parking\n\
+        deck / podium? Specifically: required event-data (replacement /\nmajor repair\
+        \ as failure event, right-censored at last inspection);\ncovariate inventory\
+        \ (effective age, material class, building-level\nper-face WDR / chloride\
+        \ / freeze-thaw cycles already computed for\nthe Halifax pilot \u2014 see\
+        \ research/findings/0020 + the HRM polygon\npipeline, jurisdiction, structure\
+        \ type, work-order frequency,\nambient cycling load); cohort sample-size feasibility\
+        \ against the\nexisting 60-building BC concrete-frame highrise sample (108-816\n\
+        obs per class) + the can-pilot 2,154-row multi-jurisdiction add;\nablation\
+        \ of which of the six components is best served by WTNN vs\nthe Phase-1 BGP\
+        \ kernel (parking deck / envelope / roof) vs the\nimperfect-repair RL framework.\
+        \ Critical question: which Phase-2\ncomponents (HVAC central plant, elevators,\
+        \ plumbing risers) does\nWTNN unlock that BGP cannot, given their non-monotonic\
+        \ failure\nprofiles and their richer covariate landscape (work-order frequency,\n\
+        fault codes, telemetry)?\n\nFrame: Longspan v1.1 today fits Weibull EUL distributions\
+        \ from the\n60-building BC concrete-frame highrise sample with a static engineer-\n\
+        to-data 1:1 blend. The cross-cutting Longspan-vs-SOA synthesis\n(~/code/knowledge/wiki/synthesis/2026-05-20-cross-cutting-comparison-longspan-v1-1.md)\n\
+        identified WTNN as the second v3 methodological moat (after BGP) \u2014\n\
+        the framing is \"we use AI, but our AI is strictly governed by\nreliability\
+        \ engineering physics.\" This drilldown is the dedicated\nevaluation: does\
+        \ WTNN unlock the Phase-2 mechanical components that\nBGP cannot handle, and\
+        \ what's the data-collection cost? Output\nfeeds the v3 engine-architecture\
+        \ decision in Q3 2026. Audience:\nfounder + technical co-founder + Mercer\
+        \ P.Eng. credibility\ncredential. Render the math without Bayesian jargon\
+        \ \u2014 plain\nlanguage.\n"
+      created_at: '2026-05-20T22:09:43Z'
+      status: ephemeral
+      sources_count: 7
+      promoted_at: null
   trading-and-markets:
     persistent:
       notebook_id: ccbda94f-7251-42bb-864f-0e1c9850f7ad

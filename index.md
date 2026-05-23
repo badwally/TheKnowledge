@@ -464,3 +464,135 @@ first to orient before drilling into specific pages.
 - [[sources/web-2023-06-26-652]] · web · Changes to CAI’s Reserve Study Standards Explained
 - [[sources/web-1995-01-01-0ff]] · web · https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML
 - [[sources/web-2025-10-29-056]] · web · Washington State Reserve Study Requirements: Your HOA/Condo Compliance Roadmap
+- [[sources/web-2026-01-01-ba8]] · web · Pricing | PropFusion · condo-capital-infra
+- [[sources/web-2026-01-01-47b]] · web · Reserve Study Software for Reserve Specialists | PropFusion · condo-capital-infra
+- [[sources/web-2026-04-27-33b]] · web · Florida Structural Integrity Reserve Study (SIRS) 2026 | PropFusion · condo-capital-infra
+- [[sources/web-2026-05-18-f80]] · web · PropFusion · condo-capital-infra
+- [[sources/web-2025-11-15-556]] · web · Solume Launches AI Driven Reserve Study Management for HOAs · condo-capital-infra
+- [[sources/web-2025-11-08-926]] · web · Endowment Lock · condo-capital-infra
+- [[sources/web-2025-01-23-a1d]] · web · Future Proof Your Florida HOA with Solume's Reserve Study Integration | Solume HOA Software · condo-capital-infra
+- [[sources/web-2026-01-01-488]] · web · Reserve Study | Solume | Smart Community Management · condo-capital-infra
+- [[sources/web-2025-01-07-b6e]] · web · Reserve Study Requirements by State · condo-capital-infra
+- [[sources/web-2015-01-01-3e6]] · web · Asset Lifecycle Management | Facilio · condo-capital-infra
+- [[sources/web-2015-01-01-599]] · web · Enterprise Asset Management Software | Modern EAM Platform · condo-capital-infra
+- [[sources/web-2015-01-01-170]] · web · Facilio Atom: Agentic AI for Facility Operations · condo-capital-infra
+- [[sources/web-2026-02-11-bc9]] · web · Facilio Launches Autonomous AI Agents to Automate Manual Back-Office Work in Facilities Management · condo-capital-infra
+- [[sources/web-2026-01-01-d10]] · web · The Financial OperatingSystem for Asset Managers. · condo-capital-infra
+- [[sources/web-2025-07-03-d90]] · web · Data retrieval and validation for asset onboarding and deriving asset characteristics · condo-capital-infra
+- [[sources/web-2024-10-07-033]] · web · Eli Report Launches Free Condo Document Review Across North America · condo-capital-infra
+- [[sources/web-2024-10-31-4cf]] · web · Condo Document Review | Fast, Easy & Reliable - Eli · condo-capital-infra
+- [[sources/web-2023-10-19-a69]] · web · Special Levy Forecasting Tool & Software - Eli · condo-capital-infra
+- [[sources/web-2020-12-11-687]] · web · Pricing & Plans | Eli Report · condo-capital-infra
+- [[sources/web-2026-03-03-bbe]] · web · BC Condo Owners to Face Costly Levies while Ontario Pays Now: New Data Reveals Canada’s Condo Funding Divide: OctoAI · condo-capital-infra
+- [[sources/web-2019-12-11-cab]] · web · PRESS RELEASE: Helping to Better Inform Condo Buyers, New Real Estate Platform Eli Report Launches in B.C. - Eli Report · condo-capital-infra
+- [[sources/web-2021-04-23-77c]] · web · AI Condo Document Review Platform Eli Report Expands Distribution Through eStrataHub Integration · condo-capital-infra
+- [[sources/web-2025-07-03-321]] · web · Climate Tech Leader AISIX Strengthens Real Estate Intelligence Platform Through Key Partnership Extension · condo-capital-infra
+- [[sources/web-2024-05-17-2fd]] · web · Introducing your Annual Benchmark Report - Eli Report · condo-capital-infra
+- [[sources/web-2024-08-06-5e3]] · web · Vancouver startup revolutionizes condo and townhome assessment with AI-powered tool · condo-capital-infra
+- [[sources/web-2026-05-19-00f]] · web · Property assessment & Assessment search service - frequently asked questions · condo-capital-infra
+- [[sources/web-2026-01-02-6fe]] · web · Property information & trends · condo-capital-infra
+- [[sources/pdf-c974b5dbd563]] · pdf · cao-reserve-fund-guide-2024 · condo-capital-infra
+- [[sources/web-2025-11-06-4cc]] · web · Condo Registry Search - Condominium Authority of Ontario · condo-capital-infra
+- [[sources/web-2025-10-21-a7b]] · web · Open Data Dataset - City of Toronto Open Data Portal · condo-capital-infra
+- [[sources/web-2025-02-05-f51]] · web · Reserve fund requirements for Canadian condominiums and stratas · condo-capital-infra
+- [[sources/web-2022-03-01-ef4]] · web · Data Disclosure · condo-capital-infra
+- [[sources/docx-f70cc64d728a]] · docx · bcfsa-advisory-24-014 · condo-capital-infra
+- [[sources/docx-ea451e0d4901]] · docx · bcfsa-blog-more-professionals-2026-01-26 · condo-capital-infra
+- [[sources/web-2013-11-28-88b]] · web · Choosing a depreciation report provider for a strata · condo-capital-infra
+- [[sources/web-2025-10-21-9f1]] · web · Open Data Dataset - City of Toronto Open Data Portal · condo-capital-infra
+- [[sources/arxiv-2204.12404]] · arxiv · Hierarchical Bayesian Modelling for Knowledge Transfer Across Engineering Fleets via Multitask Learning
+- [[sources/web-2026-05-13-b67]] · web · Sheffield Elicitation Framework
+- [[sources/arxiv-2512.09163]] · arxiv · WTNN: Weibull-Tailored Neural Networks for survival analysis
+- [[sources/web-2012-01-01-57d]] · web · AWARE-P: A software for urban water infrastructure planning
+- [[sources/arxiv-2508.13359]] · arxiv · Unified Modelling of Infrastructure Asset Performance Deterioration -- a bounded gamma process approach
+- [[sources/web-2026-01-13-6bf]] · web · Cleaning Maintenance Logs with LLM Agents for Improved Predictive Maintenance
+- [[sources/arxiv-2505.20725]] · arxiv · A reinforcement learning agent for maintenance of deteriorating systems with increasingly imperfect repairs
+- [[sources/web-2025-11-10-fd9]] · web · A Data-Driven Particle Filter Approach for System-Level Prediction of Remaining Useful Life
+- [[sources/web-2024-10-20-950]] · web · Bridge performance degradation model based on the multi-variate bayesian dynamic linear method - Guojun Yang, Li Tian, Jianbo Mao, Guangwu Tang, Yongfeng Du, 2024
+- [[sources/web-2026-03-04-157]] · web · Rail surface defect prediction and inspection planning using limited maintenance data – a hierarchical Bayesian approach
+- [[sources/arxiv-0708.0293]] · arxiv · Rejoinder: Expert Elicitation for Reliable System Design
+- [[sources/arxiv-1102.5239]] · arxiv · Uncertainty Updating in the Description of Coupled Heat and Moisture Transport in Heterogeneous Materials
+- [[sources/arxiv-2205.03478]] · arxiv · On off-line and on-line Bayesian filtering for uncertainty quantification of structural deterioration
+- [[sources/web-2025-06-07-869]] · web · Damage Identification of a Reinforced Concrete Bridge Pier after an Earthquake based on a Physics-informed Neural Network | Structurae
+- [[sources/web-2025-01-31-943]] · web · An Evaluation on the Time-Dependent Reliability of Reinforced Concrete Structures Considering Non-Stationary Resistance Degradation: A Comprehensive Gamma Process-Based Approach
+- [[sources/web-2023-01-05-939]] · web · PHM Datasets - PHM Society Data Repository
+- [[sources/web-2026-02-01-5c9]] · web · Life-cycle performance, design, maintenance, optimization, and decision-making of asphalt pavement under uncertainty: a review
+- [[sources/web-2007-06-28-abf]] · web · Reliability and Optimization of Structural Systems: Assessment, Design
+- [[sources/web-2025-08-21-7a6]] · web · Model Validation and Uncertainty Quantification, Vol. 3
+- [[sources/web-2025-10-14-bcb]] · web · Infrastructure management via BIM model: integration of structural health monitoring and ANN-based damage assessment
+- [[sources/yt-WJ1BvfOm-94]] · youtube · Predictive Information Criteria in Hierarchical Bayesian Models for Clustered Data
+- [[sources/yt-vx6ATEoEuUE]] · youtube · Stochastic Model for Estimating Network-Scale Deterioration and Effect of Interventions on Bridges
+- [[sources/pubmed-35595821]] · pubmed · Prognostic modeling of predictive maintenance with survival analysis for mobile work equipment.
+- [[sources/web-2024-11-01-b9d]] · web · ASCE Library
+- [[sources/web-2025-01-07-4bf]] · web · Structural Safety - mars 2025 | Structurae
+- [[sources/web-2022-07-07-ac2]] · web · A transformed gamma process for bounded degradation phenomena
+- [[sources/web-2021-03-20-b9c]] · web · Stochastic comparisons and ageing properties of an extended gamma process | Journal of Applied Probability | Cambridge Core
+- [[sources/web-2025-04-07-e6e]] · web · Optimal predictive maintenance for a nonstationary gamma process
+- [[sources/web-2018-12-12-ce5]] · web · Estimating the resistance of aging service-proven bridges with a Gamma process-based deterioration model
+- [[sources/web-2026-05-01-6b7]] · web · Bayesian Survival Models Reveal Wind-Driven Reliability Patterns in Turbines
+- [[sources/arxiv-2508.02749]] · arxiv · Considering Spatial Structure of the Road Network in Pavement Deterioration Modeling
+- [[sources/arxiv-2507.01056]] · arxiv · Evaluating Pavement Deterioration Rates Due to Flooding Events Using Explainable AI
+- [[sources/web-1998-09-20-413]] · web · Selectivity Bias in Modeling Highway Pavement Maintenance Effectiveness | Journal of Infrastructure Systems | Vol 4, No 3
+- [[sources/web-2008-01-01-8c5]] · web · UBC
+- [[sources/web-2008-01-01-451]] · web · UBC
+- [[sources/web-2025-08-05-4b5]] · web · CINC Systems Accelerates Industry-Leading AI Momentum with 100+ Management Companies Signed Up for Cephai+ · condo-capital-infra
+- [[sources/web-2025-10-14-ce0]] · web · CINC Systems Appoints New Executives to Accelerate Company's Growth with AI-Powered Platform Expansion · condo-capital-infra
+- [[sources/web-2024-07-22-f1f]] · web · CINC Systems Bolsters Leadership Amid Record-Breaking Growth · condo-capital-infra
+- [[sources/web-2025-01-06-1e2]] · web · CINC Systems Acquires ONR Applications, Inc. to Deliver the Preeminent HOA Management Experience · condo-capital-infra
+- [[sources/web-2025-09-16-709]] · web · CINC Redefines Community Association Management With Launch of CINC Connect · condo-capital-infra
+- [[sources/web-2025-10-15-7aa]] · web · Vantaca Secures $300M+ Growth Investment at $1.25B Valuation to Cement AI-First Market Leadership · condo-capital-infra
+- [[sources/web-2024-11-20-cd8]] · web · Vantaca Acquires HOAi to Unlock a New Era of HOA Community Management with Cutting-Edge AI · condo-capital-infra
+- [[sources/web-2024-05-15-1b2]] · web · Meet PayHOA, a profitable and once-bootstrapped SaaS startup that just landed a $27.5M Series A | TechCrunch · condo-capital-infra
+- [[sources/web-2026-02-26-870]] · web · CINC Systems Unveils Payables+ AI-Powered Accounts Payable Solution · condo-capital-infra
+- [[sources/web-2020-06-10-363]] · web · CINC Systems Receives Growth Investment from Spectrum Equity and Announces New Senior Executives · condo-capital-infra
+- [[sources/web-2008-01-01-0ad]] · web · ICS® & CDARS® | IntraFi® · condo-software
+- [[sources/web-2026-01-01-21d]] · web · HOA ICS® and CDARS® · condo-software
+- [[sources/pdf-fc88aa6c2822]] · pdf · cai-reserve-fund · condo-software
+- [[sources/pdf-aa9367a8a4a9]] · pdf · cmrao-financial-management-2025-02 · condo-software
+- [[sources/web-2026-01-01-3bf]] · web · Expanding Reserve Fund Investment Options · condo-software
+- [[sources/pdf-dheide-2022-microsoft-word-600]] · pdf · Microsoft Word - 600-003 Investing CRF Guide_with most of ND comments (002) · condo-software
+- [[sources/web-2026-01-01-2fd]] · web · Property Management Accounting & Reporting Software | AppFolio · condo-software
+- [[sources/web-2023-06-06-844]] · web · CINC Systems Announces the Launch of TresRE, a suite of treasury solutions designed to help banks provide real estate companies the ability to bank within their accounting software · condo-software
+- [[sources/web-2024-01-01-4d7]] · web · The Florida Senate · condo-software
+- [[sources/web-2018-07-01-694]] · web · The Florida Senate · condo-software
+- [[sources/web-2026-03-18-a4e]] · web · What Fannie Mae & Freddie Mac’s Latest Policy Changes Mean for Condominium Associations, Lenders, and Homeowners · condo-software
+- [[sources/web-2026-05-23-01f]] · web · Title 55.1. Property and Conveyances · condo-software
+- [[sources/web-2026-05-23-1d6]] · web · Virginia Law · condo-software
+- [[sources/web-2025-06-10-ddd]] · web · Alerts · condo-software
+- [[sources/web-2018-08-01-f87]] · web · FAQ -When Is a Review or Audit Required or Recommended? · condo-software
+- [[sources/web-2026-04-15-f75]] · web · 2026 Fannie Mae and Freddie Mac Condo Requirements: What Boards Need to Know - Eclipse Community Management - HOA and Condo Management · condo-software
+- [[sources/web-2026-05-22-6cd]] · web · Components, Not Solutions · ai-native-business
+- [[sources/web-2026-05-22-caf]] · web · 🔵 Google Search now generates UI on demand · ai-native-business
+- [[sources/web-2026-05-23-366]] · web · [AINews] All Model Labs are now Agent Labs · ai-native-business
+- [[sources/web-2026-05-22-574]] · web · [AINews] New AI Infra unicorns: Exa, Modal, TurboPuffer · ai-native-business
+- [[sources/web-2026-05-22-eb1]] · web · Weekly Dose of Optimism #194 · ai-native-business
+- [[sources/web-2026-05-22-03d]] · web · Gemini 3.5 Flash Looks Good For How Fast It Is · ai-native-business
+- [[sources/web-2026-05-22-ed5]] · web · The Heretic’s Guide to AI’s Stars Part III: Tracepalooza & the Bezzle · ai-native-business
+- [[sources/web-2026-05-22-587]] · web · AI’s Public Relations Emergency · ai-native-business
+- [[sources/web-2026-05-22-f7b]] · web · Build the room before you write the memo. Grab the 4-prompt project room kit: source inventory, duplicate log, missing-context list, grounded draft. · ai-native-business
+- [[sources/web-2026-05-22-a21]] · web · How the Fastest Teams Actually Ship Code with AI · ai-native-business
+- [[sources/web-2026-05-23-66d]] · web · The Marc Andreessen Agent with Claude · ai-native-business
+- [[sources/web-2026-05-23-479]] · web · When the Human Layer Is the Control Layer · ai-native-business
+- [[sources/web-2026-05-23-4c1]] · web · AI vs SaaS: Peak Pessimism · ai-native-business
+- [[sources/web-2026-05-22-e40]] · web · meet the new economy, same as the old economy · ai-native-business
+- [[sources/web-2026-05-23-6c2]] · web · Smart money thesis scanner. · ai-native-business
+- [[sources/web-2026-05-22-113]] · web · Will AI Replace Systems Thinking? · ai-native-business
+- [[sources/web-2024-03-29-a63]] · web · Your AI Product Needs Evals – · ai-native-business
+- [[sources/web-2023-07-30-b4c]] · web · Patterns for Building LLM-based Systems & Products · ai-native-business
+- [[sources/web-2023-09-20-3cb]] · web · Generative AI’s Act Two · ai-native-business
+- [[sources/web-2023-01-19-b4a]] · web · Who Owns the Generative AI Platform? | Andreessen Horowitz · ai-native-business
+- [[sources/web-2014-03-01-97d]] · web · I'm Launching 12 Startups in 12 Months · ai-native-business
+- [[sources/web-2026-04-21-260]] · web · Mortgage eligibility for condos: New rules and relief · condo-software
+- [[sources/web-2026-03-24-bb6]] · web · Fannie Mae Updates Reserve Guidelines for Condominium Associations: Impact to Budgeting, Eligibility, and Property Values | KSN Law Firm · condo-software
+- [[sources/yt-msfECL74sIA]] · youtube · How Pieter Levels Makes Millions From Nomad List
+- [[sources/yt-I08ZeY7QcrE]] · youtube · How Top 1% AI-Native Organizations Actually Make Money | Harvard Business School, Rem Koning
+- [[sources/web-2024-02-07-3a2]] · web · The One-person Billion-dollar Company
+- [[sources/web-2025-02-14-794]] · web · AI Is Driving A Shift Towards Outcome-Based Pricing (December 2024 Enterprise Newsletter) | Andreessen Horowitz
+- [[sources/web-2025-10-04-aae]] · web · The Emerging AI-Native GTM Playbook: 6 Patterns from companies racing to $100M
+- [[sources/web-2026-04-10-562]] · web · AI's Unsustainable Economics: The Path to Positive Margins | Hustle Commons Blog
+- [[sources/web-2026-04-23-e4c]] · web · Solo Founders Are Replacing Employees With AI Agents — Here's the Stack
+- [[sources/web-2024-04-01-048]] · web · Deposits held in trust · condo-software
+- [[sources/web-2014-07-16-7c3]] · web · AMENDMENTS NOT IN FORCE · condo-software
+- [[sources/web-2023-10-01-d55]] · web · O Reg 48/01 | General · condo-software
+- [[sources/web-2023-10-01-0bc]] · web · O Reg 48/01 | General · condo-software
+- [[sources/web-2011-06-02-7ff]] · web · Condominium Property Regulation, Alta Reg 168/2000 · condo-software
