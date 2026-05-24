@@ -18,9 +18,30 @@ Operation modules under `gateway/ops/` implement the specific contracts.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import os
 from pathlib import Path
 import tempfile
 from typing import TYPE_CHECKING
+
+
+def claude_cli_env() -> dict[str, str]:
+    """Return a copy of ``os.environ`` suitable for ``claude -p`` subprocesses.
+
+    By default, strips ``ANTHROPIC_API_KEY`` so the Claude CLI falls back
+    to the user's Max-plan OAuth session instead of billing against API
+    credits. Without this, every ``claude -p`` invocation routes through
+    the API even when a Max plan is available — at meaningful cost during
+    multi-hundred-call research runs (filter, plan, VLM all shell out per
+    item).
+
+    Opt-in override: set ``WIKI_ALLOW_API_KEY=1`` in the parent env to
+    preserve ``ANTHROPIC_API_KEY`` and use API credits intentionally
+    (e.g., to bypass Max-plan rate limits during a one-off bulk run).
+    """
+    env = os.environ.copy()
+    if env.get("WIKI_ALLOW_API_KEY") != "1":
+        env.pop("ANTHROPIC_API_KEY", None)
+    return env
 
 if TYPE_CHECKING:
     from gateway.plan import Contradiction

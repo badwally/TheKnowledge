@@ -364,28 +364,35 @@ def register_session(
 ) -> None:
     """Register a new ephemeral session notebook for a domain.
 
-    Raises ValueError if a session with the same id already exists for the
-    domain. The domain need not already have a persistent notebook.
+    If a session with the same id exists in `abandoned` status, it is
+    replaced (re-registration is treated as a clean restart of an
+    abandoned attempt). Active (`ephemeral`) or `promoted` sessions
+    cannot be re-registered — those represent in-flight or finalized
+    work and require explicit `mark_abandoned` first.
     """
     with file_lock(_REGISTRY_LOCK):
         records = _load_records()
         record = records.get(domain) or DomainRecord(domain=domain)
-        for s in record.sessions:
-            if s.session_id == session_id:
-                raise ValueError(
-                    f"session {session_id!r} already registered for domain {domain!r}"
-                )
-        record.sessions.append(
-            SessionEntry(
-                session_id=session_id,
-                notebook_id=notebook_id,
-                query=query,
-                created_at=_now_iso(),
-                status=EPHEMERAL,
-                sources_count=0,
-                promoted_at=None,
-            )
+        new_entry = SessionEntry(
+            session_id=session_id,
+            notebook_id=notebook_id,
+            query=query,
+            created_at=_now_iso(),
+            status=EPHEMERAL,
+            sources_count=0,
+            promoted_at=None,
         )
+        for i, s in enumerate(record.sessions):
+            if s.session_id == session_id:
+                if s.status == ABANDONED:
+                    record.sessions[i] = new_entry
+                    break
+                raise ValueError(
+                    f"session {session_id!r} already registered for domain "
+                    f"{domain!r} (status={s.status}); abandon it first to re-register"
+                )
+        else:
+            record.sessions.append(new_entry)
         records[domain] = record
         _write_records(records)
 

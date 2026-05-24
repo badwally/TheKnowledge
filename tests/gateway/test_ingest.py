@@ -56,6 +56,77 @@ def test_ingest_idempotent_noop(kb_root, make_source, tmp_path):
     assert "already ingested" in second.summary
 
 
+def test_ingest_backfills_missing_wiki_page(kb_root, make_source, tmp_path):
+    """Convergent idempotency: when raw exists but wiki/sources/ page is missing
+    (e.g., research / batch-ingest materialized raw without writing wiki summary),
+    a subsequent ingest backfills the page rather than returning a misleading no-op."""
+    source_text = make_source()
+    src = _write_source(tmp_path, "input.md", source_text)
+
+    first = ingest_canonical(src)
+    assert first.success
+
+    wiki = paths.wiki_source_path("yt-testABC_123")
+    assert wiki.exists()
+    wiki.unlink()  # simulate the orphan-raw state
+
+    second = ingest_canonical(src)
+    assert second.success
+    assert not second.no_op
+    assert "backfilled wiki page" in second.summary
+    assert wiki.exists()
+
+    front, body = fm.parse(wiki.read_text())
+    assert front["source_id"] == "yt-testABC_123"
+
+    # Log records the backfill explicitly
+    log_text = paths.log_path().read_text()
+    assert "backfilled_wiki_page" in log_text
+
+
+def test_ingest_does_not_backfill_user_excluded(kb_root, make_source, tmp_path):
+    """A source explicitly excluded by user_correction should not get a wiki page
+    backfilled by a later ingest, even if its raw file exists."""
+    source_text = make_source(
+        extra_front={
+            "filter": {
+                "user_correction": {
+                    "decision": "exclude",
+                    "score": 0.0,
+                    "decided_at": "2026-05-09T22:00:00Z",
+                    "rationale": "Off-topic",
+                }
+            }
+        },
+    )
+    src = _write_source(tmp_path, "excluded.md", source_text)
+    raw = paths.raw_source_path("youtube", "yt-testABC_123")
+    raw.parent.mkdir(parents=True, exist_ok=True)
+    raw.write_text(source_text)
+    # No wiki page intentionally — the source is excluded.
+
+    result = ingest_canonical(src)
+    assert result.success
+    assert result.no_op
+    assert not paths.wiki_source_path("yt-testABC_123").exists()
+
+
+def test_ingest_noop_when_wiki_page_already_present(kb_root, make_source, tmp_path):
+    """Re-ingesting a fully-canonical source stays a true no-op (no spurious backfill or log entry)."""
+    source_text = make_source()
+    src = _write_source(tmp_path, "input.md", source_text)
+
+    first = ingest_canonical(src)
+    assert first.success
+
+    log_size_before = paths.log_path().stat().st_size
+
+    second = ingest_canonical(src)
+    assert second.success
+    assert second.no_op
+    assert paths.log_path().stat().st_size == log_size_before
+
+
 def test_ingest_malformed_frontmatter(kb_root, tmp_path):
     src = _write_source(tmp_path, "bad.md", "no frontmatter here at all\n")
     result = ingest_canonical(src)

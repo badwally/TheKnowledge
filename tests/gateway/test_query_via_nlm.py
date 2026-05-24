@@ -158,6 +158,45 @@ def test_unresolved_citations_emit_nlm_placeholder(kb_root: Path):
     assert "lint-warning" in log_text or "unresolved_citations" in log_text
 
 
+# --- honest provenance: no backstop citation on uncited lines ------------
+
+
+def test_query_does_not_backstop_uncited_lines(kb_root: Path):
+    """Regression: `_backstop_uncited_lines` previously slathered the first
+    resolved citation onto every uncited line, falsely attributing claims
+    to sources that did not actually support them. Synthesis pages must
+    now reflect only the inline citations NotebookLM produced."""
+    notebook_id = _seed_persistent("alpha", "nb-honest")
+    _write_raw_source(kb_root, slug="cited-page")
+    _write_raw_source(kb_root, slug="other-page")
+    _seed_source_map_cache(
+        notebook_id,
+        {"nlm-cited": "raw/web/cited-page", "nlm-other": "raw/web/other-page"},
+    )
+
+    client = _CannedNlm(
+        answer=(
+            "First sentence with an explicit citation [1].\n"
+            "Second sentence with no citation marker at all in NotebookLM output.\n"
+        ),
+        citations={1: "nlm-cited"},
+    )
+    result = query("test?", domain="alpha", nlm_client=client, draft=True)
+    assert result.success, result.errors
+
+    pages = list((kb_root / "wiki" / "synthesis").glob("*.md"))
+    assert pages
+    text = pages[0].read_text()
+    body = text.split("---", 2)[2]
+    cited_line = next(ln for ln in body.splitlines() if "First sentence" in ln)
+    uncited_line = next(ln for ln in body.splitlines() if "Second sentence" in ln)
+    assert "[[sources/cited-page]]" in cited_line
+    # Critical: the uncited line must NOT have been auto-stamped with the
+    # cited-page citation as a backstop.
+    assert "[[sources/cited-page]]" not in uncited_line
+    assert "[[sources/other-page]]" not in uncited_line
+
+
 # --- empty inputs ---------------------------------------------------------
 
 

@@ -71,11 +71,14 @@ def _reset_rate_limit_for_tests() -> None:
 def _fetch_metadata(arxiv_id: str) -> dict:
     """Hit `export.arxiv.org/api/query?id_list=<id>` and return parsed metadata."""
     _enforce_rate_limit()
-    response = requests.get(
-        "http://export.arxiv.org/api/query",
-        params={"id_list": arxiv_id, "max_results": 1},
-        timeout=15,
-    )
+    try:
+        response = requests.get(
+            "http://export.arxiv.org/api/query",
+            params={"id_list": arxiv_id, "max_results": 1},
+            timeout=15,
+        )
+    except requests.exceptions.RequestException as e:
+        raise ConversionError(f"arxiv API network error for {arxiv_id}: {e}") from e
     if response.status_code != 200:
         raise ConversionError(f"arxiv API lookup failed: {response.status_code}")
 
@@ -125,7 +128,10 @@ def _download_pdf(arxiv_id: str, target: Path) -> None:
     """Download the PDF for `arxiv_id` to `target`. Raises on HTTP failure."""
     _enforce_rate_limit()
     url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
-    response = requests.get(url, timeout=60)
+    try:
+        response = requests.get(url, timeout=60)
+    except requests.exceptions.RequestException as e:
+        raise ConversionError(f"PDF download network error for {arxiv_id}: {e}") from e
     if response.status_code != 200:
         raise ConversionError(
             f"PDF download failed for {arxiv_id}: HTTP {response.status_code}"

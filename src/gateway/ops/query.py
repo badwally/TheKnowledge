@@ -83,40 +83,6 @@ def _inline_citations(answer: str, resolved: dict[int, str]) -> str:
     return _CITE_MARKER_RE.sub(_sub, answer)
 
 
-def _backstop_uncited_lines(text: str, resolved: dict[int, str]) -> str:
-    """Append a trailing `[[sources/...]]` to claim lines without one.
-
-    The validator's citation-grounding rule runs per line; rather than
-    parsing sentences we use the same heuristic: any non-blank, non-header,
-    non-list-pure-link line ≥ 25 chars without a `[[sources/` token gets a
-    backstop citation appended. This guarantees the synthesis is
-    file-able even when the LLM omits inline markers.
-
-    If `resolved` is empty there's nothing to append; we leave the text
-    alone and let the validator surface whatever issues remain.
-    """
-    if not resolved:
-        return text
-    backstop = next(iter(resolved.values()))
-    out_lines: list[str] = []
-    for line in text.split("\n"):
-        stripped = line.strip()
-        if not stripped:
-            out_lines.append(line)
-            continue
-        if stripped.startswith("#"):
-            out_lines.append(line)
-            continue
-        if "[[sources/" in line or "[[nlm:" in line:
-            out_lines.append(line)
-            continue
-        if len(stripped) < 25:
-            out_lines.append(line)
-            continue
-        out_lines.append(f"{line} {backstop}")
-    return "\n".join(out_lines)
-
-
 def query(
     question: str,
     *,
@@ -217,10 +183,9 @@ def query(
     rendered_answer = _inline_citations(answer, resolved) if answer else (
         "_(notebook returned an empty answer)_"
     )
-    # Ensure every line in the answer carries at least one citation by
-    # appending an end-of-line trailer for lines that contain claim
-    # markers — the validator does line-level checks.
-    rendered_answer = _backstop_uncited_lines(rendered_answer, resolved)
+    # Honest provenance: lines without an inline `[N]` marker stay uncited.
+    # The validator surfaces them as warnings under `--draft`; finalization
+    # requires `wiki cite` (or rewrite) to ground each uncited claim.
 
     body_lines = [
         f"# {front['title']}",

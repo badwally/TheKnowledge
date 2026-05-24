@@ -143,6 +143,33 @@ def test_register_session_duplicate_id_raises(kb_root):
         nlm_registry.register_session("d1", "sess-a", "nb-b", query="q2")
 
 
+def test_register_session_replaces_abandoned_entry(kb_root):
+    """Convergent re-registration: abandoning then re-registering a session
+    with the same id is allowed (matches the convergent-ops principle —
+    re-running `wiki research --execute X` should not crash on a prior
+    abandoned attempt)."""
+    nlm_registry.register("d1", "nb-1")
+    nlm_registry.register_session("d1", "sess-x", "nb-old", query="q-old")
+    nlm_registry.mark_abandoned("d1", "sess-x")
+
+    nlm_registry.register_session("d1", "sess-x", "nb-fresh", query="q-fresh")
+
+    sess = nlm_registry.get_session("d1", "sess-x")
+    assert sess is not None
+    assert sess["notebook_id"] == "nb-fresh"
+    assert sess["query"] == "q-fresh"
+    assert sess["status"] == nlm_registry.EPHEMERAL
+
+
+def test_register_session_refuses_active_duplicate(kb_root):
+    """An ephemeral (in-flight) session of the same id must NOT be silently
+    overwritten — that could clobber an in-progress run."""
+    nlm_registry.register("d1", "nb-1")
+    nlm_registry.register_session("d1", "sess-y", "nb-active", query="q")
+    with pytest.raises(ValueError, match="already registered"):
+        nlm_registry.register_session("d1", "sess-y", "nb-other", query="q2")
+
+
 def test_get_session_returns_none_when_missing(kb_root):
     nlm_registry.register("d1", "nb-1")
     assert nlm_registry.get_session("d1", "nope") is None
