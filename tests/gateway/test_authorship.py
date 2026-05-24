@@ -145,6 +145,57 @@ def test_bold_label_followed_by_text_is_still_a_claim():
     assert len(uncited) == 1
 
 
+# --- NotebookLM-internal corpus citations: [[nlm:<uuid>]] ------------------
+
+
+def test_nlm_citation_counts_as_cited():
+    """`[[nlm:<uuid>]]` references NotebookLM's internal corpus citations
+    (chunk-level handles emitted by NLM-authored synthesis pages). These
+    are legitimate grounding into the corpus and must count as cited."""
+    body = (
+        "This is a substantive interpretive claim about the corpus [[nlm:a17f0b4f-ba96-46b0-b4e1-6be759219e89]].\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == [], f"expected no uncited claims, got: {[u.text for u in uncited]}"
+
+
+def test_nlm_citation_mixed_with_source_citation_counts():
+    """Mixed-form lines (footnote ref + NLM ref) common in NLM-authored
+    pages: `[34] [[nlm:<uuid>]]` — the NLM ref alone is enough."""
+    body = (
+        "Gross margins typically compress to 50-60% in AI-native businesses [34] [[nlm:a8d5e313-b8ae-441a-9e82-9f45cadfb006]].\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == []
+
+
+def test_nlm_citation_density_counts_grounded_claims():
+    """Citation density treats `[[nlm:<uuid>]]` claims as cited."""
+    body = (
+        "First claim grounded in the NLM corpus directly [[nlm:11111111-1111-1111-1111-111111111111]].\n"
+        "Second claim with no citation anywhere on the line.\n"
+    )
+    cited, total, ratio = cit.citation_density(body)
+    assert total == 2
+    assert cited == 1
+    assert 0.49 < ratio < 0.51
+
+
+def test_nlm_citation_in_synthesis_footer_list_does_not_create_claim():
+    """`[[nlm:<uuid>]]` in a bullet-only `## Sources cited` footer list
+    is a cross-reference, not a claim. The list itself must not be
+    misread as an uncited claim."""
+    body = (
+        "## Sources cited\n"
+        "\n"
+        "- [[nlm:0718d341-8604-4a60-8498-6045e01b7a8e]]\n"
+        "- [[nlm:ea4c9058-3185-4080-8e76-2f4d69b6e6b8]]\n"
+        "- [[sources/web-2026-04-23-e4c]]\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == []
+
+
 # --- M44.2: structural-frame labels exempted from citation grounding -------
 
 

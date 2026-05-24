@@ -18561,3 +18561,31 @@ report=.knowledge/lint/2026-05-24T16-46-43Z-schema-drift.md
 ## [2026-05-24T16:47:18Z] lint | scope=schema-drift | schema-drift=106
 
 report=.knowledge/lint/2026-05-24T16-47-18Z-schema-drift.md
+
+## [2026-05-24T16:48:00Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-48-00Z-schema-drift.md
+
+## [2026-05-24T16:55:18Z] lint | scope=stale-drafts | stale-drafts=223
+
+report=.knowledge/lint/2026-05-24T16-55-18Z-stale-drafts.md
+
+## [2026-05-24T17:26:08Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T17-26-08Z-schema-drift.md
+
+## [2026-05-24T17:32:29Z] lint | scope=stale-drafts | stale-drafts=223
+
+report=.knowledge/lint/2026-05-24T17-32-29Z-stale-drafts.md
+
+## [2026-05-24T17:42:00Z] finalize | page=wiki/synthesis/2026-05-24-what-is-the-ai-native-technical.md
+
+finalized wiki/synthesis/2026-05-24-what-is-the-ai-native-technical.md
+
+## [2026-05-24T17:45:08Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T17-45-08Z-schema-drift.md
+
+## [2026-05-24T17:56:55Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T17-56-55Z-schema-drift.md

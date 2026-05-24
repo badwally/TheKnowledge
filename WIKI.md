@@ -501,6 +501,8 @@ For span-level citations, append an anchor:
 - PubMed (text): `[[sources/pubmed-39847203#para3]]` (paragraph)
 - Web: `[[sources/web-2026-04-27-3a9f#para3]]`
 
+**NotebookLM-internal corpus citations: `[[nlm:<uuid>]]`.** NLM-authored synthesis pages (those carrying `nlm_notebook_id:` in frontmatter) frequently cite the corpus via chunk-level UUIDs that NotebookLM emits inline (e.g., `[[nlm:a17f0b4f-ba96-46b0-b4e1-6be759219e89]]`). These are accepted as valid grounding by the validator alongside `[[sources/<id>]]` — the citation maps into the page's NLM corpus, not a wiki source page. The validator does not verify UUID existence (that would require live NLM API access; out of scope for the in-page validator). Treat NLM citations as opaque grounding tokens — they prove provenance to the corpus listed in `nlm_notebook_id`, but do not by themselves create wiki backlinks.
+
 ### 5.2 Citation grounding rule
 
 Every claim in entity, concept, source, and synthesis pages must be followed by at least one citation. Validator rejects pages that fail in normal mode. In draft mode (`--draft` flag on gateway writes; `draft: true` in page frontmatter), the rule is downgraded to a lint warning so an agent can write a partial draft and refine citations later. See § 5.5 for the draft lifecycle. Examples of "claim" subject to the rule:

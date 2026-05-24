@@ -55,6 +55,13 @@ _NUMBERED_RE = re.compile(r"^\s*\d+\.\s+")
 _BLANK_RE = re.compile(r"^\s*$")
 _CITATION_LINE_RE = re.compile(r"\[\[sources/[^\]]+\]\]")
 
+# NotebookLM-internal corpus citation: `[[nlm:<uuid>]]`. Emitted by
+# NLM-authored synthesis pages as chunk-level handles into the corpus
+# (the page's `nlm_notebook_id`). Treated as valid grounding for the
+# citation-grounding rule — the validator does not verify UUID existence
+# (that would require live NLM API access; out of scope here).
+_NLM_CITATION_LINE_RE = re.compile(r"\[\[nlm:[^\]]+\]\]")
+
 # Lines that are pure bold-wrapped text (used as visual sub-headers in
 # orchestrator-rendered syntheses): "**1. Scope ... vs. Foo**".
 _BOLD_HEADER_RE = re.compile(r"^\*\*.+\*\*$")
@@ -318,8 +325,10 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
             words = sentence.split()
             if len(words) < _MIN_CLAIM_WORDS:
                 continue
-            has_citation = bool(_CITATION_LINE_RE.search(raw_line)) or (
-                _line_cites_via_footnote(raw_line, footnote_map)
+            has_citation = (
+                bool(_CITATION_LINE_RE.search(raw_line))
+                or bool(_NLM_CITATION_LINE_RE.search(raw_line))
+                or _line_cites_via_footnote(raw_line, footnote_map)
             )
             out.append(ClaimSentence(text=sentence, line_no=idx + 1, has_citation=has_citation))
     return out
