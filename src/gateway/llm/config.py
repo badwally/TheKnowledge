@@ -24,6 +24,7 @@ Stage = Literal[
     "plan_bootstrap_domain",   # wiki bootstrap-domain (policy.yaml generation)
     "plan_query_planner",      # wiki research planner (per-adapter query expansion)
     "vlm",
+    "cite_suggest",            # M49 wiki cite --suggest (attribution matching)
 ]
 
 
@@ -32,6 +33,7 @@ DEFAULT_PLAN_AUTHORSHIP_MODEL = "claude-opus-4-7"
 DEFAULT_PLAN_BOOTSTRAP_DOMAIN_MODEL = "claude-sonnet-4-6"
 DEFAULT_PLAN_QUERY_PLANNER_MODEL = "claude-sonnet-4-6"
 DEFAULT_VLM_MODEL = "claude-opus-4-7"
+DEFAULT_CITE_SUGGEST_MODEL = "claude-sonnet-4-6"
 
 # Back-compat aliases for callers that still import these names.
 DEFAULT_PLAN_MODEL = DEFAULT_PLAN_AUTHORSHIP_MODEL
@@ -51,6 +53,7 @@ def model_for(stage: Stage, domain: str | None = None) -> str:
       - "plan_bootstrap_domain" → Sonnet 4.6 (`wiki bootstrap-domain`)
       - "plan_query_planner" → Sonnet 4.6 (`wiki research` query expansion)
       - "vlm" → Opus 4.7 (image conversion)
+      - "cite_suggest" → Sonnet 4.6 (M49 `wiki cite --suggest`: attribution matching)
     """
     if stage == "filter":
         return DEFAULT_FILTER_MODEL
@@ -62,4 +65,6 @@ def model_for(stage: Stage, domain: str | None = None) -> str:
         return DEFAULT_PLAN_QUERY_PLANNER_MODEL
     if stage == "vlm":
         return DEFAULT_VLM_MODEL
+    if stage == "cite_suggest":
+        return DEFAULT_CITE_SUGGEST_MODEL
     raise ValueError(f"unknown LLM stage: {stage!r}")
