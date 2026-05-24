@@ -1,0 +1,50 @@
+source_id: web-2018-12-31-80d
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: UpKeep API docs are a P3 explicit target in Brief-0014 / Finding-0034 §9.
+  The filter's 2018 date objection conflates publication date (an artifact of trafilatura's
+  crawl-date inference on a continuously-updated developer portal) with content currency;
+  API developer docs at developers.onupkeep.com are live infrastructure references.
+  Work-order schema (asset_id, location, priority, assigned_to) is the load-bearing
+  integration-surface content — directly comparable to MaintainX REST API v1 (already
+  in corpus) for the CMMS ingest-path architecture comparison. The Brief-0014 nomination
+  overrides the not-named-in-prior-Finding objection.
+pinned_at: '2026-05-24T02:52:37Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Introduction
+  authors: []
+  url: https://developers.onupkeep.com/
+content_excerpt: '# Introduction
+
+
+  Welcome to the UpKeep API! You can use our API to control and gain access to data
+  such as work orders and assets.
+
+
+  The UpKeep API is enabled only for accounts on the Enterprise Plan. For more information
+  click here.
+
+
+  # Authentication
+
+
+  The UpKeep API uses session tokens to authorize API calls. Session tokens can be
+  generated with the credentials of any user in your account.
+
+
+  ## Log In
+
+
+  ```
+
+  curl "https://api.onupkeep.com/api/v2/auth"
+
+  -X POST
+
+  -d email="user@onupkeep.com"
+
+  -d password'

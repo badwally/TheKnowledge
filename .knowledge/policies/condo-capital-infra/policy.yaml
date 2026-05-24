@@ -1,0 +1,140 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: condo-capital-infra
+  topic: AI-native probabilistic reserve studies for condominium associations under
+    regulated reserve-study mandates
+  field: Building infrastructure capital planning, reliability engineering, actuarial
+    / probabilistic asset management, and condominium reserve-study regulation
+  description: "Methods, regulations, vendor practices, and primary records that inform\
+    \ probabilistic reserve forecasts for six capital components (roof, building envelope,\
+    \ plumbing risers, HVAC central plant, elevators, parking deck / podium structural\
+    \ concrete) under FL SIRS (HB 913, 2025), CA Davis-Stirling \xA75550, NJ, VA,\
+    \ and Canadian provincial regimes (NS Condominium Act / Bill 38, NB Condominium\
+    \ Property Act C-16.05, PEI Condominium Act, NL Condominium Act 2009, ON Condo\
+    \ Act \xA794, BC SPA depreciation reports, AB CPA, QC Civ. Code 1071 / Bill 16).\
+    \ Covers deterioration and survival modeling (Markov, Weibull / lognormal, Bayesian\
+    \ hierarchical, Cox PH, hybrid physics-ML), Monte Carlo aggregation with copulas,\
+    \ POMDP inspection scheduling, regime-switching cost-escalation, and Bayesian inspect\
+    \ / repair / replace decision theory, alongside CAI standards, milestone-inspection\
+    \ public records, CMMS work-order ingest paths, competitive intelligence on reserve-study\
+    \ and CRE-tech vendors, and M&A / exit-thesis intelligence on named acquirer targets."
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- "Statutory or regulatory text (or authoritative interpretive guidance) governing\
+  \ reserve studies, structural integrity reserve studies, or milestone inspections\
+  \ in FL (SB-4D, HB 913), CA (Davis-Stirling \xA75550), NJ, VA, or Canadian provinces\
+  \ (NS Condominium Act / Bill 38, NB Condominium Property Act C-16.05, PEI Condominium\
+  \ Act RSPEI 1988 c. C-16, NL Condominium Act 2009, ON Condo Act 1998 \xA794, BC\
+  \ Strata Property Act depreciation reports, AB Condominium Property Act, QC Civil\
+  \ Code art. 1071 / Bill 16)"
+- CAI Reserve Study Standards, ASTM E917 LCCA framing, ASHRAE / BOMA / FFC BUILDER,
+  or RSMeans component service-life data applicable to one or more of the six probabilistic
+  components (roof, building envelope, plumbing risers, HVAC central plant, elevators,
+  parking deck / podium structural concrete) or the deterministic long tail
+- "Peer-reviewed or working-paper research on infrastructure deterioration and life-cycle\
+  \ modeling — Markov chain deterioration, Weibull / lognormal survival, Bayesian\
+  \ hierarchical models for sparse component data, Cox proportional hazards, hybrid\
+  \ physics-ML, Monte Carlo aggregation with copulas for correlated failures, POMDP\
+  \ inspection scheduling, regime-switching cost-escalation, or Bayesian decision\
+  \ theory for inspect / repair / replace — including DOT bridge and pavement\
+  \ legacy work (Madanat, Golabi, Mishalani) when methodologically transferable"
+- Public-record milestone inspections, structural integrity reserve studies, or filed
+  reserve studies for FL, CA, or Canadian condominium / strata buildings with quantitative
+  component condition or funding data
+- "Competitive-intelligence material (product docs, pricing, case studies, integration\
+  \ specs, regulatory positioning) on reserve-study and CRE-tech vendors — SmartProperty,\
+  \ PropFusion, Solume, ReserveWise, Association Reserves, Reserve Data Analyst, Facilio,\
+  \ Willow — or CMMS / work-order ingest paths (UpKeep, MaintainX, Fiix, Limble,\
+  \ BuildingLink, Condo Control) relevant to component-condition telemetry or Canadian\
+  \ residential-condo market footprint"
+- Insurance, climate, or cost-escalation analyses (carrier underwriting criteria for
+  FL condos, parametric or reinsurance pricing on coastal building stock, construction
+  cost indices, regime-switching inflation models) that materially feed probabilistic
+  reserve forecasts
+- "M&A competitive intelligence, funding events, scale metrics, strategic positioning,\
+  \ AI / product-roadmap announcements, or financial disclosures for named acquirer\
+  \ targets identified in gtm/exit-thesis-acquirer-mapping.md: primary targets CINC\
+  \ Systems, FirstService Residential, Yardi, Associa, MaintainX; competitive-landscape\
+  \ adjacent SmartProperty, PropFusion, Solume, Daisy. Also includes PropTech industry\
+  \ valuation-multiples data (Finro, Software Equity Group, Houlihan Lokey, Vista\
+  \ Point Advisors) relevant to the Y3 exit multiple (3–5\xD7 revenue) defensibility\
+  \ in gtm/canada-first-revenue-model.md."
+exclusion_criteria:
+- Generic property-management, HOA-governance, or board-training content without quantitative
+  reserve-study, component-deterioration, or regulatory substance
+- Single-family residential or non-condominium commercial building studies unless
+  directly methodologically transferable to one of the six probabilistic components
+  or the regulated reserve-study context
+- Marketing or thought-leadership pieces from reserve-study or proptech vendors that
+  lack pricing, methodology disclosure, integration detail, or verifiable case data
+- Climate-risk or ESG advocacy material without measured building-stock impact, component-level
+  deterioration data, or quantified cost-escalation linkage
+- "Statutes, standards, or studies from jurisdictions outside the in-scope set (FL,\
+  \ CA, NJ, VA, NS, NB, PEI, NL, ON, BC, AB, QC) unless used as a direct comparator\
+  \ for an in-scope regime"
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Official statutory text, agency rulemakings, or court opinions from FL DBPR,
+      CA DRE / HCD, NJ DCA, VA CIC Board, NS Service Nova Scotia, NB SNB Director
+      of Condominiums, ON CAO / Tarion, BC FIA, AB RECA, or QC RBQ
+    - Peer-reviewed journals in reliability, infrastructure asset management, or built-environment
+      engineering (Reliability Engineering & System Safety, Structural Safety, Journal
+      of Infrastructure Systems, ASCE Journal of Performance of Constructed Facilities,
+      Building and Environment, Construction Management and Economics)
+    - CAI Research Foundation, NIST, FFC / National Academies, ASHRAE, ASTM, BOMA,
+      and NRC Construction Research Centre technical publications
+    - County-recorder or condominium-registry filings of milestone inspections, SIRS,
+      or depreciation reports
+    negative_signals:
+    - Vendor blog posts or press releases lacking methodology disclosure or third-party
+      validation
+    - Predatory open-access or pay-to-publish venues
+    - General-interest real-estate or HOA news coverage without primary-source citation
+  methodology_rigor:
+    positive_signals:
+    - Specifies probabilistic structure (transition matrix, hazard function, prior
+      / posterior, copula family) and reports parameter uncertainty or posterior intervals
+    - Calibrates against observed component condition, work-order, or failure data
+      with explicit data provenance
+    - Reports out-of-sample validation or back-tests against realized capital expenditures
+      or component replacements
+    - Quantifies cost-escalation assumptions (index source, regime-switching parameters,
+      locality adjustment) rather than applying flat inflation
+    negative_signals:
+    - Deterministic straight-line reserve calculations presented without uncertainty
+      quantification when probabilistic framing is claimed
+    - No disclosure of data sources, sample size, or geographic / vintage scope
+    - Conclusions about FL / CA / Canadian regimes drawn from non-condo or non-regulated
+      asset classes without transfer justification
+  content_depth:
+    positive_signals:
+    - Component-level treatment of one or more of the six probabilistic components
+      with service-life distributions, failure modes, and inspection / telemetry signals
+    - Explicit mapping between methodology and a named regulatory regime (e.g., how
+      a Bayesian hierarchical model satisfies SIRS visual-inspection plus engineering-judgment
+      requirements)
+    - Integration specifics for CMMS work-order or BMS telemetry feeds (data schema,
+      sampling cadence, condition-indicator derivation)
+    - Multi-year time series or longitudinal cohort data on condominium component
+      condition, reserve funding levels, or special assessments
+    negative_signals:
+    - Surface-level summaries of reserve-study mechanics without engagement with probabilistic
+      methodology or specific statutes
+    - Opinion pieces on Surfside / Champlain Towers or FL SIRS politics without component-level
+      or methodological content
+    - Pure abstract modeling with no condominium, reserve-study, or building-component
+      grounding
+bootstrapped_from_description_hash: 656d5b5c29ebf43e
+# Last edited: 2026-05-11 — added M&A competitive-intelligence inclusion criterion (per user authorization),
+# expanded jurisdiction list in exclusion criteria to include NS/NB/PEI/NL (Canada-first pivot per ADR-0004),
+# added NS/NB regulatory agencies to quality_signals.publication_venue.positive_signals,
+# added NRC CRC to positive publication venues, added BuildingLink/Condo Control to vendor CI criterion.

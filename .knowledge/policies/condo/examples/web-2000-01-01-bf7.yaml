@@ -1,0 +1,22 @@
+source_id: web-2000-01-01-bf7
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Primary FL statute text — Fla. Stat. §718.301 (2024) Transition of association
+  control from developer to unit owners. Developer-to-board PM handoff obligations;
+  operational-PM transition layer.
+pinned_at: '2026-05-09T23:33:57Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Florida Senate
+  authors: []
+  url: https://www.flsenate.gov/Laws/Statutes/2024/718.301
+content_excerpt: '(1) If unit owners other than the developer own 15 percent or more
+  of the units in a condominium that will be operated ultimately by an association,
+  the unit owners other than the developer are entitled to elect at least one-third
+  of the members of the board of administration of the association. Unit owners other
+  than the developer are entitled to elect at least a majority of the members of the
+  board of administration of an association, upon the first to occur of any of the
+  following events:(a) '

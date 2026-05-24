@@ -1,0 +1,98 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: condo
+  topic: Condominium and HOA management with an emphasis on integrated long-horizon
+    proactive planning
+  field: Community association management, real estate finance, and facilities planning
+  description: Governance, financial, and operational practices for condominium and
+    homeowner associations, with focus on unifying reserve studies, capital maintenance,
+    vendor contracts, and assessment policy into a single long-horizon planning system.
+    Includes board fiduciary duties, software and data models that integrate these
+    workflows, and communication frameworks for special assessments and dues changes.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Covers HOA or condominium board governance topics including fiduciary duty, board
+  composition, meeting procedure, CC&Rs, bylaws, or state-level statutory frameworks
+  (e.g. Davis-Stirling, UCIOA, Florida Chapter 718, Washington RCW 64.34/64.90)
+- Discusses reserve fund studies, component inventories, useful-life and remaining-useful-life
+  estimation, percent-funded calculations, or reserve funding methodologies (full
+  funding, baseline, threshold, cash flow)
+- Examines special assessment policy, triggers, legal authority limits, member voting
+  requirements, or owner communication practices for assessments and dues increases
+- Addresses preventive and capital maintenance planning for condo building systems
+  (roofs, envelopes, elevators, HVAC, plumbing risers, parking structures, common
+  amenities) with planning horizons of 5+ years
+- Covers vendor selection, RFP processes, contract management, insurance requirements,
+  or service-level expectations for property management companies and trades
+- Describes software architectures, data models, or integration patterns that unify
+  reserve studies, accounting, work orders, vendor records, and document management
+  for community associations
+- Reports case studies, post-mortems, or quantitative analyses of HOA financial health,
+  deferred maintenance outcomes, structural failures (e.g. Surfside), or assessment-driven
+  owner outcomes
+exclusion_criteria:
+- Generic real estate investment or homebuying advice without specific community-association
+  governance, finance, or operations content
+- Single-family HOA landscaping or aesthetic dispute narratives with no governance,
+  financial, or planning substance
+- Vendor marketing material that lists features without describing methodology, data
+  model, or planning workflow
+- Commercial property management content (office, retail, industrial) unless directly
+  transferable to condo/HOA reserve or capital planning
+- Tenant-landlord or rental-housing material that does not involve owner-governed
+  associations
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Peer-reviewed or practitioner journals in property management, real estate finance,
+      or facilities engineering (Journal of Property Management, Common Ground, CAI
+      Quarterly)
+    - Publications and standards from CAI (Community Associations Institute), APRA
+      (Association of Professional Reserve Analysts), or state CID regulators
+    - Reserve study reports authored by RS-credentialed or PRA-credentialed analysts
+    - Court rulings, statutory texts, and AG opinions on community-association law
+    - Engineering reports and structural assessments from licensed PE firms
+    negative_signals:
+    - Vendor blog posts that double as sales collateral with no methodology disclosed
+    - Anonymous forum posts or social media threads presented as authoritative
+    - Press releases announcing software products without technical detail
+  methodology_rigor:
+    positive_signals:
+    - Reserve studies that disclose component inventory, useful-life assumptions,
+      inflation and interest assumptions, and funding-plan sensitivity
+    - Capital plans tied to engineering condition assessments rather than age-based
+      heuristics alone
+    - Financial analyses that distinguish operating vs. reserve vs. special-assessment
+      funding sources
+    - Software and data-model writeups that show entity relationships, integration
+      points, and update cadences
+    negative_signals:
+    - Reserve or capital plans presented without underlying assumptions or component
+      data
+    - Recommendations that ignore state statutory requirements or fiduciary constraints
+    - Software pitches that conflate accounting modules with reserve planning without
+      addressing component-level forecasting
+  content_depth:
+    positive_signals:
+    - Multi-year planning horizons (10-30 years) with explicit treatment of inflation,
+      interest, and component replacement timing
+    - Discussion of failure modes and incentive structures (deferred maintenance,
+      underfunded reserves, board turnover, owner short-termism)
+    - Concrete worked examples with dollar figures, percent-funded trajectories, or
+      owner-impact analysis
+    - Integration narratives showing how reserve, maintenance, vendor, and assessment
+      decisions connect over time
+    negative_signals:
+    - High-level overviews that restate definitions without operational detail
+    - Single-issue advice (e.g. "how to run a board meeting") with no link to long-horizon
+      planning
+    - Checklists without rationale or quantitative anchors
+bootstrapped_from_description_hash: e46090706a3d5ccd

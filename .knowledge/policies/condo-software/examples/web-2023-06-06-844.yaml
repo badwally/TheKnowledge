@@ -1,0 +1,34 @@
+source_id: web-2023-06-06-844
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'TresRE launch announcement contains load-bearing structural intelligence
+  for Finding-0027 §4: (1) establishes TresRE as a distinct bank-facing treasury middleware
+  product (not just CINC feature), (2) names Valley Bank as launch partner, (3) documents
+  Jenark and FRONTSTEPS Caliber as integration targets, (4) provides verifiable metrics
+  (B annual payment volume, 14 lockbox locations, 99.74% match rate), (5) frames the
+  ''swivel chair'' problem as the competitive moat narrative. Recency concern noted
+  but the architectural and product-identity facts are durable — TresRE''s existence
+  and structural positioning don''t expire on a 24-month cycle. CINC is the project''s
+  named primary acquirer target. Override at review band per Dispatch A/B pattern
+  for sources with concrete, named integration-surface specificity.'
+pinned_at: '2026-05-23T17:08:05Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: CINC Systems Announces the Launch of TresRE, a suite of treasury solutions
+    designed to help banks provide real estate companies the ability to bank within
+    their accounting software
+  authors:
+  - CINC Systems
+  url: https://www.prnewswire.com/news-releases/cinc-systems-announces-the-launch-of-tresre-a-suite-of-treasury-solutions-designed-to-help-banks-provide-real-estate-companies-the-ability-to-bank-within-their-accounting-software-301842320.html
+content_excerpt: 'DULUTH, Ga., June 6, 2023 /PRNewswire/ -- CINC Systems announced
+  yesterday the launch of TresRE, a treasury management solution that brings banking,
+  software, and payments together for real estate managers who have long been forced
+  to swivel chair between legacy accounting and banking solutions that aren''t connected
+  by middleware.
+
+
+  CINC Systems was founded in 2005 by third-generation banker Bill Blanton, who streamlined
+  association management companies'' banking, software, and payments under one '

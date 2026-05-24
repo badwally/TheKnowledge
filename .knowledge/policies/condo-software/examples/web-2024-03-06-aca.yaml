@@ -1,0 +1,31 @@
+source_id: web-2024-03-06-aca
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Thread 1 cross-jurisdictional banking synthesis requires encyclopedic FDIC/CDARS/ICS
+  mechanism coverage; this is the only identified source with IntraFi CDARS + ICS
+  mechanics in the reserve-fund context. Score=0.5 borderline; content is load-bearing
+  for reserve-fund investment vehicle and banking infrastructure coverage in Thread
+  1 closing synthesis.
+pinned_at: '2026-05-24T00:36:49Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: What Is The HOA Reserve Funds FDIC Limit? | Clark Simson Miller
+  authors:
+  - Admin; The Clark Simson Miller Team
+  url: https://www.clarksimsonmiller.com/reserve-funds-fdic-limit/
+content_excerpt: 'Homeowners associations would do well to stay within the reserve
+  funds FDIC limit. Doing so can help the community protect their funds and remain
+  financially healthy. But, what exactly is this limit and is it truly important?
+  Let’s find out.
+
+
+
+  ## What Is the FDIC?
+
+
+  The Federal Deposit Insurance Corporation (FDIC) is an independent agency of the
+  United States government. It seeks to protect depositors’ funds in savings associations
+  and banks by insuring a certain amount per depositor. If somethin'

@@ -1,0 +1,43 @@
+source_id: web-2025-03-20-542
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Condo Control is Finding-0033 primary Y1 Canadian integration target. Page
+  confirms five integration category surfaces (Financial, Payment, Security, Hardware,
+  Workflow) plus Zapier connectivity — load-bearing for the integration-surface mapping
+  even without named partners. JS-rendered page; trafilatura did not capture named
+  partner list. Strategic inclusion overrides thin-content filter; raw content is
+  the authoritative record of what is publicly disclosed.
+pinned_at: '2026-05-24T01:25:21Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Integrations - Condo Control
+  authors: []
+  url: https://www.condocontrol.com/integrations/
+content_excerpt: '# Featured
+
+
+  Tried-and-true integrations that are guaranteed to boost productivity and save you
+  time.
+
+
+  ## Financial
+
+
+  Streamline financial processes by automating tasks like billing, payment tracking,
+  and reporting. Reduce your manual workload and generate accurate financial insights.
+
+
+  ## Payment processing
+
+
+  Condo Control integrates with trusted payment processors, enabling residents to
+  take care of rent or dues online through their Condo Control accounts.
+
+
+  ## Security
+
+
+  Condo Control collaborates '

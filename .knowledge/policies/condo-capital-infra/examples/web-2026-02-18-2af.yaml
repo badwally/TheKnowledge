@@ -1,0 +1,39 @@
+source_id: web-2026-02-18-2af
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Yardi corporate news page; resolves Rob Teel CEO transition Jan 2026 —
+  highest-density M&A signal in candidate set per gtm/exit-thesis-acquirer-mapping.md
+  §1 / §2.11 / §4.3. M&A competitive-intelligence inclusion criterion (condo-capital-infra-v1)
+  applies — named primary acquirer target.
+pinned_at: '2026-05-11T23:03:18Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: News
+  authors: []
+  url: https://www.yardi.com/news/
+content_excerpt: '## Pipeline prompts revised Yardi Matrix multifamily completions
+  forecast
+
+
+  Yardi Matrix forecasts a 2% increase in projected completions for 2026, reflecting
+  updates to the under-construction pipeline.
+
+
+  Markets
+
+
+  MultifamilyCommercialAffordable housingCoworking & flexible spaceInvestment management
+  Manufactured housing PHASelf storage Senior living Mixed portfoliosSee all marketsMarkets
+  we serve
+
+
+  Discover what the right property management tools can do to transform your business.
+
+
+  Solutions
+
+
+  Prop'

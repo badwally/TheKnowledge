@@ -1,0 +1,60 @@
+source_id: pdf-aa9367a8a4a9
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: CMRAO is the Ontario condominium manager regulator — a primary-source authority
+  for ON Condo Act §93-95 (financial obligations), §94 (reserve fund study mandates),
+  and §115 (fiduciary duties). The policy domain definition explicitly includes 'jurisdictional
+  fiduciary regulation' and inclusion criterion 4 explicitly targets 'ON Condo Act
+  §94' by section number. At 59 pages, this is substantive operational guidance that
+  defines what financial-management software must accommodate in the Ontario market
+  — exactly the regulatory constraint layer that shapes the software ecosystem. The
+  filter's concern about 'software vendor analysis vs. regulatory reference' is a
+  false dichotomy for this domain; regulatory requirements ARE the design constraints
+  for the software.
+pinned_at: '2026-05-23T16:20:47Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: cmrao-financial-management-2025-02
+  authors: []
+  url: ''
+content_excerpt: 'Financial Management:
+
+  A Practice Guide for
+
+  Condominium Managers
+
+  February 2025
+
+
+  Financial Management:
+
+  A Practice Guide for
+
+  Condominium Managers
+
+  Contents
+
+  Acknowledgements .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  4
+
+  Introduction 5
+
+  Definitions 6
+
+  Acronyms 6
+
+  SECTION 1
+
+  Accounting for Condominium Corporations .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+  7
+
+  Not-for-profit corporation accounting 8
+
+  Operating fund 8
+
+  Reserve funds 8
+
+  Tax considerations '

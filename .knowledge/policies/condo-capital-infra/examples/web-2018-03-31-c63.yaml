@@ -1,0 +1,39 @@
+source_id: web-2018-03-31-c63
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: CMHC New Brunswick provincial condominium fact sheet — federal Canadian-housing-agency
+  content with NB market context. In scope under ADR-0004 Canada-first sequence reorder.
+  Used as a regulatory + market-sizing reference per Brief-0006 § 2.2.
+pinned_at: '2026-05-10T23:07:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: New-Brunswick-Fact-Sheet
+  authors: []
+  url: https://www.cmhc-schl.gc.ca/consumers/home-buying/buying-guides/condominium/provincial-fact-sheets/new-brunswick-fact-sheet
+content_excerpt: '## Governing Legislation
+
+
+  **What legislation and regulations govern condominiums in New Brunswick?**
+
+
+  ## Warranty Programs
+
+
+  **Do provincial legislation and/or regulations require that developers of new condominiums
+  provide a new home warranty to buyers?**
+
+
+  No. Some developers will offer their own home warranty or provide one through a
+  third-party home warranty program.
+
+
+  ## Taxes & Additional Costs
+
+
+  **What provincial and federal taxes do condominium buyers pay on their units?**
+
+
+  Buyers pay Harmon'

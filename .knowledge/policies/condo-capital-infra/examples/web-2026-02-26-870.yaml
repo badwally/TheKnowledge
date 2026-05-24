@@ -1,0 +1,28 @@
+source_id: web-2026-02-26-870
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Payables+ is load-bearing for the CINC platform revenue model: it establishes
+  the AP-to-revenue-sharing mechanic (management companies generate incremental revenue
+  from digital payment transactions), which directly impacts CINC''s underlying revenue
+  thesis. Per Finding-0025 §1, Payables+ is the February 2026 product that converts
+  AP from a cost center to a revenue line — a multi-stream revenue model insight required
+  for the acquirer thesis valuation math. Per Finding-0025 §7 Batch 2.'
+pinned_at: '2026-05-21T20:42:23Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: CINC Systems Unveils Payables+ AI-Powered Accounts Payable Solution
+  authors:
+  - CINC Systems
+  url: https://www.prnewswire.com/news-releases/cinc-systems-unveils-payables-ai-powered-accounts-payable-solution-302698610.html
+content_excerpt: '*New CAM solution automates invoice ingestion, ledger coding, digital
+  vendor payments*
+
+
+  DULUTH, Ga., Feb. 26, 2026 /PRNewswire/ -- **CINC Systems**, the largest and most
+  innovative technology partner in community association management (CAM) industry,
+  today announced the official launch of **Payables+**, the market''s most advanced
+  accounts payable (AP) automation solution. Payables+ delivers a powerful combination
+  of artificial intelligence, seamless invoice processing, and integrated electronic'

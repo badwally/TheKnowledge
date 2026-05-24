@@ -1,0 +1,25 @@
+source_id: web-2025-01-01-6b5
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: NYC LL87 energy audit and retro-commissioning requirements — regulatory
+  PM driver for high-rise residential, directly in scope
+pinned_at: '2026-05-09T22:33:40Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'LL87: Energy Audits & Retro Commissioning'
+  authors: []
+  url: https://www.nyc.gov/site/buildings/codes/ll87-energy-audits-retro-commissioning.page
+content_excerpt: 'Local Law 87 of 2009 as amended requires owners of certain buildings
+  to undergo energy audits and retro-commissioning every ten years to identify energy-saving
+  measures and ensure building systems are operating efficiently.
+
+
+  An Energy Audit is a survey and analysis of energy use in a building with the purpose
+  of identifying opportunities to reduce the amount of energy consumed without negatively
+  affecting the operations.
+
+
+  Retro-commissioning is the process of ensuring that the energy systems in '

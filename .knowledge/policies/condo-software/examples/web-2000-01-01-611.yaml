@@ -1,0 +1,36 @@
+source_id: web-2000-01-01-611
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: CUDGC is the statutory AB deposit-guarantee authority under the Alberta
+  Credit Union Act. Source describes 100% guarantee on all deposit types (chequing/savings/term/registered/non-registered)
+  at AB credit unions, three-level protection structure, and 12 active AB credit unions.
+  This is the primary citable source for AB=100% unlimited deposit coverage in Finding-0029
+  §7.4. Condo reserve funds held at AB credit unions — a common practice given the
+  CA prohibitive CDIC beneficiary-naming complexity — qualify as insurable deposits.
+  Same apply-calibration-precedent logic as FSRA (K non-registered / unlimited registered)
+  which was included at 0.3.
+pinned_at: '2026-05-23T21:29:18Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Our Role
+  authors: []
+  url: https://cudgc.ab.ca/our-role/
+content_excerpt: '## Our Role
+
+
+  ### Our role as a deposit guarantor
+
+
+  The money you deposit and the interest you earn at an Alberta credit union is safe
+  and secure – up to any dollar
+
+  amount. Backed by the Government of Alberta, our guarantee is comprehensive. 100%
+  of all deposits held in Alberta credit union chequing, savings and foreign currency
+  accounts are guaranteed, as are registered and non-registered term deposits of any
+  length.
+
+
+  It is important to note that our guarantee does not cover non-deposit investmen'

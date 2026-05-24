@@ -1,0 +1,32 @@
+source_id: web-2025-11-06-d1c
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'QC-specific CO-17.SP filing guide for condo syndicates, CPA-authored (Frédéric
+  Roy-Gobeil), published Nov 2025, directly grounds Finding-0031 §5.4 QC provincial
+  tax treatment. CO-17.SP mechanics (mandatory e-filing 2024, NPO status confirmation,
+  T1044 interaction, Revenu Québec REQ registration) are load-bearing for 10-jurisdiction
+  condo-software domain coverage. More substantive than filter score implies: cites
+  QC civil law structure, Decree 991-2025 context, and filing deadlines that inform
+  compliance architecture.'
+pinned_at: '2026-05-23T23:36:58Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Revenu Québec Form CO-17.SP for Co-Ownership Syndicates | T2inc.ca
+  authors:
+  - Frédéric Roy-Gobeil
+  url: https://t2inc.ca/en/blog/fillin-form-co17-sp-statement-co-ownership-association
+content_excerpt: '# CO-17.SP Form: Essential Tax Filing Requirement for syndicates
+  of co-owners in Quebec
+
+
+  Do you manage a condominium syndicate in Quebec? Wondering whether you must submit
+  the CO-17.SP return each year? **In most cases, the answer is YES.**
+
+
+  Under Quebec tax law, a condominium syndicate is recognized as a legal entity and
+  a non-profit organization (NPO). While usually exempt from income tax, it must still
+  file an annual information return with Revenu Québec. This return confirms its non-profit
+  s'

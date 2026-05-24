@@ -1,0 +1,30 @@
+source_id: web-2024-05-17-2fd
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Annual Benchmark Report launch page May 2024 from Eli Report / OctoAI.
+  B2B product for boards and PMs. /unit pricing. 30-year special levy forecast capability.
+  Explicit recommendation to commission professional reserve fund studies every 3
+  years with P.Eng. or CRP — strategic anchor for channel-partner thesis. Vendor intelligence
+  — consistent with filter-correct precedent applied today.
+pinned_at: '2026-05-19T01:46:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Introducing your Annual Benchmark Report - Eli Report
+  authors:
+  - Eli Admin
+  url: https://elireport.com/resource-center/introducing-your-annual-benchmark-report/
+content_excerpt: '### Eli Report is excited to provide the most advanced intelligence
+  tool available to strata council members and property managers for budget review
+  and capital planning, the **Annual Benchmark Report**.
+
+
+
+  **Why would our strata council want an Annual Benchmark Report?**
+
+
+  Every strata council is tasked with providing governance, management and oversight
+  for their strata corporation. Being on strata council is a big responsibility, and
+  one that few believe they are fully qualified for. After all,'

@@ -1,0 +1,44 @@
+source_id: web-2018-03-31-9ad
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: CMHC PEI fact sheet; documents absence of statutory reserve-fund mandate
+  in PEI — direct comparator for the Atlantic Canada regulatory-landscape sweep per
+  Brief-0006. In-scope Atlantic Canada jurisdiction per ADR-0004.
+pinned_at: '2026-05-11T23:44:29Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Prince-Edward-Island-Fact-Sheet
+  authors: []
+  url: https://www.cmhc-schl.gc.ca/consumers/home-buying/buying-guides/condominium/provincial-fact-sheets/Prince-Edward-Island-Fact-Sheet
+content_excerpt: '## Governing Legislation
+
+
+  **What legislation and regulations govern condominiums in Prince Edward
+
+  Island?**
+
+
+  ## Warranty Programs
+
+
+  **Do provincial legislation and/or regulations require that developers of new
+
+  condominiums provide a new home warranty to buyers?**
+
+
+  No. Some developers offer their own home warranty or provide one through a third-party
+  home warranty program.
+
+
+  ## Taxes & Additional Costs
+
+
+  **What provincial and federal taxes do condominium buyers pay on their
+
+  units?**
+
+
+  Provincial tax:'

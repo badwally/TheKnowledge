@@ -1,0 +1,26 @@
+source_id: web-2026-03-29-4b9
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: VISOA BC strata maintenance guides — CHOA-equivalent BC strata PM resource,
+  Tier-1 BC jurisdiction source
+pinned_at: '2026-05-09T22:34:37Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Strata maintenance guides - VISOA - Vancouver Island Strata Owners Association
+  authors: []
+  url: https://visoa.bc.ca/resources/strata-maintenance-guides/
+content_excerpt: '## Maintaining strata buildings and assets
+
+
+  Every strata owner and council member should understand the benefits of a comprehensive
+  renewals program, including what work is required, when it should happen, and how
+  the strata could pay for it. Ask questions, know when to seek experts, and use your
+  depreciation report to help you develop a long-term plan. Learn more about depreciation
+  reports.
+
+
+  - For information and access to the BC Fire Code, BC Building Code, and BC Plumbing
+  Code, see BC Codes 2'

@@ -1,0 +1,28 @@
+source_id: web-2026-01-01-21d
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Source is from Alliance Association Bank (a named HOA banking partner in
+  policy inclusion criteria) and explicitly applies ICS/CDARS to HOA, CID, and PUD
+  accounts — directly evidencing money-flow architecture criterion 2 and banking-partner
+  criterion 5. The lockbox payment-rail mention and Relationship Rate specifics are
+  verifiable product claims, not generic puffery. Thin content is acknowledged; citation
+  value is the explicit HOA-banking-partner application of the ICS/CDARS infrastructure
+  documented in web-2008-01-01-0ad.
+pinned_at: '2026-05-23T16:09:59Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: HOA ICS® and CDARS®
+  authors: []
+  url: https://www.westernalliancebancorporation.com/alliance-association-bank/hoa-banking/hoa-deposit-accounts/hoa-intrafi-network-deposits
+content_excerpt: '# ICS® and CDARS®
+
+
+  1. Deposit placement through CDARS or ICS is subject to the terms, conditions, and
+  disclosures in applicable agreements. Although deposits are placed in increments
+  that do not exceed the FDIC standard maximum deposit insurance amount (“SMDIA”)
+  at any one destination bank, a depositor’s balances at the institution that places
+  deposits may exceed the SMDIA (e.g., before settlement for deposits or after settlement
+  for withdrawals) or be uninsured (if the placing institution is no'

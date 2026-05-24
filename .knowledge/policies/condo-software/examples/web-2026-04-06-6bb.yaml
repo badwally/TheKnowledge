@@ -1,0 +1,38 @@
+source_id: web-2026-04-06-6bb
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'CAO Filing Requirements is the authoritative ON regulatory source governing
+  the CAO return-filing workflow — a statutory obligation under Condo Act 1998 that
+  directly shapes the data-capture and compliance-calendar architecture of any CAM
+  software serving Ontario condominiums. The 30-day notice-of-change deadline and
+  annual return filing cadence are concrete regulatory constraints (inclusion criterion
+  4: jurisdiction-specific fiduciary and disclosure obligations for ON). The source
+  is current (April 2026), primary, and CAO-authoritative. The 0.5 score correctly
+  notes it lacks reserve-fund depth but undersells the compliance-workflow relevance
+  for software product design.'
+pinned_at: '2026-05-24T00:27:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: CAO Filing Requirements - Condominium Authority of Ontario
+  authors: []
+  url: https://www.condoauthorityontario.ca/boards-and-governance/filing-requirements/
+content_excerpt: 'Boards & Governance
+
+
+  # CAO Filing Requirements
+
+
+  Condominium corporations in Ontario are legally required to file condo returns and
+  notices of change with the CAO. Certain information that corporations file is made
+  publicly available in CAO’s Condo Registry.
+
+
+  ## What are **condo returns**?
+
+
+  Returns are forms containing basic information about an Ontario condo like when
+  it was created, its address and who is currently on its board of directors. Information
+  from returns is used to calculate annual '

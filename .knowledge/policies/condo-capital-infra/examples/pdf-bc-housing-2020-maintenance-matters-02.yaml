@@ -1,0 +1,51 @@
+source_id: pdf-bc-housing-2020-maintenance-matters-02
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: BC Housing is the authoritative provincial housing body for BC strata.
+  MM-02 explicitly references the BC SPA contingency reserve fund, making it a regulatory-context
+  source. It provides inspection intervals, service-life guidance, and failure-mode
+  checklists for roofing — directly grounds the roof component prior calibration in
+  synthesis §1 PM cadences and the six-component engine design. The filter penalized
+  absence of actuarial methodology, but authoritative provincial operational guidance
+  is a valid primary source category for the condo-capital-infra domain.
+pinned_at: '2026-05-10T22:36:39Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: Maintenance Matters - 02 - Roof Maintenance Tips for Long-Term Protection
+  authors:
+  - BC Housing
+  url: ''
+content_excerpt: 'FebNruumarbyAe v2ro 02id1i8ng Condensation
+
+  Maintaining Your Roof
+
+  Problems
+
+  MAINTENANCE
+
+  MAINTENANCE
+
+  MATTERS
+
+  M ATTERS
+
+  Building Maintenance Bulletin
+
+  Maintaining Your Roof
+
+  Many people don’t think about their roof until
+
+  a leak appears. However, like other parts of your
+
+  home or building, the roof requires ongoing
+
+  maintenance to prevent leaks. Identify minor
+
+  problems before they become major costly
+
+  problems and maintenance will maximize the
+
+  amount of time before you need to replace Steep-slope roofs hav'

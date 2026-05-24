@@ -1,0 +1,38 @@
+source_id: web-2025-11-06-4cc
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Condominium Authority of Ontario (CAO) Registry Search is the authoritative
+  seed-list source for the can-pilot Ontario wave (Brief-0011 Wave C1/C2). Finding-0017
+  §1.2 explicitly cites this registry as the free searchable database providing address,
+  voting unit count, board director names, and management company for ~12,000 ON condo
+  corporations. The ''personal purposes only'' restriction is the substantive policy
+  finding — it means the can-pilot ON wave seed-list must be built via individual
+  lookups or CAO data-sharing agreement rather than automated bulk scrape, exactly
+  analogous to the BC Assessment commercial-use restriction. The registry URL and
+  access terms are both load-bearing for tos.py adapter logic. NLM-sync gap expected:
+  this is a JS-rendered SPA; trafilatura captured minimal content. Raw committed;
+  wiki page needed for citation.'
+pinned_at: '2026-05-19T14:54:36Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo Registry Search - Condominium Authority of Ontario
+  authors: []
+  url: https://www.condoauthorityontario.ca/condo-registry-search/
+content_excerpt: '###### Condo Registry Search
+
+
+  # CAO Condo Registry
+
+
+  This is a free searchable database of condo corporations in Ontario based on those
+  corporation’s filings with the Condo Authority. Use this registry to find your condo’s
+  address for service, number of voting units, board director names, management company
+  and more. The Condo Registry can only be used for personal purposes.
+
+
+  Tell us what you think!### The Condo Calendar Tool
+
+  This tool helps condo corporations understand their important legal dea'

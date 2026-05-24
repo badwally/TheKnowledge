@@ -1,0 +1,43 @@
+source_id: web-2026-01-01-a0d
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'ReservePath pricing page is the only public pricing disclosure for any
+  reserve-study SaaS in the condo-software corpus. Key verifiable claims: (1) waitlist-only
+  / limited-early-access gate — confirms pre-commercial status; (2) three-tier pricing
+  structure at // per month — independently verifiable competitive pricing anchor;
+  (3) AI credits architecture at all tiers — confirms AI-native product strategy.
+  The fact of waitlist-only access + public pricing points is a load-bearing competitive-position
+  signal for Brief-0014. Filter exception warranted on pricing-data uniqueness grounds,
+  consistent with prior Wave 3 calibration.'
+pinned_at: '2026-05-24T04:44:58Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Pricing - ReservePath Reserve Study Software
+  authors: []
+  url: https://reservepath.com/pricing
+content_excerpt: 'Limited early access. Request your invitation to get started.
+
+
+  Perfect for independent reserve study professionals managing a single association.
+
+
+  Save $189/year with annual billing
+
+
+  Built for growing firms that manage multiple associations and need team collaboration.
+
+
+  Save $589/year with annual billing
+
+
+  The complete platform for established firms with high-volume report generation and
+  advanced features.
+
+
+  Save $1,089/year with annual billing
+
+
+  All plans include AI-powered content generation and '

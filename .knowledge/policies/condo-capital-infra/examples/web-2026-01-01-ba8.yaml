@@ -1,0 +1,42 @@
+source_id: web-2026-01-01-ba8
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: PropFusion is an explicitly named competitor in condo-capital-infra CI
+  scope. This page provides confirmed pricing tiers (Core $85/mo + $94/report; Pro
+  $395/mo + $70/report; Enterprise custom; free board-member plan) and documents the
+  enterprise feature set. Pricing model data is primary competitive-intelligence,
+  not generic marketing copy. Named-vendor CI inclusion criterion is satisfied.
+pinned_at: '2026-05-18T20:27:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Pricing | PropFusion
+  authors: []
+  url: https://www.propfusion.com/pricing
+content_excerpt: '# The study is the investment. The software comes with it.
+
+
+  Reserve study pricing depends on your community.
+
+
+  ReservePulse access is included with every engagement. No hidden fees.
+
+
+  ## Every community is different. Your quote should be too.
+
+
+  A 20-unit condo and a 500-unit HOA are different projects. Pricing depends on community
+  size, component count, service level, and location.
+
+
+  ## Your board gets the platform.
+
+
+  No extra charge.
+
+
+  - Unlimited AI scenarios in plain English
+
+  - Expense timeline (1-3'

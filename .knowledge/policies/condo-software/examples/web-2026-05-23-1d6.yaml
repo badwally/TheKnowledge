@@ -1,0 +1,51 @@
+source_id: web-2026-05-23-1d6
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: VA DPOR/CICB Chapter 50 admin code is the primary trust-accounting regulatory
+  text for VA community-association managers. Section 160 governs maintenance and
+  management of accounts — the direct fiduciary trust-account requirement for VA PMs.
+  This is primary regulatory authority for one of the 10 in-scope US-5 jurisdictions
+  (VA) and satisfies inclusion criterion 4 (jurisdiction-specific reserve-fund and
+  fiduciary regulations).
+pinned_at: '2026-05-23T18:23:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Virginia Law
+  authors: []
+  url: https://law.lis.virginia.gov/admincode/title18/agency48/chapter50/
+content_excerpt: '## Chapter 50. Common Interest Community Manager RegulationsRead
+  Chapter
+
+
+  - Read all
+
+  **Part I**.**General** - Section 10
+
+  - Definitions
+
+
+  - Read all
+
+  **Part II**.**Entry** - Section 20
+
+  - Application procedures
+
+  - Section 30
+
+  - Qualifications for licensure as a common interest community manager
+
+  - Section 35
+
+  - Qualifications for certification as a certified principal or supervisory employee
+  effective July 1, 2012
+
+  - Section 37
+
+  - Licensure and certification by reciprocity
+
+  - Section 40
+
+  - Application denia'

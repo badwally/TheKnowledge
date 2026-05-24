@@ -1,0 +1,34 @@
+source_id: web-2025-11-25-72b
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'MaintainX is explicitly cited in Finding-0034 as the best public reference
+  for CMMS work-order field schema design (work-order-list API); its schema — asset_id,
+  location, priority, category, assigned_to, estimated vs actual labor — defines the
+  structural template Longspan needs to ingest HOA work-order data. The .5B Series
+  D valuation (2025) is a load-bearing acquirer-watch signal: at this scale, MaintainX
+  is a tier-1 CMMS vendor that any condo-platform acquirer (CINC, Yardi) must either
+  integrate with or displace. Filtering this source on grounds of non-condo focus
+  misses that the condo-software domain explicitly tracks CMMS platforms as data-source
+  infrastructure for the Longspan engine, not just resident-facing products. Platform-existence
+  + work-order-API-schema rationale overrides the manufacturing-framing objection.'
+pinned_at: '2026-05-24T02:24:58Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: MaintainX Secures $150M to Lead AI in Asset Management
+  authors: []
+  url: https://www.getmaintainx.com/newsroom/maintainx-raises-150m
+content_excerpt: '# MaintainX Raises $150M to Transform Asset Management and Industrial
+  Operations with AI
+
+
+  *Latest funding round will accelerate the expansion of AI-powered maintenance and
+  asset management platform as unplanned equipment downtime continues to cost industries
+  billions annually*.
+
+
+  **SAN FRANCISCO — July 9, 2025 — **MaintainX, the leading maintenance and asset
+  management platform, announces today $150M in Series D funding. Key investors in
+  this round include Bessemer Venture Partners, Bain Capital '

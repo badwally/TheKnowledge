@@ -1,0 +1,29 @@
+source_id: web-2026-02-23-5ef
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: ASME A17.1-2025 Safety Code for Elevators — primary elevator code standard,
+  directly in scope for elevator PM cadences
+pinned_at: '2026-05-09T22:35:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'ASME A17.1-2025: Safety Code for Elevators and Escalators - ANSI Blog'
+  authors:
+  - Brad Kelechava
+  url: https://blog.ansi.org/ansi/asme-a17-1-2025-safety-code-elevator-csa-b44/
+content_excerpt: '# ASME A17.1-2025: Safety Code for Elevators and Escalators
+
+
+  The safety code for elevators and escalators, ASME A17.1-2025, or, if you’re in
+  Canada, CSA B44-2025, has been revised. ASME A17.1/CSA B44-2025: Safety Code For
+  Elevators And Escalators serves as a basis for the design, construction, installation,
+  operation, testing, inspection, maintenance, alteration, and repair of elevators,
+  dumbwaiters, escalators, moving walks, and material lifts.
+
+
+  **The Safety Code for Elevators**
+
+
+  What goes up m'

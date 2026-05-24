@@ -1,0 +1,39 @@
+source_id: web-2026-02-20-0f3
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Building Engines Prism is a P3 cross-add in Brief-0014 / Finding-0034 §9.
+  CRE building operations platform with work-order, inspection, and capital-planning
+  modules — load-bearing for condo-software integration-surface and competitive landscape
+  mapping. Null filter from condo domain ingest; cross-adding to condo-software for
+  the commercial-FM-adjacent competitor corpus.
+pinned_at: '2026-05-24T02:58:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Prism: CRE’s #1 Building Operations Platform | Building Engines'
+  authors: []
+  url: https://www.buildingengines.com/platform/
+content_excerpt: '## Meet commercial real estate’s most innovative & powerful building
+  operations platform
+
+
+  ### Robust feature set
+
+
+  From work orders to space management, only Prism has the breadth of capabilities
+  needed to elevate every aspect of building operations.
+
+
+  ### API-first infrastructure
+
+
+  Prism seamlessly connects with in-house systems. Enterprise APIs are available to
+  ensure an integrated and intuitive user experience.
+
+
+  ### Scales as your portfolio grows
+
+
+  Our secure, enterprise-class platform scales to '

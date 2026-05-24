@@ -1,0 +1,128 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: risksystems
+  topic: Applied AI and probabilistic methods for capital-asset and built-environment
+    risk assessment
+  field: Probabilistic engineering, applied machine learning, structural reliability,
+    and asset-management decision science
+  description: Methodological frontier informing next-generation reserve-study and
+    capital-asset risk engines (e.g. Longspan v2/v3). Covers Bayesian hierarchical
+    deterioration modeling, survival and state-space methods, SciML / physics-informed
+    approaches, Monte Carlo aggregation with copula dependence, POMDP / decision-theoretic
+    inspect-repair-replace optimization, and causal inference for retrospective attribution.
+    Includes reference applied-AI risk systems across adjacent capital-asset domains
+    (bridge/pavement TAMP, water-utility pipe failure, PHM, structural reliability,
+    aerospace/nuclear PRA) where the methodology transfers.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Presents probabilistic deterioration or degradation models (Markov / semi-Markov,
+  Weibull or lognormal survival, Cox proportional hazards, gamma processes) applied
+  to physical infrastructure components with parameter estimation or calibration methodology
+- Develops Bayesian hierarchical / partial-pooling models for sparse multi-site or
+  multi-jurisdiction component data, including prior elicitation, posterior inference,
+  or engineer-judgement-as-prior architectures
+- Applies physics-informed neural networks, hybrid mechanistic-statistical models,
+  or SciML to deterioration mechanisms (chloride ingress, carbonation, freeze-thaw,
+  fatigue, wind-driven rain, corrosion, moisture transport)
+- Covers Gaussian process regression, Kalman / particle / unscented filters, or other
+  state-space methods for online conditioning of asset condition on inspection, sensor,
+  or work-order data
+- Reports Monte Carlo aggregation of correlated multi-component failures using copulas,
+  vine copulas, or other dependence structures, including regime-switching or stochastic
+  cost-escalation models
+- Develops POMDP, MDP, or Bayesian decision-theoretic frameworks for inspect-repair-replace
+  optimization under uncertainty, with quantified value-of-information or maintenance
+  policy results
+- Applies causal inference (DoWhy, EconML, target trial emulation, instrumental variables,
+  difference-in-differences) or counterfactual reasoning to capital-project overrun
+  attribution or retrospective asset-decision analysis
+- "Documents reference applied-AI / probabilistic risk systems in adjacent capital-asset\
+  \ domains \u2014 bridge or pavement asset management (Madanat, Golabi, Mishalani,\
+  \ HDM-4, AASHTO TAMP), water-utility pipe-failure survival (KANEW, AWARE-P), HVAC\
+  \ / building FDD or RUL prognostics, structural reliability and life-cycle cost\
+  \ (Frangopol, Faber, Sundararajan, ASCE), aerospace / nuclear PRA (NUREG-2122, MIL-STD-1629A),\
+  \ or the PHM community canon"
+- Covers foundation-model, LLM, or tabular-foundation-model (TabPFN, SAINT) approaches
+  to structured extraction from engineering documents, decision narrative generation,
+  or counter-architectures to Bayesian deterioration models
+- Reports probabilistic LCCA methodology or moisture / load envelope methods (ASHRAE
+  160, ASCE 7) used as inputs to structural or building-envelope reliability modeling
+exclusion_criteria:
+- Condo-specific statutory text, reserve-study regulatory primary records, or HOA
+  governance content (owned by condo-capital-infra domain)
+- Condo-vendor competitive intelligence, M&A activity, acquirer mapping, or commercial-positioning
+  analysis of reserve-study or property-management firms
+- Florida, California, or Canadian condo / reserve-study regulatory primary records
+  and statutory interpretation (owned by condo-capital-infra)
+- Generic AI / ML methodology with no application to physical-asset deterioration,
+  infrastructure risk, or capital-asset decision-making
+- Pure deep-learning benchmarks (image classification, NLP leaderboards) without transferable
+  methodology to engineering risk or reliability
+- Marketing or sales material from asset-management software vendors without published
+  methodology, equations, or validation results
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Peer-reviewed journals in structural reliability, infrastructure systems, or
+      risk analysis (Structural Safety, Reliability Engineering & System Safety, ASCE
+      Journal of Infrastructure Systems, Journal of Bridge Engineering, Risk Analysis)
+    - Peer-reviewed ML / statistics venues with applied infrastructure focus (Bayesian
+      Analysis, JMLR, NeurIPS / ICML applied tracks, Annals of Applied Statistics)
+    - Conference proceedings from IABMAS, IALCCE, ESREL, PHM Society, ICASP, ASCE
+      Structures Congress
+    - Technical reports from NIST, NUREG, FHWA, TRB, or national-lab probabilistic-risk
+      programs
+    - Working papers or preprints (arXiv stat.AP / cs.LG / stat.ML) from established
+      research groups with downstream peer-reviewed outputs
+    negative_signals:
+    - Predatory open-access venues or non-peer-reviewed industry magazines presenting
+      methodology as novel
+    - Vendor white papers with proprietary methodology and no validation against held-out
+      data or reference benchmarks
+    - Conference posters or extended abstracts without an accompanying full paper
+  methodology_rigor:
+    positive_signals:
+    - Reports prior specification, posterior diagnostics (R-hat, ESS, posterior predictive
+      checks), or convergence assessment for Bayesian models
+    - Validates probabilistic predictions with calibration plots, CRPS, log-score,
+      or held-out test sets across cohorts or jurisdictions
+    - Quantifies aleatoric vs epistemic uncertainty separately and propagates to decision
+      metrics
+    - Cross-validates ML / SciML results against mechanistic baselines or held-out
+      structure-type cohorts
+    - Documents data provenance, missingness mechanisms, and selection bias when training
+      on inspection or work-order data
+    negative_signals:
+    - Point predictions reported without uncertainty intervals or with single-run
+      Monte Carlo
+    - No discussion of identifiability, prior sensitivity, or model-misspecification
+      risk
+    - Survival or deterioration models fit without consideration of censoring or competing
+      risks
+    - Causal-inference claims without articulated identifying assumptions or sensitivity
+      analysis
+  content_depth:
+    positive_signals:
+    - Presents full model specification (likelihood, priors, link functions, hyperparameters)
+      sufficient for re-implementation
+    - Discusses parameter estimates and physical / engineering interpretation, not
+      just predictive performance
+    - Compares against multiple baseline architectures or methodological alternatives
+    - Releases code, data, or reproducible Stan / PyMC / NumPyro / Pyro / R-INLA artifacts
+    - Treats engineer judgement as a first-class input (informative priors, expert
+      elicitation, hybrid human-model loops) with explicit elicitation protocol
+    negative_signals:
+    - Methodology described only at conceptual level with no equations or pseudocode
+    - Single-case-study results presented as generalizable without cohort or cross-validation
+      evidence
+    - Benchmark or leaderboard framing without analysis of where the model fails or
+      what the residuals reveal
+bootstrapped_from_description_hash: eb2e7436b7f619fc

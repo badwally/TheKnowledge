@@ -1,0 +1,27 @@
+source_id: web-2024-06-01-906
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: FM Global vs NFPA 25 comparison for water-based fire protection ITM — insurance/loss-control
+  PM source, directly in scope
+pinned_at: '2026-05-09T22:35:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: NULL - Risk Logic
+  authors:
+  - Risk Logic
+  url: https://risklogic.com/comparing-nfpa-25-vs-fm-global-property-loss-prevention-data-sheet-2-81-requirements-for-inspection-testing-and-maintenance-of-water-based-fire-protection-systems/
+content_excerpt: '# Comparing NFPA 25 vs FM Global Property Loss Prevention Data Sheet
+  2-81 Requirements for Inspection, Testing, and Maintenance of Water-Based Fire Protection
+  Systems
+
+
+  NFPA 25, Standard for the Inspection, Testing, and Maintenance of Water-Based Fire
+  Protection Systems is the most widely used standard utilized to help ensure that
+  sprinkler systems are properly...
+
+
+  NFPA 25, *Standard for the Inspection, Testing, and Maintenance of Water-Based Fire
+  Protection Systems* is the most widely used stand'

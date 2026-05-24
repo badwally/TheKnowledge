@@ -1,0 +1,27 @@
+source_id: web-2011-08-18-1e7
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: NL Condominium Regulations NLR 80/11; primary statutory regulation for
+  NL reserve-fund-study mandate (10-yr cycle, 30-yr horizon, 10+ units). In-scope
+  Atlantic Canada jurisdiction per ADR-0004 Canada-first strategy.
+pinned_at: '2026-05-11T23:56:08Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: https://www.assembly.nl.ca/legislation/sr/annualregs/2011/nr110080.htm
+  authors: []
+  url: https://www.assembly.nl.ca/legislation/sr/annualregs/2011/nr110080.htm
+content_excerpt: '|
+
+  Copyright © 2011: Queen''s Printer,
+
+  Newfoundland and Labrador
+
+  Condominium Act, 2009(O.C. 2011-233)(Filed September 13, 2011) Under the authority
+  of section 88 of the Dated at Robert Thompson REGULATIONS Analysis 1. Short title
+  2. Definition 3. Persons who may prepare reserve fund study 4. Contents of a reserve
+  fund study 5. Method of conducting a reserve fund study 6. Copy of study to owners
+  7. Liability insurance 8. Conflict of interest 9. CNLR 955/96 Rep. 10. Commencement
+  Short title Definiti'

@@ -1,0 +1,37 @@
+source_id: web-2026-01-01-2fd
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: AppFolio HOA Financials page explicitly names five HOA-banking integration
+  partners (Alliance Association Bank, Pacific Premier Bank, First Citizens Bank,
+  SmartStreet / Banc of California, CheckAlt) plus payment-rail specifics (ACH, lockbox,
+  eCheck, BillPay, Positive Pay, auto-reconciliation). These named banking relationships
+  are the primary load-bearing data for Finding-0027 §4 CAM-platform money-flow segment-ownership
+  table. The source is vendor-authored but the named bank relationships are independently
+  verifiable and constitute direct primary evidence of the US HOA banking-rail architecture.
+  Per Dispatch A/B pattern on sources with concrete integration-surface specificity,
+  override at review band.
+pinned_at: '2026-05-23T17:04:41Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Property Management Accounting & Reporting Software | AppFolio
+  authors: []
+  url: https://www.appfolio.com/markets/hoa/financials
+content_excerpt: 'AppFolio is built on a robust accounting software foundation to
+  ensure that you only need one solution for all of your community association management
+  needs.
+
+
+  Keep boards informed about the financial health of their association from anywhere.
+
+
+  Automate and streamline your processes with robust bank integrations.
+
+
+  Move faster with online board approvals, automated accounts payables, and more.
+
+
+  AppFolio has partnered with major banks, such as Alliance Association Bank, Pacific
+  Premier Bank, First'

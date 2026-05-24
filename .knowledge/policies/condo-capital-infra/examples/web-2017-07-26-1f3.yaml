@@ -1,0 +1,32 @@
+source_id: web-2017-07-26-1f3
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Service New Brunswick condominium FAQ — operational/regulator-side content
+  for NB jurisdiction expanded into scope per ADR-0004 Canada-first sequence reorder.
+  Anchors NB section of Brief-0006 / Atlantic Canada inventory.
+pinned_at: '2026-05-10T23:07:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Frequently Asked Questions
+  authors:
+  - Government; Canada
+  url: https://www2.snb.ca/content/snb/en/sites/condominium/faq.html
+content_excerpt: 'The *Condominium Property Act* sets out the rules for operating
+  and managing Condominiums in New Brunswick. The current Act, from 1969, will be
+  replaced by a more modern Act on January 1, 2010. The new Act contains a framework
+  created to protect consumers during the approval, purchase and sale process for
+  Condominiums. It will be administered by the Director of Condominiums.
+
+
+
+  # Frequently Asked Questions
+
+
+  - Condominium Property Act
+
+  - Condominiums and their Ownership
+
+  - Condominiums and their Gov'

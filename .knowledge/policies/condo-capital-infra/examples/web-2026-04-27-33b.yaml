@@ -1,0 +1,29 @@
+source_id: web-2026-04-27-33b
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'PropFusion law-guide page provides vendor-curated authoritative interpretation
+  of FL HB 913 (2025) SIRS amendments: consolidated 8-category component list with
+  $25K threshold, extended deadlines, DBPR reporting tightening. This is regulatory-substance
+  content from a named CI vendor whose jurisdiction library is itself a competitive-intelligence
+  data point (multi-state coverage FL/CA/TX/GA/MI/MD/NJ, no Canadian content). Satisfies
+  regulatory-substance inclusion criterion and named-vendor CI criterion simultaneously.'
+pinned_at: '2026-05-18T20:33:25Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Florida Structural Integrity Reserve Study (SIRS) 2026 | PropFusion
+  authors: []
+  url: https://www.propfusion.com/law-guide/florida-sirs-requirements
+content_excerpt: '# Florida Structural Integrity Reserve Study (SIRS) 2026
+
+
+  Florida''s structural integrity reserve study (SIRS) law requires condominium and
+  cooperative associations with buildings three or more habitable stories to commission
+  a reserve study covering eight critical structural components. The mandate stems
+  from Florida Statute 718.112(2)(g), as amended by HB 913 in 2025, and works alongside
+  the milestone inspection program under Section 553.899.
+
+
+  This guide covers who must comply with Florida SIRS'

@@ -1,0 +1,22 @@
+source_id: web-2018-07-01-1cf
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Primary FL statute text — Fla. Stat. §718.112 (2024) full bylaws section
+  including (2)(g) maintenance plan mandate, (2)(f) reserve funding requirements,
+  and inspection subsections. Directly in scope for condo domain operational-PM layer.
+pinned_at: '2026-05-09T23:33:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Florida Senate
+  authors: []
+  url: https://www.flsenate.gov/Laws/Statutes/2024/718.112
+content_excerpt: (2) REQUIRED PROVISIONS.—The bylaws shall provide for the following
+  and, if they do not do so, shall be deemed to include the following:(a) Administration.—1.
+  The form of administration of the association shall be described indicating the
+  title of the officers and board of administration and specifying the powers, duties,
+  manner of selection and removal, and compensation, if any, of officers and boards.
+  In the absence of such a provision, the board of administration shall be composed
+  of five mem

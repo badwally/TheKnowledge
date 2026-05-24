@@ -1,0 +1,38 @@
+source_id: web-2026-01-01-3bf
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: CCI-National is the primary Canadian condo industry body; this article
+  is authoritative cross-jurisdictional analysis of reserve fund investment vehicle
+  rules (ON vs BC vs AB), directly grounding Finding-0027 §3. Primary regulatory-intelligence
+  source for condo-software domain.
+pinned_at: '2026-05-23T16:33:05Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Expanding Reserve Fund Investment Options
+  authors: []
+  url: https://cci.ca/resource-centre/view/234
+content_excerpt: '##### Reserve Funds
+
+
+  **October 19, 2017**
+
+  Published by Toronto and Area Chapter
+
+  -
+
+  By Tarek El Refaie
+
+
+  ## Expanding Reserve Fund Investment Options
+
+
+  From the Fall 2017 issue of the CCI Toronto Condovoice Magazine.
+
+
+  As the skylines of most major cities in Ontario will attest, this well-documented
+  period of low-interest rates has contributed to the proliferation of new housing
+  developments across Ontario. At last check, there were more than 9,000 condominium
+  corporations in Ontario, representing so'

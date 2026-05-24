@@ -1,0 +1,39 @@
+source_id: web-2026-01-01-488
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Vendor-watch CI target: Solume core reserve-study product page at community.solume.com/reserve-study.
+  Primary-source feature claims from the vendor''s own marketing surface — the canonical
+  product positioning for the reserve module, including integration with budget and
+  vendor data and the AI assistant framing. Filter penalizes marketing content, but
+  primary-source vendor product pages are the standard evidence tier for competitor
+  feature profiles in vendor-watch ingests (consistent with SmartProperty and PropFusion
+  vendor-watch override precedent in this domain).'
+pinned_at: '2026-05-18T20:55:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reserve Study | Solume | Smart Community Management
+  authors: []
+  url: https://www.community.solume.com/reserve-study
+content_excerpt: 'Association board members & community managers
+
+
+  # Manage your reserve study easily
+
+
+  Prevent dreaded special assessments by automating your reserve study management
+  with AI.
+
+
+  Association board members & community managers
+
+
+  Prevent dreaded special assessments by automating your reserve study management
+  with AI.
+
+
+  Reserve studies are financial plans that identify future repair costs for your community''s
+  assets, ensuring compliance. HOA special assessments are unexpected fees added to
+  your regular du'

@@ -1,0 +1,38 @@
+source_id: web-2025-10-20-a96
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'BC-specific strata-corporation tax filing guide from VISOA (Vancouver
+  Island Strata Owners Association), covering the T2 mandatory annual filing obligation
+  (ITA §150), T1044 NPO Information Return thresholds ($200K assets / $10K interest+royalties),
+  §149(1)(l) NPO status for residential stratas, GST non-applicability to strata fees,
+  CRA business-number registration. Directly supplies the T1044/T2 filing mechanics
+  absent from the existing IT-304R2 and 2014 CRA TI sources. BC jurisdiction load-bearing
+  for the condo-software domain''s Canadian regulatory coverage. Quality: statute-cited,
+  updated October 2025.'
+pinned_at: '2026-05-23T23:27:48Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Filing income tax returns - VISOA - Vancouver Island Strata Owners Association
+  authors: []
+  url: https://visoa.bc.ca/resources/filing-income-tax-returns/
+content_excerpt: '## Quick links
+
+
+  - Canada Revenue Agency: About the T2 Corporation Income Tax Return
+
+  - Canada Revenue Agency: Income Tax Guide to the T1044 Non-Profit Organization (NPO)
+  Information Return
+
+  - BC Strata Housing: Preparing a financial statement
+
+  - BC Strata Housing: Financial best practices for stratas
+
+
+  ## Do strata corporations have to pay tax?
+
+
+  Most residential strata corporations are essentially non-taxable corporations. Generally
+  stratas qualify as non-profit organizations (NPOs) under paragraph '

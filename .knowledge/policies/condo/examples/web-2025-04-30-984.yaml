@@ -1,0 +1,28 @@
+source_id: web-2025-04-30-984
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: FL HB 913 (2025) bill summary page from flsenate.gov. Enacted legislation
+  amending Fla. Stat. Chapter 718 — mandatory structural inspections, SIRS reserve
+  requirements, mandatory online accounts for associations. Primary legislative source
+  for HB 913 implementation scope. In-scope for condo domain.
+pinned_at: '2026-05-09T23:44:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Florida Senate
+  authors: []
+  url: https://www.flsenate.gov/Session/Bill/2025/913
+content_excerpt: '## CS/CS/HB 913: Condominium and Cooperative Associations
+
+
+  GENERAL BILL by Commerce Committee; Housing, Agriculture & Tourism Subcommittee;
+  Lopez, V.; (CO-INTRODUCERS) Barnaby; Bartleman; Casello; Chaney; Daniels; Gossett-Seidman;
+  LaMarca; Mooney; Porras; Rizo; Robinson, F.; Rosenwald; Stark; Trabulsy; Valdés;
+  Woodson
+
+
+  Condominium and Cooperative Associations; Prohibits a person whose community association
+  manager license is revoked from having an indirect or direct ownership interest
+  in, or bei'

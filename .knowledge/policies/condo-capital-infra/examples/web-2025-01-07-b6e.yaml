@@ -1,0 +1,29 @@
+source_id: web-2025-01-07-b6e
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Vendor-watch CI target: Solume multi-state reserve-study state-requirements
+  blog page. Key CI is geographic footprint via negative evidence — 32-minute read
+  covering US state-by-state requirements (CA, FL, TX, etc.) with zero Canadian content
+  (no BC SPA, no ON Condo Act, no NS Act, no depreciation-report terminology). Confirms
+  Solume is a US-only platform with no current Canada-market positioning. This geographic
+  signal is material to the competitive-landscape assessment under ADR-0004 Canada-first
+  sequence. Filter correctly notes absence of probabilistic/methodology depth, but
+  the geographic footprint boundary is the CI target.'
+pinned_at: '2026-05-18T20:55:57Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reserve Study Requirements by State
+  authors: []
+  url: https://www.community.solume.com/blog/reserv-study-state-requirements
+content_excerpt: 'Managing a homeowners association (HOA) or Condo Association is
+  no small task. From budgeting to maintenance, the responsibilities can be overwhelming.
+  Yet, one essential area often overlooked is the reserve study—a crucial tool for
+  ensuring your HOA’s financial health. But did you know that laws governing reserve
+  studies vary by state?
+
+
+  If you’re a Condo board member or part of a self-managed HOA, understanding these
+  requirements isn’t just important—it’s mandatory. Let’s break it down for you,'

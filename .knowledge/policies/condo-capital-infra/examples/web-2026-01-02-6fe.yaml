@@ -1,0 +1,48 @@
+source_id: web-2026-01-02-6fe
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'BC Assessment property-information-trends page contains an explicit commercial-use
+  prohibition notice directly cited in Finding-0017 §7B: ''Any commercial use of this
+  data in whole or in part, directly or indirectly, including the use of such data
+  for business, residential address or telephone directory services or any solicitation
+  service is specifically prohibited.'' This is a distinct prohibition notice from
+  the FAQ page (web-2026-05-19-00f) — it appears on the data-product inventory page
+  that confirms bulk Data Advice commercial licensing as the only defensible route
+  to province-wide BC strata covariates. The can-pilot Vancouver wave tos.py adapter
+  must encode both prohibition notices. Finding-0017 §7B explicitly identifies this
+  URL as the data-product inventory confirming the bulk licensing route. Filter correction
+  warranted: the relevance is narrow but load-bearing for the pipeline access-rights
+  decision.'
+pinned_at: '2026-05-19T14:49:03Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Property information & trends
+  authors: []
+  url: https://info.bcassessment.ca/property-information-trends
+content_excerpt: 'Property assessment information is announced on an annual basis.
+  Please note that this information was released on** January 2, 2026 **and is based
+  on market values as of **July 1, 2025. **
+
+
+  **View the 2026 BC Assessment News Releases.**
+
+  You can also view the regional breakdown of 2026 highlights for:
+
+
+
+  Lower Mainland, Vancouver Island, Southern Interior, North Central.
+
+
+
+  ### British Columbia - Highlights
+
+
+
+  Number of properties assessed2,233,648
+
+
+
+  Total value of real estate assessed$2.75 trillio'

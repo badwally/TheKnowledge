@@ -1,0 +1,33 @@
+source_id: web-2024-06-27-ed9
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Primary statutory text for NB Condominium Property Act C-16.05; in-scope
+  Atlantic Canada jurisdiction per ADR-0004 Canada-first strategy. Policy exclusion_criteria
+  jurisdiction list updated 2026-05-11 to include NS/NB/PEI/NL.
+pinned_at: '2026-05-11T23:36:23Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: '- Condominium Property Act'
+  authors: []
+  url: https://laws.gnb.ca/en/document/cs/C-16.05
+content_excerpt: '1(1)The following definitions apply in this Act.
+
+
+  â€śboardâ€ť means the board of directors of a corporation.(conseil)
+
+
+  â€śbuildingsâ€ť means the buildings included in a condominium property.(bĂ˘timents)
+
+
+  â€śby-lawâ€ť means a by-law of a corporation.(rĂ¨glement administratif)
+
+
+  â€śclaimâ€ť includes a right, title, interest, encumbrance or demand of any kind
+  affecting land, but does not include the interest of an owner in the ownerâ€™s unit
+  and common interest.(crĂ©ance)
+
+
+  â€ścommon elementsâ€ť mean'

@@ -1,0 +1,43 @@
+source_id: web-2026-04-26-bf8
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Filter correctly flagged thin vendor-marketing content, but missed the
+  structural significance: FirstOntario''s Condominium Services page is the only named
+  Canadian condo-specific banking product surfaced across the entire Wave 1.4 research
+  sweep (Big 5, EQ Bank, Neo Financial, Wealthsimple, credit unions). Its existence
+  — a 10-year reserve-fund investment planning tool from a Canadian credit union explicitly
+  branded for condos — is itself the load-bearing fact for Finding-0030 §1 (Canadian
+  banking gap) and §5 (FirstOntario profile). The filter criterion ''vendor marketing
+  copy with no independently verifiable claims'' applies to sources claiming unmeasurable
+  competitive advantages; here the independently verifiable claim is product existence
+  in a named jurisdiction (Ontario) with a named service type (reserve fund investment
+  planning, 10-year horizon, custom rates). This closes the question of whether any
+  Canadian institution offers a condo-specialist product.'
+pinned_at: '2026-05-23T22:24:41Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condominium services | FirstOntario Credit Union
+  authors: []
+  url: https://www.firstontario.com/business/condominium-services
+content_excerpt: '# Condominium services
+
+
+  ### Elevate your condo community’s financial well-being with FirstOntario, your
+  trusted partner in achieving lasting prosperity.
+
+
+  ## Our comprehensive condo financial services
+
+
+  ### We’ve combined our expertise with insights from industry leaders, property managers,
+  boards, and residents to create a program tailored to your needs, offering a full
+  range of solutions to support your condo community’s financial health.
+
+
+  #### Reserve Fund Investment Planning Tool
+
+
+  Secure the f'

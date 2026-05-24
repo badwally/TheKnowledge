@@ -1,0 +1,31 @@
+source_id: web-2024-04-01-048
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Primary CDIC regulatory source grounding per-beneficiary trust coverage
+  mechanics (Finding-0029 §9.1). Grounds the condo reserve fund deposit insurance
+  analysis: the K/beneficiary limit is the load-bearing claim in the Canada-5 investment
+  vehicle comparison. Source is authoritative and necessary even without explicit
+  condo mention — the condo application is derived from the trust mechanics described
+  here.'
+pinned_at: '2026-05-23T20:19:48Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Deposits held in trust
+  authors: []
+  url: https://www.cdic.ca/depositors/whats-covered/deposits-held-in-trust/
+content_excerpt: '# Deposits held in trust
+
+
+  We protect eligible deposits held in trust separately from other deposits held by
+  the trustee or a beneficiary in their own name at the same CDIC member institution,
+  provided:
+
+
+  - There is a valid trust (established with or without formal documentation) as determined
+  under the laws of the province or territory in which the trust is established;
+
+  - Required information about the trustee and the beneficiaries is disclosed on the
+  records of the CDIC member institution prior '

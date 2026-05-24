@@ -1,0 +1,38 @@
+source_id: web-2025-07-03-d90
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: USPTO patent disambiguation source — US12462305B2 assigned to Trete Inc,
+  not REcollab Technologies; required to anchor the negative-evidence note on REcollab's
+  NRC patent claim in condo-capital-infra vendor watch
+pinned_at: '2026-05-18T22:32:51Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Data retrieval and validation for asset onboarding and deriving asset characteristics
+  authors: []
+  url: https://patents.google.com/patent/US12462305B2/en
+content_excerpt: '# US12462305B2 - Data retrieval and validation for asset onboarding
+  and deriving asset characteristics - Google Patents
+
+
+  Data retrieval and validation for asset onboarding and deriving asset characteristics##
+  Info
+
+
+  - Publication number
+
+  - US12462305B2 US12462305B2 US19/259,014 US202519259014A US12462305B2 US 12462305
+  B2 US12462305 B2 US 12462305B2 US 202519259014 A US202519259014 A US 202519259014A
+  US 12462305 B2 US12462305 B2 US 12462305B2
+
+  - Authority
+
+  - US
+
+  - United States
+
+  - Prior art keywords
+
+  - '

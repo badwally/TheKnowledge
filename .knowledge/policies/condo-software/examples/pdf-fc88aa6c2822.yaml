@@ -1,0 +1,40 @@
+source_id: pdf-fc88aa6c2822
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: CAI is explicitly named in the policy's positive quality signals ('CAI
+  publications, Community Associations Institute white papers'). Source covers all
+  5 US jurisdictions in policy scope (FL, CA, NY, NJ, VA) with current (Sept 2024)
+  statutory citations, notes post-Surfside changes to FL/MD/TN law, and distinguishes
+  study-vs-funding requirements by state — matching inclusion criterion 4 precisely.
+  The Canadian gap is real but not disqualifying; the policy covers 10 jurisdictions
+  including both US and Canadian, and this source covers its 5 US jurisdictions authoritatively.
+  Title is generic ('cai-reserve-fund'); recommend tagging entity as CAI-Summary-State-Reserve-Fund-Laws-Sept24.
+pinned_at: '2026-05-23T16:14:13Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: cai-reserve-fund
+  authors:
+  - Phoebe Neseth
+  url: ''
+content_excerpt: 'Summary of State Reserve Fund Laws
+
+  (As of September 2024)
+
+  Many states have enacted legislation dealing with community association reserve
+  and operating funds to
+
+  protect owners from fiscal problems and financial hardship. More states may enact
+  similar legislation as
+
+  community associations continue to gain popularity. The following is a summary of
+  each state reserve
+
+  fund law.
+
+  Reserve studies or a reserve schedule for condominium associations are required
+  in the following 12
+
+  states: California, Col'

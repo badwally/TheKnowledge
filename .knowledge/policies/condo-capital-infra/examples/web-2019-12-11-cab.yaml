@@ -1,0 +1,31 @@
+source_id: web-2019-12-11-cab
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Primary source: BC founding press release December 11 2019. Jamie Hankinson
+  founding CEO quote. Eli Technologies Corp original legal entity name. 500+ realtors
+  at launch across 75+ Metro Vancouver / Victoria brokerages. Establishes founding
+  date and original corporate identity. Vendor intelligence — consistent with filter-correct
+  precedent applied today.'
+pinned_at: '2026-05-19T01:37:07Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'PRESS RELEASE: Helping to Better Inform Condo Buyers, New Real Estate Platform
+    Eli Report Launches in B.C. - Eli Report'
+  authors:
+  - Eli Admin
+  url: https://elireport.com/resource-center/press-release-helping-to-better-inform-condo-buyers/
+content_excerpt: '*World’s first AI-powered condo document review platform uses machine
+  learning to extract key information from strata documentation *
+
+
+  **FOR IMMEDIATE RELEASE**
+
+
+  **VANCOUVER, BC, December 11 th, 2019** – Vancouver-based Eli Technologies announced
+  today the launch of Eli Report, an artificial intelligence platform that assists
+  real estate professionals in reviewing and uncovering potential issues contained
+  in condo and strata documents. The platform, which uses machine-learning to extract
+  critica'

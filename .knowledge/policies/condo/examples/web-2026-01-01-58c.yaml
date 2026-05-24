@@ -1,0 +1,26 @@
+source_id: web-2026-01-01-58c
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Chicago FacadeOrdinance.com — Chicago facade ordinance regulatory PM driver,
+  Tier-2 Illinois jurisdiction source
+pinned_at: '2026-05-09T22:34:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Chicago | FacadeOrdinance.com
+  authors: []
+  url: https://www.facadeordinance.com/chicago
+content_excerpt: '# Chicago
+
+
+  #### Ordinance Administration
+
+
+  The Department of Buildings (DOB) administers the facade ordinance for the City
+  of Chicago. The DOB''s Exterior Wall Program office is located at 2045 West Washington
+  Boulevard, Chicago, Illinois 60612. The website for the DOB’s Exterior Wall Program
+  includes downloadable forms that are required to be submitted by the licensed professional
+  completing the inspection. Ordinance requirements are outlined in the "Rules for
+  the Maintenance of High-Rise Exterio'

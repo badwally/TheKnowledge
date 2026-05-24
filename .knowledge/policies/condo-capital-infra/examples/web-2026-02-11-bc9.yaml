@@ -1,0 +1,31 @@
+source_id: web-2026-02-11-bc9
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Vendor-watch CI source: primary datestamped PR Newswire announcement for
+  Facilio Atom launch (Feb 11 2026). This is the canonical provenance anchor for the
+  launch date of Facilio''s agentic AI suite — a strategic event that advances Facilio
+  toward Tier 3 boundary. The filter''s 0.55 score correctly notes absence of reserve-study
+  language in the press release itself; however, the parent dispatch explicitly designates
+  this as the datestamped primary source for the Atom launch event, consistent with
+  SmartProperty, PropFusion, Solume filter-correct precedents in this domain where
+  vendor AI expansion is the strategic signal.'
+pinned_at: '2026-05-18T21:51:45Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Facilio Launches Autonomous AI Agents to Automate Manual Back-Office Work
+    in Facilities Management
+  authors:
+  - Facilio Inc
+  url: https://www.prnewswire.com/news-releases/facilio-launches-autonomous-ai-agents-to-automate-manual-back-office-work-in-facilities-management-302685168.html
+content_excerpt: '*Now live in early enterprise deployments, the Autonomous AI Agents
+  run service, finance, and operations, cutting manual work by up to 40%*
+
+
+  NEW YORK, Feb. 11, 2026 /PRNewswire/ -- **Facilio Inc.**, a leading facilities operations
+  and maintenance platform for large-scale enterprise portfolios, today announced
+  the launch of its **Autonomous AI Agent Suite** **–** ** Facilio Atom**, bringing
+  fully autonomous execution to some of the most manual, back-office workflows in
+  facilities management. The '

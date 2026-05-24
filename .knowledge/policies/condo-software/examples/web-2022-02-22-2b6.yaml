@@ -1,0 +1,40 @@
+source_id: web-2022-02-22-2b6
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Facilio Series B is a P3 explicit target in Brief-0014 / Finding-0034 §9.
+  The M raise from Dragoneer + Brookfield (Feb 2022) establishes Facilio's funding
+  scale and investor-pedigree baseline for competitive landscape positioning — load-bearing
+  for condo-software acquirer/competitor mapping regardless of CAM-specific customer
+  language. Facilio's EAM/CMMS product pages are already in wiki at 1.0 (web-2015-01-01-599);
+  the Series B anchors the financial scale of the competitor being tracked. Generic
+  press-release exclusion criterion yields to explicit named-source designation in
+  Finding-0034 §9.
+pinned_at: '2026-05-24T02:51:15Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Facilio Raises $35m SeriesB to Transform Property Operations with AI
+  authors: []
+  url: https://facilio.com/newsroom/series-b/
+content_excerpt: 'New York, USA 22nd February 2022
+
+  Facilio, the property operations software platform leader,
+
+  today announced it has raised $35 million inSeries B
+
+  financing led by Dragoneer Investment Group with participation
+
+  from Brookfield Growth and existing investors Accel India and
+
+  Tiger Global Management.
+
+
+  Founded in 2017, Facilio offers a unified software platform
+
+  that leverages an AI-led predictive engine to help real estate
+
+  portfolios digitize processes and optimize their property
+
+  operations. Replacing t'

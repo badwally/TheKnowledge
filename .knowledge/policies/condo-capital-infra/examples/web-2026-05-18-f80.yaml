@@ -1,0 +1,25 @@
+source_id: web-2026-05-18-f80
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: SaaSWorthy is an independent third-party aggregator providing evidence-2
+  corroboration of PropFusion pricing tiers and — critically — the documented absence
+  of a public API as of October 2025, sourced independently of PropFusion's own marketing.
+  The no-API finding is a specific, verifiable competitive-intelligence data point
+  (no CMMS or accounting integrations) that the primary product pages do not state
+  as explicitly. Named-vendor CI inclusion criterion satisfied via independent corroboration.
+pinned_at: '2026-05-18T20:33:29Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: PropFusion
+  authors: []
+  url: https://www.saasworthy.com/product/propfusion
+content_excerpt: PropFusion is transforming reserve study management with a smarter,
+  all-in-one platform designed for Board Members, Association Managers, and Reserve
+  Professionals. Gone are the days of juggling spreadsheets and endless paperwork
+  PropFusion centralizes everything they need for seamless financial planning, compliance
+  tracking, and asset management. With intuitive reserve study tools, it simplifies
+  multi-association management, allowing users to efficiently oversee assets across
+  multiple propertie

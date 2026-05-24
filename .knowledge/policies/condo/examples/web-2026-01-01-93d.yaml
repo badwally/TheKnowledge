@@ -1,0 +1,28 @@
+source_id: web-2026-01-01-93d
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: ACMO Ontario electrical preventative maintenance article for condominium
+  properties — Tier-1 Ontario jurisdiction source
+pinned_at: '2026-05-09T22:34:10Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Electrical Preventative Maintenance
+  authors: []
+  url: https://acmo.org/publications/cm-magazine/article/430
+content_excerpt: '###### From the Winter 2022 Issue
+
+
+  ## Electrical Preventative Maintenance
+
+
+  ##### Your Condo: Maintenance
+
+
+  Building owners and property managers should be aware of the importance of preventative
+  maintenance procedures for electrical distribution and emergency generators and
+  the responsibility to protect their longevity, safety, and critical infrastructure
+  to avoid unexpected equipment failure. Professional engineers can provide the recommended
+  measures to ensure your electrical distribution and e'

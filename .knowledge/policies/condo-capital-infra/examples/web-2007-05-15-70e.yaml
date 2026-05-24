@@ -1,0 +1,30 @@
+source_id: web-2007-05-15-70e
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Yardi-Brookfield Residential Services Voyager adoption press release; load-bearing
+  for Yardi-as-acquirer thesis via Brookfield Canadian channel per gtm/exit-thesis-acquirer-mapping.md
+  §2.11 + Brief-0006 §4. M&A competitive-intelligence inclusion criterion per updated
+  condo-capital-infra-v1 policy.
+pinned_at: '2026-05-12T02:38:09Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Brookfield Residential Services, Ltd., Canada's Largest Condominium Management
+    Company, Selects Yardi Voyager™
+  authors:
+  - Razvanmacovei
+  url: https://www.yardi.com/news/press-releases/brookfield-residential-services-ltd-canadas-largest-condominium-management-company-selects-yardi-voyager/
+content_excerpt: 'May 15, 2007
+
+
+  # Brookfield Residential Services, Ltd., Canada’s Largest Condominium Management
+  Company, Selects Yardi Voyager™
+
+
+  SANTA BARBARA, CA, May 15, 2007, — Yardi Systems, the global leader in asset and
+  property management software, is pleased to announce that Brookfield Residential
+  Services, Ltd., Canada’s largest condominium management firm, has selected Yardi
+  Voyager and Yardi Portal™ with Application Service Provider (ASP) Hosting Service.
+  Brookfield manages more than 50,000 condominiu'

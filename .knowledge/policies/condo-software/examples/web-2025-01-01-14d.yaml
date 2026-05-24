@@ -1,0 +1,52 @@
+source_id: web-2025-01-01-14d
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'SmartProperty.com is the canonical homepage of the primary reserve-study
+  software competitor (Living Reserve Study product, integrated with Vantaca/AppFolio/CINC).
+  Finding-0033 Finding A grounds the capital-planning integration gap on the SmartProperty-CINC
+  partnership. This source is load-bearing for condo-software competitive intelligence:
+  it describes the Living Reserve Study product (real-time reserve tracking, component
+  inventory, capital planning) directly competing with the Longspan engine. No prior
+  filter run existed as source predates condo-software domain bootstrapping.'
+pinned_at: '2026-05-24T01:16:31Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reserve Study Software for HOAs & Condo Associations | SmartProperty
+  authors:
+  - SmartProperty Team
+  url: https://www.smartproperty.com/
+content_excerpt: 'Trusted by Industry Leaders
+
+
+  ## Reimagine what a reserve study can do.
+
+
+  Stay informed. Stay prepared. And never get caught off-guard.
+
+
+  ### Asset Lifecyle Management
+
+
+  Save money and extend the life of assets by streamline the tracking of maintenence
+  tasks and projects.
+
+
+  ### Integrated Financials
+
+
+  Drive better outcomes by seamlessly syncing third-party information.
+
+
+  ### Cash Flow Insights
+
+
+  Gain deeper clarity into your monthly cash position.
+
+
+  ### Future-Ready Financials
+
+
+  Design a roadmap for more '

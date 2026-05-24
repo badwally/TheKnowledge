@@ -1,0 +1,42 @@
+source_id: web-2015-01-01-3e6
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Facilio ALM (Asset Lifecycle Management) is a P3 cross-add in Brief-0014
+  / Finding-0034 §9. Prior 0.3 score calibrated against condo-capital-infra thin-marketing
+  exclusion; in condo-software scope the ALM product surface (replacement scheduling,
+  lifecycle cost tracking) is load-bearing for the reserve-forecasting competitor
+  mapping alongside Facilio EAM (web-2015-01-01-599 at 1.0). Named vendor; explicitly
+  designated cross-add in Finding-0034 §9.
+pinned_at: '2026-05-24T02:58:17Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Asset Lifecycle Management | Facilio
+  authors: []
+  url: https://facilio.com/solutions/asset-lifecycle-management/
+content_excerpt: '###### ASSET LIFECYCLE MANAGEMENT
+
+
+  # Get more out of every asset at every stage of its lifecycle
+
+
+  Gain a portfolio-wide visualisation of your 360* asset lifecycle. Simplify assessment
+  and digitize compliance to see improved asset value. Optimize the performance of
+  assets and energy with data-driven insights on asset health and energy consumption
+
+
+  ###### ASSET VISUALIZATION
+
+
+  ###### PERFORMANCE OPTIMIZATION
+
+
+  ###### RENEWALS, AUDITS AND COMPLIANCE
+
+
+  ### Manage the complete asset lifecycle
+
+
+  - ¯Connec'

@@ -1,0 +1,74 @@
+source_id: web-2026-05-08-cf8
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Buildium pricing page documents the tier structure (Essential/Growth/Premium)
+  and feature-to-tier mapping for a named incumbent CAM vendor (RealPage subsidiary,
+  2M+ units under management). Finding-0033 requires competitive pricing benchmarks
+  for the CAM-platform landscape; this is the canonical pricing reference for Buildium,
+  the dominant SMB-tier PM platform. The feature-tier mapping (Lumina AI tiers, Marketplace
+  Integrations, Open API availability) establishes the per-unit pricing architecture
+  for competitive gap analysis against Vantaca and Condo Control. The filter''s objection
+  that it lacks HOA-specific depth is correct but insufficient to reject: pricing-tier
+  structure of named incumbents is in-scope for competitive-landscape characterization
+  regardless of whether the vendor leads with HOA messaging.'
+pinned_at: '2026-05-24T01:12:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Pricing - Buildium
+  authors: []
+  url: https://www.buildium.com/pricing/
+content_excerpt: 'Essential
+
+
+  Growth
+
+
+  Premium
+
+
+  | Essential | Growth | Premium | |
+
+  |---|---|---|---|
+
+  |
+
+  Leasing
+
+  |
+
+  |||
+
+  | Rental Listing Syndication | |||
+
+  | Prospect Management | |||
+
+  | Applicant Management | |||
+
+  | EFT Residential Refunds | |||
+
+  | Marketing Website | |||
+
+  | Tenant Screening | |||
+
+  | Tenant Application Grouping | |||
+
+  | Rental History Verification | |||
+
+  | eSignature | |||
+
+  |
+
+  Resident Experience
+
+  |
+
+  |||
+
+  | Resident Portal | |||
+
+  | Buildium Moving Services | |||
+
+  | Payment Alternatives (Obligo, Livble, Retail Cash)'

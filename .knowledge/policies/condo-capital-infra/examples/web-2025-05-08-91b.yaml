@@ -1,0 +1,29 @@
+source_id: web-2025-05-08-91b
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: FirstService Residential acquires Edmonton's Core Real Estate Group (15K+
+  units, pushing FSV Canadian portfolio past 250K units); load-bearing for Canadian-expansion
+  signal in gtm/exit-thesis-acquirer-mapping.md §1 / §2.8. M&A competitive-intelligence
+  inclusion criterion (condo-capital-infra-v1) applies — named backup acquirer target.
+pinned_at: '2026-05-11T23:03:11Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: FirstService Residential Acquires Core Real Estate Group
+  authors:
+  - CNW Group
+  url: https://finance.yahoo.com/news/firstservice-residential-acquires-core-real-160000584.html
+content_excerpt: '*Acquisition expands FirstService Residential''s footprint in Edmonton,
+  Alberta, and Western Canada*
+
+
+  EDMONTON, AB, May 8, 2025 /CNW/ - FirstService Residential announced the acquisition
+  of Edmonton-based Core Real Estate Group.
+
+
+  Core Real Estate Group, serving residential properties in Edmonton since 2011, manages
+  more than 15,000 residential units. The acquisition brings the number of residential
+  units under FirstService management in Canada to more than 250,000, reinforcing
+  FirstService''s lead'

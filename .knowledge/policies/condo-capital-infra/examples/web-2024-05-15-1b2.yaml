@@ -1,0 +1,33 @@
+source_id: web-2024-05-15-1b2
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'PayHOA is included in Finding-0025 §4.6 and the ingest plan §7 Batch 2
+  specifically to establish the self-managed HOA segment as a distinct and non-competing
+  category. The .5M Series A and 622K homeowners coverage confirms this is a meaningfully
+  differentiated market (boards without management companies) that Longspan does not
+  target. This source is required for the payhoa entity, which frames Longspan''s
+  ICP exclusions. Per Finding-0025 §7 rationale: ''confirms self-managed HOA segment
+  is meaningfully distinct; useful for framing Longspan ICP exclusions.'''
+pinned_at: '2026-05-21T20:37:42Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Meet PayHOA, a profitable and once-bootstrapped SaaS startup that just landed
+    a $27.5M Series A | TechCrunch
+  authors:
+  - Mary Ann Azevedo
+  url: https://techcrunch.com/2024/05/15/meet-payhoa-a-profitable-and-once-bootstrapped-hoa-software-startup-that-just-landed-a-27-5m-series-a/
+content_excerpt: 'PayHOA, a previously bootstrapped Kentucky-based startup that offers
+  software for self-managed homeowner associations (HOAs), is an example of how real-world
+  problems can translate into opportunity.
+
+
+  It just raised a $27.5 million Series A round in an environment where nearly $30
+  million Series A rounds are no longer common.
+
+
+  PayHOA founder and CEO Mike Bollinger has been putting his finance degree to good
+  use. The entrepreneur started PayHOA in 2018 after selling two other companies —
+  LegFi.com'

@@ -1,0 +1,29 @@
+source_id: web-2026-05-19-00f
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'BC Assessment Assessment Search FAQ page contains the operative commercial-use
+  prohibition directly load-bearing for the can-pilot tos.py adapter: ''Assessment
+  search is a publicly available online service for private, personal, non-commercial
+  use. Businesses wishing to learn more about commercial access to assessment information
+  should contact BC Assessment.'' The FAQ also enumerates per-property fields (year_built,
+  building_storeys, number_of_apartment_units, strata_area) that define the BC covariate
+  adapter schema. Domain relevance is narrow but high-signal on access rights and
+  available fields — both required before the Vancouver wave can proceed.'
+pinned_at: '2026-05-19T14:46:15Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Property assessment & Assessment search service - frequently asked questions
+  authors: []
+  url: https://info.bcassessment.ca/Pages/Property-FAQ.aspx
+content_excerpt: 'Assessment search is a publicly available online service for private,
+  personal, non-commercial use. It provides easy access to property information about
+  most taxable properties across British Columbia with the exception of some Indigenous
+  properties, and properties with certain use codes; including recreational properties,
+  such as parks and playing fields, and major industrial properties, such as pulp
+  mills, and utilities.
+
+
+  Anyone can use the service for private, personal, non-commercial purpos'

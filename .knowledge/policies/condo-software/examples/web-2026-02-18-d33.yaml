@@ -1,0 +1,43 @@
+source_id: web-2026-02-18-d33
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Yardi is named secondary acquirer target in gtm/exit-thesis-acquirer-mapping.md.
+  Voyager page establishes enterprise-tier product architecture: four named product
+  modules (Voyager Condo, CondoCafe, Yardi Payment Processing, Yardi Procure to Pay,
+  Yardi Aspire) confirming vertical-integration moat and multi-module expansion surface.
+  Load-bearing for acquirer competitive-intelligence mapping alongside the Canadian
+  Breeze Premier launch (web-2024-03-12-012). Thin content but primary-source vendor
+  disclosure of module architecture — follows pattern of Yardi Breeze Canada inclusion
+  override.'
+pinned_at: '2026-05-24T01:33:29Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Voyager Condo, Co-op & HOA
+  authors: []
+  url: https://www.yardi.com/product/voyager-condo-co-op-hoa/
+content_excerpt: 'VOYAGER CONDO, CO-OP & HOA
+
+
+  # Optimize condo operations with one platform
+
+
+  Consolidate accounting, operations and maintenance on a single platform with real-time
+  analytics. Add CondoCafe and provide online services to resident owners for a seamless
+  experience.
+
+
+  ## Features
+
+
+  ### Save time and cut costs
+
+
+  Ensure accuracy and drive efficiency with an integrated database and automated workflows.
+  Track association fees, ownership changes, maintenance items and violations with
+  Voyager Condo.
+
+
+  ### Tailo'

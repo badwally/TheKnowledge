@@ -1,0 +1,31 @@
+source_id: web-2024-11-20-cd8
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Vantaca is now a named Tier-2 acquirer target per Finding-0025 §7 (the
+  filter policy hasn''t been updated to reflect this). The HOAi acquisition is the
+  load-bearing AI capability event for Vantaca: it establishes HOAi''s 1M tasks/month
+  automation throughput and voice-agent capability, which defines the AI baseline
+  Longspan''s probabilistic reserve module would compete against or integrate with
+  if Vantaca becomes the acquirer. Required for the Vantaca entity''s competitive
+  intelligence section.'
+pinned_at: '2026-05-21T20:32:35Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Vantaca Acquires HOAi to Unlock a New Era of HOA Community Management with
+    Cutting-Edge AI
+  authors:
+  - Vantaca LLC
+  url: https://www.prnewswire.com/news-releases/vantaca-acquires-hoai-to-unlock-a-new-era-of-hoa-community-management-with-cutting-edge-ai-302310780.html
+content_excerpt: 'WILMINGTON, N.C., Nov. 20, 2024 /PRNewswire/ -- Vantaca, the leading
+  provider of community association management software, announced yesterday at Vantaca
+  Vision, its annual customer conference, that it has acquired HOAi, a pioneering
+  AI technology provider in the HOA management space. This strategic acquisition reinforces
+  Vantaca''s commitment to advancing the future of community management through innovative,
+  AI-powered solutions.
+
+
+
+  With this acquisition, Vantaca is introducing a powerful, two-'

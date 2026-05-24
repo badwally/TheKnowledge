@@ -1,0 +1,28 @@
+source_id: web-2025-08-01-8c2
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Leak detection / water telemetry case study for NYC condo — condition-based
+  PM practice in residential, directly in scope
+pinned_at: '2026-05-09T22:34:37Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: How One NYC Condo Cut Water Damage Risk—and Insurance Premiums—With Smart
+    Detection
+  authors:
+  - August 1
+  url: https://www.prosentry.com/blog/condo-case-study
+content_excerpt: 'A real-world case study of how a high-rise condo in NYC transformed
+  from “uninsurable” to protected, using ProSentry’s smart leak detection system to
+  reduce claims, avoid losses, and slash insurance costs.
+
+
+  Water leaks remain one of the most expensive and disruptive issues facing multifamily
+  buildings, particularly in those with aging infrastructure. A single undetected
+  leak can spread rapidly across units, causing significant property damage and operational
+  challenges.
+
+
+  The financial implicatio'

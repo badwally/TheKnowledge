@@ -1,0 +1,42 @@
+source_id: web-2022-01-01-705
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Page contains specific ReserveBuilder product architecture: universal
+  account opening, CD maturity monitoring, fully insured deposits, electronic bank
+  statements. These named-feature claims are the primary citation target for CommonArea
+  Financial product description in Finding-0036 §3.1. Load-bearing despite absence
+  of customer count.'
+pinned_at: '2026-05-24T04:10:51Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reserve Cash Management for Condos, HOAs | CommonArea
+  authors: []
+  url: https://www.commonareafinancial.com/cash-management
+content_excerpt: 'top of page
+
+
+  ##### ReserveBuilder, our reserve cash program, utilizes a proprietary technology
+  platform to actively analyze and identify underperforming reserve accounts and maturing
+  CDs to provide alternatives using our preferred network of financial services providers.
+
+
+  Program Benefits:
+
+
+
+  -
+
+  Universal account opening allows for seamless management of multiple banks
+
+
+  -
+
+  Ongoing account and CD maturity monitoring to prevent lost interest
+
+
+  -
+
+  Fully insured deposit offerings to protect association a'

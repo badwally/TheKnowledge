@@ -1,0 +1,28 @@
+source_id: web-2026-04-21-260
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'NYC-market reporting with load-bearing expert quotes: Orest Tomaselli
+  (Strategic Inspections CEO) gives reserve-study cost range (,500–,500), demand-generation
+  mechanism (15% floor vs. reserve-study carve-out trade-off), and confirms ineligibility-designation
+  cascade across jumbo/commercial lenders. Per-market NYC co-op/condo context directly
+  supports Finding-0028 market-sizing and demand-driver analysis. Score 0.5 reflects
+  secondary reporting status; inclusion warranted under criterion 4 (reserve-fund
+  regulation market impact) and criterion 3 (demand-driver for reserve-study SaaS).'
+pinned_at: '2026-05-23T18:57:20Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Mortgage eligibility for condos: New rules and relief'
+  authors: []
+  url: https://www.habitatmag.com/Publication-Content/Bricks-Bucks/2026/March-2026/fannie-freddie-mac-condo-rules
+content_excerpt: 'Emily Myers in Bricks & Bucks
+
+
+  Condos will need to hold deeper reserves and allow more scrutiny to stay mortgage-eligible
+  under new Fannie Mae and Freddie Mac guidelines — though an easing on insurance
+  requirements offers some relief. The updated rules require condo boards to increase
+  capital reserves from a minimum of 10% to a minimum of 15% of their building’s annual
+  budget. “So on top of inflationary costs you are now going to have, as of January
+  2027, an additional 5% to be added to operatin'

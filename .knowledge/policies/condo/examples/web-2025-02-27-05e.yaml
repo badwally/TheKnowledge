@@ -1,0 +1,28 @@
+source_id: web-2025-02-27-05e
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: NYC FISP / Local Law 11 is a primary regulatory PM driver for high-rise
+  residential - directly in scope for condo preventive maintenance corpus
+pinned_at: '2026-05-09T22:28:33Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Local Law 11 | FISP | Facade Inspection Safety Program | NYC | SUPERSTRUCTURES
+  authors: []
+  url: https://www.locallaw11.com/
+content_excerpt: '# New York City''s Facade Inspection & Safety Program (FISP)
+
+
+  The Facade Inspection & Safety Program (FISP, also known as Local Law 11) is a set
+  of regulations addressing the conditions of NYC’s buildings’ exterior walls and
+  their appurtenances.
+
+
+  FISP comprises a section of the NYC Administrative Code (Article 302 Maintenance
+  of Exterior Walls), fleshed out in a rule (1 RCNY 103-04) promulgated by the DOB.
+
+
+  Every five years, facades of all NYC buildings over six stories must be examined
+  by a DOB-'

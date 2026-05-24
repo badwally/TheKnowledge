@@ -1,0 +1,45 @@
+source_id: web-2002-09-05-ce9
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Primary CRA interpretation bulletin IT-304R2 on Canadian condominium corporation
+  tax status under s.149(1)(l) of the Income Tax Act. Load-bearing for Finding-0031
+  §1: establishes the NPO exemption framework that makes reserve fund interest generally
+  non-taxable for qualifying Canadian condo corporations. Paragraph 4 is the key citation.
+  Archived bulletin remains authoritative as the primary CRA statement on condo NPO
+  status — no superseding IT has been issued. Domain: condo-software (tax treatment
+  of reserve interest, Canadian jurisdiction).'
+pinned_at: '2026-05-23T22:58:34Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: ARCHIVED - Condominiums
+  authors:
+  - Canada Revenue Agency
+  url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/it304r2/archived-condominiums.html?wbdisable=true
+content_excerpt: '# ARCHIVED - Condominiums
+
+
+  What the "Archived Content" notice means for interpretation bulletins
+
+
+  NO: **IT-304R2**
+
+
+  DATE: June 2, 2000
+
+
+  SUBJECT: INCOME TAX ACT**Condominiums**
+
+
+  REFERENCE: Paragraphs 20(1)(*a*), 149(1)(*l*) and 150(1)(*a*) of the *Income Tax
+  Act* (also paragraph 20(1)(*aa*) of the Act, Class 1 of Schedule II of the *Income
+  Tax Regulations* and subsections 1100(11), 1100(14), 1101(1ac) and 1101(1ae) 1 of
+  the Regulations)
+
+
+  ### *Notice -- Bulletins do not have the force of law*
+
+
+  * T'

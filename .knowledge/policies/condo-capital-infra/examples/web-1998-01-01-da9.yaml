@@ -1,0 +1,26 @@
+source_id: web-1998-01-01-da9
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: BuildingLink Canada about page is a P3 cross-add in Brief-0014 / Finding-0034
+  §9. Platform-existence confirmation for the Canadian condo-software landscape. The
+  prior 0.3 score was calibrated against condo-capital-infra; in condo-software scope
+  the company profile and Canadian-market positioning are load-bearing for the competitive
+  landscape snapshot.
+pinned_at: '2026-05-24T02:58:10Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: About BuildingLink Canada- Condo & Strata Property Management Software
+  authors: []
+  url: https://www.buildinglink.io/en-ca/about-us
+content_excerpt: 'BuildingLink Canada was established in 2012 by Toronto based entrepreneur
+  Nicholas Gill and BuildingLink LLC founders Jerry and Zach Kestenbaum. Having pioneered
+  one of the first cloud based residential property management solutions in Canada
+  Gill was an ideal partner for BuildingLink as they looked to build on their success
+  in the U.S. market. The combination of Gill’s local market expertise and BuildingLink’s
+  proven platform has been a recipe for success since inception.
+
+
+  “We are very grateful'

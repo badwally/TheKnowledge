@@ -1,0 +1,35 @@
+source_id: web-2026-01-06-ef4
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: '27-minute detailed product description by Joel Tax (Reserve Data Analyst
+  founder) documenting Excel-based professional reserve study software: FFB calculations,
+  variable inflation/tax modeling, field inspection integration, unlimited funding
+  models. Named product (reservedataanalyst.com), named author, 2026-01-06 publication,
+  specific feature architecture with anti-competitive positioning against cloud SaaS
+  tools. Grounds Finding-0036 §4.4 claim that Reserve Data Analyst is an Excel-based
+  professional reserve study platform with 2026 Agent Mode AI. Filter penalized lack
+  of customer references but the product-architecture depth is the load-bearing citation
+  target.'
+pinned_at: '2026-05-24T04:13:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reserve Study Software For Reserve Professionals By Reserve Professionals
+  authors:
+  - Joel Tax
+  url: https://www.reservedataanalyst.com/blog/software-functions/
+content_excerpt: 'Text...
+
+
+  Utilizing software that is mathematically accurate, and which is also adaptable
+  is an extremely important part of completing a reserve study. With so many scenarios
+  we encounter, having flexible software helps us to create comprehensive and adaptable
+  reserve studies.
+
+
+
+  We frequently see software that has been created for reserve study professionals
+  by ... well… whoever happens to pay a programmer(s) to put something together for
+  them. The helpful mathematical formulas and functions are '

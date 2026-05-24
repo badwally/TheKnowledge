@@ -1,0 +1,37 @@
+source_id: web-2024-10-15-6c9
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: CondoControl preventive maintenance tracking for condo/HOA — CMMS stack
+  for residential PM, directly in scope
+pinned_at: '2026-05-09T22:34:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo & HOA Maintenance Tracking
+  authors: []
+  url: https://www.condocontrol.com/maintenance/preventive-maintenance/
+content_excerpt: 'Schedule recurring maintenance activities all at once
+
+
+  Choose how you want to organize and track repairs
+
+
+  Attach relevant documents to any activity and maintain comprehensive records
+
+
+  # Stay ahead of maintenance issues
+
+
+  Save money and time by creating streamlined workflows.
+
+
+  ### Streamline maintenance operations and cut down on manual work
+
+
+  Schedule one-time or recurring repairs all at once and shorten your “to-do” list.
+  Activities can be colour-coded on a calendar for easier identification.
+
+
+  ##'

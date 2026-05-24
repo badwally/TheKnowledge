@@ -1,0 +1,56 @@
+source_id: web-2025-12-31-dae
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Primary IRS statutory source: Instructions for Form 1120-H (2025). Authoritative
+  federal tax guidance on §528 election, 60%/90%/85% threshold tests, 30% flat rate,
+  and  deduction. Load-bearing for Finding-0031 §2 (US federal tax framework for HOA
+  reserve interest). Domain: condo-software.'
+pinned_at: '2026-05-23T22:51:09Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Instructions for Form 1120-H (2025) | Internal Revenue Service
+  authors: []
+  url: https://www.irs.gov/instructions/i1120h
+content_excerpt: '- Instructions for Form 1120-H - Introductory Material
+
+  - General Instructions
+
+  - Purpose of Form
+
+  - Electing To File Form 1120-H
+
+  - Electronic Filing
+
+  - Definitions
+
+  - When To File
+
+  - Who Must Sign
+
+  - Where To File
+
+  - Paid Preparer Authorization
+
+  - Other Forms and Statements That May Be Required
+
+  - Assembling the Return
+
+  - Accounting Methods
+
+  - Change of Tax Year
+
+  - Rounding Off to Whole Dollars
+
+  - Tax Payments
+
+  - Estimated Tax and Alternative Minimum Tax
+
+  - Interest and Penalties
+
+
+  - Specific Instructions
+
+  - Per'

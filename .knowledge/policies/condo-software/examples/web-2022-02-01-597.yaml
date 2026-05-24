@@ -1,0 +1,30 @@
+source_id: web-2022-02-01-597
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Primary FSRA regulatory authority source for ON credit union deposit insurance
+  coverage (K non-registered / unlimited registered). Cited in Finding-0029 §7.3 for
+  the ON FSRA deposit insurance figure. Generic framing is structural — FSRA publishes
+  consumer-facing pages without condo-specific copy. The coverage limits and DIRF
+  mechanism are directly cited in reserve-fund investment analysis for Ontario condos
+  per Condo Act s.115(5) O.Reg 123/17 authorized-institution list.
+pinned_at: '2026-05-23T21:24:48Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Credit Unions and Deposit Insurance
+  authors: []
+  url: https://www.fsrao.ca/consumers/credit-unions-and-deposit-insurance
+content_excerpt: '## Deposit Insurance Coverage for Ontario Credit Unions and Caisses
+  Populaires
+
+
+  Financial Services Regulatory Authority of Ontario’s (FSRA) deposit insurance program
+  protects insurable deposits held with Ontario credit unions and caisses populaires.
+  Deposit insurance is part of a comprehensive depositor protection program that ensures
+  the safety and soundness of credit unions and caisses populaires.
+
+
+  The liability of FSRA to insure deposits held at Ontario credit unions is limited
+  to the assets '

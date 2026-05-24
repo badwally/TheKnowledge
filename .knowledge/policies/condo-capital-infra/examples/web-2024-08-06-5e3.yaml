@@ -1,0 +1,35 @@
+source_id: web-2024-08-06-5e3
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Real Estate Magazine article on Thomas Beattie and OctoAI Technologies
+  founding narrative. Contains verbatim Beattie methodology quote: ''We''re very confident
+  we are not going to hallucinate... The system extracts relevant data, with all results
+  manually reviewed by the leadership team before release.'' Confirms human-admin
+  verification step. Founding narrative context. Vendor intelligence — consistent
+  with filter-correct precedent applied today.'
+pinned_at: '2026-05-19T01:49:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Vancouver startup revolutionizes condo and townhome assessment with AI-powered
+    tool
+  authors:
+  - Anthony Marcusa
+  url: https://realestatemagazine.ca/vancouver-startup-revolutionizes-condo-and-townhome-assessment-with-ai-powered-tool/
+content_excerpt: 'A Vancouver-based startup is changing the way realtors and buyers
+  assess condominiums and townhomes, making the process more efficient and transparent.
+
+
+  Eli Report is an online tool powered by artificial intelligence (AI) that scans
+  and summarizes condominium and strata documents, culling important information with
+  speed and accuracy.
+
+
+
+  **Aims to make understanding the health of a building and rules around living easy**
+
+
+
+  “We wanted to help realtors save time on critical issues,” says Eli Report'

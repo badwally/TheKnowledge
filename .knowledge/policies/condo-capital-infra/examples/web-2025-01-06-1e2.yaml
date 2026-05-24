@@ -1,0 +1,31 @@
+source_id: web-2025-01-06-1e2
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: CINC's first confirmed acquisition event; directly confirms the acquisition
+  playbook Longspan targets (capability-gap buy, founders retained as shareholders,
+  technical integration prioritized). Contains authoritative scale metrics (50K+ associations
+  as of Jan 2025) that update the cinc-systems entity. Per Finding-0025 ingest plan
+  §7, this is a priority Batch 1 source for the cinc-systems entity refresh.
+pinned_at: '2026-05-21T19:57:12Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: CINC Systems Acquires ONR Applications, Inc. to Deliver the Preeminent HOA
+    Management Experience
+  authors:
+  - CINC Systems
+  url: https://www.prnewswire.com/news-releases/cinc-systems-acquires-onr-applications-inc-to-deliver-the-preeminent-hoa-management-experience-302342106.html
+content_excerpt: '# CINC Systems Acquires ONR Applications, Inc. to Deliver the Preeminent
+  HOA Management Experience
+
+
+  *By acquiring ONR, CINC boasts unrivaled resident engagement capabilities and will
+  offer the only end-to-end platform in the industry.*
+
+
+  DULUTH, Ga., Jan. 6, 2025 /PRNewswire/ -- CINC Systems ("CINC"), the leading and
+  largest provider of community management technology solutions, announced today that
+  it has acquired ONR Applications, Inc. ("ONR"), a cutting-edge resident engagement
+  platform that s'

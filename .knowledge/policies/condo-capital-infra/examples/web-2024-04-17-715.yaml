@@ -1,0 +1,45 @@
+source_id: web-2024-04-17-715
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Open Alberta provincial fact sheet on Condominium Property Act reserve-fund
+  obligations. AB is in scope under ADR-0004 Canada-first sequence reorder; the fact
+  sheet anchors AB inventory in Brief-0006 § 3.3. Pointer-to-statute is acceptable
+  as a secondary source — complementary to having the CPA statute proper.
+pinned_at: '2026-05-11T17:10:29Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Reserve funds : Condominium Property Act'
+  authors: []
+  url: https://open.alberta.ca/publications/reserve-funds-condominium-property-act
+content_excerpt: '##### Description
+
+
+  The Condominium Property Act requires that condominium corporations establish and
+  maintain a capital replacement reserve fund to provide for major repairs and replacement
+  of property and common property owned by the corporation. This fact sheet covers
+  the responsibility and financing information for condominium boards, corporations
+  and owners.
+
+
+  ##### Updated
+
+
+  April 17, 2024
+
+
+  ##### Tags
+
+
+  ##### Resources
+
+
+  -
+
+  ### Reserve funds : Condominium Property Act
+
+
+
+  More information Download'

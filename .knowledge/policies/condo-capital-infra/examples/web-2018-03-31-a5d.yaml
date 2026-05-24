@@ -1,0 +1,43 @@
+source_id: web-2018-03-31-a5d
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: CMHC NL fact sheet; documents NL reserve-fund-study mandate (10-yr cycle,
+  30-yr horizon, P.Eng. or CRP qualification). In-scope Atlantic Canada jurisdiction
+  per ADR-0004 Canada-first strategy and updated jurisdiction list in policy.
+pinned_at: '2026-05-11T23:56:17Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Newfoundland-and-Labrador-Fact-Sheet
+  authors: []
+  url: https://www.cmhc-schl.gc.ca/consumers/home-buying/buying-guides/condominium/provincial-fact-sheets/Newfoundland-and-Labrador-Fact-Sheet
+content_excerpt: '## Governing Legislation
+
+
+  **What legislation and regulations govern condominiums in Newfoundland and
+
+  Labrador?**
+
+
+  ## Warranty Programs
+
+
+  **Do provincial legislation and/or regulations require that developers of new
+
+  condominiums provide a new home warranty to buyers?**
+
+
+  No, but developers may offer one through a third-party home warranty program.
+
+
+  ## Taxes & Additional Costs
+
+
+  **What provincial and federal taxes do condominium buyers pay on their
+
+  units?**
+
+
+  Buyers pay Harmonized Sales Tax (HST) on n'

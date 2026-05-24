@@ -1,0 +1,43 @@
+source_id: web-2022-05-20-5f1
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Sponsored content flag acknowledged, but this is the only primary-source
+  confirmation of AAB's 80-employee headcount, all-50-states operational scope, ConnectLive
+  brand name, and Steve Curley as president — all four facts are directly cited in
+  Finding-0030 §2.2. The filter penalized recency (2022, outside 24-month window)
+  and sponsorship, but the factual payload is non-duplicatable from independent sources
+  and load-bearing for the HOA-banking competitive profile.
+pinned_at: '2026-05-23T22:13:44Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Spotlight Shines on Alliance Association Bank - CAI Keystone
+  authors:
+  - Michael
+  url: https://caikeystone.org/chapter-news/the-spotlight-shines-on-alliance-association-bank/
+content_excerpt: '[SPONSORED CONTENT]
+
+
+  **Company Basics****Name of company**: Alliance Association Bank**Principal of company**:
+  Steve Curley, president of Alliance Association Bank; Kenneth Vecchione, President
+  and CEO of Western Alliance Bank
+
+
+  **Year company was founded**: 2008
+
+
+  **# of employees**: 80 direct AAB employees
+
+
+  **States in which your company operates:**All 50 states
+
+
+  **Company Contact Information**
+
+
+  Address: Division Headquarters:3033 W Ray Road, Suite 200, Chandler, AZ 85226
+
+
+  Phone #: (724) 910-630'

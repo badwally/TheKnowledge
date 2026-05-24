@@ -1,0 +1,22 @@
+source_id: note-2026-05-11-seed-deck-brief
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Project-internal canonical seed-deck brief, sibling to elevator pitch.
+  Halifax-chair / seed-investor specific framing. Filed alongside elevator pitch for
+  citation continuity across pitch artifacts.
+pinned_at: '2026-05-11T21:46:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: note
+  title: Seed Deck Brief — Halifax-Chair / Seed-Investor
+  authors:
+  - Condo Capital Infrastructure project
+  url: ''
+content_excerpt: "\n---\nid: GTM-SEED-DECK-BRIEF-001\ndate: 2026-05-11\nstatus: v1-draft\n\
+  audience: Halifax HOA incoming board chair (also a prospective seed investor)\n\
+  target_format: 12–15 slide intro deck, executed by Claude Design\nparent_docs:\n\
+  \  - gtm/elevator-pitch.md\n  - gtm/canada-first-revenue-model.md\n  - gtm/exit-thesis-acquirer-mapping.md\n\
+  \  - gtm/halifax/04-board-pitch-deck-outline.md\n  - regulatory/ns-condominium-act-summary.md\n\
+  \  - engine/v0_calibration/v0_5_update.md\n  - synthesis/addendum-sequence-reorder-"

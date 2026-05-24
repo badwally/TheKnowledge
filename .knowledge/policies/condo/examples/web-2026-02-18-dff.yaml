@@ -1,0 +1,34 @@
+source_id: web-2026-02-18-dff
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Yardi Facility Manager product — CMMS/EAM stack for high-rise residential
+  PM; flag CRE-transferable note
+pinned_at: '2026-05-09T22:34:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Facility Manager
+  authors: []
+  url: https://www.yardi.com/product/facility-manager/
+content_excerpt: 'Facility Manager
+
+
+  # Master your maintenance oversight
+
+
+  Facility Manager ensures properties remain in top condition by automating maintenance
+  schedules. Effortlessly track technicians, assign work orders and guarantee timely
+  responses to maintenance requests.
+
+
+  ## Features
+
+
+  ### Automate scheduling & tracking
+
+
+  Automate your facility maintenance schedules to keep properties operating in peak
+  condition. Assign work orders, track technicians and ensure timely responses to
+  requests. Facility Manager au'

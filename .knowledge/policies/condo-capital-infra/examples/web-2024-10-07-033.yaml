@@ -1,0 +1,27 @@
+source_id: web-2024-10-07-033
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Primary-source press release for Eli Report (OctoAI Technologies Corp.)
+  freemium North America launch October 2024. Contains CEO quote, 25,000 reports scale
+  claim, corporate identity confirmation. Highest single-source priority for the eli-report
+  entity rewrite. Vendor intelligence — consistent with filter-correct precedent applied
+  on SmartProperty, PropFusion, Solume, Facilio, REcollab.
+pinned_at: '2026-05-19T01:21:08Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Eli Report Launches Free Condo Document Review Across North America
+  authors:
+  - OctoAI Technologies Corp
+  url: https://www.prweb.com/releases/eli-report-launches-free-condo-document-review-across-north-america-302266695.html
+content_excerpt: 'Eli Report Eliminates the Time and Complexity of Condo Documents
+  with Free Document Review for Realtors, Buyers, Sellers, Property Managers, Lawyers
+  and Lenders. Eli Report is the Easy, Fast and Free way to summarize 100s of pages
+  of documents into a single report.
+
+
+  VANCOUVER, BC, Oct. 7, 2024 /PRNewswire-PRWeb/ -- OctoAI Technologies Corp ("OctoAI"),
+  a leading provider of condo document review tools, is excited to announce the transition
+  of Eli Report to a freemium pricing model. Eli Report tra'

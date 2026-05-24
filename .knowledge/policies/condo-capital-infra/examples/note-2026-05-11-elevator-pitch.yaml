@@ -1,0 +1,25 @@
+source_id: note-2026-05-11-elevator-pitch
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Project-internal canonical pitch document for Condo Capital Infrastructure.
+  Synthesizes ADR-0004 sequence reorder + acquirer mapping + engine v0.5 validation
+  + Brief-0004 Halifax wedge into a single 60-second-to-7-section narrative used for
+  investor + acquirer + co-founder conversations. Filed for citation grounding from
+  future project artifacts (deck variants, prospect-call notes, board memos).
+pinned_at: '2026-05-11T21:46:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: note
+  title: Elevator Pitch — Condo Capital Infrastructure
+  authors:
+  - Condo Capital Infrastructure project
+  url: ''
+content_excerpt: "\n---\nid: GTM-PITCH-001\ndate: 2026-05-11\nstatus: v1-draft\ngoverning_adr:\
+  \ decisions/0004-sequence-reorder-canada-first-gtm.md\nrelated:\n  - gtm/canada-first-revenue-model.md\n\
+  \  - gtm/exit-thesis-acquirer-mapping.md\n  - synthesis/addendum-sequence-reorder-2026-05-10.md\n\
+  ---\n\n# Elevator Pitch — Condo Capital Infrastructure\n\n## 0. Spoken version (90\
+  \ seconds, board / partner conversation)\n\nNorth American condo boards pay $8K\
+  \ to $30K every three to five years for a binder that says \"your roof will fail\
+  \ in"

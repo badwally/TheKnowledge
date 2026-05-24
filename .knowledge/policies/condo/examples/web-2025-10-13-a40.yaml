@@ -1,0 +1,26 @@
+source_id: web-2025-10-13-a40
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: CAI Foundation best practices reports index page — anchor source for CAI
+  community association maintenance standards
+pinned_at: '2026-05-09T22:35:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Best Practices Reports - Foundation for Community Association Research
+  authors: []
+  url: https://foundation.caionline.org/research/best-practices/
+content_excerpt: '# Best Practices Reports
+
+
+  Explore our collection of Best Practices Reports designed to help community associations
+  achieve excellence. Each report offers practical guidance, expert recommendations,
+  and real-world case studies on topics such as maintenance, energy efficiency, governance,
+  reserve funding, community harmony, financial operations, strategic planning, and
+  transition.
+
+
+  Developed with input from industry experts and successful communities, these reports
+  document proven best practices a'

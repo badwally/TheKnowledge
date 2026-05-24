@@ -1,0 +1,31 @@
+source_id: web-2024-11-20-cd8
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Vantaca is a named CAM platform relevant to the condo-software competitive
+  landscape (Finding-0033). HOAi acquisition documents AI-capability expansion in
+  HOA community management — load-bearing for AI-feature positioning comparisons across
+  CAM vendors. Prior filter_score 0.38 under condo-capital-infra policy was correct
+  for that domain; under condo-software domain this M&A event establishes Vantaca's
+  AI-feature trajectory and competitive posture relative to AppFolio, Yardi, and Condo
+  Control.
+pinned_at: '2026-05-24T01:26:18Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Vantaca Acquires HOAi to Unlock a New Era of HOA Community Management with
+    Cutting-Edge AI
+  authors:
+  - Vantaca LLC
+  url: https://www.prnewswire.com/news-releases/vantaca-acquires-hoai-to-unlock-a-new-era-of-hoa-community-management-with-cutting-edge-ai-302310780.html
+content_excerpt: 'WILMINGTON, N.C., Nov. 20, 2024 /PRNewswire/ -- Vantaca, the leading
+  provider of community association management software, announced yesterday at Vantaca
+  Vision, its annual customer conference, that it has acquired HOAi, a pioneering
+  AI technology provider in the HOA management space. This strategic acquisition reinforces
+  Vantaca''s commitment to advancing the future of community management through innovative,
+  AI-powered solutions.
+
+
+
+  With this acquisition, Vantaca is introducing a powerful, two-'

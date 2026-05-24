@@ -1,0 +1,47 @@
+source_id: pdf-c974b5dbd563
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'CAO Best Practices Guide on ON reserve fund studies is the canonical practitioner
+  reference for Ontario Condo Act §94 + O. Reg. 48/01 compliance. It defines the Class
+  1/2/3 study schema, qualified-preparer requirements, component-inventory minimum,
+  30-year funding plan structure, and notice-of-future-funding procedure — all load-bearing
+  for the ON regulatory sub-section of the can-pilot extraction schema (Brief-0011
+  Wave B). Distinct from the empirical CAO 2024 survey at pdf-condominium-authority-2024-report-on-resrve;
+  this is the regulatory how-to guide. Secondary use: serves as the cross-province
+  comparator anchor for NS and BC regulatory triangulation in Finding-0017 §7C.'
+pinned_at: '2026-05-19T14:48:58Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: cao-reserve-fund-guide-2024
+  authors:
+  - Melissa Cederqvist
+  url: ''
+content_excerpt: 'bbbbbbbbb
+
+  CAO Best Practices Guide:
+
+  Ensuring Healthy Reserve
+
+  CAO Best Practices Guide:
+
+  Funds
+
+  Ensuring Healthy Reserve
+
+  Funds
+
+  www.condoauthorityontario.ca
+
+
+  Table of Contents
+
+  Acknowledgements .......................................................................................................
+  3
+
+  Introduction ...................................................................................................................
+  4
+
+  Reserve Fund Studies .....................................................'

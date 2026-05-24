@@ -1,0 +1,30 @@
+source_id: web-2020-06-10-363
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'The Spectrum 2020 investment is the anchor event that begins the CINC
+  capitalization timeline: it establishes when Spectrum joined (June 2020), what CINC''s
+  scale was at that point (16K HOAs, 2M homes, 26 states), and who Ryan Davis is (appointed
+  President & CEO at this announcement). These are the base-state metrics from which
+  the 2023 and 2026 scale can be compared. It also announces CINC Capital (banking
+  product) which is the predecessor to TresRE. Required to complete the cap-table
+  history section of the cinc-systems entity per Finding-0025 §7 Batch 2.'
+pinned_at: '2026-05-21T20:49:18Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: CINC Systems Receives Growth Investment from Spectrum Equity and Announces
+    New Senior Executives
+  authors:
+  - CINC Systems
+  url: https://www.prnewswire.com/news-releases/cinc-systems-receives-growth-investment-from-spectrum-equity-and-announces-new-senior-executives-301073333.html
+content_excerpt: 'DULUTH, Ga., June 10, 2020 /PRNewswire/ -- CINC Systems, the largest
+  provider of SaaS solutions for the community association industry, announced that
+  it has received a growth investment from __Spectrum Equity__, bolstered its executive
+  team and launched an investment fund to support its customers'' growth.
+
+
+  The investment from Spectrum Equity, a leading growth equity firm investing in internet-enabled
+  software and information services companies, will support CINC Systems'' product
+  innovation and '

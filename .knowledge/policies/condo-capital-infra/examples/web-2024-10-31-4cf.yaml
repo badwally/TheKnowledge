@@ -1,0 +1,30 @@
+source_id: web-2024-10-31-4cf
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Canonical product page for Eli Report condo document review. Feature inventory,
+  provincial city pages, verbatim product description. Primary source for product-suite
+  section of eli-report entity. Vendor intelligence — consistent with filter-correct
+  precedent applied today.
+pinned_at: '2026-05-19T01:23:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo Document Review | Fast, Easy & Reliable - Eli
+  authors: []
+  url: https://elireport.com/products/condo-document-review/
+content_excerpt: 'Accelerate your due diligence with high-precision automated reporting.
+  Transform thousands of pages of complex strata and condo filings into clear, actionable
+  insights in minutes. Your initial Eli Report is free — start your professional analysis
+  today.
+
+
+  ### How Condo Document Review Software Helps You
+
+
+  #### Decoding Governing Documents and Bylaws
+
+
+  The foundational step in property evaluation is a rigorous review of the CC&Rs and
+  bylaws. These documents dictate the operational standards of the c'

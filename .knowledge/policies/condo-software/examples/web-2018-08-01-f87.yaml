@@ -1,0 +1,36 @@
+source_id: web-2018-08-01-f87
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'HOACPA CPA-authored explanation of CA §5305 audit/review thresholds (Davis-Stirling).
+  Load-bearing corrective: Finding-0027 §5.2 misattributed FL revenue thresholds to
+  CA; this source provides the authoritative CA-specific thresholds used by CPA practitioners.
+  CA is one of the 10 in-scope US-5 jurisdictions; §5305 governs annual financial
+  reporting requirements for HOAs and directly constrains PM-software audit-trail
+  and reporting features. Inclusion criterion 4 (jurisdiction-specific reserve-fund
+  regulations) satisfied despite 2018 publication date — §5305 thresholds unchanged.'
+pinned_at: '2026-05-23T18:30:30Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: FAQ -When Is a Review or Audit Required or Recommended?
+  authors: []
+  url: https://hoacpa.com/wp-content/uploads/2018/09/CA_when-is-a-review-or-audit-required-or-recommended.html
+content_excerpt: 'When Is a Review or Audit Required or Recommended? - California
+
+
+  #### California State Law - Requirements
+
+
+  **Davis-Stirling Act **
+
+
+  **Civil Code Section 5305**
+
+
+  Unless the governing documents impose more stringent standards, a Review of the
+  financial statement of the association shall be prepared in accordance with generally
+  accepted accounting principles by a licensee of the California Board of Accountancy
+  for any fiscal year in which the gross income to the association exceeds seventy-five
+  tho'

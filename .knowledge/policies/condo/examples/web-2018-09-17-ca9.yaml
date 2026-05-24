@@ -1,0 +1,25 @@
+source_id: web-2018-09-17-ca9
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: California SB 721 primary statutory text — balcony / elevated exterior
+  element inspection mandate, Tier-1 CA jurisdiction source
+pinned_at: '2026-05-09T22:33:40Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Bill Text
+  authors: []
+  url: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201720180SB721
+content_excerpt: '###### 17973.
+
+
+  (a) Exterior elevated elements that include load-bearing components in all buildings
+  containing three or more multifamily dwelling units shall be inspected. The inspection
+  shall be performed by a licensed architect; licensed civil or structural engineer;
+  a building contractor holding any or all of the “A,” “B,” or “C-5” license classifications
+  issued by the Contractors’ State
+
+  License Board, with a minimum of five years’ experience, as a holder of the aforementioned
+  classifications'

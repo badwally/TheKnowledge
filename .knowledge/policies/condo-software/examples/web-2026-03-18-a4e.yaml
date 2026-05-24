@@ -1,0 +1,30 @@
+source_id: web-2026-03-18-a4e
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'CAI Advocacy is the primary-adjacent grounding source for Fannie Mae LL-2026-03
+  + Freddie Mac Bulletin 2026-C. LL-2026-03 is a load-bearing regulatory driver in
+  Finding-0028: 15% reserve minimum (Jan 2027), baseline-funding prohibition (Aug
+  2026), Limited Review retirement — all directly shape the reserve-study SaaS market
+  opportunity and lender-pull product positioning. Primary PDF (singlefamily.fanniemae.com)
+  is blocked at wiki gateway; this CAI source authored by CAI''s Chief Advocacy Officer
+  is the best accessible substitute for grounding LL-2026-03 claims.'
+pinned_at: '2026-05-23T18:12:41Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: What Fannie Mae & Freddie Mac’s Latest Policy Changes Mean for Condominium
+    Associations, Lenders, and Homeowners
+  authors:
+  - Dawn Bauman; CAE
+  url: https://advocacy.caionline.org/fannie-freddie-update031826/
+content_excerpt: 'On March 18, Fannie Mae and Freddie Mac issued a significant update
+  to their project standards and property insurance requirements. These changes reflect
+  the realities of today’s housing market and focus on the long-term financial sustainability
+  of condominium communities based on Fannie Mae and Freddie Mac criteria, which aren’t
+  always aligned with actual financial stability and performance.
+
+
+  These updates, outlined in Lender Letter LL-2026-03, are designed to simplify certain
+  processes, respon'

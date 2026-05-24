@@ -1,0 +1,28 @@
+source_id: web-2026-05-10-852
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: NRC Construction Research Centre companion dataset (10.4224/40003911) —
+  engineering reference-service-life data, sibling to web-2026-05-10-f34 (already
+  included at 0.92). Falls into review band 0.62 only because Atlantic Canada / Canadian-federal
+  regulatory scope isn't explicitly in condo-capital-infra-v1 policy inclusion list,
+  but ADR-0004 sequence reorder expanded scope to Canada-first. Methodology-grade
+  data, same publisher as the included primary, same calibration target (envelope
+  components).
+pinned_at: '2026-05-10T23:07:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Reference Service Life Dataset for non-structural building envelope materials:
+    current state, knowledge gaps and inconsistencies - NRC Publications Archive'
+  authors:
+  - Sadeghi; Sara
+  url: https://doi.org/10.4224/40003911
+content_excerpt: '| Abstract | The construction sector plays a central role in Canada’s
+  Emissions Reduction Plan, which aims to cut greenhouse gas emissions by 40% from
+  2005 to 2030. Life Cycle Assessment (LCA) offers a comprehensive method for evaluating
+  the environmental impacts of buildings, including material extraction, construction,
+  operation, and demolition. A key source of uncertainty in LCAs is the Reference
+  Service Life (RSL) of building materials, particularly non-structural components,
+  whose durabilit'

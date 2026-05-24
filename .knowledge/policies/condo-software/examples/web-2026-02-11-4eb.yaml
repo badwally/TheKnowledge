@@ -1,0 +1,35 @@
+source_id: web-2026-02-11-4eb
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Primary source for a newly identified competitive-intelligence entity (CommunityPay).
+  The blog post names specific API data models (HOAInsurancePolicy, Budget, Fund,
+  Unit, SpecialAssessmentRecord), documents all 8 Form 1076 sections with CommunityPay
+  data sources, and establishes the lender-pull channel (Fannie Mae LL-2026-03 / 15%
+  reserve adequacy) as a Longspan integration surface. No independent corroboration
+  exists because CommunityPay is bootstrapped/pre-funding with no SEC filings or analyst
+  coverage — the company's own technical blog is the canonical primary source. Pattern
+  consistent with prior calibration precedent for bootstrapped CAM vendors. Author-attributed
+  (Scott Vuilleumier), technically specific, load-bearing for Finding-0035 §2.2-2.3.
+pinned_at: '2026-05-24T03:15:20Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Fannie Mae 1076 Condo Questionnaire: Why Manual Completion Fails and How
+    Auto-Fill Changes Everything'
+  authors:
+  - Scott Vuilleumier
+  url: https://www.communitypay.us/blog/condo-questionnaire-fannie-mae-1076-auto-fill/
+content_excerpt: '# Fannie Mae 1076 Condo Questionnaire: Why Manual Completion Fails
+  and How Auto-Fill Changes Everything
+
+
+  Every condo sale that involves a conventional mortgage requires a completed Fannie
+  Mae 1076 (or Freddie Mac 1077) questionnaire. Boards fill them out manually, make
+  errors, and delay closings. CommunityPay''s API auto-fills all 8 sections from live
+  ledger data.
+
+
+  If you serve on a condominium board, manage a condominium association, or work in
+  the mortgage industry, you have encountered the Fan'

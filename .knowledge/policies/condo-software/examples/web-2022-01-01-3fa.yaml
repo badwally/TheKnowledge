@@ -1,0 +1,44 @@
+source_id: web-2022-01-01-3fa
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Load-bearing citation for Finding-0034: documents 17 named accounting
+  integration partners including Yardi (work-order real-time sync to BuildingLink)
+  and CINC Systems (primary acquirer target in Condo capital thesis). The Yardi real-time
+  work-order sync claim is the primary factual basis for the CMMS-to-accounting integration
+  surface in the resident-engagement platform landscape. CINC''s appearance confirms
+  the acquirer already has integration relationships in this stack. The 2022 publication
+  date reflects the page metadata not the integration catalog currency — product pages
+  of this type are maintained continuously. Recency concern is outweighed by platform-existence
+  value for integration-surface mapping.'
+pinned_at: '2026-05-24T02:18:43Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Integration Options for Accounting - BuildingLink
+  authors: []
+  url: https://www.buildinglink.com/public/integration-partners/accounting/
+content_excerpt: '- Home
+
+  - Integration Partners
+
+  - Accounting
+
+
+  # Integration Solutions | Accounting
+
+
+  BuildingLink’s accounting integrations deliver a seamless and connected user experience.
+
+
+  ## INTEGRATION OPTIONS FOR ACCOUNTING
+
+
+  #### Yardi
+
+
+  Yardi syncs with BuildingLink every 24 hours. Any updates to resident info in Yardi
+  will appear in BuildingLink the next day. Staff would no longer need to add or remove
+  residents on both platforms manually, simplifying resident management across the
+  board. Maintenance integra'

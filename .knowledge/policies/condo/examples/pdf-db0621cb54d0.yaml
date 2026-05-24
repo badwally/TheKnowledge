@@ -1,0 +1,42 @@
+source_id: pdf-db0621cb54d0
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: BOMA BEST Sustainable Buildings 4.1 All Asset Classes Field Guide (2024)
+  — comprehensive building operations and maintenance standard applicable to multi-unit
+  residential PM cadences
+pinned_at: '2026-05-09T23:36:00Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: boma-best-4-1-all-assets
+  authors:
+  - Maryluz Velasco
+  url: ''
+content_excerpt: 'Creating better spaces
+
+  to live, work and play
+
+  BOMA BEST 4.1
+
+  QUESTIONNAIRE FOR
+
+  SUSTAINABLE BUILDINGS
+
+  TECHNICAL FIELD GUIDE
+
+  November 2024
+
+  1
+
+
+  BBv4.1 Master List
+
+  General Information ................................................................................................................
+  8
+
+  Energy and Carbon ................................................................................................................
+  11
+
+  E0. Baseline Practices ..................................................'

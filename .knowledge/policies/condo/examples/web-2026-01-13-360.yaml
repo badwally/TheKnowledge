@@ -1,0 +1,29 @@
+source_id: web-2026-01-13-360
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Quebec Law 16 compliance guide for condo owners — regulatory PM driver
+  for Quebec, directly in scope
+pinned_at: '2026-05-09T22:33:40Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Law 16 Quebec: 2025 Compliance Guide for Condo Owners'
+  authors:
+  - Condo Strategis
+  url: https://condostrategis.ca/en/blogue/law-16/
+content_excerpt: 'In Quebec’s real estate landscape, condo management is being reshaped
+  by regulatory reforms.
+
+
+  Law 16 now requires a more structured approach that integrates planning, transparency,
+  and rigour in** building maintenance**.
+
+
+  As a result, condo syndicates must adopt proactive governance, supported by **standardized
+  tools **like the maintenance logbook and the contingency fund study.
+
+
+  This guide breaks down the 2025 timeline for Law 16 and provides a practical compliance
+  checklist tailored to** condo'

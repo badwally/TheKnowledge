@@ -1,0 +1,28 @@
+source_id: web-2026-01-01-a9a
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Rev. Rul. 70-604 is the IRC §277 excess-member-assessment rollover mechanism
+  — the distinct alternative to §528 election. Gary Porter (former CAI national president,
+  canonical HOA tax authority) provides the authoritative compliance guide: member-vote
+  requirement, single-year absorption rule, M-1 documentation, and IRS audit posture.
+  Load-bearing for US HOA reserve-fund tax-planning domain in condo-software; directly
+  governs how HOAs elect between 1120-H and 1120 and the rollover technique''s limits.'
+pinned_at: '2026-05-23T23:18:40Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Is Revenue Ruling 70-604 Still Alive?
+  authors:
+  - Mike Bonner
+  url: https://www.garyportercpa.com/books/tax-articles/148-is-revenue-ruling-70-604-still-alive
+content_excerpt: '## By: Gary A. Porter, CPA
+
+
+  IRS Revenue Ruling 70-604 continues to cause enormous problems for associations
+  and CPA practitioners throughout the United States. This is due to the very ambiguous
+  wording in the ruling itself. Without a very careful reading, the ruling could be
+  interpreted in a very liberal manner, and unfortunately, this appears to be the
+  manner in which too many tax preparers have interpreted it. Gary Porter’s article
+  “Revenue Ruling 70-604 – The Complete Guide” was the first com'

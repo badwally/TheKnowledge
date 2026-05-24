@@ -1,0 +1,21 @@
+source_id: web-2026-01-01-361
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Florida DBPR Condominiums and Cooperatives regulatory resource — FL operational
+  layer for HB 913 milestone inspection and PM requirements, Tier-1 FL source
+pinned_at: '2026-05-09T22:47:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: SIRS Reporting and Database
+  authors: []
+  url: https://www.myfloridalicense.com/DBPR/condominiums-and-cooperatives/
+content_excerpt: 'A SIRS is a budget planning tool that looks at the parts of a building
+  a condominium association is required to maintain, the status of the condominium’s
+  existing reserve fund, and the amount of funding needed to offset anticipated expenses.
+  A SIRS is a type of reserve study used to ensure condo owners are reserving the
+  funds needed for future major repairs and replacement of structural elements on
+  the condominium property. A SIRS includes eight specific structural elements that
+  are critical to '

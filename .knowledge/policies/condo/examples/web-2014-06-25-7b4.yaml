@@ -1,0 +1,24 @@
+source_id: web-2014-06-25-7b4
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: ASHRAE Standard 180 HVAC inspection and maintenance guide — HVAC PM standard
+  for commercial/residential buildings, directly in scope
+pinned_at: '2026-05-09T22:35:04Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Submeters Effective Way to Gather Hard Data
+  authors:
+  - James Piper; P E Energy Efficiency
+  url: https://www.facilitiesnet.com/hvac/article/ASHRAE-Standard-180-A-Guide-to-HVAC-System-Inspection-and-Maintenance--15085
+content_excerpt: '# Submeters Effective Way to Gather Hard Data
+
+
+  The most effective way of gathering that hard data is the use of submetering technology.
+  Most facilities are master metered — one electric meter for an entire facility or
+  for each building at that site. Each building contains numerous electrical loads
+  ranging from lighting systems to HVAC systems. Master meters, installed primarily
+  for billing purposes, quantify the amount of energy used by the facility but do
+  not tell managers what operations or sy'

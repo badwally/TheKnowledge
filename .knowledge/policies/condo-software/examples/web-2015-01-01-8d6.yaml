@@ -1,0 +1,36 @@
+source_id: web-2015-01-01-8d6
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Facilio capital planning is a P3 explicit target in Brief-0014 / Finding-0034
+  §9. The capital-planning product page documents budget-forecast, project-prioritization,
+  and asset-replacement scheduling features that are the direct structural competitor
+  surface to Longspan's probabilistic CapEx forecast output. The filter's generic-FM
+  framing ignores that Facilio's CAM adjacency is established in prior wiki ingests
+  (web-2015-01-01-599 at 1.0) and that capital-planning architecture is load-bearing
+  for condo-software competitive mapping regardless of HOA-specific marketing language.
+pinned_at: '2026-05-24T02:49:44Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Facility Capital Planning Software for Smart Maintenance
+  authors: []
+  url: https://facilio.com/product/facility-capital-planning-software/
+content_excerpt: '# Turn asset intelligence into confident strategies with a capital
+  planning software
+
+
+  Get full visibility into asset conditions, budgets, and project pipelines. Facilio
+  gives you one platform to forecast CAPEX, control spend, and prove ROI on every
+  capital decision.
+
+
+  Request demo## Why legacy CMMS tools fall short of capital planning goals
+
+
+  Legacy CMMS platforms focus only on maintenance logs, leaving asset condition and
+  cost data trapped in silos, making it hard to plan ahead.
+
+
+  Without linking '

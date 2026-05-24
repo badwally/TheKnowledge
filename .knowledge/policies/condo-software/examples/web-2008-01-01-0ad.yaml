@@ -1,0 +1,27 @@
+source_id: web-2008-01-01-0ad
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Source explains FDIC pass-through insurance mechanics, network deposit
+  placement architecture (demand deposit vs. money market vs. CD), and liquidity options.
+  These are verifiable structural claims matching inclusion criterion 5 (FDIC sweep
+  structures, ICS/CDARS). The 'vendor marketing copy' exclusion does not apply — the
+  K per-bank split mechanics and network placement process are operationally specific,
+  not puffery.
+pinned_at: '2026-05-23T16:06:36Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: ICS® & CDARS® | IntraFi®
+  authors: []
+  url: https://www.intrafi.com/ics-cdars
+content_excerpt: 'With ICS®, the IntraFi Cash Service®, and CDARS®, financial institutions
+  can offer safety-conscious customers access to millions in aggregate FDIC insurance
+  across network banks. Customer funds are placed into demand deposit accounts and
+  money market deposit accounts with ICS and in CDs with CDARS.
+
+
+  A list identifying IntraFi network banks can be found here. IntraFi is not an FDIC-insured
+  bank, and deposit insurance covers the failure of an insured bank. Certain conditions
+  must be satisfied for '

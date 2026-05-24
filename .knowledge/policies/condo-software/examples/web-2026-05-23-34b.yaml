@@ -1,0 +1,45 @@
+source_id: web-2026-05-23-34b
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Filter correctly identified thin vendor support content, but missed the
+  load-bearing negative signal: the explicit ''Not be a strata or condominium corporation''
+  eligibility exclusion is the only primary-source confirmation that Wealthsimple
+  Business categorically excludes condo/strata corporations. This single exclusion
+  line is structurally significant for the Canadian multi-institution sweep gap finding
+  (Finding-0030 §1) — it closes off Wealthsimple as a potential Canadian analog to
+  IntraFi ICS/CDARS, confirming that the white space is structural and not merely
+  a product-gap. The exclusion criterion ''vendor marketing copy with no independently
+  verifiable claims'' does not apply: an explicit legal-eligibility exclusion is independently
+  verifiable and architecture-determinative. Corrected to include.'
+pinned_at: '2026-05-23T22:22:25Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Open a Business chequing account
+  authors:
+  - Our team is here
+  url: https://help.wealthsimple.com/hc/en-ca/articles/46530672013851-Open-a-Business-chequing-account
+content_excerpt: '**In this article:**
+
+
+  ## Overview
+
+
+  The Business chequing account is an interest-earning account with no monthly fees,
+  designed for incorporated businesses. It includes many of the same features as a
+  personal chequing or savings account, with added functionality for business needs,
+  like CRA payments.
+
+
+  ## Eligibility
+
+
+  To open a Wealthsimple Business account, your business must:
+
+
+  - Be registered in Canada
+
+  - Be a Canadian-controlled private corporation or a charity/association registered
+  with the CR'

@@ -54,6 +54,15 @@ raw/**/*.heif
 # Editor swap files
 *.swp
 *~
+*.bak
+
+# Office lock files (~$<name>.docx is Word's lock convention)
+~$*
+
+# Obsidian UI state — high churn, per-machine, not portable
+wiki/.obsidian/workspace.json
+wiki/.obsidian/graph.json
+
 .firecrawl/
 .superpowers/
 

@@ -1,0 +1,39 @@
+source_id: docx-ea451e0d4901
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: BCFSA is the BC regulator for strata financial regulation and the primary
+  authoritative source for qualified-provider rule changes. This blog post (Jan 26
+  2026) is the regulator's own announcement of the Oct 27 2025 expansion of eligible
+  depreciation-report providers to include professional licensees engineering (APEGBC),
+  architectural technologists (AIBC), and certified technicians (ASTTBC). It closes
+  the H3 date-discrepancy in Finding-0018, is the BCFSA-source cite required for any
+  customer-facing BC regulatory citation chain, and is load-bearing for the can-pilot
+  BC wave delivery-partner qualification screening. The filter's methodology/engine
+  framing is too narrow — regulatory compliance and delivery-partner qualification
+  are both explicitly in-scope per the domain policy.
+pinned_at: '2026-05-19T15:36:10Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: docx
+  title: bcfsa-blog-more-professionals-2026-01-26
+  authors:
+  - python-docx
+  url: ''
+content_excerpt: 'More Professionals Can Provide Strata Depreciation and Electrical
+  Planning Reports
+
+
+  Source: BCFSA (BC Financial Services Authority)
+
+
+  URL: https://www.bcfsa.ca/about-us/news/blog/more-professionals-can-provide-strata-depreciation-and-electrical-planning-reports
+
+
+  Published: January 26, 2026
+
+
+  The list of professionals who are qualified to provide electrical planning reports
+  (EPR) and depreciation reports for strata corporations has been expanded. On October
+  27, 2025, the list of designated professi'

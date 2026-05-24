@@ -1,0 +1,100 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: condo-software
+  topic: Software ecosystem for condominium and HOA management, spanning operational
+    platforms, reserve and capital planning tooling, and money-flow infrastructure
+    under jurisdictional fiduciary regulation
+  field: Property-management software, community-association SaaS, fintech for HOA
+    banking and payments, and multi-jurisdictional condominium/HOA regulatory frameworks
+  description: Vendor profiles, product architectures, integration surfaces, money-flow
+    designs, and regulatory constraints across CAM software, CMMS/EAM, resident-engagement
+    platforms, reserve-study tools, and banking partners serving condominiums and
+    HOAs. Scope covers 10 jurisdictions (NS, ON, BC, AB, QC, FL, CA, NY, NJ, VA) including
+    fiduciary standards, audit and disclosure thresholds, banking regulations, and
+    reserve fund management bounds. Both incumbent platforms (CINC, AppFolio, FirstService,
+    Yardi, Buildium, TOPS) and challenger/niche tooling are in scope.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Profiles or analyzes a specific CAM (community-association management), CMMS/EAM,
+  resident-engagement, reserve-study, or HOA-banking/payments software vendor with
+  named product, customer count, ARR, integration partners, or feature surface
+- "Describes money-flow architecture for condo/HOA operations \u2014 operating account\
+  \ vs. reserve account separation, payment-processing rails (ACH, lockbox, card),\
+  \ banking partner relationships (CIT Bank, Alliance Association Bank, Pacific Premier),\
+  \ or treasury workflows"
+- Reports integration surfaces or API/data-exchange patterns between CAM platforms
+  and adjacent tooling (reserve study tools, CMMS, accounting, banking, insurance,
+  document management)
+- "Covers jurisdiction-specific fiduciary, audit, disclosure, or reserve-fund regulations\
+  \ for any of NS, ON, BC, AB, QC, FL, CA, NY, NJ, or VA (e.g., FL HB 913/SIRS, CA\
+  \ Davis-Stirling \xA75550, NY BCL, ON Condo Act \xA794, NS Condominium Act, QC divided\
+  \ co-ownership rules)"
+- Documents banking-partner regulations or fintech compliance bounds applicable to
+  HOA/condo reserve funds (FDIC sweep structures, ICS/CDARS, trust-account requirements,
+  money-transmitter licensing)
+- Reports M&A activity, funding rounds, customer migrations, or competitive dynamics
+  among condo/HOA software vendors with named parties and quantified metrics
+exclusion_criteria:
+- Generic real-estate-tech market commentary without specific condo/HOA vendor, product,
+  or regulatory content
+- Single-family rental, multifamily-only (apartment), or commercial real estate software
+  without condo/HOA association-management applicability
+- Vendor marketing copy with no independently verifiable claims about architecture,
+  integrations, customer base, or regulatory posture
+- Pure consumer-side HOA-living advice (homeowner forums, dispute narratives) without
+  software, money-flow, or regulatory substance
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Industry trade publications with editorial standards (HOA-USA, CAI publications,
+      Community Associations Institute white papers, Bankrate/American Banker for
+      fintech angle)
+    - SEC filings, S-1s, or investor materials from public/PE-backed CAM software
+      vendors
+    - Primary-source regulatory filings (state condo commission rulings, statutory
+      text, attorney-general opinions)
+    - Vendor engineering blogs or technical documentation describing actual architecture
+      (not pitch decks)
+    negative_signals:
+    - SEO-farm "best HOA software 2026" listicles with affiliate links and no independent
+      evaluation
+    - Press releases republished verbatim without analysis
+    - Vendor-sponsored "research reports" without disclosed methodology
+  content_depth:
+    positive_signals:
+    - Names specific products, customers, integration partners, transaction volumes,
+      or AUM figures
+    - Cites statute, regulation, or enforcement action by section number
+    - Compares vendors on concrete dimensions (data model, API surface, banking partner,
+      jurisdiction coverage) rather than feature checklists
+    - Distinguishes between operational/accounting/reserve/payments layers rather
+      than treating "HOA software" as monolithic
+    negative_signals:
+    - Treats "AI-powered" or "cloud-based" as differentiating claims without architectural
+      specifics
+    - Conflates CAM software with CMMS, reserve-study tools, or banking without distinguishing
+      roles
+    - No jurisdiction specified when discussing regulatory or fiduciary requirements
+  source_recency_and_authority:
+    positive_signals:
+    - Published within 24 months for vendor/competitive intelligence, or current statutory
+      citation for regulatory content
+    - Author with named role at vendor, regulator, CAI, law firm specializing in community-association
+      law, or PE/strategic acquirer
+    - Acknowledges multi-jurisdictional variation rather than universalizing one state's
+      framework
+    negative_signals:
+    - Pre-2020 vendor analysis without acknowledgment of post-Surfside (2021) regulatory
+      shifts and resulting market reshaping
+    - Anonymous or pseudonymous authorship on regulatory or money-flow claims
+    - US-only framing applied to Canadian jurisdictions (or vice versa) without jurisdiction-aware
+      distinction
+bootstrapped_from_description_hash: b7d892e65702bb14

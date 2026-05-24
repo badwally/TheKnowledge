@@ -1,0 +1,42 @@
+source_id: web-2022-03-01-ef4
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'PVSC data-disclosure policy page is operationally load-bearing for the
+  can-pilot NS covariate adapter despite lacking reserve-study methodology content.
+  Key signals: (1) confirms bulk-data access route runs through the Geographic Information
+  Services (GIS) Division of the Office of Service Nova Scotia — not PVSC directly
+  — which is the correct procurement contact for the NS covariate seed file; (2) confirms
+  datazONE open-data portal as the public-facing release channel; (3) establishes
+  the FOIPOP Act as the governing disclosure framework and enumerates exclusion categories
+  (personal info, third-party business harms, safety). These three points collectively
+  define the NS covariate access pathway that the can-pilot Halifax wave must navigate
+  before bulk assessment data can be ingested. Narrow but non-substitutable for the
+  Halifax implementation.'
+pinned_at: '2026-05-19T14:49:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Data Disclosure
+  authors: []
+  url: https://www.pvsc.ca/data-disclosure
+content_excerpt: '# Data Disclosure
+
+
+  # Access to PVSC Data
+
+
+  PVSC provides access to select property-related assessment information with the
+  goals of increasing transparency and accountability, improving the quality of data,
+  improving service to the public, and empowering citizens and supporting greater
+  public engagement.
+
+
+  PVSC makes data available to the public on the PVSC website and on the datazONE
+  open data portal where PVSC determines that the data:
+
+
+  - Is of interest or useful to the public,
+
+  - Is reviewed for'

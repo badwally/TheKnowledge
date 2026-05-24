@@ -1,0 +1,54 @@
+source_id: web-2025-10-21-a7b
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'City of Toronto Apartment Building Registration open dataset (Open Government
+  Licence — Toronto) is the canonical free covariate anchor for the can-pilot Ontario
+  wave (Brief-0011 Wave C1/C2). Fields include year_built, no_of_storeys, no_of_units,
+  site_address, property_type — directly feeding the ON covariate schema. Published
+  by Municipal Licensing & Standards / RentSafeTO program; covers all rental apartment
+  buildings with 3+ storeys and 10+ units. Download available as CSV (1.6 MB). MATERIAL
+  FINDING: the dataset is marked ''Retired'' as of scrape date (last refreshed 2026-05-05,
+  refreshed monthly). Retirement status must be recorded in the wiki source as it
+  affects can-pilot Wave C reliability — a successor dataset search is needed before
+  the ON adapter builds against these fields. Filter score 0.5 (review) should be
+  include: covariate schema + access terms + retirement status are all substantive
+  findings load-bearing for the can-pilot pipeline.'
+pinned_at: '2026-05-19T14:56:53Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Open Data Dataset - City of Toronto Open Data Portal
+  authors: []
+  url: https://open.toronto.ca/dataset/apartment-building-registration/
+content_excerpt: 'First published:
+
+
+  Data last refreshed:
+
+
+  Refreshed:
+
+
+  Data type:
+
+
+  Civic issues:
+
+
+  Topics:
+
+
+  More information:
+
+
+  Licence:
+
+
+  Published by:
+
+
+  Contact:
+
+  '

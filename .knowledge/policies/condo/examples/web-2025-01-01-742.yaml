@@ -1,0 +1,28 @@
+source_id: web-2025-01-01-742
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: NYC DOB FISP filing instructions are a primary regulatory PM driver for
+  high-rise residential - directly in scope
+pinned_at: '2026-05-09T22:28:33Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Façade Inspection & Safety Program (FISP) Filing Instructions
+  authors: []
+  url: https://www.nyc.gov/site/buildings/safety/facade-inspection-safety-program-fisp-filing-instructions.page
+content_excerpt: '# Façade Inspection & Safety Program (FISP) Filing Instructions
+
+
+  Owners of buildings higher than six (6) stories **must** have exterior walls and
+  appurtenances inspected every five (5) years and a technical façade report **must**
+  be electronically filed with the Department through DOB NOW: *Safety*.
+
+
+  ### Filing Requirements
+
+
+  FISP Reports **must** be submitted electronically through DOB NOW: *Safety*. Once
+  a Registered Design Professional (RDP) meets the required experience and qualifications
+  the'

@@ -1,0 +1,45 @@
+source_id: web-2025-07-16-ce4
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Platform-existence confirmation: UpperBee is confirmed as a Canadian (Quebec-headquartered)
+  all-in-one CAM platform targeting condo associations, multifamily, and portfolios.
+  This establishes the platform''s existence and QC-native positioning, which is load-bearing
+  for the Y2 QC partnership thesis in Finding-0033. The Bill 16 specific URL is 403-blocked
+  with no archive snapshot; this homepage is the best available source for platform
+  identity. Consistent with filter-correct rationale applied to other Batch C sources
+  (platform-existence-confirmation tier).'
+pinned_at: '2026-05-24T01:42:17Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Simple, efficient and integrated property management solution
+  authors: []
+  url: http://web.archive.org/web/20260330205910/https://upperbee.com/
+content_excerpt: '### One smart tool for all your property management needs
+
+
+  # Switch to UpperBee’s all-in-one accounting & property management solution and:
+
+
+  - Save hours every week
+
+  - Manage any size association, multifamily or portfolio
+
+  - Supercharge community engagement
+
+  - Launch client & employee satisfaction to new heights
+
+
+  Try it once, and you’ll never go back!
+
+
+  Continue your journey
+
+
+  Track&Fix;
+
+
+  Use our property inspection solution for real estate professionals, developers,
+  homeowners and customer service t'

@@ -1,0 +1,28 @@
+source_id: web-2025-11-08-926
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Vendor-watch CI target: Solume Nov 8 2025 launch coverage (Endowment Lock).
+  Third-party editorial coverage confirms product launch timing and provides the platform
+  feature inventory (ARC workflows, dues collection, budget tools, vendor payments,
+  financial reconciliation, LLM document-Q&A AI assistant). The AI-scope confirmation
+  — governing-document / policy-language interpretation only, no predictive condition
+  modeling — is the key competitive-differentiation data point against our probabilistic
+  engine. Filter penalizes absence of methodology depth, but the feature taxonomy
+  itself is the CI for vendor-watch purposes.'
+pinned_at: '2026-05-18T20:55:37Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Endowment Lock
+  authors:
+  - Endowmentlock Sriu
+  url: https://endowmentlock.com/2025/11/08/solume-launches-ai-software-for-easier-hoa-management/
+content_excerpt: '**Atlanta, Georgia, United States, 8th Nov 2025 – **Solume has announced
+  the launch of its AI-powered HOA and condo association management platform, designed
+  to simplify board operations, reduce administrative strain, and strengthen financial
+  transparency across communities. The software focuses on the core tasks that board
+  members handle every day, offering tools that centralize communication, automate
+  reserve study planning, support accurate budgeting, and provide structured workflows
+  for arch'

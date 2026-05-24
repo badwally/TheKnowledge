@@ -1,0 +1,43 @@
+source_id: web-2025-02-05-f51
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Condo Control cross-provincial reserve fund requirements summary (ON/AB/BC)
+  is a secondary regulatory triangulation source for Finding-0017 §7C and Brief-0011.
+  Specifically: confirms ON Class 1/2/3 cycle, AB 5-year cycle + 12-unit DIY exception,
+  BC July 1 2024 deferral elimination + 5-year cycle + six qualified-provider categories
+  (P.Eng, architect, applied science technologist, AACI appraiser, CRP, quantity surveyor)
+  effective July 1 2025. The BC section correctly states the July 1 2026 Metro Vancouver
+  / Fraser Valley / CRD deadline and the July 1 2027 other-BC deadline — making this
+  the clearest single-source qualified-provider and deadline cross-reference available
+  without navigating BC regulation text. NS is not covered, which limits its utility
+  for the Halifax wave, but it is the practitioner standard for the Toronto and Vancouver
+  waves in Brief-0011.'
+pinned_at: '2026-05-19T14:49:07Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Reserve fund requirements for Canadian condominiums and stratas
+  authors:
+  - Kim Brown
+  url: https://www.condocontrol.com/template/canada-condo-strata-reserve-fund-requirements/
+content_excerpt: 'Florida has historically been considered an ideal state to purchase
+  a winter home. Not only is it easy to get to, but condominium units were plentiful
+  and very affordable.
+
+
+  However, a recent law is making prospective buyers think twice about buying a condo
+  unit in Florida.
+
+
+
+  **Table of contents**
+
+
+  **What is a reserve fund?****Reserve fund studies****Ontario reserve fund requirements****Alberta
+  reserve fund requirements****British Columbia reserve fund requirements**
+
+
+
+  The law (SB 4-D), which too'

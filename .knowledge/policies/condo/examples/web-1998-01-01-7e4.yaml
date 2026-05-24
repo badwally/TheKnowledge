@@ -1,0 +1,40 @@
+source_id: web-1998-01-01-7e4
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: BuildingLink Canada maintenance solution page is a P3 cross-add in Brief-0014
+  / Finding-0034 §9. Platform-existence + feature surface for Canadian resident-engagement
+  and work-order tracking — load-bearing for condo-software competitive landscape
+  mapping. Canadian jurisdiction (/en-ca) directly relevant. Null filter from condo
+  domain ingest; cross-adding to condo-software for the integration-surface corpus.
+pinned_at: '2026-05-24T02:58:08Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Building Maintenance Solutions - BuildingLink Canada
+  authors: []
+  url: https://www.buildinglink.io/en-ca/solutions/maintenance
+content_excerpt: '- Service Requests & Work Orders
+
+  - Inspections
+
+  - Preventative Maintenance
+
+  - Equipment & Assets Directory
+
+  - Trades & Compliance Tracking
+
+  - Inventory Tracking
+
+
+  ## Service Requests & Work Orders
+
+
+  **Never miss a maintenance request again!**
+
+
+  BuildingLink allows you to track resident service requests and internal tasks by
+  suite number, common element, or equipment type. Easily convert service requests
+  to PDFs and email them to external vendors as needed. Management and staff can enter,
+  update, and tr'

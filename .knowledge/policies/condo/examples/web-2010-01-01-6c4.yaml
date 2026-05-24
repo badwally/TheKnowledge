@@ -1,0 +1,45 @@
+source_id: web-2010-01-01-6c4
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: FL Administrative Code Rule Chapter 61B-22 — Financial and Accounting Requirements;
+  Budgets, Reserves, and Guarantees. Implementing rules for Fla. Stat. §718 financial
+  obligations including reserves. Reserve rules (61B-22.005) belong to condo-capital-infra;
+  the chapter index is condo-domain anchor for understanding the reserve/operations
+  boundary.
+pinned_at: '2026-05-09T23:38:20Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: '61B-22 : FINANCIAL AND ACCOUNTING REQUIREMENTS; BUDGETS, RESERVES, AND GUARANTEES
+    - Florida Administrative Rules, Law, Code, Register'
+  authors: []
+  url: https://www.flrules.org/gateway/ChapterHome.asp?Chapter=61B-22
+content_excerpt: '| Rule Chapter: 61B-22 | ||||||
+
+  |
+
+  ||||||
+
+
+  | View Individual Rules | ||||||||||||||||||||||||||||||||
+
+  | Click on the word icon to view the latest rule version. Or click on the rule number
+  to see the detail of the rule. | ||||||||||||||||||||||||||||||||
+
+  |
+
+
+
+  | Rule Chapter: 61B-22 | ||||||
+
+  |
+
+  ||||||
+
+
+  | View Individual Rules | ||||||||||||||||||||||||||||||||
+
+  | Click on the word icon to view the latest rule version. Or click on the rule number
+  to see the detail of the rule. | |||||||||||||||||||||||'

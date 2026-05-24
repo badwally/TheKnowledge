@@ -1,0 +1,45 @@
+source_id: web-2025-11-04-f77
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Vantaca features page is the canonical product-surface reference for the
+  dominant CAM platform (1.25B unicorn, 55K+ associations via CINC strategic context).
+  Finding-0033 requires a source that grounds the feature-gap analysis: what Vantaca
+  has (accounting, payments, banking integration, lockbox, AI workflows) vs. what
+  it lacks (probabilistic capital planning). This page enumerates the full HOA management
+  software feature set for gap-delta computation. Money-flow architecture description
+  (accounting, payments, banking) directly matches inclusion criterion 4 (banking-partner
+  integrations, money-flow architecture). Vendor-marketing-copy exclusion does not
+  apply when the subject vendor is the primary competitive reference being characterized
+  — editorial policy intent is to exclude generic vendor puff pieces, not systematic
+  product characterizations of named market leaders.'
+pinned_at: '2026-05-24T01:03:30Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: HOA Management Software | Community Association Software by Vantaca
+  authors: []
+  url: https://www.vantaca.com/features
+content_excerpt: '# H0A Management Software
+
+
+  # Run your business the way it* actually *works
+
+
+  Vantaca is the community management platform built for teams who deliver. Coordinated
+  workflows, complete visibility, and AI that does real work—so your reputation scales
+  with you.
+
+
+  **THE SYSTEM OF ACTION**
+
+
+  ## Community management is connection
+
+
+  Work moves across people, roles, and partners every day—and small breakdowns turn
+  into big problems at scale.
+
+
+  Vantaca''s hoa property management software helps teams execute rel'

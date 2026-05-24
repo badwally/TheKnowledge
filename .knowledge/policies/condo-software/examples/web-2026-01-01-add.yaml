@@ -1,0 +1,33 @@
+source_id: web-2026-01-01-add
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: HomeRun IQ about page names the CEO (Marc Tamres), CPO (Zach Pritchard),
+  advisory board (Ron Peters MIT CRE, Dan Sirk CAI Think Tank, Steve Weikal MIT),
+  investor (Techstars Boston Fall 2024), and confirmed US-only engineering-firm positioning.
+  Named team + named investor + competitor category confirmation is load-bearing for
+  Brief-0014 acquirer-gap analysis. Per Wave 3.1/3.2 calibration pattern, named competitor
+  with quantified backing meets vendor-profile inclusion threshold.
+pinned_at: '2026-05-24T04:43:16Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: About HomeRun IQ — Reserve Studies, PCA & SIRS Software
+  authors:
+  - Marc Tamres; Zach Pritchard; Ron Peters; Dan Sirk; Steve Weikal
+  url: https://homeruniq.com/about
+content_excerpt: '# Built in partnership with the professionals solving America''s
+  infrastructure challenge
+
+
+  ## The infrastructure challenge
+
+
+  Half of Americans live in multi-unit properties—condos, HOAs, co-ops, and rental
+  communities. The median age of these buildings is over 40 years. Deferred maintenance
+  and aging infrastructure have created trillions in accumulated liabilities.
+
+
+  Engineers and reserve specialists are on the front lines of this challenge, answering
+  critical questions: What needs repair? How much'

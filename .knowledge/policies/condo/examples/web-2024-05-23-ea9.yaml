@@ -1,0 +1,57 @@
+source_id: web-2024-05-23-ea9
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Alberta open.alberta.ca condominiums responsibility for repair and maintenance
+  — Tier-2 Alberta jurisdiction source, directly in scope
+pinned_at: '2026-05-09T22:34:37Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Condominiums : responsibility for repair and maintenance'
+  authors: []
+  url: https://open.alberta.ca/publications/condominiums-responsibility-for-repair-and-maintenance
+content_excerpt: '- title | Title
+
+
+  Condominiums : responsibility for repair and maintenance
+
+
+  - name | URL
+
+
+  condominiums-responsibility-for-repair-and-maintenance
+
+
+  - owner_org | Publisher
+
+
+  6575c3d6-bdaf-45e3-87b9-f711b5171043
+
+
+  - alternatetitle1 | Alternative Title
+
+
+  Owning a condominium : Condominium Property Act
+
+
+  - alternatetitle2 | Alternative Title
+
+
+  - alternatetitle3 | Alternative Title
+
+
+  - seriestitle | Series Title
+
+
+  Consumer tips
+
+
+  - seriestitle2 | Series Title
+
+
+  - seriestitle3 | Series Title
+
+
+  - notes | Descripti'

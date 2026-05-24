@@ -1,0 +1,32 @@
+source_id: web-2025-11-15-556
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Vendor-watch CI target: Solume Nov 15 2025 public launch press release.
+  The filter correctly flags absence of pricing/methodology depth, but for a vendor-watch
+  ingest the marketing surface claims ARE the CI — specifically the ''living forecast''
+  / ''automated reserve study management that updates in real time'' language establishes
+  the deterministic-with-real-time-updates positioning that is the competitive contrast
+  with our probabilistic engine. Product launch date (Nov 2025) confirms Solume was
+  pre-launch in the synthesis baseline. These verbatim claims are load-bearing for
+  the entities/solume.md competitive profile.'
+pinned_at: '2026-05-18T20:55:31Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Solume Launches AI Driven Reserve Study Management for HOAs
+  authors:
+  - King Newswire Editorial Team
+  url: https://kingnewswire.com/solume-launches-ai-driven-reserve-study-management-for-hoas-25111537122/
+content_excerpt: '# Solume Launches AI Driven Reserve Study Management for HOAs
+
+
+  **Atlanta, Georgia, United States, 15th Nov 2025** – Solume, an AI-powered HOA and
+  condo association software platform, has expanded its features to streamline board
+  operations, financial oversight, and long-term planning. The platform is gaining
+  attention among associations that seek clearer workflows, stronger financial visibility,
+  and more predictable management processes without the manual workload that strains
+  volunteer boards.
+
+  '

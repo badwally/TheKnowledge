@@ -1,0 +1,37 @@
+source_id: web-2026-01-30-c9d
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: ConciergePlus is a P3 named source in Brief-0014 / Finding-0034 §9. Vancouver-HQ
+  Canadian-market resident-engagement platform; platform-existence confirmation for
+  the condo-software competitive landscape (CAM ecosystem mapping). The filter's 'absent
+  from Finding-0033' citation is factually wrong — this source is explicitly enumerated
+  in Finding-0034 §9. Vendor-existence + Canadian-market positioning load-bearing
+  for Wave 2.2 completeness even without ARR or API-depth disclosure.
+pinned_at: '2026-05-24T02:47:40Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Homepage - Concierge Plus
+  authors: []
+  url: https://www.conciergeplus.com/
+content_excerpt: '## Intelligent AI Property Management Software
+
+
+  ### Property Owners
+
+
+  Gain confidence that your community is being managed efficiently and transparently.
+
+
+  Concierge Plus provides clear communication, organized operations, and real-time
+  visibility into what’s happening across your property. Better tools lead to better
+  oversight, stronger governance, and a better resident experience.
+
+
+  ### PMCs
+
+
+  Run smoother operations without adding headcount. Concierge Plus centralizes resident
+  communication, serv'

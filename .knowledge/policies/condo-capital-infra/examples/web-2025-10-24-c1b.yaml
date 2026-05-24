@@ -1,0 +1,26 @@
+source_id: web-2025-10-24-c1b
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Associa acquires Douglas Elliman property-management arm for M Oct 2025;
+  largest US PM M&A event in 2025; load-bearing for Associa-as-acquirer thesis in
+  gtm/exit-thesis-acquirer-mapping.md §2.9 / §4.4. M&A competitive-intelligence inclusion
+  criterion (condo-capital-infra-v1) applies — named backup acquirer target.
+pinned_at: '2026-05-11T23:03:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Elliman sells property management arm to Associa for $85M
+  authors:
+  - Jake Indursky
+  url: https://therealdeal.com/national/2025/10/24/douglas-elliman-sells-property-management-arm-to-associa/
+content_excerpt: 'Douglas Elliman announced the sale of its property management arm
+  to PMG Holdings, a wholly-owned subsidiary of Associa, one of the largest property
+  management firms in the country.
+
+
+  Associa paid $85 million for all of the equity interest in Douglas Elliman Property
+  Management, according to a filing with the Securities and Exchange Commission. Elliman
+  is using the proceeds from the sale, along with cash on hand, to pay off $50 million
+  in convertible debt it took out from Kennedy Lewis Investment'

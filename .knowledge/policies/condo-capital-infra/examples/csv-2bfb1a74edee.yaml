@@ -1,0 +1,30 @@
+source_id: csv-2bfb1a74edee
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Raw market-sizing data for NS condominium universe (Active Condominium
+  Corporations registry by county, total units). Filter is correctly cautious about
+  reserve-study methodology relevance, but per Brief-0006 and ADR-0004 this is the
+  load-bearing Atlantic-Canada market-frame anchor for the Halifax design-partner
+  engagement (Brief-0004) and the Y1-Y2 expansion path. Raw data dumps that calibrate
+  market sizing should not be evaluated under the same semantic threshold as research-content
+  sources.
+pinned_at: '2026-05-10T22:49:00Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: csv
+  title: 9w9g-2c83
+  authors: []
+  url: ''
+content_excerpt: '# 9w9g-2c83
+
+
+  CSV with **526** data rows × **0** columns.
+
+
+
+
+  _476 additional rows omitted from preview. Full data in sidecar._
+
+  '

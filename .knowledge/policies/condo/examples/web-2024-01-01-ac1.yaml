@@ -1,0 +1,42 @@
+source_id: web-2024-01-01-ac1
+domain: condo
+decision: include
+score: 1.0
+policy_version: condo-v1
+rationale: Primary FL statute text — Fla. Stat. §718.113 (2024) Maintenance, alterations,
+  additions to condominiums. Governs board maintenance obligations and common-area
+  repair duties. Operational-PM layer for condo domain.
+pinned_at: '2026-05-09T23:33:57Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Florida Senate
+  authors: []
+  url: https://www.flsenate.gov/Laws/Statutes/2024/718.113
+content_excerpt: 'Quick Links
+
+
+  - General Laws Conversion Table (2025) (PDF)
+
+  - Florida Statutes Definitions Index (2025) (PDF)
+
+  - Table of Section Changes (2025) (PDF)
+
+  - Preface to the Florida Statutes (2025) (PDF)
+
+  - Table Tracing Session Laws to Florida Statutes (2025) (PDF)
+
+  - Index to Special and Local Laws (1971-2025) (PDF)
+
+  - Index to Special and Local Laws (1845-1970) (PDF)
+
+  - Statute Search Tips
+
+
+  ## 2024 Florida Statutes (Including 2025C)
+
+
+  SECTION 113
+
+
+  Maintenance; limitation upon improvement; display of flag; '
