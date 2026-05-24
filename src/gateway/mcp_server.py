@@ -175,6 +175,25 @@ def wiki_finalize(page_path: str, abandon: bool = False) -> dict[str, Any]:
 
 
 @mcp.tool()
+def wiki_finalize_batch(
+    domain: str | None = None,
+    limit: int | None = None,
+    execute: bool = False,
+    suggest: bool = False,
+) -> dict[str, Any]:
+    """Batch-finalize stale drafts (Cat A: unresolved_claims == 0).
+
+    Dry-run by default. Pass execute=True to actually finalize.
+    domain restricts to drafts whose frontmatter domains includes this value.
+    limit caps the number of drafts processed.
+    suggest is a Phase C/D stub (not yet wired).
+    """
+    from gateway.ops.finalize_batch import finalize_batch
+
+    return _serialize(finalize_batch(domain=domain, limit=limit, execute=execute, suggest=suggest))
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,

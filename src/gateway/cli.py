@@ -27,6 +27,7 @@ SUBCOMMANDS: dict[str, str] = {
     "nlm-briefing": "Generate a briefing doc; file as wiki artifact",
     "nlm-revise": "Revise an existing NotebookLM artifact",
     "finalize": "Finalize a draft page (re-run validator with citation rule restored)",
+    "finalize-batch": "Batch-finalize stale drafts (dry-run by default; --execute to apply; --suggest enables LLM cite-suggest for Cat B)",
     "cite": "Add [[sources/<id>]] citation tokens to specific lines of a wiki page",
     "cite-add": "Add a citation by claim text (resolves to a line via escalation: exact → normalized → optional --fuzzy)",
     "edit": "Replace the body of one named section in a wiki page (constrained, validator-checked)",
@@ -65,6 +66,7 @@ IMPLEMENTED: set[str] = {
     "nlm-briefing",
     "nlm-revise",
     "finalize",
+    "finalize-batch",
     "cite",
     "cite-add",
     "edit",
@@ -210,6 +212,31 @@ def build_parser() -> argparse.ArgumentParser:
         "--abandon",
         action="store_true",
         help="Delete the draft page and remove its backlinks instead of finalizing",
+    )
+
+    p_finalize_batch = subparsers.add_parser(
+        "finalize-batch", help=SUBCOMMANDS["finalize-batch"]
+    )
+    p_finalize_batch.add_argument(
+        "--domain",
+        default=None,
+        help="Restrict to drafts whose frontmatter `domains` includes this value.",
+    )
+    p_finalize_batch.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Process at most this many stale drafts.",
+    )
+    p_finalize_batch.add_argument(
+        "--execute",
+        action="store_true",
+        help="Actually finalize (default is dry-run; no files modified).",
+    )
+    p_finalize_batch.add_argument(
+        "--suggest",
+        action="store_true",
+        help="Run LLM cite-suggest on Cat B drafts (Phase C/D, not yet wired).",
     )
 
     # cite: add [[sources/<id>]] citation tokens to specific lines of a wiki page
@@ -694,6 +721,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_nlm_revise(ns)
     if ns.subcommand == "finalize":
         return _run_finalize(ns)
+    if ns.subcommand == "finalize-batch":
+        return _run_finalize_batch(ns)
     if ns.subcommand == "cite":
         return _run_cite(ns)
     if ns.subcommand == "cite-add":
@@ -1086,6 +1115,19 @@ def _run_finalize(ns: argparse.Namespace) -> int:
     from gateway.ops.finalize import finalize
 
     return _emit_result(finalize(ns.page_path, abandon=ns.abandon))
+
+
+def _run_finalize_batch(ns: argparse.Namespace) -> int:
+    from gateway.ops.finalize_batch import finalize_batch
+
+    return _emit_result(
+        finalize_batch(
+            domain=ns.domain,
+            limit=ns.limit,
+            execute=ns.execute,
+            suggest=ns.suggest,
+        )
+    )
 
 
 def _run_cite(ns: argparse.Namespace) -> int:
