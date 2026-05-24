@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 
 import pytest
@@ -12,7 +13,9 @@ from gateway.evaluate.schema import (
     EvalRunSummary,
     load_goldens,
     save_goldens,
+    scaffold_template,
     SchemaError,
+    validate_rubric_weights,
 )
 
 
@@ -80,9 +83,36 @@ def test_scaffold_writes_template_with_one_example(tmp_path):
 
 
 def test_scaffold_refuses_to_overwrite(tmp_path):
-    from gateway.evaluate.schema import scaffold_template
-
     target = tmp_path / "goldens.yaml"
     scaffold_template(target, domain="d1")
     with pytest.raises(FileExistsError):
         scaffold_template(target, domain="d1")
+
+
+def test_load_goldens_rejects_non_numeric_rubric_weight(tmp_path):
+    path = tmp_path / "goldens.yaml"
+    path.write_text(
+        "goldens:\n"
+        "  - id: q01\n"
+        "    question: q?\n"
+        "    must_cite: []\n"
+        "    must_assert: []\n"
+        "    must_not_assert: []\n"
+        "    rubric_weight: {cite: heavy}\n"
+    )
+    with pytest.raises(SchemaError, match="must be numeric"):
+        load_goldens(path)
+
+
+def test_rubric_weight_sum_warning(tmp_path, caplog):
+    path = tmp_path / "goldens.yaml"
+    save_goldens(path, [
+        Golden(
+            id="q01", question="q?",
+            must_cite=[], must_assert=[], must_not_assert=[],
+            rubric_weight={"cite": 0.3, "assert": 0.0, "anti": 0.0},
+        ),
+    ])
+    with caplog.at_level(logging.WARNING):
+        load_goldens(path)
+    assert any("sums to 0.300" in m for m in caplog.messages)

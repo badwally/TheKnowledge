@@ -9,10 +9,13 @@ results into one run record persisted to disk.
 
 from __future__ import annotations
 
+import logging
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 import yaml
+
+_log = logging.getLogger(__name__)
 
 
 class SchemaError(ValueError):
@@ -72,6 +75,21 @@ class EvalRunSummary:
 _REQUIRED_FIELDS = ("id", "question", "must_cite", "must_assert", "must_not_assert")
 
 
+def validate_rubric_weights(golden: Golden) -> list[str]:
+    """Return warning messages if rubric_weight doesn't sum to ~1.0.
+
+    Doesn't raise — partial keys are a footgun the user might still want.
+    Caller logs the warnings via _log.warning.
+    """
+    s = sum(golden.rubric_weight.values())
+    if 0.95 <= s <= 1.05:
+        return []
+    return [
+        f"golden {golden.id!r} rubric_weight sums to {s:.3f} (expected ~1.0); "
+        f"scoring math may be unintentional. weights: {dict(golden.rubric_weight)}"
+    ]
+
+
 def load_goldens(path: Path) -> list[Golden]:
     raw = yaml.safe_load(path.read_text()) or {}
     entries = raw.get("goldens") or []
@@ -90,14 +108,25 @@ def load_goldens(path: Path) -> list[Golden]:
         if gid in seen_ids:
             raise SchemaError(f"goldens[{i}] duplicate id: {gid!r}")
         seen_ids.add(gid)
+        rw = entry.get("rubric_weight") or {}
+        if not isinstance(rw, dict):
+            raise SchemaError(f"goldens[{i}] rubric_weight must be a mapping")
+        for k, v in rw.items():
+            if not isinstance(v, (int, float)):
+                raise SchemaError(
+                    f"goldens[{i}] rubric_weight[{k!r}] must be numeric, got {type(v).__name__}"
+                )
         out.append(Golden(
             id=str(gid),
             question=str(entry["question"]),
             must_cite=list(entry.get("must_cite") or []),
             must_assert=list(entry.get("must_assert") or []),
             must_not_assert=list(entry.get("must_not_assert") or []),
-            rubric_weight=dict(entry.get("rubric_weight") or {}),
+            rubric_weight=dict(rw),
         ))
+    for g in out:
+        for w in validate_rubric_weights(g):
+            _log.warning("schema: %s", w)
     return out
 
 

@@ -8,7 +8,9 @@ from gateway.evaluate.schema import (
     load_goldens,
     save_goldens,
     scaffold_template,
+    validate_rubric_weights,
 )
+from gateway.evaluate.judge import Judge
 
 __all__ = [
     "Golden",
@@ -18,4 +20,6 @@ __all__ = [
     "load_goldens",
     "save_goldens",
     "scaffold_template",
+    "validate_rubric_weights",
+    "Judge",
 ]
