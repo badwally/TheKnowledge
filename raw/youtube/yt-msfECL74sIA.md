@@ -7,8 +7,10 @@ authors:
 - Sandu
 ingested_at: '2026-05-23T17:56:26Z'
 content_hash: sha256:b648d5556688a32f8cc88e738338ed04b9da54359923b83943062d07b3fedade
-domains: []
-nlm_corpus_ids: []
+domains:
+- ai-native-business
+nlm_corpus_ids:
+- a66c272c-5af9-4f34-ab22-6ca53764ba7e
 wiki_pages: []
 meta:
   channel: Sandu

@@ -28,6 +28,8 @@ SUBCOMMANDS: dict[str, str] = {
     "nlm-revise": "Revise an existing NotebookLM artifact",
     "finalize": "Finalize a draft page (re-run validator with citation rule restored)",
     "cite": "Add [[sources/<id>]] citation tokens to specific lines of a wiki page",
+    "cite-add": "Add a citation by claim text (resolves to a line via escalation: exact → normalized → optional --fuzzy)",
+    "edit": "Replace the body of one named section in a wiki page (constrained, validator-checked)",
     "concept-add": "Author a wiki/concepts/<slug>.md page from a markdown body",
     "lint": "Run health checks across the wiki",
     "index": "Rebuild or update the content index",
@@ -44,6 +46,8 @@ SUBCOMMANDS: dict[str, str] = {
     "bootstrap-domain": "Author a starter policy.yaml from a natural-language domain description",
     "serve": "Start the local web UI (FastAPI + React)",
     "poll": "Run a registered poller (e.g. apple-notes) to fetch new items into raw/",
+    "schedule": "Manage cron-driven scheduled jobs (list/add/remove/enable/disable/run/dry-run)",
+    "auth": "Manage bearer tokens for /api/ingest (add/list/revoke) — K3 cloud shim",
 }
 
 IMPLEMENTED: set[str] = {
@@ -62,6 +66,8 @@ IMPLEMENTED: set[str] = {
     "nlm-revise",
     "finalize",
     "cite",
+    "cite-add",
+    "edit",
     "concept-add",
     "query",
     "mcp-serve",
@@ -75,6 +81,8 @@ IMPLEMENTED: set[str] = {
     "bootstrap-domain",
     "serve",
     "poll",
+    "schedule",
+    "auth",
 }
 
 
@@ -215,6 +223,42 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="+",
         metavar="LINE:SOURCE_ID",
         help="One or more LINE:SOURCE_ID pairs (e.g., 26:web-2026-01-01-361). LINE is 1-indexed into the on-disk file.",
+    )
+
+    # cite-add: claim-text-driven citation insertion (K1)
+    p_cite_add = subparsers.add_parser("cite-add", help=SUBCOMMANDS["cite-add"])
+    p_cite_add.add_argument(
+        "page_path",
+        help="Path to the wiki page (relative to KNOWLEDGE_ROOT or absolute)",
+    )
+    p_cite_add.add_argument(
+        "claim_text",
+        help='The claim sentence to cite (copy-paste from page; e.g., "Food noise reduction is dose-dependent.")',
+    )
+    p_cite_add.add_argument(
+        "source_id",
+        help="Source id to cite (e.g., web-2026-05-24-test, pubmed-12345678)",
+    )
+    p_cite_add.add_argument(
+        "--fuzzy",
+        action="store_true",
+        help="If deterministic match misses, fall back to an LLM resolver (incurs one Sonnet/Haiku call)",
+    )
+
+    # edit: constrained section-replace (K1)
+    p_edit = subparsers.add_parser("edit", help=SUBCOMMANDS["edit"])
+    p_edit.add_argument(
+        "page_path",
+        help="Path to the wiki page (relative to KNOWLEDGE_ROOT or absolute)",
+    )
+    p_edit.add_argument(
+        "--section",
+        required=True,
+        help='Section name (case-insensitive match against `## <name>` headers; e.g., "Summary")',
+    )
+    p_edit.add_argument(
+        "--body-file",
+        help="Path to a markdown file containing the replacement section body. Reads from stdin if omitted.",
     )
 
     # concept-add: author wiki/concepts/<slug>.md from a markdown body
@@ -548,6 +592,62 @@ def build_parser() -> argparse.ArgumentParser:
         help="List registered pollers and exit",
     )
 
+    # schedule: cron-driven job runner (K4 / M48)
+    p_schedule = subparsers.add_parser("schedule", help=SUBCOMMANDS["schedule"])
+    p_sched_sub = p_schedule.add_subparsers(dest="schedule_action", required=True)
+
+    p_sched_list = p_sched_sub.add_parser("list", help="List all scheduled jobs")  # noqa: F841
+
+    p_sched_add = p_sched_sub.add_parser("add", help="Add or replace a scheduled job")
+    p_sched_add.add_argument("name", help="Job name (used as the file_lock key)")
+    p_sched_add.add_argument("cron", help='Cron expression in UTC (e.g., "30 4 * * *")')
+    p_sched_add.add_argument("command", help="Shell command to execute on each tick")
+    p_sched_add.add_argument(
+        "--disabled",
+        action="store_true",
+        help="Add the job in disabled state (no auto-runs until `wiki schedule enable`)",
+    )
+    p_sched_add.add_argument(
+        "--cooldown-seconds",
+        type=int,
+        default=600,
+        help="Wait this many seconds after a failure before re-running (default 600)",
+    )
+
+    p_sched_rm = p_sched_sub.add_parser("remove", help="Remove a job by name")
+    p_sched_rm.add_argument("name")
+
+    p_sched_en = p_sched_sub.add_parser("enable", help="Enable a job")
+    p_sched_en.add_argument("name")
+
+    p_sched_dis = p_sched_sub.add_parser("disable", help="Disable a job")
+    p_sched_dis.add_argument("name")
+
+    p_sched_run = p_sched_sub.add_parser(
+        "run", help="Tick: run every due job (launchd invokes this every 60s)"
+    )
+
+    p_sched_dry = p_sched_sub.add_parser(
+        "dry-run", help="Show what `run` would execute without actually running"
+    )
+
+    # auth: bearer-token management for /api/ingest (K3 / M48)
+    p_auth = subparsers.add_parser("auth", help=SUBCOMMANDS["auth"])
+    p_auth_sub = p_auth.add_subparsers(dest="auth_action", required=True)
+
+    p_auth_add = p_auth_sub.add_parser("add", help="Mint a new bearer token")
+    p_auth_add.add_argument(
+        "name",
+        help="Human-readable token name (e.g., ios-shortcut-andrew-iphone)",
+    )
+
+    p_auth_list = p_auth_sub.add_parser(  # noqa: F841
+        "list", help="List token names (does not disclose hashes or plaintext)"
+    )
+
+    p_auth_rev = p_auth_sub.add_parser("revoke", help="Revoke a token by name")
+    p_auth_rev.add_argument("name")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -596,6 +696,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_finalize(ns)
     if ns.subcommand == "cite":
         return _run_cite(ns)
+    if ns.subcommand == "cite-add":
+        return _run_cite_add(ns)
+    if ns.subcommand == "edit":
+        return _run_edit(ns)
     if ns.subcommand == "concept-add":
         return _run_concept_add(ns)
     if ns.subcommand == "query":
@@ -622,6 +726,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_demote_domain(ns)
     if ns.subcommand == "reject-proposal":
         return _run_reject_proposal(ns)
+    if ns.subcommand == "schedule":
+        return _run_schedule(ns)
+    if ns.subcommand == "auth":
+        return _run_auth(ns)
     if ns.subcommand == "research":
         return _run_research(ns)
     if ns.subcommand == "poll":
@@ -659,6 +767,113 @@ def _run_poll(ns: argparse.Namespace) -> int:
     if result.fetched or result.skipped:
         print(f"  fetched={result.fetched} skipped={result.skipped}")
     return 0
+
+
+def _run_schedule(ns: argparse.Namespace) -> int:
+    from gateway import scheduler as _scheduler
+
+    action = ns.schedule_action
+
+    if action == "list":
+        jobs = _scheduler.load_schedule()
+        if not jobs:
+            print("no scheduled jobs (`wiki schedule add` to register one)")
+            return 0
+        print(f"{len(jobs)} scheduled job(s):")
+        for j in jobs:
+            state = "enabled" if j.enabled else "DISABLED"
+            last = j.last_run or "(never)"
+            exit_str = "" if j.last_exit_code is None else f" exit={j.last_exit_code}"
+            print(f"  {j.name}  [{state}]  cron={j.cron!r}  last_run={last}{exit_str}")
+            print(f"    command: {j.command}")
+        return 0
+
+    if action == "add":
+        try:
+            job = _scheduler.add_job(
+                name=ns.name,
+                cron=ns.cron,
+                command=ns.command,
+                enabled=not ns.disabled,
+                cooldown_seconds=ns.cooldown_seconds,
+            )
+        except Exception as e:  # noqa: BLE001 — surface croniter validation errors
+            print(f"error: invalid schedule (cron parse failed?): {e}", file=sys.stderr)
+            return 2
+        print(f"ok: added job {job.name!r}")
+        return 0
+
+    if action == "remove":
+        if _scheduler.remove_job(ns.name):
+            print(f"ok: removed {ns.name!r}")
+            return 0
+        print(f"error: no job named {ns.name!r}", file=sys.stderr)
+        return 2
+
+    if action in ("enable", "disable"):
+        if _scheduler.set_enabled(ns.name, enabled=(action == "enable")):
+            print(f"ok: {action}d {ns.name!r}")
+            return 0
+        print(f"error: no job named {ns.name!r}", file=sys.stderr)
+        return 2
+
+    if action in ("run", "dry-run"):
+        summary = _scheduler.run_all_due(dry_run=(action == "dry-run"))
+        if action == "dry-run":
+            print(f"dry-run: would run {summary['would_run']}, would skip {summary['skipped']}")
+        else:
+            print(
+                f"ran={summary['ran']} failed={summary['failed']} "
+                f"skipped={summary['skipped']}"
+            )
+        return 0 if summary.get("failed", 0) == 0 else 1
+
+    print(f"error: unknown schedule action: {action}", file=sys.stderr)
+    return 2
+
+
+def _run_auth(ns: argparse.Namespace) -> int:
+    from gateway.web import auth as _auth
+
+    action = ns.auth_action
+
+    if action == "add":
+        try:
+            plaintext = _auth.add_token(ns.name)
+        except ValueError as e:
+            print(f"error: {e}", file=sys.stderr)
+            return 2
+        print(f"ok: token {ns.name!r} minted")
+        print(f"  bearer token (save this — it is shown ONCE):")
+        print(f"    {plaintext}")
+        print()
+        print("Use with:")
+        print(f"  curl -H 'Authorization: Bearer {plaintext}' \\")
+        print("       -H 'Content-Type: application/json' \\")
+        print("       -d '{\"url\": \"https://example.com\"}' \\")
+        print("       http://localhost:7474/api/ingest")
+        return 0
+
+    if action == "list":
+        tokens = _auth.list_tokens()
+        if not tokens:
+            print("no tokens (use `wiki auth add <name>` to mint one)")
+            return 0
+        print(f"{len(tokens)} token(s):")
+        for t in tokens:
+            last = t.get("last_used_at") or "(never)"
+            print(f"  {t['name']}  created={t['created_at']}  last_used={last}")
+        return 0
+
+    if action == "revoke":
+        if _auth.revoke_token(ns.name):
+            print(f"ok: revoked {ns.name!r}")
+            return 0
+        print(f"error: no token named {ns.name!r}", file=sys.stderr)
+        return 2
+
+    print(f"error: unknown auth action: {action}", file=sys.stderr)
+    return 2
 
 
 def _run_finetune(ns: argparse.Namespace) -> int:
@@ -895,6 +1110,38 @@ def _run_cite(ns: argparse.Namespace) -> int:
             return 2
         additions.append((ln, sid.strip()))
     return _emit_result(cite(ns.page_path, additions))
+
+
+def _run_cite_add(ns: argparse.Namespace) -> int:
+    from gateway.ops.cite_add import cite_add
+
+    return _emit_result(
+        cite_add(
+            ns.page_path,
+            claim_text=ns.claim_text,
+            source_id=ns.source_id,
+            fuzzy=ns.fuzzy,
+        )
+    )
+
+
+def _run_edit(ns: argparse.Namespace) -> int:
+    from gateway.ops.edit_section import edit_section
+
+    if ns.body_file:
+        try:
+            new_body = open(ns.body_file, encoding="utf-8").read()
+        except OSError as e:
+            print(
+                f"error: cannot read --body-file {ns.body_file!r}: {e}",
+                file=sys.stderr,
+            )
+            return 2
+    else:
+        new_body = sys.stdin.read()
+    return _emit_result(
+        edit_section(ns.page_path, section=ns.section, new_body=new_body)
+    )
 
 
 def _run_concept_add(ns: argparse.Namespace) -> int:

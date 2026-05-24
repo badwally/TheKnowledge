@@ -47,9 +47,13 @@ def finalize(page_path: str | Path, *, abandon: bool = False) -> OperationResult
         )
 
     try:
-        front, body = fm.parse(target.read_text())
+        page_text = target.read_text()
+        front, body = fm.parse(page_text)
     except fm.FrontmatterError as e:
         return OperationResult(success=False, errors=[f"frontmatter: {e}"])
+    # K1/D2: compute file-line offset so validator errors are file-relative
+    # (matching `wiki cite`/`wiki cite-add` line numbering).
+    body_offset = fm.body_line_offset(page_text)
 
     if not front.get("draft"):
         return OperationResult(
@@ -64,7 +68,9 @@ def finalize(page_path: str | Path, *, abandon: bool = False) -> OperationResult
     # rule is restored to rejection. The on-disk file keeps `draft: true`
     # until validation passes.
     strict_front = {k: v for k, v in front.items() if k not in ("draft", "draft_started_at", "draft_unresolved_claims")}
-    result = validator.validate_wiki_page(strict_front, body, page_type, draft=False)
+    result = validator.validate_wiki_page(
+        strict_front, body, page_type, draft=False, body_line_offset=body_offset
+    )
     if not result.ok:
         return OperationResult(
             success=False,

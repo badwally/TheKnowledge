@@ -61,7 +61,11 @@ def _check_one(type_name: str, path: Path) -> list[LintFinding]:
             )
         ]
 
-    result = validator.validate_wiki_page(front, body, type_name)
+    # K1/D2: report file-relative line numbers so users can copy the
+    # validator output straight into `wiki cite-add`.
+    result = validator.validate_wiki_page(
+        front, body, type_name, body_line_offset=fm.body_line_offset(text)
+    )
     out: list[LintFinding] = []
     for err in result.errors:
         if err.rule in _SUPPRESSED_RULES:
