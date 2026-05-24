@@ -137,7 +137,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_correct.add_argument("--domain", default=None, help="Domain slug if not in source frontmatter")
 
     # status (no args)
-    subparsers.add_parser("status", help=SUBCOMMANDS["status"])
+    p_status = subparsers.add_parser("status", help=SUBCOMMANDS["status"])
+    p_status.add_argument(
+        "--cost",
+        action="store_true",
+        help="Include estimated USD cost in the 7-day LLM-usage block (K5)",
+    )
 
     # watch (no args; runs foreground)
     subparsers.add_parser("watch", help=SUBCOMMANDS["watch"])
@@ -803,7 +808,7 @@ def _run_filter_correct(ns: argparse.Namespace) -> int:
 def _run_status(ns: argparse.Namespace) -> int:
     from gateway.ops.status import status
 
-    result = status()
+    result = status(with_cost=getattr(ns, "cost", False))
     print(result.summary)
     return 0 if result.success else 1
 

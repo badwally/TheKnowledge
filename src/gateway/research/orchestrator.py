@@ -106,8 +106,18 @@ def _infer_domain(prompt: str, plan_client: PlanClient | None) -> str | None:
         slug_list="\n".join(f"- {s}" for s in slugs),
         prompt=prompt,
     )
+    # K5 telemetry: this is a tiny one-shot call but recording it gives
+    # complete coverage across all Anthropic invocations.
+    call_with_usage = getattr(plan_client, "call_with_usage", None)
     try:
-        raw = plan_client.call(formatted).strip()
+        if callable(call_with_usage):
+            from gateway.log import log_llm_call
+
+            result = call_with_usage(formatted)
+            log_llm_call("plan_domain_inference", result)
+            raw = result.text.strip()
+        else:
+            raw = plan_client.call(formatted).strip()
     except Exception:  # noqa: BLE001 — agent failure is non-fatal
         return None
     candidate = raw.split()[0].strip().strip("`").strip(".") if raw else ""

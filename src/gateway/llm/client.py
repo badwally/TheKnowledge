@@ -32,6 +32,7 @@ import time
 from typing import Callable
 
 from gateway.core import claude_cli_env
+from gateway.llm.telemetry import CallResult, parse_claude_json
 
 
 class LLMError(RuntimeError):
@@ -179,6 +180,60 @@ class ClaudeCLIClient:
         raise LLMError(
             f"`{self._exe} -p` failed after {self._max_retries + 1} attempts; last stderr: {last_err}"
         )
+
+    def call_with_usage(
+        self,
+        *,
+        user_prompt: str,
+        system_prompt: str | None = None,
+        model: str | None = None,
+        tools: str | None = "",
+        extra_args: list[str] | None = None,
+    ) -> CallResult:
+        """Invoke `claude -p --output-format json` and return a `CallResult`.
+
+        K5 (M47): structured-output companion to ``call()``. Same flags +
+        retry/throttle/backoff behaviour; differs in:
+
+        - Appends ``--output-format json`` so claude emits the structured
+          envelope (text + usage + duration + cost).
+        - Parses the JSON envelope via ``parse_claude_json`` and returns
+          ``CallResult`` instead of plain text.
+
+        Callers that need per-call telemetry (filter, plan, vlm, research)
+        should use this. Callers that only want text can keep using
+        ``call()``.
+
+        Raises ``LLMError`` on subprocess failure, invalid JSON output, or
+        retry exhaustion.
+        """
+        json_extra = list(extra_args or [])
+        json_extra.extend(["--output-format", "json"])
+
+        wall_start = self._monotonic()
+        stdout = self.call(
+            user_prompt=user_prompt,
+            system_prompt=system_prompt,
+            model=model,
+            tools=tools,
+            extra_args=json_extra,
+        )
+        wall_ms = int((self._monotonic() - wall_start) * 1000)
+
+        try:
+            result = parse_claude_json(stdout)
+        except ValueError as e:
+            raise LLMError(
+                f"`{self._exe} -p --output-format json` returned unparseable JSON: {e}"
+            ) from e
+
+        # If claude didn't fill duration_ms (older CLI / partial envelope),
+        # fall back to wall-clock measured around the subprocess call.
+        if result.duration_ms == 0:
+            from dataclasses import replace
+            result = replace(result, duration_ms=wall_ms)
+
+        return result
 
     def _build_argv(
         self,

@@ -24,7 +24,8 @@ import yaml
 
 from gateway.filter.examples import Example
 from gateway.filter.policy import Policy
-from gateway.llm import ClaudeCLIClient, LLMError, model_for
+from gateway.llm import CallResult, ClaudeCLIClient, LLMError, model_for
+from gateway.log import log_llm_call
 
 
 class FilterError(RuntimeError):
@@ -103,9 +104,34 @@ class ClaudeCLIFilterClient:
         """M44 optimized entry: system prefix via --system-prompt."""
         return self._invoke(system_prompt=system, user_prompt=user)
 
+    def call_with_usage(self, prompt: str) -> CallResult:
+        """K5 telemetry variant of ``call(prompt)``."""
+        return self._invoke_with_usage(system_prompt=None, user_prompt=prompt)
+
+    def call_split_with_usage(self, *, system: str, user: str) -> CallResult:
+        """K5 telemetry variant of ``call_split``.
+
+        Returns a ``CallResult`` so the caller can record per-call usage
+        via ``log_llm_call("filter", result)``.
+        """
+        return self._invoke_with_usage(system_prompt=system, user_prompt=user)
+
     def _invoke(self, *, system_prompt: str | None, user_prompt: str) -> str:
         try:
             return self._cli.call(
+                user_prompt=user_prompt,
+                system_prompt=system_prompt,
+                model=self._model,
+                tools="",
+            )
+        except LLMError as e:
+            raise FilterError(str(e)) from e
+
+    def _invoke_with_usage(
+        self, *, system_prompt: str | None, user_prompt: str
+    ) -> CallResult:
+        try:
+            return self._cli.call_with_usage(
                 user_prompt=user_prompt,
                 system_prompt=system_prompt,
                 model=self._model,
@@ -298,8 +324,16 @@ def score(
     system = build_system_prompt(policy, examples)
     user = build_user_prompt(front, body_head)
 
+    # K5: prefer call_split_with_usage so per-call telemetry lands in log.md.
+    # Tests injecting bare stubs without the telemetry method fall back to
+    # call_split (M44 path) and silently skip telemetry — that's intended.
+    call_split_with_usage = getattr(client, "call_split_with_usage", None)
     call_split = getattr(client, "call_split", None)
-    if callable(call_split):
+    if callable(call_split_with_usage):
+        result = call_split_with_usage(system=system, user=user)
+        log_llm_call("filter", result)
+        raw = result.text
+    elif callable(call_split):
         raw = call_split(system=system, user=user)
     else:
         raw = client.call(system + "\n" + user)
