@@ -931,6 +931,22 @@ Resolves the residual citation-grounding failure surfaced in M44.3: synthesis pa
 - `cito:` predicate typing on individual citations (heavyweight; binary cited/uncited + aggregate exemption is sufficient).
 - Backfilling all historical synthesis pages predating M45 — only the 5 M44.3 drafts. Older pages stay; lint surfaces them but doesn't gate.
 
+### M46 — Fine-tuning loop + backfill examples
+
+See `docs/milestones/` — BUILD.md entry pending.
+
+### M47 — K5 token telemetry + K2 MCP-CLI parity (Wave 1)
+
+See `docs/milestones/M47.md`. K5 ships `ClaudeCLIClient.call_with_usage()`, per-model pricing in `costs.py`, single-line log telemetry, and `wiki status --cost` 7-day block. K2 ships a parity test asserting every `cli.IMPLEMENTED` command has an MCP wrapper (or an explicit `CLI_ONLY` exemption). Tests: 789 → 861 passing.
+
+### M48 — K1 edit-path + K4 scheduler + K3 cloud shim (Wave 2)
+
+See `docs/milestones/M48.md`. K1 adds `wiki cite-add` (4-tier escalation: exact → normalized → fuzzy → not-found) + `wiki edit --section`. K4 adds `wiki schedule` with `croniter` substrate and launchd install script. K3 adds bearer-token auth + `POST /api/ingest` cloud endpoint + TUTORIAL § 8a iOS Shortcut doc. MCP parity enforced by the Wave 1 K2 test throughout. Tests: 861 → 901 passing.
+
+### M49 — AGT-2 draft closer + TOK-1 Anthropic API client
+
+See `docs/milestones/M49.md`. Bundles TOK-1 (separate `ANTHROPIC_API_KEY_RESEARCH` key, `AnthropicAPIClient` with `cache_control` on system prompt, status-code + network-error retry, independent throttle from `ClaudeCLIClient`) with AGT-2 (`wiki finalize-batch [--suggest] [--execute]`). Deterministic Cat A (zero `unresolved_claims`) auto-finalizes on `--execute`. Aggressive mode (`--suggest --execute`) calls `gateway.ops.cite_suggest` (Sonnet 4.6, XML-wrapped source prompts, evidence-quote substring verification, ambiguity detection) and auto-applies unambiguous + verified suggestions before finalizing. Per-run report at `.knowledge/finalize-batch/<UTC-ts>.md`. Daily scheduler entry at 04:30 UTC. MCP parity: `wiki_finalize_batch`. Tests: 901 → 923 passing (+22). Planned tag: `m49-agt2-draft-closer`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
