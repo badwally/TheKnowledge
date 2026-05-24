@@ -8,8 +8,10 @@ authors:
 - EO
 ingested_at: '2026-05-23T17:56:28Z'
 content_hash: sha256:60b76f84e4320b2c912207a6efe4360ecc95f1b05c59ad39e00d9e062a5a0e83
-domains: []
-nlm_corpus_ids: []
+domains:
+- ai-native-business
+nlm_corpus_ids:
+- a66c272c-5af9-4f34-ab22-6ca53764ba7e
 wiki_pages: []
 meta:
   channel: EO
