@@ -294,6 +294,7 @@ def validate_citation_grounding(
     *,
     draft: bool = False,
     front: dict | None = None,
+    body_line_offset: int = 0,
 ) -> ValidationResult:
     """Per § 5.2: every claim sentence in entity / concept / source / synthesis
     pages must be followed by a `[[sources/<id>]]` citation.
@@ -305,6 +306,13 @@ def validate_citation_grounding(
     `## Included works` mirroring that list, the first claim-shaped line
     of each `## ` section that matches the aggregate-framing opener
     allowlist is exempted (handled inside `_citations.uncited_claims`).
+
+    K1 / D2: `body_line_offset` (default 0) is added to each reported
+    line number so messages can be file-relative (matching `wiki cite`'s
+    convention). Callers compute it via `frontmatter.body_line_offset`
+    when they have the original text. Default 0 keeps pre-K1 callers
+    (lint pass-throughs, tests) emitting body-relative lines without
+    change.
     """
     result = ValidationResult()
     schema = _wiki_pages.schema_for_type(page_type)
@@ -318,7 +326,7 @@ def validate_citation_grounding(
     for c in uncited:
         ve = ValidationError(
             "citation-grounding",
-            f"line {c.line_no}: claim has no citation: {c.text[:120]}",
+            f"line {c.line_no + body_line_offset}: claim has no citation: {c.text[:120]}",
         )
         if draft:
             result.warnings.append(ve)
@@ -443,8 +451,14 @@ def validate_wiki_page(
     draft: bool = False,
     existing_slugs: list[str] | None = None,
     force_new_slug: bool = False,
+    body_line_offset: int = 0,
 ) -> ValidationResult:
-    """One-shot validation of a wiki page: frontmatter + sections + citations + slug."""
+    """One-shot validation of a wiki page: frontmatter + sections + citations + slug.
+
+    K1 / D2: ``body_line_offset`` (default 0) propagates to citation-grounding
+    so reported line numbers can be file-relative when the caller has the
+    original text. Compute via ``frontmatter.body_line_offset(text)``.
+    """
     result = ValidationResult()
     result.merge(validate_wiki_page_frontmatter(front, page_type))
     result.merge(validate_wiki_page_sections(body, page_type))
@@ -453,7 +467,15 @@ def validate_wiki_page(
     # strict mode (e.g., during finalize), strip the draft fields from front
     # before calling.
     is_draft = draft or bool(front.get("draft"))
-    result.merge(validate_citation_grounding(body, page_type, draft=is_draft, front=front))
+    result.merge(
+        validate_citation_grounding(
+            body,
+            page_type,
+            draft=is_draft,
+            front=front,
+            body_line_offset=body_line_offset,
+        )
+    )
     result.merge(validate_synthesizes_integrity(front, body))
 
     slug = front.get("slug")

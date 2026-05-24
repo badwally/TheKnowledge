@@ -283,6 +283,54 @@ Every artifact files back to `wiki/artifacts/` with bidirectional links: the art
 
 **The web app** at `/domains/artifacts` is the recommended interface for this workflow. NotebookLM calls cost real money and time; the confirmation modals on every trigger prevent accidental clicks. Per-slide revise lives in a modal next to each artifact.
 
+## 8a. Remote capture from iOS (Tailscale + Shortcuts)
+
+K3 (M48) exposes `POST /api/ingest` over a bearer-token-authenticated HTTP endpoint so you can capture from anywhere on your Tailscale-connected devices — iPhone Safari, Notes, the share sheet, etc.
+
+### One-time setup (laptop)
+
+```sh
+# 1. Mint a token (printed ONCE — save it to iCloud Keychain or Notes)
+wiki auth add ios-shortcut-andrew-iphone
+# → ok: token 'ios-shortcut-andrew-iphone' minted
+# →   bearer token (save this — it is shown ONCE):
+# →     <PLAINTEXT_TOKEN>
+
+# 2. Verify with curl from the laptop
+WIKI_TOKEN=<PLAINTEXT_TOKEN> WIKI_URL=http://localhost:7474 \
+    scripts/test-ingest-curl.sh https://example.com
+
+# 3. Bind the gateway to all interfaces so Tailscale can reach it
+wiki serve --bind 0.0.0.0 --port 7474
+# (Caffeinate or launchd-manage this in a longer-term setup.)
+```
+
+### Tailscale (iPhone)
+
+1. Install Tailscale on iPhone; sign in with the same account as your laptop.
+2. Confirm reachability from phone Safari: `https://<laptop-tailnet-hostname>/api/health` → returns `{"status": "ok"}`.
+
+### Build the Shortcut (iPhone)
+
+Open the **Shortcuts** app → tap **+** to create a new Shortcut. Name it "Wiki Capture".
+
+1. Tap the trigger settings (top of the shortcut) → enable **Share Sheet** → set **Accepted Types** to URLs and Text (and Files if you want PDF uploads later).
+2. Add action **Get Contents of URL**:
+   - URL: `https://<laptop-tailnet-hostname>/api/ingest`
+   - Method: **POST**
+   - Headers: `Authorization` = `Bearer <PLAINTEXT_TOKEN>`, `Content-Type` = `application/json`
+   - Request Body: **JSON**, with key `url` set to **Shortcut Input** (the magic variable).
+3. Add action **Get Dictionary Value** → key `task_id`.
+4. Add action **Show Notification** → body: "Wiki ingest queued: " followed by the Dictionary Value variable.
+5. Test it on the phone: Safari → Share → Wiki Capture. The notification should fire with a task id.
+6. **Export the shortcut** (Shortcut details → Share → Save to Files → repo `scripts/` directory as `wiki-capture.shortcut`) and commit so future devices can one-tap-import.
+
+### Notes
+
+- The Shortcut **hardcodes** the tailnet hostname and the bearer token at build time. If you rotate the token via `wiki auth revoke ios-shortcut-andrew-iphone` followed by a new `add`, the Shortcut needs editing.
+- v1 supports URL + selected text only (the typical Safari and Notes share-sheet cases). Sharing files from the iOS Files app directly into the Shortcut is a future enhancement; for now use any HTTP client that supports multipart `file=@path.pdf` against `/api/ingest`.
+- If the call returns 401, the token is wrong or revoked. If it returns 502/connection refused, `wiki serve` isn't running or isn't bound to `0.0.0.0`.
+
 ## 9. Use this knowledge base from other projects
 
 Wiki paths are stable. Reference them from any other project's CLAUDE.md, README, or notes:

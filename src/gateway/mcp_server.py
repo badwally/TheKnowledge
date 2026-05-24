@@ -50,7 +50,23 @@ mcp = FastMCP(
 # - demote-domain: destructive cross-state action (per plan C4 — agents
 #   should not autonomously demote blessed domains)
 CLI_ONLY: frozenset[str] = frozenset(
-    {"watch", "mcp-serve", "serve", "migrate", "demote-domain"}
+    {
+        "watch",
+        "mcp-serve",
+        "serve",
+        "migrate",
+        "demote-domain",
+        # `schedule` is multi-action and runs arbitrary shell commands.
+        # Exposing add/remove/enable to agents would let an agent grant
+        # itself persistent execution. Keep CLI-only (K4 / wave-2). If
+        # read-only introspection is needed, add a `wiki_schedule_list`
+        # auxiliary later following the wiki_poll_list pattern.
+        "schedule",
+        # `auth` mints / revokes bearer tokens for the K3 cloud shim.
+        # Agents must NOT be able to grant themselves remote-capture
+        # credentials. CLI-only by design.
+        "auth",
+    }
 )
 
 
@@ -577,6 +593,59 @@ def wiki_poll(name: str) -> dict[str, Any]:
             ),
             errors=list(result.errors or []),
         )
+    )
+
+
+@mcp.tool()
+def wiki_cite_add(
+    page_path: str,
+    claim_text: str,
+    source_id: str,
+    fuzzy: bool = False,
+) -> dict[str, Any]:
+    """Add a citation by claim text (K1).
+
+    Resolves `claim_text` to a line via deterministic escalation
+    (exact → normalized substring), then delegates to `wiki cite` for
+    the actual write. Set `fuzzy=True` to enable LLM-judged fallback
+    when deterministic resolution misses (one extra Sonnet/Haiku call;
+    off by default).
+
+    Returns ambiguity error when the claim matches multiple lines —
+    re-issue with the explicit line number via `wiki_cite`.
+    """
+    from gateway.ops.cite_add import cite_add
+
+    return _serialize(
+        cite_add(
+            page_path,
+            claim_text=claim_text,
+            source_id=source_id,
+            fuzzy=fuzzy,
+        )
+    )
+
+
+@mcp.tool()
+def wiki_edit(
+    page_path: str,
+    section: str,
+    new_body: str,
+) -> dict[str, Any]:
+    """Replace the body of one named `## Section` in a wiki page (K1).
+
+    Constrained surface: only the body of the named section is replaced;
+    frontmatter, the section heading, and every other section stay
+    untouched. After the replacement the full validator runs; if it
+    rejects, the edit is not written.
+
+    `section` matches case-insensitively against `## <name>` headers.
+    `new_body` is markdown for the section body (may be empty).
+    """
+    from gateway.ops.edit_section import edit_section
+
+    return _serialize(
+        edit_section(page_path, section=section, new_body=new_body)
     )
 
 

@@ -22,6 +22,7 @@ dependencies = [
     "requests>=2.31",
     "fastapi>=0.110",
     "uvicorn[standard]>=0.27",
+    "croniter>=2.0",
 ]
 
 [project.optional-dependencies]

@@ -15,6 +15,28 @@ class FrontmatterError(ValueError):
     """Raised when frontmatter is missing, malformed, or not a mapping."""
 
 
+def body_line_offset(text: str) -> int:
+    """Return the file-line offset of the first body line in `text`.
+
+    Used by validators to translate body-relative line numbers (what
+    `_citations.uncited_claims()` emits) into file-relative ones so error
+    messages match `wiki cite`'s file-line numbering convention.
+
+    Returns 0 when `text` has no recognizable frontmatter (the validator
+    then degrades silently to body-relative lines, preserving pre-K1
+    behavior for callers that don't have the original text).
+    """
+    if not text.startswith(DELIM):
+        return 0
+    lines = text.split("\n")
+    for i in range(1, len(lines)):
+        if lines[i] == DELIM:
+            # body starts at lines[i + 1]; file-line of body-line 1 is i + 2.
+            # The "offset" we add to a body-line is i + 1.
+            return i + 1
+    return 0
+
+
 def parse(text: str) -> Tuple[dict, str]:
     """Split a markdown document into (frontmatter dict, body string).
 

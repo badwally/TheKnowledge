@@ -62,6 +62,9 @@ def apply_plan(
             errors.append(f"update[{i}] ({target_rel}): frontmatter: {e}")
             continue
 
+        # K1/D2: file-line offset so validator surfaces file-relative lines.
+        body_offset = fm.body_line_offset(update.content)
+
         existing_slugs = _existing_slugs_for_type(page_type)
 
         # If the update targets an existing page, exclude its current slug
@@ -82,6 +85,7 @@ def apply_plan(
             draft=is_draft,
             existing_slugs=existing_slugs,
             force_new_slug=force_new_slug,
+            body_line_offset=body_offset,
         )
         if not result.ok:
             for err in result.errors:

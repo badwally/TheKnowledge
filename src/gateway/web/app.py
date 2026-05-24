@@ -15,6 +15,7 @@ from gateway.web.routes import research as research_routes
 from gateway.web.routes import review as review_routes
 from gateway.web.routes import status as status_routes
 from gateway.web.routes import tasks as task_routes
+from gateway.web.routes import cloud as cloud_routes
 from gateway.web.schemas import HealthResponse
 from gateway.web.tasks import TaskStore
 
@@ -37,6 +38,7 @@ def create_app() -> FastAPI:
     app.include_router(research_routes.router)
     app.include_router(review_routes.router)
     app.include_router(nlm_routes.router)
+    app.include_router(cloud_routes.router)  # K3: /api/ingest (bearer-token)
 
     if _FRONTEND_DIST.is_dir():
         app.mount(
