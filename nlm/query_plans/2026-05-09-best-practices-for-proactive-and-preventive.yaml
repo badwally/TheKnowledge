@@ -1,0 +1,153 @@
+version: 1
+session_id: 2026-05-09-best-practices-for-proactive-and-preventive
+domain: condo
+prompt: 'Best practices for proactive and preventive maintenance of 100+ unit condominium
+  / strata / co-op buildings in the United States and Canada, OUTSIDE reserve study
+  requirements: PM cadences by building system (HVAC, elevators, plumbing risers,
+  fire-life-safety, envelope, roofing, balconies, parking deck), regulatory PM drivers
+  (NYC LL11/FISP, SF/CA balcony, FL HB 913 operational layer, Ontario Condo Act §94
+  maintenance, BC SPA, Quebec Bill 16 carnet d''entretien), industry-standard frameworks
+  (BOMA, IFMA, APPA, CAI, CHOA, ACMO), CMMS / EAM stacks for residential (BuildingLink,
+  ConciergePlus, Building Engines, Facilio, Yardi Maintenance, Akitabox, Brightly,
+  UpKeep, Limble, Maintainx), predictive / condition-based PM in residential CRE,
+  and insurance / loss-control PM checklists for high-rise residential.'
+generated_at: '2026-05-09T22:05:11Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - predictive maintenance high-rise residential buildings
+  - condition-based monitoring HVAC chiller plant
+  - elevator predictive maintenance machine learning
+  - facade inspection computer vision concrete spalling
+  - condition monitoring IoT sensors multifamily residential buildings
+  - digital twin building operations maintenance residential
+  - work order data mining failure prediction commercial residential building HVAC elevator
+  - fire-life-safety system reliability multifamily
+  youtube:
+  - BuildingLink preventive maintenance demo
+  - ConciergePlus work order
+  - Building Engines CMMS walkthrough
+  - Facilio multifamily preventive maintenance
+  - Yardi Maintenance Manager tutorial
+  - Akitabox condo demo
+  - Brightly Asset Essentials residential
+  - UpKeep CMMS condo association
+  - Limble CMMS multifamily
+  - Maintainx preventive maintenance
+  - NYC Local Law 11 FISP inspection
+  - Ontario Condo Act section 94 maintenance
+  - BOMA BEST multi-unit residential preventive maintenance
+  - IFMA facility condition assessment
+  - CAI maintenance planning webinar
+  - Quebec Bill 16 carnet entretien
+  - BC strata maintenance plan CHOA building envelope
+  - high-rise plumbing riser inspection
+  - parking garage post-tension inspection
+  web:
+  - BuildingLink preventive maintenance module
+  - Facilio residential CMMS condo
+  - Building Engines high-rise residential
+  - NYC Local Law 11 FISP cycle 9
+  - SF balcony inspection SB 326 SB 721
+  - Florida HB 913 milestone inspection
+  - Ontario Condo Act section 94 maintenance plan
+  - BC Strata Property Act repair maintenance obligations PM
+  - Quebec Bill 16 carnet d'entretien requirements
+  - BOMA preventive maintenance checklist multifamily
+  - IFMA facility management framework residential
+  - CAI best practices maintenance planning
+  - CHOA strata maintenance guide
+  - ACMO condominium maintenance standards
+  - high-rise insurance loss control checklist
+  - APPA facility condition assessment standards transferable residential portfolio
+  - CCI Canadian Condominium Institute maintenance best practices
+  - RECO Real Estate Council of Ontario condominium manager maintenance plan section 94
+  - IREM Institute of Real Estate Management high-rise residential maintenance
+  - Florida HB 913 milestone inspection structural integrity reserve study operational interpretation
+  - Florida condo building safety act maintenance compliance post-Surfside
+  - California Davis-Stirling Civil Code 5550 reserve study maintenance operational distinction SB 326
+  - NFPA 25 sprinkler inspection testing maintenance ITM high-rise residential
+  - NFPA 72 fire alarm system inspection testing maintenance multifamily
+  - ASME A17.1 elevator inspection maintenance code residential building
+  - ASHRAE 188 Legionella water management plan high-rise residential
+  - condominium high-rise roof PM cadence maintenance schedule single-ply membrane
+  - condominium emergency generator load bank testing PM schedule residential
+  - residential building water leak detection telemetry Phyn Flo Moen ALERT Labs
+  - infrared thermography switchgear PM commercial residential building
+  - FM Global property loss prevention high-rise residential maintenance requirements
+  - Travelers AIG Zurich high-rise residential maintenance requirements loss control
+  - Chicago façade ordinance critical examination cycle maintenance compliance
+  - San Francisco facade inspection ordinance maintenance compliance
+  - New York Local Law 84 87 88 97 energy benchmarking audit retro-commissioning operational
+  - New Jersey condominium maintenance requirements Planned Real Estate Development Full Disclosure Act
+  - Virginia condominium maintenance Property Owners Association Act
+  - Massachusetts condominium maintenance trustee duties G.L. c. 183A
+  - Illinois condominium maintenance Condominium Property Act board duties
+  - Alberta condominium property act reserve fund study maintenance operational
+  - Tarion warranty PM checklist Ontario new condominium statutory warranty
+  pubmed: []
+  semantic_scholar:
+  - preventive maintenance scheduling high-rise residential
+  - CMMS adoption multifamily housing
+  - facade inspection concrete deterioration high-rise
+  - elevator maintenance reliability centered
+  - HVAC predictive maintenance commercial residential
+  - building envelope water intrusion inspection maintenance multifamily
+  - fire safety inspection compliance multifamily
+  - plumbing riser failure analysis high-rise
+  - post-tensioned parking structure deterioration
+  - condition-based maintenance multifamily building
+filter_overrides:
+  # IFMA queries flagged as filter-borderline (0.5) — generic commercial FM
+  # transferability to residential must be established per source
+  - pattern: "IFMA"
+    score_floor: 0.5
+    note: "IFMA content is CRE-generic; flag borderline, do not auto-reject"
+edited: true
+edited_at: '2026-05-09T22:30:00Z'
+edit_notes:
+  - date: 2026-05-09
+    editor: initial review pass
+    rationale: |
+      arxiv[4]: Bayesian remaining useful life → condition monitoring IoT sensors multifamily residential buildings
+      arxiv[5]: digital twin multifamily residential → digital twin building operations maintenance residential
+      youtube[12]: BOMA preventive maintenance standards → BOMA BEST multi-unit residential preventive maintenance
+      youtube[14]: APPA facilities condition index → pruned (out of scope)
+      youtube[17]: BC Strata Property Act depreciation → BC strata maintenance plan CHOA building envelope
+      web[7]: BC Strata Property Act depreciation report PM → BC Strata Property Act repair maintenance obligations PM
+      semantic_scholar[5]: building envelope condition assessment methodology → building envelope water intrusion inspection maintenance multifamily
+      IFMA queries: flagged filter-borderline score_floor 0.5
+  - date: 2026-05-09
+    editor: condo-research subagent (gap-fill pass)
+    rationale: |
+      Apply 14 gap-fills and 2 query tightenings identified by the
+      plan-generation review against Brief-0003 Tier-1 / Tier-2
+      coverage targets. Restores APPA (incorrectly pruned earlier).
+      Adds IREM, RECO, CCI Tier-1 industry bodies. Increases FL depth
+      to 3 queries. Adds CA Davis-Stirling §5550 operational layer
+      distinct from SB 326. Adds code-driven PM (NFPA 25/72, ASME
+      A17.1, ASHRAE 188 Legionella). Adds building-system PM
+      (roofing, generators). Adds named predictive modalities (leak
+      telemetry, IR thermography). Adds named insurance carriers
+      (FM Global, Travelers, AIG, Zurich). Adds Chicago + SF façade
+      ordinances, NY energy laws (LL84/87/88/97), Tier-2 jurisdictions
+      (NJ, VA, MA, IL, AB), and Tarion warranty PM. Tightens
+      over-broad arxiv work-order query and supersedes generic
+      insurance loss-control web query (web "high-rise insurance loss
+      control checklist" is now superseded by the named-carrier
+      queries FM Global and Travelers/AIG/Zurich; the slot remains in
+      the plan but should be deprioritized at execute-time).
+    query_count_before: 52
+    query_count_after: 78
+    note_on_count: |
+      Spec header said "~22 additions" but the enumerated list
+      contained 26 numbered items (industry bodies 4 + FL 2 + CA 1 +
+      code-driven 4 + building systems 2 + predictive 2 + insurance
+      2 + façade 2 + NY energy 1 + Tier-2 6 = 26). All 26 were added.
+      Final count is 52 + 26 = 78, not 74.

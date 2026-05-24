@@ -1,0 +1,155 @@
+version: 1
+session_id: 2026-05-20-risksystems-06-weibull-tailored-neural-networks
+domain: risksystems
+prompt: |
+  Risksystems Q6 — dedicated drilldown on Weibull-Tailored Neural Networks
+  (WTNN) as a Longspan v3 candidate. Three explicit research threads:
+
+  (A) **Reference mathematical lineage.** What is the canonical formulation
+  of WTNN and the lineage that precedes it? Specifically: the classical
+  Weibull accelerated-failure-time (AFT) model and Cox proportional-hazards
+  model; the first wave of deep-survival architectures (DeepSurv per
+  Katzman et al. 2018; DeepHit per Lee et al. 2018; RNN-Surv / Recurrent
+  Neural Weibull / WTTE-RNN per Martinsson 2017); parametric vs
+  non-parametric deep survival; the WTNN architecture per arxiv-2512.09163
+  (Rives, Lopez, Bousquet) — how exactly are the Weibull shape (β) and
+  scale (η) parameters constrained as functions of time-dependent
+  covariates? what loss function (negative log-likelihood with censoring,
+  Brier score, integrated Brier, concordance)? what monotonicity / shape
+  constraints? how is qualitative prior knowledge about influential
+  covariates baked into the architecture (input-feature gating, sign
+  constraints, monotonic neural network layers, partial monotonic
+  networks)? Identifiability under right-censoring; calibration; the
+  audit story for a P.Eng. — can the trained network produce a
+  human-readable explanation of why a coastal-exposed envelope
+  component has its specific Weibull(β, η) fitted curve?
+
+  (B) **SOTA ML implementations — scale + results + problem domain.** How
+  have Weibull / deep-survival neural networks been implemented at scale
+  in modern reliability and prognostics-and-health-management (PHM)
+  systems? Specifically: wind-turbine fleet AFT (web-2026-05-01-6b7
+  already in corpus, 8,000+ turbines / 64,000 operating years); NASA
+  C-MAPSS turbofan remaining-useful-life benchmark (Saxena et al.) —
+  what's the published n, RMSE, and architecture lineage for Weibull-
+  conditioned deep models vs deterministic point estimates? Backblaze
+  hard-drive survival; battery degradation neural Weibull;
+  rolling-bearing PHM; healthcare clinical-survival benchmarks
+  (SUPPORT, METABRIC, GBSG) and their architecture lessons. What's the
+  minimum-viable n for a successfully published deep-survival fit —
+  the Longspan analog to the diesel-cylinder-liner BGP benchmark
+  (web-2022-07-07-ac2 fit on dozens of wear measures)? What are the
+  failure modes — overfitting on small n, calibration drift,
+  miscalibration of the variance of the predicted Weibull(β, η)?
+
+  (C) **Corpus + labeling for Longspan six-component implementation.** What
+  is the minimum viable dataset and covariate inventory to fit a WTNN
+  for each of the six probabilistic components — roof, building
+  envelope, plumbing risers, HVAC central plant, elevators, parking
+  deck / podium? Specifically: required event-data (replacement /
+  major repair as failure event, right-censored at last inspection);
+  covariate inventory (effective age, material class, building-level
+  per-face WDR / chloride / freeze-thaw cycles already computed for
+  the Halifax pilot — see research/findings/0020 + the HRM polygon
+  pipeline, jurisdiction, structure type, work-order frequency,
+  ambient cycling load); cohort sample-size feasibility against the
+  existing 60-building BC concrete-frame highrise sample (108-816
+  obs per class) + the can-pilot 2,154-row multi-jurisdiction add;
+  ablation of which of the six components is best served by WTNN vs
+  the Phase-1 BGP kernel (parking deck / envelope / roof) vs the
+  imperfect-repair RL framework. Critical question: which Phase-2
+  components (HVAC central plant, elevators, plumbing risers) does
+  WTNN unlock that BGP cannot, given their non-monotonic failure
+  profiles and their richer covariate landscape (work-order frequency,
+  fault codes, telemetry)?
+
+  Frame: Longspan v1.1 today fits Weibull EUL distributions from the
+  60-building BC concrete-frame highrise sample with a static engineer-
+  to-data 1:1 blend. The cross-cutting Longspan-vs-SOA synthesis
+  (~/code/knowledge/wiki/synthesis/2026-05-20-cross-cutting-comparison-longspan-v1-1.md)
+  identified WTNN as the second v3 methodological moat (after BGP) —
+  the framing is "we use AI, but our AI is strictly governed by
+  reliability engineering physics." This drilldown is the dedicated
+  evaluation: does WTNN unlock the Phase-2 mechanical components that
+  BGP cannot handle, and what's the data-collection cost? Output
+  feeds the v3 engine-architecture decision in Q3 2026. Audience:
+  founder + technical co-founder + Mercer P.Eng. credibility
+  credential. Render the math without Bayesian jargon — plain
+  language.
+generated_at: '2026-05-20T22:00:00Z'
+plan_client_model: null
+target_counts:
+  arxiv: 15
+  youtube: 10
+  web: 12
+  pubmed: 8
+  semantic_scholar: 18
+queries:
+  arxiv:
+    - Weibull tailored neural network survival analysis covariate
+    - deep survival analysis Weibull parametric neural network
+    - DeepSurv Cox proportional hazards deep learning survival
+    - DeepHit competing risks neural network survival censored
+    - recurrent neural network Weibull time-to-event RUL WTTE-RNN
+    - parametric survival neural network distribution constrained
+    - monotonic neural network reliability hazard function
+    - Bayesian neural network survival analysis epistemic uncertainty
+    - Weibull mixture neural network parametric heterogeneous failure
+    - physics-informed neural network reliability Weibull survival
+    - transformer survival analysis time-to-event attention
+    - neural ordinary differential equation survival censored
+    - variational autoencoder survival analysis latent
+    - remaining useful life deep learning Weibull turbofan C-MAPSS
+    - building component lifetime neural network condition prediction
+  youtube:
+    - Weibull tailored neural network WTNN lecture
+    - DeepSurv DeepHit deep survival analysis tutorial
+    - parametric survival neural network walkthrough
+    - NeurIPS deep survival analysis talk
+    - ICML survival analysis deep learning paper
+    - recurrent neural network reliability prognostics health management
+    - NASA C-MAPSS turbofan deep learning tutorial
+    - PHM workshop deep survival prognostics
+    - Stan PyMC neural Weibull survival hierarchical
+    - monotonic constraint neural network construction
+  web:
+    - WTNN Rives Lopez Bousquet 2025 Weibull tailored neural network
+    - DeepSurv Katzman 2018 deep Cox proportional hazards code
+    - DeepHit Lee 2018 competing risks neural network code
+    - WTTE-RNN Martinsson recurrent Weibull time-to-event
+    - pycox python deep survival analysis library
+    - lifelines python survival analysis package
+    - scikit-survival Cox neural network sklearn
+    - NASA C-MAPSS turbofan benchmark remaining useful life
+    - Backblaze hard drive survival analysis deep learning
+    - PHM data challenge society benchmarks deep learning
+    - SUPPORT METABRIC GBSG deep survival benchmark
+    - monotonic neural network architecture constraint partial
+  pubmed:
+    - deep learning survival analysis Weibull cancer prognosis
+    - DeepSurv Cox proportional hazards medical neural network
+    - DeepHit competing risks clinical outcome deep learning
+    - recurrent neural network survival time-to-event clinical
+    - parametric neural network survival prediction healthcare
+    - transformer survival analysis clinical outcome deep learning
+    - Bayesian neural network survival oncology uncertainty
+    - censored survival deep learning prognosis biomedical
+  semantic_scholar:
+    - Weibull tailored neural network survival covariate parametric
+    - deep survival analysis Weibull DeepSurv DeepHit benchmark
+    - DeepSurv Cox proportional hazards deep learning Katzman 2018
+    - DeepHit competing risks Lee 2018 deep learning survival
+    - WTTE-RNN recurrent Weibull time-to-event Martinsson
+    - parametric survival neural network distribution constraint
+    - monotonic neural network reliability hazard architecture
+    - transformer attention survival analysis time-to-event
+    - neural ordinary differential equation survival analysis
+    - physics-informed neural network reliability survival
+    - wind turbine survival analysis fleet accelerated failure time
+    - NASA C-MAPSS turbofan remaining useful life deep learning
+    - rolling element bearing reliability deep survival
+    - lithium-ion battery degradation neural Weibull survival
+    - building HVAC reliability survival neural network
+    - elevator failure prediction survival analysis deep learning
+    - plumbing pipe failure neural network prediction censored
+    - concordance index integrated Brier score deep survival
+edited: true

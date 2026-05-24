@@ -1,0 +1,73 @@
+version: 1
+session_id: 2026-05-20-risksystems-q1-bayesian-hierarchical-survival-mapping
+domain: risksystems
+prompt: Risksystems Q1 Bayesian hierarchical survival mapping vs Longspan v1.1
+generated_at: '2026-05-20T16:52:03Z'
+plan_client_model: null
+target_counts:
+  arxiv: 12
+  youtube: 15
+  web: 12
+  pubmed: 0
+  semantic_scholar: 15
+queries:
+  arxiv:
+  - Bayesian hierarchical survival infrastructure deterioration
+  - partial pooling multi-site component reliability sparse data
+  - Weibull lognormal survival right-censored maintenance
+  - Cox proportional hazards infrastructure asset deterioration
+  - gamma process degradation model reliability
+  - mixed effects survival engineering covariates
+  - Bayesian calibration posterior predictive check engineering
+  - expert elicitation prior Cooke SHELF reliability
+  - hierarchical Bayes engineering judgement prior
+  - probabilistic deterioration model concrete bridge envelope
+  - reinforced concrete chloride corrosion Weibull survival
+  - Stan PyMC infrastructure reliability hierarchical
+  youtube:
+  - Bayesian hierarchical model Stan tutorial
+  - Andrew Gelman partial pooling lecture
+  - Weibull survival analysis engineering reliability
+  - Frangopol structural reliability life cycle cost
+  - HDM-4 bridge asset management
+  - AASHTO TAMP transportation asset management plan
+  - Madanat Markov deterioration pavement
+  - Cooke expert elicitation method
+  - SHELF expert elicitation Sheffield
+  - Bayesian Workflow Gelman Vehtari
+  - PyMC infrastructure reliability tutorial
+  - structural reliability Frangopol talk
+  - Mishalani transportation deterioration model
+  - KANEW water main failure survival
+  - probabilistic reserve study Bayesian
+  web:
+  - SHELF expert elicitation Sheffield framework
+  - Cooke classical method expert elicitation
+  - Frangopol life cycle cost civil engineering
+  - HDM-4 deterioration model documentation
+  - AASHTO transportation asset management plan
+  - Pontis bridge management system
+  - KANEW water main asset management
+  - AWARE-P water utility asset management
+  - Bayesian hierarchical reserve study methodology
+  - reliability engineering system safety journal partial pooling
+  - structural safety Frangopol Faber
+  - probabilistic reserve study engine Bayesian Weibull
+  pubmed: []
+  semantic_scholar:
+  - Bayesian hierarchical model infrastructure deterioration partial pooling
+  - Weibull lognormal survival censored civil engineering component
+  - Cox proportional hazards infrastructure asset deterioration covariate
+  - gamma process degradation model concrete reinforcement bridge
+  - Madanat Markov deterioration pavement bridge facility
+  - Frangopol life cycle cost structural reliability Bayesian
+  - Faber structural reliability decision making
+  - Sundararajan probabilistic structural mechanics
+  - expert elicitation Cooke classical method prior Bayesian engineering
+  - SHELF Sheffield expert elicitation framework prior
+  - posterior predictive check engineering reliability calibration
+  - hierarchical Bayes engineer judgement prior reserve study
+  - KANEW AWARE-P water utility pipe failure survival
+  - probabilistic reserve study cohort calibration Weibull
+  - mixed effects survival wind driven rain chloride freeze thaw
+edited: false

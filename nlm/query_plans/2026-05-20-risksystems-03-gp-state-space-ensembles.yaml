@@ -1,0 +1,93 @@
+version: 1
+session_id: 2026-05-20-risksystems-03-gp-state-space-ensembles
+domain: risksystems
+prompt: |
+  Risksystems Q3 of 4 — state of the art in Gaussian processes, state-space
+  methods (Kalman / EKF / UKF / particle filters), and tabular ML ensembles for
+  online conditioning of asset condition on inspection and work-order data, and
+  the strongest counter-arguments to a Bayesian survival architecture from the
+  boosted-tree and tabular-foundation-model side. Frame for Longspan v2: today
+  the engine is fully offline (no work-order conditioning), with cohort-level
+  priors fixed at calibration time. Brief-0004 Phase 4 wants to ingest Summer
+  Gardens' work-order history (vendor invoices, recurring repairs, podium
+  program, sealant program); the open question is whether that goes through a
+  state-space filter, a GP-conditioned posterior update, or an ensemble
+  surrogate that re-fits the cohort prior. Specifically: GP regression and GP
+  latent-variable models for sparse longitudinal inspection data; multi-task
+  GPs across correlated component classes; deep kernel learning when the input
+  space mixes engineering covariates and free-text inspection notes; Kalman /
+  EKF / UKF / particle filter formulations for hidden-condition state from
+  noisy work-order streams; online learning when work orders arrive irregularly;
+  XGBoost / LightGBM / CatBoost on tabular component-class panels; TabPFN /
+  SAINT / FT-Transformer as tabular foundation-model baselines; calibration
+  (Platt / isotonic / conformal prediction) when boosted-tree outputs feed a
+  probabilistic decision pipeline. PHM Society canon, ASCE prognostics
+  literature, Bayesian optimal experimental design for inspect-repair-replace.
+generated_at: '2026-05-20T16:48:58Z'
+plan_client_model: null
+target_counts:
+  arxiv: 14
+  youtube: 12
+  web: 12
+  pubmed: 0
+  semantic_scholar: 15
+queries:
+  arxiv:
+    - Gaussian process latent variable longitudinal infrastructure inspection
+    - multi-task Gaussian process correlated component reliability
+    - deep kernel learning structured engineering data
+    - Kalman filter hidden Markov deterioration infrastructure
+    - particle filter prognostics remaining useful life
+    - unscented Kalman filter degradation state-space
+    - online Bayesian update sparse longitudinal observations
+    - XGBoost LightGBM CatBoost tabular reliability benchmark
+    - TabPFN tabular foundation model
+    - SAINT FT-Transformer tabular benchmark
+    - conformal prediction calibration probabilistic forecast
+    - Bayesian optimal experimental design inspection scheduling
+    - value of information sensor maintenance optimization
+    - remaining useful life prognostics deep learning Bayesian
+  youtube:
+    - Gaussian process tutorial GPflow GPyTorch
+    - Carl Rasmussen Gaussian process lecture
+    - Kalman filter intuition tutorial
+    - particle filter sequential Monte Carlo tutorial
+    - PHM Society conference talk
+    - prognostics health management remaining useful life
+    - TabPFN tabular foundation model talk
+    - conformal prediction tutorial Angelopoulos
+    - XGBoost vs neural network tabular
+    - deep kernel learning Wilson
+    - Bayesian optimization experimental design
+    - online learning sequential decision under uncertainty
+  web:
+    - GPyTorch deep kernel learning library
+    - GPflow Gaussian process Python
+    - TabPFN tabular foundation model HuggingFace
+    - SAINT FT-Transformer tabular review
+    - conformal prediction MAPIE library
+    - PHM Society Prognostics Health Management
+    - ASCE prognostics infrastructure RUL
+    - particle filter state estimation Python
+    - work order conditioning predictive maintenance
+    - CMMS work order analytics survival
+    - XGBoost LightGBM CatBoost reliability tabular benchmark
+    - Bayesian optimal experimental design infrastructure inspection
+  pubmed: []
+  semantic_scholar:
+    - Gaussian process regression longitudinal infrastructure inspection condition
+    - multi task Gaussian process correlated component degradation
+    - deep kernel learning engineering tabular textual covariates
+    - Kalman filter hidden state deterioration infrastructure asset
+    - particle filter prognostics remaining useful life civil
+    - unscented Kalman filter degradation state space engineering
+    - online Bayesian update sparse longitudinal infrastructure observation
+    - gradient boosted tree XGBoost tabular reliability benchmark
+    - TabPFN tabular foundation model benchmark
+    - SAINT FT-Transformer tabular classification regression
+    - conformal prediction calibration probabilistic civil engineering
+    - Bayesian optimal experimental design inspection infrastructure
+    - value of information POMDP inspection maintenance
+    - prognostics health management deep learning RUL Bayesian
+    - work order conditioning maintenance prognostics survival
+edited: true

@@ -1,0 +1,84 @@
+version: 1
+session_id: 2026-05-13-what-ml-models-would-be-most
+domain: condo-capital-infra
+prompt: What ML models would be most appropriate for use in development of a probabilistic
+  data model used to predict the probability of failure among the 8 key capital infrastructure
+  components for a condo complex (as found in most reserve studies)? What are the
+  analogous data models and architectures used in adjacent spaces (if any) for similar
+  prediction?
+generated_at: '2026-05-13T17:20:13Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - Markov chain deterioration model infrastructure components
+  - Bayesian hierarchical model sparse component failure data
+  - Weibull survival analysis building component service life
+  - Cox proportional hazards infrastructure asset failure
+  - hybrid physics-informed neural network degradation prediction
+  - Gaussian process regression remaining useful life
+  - hidden Markov model partially observable deterioration
+  - POMDP optimal inspection maintenance scheduling
+  - copula correlated component failure Monte Carlo
+  - deep learning remaining useful life prognostics
+  - recurrent neural network degradation time series
+  - Bayesian deep learning uncertainty quantification reliability
+  youtube:
+  - Weibull analysis reliability engineering
+  - Markov chain deterioration model
+  - Bayesian survival analysis tutorial
+  - Monte Carlo simulation reserve study
+  - physics informed neural networks tutorial
+  - remaining useful life prediction LSTM
+  - POMDP reinforcement learning maintenance
+  - Cox proportional hazards model explained
+  - predictive maintenance machine learning
+  - HVAC failure prediction machine learning
+  - roof replacement life cycle analysis
+  - elevator predictive maintenance AI
+  - building envelope degradation modeling
+  - probabilistic reserve study methodology
+  - Bayesian hierarchical model tutorial
+  - accelerated failure time model
+  - reliability engineering condition monitoring
+  - digital twin building infrastructure
+  - NVIDIA Omniverse predictive maintenance
+  - Facilio predictive maintenance demo
+  web:
+  - Madanat Markov bridge deterioration model
+  - Papakonstantinou POMDP infrastructure maintenance
+  - probabilistic reserve study Monte Carlo methodology
+  - Weibull HVAC roof component service life
+  - Bayesian hierarchical building component degradation
+  - physics informed machine learning structural deterioration
+  - Cox proportional hazards condominium component failure
+  - copula correlated infrastructure failure Monte Carlo
+  - CAI reserve study standards probabilistic methods
+  - ASTM E917 life cycle cost analysis
+  - predictive maintenance CMMS machine learning
+  - Facilio AI building maintenance prediction
+  - MaintainX predictive maintenance models
+  - Willow digital twin building reliability
+  - SmartProperty probabilistic reserve methodology
+  pubmed: []
+  semantic_scholar:
+  - Markov chain deterioration bridge pavement Madanat Mishalani
+  - Bayesian hierarchical model building component failure
+  - Weibull lognormal survival building component service life
+  - Cox proportional hazards infrastructure asset failure
+  - physics informed neural network structural degradation
+  - Gaussian process remaining useful life prediction
+  - POMDP optimal inspection maintenance Papakonstantinou
+  - hybrid gray-box physics machine learning deterioration
+  - copula vine correlated infrastructure failure portfolio
+  - deep learning prognostics remaining useful life
+  - hidden Markov partially observable deterioration model
+  - accelerated failure time infrastructure component
+  - recurrent neural network degradation prediction
+  - Bayesian deep learning reliability uncertainty
+edited: false

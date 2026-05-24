@@ -1,0 +1,76 @@
+version: 1
+session_id: 2026-05-08-how-should-a-condo-hoa-integrate
+domain: condo
+prompt: How should a condo HOA integrate reserve-fund management, special-assessment
+  policy, and long-term preventive + capital maintenance and vendor management into
+  a single proactive long-horizon planning system? Survey best practices, frameworks,
+  data models, and existing software approaches; identify gaps that a purpose-built
+  integrated planning system could close.
+generated_at: '2026-05-08T18:52:13Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - capital asset replacement scheduling optimization
+  - building component remaining useful life estimation
+  - preventive maintenance planning multi-year horizon
+  - reserve fund cash flow simulation
+  - stochastic deterioration modeling building systems
+  - integrated facility management data model
+  - Markov decision process infrastructure renewal
+  - life cycle cost analysis residential buildings
+  youtube:
+  - HOA reserve study explained
+  - condo special assessment Florida
+  - Davis-Stirling Act overview
+  - condo board fiduciary duty
+  - reserve fund percent funded
+  - FirstService Residential property management
+  - Associa community management
+  - CINC Systems demo
+  - Buildium HOA software
+  - AppFolio condo management
+  - VMS reserve study software
+  - condo balcony inspection SB326
+  - Florida milestone inspection 718
+  - Surfside condo collapse analysis
+  - HOA budget planning workshop
+  - capital improvement plan condo
+  - condo board meeting procedure
+  - Robert's Rules HOA
+  - CAI community association manager
+  - reserve study site inspection
+  web:
+  - reserve study national standards CAI APRA
+  - percent funded reserve methodology
+  - baseline vs full funding reserve
+  - Florida SB 4-D structural integrity reserve study
+  - Washington RCW 64.90 reserve requirements
+  - Davis-Stirling reserve disclosure California
+  - UCIOA reserve fund provisions
+  - HOA software comparison VMS Buildium AppFolio CINC
+  - condo capital planning best practices
+  - condo special assessment legal limits
+  - HOA vendor RFP template
+  - preventive maintenance schedule condominium
+  - Surfside Champlain Towers post-mortem
+  - integrated facilities management platform condo
+  - reserve study component inventory useful life
+  pubmed: []
+  semantic_scholar:
+  - reserve fund adequacy homeowners associations
+  - condominium governance financial sustainability
+  - deferred maintenance multifamily housing outcomes
+  - capital replacement planning building portfolio
+  - life cycle cost residential common property
+  - homeowner association financial distress determinants
+  - building envelope deterioration prediction model
+  - reserve study methodology comparative analysis
+  - condominium structural failure risk assessment
+  - integrated asset management information system buildings
+edited: false

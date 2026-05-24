@@ -1,0 +1,60 @@
+version: 1
+session_id: 2026-05-12-reserve-study-firms-explaining-their-methodology
+domain: condo-capital-infra
+prompt: Reserve study firms explaining their methodology and presenting results to
+  HOA or condo boards — explainer videos, webinars, client presentations from SmartProperty,
+  PropFusion, Association Reserves, Reserve Data Analyst, ReserveWise, or similar
+  firms
+generated_at: '2026-05-12T19:03:41Z'
+plan_client_model: null
+target_counts:
+  arxiv: 0
+  youtube: 20
+  web: 15
+  pubmed: 0
+  semantic_scholar: 0
+queries:
+  arxiv: []
+  youtube:
+  - Association Reserves reserve study explained
+  - SmartProperty reserve study methodology
+  - reserve study HOA board presentation
+  - Reserve Data Analyst webinar
+  - ReserveWise reserve study
+  - condo reserve study explainer
+  - HOA reserve fund explained
+  - structural integrity reserve study Florida
+  - SB-4D milestone inspection explained
+  - reserve study percent funded explained
+  - Association Reserves webinar
+  - reserve study consultant presentation
+  - condo board reserve study meeting
+  - CAI reserve study standards
+  - reserve study Monte Carlo simulation
+  - PropFusion reserve study
+  - reserve specialist RS designation
+  - component inventory reserve study
+  - reserve study funding plan
+  - 30 year reserve forecast HOA
+  - Davis-Stirling reserve study California
+  - Florida SIRS explained
+  - reserve study software demo
+  web:
+  - Association Reserves methodology white paper
+  - SmartProperty reserve study methodology
+  - Reserve Data Analyst reserve study process
+  - ReserveWise reserve study approach
+  - CAI reserve study standards three levels
+  - SB-4D structural integrity reserve study explainer
+  - Davis-Stirling reserve study percent funded
+  - reserve study consultant case study presentation
+  - HOA board reserve study walkthrough
+  - PropFusion reserve study product page
+  - Solume reserve study methodology
+  - condo reserve study webinar slides
+  - reserve study funding plan baseline threshold
+  - component inventory useful life schedule reserve
+  - reserve study software vendor comparison
+  pubmed: []
+  semantic_scholar: []
+edited: true

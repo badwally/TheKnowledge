@@ -1,0 +1,82 @@
+version: 1
+session_id: 2026-05-23-how-does-an-ai-native-solo
+domain: ai-native-business
+prompt: 'How does an AI-native solo or tiny-team business approach GTM, pricing, and
+  defensibility in 2026? Cover: acquisition channels that work for a solo AI-native
+  (PLG, founder-led content, embedded distribution, agent-marketplace listings); pricing
+  axes (per-seat vs. usage vs. outcome) and when each fits which archetype; where
+  moats actually form when foundation models are commoditized (workflow lock-in, data
+  flywheels, distribution, brand, switching cost, integration depth); the ''thin wrapper''
+  critique and when it''s fair vs. lazy; defensibility for services-firm and marketplace
+  archetypes (where moats differ from SaaS). Sources: VC essays on AI moats (a16z,
+  Sequoia, Benchmark), operator essays on AI pricing (Kyle Poyar, Lenny, First Round,
+  ProductLed), named-company pricing disclosures, AI-native services / marketplace
+  case studies.'
+generated_at: '2026-05-23T17:50:41Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - AI agent unit economics
+  - large language model pricing strategies
+  - commoditization foundation models competitive moat
+  - workflow automation switching costs
+  - agent orchestration enterprise adoption
+  - data network effects machine learning platforms
+  - product led growth software economics
+  - AI augmented productivity solo entrepreneur
+  youtube:
+  - a16z AI moats
+  - Sequoia AI native company
+  - Kyle Poyar AI pricing
+  - Lenny AI startup pricing
+  - First Round AI founder
+  - ProductLed AI growth
+  - Pieter Levels solo founder
+  - Cursor Anysphere pricing
+  - AI native services firm
+  - outcome based pricing AI
+  - usage based pricing SaaS 2026
+  - thin wrapper AI critique
+  - founder led content distribution
+  - AI agent marketplace listing
+  - embedded distribution AI startup
+  - Y Combinator AI native business
+  - Benchmark capital AI defensibility
+  - AI vertical SaaS moat
+  - solo founder million dollar AI
+  - tiny team AI company GTM
+  web:
+  - a16z AI moats essay
+  - Sequoia AI defensibility 2026
+  - Kyle Poyar AI pricing benchmarks
+  - Lenny Rachitsky AI pricing
+  - First Round Review AI startup
+  - ProductLed AI growth playbook
+  - Anysphere Cursor pricing model
+  - Pieter Levels AI business indie
+  - AI native services firm case study
+  - outcome based pricing AI agents
+  - thin wrapper critique AI startup
+  - agent marketplace distribution channel
+  - workflow lock-in AI moat
+  - data flywheel AI commoditization
+  - switching costs AI vertical SaaS
+  pubmed: []
+  semantic_scholar:
+  - AI native business model
+  - solo founder AI agents operating model
+  - unit economics AI startups
+  - foundation model commoditization competitive advantage
+  - outcome based pricing software
+  - product led growth AI tools
+  - workflow lock-in switching costs SaaS
+  - data network effects AI platforms
+  - AI augmented productivity small teams
+  - defensibility moats AI vertical applications
+edited: false

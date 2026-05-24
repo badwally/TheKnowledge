@@ -1,0 +1,89 @@
+version: 1
+session_id: 2026-05-20-risksystems-04-foundation-models-causal
+domain: risksystems
+prompt: |
+  Risksystems Q4 of 4 — foundation-model / LLM approaches to structured extraction
+  from engineering and reserve-study documents, decision-narrative generation for
+  licensed-professional sign-off, and causal inference / counterfactual reasoning
+  for capital-project overrun attribution. Frame: Longspan v1.1 produces P10/P50/P90
+  bands but no causal narrative; the question is what role LLM/foundation-model
+  approaches play (extraction yes, methodology no) and which causal-inference
+  primitives become a v3 deliverable for board-facing retrospective questions.
+  Specifically: LLM-as-judge + LLM-with-tools for structured extraction;
+  constrained decoding (Outlines, Pydantic-AI, Instructor, BAML); RAG quality +
+  hallucination controls (RAGAS, RAGTruth, citation-grounded retrieval); LLM
+  narrative on top of a probabilistic engine including the "AI narrative is table
+  stakes" competitive frame; causal inference under DoWhy / EconML / CausalML;
+  target trial emulation (Hernan); difference-in-differences and regression
+  discontinuity for retrospective maintenance-intervention effect estimation;
+  double-ML; POMDP + Bayesian decision theory for inspect-repair-replace with
+  quantified value-of-information.
+generated_at: '2026-05-20T16:48:58Z'
+plan_client_model: null
+target_counts:
+  arxiv: 12
+  youtube: 15
+  web: 12
+  pubmed: 0
+  semantic_scholar: 15
+queries:
+  arxiv:
+    - LLM structured extraction engineering technical documents Pydantic schema
+    - constrained decoding finite state machine grammar guided generation
+    - retrieval augmented generation citation grounding hallucination RAGAS
+    - foundation model PDF table extraction tabular structured output
+    - double machine learning observational infrastructure intervention
+    - target trial emulation observational causal inference
+    - POMDP inspect repair replace value of information maintenance
+    - Bayesian decision theory life cycle cost maintenance optimization
+    - counterfactual reasoning capital project cost overrun attribution
+    - causal inference asset management infrastructure deterioration
+    - LLM-as-judge evaluation reliability calibration
+    - reinforcement learning maintenance scheduling deep Q POMDP
+  youtube:
+    - DoWhy causal inference Microsoft tutorial Sharma
+    - EconML double machine learning Athey Wager
+    - target trial emulation Miguel Hernan
+    - Outlines structured generation library Brandon Willard
+    - Pydantic AI schema constrained extraction
+    - BAML structured LLM output
+    - LlamaParse engineering PDF extraction tables
+    - RAGAS hallucination evaluation
+    - POMDP maintenance optimization tutorial
+    - Bayesian optimal experimental design value of information
+    - LLM as judge calibration
+    - infrastructure asset management AI talk
+    - reserve study software AI demo
+    - facility condition assessment LLM extraction
+    - Markov decision process maintenance bridge pavement
+  web:
+    - Outlines library constrained generation
+    - Instructor Pydantic LLM extraction
+    - BAML schema language LLM
+    - LlamaParse structured extraction
+    - Unstructured.io engineering PDF
+    - RAGAS RAGTruth hallucination framework
+    - DoWhy EconML CausalML comparison
+    - target trial emulation framework Hernan
+    - double machine learning capital projects
+    - POMDP value of information inspect repair replace
+    - AASHTO TAMP causal inference
+    - PHM Society predictive maintenance LLM
+  pubmed: []
+  semantic_scholar:
+    - structured extraction engineering documents large language model
+    - constrained decoding schema bound generation Pydantic
+    - retrieval augmented generation citation grounding technical documents
+    - hallucination evaluation RAG infrastructure engineering
+    - causal inference DoWhy EconML infrastructure asset management
+    - target trial emulation maintenance intervention retrospective
+    - double machine learning capital project cost overrun
+    - counterfactual reasoning deterioration attribution
+    - POMDP inspect repair replace value of information bridge infrastructure
+    - Bayesian decision theory maintenance life cycle cost optimization
+    - reinforcement learning infrastructure maintenance POMDP
+    - LLM judge evaluation calibration reliability
+    - foundation model tabular extraction structured engineering data
+    - difference in differences maintenance intervention infrastructure
+    - regression discontinuity design infrastructure capital intervention
+edited: true

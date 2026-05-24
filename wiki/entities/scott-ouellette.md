@@ -1,0 +1,33 @@
+---
+type: entity
+slug: scott-ouellette
+canonical_name: Scott Ouellette
+entity_kind: person
+domains:
+- risksystems
+draft: true
+draft_started_at: '2026-05-20T18:02:34Z'
+draft_unresolved_claims: 2
+---
+
+# Scott Ouellette
+
+## Summary
+
+Scott Ouellette is a co-editor of *Model Validation and Uncertainty Quantification, Vol. 3*, the proceedings of the 43rd IMAC, A Conference and Exposition on Structural Dynamics, 2025.
+
+## Key facts
+
+- Ouellette is the fourth listed editor of *Model Validation and Uncertainty Quantification, Vol. 3: Proceedings of the 43rd IMAC, A Conference and Exposition on Structural Dynamics, 2025*, published in the River Publishers Series in Conference Proceedings of the Society for Experimental Mechanics Series (ISBN 9788743801481, e-ISBN 9788743801603) [[sources/web-2025-08-21-7a6]].
+- He co-edited the volume with Roland Platz, Garrison Flynn, and Kyle Neal [[sources/web-2025-08-21-7a6]].
+
+## Sources
+
+- [[sources/web-2025-08-21-7a6]]
+
+## Related
+
+- [[entities/roland-platz]]
+- [[entities/garrison-flynn]]
+- [[entities/kyle-neal]]
+- [[entities/mvuq-vol3-proceedings]]

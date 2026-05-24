@@ -1,0 +1,83 @@
+version: 1
+session_id: 2026-05-11-what-is-the-established-methodology-stack
+domain: condo-capital-infra
+prompt: 'What is the established methodology stack for probabilistic component-level
+  capital forecasting in condominium / multi-unit residential reserve studies, covering
+  the six method families: (1) component-level degradation modeling — Markov chain
+  deterioration following Madanat/Golabi/Mishalani DOT bridge and pavement work, Weibull
+  and lognormal survival models, Bayesian hierarchical degradation for sparse component
+  data, physics-based corrosion and fatigue models, hybrid physics-ML and PINN gray-box
+  models, Gaussian process regression for condition trajectories, Hidden Markov and
+  state-space models under partial observation; (2) time-to-failure and replacement
+  timing — hazard functions and competing risks, Cox proportional hazards and accelerated
+  failure time models with covariates, renewal processes for repeatedly-replaced components,
+  deep RUL methods (LSTM, transformer) and their data requirements including negative-result
+  reports; (3) cost and financial framing — ASTM E917 LCCA, ENR cost-escalation indices,
+  autoregressive forecasts, regime-switching for insurance shocks, real options for
+  repair-vs-replace decisions; (4) portfolio aggregation — Monte Carlo over component
+  distributions to fund-level cash flow, copulas and vine copulas for correlated failures
+  and cohort effects, stochastic optimization for replacement scheduling, Bayesian
+  decision theory for inspect-repair-replace; (5) data ingestion and updating — sensor
+  fusion (BAS, IoT, vibration, thermal), Bayesian updating with inspection events,
+  POMDP framing for inspection scheduling (Papakonstantinou et al.), digital-twin
+  standards NIST and ISO 23247, work-order and CMMS history as covariates in survival
+  models; (6) validation and calibration — backtesting against realized expenditures,
+  CRPS and PIT and reliability diagrams for probabilistic forecast verification (Gneiting
+  and Raftery), out-of-sample testing under data scarcity. Prioritize survey papers,
+  canonical primary references (Madanat, Mishalani, Papakonstantinou, Gneiting), negative-result
+  studies where deep learning underperformed Weibull or Bayesian baselines under sparse
+  data, and validation-framework primaries. Deprioritize vendor white papers and single-site
+  deep-learning case studies without sample-size or generalization detail.'
+generated_at: '2026-05-11T18:41:01Z'
+plan_client_model: null
+target_counts:
+  arxiv: 12
+  youtube: 0
+  web: 12
+  pubmed: 0
+  semantic_scholar: 14
+queries:
+  arxiv:
+  - Markov chain deterioration infrastructure bridge pavement
+  - Bayesian hierarchical model component degradation sparse data
+  - Weibull lognormal survival building component service life
+  - physics-informed neural network corrosion structural fatigue
+  - hybrid gray-box physics machine learning degradation
+  - Gaussian process condition monitoring infrastructure
+  - hidden Markov state-space partial observation deterioration
+  - Cox proportional hazards accelerated failure time covariates infrastructure
+  - copula vine correlated failure Monte Carlo infrastructure portfolio
+  - POMDP optimal inspection maintenance scheduling
+  - regime-switching cost escalation construction insurance
+  - CRPS proper scoring rule probabilistic forecast calibration
+  youtube: []
+  web:
+  - Madanat Mishalani Markov chain bridge deterioration model
+  - Papakonstantinou POMDP optimal inspection maintenance infrastructure
+  - Gneiting Raftery proper scoring rules probabilistic forecast
+  - ASTM E917 life cycle cost analysis building standard
+  - FFC BUILDER condition assessment Department of Defense
+  - Reliability Engineering System Safety Bayesian degradation
+  - Journal Infrastructure Systems Markov deterioration survey
+  - probabilistic reserve study Monte Carlo methodology survey
+  - deep learning remaining useful life sparse data limitations
+  - copula vine correlated infrastructure failure review
+  - ISO 23247 digital twin manufacturing infrastructure
+  - PIT diagram reliability diagram forecast verification
+  pubmed: []
+  semantic_scholar:
+  - Markov chain deterioration model bridge pavement Madanat
+  - Bayesian hierarchical model building component degradation
+  - Weibull survival analysis HVAC roof elevator replacement
+  - hybrid physics machine learning structural deterioration
+  - POMDP optimal inspection maintenance Papakonstantinou Andriotis
+  - Gneiting Raftery proper scoring rules probabilistic forecast
+  - Cox proportional hazards building component failure covariates
+  - Monte Carlo reserve fund capital planning multi-component
+  - copula vine correlated infrastructure failure portfolio
+  - deep learning remaining useful life sparse data negative results
+  - accelerated failure time model infrastructure asset
+  - renewal process replacement repeatedly replaced infrastructure
+  - regime-switching construction cost escalation forecast
+  - real options repair replace infrastructure decision
+edited: true

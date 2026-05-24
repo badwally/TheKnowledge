@@ -1,0 +1,92 @@
+version: 1
+session_id: 2026-05-20-risksystems-02-physics-informed-sciml
+domain: risksystems
+prompt: |
+  Risksystems Q2 of 4 — state of the art in physics-informed machine learning
+  (PINNs) and hybrid mechanistic-statistical models (SciML) for built-environment
+  deterioration. Frame for Longspan: today the engine treats EUL as a pure cohort-
+  Weibull draw blended with engineer judgement, with no first-principles
+  deterioration kernel. The question is which mechanisms repay a physics-informed
+  extension first (envelope WDR, plumbing-riser pitting, roof UV, parking-deck
+  chloride). Specifically: PINNs and neural-ODE methods for chloride ingress in
+  reinforced concrete (Fick's second law + corrosion initiation, Tuutti model);
+  carbonation depth modeling; freeze-thaw damage accumulation (Powers, Litvan);
+  fatigue and stress-cycle prediction; moisture-transport and wind-driven-rain
+  (WDR) penetration on building envelopes including face-sealed precast and EIFS
+  (ASHRAE 160, WUFI, HAMFitPlus); corrosion-current modeling for plumbing risers
+  (low-pH supply, copper / galvanized / PEX failure modes); EPDM / TPO / SBS
+  roofing membrane life prediction from UV / thermal-cycling. Also: hybrid
+  mechanistic-statistical (gray-box) models where a physics-based kernel is fit
+  per-building from sparse inspection observations using Bayesian inference;
+  differentiable physics simulators conditionable on work-order events;
+  uncertainty propagation through coupled mechanism models. Relevant venues:
+  RILEM TCs, Building and Environment, Cement and Concrete Research, JOSE,
+  SciML / DeepXDE / NeuralPDE / NVIDIA Modulus literature.
+generated_at: '2026-05-20T16:48:58Z'
+plan_client_model: null
+target_counts:
+  arxiv: 14
+  youtube: 12
+  web: 12
+  pubmed: 0
+  semantic_scholar: 15
+queries:
+  arxiv:
+    - physics informed neural network chloride ingress concrete
+    - PINN corrosion initiation reinforced concrete Fick law
+    - neural ODE deterioration model infrastructure
+    - hybrid mechanistic statistical gray box deterioration
+    - differentiable physics simulator building envelope
+    - SciML degradation model uncertainty quantification
+    - DeepXDE NeuralPDE diffusion concrete
+    - PINN fatigue damage accumulation structural
+    - PINN heat moisture transport building envelope
+    - freeze thaw damage accumulation neural network
+    - Bayesian PINN parameter inference engineering
+    - operator learning DeepONet Fourier neural operator infrastructure
+    - physics constrained machine learning building reliability
+    - uncertainty quantification PINN structural deterioration
+  youtube:
+    - physics informed neural network tutorial Karniadakis
+    - PINN concrete chloride ingress
+    - SciML Julia Chris Rackauckas
+    - DeepXDE tutorial Lu Lu
+    - NVIDIA Modulus physics ML
+    - WUFI moisture transport simulation
+    - ASHRAE 160 moisture envelope
+    - Tuutti corrosion model concrete
+    - building envelope WDR simulation
+    - neural operator DeepONet tutorial
+    - chloride diffusion concrete reinforcement deterioration
+    - facade hygrothermal simulation
+  web:
+    - WUFI hygrothermal simulation Fraunhofer
+    - HAMFitPlus building envelope moisture
+    - ASHRAE 160 moisture envelope criteria
+    - Tuutti corrosion initiation propagation model
+    - RILEM concrete deterioration technical committee
+    - DeepXDE physics informed library
+    - NVIDIA Modulus physics ML platform
+    - SciML Julia ecosystem
+    - chloride ingress neural network concrete
+    - face sealed precast deterioration ASTM
+    - EPDM TPO membrane UV thermal cycling
+    - parking deck chloride corrosion engineering
+  pubmed: []
+  semantic_scholar:
+    - physics informed neural network reinforced concrete chloride corrosion
+    - PINN structural deterioration uncertainty quantification
+    - hybrid mechanistic statistical model degradation Bayesian
+    - DeepONet operator learning infrastructure deterioration
+    - Tuutti model chloride initiation propagation Bayesian
+    - freeze thaw damage accumulation neural network concrete
+    - WDR wind driven rain building envelope simulation moisture
+    - ASHRAE 160 moisture envelope concrete carbonation
+    - WUFI hygrothermal envelope simulation calibration
+    - face sealed precast deterioration sealant joint moisture
+    - copper plumbing riser pitting corrosion low pH supply
+    - membrane roofing EPDM TPO SBS UV thermal aging service life
+    - differentiable simulator building deterioration calibration
+    - Bayesian physics informed neural network parameter inference
+    - SciML neural ODE infrastructure deterioration calibration
+edited: true

@@ -1,0 +1,81 @@
+version: 1
+session_id: 2026-05-23-what-are-the-economics-and-capital
+domain: ai-native-business
+prompt: 'What are the economics and capital path of an AI-native solo-founder / tiny-team
+  business in 2026? Cover: cost structure (compute, vendor primitives like model APIs
+  and embeddings, data, human time), gross margin profile vs. legacy SaaS / legacy
+  services / legacy marketplace, revenue-per-human benchmarks (Anysphere, Midjourney,
+  Telegram, Plenty of Fish, Craigslist as comparators), time-to-revenue norms, and
+  bootstrapped vs. revenue-financed vs. seed-funding paths. Include the ''AI compute
+  as variable cost'' reshaping of unit economics. Sources: VC pieces (a16z, Sequoia,
+  Benchmark, Felicis) on AI-native economics, operator essays on capital efficiency,
+  Stripe/First Round / Lenny content on AI-native unit economics, academic work on
+  AI productivity gains (Brynjolfsson, BCG×Harvard), and named-company financial disclosures.'
+generated_at: '2026-05-23T17:49:58Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - generative AI productivity firm
+  - large language model worker substitution
+  - AI agent task automation cost
+  - generative AI economic value creation
+  - AI coding assistant developer productivity
+  - autonomous agents enterprise workflow
+  - AI-augmented knowledge work output
+  - foundation model API cost economics
+  youtube:
+  - AI native startup 2026
+  - solo founder AI agents
+  - Pieter Levels indie hacker
+  - Anysphere Cursor revenue
+  - one person billion dollar company
+  - AI startup unit economics
+  - tiny team AI company
+  - bootstrapped AI SaaS
+  - Sam Altman one person unicorn
+  - Garry Tan AI startup
+  - a16z AI native business
+  - Sequoia AI economics
+  - Lenny AI pricing
+  - First Round AI founder
+  - Midjourney revenue per employee
+  - AI agent stack 2026
+  - build vs buy LLM
+  - outcome based pricing AI
+  - AI services firm margin
+  - Stripe AI native economics
+  web:
+  - AI native company unit economics
+  - a16z AI native business model
+  - Sequoia AI cost structure
+  - revenue per employee AI startup
+  - Anysphere Cursor ARR
+  - Midjourney bootstrapped profitability
+  - Pieter Levels solo founder revenue
+  - Lenny newsletter AI pricing models
+  - First Round Review AI founders
+  - Stripe AI native business growth
+  - gross margin AI SaaS 2026
+  - compute cost variable AI startup
+  - AI agent orchestration stack
+  - evals as a service startup
+  - tiny team billion dollar company
+  pubmed: []
+  semantic_scholar:
+  - generative AI worker productivity experiment
+  - AI augmentation knowledge worker output
+  - large language model task substitution labor
+  - BCG Harvard generative AI consultants
+  - GitHub Copilot developer productivity study
+  - AI agent business process automation
+  - foundation models firm boundaries economics
+  - AI tools small business productivity
+  - generative AI economic impact services
+  - capital efficiency software startup AI
+edited: false

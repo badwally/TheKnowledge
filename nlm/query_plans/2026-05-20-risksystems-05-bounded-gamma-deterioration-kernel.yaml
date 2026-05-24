@@ -1,0 +1,125 @@
+version: 1
+session_id: 2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel
+domain: risksystems
+prompt: |
+  Risksystems Q5 — dedicated drilldown on the Bounded Gamma Process (BGP)
+  deterioration kernel as a Longspan v3 candidate. Three explicit research
+  threads:
+
+  (A) **Reference mathematical models.** What are the canonical formulations
+  of the gamma process for monotonic deterioration? Specifically: the
+  stationary gamma process (Abdel-Hameed 1975); the non-stationary /
+  time-transformed gamma process (van Noortwijk 2009 RESS review);
+  hierarchical Bayesian gamma processes with covariates (Pandey, Yuan,
+  van Noortwijk); inverse Gaussian as a competing monotonic model;
+  Bounded Transformed Gamma Process (BTGP) per arxiv-2508.13359 already
+  in the corpus; Tweedie / generalized-gamma extensions; and the
+  inference machinery (MCMC, expectation-maximization, Bayesian
+  hierarchical fits) used to estimate parameters from sparse inspection
+  data. Want the full lineage: math, identifiability, prior structure,
+  failure-time distribution derivations, censoring handling.
+
+  (B) **SOTA ML implementations.** How has BGP / gamma-process deterioration
+  been implemented in modern ML systems? At what scale (dataset size,
+  problem domain), with what results (calibration metrics, predictive
+  accuracy, value of information), and in what problem areas? Specifically:
+  bridge deck deterioration (Frangopol, Pandey, Yuan); pavement (Madanat,
+  Mishalani); pipeline corrosion; nuclear-pressure-vessel reliability
+  (Bagdonavičius, Nikulin); offshore-platform fatigue; aerospace fatigue;
+  building infrastructure deterioration including roofing and concrete.
+  Include hybrid Gamma-PINN, neural-ODE-with-gamma-noise, Gaussian-
+  process-conditioned gamma, and any deep-learning-meets-monotonic-
+  stochastic-process variants.
+
+  (C) **Corpus + labeling for Longspan six-component implementation.** What
+  is the minimum viable dataset (size, structure, labels) to fit a BGP
+  for each of the six probabilistic components — roof, building envelope,
+  plumbing risers, HVAC central plant, elevators, parking deck / podium?
+  Specifically: required time-series of condition observations (CAI 0-10
+  rating, ASCE FCI, RECI, or component-specific scales); inspection
+  cadence assumptions (annual, biennial); covariate set (effective age,
+  material class, climate exposure — WDR / chloride / freeze-thaw,
+  jurisdiction, structure type); event-data (replacements, major repairs)
+  for right-censoring; minimum n per component class for defensible
+  estimates; published benchmarks of dataset sizes that produced
+  publishable BGP fits in adjacent domains (bridges: HDM-4, Pontis,
+  AASHTO; water: KANEW, AWARE-P).
+
+  Frame: Longspan v1.1 today fits Weibull EUL distributions from the
+  60-building BC concrete-frame highrise sample (108-816 observations per
+  component class). The BGP would replace or augment the Weibull with a
+  first-principles monotonic stochastic kernel. The defensible question
+  is whether the existing sample sizes support BGP estimation, what extra
+  data needs to be collected, and what the calibration / validation
+  cadence looks like. The output of this research thread feeds the v3
+  engine-architecture decision in Q3 2026.
+generated_at: '2026-05-20T20:30:00Z'
+plan_client_model: null
+target_counts:
+  arxiv: 15
+  youtube: 10
+  web: 12
+  pubmed: 0
+  semantic_scholar: 18
+queries:
+  arxiv:
+    - gamma process deterioration infrastructure Bayesian inference
+    - bounded gamma process monotonic deterioration constraint
+    - non-stationary gamma process degradation inspection
+    - hierarchical Bayesian gamma process structural reliability
+    - gamma process pavement bridge deterioration calibration
+    - inverse Gaussian process degradation comparison gamma
+    - physics informed neural network gamma stochastic process
+    - neural ODE monotonic degradation Bayesian
+    - generalized gamma Tweedie degradation modeling
+    - gamma process maintenance optimization remaining useful life
+    - Bayesian hierarchical Pandey Yuan gamma deterioration
+    - van Noortwijk gamma process review deterioration
+    - condition rating gamma process inspection planning
+    - chloride corrosion concrete gamma process Bayesian
+    - roof membrane deterioration stochastic survival
+  youtube:
+    - gamma process tutorial Bayesian deterioration
+    - van Noortwijk gamma process lecture
+    - infrastructure deterioration stochastic process
+    - bridge management Bayesian deterioration
+    - Pandey infrastructure reliability lecture
+    - neural ODE stochastic differential equation
+    - Bayesian Workflow Gelman MCMC reliability
+    - Frangopol structural reliability talk
+    - reliability engineering gamma process
+    - hierarchical Bayesian sparse data tutorial
+  web:
+    - van Noortwijk gamma process review RESS 2009
+    - Pandey gamma process bridge deterioration Yuan
+    - Frangopol life cycle cost gamma process
+    - Madanat Markov vs gamma deterioration pavement
+    - bounded gamma process structural reliability
+    - inverse Gaussian process vs gamma degradation
+    - hierarchical Bayesian gamma process Stan PyMC implementation
+    - gamma process maintenance optimization POMDP
+    - asset management gamma process implementation case study
+    - condition rating scale CAI FCI RECI ASTM
+    - structural durability inspection database public
+    - building envelope deterioration monitoring database
+  pubmed: []
+  semantic_scholar:
+    - gamma process deterioration infrastructure monotonic Bayesian
+    - bounded gamma process degradation constraint physical limit
+    - non-stationary time transformed gamma process inspection
+    - hierarchical Bayesian gamma process Pandey Yuan van Noortwijk
+    - inverse Gaussian process degradation comparison
+    - gamma process calibration sparse observations censoring
+    - structural reliability gamma process life cycle cost
+    - bridge deck gamma process deterioration Frangopol
+    - pavement gamma process deterioration Madanat Mishalani
+    - chloride ingress concrete gamma process Bayesian inference
+    - building envelope deterioration stochastic process
+    - HVAC component reliability gamma survival hierarchical
+    - elevator reliability survival gamma process
+    - condition rating ASCE FCI RECI inspection database
+    - physics informed neural network gamma process hybrid
+    - neural ODE monotonic degradation Bayesian uncertainty
+    - generalized gamma Tweedie degradation modeling
+    - gamma process POMDP value of information inspection
+edited: true

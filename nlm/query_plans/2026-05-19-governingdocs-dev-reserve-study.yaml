@@ -1,0 +1,72 @@
+version: 1
+session_id: 2026-05-19-governingdocs-dev-reserve-study
+domain: condo-capital-infra
+prompt: GoverningDocs.dev reserve study
+generated_at: '2026-05-19T00:49:10Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - reserve study probabilistic component degradation model
+  - Monte Carlo simulation condominium reserve fund forecasting
+  - Bayesian hierarchical building component service life sparse data
+  - Markov chain deterioration multi-component residential infrastructure
+  - Weibull survival roof envelope plumbing HVAC elevator
+  - copula correlated failure building portfolio reserve
+  - POMDP inspection scheduling condominium structural component
+  - regime-switching construction cost escalation reserve forecast
+  youtube:
+  - GoverningDocs reserve study
+  - GoverningDocs.dev demo
+  - GoverningDocs condo HOA software
+  - AI reserve study software
+  - reserve study software demo 2026
+  - condo reserve study AI
+  - HOA reserve study automation
+  - SmartProperty reserve study demo
+  - PropFusion reserve study
+  - Association Reserves methodology webinar
+  - ReserveWise software walkthrough
+  - Reserve Data Analyst presentation
+  - Solume reserve study product
+  - structural integrity reserve study Florida SB-4D
+  - milestone inspection condominium Florida
+  - Davis-Stirling reserve study California
+  - CAI reserve study standards explained
+  - reserve study percent funded board
+  - Monte Carlo reserve study simulation
+  - probabilistic reserve forecast condo
+  web:
+  - GoverningDocs.dev reserve study
+  - GoverningDocs reserve study software pricing
+  - GoverningDocs condo HOA platform
+  - GoverningDocs.dev product documentation
+  - AI native reserve study vendor comparison
+  - SmartProperty reserve study methodology
+  - PropFusion reserve study product
+  - Solume reserve study platform
+  - Association Reserves white paper methodology
+  - Reserve Data Analyst methodology
+  - ReserveWise reserve study process
+  - CAI reserve study standards three levels
+  - SB-4D structural integrity reserve study guidance
+  - Davis-Stirling 5550 reserve study requirements
+  - reserve study software competitive landscape 2026
+  pubmed: []
+  semantic_scholar:
+  - probabilistic reserve study Monte Carlo condominium
+  - Bayesian hierarchical building component degradation sparse data
+  - Markov chain deterioration multi-component infrastructure residential
+  - Weibull lognormal survival building component service life
+  - copula vine correlated infrastructure failure portfolio
+  - POMDP optimal inspection condominium maintenance
+  - hybrid physics machine learning building deterioration
+  - regime-switching construction cost escalation reserve
+  - Cox proportional hazards building component covariate
+  - life cycle cost analysis ASTM E917 multifamily residential
+edited: false
