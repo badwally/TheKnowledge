@@ -24,5 +24,5 @@ Two load-bearing signals:
 ## Referenced in
 
 - [[mocs/ai-native-business]]
-- [[synthesis/2026-05-23-define-ai-as-substrate-precisely-as]] — substrate boundary case
+- [[concepts/ai-native-substrate]] — substrate boundary case
 - Pillar 1 GTM synthesis

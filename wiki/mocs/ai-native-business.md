@@ -22,7 +22,7 @@ Drafts; the citation chain has known render bugs (see `docs/M46-followup-items.m
 
 ## Concept anchor
 
-- [[synthesis/2026-05-23-define-ai-as-substrate-precisely-as]] — **AI as substrate vs. AI as feature vs. AI as product.** Definition, structural differences (organizational/economic/technical), why substrate-first is the solo-founder operative frame, boundary cases (Cursor, Genspark pivot, the "Pets.com dilemma" of pure-AI margins).
+- [[concepts/ai-native-substrate]] — **AI as substrate vs. AI as feature vs. AI as product.** Definition, structural differences (organizational/economic/technical), why substrate-first is the solo-founder operative frame, boundary cases (Cursor, Genspark pivot, the "Pets.com dilemma" of pure-AI margins).
 
 ## Pillar 1 — Org & operating model
 
@@ -43,7 +43,7 @@ Cost structure, gross margin, revenue-per-human, bootstrapped vs. seed paths. Mo
 
 Model selection, evals as a core operating function, observability, compose-vendor-primitives default, where proprietary infra is actually warranted.
 
-- [[synthesis/2026-05-23-what-is-the-ai-native-technical]] — **Top-level synthesis** across the technical pillar (overview).
+- [[synthesis/2026-05-24-what-is-the-ai-native-technical]] — **Top-level synthesis** across the technical pillar (overview).
 - [[synthesis/2026-05-23-what-is-the-ai-native-technical-model-selection-optimization-and-orchestration]] — Frontier vs. cheap-and-fast vs. open-weight; orchestration patterns.
 - [[synthesis/2026-05-23-what-is-the-ai-native-technical-evals-and-observability-as-core-operating]] — Evals discipline; production observability for agentic systems.
 - [[synthesis/2026-05-23-what-is-the-ai-native-technical-build-vs-buy-defaults-and-infrastructure]] — When to compose vendor primitives, when to build proprietary; serverless / vector store / queue / trace defaults.
@@ -88,7 +88,7 @@ AI mediates supply/demand or aggregates fragmented work. Hardest archetype for s
 
 | Layer | Count | Notes |
 |---|---:|---|
-| Substrate-first concept page | 1 | Filed at `wiki/synthesis/` (no `wiki concept-add` path; M46 followup) |
+| Substrate-first concept page | 1 | `wiki/concepts/ai-native-substrate.md` (M46 Fix C `wiki concept-add` enabled the relocation from `wiki/synthesis/`) |
 | Pillar 1 syntheses | 5 | Auto-branched from one `wiki research` run |
 | Pillar 3 syntheses | 7 | 6 auto-branched + 1 query-style consolidation |
 | Archetype A (indie SaaS) | 2 | Cross-cutting + query-style consolidation |
@@ -106,7 +106,6 @@ Filed at `docs/M46-followup-items.md`:
 - Bootstrap-domain policy too strict for industry-context inclusion (mitigated mid-session via threshold lowering + 2 new inclusion criteria)
 - arxiv + YouTube search adapters fail hard on HTTP 429 instead of backoff
 - Stale auto-MoC across reruns (this MoC was hand-authored as a one-time exception)
-- `wiki query` files as synthesis even when concept page is requested (no `wiki concept-add` path)
 - Citation chain renders `[[sources/<num>]]` instead of `[[sources/<slug>]]` for some refs (pre-existing M46 #2 — affects citation finalize)
 - Session `register_session` blocks ephemeral re-runs (pre-existing M46 #3 — hit and worked around via `mark_abandoned`)
 
