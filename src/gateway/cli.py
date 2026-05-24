@@ -236,7 +236,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_finalize_batch.add_argument(
         "--suggest",
         action="store_true",
-        help="Run LLM cite-suggest on Cat B drafts (Phase C/D, not yet wired).",
+        help="Run LLM cite-suggest on Cat B drafts. With --execute (Aggressive mode), auto-applies unambiguous + evidence-verified suggestions and finalizes.",
     )
 
     # cite: add [[sources/<id>]] citation tokens to specific lines of a wiki page
