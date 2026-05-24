@@ -134,3 +134,51 @@ def test_unverified_evidence_quote_marks_suggestion_not_appliable(kb_root):
     assert s.evidence_verified is False
     assert s.auto_appliable is False
     assert "not found" in s.skip_reason
+
+
+def test_synthesizes_with_sources_prefix_loads_raw_body(kb_root):
+    """`synthesizes:` frontmatter entries are stored as `sources/<id>`
+    (matching the inline `[[sources/<id>]]` citation token). The raw
+    file lives at `raw/<type>/<id>.md` without the prefix. cite_suggest
+    must strip the prefix before reading raw bodies; otherwise it sends
+    an empty source corpus to the LLM and verification always fails.
+    Regression for hand-test discovery on real synthesis pages."""
+    source_id_bare = "web-2024-02-07-prefix"
+    _write_raw_source(kb_root, source_id_bare, "Verifiable evidence text.\n")
+
+    # Build a draft whose `synthesizes:` uses the prefixed form (the wire
+    # format in real synthesis pages).
+    page = kb_root / "wiki" / "synthesis" / "test-prefix.md"
+    page.parent.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "synthesis",
+        "slug": "test-prefix",
+        "title": "Test Prefix",
+        "domains": ["test-domain"],
+        "draft": True,
+        "draft_started_at": "2026-05-23T00:00:00Z",
+        "synthesizes": [f"sources/{source_id_bare}"],
+    }
+    body = "# Test\n\n## Synthesis\n\nClaim needing citation here.\n"
+    page.write_text(fm.serialize(front, body))
+
+    # LLM emits the bare id form (per the system prompt instructions).
+    fake_client = MagicMock()
+    fake_client.call_with_usage.return_value = CallResult(
+        text=(
+            '{"suggestions": [{"line": 6, "source_id": "%s", '
+            '"evidence_quote": "Verifiable evidence text."}]}' % source_id_bare
+        ),
+        input_tokens=80, output_tokens=15, model="claude-sonnet-4-6",
+    )
+
+    results = suggest_cites(page, client=fake_client)
+
+    assert len(results) == 1
+    s = results[0]
+    # source_id stored as bare id (no `sources/` prefix)
+    assert s.source_id == source_id_bare
+    assert s.unambiguous is True
+    # Verification succeeds — the bare id resolved to the raw file on disk
+    assert s.evidence_verified is True
+    assert s.auto_appliable is True

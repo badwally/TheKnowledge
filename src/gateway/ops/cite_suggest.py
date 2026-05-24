@@ -46,14 +46,17 @@ _SYSTEM_PROMPT = (
     "give you a draft wiki page (with line numbers) and the raw bodies of "
     "the sources (each wrapped in <source id=\"...\"> tags) the draft was "
     "authored from. Your job: for each line "
-    "containing a substantive claim that lacks a `[[sources/<id>]]` "
-    "citation, identify which single source supports the claim and emit "
-    "a JSON object of the form:\n\n"
+    "containing a substantive claim that lacks any citation (neither "
+    "inline `[[sources/<id>]]` nor footnote-style `[N]` with a matching "
+    "footnote definition), identify which single source supports the "
+    "claim and emit a JSON object of the form:\n\n"
     '{"suggestions": [{"line": <int>, "source_id": "<id>", '
     '"evidence_quote": "<verbatim substring from that source>"}]}\n\n'
     "Rules:\n"
     "- Only emit a suggestion when exactly one source supports the claim. "
     "If more than one source could support it, OMIT the line entirely.\n"
+    "- `source_id` is the BARE id (e.g. `web-2024-02-07-3a2` or "
+    "`yt-abc123`), WITHOUT the `sources/` prefix.\n"
     "- The `evidence_quote` must be a verbatim substring of the named "
     "source's body (preserving capitalization, punctuation, and spaces "
     "as much as possible).\n"
@@ -66,11 +69,22 @@ def _normalize_whitespace(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+def _strip_sources_prefix(source_id: str) -> str:
+    """`synthesizes:` and `sources:` frontmatter entries are stored with a
+    `sources/` prefix matching the inline `[[sources/<id>]]` citation form
+    (e.g. `sources/web-2024-02-07-3a2`). Raw files live at
+    `raw/<type>/<id>.md` with the bare id. Strip the prefix here."""
+    if source_id.startswith("sources/"):
+        return source_id[len("sources/"):]
+    return source_id
+
+
 def _read_source_body(kb_root: Path, source_id: str) -> str | None:
     """Find the raw source file for ``source_id`` and return its body
     (frontmatter stripped). Returns None if not found / unparseable."""
+    sid = _strip_sources_prefix(source_id)
     for st in paths.SOURCE_TYPES:
-        candidate = kb_root / "raw" / st / f"{source_id}.md"
+        candidate = kb_root / "raw" / st / f"{sid}.md"
         if candidate.exists():
             try:
                 _, body = fm.parse(candidate.read_text())
@@ -105,7 +119,9 @@ def suggest_cites(page_path: str | Path, *,
     for sid in source_ids:
         body = _read_source_body(kb_root, sid)
         if body is not None:
-            source_bodies[sid] = body
+            # Key by the bare id (without "sources/" prefix) so the dict
+            # matches whatever form the LLM emits in `source_id`.
+            source_bodies[_strip_sources_prefix(sid)] = body
 
     user_prompt = _build_user_prompt(text, source_bodies)
 
@@ -171,6 +187,12 @@ def _parse_and_verify(raw_text: str,
             quote = str(s["evidence_quote"])
         except (KeyError, TypeError, ValueError):
             continue
+
+        # LLM may emit the id with or without the `sources/` prefix
+        # depending on what it sees in the page text. Normalize for lookup
+        # AND store the bare form on the CiteSuggestion (which is what
+        # `wiki cite` and bidirectional backlinks expect).
+        source_id = _strip_sources_prefix(source_id)
 
         unambiguous = line_counts.get(line, 0) == 1
         body = source_bodies.get(source_id, "")
