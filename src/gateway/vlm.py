@@ -16,7 +16,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Protocol
 
-from gateway.llm import ClaudeCLIClient, LLMError, model_for
+from gateway.llm import CallResult, ClaudeCLIClient, LLMError, model_for
+from gateway.log import log_llm_call
 
 
 _VLM_SYSTEM_PROMPT = (
@@ -63,13 +64,20 @@ class ClaudeCLIVLMClient:
         )
 
     def describe(self, image_path: str, prompt: str) -> str:
+        """Describe `image_path` via `claude -p` and emit K5 telemetry.
+
+        K5: routes through ``call_with_usage`` so the per-image call cost
+        appears in log.md / ``wiki status``. VLM calls are infrequent but
+        expensive (Opus + Read tool + multi-second runtime), so per-call
+        telemetry is meaningful.
+        """
         abs_path = str(Path(image_path).expanduser().resolve())
         # `--dangerously-skip-permissions` lets the Read tool open a file
         # outside cwd without an interactive prompt. Safe here: the path
         # was explicitly passed by the user via `wiki ingest`, the prompt
         # is constrained to image description, and stdout is captured.
         try:
-            text = self._cli.call(
+            result = self._cli.call_with_usage(
                 user_prompt=f"Image path: {abs_path}",
                 system_prompt=f"{_VLM_SYSTEM_PROMPT}\n\n{prompt}",
                 model=self._model,
@@ -79,7 +87,9 @@ class ClaudeCLIVLMClient:
         except LLMError as e:
             raise VLMError(str(e)) from e
 
-        text = text.strip()
+        log_llm_call("vlm", result)
+
+        text = result.text.strip()
         if not text:
             raise VLMError("claude -p returned an empty description")
         return text

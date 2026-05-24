@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 import json
 import re
 
-from gateway.llm import ClaudeCLIClient, LLMError, model_for
+from gateway.llm import CallResult, ClaudeCLIClient, LLMError, model_for
 from typing import Protocol
 
 
@@ -204,9 +204,30 @@ class ClaudeCLIPlanClient:
         """M44 optimized: system prefix via --system-prompt."""
         return self._invoke(system_prompt=system, user_prompt=user)
 
+    def call_with_usage(self, prompt: str) -> CallResult:
+        """K5 telemetry variant of ``call(prompt)``."""
+        return self._invoke_with_usage(system_prompt=None, user_prompt=prompt)
+
+    def call_split_with_usage(self, *, system: str, user: str) -> CallResult:
+        """K5 telemetry variant of ``call_split``."""
+        return self._invoke_with_usage(system_prompt=system, user_prompt=user)
+
     def _invoke(self, *, system_prompt: str | None, user_prompt: str) -> str:
         try:
             return self._cli.call(
+                user_prompt=user_prompt,
+                system_prompt=system_prompt,
+                model=self._model,
+                tools="",
+            )
+        except LLMError as e:
+            raise PlanError(str(e)) from e
+
+    def _invoke_with_usage(
+        self, *, system_prompt: str | None, user_prompt: str
+    ) -> CallResult:
+        try:
+            return self._cli.call_with_usage(
                 user_prompt=user_prompt,
                 system_prompt=system_prompt,
                 model=self._model,

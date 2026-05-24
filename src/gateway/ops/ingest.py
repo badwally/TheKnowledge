@@ -507,15 +507,35 @@ def _invoke_plan_and_apply(
     source_text = _format_source_for_plan(front, body)
     existing_pages = _gather_existing_pages(domain)
 
+    # K5: prefer telemetry-emitting variants. Stubs in tests typically only
+    # implement plain `call()` — that path silently skips telemetry.
+    call_split_with_usage = getattr(plan_client, "call_split_with_usage", None)
+    call_with_usage = getattr(plan_client, "call_with_usage", None)
     call_split = getattr(plan_client, "call_split", None)
     try:
-        if callable(call_split):
+        if callable(call_split_with_usage):
+            from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
+            from gateway.log import log_llm_call
+
+            result = call_split_with_usage(
+                system=build_plan_system_prompt(),
+                user=build_plan_user_prompt(source_text, existing_pages),
+            )
+            log_llm_call("plan_authorship", result)
+            raw = result.text
+        elif callable(call_split):
             from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
 
             raw = call_split(
                 system=build_plan_system_prompt(),
                 user=build_plan_user_prompt(source_text, existing_pages),
             )
+        elif callable(call_with_usage):
+            from gateway.log import log_llm_call
+
+            result = call_with_usage(build_plan_prompt(source_text, existing_pages))
+            log_llm_call("plan_authorship", result)
+            raw = result.text
         else:
             raw = plan_client.call(build_plan_prompt(source_text, existing_pages))
     except Exception as e:

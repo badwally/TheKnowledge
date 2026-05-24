@@ -40,6 +40,20 @@ mcp = FastMCP(
 )
 
 
+# CLI ops intentionally without MCP wrappers. The parity test in
+# `tests/gateway/test_mcp_parity.py` reads this set and asserts every other
+# IMPLEMENTED CLI op has a `wiki_*` tool. Add to this set explicitly when an
+# op should remain CLI-only.
+#
+# - watch, mcp-serve, serve: daemons / servers, not request/response ops
+# - migrate: one-shot schema/content migration runs (rare, dangerous)
+# - demote-domain: destructive cross-state action (per plan C4 — agents
+#   should not autonomously demote blessed domains)
+CLI_ONLY: frozenset[str] = frozenset(
+    {"watch", "mcp-serve", "serve", "migrate", "demote-domain"}
+)
+
+
 def _serialize(result: OperationResult) -> dict[str, Any]:
     """Convert an OperationResult to a plain JSON-friendly dict."""
     return {
@@ -260,6 +274,325 @@ def wiki_status() -> dict[str, Any]:
     from gateway.ops.status import status
 
     return _serialize(status())
+
+
+# --- K2 (M47): parity wrappers ---------------------------------------------
+
+
+@mcp.tool()
+def wiki_research(
+    prompt: str,
+    domain: str | None = None,
+    include_local: list[str] | None = None,
+    trust_local: bool = False,
+    max_results_per_adapter: int = 50,
+    draft: bool = False,
+    dry_run: bool = False,
+    review: bool = False,
+    execute_session: str | None = None,
+    external_plan_path: str | None = None,
+) -> dict[str, Any]:
+    """Corpus-constructive research: plan-and-execute multi-adapter search,
+    fan out filter, build a NotebookLM session, file syntheses.
+
+    Mirrors all CLI flags per D3. Mutual-exclusivity: `dry_run`, `review`,
+    `execute_session`, `external_plan_path` are advisory modes; the
+    underlying `research()` op resolves their interaction. Use `dry_run=True`
+    first to see the plan before paying network cost.
+    """
+    from gateway.research.orchestrator import research
+
+    return _serialize(
+        research(
+            prompt,
+            domain=domain,
+            include_local=include_local,
+            trust_local=trust_local,
+            max_results_per_adapter=max_results_per_adapter,
+            draft=draft,
+            dry_run=dry_run,
+            review=review,
+            execute_session=execute_session,
+            external_plan_path=external_plan_path,
+        )
+    )
+
+
+@mcp.tool()
+def wiki_lint(scope: str | None = None) -> dict[str, Any]:
+    """Run health checks across the wiki.
+
+    Read-only. `scope` narrows to a specific check (e.g., `orphans`,
+    `stale_drafts`, `contradictions`, `citation_density`). Omit for the
+    full lint pass.
+    """
+    from gateway.ops.lint import lint
+
+    return _serialize(lint(scope=scope))
+
+
+@mcp.tool()
+def wiki_batch_ingest(
+    vault: str,
+    legacy_import: bool = False,
+    domain: str | None = None,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    """Bulk-ingest a vault directory. Today only `--legacy-import` is wired;
+    canonical batch ingest is `wiki ingest <file>` per source.
+    """
+    from gateway.ops.batch_ingest import batch_ingest
+
+    return _serialize(
+        batch_ingest(
+            vault,
+            legacy_import=legacy_import,
+            domain=domain,
+            dry_run=dry_run,
+        )
+    )
+
+
+@mcp.tool()
+def wiki_bootstrap_domain(
+    description: str,
+    slug: str,
+    force: bool = False,
+) -> dict[str, Any]:
+    """Author a starter policy.yaml + example bank from a natural-language
+    description of the domain. Idempotent: re-running with the same
+    description hash is a no-op; `force=True` overrides.
+    """
+    from gateway.ops.bootstrap_domain import bootstrap_domain
+
+    return _serialize(bootstrap_domain(description, slug, force=force))
+
+
+@mcp.tool()
+def wiki_discover_domains(
+    scope: str | None = None,
+    since: str | None = None,
+    untagged: bool = False,
+    timeout_s: float | None = None,
+) -> dict[str, Any]:
+    """Cluster source pages into draft domain proposals (M36).
+
+    Filters combined as AND: `scope` (glob), `since` (ISO-8601 prefix),
+    `untagged` (sources without `domains:`).
+    """
+    from gateway.ops.discover_domains import discover_domains
+
+    return _serialize(
+        discover_domains(
+            scope=scope,
+            since=since,
+            untagged=untagged,
+            timeout_s=timeout_s,
+        )
+    )
+
+
+@mcp.tool()
+def wiki_promote_domain(proposal_slug: str) -> dict[str, Any]:
+    """Bless a draft domain proposal: write the policy.yaml, back-tag
+    member sources with the new domain. Idempotent on re-run."""
+    from gateway.ops.promote_domain import promote_domain
+
+    return _serialize(promote_domain(proposal_slug))
+
+
+@mcp.tool()
+def wiki_reject_proposal(proposal_slug: str) -> dict[str, Any]:
+    """Delete a draft domain proposal page. Drafts only — `wiki_demote_domain`
+    is CLI-only per C4."""
+    from gateway.ops.reject_proposal import reject_proposal
+
+    return _serialize(reject_proposal(proposal_slug))
+
+
+@mcp.tool()
+def wiki_cite(
+    page_path: str,
+    additions: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Add `[[sources/<id>]]` citation tokens to specific lines of a wiki page.
+
+    `additions` is a list of objects shaped ``{"line": <int>, "source_id":
+    <str>}``. Per C6 — typed object list (not strings) so the JSON-RPC
+    surface is unambiguous. Line numbers are file-relative (including
+    frontmatter) per D2.
+    """
+    from gateway.ops.cite import cite
+
+    # Convert from typed dicts to the (line, source_id) tuples that cite() expects.
+    pairs: list[tuple[int, str]] = []
+    for item in additions:
+        try:
+            line = int(item["line"])
+            source_id = str(item["source_id"])
+        except (KeyError, TypeError, ValueError) as e:
+            return _serialize(
+                OperationResult(
+                    success=False,
+                    errors=[
+                        f"each `additions` entry needs 'line' (int) and 'source_id' (str): {e}"
+                    ],
+                )
+            )
+        pairs.append((line, source_id))
+    return _serialize(cite(page_path, pairs))
+
+
+@mcp.tool()
+def wiki_backfill_examples(
+    domain: str,
+    legacy_config: str | None = None,
+    json_paths: list[str] | None = None,
+    policy_version: str | None = None,
+) -> dict[str, Any]:
+    """Backfill policy.yaml + example bank for a domain from legacy
+    research-notebook artifacts.
+
+    At least one of `legacy_config` (path to the legacy yaml) or
+    `json_paths` (list of legacy staged JSONs) must be set.
+    """
+    from gateway.ops.example_bank import backfill
+
+    if legacy_config is None and not json_paths:
+        return _serialize(
+            OperationResult(
+                success=False,
+                errors=["needs at least one of legacy_config or json_paths"],
+            )
+        )
+    legacy_path = Path(legacy_config).expanduser().resolve() if legacy_config else None
+    json_path_objs = (
+        [Path(p).expanduser().resolve() for p in (json_paths or [])]
+    )
+    summary = backfill(
+        domain_slug=domain,
+        legacy_config_path=legacy_path,
+        json_paths=json_path_objs,
+        policy_version=policy_version,
+    )
+    # `backfill()` returns a dict, not OperationResult — wrap it for parity.
+    return _serialize(
+        OperationResult(
+            success=not summary.get("errors"),
+            summary=f"backfill {domain}: {summary}",
+            errors=summary.get("errors", []),
+        )
+    )
+
+
+@mcp.tool()
+def wiki_finetune(
+    domain: str | None = None,
+    check: bool = False,
+    distill: bool = False,
+    threshold: int = 500,
+    force: bool = False,
+) -> dict[str, Any]:
+    """Inspect or distill the per-domain example bank.
+
+    Modes (mutually exclusive):
+    - default / `check=True`: report trigger-state across domains (or one
+      domain if `domain` set). Read-only.
+    - `distill=True`: build a candidate policy version from the example
+      bank. Requires `domain`. `force=True` bypasses the threshold check.
+    """
+    from gateway.ops.finetune import (
+        DistillError,
+        distill_prompt,
+        trigger_state,
+        trigger_states_all,
+    )
+
+    if distill:
+        if not domain:
+            return _serialize(
+                OperationResult(
+                    success=False,
+                    errors=["distill mode requires a domain"],
+                )
+            )
+        try:
+            result = distill_prompt(
+                domain,
+                threshold=threshold,
+                enforce_threshold=not force,
+            )
+        except DistillError as e:
+            return _serialize(
+                OperationResult(success=False, errors=[f"distill failed: {e}"])
+            )
+        return _serialize(
+            OperationResult(
+                success=True,
+                summary=(
+                    f"distilled candidate for {result.domain}: "
+                    f"{result.candidate_path} (examples_used={result.examples_used})"
+                ),
+                paths_touched=[result.candidate_path],
+            )
+        )
+
+    # check / default: report trigger states
+    if domain:
+        state = trigger_state(domain, threshold=threshold)
+        summary = (
+            f"{state.domain}: {state.count}/{state.threshold} "
+            f"(ready={state.ready})"
+        )
+    else:
+        states = trigger_states_all(threshold=threshold)
+        lines = [
+            f"  {s.domain}: {s.count}/{s.threshold} (ready={s.ready})"
+            for s in states
+        ]
+        summary = "fine-tune readiness:\n" + "\n".join(lines)
+    return _serialize(OperationResult(success=True, summary=summary))
+
+
+@mcp.tool()
+def wiki_poll(name: str) -> dict[str, Any]:
+    """Run a registered poller (e.g., `apple-notes`) to fetch new items.
+
+    See `wiki_poll_list` for available poller names.
+    """
+    from gateway import pollers
+
+    try:
+        poller = pollers.get_poller(name)
+    except pollers.UnknownPollerError as e:
+        return _serialize(OperationResult(success=False, errors=[str(e)]))
+
+    result = poller.run()
+    return _serialize(
+        OperationResult(
+            success=result.success,
+            summary=(
+                result.summary
+                or f"{name}: fetched={result.fetched} skipped={result.skipped}"
+            ),
+            errors=list(result.errors or []),
+        )
+    )
+
+
+@mcp.tool()
+def wiki_poll_list() -> dict[str, Any]:
+    """Return the names of all registered pollers. Read-only auxiliary
+    tool (no CLI counterpart — `wiki poll --list` covers the CLI side)."""
+    from gateway import pollers
+
+    names = pollers.list_pollers()
+    return _serialize(
+        OperationResult(
+            success=True,
+            summary="registered pollers:\n" + "\n".join(f"  {n}" for n in names) if names else "no pollers registered",
+        )
+    )
 
 
 # --- entry point -----------------------------------------------------------

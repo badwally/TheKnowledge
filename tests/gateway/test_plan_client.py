@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import subprocess
 
 import pytest
@@ -22,6 +23,28 @@ def _fake_completed(returncode: int, stdout: str = "", stderr: str = ""):
         returncode=returncode,
         stdout=stdout,
         stderr=stderr,
+    )
+
+
+def _vlm_json_response(text: str) -> str:
+    """K5: VLM now uses `claude -p --output-format json`. Build a minimal
+    envelope matching the live shape captured 2026-05-24 so tests stay
+    consistent with production stdout."""
+    return json.dumps(
+        {
+            "type": "result",
+            "result": text,
+            "stop_reason": "end_turn",
+            "duration_ms": 1234,
+            "total_cost_usd": 0.001,
+            "usage": {
+                "input_tokens": 5,
+                "output_tokens": 5,
+                "cache_read_input_tokens": 0,
+                "cache_creation_input_tokens": 0,
+            },
+            "modelUsage": {"claude-opus-4-7": {}},
+        }
     )
 
 
@@ -102,14 +125,19 @@ def test_build_plan_prompt_backwards_compat_concatenates_both():
 # --- VLM client argv --------------------------------------------------------
 
 
-def test_vlm_client_argv_uses_opus_read_tool_and_skip_perms(monkeypatch, tmp_path):
+def test_vlm_client_argv_uses_opus_read_tool_and_skip_perms(
+    monkeypatch, tmp_path, kb_root
+):
     img = tmp_path / "img.png"
     img.write_bytes(b"\x89PNG\r\n\x1a\n")
     captured: list[list[str]] = []
     monkeypatch.setattr(
         subprocess,
         "run",
-        lambda argv, *_a, **_k: (captured.append(list(argv)) or _fake_completed(0, stdout="A description.")),
+        lambda argv, *_a, **_k: (
+            captured.append(list(argv))
+            or _fake_completed(0, stdout=_vlm_json_response("A description."))
+        ),
     )
 
     out = ClaudeCLIVLMClient().describe(str(img), "Describe the figure briefly.")
@@ -120,6 +148,8 @@ def test_vlm_client_argv_uses_opus_read_tool_and_skip_perms(monkeypatch, tmp_pat
     assert argv[argv.index("--tools") + 1] == "Read"
     assert "--dangerously-skip-permissions" in argv
     assert argv[argv.index("--model") + 1] == "claude-opus-4-7"
+    # K5: VLM goes through call_with_usage which adds --output-format json
+    assert argv[argv.index("--output-format") + 1] == "json"
     # System prompt carries both the fixed VLM directive and the caller prompt
     assert "Describe the figure briefly." in argv[argv.index("--system-prompt") + 1]
     # User positional carries the absolute image path
@@ -127,15 +157,19 @@ def test_vlm_client_argv_uses_opus_read_tool_and_skip_perms(monkeypatch, tmp_pat
     assert argv[-1].startswith("Image path:")
 
 
-def test_vlm_client_raises_on_empty_output(monkeypatch, tmp_path):
+def test_vlm_client_raises_on_empty_output(monkeypatch, tmp_path, kb_root):
     img = tmp_path / "img.png"
     img.write_bytes(b"\x89PNG\r\n\x1a\n")
-    monkeypatch.setattr(subprocess, "run", lambda *_a, **_k: _fake_completed(0, stdout="   \n  "))
+    monkeypatch.setattr(
+        subprocess,
+        "run",
+        lambda *_a, **_k: _fake_completed(0, stdout=_vlm_json_response("   \n  ")),
+    )
     with pytest.raises(VLMError, match="empty"):
         ClaudeCLIVLMClient().describe(str(img), "describe")
 
 
-def test_vlm_client_wraps_errors_as_vlm_error(monkeypatch, tmp_path):
+def test_vlm_client_wraps_errors_as_vlm_error(monkeypatch, tmp_path, kb_root):
     img = tmp_path / "img.png"
     img.write_bytes(b"\x89PNG\r\n\x1a\n")
     monkeypatch.setattr(subprocess, "run", lambda *_a, **_k: _fake_completed(1, stderr="boom"))

@@ -131,7 +131,16 @@ def plan_per_adapter_queries(
         history_examples=history_examples or [],
     )
 
-    raw = plan_client.call(rendered)
+    # K5 telemetry: use call_with_usage when available; stubs fall back to call().
+    call_with_usage = getattr(plan_client, "call_with_usage", None)
+    if callable(call_with_usage):
+        from gateway.log import log_llm_call
+
+        result = call_with_usage(rendered)
+        log_llm_call("plan_query_planner", result)
+        raw = result.text
+    else:
+        raw = plan_client.call(rendered)
     queries = _parse_response(raw, adapter_names=adapter_names)
 
     return PlannerResult(

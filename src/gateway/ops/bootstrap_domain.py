@@ -169,11 +169,22 @@ def bootstrap_domain(
         schema_version=POLICY_SCHEMA_VERSION,
     )
 
+    # K5 telemetry: bootstrap is rare (per new domain) but expensive (Sonnet
+    # for structural generation). Worth recording.
+    call_with_usage = getattr(plan_client, "call_with_usage", None)
     last_errors: list[str] = []
     last_data: dict | None = None
     for attempt in range(2):
+        current_prompt = prompt if attempt == 0 else _retry_prompt(prompt, last_errors)
         try:
-            raw = plan_client.call(prompt if attempt == 0 else _retry_prompt(prompt, last_errors))
+            if callable(call_with_usage):
+                from gateway.log import log_llm_call
+
+                result = call_with_usage(current_prompt)
+                log_llm_call("plan_bootstrap_domain", result, extra={"attempt": attempt})
+                raw = result.text
+            else:
+                raw = plan_client.call(current_prompt)
         except Exception as e:  # noqa: BLE001
             return OperationResult(
                 success=False,
