@@ -17291,3 +17291,1269 @@ raw=raw/web/web-2014-08-18-d79.md wiki=wiki/sources/web-2014-08-18-d79.md
 ## [2026-05-23T23:04:37Z] ingest | id=web-2026-05-23-697 | type=web | backfilled_wiki_page=true
 
 already ingested; backfilled wiki page: raw=raw/web/web-2026-05-23-697.md wiki=wiki/sources/web-2026-05-23-697.md
+
+## [2026-05-23T23:04:48Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-23T23-04-48Z-schema-drift.md
+
+## [2026-05-23T23:07:04Z] wiki-author | id=web-2014-08-18-d79 | updates=5 | created=4 | updated=1 | contradictions=1 | draft=no
+
+This 2014 CRA technical interpretation operationalizes the IT-304R2 framework for a specific leasing scenario (solar panels on common-element roofs), introducing the 'agent for unit owners' doctrine, the conjunctive two-prong incidental-income test, and the explicit personal-benefit concern around fee reductions — none of which are fully developed in existing wiki pages.
+
+## [2026-05-23T23:07:42Z] ingest | id=web-2020-12-01-877 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2020-12-01-877.md wiki=wiki/sources/web-2020-12-01-877.md
+
+## [2026-05-23T23:11:16Z] wiki-author | id=web-2020-12-01-877 | updates=11 | created=11 | updated=0 | contradictions=0 | draft=no
+
+New California regulatory source establishes the CA HOA tax-exempt framework (R&TC §23701t, Form 3500/199/100 trilogy, and the trust-fund requirement for unused dues) — analogous to the CRA IT-304R2 / IRS §528 frameworks already on disk for other jurisdictions; create the CA-specific entities and concepts.
+
+## [2026-05-23T23:11:31Z] nlm-add | id=web-2002-09-05-ce9 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/it304r2/archived-condominiums.html?wbdisable=true
+
+## [2026-05-23T23:11:36Z] nlm-add | id=web-2014-08-18-d79 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://taxinterpretations.com/cra/severed-letters/2014-0528171e5
+
+## [2026-05-23T23:11:45Z] nlm-add | id=web-2020-12-01-877 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.ftb.ca.gov/forms/misc/1028.html
+
+## [2026-05-23T23:12:17Z] nlm-add | id=web-2025-12-31-dae | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.irs.gov/instructions/i1120h
+
+## [2026-05-23T23:12:23Z] nlm-add | id=web-2026-05-23-ffb | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFR0c4cc28e9e60dc7
+
+## [2026-05-23T23:14:53Z] ingest | id=web-2026-05-15-040 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-05-15-040.md wiki=wiki/sources/web-2026-05-15-040.md
+
+## [2026-05-23T23:17:21Z] wiki-author | id=web-2026-05-15-040 | updates=9 | created=9 | updated=0 | contradictions=0 | draft=no
+
+Source establishes US federal HOA tax framework (1120-H/1120/990) and the core 'reserve interest is always taxable' rule — net new coverage with no existing US federal-tax pages in the wiki.
+
+## [2026-05-23T23:18:24Z] ingest | id=web-2026-01-01-a9a | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-01-01-a9a.md (wiki not written: filter decision=review)
+
+## [2026-05-23T23:18:40Z] filter-correction | id=web-2026-01-01-a9a | domain=condo-software | decision=include | original_score=0.5
+
+rationale="Rev. Rul. 70-604 is the IRC §277 excess-member-assessment rollover mechanism — the distinct alternative to §528 election. Gary Porter (former CAI national president, canonical HOA tax authority) provides the authoritative compliance guide: member-vote requirement, single-year absorption rule, M-1 documentation, and IRS audit posture. Load-bearing for US HOA reserve-fund tax-planning domain in condo-software; directly governs how HOAs elect between 1120-H and 1120 and the rollover technique's limits."
+
+## [2026-05-23T23:18:47Z] ingest | id=web-2026-01-01-a9a | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-a9a.md wiki=wiki/sources/web-2026-01-01-a9a.md
+
+## [2026-05-23T23:24:46Z] wiki-author | id=web-2026-01-01-a9a | updates=9 | created=9 | updated=0 | contradictions=0 | draft=no
+
+Source is the canonical authority (Gary Porter, CAI past-president) on Revenue Ruling 70-604 and the surrounding US federal HOA tax-planning regime (IRC §277, §501(c)(4), Rev. Ruls. 75-370/75-371, 83-74, Form 1120/1120-H election); none of these entities or concepts have existing wiki pages, so all updates are creates.
+
+## [2026-05-23T23:26:33Z] ingest | id=web-2019-12-12-452 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2019-12-12-452.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T23:27:30Z] ingest | id=web-2025-10-20-a96 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2025-10-20-a96.md (wiki not written: filter decision=review)
+
+## [2026-05-23T23:27:48Z] filter-correction | id=web-2025-10-20-a96 | domain=condo-software | decision=include | original_score=0.5
+
+rationale="BC-specific strata-corporation tax filing guide from VISOA (Vancouver Island Strata Owners Association), covering the T2 mandatory annual filing obligation (ITA §150), T1044 NPO Information Return thresholds ($200K assets / $10K interest+royalties), §149(1)(l) NPO status for residential stratas, GST non-applicability to strata fees, CRA business-number registration. Directly supplies the T1044/T2 filing mechanics absent from the existing IT-304R2 and 2014 CRA TI sources. BC jurisdiction load-bearing for the condo-software domain's Canadian regulatory coverage. Quality: statute-cited, updated October 2025."
+
+## [2026-05-23T23:27:54Z] ingest | id=web-2025-10-20-a96 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-20-a96.md wiki=wiki/sources/web-2025-10-20-a96.md
+
+## [2026-05-23T23:31:10Z] wiki-author | id=web-2025-10-20-a96 | updates=5 | created=1 | updated=4 | contradictions=0 | draft=no
+
+VISOA tax-filing guide supplies BC-specific T1044/T2 mechanics (thresholds, NPO Code 10, short-form eligibility, RC-1 E (23) BN requirement) and SPA §35/§36 + Reg 4.1(3) retention/inspection mechanics absent from the existing IT-304R2 and SPA pages, plus authoring organization VISOA itself.
+
+## [2026-05-23T23:31:31Z] nlm-add | id=web-2019-12-12-452 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.millerthomson.com/en/insights/condominium-and-strata/tax-compliance-issues-what-do-condominium-corporations-need-to-know/
+
+## [2026-05-23T23:31:40Z] nlm-add | id=web-2025-10-20-a96 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://visoa.bc.ca/resources/filing-income-tax-returns/
+
+## [2026-05-23T23:31:46Z] nlm-add | id=web-2026-01-01-a9a | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.garyportercpa.com/books/tax-articles/148-is-revenue-ruling-70-604-still-alive
+
+## [2026-05-23T23:31:53Z] nlm-add | id=web-2026-05-15-040 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.reservestudy.com/resources/article/irs-form-1120-h-does-an-association-pay-taxes-on-reserve-interest/
+
+## [2026-05-23T23:34:55Z] ingest | id=web-2018-09-11-73f | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2018-09-11-73f.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T23:35:42Z] ingest | id=web-2018-09-12-b32 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2018-09-12-b32.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T23:36:37Z] ingest | id=web-2025-11-06-d1c | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2025-11-06-d1c.md (wiki not written: filter decision=review)
+
+## [2026-05-23T23:36:58Z] filter-correction | id=web-2025-11-06-d1c | domain=condo-software | decision=include | original_score=0.5
+
+rationale='QC-specific CO-17.SP filing guide for condo syndicates, CPA-authored (Frédéric Roy-Gobeil), published Nov 2025, directly grounds Finding-0031 §5.4 QC provincial tax treatment. CO-17.SP mechanics (mandatory e-filing 2024, NPO status confirmation, T1044 interaction, Revenu Québec REQ registration) are load-bearing for 10-jurisdiction condo-software domain coverage. More substantive than filter score implies: cites QC civil law structure, Decree 991-2025 context, and filing deadlines that inform compliance architecture.'
+
+## [2026-05-23T23:37:02Z] ingest | id=web-2025-11-06-d1c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-06-d1c.md wiki=wiki/sources/web-2025-11-06-d1c.md
+
+## [2026-05-23T23:43:37Z] wiki-author | id=web-2025-11-06-d1c | updates=12 | created=9 | updated=3 | contradictions=1 | draft=no
+
+Source establishes Quebec provincial CO-17.SP filing obligation for condominium syndicates as the provincial counterpart to federal T2/T1044, requiring new Quebec-specific entity pages (forms, regulator, registrar, author, publisher) plus updates to existing federal-filing pages to reflect the parallel provincial regime.
+
+## [2026-05-23T23:44:19Z] ingest | id=web-2022-01-01-a78 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.8
+
+raw=raw/web/web-2022-01-01-a78.md wiki=wiki/sources/web-2022-01-01-a78.md
+
+## [2026-05-23T23:46:31Z] wiki-author | id=web-2022-01-01-a78 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+Source is the operative California statutory text governing HOA managing-agent fund handling; no existing CA-jurisdiction pages cover this domain, so create the statute entity, the amending bill entity, and the four substantive concept pages (trust-fund obligations, transfer-authorization thresholds, anti-commingling, deposit-insurance requirements).
+
+## [2026-05-23T23:47:24Z] ingest | id=pdf-lddinh00-2003-microsoft-word-rr | type=pdf | domains=condo-software | filter=rejected | domain=condo-software | score=0.45
+
+raw=raw/pdf/pdf-lddinh00-2003-microsoft-word-rr.md (wiki not written: filter decision=rejected)
+
+## [2026-05-23T23:48:05Z] nlm-add | id=pdf-lddinh00-2003-microsoft-word-rr | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-lddinh00-2003-microsoft-word-rr.pdf title='Microsoft Word - RR-03-73.doc'
+
+## [2026-05-23T23:48:12Z] nlm-add | id=web-2018-09-11-73f | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://hoatax.com/new-jersey-hoa-condo-association-tax-return-filing/
+
+## [2026-05-23T23:48:19Z] nlm-add | id=web-2018-09-12-b32 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://hoatax.com/new-york-hoa-condo-association-tax-return-filing-requirements/
+
+## [2026-05-23T23:48:24Z] nlm-add | id=web-2022-01-01-a78 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.hoalawblog.com/civil_code_5380_management_of/
+
+## [2026-05-23T23:48:31Z] nlm-add | id=web-2025-11-06-d1c | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://t2inc.ca/en/blog/fillin-form-co17-sp-statement-co-ownership-association
+
+## [2026-05-24T00:09:09Z] wiki-author | id=web-2026-01-01-818 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source is the primary Florida DBPR portal page describing the SIRS framework, the eight required structural elements, the three statutory deadlines (Jul 2024, Oct 2025, Dec 2025), and the public SIRS Reporting Database — directly informs the florida-sirs and dbpr-condominiums-division entity pages declared in the source frontmatter.
+
+## [2026-05-24T00:10:33Z] ingest | id=web-2000-09-30-c39 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2000-09-30-c39.md wiki=wiki/sources/web-2000-09-30-c39.md
+
+## [2026-05-24T00:11:51Z] wiki-author | id=web-2000-09-30-c39 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source is the statutory text of California Civil Code § 5565; no existing wiki page covers California reserve disclosure law, so create a statute entity and a disclosure-regime concept.
+
+## [2026-05-24T00:11:58Z] ingest | id=web-2025-01-01-946 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-01-946.md wiki=wiki/sources/web-2025-01-01-946.md
+
+## [2026-05-24T00:14:32Z] wiki-author | id=web-2025-01-01-946 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Source is California's primary statutory text on annual reserve funding disclosure (§5570); no California pages exist yet, so create the Davis-Stirling Act, §5570, the disclosure form, and the four operative concepts (annual disclosure, 30-year projection, component-method percent-funded calculation, and the 30-year-ERUL major-component exclusion option).
+
+## [2026-05-24T00:14:48Z] nlm-add | id=web-2000-09-30-c39 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.hoalawblog.com/civil_code_5565_reserve_summar/
+
+## [2026-05-24T00:16:48Z] ingest | id=web-2009-01-01-a93 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2009-01-01-a93.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T00:19:42Z] ingest | id=web-2026-03-11-2cd | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.1
+
+raw=raw/web/web-2026-03-11-2cd.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T00:20:16Z] ingest | id=web-2023-02-09-93e | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2023-02-09-93e.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T00:23:05Z] ingest | id=pdf-quyen-le-2022-annual-condominium-requirements | type=pdf | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/pdf/pdf-quyen-le-2022-annual-condominium-requirements.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T00:24:45Z] ingest | id=pdf-994c881efb49 | type=pdf | domains=condo-software | filter=included | domain=condo-software | score=0.8
+
+raw=raw/pdf/pdf-994c881efb49.md wiki=wiki/sources/pdf-994c881efb49.md
+
+## [2026-05-24T00:26:41Z] ingest | id=web-2026-04-06-6bb | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-04-06-6bb.md (wiki not written: filter decision=review)
+
+## [2026-05-24T00:27:25Z] nlm-add | id=pdf-994c881efb49 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-994c881efb49.pdf title='cao-guide-finances-2024'
+
+## [2026-05-24T00:27:26Z] filter-correction | id=web-2026-04-06-6bb | domain=condo-software | decision=include | original_score=0.5
+
+rationale='CAO Filing Requirements is the authoritative ON regulatory source governing the CAO return-filing workflow — a statutory obligation under Condo Act 1998 that directly shapes the data-capture and compliance-calendar architecture of any CAM software serving Ontario condominiums. The 30-day notice-of-change deadline and annual return filing cadence are concrete regulatory constraints (inclusion criterion 4: jurisdiction-specific fiduciary and disclosure obligations for ON). The source is current (April 2026), primary, and CAO-authoritative. The 0.5 score correctly notes it lacks reserve-fund depth but undersells the compliance-workflow relevance for software product design.'
+
+## [2026-05-24T00:27:36Z] nlm-add | id=web-2026-04-06-6bb | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condoauthorityontario.ca/boards-and-governance/filing-requirements/
+
+## [2026-05-24T00:27:58Z] nlm-add | id=pdf-quyen-le-2022-annual-condominium-requirements | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=pdf
+
+file=pdf-quyen-le-2022-annual-condominium-requirements.pdf title='Annual Condominium Requirements Guide'
+
+## [2026-05-24T00:28:03Z] nlm-add | id=web-2009-01-01-a93 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=http://archives.cpajournal.com/old/07085824.htm
+
+## [2026-05-24T00:28:13Z] nlm-add | id=web-2023-02-09-93e | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.cpacanada.ca/business-and-accounting-resources/audit-and-assurance/blog/2023/february/new-compilation-engagements-standard
+
+## [2026-05-24T00:28:19Z] nlm-add | id=web-2026-03-11-2cd | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://customcpa.ca/compilation-vs-review-engagement/
+
+## [2026-05-24T00:29:06Z] wiki-author | id=pdf-994c881efb49 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+The CAO Guide on Condo Finances (April 2024) is a director-facing Ontario regulator publication that establishes the publisher entity (CAO) and grounds five new concepts on Ontario condo financial-statement structure, accrual-accounting obligations, fund-account segregation, director monthly review duties, and bank-reconciliation controls.
+
+## [2026-05-24T00:31:24Z] ingest | id=web-2026-02-19-ad9 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.35
+
+raw=raw/web/web-2026-02-19-ad9.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T00:32:26Z] ingest | id=web-2026-03-05-dc5 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-03-05-dc5.md wiki=wiki/sources/web-2026-03-05-dc5.md
+
+## [2026-05-24T00:36:28Z] ingest | id=web-2024-03-06-aca | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2024-03-06-aca.md (wiki not written: filter decision=review)
+
+## [2026-05-24T00:36:31Z] wiki-author | id=web-2026-03-05-dc5 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Source consolidates Ontario condo financial-reporting regulatory framework (§§66, 76, 93, 94, 115), names CondoWorks as Ontario-specific CAM accounting software, and articulates CMHC condo-mortgage insurability criteria — warranting new entity pages for the software vendor + author/firm, plus concept pages for the §76 status certificate, CMHC insurability criteria, dual-fund accounting structure, and §115 investment restrictions.
+
+## [2026-05-24T00:36:49Z] filter-correction | id=web-2024-03-06-aca | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Thread 1 cross-jurisdictional banking synthesis requires encyclopedic FDIC/CDARS/ICS mechanism coverage; this is the only identified source with IntraFi CDARS + ICS mechanics in the reserve-fund context. Score=0.5 borderline; content is load-bearing for reserve-fund investment vehicle and banking infrastructure coverage in Thread 1 closing synthesis.'
+
+## [2026-05-24T00:36:58Z] ingest | id=web-2024-03-06-aca | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-03-06-aca.md wiki=wiki/sources/web-2024-03-06-aca.md
+
+## [2026-05-24T00:39:54Z] wiki-author | id=web-2024-03-06-aca | updates=8 | created=8 | updated=0 | contradictions=0 | draft=no
+
+Source introduces the US FDIC deposit-insurance regime + IntraFi CDARS/ICS coverage-maximization network — a structural gap in the wiki, which previously had only Canadian-side deposit-insurance coverage (CDIC, CUDIC, CUDGC, FSRA) and no US analog. Creating FDIC, IntraFi, CDARS, ICS entities plus the three associated reserve-fund concepts gives Thread 1 (banking-partner regulations) US-side coverage parity with the Canadian regime already in the wiki.
+
+## [2026-05-24T00:41:43Z] wiki-author | id=query-2026-05-24-what-are-the-reserve-fund-investment | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-software corpus
+
+## [2026-05-24T00:42:12Z] nlm-add | id=web-2024-03-06-aca | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.clarksimsonmiller.com/reserve-funds-fdic-limit/
+
+## [2026-05-24T00:42:19Z] nlm-add | id=web-2026-02-19-ad9 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://shadcpa.ca/our-services/condominium-audit/
+
+## [2026-05-24T00:42:25Z] nlm-add | id=web-2026-03-05-dc5 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://insightscpa.ca/condo-corporation-reporting/
+
+## [2026-05-24T00:45:24Z] cite | page=wiki/synthesis/2026-05-24-what-are-the-reserve-fund-investment.md | additions=5 | sources=4
+
+added 5 citation(s) to wiki/synthesis/2026-05-24-what-are-the-reserve-fund-investment.md
+
+## [2026-05-24T00:45:27Z] finalize | page=wiki/synthesis/2026-05-24-what-are-the-reserve-fund-investment.md
+
+finalized wiki/synthesis/2026-05-24-what-are-the-reserve-fund-investment.md
+
+## [2026-05-24T00:59:30Z] filter-correction | id=web-2025-10-15-7aa | domain=condo-capital-infra | decision=include | original_score=0.0
+
+rationale='Vantaca 1.25B unicorn valuation + 300M growth round (Cove Hill Partners lead) is load-bearing for acquirer-thesis Tier-2 competitive intelligence: Vantaca is the primary CAM-platform acquirer proxy for the condo-capital-infra landscape and its AI-first product strategy (HOAi, IQ benchmarking) directly bears on the capital-forecasting software adjacency. Finding-0026 and Finding-0033 cite this round as defining the competitive ceiling for a probabilistic reserve-study firm seeking exit. Re-evaluated under condo-software domain scope (CAM platform competitive landscape, ecosystem funding dynamics).'
+
+## [2026-05-24T01:01:34Z] wiki-author | id=web-2025-10-15-7aa | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Press release establishes Vantaca's unicorn status ($1.25B), the $300M+ round led by Cove Hill Partners with JMI Equity continuing, the HOAi product, and named executives — creating the entity scaffolding for CAM-platform competitive intelligence in the condo-software domain.
+
+## [2026-05-24T01:02:09Z] ingest | id=web-2025-11-19-cb6 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2025-11-19-cb6.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:03:12Z] ingest | id=web-2025-11-04-f77 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2025-11-04-f77.md (wiki not written: filter decision=review)
+
+## [2026-05-24T01:03:30Z] filter-correction | id=web-2025-11-04-f77 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Vantaca features page is the canonical product-surface reference for the dominant CAM platform (1.25B unicorn, 55K+ associations via CINC strategic context). Finding-0033 requires a source that grounds the feature-gap analysis: what Vantaca has (accounting, payments, banking integration, lockbox, AI workflows) vs. what it lacks (probabilistic capital planning). This page enumerates the full HOA management software feature set for gap-delta computation. Money-flow architecture description (accounting, payments, banking) directly matches inclusion criterion 4 (banking-partner integrations, money-flow architecture). Vendor-marketing-copy exclusion does not apply when the subject vendor is the primary competitive reference being characterized — editorial policy intent is to exclude generic vendor puff pieces, not systematic product characterizations of named market leaders.'
+
+## [2026-05-24T01:03:45Z] ingest | id=web-2025-11-04-f77 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-04-f77.md wiki=wiki/sources/web-2025-11-04-f77.md
+
+## [2026-05-24T01:06:30Z] wiki-author | id=web-2025-11-04-f77 | updates=12 | created=12 | updated=0 | contradictions=0 | draft=no
+
+Vantaca's own features page enumerates the product surface (accounting, payments, HOAi agentic AI, case-based workflow) and names four CAM operator customers with attributable testimonials — establishes ground truth for the Vantaca competitive feature-gap analysis (Finding-0033) and seeds customer/people entities.
+
+## [2026-05-24T01:08:12Z] ingest | id=web-2026-04-02-20c | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.85
+
+raw=raw/web/web-2026-04-02-20c.md wiki=wiki/sources/web-2026-04-02-20c.md
+
+## [2026-05-24T01:11:08Z] wiki-author | id=web-2026-04-02-20c | updates=13 | created=13 | updated=0 | contradictions=0 | draft=no
+
+Source is Vantaca's canonical partner directory; create entity pages for the 12 most substantive named banking partners (those with disclosed corporate-parent / scale / HOA-tenure detail) to anchor downstream CAM-vendor-ecosystem analysis without stomping existing entities not in context.
+
+## [2026-05-24T01:11:53Z] ingest | id=web-2026-05-08-cf8 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.45
+
+raw=raw/web/web-2026-05-08-cf8.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:12:14Z] filter-correction | id=web-2026-05-08-cf8 | domain=condo-software | decision=include | original_score=0.45
+
+rationale="Buildium pricing page documents the tier structure (Essential/Growth/Premium) and feature-to-tier mapping for a named incumbent CAM vendor (RealPage subsidiary, 2M+ units under management). Finding-0033 requires competitive pricing benchmarks for the CAM-platform landscape; this is the canonical pricing reference for Buildium, the dominant SMB-tier PM platform. The feature-tier mapping (Lumina AI tiers, Marketplace Integrations, Open API availability) establishes the per-unit pricing architecture for competitive gap analysis against Vantaca and Condo Control. The filter's objection that it lacks HOA-specific depth is correct but insufficient to reject: pricing-tier structure of named incumbents is in-scope for competitive-landscape characterization regardless of whether the vendor leads with HOA messaging."
+
+## [2026-05-24T01:12:18Z] ingest | id=web-2026-05-08-cf8 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-08-cf8.md wiki=wiki/sources/web-2026-05-08-cf8.md
+
+## [2026-05-24T01:13:58Z] wiki-author | id=web-2026-05-08-cf8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Create a Buildium entity page anchoring the competitive-pricing-benchmark record for the CAM/PM platform landscape per Finding-0033 — no prior Buildium entity exists despite cross-references from the Western Alliance Bank integrations list.
+
+## [2026-05-24T01:16:07Z] wiki-author | id=web-2025-01-01-14d | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+SmartProperty's own homepage is the canonical vendor self-description; it warrants an update to the SmartProperty entity page (existing per project context) and a new concept page for the branded 'Living Reserve Study' methodology designation, both grounded entirely in this single source.
+
+## [2026-05-24T01:16:31Z] filter-correction | id=web-2025-01-01-14d | domain=condo-software | decision=include | original_score=?
+
+rationale='SmartProperty.com is the canonical homepage of the primary reserve-study software competitor (Living Reserve Study product, integrated with Vantaca/AppFolio/CINC). Finding-0033 Finding A grounds the capital-planning integration gap on the SmartProperty-CINC partnership. This source is load-bearing for condo-software competitive intelligence: it describes the Living Reserve Study product (real-time reserve tracking, component inventory, capital planning) directly competing with the Longspan engine. No prior filter run existed as source predates condo-software domain bootstrapping.'
+
+## [2026-05-24T01:19:46Z] nlm-add | id=web-2025-11-04-f77 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.vantaca.com/features
+
+## [2026-05-24T01:19:55Z] nlm-add | id=web-2025-11-19-cb6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.vantaca.com/vantaca-vision-2025
+
+## [2026-05-24T01:20:03Z] nlm-add | id=web-2026-04-02-20c | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.vantaca.com/partners
+
+## [2026-05-24T01:20:18Z] nlm-add | id=web-2026-05-08-cf8 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.buildium.com/pricing/
+
+## [2026-05-24T01:20:47Z] nlm-add | id=web-2025-10-15-7aa | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/vantaca-secures-300m-growth-investment-at-1-25b-valuation-to-cement-ai-first-market-leadership-302584948.html
+
+## [2026-05-24T01:21:00Z] nlm-add | id=web-2025-01-01-14d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/
+
+## [2026-05-24T01:23:32Z] ingest | id=web-2024-01-17-760 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2024-01-17-760.md wiki=wiki/sources/web-2024-01-17-760.md
+
+## [2026-05-24T01:24:25Z] wiki-author | id=web-2024-01-17-760 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is the AppFolio pricing page; only informs a (new) AppFolio entity page covering plan tiers, feature scoping, and Realm-X AI surface.
+
+## [2026-05-24T01:24:57Z] ingest | id=web-2025-03-20-542 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2025-03-20-542.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:25:21Z] filter-correction | id=web-2025-03-20-542 | domain=condo-software | decision=include | original_score=0.4
+
+rationale='Condo Control is Finding-0033 primary Y1 Canadian integration target. Page confirms five integration category surfaces (Financial, Payment, Security, Hardware, Workflow) plus Zapier connectivity — load-bearing for the integration-surface mapping even without named partners. JS-rendered page; trafilatura did not capture named partner list. Strategic inclusion overrides thin-content filter; raw content is the authoritative record of what is publicly disclosed.'
+
+## [2026-05-24T01:25:25Z] ingest | id=web-2025-03-20-542 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-03-20-542.md wiki=wiki/sources/web-2025-03-20-542.md
+
+## [2026-05-24T01:26:11Z] wiki-author | id=web-2025-03-20-542 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source establishes Condo Control's publicly-disclosed integration-surface taxonomy (five named categories) without naming partners; warrants a new entity page since none exists in the wiki and Condo Control is the Finding-0033 primary Y1 Canadian integration target.
+
+## [2026-05-24T01:26:18Z] filter-correction | id=web-2024-11-20-cd8 | domain=condo-software | decision=include | original_score=0.38
+
+rationale="Vantaca is a named CAM platform relevant to the condo-software competitive landscape (Finding-0033). HOAi acquisition documents AI-capability expansion in HOA community management — load-bearing for AI-feature positioning comparisons across CAM vendors. Prior filter_score 0.38 under condo-capital-infra policy was correct for that domain; under condo-software domain this M&A event establishes Vantaca's AI-feature trajectory and competitive posture relative to AppFolio, Yardi, and Condo Control."
+
+## [2026-05-24T01:32:26Z] wiki-author | id=web-2024-11-20-cd8 | updates=5 | created=4 | updated=1 | contradictions=0 | draft=no
+
+Source establishes Vantaca's Nov 2024 HOAi acquisition, two-tiered AI product taxonomy (Scout + HOAi), and names HOAi co-founder Haoyu Zha — load-bearing for AI-feature positioning across CAM vendors per the condo-software user_correction.
+
+## [2026-05-24T01:32:43Z] nlm-add | id=web-2024-11-20-cd8 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/vantaca-acquires-hoai-to-unlock-a-new-era-of-hoa-community-management-with-cutting-edge-ai-302310780.html
+
+## [2026-05-24T01:33:15Z] ingest | id=web-2026-02-18-d33 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.25
+
+raw=raw/web/web-2026-02-18-d33.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:33:29Z] filter-correction | id=web-2026-02-18-d33 | domain=condo-software | decision=include | original_score=0.25
+
+rationale='Yardi is named secondary acquirer target in gtm/exit-thesis-acquirer-mapping.md. Voyager page establishes enterprise-tier product architecture: four named product modules (Voyager Condo, CondoCafe, Yardi Payment Processing, Yardi Procure to Pay, Yardi Aspire) confirming vertical-integration moat and multi-module expansion surface. Load-bearing for acquirer competitive-intelligence mapping alongside the Canadian Breeze Premier launch (web-2024-03-12-012). Thin content but primary-source vendor disclosure of module architecture — follows pattern of Yardi Breeze Canada inclusion override.'
+
+## [2026-05-24T01:33:34Z] ingest | id=web-2026-02-18-d33 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-18-d33.md wiki=wiki/sources/web-2026-02-18-d33.md
+
+## [2026-05-24T01:36:09Z] wiki-author | id=web-2026-02-18-d33 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+Yardi is a named secondary acquirer target; the Voyager Condo product page is a primary-source disclosure of the four-module condo/HOA stack architecture (Voyager Condo + CondoCafe + Payment Processing + Procure to Pay + Aspire), establishing the vertical-integration moat surface for acquirer competitive-intelligence mapping.
+
+## [2026-05-24T01:36:16Z] filter-correction | id=web-2024-03-12-012 | domain=condo-software | decision=include | original_score=0.78
+
+rationale="Yardi Breeze Premier Canada launch is load-bearing for condo-software domain: primary-source confirmation of Yardi's Canadian condo/strata market entry (March 2024), directly relevant to competitive landscape mapping for CAM platforms operating in Canada. Previously included in condo-capital-infra (filter_score 0.78) as acquirer-thesis evidence; cross-domain inclusion in condo-software for Canadian CAM landscape mapping follows same logic."
+
+## [2026-05-24T01:36:31Z] nlm-add | id=web-2024-03-12-012 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.yardi.com/news/press-releases/yardi-breeze-premier-unlocking-a-new-era-in-condo-and-strata-market-in-canada/
+
+## [2026-05-24T01:36:50Z] nlm-add | id=web-2024-01-17-760 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.appfolio.com/pricing
+
+## [2026-05-24T01:37:00Z] nlm-add | id=web-2025-03-20-542 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/integrations/
+
+## [2026-05-24T01:37:10Z] nlm-add | id=web-2026-02-18-d33 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.yardi.com/product/voyager-condo-co-op-hoa/
+
+## [2026-05-24T01:40:27Z] ingest | id=web-2026-05-24-ae1 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-05-24-ae1.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:41:52Z] ingest | id=web-2025-07-16-ce4 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.25
+
+raw=raw/web/web-2025-07-16-ce4.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:42:17Z] filter-correction | id=web-2025-07-16-ce4 | domain=condo-software | decision=include | original_score=0.25
+
+rationale="Platform-existence confirmation: UpperBee is confirmed as a Canadian (Quebec-headquartered) all-in-one CAM platform targeting condo associations, multifamily, and portfolios. This establishes the platform's existence and QC-native positioning, which is load-bearing for the Y2 QC partnership thesis in Finding-0033. The Bill 16 specific URL is 403-blocked with no archive snapshot; this homepage is the best available source for platform identity. Consistent with filter-correct rationale applied to other Batch C sources (platform-existence-confirmation tier)."
+
+## [2026-05-24T01:42:24Z] ingest | id=web-2025-07-16-ce4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-07-16-ce4.md wiki=wiki/sources/web-2025-07-16-ce4.md
+
+## [2026-05-24T01:43:36Z] wiki-author | id=web-2025-07-16-ce4 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=no
+
+Source establishes UpperBee as a Canadian CAM/accounting platform with two named adjacent products (Track&Fix inspection, Bonjour visitor log) and confirmed presence at CAI Canada Toronto 2026; no existing wiki page covers UpperBee or its product family, so three new entity pages are created and no existing pages contradict the new claims.
+
+## [2026-05-24T01:44:17Z] ingest | id=web-2024-09-04-5f4 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2024-09-04-5f4.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:44:32Z] filter-correction | id=web-2024-09-04-5f4 | domain=condo-software | decision=include | original_score=0.3
+
+rationale='Platform-existence confirmation: FrontSteps is confirmed as a US-based CAM platform targeting self-managed associations and small professional managers. Establishes platform identity and market positioning for the CAM landscape map in Finding-0033 §9. Marketing-heavy homepage typical for this segment; architectural specifics documented via app-store and review-site sources in Batch A+B. Consistent with platform-existence-confirmation tier applied across Wave 2.1.'
+
+## [2026-05-24T01:44:38Z] ingest | id=web-2024-09-04-5f4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-09-04-5f4.md wiki=wiki/sources/web-2024-09-04-5f4.md
+
+## [2026-05-24T01:45:20Z] wiki-author | id=web-2024-09-04-5f4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is platform-existence confirmation per user correction; create FRONTSTEPS organization entity capturing identity, product-area framing, and target segments as documented on the homepage.
+
+## [2026-05-24T01:46:01Z] ingest | id=web-2026-05-14-389 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-05-14-389.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T01:46:21Z] filter-correction | id=web-2026-05-14-389 | domain=condo-software | decision=include | original_score=0.2
+
+rationale="Platform-existence confirmation: TownSq is confirmed as an HOA/CAM software platform with three product lines (Community, Business, Resale Solutions) and positions as a 'modern API platform'. The RealPage subsidiary relationship is load-bearing for the competitive landscape map in Finding-0033 §9 (RealPage ownership signals enterprise distribution reach and potential acquirer consolidation dynamics). Marketing-homepage depth is expected at this tier; architectural detail is not the ingestion objective here."
+
+## [2026-05-24T01:46:28Z] ingest | id=web-2026-05-14-389 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-14-389.md wiki=wiki/sources/web-2026-05-14-389.md
+
+## [2026-05-24T01:47:15Z] wiki-author | id=web-2026-05-14-389 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source establishes TownSq as a named CAM/HOA software vendor with a three-product portfolio and a defined professional-services line; no existing wiki page covers TownSq, so a new entity is created.
+
+## [2026-05-24T01:48:21Z] ingest | id=web-2026-03-11-3a6 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-03-11-3a6.md wiki=wiki/sources/web-2026-03-11-3a6.md
+
+## [2026-05-24T01:50:15Z] wiki-author | id=web-2026-03-11-3a6 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+PayHOA absent from existing wiki; source provides a complete vendor pricing surface (tiered per-unit subscription, payment-rail fee schedule, ancillary tax/bookkeeping services) that warrants a dedicated entity page plus a generalizable concept page for the per-unit tiered pricing pattern that anchors the small/mid-HOA CAM segment.
+
+## [2026-05-24T01:51:06Z] ingest | id=web-2026-01-16-af3 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-01-16-af3.md wiki=wiki/sources/web-2026-01-16-af3.md
+
+## [2026-05-24T01:51:48Z] wiki-author | id=web-2026-01-16-af3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is MRI Software's condo/HOA product marketing page; creates a new vendor entity since no MRI Software page exists in the existing wiki and the source enumerates a concrete feature surface worth capturing for vendor-landscape completeness.
+
+## [2026-05-24T01:52:07Z] nlm-add | id=web-2024-09-04-5f4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://frontsteps.com/
+
+## [2026-05-24T01:52:35Z] nlm-add | id=web-2025-07-16-ce4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=http://web.archive.org/web/20260330205910/https://upperbee.com/
+
+## [2026-05-24T01:52:41Z] nlm-add | id=web-2026-03-11-3a6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.payhoa.com/pricing/
+
+## [2026-05-24T01:52:48Z] nlm-add | id=web-2026-05-14-389 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.townsq.io/
+
+## [2026-05-24T01:52:54Z] nlm-add | id=web-2026-05-24-ae1 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url-failed-fell-back-to-text url=https://webcache.googleusercontent.com/search?q=cache:upperbee.com/quebec-bill-16-compliance-is-already-built-into-your-platform-the-good-news-with-upperbee-youres-ready/ text=155b
+
+## [2026-05-24T02:14:50Z] ingest | id=web-2025-03-13-d73 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2025-03-13-d73.md wiki=wiki/sources/web-2025-03-13-d73.md
+
+## [2026-05-24T02:17:30Z] wiki-author | id=web-2025-03-13-d73 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=no
+
+BuildingLink source names a CAM platform and 10 distinct integration partners (KeyLink, Aware Buildings, 4 package-locker vendors, 3 access-control vendors) that have no existing wiki coverage; create entity pages grounded in the single source for each.
+
+## [2026-05-24T02:18:22Z] ingest | id=web-2022-01-01-3fa | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2022-01-01-3fa.md (wiki not written: filter decision=review)
+
+## [2026-05-24T02:18:43Z] filter-correction | id=web-2022-01-01-3fa | domain=condo-software | decision=include | original_score=0.5
+
+rationale="Load-bearing citation for Finding-0034: documents 17 named accounting integration partners including Yardi (work-order real-time sync to BuildingLink) and CINC Systems (primary acquirer target in Condo capital thesis). The Yardi real-time work-order sync claim is the primary factual basis for the CMMS-to-accounting integration surface in the resident-engagement platform landscape. CINC's appearance confirms the acquirer already has integration relationships in this stack. The 2022 publication date reflects the page metadata not the integration catalog currency — product pages of this type are maintained continuously. Recency concern is outweighed by platform-existence value for integration-surface mapping."
+
+## [2026-05-24T02:18:52Z] ingest | id=web-2022-01-01-3fa | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-01-01-3fa.md wiki=wiki/sources/web-2022-01-01-3fa.md
+
+## [2026-05-24T02:23:45Z] wiki-author | id=web-2022-01-01-3fa | updates=13 | created=12 | updated=1 | contradictions=0 | draft=no
+
+Updates Yardi with the BuildingLink real-time work-order sync detail (unique among 17 named CAM partners) and creates BuildingLink + 11 accounting-partner entity stubs to inventory the CAM accounting integration landscape that anchors Finding-0034.
+
+## [2026-05-24T02:24:37Z] ingest | id=web-2025-11-25-72b | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2025-11-25-72b.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:24:58Z] filter-correction | id=web-2025-11-25-72b | domain=condo-software | decision=include | original_score=0.3
+
+rationale='MaintainX is explicitly cited in Finding-0034 as the best public reference for CMMS work-order field schema design (work-order-list API); its schema — asset_id, location, priority, category, assigned_to, estimated vs actual labor — defines the structural template Longspan needs to ingest HOA work-order data. The .5B Series D valuation (2025) is a load-bearing acquirer-watch signal: at this scale, MaintainX is a tier-1 CMMS vendor that any condo-platform acquirer (CINC, Yardi) must either integrate with or displace. Filtering this source on grounds of non-condo focus misses that the condo-software domain explicitly tracks CMMS platforms as data-source infrastructure for the Longspan engine, not just resident-facing products. Platform-existence + work-order-API-schema rationale overrides the manufacturing-framing objection.'
+
+## [2026-05-24T02:25:03Z] ingest | id=web-2025-11-25-72b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-25-72b.md wiki=wiki/sources/web-2025-11-25-72b.md
+
+## [2026-05-24T02:27:02Z] wiki-author | id=web-2025-11-25-72b | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Source establishes MaintainX as a tier-1 CMMS vendor at $2.5B valuation with documented work-order-API schema relevant to Longspan engine data-source infrastructure (per Finding-0034); creates the MaintainX entity, its CEO, key investors, and the CoPilot AI assistant product.
+
+## [2026-05-24T02:28:09Z] ingest | id=web-2026-01-01-ec1 | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2026-01-01-ec1.md wiki=wiki/sources/web-2026-01-01-ec1.md
+
+## [2026-05-24T02:29:37Z] wiki-author | id=web-2026-01-01-ec1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is the MaintainX help-center enumeration of work-order form fields — the canonical CMMS data-model schema for the condo-software domain. Single concept page captures the field taxonomy, asset-location coupling rule, sub-work-order parent/child structure, scheduling defaults, and the preventive/reactive/maintenance-plan work-type taxonomy. MaintainX entity page is not in the supplied existing pages, so no update produced for it.
+
+## [2026-05-24T02:29:54Z] nlm-add | id=web-2022-01-01-3fa | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.buildinglink.com/public/integration-partners/accounting/
+
+## [2026-05-24T02:30:03Z] nlm-add | id=web-2025-03-13-d73 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.buildinglink.io/en-ca/blog/6-game-changing-condo-management-software-integrations
+
+## [2026-05-24T02:30:10Z] nlm-add | id=web-2025-11-25-72b | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.getmaintainx.com/newsroom/maintainx-raises-150m
+
+## [2026-05-24T02:30:16Z] nlm-add | id=web-2026-01-01-ec1 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://help.getmaintainx.com/work-order-form-fields
+
+## [2026-05-24T02:34:07Z] ingest | id=web-2025-09-29-f2f | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.72
+
+raw=raw/web/web-2025-09-29-f2f.md wiki=wiki/sources/web-2025-09-29-f2f.md
+
+## [2026-05-24T02:39:55Z] wiki-author | id=web-2025-09-29-f2f | updates=11 | created=11 | updated=0 | contradictions=0 | draft=no
+
+The Daisy interview introduces a new AI-native CAM vendor (Daisy), its founder (Yotam Cohen), three named products (Daisy Neighbors app, Steven and Lily AI agents), two NYC compliance statutes (LL97/LL84), and four cross-cutting concepts (AI-native CAM positioning, agentic-AI workflows, specialized-team operating model, US CAM TAM); none of these are covered by existing wiki pages so all eleven touches are creates.
+
+## [2026-05-24T02:40:32Z] ingest | id=web-2026-01-01-128 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2026-01-01-128.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:41:19Z] ingest | id=web-2026-01-01-f9c | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.38
+
+raw=raw/web/web-2026-01-01-f9c.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:43:40Z] ingest | id=web-2026-01-01-b68 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2026-01-01-b68.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:44:01Z] nlm-add | id=web-2025-09-29-f2f | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://pulse2.com/daisy-profile-yotam-cohen-interview/
+
+## [2026-05-24T02:44:14Z] nlm-add | id=web-2026-01-01-128 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.upkeep.com/pricing
+
+## [2026-05-24T02:44:20Z] nlm-add | id=web-2026-01-01-b68 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://limble.com/industry/property-maintenance-software
+
+## [2026-05-24T02:44:27Z] nlm-add | id=web-2026-01-01-f9c | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://limblecmms.com/pricing/
+
+## [2026-05-24T02:47:29Z] ingest | id=web-2026-01-30-c9d | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.35
+
+raw=raw/web/web-2026-01-30-c9d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:47:40Z] filter-correction | id=web-2026-01-30-c9d | domain=condo-software | decision=include | original_score=0.35
+
+rationale="ConciergePlus is a P3 named source in Brief-0014 / Finding-0034 §9. Vancouver-HQ Canadian-market resident-engagement platform; platform-existence confirmation for the condo-software competitive landscape (CAM ecosystem mapping). The filter's 'absent from Finding-0033' citation is factually wrong — this source is explicitly enumerated in Finding-0034 §9. Vendor-existence + Canadian-market positioning load-bearing for Wave 2.2 completeness even without ARR or API-depth disclosure."
+
+## [2026-05-24T02:47:53Z] nlm-add | id=web-2026-01-30-c9d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.conciergeplus.com/
+
+## [2026-05-24T02:49:29Z] ingest | id=web-2015-01-01-8d6 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2015-01-01-8d6.md (wiki not written: filter decision=review)
+
+## [2026-05-24T02:49:44Z] filter-correction | id=web-2015-01-01-8d6 | domain=condo-software | decision=include | original_score=0.5
+
+rationale="Facilio capital planning is a P3 explicit target in Brief-0014 / Finding-0034 §9. The capital-planning product page documents budget-forecast, project-prioritization, and asset-replacement scheduling features that are the direct structural competitor surface to Longspan's probabilistic CapEx forecast output. The filter's generic-FM framing ignores that Facilio's CAM adjacency is established in prior wiki ingests (web-2015-01-01-599 at 1.0) and that capital-planning architecture is load-bearing for condo-software competitive mapping regardless of HOA-specific marketing language."
+
+## [2026-05-24T02:50:05Z] nlm-add | id=web-2015-01-01-8d6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://facilio.com/product/facility-capital-planning-software/
+
+## [2026-05-24T02:50:52Z] ingest | id=web-2022-02-22-2b6 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2022-02-22-2b6.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:51:15Z] filter-correction | id=web-2022-02-22-2b6 | domain=condo-software | decision=include | original_score=0.3
+
+rationale="Facilio Series B is a P3 explicit target in Brief-0014 / Finding-0034 §9. The M raise from Dragoneer + Brookfield (Feb 2022) establishes Facilio's funding scale and investor-pedigree baseline for competitive landscape positioning — load-bearing for condo-software acquirer/competitor mapping regardless of CAM-specific customer language. Facilio's EAM/CMMS product pages are already in wiki at 1.0 (web-2015-01-01-599); the Series B anchors the financial scale of the competitor being tracked. Generic press-release exclusion criterion yields to explicit named-source designation in Finding-0034 §9."
+
+## [2026-05-24T02:51:30Z] nlm-add | id=web-2022-02-22-2b6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://facilio.com/newsroom/series-b/
+
+## [2026-05-24T02:52:23Z] ingest | id=web-2018-12-31-80d | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2018-12-31-80d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T02:52:37Z] filter-correction | id=web-2018-12-31-80d | domain=condo-software | decision=include | original_score=0.3
+
+rationale="UpKeep API docs are a P3 explicit target in Brief-0014 / Finding-0034 §9. The filter's 2018 date objection conflates publication date (an artifact of trafilatura's crawl-date inference on a continuously-updated developer portal) with content currency; API developer docs at developers.onupkeep.com are live infrastructure references. Work-order schema (asset_id, location, priority, assigned_to) is the load-bearing integration-surface content — directly comparable to MaintainX REST API v1 (already in corpus) for the CMMS ingest-path architecture comparison. The Brief-0014 nomination overrides the not-named-in-prior-Finding objection."
+
+## [2026-05-24T02:52:58Z] nlm-add | id=web-2018-12-31-80d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://developers.onupkeep.com/
+
+## [2026-05-24T02:54:31Z] ingest | id=web-2025-01-01-880 | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2025-01-01-880.md wiki=wiki/sources/web-2025-01-01-880.md
+
+## [2026-05-24T02:57:32Z] wiki-author | id=web-2025-01-01-880 | updates=5 | created=5 | updated=0 | contradictions=0 | draft=no
+
+Source documents the Fiix CMMS API surface (authentication, CRUD/RPC, batch, asset/work-order data model) — none of which is covered by existing wiki pages; creates one product entity and four CMMS-API design-pattern concept pages that are directly load-bearing for the work-order covariate / CMMS-integration design referenced in engine/ and the `condo` operational PM domain.
+
+## [2026-05-24T02:57:52Z] nlm-add | id=web-2025-01-01-880 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://fiixlabs.github.io/api-documentation/guide.html
+
+## [2026-05-24T02:58:08Z] filter-correction | id=web-1998-01-01-7e4 | domain=condo | decision=include | original_score=?
+
+rationale='BuildingLink Canada maintenance solution page is a P3 cross-add in Brief-0014 / Finding-0034 §9. Platform-existence + feature surface for Canadian resident-engagement and work-order tracking — load-bearing for condo-software competitive landscape mapping. Canadian jurisdiction (/en-ca) directly relevant. Null filter from condo domain ingest; cross-adding to condo-software for the integration-surface corpus.'
+
+## [2026-05-24T02:58:10Z] filter-correction | id=web-1998-01-01-da9 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='BuildingLink Canada about page is a P3 cross-add in Brief-0014 / Finding-0034 §9. Platform-existence confirmation for the Canadian condo-software landscape. The prior 0.3 score was calibrated against condo-capital-infra; in condo-software scope the company profile and Canadian-market positioning are load-bearing for the competitive landscape snapshot.'
+
+## [2026-05-24T02:58:14Z] filter-correction | id=web-2026-02-20-0f3 | domain=condo | decision=include | original_score=?
+
+rationale='Building Engines Prism is a P3 cross-add in Brief-0014 / Finding-0034 §9. CRE building operations platform with work-order, inspection, and capital-planning modules — load-bearing for condo-software integration-surface and competitive landscape mapping. Null filter from condo domain ingest; cross-adding to condo-software for the commercial-FM-adjacent competitor corpus.'
+
+## [2026-05-24T02:58:17Z] filter-correction | id=web-2015-01-01-3e6 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='Facilio ALM (Asset Lifecycle Management) is a P3 cross-add in Brief-0014 / Finding-0034 §9. Prior 0.3 score calibrated against condo-capital-infra thin-marketing exclusion; in condo-software scope the ALM product surface (replacement scheduling, lifecycle cost tracking) is load-bearing for the reserve-forecasting competitor mapping alongside Facilio EAM (web-2015-01-01-599 at 1.0). Named vendor; explicitly designated cross-add in Finding-0034 §9.'
+
+## [2026-05-24T02:58:31Z] nlm-add | id=web-1998-01-01-7e4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.buildinglink.io/en-ca/solutions/maintenance
+
+## [2026-05-24T02:58:40Z] nlm-add | id=web-1998-01-01-da9 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.buildinglink.io/en-ca/about-us
+
+## [2026-05-24T02:58:51Z] nlm-add | id=web-2026-02-20-0f3 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.buildingengines.com/platform/
+
+## [2026-05-24T02:59:01Z] nlm-add | id=web-2015-01-01-3e6 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://facilio.com/solutions/asset-lifecycle-management/
+
+## [2026-05-24T02:59:14Z] nlm-add | id=web-2015-01-01-170 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://facilio.com/ai-suite/
+
+## [2026-05-24T02:59:23Z] nlm-add | id=web-2015-01-01-599 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://facilio.com/product/enterprise-asset-management-software/
+
+## [2026-05-24T02:59:36Z] nlm-add | id=web-2026-02-11-bc9 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/facilio-launches-autonomous-ai-agents-to-automate-manual-back-office-work-in-facilities-management-302685168.html
+
+## [2026-05-24T03:14:35Z] ingest | id=web-2026-02-11-4eb | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.62
+
+raw=raw/web/web-2026-02-11-4eb.md (wiki not written: filter decision=review)
+
+## [2026-05-24T03:15:20Z] filter-correction | id=web-2026-02-11-4eb | domain=condo-software | decision=include | original_score=0.62
+
+rationale="Primary source for a newly identified competitive-intelligence entity (CommunityPay). The blog post names specific API data models (HOAInsurancePolicy, Budget, Fund, Unit, SpecialAssessmentRecord), documents all 8 Form 1076 sections with CommunityPay data sources, and establishes the lender-pull channel (Fannie Mae LL-2026-03 / 15% reserve adequacy) as a Longspan integration surface. No independent corroboration exists because CommunityPay is bootstrapped/pre-funding with no SEC filings or analyst coverage — the company's own technical blog is the canonical primary source. Pattern consistent with prior calibration precedent for bootstrapped CAM vendors. Author-attributed (Scott Vuilleumier), technically specific, load-bearing for Finding-0035 §2.2-2.3."
+
+## [2026-05-24T03:16:20Z] ingest | id=web-2024-11-01-fc2 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.95
+
+raw=raw/web/web-2024-11-01-fc2.md wiki=wiki/sources/web-2024-11-01-fc2.md
+
+## [2026-05-24T03:18:38Z] wiki-author | id=web-2024-11-01-fc2 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+CommunityPay reserve-studies product page establishes a new CAM-platform vendor entity and documents six distinct methodology / feature concepts (Level 3 studies, percent funded, funding methods, living-document studies, 30-year projections, automatic-trigger taxonomy) absent from the existing wiki.
+
+## [2026-05-24T03:19:54Z] ingest | id=web-2026-01-01-fea | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2026-01-01-fea.md wiki=wiki/sources/web-2026-01-01-fea.md
+
+## [2026-05-24T03:21:50Z] wiki-author | id=web-2026-01-01-fea | updates=5 | created=5 | updated=0 | contradictions=0 | draft=no
+
+CommunityPay platform homepage is the first vendor-primary source for the HOA accounting/governance fintech category and introduces named architectural components (JournalEngine, enforcement guards, fund segregation, immutable audit trails) plus a distinct target-customer set (professional managers, attorneys, escrow/title officers, CDFIs, lenders).
+
+## [2026-05-24T03:22:43Z] ingest | id=web-2020-09-02-290 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2020-09-02-290.md wiki=wiki/sources/web-2020-09-02-290.md
+
+## [2026-05-24T03:24:57Z] wiki-author | id=web-2020-09-02-290 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+Source introduces UpperBee as a Canadian-anchored CAM/payments vendor with multi-jurisdiction (BC/ON/AB/FL) conference footprint and named regulatory thought leadership, plus several conference and BC-reform-adjacent entities not yet on disk.
+
+## [2026-05-24T03:26:04Z] ingest | id=web-2026-05-24-c93 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.75
+
+raw=raw/web/web-2026-05-24-c93.md wiki=wiki/sources/web-2026-05-24-c93.md
+
+## [2026-05-24T03:27:39Z] wiki-author | id=web-2026-05-24-c93 | updates=5 | created=4 | updated=1 | contradictions=0 | draft=no
+
+New source documents named Yardi API interfaces and version constraints powering the Condo Control integration; warrants updating Yardi entity and creating entities for Condo Control, Voyager 7S, and the two Yardi Interfaces.
+
+## [2026-05-24T03:28:33Z] ingest | id=web-2025-10-15-25b | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2025-10-15-25b.md wiki=wiki/sources/web-2025-10-15-25b.md
+
+## [2026-05-24T03:30:14Z] wiki-author | id=web-2025-10-15-25b | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Source confirms Yardi Breeze as a distinct Canadian-market product line (vs. Voyager) with four named Premier Add-On modules; warrants a new Breeze entity page and a cross-reference update on the Yardi org page.
+
+## [2026-05-24T03:31:34Z] ingest | id=web-2026-01-01-f1e | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2026-01-01-f1e.md wiki=wiki/sources/web-2026-01-01-f1e.md
+
+## [2026-05-24T03:32:29Z] wiki-author | id=web-2026-01-01-f1e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Create the CommunityPay entity page — first-encounter platform-existence-confirmation for a CAM accounting/governance vendor; no cross-references to existing pages in the source.
+
+## [2026-05-24T03:33:11Z] ingest | id=web-2025-01-31-f4e | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2025-01-31-f4e.md wiki=wiki/sources/web-2025-01-31-f4e.md
+
+## [2026-05-24T03:35:44Z] wiki-author | id=web-2025-01-31-f4e | updates=12 | created=12 | updated=0 | contradictions=0 | draft=no
+
+Source introduces UpperBee as a Quebec-rooted CAM vendor with a documented integration partner ecosystem and named customer base; no prior pages exist for UpperBee, its integration partners, or its customer companies.
+
+## [2026-05-24T03:36:48Z] ingest | id=web-2025-02-06-aa5 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.65
+
+raw=raw/web/web-2025-02-06-aa5.md (wiki not written: filter decision=review)
+
+## [2026-05-24T03:37:42Z] ingest | id=web-2026-02-11-4eb | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-11-4eb.md wiki=wiki/sources/web-2026-02-11-4eb.md
+
+## [2026-05-24T03:40:38Z] wiki-author | id=web-2026-02-11-4eb | updates=9 | created=9 | updated=0 | contradictions=0 | draft=no
+
+Source introduces CommunityPay as a new competitive-intelligence entity with documented API data models, the Fannie Mae 1076 / Freddie Mac 1077 questionnaire surface, and the CARI consent framework — none of which are covered by any existing wiki page.
+
+## [2026-05-24T03:40:52Z] nlm-add | id=web-2020-09-02-290 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://upperbee.com/blog/
+
+## [2026-05-24T03:40:56Z] nlm-add | id=web-2024-11-01-fc2 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.communitypay.us/features/reserve-studies/
+
+## [2026-05-24T03:41:35Z] nlm-add | id=web-2025-01-31-f4e | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=http://web.archive.org/web/20250716181752/https://upperbee.com/resources/integrations/
+
+## [2026-05-24T03:41:48Z] nlm-add | id=web-2025-02-06-aa5 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=http://web.archive.org/web/20250320143006/https://upperbee.com/our-clients/
+
+## [2026-05-24T03:41:55Z] nlm-add | id=web-2025-10-15-25b | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.yardibreeze.ca/condo-strata-features/
+
+## [2026-05-24T03:41:59Z] nlm-add | id=web-2026-01-01-f1e | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.communitypay.us/
+
+## [2026-05-24T03:42:04Z] nlm-add | id=web-2026-01-01-fea | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.communitypay.us/platform/
+
+## [2026-05-24T03:42:08Z] nlm-add | id=web-2026-02-11-4eb | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.communitypay.us/blog/condo-questionnaire-fannie-mae-1076-auto-fill/
+
+## [2026-05-24T03:42:13Z] nlm-add | id=web-2026-05-24-c93 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://support.condocontrol.com/hc/en-us/articles/25698629323675-Yardi-Product-Version-Supported-with-the-Yardi-Condo-Control-Integration
+
+## [2026-05-24T03:56:26Z] ingest | id=web-2022-01-01-e65 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2022-01-01-e65.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T03:57:37Z] ingest | id=web-2025-09-18-31a | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.85
+
+raw=raw/web/web-2025-09-18-31a.md wiki=wiki/sources/web-2025-09-18-31a.md
+
+## [2026-05-24T04:01:23Z] ingest | id=web-2022-01-01-b32 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.25
+
+raw=raw/web/web-2022-01-01-b32.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:02:17Z] ingest | id=web-2026-01-01-e45 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-01-01-e45.md wiki=wiki/sources/web-2026-01-01-e45.md
+
+## [2026-05-24T04:04:31Z] wiki-author | id=web-2026-01-01-e45 | updates=5 | created=5 | updated=0 | contradictions=0 | draft=no
+
+HomeRun IQ is a previously-undocumented reserve-study software vendor in the condo-software domain whose marketing page names two customer firms (Epic Forensics & Engineering, Charles Taylor), two named PE/PM individuals (Samie Hatim, Ryan Jessop), and Florida SIRS / SB 4-D as a specific regulatory feature surface; create vendor entity + customer entities + named individuals so future ingests can cite-back.
+
+## [2026-05-24T04:05:08Z] ingest | id=web-2026-01-01-502 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.75
+
+raw=raw/web/web-2026-01-01-502.md wiki=wiki/sources/web-2026-01-01-502.md
+
+## [2026-05-24T04:06:21Z] wiki-author | id=web-2026-01-01-502 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source is vendor-marketing for a previously-uncatalogued reserve-study software platform (HomeRun IQ); creates a new entity page in the condo-software domain. No existing wiki page covers HomeRun IQ, and the source's claims do not conflict with any existing entity or concept page.
+
+## [2026-05-24T04:06:43Z] nlm-add | id=web-2022-01-01-b32 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.commonareafinancial.com/about
+
+## [2026-05-24T04:06:50Z] nlm-add | id=web-2022-01-01-e65 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.commonareafinancial.com/
+
+## [2026-05-24T04:06:58Z] nlm-add | id=web-2025-09-18-31a | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/commonarea-financial-surpasses-10-000-communities-on-reservebuilder-platform-launches-loan-placement-functionality-to-address-industry-wide-funding-gaps-302560003.html
+
+## [2026-05-24T04:07:05Z] nlm-add | id=web-2026-01-01-502 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://homeruniq.com/platform
+
+## [2026-05-24T04:07:11Z] nlm-add | id=web-2026-01-01-e45 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://homeruniq.com/
+
+## [2026-05-24T04:09:00Z] ingest | id=web-2010-01-01-5dd | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2010-01-01-5dd.md (wiki not written: filter decision=review)
+
+## [2026-05-24T04:09:55Z] ingest | id=web-2010-01-01-57d | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2010-01-01-57d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:10:34Z] ingest | id=web-2022-01-01-705 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2022-01-01-705.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:10:51Z] filter-correction | id=web-2022-01-01-705 | domain=condo-software | decision=include | original_score=0.4
+
+rationale='Page contains specific ReserveBuilder product architecture: universal account opening, CD maturity monitoring, fully insured deposits, electronic bank statements. These named-feature claims are the primary citation target for CommonArea Financial product description in Finding-0036 §3.1. Load-bearing despite absence of customer count.'
+
+## [2026-05-24T04:12:50Z] ingest | id=web-2026-01-06-ef4 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-01-06-ef4.md (wiki not written: filter decision=review)
+
+## [2026-05-24T04:13:12Z] filter-correction | id=web-2026-01-06-ef4 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='27-minute detailed product description by Joel Tax (Reserve Data Analyst founder) documenting Excel-based professional reserve study software: FFB calculations, variable inflation/tax modeling, field inspection integration, unlimited funding models. Named product (reservedataanalyst.com), named author, 2026-01-06 publication, specific feature architecture with anti-competitive positioning against cloud SaaS tools. Grounds Finding-0036 §4.4 claim that Reserve Data Analyst is an Excel-based professional reserve study platform with 2026 Agent Mode AI. Filter penalized lack of customer references but the product-architecture depth is the load-bearing citation target.'
+
+## [2026-05-24T04:13:49Z] ingest | id=web-2019-07-11-d20 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2019-07-11-d20.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:14:10Z] nlm-add | id=web-2010-01-01-57d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://arpc.ca/
+
+## [2026-05-24T04:14:14Z] nlm-add | id=web-2010-01-01-5dd | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://arpc.ca/software/
+
+## [2026-05-24T04:14:22Z] nlm-add | id=web-2019-07-11-d20 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.rjc.ca/services/service-areas/depreciation-reports-reserve-fund-studies.html
+
+## [2026-05-24T04:14:29Z] nlm-add | id=web-2022-01-01-705 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.commonareafinancial.com/cash-management
+
+## [2026-05-24T04:14:36Z] nlm-add | id=web-2026-01-06-ef4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.reservedataanalyst.com/blog/software-functions/
+
+## [2026-05-24T04:30:34Z] ingest | id=web-2023-05-05-52f | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.8
+
+raw=raw/web/web-2023-05-05-52f.md wiki=wiki/sources/web-2023-05-05-52f.md
+
+## [2026-05-24T04:32:19Z] wiki-author | id=web-2023-05-05-52f | updates=6 | created=6 | updated=0 | contradictions=0 | draft=no
+
+Create entity pages for the named parties in the SmartProperty–CINC Systems integration announcement, anchoring competitive-landscape mapping for the project's primary acquirer target.
+
+## [2026-05-24T04:33:33Z] ingest | id=web-2026-01-01-c87 | type=web | domains=condo-software | filter=included | domain=condo-software | score=1.0
+
+raw=raw/web/web-2026-01-01-c87.md wiki=wiki/sources/web-2026-01-01-c87.md
+
+## [2026-05-24T04:36:59Z] wiki-author | id=web-2026-01-01-c87 | updates=13 | created=13 | updated=0 | contradictions=0 | draft=no
+
+Source introduces CINC Systems' open-API partner ecosystem with 11 named integration partners across 10 functional categories; CINC is the primary acquirer target per project strategy and has no dedicated wiki entity yet, so this creates the CINC Systems entity, the partner-ecosystem concept, and entity stubs for each named partner.
+
+## [2026-05-24T04:37:59Z] ingest | id=web-2024-09-13-69c | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2024-09-13-69c.md wiki=wiki/sources/web-2024-09-13-69c.md
+
+## [2026-05-24T04:39:40Z] wiki-author | id=web-2024-09-13-69c | updates=3 | created=3 | updated=0 | contradictions=0 | draft=no
+
+Source documents the SmartProperty–AppFolio integration via AppFolio Stack™; creates the three load-bearing pages (SmartProperty entity, AppFolio entity, AppFolio Stack concept) that this integration anchors.
+
+## [2026-05-24T04:40:29Z] ingest | id=web-2026-01-01-efb | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-01-01-efb.md wiki=wiki/sources/web-2026-01-01-efb.md
+
+## [2026-05-24T04:41:29Z] wiki-author | id=web-2026-01-01-efb | updates=3 | created=3 | updated=0 | contradictions=0 | draft=no
+
+Source confirms existence of FirstService Residential's cyan™ integrated CAM platform and its HODA™ integration; creates three new entity pages (organization + two products) since no existing pages cover this acquirer-target's platform stack.
+
+## [2026-05-24T04:42:04Z] ingest | id=web-2026-01-01-bd5 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2026-01-01-bd5.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:42:47Z] ingest | id=web-2026-01-01-add | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-01-01-add.md (wiki not written: filter decision=review)
+
+## [2026-05-24T04:43:16Z] filter-correction | id=web-2026-01-01-add | domain=condo-software | decision=include | original_score=0.5
+
+rationale='HomeRun IQ about page names the CEO (Marc Tamres), CPO (Zach Pritchard), advisory board (Ron Peters MIT CRE, Dan Sirk CAI Think Tank, Steve Weikal MIT), investor (Techstars Boston Fall 2024), and confirmed US-only engineering-firm positioning. Named team + named investor + competitor category confirmation is load-bearing for Brief-0014 acquirer-gap analysis. Per Wave 3.1/3.2 calibration pattern, named competitor with quantified backing meets vendor-profile inclusion threshold.'
+
+## [2026-05-24T04:44:02Z] ingest | id=web-2025-09-29-2f8 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.35
+
+raw=raw/web/web-2025-09-29-2f8.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:44:43Z] ingest | id=web-2026-01-01-a0d | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.45
+
+raw=raw/web/web-2026-01-01-a0d.md (wiki not written: filter decision=rejected)
+
+## [2026-05-24T04:44:58Z] filter-correction | id=web-2026-01-01-a0d | domain=condo-software | decision=include | original_score=0.45
+
+rationale='ReservePath pricing page is the only public pricing disclosure for any reserve-study SaaS in the condo-software corpus. Key verifiable claims: (1) waitlist-only / limited-early-access gate — confirms pre-commercial status; (2) three-tier pricing structure at // per month — independently verifiable competitive pricing anchor; (3) AI credits architecture at all tiers — confirms AI-native product strategy. The fact of waitlist-only access + public pricing points is a load-bearing competitive-position signal for Brief-0014. Filter exception warranted on pricing-data uniqueness grounds, consistent with prior Wave 3 calibration.'
+
+## [2026-05-24T04:45:39Z] ingest | id=web-2026-01-01-936 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.85
+
+raw=raw/web/web-2026-01-01-936.md wiki=wiki/sources/web-2026-01-01-936.md
+
+## [2026-05-24T04:47:43Z] wiki-author | id=web-2026-01-01-936 | updates=5 | created=4 | updated=1 | contradictions=0 | draft=no
+
+Source is the HomeRun IQ features page with three named customer testimonials (Epic Forensics & Engineering, Charles Taylor, unnamed Florida provider), specific quantified efficiency claims, and explicit Florida SIRS/SB 4-D regulatory compliance — anchors a HomeRun IQ update plus four new named-customer/person entities.
+
+## [2026-05-24T04:48:35Z] ingest | id=web-2025-04-23-889 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2025-04-23-889.md wiki=wiki/sources/web-2025-04-23-889.md
+
+## [2026-05-24T04:51:04Z] wiki-author | id=web-2025-04-23-889 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Source is the Yardi Interface Partners directory documenting 450+ third-party integrations across 13 API categories — update existing Yardi entity with the partner-ecosystem scale and create a concept page documenting the API architecture (MITS-based open interfaces, category-by-category vendor surface).
+
+## [2026-05-24T04:51:31Z] nlm-add | id=web-2023-05-02-683 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/cinc-systems-announces-partnership-with-smartpropertys-living-reserve-study-301813805.html
+
+## [2026-05-24T04:52:16Z] nlm-add | id=web-2026-02-04-5bb | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.fool.com/earnings/call-transcripts/2026/02/04/firstservice-fsv-q4-2025-earnings-transcript/
+
+## [2026-05-24T04:52:27Z] nlm-add | id=web-2025-05-08-91b | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url-failed-fell-back-to-text url=https://finance.yahoo.com/news/firstservice-residential-acquires-core-real-160000584.html text=2878b
+
+## [2026-05-24T04:53:03Z] nlm-add | id=web-2023-05-05-52f | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/blog/smartproperty-cinc-systems-partnership
+
+## [2026-05-24T04:53:10Z] nlm-add | id=web-2024-09-13-69c | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.appfolio.com/partners/smartproperty
+
+## [2026-05-24T04:53:17Z] nlm-add | id=web-2025-04-23-889 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.yardi.com/company/find-an-interface-partner/
+
+## [2026-05-24T04:53:25Z] nlm-add | id=web-2025-09-29-2f8 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/firstservice-residential-launches-2025-benchmark-editions-on-operating-costs-and-budgeting-for-high-rise-and-master-planned-communities-302568364.html
+
+## [2026-05-24T04:53:31Z] nlm-add | id=web-2026-01-01-a0d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://reservepath.com/pricing
+
+## [2026-05-24T04:53:36Z] nlm-add | id=web-2026-01-01-add | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://homeruniq.com/about
+
+## [2026-05-24T04:53:44Z] nlm-add | id=web-2026-01-01-bd5 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.fsresidential.com/corporate/hoda-homeowner-digital-assistant/
+
+## [2026-05-24T04:53:51Z] nlm-add | id=web-2026-01-01-c87 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://cincsystems.com/cinc-software-partners
+
+## [2026-05-24T04:53:58Z] nlm-add | id=web-2026-01-01-efb | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.fsresidential.com/corporate/cyan/
+
+## [2026-05-24T04:55:21Z] query | domain=condo-software | unresolved_citations=6,7,8,10,12,14,15,16,17,18,19,20,21,22,24,25,26,27,28,30,31,32,33,34
+
+lint-warning: query response cited 24 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-24T04:55:21Z] wiki-author | id=query-2026-05-24-cross-domain-synthesis-acquirer-integration-surface | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-software corpus
+
+## [2026-05-24T05:02:04Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=3 | sources=3
+
+added 3 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:09Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=3 | sources=3
+
+added 3 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:13Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:17Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:21Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:25Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:30Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:02:54Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:03Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:06Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=3 | sources=3
+
+added 3 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:18Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:22Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:25Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:29Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:33Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:36Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:49Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:55Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:03:59Z] cite | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md | additions=4 | sources=4
+
+added 4 citation(s) to wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T05:04:02Z] finalize | page=wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+finalized wiki/synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface.md
+
+## [2026-05-24T15:03:19Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T15-03-19Z-schema-drift.md
+
+## [2026-05-24T15:06:01Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T15-06-01Z-schema-drift.md
+
+## [2026-05-24T15:21:16Z] llm-call | op=hand_test_k5 | model=claude-haiku-4-5-20251001 | in_tokens=10 | out_tokens=281 | cache_read=0 | cache_creation=54728 | duration_ms=5938 | cost_usd=0.069825
+
+## [2026-05-24T15:25:31Z] lint | scope=orphans | orphans=540
+
+report=.knowledge/lint/2026-05-24T15-25-31Z-orphans.md
+
+## [2026-05-24T15:46:49Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T15-46-49Z-schema-drift.md
+
+## [2026-05-24T15:55:21Z] nlm-add | id=yt-msfECL74sIA | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=youtube
+
+url=https://www.youtube.com/watch?v=msfECL74sIA
+
+## [2026-05-24T15:55:25Z] nlm-add | id=yt-I08ZeY7QcrE | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=youtube
+
+url=https://www.youtube.com/watch?v=I08ZeY7QcrE
+
+## [2026-05-24T15:59:15Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T15-59-15Z-schema-drift.md
+
+## [2026-05-24T15:59:40Z] query | domain=ai-native-business | unresolved_citations=6,7,8,9,10,12,28,29,32,33,34,35,36,37
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-24T15:59:40Z] wiki-author | id=query-2026-05-24-what-is-the-ai-native-technical | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-24T16:01:11Z] query | domain=ai-native-business | unresolved_citations=2,5,6,7,8,9,10,14,15,16,17,20,24,25,26,27,28,29,30,31,32,33,34,35,37,41,42,43,44,45,46,47,48,49,50,51,53,54,55,56,59
+
+lint-warning: query response cited 41 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-24T16:01:11Z] wiki-author | id=query-2026-05-24-what-is-the-ai-native-indie | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-24T16:02:42Z] query | domain=ai-native-business | unresolved_citations=1,2,4,5,6,7,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36
+
+lint-warning: query response cited 34 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-24T16:02:42Z] wiki-author | id=query-2026-05-24-what-is-the-ai-native-services | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-24T16:03:09Z] cite | page=wiki/synthesis/k1-handtest-2026-05-24.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/k1-handtest-2026-05-24.md
+
+## [2026-05-24T16:04:02Z] query | domain=ai-native-business | unresolved_citations=1,4,5,6,7,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-24T16:04:02Z] wiki-author | id=query-2026-05-24-what-is-the-ai-native-marketplace | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-24T16:05:51Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-05-51Z-schema-drift.md
+
+## [2026-05-24T16:07:16Z] schedule | name=test-k4 | exit_code=0 | duration_s=0.01
+
+scheduled job 'test-k4' → exit=0 (0.0s)
+
+## [2026-05-24T16:12:02Z] cloud-ingest | auth=k3-handtest-token | task=b41fa40d-1e30-48ab-acaa-1289bbbeb4ff
+
+cloud ingest queued via token 'k3-handtest-token'
+
+## [2026-05-24T16:12:02Z] ingest | id=web-2026-05-24-100 | type=web | domains=- | filter=no-domain
+
+raw=raw/web/web-2026-05-24-100.md wiki=wiki/sources/web-2026-05-24-100.md
+
+## [2026-05-24T16:26:23Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-26-23Z-schema-drift.md
+
+## [2026-05-24T16:38:36Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-38-36Z-schema-drift.md
+
+## [2026-05-24T16:40:16Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-40-16Z-schema-drift.md
+
+## [2026-05-24T16:41:53Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-41-53Z-schema-drift.md
+
+## [2026-05-24T16:42:37Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-42-37Z-schema-drift.md
+
+## [2026-05-24T16:43:09Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-43-09Z-schema-drift.md
+
+## [2026-05-24T16:44:09Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-44-09Z-schema-drift.md
+
+## [2026-05-24T16:44:34Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-44-34Z-schema-drift.md
+
+## [2026-05-24T16:46:43Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T16-46-43Z-schema-drift.md

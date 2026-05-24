@@ -62,6 +62,10 @@ raw/**/*.heif
 # Obsidian UI state — high churn, per-machine, not portable
 wiki/.obsidian/workspace.json
 wiki/.obsidian/graph.json
+# Accidental Obsidian items (Untitled.canvas, Untitled 1.canvas, Untitled.md...)
+# at the wiki/ root. Catches the spam; real canvases should live in a
+# subdirectory or be renamed before committing.
+wiki/Untitled*
 
 .firecrawl/
 .superpowers/
