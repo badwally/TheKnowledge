@@ -23,6 +23,24 @@ question: 'What is the AI-native indie SaaS / vertical agent archetype for a sol
   content on how fast teams ship code with AI.'
 created_at: '2026-05-24T16:01:11Z'
 nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
+sources:
+- sources/web-2014-03-01-97d
+- sources/web-2023-01-19-b4a
+- sources/web-2023-07-30-b4c
+- sources/web-2023-09-20-3cb
+- sources/web-2024-02-07-3a2
+- sources/web-2024-03-29-a63
+- sources/web-2025-02-14-794
+- sources/web-2025-10-04-aae
+- sources/web-2026-04-10-562
+- sources/web-2026-04-23-e4c
+- sources/web-2026-05-22-03d
+- sources/web-2026-05-22-113
+- sources/web-2026-05-22-2dd
+- sources/web-2026-05-22-6cd
+- sources/web-2026-05-22-caf
+- sources/web-2026-05-22-e40
+- sources/web-2026-05-23-479
 draft: true
 draft_started_at: '2026-05-24T16:01:11Z'
 draft_unresolved_claims: 48

@@ -25,6 +25,24 @@ question: 'What is the AI-native marketplace / aggregator archetype for a solo o
   emergency for GTM/distribution signal.'
 created_at: '2026-05-24T16:04:02Z'
 nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
+sources:
+- sources/web-2014-03-01-97d
+- sources/web-2023-01-19-b4a
+- sources/web-2023-07-30-b4c
+- sources/web-2023-09-20-3cb
+- sources/web-2024-02-07-3a2
+- sources/web-2024-03-29-a63
+- sources/web-2025-02-14-794
+- sources/web-2025-10-04-aae
+- sources/web-2026-04-10-562
+- sources/web-2026-04-23-e4c
+- sources/web-2026-05-22-03d
+- sources/web-2026-05-22-113
+- sources/web-2026-05-22-2dd
+- sources/web-2026-05-22-6cd
+- sources/web-2026-05-22-caf
+- sources/web-2026-05-22-e40
+- sources/web-2026-05-23-479
 draft: true
 draft_started_at: '2026-05-24T16:04:02Z'
 draft_unresolved_claims: 27
@@ -54,7 +72,7 @@ Traditional SaaS relies on seat-based subscriptions, but AI aggregators supercha
 With foundation models rapidly commoditizing, true defensibility relies on proprietary workflows and data loops [12] [[nlm:911056d8-e347-4416-84bf-cad4f41fa739]]. The moat forms through a **matching data flywheel**: every successful transaction generates performance data that refines the matching algorithm, compounding automatically through usage [2] [[sources/web-2025-10-04-aae]]. Furthermore, by acting as the operational system of record that vets supply quality and guarantees the outcome, the platform creates massive switching costs [13] [[nlm:0e28f2b5-25af-4e06-9266-b0f586d72725]]. 
 
 **Go-To-Market (GTM): Navigating AI's PR Emergency**
-Distribution for consumer and marketplace AI faces a massive headwind: **AI is currently in a public relations emergency** [14] [[nlm:006b86c4-6c3f-47aa-9893-8cdaa573f95e]]. As *Big Technology* reports, commencement crowds of 18-to-25-year-olds are actively booing AI, 70% of Americans oppose local AI data centers, and the technology currently polls less favorably than major politicians [14-16]. 
+Distribution for consumer and marketplace AI faces a massive headwind: **AI is currently in a public relations emergency** [14] [[nlm:006b86c4-6c3f-47aa-9893-8cdaa573f95e]]. As *Big Technology* reports, commencement crowds of 18-to-25-year-olds are actively booing AI, 70% of Americans oppose local AI data centers, and the technology currently polls less favorably than major politicians [14-16]. [[sources/web-2026-04-23-e4c]]
 Therefore, GTM strategies cannot rely on hyping the underlying AI. To acquire users in a skeptical market, the platform must sell the *outcome* (e.g., landing a job, getting a fast custom part, or securing a prescription) while keeping the AI entirely under the hood. 
 
 **Organizational:**

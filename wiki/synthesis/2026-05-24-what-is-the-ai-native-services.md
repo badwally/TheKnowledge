@@ -23,6 +23,24 @@ question: 'What is the AI-native services firm archetype for a solo or tiny-team
   Stars analysis of moats.'
 created_at: '2026-05-24T16:02:42Z'
 nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
+sources:
+- sources/web-2014-03-01-97d
+- sources/web-2023-01-19-b4a
+- sources/web-2023-07-30-b4c
+- sources/web-2023-09-20-3cb
+- sources/web-2024-02-07-3a2
+- sources/web-2024-03-29-a63
+- sources/web-2025-02-14-794
+- sources/web-2025-10-04-aae
+- sources/web-2026-04-10-562
+- sources/web-2026-04-23-e4c
+- sources/web-2026-05-22-03d
+- sources/web-2026-05-22-113
+- sources/web-2026-05-22-2dd
+- sources/web-2026-05-22-6cd
+- sources/web-2026-05-22-caf
+- sources/web-2026-05-22-e40
+- sources/web-2026-05-23-479
 draft: true
 draft_started_at: '2026-05-24T16:02:42Z'
 draft_unresolved_claims: 43
@@ -35,7 +53,7 @@ draft_unresolved_claims: 43
 
 The AI-native services firm operates on a fundamental shift in business models: instead of selling a software tool (a "copilot") for the client to use, the firm acts as an "autopilot" and sells the completed work itself [1, 2]. In this **"service as software"** framework, the firm functions as a software company masquerading as a traditional services agency [1] [[nlm:9f6a9162-bf27-49fd-8d9d-6c3def315d88]]. Whether it is an AI-native marketing studio, bookkeeping shop, recruiting firm, or paralegal service, the customer is buying an end-to-end outcome rather than a SaaS license or raw hours [2] [[nlm:9f6a9162-bf27-49fd-8d9d-6c3def315d88]]. 
 
-*   **Funded Referents:** Companies like **Mercor** (recruiting), **Harvey** and **Crosby** (legal), and **Decagon** (customer service) have validated this at scale, replacing large human teams with autonomous AI systems to capture massive operational budgets [2-5].
+*   **Funded Referents:** Companies like **Mercor** (recruiting), **Harvey** and **Crosby** (legal), and **Decagon** (customer service) have validated this at scale, replacing large human teams with autonomous AI systems to capture massive operational budgets [2-5]. [[sources/web-2025-10-04-aae]]
 *   **Lean-Operator Referents:** At the tiny-team end, solo operators and micro-agencies (like Harper in insurance brokering) are replacing legacy BPOs [6, 7]. They use AI leverage to service hundreds of clients with single-digit headcount and near-zero overhead [7] [[nlm:0e28f2b5-25af-4e06-9266-b0f586d72725]].
 
 ### The Four Pillars Specialized for AI-Native Services
@@ -63,7 +81,7 @@ For Go-To-Market, the golden rule is **"It's the demo, stupid"** [27] [[nlm:0e28
 **GO Signals:**
 *   **The work is "Intelligence," not "Judgment":** AI excels at translating specs into code, filling forms, and standardized rules (intelligence) [30] [[nlm:9f6a9162-bf27-49fd-8d9d-6c3def315d88]]. If the work leaves the nuanced, high-stakes decisions (judgment) to the human operator, it is a perfect target [30, 31].
 *   **The task is already outsourced:** The client has already accepted that the work can be done externally and has a dedicated budget for the outcome [29] [[nlm:9f6a9162-bf27-49fd-8d9d-6c3def315d88]].
-*   **High volume and homogeneity:** The workflow is repeatable enough that you don't need custom engineering for every new client [11, 32].
+*   **High volume and homogeneity:** The workflow is repeatable enough that you don't need custom engineering for every new client [11, 32]. [[sources/web-2026-04-23-e4c]]
 
 **NO-GO Signals:**
 *   **"Mirage PMF":** Your revenue is growing, but your gross margins are flat or declining, and human-in-the-loop interventions scale linearly with new clients. You haven't built an AI-native firm; you've just built an unprofitable traditional agency [33, 34].
