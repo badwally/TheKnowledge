@@ -62,6 +62,13 @@ def test_model_for_cite_suggest_returns_sonnet():
     assert llm_config.DEFAULT_CITE_SUGGEST_MODEL == "claude-sonnet-4-6"
 
 
+def test_model_for_evaluate_judge_returns_sonnet():
+    """`wiki evaluate` runs Sonnet 4.6 as LLM-as-judge over wiki context.
+    Bounded reasoning + structured-output task; Sonnet 4.6."""
+    assert llm_config.model_for("evaluate_judge") == "claude-sonnet-4-6"
+    assert llm_config.DEFAULT_EVALUATE_JUDGE_MODEL == "claude-sonnet-4-6"
+
+
 def test_model_for_unknown_stage_raises():
     with pytest.raises(ValueError, match="unknown LLM stage"):
         llm_config.model_for("definitely-not-a-stage")  # type: ignore[arg-type]

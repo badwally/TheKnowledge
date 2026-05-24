@@ -25,6 +25,7 @@ Stage = Literal[
     "plan_query_planner",      # wiki research planner (per-adapter query expansion)
     "vlm",
     "cite_suggest",            # M49 wiki cite --suggest (attribution matching)
+    "evaluate_judge",          # M50 wiki evaluate (LLM-as-judge over wiki context)
 ]
 
 
@@ -34,6 +35,7 @@ DEFAULT_PLAN_BOOTSTRAP_DOMAIN_MODEL = "claude-sonnet-4-6"
 DEFAULT_PLAN_QUERY_PLANNER_MODEL = "claude-sonnet-4-6"
 DEFAULT_VLM_MODEL = "claude-opus-4-7"
 DEFAULT_CITE_SUGGEST_MODEL = "claude-sonnet-4-6"
+DEFAULT_EVALUATE_JUDGE_MODEL = "claude-sonnet-4-6"
 
 # Back-compat aliases for callers that still import these names.
 DEFAULT_PLAN_MODEL = DEFAULT_PLAN_AUTHORSHIP_MODEL
@@ -54,6 +56,7 @@ def model_for(stage: Stage, domain: str | None = None) -> str:
       - "plan_query_planner" → Sonnet 4.6 (`wiki research` query expansion)
       - "vlm" → Opus 4.7 (image conversion)
       - "cite_suggest" → Sonnet 4.6 (M49 `wiki cite --suggest`: attribution matching)
+      - "evaluate_judge" → Sonnet 4.6 (M50 `wiki evaluate`: LLM-as-judge over wiki context)
     """
     if stage == "filter":
         return DEFAULT_FILTER_MODEL
@@ -67,4 +70,6 @@ def model_for(stage: Stage, domain: str | None = None) -> str:
         return DEFAULT_VLM_MODEL
     if stage == "cite_suggest":
         return DEFAULT_CITE_SUGGEST_MODEL
+    if stage == "evaluate_judge":
+        return DEFAULT_EVALUATE_JUDGE_MODEL
     raise ValueError(f"unknown LLM stage: {stage!r}")
