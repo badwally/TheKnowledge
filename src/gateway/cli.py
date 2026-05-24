@@ -247,9 +247,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_cite.add_argument(
         "additions",
-        nargs="+",
+        nargs="*",
         metavar="LINE:SOURCE_ID",
-        help="One or more LINE:SOURCE_ID pairs (e.g., 26:web-2026-01-01-361). LINE is 1-indexed into the on-disk file.",
+        help="One or more LINE:SOURCE_ID pairs (e.g., 26:web-2026-01-01-361). LINE is 1-indexed into the on-disk file. Omit when using --suggest.",
+    )
+    p_cite.add_argument(
+        "--suggest",
+        action="store_true",
+        help="Use LLM to propose cite invocations (M49); emits stdout, does not modify the page.",
     )
 
     # cite-add: claim-text-driven citation insertion (K1)
@@ -1131,6 +1136,36 @@ def _run_finalize_batch(ns: argparse.Namespace) -> int:
 
 
 def _run_cite(ns: argparse.Namespace) -> int:
+    if ns.suggest:
+        from gateway.ops.cite_suggest import suggest_cites
+        from gateway.core import OperationResult
+
+        suggestions = suggest_cites(ns.page_path)
+        lines: list[str] = []
+        for s in suggestions:
+            if s.auto_appliable:
+                quote_preview = s.evidence_quote[:60].replace("\n", " ")
+                lines.append(
+                    f"wiki cite {ns.page_path} {s.line}:{s.source_id}  # quote: {quote_preview}"
+                )
+            else:
+                lines.append(
+                    f"# ESCALATED line={s.line} source={s.source_id} reason={s.skip_reason!r}"
+                )
+        if not lines:
+            lines.append("# no suggestions emitted")
+        return _emit_result(OperationResult(
+            success=True,
+            summary="\n".join(lines),
+        ))
+
+    if not ns.additions:
+        print(
+            "error: provide at least one LINE:SOURCE_ID pair, or pass --suggest",
+            file=sys.stderr,
+        )
+        return 2
+
     from gateway.ops.cite import cite
 
     additions: list[tuple[int, str]] = []
