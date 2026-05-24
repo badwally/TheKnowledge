@@ -46,30 +46,6 @@ The imperative to embed AI deeply into specific operational systems appears acro
 *   **Themes Used In:** Defensibility Specific to Vertical Agents, Org/Tech/GTM Pillars, Pricing Trajectory.
 *   **How it is applied:** As underlying AI models become commoditized, defensibility increasingly relies on proprietary data loops and embedding deeply into customer workflows rather than simply providing basic LLM access [19, 20]. In the GTM and Tech pillars, this approach is exemplified by the "autonomous CRM," which integrates ambient intelligence to automatically read emails, schedule calls, and manage sales pipelines without relying on manual data entry [21, 22]. This deep system integration is also the technical prerequisite for outcome-based pricing models, as vendors must have verifiable tracking within the client's workflow to guarantee, measure, and bill for specific resolved results [23].
 
-[^5]: [[sources/5]]
-[^65]: [[sources/65]]
-[^102]: [[sources/102]]
-[^177]: [[sources/177]]
-[^179]: [[sources/179]]
-[^261]: [[sources/261]]
-[^323]: [[sources/323]]
-[^324]: [[sources/324]]
-[^326]: [[sources/326]]
-[^327]: [[sources/327]]
-[^328]: [[sources/328]]
-[^329]: [[sources/329]]
-[^334]: [[sources/334]]
-[^361]: [[sources/361]]
-[^391]: [[sources/391]]
-[^392]: [[sources/392]]
-[^396]: [[sources/396]]
-[^411]: [[sources/411]]
-[^412]: [[sources/412]]
-[^419]: [[sources/419]]
-[^447]: [[sources/447]]
-[^451]: [[sources/451]]
-[^466]: [[sources/466]]
-
 [^1]: [[sources/web-2026-01-15-fd2]] [^2]: [[sources/arxiv-2503.24334]] [^3]: [[sources/web-2025-11-30-86a]] [^4]: [[sources/web-2026-01-09-6c7]] [^5]: [[sources/web-2025-12-04-1c4]] [^6]: [[sources/web-2026-03-18-d10]] [^7]: [[sources/web-2026-03-18-d10]] [^8]: [[sources/web-2026-03-18-d10]] [^9]: [[sources/web-2025-02-14-794]] [^10]: [[sources/web-2025-09-03-f59]] [^11]: [[sources/web-2025-12-04-1c4]] [^12]: [[sources/web-2025-12-04-1c4]] [^13]: [[sources/web-2026-01-15-fd2]] [^14]: [[sources/web-2026-01-15-fd2]] [^15]: [[sources/web-2026-01-15-fd2]] [^16]: [[sources/web-2026-01-15-fd2]] [^17]: [[sources/web-2026-01-15-fd2]] [^18]: [[sources/web-2026-01-15-fd2]] [^19]: [[sources/web-2025-02-04-182]] [^20]: [[sources/web-2025-09-03-f59]] [^21]: [[sources/web-2025-06-25-bf3]] [^22]: [[sources/web-2025-06-25-bf3]] [^23]: [[sources/web-2026-04-17-f22]]
 
 ### Shared Anchors
@@ -103,30 +79,6 @@ This venture capital research provides comparative frameworks for understanding 
 *   **What it is and what it contains:** BVP research documents that AI companies operate with gross margins of 50-60%, in stark contrast to the 70-90% margins typical of mature SaaS businesses [1, 3]. The research also identifies capital-efficient AI startups with strong product-market fit as "AI Shooting Stars," which average around 60% gross margins, and calculates that AI products must be priced 5-6x higher than SaaS equivalents to match traditional unit economics [22, 23].
 *   **Which themes draw on it:** The Economics Pillar, The Pricing Trajectory.
 *   **Why it is treated as foundational or load-bearing for those themes:** The BVP framework is load-bearing because it forces a recalibration of investor expectations and startup financial modeling [7, 23]. It demonstrates that the lower margin profile of AI businesses is not a temporary flaw but an architectural reality, fundamentally justifying the strategic shift away from flat per-seat pricing toward higher-priced, effort-based or outcome-based monetization [3, 23].
-
-[^45]: [[sources/45]]
-[^46]: [[sources/46]]
-[^49]: [[sources/49]]
-[^50]: [[sources/50]]
-[^51]: [[sources/51]]
-[^54]: [[sources/54]]
-[^66]: [[sources/66]]
-[^68]: [[sources/68]]
-[^72]: [[sources/72]]
-[^73]: [[sources/73]]
-[^105]: [[sources/105]]
-[^112]: [[sources/112]]
-[^132]: [[sources/132]]
-[^141]: [[sources/141]]
-[^410]: [[sources/410]]
-[^413]: [[sources/413]]
-[^415]: [[sources/415]]
-[^419]: [[sources/419]]
-[^420]: [[sources/420]]
-[^421]: [[sources/421]]
-[^422]: [[sources/422]]
-[^425]: [[sources/425]]
-[^434]: [[sources/434]]
 
 [^1]: [[sources/web-2026-03-18-d10]] [^2]: [[sources/web-2026-03-18-d10]] [^3]: [[sources/web-2026-03-18-d10]] [^4]: [[sources/web-2026-03-18-d10]] [^5]: [[sources/web-2026-03-18-d10]] [^6]: [[sources/web-2026-03-18-d10]] [^7]: [[sources/web-2026-03-18-d10]] [^8]: [[sources/web-2025-11-30-86a]] [^9]: [[sources/web-2025-11-30-86a]] [^10]: [[sources/web-2025-11-30-86a]] [^11]: [[sources/web-2025-11-30-86a]] [^12]: [[sources/web-2025-11-30-86a]] [^13]: [[sources/web-2025-11-30-86a]] [^14]: [[sources/web-2025-11-30-86a]] [^15]: [[sources/web-2025-11-30-86a]] [^16]: [[sources/web-2025-11-30-86a]] [^17]: [[sources/web-2025-11-30-86a]] [^18]: [[sources/web-2026-01-09-6c7]] [^19]: [[sources/web-2026-01-09-6c7]] [^20]: [[sources/web-2026-01-09-6c7]] [^21]: [[sources/web-2026-01-09-6c7]] [^22]: [[sources/web-2026-03-18-d10]] [^23]: [[sources/web-2026-03-18-d10]]
 
@@ -163,24 +115,6 @@ The corpus identifies a profound psychological and operational tension between r
     *   There is an inherent conflict between using AI to automate document-centric knowledge work and the necessity of deliberate human practice; over-delegating to AI can degrade the user's ability to actually develop and maintain true domain expertise [16]. 
     *   Consequently, experts face a constant choice in their workflows: they willingly delegate repetitive information foraging to AI, but deliberately choose to retain manual control over complex synthesis and interpretation to preserve their agency over critical analytical tasks [16].
     *   In collaborative scenarios, replacing human teammates with AI agents leads to highly task-oriented communication and a higher rate of delegation [17]. This creates a creative trade-off: while the average quality of the text output improves, it coincides with "diversity collapse," resulting in outputs that are significantly more homogeneous and self-similar [17].
-
-[^65]: [[sources/65]]
-[^102]: [[sources/102]]
-[^108]: [[sources/108]]
-[^109]: [[sources/109]]
-[^117]: [[sources/117]]
-[^119]: [[sources/119]]
-[^128]: [[sources/128]]
-[^357]: [[sources/357]]
-[^393]: [[sources/393]]
-[^396]: [[sources/396]]
-[^417]: [[sources/417]]
-[^419]: [[sources/419]]
-[^428]: [[sources/428]]
-[^446]: [[sources/446]]
-[^451]: [[sources/451]]
-[^458]: [[sources/458]]
-[^466]: [[sources/466]]
 
 [^1]: [[sources/web-2025-11-30-86a]] [^2]: [[sources/web-2025-12-04-1c4]] [^3]: [[sources/web-2025-12-04-1c4]] [^4]: [[sources/web-2026-01-09-6c7]] [^5]: [[sources/web-2026-03-18-d10]] [^6]: [[sources/web-2025-09-03-f59]] [^7]: [[sources/web-2026-03-18-d10]] [^8]: [[sources/web-2026-03-18-d10]] [^9]: [[sources/web-2026-04-17-f22]] [^10]: [[sources/web-2025-09-03-f59]] [^11]: [[sources/web-2026-01-09-6c7]] [^12]: [[sources/web-2026-01-09-6c7]] [^13]: [[sources/web-2026-01-09-6c7]] [^14]: [[sources/web-2026-01-09-6c7]] [^15]: [[sources/web-2026-01-09-6c7]] [^16]: [[sources/arxiv-2503.24334]] [^17]: [[sources/arxiv-2503.18238]]
 

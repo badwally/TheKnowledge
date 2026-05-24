@@ -65,29 +65,6 @@ Based on the provided sources, several patterns emerge regarding the specific in
     *   **Core approach:** The framework differentiates products based on the degree of human involvement; copilots (like GitHub Copilot) act as supercharged assistants for human execution, AI Colleagues (like Devin) autonomously handle a subset of complex tasks within a broader human workflow, and AI-Native Services (like Isoform or Gelt) are full-stack businesses that automate the complete service end-to-end [10, 11, 20, 21].
     *   **Concrete details:** AI-Native Services are designed to automate 50-95% of workflows and directly compete with traditional agencies or BPOs, though they are fundamentally service firms and are likely to be valued on similar EBITDA multiples as their legacy counterparts [12, 13].
 
-[^38]: [[sources/2]]
-[^42]: [[sources/2]]
-[^272]: [[sources/9]]
-[^274]: [[sources/9]]
-[^276]: [[sources/9]]
-[^278]: [[sources/9]]
-[^280]: [[sources/9]]
-[^282]: [[sources/9]]
-[^291]: [[sources/10]]
-[^292]: [[sources/10]]
-[^293]: [[sources/10]]
-[^342]: [[sources/12]]
-[^343]: [[sources/12]]
-[^344]: [[sources/12]]
-[^361]: [[sources/13]]
-[^362]: [[sources/13]]
-[^363]: [[sources/13]]
-[^365]: [[sources/13]]
-[^366]: [[sources/13]]
-[^368]: [[sources/13]]
-[^369]: [[sources/13]]
-[^371]: [[sources/13]]
-
 [^1]: [[sources/web-2026-03-06-79f]] [^2]: [[sources/web-2026-03-06-79f]] [^3]: [[sources/web-2026-03-06-79f]] [^4]: [[sources/web-2026-03-30-6f2]] [^5]: [[sources/web-2026-03-30-6f2]] [^6]: [[sources/web-2026-03-30-6f2]] [^7]: [[sources/web-2026-03-06-79f]] [^8]: [[sources/web-2026-03-06-79f]] [^9]: [[sources/web-2026-03-06-79f]] [^10]: [[sources/web-2024-07-15-7c9]] [^11]: [[sources/web-2024-07-15-7c9]] [^12]: [[sources/web-2024-07-15-7c9]] [^13]: [[sources/web-2024-07-15-7c9]] [^14]: [[sources/web-2026-04-23-e4c]] [^15]: [[sources/web-2026-04-23-e4c]] [^16]: [[sources/web-2026-04-23-e4c]] [^17]: [[sources/web-2026-01-01-14b]] [^18]: [[sources/web-2026-01-01-14b]] [^19]: [[sources/web-2024-07-15-7c9]] [^20]: [[sources/web-2024-07-15-7c9]] [^21]: [[sources/web-2024-07-15-7c9]]
 
 ### Comparisons
@@ -117,37 +94,6 @@ Based on the provided sources, several distinct comparisons emerge when analyzin
 *   **Differences in evidence, outcomes, or stated claims:** Funded entities (like Crosby, Mechanical Orchard, or Decagon) typically attack massive established outsourcing markets to facilitate clean "vendor swaps," aiming for deep operational integration and handling edge-case complexity [6, 18, 19]. Lean-operator and solo referents use consumerized AI agent stacks—costing roughly $300 to $500 a month—to orchestrate high-volume services like marketing, content, or design, effectively replacing traditional startup payrolls of $80,000 to $120,000 a month [20, 21].
 *   **Trade-offs or contexts where each applies:** Funded operators must invest heavily in dedicated delivery teams, complex enterprise migrations, and human-in-the-loop oversight to earn regulatory trust and handle the handoff from legacy processes [22, 23]. Solo operators trade enterprise scale for total autonomy and margin control, managing $1M to $3M ARR with zero employees, or transforming grueling freelance workloads into highly profitable 20-hour-a-week agencies [24, 25].
 *   **Strengths and weaknesses:** A major strength of the solo model is structural agility and near-infinite margin expansion on standardized tasks, yet it suffers from a hard ceiling; solo agents cannot validate markets, navigate high-stakes customer relationship nuances, or execute strategic business judgment [26, 27]. Funded teams possess the capital to build proprietary data flywheels and overcome the "cold start" brand problem by hiring domain experts or partnering with mid-sized incumbents, but they risk bloating into traditional services if they fail to prioritize platform automation over urgent client demands [28-30].
-
-[^38]: [[sources/2]]
-[^273]: [[sources/9]]
-[^274]: [[sources/9]]
-[^275]: [[sources/9]]
-[^276]: [[sources/9]]
-[^279]: [[sources/9]]
-[^280]: [[sources/9]]
-[^281]: [[sources/9]]
-[^283]: [[sources/9]]
-[^291]: [[sources/10]]
-[^292]: [[sources/10]]
-[^293]: [[sources/10]]
-[^294]: [[sources/10]]
-[^295]: [[sources/10]]
-[^296]: [[sources/10]]
-[^297]: [[sources/10]]
-[^299]: [[sources/10]]
-[^304]: [[sources/10]]
-[^309]: [[sources/10]]
-[^314]: [[sources/10]]
-[^342]: [[sources/12]]
-[^343]: [[sources/12]]
-[^344]: [[sources/12]]
-[^347]: [[sources/12]]
-[^348]: [[sources/12]]
-[^362]: [[sources/13]]
-[^363]: [[sources/13]]
-[^366]: [[sources/13]]
-[^368]: [[sources/13]]
-[^370]: [[sources/13]]
 
 [^1]: [[sources/web-2026-03-06-79f]] [^2]: [[sources/web-2024-07-15-7c9]] [^3]: [[sources/web-2024-07-15-7c9]] [^4]: [[sources/web-2024-07-15-7c9]] [^5]: [[sources/web-2024-07-15-7c9]] [^6]: [[sources/web-2026-03-06-79f]] [^7]: [[sources/web-2026-03-06-79f]] [^8]: [[sources/web-2026-03-06-79f]] [^9]: [[sources/web-2026-03-06-79f]] [^10]: [[sources/web-2026-03-06-79f]] [^11]: [[sources/web-2026-03-06-79f]] [^12]: [[sources/web-2026-03-30-6f2]] [^13]: [[sources/web-2026-03-30-6f2]] [^14]: [[sources/web-2026-03-30-6f2]] [^15]: [[sources/web-2026-03-30-6f2]] [^16]: [[sources/web-2026-03-30-6f2]] [^17]: [[sources/web-2026-03-30-6f2]] [^18]: [[sources/web-2026-03-06-79f]] [^19]: [[sources/web-2024-07-15-7c9]] [^20]: [[sources/web-2026-04-23-e4c]] [^21]: [[sources/web-2026-04-23-e4c]] [^22]: [[sources/web-2026-03-30-6f2]] [^23]: [[sources/web-2026-03-30-6f2]] [^24]: [[sources/web-2026-01-01-14b]] [^25]: [[sources/web-2026-04-23-e4c]] [^26]: [[sources/web-2026-04-23-e4c]] [^27]: [[sources/web-2026-04-23-e4c]] [^28]: [[sources/web-2026-03-30-6f2]] [^29]: [[sources/web-2026-03-30-6f2]] [^30]: [[sources/web-2026-03-30-6f2]]
 
@@ -180,25 +126,6 @@ Based on the provided sources, several unresolved questions, limitations, and un
 **Unanswered Tension:** Escaping "Mirage PMF" Amidst Client Demands
 
 *   The archetype relies on achieving "True PMF" (scaling non-linearly via AI automation) rather than "Mirage PMF" (masking bespoke human labor with strong revenue growth). [15, 16] However, the sources highlight a constant, unresolved struggle between the "urgent" demands of paying customers and the "important" need to build internal platform automation. [17] While operators are advised they must eventually "say no" to custom requests to avoid devolving into traditional project-services firms, the corpus does not provide a definitive timeline, metric, or go/no-go signal for exactly when an early-stage firm should start turning down revenue. [18]
-
-[^148]: [[sources/6]]
-[^273]: [[sources/9]]
-[^274]: [[sources/9]]
-[^275]: [[sources/9]]
-[^279]: [[sources/9]]
-[^280]: [[sources/9]]
-[^282]: [[sources/9]]
-[^283]: [[sources/9]]
-[^287]: [[sources/10]]
-[^291]: [[sources/10]]
-[^292]: [[sources/10]]
-[^299]: [[sources/10]]
-[^300]: [[sources/10]]
-[^315]: [[sources/10]]
-[^348]: [[sources/12]]
-[^349]: [[sources/12]]
-[^355]: [[sources/12]]
-[^371]: [[sources/13]]
 
 [^1]: [[sources/web-2026-03-06-79f]] [^2]: [[sources/web-2026-03-06-79f]] [^3]: [[sources/web-2026-03-06-79f]] [^4]: [[sources/web-2026-03-06-79f]] [^5]: [[sources/web-2026-03-06-79f]] [^6]: [[sources/web-2026-03-06-79f]] [^7]: [[sources/web-2026-03-06-79f]] [^8]: [[sources/web-2026-04-23-e4c]] [^9]: [[sources/web-2026-04-23-e4c]] [^10]: [[sources/web-2026-04-23-e4c]] [^11]: [[sources/web-2024-07-15-7c9]] [^12]: [[sources/web-2025-12-03-88d]] [^13]: [[sources/web-2026-03-30-6f2]] [^14]: [[sources/web-2026-03-30-6f2]] [^15]: [[sources/web-2026-03-30-6f2]] [^16]: [[sources/web-2026-03-30-6f2]] [^17]: [[sources/web-2026-03-30-6f2]] [^18]: [[sources/web-2026-03-30-6f2]]
 

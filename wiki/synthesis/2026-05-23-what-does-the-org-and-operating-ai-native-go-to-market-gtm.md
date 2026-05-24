@@ -54,26 +54,6 @@ Based on the provided sources, several distinct mechanisms and frameworks define
 *   **Core approach, mechanism, or supporting evidence:** By targeting elite or highly risk-averse customers with extreme demands, startups are compelled to build genuine AI automation and robust compliance infrastructure that serves as a massive long-term competitive advantage against peers. [17, 18]
 *   **Concrete details:** Mercor chose elite AI labs like OpenAI and Anthropic as initial customers, whose "unreasonable asks"—such as requiring 300 qualified data labelers in 48 hours—forced Mercor to bypass manual recruitment and build completely automated AI-powered vetting. [17] Harvey deliberately targeted highly risk-averse law firms, securing a watershed trial with Allen & Overy (now A&O Shearman) where 3,500 attorneys asked 40,000 questions; this rigorous environment forced Harvey to build deep security and compliance frameworks that later protected them against competitors. [18, 19]
 
-[^48]: [[sources/3]]
-[^49]: [[sources/3]]
-[^80]: [[sources/5]]
-[^81]: [[sources/5]]
-[^82]: [[sources/5]]
-[^83]: [[sources/5]]
-[^84]: [[sources/5]]
-[^85]: [[sources/5]]
-[^86]: [[sources/5]]
-[^87]: [[sources/5]]
-[^88]: [[sources/5]]
-[^89]: [[sources/5]]
-[^90]: [[sources/5]]
-[^91]: [[sources/5]]
-[^93]: [[sources/5]]
-[^94]: [[sources/5]]
-[^95]: [[sources/5]]
-[^96]: [[sources/5]]
-[^98]: [[sources/5]]
-
 [^1]: [[sources/web-2025-10-04-aae]] [^2]: [[sources/web-2025-10-04-aae]] [^3]: [[sources/web-2025-10-04-aae]] [^4]: [[sources/web-2025-10-04-aae]] [^5]: [[sources/web-2025-10-04-aae]] [^6]: [[sources/web-2025-10-04-aae]] [^7]: [[sources/web-2025-10-04-aae]] [^8]: [[sources/web-2025-10-04-aae]] [^9]: [[sources/web-2025-10-04-aae]] [^10]: [[sources/web-2025-10-04-aae]] [^11]: [[sources/web-2025-10-04-aae]] [^12]: [[sources/yt-msfECL74sIA]] [^13]: [[sources/web-2025-10-04-aae]] [^14]: [[sources/web-2025-10-04-aae]] [^15]: [[sources/yt-msfECL74sIA]] [^16]: [[sources/web-2025-10-04-aae]] [^17]: [[sources/web-2025-10-04-aae]] [^18]: [[sources/web-2025-10-04-aae]] [^19]: [[sources/web-2025-10-04-aae]]
 
 ### Comparisons
@@ -91,29 +71,6 @@ Based on the provided sources, comparing the go-to-market strategies of AI-nativ
 *   **Differences in evidence, outcomes, or stated claims:** Founder-led social distribution relies on building a decentralized network of content creators or using a provocative founder persona to generate massive algorithmic reach and brand awareness [12, 13]. Conversely, products engineered for self-distribution embed growth mechanics directly into the software's architecture, ensuring that standard user outputs inherently function as advertisements [3, 14, 15].
 *   **Trade-offs or contexts where each applies:** Social controversy is highly effective when a product's core value proposition naturally aligns with a disruptive or provocative narrative, such as Cluely successfully marketing a "covert advantage" to cheat on technical interviews [16, 17]. Self-distribution applies best to creation and marketplace tools where content is naturally shared, such as Gamma's AI-generated presentations, Lovable's instant personal websites, or solo founder Pieter Levels' programmatic SEO directories [15, 18-20].
 *   **Strengths and weaknesses:** The primary strength of social distribution is its capacity to bypass traditional sales organizations entirely, allowing founders like Cluely's Roy Lee to secure seven-figure enterprise contracts simply because decision-makers are entertained by his viral Twitter presence [2, 13]. Its weakness is that manufactured authenticity generally fails, and provocative marketing can severely damage the core trust required for tools that need deep system access [9, 17]. The strength of product-led self-distribution is that it creates an automated, compounding marketing flywheel—such as Mercor's algorithm improving with every successful candidate placement—that scales efficiently without continuous paid marketing [19, 21]. A weakness of this self-distribution model is that optimizing for virality, such as forcing users to display "Made with Gamma" badges, requires carefully balancing growth metrics against potential user friction and compromised user experience [22].
-
-[^48]: [[sources/3]]
-[^49]: [[sources/3]]
-[^80]: [[sources/5]]
-[^81]: [[sources/5]]
-[^82]: [[sources/5]]
-[^83]: [[sources/5]]
-[^84]: [[sources/5]]
-[^85]: [[sources/5]]
-[^86]: [[sources/5]]
-[^87]: [[sources/5]]
-[^89]: [[sources/5]]
-[^90]: [[sources/5]]
-[^91]: [[sources/5]]
-[^92]: [[sources/5]]
-[^93]: [[sources/5]]
-[^94]: [[sources/5]]
-[^95]: [[sources/5]]
-[^96]: [[sources/5]]
-[^98]: [[sources/5]]
-[^106]: [[sources/5]]
-[^107]: [[sources/5]]
-[^109]: [[sources/5]]
 
 [^1]: [[sources/web-2025-10-04-aae]] [^2]: [[sources/web-2025-10-04-aae]] [^3]: [[sources/web-2025-10-04-aae]] [^4]: [[sources/web-2025-10-04-aae]] [^5]: [[sources/web-2025-10-04-aae]] [^6]: [[sources/web-2025-10-04-aae]] [^7]: [[sources/web-2025-10-04-aae]] [^8]: [[sources/web-2025-10-04-aae]] [^9]: [[sources/web-2025-10-04-aae]] [^10]: [[sources/web-2025-10-04-aae]] [^11]: [[sources/web-2025-10-04-aae]] [^12]: [[sources/web-2025-10-04-aae]] [^13]: [[sources/web-2025-10-04-aae]] [^14]: [[sources/web-2025-10-04-aae]] [^15]: [[sources/web-2025-10-04-aae]] [^16]: [[sources/web-2025-10-04-aae]] [^17]: [[sources/web-2025-10-04-aae]] [^18]: [[sources/yt-msfECL74sIA]] [^19]: [[sources/yt-msfECL74sIA]] [^20]: [[sources/web-2025-10-04-aae]] [^21]: [[sources/web-2025-10-04-aae]] [^22]: [[sources/web-2025-10-04-aae]]
 
@@ -142,24 +99,6 @@ Based on the provided sources, several critical gaps, unanswered tensions, and o
 **Items Compared:** The Scope of the Target Research Question versus the Provided Corpus Coverage.
 *   While the overarching research question asks for comprehensive GTM case studies on specific named entities, the corpus entirely omits the companies Cognition, Sierra, Lindy, and Crosby, and provides no information on the solo operator Marc Lou [13-15].
 *   Furthermore, the texts completely fail to address the requested founder podcast appearances (Acquired, Lenny's, Latent Space, 20VC, AI Native Dojo) and lack the specific academic productivity research from Brynjolfsson, Mollick, or the BCG×Harvard AI experiment, severely limiting the empirical breadth of the distribution models a reader can actually verify [13, 16, 17].
-
-[^55]: [[sources/4]]
-[^78]: [[sources/5]]
-[^79]: [[sources/5]]
-[^80]: [[sources/5]]
-[^83]: [[sources/5]]
-[^84]: [[sources/5]]
-[^90]: [[sources/5]]
-[^91]: [[sources/5]]
-[^94]: [[sources/5]]
-[^95]: [[sources/5]]
-[^96]: [[sources/5]]
-[^107]: [[sources/5]]
-[^109]: [[sources/5]]
-[^110]: [[sources/5]]
-[^114]: [[sources/5]]
-[^122]: [[sources/6]]
-[^139]: [[sources/7]]
 
 [^1]: [[sources/web-2025-10-04-aae]] [^2]: [[sources/web-2025-10-04-aae]] [^3]: [[sources/web-2025-10-04-aae]] [^4]: [[sources/web-2025-10-04-aae]] [^5]: [[sources/web-2025-10-04-aae]] [^6]: [[sources/web-2025-10-04-aae]] [^7]: [[sources/web-2025-10-04-aae]] [^8]: [[sources/web-2025-10-04-aae]] [^9]: [[sources/web-2025-10-04-aae]] [^10]: [[sources/web-2025-10-04-aae]] [^11]: [[sources/web-2025-10-04-aae]] [^12]: [[sources/web-2025-10-04-aae]] [^13]: [[sources/web-2025-10-04-aae]] [^14]: [[sources/web-2025-10-04-aae]] [^15]: [[sources/web-2026-04-23-e4c]] [^16]: [[sources/yt-I08ZeY7QcrE]] [^17]: [[sources/web-2024-02-07-3a2]]
 

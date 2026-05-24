@@ -63,27 +63,6 @@ Based on the provided sources, several distinct patterns emerge regarding the sp
     *   **Core approach:** Rather than using AI to quickly draft internal memos or board decks, lean operators use AI's speed to build and launch public-facing assets, allowing the actual market audience to validate the strategy through real signal [18-20].
     *   **Concrete details:** AI drastically reduces the cost and friction of bringing a test to market; an asset that previously took a week can become a strong draft in an afternoon, and a functioning landing page that previously required a human designer can be completed in two hours [19, 20].
 
-[^1]: [[sources/9]]
-[^2]: [[sources/9]]
-[^3]: [[sources/10]]
-[^4]: [[sources/10]]
-[^5]: [[sources/10]]
-[^6]: [[sources/10]]
-[^7]: [[sources/10]]
-[^8]: [[sources/10]]
-[^9]: [[sources/6]]
-[^10]: [[sources/6]]
-[^11]: [[sources/6]]
-[^12]: [[sources/6]]
-[^13]: [[sources/6]]
-[^14]: [[sources/6]]
-[^15]: [[sources/6]]
-[^16]: [[sources/6]]
-[^17]: [[sources/6]]
-[^18]: [[sources/1]]
-[^19]: [[sources/1]]
-[^20]: [[sources/1]]
-
 [^1]: [[sources/web-2026-05-22-52b]] [^2]: [[sources/web-2026-05-22-52b]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-05-22-52b]] [^12]: [[sources/web-2026-05-22-52b]] [^13]: [[sources/web-2026-05-22-52b]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]] [^16]: [[sources/web-2026-05-22-52b]] [^17]: [[sources/web-2026-05-22-52b]] [^18]: [[sources/web-2026-05-22-52b]] [^19]: [[sources/web-2026-05-22-52b]] [^20]: [[sources/web-2026-05-22-52b]]
 
 ### Comparisons
@@ -130,22 +109,6 @@ Based on the provided sources, several distinct comparisons emerge when analyzin
 *   **Trade-offs or contexts where each applies:** Shipping to the public provides real, immediate market signal and validates the strategy because the test is real [15]. Creating internal artifacts subjects the idea to layers of corporate peer review, delaying actual market exposure by months [14].
 *   **Strengths and weaknesses noted:** The strength of the solo founder's approach is extreme iteration speed and direct, honest market feedback [14]. The weakness of the corporate approach is that the deliverable is merely an internal document sanded smooth by committees, providing no actual validation from paying customers [14].
 
-[^1]: [[sources/10]]
-[^2]: [[sources/6]]
-[^3]: [[sources/6]]
-[^4]: [[sources/6]]
-[^5]: [[sources/6]]
-[^6]: [[sources/6]]
-[^7]: [[sources/6]]
-[^8]: [[sources/6]]
-[^9]: [[sources/10]]
-[^10]: [[sources/10]]
-[^11]: [[sources/10]]
-[^12]: [[sources/10]]
-[^13]: [[sources/1]]
-[^14]: [[sources/1]]
-[^15]: [[sources/1]]
-
 [^1]: [[sources/web-2026-05-22-52b]] [^2]: [[sources/web-2026-05-22-52b]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-05-22-52b]] [^12]: [[sources/web-2026-05-22-52b]] [^13]: [[sources/web-2026-05-22-52b]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]]
 
 ### Gaps
@@ -184,21 +147,11 @@ Based on the provided sources, several unresolved questions, limitations, and un
 *   Yet, the texts also note that the ultimate goal for massive valuations is securing $500,000+ enterprise contracts [15]. 
 *   The sources do not address how or when an AINS firm successfully transitions its GTM motion from low-ACV, highly standardized SMBs to complex enterprise environments, leaving a gap regarding whether these lean operators must eventually build traditional, heavy outbound sales teams or if they can remain profitable solely by scaling downmarket [16].
 
-[^1]: [[sources/10]]
-[^2]: [[sources/10]]
-[^3]: [[sources/10]]
-[^4]: [[sources/10]]
-[^5]: [[sources/6]]
 [^6]: [[sources/9, 10]]
 [^7]: [[sources/6, 9, 10]]
 [^8]: [[sources/6, 9, 10]]
 [^9]: [[sources/6, 10]]
-[^10]: [[sources/14]]
-[^11]: [[sources/14]]
-[^12]: [[sources/14]]
-[^13]: [[sources/14]]
-[^14]: [[sources/10]]
-[^15]: [[sources/6]]
+
 [^16]: [[sources/6, 10]]
 
 [^1]: [[sources/web-2026-05-22-52b]] [^2]: [[sources/web-2026-05-22-52b]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-05-22-52b]] [^12]: [[sources/web-2026-05-22-52b]] [^13]: [[sources/web-2026-05-22-52b]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]] [^16]: [[sources/web-2026-05-22-52b]]

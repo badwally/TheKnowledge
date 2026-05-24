@@ -58,10 +58,6 @@ Based on the provided sources, several patterns emerge regarding evals and obser
 *   **Core approach:** A robust evaluation suite allows a company to instantly benchmark newly released frontier models against their specific product tasks. [3] If an organization's evals are properly engineered, they provide the empirical confidence required to safely swap in a new model and deploy a product update immediately. [3]
 *   **Concrete details:** Notion is highlighted as an organization that successfully meets this benchmark, consistently incorporating new foundation models into its live product within 24 hours of their release thanks to its rigorous evaluation infrastructure. [3]
 
-[^1]: [[sources/2]]
-[^2]: [[sources/3]]
-[^3]: [[sources/4]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
 ### Comparisons
@@ -98,10 +94,6 @@ Based on the provided sources, several structural comparisons emerge regarding h
 *   The strength of this proactive framework is execution speed: organizations that maintain ambitious benchmarks can confidently validate and deploy a new model into their product within 24 hours of its release, establishing a massive competitive advantage [3]. 
 *   The trade-off requires operators to dedicate engineering resources toward writing tests for capabilities that are not yet viable, rather than exclusively fixing today's immediate broken features [3].
 
-[^2]: [[sources/2]]
-[^3]: [[sources/3]]
-[^4]: [[sources/4]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
 ### Gaps
@@ -129,11 +121,6 @@ Based on the provided sources, several structural comparisons emerge regarding h
 *   Advanced observability strategies encourage operators to aggressively use frontier models to act as judges, automatically optimize prompts, and identify missing edge cases in datasets to ensure peak system performance. [3]
 *   Conversely, the financial guides warn that unconstrained LLM API usage, especially for background processing or heavy background model calls embedded in core workflows, rapidly compresses gross margins and introduces severe cost volatility. [4]
 *   The sources do not reconcile these two realities, leaving operators without any criteria to determine how many expensive evaluation tokens they can afford to burn in their CI/CD and observability pipelines before the cost of monitoring the AI outweighs the revenue of the application itself. [3, 4]
-
-[^2]: [[sources/2]]
-[^4]: [[sources/4]]
-[^6]: [[sources/6]]
-[^10]: [[sources/10]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]] [^4]: [[sources/web-2025-12-24-e64]]
 

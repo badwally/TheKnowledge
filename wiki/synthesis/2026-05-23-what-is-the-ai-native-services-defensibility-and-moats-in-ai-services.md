@@ -53,27 +53,6 @@ Based on the provided sources, several specific frameworks and mechanisms define
 *   **Core approach:** Because foundation models from companies like OpenAI and Google are rapidly commoditizing, sustainable competitive advantage shifts up to the application layer. [16] Defensibility requires embedding deep, industry-specific domain knowledge into workflows and evaluation frameworks, solving complete problems rather than merely showcasing raw AI capabilities. [17]
 *   **Concrete details:** A critical technical mechanism for this moat is highly sophisticated Retrieval-Augmented Generation (RAG). [18] While basic RAG is common, defensible implementations utilize multi-stage retrieval pipelines, dynamic re-ranking, and context-aware relevance scoring across millions of domain-specific documents. [19] These complex architectures—combined with custom fine-tuning and strict regulatory compliance controls—make the application immensely difficult for a competitor or a horizontal platform to quickly replicate with a generic API call. [20]
 
-[^1]: [[sources/4]]
-[^2]: [[sources/4]]
-[^3]: [[sources/4]]
-[^4]: [[sources/4]]
-[^5]: [[sources/10]]
-[^6]: [[sources/10]]
-[^7]: [[sources/10]]
-[^8]: [[sources/10]]
-[^9]: [[sources/10]]
-[^10]: [[sources/10]]
-[^11]: [[sources/10]]
-[^12]: [[sources/10]]
-[^13]: [[sources/8]]
-[^14]: [[sources/8]]
-[^15]: [[sources/8]]
-[^16]: [[sources/14]]
-[^17]: [[sources/14]]
-[^18]: [[sources/14]]
-[^19]: [[sources/14]]
-[^20]: [[sources/14]]
-
 [^1]: [[sources/web-2026-05-22-52b]] [^2]: [[sources/web-2026-05-22-52b]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-05-22-52b]] [^12]: [[sources/web-2026-05-22-52b]] [^13]: [[sources/web-2026-05-22-52b]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]] [^16]: [[sources/web-2026-05-22-52b]] [^17]: [[sources/web-2026-05-22-52b]] [^18]: [[sources/web-2026-05-22-52b]] [^19]: [[sources/web-2026-05-22-52b]] [^20]: [[sources/web-2026-05-22-52b]]
 
 ### Comparisons
@@ -104,24 +83,7 @@ Based on the provided sources, several distinct comparisons emerge when analyzin
 *   **Trade-offs or contexts where each applies:** Technical complexity is strictly required for specialized B2B and professional applications where accuracy, compliance, and strict domain knowledge are paramount `[15]`. Network effects apply most powerfully to consumer, prosumer, and creative platforms—such as Midjourney and CharacterAI—where user-generated personas, shared prompt libraries, and Discord communities provide more value than the raw AI model alone `[16]`.
 *   **Strengths and weaknesses noted:** A major weakness of pure technical moats is the vulnerability to rapid model advancement; what takes a startup months to engineer via complex RAG pipelines today might become a native, commoditized API feature from OpenAI tomorrow `[17]`. The strength of network effects is high resilience to this commoditization; even if a competitor clones the underlying AI capabilities instantly, they cannot clone the accumulated community, shared historical workflows, and collaborative human networks that keep users locked in `[18]`.
 
-[^1]: [[sources/8]]
-[^2]: [[sources/4]]
-[^3]: [[sources/4]]
-[^4]: [[sources/10]]
-[^5]: [[sources/10]]
 [^6]: [[sources/8, 14]]
-[^7]: [[sources/4]]
-[^8]: [[sources/10]]
-[^9]: [[sources/10]]
-[^10]: [[sources/10]]
-[^11]: [[sources/10]]
-[^12]: [[sources/10]]
-[^13]: [[sources/14]]
-[^14]: [[sources/8]]
-[^15]: [[sources/14]]
-[^16]: [[sources/14]]
-[^17]: [[sources/14]]
-[^18]: [[sources/8]]
 
 [^1]: [[sources/web-2026-05-22-52b]] [^2]: [[sources/web-2026-05-22-52b]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-05-22-52b]] [^12]: [[sources/web-2026-05-22-52b]] [^13]: [[sources/web-2026-05-22-52b]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]] [^16]: [[sources/web-2026-05-22-52b]] [^17]: [[sources/web-2026-05-22-52b]] [^18]: [[sources/web-2026-05-22-52b]]
 
@@ -165,12 +127,9 @@ An unresolved tension exists regarding the lifespan of application-layer technic
 [^2]: [[sources/1, 4]]
 [^3]: [[sources/1, 4, 10]]
 [^4]: [[sources/9, 10]]
-[^5]: [[sources/4]]
+
 [^6]: [[sources/4, 10]]
-[^7]: [[sources/8]]
-[^8]: [[sources/8]]
-[^9]: [[sources/8]]
-[^10]: [[sources/14]]
+
 [^11]: [[sources/8, 14]]
 [^12]: [[sources/1, 14]]
 

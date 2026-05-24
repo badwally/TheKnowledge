@@ -63,24 +63,6 @@ Based on the provided sources, several specific frameworks and mechanisms define
     *   **Core approach:** Instead of putting recurring administrative friction on a corporate roadmap or hiring operational staff to manage it, solo founders build bespoke, automated tools to solve personal-scale problems permanently. [14, 15]
     *   **Concrete details:** Rather than spending hours each week on data reformatting or research, founders spend a few hours building a custom AI tool to handle the next twenty instances of that task. [14, 16] For example, one founder built a tool to process newsletter analytics and write an issue brief in fifteen minutes, shifting the organizational mindset from accepting busywork as a necessary cost to treating it as uncaptured operational leverage. [16, 17]
 
-[^11]: [[sources/1]]
-[^12]: [[sources/1]]
-[^13]: [[sources/1]]
-[^14]: [[sources/1]]
-[^15]: [[sources/1]]
-[^16]: [[sources/1]]
-[^18]: [[sources/1]]
-[^19]: [[sources/1]]
-[^20]: [[sources/1]]
-[^342]: [[sources/12]]
-[^344]: [[sources/12]]
-[^345]: [[sources/12]]
-[^346]: [[sources/12]]
-[^347]: [[sources/12]]
-[^348]: [[sources/12]]
-[^350]: [[sources/12]]
-[^351]: [[sources/12]]
-
 [^1]: [[sources/web-2026-04-23-e4c]] [^2]: [[sources/web-2026-04-23-e4c]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-04-23-e4c]] [^5]: [[sources/web-2026-04-23-e4c]] [^6]: [[sources/web-2026-04-23-e4c]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-04-23-e4c]] [^12]: [[sources/web-2026-04-23-e4c]] [^13]: [[sources/web-2026-04-23-e4c]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]] [^16]: [[sources/web-2026-05-22-52b]] [^17]: [[sources/web-2026-05-22-52b]]
 
 ### Comparisons
@@ -117,23 +99,6 @@ Based on the provided sources, several specific frameworks and mechanisms define
 *   **Trade-offs or contexts where each applies:** Task automation is highly effective for formulaic, execution-heavy work where the cost of a mistake is low, such as routine customer support or data entry [11, 12]. Human execution is still strictly required for high-damage decisions, interpreting rare edge cases, and steering overall company strategy [12, 14, 16].
 *   **Strengths and weaknesses:** Automating tasks is a highly effective, palatable approach that yields immediate margin expansion while keeping essential human oversight intact—which is critical since human review of AI output is cheaper than manual execution [13, 15]. The weakness of trying to automate a role completely is that founders misjudge the technology's limits, resulting in a loss of strategic control and a failure to build the necessary reputation and trust that only a human founder can establish [14, 16].
 
-[^11]: [[sources/1]]
-[^12]: [[sources/1]]
-[^13]: [[sources/1]]
-[^14]: [[sources/1]]
-[^25]: [[sources/1]]
-[^26]: [[sources/1]]
-[^301]: [[sources/10]]
-[^342]: [[sources/12]]
-[^344]: [[sources/12]]
-[^345]: [[sources/12]]
-[^346]: [[sources/12]]
-[^347]: [[sources/12]]
-[^348]: [[sources/12]]
-[^350]: [[sources/12]]
-[^351]: [[sources/12]]
-[^355]: [[sources/12]]
-
 [^1]: [[sources/web-2026-04-23-e4c]] [^2]: [[sources/web-2026-04-23-e4c]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-04-23-e4c]] [^10]: [[sources/web-2026-04-23-e4c]] [^11]: [[sources/web-2026-04-23-e4c]] [^12]: [[sources/web-2026-04-23-e4c]] [^13]: [[sources/web-2026-04-23-e4c]] [^14]: [[sources/web-2026-04-23-e4c]] [^15]: [[sources/web-2026-03-30-6f2]] [^16]: [[sources/web-2026-04-23-e4c]]
 
 ### Gaps
@@ -161,18 +126,6 @@ Based on the provided sources, the corpus presents conflicting advice regarding 
 *   Founders are explicitly instructed to overcome their operational limits by systematically "externalizing their judgment," which involves codifying their taste, decision-making criteria, and unwritten rules into rubrics so that an AI can autonomously generate work they would approve of "eight times out of ten" [8-10].
 *   Conversely, the same texts strictly warn founders to triage their tasks, keeping "complex judgment" manual and ensuring that AI is never delegated decisions that carry a high cost of failure or require actual "skin in the game" [2, 3, 11].
 *   The sources fail to provide a clear framework or diagnostic boundary to help a founder accurately identify where their safely "externalizable taste" ends and their irreplaceable "strategic judgment" begins, leaving a dangerous gap for operators trying to decide which decisions are safe to hand over to an agent stack [10, 11].
-
-[^15]: [[sources/1]]
-[^16]: [[sources/1]]
-[^19]: [[sources/1]]
-[^117]: [[sources/5]]
-[^343]: [[sources/12]]
-[^346]: [[sources/12]]
-[^347]: [[sources/12]]
-[^348]: [[sources/12]]
-[^350]: [[sources/12]]
-[^353]: [[sources/12]]
-[^355]: [[sources/12]]
 
 [^1]: [[sources/web-2026-04-23-e4c]] [^2]: [[sources/web-2026-04-23-e4c]] [^3]: [[sources/web-2026-04-23-e4c]] [^4]: [[sources/web-2026-04-23-e4c]] [^5]: [[sources/web-2026-04-23-e4c]] [^6]: [[sources/web-2026-04-23-e4c]] [^7]: [[sources/web-2025-12-24-e64]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-04-23-e4c]]
 

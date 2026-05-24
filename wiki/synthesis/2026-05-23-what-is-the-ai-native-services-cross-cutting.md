@@ -75,32 +75,6 @@ Because AI-native services sell end-to-end outcomes behind a curtain, they requi
 *   **Application in Organization:** Selling a service requires extreme domain credibility, forcing startups to hire industry veterans and recognized domain experts for their customer-facing teams to signal to buyers that the startup truly understands the work [23, 24].
 *   **Application in Defensibility:** In professional services, a brand reputation is a historically powerful moat; by strategically hiring respected legacy providers or partnering with incumbents, lean AI startups "borrow credibility" to protect their market position while their own independent brand and reputation mature [25].
 
-[^15]: [[sources/1]]
-[^16]: [[sources/1]]
-[^54]: [[sources/3]]
-[^55]: [[sources/3]]
-[^80]: [[sources/4]]
-[^81]: [[sources/4]]
-[^84]: [[sources/4]]
-[^234]: [[sources/7]]
-[^273]: [[sources/9]]
-[^274]: [[sources/9]]
-[^276]: [[sources/9]]
-[^279]: [[sources/9]]
-[^288]: [[sources/10]]
-[^289]: [[sources/10]]
-[^292]: [[sources/10]]
-[^293]: [[sources/10]]
-[^294]: [[sources/10]]
-[^297]: [[sources/10]]
-[^299]: [[sources/10]]
-[^300]: [[sources/10]]
-[^303]: [[sources/10]]
-[^304]: [[sources/10]]
-[^309]: [[sources/10]]
-[^310]: [[sources/10]]
-[^350]: [[sources/12]]
-
 [^1]: [[sources/web-2026-03-06-79f]] [^2]: [[sources/web-2025-02-14-794]] [^3]: [[sources/web-2025-02-14-794]] [^4]: [[sources/web-2026-05-12-c8d]] [^5]: [[sources/web-2026-02-10-68e]] [^6]: [[sources/web-2026-02-10-68e]] [^7]: [[sources/web-2026-02-10-68e]] [^8]: [[sources/web-2026-03-30-6f2]] [^9]: [[sources/web-2026-03-30-6f2]] [^10]: [[sources/web-2026-03-30-6f2]] [^11]: [[sources/web-2026-03-30-6f2]] [^12]: [[sources/web-2026-03-06-79f]] [^13]: [[sources/web-2026-03-06-79f]] [^14]: [[sources/web-2026-03-06-79f]] [^15]: [[sources/web-2026-03-30-6f2]] [^16]: [[sources/web-2026-04-23-e4c]] [^17]: [[sources/web-2026-05-22-52b]] [^18]: [[sources/web-2026-05-22-52b]] [^19]: [[sources/web-2026-03-30-6f2]] [^20]: [[sources/web-2026-03-30-6f2]] [^21]: [[sources/web-2026-03-30-6f2]] [^22]: [[sources/web-2026-03-30-6f2]] [^23]: [[sources/web-2026-03-30-6f2]] [^24]: [[sources/web-2026-03-30-6f2]] [^25]: [[sources/web-2026-03-30-6f2]]
 
 ### Shared Anchors
@@ -138,28 +112,6 @@ The "Copilot to Autopilot" spectrum is a foundational definitional framework use
 *   **What it is and what it contains:** This framework classifies products based on their degree of human involvement [18, 19]. It defines "copilots" as software tools that assist human professionals who remain responsible for the final output, whereas "autopilots" or "AI colleagues" autonomously execute end-to-end workflows and deliver completed outcomes directly to the buyer [17-20].
 *   **Themes Used In:** Defining the AI-Native Services Archetype, Go-to-Market Strategies, The Economic Pivot.
 *   **Why it is treated as foundational:** This framework is treated as foundational because it dictates the entire total addressable market (TAM) strategy for AI-native services [17]. It explains why founders must transition away from selling software tools to instead sell the "work" itself, allowing them to capture massive existing labor and outsourcing budgets through a "service as software" paradigm [17, 21].
-
-[^142]: [[sources/6]]
-[^143]: [[sources/6]]
-[^145]: [[sources/6]]
-[^146]: [[sources/6]]
-[^148]: [[sources/6]]
-[^155]: [[sources/6]]
-[^156]: [[sources/6]]
-[^163]: [[sources/6]]
-[^196]: [[sources/6]]
-[^197]: [[sources/6]]
-[^252]: [[sources/8]]
-[^255]: [[sources/8]]
-[^256]: [[sources/8]]
-[^257]: [[sources/8]]
-[^258]: [[sources/8]]
-[^274]: [[sources/9]]
-[^276]: [[sources/9]]
-[^361]: [[sources/13]]
-[^365]: [[sources/13]]
-[^368]: [[sources/13]]
-[^390]: [[sources/14]]
 
 [^1]: [[sources/web-2025-12-03-88d]] [^2]: [[sources/web-2025-12-03-88d]] [^3]: [[sources/web-2025-12-03-88d]] [^4]: [[sources/web-2025-12-03-88d]] [^5]: [[sources/web-2025-12-03-88d]] [^6]: [[sources/web-2025-12-03-88d]] [^7]: [[sources/web-2025-02-04-182]] [^8]: [[sources/web-2025-02-04-182]] [^9]: [[sources/web-2025-02-04-182]] [^10]: [[sources/web-2025-02-04-182]] [^11]: [[sources/web-2025-02-04-182]] [^12]: [[sources/web-2025-12-03-88d]] [^13]: [[sources/web-2025-04-11-55b]] [^14]: [[sources/web-2025-12-03-88d]] [^15]: [[sources/web-2025-12-03-88d]] [^16]: [[sources/web-2025-12-03-88d]] [^17]: [[sources/web-2026-03-06-79f]] [^18]: [[sources/web-2024-07-15-7c9]] [^19]: [[sources/web-2024-07-15-7c9]] [^20]: [[sources/web-2024-07-15-7c9]] [^21]: [[sources/web-2026-03-06-79f]]
 
@@ -216,29 +168,6 @@ Based on the provided sources, several recurring trade-offs and tensions define 
 *   The optimal operational trade-off is to automate discrete "tasks, not people," aggressively assigning formulaic, low-damage "intelligence" work—like drafting code, pulling data, or parsing documents—to AI agents [19, 20]. 
 *   Conversely, founders must intentionally retain manual control over complex "judgment" tasks—such as market validation, complex strategy, deciding which customer to fire, or any decision requiring real "skin in the game" [20, 21]. 
 *   Attempting to automate high-stakes judgment roles fails because AI structurally lacks human accountability, instinct, and the ability to build genuine relational trust [21, 22].
-
-[^1]: [[sources/10]]
-[^2]: [[sources/10]]
-[^3]: [[sources/10]]
-[^4]: [[sources/10]]
-[^5]: [[sources/1]]
-[^6]: [[sources/12]]
-[^7]: [[sources/1]]
-[^8]: [[sources/4]]
-[^9]: [[sources/6]]
-[^10]: [[sources/7]]
-[^11]: [[sources/3]]
-[^12]: [[sources/6]]
-[^13]: [[sources/6]]
-[^14]: [[sources/6]]
-[^15]: [[sources/10]]
-[^16]: [[sources/10]]
-[^17]: [[sources/10]]
-[^18]: [[sources/5]]
-[^19]: [[sources/10]]
-[^20]: [[sources/12]]
-[^21]: [[sources/12]]
-[^22]: [[sources/12]]
 
 [^1]: [[sources/web-2026-05-22-52b]] [^2]: [[sources/web-2026-05-22-52b]] [^3]: [[sources/web-2026-05-22-52b]] [^4]: [[sources/web-2026-05-22-52b]] [^5]: [[sources/web-2026-05-22-52b]] [^6]: [[sources/web-2026-05-22-52b]] [^7]: [[sources/web-2026-05-22-52b]] [^8]: [[sources/web-2026-05-22-52b]] [^9]: [[sources/web-2026-05-22-52b]] [^10]: [[sources/web-2026-05-22-52b]] [^11]: [[sources/web-2026-05-22-52b]] [^12]: [[sources/web-2026-05-22-52b]] [^13]: [[sources/web-2026-05-22-52b]] [^14]: [[sources/web-2026-05-22-52b]] [^15]: [[sources/web-2026-05-22-52b]] [^16]: [[sources/web-2026-05-22-52b]] [^17]: [[sources/web-2026-05-22-52b]] [^18]: [[sources/web-2026-05-22-52b]] [^19]: [[sources/web-2026-05-22-52b]] [^20]: [[sources/web-2026-05-22-52b]] [^21]: [[sources/web-2026-05-22-52b]] [^22]: [[sources/web-2026-05-22-52b]]
 

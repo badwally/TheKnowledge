@@ -58,28 +58,6 @@ Based on the provided sources, the corpus documents several distinct frameworks 
 *   **Core approach, mechanism, or supporting evidence:** AI-native companies intentionally blur the lines between management and individual contribution, demanding that leaders spend their time actively building the product rather than building organizational hierarchies. [17] By limiting the time available for traditional management, the organization is forced to hire autonomous individuals who do not require micromanagement. [18]
 *   **Concrete details:** Gamma deployed this player-coach model to reach $50 million ARR with only 30 employees, structuring their team so that leaders actively coded and designed. [17, 19] At one stage, designers constituted one-third of the entire 12-person company, reflecting the human taxonomy's shift toward prioritizing user experience as the primary human differentiator in AI applications. [17]
 
-[^55]: [[sources/4]]
-[^56]: [[sources/4]]
-[^59]: [[sources/4]]
-[^60]: [[sources/4]]
-[^61]: [[sources/4]]
-[^62]: [[sources/4]]
-[^64]: [[sources/4]]
-[^65]: [[sources/4]]
-[^75]: [[sources/4]]
-[^76]: [[sources/4]]
-[^79]: [[sources/5]]
-[^103]: [[sources/5]]
-[^104]: [[sources/5]]
-[^141]: [[sources/7]]
-[^142]: [[sources/7]]
-[^143]: [[sources/7]]
-[^144]: [[sources/7]]
-[^147]: [[sources/7]]
-[^150]: [[sources/7]]
-[^151]: [[sources/7]]
-[^153]: [[sources/7]]
-
 [^1]: [[sources/yt-I08ZeY7QcrE]] [^2]: [[sources/yt-I08ZeY7QcrE]] [^3]: [[sources/yt-I08ZeY7QcrE]] [^4]: [[sources/yt-I08ZeY7QcrE]] [^5]: [[sources/yt-I08ZeY7QcrE]] [^6]: [[sources/yt-I08ZeY7QcrE]] [^7]: [[sources/yt-I08ZeY7QcrE]] [^8]: [[sources/yt-I08ZeY7QcrE]] [^9]: [[sources/web-2026-04-23-e4c]] [^10]: [[sources/web-2026-04-23-e4c]] [^11]: [[sources/web-2026-04-23-e4c]] [^12]: [[sources/web-2026-04-23-e4c]] [^13]: [[sources/web-2026-04-23-e4c]] [^14]: [[sources/web-2026-04-23-e4c]] [^15]: [[sources/web-2026-04-23-e4c]] [^16]: [[sources/web-2026-04-23-e4c]] [^17]: [[sources/web-2025-10-04-aae]] [^18]: [[sources/web-2025-10-04-aae]] [^19]: [[sources/web-2025-10-04-aae]]
 
 ### Comparisons
@@ -103,32 +81,6 @@ Based on the provided sources, comparing the different organizational frameworks
 *   **Trade-offs and contexts:** The Player-Coach framework applies well to highly competitive, product-led environments where human differentiation in user experience is critical, such as Gamma prioritizing human design talent to the point that designers constituted one-third of their early team [16, 17]. The solo stack applies best to bootstrapped environments focused on infinite runway and simplicity, deliberately trading explosive growth potential for total founder control and zero management overhead [21, 23-25].
 *   **Strengths and weaknesses:** The strength of the Player-Coach model is its operational velocity and capacity for rapid product iteration without middle-management friction, though it still fundamentally incurs human payroll costs and some coordination overhead [17, 18]. The solo approach structurally maximizes revenue per operator and eliminates payroll risks, but its core weakness is that the founder becomes the absolute bottleneck for tasks that genuinely cannot be automated—such as building strategic relationships—creating a natural ceiling on their potential scale [1, 2, 25].
 
-[^41]: [[sources/3]]
-[^44]: [[sources/3]]
-[^45]: [[sources/3]]
-[^47]: [[sources/3]]
-[^55]: [[sources/4]]
-[^59]: [[sources/4]]
-[^60]: [[sources/4]]
-[^61]: [[sources/4]]
-[^62]: [[sources/4]]
-[^64]: [[sources/4]]
-[^65]: [[sources/4]]
-[^75]: [[sources/4]]
-[^76]: [[sources/4]]
-[^103]: [[sources/5]]
-[^104]: [[sources/5]]
-[^105]: [[sources/5]]
-[^138]: [[sources/7]]
-[^139]: [[sources/7]]
-[^140]: [[sources/7]]
-[^142]: [[sources/7]]
-[^143]: [[sources/7]]
-[^144]: [[sources/7]]
-[^149]: [[sources/7]]
-[^150]: [[sources/7]]
-[^151]: [[sources/7]]
-
 [^1]: [[sources/web-2026-04-23-e4c]] [^2]: [[sources/web-2026-04-23-e4c]] [^3]: [[sources/yt-I08ZeY7QcrE]] [^4]: [[sources/yt-I08ZeY7QcrE]] [^5]: [[sources/web-2026-04-23-e4c]] [^6]: [[sources/web-2026-04-23-e4c]] [^7]: [[sources/yt-I08ZeY7QcrE]] [^8]: [[sources/yt-I08ZeY7QcrE]] [^9]: [[sources/yt-I08ZeY7QcrE]] [^10]: [[sources/yt-I08ZeY7QcrE]] [^11]: [[sources/web-2026-04-23-e4c]] [^12]: [[sources/web-2026-04-23-e4c]] [^13]: [[sources/yt-I08ZeY7QcrE]] [^14]: [[sources/yt-I08ZeY7QcrE]] [^15]: [[sources/yt-I08ZeY7QcrE]] [^16]: [[sources/web-2025-10-04-aae]] [^17]: [[sources/web-2025-10-04-aae]] [^18]: [[sources/web-2025-10-04-aae]] [^19]: [[sources/yt-msfECL74sIA]] [^20]: [[sources/web-2026-04-23-e4c]] [^21]: [[sources/web-2026-04-23-e4c]] [^22]: [[sources/web-2026-04-23-e4c]] [^23]: [[sources/yt-msfECL74sIA]] [^24]: [[sources/yt-msfECL74sIA]] [^25]: [[sources/yt-msfECL74sIA]]
 
 ### Gaps
@@ -151,10 +103,6 @@ Based on the provided sources, several critical gaps, unanswered tensions, and o
 *   While the overarching research question asks for detailed agent-in-the-loop patterns—specifically review gates, formal evals, escalation protocols, and strict decision rules for human-versus-agent additions—the sources offer only broad platitudes [2].
 *   The corpus states that human oversight is "cheap compared to human execution" and advises founders to keep "complex judgment" decisions for themselves, but it entirely lacks specific, actionable operational frameworks, technical evaluation protocols, or defined escalation triggers [2].
 *   Additionally, the corpus completely omits the requested case studies (Cognition, Sierra, Lindy, Crosby, Marc Lou) and specific academic research (Brynjolfsson, Mollick, GitHub Copilot studies), leaving a massive evidentiary gap regarding how frontier AI-native companies actually structure their formal role taxonomies [1-3].
-
-[^1]: [[sources/4]]
-[^2]: [[sources/7]]
-[^3]: [[sources/5]]
 
 [^1]: [[sources/web-2025-02-14-794]] [^2]: [[sources/web-2025-02-14-794]] [^3]: [[sources/web-2025-02-14-794]]
 

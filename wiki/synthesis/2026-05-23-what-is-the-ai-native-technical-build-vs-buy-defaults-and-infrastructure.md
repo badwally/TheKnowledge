@@ -58,10 +58,6 @@ Based on the provided sources, several patterns emerge regarding how operators n
 *   **Core approach or mechanism:** Operators building clinical intelligence layers focus on ambient data collection and use existing enterprise systems—like Electronic Health Records (EHR)—as their central hubs [3]. Deep interoperability with these legacy vendor platforms is considered non-negotiable table stakes for enterprise adoption [3].
 *   **Concrete details:** Abridge utilizes event-driven architecture, Kafka, Temporal, and CRDTs to manage its infrastructure robustly [3]. By relying on the EHR as its operating filesystem, the company projects it will process over 80 million patient-clinician conversations this year across 250 large health systems, successfully bridging the gap between cutting-edge LLMs and highly regulated enterprise environments [3].
 
-[^1]: [[sources/5]]
-[^2]: [[sources/1]]
-[^3]: [[sources/6]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
 ### Comparisons
@@ -88,10 +84,6 @@ Based on the provided sources, several distinct comparisons emerge regarding how
 *   Abridge, operating in the healthcare sector, takes the opposite approach by deeply integrating its AI agents into existing, legacy Electronic Health Record (EHR) systems [2]. 
 *   Abridge claims that in complex enterprises, the legacy software itself acts as the non-negotiable "filesystem" for the agent [2]. 
 *   The context dictates the approach: Railway's greenfield infrastructure is optimized for deploying net-new applications with near-zero activation energy, whereas Abridge's strategy is mandatory for surviving in highly regulated, entrenched environments where deep interoperability is the primary barrier to adoption [2].
-
-[^1]: [[sources/1]]
-[^2]: [[sources/6]]
-[^3]: [[sources/5]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
@@ -122,12 +114,6 @@ Based on the provided sources, several unresolved questions and gaps emerge rega
 *   The financial guides explicitly warn that the hidden infrastructure costs of storing embeddings, vector indexes, and historical logs can easily exceed the raw costs of LLM inference tokens [5].
 *   Yet, the corpus fails to evaluate the build-vs-buy default for this specific data layer [5].
 *   It does not address whether a solo operator is better off paying for managed, specialized vector database vendors or building simple, cost-effective local storage solutions (like SQLite) to manage this growing data burden without destroying their margins [5].
-
-[^1]: [[sources/1]]
-[^2]: [[sources/5]]
-[^3]: [[sources/6]]
-[^4]: [[sources/8]]
-[^5]: [[sources/10]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]] [^4]: [[sources/web-2025-12-24-e64]] [^5]: [[sources/web-2025-12-24-e64]]
 

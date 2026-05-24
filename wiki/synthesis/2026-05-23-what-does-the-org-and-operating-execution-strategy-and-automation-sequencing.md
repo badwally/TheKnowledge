@@ -53,17 +53,6 @@ Based on the provided sources, several patterns emerge regarding how solo and AI
 *   **The core approach, mechanism, or supporting evidence:** Instead of getting stuck in an endless loop of building massive, complex generative software that nobody wants, founders should use "a little bit of AI" to unlock one specific, highly painful step in a user's process.
 *   **Any concrete details:** Gamma's initial success was not due to building an autonomous AI system from the ground up, but by adding just enough AI to let users write a couple of sentences to instantly generate a slide deck, while keeping the rest of the product as traditional software [9]. In the INSEAD "AI Founder Sprint" studying 500 entrepreneurs, founders who succeeded were those who identified their singular bottleneck—such as marketing plan creation—and used off-the-shelf tools to build a custom agent just for that specific hurdle, leading to a 20% increase in productivity and a $250,000 drop in their demand for venture capital [10].
 
-[^1]: [[sources/7]]
-[^2]: [[sources/7]]
-[^3]: [[sources/7]]
-[^4]: [[sources/7]]
-[^5]: [[sources/7]]
-[^6]: [[sources/3]]
-[^7]: [[sources/3]]
-[^8]: [[sources/3]]
-[^9]: [[sources/4]]
-[^10]: [[sources/4]]
-
 [^1]: [[sources/web-2025-02-14-794]] [^2]: [[sources/web-2025-02-14-794]] [^3]: [[sources/web-2025-02-14-794]] [^4]: [[sources/web-2025-02-14-794]] [^5]: [[sources/web-2025-02-14-794]] [^6]: [[sources/web-2025-02-14-794]] [^7]: [[sources/web-2025-02-14-794]] [^8]: [[sources/web-2025-02-14-794]] [^9]: [[sources/web-2025-02-14-794]] [^10]: [[sources/web-2025-02-14-794]]
 
 ### Comparisons
@@ -86,31 +75,6 @@ Based on the provided sources, comparing the execution strategies of AI-native s
 *   **Differences in evidence, outcomes, or stated claims:** The Oversight-First model claims that because AI agents will confidently produce plausible but flawed outputs when running underdocumented processes, the founder's role must permanently shift to continuous, careful monitoring of the execution layer [17]. In contrast, the High-Volume Compounding Growth framework relies on using code and AI to autonomously execute massive amounts of top-of-funnel marketing work, such as generating hundreds of programmatic SEO pages or automated community meetups, without intensive per-item human review [18].
 *   **Trade-offs or contexts where each applies:** The Oversight-First framework is essential for core operational workflows—like legal guidance or direct customer support—where an unreviewed hallucination could cause direct business damage [19]. High-Volume Automated Marketing is applicable for distribution channels where the cost of a failed output is essentially zero and sheer volume dictates success [20].
 *   **Strengths and weaknesses:** A key strength of the Oversight-First model is that it ensures reliable quality control, operating on the economic reality that human oversight of an AI is far cheaper than human execution [21]. However, a weakness is that it naturally bottlenecks the company's output to the founder's personal capacity for continuous review [22]. The strength of the High-Volume framework is its ability to create compounding, exponential organic distribution with virtually zero overhead [23]. Yet, its weakness is that treating marketing and content generation purely as an automated numbers game can require launching up to 70 total projects before finding a reliable, compounding growth engine [24].
-
-[^1]: [[sources/7]]
-[^2]: [[sources/4]]
-[^3]: [[sources/7]]
-[^4]: [[sources/4]]
-[^5]: [[sources/7]]
-[^6]: [[sources/7]]
-[^7]: [[sources/4]]
-[^8]: [[sources/4]]
-[^9]: [[sources/3]]
-[^10]: [[sources/5]]
-[^11]: [[sources/3]]
-[^12]: [[sources/5]]
-[^13]: [[sources/3]]
-[^14]: [[sources/3]]
-[^15]: [[sources/5]]
-[^16]: [[sources/5]]
-[^17]: [[sources/7]]
-[^18]: [[sources/3]]
-[^19]: [[sources/7]]
-[^20]: [[sources/3]]
-[^21]: [[sources/7]]
-[^22]: [[sources/7]]
-[^23]: [[sources/3]]
-[^24]: [[sources/3]]
 
 [^1]: [[sources/web-2025-02-14-794]] [^2]: [[sources/web-2025-02-14-794]] [^3]: [[sources/web-2025-02-14-794]] [^4]: [[sources/web-2025-02-14-794]] [^5]: [[sources/web-2025-02-14-794]] [^6]: [[sources/web-2025-02-14-794]] [^7]: [[sources/web-2025-02-14-794]] [^8]: [[sources/web-2025-02-14-794]] [^9]: [[sources/web-2025-02-14-794]] [^10]: [[sources/web-2025-02-14-794]] [^11]: [[sources/web-2025-02-14-794]] [^12]: [[sources/web-2025-02-14-794]] [^13]: [[sources/web-2025-02-14-794]] [^14]: [[sources/web-2025-02-14-794]] [^15]: [[sources/web-2025-02-14-794]] [^16]: [[sources/web-2025-02-14-794]] [^17]: [[sources/web-2025-02-14-794]] [^18]: [[sources/web-2025-02-14-794]] [^19]: [[sources/web-2025-02-14-794]] [^20]: [[sources/web-2025-02-14-794]] [^21]: [[sources/web-2025-02-14-794]] [^22]: [[sources/web-2025-02-14-794]] [^23]: [[sources/web-2025-02-14-794]] [^24]: [[sources/web-2025-02-14-794]]
 
@@ -138,21 +102,6 @@ Based on the provided sources, several critical gaps, unanswered tensions, and o
 **Items Compared:** The Scope of the Target Research Question versus the Provided Corpus Coverage.
 *   While the overarching research question asks for a comprehensive analysis of specific named entities, the corpus entirely omits several critical case studies, offering zero mentions of the companies Cognition, Sierra, Lindy, or Crosby, and completely excluding solo operator Marc Lou [11, 13]. 
 *   Furthermore, the texts fail to address the requested academic productivity research from Brynjolfsson, Mollick, or the GitHub Copilot studies, severely limiting a careful reader's ability to cross-reference the corpus's claims regarding automation sequencing against established empirical productivity benchmarks [13, 14].
-
-[^42]: [[sources/3]]
-[^52]: [[sources/3]]
-[^56]: [[sources/4]]
-[^74]: [[sources/4]]
-[^75]: [[sources/4]]
-[^138]: [[sources/7]]
-[^140]: [[sources/7]]
-[^142]: [[sources/7]]
-[^143]: [[sources/7]]
-[^144]: [[sources/7]]
-[^146]: [[sources/7]]
-[^147]: [[sources/7]]
-[^153]: [[sources/7]]
-[^154]: [[sources/7]]
 
 [^1]: [[sources/yt-msfECL74sIA]] [^2]: [[sources/yt-msfECL74sIA]] [^3]: [[sources/web-2026-04-23-e4c]] [^4]: [[sources/web-2026-04-23-e4c]] [^5]: [[sources/web-2026-04-23-e4c]] [^6]: [[sources/web-2026-04-23-e4c]] [^7]: [[sources/web-2026-04-23-e4c]] [^8]: [[sources/web-2026-04-23-e4c]] [^9]: [[sources/yt-I08ZeY7QcrE]] [^10]: [[sources/yt-I08ZeY7QcrE]] [^11]: [[sources/web-2026-04-23-e4c]] [^12]: [[sources/web-2026-04-23-e4c]] [^13]: [[sources/web-2026-04-23-e4c]] [^14]: [[sources/yt-I08ZeY7QcrE]]
 

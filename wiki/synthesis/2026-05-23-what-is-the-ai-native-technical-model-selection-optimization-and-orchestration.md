@@ -56,11 +56,6 @@ draft_unresolved_claims: 7
 *   **Core approach or mechanism:** While massive frontier transformers dominate reasoning tasks, specialized, compute-efficient architectures are deployed pragmatically for tasks that require extreme speed and scale [4].
 *   **Concrete details:** Shopify uses Liquid AI in production for low-latency query understanding, runtime product search, large-scale catalog lookups, and identity linking, proving it is a genuinely competitive alternative to transformers for specific high-volume workloads [4].
 
-[^1]: [[sources/8]]
-[^2]: [[sources/4]]
-[^3]: [[sources/11]]
-[^4]: [[sources/6]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]] [^4]: [[sources/web-2025-12-24-e64]]
 
 ### Comparisons
@@ -88,10 +83,6 @@ Based on the provided sources, several structural comparisons emerge regarding h
 *   However, in modern agentic systems, tool definitions and their subsequent outputs consume the vast majority of the LLM's token budget, making the physical structure of the payload highly consequential [1]. 
 *   Shifting from highly verbose JSON to the more concise YAML format significantly reduces token consumption [1]. 
 *   This tactical change yields a distinct strength for operators: it provides a more token-efficient data shape that is significantly easier for an LLM to process and analyze, directly improving both model parsing performance and inference costs without altering the underlying application logic [1].
-
-[^1]: [[sources/4]]
-[^2]: [[sources/8]]
-[^3]: [[sources/6]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
@@ -129,10 +120,6 @@ Based on the provided sources, several critical gaps and unresolved tensions eme
 *   The corpus showcases the deployment of non-transformer models, like Liquid AI, to achieve ultra-low latency and compute efficiency for high-volume tasks like runtime product search and identity linking [3].
 *   However, this is presented entirely in the context of a massive enterprise infrastructure, specifically Shopify's internal machine learning platform [3].
 *   The sources do not address whether a solo operator can or should attempt to integrate these novel architectures into a standard agentic stack, or if deploying these specialized models requires prohibitive setup and fine-tuning resources that a tiny team cannot afford [3].
-
-[^1]: [[sources/4]]
-[^2]: [[sources/10]]
-[^3]: [[sources/6]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 

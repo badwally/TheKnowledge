@@ -58,10 +58,6 @@ Based on the provided sources, several distinct strategies and frameworks emerge
 *   **Core approach, mechanism, or supporting evidence:** Traditional SaaS giants rely entirely on charging customers per employee seat [1]. Because successful AI agents reduce the number of human employees required to do a job, an incumbent building truly autonomous agents would inherently cannibalize its core revenue model [1]. Startups exploit this vulnerability by counter-positioning their businesses, charging based on actual work delivered rather than human seats provisioned [1].
 *   **Concrete details:** An AI startup named Aoka targeted the HVAC industry by replacing standard software subscriptions (which historically captured only 1% of a customer's wallet share) with AI customer support agents, allowing them to capture 4% to 10% of the customer's total spend by actually performing the labor [1].
 
-[^1]: [[sources/7]]
-[^2]: [[sources/11]]
-[^3]: [[sources/9]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
 ### Comparisons
@@ -101,11 +97,6 @@ Several comparative frameworks emerge regarding how startups establish defensibl
 *   Furthermore, companies like Character AI have proven that taking off-the-shelf models and fine-tuning them to bring serving costs down by a factor of ten serves as its own highly lucrative form of a cornered resource [1]. 
 *   The core trade-off is that while building a frontier model requires billions of dollars and risks swift obsolescence, owning the workflow and context layer allows startups to compose existing vendor models cheaply while building a sticky product experience that users refuse to leave [1, 4].
 
-[^6]: [[sources/6]]
-[^7]: [[sources/7]]
-[^9]: [[sources/9]]
-[^11]: [[sources/11]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]] [^4]: [[sources/web-2025-12-24-e64]]
 
 ### Gaps
@@ -135,11 +126,6 @@ Based on the provided sources, several critical gaps and unresolved tensions eme
 *   The sources frequently acknowledge the existential fear of foundation labs (like OpenAI or Anthropic) entering startup categories, explicitly noting that mid-size startups and traditional SaaS are under real pressure as frontier models absorb more of the software stack [1, 2].
 *   While the general advice is to rely on execution speed or target unglamorous workflows, the corpus lacks a rigorous technical heuristic for predicting exactly *which* data workflows will be rendered obsolete by the next generation of frontier models [1, 2].
 *   For a solo operator allocating limited resources, the line between a defensible, context-rich workflow moat and a temporary "wrapper" doomed to be eaten by native model capabilities remains completely undefined [1, 2].
-
-[^6]: [[sources/134]]
-[^7]: [[sources/252]]
-[^9]: [[sources/319]]
-[^11]: [[sources/386]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]] [^4]: [[sources/web-2025-12-24-e64]]
 

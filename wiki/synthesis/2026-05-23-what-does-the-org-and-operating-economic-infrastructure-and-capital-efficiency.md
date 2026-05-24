@@ -60,30 +60,6 @@ Based on the provided sources, several patterns emerge regarding how AI-native o
     *   **Core approach:** To offset the heavy compute costs of AI generation, companies expand their platforms with low-compute, high-value tools to reach sustainable unit economics [17, 19]. 
     *   **Concrete details:** Startups that rely exclusively on AI generation face a "Pets.com Dilemma," occasionally paying up to $20,000 to service a user who is only generating equivalent revenue [20, 21]. The solution is to emulate Canva, which has maintained profitability for eight years by allowing users to generate high-cost AI assets, but keeping them engaged for longer periods in low-compute editing suites [17, 22, 23]. Adding non-generative features like robust analytics or traditional editing capabilities prevents founders from bleeding capital on pure AI inference [18, 19].
 
-[^5]: [[sources/1]]
-[^6]: [[sources/1]]
-[^27]: [[sources/2]]
-[^28]: [[sources/2]]
-[^30]: [[sources/2]]
-[^31]: [[sources/2]]
-[^32]: [[sources/2]]
-[^33]: [[sources/2]]
-[^36]: [[sources/2]]
-[^59]: [[sources/4]]
-[^60]: [[sources/4]]
-[^79]: [[sources/5]]
-[^99]: [[sources/5]]
-[^100]: [[sources/5]]
-[^101]: [[sources/5]]
-[^102]: [[sources/5]]
-[^103]: [[sources/5]]
-[^105]: [[sources/5]]
-[^138]: [[sources/7]]
-[^139]: [[sources/7]]
-[^140]: [[sources/7]]
-[^148]: [[sources/7]]
-[^149]: [[sources/7]]
-
 [^1]: [[sources/web-2026-04-23-e4c]] [^2]: [[sources/web-2026-04-23-e4c]] [^3]: [[sources/web-2026-04-23-e4c]] [^4]: [[sources/web-2026-04-23-e4c]] [^5]: [[sources/web-2026-04-23-e4c]] [^6]: [[sources/yt-I08ZeY7QcrE]] [^7]: [[sources/web-2025-10-04-aae]] [^8]: [[sources/yt-I08ZeY7QcrE]] [^9]: [[sources/web-2025-10-04-aae]] [^10]: [[sources/web-2025-10-04-aae]] [^11]: [[sources/web-2025-10-04-aae]] [^12]: [[sources/web-2025-02-14-794]] [^13]: [[sources/web-2025-10-04-aae]] [^14]: [[sources/web-2025-10-04-aae]] [^15]: [[sources/web-2025-02-14-794]] [^16]: [[sources/web-2025-10-04-aae]] [^17]: [[sources/web-2026-04-10-562]] [^18]: [[sources/web-2026-04-10-562]] [^19]: [[sources/web-2026-04-10-562]] [^20]: [[sources/web-2026-04-10-562]] [^21]: [[sources/web-2026-04-10-562]] [^22]: [[sources/web-2026-04-10-562]] [^23]: [[sources/web-2026-04-10-562]]
 
 ### Comparisons
@@ -101,33 +77,6 @@ Based on the provided sources, comparing the economic frameworks of AI-native or
 *   **Differences in claims and outcomes:** Proponents of credit-based pricing argue that because software now functions as labor with highly variable foundation model costs, companies must abandon flat per-seat pricing and directly charge for usage or resolutions to survive [13-15]. Conversely, the Canva Playbook argues that merely adjusting pricing on AI generation is insufficient because pure AI features are a commoditized "Pets.com dilemma" that inevitably leads to negative margins [16-18].
 *   **Trade-offs and contexts:** Credit-based pricing models—such as Genspark charging 1,000 to 2,000 credits for high-compute video generation—directly align revenue with compute costs but introduce a psychological trade-off, as users can feel alienated or punished if they spend premium credits on a failed AI output [19, 20]. The Canva Playbook suggests circumventing this friction entirely by building high-value, low-compute features—like data analytics and content editing suites—to subsidize the expensive AI generation costs while keeping users engaged [21-23].
 *   **Strengths and weaknesses:** A core strength of the credit and outcome-based pricing model is its natural alignment with value delivered, as seen in Decagon charging per-resolution instead of a traditional $115 per-agent seat [14, 24]. However, a weakness of this model is that companies may still intentionally lose money on power users to drive viral growth [15]. The primary strength of the Canva Playbook is that it ensures long-term positive unit economics from day one, preventing founders from relying on continuous venture capital to bridge the gap of negative margins [18, 25, 26].
-
-[^4]: [[sources/1]]
-[^5]: [[sources/1]]
-[^6]: [[sources/1]]
-[^28]: [[sources/2]]
-[^29]: [[sources/2]]
-[^30]: [[sources/2]]
-[^31]: [[sources/2]]
-[^32]: [[sources/2]]
-[^33]: [[sources/2]]
-[^34]: [[sources/2]]
-[^35]: [[sources/2]]
-[^99]: [[sources/5]]
-[^100]: [[sources/5]]
-[^102]: [[sources/5]]
-[^103]: [[sources/5]]
-[^104]: [[sources/5]]
-[^105]: [[sources/5]]
-[^108]: [[sources/5]]
-[^110]: [[sources/5]]
-[^122]: [[sources/6]]
-[^123]: [[sources/6]]
-[^137]: [[sources/7]]
-[^138]: [[sources/7]]
-[^140]: [[sources/7]]
-[^144]: [[sources/7]]
-[^151]: [[sources/7]]
 
 [^1]: [[sources/web-2026-04-23-e4c]] [^2]: [[sources/web-2026-04-23-e4c]] [^3]: [[sources/web-2026-04-23-e4c]] [^4]: [[sources/web-2025-10-04-aae]] [^5]: [[sources/web-2025-10-04-aae]] [^6]: [[sources/web-2026-04-23-e4c]] [^7]: [[sources/web-2026-04-23-e4c]] [^8]: [[sources/web-2025-10-04-aae]] [^9]: [[sources/web-2025-10-04-aae]] [^10]: [[sources/web-2024-02-07-3a2]] [^11]: [[sources/web-2024-02-07-3a2]] [^12]: [[sources/web-2025-10-04-aae]] [^13]: [[sources/web-2025-02-14-794]] [^14]: [[sources/web-2025-02-14-794]] [^15]: [[sources/web-2025-10-04-aae]] [^16]: [[sources/web-2026-04-10-562]] [^17]: [[sources/web-2026-04-10-562]] [^18]: [[sources/web-2026-04-10-562]] [^19]: [[sources/web-2025-10-04-aae]] [^20]: [[sources/web-2025-10-04-aae]] [^21]: [[sources/web-2026-04-10-562]] [^22]: [[sources/web-2026-04-10-562]] [^23]: [[sources/web-2026-04-10-562]] [^24]: [[sources/web-2025-02-14-794]] [^25]: [[sources/web-2026-04-10-562]] [^26]: [[sources/web-2026-04-10-562]]
 
@@ -148,21 +97,6 @@ Based on the provided sources, several unresolved questions, limitations, and ga
 
 **Items Compared:** Bootstrapped capital efficiency versus venture-scale defensibility.
 *   **The Limit of Lean Operations in Competitive Markets:** There is an acknowledged tension regarding when extreme capital efficiency transitions from a strategic advantage to a fatal liability [14]. The sources note that while remaining lean preserves optionality, it may severely limit a startup's velocity in "winner-take-all" markets or in sectors that require heavy initial infrastructure investments [14]. The corpus states that the real question for AI-native companies is "not whether to raise capital but when and how much," yet it completely fails to provide a decision framework or specific criteria for when a solo founder must abandon bootstrapping and take venture capital to survive against well-funded competitors [14].
-
-[^30]: [[sources/2]]
-[^31]: [[sources/2]]
-[^32]: [[sources/2]]
-[^33]: [[sources/2]]
-[^36]: [[sources/2]]
-[^47]: [[sources/3]]
-[^108]: [[sources/5]]
-[^110]: [[sources/5]]
-[^119]: [[sources/6]]
-[^120]: [[sources/6]]
-[^123]: [[sources/6]]
-[^140]: [[sources/7]]
-[^144]: [[sources/7]]
-[^145]: [[sources/7]]
 
 [^1]: [[sources/web-2024-02-07-3a2]] [^2]: [[sources/web-2024-02-07-3a2]] [^3]: [[sources/yt-msfECL74sIA]] [^4]: [[sources/web-2024-02-07-3a2]] [^5]: [[sources/web-2026-04-23-e4c]] [^6]: [[sources/web-2025-10-04-aae]] [^7]: [[sources/web-2026-04-23-e4c]] [^8]: [[sources/web-2026-04-10-562]] [^9]: [[sources/web-2026-04-10-562]] [^10]: [[sources/web-2026-04-10-562]] [^11]: [[sources/web-2026-04-10-562]] [^12]: [[sources/web-2026-04-10-562]] [^13]: [[sources/web-2026-04-23-e4c]] [^14]: [[sources/web-2025-10-04-aae]]
 

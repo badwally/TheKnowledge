@@ -58,10 +58,6 @@ Based on the provided sources, several patterns emerge regarding how operators m
 *   **Core approach or mechanism:** Financial planning must account for the full lifecycle costs of the AI data pipeline, as the peripheral infrastructure required to support agentic memory and context retrieval often exceeds the cost of the core LLM inference.
 *   **Concrete details:** The expenses associated with storing embeddings, maintaining vector databases for Retrieval-Augmented Generation (RAG), and preserving historical logs scale continuously alongside customer usage, often surpassing the raw cost of the tokens themselves. [2] Additionally, maintaining ongoing regulatory audits, privacy controls, and cross-cloud compliance for these AI systems creates a massive cost burden that can equal raw compute costs. [2]
 
-[^1]: [[sources/2]]
-[^2]: [[sources/10]]
-[^3]: [[sources/7]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]] [^3]: [[sources/web-2025-12-24-e64]]
 
 ### Comparisons
@@ -99,9 +95,6 @@ Based on the provided sources, several patterns emerge regarding how operators m
 *   The sources highlight this as an extreme 100x cost disparity, illustrating a massive unit-economic strength for companies capable of maintaining open-weight models [1].
 *   The trade-off for the operator involves deciding between the immediate out-of-the-box utility of expensive proprietary models and the long-term margin protection achieved by adopting open-source infrastructure [1].
 
-[^1]: [[sources/1]]
-[^10]: [[sources/10]]
-
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]]
 
 ### Gaps
@@ -131,9 +124,6 @@ Based on the provided sources, several critical gaps and unresolved tensions eme
 *   CFOs are explicitly advised to run worst-case scenarios for "vendor cost-shifts," preparing for the likelihood that LLM providers may abruptly alter token pricing or context window billing rules mid-year. [2]
 *   To optimize these costs and protect margins, the provided advice explicitly suggests "negotiating commitment discounts" directly with model providers. [2]
 *   This leaves a massive gap for solo operators and tiny startups, who possess zero volume leverage to negotiate custom enterprise discounts with giants like OpenAI or Anthropic, leaving them entirely exposed to upstream price hikes with no actionable defense mechanism other than completely ripping out and switching models. [2]
-
-[^1]: [[sources/1]]
-[^10]: [[sources/10]]
 
 [^1]: [[sources/web-2025-12-24-e64]] [^2]: [[sources/web-2025-12-24-e64]]
 

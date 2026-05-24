@@ -51,32 +51,6 @@ Based on the provided sources, several cross-cutting frameworks and principles s
 *   **Themes Used In:** AI-Native Go-To-Market (GTM) and Distribution, Execution Strategy and Automation Sequencing
 *   **How it is applied:** Startups use code and AI not just to build products, but to structurally manufacture their own distribution and testing volume [19]. In the GTM theme, this appears as products engineered for self-distribution, where standard outputs inherently drive new user acquisition through "casual contact loops," such as Gamma's watermarks or Lovable's "Edit with Lovable" buttons on user-generated websites [20, 21]. In the Execution Strategy theme, this principle manifests as the "Stochastic World" or "Small Bets" framework, where solo founders like Pieter Levels launch massive volumes of simple products to see what works [22, 23]. To support this rapid testing without headcount, they use code to automate compounding marketing tasks—like generating hundreds of programmatic SEO pages based on database filters—to capture attention with virtually zero manual overhead [24, 25].
 
-[^1]: [[sources/4]]
-[^2]: [[sources/7]]
-[^3]: [[sources/7]]
-[^4]: [[sources/5]]
-[^5]: [[sources/5]]
-[^6]: [[sources/4]]
-[^7]: [[sources/4]]
-[^8]: [[sources/4]]
-[^9]: [[sources/4]]
-[^10]: [[sources/7]]
-[^11]: [[sources/7]]
-[^12]: [[sources/7]]
-[^13]: [[sources/4]]
-[^14]: [[sources/4]]
-[^15]: [[sources/4]]
-[^16]: [[sources/5]]
-[^17]: [[sources/5]]
-[^18]: [[sources/5]]
-[^19]: [[sources/3]]
-[^20]: [[sources/5]]
-[^21]: [[sources/5]]
-[^22]: [[sources/3]]
-[^23]: [[sources/3]]
-[^24]: [[sources/3]]
-[^25]: [[sources/3]]
-
 [^1]: [[sources/web-2025-02-14-794]] [^2]: [[sources/web-2025-02-14-794]] [^3]: [[sources/web-2025-02-14-794]] [^4]: [[sources/web-2025-02-14-794]] [^5]: [[sources/web-2025-02-14-794]] [^6]: [[sources/web-2025-02-14-794]] [^7]: [[sources/web-2025-02-14-794]] [^8]: [[sources/web-2025-02-14-794]] [^9]: [[sources/web-2025-02-14-794]] [^10]: [[sources/web-2025-02-14-794]] [^11]: [[sources/web-2025-02-14-794]] [^12]: [[sources/web-2025-02-14-794]] [^13]: [[sources/web-2025-02-14-794]] [^14]: [[sources/web-2025-02-14-794]] [^15]: [[sources/web-2025-02-14-794]] [^16]: [[sources/web-2025-02-14-794]] [^17]: [[sources/web-2025-02-14-794]] [^18]: [[sources/web-2025-02-14-794]] [^19]: [[sources/web-2025-02-14-794]] [^20]: [[sources/web-2025-02-14-794]] [^21]: [[sources/web-2025-02-14-794]] [^22]: [[sources/web-2025-02-14-794]] [^23]: [[sources/web-2025-02-14-794]] [^24]: [[sources/web-2025-02-14-794]] [^25]: [[sources/web-2025-02-14-794]]
 
 ### Shared Anchors
@@ -110,11 +84,6 @@ Based on the provided sources, several primary references, datasets, and case st
     *   **Which themes draw on it:** Execution Strategy and Automation Sequencing; AI-Native GTM and Distribution.
     *   **Why it is treated as foundational:** These texts provide the theoretical governance framework for bootstrapped AI operators [3]. In Execution Strategy, Jarvis's argument that "robots can be simple" while humans inherently add complex coordination overhead is used as the intellectual basis for relentless automation and minimizing headcount [3]. In GTM and Distribution, Mares's Bullseye Framework underpins the necessity of testing multiple, compounding, low-cost marketing channels—such as SEO and engineering-as-marketing—to achieve exponential distribution scale without relying on a traditional enterprise sales team [3].
 
-[^3]: [[sources/3]]
-[^4]: [[sources/4]]
-[^5]: [[sources/5]]
-[^7]: [[sources/7]]
-
 [^1]: [[sources/web-2025-02-14-794]] [^2]: [[sources/web-2025-02-14-794]] [^3]: [[sources/web-2025-02-14-794]] [^4]: [[sources/web-2025-02-14-794]]
 
 ### Recurring Tradeoffs
@@ -145,37 +114,6 @@ Based on the provided sources, several recurring trade-offs and tensions shape t
 
 **Themes Used In:** Role Taxonomy and the Human-Agent Divide, Execution Strategy and Automation Sequencing
 *   **Competing objectives and explicit trade-offs:** To effectively replace human headcount, founders must engage in intense "context engineering" to make AI agents reliable across multi-step workflows [21, 25]. This requires a massive upfront investment of time, explicitly demanding fully documented workflows and roughly two weeks of front-loaded training per individual agent before outputs become trustworthy [26-28]. This heavy governance burden directly competes with the agility advocated in the "Minimalist AI" approach, which warns founders against over-engineering complex autonomous systems that nobody wants, suggesting instead that they deploy a rapid, simple "drop of AI" to solve a singular workflow bottleneck [29, 30]. Founders must trade off the desire for immediate product launches against the temporal burden required to build robust, autonomous agent reliability [28, 29].
-
-[^4]: [[sources/1]]
-[^5]: [[sources/1]]
-[^31]: [[sources/2]]
-[^32]: [[sources/2]]
-[^33]: [[sources/2]]
-[^51]: [[sources/3]]
-[^52]: [[sources/3]]
-[^74]: [[sources/4]]
-[^75]: [[sources/4]]
-[^80]: [[sources/5]]
-[^81]: [[sources/5]]
-[^82]: [[sources/5]]
-[^83]: [[sources/5]]
-[^84]: [[sources/5]]
-[^93]: [[sources/5]]
-[^94]: [[sources/5]]
-[^95]: [[sources/5]]
-[^96]: [[sources/5]]
-[^99]: [[sources/5]]
-[^108]: [[sources/5]]
-[^109]: [[sources/5]]
-[^110]: [[sources/5]]
-[^138]: [[sources/7]]
-[^141]: [[sources/7]]
-[^142]: [[sources/7]]
-[^143]: [[sources/7]]
-[^144]: [[sources/7]]
-[^146]: [[sources/7]]
-[^147]: [[sources/7]]
-[^151]: [[sources/7]]
 
 [^1]: [[sources/web-2025-10-04-aae]] [^2]: [[sources/web-2025-10-04-aae]] [^3]: [[sources/web-2025-10-04-aae]] [^4]: [[sources/web-2025-10-04-aae]] [^5]: [[sources/web-2025-10-04-aae]] [^6]: [[sources/yt-msfECL74sIA]] [^7]: [[sources/yt-msfECL74sIA]] [^8]: [[sources/web-2025-02-14-794]] [^9]: [[sources/web-2025-02-14-794]] [^10]: [[sources/web-2025-10-04-aae]] [^11]: [[sources/web-2025-10-04-aae]] [^12]: [[sources/web-2026-04-10-562]] [^13]: [[sources/web-2026-04-10-562]] [^14]: [[sources/web-2026-04-10-562]] [^15]: [[sources/web-2025-10-04-aae]] [^16]: [[sources/web-2025-10-04-aae]] [^17]: [[sources/web-2025-10-04-aae]] [^18]: [[sources/web-2025-10-04-aae]] [^19]: [[sources/web-2025-10-04-aae]] [^20]: [[sources/web-2026-04-23-e4c]] [^21]: [[sources/web-2026-04-23-e4c]] [^22]: [[sources/web-2025-10-04-aae]] [^23]: [[sources/web-2026-04-23-e4c]] [^24]: [[sources/web-2026-04-23-e4c]] [^25]: [[sources/web-2026-04-23-e4c]] [^26]: [[sources/web-2026-04-23-e4c]] [^27]: [[sources/web-2026-04-23-e4c]] [^28]: [[sources/web-2026-04-23-e4c]] [^29]: [[sources/yt-I08ZeY7QcrE]] [^30]: [[sources/yt-I08ZeY7QcrE]]
 
