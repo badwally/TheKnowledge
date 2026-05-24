@@ -194,6 +194,23 @@ def wiki_finalize_batch(
 
 
 @mcp.tool()
+def wiki_evaluate(
+    domain: str | None = None,
+    limit: int | None = None,
+    scaffold: str | None = None,
+) -> dict[str, Any]:
+    """Run the M50 evaluation for a domain or scaffold a goldens template.
+
+    domain is required unless scaffold is set.
+    limit caps the number of goldens scored.
+    scaffold writes a template goldens.yaml for the named domain.
+    """
+    from gateway.ops.evaluate_op import evaluate_op
+
+    return _serialize(evaluate_op(domain=domain, limit=limit, scaffold=scaffold))
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,

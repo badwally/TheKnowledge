@@ -49,6 +49,7 @@ SUBCOMMANDS: dict[str, str] = {
     "poll": "Run a registered poller (e.g. apple-notes) to fetch new items into raw/",
     "schedule": "Manage cron-driven scheduled jobs (list/add/remove/enable/disable/run/dry-run)",
     "auth": "Manage bearer tokens for /api/ingest (add/list/revoke) — K3 cloud shim",
+    "evaluate": "Run per-domain evaluation (M50): scores wiki content against golden Q/A pairs at .knowledge/eval/<domain>/goldens.yaml",
 }
 
 IMPLEMENTED: set[str] = {
@@ -85,6 +86,7 @@ IMPLEMENTED: set[str] = {
     "poll",
     "schedule",
     "auth",
+    "evaluate",
 }
 
 
@@ -238,6 +240,15 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run LLM cite-suggest on Cat B drafts. With --execute (Aggressive mode), auto-applies unambiguous + evidence-verified suggestions and finalizes.",
     )
+
+    # evaluate: run per-domain evaluation (M50)
+    p_evaluate = subparsers.add_parser("evaluate", help=SUBCOMMANDS["evaluate"])
+    p_evaluate.add_argument("domain", nargs="?", default=None,
+                            help="Domain to evaluate (omit when using --scaffold).")
+    p_evaluate.add_argument("--limit", type=int, default=None,
+                            help="Score at most this many goldens.")
+    p_evaluate.add_argument("--scaffold", default=None, metavar="DOMAIN",
+                            help="Write a template goldens.yaml for the named domain.")
 
     # cite: add [[sources/<id>]] citation tokens to specific lines of a wiki page
     p_cite = subparsers.add_parser("cite", help=SUBCOMMANDS["cite"])
@@ -768,6 +779,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_research(ns)
     if ns.subcommand == "poll":
         return _run_poll(ns)
+    if ns.subcommand == "evaluate":
+        return _run_evaluate(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1131,6 +1144,18 @@ def _run_finalize_batch(ns: argparse.Namespace) -> int:
             limit=ns.limit,
             execute=ns.execute,
             suggest=ns.suggest,
+        )
+    )
+
+
+def _run_evaluate(ns: argparse.Namespace) -> int:
+    from gateway.ops.evaluate_op import evaluate_op
+
+    return _emit_result(
+        evaluate_op(
+            domain=ns.domain,
+            limit=ns.limit,
+            scaffold=ns.scaffold,
         )
     )
 
