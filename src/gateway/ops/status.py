@@ -14,6 +14,7 @@ import re
 from gateway import paths
 from gateway.core import OperationResult
 from gateway.costs import estimate_cost
+from gateway.evaluate.persistence import eval_dir_for, read_trend
 from gateway.watcher import watcher_state
 
 
@@ -74,6 +75,10 @@ def status(*, with_cost: bool = False) -> OperationResult:
     else:
         lines.append("Recent activity: (log.md not yet created)")
 
+    # M50: evaluation scores block
+    eval_block = _evaluation_status_block()
+    lines.append(eval_block)
+
     # K5: LLM usage block
     usage_block = _render_llm_usage_block(
         log_text, window_days=_LLM_USAGE_WINDOW_DAYS, with_cost=with_cost
@@ -82,6 +87,42 @@ def status(*, with_cost: bool = False) -> OperationResult:
         lines.append(usage_block)
 
     return OperationResult(success=True, summary="\n".join(lines))
+
+
+def _evaluation_status_block() -> str:
+    """Render the M50 evaluation scores section for `wiki status`.
+
+    Lists the most recent mean_score per domain that has been evaluated,
+    plus the delta versus the prior run.
+    """
+    eval_base = paths.knowledge_internal() / "eval"
+    if not eval_base.exists():
+        return "Evaluation scores: none yet (run `wiki evaluate --scaffold <domain>` to start)"
+
+    domains = sorted(d.name for d in eval_base.iterdir() if d.is_dir())
+    if not domains:
+        return "Evaluation scores: none yet (run `wiki evaluate --scaffold <domain>` to start)"
+
+    rows: list[str] = []
+    for domain in domains:
+        trend = read_trend(domain)
+        if not trend:
+            continue
+        latest_score = float(trend[-1]["mean_score"])
+        if len(trend) >= 2:
+            prior_score = float(trend[-2]["mean_score"])
+            delta = latest_score - prior_score
+            sign = "+" if delta >= 0 else ""
+            delta_str = f"{sign}{delta:.2f}"
+        else:
+            delta_str = "initial"
+        rows.append(f"  - {domain}: mean={latest_score:.3f}  (Δ {delta_str})")
+
+    if not rows:
+        return "Evaluation scores: none yet (run `wiki evaluate --scaffold <domain>` to start)"
+
+    header = "Evaluation scores (last run per domain):"
+    return "\n".join([header] + rows)
 
 
 def _tail_log_entries(log_text: str, n: int) -> list[str]:
