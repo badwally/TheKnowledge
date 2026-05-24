@@ -20,6 +20,7 @@ from gateway.evaluate.persistence import (
     runs_dir_for,
     eval_dir_for,
 )
+from gateway.evaluate.runner import run_evaluate, NoGoldensError
 
 __all__ = [
     "Golden",
@@ -38,4 +39,6 @@ __all__ = [
     "trend_path_for",
     "runs_dir_for",
     "eval_dir_for",
+    "run_evaluate",
+    "NoGoldensError",
 ]
