@@ -11,6 +11,15 @@ from gateway.evaluate.schema import (
     validate_rubric_weights,
 )
 from gateway.evaluate.judge import Judge
+from gateway.evaluate.persistence import (
+    write_run,
+    append_to_trend,
+    read_trend,
+    goldens_path_for,
+    trend_path_for,
+    runs_dir_for,
+    eval_dir_for,
+)
 
 __all__ = [
     "Golden",
@@ -22,4 +31,11 @@ __all__ = [
     "scaffold_template",
     "validate_rubric_weights",
     "Judge",
+    "write_run",
+    "append_to_trend",
+    "read_trend",
+    "goldens_path_for",
+    "trend_path_for",
+    "runs_dir_for",
+    "eval_dir_for",
 ]
