@@ -5,9 +5,7 @@ canonical_name: Brookfield Residential Services, Ltd.
 entity_kind: organization
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-12T00:00:00Z'
-draft_unresolved_claims: 0
+finalized_at: '2026-05-24T22:05:44Z'
 ---
 # Brookfield Residential Services, Ltd.
 

@@ -5,9 +5,7 @@ canonical_name: BuildingLink Canada
 entity_kind: organization
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-11T23:56:46Z'
-draft_unresolved_claims: 0
+finalized_at: '2026-05-24T22:05:44Z'
 ---
 # BuildingLink Canada
 

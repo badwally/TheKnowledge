@@ -5,9 +5,7 @@ canonical_name: California Davis-Stirling Act § 5550 (Reserve Study Requirement
 entity_kind: regulation
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-11T23:33:07Z'
-draft_unresolved_claims: 0
+finalized_at: '2026-05-24T22:05:44Z'
 ---
 
 # California Davis-Stirling Act § 5550
