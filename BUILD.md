@@ -971,6 +971,10 @@ See `docs/milestones/M54.md`. Three ergonomics and onboarding items: TOOL-10 (`a
 
 See `docs/milestones/M55.md`. Five independent items: TOK-4 (`_gather_existing_pages` two-stage select — 200-char snippets, 10 KB cap, full bodies for ≤5-page wikis; ~15× token reduction on saturated domains); ONT-2 (CiTO 8-verb typed citations via `[[sources/<id>|verb]]` alias syntax, `SEVERITY_WARNING` for unknown verbs, WIKI.md § 5.6); ONT-4 (`ENTITY_KIND_ENUM` 12-value frozenset, hard-reject on new entity pages, `migrations/0002-migrate-entity-kinds.py` for 25 legacy values); ONT-8 (80-char slug cap hard-reject on new pages, `--force-long-slug` override, `lint/long_slugs.py` for grandfathered legacy slugs, WIKI.md § 6.2); ARCH-10 (NLM compat allowlists moved from hardcoded Python to `src/gateway/data/citations_allowlist.yaml` v1, auditable diffs, WIKI.md § 5.2). Tests: 1038 → 1061 passing (+23). K2 parity: 4/4 green. Tag: `m55-phase2-round-a`.
 
+### M56 — Phase 2 Round B (AGT-9, ONT-3, AGT-14, QUAL-3)
+
+See `docs/milestones/M56.md`. Four items in two dependency chains: AGT-9 (filesystem event bus — `emit()`/`subscribe()`/`list_events()` over `.knowledge/events/<date>/<seq:04d>.json`, debounce, `events_dir()`/`agents_dir()` in paths, `"agent"` prefix in `LOCK_NAME_PREFIXES`); ONT-3 (`"contradiction"` page type in `PAGE_SCHEMAS`, `CONTRADICTION_SEVERITY_ENUM`/`CONTRADICTION_STATUS_ENUM` in validator, `validate_contradiction_frontmatter()`, `lint/contradiction_pages.py` for open+major pages, no-op migration); AGT-14 (`agent-log --since 24h|48h|7d`, per-agent counts + top-5 payloads, `DIGEST_SCHEDULE_ENTRY` 7am draft-only digest, MCP `wiki_agent_log`); QUAL-3 (`wiki contradiction list/resolve`, `resolve` updates frontmatter + sets `contested: true` on sources with ≥2 open contradictions, `wiki status` contradiction summary, MCP `wiki_contradiction`). Tests: 1061 → 1117 passing (+56). K2 parity: 4/4 green. Tag: `m56-phase2-round-b`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
