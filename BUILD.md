@@ -963,6 +963,10 @@ See `docs/milestones/M52.md`. Five independent hardening items: source frontmatt
 
 See `docs/milestones/M53.md`. Four token-efficiency items: TOK-1 cache_read=0 root-cause diagnosis (M50.1 already fixed, doc only); TOK-3 filter system-prompt memoized once per `_run_filter` batch via `_prebuilt_system` param to `score()` (N candidates → 1 `build_system_prompt()` call); TOK-6 transcription disk cache at `raw/<type>/_transcripts/<sha256hex>.json` (`TranscriptionResult.from_dict()`, `load_transcript_cache`, `save_transcript_cache`) in voice and audiobook converters; TOK-7 `PromptGuardError` + `assert_safe_for_prompt()` in `paths.py` raises for `log.md` and `index.md`. Session-state discipline infrastructure also shipped (`docs/session-state.md`, PreCompact/SessionStart hooks, CLAUDE.md rule). Tests: 1020 → 1027 passing (+7 net: +2 TOK-3, +2 TOK-6, +3 TOK-7). Tag: `m53-phase1-round-b`.
 
+### M54 — Phase 1 Round C (TOOL-10, DOC-1, DOC-6)
+
+See `docs/milestones/M54.md`. Three ergonomics and onboarding items: TOOL-10 (`argcomplete>=3.0` wired into `cli.py`, usage examples on eight subcommands, `docs/shell-completion.md`); DOC-1 (three-track "New here?" reading order at top of README — knowledge work / code contribution / agent briefing, each step names its output); DOC-6 (`GLOSSARY.md` at repo root, ~30 terms alphabetical, covers review-doc § 2 terms plus M47–M53 additions, cross-linked from README). Tests: 1027 → 1038 passing (+11 TOOL-10; DOC items have no test delta). Tag: `m54-phase1-round-c`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
