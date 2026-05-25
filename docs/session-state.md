@@ -1,12 +1,12 @@
 # Session state — 2026-05-25
 
-Last updated: 2026-05-25 (Phase 1 complete — M54 merged, closeout doc written)
+Last updated: 2026-05-25 (Phase 1 complete, Phase 2 scoped and planned)
 
 ---
 
 ## Open contracts
 
-None. Phase 1 is complete. All 18 planning-table items delivered across M47–M54.
+None. Phase 1 complete. Phase 2 planned, not started.
 
 ---
 
@@ -18,21 +18,19 @@ None.
 
 ## Decisions made this session
 
-- M52 Phase 1 Round A complete: ARCH-2, ARCH-4, ARCH-6, QUAL-4, QUAL-5. 985 → 1020 tests. Merged to main.
-- M53 Phase 1 Round B complete: TOK-1 (doc), TOK-3, TOK-6, TOK-7. 1020 → 1027 tests. Merged to main.
-- M54 Phase 1 Round C complete: TOOL-10, DOC-1, DOC-6. 1027 → 1038 tests. Merged to main.
-- Session-state discipline infrastructure shipped: `docs/session-state.md`, PreCompact/SessionStart hooks, CLAUDE.md rule, `.claude/settings.json` hook format fixed.
-- Phase 1 closeout doc written at `docs/phase1-closeout.md`.
-
----
-
-## Rejected approaches this session
-
-- TOK-3: monkeypatching `semantic.build_system_prompt` in orchestrator test — import-time binding; must patch `orch._build_filter_system_prompt`.
-- TOK-6: separate `converters/_transcript_cache.py` — skipped; added to `transcription.py` where `TranscriptionResult` lives.
+- Phase 1 complete: M47–M54, 18/18 items, 1038 tests passing. Merged to main.
+- Phase 2 scoped across 5 rounds (M55–M59), 20 items.
+- Decision: Readwise customer = yes → INT-9 replaces INT-1/INT-2/INT-3.
+- Decision: Docs depth = "any senior engineer cold" (~15h) → all DOC items are L-effort.
+- Decision: Agent runtime = per-agent processes (not daemon).
+- Planning docs at `docs/plans/2026-05-25-phase2-plan.md` and `docs/plans/2026-05-25-phase2-session-start.md`.
 
 ---
 
 ## Next atomic step
 
-Phase 2 — await user direction. Starting point: `docs/reviews/2026-05-23-knowledge-system-review.md § 14 Phase 2 table`.
+Start Phase 2 Round A on branch `phase2-round-a`:
+1. `git checkout -b phase2-round-a`
+2. Begin with TOK-4 (`_gather_existing_pages` two-stage select) — highest token-reduction ROI, sets the round pattern.
+3. Full acceptance criteria in `docs/plans/2026-05-25-phase2-plan.md` Round A.
+4. Session start brief at `docs/plans/2026-05-25-phase2-session-start.md`.
