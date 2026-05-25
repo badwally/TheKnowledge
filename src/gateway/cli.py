@@ -9,6 +9,8 @@ import argparse
 import sys
 from pathlib import Path
 
+import argcomplete
+
 from gateway import __version__
 
 
@@ -115,7 +117,17 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="subcommand", metavar="<subcommand>")
 
     # ingest
-    p_ingest = subparsers.add_parser("ingest", help=SUBCOMMANDS["ingest"])
+    p_ingest = subparsers.add_parser(
+        "ingest",
+        help=SUBCOMMANDS["ingest"],
+        epilog=(
+            "Examples:\n"
+            "  wiki ingest https://arxiv.org/abs/2301.07041 --domain glp1\n"
+            "  wiki ingest raw/pdf/some-paper.md --with-plan --domain glp1\n"
+            "  wiki ingest https://www.youtube.com/watch?v=abc123 --draft"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_ingest.add_argument("input", help="URL or path to canonical markdown source")
     p_ingest.add_argument("--domain", default=None, help="Domain slug for filter scoring")
     p_ingest.add_argument(
@@ -137,7 +149,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # filter (read-only scoring)
-    p_filter = subparsers.add_parser("filter", help=SUBCOMMANDS["filter"])
+    p_filter = subparsers.add_parser(
+        "filter",
+        help=SUBCOMMANDS["filter"],
+        epilog=(
+            "Examples:\n"
+            "  wiki filter https://arxiv.org/abs/2301.07041 --domain glp1\n"
+            "  wiki filter raw/web/some-article.md"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_filter.add_argument("input", help="URL or path to a source to score")
     p_filter.add_argument("--domain", default=None, help="Domain slug for the policy to apply")
 
@@ -151,7 +172,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_correct.add_argument("--domain", default=None, help="Domain slug if not in source frontmatter")
 
     # status (no args)
-    p_status = subparsers.add_parser("status", help=SUBCOMMANDS["status"])
+    p_status = subparsers.add_parser(
+        "status",
+        help=SUBCOMMANDS["status"],
+        epilog=(
+            "Examples:\n"
+            "  wiki status\n"
+            "  wiki status --cost"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_status.add_argument(
         "--cost",
         action="store_true",
@@ -244,7 +274,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # evaluate: run per-domain evaluation (M50)
-    p_evaluate = subparsers.add_parser("evaluate", help=SUBCOMMANDS["evaluate"])
+    p_evaluate = subparsers.add_parser(
+        "evaluate",
+        help=SUBCOMMANDS["evaluate"],
+        epilog=(
+            "Examples:\n"
+            "  wiki evaluate glp1\n"
+            "  wiki evaluate glp1 --limit 50\n"
+            "  wiki evaluate --scaffold glp1"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_evaluate.add_argument("domain", nargs="?", default=None,
                             help="Domain to evaluate (omit when using --scaffold).")
     p_evaluate.add_argument("--limit", type=int, default=None,
@@ -253,7 +293,16 @@ def build_parser() -> argparse.ArgumentParser:
                             help="Write a template goldens.yaml for the named domain.")
 
     # context: read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)
-    p_context = subparsers.add_parser("context", help=SUBCOMMANDS["context"])
+    p_context = subparsers.add_parser(
+        "context",
+        help=SUBCOMMANDS["context"],
+        epilog=(
+            "Examples:\n"
+            "  wiki context food-noise --caller my-agent\n"
+            "  wiki context food-noise --depth 2 --format json --caller eval-pipeline"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_context.add_argument("query", help="Slug, path, or title substring.")
     p_context.add_argument("--depth", type=int, default=1,
                            help="How many wikilink hops to follow (default 1).")
@@ -352,7 +401,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # query: ask the persistent NotebookLM corpus and file a synthesis page
-    p_query = subparsers.add_parser("query", help=SUBCOMMANDS["query"])
+    p_query = subparsers.add_parser(
+        "query",
+        help=SUBCOMMANDS["query"],
+        epilog=(
+            "Examples:\n"
+            '  wiki query "What mechanisms underlie GLP-1 food-noise suppression?" --domain glp1\n'
+            '  wiki query "Compare semaglutide and tirzepatide efficacy" --domain glp1 --draft'
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_query.add_argument("question", help="Question to ask the persistent domain corpus")
     p_query.add_argument(
         "--domain",
@@ -366,7 +424,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # research: corpus-constructive research loop
-    p_research = subparsers.add_parser("research", help=SUBCOMMANDS["research"])
+    p_research = subparsers.add_parser(
+        "research",
+        help=SUBCOMMANDS["research"],
+        epilog=(
+            "Examples:\n"
+            '  wiki research "GLP-1 receptor agonists and reward blunting" --domain glp1\n'
+            "  wiki research --review abc123\n"
+            "  wiki research --execute abc123"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_research.add_argument(
         "prompt",
         nargs="?",
@@ -480,7 +548,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # lint
-    p_lint = subparsers.add_parser("lint", help=SUBCOMMANDS["lint"])
+    p_lint = subparsers.add_parser(
+        "lint",
+        help=SUBCOMMANDS["lint"],
+        epilog=(
+            "Examples:\n"
+            "  wiki lint\n"
+            "  wiki lint --scope orphans\n"
+            "  wiki lint --scope broken-wikilinks"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_lint.add_argument(
         "--scope",
         default=None,
@@ -719,6 +797,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
+    argcomplete.autocomplete(parser)
     ns = parser.parse_args(argv)
 
     if ns.subcommand is None:
