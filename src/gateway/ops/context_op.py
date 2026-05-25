@@ -140,15 +140,88 @@ def _resolve_wikilink(kb_root: Path, target: str) -> Path | None:
     return candidate if candidate.is_file() else None
 
 
-# --- Phase B stubs (implemented in Phase B) -----------------------------------
+def _render_markdown(pages: list[Path]) -> str:
+    parts = []
+    kb_root = paths.knowledge_root()
+    for p in pages:
+        rel = p.relative_to(kb_root)
+        try:
+            front, body = fm.parse(p.read_text())
+        except fm.FrontmatterError:
+            front, body = {}, p.read_text()
+        title = front.get("title") or front.get("slug") or p.stem
+        parts.append(f"## {rel} — {title}\n\n{body.rstrip()}")
+    return "\n\n---\n\n".join(parts)
 
-def _render_markdown(pages):  # implemented in Phase B
-    raise NotImplementedError("Phase B")
+
+def _render_json(pages: list[Path]) -> str:
+    kb_root = paths.knowledge_root()
+
+    def _page_obj(p: Path) -> dict:
+        try:
+            front, body = fm.parse(p.read_text())
+        except fm.FrontmatterError:
+            front, body = {}, p.read_text()
+        return {
+            "path": str(p.relative_to(kb_root)),
+            "slug": str(front.get("slug") or p.stem),
+            "title": str(front.get("title") or ""),
+            "kind": str(front.get("type") or p.parent.name.rstrip("s")),
+            "body": body,
+        }
+
+    if not pages:
+        return json.dumps({"root": None, "neighbors": []})
+    return json.dumps({
+        "root": _page_obj(pages[0]),
+        "neighbors": [_page_obj(p) for p in pages[1:]],
+    }, indent=2)
 
 
-def _render_json(pages):  # implemented in Phase B
-    raise NotImplementedError("Phase B")
+def context_op(query: str, *,
+               depth: int = 1,
+               fmt: str = "markdown",
+               caller: str | None = None) -> OperationResult:
+    if not caller:
+        return OperationResult(
+            success=False,
+            errors=["--caller is required (free-form identifier; logged to log.md)"],
+        )
+    if fmt not in ("markdown", "json"):
+        return OperationResult(
+            success=False,
+            errors=[f"--format must be 'markdown' or 'json', got {fmt!r}"],
+        )
+    if depth < 0:
+        return OperationResult(
+            success=False,
+            errors=[f"--depth must be >= 0, got {depth}"],
+        )
 
+    try:
+        root = _resolve_target(query)
+    except (NoMatchError, AmbiguousQueryError) as e:
+        return OperationResult(success=False, errors=[str(e)])
 
-def context_op(*args, **kwargs):  # implemented in Phase B
-    raise NotImplementedError("Phase B")
+    pages = _walk_neighbors(root, depth=depth)
+    rendered = _render_markdown(pages) if fmt == "markdown" else _render_json(pages)
+
+    log.append(
+        op="context",
+        fields={
+            "caller": caller,
+            "target": str(root.relative_to(paths.knowledge_root())),
+            "depth": depth,
+            "format": fmt,
+            "pages_returned": len(pages),
+        },
+        summary=(
+            f"context: caller={caller!r} target={root.relative_to(paths.knowledge_root())} "
+            f"depth={depth} pages={len(pages)}"
+        ),
+    )
+    return OperationResult(
+        success=True,
+        paths_touched=[paths.log_path()],
+        summary=rendered,
+    )

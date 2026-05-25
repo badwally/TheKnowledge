@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -125,3 +126,52 @@ def test_walk_does_not_follow_nlm_corpus_refs(kb_root):
     visited = _walk_neighbors(root, depth=1)
     # Only the root; nlm refs not followed
     assert visited == [root]
+
+
+def test_render_markdown_emits_one_section_per_page(kb_root):
+    a = _write_page(kb_root, "entities", "a-ent", body="# A\n\nBody A.\n")
+    b = _write_page(kb_root, "sources", "src-x", body="# X\n\nBody X.\n")
+    text = _render_markdown([a, b])
+    assert "wiki/entities/a-ent.md" in text
+    assert "wiki/sources/src-x.md" in text
+    assert "Body A" in text
+    assert "Body X" in text
+
+
+def test_render_json_returns_structured_envelope(kb_root):
+    a = _write_page(kb_root, "entities", "a-ent", title="Alpha", body="# A\n\nBody A.\n")
+    b = _write_page(kb_root, "sources", "src-x", title="Src X", body="# X\n\nBody X.\n")
+    blob = _render_json([a, b])
+    data = json.loads(blob)
+    assert data["root"]["path"].endswith("entities/a-ent.md")
+    assert data["root"]["slug"] == "a-ent"
+    assert len(data["neighbors"]) == 1
+    assert data["neighbors"][0]["slug"] == "src-x"
+
+
+def test_context_op_requires_caller(kb_root):
+    result = context_op("anything")
+    assert not result.success
+    assert "caller" in (result.errors[0]).lower()
+
+
+def test_context_op_rejects_invalid_format(kb_root):
+    _write_page(kb_root, "entities", "e1")
+    result = context_op("entities/e1", caller="test", fmt="yaml")
+    assert not result.success
+    assert "format" in (result.errors[0]).lower()
+
+
+def test_context_op_returns_markdown_summary_for_a_page(kb_root):
+    _write_page(kb_root, "entities", "alpha-co", title="Alpha", body="# Alpha\n\nDetails.\n")
+    result = context_op("entities/alpha-co", caller="test-caller")
+    assert result.success
+    assert "Alpha" in result.summary
+    assert "Details" in result.summary
+
+
+def test_context_op_logs_caller(kb_root):
+    _write_page(kb_root, "entities", "alpha-co")
+    context_op("entities/alpha-co", caller="chief-of-staff")
+    log_text = (kb_root / "log.md").read_text()
+    assert "caller='chief-of-staff'" in log_text or 'caller="chief-of-staff"' in log_text
