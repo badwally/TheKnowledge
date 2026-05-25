@@ -103,8 +103,19 @@ def _parse_judge_response(call_result, *, golden: Golden) -> EvalResult:
         raw = re.sub(r"^```(?:json)?\s*", "", raw)
         raw = re.sub(r"\s*```\s*$", "", raw)
 
+    # Skip any prose preamble before the first `{`. Sonnet sometimes emits
+    # "Here is the evaluation:\n\n{...}" despite the strict-output instruction.
+    brace = raw.find("{")
+    if brace > 0:
+        raw = raw[brace:]
+
+    # Use raw_decode so trailing content after the JSON object doesn't fail
+    # the parse — the M50 hand-test surfaced cases where Sonnet emits the
+    # JSON envelope followed by additional commentary (which strict json.loads
+    # rejects with `Extra data` at the first character past the object).
+    decoder = json.JSONDecoder()
     try:
-        payload = json.loads(raw)
+        payload, _end = decoder.raw_decode(raw)
     except json.JSONDecodeError as e:
         _log.warning(
             "Judge: malformed JSON for golden %s: %s; first 200 chars: %r",

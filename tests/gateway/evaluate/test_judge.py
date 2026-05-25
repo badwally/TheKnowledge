@@ -110,3 +110,51 @@ def test_judge_tolerates_code_fence_wrapping():
 
     result = judge.score(golden=golden, wiki_context="ctx")
     assert result.score == 0.6
+
+
+def test_judge_tolerates_trailing_content_after_json():
+    """Sonnet sometimes emits valid JSON followed by additional prose
+    (e.g. closing commentary). The strict json.loads in the original
+    implementation rejected this with 'Extra data: line N column M'.
+    Regression for M50 hand-test discovery (q09, q14 returned 0.0
+    on the first run because of this)."""
+    fake_client = MagicMock()
+    fake_client.call_with_usage.return_value = CallResult(
+        text=(
+            '{"score": 0.75, "cite_hits": [], "cite_misses": [], '
+            '"assertion_hits": ["a fact"], "assertion_misses": [], '
+            '"anti_assertion_violations": [], "reasoning": "ok"}\n'
+            '\nNote: the wiki content was thoroughly evaluated.'
+        ),
+        input_tokens=100, output_tokens=30, model="claude-sonnet-4-6",
+    )
+
+    judge = Judge(client=fake_client)
+    golden = Golden(id="q01", question="Q?",
+                    must_cite=[], must_assert=["a fact"], must_not_assert=[])
+
+    result = judge.score(golden=golden, wiki_context="ctx")
+    assert result.score == 0.75
+    assert result.assertion_hits == ["a fact"]
+
+
+def test_judge_tolerates_prose_preamble_before_json():
+    """Sonnet sometimes emits 'Here is the evaluation:\\n\\n{...}' despite
+    the strict-output instruction. Strip preamble up to the first `{`."""
+    fake_client = MagicMock()
+    fake_client.call_with_usage.return_value = CallResult(
+        text=(
+            'Here is the evaluation:\n\n'
+            '{"score": 0.8, "cite_hits": [], "cite_misses": [], '
+            '"assertion_hits": [], "assertion_misses": [], '
+            '"anti_assertion_violations": [], "reasoning": "ok"}'
+        ),
+        input_tokens=100, output_tokens=20, model="claude-sonnet-4-6",
+    )
+
+    judge = Judge(client=fake_client)
+    golden = Golden(id="q01", question="Q?",
+                    must_cite=[], must_assert=[], must_not_assert=[])
+
+    result = judge.score(golden=golden, wiki_context="ctx")
+    assert result.score == 0.8
