@@ -20,6 +20,7 @@ from gateway.lint import (
     citation_density,
     contradictions,
     filter_calibration,
+    idempotency,
     inbox_pending,
     missing_pages,
     nlm_pending,
@@ -45,6 +46,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("inbox-pending", inbox_pending.run),
     ("nlm-pending", nlm_pending.run),
     ("untagged-sources", untagged_sources.run),
+    ("idempotency", idempotency.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

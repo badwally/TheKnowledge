@@ -3,6 +3,8 @@
 Updates the source frontmatter's `filter.user_correction` block and pins
 the corrected example to the bank with `pinned_by: user-correction`. The
 next filter call sees this example as a high-signal calibration input.
+
+Idempotency: re-correcting the same source overwrites user_correction; safe to re-run with a revised rationale.
 """
 
 from __future__ import annotations

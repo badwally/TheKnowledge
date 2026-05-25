@@ -9,6 +9,8 @@ must already be ingested), if the source-id is malformed, or if the
 target line already cites that source. Updates bidirectional backlinks
 on the cited source's `raw/<type>/<id>.md` frontmatter (`wiki_pages`
 list) per WIKI § 11.2.
+
+Idempotency: re-citing the same source on the same line is rejected (duplicate guard); safe to retry after partial failure.
 """
 
 from __future__ import annotations

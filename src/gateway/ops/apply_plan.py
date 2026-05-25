@@ -4,6 +4,8 @@ This is the structural enforcement of the "plan-before-write" rule. The
 gateway is the only thing that mutates wiki/ files for entity / concept /
 synthesis / MOC pages. Sources still go through `wiki ingest`; artifacts
 through `wiki nlm-*`.
+
+Idempotency: applying the same plan twice produces the same files; backlink updates skip entries already present.
 """
 
 from __future__ import annotations
