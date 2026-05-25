@@ -96,6 +96,13 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
         required_sections=("Rationale", "Member sources"),
         citation_grounded=False,
     ),
+    "contradiction": PageTypeSchema(
+        type_name="contradiction",
+        directory="wiki/contradictions",
+        required_fields=("type", "slug", "parties", "severity", "status"),
+        required_sections=("Summary",),
+        citation_grounded=False,
+    ),
 }
 
 

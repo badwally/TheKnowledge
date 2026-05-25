@@ -78,6 +78,11 @@ def status(*, with_cost: bool = False) -> OperationResult:
     else:
         lines.append("Recent activity: (log.md not yet created)")
 
+    # QUAL-3: contradiction summary
+    contra_block = _contradiction_summary_block()
+    if contra_block:
+        lines.append(contra_block)
+
     # QUAL-5: fine-tune readiness block
     ft_block = _finetune_readiness_block()
     if ft_block:
@@ -95,6 +100,35 @@ def status(*, with_cost: bool = False) -> OperationResult:
         lines.append(usage_block)
 
     return OperationResult(success=True, summary="\n".join(lines))
+
+
+def _contradiction_summary_block() -> str | None:
+    """QUAL-3: count open contradictions by severity for status output."""
+    from gateway import paths as _paths
+    import yaml as _yaml
+    cdir = _paths.wiki_dir() / "contradictions"
+    if not cdir.exists():
+        return None
+    counts: dict[str, int] = {}
+    for md_file in cdir.glob("*.md"):
+        text = md_file.read_text()
+        if not text.startswith("---"):
+            continue
+        end = text.find("---", 3)
+        if end == -1:
+            continue
+        try:
+            front = _yaml.safe_load(text[3:end]) or {}
+        except _yaml.YAMLError:
+            continue
+        if str(front.get("status", "")) != "open":
+            continue
+        sev = str(front.get("severity", "unknown"))
+        counts[sev] = counts.get(sev, 0) + 1
+    if not counts:
+        return None
+    parts = ", ".join(f"{v} {k}" for k, v in sorted(counts.items()))
+    return f"Contradictions (open): {parts}"
 
 
 _FINETUNE_MILESTONE_PATH_NAME = "finetune_milestones.yaml"

@@ -53,6 +53,8 @@ SUBCOMMANDS: dict[str, str] = {
     "auth": "Manage bearer tokens for /api/ingest (add/list/revoke) — K3 cloud shim",
     "evaluate": "Run per-domain evaluation (M50): scores wiki content against golden Q/A pairs at .knowledge/eval/<domain>/goldens.yaml",
     "context": "Read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)",
+    "agent-log": "Show per-agent event counts and top payloads (AGT-14)",
+    "contradiction": "List or resolve structured contradiction pages (QUAL-3)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -91,6 +93,8 @@ IMPLEMENTED: set[str] = {
     "auth",
     "evaluate",
     "context",
+    "agent-log",
+    "contradiction",
 }
 
 
@@ -781,6 +785,46 @@ def build_parser() -> argparse.ArgumentParser:
     p_auth_rev = p_auth_sub.add_parser("revoke", help="Revoke a token by name")
     p_auth_rev.add_argument("name")
 
+    # agent-log (AGT-14)
+    p_agent_log = subparsers.add_parser("agent-log", help=SUBCOMMANDS["agent-log"])
+    p_agent_log.add_argument(
+        "--since",
+        default="24h",
+        choices=["24h", "48h", "7d"],
+        help="Time window to aggregate (default: 24h)",
+    )
+
+    # contradiction (QUAL-3)
+    p_contradiction = subparsers.add_parser("contradiction", help=SUBCOMMANDS["contradiction"])
+    p_contra_sub = p_contradiction.add_subparsers(dest="contradiction_action", required=True)
+
+    p_contra_list = p_contra_sub.add_parser("list", help="List contradiction pages")
+    p_contra_list.add_argument(
+        "--severity",
+        choices=["major", "minor", "methodological"],
+        default=None,
+        help="Filter by severity",
+    )
+    p_contra_list.add_argument(
+        "--status",
+        default="open",
+        help="Filter by status (default: open)",
+    )
+
+    p_contra_resolve = p_contra_sub.add_parser("resolve", help="Resolve a contradiction")
+    p_contra_resolve.add_argument("slug", help="Slug of the contradiction page")
+    p_contra_resolve.add_argument(
+        "--status",
+        required=True,
+        choices=["resolved", "wontfix"],
+        help="New status",
+    )
+    p_contra_resolve.add_argument(
+        "--note",
+        default="",
+        help="Resolution note",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -874,6 +918,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_evaluate(ns)
     if ns.subcommand == "context":
         return _run_context(ns)
+    if ns.subcommand == "agent-log":
+        return _run_agent_log(ns)
+    if ns.subcommand == "contradiction":
+        return _run_contradiction(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1506,6 +1554,46 @@ def _run_research(ns: argparse.Namespace) -> int:
             external_plan_path=ns.external_plan_path,
         )
     )
+
+
+def _run_agent_log(ns: argparse.Namespace) -> int:
+    from gateway.ops.agent_log import aggregate
+
+    window_map = {"24h": 24, "48h": 48, "7d": 168}
+    since_hours = window_map.get(ns.since, 24)
+    data = aggregate(since_hours=since_hours)
+
+    if not data:
+        print(f"No agent events in the last {ns.since}.")
+        return 0
+
+    for agent, stats in sorted(data.items()):
+        print(f"{agent}: {stats['count']} event(s)")
+        for payload in stats["top_payloads"]:
+            if payload:
+                print(f"  - {payload}")
+    return 0
+
+
+def _run_contradiction(ns: argparse.Namespace) -> int:
+    from gateway.ops import contradiction as cont_ops
+
+    if ns.contradiction_action == "list":
+        return _emit_result(
+            cont_ops.list_contradictions(
+                severity=ns.severity,
+                status=ns.status,
+            )
+        )
+    if ns.contradiction_action == "resolve":
+        return _emit_result(
+            cont_ops.resolve_contradiction(
+                ns.slug,
+                status=ns.status,
+                note=ns.note,
+            )
+        )
+    return 2
 
 
 if __name__ == "__main__":

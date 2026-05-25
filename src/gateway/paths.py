@@ -49,6 +49,14 @@ def locks_dir() -> Path:
     return knowledge_internal() / "locks"
 
 
+def events_dir() -> Path:
+    return knowledge_internal() / "events"
+
+
+def agents_dir() -> Path:
+    return knowledge_internal() / "agents"
+
+
 def lint_dir() -> Path:
     return knowledge_internal() / "lint"
 

@@ -46,6 +46,10 @@ REQUIRED_CORE_FIELDS: set[str] = {
     "content_hash",
 }
 
+# ONT-3: controlled vocabularies for contradiction wiki pages.
+CONTRADICTION_SEVERITY_ENUM: frozenset[str] = frozenset({"major", "minor", "methodological"})
+CONTRADICTION_STATUS_ENUM: frozenset[str] = frozenset({"open", "investigating", "resolved", "wontfix"})
+
 # ONT-4: controlled vocabulary for entity_kind on entity wiki pages.
 ENTITY_KIND_ENUM: frozenset[str] = frozenset({
     "person",
@@ -347,6 +351,43 @@ def validate_wiki_page_frontmatter(
     return result
 
 
+def validate_contradiction_frontmatter(front: dict) -> ValidationResult:
+    """ONT-3: validate contradiction-specific frontmatter fields."""
+    result = ValidationResult()
+    severity = front.get("severity")
+    status = front.get("status")
+    parties = front.get("parties")
+
+    if not parties:
+        result.errors.append(
+            ValidationError(
+                "contradiction-parties-missing",
+                "contradiction page requires at least one entry in 'parties'",
+                "parties",
+            )
+        )
+
+    if severity is not None and severity not in CONTRADICTION_SEVERITY_ENUM:
+        result.errors.append(
+            ValidationError(
+                "contradiction-severity-unknown",
+                f"severity {severity!r} is not valid; expected one of: {', '.join(sorted(CONTRADICTION_SEVERITY_ENUM))}",
+                "severity",
+            )
+        )
+
+    if status is not None and status not in CONTRADICTION_STATUS_ENUM:
+        result.errors.append(
+            ValidationError(
+                "contradiction-status-unknown",
+                f"status {status!r} is not valid; expected one of: {', '.join(sorted(CONTRADICTION_STATUS_ENUM))}",
+                "status",
+            )
+        )
+
+    return result
+
+
 def validate_wiki_page_sections(body: str, page_type: str) -> ValidationResult:
     """Verify the page contains every required section header."""
     result = ValidationResult()
@@ -560,6 +601,10 @@ def validate_wiki_page(
     result = ValidationResult()
     result.merge(validate_wiki_page_frontmatter(front, page_type, force_long_slug=force_long_slug))
     result.merge(validate_wiki_page_sections(body, page_type))
+
+    # ONT-3: contradiction-specific validation
+    if page_type == "contradiction":
+        result.merge(validate_contradiction_frontmatter(front))
 
     # Honor `draft: true` in frontmatter OR an explicit caller flag. To force
     # strict mode (e.g., during finalize), strip the draft fields from front
