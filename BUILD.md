@@ -967,6 +967,10 @@ See `docs/milestones/M53.md`. Four token-efficiency items: TOK-1 cache_read=0 ro
 
 See `docs/milestones/M54.md`. Three ergonomics and onboarding items: TOOL-10 (`argcomplete>=3.0` wired into `cli.py`, usage examples on eight subcommands, `docs/shell-completion.md`); DOC-1 (three-track "New here?" reading order at top of README — knowledge work / code contribution / agent briefing, each step names its output); DOC-6 (`GLOSSARY.md` at repo root, ~30 terms alphabetical, covers review-doc § 2 terms plus M47–M53 additions, cross-linked from README). Tests: 1027 → 1038 passing (+11 TOOL-10; DOC items have no test delta). Tag: `m54-phase1-round-c`.
 
+### M55 — Phase 2 Round A (TOK-4, ONT-2, ONT-4, ONT-8, ARCH-10)
+
+See `docs/milestones/M55.md`. Five independent items: TOK-4 (`_gather_existing_pages` two-stage select — 200-char snippets, 10 KB cap, full bodies for ≤5-page wikis; ~15× token reduction on saturated domains); ONT-2 (CiTO 8-verb typed citations via `[[sources/<id>|verb]]` alias syntax, `SEVERITY_WARNING` for unknown verbs, WIKI.md § 5.6); ONT-4 (`ENTITY_KIND_ENUM` 12-value frozenset, hard-reject on new entity pages, `migrations/0002-migrate-entity-kinds.py` for 25 legacy values); ONT-8 (80-char slug cap hard-reject on new pages, `--force-long-slug` override, `lint/long_slugs.py` for grandfathered legacy slugs, WIKI.md § 6.2); ARCH-10 (NLM compat allowlists moved from hardcoded Python to `src/gateway/data/citations_allowlist.yaml` v1, auditable diffs, WIKI.md § 5.2). Tests: 1038 → 1061 passing (+23). K2 parity: 4/4 green. Tag: `m55-phase2-round-a`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

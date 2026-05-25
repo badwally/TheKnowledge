@@ -518,8 +518,8 @@ Examples NOT subject to the rule:
 - Section headers
 - Cross-reference lists ("Related concepts: ...")
 - Open questions (which are *un*answered claims)
-- NotebookLM-emitted structural-frame bullets in synthesis pages (`**Themes Used In:**`, `**Items Compared:**`, `**Which themes draw on it:**`, `**Name and key claim:**`, `**Core approach/mechanism:**`, `**Concrete details:**`, `**Differences in Evidence:**`, `**Trade-offs and Contexts:**`, `**Strengths and Weaknesses:**`, `**Context:**`, `**Gap Identified:**`, `**Limitation Identified:**`, `**Tension Identified:**`) — these describe the analysis frame, not claims about the world. The allowlist lives in `gateway/citations.py:_STRUCTURAL_FRAME_LABELS`; extend it when NotebookLM introduces a new frame label. When the label sits on its own line and the value is on the next line (or after a blank line), the value line is also exempted — the validator tracks one continuation slot per label.
-- **(M45) Aggregate-framing openers** on synthesis pages with `synthesizes:` enumerated (≥2 entries) and a `## Included works` section that mirrors the list. The first claim-shaped sentence of each `## ` section that matches the opener allowlist (`Based on the provided sources…`, `Across the corpus…`, `Looking across…`, `Aggregating across…`, etc.) is exempt — it's a legitimate aggregate observation backed by the enumerated constituent set, modeled on Cochrane / PRISMA's "Characteristics of included studies" convention. Bounded: one opener per section; subsequent claims still need direct citation. Allowlist in `gateway/citations.py:_AGGREGATE_FRAMING_OPENERS_RE`; pinned by tests. `wiki lint --scope citation-chains` surfaces synthesis pages with aggregate framing but no `synthesizes:` enumeration. The `[[corpus]]` token is forbidden by design (citation-laundering anti-pattern).
+- NotebookLM-emitted structural-frame bullets in synthesis pages (`**Themes Used In:**`, `**Items Compared:**`, `**Which themes draw on it:**`, `**Name and key claim:**`, `**Core approach/mechanism:**`, `**Concrete details:**`, `**Differences in Evidence:**`, `**Trade-offs and Contexts:**`, `**Strengths and Weaknesses:**`, `**Context:**`, `**Gap Identified:**`, `**Limitation Identified:**`, `**Tension Identified:**`) — these describe the analysis frame, not claims about the world. **ARCH-10:** The allowlist lives in `src/gateway/data/citations_allowlist.yaml` (field `structural_frame_labels`), loaded at import time. Extend the YAML file, not Python code, when NotebookLM introduces a new frame label — the change becomes an auditable diff. When the label sits on its own line and the value is on the next line (or after a blank line), the value line is also exempted — the validator tracks one continuation slot per label.
+- **(M45) Aggregate-framing openers** on synthesis pages with `synthesizes:` enumerated (≥2 entries) and a `## Included works` section that mirrors the list. The first claim-shaped sentence of each `## ` section that matches the opener allowlist (`Based on the provided sources…`, `Across the corpus…`, `Looking across…`, `Aggregating across…`, etc.) is exempt — it's a legitimate aggregate observation backed by the enumerated constituent set, modeled on Cochrane / PRISMA's "Characteristics of included studies" convention. Bounded: one opener per section; subsequent claims still need direct citation. **ARCH-10:** Allowlist in `src/gateway/data/citations_allowlist.yaml` (field `aggregate_framing_openers`); extend the YAML, not Python. Pinned by tests. `wiki lint --scope citation-chains` surfaces synthesis pages with aggregate framing but no `synthesizes:` enumeration. The `[[corpus]]` token is forbidden by design (citation-laundering anti-pattern).
 
 ### 5.3 Citation density
 
@@ -560,6 +560,29 @@ finalized_at: "2026-04-29T10:15:00Z"
 
 **Visibility rules.** Draft pages are searchable, linkable, and lintable like any other page. They appear in `index.md` with a `[draft]` marker. Cross-references *to* a draft page are allowed; cross-references *from* a draft are also allowed. Synthesis pages may cite drafts (the citation grounds in the draft, not in the source — caller's risk).
 
+### 5.6 Typed citation relations (CiTO subset)
+
+Citations may carry an optional relation type using wikilink alias syntax:
+
+```
+[[sources/<id>|<verb>]]
+```
+
+The verb occupies the alias position. Supported verbs (ONT-2, CiTO 8-verb subset):
+
+| Verb | Meaning |
+|---|---|
+| `supports` | Source provides evidence in favor of the claim |
+| `disputes` | Source challenges or contradicts the claim |
+| `extends` | Source builds on prior work cited in the claim |
+| `qualifies` | Source adds nuance or conditions to the claim |
+| `confirms` | Source independently replicates the claim |
+| `reviews` | Source provides a review or meta-analysis of the claim |
+| `usesMethodIn` | Source applies a method described in the claim |
+| `citesAsAuthority` | Source is cited as a foundational reference |
+
+Plain `[[sources/<id>]]` (no alias) remains valid and means "cited without a specified relation." The validator emits `SEVERITY_WARNING` (not an error) when an alias is present but not one of the eight verbs — this allows free-text anchors and titles in aliases without hard rejection. The full 41-verb CiTO ontology is intentionally not adopted; this subset covers the operating need.
+
 ## 6. Slug conventions
 
 ### 6.1 Source IDs (`raw/<type>/<id>.md`)
@@ -587,6 +610,8 @@ Stable, type-prefixed, short. Never derived from titles (titles change; IDs must
 Lowercase, hyphenated, semantic. Match canonical name. Example: canonical name "Nucleus accumbens" → slug `nucleus-accumbens`.
 
 The validator runs a Levenshtein-distance check against existing slugs at create time. New slugs within distance 2 of an existing slug raise a warning ("did you mean to update [[concepts/food-noise]] instead of creating [[concepts/food_noise_phenomenon]]?"). Override requires explicit `--force-new-slug` flag, which is logged.
+
+**Slug length cap (ONT-8).** New slugs are hard-rejected if they exceed 80 characters. Use descriptive but terse slugs — a slug is a stable key, not a sentence. Exceptional cases (e.g., a primary key imported verbatim from an external system) may pass `--force-long-slug`, which downgrades the error to a warning. Existing pages with slugs longer than 80 chars are grandfathered and flagged by `wiki lint --scope long-slugs` with `SEVERITY_WARNING`.
 
 ### 6.3 Synthesis slugs
 

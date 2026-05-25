@@ -23,6 +23,7 @@ from gateway.lint import (
     filter_calibration,
     idempotency,
     inbox_pending,
+    long_slugs,
     missing_pages,
     nlm_pending,
     orphans,
@@ -49,6 +50,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("untagged-sources", untagged_sources.run),
     ("idempotency", idempotency.run),
     ("broken-wikilinks", broken_wikilinks.run),
+    ("long-slugs", long_slugs.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

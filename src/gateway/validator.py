@@ -46,6 +46,22 @@ REQUIRED_CORE_FIELDS: set[str] = {
     "content_hash",
 }
 
+# ONT-4: controlled vocabulary for entity_kind on entity wiki pages.
+ENTITY_KIND_ENUM: frozenset[str] = frozenset({
+    "person",
+    "organization",
+    "paper",
+    "drug",
+    "dataset",
+    "product",
+    "software",
+    "statute",
+    "standard",
+    "place",
+    "event",
+    "other",
+})
+
 ID_PATTERNS: dict[str, re.Pattern[str]] = {
     "youtube": re.compile(r"^yt-[A-Za-z0-9_-]+$"),
     "arxiv": re.compile(r"^arxiv-\d{4}\.\d{4,5}(v\d+)?$"),
@@ -250,7 +266,15 @@ from gateway import citations as _citations  # noqa: E402  (kept here so M1 modu
 from gateway import wiki_pages as _wiki_pages  # noqa: E402
 
 
-def validate_wiki_page_frontmatter(front: dict, page_type: str) -> ValidationResult:
+_MAX_SLUG_LEN = 80  # ONT-8: hard limit on new slug length
+
+
+def validate_wiki_page_frontmatter(
+    front: dict,
+    page_type: str,
+    *,
+    force_long_slug: bool = False,
+) -> ValidationResult:
     """Verify required fields per § 4 page type schema."""
     result = ValidationResult()
     schema = _wiki_pages.schema_for_type(page_type)
@@ -294,6 +318,31 @@ def validate_wiki_page_frontmatter(front: dict, page_type: str) -> ValidationRes
                 "slug",
             )
         )
+
+    # ONT-8: new slugs longer than 80 chars are rejected. --force-long-slug
+    # downgrades to a warning for exceptional cases.
+    if slug is not None and len(str(slug)) > _MAX_SLUG_LEN:
+        msg = (
+            f"slug is {len(str(slug))} chars (max {_MAX_SLUG_LEN}); "
+            "use --force-long-slug to override"
+        )
+        if force_long_slug:
+            result.warnings.append(ValidationError("slug-too-long", msg, "slug"))
+        else:
+            result.errors.append(ValidationError("slug-too-long", msg, "slug"))
+
+    # ONT-4: entity_kind must be a known enum value on entity pages.
+    if schema.type_name == "entity":
+        entity_kind = front.get("entity_kind")
+        if entity_kind is not None and entity_kind not in ENTITY_KIND_ENUM:
+            result.errors.append(
+                ValidationError(
+                    "entity-kind-unknown",
+                    f"entity_kind {entity_kind!r} is not in the controlled vocabulary; "
+                    f"expected one of: {', '.join(sorted(ENTITY_KIND_ENUM))}",
+                    "entity_kind",
+                )
+            )
 
     return result
 
@@ -471,6 +520,26 @@ def validate_slug_uniqueness(
     return result
 
 
+def validate_citation_verbs(body: str) -> ValidationResult:
+    """ONT-2: warn when an aliased [[sources/<id>|verb]] uses an unknown CiTO verb.
+
+    Known verbs are in `citations._CITO_VERBS`. Plain [[sources/<id>]] (no alias)
+    is never flagged — this check is purely additive.
+    """
+    result = ValidationResult()
+    for m in _citations._ALIASED_SOURCE_RE.finditer(body):
+        verb = m.group(1).strip()
+        if verb and verb not in _citations._CITO_VERBS:
+            result.warnings.append(
+                ValidationError(
+                    "citation-verb-unknown",
+                    f"unknown citation verb '{verb}'; "
+                    f"expected one of: {', '.join(sorted(_citations._CITO_VERBS))}",
+                )
+            )
+    return result
+
+
 def validate_wiki_page(
     front: dict,
     body: str,
@@ -479,6 +548,7 @@ def validate_wiki_page(
     draft: bool = False,
     existing_slugs: list[str] | None = None,
     force_new_slug: bool = False,
+    force_long_slug: bool = False,
     body_line_offset: int = 0,
 ) -> ValidationResult:
     """One-shot validation of a wiki page: frontmatter + sections + citations + slug.
@@ -488,7 +558,7 @@ def validate_wiki_page(
     original text. Compute via ``frontmatter.body_line_offset(text)``.
     """
     result = ValidationResult()
-    result.merge(validate_wiki_page_frontmatter(front, page_type))
+    result.merge(validate_wiki_page_frontmatter(front, page_type, force_long_slug=force_long_slug))
     result.merge(validate_wiki_page_sections(body, page_type))
 
     # Honor `draft: true` in frontmatter OR an explicit caller flag. To force
@@ -505,6 +575,7 @@ def validate_wiki_page(
         )
     )
     result.merge(validate_synthesizes_integrity(front, body))
+    result.merge(validate_citation_verbs(body))
 
     slug = front.get("slug")
     if slug and existing_slugs is not None:

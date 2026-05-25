@@ -1,0 +1,30 @@
+version: v1
+note: >
+  NLM compatibility shim (ARCH-10). Contains phrases NotebookLM emits as structural
+  framing or aggregate openers that are exempt from per-claim citation grounding.
+  Extend this file (not citations.py) when NotebookLM introduces new phrasing.
+  Changing this file is a deliberate, auditable editorial decision — see WIKI.md § 5.2.
+
+structural_frame_labels:
+  - "Themes Used In"
+  - "Which themes draw on it"
+  - "Which themes use it"
+  - "Items Compared"
+  - "Name and key claim"
+  - "Core approach/mechanism"
+  - "Concrete details"
+  - "Differences in Evidence"
+  - "Trade-offs and Contexts"
+  - "Strengths and Weaknesses"
+  - "Context"
+  - "Gap Identified"
+  - "Limitation Identified"
+  - "Tension Identified"
+
+aggregate_framing_openers:
+  - "Based on the (?:provided sources|corpus|previous thematic analysis|conversation history)"
+  - "Across the corpus"
+  - "Across (?:all )?(?:the )?(?:sources|themes)"
+  - "Looking across (?:all )?(?:the )?(?:themes|sources)"
+  - "Aggregating across (?:all )?(?:the )?(?:themes|sources)"
+  - "Across the (?:provided )?sources"

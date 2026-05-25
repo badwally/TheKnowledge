@@ -98,6 +98,7 @@ def test_known_checks_includes_all_documented_checks():
         "untagged-sources",
         "idempotency",
         "broken-wikilinks",
+        "long-slugs",
     }
     assert KNOWN_CHECKS == expected
 

@@ -2,9 +2,12 @@
 
 from pathlib import Path
 
+import pytest
+
 from gateway import frontmatter as fm
 from gateway import paths
-from gateway.ops.ingest import ingest_canonical
+from gateway.ops.ingest import _gather_existing_pages, ingest_canonical
+from gateway.plan import build_plan_user_prompt
 
 
 def _write_source(tmp: Path, name: str, content: str) -> Path:
@@ -200,3 +203,61 @@ def test_ingest_unbalanced_wikilink_rejected(kb_root, make_source, tmp_path):
     result = ingest_canonical(src)
     assert not result.success
     assert any("wikilink-malformed" in e for e in result.errors)
+
+
+# --- TOK-4: _gather_existing_pages two-stage select -------------------------
+
+
+def _write_wiki_entity(kb_root: Path, slug: str, domain: str, body: str) -> None:
+    d = kb_root / "wiki" / "entities"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "entity",
+        "entity_kind": "drug",
+        "slug": slug,
+        "title": slug.replace("-", " ").title(),
+        "domain": domain,
+    }
+    (d / f"{slug}.md").write_text(fm.serialize(front, body))
+
+
+def test_gather_existing_pages_30_page_stage1_under_15kb(kb_root):
+    """TOK-4: stage-1 output for a 30-page fixture must fit within 15 KB."""
+    long_body = "x" * 5000 + "\n"  # 5 KB body per page
+    for i in range(30):
+        _write_wiki_entity(kb_root, f"entity-{i:02d}", "test-domain", long_body)
+
+    pages = _gather_existing_pages("test-domain")
+
+    assert len(pages) == 30
+    prompt_block = build_plan_user_prompt("source text", pages)
+    # The existing-pages section alone must be ≤15 KB
+    existing_section_bytes = len("\n".join(pages.values()).encode())
+    assert existing_section_bytes <= 15_000, (
+        f"Stage-1 existing-pages block is {existing_section_bytes} bytes (limit 15 000)"
+    )
+
+
+def test_gather_existing_pages_small_wiki_sends_full_body(kb_root):
+    """TOK-4: ≤5 pages → full body is preserved."""
+    body = "Full body content " * 20  # ~360 chars
+    for i in range(5):
+        _write_wiki_entity(kb_root, f"small-{i}", "small-domain", body)
+
+    pages = _gather_existing_pages("small-domain")
+
+    assert len(pages) == 5
+    for content in pages.values():
+        assert body in content, "full body should be present for small wiki"
+
+
+def test_gather_existing_pages_no_domain_returns_empty(kb_root):
+    """TOK-4: without a domain, always returns {}."""
+    _write_wiki_entity(kb_root, "orphan-entity", "some-domain", "body\n")
+    assert _gather_existing_pages(None) == {}
+
+
+def test_gather_existing_pages_wrong_domain_excluded(kb_root):
+    """TOK-4: pages from a different domain are not returned."""
+    _write_wiki_entity(kb_root, "other-entity", "other-domain", "body\n")
+    assert _gather_existing_pages("my-domain") == {}

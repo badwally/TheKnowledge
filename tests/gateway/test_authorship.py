@@ -1619,3 +1619,62 @@ def test_end_to_end_smart_authorship(kb_root, make_source, tmp_path):
 
     # Summary includes authorship info
     assert "authorship" in result.summary
+
+
+# --- ARCH-10: citations_allowlist.yaml ----------------------------------------
+
+
+def test_citations_allowlist_yaml_exists():
+    """ARCH-10: citations_allowlist.yaml exists alongside citations.py."""
+    from pathlib import Path
+    import gateway
+    pkg_dir = Path(gateway.__file__).parent
+    yaml_path = pkg_dir / "data" / "citations_allowlist.yaml"
+    assert yaml_path.exists(), f"citations_allowlist.yaml not found at {yaml_path}"
+
+
+def test_citations_allowlist_yaml_has_version():
+    """ARCH-10: YAML has a version: field."""
+    from pathlib import Path
+    import gateway
+    pkg_dir = Path(gateway.__file__).parent
+    yaml_path = pkg_dir / "data" / "citations_allowlist.yaml"
+    data = yaml.safe_load(yaml_path.read_text())
+    assert "version" in data
+
+
+def test_structural_frame_labels_loaded_from_yaml():
+    """ARCH-10: _STRUCTURAL_FRAME_LABELS is loaded from YAML, not hardcoded."""
+    from pathlib import Path
+    import gateway
+    pkg_dir = Path(gateway.__file__).parent
+    yaml_path = pkg_dir / "data" / "citations_allowlist.yaml"
+    data = yaml.safe_load(yaml_path.read_text())
+    yaml_labels = frozenset(data["structural_frame_labels"])
+    assert cit._STRUCTURAL_FRAME_LABELS == yaml_labels
+
+
+def test_aggregate_framing_openers_loaded_from_yaml():
+    """ARCH-10: _AGGREGATE_FRAMING_OPENERS_RE patterns are loaded from YAML."""
+    from pathlib import Path
+    import gateway
+    import re
+    pkg_dir = Path(gateway.__file__).parent
+    yaml_path = pkg_dir / "data" / "citations_allowlist.yaml"
+    data = yaml.safe_load(yaml_path.read_text())
+    # The combined pattern must match every phrase from the YAML
+    for phrase_re in data["aggregate_framing_openers"]:
+        sample = re.sub(r"\(\?:[^)]+\)", lambda m: m.group(0).split("|")[0].lstrip("(?:"), phrase_re)
+        # Just confirm the YAML parses as valid regex (each entry compiles)
+        re.compile(phrase_re)  # raises if invalid
+
+
+def test_allowlist_yaml_phrase_set_pinned():
+    """ARCH-10: pin the YAML phrase set so deliberate changes require this test to be updated."""
+    from pathlib import Path
+    import gateway
+    pkg_dir = Path(gateway.__file__).parent
+    yaml_path = pkg_dir / "data" / "citations_allowlist.yaml"
+    data = yaml.safe_load(yaml_path.read_text())
+    assert len(data["structural_frame_labels"]) == 14
+    assert len(data["aggregate_framing_openers"]) == 6

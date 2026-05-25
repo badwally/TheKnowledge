@@ -491,6 +491,10 @@ def _first_domain(front: dict) -> str | None:
 
 _MAX_EXISTING_PAGES = 30
 _MAX_BODY_CHARS = 16000
+# TOK-4: two-stage select for existing-pages prompt block
+_STAGE1_SNIPPET_CHARS = 200      # chars of body sent in stage-1 per page
+_STAGE1_FULL_BODY_THRESHOLD = 5  # send full body when wiki has ≤ this many pages
+_STAGE1_PROMPT_CAP = 10_000      # byte cap for the entire existing-pages block
 
 
 def _invoke_plan_and_apply(
@@ -563,27 +567,55 @@ def _format_source_for_plan(front: dict, body: str) -> str:
 def _gather_existing_pages(domain: str | None) -> dict[str, str]:
     """Collect existing entity/concept/synthesis pages relevant to the domain.
 
-    Without a domain, returns an empty map (the agent will create from scratch).
+    TOK-4: two-stage select.
+    - Stage 1 (default): frontmatter + 200-char snippet per page, capped at 10 KB total.
+    - Exception: if ≤5 matching pages exist, send full bodies (small-wiki path).
+    Without a domain, returns an empty map.
     """
     if not domain:
         return {}
-    out: dict[str, str] = {}
+
+    candidates: list[tuple[str, dict, str]] = []  # (rel_path, front, body)
     for sub in ("entities", "concepts", "synthesis", "mocs"):
         d = paths.wiki_dir() / sub
         if not d.exists():
             continue
         for path in d.glob("*.md"):
             try:
-                page_front, _ = fm.parse(path.read_text())
+                page_front, page_body = fm.parse(path.read_text())
             except fm.FrontmatterError:
                 continue
             page_domains = list(page_front.get("domains") or [])
             page_domain = page_front.get("domain") or (page_domains[0] if page_domains else None)
             if page_domain == domain or domain in page_domains:
                 rel = str(path.relative_to(paths.knowledge_root()))
-                out[rel] = path.read_text()
-            if len(out) >= _MAX_EXISTING_PAGES:
-                return out
+                candidates.append((rel, page_front, page_body))
+            if len(candidates) >= _MAX_EXISTING_PAGES:
+                break
+        if len(candidates) >= _MAX_EXISTING_PAGES:
+            break
+
+    if not candidates:
+        return {}
+
+    use_full = len(candidates) <= _STAGE1_FULL_BODY_THRESHOLD
+
+    out: dict[str, str] = {}
+    total = 0
+    for rel, page_front, page_body in candidates:
+        if use_full:
+            content = fm.serialize(page_front, page_body)
+        else:
+            snippet = page_body[:_STAGE1_SNIPPET_CHARS]
+            if len(page_body) > _STAGE1_SNIPPET_CHARS:
+                snippet += "…"
+            content = fm.serialize(page_front, snippet)
+        size = len(content.encode())
+        if not use_full and total + size > _STAGE1_PROMPT_CAP:
+            break
+        out[rel] = content
+        total += size
+
     return out
 
 

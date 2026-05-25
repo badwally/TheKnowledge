@@ -8,7 +8,18 @@ and reports citation density. Used by the validator (M6+) and lint (M9).
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
 import re
+
+import yaml
+
+# ARCH-10: load NLM compat allowlist from versioned YAML so phrase additions
+# are auditable diffs rather than silent Python patches.
+_ALLOWLIST_YAML = Path(__file__).parent / "data" / "citations_allowlist.yaml"
+
+
+def _load_allowlist() -> dict:
+    return yaml.safe_load(_ALLOWLIST_YAML.read_text())
 
 
 # `[[ target | optional alias ]]` — capture the target.
@@ -19,6 +30,22 @@ _WIKILINK_REWRITE_RE = re.compile(r"\[\[([^\]\|]+?)(\|[^\]]+)?\]\]")
 
 # Markdown fenced code blocks — used to skip code from citation-grounding rules.
 _FENCE_RE = re.compile(r"```")
+
+# ONT-2: CiTO 8-verb typed citation subset (WIKI § 5.6).
+# Syntax: [[sources/<id>|<verb>]] — the alias position carries the relation type.
+_CITO_VERBS = frozenset({
+    "supports",
+    "disputes",
+    "extends",
+    "qualifies",
+    "confirms",
+    "reviews",
+    "usesMethodIn",
+    "citesAsAuthority",
+})
+
+# Matches aliased source wikilinks: [[sources/<id>|<alias>]] — group 1 is the alias.
+_ALIASED_SOURCE_RE = re.compile(r"\[\[sources/[^\]\|]+\|([^\]]+)\]\]")
 
 
 @dataclass
@@ -71,56 +98,27 @@ _SYNTHESIS_META_RE = re.compile(
     r"^\*\*(?:Origin question|Session|Branch):\*\*\s"
 )
 
-# NotebookLM-emitted structural-frame labels in synthesis pages. Lines of the
-# form `**<label>:** <content>` where `<label>` is one of these are metadata
-# about the synthesis structure (which themes are being compared, what
-# foundational sources are shared) — they describe the analysis frame, not
-# claims about the world, so they do not need per-line citation.
-#
-# This is an explicit allowlist (not a heuristic) so a real claim hiding as
-# `**Finding:** Drug X causes Y` still gets flagged. Extend the set when
-# NotebookLM introduces a new frame label.
-_STRUCTURAL_FRAME_LABELS = frozenset({
-    "Themes Used In",
-    "Which themes draw on it",
-    "Which themes use it",
-    "Items Compared",
-    "Name and key claim",
-    "Core approach/mechanism",
-    "Concrete details",
-    "Differences in Evidence",
-    "Trade-offs and Contexts",
-    "Strengths and Weaknesses",
-    "Context",
-    # M45.1 (2026-05-13): observed in the ML-models-for-reserve-studies run.
-    # NotebookLM uses these as structural sub-headers under "Gaps" /
-    # "Limitations" / "Tensions" sections to call out the specific issue.
-    "Gap Identified",
-    "Limitation Identified",
-    "Tension Identified",
-})
+# ARCH-10: NLM compat allowlists loaded from citations_allowlist.yaml.
+# Extend the YAML file (not this code) when NotebookLM introduces new phrases.
+_allowlist = _load_allowlist()
+
+# NotebookLM-emitted structural-frame labels. Lines of the form
+# `**<label>:** <content>` where <label> is in this set describe the
+# synthesis structure, not world-claims, so they are exempt from citation.
+_STRUCTURAL_FRAME_LABELS: frozenset[str] = frozenset(_allowlist["structural_frame_labels"])
 
 _STRUCTURAL_FRAME_LABEL_RE = re.compile(r"^\*\*([^*]+?):\*\*\s")
 
 
-# M45: aggregate-framing opener allowlist. The first claim sentence of a
-# `## ` section is exempt from per-claim citation when the page declares
-# `synthesizes:` (with ≥2 entries) and the corresponding `## Included works`
-# section mirrors that list. The exemption is bounded — only one opener per
-# section — so subsequent claims in the same paragraph still require direct
-# citation. Patterns observed empirically on NotebookLM cross-cutting
-# branches (2026-05-12, 2026-05-13 runs); extend as new patterns appear.
+# M45: aggregate-framing opener allowlist. Each entry is a regex fragment;
+# they are joined into one pattern at import time.
 _AGGREGATE_FRAMING_OPENERS_RE = re.compile(
-    r"^(?:"
-    r"Based on the (?:provided sources|corpus|previous thematic analysis|conversation history)"
-    r"|Across the corpus"
-    r"|Across (?:all )?(?:the )?(?:sources|themes)"
-    r"|Looking across (?:all )?(?:the )?(?:themes|sources)"
-    r"|Aggregating across (?:all )?(?:the )?(?:themes|sources)"
-    r"|Across the (?:provided )?sources"
-    r")\b",
+    r"^(?:" + r"|".join(_allowlist["aggregate_framing_openers"]) + r")\b",
     re.IGNORECASE,
+
 )
+
+del _allowlist  # keep module namespace clean
 
 
 # M45: a synthesizes: list entry like `sources/web-...` or `synthesis/<slug>`.
