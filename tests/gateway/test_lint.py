@@ -97,6 +97,7 @@ def test_known_checks_includes_all_documented_checks():
         "nlm-pending",
         "untagged-sources",
         "idempotency",
+        "broken-wikilinks",
     }
     assert KNOWN_CHECKS == expected
 

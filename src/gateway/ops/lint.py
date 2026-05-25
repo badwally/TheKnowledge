@@ -16,6 +16,7 @@ from gateway import log, paths
 from gateway.core import OperationResult
 from gateway.lint import LintFinding
 from gateway.lint import (
+    broken_wikilinks,
     citation_chains,
     citation_density,
     contradictions,
@@ -47,6 +48,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("nlm-pending", nlm_pending.run),
     ("untagged-sources", untagged_sources.run),
     ("idempotency", idempotency.run),
+    ("broken-wikilinks", broken_wikilinks.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
