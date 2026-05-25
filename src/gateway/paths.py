@@ -77,3 +77,19 @@ def raw_source_path(source_type: str, source_id: str) -> Path:
 
 def wiki_source_path(source_id: str) -> Path:
     return wiki_dir() / "sources" / f"{source_id}.md"
+
+
+class PromptGuardError(RuntimeError):
+    """Raised when a prompt-unsafe file (log.md, index.md) is passed for LLM context."""
+
+
+_PROMPT_UNSAFE_NAMES = frozenset({"log.md", "index.md"})
+
+
+def assert_safe_for_prompt(path: Path) -> None:
+    if path.name in _PROMPT_UNSAFE_NAMES:
+        raise PromptGuardError(
+            f"{path.name} must not be loaded into LLM prompts — "
+            "it is unbounded in size. Use _tail_log_entries() for log "
+            "excerpts or wiki context ops for LLM wiki context."
+        )
