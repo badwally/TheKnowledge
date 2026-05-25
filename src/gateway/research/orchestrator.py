@@ -33,7 +33,12 @@ from gateway import converters, frontmatter as fm
 from gateway import log, nlm_registry, paths
 from gateway.core import OperationResult, write_atomic
 from gateway.filter import policy as _policy
-from gateway.filter.semantic import FilterClient, FilterError, score as filter_score
+from gateway.filter.semantic import (
+    FilterClient,
+    FilterError,
+    build_system_prompt as _build_filter_system_prompt,
+    score as filter_score,
+)
 from gateway.filter import load_all as _load_examples, select as _select_examples
 from gateway.locking import file_lock
 from gateway.ops.apply_plan import apply_plan
@@ -266,6 +271,9 @@ def _run_filter(
     deterministic.
     """
     examples = _select_examples(_load_examples(domain), policy)
+    # TOK-3: build once for the whole batch — policy+examples are identical
+    # across all candidates in this run, so N candidates → 1 build, not N.
+    prebuilt_system = _build_filter_system_prompt(policy, examples)
     scores: list[float | None] = [None] * len(candidates)
     workers = max(1, max_workers if max_workers is not None else _FILTER_MAX_WORKERS)
 
@@ -276,7 +284,9 @@ def _run_filter(
         body_head = item.description or item.title
         try:
             result = filter_score(
-                front, body_head, policy, examples, client=filter_client
+                front, body_head, policy, examples,
+                client=filter_client,
+                _prebuilt_system=prebuilt_system,
             )
         except FilterError as e:
             _emit_step_error(session_id, "filter", item.url, str(e))

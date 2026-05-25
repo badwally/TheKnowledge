@@ -501,6 +501,32 @@ def test_claude_cli_filter_client_call_prompt_omits_system_prompt_flag(monkeypat
     assert argv[-1] == "monolithic"
 
 
+def test_score_prebuilt_system_skips_build_system_prompt(monkeypatch, kb_root):
+    """TOK-3: when _prebuilt_system is passed, build_system_prompt is not called."""
+    from gateway.filter import semantic
+
+    build_calls: list[str] = []
+    monkeypatch.setattr(
+        semantic, "build_system_prompt",
+        lambda policy, examples: build_calls.append("called") or "fallback-system",
+    )
+
+    write_policy("test-domain")
+    policy = load_policy("test-domain")
+    client = SplitStubClient('{"score": 0.7, "rationale": "prebuilt"}')
+
+    result = score(
+        {"type": "web", "title": "T"}, "body", policy,
+        client=client,
+        _prebuilt_system="prebuilt system prompt text",
+    )
+    assert build_calls == []  # not called — prebuilt was used
+    assert result.score == 0.7
+    # Verify the prebuilt string was actually used as the system arg
+    system_used, _ = client.split_calls[0]
+    assert system_used == "prebuilt system prompt text"
+
+
 def test_claude_cli_strips_anthropic_api_key_from_subprocess_env(monkeypatch):
     """Regression: the gateway's `claude -p` subprocess invocations must drop
     `ANTHROPIC_API_KEY` so the Claude CLI uses the user's Max-plan OAuth login

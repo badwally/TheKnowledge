@@ -164,3 +164,27 @@ def test_log_llm_call_no_body_just_header(kb_root: Path):
             continue
         assert follow.startswith("## ["), f"unexpected body line after llm-call: {follow!r}"
         break
+
+
+# --- TOK-7: assert_safe_for_prompt guard -----------------------------------
+
+
+def test_assert_safe_for_prompt_raises_for_log_md(kb_root: Path):
+    """assert_safe_for_prompt raises PromptGuardError for log.md."""
+    from gateway.paths import PromptGuardError, assert_safe_for_prompt
+    with pytest.raises(PromptGuardError, match="log.md"):
+        assert_safe_for_prompt(paths.log_path())
+
+
+def test_assert_safe_for_prompt_raises_for_index_md(kb_root: Path):
+    """assert_safe_for_prompt raises PromptGuardError for index.md."""
+    from gateway.paths import PromptGuardError, assert_safe_for_prompt
+    with pytest.raises(PromptGuardError, match="index.md"):
+        assert_safe_for_prompt(paths.index_path())
+
+
+def test_assert_safe_for_prompt_passes_for_wiki_page(kb_root: Path):
+    """assert_safe_for_prompt does not raise for a normal wiki page path."""
+    from gateway.paths import assert_safe_for_prompt
+    safe = paths.wiki_dir() / "concepts" / "food-noise.md"
+    assert_safe_for_prompt(safe)  # must not raise
