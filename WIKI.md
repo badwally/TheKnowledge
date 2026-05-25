@@ -689,6 +689,7 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Propose citations for a draft page | `wiki cite --suggest <page>` | (CLI only) |
 | Run per-domain evaluation (M50) | `wiki evaluate <domain> [--limit N]` | `wiki_evaluate` |
 | Scaffold a new goldens template | `wiki evaluate --scaffold <domain>` | (via `wiki_evaluate`) |
+| Fetch read-only wiki context (M51) | `wiki context <slug-or-query> [--depth N] [--format markdown\|json] --caller <id>` | `wiki_context` |
 | Bootstrap a new domain (top-down) | `wiki bootstrap-domain "<description>" <slug> [--force]` | (CLI only) |
 | Discover candidate domains (bottom-up) | `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | (CLI only) |
 | Promote a draft proposal | `wiki promote-domain <proposal-slug>` | (CLI only) |
