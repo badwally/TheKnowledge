@@ -18589,3 +18589,593 @@ report=.knowledge/lint/2026-05-24T17-45-08Z-schema-drift.md
 ## [2026-05-24T17:56:55Z] lint | scope=schema-drift | schema-drift=106
 
 report=.knowledge/lint/2026-05-24T17-56-55Z-schema-drift.md
+
+## [2026-05-24T18:17:38Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-17-38Z-schema-drift.md
+
+## [2026-05-24T18:17:47Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-17-47Z-schema-drift.md
+
+## [2026-05-24T18:20:45Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-20-45Z-schema-drift.md
+
+## [2026-05-24T18:29:35Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-29-35Z-schema-drift.md
+
+## [2026-05-24T18:39:31Z] concept-add | slug=ai-native-substrate | domain=ai-native-business | draft=no | cite_sources=(none)
+
+created wiki/concepts/ai-native-substrate.md
+
+## [2026-05-24T18:40:44Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-40-44Z-schema-drift.md
+
+## [2026-05-24T18:42:27Z] finalize-abandon | page=wiki/synthesis/2026-05-23-define-ai-as-substrate-precisely-as.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-23-define-ai-as-substrate-precisely-as.md
+
+## [2026-05-24T18:43:18Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-43-18Z-schema-drift.md
+
+## [2026-05-24T18:45:33Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-45-33Z-schema-drift.md
+
+## [2026-05-24T18:45:58Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-45-58Z-schema-drift.md
+
+## [2026-05-24T18:47:06Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-47-06Z-schema-drift.md
+
+## [2026-05-24T18:54:24Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T18-54-24Z-schema-drift.md
+
+## [2026-05-24T20:31:31Z] finalize-batch | candidates=223 | finalized=0 | escalated=183 | execute=False | suggest=False
+
+finalize-batch: 223 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-24T20:33:37Z] finalize-batch | candidates=223 | finalized=0 | escalated=183 | execute=False | suggest=False
+
+finalize-batch: 223 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-24T20:36:51Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T20-36-51Z-schema-drift.md
+
+## [2026-05-24T22:05:44Z] finalize | page=wiki/entities/associa.md
+
+finalized wiki/entities/associa.md
+
+## [2026-05-24T22:05:44Z] finalize | page=wiki/entities/brk-engineering.md
+
+finalized wiki/entities/brk-engineering.md
+
+## [2026-05-24T22:05:44Z] finalize | page=wiki/entities/brookfield-residential-services.md
+
+finalized wiki/entities/brookfield-residential-services.md
+
+## [2026-05-24T22:05:44Z] finalize | page=wiki/entities/buildinglink-canada.md
+
+finalized wiki/entities/buildinglink-canada.md
+
+## [2026-05-24T22:05:44Z] finalize | page=wiki/entities/california-davis-stirling-5550.md
+
+finalized wiki/entities/california-davis-stirling-5550.md
+
+## [2026-05-24T22:05:44Z] finalize-batch | candidates=5 | finalized=5 | escalated=0 | execute=True | suggest=False
+
+finalize-batch: 5 candidates, 5 finalized (execute=True, suggest=False)
+
+## [2026-05-24T22:06:48Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T22-06-48Z-schema-drift.md
+
+## [2026-05-24T22:07:46Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T22-07-46Z-schema-drift.md
+
+## [2026-05-24T22:20:25Z] lint | scope=schema-drift | schema-drift=106
+
+report=.knowledge/lint/2026-05-24T22-20-25Z-schema-drift.md
+
+## [2026-05-24T22:24:56Z] edit-section | page=wiki/mocs/ai-native-business.md | section=Overview
+
+edited section 'Overview' in wiki/mocs/ai-native-business.md
+
+## [2026-05-24T22:26:46Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-26-46Z-schema-drift.md
+
+## [2026-05-24T22:29:39Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-29-39Z-schema-drift.md
+
+## [2026-05-24T22:30:06Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-30-06Z-schema-drift.md
+
+## [2026-05-24T22:33:38Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-33-38Z-schema-drift.md
+
+## [2026-05-24T22:33:43Z] lint | scope=citation-chains | citation-chains=26
+
+report=.knowledge/lint/2026-05-24T22-33-43Z-citation-chains.md
+
+## [2026-05-24T22:38:50Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-38-50Z-schema-drift.md
+
+## [2026-05-24T22:40:00Z] finalize-batch | candidates=0 | finalized=0 | escalated=0 | execute=False | suggest=True
+
+finalize-batch: 0 candidates, 0 finalized (execute=False, suggest=True)
+
+## [2026-05-24T22:40:15Z] lint | scope=stale-drafts | stale-drafts=218
+
+report=.knowledge/lint/2026-05-24T22-40-15Z-stale-drafts.md
+
+## [2026-05-24T22:42:25Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-42-25Z-schema-drift.md
+
+## [2026-05-24T22:45:58Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-45-58Z-schema-drift.md
+
+## [2026-05-24T22:49:00Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-49-00Z-schema-drift.md
+
+## [2026-05-24T22:49:11Z] cite | page=wiki/synthesis/2026-05-24-what-is-the-ai-native-services.md | additions=2 | sources=2
+
+added 2 citation(s) to wiki/synthesis/2026-05-24-what-is-the-ai-native-services.md
+
+## [2026-05-24T22:51:28Z] cite | page=wiki/synthesis/2026-05-24-what-is-the-ai-native-marketplace.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/synthesis/2026-05-24-what-is-the-ai-native-marketplace.md
+
+## [2026-05-24T22:52:16Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-52-16Z-schema-drift.md
+
+## [2026-05-24T22:52:16Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-52-16Z-schema-drift.md
+
+## [2026-05-24T22:53:10Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-24T22-53-10Z-schema-drift.md
+
+## [2026-05-25T01:31:35Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T01-31-35Z-schema-drift.md
+
+## [2026-05-25T01:34:37Z] evaluate | domain=glp1-reward-modulation | n_questions=15 | mean_score=0.566 | input_tokens=348112 | cache_read_tokens=0
+
+evaluate glp1-reward-modulation: 15 Q, mean=0.566
+
+## [2026-05-25T01:36:26Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T01-36-26Z-schema-drift.md
+
+## [2026-05-25T01:38:59Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T01-38-59Z-schema-drift.md
+
+## [2026-05-25T04:22:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1735 | cache_read=0 | cache_creation=78264 | duration_ms=18749 | cost_usd=0.106513
+
+## [2026-05-25T04:22:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3583 | cache_read=69240 | cache_creation=11821 | duration_ms=40647 | cost_usd=0.039623
+
+## [2026-05-25T04:23:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2036 | cache_read=69240 | cache_creation=9870 | duration_ms=26033 | cost_usd=0.029449
+
+## [2026-05-25T04:23:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1232 | cache_read=69240 | cache_creation=8897 | duration_ms=15692 | cost_usd=0.024213
+
+## [2026-05-25T04:24:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2341 | cache_read=69240 | cache_creation=12689 | duration_ms=28661 | cost_usd=0.034498
+
+## [2026-05-25T04:24:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1624 | cache_read=67558 | cache_creation=9607 | duration_ms=19854 | cost_usd=0.026893
+
+## [2026-05-25T04:24:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1239 | cache_read=68421 | cache_creation=8758 | duration_ms=14000 | cost_usd=0.023993
+
+## [2026-05-25T04:25:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1799 | cache_read=68421 | cache_creation=8777 | duration_ms=22981 | cost_usd=0.026816
+
+## [2026-05-25T04:25:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2008 | cache_read=68421 | cache_creation=8721 | duration_ms=23271 | cost_usd=0.027791
+
+## [2026-05-25T04:25:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1469 | cache_read=68421 | cache_creation=8759 | duration_ms=16954 | cost_usd=0.025144
+
+## [2026-05-25T04:26:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1692 | cache_read=67558 | cache_creation=13860 | duration_ms=22705 | cost_usd=0.032549
+
+## [2026-05-25T04:26:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1572 | cache_read=68996 | cache_creation=11981 | duration_ms=22261 | cost_usd=0.029744
+
+## [2026-05-25T04:27:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5480 | cache_read=68996 | cache_creation=12039 | duration_ms=53483 | cost_usd=0.049356
+
+## [2026-05-25T04:28:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2151 | cache_read=68996 | cache_creation=9022 | duration_ms=26309 | cost_usd=0.028940
+
+## [2026-05-25T04:28:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1436 | cache_read=68996 | cache_creation=12558 | duration_ms=17552 | cost_usd=0.029785
+
+## [2026-05-25T04:28:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1484 | cache_read=67558 | cache_creation=13527 | duration_ms=17108 | cost_usd=0.031093
+
+## [2026-05-25T04:29:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2216 | cache_read=70040 | cache_creation=12413 | duration_ms=27921 | cost_usd=0.033608
+
+## [2026-05-25T04:29:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1165 | cache_read=70040 | cache_creation=9483 | duration_ms=16892 | cost_usd=0.024691
+
+## [2026-05-25T04:30:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1223 | cache_read=70040 | cache_creation=8667 | duration_ms=14432 | cost_usd=0.023961
+
+## [2026-05-25T04:30:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2102 | cache_read=70040 | cache_creation=11883 | duration_ms=24646 | cost_usd=0.032376
+
+## [2026-05-25T04:30:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1744 | cache_read=67558 | cache_creation=15657 | duration_ms=21269 | cost_usd=0.035055
+
+## [2026-05-25T04:31:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1746 | cache_read=69146 | cache_creation=9415 | duration_ms=21235 | cost_usd=0.027421
+
+## [2026-05-25T04:31:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1798 | cache_read=69146 | cache_creation=9215 | duration_ms=23213 | cost_usd=0.027431
+
+## [2026-05-25T04:32:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2173 | cache_read=69146 | cache_creation=9784 | duration_ms=27512 | cost_usd=0.030018
+
+## [2026-05-25T04:32:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3060 | cache_read=69240 | cache_creation=12114 | duration_ms=46779 | cost_usd=0.037374
+
+## [2026-05-25T04:32:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1892 | cache_read=69146 | cache_creation=9138 | duration_ms=23682 | cost_usd=0.027805
+
+## [2026-05-25T04:33:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1548 | cache_read=67558 | cache_creation=10936 | duration_ms=18019 | cost_usd=0.028174
+
+## [2026-05-25T04:33:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3064 | cache_read=69240 | cache_creation=12316 | duration_ms=32715 | cost_usd=0.037647
+
+## [2026-05-25T04:33:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1752 | cache_read=69426 | cache_creation=8793 | duration_ms=19410 | cost_usd=0.026702
+
+## [2026-05-25T04:33:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1682 | cache_read=81929 | cache_creation=0 | duration_ms=21546 | cost_usd=0.016611
+
+## [2026-05-25T04:33:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1800 | cache_read=69240 | cache_creation=9360 | duration_ms=21389 | cost_usd=0.027632
+
+## [2026-05-25T04:34:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2686 | cache_read=69426 | cache_creation=8783 | duration_ms=35260 | cost_usd=0.031359
+
+## [2026-05-25T04:34:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=78264 | cache_creation=0 | duration_ms=20985 | cost_usd=0.015984
+
+## [2026-05-25T04:34:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1672 | cache_read=69426 | cache_creation=8975 | duration_ms=19464 | cost_usd=0.026529
+
+## [2026-05-25T04:34:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2397 | cache_read=81354 | cache_creation=0 | duration_ms=27379 | cost_usd=0.020128
+
+## [2026-05-25T04:34:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2075 | cache_read=68421 | cache_creation=8772 | duration_ms=22343 | cost_usd=0.028190
+
+## [2026-05-25T04:34:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1862 | cache_read=69426 | cache_creation=8965 | duration_ms=21300 | cost_usd=0.027467
+
+## [2026-05-25T04:35:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1169 | cache_read=69240 | cache_creation=10313 | duration_ms=15708 | cost_usd=0.025668
+
+## [2026-05-25T04:35:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2167 | cache_read=68421 | cache_creation=8746 | duration_ms=23781 | cost_usd=0.028618
+
+## [2026-05-25T04:35:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3154 | cache_read=67558 | cache_creation=10300 | duration_ms=30405 | cost_usd=0.035409
+
+## [2026-05-25T04:35:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1514 | cache_read=77165 | cache_creation=0 | duration_ms=18698 | cost_usd=0.015294
+
+## [2026-05-25T04:35:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2972 | cache_read=69240 | cache_creation=11953 | duration_ms=35482 | cost_usd=0.036733
+
+## [2026-05-25T04:35:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2667 | cache_read=68669 | cache_creation=9004 | duration_ms=29379 | cost_usd=0.031465
+
+## [2026-05-25T04:35:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1786 | cache_read=68421 | cache_creation=8751 | duration_ms=21818 | cost_usd=0.026719
+
+## [2026-05-25T04:36:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=81556 | cache_creation=0 | duration_ms=24218 | cost_usd=0.018449
+
+## [2026-05-25T04:36:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2166 | cache_read=68669 | cache_creation=8794 | duration_ms=25275 | cost_usd=0.028697
+
+## [2026-05-25T04:36:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2646 | cache_read=68421 | cache_creation=8780 | duration_ms=30395 | cost_usd=0.031055
+
+## [2026-05-25T04:36:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1546 | cache_read=68669 | cache_creation=8819 | duration_ms=17282 | cost_usd=0.025629
+
+## [2026-05-25T04:36:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2484 | cache_read=69240 | cache_creation=11877 | duration_ms=32597 | cost_usd=0.034198
+
+## [2026-05-25T04:36:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1549 | cache_read=80977 | cache_creation=0 | duration_ms=18858 | cost_usd=0.015851
+
+## [2026-05-25T04:36:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1364 | cache_read=68669 | cache_creation=8783 | duration_ms=16261 | cost_usd=0.024674
+
+## [2026-05-25T04:36:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1189 | cache_read=68421 | cache_creation=8782 | duration_ms=13247 | cost_usd=0.023773
+
+## [2026-05-25T04:36:59Z] lint | scope=all | orphans=527 | stale-drafts=218 | stale-claims=3 | contradictions=55 | missing-pages=47 | citation-density=218 | citation-chains=26 | schema-drift=102 | filter-calibration=22 | inbox-pending=0 | nlm-pending=2 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-25T04-36-59Z.md
+
+## [2026-05-25T04:37:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1015 | cache_read=68996 | cache_creation=8746 | duration_ms=14316 | cost_usd=0.022915
+
+## [2026-05-25T04:37:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1603 | cache_read=68421 | cache_creation=8760 | duration_ms=19241 | cost_usd=0.025815
+
+## [2026-05-25T04:37:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1941 | cache_read=0 | cache_creation=71793 | duration_ms=21484 | cost_usd=0.099454
+
+## [2026-05-25T04:37:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1884 | cache_read=68421 | cache_creation=8766 | duration_ms=22350 | cost_usd=0.027228
+
+## [2026-05-25T04:37:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1369 | cache_read=81035 | cache_creation=0 | duration_ms=17601 | cost_usd=0.014957
+
+## [2026-05-25T04:38:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1135 | cache_read=68421 | cache_creation=8798 | duration_ms=14102 | cost_usd=0.023523
+
+## [2026-05-25T04:38:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1368 | cache_read=68996 | cache_creation=8702 | duration_ms=16668 | cost_usd=0.024625
+
+## [2026-05-25T04:38:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2245 | cache_read=77172 | cache_creation=0 | duration_ms=25692 | cost_usd=0.018950
+
+## [2026-05-25T04:38:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2361 | cache_read=70040 | cache_creation=9265 | duration_ms=27409 | cost_usd=0.030398
+
+## [2026-05-25T04:38:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1665 | cache_read=68996 | cache_creation=9577 | duration_ms=21840 | cost_usd=0.027204
+
+## [2026-05-25T04:39:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1372 | cache_read=70040 | cache_creation=9100 | duration_ms=17536 | cost_usd=0.025247
+
+## [2026-05-25T04:39:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1481 | cache_read=78018 | cache_creation=0 | duration_ms=16994 | cost_usd=0.015215
+
+## [2026-05-25T04:39:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2008 | cache_read=70040 | cache_creation=9543 | duration_ms=25365 | cost_usd=0.028981
+
+## [2026-05-25T04:39:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1631 | cache_read=68996 | cache_creation=12096 | duration_ms=20881 | cost_usd=0.030183
+
+## [2026-05-25T04:39:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1738 | cache_read=70040 | cache_creation=12910 | duration_ms=20697 | cost_usd=0.031839
+
+## [2026-05-25T04:40:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2002 | cache_read=81418 | cache_creation=0 | duration_ms=23275 | cost_usd=0.018160
+
+## [2026-05-25T04:40:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2051 | cache_read=70040 | cache_creation=11765 | duration_ms=23880 | cost_usd=0.031973
+
+## [2026-05-25T04:40:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2028 | cache_read=81554 | cache_creation=0 | duration_ms=26674 | cost_usd=0.018303
+
+## [2026-05-25T04:40:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2027 | cache_read=69146 | cache_creation=11936 | duration_ms=25047 | cost_usd=0.031978
+
+## [2026-05-25T04:41:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1663 | cache_read=0 | cache_creation=66342 | duration_ms=31495 | cost_usd=0.091250
+
+## [2026-05-25T04:41:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2547 | cache_read=69146 | cache_creation=9852 | duration_ms=30093 | cost_usd=0.031973
+
+## [2026-05-25T04:41:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1974 | cache_read=70040 | cache_creation=8764 | duration_ms=28675 | cost_usd=0.027837
+
+## [2026-05-25T04:41:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1492 | cache_read=0 | cache_creation=72666 | duration_ms=19286 | cost_usd=0.098300
+
+## [2026-05-25T04:42:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2608 | cache_read=70040 | cache_creation=9662 | duration_ms=28516 | cost_usd=0.032130
+
+## [2026-05-25T04:42:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3089 | cache_read=69146 | cache_creation=9243 | duration_ms=31099 | cost_usd=0.033921
+
+## [2026-05-25T04:42:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1310 | cache_read=69146 | cache_creation=9011 | duration_ms=16758 | cost_usd=0.024736
+
+## [2026-05-25T04:42:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2572 | cache_read=70040 | cache_creation=9830 | duration_ms=31062 | cost_usd=0.032160
+
+## [2026-05-25T04:43:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2084 | cache_read=69426 | cache_creation=8779 | duration_ms=25688 | cost_usd=0.028344
+
+## [2026-05-25T04:43:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1946 | cache_read=70040 | cache_creation=11692 | duration_ms=22541 | cost_usd=0.031357
+
+## [2026-05-25T04:43:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1528 | cache_read=69426 | cache_creation=8809 | duration_ms=17334 | cost_usd=0.025602
+
+## [2026-05-25T04:43:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2198 | cache_read=69146 | cache_creation=11872 | duration_ms=26916 | cost_usd=0.032753
+
+## [2026-05-25T04:43:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1511 | cache_read=69426 | cache_creation=8767 | duration_ms=20239 | cost_usd=0.025464
+
+## [2026-05-25T04:44:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1885 | cache_read=78389 | cache_creation=0 | duration_ms=23377 | cost_usd=0.017272
+
+## [2026-05-25T04:44:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1429 | cache_read=69426 | cache_creation=8955 | duration_ms=17803 | cost_usd=0.025289
+
+## [2026-05-25T04:44:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2120 | cache_read=69146 | cache_creation=9487 | duration_ms=24169 | cost_usd=0.029381
+
+## [2026-05-25T04:44:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2736 | cache_read=69426 | cache_creation=8788 | duration_ms=29722 | cost_usd=0.031616
+
+## [2026-05-25T04:45:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2788 | cache_read=68669 | cache_creation=8819 | duration_ms=30258 | cost_usd=0.031839
+
+## [2026-05-25T04:45:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3680 | cache_read=69146 | cache_creation=12402 | duration_ms=39255 | cost_usd=0.040825
+
+## [2026-05-25T04:45:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1569 | cache_read=68669 | cache_creation=9112 | duration_ms=16653 | cost_usd=0.026110
+
+## [2026-05-25T04:45:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1761 | cache_read=69146 | cache_creation=9622 | duration_ms=23008 | cost_usd=0.027755
+
+## [2026-05-25T04:45:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2121 | cache_read=68669 | cache_creation=9160 | duration_ms=22192 | cost_usd=0.028930
+
+## [2026-05-25T04:46:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2803 | cache_read=78235 | cache_creation=0 | duration_ms=34202 | cost_usd=0.021846
+
+## [2026-05-25T04:46:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2611 | cache_read=68669 | cache_creation=9090 | duration_ms=27227 | cost_usd=0.031292
+
+## [2026-05-25T04:46:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3052 | cache_read=69426 | cache_creation=8960 | duration_ms=32346 | cost_usd=0.033411
+
+## [2026-05-25T04:47:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2448 | cache_read=68669 | cache_creation=9072 | duration_ms=27490 | cost_usd=0.030455
+
+## [2026-05-25T04:47:01Z] lint | scope=all | orphans=527 | stale-drafts=218 | stale-claims=3 | contradictions=75 | missing-pages=66 | citation-density=218 | citation-chains=26 | schema-drift=102 | filter-calibration=17 | inbox-pending=0 | nlm-pending=2 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-25T04-47-01Z.md
+
+## [2026-05-25T04:47:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1871 | cache_read=78209 | cache_creation=0 | duration_ms=20916 | cost_usd=0.017184
+
+## [2026-05-25T04:47:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1549 | cache_read=69426 | cache_creation=8784 | duration_ms=16776 | cost_usd=0.025676
+
+## [2026-05-25T04:47:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1738 | cache_read=69426 | cache_creation=8983 | duration_ms=20091 | cost_usd=0.026869
+
+## [2026-05-25T04:48:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2674 | cache_read=68669 | cache_creation=9035 | duration_ms=28824 | cost_usd=0.031539
+
+## [2026-05-25T04:48:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2137 | cache_read=68669 | cache_creation=9050 | duration_ms=21897 | cost_usd=0.028872
+
+## [2026-05-25T04:49:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1948 | cache_read=68669 | cache_creation=8996 | duration_ms=22662 | cost_usd=0.027860
+
+## [2026-05-25T04:49:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2047 | cache_read=68669 | cache_creation=9054 | duration_ms=22374 | cost_usd=0.028427
+
+## [2026-05-25T04:50:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1885 | cache_read=68669 | cache_creation=8777 | duration_ms=23796 | cost_usd=0.027271
+
+## [2026-05-25T04:50:13Z] lint | scope=all | orphans=527 | stale-drafts=218 | stale-claims=3 | contradictions=69 | missing-pages=60 | citation-density=218 | citation-chains=26 | schema-drift=102 | filter-calibration=17 | inbox-pending=0 | nlm-pending=2 | untagged-sources=1
+
+report=.knowledge/lint/2026-05-25T04-50-13Z.md
+
+## [2026-05-25T16:24:41Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-24-41Z-schema-drift.md
+
+## [2026-05-25T16:30:05Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-30-05Z-schema-drift.md
+
+## [2026-05-25T16:36:43Z] context | caller=phaseC-smoke | target=wiki/entities/a-mem.md | depth=0 | format=markdown | pages_returned=1
+
+context: caller='phaseC-smoke' target=wiki/entities/a-mem.md depth=0 pages=1
+
+## [2026-05-25T16:36:50Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-36-50Z-schema-drift.md
+
+## [2026-05-25T16:40:48Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-40-48Z-schema-drift.md
+
+## [2026-05-25T16:42:47Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=0 | format=json | pages_returned=1
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=0 pages=1
+
+## [2026-05-25T16:42:52Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=1 | format=json | pages_returned=7
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=1 pages=7
+
+## [2026-05-25T16:42:54Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=2 | format=json | pages_returned=7
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=2 pages=7
+
+## [2026-05-25T16:42:56Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=1 | format=markdown | pages_returned=7
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=1 pages=7
+
+## [2026-05-25T16:42:59Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=2 | format=markdown | pages_returned=7
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=2 pages=7
+
+## [2026-05-25T16:44:28Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=0 | format=markdown | pages_returned=1
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=0 pages=1
+
+## [2026-05-25T16:44:29Z] context | caller=m51-handtest | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=0 | format=markdown | pages_returned=1
+
+context: caller='m51-handtest' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=0 pages=1
+
+## [2026-05-25T16:46:25Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-46-25Z-schema-drift.md
+
+## [2026-05-25T16:48:53Z] context | caller=spec-review-double-check | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=1 | format=json | pages_returned=7
+
+context: caller='spec-review-double-check' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=1 pages=7
+
+## [2026-05-25T16:53:37Z] context | caller=m51-fix-verify | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=1 | format=json | pages_returned=7
+
+context: caller='m51-fix-verify' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=1 pages=7
+
+## [2026-05-25T16:53:38Z] context | caller=m51-fix-verify | target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md | depth=0 | format=markdown | pages_returned=1
+
+context: caller='m51-fix-verify' target=wiki/synthesis/2026-05-09-how-do-the-major-u-s.md depth=0 pages=1
+
+## [2026-05-25T16:54:01Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-54-01Z-schema-drift.md
+
+## [2026-05-25T16:54:31Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T16-54-31Z-schema-drift.md
+
+## [2026-05-25T17:00:38Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-00-38Z-schema-drift.md
+
+## [2026-05-25T17:07:38Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-07-38Z-schema-drift.md
+
+## [2026-05-25T17:11:00Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-11-00Z-schema-drift.md
+
+## [2026-05-25T17:16:13Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-16-13Z-schema-drift.md
+
+## [2026-05-25T17:19:50Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-19-50Z-schema-drift.md
+
+## [2026-05-25T17:22:28Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-22-28Z-schema-drift.md
+
+## [2026-05-25T17:29:33Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-29-33Z-schema-drift.md
+
+## [2026-05-25T17:33:07Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-33-07Z-schema-drift.md
+
+## [2026-05-25T17:39:47Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-39-47Z-schema-drift.md
+
+## [2026-05-25T17:43:38Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-43-38Z-schema-drift.md
+
+## [2026-05-25T17:50:53Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-50-53Z-schema-drift.md
+
+## [2026-05-25T17:52:33Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T17-52-33Z-schema-drift.md
+
+## [2026-05-25T18:01:41Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T18-01-41Z-schema-drift.md
+
+## [2026-05-25T18:02:56Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T18-02-56Z-schema-drift.md
+
+## [2026-05-25T18:03:44Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T18-03-44Z-schema-drift.md
+
+## [2026-05-25T21:04:36Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-04-36Z-schema-drift.md
+
+## [2026-05-25T21:08:09Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-08-09Z-schema-drift.md
+
+## [2026-05-25T21:10:18Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-10-18Z-schema-drift.md
+
+## [2026-05-25T21:11:25Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-11-25Z-schema-drift.md
+
+## [2026-05-25T21:12:47Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-12-47Z-schema-drift.md
+
+## [2026-05-25T21:14:36Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-14-36Z-schema-drift.md
+
+## [2026-05-25T21:30:41Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-30-41Z-schema-drift.md
+
+## [2026-05-25T21:32:32Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T21-32-32Z-schema-drift.md
+
+## [2026-05-25T22:38:48Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T22-38-48Z-schema-drift.md
+
+## [2026-05-25T22:41:35Z] lint | scope=schema-drift | schema-drift=102
+
+report=.knowledge/lint/2026-05-25T22-41-35Z-schema-drift.md
+
+## [2026-05-25T22:44:47Z] lint | scope=schema-drift | schema-drift=160
+
+report=.knowledge/lint/2026-05-25T22-44-47Z-schema-drift.md
+
+## [2026-05-25T22:47:31Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T22-47-31Z-schema-drift.md
+
+## [2026-05-25T22:50:19Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T22-50-19Z-schema-drift.md
+
+## [2026-05-25T22:51:39Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T22-51-39Z-schema-drift.md
