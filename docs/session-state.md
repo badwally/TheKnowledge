@@ -1,18 +1,18 @@
 # Session state — 2026-05-25
 
-Last updated: 2026-05-25 (Phase 1 Round B, post-TOK-6)
+Last updated: 2026-05-25 (Phase 1 Round B, post-M53, merged to main)
 
 ---
 
 ## Open contracts
 
-- TOK-7 not yet implemented: `assert_safe_for_prompt()` guard in `paths.py`, module-level warnings in `log.py` and `index.py`, CLAUDE.md rule already added, tests, commit as `perf(tok-7)`. Branch `phase1-round-b`.
+None. Phase 1 Round B is complete and merged.
 
 ---
 
 ## Files mid-edit
 
-None — TOK-7 was interrupted before any edits were made.
+None.
 
 ---
 
@@ -23,7 +23,9 @@ None — TOK-7 was interrupted before any edits were made.
 - TOK-1: `cache_read=0` diagnosed as 60-token system prompt below 1024-token floor; M50.1 (`7ad5996`) already fixed it by moving wiki_context to `user_prompt_prefix`. No code change needed; doc at `docs/M52-tok1-cache-diagnosis.md`.
 - TOK-3: `build_system_prompt()` now called once per `_run_filter` batch via `_build_filter_system_prompt` pre-computed before ThreadPoolExecutor. `_prebuilt_system` param added to `semantic.score()`.
 - TOK-6: transcription cache at `raw/<type>/_transcripts/<sha256hex>.json`. `TranscriptionResult.from_dict()` added. Voice and audiobook converters check cache before calling mlx-whisper.
-- Test count post-TOK-6: 1024 passing.
+- TOK-7: `PromptGuardError` + `assert_safe_for_prompt(path)` added to `paths.py`. Raises for `log.md` or `index.md`. 3 tests.
+- M53 tagged `m53-phase1-round-b`, merged to main. 1027 tests passing.
+- Session-state discipline infrastructure: `docs/session-state.md`, PreCompact/SessionStart hooks, CLAUDE.md rule.
 
 ---
 
@@ -34,11 +36,12 @@ None — TOK-7 was interrupted before any edits were made.
 
 ---
 
+## Pending / known issues
+
+- `.claude/settings.json` hook format still wrong (`matcher+hooks` wrapper missing). User must apply manually — hard block on self-modification. Current file has flat `[{"type": "command", ...}]` instead of `[{"matcher": "", "hooks": [{"type": "command", ...}]}]`.
+
+---
+
 ## Next atomic step
 
-Implement TOK-7 on branch `phase1-round-b`:
-1. Add `PromptGuardError` + `assert_safe_for_prompt(path)` to `src/gateway/paths.py` — raises if `path` resolves to `log.md` or `index.md`.
-2. Add module-level docstring warning to `src/gateway/log.py` and `src/gateway/index.py`.
-3. Write 3 tests in `tests/gateway/test_log_and_locking.py`: guard raises for log.md, raises for index.md, passes for a wiki page.
-4. Commit as `perf(tok-7): assert_safe_for_prompt guard for log.md and index.md`.
-5. Then: full pytest -x (expect 1027 passing), write M53 milestone doc, update BUILD.md, tag `m53-phase1-round-b`, merge to main.
+Phase 1 Round C (multi-model routing) — not yet planned. Await user direction.
