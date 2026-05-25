@@ -687,6 +687,8 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Finalize a draft | `wiki finalize <page-path> [--abandon]` | `wiki_finalize` |
 | Batch-close stale drafts | `wiki finalize-batch [--suggest] [--execute] [--domain X] [--limit N]` | `wiki_finalize_batch` |
 | Propose citations for a draft page | `wiki cite --suggest <page>` | (CLI only) |
+| Run per-domain evaluation (M50) | `wiki evaluate <domain> [--limit N]` | `wiki_evaluate` |
+| Scaffold a new goldens template | `wiki evaluate --scaffold <domain>` | (via `wiki_evaluate`) |
 | Bootstrap a new domain (top-down) | `wiki bootstrap-domain "<description>" <slug> [--force]` | (CLI only) |
 | Discover candidate domains (bottom-up) | `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | (CLI only) |
 | Promote a draft proposal | `wiki promote-domain <proposal-slug>` | (CLI only) |
