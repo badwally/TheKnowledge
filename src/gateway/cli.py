@@ -1177,14 +1177,21 @@ def _run_evaluate(ns: argparse.Namespace) -> int:
 def _run_context(ns: argparse.Namespace) -> int:
     from gateway.ops.context_op import context_op
 
-    return _emit_result(
-        context_op(
-            ns.query,
-            depth=ns.depth,
-            fmt=ns.format,
-            caller=ns.caller,
-        )
+    result = context_op(
+        ns.query,
+        depth=ns.depth,
+        fmt=ns.format,
+        caller=ns.caller,
     )
+    if not result.success:
+        for err in result.errors:
+            print(err, file=sys.stderr)
+        return 1
+    # Raw stdout: result.summary is the payload (markdown or JSON), meant to be
+    # piped into a sibling project's context loader or `jq`. The standard
+    # `ok: ... touched: ...` envelope would corrupt machine-readable formats.
+    print(result.summary)
+    return 0
 
 
 def _run_cite(ns: argparse.Namespace) -> int:
