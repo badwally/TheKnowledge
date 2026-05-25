@@ -560,6 +560,29 @@ finalized_at: "2026-04-29T10:15:00Z"
 
 **Visibility rules.** Draft pages are searchable, linkable, and lintable like any other page. They appear in `index.md` with a `[draft]` marker. Cross-references *to* a draft page are allowed; cross-references *from* a draft are also allowed. Synthesis pages may cite drafts (the citation grounds in the draft, not in the source — caller's risk).
 
+### 5.6 Typed citation relations (CiTO subset)
+
+Citations may carry an optional relation type using wikilink alias syntax:
+
+```
+[[sources/<id>|<verb>]]
+```
+
+The verb occupies the alias position. Supported verbs (ONT-2, CiTO 8-verb subset):
+
+| Verb | Meaning |
+|---|---|
+| `supports` | Source provides evidence in favor of the claim |
+| `disputes` | Source challenges or contradicts the claim |
+| `extends` | Source builds on prior work cited in the claim |
+| `qualifies` | Source adds nuance or conditions to the claim |
+| `confirms` | Source independently replicates the claim |
+| `reviews` | Source provides a review or meta-analysis of the claim |
+| `usesMethodIn` | Source applies a method described in the claim |
+| `citesAsAuthority` | Source is cited as a foundational reference |
+
+Plain `[[sources/<id>]]` (no alias) remains valid and means "cited without a specified relation." The validator emits `SEVERITY_WARNING` (not an error) when an alias is present but not one of the eight verbs — this allows free-text anchors and titles in aliases without hard rejection. The full 41-verb CiTO ontology is intentionally not adopted; this subset covers the operating need.
+
 ## 6. Slug conventions
 
 ### 6.1 Source IDs (`raw/<type>/<id>.md`)

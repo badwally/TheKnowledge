@@ -1,5 +1,6 @@
 """Validator unit tests for M1 rules."""
 
+from gateway import citations as c
 from gateway import validator as v
 
 
@@ -164,3 +165,53 @@ def test_frontmatter_diff_multiple_violations():
     new["type"] = "web"
     result = v.validate_source_frontmatter_diff(old, new)
     assert len([e for e in result.errors if e.rule == "frontmatter-mutation"]) == 2
+
+
+# --- ONT-2: CiTO 8-verb typed citations -------------------------------------
+
+
+def test_cito_verbs_exact_set():
+    """ONT-2: _CITO_VERBS contains exactly the 8 specified verbs."""
+    expected = frozenset({
+        "supports", "disputes", "extends", "qualifies",
+        "confirms", "reviews", "usesMethodIn", "citesAsAuthority",
+    })
+    assert c._CITO_VERBS == expected
+
+
+def test_validate_citation_verbs_known_verb_no_warning():
+    """ONT-2: known CiTO verb in aliased source citation → no warning."""
+    body = "GLP-1 reduces food intake. [[sources/yt-abc123|supports]]\n"
+    result = v.validate_citation_verbs(body)
+    assert result.ok
+    assert not result.warnings
+
+
+def test_validate_citation_verbs_unknown_verb_emits_warning():
+    """ONT-2: unknown verb in aliased source citation → SEVERITY_WARNING."""
+    body = "GLP-1 reduces appetite. [[sources/yt-abc123|proves]]\n"
+    result = v.validate_citation_verbs(body)
+    assert result.ok  # warnings only, not errors
+    assert any(w.rule == "citation-verb-unknown" for w in result.warnings)
+
+
+def test_validate_citation_verbs_unaliased_unchanged():
+    """ONT-2: plain [[sources/<id>]] (no alias) must never trigger the check."""
+    body = "GLP-1 reduces appetite. [[sources/yt-abc123]]\n"
+    result = v.validate_citation_verbs(body)
+    assert result.ok
+    assert not result.warnings
+
+
+def test_validate_citation_verbs_wired_into_validate_wiki_page():
+    """ONT-2: unknown verb is surfaced via validate_wiki_page for wiki pages."""
+    front = {
+        "type": "concept",
+        "slug": "food-noise",
+        "title": "Food Noise",
+        "domain": "glp1",
+        "domains": ["glp1"],
+    }
+    body = "Food noise is reduced. [[sources/yt-abc123|invented]]\n\n## Summary\n\nSummary text. [[sources/yt-abc123|invented]]\n"
+    result = v.validate_wiki_page(front, body, page_type="concept", draft=True)
+    assert any(w.rule == "citation-verb-unknown" for w in result.warnings)

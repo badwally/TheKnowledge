@@ -20,6 +20,22 @@ _WIKILINK_REWRITE_RE = re.compile(r"\[\[([^\]\|]+?)(\|[^\]]+)?\]\]")
 # Markdown fenced code blocks — used to skip code from citation-grounding rules.
 _FENCE_RE = re.compile(r"```")
 
+# ONT-2: CiTO 8-verb typed citation subset (WIKI § 5.6).
+# Syntax: [[sources/<id>|<verb>]] — the alias position carries the relation type.
+_CITO_VERBS = frozenset({
+    "supports",
+    "disputes",
+    "extends",
+    "qualifies",
+    "confirms",
+    "reviews",
+    "usesMethodIn",
+    "citesAsAuthority",
+})
+
+# Matches aliased source wikilinks: [[sources/<id>|<alias>]] — group 1 is the alias.
+_ALIASED_SOURCE_RE = re.compile(r"\[\[sources/[^\]\|]+\|([^\]]+)\]\]")
+
 
 @dataclass
 class Citation:

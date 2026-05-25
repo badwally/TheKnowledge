@@ -471,6 +471,26 @@ def validate_slug_uniqueness(
     return result
 
 
+def validate_citation_verbs(body: str) -> ValidationResult:
+    """ONT-2: warn when an aliased [[sources/<id>|verb]] uses an unknown CiTO verb.
+
+    Known verbs are in `citations._CITO_VERBS`. Plain [[sources/<id>]] (no alias)
+    is never flagged — this check is purely additive.
+    """
+    result = ValidationResult()
+    for m in _citations._ALIASED_SOURCE_RE.finditer(body):
+        verb = m.group(1).strip()
+        if verb and verb not in _citations._CITO_VERBS:
+            result.warnings.append(
+                ValidationError(
+                    "citation-verb-unknown",
+                    f"unknown citation verb '{verb}'; "
+                    f"expected one of: {', '.join(sorted(_citations._CITO_VERBS))}",
+                )
+            )
+    return result
+
+
 def validate_wiki_page(
     front: dict,
     body: str,
@@ -505,6 +525,7 @@ def validate_wiki_page(
         )
     )
     result.merge(validate_synthesizes_integrity(front, body))
+    result.merge(validate_citation_verbs(body))
 
     slug = front.get("slug")
     if slug and existing_slugs is not None:
