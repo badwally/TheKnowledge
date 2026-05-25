@@ -4,6 +4,8 @@ M1: input is an already-canonical markdown file.
 M2: URL inputs dispatched to converters.
 M3: semantic filter runs after validation; gates wiki-page creation by threshold.
 M6: agent-driven multi-page authorship layered on top.
+
+Idempotency: safe to re-run; same content_hash → no-op (convergent); missing wiki/sources page is backfilled.
 """
 
 from __future__ import annotations

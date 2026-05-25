@@ -3,6 +3,8 @@
 Updates the source frontmatter's `filter.user_correction` block and pins
 the corrected example to the bank with `pinned_by: user-correction`. The
 next filter call sees this example as a high-signal calibration input.
+
+Idempotency: re-correcting the same source overwrites user_correction; safe to re-run with a revised rationale.
 """
 
 from __future__ import annotations
@@ -14,6 +16,7 @@ from gateway import log, paths
 from gateway.core import OperationResult, write_atomic
 from gateway.filter import pin
 from gateway.locking import file_lock
+from gateway.validator import validate_source_frontmatter_diff
 
 
 def _now_iso() -> str:
@@ -71,10 +74,18 @@ def filter_correct(
     }
 
     with file_lock(f"ingest-{source_id}"):
+        old_front = dict(front)
         existing_filter = front.get("filter") if isinstance(front.get("filter"), dict) else {}
         new_filter = dict(existing_filter)
         new_filter["user_correction"] = correction_block
         front["filter"] = new_filter
+
+        diff_result = validate_source_frontmatter_diff(old_front, front)
+        if not diff_result.ok:
+            return OperationResult(
+                success=False,
+                errors=[str(e) for e in diff_result.errors],
+            )
 
         write_atomic(raw_path, fm.serialize(front, body))
 

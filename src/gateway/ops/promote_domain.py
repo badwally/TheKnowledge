@@ -9,6 +9,8 @@ frontmatter mutations preserve body bytes (immutability check passes).
 On any validation failure, zero on-disk changes occur.
 
 Reversed by `wiki demote-domain <proposed_domain>`.
+
+Idempotency: re-promoting an already-blessed proposal is a no-op (policy exists guard); source back-tagging skips existing tags.
 """
 
 from __future__ import annotations

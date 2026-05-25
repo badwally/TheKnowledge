@@ -11,10 +11,13 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 import re
 
-from gateway import paths
+import yaml
+
+from gateway import log, paths
 from gateway.core import OperationResult
 from gateway.costs import estimate_cost
 from gateway.evaluate.persistence import eval_dir_for, read_trend
+from gateway.ops.finetune import trigger_states_all
 from gateway.watcher import watcher_state
 
 
@@ -75,6 +78,11 @@ def status(*, with_cost: bool = False) -> OperationResult:
     else:
         lines.append("Recent activity: (log.md not yet created)")
 
+    # QUAL-5: fine-tune readiness block
+    ft_block = _finetune_readiness_block()
+    if ft_block:
+        lines.append(ft_block)
+
     # M50: evaluation scores block
     eval_block = _evaluation_status_block()
     lines.append(eval_block)
@@ -87,6 +95,71 @@ def status(*, with_cost: bool = False) -> OperationResult:
         lines.append(usage_block)
 
     return OperationResult(success=True, summary="\n".join(lines))
+
+
+_FINETUNE_MILESTONE_PATH_NAME = "finetune_milestones.yaml"
+_FINETUNE_MILESTONE_PCT = 80
+
+
+def _finetune_milestone_path() -> "Path":
+    from pathlib import Path
+    return paths.knowledge_internal() / _FINETUNE_MILESTONE_PATH_NAME
+
+
+def _load_finetune_milestones() -> set[str]:
+    """Load the set of domains already logged for the 80% milestone."""
+    p = _finetune_milestone_path()
+    if not p.exists():
+        return set()
+    try:
+        data = yaml.safe_load(p.read_text()) or {}
+        return set(data.get("logged_domains", []))
+    except (yaml.YAMLError, OSError):
+        return set()
+
+
+def _save_finetune_milestones(logged: set[str]) -> None:
+    p = _finetune_milestone_path()
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(yaml.safe_dump({"logged_domains": sorted(logged)}))
+
+
+def _finetune_readiness_block() -> str:
+    """Render per-domain fine-tune readiness for `wiki status`.
+
+    Shows each domain's example-bank count toward the 500-decision threshold.
+    Logs a one-shot entry when a domain crosses 80%. Returns empty string when
+    no domains have policies.
+    """
+    states = trigger_states_all()
+    if not states:
+        return ""
+
+    logged_milestones = _load_finetune_milestones()
+    newly_logged: set[str] = set()
+
+    rows: list[str] = []
+    for ts in states:
+        pct = int(min(100, ts.count / ts.threshold * 100))
+        rows.append(f"  - {ts.domain}: {ts.count}/{ts.threshold} ({pct}%)")
+        if pct >= _FINETUNE_MILESTONE_PCT and ts.domain not in logged_milestones:
+            log.append(
+                "finetune-milestone",
+                fields={
+                    "domain": ts.domain,
+                    "count": ts.count,
+                    "threshold": ts.threshold,
+                    "pct": pct,
+                },
+                summary=f"{ts.domain} reached {pct}% fine-tune readiness ({ts.count}/{ts.threshold})",
+            )
+            newly_logged.add(ts.domain)
+
+    if newly_logged:
+        _save_finetune_milestones(logged_milestones | newly_logged)
+
+    header = "Fine-tune readiness (decisions toward 500-example threshold):"
+    return "\n".join([header] + rows)
 
 
 def _evaluation_status_block() -> str:

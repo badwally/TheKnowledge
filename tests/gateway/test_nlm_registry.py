@@ -300,3 +300,45 @@ def test_save_preserves_existing_sessions(kb_root):
     sessions = nlm_registry.list_sessions("d1")
     assert len(sessions) == 1
     assert sessions[0]["session_id"] == "sess-a"
+
+
+# --- ARCH-6: register_session force=True ------------------------------------
+
+
+def test_register_session_force_replaces_promoted(kb_root):
+    """force=True must allow re-registration of a promoted session."""
+    nlm_registry.register("d1", "nb-1")
+    nlm_registry.register_session("d1", "sess-p", "nb-old", query="q-old")
+    nlm_registry.mark_promoted("d1", "sess-p", sources_added=5)
+
+    # Without force → raises
+    with pytest.raises(ValueError, match="already registered"):
+        nlm_registry.register_session("d1", "sess-p", "nb-new", query="q-new")
+
+    # With force → replaces
+    nlm_registry.register_session("d1", "sess-p", "nb-new", query="q-new", force=True)
+    sess = nlm_registry.get_session("d1", "sess-p")
+    assert sess is not None
+    assert sess["notebook_id"] == "nb-new"
+    assert sess["status"] == nlm_registry.EPHEMERAL
+
+
+def test_register_session_force_replaces_ephemeral(kb_root):
+    """force=True also replaces an active ephemeral session (explicit override)."""
+    nlm_registry.register("d1", "nb-1")
+    nlm_registry.register_session("d1", "sess-e", "nb-old", query="q-old")
+
+    nlm_registry.register_session("d1", "sess-e", "nb-new", query="q-new", force=True)
+    sess = nlm_registry.get_session("d1", "sess-e")
+    assert sess["notebook_id"] == "nb-new"
+    assert sess["status"] == nlm_registry.EPHEMERAL
+
+
+def test_register_session_without_force_still_raises_on_promoted(kb_root):
+    """Default (force=False) must still reject a promoted session."""
+    nlm_registry.register("d1", "nb-1")
+    nlm_registry.register_session("d1", "sess-q", "nb-orig", query="q")
+    nlm_registry.mark_promoted("d1", "sess-q", sources_added=3)
+
+    with pytest.raises(ValueError, match="already registered"):
+        nlm_registry.register_session("d1", "sess-q", "nb-other", query="q2")

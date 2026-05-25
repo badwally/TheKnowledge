@@ -96,6 +96,8 @@ def test_known_checks_includes_all_documented_checks():
         "inbox-pending",
         "nlm-pending",
         "untagged-sources",
+        "idempotency",
+        "broken-wikilinks",
     }
     assert KNOWN_CHECKS == expected
 
@@ -841,3 +843,83 @@ def test_untagged_sources_empty_when_all_tagged(kb_root):
 
 def test_untagged_sources_registered_in_known_checks():
     assert "untagged-sources" in KNOWN_CHECKS
+
+
+# --- ARCH-6: idempotency lint check -----------------------------------------
+
+
+from gateway.lint import idempotency as _idempotency_check
+
+
+def _write_policy_file(domain: str) -> None:
+    import yaml as _yaml
+    pol_dir = paths.knowledge_root() / ".knowledge" / "policies" / domain
+    pol_dir.mkdir(parents=True, exist_ok=True)
+    (pol_dir / "policy.yaml").write_text(
+        _yaml.safe_dump({
+            "version": "v1",
+            "domain": {"slug": domain, "topic": domain, "field": "test"},
+            "filter": {
+                "threshold_include": 0.7,
+                "threshold_review": 0.5,
+                "example_count_in_prompt": 0,
+                "example_strategy": "balanced",
+            },
+            "inclusion_criteria": ["test"],
+            "exclusion_criteria": [],
+            "quality_signals": {},
+        })
+    )
+
+
+def test_idempotency_clean_when_registry_empty(kb_root):
+    findings = _idempotency_check.run()
+    assert findings == []
+
+
+def test_idempotency_no_finding_when_policy_exists(kb_root):
+    _write_policy_file("dom-a")
+    nlm_registry.register("dom-a", "nb-dom-a")
+    findings = _idempotency_check.run()
+    assert not any(f.metadata.get("kind") == "no-policy" for f in findings)
+
+
+def test_idempotency_flags_missing_policy(kb_root):
+    """Domain in registry with no on-disk policy → no-policy finding."""
+    nlm_registry.register("dom-orphan", "nb-orphan")
+    findings = _idempotency_check.run()
+    no_policy = [f for f in findings if f.metadata.get("kind") == "no-policy"]
+    assert len(no_policy) == 1
+    assert "dom-orphan" in no_policy[0].message
+
+
+def test_idempotency_flags_stale_ephemeral_session(kb_root):
+    """Ephemeral session older than 24h → stale-session finding."""
+    from datetime import timedelta
+    _write_policy_file("dom-b")
+    nlm_registry.register("dom-b", "nb-dom-b")
+    # Register a session, then backdate its created_at to 25h ago.
+    nlm_registry.register_session("dom-b", "sess-old", "nb-sess", query="q")
+    records = nlm_registry._load_records()
+    old_ts = (datetime.now(timezone.utc) - timedelta(hours=25)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    records["dom-b"].sessions[0].created_at = old_ts
+    nlm_registry._write_records(records)
+
+    findings = _idempotency_check.run()
+    stale = [f for f in findings if f.metadata.get("kind") == "stale-session"]
+    assert len(stale) == 1
+    assert stale[0].metadata["session_id"] == "sess-old"
+
+
+def test_idempotency_does_not_flag_recent_session(kb_root):
+    """Ephemeral session < 24h old → no stale-session finding."""
+    _write_policy_file("dom-c")
+    nlm_registry.register("dom-c", "nb-dom-c")
+    nlm_registry.register_session("dom-c", "sess-new", "nb-new", query="q")
+    findings = _idempotency_check.run()
+    stale = [f for f in findings if f.metadata.get("kind") == "stale-session"]
+    assert stale == []
+
+
+def test_idempotency_registered_in_known_checks():
+    assert "idempotency" in KNOWN_CHECKS

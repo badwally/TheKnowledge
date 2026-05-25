@@ -6,6 +6,8 @@ rejection (no draft downgrade). On success, clears `draft: true` and
 unresolved rules.
 
 `--abandon` deletes the draft page and removes its backlinks instead.
+
+Idempotency: finalizing an already-finalized page is a no-op (returns success with no writes).
 """
 
 from __future__ import annotations

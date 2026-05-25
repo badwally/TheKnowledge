@@ -35,6 +35,7 @@ from gateway.core import OperationResult, write_atomic
 from gateway.filter import policy as _policy
 from gateway.filter.semantic import FilterClient, FilterError, score as filter_score
 from gateway.filter import load_all as _load_examples, select as _select_examples
+from gateway.locking import file_lock
 from gateway.ops.apply_plan import apply_plan
 from gateway.plan import Plan, PlanClient, WikiUpdate
 from gateway.research import query_plan_store as _qp_store
@@ -366,10 +367,17 @@ def _materialize(
             continue
 
         raw_path = paths.raw_source_path(str(source_type), str(source_id))
-        # Respect source-immutability: if the same content_hash is
-        # already on disk, leave the file alone.
-        if not raw_path.exists():
-            write_atomic(raw_path, text)
+        # Write the filter score into the frontmatter before persisting.
+        front["filter"] = {"score": round(score, 3)}
+        text = fm.serialize(front, _body)
+
+        # Acquire per-source lock so concurrent research-vs-ingest calls
+        # for the same source_id don't interleave writes.
+        with file_lock(f"ingest-{source_id}"):
+            # Respect source-immutability: if the same content_hash is
+            # already on disk, leave the file alone.
+            if not raw_path.exists():
+                write_atomic(raw_path, text)
 
         rel = f"raw/{source_type}/{source_id}"
         out.append(

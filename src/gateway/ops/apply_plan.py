@@ -4,6 +4,8 @@ This is the structural enforcement of the "plan-before-write" rule. The
 gateway is the only thing that mutates wiki/ files for entity / concept /
 synthesis / MOC pages. Sources still go through `wiki ingest`; artifacts
 through `wiki nlm-*`.
+
+Idempotency: applying the same plan twice produces the same files; backlink updates skip entries already present.
 """
 
 from __future__ import annotations
@@ -221,7 +223,10 @@ def _record_backlinks(source_id: str, wiki_page_paths: list[str]) -> None:
             existing.append(p)
             changed = True
     if changed:
+        old_front = dict(front)
         front["wiki_pages"] = existing
+        if not validator.validate_source_frontmatter_diff(old_front, front).ok:
+            return
         write_atomic(raw_path, fm.serialize(front, body))
 
 

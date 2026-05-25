@@ -77,3 +77,90 @@ def test_immutability_unchanged():
 def test_immutability_changed():
     result = v.validate_source_immutability("body v1", "body v2")
     assert any(e.rule == "source-immutability" for e in result.errors)
+
+
+# === ARCH-2: validate_source_frontmatter_diff =================================
+
+
+def _base_source_front():
+    return {
+        "id": "yt-abc123",
+        "type": "youtube",
+        "title": "Test",
+        "ingested_at": "2026-04-27T20:00:00Z",
+        "content_hash": "sha256:" + "0" * 64,
+    }
+
+
+def test_frontmatter_diff_unchanged():
+    front = _base_source_front()
+    result = v.validate_source_frontmatter_diff(front, dict(front))
+    assert result.ok
+
+
+def test_frontmatter_diff_allowlisted_filter_mutation():
+    old = _base_source_front()
+    new = dict(old)
+    new["filter"] = {"score": 0.9, "decision": "include"}
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert result.ok
+
+
+def test_frontmatter_diff_allowlisted_wiki_pages_mutation():
+    old = _base_source_front()
+    new = dict(old)
+    new["wiki_pages"] = ["wiki/sources/yt-abc123"]
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert result.ok
+
+
+def test_frontmatter_diff_allowlisted_nlm_corpus_ids_mutation():
+    old = _base_source_front()
+    new = dict(old)
+    new["nlm_corpus_ids"] = ["nb_abc123"]
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert result.ok
+
+
+def test_frontmatter_diff_allowlisted_domains_mutation():
+    old = _base_source_front()
+    new = dict(old)
+    new["domains"] = ["glp1-reward-modulation"]
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert result.ok
+
+
+def test_frontmatter_diff_title_mutation_rejected():
+    old = _base_source_front()
+    new = dict(old)
+    new["title"] = "Changed Title"
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert not result.ok
+    assert any(e.rule == "frontmatter-mutation" and e.field_name == "title" for e in result.errors)
+
+
+def test_frontmatter_diff_non_allowlisted_addition_rejected():
+    old = _base_source_front()
+    new = dict(old)
+    new["extra_field"] = "should not be here"
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert not result.ok
+    assert any(e.rule == "frontmatter-mutation" and e.field_name == "extra_field" for e in result.errors)
+
+
+def test_frontmatter_diff_non_allowlisted_deletion_rejected():
+    old = _base_source_front()
+    new = dict(old)
+    del new["title"]
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert not result.ok
+    assert any(e.rule == "frontmatter-mutation" and e.field_name == "title" for e in result.errors)
+
+
+def test_frontmatter_diff_multiple_violations():
+    old = _base_source_front()
+    new = dict(old)
+    new["title"] = "Changed"
+    new["type"] = "web"
+    result = v.validate_source_frontmatter_diff(old, new)
+    assert len([e for e in result.errors if e.rule == "frontmatter-mutation"]) == 2

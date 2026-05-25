@@ -1112,3 +1112,148 @@ def test_cross_cutting_synthesis_omits_synthesizes_when_one_branch():
     )
     front, _ = fm.parse(update.content)
     assert "synthesizes" not in front
+
+
+# --- ARCH-4: _materialize per-source lock + filter writeback ----------------
+
+
+def _make_accepted(
+    url: str,
+    score: float,
+    kb_root: Path,
+    *,
+    source_id: str | None = None,
+    monkeypatch: pytest.MonkeyPatch | None = None,
+) -> tuple[list, "orch._StubConverter"]:
+    """Return (accepted list, stub converter) for one URL."""
+    pass  # placeholder
+
+
+def _build_candidate_and_text(url: str, score: float, kb_root: Path) -> tuple:
+    """Build (accepted, converter text) for _materialize tests."""
+    from gateway import frontmatter as fm, validator
+    from datetime import datetime, timezone
+
+    body = f"Body for {url}.\n"
+    slug_safe = "".join(ch for ch in url.lower() if ch.isalnum())[-12:] or "abcdef123456"
+    source_id = f"web-2026-04-29-{slug_safe}"
+    front = {
+        "id": source_id,
+        "type": "web",
+        "title": f"Title for {url}",
+        "url": url,
+        "authors": [],
+        "published_at": "2026-04-29",
+        "ingested_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "content_hash": validator.compute_content_hash(body),
+        "domains": ["alpha"],
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+    }
+    text = fm.serialize(front, body)
+    return source_id, text
+
+
+def test_materialize_writes_filter_score_to_frontmatter(kb_root: Path, monkeypatch: pytest.MonkeyPatch):
+    """Filter score from _run_filter must appear in the raw file's frontmatter."""
+    from gateway import frontmatter as fm, paths
+
+    source_id, text = _build_candidate_and_text("https://example.com/art1", 0.87, kb_root)
+    candidate = CandidateItem(
+        source_type="web",
+        item_id="art1",
+        url="https://example.com/art1",
+        title="Article 1",
+        description="desc",
+    )
+
+    class _OneConverter:
+        def detect(self, s): return True
+        def convert(self, s): return text
+
+    monkeypatch.setattr(orch.converters, "dispatch", lambda url: _OneConverter())
+
+    accepted = [(candidate, 0.87)]
+    materialized = orch._materialize(accepted, session_id="sess-arch4")
+
+    assert len(materialized) == 1
+    raw_path = paths.raw_source_path("web", source_id)
+    assert raw_path.exists()
+    front, _ = fm.parse(raw_path.read_text())
+    assert front.get("filter") is not None
+    assert abs(front["filter"]["score"] - 0.87) < 0.001
+
+
+def test_materialize_acquires_per_source_lock(kb_root: Path, monkeypatch: pytest.MonkeyPatch):
+    """_materialize must acquire file_lock('ingest-<source_id>') before writing."""
+    import gateway.research.orchestrator as orch_mod
+    from gateway.locking import file_lock as real_lock
+
+    source_id, text = _build_candidate_and_text("https://example.com/art2", 0.91, kb_root)
+    candidate = CandidateItem(
+        source_type="web",
+        item_id="art2",
+        url="https://example.com/art2",
+        title="Article 2",
+        description="desc",
+    )
+
+    class _OneConverter:
+        def detect(self, s): return True
+        def convert(self, s): return text
+
+    monkeypatch.setattr(orch_mod.converters, "dispatch", lambda url: _OneConverter())
+
+    locks_acquired: list[str] = []
+    import contextlib
+    original_lock = real_lock
+
+    @contextlib.contextmanager
+    def _tracking_lock(name):
+        locks_acquired.append(name)
+        with original_lock(name):
+            yield
+
+    monkeypatch.setattr(orch_mod, "file_lock", _tracking_lock)
+
+    orch_mod._materialize([(candidate, 0.91)], session_id="sess-arch4-lock")
+    assert f"ingest-{source_id}" in locks_acquired
+
+
+def test_materialize_concurrent_writes_no_corruption(kb_root: Path, monkeypatch: pytest.MonkeyPatch):
+    """Two concurrent _materialize calls for the same source must not corrupt the file."""
+    import concurrent.futures
+    import threading
+    from gateway import frontmatter as fm, paths
+
+    source_id, text = _build_candidate_and_text("https://example.com/shared", 0.75, kb_root)
+    candidate = CandidateItem(
+        source_type="web",
+        item_id="shared",
+        url="https://example.com/shared",
+        title="Shared",
+        description="desc",
+    )
+
+    barrier = threading.Barrier(2, timeout=5.0)
+
+    class _SlowConverter:
+        def detect(self, s): return True
+        def convert(self, s):
+            barrier.wait()  # both converters run simultaneously
+            return text
+
+    monkeypatch.setattr(orch.converters, "dispatch", lambda url: _SlowConverter())
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+        f1 = pool.submit(orch._materialize, [(candidate, 0.75)], session_id="sess-1")
+        f2 = pool.submit(orch._materialize, [(candidate, 0.75)], session_id="sess-2")
+        f1.result(timeout=10)
+        f2.result(timeout=10)
+
+    raw_path = paths.raw_source_path("web", source_id)
+    assert raw_path.exists()
+    # File must parse cleanly — no corruption from concurrent writes.
+    front, _ = fm.parse(raw_path.read_text())
+    assert front.get("filter") is not None

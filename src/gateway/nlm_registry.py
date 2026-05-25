@@ -361,14 +361,16 @@ def register_session(
     notebook_id: str,
     *,
     query: str,
+    force: bool = False,
 ) -> None:
     """Register a new ephemeral session notebook for a domain.
 
     If a session with the same id exists in `abandoned` status, it is
     replaced (re-registration is treated as a clean restart of an
     abandoned attempt). Active (`ephemeral`) or `promoted` sessions
-    cannot be re-registered — those represent in-flight or finalized
-    work and require explicit `mark_abandoned` first.
+    cannot be re-registered without `force=True`. Pass `force=True` to
+    replace any existing session regardless of status — use when re-executing
+    a research run that has a stale or already-promoted session entry.
     """
     with file_lock(_REGISTRY_LOCK):
         records = _load_records()
@@ -384,12 +386,12 @@ def register_session(
         )
         for i, s in enumerate(record.sessions):
             if s.session_id == session_id:
-                if s.status == ABANDONED:
+                if s.status == ABANDONED or force:
                     record.sessions[i] = new_entry
                     break
                 raise ValueError(
                     f"session {session_id!r} already registered for domain "
-                    f"{domain!r} (status={s.status}); abandon it first to re-register"
+                    f"{domain!r} (status={s.status}); abandon it first or pass force=True"
                 )
         else:
             record.sessions.append(new_entry)
