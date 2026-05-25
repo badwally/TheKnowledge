@@ -211,6 +211,25 @@ def wiki_evaluate(
 
 
 @mcp.tool()
+def wiki_context(
+    query: str,
+    depth: int = 1,
+    format: str = "markdown",
+    caller: str | None = None,
+) -> dict[str, Any]:
+    """Read-only fetch of a wiki page + N-hop wikilink-resolved neighbors.
+
+    query: slug, path, or title substring.
+    depth: how many wikilink hops to follow (default 1).
+    format: "markdown" or "json".
+    caller: free-form caller identifier (logged to log.md). Required.
+    """
+    from gateway.ops.context_op import context_op
+
+    return _serialize(context_op(query, depth=depth, fmt=format, caller=caller))
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,

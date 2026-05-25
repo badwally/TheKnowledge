@@ -50,6 +50,7 @@ SUBCOMMANDS: dict[str, str] = {
     "schedule": "Manage cron-driven scheduled jobs (list/add/remove/enable/disable/run/dry-run)",
     "auth": "Manage bearer tokens for /api/ingest (add/list/revoke) — K3 cloud shim",
     "evaluate": "Run per-domain evaluation (M50): scores wiki content against golden Q/A pairs at .knowledge/eval/<domain>/goldens.yaml",
+    "context": "Read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -87,6 +88,7 @@ IMPLEMENTED: set[str] = {
     "schedule",
     "auth",
     "evaluate",
+    "context",
 }
 
 
@@ -249,6 +251,14 @@ def build_parser() -> argparse.ArgumentParser:
                             help="Score at most this many goldens.")
     p_evaluate.add_argument("--scaffold", default=None, metavar="DOMAIN",
                             help="Write a template goldens.yaml for the named domain.")
+
+    # context: read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)
+    p_context = subparsers.add_parser("context", help=SUBCOMMANDS["context"])
+    p_context.add_argument("query", help="Slug, path, or title substring.")
+    p_context.add_argument("--depth", type=int, default=1)
+    p_context.add_argument("--format", choices=["markdown", "json"], default="markdown")
+    p_context.add_argument("--caller", required=True,
+                           help="Free-form caller identifier (logged to log.md).")
 
     # cite: add [[sources/<id>]] citation tokens to specific lines of a wiki page
     p_cite = subparsers.add_parser("cite", help=SUBCOMMANDS["cite"])
@@ -781,6 +791,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_poll(ns)
     if ns.subcommand == "evaluate":
         return _run_evaluate(ns)
+    if ns.subcommand == "context":
+        return _run_context(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1156,6 +1168,19 @@ def _run_evaluate(ns: argparse.Namespace) -> int:
             domain=ns.domain,
             limit=ns.limit,
             scaffold=ns.scaffold,
+        )
+    )
+
+
+def _run_context(ns: argparse.Namespace) -> int:
+    from gateway.ops.context_op import context_op
+
+    return _emit_result(
+        context_op(
+            ns.query,
+            depth=ns.depth,
+            fmt=ns.format,
+            caller=ns.caller,
         )
     )
 
