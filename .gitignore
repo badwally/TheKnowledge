@@ -18,6 +18,17 @@ uv.lock
 .knowledge/scheduler.*
 .knowledge/auth.yaml
 
+# Claude Code local settings — may contain API keys in allow-list entries
+.claude/settings.local.json
+
+# Generic secrets guard
+.env
+.env.*
+*.secret
+secrets.yaml
+secrets.json
+credentials.json
+
 # Sidecar binaries (large; tracked separately if at all)
 raw/**/*.pdf
 raw/**/*.m4a
