@@ -46,6 +46,22 @@ REQUIRED_CORE_FIELDS: set[str] = {
     "content_hash",
 }
 
+# ONT-4: controlled vocabulary for entity_kind on entity wiki pages.
+ENTITY_KIND_ENUM: frozenset[str] = frozenset({
+    "person",
+    "organization",
+    "paper",
+    "drug",
+    "dataset",
+    "product",
+    "software",
+    "statute",
+    "standard",
+    "place",
+    "event",
+    "other",
+})
+
 ID_PATTERNS: dict[str, re.Pattern[str]] = {
     "youtube": re.compile(r"^yt-[A-Za-z0-9_-]+$"),
     "arxiv": re.compile(r"^arxiv-\d{4}\.\d{4,5}(v\d+)?$"),
@@ -294,6 +310,19 @@ def validate_wiki_page_frontmatter(front: dict, page_type: str) -> ValidationRes
                 "slug",
             )
         )
+
+    # ONT-4: entity_kind must be a known enum value on entity pages.
+    if schema.type_name == "entity":
+        entity_kind = front.get("entity_kind")
+        if entity_kind is not None and entity_kind not in ENTITY_KIND_ENUM:
+            result.errors.append(
+                ValidationError(
+                    "entity-kind-unknown",
+                    f"entity_kind {entity_kind!r} is not in the controlled vocabulary; "
+                    f"expected one of: {', '.join(sorted(ENTITY_KIND_ENUM))}",
+                    "entity_kind",
+                )
+            )
 
     return result
 

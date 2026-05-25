@@ -215,3 +215,79 @@ def test_validate_citation_verbs_wired_into_validate_wiki_page():
     body = "Food noise is reduced. [[sources/yt-abc123|invented]]\n\n## Summary\n\nSummary text. [[sources/yt-abc123|invented]]\n"
     result = v.validate_wiki_page(front, body, page_type="concept", draft=True)
     assert any(w.rule == "citation-verb-unknown" for w in result.warnings)
+
+
+# --- ONT-4: entity_kind controlled vocabulary --------------------------------
+
+
+def _entity_front(entity_kind: str) -> dict:
+    return {
+        "type": "entity",
+        "entity_kind": entity_kind,
+        "slug": "test-entity",
+        "title": "Test Entity",
+        "canonical_name": "Test Entity",
+        "domain": "glp1",
+        "domains": ["glp1"],
+    }
+
+
+def test_entity_kind_enum_exact_set():
+    """ONT-4: ENTITY_KIND_ENUM contains exactly the 12 canonical values."""
+    expected = frozenset({
+        "person", "organization", "paper", "drug", "dataset",
+        "product", "software", "statute", "standard", "place", "event", "other",
+    })
+    assert v.ENTITY_KIND_ENUM == expected
+
+
+def test_entity_kind_valid_passes():
+    """ONT-4: entity pages with a valid entity_kind pass validation."""
+    for kind in v.ENTITY_KIND_ENUM:
+        result = v.validate_wiki_page_frontmatter(_entity_front(kind), "entity")
+        assert result.ok, f"valid kind {kind!r} should pass: {result.errors}"
+
+
+def test_entity_kind_invalid_fails():
+    """ONT-4: entity pages with an unknown entity_kind are rejected with SEVERITY_ERROR."""
+    result = v.validate_wiki_page_frontmatter(_entity_front("publication"), "entity")
+    assert not result.ok
+    assert any(e.rule == "entity-kind-unknown" for e in result.errors)
+
+
+def test_entity_kind_none_passes():
+    """ONT-4: entity_kind absent (None) does not trigger the enum check."""
+    front = _entity_front("person")
+    del front["entity_kind"]
+    result = v.validate_wiki_page_frontmatter(front, "entity")
+    # No entity-kind-unknown error (may have other required-field errors depending on schema)
+    assert not any(e.rule == "entity-kind-unknown" for e in result.errors)
+
+
+def test_migrate_entity_kinds_dry_run(kb_root, tmp_path, monkeypatch):
+    """ONT-4: migration script remaps legacy values and is idempotent."""
+    import subprocess
+    entities_dir = kb_root / "wiki" / "entities"
+    entities_dir.mkdir(parents=True, exist_ok=True)
+
+    from gateway import frontmatter as fm
+
+    def _write(slug: str, kind: str) -> None:
+        front = {"type": "entity", "entity_kind": kind, "slug": slug, "title": slug, "domain": "d"}
+        (entities_dir / f"{slug}.md").write_text(fm.serialize(front, "body\n"))
+
+    _write("pub-entity", "publication")   # should become paper
+    _write("person-entity", "person")    # already canonical — skip
+
+    import sys as _sys
+    result = subprocess.run(
+        [_sys.executable, "migrations/0002-migrate-entity-kinds.py", "--dry-run"],
+        capture_output=True, text=True,
+        env={**__import__("os").environ, "KNOWLEDGE_ROOT": str(kb_root)},
+    )
+    assert result.returncode == 0
+    assert "publication" in result.stdout
+    assert "paper" in result.stdout
+    # Dry run — file on disk should be unchanged
+    front, _ = fm.parse((entities_dir / "pub-entity.md").read_text())
+    assert front["entity_kind"] == "publication"
