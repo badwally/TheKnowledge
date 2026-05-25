@@ -266,7 +266,15 @@ from gateway import citations as _citations  # noqa: E402  (kept here so M1 modu
 from gateway import wiki_pages as _wiki_pages  # noqa: E402
 
 
-def validate_wiki_page_frontmatter(front: dict, page_type: str) -> ValidationResult:
+_MAX_SLUG_LEN = 80  # ONT-8: hard limit on new slug length
+
+
+def validate_wiki_page_frontmatter(
+    front: dict,
+    page_type: str,
+    *,
+    force_long_slug: bool = False,
+) -> ValidationResult:
     """Verify required fields per § 4 page type schema."""
     result = ValidationResult()
     schema = _wiki_pages.schema_for_type(page_type)
@@ -310,6 +318,18 @@ def validate_wiki_page_frontmatter(front: dict, page_type: str) -> ValidationRes
                 "slug",
             )
         )
+
+    # ONT-8: new slugs longer than 80 chars are rejected. --force-long-slug
+    # downgrades to a warning for exceptional cases.
+    if slug is not None and len(str(slug)) > _MAX_SLUG_LEN:
+        msg = (
+            f"slug is {len(str(slug))} chars (max {_MAX_SLUG_LEN}); "
+            "use --force-long-slug to override"
+        )
+        if force_long_slug:
+            result.warnings.append(ValidationError("slug-too-long", msg, "slug"))
+        else:
+            result.errors.append(ValidationError("slug-too-long", msg, "slug"))
 
     # ONT-4: entity_kind must be a known enum value on entity pages.
     if schema.type_name == "entity":
@@ -528,6 +548,7 @@ def validate_wiki_page(
     draft: bool = False,
     existing_slugs: list[str] | None = None,
     force_new_slug: bool = False,
+    force_long_slug: bool = False,
     body_line_offset: int = 0,
 ) -> ValidationResult:
     """One-shot validation of a wiki page: frontmatter + sections + citations + slug.
@@ -537,7 +558,7 @@ def validate_wiki_page(
     original text. Compute via ``frontmatter.body_line_offset(text)``.
     """
     result = ValidationResult()
-    result.merge(validate_wiki_page_frontmatter(front, page_type))
+    result.merge(validate_wiki_page_frontmatter(front, page_type, force_long_slug=force_long_slug))
     result.merge(validate_wiki_page_sections(body, page_type))
 
     # Honor `draft: true` in frontmatter OR an explicit caller flag. To force

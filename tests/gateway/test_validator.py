@@ -291,3 +291,52 @@ def test_migrate_entity_kinds_dry_run(kb_root, tmp_path, monkeypatch):
     # Dry run — file on disk should be unchanged
     front, _ = fm.parse((entities_dir / "pub-entity.md").read_text())
     assert front["entity_kind"] == "publication"
+
+
+# --- ONT-8: slug length cap (80 chars) --------------------------------------
+
+
+def _concept_front(slug: str) -> dict:
+    return {
+        "type": "concept",
+        "slug": slug,
+        "title": slug,
+        "domain": "glp1",
+        "domains": ["glp1"],
+    }
+
+
+def test_slug_80_chars_passes():
+    """ONT-8: slug of exactly 80 chars is accepted."""
+    slug = "a" * 80
+    result = v.validate_wiki_page_frontmatter(_concept_front(slug), "concept")
+    assert not any(e.rule == "slug-too-long" for e in result.errors)
+
+
+def test_slug_81_chars_rejected():
+    """ONT-8: new slug of 81 chars is hard-rejected (SEVERITY_ERROR)."""
+    slug = "a" * 81
+    result = v.validate_wiki_page_frontmatter(_concept_front(slug), "concept")
+    assert any(e.rule == "slug-too-long" for e in result.errors)
+
+
+def test_slug_too_long_force_override():
+    """ONT-8: --force-long-slug overrides the 80-char cap to a warning."""
+    slug = "a" * 81
+    result = v.validate_wiki_page_frontmatter(_concept_front(slug), "concept", force_long_slug=True)
+    assert not any(e.rule == "slug-too-long" for e in result.errors)
+    assert any(w.rule == "slug-too-long" for w in result.warnings)
+
+
+def test_slug_too_long_lint_check(kb_root):
+    """ONT-8: existing pages with long slugs trigger lint WARNING, not ERROR."""
+    from gateway.lint.long_slugs import run as lint_long_slugs
+    from gateway.lint import SEVERITY_WARNING
+    concepts_dir = kb_root / "wiki" / "concepts"
+    concepts_dir.mkdir(parents=True, exist_ok=True)
+    from gateway import frontmatter as fm
+    slug = "b" * 100
+    front = {"type": "concept", "slug": slug, "title": "long", "domain": "d", "domains": ["d"]}
+    (concepts_dir / f"long-slug.md").write_text(fm.serialize(front, "body\n"))
+    findings = lint_long_slugs()
+    assert any(f.check == "slug-too-long" and f.severity == SEVERITY_WARNING for f in findings)

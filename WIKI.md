@@ -611,6 +611,8 @@ Lowercase, hyphenated, semantic. Match canonical name. Example: canonical name "
 
 The validator runs a Levenshtein-distance check against existing slugs at create time. New slugs within distance 2 of an existing slug raise a warning ("did you mean to update [[concepts/food-noise]] instead of creating [[concepts/food_noise_phenomenon]]?"). Override requires explicit `--force-new-slug` flag, which is logged.
 
+**Slug length cap (ONT-8).** New slugs are hard-rejected if they exceed 80 characters. Use descriptive but terse slugs — a slug is a stable key, not a sentence. Exceptional cases (e.g., a primary key imported verbatim from an external system) may pass `--force-long-slug`, which downgrades the error to a warning. Existing pages with slugs longer than 80 chars are grandfathered and flagged by `wiki lint --scope long-slugs` with `SEVERITY_WARNING`.
+
 ### 6.3 Synthesis slugs
 
 Lowercase, hyphenated, scoped to domain when the synthesis is domain-specific: `glp1-dose-reward-tradeoff`, not `dose-reward-tradeoff`. Cross-domain synthesis uses the bare topic.
