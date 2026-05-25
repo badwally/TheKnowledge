@@ -955,6 +955,10 @@ See `docs/milestones/M50.md`. Per-domain evaluation framework — goldens at `.k
 
 See `docs/milestones/M51.md`. Read-only outbound surface so sibling `~/code/*` projects (chief-of-staff, ai-tutor, newbiz) can pull a center wiki page plus an N-hop wikilink-resolved neighborhood without scraping the filesystem. Resolver accepts slug (`synthesis/<slug>`), full path (`wiki/<kind>/<slug>.md`), or title substring. Walker traverses `[[<kind>/<slug>]]` wikilinks in body text up to `--depth N`, deduplicates by path, follows only `wiki/` targets (stops at `raw/`, `nlm:`, external URLs). Renderers emit markdown (default) or JSON (`--format json`) — JSON envelope is `{root, neighbors, stats}` with `body`, `slug`, `kind`, `title`, `path` per page. CLI `wiki context <query> --caller <id> [--depth N] [--format X]`; `--caller` is required and logged to `log.md` for audit. MCP parity tool `wiki_context` with identical surface. Tests: 965 → 982 passing (+17 net: +11 resolver/walker, +6 renderers/orchestrator, +0 wiring). Tag: `m51-int11-wiki-context`.
 
+### M52 — Phase 1 Round A (ARCH-2, ARCH-4, ARCH-6, QUAL-4, QUAL-5)
+
+See `docs/milestones/M52.md`. Five independent hardening items: source frontmatter immutability guard (`validate_source_frontmatter_diff` + three pipeline callers — ARCH-2); per-source file lock + filter score writeback in `_materialize` (ARCH-4); `register_session(force=True)` + idempotency lint checks (`stale-session`, `no-policy`) + op contract docstrings (ARCH-6); broken-wikilinks lint scope with error/warning severity and per-page deduplication (QUAL-4); per-domain fine-tune readiness block in `wiki status` with one-shot 80% milestone logging (QUAL-5). Tests: 985 → 1020 passing (+35 net: +9 ARCH-2, +3 ARCH-4, +9 ARCH-6, +8 QUAL-4, +6 QUAL-5). Tag: `m52-phase1-round-a`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
