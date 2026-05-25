@@ -959,6 +959,10 @@ See `docs/milestones/M51.md`. Read-only outbound surface so sibling `~/code/*` p
 
 See `docs/milestones/M52.md`. Five independent hardening items: source frontmatter immutability guard (`validate_source_frontmatter_diff` + three pipeline callers — ARCH-2); per-source file lock + filter score writeback in `_materialize` (ARCH-4); `register_session(force=True)` + idempotency lint checks (`stale-session`, `no-policy`) + op contract docstrings (ARCH-6); broken-wikilinks lint scope with error/warning severity and per-page deduplication (QUAL-4); per-domain fine-tune readiness block in `wiki status` with one-shot 80% milestone logging (QUAL-5). Tests: 985 → 1020 passing (+35 net: +9 ARCH-2, +3 ARCH-4, +9 ARCH-6, +8 QUAL-4, +6 QUAL-5). Tag: `m52-phase1-round-a`.
 
+### M53 — Phase 1 Round B (TOK-1, TOK-3, TOK-6, TOK-7)
+
+See `docs/milestones/M53.md`. Four token-efficiency items: TOK-1 cache_read=0 root-cause diagnosis (M50.1 already fixed, doc only); TOK-3 filter system-prompt memoized once per `_run_filter` batch via `_prebuilt_system` param to `score()` (N candidates → 1 `build_system_prompt()` call); TOK-6 transcription disk cache at `raw/<type>/_transcripts/<sha256hex>.json` (`TranscriptionResult.from_dict()`, `load_transcript_cache`, `save_transcript_cache`) in voice and audiobook converters; TOK-7 `PromptGuardError` + `assert_safe_for_prompt()` in `paths.py` raises for `log.md` and `index.md`. Session-state discipline infrastructure also shipped (`docs/session-state.md`, PreCompact/SessionStart hooks, CLAUDE.md rule). Tests: 1020 → 1027 passing (+7 net: +2 TOK-3, +2 TOK-6, +3 TOK-7). Tag: `m53-phase1-round-b`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
