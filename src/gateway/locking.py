@@ -37,6 +37,7 @@ LOCK_NAME_PREFIXES: frozenset[str] = frozenset(
     {
         "ingest",            # per-source ingest: ingest-<source-id>
         "schedule",          # per-scheduled-job (K4): schedule-<job-name>
+        "agent",             # per-agent concurrency (AGT-9): agent-<name>
     }
 )
 
