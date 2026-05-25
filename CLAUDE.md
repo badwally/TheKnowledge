@@ -111,6 +111,18 @@ Pollers (API-only sources without a watchable filesystem — Apple Notes, Notion
 - **Legacy migration** (M11–M14) is the only path that imports research-notebook Obsidian vaults. The vaults at `~/code/research-notebook/data/obsidian*/` are read-only inputs to the migrate script.
 - **Source-orphan tail** discharges via `wiki query` synthesis loops, not manual claim extraction. Each query produces a draft synthesis page citing N sources via `[[sources/<id>]]`. Run `wiki lint --scope orphans` to see how many sources still lack inbound citations.
 
+## Session-state discipline
+
+`docs/session-state.md` is load-bearing. It records open contracts, in-flight edits, session decisions, and the next atomic step across context compactions and session boundaries.
+
+**Rules (no exceptions):**
+
+- Before any plan-or-write action in a new session, re-read `docs/session-state.md` if its mtime is newer than the current chat's earliest user message. Verify each `## Open contract` and `## File mid-edit` against the working tree. Flag any disagreement to the user before proceeding.
+- At natural seams — end of milestone, before merging to main, before any refactor touching the validator or gateway choke-point — checkpoint proactively. Do not wait for the PreCompact hook.
+- The PreCompact hook writes a templated instruction to stdout; the agent responds by writing `docs/session-state.md` and committing it. Never edit the file manually except to mark a section `RESOLVED` when an open contract closes.
+- At the end of every milestone, diff `docs/session-state.md` predictions against `git diff` and `pytest` output. Any disagreement is a quality incident — investigate before tagging.
+- **Do not load `log.md` or `index.md` wholesale into any LLM prompt.** Both files are unbounded in size. `log.md` may be read as a display aggregate (last N entries via `_tail_log_entries`); `index.md` is reference-only. If gateway code needs to build LLM context from wiki content, use `evaluate.wiki_context.load_wiki_context()` or `ops.context_op.context_op()` — never raw file reads of these two files.
+
 ## When to consult `WIKI.md`
 
 Before: writing or evolving frontmatter, creating a new page type, designing a converter, modifying gateway operations, updating the validator, evolving an editorial policy, designing a lint pass.
