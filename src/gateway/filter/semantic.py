@@ -308,6 +308,7 @@ def score(
     examples: list[Example] | None = None,
     client: FilterClient | None = None,
     body_head_chars: int = 16000,
+    _prebuilt_system: str | None = None,
 ) -> FilterResult:
     """Run the filter end-to-end and return a structured result.
 
@@ -316,12 +317,15 @@ def score(
     of the Claude Code agent harness via ``--bare --tools \"\"``). Falls
     back to single-prompt `call(prompt)` for stubs and clients that don't
     implement the split path.
+
+    TOK-3: ``_prebuilt_system`` skips ``build_system_prompt`` when the
+    caller has already built it (e.g., once per batch in ``_run_filter``).
     """
     examples = examples if examples is not None else []
     client = client or ClaudeCLIFilterClient()
 
     body_head = _truncate(body, body_head_chars)
-    system = build_system_prompt(policy, examples)
+    system = _prebuilt_system if _prebuilt_system is not None else build_system_prompt(policy, examples)
     user = build_user_prompt(front, body_head)
 
     # K5: prefer call_split_with_usage so per-call telemetry lands in log.md.

@@ -93,7 +93,7 @@ def _patch_filter_score(
 ) -> None:
     """Replace `filter_score` inside the orchestrator with a constant scorer."""
 
-    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000, _prebuilt_system=None):
         return FilterResult(
             score=score_value,
             rationale="stub",
@@ -891,7 +891,7 @@ def test_run_filter_parallel_threshold_preserves_input_order(policy_kb, monkeypa
     # Score every other candidate above the include threshold (0.5).
     scores = [0.9 if i % 2 == 0 else 0.1 for i in range(20)]
 
-    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000, _prebuilt_system=None):
         idx = int(front["url"].rsplit("/", 1)[-1])
         return FilterResult(
             score=scores[idx],
@@ -925,7 +925,7 @@ def test_run_filter_actually_runs_concurrently(policy_kb, monkeypatch):
     n = 8
     enter_barrier = threading.Barrier(n + 1, timeout=5.0)  # +1 for main thread
 
-    def _slow_score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+    def _slow_score(front, body, policy, examples=None, client=None, body_head_chars=16000, _prebuilt_system=None):
         enter_barrier.wait()  # blocks until all n workers + main reach this point
         return FilterResult(
             score=0.9,
@@ -965,7 +965,7 @@ def test_run_filter_isolates_per_item_errors(policy_kb, monkeypatch):
 
     candidates = [_make_candidate(i) for i in range(5)]
 
-    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000):
+    def _score(front, body, policy, examples=None, client=None, body_head_chars=16000, _prebuilt_system=None):
         idx = int(front["url"].rsplit("/", 1)[-1])
         if idx == 2:
             raise FilterError("boom")
@@ -1257,3 +1257,49 @@ def test_materialize_concurrent_writes_no_corruption(kb_root: Path, monkeypatch:
     # File must parse cleanly — no corruption from concurrent writes.
     front, _ = fm.parse(raw_path.read_text())
     assert front.get("filter") is not None
+
+
+def test_run_filter_builds_system_prompt_once(monkeypatch, kb_root):
+    """TOK-3: build_system_prompt is called once per _run_filter call, not once per candidate."""
+    build_calls: list[int] = []
+    orig_build = orch._build_filter_system_prompt
+
+    monkeypatch.setattr(
+        orch, "_build_filter_system_prompt",
+        lambda policy, examples: build_calls.append(1) or orig_build(policy, examples),
+    )
+
+    # Patch example loading so no filesystem access is needed.
+    monkeypatch.setattr(orch, "_load_examples", lambda domain: [])
+    monkeypatch.setattr(orch, "_select_examples", lambda examples, policy: [])
+
+    class _SplitClient:
+        def call_split(self, *, system, user):
+            return '{"score": 0.9, "rationale": "ok"}'
+
+    from gateway.filter.policy import Policy
+
+    policy = Policy(domain_slug="tok3", threshold_include=0.5)
+    candidates = [
+        CandidateItem(
+            source_type="web",
+            item_id=f"item-{i}",
+            url=f"https://example.com/{i}",
+            title=f"Title {i}",
+            description="desc",
+        )
+        for i in range(3)
+    ]
+
+    orch._run_filter(
+        candidates,
+        domain="tok3",
+        policy=policy,
+        trust_local=False,
+        filter_client=_SplitClient(),
+        session_id="test-tok3",
+    )
+
+    assert len(build_calls) == 1, (
+        f"build_system_prompt called {len(build_calls)} times for 3 candidates; expected 1"
+    )
