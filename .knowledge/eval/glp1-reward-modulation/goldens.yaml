@@ -1,0 +1,159 @@
+# 15 candidate goldens for glp1-reward-modulation (M50 seed).
+# Drafted from synthesis + concept pages in the wiki; review and adjust
+# the must_cite / must_assert / must_not_assert per entry before relying
+# on the evaluation results. Source-ids are bare (no "sources/" prefix).
+goldens:
+  - id: q01
+    question: How do GLP-1 receptor agonists modulate the mesolimbic dopamine system, and what is the anatomical pathway?
+    must_cite:
+      - pubmed-22128031
+      - pubmed-22492036
+    must_assert:
+      - "GLP-1 receptors are expressed in the ventral tegmental area (VTA) and nucleus accumbens (NAc)."
+      - "GLP-1 neurons in the nucleus of the solitary tract (NTS) project directly to the VTA and NAc."
+      - "GLP-1 agonism attenuates dopamine release in the NAc in response to rewarding stimuli."
+    must_not_assert:
+      - "GLP-1 receptor agonists bind directly to dopamine receptors."
+      - "GLP-1's reward effects are mediated entirely by peripheral mechanisms with no central nervous system involvement."
+
+  - id: q02
+    question: How do semaglutide, tirzepatide, and liraglutide compare on receptor selectivity, half-life, and reward-modulating evidence?
+    must_cite:
+      - pubmed-27030669
+    must_assert:
+      - "Liraglutide has a substantially shorter half-life than semaglutide (~13 hours vs ~7 days)."
+      - "Tirzepatide is a dual GIP/GLP-1 receptor agonist, distinguishing it from the pure GLP-1 agonists."
+    must_not_assert:
+      - "Tirzepatide is selective for the GLP-1 receptor only."
+      - "All GLP-1 agonists have identical half-lives and dosing schedules."
+
+  - id: q03
+    question: What is the rationale for microdosing and slow titration of GLP-1 agonists, and what does steady-state pharmacokinetics imply for dose-escalation cadence?
+    must_cite: []
+    must_assert:
+      - "Slow titration reduces gastrointestinal side effects."
+      - "For a drug with a ~7-day half-life like semaglutide, steady-state is reached after approximately 4-5 half-lives (4-5 weeks)."
+      - "Microdosing is used clinically to preserve reward sensitivity and reduce anhedonia risk."
+    must_not_assert:
+      - "Steady-state is reached within 24-48 hours of starting semaglutide."
+      - "Microdosing has no pharmacokinetic basis."
+
+  - id: q04
+    question: What is the evidence for GLP-1-induced anhedonia, and how should it be monitored or counteracted?
+    must_cite: []
+    must_assert:
+      - "Some patients on GLP-1 agonists report blunted reward sensitivity (anhedonia)."
+      - "Bupropion (a dopamine/norepinephrine reuptake inhibitor) has been used clinically to counteract GLP-1-induced anhedonia."
+    must_not_assert:
+      - "Anhedonia is a contraindication for all GLP-1 agonist therapy."
+      - "There are no pharmacological strategies to counter GLP-1-induced reward blunting."
+
+  - id: q05
+    question: What does current evidence show about GLP-1 agonists and suicidality risk?
+    must_cite: []
+    must_assert:
+      - "The 2025 BMJ cohort study and post-hoc analyses of semaglutide trials found no increased risk of suicidality or depression compared to placebo."
+      - "The FDA and EMA have conducted preliminary safety assessments monitoring for suicidal thoughts."
+    must_not_assert:
+      - "GLP-1 agonists have been definitively shown to cause suicidality."
+      - "No regulatory agency has reviewed GLP-1 suicidality signals."
+
+  - id: q06
+    question: What is the evidence for GLP-1 agonists in alcohol use disorder?
+    must_cite:
+      - pubmed-29337226
+      - pubmed-36699502
+    must_assert:
+      - "Preclinical models show GLP-1 agonists reduce alcohol intake and alcohol-seeking behavior."
+      - "Clinical evidence is more limited than preclinical but trending positive."
+    must_not_assert:
+      - "GLP-1 agonists are FDA-approved for alcohol use disorder."
+
+  - id: q07
+    question: What did the Penn State liraglutide trial show for opioid craving?
+    must_cite: []
+    must_assert:
+      - "The Penn State trial using liraglutide demonstrated approximately a 40% reduction in opioid cravings."
+    must_not_assert:
+      - "Liraglutide had no effect on opioid cravings in clinical trials."
+      - "The Penn State trial used semaglutide."
+
+  - id: q08
+    question: What does preclinical evidence show about GLP-1 agonists and nicotine reward?
+    must_cite:
+      - pubmed-37148870
+    must_assert:
+      - "Exendin-4 (a GLP-1 analogue) attenuates nicotine-induced locomotor stimulation in mice (Egecioglu et al. 2013)."
+      - "GLP-1 + nicotine combination therapy engages hypothalamic and mesolimbic circuits."
+    must_not_assert:
+      - "GLP-1 agonists enhance nicotine reward in preclinical models."
+
+  - id: q09
+    question: What did the SELECT trial demonstrate about cardiovascular outcomes with semaglutide?
+    must_cite: []
+    must_assert:
+      - "The SELECT trial tracked over 17,000 people."
+      - "SELECT showed a ~20% reduction in heart attacks and strokes (major adverse cardiovascular events)."
+      - "SELECT enrolled patients with established cardiovascular disease and overweight/obesity (not type 2 diabetes)."
+    must_not_assert:
+      - "The SELECT trial enrolled patients with type 2 diabetes."
+      - "SELECT showed no cardiovascular benefit."
+
+  - id: q10
+    question: What does evidence show about GLP-1 agonists and brain volume / cognitive decline in Alzheimer's disease?
+    must_cite: []
+    must_assert:
+      - "Liraglutide clinical trials in Alzheimer's patients showed nearly 50% less brain volume loss compared to placebo."
+      - "Cognitive decline was approximately 18% slower in liraglutide-treated Alzheimer's patients."
+    must_not_assert:
+      - "GLP-1 agonists accelerate cognitive decline."
+      - "Liraglutide had no effect on brain volume in Alzheimer's trials."
+
+  - id: q11
+    question: What do brain organoid studies show about semaglutide's effects on Alzheimer's disease hallmarks?
+    must_cite: []
+    must_assert:
+      - "Brain organoid studies show semaglutide reduces amyloid beta plaques."
+      - "Semaglutide reduces phosphorylated tau in brain organoid models."
+      - "Semaglutide reduces GFAP (a marker of reactive astrocytes / neuroinflammation)."
+    must_not_assert:
+      - "Brain organoid studies show semaglutide increases amyloid plaques."
+
+  - id: q12
+    question: What did the 2026 observational study of 600,000 US veterans show about GLP-1 agonists and addiction outcomes?
+    must_cite: []
+    must_assert:
+      - "GLP-1 use significantly reduced the risk of substance use disorders across all major addictive substances in this cohort."
+      - "The study reported reduced overdose deaths in GLP-1-treated veterans."
+    must_not_assert:
+      - "The veterans study found increased addiction risk with GLP-1 use."
+      - "The cohort was limited to opioid use disorder only."
+
+  - id: q13
+    question: What body-composition and metabolic-support protocols are recommended alongside GLP-1 therapy to preserve lean mass?
+    must_cite: []
+    must_assert:
+      - "Protein intake of approximately 1 gram per pound of target body weight is recommended."
+      - "Resistance training is recommended to preserve lean mass during GLP-1-mediated weight loss."
+    must_not_assert:
+      - "Protein restriction is recommended during GLP-1 therapy."
+      - "Resistance training is contraindicated during GLP-1 therapy."
+
+  - id: q14
+    question: How is fast-scan cyclic voltammetry (FSCV) used to study GLP-1 effects on dopamine signaling?
+    must_cite: []
+    must_assert:
+      - "FSCV measures minute-to-minute changes and spikes in real-time dopamine signaling."
+      - "FSCV is used in preclinical models to characterize how GLP-1 agonists modulate phasic dopamine release."
+    must_not_assert:
+      - "FSCV measures only tonic baseline dopamine levels."
+      - "FSCV is a human imaging technique."
+
+  - id: q15
+    question: What does functional MRI evidence show about GLP-1 agonists and food-cue reactivity in reward centers?
+    must_cite: []
+    must_assert:
+      - "fMRI studies show reduced reward-center activation (amygdala, insula, orbitofrontal cortex) to highly palatable food cues under GLP-1 treatment."
+    must_not_assert:
+      - "fMRI shows increased reward-center activation to food cues during GLP-1 treatment."
+      - "Reward-center reactivity changes only occur after weight loss, not during active GLP-1 treatment."

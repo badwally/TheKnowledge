@@ -116,14 +116,20 @@ def load_goldens(path: Path) -> list[Golden]:
                 raise SchemaError(
                     f"goldens[{i}] rubric_weight[{k!r}] must be numeric, got {type(v).__name__}"
                 )
-        out.append(Golden(
+        # Only pass rubric_weight when YAML supplied one — otherwise let the
+        # dataclass default_factory ({cite:0.4, assert:0.5, anti:0.1}) fire.
+        # Passing an empty dict here would bypass the default and __post_init__
+        # would fill 0.0s instead.
+        kwargs = dict(
             id=str(gid),
             question=str(entry["question"]),
             must_cite=list(entry.get("must_cite") or []),
             must_assert=list(entry.get("must_assert") or []),
             must_not_assert=list(entry.get("must_not_assert") or []),
-            rubric_weight=dict(rw),
-        ))
+        )
+        if rw:
+            kwargs["rubric_weight"] = dict(rw)
+        out.append(Golden(**kwargs))
     for g in out:
         for w in validate_rubric_weights(g):
             _log.warning("schema: %s", w)
