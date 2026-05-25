@@ -221,7 +221,10 @@ def _record_backlinks(source_id: str, wiki_page_paths: list[str]) -> None:
             existing.append(p)
             changed = True
     if changed:
+        old_front = dict(front)
         front["wiki_pages"] = existing
+        if not validator.validate_source_frontmatter_diff(old_front, front).ok:
+            return
         write_atomic(raw_path, fm.serialize(front, body))
 
 

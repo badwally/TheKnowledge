@@ -19,6 +19,7 @@ from gateway import frontmatter as fm
 from gateway import log, paths
 from gateway.core import OperationResult, write_atomic
 from gateway.locking import file_lock
+from gateway.validator import validate_source_frontmatter_diff
 
 
 def cite(page_path: str | Path, additions: list[tuple[int, str]]) -> OperationResult:
@@ -123,8 +124,11 @@ def cite(page_path: str | Path, additions: list[tuple[int, str]]) -> OperationRe
             wiki_pages_list = list(raw_front.get("wiki_pages") or [])
             if rel_str in wiki_pages_list:
                 continue
+            old_raw_front = dict(raw_front)
             wiki_pages_list.append(rel_str)
             raw_front["wiki_pages"] = wiki_pages_list
+            if not validate_source_frontmatter_diff(old_raw_front, raw_front).ok:
+                continue
             write_atomic(raw_path, fm.serialize(raw_front, raw_body))
             raw_paths_touched.append(raw_path)
 

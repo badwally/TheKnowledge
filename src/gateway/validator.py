@@ -216,6 +216,34 @@ def validate_source_immutability(existing_body: str, new_body: str) -> Validatio
     return result
 
 
+# Keys that pipeline stages may update after ingest (§ 11.5).
+MUTABLE_SOURCE_FIELDS: frozenset[str] = frozenset(
+    {"filter", "nlm_corpus_ids", "wiki_pages", "domains"}
+)
+
+
+def validate_source_frontmatter_diff(old: dict, new: dict) -> ValidationResult:
+    """Reject mutations to source frontmatter keys outside MUTABLE_SOURCE_FIELDS.
+
+    Compares old and new frontmatter dicts. Any key whose value changed —
+    including keys added or removed — is flagged unless it is in the
+    pipeline-stage allowlist defined by § 11.5.
+    """
+    result = ValidationResult()
+    all_keys = set(old) | set(new)
+    for key in sorted(all_keys):
+        if old.get(key) != new.get(key) and key not in MUTABLE_SOURCE_FIELDS:
+            result.errors.append(
+                ValidationError(
+                    "frontmatter-mutation",
+                    f"field {key!r} may not be mutated after ingest; "
+                    f"only {sorted(MUTABLE_SOURCE_FIELDS)} are mutable",
+                    key,
+                )
+            )
+    return result
+
+
 # === M6: wiki page validation =============================================
 
 from gateway import citations as _citations  # noqa: E402  (kept here so M1 module is self-contained above)
