@@ -86,6 +86,61 @@ def test_cache_control_applied_to_system_prompt(monkeypatch):
         ]
 
 
+def test_user_prompt_prefix_splits_into_cached_block(monkeypatch):
+    """M50.1: when user_prompt_prefix is provided, the user message is
+    sent as a 2-block list with cache_control on the prefix block. This
+    lets large stable wiki-context payloads accrue cache benefit when the
+    system prompt is below the 1024-token cache-eligibility floor."""
+    monkeypatch.setenv("ANTHROPIC_API_KEY_RESEARCH", "sk-ant-test")
+
+    with patch("gateway.llm.api_client.anthropic.Anthropic") as mock_class:
+        mock_client = mock_class.return_value
+        mock_client.messages.create.return_value = _mock_message()
+
+        client = AnthropicAPIClient()
+        client.call_with_usage(
+            user_prompt="QUESTION: ...",
+            user_prompt_prefix="WIKI CONTEXT:\n\n<large stable block>\n\n",
+            system_prompt="short system",
+            model="claude-sonnet-4-6",
+        )
+
+        kwargs = mock_client.messages.create.call_args.kwargs
+        assert kwargs["messages"] == [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "WIKI CONTEXT:\n\n<large stable block>\n\n",
+                        "cache_control": {"type": "ephemeral"},
+                    },
+                    {"type": "text", "text": "QUESTION: ..."},
+                ],
+            }
+        ]
+
+
+def test_user_prompt_without_prefix_stays_string(monkeypatch):
+    """Backward-compat: omitting user_prompt_prefix sends user content as
+    a plain string (cheaper request shape; matches every pre-M50.1 caller)."""
+    monkeypatch.setenv("ANTHROPIC_API_KEY_RESEARCH", "sk-ant-test")
+
+    with patch("gateway.llm.api_client.anthropic.Anthropic") as mock_class:
+        mock_client = mock_class.return_value
+        mock_client.messages.create.return_value = _mock_message()
+
+        client = AnthropicAPIClient()
+        client.call_with_usage(
+            user_prompt="just a question",
+            system_prompt="sys",
+            model="claude-sonnet-4-6",
+        )
+
+        kwargs = mock_client.messages.create.call_args.kwargs
+        assert kwargs["messages"] == [{"role": "user", "content": "just a question"}]
+
+
 def test_cache_control_can_be_disabled(monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY_RESEARCH", "sk-ant-test")
 

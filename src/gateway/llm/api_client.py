@@ -88,6 +88,7 @@ class AnthropicAPIClient:
         *,
         user_prompt: str,
         system_prompt: str | None = None,
+        user_prompt_prefix: str | None = None,
         model: str,
         max_tokens: int = 4096,
         cache_system_prompt: bool = True,
@@ -96,8 +97,15 @@ class AnthropicAPIClient:
 
         When ``cache_system_prompt`` is True (default) and a system prompt
         is provided, applies ``cache_control={"type": "ephemeral"}`` to
-        the system prompt block. Subsequent calls within the 5-minute
-        cache TTL with the same system prompt re-use the cached prefix.
+        the system prompt block.
+
+        When ``user_prompt_prefix`` is provided, the user message is sent
+        as two content blocks — the prefix marked ``cache_control:
+        ephemeral``, and ``user_prompt`` as the dynamic suffix. Use this
+        when the cacheable region lives in the user turn (e.g., a large
+        wiki context block reused across many small per-question prompts)
+        and the system prompt is too short to clear Anthropic's 1024-token
+        cache-eligibility floor on its own.
         """
         system_blocks: list[dict] | str | None = None
         if system_prompt is not None:
@@ -112,6 +120,18 @@ class AnthropicAPIClient:
             else:
                 system_blocks = system_prompt
 
+        if user_prompt_prefix is not None:
+            user_content: list[dict] | str = [
+                {
+                    "type": "text",
+                    "text": user_prompt_prefix,
+                    "cache_control": {"type": "ephemeral"},
+                },
+                {"type": "text", "text": user_prompt},
+            ]
+        else:
+            user_content = user_prompt
+
         last_err: Exception | None = None
         for attempt in range(self._max_retries + 1):
             self._throttle()
@@ -119,7 +139,7 @@ class AnthropicAPIClient:
                 kwargs = {
                     "model": model,
                     "max_tokens": max_tokens,
-                    "messages": [{"role": "user", "content": user_prompt}],
+                    "messages": [{"role": "user", "content": user_content}],
                 }
                 if system_blocks is not None:
                     kwargs["system"] = system_blocks

@@ -158,3 +158,30 @@ def test_judge_tolerates_prose_preamble_before_json():
 
     result = judge.score(golden=golden, wiki_context="ctx")
     assert result.score == 0.8
+
+
+def test_judge_passes_wiki_context_as_cached_prefix():
+    """M50.1: Judge sends wiki_context as user_prompt_prefix (the cached
+    block) and the per-question question + golden as the dynamic user_prompt.
+    The split is what lets the wiki context accrue cache_read_tokens across
+    questions within a single evaluation run."""
+    fake_client = MagicMock()
+    fake_client.call_with_usage.return_value = CallResult(
+        text='{"score": 1.0, "cite_hits": [], "cite_misses": [], '
+             '"assertion_hits": [], "assertion_misses": [], '
+             '"anti_assertion_violations": [], "reasoning": "ok"}',
+        input_tokens=10, output_tokens=2, model="claude-sonnet-4-6",
+    )
+
+    judge = Judge(client=fake_client)
+    golden = Golden(id="q01", question="Does X cause Y?",
+                    must_cite=["pubmed-1"], must_assert=[], must_not_assert=[])
+
+    judge.score(golden=golden, wiki_context="<large wiki context>")
+
+    kwargs = fake_client.call_with_usage.call_args.kwargs
+    assert kwargs["user_prompt_prefix"] == "WIKI CONTEXT:\n\n<large wiki context>\n\n"
+    assert "QUESTION:" in kwargs["user_prompt"]
+    assert "Does X cause Y?" in kwargs["user_prompt"]
+    # The dynamic suffix must NOT contain the wiki_context (would defeat caching).
+    assert "<large wiki context>" not in kwargs["user_prompt"]

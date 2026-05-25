@@ -72,9 +72,16 @@ class Judge:
         self._max_tokens = max_tokens
 
     def score(self, *, golden: Golden, wiki_context: str) -> EvalResult:
-        user_prompt = _build_user_prompt(golden, wiki_context)
+        # Split prompt so the large, stable wiki_context block gets
+        # cache_control. The judge system prompt is ~60 tokens — below
+        # Anthropic's 1024-token cache-eligibility floor — so caching it
+        # alone produces 0% hit rate. The wiki_context block crosses the
+        # floor and is identical across every question in the run.
+        prefix = f"WIKI CONTEXT:\n\n{wiki_context}\n\n"
+        suffix = _build_question_prompt(golden)
         call_result = self._client.call_with_usage(
-            user_prompt=user_prompt,
+            user_prompt=suffix,
+            user_prompt_prefix=prefix,
             system_prompt=_JUDGE_SYSTEM_PROMPT,
             model=model_for("evaluate_judge"),
             max_tokens=self._max_tokens,
@@ -82,10 +89,8 @@ class Judge:
         return _parse_judge_response(call_result, golden=golden)
 
 
-def _build_user_prompt(golden: Golden, wiki_context: str) -> str:
+def _build_question_prompt(golden: Golden) -> str:
     return (
-        "WIKI CONTEXT:\n\n"
-        f"{wiki_context}\n\n"
         "QUESTION:\n\n"
         f"{golden.question}\n\n"
         "GOLDEN EXPECTATIONS:\n\n"
