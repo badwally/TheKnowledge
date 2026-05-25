@@ -4,6 +4,33 @@ A personal knowledge base. Sources land as markdown + YAML on the local filesyst
 
 Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`).
 
+## New here?
+
+Pick the track that matches your goal.
+
+**A. Doing knowledge work** (ingesting sources, querying, browsing)
+
+1. [TUTORIAL.md](TUTORIAL.md) — workflow walkthrough; after this you can ingest a source and run a query end-to-end.
+2. `wiki --help` and `wiki <subcommand> --help` — flags and usage examples for every op.
+3. [WIKI.md](WIKI.md) § 1–2 — terminology and the page-type schema; after this you can read any wiki page and understand its frontmatter.
+
+**B. Contributing code** (adding converters, ops, lint checks, tests)
+
+1. [CLAUDE.md](CLAUDE.md) — agent control surface, hard rules, operation guide; after this you know what you may and may not do directly.
+2. [WIKI.md](WIKI.md) — full conventions reference; after this you can add a new source type or gateway op without breaking the validator.
+3. [BUILD.md](BUILD.md) § 9–10 — per-milestone delivery record; after this you understand what shipped and in what order.
+4. [GLOSSARY.md](GLOSSARY.md) — one-line definitions for every term used in code, docs, and commit messages.
+5. `pytest -x` to confirm your environment is green before touching anything.
+
+**C. Agents being briefed** (Claude Code, MCP clients, automation)
+
+1. [CLAUDE.md](CLAUDE.md) — load first; it is the authoritative agent control surface.
+2. `wiki status` — live snapshot of watcher state, domain counts, and fine-tune readiness.
+3. `wiki context <slug> --caller <you>` — fetch a wiki page plus N-hop neighbors as a structured LLM context block.
+4. [WIKI.md](WIKI.md) § Gateway operations table — every available op, its CLI form, and its MCP equivalent.
+
+---
+
 ## Architecture
 
 Three layers, one substrate.
@@ -67,6 +94,7 @@ Adding a new type: see [CLAUDE.md](CLAUDE.md) § "Adding a new source type". Pol
 | [TUTORIAL.md](TUTORIAL.md) | Day-1 workflow guide |
 | [CLAUDE.md](CLAUDE.md) | Agent control surface — auto-loaded by Claude Code in this directory |
 | [WIKI.md](WIKI.md) | Conventions reference — the contract every component codes against |
+| [GLOSSARY.md](GLOSSARY.md) | Term definitions for gateway, domain model, and ontology vocabulary |
 | [BUILD.md](BUILD.md) | Gateway build plan and per-milestone delivery record |
 | [MIGRATION.md](MIGRATION.md) | Legacy Obsidian vault migration plan |
 | [SESSION_TRANSCRIPT.md](SESSION_TRANSCRIPT.md) | Chronological narrative of the v1 design-and-build session |
