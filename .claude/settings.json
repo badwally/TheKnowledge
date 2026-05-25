@@ -1,19 +1,30 @@
 {
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
-  },
-  "hooks": {
-    "PreCompact": [
-      {
-        "type": "command",
-        "command": ".claude/hooks/precompact-snapshot.sh"
-      }
-    ],
-    "SessionStart": [
-      {
-        "type": "command",
-        "command": ".claude/hooks/session-start-reanchor.sh"
-      }
-    ]
-  }
-}
+   "enabledPlugins": {
+     "frontend-design@claude-plugins-official": true
+   },
+   "hooks": {
+     "PreCompact": [
+       {
+         "matcher": "",
+         "hooks": [
+           {
+             "type": "command",
+             "command": ".claude/hooks/precompact-snapshot.sh"
+           }
+         ]
+       }
+     ],
+     "SessionStart": [
+       {
+         "matcher": "",
+         "hooks": [
+           {
+             "type": "command",
+             "command": ".claude/hooks/session-start-reanchor.sh"
+           }
+         ]
+       }
+     ]
+   }
+ }
+
