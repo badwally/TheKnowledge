@@ -259,6 +259,48 @@ def test_voice_converter_propagates_non_diarization_errors(kb_root, tmp_path):
             VoiceConverter(diarize=False).convert(str(audio))
 
 
+# --- TOK-6: transcript cache (VoiceConverter) ----------------------------
+
+
+def test_voice_converter_caches_transcript_second_call_skips_transcription(kb_root, tmp_path):
+    """Second convert() on same file skips _mlx_whisper_transcribe via the cache."""
+    audio = _stub_audio(tmp_path, "voice.wav")
+    payload = _stub_whisper_payload((0.0, 1.0, "cached text"))
+
+    call_count = []
+
+    def _mock_mlx(path, *, model):
+        call_count.append(1)
+        return payload
+
+    with patch("gateway.transcription._mlx_whisper_transcribe", side_effect=_mock_mlx):
+        VoiceConverter(diarize=False).convert(str(audio))
+        VoiceConverter(diarize=False).convert(str(audio))
+
+    assert len(call_count) == 1, (
+        f"_mlx_whisper_transcribe called {len(call_count)} times; expected 1 (cache hit on 2nd)"
+    )
+
+
+def test_voice_converter_cache_separates_different_files(kb_root, tmp_path):
+    """Different audio bytes produce different cache keys → two transcriptions."""
+    audio1 = _stub_audio(tmp_path, "a.wav", seconds=0.1)
+    audio2 = _stub_audio(tmp_path, "b.wav", seconds=0.2)  # different length → different bytes
+    payload = _stub_whisper_payload((0.0, 1.0, "text"))
+
+    call_count = []
+
+    def _mock_mlx(path, *, model):
+        call_count.append(1)
+        return payload
+
+    with patch("gateway.transcription._mlx_whisper_transcribe", side_effect=_mock_mlx):
+        VoiceConverter(diarize=False).convert(str(audio1))
+        VoiceConverter(diarize=False).convert(str(audio2))
+
+    assert len(call_count) == 2
+
+
 # --- AudiobookConverter ---------------------------------------------------
 
 

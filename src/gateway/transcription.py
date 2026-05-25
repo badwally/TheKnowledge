@@ -14,6 +14,7 @@ actionable message if a dependency or token is missing.
 
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -57,6 +58,53 @@ class TranscriptionResult:
                 for s in self.segments
             ],
         }
+
+    @classmethod
+    def from_dict(cls, d: dict) -> "TranscriptionResult":
+        return cls(
+            text=d.get("text", ""),
+            language=d.get("language", ""),
+            duration_s=float(d.get("duration_s", 0.0)),
+            model=d.get("model", ""),
+            diarized=bool(d.get("diarized", False)),
+            segments=[
+                Segment(
+                    start=float(s["start"]),
+                    end=float(s["end"]),
+                    text=str(s.get("text", "")),
+                    speaker=str(s.get("speaker", "")),
+                )
+                for s in d.get("segments", [])
+            ],
+        )
+
+
+# --- TOK-6: transcript cache ----------------------------------------------
+
+
+def load_transcript_cache(
+    cache_dir: Path, sha256hex: str, model: str
+) -> "TranscriptionResult | None":
+    """Return a cached TranscriptionResult, or None on miss / model mismatch."""
+    cache_file = cache_dir / f"{sha256hex}.json"
+    if not cache_file.is_file():
+        return None
+    try:
+        payload = json.loads(cache_file.read_text())
+    except (OSError, json.JSONDecodeError):
+        return None
+    if payload.get("model") != model:
+        return None
+    return TranscriptionResult.from_dict(payload)
+
+
+def save_transcript_cache(
+    cache_dir: Path, sha256hex: str, result: "TranscriptionResult"
+) -> None:
+    """Persist `result` to `cache_dir/<sha256hex>.json`."""
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    payload = result.to_dict()
+    (cache_dir / f"{sha256hex}.json").write_text(json.dumps(payload))
 
 
 # --- mlx-whisper transcription --------------------------------------------

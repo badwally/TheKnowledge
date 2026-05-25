@@ -26,6 +26,8 @@ from gateway.transcription import (
     DEFAULT_MODEL,
     Segment,
     TranscriptionError,
+    load_transcript_cache,
+    save_transcript_cache,
     transcribe,
 )
 
@@ -181,11 +183,18 @@ class AudiobookConverter(Converter):
         if not path.is_file():
             raise ConversionError(f"audiobook not found: {path}")
 
+        raw_bytes = path.read_bytes()
+        sha256hex = hashlib.sha256(raw_bytes).hexdigest()
+        cache_dir = paths.raw_dir_for("audiobook") / "_transcripts"
+
         tags, chapters = _read_metadata(path)
-        try:
-            result = transcribe(path, model=self._model, diarize=self._diarize)
-        except TranscriptionError as e:
-            raise ConversionError(str(e)) from e
+        result = load_transcript_cache(cache_dir, sha256hex, self._model)
+        if result is None:
+            try:
+                result = transcribe(path, model=self._model, diarize=self._diarize)
+            except TranscriptionError as e:
+                raise ConversionError(str(e)) from e
+            save_transcript_cache(cache_dir, sha256hex, result)
 
         chapter_groups = _split_segments_by_chapter(
             result.segments, chapters, total_s=result.duration_s
@@ -194,7 +203,6 @@ class AudiobookConverter(Converter):
         if not body_text.strip():
             raise ConversionError(f"no transcript produced for {path}")
 
-        raw_bytes = path.read_bytes()
         title = tags.get("title") or path.stem
         author = tags.get("author") or ""
         canonical_id = "audiobook-" + _slug(

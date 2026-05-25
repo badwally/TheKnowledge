@@ -22,7 +22,9 @@ from gateway.converters.base import ConversionError, Converter
 from gateway.transcription import (
     DEFAULT_MODEL,
     TranscriptionError,
+    load_transcript_cache,
     render_transcript,
+    save_transcript_cache,
     transcribe,
 )
 
@@ -73,21 +75,27 @@ class VoiceConverter(Converter):
         if not path.is_file():
             raise ConversionError(f"audio not found: {path}")
 
-        try:
-            result = transcribe(path, model=self._model, diarize=self._diarize)
-        except TranscriptionError as e:
-            # Soft-fall back to transcript-only when diarization auth fails.
-            if self._diarize and "diarization" in str(e).lower():
-                result = transcribe(path, model=self._model, diarize=False)
-                result.diarized = False
-            else:
-                raise ConversionError(str(e)) from e
+        raw_bytes = path.read_bytes()
+        sha256hex = hashlib.sha256(raw_bytes).hexdigest()
+        cache_dir = paths.raw_dir_for("voice") / "_transcripts"
+
+        result = load_transcript_cache(cache_dir, sha256hex, self._model)
+        if result is None:
+            try:
+                result = transcribe(path, model=self._model, diarize=self._diarize)
+            except TranscriptionError as e:
+                # Soft-fall back to transcript-only when diarization auth fails.
+                if self._diarize and "diarization" in str(e).lower():
+                    result = transcribe(path, model=self._model, diarize=False)
+                    result.diarized = False
+                else:
+                    raise ConversionError(str(e)) from e
+            save_transcript_cache(cache_dir, sha256hex, result)
 
         body_text = render_transcript(result, include_timestamps=True)
         if not body_text.strip():
             raise ConversionError(f"no transcript produced for {path}")
 
-        raw_bytes = path.read_bytes()
         canonical_id = f"voice-{_slug(path.stem)}-{_sha_prefix(raw_bytes)}"
 
         sidecar_dir = paths.raw_dir_for("voice")
