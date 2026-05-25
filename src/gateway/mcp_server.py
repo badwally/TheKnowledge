@@ -719,6 +719,57 @@ def wiki_poll_list() -> dict[str, Any]:
     )
 
 
+# --- AGT-14 / QUAL-3 -------------------------------------------------------
+
+
+@mcp.tool()
+def wiki_agent_log(since: str = "24h") -> dict[str, Any]:
+    """Show per-agent event counts and top-5 payloads for the given window.
+
+    `since` accepts '24h', '48h', or '7d'.
+    """
+    from gateway.ops.agent_log import aggregate
+
+    window_map = {"24h": 24, "48h": 48, "7d": 168}
+    since_hours = window_map.get(since, 24)
+    data = aggregate(since_hours=since_hours)
+    lines: list[str] = []
+    for agent, stats in sorted(data.items()):
+        lines.append(f"{agent}: {stats['count']} event(s)")
+        for payload in stats["top_payloads"]:
+            if payload:
+                lines.append(f"  - {payload}")
+    summary = "\n".join(lines) if lines else f"No agent events in the last {since}."
+    return _serialize(OperationResult(success=True, summary=summary))
+
+
+@mcp.tool()
+def wiki_contradiction(
+    action: str,
+    slug: str | None = None,
+    severity: str | None = None,
+    status: str = "open",
+    note: str = "",
+) -> dict[str, Any]:
+    """List or resolve structured contradiction pages.
+
+    `action`: 'list' or 'resolve'.
+    For 'list': `severity` filters by major/minor/methodological; `status`
+    filters by open/investigating/resolved/wontfix (default 'open').
+    For 'resolve': `slug` is required; `status` must be 'resolved' or
+    'wontfix'; `note` is the resolution explanation.
+    """
+    from gateway.ops.contradiction import list_contradictions, resolve_contradiction
+
+    if action == "list":
+        return _serialize(list_contradictions(severity=severity, status=status))
+    if action == "resolve":
+        if not slug:
+            return _serialize(OperationResult(success=False, summary="slug is required for resolve", errors=["missing slug"]))
+        return _serialize(resolve_contradiction(slug, status=status, note=note))
+    return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected list or resolve"]))
+
+
 # --- entry point -----------------------------------------------------------
 
 
