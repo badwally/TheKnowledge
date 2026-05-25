@@ -99,6 +99,7 @@ def test_known_checks_includes_all_documented_checks():
         "idempotency",
         "broken-wikilinks",
         "long-slugs",
+        "contradiction-pages",
     }
     assert KNOWN_CHECKS == expected
 

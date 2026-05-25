@@ -19,6 +19,7 @@ from gateway.lint import (
     broken_wikilinks,
     citation_chains,
     citation_density,
+    contradiction_pages,
     contradictions,
     filter_calibration,
     idempotency,
@@ -51,6 +52,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("idempotency", idempotency.run),
     ("broken-wikilinks", broken_wikilinks.run),
     ("long-slugs", long_slugs.run),
+    ("contradiction-pages", contradiction_pages.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
