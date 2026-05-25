@@ -255,8 +255,10 @@ def build_parser() -> argparse.ArgumentParser:
     # context: read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)
     p_context = subparsers.add_parser("context", help=SUBCOMMANDS["context"])
     p_context.add_argument("query", help="Slug, path, or title substring.")
-    p_context.add_argument("--depth", type=int, default=1)
-    p_context.add_argument("--format", choices=["markdown", "json"], default="markdown")
+    p_context.add_argument("--depth", type=int, default=1,
+                           help="How many wikilink hops to follow (default 1).")
+    p_context.add_argument("--format", choices=["markdown", "json"], default="markdown",
+                           help="Output format (default markdown).")
     p_context.add_argument("--caller", required=True,
                            help="Free-form caller identifier (logged to log.md).")
 
