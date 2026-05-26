@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M62 complete; Phase 3 Round A merged)
+Last updated: 2026-05-26 (M63 complete; Phase 3 Round B merged)
 
 ---
 
@@ -22,22 +22,20 @@ None.
 
 ## Decisions made this session
 
-- ONT-10: demote source pages to manifest-only (not fill). 1023 pages stripped, schema updated.
-- INT-14: `wiki digest` daily brief (new sources, synthesis, stale drafts, triage queue). CLI + MCP.
-- INT-15: chief-of-staff session-start calls `wiki context` for meeting attendees. Committed in chief-of-staff repo.
-- INT-17: newbiz ideation optionally queries `wiki context`. Committed in newbiz repo.
-- M62 tagged `m62-phase3-round-a`, merged to main. Tests: 1192 → 1200 (+8).
-- Retrospective: added "Verify Before Act" + "Validate Incrementally" to ~/code/CLAUDE.md; tightened checkpoint cadence + venv rule in knowledge/CLAUDE.md.
+- M63 delivered: INT-13 (`wiki agenda`) + INT-16 (ai-tutor `/wiki-cards`).
+- INT-13 design: `build_agenda(date_str, events)` is a pure function; caller (agent via MCP or CLI via `--events-json`) pre-fetches calendar events from Google Calendar MCP. Two-step agent workflow: list_events → wiki_agenda.
+- INT-16 design: agent-side skill in ai-tutor; reads `wiki/concepts/` directly (read is unrestricted); outputs `state/wiki-cards/<domain>.yaml` with SHA-256[:12] question_hash deduplication.
+- agenda page type added to wiki_pages.py — ephemeral, not citation-grounded, no required sections.
 
 ---
 
 ## Rejected approaches this session
 
-- Fill source pages with LLM summaries (ONT-10): summaries redundant with synthesis pages; maintenance cost ongoing per new ingest.
+- Calling Calendar MCP from within wiki_agenda.py Python module: MCP tools can't call other MCP tools from Python. Rejected in favor of two-step agent workflow.
+- Embedding wiki-cards generation in knowledge gateway CLI: INT-16 is ai-tutor domain, agent-driven. Skill file in ai-tutor is the right abstraction.
 
 ---
 
 ## Next atomic step
 
-M63 — Phase 3 Round B: INT-13 (`wiki agenda`, Calendar MCP) + INT-16 (ai-tutor `/wiki-cards <domain>`).
-Read docs/reviews/2026-05-23-knowledge-system-review.md § INT-13, INT-16 for acceptance criteria.
+M64 — Phase 3 Round C. Check docs/reviews/2026-05-23-knowledge-system-review.md for remaining Phase 3 items. Candidates: INT-12 (Notion mirror), QUAL-10, QUAL-1, QUAL-7, ONT-1, AGT-4, AGT-5. Read § 12 (phased roadmap) to confirm sequencing.
