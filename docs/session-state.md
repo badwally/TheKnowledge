@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M66 complete; Phase 4 Round B merged)
+Last updated: 2026-05-26 (M67 complete; Phase 4 Round C merged)
 
 ---
 
@@ -11,7 +11,7 @@ None.
 Carry-forward (not blocking anything):
 - `ANTHROPIC_API_KEY_RESEARCH` needed for condo-capital-infra and edge-ai-agentic eval runs.
 - ai-native-business goldens context too large (607K > 500K budget).
-- ONT-11 backfill: 56/94 synthesis pages lack `synthesizes:` — lint warns; escalate to error after backfill pass. (contradiction-sweeper pages use `synthesizes: []` intentionally.)
+- ONT-11 backfill: 56/94 synthesis pages lack `synthesizes:` — lint warns; escalate to error after backfill pass. (contradiction-sweeper and contradiction-drift pages use `synthesizes: []` or empty intentionally.)
 - WIKI.md § 9 should document the hard-rule-1 write invariant explicitly (deferred from ARCH-14).
 
 ---
@@ -24,20 +24,21 @@ None.
 
 ## Decisions made this session
 
-- M66: QUAL-1 + AGT-4. Both clean.
-- AGT-4 uses Claude CLI (ClaudeCLIFilterClient) not NLM — same infrastructure as lint/contradictions, simpler.
-- `contradiction-sweep` is an MCP tool (agents can trigger domain-scoped sweeps), unlike `briefing-cron` (CLI_ONLY).
-- `synthesizes: []` intentional in contradiction-sweeper pages — references wiki pages not raw sources.
-- QUAL-1 `check_url()` is the monkeypatch target; `_RECHECK_DAYS = 30`.
+- M67: TOOL-14 + INT-12. Both clean.
+- TOOL-14: `contradiction-drift` is CLI_ONLY (nightly scheduler-owned run; agents should not trigger corpus-wide contradiction re-scans).
+- INT-12: one Notion DB per domain (vs one DB with domain column) — domain isolation, per-domain views, aligns with wiki policy boundaries.
+- INT-12: uses `urllib.request` + `NOTION_TOKEN` env var; cannot call MCP Notion tools from Python gateway code.
+- `publish-notion` is an MCP tool (agents can mirror a specific domain on demand, unlike briefing-cron or contradiction-drift).
+- TOOL-14 patch target: `gateway.lint.contradictions.run` (local import inside function, not module-level attribute).
 
 ---
 
 ## Rejected approaches this session
 
-- NLM corpus sweep for AGT-4: unnecessary complexity; lint/contradictions.py LLM approach is sufficient and already tested.
+- Patching `gateway.ops.contradiction_drift.contradictions_run` — `contradictions_run` is a local import inside `run_contradiction_drift()`, not a module-level name; must patch `gateway.lint.contradictions.run`.
 
 ---
 
 ## Next atomic step
 
-M67 — Phase 4 Round C. Create `phase4-round-c` branch. Read docs/reviews/2026-05-23-knowledge-system-review.md § TOOL-14 and § INT-12 before writing any code. TOOL-14 (contradiction drift JSON + weekly digest) first, then INT-12 (Notion mirror for one domain). For INT-12: decide DB layout (one DB per domain vs. one DB with domain column) before writing code — document in milestone doc.
+Phase 4 Round C complete. Determine next Phase 4 milestone (M68) from backlog. Consult docs/reviews/2026-05-23-knowledge-system-review.md for remaining items not yet scheduled.
