@@ -103,6 +103,7 @@ def test_known_checks_includes_all_documented_checks():
         "long-slugs",
         "contradiction-pages",
         "synthesizes-coverage",
+        "stale-verified",
         "domain-purity",
         "link-rot",
     }

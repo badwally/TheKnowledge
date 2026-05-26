@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M69 complete; Phase 5 Round B merged)
+Last updated: 2026-05-26 (M72 complete; Phase 5 Round E merged)
 
 ---
 
@@ -9,42 +9,43 @@ Last updated: 2026-05-26 (M69 complete; Phase 5 Round B merged)
 None.
 
 Carry-forward (not blocking anything):
-- ONT-11 backfill: 56/94 synthesis pages lack `synthesizes:` — lint warns; escalate to error after backfill pass.
-- ANTHROPIC_API_KEY_RESEARCH needed for condo-capital-infra and edge-ai-agentic eval runs.
-- WIKI.md § 9 should document the hard-rule-1 write invariant explicitly (deferred from ARCH-14).
+- ONT-11 user action: run `wiki backfill-synthesizes` to auto-populate missing `synthesizes:` on ~56 synthesis pages. Lint now reports these as ERROR.
+- ANTHROPIC_API_KEY_RESEARCH needed for eval runs.
+- WIKI.md § 9 hard-rule-1 invariant documentation deferred.
+- RSS enclosure → podcast pipeline (INT-2 + INT-3 extension) deferred.
 
 ---
 
 ## Files mid-edit
 
-None. Branch phase5-round-c exists but no files changed yet.
+None. Branch phase5-round-e ready to merge; M73 not yet started.
 
 ---
 
 ## Decisions made this session
 
-- M67: TOOL-14 patch target is `gateway.lint.contradictions.run` (local import inside run_contradiction_drift, not module-level).
-- M67: INT-12 DB layout = one DB per domain. Notion HTTP REST via urllib.request + NOTION_TOKEN.
-- M68: ONT-8 confirmed already complete (validator + long_slugs lint check both done in prior milestone).
-- M68: backfill_entity_kinds maps ~35 legacy aliases → enum; unmapped → "other"; idempotent; CLI_ONLY.
-- M68: backfill_timestamps uses file mtime as proxy for missing created_at/last_updated; CLI_ONLY.
-- M69: TOK-3/4/6 confirmed already done in prior milestones.
-- M69: Gmail poller uses imaplib.IMAP4_SSL (stdlib) + App Password auth — Gmail MCP tools not callable from Python gateway code.
-- M69: RSS poller uses stdlib urllib.request + xml.etree.ElementTree (no feedparser dep).
-- M69: ET.Element falsy-when-childless — all fallback find chains require explicit `is None` checks.
-- AGT-9 and AGT-14 confirmed already done (gateway/events.py, ops/agent_log.py + CLI).
+- M70: PodcastConverter detects http/https audio URLs; VoiceConverter detects local files — non-overlapping.
+- M70: Six-step source type contract applied; `podcast-<slug>-<sha10>` ID format; sidecar at raw/podcast/.
+- M71: fm.serialize() injects schema_version: 1 as first key (preserves explicit values).
+- M71: ONT-11 lint escalated WARNING → ERROR since backfill helper now ships.
+- M71: Mixed-tier synthesizes (sources/ + synthesis/ mixed) → sources/ wins (mixed is invalid per validator).
+- M72: ONT-13 scope = statute + standard only (both time-sensitive; person/drug/etc. do not require last_verified_at).
+- M72: Unparseable last_verified_at → ERROR not WARNING (bad data same severity as absent data).
+- M72: STALE_DAYS = 365 (1 year threshold).
+- INT-8 confirmed already complete (repo_metadata.py + 11 tests existed before this session).
+- ARCH-6/7/8, QUAL-4/5/9/13, TOK-7 all confirmed already done in prior milestones.
 
 ---
 
 ## Rejected approaches this session
 
-- Patching `gateway.ops.contradiction_drift.contradictions_run` — contradictions_run is a local import inside run_contradiction_drift(), not module-level; must patch `gateway.lint.contradictions.run`.
-- `feedparser` for RSS parsing — not in venv; use stdlib xml.etree.ElementTree instead.
-- `ET.Element or Element` fallback chains — ET.Element is falsy when childless; must use `is None` checks.
-- Gmail MCP tools from Python gateway code — MCP tools only callable in Claude sessions, not from gateway Python; use imaplib instead.
+- Injecting schema_version in write_atomic() — frontmatter.serialize() is the right injection point.
+- feedparser for RSS parsing — not in venv; use stdlib xml.etree.ElementTree.
+- ET.Element or-chains — ET.Element falsy when childless; use `is None`.
+- Gmail MCP tools from Python gateway code — use imaplib instead.
 
 ---
 
 ## Next atomic step
 
-M70 — Phase 5 Round C. Branch phase5-round-c exists. Top candidates: INT-3 (podcast converter + RSS chain, Impact 4, deps INT-2 now done), ARCH-15 (schema_version field, S-effort), ONT-11 backfill helper. Read INT-3 acceptance criteria then implement.
+M73 — Phase 5 Round F. Check BUILD.md backlog for next S-effort items (QUAL-7 retraction monitor, TOK-12 salvage, or other Phase 5 items not yet confirmed done).
