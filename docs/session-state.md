@@ -1,6 +1,6 @@
 # Session state — 2026-05-25
 
-Last updated: 2026-05-25 (M55 complete, Phase 2 Round A merged to main)
+Last updated: 2026-05-25 (M56 complete, Phase 2 Round B merged to main)
 
 ---
 
@@ -18,15 +18,12 @@ None.
 
 ## Decisions made this session
 
-- M55 (Phase 2 Round A) complete: TOK-4, ONT-2, ONT-4, ONT-8, ARCH-10. 1038 → 1061 tests. Merged to main at `m55-phase2-round-a`.
-- Key patterns established: `ENTITY_KIND_ENUM` (public validator constant), lint check registration in `ops/lint.py`, YAML data files in `src/gateway/data/`.
+- M56 (Phase 2 Round B) complete: AGT-9, ONT-3, AGT-14, QUAL-3. 1061 → 1117 tests (+56). Merged to main at `m56-phase2-round-b`.
+- Key patterns established: `events.py` filesystem bus (no daemon, synchronous emit/subscribe); contradiction page type (citation_grounded=False, severity+status enums); agent-log aggregate op; resolve_contradiction with `contested` propagation.
+- `contradictions.py` lint (LLM-based claim scan) was already a full implementation — the new `contradiction_pages.py` lint is the structured-page walker for ONT-3.
 
 ---
 
 ## Next atomic step
 
-Start Phase 2 Round B on branch `phase2-round-b`:
-1. `git checkout -b phase2-round-b`
-2. Items: AGT-9, AGT-14, ONT-3, QUAL-3 (M56)
-3. ONT-3 deps ONT-2 (disputes verb) — now available.
-4. Full acceptance criteria in `docs/plans/2026-05-25-phase2-plan.md` Round B.
+Phase 2 Round B complete. No open contracts. Await next session or Round C planning.
