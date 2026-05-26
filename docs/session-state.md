@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M74 complete; Phase 5 Round G merged)
+Last updated: 2026-05-26 (M75 complete; Phase 5 Round H merged)
 
 ---
 
@@ -14,45 +14,39 @@ Carry-forward (not blocking anything):
 - WIKI.md § 9 hard-rule-1 invariant documentation deferred.
 - RSS enclosure → podcast pipeline (INT-2 + INT-3 extension) deferred.
 - QUAL-7 pollers need actual API access to run (pubmed-retractions and arxiv-revisions check external HTTP APIs); not run during milestone since no live network in tests.
+- QUAL-10 calibration sets for production domains not yet populated (need manual labelling of 30-50 examples per domain at `.knowledge/policies/<d>/calibration_set.yaml`).
 
 ---
 
 ## Files mid-edit
 
-None. Branch phase5-round-g merged; M75 not yet started.
+None. Branch phase5-round-h merged; M76 not yet started.
 
 ---
 
 ## Decisions made this session
 
-- M70: PodcastConverter detects http/https audio URLs; VoiceConverter detects local files — non-overlapping.
-- M71: fm.serialize() injects schema_version: 1 as first key (preserves explicit values).
-- M71: ONT-11 lint escalated WARNING → ERROR since backfill helper now ships.
-- M72: ONT-13 scope = statute + standard only; STALE_DAYS = 365; unparseable → ERROR.
-- M73: ARCH-13 — status field is planned/executed/abandoned; archive threshold = 90 days.
-- M73: QUAL-7 — PubMed uses eFetch XML + CommentsCorrections check; arXiv uses Atom API + version number comparison; both use per-source cursors with RECHECK_DAYS = 30.
-- M73: retracted-citations lint scope = all wiki pages (not just synthesis).
-- M74: AGT-13 — skill output file is .claude/skills/wiki-<domain>/SKILL.md (not wiki/); does not use write_atomic (writes to .claude/ not wiki/raw/); added to ARCH-14 allowlist.
-- M74: DOC-5 — rotate-log keeps 90 days by default; quarterly archive naming (YYYY-Q); CLI_ONLY in MCP; weekly Sunday 03:00 UTC cron.
+- M75: QUAL-10 — calibration set at `.knowledge/policies/<d>/calibration_set.yaml`; score_calibration() uses injectable client (same FilterClient protocol); reads raw/ for source excerpts; writes only to .knowledge/policies/; ARCH-14 allowlist updated.
+- M75: QUAL-10 — DistillResult.calibration_f1 is float | None (None when no calibration set exists); distill still succeeds without one.
+- M75: DOC-8 — CHANGELOG.md at repo root; one-line entries M0-M75; BUILD.md remains the exhaustive record.
 
 ---
 
 ## Rejected approaches this session
 
-- Injecting schema_version in write_atomic() — frontmatter.serialize() is the right injection point.
-- feedparser for RSS parsing — not in venv; use stdlib xml.etree.ElementTree.
-- ET.Element or-chains — ET.Element falsy when childless; use `is None`.
-- Gmail MCP tools from Python gateway code — use imaplib instead.
-- QUAL-7 via retraction flag on wiki/sources pages — flag lives on raw sources (frontmatter mutation allowed per hard rule §6).
+(none new beyond carry-forward from prior sessions)
 
 ---
 
 ## Next atomic step
 
-M75 — Phase 5 Round H. Outstanding Phase 3 items with deps met:
-- QUAL-10 (M): held-out gold set for filter-calibration (30-50 examples per domain at .knowledge/policies/<d>/calibration_set.yaml; wiki finetune --distill re-scores; policy YAML carries calibration_metrics block) — deps QUAL-12 ✓
-- ARCH-12 (L): second NlmClient backend (Gemini-direct or Claude-with-loaded-corpus) — large effort, skip for now
-- ARCH-13 ✓, DOC-5 ✓, AGT-13 ✓, QUAL-7 ✓ (all done)
-- DOC-8 (M): Split BUILD.md → frozen plan + milestones + CHANGELOG.md — deps DOC-7 ✓
-- DOC-9/10/11/12 (S each): Tests README, MCP API ref, runbook, historical-doc indexing
-Recommended next: QUAL-10 + DOC-8 (one quality + one doc item).
+M76 — next Phase 5 items with deps met:
+- DOC-9 (S): Tests README at `tests/README.md`
+- DOC-10 (S): MCP API reference doc
+- DOC-11 (S): Operational runbook
+- DOC-12 (S): Historical-doc indexing
+- ARCH-12 (L): Second NlmClient backend (large effort; skip unless user flags as priority)
+- QUAL-9 (S): Cross-domain contamination quarantine in promote-domain (no deps)
+- QUAL-14 (M): `supersedes`/`superseded_by` re-ingest — deps QUAL-1 ✓, QUAL-7 ✓
+
+Recommended next: DOC-9/10/11/12 (small doc items, can batch) or QUAL-9 (S, good quality item).

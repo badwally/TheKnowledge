@@ -657,6 +657,26 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run a distillation call; writes a candidate policy_versions/<timestamp>.yaml",
     )
+    mode.add_argument(
+        "--check-calibration",
+        action="store_true",
+        help="Show calibration set size for a domain (no LLM calls)",
+    )
+    mode.add_argument(
+        "--add-calibration",
+        metavar="DECISION",
+        help="Add a calibration entry: --add-calibration include --source <source_id>",
+    )
+    p_finetune.add_argument(
+        "--source",
+        default=None,
+        help="Source ID for --add-calibration",
+    )
+    p_finetune.add_argument(
+        "--rationale",
+        default="",
+        help="Rationale text for --add-calibration",
+    )
     p_finetune.add_argument(
         "--threshold",
         type=int,
@@ -1258,6 +1278,44 @@ def _run_finetune(ns: argparse.Namespace) -> int:
 
     threshold = ns.threshold if ns.threshold is not None else 500
 
+    if getattr(ns, "add_calibration", None):
+        from gateway.ops.calibration import CalibrationEntry, add_calibration_entry
+
+        if not ns.domain:
+            print("--add-calibration requires --domain <slug>", file=sys.stderr)
+            return 2
+        if not ns.source:
+            print("--add-calibration requires --source <source_id>", file=sys.stderr)
+            return 2
+        decision = ns.add_calibration
+        if decision not in ("include", "exclude"):
+            print("--add-calibration value must be 'include' or 'exclude'", file=sys.stderr)
+            return 2
+        entry = CalibrationEntry(
+            source_id=ns.source,
+            decision=decision,
+            rationale=getattr(ns, "rationale", ""),
+        )
+        add_calibration_entry(ns.domain, entry)
+        print(f"ok: added calibration entry {ns.source} → {decision} for {ns.domain}")
+        return 0
+
+    if getattr(ns, "check_calibration", False):
+        from gateway.ops.calibration import calibration_path, load_calibration_set
+
+        if not ns.domain:
+            print("--check-calibration requires --domain <slug>", file=sys.stderr)
+            return 2
+        entries = load_calibration_set(ns.domain)
+        n_inc = sum(1 for e in entries if e.decision == "include")
+        n_exc = sum(1 for e in entries if e.decision == "exclude")
+        p = calibration_path(ns.domain)
+        print(f"{ns.domain}: {len(entries)} calibration examples ({n_inc} include / {n_exc} exclude)")
+        if not entries:
+            print(f"  no calibration set at {p}")
+            print("  use `wiki finetune --add-calibration include --source <id> --domain <d>` to build one")
+        return 0
+
     if ns.distill:
         if not ns.domain:
             print("--distill requires --domain <slug>", file=sys.stderr)
@@ -1274,6 +1332,8 @@ def _run_finetune(ns: argparse.Namespace) -> int:
         print(f"ok: distilled candidate for {result.domain}")
         print(f"  candidate: {result.candidate_path}")
         print(f"  examples used: {result.examples_used}")
+        if result.calibration_f1 is not None:
+            print(f"  calibration F1: {result.calibration_f1:.3f}")
         if result.summary:
             print(f"  summary: {result.summary[:240]}")
         return 0

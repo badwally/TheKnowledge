@@ -35,6 +35,7 @@ from gateway import paths
 from gateway.filter import examples as example_bank
 from gateway.filter.policy import load_policy, policy_exists
 from gateway.filter.semantic import ClaudeCLIFilterClient, FilterClient
+from gateway.ops.calibration import score_calibration
 
 
 _TRIGGER_THRESHOLD = 500  # per-domain, per WIKI § 10.4
@@ -185,6 +186,7 @@ class DistillResult:
     candidate_path: Path
     examples_used: int
     summary: str
+    calibration_f1: float | None = None
 
 
 class DistillError(RuntimeError):
@@ -241,6 +243,21 @@ def distill_prompt(
     candidate["inclusion_criteria"] = parsed["inclusion_criteria"]
     candidate["exclusion_criteria"] = parsed["exclusion_criteria"]
 
+    # QUAL-10: score against held-out calibration set if one exists
+    calibration_f1: float | None = None
+    cal_metrics = score_calibration(
+        domain,
+        parsed["inclusion_criteria"],
+        parsed["exclusion_criteria"],
+        client=client,
+    )
+    if cal_metrics is not None:
+        calibration_f1 = cal_metrics.f1
+        candidate["calibration_metrics"] = {
+            **cal_metrics.to_dict(),
+            "scored_at": _now_iso(),
+        }
+
     target_dir = policy_versions_dir(domain)
     target_dir.mkdir(parents=True, exist_ok=True)
     target = target_dir / f"{_now_path_token()}.yaml"
@@ -251,6 +268,7 @@ def distill_prompt(
         candidate_path=target,
         examples_used=len(examples),
         summary=parsed["summary"],
+        calibration_f1=calibration_f1,
     )
 
 

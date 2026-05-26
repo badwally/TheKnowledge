@@ -69,6 +69,8 @@ def test_ops_write_path_uses_write_atomic() -> None:
         "ops/skill_emit.py",
         # rotate_log reads log_path() (knowledge root, not wiki/raw) via write_text under lock
         "ops/rotate_log.py",
+        # calibration reads raw_dir() for source excerpts but writes only to .knowledge/policies/
+        "ops/calibration.py",
     }
 
     violations = []
