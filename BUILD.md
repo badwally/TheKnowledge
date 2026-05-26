@@ -991,6 +991,10 @@ See `docs/milestones/M59.md`. Documentation milestone — four items: DOC-3 (`AR
 
 See `docs/milestones/M60.md`. Phase 2 exit-criteria closeout — five items: A1 (three agents wired into `.knowledge/schedule.yaml`: inbox-triage `*/15`, draft-closer `0 8 *`, agent-digest `0 7 *`; `run_inbox_triage_batch()` scan-based runner; `wiki agents run <name>` CLI + `wiki_agents` MCP; subscription YAMLs in `.knowledge/agents/`); A2 (`WatcherDaemon._process` emits `ingest.complete` via `events.emit()` on success; 5 new tests in `test_a2_event_bus_chain.py` verify watcher→event→subscribe chain with no direct coupling); A3 (`wiki evaluate glp1-reward-modulation` baseline: 15 Q, mean 0.566, 2026-05-25T01:34:37Z run, stored in `.knowledge/eval/glp1-reward-modulation/runs/`); A4 (goldens for two new eval domains: `condo-capital-infra` 10 Q, `edge-ai-agentic` 10 Q; both validate clean; eval runs pending `ANTHROPIC_API_KEY_RESEARCH`); A5 (stale draft trend: 230→217 over 4 days, −5.7%; decline criterion met). Tests: 1179 → 1192 passing (+13). K2 parity: 4/4 green. Tag: `m60-phase2-round-a`.
 
+### M61 — Phase 2 Closeout (Round B)
+
+See `docs/milestones/M61.md`. Phase 2 formal close — documentation only: `docs/phase2-closeout.md` (20-item completion table, test-delta table 1038→1192, exit-criteria verification, follow-ups for Phase 3); M61 milestone doc; tags `m60-phase2-round-a` and `m61-phase2-closeout`. Tests: 1192 passing (unchanged). Tag: `m61-phase2-closeout`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
