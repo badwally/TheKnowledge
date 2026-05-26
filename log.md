@@ -19183,3 +19183,27 @@ report=.knowledge/lint/2026-05-25T22-51-39Z-schema-drift.md
 ## [2026-05-25T22:52:49Z] lint | scope=schema-drift | schema-drift=210
 
 report=.knowledge/lint/2026-05-25T22-52-49Z-schema-drift.md
+
+## [2026-05-25T23:43:27Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T23-43-27Z-schema-drift.md
+
+## [2026-05-25T23:50:18Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T23-50-18Z-schema-drift.md
+
+## [2026-05-25T23:53:22Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T23-53-22Z-schema-drift.md
+
+## [2026-05-25T23:58:20Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T23-58-20Z-schema-drift.md
+
+## [2026-05-25T23:59:37Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-25T23-59-37Z-schema-drift.md
+
+## [2026-05-26T00:00:08Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-26T00-00-08Z-schema-drift.md
