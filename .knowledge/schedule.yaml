@@ -55,3 +55,11 @@ jobs:
   last_run: null
   last_exit_code: null
   last_duration_seconds: null
+- name: rotate-log
+  cron: 0 3 * * 0
+  command: wiki rotate-log
+  enabled: true
+  cooldown_seconds: 3600
+  last_run: null
+  last_exit_code: null
+  last_duration_seconds: null

@@ -79,6 +79,8 @@ CLI_ONLY: frozenset[str] = frozenset(
         "backfill-entity-kinds",
         "backfill-timestamps",
         "backfill-synthesizes",
+        # Log rotation is a bulk maintenance operation. Scheduler owns invocation.
+        "rotate-log",
     }
 )
 
@@ -989,6 +991,20 @@ def wiki_agenda(
 
     content = build_agenda(date_str, ev)
     return _serialize(OperationResult(success=True, summary=content))
+
+
+def wiki_skill_emit(domain: str) -> dict[str, Any]:
+    """Generate `.claude/skills/wiki-<domain>/SKILL.md` for a domain (AGT-13).
+
+    Reads policy.yaml + MOC + recent synthesis titles; writes a deterministic
+    skill file with inclusion criteria, key entities/concepts, and open threads.
+    Safe to regenerate at any time — idempotent, deterministic, <300 lines.
+
+    `domain`: domain slug (e.g. 'glp1-reward-modulation').
+    """
+    from gateway.ops.skill_emit import skill_emit
+
+    return _serialize(skill_emit(domain))
 
 
 # --- entry point -----------------------------------------------------------
