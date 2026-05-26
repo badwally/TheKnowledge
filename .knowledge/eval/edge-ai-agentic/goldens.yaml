@@ -1,0 +1,176 @@
+goldens:
+- id: q01
+  question: What are the four main hardware accelerator families for edge AI inference
+    and what is the key challenge created by their diversity?
+  must_cite:
+  - yt-ZNPkUoPBU84
+  must_assert:
+  - mobile NPUs and AI PCs
+  - Apple Silicon with unified memory
+  - NVIDIA edge GPUs such as Jetson Orin
+  - mobile and web GPU acceleration via portable runtimes
+  - heterogeneity means a model tuned for one accelerator often falls back to slow
+    software paths on another
+  must_not_assert:
+  - all edge hardware uses the same instruction set architecture
+  rubric_weight:
+    cite: 0.2
+    assert: 0.7
+    anti: 0.1
+
+- id: q02
+  question: Why does Apple Silicon have a structural advantage for on-device LLM inference
+    compared to other edge hardware?
+  must_cite:
+  - yt-ZNPkUoPBU84
+  must_assert:
+  - Apple M-series and A-series parts share a unified memory pool among CPU, GPU,
+    and Neural Engine
+  - this eliminates costly tensor copies that dominate KV-cache traffic during LLM
+    decoding
+  must_not_assert:
+  - Apple Silicon advantage is primarily about raw FLOP performance rather than memory
+    architecture
+  rubric_weight:
+    cite: 0.2
+    assert: 0.7
+    anti: 0.1
+
+- id: q03
+  question: What is the KV cache memory bottleneck in edge LLM inference and which
+    technique addresses it?
+  must_cite:
+  - arxiv-2407.08462
+  must_assert:
+  - the KV cache required for long-context auto-regressive generation consumes massive
+    memory at inference time
+  - WKVQuant jointly quantizes both model weights and the KV cache using a two-dimensional
+    strategy
+  must_not_assert:
+  - quantizing model weights alone solves the KV cache memory problem
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q04
+  question: What is the Agent-to-Agent (A2A) protocol and what problem does it solve
+    for multi-agent edge systems?
+  must_cite:
+  - yt-nn1KJfvj38w
+  must_assert:
+  - A2A is Google's open-source protocol allowing agents built on different frameworks
+    to discover, negotiate, and delegate tasks to each other
+  - agents advertise capabilities via standardized agent cards published as JSON-RPC
+    documents at well-known paths over HTTP
+  - it addresses the interoperability gap when agents from LangChain, CrewAI, or
+    other frameworks need to collaborate
+  must_not_assert:
+  - A2A is a protocol for agent-to-cloud communication rather than agent-to-agent
+  rubric_weight:
+    cite: 0.2
+    assert: 0.7
+    anti: 0.1
+
+- id: q05
+  question: What is Model Context Protocol (MCP) and why is it described as the USB-C
+    for AI?
+  must_cite:
+  - yt-FLpS7OfD5-s
+  must_assert:
+  - MCP standardizes how AI models connect to external tools such as APIs and web
+    searches and resources such as databases and local files
+  - it replaces bespoke REST API glue-code with a uniform interface
+  - the USB-C analogy reflects that MCP provides a universal connection standard
+    regardless of the underlying tool or resource
+  must_not_assert:
+  - MCP is a protocol for agent-to-agent communication rather than model-to-tool
+    integration
+  rubric_weight:
+    cite: 0.2
+    assert: 0.7
+    anti: 0.1
+
+- id: q06
+  question: What is the GGUF format and what role does it play in local edge AI deployment?
+  must_cite:
+  - yt-2t9XrPcAiHg
+  must_assert:
+  - GGUF packages model weights, metadata, and quantization structures into a single
+    file for local CPU and GPU execution
+  - it is used primarily by the Llama.cpp runtime
+  - GGUF enables portable local execution without per-OS binary compilation
+  must_not_assert:
+  - GGUF is a cloud-native model format requiring server infrastructure
+  rubric_weight:
+    cite: 0.2
+    assert: 0.7
+    anti: 0.1
+
+- id: q07
+  question: What does empirical evidence show about the impact of deployment strategy
+    on edge AI latency?
+  must_cite:
+  - arxiv-2403.17154
+  must_assert:
+  - how an edge model is packaged and deployed (container vs binary, cold vs warm
+    start, on-device vs local-network) has first-order effects on latency and apparent
+    performance
+  - deployment should be treated as a tunable layer rather than a neutral wrapper
+  must_not_assert:
+  - deployment strategy has negligible effect compared to model architecture choices
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q08
+  question: What is split inference in the context of edge AI privacy and what does
+    ShadowNet demonstrate?
+  must_cite:
+  - yt-G6V3vJ6ojMQ
+  must_assert:
+  - split inference partitions a model between a TEE-protected edge component and
+    an offloaded GPU component
+  - ShadowNet uses this approach to recover throughput without exposing model weights
+  must_not_assert:
+  - split inference requires sending the full model to the cloud for execution
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q09
+  question: What distinguishes trust-aware routing in distributed edge inference and
+    why is it more than a latency optimization?
+  must_cite:
+  - arxiv-2603.28622
+  must_assert:
+  - which node handles a request is a security and quality decision based on attestable
+    reliability signals
+  - trust-aware routing weights node selection by trust metrics before dispatching
+    generative workloads
+  must_not_assert:
+  - distributed edge inference routing is determined solely by latency minimization
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q10
+  question: What is the workflow-aware serving gap for agentic LLMs at the edge?
+  must_cite:
+  - arxiv-2603.16104
+  must_assert:
+  - current inference engines like vLLM and Llama.cpp optimize individual LLM calls
+    in isolation
+  - agentic workflows generate redundancy through repeated prompts, overlapping contexts,
+    and parallel exploration across agents
+  - the gap is the lack of systems that cache contexts across an entire DAG of agents
+    to maximize hardware utilization
+  must_not_assert:
+  - existing inference engines already optimize multi-agent workflow contexts automatically
+  rubric_weight:
+    cite: 0.2
+    assert: 0.7
+    anti: 0.1

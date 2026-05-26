@@ -1,0 +1,169 @@
+goldens:
+- id: q01
+  question: What are the four standard reserve funding goals in the National Reserve
+    Study Standards and how do they differ in risk profile?
+  must_cite:
+  - web-2022-07-07-3bd
+  must_assert:
+  - Full Funding maintains a balance equal to 100% of calculated component deterioration
+  - Threshold Funding keeps the balance above a predetermined minimum at all times
+  - Baseline Funding ensures the balance never drops below zero
+  - Statutory Funding meets state-mandated minimum requirements
+  must_not_assert:
+  - Threshold Funding and Full Funding are equivalent in cost to homeowners
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q02
+  question: Which reserve funding goal is most commonly recommended and why?
+  must_cite:
+  - web-2022-07-07-3bd
+  must_assert:
+  - Threshold Funding is the most commonly recommended strategy
+  - it balances equitable contributions with adequate funds for major repairs
+  - Baseline Funding is considered high-risk and generally acceptable only in financial
+    distress
+  must_not_assert:
+  - Full Funding is the standard recommended approach for most communities
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q03
+  question: What is the cost differential between the Component method and the Cash
+    Flow method for reserve contributions, and what is the key criticism of each?
+  must_cite:
+  - web-2023-03-20-7a4
+  must_assert:
+  - Component method ongoing transfers are typically two to three times higher than
+    the Cash Flow method
+  - Cash Flow method creates an illusion of adequacy by ignoring real-world asset
+    depreciation
+  - Component method handles funds inefficiently in separate per-asset accounts
+  must_not_assert:
+  - both methods produce similar contribution levels
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q04
+  question: What Percent Funded thresholds indicate healthy versus at-risk reserve
+    funds, and what is the mathematical flaw in this metric?
+  must_cite:
+  - web-2025-09-05-a37
+  must_assert:
+  - 70% or higher is considered good to excellent
+  - below 50% is a major red flag indicating a likely special assessment
+  - the metric assumes linear depreciation, ignoring exponential or stepwise deterioration
+    of components like roofs and asphalt
+  must_not_assert:
+  - 50% funded is considered a healthy reserve level
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q05
+  question: What does Florida's Structural Integrity Reserve Study mandate require,
+    and to which buildings does it apply?
+  must_cite:
+  - web-2022-07-20-7d3
+  must_assert:
+  - applies to condominium and cooperative buildings three stories or higher
+  - requires completing a SIRS identifying specific structural elements including roof,
+    load-bearing walls, floor, foundation, and fireproofing
+  - after December 31 2024 reserves for structural elements cannot be waived reduced
+    or pooled for other purposes
+  must_not_assert:
+  - SIRS applies to all HOA buildings regardless of height
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q06
+  question: What is Washington State's 1% Rule for reserve studies and what three
+    funding plans must be presented to the board?
+  must_cite:
+  - web-2025-01-01-cc2
+  must_assert:
+  - the 1% Rule requires listing any component whose major maintenance or replacement
+    cost exceeds 1% of the annual budget
+  - the study must present a Full Funding Plan achieving 100% funding by year 30
+  - the study must also present a Baseline Funding Plan and the professional's specific
+    Recommended rate
+  must_not_assert:
+  - Washington State mandates that boards adopt the Full Funding Plan
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q07
+  question: What are California's requirements when an HOA board borrows from reserve
+    funds for non-reserve expenses?
+  must_cite:
+  - web-2025-09-05-a37
+  must_assert:
+  - board must document the reason under Civil Code 5515
+  - must adopt a repayment plan and record the decision in open meeting minutes
+  - funds must generally be repaid within one year
+  must_not_assert:
+  - California allows unlimited reserve borrowing without formal process
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q08
+  question: How does the pooled-average problem in percent-funded software distort
+    reserve health reporting?
+  must_cite:
+  - web-2025-04-12-ca4
+  must_assert:
+  - averaging a 90% funded component with a 10% funded component yields an overall
+    metric of 50% even if the HOA lacks cash for near-term critical replacements
+  - the aggregation hides the actual risk of specific high-cost near-term components
+  must_not_assert:
+  - averaging across components is an accurate way to assess reserve health
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q09
+  question: What is Washington State's repayment schedule requirement when a board
+    borrows reserves for unbudgeted operational costs versus unbudgeted replacements?
+  must_cite:
+  - web-2025-10-29-056
+  must_assert:
+  - borrowing for unbudgeted or unforeseen operational costs requires a mandatory repayment
+    schedule not exceeding 24 months
+  - borrowing for unbudgeted replacements does not trigger the 24-month restriction
+  must_not_assert:
+  - Washington imposes identical repayment rules for operational and replacement borrowing
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
+
+- id: q10
+  question: What does the National Reserve Study Standards say about how Full Funding
+    compares to Baseline Funding in terms of total homeowner cost over time?
+  must_cite:
+  - web-2022-07-07-3bd
+  must_assert:
+  - Full Funding requires reserve transfers 10-15% higher than Baseline Funding
+  - Baseline-funded communities pay the difference through unexpected special assessments
+  - the total long-term cost is similar but Baseline Funding concentrates it in sudden
+    shocks rather than regular contributions
+  must_not_assert:
+  - Full Funding costs homeowners significantly more than Baseline Funding in total
+  rubric_weight:
+    cite: 0.3
+    assert: 0.6
+    anti: 0.1
