@@ -7,11 +7,13 @@ from __future__ import annotations
 
 from gateway.pollers.apple_notes import AppleNotesPoller
 from gateway.pollers.base import Poller, PollerResult
+from gateway.pollers.readwise import ReadwisePoller
 from gateway.pollers.repo_metadata import RepoMetadataPoller
 
 
 _REGISTRY: dict[str, type[Poller]] = {
     AppleNotesPoller.name: AppleNotesPoller,
+    ReadwisePoller.name: ReadwisePoller,
     RepoMetadataPoller.name: RepoMetadataPoller,
 }
 
