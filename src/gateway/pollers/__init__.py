@@ -7,16 +7,20 @@ from __future__ import annotations
 
 from gateway.pollers.apple_notes import AppleNotesPoller
 from gateway.pollers.base import Poller, PollerResult
+from gateway.pollers.gmail_newsletters import GmailNewsletterPoller
 from gateway.pollers.link_rot import LinkRotPoller
 from gateway.pollers.readwise import ReadwisePoller
 from gateway.pollers.repo_metadata import RepoMetadataPoller
+from gateway.pollers.rss import RSSPoller
 
 
 _REGISTRY: dict[str, type[Poller]] = {
     AppleNotesPoller.name: AppleNotesPoller,
+    GmailNewsletterPoller.name: GmailNewsletterPoller,
     LinkRotPoller.name: LinkRotPoller,
     ReadwisePoller.name: ReadwisePoller,
     RepoMetadataPoller.name: RepoMetadataPoller,
+    RSSPoller.name: RSSPoller,
 }
 
 
