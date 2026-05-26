@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2512.03383]] · arxiv · [original](http://arxiv.org/abs/2512.03383v3) · 2025-12-03
 **Authors:** Hung-Yueh Chiang, Chi-Chih Chang, Yu-Chen Lu, Chien-Yu Lin, Kai-Chiang Wu, Mohamed S. Abdelfattah, Diana Marculescu
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

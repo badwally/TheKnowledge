@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2601.03290]] · arxiv · [original](http://arxiv.org/abs/2601.03290v1) · 2026-01-05
 **Authors:** Hema Hariharan Samson
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

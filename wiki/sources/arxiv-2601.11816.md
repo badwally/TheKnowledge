@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2601.11816]] · arxiv · [original](http://arxiv.org/abs/2601.11816v1) · 2026-01-16
 **Authors:** Zahra Moslemi, Keerthi Koneru, Yen-Ting Lee, Sheethal Kumar, Ramesh Radhakrishnan
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

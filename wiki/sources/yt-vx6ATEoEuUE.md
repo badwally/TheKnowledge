@@ -11,15 +11,3 @@ ingested_at: '2026-05-20T18:37:45Z'
 
 **Source:** [[raw/youtube/yt-vx6ATEoEuUE]] · youtube · [original](https://www.youtube.com/watch?v=vx6ATEoEuUE)
 **Authors:** BayesWorks
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

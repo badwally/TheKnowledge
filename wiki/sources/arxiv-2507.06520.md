@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2507.06520]] · arxiv · [original](http://arxiv.org/abs/2507.06520v1) · 2025-07-09
 **Authors:** Xinyuan Song, Zeyu Wang, Siyi Wu, Tianyu Shi, Lynn Ai
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

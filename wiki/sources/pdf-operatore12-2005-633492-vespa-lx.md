@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:23:51Z'
 
 **Source:** [[raw/pdf/pdf-operatore12-2005-633492-vespa-lx]] · pdf · 2005
 **Authors:** operatore12
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

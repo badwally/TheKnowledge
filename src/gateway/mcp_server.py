@@ -867,6 +867,20 @@ def wiki_agents(agent_name: str, action: str = "run") -> dict[str, Any]:
     return _serialize(OperationResult(success=False, summary=f"unknown agent {agent_name!r}", errors=[f"expected inbox-triage, draft-closer, or agent-digest"]))
 
 
+@mcp.tool()
+def wiki_digest(hours: float = 24.0, stale_days: int = 7) -> dict[str, Any]:
+    """Daily content brief: new sources, new synthesis, stale drafts, triage queue (INT-14).
+
+    `hours`: look-back window for new sources/synthesis (default 24).
+    `stale_days`: draft staleness threshold in days (default 7).
+
+    Returns the markdown digest as a string in `summary`. Never sends anything.
+    """
+    from gateway.ops.wiki_digest import build_wiki_digest
+    content = build_wiki_digest(hours=hours, stale_days=stale_days)
+    return _serialize(OperationResult(success=True, summary=content))
+
+
 # --- entry point -----------------------------------------------------------
 
 

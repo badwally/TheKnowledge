@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:26:59Z'
 
 **Source:** [[raw/pdf/pdf-f1a591bace1c]] · pdf · 2002
 **Authors:** (unknown)
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

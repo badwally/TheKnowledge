@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2007.06081]] · arxiv · [original](http://arxiv.org/abs/2007.06081v1) · 2020-07-12
 **Authors:** Tianyi Chen, Xiao Jin, Yuejiao Sun, Wotao Yin
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2409.02134]] · arxiv · [original](http://arxiv.org/abs/2409.02134v1) · 2024-09-02
 **Authors:** Samer Francy, Raghubir Singh
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

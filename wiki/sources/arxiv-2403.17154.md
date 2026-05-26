@@ -17,15 +17,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2403.17154]] · arxiv · [original](http://arxiv.org/abs/2403.17154v4) · 2024-03-25
 **Authors:** Jaskirat Singh, Emad Fallahzadeh, Bram Adams, Ahmed E. Hassan
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

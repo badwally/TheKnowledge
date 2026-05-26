@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2110.15362]] · arxiv · [original](http://arxiv.org/abs/2110.15362v1) · 2021-10-29
 **Authors:** Abdelrahman Hosny, Marina Neseem, Sherief Reda
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

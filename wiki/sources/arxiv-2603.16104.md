@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2603.16104]] · arxiv · [original](http://arxiv.org/abs/2603.16104v1) · 2026-03-17
 **Authors:** Noppanat Wadlom, Junyi Shen, Yao Lu
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2602.03145]] · arxiv · [original](http://arxiv.org/abs/2602.03145v1) · 2026-02-03
 **Authors:** Ya-Ting Yang, Quanyan Zhu
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

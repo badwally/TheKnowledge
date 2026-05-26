@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2507.19261]] · arxiv · [original](http://arxiv.org/abs/2507.19261v1) · 2025-07-25
 **Authors:** Osama Almurshed, Ashish Kaushal, Asmail Muftah, Nitin Auluck, Omer Rana
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

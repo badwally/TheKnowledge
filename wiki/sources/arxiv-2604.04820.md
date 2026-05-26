@@ -17,15 +17,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2604.04820]] · arxiv · [original](http://arxiv.org/abs/2604.04820v1) · 2026-04-06
 **Authors:** Xu Mingze
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

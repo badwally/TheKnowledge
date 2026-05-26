@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:18:59Z'
 
 **Source:** [[raw/pdf/pdf-dce04675e7ba]] · pdf · 2025
 **Authors:** richard galvan
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_
