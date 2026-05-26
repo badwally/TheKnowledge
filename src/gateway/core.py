@@ -91,6 +91,7 @@ class OperationResult:
     warnings: list[str] = field(default_factory=list)
     no_op: bool = False  # True when idempotent re-run skipped writes
     authorship_report: AuthorshipReport | None = None
+    data: dict = field(default_factory=dict)
 
     def __str__(self) -> str:  # pragma: no cover — debug aid
         if self.success:

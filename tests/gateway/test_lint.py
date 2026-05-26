@@ -107,6 +107,7 @@ def test_known_checks_includes_all_documented_checks():
         "retracted-citations",
         "domain-purity",
         "link-rot",
+        "superseded-citations",
     }
     assert KNOWN_CHECKS == expected
 

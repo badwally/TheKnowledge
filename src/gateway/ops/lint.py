@@ -35,6 +35,7 @@ from gateway.lint import (
     stale_claims,
     stale_drafts,
     stale_verified,
+    superseded_citations,
     synthesizes_coverage,
     untagged_sources,
 )
@@ -63,6 +64,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("retracted-citations", retracted_citations.run),
     ("domain-purity", domain_purity.run),
     ("link-rot", link_rot.run),
+    ("superseded-citations", superseded_citations.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

@@ -253,7 +253,22 @@ def validate_source_immutability(existing_body: str, new_body: str) -> Validatio
 
 # Keys that pipeline stages may update after ingest (§ 11.5).
 MUTABLE_SOURCE_FIELDS: frozenset[str] = frozenset(
-    {"filter", "nlm_corpus_ids", "wiki_pages", "domains", "contested"}
+    {
+        "filter",
+        "nlm_corpus_ids",
+        "wiki_pages",
+        "domains",
+        "contested",
+        # QUAL-7: retraction / revision monitoring
+        "retracted",
+        "retracted_at",
+        "arxiv_revised",
+        "arxiv_current_version",
+        "arxiv_baseline_version",
+        # QUAL-14: supersedence linking
+        "superseded_by",
+        "supersedes",
+    }
 )
 
 

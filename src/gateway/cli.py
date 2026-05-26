@@ -69,6 +69,7 @@ SUBCOMMANDS: dict[str, str] = {
     "backfill-synthesizes": "Populate synthesizes: on synthesis pages from body wikilink citations (ONT-11)",
     "skill-emit": "Generate .claude/skills/wiki-<domain>/SKILL.md for a domain (AGT-13)",
     "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
+    "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -123,6 +124,7 @@ IMPLEMENTED: set[str] = {
     "backfill-synthesizes",
     "skill-emit",
     "rotate-log",
+    "reingest",
 }
 
 
@@ -1001,6 +1003,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_rot.add_argument("--dry-run", action="store_true", help="Report what would be archived without writing")
 
+    # reingest (QUAL-14)
+    p_reingest = subparsers.add_parser("reingest", help=SUBCOMMANDS["reingest"])
+    p_reingest.add_argument("source_id", help="ID of the existing source to supersede")
+    p_reingest.add_argument("new_input", help="URL or path to the revised source")
+    p_reingest.add_argument("--domain", default=None, help="Domain override for filter scoring")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1126,6 +1134,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_skill_emit_cmd(ns)
     if ns.subcommand == "rotate-log":
         return _run_rotate_log_cmd(ns)
+    if ns.subcommand == "reingest":
+        return _run_reingest_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2080,6 +2090,25 @@ def _run_rotate_log_cmd(ns: argparse.Namespace) -> int:
             dry_run=getattr(ns, "dry_run", False),
         )
     )
+
+
+def _run_reingest_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.reingest import reingest
+
+    result = reingest(ns.source_id, ns.new_input, domain=getattr(ns, "domain", None))
+    if not result.success:
+        for e in result.errors:
+            print(f"error: {e}", file=sys.stderr)
+        return 1
+    print(f"ok: {result.summary}")
+    affected = (result.data or {}).get("affected_pages", [])
+    if affected:
+        print(f"\nWiki pages citing the old source (review and update citations):")
+        for p in affected:
+            print(f"  {p}")
+    else:
+        print("  no wiki pages cite the old source")
+    return 0
 
 
 if __name__ == "__main__":

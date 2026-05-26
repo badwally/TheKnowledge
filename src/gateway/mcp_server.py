@@ -1007,6 +1007,23 @@ def wiki_skill_emit(domain: str) -> dict[str, Any]:
     return _serialize(skill_emit(domain))
 
 
+@mcp.tool()
+def wiki_reingest(source_id: str, new_input: str, domain: str | None = None) -> dict[str, Any]:
+    """Re-ingest a revised source, creating a versioned successor linked via supersedes/superseded_by.
+
+    Creates `<source_id>-v2` (or next free version), writes the new source via
+    the standard ingest pipeline, and links old ↔ new. Returns the list of wiki
+    pages that cite the old source so affected claims can be reviewed.
+
+    `source_id`: ID of the existing source to supersede.
+    `new_input`: URL or path to the revised source.
+    `domain`: optional domain override for filter scoring.
+    """
+    from gateway.ops.reingest import reingest
+
+    return _serialize(reingest(source_id, new_input, domain=domain))
+
+
 # --- entry point -----------------------------------------------------------
 
 

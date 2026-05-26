@@ -115,6 +115,9 @@ retracted_at: "YYYY-MM-DDThh:mm:ssZ"   # timestamp of retraction discovery
 arxiv_revised: true             # arXiv only: set when current version > baseline version
 arxiv_current_version: 3        # most recently confirmed arXiv version number
 arxiv_versions_checked_at: "YYYY-MM-DDThh:mm:ssZ"
+# QUAL-14 supersedence fields (set by wiki reingest)
+superseded_by: "<new-source-id>"   # set on the old source when a newer version is ingested
+supersedes: ["<old-source-id>"]    # set on the new source; list supports chain links
 meta:                           # type-specific, see § 3.2
   ...
 ---
