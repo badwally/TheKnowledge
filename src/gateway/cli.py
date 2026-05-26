@@ -126,6 +126,7 @@ IMPLEMENTED: set[str] = {
     "rotate-log",
     "reingest",
     "search",
+    "index",
 }
 
 
@@ -1010,6 +1011,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_reingest.add_argument("new_input", help="URL or path to the revised source")
     p_reingest.add_argument("--domain", default=None, help="Domain override for filter scoring")
 
+    # index (SRCH-2 / index rebuild)
+    p_index = subparsers.add_parser("index", help=SUBCOMMANDS["index"])
+    p_index.add_argument(
+        "--rebuild",
+        action="store_true",
+        default=True,
+        help="Regenerate index.md from current wiki + raw state (default action)",
+    )
+    p_index.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=False,
+        help="Preview what would be written without modifying index.md",
+    )
+
     # search (SRCH-1)
     p_search = subparsers.add_parser("search", help=SUBCOMMANDS["search"])
     p_search.add_argument("query", help="Search string (case-insensitive substring match)")
@@ -1152,6 +1168,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_reingest_cmd(ns)
     if ns.subcommand == "search":
         return _run_search_cmd(ns)
+    if ns.subcommand == "index":
+        return _run_index_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2124,6 +2142,18 @@ def _run_reingest_cmd(ns: argparse.Namespace) -> int:
             print(f"  {p}")
     else:
         print("  no wiki pages cite the old source")
+    return 0
+
+
+def _run_index_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.index_rebuild import rebuild
+
+    result = rebuild(dry_run=getattr(ns, "dry_run", False))
+    if not result.success:
+        for e in result.errors:
+            print(f"error: {e}", file=sys.stderr)
+        return 1
+    print(f"ok: {result.summary}")
     return 0
 
 

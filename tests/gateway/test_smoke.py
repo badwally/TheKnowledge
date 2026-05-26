@@ -31,7 +31,6 @@ def test_cli_version_via_subprocess():
 
 
 def test_cli_unimplemented_returns_nonzero():
-    # `index` is still a stub; should exit 2 with not-yet-implemented.
-    # Update this test when `index` is wired up (currently search is implemented).
-    rc = cli.main(["index"])
+    # `migrate` is still a stub; should exit 2 with not-yet-implemented.
+    rc = cli.main(["migrate"])
     assert rc == 2

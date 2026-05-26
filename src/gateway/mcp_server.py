@@ -1025,6 +1025,21 @@ def wiki_reingest(source_id: str, new_input: str, domain: str | None = None) -> 
 
 
 @mcp.tool()
+def wiki_index(dry_run: bool = False) -> dict[str, Any]:
+    """Regenerate index.md with current wiki + raw state.
+
+    Produces a domain-grouped catalog (WIKI.md § 7) with source counts,
+    entity/concept/synthesis links per domain, cross-domain pages, and
+    a health summary (orphans, inbox).
+
+    `dry_run`: if True, compute and return the result without writing index.md.
+    """
+    from gateway.ops.index_rebuild import rebuild
+
+    return _serialize(rebuild(dry_run=dry_run))
+
+
+@mcp.tool()
 def wiki_search(
     query: str,
     scope: str = "all",
