@@ -39,5 +39,23 @@ def test_serialize_roundtrip():
     body = "Body content.\n\nMore body.\n"
     text = fm.serialize(front, body)
     parsed_front, parsed_body = fm.parse(text)
-    assert parsed_front == front
+    # schema_version is injected automatically; exclude it from the equality check
+    assert {k: v for k, v in parsed_front.items() if k != "schema_version"} == front
+    assert parsed_front["schema_version"] == fm.CURRENT_SCHEMA_VERSION
     assert parsed_body == body
+
+
+def test_serialize_injects_schema_version():
+    front = {"id": "yt-xyz", "type": "youtube"}
+    text = fm.serialize(front, "body\n")
+    parsed, _ = fm.parse(text)
+    assert parsed["schema_version"] == fm.CURRENT_SCHEMA_VERSION
+    # schema_version is the first key
+    assert list(parsed.keys())[0] == "schema_version"
+
+
+def test_serialize_preserves_existing_schema_version():
+    front = {"schema_version": 99, "id": "yt-abc"}
+    text = fm.serialize(front, "body\n")
+    parsed, _ = fm.parse(text)
+    assert parsed["schema_version"] == 99

@@ -74,10 +74,11 @@ CLI_ONLY: frozenset[str] = frozenset(
         # Agents should not trigger corpus-wide LLM contradiction scans;
         # the scheduler owns invocation. CLI-only by design.
         "contradiction-drift",
-        # One-time migration ops (ONT-4, ONT-6). Safe to run from CLI only;
+        # One-time migration ops (ONT-4, ONT-6, ONT-11). Safe to run from CLI only;
         # agents must not trigger bulk wiki rewrites unsupervised.
         "backfill-entity-kinds",
         "backfill-timestamps",
+        "backfill-synthesizes",
     }
 )
 

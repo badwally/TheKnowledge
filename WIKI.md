@@ -87,6 +87,7 @@ Every source in `raw/` and every wiki page begins with YAML frontmatter delimite
 
 ```yaml
 ---
+schema_version: 1               # ARCH-15: stamped automatically by gateway serialize()
 id: <type>-<short-id>          # stable, unique across raw/. Examples below.
 type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|podcast|note|csv|docx|xlsx|pptx|image|other
 title: "<source title>"

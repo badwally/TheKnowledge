@@ -1,17 +1,17 @@
 """ONT-11: synthesizes: coverage check.
 
 Synthesis pages that lack `synthesizes:` frontmatter are missing the
-Cochrane-style included-studies record that M45 established.  38/94 pages
-have it; this lint pass warns on the 56 that do not, escalating the
-existing validator integrity check to a corpus-wide scan.
+Cochrane-style included-studies record that M45 established.
 
-Severity: WARNING (review prescribed "lint warning → error after backfill").
+Severity: ERROR (escalated from WARNING in M71 once backfill-synthesizes
+shipped). Run `wiki backfill-synthesizes` to auto-populate from body
+wikilinks, then fix remaining pages manually.
 """
 
 from __future__ import annotations
 
 from gateway import frontmatter as fm, paths
-from gateway.lint import LintFinding, SEVERITY_WARNING
+from gateway.lint import LintFinding, SEVERITY_ERROR
 
 
 def run() -> list[LintFinding]:
@@ -32,11 +32,12 @@ def run() -> list[LintFinding]:
             findings.append(
                 LintFinding(
                     check="synthesizes-coverage",
-                    severity=SEVERITY_WARNING,
+                    severity=SEVERITY_ERROR,
                     message=(
-                        "synthesis page missing `synthesizes:` — add a list of "
-                        "`sources/<id>` or `synthesis/<slug>` entries to record "
-                        "the included studies (Cochrane-style, M45/ONT-11)"
+                        "synthesis page missing `synthesizes:` — run "
+                        "`wiki backfill-synthesizes` to auto-populate from body "
+                        "wikilinks, then add remaining entries manually "
+                        "(Cochrane-style included-studies, M45/ONT-11)"
                     ),
                     path=rel,
                     metadata={"slug": front.get("slug", p.stem)},

@@ -41,7 +41,7 @@ def test_missing_synthesizes_flagged(kb_root: Path) -> None:
     findings = run()
     assert len(findings) == 1
     assert findings[0].check == "synthesizes-coverage"
-    assert findings[0].severity == "warning"
+    assert findings[0].severity == "error"  # escalated to error in M71 (ONT-11 backfill shipped)
     assert "no-synth" in findings[0].metadata.get("slug", "") or "no-synth" in findings[0].path
 
 
