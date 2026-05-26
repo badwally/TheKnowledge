@@ -30,6 +30,7 @@ from gateway.lint import (
     missing_pages,
     nlm_pending,
     orphans,
+    retracted_citations,
     schema_drift,
     stale_claims,
     stale_drafts,
@@ -59,6 +60,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("contradiction-pages", contradiction_pages.run),
     ("synthesizes-coverage", synthesizes_coverage.run),
     ("stale-verified", stale_verified.run),
+    ("retracted-citations", retracted_citations.run),
     ("domain-purity", domain_purity.run),
     ("link-rot", link_rot.run),
 ]

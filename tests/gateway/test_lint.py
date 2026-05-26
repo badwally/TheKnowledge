@@ -104,6 +104,7 @@ def test_known_checks_includes_all_documented_checks():
         "contradiction-pages",
         "synthesizes-coverage",
         "stale-verified",
+        "retracted-citations",
         "domain-purity",
         "link-rot",
     }

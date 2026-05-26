@@ -109,6 +109,12 @@ filter:
 domains: ["<domain-slug>", ...]  # which domain policies applied
 nlm_corpus_ids: ["<notebook-id>", ...]  # NotebookLM notebooks containing this source
 wiki_pages: ["wiki/sources/<id>", ...]  # wiki pages referencing this source (backlink integrity)
+# QUAL-7 retraction / revision fields (stamped by pollers, never set at ingest)
+retracted: true                 # PubMed only: set by pubmed-retractions poller when retraction confirmed
+retracted_at: "YYYY-MM-DDThh:mm:ssZ"   # timestamp of retraction discovery
+arxiv_revised: true             # arXiv only: set when current version > baseline version
+arxiv_current_version: 3        # most recently confirmed arXiv version number
+arxiv_versions_checked_at: "YYYY-MM-DDThh:mm:ssZ"
 meta:                           # type-specific, see § 3.2
   ...
 ---

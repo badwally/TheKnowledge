@@ -31,16 +31,26 @@ __all__ = [
     "QueryPlan",
     "QueryPlanError",
     "query_plans_dir",
+    "archive_dir",
     "path_for",
     "save",
     "load",
     "exists",
     "is_edited",
     "recent_edited",
+    "stamp_executed",
+    "stamp_abandoned",
+    "archive_old_plans",
 ]
 
 
 SCHEMA_VERSION: int = 1
+
+STATUS_PLANNED = "planned"
+STATUS_EXECUTED = "executed"
+STATUS_ABANDONED = "abandoned"
+
+ARCHIVE_AFTER_DAYS: int = 90
 
 
 class QueryPlanError(RuntimeError):
@@ -57,11 +67,17 @@ class QueryPlan:
     target_counts: dict[str, int] = field(default_factory=dict)
     plan_client_model: str | None = None
     edited: bool = False
+    status: str = STATUS_PLANNED
+    executed_at: datetime | None = None
     version: int = SCHEMA_VERSION
 
 
 def query_plans_dir() -> Path:
     return paths.nlm_dir() / "query_plans"
+
+
+def archive_dir() -> Path:
+    return query_plans_dir() / "archive"
 
 
 def path_for(session_id: str) -> Path:
@@ -80,7 +96,7 @@ def save(plan: QueryPlan) -> Path:
     """
     target = path_for(plan.session_id)
     target.parent.mkdir(parents=True, exist_ok=True)
-    payload = {
+    payload: dict = {
         "version": plan.version,
         "session_id": plan.session_id,
         "domain": plan.domain,
@@ -92,12 +108,61 @@ def save(plan: QueryPlan) -> Path:
         "target_counts": dict(plan.target_counts),
         "queries": {k: list(v) for k, v in plan.queries.items()},
         "edited": plan.edited,
+        "status": plan.status,
     }
+    if plan.executed_at is not None:
+        payload["executed_at"] = plan.executed_at.astimezone(timezone.utc).strftime(
+            "%Y-%m-%dT%H:%M:%SZ"
+        )
     target.write_text(
         yaml.safe_dump(payload, sort_keys=False, allow_unicode=True),
         encoding="utf-8",
     )
     return target
+
+
+def stamp_executed(session_id: str) -> None:
+    """Mark a plan as executed, recording the current time."""
+    plan = load(session_id)
+    plan.status = STATUS_EXECUTED
+    plan.executed_at = datetime.now(timezone.utc)
+    save(plan)
+
+
+def stamp_abandoned(session_id: str) -> None:
+    """Mark a plan as abandoned."""
+    plan = load(session_id)
+    plan.status = STATUS_ABANDONED
+    save(plan)
+
+
+def archive_old_plans(*, older_than_days: int = ARCHIVE_AFTER_DAYS) -> int:
+    """Move executed plans older than `older_than_days` to the archive dir.
+
+    Returns the number of plans archived.
+    """
+    base = query_plans_dir()
+    if not base.is_dir():
+        return 0
+    dest = archive_dir()
+    dest.mkdir(parents=True, exist_ok=True)
+    cutoff = datetime.now(timezone.utc).timestamp() - older_than_days * 86400
+    archived = 0
+    for entry in sorted(base.iterdir()):
+        if not entry.is_file() or entry.suffix != ".yaml":
+            continue
+        try:
+            plan = load(entry.stem)
+        except QueryPlanError:
+            continue
+        if plan.status != STATUS_EXECUTED:
+            continue
+        if entry.stat().st_mtime > cutoff:
+            continue
+        target = dest / entry.name
+        entry.rename(target)
+        archived += 1
+    return archived
 
 
 def load(session_id: str) -> QueryPlan:
@@ -186,6 +251,14 @@ def _parse(raw: dict, *, source: Path) -> QueryPlan:
             )
         normalized[str(adapter)] = [str(q) for q in qs]
 
+    executed_at_str = raw.get("executed_at")
+    executed_at: datetime | None = None
+    if executed_at_str:
+        try:
+            executed_at = _parse_iso_z(str(executed_at_str))
+        except ValueError:
+            pass
+
     return QueryPlan(
         session_id=str(raw.get("session_id") or source.stem),
         domain=str(raw["domain"]),
@@ -202,6 +275,8 @@ def _parse(raw: dict, *, source: Path) -> QueryPlan:
             else str(raw["plan_client_model"])
         ),
         edited=bool(raw.get("edited", False)),
+        status=str(raw.get("status", STATUS_PLANNED)),
+        executed_at=executed_at,
         version=int(raw.get("version", SCHEMA_VERSION)),
     )
 

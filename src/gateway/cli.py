@@ -552,6 +552,19 @@ def build_parser() -> argparse.ArgumentParser:
             "offline runs or when no Claude CLI is available."
         ),
     )
+    p_research.add_argument(
+        "--abandon",
+        dest="abandon_session",
+        default=None,
+        metavar="SESSION_ID",
+        help="Mark a persisted query plan as abandoned (status: abandoned).",
+    )
+    p_research.add_argument(
+        "--archive",
+        dest="archive_plans",
+        action="store_true",
+        help="Move executed query plans older than 90 days to nlm/query_plans/archive/.",
+    )
 
     # mcp-serve: start the MCP server (stdio)
     subparsers.add_parser("mcp-serve", help=SUBCOMMANDS["mcp-serve"])
@@ -1674,6 +1687,23 @@ def _run_reject_proposal(ns: argparse.Namespace) -> int:
 
 
 def _run_research(ns: argparse.Namespace) -> int:
+    from gateway.research import query_plan_store as _qps
+
+    # Lifecycle ops — handle before entering the full research pipeline.
+    if getattr(ns, "abandon_session", None):
+        try:
+            _qps.stamp_abandoned(ns.abandon_session)
+            print(f"query plan {ns.abandon_session!r} marked abandoned")
+            return 0
+        except _qps.QueryPlanError as e:
+            print(f"error: {e}", file=__import__("sys").stderr)
+            return 1
+
+    if getattr(ns, "archive_plans", False):
+        archived = _qps.archive_old_plans()
+        print(f"archived {archived} executed query plan(s)")
+        return 0
+
     from gateway.llm import model_for
     from gateway.plan import ClaudeCLIPlanClient
     from gateway.research.orchestrator import research
