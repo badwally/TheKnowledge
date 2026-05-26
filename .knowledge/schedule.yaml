@@ -7,3 +7,27 @@ jobs:
   last_run: null
   last_exit_code: null
   last_duration_seconds: null
+- name: inbox-triage
+  cron: '*/15 * * * *'
+  command: wiki agents run inbox-triage
+  enabled: true
+  cooldown_seconds: 300
+  last_run: null
+  last_exit_code: null
+  last_duration_seconds: null
+- name: draft-closer
+  cron: 0 8 * * *
+  command: wiki agents run draft-closer
+  enabled: true
+  cooldown_seconds: 600
+  last_run: null
+  last_exit_code: null
+  last_duration_seconds: null
+- name: agent-digest
+  cron: 0 7 * * *
+  command: wiki agents run agent-digest
+  enabled: true
+  cooldown_seconds: 600
+  last_run: null
+  last_exit_code: null
+  last_duration_seconds: null

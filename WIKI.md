@@ -722,6 +722,7 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Reject a draft proposal | `wiki reject-proposal <proposal-slug>` | (CLI only) |
 | Multi-adapter research | `wiki research "<prompt>" [--domain X] [--review] [--execute ID]` | (CLI only) |
 | Run a registered poller | `wiki poll <name>` (`--list` to enumerate) | (CLI only) |
+| Run a named agent on demand | `wiki agents run <name>` (names: `inbox-triage`, `draft-closer`, `agent-digest`) | `wiki_agents` |
 | Migrate frontmatter | `wiki migrate <migration-name>` | (CLI only) |
 
 ### 9.2 Operation contract (every operation)

@@ -1,0 +1,6 @@
+agent: inbox-triage
+subscribes_to:
+  - ingest.complete
+  - poll.complete
+debounce_s: 30
+max_concurrent_runs: 1

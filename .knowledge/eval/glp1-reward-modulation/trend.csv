@@ -1,0 +1,2 @@
+timestamp,n_questions,mean_score,total_input_tokens,total_output_tokens,total_cache_read_tokens
+2026-05-25T01-34-37Z,15,0.5655555555555555,348112,7712,0
