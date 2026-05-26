@@ -31,3 +31,11 @@ jobs:
   last_run: null
   last_exit_code: null
   last_duration_seconds: null
+- name: briefing-cron
+  cron: 0 6 * * 1
+  command: wiki briefing-cron
+  enabled: true
+  cooldown_seconds: 3600
+  last_run: null
+  last_exit_code: null
+  last_duration_seconds: null

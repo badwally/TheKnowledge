@@ -134,9 +134,12 @@ def promote_domain(proposal_slug: str) -> OperationResult:
                 _PendingWrite(wiki_path, fm.serialize(new_wiki_front, wiki_body))
             )
 
-    # 3. Proposal page status: draft → blessed
+    # 3. Proposal page status: draft → blessed; flag contamination outliers
     new_prop_front = dict(prop_front)
     new_prop_front["status"] = "blessed"
+    outliers = _check_contamination(member_ids, proposed_domain)
+    if outliers:
+        new_prop_front["contamination_warnings"] = outliers
     pending.append(_PendingWrite(proposal_path, fm.serialize(new_prop_front, prop_body)))
 
     if errors:
@@ -173,6 +176,29 @@ def promote_domain(proposal_slug: str) -> OperationResult:
             f"({len(member_ids)} member source(s) tagged)"
         ),
     )
+
+
+def _check_contamination(member_ids: list[str], proposed_domain: str) -> list[str]:
+    """Return member source IDs pre-tagged to domains other than proposed_domain.
+
+    A source is an outlier if it carries existing domain tags and none of them
+    match proposed_domain — indicating it may have arrived via cross-domain
+    contamination from the legacy migration.
+    """
+    outliers = []
+    for sid in member_ids:
+        raw_pair = _locate_raw_source(sid)
+        if raw_pair is None:
+            continue
+        _, raw_text = raw_pair
+        try:
+            raw_front, _ = fm.parse(raw_text)
+        except fm.FrontmatterError:
+            continue
+        existing = list(raw_front.get("domains") or [])
+        if existing and proposed_domain not in existing:
+            outliers.append(sid)
+    return outliers
 
 
 def _locate_raw_source(source_id: str) -> tuple[Path, str] | None:
