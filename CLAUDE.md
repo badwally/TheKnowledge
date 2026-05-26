@@ -118,10 +118,14 @@ Pollers (API-only sources without a watchable filesystem — Apple Notes, Notion
 **Rules (no exceptions):**
 
 - Before any plan-or-write action in a new session, re-read `docs/session-state.md` if its mtime is newer than the current chat's earliest user message. Verify each `## Open contract` and `## File mid-edit` against the working tree. Flag any disagreement to the user before proceeding.
-- At natural seams — end of milestone, before merging to main, before any refactor touching the validator or gateway choke-point — checkpoint proactively. Do not wait for the PreCompact hook.
+- Checkpoint after each completed named deliverable in a multi-item plan (e.g. after A1 done, after A2 done) — not only at milestone end or compaction. "Natural seam" means each item, not each milestone.
 - The PreCompact hook writes a templated instruction to stdout; the agent responds by writing `docs/session-state.md` and committing it. Never edit the file manually except to mark a section `RESOLVED` when an open contract closes.
 - At the end of every milestone, diff `docs/session-state.md` predictions against `git diff` and `pytest` output. Any disagreement is a quality incident — investigate before tagging.
 - **Do not load `log.md` or `index.md` wholesale into any LLM prompt.** Both files are unbounded in size. `log.md` may be read as a display aggregate (last N entries via `_tail_log_entries`); `index.md` is reference-only. If gateway code needs to build LLM context from wiki content, use `evaluate.wiki_context.load_wiki_context()` or `ops.context_op.context_op()` — never raw file reads of these two files.
+
+## Python environment
+
+Always use `.venv/bin/python` and `.venv/bin/wiki` — never the system `python`. The system interpreter lacks the gateway package and will produce misleading `ModuleNotFoundError` rather than test failures. Shorthand: `.venv/bin/python -m pytest` or `.venv/bin/wiki <subcommand>`.
 
 ## When to consult `WIKI.md`
 
