@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from gateway import frontmatter as fm, paths
+from gateway.core import write_atomic
 
 
 def _slugify(name: str) -> str:
@@ -180,5 +181,5 @@ def write_agenda(date_str: str, events: list[dict[str, Any]]) -> Path:
     out_dir = paths.agenda_dir()
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{date_str}.md"
-    out_path.write_text(page)
+    write_atomic(out_path, page)
     return out_path

@@ -102,6 +102,7 @@ def test_known_checks_includes_all_documented_checks():
         "broken-wikilinks",
         "long-slugs",
         "contradiction-pages",
+        "synthesizes-coverage",
     }
     assert KNOWN_CHECKS == expected
 

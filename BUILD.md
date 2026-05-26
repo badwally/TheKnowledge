@@ -1003,6 +1003,10 @@ See `docs/milestones/M62.md`. Four items: ONT-10 (source pages demoted to manife
 
 See `docs/milestones/M63.md`. Two items: INT-13 (`src/gateway/ops/wiki_agenda.py` — `build_agenda(date_str, events)` + `write_agenda()`; for each calendar event with ≥2 attendees, looks up attendee entity pages and event-topic concept pages in wiki; `wiki agenda [--date] [--events-json] [--out] [--no-write]` CLI + `wiki_agenda(date, events, write)` MCP tool; `agenda` page type in `wiki_pages.py`; `agenda_dir()` in `paths.py`; 8 tests); INT-16 (`~/code/ai-tutor/skills/wiki-cards/SKILL.md` — agent skill generating spaced-rep Q-A cards from wiki concept pages for a domain; deduplicates by SHA-256 question hash; outputs `state/wiki-cards/<domain>.yaml` with `wiki_source` back-references; registered in ai-tutor CLAUDE.md). Tests: 1200 → 1208 (+8), 0 regressions. Tag: `m63-phase3-round-b`.
 
+### M64 — Phase 3 Round C (ARCH-14, ONT-11, QUAL-13)
+
+See `docs/milestones/M64.md`. Three items: ARCH-14 (CI guard — `tests/test_arch14_hard_rule_1.py` asserts lint/ and web/ zones contain no wiki/raw writes; ops/ modules must use `write_atomic` for wiki/raw paths; **bonus**: found and fixed real violation in `ops/contradiction.py` — 2 `.write_text()` calls to `wiki/sources/` and `wiki/contradictions/` converted to `write_atomic`); ONT-11 (`lint/synthesizes_coverage.py` warns when synthesis pages lack `synthesizes:` frontmatter — 56/94 pages currently missing it; registered in lint orchestrator; 4 tests); QUAL-13 (`converters/web.py` — `_wayback_snapshot()` calls Wayback Save API after web ingest; stores `meta.archive_url` on success; gracefully skips on failure; 3 tests). Tests: 1208 → 1218 (+10), 0 regressions. Tag: `m64-phase3-round-c`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
