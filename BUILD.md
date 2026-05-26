@@ -1007,6 +1007,10 @@ See `docs/milestones/M63.md`. Two items: INT-13 (`src/gateway/ops/wiki_agenda.py
 
 See `docs/milestones/M64.md`. Three items: ARCH-14 (CI guard — `tests/test_arch14_hard_rule_1.py` asserts lint/ and web/ zones contain no wiki/raw writes; ops/ modules must use `write_atomic` for wiki/raw paths; **bonus**: found and fixed real violation in `ops/contradiction.py` — 2 `.write_text()` calls to `wiki/sources/` and `wiki/contradictions/` converted to `write_atomic`); ONT-11 (`lint/synthesizes_coverage.py` warns when synthesis pages lack `synthesizes:` frontmatter — 56/94 pages currently missing it; registered in lint orchestrator; 4 tests); QUAL-13 (`converters/web.py` — `_wayback_snapshot()` calls Wayback Save API after web ingest; stores `meta.archive_url` on success; gracefully skips on failure; 3 tests). Tests: 1208 → 1218 (+10), 0 regressions. Tag: `m64-phase3-round-c`.
 
+### M65 — Phase 4 Round A (QUAL-9, AGT-6, AGT-12)
+
+See `docs/milestones/M65.md`. Three items: QUAL-9 (`lint/domain_purity.py` warns on wiki/sources pages tagged to multiple blessed domains — centroid drift signal; `promote_domain()` pre-flight adds `contamination_warnings: [ids]` to proposal frontmatter for member sources pre-tagged to foreign domains; `_check_contamination()` helper in `ops/promote_domain.py`; registered in lint orchestrator; 11 tests); AGT-6 (`ops/briefing_cron.py` — weekly per-domain `nlm_briefing()` with corpus-hash skip; hash stored at `.knowledge/briefing-cron/<domain>.json`; `wiki briefing-cron` CLI + `CLI_ONLY` in MCP; weekly schedule entry in `.knowledge/schedule.yaml` (`0 6 * * 1`); hard guard: no nlm_audio/nlm_slides calls — verified by structural test; 11 tests); AGT-12 (6 wiki-* skills at `.claude/skills/`: `wiki-ingest-triage`, `wiki-finalize-drafts`, `wiki-research`, `wiki-cite`, `wiki-domain-bootstrap`, `wiki-editorial-review`; each references WIKI.md section anchors; no gateway prompts embedded). Tests: 1218 → 1240 (+22), 0 regressions. Tag: `m65-phase4-round-a`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
