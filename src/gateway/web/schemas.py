@@ -236,3 +236,15 @@ class NlmTopicRequest(BaseModel):
 
 class NlmReviseRequest(BaseModel):
     instructions: list[str]
+
+
+class SourceRecord(BaseModel):
+    source_id: str
+    source_type: str
+    title: str = ""
+    domains: list[str] = []
+    ingested_at: str = ""
+    filter_score: float | None = None
+    link_status: str | None = None
+    word_count: int = 0
+    draft: bool = False
