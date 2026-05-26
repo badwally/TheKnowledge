@@ -88,7 +88,7 @@ Every source in `raw/` and every wiki page begins with YAML frontmatter delimite
 ```yaml
 ---
 id: <type>-<short-id>          # stable, unique across raw/. Examples below.
-type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|note|csv|docx|xlsx|pptx|image|other
+type: youtube|arxiv|pubmed|pdf|web|voice|audiobook|podcast|note|csv|docx|xlsx|pptx|image|other
 title: "<source title>"
 url: "<canonical URL, optional>"
 authors: ["<name>", ...]
@@ -165,6 +165,17 @@ meta:
   duration_seconds: 36000
   transcription_model: "whisper-large-v3"
   chapter_index: "raw/audiobook/<id>.chapters.json"
+
+# type: podcast
+meta:
+  extraction_tool: "mlx-whisper"
+  model: "mlx-community/whisper-large-v3-turbo"
+  language: "en"
+  duration_s: 3600.0
+  diarized: true
+  speaker_count: 2
+  segment_count: 1200
+  episode_url: "<original download URL>"
 
 # type: note
 meta:
@@ -586,6 +597,7 @@ Stable, type-prefixed, short. Never derived from titles (titles change; IDs must
 | web | `web-<YYYY-MM-DD>-<3-char-hash>` | `web-2026-04-27-3a9` |
 | voice | `voice-<YYYY-MM-DDThhmm>` | `voice-2026-04-27T1432` |
 | audiobook | `audio-<asin-or-shortname>` | `audio-thinking-fast-slow` |
+| podcast | `podcast-<episode-slug>-<sha256[:10]>` | `podcast-lex-fridman-ep-450-a1b2c3d4ef` |
 | note | `note-<source-app>-<remote-id-or-hash>` | `note-apple-A1B2` |
 | csv | `csv-<sha256-prefix-12>` | `csv-3a9f8e2b1c4d` |
 | docx | `docx-<author-year-shortname>` or `docx-<sha256-prefix-12>` | `docx-grant-2026-architecture` |
