@@ -1315,6 +1315,12 @@ def research(
             ),
         )
 
+    if execute_session:
+        try:
+            _qp_store.stamp_executed(execute_session)
+        except Exception:
+            pass  # non-fatal — metadata stamp failure doesn't invalidate results
+
     summary_lines = [
         f"research session {session_id} ({effective_domain})",
         f"  candidates: {len(candidates)} → accepted: {len(accepted)} → materialized: {len(materialized)}",

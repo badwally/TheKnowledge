@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M72 complete; Phase 5 Round E merged)
+Last updated: 2026-05-26 (M73 complete; Phase 5 Round F merged)
 
 ---
 
@@ -18,22 +18,19 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. Branch phase5-round-e ready to merge; M73 not yet started.
+None. Branch phase5-round-f ready to merge; M74 not yet started.
 
 ---
 
 ## Decisions made this session
 
 - M70: PodcastConverter detects http/https audio URLs; VoiceConverter detects local files — non-overlapping.
-- M70: Six-step source type contract applied; `podcast-<slug>-<sha10>` ID format; sidecar at raw/podcast/.
 - M71: fm.serialize() injects schema_version: 1 as first key (preserves explicit values).
 - M71: ONT-11 lint escalated WARNING → ERROR since backfill helper now ships.
-- M71: Mixed-tier synthesizes (sources/ + synthesis/ mixed) → sources/ wins (mixed is invalid per validator).
-- M72: ONT-13 scope = statute + standard only (both time-sensitive; person/drug/etc. do not require last_verified_at).
-- M72: Unparseable last_verified_at → ERROR not WARNING (bad data same severity as absent data).
-- M72: STALE_DAYS = 365 (1 year threshold).
-- INT-8 confirmed already complete (repo_metadata.py + 11 tests existed before this session).
-- ARCH-6/7/8, QUAL-4/5/9/13, TOK-7 all confirmed already done in prior milestones.
+- M72: ONT-13 scope = statute + standard only; STALE_DAYS = 365; unparseable → ERROR.
+- M73: ARCH-13 — status field is planned/executed/abandoned; archive threshold = 90 days.
+- M73: QUAL-7 — PubMed uses eFetch XML + CommentsCorrections check; arXiv uses Atom API + version number comparison; both use per-source cursors with RECHECK_DAYS = 30.
+- M73: retracted-citations lint scope = all wiki pages (not just synthesis).
 
 ---
 
@@ -43,9 +40,15 @@ None. Branch phase5-round-e ready to merge; M73 not yet started.
 - feedparser for RSS parsing — not in venv; use stdlib xml.etree.ElementTree.
 - ET.Element or-chains — ET.Element falsy when childless; use `is None`.
 - Gmail MCP tools from Python gateway code — use imaplib instead.
+- QUAL-7 via retraction flag on wiki/sources pages — flag lives on raw sources (frontmatter mutation allowed per hard rule §6); lint reads raw frontmatter.
 
 ---
 
 ## Next atomic step
 
-M73 — Phase 5 Round F. Check BUILD.md backlog for next S-effort items (QUAL-7 retraction monitor, TOK-12 salvage, or other Phase 5 items not yet confirmed done).
+M74 — Phase 5 Round G. Next outstanding items from Phase 3 review doc:
+- AGT-13 (M): per-domain skill auto-emit (`wiki skill-emit <domain>`) — deps AGT-12 ✓
+- DOC-5 (M): log.md rotation — deps K4 ✓ (scheduler)
+- QUAL-10 (M): held-out gold set replaces n=5 filter-calibration — deps QUAL-12 ✓
+- ARCH-13 ✓ (done M73), QUAL-7 ✓ (done M73)
+Recommended grouping: AGT-13 + DOC-5 (one code + one infra item, both M-effort).
