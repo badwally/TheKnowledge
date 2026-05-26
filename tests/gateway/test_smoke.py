@@ -31,7 +31,7 @@ def test_cli_version_via_subprocess():
 
 
 def test_cli_unimplemented_returns_nonzero():
-    # `search` is still a stub at M9; should exit 2 with not-yet-implemented.
-    # Update this list as subcommands move from stub to real wiring.
-    rc = cli.main(["search", "anything"])
+    # `index` is still a stub; should exit 2 with not-yet-implemented.
+    # Update this test when `index` is wired up (currently search is implemented).
+    rc = cli.main(["index"])
     assert rc == 2

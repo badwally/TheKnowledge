@@ -1024,6 +1024,48 @@ def wiki_reingest(source_id: str, new_input: str, domain: str | None = None) -> 
     return _serialize(reingest(source_id, new_input, domain=domain))
 
 
+@mcp.tool()
+def wiki_search(
+    query: str,
+    scope: str = "all",
+    domain: str | None = None,
+    page_type: str | None = None,
+    limit: int = 20,
+) -> dict[str, Any]:
+    """Full-text search over wiki pages and/or raw sources.
+
+    `query`: Case-insensitive search string.
+    `scope`: "wiki", "raw", or "all" (default "all").
+    `domain`: Optional domain filter (e.g. "glp1-reward-modulation").
+    `page_type`: Optional type filter (e.g. "synthesis", "concept", "web").
+    `limit`: Maximum results to return (default 20).
+
+    Returns a dict with `hits` (list of {path, slug, title, page_type, domain,
+    score, snippet}), `query`, and `total`.
+    """
+    from gateway.ops.search import search
+
+    if scope not in ("wiki", "raw", "all"):
+        scope = "all"
+    result = search(query, scope=scope, domain=domain, page_type=page_type, limit=limit)
+    return {
+        "query": result.query,
+        "total": result.total,
+        "hits": [
+            {
+                "path": str(h.path),
+                "slug": h.slug,
+                "title": h.title,
+                "page_type": h.page_type,
+                "domain": h.domain,
+                "score": h.score,
+                "snippet": h.snippet,
+            }
+            for h in result.hits
+        ],
+    }
+
+
 # --- entry point -----------------------------------------------------------
 
 

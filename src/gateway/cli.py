@@ -125,6 +125,7 @@ IMPLEMENTED: set[str] = {
     "skill-emit",
     "rotate-log",
     "reingest",
+    "search",
 }
 
 
@@ -1009,6 +1010,19 @@ def build_parser() -> argparse.ArgumentParser:
     p_reingest.add_argument("new_input", help="URL or path to the revised source")
     p_reingest.add_argument("--domain", default=None, help="Domain override for filter scoring")
 
+    # search (SRCH-1)
+    p_search = subparsers.add_parser("search", help=SUBCOMMANDS["search"])
+    p_search.add_argument("query", help="Search string (case-insensitive substring match)")
+    p_search.add_argument(
+        "--scope",
+        choices=["wiki", "raw", "all"],
+        default="all",
+        help="Search scope: wiki pages, raw sources, or all (default: all)",
+    )
+    p_search.add_argument("--domain", default=None, help="Filter results to this domain")
+    p_search.add_argument("--type", dest="page_type", default=None, help="Filter by page/source type")
+    p_search.add_argument("--limit", type=int, default=20, help="Maximum number of results (default: 20)")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1136,6 +1150,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_rotate_log_cmd(ns)
     if ns.subcommand == "reingest":
         return _run_reingest_cmd(ns)
+    if ns.subcommand == "search":
+        return _run_search_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2109,6 +2125,21 @@ def _run_reingest_cmd(ns: argparse.Namespace) -> int:
     else:
         print("  no wiki pages cite the old source")
     return 0
+
+
+def _run_search_cmd(ns: argparse.Namespace) -> int:
+    from gateway import paths as _paths
+    from gateway.ops.search import format_results, search
+
+    result = search(
+        ns.query,
+        scope=ns.scope,
+        domain=getattr(ns, "domain", None),
+        page_type=getattr(ns, "page_type", None),
+        limit=ns.limit,
+    )
+    print(format_results(result, relative_to=_paths.knowledge_root()))
+    return 0 if result.hits else 1
 
 
 if __name__ == "__main__":
