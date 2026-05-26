@@ -94,10 +94,13 @@ Adding a new type: see [CLAUDE.md](CLAUDE.md) § "Adding a new source type". Pol
 | [TUTORIAL.md](TUTORIAL.md) | Day-1 workflow guide |
 | [CLAUDE.md](CLAUDE.md) | Agent control surface — auto-loaded by Claude Code in this directory |
 | [WIKI.md](WIKI.md) | Conventions reference — the contract every component codes against |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | System diagram, layer descriptions, invariant table, data flow |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Environment setup, how to add converters/pollers/ops/lint, PR checklist |
 | [GLOSSARY.md](GLOSSARY.md) | Term definitions for gateway, domain model, and ontology vocabulary |
 | [BUILD.md](BUILD.md) | Gateway build plan and per-milestone delivery record |
 | [MIGRATION.md](MIGRATION.md) | Legacy Obsidian vault migration plan |
 | [SESSION_TRANSCRIPT.md](SESSION_TRANSCRIPT.md) | Chronological narrative of the v1 design-and-build session |
+| [docs/adr/README.md](docs/adr/README.md) | Architecture decision records — what was decided and what was rejected |
 
 ## Layout
 
