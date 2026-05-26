@@ -12,6 +12,7 @@ from gateway.pollers.gmail_newsletters import GmailNewsletterPoller
 from gateway.pollers.link_rot import LinkRotPoller
 from gateway.pollers.notion import NotionSourcePoller
 from gateway.pollers.pubmed_retractions import PubmedRetractionPoller
+from gateway.pollers.slack import SlackSourcePoller
 from gateway.pollers.readwise import ReadwisePoller
 from gateway.pollers.repo_metadata import RepoMetadataPoller
 from gateway.pollers.rss import RSSPoller
@@ -27,6 +28,7 @@ _REGISTRY: dict[str, type[Poller]] = {
     ReadwisePoller.name: ReadwisePoller,
     RepoMetadataPoller.name: RepoMetadataPoller,
     RSSPoller.name: RSSPoller,
+    SlackSourcePoller.name: SlackSourcePoller,
 }
 
 

@@ -105,7 +105,7 @@ Pollers (API-only sources without a watchable filesystem — Apple Notes, Notion
 
 ## Forward-looking notes
 
-- **API-only-source pollers.** Apple Notes (M34), Gmail (M69), RSS (M69), Notion (M78) shipped. Slack queued. All bolt onto the same downstream pipeline — pollers only produce canonical markdown in `raw/`. Configure Notion at `.knowledge/pollers/notion/config.yaml` with `pages:` and `databases:` entries; set `NOTION_TOKEN` env var.
+- **API-only-source pollers.** Apple Notes (M34), Gmail (M69), RSS (M69), Notion (M78), Slack (M79) all shipped. All bolt onto the same downstream pipeline — pollers only produce canonical markdown in `raw/`. Configure Notion at `.knowledge/pollers/notion/config.yaml` (`NOTION_TOKEN`). Configure Slack at `.knowledge/pollers/slack/config.yaml` (`SLACK_BOT_TOKEN`; scopes: `channels:history`, `groups:history`).
 - **Filter fine-tuning loop** is shipped: trigger detection + distilled-prompt extraction (`wiki finetune`). Default threshold is 500 high-quality decisions per domain. Open-weight classifier fine-tune (the second WIKI § 10.4 option) is deferred until a domain crosses ~1000 decisions.
 - **qmd or similar BM25/vector index** gets dropped in if/when the wiki crosses ~10k pages. Markdown remains canonical; the index is derived state.
 - **Legacy migration** (M11–M14) is the only path that imports research-notebook Obsidian vaults. The vaults at `~/code/research-notebook/data/obsidian*/` are read-only inputs to the migrate script.
