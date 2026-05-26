@@ -17,15 +17,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2508.02866]] · arxiv · [original](http://arxiv.org/abs/2508.02866v3) · 2025-08-04
 **Authors:** Renan Souza, Amal Gueroudji, Stephen DeWitt, Daniel Rosendo, Tirthankar Ghosal, Robert Ross, Prasanna Balaprakash, Rafael Ferreira da Silva
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

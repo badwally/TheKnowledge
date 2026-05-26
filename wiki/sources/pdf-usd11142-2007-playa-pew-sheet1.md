@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:24:07Z'
 
 **Source:** [[raw/pdf/pdf-usd11142-2007-playa-pew-sheet1]] · pdf · 2007
 **Authors:** usd11142
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

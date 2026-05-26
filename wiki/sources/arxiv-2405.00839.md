@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2405.00839]] · arxiv · [original](http://arxiv.org/abs/2405.00839v1) · 2024-05-01
 **Authors:** Seyed Mahmoud Sajjadi Mohammadabadi, Lei Yang, Feng Yan, Junshan Zhang
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

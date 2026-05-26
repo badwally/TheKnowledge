@@ -11,15 +11,3 @@ ingested_at: '2026-04-29T16:09:49Z'
 
 **Source:** [[raw/pdf/pdf-arman-fesharaki-2022-clinical-experience-with]] · pdf · 2022
 **Authors:** Arman Fesharaki-Zadeh
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

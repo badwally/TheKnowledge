@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2512.09309]] · arxiv · [original](http://arxiv.org/abs/2512.09309v1) · 2025-12-10
 **Authors:** Zihao Ding, Mufeng Zhu, Zhongze Tang, Sheng Wei, Yao Liu
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

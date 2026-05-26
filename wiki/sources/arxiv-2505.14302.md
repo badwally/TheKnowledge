@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2505.14302]] · arxiv · [original](http://arxiv.org/abs/2505.14302v1) · 2025-05-20
 **Authors:** Mengzhao Chen, Chaoyi Zhang, Jing Liu, Yutao Zeng, Zeyue Xue, Zhiheng Liu, Yunshui Li, Jin Ma, Jie Huang, Xun Zhou, Ping Luo
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

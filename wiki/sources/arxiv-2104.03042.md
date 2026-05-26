@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2104.03042]] · arxiv · [original](http://arxiv.org/abs/2104.03042v1) · 2021-04-07
 **Authors:** Akhil Mathur, Daniel J. Beutel, Pedro Porto Buarque de Gusmão, Javier Fernandez-Marques, Taner Topal, Xinchi Qiu, Titouan Parcollet, Yan Gao, Nicholas D. Lane
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

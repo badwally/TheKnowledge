@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2502.00425]] · arxiv · [original](http://arxiv.org/abs/2502.00425v2) · 2025-02-01
 **Authors:** JiangYong Yu, Sifan Zhou, Dawei Yang, Shuo Wang, Shuoyu Li, Xing Hu, Chen Xu, Zukang Xu, Changyong Shu, Zhihang Yuan
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

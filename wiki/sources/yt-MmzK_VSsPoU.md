@@ -17,15 +17,3 @@ filter_score: 1.0
 
 **Source:** [[raw/youtube/yt-MmzK_VSsPoU]] · youtube · [original](https://youtube.com/watch?v=MmzK_VSsPoU) · 2017-08-09
 **Authors:** (unknown)
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

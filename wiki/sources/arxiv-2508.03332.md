@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2508.03332]] · arxiv · [original](http://arxiv.org/abs/2508.03332v2) · 2025-08-05
 **Authors:** He Xiao, Qingyao Yang, Dirui Xie, Wendong Xu, Zunhai Su, Runming yang, Wenyong Zhou, Haobo Liu, Zhengwu Liu, Ngai Wong
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

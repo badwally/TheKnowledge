@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2603.12341]] · arxiv · [original](http://arxiv.org/abs/2603.12341v1) · 2026-03-12
 **Authors:** Neil K. R. Sehgal, Jena Shaw Tronieri, Lyle Ungar, Sharath Chandra Guntuku
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

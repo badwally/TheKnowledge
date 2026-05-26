@@ -16,15 +16,3 @@ filter_score: 1.0
 
 **Source:** [[raw/youtube/yt-d6dC0-mwR7s]] · youtube · [original](https://youtube.com/watch?v=d6dC0-mwR7s) · 2026-03-20
 **Authors:** (unknown)
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2401.12350]] · arxiv · [original](http://arxiv.org/abs/2401.12350v1) · 2024-01-22
 **Authors:** Yao Lu, Hiram Rayo Torres Rodriguez, Sebastian Vogel, Nick van de Waterlaat, Pavol Jancura
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

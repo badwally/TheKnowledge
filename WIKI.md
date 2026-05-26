@@ -314,7 +314,7 @@ Required sections: Summary, Key claims (with citations), Sources, Related. Optio
 
 ### 4.3 Source (`wiki/sources/<id>.md`)
 
-One page per ingested source. Summary + key claims + cross-references. Mirror of `raw/<type>/<id>.md` but knowledge-layer. The agent reads this when answering questions; `raw/` is the source of truth for verbatim content.
+One page per ingested source. **Manifest-only** (ONT-10, M62): the page is a citation target and addressing layer, not a content tier. Semantic content lives in `raw/<type>/<id>.md` (verbatim) and synthesis pages (LLM extraction). No required body sections.
 
 ```yaml
 ---
@@ -330,23 +330,11 @@ nlm_corpus_ids: ["nb_abc123"]
 
 # GLP-1 Mechanisms of Action
 
-**Source:** [[raw/youtube/yt-LfRiBJgD7sk]] · youtube · [[https://youtube.com/watch?v=LfRiBJgD7sk|original]] · 2024-08-15
+**Source:** [[raw/youtube/yt-LfRiBJgD7sk]] · youtube · [original](https://youtube.com/watch?v=LfRiBJgD7sk) · 2024-08-15
 **Authors:** Andrew Huberman, Robert Lustig
-**Filter:** 0.92 (glp1-v3) — Detailed receptor pharmacology, cites Alhadeff 2012
-
-## Summary
-<2–3 sentence summary>
-
-## Key claims
-- GLP-1 neurons in the NTS project to the VTA and NAc to control food intake [[sources/yt-LfRiBJgD7sk#1820]]
-- ...
-
-## Cross-references
-- Updates: [[entities/semaglutide]], [[concepts/food-noise]], [[concepts/reward-blunting]]
-- Cites: Alhadeff et al. 2012 (no source page yet — flagged for ingest)
 ```
 
-Required sections: Summary, Key claims, Cross-references.
+Required sections: none. The page must exist for `[[sources/<id>]]` wikilinks to resolve and for the citation graph and eval `must_cite` checks to work. Content belongs in synthesis pages that cite it.
 
 ### 4.4 Synthesis (`wiki/synthesis/<slug>.md`)
 

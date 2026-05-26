@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2503.04521]] · arxiv · [original](http://arxiv.org/abs/2503.04521v2) · 2025-03-06
 **Authors:** Songyuan Li, Jia Hu, Geyong Min, Haojun Huang, Jiwei Huang
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

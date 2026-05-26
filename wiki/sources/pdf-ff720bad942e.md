@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:21:33Z'
 
 **Source:** [[raw/pdf/pdf-ff720bad942e]] · pdf · 2025
 **Authors:** Baker, Giles
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

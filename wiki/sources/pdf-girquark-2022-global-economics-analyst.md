@@ -11,15 +11,3 @@ ingested_at: '2026-04-29T16:24:18Z'
 
 **Source:** [[raw/pdf/pdf-girquark-2022-global-economics-analyst]] · pdf · 2022
 **Authors:** girquark
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

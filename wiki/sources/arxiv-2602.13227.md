@@ -17,15 +17,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2602.13227]] · arxiv · [original](http://arxiv.org/abs/2602.13227v1) · 2026-01-27
 **Authors:** Eranga Bandara, Ross Gore, Sachin Shetty, Ravi Mukkamala, Tharaka Hewa, Abdul Rahman, Xueping Liang, Safdar H. Bouk, Amin Hass, Peter Foytik, Ng Wee Keong, Kasun De Zoysa
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

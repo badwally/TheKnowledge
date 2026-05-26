@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2506.20000]] · arxiv · [original](http://arxiv.org/abs/2506.20000v1) · 2025-06-24
 **Authors:** Narasimha Raghavan Veeraragavan, Jan Franz Nygård
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

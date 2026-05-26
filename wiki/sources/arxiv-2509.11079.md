@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2509.11079]] · arxiv · [original](http://arxiv.org/abs/2509.11079v5) · 2025-09-14
 **Authors:** Jinwei Su, Qizhen Lan, Yinghui Xia, Lifan Sun, Weiyou Tian, Tianyu Shi, Xinyuan Song, Lewei He, Yang Jingsong
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

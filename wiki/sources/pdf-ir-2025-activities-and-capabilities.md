@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:19:51Z'
 
 **Source:** [[raw/pdf/pdf-ir-2025-activities-and-capabilities]] · pdf · 2025
 **Authors:** ir
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

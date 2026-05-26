@@ -16,15 +16,3 @@ filter_score: 1.0
 
 **Source:** [[raw/arxiv/arxiv-2502.15816]] · arxiv · [original](http://arxiv.org/abs/2502.15816v1) · 2025-02-19
 **Authors:** Mozhgan Navardi, Romina Aalishah, Yuzhe Fu, Yueqian Lin, Hai Li, Yiran Chen, Tinoosh Mohsenin
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_
