@@ -55,6 +55,8 @@ SUBCOMMANDS: dict[str, str] = {
     "context": "Read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)",
     "agent-log": "Show per-agent event counts and top payloads (AGT-14)",
     "contradiction": "List or resolve structured contradiction pages (QUAL-3)",
+    "triage": "Manage the inbox-triage review queue (AGT-1)",
+    "draft-close": "Run the draft-closer agent: auto-finalize easy wins, escalate hard cases (AGT-2)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -95,6 +97,8 @@ IMPLEMENTED: set[str] = {
     "context",
     "agent-log",
     "contradiction",
+    "triage",
+    "draft-close",
 }
 
 
@@ -825,6 +829,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="Resolution note",
     )
 
+    # draft-close (AGT-2)
+    p_draft_close = subparsers.add_parser("draft-close", help=SUBCOMMANDS["draft-close"])
+    p_dc_sub = p_draft_close.add_subparsers(dest="draft_close_action", required=True)
+    p_dc_sub.add_parser("run", help="Run the draft-closer agent")
+
+    # triage (AGT-1)
+    p_triage = subparsers.add_parser("triage", help=SUBCOMMANDS["triage"])
+    p_triage_sub = p_triage.add_subparsers(dest="triage_action", required=True)
+    p_triage_sub.add_parser("list", help="List sources in the review-band triage queue")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -922,6 +936,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_agent_log(ns)
     if ns.subcommand == "contradiction":
         return _run_contradiction(ns)
+    if ns.subcommand == "triage":
+        return _run_triage_cmd(ns)
+    if ns.subcommand == "draft-close":
+        return _run_draft_close_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1593,6 +1611,43 @@ def _run_contradiction(ns: argparse.Namespace) -> int:
                 note=ns.note,
             )
         )
+    return 2
+
+
+def _run_draft_close_cmd(ns: argparse.Namespace) -> int:
+    from gateway.agents.draft_closer import run_draft_closer
+
+    if ns.draft_close_action == "run":
+        result = run_draft_closer()
+        print(
+            f"draft-closer: finalized={result.pages_finalized} "
+            f"escalated={result.pages_escalated} skipped={result.pages_skipped}"
+        )
+        if result.errors:
+            for e in result.errors:
+                print(f"  error: {e}", file=sys.stderr)
+        return 0
+    return 2
+
+
+def _run_triage_cmd(ns: argparse.Namespace) -> int:
+    from gateway.agents.inbox_triage import triage_list
+
+    if ns.triage_action == "list":
+        items = triage_list()
+        if not items:
+            print("triage queue is empty")
+            return 0
+        print(f"{'source_id':<36} {'domain':<20} {'score':<8} {'title'}")
+        print("-" * 80)
+        for item in items:
+            sid = item.get("source_id", "")
+            domain = item.get("domain") or ""
+            score_val = item.get("filter_score")
+            score_str = f"{score_val:.2f}" if score_val is not None else "—"
+            title = (item.get("title") or "")[:30]
+            print(f"{sid:<36} {domain:<20} {score_str:<8} {title}")
+        return 0
     return 2
 
 

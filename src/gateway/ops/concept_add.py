@@ -71,12 +71,14 @@ def concept_add(
             ],
         )
 
+    _now = _now_iso()
     front: dict = {
         "type": "concept",
         "slug": slug,
         "canonical_name": canonical_name,
         "domains": [domain],
-        "created_at": _now_iso(),
+        "created_at": _now,
+        "last_updated": _now,
     }
     if cite_sources:
         front["synthesizes"] = [f"sources/{sid}" for sid in cite_sources]

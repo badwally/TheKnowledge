@@ -770,6 +770,45 @@ def wiki_contradiction(
     return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected list or resolve"]))
 
 
+@mcp.tool()
+def wiki_draft_close(action: str = "run") -> dict[str, Any]:
+    """Run the draft-closer agent (AGT-2).
+
+    `action`: 'run' — process all stale drafts: easy wins (≤1 citation per claim) are
+    finalized; hard cases (multi-citation lines) are escalated to log.md.
+    Returns counts of finalized/escalated/skipped pages.
+    """
+    from gateway.agents.draft_closer import run_draft_closer
+
+    if action == "run":
+        result = run_draft_closer()
+        summary = (
+            f"draft-closer complete: finalized={result.pages_finalized} "
+            f"escalated={result.pages_escalated} skipped={result.pages_skipped}"
+        )
+        return _serialize(OperationResult(success=True, summary=summary))
+    return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected run"]))
+
+
+@mcp.tool()
+def wiki_triage(action: str = "list") -> dict[str, Any]:
+    """Manage the inbox-triage review queue (AGT-1).
+
+    `action`: 'list' — return sources in the review-band triage queue.
+    Each entry includes source_id, title, domain, filter_score, scored_at.
+    """
+    from gateway.agents.inbox_triage import triage_list
+
+    if action == "list":
+        items = triage_list()
+        if not items:
+            return _serialize(OperationResult(success=True, summary="triage queue is empty"))
+        lines = [f"{i['source_id']}: {i.get('domain','')} score={i.get('filter_score','')} — {i.get('title','')}" for i in items]
+        summary = f"{len(items)} source(s) in triage queue:\n" + "\n".join(lines)
+        return _serialize(OperationResult(success=True, summary=summary))
+    return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected list"]))
+
+
 # --- entry point -----------------------------------------------------------
 
 

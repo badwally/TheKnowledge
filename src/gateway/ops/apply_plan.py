@@ -22,6 +22,42 @@ from gateway.plan import Plan, WikiUpdate
 
 
 _LOCK_NAME = "wiki-author"
+_TIMESTAMP_PAGE_TYPES = frozenset({"entity", "concept", "synthesis"})
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _count_source_links(body: str) -> int:
+    """Count distinct [[sources/<id>]] links in a body (for sources_count)."""
+    import re
+    return len(set(re.findall(r"\[\[sources/[^\]]+\]\]", body)))
+
+
+def _stamp_timestamps(
+    front: dict,
+    page_type: str,
+    update_kind: str,
+    existing_front: dict | None,
+    body: str = "",
+) -> None:
+    """ONT-6: Ensure created_at, last_updated (and sources_count for synthesis) are set."""
+    if page_type not in _TIMESTAMP_PAGE_TYPES:
+        return
+    now = _now_iso()
+    if update_kind == "create" or existing_front is None:
+        front.setdefault("created_at", now)
+        front.setdefault("last_updated", now)
+    else:
+        # Preserve existing created_at on updates; always advance last_updated.
+        if existing_front.get("created_at"):
+            front.setdefault("created_at", existing_front["created_at"])
+        else:
+            front.setdefault("created_at", now)
+        front["last_updated"] = now
+    if page_type == "synthesis":
+        front.setdefault("sources_count", _count_source_links(body))
 
 
 def apply_plan(
@@ -71,13 +107,19 @@ def apply_plan(
 
         # If the update targets an existing page, exclude its current slug
         # from the duplicate check (we're rewriting that exact slug).
+        existing_front_for_update: dict | None = None
         if update.update_kind == "update":
             existing = _try_read_page(target_rel)
             if existing is not None:
-                existing_front, _ = existing
-                current_slug = existing_front.get("slug")
+                existing_front_for_update, _ = existing
+                current_slug = existing_front_for_update.get("slug")
                 if current_slug and current_slug in existing_slugs:
                     existing_slugs = [s for s in existing_slugs if s != current_slug]
+
+        # ONT-6: auto-stamp created_at / last_updated / sources_count on
+        # entity, concept, and synthesis pages so the validator's required-
+        # field check always passes, even for callers that don't include them.
+        _stamp_timestamps(front, page_type, update.update_kind, existing_front_for_update, body)
 
         is_draft = bool(front.get("draft")) or draft
         result = validator.validate_wiki_page(
@@ -102,7 +144,7 @@ def apply_plan(
             front["draft_unresolved_claims"] = uncited_count
             update_content = fm.serialize(front, body)
         else:
-            update_content = update.content
+            update_content = fm.serialize(front, body)
 
         parsed.append((update, page_type, front, body))
         # Stash potentially-mutated content (for draft frontmatter additions)

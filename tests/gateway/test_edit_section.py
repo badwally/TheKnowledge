@@ -26,6 +26,8 @@ def _make_page(kb_root: Path, body: str, slug: str = "test-entity") -> Path:
         "canonical_name": "Test Entity",
         "entity_kind": "drug",
         "domains": ["testdom"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
         "draft": True,
     }
     page_path.write_text(fm.serialize(front, body))

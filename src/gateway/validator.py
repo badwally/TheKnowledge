@@ -238,7 +238,7 @@ def validate_source_immutability(existing_body: str, new_body: str) -> Validatio
 
 # Keys that pipeline stages may update after ingest (§ 11.5).
 MUTABLE_SOURCE_FIELDS: frozenset[str] = frozenset(
-    {"filter", "nlm_corpus_ids", "wiki_pages", "domains"}
+    {"filter", "nlm_corpus_ids", "wiki_pages", "domains", "contested"}
 )
 
 
@@ -271,6 +271,7 @@ from gateway import wiki_pages as _wiki_pages  # noqa: E402
 
 
 _MAX_SLUG_LEN = 80  # ONT-8: hard limit on new slug length
+_TIMESTAMP_PAGE_TYPES = frozenset({"entity", "concept", "synthesis"})  # ONT-6
 
 
 def validate_wiki_page_frontmatter(
@@ -348,6 +349,39 @@ def validate_wiki_page_frontmatter(
                 )
             )
 
+    # ONT-6: timestamp format for entity/concept/synthesis
+    if schema.type_name in _TIMESTAMP_PAGE_TYPES:
+        result.merge(validate_timestamps(front))
+
+    return result
+
+
+def validate_timestamps(front: dict) -> ValidationResult:
+    """ONT-6: verify created_at and last_updated are parseable ISO-8601."""
+    result = ValidationResult()
+    for field in ("created_at", "last_updated"):
+        value = front.get(field)
+        if value is None:
+            continue
+        if not isinstance(value, str):
+            result.errors.append(
+                ValidationError(
+                    "timestamp-format",
+                    f"{field} must be a string, got {type(value).__name__}",
+                    field,
+                )
+            )
+            continue
+        try:
+            datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError:
+            result.errors.append(
+                ValidationError(
+                    "timestamp-format",
+                    f"{field} {value!r} is not parseable as ISO-8601",
+                    field,
+                )
+            )
     return result
 
 

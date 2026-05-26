@@ -167,13 +167,16 @@ def query(
     slug = f"{today}-{_slugify(question)}"
     rel = f"wiki/synthesis/{slug}.md"
 
+    _now = _now_iso()
     front = {
         "type": "synthesis",
         "slug": slug,
         "title": question.strip().rstrip("?"),
         "domains": [domain],
         "question": question,
-        "created_at": _now_iso(),
+        "created_at": _now,
+        "last_updated": _now,
+        "sources_count": len(set(resolved.values())) if resolved else 0,
         "nlm_notebook_id": notebook_id,
     }
 

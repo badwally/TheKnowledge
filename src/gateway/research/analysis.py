@@ -27,11 +27,20 @@ orchestrator owns persistence — this module performs no I/O beyond
 
 from __future__ import annotations
 
+import json
+import re
+import time
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import TYPE_CHECKING
+
+from gateway import paths
 
 if TYPE_CHECKING:
     from gateway.nlm_client import NlmClient
+
+
+FINDINGS_STALE_HOURS = 24
 
 
 # --- prompt templates ------------------------------------------------------
@@ -186,6 +195,53 @@ class AnalysisResult:
     errors: list[str] = field(default_factory=list)
 
 
+# --- salvage helpers --------------------------------------------------------
+
+
+def _slugify_branch(name: str) -> str:
+    """Return a filesystem-safe slug for a branch name, collision-safe via hash."""
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")[:40]
+    # 8-char hash suffix makes same-prefix names unique
+    h = format(hash(name) & 0xFFFFFFFF, "08x")
+    return f"{slug}-{h}"
+
+
+def _findings_dir(session_id: str) -> Path:
+    return paths.nlm_dir() / "findings" / session_id
+
+
+def _write_branch_finding(session_id: str, branch_name: str, data: dict) -> None:
+    d = _findings_dir(session_id)
+    d.mkdir(parents=True, exist_ok=True)
+    slug = _slugify_branch(branch_name)
+    (d / f"{slug}.json").write_text(json.dumps(data))
+
+
+def load_branch_findings(session_id: str) -> dict[str, dict] | None:
+    """Load per-branch findings from disk.
+
+    Returns None if the findings directory is absent or any file is stale
+    (older than FINDINGS_STALE_HOURS). Returns a dict mapping branch_name →
+    finding dict when all files are fresh.
+    """
+    d = _findings_dir(session_id)
+    if not d.is_dir():
+        return None
+    files = [f for f in d.glob("*.json") if not f.name.startswith("_")]
+    if not files:
+        return None
+    cutoff = time.time() - FINDINGS_STALE_HOURS * 3600
+    result: dict[str, dict] = {}
+    for f in files:
+        if f.stat().st_mtime < cutoff:
+            return None
+        data = json.loads(f.read_text())
+        branch = data.get("branch")
+        if branch:
+            result[branch] = data
+    return result or None
+
+
 # --- public entry point ----------------------------------------------------
 
 
@@ -195,6 +251,8 @@ def analyze(
     domain: str,
     research_query: str,
     client: "NlmClient",
+    session_id: str | None = None,
+    prefetched_findings: dict[str, dict] | None = None,
     custom_taxonomy_prompt: str | None = None,
     custom_investigation_templates: dict[str, str] | None = None,
     custom_synthesis_queries: dict[str, str] | None = None,
@@ -207,6 +265,10 @@ def analyze(
     an `error` key on the failed entry and a human-readable line in
     `AnalysisResult.errors`.
 
+    `session_id`: when set, per-branch findings are written to
+    `nlm/findings/<session_id>/<slug>.json` after each branch completes.
+    `prefetched_findings`: branch_name → finding dict loaded from a prior
+    run; matching branches skip NLM calls entirely.
     `custom_*` kwargs override per-domain templates. Unset means use the
     ported defaults from research-notebook.
     """
@@ -238,10 +300,14 @@ def analyze(
     if custom_investigation_templates:
         investigation_templates.update(custom_investigation_templates)
 
+    prefetched = prefetched_findings or {}
     findings: dict[str, dict] = {}
     for branch in taxonomy.get("branches", []):
         name = branch.get("name", "")
         if not name:
+            continue
+        if name in prefetched:
+            findings[name] = prefetched[name]
             continue
         try:
             findings[name] = _investigate_branch(
@@ -254,6 +320,8 @@ def analyze(
         except Exception as e:  # noqa: BLE001
             errors.append(f"investigate[{name}]: {e}")
             findings[name] = {"branch": name, "error": str(e)}
+        if session_id:
+            _write_branch_finding(session_id, name, findings[name])
 
     # Phase 3 — cross-cutting synthesis.
     synthesis_queries = custom_synthesis_queries or _DEFAULT_SYNTHESIS_QUERIES
@@ -278,6 +346,21 @@ def analyze(
 # --- phase helpers (private) ------------------------------------------------
 
 
+def _try_parse_taxonomy_json(answer: str) -> list[dict] | None:
+    """Try to parse a JSON-formatted taxonomy answer; return None if not JSON."""
+    stripped = answer.strip()
+    if not stripped.startswith("{"):
+        return None
+    try:
+        data = json.loads(stripped)
+        branches = data.get("branches")
+        if isinstance(branches, list):
+            return branches
+    except (json.JSONDecodeError, AttributeError):
+        pass
+    return None
+
+
 def _extract_taxonomy(
     notebook_id: str,
     client: "NlmClient",
@@ -292,6 +375,10 @@ def _extract_taxonomy(
     prompt may or may not contain `{research_query}`; we substitute only
     when the placeholder is present (so domain-specific prompts that
     don't need anchoring still work).
+
+    The answer may be either THEME/SUBTHEME text format or a JSON object
+    with a "branches" key (the latter accepted so tests can inject
+    structured branches without the text parser).
     """
     formatted = (
         prompt.format(research_query=research_query)
@@ -299,7 +386,9 @@ def _extract_taxonomy(
         else prompt
     )
     raw = client.notebook_query(notebook_id, formatted)
-    branches = _parse_taxonomy_response(raw.get("answer", ""))
+    answer = raw.get("answer", "")
+    # Try JSON first (test injection path and future structured responses)
+    branches = _try_parse_taxonomy_json(answer) or _parse_taxonomy_response(answer)
     return {
         "field": research_query,
         "branches": branches,
