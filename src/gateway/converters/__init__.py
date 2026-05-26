@@ -62,18 +62,22 @@ def _ensure_registered() -> None:
     register(PptxConverter())
     register(ImageConverter())
 
-    # Voice / audiobook converters depend on the optional `[whisper]` extra.
+    # Voice / audiobook / podcast converters depend on the optional `[whisper]` extra.
     # Register only when the heavy deps are importable so the default install
     # stays light.
     try:
         from gateway.converters.audiobook import AudiobookConverter
+        from gateway.converters.podcast import PodcastConverter
         from gateway.converters.voice import VoiceConverter
     except ImportError:
         pass
     else:
         # Audiobook before voice — m4b files match audiobook only; .mp3/.m4a
         # files would match voice first if order were reversed.
+        # Podcast before voice — podcast detects URLs, voice detects local paths;
+        # the two are non-overlapping but podcast registers first as a convention.
         register(AudiobookConverter())
+        register(PodcastConverter())
         register(VoiceConverter())
     _initialized = True
 
