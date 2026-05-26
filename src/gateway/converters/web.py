@@ -17,6 +17,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 import hashlib
 import re
+import urllib.request
 from urllib.parse import urlparse
 
 import trafilatura
@@ -30,6 +31,24 @@ from gateway.converters.base import ConversionError, Converter
 
 def _fetch(url: str) -> str | None:
     return trafilatura.fetch_url(url)
+
+
+# --- Wayback Machine adapter (monkeypatch target in tests) -------------------
+
+_WAYBACK_SAVE = "https://web.archive.org/save/{url}"
+_WAYBACK_TIMEOUT = 15  # seconds
+
+
+def _wayback_snapshot(url: str) -> str | None:
+    """POST to Wayback Machine save API; return the archive URL or None on failure."""
+    try:
+        save_url = _WAYBACK_SAVE.format(url=url)
+        req = urllib.request.Request(save_url, method="POST")
+        req.add_header("User-Agent", "knowledge-gateway/1.0")
+        with urllib.request.urlopen(req, timeout=_WAYBACK_TIMEOUT) as resp:
+            return resp.geturl()
+    except Exception:
+        return None
 
 
 def _extract_markdown(html: str) -> str | None:
@@ -117,6 +136,17 @@ class WebConverter(Converter):
 
         source_id = _build_id(source, published_at)
 
+        archive_url = _wayback_snapshot(source)  # graceful: None on failure
+
+        meta_block: dict = {
+            "source_app": "trafilatura",
+            "site": _site_from_url(source),
+            "excerpt": excerpt,
+            "reading_time_minutes": _reading_time_minutes(body),
+        }
+        if archive_url:
+            meta_block["archive_url"] = archive_url
+
         front = {
             "id": source_id,
             "type": "web",
@@ -129,12 +159,7 @@ class WebConverter(Converter):
             "domains": [],
             "nlm_corpus_ids": [],
             "wiki_pages": [],
-            "meta": {
-                "source_app": "trafilatura",
-                "site": _site_from_url(source),
-                "excerpt": excerpt,
-                "reading_time_minutes": _reading_time_minutes(body),
-            },
+            "meta": meta_block,
         }
         # Drop None published_at (it's optional; emitting null in YAML is ugly)
         if front["published_at"] is None:

@@ -31,6 +31,7 @@ from gateway.lint import (
     schema_drift,
     stale_claims,
     stale_drafts,
+    synthesizes_coverage,
     untagged_sources,
 )
 
@@ -53,6 +54,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("broken-wikilinks", broken_wikilinks.run),
     ("long-slugs", long_slugs.run),
     ("contradiction-pages", contradiction_pages.run),
+    ("synthesizes-coverage", synthesizes_coverage.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

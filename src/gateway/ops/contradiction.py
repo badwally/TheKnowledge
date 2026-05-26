@@ -11,8 +11,8 @@ from pathlib import Path
 
 import yaml
 
-from gateway import paths
-from gateway.core import OperationResult
+from gateway import frontmatter as fm, paths
+from gateway.core import OperationResult, write_atomic
 
 
 def _contradictions_dir() -> Path:
@@ -130,7 +130,7 @@ def _set_contested(source_id: str) -> None:
         front_text = re.sub(r"contested:\s*\S+", "contested: true", front_text)
     else:
         front_text = front_text.rstrip() + "\ncontested: true\n"
-    source_path.write_text("---" + front_text + "---" + rest)
+    write_atomic(source_path, "---" + front_text + "---" + rest)
 
 
 def resolve_contradiction(
@@ -167,7 +167,7 @@ def resolve_contradiction(
     front["resolution"] = note
 
     new_front = yaml.safe_dump(front, default_flow_style=False, allow_unicode=True)
-    page_path.write_text("---\n" + new_front + "---" + body)
+    write_atomic(page_path, "---\n" + new_front + "---" + body)
 
     # Set contested on source pages with ≥2 remaining unresolved contradictions
     for source_id in _source_ids_from_parties(parties):

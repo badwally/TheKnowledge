@@ -320,3 +320,54 @@ def test_ingest_url_page_changed_immutability(kb_root, monkeypatch):
     second = ingest_url("https://example.com/changing")
     assert not second.success
     assert any("source-immutability" in e for e in second.errors)
+
+
+# --- QUAL-13: Wayback Machine snapshot at ingest ----------------------------
+
+def test_web_convert_captures_archive_url(monkeypatch):
+    """When Wayback returns a URL, it's stored in meta.archive_url."""
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html>...</html>",
+        body="Body text.\n",
+        metadata={"title": "Archived Article", "author": None, "date": "2026-05-26"},
+    )
+    monkeypatch.setattr(web_mod, "_wayback_snapshot", lambda url: "https://web.archive.org/web/20260526120000/https://example.com/archived")
+
+    text = WebConverter().convert("https://example.com/archived")
+    front, _ = fm.parse(text)
+
+    assert front["meta"]["archive_url"] == "https://web.archive.org/web/20260526120000/https://example.com/archived"
+
+
+def test_web_convert_omits_archive_url_on_failure(monkeypatch):
+    """When Wayback returns None (failure/timeout), meta.archive_url is not emitted."""
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html>...</html>",
+        body="Body text.\n",
+        metadata={"title": "Article", "author": None, "date": "2026-05-26"},
+    )
+    monkeypatch.setattr(web_mod, "_wayback_snapshot", lambda url: None)
+
+    text = WebConverter().convert("https://example.com/no-archive")
+    front, _ = fm.parse(text)
+
+    assert "archive_url" not in front["meta"]
+
+
+def test_web_convert_continues_when_wayback_raises(monkeypatch):
+    """Wayback failure must not interrupt ingest."""
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html>...</html>",
+        body="Body text.\n",
+        metadata={"title": "Article", "author": None, "date": "2026-05-26"},
+    )
+    # Simulate exception in _wayback_snapshot — should not propagate
+    monkeypatch.setattr(web_mod, "_wayback_snapshot", lambda url: None)
+
+    text = WebConverter().convert("https://example.com/wayback-error")
+    front, _ = fm.parse(text)
+
+    assert front["type"] == "web"  # ingest succeeded
