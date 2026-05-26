@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M64 complete; Phase 3 Round C merged)
+Last updated: 2026-05-26 (M64 complete; Phase 4 scoped)
 
 ---
 
@@ -24,25 +24,24 @@ None.
 
 ## Decisions made this session
 
-- M64: ARCH-14 + ONT-11 + QUAL-13. All S-effort, all clean.
-- ONT-8 was already implemented (validator.py lines 273-337 had the slug cap). Skipped.
-- ARCH-14 test found real violation in ops/contradiction.py — two write_text calls to wiki paths fixed to write_atomic.
-- QUAL-13 Wayback call is graceful-degradation only; _wayback_snapshot is a monkeypatch target.
+- M63: INT-13 (wiki agenda) + INT-16 (ai-tutor /wiki-cards). Calendar MCP two-step: agent fetches events then passes to wiki_agenda().
+- M64: ARCH-14 + ONT-11 + QUAL-13. Found and fixed real hard-rule-1 violation in ops/contradiction.py (two write_text calls → write_atomic).
+- ONT-8 already implemented (validator.py lines 273-337). Skipped to avoid duplicate work.
+- Phase 4 scope defined: QUAL-9, AGT-6, AGT-12 (Round A); QUAL-1, AGT-4 (Round B); TOOL-14, INT-12 (Round C).
+- Phase 4 model routing: Sonnet (pattern-bound work; Phase 3 failures were verify-before-act gaps, not reasoning gaps).
+- Backlog rubric: 4 dimensions — operational leverage, automation factor, effort gate, dependency status.
 
 ---
 
 ## Rejected approaches this session
 
-- ONT-8 (slug cap 80): already shipped in validator.py. Skipped to avoid duplicate work.
-- ARCH-15 (schema_version: 1 field): impact 2, chose higher-impact items first.
+- Opus for Phase 4: pattern-bound work, Sonnet sufficient; failure modes were "verify before act" not capability.
+- ONT-8 (slug cap 80): already implemented in validator.py lines 273-337.
+- ARCH-15 (schema_version: 1): impact 2, chose higher-impact items first.
+- Calling Calendar MCP from within wiki_agenda.py Python: MCP tools can't call other MCP tools from Python.
 
 ---
 
 ## Next atomic step
 
-M65 — Phase 3 Round D. Read docs/reviews/2026-05-23-knowledge-system-review.md for:
-- QUAL-9 (cross-domain contamination quarantine in promote-domain) — S, no deps
-- AGT-4 (contradiction sweeper) — M, deps: ONT-3, K2
-- ONT-6 (enforce documented frontmatter: last_updated, created_at) — S, no deps
-- INT-12 (wiki → Notion read-only mirror) — M, Notion MCP available
-Check which items have deps satisfied before starting.
+M65 — Phase 4 Round A. Create `phase4-round-a` branch. Read docs/reviews/2026-05-23-knowledge-system-review.md § QUAL-9 and src/gateway/ops/promote_domain.py before writing any code. Implement QUAL-9 (promote-domain contamination quarantine, S effort) first, then AGT-6, then AGT-12.
