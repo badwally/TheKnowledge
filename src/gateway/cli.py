@@ -55,6 +55,7 @@ SUBCOMMANDS: dict[str, str] = {
     "context": "Read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)",
     "agent-log": "Show per-agent event counts and top payloads (AGT-14)",
     "contradiction": "List or resolve structured contradiction pages (QUAL-3)",
+    "triage": "Manage the inbox-triage review queue (AGT-1)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -95,6 +96,7 @@ IMPLEMENTED: set[str] = {
     "context",
     "agent-log",
     "contradiction",
+    "triage",
 }
 
 
@@ -825,6 +827,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Resolution note",
     )
 
+    # triage (AGT-1)
+    p_triage = subparsers.add_parser("triage", help=SUBCOMMANDS["triage"])
+    p_triage_sub = p_triage.add_subparsers(dest="triage_action", required=True)
+    p_triage_sub.add_parser("list", help="List sources in the review-band triage queue")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -922,6 +929,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_agent_log(ns)
     if ns.subcommand == "contradiction":
         return _run_contradiction(ns)
+    if ns.subcommand == "triage":
+        return _run_triage_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1593,6 +1602,27 @@ def _run_contradiction(ns: argparse.Namespace) -> int:
                 note=ns.note,
             )
         )
+    return 2
+
+
+def _run_triage_cmd(ns: argparse.Namespace) -> int:
+    from gateway.agents.inbox_triage import triage_list
+
+    if ns.triage_action == "list":
+        items = triage_list()
+        if not items:
+            print("triage queue is empty")
+            return 0
+        print(f"{'source_id':<36} {'domain':<20} {'score':<8} {'title'}")
+        print("-" * 80)
+        for item in items:
+            sid = item.get("source_id", "")
+            domain = item.get("domain") or ""
+            score_val = item.get("filter_score")
+            score_str = f"{score_val:.2f}" if score_val is not None else "—"
+            title = (item.get("title") or "")[:30]
+            print(f"{sid:<36} {domain:<20} {score_str:<8} {title}")
+        return 0
     return 2
 
 

@@ -78,6 +78,12 @@ def status(*, with_cost: bool = False) -> OperationResult:
     else:
         lines.append("Recent activity: (log.md not yet created)")
 
+    # AGT-1: triage queue depth
+    from gateway.agents.inbox_triage import triage_depth
+    depth = triage_depth()
+    if depth > 0:
+        lines.append(f"Triage queue: {depth} source(s) awaiting review (`wiki triage list`)")
+
     # QUAL-3: contradiction summary
     contra_block = _contradiction_summary_block()
     if contra_block:
