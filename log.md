@@ -19207,3 +19207,47 @@ report=.knowledge/lint/2026-05-25T23-59-37Z-schema-drift.md
 ## [2026-05-26T00:00:08Z] lint | scope=schema-drift | schema-drift=210
 
 report=.knowledge/lint/2026-05-26T00-00-08Z-schema-drift.md
+
+## [2026-05-26T01:14:42Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-26T01-14-42Z-schema-drift.md
+
+## [2026-05-26T01:20:05Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-26T01-20-05Z-schema-drift.md
+
+## [2026-05-26T01:26:22Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-26T01-26-22Z-schema-drift.md
+
+## [2026-05-26T01:28:10Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-26T01-28-10Z-schema-drift.md
+
+## [2026-05-26T01:29:29Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-26T01-29-29Z-schema-drift.md
+
+## [2026-05-26T01:49:30Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T01-49-30Z-schema-drift.md
+
+## [2026-05-26T01:58:35Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T01-58-35Z-schema-drift.md
+
+## [2026-05-26T02:07:06Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-07-06Z-schema-drift.md
+
+## [2026-05-26T02:13:23Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-13-23Z-schema-drift.md
+
+## [2026-05-26T02:14:51Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-14-51Z-schema-drift.md
+
+## [2026-05-26T02:15:22Z] milestone | tag=m58-phase2-round-d | tests=1179 | delta=+27
+
+M58 Phase 2 Round D merged to main. ONT-6 (timestamp enforcement), TOK-12 (research salvage), AGT-1 (inbox-triage agent), AGT-2 (draft-closer agent). 1152 → 1179 tests.
