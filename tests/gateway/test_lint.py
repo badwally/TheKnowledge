@@ -104,6 +104,7 @@ def test_known_checks_includes_all_documented_checks():
         "contradiction-pages",
         "synthesizes-coverage",
         "domain-purity",
+        "link-rot",
     }
     assert KNOWN_CHECKS == expected
 

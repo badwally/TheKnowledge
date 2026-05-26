@@ -61,6 +61,7 @@ SUBCOMMANDS: dict[str, str] = {
     "digest": "Daily content brief: new sources, new synthesis, stale drafts, triage queue (INT-14)",
     "agenda": "Calendar-aware meeting prep briefing per day (INT-13)",
     "briefing-cron": "Run per-domain nlm-briefing for all blessed domains (AGT-6, corpus-hash skip)",
+    "contradiction-sweep": "Weekly per-domain LLM contradiction scan → draft synthesis pages (AGT-4)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -107,6 +108,7 @@ IMPLEMENTED: set[str] = {
     "digest",
     "agenda",
     "briefing-cron",
+    "contradiction-sweep",
 }
 
 
@@ -905,6 +907,11 @@ def build_parser() -> argparse.ArgumentParser:
     # briefing-cron (AGT-6)
     subparsers.add_parser("briefing-cron", help=SUBCOMMANDS["briefing-cron"])
 
+    # contradiction-sweep (AGT-4)
+    p_csweep = subparsers.add_parser("contradiction-sweep", help=SUBCOMMANDS["contradiction-sweep"])
+    p_csweep.add_argument("--domain", metavar="SLUG", help="Sweep a single domain (default: all blessed)")
+    p_csweep.add_argument("--week", metavar="YYYY-WNN", help="Override ISO week (default: current)")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1014,6 +1021,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_agenda_cmd(ns)
     if ns.subcommand == "briefing-cron":
         return _run_briefing_cron_cmd(ns)
+    if ns.subcommand == "contradiction-sweep":
+        return _run_contradiction_sweep_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1841,6 +1850,17 @@ def _run_briefing_cron_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.briefing_cron import run_briefing_cron
 
     return _emit_result(run_briefing_cron())
+
+
+def _run_contradiction_sweep_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.contradiction_sweeper import run_contradiction_sweep
+
+    return _emit_result(
+        run_contradiction_sweep(
+            domain=getattr(ns, "domain", None),
+            week=getattr(ns, "week", None),
+        )
+    )
 
 
 if __name__ == "__main__":
