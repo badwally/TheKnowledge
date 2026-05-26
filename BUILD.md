@@ -1015,6 +1015,10 @@ See `docs/milestones/M65.md`. Three items: QUAL-9 (`lint/domain_purity.py` warns
 
 See `docs/milestones/M66.md`. Two items: QUAL-1 (`pollers/link_rot.py` — `LinkRotPoller` HEAD-checks each raw/web source; classifies `ok|redirect|dead`; 30-day recheck cooldown via `last_checked_at`; writes `link_status:` + `last_checked_at:` to raw + wiki/sources frontmatter; stores `meta.redirect_url` for redirects; `lint/link_rot.py` warns dead, info unchecked, surfaces Wayback archive_url from QUAL-13; 16 tests); AGT-4 (`ops/contradiction_sweeper.py` — weekly per-domain LLM contradiction scan reusing `lint/contradictions.py` internals; idempotent per domain per week; writes draft `wiki/synthesis/contradictions-<domain>-<week>.md`; `wiki contradiction-sweep [--domain] [--week]` CLI + `wiki_contradiction_sweep` MCP tool; Tuesday 07:00 UTC schedule; uses Claude CLI not NLM; 13 tests). Tests: 1240 → 1269 (+29), 0 regressions. Tag: `m66-phase4-round-b`.
 
+### M67 — Phase 4 Round C (TOOL-14, INT-12)
+
+See `docs/milestones/M67.md`. Two items: TOOL-14 (`ops/contradiction_drift.py` — nightly snapshot + diff of contradiction lint findings; `_diff()` returns new/resolved by `domain|a_page|b_page` key; snapshot written to `.knowledge/lint/drift-<date>.json` via `write_atomic`; `_weekly_digest()` summarizes last 7 files; `wiki contradiction-drift [--date] [--digest]` CLI; `CLI_ONLY` in MCP; nightly `0 5 * * *` schedule; 11 tests); INT-12 (`notion_client.py` — thin `urllib.request` Notion REST API wrapper; auth via `NOTION_TOKEN`; create/update/archive pages; paginated DB query; `ops/publish_notion.py` — idempotent upsert for one domain; one DB per domain via `NOTION_PARENT_PAGE_ID`; registry at `.knowledge/notion/<domain>.json`; creates/updates/archives pages; `wiki publish-notion <domain> [--include sources/artifacts]` CLI; `wiki_publish_notion` MCP tool; 18 tests). Tests: 1269 → 1298 (+29), 0 regressions. Tag: `m67-phase4-round-c`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
