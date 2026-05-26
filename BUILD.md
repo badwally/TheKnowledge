@@ -1019,6 +1019,10 @@ See `docs/milestones/M66.md`. Two items: QUAL-1 (`pollers/link_rot.py` — `Link
 
 See `docs/milestones/M67.md`. Two items: TOOL-14 (`ops/contradiction_drift.py` — nightly snapshot + diff of contradiction lint findings; `_diff()` returns new/resolved by `domain|a_page|b_page` key; snapshot written to `.knowledge/lint/drift-<date>.json` via `write_atomic`; `_weekly_digest()` summarizes last 7 files; `wiki contradiction-drift [--date] [--digest]` CLI; `CLI_ONLY` in MCP; nightly `0 5 * * *` schedule; 11 tests); INT-12 (`notion_client.py` — thin `urllib.request` Notion REST API wrapper; auth via `NOTION_TOKEN`; create/update/archive pages; paginated DB query; `ops/publish_notion.py` — idempotent upsert for one domain; one DB per domain via `NOTION_PARENT_PAGE_ID`; registry at `.knowledge/notion/<domain>.json`; creates/updates/archives pages; `wiki publish-notion <domain> [--include sources/artifacts]` CLI; `wiki_publish_notion` MCP tool; 18 tests). Tests: 1269 → 1298 (+29), 0 regressions. Tag: `m67-phase4-round-c`.
 
+### M68 — Phase 5 Round A (ONT-4 migration, ONT-6 backfill)
+
+See `docs/milestones/M68.md`. Two migration ops closing the gap between ONT-4/ONT-6 validator enforcement and the legacy wiki corpus. ONT-4 (`ops/backfill_entity_kinds.py` — `backfill_entity_kinds(dry_run)` walks `wiki/entities/**/*.md`, applies `_KIND_MAP` of ~35 legacy aliases → canonical enum, unmapped → `"other"`; idempotent; `wiki backfill-entity-kinds [--dry-run]` CLI; `CLI_ONLY` in MCP; 12 tests); ONT-6 (`ops/backfill_timestamps.py` — `backfill_timestamps(dry_run)` stamps missing `created_at`/`last_updated` on entity/concept/synthesis pages using file mtime as proxy; idempotent; `wiki backfill-timestamps [--dry-run]` CLI; `CLI_ONLY` in MCP; 13 tests). ONT-8 confirmed already complete (validator + `lint/long_slugs.py` both shipped in prior milestone). Tests: 1298 → 1323 (+25), 0 regressions. Tag: `m68-phase5-round-a`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:

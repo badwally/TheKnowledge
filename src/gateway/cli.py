@@ -64,6 +64,8 @@ SUBCOMMANDS: dict[str, str] = {
     "contradiction-sweep": "Weekly per-domain LLM contradiction scan → draft synthesis pages (AGT-4)",
     "contradiction-drift": "Nightly contradiction JSON snapshot + diff against yesterday (TOOL-14)",
     "publish-notion": "Mirror wiki domain pages to a Notion database (INT-12)",
+    "backfill-entity-kinds": "Remap legacy entity_kind values to the ONT-4 controlled vocabulary",
+    "backfill-timestamps": "Stamp missing created_at / last_updated on entity/concept/synthesis pages (ONT-6)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -113,6 +115,8 @@ IMPLEMENTED: set[str] = {
     "contradiction-sweep",
     "contradiction-drift",
     "publish-notion",
+    "backfill-entity-kinds",
+    "backfill-timestamps",
 }
 
 
@@ -931,6 +935,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Additional page types to include: sources, artifacts",
     )
 
+    # backfill-entity-kinds (ONT-4)
+    p_bek = subparsers.add_parser("backfill-entity-kinds", help=SUBCOMMANDS["backfill-entity-kinds"])
+    p_bek.add_argument("--dry-run", action="store_true", help="Report changes without writing")
+
+    # backfill-timestamps (ONT-6)
+    p_bts = subparsers.add_parser("backfill-timestamps", help=SUBCOMMANDS["backfill-timestamps"])
+    p_bts.add_argument("--dry-run", action="store_true", help="Report changes without writing")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1046,6 +1058,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_contradiction_drift_cmd(ns)
     if ns.subcommand == "publish-notion":
         return _run_publish_notion_cmd(ns)
+    if ns.subcommand == "backfill-entity-kinds":
+        return _run_backfill_entity_kinds_cmd(ns)
+    if ns.subcommand == "backfill-timestamps":
+        return _run_backfill_timestamps_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1908,6 +1924,18 @@ def _run_publish_notion_cmd(ns: argparse.Namespace) -> int:
             include_artifacts="artifacts" in include,
         )
     )
+
+
+def _run_backfill_entity_kinds_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.backfill_entity_kinds import backfill_entity_kinds
+
+    return _emit_result(backfill_entity_kinds(dry_run=getattr(ns, "dry_run", False)))
+
+
+def _run_backfill_timestamps_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.backfill_timestamps import backfill_timestamps
+
+    return _emit_result(backfill_timestamps(dry_run=getattr(ns, "dry_run", False)))
 
 
 if __name__ == "__main__":
