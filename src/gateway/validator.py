@@ -119,9 +119,22 @@ def compute_content_hash(body: str) -> str:
     return f"sha256:{h}"
 
 
+CURRENT_SCHEMA_VERSION: int = 1
+
+
 def validate_source_frontmatter(front: dict) -> ValidationResult:
-    """Check required core fields, type enum, and ID format."""
+    """Check required core fields, type enum, ID format, and schema_version."""
     result = ValidationResult()
+
+    if "schema_version" not in front:
+        result.warnings.append(
+            ValidationError(
+                "schema-version",
+                f"missing schema_version; expected {CURRENT_SCHEMA_VERSION} — "
+                "re-ingest or touch via gateway to stamp automatically",
+                "schema_version",
+            )
+        )
 
     missing = REQUIRED_CORE_FIELDS - front.keys()
     for f in sorted(missing):

@@ -66,6 +66,7 @@ SUBCOMMANDS: dict[str, str] = {
     "publish-notion": "Mirror wiki domain pages to a Notion database (INT-12)",
     "backfill-entity-kinds": "Remap legacy entity_kind values to the ONT-4 controlled vocabulary",
     "backfill-timestamps": "Stamp missing created_at / last_updated on entity/concept/synthesis pages (ONT-6)",
+    "backfill-synthesizes": "Populate synthesizes: on synthesis pages from body wikilink citations (ONT-11)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -117,6 +118,7 @@ IMPLEMENTED: set[str] = {
     "publish-notion",
     "backfill-entity-kinds",
     "backfill-timestamps",
+    "backfill-synthesizes",
 }
 
 
@@ -943,6 +945,10 @@ def build_parser() -> argparse.ArgumentParser:
     p_bts = subparsers.add_parser("backfill-timestamps", help=SUBCOMMANDS["backfill-timestamps"])
     p_bts.add_argument("--dry-run", action="store_true", help="Report changes without writing")
 
+    # backfill-synthesizes (ONT-11)
+    p_bsy = subparsers.add_parser("backfill-synthesizes", help=SUBCOMMANDS["backfill-synthesizes"])
+    p_bsy.add_argument("--dry-run", action="store_true", help="Report changes without writing")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1062,6 +1068,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_entity_kinds_cmd(ns)
     if ns.subcommand == "backfill-timestamps":
         return _run_backfill_timestamps_cmd(ns)
+    if ns.subcommand == "backfill-synthesizes":
+        return _run_backfill_synthesizes_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1936,6 +1944,12 @@ def _run_backfill_timestamps_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.backfill_timestamps import backfill_timestamps
 
     return _emit_result(backfill_timestamps(dry_run=getattr(ns, "dry_run", False)))
+
+
+def _run_backfill_synthesizes_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.backfill_synthesizes import backfill_synthesizes
+
+    return _emit_result(backfill_synthesizes(dry_run=getattr(ns, "dry_run", False)))
 
 
 if __name__ == "__main__":

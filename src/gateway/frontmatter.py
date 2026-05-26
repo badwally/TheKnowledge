@@ -77,14 +77,23 @@ def parse(text: str) -> Tuple[dict, str]:
     return front, body
 
 
+CURRENT_SCHEMA_VERSION: int = 1
+
+
 def serialize(front: dict, body: str) -> str:
     """Combine frontmatter + body back into a markdown document.
 
+    Injects schema_version: 1 as the first key when not already present.
     Body is written verbatim. A single newline separates the closing
     delimiter from the body.
     """
+    if "schema_version" not in front:
+        stamped: dict = {"schema_version": CURRENT_SCHEMA_VERSION}
+        stamped.update(front)
+    else:
+        stamped = front
     yaml_text = yaml.safe_dump(
-        front,
+        stamped,
         sort_keys=False,
         default_flow_style=False,
         allow_unicode=True,
