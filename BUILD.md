@@ -975,6 +975,10 @@ See `docs/milestones/M55.md`. Five independent items: TOK-4 (`_gather_existing_p
 
 See `docs/milestones/M56.md`. Four items in two dependency chains: AGT-9 (filesystem event bus — `emit()`/`subscribe()`/`list_events()` over `.knowledge/events/<date>/<seq:04d>.json`, debounce, `events_dir()`/`agents_dir()` in paths, `"agent"` prefix in `LOCK_NAME_PREFIXES`); ONT-3 (`"contradiction"` page type in `PAGE_SCHEMAS`, `CONTRADICTION_SEVERITY_ENUM`/`CONTRADICTION_STATUS_ENUM` in validator, `validate_contradiction_frontmatter()`, `lint/contradiction_pages.py` for open+major pages, no-op migration); AGT-14 (`agent-log --since 24h|48h|7d`, per-agent counts + top-5 payloads, `DIGEST_SCHEDULE_ENTRY` 7am draft-only digest, MCP `wiki_agent_log`); QUAL-3 (`wiki contradiction list/resolve`, `resolve` updates frontmatter + sets `contested: true` on sources with ≥2 open contradictions, `wiki status` contradiction summary, MCP `wiki_contradiction`). Tests: 1061 → 1117 passing (+56). K2 parity: 4/4 green. Tag: `m56-phase2-round-b`.
 
+### M57 — Phase 2 Round C (INT-8, INT-9)
+
+See `docs/milestones/M57.md`. Two independent integration pollers: INT-8 (`src/gateway/pollers/repo_metadata.py` — polls `~/code/*/README.md`, `CLAUDE.md`, `docs/*.md`; hash-based cursor skips unchanged files; auto-tags domain when `.knowledge/policies/<slug>.yaml` exists; excludes node_modules/.venv/dist/build/vendor/__pycache__/.git; registered as `"repo-metadata"`); INT-9 (`src/gateway/pollers/readwise.py` — Readwise v3 Export API; cursor on `updatedAfter`; one `raw/note/` file per document; idempotent highlights update; follows pagination; fails fast on missing `READWISE_TOKEN`; registered as `"readwise"`). Tests: 1117 → 1139 passing (+22). K2 parity: 4/4 green. Tag: `m57-phase2-round-c`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
