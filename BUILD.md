@@ -999,6 +999,10 @@ See `docs/milestones/M61.md`. Phase 2 formal close — documentation only: `docs
 
 See `docs/milestones/M62.md`. Four items: ONT-10 (source pages demoted to manifest-only — `required_sections=()`, `citation_grounded=False` in `wiki_pages.py`; `migrations/0005-demote-source-pages.py` strips stub sections from 1023 `wiki/sources/*.md` pages; WIKI.md § 4.3 updated); INT-14 (`src/gateway/ops/wiki_digest.py` — `build_wiki_digest()`: new sources by domain, new synthesis pages, stale draft count, triage queue depth; `wiki digest [--hours N] [--stale-days N] [--out PATH]` CLI + `wiki_digest` MCP); INT-15 (`~/code/chief-of-staff/CLAUDE.md` step 5a — session-start calls `wiki context <attendee-slug>` for meeting attendees with wiki entity pages; skip-silent; no write-back); INT-17 (`~/code/newbiz/CLAUDE.md` — ideation sessions optionally query `wiki context --query <topic> --depth 2` for domain-relevant synthesis snippets). Tests: 1192 → 1200 passing (+8). K2 parity: 4/4 green. Tag: `m62-phase3-round-a`.
 
+### M63 — Phase 3 Round B (INT-13, INT-16)
+
+See `docs/milestones/M63.md`. Two items: INT-13 (`src/gateway/ops/wiki_agenda.py` — `build_agenda(date_str, events)` + `write_agenda()`; for each calendar event with ≥2 attendees, looks up attendee entity pages and event-topic concept pages in wiki; `wiki agenda [--date] [--events-json] [--out] [--no-write]` CLI + `wiki_agenda(date, events, write)` MCP tool; `agenda` page type in `wiki_pages.py`; `agenda_dir()` in `paths.py`; 8 tests); INT-16 (`~/code/ai-tutor/skills/wiki-cards/SKILL.md` — agent skill generating spaced-rep Q-A cards from wiki concept pages for a domain; deduplicates by SHA-256 question hash; outputs `state/wiki-cards/<domain>.yaml` with `wiki_source` back-references; registered in ai-tutor CLAUDE.md). Tests: 1200 → 1208 (+8), 0 regressions. Tag: `m63-phase3-round-b`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
