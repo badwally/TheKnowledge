@@ -771,6 +771,26 @@ def wiki_contradiction(
 
 
 @mcp.tool()
+def wiki_draft_close(action: str = "run") -> dict[str, Any]:
+    """Run the draft-closer agent (AGT-2).
+
+    `action`: 'run' — process all stale drafts: easy wins (≤1 citation per claim) are
+    finalized; hard cases (multi-citation lines) are escalated to log.md.
+    Returns counts of finalized/escalated/skipped pages.
+    """
+    from gateway.agents.draft_closer import run_draft_closer
+
+    if action == "run":
+        result = run_draft_closer()
+        summary = (
+            f"draft-closer complete: finalized={result.pages_finalized} "
+            f"escalated={result.pages_escalated} skipped={result.pages_skipped}"
+        )
+        return _serialize(OperationResult(success=True, summary=summary))
+    return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected run"]))
+
+
+@mcp.tool()
 def wiki_triage(action: str = "list") -> dict[str, Any]:
     """Manage the inbox-triage review queue (AGT-1).
 

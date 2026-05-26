@@ -56,6 +56,7 @@ SUBCOMMANDS: dict[str, str] = {
     "agent-log": "Show per-agent event counts and top payloads (AGT-14)",
     "contradiction": "List or resolve structured contradiction pages (QUAL-3)",
     "triage": "Manage the inbox-triage review queue (AGT-1)",
+    "draft-close": "Run the draft-closer agent: auto-finalize easy wins, escalate hard cases (AGT-2)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -97,6 +98,7 @@ IMPLEMENTED: set[str] = {
     "agent-log",
     "contradiction",
     "triage",
+    "draft-close",
 }
 
 
@@ -827,6 +829,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Resolution note",
     )
 
+    # draft-close (AGT-2)
+    p_draft_close = subparsers.add_parser("draft-close", help=SUBCOMMANDS["draft-close"])
+    p_dc_sub = p_draft_close.add_subparsers(dest="draft_close_action", required=True)
+    p_dc_sub.add_parser("run", help="Run the draft-closer agent")
+
     # triage (AGT-1)
     p_triage = subparsers.add_parser("triage", help=SUBCOMMANDS["triage"])
     p_triage_sub = p_triage.add_subparsers(dest="triage_action", required=True)
@@ -931,6 +938,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_contradiction(ns)
     if ns.subcommand == "triage":
         return _run_triage_cmd(ns)
+    if ns.subcommand == "draft-close":
+        return _run_draft_close_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1602,6 +1611,22 @@ def _run_contradiction(ns: argparse.Namespace) -> int:
                 note=ns.note,
             )
         )
+    return 2
+
+
+def _run_draft_close_cmd(ns: argparse.Namespace) -> int:
+    from gateway.agents.draft_closer import run_draft_closer
+
+    if ns.draft_close_action == "run":
+        result = run_draft_closer()
+        print(
+            f"draft-closer: finalized={result.pages_finalized} "
+            f"escalated={result.pages_escalated} skipped={result.pages_skipped}"
+        )
+        if result.errors:
+            for e in result.errors:
+                print(f"  error: {e}", file=sys.stderr)
+        return 0
     return 2
 
 
