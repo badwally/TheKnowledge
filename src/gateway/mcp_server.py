@@ -809,6 +809,64 @@ def wiki_triage(action: str = "list") -> dict[str, Any]:
     return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected list"]))
 
 
+@mcp.tool()
+def wiki_agents(agent_name: str, action: str = "run") -> dict[str, Any]:
+    """Run a named gateway agent on demand (A1 — AGT-1/AGT-2/AGT-14 unified surface).
+
+    `agent_name`: one of 'inbox-triage', 'draft-closer', 'agent-digest'.
+    `action`: 'run' (only valid action).
+
+    - inbox-triage: scans raw/ sources lacking a filter score and triages each.
+    - draft-closer: auto-finalizes easy-win stale drafts; escalates hard cases to log.md.
+    - agent-digest: aggregates 24h agent events and writes a draft synthesis page.
+    """
+    if action != "run":
+        return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=["expected run"]))
+
+    if agent_name == "inbox-triage":
+        from gateway.agents.inbox_triage import run_inbox_triage_batch
+        result = run_inbox_triage_batch()
+        summary = (
+            f"inbox-triage: processed={result.processed} "
+            f"skipped={result.skipped} failed={result.failed}"
+        )
+        return _serialize(OperationResult(success=result.failed == 0, summary=summary))
+
+    if agent_name == "draft-closer":
+        from gateway.agents.draft_closer import run_draft_closer
+        result = run_draft_closer()
+        summary = (
+            f"draft-closer: finalized={result.pages_finalized} "
+            f"escalated={result.pages_escalated} skipped={result.pages_skipped}"
+        )
+        return _serialize(OperationResult(success=True, summary=summary))
+
+    if agent_name == "agent-digest":
+        from gateway.ops.agent_log import aggregate, build_digest_page
+        from datetime import datetime, timezone
+        data = aggregate(since_hours=24)
+        if not data:
+            return _serialize(OperationResult(success=True, summary="agent-digest: no agent events in last 24h"))
+        date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        content = build_digest_page(date_str=date_str)
+        from gateway.plan import Plan, WikiUpdate
+        from gateway.ops.apply_plan import apply_plan
+        slug = f"agent-digest-{date_str}"
+        plan = Plan(
+            source_id="agent-digest",
+            rationale=f"Daily agent-activity digest for {date_str} (AGT-14)",
+            updates=[WikiUpdate(
+                target_path=f"wiki/synthesis/{slug}.md",
+                update_kind="create",
+                content=content,
+            )],
+        )
+        op_result = apply_plan(plan, draft=True)
+        return _serialize(op_result)
+
+    return _serialize(OperationResult(success=False, summary=f"unknown agent {agent_name!r}", errors=[f"expected inbox-triage, draft-closer, or agent-digest"]))
+
+
 # --- entry point -----------------------------------------------------------
 
 

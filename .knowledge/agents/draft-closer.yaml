@@ -1,0 +1,4 @@
+agent: draft-closer
+subscribes_to: []
+debounce_s: 0
+max_concurrent_runs: 1

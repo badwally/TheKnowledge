@@ -154,6 +154,48 @@ def triage_depth() -> int:
     return len(list(d.glob("*.yaml")))
 
 
+@dataclass
+class BatchTriageResult:
+    processed: int = 0
+    skipped: int = 0
+    failed: int = 0
+    results: list[TriageResult] = field(default_factory=list)
+
+
+def run_inbox_triage_batch(*, filter_client=None) -> BatchTriageResult:
+    """Scan all raw sources without a filter score and run triage on each.
+
+    Skips sources that already have a ``filter`` block in frontmatter.
+    Used by the scheduled fallback sweep (every 15 min via AGT-1 cron entry).
+    """
+    raw = paths.raw_dir()
+    if not raw.exists():
+        return BatchTriageResult()
+
+    result = BatchTriageResult()
+    for type_dir in sorted(raw.iterdir()):
+        if not type_dir.is_dir():
+            continue
+        for source_file in sorted(type_dir.glob("*.md")):
+            try:
+                front, _ = fm.parse(source_file.read_text())
+            except Exception:
+                result.failed += 1
+                continue
+            if front.get("filter"):
+                result.skipped += 1
+                continue
+            source_id = front.get("id") or source_file.stem
+            try:
+                tr = run_triage(source_id, source_path=source_file, filter_client=filter_client)
+                result.processed += 1
+                result.results.append(tr)
+            except Exception:
+                result.failed += 1
+
+    return result
+
+
 # ---------------------------------------------------------------------------
 # private helpers
 # ---------------------------------------------------------------------------

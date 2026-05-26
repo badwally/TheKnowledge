@@ -211,6 +211,20 @@ class WatcherDaemon:
             log.info("ingested: %s — %s", path.name, result.summary)
             for w in result.warnings:
                 log.warning("  %s", w)
+            # Emit ingest.complete event so AGT-1 subscribers can pick it up.
+            if result.paths_touched:
+                try:
+                    import uuid
+                    from gateway import events as _events
+                    source_id = result.paths_touched[0].stem
+                    _events.emit(
+                        "ingest.complete",
+                        payload={"source_id": source_id},
+                        agent="watcher",
+                        correlation_id=str(uuid.uuid4()),
+                    )
+                except Exception as _e:
+                    log.warning("event emission failed for %s: %s", path.name, _e)
             # Successful ingest -> file is now in raw/<type>/<id>.md;
             # the inbox copy is no longer needed.
             try:
