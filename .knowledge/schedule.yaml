@@ -39,6 +39,14 @@ jobs:
   last_run: null
   last_exit_code: null
   last_duration_seconds: null
+- name: daily-domain-digest
+  cron: 0 6 * * *
+  command: wiki routine daily-domain-digest
+  enabled: true
+  cooldown_seconds: 3600
+  last_run: null
+  last_exit_code: null
+  last_duration_seconds: null
 - name: contradiction-sweep
   cron: 0 7 * * 2
   command: wiki contradiction-sweep

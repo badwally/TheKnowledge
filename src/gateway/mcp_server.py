@@ -1081,6 +1081,32 @@ def wiki_search(
     }
 
 
+@mcp.tool()
+def wiki_routine(
+    routine: str,
+    domain: str | None = None,
+    date: str | None = None,
+    lookback_hours: int = 24,
+) -> dict[str, Any]:
+    """Run a named orchestration routine.
+
+    `routine`: Name of the routine. Currently supported:
+      - "daily-domain-digest": summarize sources ingested in the last lookback_hours
+        for one or all blessed domains; write a draft synthesis page per domain.
+    `domain`: Optional domain slug. If omitted, runs for all blessed domains.
+    `date`: Optional date override YYYY-MM-DD (default: today UTC).
+    `lookback_hours`: How many hours back to scan for new sources (default 24).
+    """
+    if routine == "daily-domain-digest":
+        from gateway.ops.daily_digest import run_all_domains, run_daily_domain_digest
+        if domain:
+            result = run_daily_domain_digest(domain, date_str=date, lookback_hours=lookback_hours)
+        else:
+            result = run_all_domains(date_str=date, lookback_hours=lookback_hours)
+        return _serialize(result)
+    return {"success": False, "summary": f"unknown routine: {routine}"}
+
+
 # --- entry point -----------------------------------------------------------
 
 

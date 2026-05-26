@@ -70,6 +70,7 @@ SUBCOMMANDS: dict[str, str] = {
     "skill-emit": "Generate .claude/skills/wiki-<domain>/SKILL.md for a domain (AGT-13)",
     "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
     "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
+    "routine": "Run a named orchestration routine (daily-domain-digest) (TOOL-12)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -127,6 +128,7 @@ IMPLEMENTED: set[str] = {
     "reingest",
     "search",
     "index",
+    "routine",
 }
 
 
@@ -1039,6 +1041,20 @@ def build_parser() -> argparse.ArgumentParser:
     p_search.add_argument("--type", dest="page_type", default=None, help="Filter by page/source type")
     p_search.add_argument("--limit", type=int, default=20, help="Maximum number of results (default: 20)")
 
+    # routine (TOOL-12)
+    p_routine = subparsers.add_parser("routine", help=SUBCOMMANDS["routine"])
+    p_routine_sub = p_routine.add_subparsers(dest="routine_name", metavar="NAME")
+    p_routine_digest = p_routine_sub.add_parser(
+        "daily-domain-digest",
+        help="Synthesize new sources from last 24h into a draft synthesis page",
+    )
+    p_routine_digest.add_argument("--domain", metavar="SLUG", default=None,
+                                  help="Run for a single domain (default: all blessed domains)")
+    p_routine_digest.add_argument("--date", metavar="YYYY-MM-DD", default=None,
+                                  help="Override date (default: today UTC)")
+    p_routine_digest.add_argument("--lookback-hours", type=int, default=24,
+                                  help="How many hours back to scan for new sources (default: 24)")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1170,6 +1186,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_search_cmd(ns)
     if ns.subcommand == "index":
         return _run_index_cmd(ns)
+    if ns.subcommand == "routine":
+        return _run_routine_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2170,6 +2188,24 @@ def _run_search_cmd(ns: argparse.Namespace) -> int:
     )
     print(format_results(result, relative_to=_paths.knowledge_root()))
     return 0 if result.hits else 1
+
+
+def _run_routine_cmd(ns: argparse.Namespace) -> int:
+    if not ns.routine_name:
+        print("usage: wiki routine <NAME>\n  Available: daily-domain-digest", file=sys.stderr)
+        return 2
+    if ns.routine_name == "daily-domain-digest":
+        from gateway.ops.daily_digest import run_all_domains, run_daily_domain_digest
+        domain = getattr(ns, "domain", None)
+        date_str = getattr(ns, "date", None)
+        hours = getattr(ns, "lookback_hours", 24)
+        if domain:
+            result = run_daily_domain_digest(domain, date_str=date_str, lookback_hours=hours)
+        else:
+            result = run_all_domains(date_str=date_str, lookback_hours=hours)
+        return _emit_result(result)
+    print(f"unknown routine: {ns.routine_name}", file=sys.stderr)
+    return 2
 
 
 if __name__ == "__main__":
