@@ -775,6 +775,30 @@ def wiki_contradiction(
 
 
 @mcp.tool()
+def wiki_contradiction_sweep(
+    domain: str = "",
+    week: str = "",
+) -> dict[str, Any]:
+    """Run a contradiction sweep for a domain (or all blessed domains).
+
+    Detects same-domain opposite-polarity claim pairs and writes a draft
+    wiki/synthesis/contradictions-<domain>-<week>.md page. Idempotent:
+    skips if the page already exists for this domain+week.
+
+    `domain`: domain slug to sweep (default: all blessed domains).
+    `week`: ISO week override e.g. '2026-W22' (default: current week).
+    """
+    from gateway.ops.contradiction_sweeper import run_contradiction_sweep
+
+    return _serialize(
+        run_contradiction_sweep(
+            domain=domain or None,
+            week=week or None,
+        )
+    )
+
+
+@mcp.tool()
 def wiki_draft_close(action: str = "run") -> dict[str, Any]:
     """Run the draft-closer agent (AGT-2).
 
