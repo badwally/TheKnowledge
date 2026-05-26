@@ -995,6 +995,10 @@ See `docs/milestones/M60.md`. Phase 2 exit-criteria closeout — five items: A1 
 
 See `docs/milestones/M61.md`. Phase 2 formal close — documentation only: `docs/phase2-closeout.md` (20-item completion table, test-delta table 1038→1192, exit-criteria verification, follow-ups for Phase 3); M61 milestone doc; tags `m60-phase2-round-a` and `m61-phase2-closeout`. Tests: 1192 passing (unchanged). Tag: `m61-phase2-closeout`.
 
+### M62 — Phase 3 Round A (ONT-10, INT-14, INT-15, INT-17)
+
+See `docs/milestones/M62.md`. Four items: ONT-10 (source pages demoted to manifest-only — `required_sections=()`, `citation_grounded=False` in `wiki_pages.py`; `migrations/0005-demote-source-pages.py` strips stub sections from 1023 `wiki/sources/*.md` pages; WIKI.md § 4.3 updated); INT-14 (`src/gateway/ops/wiki_digest.py` — `build_wiki_digest()`: new sources by domain, new synthesis pages, stale draft count, triage queue depth; `wiki digest [--hours N] [--stale-days N] [--out PATH]` CLI + `wiki_digest` MCP); INT-15 (`~/code/chief-of-staff/CLAUDE.md` step 5a — session-start calls `wiki context <attendee-slug>` for meeting attendees with wiki entity pages; skip-silent; no write-back); INT-17 (`~/code/newbiz/CLAUDE.md` — ideation sessions optionally query `wiki context --query <topic> --depth 2` for domain-relevant synthesis snippets). Tests: 1192 → 1200 passing (+8). K2 parity: 4/4 green. Tag: `m62-phase3-round-a`.
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
