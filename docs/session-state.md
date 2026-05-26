@@ -1,6 +1,6 @@
 # Session state — 2026-05-25
 
-Last updated: 2026-05-25 (M57 + M58 complete; Phase 2 Rounds C and D merged to main)
+Last updated: 2026-05-25 (M59 complete; Phase 2 Round E merged to main)
 
 ---
 
@@ -25,6 +25,12 @@ None.
   - AGT-1: inbox-triage agent; keyword-overlap domain inference (≥0.6 threshold); review-band triage queue; wiki triage list + wiki_triage MCP. +11 tests.
   - AGT-2: draft-closer agent; easy-win = no multi-citation per line → finalize(); hard case → log.md escalation; DRAFT_CLOSER_SCHEDULE; wiki draft-close run + wiki_draft_close MCP. +7 tests.
   - Total: 1152 → 1179 tests (+27). Tagged m58-phase2-round-d, merged to main.
+- M59 (Phase 2 Round E) complete:
+  - DOC-3: ARCHITECTURE.md (91 lines, Mermaid diagram, 10-row invariant table, data flow, "what is not here").
+  - DOC-4: 7 per-package READMEs under src/gateway/ sub-packages.
+  - DOC-2: CONTRIBUTING.md (119 lines, prerequisites, 4 recipes with done-when checklists, PR checklist).
+  - DOC-7: docs/adr/ — 15 ADRs (ADR-001 through ADR-015) + README index.
+  - Tests: 1179 passing (unchanged — documentation only). Tagged m59-phase2-round-e, merged to main.
 
 ---
 
@@ -37,4 +43,4 @@ None.
 
 ## Next atomic step
 
-Phase 2 Rounds C+D complete. No open contracts. Await next session or Phase 3 planning.
+Phase 2 all Rounds (C, D, E) complete. No open contracts. Await next session or Phase 3 planning.

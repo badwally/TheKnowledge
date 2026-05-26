@@ -19251,3 +19251,27 @@ report=.knowledge/lint/2026-05-26T02-14-51Z-schema-drift.md
 ## [2026-05-26T02:15:22Z] milestone | tag=m58-phase2-round-d | tests=1179 | delta=+27
 
 M58 Phase 2 Round D merged to main. ONT-6 (timestamp enforcement), TOK-12 (research salvage), AGT-1 (inbox-triage agent), AGT-2 (draft-closer agent). 1152 → 1179 tests.
+
+## [2026-05-26T02:15:28Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-15-28Z-schema-drift.md
+
+## [2026-05-26T02:33:37Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-33-37Z-schema-drift.md
+
+## [2026-05-26T02:38:46Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-38-46Z-schema-drift.md
+
+## [2026-05-26T02:40:47Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-40-47Z-schema-drift.md
+
+## [2026-05-26T02:46:34Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-46-34Z-schema-drift.md
+
+## [2026-05-26T02:47:58Z] lint | scope=schema-drift | schema-drift=4597
+
+report=.knowledge/lint/2026-05-26T02-47-58Z-schema-drift.md
