@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M84 complete; phase5-round-q merged)
+Last updated: 2026-05-26 (Phase 5 exit + Phase 6 plan written)
 
 ---
 
@@ -14,41 +14,34 @@ Carry-forward (not blocking anything):
 - INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
 - `wiki migrate` remains a stub.
 
-Deferred (L-effort or low-impact):
-- QUAL-8 (semantic citation-claim coherence) — L effort
-- ARCH-12 (second NLM backend) — L effort
-- ONT-5/7/9 (academic modeling) — M effort, low daily impact
-- ONT-1 (1000 concept reclassifications) — L effort + human-bottlenecked
-
 ---
 
 ## Files mid-edit
 
 None. main is clean at m84-phase5-round-q. 1640 tests passing.
+Phase 5 exit checkpoint + Phase 6 plan written in BUILD.md §§ 12–13.
 
 ---
 
 ## Decisions made this session
 
-- M81: SRCH-2 wiki index --rebuild
-- M82: TOOL-12 daily-domain-digest
-- M83: TOOL-13 /api/sources endpoint
-- M84: TOK-10 — voice/note + body <2KB → Sonnet; large/arxiv/pubmed → Opus
+- Phase 5 exit criteria all met (17 milestones M68–M84, 1640 tests).
+- Phase 6 theme: consuming the wiki — daily review surface + cross-project leverage + claim-level quality.
+- Phase 6 scope (priority order): TOOL-8, AGT-7, ONT-5, ONT-7.
 
 ---
 
-## Rejected approaches this session
+## Rejected approaches
 
-- M82: AGT-6 (artifact opt-in hard rule); QUAL-1/AGT-12 already done.
-- M84: domain-level overrides deferred (model.yaml resolver already in place).
+- ONT-9 (domain hierarchy): deferred — 22 MOCs manageable flat, hierarchy adds complexity without clear query benefit.
+- QUAL-8/ARCH-12/ONT-1: deferred — all L-effort, no forcing function.
 
 ---
 
 ## Next atomic step
 
-All S/M-effort Phase 4+5 items from rubric delivered. Remaining options:
-1. Phase 5 exit checkpoint — BUILD.md phase summary section (no code)
-2. ONT-5/7/9 (academic modeling) — M effort, low daily impact
-3. L-effort deferred items — need forcing function (QUAL-8, ARCH-12, ONT-1)
-
-Natural next: Phase 5 exit checkpoint or pivot to Phase 6 planning.
+Phase 6, Milestone 1. Start with TOOL-8 (`wiki daily` CLI + `/today` web route):
+- Deps: TOOL-7 (done). Zero new deps.
+- Output: triage list — drafts past N days, orphan sources, inbox count, recently ingested.
+- Web: `/today` returns same data as JSON for web UI.
+- Branch: `phase6-round-a`

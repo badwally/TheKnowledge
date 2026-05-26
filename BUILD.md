@@ -1087,6 +1087,97 @@ See `docs/milestones/M69.md`. Two capture-expansion pollers. INT-1 (`pollers/gma
 
 See `docs/milestones/M68.md`. Two migration ops closing the gap between ONT-4/ONT-6 validator enforcement and the legacy wiki corpus. ONT-4 (`ops/backfill_entity_kinds.py` — `backfill_entity_kinds(dry_run)` walks `wiki/entities/**/*.md`, applies `_KIND_MAP` of ~35 legacy aliases → canonical enum, unmapped → `"other"`; idempotent; `wiki backfill-entity-kinds [--dry-run]` CLI; `CLI_ONLY` in MCP; 12 tests); ONT-6 (`ops/backfill_timestamps.py` — `backfill_timestamps(dry_run)` stamps missing `created_at`/`last_updated` on entity/concept/synthesis pages using file mtime as proxy; idempotent; `wiki backfill-timestamps [--dry-run]` CLI; `CLI_ONLY` in MCP; 13 tests). ONT-8 confirmed already complete (validator + `lint/long_slugs.py` both shipped in prior milestone). Tests: 1298 → 1323 (+25), 0 regressions. Tag: `m68-phase5-round-a`.
 
+## 12. Phase 5 exit checkpoint (2026-05-26)
+
+**Milestones:** M68–M84 (17 milestones, Rounds A–Q)
+**Tests:** 1298 → 1640 (+342)
+**Tag range:** `m68-phase5-round-a` → `m84-phase5-round-q`
+
+### What Phase 5 delivered
+
+Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligations — schema migrations, doc suite, calibration set, retraction monitor, supersedence linking — that weren't reached in Phase 3/4. The second (M78–M84) expanded capture surface and completed the operational layer.
+
+**Capture expansion (pollers)**
+- INT-18: Notion source poller (`note-notion-<sha256[:12]>`, cursor, injectable client)
+- INT-19: Slack source poller (channel messages + threads, min_length/reply_count filter, injectable callables)
+- INT-3 confirmed via M70 (Podcast converter already shipped)
+- All five pollers noted in CLAUDE.md forward-looking section now shipped
+
+**Search + navigation**
+- SRCH-1: `wiki search` — fulltext grep over wiki/ + raw/, score 3/2/1 title/slug/body, MCP tool
+- SRCH-2: `wiki index --rebuild` — domain-grouped index.md catalog, cross-domain section, health summary
+
+**Scheduled agent loop**
+- TOOL-12: `wiki routine daily-domain-digest` — polls new sources, LLM digest, draft synthesis page, daily cron at 06:00 UTC
+
+**Operational surface**
+- TOOL-13: `/api/sources` web endpoint — source explorer with q/domain/type/limit filters
+- TOK-10: `plan_authorship_small` Sonnet route for voice/note + body <2 KB (~5x cost reduction)
+
+**Schema + quality (residual Phase 3)**
+- ARCH-15: `schema_version: 1` injected by `fm.serialize`
+- ONT-11: `wiki backfill-synthesizes` — populates `synthesizes:` from body wikilinks
+- ONT-13: `last_verified_at` lint for statute/standard entities
+- QUAL-7: PubMed retraction + arXiv revision pollers
+- QUAL-10: held-out calibration set, `wiki finetune --distill` uses precision/recall/F1
+- QUAL-14: `wiki reingest` — versioned successor with `supersedes`/`superseded_by` linking
+- ARCH-13: query-plan lifecycle (`planned|executed|abandoned`, archive)
+- DOC-5/8/9-12: log rotation, CHANGELOG, tests/README, MCP_API.md, RUNBOOK.md
+
+### Phase 5 exit criteria verdict
+
+| Criterion | Status |
+|-----------|--------|
+| All five pollers shipped | ✓ |
+| wiki search + index --rebuild | ✓ |
+| Scheduled daily digest loop | ✓ |
+| Source-explorer web view | ✓ |
+| Model cost routing (TOK-10) | ✓ |
+| 1640 tests, 0 regressions | ✓ |
+
+### What Phase 5 did NOT deliver (carried to Phase 6 or deferred)
+
+| Item | Reason deferred |
+|------|----------------|
+| ONT-5/7/9 (academic modeling) | M effort, low daily-use impact; no retrieval failures yet |
+| QUAL-8 (citation-claim coherence) | L effort LLM work; needs forcing function |
+| ARCH-12 (second NLM backend) | L effort; NotebookLM disruption not acute |
+| ONT-1 (1000 concept reclassifications) | L effort + human-bottlenecked |
+| `wiki migrate` stub | Low demand; no migration scripts queued |
+| AGT-7 (capture-to-cite cross-project) | Deps satisfied but scoping deferred |
+
+---
+
+## 13. Phase 6 plan (2026-05-26)
+
+**Thesis:** Phase 6 bets on *consuming* the wiki, not just filling it. Phases 1–5 built the ingestion pipeline, quality monitors, and pollers. The gap now is that there is no daily-use surface that brings knowledge back to the user — no review loop, no cross-project leverage, no quality annotations at the claim level. Phase 6 closes that gap.
+
+### Proposed scope
+
+| Item | Effort | Rationale |
+|------|--------|-----------|
+| TOOL-8 (`wiki daily` + `/today`) | M | TOOL-7 dep satisfied. Only scheduled-output consumer missing. Closes: "I have 500 sources but no morning review ritual." |
+| AGT-7 (capture-to-cite cross-project) | M | Deps satisfied (cite-add, MCP parity). Highest-leverage cross-project item: takes a quote + URL from any repo, ingests if needed, adds citation. |
+| ONT-5 (paper entity → canonical_source) | M | 46 paper entities with inconsistent citation chains. `canonical_source:` field + validator + lint. Directly improves retrieval fidelity. |
+| ONT-7 (per-claim confidence, 3-tier GRADE) | M | Adds `confidence: tentative|established|speculative` per claim; propagation rule in validator; distribution in lint. Low schema friction, high interpretive value. |
+
+### Deferred to Phase 7 or beyond
+
+| Item | Reason |
+|------|--------|
+| QUAL-8 | L effort; no forcing function |
+| ARCH-12 | L effort; NotebookLM still operational |
+| ONT-1 | Human-bottlenecked; wait for retrieval failures |
+| ONT-9 (domain hierarchy) | 22 MOCs is manageable flat; hierarchy adds complexity without clear query benefit yet |
+
+### Phase 6 exit criteria
+
+- `wiki daily` CLI outputs a triage list (drafts + orphans + new sources) and `/today` route is live
+- AGT-7 `/wiki-cite` slash command wired and tested
+- `canonical_source:` enforced on `entity_kind: paper`; lint surfaces violations
+- Per-claim confidence field validated; 3-tier distribution surfaced in `wiki lint`
+- Tests: ≥1700 total, 0 regressions
+
 ## 11. Downstream wiki-authoring work (post-migration)
 
 These are not migration script work; they require LLM-driven authorship over already-migrated canonical content:
