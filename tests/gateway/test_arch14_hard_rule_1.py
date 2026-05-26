@@ -65,6 +65,10 @@ def test_ops_write_path_uses_write_atomic() -> None:
     _ALLOWED_WRITE_TEXT = {
         # These write to tmp/cli output, not wiki/ or raw/
         "ops/status.py",
+        # skill_emit reads wiki_dir() for MOC but writes only to .claude/skills/ (not wiki/raw)
+        "ops/skill_emit.py",
+        # rotate_log reads log_path() (knowledge root, not wiki/raw) via write_text under lock
+        "ops/rotate_log.py",
     }
 
     violations = []

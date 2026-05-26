@@ -67,6 +67,8 @@ SUBCOMMANDS: dict[str, str] = {
     "backfill-entity-kinds": "Remap legacy entity_kind values to the ONT-4 controlled vocabulary",
     "backfill-timestamps": "Stamp missing created_at / last_updated on entity/concept/synthesis pages (ONT-6)",
     "backfill-synthesizes": "Populate synthesizes: on synthesis pages from body wikilink citations (ONT-11)",
+    "skill-emit": "Generate .claude/skills/wiki-<domain>/SKILL.md for a domain (AGT-13)",
+    "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -119,6 +121,8 @@ IMPLEMENTED: set[str] = {
     "backfill-entity-kinds",
     "backfill-timestamps",
     "backfill-synthesizes",
+    "skill-emit",
+    "rotate-log",
 }
 
 
@@ -962,6 +966,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_bsy = subparsers.add_parser("backfill-synthesizes", help=SUBCOMMANDS["backfill-synthesizes"])
     p_bsy.add_argument("--dry-run", action="store_true", help="Report changes without writing")
 
+    # skill-emit (AGT-13)
+    p_skill = subparsers.add_parser("skill-emit", help=SUBCOMMANDS["skill-emit"])
+    p_skill.add_argument("domain", help="Domain slug to generate a skill for")
+
+    # rotate-log (DOC-5)
+    p_rot = subparsers.add_parser("rotate-log", help=SUBCOMMANDS["rotate-log"])
+    p_rot.add_argument(
+        "--keep-days",
+        dest="keep_days",
+        type=int,
+        default=90,
+        help="Keep this many days of entries in log.md (default: 90)",
+    )
+    p_rot.add_argument("--dry-run", action="store_true", help="Report what would be archived without writing")
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1083,6 +1102,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_timestamps_cmd(ns)
     if ns.subcommand == "backfill-synthesizes":
         return _run_backfill_synthesizes_cmd(ns)
+    if ns.subcommand == "skill-emit":
+        return _run_skill_emit_cmd(ns)
+    if ns.subcommand == "rotate-log":
+        return _run_rotate_log_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1980,6 +2003,23 @@ def _run_backfill_synthesizes_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.backfill_synthesizes import backfill_synthesizes
 
     return _emit_result(backfill_synthesizes(dry_run=getattr(ns, "dry_run", False)))
+
+
+def _run_skill_emit_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.skill_emit import skill_emit
+
+    return _emit_result(skill_emit(ns.domain))
+
+
+def _run_rotate_log_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.rotate_log import rotate_log
+
+    return _emit_result(
+        rotate_log(
+            keep_days=getattr(ns, "keep_days", 90),
+            dry_run=getattr(ns, "dry_run", False),
+        )
+    )
 
 
 if __name__ == "__main__":
