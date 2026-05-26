@@ -87,6 +87,10 @@ def wiki_source_path(source_id: str) -> Path:
     return wiki_dir() / "sources" / f"{source_id}.md"
 
 
+def agenda_dir() -> Path:
+    return wiki_dir() / "agenda"
+
+
 class PromptGuardError(RuntimeError):
     """Raised when a prompt-unsafe file (log.md, index.md) is passed for LLM context."""
 

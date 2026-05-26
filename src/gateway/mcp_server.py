@@ -881,6 +881,50 @@ def wiki_digest(hours: float = 24.0, stale_days: int = 7) -> dict[str, Any]:
     return _serialize(OperationResult(success=True, summary=content))
 
 
+@mcp.tool()
+def wiki_agenda(
+    date: str = "",
+    events: list[dict[str, Any]] | None = None,
+    write: bool = True,
+) -> dict[str, Any]:
+    """Calendar-aware meeting-prep briefing (INT-13).
+
+    Assembles a markdown briefing for meetings with ≥2 attendees by looking up
+    attendee entity pages and event-topic concept pages in the wiki.
+
+    Typical agent workflow:
+      1. Call `mcp__claude_ai_Google_Calendar__list_events` for the target date.
+      2. Pass the resulting event list to this tool as `events`.
+
+    `date`: ISO date string (YYYY-MM-DD). Defaults to today.
+    `events`: Calendar event dicts in Google Calendar API format.
+    `write`: If True (default), write output to wiki/agenda/<date>.md.
+    """
+    import json as _json
+    from datetime import date as _date
+    from gateway.ops.wiki_agenda import build_agenda, write_agenda
+
+    date_str = date or _date.today().isoformat()
+    ev = events or []
+    # events may arrive as JSON string from some MCP clients
+    if isinstance(ev, str):
+        ev = _json.loads(ev)
+
+    if write:
+        out_path = write_agenda(date_str, ev)
+        agenda_md = out_path.read_text()
+        result = _serialize(OperationResult(
+            success=True,
+            summary=f"Agenda written to {out_path}",
+            paths_touched=[out_path],
+        ))
+        result["agenda"] = agenda_md
+        return result
+
+    content = build_agenda(date_str, ev)
+    return _serialize(OperationResult(success=True, summary=content))
+
+
 # --- entry point -----------------------------------------------------------
 
 

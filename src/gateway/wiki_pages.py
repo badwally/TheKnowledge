@@ -103,6 +103,13 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
         required_sections=("Summary",),
         citation_grounded=False,
     ),
+    "agenda": PageTypeSchema(
+        type_name="agenda",
+        directory="wiki/agenda",
+        required_fields=("type", "date", "generated_at"),
+        required_sections=(),
+        citation_grounded=False,
+    ),
 }
 
 
