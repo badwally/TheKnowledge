@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M80 complete; phase5-round-m merged)
+Last updated: 2026-05-26 (M81 complete; phase5-round-n merged)
 
 ---
 
@@ -16,33 +16,41 @@ Carry-forward (not blocking anything):
 - QUAL-10 calibration sets for production domains need manual labelling.
 - QUAL-8 (semantic citation-claim coherence) deferred — L-effort.
 - INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
-- `wiki index` and `wiki migrate` remain stubs.
+- `wiki migrate` remains a stub.
 
 ---
 
 ## Files mid-edit
 
-None. M80 merged to main as m80-phase5-round-m. 1579 tests passing.
+None. M81 merged to main as m81-phase5-round-n. 1596 tests passing.
 
 ---
 
 ## Decisions made this session
 
-- M78: Notion poller — note-notion-<sha256(page_id)[:12]> slug; injectable client.
+- M81: SRCH-2 wiki index --rebuild — used explicit `_DIR_TO_TYPE` dict (not `rstrip("s")`); MCP tool named `wiki_index` to satisfy parity convention; `write_atomic` from `core`.
+- M80: SRCH-1 wiki search — score 3/2/1 title/slug/body; no external deps.
 - M79: Slack poller — min_length filter + thread ingest; injectable fetch callables.
-- M80: SRCH-1 wiki search — score 3/2/1 title/slug/body; no external deps; smoke test updated to use `index` stub.
+- M78: Notion poller — note-notion-<sha256(page_id)[:12]> slug; injectable client.
+
+---
+
+## Rejected approaches this session
+
+- M81: `locking.write_atomic` — module has no such function; used `core.write_atomic`.
+- M81: `rstrip("s")` for dir→type mapping — corrupts "synthesis" → "synthesi".
+- M81: MCP tool named `wiki_index_rebuild` — parity test expects `wiki_{cli_op}` = `wiki_index`.
 
 ---
 
 ## Next atomic step
 
-Post-M80 remaining Phase 5 engineering items:
-- QUAL-8 (L effort, deferred)
-- ARCH-12 (L effort, deferred)
-- TOK-10 (minor optimization)
-- ONT-5/7/9 (academic modeling, low daily impact)
-- `wiki index --rebuild` stub (low priority)
-- `wiki migrate <name>` stub (low priority)
+Phase 5 substantially complete. M81 closes the last "stub" item noted in CLAUDE.md.
 
-Phase 5 appears substantially complete. Consider Phase 5 closeout or moving to next quality improvement.
-Highest-value next item: assess whether ONT-5 (claim_type taxonomy) or TOK-10 (Sonnet authorship) is worth doing.
+Remaining engineering options in priority order:
+1. TOK-10: minor optimization (Sonnet authorship cost reduction) — S effort
+2. ONT-5/7/9: academic modeling ops — low daily impact
+3. ARCH-12: deferred — L effort
+4. Phase 5 closeout / milestone checkpoint
+
+Highest-value next item: TOK-10 or Phase 5 closeout checkpoint.
