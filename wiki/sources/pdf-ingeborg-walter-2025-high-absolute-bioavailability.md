@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:18:54Z'
 
 **Source:** [[raw/pdf/pdf-ingeborg-walter-2025-high-absolute-bioavailability]] · pdf · 2025
 **Authors:** Ingeborg Walter-Sack, Jens Rengelshausen, Heike Oberwittler, Juergen Burhenne, Olaf Mueller, Peter Meissner, Gerd Mikus
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

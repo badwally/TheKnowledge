@@ -14,16 +14,4 @@ nlm_corpus_ids:
 
 **Source:** [[raw/pdf/pdf-db0621cb54d0]] · pdf · 2024
 **Authors:** Maryluz Velasco
-**Filter:** None () — 
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_
+**Filter:** None () —

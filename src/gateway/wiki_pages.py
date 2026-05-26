@@ -48,8 +48,8 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
         type_name="source",
         directory="wiki/sources",
         required_fields=("type", "source_id", "source_type", "title", "ingested_at"),
-        required_sections=("Summary", "Key claims", "Cross-references"),
-        citation_grounded=True,
+        required_sections=(),
+        citation_grounded=False,
     ),
     "synthesis": PageTypeSchema(
         type_name="synthesis",

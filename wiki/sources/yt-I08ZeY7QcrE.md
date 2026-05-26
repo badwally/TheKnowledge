@@ -11,15 +11,3 @@ ingested_at: '2026-05-23T17:56:28Z'
 
 **Source:** [[raw/youtube/yt-I08ZeY7QcrE]] · youtube · [original](https://www.youtube.com/watch?v=I08ZeY7QcrE)
 **Authors:** EO
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

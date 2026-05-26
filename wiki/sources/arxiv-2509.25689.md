@@ -16,15 +16,3 @@ filter_score: 0.8
 
 **Source:** [[raw/arxiv/arxiv-2509.25689]] · arxiv · [original](http://arxiv.org/abs/2509.25689v1) · 2025-09-30
 **Authors:** Yixiao Chen, Yanyue Xie, Ruining Yang, Wei Jiang, Wei Wang, Yong He, Yue Chen, Pu Zhao, Yanzhi Wang
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

@@ -11,15 +11,3 @@ ingested_at: '2026-05-20T21:00:39Z'
 
 **Source:** [[raw/arxiv/arxiv-2507.01056]] · arxiv · [original](https://arxiv.org/abs/2507.01056) · 2025-06-28
 **Authors:** Lidan Peng, Lu Gao, Feng Hong, Jingran Sun
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

@@ -10,15 +10,3 @@ ingested_at: '2026-04-29T16:25:26Z'
 
 **Source:** [[raw/pdf/pdf-eric-j-2007-microsoft-word-sympathetic]] · pdf · 2007
 **Authors:** Eric J. Miller
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

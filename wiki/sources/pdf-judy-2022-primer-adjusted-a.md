@@ -11,15 +11,3 @@ ingested_at: '2026-04-29T16:21:57Z'
 
 **Source:** [[raw/pdf/pdf-judy-2022-primer-adjusted-a]] · pdf · 2022
 **Authors:** Judy
-
-## Summary
-
-_(summary not yet generated — agent-driven authorship lands in M6)_
-
-## Key claims
-
-_(claims not yet extracted)_
-
-## Cross-references
-
-_(no cross-references yet)_

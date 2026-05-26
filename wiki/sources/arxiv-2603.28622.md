@@ -16,15 +16,3 @@ filter_score: 1.0
 
 **Source:** [[raw/arxiv/arxiv-2603.28622]] · arxiv · [original](http://arxiv.org/abs/2603.28622v1) · 2026-03-30
 **Authors:** Chanh Nguyen, Erik Elmroth
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

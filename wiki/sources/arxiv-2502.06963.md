@@ -17,15 +17,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2502.06963]] · arxiv · [original](http://arxiv.org/abs/2502.06963v2) · 2025-02-10
 **Authors:** Ashab Uddin, Ahmed Hamdi Sakr, Ning Zhang
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_

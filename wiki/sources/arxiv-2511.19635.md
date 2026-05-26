@@ -16,15 +16,3 @@ filter_score: 0.6
 
 **Source:** [[raw/arxiv/arxiv-2511.19635]] · arxiv · [original](http://arxiv.org/abs/2511.19635v1) · 2025-11-24
 **Authors:** Abhi Chivukula, Jay Somasundaram, Vijay Somasundaram
-
-## Summary
-
-_(legacy migration — see raw frontmatter for the original summary text)_
-
-## Key claims
-
-_(claims not yet extracted from legacy)_
-
-## Cross-references
-
-_(no cross-references yet)_
