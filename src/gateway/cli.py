@@ -62,6 +62,8 @@ SUBCOMMANDS: dict[str, str] = {
     "agenda": "Calendar-aware meeting prep briefing per day (INT-13)",
     "briefing-cron": "Run per-domain nlm-briefing for all blessed domains (AGT-6, corpus-hash skip)",
     "contradiction-sweep": "Weekly per-domain LLM contradiction scan → draft synthesis pages (AGT-4)",
+    "contradiction-drift": "Nightly contradiction JSON snapshot + diff against yesterday (TOOL-14)",
+    "publish-notion": "Mirror wiki domain pages to a Notion database (INT-12)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -109,6 +111,8 @@ IMPLEMENTED: set[str] = {
     "agenda",
     "briefing-cron",
     "contradiction-sweep",
+    "contradiction-drift",
+    "publish-notion",
 }
 
 
@@ -912,6 +916,21 @@ def build_parser() -> argparse.ArgumentParser:
     p_csweep.add_argument("--domain", metavar="SLUG", help="Sweep a single domain (default: all blessed)")
     p_csweep.add_argument("--week", metavar="YYYY-WNN", help="Override ISO week (default: current)")
 
+    # contradiction-drift (TOOL-14)
+    p_cdrift = subparsers.add_parser("contradiction-drift", help=SUBCOMMANDS["contradiction-drift"])
+    p_cdrift.add_argument("--date", metavar="YYYY-MM-DD", help="Override date (default: today)")
+    p_cdrift.add_argument("--digest", action="store_true", help="Include 7-day weekly digest in output")
+
+    # publish-notion (INT-12)
+    p_pnotion = subparsers.add_parser("publish-notion", help=SUBCOMMANDS["publish-notion"])
+    p_pnotion.add_argument("domain", help="Domain slug to mirror")
+    p_pnotion.add_argument(
+        "--include",
+        nargs="*",
+        metavar="TYPE",
+        help="Additional page types to include: sources, artifacts",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1023,6 +1042,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_briefing_cron_cmd(ns)
     if ns.subcommand == "contradiction-sweep":
         return _run_contradiction_sweep_cmd(ns)
+    if ns.subcommand == "contradiction-drift":
+        return _run_contradiction_drift_cmd(ns)
+    if ns.subcommand == "publish-notion":
+        return _run_publish_notion_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1859,6 +1882,30 @@ def _run_contradiction_sweep_cmd(ns: argparse.Namespace) -> int:
         run_contradiction_sweep(
             domain=getattr(ns, "domain", None),
             week=getattr(ns, "week", None),
+        )
+    )
+
+
+def _run_contradiction_drift_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.contradiction_drift import run_contradiction_drift
+
+    return _emit_result(
+        run_contradiction_drift(
+            date_str=getattr(ns, "date", None),
+            include_digest=getattr(ns, "digest", False),
+        )
+    )
+
+
+def _run_publish_notion_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.publish_notion import publish_notion
+
+    include = list(getattr(ns, "include", None) or [])
+    return _emit_result(
+        publish_notion(
+            ns.domain,
+            include_sources="sources" in include,
+            include_artifacts="artifacts" in include,
         )
     )
 

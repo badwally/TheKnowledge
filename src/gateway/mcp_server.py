@@ -70,6 +70,10 @@ CLI_ONLY: frozenset[str] = frozenset(
         # should not trigger corpus-wide NLM briefing runs; the scheduler
         # owns invocation. CLI-only by design.
         "briefing-cron",
+        # `contradiction-drift` is a nightly snapshot job (TOOL-14).
+        # Agents should not trigger corpus-wide LLM contradiction scans;
+        # the scheduler owns invocation. CLI-only by design.
+        "contradiction-drift",
     }
 )
 
@@ -772,6 +776,35 @@ def wiki_contradiction(
             return _serialize(OperationResult(success=False, summary="slug is required for resolve", errors=["missing slug"]))
         return _serialize(resolve_contradiction(slug, status=status, note=note))
     return _serialize(OperationResult(success=False, summary=f"unknown action {action!r}", errors=[f"expected list or resolve"]))
+
+
+@mcp.tool()
+def wiki_publish_notion(
+    domain: str,
+    include_sources: bool = False,
+    include_artifacts: bool = False,
+) -> dict[str, Any]:
+    """Mirror wiki pages for a domain to a Notion database (INT-12).
+
+    Upserts entities, concepts, synthesis, and MoC pages to a per-domain
+    Notion database. Idempotent: re-running converges to current state.
+    Archives Notion rows for wiki pages that no longer exist.
+
+    Requires NOTION_TOKEN and NOTION_PARENT_PAGE_ID environment variables.
+
+    `domain`: domain slug to mirror.
+    `include_sources`: also sync wiki/sources pages (default False).
+    `include_artifacts`: also sync wiki/artifacts pages (default False).
+    """
+    from gateway.ops.publish_notion import publish_notion
+
+    return _serialize(
+        publish_notion(
+            domain,
+            include_sources=include_sources,
+            include_artifacts=include_artifacts,
+        )
+    )
 
 
 @mcp.tool()
