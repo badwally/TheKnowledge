@@ -58,6 +58,7 @@ SUBCOMMANDS: dict[str, str] = {
     "triage": "Manage the inbox-triage review queue (AGT-1)",
     "draft-close": "Run the draft-closer agent: auto-finalize easy wins, escalate hard cases (AGT-2)",
     "agents": "Run a named agent (inbox-triage | draft-closer | agent-digest) on demand or from the scheduler",
+    "digest": "Daily content brief: new sources, new synthesis, stale drafts, triage queue (INT-14)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -101,6 +102,7 @@ IMPLEMENTED: set[str] = {
     "triage",
     "draft-close",
     "agents",
+    "digest",
 }
 
 
@@ -851,6 +853,28 @@ def build_parser() -> argparse.ArgumentParser:
         help="Agent to run",
     )
 
+    # digest (INT-14 — daily content brief)
+    p_digest = subparsers.add_parser("digest", help=SUBCOMMANDS["digest"])
+    p_digest.add_argument(
+        "--hours",
+        type=float,
+        default=24.0,
+        metavar="N",
+        help="Look-back window in hours (default: 24)",
+    )
+    p_digest.add_argument(
+        "--stale-days",
+        type=int,
+        default=7,
+        metavar="N",
+        help="Draft staleness threshold in days (default: 7)",
+    )
+    p_digest.add_argument(
+        "--out",
+        metavar="PATH",
+        help="Write output to a file instead of stdout",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -954,6 +978,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_draft_close_cmd(ns)
     if ns.subcommand == "agents":
         return _run_agents_cmd(ns)
+    if ns.subcommand == "digest":
+        return _run_digest_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1728,6 +1754,22 @@ def _run_agents_cmd(ns: argparse.Namespace) -> int:
 
     print(f"error: unknown agent name: {name!r}", file=sys.stderr)
     return 2
+
+
+def _run_digest_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.wiki_digest import build_wiki_digest
+
+    content = build_wiki_digest(
+        hours=ns.hours,
+        stale_days=ns.stale_days,
+    )
+    out_path = getattr(ns, "out", None)
+    if out_path:
+        Path(out_path).write_text(content)
+        print(f"digest written to {out_path}")
+    else:
+        print(content, end="")
+    return 0
 
 
 if __name__ == "__main__":
