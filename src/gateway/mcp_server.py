@@ -66,6 +66,10 @@ CLI_ONLY: frozenset[str] = frozenset(
         # Agents must NOT be able to grant themselves remote-capture
         # credentials. CLI-only by design.
         "auth",
+        # `briefing-cron` is a scheduled maintenance job (AGT-6). Agents
+        # should not trigger corpus-wide NLM briefing runs; the scheduler
+        # owns invocation. CLI-only by design.
+        "briefing-cron",
     }
 )
 

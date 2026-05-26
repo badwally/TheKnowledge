@@ -21,6 +21,7 @@ from gateway.lint import (
     citation_density,
     contradiction_pages,
     contradictions,
+    domain_purity,
     filter_calibration,
     idempotency,
     inbox_pending,
@@ -55,6 +56,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("long-slugs", long_slugs.run),
     ("contradiction-pages", contradiction_pages.run),
     ("synthesizes-coverage", synthesizes_coverage.run),
+    ("domain-purity", domain_purity.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
