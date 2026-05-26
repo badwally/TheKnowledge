@@ -85,7 +85,9 @@ def finalize(page_path: str | Path, *, abandon: bool = False) -> OperationResult
     front.pop("draft", None)
     front.pop("draft_started_at", None)
     front.pop("draft_unresolved_claims", None)
-    front["finalized_at"] = _now_iso()
+    _now = _now_iso()
+    front["finalized_at"] = _now
+    front["last_updated"] = _now
 
     with file_lock("wiki-author"):
         write_atomic(target, fm.serialize(front, body))

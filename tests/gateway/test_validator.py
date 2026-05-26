@@ -211,6 +211,8 @@ def test_validate_citation_verbs_wired_into_validate_wiki_page():
         "title": "Food Noise",
         "domain": "glp1",
         "domains": ["glp1"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
     }
     body = "Food noise is reduced. [[sources/yt-abc123|invented]]\n\n## Summary\n\nSummary text. [[sources/yt-abc123|invented]]\n"
     result = v.validate_wiki_page(front, body, page_type="concept", draft=True)
@@ -229,6 +231,8 @@ def _entity_front(entity_kind: str) -> dict:
         "canonical_name": "Test Entity",
         "domain": "glp1",
         "domains": ["glp1"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
     }
 
 
@@ -300,9 +304,12 @@ def _concept_front(slug: str) -> dict:
     return {
         "type": "concept",
         "slug": slug,
+        "canonical_name": slug,
         "title": slug,
         "domain": "glp1",
         "domains": ["glp1"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
     }
 
 

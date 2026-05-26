@@ -32,6 +32,8 @@ def _write_concept(slug: str, *, body: str | None = None, draft: bool = False, s
         "slug": slug,
         "canonical_name": slug.replace("-", " "),
         "domains": domains or ["d-test"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
     }
     if draft:
         front["draft"] = True

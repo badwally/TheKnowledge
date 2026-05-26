@@ -664,6 +664,8 @@ def _good_concept_page() -> tuple[dict, str]:
         "slug": "food-noise",
         "canonical_name": "Food noise",
         "domains": ["glp1-reward-modulation"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
     }
     body = (
         "# Food noise\n\n"
@@ -768,6 +770,8 @@ def test_citation_grounding_warning_in_draft_mode():
         "slug": "food-noise",
         "canonical_name": "Food noise",
         "domains": ["d"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
         "draft": True,
     }
     body = (
@@ -1170,6 +1174,8 @@ def test_finalize_promotes_draft_when_citations_resolve(kb_root, make_source):
         "slug": "fin-1",
         "canonical_name": "Fin",
         "domains": ["d-apply"],
+        "created_at": "2026-04-28T00:00:00Z",
+        "last_updated": "2026-04-28T00:00:00Z",
         "draft": True,
         "draft_started_at": "2026-04-28T00:00:00Z",
     }

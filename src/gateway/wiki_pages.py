@@ -33,14 +33,14 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
     "entity": PageTypeSchema(
         type_name="entity",
         directory="wiki/entities",
-        required_fields=("type", "slug", "canonical_name", "entity_kind", "domains"),
+        required_fields=("type", "slug", "canonical_name", "entity_kind", "domains", "created_at", "last_updated"),
         required_sections=("Summary", "Key facts", "Sources", "Related"),
         citation_grounded=True,
     ),
     "concept": PageTypeSchema(
         type_name="concept",
         directory="wiki/concepts",
-        required_fields=("type", "slug", "canonical_name", "domains"),
+        required_fields=("type", "slug", "canonical_name", "domains", "created_at", "last_updated"),
         required_sections=("Summary", "Key claims", "Sources", "Related"),
         citation_grounded=True,
     ),
@@ -54,7 +54,7 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
     "synthesis": PageTypeSchema(
         type_name="synthesis",
         directory="wiki/synthesis",
-        required_fields=("type", "slug", "title", "domains", "question"),
+        required_fields=("type", "slug", "title", "domains", "question", "created_at", "last_updated", "sources_count"),
         required_sections=("Synthesis", "Sources cited"),
         citation_grounded=True,
     ),
