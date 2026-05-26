@@ -7,6 +7,9 @@ structural-generation tasks where Sonnet 4.6 delivers equivalent quality
 at ~5x lower cost / faster turnaround. Split into per-purpose stages
 (`plan_authorship`, `plan_bootstrap_domain`, `plan_query_planner`); keep
 `plan` as a back-compat alias for the authorship default.
+TOK-10 (M84): `plan_authorship_small` for low-stakes ingests (voice/note
+source types and web sources with body < 2 KB). Routes to Sonnet 4.6 —
+equivalent schema-compliance + citation-grounding at lower cost.
 
 Per-domain overrides may be added via `.knowledge/policies/<domain>/model.yaml`
 in a follow-up — the resolver is in place but currently returns defaults.
@@ -20,7 +23,8 @@ from typing import Literal
 Stage = Literal[
     "filter",
     "plan",                    # back-compat alias → plan_authorship
-    "plan_authorship",         # wiki ingest --with-plan (multi-page authorship)
+    "plan_authorship",         # wiki ingest --with-plan (multi-page authorship, Opus)
+    "plan_authorship_small",   # TOK-10: low-stakes ingest (voice/note or body <2 KB, Sonnet)
     "plan_bootstrap_domain",   # wiki bootstrap-domain (policy.yaml generation)
     "plan_query_planner",      # wiki research planner (per-adapter query expansion)
     "vlm",
@@ -31,6 +35,7 @@ Stage = Literal[
 
 DEFAULT_FILTER_MODEL = "claude-haiku-4-5-20251001"
 DEFAULT_PLAN_AUTHORSHIP_MODEL = "claude-opus-4-7"
+DEFAULT_PLAN_AUTHORSHIP_SMALL_MODEL = "claude-sonnet-4-6"
 DEFAULT_PLAN_BOOTSTRAP_DOMAIN_MODEL = "claude-sonnet-4-6"
 DEFAULT_PLAN_QUERY_PLANNER_MODEL = "claude-sonnet-4-6"
 DEFAULT_VLM_MODEL = "claude-opus-4-7"
@@ -52,6 +57,7 @@ def model_for(stage: Stage, domain: str | None = None) -> str:
       - "filter" → Haiku 4.5 (high-volume binary triage)
       - "plan" → Opus 4.7 (back-compat alias for plan_authorship)
       - "plan_authorship" → Opus 4.7 (`wiki ingest --with-plan`)
+      - "plan_authorship_small" → Sonnet 4.6 (TOK-10: voice/note or body <2 KB)
       - "plan_bootstrap_domain" → Sonnet 4.6 (`wiki bootstrap-domain`)
       - "plan_query_planner" → Sonnet 4.6 (`wiki research` query expansion)
       - "vlm" → Opus 4.7 (image conversion)
@@ -62,6 +68,8 @@ def model_for(stage: Stage, domain: str | None = None) -> str:
         return DEFAULT_FILTER_MODEL
     if stage == "plan" or stage == "plan_authorship":
         return DEFAULT_PLAN_AUTHORSHIP_MODEL
+    if stage == "plan_authorship_small":
+        return DEFAULT_PLAN_AUTHORSHIP_SMALL_MODEL
     if stage == "plan_bootstrap_domain":
         return DEFAULT_PLAN_BOOTSTRAP_DOMAIN_MODEL
     if stage == "plan_query_planner":

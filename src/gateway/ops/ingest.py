@@ -496,6 +496,19 @@ _STAGE1_SNIPPET_CHARS = 200      # chars of body sent in stage-1 per page
 _STAGE1_FULL_BODY_THRESHOLD = 5  # send full body when wiki has ≤ this many pages
 _STAGE1_PROMPT_CAP = 10_000      # byte cap for the entire existing-pages block
 
+# TOK-10: voice notes and Notion/Slack/Apple-Notes snippets don't need Opus.
+_SMALL_SOURCE_TYPES: frozenset[str] = frozenset({"voice", "note"})
+_SMALL_BODY_THRESHOLD = 2048  # bytes — short web clips also use Sonnet
+
+
+def _authorship_model(front: dict, body: str) -> str:
+    """TOK-10: route low-stakes sources to Sonnet to reduce cost."""
+    from gateway.llm import model_for
+    source_type = str(front.get("type", ""))
+    if source_type in _SMALL_SOURCE_TYPES or len(body.encode()) < _SMALL_BODY_THRESHOLD:
+        return model_for("plan_authorship_small")
+    return model_for("plan_authorship")
+
 
 def _invoke_plan_and_apply(
     *,
@@ -507,8 +520,9 @@ def _invoke_plan_and_apply(
 ) -> OperationResult:
     if plan_client is None:
         from gateway.plan import ClaudeCLIPlanClient
+        from gateway.llm import model_for
 
-        plan_client = ClaudeCLIPlanClient()
+        plan_client = ClaudeCLIPlanClient(model=_authorship_model(front, body))
 
     source_text = _format_source_for_plan(front, body)
     existing_pages = _gather_existing_pages(domain)
