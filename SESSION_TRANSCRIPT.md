@@ -1,5 +1,7 @@
 # SESSION_TRANSCRIPT.md — Design and build of the canonical knowledge base, v1
 
+> **Historical artifact.** This document records the founding design session (M0–M10, 2026-04-27). The canonical specifications that supersede it are `WIKI.md`, `ARCHITECTURE.md`, and `CLAUDE.md`. For the full delivery record, see `BUILD.md § 9` and `CHANGELOG.md`. For the design artifacts index, see `docs/superpowers/README.md`.
+
 Single sustained session that took the user from "compare these two patterns" through full architectural design, schema specification, migration plan, and a working v1 of every gateway component. This document is the chronological narrative — the *why* and *how* behind each commit. Verbatim conversation transcripts are not stored; this is the load-bearing record.
 
 **Session goal stated by the user**: review Karpathy's "LLM Wiki" gist (`442a6bf555914893e9891c11519de94f`) against the existing `~/code/research-notebook/` system; design a comprehensive knowledge management system with a simple agent interface for deep research; expand source diversity; make the KB efficiently available to agents working on `~/code/*` projects.
