@@ -59,6 +59,7 @@ SUBCOMMANDS: dict[str, str] = {
     "draft-close": "Run the draft-closer agent: auto-finalize easy wins, escalate hard cases (AGT-2)",
     "agents": "Run a named agent (inbox-triage | draft-closer | agent-digest) on demand or from the scheduler",
     "digest": "Daily content brief: new sources, new synthesis, stale drafts, triage queue (INT-14)",
+    "agenda": "Calendar-aware meeting prep briefing per day (INT-13)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -103,6 +104,7 @@ IMPLEMENTED: set[str] = {
     "draft-close",
     "agents",
     "digest",
+    "agenda",
 }
 
 
@@ -875,6 +877,29 @@ def build_parser() -> argparse.ArgumentParser:
         help="Write output to a file instead of stdout",
     )
 
+    # agenda (INT-13 — calendar-aware meeting prep)
+    p_agenda = subparsers.add_parser("agenda", help=SUBCOMMANDS["agenda"])
+    p_agenda.add_argument(
+        "--date",
+        metavar="YYYY-MM-DD",
+        help="Target date (default: today)",
+    )
+    p_agenda.add_argument(
+        "--events-json",
+        metavar="PATH",
+        help="JSON file containing calendar events (Google Calendar API format)",
+    )
+    p_agenda.add_argument(
+        "--out",
+        metavar="PATH",
+        help="Write output to a file instead of wiki/agenda/<date>.md",
+    )
+    p_agenda.add_argument(
+        "--no-write",
+        action="store_true",
+        help="Print to stdout only; do not write wiki/agenda/<date>.md",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -980,6 +1005,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_agents_cmd(ns)
     if ns.subcommand == "digest":
         return _run_digest_cmd(ns)
+    if ns.subcommand == "agenda":
+        return _run_agenda_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -1769,6 +1796,37 @@ def _run_digest_cmd(ns: argparse.Namespace) -> int:
         print(f"digest written to {out_path}")
     else:
         print(content, end="")
+    return 0
+
+
+def _run_agenda_cmd(ns: argparse.Namespace) -> int:
+    import json
+    from datetime import date as _date
+    from gateway.ops.wiki_agenda import build_agenda, write_agenda
+
+    date_str = getattr(ns, "date", None) or _date.today().isoformat()
+
+    events: list[dict] = []
+    events_json = getattr(ns, "events_json", None)
+    if events_json:
+        with open(events_json) as f:
+            data = json.load(f)
+        events = data if isinstance(data, list) else data.get("items", [])
+
+    no_write = getattr(ns, "no_write", False)
+    out_path = getattr(ns, "out", None)
+
+    if no_write or (not events and not out_path):
+        content = build_agenda(date_str, events)
+        if out_path:
+            Path(out_path).write_text(content)
+            print(f"agenda written to {out_path}")
+        else:
+            print(content, end="")
+        return 0
+
+    out = write_agenda(date_str, events)
+    print(f"agenda written to {out}")
     return 0
 
 
