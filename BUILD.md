@@ -1180,6 +1180,41 @@ See `docs/milestones/M89.md`. AGT-8: `wiki routine filter-calibrator` runs month
 
 ---
 
+## 16. Phase 7 exit checkpoint (2026-05-26)
+
+7 milestones (M89–M95) delivered. 1695 → 1769 tests (+74), 0 regressions. Tag: `m95-phase7-round-g`.
+
+| Item | Milestone | Tests |
+|------|-----------|-------|
+| AGT-8 filter calibrator monthly cron | M89 | +10 |
+| TOOL-11 inbox triage web view | M90 | +11 |
+| ONT-12 codify tags field | M91 | +10 |
+| ONT-14 question page type | M92 | +14 |
+| TOOL-10 shell completion + --help examples | M93 | ±0 |
+| TOOL-15 wiki ask-corpus | M94 | +10 |
+| TOOL-16 wiki question management | M95 | +19 |
+
+Exit criteria met:
+- ✓ AGT-8: filter calibrator cron at `0 2 1 * *`; idempotent; event emission on threshold cross
+- ✓ TOOL-11: `/api/inbox` GET + POST retry wired; failed-file sidecar parsing correct
+- ✓ ONT-12: `tags:` list[str] validated; lint check registered
+- ✓ ONT-14: `question` page type; status enum; two lint checks; `wiki/questions/` directory
+- ✓ TOOL-10: shell completion documented; epilog examples on all 12 key subcommands
+- ✓ TOOL-15: `wiki ask-corpus` + `wiki_ask_corpus` MCP; domain-first, draft=True default
+- ✓ TOOL-16: `wiki question new/list` + MCP auxiliaries; validation; JSON output
+- ✓ 1769 tests, 0 regressions
+
+### What Phase 7 did NOT deliver (carried forward)
+
+| Item | Reason |
+|------|--------|
+| QUAL-8 (citation-claim coherence) | L effort; needs forcing function |
+| ARCH-12 (second NLM backend) | L effort; NotebookLM still operational |
+| ONT-1 (concept reclassifications) | L effort + human-bottlenecked |
+| ONT-15 (synthesizes → wasDerivedFrom rename) | 280+ code references; not S effort; cosmetic |
+
+---
+
 ## 14. Phase 6 exit checkpoint (2026-05-26)
 
 All four Phase 6 items delivered. 1640 → 1695 tests (+55), 0 regressions. Tag: `m88-phase6-round-d`.
