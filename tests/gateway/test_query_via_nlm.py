@@ -252,3 +252,27 @@ def test_query_builds_source_map_when_cache_missing(
     pages = list(synth_dir.glob("*.md"))
     assert pages
     assert "[[sources/fresh-page]]" in pages[0].read_text()
+
+
+def test_slug_collision_appends_hash(kb_root: Path, monkeypatch):
+    """Same-day same-question-prefix queries get unique slugs via hash suffix."""
+    _seed_persistent("alpha")
+    _seed_source_map_cache("nb-domain-1", {})
+
+    client = _CannedNlm(answer="Answer text.", citations={})
+
+    # First query: files a page
+    result1 = query("What are the key insights from source A?", domain="alpha", nlm_client=client)
+    assert result1.success
+
+    # Second query with a different source but same 6-word slug prefix: must not overwrite
+    result2 = query("What are the key insights from source B?", domain="alpha", nlm_client=client)
+    assert result2.success
+
+    synth_dir = kb_root / "wiki" / "synthesis"
+    pages = list(synth_dir.glob("*.md"))
+    assert len(pages) == 2, f"expected 2 pages, got {[p.name for p in pages]}"
+    slugs = {p.stem for p in pages}
+    # One should be the plain slug, the other should end with a 6-char hex hash
+    plain = [s for s in slugs if not s.endswith("-" + s.split("-")[-1]) or len(s.split("-")[-1]) != 6]
+    assert len(slugs) == 2

@@ -13,6 +13,7 @@ notebook the operation errors out and tells the user to run
 
 from __future__ import annotations
 
+import hashlib
 import re
 from datetime import datetime, timezone
 from typing import TYPE_CHECKING
@@ -165,6 +166,12 @@ def query(
     # 4) build the synthesis plan.
     today = _today()
     slug = f"{today}-{_slugify(question)}"
+    # Collision guard: if the slug is already taken (same-day runs with the
+    # same question prefix, e.g. discharge-orphans across domains), append a
+    # 6-char hash of the full question to guarantee uniqueness.
+    if (paths.knowledge_root() / "wiki" / "synthesis" / f"{slug}.md").exists():
+        qhash = hashlib.sha256(question.encode()).hexdigest()[:6]
+        slug = f"{slug}-{qhash}"
     rel = f"wiki/synthesis/{slug}.md"
 
     _now = _now_iso()
