@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import re
 
-from gateway import citations, frontmatter as fm, log, paths, wiki_pages
+from gateway import citations, frontmatter as fm, log, paths
 from gateway.core import OperationResult, write_atomic
 from gateway.lint._walk import walk_wiki_pages
 

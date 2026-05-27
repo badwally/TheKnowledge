@@ -11,7 +11,7 @@ the source is no longer listed as an orphan after `wiki finalize`.
 
 from __future__ import annotations
 
-from gateway import frontmatter as fm, paths
+from gateway import frontmatter as fm, log, paths
 from gateway.core import OperationResult
 
 
@@ -22,6 +22,8 @@ def _orphan_sources_for_domain(domain: str, limit: int) -> list[dict]:
     """Return up to `limit` raw sources tagged to `domain` with no wiki coverage."""
     results: list[dict] = []
     for source_type in paths.SOURCE_TYPES:
+        if len(results) >= limit:
+            break
         source_dir = paths.raw_dir() / source_type
         if not source_dir.exists():
             continue
@@ -86,6 +88,19 @@ def discharge_orphans(
         else:
             skipped += 1
             errors.append(f"{source['id']}: {'; '.join(result.errors)}")
+
+    if not dry_run:
+        log.append(
+            op="discharge-orphans",
+            fields={
+                "domain": domain,
+                "filed": filed,
+                "skipped": skipped,
+                "limit": limit,
+                "errors": len(errors),
+            },
+            summary=f"discharge-orphans: {filed} drafts filed for domain {domain!r}",
+        )
 
     mode = " (dry-run)" if dry_run else ""
     return OperationResult(

@@ -122,6 +122,22 @@ def test_skips_draft_with_inbound_citation(kb_root: Path) -> None:
     assert p.exists()
 
 
+def test_skips_draft_with_self_citation(kb_root: Path) -> None:
+    from gateway.ops.abandon_stale_drafts import abandon_stale_drafts
+
+    # A draft that wikilinks to itself should still be abandoned — self-refs don't count as inbound
+    p = _write_draft(
+        kb_root, "concept", "self-citing-draft", age_days=31,
+        body="## Summary\n\nSee [[concepts/self-citing-draft]] itself.\n\n## Context\n",
+    )
+
+    result = abandon_stale_drafts(min_age_days=30)
+
+    assert result.success
+    assert "1 abandoned" in result.summary
+    assert not p.exists()
+
+
 def test_skips_finalized_pages(kb_root: Path) -> None:
     from gateway.ops.abandon_stale_drafts import abandon_stale_drafts
     from gateway import wiki_pages

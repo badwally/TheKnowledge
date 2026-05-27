@@ -45,11 +45,14 @@ def _wikilink_target(path: Path) -> str | None:
 
 
 def _build_inbound_index(all_pages: list[tuple[str, Path, dict, str]]) -> dict[str, list[Path]]:
-    """Build map of wikilink-target → list of pages that mention it."""
+    """Build map of wikilink-target → list of OTHER pages that mention it (self-refs excluded)."""
     index: dict[str, list[Path]] = {}
     for _type, path, _front, body in all_pages:
+        self_target = _wikilink_target(path)
         for m in _WIKILINK_TARGET_RE.finditer(body):
             target = m.group(1).strip()
+            if target == self_target:
+                continue
             index.setdefault(target, []).append(path)
     return index
 
