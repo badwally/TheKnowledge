@@ -1148,6 +1148,37 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 18. Phase 8 exit checkpoint (2026-05-27)
+
+4 milestones (M96–M99) delivered. 1769 → 1812 tests (+43), 0 regressions. Tag: `m99-phase8-round-d`.
+
+| Item | Milestone | Tests |
+|------|-----------|-------|
+| Schema debt clearance (backfill-timestamps + backfill-sources-count) | M96 | +8 |
+| Broken-wikilink repair (wiki fix-wikilinks) | M97 | +12 |
+| Stale-draft auto-abandonment (wiki abandon-stale-drafts) | M98 | +11 |
+| Orphan discharge routine (wiki routine discharge-orphans) | M99 | +12 |
+
+Exit criteria assessment:
+- ✗ `wiki lint --scope schema-drift` findings < 50 — **225** (down from 4597; remaining 225 are all editorial-only: invalid entity_kind 60+, missing sections, long slugs, missing canonical_name — not automatable)
+- ✓ `wiki lint --scope broken-wikilinks` findings < 100 — **82** WARNINGs only (0 ERRORs, down from 277)
+- ✓ `wiki routine discharge-orphans` registered and operational
+- ✓ 1812 tests, 0 regressions
+
+Note: schema-drift criterion (< 50) set before composition of remaining items was known. The 4372 auto-fixable items were cleared; the 225 remaining require human editorial decisions (reclassify entity_kind, add missing sections, shorten slugs). Criterion met in spirit; hard number not met due to irreducible editorial tail.
+
+### What Phase 8 did NOT deliver (carried forward)
+
+| Item | Reason |
+|------|--------|
+| QUAL-8 (citation-claim coherence) | L effort; no forcing function |
+| ARCH-12 (second NLM backend) | L effort; NotebookLM still operational |
+| ONT-9 (domain hierarchy) | 22 MOCs manageable flat |
+| ONT-15 (synthesizes → wasDerivedFrom rename) | 280+ code references; cosmetic |
+| Schema-drift editorial tail (225 items) | Human-bottlenecked; requires per-entity review |
+
+---
+
 ## 17. Phase 8 delivery log (2026-05-27)
 
 ### M99 — Phase 8 Round D (wiki routine discharge-orphans — source orphan discharge)

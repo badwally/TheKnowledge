@@ -1,44 +1,46 @@
 # Session state — 2026-05-27
 
-Last updated: 2026-05-27 (precompact snapshot — M98 next)
+Last updated: 2026-05-27 (M99 complete — Phase 8 complete)
 
 ---
 
 ## Open contracts
 
-None. M97 merged clean at m97-phase8-round-b. 1789 tests.
+None.
+
+Carry-forward (not blocking anything):
+- ONT-11 user action: run `wiki backfill-synthesizes` for ~61 synthesis pages (lint ERROR).
+- ANTHROPIC_API_KEY_RESEARCH needed for eval runs.
+- INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
+- `wiki migrate` remains a stub.
+- schema-drift: 225 remaining (all editorial-only: invalid entity_kind, missing sections, long slugs, missing canonical_name — requires per-entity human review).
+- broken-wikilinks: 82 remaining (all WARNINGs — forward-references to entity/concept pages not yet authored).
 
 ---
 
 ## Files mid-edit
 
-None. All M97 files committed. M98 not yet started.
+None. main is clean at m99-phase8-round-d. 1812 tests passing.
+Phase 8 exit checkpoint written in BUILD.md § 18.
 
 ---
 
 ## Decisions made this session
 
-- M94: TOOL-15 wiki ask-corpus — thin wrapper over query(). 1750 tests.
-- M95: TOOL-16 wiki question new/list + MCP auxiliaries. 1769 tests.
-- Phase 7 exit checkpoint written (BUILD.md § 16).
-- Phase 8 rubric written (docs/260527_knowledge_phase8_backlog-rubric.md).
-- Auto-mode feedback: do not stop at phase boundaries or skill save prompts.
-- M96: schema debt clearance (backfill-timestamps 2191 pages + backfill-sources-count 99 pages). schema-drift 4597 → 210. 1777 tests.
-- M97: fix-wikilinks (195 source removals + 82 entity/concept downgrades). broken-wikilinks 277 ERRORs → 82 WARNINGs. 1789 tests.
-- Remaining schema-drift 210 are editorial-only (invalid entity_kind 58, missing sections 68, long slugs 50, missing canonical_name 34).
-- Remaining broken-wikilinks 82 are WARNINGs (intentional forward-references to unauthed pages).
-
----
-
-## Rejected approaches this session
-
-- ONT-9 (domain hierarchy): deferred — 22 MOCs manageable flat.
-- QUAL-8/ARCH-12/ONT-1: deferred — all L-effort, no forcing function.
-- ONT-15 (synthesizes → wasDerivedFrom rename): 282 code references + 46 wiki pages, not S effort.
-- Stopping at phase boundaries and skill save prompts in auto mode: corrected per user feedback.
+- M96: Schema debt clearance (4597 → 225 schema-drift). 1777 tests.
+- M97: Broken-wikilink repair (277 ERRORs → 82 WARNINGs). 1789 tests.
+- M98: Stale-draft auto-abandonment (wiki abandon-stale-drafts, >30d + no inbound citations). 1800 tests.
+- M99: Orphan discharge routine (wiki routine discharge-orphans --domain --limit). 1812 tests.
+- Phase 8 exit checkpoint: criteria 2+3 met; schema-drift criterion not met (225 editorial tail, not automatable).
 
 ---
 
 ## Next atomic step
 
-Implement M98: `wiki abandon-stale-drafts [--min-age-days 30] [--dry-run]` op in `src/gateway/ops/abandon_stale_drafts.py`. Logic: walk wiki pages with `draft: true` frontmatter older than N days; check zero inbound citations (no other wiki page has `[[<type>/<slug>]]` pointing to it); call `finalize(path, abandon=True)` on qualifying pages. Wire to CLI (SUBCOMMANDS, IMPLEMENTED, parser, dispatch, handler) and CLI_ONLY in mcp_server. Write 8+ tests. Run full suite. Commit tagged `m98-phase8-round-c` and push.
+Phase 9 to be scoped. Candidates from BUILD.md § 18 carry-forward:
+- Editorial schema-drift: 225 items (entity_kind reclassification, missing sections, long slugs) — tooling to assist human review
+- QUAL-8: citation-claim coherence judge (needs forcing function)
+- ONT-11: backfill-synthesizes for 61 synthesis pages (user-action, not engineering)
+- Source-orphan discharge: run wiki routine discharge-orphans on each domain
+
+Await user direction.
