@@ -19933,3 +19933,43 @@ evaluate ai-native-business: 12 Q, mean=0.889
 ## [2026-05-27T17:03:07Z] lint | scope=schema-drift | schema-drift=226
 
 report=.knowledge/lint/2026-05-27T17-03-07Z-schema-drift.md
+
+## [2026-05-27T17:05:02Z] lint | scope=schema-drift | schema-drift=226
+
+report=.knowledge/lint/2026-05-27T17-05-02Z-schema-drift.md
+
+## [2026-05-27T17:05:54Z] lint | scope=schema-drift | schema-drift=226
+
+report=.knowledge/lint/2026-05-27T17-05-54Z-schema-drift.md
+
+## [2026-05-27T17:06:07Z] lint | scope=schema-drift | schema-drift=226
+
+report=.knowledge/lint/2026-05-27T17-06-07Z-schema-drift.md
+
+## [2026-05-27T17:14:14Z] lint | scope=synthesizes-coverage | synthesizes-coverage=63
+
+report=.knowledge/lint/2026-05-27T17-14-14Z-synthesizes-coverage.md
+
+## [2026-05-27T17:14:20Z] lint | scope=orphans | orphans=531
+
+report=.knowledge/lint/2026-05-27T17-14-20Z-orphans.md
+
+## [2026-05-27T17:14:21Z] lint | scope=stale-drafts | stale-drafts=224
+
+report=.knowledge/lint/2026-05-27T17-14-21Z-stale-drafts.md
+
+## [2026-05-27T17:18:18Z] evaluate | domain=ai-native-business | n_questions=12 | mean_score=0.951 | input_tokens=1897 | cache_read_tokens=1597167
+
+evaluate ai-native-business: 12 Q, mean=0.951
+
+## [2026-05-27T17:19:56Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.406 | input_tokens=1734 | cache_read_tokens=1153980
+
+evaluate condo-capital-infra: 10 Q, mean=0.406
+
+## [2026-05-27T17:21:25Z] evaluate | domain=edge-ai-agentic | n_questions=10 | mean_score=0.687 | input_tokens=1756 | cache_read_tokens=299763
+
+evaluate edge-ai-agentic: 10 Q, mean=0.687
+
+## [2026-05-27T17:23:58Z] evaluate | domain=glp1-reward-modulation | n_questions=15 | mean_score=0.671 | input_tokens=2827 | cache_read_tokens=322266
+
+evaluate glp1-reward-modulation: 15 Q, mean=0.671

@@ -14,6 +14,20 @@ draft_unresolved_claims: 18
 created_at: '2026-04-28T17:24:27Z'
 last_updated: '2026-04-28T17:24:27Z'
 sources_count: 13
+synthesizes:
+- sources/yt-8whrXosgnDA
+- sources/yt-DJXJTnhdZfg
+- sources/yt-Ec5uOilCbtA
+- sources/yt-GNJOLqhnAM8
+- sources/yt-KiqbTLuYeT4
+- sources/yt-Kq0K5DeBL9g
+- sources/yt-UDj9hbwuHBU
+- sources/yt-dMm-mVKP7hg
+- sources/yt-gCNQ7mCTvGM
+- sources/yt-hHWgunSDTNM
+- sources/yt-p-anpn0KLOg
+- sources/yt-qTMwU8S-sWE
+- sources/yt-u_rUQcIuxJg
 ---
 
 # Video Object Tracking and Trajectory Prediction: Multi-Object Tracking, Motion Modeling, and Cross-Frame Prediction

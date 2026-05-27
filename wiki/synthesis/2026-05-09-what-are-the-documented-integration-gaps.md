@@ -19,6 +19,8 @@ draft_started_at: '2026-05-09T23:11:04Z'
 draft_unresolved_claims: 14
 last_updated: '2026-05-09T23:11:04Z'
 sources_count: 1
+synthesizes:
+- sources/web-2025-10-13-a40
 ---
 # What are the documented integration gaps between condo reserve-study software, accounting platforms, work-order systems, vendor management, and document management — where does the existing software ecosystem fail to provide a unified long-horizon planning layer for HOAs and what specific data flows are missing
 

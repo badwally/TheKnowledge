@@ -19,6 +19,34 @@ nlm_notebook_id: 67857df4-7231-45b0-805e-96bffa063205
 finalized_at: '2026-05-24T00:45:27Z'
 last_updated: '2026-05-24T00:45:27Z'
 sources_count: 31
+synthesizes:
+- sources/pdf-994c881efb49
+- sources/pdf-aa9367a8a4a9
+- sources/pdf-dheide-2022-microsoft-word-600
+- sources/pdf-e3717ebcf2bc
+- sources/pdf-fc88aa6c2822
+- sources/pdf-house-bill-2025-h0913er-docx
+- sources/web-2000-01-01-611
+- sources/web-2008-01-01-0ad
+- sources/web-2011-06-02-7ff
+- sources/web-2014-07-16-7c3
+- sources/web-2014-07-24-031
+- sources/web-2018-08-01-f87
+- sources/web-2020-12-01-877
+- sources/web-2022-01-01-a78
+- sources/web-2022-09-02-033
+- sources/web-2023-10-01-0bc
+- sources/web-2024-01-01-4d7
+- sources/web-2024-04-01-048
+- sources/web-2024-08-30-283
+- sources/web-2025-06-10-ddd
+- sources/web-2025-07-30-00d
+- sources/web-2025-11-06-d1c
+- sources/web-2026-01-01-3bf
+- sources/web-2026-03-18-a4e
+- sources/web-2026-03-24-bb6
+- sources/web-2026-05-15-040
+- sources/web-2026-05-23-01f
 ---
 # What are the reserve fund investment vehicle rules, fiduciary standards, audit and disclosure requirements, banking infrastructure, tax treatment, and lender review mechanics across Florida, California, New York, New Jersey, Virginia, Nova Scotia, Ontario, British Columbia, Alberta, and Quebec? Produce a cross-jurisdictional contrast table consolidating the Thread 1 research.
 

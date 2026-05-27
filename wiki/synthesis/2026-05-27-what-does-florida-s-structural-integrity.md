@@ -17,6 +17,8 @@ nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
 draft_started_at: '2026-05-27T16:28:37Z'
 draft_unresolved_claims: 14
+synthesizes:
+- sources/web-2024-07-09-f2a
 ---
 # What does Florida's Structural Integrity Reserve Study (SIRS) mandate require for condominium associations, what elements must be inspected, and how does it change reserve funding obligations for Florida condos
 

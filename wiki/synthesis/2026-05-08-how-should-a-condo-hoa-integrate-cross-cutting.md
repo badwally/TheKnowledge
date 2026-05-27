@@ -15,6 +15,16 @@ created_at: '2026-05-11T02:04:29Z'
 finalized_at: '2026-05-12T22:46:48Z'
 last_updated: '2026-05-12T22:46:48Z'
 sources_count: 16
+synthesizes:
+- sources/web-1995-01-01-0ff
+- sources/web-2023-03-20-7a4
+- sources/web-2023-06-26-652
+- sources/web-2025-01-01-cc2
+- sources/web-2025-04-12-ca4
+- sources/web-2025-07-09-b13
+- sources/web-2025-10-29-056
+- sources/web-2026-01-01-970
+- sources/web-2026-03-09-423
 ---
 # Cross-cutting themes — 2026-05-08-how-should-a-condo-hoa-integrate
 

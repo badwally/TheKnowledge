@@ -14,6 +14,19 @@ draft_unresolved_claims: 3
 created_at: '2026-04-28T17:18:49Z'
 last_updated: '2026-04-28T17:18:49Z'
 sources_count: 12
+synthesizes:
+- sources/yt-0824iHDsobc
+- sources/yt-0YLpWqkFrB8
+- sources/yt-3G-Vdmsluw0
+- sources/yt-HpyQV1Ux5NI
+- sources/yt-HsxS0c1Qi4A
+- sources/yt-VgZVp_eCfhA
+- sources/yt-f1gJkUI6rA4
+- sources/yt-lEUluMdNHcc
+- sources/yt-mAbS_gHAmEs
+- sources/yt-mwqOeTJDyx4
+- sources/yt-qrArshf7bjA
+- sources/yt-sV4Hg46Qa-A
 ---
 
 # Temporal Action Detection in Video: Methods, Benchmarks, and State of the Art

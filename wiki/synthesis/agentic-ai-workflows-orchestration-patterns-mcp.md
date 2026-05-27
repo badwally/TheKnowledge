@@ -14,6 +14,13 @@ draft_unresolved_claims: 10
 created_at: '2026-04-28T17:27:45Z'
 last_updated: '2026-04-28T17:27:45Z'
 sources_count: 14
+synthesizes:
+- sources/yt-4-FH09AMsp0
+- sources/yt-6mQwHqK1I5w
+- sources/yt-9O9zZ1lQWiI
+- sources/yt-VChRPFUzJGA
+- sources/yt-bDsRLVgRitE
+- sources/yt-e2zIr_2JMbE
 ---
 
 # Agentic AI Workflows: Orchestration Patterns, MCP, Tool Use, and A2A

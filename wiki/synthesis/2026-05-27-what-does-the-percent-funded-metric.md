@@ -17,6 +17,8 @@ nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
 draft_started_at: '2026-05-27T16:27:42Z'
 draft_unresolved_claims: 4
+synthesizes:
+- sources/pdf-dre-2010-reserve-study-guidelines
 ---
 # What does the Percent Funded metric measure in HOA reserve studies, what thresholds indicate healthy versus at-risk reserves, and what are California's requirements when a board borrows from reserve funds
 

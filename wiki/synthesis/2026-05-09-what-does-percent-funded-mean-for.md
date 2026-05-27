@@ -21,6 +21,8 @@ draft_started_at: '2026-05-09T23:10:06Z'
 draft_unresolved_claims: 17
 last_updated: '2026-05-13T22:12:43Z'
 sources_count: 1
+synthesizes:
+- sources/web-2026-01-01-361
 ---
 # What does 'percent funded' mean for a condo reserve fund, how is it calculated under the CAI/APRA national reserve study standards, and how do statutory minimums (Florida full-funding mandate, BC's 10% CRF rule, Ontario's 'adequate fund' standard) and lender overlays (Fannie Mae's reserve-allocation requirement) interact with it
 

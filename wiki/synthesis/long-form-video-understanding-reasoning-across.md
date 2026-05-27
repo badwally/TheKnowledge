@@ -15,6 +15,20 @@ draft_unresolved_claims: 8
 created_at: '2026-04-28T17:22:23Z'
 last_updated: '2026-04-28T17:22:23Z'
 sources_count: 13
+synthesizes:
+- sources/yt-0YLpWqkFrB8
+- sources/yt-GgE_p7pP4Ig
+- sources/yt-HpyQV1Ux5NI
+- sources/yt-NmfykPpl1vE
+- sources/yt-TQ6GBhwzRhg
+- sources/yt-VgZVp_eCfhA
+- sources/yt-VgcOdiRGIAU
+- sources/yt-YODyaExFKSU
+- sources/yt-dkxjiarWNjY
+- sources/yt-e19H0rA8jwE
+- sources/yt-ezjnySXqdTo
+- sources/yt-lEUluMdNHcc
+- sources/yt-zj2s_G3066s
 ---
 
 # Long-Form Video Understanding: Reasoning Across Extended Time Periods, Longitudinal Patterns, and Beyond-Clip Temporal Context

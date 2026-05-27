@@ -13,6 +13,25 @@ draft_unresolved_claims: 0
 created_at: '2026-04-28T17:02:40Z'
 last_updated: '2026-04-28T17:02:40Z'
 sources_count: 18
+synthesizes:
+- sources/pubmed-22128031
+- sources/pubmed-26072178
+- sources/pubmed-29337226
+- sources/pubmed-33352692
+- sources/pubmed-35300299
+- sources/pubmed-37063267
+- sources/pubmed-37295046
+- sources/pubmed-38928616
+- sources/pubmed-39032839
+- sources/pubmed-39529123
+- sources/pubmed-39639536
+- sources/pubmed-39818408
+- sources/pubmed-40245495
+- sources/pubmed-40302255
+- sources/pubmed-40616879
+- sources/pubmed-40722294
+- sources/pubmed-40843757
+- sources/pubmed-41552827
 ---
 
 # GLP-1 receptor agonists in alcohol and substance use disorders

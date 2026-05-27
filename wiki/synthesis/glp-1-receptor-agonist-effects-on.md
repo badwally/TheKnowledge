@@ -14,6 +14,24 @@ draft_unresolved_claims: 1
 created_at: '2026-04-28T17:06:57Z'
 last_updated: '2026-04-28T17:06:57Z'
 sources_count: 18
+synthesizes:
+- sources/pubmed-33352692
+- sources/pubmed-33741445
+- sources/pubmed-38928616
+- sources/pubmed-38945189
+- sources/pubmed-39515485
+- sources/pubmed-39818408
+- sources/pubmed-39964126
+- sources/pubmed-40456683
+- sources/pubmed-41498523
+- sources/pubmed-41870138
+- sources/yt-5oSeLTr3uRk
+- sources/yt-EZlmyP0yhnE
+- sources/yt-IvMtU0XBy4A
+- sources/yt-TYpMRls2OaI
+- sources/yt-Wk-X8ziLlr0
+- sources/yt-qJrO3tc4edU
+- sources/yt-wARUbdGl4Uw
 ---
 
 # GLP-1 receptor agonist effects on mental health — anhedonia, mood, libido, motivation, and suicidality

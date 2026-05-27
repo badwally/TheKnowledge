@@ -14,6 +14,12 @@ created_at: '2026-05-11T02:04:29Z'
 finalized_at: '2026-05-12T22:46:49Z'
 last_updated: '2026-05-12T22:46:49Z'
 sources_count: 10
+synthesizes:
+- sources/web-2023-03-20-7a4
+- sources/web-2025-01-01-cc2
+- sources/web-2025-04-12-ca4
+- sources/web-2025-07-09-b13
+- sources/web-2026-03-09-423
 ---
 # Special Assessment Policy and Risk Mitigation — investigation
 

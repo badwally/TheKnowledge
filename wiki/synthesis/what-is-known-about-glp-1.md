@@ -13,6 +13,23 @@ draft_unresolved_claims: 3
 created_at: '2026-04-28T16:58:31Z'
 last_updated: '2026-04-28T16:58:31Z'
 sources_count: 16
+synthesizes:
+- sources/pubmed-22128031
+- sources/pubmed-22492036
+- sources/pubmed-24560840
+- sources/pubmed-27030669
+- sources/pubmed-29337226
+- sources/pubmed-33352692
+- sources/pubmed-33741445
+- sources/pubmed-36699502
+- sources/pubmed-37063267
+- sources/pubmed-37148870
+- sources/pubmed-39515485
+- sources/pubmed-40245495
+- sources/pubmed-40302255
+- sources/pubmed-40456683
+- sources/pubmed-40508146
+- sources/pubmed-40843757
 ---
 
 # GLP-1 modulation of the mesolimbic dopamine system

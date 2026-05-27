@@ -110,6 +110,12 @@ draft_started_at: '2026-05-20T21:06:42Z'
 draft_unresolved_claims: 7
 last_updated: '2026-05-20T21:06:42Z'
 sources_count: 18
+synthesizes:
+- sources/web-1998-09-20-413
+- sources/web-2022-07-07-ac2
+- sources/web-2025-01-31-943
+- sources/web-2025-04-07-e6e
+- sources/web-2026-05-01-6b7
 ---
 # Cross-cutting themes — 2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel
 

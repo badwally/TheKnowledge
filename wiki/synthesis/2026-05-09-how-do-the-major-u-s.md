@@ -23,6 +23,13 @@ nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 finalized_at: '2026-05-09T23:20:09Z'
 last_updated: '2026-05-09T23:20:09Z'
 sources_count: 6
+synthesizes:
+- sources/web-2018-09-17-ca9
+- sources/web-2024-01-11-e67
+- sources/web-2024-07-09-f2a
+- sources/web-2025-12-08-df6
+- sources/web-2026-01-01-361
+- sources/web-2026-01-01-58c
 ---
 # How do the major U.S. and Canadian reserve-study and structural-inspection mandates differ in scope, inspection frequency, reserve-funding obligations, and enforcement — specifically Florida's SIRS / HB 913, California Davis-Stirling §5550 plus SB-721, New Jersey's 2024 inspection law, British Columbia's Strata Property Act depreciation reports, and Ontario Condo Act §94 — and what does this jurisdictional variation imply for the data model of a software system intended to serve condo associations across multiple states/provinces
 
