@@ -326,6 +326,74 @@ def test_cli_parser_discharge_orphans_dry_run() -> None:
     assert ns.dry_run is True
 
 
+# ---------------------------------------------------------------------------
+# M110: skip sources already cited in existing synthesis pages
+# ---------------------------------------------------------------------------
+
+
+def test_skips_source_already_cited_in_synthesis(kb_root: Path) -> None:
+    """Source cited in existing synthesis page is excluded, not re-discharged."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    source_id = "web/already-cited-src"
+    _write_raw_source(kb_root, slug="already-cited-src", domain="glp1", wiki_pages=None)
+
+    # Create a synthesis page that cites this source.
+    synthesis_dir = paths.knowledge_root() / "wiki" / "synthesis"
+    synthesis_dir.mkdir(parents=True, exist_ok=True)
+    (synthesis_dir / "existing-synth.md").write_text(
+        f"Some synthesis content.\n- [[sources/{source_id}]]\n"
+    )
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=5)
+
+    assert result.success
+    assert "no orphan sources found" in result.summary
+    mock_q.assert_not_called()
+
+
+def test_skips_cited_excludes_only_cited_sources(kb_root: Path) -> None:
+    """Cited source is excluded; uncited source is still discharged."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="cited-src", domain="glp1", wiki_pages=None)
+    _write_raw_source(kb_root, slug="orphan-new", domain="glp1", wiki_pages=None)
+
+    synthesis_dir = paths.knowledge_root() / "wiki" / "synthesis"
+    synthesis_dir.mkdir(parents=True, exist_ok=True)
+    (synthesis_dir / "existing.md").write_text(
+        "Content.\n- [[sources/web/cited-src]]\n"
+    )
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=5)
+
+    assert result.success
+    assert "1 synthesis drafts filed" in result.summary
+    mock_q.assert_called_once()
+
+
+def test_dry_run_excludes_cited_sources(kb_root: Path) -> None:
+    """Dry-run count reflects cited-filter: already-cited sources not counted."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    for i in range(3):
+        _write_raw_source(kb_root, slug=f"src-{i}", domain="glp1", wiki_pages=None)
+
+    synthesis_dir = paths.knowledge_root() / "wiki" / "synthesis"
+    synthesis_dir.mkdir(parents=True, exist_ok=True)
+    (synthesis_dir / "existing.md").write_text(
+        "Content.\n- [[sources/web/src-0]]\n- [[sources/web/src-1]]\n"
+    )
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=10, dry_run=True)
+
+    mock_q.assert_not_called()
+    assert "1 synthesis drafts filed" in result.summary  # only src-2 is uncited
+
+
 def test_cli_discharge_orphans_calls_op(kb_root: Path) -> None:
     from gateway.cli import _run_routine_cmd
     import argparse
