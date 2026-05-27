@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M91 complete — ONT-12 tags codification)
+Last updated: 2026-05-26 (M92 complete — ONT-14 question page type)
 
 ---
 
@@ -18,7 +18,7 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m91-phase7-round-c. 1726 tests passing.
+None. main is clean at m92-phase7-round-d. 1740 tests passing.
 Phase 7 delivery log in BUILD.md § 15.
 
 ---
@@ -27,7 +27,8 @@ Phase 7 delivery log in BUILD.md § 15.
 
 - M89: AGT-8 filter calibrator monthly cron. 1705 tests.
 - M90: TOOL-11 inbox triage web view. 1716 tests.
-- M91: ONT-12 tags codification (keep as list[str], validator + lint). 1726 tests.
+- M91: ONT-12 tags codification. 1726 tests.
+- M92: ONT-14 question page type. 1740 tests.
 
 ---
 
@@ -41,7 +42,7 @@ Phase 7 delivery log in BUILD.md § 15.
 
 ## Next atomic step
 
-Phase 7 continues. Remaining S/M candidates:
-- ONT-14 (optional `question` page type) — new page type with status field
+Phase 7 continues. Remaining candidates:
 - TOOL-10 (shell completion via argcomplete) — docs + setup, no gateway logic
-- TOOL-15 (wiki ask-corpus) — blocked on NLM notebook_query op
+- ONT-15 (PROV-O rename synthesizes → wasDerivedFrom) — S effort, optional cosmetic
+- wiki ask-corpus — requires building NLM notebook_query op first (M effort)

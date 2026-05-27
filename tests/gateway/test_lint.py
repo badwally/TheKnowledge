@@ -112,6 +112,8 @@ def test_known_checks_includes_all_documented_checks():
         "confidence-distribution",
         "confidence-propagation",
         "tags-invalid-type",
+        "open-questions",
+        "answered-no-synthesis",
     }
     assert KNOWN_CHECKS == expected
 

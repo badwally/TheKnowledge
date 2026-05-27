@@ -41,6 +41,7 @@ from gateway.lint import (
     paper_canonical_source,
     claim_confidence,
     invalid_tags,
+    unanswered_questions,
 )
 
 
@@ -72,6 +73,8 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("confidence-distribution", claim_confidence.run_distribution),
     ("confidence-propagation", claim_confidence.run_propagation),
     ("tags-invalid-type", invalid_tags.run),
+    ("open-questions", unanswered_questions.run_open_questions),
+    ("answered-no-synthesis", unanswered_questions.run_answered_no_synthesis),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

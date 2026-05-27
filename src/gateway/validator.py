@@ -50,6 +50,7 @@ REQUIRED_CORE_FIELDS: set[str] = {
 # ONT-3: controlled vocabularies for contradiction wiki pages.
 CONTRADICTION_SEVERITY_ENUM: frozenset[str] = frozenset({"major", "minor", "methodological"})
 CONTRADICTION_STATUS_ENUM: frozenset[str] = frozenset({"open", "investigating", "resolved", "wontfix"})
+QUESTION_STATUS_ENUM: frozenset[str] = frozenset({"open", "partial", "answered"})
 
 # ONT-4: controlled vocabulary for entity_kind on entity wiki pages.
 ENTITY_KIND_ENUM: frozenset[str] = frozenset({
@@ -452,6 +453,32 @@ def validate_timestamps(front: dict) -> ValidationResult:
     return result
 
 
+def validate_question_frontmatter(front: dict) -> ValidationResult:
+    """ONT-14: validate question-specific frontmatter fields."""
+    result = ValidationResult()
+    status = front.get("status")
+
+    if status is not None and status not in QUESTION_STATUS_ENUM:
+        result.errors.append(
+            ValidationError(
+                "question-status-unknown",
+                f"status {status!r} is not valid; expected one of: {', '.join(sorted(QUESTION_STATUS_ENUM))}",
+                "status",
+            )
+        )
+
+    if status == "answered" and not front.get("synthesis"):
+        result.warnings.append(
+            ValidationError(
+                "question-answered-missing-synthesis",
+                "answered question should link a synthesis page via synthesis: <slug>",
+                "synthesis",
+            )
+        )
+
+    return result
+
+
 def validate_contradiction_frontmatter(front: dict) -> ValidationResult:
     """ONT-3: validate contradiction-specific frontmatter fields."""
     result = ValidationResult()
@@ -706,6 +733,10 @@ def validate_wiki_page(
     # ONT-3: contradiction-specific validation
     if page_type == "contradiction":
         result.merge(validate_contradiction_frontmatter(front))
+
+    # ONT-14: question-specific validation
+    if page_type == "question":
+        result.merge(validate_question_frontmatter(front))
 
     # Honor `draft: true` in frontmatter OR an explicit caller flag. To force
     # strict mode (e.g., during finalize), strip the draft fields from front

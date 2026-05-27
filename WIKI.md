@@ -500,6 +500,33 @@ question: "Put together 5 slides on GLP-1 reward system dose response."
 
 Required sections: Local file, NotebookLM (live), Sources used.
 
+### 4.7 Question (`wiki/questions/<slug>.md`)
+
+An open research thread. Aggregates the "Open questions" items scattered across MOCs and synthesis pages into addressable pages with lifecycle tracking. When a question reaches a conclusion, link the synthesis page via `synthesis:`.
+
+```yaml
+---
+type: question
+slug: does-glp1-reduce-alcohol-craving
+title: "Does GLP-1 reduce alcohol craving?"
+domains: ["glp1-reward-modulation"]
+status: open           # open | partial | answered
+synthesis: null        # required once status: answered
+created_at: "2026-01-01T00:00:00Z"
+last_updated: "2026-01-01T00:00:00Z"
+---
+
+## Question
+
+<Precise framing of the question. Single sentence preferred.>
+
+## Context
+
+<Why this question matters. What is known so far. Relevant wikilinks.>
+```
+
+Required sections: Question, Context. `status` must be `open`, `partial`, or `answered`. Validator warns if `status: answered` without `synthesis:`. Lint check `answered-no-synthesis` surfaces these violations. Lint check `open-questions` lists all open/partial questions at INFO severity (ONT-14).
+
 ## 5. Citation format and rules
 
 ### 5.1 Citation primitive

@@ -110,6 +110,13 @@ PAGE_SCHEMAS: dict[str, PageTypeSchema] = {
         required_sections=(),
         citation_grounded=False,
     ),
+    "question": PageTypeSchema(
+        type_name="question",
+        directory="wiki/questions",
+        required_fields=("type", "slug", "title", "domains", "status", "created_at", "last_updated"),
+        required_sections=("Question", "Context"),
+        citation_grounded=False,
+    ),
 }
 
 
