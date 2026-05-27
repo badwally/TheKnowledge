@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: jetson-orin-nano-super
 canonical_name: Jetson Orin Nano Super
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - edge-hardware-platforms
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Jetson Orin Nano Super

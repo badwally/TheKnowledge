@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: hoai-platform
 canonical_name: HOAi
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:32:26Z'
+last_updated: '2026-05-24T01:32:26Z'
 ---
 
 # HOAi

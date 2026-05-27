@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ai-native-property-management
 canonical_name: AI-Native Property Management
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:39:55Z'
+last_updated: '2026-05-24T02:39:55Z'
 ---
 
 # AI-Native Property Management

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: federated-learning-and-decentralized-training
 canonical_name: Federated Learning And Decentralized Training
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - edge-ai-security-and-privacy
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Federated Learning and Decentralized Training

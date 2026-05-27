@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: concept
 slug: reserve-fund-investment-objective-triad
-canonical_name: Reserve Fund Investment Objective Triad (Principal Protection / Liquidity / Returns)
+canonical_name: Reserve Fund Investment Objective Triad (Principal Protection / Liquidity
+  / Returns)
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T21:19:12Z'
+last_updated: '2026-05-23T21:19:12Z'
 ---
 
 # Reserve Fund Investment Objective Triad (Principal Protection / Liquidity / Returns)

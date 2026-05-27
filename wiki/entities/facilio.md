@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: facilio
 canonical_name: Facilio
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-18T22:23:28Z'
+last_updated: '2026-05-18T22:23:28Z'
 ---
 # Facilio
 

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bc-strata-deposit-insurance-partial-eligibility
 canonical_name: BC Strata Deposit Insurance Partial-Eligibility Compliance Principle
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:14:25Z'
+last_updated: '2026-05-23T21:14:25Z'
 ---
 
 # BC Strata Deposit Insurance Partial-Eligibility Compliance Principle

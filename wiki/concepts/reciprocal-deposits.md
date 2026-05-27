@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: reciprocal-deposits
 canonical_name: Reciprocal Deposits
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:08:39Z'
+last_updated: '2026-05-23T16:08:39Z'
 ---
 
 # Reciprocal Deposits

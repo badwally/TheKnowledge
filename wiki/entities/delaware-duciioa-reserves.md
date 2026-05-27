@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: delaware-duciioa-reserves
 canonical_name: Delaware Uniform Common Interest Ownership Act §81 (Reserves)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:17:08Z'
+last_updated: '2026-05-23T16:17:08Z'
 ---
 
 # Delaware Uniform Common Interest Ownership Act §81 (Reserves)

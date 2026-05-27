@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cai-reserve-study-standards
 canonical_name: CAI Reserve Study Standards
 entity_kind: standard
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T15:12:06Z'
+last_updated: '2026-05-19T15:12:06Z'
 ---
 # CAI Reserve Study Standards
 

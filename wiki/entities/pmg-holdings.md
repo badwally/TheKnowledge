@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pmg-holdings
 canonical_name: PMG Holdings
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:03:26Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:15:13Z'
+last_updated: '2026-05-11T23:15:13Z'
 ---
 # PMG Holdings
 

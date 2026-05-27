@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: 200-day-ema-long-term-trend
 canonical_name: 200 Day EMA as Long-Term Trend Reference
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # 200 Day EMA as Long-Term Trend Reference

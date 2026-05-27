@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-04-foundation-models-causal-llm-foundation-model-approaches-to-maintenance
 title: LLM / Foundation Model Approaches to Maintenance Data Processing — investigation
@@ -44,6 +45,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:44:57Z'
 draft_unresolved_claims: 4
+last_updated: '2026-05-20T18:44:58Z'
+sources_count: 2
 ---
 # LLM / Foundation Model Approaches to Maintenance Data Processing — investigation
 

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-hoa-expenditure-test
 canonical_name: California HOA 90% Expenditure Test (R&TC §23701t)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:11:16Z'
+last_updated: '2026-05-23T23:11:16Z'
 ---
 
 # California HOA 90% Expenditure Test (R&TC §23701t)

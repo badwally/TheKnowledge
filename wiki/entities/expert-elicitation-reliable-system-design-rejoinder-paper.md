@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: expert-elicitation-reliable-system-design-rejoinder-paper
 canonical_name: 'Rejoinder: Expert Elicitation for Reliable System Design'
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:43Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:29:46Z'
+last_updated: '2026-05-20T19:29:46Z'
 ---
 
 # Rejoinder: Expert Elicitation for Reliable System Design

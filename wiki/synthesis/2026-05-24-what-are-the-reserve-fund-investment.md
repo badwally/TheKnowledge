@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-24-what-are-the-reserve-fund-investment
 title: What are the reserve fund investment vehicle rules, fiduciary standards, audit
@@ -16,6 +17,8 @@ question: What are the reserve fund investment vehicle rules, fiduciary standard
 created_at: '2026-05-24T00:41:43Z'
 nlm_notebook_id: 67857df4-7231-45b0-805e-96bffa063205
 finalized_at: '2026-05-24T00:45:27Z'
+last_updated: '2026-05-24T00:45:27Z'
+sources_count: 31
 ---
 # What are the reserve fund investment vehicle rules, fiduciary standards, audit and disclosure requirements, banking infrastructure, tax treatment, and lender review mechanics across Florida, California, New York, New Jersey, Virginia, Nova Scotia, Ontario, British Columbia, Alberta, and Quebec? Produce a cross-jurisdictional contrast table consolidating the Thread 1 research.
 

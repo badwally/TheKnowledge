@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: agentic-ai-cam-workflows
 canonical_name: Agentic AI in CAM Workflows
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:39:55Z'
+last_updated: '2026-05-24T02:39:55Z'
 ---
 
 # Agentic AI in CAM Workflows

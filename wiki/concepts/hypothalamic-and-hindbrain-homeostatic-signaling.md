@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: hypothalamic-and-hindbrain-homeostatic-signaling
 canonical_name: Hypothalamic And Hindbrain Homeostatic Signaling
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - neurobiology-of-appetite-and-reward
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Hypothalamic and Hindbrain Homeostatic Signaling

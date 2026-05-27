@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: bridge-bdlm-degradation-paper
 canonical_name: Bridge performance degradation model based on the multi-variate bayesian
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:52Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:24:16Z'
+last_updated: '2026-05-20T19:24:16Z'
 ---
 
 # Bridge performance degradation model based on the multi-variate bayesian dynamic linear method

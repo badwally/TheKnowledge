@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: cao-wang
 canonical_name: Cao Wang
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:42Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:14:54Z'
+last_updated: '2026-05-20T21:14:54Z'
 ---
 
 # Cao Wang

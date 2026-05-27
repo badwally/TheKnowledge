@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-request-for-records-process
 canonical_name: Ontario Request-for-Records Process (O Reg 48/01 §13.3)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:31:01Z'
+last_updated: '2026-05-23T20:31:01Z'
 ---
 
 # Ontario Request-for-Records Process (O Reg 48/01 §13.3)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: recollab
 canonical_name: REcollab Technologies
@@ -6,6 +7,8 @@ entity_kind: organization
 domains:
 - condo-capital-infra
 finalized_at: '2026-05-18T22:44:12Z'
+created_at: '2026-05-18T22:44:12Z'
+last_updated: '2026-05-18T22:44:12Z'
 ---
 # REcollab Technologies
 

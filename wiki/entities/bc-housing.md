@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bc-housing
 canonical_name: BC Housing
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:46:56Z'
+last_updated: '2026-05-10T22:46:56Z'
 ---
 # BC Housing
 

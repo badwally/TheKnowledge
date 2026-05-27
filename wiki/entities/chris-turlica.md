@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: chris-turlica
 canonical_name: Chris Turlica
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:27:02Z'
+last_updated: '2026-05-24T02:27:02Z'
 ---
 
 # Chris Turlica

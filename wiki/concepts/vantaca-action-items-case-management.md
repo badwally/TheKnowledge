@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: vantaca-action-items-case-management
 canonical_name: Vantaca Action Items (Case-Based Workflow Model)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # Vantaca Action Items (Case-Based Workflow Model)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-09-what-does-the-2021-surfside-champlain
 title: What does the 2021 Surfside / Champlain Towers South collapse and its forensic
@@ -18,6 +19,8 @@ nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 draft: true
 draft_started_at: '2026-05-09T23:12:06Z'
 draft_unresolved_claims: 10
+last_updated: '2026-05-10T00:04:21Z'
+sources_count: 5
 ---
 # What does the 2021 Surfside / Champlain Towers South collapse and its forensic engineering investigation reveal about the failure modes of underfunded condo reserves, deferred capital maintenance, and inadequate structural inspection regimes — and which of the post-Surfside legislative responses (FL HB 4D/SB 4-D, FL HB 913, NJ S2760, etc.) most directly address those failure modes
 

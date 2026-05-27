@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: cci-nova-scotia
 canonical_name: Canadian Condominium Institute — Nova Scotia Chapter (CCI-Nova Scotia)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T21:23:42Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T21:23:42Z'
+last_updated: '2026-05-11T21:23:42Z'
 ---
 # CCI-Nova Scotia
 

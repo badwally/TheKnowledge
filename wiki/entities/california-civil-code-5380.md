@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-civil-code-5380
 canonical_name: California Civil Code § 5380 (Management of Association Funds)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:46:31Z'
+last_updated: '2026-05-23T23:46:31Z'
 ---
 
 # California Civil Code § 5380 (Management of Association Funds)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: reserve-funding-methods
 canonical_name: Reserve Funding Methods
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:18:38Z'
+last_updated: '2026-05-24T03:18:38Z'
 ---
 
 # Reserve Funding Methods

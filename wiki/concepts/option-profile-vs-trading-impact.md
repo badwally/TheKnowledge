@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: option-profile-vs-trading-impact
 canonical_name: Option profile vs trading impact (P&L decomposition)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Option profile vs trading impact (P&L decomposition)

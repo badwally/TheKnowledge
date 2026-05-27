@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: self-evolution-protocol-layer
 canonical_name: Self-Evolution Protocol Layer (SEPL)
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Self-Evolution Protocol Layer (SEPL)

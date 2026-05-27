@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-03-gp-state-space-ensembles-prognostics-and-health-management-phm-evaluation
 title: Prognostics and Health Management (PHM) Evaluation and Applications — investigation
@@ -54,6 +55,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:25:43Z'
 draft_unresolved_claims: 9
+last_updated: '2026-05-20T18:25:43Z'
+sources_count: 2
 ---
 # Prognostics and Health Management (PHM) Evaluation and Applications — investigation
 

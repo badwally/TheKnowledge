@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: propfusion
 canonical_name: PropFusion
@@ -6,6 +7,8 @@ entity_kind: organization
 domains:
 - condo-capital-infra
 finalized_at: '2026-05-18T20:50:14Z'
+created_at: '2026-05-18T20:50:14Z'
+last_updated: '2026-05-18T20:50:14Z'
 ---
 # PropFusion
 

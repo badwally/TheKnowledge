@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: stock-bond-correlation-regime-shift
 canonical_name: Stock-Bond Correlation Regime Shift
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Stock-Bond Correlation Regime Shift

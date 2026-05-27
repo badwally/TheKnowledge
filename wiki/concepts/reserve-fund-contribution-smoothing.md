@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: reserve-fund-contribution-smoothing
 canonical_name: Reserve Fund Contribution Smoothing
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T22:04:18Z'
+last_updated: '2026-05-11T22:04:18Z'
 ---
 # Reserve Fund Contribution Smoothing
 

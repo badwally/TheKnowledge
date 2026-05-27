@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-24-cross-domain-synthesis-acquirer-integration-surface
 title: 'Cross-domain synthesis: acquirer-integration surface for Longspan 2026 — CINC
@@ -18,6 +19,8 @@ question: 'Cross-domain synthesis: acquirer-integration surface for Longspan 202
 created_at: '2026-05-24T04:55:21Z'
 nlm_notebook_id: 67857df4-7231-45b0-805e-96bffa063205
 finalized_at: '2026-05-24T05:04:02Z'
+last_updated: '2026-05-24T05:04:02Z'
+sources_count: 18
 ---
 # Cross-domain synthesis: acquirer-integration surface for Longspan 2026 — CINC SmartProperty deterministic integration (accounting-actuals-only, no probabilistic output), Vantaca equivalent SmartProperty integration, Yardi zero reserve module, FirstService zero reserve capability, HomeRun IQ engineering-firm tooling with no CAM integration, ReservePath waitlist-only, CommonArea Financial complementary. Synthesize per-acquirer internal-build barrier and Longspan pitch gap.
 

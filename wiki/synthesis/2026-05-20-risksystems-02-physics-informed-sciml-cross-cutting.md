@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-02-physics-informed-sciml-cross-cutting
 title: Cross-cutting themes (2026-05-20-risksystems-02-physics-informed-sciml)
@@ -52,6 +53,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T19:03:39Z'
 draft_unresolved_claims: 5
+last_updated: '2026-05-20T19:03:39Z'
+sources_count: 3
 ---
 # Cross-cutting themes — 2026-05-20-risksystems-02-physics-informed-sciml
 

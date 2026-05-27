@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: apra-reserve-preparers
 canonical_name: Association of Professional Reserve Preparers (APRA)
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T17:46:04Z'
+last_updated: '2026-05-11T17:46:04Z'
 ---
 # Association of Professional Reserve Preparers (APRA)
 

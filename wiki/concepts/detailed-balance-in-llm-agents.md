@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: detailed-balance-in-llm-agents
 canonical_name: Detailed balance in LLM-driven agents
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Detailed balance in LLM-driven agents

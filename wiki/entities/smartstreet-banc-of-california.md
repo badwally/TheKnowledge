@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: smartstreet-banc-of-california
 canonical_name: SmartStreet (powered by Banc of California)
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:07:00Z'
+last_updated: '2026-05-23T17:07:00Z'
 ---
 
 # SmartStreet (powered by Banc of California)

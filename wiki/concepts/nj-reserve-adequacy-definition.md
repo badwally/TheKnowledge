@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-reserve-adequacy-definition
 canonical_name: NJ Statutory Definition of Reserve-Fund "Adequacy"
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ Statutory Definition of Reserve-Fund "Adequacy"

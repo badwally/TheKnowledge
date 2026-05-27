@@ -1,6 +1,6 @@
-# Session state — 2026-05-26
+# Session state — 2026-05-27
 
-Last updated: 2026-05-26 (Phase 7 complete — M95, exit checkpoint written)
+Last updated: 2026-05-27 (M96 complete — schema debt clearance)
 
 ---
 
@@ -13,27 +13,21 @@ Carry-forward (not blocking anything):
 - ANTHROPIC_API_KEY_RESEARCH needed for eval runs.
 - INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
 - `wiki migrate` remains a stub.
-- schema-drift: 4597 entity pages from legacy migration missing created_at/last_updated (pre-existing, not a regression).
+- schema-drift: 210 remaining (editorial-only: invalid entity_kind 58, missing sections 68, long slugs 50, missing canonical_name 34).
 
 ---
 
 ## Files mid-edit
 
-None. main is clean at m95-phase7-round-g. 1769 tests passing.
-Phase 7 exit checkpoint in BUILD.md § 16.
+None. main is clean at m96-phase8-round-a. 1777 tests passing.
+Phase 8 delivery log in BUILD.md § 17.
 
 ---
 
 ## Decisions made this session
 
-- M89: AGT-8 filter calibrator monthly cron. 1705 tests.
-- M90: TOOL-11 inbox triage web view. 1716 tests.
-- M91: ONT-12 tags codification. 1726 tests.
-- M92: ONT-14 question page type. 1740 tests.
-- M93: TOOL-10 shell completion + help examples. 1740 tests.
-- M94: TOOL-15 wiki ask-corpus (thin wrapper over query() op). 1750 tests.
-- M95: TOOL-16 wiki question new/list management commands. 1769 tests.
-- Phase 7 exit: all S/M backlog items exhausted. Remaining backlog is L-effort or impractical.
+- M89–M95: Phase 7 (AGT-8, TOOL-11, ONT-12, ONT-14, TOOL-10, TOOL-15, TOOL-16). 1695 → 1769 tests.
+- M96: Schema debt clearance. backfill-timestamps (2191 pages) + backfill-sources-count (99 pages). schema-drift 4597 → 210. 1769 → 1777 tests.
 
 ---
 
@@ -47,8 +41,7 @@ Phase 7 exit checkpoint in BUILD.md § 16.
 
 ## Next atomic step
 
-Phase 7 is complete. Options for Phase 8:
-- New feature requests from user
-- QUAL-8 if a forcing function appears (LLM-heavy citation coherence)
-- Source orphan discharge via `wiki query` synthesis loops (user-driven)
-- Schema backfill for entity pages (created_at/last_updated on 2298+ legacy entities)
+Phase 8 continues. Next candidates:
+- M97: Broken-wikilink repair op (`wiki fix-wikilinks`) — 277 findings, partially automatable
+- M98: Stale-draft abandonment policy — 224 stale drafts, auto-abandon >30 days with no inbound citations
+- M99: Orphan discharge routine (`wiki routine discharge-orphans`) — batch `wiki ask-corpus` per domain

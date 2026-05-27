@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: edge-ai-inference-infrastructure-hardware-accelerators
 title: 'Edge AI Inference Infrastructure: Hardware Accelerators, Distributed and Federated
@@ -11,6 +12,9 @@ question: 'Edge AI inference infrastructure: hardware accelerators (NPU, mobile 
 draft: true
 draft_started_at: '2026-04-28T00:00:00Z'
 draft_unresolved_claims: 17
+created_at: '2026-04-28T17:29:27Z'
+last_updated: '2026-04-28T17:29:27Z'
+sources_count: 20
 ---
 
 # Edge AI Inference Infrastructure: Hardware Accelerators, Distributed and Federated Edge, and Inference Optimization Beyond Compression

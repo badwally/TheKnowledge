@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: steven-ai-agent
 canonical_name: Steven (Daisy AI Agent)
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:39:55Z'
+last_updated: '2026-05-24T02:39:55Z'
 ---
 
 # Steven (Daisy AI Agent)

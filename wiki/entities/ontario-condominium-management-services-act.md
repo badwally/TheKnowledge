@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ontario-condominium-management-services-act
 canonical_name: Ontario Condominium Management Services Act, 2015 (CMSA)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:26:14Z'
+last_updated: '2026-05-23T16:26:14Z'
 ---
 
 # Ontario Condominium Management Services Act, 2015 (CMSA)

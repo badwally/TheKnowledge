@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-hoa-trust-fund-requirement
 canonical_name: California HOA Trust Fund Requirement (Unused Dues, Fees, and Assessments)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:11:16Z'
+last_updated: '2026-05-23T23:11:16Z'
 ---
 
 # California HOA Trust Fund Requirement (Unused Dues, Fees, and Assessments)

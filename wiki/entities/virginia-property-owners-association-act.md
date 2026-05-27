@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: virginia-property-owners-association-act
 canonical_name: Virginia Property Owners' Association Act (Title 55.1, Chapter 18)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:25:45Z'
+last_updated: '2026-05-23T18:25:45Z'
 ---
 
 # Virginia Property Owners' Association Act (Title 55.1, Chapter 18)

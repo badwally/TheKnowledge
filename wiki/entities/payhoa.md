@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: payhoa
 canonical_name: PayHOA
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:50:15Z'
+last_updated: '2026-05-24T01:50:15Z'
 ---
 
 # PayHOA

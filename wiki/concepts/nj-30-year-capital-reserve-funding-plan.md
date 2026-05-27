@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-30-year-capital-reserve-funding-plan
 canonical_name: NJ 30-Year Capital Reserve Funding Plan
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ 30-Year Capital Reserve Funding Plan

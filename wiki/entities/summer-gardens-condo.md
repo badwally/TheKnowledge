@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: summer-gardens-condo
 canonical_name: Summer Gardens (Halifax Condominium Corporation No. 130)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-12T03:00:00Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-13T19:08:28Z'
+last_updated: '2026-05-13T19:08:28Z'
 ---
 # Summer Gardens — Halifax Condominium Corporation No. 130
 

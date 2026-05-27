@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pvsc
 canonical_name: Property Valuation Services Corporation
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-19T14:50:00Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-19T15:13:35Z'
+last_updated: '2026-05-19T15:13:35Z'
 ---
 # Property Valuation Services Corporation
 

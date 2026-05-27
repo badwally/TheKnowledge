@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: connectivity-vs-evolution-protocols
 canonical_name: Connectivity vs evolution protocols
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Connectivity vs evolution protocols

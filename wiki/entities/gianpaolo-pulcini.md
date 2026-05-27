@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: gianpaolo-pulcini
 canonical_name: Gianpaolo Pulcini
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:53Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:09:31Z'
+last_updated: '2026-05-20T21:09:31Z'
 ---
 
 # Gianpaolo Pulcini

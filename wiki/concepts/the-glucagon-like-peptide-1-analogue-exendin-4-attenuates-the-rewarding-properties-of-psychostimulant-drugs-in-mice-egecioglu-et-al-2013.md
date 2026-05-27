@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: the-glucagon-like-peptide-1-analogue-exendin-4-attenuates-the-rewarding-properties-of-psychostimulant-drugs-in-mice-egecioglu-et-al-2013
 canonical_name: The Glucagon Like Peptide 1 Analogue Exendin 4 Attenuates The Rewarding
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - addiction-and-substance-use-disorders
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # "The glucagon-like peptide 1 analogue, exendin-4, attenuates the rewarding properties of psychostimulant drugs in mice" (Egecioglu et al., 2013).

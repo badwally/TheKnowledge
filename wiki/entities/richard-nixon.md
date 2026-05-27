@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: richard-nixon
 canonical_name: Richard Nixon
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Richard Nixon

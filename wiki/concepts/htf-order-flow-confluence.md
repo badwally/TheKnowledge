@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: htf-order-flow-confluence
 canonical_name: HTF Order Flow Confluence (Fade Authorization Rule)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # HTF Order Flow Confluence (Fade Authorization Rule)

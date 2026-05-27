@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: the-select-trial-semaglutide-effects-on-cardiovascular-outcomes-which-tracked-over-17000-people-and-showed-a-20-reduction-in-heart-attacks-and-strokes
 canonical_name: The Select Trial Semaglutide Effects On Cardiovascular Outcomes Which
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - systemic-health-and-neuroprotection
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # The SELECT Trial (Semaglutide Effects on Cardiovascular Outcomes), which tracked over 17,000 people and showed a 20% reduction in heart attacks and strokes.

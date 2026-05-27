@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: self-feedback-detr
 canonical_name: Self Feedback Detr
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - detr
 - temporal-action-detection-localization
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Self-Feedback DETR

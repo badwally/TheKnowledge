@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ontario-regulation-48-01
 canonical_name: Ontario Regulation 48/01 (General)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:35:10Z'
+last_updated: '2026-05-23T20:35:10Z'
 ---
 
 # Ontario Regulation 48/01 (General)

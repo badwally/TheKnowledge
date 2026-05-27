@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: income-tax-act-canada
 canonical_name: Income Tax Act (Canada)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Income Tax Act (Canada)

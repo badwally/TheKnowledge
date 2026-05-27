@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-reserve-fund-investment-plan
 canonical_name: Ontario Reserve Fund Investment Plan (Section 115(8))
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:37:14Z'
+last_updated: '2026-05-23T16:37:14Z'
 ---
 
 # Ontario Reserve Fund Investment Plan (Section 115(8))

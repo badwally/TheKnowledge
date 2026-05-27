@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bernie-gonzalez
 entity_kind: person
 canonical_name: Bernie Gonzalez
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T19:05:32Z'
+last_updated: '2026-05-23T19:05:32Z'
 ---
 
 # Bernie Gonzalez

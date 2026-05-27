@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: gse-investor-concentration-limit
 canonical_name: GSE Investor Concentration Limit (Eliminated)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:15:46Z'
+last_updated: '2026-05-23T18:15:46Z'
 ---
 
 # GSE Investor Concentration Limit (Eliminated)

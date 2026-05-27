@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cudgc
 canonical_name: Credit Union Deposit Guarantee Corporation (CUDGC)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:31:28Z'
+last_updated: '2026-05-23T21:31:28Z'
 ---
 
 # Credit Union Deposit Guarantee Corporation (CUDGC)

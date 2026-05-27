@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: optimal-trade-entry
 canonical_name: Optimal Trade Entry (OTE)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Optimal Trade Entry (OTE)

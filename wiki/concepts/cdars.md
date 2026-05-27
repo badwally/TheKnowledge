@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cdars
 canonical_name: CDARS (Certificate of Deposit Account Registry Service)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:21:32Z'
+last_updated: '2026-05-23T22:21:32Z'
 ---
 
 # CDARS (Certificate of Deposit Account Registry Service)

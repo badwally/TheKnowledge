@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: market-structure-trading-checklist
 canonical_name: Market-Structure Trading Checklist
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Market-Structure Trading Checklist

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: temporal-action-detection-in-video-methods
 title: 'Temporal Action Detection in Video: Methods, Benchmarks, and State of the
@@ -10,6 +11,9 @@ question: 'Temporal action detection in video: methods (state-space models, tran
 draft: true
 draft_started_at: '2026-04-28T17:18:49Z'
 draft_unresolved_claims: 3
+created_at: '2026-04-28T17:18:49Z'
+last_updated: '2026-04-28T17:18:49Z'
+sources_count: 12
 ---
 
 # Temporal Action Detection in Video: Methods, Benchmarks, and State of the Art

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: ns-active-condo-corporations-dataset
 canonical_name: Nova Scotia Active Condominium Corporations Dataset
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T21:20:32Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-12T02:46:22Z'
+last_updated: '2026-05-12T02:46:22Z'
 ---
 # Nova Scotia Active Condominium Corporations Dataset
 

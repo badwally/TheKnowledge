@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-standard-condominium-corporation
 canonical_name: Ontario Standard Condominium Corporation
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:32:07Z'
+last_updated: '2026-05-23T20:32:07Z'
 ---
 
 # Ontario Standard Condominium Corporation

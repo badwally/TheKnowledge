@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-common-elements-definition
 canonical_name: Ontario Common Elements Definition
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:58:48Z'
+last_updated: '2026-05-23T20:58:48Z'
 ---
 
 # Ontario Common Elements Definition

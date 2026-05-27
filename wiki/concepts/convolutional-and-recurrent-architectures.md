@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: convolutional-and-recurrent-architectures
 canonical_name: Convolutional And Recurrent Architectures
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - action-recognition-classification
 - rnn-lstm
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Convolutional and Recurrent Architectures

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: rabi-mishalani
 canonical_name: Rabi Mishalani
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:04Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:23:19Z'
+last_updated: '2026-05-20T21:23:19Z'
 ---
 
 # Rabi Mishalani

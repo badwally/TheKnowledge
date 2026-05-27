@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: irc-section-277
 canonical_name: IRC Section 277 (Membership Organizations)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # IRC Section 277 (Membership Organizations)

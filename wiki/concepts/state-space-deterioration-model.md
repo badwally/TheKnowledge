@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: state-space-deterioration-model
 canonical_name: State-Space Deterioration Model
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:53:54Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:53:56Z'
+last_updated: '2026-05-20T19:53:56Z'
 ---
 
 # State-Space Deterioration Model

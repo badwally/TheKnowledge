@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-ab-1101
 canonical_name: California AB 1101 (Statutes of 2021, Chapter 270)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:46:31Z'
+last_updated: '2026-05-23T23:46:31Z'
 ---
 
 # California AB 1101 (Statutes of 2021, Chapter 270)

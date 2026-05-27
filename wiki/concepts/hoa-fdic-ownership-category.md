@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-fdic-ownership-category
-canonical_name: HOA FDIC Ownership Category (Corporation/Partnership/Unincorporated Association Accounts)
+canonical_name: HOA FDIC Ownership Category (Corporation/Partnership/Unincorporated
+  Association Accounts)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:39:54Z'
+last_updated: '2026-05-24T00:39:54Z'
 ---
 
 # HOA FDIC Ownership Category (Corporation/Partnership/Unincorporated Association Accounts)

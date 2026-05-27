@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: jose-guilherme-porto-oliveira
 canonical_name: José Guilherme Porto Oliveira
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:57:58Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:44:55Z'
+last_updated: '2026-05-20T19:44:55Z'
 ---
 
 # José Guilherme Porto Oliveira

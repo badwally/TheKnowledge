@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-21-synthesis-cinc-systems-2024-2026-competitive
 title: 'Synthesis: CINC Systems 2024-2026 competitive evolution — platform, capitalization,
@@ -38,6 +39,8 @@ question: 'Synthesis: CINC Systems 2024-2026 competitive evolution — platform,
 created_at: '2026-05-21T22:32:08Z'
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 finalized_at: '2026-05-21T22:37:23Z'
+last_updated: '2026-05-21T22:37:23Z'
+sources_count: 13
 ---
 # Synthesis: CINC Systems 2024-2026 competitive evolution — platform, capitalization, M&A pattern, and reserve-study positioning, with Vantaca as the secondary CAM-SaaS-platform comparison. Cover: (1) Cephai+ AI agent inventory (invoice processing, EFT reconciliation, board packets, budget building, violation detection, communications, ACC requests) and the customer jobs each owns; (2) SmartProperty integration state as the deterministic reserve-study floor; (3) Hg Capital December 2023 + Spectrum Equity June 2020 capital structure and the Hg hold-period exit window December 2028-December 2030; (4) M&A pattern observable from the ONR Applications acquisition January 2025; (5) executive buildout since December 2023 (Berenson CPO, Granara CFO, Cohen GM Financial Services, Dolan CMO, Chitayat CTO); (6) US-only geography and the structural exclusion of the Canadian condominium market; (7) Vantaca's October 2025 $300M+ Cove Hill Partners-led raise at $1.25B valuation, the November 2024 HOAi acquisition, the 500+ management companies / 6M+ households coverage, and the absence of any reserve-study integration; (8) build-vs-buy math for both CINC and Vantaca against an organic probabilistic capital-planning module. Use wikilink format [[sources/<slug>]] for citations. No numeric footnotes.
 

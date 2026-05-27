@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: epic-forensics-engineering
 canonical_name: Epic Forensics & Engineering, Inc.
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:47:43Z'
+last_updated: '2026-05-24T04:47:43Z'
 ---
 
 # Epic Forensics & Engineering, Inc.

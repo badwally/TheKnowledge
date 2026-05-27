@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: mike-farrell
 canonical_name: Mike Farrell
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-21T20:48:26Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-21T20:53:50Z'
+last_updated: '2026-05-21T20:53:50Z'
 ---
 # Mike Farrell
 

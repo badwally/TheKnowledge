@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: energy-management-plan
 canonical_name: Energy Management Plan (BOMA BEST 4.0 MURB E2.0)
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # Energy Management Plan (BOMA BEST 4.0 MURB E2.0)
 

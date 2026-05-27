@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pavement-deterioration-gnn-paper
 canonical_name: Considering Spatial Structure of the Road Network in Pavement Deterioration
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:25Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:18:17Z'
+last_updated: '2026-05-20T21:18:17Z'
 ---
 
 # Considering Spatial Structure of the Road Network in Pavement Deterioration Modeling

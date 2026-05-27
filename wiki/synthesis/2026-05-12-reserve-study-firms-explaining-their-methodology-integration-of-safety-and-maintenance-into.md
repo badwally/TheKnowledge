@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-12-reserve-study-firms-explaining-their-methodology-integration-of-safety-and-maintenance-into
 title: Integration of Safety and Maintenance into Reserve Planning — investigation
@@ -13,6 +14,8 @@ created_at: '2026-05-12T20:17:25Z'
 draft: true
 draft_started_at: '2026-05-12T20:17:25Z'
 draft_unresolved_claims: 36
+last_updated: '2026-05-12T20:17:25Z'
+sources_count: 3
 ---
 # Integration of Safety and Maintenance into Reserve Planning — investigation
 

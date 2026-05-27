@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: nrc-service-life-dataset-envelope
 canonical_name: NRC Service Life Dataset for Non-Structural Building Envelope Materials
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:23:25Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:25:03Z'
+last_updated: '2026-05-11T23:25:03Z'
 ---
 # NRC Service Life Dataset for Non-Structural Building Envelope Materials
 

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: offline-online-bayesian-filtering-paper
 canonical_name: On off-line and on-line Bayesian filtering for uncertainty quantification
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:57:56Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:32:52Z'
+last_updated: '2026-05-20T19:32:52Z'
 ---
 
 # On off-line and on-line Bayesian filtering for uncertainty quantification of structural deterioration

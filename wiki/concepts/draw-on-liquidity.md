@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: draw-on-liquidity
 canonical_name: Draw on Liquidity (DOL)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Draw on Liquidity (DOL)

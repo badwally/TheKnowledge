@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: virginia-cic-manager-regulations
 canonical_name: Virginia Common Interest Community Manager Regulations (18VAC48-50)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:25:45Z'
+last_updated: '2026-05-23T18:25:45Z'
 ---
 
 # Virginia Common Interest Community Manager Regulations (18VAC48-50)

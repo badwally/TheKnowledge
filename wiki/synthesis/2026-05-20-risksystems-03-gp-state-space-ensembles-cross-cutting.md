@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-03-gp-state-space-ensembles-cross-cutting
 title: Cross-cutting themes (2026-05-20-risksystems-03-gp-state-space-ensembles)
@@ -55,6 +56,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:25:43Z'
 draft_unresolved_claims: 6
+last_updated: '2026-05-20T18:25:43Z'
+sources_count: 2
 ---
 # Cross-cutting themes — 2026-05-20-risksystems-03-gp-state-space-ensembles
 

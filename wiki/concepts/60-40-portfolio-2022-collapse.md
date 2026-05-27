@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: 60-40-portfolio-2022-collapse
 canonical_name: 60/40 Portfolio Collapse (2022)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # 60/40 Portfolio Collapse (2022)

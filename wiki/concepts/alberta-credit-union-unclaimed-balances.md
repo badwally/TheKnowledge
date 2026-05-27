@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: alberta-credit-union-unclaimed-balances
 canonical_name: Alberta Credit Union Unclaimed Balances Regime
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:31:28Z'
+last_updated: '2026-05-23T21:31:28Z'
 ---
 
 # Alberta Credit Union Unclaimed Balances Regime

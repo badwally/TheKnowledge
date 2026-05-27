@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: volatility-by-design
 canonical_name: Volatility by Design
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Volatility by Design

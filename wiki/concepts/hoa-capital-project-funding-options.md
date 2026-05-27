@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-capital-project-funding-options
-canonical_name: HOA Capital Project Funding Options (Reserves vs Special Assessment vs Financing)
+canonical_name: HOA Capital Project Funding Options (Reserves vs Special Assessment
+  vs Financing)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:10:23Z'
+last_updated: '2026-05-23T22:10:23Z'
 ---
 
 # HOA Capital Project Funding Options (Reserves vs Special Assessment vs Financing)

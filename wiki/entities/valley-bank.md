@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: valley-bank
 canonical_name: Valley Bank
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:12:36Z'
+last_updated: '2026-05-23T17:12:36Z'
 ---
 
 # Valley Bank

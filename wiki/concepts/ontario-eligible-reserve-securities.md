@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-eligible-reserve-securities
 canonical_name: Ontario Eligible Reserve Fund Securities (Section 115(5))
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:37:14Z'
+last_updated: '2026-05-23T16:37:14Z'
 ---
 
 # Ontario Eligible Reserve Fund Securities (Section 115(5))

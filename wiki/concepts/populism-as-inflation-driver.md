@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: populism-as-inflation-driver
 canonical_name: Populism as a structural force driving inflation
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Populism as a structural force driving inflation

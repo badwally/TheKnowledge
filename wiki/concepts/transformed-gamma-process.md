@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: transformed-gamma-process
 canonical_name: Transformed gamma (TG) process
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:53Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:09:31Z'
+last_updated: '2026-05-20T21:09:31Z'
 ---
 
 # Transformed gamma (TG) process

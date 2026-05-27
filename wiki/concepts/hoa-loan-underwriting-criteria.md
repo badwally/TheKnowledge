@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-loan-underwriting-criteria
 canonical_name: HOA Loan Underwriting Criteria
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:10:23Z'
+last_updated: '2026-05-23T22:10:23Z'
 ---
 
 # HOA Loan Underwriting Criteria

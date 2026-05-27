@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: park-tool-bbt-9
 canonical_name: Park Tool BBT-9
 entity_kind: product
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Park Tool BBT-9

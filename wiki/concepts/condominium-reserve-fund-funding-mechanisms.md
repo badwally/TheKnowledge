@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: condominium-reserve-fund-funding-mechanisms
 canonical_name: Three Funding Mechanisms for the Reserve Fund
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T21:19:12Z'
+last_updated: '2026-05-23T21:19:12Z'
 ---
 
 # Three Funding Mechanisms for the Reserve Fund

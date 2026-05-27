@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: architecturalpatterns
 title: Architecturalpatterns
@@ -11,6 +12,9 @@ legacy_provenance:
   imported_at: '2026-04-28T15:31:59Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_edge_ai/synthesis/architecturalpatterns.md
   legacy_slug: architecturalpatterns
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
+sources_count: 0
 ---
 
 # Architectural Patterns

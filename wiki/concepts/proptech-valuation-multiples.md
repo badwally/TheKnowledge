@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: proptech-valuation-multiples
 canonical_name: PropTech Valuation Multiples (2025)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:22:13Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:22:13Z'
+last_updated: '2026-05-11T23:22:13Z'
 ---
 # PropTech Valuation Multiples (2025)
 

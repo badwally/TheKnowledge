@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: enumerate
 canonical_name: Enumerate
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:59:55Z'
+last_updated: '2026-05-23T21:59:55Z'
 ---
 
 # Enumerate

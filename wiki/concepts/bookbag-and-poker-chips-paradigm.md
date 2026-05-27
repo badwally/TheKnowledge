@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bookbag-and-poker-chips-paradigm
 canonical_name: Bookbag-and-Poker-Chips Paradigm
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Bookbag-and-Poker-Chips Paradigm

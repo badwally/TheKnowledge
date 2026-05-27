@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-services-the-economic-pivot-economics-pillar
 title: The Economic Pivot (Economics Pillar) — investigation (2026-05-23-what-is-the-ai-native-services)
@@ -27,6 +28,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-23T19:31:45Z'
 draft_unresolved_claims: 6
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 8
 ---
 # The Economic Pivot (Economics Pillar) — investigation
 

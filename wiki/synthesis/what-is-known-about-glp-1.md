@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: what-is-known-about-glp-1
 title: GLP-1 modulation of the mesolimbic dopamine system
@@ -9,6 +10,9 @@ question: what is known about GLP-1 modulation of the mesolimbic dopamine system
 draft: true
 draft_started_at: '2026-04-28T16:58:31Z'
 draft_unresolved_claims: 3
+created_at: '2026-04-28T16:58:31Z'
+last_updated: '2026-04-28T16:58:31Z'
+sources_count: 16
 ---
 
 # GLP-1 modulation of the mesolimbic dopamine system

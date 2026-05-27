@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: market-maker-sell-model
 canonical_name: Market Maker Sell Model (Bearish PO3)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Market Maker Sell Model (Bearish PO3)

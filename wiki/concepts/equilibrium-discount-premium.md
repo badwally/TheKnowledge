@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: equilibrium-discount-premium
 canonical_name: Equilibrium, Discount, and Premium
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Equilibrium, Discount, and Premium

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap
 canonical_name: Brain Organoid Studies Demonstrating Semaglutides Reduction Of Alzheimers
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - systemic-health-and-neuroprotection
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Brain organoid studies demonstrating semaglutide's reduction of Alzheimer's disease hallmarks, including amyloid-beta plaques, phosphorylated tau, and GFAP.

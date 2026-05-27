@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: quebec-buyer-certificate
 canonical_name: Quebec Pre-Sale Buyer Certificate
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:08:29Z'
+last_updated: '2026-05-23T21:08:29Z'
 ---
 
 # Quebec Pre-Sale Buyer Certificate

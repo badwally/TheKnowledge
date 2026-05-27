@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bleeding-edge
 canonical_name: Bleeding Edge (SRAM)
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Bleeding Edge (SRAM)

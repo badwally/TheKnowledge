@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: form-co-17-sp
-canonical_name: Form CO-17.SP — Information and Income Tax Return for Non-Profit Corporations (Quebec)
+canonical_name: Form CO-17.SP — Information and Income Tax Return for Non-Profit Corporations
+  (Quebec)
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Form CO-17.SP — Information and Income Tax Return for Non-Profit Corporations (Quebec)

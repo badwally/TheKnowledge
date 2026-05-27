@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: florida-condominium-unit-owner-inquiry-response
 canonical_name: Florida Condominium Unit-Owner Written Inquiry Response Requirement
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:09:53Z'
+last_updated: '2026-05-23T18:09:53Z'
 ---
 
 # Florida Condominium Unit-Owner Written Inquiry Response Requirement

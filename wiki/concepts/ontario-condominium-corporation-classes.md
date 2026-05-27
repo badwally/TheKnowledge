@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condominium-corporation-classes
 canonical_name: Ontario Condominium Corporation Classes
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:31:01Z'
+last_updated: '2026-05-23T20:31:01Z'
 ---
 
 # Ontario Condominium Corporation Classes

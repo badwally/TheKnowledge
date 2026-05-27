@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: fannie-mae-form-1076
 canonical_name: Fannie Mae Form 1076 (Condominium Project Questionnaire)
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # Fannie Mae Form 1076 (Condominium Project Questionnaire)

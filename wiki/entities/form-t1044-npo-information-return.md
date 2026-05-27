@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: form-t1044-npo-information-return
 canonical_name: Form T1044 — Non-Profit Organization (NPO) Information Return
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Form T1044 — Non-Profit Organization (NPO) Information Return

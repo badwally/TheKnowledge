@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: cao-condo-registry
 canonical_name: CAO Condo Registry
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-19T14:54:36Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-19T14:56:13Z'
+last_updated: '2026-05-19T14:56:13Z'
 ---
 # CAO Condo Registry
 

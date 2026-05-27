@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: internal-revenue-code-section-528
 canonical_name: Internal Revenue Code §528 (Certain homeowners associations)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:54:36Z'
+last_updated: '2026-05-23T22:54:36Z'
 ---
 
 # Internal Revenue Code §528 (Certain homeowners associations)

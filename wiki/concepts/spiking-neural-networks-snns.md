@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: spiking-neural-networks-snns
 canonical_name: Spiking Neural Networks Snns
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - biologically-inspired-advanced-spatio-temporal-computing
 - spiking-nn
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Spiking Neural Networks (SNNs)

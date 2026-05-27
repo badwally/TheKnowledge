@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-03-gp-state-space-ensembles-state-space-methods-and-particle-filters
 title: State-Space Methods and Particle Filters for Prognostics — investigation (2026-05-20-risksystems-03-gp-state-space-ensembles)
@@ -53,6 +54,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:25:43Z'
 draft_unresolved_claims: 8
+last_updated: '2026-05-20T18:25:43Z'
+sources_count: 4
 ---
 # State-Space Methods and Particle Filters for Prognostics — investigation
 

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: long-form-video-understanding-reasoning-across
 title: 'Long-Form Video Understanding: Reasoning Across Extended Time Periods, Longitudinal
@@ -11,6 +12,9 @@ question: 'long-form video understanding: reasoning across extended time periods
 draft: true
 draft_started_at: '2026-04-28T17:22:23Z'
 draft_unresolved_claims: 8
+created_at: '2026-04-28T17:22:23Z'
+last_updated: '2026-04-28T17:22:23Z'
+sources_count: 13
 ---
 
 # Long-Form Video Understanding: Reasoning Across Extended Time Periods, Longitudinal Patterns, and Beyond-Clip Temporal Context

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: role-of-appetite-regulating-peptides-in-the-pathophysiology-of-addiction-implications-for-pharmacotherapy-engel-jerlhag-2014
 canonical_name: Role Of Appetite Regulating Peptides In The Pathophysiology Of Addiction
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - addiction-and-substance-use-disorders
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # "Role of appetite-regulating peptides in the pathophysiology of addiction: implications for pharmacotherapy" (Engel & Jerlhag, 2014).

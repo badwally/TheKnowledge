@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cci-eastern-ontario-chapter
 canonical_name: CCI Eastern Ontario Chapter (CCI-EO)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:24:57Z'
+last_updated: '2026-05-24T03:24:57Z'
 ---
 
 # CCI Eastern Ontario Chapter (CCI-EO)

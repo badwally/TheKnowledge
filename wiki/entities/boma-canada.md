@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: boma-canada
 canonical_name: BOMA Canada (Building Owners and Managers Association of Canada)
 entity_kind: organization
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # BOMA Canada (Building Owners and Managers Association of Canada)
 

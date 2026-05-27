@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-reserve-study-five-year-cycle
 canonical_name: NJ Reserve Study 5-Year Update Cycle
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ Reserve Study 5-Year Update Cycle

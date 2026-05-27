@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: gse-insurance-deductible-cap
 canonical_name: GSE Condominium Property Insurance Deductible Cap ($50,000/unit)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:15:46Z'
+last_updated: '2026-05-23T18:15:46Z'
 ---
 
 # GSE Condominium Property Insurance Deductible Cap ($50,000/unit)

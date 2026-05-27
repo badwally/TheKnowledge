@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: assessment-and-reserve-funding-disclosure-summary
 canonical_name: Assessment and Reserve Funding Disclosure Summary
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # Assessment and Reserve Funding Disclosure Summary

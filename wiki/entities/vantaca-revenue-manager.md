@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: vantaca-revenue-manager
 canonical_name: Vantaca Revenue Manager
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # Vantaca Revenue Manager

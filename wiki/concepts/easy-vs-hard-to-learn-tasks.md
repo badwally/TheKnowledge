@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: easy-vs-hard-to-learn-tasks
 canonical_name: Easy-to-Learn vs. Hard-to-Learn Tasks
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Easy-to-Learn vs. Hard-to-Learn Tasks

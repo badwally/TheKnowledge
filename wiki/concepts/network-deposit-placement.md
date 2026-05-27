@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: network-deposit-placement
 canonical_name: Network Deposit Placement
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:12:12Z'
+last_updated: '2026-05-23T16:12:12Z'
 ---
 
 # Network Deposit Placement

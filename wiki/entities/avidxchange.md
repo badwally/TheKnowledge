@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: avidxchange
 canonical_name: AvidXchange
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-21T20:42:23Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-21T20:48:19Z'
+last_updated: '2026-05-21T20:48:19Z'
 ---
 # AvidXchange
 

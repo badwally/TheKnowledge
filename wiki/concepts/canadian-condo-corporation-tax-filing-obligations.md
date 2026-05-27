@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-corporation-tax-filing-obligations
 canonical_name: Canadian Condominium Corporation Federal Tax Filing Obligations
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Canadian Condominium Corporation Federal Tax Filing Obligations

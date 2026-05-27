@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cinc-systems
 canonical_name: CINC Systems
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:36:59Z'
+last_updated: '2026-05-24T04:36:59Z'
 ---
 
 # CINC Systems

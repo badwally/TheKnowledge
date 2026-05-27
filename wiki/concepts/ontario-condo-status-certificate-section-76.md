@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condo-status-certificate-section-76
 canonical_name: Ontario Condo Status Certificate (Section 76)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:36:31Z'
+last_updated: '2026-05-24T00:36:31Z'
 ---
 
 # Ontario Condo Status Certificate (Section 76)

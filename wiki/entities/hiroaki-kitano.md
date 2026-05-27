@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: hiroaki-kitano
 canonical_name: Hiroaki Kitano
 entity_kind: person
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Hiroaki Kitano

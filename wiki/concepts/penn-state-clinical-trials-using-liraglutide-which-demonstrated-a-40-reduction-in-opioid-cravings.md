@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: penn-state-clinical-trials-using-liraglutide-which-demonstrated-a-40-reduction-in-opioid-cravings
 canonical_name: Penn State Clinical Trials Using Liraglutide Which Demonstrated A
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - addiction-and-substance-use-disorders
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Penn State clinical trials using Liraglutide, which demonstrated a 40% reduction in opioid cravings.

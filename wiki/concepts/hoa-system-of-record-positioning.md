@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-system-of-record-positioning
 canonical_name: HOA "system of record" positioning
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:21:50Z'
+last_updated: '2026-05-24T03:21:50Z'
 ---
 
 # HOA "system of record" positioning

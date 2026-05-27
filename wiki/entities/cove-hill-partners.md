@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cove-hill-partners
 canonical_name: Cove Hill Partners
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:01:34Z'
+last_updated: '2026-05-24T01:01:34Z'
 ---
 
 # Cove Hill Partners

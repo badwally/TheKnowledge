@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: david-greenberg
 canonical_name: David Greenberg
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:01:34Z'
+last_updated: '2026-05-24T01:01:34Z'
 ---
 
 # David Greenberg

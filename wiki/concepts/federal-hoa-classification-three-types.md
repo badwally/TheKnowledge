@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: federal-hoa-classification-three-types
 canonical_name: Federal HOA Classification — Three §528 Association Types
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:54:36Z'
+last_updated: '2026-05-23T22:54:36Z'
 ---
 
 # Federal HOA Classification — Three §528 Association Types

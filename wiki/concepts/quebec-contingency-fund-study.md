@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: quebec-contingency-fund-study
 canonical_name: Quebec Contingency Fund Study (5-Year Cycle)
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T21:08:29Z'
+last_updated: '2026-05-23T21:08:29Z'
 ---
 
 # Quebec Contingency Fund Study (5-Year Cycle)

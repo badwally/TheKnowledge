@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-hoa-financial-review-threshold
 canonical_name: California HOA Financial Review Threshold (§5305 $75,000)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:32:23Z'
+last_updated: '2026-05-23T18:32:23Z'
 ---
 
 # California HOA Financial Review Threshold (§5305 $75,000)

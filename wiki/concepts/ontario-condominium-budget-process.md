@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condominium-budget-process
 canonical_name: Ontario Condominium Budget Process
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:26:14Z'
+last_updated: '2026-05-23T16:26:14Z'
 ---
 
 # Ontario Condominium Budget Process

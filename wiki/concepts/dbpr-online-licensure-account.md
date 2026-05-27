@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: dbpr-online-licensure-account
 canonical_name: DBPR Online Licensure Account (Florida CAM)
 domains:
 - condo
+created_at: '2026-05-09T23:44:48Z'
+last_updated: '2026-05-09T23:44:48Z'
 ---
 # DBPR Online Licensure Account (Florida CAM)
 

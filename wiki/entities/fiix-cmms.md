@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: fiix-cmms
 canonical_name: Fiix CMMS
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:57:32Z'
+last_updated: '2026-05-24T02:57:32Z'
 ---
 
 # Fiix CMMS

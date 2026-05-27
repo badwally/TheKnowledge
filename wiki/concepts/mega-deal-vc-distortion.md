@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: mega-deal-vc-distortion
 canonical_name: Mega-Deal VC Distortion
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Mega-Deal VC Distortion

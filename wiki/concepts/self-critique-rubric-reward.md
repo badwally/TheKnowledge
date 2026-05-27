@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: self-critique-rubric-reward
 canonical_name: Self-critique rubric reward
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Self-critique rubric reward

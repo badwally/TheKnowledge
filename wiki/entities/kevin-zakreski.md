@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: kevin-zakreski
 canonical_name: Kevin Zakreski
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:14:25Z'
+last_updated: '2026-05-23T21:14:25Z'
 ---
 
 # Kevin Zakreski

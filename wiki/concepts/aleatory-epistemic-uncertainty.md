@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: aleatory-epistemic-uncertainty
 canonical_name: Aleatory and epistemic uncertainty
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:30:00Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:40:01Z'
+last_updated: '2026-05-20T19:40:01Z'
 ---
 
 # Aleatory and epistemic uncertainty

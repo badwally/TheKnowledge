@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: self-selected-sample
 canonical_name: Self-selected sample (in infrastructure effectiveness data)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:04Z'
 draft_unresolved_claims: 3
+created_at: '2026-05-20T21:23:19Z'
+last_updated: '2026-05-20T21:23:19Z'
 ---
 
 # Self-selected sample (in infrastructure effectiveness data)

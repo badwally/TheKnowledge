@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: ersar
 canonical_name: ERSAR (Entidade Reguladora dos Serviços de Águas e Resíduos)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:33Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:14:15Z'
+last_updated: '2026-05-20T19:14:15Z'
 ---
 
 # ERSAR (Entidade Reguladora dos Serviços de Águas e Resíduos)

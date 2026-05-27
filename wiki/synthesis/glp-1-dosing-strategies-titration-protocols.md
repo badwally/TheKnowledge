@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: glp-1-dosing-strategies-titration-protocols
 title: GLP-1 dosing strategies — titration, microdosing, and compound selection
@@ -9,6 +10,9 @@ question: 'GLP-1 dosing strategies: titration protocols, microdosing, and compou
 draft: true
 draft_started_at: '2026-04-28T00:00:00Z'
 draft_unresolved_claims: 3
+created_at: '2026-04-28T17:04:39Z'
+last_updated: '2026-04-28T17:04:39Z'
+sources_count: 26
 ---
 
 # GLP-1 dosing strategies — titration, microdosing, and compound selection

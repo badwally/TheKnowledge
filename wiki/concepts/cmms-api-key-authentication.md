@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cmms-api-key-authentication
 canonical_name: CMMS API Three-Key Authentication and Account-Backed Authorization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:57:32Z'
+last_updated: '2026-05-24T02:57:32Z'
 ---
 
 # CMMS API Three-Key Authentication and Account-Backed Authorization

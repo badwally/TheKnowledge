@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: dico-250k-deposit-insurance-limit
 canonical_name: DICO $250,000 Deposit Insurance Limit (per member institution)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:19:12Z'
+last_updated: '2026-05-23T21:19:12Z'
 ---
 
 # DICO $250,000 Deposit Insurance Limit (per member institution)

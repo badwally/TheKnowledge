@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: reward-deficit-and-anhedonia
 canonical_name: Reward Deficit And Anhedonia
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - mental-health-and-emotional-regulation
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Reward Deficit and Anhedonia

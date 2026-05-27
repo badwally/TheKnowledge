@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: fannie-mae-15-percent-delinquency-threshold
 canonical_name: Fannie Mae 15% Delinquency Eligibility Threshold
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # Fannie Mae 15% Delinquency Eligibility Threshold

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: takahiro-yamaguchi
 canonical_name: Takahiro Yamaguchi
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:02:17Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:35:32Z'
+last_updated: '2026-05-20T19:35:32Z'
 ---
 
 # Takahiro Yamaguchi

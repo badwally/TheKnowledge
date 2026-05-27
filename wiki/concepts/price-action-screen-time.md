@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: price-action-screen-time
 canonical_name: Price action as a screen-time skill
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Price action as a screen-time skill

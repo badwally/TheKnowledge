@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: high-protein-intake-protocols-prescribing-1-gram-of-protein-per-pound-of-target-body-weight-combined-with-resistance-training
 canonical_name: High Protein Intake Protocols Prescribing 1 Gram Of Protein Per Pound
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - clinical-dosing-and-lifestyle-protocols
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # High-protein intake protocols (prescribing 1 gram of protein per pound of target body weight) combined with resistance training.

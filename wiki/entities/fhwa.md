@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: fhwa
 canonical_name: Federal Highway Administration (FHWA)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:30:00Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:40:01Z'
+last_updated: '2026-05-20T19:40:01Z'
 ---
 
 # Federal Highway Administration (FHWA)

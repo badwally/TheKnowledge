@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: jesus-pinar-perez
 canonical_name: Jesús M. Pinar-Pérez
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:21:00Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:21:02Z'
+last_updated: '2026-05-20T19:21:02Z'
 ---
 
 # Jesús M. Pinar-Pérez

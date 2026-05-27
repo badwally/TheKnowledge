@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: energy-carbon-assessment
 canonical_name: Energy and Carbon Assessment (BOMA BEST 4.0 MURB E1.0b)
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # Energy and Carbon Assessment (BOMA BEST 4.0 MURB E1.0b)
 

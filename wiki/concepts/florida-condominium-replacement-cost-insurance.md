@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: florida-condominium-replacement-cost-insurance
 canonical_name: Florida Condominium Replacement-Cost Property Insurance Requirement
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:05:57Z'
+last_updated: '2026-05-23T18:05:57Z'
 ---
 
 # Florida Condominium Replacement-Cost Property Insurance Requirement

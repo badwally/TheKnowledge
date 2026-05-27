@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-leasing-common-elements-tax-treatment
 canonical_name: Canadian Condo Corporation — Tax Treatment of Leasing Common Elements
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:07:04Z'
+last_updated: '2026-05-23T23:07:04Z'
 ---
 
 # Canadian Condo Corporation — Tax Treatment of Leasing Common Elements

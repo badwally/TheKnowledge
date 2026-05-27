@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-09-what-are-the-documented-integration-gaps
 title: What are the documented integration gaps between condo reserve-study software,
@@ -16,6 +17,8 @@ nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 draft: true
 draft_started_at: '2026-05-09T23:11:04Z'
 draft_unresolved_claims: 14
+last_updated: '2026-05-09T23:11:04Z'
+sources_count: 1
 ---
 # What are the documented integration gaps between condo reserve-study software, accounting platforms, work-order systems, vendor management, and document management — where does the existing software ecosystem fail to provide a unified long-horizon planning layer for HOAs and what specific data flows are missing
 

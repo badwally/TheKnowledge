@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: florida-condominium-board-composition
 canonical_name: Florida Condominium Board Composition (Default Rules)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:09:53Z'
+last_updated: '2026-05-23T18:09:53Z'
 ---
 
 # Florida Condominium Board Composition (Default Rules)

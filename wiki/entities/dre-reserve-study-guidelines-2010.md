@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: dre-reserve-study-guidelines-2010
-canonical_name: DRE Reserve Study Guidelines for Homeowner Association Budgets (August 2010)
+canonical_name: DRE Reserve Study Guidelines for Homeowner Association Budgets (August
+  2010)
 entity_kind: publication
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T17:46:04Z'
+last_updated: '2026-05-11T17:46:04Z'
 ---
 # DRE Reserve Study Guidelines for Homeowner Association Budgets (August 2010)
 

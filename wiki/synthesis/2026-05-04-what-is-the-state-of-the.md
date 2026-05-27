@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-04-what-is-the-state-of-the
 title: what is the state of the art for agentic orchestration
@@ -10,6 +11,8 @@ nlm_notebook_id: 7eac1296-b611-422e-85bb-6c36f5c8872b
 draft: true
 draft_started_at: '2026-05-04T18:49:46Z'
 draft_unresolved_claims: 0
+last_updated: '2026-05-05T04:01:32Z'
+sources_count: 8
 ---
 # what is the state of the art for agentic orchestration
 

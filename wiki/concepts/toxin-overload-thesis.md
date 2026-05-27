@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: toxin-overload-thesis
 canonical_name: Toxin overload thesis (Kuon)
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Toxin overload thesis (Kuon)

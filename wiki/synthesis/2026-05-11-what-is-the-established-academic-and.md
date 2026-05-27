@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-is-the-established-academic-and
 title: 'What is the established academic and methodology stack for component-level
@@ -30,6 +31,8 @@ nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
 draft_started_at: '2026-05-11T21:41:03Z'
 draft_unresolved_claims: 23
+last_updated: '2026-05-11T21:41:03Z'
+sources_count: 0
 ---
 # What is the established academic and methodology stack for component-level capital-infrastructure forecasting at sparse-data scale (≤ 100 buildings, ≤ 1,000 components, no telemetry)? Cover: Weibull / lognormal survival models with informative priors; Markov chain deterioration in the Madanat / Golabi / Mishalani DOT bridge / pavement lineage; Bayesian hierarchical pooling for cohort-confounded data; Cox proportional hazards with covariates including CMMS work-order history; Monte Carlo aggregation with copula vs independence assumptions; CRPS / PIT / reliability-diagram probabilistic forecast verification; LCCA framing (ASTM E917) and regime-switching cost escalation; POMDP for inspection scheduling; sensor-fusion Bayesian updating with inspection events; what to avoid: deep-RUL (LSTM / transformer) and digital-twin frameworks under condo-scale data scarcity.
 

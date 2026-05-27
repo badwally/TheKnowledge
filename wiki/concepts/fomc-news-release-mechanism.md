@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: fomc-news-release-mechanism
 canonical_name: FOMC News Release Mechanism
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # FOMC News Release Mechanism

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-services
 title: 'What is the AI-native services firm archetype for a solo or tiny-team operator
@@ -26,6 +27,8 @@ nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
 draft: true
 draft_started_at: '2026-05-23T20:00:34Z'
 draft_unresolved_claims: 36
+last_updated: '2026-05-23T20:00:34Z'
+sources_count: 2
 ---
 # What is the AI-native services firm archetype for a solo or tiny-team operator in 2026? Cover: definition (AI-native marketing studio, bookkeeping shop, recruiting firm, paralegal services, content production); referents at the funded end (Mercor, Harvey, Crosby, Decagon) and the lean-operator end (one-person agencies, AI-leveraged consultancies, productized services); how the four pillars specialize — especially economics (hourly/retainer collapse as AI substrate replaces hours, pricing pivot to outcomes) and defensibility (client relationships, workflow integration, reputation — not data); go/no-go signals; worked example. Include the 'service as software' framing.
 

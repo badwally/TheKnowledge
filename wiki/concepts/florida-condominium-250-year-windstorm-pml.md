@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: florida-condominium-250-year-windstorm-pml
 canonical_name: Florida Condominium 250-Year Windstorm Probable Maximum Loss Standard
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:05:57Z'
+last_updated: '2026-05-23T18:05:57Z'
 ---
 
 # Florida Condominium 250-Year Windstorm Probable Maximum Loss Standard

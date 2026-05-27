@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: smartwebs
 canonical_name: Smartwebs
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:21:32Z'
+last_updated: '2026-05-23T22:21:32Z'
 ---
 
 # Smartwebs

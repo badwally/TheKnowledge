@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: virginia-statute-55-1-1826
-canonical_name: Virginia Code §55.1-1826 (Annual budget; reserve study; reserves for capital components)
+canonical_name: Virginia Code §55.1-1826 (Annual budget; reserve study; reserves for
+  capital components)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:17:44Z'
+last_updated: '2026-05-23T18:17:44Z'
 ---
 
 # Virginia Code §55.1-1826 (Annual budget; reserve study; reserves for capital components)

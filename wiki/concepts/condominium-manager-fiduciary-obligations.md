@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: condominium-manager-fiduciary-obligations
 canonical_name: Condominium Manager Fiduciary Obligations (Ontario)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:37:14Z'
+last_updated: '2026-05-23T16:37:14Z'
 ---
 
 # Condominium Manager Fiduciary Obligations (Ontario)

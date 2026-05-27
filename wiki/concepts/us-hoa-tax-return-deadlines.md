@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: us-hoa-tax-return-deadlines
 canonical_name: U.S. HOA Tax Return Deadlines and Fiscal Year End
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:17:21Z'
+last_updated: '2026-05-23T23:17:21Z'
 ---
 
 # U.S. HOA Tax Return Deadlines and Fiscal Year End

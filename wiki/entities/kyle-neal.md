@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: kyle-neal
 canonical_name: Kyle Neal
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:02:34Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:42:45Z'
+last_updated: '2026-05-20T19:42:45Z'
 ---
 
 # Kyle Neal

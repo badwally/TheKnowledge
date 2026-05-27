@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: double-deep-q-network
 canonical_name: Double Deep Q-Network
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:21:02Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:21:02Z'
+last_updated: '2026-05-20T19:21:02Z'
 ---
 
 # Double Deep Q-Network

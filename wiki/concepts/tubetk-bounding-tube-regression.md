@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: tubetk-bounding-tube-regression
 canonical_name: Tubetk Bounding Tube Regression
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # TubeTK (Bounding Tube Regression)

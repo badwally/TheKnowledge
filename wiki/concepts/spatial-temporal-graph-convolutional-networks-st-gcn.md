@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: spatial-temporal-graph-convolutional-networks-st-gcn
 canonical_name: Spatial Temporal Graph Convolutional Networks St Gcn
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - action-recognition-classification
 - graph-neural-network
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Spatial Temporal Graph Convolutional Networks (ST-GCN)

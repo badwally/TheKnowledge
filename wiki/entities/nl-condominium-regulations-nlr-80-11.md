@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: nl-condominium-regulations-nlr-80-11
 canonical_name: Newfoundland & Labrador Condominium Regulations (NLR 80/11)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:33:07Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:44:17Z'
+last_updated: '2026-05-11T23:44:17Z'
 ---
 
 # Newfoundland & Labrador Condominium Regulations (NLR 80/11)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cinc-open-api-partner-ecosystem
 canonical_name: CINC Open API Partner Ecosystem
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:36:59Z'
+last_updated: '2026-05-24T04:36:59Z'
 ---
 
 # CINC Open API Partner Ecosystem

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: infinite-game-trading
 canonical_name: Infinite-Game Mindset Applied to Trading
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Infinite-Game Mindset Applied to Trading

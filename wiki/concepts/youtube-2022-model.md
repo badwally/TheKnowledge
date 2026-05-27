@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: youtube-2022-model
 canonical_name: YouTube 2022 model
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # YouTube 2022 model

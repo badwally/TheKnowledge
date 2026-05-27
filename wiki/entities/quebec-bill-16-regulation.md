@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: quebec-bill-16-regulation
-canonical_name: Quebec Bill 16 Implementing Regulation (Gazette officielle, July 30, 2025)
+canonical_name: Quebec Bill 16 Implementing Regulation (Gazette officielle, July 30,
+  2025)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:08:29Z'
+last_updated: '2026-05-23T21:08:29Z'
 ---
 
 # Quebec Bill 16 Implementing Regulation (Gazette officielle, July 30, 2025)

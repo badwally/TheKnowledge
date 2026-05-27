@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-reserve-fund-study
 canonical_name: Ontario Reserve Fund Study (RFS)
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T16:49:55Z'
+last_updated: '2026-05-23T16:49:55Z'
 ---
 
 # Ontario Reserve Fund Study (RFS)

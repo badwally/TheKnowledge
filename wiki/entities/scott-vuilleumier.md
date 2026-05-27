@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: scott-vuilleumier
 canonical_name: Scott Vuilleumier
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # Scott Vuilleumier

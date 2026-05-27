@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: preventive-maintenance-plan
 canonical_name: Preventive Maintenance Plan (BOMA BEST 4.0 MURB E6.0)
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # Preventive Maintenance Plan (BOMA BEST 4.0 MURB E6.0)
 

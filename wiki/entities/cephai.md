@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cephai
 canonical_name: Cephai
 entity_kind: product
 domains:
 - condo-capital-infra
+created_at: '2026-05-21T19:56:46Z'
+last_updated: '2026-05-21T19:56:46Z'
 ---
 # Cephai
 

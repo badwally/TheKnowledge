@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: collaborative-compression-for-mixture-of-experts-moe
 canonical_name: Collaborative Compression For Mixture Of Experts Moe
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - on-device-inference-foundations
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Collaborative Compression for Mixture of Experts (MoE)

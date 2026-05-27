@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: nasa-prognostics-center-of-excellence
 canonical_name: NASA Prognostics Center of Excellence
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:38:08Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:38:08Z'
+last_updated: '2026-05-20T19:38:08Z'
 ---
 
 # NASA Prognostics Center of Excellence

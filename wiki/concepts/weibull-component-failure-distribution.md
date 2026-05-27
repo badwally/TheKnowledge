@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: weibull-component-failure-distribution
 canonical_name: Weibull Component Failure Distribution
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T22:04:18Z'
+last_updated: '2026-05-11T22:04:18Z'
 ---
 # Weibull Component Failure Distribution
 

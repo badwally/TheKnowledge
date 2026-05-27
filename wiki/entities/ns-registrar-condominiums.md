@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: ns-registrar-condominiums
 canonical_name: Service Nova Scotia Registrar of Condominiums
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T21:23:42Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T21:23:42Z'
+last_updated: '2026-05-11T21:23:42Z'
 ---
 # Service Nova Scotia Registrar of Condominiums
 

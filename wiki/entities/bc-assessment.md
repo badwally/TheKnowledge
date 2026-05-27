@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: bc-assessment
 canonical_name: BC Assessment
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-19T14:49:03Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-19T14:51:42Z'
+last_updated: '2026-05-19T14:51:42Z'
 ---
 # BC Assessment
 

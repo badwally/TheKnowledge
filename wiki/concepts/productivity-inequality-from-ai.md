@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: productivity-inequality-from-ai
 canonical_name: Productivity Inequality from AI
 domains:
-  - ai-and-agents
-  - trading-and-markets
+- ai-and-agents
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Productivity Inequality from AI

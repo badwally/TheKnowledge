@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: mast-cell-stabilization-protocol
 canonical_name: Mast cell stabilization protocol (Kuon Long COVID)
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Mast cell stabilization protocol (Kuon Long COVID)

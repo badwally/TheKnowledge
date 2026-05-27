@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bader-chowdry
 canonical_name: Bader A. Chowdry, CPA, CA, LPA
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:36:31Z'
+last_updated: '2026-05-24T00:36:31Z'
 ---
 
 # Bader A. Chowdry, CPA, CA, LPA

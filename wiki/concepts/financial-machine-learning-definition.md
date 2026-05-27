@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: financial-machine-learning-definition
 canonical_name: Financial Machine Learning (Three-Part Definition)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Financial Machine Learning (Three-Part Definition)

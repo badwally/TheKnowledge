@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: xlam-2-8b
 canonical_name: Salesforce xLAM-2-8B
 entity_kind: paper
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Salesforce xLAM-2-8B

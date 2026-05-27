@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: tomi-krogerus
 canonical_name: Tomi Krogerus
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:18:44Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:56:12Z'
+last_updated: '2026-05-20T19:56:12Z'
 ---
 
 # Tomi Krogerus

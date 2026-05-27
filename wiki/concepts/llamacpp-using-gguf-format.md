@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: llamacpp-using-gguf-format
 canonical_name: Llamacpp Using Gguf Format
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - mlops-and-devops-for-edge
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Llama.cpp (using GGUF format)

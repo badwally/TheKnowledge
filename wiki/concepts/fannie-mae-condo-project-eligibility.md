@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: fannie-mae-condo-project-eligibility
 canonical_name: Fannie Mae Condo Project Eligibility Classification
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # Fannie Mae Condo Project Eligibility Classification

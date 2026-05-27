@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: two-day-avwap-rule
 canonical_name: 2-Day AVWAP Rule
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # 2-Day AVWAP Rule

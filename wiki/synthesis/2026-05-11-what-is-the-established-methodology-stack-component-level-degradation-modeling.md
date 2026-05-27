@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling
 title: Component-Level Degradation Modeling — investigation (2026-05-11-what-is-the-established-methodology-stack)
@@ -37,6 +38,8 @@ synthesizes:
 - sources/4
 - sources/web-2014-06-26-215
 finalized_at: '2026-05-13T18:39:27Z'
+last_updated: '2026-05-13T18:39:27Z'
+sources_count: 3
 ---
 # Component-Level Degradation Modeling — investigation
 

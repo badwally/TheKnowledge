@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bill-blanton
 canonical_name: Bill Blanton
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:12:36Z'
+last_updated: '2026-05-23T17:12:36Z'
 ---
 
 # Bill Blanton

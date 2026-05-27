@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: fdic-deposit-insurance-limit
-canonical_name: FDIC Deposit Insurance Limit ($250,000 per depositor, per bank, per ownership category)
+canonical_name: FDIC Deposit Insurance Limit ($250,000 per depositor, per bank, per
+  ownership category)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:39:54Z'
+last_updated: '2026-05-24T00:39:54Z'
 ---
 
 # FDIC Deposit Insurance Limit ($250,000 per depositor, per bank, per ownership category)

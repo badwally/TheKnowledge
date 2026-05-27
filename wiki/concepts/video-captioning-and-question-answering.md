@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: video-captioning-and-question-answering
 canonical_name: Video Captioning And Question Answering
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - captioning
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Video Captioning and Question Answering

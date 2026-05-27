@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: gary-porter-cpa
 canonical_name: Gary A. Porter, CPA
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # Gary A. Porter, CPA

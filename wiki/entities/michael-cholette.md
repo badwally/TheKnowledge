@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: michael-cholette
 canonical_name: Michael E. Cholette
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:46Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:28:24Z'
+last_updated: '2026-05-20T19:28:24Z'
 ---
 
 # Michael E. Cholette

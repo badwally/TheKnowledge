@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: chris-millner
 canonical_name: Chris Millner
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:32:19Z'
+last_updated: '2026-05-24T04:32:19Z'
 ---
 
 # Chris Millner

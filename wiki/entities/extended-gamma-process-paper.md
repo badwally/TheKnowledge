@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: extended-gamma-process-paper
 canonical_name: Stochastic comparisons and ageing properties of an extended gamma
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:40Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:10:48Z'
+last_updated: '2026-05-20T21:10:48Z'
 ---
 
 # Stochastic comparisons and ageing properties of an extended gamma process

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: irs-net-membership-income-rulings
 canonical_name: IRS Revenue Rulings 75-370 and 75-371 (Net Membership Income Determination)
 entity_kind: regulation
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # IRS Revenue Rulings 75-370 and 75-371 (Net Membership Income Determination)

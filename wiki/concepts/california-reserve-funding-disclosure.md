@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-reserve-funding-disclosure
 canonical_name: California Annual Reserve Funding Disclosure
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # California Annual Reserve Funding Disclosure

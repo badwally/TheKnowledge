@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: anonymized-financial-statements
 canonical_name: Anonymized Financial Statements
 domains:
-  - trading-and-markets
-  - ai-and-agents
+- trading-and-markets
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Anonymized Financial Statements

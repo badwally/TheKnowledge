@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: wim-hof-method
 canonical_name: Wim Hof Method (WHM)
 entity_kind: organization
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Wim Hof Method (WHM)

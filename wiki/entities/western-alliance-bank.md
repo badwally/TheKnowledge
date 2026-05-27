@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: western-alliance-bank
 canonical_name: Western Alliance Bank
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:16:56Z'
+last_updated: '2026-05-23T22:16:56Z'
 ---
 
 # Western Alliance Bank

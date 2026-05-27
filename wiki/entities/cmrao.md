@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cmrao
 canonical_name: Condominium Management Regulatory Authority of Ontario (CMRAO)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:26:14Z'
+last_updated: '2026-05-23T16:26:14Z'
 ---
 
 # Condominium Management Regulatory Authority of Ontario (CMRAO)

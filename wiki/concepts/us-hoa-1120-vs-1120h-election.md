@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: us-hoa-1120-vs-1120h-election
 canonical_name: US HOA Form 1120 vs Form 1120-H Election
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # US HOA Form 1120 vs Form 1120-H Election

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: on-device-llm-inference-quantization-gguf
 title: 'On-Device LLM Inference: Quantization, NPU/Apple Silicon Acceleration, Runtimes,
@@ -10,6 +11,9 @@ question: 'On-device LLM inference: quantization (GGUF, AWQ, GPTQ), NPU and Appl
 draft: true
 draft_started_at: '2026-04-28T00:00:00Z'
 draft_unresolved_claims: 11
+created_at: '2026-04-28T17:26:18Z'
+last_updated: '2026-04-28T17:26:18Z'
+sources_count: 14
 ---
 
 # On-Device LLM Inference: Quantization, NPU/Apple Silicon Acceleration, Runtimes, and Quality vs Latency

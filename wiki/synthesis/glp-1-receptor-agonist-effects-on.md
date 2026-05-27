@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: glp-1-receptor-agonist-effects-on
 title: GLP-1 receptor agonist effects on mental health — anhedonia, mood, libido,
@@ -10,6 +11,9 @@ question: 'GLP-1 receptor agonist effects on mental health: anhedonia, mood, lib
 draft: true
 draft_started_at: '2026-04-28T00:00:00Z'
 draft_unresolved_claims: 1
+created_at: '2026-04-28T17:06:57Z'
+last_updated: '2026-04-28T17:06:57Z'
+sources_count: 18
 ---
 
 # GLP-1 receptor agonist effects on mental health — anhedonia, mood, libido, motivation, and suicidality

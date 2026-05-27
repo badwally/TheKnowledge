@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: human-clinical-trials-and-observational-studies-on-addiction
 canonical_name: Human Clinical Trials And Observational Studies On Addiction
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - addiction-and-substance-use-disorders
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Human Clinical Trials and Observational Studies on Addiction

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ben-currin
 canonical_name: Ben Currin
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:32:26Z'
+last_updated: '2026-05-24T01:32:26Z'
 ---
 
 # Ben Currin

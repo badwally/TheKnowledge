@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: edmond-lezmi
 canonical_name: Edmond Lezmi
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Edmond Lezmi

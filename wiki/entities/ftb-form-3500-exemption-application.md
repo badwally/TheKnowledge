@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ftb-form-3500-exemption-application
 canonical_name: FTB Form 3500 — Exemption Application
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:11:16Z'
+last_updated: '2026-05-23T23:11:16Z'
 ---
 
 # FTB Form 3500 — Exemption Application

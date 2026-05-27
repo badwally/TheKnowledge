@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: truist
 canonical_name: Truist Financial Corporation
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:11:08Z'
+last_updated: '2026-05-24T01:11:08Z'
 ---
 
 # Truist Financial Corporation

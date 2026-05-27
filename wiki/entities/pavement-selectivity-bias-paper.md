@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pavement-selectivity-bias-paper
 canonical_name: Selectivity Bias in Modeling Highway Pavement Maintenance Effectiveness
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:04Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:23:19Z'
+last_updated: '2026-05-20T21:23:19Z'
 ---
 
 # Selectivity Bias in Modeling Highway Pavement Maintenance Effectiveness

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: academic-industry-ai-talent-migration
 canonical_name: Academic-to-industry AI talent migration
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Academic-to-industry AI talent migration

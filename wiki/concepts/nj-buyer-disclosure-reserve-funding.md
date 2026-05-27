@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-buyer-disclosure-reserve-funding
 canonical_name: NJ Buyer Disclosure Requirements for Reserve Funding
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ Buyer Disclosure Requirements for Reserve Funding

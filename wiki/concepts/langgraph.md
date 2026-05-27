@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: langgraph
 canonical_name: Langgraph
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - orchestration-and-workflow-frameworks
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # LangGraph

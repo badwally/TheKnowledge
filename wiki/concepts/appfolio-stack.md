@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: appfolio-stack
 canonical_name: AppFolio Stack™
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:39:40Z'
+last_updated: '2026-05-24T04:39:40Z'
 ---
 
 # AppFolio Stack™

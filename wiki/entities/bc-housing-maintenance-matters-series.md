@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bc-housing-maintenance-matters-series
 canonical_name: BC Housing Maintenance Matters Bulletin Series
 entity_kind: publication
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:46:56Z'
+last_updated: '2026-05-10T22:46:56Z'
 ---
 # BC Housing Maintenance Matters Bulletin Series
 

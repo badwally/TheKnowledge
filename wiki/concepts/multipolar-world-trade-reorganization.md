@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: multipolar-world-trade-reorganization
 canonical_name: Multipolar World Trade Reorganization
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Multipolar World Trade Reorganization

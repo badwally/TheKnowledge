@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: fast-scan-cyclic-voltammetry-used-to-measure-minute-to-minute-changes-and-spikes-in-real-time-dopamine-signaling
 canonical_name: Fast Scan Cyclic Voltammetry Used To Measure Minute To Minute Changes
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - neurobiology-of-appetite-and-reward
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Fast-scan cyclic voltammetry, used to measure minute-to-minute changes and spikes in real-time dopamine signaling.

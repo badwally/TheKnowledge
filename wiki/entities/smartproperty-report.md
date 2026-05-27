@@ -1,11 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: smartproperty-report
 canonical_name: SmartProperty Report
 entity_kind: product
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-24T04:32:19Z'
+last_updated: '2026-05-24T04:32:19Z'
 ---
 
 # SmartProperty Report

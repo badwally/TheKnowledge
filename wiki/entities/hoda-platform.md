@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: hoda-platform
 canonical_name: HODA™ Platform
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:41:29Z'
+last_updated: '2026-05-24T04:41:29Z'
 ---
 
 # HODA™ Platform

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: pareto-smoothed-importance-sampling
 canonical_name: Pareto-smoothed importance sampling (PSIS)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:45Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:49:54Z'
+last_updated: '2026-05-20T19:49:54Z'
 ---
 
 # Pareto-smoothed importance sampling (PSIS)

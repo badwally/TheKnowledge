@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: corsica-cyclo-gt-20
 canonical_name: Corsica Cyclo "GT 20"
 entity_kind: event
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Corsica Cyclo "GT 20"

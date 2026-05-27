@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-board-reserve-fund-plan
 canonical_name: Ontario Board's Future-Funding Plan for the Reserve Fund (s. 94(8))
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T20:35:10Z'
+last_updated: '2026-05-23T20:35:10Z'
 ---
 
 # Ontario Board's Future-Funding Plan for the Reserve Fund (s. 94(8))

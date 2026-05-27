@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: toronto-apartment-building-evaluation-dataset
 canonical_name: City of Toronto Apartment Building Evaluation Dataset
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-19T15:51:38Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-19T15:52:41Z'
+last_updated: '2026-05-19T15:52:41Z'
 ---
 # City of Toronto Apartment Building Evaluation Dataset
 

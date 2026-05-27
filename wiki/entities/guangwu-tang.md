@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: guangwu-tang
 canonical_name: Guangwu Tang
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:52Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:24:16Z'
+last_updated: '2026-05-20T19:24:16Z'
 ---
 
 # Guangwu Tang

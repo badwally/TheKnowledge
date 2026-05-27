@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-civil-code-5550
 canonical_name: California Civil Code §5550–5520 (Reserve Studies)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:17:08Z'
+last_updated: '2026-05-23T16:17:08Z'
 ---
 
 # California Civil Code §5550–5520 (Reserve Studies)

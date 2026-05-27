@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: jason-delgado
 canonical_name: Jason Delgado
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-21T20:00:00Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-21T21:13:26Z'
+last_updated: '2026-05-21T21:13:26Z'
 ---
 # Jason Delgado
 

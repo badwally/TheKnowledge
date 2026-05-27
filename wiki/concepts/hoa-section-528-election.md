@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-section-528-election
 canonical_name: HOA §528 Election (Annual Form 1120-H Election)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:54:36Z'
+last_updated: '2026-05-23T22:54:36Z'
 ---
 
 # HOA §528 Election (Annual Form 1120-H Election)

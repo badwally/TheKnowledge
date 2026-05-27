@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-electronic-communication-definition
 canonical_name: Ontario Electronic Communication Statutory Definition (O. Reg. 48/01)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:35:10Z'
+last_updated: '2026-05-23T20:35:10Z'
 ---
 
 # Ontario Electronic Communication Statutory Definition (O. Reg. 48/01)

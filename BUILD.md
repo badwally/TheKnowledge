@@ -1148,6 +1148,14 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 17. Phase 8 delivery log (2026-05-27)
+
+### M96 — Phase 8 Round A (schema debt clearance — timestamp + sources_count backfills)
+
+See `docs/milestones/M96.md`. Ran `wiki backfill-timestamps` (2191 pages stamped) + added and ran new `wiki backfill-sources-count` (99 synthesis pages stamped with unique `[[sources/...]]` link count). schema-drift: 4597 → 210 (-4387). Remaining 210 are editorial-only (invalid entity_kind, missing sections, long slugs). 8 tests. Tests: 1769 → 1777 (+8), 0 regressions. Tag: `m96-phase8-round-a`.
+
+---
+
 ## 15. Phase 7 delivery log (2026-05-26)
 
 ### M95 — Phase 7 Round G (TOOL-16 wiki question management)

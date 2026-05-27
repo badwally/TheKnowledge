@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: california-managing-agent-commingling-prohibition
-canonical_name: California Managing-Agent Commingling Prohibition (Civil Code § 5380(b)(3), (d))
+canonical_name: California Managing-Agent Commingling Prohibition (Civil Code § 5380(b)(3),
+  (d))
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:46:31Z'
+last_updated: '2026-05-23T23:46:31Z'
 ---
 
 # California Managing-Agent Commingling Prohibition (Civil Code § 5380(b)(3), (d))

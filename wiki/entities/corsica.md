@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: corsica
 canonical_name: Corsica
 entity_kind: place
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Corsica

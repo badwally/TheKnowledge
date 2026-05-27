@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: bridge-resistance-gamma-process-paper
 canonical_name: Estimating the resistance of aging service-proven bridges with a Gamma
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:42Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:14:54Z'
+last_updated: '2026-05-20T21:14:54Z'
 ---
 
 # Estimating the resistance of aging service-proven bridges with a Gamma process-based deterioration model

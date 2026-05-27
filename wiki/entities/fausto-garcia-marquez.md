@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: fausto-garcia-marquez
 canonical_name: Fausto Pedro García Márquez
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:21:01Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:21:02Z'
+last_updated: '2026-05-20T19:21:02Z'
 ---
 
 # Fausto Pedro García Márquez

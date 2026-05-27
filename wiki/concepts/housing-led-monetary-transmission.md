@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: housing-led-monetary-transmission
 canonical_name: Housing-led monetary transmission
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Housing-led monetary transmission

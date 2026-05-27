@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: 8-21-day-ema-roadmap
 canonical_name: 8 & 21 Day EMA Roadmap
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # 8 & 21 Day EMA Roadmap

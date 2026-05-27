@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-100-dollar-specific-deduction
 canonical_name: HOA $100 Specific Deduction (§528)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:54:36Z'
+last_updated: '2026-05-23T22:54:36Z'
 ---
 
 # HOA $100 Specific Deduction (§528)

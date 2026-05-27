@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: fixed-income-reset
 canonical_name: Fixed income reset (2022)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Fixed income reset (2022)

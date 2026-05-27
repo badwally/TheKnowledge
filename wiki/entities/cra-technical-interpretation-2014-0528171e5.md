@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: cra-technical-interpretation-2014-0528171e5
-canonical_name: CRA External Technical Interpretation 2014-0528171E5 (Condominium Corporations and 149(1)(l))
+canonical_name: CRA External Technical Interpretation 2014-0528171E5 (Condominium
+  Corporations and 149(1)(l))
 entity_kind: publication
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:07:04Z'
+last_updated: '2026-05-23T23:07:04Z'
 ---
 
 # CRA External Technical Interpretation 2014-0528171E5

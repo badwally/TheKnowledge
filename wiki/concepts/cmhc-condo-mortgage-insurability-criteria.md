@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cmhc-condo-mortgage-insurability-criteria
 canonical_name: CMHC Condominium Mortgage Insurability Criteria
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:36:31Z'
+last_updated: '2026-05-24T00:36:31Z'
 ---
 
 # CMHC Condominium Mortgage Insurability Criteria

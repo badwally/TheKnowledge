@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: firstservice-residential
 canonical_name: FirstService Residential
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:41:29Z'
+last_updated: '2026-05-24T04:41:29Z'
 ---
 
 # FirstService Residential

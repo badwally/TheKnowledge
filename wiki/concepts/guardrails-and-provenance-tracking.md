@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: guardrails-and-provenance-tracking
 canonical_name: Guardrails And Provenance Tracking
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - edge-ai-security-and-privacy
 - tracking
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Guardrails and Provenance Tracking

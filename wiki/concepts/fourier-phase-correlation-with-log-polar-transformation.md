@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: fourier-phase-correlation-with-log-polar-transformation
 canonical_name: Fourier Phase Correlation With Log Polar Transformation
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - biologically-inspired-advanced-spatio-temporal-computing
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Fourier Phase Correlation with Log-Polar Transformation

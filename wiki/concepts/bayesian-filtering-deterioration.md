@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: bayesian-filtering-deterioration
 canonical_name: Bayesian filtering for uncertainty quantification of structural deterioration
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:57:56Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:32:52Z'
+last_updated: '2026-05-20T19:32:52Z'
 ---
 
 # Bayesian filtering for uncertainty quantification of structural deterioration

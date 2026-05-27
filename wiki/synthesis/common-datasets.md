@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: common-datasets
 title: Common Datasets
@@ -11,6 +12,9 @@ legacy_provenance:
   imported_at: '2026-04-28T15:21:51Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian/synthesis/common-datasets.md
   legacy_slug: common-datasets
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
+sources_count: 0
 ---
 
 # Common Datasets

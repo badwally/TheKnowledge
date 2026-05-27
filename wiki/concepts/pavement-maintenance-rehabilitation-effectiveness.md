@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: pavement-maintenance-rehabilitation-effectiveness
 canonical_name: Pavement maintenance and rehabilitation (M&R) effectiveness
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:04Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:23:19Z'
+last_updated: '2026-05-20T21:23:19Z'
 ---
 
 # Pavement maintenance and rehabilitation (M&R) effectiveness

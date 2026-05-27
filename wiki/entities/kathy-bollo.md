@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: kathy-bollo
 canonical_name: Kathy Bollo
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # Kathy Bollo

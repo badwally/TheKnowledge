@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-05-what-is-the-state-of-the
 title: what is the state of the art for multi-agent edge workflows
@@ -10,6 +11,8 @@ nlm_notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
 draft: true
 draft_started_at: '2026-05-05T01:31:43Z'
 draft_unresolved_claims: 0
+last_updated: '2026-05-05T16:00:27Z'
+sources_count: 19
 ---
 # what is the state of the art for multi-agent edge workflows
 

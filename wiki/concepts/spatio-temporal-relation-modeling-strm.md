@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: spatio-temporal-relation-modeling-strm
 canonical_name: Spatio Temporal Relation Modeling Strm
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - action-recognition-classification
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Spatio-Temporal Relation Modeling (STRM)

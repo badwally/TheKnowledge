@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: solume
 canonical_name: Solume
@@ -6,6 +7,8 @@ entity_kind: organization
 domains:
 - condo-capital-infra
 finalized_at: '2026-05-18T22:03:58Z'
+created_at: '2026-05-18T22:03:58Z'
+last_updated: '2026-05-18T22:03:58Z'
 ---
 # Solume
 

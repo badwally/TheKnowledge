@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: weibull-tailored-neural-networks
 canonical_name: Weibull-Tailored Neural Networks (WTNN)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:37Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:11:34Z'
+last_updated: '2026-05-20T19:11:34Z'
 ---
 
 # Weibull-Tailored Neural Networks (WTNN)

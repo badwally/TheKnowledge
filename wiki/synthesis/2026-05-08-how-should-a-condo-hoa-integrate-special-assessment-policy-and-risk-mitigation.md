@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation
 title: Special Assessment Policy and Risk Mitigation — investigation (2026-05-08-how-should-a-condo-hoa-integrate)
@@ -11,6 +12,8 @@ question: How should a condo HOA integrate reserve-fund management, special-asse
   integrated planning system could close.
 created_at: '2026-05-11T02:04:29Z'
 finalized_at: '2026-05-12T22:46:49Z'
+last_updated: '2026-05-12T22:46:49Z'
+sources_count: 10
 ---
 # Special Assessment Policy and Risk Mitigation — investigation
 

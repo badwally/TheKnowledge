@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-agent-for-unit-owners-doctrine
 canonical_name: Canadian Condo Corporation — Agent for Unit Owners Doctrine
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:07:04Z'
+last_updated: '2026-05-23T23:07:04Z'
 ---
 
 # Canadian Condo Corporation — Agent for Unit Owners Doctrine

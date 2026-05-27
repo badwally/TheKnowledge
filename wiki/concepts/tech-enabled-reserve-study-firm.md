@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: tech-enabled-reserve-study-firm
 canonical_name: Tech-Enabled Reserve Study Firm
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T01:06:13Z'
+last_updated: '2026-05-10T01:06:13Z'
 ---
 # Tech-Enabled Reserve Study Firm
 

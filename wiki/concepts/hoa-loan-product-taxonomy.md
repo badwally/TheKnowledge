@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-loan-product-taxonomy
 canonical_name: HOA Loan Product Taxonomy
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:06:49Z'
+last_updated: '2026-05-23T22:06:49Z'
 ---
 
 # HOA Loan Product Taxonomy

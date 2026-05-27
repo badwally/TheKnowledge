@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: journalengine
 canonical_name: JournalEngine (CommunityPay)
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:21:50Z'
+last_updated: '2026-05-24T03:21:50Z'
 ---
 
 # JournalEngine (CommunityPay)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: alberta-12-unit-self-study-exemption
 canonical_name: Alberta 12-Unit Self-Study Exemption (§22)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:38:41Z'
+last_updated: '2026-05-23T20:38:41Z'
 ---
 
 # Alberta 12-Unit Self-Study Exemption (§22)

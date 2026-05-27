@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: external-vs-internal-range-participation
 canonical_name: External-vs-Internal Range Participation
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # External-vs-Internal Range Participation

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: community-association-manager-licensure
 canonical_name: Community Association Manager Licensure (Florida)
 domains:
 - condo
+created_at: '2026-05-09T23:44:48Z'
+last_updated: '2026-05-09T23:44:48Z'
 ---
 # Community Association Manager Licensure (Florida)
 

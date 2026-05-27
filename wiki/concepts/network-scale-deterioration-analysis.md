@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: network-scale-deterioration-analysis
 canonical_name: Network-Scale Deterioration Analysis
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:53:53Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:53:56Z'
+last_updated: '2026-05-20T19:53:56Z'
 ---
 
 # Network-Scale Deterioration Analysis

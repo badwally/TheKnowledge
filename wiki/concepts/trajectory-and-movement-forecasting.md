@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: trajectory-and-movement-forecasting
 canonical_name: Trajectory And Movement Forecasting
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Trajectory and Movement Forecasting

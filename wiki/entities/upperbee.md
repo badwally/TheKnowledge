@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: upperbee
 canonical_name: UpperBee
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:35:44Z'
+last_updated: '2026-05-24T03:35:44Z'
 ---
 
 # UpperBee

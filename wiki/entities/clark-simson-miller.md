@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: clark-simson-miller
 canonical_name: Clark Simson Miller
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:39:54Z'
+last_updated: '2026-05-24T00:39:54Z'
 ---
 
 # Clark Simson Miller

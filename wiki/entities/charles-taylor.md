@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: charles-taylor
 canonical_name: Charles Taylor
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:47:43Z'
+last_updated: '2026-05-24T04:47:43Z'
 ---
 
 # Charles Taylor

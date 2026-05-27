@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: hrm-pplc-building-permits-dataset
 canonical_name: HRM PPLC Building Permits Dataset
 entity_kind: dataset
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:54:48Z'
+last_updated: '2026-05-10T22:54:48Z'
 ---
 # HRM PPLC Building Permits Dataset
 

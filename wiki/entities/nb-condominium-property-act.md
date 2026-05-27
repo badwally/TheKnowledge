@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: nb-condominium-property-act
 canonical_name: New Brunswick Condominium Property Act c16.05 (2010)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:45:00Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:39:49Z'
+last_updated: '2026-05-11T23:39:49Z'
 ---
 
 # New Brunswick Condominium Property Act c16.05

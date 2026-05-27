@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: otm-vs-itm-strikes
 canonical_name: Out-of-the-money vs in-the-money strike selection
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Out-of-the-money vs in-the-money strike selection

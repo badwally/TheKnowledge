@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: eli-report
 canonical_name: Eli Report
 entity_kind: product
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T01:55:09Z'
+last_updated: '2026-05-19T01:55:09Z'
 ---
 # Eli Report
 

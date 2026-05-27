@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: first-citizens-hoa-loan-products
-canonical_name: First Citizens HOA Loan Products (Quick-Term, Traditional Term, Revolving LOC)
+canonical_name: First Citizens HOA Loan Products (Quick-Term, Traditional Term, Revolving
+  LOC)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:10:23Z'
+last_updated: '2026-05-23T22:10:23Z'
 ---
 
 # First Citizens HOA Loan Products (Quick-Term, Traditional Term, Revolving LOC)

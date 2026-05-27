@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: snow-removal-parking-structures
 canonical_name: Snow and Ice Removal for Precast Parking Structures (PCI MNL-136-04)
 domains:
 - condo
+created_at: '2026-05-10T01:15:22Z'
+last_updated: '2026-05-10T01:15:22Z'
 ---
 # Snow and Ice Removal for Precast Parking Structures (PCI MNL-136-04)
 

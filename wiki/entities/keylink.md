@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: keylink
 canonical_name: KeyLink
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:17:30Z'
+last_updated: '2026-05-24T02:17:30Z'
 ---
 
 # KeyLink

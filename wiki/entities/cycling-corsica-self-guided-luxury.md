@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cycling-corsica-self-guided-luxury
 canonical_name: Cycling Corsica Self-Guided Luxury (Europe Active)
 entity_kind: route
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Cycling Corsica Self-Guided Luxury (Europe Active)

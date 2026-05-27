@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: cmms-asset-work-order-data-model
 canonical_name: CMMS Asset and Work Order Data Model
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-24T02:57:32Z'
+last_updated: '2026-05-24T02:57:32Z'
 ---
 
 # CMMS Asset and Work Order Data Model

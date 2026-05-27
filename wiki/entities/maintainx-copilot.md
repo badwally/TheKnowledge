@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: maintainx-copilot
 canonical_name: MaintainX CoPilot
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:27:02Z'
+last_updated: '2026-05-24T02:27:02Z'
 ---
 
 # MaintainX CoPilot

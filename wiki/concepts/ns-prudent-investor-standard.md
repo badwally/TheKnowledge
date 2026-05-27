@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ns-prudent-investor-standard
 canonical_name: Nova Scotia Prudent Investor Standard
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:44:34Z'
+last_updated: '2026-05-23T20:44:34Z'
 ---
 
 # Nova Scotia Prudent Investor Standard

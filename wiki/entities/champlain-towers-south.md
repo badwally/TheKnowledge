@@ -1,11 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: champlain-towers-south
 canonical_name: Champlain Towers South
 entity_kind: building
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T18:55:40Z'
+last_updated: '2026-05-23T18:55:40Z'
 ---
 
 # Champlain Towers South

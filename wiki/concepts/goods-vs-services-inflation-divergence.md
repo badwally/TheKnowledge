@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: goods-vs-services-inflation-divergence
 canonical_name: Goods vs. Services Inflation Divergence (2022)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Goods vs. Services Inflation Divergence (2022)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: reserve-fund-use-restrictions-repairs-vs-new-projects
 canonical_name: Reserve Fund Use Restrictions (Repairs/Replacements vs New Projects)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:10:23Z'
+last_updated: '2026-05-23T22:10:23Z'
 ---
 
 # Reserve Fund Use Restrictions (Repairs/Replacements vs New Projects)

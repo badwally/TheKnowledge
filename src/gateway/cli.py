@@ -67,6 +67,7 @@ SUBCOMMANDS: dict[str, str] = {
     "backfill-entity-kinds": "Remap legacy entity_kind values to the ONT-4 controlled vocabulary",
     "backfill-timestamps": "Stamp missing created_at / last_updated on entity/concept/synthesis pages (ONT-6)",
     "backfill-synthesizes": "Populate synthesizes: on synthesis pages from body wikilink citations (ONT-11)",
+    "backfill-sources-count": "Stamp missing sources_count on synthesis pages by counting [[sources/...]] links (M96)",
     "skill-emit": "Generate .claude/skills/wiki-<domain>/SKILL.md for a domain (AGT-13)",
     "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
     "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
@@ -127,6 +128,7 @@ IMPLEMENTED: set[str] = {
     "backfill-entity-kinds",
     "backfill-timestamps",
     "backfill-synthesizes",
+    "backfill-sources-count",
     "skill-emit",
     "rotate-log",
     "reingest",
@@ -1073,6 +1075,10 @@ def build_parser() -> argparse.ArgumentParser:
     p_bsy = subparsers.add_parser("backfill-synthesizes", help=SUBCOMMANDS["backfill-synthesizes"])
     p_bsy.add_argument("--dry-run", action="store_true", help="Report changes without writing")
 
+    # backfill-sources-count (M96)
+    p_bsc = subparsers.add_parser("backfill-sources-count", help=SUBCOMMANDS["backfill-sources-count"])
+    p_bsc.add_argument("--dry-run", action="store_true", help="Report changes without writing")
+
     # skill-emit (AGT-13)
     p_skill = subparsers.add_parser("skill-emit", help=SUBCOMMANDS["skill-emit"])
     p_skill.add_argument("domain", help="Domain slug to generate a skill for")
@@ -1321,6 +1327,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_timestamps_cmd(ns)
     if ns.subcommand == "backfill-synthesizes":
         return _run_backfill_synthesizes_cmd(ns)
+    if ns.subcommand == "backfill-sources-count":
+        return _run_backfill_sources_count_cmd(ns)
     if ns.subcommand == "skill-emit":
         return _run_skill_emit_cmd(ns)
     if ns.subcommand == "rotate-log":
@@ -2278,6 +2286,12 @@ def _run_backfill_synthesizes_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.backfill_synthesizes import backfill_synthesizes
 
     return _emit_result(backfill_synthesizes(dry_run=getattr(ns, "dry_run", False)))
+
+
+def _run_backfill_sources_count_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.backfill_sources_count import backfill_sources_count
+
+    return _emit_result(backfill_sources_count(dry_run=getattr(ns, "dry_run", False)))
 
 
 def _run_skill_emit_cmd(ns: argparse.Namespace) -> int:

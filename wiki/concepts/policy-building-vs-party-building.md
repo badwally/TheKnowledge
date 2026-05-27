@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: policy-building-vs-party-building
 canonical_name: Policy-Building vs Party-Building
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Policy-Building vs Party-Building

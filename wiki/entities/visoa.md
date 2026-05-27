@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: visoa
 canonical_name: Vancouver Island Strata Owners Association (VISOA)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:31:10Z'
+last_updated: '2026-05-23T23:31:10Z'
 ---
 
 # Vancouver Island Strata Owners Association (VISOA)

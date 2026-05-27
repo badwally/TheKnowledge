@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: market-multiplier
 canonical_name: Market Multiplier (M ≈ 5)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Market Multiplier (M ≈ 5)

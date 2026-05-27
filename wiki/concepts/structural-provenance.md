@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: structural-provenance
 canonical_name: Structural Provenance
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-05T00:22:49Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Structural Provenance

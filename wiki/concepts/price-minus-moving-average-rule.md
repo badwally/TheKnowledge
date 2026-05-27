@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: price-minus-moving-average-rule
 canonical_name: Price-minus-moving-average rule
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Price-minus-moving-average rule

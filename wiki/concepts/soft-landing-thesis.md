@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: soft-landing-thesis
 canonical_name: Soft-Landing Thesis (2023)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Soft-Landing Thesis (2023)

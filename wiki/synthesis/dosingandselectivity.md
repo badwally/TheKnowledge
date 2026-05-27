@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: dosingandselectivity
 title: Dosingandselectivity
@@ -11,6 +12,9 @@ legacy_provenance:
   imported_at: '2026-04-28T14:56:37Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian_glp1/synthesis/dosingandselectivity.md
   legacy_slug: dosingandselectivity
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
+sources_count: 0
 ---
 
 # Dosing And Selectivity

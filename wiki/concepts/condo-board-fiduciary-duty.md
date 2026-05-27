@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: condo-board-fiduciary-duty
 canonical_name: Condo Board Fiduciary Duty
 domains:
 - condo
+created_at: '2026-05-09T23:38:25Z'
+last_updated: '2026-05-09T23:38:25Z'
 ---
 # Condo Board Fiduciary Duty
 

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: tool-and-context-integration
 canonical_name: Tool And Context Integration
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - agentic-protocols-and-interoperability
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Tool and Context Integration

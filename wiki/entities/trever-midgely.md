@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: trever-midgely
 canonical_name: Trever Midgely
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # Trever Midgely

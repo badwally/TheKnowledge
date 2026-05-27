@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-credit-union-deposit-insurance
 canonical_name: Ontario Credit Union Deposit Insurance Coverage
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:27:12Z'
+last_updated: '2026-05-23T21:27:12Z'
 ---
 
 # Ontario Credit Union Deposit Insurance Coverage

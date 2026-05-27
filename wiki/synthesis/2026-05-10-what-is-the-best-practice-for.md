@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-10-what-is-the-best-practice-for
 title: WHAT IS THE BEST PRACTICE FOR PREDICTIVE MAINTENANCE FOR CONDO BUILDINGS WITH
@@ -14,6 +15,8 @@ nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 draft: true
 draft_started_at: '2026-05-10T01:51:40Z'
 draft_unresolved_claims: 20
+last_updated: '2026-05-10T01:51:40Z'
+sources_count: 1
 ---
 # WHAT IS THE BEST PRACTICE FOR PREDICTIVE MAINTENANCE FOR CONDO BUILDINGS WITH >100 UNITS IN CANADA
 

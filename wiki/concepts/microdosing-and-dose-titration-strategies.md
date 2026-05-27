@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: microdosing-and-dose-titration-strategies
 canonical_name: Microdosing And Dose Titration Strategies
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - clinical-dosing-and-lifestyle-protocols
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Microdosing and Dose Titration Strategies

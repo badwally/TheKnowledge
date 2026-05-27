@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: multi-principal-decision-problem
 canonical_name: Multi-Principal Decision Problem (LLM Agents)
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Multi-Principal Decision Problem (LLM Agents)

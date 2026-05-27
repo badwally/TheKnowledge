@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: denoising-bias-tradeoff
 canonical_name: Denoising-bias trade-off in trend filtering
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Denoising-bias trade-off in trend filtering

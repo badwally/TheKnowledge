@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ns-trustee-deposit-pending-investment
 canonical_name: Nova Scotia Trustee Deposit Pending Investment (§8, §9)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:44:34Z'
+last_updated: '2026-05-23T20:44:34Z'
 ---
 
 # Nova Scotia Trustee Deposit Pending Investment (§8, §9)

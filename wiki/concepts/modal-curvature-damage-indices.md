@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: modal-curvature-damage-indices
 canonical_name: Modal curvature damage indices
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:57:58Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:44:55Z'
+last_updated: '2026-05-20T19:44:55Z'
 ---
 
 # Modal curvature damage indices

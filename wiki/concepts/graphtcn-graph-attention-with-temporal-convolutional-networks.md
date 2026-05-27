@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: graphtcn-graph-attention-with-temporal-convolutional-networks
 canonical_name: Graphtcn Graph Attention With Temporal Convolutional Networks
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - graph-neural-network
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # GraphTCN (Graph Attention with Temporal Convolutional Networks)

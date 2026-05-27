@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-indie-cross-cutting
 title: Cross-cutting themes (2026-05-23-what-is-the-ai-native-indie)
@@ -17,6 +18,8 @@ created_at: '2026-05-23T19:08:09Z'
 draft: true
 draft_started_at: '2026-05-23T19:08:09Z'
 draft_unresolved_claims: 13
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 12
 ---
 # Cross-cutting themes — 2026-05-23-what-is-the-ai-native-indie
 

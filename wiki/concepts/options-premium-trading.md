@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: options-premium-trading
 canonical_name: Options premium trading (no-exercise model)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-13T22:13:10Z'
+last_updated: '2026-05-13T22:13:10Z'
 ---
 
 # Options premium trading (no-exercise model)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-fund-segregation
 canonical_name: HOA fund segregation
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:21:50Z'
+last_updated: '2026-05-24T03:21:50Z'
 ---
 
 # HOA fund segregation

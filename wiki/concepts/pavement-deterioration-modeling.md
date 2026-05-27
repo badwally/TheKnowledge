@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: pavement-deterioration-modeling
 canonical_name: Pavement deterioration modeling
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:25Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:18:17Z'
+last_updated: '2026-05-20T21:18:17Z'
 ---
 
 # Pavement deterioration modeling

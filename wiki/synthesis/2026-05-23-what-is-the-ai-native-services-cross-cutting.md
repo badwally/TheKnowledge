@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-services-cross-cutting
 title: Cross-cutting themes (2026-05-23-what-is-the-ai-native-services)
@@ -24,6 +25,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-23T19:31:45Z'
 draft_unresolved_claims: 13
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 11
 ---
 # Cross-cutting themes — 2026-05-23-what-is-the-ai-native-services
 

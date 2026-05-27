@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-admin-code-61b-23
 canonical_name: Florida Administrative Code Chapter 61B-23
 entity_kind: regulation
 domains:
 - condo
+created_at: '2026-05-09T23:38:25Z'
+last_updated: '2026-05-09T23:38:25Z'
 ---
 # Florida Administrative Code Chapter 61B-23
 

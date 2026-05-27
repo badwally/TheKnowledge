@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: trend-saturation-effect
 canonical_name: Trend saturation effect
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Trend saturation effect

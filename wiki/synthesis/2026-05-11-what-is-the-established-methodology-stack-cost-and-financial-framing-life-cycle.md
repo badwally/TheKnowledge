@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle
 title: Cost and Financial Framing (Life-Cycle Cost Analysis) — investigation (2026-05-11-what-is-the-established-methodology-stack)
@@ -47,6 +48,8 @@ synthesizes:
 - sources/web-2014-06-26-215
 - sources/web-2023-08-02-ec3
 finalized_at: '2026-05-13T18:39:27Z'
+last_updated: '2026-05-13T18:39:27Z'
+sources_count: 13
 ---
 # Cost and Financial Framing (Life-Cycle Cost Analysis) — investigation
 

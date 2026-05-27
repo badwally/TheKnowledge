@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: qualcomm-and-mobile-processors
 canonical_name: Qualcomm And Mobile Processors
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - edge-hardware-platforms
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Qualcomm and Mobile Processors

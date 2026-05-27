@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: yardi
 canonical_name: Yardi
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:51:04Z'
+last_updated: '2026-05-24T04:51:04Z'
 ---
 
 # Yardi

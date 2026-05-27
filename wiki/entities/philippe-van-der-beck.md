@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: philippe-van-der-beck
 canonical_name: Philippe van der Beck
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Philippe van der Beck

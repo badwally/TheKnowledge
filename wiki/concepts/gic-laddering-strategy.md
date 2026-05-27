@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: gic-laddering-strategy
 canonical_name: GIC Laddering Strategy (Reserve Fund Application)
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T21:19:12Z'
+last_updated: '2026-05-23T21:19:12Z'
 ---
 
 # GIC Laddering Strategy (Reserve Fund Application)

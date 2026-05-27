@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: quebec-syndicate-annual-information-return-obligation
 canonical_name: Quebec Syndicate Annual Information Return Obligation
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Quebec Syndicate Annual Information Return Obligation

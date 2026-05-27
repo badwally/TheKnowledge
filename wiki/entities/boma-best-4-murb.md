@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: boma-best-4-murb
 canonical_name: BOMA BEST 4.0 Multi-Unit Residential Buildings (Technical Field Guide)
 entity_kind: certification
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # BOMA BEST 4.0 Multi-Unit Residential Buildings (Technical Field Guide)
 

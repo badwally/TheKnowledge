@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: alberta-reserve-fund-study
 canonical_name: Alberta Reserve Fund Study
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:38:41Z'
+last_updated: '2026-05-23T20:38:41Z'
 ---
 
 # Alberta Reserve Fund Study

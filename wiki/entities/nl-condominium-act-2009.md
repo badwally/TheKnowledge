@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: nl-condominium-act-2009
 canonical_name: Newfoundland & Labrador Condominium Act, 2009
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T21:23:42Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:33:07Z'
+last_updated: '2026-05-11T23:33:07Z'
 ---
 
 # Newfoundland & Labrador Condominium Act, 2009

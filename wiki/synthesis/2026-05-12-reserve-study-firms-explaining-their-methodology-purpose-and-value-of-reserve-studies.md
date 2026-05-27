@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-12-reserve-study-firms-explaining-their-methodology-purpose-and-value-of-reserve-studies
 title: Purpose and Value of Reserve Studies for Association Boards — investigation
@@ -13,6 +14,8 @@ created_at: '2026-05-12T20:17:25Z'
 draft: true
 draft_started_at: '2026-05-12T20:17:25Z'
 draft_unresolved_claims: 46
+last_updated: '2026-05-12T20:17:25Z'
+sources_count: 3
 ---
 # Purpose and Value of Reserve Studies for Association Boards — investigation
 

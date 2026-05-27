@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: liraglutide-clinical-trials-showing-nearly-50-less-brain-volume-loss-and-an-18-slower-decline-in-cognitive-function-in-alzheimers-patients
 canonical_name: Liraglutide Clinical Trials Showing Nearly 50 Less Brain Volume Loss
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - systemic-health-and-neuroprotection
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Liraglutide clinical trials showing nearly 50% less brain volume loss and an 18% slower decline in cognitive function in Alzheimer's patients.

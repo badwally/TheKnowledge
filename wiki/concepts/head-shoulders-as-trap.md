@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: head-shoulders-as-trap
 canonical_name: Head & Shoulders Pattern as Market-Maker Trap (ICT)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Head & Shoulders Pattern as Market-Maker Trap (ICT)

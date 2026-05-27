@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: lyndon-b-johnson
 canonical_name: Lyndon B. Johnson
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Lyndon B. Johnson

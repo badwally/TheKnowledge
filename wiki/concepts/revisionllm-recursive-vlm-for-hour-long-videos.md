@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: revisionllm-recursive-vlm-for-hour-long-videos
 canonical_name: Revisionllm Recursive Vlm For Hour Long Videos
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # ReVisionLLM (Recursive VLM for hour-long videos)

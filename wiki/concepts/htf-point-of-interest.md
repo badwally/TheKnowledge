@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: htf-point-of-interest
 canonical_name: Higher Time Frame Point of Interest
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Higher Time Frame Point of Interest

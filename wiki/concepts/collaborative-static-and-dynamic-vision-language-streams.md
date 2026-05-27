@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: collaborative-static-and-dynamic-vision-language-streams
 canonical_name: Collaborative Static And Dynamic Vision Language Streams
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Collaborative Static and Dynamic Vision-Language Streams

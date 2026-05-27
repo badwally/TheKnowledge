@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cycling-core-stability
 canonical_name: Core Stability for Cyclists
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Core Stability for Cyclists

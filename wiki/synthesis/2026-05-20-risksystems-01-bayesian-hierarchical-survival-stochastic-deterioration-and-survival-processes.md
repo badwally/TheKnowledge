@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-01-bayesian-hierarchical-survival-stochastic-deterioration-and-survival-processes
 title: Stochastic Deterioration and Survival Processes — investigation (2026-05-20-risksystems-01-bayesian-hierarchical-survival)
@@ -49,6 +50,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T17:49:05Z'
 draft_unresolved_claims: 7
+last_updated: '2026-05-20T17:49:05Z'
+sources_count: 6
 ---
 # Stochastic Deterioration and Survival Processes — investigation
 

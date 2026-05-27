@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: leveraged-etf-amplification
 canonical_name: Leveraged ETF Amplification of Day Trading Strategies
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Leveraged ETF Amplification of Day Trading Strategies

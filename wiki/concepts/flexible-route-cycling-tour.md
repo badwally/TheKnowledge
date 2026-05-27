@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: flexible-route-cycling-tour
 canonical_name: Flexible-Route Cycling Tour
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Flexible-Route Cycling Tour

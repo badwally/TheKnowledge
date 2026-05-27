@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: form-tp-997-1
 canonical_name: Form TP-997.1 — Information Return for Tax-Exempt Entities (Quebec)
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Form TP-997.1 — Information Return for Tax-Exempt Entities (Quebec)

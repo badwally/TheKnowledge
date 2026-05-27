@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: graph-based-localization
 canonical_name: Graph Based Localization
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - localization
 - temporal-action-detection-localization
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Graph-Based Localization

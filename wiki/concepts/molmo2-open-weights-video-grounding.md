@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: molmo2-open-weights-video-grounding
 canonical_name: Molmo2 Open Weights Video Grounding
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - grounding
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Molmo2 (Open-weights Video Grounding)

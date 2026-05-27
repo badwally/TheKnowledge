@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ryan-jessop
 canonical_name: Ryan Jessop
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:47:43Z'
+last_updated: '2026-05-24T04:47:43Z'
 ---
 
 # Ryan Jessop

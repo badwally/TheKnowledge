@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ftb-form-1028-guidelines
 canonical_name: FTB Form 1028 — Guidelines for Homeowners' Associations
 entity_kind: publication
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:11:16Z'
+last_updated: '2026-05-23T23:11:16Z'
 ---
 
 # FTB Form 1028 — Guidelines for Homeowners' Associations

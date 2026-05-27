@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ai-automation-displacement-effect
 canonical_name: AI Automation Displacement vs. Productivity Effect
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # AI Automation Displacement vs. Productivity Effect

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: multi-agent-schedulers-and-planners
 canonical_name: Multi Agent Schedulers And Planners
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - orchestration-and-workflow-frameworks
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Multi-Agent Schedulers and Planners

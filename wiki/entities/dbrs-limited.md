@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: dbrs-limited
 canonical_name: DBRS Limited
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:25:05Z'
+last_updated: '2026-05-23T20:25:05Z'
 ---
 
 # DBRS Limited

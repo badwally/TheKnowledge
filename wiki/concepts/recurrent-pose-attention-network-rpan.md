@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: recurrent-pose-attention-network-rpan
 canonical_name: Recurrent Pose Attention Network Rpan
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - action-recognition-classification
 - rnn-lstm
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Recurrent Pose-Attention Network (RPAN)

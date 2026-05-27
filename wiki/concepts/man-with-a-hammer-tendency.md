@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: man-with-a-hammer-tendency
 canonical_name: Man-With-a-Hammer Tendency
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Man-With-a-Hammer Tendency

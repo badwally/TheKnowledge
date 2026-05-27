@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: heritage-bank-of-commerce
 canonical_name: Heritage Bank of Commerce
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:11:08Z'
+last_updated: '2026-05-24T01:11:08Z'
 ---
 
 # Heritage Bank of Commerce

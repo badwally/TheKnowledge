@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-core-records
 canonical_name: Ontario "Core Record" Statutory Definition (O. Reg. 48/01)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:35:10Z'
+last_updated: '2026-05-23T20:35:10Z'
 ---
 
 # Ontario "Core Record" Statutory Definition (O. Reg. 48/01)

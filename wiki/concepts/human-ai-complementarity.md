@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: human-ai-complementarity
 canonical_name: Human-AI Complementarity in Innovation
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Human-AI Complementarity in Innovation

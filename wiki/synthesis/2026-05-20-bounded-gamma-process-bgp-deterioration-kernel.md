@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-bounded-gamma-process-bgp-deterioration-kernel
 title: 'Bounded Gamma Process (BGP) deterioration kernel — focused 3-part synthesis
@@ -130,6 +131,8 @@ nlm_notebook_id: dee0eae4-b11f-4df2-a418-d10fffd42c7e
 draft: true
 draft_started_at: '2026-05-20T21:25:47Z'
 draft_unresolved_claims: 101
+last_updated: '2026-05-20T21:25:47Z'
+sources_count: 0
 ---
 # Bounded Gamma Process (BGP) deterioration kernel — focused 3-part synthesis for Longspan v3 architecture decision. Use wikilink format for all citations, no numeric footnotes. Render math in plain language; no Bayesian jargon ('posterior'/'prior'/'likelihood') in the body — render as 'updated estimate', 'starting belief', 'data weight' or similar plain phrasing.
 

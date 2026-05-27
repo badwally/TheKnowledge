@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-qualified-reserve-fund-planner
 canonical_name: Qualified Reserve Fund Planner (Ontario)
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T16:49:55Z'
+last_updated: '2026-05-23T16:49:55Z'
 ---
 
 # Qualified Reserve Fund Planner (Ontario)

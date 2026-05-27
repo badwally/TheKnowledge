@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ns-trustee-liability-safe-harbor
 canonical_name: Nova Scotia Trustee Liability Safe Harbor (§3C, §3D)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:44:34Z'
+last_updated: '2026-05-23T20:44:34Z'
 ---
 
 # Nova Scotia Trustee Liability Safe Harbor (§3C, §3D)

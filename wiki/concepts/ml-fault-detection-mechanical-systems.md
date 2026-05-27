@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ml-fault-detection-mechanical-systems
 canonical_name: Machine Learning Fault Detection for Building Mechanical Systems
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T22:04:18Z'
+last_updated: '2026-05-11T22:04:18Z'
 ---
 # Machine Learning Fault Detection for Building Mechanical Systems
 

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: neuro-symbolic-ai
 canonical_name: Neuro-Symbolic AI
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Neuro-Symbolic AI

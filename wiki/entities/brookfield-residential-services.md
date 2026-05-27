@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: brookfield-residential-services
 canonical_name: Brookfield Residential Services, Ltd.
@@ -6,6 +7,8 @@ entity_kind: organization
 domains:
 - condo-capital-infra
 finalized_at: '2026-05-24T22:05:44Z'
+created_at: '2026-05-24T22:05:44Z'
+last_updated: '2026-05-24T22:05:44Z'
 ---
 # Brookfield Residential Services, Ltd.
 

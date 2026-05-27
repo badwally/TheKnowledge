@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: upperbee-pay
 canonical_name: UpperBee Pay
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:24:57Z'
+last_updated: '2026-05-24T03:24:57Z'
 ---
 
 # UpperBee Pay

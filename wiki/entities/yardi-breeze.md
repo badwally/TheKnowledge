@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: yardi-breeze
 canonical_name: Yardi Breeze
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:30:14Z'
+last_updated: '2026-05-24T03:30:14Z'
 ---
 
 # Yardi Breeze

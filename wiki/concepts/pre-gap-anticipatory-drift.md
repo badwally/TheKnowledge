@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: pre-gap-anticipatory-drift
 canonical_name: Pre-gap anticipatory drift
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Pre-gap anticipatory drift

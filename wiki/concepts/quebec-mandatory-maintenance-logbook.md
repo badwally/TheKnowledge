@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: quebec-mandatory-maintenance-logbook
 canonical_name: Quebec Mandatory Standardized Maintenance Logbook
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T21:08:29Z'
+last_updated: '2026-05-23T21:08:29Z'
 ---
 
 # Quebec Mandatory Standardized Maintenance Logbook

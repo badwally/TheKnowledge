@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-does-the-org-and-operating-cross-cutting
 title: Cross-cutting themes (2026-05-23-what-does-the-org-and-operating)
@@ -22,6 +23,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-23T18:08:13Z'
 draft_unresolved_claims: 3
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 6
 ---
 # Cross-cutting themes — 2026-05-23-what-does-the-org-and-operating
 

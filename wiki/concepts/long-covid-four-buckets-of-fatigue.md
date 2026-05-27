@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: long-covid-four-buckets-of-fatigue
 canonical_name: Long COVID — Four Buckets of Fatigue Framework
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Long COVID — Four Buckets of Fatigue Framework

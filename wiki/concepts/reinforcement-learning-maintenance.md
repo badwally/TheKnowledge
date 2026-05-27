@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: reinforcement-learning-maintenance
 canonical_name: Reinforcement Learning for Maintenance
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:21:01Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:21:02Z'
+last_updated: '2026-05-20T19:21:02Z'
 ---
 
 # Reinforcement Learning for Maintenance

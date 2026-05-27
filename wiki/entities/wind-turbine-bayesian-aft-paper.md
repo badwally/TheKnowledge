@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: wind-turbine-bayesian-aft-paper
 canonical_name: Bayesian Survival Models Reveal Wind-Driven Reliability Patterns in
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:07Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:16:32Z'
+last_updated: '2026-05-20T21:16:32Z'
 ---
 
 # Bayesian Survival Models Reveal Wind-Driven Reliability Patterns in Turbines

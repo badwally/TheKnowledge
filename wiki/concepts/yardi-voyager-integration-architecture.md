@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: yardi-voyager-integration-architecture
 canonical_name: Yardi Voyager Integration Architecture
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:51:04Z'
+last_updated: '2026-05-24T04:51:04Z'
 ---
 
 # Yardi Voyager Integration Architecture

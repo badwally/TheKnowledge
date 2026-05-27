@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condominium-authority-delegation
 canonical_name: Ontario Condominium Authority Delegation Framework
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:58:48Z'
+last_updated: '2026-05-23T20:58:48Z'
 ---
 
 # Ontario Condominium Authority Delegation Framework

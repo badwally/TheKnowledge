@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision
 title: Data Ingestion, Inspection Updating, and Decision Theory — investigation (2026-05-11-what-is-the-established-methodology-stack)
@@ -39,6 +40,8 @@ synthesizes:
 - sources/web-2014-06-26-215
 - sources/web-2020-03-01-b61
 finalized_at: '2026-05-13T18:39:28Z'
+last_updated: '2026-05-13T18:39:28Z'
+sources_count: 5
 ---
 # Data Ingestion, Inspection Updating, and Decision Theory — investigation
 

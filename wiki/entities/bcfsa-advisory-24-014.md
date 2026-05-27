@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bcfsa-advisory-24-014
 canonical_name: BCFSA Advisory 24-014
 entity_kind: publication
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T15:19:27Z'
+last_updated: '2026-05-19T15:19:27Z'
 ---
 
 # BCFSA Advisory 24-014

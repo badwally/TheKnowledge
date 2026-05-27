@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: frederic-roy-gobeil
 canonical_name: Frédéric Roy-Gobeil, CPA
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Frédéric Roy-Gobeil, CPA

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: eclipse-community-management
 canonical_name: Eclipse Community Management
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:55:40Z'
+last_updated: '2026-05-23T18:55:40Z'
 ---
 
 # Eclipse Community Management

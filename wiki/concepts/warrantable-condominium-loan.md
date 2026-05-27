@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: warrantable-condominium-loan
 canonical_name: Warrantable vs Non-Warrantable Condominium Loans
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:55:40Z'
+last_updated: '2026-05-23T18:55:40Z'
 ---
 
 # Warrantable vs Non-Warrantable Condominium Loans

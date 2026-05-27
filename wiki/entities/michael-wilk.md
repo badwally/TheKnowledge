@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: michael-wilk
 canonical_name: Michael Wilk
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:35:44Z'
+last_updated: '2026-05-24T03:35:44Z'
 ---
 
 # Michael Wilk

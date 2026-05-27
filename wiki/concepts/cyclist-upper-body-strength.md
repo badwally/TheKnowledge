@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cyclist-upper-body-strength
 canonical_name: Upper-Body Strength for Cyclists
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Upper-Body Strength for Cyclists

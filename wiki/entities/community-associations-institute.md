@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: community-associations-institute
 canonical_name: Community Associations Institute (CAI)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:55:40Z'
+last_updated: '2026-05-23T18:55:40Z'
 ---
 
 # Community Associations Institute (CAI)

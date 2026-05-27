@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: yotam-cohen
 canonical_name: Yotam Cohen
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:39:55Z'
+last_updated: '2026-05-24T02:39:55Z'
 ---
 
 # Yotam Cohen

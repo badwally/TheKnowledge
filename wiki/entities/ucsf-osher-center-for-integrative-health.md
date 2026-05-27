@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ucsf-osher-center-for-integrative-health
 canonical_name: UCSF Osher Center for Integrative Health
 entity_kind: organization
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # UCSF Osher Center for Integrative Health

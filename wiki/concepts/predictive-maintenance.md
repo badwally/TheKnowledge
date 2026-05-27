@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: predictive-maintenance
 canonical_name: Predictive maintenance
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:18:44Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:56:12Z'
+last_updated: '2026-05-20T19:56:12Z'
 ---
 
 # Predictive maintenance

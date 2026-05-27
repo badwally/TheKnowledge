@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: dawn-bauman
 canonical_name: Dawn Bauman, CAE
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:15:46Z'
+last_updated: '2026-05-23T18:15:46Z'
 ---
 
 # Dawn Bauman, CAE

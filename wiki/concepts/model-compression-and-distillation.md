@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: model-compression-and-distillation
 canonical_name: Model Compression And Distillation
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - on-device-inference-foundations
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Model Compression and Distillation

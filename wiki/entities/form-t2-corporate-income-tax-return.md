@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: form-t2-corporate-income-tax-return
 canonical_name: Form T2 — Corporation Income Tax Return
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Form T2 — Corporation Income Tax Return

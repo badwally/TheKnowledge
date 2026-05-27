@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: joel-greenblatt
 canonical_name: Joel Greenblatt
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-13T22:12:53Z'
+last_updated: '2026-05-13T22:12:53Z'
 ---
 
 # Joel Greenblatt

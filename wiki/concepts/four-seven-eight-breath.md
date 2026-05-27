@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: four-seven-eight-breath
 canonical_name: 4-7-8 Breath
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # 4-7-8 Breath

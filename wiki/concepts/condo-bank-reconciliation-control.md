@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: condo-bank-reconciliation-control
 canonical_name: Condominium Bank Reconciliation as Financial Control
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:29:06Z'
+last_updated: '2026-05-24T00:29:06Z'
 ---
 
 # Condominium Bank Reconciliation as Financial Control

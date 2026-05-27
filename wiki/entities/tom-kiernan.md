@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: tom-kiernan
 canonical_name: Tom Kiernan
 entity_kind: person
 domains:
 - condo-capital-infra
+created_at: '2026-05-21T19:56:46Z'
+last_updated: '2026-05-21T19:56:46Z'
 ---
 # Tom Kiernan
 

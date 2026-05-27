@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: msci-all-country-world-index
 canonical_name: MSCI All Country World Index
 entity_kind: organization
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # MSCI All Country World Index

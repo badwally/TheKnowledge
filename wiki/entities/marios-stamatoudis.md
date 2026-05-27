@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: marios-stamatoudis
 canonical_name: Marios Stamatoudis
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Marios Stamatoudis

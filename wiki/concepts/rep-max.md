@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: rep-max
 canonical_name: Rep Max (1RM, 5RM)
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Rep Max (1RM, 5RM)

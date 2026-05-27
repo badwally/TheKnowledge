@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-does-the-org-and-operating-ai-native-go-to-market-gtm
 title: AI-Native Go-To-Market (GTM) and Distribution — investigation (2026-05-23-what-does-the-org-and-operating)
@@ -23,6 +24,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-23T18:08:13Z'
 draft_unresolved_claims: 3
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 5
 ---
 # AI-Native Go-To-Market (GTM) and Distribution — investigation
 

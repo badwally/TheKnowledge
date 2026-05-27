@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: multi-object-tracking-mot
 canonical_name: Multi Object Tracking Mot
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - tracking
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Multi-Object Tracking (MOT)

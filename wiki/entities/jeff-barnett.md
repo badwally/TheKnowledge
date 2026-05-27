@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: jeff-barnett
 canonical_name: Jeff Barnett
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:10:23Z'
+last_updated: '2026-05-23T22:10:23Z'
 ---
 
 # Jeff Barnett

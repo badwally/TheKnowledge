@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: luca-sardi
 canonical_name: Luca Sardi
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:57:56Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:32:52Z'
+last_updated: '2026-05-20T19:32:52Z'
 ---
 
 # Luca Sardi

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pei-condominium-act
 canonical_name: Prince Edward Island Condominium Act
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-12T00:00:00Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:44:17Z'
+last_updated: '2026-05-11T23:44:17Z'
 ---
 
 # Prince Edward Island Condominium Act

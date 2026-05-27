@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: semi-markov-decision-process
 canonical_name: Semi-Markov decision process (SMDP)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:10Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:12:40Z'
+last_updated: '2026-05-20T21:12:40Z'
 ---
 
 # Semi-Markov decision process (SMDP)

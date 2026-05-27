@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: anti-inflammatory-diet
 canonical_name: Anti-inflammatory diet (Kuon Long COVID)
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Anti-inflammatory diet (Kuon Long COVID)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: gaussian-approximated-post-processing-gap
 canonical_name: Gaussian Approximated Post Processing Gap
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - temporal-action-detection-localization
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Gaussian Approximated Post-processing (GAP)

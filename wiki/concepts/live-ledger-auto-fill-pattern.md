@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: live-ledger-auto-fill-pattern
 canonical_name: Live-Ledger Auto-Fill Pattern (CAM Disclosure Architecture)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # Live-Ledger Auto-Fill Pattern (CAM Disclosure Architecture)

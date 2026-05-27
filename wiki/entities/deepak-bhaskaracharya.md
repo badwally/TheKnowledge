@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: deepak-bhaskaracharya
 canonical_name: Deepak Bhaskaracharya
 entity_kind: person
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Deepak Bhaskaracharya

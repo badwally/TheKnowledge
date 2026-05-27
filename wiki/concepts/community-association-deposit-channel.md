@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: community-association-deposit-channel
 canonical_name: Community Association Deposit Channel
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:02:43Z'
+last_updated: '2026-05-23T22:02:43Z'
 ---
 
 # Community Association Deposit Channel

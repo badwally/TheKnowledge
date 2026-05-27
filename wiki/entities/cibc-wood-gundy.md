@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cibc-wood-gundy
 canonical_name: CIBC Wood Gundy
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:19:12Z'
+last_updated: '2026-05-23T21:19:12Z'
 ---
 
 # CIBC Wood Gundy

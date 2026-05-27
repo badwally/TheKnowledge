@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-90-percent-expenditure-test
 canonical_name: HOA 90% Expenditure Test (§528 Qualification)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:54:36Z'
+last_updated: '2026-05-23T22:54:36Z'
 ---
 
 # HOA 90% Expenditure Test (§528 Qualification)

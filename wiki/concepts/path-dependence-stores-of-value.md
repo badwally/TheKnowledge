@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: path-dependence-stores-of-value
 canonical_name: Path Dependence of Stores of Value
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Path Dependence of Stores of Value

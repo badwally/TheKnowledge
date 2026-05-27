@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: swing-high-swing-low
 canonical_name: Swing High and Swing Low Points
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Swing High and Swing Low Points

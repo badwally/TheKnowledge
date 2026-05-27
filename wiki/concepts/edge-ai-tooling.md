@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: edge-ai-tooling
 canonical_name: Edge Ai Tooling
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - googles-edge-ai-stack
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Edge AI Tooling

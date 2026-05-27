@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: reserve-study-two-part-structure
 canonical_name: Reserve Study Two-Part Structure (Physical Analysis + Funding Analysis)
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T17:46:04Z'
+last_updated: '2026-05-11T17:46:04Z'
 ---
 # Reserve Study Two-Part Structure (Physical Analysis + Funding Analysis)
 

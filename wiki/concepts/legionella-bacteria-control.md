@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: legionella-bacteria-control
 canonical_name: Legionella Bacteria Control Management (BOMA BEST 4.0 MURB W5.2)
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # Legionella Bacteria Control Management (BOMA BEST 4.0 MURB W5.2)
 

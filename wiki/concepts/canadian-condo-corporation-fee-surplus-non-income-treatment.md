@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-corporation-fee-surplus-non-income-treatment
 canonical_name: Canadian Condominium Corporation — Non-Income Treatment of Fee Surplus
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Canadian Condominium Corporation — Non-Income Treatment of Fee Surplus

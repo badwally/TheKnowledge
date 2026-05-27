@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: wan21-t2v
 canonical_name: WAN2.1-T2V
 entity_kind: paper
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # WAN2.1-T2V

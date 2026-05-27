@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: specialized-team-cam-model
 canonical_name: Specialized-Team CAM Operating Model
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:39:55Z'
+last_updated: '2026-05-24T02:39:55Z'
 ---
 
 # Specialized-Team CAM Operating Model

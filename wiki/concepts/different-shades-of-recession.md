@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: different-shades-of-recession
 canonical_name: Different shades of recession
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Different shades of recession

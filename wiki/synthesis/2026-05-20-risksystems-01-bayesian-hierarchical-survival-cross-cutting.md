@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-01-bayesian-hierarchical-survival-cross-cutting
 title: Cross-cutting themes (2026-05-20-risksystems-01-bayesian-hierarchical-survival)
@@ -52,6 +53,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T17:49:05Z'
 draft_unresolved_claims: 12
+last_updated: '2026-05-20T17:49:05Z'
+sources_count: 10
 ---
 # Cross-cutting themes — 2026-05-20-risksystems-01-bayesian-hierarchical-survival
 

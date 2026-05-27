@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: 50-day-ema-intermediate-trend
 canonical_name: 50 Day EMA as Intermediate-Trend Reference
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # 50 Day EMA as Intermediate-Trend Reference

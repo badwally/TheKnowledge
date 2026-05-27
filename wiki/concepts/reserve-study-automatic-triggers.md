@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: reserve-study-automatic-triggers
 canonical_name: Reserve Study Automatic Update Triggers
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:18:38Z'
+last_updated: '2026-05-24T03:18:38Z'
 ---
 
 # Reserve Study Automatic Update Triggers

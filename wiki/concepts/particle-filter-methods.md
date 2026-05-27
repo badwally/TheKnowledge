@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: particle-filter-methods
 canonical_name: Particle filter methods
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:18:42Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:22:56Z'
+last_updated: '2026-05-20T19:22:56Z'
 ---
 
 # Particle filter methods

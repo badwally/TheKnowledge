@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: gcan-graph-based-class-level-attention-network
 canonical_name: Gcan Graph Based Class Level Attention Network
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - temporal-action-detection-localization
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # GCAN (Graph-based Class-level Attention Network)

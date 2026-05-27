@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: sram-axs-blipbox
 canonical_name: SRAM eTap AXS BlipBox
 entity_kind: product
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # SRAM eTap AXS BlipBox

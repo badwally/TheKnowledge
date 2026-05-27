@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: engineering-fleet-management
 canonical_name: Engineering Fleet Management
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:07:44Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:11:34Z'
+last_updated: '2026-05-20T19:11:34Z'
 ---
 
 # Engineering Fleet Management

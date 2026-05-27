@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cdic-trust-deposit-insurance
 canonical_name: CDIC Per-Beneficiary Trust Deposit Insurance
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:22:05Z'
+last_updated: '2026-05-23T20:22:05Z'
 ---
 
 # CDIC Per-Beneficiary Trust Deposit Insurance

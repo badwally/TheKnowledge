@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-04-foundation-models-causal-retrospective-intervention-effect-estimation-and-maintenance
 title: Retrospective Intervention Effect Estimation and Maintenance Optimization —
@@ -44,6 +45,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:44:58Z'
 draft_unresolved_claims: 6
+last_updated: '2026-05-20T18:44:58Z'
+sources_count: 3
 ---
 # Retrospective Intervention Effect Estimation and Maintenance Optimization — investigation
 

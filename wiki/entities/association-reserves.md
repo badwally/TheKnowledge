@@ -1,11 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: association-reserves
 canonical_name: Association Reserves
 entity_kind: organization
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T23:17:21Z'
+last_updated: '2026-05-23T23:17:21Z'
 ---
 
 # Association Reserves

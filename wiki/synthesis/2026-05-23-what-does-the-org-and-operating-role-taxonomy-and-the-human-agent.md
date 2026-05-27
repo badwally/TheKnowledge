@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-does-the-org-and-operating-role-taxonomy-and-the-human-agent
 title: Role Taxonomy and the Human-Agent Divide — investigation (2026-05-23-what-does-the-org-and-operating)
@@ -23,6 +24,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-23T18:08:12Z'
 draft_unresolved_claims: 3
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 5
 ---
 # Role Taxonomy and the Human-Agent Divide — investigation
 

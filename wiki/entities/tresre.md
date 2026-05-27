@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: tresre
 canonical_name: TresRE
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:12:36Z'
+last_updated: '2026-05-23T17:12:36Z'
 ---
 
 # TresRE

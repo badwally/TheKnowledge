@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: idea-generation-vs-evaluation
 canonical_name: Idea Generation vs Evaluation in AI-Augmented Research
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Idea Generation vs Evaluation

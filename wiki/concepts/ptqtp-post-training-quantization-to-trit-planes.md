@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: ptqtp-post-training-quantization-to-trit-planes
 canonical_name: Ptqtp Post Training Quantization To Trit Planes
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - on-device-inference-foundations
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # PTQTP (Post-Training Quantization to Trit-Planes)

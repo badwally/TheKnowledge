@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-managing-agent-trust-fund-obligations
 canonical_name: California Managing-Agent Trust-Fund Obligations (Civil Code § 5380)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:46:31Z'
+last_updated: '2026-05-23T23:46:31Z'
 ---
 
 # California Managing-Agent Trust-Fund Obligations (Civil Code § 5380)

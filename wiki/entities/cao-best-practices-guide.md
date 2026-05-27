@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cao-best-practices-guide
 canonical_name: CAO Best Practices Guide — Ensuring Healthy Reserve Funds
 entity_kind: publication
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T15:02:42Z'
+last_updated: '2026-05-19T15:02:42Z'
 ---
 # CAO Best Practices Guide — Ensuring Healthy Reserve Funds
 

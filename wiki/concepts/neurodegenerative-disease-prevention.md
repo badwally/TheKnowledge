@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: neurodegenerative-disease-prevention
 canonical_name: Neurodegenerative Disease Prevention
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - systemic-health-and-neuroprotection
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Neurodegenerative Disease Prevention

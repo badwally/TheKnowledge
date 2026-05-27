@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: scattered-cluster-problem
 canonical_name: Scattered cluster problem
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Scattered cluster problem

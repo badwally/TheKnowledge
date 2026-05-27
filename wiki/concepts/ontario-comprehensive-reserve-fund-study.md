@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-comprehensive-reserve-fund-study
 canonical_name: Ontario Comprehensive Reserve Fund Study
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T20:32:07Z'
+last_updated: '2026-05-23T20:32:07Z'
 ---
 
 # Ontario Comprehensive Reserve Fund Study

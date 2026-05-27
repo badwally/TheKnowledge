@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: custom-and-neuromorphic-silicon
 canonical_name: Custom And Neuromorphic Silicon
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - edge-hardware-platforms
 - spiking-nn
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Custom and Neuromorphic Silicon

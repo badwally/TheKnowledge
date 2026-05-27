@@ -1,11 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: gpt-4-turbo
 canonical_name: GPT-4 Turbo
 entity_kind: organization
 domains:
-  - trading-and-markets
-  - ai-and-agents
+- trading-and-markets
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # GPT-4 Turbo

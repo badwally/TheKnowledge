@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: few-shot-and-unsupervised-learning
 canonical_name: Few Shot And Unsupervised Learning
@@ -17,6 +18,8 @@ tags:
 - self-supervised
 - supervised
 - unsupervised
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Few-Shot and Unsupervised Learning

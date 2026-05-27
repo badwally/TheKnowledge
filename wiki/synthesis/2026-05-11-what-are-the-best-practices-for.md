@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-are-the-best-practices-for
 title: what are the best practices for preventative condo complex maiontenance from
@@ -12,6 +13,8 @@ nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 draft: true
 draft_started_at: '2026-05-11T19:00:25Z'
 draft_unresolved_claims: 34
+last_updated: '2026-05-11T19:00:25Z'
+sources_count: 3
 ---
 # what are the best practices for preventative condo complex maiontenance from perspective of HOA board or operating entity
 

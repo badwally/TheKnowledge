@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: kalman-filtering-deterioration
 canonical_name: Kalman Filtering for Deterioration State Estimation
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:53:55Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:53:56Z'
+last_updated: '2026-05-20T19:53:56Z'
 ---
 
 # Kalman Filtering for Deterioration State Estimation

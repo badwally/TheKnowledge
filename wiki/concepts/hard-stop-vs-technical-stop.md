@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hard-stop-vs-technical-stop
 canonical_name: Hard Percentage Stop vs Technical Stop
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Hard Percentage Stop vs Technical Stop

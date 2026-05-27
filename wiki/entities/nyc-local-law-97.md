@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: nyc-local-law-97
 canonical_name: NYC Local Law 97 (Carbon Emissions Limits)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:39:55Z'
+last_updated: '2026-05-24T02:39:55Z'
 ---
 
 # NYC Local Law 97 (Carbon Emissions Limits)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cmms-api-crud-rpc-dual-pattern
 canonical_name: CMMS API Dual CRUD/RPC Surface
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:57:32Z'
+last_updated: '2026-05-24T02:57:32Z'
 ---
 
 # CMMS API Dual CRUD/RPC Surface

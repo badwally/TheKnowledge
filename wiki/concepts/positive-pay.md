@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: positive-pay
 canonical_name: Positive Pay
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:07:00Z'
+last_updated: '2026-05-23T17:07:00Z'
 ---
 
 # Positive Pay

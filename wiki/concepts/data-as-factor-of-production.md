@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: data-as-factor-of-production
 canonical_name: Data as a factor of production (China policy designation)
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Data as a factor of production (China policy designation)

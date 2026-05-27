@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: octoai-technologies-corp
 canonical_name: OctoAI Technologies Corp
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T01:55:09Z'
+last_updated: '2026-05-19T01:55:09Z'
 ---
 # OctoAI Technologies Corp
 

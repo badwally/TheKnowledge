@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: post-surfside-reserve-legislation
 canonical_name: Post-Surfside Reserve Legislation
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:17:08Z'
+last_updated: '2026-05-23T16:17:08Z'
 ---
 
 # Post-Surfside Reserve Legislation

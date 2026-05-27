@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: market-maker-buy-model
 canonical_name: Market Maker Buy Model (Bullish PO3)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Market Maker Buy Model (Bullish PO3)

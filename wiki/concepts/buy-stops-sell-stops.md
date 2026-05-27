@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: buy-stops-sell-stops
 canonical_name: Buy Stops and Sell Stops
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Buy Stops and Sell Stops

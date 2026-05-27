@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-technical
 title: 'What is the AI-native technical stack and build-vs-buy default in 2026 for
@@ -23,6 +24,8 @@ nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
 draft: true
 draft_started_at: '2026-05-23T19:57:50Z'
 draft_unresolved_claims: 26
+last_updated: '2026-05-23T19:57:50Z'
+sources_count: 5
 ---
 # What is the AI-native technical stack and build-vs-buy default in 2026 for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Focus on selection criteria, not a tool list. Include the substrate-first framing.
 

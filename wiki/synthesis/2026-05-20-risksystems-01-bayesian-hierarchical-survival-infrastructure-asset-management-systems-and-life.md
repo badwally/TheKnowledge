@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-01-bayesian-hierarchical-survival-infrastructure-asset-management-systems-and-life
 title: Infrastructure Asset Management Systems and Life-Cycle Costs — investigation
@@ -54,6 +55,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T17:49:05Z'
 draft_unresolved_claims: 7
+last_updated: '2026-05-20T17:49:05Z'
+sources_count: 10
 ---
 # Infrastructure Asset Management Systems and Life-Cycle Costs — investigation
 

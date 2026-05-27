@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: t2inc-ca
 canonical_name: T2inc.ca
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # T2inc.ca

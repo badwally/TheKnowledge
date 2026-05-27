@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-civil-code-5565
 canonical_name: California Civil Code § 5565 (Reserve Summary Required Elements)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:11:51Z'
+last_updated: '2026-05-24T00:11:51Z'
 ---
 
 # California Civil Code § 5565 (Reserve Summary Required Elements)

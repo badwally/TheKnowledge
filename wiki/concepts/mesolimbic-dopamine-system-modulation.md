@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: mesolimbic-dopamine-system-modulation
 canonical_name: Mesolimbic Dopamine System Modulation
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - neurobiology-of-appetite-and-reward
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Mesolimbic Dopamine System Modulation

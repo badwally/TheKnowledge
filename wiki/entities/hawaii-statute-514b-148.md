@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: hawaii-statute-514b-148
 canonical_name: Hawaii Revised Statutes §514B-148 (Condominium Reserves)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:17:08Z'
+last_updated: '2026-05-23T16:17:08Z'
 ---
 
 # Hawaii Revised Statutes §514B-148 (Condominium Reserves)

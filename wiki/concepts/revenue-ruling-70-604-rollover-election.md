@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: revenue-ruling-70-604-rollover-election
 canonical_name: Revenue Ruling 70-604 Rollover Election
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # Revenue Ruling 70-604 Rollover Election

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: plurality-model-of-intelligence
 canonical_name: Plurality Model of Intelligence
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Plurality Model of Intelligence

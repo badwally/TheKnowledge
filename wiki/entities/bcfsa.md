@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bcfsa
 canonical_name: BC Financial Services Authority
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T15:40:37Z'
+last_updated: '2026-05-19T15:40:37Z'
 ---
 
 # BC Financial Services Authority

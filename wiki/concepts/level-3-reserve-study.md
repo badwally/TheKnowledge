@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: level-3-reserve-study
 canonical_name: Level 3 Reserve Study (no-on-site-inspection update)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:18:38Z'
+last_updated: '2026-05-24T03:18:38Z'
 ---
 
 # Level 3 Reserve Study (no-on-site-inspection update)

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: blackrock-investment-institute
 canonical_name: BlackRock Investment Institute
 entity_kind: organization
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # BlackRock Investment Institute

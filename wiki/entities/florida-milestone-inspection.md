@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-milestone-inspection
 canonical_name: Florida Milestone Inspection (s. 553.899)
 entity_kind: regulation
 domains:
-  - condo-capital-infra
+- condo-capital-infra
+created_at: '2026-05-11T17:31:03Z'
+last_updated: '2026-05-11T17:31:03Z'
 ---
 
 # Florida Milestone Inspection

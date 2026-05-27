@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cmms-workorder-covariates
 canonical_name: CMMS Work-Order Covariates
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:43:58Z'
+last_updated: '2026-05-10T22:43:58Z'
 ---
 # CMMS Work-Order Covariates
 

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: institute-for-policy-research
 canonical_name: Institute for Policy Research (IPR)
 entity_kind: organization
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Institute for Policy Research (IPR)

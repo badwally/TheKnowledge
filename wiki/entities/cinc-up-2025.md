@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: cinc-up-2025
 canonical_name: CINC Up 2025
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-21T20:00:00Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-21T21:03:49Z'
+last_updated: '2026-05-21T21:03:49Z'
 ---
 # CINC Up 2025
 

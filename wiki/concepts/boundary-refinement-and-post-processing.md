@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: boundary-refinement-and-post-processing
 canonical_name: Boundary Refinement And Post Processing
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - temporal-action-detection-localization
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Boundary Refinement and Post-Processing

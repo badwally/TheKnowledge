@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: quebec-syndicate-federal-tax-treatment
 canonical_name: Quebec Syndicate of Co-Owners — Federal Income Tax Treatment
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Quebec Syndicate of Co-Owners — Federal Income Tax Treatment

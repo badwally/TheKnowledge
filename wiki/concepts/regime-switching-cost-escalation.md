@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: regime-switching-cost-escalation
 canonical_name: Regime-Switching Cost Escalation
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T01:06:13Z'
+last_updated: '2026-05-10T01:06:13Z'
 ---
 # Regime-Switching Cost Escalation
 

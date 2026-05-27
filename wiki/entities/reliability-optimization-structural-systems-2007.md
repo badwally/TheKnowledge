@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: reliability-optimization-structural-systems-2007
 canonical_name: 'Reliability and Optimization of Structural Systems: Assessment, Design'
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:54Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:40:41Z'
+last_updated: '2026-05-20T19:40:41Z'
 ---
 
 # Reliability and Optimization of Structural Systems: Assessment, Design

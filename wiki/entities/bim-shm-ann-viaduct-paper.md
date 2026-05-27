@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: bim-shm-ann-viaduct-paper
 canonical_name: 'Infrastructure management via BIM model: integration of structural
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:57:58Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:44:55Z'
+last_updated: '2026-05-20T19:44:55Z'
 ---
 
 # Infrastructure management via BIM model: integration of structural health monitoring and ANN-based damage assessment

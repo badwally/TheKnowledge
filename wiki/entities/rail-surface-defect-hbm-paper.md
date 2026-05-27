@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: rail-surface-defect-hbm-paper
 canonical_name: Rail surface defect prediction and inspection planning using limited
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:46Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:28:24Z'
+last_updated: '2026-05-20T19:28:24Z'
 ---
 
 # Rail surface defect prediction and inspection planning using limited maintenance data – a hierarchical Bayesian approach

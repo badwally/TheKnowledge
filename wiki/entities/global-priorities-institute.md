@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: global-priorities-institute
 canonical_name: Global Priorities Institute
 entity_kind: organization
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Global Priorities Institute

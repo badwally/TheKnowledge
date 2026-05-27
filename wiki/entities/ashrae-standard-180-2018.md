@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: ashrae-standard-180-2018
-canonical_name: ASHRAE Standard 180-2018 — Standard Practice for Inspection and Maintenance of Commercial Building HVAC Systems
+canonical_name: ASHRAE Standard 180-2018 — Standard Practice for Inspection and Maintenance
+  of Commercial Building HVAC Systems
 entity_kind: standard
 domains:
 - condo
+created_at: '2026-05-10T01:11:26Z'
+last_updated: '2026-05-10T01:11:26Z'
 ---
 # ASHRAE Standard 180-2018 — Standard Practice for Inspection and Maintenance of Commercial Building HVAC Systems
 

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: system-centric-asset-management
 canonical_name: System-Centric Asset Management
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:33Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:14:15Z'
+last_updated: '2026-05-20T19:14:15Z'
 ---
 
 # System-Centric Asset Management

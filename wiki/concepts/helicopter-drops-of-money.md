@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: helicopter-drops-of-money
 canonical_name: Helicopter Drops of Money
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Helicopter Drops of Money

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: video-object-tracking-and-trajectory-prediction
 title: 'Video Object Tracking and Trajectory Prediction: Multi-Object Tracking, Motion
@@ -10,6 +11,9 @@ question: 'video object tracking and trajectory prediction: multi-object trackin
 draft: true
 draft_started_at: '2026-04-28T17:25:00Z'
 draft_unresolved_claims: 18
+created_at: '2026-04-28T17:24:27Z'
+last_updated: '2026-04-28T17:24:27Z'
+sources_count: 13
 ---
 
 # Video Object Tracking and Trajectory Prediction: Multi-Object Tracking, Motion Modeling, and Cross-Frame Prediction

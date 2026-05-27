@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: glp-1-neurons-in-the-nucleus-of-the-solitary-tract-project-directly-to-the-ventral-tegmental-area-and-nucleus-accumbens-to-control-for-food-intake-alhadeff-et-al-2012
 canonical_name: Glp 1 Neurons In The Nucleus Of The Solitary Tract Project Directly
@@ -15,6 +16,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - neurobiology-of-appetite-and-reward
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # "GLP-1 neurons in the nucleus of the solitary tract project directly to the ventral tegmental area and nucleus accumbens to control for food intake" (Alhadeff et al., 2012).

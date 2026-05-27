@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: the-diabetes-remission-clinical-trial-direct-examining-the-efficacy-of-low-fat-mediterranean-and-low-carb-diets-for-metabolic-health
 canonical_name: The Diabetes Remission Clinical Trial Direct Examining The Efficacy
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - clinical-dosing-and-lifestyle-protocols
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # The Diabetes Remission Clinical Trial (DiRECT) examining the efficacy of low-fat, Mediterranean, and low-carb diets for metabolic health.

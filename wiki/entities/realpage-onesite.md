@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: realpage-onesite
 canonical_name: RealPage OneSite
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:23:45Z'
+last_updated: '2026-05-24T02:23:45Z'
 ---
 
 # RealPage OneSite

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-civil-code-5305
 canonical_name: California Civil Code §5305 (Review of Financial Statement)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:32:23Z'
+last_updated: '2026-05-23T18:32:23Z'
 ---
 
 # California Civil Code §5305 (Review of Financial Statement)

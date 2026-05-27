@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-special-assessment-loan-removal
 canonical_name: NJ Removal of S2760 Special Assessment / Loan Authority Language
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ Removal of S2760 Special Assessment / Loan Authority Language

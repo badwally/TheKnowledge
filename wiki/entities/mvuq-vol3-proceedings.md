@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: mvuq-vol3-proceedings
 canonical_name: Model Validation and Uncertainty Quantification, Vol. 3 (IMAC 2025
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:02:34Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:42:45Z'
+last_updated: '2026-05-20T19:42:45Z'
 ---
 
 # Model Validation and Uncertainty Quantification, Vol. 3 (IMAC 2025 Proceedings)

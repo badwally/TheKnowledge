@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: agentic-ai-applications
 canonical_name: Agentic AI Application Domains
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Agentic AI Application Domains

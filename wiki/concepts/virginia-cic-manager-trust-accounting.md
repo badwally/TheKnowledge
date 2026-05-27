@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: virginia-cic-manager-trust-accounting
 canonical_name: Virginia CIC Manager Trust Accounting and Internal Controls
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:25:45Z'
+last_updated: '2026-05-23T18:25:45Z'
 ---
 
 # Virginia CIC Manager Trust Accounting and Internal Controls

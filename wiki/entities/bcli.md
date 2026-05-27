@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bcli
 canonical_name: British Columbia Law Institute (BCLI)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:14:25Z'
+last_updated: '2026-05-23T21:14:25Z'
 ---
 
 # British Columbia Law Institute (BCLI)

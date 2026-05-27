@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: valeri-nikolaev
 canonical_name: Valeri V. Nikolaev
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Valeri V. Nikolaev

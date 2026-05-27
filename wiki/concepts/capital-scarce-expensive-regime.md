@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: capital-scarce-expensive-regime
 canonical_name: Capital Scarce & Expensive Regime (2023)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Capital Scarce & Expensive Regime (2023)

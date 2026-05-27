@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: dan-frangopol
 canonical_name: Dan M Frangopol
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:30:00Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T20:00:36Z'
+last_updated: '2026-05-20T20:00:36Z'
 ---
 
 # Dan M Frangopol

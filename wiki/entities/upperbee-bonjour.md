@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: upperbee-bonjour
 canonical_name: UpperBee Bonjour
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:43:36Z'
+last_updated: '2026-05-24T01:43:36Z'
 ---
 
 # UpperBee Bonjour

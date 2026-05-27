@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: strata-maintenance-renewals-program
 canonical_name: Strata Maintenance and Renewals Program (BC)
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:43:58Z'
+last_updated: '2026-05-10T22:43:58Z'
 ---
 # Strata Maintenance and Renewals Program (BC)
 

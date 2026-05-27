@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: random-walk-evidence-vs-chart-reading
 canonical_name: Random-walk evidence against chart reading
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Random-walk evidence against chart reading

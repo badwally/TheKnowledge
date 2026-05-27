@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: snapdragon-hexagon-npu
 canonical_name: Snapdragon Hexagon Npu
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - edge-hardware-platforms
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Snapdragon Hexagon NPU

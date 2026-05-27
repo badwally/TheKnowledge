@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: community-association-banking-division
 canonical_name: Community Association Banking division
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:21:32Z'
+last_updated: '2026-05-23T22:21:32Z'
 ---
 
 # Community Association Banking division

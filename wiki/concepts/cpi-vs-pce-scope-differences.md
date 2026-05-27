@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cpi-vs-pce-scope-differences
 canonical_name: CPI vs. PCE Scope Differences
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # CPI vs. PCE Scope Differences

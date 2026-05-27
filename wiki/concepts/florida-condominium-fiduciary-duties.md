@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: florida-condominium-fiduciary-duties
 canonical_name: Florida Condominium Officer and Director Fiduciary Duties
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:05:57Z'
+last_updated: '2026-05-23T18:05:57Z'
 ---
 
 # Florida Condominium Officer and Director Fiduciary Duties

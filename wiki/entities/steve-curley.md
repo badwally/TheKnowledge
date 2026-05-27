@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: steve-curley
 canonical_name: Steve Curley
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:16:56Z'
+last_updated: '2026-05-23T22:16:56Z'
 ---
 
 # Steve Curley

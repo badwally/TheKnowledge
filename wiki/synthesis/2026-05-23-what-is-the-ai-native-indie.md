@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-indie
 title: 'What is the AI-native indie SaaS / vertical agent archetype for a solo founder
@@ -22,6 +23,8 @@ nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
 draft: true
 draft_started_at: '2026-05-23T19:59:12Z'
 draft_unresolved_claims: 39
+last_updated: '2026-05-23T19:59:12Z'
+sources_count: 6
 ---
 # What is the AI-native indie SaaS / vertical agent archetype for a solo founder in 2026? Cover: definition (what this archetype is and isn't), funded exemplars (Cursor/Anysphere, Cognition/Devin, Lindy, Sierra, Decagon) and solo-buildable variants (Pieter Levels, Marc Lou); how the four pillars (org, economics, tech, GTM) specialize for this archetype; defensibility specific to vertical agents (workflow lock-in, integration depth, eval moat); pricing trajectory (seat → usage → outcome); go/no-go signals for a solo founder. Include a worked example walked through the four pillars.
 

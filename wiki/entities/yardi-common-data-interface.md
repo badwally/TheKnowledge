@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: yardi-common-data-interface
 canonical_name: Yardi Common Data Interface
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:27:39Z'
+last_updated: '2026-05-24T03:27:39Z'
 ---
 
 # Yardi Common Data Interface

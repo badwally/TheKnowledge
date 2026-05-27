@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: extended-gamma-process
 canonical_name: Extended gamma process
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:40Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:10:48Z'
+last_updated: '2026-05-20T21:10:48Z'
 ---
 
 # Extended gamma process

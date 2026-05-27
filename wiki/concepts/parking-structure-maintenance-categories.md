@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: parking-structure-maintenance-categories
 canonical_name: Parking Structure Maintenance Categories (PCI MNL-136-04)
 domains:
 - condo
+created_at: '2026-05-10T01:15:22Z'
+last_updated: '2026-05-10T01:15:22Z'
 ---
 # Parking Structure Maintenance Categories (PCI MNL-136-04)
 

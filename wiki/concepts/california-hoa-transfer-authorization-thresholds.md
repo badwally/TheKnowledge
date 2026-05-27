@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-hoa-transfer-authorization-thresholds
 canonical_name: California HOA Transfer-Authorization Thresholds (Civil Code § 5380(b)(6))
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:46:31Z'
+last_updated: '2026-05-23T23:46:31Z'
 ---
 
 # California HOA Transfer-Authorization Thresholds (Civil Code § 5380(b)(6))

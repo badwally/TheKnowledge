@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: spatial-structure-road-network
 canonical_name: Spatial structure of the road network in deterioration modeling
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:25Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:18:17Z'
+last_updated: '2026-05-20T21:18:17Z'
 ---
 
 # Spatial structure of the road network in deterioration modeling

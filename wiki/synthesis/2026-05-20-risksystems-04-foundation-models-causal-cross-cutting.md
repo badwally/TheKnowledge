@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-04-foundation-models-causal-cross-cutting
 title: Cross-cutting themes (2026-05-20-risksystems-04-foundation-models-causal)
@@ -45,6 +46,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:44:58Z'
 draft_unresolved_claims: 10
+last_updated: '2026-05-20T18:44:58Z'
+sources_count: 5
 ---
 # Cross-cutting themes — 2026-05-20-risksystems-04-foundation-models-causal
 

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: application-of-glp-1-plotters-to-calculate-steady-state-pharmacokinetics-drug-half-lives-and-maximum-circulating-concentrations
 canonical_name: Application Of Glp 1 Plotters To Calculate Steady State Pharmacokinetics
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - clinical-dosing-and-lifestyle-protocols
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Application of GLP-1 plotters to calculate steady-state pharmacokinetics, drug half-lives, and maximum circulating concentrations.

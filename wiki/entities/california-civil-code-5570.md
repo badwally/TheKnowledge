@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-civil-code-5570
 canonical_name: California Civil Code §5570 (Reserve Funding Disclosure Form)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # California Civil Code §5570 (Reserve Funding Disclosure Form)

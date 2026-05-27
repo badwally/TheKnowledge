@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cdic-100k-deposit-insurance-limit
 canonical_name: CDIC $100,000 Deposit Insurance Limit
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:14:25Z'
+last_updated: '2026-05-23T21:14:25Z'
 ---
 
 # CDIC $100,000 Deposit Insurance Limit

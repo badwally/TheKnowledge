@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: california-major-component-30-year-exclusion
 canonical_name: California Major-Component 30-Year Exclusion Option
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # California Major-Component 30-Year Exclusion Option

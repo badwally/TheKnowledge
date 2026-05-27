@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: virginia-poa-reserve-study
 canonical_name: Virginia POA Reserve Study (five-year cycle, annual review)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:17:44Z'
+last_updated: '2026-05-23T18:17:44Z'
 ---
 
 # Virginia POA Reserve Study (five-year cycle, annual review)

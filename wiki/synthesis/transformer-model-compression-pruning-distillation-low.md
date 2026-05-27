@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: transformer-model-compression-pruning-distillation-low
 title: 'Transformer Model Compression: Pruning, Distillation, Low-Rank Decomposition,
@@ -10,6 +11,9 @@ question: 'Transformer model compression: pruning, distillation, low-rank decomp
 draft: true
 draft_started_at: '2026-04-28T00:00:00Z'
 draft_unresolved_claims: 10
+created_at: '2026-04-28T17:31:12Z'
+last_updated: '2026-04-28T17:31:12Z'
+sources_count: 12
 ---
 
 # Transformer Model Compression: Pruning, Distillation, Low-Rank Decomposition, and Architectural Compaction

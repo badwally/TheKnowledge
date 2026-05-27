@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: large-vision-language-models-vlms
 canonical_name: Large Vision Language Models Vlms
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - grounding
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Large Vision-Language Models (VLMs)

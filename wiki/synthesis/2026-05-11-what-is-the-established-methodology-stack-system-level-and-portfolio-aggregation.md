@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation
 title: System-Level and Portfolio Aggregation — investigation (2026-05-11-what-is-the-established-methodology-stack)
@@ -39,6 +40,8 @@ synthesizes:
 - sources/web-2014-06-26-215
 - sources/web-2023-08-02-ec3
 finalized_at: '2026-05-13T18:39:28Z'
+last_updated: '2026-05-13T18:39:28Z'
+sources_count: 5
 ---
 # System-Level and Portfolio Aggregation — investigation
 

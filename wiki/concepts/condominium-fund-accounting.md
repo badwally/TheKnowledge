@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: condominium-fund-accounting
 canonical_name: Condominium Fund Accounting
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T16:49:55Z'
+last_updated: '2026-05-23T16:49:55Z'
 ---
 
 # Condominium Fund Accounting

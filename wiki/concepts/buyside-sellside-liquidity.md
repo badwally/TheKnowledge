@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: buyside-sellside-liquidity
 canonical_name: Buyside and Sellside Liquidity
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Buyside and Sellside Liquidity

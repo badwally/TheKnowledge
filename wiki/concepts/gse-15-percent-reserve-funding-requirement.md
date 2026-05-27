@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: gse-15-percent-reserve-funding-requirement
 canonical_name: GSE 15% Minimum Reserve Funding Requirement
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T18:15:46Z'
+last_updated: '2026-05-23T18:15:46Z'
 ---
 
 # GSE 15% Minimum Reserve Funding Requirement

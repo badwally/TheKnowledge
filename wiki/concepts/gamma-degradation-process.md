@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: gamma-degradation-process
 canonical_name: Gamma degradation process
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:49Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:37:36Z'
+last_updated: '2026-05-20T19:37:36Z'
 ---
 
 # Gamma degradation process

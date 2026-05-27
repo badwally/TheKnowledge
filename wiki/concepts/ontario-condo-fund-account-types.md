@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condo-fund-account-types
 canonical_name: Ontario Condominium Fund Account Types
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:29:06Z'
+last_updated: '2026-05-24T00:29:06Z'
 ---
 
 # Ontario Condominium Fund Account Types

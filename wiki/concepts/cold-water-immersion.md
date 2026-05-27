@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cold-water-immersion
 canonical_name: Cold Water Immersion (CWI)
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Cold Water Immersion (CWI)

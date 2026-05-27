@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: time-dependent-reliability
 canonical_name: Time-dependent reliability
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:49Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:37:36Z'
+last_updated: '2026-05-20T19:37:36Z'
 ---
 
 # Time-dependent reliability

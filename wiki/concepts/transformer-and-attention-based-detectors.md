@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: transformer-and-attention-based-detectors
 canonical_name: Transformer And Attention Based Detectors
@@ -15,6 +16,8 @@ tags:
 - attention
 - temporal-action-detection-localization
 - transformer
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Transformer and Attention-Based Detectors

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: firstservice-corporation
 canonical_name: FirstService Corporation
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:10:02Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:10:02Z'
+last_updated: '2026-05-11T23:10:02Z'
 ---
 # FirstService Corporation
 

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: dennis-abbott
 canonical_name: Dennis Abbott, CMCA, AMS, PCAM
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:59:55Z'
+last_updated: '2026-05-23T21:59:55Z'
 ---
 
 # Dennis Abbott, CMCA, AMS, PCAM

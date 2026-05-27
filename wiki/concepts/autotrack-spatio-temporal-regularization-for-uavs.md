@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: autotrack-spatio-temporal-regularization-for-uavs
 canonical_name: Autotrack Spatio Temporal Regularization For Uavs
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # AutoTrack (Spatio-Temporal Regularization for UAVs)

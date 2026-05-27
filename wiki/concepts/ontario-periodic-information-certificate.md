@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-periodic-information-certificate
 canonical_name: Ontario Periodic Information Certificate (PIC)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:31:01Z'
+last_updated: '2026-05-23T20:31:01Z'
 ---
 
 # Ontario Periodic Information Certificate (PIC)

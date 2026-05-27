@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: choa
 canonical_name: Condominium Home Owners' Association of British Columbia (CHOA)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:57:57Z'
+last_updated: '2026-05-23T16:57:57Z'
 ---
 
 # Condominium Home Owners' Association of British Columbia (CHOA)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: wkvquant-weight-and-key-value-cache-quantization
 canonical_name: Wkvquant Weight And Key Value Cache Quantization
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - on-device-inference-foundations
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # WKVQuant (Weight and Key/Value cache quantization)

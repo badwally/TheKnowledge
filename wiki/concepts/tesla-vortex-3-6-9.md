@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: tesla-vortex-3-6-9
 canonical_name: Tesla Vortex 3-6-9 Trading Framework
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Tesla Vortex 3-6-9 Trading Framework

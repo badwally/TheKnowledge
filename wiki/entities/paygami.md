@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: paygami
 canonical_name: Paygami
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:12:36Z'
+last_updated: '2026-05-23T17:12:36Z'
 ---
 
 # Paygami

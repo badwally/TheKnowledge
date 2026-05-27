@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: alberta-credit-union-deposit-coverage
 canonical_name: Alberta Credit Union Deposit Coverage (100% Unlimited)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:31:28Z'
+last_updated: '2026-05-23T21:31:28Z'
 ---
 
 # Alberta Credit Union Deposit Coverage (100% Unlimited)

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-sirs
 canonical_name: Florida Structural Integrity Reserve Study (SIRS)
 entity_kind: regulatory_framework
 domains:
-  - condo-capital-infra
+- condo-capital-infra
+created_at: '2026-05-24T00:09:09Z'
+last_updated: '2026-05-24T00:09:09Z'
 ---
 
 # Florida Structural Integrity Reserve Study (SIRS)

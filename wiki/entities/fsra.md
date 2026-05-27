@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: fsra
 canonical_name: Financial Services Regulatory Authority of Ontario (FSRA)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:27:12Z'
+last_updated: '2026-05-23T21:27:12Z'
 ---
 
 # Financial Services Regulatory Authority of Ontario (FSRA)

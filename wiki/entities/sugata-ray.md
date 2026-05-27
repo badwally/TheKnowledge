@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: sugata-ray
 canonical_name: Sugata Ray
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Sugata Ray

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: japan-ldp-ai-project-team
 canonical_name: LDP Project Team on the Evolution and Implementation of AI
 entity_kind: organization
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # LDP Project Team on the Evolution and Implementation of AI

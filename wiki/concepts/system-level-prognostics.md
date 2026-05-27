@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: system-level-prognostics
 canonical_name: System-level prognostics
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:18:42Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:22:56Z'
+last_updated: '2026-05-20T19:22:56Z'
 ---
 
 # System-level prognostics

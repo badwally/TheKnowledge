@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: yardi-voyager-condo
 canonical_name: Yardi Voyager Condo, Co-op & HOA
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:36:09Z'
+last_updated: '2026-05-24T01:36:09Z'
 ---
 
 # Yardi Voyager Condo, Co-op & HOA

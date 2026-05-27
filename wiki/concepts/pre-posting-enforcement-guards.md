@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: pre-posting-enforcement-guards
 canonical_name: Pre-posting enforcement guards (HOA accounting)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:21:50Z'
+last_updated: '2026-05-24T03:21:50Z'
 ---
 
 # Pre-posting enforcement guards (HOA accounting)

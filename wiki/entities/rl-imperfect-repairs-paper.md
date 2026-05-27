@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: rl-imperfect-repairs-paper
 canonical_name: A reinforcement learning agent for maintenance of deteriorating systems
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:21:01Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:21:02Z'
+last_updated: '2026-05-20T19:21:02Z'
 ---
 
 # A reinforcement learning agent for maintenance of deteriorating systems with increasingly imperfect repairs

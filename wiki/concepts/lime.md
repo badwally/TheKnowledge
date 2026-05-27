@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: lime
 canonical_name: Local Interpretable Model-Agnostic Explanations (LIME)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:39Z'
 draft_unresolved_claims: 3
+created_at: '2026-05-20T21:20:09Z'
+last_updated: '2026-05-20T21:20:09Z'
 ---
 
 # Local Interpretable Model-Agnostic Explanations (LIME)

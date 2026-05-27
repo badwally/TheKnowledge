@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: constant-risk-trend-signal
 canonical_name: Constant-risk trend signal (Lempérière et al. 2014)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Constant-risk trend signal (Lempérière et al. 2014)

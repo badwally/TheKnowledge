@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bc-crf-and-special-levy
 canonical_name: BC Contingency Reserve Fund and Special Levy
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:57:57Z'
+last_updated: '2026-05-23T16:57:57Z'
 ---
 
 # BC Contingency Reserve Fund and Special Levy

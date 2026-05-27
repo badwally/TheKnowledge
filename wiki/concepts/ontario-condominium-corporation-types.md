@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condominium-corporation-types
 canonical_name: Ontario Types of Condominium Corporations
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:58:48Z'
+last_updated: '2026-05-23T20:58:48Z'
 ---
 
 # Ontario Types of Condominium Corporations

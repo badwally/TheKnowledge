@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: duri-chitayat
 canonical_name: Duri Chitayat
 entity_kind: person
 domains:
 - condo-capital-infra
+created_at: '2026-05-21T20:27:36Z'
+last_updated: '2026-05-21T20:27:36Z'
 ---
 # Duri Chitayat
 

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cari-framework
 canonical_name: CARI (Community Association Risk Index) Consent Framework
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # CARI (Community Association Risk Index) Consent Framework

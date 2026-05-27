@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: post-earnings-announcement-drift
 canonical_name: Post-Earnings Announcement Drift (PEAD)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-13T22:13:19Z'
+last_updated: '2026-05-13T22:13:19Z'
 ---
 
 # Post-Earnings Announcement Drift (PEAD)

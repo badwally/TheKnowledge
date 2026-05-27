@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: emily-myers
 canonical_name: Emily Myers
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T19:01:00Z'
+last_updated: '2026-05-23T19:01:00Z'
 ---
 
 # Emily Myers

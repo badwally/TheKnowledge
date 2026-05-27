@@ -1,10 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ai-native-substrate
 canonical_name: AI as Substrate
 domains:
 - ai-native-business
 created_at: '2026-05-24T18:39:31Z'
+last_updated: '2026-05-24T18:39:31Z'
 ---
 # AI as Substrate
 

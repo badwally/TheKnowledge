@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: auto-commit-pattern
 canonical_name: Auto-Commit Pattern
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-05T00:22:50Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Auto-Commit Pattern

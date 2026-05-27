@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: transmot-spatial-temporal-graph-transformer
 canonical_name: Transmot Spatial Temporal Graph Transformer
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - transformer
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # TransMOT (Spatial-Temporal Graph Transformer)

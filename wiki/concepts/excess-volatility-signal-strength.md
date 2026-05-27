@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: excess-volatility-signal-strength
 canonical_name: Excess Volatility and Signal Strength
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Excess Volatility and Signal Strength

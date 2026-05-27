@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cash-account-day-trade-loophole
 canonical_name: Cash-account unlimited day-trade loophole
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Cash-account unlimited day-trade loophole

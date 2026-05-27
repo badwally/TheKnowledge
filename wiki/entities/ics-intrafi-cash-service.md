@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ics-intrafi-cash-service
 canonical_name: ICS (IntraFi Cash Service)
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:12:12Z'
+last_updated: '2026-05-23T16:12:12Z'
 ---
 
 # ICS (IntraFi Cash Service)

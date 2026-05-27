@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-04-foundation-models-causal-probabilistic-engines-for-asset-deterioration
 title: Probabilistic Engines for Asset Deterioration — investigation (2026-05-20-risksystems-04-foundation-models-causal)
@@ -43,6 +44,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T18:44:58Z'
 draft_unresolved_claims: 6
+last_updated: '2026-05-20T18:44:58Z'
+sources_count: 4
 ---
 # Probabilistic Engines for Asset Deterioration — investigation
 

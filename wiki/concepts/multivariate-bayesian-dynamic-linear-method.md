@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: multivariate-bayesian-dynamic-linear-method
 canonical_name: Multivariate Bayesian Dynamic Linear Method
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:52Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:24:16Z'
+last_updated: '2026-05-20T19:24:16Z'
 ---
 
 # Multivariate Bayesian Dynamic Linear Method

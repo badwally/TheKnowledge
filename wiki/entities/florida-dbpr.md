@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-dbpr
 canonical_name: Florida Department of Business and Professional Regulation
 entity_kind: organization
 domains:
 - condo
+created_at: '2026-05-09T23:44:48Z'
+last_updated: '2026-05-09T23:44:48Z'
 ---
 # Florida Department of Business and Professional Regulation
 

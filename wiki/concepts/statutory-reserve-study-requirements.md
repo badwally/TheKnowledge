@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: statutory-reserve-study-requirements
 canonical_name: Statutory Reserve Study Requirements (US)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:17:08Z'
+last_updated: '2026-05-23T16:17:08Z'
 ---
 
 # Statutory Reserve Study Requirements (US)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-common-expenses
 canonical_name: Ontario Condominium Common Expenses
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:26:14Z'
+last_updated: '2026-05-23T16:26:14Z'
 ---
 
 # Ontario Condominium Common Expenses

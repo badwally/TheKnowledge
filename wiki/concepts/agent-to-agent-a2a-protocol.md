@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: agent-to-agent-a2a-protocol
 canonical_name: Agent To Agent A2A Protocol
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - agentic-protocols-and-interoperability
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Agent-to-Agent (A2A) Protocol

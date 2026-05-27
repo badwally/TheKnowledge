@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bc-strata-trust-fund-obligations
 canonical_name: BC Strata Trust Fund Obligations
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:57:57Z'
+last_updated: '2026-05-23T16:57:57Z'
 ---
 
 # BC Strata Trust Fund Obligations

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: business-education-socialization
 canonical_name: Business-education socialization vs. selection
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Business-education socialization vs. selection

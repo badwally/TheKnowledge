@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bc-strata-property-act
 canonical_name: British Columbia Strata Property Act (SPA)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:31:10Z'
+last_updated: '2026-05-23T23:31:10Z'
 ---
 
 # British Columbia Strata Property Act (SPA)

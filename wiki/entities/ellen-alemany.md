@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ellen-alemany
 canonical_name: Ellen R. Alemany
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:02:43Z'
+last_updated: '2026-05-23T22:02:43Z'
 ---
 
 # Ellen R. Alemany

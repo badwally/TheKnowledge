@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: columbia-business-school
 canonical_name: Columbia University Business School
 entity_kind: organization
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Columbia University Business School

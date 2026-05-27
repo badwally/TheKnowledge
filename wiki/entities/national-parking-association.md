@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: national-parking-association
 canonical_name: National Parking Association
 entity_kind: organization
 domains:
 - condo
+created_at: '2026-05-10T01:15:22Z'
+last_updated: '2026-05-10T01:15:22Z'
 ---
 # National Parking Association
 

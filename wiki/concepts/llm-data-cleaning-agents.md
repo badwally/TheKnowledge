@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: llm-data-cleaning-agents
 canonical_name: LLM-Based Data Cleaning Agents
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:18:46Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:18:46Z'
+last_updated: '2026-05-20T19:18:46Z'
 ---
 
 # LLM-Based Data Cleaning Agents

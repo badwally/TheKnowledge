@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: dirty-dozen-clean-fifteen
 canonical_name: EWG Dirty Dozen and Clean 15
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # EWG Dirty Dozen and Clean 15

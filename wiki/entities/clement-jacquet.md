@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: clement-jacquet
 canonical_name: Clément Jacquet
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:07Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:16:32Z'
+last_updated: '2026-05-20T21:16:32Z'
 ---
 
 # Clément Jacquet

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: nova-scotia-trustee-act
 canonical_name: Nova Scotia Trustee Act (R.S.N.S. 1989, c. 479)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:44:34Z'
+last_updated: '2026-05-23T20:44:34Z'
 ---
 
 # Nova Scotia Trustee Act (R.S.N.S. 1989, c. 479)

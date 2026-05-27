@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoai-agentic-workforce
 canonical_name: HOAi Agentic AI Workforce (Vantaca)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # HOAi Agentic AI Workforce (Vantaca)

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-corporation-legal-structure
 canonical_name: Canadian Condominium Corporation Legal Structure
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Canadian Condominium Corporation Legal Structure

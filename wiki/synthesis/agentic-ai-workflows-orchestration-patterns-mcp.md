@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: agentic-ai-workflows-orchestration-patterns-mcp
 title: 'Agentic AI Workflows: Orchestration Patterns, MCP, Tool Use, and A2A'
@@ -10,6 +11,9 @@ question: What are the canonical orchestration patterns, protocols (MCP, A2A), t
 draft: true
 draft_started_at: '2026-04-28T17:27:45Z'
 draft_unresolved_claims: 10
+created_at: '2026-04-28T17:27:45Z'
+last_updated: '2026-04-28T17:27:45Z'
+sources_count: 14
 ---
 
 # Agentic AI Workflows: Orchestration Patterns, MCP, Tool Use, and A2A

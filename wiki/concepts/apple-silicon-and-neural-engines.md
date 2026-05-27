@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: apple-silicon-and-neural-engines
 canonical_name: Apple Silicon And Neural Engines
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - edge-hardware-platforms
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # Apple Silicon and Neural Engines

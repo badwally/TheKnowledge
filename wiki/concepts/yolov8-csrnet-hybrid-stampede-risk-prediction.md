@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: yolov8-csrnet-hybrid-stampede-risk-prediction
 canonical_name: Yolov8 Csrnet Hybrid Stampede Risk Prediction
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # YOLOv8 + CSRNet hybrid (Stampede Risk Prediction)

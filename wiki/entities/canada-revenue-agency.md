@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: canada-revenue-agency
 canonical_name: Canada Revenue Agency (CRA)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Canada Revenue Agency (CRA)

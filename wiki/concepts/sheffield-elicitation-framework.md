@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: sheffield-elicitation-framework
 canonical_name: Sheffield Elicitation Framework (SHELF)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:09:43Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:09:44Z'
+last_updated: '2026-05-20T19:09:44Z'
 ---
 
 # Sheffield Elicitation Framework (SHELF)

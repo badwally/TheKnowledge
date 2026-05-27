@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cyan-platform
 canonical_name: cyan™ (FirstService Residential Integrated Tech Platform)
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:41:29Z'
+last_updated: '2026-05-24T04:41:29Z'
 ---
 
 # cyan™ (FirstService Residential Integrated Tech Platform)

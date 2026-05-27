@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: alberta-reserve-fund-plan
 canonical_name: Alberta Reserve Fund Plan (§23(4))
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:38:41Z'
+last_updated: '2026-05-23T20:38:41Z'
 ---
 
 # Alberta Reserve Fund Plan (§23(4))

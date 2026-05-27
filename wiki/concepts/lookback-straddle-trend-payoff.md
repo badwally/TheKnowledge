@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: lookback-straddle-trend-payoff
 canonical_name: Lookback-straddle payoff of trend-following
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Lookback-straddle payoff of trend-following

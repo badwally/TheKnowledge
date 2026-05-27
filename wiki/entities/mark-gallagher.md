@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: mark-gallagher
 canonical_name: Mark Gallagher
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-13T22:12:59Z'
+last_updated: '2026-05-13T22:12:59Z'
 ---
 
 # Mark Gallagher

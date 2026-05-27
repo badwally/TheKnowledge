@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: peter-fallon
 canonical_name: Peter Fallon
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-21T20:36:59Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-21T20:41:29Z'
+last_updated: '2026-05-21T20:41:29Z'
 ---
 # Peter Fallon
 

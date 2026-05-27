@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: spike-time-dependent-plasticity-stdp-learning
 canonical_name: Spike Time Dependent Plasticity Stdp Learning
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - biologically-inspired-advanced-spatio-temporal-computing
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Spike Time Dependent Plasticity (STDP) Learning

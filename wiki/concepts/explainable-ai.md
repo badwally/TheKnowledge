@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: explainable-ai
 canonical_name: Explainable Artificial Intelligence (XAI)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:39Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:20:09Z'
+last_updated: '2026-05-20T21:20:09Z'
 ---
 
 # Explainable Artificial Intelligence (XAI)

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: samie-hatim
 canonical_name: Samie Hatim
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T04:47:43Z'
+last_updated: '2026-05-24T04:47:43Z'
 ---
 
 # Samie Hatim

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: recurrent-autoregressive-networks-ran
 canonical_name: Recurrent Autoregressive Networks Ran
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - rnn-lstm
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Recurrent Autoregressive Networks (RAN)

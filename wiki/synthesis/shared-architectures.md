@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: shared-architectures
 title: Shared Architectures
@@ -11,6 +12,9 @@ legacy_provenance:
   imported_at: '2026-04-28T15:21:51Z'
   legacy_path: /Users/andrewgrant/code/research-notebook/data/obsidian/synthesis/shared-architectures.md
   legacy_slug: shared-architectures
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
+sources_count: 0
 ---
 
 # Shared Architectures

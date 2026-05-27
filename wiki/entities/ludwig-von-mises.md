@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ludwig-von-mises
 canonical_name: Ludwig von Mises
 entity_kind: person
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Ludwig von Mises

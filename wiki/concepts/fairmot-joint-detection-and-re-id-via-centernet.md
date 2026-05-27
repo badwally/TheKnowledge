@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: fairmot-joint-detection-and-re-id-via-centernet
 canonical_name: Fairmot Joint Detection And Re Id Via Centernet
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - detection
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # FairMOT (Joint Detection and Re-ID via CenterNet)

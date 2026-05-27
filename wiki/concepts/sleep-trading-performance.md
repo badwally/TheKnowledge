@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: sleep-trading-performance
 canonical_name: Sleep as Trading-Performance Lever
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Sleep as Trading-Performance Lever

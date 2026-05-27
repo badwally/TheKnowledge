@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-85-percent-funding-option
 canonical_name: NJ 85% Funding Option for Existing Associations
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ 85% Funding Option for Existing Associations

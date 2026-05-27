@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: videolstm-convolutional-attention-lstm
 canonical_name: Videolstm Convolutional Attention Lstm
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - action-recognition-classification
 - rnn-lstm
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # VideoLSTM (Convolutional Attention LSTM)

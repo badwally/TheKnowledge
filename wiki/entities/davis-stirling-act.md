@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: davis-stirling-act
 canonical_name: Davis-Stirling Common Interest Development Act
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # Davis-Stirling Common Interest Development Act

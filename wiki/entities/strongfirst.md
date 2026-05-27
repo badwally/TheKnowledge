@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: strongfirst
 canonical_name: StrongFirst
 entity_kind: organization
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # StrongFirst

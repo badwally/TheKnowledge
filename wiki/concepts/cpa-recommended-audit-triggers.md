@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cpa-recommended-audit-triggers
 canonical_name: CPA-Recommended Audit/Review Triggers for HOAs
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:32:23Z'
+last_updated: '2026-05-23T18:32:23Z'
 ---
 
 # CPA-Recommended Audit/Review Triggers for HOAs

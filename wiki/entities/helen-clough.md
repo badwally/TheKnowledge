@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: helen-clough
 canonical_name: Helen Clough
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:09:44Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:09:44Z'
+last_updated: '2026-05-20T19:09:44Z'
 ---
 
 # Helen Clough

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-11-what-is-the-established-methodology-stack-cross-cutting
 title: Cross-cutting themes (2026-05-11-what-is-the-established-methodology-stack)
@@ -38,6 +39,8 @@ synthesizes:
 - synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision
 - synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation
 finalized_at: '2026-05-13T18:39:28Z'
+last_updated: '2026-05-13T18:39:28Z'
+sources_count: 9
 ---
 # Cross-cutting themes — 2026-05-11-what-is-the-established-methodology-stack
 

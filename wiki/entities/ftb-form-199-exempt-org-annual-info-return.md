@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ftb-form-199-exempt-org-annual-info-return
 canonical_name: FTB Form 199 — Exempt Organization Annual Information Return
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:11:16Z'
+last_updated: '2026-05-23T23:11:16Z'
 ---
 
 # FTB Form 199 — Exempt Organization Annual Information Return

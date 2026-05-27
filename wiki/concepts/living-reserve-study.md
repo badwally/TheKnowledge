@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: living-reserve-study
 canonical_name: Living Reserve Study
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-24T01:16:07Z'
+last_updated: '2026-05-24T01:16:07Z'
 ---
 
 # Living Reserve Study

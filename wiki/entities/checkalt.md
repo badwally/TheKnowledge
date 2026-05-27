@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: checkalt
 canonical_name: CheckAlt
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:07:00Z'
+last_updated: '2026-05-23T17:07:00Z'
 ---
 
 # CheckAlt

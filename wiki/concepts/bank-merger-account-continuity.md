@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bank-merger-account-continuity
 canonical_name: Bank merger account continuity
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:21:32Z'
+last_updated: '2026-05-23T22:21:32Z'
 ---
 
 # Bank merger account continuity

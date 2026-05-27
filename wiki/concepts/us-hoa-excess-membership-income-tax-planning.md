@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: us-hoa-excess-membership-income-tax-planning
 canonical_name: US HOA Excess Membership Income Tax Planning
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # US HOA Excess Membership Income Tax Planning

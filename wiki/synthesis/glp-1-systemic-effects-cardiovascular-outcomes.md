@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: glp-1-systemic-effects-cardiovascular-outcomes
 title: GLP-1 systemic effects — cardiovascular outcomes, neuroprotection, brain volume,
@@ -10,6 +11,9 @@ question: 'GLP-1 systemic effects: cardiovascular outcomes (SELECT trial), neuro
 draft: true
 draft_started_at: '2026-04-28T00:00:00Z'
 draft_unresolved_claims: 10
+created_at: '2026-04-28T17:08:35Z'
+last_updated: '2026-04-28T17:08:35Z'
+sources_count: 3
 ---
 
 # GLP-1 systemic effects — cardiovascular outcomes, neuroprotection, brain volume, and Alzheimer's risk

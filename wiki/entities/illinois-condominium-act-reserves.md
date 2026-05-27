@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: illinois-condominium-act-reserves
 canonical_name: Illinois Condominium Act §605/9 and CICAA §160/1-45 (Reserves)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:17:08Z'
+last_updated: '2026-05-23T16:17:08Z'
 ---
 
 # Illinois Condominium Act §605/9 and CICAA §160/1-45 (Reserves)

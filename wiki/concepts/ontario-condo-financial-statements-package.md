@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condo-financial-statements-package
 canonical_name: Ontario Condominium Financial Statements Package
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:29:06Z'
+last_updated: '2026-05-24T00:29:06Z'
 ---
 
 # Ontario Condominium Financial Statements Package

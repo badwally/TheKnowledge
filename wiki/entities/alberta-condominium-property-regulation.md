@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: alberta-condominium-property-regulation
 canonical_name: Alberta Condominium Property Regulation (Alta Reg 168/2000)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:38:41Z'
+last_updated: '2026-05-23T20:38:41Z'
 ---
 
 # Alberta Condominium Property Regulation (Alta Reg 168/2000)

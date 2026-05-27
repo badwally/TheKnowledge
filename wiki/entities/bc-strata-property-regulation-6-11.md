@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bc-strata-property-regulation-6-11
 canonical_name: BC Strata Property Regulation §6.11 (Eligible Investments)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:25:05Z'
+last_updated: '2026-05-23T20:25:05Z'
 ---
 
 # BC Strata Property Regulation §6.11 (Eligible Investments)

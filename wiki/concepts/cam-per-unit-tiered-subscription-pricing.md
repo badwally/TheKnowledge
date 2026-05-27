@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: cam-per-unit-tiered-subscription-pricing
 canonical_name: CAM per-unit tiered subscription pricing
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:50:15Z'
+last_updated: '2026-05-24T01:50:15Z'
 ---
 
 # CAM per-unit tiered subscription pricing

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: florida-condominium-kickback-prohibition
 canonical_name: Florida Condominium Kickback Prohibition
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:05:57Z'
+last_updated: '2026-05-23T18:05:57Z'
 ---
 
 # Florida Condominium Kickback Prohibition

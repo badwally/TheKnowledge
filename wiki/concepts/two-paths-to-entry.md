@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: two-paths-to-entry
 canonical_name: Two Paths to Entry
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Two Paths to Entry

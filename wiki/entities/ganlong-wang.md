@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: ganlong-wang
 canonical_name: Ganlong Wang
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:10Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:12:40Z'
+last_updated: '2026-05-20T21:12:40Z'
 ---
 
 # Ganlong Wang

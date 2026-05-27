@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: 3d-cnns-with-spatio-temporal-filter-analysis-i3d-resnet
 canonical_name: 3D Cnns With Spatio Temporal Filter Analysis I3D Resnet
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - action-recognition-classification
 - cnn-3d
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # 3D CNNs with Spatio-Temporal Filter Analysis (i3D ResNet)

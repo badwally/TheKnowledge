@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: nj-zero-dollar-balance-plan
 canonical_name: NJ Zero-Dollar Balance Plan Requirement
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:29:40Z'
+last_updated: '2026-05-23T18:29:40Z'
 ---
 
 # NJ Zero-Dollar Balance Plan Requirement

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-23-what-is-the-ai-native-technical-unit-economics-and-cost-predictability
 title: Unit Economics and Cost Predictability — investigation (2026-05-23-what-is-the-ai-native-technical)
@@ -20,6 +21,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-23T19:19:17Z'
 draft_unresolved_claims: 13
+last_updated: '2026-05-24T17:25:30Z'
+sources_count: 1
 ---
 # Unit Economics and Cost Predictability — investigation
 

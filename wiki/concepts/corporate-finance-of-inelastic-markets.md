@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: corporate-finance-of-inelastic-markets
 canonical_name: Corporate Finance of Inelastic Markets
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Corporate Finance of Inelastic Markets

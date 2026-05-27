@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-statute-718-111
 canonical_name: Florida Statute §718.111 (The Association)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:05:57Z'
+last_updated: '2026-05-23T18:05:57Z'
 ---
 
 # Florida Statute §718.111 (The Association)

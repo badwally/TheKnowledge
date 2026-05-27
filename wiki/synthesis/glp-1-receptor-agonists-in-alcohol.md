@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: glp-1-receptor-agonists-in-alcohol
 title: GLP-1 receptor agonists in alcohol and substance use disorders
@@ -9,6 +10,9 @@ question: 'GLP-1 receptor agonists in alcohol and substance use disorders: precl
 draft: true
 draft_started_at: '2026-04-28T17:02:40Z'
 draft_unresolved_claims: 0
+created_at: '2026-04-28T17:02:40Z'
+last_updated: '2026-04-28T17:02:40Z'
+sources_count: 18
 ---
 
 # GLP-1 receptor agonists in alcohol and substance use disorders

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ontario-condominium-act-1998
 canonical_name: Ontario Condominium Act, 1998 (S.O. 1998, c. 19)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:58:48Z'
+last_updated: '2026-05-23T20:58:48Z'
 ---
 
 # Ontario Condominium Act, 1998 (S.O. 1998, c. 19)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: specialized-domain-tracking
 canonical_name: Specialized Domain Tracking
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - tracking
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Specialized Domain Tracking

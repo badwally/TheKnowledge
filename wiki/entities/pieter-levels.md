@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pieter-levels
 title: Pieter Levels
@@ -8,6 +9,7 @@ created_at: '2026-05-23T20:15:00Z'
 draft: true
 draft_started_at: '2026-05-23T20:15:00Z'
 draft_unresolved_claims: 0
+last_updated: '2026-05-23T20:24:27Z'
 ---
 # Pieter Levels
 

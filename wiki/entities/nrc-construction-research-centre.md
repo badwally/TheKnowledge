@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: nrc-construction-research-centre
 canonical_name: National Research Council Canada Construction Research Centre
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:23:25Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:25:03Z'
+last_updated: '2026-05-11T23:25:03Z'
 ---
 # National Research Council Canada Construction Research Centre
 

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: signal-processing-and-stabilization
 canonical_name: Signal Processing And Stabilization
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - biologically-inspired-advanced-spatio-temporal-computing
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Signal Processing and Stabilization

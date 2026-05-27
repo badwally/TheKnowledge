@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: bounded-transformed-gamma-process
 canonical_name: Bounded Transformed Gamma Process (BTGP)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:40Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T19:16:30Z'
+last_updated: '2026-05-20T19:16:30Z'
 ---
 
 # Bounded Transformed Gamma Process (BTGP)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: international-roughness-index
 canonical_name: International Roughness Index (IRI)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:39Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T21:20:09Z'
+last_updated: '2026-05-20T21:20:09Z'
 ---
 
 # International Roughness Index (IRI)

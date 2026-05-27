@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ma-reclaim-as-strength-signal
 canonical_name: Moving-Average Reclaim as Strength Signal
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Moving-Average Reclaim as Strength Signal

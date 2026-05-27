@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: qc-civil-code-divided-co-ownership
-canonical_name: Quebec Civil Code — Divided Co-Ownership Contingency Fund Study Regime (Bill 16, 2019 c.28)
+canonical_name: Quebec Civil Code — Divided Co-Ownership Contingency Fund Study Regime
+  (Bill 16, 2019 c.28)
 entity_kind: regulation
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T17:56:50Z'
+last_updated: '2026-05-11T17:56:50Z'
 ---
 # Quebec Civil Code — Divided Co-Ownership Contingency Fund Study Regime
 

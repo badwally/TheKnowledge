@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: california-30-year-reserve-projection
 canonical_name: California 30-Year Reserve Projection
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # California 30-Year Reserve Projection

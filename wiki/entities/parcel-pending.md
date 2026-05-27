@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: parcel-pending
 canonical_name: Parcel Pending
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:17:30Z'
+last_updated: '2026-05-24T02:17:30Z'
 ---
 
 # Parcel Pending

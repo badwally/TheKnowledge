@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: townsq
 canonical_name: TownSq
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:47:15Z'
+last_updated: '2026-05-24T01:47:15Z'
 ---
 
 # TownSq

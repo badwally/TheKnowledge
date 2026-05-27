@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: video-language-understanding-and-grounding-cross
 title: 'Video-Language Understanding and Grounding: Cross-Modal Alignment, VQA, and
@@ -10,6 +11,9 @@ question: 'Video-language understanding and grounding: cross-modal alignment, vi
 draft: true
 draft_started_at: '2026-04-28T17:20:20Z'
 draft_unresolved_claims: 3
+created_at: '2026-04-28T17:20:20Z'
+last_updated: '2026-04-28T17:20:20Z'
+sources_count: 16
 ---
 
 # Video-Language Understanding and Grounding: Cross-Modal Alignment, VQA, and Text-Conditioned Temporal Localization

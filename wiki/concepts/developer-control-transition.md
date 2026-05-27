@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: developer-control-transition
 canonical_name: Transition from Developer Control
 domains:
 - condo
+created_at: '2026-05-09T23:38:25Z'
+last_updated: '2026-05-09T23:38:25Z'
 ---
 # Transition from Developer Control
 

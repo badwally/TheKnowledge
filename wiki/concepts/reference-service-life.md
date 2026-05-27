@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: reference-service-life
 canonical_name: Reference Service Life (RSL)
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T23:28:20Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-11T23:28:20Z'
+last_updated: '2026-05-11T23:28:20Z'
 ---
 # Reference Service Life (RSL)
 

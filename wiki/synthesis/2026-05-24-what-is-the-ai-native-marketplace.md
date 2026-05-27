@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-24-what-is-the-ai-native-marketplace
 title: 'What is the AI-native marketplace / aggregator archetype for a solo or tiny-team
@@ -46,6 +47,8 @@ sources:
 draft: true
 draft_started_at: '2026-05-24T16:04:02Z'
 draft_unresolved_claims: 27
+last_updated: '2026-05-24T22:51:28Z'
+sources_count: 2
 ---
 # What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching; how the four pillars specialize — especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals. Draw on Notboring coverage of named AI-native companies and the bigtechnology analysis of AI's PR emergency for GTM/distribution signal.
 

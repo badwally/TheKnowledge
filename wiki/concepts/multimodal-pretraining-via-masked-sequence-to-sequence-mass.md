@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: multimodal-pretraining-via-masked-sequence-to-sequence-mass
 canonical_name: Multimodal Pretraining Via Masked Sequence To Sequence Mass
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Multimodal Pretraining via MAsked Sequence to Sequence (MASS)

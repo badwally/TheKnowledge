@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: treasury-management-middleware
 canonical_name: Treasury Management Middleware (Real Estate)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T17:12:36Z'
+last_updated: '2026-05-23T17:12:36Z'
 ---
 
 # Treasury Management Middleware (Real Estate)

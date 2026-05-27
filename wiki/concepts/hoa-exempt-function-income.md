@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-exempt-function-income
 canonical_name: HOA Exempt Function Income (§528)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:54:36Z'
+last_updated: '2026-05-23T22:54:36Z'
 ---
 
 # HOA Exempt Function Income (§528)

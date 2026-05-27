@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: integrated-payables
 canonical_name: Integrated Payables (HOA Treasury Service)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:59:55Z'
+last_updated: '2026-05-23T21:59:55Z'
 ---
 
 # Integrated Payables (HOA Treasury Service)

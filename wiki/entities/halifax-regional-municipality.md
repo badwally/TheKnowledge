@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: halifax-regional-municipality
 canonical_name: Halifax Regional Municipality
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:54:48Z'
+last_updated: '2026-05-10T22:54:48Z'
 ---
 # Halifax Regional Municipality
 

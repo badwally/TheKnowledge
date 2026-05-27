@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-condominium-act
 canonical_name: Florida Condominium Act (Chapter 718)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:09:53Z'
+last_updated: '2026-05-23T18:09:53Z'
 ---
 
 # Florida Condominium Act (Chapter 718)

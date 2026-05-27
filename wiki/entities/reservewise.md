@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: reservewise
 canonical_name: ReserveWise
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-18T22:43:34Z'
+last_updated: '2026-05-18T22:43:34Z'
 ---
 # ReserveWise
 

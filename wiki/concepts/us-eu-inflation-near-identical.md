@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: us-eu-inflation-near-identical
 canonical_name: US–EU Inflation Near-Identical (2020–2022)
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # US–EU Inflation Near-Identical (2020–2022)

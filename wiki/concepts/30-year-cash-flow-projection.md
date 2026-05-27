@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: 30-year-cash-flow-projection
 canonical_name: 30-Year Cash Flow Projection (Reserve Study)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:18:38Z'
+last_updated: '2026-05-24T03:18:38Z'
 ---
 
 # 30-Year Cash Flow Projection (Reserve Study)

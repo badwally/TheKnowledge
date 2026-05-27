@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: fixed-income-2023-revival
 canonical_name: Fixed Income 2023 Revival
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Fixed Income 2023 Revival

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cao-2024-reserve-fund-survey
 canonical_name: CAO 2024 Report on Reserve Fund Survey Findings
 entity_kind: publication
 domains:
 - condo-capital-infra
+created_at: '2026-05-19T15:02:42Z'
+last_updated: '2026-05-19T15:02:42Z'
 ---
 # CAO 2024 Report on Reserve Fund Survey Findings
 

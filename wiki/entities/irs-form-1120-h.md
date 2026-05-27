@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: irs-form-1120-h
 canonical_name: IRS Form 1120-H (U.S. Income Tax Return for Homeowners Associations)
 entity_kind: form
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:17:21Z'
+last_updated: '2026-05-23T23:17:21Z'
 ---
 
 # IRS Form 1120-H (U.S. Income Tax Return for Homeowners Associations)

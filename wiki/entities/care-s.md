@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: care-s
 canonical_name: CARE-S (Computer Aided Rehabilitation for Sewer and Stormwater Networks)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:33Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:14:15Z'
+last_updated: '2026-05-20T19:14:15Z'
 ---
 
 # CARE-S (Computer Aided Rehabilitation for Sewer and Stormwater Networks)

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: long-term-exendin-4-treatment-reduces-food-intake-and-body-weight-and-alters-expression-of-brain-homeostatic-and-reward-markers-yang-et-al-2014-evaluating-pomc-and-npy-gene-expression
 canonical_name: Long Term Exendin 4 Treatment Reduces Food Intake And Body Weight
@@ -15,6 +16,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - neurobiology-of-appetite-and-reward
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # "Long term exendin-4 treatment reduces food intake and body weight and alters expression of brain homeostatic and reward markers" (Yang et al., 2014), evaluating POMC and NPY gene expression.

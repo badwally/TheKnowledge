@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: ontario-protecting-condominium-owners-act-2015
 canonical_name: Ontario Protecting Condominium Owners Act, 2015 (PCOA)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:31:01Z'
+last_updated: '2026-05-23T20:31:01Z'
 ---
 
 # Ontario Protecting Condominium Owners Act, 2015 (PCOA)

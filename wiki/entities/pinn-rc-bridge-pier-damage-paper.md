@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: pinn-rc-bridge-pier-damage-paper
 canonical_name: Damage Identification of a Reinforced Concrete Bridge Pier after an
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:02:17Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:35:32Z'
+last_updated: '2026-05-20T19:35:32Z'
 ---
 
 # Damage Identification of a Reinforced Concrete Bridge Pier after an Earthquake based on a Physics-informed Neural Network

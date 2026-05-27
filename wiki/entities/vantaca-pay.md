@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: vantaca-pay
 canonical_name: Vantaca Pay
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # Vantaca Pay

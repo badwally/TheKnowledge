@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: particle-filter-rul-paper
 canonical_name: A Data-Driven Particle Filter Approach for System-Level Prediction
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:18:42Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:22:56Z'
+last_updated: '2026-05-20T19:22:56Z'
 ---
 
 # A Data-Driven Particle Filter Approach for System-Level Prediction of Remaining Useful Life

@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: quebec-mandatory-electronic-corporate-filing
-canonical_name: Quebec Mandatory Electronic Corporate Filing (Fiscal Years Starting 2024)
+canonical_name: Quebec Mandatory Electronic Corporate Filing (Fiscal Years Starting
+  2024)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # Quebec Mandatory Electronic Corporate Filing (Fiscal Years Starting 2024)

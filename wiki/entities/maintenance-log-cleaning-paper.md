@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: maintenance-log-cleaning-paper
 canonical_name: Cleaning Maintenance Logs with LLM Agents for Improved Predictive
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:18:45Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:18:46Z'
+last_updated: '2026-05-20T19:18:46Z'
 ---
 
 # Cleaning Maintenance Logs with LLM Agents for Improved Predictive Maintenance

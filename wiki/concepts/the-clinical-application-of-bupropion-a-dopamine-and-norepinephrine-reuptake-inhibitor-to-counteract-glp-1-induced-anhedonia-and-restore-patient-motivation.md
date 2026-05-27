@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: the-clinical-application-of-bupropion-a-dopamine-and-norepinephrine-reuptake-inhibitor-to-counteract-glp-1-induced-anhedonia-and-restore-patient-motivation
 canonical_name: The Clinical Application Of Bupropion A Dopamine And Norepinephrine
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - mental-health-and-emotional-regulation
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # The clinical application of bupropion (a dopamine and norepinephrine reuptake inhibitor) to counteract GLP-1-induced anhedonia and restore patient motivation.

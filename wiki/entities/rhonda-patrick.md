@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: rhonda-patrick
 canonical_name: Rhonda Patrick
 entity_kind: person
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Rhonda Patrick

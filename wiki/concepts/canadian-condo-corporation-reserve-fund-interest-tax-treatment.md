@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-corporation-reserve-fund-interest-tax-treatment
 canonical_name: Canadian Condominium Corporation Reserve Fund Interest Tax Treatment
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T23:02:19Z'
+last_updated: '2026-05-23T23:02:19Z'
 ---
 
 # Canadian Condominium Corporation Reserve Fund Interest Tax Treatment

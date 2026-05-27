@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: association-contract-bidding
 canonical_name: Association Contract Bidding Requirements
 domains:
 - condo
+created_at: '2026-05-09T23:38:25Z'
+last_updated: '2026-05-09T23:38:25Z'
 ---
 # Association Contract Bidding Requirements
 

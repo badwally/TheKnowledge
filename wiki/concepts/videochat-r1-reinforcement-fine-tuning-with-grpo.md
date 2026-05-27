@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: videochat-r1-reinforcement-fine-tuning-with-grpo
 canonical_name: Videochat R1 Reinforcement Fine Tuning With Grpo
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - video-language-understanding-grounding
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # VideoChat-R1 (Reinforcement Fine-Tuning with GRPO)

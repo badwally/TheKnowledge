@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: brass-monkey
 canonical_name: Brass Monkey
 entity_kind: organization
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Brass Monkey

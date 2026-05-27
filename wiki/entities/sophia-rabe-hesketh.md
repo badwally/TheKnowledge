@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: sophia-rabe-hesketh
 canonical_name: Sophia Rabe-Hesketh
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:45Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:49:54Z'
+last_updated: '2026-05-20T19:49:54Z'
 ---
 
 # Sophia Rabe-Hesketh

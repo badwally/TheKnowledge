@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: hybrid-modeling-bayesian-state-estimation
 canonical_name: Hybrid modelling synthesized with recursive Bayesian state estimation
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:02:34Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:42:45Z'
+last_updated: '2026-05-20T19:42:45Z'
 ---
 
 # Hybrid modelling synthesized with recursive Bayesian state estimation

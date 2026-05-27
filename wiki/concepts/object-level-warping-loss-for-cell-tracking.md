@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: object-level-warping-loss-for-cell-tracking
 canonical_name: Object Level Warping Loss For Cell Tracking
@@ -14,6 +15,8 @@ legacy_provenance:
 tags:
 - tracking
 - video-object-tracking-trajectory-prediction
+created_at: '2026-04-28T15:21:51Z'
+last_updated: '2026-04-28T15:21:51Z'
 ---
 
 # Object-Level Warping Loss (for cell tracking)

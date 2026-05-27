@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: first-citizens-bank
 canonical_name: First Citizens Bank
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:10:23Z'
+last_updated: '2026-05-23T22:10:23Z'
 ---
 
 # First Citizens Bank

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: living-document-reserve-study
 canonical_name: Living-Document Reserve Study
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:18:38Z'
+last_updated: '2026-05-24T03:18:38Z'
 ---
 
 # Living-Document Reserve Study

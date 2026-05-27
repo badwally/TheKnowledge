@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: core-services-inflation-persistence
 canonical_name: Core Services as the Persistent Driver of Inflation
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Core Services as the Persistent Driver of Inflation

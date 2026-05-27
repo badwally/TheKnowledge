@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel-cross-cutting
 title: Cross-cutting themes (2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel)
@@ -107,6 +108,8 @@ created_at: '2026-05-20T21:06:42Z'
 draft: true
 draft_started_at: '2026-05-20T21:06:42Z'
 draft_unresolved_claims: 7
+last_updated: '2026-05-20T21:06:42Z'
+sources_count: 18
 ---
 # Cross-cutting themes — 2026-05-20-risksystems-05-bounded-gamma-deterioration-kernel
 

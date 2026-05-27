@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: civil-code-of-quebec
 canonical_name: Civil Code of Québec (CCQ-1991)
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:08:29Z'
+last_updated: '2026-05-23T21:08:29Z'
 ---
 
 # Civil Code of Québec (CCQ-1991)

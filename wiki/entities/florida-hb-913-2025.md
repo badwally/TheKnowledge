@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-hb-913-2025
 canonical_name: Florida CS/CS/HB 913 (2025) — Condominium Associations
 entity_kind: regulation
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T17:39:56Z'
+last_updated: '2026-05-11T17:39:56Z'
 ---
 # Florida CS/CS/HB 913 (2025) — Condominium Associations
 

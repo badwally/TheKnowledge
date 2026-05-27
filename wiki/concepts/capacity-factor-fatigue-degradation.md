@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: capacity-factor-fatigue-degradation
 canonical_name: Capacity factor as a fatigue-driven reliability covariate
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:07Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:16:32Z'
+last_updated: '2026-05-20T21:16:32Z'
 ---
 
 # Capacity factor as a fatigue-driven reliability covariate

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: bayesian-hierarchical-aft-model
 canonical_name: Bayesian hierarchical Accelerated Failure Time model
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:01:07Z'
 draft_unresolved_claims: 3
+created_at: '2026-05-20T21:16:32Z'
+last_updated: '2026-05-20T21:16:32Z'
 ---
 
 # Bayesian hierarchical Accelerated Failure Time model

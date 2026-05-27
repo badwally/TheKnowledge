@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: fannie-mae-lender-letter-ll-2026-03
 canonical_name: Fannie Mae Lender Letter LL-2026-03 (and Freddie Mac Bulletin 2026-C)
 entity_kind: policy_document
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:15:46Z'
+last_updated: '2026-05-23T18:15:46Z'
 ---
 
 # Fannie Mae Lender Letter LL-2026-03 (and Freddie Mac Bulletin 2026-C)

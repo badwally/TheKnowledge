@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: california-percent-funded-component-method
 canonical_name: California Percent-Funded Component Method (§5570(b)(4))
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-24T00:14:32Z'
+last_updated: '2026-05-24T00:14:32Z'
 ---
 
 # California Percent-Funded Component Method (§5570(b)(4))

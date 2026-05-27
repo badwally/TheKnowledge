@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: yanuck-phased-immuno-physiologic-approach
 canonical_name: Yanuck phased immuno-physiologic approach
 domains:
-  - health
+- health
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Yanuck phased immuno-physiologic approach

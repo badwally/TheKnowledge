@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: dte-strike-selection-by-weekday
 canonical_name: Day-of-Week Options Strike and Expiration Selection
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Day-of-Week Options Strike and Expiration Selection

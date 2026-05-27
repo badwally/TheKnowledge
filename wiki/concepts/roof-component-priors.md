@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: roof-component-priors
 canonical_name: Roof Component Priors
 domains:
 - condo-capital-infra
+created_at: '2026-05-10T22:46:56Z'
+last_updated: '2026-05-10T22:46:56Z'
 ---
 # Roof Component Priors
 

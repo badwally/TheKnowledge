@@ -1,10 +1,14 @@
 ---
+schema_version: 1
 type: entity
 slug: dbpr-condominiums-division
-canonical_name: Florida DBPR Division of Florida Condominiums, Timeshares, and Mobile Homes
+canonical_name: Florida DBPR Division of Florida Condominiums, Timeshares, and Mobile
+  Homes
 entity_kind: organization
 domains:
-  - condo-capital-infra
+- condo-capital-infra
+created_at: '2026-05-24T00:09:09Z'
+last_updated: '2026-05-24T00:09:09Z'
 ---
 
 # Florida DBPR Division of Florida Condominiums, Timeshares, and Mobile Homes

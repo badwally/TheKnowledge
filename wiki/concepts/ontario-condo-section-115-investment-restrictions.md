@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-condo-section-115-investment-restrictions
 canonical_name: Ontario Condo §115 Reserve Fund Investment Restrictions
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:36:31Z'
+last_updated: '2026-05-24T00:36:31Z'
 ---
 
 # Ontario Condo §115 Reserve Fund Investment Restrictions

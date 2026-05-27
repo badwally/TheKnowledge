@@ -1,9 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-incidental-income-test-149-1-l
-canonical_name: Canadian Condo Corporation — Incidental Income Test under Paragraph 149(1)(l)
+canonical_name: Canadian Condo Corporation — Incidental Income Test under Paragraph
+  149(1)(l)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:07:04Z'
+last_updated: '2026-05-23T23:07:04Z'
 ---
 
 # Canadian Condo Corporation — Incidental Income Test under Paragraph 149(1)(l)

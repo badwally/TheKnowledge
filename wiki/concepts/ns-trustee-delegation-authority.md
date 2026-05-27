@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ns-trustee-delegation-authority
 canonical_name: Nova Scotia Trustee Delegation Authority (§3F)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:44:34Z'
+last_updated: '2026-05-23T20:44:34Z'
 ---
 
 # Nova Scotia Trustee Delegation Authority (§3F)

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: wealthsimple-business-chequing
 canonical_name: Wealthsimple Business chequing account
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T22:23:59Z'
+last_updated: '2026-05-23T22:23:59Z'
 ---
 
 # Wealthsimple Business chequing account

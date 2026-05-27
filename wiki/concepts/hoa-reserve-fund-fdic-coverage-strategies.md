@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: hoa-reserve-fund-fdic-coverage-strategies
 canonical_name: HOA Reserve Fund FDIC Coverage Strategies
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:39:54Z'
+last_updated: '2026-05-24T00:39:54Z'
 ---
 
 # HOA Reserve Fund FDIC Coverage Strategies

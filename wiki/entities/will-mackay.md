@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: will-mackay
 canonical_name: Will MacKay, CFP, CIM
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:19:12Z'
+last_updated: '2026-05-23T21:19:12Z'
 ---
 
 # Will MacKay, CFP, CIM

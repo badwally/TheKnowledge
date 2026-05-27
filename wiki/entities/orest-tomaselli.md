@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: orest-tomaselli
 canonical_name: Orest Tomaselli
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T19:01:00Z'
+last_updated: '2026-05-23T19:01:00Z'
 ---
 
 # Orest Tomaselli

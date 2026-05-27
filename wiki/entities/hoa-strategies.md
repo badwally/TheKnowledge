@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: hoa-strategies
 canonical_name: HOA Strategies
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:06:30Z'
+last_updated: '2026-05-24T01:06:30Z'
 ---
 
 # HOA Strategies

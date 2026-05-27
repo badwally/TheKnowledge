@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: cra-interpretation-bulletin-it-304r2
 canonical_name: CRA Interpretation Bulletin IT-304R2 (Condominiums)
 entity_kind: publication
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:43:37Z'
+last_updated: '2026-05-23T23:43:37Z'
 ---
 
 # CRA Interpretation Bulletin IT-304R2 (Condominiums)

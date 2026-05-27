@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: bankunited
 canonical_name: BankUnited, N.A.
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T01:11:08Z'
+last_updated: '2026-05-24T01:11:08Z'
 ---
 
 # BankUnited, N.A.

@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: canadian-condo-accrual-accounting-requirement
 canonical_name: Canadian Condominium Accrual Accounting Requirement
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:29:06Z'
+last_updated: '2026-05-24T00:29:06Z'
 ---
 
 # Canadian Condominium Accrual Accounting Requirement

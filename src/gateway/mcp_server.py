@@ -79,6 +79,7 @@ CLI_ONLY: frozenset[str] = frozenset(
         "backfill-entity-kinds",
         "backfill-timestamps",
         "backfill-synthesizes",
+        "backfill-sources-count",
         # Log rotation is a bulk maintenance operation. Scheduler owns invocation.
         "rotate-log",
         # `question` is a multi-action umbrella (new/list); the fine-grained

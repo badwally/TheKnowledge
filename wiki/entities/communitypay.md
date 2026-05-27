@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: communitypay
 canonical_name: CommunityPay
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:40:38Z'
+last_updated: '2026-05-24T03:40:38Z'
 ---
 
 # CommunityPay

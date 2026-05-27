@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: ns-trustee-diversification-requirement
 canonical_name: Nova Scotia Trustee Diversification Requirement (§3B)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T20:44:34Z'
+last_updated: '2026-05-23T20:44:34Z'
 ---
 
 # Nova Scotia Trustee Diversification Requirement (§3B)

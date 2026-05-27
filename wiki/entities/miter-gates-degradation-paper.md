@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: miter-gates-degradation-paper
 canonical_name: Degradation Model Correction of Miter Gates Through Synthesis of Hybrid
@@ -9,6 +10,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T18:02:34Z'
 draft_unresolved_claims: 4
+created_at: '2026-05-20T19:42:45Z'
+last_updated: '2026-05-20T19:42:45Z'
 ---
 
 # Degradation Model Correction of Miter Gates Through Synthesis of Hybrid Modeling with Recursive Bayesian State Estimation

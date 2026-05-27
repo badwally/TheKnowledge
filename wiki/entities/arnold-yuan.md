@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: arnold-yuan
 canonical_name: Arnold X.-X. Yuan
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:40Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:16:30Z'
+last_updated: '2026-05-20T19:16:30Z'
 ---
 
 # Arnold X.-X. Yuan

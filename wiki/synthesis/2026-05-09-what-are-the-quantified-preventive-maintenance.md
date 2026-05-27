@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-09-what-are-the-quantified-preventive-maintenance
 title: 'What are the QUANTIFIED preventive-maintenance cadences and benchmarks for
@@ -44,6 +45,8 @@ question: 'What are the QUANTIFIED preventive-maintenance cadences and benchmark
 created_at: '2026-05-09T23:56:08Z'
 nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 finalized_at: '2026-05-10T00:45:55Z'
+last_updated: '2026-05-13T22:12:24Z'
+sources_count: 10
 ---
 # What are the QUANTIFIED preventive-maintenance cadences and benchmarks for 100+ unit condominium / strata / co-op buildings in the United States and Canada — frequency intervals, durations, costs, and reliability benchmarks — across the building-system stack? For each component (HVAC central plant, elevators, plumbing risers, fire-life-safety, building envelope, balconies, roofing, parking deck), produce: (a) inspection / test / service intervals in months or years, (b) typical labor-hour or specialist-day estimate per task, (c) typical $/sf or $/unit cost band for service contracts and ITM cycles, (d) regulatory minimum cadence vs. industry-standard cadence vs. predictive / condition-based cadence where they diverge, (e) MTBF / failure-rate or component service-life benchmark where reported. Include sub-tables for: NFPA 25 sprinkler ITM, NFPA 72 fire alarm ITM, ASME A17.1 / CSA B44 elevator inspection, NYC LL11/FISP cadence, NYC LL87 energy-audit cadence, CA SB 326 balcony cadence, FL §718.112(2)(g) maintenance plan inputs, Quebec Bill 16 carnet d'entretien content, BOMA BEST 4.0 MURB E6.0 PM section, CAI Foundation 2023 cadence guidance, BC Housing Maintenance Matters water-system cadence, PCI parking-deck sealer reapplication cadence, and CMMS/EAM-recorded benchmark task durations from BuildingLink / Yardi / CondoControl / Building Engines vendor methodology pages. Also: a single board-facing reference table of MINIMUM-DEFENSIBLE annual PM operating cost per door for a 200-unit Florida high-rise condo.
 

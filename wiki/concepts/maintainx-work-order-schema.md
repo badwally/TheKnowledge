@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: maintainx-work-order-schema
 canonical_name: MaintainX Work Order Schema (Form Fields)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:29:37Z'
+last_updated: '2026-05-24T02:29:37Z'
 ---
 
 # MaintainX Work Order Schema (Form Fields)

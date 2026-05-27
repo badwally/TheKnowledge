@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: ns-condominium-act
 canonical_name: Nova Scotia Condominium Act
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-11T21:23:42Z'
 draft_unresolved_claims: 0
+created_at: '2026-05-19T15:02:42Z'
+last_updated: '2026-05-19T15:02:42Z'
 ---
 # Nova Scotia Condominium Act
 

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: stanford-hai
 canonical_name: Stanford Institute for Human-Centered Artificial Intelligence
 entity_kind: organization
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Stanford Institute for Human-Centered Artificial Intelligence

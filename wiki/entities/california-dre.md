@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-dre
 canonical_name: California Department of Real Estate
 entity_kind: organization
 domains:
 - condo-capital-infra
+created_at: '2026-05-11T17:46:04Z'
+last_updated: '2026-05-11T17:46:04Z'
 ---
 # California Department of Real Estate
 

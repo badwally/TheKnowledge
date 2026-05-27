@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: asphalt-pavement-lifecycle-management
 canonical_name: Asphalt pavement life-cycle management
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T19:30:00Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T19:40:01Z'
+last_updated: '2026-05-20T19:40:01Z'
 ---
 
 # Asphalt pavement life-cycle management

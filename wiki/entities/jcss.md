@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: entity
 slug: jcss
 canonical_name: Joint Committee on Structural Safety (JCSS)
@@ -8,6 +9,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T17:36:34Z'
 draft_unresolved_claims: 1
+created_at: '2026-05-20T20:00:36Z'
+last_updated: '2026-05-20T20:00:36Z'
 ---
 
 # Joint Committee on Structural Safety (JCSS)

@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: revenue-ruling-83-74
 canonical_name: IRS Revenue Ruling 83-74
 entity_kind: regulation
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:24:46Z'
+last_updated: '2026-05-23T23:24:46Z'
 ---
 
 # IRS Revenue Ruling 83-74

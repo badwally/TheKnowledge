@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: sean-ingraham
 canonical_name: Sean Ingraham
 entity_kind: person
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T03:24:57Z'
+last_updated: '2026-05-24T03:24:57Z'
 ---
 
 # Sean Ingraham

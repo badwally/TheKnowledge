@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bc-insured-account-definition
 canonical_name: BC Strata Property Regulation §1.1 "Insured Account" Definition
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:14:25Z'
+last_updated: '2026-05-23T21:14:25Z'
 ---
 
 # BC Strata Property Regulation §1.1 "Insured Account" Definition

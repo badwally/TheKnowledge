@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: bayesian-updating-bridge-resistance
 canonical_name: Bayesian updating of bridge resistance with historical service information
@@ -7,6 +8,8 @@ domains:
 draft: true
 draft_started_at: '2026-05-20T21:00:42Z'
 draft_unresolved_claims: 2
+created_at: '2026-05-20T21:14:54Z'
+last_updated: '2026-05-20T21:14:54Z'
 ---
 
 # Bayesian updating of bridge resistance with historical service information

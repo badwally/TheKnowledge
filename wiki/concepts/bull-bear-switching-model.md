@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: bull-bear-switching-model
 canonical_name: Bull-bear switching model
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Bull-bear switching model

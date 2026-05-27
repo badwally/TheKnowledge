@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: text-to-video-generation
 canonical_name: Text-to-video generation
 domains:
-  - ai-and-agents
+- ai-and-agents
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Text-to-video generation

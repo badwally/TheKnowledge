@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-risksystems-02-physics-informed-sciml-hybrid-modeling-and-data-driven-structural
 title: Hybrid Modeling and Data-Driven Structural Assessment — investigation (2026-05-20-risksystems-02-physics-informed-sciml)
@@ -51,6 +52,8 @@ synthesizes:
 draft: true
 draft_started_at: '2026-05-20T19:03:39Z'
 draft_unresolved_claims: 9
+last_updated: '2026-05-20T19:03:39Z'
+sources_count: 3
 ---
 # Hybrid Modeling and Data-Driven Structural Assessment — investigation
 

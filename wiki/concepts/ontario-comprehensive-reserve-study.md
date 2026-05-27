@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: concept
 slug: ontario-comprehensive-reserve-study
 canonical_name: Ontario Three-Tier Reserve Study Classification (O. Reg. 48/01)
 domains:
-  - condo-software
-  - condo-capital-infra
+- condo-software
+- condo-capital-infra
+created_at: '2026-05-23T20:35:10Z'
+last_updated: '2026-05-23T20:35:10Z'
 ---
 
 # Ontario Three-Tier Reserve Study Classification (O. Reg. 48/01)

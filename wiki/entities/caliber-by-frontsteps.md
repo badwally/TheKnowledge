@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: caliber-by-frontsteps
 canonical_name: Caliber by Frontsteps
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T21:59:55Z'
+last_updated: '2026-05-23T21:59:55Z'
 ---
 
 # Caliber by Frontsteps

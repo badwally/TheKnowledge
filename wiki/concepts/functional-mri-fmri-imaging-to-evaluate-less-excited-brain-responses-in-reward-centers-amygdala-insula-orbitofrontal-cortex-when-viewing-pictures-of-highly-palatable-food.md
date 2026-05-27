@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: functional-mri-fmri-imaging-to-evaluate-less-excited-brain-responses-in-reward-centers-amygdala-insula-orbitofrontal-cortex-when-viewing-pictures-of-highly-palatable-food
 canonical_name: Functional Mri Fmri Imaging To Evaluate Less Excited Brain Responses
@@ -15,6 +16,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - neurobiology-of-appetite-and-reward
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # Functional MRI (fMRI) imaging to evaluate less excited brain responses in reward centers (amygdala, insula, orbitofrontal cortex) when viewing pictures of highly palatable food.

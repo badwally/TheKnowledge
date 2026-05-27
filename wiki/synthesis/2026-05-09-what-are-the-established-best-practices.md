@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-09-what-are-the-established-best-practices
 title: 'What are the established best practices for proactive / preventive maintenance
@@ -26,6 +27,8 @@ question: 'What are the established best practices for proactive / preventive ma
 created_at: '2026-05-09T22:51:56Z'
 nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 finalized_at: '2026-05-10T00:47:32Z'
+last_updated: '2026-05-10T00:47:32Z'
+sources_count: 19
 ---
 # What are the established best practices for proactive / preventive maintenance of 100+ unit condominium facilities in the United States and Canada, outside the reserve-study mandate? Cover: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, balconies, parking deck), regulatory PM drivers by jurisdiction (NYC LL11/FISP, NYC LL87, CA SB 721/326, FL HB 913 operational layer, Ontario Condo Act section 94, BC SPA, Quebec Bill 16 carnet entretien, NJ inspection, Chicago facade, Alberta), industry frameworks (BOMA, IFMA, CAI, CHOA, ACMO), CMMS/EAM stacks for residential (BuildingLink, CondoControl, Yardi, Building Engines), predictive/condition-based PM in residential, insurance loss-control PM, and a minimum-defensible PM program for a 200-unit Florida condo today.
 

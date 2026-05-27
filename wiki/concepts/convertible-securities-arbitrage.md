@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: convertible-securities-arbitrage
 canonical_name: Convertible securities arbitrage
 domains:
-  - trading-and-markets
+- trading-and-markets
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # Convertible securities arbitrage

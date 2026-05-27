@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: florida-commission-hurricane-loss-projection-methodology
 canonical_name: Florida Commission on Hurricane Loss Projection Methodology (FCHLPM)
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T18:05:57Z'
+last_updated: '2026-05-23T18:05:57Z'
 ---
 
 # Florida Commission on Hurricane Loss Projection Methodology (FCHLPM)

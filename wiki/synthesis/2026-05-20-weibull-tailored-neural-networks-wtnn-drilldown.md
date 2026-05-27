@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: synthesis
 slug: 2026-05-20-weibull-tailored-neural-networks-wtnn-drilldown
 title: 'Weibull-Tailored Neural Networks (WTNN) drilldown for Longspan v3 engine evaluation.
@@ -114,6 +115,8 @@ nlm_notebook_id: dee0eae4-b11f-4df2-a418-d10fffd42c7e
 draft: true
 draft_started_at: '2026-05-20T22:19:12Z'
 draft_unresolved_claims: 50
+last_updated: '2026-05-20T22:19:12Z'
+sources_count: 0
 ---
 # Weibull-Tailored Neural Networks (WTNN) drilldown for Longspan v3 engine evaluation. Longspan v1.1 is a Bayesian / Weibull / lognormal / Monte Carlo engine with 60-building BC concrete-frame highrise cohort (108-816 obs per component class) + 2,154-row multi-jurisdiction add. The cross-cutting Longspan-vs-SOA synthesis identified WTNN (arxiv-2512.09163) as the second v3 methodological moat after the Bounded Gamma Process — framing "we use AI, but our AI is strictly governed by reliability engineering physics."
 

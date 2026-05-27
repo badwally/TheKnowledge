@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: rent-manager
 canonical_name: Rent Manager
 entity_kind: product
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T02:23:45Z'
+last_updated: '2026-05-24T02:23:45Z'
 ---
 
 # Rent Manager

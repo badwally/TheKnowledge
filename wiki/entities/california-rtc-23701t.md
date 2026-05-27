@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: california-rtc-23701t
 canonical_name: California Revenue and Taxation Code Section 23701t
 entity_kind: statute
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:11:16Z'
+last_updated: '2026-05-23T23:11:16Z'
 ---
 
 # California Revenue and Taxation Code Section 23701t

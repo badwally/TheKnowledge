@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: us-hoa-tax-form-election
 canonical_name: U.S. HOA Annual Tax-Form Election (1120-H vs. 1120)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T23:17:21Z'
+last_updated: '2026-05-23T23:17:21Z'
 ---
 
 # U.S. HOA Annual Tax-Form Election (1120-H vs. 1120)

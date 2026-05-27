@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: california-reserve-summary-required-elements
 canonical_name: California Reserve Summary Required Elements (Civ. Code § 5565)
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:11:51Z'
+last_updated: '2026-05-24T00:11:51Z'
 ---
 
 # California Reserve Summary Required Elements (Civ. Code § 5565)

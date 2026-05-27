@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: nvidia-edge-gpus-and-prototyping
 canonical_name: Nvidia Edge Gpus And Prototyping
@@ -13,6 +14,8 @@ legacy_provenance:
   legacy_concept_type: technique
 tags:
 - edge-hardware-platforms
+created_at: '2026-04-28T15:31:59Z'
+last_updated: '2026-04-28T15:31:59Z'
 ---
 
 # NVIDIA Edge GPUs and Prototyping

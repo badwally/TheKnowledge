@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: fdic-pass-through-insurance
 canonical_name: FDIC Pass-Through Insurance
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-23T16:12:12Z'
+last_updated: '2026-05-23T16:12:12Z'
 ---
 
 # FDIC Pass-Through Insurance

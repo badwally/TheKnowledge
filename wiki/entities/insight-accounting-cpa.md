@@ -1,10 +1,13 @@
 ---
+schema_version: 1
 type: entity
 slug: insight-accounting-cpa
 canonical_name: Insight Accounting CPA
 entity_kind: organization
 domains:
-  - condo-software
+- condo-software
+created_at: '2026-05-24T00:36:31Z'
+last_updated: '2026-05-24T00:36:31Z'
 ---
 
 # Insight Accounting CPA

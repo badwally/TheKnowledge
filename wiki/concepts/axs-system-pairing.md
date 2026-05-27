@@ -1,9 +1,12 @@
 ---
+schema_version: 1
 type: concept
 slug: axs-system-pairing
 canonical_name: AXS System Pairing
 domains:
-  - cycling-and-fitness
+- cycling-and-fitness
+created_at: '2026-05-05T04:01:32Z'
+last_updated: '2026-05-05T04:01:32Z'
 ---
 
 # AXS System Pairing

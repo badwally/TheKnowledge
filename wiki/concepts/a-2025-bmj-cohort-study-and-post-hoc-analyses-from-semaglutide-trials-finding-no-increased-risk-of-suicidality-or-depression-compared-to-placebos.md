@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 type: concept
 slug: a-2025-bmj-cohort-study-and-post-hoc-analyses-from-semaglutide-trials-finding-no-increased-risk-of-suicidality-or-depression-compared-to-placebos
 canonical_name: A 2025 Bmj Cohort Study And Post Hoc Analyses From Semaglutide Trials
@@ -14,6 +15,8 @@ legacy_provenance:
   legacy_concept_type: method
 tags:
 - mental-health-and-emotional-regulation
+created_at: '2026-04-28T15:18:23Z'
+last_updated: '2026-04-28T15:18:23Z'
 ---
 
 # A 2025 BMJ cohort study and post-hoc analyses from semaglutide trials finding no increased risk of suicidality or depression compared to placebos.
