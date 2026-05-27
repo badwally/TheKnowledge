@@ -15,6 +15,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from gateway import frontmatter as fm, paths
+from gateway.core import parse_iso
 
 
 _DEFAULT_HOURS = 24
@@ -23,18 +24,6 @@ _DEFAULT_STALE_DAYS = 7
 
 def _utcnow() -> datetime:
     return datetime.now(timezone.utc)
-
-
-def _parse_iso(s: str) -> datetime | None:
-    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d"):
-        try:
-            dt = datetime.strptime(s, fmt)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            return dt
-        except ValueError:
-            continue
-    return None
 
 
 def _new_sources(since: datetime) -> list[dict]:
@@ -50,7 +39,7 @@ def _new_sources(since: datetime) -> list[dict]:
             except Exception:
                 continue
             ingested = front.get("ingested_at", "")
-            dt = _parse_iso(ingested) if ingested else None
+            dt = parse_iso(ingested) if ingested else None
             if dt and dt >= since:
                 hits.append({
                     "source_id": front.get("id", p.stem),
@@ -75,7 +64,7 @@ def _new_synthesis(since: datetime) -> list[dict]:
         except Exception:
             continue
         created = front.get("created_at", "")
-        dt = _parse_iso(created) if created else None
+        dt = parse_iso(created) if created else None
         if dt and dt >= since:
             hits.append({
                 "slug": front.get("slug", p.stem),

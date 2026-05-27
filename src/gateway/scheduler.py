@@ -42,6 +42,7 @@ from croniter import croniter
 
 from gateway import log as log_mod
 from gateway import paths
+from gateway.core import parse_iso
 from gateway.locking import file_lock
 
 
@@ -70,13 +71,7 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def _parse_iso(s: str | None) -> datetime | None:
-    if not s:
-        return None
-    try:
-        return datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-    except ValueError:
-        return None
+
 
 
 # --- load / save ----------------------------------------------------------
@@ -127,7 +122,7 @@ def is_job_due(job: ScheduleJob, now: datetime) -> bool:
     if not job.enabled:
         return False
 
-    last_run = _parse_iso(job.last_run)
+    last_run = parse_iso(job.last_run)
     if (
         last_run is not None
         and job.last_exit_code is not None

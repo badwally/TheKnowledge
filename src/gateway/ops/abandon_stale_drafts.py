@@ -16,19 +16,12 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from gateway import log, paths
-from gateway.core import OperationResult
+from gateway.core import OperationResult, parse_iso
 from gateway.lint._walk import walk_wiki_pages
 
 DEFAULT_MIN_AGE_DAYS = 30
 
 _WIKILINK_TARGET_RE = re.compile(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\]")
-
-
-def _parse_iso(value: str) -> datetime | None:
-    try:
-        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
-    except (ValueError, TypeError):
-        return None
 
 
 def _wikilink_target(path: Path) -> str | None:
@@ -78,7 +71,7 @@ def abandon_stale_drafts(
         started_raw = front.get("draft_started_at")
         if not started_raw:
             continue
-        started = _parse_iso(str(started_raw))
+        started = parse_iso(str(started_raw))
         if started is None:
             continue
         age = now - started

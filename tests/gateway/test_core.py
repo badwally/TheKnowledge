@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from gateway.core import claude_cli_env
+from datetime import datetime, timezone
+
+from gateway.core import claude_cli_env, parse_iso
 
 
 def test_claude_cli_env_strips_anthropic_api_key(monkeypatch: pytest.MonkeyPatch):
@@ -41,3 +43,44 @@ def test_claude_cli_env_opt_in_preserves_api_key(monkeypatch: pytest.MonkeyPatch
     monkeypatch.setenv("WIKI_ALLOW_API_KEY", "1")
     env = claude_cli_env()
     assert env.get("ANTHROPIC_API_KEY") == "sk-fake"
+
+
+# ---------------------------------------------------------------------------
+# parse_iso (M102)
+# ---------------------------------------------------------------------------
+
+
+def test_parse_iso_utc_z_suffix():
+    dt = parse_iso("2026-05-27T12:00:00Z")
+    assert dt == datetime(2026, 5, 27, 12, 0, 0, tzinfo=timezone.utc)
+
+
+def test_parse_iso_explicit_offset():
+    dt = parse_iso("2026-05-27T12:00:00+00:00")
+    assert dt is not None
+    assert dt.tzinfo is not None
+
+
+def test_parse_iso_date_only():
+    dt = parse_iso("2026-05-27")
+    assert dt is not None
+    assert dt.year == 2026 and dt.month == 5 and dt.day == 27
+    assert dt.tzinfo == timezone.utc
+
+
+def test_parse_iso_none_returns_none():
+    assert parse_iso(None) is None
+
+
+def test_parse_iso_non_string_returns_none():
+    assert parse_iso(12345) is None
+    assert parse_iso([]) is None
+
+
+def test_parse_iso_empty_string_returns_none():
+    assert parse_iso("") is None
+
+
+def test_parse_iso_invalid_returns_none():
+    assert parse_iso("not-a-date") is None
+    assert parse_iso("2026-99-99") is None
