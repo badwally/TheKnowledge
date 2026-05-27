@@ -20101,3 +20101,11 @@ raw=raw/docx/docx-427cfebf73ed.md (wiki not written: filter decision=rejected)
 ## [2026-05-27T18:04:50Z] lint | scope=orphans | orphans=540
 
 report=.knowledge/lint/2026-05-27T18-04-50Z-orphans.md
+
+## [2026-05-27T18:06:07Z] lint | scope=schema-drift | schema-drift=276
+
+report=.knowledge/lint/2026-05-27T18-06-07Z-schema-drift.md
+
+## [2026-05-27T18:07:06Z] lint | scope=synthesizes-coverage | synthesizes-coverage=13
+
+report=.knowledge/lint/2026-05-27T18-07-06Z-synthesizes-coverage.md
