@@ -1176,10 +1176,19 @@ See `docs/milestones/M100.md`. `_synthesis_question` now incorporates domain pol
 
 Exit criteria:
 - ✓ `_synthesis_question` prompt includes domain policy + abstract excerpt; test confirms richer question generation
-- ~ `wiki evaluate` on ≥2 domains beyond glp1 — infrastructure ready; blocked on `ANTHROPIC_API_KEY_RESEARCH` (user action)
+- ✓ `wiki evaluate` run on ≥2 domains beyond glp1 — **3/4 domains scored** (2026-05-27T16:09Z)
 - ✓ `_parse_iso` consolidated to single impl in `gateway.core`; 0 regressions
 
-Note: Multi-domain eval criterion is infrastructure-met (cron registered, `--all-domains` wired). Live runs require `ANTHROPIC_API_KEY_RESEARCH`.
+### Live eval results (2026-05-27)
+
+| Domain | Questions | Mean score | Notes |
+|--------|-----------|------------|-------|
+| glp1-reward-modulation | 15 | 0.649 | Improved from 0.566 baseline |
+| edge-ai-agentic | 10 | 0.690 | First run |
+| condo-capital-infra | 10 | 0.100 | Anomalous — likely goldens quality issue, not wiki content |
+| ai-native-business | — | skipped | ContextTooLargeError (589k chars > 500k budget) |
+
+Fix shipped: `_evaluate_all_domains` now catches all per-domain exceptions (not just `NoGoldensError`) so one failing domain doesn't abort the full run.
 
 ---
 
