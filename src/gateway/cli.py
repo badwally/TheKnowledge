@@ -70,7 +70,7 @@ SUBCOMMANDS: dict[str, str] = {
     "skill-emit": "Generate .claude/skills/wiki-<domain>/SKILL.md for a domain (AGT-13)",
     "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
     "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
-    "routine": "Run a named orchestration routine (daily-domain-digest) (TOOL-12)",
+    "routine": "Run a named orchestration routine (daily-domain-digest | filter-calibrator) (TOOL-12, AGT-8)",
     "daily": "Morning triage list: stale drafts, orphan sources, inbox count, recently ingested (TOOL-8)",
     "cite-capture": "Ingest a URL if needed and add a citation to a wiki page (AGT-7)",
 }
@@ -1058,6 +1058,10 @@ def build_parser() -> argparse.ArgumentParser:
                                   help="Override date (default: today UTC)")
     p_routine_digest.add_argument("--lookback-hours", type=int, default=24,
                                   help="How many hours back to scan for new sources (default: 24)")
+    p_routine_sub.add_parser(
+        "filter-calibrator",
+        help="Monthly: check example-bank readiness; emit distill-ready log events (AGT-8)",
+    )
 
     # cite-capture (AGT-7)
     p_cite_capture = subparsers.add_parser("cite-capture", help=SUBCOMMANDS["cite-capture"])
@@ -2240,7 +2244,10 @@ def _run_search_cmd(ns: argparse.Namespace) -> int:
 
 def _run_routine_cmd(ns: argparse.Namespace) -> int:
     if not ns.routine_name:
-        print("usage: wiki routine <NAME>\n  Available: daily-domain-digest", file=sys.stderr)
+        print(
+            "usage: wiki routine <NAME>\n  Available: daily-domain-digest | filter-calibrator",
+            file=sys.stderr,
+        )
         return 2
     if ns.routine_name == "daily-domain-digest":
         from gateway.ops.daily_digest import run_all_domains, run_daily_domain_digest
@@ -2252,6 +2259,9 @@ def _run_routine_cmd(ns: argparse.Namespace) -> int:
         else:
             result = run_all_domains(date_str=date_str, lookback_hours=hours)
         return _emit_result(result)
+    if ns.routine_name == "filter-calibrator":
+        from gateway.ops.filter_calibrator import run_filter_calibrator
+        return _emit_result(run_filter_calibrator())
     print(f"unknown routine: {ns.routine_name}", file=sys.stderr)
     return 2
 

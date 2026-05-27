@@ -1148,6 +1148,14 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 15. Phase 7 delivery log (2026-05-26)
+
+### M89 — Phase 7 Round A (AGT-8 filter calibrator monthly cron)
+
+See `docs/milestones/M89.md`. AGT-8: `wiki routine filter-calibrator` runs monthly (`0 2 1 * *`), checks each domain's example-bank count against the 500-example distillation threshold, and emits a `calibration-distill-ready` log event (with the `wiki finetune --distill` command) the first time any domain crosses threshold. Idempotent — tracks seen domains in `.knowledge/filter_calibrator_logged.yaml`. 10 tests covering no-policy, below-threshold, above-threshold event emission, idempotency, multi-domain, schedule entry shape. Tests: 1695 → 1705 (+10), 0 regressions. Tag: `m89-phase7-round-a`.
+
+---
+
 ## 14. Phase 6 exit checkpoint (2026-05-26)
 
 All four Phase 6 items delivered. 1640 → 1695 tests (+55), 0 regressions. Tag: `m88-phase6-round-d`.
