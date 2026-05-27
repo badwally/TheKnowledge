@@ -516,8 +516,12 @@ def validate_contradiction_frontmatter(front: dict) -> ValidationResult:
     return result
 
 
-def validate_wiki_page_sections(body: str, page_type: str) -> ValidationResult:
-    """Verify the page contains every required section header."""
+def validate_wiki_page_sections(body: str, page_type: str, *, draft: bool = False) -> ValidationResult:
+    """Verify the page contains every required section header.
+
+    Draft mode downgrades missing-section errors to warnings — same pattern
+    as citation grounding — so stub pages can be committed before they're complete.
+    """
     result = ValidationResult()
     schema = _wiki_pages.schema_for_type(page_type)
     if schema is None:
@@ -525,12 +529,14 @@ def validate_wiki_page_sections(body: str, page_type: str) -> ValidationResult:
 
     missing = _wiki_pages.missing_sections(body, schema.required_sections)
     for s in missing:
-        result.errors.append(
-            ValidationError(
-                "wiki-page-section-missing",
-                f"{schema.type_name} page is missing required section: '## {s}'",
-            )
+        ve = ValidationError(
+            "wiki-page-section-missing",
+            f"{schema.type_name} page is missing required section: '## {s}'",
         )
+        if draft:
+            result.warnings.append(ve)
+        else:
+            result.errors.append(ve)
     return result
 
 
@@ -728,7 +734,11 @@ def validate_wiki_page(
     """
     result = ValidationResult()
     result.merge(validate_wiki_page_frontmatter(front, page_type, force_long_slug=force_long_slug))
-    result.merge(validate_wiki_page_sections(body, page_type))
+
+    # Honor `draft: true` in frontmatter OR an explicit caller flag. Computed
+    # early so both section and citation checks can use it.
+    is_draft = draft or bool(front.get("draft"))
+    result.merge(validate_wiki_page_sections(body, page_type, draft=is_draft))
 
     # ONT-3: contradiction-specific validation
     if page_type == "contradiction":
@@ -737,11 +747,6 @@ def validate_wiki_page(
     # ONT-14: question-specific validation
     if page_type == "question":
         result.merge(validate_question_frontmatter(front))
-
-    # Honor `draft: true` in frontmatter OR an explicit caller flag. To force
-    # strict mode (e.g., during finalize), strip the draft fields from front
-    # before calling.
-    is_draft = draft or bool(front.get("draft"))
     result.merge(
         validate_citation_grounding(
             body,
