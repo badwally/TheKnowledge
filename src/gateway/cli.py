@@ -71,6 +71,7 @@ SUBCOMMANDS: dict[str, str] = {
     "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
     "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
     "routine": "Run a named orchestration routine (daily-domain-digest) (TOOL-12)",
+    "daily": "Morning triage list: stale drafts, orphan sources, inbox count, recently ingested (TOOL-8)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -129,6 +130,7 @@ IMPLEMENTED: set[str] = {
     "search",
     "index",
     "routine",
+    "daily",
 }
 
 
@@ -1055,6 +1057,35 @@ def build_parser() -> argparse.ArgumentParser:
     p_routine_digest.add_argument("--lookback-hours", type=int, default=24,
                                   help="How many hours back to scan for new sources (default: 24)")
 
+    # daily (TOOL-8)
+    p_daily = subparsers.add_parser("daily", help=SUBCOMMANDS["daily"])
+    p_daily.add_argument(
+        "--lookback-hours",
+        type=float,
+        default=24.0,
+        metavar="N",
+        help="Look-back window for recently ingested sources (default: 24)",
+    )
+    p_daily.add_argument(
+        "--stale-days",
+        type=int,
+        default=7,
+        metavar="N",
+        help="Draft staleness threshold in days (default: 7)",
+    )
+    p_daily.add_argument(
+        "--orphan-limit",
+        type=int,
+        default=30,
+        metavar="N",
+        help="Max orphan sources to show (default: 30)",
+    )
+    p_daily.add_argument(
+        "--json",
+        action="store_true",
+        help="Output structured JSON instead of plain text",
+    )
+
     # Stubs for everything else
     for name, help_text in SUBCOMMANDS.items():
         if name in IMPLEMENTED:
@@ -1188,6 +1219,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_index_cmd(ns)
     if ns.subcommand == "routine":
         return _run_routine_cmd(ns)
+    if ns.subcommand == "daily":
+        return _run_daily_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2206,6 +2239,29 @@ def _run_routine_cmd(ns: argparse.Namespace) -> int:
         return _emit_result(result)
     print(f"unknown routine: {ns.routine_name}", file=sys.stderr)
     return 2
+
+
+def _run_daily_cmd(ns: argparse.Namespace) -> int:
+    import json as _json
+    from gateway.ops.daily_review import run_daily_review, format_daily_review
+
+    lookback_hours = getattr(ns, "lookback_hours", 24.0)
+    stale_days = getattr(ns, "stale_days", 7)
+    orphan_limit = getattr(ns, "orphan_limit", 30)
+    as_json = getattr(ns, "json", False)
+
+    result = run_daily_review(
+        lookback_hours=lookback_hours,
+        stale_days=stale_days,
+        orphan_limit=orphan_limit,
+    )
+
+    if as_json:
+        import dataclasses
+        print(_json.dumps(dataclasses.asdict(result), indent=2))
+    else:
+        print(format_daily_review(result, lookback_hours=lookback_hours, stale_days=stale_days), end="")
+    return 0
 
 
 if __name__ == "__main__":
