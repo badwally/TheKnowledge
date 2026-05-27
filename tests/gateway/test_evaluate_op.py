@@ -136,6 +136,38 @@ def test_cli_evaluate_domain_and_all_domains_coexist() -> None:
     assert ns.all_domains is True
 
 
+def test_evaluate_op_max_chars_passed_to_run_evaluate(kb_root: Path) -> None:
+    save_goldens(goldens_path_for("big-domain"), [
+        Golden(id="q01", question="Q?", must_cite=[], must_assert=[], must_not_assert=[]),
+    ])
+    captured: dict = {}
+
+    def _capture(domain, *, limit=None, max_chars=None, client=None):
+        captured["max_chars"] = max_chars
+        s = MagicMock()
+        s.n_questions = 1
+        s.mean_score = 0.5
+        s.total_input_tokens = 0
+        s.total_cache_read_tokens = 0
+        s.timestamp = "2026-01-01T00-00-00Z"
+        s.results = []
+        s.domain = domain
+        return s
+
+    with patch("gateway.ops.evaluate_op.run_evaluate", side_effect=_capture):
+        result = evaluate_op(domain="big-domain", max_chars=800_000)
+    assert result.success
+    assert captured["max_chars"] == 800_000
+
+
+def test_cli_evaluate_max_chars_flag() -> None:
+    from gateway.cli import build_parser
+
+    parser = build_parser()
+    ns = parser.parse_args(["evaluate", "big-domain", "--max-chars", "800000"])
+    assert ns.max_chars == 800_000
+
+
 def test_evaluate_weekly_job_registered() -> None:
     from gateway import scheduler
     jobs = {j.name: j for j in scheduler.load_schedule()}

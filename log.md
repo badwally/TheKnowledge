@@ -19917,3 +19917,15 @@ evaluate condo-capital-infra: 10 Q, mean=0.363
 ## [2026-05-27T16:49:22Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.459 | input_tokens=1734 | cache_read_tokens=1153980
 
 evaluate condo-capital-infra: 10 Q, mean=0.459
+
+## [2026-05-27T16:52:36Z] lint | scope=schema-drift | schema-drift=226
+
+report=.knowledge/lint/2026-05-27T16-52-36Z-schema-drift.md
+
+## [2026-05-27T16:53:02Z] lint | scope=schema-drift | schema-drift=226
+
+report=.knowledge/lint/2026-05-27T16-53-02Z-schema-drift.md
+
+## [2026-05-27T17:02:44Z] evaluate | domain=ai-native-business | n_questions=12 | mean_score=0.889 | input_tokens=1897 | cache_read_tokens=1597167
+
+evaluate ai-native-business: 12 Q, mean=0.889

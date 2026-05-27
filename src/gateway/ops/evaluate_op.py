@@ -12,6 +12,7 @@ from gateway.evaluate.schema import scaffold_template
 def evaluate_op(*,
                 domain: str | None = None,
                 limit: int | None = None,
+                max_chars: int | None = None,
                 scaffold: str | None = None,
                 all_domains: bool = False) -> OperationResult:
     """Run the M50 evaluation or scaffold a new domain's goldens template."""
@@ -28,7 +29,7 @@ def evaluate_op(*,
         )
 
     if all_domains:
-        return _evaluate_all_domains(limit=limit)
+        return _evaluate_all_domains(limit=limit, max_chars=max_chars)
 
     if domain is None:
         return OperationResult(
@@ -37,7 +38,7 @@ def evaluate_op(*,
         )
 
     try:
-        summary = run_evaluate(domain, limit=limit)
+        summary = run_evaluate(domain, limit=limit, max_chars=max_chars)
     except NoGoldensError as e:
         return OperationResult(success=False, errors=[str(e)])
     except Exception as e:
@@ -72,7 +73,8 @@ def evaluate_op(*,
     )
 
 
-def _evaluate_all_domains(*, limit: int | None = None) -> OperationResult:
+def _evaluate_all_domains(*, limit: int | None = None,
+                          max_chars: int | None = None) -> OperationResult:
     """Run evaluate_op for every domain that has a goldens.yaml and return aggregate results."""
     domains = domains_with_goldens()
     if not domains:
@@ -86,7 +88,7 @@ def _evaluate_all_domains(*, limit: int | None = None) -> OperationResult:
     paths_touched: list = []
 
     for d in domains:
-        result = evaluate_op(domain=d, limit=limit)
+        result = evaluate_op(domain=d, limit=limit, max_chars=max_chars)
         if result.success:
             first_line = result.summary.splitlines()[0] if result.summary else d
             lines.append(f"  {first_line}")
