@@ -18,6 +18,7 @@ from gateway.web.routes import tasks as task_routes
 from gateway.web.routes import cloud as cloud_routes
 from gateway.web.routes import sources as sources_routes
 from gateway.web.routes import today as today_routes
+from gateway.web.routes import inbox as inbox_routes
 from gateway.web.schemas import HealthResponse
 from gateway.web.tasks import TaskStore
 
@@ -43,6 +44,7 @@ def create_app() -> FastAPI:
     app.include_router(cloud_routes.router)  # K3: /api/ingest (bearer-token)
     app.include_router(sources_routes.router)  # TOOL-13: /api/sources
     app.include_router(today_routes.router)    # TOOL-8: /today
+    app.include_router(inbox_routes.router)    # TOOL-11: /api/inbox
 
     if _FRONTEND_DIST.is_dir():
         app.mount(

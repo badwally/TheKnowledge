@@ -282,3 +282,32 @@ class DailyReviewResponse(BaseModel):
     recently_ingested: list[IngestedSourceResponse] = []
     stale_drafts: list[DraftItemResponse] = []
     orphan_sources: list[OrphanSourceResponse] = []
+
+
+# TOOL-11: /api/inbox inbox triage view
+
+class InboxPendingItem(BaseModel):
+    filename: str
+    size_bytes: int
+    modified_at: str
+    sniffed_type: str | None = None
+    sniffed_title: str | None = None
+    sniffed_url: str | None = None
+
+
+class InboxFailedItem(BaseModel):
+    filename: str
+    original_name: str
+    failed_at: str
+    reason: str = ""
+    size_bytes: int = 0
+
+
+class InboxDetailResponse(BaseModel):
+    pending: list[InboxPendingItem] = []
+    failed: list[InboxFailedItem] = []
+
+
+class RetryResponse(BaseModel):
+    ok: bool
+    message: str

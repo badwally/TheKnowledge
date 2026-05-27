@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M89 complete — AGT-8 filter calibrator)
+Last updated: 2026-05-26 (M90 complete — TOOL-11 inbox web view)
 
 ---
 
@@ -18,17 +18,17 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m89-phase7-round-a. 1705 tests passing.
-Phase 7 Round A checkpoint written in BUILD.md § 15.
+None. main is clean at m90-phase7-round-b. 1716 tests passing.
+Phase 7 delivery log in BUILD.md § 15.
 
 ---
 
 ## Decisions made this session
 
 - Phase 6 complete: M85 (TOOL-8), M86 (AGT-7), M87 (ONT-5), M88 (ONT-7).
-- ONT-8 confirmed already shipped (validator + lint/long_slugs.py + 4 tests in test_validator.py).
-- M89 delivered: AGT-8 filter calibrator monthly cron. 1705 tests.
-- session-review skill created at ~/.claude/skills/session-review/SKILL.md.
+- ONT-8 confirmed already shipped.
+- M89: AGT-8 filter calibrator monthly cron. 1705 tests.
+- M90: TOOL-11 inbox triage web view. 1716 tests.
 
 ---
 
@@ -41,8 +41,8 @@ Phase 7 Round A checkpoint written in BUILD.md § 15.
 
 ## Next atomic step
 
-Phase 7 continues. Remaining candidates from backlog:
-- QUAL-9 follow-up or new quality cluster
-- Check BUILD.md § 11 (downstream wiki-authoring backfill) for LLM-driven concept body work
-- ONT-8 already shipped — not a candidate
-- AGT-8 shipped (M89) — not a candidate
+Phase 7 continues. Candidates:
+- TOOL-15 (`wiki ask-corpus <domain> "<q>"`) — S effort, hits NLM notebook_query → draft synthesis
+- ONT-12 (codify or remove `tags:`) — S effort
+- ONT-14 (optional `question` page type) — unknown effort
+- TOOL-10 (shell completion via argcomplete) — S effort

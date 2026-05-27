@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 15. Phase 7 delivery log (2026-05-26)
 
+### M90 — Phase 7 Round B (TOOL-11 inbox triage web view)
+
+See `docs/milestones/M90.md`. TOOL-11: `GET /api/inbox` returns pending files from `raw/inbox/` (filename, size, mtime, sniffed type/title/url) and failed files from `raw/inbox/_failed/` (original name, failed_at from timestamp prefix, reason from `.reason.txt` sidecar); `POST /api/inbox/retry/{filename}` moves a failed file back to inbox and deletes the reason file; 409 if original name already pending. 11 tests. Tests: 1705 → 1716 (+11), 0 regressions. Tag: `m90-phase7-round-b`.
+
 ### M89 — Phase 7 Round A (AGT-8 filter calibrator monthly cron)
 
 See `docs/milestones/M89.md`. AGT-8: `wiki routine filter-calibrator` runs monthly (`0 2 1 * *`), checks each domain's example-bank count against the 500-example distillation threshold, and emits a `calibration-distill-ready` log event (with the `wiki finetune --distill` command) the first time any domain crosses threshold. Idempotent — tracks seen domains in `.knowledge/filter_calibrator_logged.yaml`. 10 tests covering no-policy, below-threshold, above-threshold event emission, idempotency, multi-domain, schedule entry shape. Tests: 1695 → 1705 (+10), 0 regressions. Tag: `m89-phase7-round-a`.
