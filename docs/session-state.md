@@ -9,7 +9,7 @@ Last updated: 2026-05-27 (post-Phase-9: condo-capital-infra eval fix committed)
 None.
 
 Carry-forward (not blocking anything):
-- ONT-11 user action: run `wiki backfill-synthesizes` for ~61 synthesis pages (lint ERROR).
+- ONT-11 RESOLVED: `wiki backfill-synthesizes` ran 2026-05-27, 50 pages updated, 0 errors. 63 synthesizes-coverage ERRORs cleared.
 - INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
 - `wiki migrate` remains a stub.
 - schema-drift: 225 remaining (all editorial-only: invalid entity_kind, missing sections, long slugs, missing canonical_name — requires per-entity human review).
@@ -24,8 +24,8 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean. 1837 tests passing.
-Phase 9 exit checkpoint written in BUILD.md § 19.
+None. 1837 tests passing. Phase 9 exit checkpoint written in BUILD.md § 19.
+Post-phase: 50 synthesis pages modified by backfill-synthesizes (synthesizes: frontmatter populated). Uncommitted.
 
 ---
 
