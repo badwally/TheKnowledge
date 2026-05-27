@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M93 complete — TOOL-10 shell completion)
+Last updated: 2026-05-26 (M94 complete — TOOL-15 wiki ask-corpus)
 
 ---
 
@@ -18,7 +18,7 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m93-phase7-round-e. 1740 tests passing.
+None. main is clean at m94-phase7-round-f. 1750 tests passing.
 Phase 7 delivery log in BUILD.md § 15.
 
 ---
@@ -30,6 +30,7 @@ Phase 7 delivery log in BUILD.md § 15.
 - M91: ONT-12 tags codification. 1726 tests.
 - M92: ONT-14 question page type. 1740 tests.
 - M93: TOOL-10 shell completion + help examples. 1740 tests.
+- M94: TOOL-15 wiki ask-corpus (thin wrapper over query() op). 1750 tests.
 
 ---
 
@@ -37,14 +38,13 @@ Phase 7 delivery log in BUILD.md § 15.
 
 - ONT-9 (domain hierarchy): deferred — 22 MOCs manageable flat.
 - QUAL-8/ARCH-12/ONT-1: deferred — all L-effort, no forcing function.
-- TOOL-15 (wiki ask-corpus): deferred — NLM notebook_query op doesn't exist yet.
+- Separate NLM notebook_query op for TOOL-15: not needed — query() already does this.
 
 ---
 
 ## Next atomic step
 
 Phase 7 continues. Remaining candidates from backlog:
-- TOOL-15 (wiki ask-corpus): requires building NLM notebook_query op (M effort)
 - ONT-15 (rename synthesizes → wasDerivedFrom): S effort, cosmetic, low priority
 - QUAL-4 follow-up checks or new quality cluster
 - wiki schedule list / enable / disable subcommands (schedule management UX)

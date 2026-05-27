@@ -1148,6 +1148,17 @@ def wiki_daily(
     return dataclasses.asdict(result)
 
 
+@mcp.tool()
+def wiki_ask_corpus(domain: str, question: str, draft: bool = True) -> dict[str, Any]:
+    """Ask the domain's NLM corpus a question and file the answer as a draft synthesis (TOOL-15).
+
+    Simpler interface than wiki_query: domain comes first, defaults to draft=True.
+    """
+    from gateway.ops.query import query
+
+    return _serialize(query(question, domain=domain, draft=draft))
+
+
 # --- entry point -----------------------------------------------------------
 
 

@@ -73,6 +73,7 @@ SUBCOMMANDS: dict[str, str] = {
     "routine": "Run a named orchestration routine (daily-domain-digest | filter-calibrator) (TOOL-12, AGT-8)",
     "daily": "Morning triage list: stale drafts, orphan sources, inbox count, recently ingested (TOOL-8)",
     "cite-capture": "Ingest a URL if needed and add a citation to a wiki page (AGT-7)",
+    "ask-corpus": "Ask the domain's NLM corpus a question and file the answer as a draft synthesis (TOOL-15)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -133,6 +134,7 @@ IMPLEMENTED: set[str] = {
     "routine",
     "daily",
     "cite-capture",
+    "ask-corpus",
 }
 
 
@@ -482,6 +484,25 @@ def build_parser() -> argparse.ArgumentParser:
         "--draft",
         action="store_true",
         help="Allow partial citations on the synthesis; mark draft until finalized",
+    )
+
+    # ask-corpus (TOOL-15)
+    p_ask_corpus = subparsers.add_parser(
+        "ask-corpus",
+        help=SUBCOMMANDS["ask-corpus"],
+        epilog=(
+            "Examples:\n"
+            '  wiki ask-corpus glp1 "Does GLP-1 reduce alcohol craving?"\n'
+            '  wiki ask-corpus edge-ai "What limits on-device LLM inference?" --no-draft'
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_ask_corpus.add_argument("domain", help="Domain slug whose NLM corpus to query")
+    p_ask_corpus.add_argument("question", help="Question to ask the corpus")
+    p_ask_corpus.add_argument(
+        "--no-draft",
+        action="store_true",
+        help="File as finalized (default: draft=True for corpus answers)",
     )
 
     # research: corpus-constructive research loop
@@ -1279,6 +1300,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_daily_cmd(ns)
     if ns.subcommand == "cite-capture":
         return _run_cite_capture_cmd(ns)
+    if ns.subcommand == "ask-corpus":
+        return _run_ask_corpus_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2309,6 +2332,14 @@ def _run_cite_capture_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.cite_capture import cite_capture
 
     result = cite_capture(ns.quote, ns.url, target_page=getattr(ns, "target", None))
+    return _emit_result(result)
+
+
+def _run_ask_corpus_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.query import query
+
+    draft = not getattr(ns, "no_draft", False)
+    result = query(ns.question, domain=ns.domain, draft=draft)
     return _emit_result(result)
 
 

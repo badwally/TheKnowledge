@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 15. Phase 7 delivery log (2026-05-26)
 
+### M94 — Phase 7 Round F (TOOL-15 wiki ask-corpus)
+
+See `docs/milestones/M94.md`. TOOL-15: `wiki ask-corpus <domain> "<question>"` — thin wrapper over `query()` with domain-first interface and `draft=True` default. CLI dispatcher `_run_ask_corpus_cmd` and MCP tool `wiki_ask_corpus` added; both delegate entirely to the existing `ops/query.py` which already handles NLM notebook queries. `--no-draft` flag for immediate finalization. 10 tests covering CLI dispatch, `--no-draft` flag, parser wiring, MCP tool existence, serializable output. Tests: 1740 → 1750 (+10), 0 regressions. Tag: `m94-phase7-round-f`.
+
 ### M93 — Phase 7 Round E (TOOL-10 shell completion + --help examples)
 
 See `docs/milestones/M93.md`. TOOL-10: argcomplete was already wired; completed acceptance criteria by documenting `eval "$(register-python-argcomplete wiki)"` in CLAUDE.md and adding epilog examples to `cite-capture`, `daily`, `finalize`, `cite-add` (4 subcommands; 8 already had examples). Tests: 1740 → 1740 (±0). Tag: `m93-phase7-round-e`.
