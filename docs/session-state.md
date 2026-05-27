@@ -1,6 +1,6 @@
 # Session state — 2026-05-27
 
-Last updated: 2026-05-27 (Phase 9 complete — M100-M102 delivered)
+Last updated: 2026-05-27 (post-Phase-9: condo-capital-infra eval fix committed)
 
 ---
 
@@ -10,11 +10,13 @@ None.
 
 Carry-forward (not blocking anything):
 - ONT-11 user action: run `wiki backfill-synthesizes` for ~61 synthesis pages (lint ERROR).
-- ANTHROPIC_API_KEY_RESEARCH needed for eval runs (wiki evaluate --all-domains).
 - INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
 - `wiki migrate` remains a stub.
 - schema-drift: 225 remaining (all editorial-only: invalid entity_kind, missing sections, long slugs, missing canonical_name — requires per-entity human review).
 - broken-wikilinks: 82 remaining (all WARNINGs — forward-references to entity/concept pages not yet authored).
+- condo-capital-infra eval ceiling at 0.459: q09 (web-2025-10-29-056 24-month rule) and q10
+  (10-15% Full vs Baseline specific claim) need raw source bodies that exceed 500k context
+  budget. Fix path: wiki nlm-add condo-capital-infra for these 2 sources + targeted wiki query.
 
 ---
 
@@ -32,6 +34,10 @@ Phase 9 exit checkpoint written in BUILD.md § 19.
 - M101: wiki evaluate --all-domains + evaluate-weekly cron. 1822 → 1830 tests (+8).
 - M102: parse_iso consolidation (6 duplicates → gateway.core). 1830 → 1837 tests (+7).
 - Phase 9 exit checkpoint: criteria 1+3 met; criterion 2 infrastructure-met (ANTHROPIC_API_KEY_RESEARCH is user action).
+- condo-capital-infra eval fix (post-Phase-9): root cause = 7 web sources missing domain tag,
+  absent from NLM corpus, no synthesis context for those sources. Fix: tagged raw sources with
+  condo-capital-infra, added cross-cutting synthesis to domain, created 3 draft synthesis pages,
+  added synthesizes entry for web-2022-07-07-3bd. Score: 0.100 → 0.459. Commit: 2987571.
 
 ---
 
