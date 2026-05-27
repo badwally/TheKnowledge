@@ -11,6 +11,17 @@ from gateway import frontmatter as fm, paths
 from gateway.core import OperationResult
 
 
+@pytest.fixture(autouse=True)
+def patch_nlm_notebook(monkeypatch):
+    """Stub out nlm_registry.get_persistent so all tests see a registered notebook.
+
+    Without this, the pre-flight notebook check added to discharge_orphans()
+    would fail in the clean kb_root environment (no real notebooks.yaml).
+    Tests that explicitly test the 'no notebook' path override this fixture.
+    """
+    monkeypatch.setattr("gateway.nlm_registry.get_persistent", lambda domain: "fake-nb-id")
+
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -138,6 +149,33 @@ def test_empty_domain_returns_error(kb_root: Path) -> None:
 
     assert not result.success
     assert "domain is required" in result.errors[0]
+
+
+def test_no_notebook_for_domain_fails_fast(kb_root: Path, monkeypatch) -> None:
+    """Pre-flight: domain with no registered NLM notebook fails before querying sources."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    monkeypatch.setattr("gateway.nlm_registry.get_persistent", lambda domain: None)
+    _write_raw_source(kb_root, slug="orphan-x", domain="glp1")
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=5)
+
+    assert not result.success
+    assert "no notebook" in result.errors[0]
+    mock_q.assert_not_called()
+
+
+def test_dry_run_includes_auth_not_validated_note(kb_root: Path) -> None:
+    """Dry-run summary notes that NLM auth is NOT validated."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="dry-src-2", domain="glp1")
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()):
+        result = discharge_orphans("glp1", dry_run=True)
+
+    assert "NLM auth not validated" in result.summary
 
 
 def test_query_failure_recorded_in_errors(kb_root: Path) -> None:

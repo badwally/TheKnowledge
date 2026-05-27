@@ -14,6 +14,7 @@ from __future__ import annotations
 from gateway import frontmatter as fm, log, paths
 from gateway.core import OperationResult
 from gateway.filter.policy import PolicyError, load_policy, policy_exists
+from gateway import nlm_registry
 
 
 DEFAULT_LIMIT = 10
@@ -89,6 +90,19 @@ def discharge_orphans(
     if not domain:
         return OperationResult(success=False, errors=["domain is required"])
 
+    # Pre-flight: verify a persistent notebook exists for this domain.
+    # Catches "no notebook for domain" before counting/querying any sources.
+    # NLM auth validity cannot be pre-checked without a live call; the summary
+    # note below reminds callers that dry-run does not validate auth.
+    if nlm_registry.get_persistent(domain) is None:
+        return OperationResult(
+            success=False,
+            errors=[
+                f"no notebook for domain {domain!r}; "
+                "run `wiki research` first to build one"
+            ],
+        )
+
     domain_topic = ""
     if policy_exists(domain):
         try:
@@ -133,11 +147,12 @@ def discharge_orphans(
         )
 
     mode = " (dry-run)" if dry_run else ""
+    dry_run_note = " [NLM auth not validated]" if dry_run else ""
     return OperationResult(
         success=len(errors) == 0,
         errors=errors,
         summary=(
             f"discharge-orphans{mode}: {filed} synthesis drafts filed, "
-            f"{skipped} skipped — domain {domain!r}, limit {limit}"
+            f"{skipped} skipped — domain {domain!r}, limit {limit}{dry_run_note}"
         ),
     )
