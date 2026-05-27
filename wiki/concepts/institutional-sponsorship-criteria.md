@@ -29,7 +29,7 @@ The ICT framework's four-confluence checklist for identifying institutional spon
 ## Related
 
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/liquidity-based-bias]]
 - [[concepts/smart-money-accumulation-distribution]]
 - [[concepts/top-down-analysis]]

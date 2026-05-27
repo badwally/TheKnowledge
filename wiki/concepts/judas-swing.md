@@ -32,4 +32,4 @@ The Judas Swing is the ICT name for the manipulation leg of the Power of 3 / AMD
 - [[concepts/optimal-trade-entry]]
 - [[concepts/three-drives-pattern]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

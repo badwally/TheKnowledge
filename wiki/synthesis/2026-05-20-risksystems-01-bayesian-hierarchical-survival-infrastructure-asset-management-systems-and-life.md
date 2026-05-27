@@ -92,36 +92,36 @@ Pontis, KANEW, AWARE-P. Recent (2020-2026) refinements explicitly in scope.
 Based on the provided sources, several overarching software systems and methodological frameworks are used to predict life-cycle costs and optimize capital maintenance across broad infrastructure networks.
 
 **AWARE-P (Urban Water Infrastructure Asset Management)**
-*   **Name and key claim:** AWARE-P is an open-source, system-centric software platform and planning methodology designed to assist urban water utilities in optimal decision-making and rehabilitation planning. [1, 2]
-*   **Core approach:** The methodology explicitly replaces traditional component-centric, like-for-like asset prioritization with a system-centric plan-do-check-act (PDCA) philosophy. [1, 3, 4] It spans strategic, tactical, and operational decision levels to evaluate infrastructure networks along dimensions of performance, risk, and financial cost. [1, 4] This comprehensive system directly integrates and builds upon structured methodologies established in preceding European research projects known as CARE-W and CARE-S. [5, 6]
-*   **Concrete details:** The AWARE-P framework was successfully adopted by utilities serving over 25% of Portugal's population and received formal endorsement from ERSAR, the national water services regulator. [7] Furthermore, the software has amassed over 1,000 registered users across five continents, with specific pilot implementations and rollouts initiated in Spain, the USA, and Australia. [7, 8]
+* **Name and key claim:** AWARE-P is an open-source, system-centric software platform and planning methodology designed to assist urban water utilities in optimal decision-making and rehabilitation planning. [1, 2]
+* **Core approach:** The methodology explicitly replaces traditional component-centric, like-for-like asset prioritization with a system-centric plan-do-check-act (PDCA) philosophy. [1, 3, 4] It spans strategic, tactical, and operational decision levels to evaluate infrastructure networks along dimensions of performance, risk, and financial cost. [1, 4] This comprehensive system directly integrates and builds upon structured methodologies established in preceding European research projects known as CARE-W and CARE-S. [5, 6]
+* **Concrete details:** The AWARE-P framework was successfully adopted by utilities serving over 25% of Portugal's population and received formal endorsement from ERSAR, the national water services regulator. [7] Furthermore, the software has amassed over 1,000 registered users across five continents, with specific pilot implementations and rollouts initiated in Spain, the USA, and Australia. [7, 8]
 
 **HDM-4 (Highway Design and Maintenance Standard Model)**
-*   **Name and key claim:** HDM-4 is a standard computer program utilized for analyzing the total transport costs of alternative road improvement and maintenance strategies. [9]
-*   **Core approach:** The framework conducts life-cycle economic evaluations by modeling road deterioration and works effects (RDWE). [9, 10] It calculates the annual costs associated with road construction, maintenance, vehicle operations, and travel time, while allowing external impacts such as accidents to be added exogenously. [9]
-*   **Concrete details:** The formal HDM-4 documentation partitions its deterioration models into distinct structural material categories, dedicating separate technical sections to bituminous (Part B), concrete (Part C), block (Part D), and unsealed (Part E) pavements. [11]
+* **Name and key claim:** HDM-4 is a standard computer program utilized for analyzing the total transport costs of alternative road improvement and maintenance strategies. [9]
+* **Core approach:** The framework conducts life-cycle economic evaluations by modeling road deterioration and works effects (RDWE). [9, 10] It calculates the annual costs associated with road construction, maintenance, vehicle operations, and travel time, while allowing external impacts such as accidents to be added exogenously. [9]
+* **Concrete details:** The formal HDM-4 documentation partitions its deterioration models into distinct structural material categories, dedicating separate technical sections to bituminous (Part B), concrete (Part C), block (Part D), and unsealed (Part E) pavements. [11]
 
 **Expected Life-Cycle Maintenance Cost Methodology (Frangopol)**
-*   **Name and key claim:** A reliability-based life-cycle methodology proposed by researchers including Frangopol evaluates the expected maintenance costs of deteriorating structures to determine the optimal allocation of limited financial resources. [12]
-*   **Core approach:** The methodology quantifies the expected number of cyclic maintenance interventions and their associated costs over a specified time horizon, explicitly incorporating the uncertainties tied to different maintenance applications. [12] This analytical approach is positioned as a foundational element for network-level planning and draws upon the legacy of established US-based bridge management systems such as Pontis and BRIDGIT. [13, 14]
-*   **Concrete details:** While formulated broadly enough to apply to any deteriorating structure, the methodology was specifically validated by analyzing an existing reinforced concrete highway bridge stock. [12] This empirical analysis successfully revealed the exact life-cycle cost-effectiveness of executing preventive maintenance interventions versus reactive strategies. [12] 
+* **Name and key claim:** A reliability-based life-cycle methodology proposed by researchers including Frangopol evaluates the expected maintenance costs of deteriorating structures to determine the optimal allocation of limited financial resources. [12]
+* **Core approach:** The methodology quantifies the expected number of cyclic maintenance interventions and their associated costs over a specified time horizon, explicitly incorporating the uncertainties tied to different maintenance applications. [12] This analytical approach is positioned as a foundational element for network-level planning and draws upon the legacy of established US-based bridge management systems such as Pontis and BRIDGIT. [13, 14]
+* **Concrete details:** While formulated broadly enough to apply to any deteriorating structure, the methodology was specifically validated by analyzing an existing reinforced concrete highway bridge stock. [12] This empirical analysis successfully revealed the exact life-cycle cost-effectiveness of executing preventive maintenance interventions versus reactive strategies. [12] 
 
-[^2]: [[sources/1]]
-[^4]: [[sources/1]]
-[^17]: [[sources/1]]
-[^19]: [[sources/1]]
-[^26]: [[sources/3]]
-[^27]: [[sources/3]]
-[^29]: [[sources/3]]
-[^30]: [[sources/3]]
-[^125]: [[sources/6]]
-[^126]: [[sources/6]]
-[^130]: [[sources/7]]
-[^132]: [[sources/7]]
-[^133]: [[sources/7]]
-[^204]: [[sources/9]]
+[^2]: 
+[^4]: 
+[^17]: 
+[^19]: 
+[^26]: 
+[^27]: 
+[^29]: 
+[^30]: 
+[^125]: 
+[^126]: 
+[^130]: 
+[^132]: 
+[^133]: 
+[^204]: 
 
-[^1]: [[sources/web-2012-01-01-57d]] [^2]: [[sources/web-2020-09-14-cbf]] [^3]: [[sources/web-2012-01-01-57d]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2012-01-01-57d]] [^6]: [[sources/web-2020-09-14-cbf]] [^7]: [[sources/web-2020-09-14-cbf]] [^8]: [[sources/web-2020-09-14-cbf]] [^9]: [[sources/web-2026-05-03-3cc]] [^10]: [[sources/web-2025-04-20-cb6]] [^11]: [[sources/web-2025-04-20-cb6]] [^12]: [[sources/web-2003-05-20-b9d]] [^13]: [[sources/web-2003-05-20-b9d]] [^14]: [[sources/web-2003-05-20-b9d]]
+[^1]: [[sources/web-2012-01-01-57d]] [^2]: [^3]: [[sources/web-2012-01-01-57d]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2012-01-01-57d]] [^6]: [^7]: [^8]: [^9]: [^10]: [^11]: [^12]: [^13]: [^14]: 
 
 ### Comparisons
 
@@ -130,9 +130,9 @@ Based on the provided sources, several overarching software systems and methodol
 Based on the provided sources, a comparison of infrastructure asset management systems reveals a fundamental divergence between granular, component-centric material models and system-wide network planning methodologies.
 
 **Items Compared:**
-*   AWARE-P (System-Centric Urban Water Infrastructure Planning)
-*   HDM-4 (Highway Design and Maintenance Standard Model)
-*   Expected Life-Cycle Maintenance Cost Methodology (Frangopol / Structural Reliability)
+* AWARE-P (System-Centric Urban Water Infrastructure Planning)
+* HDM-4 (Highway Design and Maintenance Standard Model)
+* Expected Life-Cycle Maintenance Cost Methodology (Frangopol / Structural Reliability)
 
 **System-Centric vs. Component-Centric Philosophies**
 AWARE-P explicitly positions itself against traditional component-centric asset management, arguing that prioritizing interventions on a like-for-like asset replacement basis fails to address the overwhelming complexity of deferred network maintenance. [1] In direct contrast, HDM-4 remains deeply rooted in component-level physical deterioration, dedicating entirely separate analytical modules to model the distinct physical degradation of specific structural materials, including bituminous, concrete, block, and unsealed pavements. [2] While AWARE-P shifts the analytical focus to the overall system to find compromises between performance, risk, and financial effort, frameworks like HDM-4 rely on aggregating the precise deterioration of these individual physical components to evaluate total transport costs. [1, 3]
@@ -147,11 +147,11 @@ HDM-4 provides immense granular strength in evaluating the road deterioration an
 
 AWARE-P mitigates granular bottlenecks by offering a holistic, open-source software platform that evaluates overall network risk, substituting traditional physical component tracking with a multi-criteria decision analysis framework. [1, 5] However, a necessary trade-off of this system-centric approach is that it abstracts away the highly detailed, mechanistic material-degradation tracking that defines systems like HDM-4 and Frangopol's structural models, focusing instead on broad planning horizons and cross-level organizational feedback. [1, 2, 4]
 
-[^1]: [[sources/1]]
-[^3]: [[sources/3]]
-[^6]: [[sources/6]]
-[^7]: [[sources/7]]
-[^9]: [[sources/9]]
+[^1]: 
+[^3]: 
+[^6]: 
+[^7]: 
+[^9]: 
 
 [^1]: [[sources/web-2012-01-01-57d]] [^2]: [[sources/web-2012-01-01-57d]] [^3]: [[sources/web-2012-01-01-57d]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2012-01-01-57d]]
 
@@ -173,27 +173,27 @@ While legacy life-cycle frameworks like HDM-4 partition deterioration models int
 **Missing Stochastic Lognormal Cost Integration**
 Although reliability-based methodologies formulated by researchers like Frangopol successfully evaluate the expected number of cyclic maintenance interventions and incorporate general cost uncertainties, they lack the specific statistical rigor mandated by the target engine. [2] The corpus does not address the mechanical steps of how to specifically draw intervention costs from a cohort lognormal distribution and seamlessly integrate those stochastic cost vectors into an automated 10,000-run Monte Carlo life-cycle evaluation. [2]
 
-[^2]: [[sources/1]]
-[^19]: [[sources/1]]
-[^125]: [[sources/6]]
-[^126]: [[sources/6]]
-[^130]: [[sources/7]]
-[^204]: [[sources/9]]
+[^2]: 
+[^19]: 
+[^125]: 
+[^126]: 
+[^130]: 
+[^204]: 
 
-[^1]: [[sources/web-2012-01-01-57d]] [^2]: [[sources/web-2003-05-20-b9d]] [^3]: [[sources/web-2026-05-03-3cc]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2025-04-20-cb6]] [^6]: [[sources/web-2025-04-20-cb6]]
+[^1]: [[sources/web-2012-01-01-57d]] [^2]: [^3]: [^4]: [[sources/web-2012-01-01-57d]] [^5]: [^6]: 
 
 ## Sources cited
 
 - [[sources/web-2012-01-01-57d]]
-- [[sources/web-2020-09-14-cbf]]
-- [[sources/web-2026-05-03-3cc]]
-- [[sources/web-2025-04-20-cb6]]
-- [[sources/web-2003-05-20-b9d]]
+- 
+- 
+- 
+- 
 
 ## Included works
 
-- [[sources/web-2003-05-20-b9d]]
+- 
 - [[sources/web-2012-01-01-57d]]
-- [[sources/web-2020-09-14-cbf]]
-- [[sources/web-2025-04-20-cb6]]
-- [[sources/web-2026-05-03-3cc]]
+- 
+- 
+- 

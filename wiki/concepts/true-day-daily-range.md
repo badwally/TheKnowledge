@@ -30,4 +30,4 @@ In ICT (Inner Circle Trader) price-action analysis, the "True Day Daily Range" i
 - [[concepts/ipda]]
 - [[concepts/judas-swing]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

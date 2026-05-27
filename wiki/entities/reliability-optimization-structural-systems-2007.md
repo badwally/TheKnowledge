@@ -31,8 +31,8 @@ A 2007 publication identified by DOI 10.1201/B16819 with a stated focus on struc
 
 ## Related
 
-- [[concepts/structural-reliability]]
-- [[concepts/reliability-based-optimization]]
-- [[concepts/structural-system-reliability]]
-- [[concepts/risk-analysis]]
-- [[concepts/lifetime-performance]]
+- [[concepts/structural-reliability|structural-reliability]]
+- [[concepts/reliability-based-optimization|reliability-based-optimization]]
+- [[concepts/structural-system-reliability|structural-system-reliability]]
+- [[concepts/risk-analysis|risk-analysis]]
+- [[concepts/lifetime-performance|lifetime-performance]]

@@ -35,4 +35,4 @@ In the canonical MMXM framework, the "silver bullet" is the second of two named 
 - [[concepts/fair-value-gap]]
 - [[concepts/order-block]]
 - [[concepts/draw-on-liquidity]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

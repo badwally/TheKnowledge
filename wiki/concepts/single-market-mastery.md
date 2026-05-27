@@ -29,4 +29,4 @@ Discretionary-trading discipline rule taught in ICT's 2022 mentorship and recapp
 
 - [[concepts/news-as-volatility-not-direction]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

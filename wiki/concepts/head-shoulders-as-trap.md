@@ -28,6 +28,6 @@ The ICT framing of the classic Head & Shoulders chart pattern as a "false top an
 ## Related
 
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/market-maker-trap]]
 - [[concepts/trendline-phantoms]]

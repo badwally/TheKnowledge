@@ -29,7 +29,7 @@ The Midnight Opening Price is ICT's daily-bias anchor — the open of the daily 
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/judas-swing]]
 - [[concepts/bias-vs-narrative]]
 - [[concepts/new-york-lunch-stop-run]]

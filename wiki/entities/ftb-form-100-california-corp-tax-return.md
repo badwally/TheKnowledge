@@ -39,4 +39,4 @@ FTB Form 100 is the California corporation franchise or income tax return that a
 - [[entities/ftb-form-1028-guidelines]]
 - [[entities/ftb-form-199-exempt-org-annual-info-return]]
 - [[concepts/california-hoa-tax-exempt-status]]
-- [[concepts/california-hoa-taxable-income-definition]]
+- [[concepts/california-hoa-taxable-income-definition|california-hoa-taxable-income-definition]]

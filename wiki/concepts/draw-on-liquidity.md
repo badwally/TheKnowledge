@@ -35,7 +35,7 @@ last_updated: '2026-05-05T04:01:32Z'
 ## Related
 
 - [[entities/daytradingrauf]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/buy-stops-sell-stops]]
 - [[concepts/liquidity-pairing]]
 - [[concepts/market-structure-liquidity]]

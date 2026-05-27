@@ -37,4 +37,4 @@ In ICT (Inner Circle Trader) price-action analysis, a "Low Resistance Liquidity 
 - [[concepts/market-maker-buy-model]]
 - [[concepts/market-maker-sell-model]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

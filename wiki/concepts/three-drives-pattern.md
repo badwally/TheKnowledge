@@ -30,4 +30,4 @@ The Three Drives Pattern, as taught in ICT's 2022 mentorship and summarized by T
 - [[concepts/judas-swing]]
 - [[concepts/po3-dealing-range]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

@@ -33,4 +33,4 @@ In ICT (Inner Circle Trader) teaching, the "market efficiency paradigm" describe
 - [[concepts/daily-range-structure]]
 - [[concepts/smart-money-accumulation-distribution]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

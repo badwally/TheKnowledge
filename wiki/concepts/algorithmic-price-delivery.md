@@ -35,4 +35,4 @@ Algorithmic price delivery is the ICT-style premise that price action in develop
 - [[concepts/expansion-retracement-reversal-consolidation]]
 - [[concepts/smart-money-accumulation-distribution]]
 - [[concepts/market-efficiency-paradigm]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

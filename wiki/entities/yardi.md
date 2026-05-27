@@ -95,4 +95,4 @@ Yardi is a property management software vendor whose Voyager Condo, Co-op & HOA 
 - [[entities/buildinglink]]
 - [[entities/condo-control]]
 - [[concepts/yardi-voyager-integration-architecture]]
-- [[concepts/mits-data-interchange-standard]]
+- [[concepts/mits-data-interchange-standard|mits-data-interchange-standard]]

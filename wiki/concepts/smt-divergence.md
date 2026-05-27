@@ -37,7 +37,7 @@ SMT (Smart Money Technique) Divergence is an ICT tool that compares correlated i
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/ttrades]]
 - [[entities/ali-khan]]
 - [[concepts/bias-vs-narrative]]

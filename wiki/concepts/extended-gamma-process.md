@@ -36,5 +36,5 @@ The extended gamma process is a generalisation of the gamma process studied in t
 - [[concepts/gamma-degradation-process]]
 - [[concepts/transformed-gamma-process]]
 - [[concepts/bounded-degradation-phenomena]]
-- [[concepts/stochastic-comparisons]]
-- [[concepts/ageing-properties]]
+- [[concepts/stochastic-comparisons|stochastic-comparisons]]
+- [[concepts/ageing-properties|ageing-properties]]

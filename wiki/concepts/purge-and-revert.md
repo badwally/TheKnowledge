@@ -27,7 +27,7 @@ Purge and Revert is an ICT setup in which price action sweeps (purges) sell stop
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/judas-swing]]
 - [[concepts/displacement]]
 - [[concepts/market-structure-shift]]

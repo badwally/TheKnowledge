@@ -31,4 +31,4 @@ In ICT (Inner Circle Trader) price-action analysis, a "Liquidity Void" is a gap 
 - [[concepts/fair-valuation]]
 - [[concepts/low-resistance-liquidity-run]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

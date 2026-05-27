@@ -33,4 +33,4 @@ When swing-high or swing-low formations occur adjacent to one another at roughly
 - [[concepts/liquidity-vs-support-resistance]]
 - [[concepts/htf-liquidity-cascade]]
 - [[concepts/smart-money-accumulation-distribution]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

@@ -31,4 +31,4 @@ A Volume Imbalance (V.I.) is an area of price that has been left without a candl
 - [[concepts/gap-imbalance]]
 - [[concepts/displacement]]
 - [[entities/ali-khan]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

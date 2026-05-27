@@ -94,26 +94,26 @@ literature, Bayesian optimal experimental design for inspect-repair-replace.
 Based on the provided bibliography and publication metadata, several frameworks and datasets are documented specifically for the evaluation and application of system-level prognostics.
 
 **Offline Evaluation Metrics for Prognostic Performance**
-*   **Name and the key claim or contribution:** The literature documents a 2010 foundational framework by Saxena, Celaya, Saha, Saha, and Goebel titled "Metrics for offline evaluation of prognostic performance" [1].
-*   **The core approach, mechanism, or supporting evidence:** This work focuses on establishing standardized evaluation mechanisms to quantitatively measure the performance of prognostic models explicitly in offline environments [1]. The primary paper by Diaz-Gonzalez et al. reinforces this focus by designating "performance metrics" as a core publication keyword for their predictive model [1].
-*   **Any concrete details:** The evaluation metrics research was published in the *International Journal of Prognostics and health management* (Volume 1, Issue 1), occupying pages 4 through 23 [1].
+* **Name and the key claim or contribution:** The literature documents a 2010 foundational framework by Saxena, Celaya, Saha, Saha, and Goebel titled "Metrics for offline evaluation of prognostic performance" [1].
+* **The core approach, mechanism, or supporting evidence:** This work focuses on establishing standardized evaluation mechanisms to quantitatively measure the performance of prognostic models explicitly in offline environments [1]. The primary paper by Diaz-Gonzalez et al. reinforces this focus by designating "performance metrics" as a core publication keyword for their predictive model [1].
+* **Any concrete details:** The evaluation metrics research was published in the *International Journal of Prognostics and health management* (Volume 1, Issue 1), occupying pages 4 through 23 [1].
 
 **Aerospace Applications and Run-to-Failure Datasets**
-*   **Name and the key claim or contribution:** The corpus references a 2021 contribution by Chao, Kulkarni, Goebel, and Fink titled "Aircraft engine run-to-failure dataset under real flight conditions for prognostics and diagnostics" [1].
-*   **The core approach, mechanism, or supporting evidence:** The core mechanism for validating these prognostic methods relies on utilizing real-world, domain-specific continuous sensor data—specifically aircraft engines operating under actual flight conditions until failure [1]. Furthermore, the primary text documenting the new system-level particle filter approach is officially cataloged under the ACM subject classification "Applied computing → Aerospace" [1].
-*   **Any concrete details:** The dataset framework was published in the journal *Data* (Volume 6, Issue 1) as article identifier 5 [1].
+* **Name and the key claim or contribution:** The corpus references a 2021 contribution by Chao, Kulkarni, Goebel, and Fink titled "Aircraft engine run-to-failure dataset under real flight conditions for prognostics and diagnostics" [1].
+* **The core approach, mechanism, or supporting evidence:** The core mechanism for validating these prognostic methods relies on utilizing real-world, domain-specific continuous sensor data—specifically aircraft engines operating under actual flight conditions until failure [1]. Furthermore, the primary text documenting the new system-level particle filter approach is officially cataloged under the ACM subject classification "Applied computing → Aerospace" [1].
+* **Any concrete details:** The dataset framework was published in the journal *Data* (Volume 6, Issue 1) as article identifier 5 [1].
 
 **Analytical Modeling of Health Indices (PHM Society)**
-*   **Name and the key claim or contribution:** A recent contribution titled "Analytical modeling of health indices for prognostics and health management" by Pierre, Bajarunas, and Arias-Chao (2024) is documented in the text [1].
-*   **The core approach, mechanism, or supporting evidence:** The approach centers on formulating analytical models to accurately represent and track health indices, which serves as a core evaluation mechanism within the broader Prognostics and Health Management (PHM) discipline [1].
-*   **Any concrete details:** This research was presented at the *PHM Society European Conference* (Volume 8, page 11) [1].
+* **Name and the key claim or contribution:** A recent contribution titled "Analytical modeling of health indices for prognostics and health management" by Pierre, Bajarunas, and Arias-Chao (2024) is documented in the text [1].
+* **The core approach, mechanism, or supporting evidence:** The approach centers on formulating analytical models to accurately represent and track health indices, which serves as a core evaluation mechanism within the broader Prognostics and Health Management (PHM) discipline [1].
+* **Any concrete details:** This research was presented at the *PHM Society European Conference* (Volume 8, page 11) [1].
 
 **Hyperparameter Optimization and Evolution Strategies**
-*   **Name and the key claim or contribution:** The literature utilizes next-generation optimization tools to evaluate and tune prognostic models, specifically citing "Optuna" (Akiba et al., 2019) and a "restart cma evolution strategy" (Auger & Hansen, 2005) [1].
-*   **The core approach, mechanism, or supporting evidence:** To maximize the performance and accuracy of predictive algorithms during the evaluation phase, the researchers rely on algorithmic hyperparameter optimization frameworks and Covariance Matrix Adaptation (CMA) evolution strategies that leverage increasing population sizes [1].
-*   **Any concrete details:** The Optuna framework was published in the *Proceedings of the 25th ACM SIGKDD international conference* (pages 2623-2631), while the CMA evolution strategy was detailed in the *2005 IEEE congress on evolutionary computation* (Volume 2, pages 1769-1776) [1].
+* **Name and the key claim or contribution:** The literature utilizes next-generation optimization tools to evaluate and tune prognostic models, specifically citing "Optuna" (Akiba et al., 2019) and a "restart cma evolution strategy" (Auger & Hansen, 2005) [1].
+* **The core approach, mechanism, or supporting evidence:** To maximize the performance and accuracy of predictive algorithms during the evaluation phase, the researchers rely on algorithmic hyperparameter optimization frameworks and Covariance Matrix Adaptation (CMA) evolution strategies that leverage increasing population sizes [1].
+* **Any concrete details:** The Optuna framework was published in the *Proceedings of the 25th ACM SIGKDD international conference* (pages 2623-2631), while the CMA evolution strategy was detailed in the *2005 IEEE congress on evolutionary computation* (Volume 2, pages 1769-1776) [1].
 
-[^1]: [[sources/1]]
+[^1]: 
 
 [^1]: [[sources/web-2025-11-10-fd9]]
 
@@ -124,10 +124,10 @@ Based on the provided bibliography and publication metadata, several frameworks 
 Based on the provided bibliography, the evaluation and application frameworks for system-level prognostics diverge across standardizing offline metrics, applying real-world continuous datasets, formulating theoretical models, and leveraging automated hyperparameter optimization.
 
 **Items Compared:**
-*   Offline performance metrics for evaluation (Saxena et al., 2010).
-*   Real-world continuous run-to-failure flight datasets (Chao et al., 2021).
-*   Analytical modeling of health indices (Pierre et al., 2024).
-*   Algorithmic hyperparameter optimization strategies (Akiba et al., 2019; Auger & Hansen, 2005).
+* Offline performance metrics for evaluation (Saxena et al., 2010).
+* Real-world continuous run-to-failure flight datasets (Chao et al., 2021).
+* Analytical modeling of health indices (Pierre et al., 2024).
+* Algorithmic hyperparameter optimization strategies (Akiba et al., 2019; Auger & Hansen, 2005).
 
 **Differences in Evidence, Outcomes, and Stated Claims:**
 The referenced works claim fundamentally different outcomes depending on their role in the prognostic pipeline [1]. Saxena et al. explicitly focus on establishing standardized metrics, claiming outcomes related to the "offline evaluation of prognostic performance" [1]. In contrast to purely retrospective metrics, Chao et al. ground their evidence in physical hardware, claiming to supply an "aircraft engine run-to-failure dataset" gathered under "real flight conditions" to validate diagnostics and prognostics [1]. Diverging from both empirical datasets and retrospective metrics, Pierre et al. claim outcomes based on theoretical constructs, focusing on the "analytical modeling of health indices" to represent asset degradation [1]. Meanwhile, Akiba et al. and Auger and Hansen shift the outcome focus entirely toward algorithmic tuning, providing evidence for a "next-generation hyperparameter optimization framework" (Optuna) and a "restart cma evolution strategy" to maximize model accuracy [1].
@@ -138,7 +138,7 @@ The literature reveals a clear trade-off between the contexts of model validatio
 **Strengths and Weaknesses Noted:**
 While explicit full-text critiques are absent from the bibliographic metadata, the titles imply several structural strengths and weaknesses within these paradigms [1]. The explicit focus of Saxena et al. on "offline" evaluation suggests a historical weakness in applying those specific metrics to active, online streaming environments where data arrives irregularly [1]. The core strength of the dataset introduced by Chao et al. is its reliance on "real flight conditions", which overcomes the inherent weaknesses of validating models against purely synthetic or simulated degradation data [1]. Finally, the necessity of a "next-generation hyperparameter optimization framework" introduced by Akiba et al., alongside the evolution strategy utilizing an "increasing population size" by Auger and Hansen, implies that older or manual optimization methods possessed critical weaknesses in efficiently scaling and tuning modern prognostic models [1].
 
-[^1]: [[sources/1]]
+[^1]: 
 
 [^1]: [[sources/web-2025-11-10-fd9]]
 
@@ -158,7 +158,7 @@ Based on the provided bibliography, there is a pronounced gap between the establ
 * There is no framework or metric provided within the literature for evaluating an ensemble surrogate that "re-fits the cohort prior" from a previously offline state [1].
 * Finally, while the PHM Society canon is partially represented through references to the PHM European Conference and the International Journal of Prognostics and Health Management, the corpus lacks any representation of the "ASCE prognostics literature" or specific evaluation frameworks for "Bayesian optimal experimental design for inspect-repair-replace" [1].
 
-[^1]: [[sources/1]]
+[^1]: 
 
 [^1]: [[sources/web-2025-11-10-fd9]]
 

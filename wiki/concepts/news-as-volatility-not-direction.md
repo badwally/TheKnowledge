@@ -31,4 +31,4 @@ Framing rule taught in ICT's 2022 mentorship and recapped by Trader Theory: the 
 - [[concepts/news-event-blackout-rule]]
 - [[concepts/single-market-mastery]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

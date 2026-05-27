@@ -32,4 +32,4 @@ A Gap Imbalance (G.I.) is an area of price that is void of any price delivery in
 - [[concepts/displacement]]
 - [[concepts/liquidity-void]]
 - [[entities/ali-khan]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

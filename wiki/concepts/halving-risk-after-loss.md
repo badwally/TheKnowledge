@@ -31,4 +31,4 @@ A discrete anti-martingale risk rule taught in ICT's 2022 mentorship and recappe
 - [[concepts/scaled-stop-trailing]]
 - [[concepts/fvg-selection-and-stops]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

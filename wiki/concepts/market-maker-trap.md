@@ -32,4 +32,4 @@ A market maker trap is a deceptive price pattern engineered to lure retail trade
 - [[concepts/internal-range-liquidity]]
 - [[concepts/liquidity-pool]]
 - [[concepts/top-down-analysis]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

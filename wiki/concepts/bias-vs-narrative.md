@@ -33,7 +33,7 @@ In ICT's framework, "bias" and "narrative" are distinct: bias is the trader's di
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/midnight-opening-price]]
 - [[concepts/smt-divergence]]
 - [[concepts/judas-swing]]

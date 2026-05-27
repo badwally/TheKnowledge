@@ -46,4 +46,4 @@ A 2022 paper by Mitra Fouladirad, Massimiliano Giorgio, and Gianpaolo Pulcini pr
 - [[concepts/bounded-degradation-phenomena]]
 - [[concepts/gamma-degradation-process]]
 - [[concepts/cylinder-liner-wear]]
-- [[concepts/maximum-likelihood-estimation]]
+- [[concepts/maximum-likelihood-estimation|maximum-likelihood-estimation]]

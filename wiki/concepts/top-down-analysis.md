@@ -34,4 +34,4 @@ Top-down analysis is the multi-timeframe trading workflow in which the higher ti
 - [[concepts/midnight-open]]
 - [[concepts/power-of-3]]
 - [[concepts/ipda]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

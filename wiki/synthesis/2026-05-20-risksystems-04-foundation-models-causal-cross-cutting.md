@@ -68,7 +68,6 @@ discontinuity for retrospective maintenance-intervention effect estimation;
 double-ML; POMDP + Bayesian decision theory for inspect-repair-replace with
 quantified value-of-information.
 
-
 ## Synthesis
 
 ### Recurring Patterns
@@ -94,10 +93,10 @@ Stochastic gamma processes serve as a versatile, cross-cutting foundation for bo
 
 Gamma processes are historically favored for infrastructure performance modeling due to their mathematical tractability, independent increments, and ability to realistically generate one-way, monotonic sample paths [2]. In the context of unified probabilistic modeling, researchers modified this stochastic foundation to create the Bounded Transformed Gamma Process (BTGP), explicitly grounding the framework in traditional regression modeling to flexibly handle diverse deterioration patterns [2]. In a separate prescriptive application, a standard gamma degradation process functions as the continuous environmental state space for a Double Deep Q-Network (DDQN) reinforcement learning agent [4]. Within this continuous stochastic environment, the artificial intelligence agent successfully learns to generate long-run optimal maintenance policies that dynamically account for increasingly imperfect repairs, entirely circumventing the need for predefined preventive intervention thresholds [4].
 
-[^1]: [[sources/1]]
-[^2]: [[sources/2]]
-[^3]: [[sources/3]]
-[^4]: [[sources/4]]
+[^1]: 
+[^2]: 
+[^3]: 
+[^4]: 
 
 [^1]: [[sources/web-2026-01-13-6bf]] [^2]: [[sources/web-2026-01-13-6bf]] [^3]: [[sources/web-2026-01-13-6bf]] [^4]: [[sources/web-2026-01-13-6bf]]
 
@@ -108,29 +107,29 @@ Based on the provided sources, mathematical gamma processes act as a cross-cutti
 
 **Themes Used In:** Probabilistic Engines for Asset Deterioration; Retrospective Intervention Effect Estimation and Maintenance Optimization
 
-*   **What it is and what it contains:** The gamma process is a continuous-time stochastic mathematical model characterized by independent increments and inherent mathematical tractability, which is widely employed to theoretically simulate one-way, monotonic performance deterioration in assets [1]. 
-*   **Why it is treated as foundational or load-bearing:** Researchers treat the stochastic gamma process as the essential mathematical baseline upon which more complex, realistic operational behaviors are layered [1, 2]. Within probabilistic deterioration modeling, the core gamma process is structurally modified to include strict upper bounds—creating the Bounded Transformed Gamma Process (BTGP)—ensuring the resulting model explicitly respects the physical and managerial limits that constrain real-world asset degradation [1]. Separately, in the context of prescriptive maintenance optimization, a standard gamma degradation process functions as the foundational environment state space that allows a Double Deep Q-Network (DDQN) reinforcement learning agent to generate dynamic, long-run maintenance policies without relying on predefined preventive thresholds [2].
+* **What it is and what it contains:** The gamma process is a continuous-time stochastic mathematical model characterized by independent increments and inherent mathematical tractability, which is widely employed to theoretically simulate one-way, monotonic performance deterioration in assets [1]. 
+* **Why it is treated as foundational or load-bearing:** Researchers treat the stochastic gamma process as the essential mathematical baseline upon which more complex, realistic operational behaviors are layered [1, 2]. Within probabilistic deterioration modeling, the core gamma process is structurally modified to include strict upper bounds—creating the Bounded Transformed Gamma Process (BTGP)—ensuring the resulting model explicitly respects the physical and managerial limits that constrain real-world asset degradation [1]. Separately, in the context of prescriptive maintenance optimization, a standard gamma degradation process functions as the foundational environment state space that allows a Double Deep Q-Network (DDQN) reinforcement learning agent to generate dynamic, long-run maintenance policies without relying on predefined preventive thresholds [2].
 
 ## Real-World Bridge Condition and Visual Inspection Datasets
 Extensive historical databases of actual structural inspections serve as the load-bearing empirical validation mechanisms for newly proposed physical models.
 
 **Themes Used In:** Probabilistic Engines for Asset Deterioration; Retrospective Intervention Effect Estimation and Maintenance Optimization
 
-*   **What it is and what it contains:** These are large-scale empirical datasets containing historical condition ratings, visual observation boundaries, and physical tracking data for expansive infrastructure networks [1, 3].
-*   **Why it is treated as foundational or load-bearing:** These historical datasets provide the necessary empirical ground-truth required to validate complex physical parameter models and prove their operational scalability [1, 3]. For example, a massive database containing approximately 10,000 bridges in the province of Quebec acts as the essential testbed for demonstrating that kinematic state-space models can successfully aggregate element-level deterioration up to a network scale using Gaussian mixture reductions [3]. Similarly, real-world historical bridge condition data provides the critical empirical environment needed to quantitatively and qualitatively prove that the newly proposed Bounded Transformed Gamma Process (BTGP) offers superior modeling flexibility when compared against alternative nonstationary gamma frameworks [1].
+* **What it is and what it contains:** These are large-scale empirical datasets containing historical condition ratings, visual observation boundaries, and physical tracking data for expansive infrastructure networks [1, 3].
+* **Why it is treated as foundational or load-bearing:** These historical datasets provide the necessary empirical ground-truth required to validate complex physical parameter models and prove their operational scalability [1, 3]. For example, a massive database containing approximately 10,000 bridges in the province of Quebec acts as the essential testbed for demonstrating that kinematic state-space models can successfully aggregate element-level deterioration up to a network scale using Gaussian mixture reductions [3]. Similarly, real-world historical bridge condition data provides the critical empirical environment needed to quantitatively and qualitatively prove that the newly proposed Bounded Transformed Gamma Process (BTGP) offers superior modeling flexibility when compared against alternative nonstationary gamma frameworks [1].
 
 ## Equipment Maintenance Logs and Intervention Records
 Human-entered service records represent the core informational backbone—as well as the primary source of operational noise—driving both predictive machine learning and retrospective causal estimation.
 
 **Themes Used In:** LLM / Foundation Model Approaches to Maintenance Data Processing; Retrospective Intervention Effect Estimation and Maintenance Optimization
 
-*   **What it is and what it contains:** These records are the foundational data repositories for Predictive Maintenance (PdM) systems, containing logs manually entered by personnel that detail past repairs, equipment service dates, and system interventions [3, 4].
-*   **Why it is treated as foundational or load-bearing:** The inherent flaws, flexibility, and practical realities of these manually entered records directly necessitate the creation of both the automated LLM agents and the physical retrospective estimation frameworks [3, 4]. For foundation model approaches, the persistent human error and high noise levels within these tabular tracking systems drive the need for deploying automated Large Language Model agents to clean the datasets before they can be reliably used to train downstream survival analysis or predictive maintenance models [4]. Conversely, when these exact historical intervention logs are entirely missing or unreported, it forces researchers to develop sophisticated mathematical mechanisms—relying on structural upward trends and log-likelihood maximization—to objectively estimate and impute the physical impact of the unrecorded historical repairs [3].
+* **What it is and what it contains:** These records are the foundational data repositories for Predictive Maintenance (PdM) systems, containing logs manually entered by personnel that detail past repairs, equipment service dates, and system interventions [3, 4].
+* **Why it is treated as foundational or load-bearing:** The inherent flaws, flexibility, and practical realities of these manually entered records directly necessitate the creation of both the automated LLM agents and the physical retrospective estimation frameworks [3, 4]. For foundation model approaches, the persistent human error and high noise levels within these tabular tracking systems drive the need for deploying automated Large Language Model agents to clean the datasets before they can be reliably used to train downstream survival analysis or predictive maintenance models [4]. Conversely, when these exact historical intervention logs are entirely missing or unreported, it forces researchers to develop sophisticated mathematical mechanisms—relying on structural upward trends and log-likelihood maximization—to objectively estimate and impute the physical impact of the unrecorded historical repairs [3].
 
-[^1]: [[sources/4]]
-[^2]: [[sources/3]]
-[^3]: [[sources/2]]
-[^4]: [[sources/1]]
+[^1]: 
+[^2]: 
+[^3]: 
+[^4]: 
 
 [^1]: [[sources/web-2026-01-13-6bf]] [^2]: [[sources/web-2026-01-13-6bf]] [^3]: [[sources/web-2026-01-13-6bf]] [^4]: [[sources/web-2026-01-13-6bf]]
 
@@ -160,10 +159,10 @@ Based on the provided sources, maintenance and estimation frameworks exhibit a f
 
 For optimizing long-run maintenance, traditional methodologies often rely on strictly predefined preventive thresholds to trigger repairs [4]. In contrast, researchers utilizing a Double Deep Q-Network (DDQN) reinforcement learning agent explicitly abandon these predefined thresholds [4]. The DDQN agent provides enhanced agility by learning to operate within a continuous degradation state space and dynamically adapting to the physical reality of "increasingly imperfect repairs," a model where the beneficial effect of an intervention naturally decreases over the asset's overall lifecycle [4]. Conversely, when handling entirely unrecorded historical interventions, the kinematic state-space model relies heavily on predefined formality to achieve estimation precision [2]. To deduce a missing repair type, the system identifies a mathematical upward structural trend and systematically plugs in the theoretical effects of a limited, predefined set of known intervention types for that specific asset category [2]. The system ultimately selects the intervention that maximizes the log-likelihood estimate, explicitly trading the agility to recognize entirely novel repair types for the statistical precision of estimating within a known, finite set of expected structural responses [2].
 
-[^1]: [[sources/1]]
-[^2]: [[sources/2]]
-[^3]: [[sources/3]]
-[^4]: [[sources/4]]
+[^1]: 
+[^2]: 
+[^3]: 
+[^4]: 
 
 [^1]: [[sources/web-2026-01-13-6bf]] [^2]: [[sources/web-2026-01-13-6bf]] [^3]: [[sources/web-2026-01-13-6bf]] [^4]: [[sources/web-2026-01-13-6bf]]
 

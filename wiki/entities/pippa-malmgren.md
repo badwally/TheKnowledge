@@ -30,5 +30,5 @@ Geopolitical analyst whose framing of "hot wars in cold places" — cyberspace, 
 ## Related
 
 - [[entities/zoltan-pozsar]]
-- [[entities/peter-drucker]]
+- [[entities/peter-drucker|peter-drucker]]
 - [[concepts/war-economy-macro-investing]]

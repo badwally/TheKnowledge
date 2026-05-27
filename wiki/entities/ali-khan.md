@@ -34,7 +34,7 @@ Trader and former UK pharmacist; author of "The ICT Bible" (2023, Volume 1, Foun
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/ipda]]
 - [[concepts/amd-cycle]]
 - [[concepts/fair-value-gap]]

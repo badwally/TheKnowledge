@@ -31,5 +31,5 @@ Trading-education brand that distributes Inner Circle Trader (ICT) mentorship ma
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/balanced-price-range]]

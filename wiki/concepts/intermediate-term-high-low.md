@@ -30,7 +30,7 @@ Intermediate Term High (ITH) and Intermediate Term Low (ITL) are ICT structural 
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/fair-value-gap]]
 - [[concepts/order-block]]
 - [[concepts/market-structure-shift]]

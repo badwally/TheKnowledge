@@ -35,7 +35,7 @@ The transformed gamma (TG) process is a stochastic degradation model proposed by
 - [[concepts/gamma-degradation-process]]
 - [[concepts/bounded-degradation-phenomena]]
 - [[concepts/cylinder-liner-wear]]
-- [[concepts/maximum-likelihood-estimation]]
+- [[concepts/maximum-likelihood-estimation|maximum-likelihood-estimation]]
 - [[entities/transformed-gamma-process-bounded-paper]]
 - [[entities/mitra-fouladirad]]
 - [[entities/massimiliano-giorgio]]

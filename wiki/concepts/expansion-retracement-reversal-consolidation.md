@@ -36,4 +36,4 @@ In ICT (Inner Circle Trader) price-action analysis, "Expansion, Retracement, Rev
 - [[concepts/fair-valuation]]
 - [[concepts/ipda]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

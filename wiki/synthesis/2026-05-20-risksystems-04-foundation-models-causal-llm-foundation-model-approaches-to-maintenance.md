@@ -78,13 +78,13 @@ quantified value-of-information.
 
 Based on the provided sources, the application of Large Language Models (LLMs) to maintenance operations centers on the preprocessing and structuration of noisy log data. 
 
-*   **Name and key claim:** LLM Agents for Maintenance Log Cleaning
-    *   **The core approach, mechanism, or supporting evidence:** Maintenance tracking systems often suffer from high levels of data entry noise and errors due to the flexibility afforded to personnel manually logging service records [1]. Because manually cleaning these equipment maintenance records by data scientists or reliability engineers is time-consuming and often incomplete, researchers propose utilizing large language model (LLM)-based agents to automate the data-cleaning process [1]. 
-    *   **Any concrete details:** The study implements LLM agents to specifically perform data cleaning and establishes metrics to evaluate their performance, conducting an empirical comparison across multiple different LLMs [1]. Results from this framework demonstrate that LLM-based agents offer a promising method to improve the quality of labeled datasets, which directly supports the training of more reliable machine learning and survival analysis models for Predictive Maintenance (PdM) [1]. The approach builds on and references adjacent protocols for constrained data wrangling, such as the "CleanAgent" framework for automated data standardization and the broader use of LLMs as tabular data preprocessors [2, 3].
+* **Name and key claim:** LLM Agents for Maintenance Log Cleaning
+ * **The core approach, mechanism, or supporting evidence:** Maintenance tracking systems often suffer from high levels of data entry noise and errors due to the flexibility afforded to personnel manually logging service records [1]. Because manually cleaning these equipment maintenance records by data scientists or reliability engineers is time-consuming and often incomplete, researchers propose utilizing large language model (LLM)-based agents to automate the data-cleaning process [1]. 
+ * **Any concrete details:** The study implements LLM agents to specifically perform data cleaning and establishes metrics to evaluate their performance, conducting an empirical comparison across multiple different LLMs [1]. Results from this framework demonstrate that LLM-based agents offer a promising method to improve the quality of labeled datasets, which directly supports the training of more reliable machine learning and survival analysis models for Predictive Maintenance (PdM) [1]. The approach builds on and references adjacent protocols for constrained data wrangling, such as the "CleanAgent" framework for automated data standardization and the broader use of LLMs as tabular data preprocessors [2, 3].
 
-[^2]: [[sources/1]]
-[^7]: [[sources/1]]
-[^8]: [[sources/1]]
+[^2]: 
+[^7]: 
+[^8]: 
 
 [^1]: [[sources/web-2026-01-13-6bf]] [^2]: [[sources/web-2026-01-13-6bf]] [^3]: [[sources/web-2026-01-13-6bf]]
 
@@ -105,7 +105,7 @@ In contrast, deploying LLM-based agents is presented as an automated alternative
 
 Finally, the sources contextualize these LLM agents within a wider evolution of tabular data cleaning frameworks, contrasting modern foundation-model approaches against earlier programmatic paradigms [1]. For instance, whereas previous data cleaning systems relied on probabilistic inference (e.g., the HoloClean framework), knowledge bases paired with crowdsourcing (e.g., KATARA), or transfer learning (e.g., Baran) to detect and repair data errors, the current methodological shift emphasizes utilizing large language models natively as automated data preprocessors and standardizers (such as the CleanAgent framework) [1].
 
-[^1]: [[sources/1]]
+[^1]: 
 
 [^1]: [[sources/web-2026-01-13-6bf]]
 
@@ -117,17 +117,17 @@ Based on the provided sources, several limitations and gaps emerge regarding the
 
 **Limitations and Gaps in Coverage:**
 
-*   **Omission of Specific LLM Performance Data**
-    *   The primary text claims to empirically compare the performance of "several LLMs" on the task of cleaning equipment maintenance records [1]. However, the text fails to specify which exact foundation models were actually evaluated or which model ultimately performed best [1]. A reader is left without concrete guidance on model selection for predictive maintenance tasks [1].
-*   **Undefined Performance Metrics**
-    *   The research states that the framework provides "metrics to assess agents' performance" in eliminating noise and errors caused by manual data entry [1]. Yet, the provided excerpts do not define what these quantitative metrics are, leaving a critical gap in understanding how the framework measures accuracy, precision, or standardizes error-prone service records [1].
-*   **Lack of Hallucination and Constraint Controls**
-    *   While the text highlights the use of LLM-based agents to automate tabular log cleaning, it completely lacks discussion on how these agents are constrained from hallucinating or improperly altering valid operational records [1]. The sources do not address specific constrained decoding techniques or hallucination metrics necessary to ensure the structural and factual integrity of the cleaned datasets [1, 2].
-*   **Absence of Narrative Generation and Causal Extraction**
-    *   The documents restrict their LLM applications strictly to the preprocessing and cleaning of tabular maintenance logs to improve labels for survival analysis and machine learning models [1]. The corpus does not address how LLMs might be used for complex structured extraction from broader engineering documents, nor does it explore the generation of decision narratives or causal inference explanations for retrospective questions [1].
+* **Omission of Specific LLM Performance Data**
+ * The primary text claims to empirically compare the performance of "several LLMs" on the task of cleaning equipment maintenance records [1]. However, the text fails to specify which exact foundation models were actually evaluated or which model ultimately performed best [1]. A reader is left without concrete guidance on model selection for predictive maintenance tasks [1].
+* **Undefined Performance Metrics**
+ * The research states that the framework provides "metrics to assess agents' performance" in eliminating noise and errors caused by manual data entry [1]. Yet, the provided excerpts do not define what these quantitative metrics are, leaving a critical gap in understanding how the framework measures accuracy, precision, or standardizes error-prone service records [1].
+* **Lack of Hallucination and Constraint Controls**
+ * While the text highlights the use of LLM-based agents to automate tabular log cleaning, it completely lacks discussion on how these agents are constrained from hallucinating or improperly altering valid operational records [1]. The sources do not address specific constrained decoding techniques or hallucination metrics necessary to ensure the structural and factual integrity of the cleaned datasets [1, 2].
+* **Absence of Narrative Generation and Causal Extraction**
+ * The documents restrict their LLM applications strictly to the preprocessing and cleaning of tabular maintenance logs to improve labels for survival analysis and machine learning models [1]. The corpus does not address how LLMs might be used for complex structured extraction from broader engineering documents, nor does it explore the generation of decision narratives or causal inference explanations for retrospective questions [1].
 
-[^2]: [[sources/1]]
-[^3]: [[sources/1]]
+[^2]: 
+[^3]: 
 
 [^1]: [[sources/web-2026-01-13-6bf]] [^2]: [[sources/web-2026-01-13-6bf]]
 

@@ -17,16 +17,16 @@ last_updated: '2026-05-05T04:01:32Z'
 
 ## Summary
 
-A GitHub gist by Andrej Karpathy describing the LLM wiki pattern, in which an LLM reads sources and writes structured, persistent wiki pages — cited by WikiLoom as its design inspiration [[sources/web-2026-04-11-879]].
+A GitHub gist by Andrej Karpathy describing the LLM wiki pattern, in which an LLM reads sources and writes structured, persistent wiki pages — cited by WikiLoom as its design inspiration .
 
 ## Key facts
 
-- Authored by Andrej Karpathy [[sources/web-2026-04-11-879]].
-- WikiLoom credits the gist as the conceptual basis for its compounding-knowledge-base approach [[sources/web-2026-04-11-879]].
+- Authored by Andrej Karpathy .
+- WikiLoom credits the gist as the conceptual basis for its compounding-knowledge-base approach .
 
 ## Sources
 
-- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
+- — WikiLoom GitHub README
 
 ## Related
 

@@ -39,4 +39,4 @@ FTB Form 3500 (*Exemption Application*) is the application form a California hom
 - [[entities/california-rtc-23701t]]
 - [[entities/ftb-form-1028-guidelines]]
 - [[concepts/california-hoa-tax-exempt-status]]
-- [[concepts/california-hoa-organizational-test]]
+- [[concepts/california-hoa-organizational-test|california-hoa-organizational-test]]

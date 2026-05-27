@@ -44,4 +44,4 @@ TTrades Entry Models is a smart-money trade-entry framework first published as a
 - [[concepts/internal-range-liquidity]]
 - [[concepts/smt-divergence]]
 - [[entities/ttrades]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

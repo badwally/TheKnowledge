@@ -34,7 +34,7 @@ Goldbach levels — referred to in Hopiplaka's book as "Huddleston levels" and e
 ## Related
 
 - [[entities/hopiplaka]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/po3-dealing-range]]
 - [[concepts/tesla-vortex-3-6-9]]
 - [[concepts/ipda]]

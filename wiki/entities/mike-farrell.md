@@ -38,4 +38,4 @@ Mike Farrell is a Managing Director at Spectrum Equity and the named Spectrum sp
 - [[entities/hg-capital]]
 - [[entities/bill-blanton]]
 - [[entities/robert-petrie]]
-- [[entities/origami-risk]]
+- [[entities/origami-risk|origami-risk]]

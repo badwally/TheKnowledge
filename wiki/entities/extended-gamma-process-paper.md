@@ -39,5 +39,5 @@ A 2021 paper by Zeina Al Masry, Sophie Mercier, and Ghislain Verdier, published 
 - [[entities/journal-of-applied-probability]]
 - [[concepts/extended-gamma-process]]
 - [[concepts/gamma-degradation-process]]
-- [[concepts/stochastic-comparisons]]
-- [[concepts/ageing-properties]]
+- [[concepts/stochastic-comparisons|stochastic-comparisons]]
+- [[concepts/ageing-properties|ageing-properties]]

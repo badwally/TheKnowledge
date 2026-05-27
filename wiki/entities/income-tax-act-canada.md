@@ -39,5 +39,5 @@ The *Income Tax Act* (Canada) is the federal statute that governs Canadian incom
 - [[entities/cra-interpretation-bulletin-it-304r2]]
 - [[concepts/canadian-condo-corporation-npo-status]]
 - [[concepts/canadian-condo-corporation-tax-filing-obligations]]
-- [[concepts/canadian-condo-cca-class-1-building]]
-- [[concepts/canadian-rental-property-cca-restriction]]
+- [[concepts/canadian-condo-cca-class-1-building|canadian-condo-cca-class-1-building]]
+- [[concepts/canadian-rental-property-cca-restriction|canadian-rental-property-cca-restriction]]

@@ -16,19 +16,19 @@ last_updated: '2026-05-05T04:01:32Z'
 
 ## Summary
 
-The auto-commit pattern is a discipline in which every state-modifying tool operation is automatically committed to git with a classifying prefix in the commit message, eliminating the need for manual `git` invocation and producing a fully auditable history of LLM- and human-driven changes [[sources/web-2026-04-11-879]].
+The auto-commit pattern is a discipline in which every state-modifying tool operation is automatically committed to git with a classifying prefix in the commit message, eliminating the need for manual `git` invocation and producing a fully auditable history of LLM- and human-driven changes .
 
 ## Key claims
 
-- Every WikiLoom command that modifies state auto-commits with a classifying prefix such as `ingest:`, `lint:`, `merge:`, etc., so the user never has to type `git` [[sources/web-2026-04-11-879]].
-- Defined prefixes include `init:`, `ingest:`, `lint:`, `relink:`, `review:`, `related:`, `merge:`, `deprecate:`, `dormant:`, and `human-edit:` [[sources/web-2026-04-11-879]].
-- The `human-edit:` prefix is created when the user runs `wikiloom save` after editing pages, `wikiloom.toml`, or prompts by hand [[sources/web-2026-04-11-879]].
-- Writer commands block on uncommitted edits under `wiki/`, telling the user to run `wikiloom save` first so manual edits never land inside an `ingest:` commit [[sources/web-2026-04-11-879]].
-- Dirty `wikiloom.toml` or prompt edits produce a passive nudge but do not block, since they cannot collide with an auto-commit's output [[sources/web-2026-04-11-879]].
+- Every WikiLoom command that modifies state auto-commits with a classifying prefix such as `ingest:`, `lint:`, `merge:`, etc., so the user never has to type `git` .
+- Defined prefixes include `init:`, `ingest:`, `lint:`, `relink:`, `review:`, `related:`, `merge:`, `deprecate:`, `dormant:`, and `human-edit:` .
+- The `human-edit:` prefix is created when the user runs `wikiloom save` after editing pages, `wikiloom.toml`, or prompts by hand .
+- Writer commands block on uncommitted edits under `wiki/`, telling the user to run `wikiloom save` first so manual edits never land inside an `ingest:` commit .
+- Dirty `wikiloom.toml` or prompt edits produce a passive nudge but do not block, since they cannot collide with an auto-commit's output .
 
 ## Sources
 
-- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
+- — WikiLoom GitHub README
 
 ## Related
 

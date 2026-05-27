@@ -37,7 +37,7 @@ Trader and author of "Demystifying ICT: What Every ICT Trader Still Wants to Kno
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/po3-dealing-range]]
 - [[concepts/goldbach-levels]]
 - [[concepts/hippo-look-back]]

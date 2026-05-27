@@ -36,4 +36,4 @@ In the canonical MMXM framework, "offset-distribution" is the structural terminu
 - [[concepts/external-range-liquidity]]
 - [[concepts/buyside-liquidity]]
 - [[concepts/sellside-liquidity]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

@@ -33,4 +33,4 @@ HTF-to-LTF liquidity cascade is the ICT-style workflow of identifying buyside an
 - [[concepts/equal-highs-equal-lows]]
 - [[concepts/top-down-analysis]]
 - [[concepts/timeframe-trader-mapping]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

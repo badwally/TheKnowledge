@@ -32,4 +32,4 @@ The ICT trade checklist, as expanded in the Lesson 11 Divergence PDF, is a five-
 - [[concepts/smt-divergence]]
 - [[concepts/sibling-asset-pairs]]
 - [[concepts/market-maker-sell-model]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

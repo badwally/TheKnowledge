@@ -37,4 +37,4 @@ Break of Structure (BOS) is a smart-money price-action event in which price take
 - [[concepts/ttrades-entry-models]]
 - [[concepts/market-structure-shift]]
 - [[entities/ttrades]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

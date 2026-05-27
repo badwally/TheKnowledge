@@ -29,6 +29,6 @@ Smart Money Tool (SMT) divergence applied across the U.S. Dollar Index (DXY) and
 ## Related
 
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/institutional-market-structure]]
 - [[concepts/smart-money-accumulation-distribution]]

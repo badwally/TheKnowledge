@@ -46,4 +46,4 @@ TTrades (Twitter handle @TTrades_edu) is a trader and educator who publishes ICT
 - [[concepts/displacement]]
 - [[concepts/internal-range-liquidity]]
 - [[concepts/smt-divergence]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

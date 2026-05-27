@@ -44,4 +44,4 @@ The Optimal Trade Entry, abbreviated OTE in ICT terminology, is a Fibonacci-retr
 - [[concepts/market-maker-sell-model]]
 - [[entities/trader-theory]]
 - [[entities/ttrades]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

@@ -31,4 +31,4 @@ Consequent Encroachment (C.E.) is the midpoint or 50% equilibrium level of a Fai
 - [[concepts/discount-and-premium]]
 - [[concepts/mean-threshold]]
 - [[entities/ali-khan]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

@@ -50,5 +50,5 @@ ICT's name for a three-phase intraday price-action template — Accumulation, Ma
 - [[concepts/ipda]]
 - [[concepts/market-efficiency-paradigm]]
 - [[concepts/engineering-liquidity]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/ali-khan]]

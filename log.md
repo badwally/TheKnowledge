@@ -19739,3 +19739,19 @@ backfill-sources-count: 99 updated, 0 skipped, 0 errors
 ## [2026-05-27T04:38:17Z] lint | scope=schema-drift | schema-drift=210
 
 report=.knowledge/lint/2026-05-27T04-38-17Z-schema-drift.md
+
+## [2026-05-27T04:40:29Z] lint | scope=schema-drift | schema-drift=210
+
+report=.knowledge/lint/2026-05-27T04-40-29Z-schema-drift.md
+
+## [2026-05-27T04:40:53Z] lint | scope=broken-wikilinks | broken-wikilinks=277
+
+report=.knowledge/lint/2026-05-27T04-40-53Z-broken-wikilinks.md
+
+## [2026-05-27T04:43:31Z] fix-wikilinks | pages=136 | removed=195 | downgraded=82 | errors=0
+
+fix-wikilinks: 136 pages — 195 source links removed, 82 links downgraded to WARNING
+
+## [2026-05-27T04:43:36Z] lint | scope=broken-wikilinks | broken-wikilinks=82
+
+report=.knowledge/lint/2026-05-27T04-43-36Z-broken-wikilinks.md

@@ -33,4 +33,4 @@ When multiple Fair Value Gaps (FVGs) are present in an ICT-style trade plan, Tra
 - [[concepts/scaled-stop-trailing]]
 - [[concepts/halving-risk-after-loss]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

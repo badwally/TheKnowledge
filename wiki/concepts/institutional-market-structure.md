@@ -29,6 +29,6 @@ The ICT framing of "institutional market structure" as the study of correlated a
 ## Related
 
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/dxy-smt-divergence]]
 - [[concepts/smart-money-accumulation-distribution]]

@@ -54,5 +54,5 @@ The Interbank Price Delivery Algorithm (IPDA) is ICT's hypothesized model of how
 - [[concepts/pd-array]]
 - [[concepts/fair-value-gap]]
 - [[concepts/engineering-liquidity]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/ali-khan]]

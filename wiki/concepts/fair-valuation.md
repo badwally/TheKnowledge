@@ -31,4 +31,4 @@ In ICT (Inner Circle Trader) price-action analysis, "Fair Valuation" describes t
 - [[concepts/equilibrium-discount-premium]]
 - [[concepts/expansion-retracement-reversal-consolidation]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

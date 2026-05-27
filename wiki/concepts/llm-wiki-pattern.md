@@ -16,18 +16,18 @@ last_updated: '2026-05-05T04:01:32Z'
 
 ## Summary
 
-The LLM wiki pattern is a knowledge-base architecture in which an LLM ingests source documents and writes structured wiki pages, treating the LLM as the judgment layer (extracting claims, assessing confidence) while keeping linking, indexing, and persistence deterministic [[sources/web-2026-04-11-879]]. WikiLoom positions this as an alternative to naive RAG, building a persistent, human-readable knowledge graph instead of an opaque vector store [[sources/web-2026-04-11-879]].
+The LLM wiki pattern is a knowledge-base architecture in which an LLM ingests source documents and writes structured wiki pages, treating the LLM as the judgment layer (extracting claims, assessing confidence) while keeping linking, indexing, and persistence deterministic . WikiLoom positions this as an alternative to naive RAG, building a persistent, human-readable knowledge graph instead of an opaque vector store .
 
 ## Key claims
 
-- The LLM handles judgment — reading sources, extracting claims, assessing confidence — while everything after the LLM call (linking, backlink graph, index regeneration, git commit) is deterministic [[sources/web-2026-04-11-879]].
-- The pattern produces a persistent, human-readable knowledge graph rather than re-embedding documents into an opaque vector store [[sources/web-2026-04-11-879]].
-- Andrej Karpathy's LLM wiki gist is the cited design inspiration [[sources/web-2026-04-11-879]].
-- Pages are written as markdown so the entire knowledge base remains human-readable and git-trackable [[sources/web-2026-04-11-879]].
+- The LLM handles judgment — reading sources, extracting claims, assessing confidence — while everything after the LLM call (linking, backlink graph, index regeneration, git commit) is deterministic .
+- The pattern produces a persistent, human-readable knowledge graph rather than re-embedding documents into an opaque vector store .
+- Andrej Karpathy's LLM wiki gist is the cited design inspiration .
+- Pages are written as markdown so the entire knowledge base remains human-readable and git-trackable .
 
 ## Sources
 
-- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
+- — WikiLoom GitHub README
 
 ## Related
 

@@ -17,16 +17,16 @@ last_updated: '2026-05-05T04:01:32Z'
 
 ## Summary
 
-Do-Y-Lee is the author of WikiLoom, an open-source Python tool that builds LLM-maintained knowledge bases with deterministic linking [[sources/web-2026-04-11-879]].
+Do-Y-Lee is the author of WikiLoom, an open-source Python tool that builds LLM-maintained knowledge bases with deterministic linking .
 
 ## Key facts
 
-- Hosts the WikiLoom repository at github.com/do-y-lee/wikiloom [[sources/web-2026-04-11-879]].
-- Cites Andrej Karpathy's LLM wiki gist as the design inspiration for WikiLoom [[sources/web-2026-04-11-879]].
+- Hosts the WikiLoom repository at github.com/do-y-lee/wikiloom .
+- Cites Andrej Karpathy's LLM wiki gist as the design inspiration for WikiLoom .
 
 ## Sources
 
-- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
+- — WikiLoom GitHub README
 
 ## Related
 

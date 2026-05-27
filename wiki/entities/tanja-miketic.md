@@ -30,7 +30,7 @@ Trader and educator (Twitter handle @TanjaTrades) who compiled "ICT 2022 Mentors
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/trader-theory]]
 - [[entities/hopiplaka]]
 - [[concepts/judas-swing]]

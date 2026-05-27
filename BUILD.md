@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 17. Phase 8 delivery log (2026-05-27)
 
+### M97 — Phase 8 Round B (wiki fix-wikilinks — broken link repair)
+
+See `docs/milestones/M97.md`. `wiki fix-wikilinks`: removes dead `[[sources/...]]` citations (195 removed) and downgrades broken `[[entities/...]]`/`[[concepts/...]]` links to aliased forward-references (82 downgraded). broken-wikilinks: 277 ERRORs → 82 WARNINGs. 12 tests. Tests: 1777 → 1789 (+12), 0 regressions. Tag: `m97-phase8-round-b`.
+
 ### M96 — Phase 8 Round A (schema debt clearance — timestamp + sources_count backfills)
 
 See `docs/milestones/M96.md`. Ran `wiki backfill-timestamps` (2191 pages stamped) + added and ran new `wiki backfill-sources-count` (99 synthesis pages stamped with unique `[[sources/...]]` link count). schema-drift: 4597 → 210 (-4387). Remaining 210 are editorial-only (invalid entity_kind, missing sections, long slugs). 8 tests. Tests: 1769 → 1777 (+8), 0 regressions. Tag: `m96-phase8-round-a`.

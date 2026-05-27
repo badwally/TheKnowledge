@@ -16,18 +16,18 @@ last_updated: '2026-05-05T04:01:32Z'
 
 ## Summary
 
-Structural provenance is the practice of tracing every claim in a knowledge base back to a specific chunk of a specific source document via stable, content-addressed chunk identifiers [[sources/web-2026-04-11-879]]. It complements citation-grounding by making the underlying source text retrievable, not just referenced.
+Structural provenance is the practice of tracing every claim in a knowledge base back to a specific chunk of a specific source document via stable, content-addressed chunk identifiers . It complements citation-grounding by making the underlying source text retrievable, not just referenced.
 
 ## Key claims
 
-- Every chunk of a source document is persisted to a SQLite cache with a stable `chunk_id` derived from `sha256(source_hash + chunk_index)` [[sources/web-2026-04-11-879]].
-- Pages reference their contributing chunks under each entry in their `sources` frontmatter array — every source dict carries its own `chunk_ids` list [[sources/web-2026-04-11-879]].
-- The original chunk text is retrievable via `wikiloom source <chunk_id>` [[sources/web-2026-04-11-879]].
-- Contributing sources for a page are inspectable via `wikiloom show <page> --field sources`, which can flatten across sources [[sources/web-2026-04-11-879]].
+- Every chunk of a source document is persisted to a SQLite cache with a stable `chunk_id` derived from `sha256(source_hash + chunk_index)` .
+- Pages reference their contributing chunks under each entry in their `sources` frontmatter array — every source dict carries its own `chunk_ids` list .
+- The original chunk text is retrievable via `wikiloom source <chunk_id>` .
+- Contributing sources for a page are inspectable via `wikiloom show <page> --field sources`, which can flatten across sources .
 
 ## Sources
 
-- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
+- — WikiLoom GitHub README
 
 ## Related
 

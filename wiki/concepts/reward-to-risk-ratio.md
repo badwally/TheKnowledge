@@ -32,4 +32,4 @@ The reward-to-risk (RR) ratio is the multiple of risk a trade is structured to c
 
 - [[concepts/compounding-small-accounts]]
 - [[concepts/process-oriented-trading]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

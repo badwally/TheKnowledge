@@ -33,4 +33,4 @@ Compounding small accounts is the ICT Month 2 framing for growing modest balance
 - [[concepts/process-oriented-trading]]
 - [[concepts/top-down-analysis]]
 - [[concepts/order-block]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

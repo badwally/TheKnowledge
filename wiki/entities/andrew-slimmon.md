@@ -42,5 +42,5 @@ Head of Applied Equity Advisors at Morgan Stanley; author of the Equity chapter 
 - [[entities/federal-reserve]]
 - [[concepts/equal-weighted-vs-cap-weighted-breadth]]
 - [[concepts/megacap-regulatory-headwind]]
-- [[concepts/yield-curve-inversion-timing-signal]]
+- [[concepts/yield-curve-inversion-timing-signal|yield-curve-inversion-timing-signal]]
 - [[concepts/stock-market-concentration]]

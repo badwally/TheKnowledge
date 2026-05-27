@@ -32,7 +32,7 @@ Trading-education X (Twitter) account `@Trader_Theory`; author of the September 
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/po3-dealing-range]]
 - [[concepts/judas-swing]]
 - [[concepts/optimal-trade-entry]]

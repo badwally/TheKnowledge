@@ -40,5 +40,5 @@ ICT's term for intraday windows when manipulation and distribution moves are mos
 - [[concepts/market-maker-buy-model]]
 - [[concepts/ipda]]
 - [[concepts/pd-array]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/ali-khan]]

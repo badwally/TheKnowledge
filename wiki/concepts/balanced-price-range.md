@@ -28,5 +28,5 @@ A price-action concept attributed to The Inner Circle Trader (ICT) and presented
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/braveheart-trading]]

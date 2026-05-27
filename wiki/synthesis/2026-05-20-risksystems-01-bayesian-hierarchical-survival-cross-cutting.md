@@ -78,7 +78,6 @@ Mishalani, Golabi (DOT pavement/bridge); Frangopol, Faber, Sundararajan
 (Bayesian hierarchical practice). Reference systems: HDM-4, AASHTO TAMP,
 Pontis, KANEW, AWARE-P. Recent (2020-2026) refinements explicitly in scope.
 
-
 ## Synthesis
 
 ### Recurring Patterns
@@ -109,24 +108,24 @@ A recurring pattern in the literature is the inability to track continuous, time
 
 Methodologies across the corpus grapple with the fundamental tension of scaling highly specific, localized asset deterioration up to network-wide financial and risk management evaluations [15, 16]. Hierarchical Bayesian approaches attempt to bridge this gap by explicitly modelling source-to-source variability across diverse multi-track networks, utilizing hyperprior distributions to balance population-level trends with individual track lengths and usage histories [3, 17]. Meanwhile, broader asset management frameworks tackle the network optimization problem through competing philosophies [15, 18]. Legacy systems like HDM-4 aggregate precise, granular road deterioration models to evaluate total network transport costs, whereas platforms like AWARE-P explicitly replace traditional component-centric methods with an abstracted, system-centric decision framework focused on overall network performance, risk, and financial compromise [15, 18].
 
-[^1]: [[sources/8]]
-[^2]: [[sources/8]]
-[^3]: [[sources/8]]
-[^4]: [[sources/14]]
-[^5]: [[sources/8]]
-[^6]: [[sources/12]]
-[^7]: [[sources/16]]
-[^8]: [[sources/15]]
-[^9]: [[sources/8]]
-[^10]: [[sources/8]]
-[^11]: [[sources/8]]
-[^12]: [[sources/8]]
-[^13]: [[sources/8]]
-[^14]: [[sources/8]]
-[^15]: [[sources/1]]
-[^16]: [[sources/7]]
-[^17]: [[sources/8]]
-[^18]: [[sources/6]]
+[^1]: 
+[^2]: 
+[^3]: 
+[^4]: 
+[^5]: 
+[^6]: 
+[^7]: 
+[^8]: 
+[^9]: 
+[^10]: 
+[^11]: 
+[^12]: 
+[^13]: 
+[^14]: 
+[^15]: 
+[^16]: 
+[^17]: 
+[^18]: 
 
 [^1]: [[sources/web-2012-01-01-57d]] [^2]: [[sources/web-2012-01-01-57d]] [^3]: [[sources/web-2012-01-01-57d]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2012-01-01-57d]] [^6]: [[sources/web-2012-01-01-57d]] [^7]: [[sources/web-2012-01-01-57d]] [^8]: [[sources/web-2012-01-01-57d]] [^9]: [[sources/web-2012-01-01-57d]] [^10]: [[sources/web-2012-01-01-57d]] [^11]: [[sources/web-2012-01-01-57d]] [^12]: [[sources/web-2012-01-01-57d]] [^13]: [[sources/web-2012-01-01-57d]] [^14]: [[sources/web-2012-01-01-57d]] [^15]: [[sources/web-2012-01-01-57d]] [^16]: [[sources/web-2012-01-01-57d]] [^17]: [[sources/web-2012-01-01-57d]] [^18]: [[sources/web-2012-01-01-57d]]
 
@@ -169,11 +168,11 @@ Complex operational fleet data drives the development of advanced survival neura
 **Which themes draw on it:** Bayesian Hierarchical Modelling, Stochastic Deterioration and Survival Processes, Expert Judgement.
 **Why it is treated as foundational:** The severe heterogeneity and incompleteness of these operational fleet records demand survival models that exceed traditional regression capabilities [5]. The structural constraints of these datasets directly force researchers to adopt Multitask Learning and Weibull-Tailored Neural Networks (WTNN) to properly encode qualitative domain expertise, allowing the models to automatically share correlated statistical strength between disparate asset sub-groups operating in highly demanding environments [4, 5].
 
-[^1]: [[sources/8]]
-[^2]: [[sources/10]]
-[^3]: [[sources/7]]
-[^4]: [[sources/14]]
-[^5]: [[sources/16]]
+[^1]: 
+[^2]: 
+[^3]: 
+[^4]: 
+[^5]: 
 
 [^1]: [[sources/web-2012-01-01-57d]] [^2]: [[sources/web-2012-01-01-57d]] [^3]: [[sources/web-2012-01-01-57d]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2012-01-01-57d]]
 
@@ -205,15 +204,15 @@ Traditional hierarchical Bayesian models prioritize structural transparency, all
 
 When validating the out-of-sample predictive performance of clustered hierarchical architectures, practitioners face a severe trade-off between computational ease and model stability [9]. Conditional predictive criteria—which condition directly on learned latent variables—are mathematically straightforward to extract from standard Bayesian software, but they exhibit extreme instability and fail to safely generalize predictions to entirely new infrastructure populations [9]. To achieve defensible model selection that generalizes to unobserved clusters, researchers must use marginal predictive criteria that integrate out those latent cluster variables entirely [9]. However, this marginal approach demands massive computational overhead, frequently requiring resource-intensive numerical approximations like adaptive quadrature and tens of thousands of posterior MCMC draws just to overcome the associated Monte Carlo error [9]. 
 
-[^2]: [[sources/1]]
-[^6]: [[sources/6]]
-[^7]: [[sources/7]]
-[^8]: [[sources/8]]
-[^10]: [[sources/10]]
-[^14]: [[sources/14]]
-[^15]: [[sources/15]]
-[^16]: [[sources/16]]
-[^19]: [[sources/1]]
+[^2]: 
+[^6]: 
+[^7]: 
+[^8]: 
+[^10]: 
+[^14]: 
+[^15]: 
+[^16]: 
+[^19]: 
 
 [^1]: [[sources/web-2012-01-01-57d]] [^2]: [[sources/web-2012-01-01-57d]] [^3]: [[sources/web-2012-01-01-57d]] [^4]: [[sources/web-2012-01-01-57d]] [^5]: [[sources/web-2012-01-01-57d]] [^6]: [[sources/web-2012-01-01-57d]] [^7]: [[sources/web-2012-01-01-57d]] [^8]: [[sources/web-2012-01-01-57d]] [^9]: [[sources/web-2012-01-01-57d]]
 

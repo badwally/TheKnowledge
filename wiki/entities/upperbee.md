@@ -64,7 +64,7 @@ UpperBee is a property management software vendor whose platform spans condomini
 - [[entities/wilkar-property-management]]
 - [[entities/trivium-property-management]]
 - [[entities/solutioncondo]]
-- [[entities/nova-property-management-experts]]
+- [[entities/nova-property-management-experts|nova-property-management-experts]]
 - [[entities/the-condo-collective]]
 - [[entities/mri-software]]
 - [[entities/yardi]]

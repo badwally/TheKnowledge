@@ -36,4 +36,4 @@ A core editorial argument of "Lesson 1: Price and Liquidity" is that classical s
 - [[concepts/equilibrium-discount-premium]]
 - [[concepts/smart-money-accumulation-distribution]]
 - [[concepts/market-maker-trap]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

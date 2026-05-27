@@ -30,6 +30,6 @@ The ICT mentorship's framing that each chart timeframe maps to a specific trader
 ## Related
 
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/top-down-analysis]]
 - [[concepts/institutional-sponsorship-criteria]]

@@ -31,7 +31,7 @@ The New York Lunch Stop Run is ICT's framing of the 12:00–13:00 ET lunch hour 
 
 ## Related
 
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/midnight-opening-price]]
 - [[concepts/judas-swing]]
 - [[concepts/fair-value-gap]]

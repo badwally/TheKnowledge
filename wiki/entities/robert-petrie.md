@@ -33,7 +33,7 @@ Robert Petrie is the Chief Executive Officer of Origami Risk and a board member 
 
 ## Related
 
-- [[entities/origami-risk]]
+- [[entities/origami-risk|origami-risk]]
 - [[entities/cinc-systems]]
 - [[entities/spectrum-equity]]
 - [[entities/mike-farrell]]

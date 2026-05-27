@@ -79,7 +79,6 @@ uncertainty propagation through coupled mechanism models. Relevant venues:
 RILEM TCs, Building and Environment, Cement and Concrete Research, JOSE,
 SciML / DeepXDE / NeuralPDE / NVIDIA Modulus literature.
 
-
 ## Synthesis
 
 ### Recurring Patterns
@@ -90,27 +89,27 @@ Based on the provided sources, several overarching frameworks and principles bri
 
 **Sequential Data Integration for Model Calibration**
 **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
-*   In the hybrid modeling domain, physical simulators are calibrated using discrete field tests, such as ambient vibration analysis, to establish a baseline before generating simulated damage scenarios [1]. 
-*   Similarly, stochastic frameworks like the Bounded Transformed Gamma Process (BTGP) rely on historical empirical condition data to calibrate unified deterioration patterns across infrastructure asset portfolios [2]. 
-*   Within Bayesian uncertainty quantification, this principle is adapted into an active, continuous process where structural monitoring measurements are sequentially fed into off-line or on-line filters to recursively update knowledge of time-invariant deterioration parameters [3]. 
-*   Furthermore, this data integration principle extends to correcting degradation estimates for miter gates by synthesizing hybrid modeling directly with recursive Bayesian state estimation [4].
+* In the hybrid modeling domain, physical simulators are calibrated using discrete field tests, such as ambient vibration analysis, to establish a baseline before generating simulated damage scenarios [1]. 
+* Similarly, stochastic frameworks like the Bounded Transformed Gamma Process (BTGP) rely on historical empirical condition data to calibrate unified deterioration patterns across infrastructure asset portfolios [2]. 
+* Within Bayesian uncertainty quantification, this principle is adapted into an active, continuous process where structural monitoring measurements are sequentially fed into off-line or on-line filters to recursively update knowledge of time-invariant deterioration parameters [3]. 
+* Furthermore, this data integration principle extends to correcting degradation estimates for miter gates by synthesizing hybrid modeling directly with recursive Bayesian state estimation [4].
 
 **Quantifying and Bounding Physical Uncertainty**
 **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
-*   Across both domains, managing the inherent physical variability of asset degradation is achieved by establishing explicit probabilistic boundaries and credibility evaluations [2, 5].
-*   In hybrid and stochastic modeling, the BTGP approach addresses uncertainty by characterizing various monotonic deterioration paths while explicitly enforcing upper bounds to reflect the physical or managerial limits of an asset [2].
-*   In the Bayesian domain, uncertainty management is applied to assess the credibility of spatial fluctuations and material characteristics in coupled heat and moisture transport [5].
-*   Additionally, Bayesian filtering explicitly quantifies full parameter uncertainty for complex, multi-dimensional physics problems, such as tracking low-dimensional fatigue crack growth and high-dimensional random fields that model structural beam corrosion [3].
+* Across both domains, managing the inherent physical variability of asset degradation is achieved by establishing explicit probabilistic boundaries and credibility evaluations [2, 5].
+* In hybrid and stochastic modeling, the BTGP approach addresses uncertainty by characterizing various monotonic deterioration paths while explicitly enforcing upper bounds to reflect the physical or managerial limits of an asset [2].
+* In the Bayesian domain, uncertainty management is applied to assess the credibility of spatial fluctuations and material characteristics in coupled heat and moisture transport [5].
+* Additionally, Bayesian filtering explicitly quantifies full parameter uncertainty for complex, multi-dimensional physics problems, such as tracking low-dimensional fatigue crack growth and high-dimensional random fields that model structural beam corrosion [3].
 
 **Synthesizing Mechanics with Statistical Algorithms (Gray-Box Approaches)**
 **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
-*   Both themes demonstrate a shift away from pure first-principles modeling toward approaches where physical mechanics are deeply intertwined with statistical or machine learning frameworks [1, 3, 4].
-*   In hybrid modeling, this is achieved by using a physically calibrated finite element model to act as a data-generation simulator that trains an Artificial Neural Network (ANN), successfully bridging structural mechanics and predictive algorithms for viaduct management [1].
-*   In Bayesian updating, physical mechanisms such as heat and moisture transfer are not treated as static formulas; instead, their underlying parameters are continuously updated and corrected by Bayesian inference algorithms [3, 5].
-*   The convergence of these domains is most explicitly demonstrated in the framework for miter gates, which formally synthesizes hybrid deterioration modeling with recursive Bayesian state estimation to continuously refine predictive models over time [4].
+* Both themes demonstrate a shift away from pure first-principles modeling toward approaches where physical mechanics are deeply intertwined with statistical or machine learning frameworks [1, 3, 4].
+* In hybrid modeling, this is achieved by using a physically calibrated finite element model to act as a data-generation simulator that trains an Artificial Neural Network (ANN), successfully bridging structural mechanics and predictive algorithms for viaduct management [1].
+* In Bayesian updating, physical mechanisms such as heat and moisture transfer are not treated as static formulas; instead, their underlying parameters are continuously updated and corrected by Bayesian inference algorithms [3, 5].
+* The convergence of these domains is most explicitly demonstrated in the framework for miter gates, which formally synthesizes hybrid deterioration modeling with recursive Bayesian state estimation to continuously refine predictive models over time [4].
 
-[^1]: [[sources/ITcon paper: Infrastructure management via BIM model: integration of structural health monitoring and ANN-based damage assessment ]]
-[^2]: [[sources/Model Validation and Uncertainty Quantification, Vol. 3]]
+[^1]: 
+[^2]: 
 [^3]: [[sources/[1102.5239] Uncertainty Updating in the Description of Coupled Heat and Moisture Transport in Heterogeneous Materials]]
 [^4]: [[sources/[2205.03478] On off-line and on-line Bayesian filtering for uncertainty quantification of structural deterioration]]
 [^5]: [[sources/[2508.13359] Unified Modelling of Infrastructure Asset Performance Deterioration -- a bounded gamma process approach]]
@@ -128,17 +127,17 @@ Consequently, the specific structural and building-physics standards queried—s
 However, in the absence of cited documentary standards, the corpus treats specific foundational mathematical and algorithmic frameworks as the primary load-bearing anchors across its major themes [2-5].
 
 **Foundational Framework: Bayesian Inference and Recursive State Estimation**
-*   **What it is and what it contains:** A suite of probabilistic methodologies that use sparse or sequential observational data to continuously update the probability distribution and credibility of a hypothesis or model parameter [2-4].
-*   **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
-*   **Why it is load-bearing:** This mathematical framework is treated as the foundational truth for integrating data with physical uncertainty across disparate domains [2-4]. It is the core, universally relied-upon mechanism used to synthesize diverse information sources for coupled heat and moisture transport, to construct off-line and on-line filters for fatigue crack growth, and to correct hybrid degradation estimates for miter gates [2-4].
+* **What it is and what it contains:** A suite of probabilistic methodologies that use sparse or sequential observational data to continuously update the probability distribution and credibility of a hypothesis or model parameter [2-4].
+* **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
+* **Why it is load-bearing:** This mathematical framework is treated as the foundational truth for integrating data with physical uncertainty across disparate domains [2-4]. It is the core, universally relied-upon mechanism used to synthesize diverse information sources for coupled heat and moisture transport, to construct off-line and on-line filters for fatigue crack growth, and to correct hybrid degradation estimates for miter gates [2-4].
 
 **Foundational Framework: Stochastic Processes for Deterioration Modeling**
-*   **What it is and what it contains:** Statistical models, specifically relying on gamma processes and Gaussian mixtures, designed to characterize and approximate random but continuous degradation pathways over time [4, 5].
-*   **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
-*   **Why it is load-bearing:** Rather than relying on rigid first-principles physical kernels, these stochastic processes serve as the foundational baseline for representing physical degradation realistically [4, 5]. Gamma processes are treated as fundamentally essential for modeling overarching infrastructure asset performance due to their monotonic sample paths and independent increments, while Gaussian mixture models are presented as the foundational approximation tool within resampling processes to successfully evaluate beam corrosion and structural deterioration [4, 5].
+* **What it is and what it contains:** Statistical models, specifically relying on gamma processes and Gaussian mixtures, designed to characterize and approximate random but continuous degradation pathways over time [4, 5].
+* **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
+* **Why it is load-bearing:** Rather than relying on rigid first-principles physical kernels, these stochastic processes serve as the foundational baseline for representing physical degradation realistically [4, 5]. Gamma processes are treated as fundamentally essential for modeling overarching infrastructure asset performance due to their monotonic sample paths and independent increments, while Gaussian mixture models are presented as the foundational approximation tool within resampling processes to successfully evaluate beam corrosion and structural deterioration [4, 5].
 
-[^1]: [[sources/ITcon paper: Infrastructure management via BIM model: integration of structural health monitoring and ANN-based damage assessment ]]
-[^2]: [[sources/Model Validation and Uncertainty Quantification, Vol. 3]]
+[^1]: 
+[^2]: 
 [^3]: [[sources/[1102.5239] Uncertainty Updating in the Description of Coupled Heat and Moisture Transport in Heterogeneous Materials]]
 [^4]: [[sources/[2205.03478] On off-line and on-line Bayesian filtering for uncertainty quantification of structural deterioration]]
 [^5]: [[sources/[2508.13359] Unified Modelling of Infrastructure Asset Performance Deterioration -- a bounded gamma process approach]]
@@ -159,7 +158,7 @@ The pursuit of highly accurate structural deterioration assessments introduces a
 **Themes Used In:** Hybrid Modeling and Data-Driven Structural Assessment; Bayesian Uncertainty Quantification and Model Updating.
 Another recurring tension involves balancing the mathematical convenience of standardized probabilistic models against the necessity of enforcing realistic physical boundaries [3]. Within hybrid stochastic modeling, standard gamma processes are widely utilized for predicting infrastructure performance deterioration due to their inherent mathematical tractability, independent increments, and appealing monotonic sample paths [3]. However, relying solely on this unconstrained mathematical formulation introduces a critical limitation, as real-world structural degradation is inevitably constrained by physical or managerial limits [3]. To satisfy this practical modeling need, researchers must sacrifice basic mathematical simplicity by introducing upper bounds—such as the Bounded Transformed Gamma Process (BTGP)—which restores the flexibility required to accurately characterize diverse, constrained deterioration patterns [3]. A parallel tension arises in Bayesian uncertainty quantification applied to coupled heat and moisture transport [4]. Idealized, homogeneous physical models are inadequate for assessing the true durability of real-world structures [4]. To achieve reliable environmental field estimations, the foundational transport equations must be rigorously updated to account for the physical realities of heterogeneous materials [4]. This requires abandoning simpler models in favor of a probabilistic description that explicitly captures both spatial fluctuations and the particular values of individual material characteristics, accompanied by a strict evaluation of their credibility [4].
 
-[^1]: [[sources/ITcon paper: Infrastructure management via BIM model: integration of structural health monitoring and ANN-based damage assessment ]]
+[^1]: 
 [^3]: [[sources/[1102.5239] Uncertainty Updating in the Description of Coupled Heat and Moisture Transport in Heterogeneous Materials]]
 [^4]: [[sources/[2205.03478] On off-line and on-line Bayesian filtering for uncertainty quantification of structural deterioration]]
 [^5]: [[sources/[2508.13359] Unified Modelling of Infrastructure Asset Performance Deterioration -- a bounded gamma process approach]]

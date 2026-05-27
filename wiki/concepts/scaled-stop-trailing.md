@@ -31,4 +31,4 @@ A mechanical stop-loss management protocol taught in ICT's 2022 mentorship and r
 - [[concepts/halving-risk-after-loss]]
 - [[concepts/fvg-selection-and-stops]]
 - [[entities/trader-theory]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

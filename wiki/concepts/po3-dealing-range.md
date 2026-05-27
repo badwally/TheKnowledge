@@ -35,7 +35,7 @@ A Power of 3 (PO3) dealing range is a price segment, sized as a power of three (
 ## Related
 
 - [[entities/hopiplaka]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[concepts/power-of-3]]
 - [[concepts/goldbach-levels]]
 - [[concepts/fractal-po3]]

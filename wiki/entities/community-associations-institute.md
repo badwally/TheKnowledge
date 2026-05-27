@@ -53,6 +53,6 @@ Community Associations Institute (CAI) is a US organization that publishes educa
 - [[entities/freddie-mac]]
 - [[entities/fannie-mae-lender-letter-ll-2026-03]]
 - [[entities/champlain-towers-south]]
-- [[entities/foundation-for-community-association-research]]
+- [[entities/foundation-for-community-association-research|foundation-for-community-association-research]]
 - [[concepts/gse-15-percent-reserve-funding-requirement]]
-- [[concepts/cai-foundation-condo-warrantability-survey]]
+- [[concepts/cai-foundation-condo-warrantability-survey|cai-foundation-condo-warrantability-survey]]

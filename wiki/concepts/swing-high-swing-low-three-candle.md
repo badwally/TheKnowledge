@@ -34,5 +34,5 @@ A precise structural definition used in ICT-style technical analysis: a swing hi
 - [[concepts/buyside-sellside-liquidity]]
 - [[concepts/equal-highs-equal-lows]]
 - [[concepts/htf-liquidity-cascade]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
 - [[entities/ali-khan]]

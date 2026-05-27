@@ -32,4 +32,4 @@ Process-oriented trading is the ICT Month 2 discipline that good trading comes f
 - [[concepts/reward-to-risk-ratio]]
 - [[concepts/compounding-small-accounts]]
 - [[concepts/top-down-analysis]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]

@@ -33,4 +33,4 @@ Smart money accumulation and distribution refers, in ICT methodology, to institu
 - [[concepts/liquidity-pool]]
 - [[concepts/fair-value-gap]]
 - [[concepts/order-block]]
-- [[entities/inner-circle-trader]]
+- [[entities/inner-circle-trader|inner-circle-trader]]
