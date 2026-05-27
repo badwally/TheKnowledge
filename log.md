@@ -20645,3 +20645,43 @@ query against glp1-reward-modulation corpus
 ## [2026-05-27T20:55:22Z] discharge-orphans | domain=glp1-reward-modulation | filed=5 | skipped=0 | limit=5 | errors=0
 
 discharge-orphans: 5 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-27T20:56:08Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T20-56-08Z-schema-drift.md
+
+## [2026-05-27T21:07:03Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T21-07-03Z-schema-drift.md
+
+## [2026-05-27T21:19:50Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T21:19:50Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from-e59b03 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T21:20:18Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from-5e19ab | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T21:20:45Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T21:20:45Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from-529d8a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T21:21:18Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from-dffa60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T21:21:46Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from-278c1b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T21:21:46Z] discharge-orphans | domain=edge-ai-agentic | filed=5 | skipped=0 | limit=5 | errors=0
+
+discharge-orphans: 5 drafts filed for domain 'edge-ai-agentic'
