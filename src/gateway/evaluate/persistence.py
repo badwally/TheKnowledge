@@ -74,3 +74,15 @@ def read_trend(domain: str) -> list[dict[str, str]]:
         return []
     with path.open() as f:
         return list(csv.DictReader(f))
+
+
+def domains_with_goldens() -> list[str]:
+    """Return sorted list of domain slugs that have a goldens.yaml evaluation file."""
+    eval_root = paths.knowledge_internal() / "eval"
+    if not eval_root.exists():
+        return []
+    return sorted(
+        d.name
+        for d in eval_root.iterdir()
+        if d.is_dir() and (d / "goldens.yaml").exists()
+    )

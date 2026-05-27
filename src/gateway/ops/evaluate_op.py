@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from gateway import log, paths
 from gateway.core import OperationResult
-from gateway.evaluate.persistence import goldens_path_for
+from gateway.evaluate.persistence import domains_with_goldens, goldens_path_for
 from gateway.evaluate.runner import NoGoldensError, run_evaluate
 from gateway.evaluate.schema import scaffold_template
 
@@ -12,7 +12,8 @@ from gateway.evaluate.schema import scaffold_template
 def evaluate_op(*,
                 domain: str | None = None,
                 limit: int | None = None,
-                scaffold: str | None = None) -> OperationResult:
+                scaffold: str | None = None,
+                all_domains: bool = False) -> OperationResult:
     """Run the M50 evaluation or scaffold a new domain's goldens template."""
     if scaffold is not None:
         path = goldens_path_for(scaffold)
@@ -26,10 +27,13 @@ def evaluate_op(*,
             summary=f"scaffolded goldens template at {path}",
         )
 
+    if all_domains:
+        return _evaluate_all_domains(limit=limit)
+
     if domain is None:
         return OperationResult(
             success=False,
-            errors=["--domain is required (or pass --scaffold <domain> to bootstrap)"],
+            errors=["--domain is required (or pass --scaffold <domain> to bootstrap, or --all-domains to score all)"],
         )
 
     try:
@@ -63,4 +67,36 @@ def evaluate_op(*,
                 for r in summary.results
             )
         ),
+    )
+
+
+def _evaluate_all_domains(*, limit: int | None = None) -> OperationResult:
+    """Run evaluate_op for every domain that has a goldens.yaml and return aggregate results."""
+    domains = domains_with_goldens()
+    if not domains:
+        return OperationResult(
+            success=False,
+            errors=["no domains with goldens.yaml found — use `wiki evaluate --scaffold <domain>` to create one"],
+        )
+
+    lines: list[str] = []
+    errors: list[str] = []
+    paths_touched: list = []
+
+    for d in domains:
+        result = evaluate_op(domain=d, limit=limit)
+        if result.success:
+            first_line = result.summary.splitlines()[0] if result.summary else d
+            lines.append(f"  {first_line}")
+            paths_touched.extend(result.paths_touched or [])
+        else:
+            errors.append(f"{d}: {'; '.join(result.errors)}")
+
+    scored = len(domains) - len(errors)
+    summary = f"evaluate --all-domains: {scored}/{len(domains)} domains scored\n" + "\n".join(lines)
+    return OperationResult(
+        success=scored > 0,
+        errors=errors,
+        paths_touched=paths_touched,
+        summary=summary,
     )
