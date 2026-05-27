@@ -206,6 +206,12 @@ notebooks:
       created_at: '2026-04-29T19:08:10Z'
       sources_count: 12
       last_sync: '2026-04-29T19:49:03Z'
+  glp1-reward-modulation:
+    persistent:
+      notebook_id: 089b5d0a-af34-40ab-a82d-0cf311d793ac
+      created_at: '2026-05-27T19:25:00Z'
+      sources_count: 0
+      last_sync: null
   edge-ai-agentic:
     persistent:
       notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
