@@ -248,3 +248,37 @@ class SourceRecord(BaseModel):
     link_status: str | None = None
     word_count: int = 0
     draft: bool = False
+
+
+# TOOL-8: /today daily triage response
+
+class DraftItemResponse(BaseModel):
+    slug: str
+    title: str
+    age_days: int
+    wiki_path: str
+
+
+class OrphanSourceResponse(BaseModel):
+    source_id: str
+    title: str
+    source_type: str
+    ingested_at: str
+
+
+class IngestedSourceResponse(BaseModel):
+    source_id: str
+    title: str
+    source_type: str
+    domains: list[str] = []
+    ingested_at: str
+
+
+class DailyReviewResponse(BaseModel):
+    as_of: str
+    inbox_count: int
+    inbox_failed: int
+    triage_queue_depth: int
+    recently_ingested: list[IngestedSourceResponse] = []
+    stale_drafts: list[DraftItemResponse] = []
+    orphan_sources: list[OrphanSourceResponse] = []

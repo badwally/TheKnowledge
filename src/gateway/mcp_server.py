@@ -1107,6 +1107,29 @@ def wiki_routine(
     return {"success": False, "summary": f"unknown routine: {routine}"}
 
 
+@mcp.tool()
+def wiki_daily(
+    lookback_hours: float = 24.0,
+    stale_days: int = 7,
+    orphan_limit: int = 30,
+) -> dict[str, Any]:
+    """Morning triage list: stale drafts, orphan sources, inbox count, recently ingested.
+
+    `lookback_hours`: Look-back window for recently ingested sources (default 24).
+    `stale_days`: Draft staleness threshold in days (default 7).
+    `orphan_limit`: Max orphan sources to include (default 30).
+    """
+    import dataclasses
+    from gateway.ops.daily_review import run_daily_review
+
+    result = run_daily_review(
+        lookback_hours=lookback_hours,
+        stale_days=stale_days,
+        orphan_limit=orphan_limit,
+    )
+    return dataclasses.asdict(result)
+
+
 # --- entry point -----------------------------------------------------------
 
 
