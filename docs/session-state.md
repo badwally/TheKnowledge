@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M94 complete — TOOL-15 wiki ask-corpus)
+Last updated: 2026-05-26 (M95 complete — TOOL-16 wiki question management)
 
 ---
 
@@ -18,7 +18,7 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m94-phase7-round-f. 1750 tests passing.
+None. main is clean at m95-phase7-round-g. 1769 tests passing.
 Phase 7 delivery log in BUILD.md § 15.
 
 ---
@@ -31,6 +31,7 @@ Phase 7 delivery log in BUILD.md § 15.
 - M92: ONT-14 question page type. 1740 tests.
 - M93: TOOL-10 shell completion + help examples. 1740 tests.
 - M94: TOOL-15 wiki ask-corpus (thin wrapper over query() op). 1750 tests.
+- M95: TOOL-16 wiki question new/list management commands. 1769 tests.
 
 ---
 
@@ -38,13 +39,13 @@ Phase 7 delivery log in BUILD.md § 15.
 
 - ONT-9 (domain hierarchy): deferred — 22 MOCs manageable flat.
 - QUAL-8/ARCH-12/ONT-1: deferred — all L-effort, no forcing function.
-- Separate NLM notebook_query op for TOOL-15: not needed — query() already does this.
+- ONT-15 (rename synthesizes → wasDerivedFrom): 282 code references + 46 wiki pages, not S effort.
 
 ---
 
 ## Next atomic step
 
 Phase 7 continues. Remaining candidates from backlog:
-- ONT-15 (rename synthesizes → wasDerivedFrom): S effort, cosmetic, low priority
-- QUAL-4 follow-up checks or new quality cluster
-- wiki schedule list / enable / disable subcommands (schedule management UX)
+- QUAL-8 (citation-claim coherence): L effort, needs forcing function — skip
+- Source-orphan tail: discharge via `wiki query` synthesis loops (manual/user-driven)
+- Any new S/M items identified from operational use

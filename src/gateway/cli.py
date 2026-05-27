@@ -74,6 +74,7 @@ SUBCOMMANDS: dict[str, str] = {
     "daily": "Morning triage list: stale drafts, orphan sources, inbox count, recently ingested (TOOL-8)",
     "cite-capture": "Ingest a URL if needed and add a citation to a wiki page (AGT-7)",
     "ask-corpus": "Ask the domain's NLM corpus a question and file the answer as a draft synthesis (TOOL-15)",
+    "question": "Create or list wiki question pages (TOOL-16)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -135,6 +136,7 @@ IMPLEMENTED: set[str] = {
     "daily",
     "cite-capture",
     "ask-corpus",
+    "question",
 }
 
 
@@ -504,6 +506,41 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="File as finalized (default: draft=True for corpus answers)",
     )
+
+    # question: question page management (TOOL-16)
+    p_question = subparsers.add_parser(
+        "question",
+        help=SUBCOMMANDS["question"],
+        epilog=(
+            "Examples:\n"
+            '  wiki question new how-does-glp1-reduce-cravings "How does GLP-1 reduce food cravings?" --domain glp1\n'
+            "  wiki question list\n"
+            "  wiki question list --status open --domain glp1"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_q_sub = p_question.add_subparsers(dest="question_action", required=True)
+
+    p_q_new = p_q_sub.add_parser("new", help="Create a new question page")
+    p_q_new.add_argument("slug", help="Kebab-case slug for the question page")
+    p_q_new.add_argument("title", help="Question title (full sentence)")
+    p_q_new.add_argument("--domain", required=True, help="Domain slug to associate the question with")
+    p_q_new.add_argument(
+        "--status",
+        default="open",
+        choices=("open", "partial", "answered"),
+        help="Initial status (default: open)",
+    )
+
+    p_q_list = p_q_sub.add_parser("list", help="List question pages")
+    p_q_list.add_argument("--domain", default=None, help="Filter by domain slug")
+    p_q_list.add_argument(
+        "--status",
+        default=None,
+        choices=("open", "partial", "answered"),
+        help="Filter by status",
+    )
+    p_q_list.add_argument("--json", dest="json_out", action="store_true", help="Output JSON")
 
     # research: corpus-constructive research loop
     p_research = subparsers.add_parser(
@@ -1302,6 +1339,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_cite_capture_cmd(ns)
     if ns.subcommand == "ask-corpus":
         return _run_ask_corpus_cmd(ns)
+    if ns.subcommand == "question":
+        return _run_question_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2341,6 +2380,40 @@ def _run_ask_corpus_cmd(ns: argparse.Namespace) -> int:
     draft = not getattr(ns, "no_draft", False)
     result = query(ns.question, domain=ns.domain, draft=draft)
     return _emit_result(result)
+
+
+def _run_question_cmd(ns: argparse.Namespace) -> int:
+    import json as _json
+    from gateway.ops.question import question_list, question_new
+
+    action = ns.question_action
+    if action == "new":
+        result = question_new(ns.slug, ns.title, ns.domain, status=ns.status)
+        return _emit_result(result)
+
+    if action == "list":
+        items = question_list(
+            domain=getattr(ns, "domain", None),
+            status=getattr(ns, "status", None),
+        )
+        if getattr(ns, "json_out", False):
+            print(_json.dumps(items, indent=2))
+            return 0
+        if not items:
+            print("no question pages found")
+            return 0
+        # Simple table: status | slug | domains | title
+        print(f"{'STATUS':<10} {'SLUG':<40} {'DOMAINS':<20} TITLE")
+        print("-" * 90)
+        for item in items:
+            doms = ",".join(item["domains"])
+            slug = item["slug"][:39]
+            title = item["title"][:50]
+            print(f"{item['status']:<10} {slug:<40} {doms:<20} {title}")
+        return 0
+
+    print(f"error: unknown question action: {action}", file=sys.stderr)
+    return 2
 
 
 def _run_daily_cmd(ns: argparse.Namespace) -> int:

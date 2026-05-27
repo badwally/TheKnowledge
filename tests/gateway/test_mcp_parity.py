@@ -61,8 +61,8 @@ def test_no_orphan_mcp_tools_without_cli_op():
     }
     orphans = actual_tools - cli_ops_as_mcp
     # Allow auxiliary tools that don't have a CLI counterpart by listing them
-    # in a small expected set. wiki_poll_list is the only such today.
-    expected_auxiliary = {"wiki_poll_list"}
+    # in a small expected set. wiki_poll_list + wiki_question_* are auxiliaries.
+    expected_auxiliary = {"wiki_poll_list", "wiki_question_new", "wiki_question_list"}
     unexpected_orphans = orphans - expected_auxiliary
     assert not unexpected_orphans, (
         f"MCP tools without a CLI op or auxiliary entry: {sorted(unexpected_orphans)}"

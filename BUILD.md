@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 15. Phase 7 delivery log (2026-05-26)
 
+### M95 — Phase 7 Round G (TOOL-16 wiki question management)
+
+See `docs/milestones/M95.md`. TOOL-16: `wiki question new <slug> "<title>" --domain <domain>` creates a question page at `wiki/questions/<slug>.md`; `wiki question list [--domain D] [--status open|partial|answered] [--json]` queries existing questions. `ops/question.py` implements both; `wiki_question_new` and `wiki_question_list` MCP auxiliaries registered (parity test updated). 19 tests. Tests: 1750 → 1769 (+19), 0 regressions. Tag: `m95-phase7-round-g`.
+
 ### M94 — Phase 7 Round F (TOOL-15 wiki ask-corpus)
 
 See `docs/milestones/M94.md`. TOOL-15: `wiki ask-corpus <domain> "<question>"` — thin wrapper over `query()` with domain-first interface and `draft=True` default. CLI dispatcher `_run_ask_corpus_cmd` and MCP tool `wiki_ask_corpus` added; both delegate entirely to the existing `ops/query.py` which already handles NLM notebook queries. `--no-draft` flag for immediate finalization. 10 tests covering CLI dispatch, `--no-draft` flag, parser wiring, MCP tool existence, serializable output. Tests: 1740 → 1750 (+10), 0 regressions. Tag: `m94-phase7-round-f`.

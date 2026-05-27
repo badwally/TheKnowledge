@@ -81,6 +81,10 @@ CLI_ONLY: frozenset[str] = frozenset(
         "backfill-synthesizes",
         # Log rotation is a bulk maintenance operation. Scheduler owns invocation.
         "rotate-log",
+        # `question` is a multi-action umbrella (new/list); the fine-grained
+        # wiki_question_new + wiki_question_list MCP tools are registered as
+        # auxiliaries (TOOL-16). The umbrella name has no 1:1 MCP counterpart.
+        "question",
     }
 )
 
@@ -1157,6 +1161,22 @@ def wiki_ask_corpus(domain: str, question: str, draft: bool = True) -> dict[str,
     from gateway.ops.query import query
 
     return _serialize(query(question, domain=domain, draft=draft))
+
+
+@mcp.tool()
+def wiki_question_new(slug: str, title: str, domain: str, status: str = "open") -> dict[str, Any]:
+    """Create a new wiki question page at wiki/questions/<slug>.md (TOOL-16)."""
+    from gateway.ops.question import question_new
+
+    return _serialize(question_new(slug, title, domain, status=status))
+
+
+@mcp.tool()
+def wiki_question_list(domain: str | None = None, status: str | None = None) -> list[dict[str, Any]]:
+    """List wiki question pages, optionally filtered by domain or status (TOOL-16)."""
+    from gateway.ops.question import question_list
+
+    return question_list(domain=domain, status=status)
 
 
 # --- entry point -----------------------------------------------------------
