@@ -19,7 +19,7 @@ title: 'Synthesis: CINC Systems 2024-2026 competitive evolution — platform, ca
   capital-planning module. Use wikilink format [[~/code/knowledge/wiki/sources/<slug>]]
   for citations. No numeric footnotes.'
 domains:
-- condo-capital-infra
+- condo
 question: 'Synthesis: CINC Systems 2024-2026 competitive evolution — platform, capitalization,
   M&A pattern, and reserve-study positioning, with Vantaca as the secondary CAM-SaaS-platform
   comparison. Cover: (1) Cephai+ AI agent inventory (invoice processing, EFT reconciliation,

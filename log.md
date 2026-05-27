@@ -19973,3 +19973,131 @@ evaluate edge-ai-agentic: 10 Q, mean=0.687
 ## [2026-05-27T17:23:58Z] evaluate | domain=glp1-reward-modulation | n_questions=15 | mean_score=0.671 | input_tokens=2827 | cache_read_tokens=322266
 
 evaluate glp1-reward-modulation: 15 Q, mean=0.671
+
+## [2026-05-27T17:29:10Z] lint | scope=schema-drift | schema-drift=276
+
+report=.knowledge/lint/2026-05-27T17-29-10Z-schema-drift.md
+
+## [2026-05-27T17:29:16Z] lint | scope=schema-drift | schema-drift=276
+
+report=.knowledge/lint/2026-05-27T17-29-16Z-schema-drift.md
+
+## [2026-05-27T17:48:24Z] lint | scope=schema-drift | schema-drift=276
+
+report=.knowledge/lint/2026-05-27T17-48-24Z-schema-drift.md
+
+## [2026-05-27T17:48:26Z] lint | scope=synthesizes-coverage | synthesizes-coverage=13
+
+report=.knowledge/lint/2026-05-27T17-48-26Z-synthesizes-coverage.md
+
+## [2026-05-27T17:52:01Z] lint | scope=schema-drift | schema-drift=276
+
+report=.knowledge/lint/2026-05-27T17-52-01Z-schema-drift.md
+
+## [2026-05-27T17:53:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1958 | cache_read=0 | cache_creation=83770 | duration_ms=26773 | cost_usd=0.114511
+
+## [2026-05-27T17:53:38Z] ingest | id=pdf-4cea968b4b78 | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/pdf/pdf-4cea968b4b78.md (wiki not written: filter decision=rejected)
+
+## [2026-05-27T17:54:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2835 | cache_read=88232 | cache_creation=0 | duration_ms=35744 | cost_usd=0.023006
+
+## [2026-05-27T17:54:32Z] ingest | id=pdf-58cd32ac73c8 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/pdf/pdf-58cd32ac73c8.md wiki=wiki/sources/pdf-58cd32ac73c8.md
+
+## [2026-05-27T17:55:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3308 | cache_read=72643 | cache_creation=11791 | duration_ms=40837 | cost_usd=0.038551
+
+## [2026-05-27T17:55:17Z] ingest | id=pdf-09e4d9621e87 | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/pdf/pdf-09e4d9621e87.md (wiki not written: filter decision=rejected)
+
+## [2026-05-27T17:55:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3038 | cache_read=72643 | cache_creation=12471 | duration_ms=33289 | cost_usd=0.038051
+
+## [2026-05-27T17:55:54Z] ingest | id=pdf-da86bd51429b | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.85
+
+raw=raw/pdf/pdf-da86bd51429b.md wiki=wiki/sources/pdf-da86bd51429b.md
+
+## [2026-05-27T17:56:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3649 | cache_read=72643 | cache_creation=15881 | duration_ms=44348 | cost_usd=0.045369
+
+## [2026-05-27T17:56:42Z] ingest | id=pdf-5dad0dbc650c | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/pdf/pdf-5dad0dbc650c.md wiki=wiki/sources/pdf-5dad0dbc650c.md
+
+## [2026-05-27T17:57:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2431 | cache_read=88202 | cache_creation=0 | duration_ms=69659 | cost_usd=0.020983
+
+## [2026-05-27T17:57:58Z] ingest | id=pdf-28d4b9d34712 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/pdf/pdf-28d4b9d34712.md wiki=wiki/sources/pdf-28d4b9d34712.md
+
+## [2026-05-27T17:58:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1983 | cache_read=72643 | cache_creation=12159 | duration_ms=26046 | cost_usd=0.032386
+
+## [2026-05-27T17:58:28Z] ingest | id=pdf-9fcc4e9f57bf | type=pdf | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/pdf/pdf-9fcc4e9f57bf.md (wiki not written: filter decision=review)
+
+## [2026-05-27T17:59:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3001 | cache_read=72643 | cache_creation=15856 | duration_ms=39504 | cost_usd=0.042097
+
+## [2026-05-27T17:59:12Z] ingest | id=pdf-427f1fbfc9c8 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/pdf/pdf-427f1fbfc9c8.md wiki=wiki/sources/pdf-427f1fbfc9c8.md
+
+## [2026-05-27T18:00:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=6160 | cache_read=72643 | cache_creation=12546 | duration_ms=70473 | cost_usd=0.053755
+
+## [2026-05-27T18:00:26Z] ingest | id=pdf-e208682ecbca | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/pdf/pdf-e208682ecbca.md wiki=wiki/sources/pdf-e208682ecbca.md
+
+## [2026-05-27T18:01:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2484 | cache_read=72643 | cache_creation=13241 | duration_ms=30841 | cost_usd=0.036244
+
+## [2026-05-27T18:01:01Z] ingest | id=pdf-9b2ac7733e3f | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/pdf/pdf-9b2ac7733e3f.md (wiki not written: filter decision=rejected)
+
+## [2026-05-27T18:01:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2399 | cache_read=72643 | cache_creation=12448 | duration_ms=29058 | cost_usd=0.034827
+
+## [2026-05-27T18:01:34Z] ingest | id=pdf-9c47bade3168 | type=pdf | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.4
+
+raw=raw/pdf/pdf-9c47bade3168.md (wiki not written: filter decision=rejected)
+
+## [2026-05-27T18:01:36Z] ingest | id=pdf-1c554d4c6512 | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-1c554d4c6512.md wiki=wiki/sources/pdf-1c554d4c6512.md
+
+## [2026-05-27T18:02:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2919 | cache_read=72643 | cache_creation=13425 | duration_ms=35925 | cost_usd=0.038649
+
+## [2026-05-27T18:02:15Z] ingest | id=pdf-480f25d82c1f | type=pdf | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/pdf/pdf-480f25d82c1f.md (wiki not written: filter decision=review)
+
+## [2026-05-27T18:02:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2255 | cache_read=72643 | cache_creation=11169 | duration_ms=26087 | cost_usd=0.032509
+
+## [2026-05-27T18:02:45Z] ingest | id=pdf-de2ba769f276 | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=1.0
+
+raw=raw/pdf/pdf-de2ba769f276.md wiki=wiki/sources/pdf-de2ba769f276.md
+
+## [2026-05-27T18:02:57Z] lint | scope=synthesizes-coverage | synthesizes-coverage=15
+
+report=.knowledge/lint/2026-05-27T18-02-57Z-synthesizes-coverage.md
+
+## [2026-05-27T18:03:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3243 | cache_read=72643 | cache_creation=13716 | duration_ms=38951 | cost_usd=0.040632
+
+## [2026-05-27T18:03:28Z] ingest | id=pdf-b73e53ed0c0d | type=pdf | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.95
+
+raw=raw/pdf/pdf-b73e53ed0c0d.md wiki=wiki/sources/pdf-b73e53ed0c0d.md
+
+## [2026-05-27T18:04:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2818 | cache_read=72643 | cache_creation=11142 | duration_ms=31023 | cost_usd=0.035290
+
+## [2026-05-27T18:04:03Z] ingest | id=docx-e0e4eceffb0a | type=docx | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/docx/docx-e0e4eceffb0a.md (wiki not written: filter decision=rejected)
+
+## [2026-05-27T18:04:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2675 | cache_read=72643 | cache_creation=11327 | duration_ms=30386 | cost_usd=0.034806
+
+## [2026-05-27T18:04:37Z] ingest | id=docx-427cfebf73ed | type=docx | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/docx/docx-427cfebf73ed.md (wiki not written: filter decision=rejected)
+
+## [2026-05-27T18:04:50Z] lint | scope=orphans | orphans=540
+
+report=.knowledge/lint/2026-05-27T18-04-50Z-orphans.md

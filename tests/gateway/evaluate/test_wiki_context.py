@@ -108,3 +108,38 @@ def test_empty_domain_returns_empty_string(kb_root):
     """Domain with no pages returns empty context (not an error)."""
     ctx = load_wiki_context("nonexistent-domain")
     assert ctx == ""
+
+
+def test_source_body_over_cap_is_excluded(kb_root):
+    """Source bodies exceeding max_source_body_chars are silently skipped so
+    large PDFs or statutory texts don't exhaust the context budget."""
+    _write_raw_source(kb_root, "web-small", "Small body content.")
+    _write_raw_source(kb_root, "web-large", "X" * 50_000)
+    _write_synthesis(kb_root, "synth-c", "test-domain",
+                     ["sources/web-small", "sources/web-large"])
+
+    ctx = load_wiki_context("test-domain", max_source_body_chars=30_000)
+
+    assert "Small body content" in ctx
+    assert "X" * 100 not in ctx  # large source excluded
+
+
+def test_source_body_at_cap_boundary_is_included(kb_root):
+    """A source body exactly at the cap is included."""
+    body = "Y" * 30_000
+    _write_raw_source(kb_root, "web-exact", body)
+    _write_synthesis(kb_root, "synth-d", "test-domain", ["sources/web-exact"])
+
+    ctx = load_wiki_context("test-domain", max_source_body_chars=30_000)
+
+    assert "Y" * 100 in ctx  # body present
+
+
+def test_default_cap_filters_very_large_sources(kb_root):
+    """Default cap (30k) keeps the context sane for domains with large PDFs."""
+    _write_raw_source(kb_root, "web-giant", "Z" * 60_000)
+    _write_synthesis(kb_root, "synth-e", "test-domain", ["sources/web-giant"])
+
+    ctx = load_wiki_context("test-domain")
+
+    assert "Z" * 100 not in ctx  # default 30k cap excluded it

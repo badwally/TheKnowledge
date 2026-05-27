@@ -28,6 +28,7 @@ class ContextTooLargeError(RuntimeError):
 
 
 _DEFAULT_MAX_CHARS = 500_000
+_DEFAULT_MAX_SOURCE_BODY_CHARS = 30_000
 
 
 def _strip_sources_prefix(source_id: str) -> str:
@@ -39,8 +40,14 @@ def _strip_sources_prefix(source_id: str) -> str:
 
 
 def load_wiki_context(domain: str, *,
-                      max_chars: int = _DEFAULT_MAX_CHARS) -> str:
-    """Assemble the wiki context block for `domain`."""
+                      max_chars: int = _DEFAULT_MAX_CHARS,
+                      max_source_body_chars: int = _DEFAULT_MAX_SOURCE_BODY_CHARS) -> str:
+    """Assemble the wiki context block for `domain`.
+
+    ``max_source_body_chars`` caps individual raw source bodies; bodies exceeding
+    this limit are silently skipped so large PDFs / statutory texts don't consume
+    the entire context budget.
+    """
     kb_root = paths.knowledge_root()
 
     syntheses = _collect_pages(kb_root / "wiki" / "synthesis", domain)
@@ -48,7 +55,8 @@ def load_wiki_context(domain: str, *,
     entities = _collect_pages(kb_root / "wiki" / "entities", domain)
 
     source_ids = _collect_source_ids(syntheses)
-    source_bodies = _read_source_bodies(kb_root, source_ids)
+    source_bodies = _read_source_bodies(kb_root, source_ids,
+                                        max_body_chars=max_source_body_chars)
 
     sections: list[str] = []
     if syntheses:
@@ -96,7 +104,8 @@ def _collect_source_ids(syntheses: list[tuple[Path, dict, str]]) -> list[str]:
     return out
 
 
-def _read_source_bodies(kb_root: Path, source_ids: list[str]) -> dict[str, str]:
+def _read_source_bodies(kb_root: Path, source_ids: list[str], *,
+                        max_body_chars: int = _DEFAULT_MAX_SOURCE_BODY_CHARS) -> dict[str, str]:
     bodies: dict[str, str] = {}
     for sid in source_ids:
         for st in paths.SOURCE_TYPES:
@@ -104,7 +113,8 @@ def _read_source_bodies(kb_root: Path, source_ids: list[str]) -> dict[str, str]:
             if candidate.exists():
                 try:
                     _, body = fm.parse(candidate.read_text())
-                    bodies[sid] = body
+                    if len(body) <= max_body_chars:
+                        bodies[sid] = body
                 except fm.FrontmatterError:
                     pass
                 break
