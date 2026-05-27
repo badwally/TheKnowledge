@@ -2,58 +2,59 @@
 schema_version: 1
 type: synthesis
 slug: 2026-05-27-what-are-the-key-insights-from
-title: 'What are the key insights from "2025-05-03 Memo to owners" in the context
-  of AI-native probabilistic reserve studies for condominium associations under regulated
-  reserve-study mandates? The source describes: Summer Gardens
-
-  2025 Reserve Fund Study – Financial Options
-
-  Thank you to all those who attended the Town Hall meeting, either in person or
-
-  through the Zoom. As we promised at that meeting, this memo provides further detail
-
-  and explanation of the financing options. The attached tables show the forecas'
+title: "What are the key insights from \"AWS re:Invent 2025 - Building Scalable, Self-Orchestrating\
+  \ AI Workflows with A2A and MCP (DEV415)\" in the context of Edge inference for\
+  \ agentic AI workflows? The source describes: _(legacy import — body is the original\
+  \ summary; full source content is not re-fetched in v1)_\n\n# AWS re:Invent 2025\
+  \ - Building Scalable, Self-Orchestrating AI Workflows with A2A and MCP (DEV415)\n\
+  \n**Channel:** AWS Events  \n**Duration:** PT56M19S  \n**Views:** 1391  \n**Published:**\
+  \ 2025-12-03T04:13:01Z"
 domains:
-- condo-capital-infra
-question: 'What are the key insights from "2025-05-03 Memo to owners" in the context
-  of AI-native probabilistic reserve studies for condominium associations under regulated
-  reserve-study mandates? The source describes: Summer Gardens
-
-  2025 Reserve Fund Study – Financial Options
-
-  Thank you to all those who attended the Town Hall meeting, either in person or
-
-  through the Zoom. As we promised at that meeting, this memo provides further detail
-
-  and explanation of the financing options. The attached tables show the forecas'
-created_at: '2026-05-27T18:42:36Z'
-last_updated: '2026-05-27T18:42:36Z'
-sources_count: 0
-nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
+- edge-ai-agentic
+question: "What are the key insights from \"AWS re:Invent 2025 - Building Scalable,\
+  \ Self-Orchestrating AI Workflows with A2A and MCP (DEV415)\" in the context of\
+  \ Edge inference for agentic AI workflows? The source describes: _(legacy import\
+  \ — body is the original summary; full source content is not re-fetched in v1)_\n\
+  \n# AWS re:Invent 2025 - Building Scalable, Self-Orchestrating AI Workflows with\
+  \ A2A and MCP (DEV415)\n\n**Channel:** AWS Events  \n**Duration:** PT56M19S  \n\
+  **Views:** 1391  \n**Published:** 2025-12-03T04:13:01Z"
+created_at: '2026-05-27T18:58:22Z'
+last_updated: '2026-05-27T18:58:22Z'
+sources_count: 1
+nlm_notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
 draft: true
-draft_started_at: '2026-05-27T18:42:36Z'
-draft_unresolved_claims: 15
+draft_started_at: '2026-05-27T18:58:22Z'
+draft_unresolved_claims: 0
 ---
-# What are the key insights from "2025-05-03 Memo to owners" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: Summer Gardens
-2025 Reserve Fund Study – Financial Options
-Thank you to all those who attended the Town Hall meeting, either in person or
-through the Zoom. As we promised at that meeting, this memo provides further detail
-and explanation of the financing options. The attached tables show the forecas
+# What are the key insights from "AWS re:Invent 2025 - Building Scalable, Self-Orchestrating AI Workflows with A2A and MCP (DEV415)" in the context of Edge inference for agentic AI workflows? The source describes: _(legacy import — body is the original summary; full source content is not re-fetched in v1)_
+
+# AWS re:Invent 2025 - Building Scalable, Self-Orchestrating AI Workflows with A2A and MCP (DEV415)
+
+**Channel:** AWS Events  
+**Duration:** PT56M19S  
+**Views:** 1391  
+**Published:** 2025-12-03T04:13:01Z
 
 ## Synthesis
 
-**1. The "Black Box" Spreadsheet Gap**
-The May 2025 memo reveals that the condo board was forced to manually estimate the financial impact of a $10,000 special assessment by guessing the mathematical midpoint between the engineer's zero-assessment and $20,000-assessment scenarios [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. The board explicitly admits to owners that they "do not have access to the spreadsheet used by the engineers to do the calculations and cannot assure you that this is mathematically accurate" [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. This highlights the core product failure of legacy engineering services: delivering static PDFs instead of interactive software [[~/code/knowledge/wiki/sources/docx-bf4965d0d33a.docx]]. An AI-native platform solves this by providing an interactive financial dashboard where boards can dynamically adjust scenario sliders—like testing exact special assessment amounts—and instantly view mathematically accurate, fully recalculated funding outcomes without relying on rough interpolation [[~/code/knowledge/wiki/sources/docx-bf4965d0d33a.docx]].
+**1. The "Agent Loop" for Idempotent, Stateless Execution**
+To ensure reliability in distributed systems—such as edge networks where network drops and execution retries are common—agents must behave predictably [1] [[sources/yt-9O9zZ1lQWiI]], [2] [[sources/yt-9O9zZ1lQWiI]]. The presentation introduces the **"Agent Loop" (Compose, Query, Execute, Continue)** as an execution model that makes agents re-entrant and idempotent [1] [[sources/yt-9O9zZ1lQWiI]], [2] [[sources/yt-9O9zZ1lQWiI]]. Because distributed compute environments often lack built-in state between invocations, the agent reconstructs its context from a shared memory state at the beginning of every loop rather than relying on warm memory [3] [[sources/yt-9O9zZ1lQWiI]], [4] [[sources/yt-9O9zZ1lQWiI]]. This guarantees that network retries do not result in duplicate actions or unintended side effects [2] [[sources/yt-9O9zZ1lQWiI]], [5] [[sources/yt-9O9zZ1lQWiI]].
 
-**2. The Binary Trap of Deterministic Smoothing**
-Because traditional deterministic models lack stochastic financial optimization algorithms, they force boards into extreme, binary funding choices just to satisfy the statutory requirement that the fund balance never drops below zero [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]] [[~/code/knowledge/wiki/sources/docx-818ed0a0ce55.docx]]. The memo illustrates this trap by showing the board's two baseline options: an "immediately funded" plan requiring a catastrophic 80.8% fee increase in the first year, or a "gradually funded" plan requiring punishing 17% year-over-year increases [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. To avoid these jagged fee spikes, the board was forced to ask the engineers to manually layer in massive $20,000 upfront special assessments just to "flatten the curve" [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. Probabilistic reserve engines eliminate this manual trial-and-error by running Monte Carlo simulations to algorithmically smooth the contribution schedule, balancing statutory compliance with fee stability [[~/code/knowledge/wiki/sources/docx-818ed0a0ce55.docx]].
+**2. Decentralized Collaboration via A2A and "Agent Cards"**
+Scaling multi-agent systems requires moving away from static, hard-coded wiring or central registries [6] [[sources/yt-9O9zZ1lQWiI]], [7] [[sources/yt-9O9zZ1lQWiI]]. Using the Agent-to-Agent (A2A) protocol, **agents dynamically discover each other at runtime using "Agent Cards"** [8] [[sources/yt-9O9zZ1lQWiI]], [9] [[sources/yt-9O9zZ1lQWiI]]. These cards are standard JSON documents hosted at well-known paths that advertise an agent's specific capabilities, versions, and expected input schemas [8] [[sources/yt-9O9zZ1lQWiI]], [9] [[sources/yt-9O9zZ1lQWiI]]. In a distributed computing context, this late-binding approach allows peer devices to dynamically find and delegate tasks to available agents across the network using standard HTTP endpoints without needing custom integration code [8] [[sources/yt-9O9zZ1lQWiI]], [9] [[sources/yt-9O9zZ1lQWiI]], [7] [[sources/yt-9O9zZ1lQWiI]].
 
-**3. The Danger of Flat Macroeconomic Assumptions**
-To forecast the total monthly condo fees for owners, the board had to manually combine the engineer's capital projections with their own static assumption that operating expenses will increase by exactly 2.5% per year indefinitely [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. This reliance on flat inflation escalators is a major vulnerability, as it fails to capture real-world macroeconomic volatility, labor-supply shocks, or sudden insurance spikes [[~/code/knowledge/wiki/sources/docx-bf4965d0d33a.docx]] [[~/code/knowledge/wiki/sources/Seed Deck Brief — Halifax-Chair / Seed-Investor]]. Modern AI-native reserve platforms abandon flat 2.5% assumptions and instead deploy regime-switching cost-escalation models that dynamically stress-test total funding requirements against shifting economic climates [[~/code/knowledge/wiki/sources/Seed Deck Brief — Halifax-Chair / Seed-Investor]].
+**3. MCP for Strict Context and Schema Validation**
+While A2A handles agent-to-agent delegation, the Model Context Protocol (MCP) is essential for standardizing how an agent interacts with its tools and local data [10] [[sources/yt-9O9zZ1lQWiI]], [11] [[sources/yt-9O9zZ1lQWiI]]. By providing strictly typed and validated interfaces, **MCP enforces predictable data structures that eliminate ambiguity for the language model** [11] [[sources/yt-9O9zZ1lQWiI]]. This is highly beneficial for distributed workflows, as it ensures that even smaller, fast models remain stable and deterministic when accessing resources, preventing malformed model outputs from crashing the system [11] [[sources/yt-9O9zZ1lQWiI]], [12] [[sources/yt-9O9zZ1lQWiI]].
 
-**4. The Burden of Statutory Pre-Funding**
-The memo emphasizes that under the Condominium Act, the association is legally required to "save for expenses before they arise" and must prove the fund remains solvent over a 20-year horizon [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. Because the traditional study relies on single-point estimates for major end-of-horizon replacements, the board is forced to ask owners to "Pay me now or pay me (more) later" to aggressively hoard cash for distant, static failure dates [[~/code/knowledge/wiki/sources/pdf-9b2ac7733e3f.pdf]]. An AI-native probabilistic model replaces these rigid point estimates with calibrated uncertainty bands (P10/P50/P90) generated from survival curves, allowing boards to precisely quantify the statistical risk of fund depletion rather than blindly over-capitalizing against a single worst-case year [[~/code/knowledge/wiki/sources/Seed Deck Brief — Halifax-Chair / Seed-Investor]].
+**4. Separation of Supervisors and Workers for Model Routing**
+A critical architectural pattern for scalable agentic workflows is dividing labor based on the required reasoning capabilities [13] [[sources/yt-9O9zZ1lQWiI]], [14] [[sources/yt-9O9zZ1lQWiI]], [15] [[sources/yt-9O9zZ1lQWiI]]:
+*   **Supervisors:** Act as orchestrators responsible for global reasoning, multi-step planning, dependency resolution, and evaluating outputs [14] [[sources/yt-9O9zZ1lQWiI]]. They require highly capable, reasoning-heavy models [16] [[sources/yt-9O9zZ1lQWiI]].
+*   **Workers:** Act as "the grunts" designed to execute very specific tasks fast, cheaply, and deterministically [15] [[sources/yt-9O9zZ1lQWiI]]. 
+In an edge AI environment, this allows for strategic hardware routing: heavy supervisor agents can be deferred to more capable nodes, while lightweight worker agents can be deployed using smaller, highly specialized models running rapidly on constrained hardware [15] [[sources/yt-9O9zZ1lQWiI]], [16] [[sources/yt-9O9zZ1lQWiI]]. 
+
+**5. Abandoning the "Mono-Agent" for Domain-Scoped Microservices**
+Deploying a single "mono-agent" with universal access to an entire system (e.g., databases, payments, and ordering) is a massive operational and security risk [17] [[sources/yt-9O9zZ1lQWiI]], [18] [[sources/yt-9O9zZ1lQWiI]]. Instead, the architecture treats agents like distributed microservices [19] [[sources/yt-9O9zZ1lQWiI]]. **Workflows must rely on domain-scoped workers that have strict boundaries** [18] [[sources/yt-9O9zZ1lQWiI]]. For example, a deployment should have a dedicated payment agent and a separate inventory agent [18] [[sources/yt-9O9zZ1lQWiI]], [20] [[sources/yt-9O9zZ1lQWiI]]. This ensures that a compromised or hallucinating agent cannot cross boundaries to execute unauthorized actions outside of its specific domain [20] [[sources/yt-9O9zZ1lQWiI]], [19] [[sources/yt-9O9zZ1lQWiI]].
 
 ## Sources cited
 
-_(no citations returned)_
+- [[sources/yt-9O9zZ1lQWiI]]

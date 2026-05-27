@@ -6,11 +6,9 @@ canonical_name: Nova Scotia Active Condominium Corporations Dataset
 entity_kind: dataset
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-11T21:20:32Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-12T02:46:22Z'
-last_updated: '2026-05-12T02:46:22Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # Nova Scotia Active Condominium Corporations Dataset
 

@@ -6,11 +6,9 @@ canonical_name: City of Toronto Apartment Building Evaluation Dataset
 entity_kind: dataset
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-19T15:51:38Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-19T15:52:41Z'
-last_updated: '2026-05-19T15:52:41Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # City of Toronto Apartment Building Evaluation Dataset
 

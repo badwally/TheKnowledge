@@ -20337,3 +20337,243 @@ query against condo-capital-infra corpus
 ## [2026-05-27T18:42:36Z] discharge-orphans | domain=condo-capital-infra | filed=10 | skipped=0 | limit=10 | errors=0
 
 discharge-orphans: 10 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-27T18:44:20Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T18-44-20Z-schema-drift.md
+
+## [2026-05-27T18:45:12Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T18-45-12Z-schema-drift.md
+
+## [2026-05-27T18:46:06Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:46:07Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:46:44Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:47:20Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:47:20Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:47:59Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:48:35Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:49:05Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:49:36Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:50:32Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:51:07Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:51:50Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:52:28Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:53:07Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:53:46Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:53:48Z] discharge-orphans | domain=edge-ai-agentic | filed=13 | skipped=7 | limit=20 | errors=7
+
+discharge-orphans: 13 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-27T18:54:33Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:54:33Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:55:08Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:55:44Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:56:47Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:57:34Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:58:22Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-27T18:58:25Z] discharge-orphans | domain=edge-ai-agentic | filed=6 | skipped=14 | limit=20 | errors=14
+
+discharge-orphans: 6 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-27T19:00:14Z] evaluate | domain=ai-native-business | n_questions=12 | mean_score=0.928 | input_tokens=1897 | cache_read_tokens=1711094
+
+evaluate ai-native-business: 12 Q, mean=0.928
+
+## [2026-05-27T19:01:45Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.605 | input_tokens=1734 | cache_read_tokens=1277712
+
+evaluate condo-capital-infra: 10 Q, mean=0.605
+
+## [2026-05-27T19:03:10Z] evaluate | domain=edge-ai-agentic | n_questions=10 | mean_score=0.729 | input_tokens=1756 | cache_read_tokens=390762
+
+evaluate edge-ai-agentic: 10 Q, mean=0.729
+
+## [2026-05-27T19:05:46Z] evaluate | domain=glp1-reward-modulation | n_questions=15 | mean_score=0.633 | input_tokens=2827 | cache_read_tokens=596330
+
+evaluate glp1-reward-modulation: 15 Q, mean=0.633
+
+## [2026-05-27T19:08:30Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T19-08-30Z-schema-drift.md
+
+## [2026-05-27T19:11:34Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-27T19:11:48Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=5 | limit=5 | errors=5
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-27T19:12:14Z] finalize-batch | candidates=400 | finalized=0 | escalated=359 | execute=False | suggest=False
+
+finalize-batch: 400 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-27T19:12:25Z] finalize-batch | candidates=400 | finalized=0 | escalated=359 | execute=False | suggest=False
+
+finalize-batch: 400 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-27T19:12:26Z] finalize-batch | candidates=400 | finalized=0 | escalated=359 | execute=False | suggest=False
+
+finalize-batch: 400 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-27T19:12:36Z] finalize-batch | candidates=400 | finalized=0 | escalated=359 | execute=False | suggest=False
+
+finalize-batch: 400 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-27T19:12:38Z] finalize-batch | candidates=400 | finalized=0 | escalated=359 | execute=False | suggest=False
+
+finalize-batch: 400 candidates, 0 finalized (execute=False, suggest=False)
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/bc-assessment-search-service.md
+
+finalized wiki/entities/bc-assessment-search-service.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/bc-assessment.md
+
+finalized wiki/entities/bc-assessment.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/cao-condo-registry.md
+
+finalized wiki/entities/cao-condo-registry.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/cci-nova-scotia.md
+
+finalized wiki/entities/cci-nova-scotia.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/core-real-estate-group.md
+
+finalized wiki/entities/core-real-estate-group.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/douglas-elliman.md
+
+finalized wiki/entities/douglas-elliman.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/firstservice-corporation.md
+
+finalized wiki/entities/firstservice-corporation.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/nrc-construction-research-centre.md
+
+finalized wiki/entities/nrc-construction-research-centre.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/nrc-service-life-dataset-envelope.md
+
+finalized wiki/entities/nrc-service-life-dataset-envelope.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/ns-active-condo-corporations-dataset.md
+
+finalized wiki/entities/ns-active-condo-corporations-dataset.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/ns-registrar-condominiums.md
+
+finalized wiki/entities/ns-registrar-condominiums.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/pmg-holdings.md
+
+finalized wiki/entities/pmg-holdings.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/pvsc.md
+
+finalized wiki/entities/pvsc.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/real-estate-360.md
+
+finalized wiki/entities/real-estate-360.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/sense-engineering-atlantic.md
+
+finalized wiki/entities/sense-engineering-atlantic.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/summer-gardens-condo.md
+
+finalized wiki/entities/summer-gardens-condo.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/toronto-apartment-building-evaluation-dataset.md
+
+finalized wiki/entities/toronto-apartment-building-evaluation-dataset.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/entities/toronto-apartment-building-registration.md
+
+finalized wiki/entities/toronto-apartment-building-registration.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/concepts/deck-balcony-component-priors.md
+
+finalized wiki/concepts/deck-balcony-component-priors.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/concepts/proptech-valuation-multiples.md
+
+finalized wiki/concepts/proptech-valuation-multiples.md
+
+## [2026-05-27T19:12:45Z] finalize | page=wiki/concepts/reference-service-life.md
+
+finalized wiki/concepts/reference-service-life.md
+
+## [2026-05-27T19:12:45Z] finalize-batch | candidates=400 | finalized=21 | escalated=379 | execute=True | suggest=False
+
+finalize-batch: 400 candidates, 21 finalized (execute=True, suggest=False)

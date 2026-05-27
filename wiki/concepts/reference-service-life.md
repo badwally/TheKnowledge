@@ -5,11 +5,9 @@ slug: reference-service-life
 canonical_name: Reference Service Life (RSL)
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-11T23:28:20Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-11T23:28:20Z'
-last_updated: '2026-05-11T23:28:20Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # Reference Service Life (RSL)
 

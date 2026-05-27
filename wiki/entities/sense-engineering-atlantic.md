@@ -6,11 +6,9 @@ canonical_name: Sense Engineering (Atlantic) Ltd.
 entity_kind: organization
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-12T03:00:00Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-12T02:46:22Z'
-last_updated: '2026-05-12T02:46:22Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # Sense Engineering (Atlantic) Ltd.
 

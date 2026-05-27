@@ -6,11 +6,9 @@ canonical_name: BC Assessment Search Service
 entity_kind: dataset
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-19T14:46:15Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-19T14:51:42Z'
-last_updated: '2026-05-19T14:51:42Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # BC Assessment Search Service
 
