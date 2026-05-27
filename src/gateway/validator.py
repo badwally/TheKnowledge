@@ -389,6 +389,20 @@ def validate_wiki_page_frontmatter(
                 )
             )
 
+    # ONT-7: confidence field must be one of the 3-tier GRADE values
+    confidence = front.get("confidence")
+    if confidence is not None:
+        _CONFIDENCE_TIERS = frozenset({"established", "tentative", "speculative"})
+        if str(confidence).lower() not in _CONFIDENCE_TIERS:
+            result.errors.append(
+                ValidationError(
+                    "confidence-invalid",
+                    f"confidence {confidence!r} is not a valid tier; "
+                    "expected: established | tentative | speculative",
+                    "confidence",
+                )
+            )
+
     # ONT-6: timestamp format for entity/concept/synthesis
     if schema.type_name in _TIMESTAMP_PAGE_TYPES:
         result.merge(validate_timestamps(front))

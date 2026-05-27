@@ -39,6 +39,7 @@ from gateway.lint import (
     synthesizes_coverage,
     untagged_sources,
     paper_canonical_source,
+    claim_confidence,
 )
 
 
@@ -67,6 +68,8 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("link-rot", link_rot.run),
     ("superseded-citations", superseded_citations.run),
     ("paper-canonical-source", paper_canonical_source.run),
+    ("confidence-distribution", claim_confidence.run_distribution),
+    ("confidence-propagation", claim_confidence.run_propagation),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
