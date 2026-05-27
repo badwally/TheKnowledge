@@ -279,7 +279,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # finalize: re-validate a draft page; clear draft flag if citations resolve
-    p_finalize = subparsers.add_parser("finalize", help=SUBCOMMANDS["finalize"])
+    p_finalize = subparsers.add_parser(
+        "finalize",
+        help=SUBCOMMANDS["finalize"],
+        epilog=(
+            "Examples:\n"
+            "  wiki finalize wiki/concepts/food-noise.md\n"
+            "  wiki finalize wiki/synthesis/glp1-weight-loss.md\n"
+            "  wiki finalize wiki/concepts/bad-draft.md --abandon"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_finalize.add_argument(
         "page_path",
         help="Path to a draft page (relative to KNOWLEDGE_ROOT or absolute)",
@@ -372,7 +382,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # cite-add: claim-text-driven citation insertion (K1)
-    p_cite_add = subparsers.add_parser("cite-add", help=SUBCOMMANDS["cite-add"])
+    p_cite_add = subparsers.add_parser(
+        "cite-add",
+        help=SUBCOMMANDS["cite-add"],
+        epilog=(
+            "Examples:\n"
+            "  wiki cite-add wiki/concepts/food-noise.md 'Food noise decreases with GLP-1.' arxiv-2301.07041\n"
+            "  wiki cite-add wiki/concepts/reward-blunting.md 'Dose-dependent blunting observed.' pubmed-39847203 --fuzzy"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_cite_add.add_argument(
         "page_path",
         help="Path to the wiki page (relative to KNOWLEDGE_ROOT or absolute)",
@@ -1064,7 +1083,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # cite-capture (AGT-7)
-    p_cite_capture = subparsers.add_parser("cite-capture", help=SUBCOMMANDS["cite-capture"])
+    p_cite_capture = subparsers.add_parser(
+        "cite-capture",
+        help=SUBCOMMANDS["cite-capture"],
+        epilog=(
+            "Examples:\n"
+            "  wiki cite-capture 'GLP-1 reduces food noise' https://example.com/study\n"
+            "  wiki cite-capture 'Reward blunting is dose-dependent' https://arxiv.org/abs/2301.12345 "
+            "--target wiki/concepts/reward-blunting.md"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_cite_capture.add_argument("quote", help="Claim text to cite")
     p_cite_capture.add_argument("url", help="Source URL to ingest if not already present")
     p_cite_capture.add_argument(
@@ -1075,7 +1104,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # daily (TOOL-8)
-    p_daily = subparsers.add_parser("daily", help=SUBCOMMANDS["daily"])
+    p_daily = subparsers.add_parser(
+        "daily",
+        help=SUBCOMMANDS["daily"],
+        epilog=(
+            "Examples:\n"
+            "  wiki daily\n"
+            "  wiki daily --lookback-hours 48 --orphan-limit 50\n"
+            "  wiki daily --json | jq .inbox_count"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p_daily.add_argument(
         "--lookback-hours",
         type=float,

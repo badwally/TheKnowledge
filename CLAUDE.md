@@ -63,6 +63,12 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 
 `wiki index --rebuild`, `wiki search`, `wiki migrate <name>` remain stubs (operational sugar). Full reference: `WIKI.md` § Gateway operations.
 
+**Shell completion (TOOL-10):** `argcomplete` is wired. Enable in your shell:
+```bash
+eval "$(register-python-argcomplete wiki)"
+```
+Add to `~/.zshrc` or `~/.bashrc` for persistent completion of all `wiki` subcommands and flags.
+
 ## Adding a new source type
 
 Write a converter under `src/gateway/converters/<type>.py` that outputs canonical markdown to `raw/<type>/<slug>.md` per the frontmatter schema in `WIKI.md`. Six steps lock the pattern (M29 onward):

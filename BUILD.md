@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 15. Phase 7 delivery log (2026-05-26)
 
+### M93 — Phase 7 Round E (TOOL-10 shell completion + --help examples)
+
+See `docs/milestones/M93.md`. TOOL-10: argcomplete was already wired; completed acceptance criteria by documenting `eval "$(register-python-argcomplete wiki)"` in CLAUDE.md and adding epilog examples to `cite-capture`, `daily`, `finalize`, `cite-add` (4 subcommands; 8 already had examples). Tests: 1740 → 1740 (±0). Tag: `m93-phase7-round-e`.
+
 ### M92 — Phase 7 Round D (ONT-14 question page type)
 
 See `docs/milestones/M92.md`. ONT-14: `question` page type at `wiki/questions/<slug>.md`. `PAGE_SCHEMAS` entry; `validate_question_frontmatter()` enforces `status` enum (`open|partial|answered`) and warns when `answered` has no `synthesis:` link; `lint/unanswered_questions.py` exposes `run_open_questions()` (INFO) + `run_answered_no_synthesis()` (WARNING); WIKI.md § 4.7 template added. 14 tests. Tests: 1726 → 1740 (+14), 0 regressions. Tag: `m92-phase7-round-d`.

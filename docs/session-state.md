@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M92 complete — ONT-14 question page type)
+Last updated: 2026-05-26 (M93 complete — TOOL-10 shell completion)
 
 ---
 
@@ -18,7 +18,7 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m92-phase7-round-d. 1740 tests passing.
+None. main is clean at m93-phase7-round-e. 1740 tests passing.
 Phase 7 delivery log in BUILD.md § 15.
 
 ---
@@ -29,6 +29,7 @@ Phase 7 delivery log in BUILD.md § 15.
 - M90: TOOL-11 inbox triage web view. 1716 tests.
 - M91: ONT-12 tags codification. 1726 tests.
 - M92: ONT-14 question page type. 1740 tests.
+- M93: TOOL-10 shell completion + help examples. 1740 tests.
 
 ---
 
@@ -42,7 +43,8 @@ Phase 7 delivery log in BUILD.md § 15.
 
 ## Next atomic step
 
-Phase 7 continues. Remaining candidates:
-- TOOL-10 (shell completion via argcomplete) — docs + setup, no gateway logic
-- ONT-15 (PROV-O rename synthesizes → wasDerivedFrom) — S effort, optional cosmetic
-- wiki ask-corpus — requires building NLM notebook_query op first (M effort)
+Phase 7 continues. Remaining candidates from backlog:
+- TOOL-15 (wiki ask-corpus): requires building NLM notebook_query op (M effort)
+- ONT-15 (rename synthesizes → wasDerivedFrom): S effort, cosmetic, low priority
+- QUAL-4 follow-up checks or new quality cluster
+- wiki schedule list / enable / disable subcommands (schedule management UX)
