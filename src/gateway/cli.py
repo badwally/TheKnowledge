@@ -72,6 +72,7 @@ SUBCOMMANDS: dict[str, str] = {
     "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
     "routine": "Run a named orchestration routine (daily-domain-digest) (TOOL-12)",
     "daily": "Morning triage list: stale drafts, orphan sources, inbox count, recently ingested (TOOL-8)",
+    "cite-capture": "Ingest a URL if needed and add a citation to a wiki page (AGT-7)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -131,6 +132,7 @@ IMPLEMENTED: set[str] = {
     "index",
     "routine",
     "daily",
+    "cite-capture",
 }
 
 
@@ -1057,6 +1059,17 @@ def build_parser() -> argparse.ArgumentParser:
     p_routine_digest.add_argument("--lookback-hours", type=int, default=24,
                                   help="How many hours back to scan for new sources (default: 24)")
 
+    # cite-capture (AGT-7)
+    p_cite_capture = subparsers.add_parser("cite-capture", help=SUBCOMMANDS["cite-capture"])
+    p_cite_capture.add_argument("quote", help="Claim text to cite")
+    p_cite_capture.add_argument("url", help="Source URL to ingest if not already present")
+    p_cite_capture.add_argument(
+        "--target",
+        metavar="WIKI_PATH",
+        default=None,
+        help="Wiki page to add citation to (auto-picked by token-overlap if omitted)",
+    )
+
     # daily (TOOL-8)
     p_daily = subparsers.add_parser("daily", help=SUBCOMMANDS["daily"])
     p_daily.add_argument(
@@ -1221,6 +1234,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_routine_cmd(ns)
     if ns.subcommand == "daily":
         return _run_daily_cmd(ns)
+    if ns.subcommand == "cite-capture":
+        return _run_cite_capture_cmd(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2239,6 +2254,13 @@ def _run_routine_cmd(ns: argparse.Namespace) -> int:
         return _emit_result(result)
     print(f"unknown routine: {ns.routine_name}", file=sys.stderr)
     return 2
+
+
+def _run_cite_capture_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.cite_capture import cite_capture
+
+    result = cite_capture(ns.quote, ns.url, target_page=getattr(ns, "target", None))
+    return _emit_result(result)
 
 
 def _run_daily_cmd(ns: argparse.Namespace) -> int:

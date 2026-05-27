@@ -1108,6 +1108,24 @@ def wiki_routine(
 
 
 @mcp.tool()
+def wiki_cite_capture(
+    quote: str,
+    url: str,
+    target_page: str = "",
+) -> dict[str, Any]:
+    """Ingest a URL if needed and add a citation to a wiki page.
+
+    `quote`: The claim text to cite (must appear in target_page).
+    `url`:   Source URL. Idempotent — re-runs on an already-ingested URL reuse it.
+    `target_page`: Relative path to the wiki page to cite in (e.g.
+      ``wiki/concepts/food-noise.md``). Auto-picked by token-overlap if empty.
+    """
+    from gateway.ops.cite_capture import cite_capture
+
+    return _serialize(cite_capture(quote, url, target_page or None))
+
+
+@mcp.tool()
 def wiki_daily(
     lookback_hours: float = 24.0,
     stale_days: int = 7,
