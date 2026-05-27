@@ -1148,6 +1148,41 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 20. Phase 9 delivery log (2026-05-27)
+
+### M102 — Phase 9 Round C (parse_iso consolidation — single canonical impl in gateway.core)
+
+See `docs/milestones/M102.md`. Extracted `parse_iso()` to `gateway.core`, removing 6 private `_parse_iso` duplicates from scheduler, lint, and ops modules. Canonical impl uses `fromisoformat` (Python 3.11) with Z→+00:00 normalization, UTC fallback, and non-string guard. 7 tests. Tests: 1830 → 1837 (+7), 0 regressions. Tag: `549e879`.
+
+### M101 — Phase 9 Round B (multi-domain eval scheduling — --all-domains + evaluate-weekly cron)
+
+See `docs/milestones/M101.md`. `wiki evaluate --all-domains`: iterates all domains with a `goldens.yaml`, runs eval for each, returns aggregate summary. `_evaluate_all_domains` in evaluate_op.py. `domains_with_goldens()` added to persistence.py. `evaluate-weekly` cron registered in `.knowledge/schedule.yaml` (Sundays 03:00 UTC). 8 tests. Tests: 1822 → 1830 (+8), 0 regressions. Tag: `ca65caa`.
+
+### M100 — Phase 9 Round A (synthesis question quality — domain topic + source preview injection)
+
+See `docs/milestones/M100.md`. `_synthesis_question` now incorporates domain policy topic and source preview (abstract → excerpt → body fallback). `_source_preview()` added. `discharge_orphans` soft-loads domain policy; passes `domain_topic` to question generator. 10 tests. Tests: 1812 → 1822 (+10), 0 regressions. Tag: `02716fe`.
+
+---
+
+## 19. Phase 9 exit checkpoint (2026-05-27)
+
+3 milestones (M100–M102) delivered. 1812 → 1837 tests (+25), 0 regressions.
+
+| Item | Milestone | Tests |
+|------|-----------|-------|
+| _synthesis_question quality (domain policy + source preview) | M100 | +10 |
+| wiki evaluate --all-domains + evaluate-weekly cron | M101 | +8 |
+| parse_iso consolidation (6 duplicates → gateway.core) | M102 | +7 |
+
+Exit criteria:
+- ✓ `_synthesis_question` prompt includes domain policy + abstract excerpt; test confirms richer question generation
+- ~ `wiki evaluate` on ≥2 domains beyond glp1 — infrastructure ready; blocked on `ANTHROPIC_API_KEY_RESEARCH` (user action)
+- ✓ `_parse_iso` consolidated to single impl in `gateway.core`; 0 regressions
+
+Note: Multi-domain eval criterion is infrastructure-met (cron registered, `--all-domains` wired). Live runs require `ANTHROPIC_API_KEY_RESEARCH`.
+
+---
+
 ## 18. Phase 8 exit checkpoint (2026-05-27)
 
 4 milestones (M96–M99) delivered. 1769 → 1812 tests (+43), 0 regressions. Tag: `m99-phase8-round-d`.
