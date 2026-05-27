@@ -19929,3 +19929,7 @@ report=.knowledge/lint/2026-05-27T16-53-02Z-schema-drift.md
 ## [2026-05-27T17:02:44Z] evaluate | domain=ai-native-business | n_questions=12 | mean_score=0.889 | input_tokens=1897 | cache_read_tokens=1597167
 
 evaluate ai-native-business: 12 Q, mean=0.889
+
+## [2026-05-27T17:03:07Z] lint | scope=schema-drift | schema-drift=226
+
+report=.knowledge/lint/2026-05-27T17-03-07Z-schema-drift.md

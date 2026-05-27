@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 from pathlib import Path
+
+import pytest
 from unittest.mock import MagicMock, patch
 
 from gateway.evaluate.persistence import domains_with_goldens, goldens_path_for
@@ -134,6 +136,51 @@ def test_cli_evaluate_domain_and_all_domains_coexist() -> None:
     ns = parser.parse_args(["evaluate", "glp1", "--all-domains"])
     assert ns.domain == "glp1"
     assert ns.all_domains is True
+
+
+def test_judge_rescues_score_from_malformed_json(kb_root: Path) -> None:
+    """Score rescue path: unescaped quote in assertion text must not zero out golden."""
+    from gateway.evaluate.judge import Judge
+    from gateway.evaluate.schema import Golden
+
+    golden = Golden(id="q01", question="Q?", must_cite=["src1"],
+                    must_assert=["fact"], must_not_assert=[])
+    # Simulate a response where an unescaped quote breaks JSON parsing
+    malformed = '{"score": 0.87, "cite_hits": ["src1"], "assertion_hits": ["it said "hello" to the world"], ...}'
+
+    fake_call = MagicMock()
+    fake_call.text = malformed
+    fake_call.input_tokens = 10
+    fake_call.output_tokens = 5
+    fake_call.cache_read_tokens = 0
+
+    fake_client = MagicMock()
+    fake_client.call_with_usage.return_value = fake_call
+
+    judge = Judge(client=fake_client)
+    result = judge.score(golden=golden, wiki_context="ctx")
+    assert result.score == pytest.approx(0.87)
+    assert "rescued" in result.judge_reasoning
+
+
+def test_judge_returns_zero_when_no_score_in_malformed_json(kb_root: Path) -> None:
+    from gateway.evaluate.judge import Judge
+    from gateway.evaluate.schema import Golden
+
+    golden = Golden(id="q01", question="Q?", must_cite=[],
+                    must_assert=[], must_not_assert=[])
+    fake_call = MagicMock()
+    fake_call.text = "completely unparseable {{{ garbage"
+    fake_call.input_tokens = 0
+    fake_call.output_tokens = 0
+    fake_call.cache_read_tokens = 0
+
+    fake_client = MagicMock()
+    fake_client.call_with_usage.return_value = fake_call
+
+    judge = Judge(client=fake_client)
+    result = judge.score(golden=golden, wiki_context="ctx")
+    assert result.score == 0.0
 
 
 def test_evaluate_op_max_chars_passed_to_run_evaluate(kb_root: Path) -> None:
