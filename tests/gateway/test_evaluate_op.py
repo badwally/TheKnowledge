@@ -220,5 +220,5 @@ def test_evaluate_weekly_job_registered() -> None:
     jobs = {j.name: j for j in scheduler.load_schedule()}
     assert "evaluate-weekly" in jobs
     job = jobs["evaluate-weekly"]
-    assert job.command == "wiki evaluate --all-domains"
+    assert job.command == "wiki evaluate --all-domains --max-chars 750000"
     assert job.enabled is True

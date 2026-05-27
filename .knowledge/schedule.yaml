@@ -81,7 +81,7 @@ jobs:
   last_duration_seconds: null
 - name: evaluate-weekly
   cron: 0 3 * * 0
-  command: wiki evaluate --all-domains
+  command: wiki evaluate --all-domains --max-chars 750000
   enabled: true
   cooldown_seconds: 7200
   last_run: null
