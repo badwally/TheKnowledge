@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 17. Phase 8 delivery log (2026-05-27)
 
+### M98 — Phase 8 Round C (wiki abandon-stale-drafts — orphan draft policy)
+
+See `docs/milestones/M98.md`. `wiki abandon-stale-drafts [--min-age-days N] [--dry-run]`: auto-abandons orphaned draft pages older than N days (default 30) with no inbound wikilink citations. Builds inbound-citation index in one pass; delegates deletion to `finalize(abandon=True)`. CLI_ONLY in MCP (bulk destructive). 11 tests. Tests: 1789 → 1800 (+11), 0 regressions. Tag: `m98-phase8-round-c`.
+
 ### M97 — Phase 8 Round B (wiki fix-wikilinks — broken link repair)
 
 See `docs/milestones/M97.md`. `wiki fix-wikilinks`: removes dead `[[sources/...]]` citations (195 removed) and downgrades broken `[[entities/...]]`/`[[concepts/...]]` links to aliased forward-references (82 downgraded). broken-wikilinks: 277 ERRORs → 82 WARNINGs. 12 tests. Tests: 1777 → 1789 (+12), 0 regressions. Tag: `m97-phase8-round-b`.
