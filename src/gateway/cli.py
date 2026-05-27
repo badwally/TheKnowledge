@@ -1164,6 +1164,22 @@ def build_parser() -> argparse.ArgumentParser:
         "filter-calibrator",
         help="Monthly: check example-bank readiness; emit distill-ready log events (AGT-8)",
     )
+    p_routine_discharge = p_routine_sub.add_parser(
+        "discharge-orphans",
+        help="Batch synthesize draft wiki pages for orphaned sources in a domain (M99)",
+    )
+    p_routine_discharge.add_argument(
+        "--domain", metavar="SLUG", required=True,
+        help="Domain slug whose orphan sources to discharge",
+    )
+    p_routine_discharge.add_argument(
+        "--limit", type=int, default=10, metavar="N",
+        help="Max orphan sources to process per run (default: 10)",
+    )
+    p_routine_discharge.add_argument(
+        "--dry-run", action="store_true",
+        help="Report which sources would be synthesized without writing",
+    )
 
     # cite-capture (AGT-7)
     p_cite_capture = subparsers.add_parser(
@@ -2400,7 +2416,7 @@ def _run_search_cmd(ns: argparse.Namespace) -> int:
 def _run_routine_cmd(ns: argparse.Namespace) -> int:
     if not ns.routine_name:
         print(
-            "usage: wiki routine <NAME>\n  Available: daily-domain-digest | filter-calibrator",
+            "usage: wiki routine <NAME>\n  Available: daily-domain-digest | filter-calibrator | discharge-orphans",
             file=sys.stderr,
         )
         return 2
@@ -2417,6 +2433,15 @@ def _run_routine_cmd(ns: argparse.Namespace) -> int:
     if ns.routine_name == "filter-calibrator":
         from gateway.ops.filter_calibrator import run_filter_calibrator
         return _emit_result(run_filter_calibrator())
+    if ns.routine_name == "discharge-orphans":
+        from gateway.ops.discharge_orphans import discharge_orphans
+        return _emit_result(
+            discharge_orphans(
+                ns.domain,
+                limit=getattr(ns, "limit", 10),
+                dry_run=getattr(ns, "dry_run", False),
+            )
+        )
     print(f"unknown routine: {ns.routine_name}", file=sys.stderr)
     return 2
 
