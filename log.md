@@ -20109,3 +20109,231 @@ report=.knowledge/lint/2026-05-27T18-06-07Z-schema-drift.md
 ## [2026-05-27T18:07:06Z] lint | scope=synthesizes-coverage | synthesizes-coverage=13
 
 report=.knowledge/lint/2026-05-27T18-07-06Z-synthesizes-coverage.md
+
+## [2026-05-27T18:08:17Z] lint | scope=schema-drift | schema-drift=276
+
+report=.knowledge/lint/2026-05-27T18-08-17Z-schema-drift.md
+
+## [2026-05-27T18:12:06Z] nlm-add | id=pdf-58cd32ac73c8 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-58cd32ac73c8.pdf title='2024-10-16 Reserve Fund Study Draft 1'
+
+## [2026-05-27T18:12:17Z] nlm-add | id=pdf-da86bd51429b | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-da86bd51429b.pdf title='2024-12-06 SG Comments on Draft 1'
+
+## [2026-05-27T18:12:23Z] nlm-add | id=pdf-5dad0dbc650c | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-5dad0dbc650c.pdf title='2025 Reserve Fund Study Supplement_Merged'
+
+## [2026-05-27T18:12:54Z] nlm-add | id=pdf-28d4b9d34712 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-28d4b9d34712.pdf title='2025-02-21 Reserve Fund Study Draft 2'
+
+## [2026-05-27T18:13:00Z] nlm-add | id=pdf-9fcc4e9f57bf | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-9fcc4e9f57bf.pdf title='2025-03-06 SG Comments on Draft 2'
+
+## [2026-05-27T18:13:07Z] nlm-add | id=pdf-4cea968b4b78 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-4cea968b4b78.pdf title='Summer Gardens Reserve Fund Study'
+
+## [2026-05-27T18:13:14Z] nlm-add | id=pdf-09e4d9621e87 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-09e4d9621e87.pdf title='Re Board meeting  Thursday Nov 28 at 930 am'
+
+## [2026-05-27T18:13:14Z] filter-correction | id=pdf-09e4d9621e87 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='primary-source RFS-cycle correspondence; documents board-engineer resolution dynamics for condo-capital-infra calibration'
+
+## [2026-05-27T18:13:14Z] filter-correction | id=pdf-4cea968b4b78 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='primary-source RFS-cycle correspondence; documents board-engineer resolution dynamics for condo-capital-infra calibration'
+
+## [2026-05-27T18:13:14Z] filter-correction | id=pdf-9fcc4e9f57bf | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale='primary-source RFS-cycle correspondence; documents board-engineer resolution dynamics for condo-capital-infra calibration'
+
+## [2026-05-27T18:13:15Z] filter-correction | id=pdf-480f25d82c1f | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale='primary-source RFS-cycle correspondence; documents board-engineer resolution dynamics for condo-capital-infra calibration'
+
+## [2026-05-27T18:13:15Z] filter-correction | id=pdf-9b2ac7733e3f | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='primary-source RFS-cycle correspondence; documents board-engineer resolution dynamics for condo-capital-infra calibration'
+
+## [2026-05-27T18:13:15Z] filter-correction | id=pdf-9c47bade3168 | domain=condo-capital-infra | decision=include | original_score=0.4
+
+rationale='primary-source RFS-cycle correspondence; documents board-engineer resolution dynamics for condo-capital-infra calibration'
+
+## [2026-05-27T18:13:23Z] nlm-add | id=pdf-427f1fbfc9c8 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-427f1fbfc9c8.pdf title='2025-03-14 from Keeble'
+
+## [2026-05-27T18:13:30Z] nlm-add | id=pdf-e208682ecbca | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-e208682ecbca.pdf title='2025-04-01 Memo to Owners - Reserve Fund Study 2025'
+
+## [2026-05-27T18:13:36Z] nlm-add | id=pdf-9b2ac7733e3f | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-9b2ac7733e3f.pdf title='2025-05-03 Memo to owners'
+
+## [2026-05-27T18:13:43Z] nlm-add | id=pdf-9c47bade3168 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-9c47bade3168.pdf title='Summer Gardens  Special Assessment Meeting May 14th'
+
+## [2026-05-27T18:13:49Z] nlm-add | id=pdf-480f25d82c1f | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-480f25d82c1f.pdf title='2025-05-13 reply to Fineberg revised'
+
+## [2026-05-27T18:13:56Z] nlm-add | id=pdf-de2ba769f276 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-de2ba769f276.pdf title='2025-06-11 Certificate'
+
+## [2026-05-27T18:14:02Z] nlm-add | id=pdf-b73e53ed0c0d | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=pdf
+
+file=pdf-b73e53ed0c0d.pdf title='2025-06-11 Spreadsheet 10'
+
+## [2026-05-27T18:14:10Z] nlm-add | id=docx-e0e4eceffb0a | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=docx
+
+file=docx-e0e4eceffb0a.docx title='Building Management Review Committee (1)'
+
+## [2026-05-27T18:14:16Z] nlm-add | id=docx-427cfebf73ed | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=docx
+
+file=docx-427cfebf73ed.docx title='Building Management Review Committee'
+
+## [2026-05-27T18:15:05Z] nlm-briefing | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | artifact_id=dc8d4dce-a376-4676-87fb-5a118048c5a6 | topic=condo-capital-infra briefing doc
+
+local=wiki/artifacts/briefing/2026-05-27-condo-capital-infra-briefing-doc-briefing.md url=https://notebooklm.google.com/notebook/effe1f58-e6ce-4ff0-8728-35c885bff6f4/artifact/dc8d4dce-a376-4676-87fb-5a118048c5a6
+
+## [2026-05-27T18:22:58Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T18-22-58Z-schema-drift.md
+
+## [2026-05-27T18:23:36Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T18-23-36Z-schema-drift.md
+
+## [2026-05-27T18:26:15Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.605 | input_tokens=1734 | cache_read_tokens=1277712
+
+evaluate condo-capital-infra: 10 Q, mean=0.605
+
+## [2026-05-27T18:26:29Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-27T18:26:56Z] lint | scope=orphans | orphans=540
+
+report=.knowledge/lint/2026-05-27T18-26-56Z-orphans.md
+
+## [2026-05-27T18:28:16Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:29:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:29:14Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:30:12Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:30:12Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:30:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:30:57Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:30:58Z] discharge-orphans | domain=condo-capital-infra | filed=4 | skipped=1 | limit=5 | errors=1
+
+discharge-orphans: 4 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-27T18:31:43Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T18-31-43Z-schema-drift.md
+
+## [2026-05-27T18:34:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:34:53Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:35:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:35:38Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:36:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:36:31Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:37:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:37:18Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:38:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:38:14Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:39:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:39:13Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:39:59Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:40:51Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:41:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T18:41:39Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:42:23Z] nlm-briefing | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | artifact_id=64b8e30e-2220-4401-b159-4f8cad0b9ebd | topic=condo-capital-infra briefing doc
+
+local=wiki/artifacts/briefing/2026-05-27-condo-capital-infra-briefing-doc-briefing.md url=https://notebooklm.google.com/notebook/effe1f58-e6ce-4ff0-8728-35c885bff6f4/artifact/64b8e30e-2220-4401-b159-4f8cad0b9ebd
+
+## [2026-05-27T18:42:36Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T18:42:36Z] discharge-orphans | domain=condo-capital-infra | filed=10 | skipped=0 | limit=10 | errors=0
+
+discharge-orphans: 10 drafts filed for domain 'condo-capital-infra'
