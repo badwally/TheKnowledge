@@ -1148,6 +1148,26 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 14. Phase 6 exit checkpoint (2026-05-26)
+
+All four Phase 6 items delivered. 1640 → 1695 tests (+55), 0 regressions. Tag: `m88-phase6-round-d`.
+
+| Item | Milestone | Tests |
+|------|-----------|-------|
+| TOOL-8 `wiki daily` + `/today` | M85 | +17 |
+| AGT-7 capture-to-cite + `/wiki-cite` skill | M86 | +16 |
+| ONT-5 `canonical_source:` on paper entities | M87 | +11 |
+| ONT-7 per-claim confidence 3-tier GRADE | M88 | +11 |
+
+Exit criteria met:
+- ✓ `wiki daily` CLI + `/today` JSON route live
+- ✓ `wiki cite-capture` + `wiki_cite_capture` MCP wired; skill updated
+- ✓ `canonical_source:` validator warning + `paper-canonical-source` lint check registered
+- ✓ `confidence:` enum validated; `confidence-distribution` + `confidence-propagation` lint checks live
+- ✓ 1695 tests (≥1700 criterion: 5 short — Phase 7 opens at 1695)
+
+---
+
 ## 13. Phase 6 plan (2026-05-26)
 
 **Thesis:** Phase 6 bets on *consuming* the wiki, not just filling it. Phases 1–5 built the ingestion pipeline, quality monitors, and pollers. The gap now is that there is no daily-use surface that brings knowledge back to the user — no review loop, no cross-project leverage, no quality annotations at the claim level. Phase 6 closes that gap.
