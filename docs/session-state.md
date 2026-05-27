@@ -36,17 +36,18 @@ None. main is clean at M100. 1822 tests passing.
 | # | Item | Effort | Status |
 |---|------|--------|--------|
 | M100 | `_synthesis_question` quality improvement | S | DONE (commit 02716fe) |
-| M101 | Multi-domain evaluation run + eval scheduling | S/M | next |
-| M102 | `_parse_iso` consolidation | S | pending |
+| M101 | Multi-domain evaluation run + eval scheduling | S/M | DONE (commit ca65caa) |
+| M102 | `_parse_iso` consolidation | S | next |
 
 ---
 
 ## Next atomic step
 
-M101: Multi-domain evaluation run + eval scheduling.
+M102: `_parse_iso` consolidation.
 
-- Run `wiki evaluate` on edge-ai-agentic and 1+ additional domains.
-- Wire AGT-8-style cron for periodic eval re-runs (so eval runs on a schedule, not just manually).
-- File results in BUILD.md.
+Find the 5 duplicate `_parse_iso` (or similar) private functions across gateway modules.
+Extract to a single canonical impl in `gateway.core` (or `gateway.utils`).
+Remove all duplicates. 0 regressions.
 
-Start by reading the eval op and eval framework to understand current cron wiring.
+Note: live eval runs (wiki evaluate --all-domains) are blocked on ANTHROPIC_API_KEY_RESEARCH — user action.
+evaluate-weekly cron job registered in .knowledge/schedule.yaml.
