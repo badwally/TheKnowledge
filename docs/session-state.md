@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (Phase 5 exit + Phase 6 plan written)
+Last updated: 2026-05-26 (Phase 5 complete + session-review skill created)
 
 ---
 
@@ -28,6 +28,7 @@ Phase 5 exit checkpoint + Phase 6 plan written in BUILD.md §§ 12–13.
 - Phase 5 exit criteria all met (17 milestones M68–M84, 1640 tests).
 - Phase 6 theme: consuming the wiki — daily review surface + cross-project leverage + claim-level quality.
 - Phase 6 scope (priority order): TOOL-8, AGT-7, ONT-5, ONT-7.
+- session-review skill created at ~/.claude/skills/session-review/SKILL.md.
 
 ---
 
