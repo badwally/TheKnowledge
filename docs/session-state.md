@@ -45,11 +45,12 @@ Post-phase: 50 synthesis pages modified by backfill-synthesizes (synthesizes: fr
 
 ## Next atomic step
 
-Phase 10 to be scoped. Candidates:
+Phase 10 scoped (rubric: docs/260527_knowledge_phase10_backlog-rubric.md).
 
-- Editorial schema-drift tooling (225 items, entity_kind reclassification) — M effort, only if user confirms editorial backlog priority
-- QUAL-8 citation-claim coherence judge — deferred (no forcing function)
-- Source-orphan live discharge — run wiki routine discharge-orphans on live domains once ANTHROPIC_API_KEY_RESEARCH is set (triggers M101 work)
-- Fine-tune threshold reach (glp1 at 268/500) — user-paced, not engineering
+Phase 10 scope (in order):
+1. Fix condo eval ceiling — `wiki nlm-add condo-capital-infra web-2025-10-056` + `web-2022-07-07-3bd` + targeted `wiki query` → target ≥ 0.600
+2. Close synthesizes-coverage 13 ERRORs — manual `synthesizes:` entries for 13 legacy short-slug pages
+3. `wiki repair-entities --scope missing-sections` — auto-fill Key facts/Related/Summary for ~51 LLM-created entities (M effort, new milestone)
+4. First live discharge-orphans run — once ANTHROPIC_API_KEY_RESEARCH is set (user action gate)
 
-Await user direction or run /build-checkpoint.
+Start with item 1 (condo eval ceiling — S effort, no blockers).
