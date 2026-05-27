@@ -17,6 +17,8 @@ Carry-forward (not blocking anything):
 - condo-capital-infra eval ceiling at 0.459: q09 (web-2025-10-29-056 24-month rule) and q10
   (10-15% Full vs Baseline specific claim) need raw source bodies that exceed 500k context
   budget. Fix path: wiki nlm-add condo-capital-infra for these 2 sources + targeted wiki query.
+- ai-native-business: mean=0.889 at --max-chars 750000; q08 previously 0.00 due to judge JSON
+  truncation, now rescued via regex fallback. evaluate-weekly cron updated to --max-chars 750000.
 
 ---
 
