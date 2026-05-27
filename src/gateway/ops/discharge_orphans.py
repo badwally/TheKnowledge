@@ -13,9 +13,23 @@ from __future__ import annotations
 
 from gateway import frontmatter as fm, log, paths
 from gateway.core import OperationResult
+from gateway.filter.policy import PolicyError, load_policy, policy_exists
 
 
 DEFAULT_LIMIT = 10
+_PREVIEW_MAX = 300
+
+
+def _source_preview(front: dict, body: str) -> str:
+    """Extract a short content preview from frontmatter fields or body fallback."""
+    meta = front.get("meta") or {}
+    preview = (
+        str(meta.get("abstract", "")).strip()
+        or str(meta.get("excerpt", "")).strip()
+        or str(front.get("description", "")).strip()
+        or body.strip()[:_PREVIEW_MAX]
+    )
+    return preview[:_PREVIEW_MAX]
 
 
 def _orphan_sources_for_domain(domain: str, limit: int) -> list[dict]:
@@ -31,7 +45,7 @@ def _orphan_sources_for_domain(domain: str, limit: int) -> list[dict]:
             if len(results) >= limit:
                 break
             try:
-                front, _ = fm.parse(p.read_text())
+                front, body = fm.parse(p.read_text())
             except Exception:
                 continue
             if front.get("wiki_pages"):
@@ -45,13 +59,22 @@ def _orphan_sources_for_domain(domain: str, limit: int) -> list[dict]:
                 "id": front.get("id", p.stem),
                 "title": str(front.get("title", p.stem)),
                 "source_type": source_type,
+                "preview": _source_preview(front, body),
             })
     return results
 
 
-def _synthesis_question(source: dict) -> str:
+def _synthesis_question(source: dict, domain_topic: str = "") -> str:
+    """Build a synthesis question grounded in source preview and domain context."""
     title = source["title"]
-    return f"What does '{title}' contribute to this domain's understanding?"
+    preview = source.get("preview", "")
+    context = f" in the context of {domain_topic}" if domain_topic else ""
+    if preview:
+        return (
+            f"What are the key insights from \"{title}\"{context}? "
+            f"The source describes: {preview}"
+        )
+    return f"What does \"{title}\" contribute to this domain's understanding{context}?"
 
 
 def discharge_orphans(
@@ -66,6 +89,13 @@ def discharge_orphans(
     if not domain:
         return OperationResult(success=False, errors=["domain is required"])
 
+    domain_topic = ""
+    if policy_exists(domain):
+        try:
+            domain_topic = load_policy(domain).domain_topic
+        except PolicyError:
+            pass
+
     sources = _orphan_sources_for_domain(domain, limit)
     if not sources:
         return OperationResult(
@@ -78,7 +108,7 @@ def discharge_orphans(
     errors: list[str] = []
 
     for source in sources:
-        question = _synthesis_question(source)
+        question = _synthesis_question(source, domain_topic)
         if dry_run:
             filed += 1
             continue

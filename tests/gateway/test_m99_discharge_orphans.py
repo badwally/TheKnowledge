@@ -155,6 +155,109 @@ def test_query_failure_recorded_in_errors(kb_root: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
+# _synthesis_question quality (M100)
+# ---------------------------------------------------------------------------
+
+
+def test_synthesis_question_uses_preview_and_domain_topic() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {
+        "title": "Efficacy of semaglutide in reward circuits",
+        "preview": "A 24-week RCT measuring GLP-1 receptor agonist effects on dopamine response.",
+    }
+    q = _synthesis_question(source, domain_topic="GLP-1 pharmacology and reward modulation")
+    assert "GLP-1 pharmacology" in q
+    assert "24-week RCT" in q
+    assert "Efficacy of semaglutide" in q
+
+
+def test_synthesis_question_preview_without_domain_topic() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {
+        "title": "Edge inference for agentic systems",
+        "preview": "Survey of on-device LLM deployment patterns.",
+    }
+    q = _synthesis_question(source)
+    assert "Survey of on-device" in q
+    assert "Edge inference" in q
+    assert "in the context of" not in q
+
+
+def test_synthesis_question_domain_topic_without_preview() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {"title": "Model compression techniques", "preview": ""}
+    q = _synthesis_question(source, domain_topic="Edge AI and model optimization")
+    assert "Edge AI" in q
+    assert "Model compression" in q
+    assert "contribute" in q
+
+
+def test_synthesis_question_falls_back_gracefully() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {"title": "Some paper", "preview": ""}
+    q = _synthesis_question(source)
+    assert "Some paper" in q
+    assert "domain's understanding" in q
+
+
+def test_source_preview_uses_meta_abstract() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {"abstract": "A study of dopamine."}}
+    assert _source_preview(front, "body content") == "A study of dopamine."
+
+
+def test_source_preview_uses_meta_excerpt() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {"excerpt": "Article about edge AI."}}
+    assert _source_preview(front, "body content") == "Article about edge AI."
+
+
+def test_source_preview_falls_back_to_body() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {}}
+    assert _source_preview(front, "Body paragraph here.") == "Body paragraph here."
+
+
+def test_source_preview_prefers_abstract_over_excerpt() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {"abstract": "The abstract.", "excerpt": "The excerpt."}}
+    assert _source_preview(front, "") == "The abstract."
+
+
+def test_discharge_orphans_uses_domain_policy(kb_root: Path) -> None:
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="policy-src", domain="glp1")
+
+    captured: list[str] = []
+
+    def fake_query(question: str, **kwargs):
+        captured.append(question)
+        return _ok_result()
+
+    with patch("gateway.ops.query.query", side_effect=fake_query):
+        with patch("gateway.ops.discharge_orphans.policy_exists", return_value=True):
+            with patch("gateway.ops.discharge_orphans.load_policy") as mock_lp:
+                from unittest.mock import MagicMock
+                pol = MagicMock()
+                pol.domain_topic = "GLP-1 receptor pharmacology"
+                mock_lp.return_value = pol
+                result = discharge_orphans("glp1", limit=1)
+
+    assert result.success
+    assert len(captured) == 1
+    assert "GLP-1 receptor pharmacology" in captured[0]
+
+
+# ---------------------------------------------------------------------------
 # CLI wiring
 # ---------------------------------------------------------------------------
 
