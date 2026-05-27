@@ -1,6 +1,6 @@
 # Session state — 2026-05-27
 
-Last updated: 2026-05-27 (M99 complete — Phase 8 complete)
+Last updated: 2026-05-27 (M100 complete — Phase 9 in progress)
 
 ---
 
@@ -20,27 +20,33 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m99-phase8-round-d. 1812 tests passing.
-Phase 8 exit checkpoint written in BUILD.md § 18.
+None. main is clean at M100. 1822 tests passing.
 
 ---
 
 ## Decisions made this session
 
-- M96: Schema debt clearance (4597 → 225 schema-drift). 1777 tests.
-- M97: Broken-wikilink repair (277 ERRORs → 82 WARNINGs). 1789 tests.
-- M98: Stale-draft auto-abandonment (wiki abandon-stale-drafts, >30d + no inbound citations). 1800 tests.
-- M99: Orphan discharge routine (wiki routine discharge-orphans --domain --limit). 1812 tests.
-- Phase 8 exit checkpoint: criteria 2+3 met; schema-drift criterion not met (225 editorial tail, not automatable).
+- Phase 9 rubric written: docs/260527_knowledge_phase9_backlog-rubric.md
+- M100: _synthesis_question quality — domain topic + source preview (abstract → excerpt → body fallback). 1812 → 1822 tests (+10).
+
+---
+
+## Phase 9 scope (from rubric)
+
+| # | Item | Effort | Status |
+|---|------|--------|--------|
+| M100 | `_synthesis_question` quality improvement | S | DONE (commit 02716fe) |
+| M101 | Multi-domain evaluation run + eval scheduling | S/M | next |
+| M102 | `_parse_iso` consolidation | S | pending |
 
 ---
 
 ## Next atomic step
 
-Phase 9 to be scoped. Candidates from BUILD.md § 18 carry-forward:
-- Editorial schema-drift: 225 items (entity_kind reclassification, missing sections, long slugs) — tooling to assist human review
-- QUAL-8: citation-claim coherence judge (needs forcing function)
-- ONT-11: backfill-synthesizes for 61 synthesis pages (user-action, not engineering)
-- Source-orphan discharge: run wiki routine discharge-orphans on each domain
+M101: Multi-domain evaluation run + eval scheduling.
 
-Await user direction.
+- Run `wiki evaluate` on edge-ai-agentic and 1+ additional domains.
+- Wire AGT-8-style cron for periodic eval re-runs (so eval runs on a schedule, not just manually).
+- File results in BUILD.md.
+
+Start by reading the eval op and eval framework to understand current cron wiring.
