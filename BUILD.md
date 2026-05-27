@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 17. Phase 8 delivery log (2026-05-27)
 
+### M99 — Phase 8 Round D (wiki routine discharge-orphans — source orphan discharge)
+
+See `docs/milestones/M99.md`. `wiki routine discharge-orphans --domain <slug> [--limit N] [--dry-run]`: finds orphan raw sources (no wiki_pages coverage) in the domain, generates a synthesizing question per source title, calls `query()` to file a draft synthesis page. Wired as a sub-command of `wiki routine`. 12 tests. Tests: 1800 → 1812 (+12), 0 regressions. Tag: `m99-phase8-round-d`.
+
 ### M98 — Phase 8 Round C (wiki abandon-stale-drafts — orphan draft policy)
 
 See `docs/milestones/M98.md`. `wiki abandon-stale-drafts [--min-age-days N] [--dry-run]`: auto-abandons orphaned draft pages older than N days (default 30) with no inbound wikilink citations. Builds inbound-citation index in one pass; delegates deletion to `finalize(abandon=True)`. CLI_ONLY in MCP (bulk destructive). 11 tests. Tests: 1789 → 1800 (+11), 0 regressions. Tag: `m98-phase8-round-c`.
