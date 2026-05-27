@@ -111,6 +111,7 @@ def test_known_checks_includes_all_documented_checks():
         "paper-canonical-source",
         "confidence-distribution",
         "confidence-propagation",
+        "tags-invalid-type",
     }
     assert KNOWN_CHECKS == expected
 

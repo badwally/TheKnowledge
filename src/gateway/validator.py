@@ -403,6 +403,19 @@ def validate_wiki_page_frontmatter(
                 )
             )
 
+    # ONT-12: tags must be a list of strings when present
+    tags = front.get("tags")
+    if tags is not None:
+        if not isinstance(tags, list) or any(not isinstance(t, str) for t in tags):
+            result.warnings.append(
+                ValidationError(
+                    "tags-invalid-type",
+                    f"tags must be a list of strings (sub-domain topic tags); "
+                    f"got {type(tags).__name__ if not isinstance(tags, list) else 'list with non-string items'}",
+                    "tags",
+                )
+            )
+
     # ONT-6: timestamp format for entity/concept/synthesis
     if schema.type_name in _TIMESTAMP_PAGE_TYPES:
         result.merge(validate_timestamps(front))

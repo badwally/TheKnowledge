@@ -303,6 +303,7 @@ slug: food-noise
 canonical_name: "Food noise"
 aliases: ["food chatter", "food preoccupation"]
 domains: ["glp1-reward-modulation"]
+tags: ["reward-blunting-mechanisms"]   # optional: sub-domain topic clustering (ONT-12)
 created_at: "..."
 last_updated: "..."
 sources_count: 9
@@ -333,6 +334,8 @@ sources_count: 9
 ```
 
 Required sections: Summary, Key claims (with citations), Sources, Related. Optional: Mechanism, Open questions, Disagreements.
+
+**`tags:`** is an optional `list[str]` for sub-domain topic clustering within a domain. Values are free-form kebab-case labels (e.g., `reward-blunting-mechanisms`). Validator warns if set to a non-list type. Validated by lint check `tags-invalid-type` (ONT-12).
 
 ### 4.3 Source (`wiki/sources/<id>.md`)
 

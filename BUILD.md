@@ -1150,6 +1150,10 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ## 15. Phase 7 delivery log (2026-05-26)
 
+### M91 — Phase 7 Round C (ONT-12 codify tags field)
+
+See `docs/milestones/M91.md`. ONT-12: `tags:` field codified as optional `list[str]` for sub-domain topic clustering. Decision: keep (149 concepts carry it with meaningful values — stripping would lose real sub-domain signal). Validator warns (`tags-invalid-type`) if set to a non-list type; `lint/invalid_tags.py` surfaces violations across the wiki corpus; WIKI.md § 4.2 updated with field documentation. 10 tests. Tests: 1716 → 1726 (+10), 0 regressions. Tag: `m91-phase7-round-c`.
+
 ### M90 — Phase 7 Round B (TOOL-11 inbox triage web view)
 
 See `docs/milestones/M90.md`. TOOL-11: `GET /api/inbox` returns pending files from `raw/inbox/` (filename, size, mtime, sniffed type/title/url) and failed files from `raw/inbox/_failed/` (original name, failed_at from timestamp prefix, reason from `.reason.txt` sidecar); `POST /api/inbox/retry/{filename}` moves a failed file back to inbox and deletes the reason file; 409 if original name already pending. 11 tests. Tests: 1705 → 1716 (+11), 0 regressions. Tag: `m90-phase7-round-b`.

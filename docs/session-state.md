@@ -1,6 +1,6 @@
 # Session state — 2026-05-26
 
-Last updated: 2026-05-26 (M90 complete — TOOL-11 inbox web view)
+Last updated: 2026-05-26 (M91 complete — ONT-12 tags codification)
 
 ---
 
@@ -18,17 +18,16 @@ Carry-forward (not blocking anything):
 
 ## Files mid-edit
 
-None. main is clean at m90-phase7-round-b. 1716 tests passing.
+None. main is clean at m91-phase7-round-c. 1726 tests passing.
 Phase 7 delivery log in BUILD.md § 15.
 
 ---
 
 ## Decisions made this session
 
-- Phase 6 complete: M85 (TOOL-8), M86 (AGT-7), M87 (ONT-5), M88 (ONT-7).
-- ONT-8 confirmed already shipped.
 - M89: AGT-8 filter calibrator monthly cron. 1705 tests.
 - M90: TOOL-11 inbox triage web view. 1716 tests.
+- M91: ONT-12 tags codification (keep as list[str], validator + lint). 1726 tests.
 
 ---
 
@@ -36,13 +35,13 @@ Phase 7 delivery log in BUILD.md § 15.
 
 - ONT-9 (domain hierarchy): deferred — 22 MOCs manageable flat.
 - QUAL-8/ARCH-12/ONT-1: deferred — all L-effort, no forcing function.
+- TOOL-15 (wiki ask-corpus): deferred — NLM notebook_query op doesn't exist yet.
 
 ---
 
 ## Next atomic step
 
-Phase 7 continues. Candidates:
-- TOOL-15 (`wiki ask-corpus <domain> "<q>"`) — S effort, hits NLM notebook_query → draft synthesis
-- ONT-12 (codify or remove `tags:`) — S effort
-- ONT-14 (optional `question` page type) — unknown effort
-- TOOL-10 (shell completion via argcomplete) — S effort
+Phase 7 continues. Remaining S/M candidates:
+- ONT-14 (optional `question` page type) — new page type with status field
+- TOOL-10 (shell completion via argcomplete) — docs + setup, no gateway logic
+- TOOL-15 (wiki ask-corpus) — blocked on NLM notebook_query op
