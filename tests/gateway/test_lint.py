@@ -108,6 +108,7 @@ def test_known_checks_includes_all_documented_checks():
         "domain-purity",
         "link-rot",
         "superseded-citations",
+        "paper-canonical-source",
     }
     assert KNOWN_CHECKS == expected
 
