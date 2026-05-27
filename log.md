@@ -20577,3 +20577,71 @@ finalized wiki/concepts/reference-service-life.md
 ## [2026-05-27T19:12:45Z] finalize-batch | candidates=400 | finalized=21 | escalated=379 | execute=True | suggest=False
 
 finalize-batch: 400 candidates, 21 finalized (execute=True, suggest=False)
+
+## [2026-05-27T19:12:59Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T19-12-59Z-schema-drift.md
+
+## [2026-05-27T19:13:46Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T19-13-46Z-schema-drift.md
+
+## [2026-05-27T19:14:16Z] finalize-batch | candidates=20 | finalized=0 | escalated=19 | execute=False | suggest=True
+
+finalize-batch: 20 candidates, 0 finalized (execute=False, suggest=True)
+
+## [2026-05-27T19:14:33Z] finalize-batch | candidates=5 | finalized=0 | escalated=5 | execute=True | suggest=False
+
+finalize-batch: 5 candidates, 0 finalized (execute=True, suggest=False)
+
+## [2026-05-27T19:14:41Z] finalize-batch | candidates=379 | finalized=0 | escalated=379 | execute=True | suggest=False
+
+finalize-batch: 379 candidates, 0 finalized (execute=True, suggest=False)
+
+## [2026-05-27T19:14:58Z] lint | scope=orphans | orphans=541
+
+report=.knowledge/lint/2026-05-27T19-14-58Z-orphans.md
+
+## [2026-05-27T19:17:46Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T19-17-46Z-schema-drift.md
+
+## [2026-05-27T20:51:45Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=5 | limit=5 | errors=5
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-27T20:52:30Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-27T20-52-30Z-schema-drift.md
+
+## [2026-05-27T20:53:26Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-27T20:53:57Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-27T20:54:27Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T20:54:27Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-27T20:54:51Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-27T20:55:22Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T20:55:22Z] wiki-author | id=query-2026-05-27-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-27T20:55:22Z] discharge-orphans | domain=glp1-reward-modulation | filed=5 | skipped=0 | limit=5 | errors=0
+
+discharge-orphans: 5 drafts filed for domain 'glp1-reward-modulation'
