@@ -378,6 +378,16 @@ def validate_wiki_page_frontmatter(
                     "entity_kind",
                 )
             )
+        # ONT-5: paper entities require canonical_source
+        if entity_kind == "paper" and not front.get("canonical_source"):
+            result.warnings.append(
+                ValidationError(
+                    "paper-missing-canonical-source",
+                    "entity_kind: paper requires canonical_source pointing to an ingested source ID; "
+                    "add canonical_source: <source-id> (e.g. arxiv-2401-12345 or pdf-lastname2024)",
+                    "canonical_source",
+                )
+            )
 
     # ONT-6: timestamp format for entity/concept/synthesis
     if schema.type_name in _TIMESTAMP_PAGE_TYPES:

@@ -38,6 +38,7 @@ from gateway.lint import (
     superseded_citations,
     synthesizes_coverage,
     untagged_sources,
+    paper_canonical_source,
 )
 
 
@@ -65,6 +66,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("domain-purity", domain_purity.run),
     ("link-rot", link_rot.run),
     ("superseded-citations", superseded_citations.run),
+    ("paper-canonical-source", paper_canonical_source.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
