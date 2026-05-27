@@ -81,6 +81,9 @@ CLI_ONLY: frozenset[str] = frozenset(
         "backfill-synthesizes",
         "backfill-sources-count",
         "fix-wikilinks",
+        # `abandon-stale-drafts` is a bulk destructive maintenance op (M98). Agents
+        # must not auto-abandon drafts unsupervised; CLI-only by design.
+        "abandon-stale-drafts",
         # Log rotation is a bulk maintenance operation. Scheduler owns invocation.
         "rotate-log",
         # `question` is a multi-action umbrella (new/list); the fine-grained

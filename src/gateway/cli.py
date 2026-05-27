@@ -69,6 +69,7 @@ SUBCOMMANDS: dict[str, str] = {
     "backfill-synthesizes": "Populate synthesizes: on synthesis pages from body wikilink citations (ONT-11)",
     "backfill-sources-count": "Stamp missing sources_count on synthesis pages by counting [[sources/...]] links (M96)",
     "fix-wikilinks": "Repair broken wikilinks: remove dead source citations, downgrade entity/concept links to forward-refs (M97)",
+    "abandon-stale-drafts": "Auto-abandon orphaned draft pages older than N days with no inbound citations (M98)",
     "skill-emit": "Generate .claude/skills/wiki-<domain>/SKILL.md for a domain (AGT-13)",
     "rotate-log": "Archive log.md entries older than N days to quarterly log.archive files (DOC-5)",
     "reingest": "Re-ingest a revised source; creates versioned successor linked via supersedes/superseded_by (QUAL-14)",
@@ -131,6 +132,7 @@ IMPLEMENTED: set[str] = {
     "backfill-synthesizes",
     "backfill-sources-count",
     "fix-wikilinks",
+    "abandon-stale-drafts",
     "skill-emit",
     "rotate-log",
     "reingest",
@@ -1085,6 +1087,17 @@ def build_parser() -> argparse.ArgumentParser:
     p_fwl = subparsers.add_parser("fix-wikilinks", help=SUBCOMMANDS["fix-wikilinks"])
     p_fwl.add_argument("--dry-run", action="store_true", help="Report changes without writing")
 
+    # abandon-stale-drafts (M98)
+    p_asd = subparsers.add_parser("abandon-stale-drafts", help=SUBCOMMANDS["abandon-stale-drafts"])
+    p_asd.add_argument("--dry-run", action="store_true", help="Report without writing")
+    p_asd.add_argument(
+        "--min-age-days",
+        type=int,
+        default=30,
+        metavar="N",
+        help="Minimum draft age in days to qualify for abandonment (default: 30)",
+    )
+
     # skill-emit (AGT-13)
     p_skill = subparsers.add_parser("skill-emit", help=SUBCOMMANDS["skill-emit"])
     p_skill.add_argument("domain", help="Domain slug to generate a skill for")
@@ -1337,6 +1350,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_backfill_sources_count_cmd(ns)
     if ns.subcommand == "fix-wikilinks":
         return _run_fix_wikilinks_cmd(ns)
+    if ns.subcommand == "abandon-stale-drafts":
+        return _run_abandon_stale_drafts_cmd(ns)
     if ns.subcommand == "skill-emit":
         return _run_skill_emit_cmd(ns)
     if ns.subcommand == "rotate-log":
@@ -2306,6 +2321,17 @@ def _run_fix_wikilinks_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.fix_wikilinks import fix_wikilinks
 
     return _emit_result(fix_wikilinks(dry_run=getattr(ns, "dry_run", False)))
+
+
+def _run_abandon_stale_drafts_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.abandon_stale_drafts import abandon_stale_drafts
+
+    return _emit_result(
+        abandon_stale_drafts(
+            min_age_days=getattr(ns, "min_age_days", 30),
+            dry_run=getattr(ns, "dry_run", False),
+        )
+    )
 
 
 def _run_skill_emit_cmd(ns: argparse.Namespace) -> int:
