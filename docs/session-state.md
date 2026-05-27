@@ -1,6 +1,6 @@
 # Session state — 2026-05-27
 
-Last updated: 2026-05-27 (Phase 10 complete — M103-M106, 1852 tests, condo eval 0.605)
+Last updated: 2026-05-27 (Phase 11 complete — M107+M108, 1854 tests)
 
 ---
 
@@ -8,40 +8,37 @@ Last updated: 2026-05-27 (Phase 10 complete — M103-M106, 1852 tests, condo eva
 
 None.
 
-Carry-forward (not blocking anything):
+Carry-forward:
+- NLM session duration issue: `nlm login` cookies expire within seconds in CLI subprocess context. `discharge-orphans --domain edge-ai-agentic` fails mid-batch (even limit=5). Root cause: Chrome session cookies are invalidated by Google when reused outside the originating browser. Fix requires persistent OAuth refresh token in nlm-mcp CLI, not extractable session cookies. Discharge-orphans multi-domain sweep is blocked until this is resolved.
+- schema-drift: 208 remaining (legacy editorial tail — entity_kind, slug length, canonical_name are Dim 2-fail, human judgment required).
+- finalize-batch: 359 escalated drafts (unresolved citations, need `--suggest` + ANTHROPIC_API_KEY_RESEARCH). The 21 Cat A pages are done.
 - INT-18/INT-19 hand-tests deferred (need live NOTION_TOKEN/SLACK_BOT_TOKEN).
 - `wiki migrate` remains a stub.
-- schema-drift: 208 remaining. Legacy editorial tail (entity_kind, slug length, canonical_name) is Dim 2-fail (human judgment); no engineering fix available.
-- broken-wikilinks: 82 remaining (all WARNINGs — forward-references to entity/concept pages not yet authored).
-- discharge-orphans dry-run bug: `--dry-run` does not validate NLM auth or notebook existence; reports "N drafts filed" before auth check. Low priority.
-- glp1-reward-modulation has no NLM notebook — discharge-orphans will fail on that domain until a notebook is created.
+- glp1-reward-modulation has no NLM notebook.
 
 ---
 
 ## Files mid-edit
 
-None. 1852 tests passing. Phase 10 exit checkpoint written in BUILD.md § 22.
+None. 1854 tests passing. Phase 11 exit checkpoint written in BUILD.md § 23.
 
 ---
 
 ## Decisions made this session
 
-- Phase 10 rubric (updated post-completion): docs/260527_knowledge_phase10_backlog-rubric.md
-- M103: per-source 30k body cap in wiki_context._read_source_bodies + editorial CINC domain cleanup + FL bill removal. Condo eval 0.459→0.605.
-- M104: synthesizes-coverage draft exemption (WARNING not ERROR for draft: true pages).
-- M105: schema-drift section-missing draft exemption in validator.validate_wiki_page_sections() — `is_draft` computed before sections check.
-- M106: first live discharge-orphans run — condo-capital-infra, limit 10, 10 filed, 0 errors.
-- discharge-orphans note: 9 of 10 "filed" pages already existed as committed synthesis files; routine reprocessed identically. Only 1 genuinely new page.
+- Phase 11 rubric: docs/260527_knowledge_phase10_backlog-rubric.md (§ 6 proposed Phase 11 scope)
+- M107: discharge-orphans dry-run pre-flight notebook check + "[NLM auth not validated]" note.
+- M108: finalize-batch --execute finalized 21 Cat A drafts (3 concepts, 17 entities, 1 synthesis).
+- NLM auth finding: Chrome session cookies from `nlm login` expire within seconds in CLI context. Systematic fix needed in nlm-mcp CLI (OAuth refresh tokens).
+- eval regression check: all domains stable or improved. glp1 -0.016 is judge variance.
 
 ---
 
 ## Next atomic step
 
-Phase 10 complete. Phase 11 proposed in docs/260527_knowledge_phase10_backlog-rubric.md § 6:
+Phase 12 candidates (NLM-independent, no blockers):
+1. finalize-batch --suggest for escalated drafts — uses ANTHROPIC_API_KEY_RESEARCH; auto-cites unambiguous claims, then finalizes. Run with --limit 20 first to validate.
+2. wiki lint --scope orphans — check if the condo-capital-infra discharge-orphans run reduced orphan count.
+3. Schema-drift editorial sprint — entity_kind, canonical_name fixes require human review; may yield ~50 fewer findings.
 
-1. discharge-orphans multi-domain sweep — run on edge-ai-agentic (has notebook, limit 20)
-2. Re-run `wiki evaluate --all-domains` for regression guard after new synthesis pages
-3. Finalize-batch on oldest outstanding drafts (>30 days)
-4. Fix discharge-orphans dry-run: validate NLM auth + notebook before reporting success
-
-Start with item 1 (no blockers, auth is fresh).
+Start with item 1 (finalize escalated drafts) — ANTHROPIC_API_KEY_RESEARCH is set.

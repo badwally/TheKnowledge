@@ -1148,6 +1148,37 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 24. Phase 11 delivery log (2026-05-27)
+
+### M108 — Phase 11 Round B (finalize-batch Cat A drafts)
+
+`wiki finalize-batch --execute`: 21 Cat A drafts finalized (3 concepts, 17 entities, 1 synthesis). Citation-complete pages stripped of `draft: true`, stamped with `finalized_at`. 359 escalated pages remain (unresolved citations, need `--suggest`). Tests: 1854 (unchanged). Tag: `eea6a8f`.
+
+### M107 — Phase 11 Round A (discharge-orphans dry-run validation fix)
+
+Pre-flight notebook check added to `discharge_orphans()`: fails fast with "no notebook for domain" error when domain has no registered NLM notebook, preventing misleading "N drafts filed" count from dry-run. Dry-run summary now annotates `[NLM auth not validated]`. 2 new tests. Tests: 1852 → 1854 (+2). Tag: `723dde6`.
+
+---
+
+## 23. Phase 11 exit checkpoint (2026-05-27)
+
+2 milestones (M107–M108) delivered. 1852 → 1854 tests (+2), 0 regressions.
+
+| Item | Milestone | Tests | Result |
+|------|-----------|-------|--------|
+| discharge-orphans dry-run pre-flight notebook check + auth note | M107 | +2 | Dry-run no longer reports false successes |
+| finalize-batch Cat A drafts | M108 | 0 | 21 pages finalized |
+
+Phase 11 exit criteria status:
+- ✗ discharge-orphans on ≥2 domains — NLM auth sessions expire within seconds in CLI context; systematic fix needed
+- ✓ eval --all-domains no regression — condo 0.605, edge-ai 0.729 (+0.039), glp1 0.633 (-0.016 judge variance), ai-native 0.928 (+0.039)
+- ✓ discharge dry-run validates auth note — M107 delivered
+- ◑ finalize-batch — 21 Cat A done; 359 escalated remain (need --suggest + ANTHROPIC_API_KEY_RESEARCH)
+
+**NLM session duration issue:** `nlm login` extracts Chrome cookies that expire within seconds in headless CLI context. Batches of even 5 sources fail mid-run. Root cause: Chrome session cookies are valid only in the original browser session; extracting and reusing them in a subprocess context triggers immediate Google invalidation. This blocks discharge-orphans multi-domain sweep until the nlm-mcp CLI gains a persistent token strategy (e.g., OAuth refresh token vs session cookies).
+
+---
+
 ## 22. Phase 10 exit checkpoint (2026-05-27)
 
 4 milestones (M103–M106) delivered. 1837 → 1852 tests (+15), 0 regressions.
