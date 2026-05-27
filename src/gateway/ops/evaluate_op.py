@@ -40,6 +40,8 @@ def evaluate_op(*,
         summary = run_evaluate(domain, limit=limit)
     except NoGoldensError as e:
         return OperationResult(success=False, errors=[str(e)])
+    except Exception as e:
+        return OperationResult(success=False, errors=[str(e)])
 
     log.append(
         op="evaluate",
