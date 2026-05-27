@@ -19755,3 +19755,165 @@ fix-wikilinks: 136 pages — 195 source links removed, 82 links downgraded to WA
 ## [2026-05-27T04:43:36Z] lint | scope=broken-wikilinks | broken-wikilinks=82
 
 report=.knowledge/lint/2026-05-27T04-43-36Z-broken-wikilinks.md
+
+## [2026-05-27T04:44:49Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-44-49Z-schema-drift.md
+
+## [2026-05-27T04:45:08Z] lint | scope=stale-drafts | stale-drafts=224
+
+report=.knowledge/lint/2026-05-27T04-45-08Z-stale-drafts.md
+
+## [2026-05-27T04:50:43Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-50-43Z-schema-drift.md
+
+## [2026-05-27T04:51:24Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-51-24Z-schema-drift.md
+
+## [2026-05-27T04:54:54Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-54-54Z-schema-drift.md
+
+## [2026-05-27T04:55:26Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-55-26Z-schema-drift.md
+
+## [2026-05-27T04:55:45Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-55-45Z-schema-drift.md
+
+## [2026-05-27T04:55:47Z] lint | scope=broken-wikilinks | broken-wikilinks=82
+
+report=.knowledge/lint/2026-05-27T04-55-47Z-broken-wikilinks.md
+
+## [2026-05-27T04:56:01Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-56-01Z-schema-drift.md
+
+## [2026-05-27T04:56:52Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T04-56-52Z-schema-drift.md
+
+## [2026-05-27T05:06:05Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T05-06-05Z-schema-drift.md
+
+## [2026-05-27T05:10:51Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T05-10-51Z-schema-drift.md
+
+## [2026-05-27T05:10:53Z] lint | scope=broken-wikilinks | broken-wikilinks=82
+
+report=.knowledge/lint/2026-05-27T05-10-53Z-broken-wikilinks.md
+
+## [2026-05-27T15:28:39Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-28-39Z-schema-drift.md
+
+## [2026-05-27T15:28:41Z] lint | scope=broken-wikilinks | broken-wikilinks=82
+
+report=.knowledge/lint/2026-05-27T15-28-41Z-broken-wikilinks.md
+
+## [2026-05-27T15:28:53Z] lint | scope=broken-wikilinks | broken-wikilinks=82
+
+report=.knowledge/lint/2026-05-27T15-28-53Z-broken-wikilinks.md
+
+## [2026-05-27T15:29:00Z] lint | scope=stale-drafts | stale-drafts=224
+
+report=.knowledge/lint/2026-05-27T15-29-00Z-stale-drafts.md
+
+## [2026-05-27T15:39:54Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-39-54Z-schema-drift.md
+
+## [2026-05-27T15:40:17Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-40-17Z-schema-drift.md
+
+## [2026-05-27T15:45:19Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-45-19Z-schema-drift.md
+
+## [2026-05-27T15:45:36Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-45-36Z-schema-drift.md
+
+## [2026-05-27T15:50:03Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-50-03Z-schema-drift.md
+
+## [2026-05-27T15:51:49Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T15-51-49Z-schema-drift.md
+
+## [2026-05-27T16:01:50Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.1 | input_tokens=1734 | cache_read_tokens=1066221
+
+evaluate condo-capital-infra: 10 Q, mean=0.100
+
+## [2026-05-27T16:03:21Z] evaluate | domain=edge-ai-agentic | n_questions=10 | mean_score=0.708 | input_tokens=1756 | cache_read_tokens=299763
+
+evaluate edge-ai-agentic: 10 Q, mean=0.708
+
+## [2026-05-27T16:05:34Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.1 | input_tokens=30 | cache_read_tokens=1184690
+
+evaluate condo-capital-infra: 10 Q, mean=0.100
+
+## [2026-05-27T16:07:10Z] evaluate | domain=edge-ai-agentic | n_questions=10 | mean_score=0.69 | input_tokens=30 | cache_read_tokens=333070
+
+evaluate edge-ai-agentic: 10 Q, mean=0.690
+
+## [2026-05-27T16:09:47Z] evaluate | domain=glp1-reward-modulation | n_questions=15 | mean_score=0.649 | input_tokens=2143 | cache_read_tokens=345285
+
+evaluate glp1-reward-modulation: 15 Q, mean=0.649
+
+## [2026-05-27T16:10:08Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T16-10-08Z-schema-drift.md
+
+## [2026-05-27T16:10:25Z] lint | scope=schema-drift | schema-drift=225
+
+report=.knowledge/lint/2026-05-27T16-10-25Z-schema-drift.md
+
+## [2026-05-27T16:16:26Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=5 | limit=5 | errors=5
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-27T16:20:15Z] ingest | id=web-2022-07-07-3bd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-07-07-3bd.md wiki=wiki/sources/web-2022-07-07-3bd.md
+
+## [2026-05-27T16:23:00Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14226 | cache_read=0 | cache_creation=109070 | duration_ms=160664 | cost_usd=1.037362
+
+## [2026-05-27T16:24:42Z] wiki-author | id=query-2026-05-27-what-are-the-four-reserve-funding | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T16:27:42Z] query | domain=condo-capital-infra | unresolved_citations=5,7
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T16:27:42Z] wiki-author | id=query-2026-05-27-what-does-the-percent-funded-metric | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T16:28:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,6,8,9,11,13,14,15,17,18,19,21,22
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-27T16:28:37Z] wiki-author | id=query-2026-05-27-what-does-florida-s-structural-integrity | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-27T16:30:14Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.2 | input_tokens=1734 | cache_read_tokens=1092456
+
+evaluate condo-capital-infra: 10 Q, mean=0.200
+
+## [2026-05-27T16:46:24Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.363 | input_tokens=1734 | cache_read_tokens=1145160
+
+evaluate condo-capital-infra: 10 Q, mean=0.363
+
+## [2026-05-27T16:49:22Z] evaluate | domain=condo-capital-infra | n_questions=10 | mean_score=0.459 | input_tokens=1734 | cache_read_tokens=1153980
+
+evaluate condo-capital-infra: 10 Q, mean=0.459

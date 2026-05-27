@@ -662,3 +662,4 @@ first to orient before drilling into specific pages.
 - [[sources/web-2026-01-01-936]] · web · HomeRun IQ — Reserve Studies, PCA, SIRS & Capital Planning · condo-software
 - [[sources/web-2025-04-23-889]] · web · Find an Interface partner · condo-software
 - [[sources/web-2026-05-24-100]] · web · Example Domain
+- [[sources/web-2022-07-07-3bd]] · web · Smart Strategies for Effective Reserve Funding
