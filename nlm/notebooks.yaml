@@ -206,12 +206,6 @@ notebooks:
       created_at: '2026-04-29T19:08:10Z'
       sources_count: 12
       last_sync: '2026-04-29T19:49:03Z'
-  glp1-reward-modulation:
-    persistent:
-      notebook_id: 089b5d0a-af34-40ab-a82d-0cf311d793ac
-      created_at: '2026-05-27T19:25:00Z'
-      sources_count: 0
-      last_sync: null
   edge-ai-agentic:
     persistent:
       notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
@@ -233,6 +227,12 @@ notebooks:
       status: abandoned
       sources_count: 0
       promoted_at: null
+  glp1-reward-modulation:
+    persistent:
+      notebook_id: 089b5d0a-af34-40ab-a82d-0cf311d793ac
+      created_at: '2026-05-27T19:25:00Z'
+      sources_count: 0
+      last_sync: None
   local-models:
     persistent:
       notebook_id: 6f3c74b9-7a75-492f-be4d-54ee0bc69b37
@@ -243,8 +243,8 @@ notebooks:
     persistent:
       notebook_id: adc34eb9-c798-4530-8b0d-4b166a0bc38a
       created_at: '2026-05-28T01:12:03Z'
-      sources_count: 0
-      last_sync: null
+      sources_count: 5
+      last_sync: '2026-05-28T02:20:07Z'
   risksystems:
     persistent:
       notebook_id: dee0eae4-b11f-4df2-a418-d10fffd42c7e

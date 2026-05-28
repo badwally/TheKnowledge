@@ -21977,3 +21977,149 @@ report=.knowledge/lint/2026-05-28T00-26-34Z-schema-drift.md
 ## [2026-05-28T00:26:42Z] lint | scope=synthesizes-coverage | synthesizes-coverage=74
 
 report=.knowledge/lint/2026-05-28T00-26-42Z-synthesizes-coverage.md
+
+## [2026-05-28T00:27:42Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T00-27-42Z-schema-drift.md
+
+## [2026-05-28T01:02:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1466 | cache_read=0 | cache_creation=83494 | duration_ms=17866 | cost_usd=0.111705
+
+## [2026-05-28T01:02:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1382 | cache_read=0 | cache_creation=73088 | duration_ms=19051 | cost_usd=0.098278
+
+## [2026-05-28T01:02:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1789 | cache_read=69048 | cache_creation=14310 | duration_ms=23442 | cost_usd=0.033745
+
+## [2026-05-28T01:03:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5060 | cache_read=67610 | cache_creation=15924 | duration_ms=55992 | cost_usd=0.051974
+
+## [2026-05-28T01:04:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2196 | cache_read=70092 | cache_creation=15315 | duration_ms=26241 | cost_usd=0.037141
+
+## [2026-05-28T01:05:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2615 | cache_read=70092 | cache_creation=15227 | duration_ms=31948 | cost_usd=0.039126
+
+## [2026-05-28T01:05:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2893 | cache_read=70092 | cache_creation=12369 | duration_ms=32987 | cost_usd=0.036943
+
+## [2026-05-28T01:06:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1668 | cache_read=70092 | cache_creation=14030 | duration_ms=22515 | cost_usd=0.032895
+
+## [2026-05-28T01:06:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2380 | cache_read=61212 | cache_creation=12747 | duration_ms=32951 | cost_usd=0.033963
+
+## [2026-05-28T01:07:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2043 | cache_read=67610 | cache_creation=16586 | duration_ms=26083 | cost_usd=0.037717
+
+## [2026-05-28T01:08:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=7498 | cache_read=69198 | cache_creation=12551 | duration_ms=80608 | cost_usd=0.060107
+
+## [2026-05-28T01:08:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2229 | cache_read=69198 | cache_creation=10926 | duration_ms=26101 | cost_usd=0.031730
+
+## [2026-05-28T01:09:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1539 | cache_read=69198 | cache_creation=10586 | duration_ms=19585 | cost_usd=0.027855
+
+## [2026-05-28T01:09:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1614 | cache_read=67610 | cache_creation=12572 | duration_ms=18889 | cost_usd=0.030554
+
+## [2026-05-28T01:10:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1966 | cache_read=69478 | cache_creation=10666 | duration_ms=24425 | cost_usd=0.030118
+
+## [2026-05-28T01:10:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1925 | cache_read=69478 | cache_creation=10694 | duration_ms=23883 | cost_usd=0.029948
+
+## [2026-05-28T01:11:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1846 | cache_read=69478 | cache_creation=10704 | duration_ms=21931 | cost_usd=0.029566
+
+## [2026-05-28T01:11:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2542 | cache_read=69478 | cache_creation=10921 | duration_ms=28712 | cost_usd=0.033317
+
+## [2026-05-28T01:11:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1838 | cache_read=67610 | cache_creation=11791 | duration_ms=22541 | cost_usd=0.030698
+
+## [2026-05-28T01:12:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1751 | cache_read=68721 | cache_creation=11034 | duration_ms=25068 | cost_usd=0.029428
+
+## [2026-05-28T01:12:34Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T01-12-34Z-schema-drift.md
+
+## [2026-05-28T01:12:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2293 | cache_read=68721 | cache_creation=10884 | duration_ms=25091 | cost_usd=0.031950
+
+## [2026-05-28T01:13:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2140 | cache_read=68721 | cache_creation=10846 | duration_ms=22112 | cost_usd=0.031138
+
+## [2026-05-28T01:13:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3624 | cache_read=68721 | cache_creation=10825 | duration_ms=36434 | cost_usd=0.038531
+
+## [2026-05-28T01:14:11Z] lint | scope=all | orphans=541 | stale-drafts=379 | stale-claims=3 | contradictions=82 | missing-pages=13 | citation-density=0 | citation-chains=18 | schema-drift=208 | filter-calibration=29 | inbox-pending=0 | nlm-pending=75 | untagged-sources=1 | idempotency=4 | broken-wikilinks=84 | long-slugs=50 | contradiction-pages=0 | synthesizes-coverage=74 | stale-verified=46 | retracted-citations=0 | domain-purity=0 | link-rot=428 | superseded-citations=0 | paper-canonical-source=46 | confidence-distribution=13 | confidence-propagation=0 | tags-invalid-type=0 | open-questions=0 | answered-no-synthesis=0
+
+report=.knowledge/lint/2026-05-28T01-14-11Z.md
+
+## [2026-05-28T01:15:55Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=3444 | cache_read=0 | cache_creation=19835 | duration_ms=54989 | cost_usd=0.126047 | attempt=0
+
+## [2026-05-28T01:16:45Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=3 | out_tokens=2986 | cache_read=4291 | cache_creation=15656 | duration_ms=48851 | cost_usd=0.104796 | attempt=1
+
+## [2026-05-28T01:16:45Z] bootstrap-domain | slug=orita-cmo | inclusion_count=6 | exclusion_count=4
+
+authored policy for orita-cmo from description
+
+## [2026-05-28T01:39:02Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T01-39-02Z-schema-drift.md
+
+## [2026-05-28T01:42:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2044 | cache_read=67610 | cache_creation=16561 | duration_ms=29149 | cost_usd=0.037690
+
+## [2026-05-28T01:42:09Z] ingest | id=pdf-4931157e130a | type=pdf | domains=orita-cmo | filter=included | domain=orita-cmo | score=0.9
+
+raw=raw/pdf/pdf-4931157e130a.md wiki=wiki/sources/pdf-4931157e130a.md
+
+## [2026-05-28T01:45:49Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=19582 | cache_read=0 | cache_creation=24570 | duration_ms=218457 | cost_usd=0.643138
+
+## [2026-05-28T01:45:54Z] wiki-author | id=pdf-4931157e130a | updates=12 | created=12 | updated=0 | contradictions=0 | draft=no
+
+First source in the orita-cmo domain — establishes core entity (Orita), key people (Adrian, Aaron), tool stack (Klaviyo, HubSpot, Avoma, Claude Code), and the four strategic concepts Adrian prioritized: voice-of-customer, competitive positioning, agency-channel GTM, and HubSpot data hygiene, plus the RAG framing Andrew introduced.
+
+## [2026-05-28T01:53:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2932 | cache_read=0 | cache_creation=70166 | duration_ms=37584 | cost_usd=0.102376
+
+## [2026-05-28T01:53:28Z] ingest | id=docx-92ec692fb0f8 | type=docx | domains=orita-cmo | filter=included | domain=orita-cmo | score=0.9
+
+raw=raw/docx/docx-92ec692fb0f8.md wiki=wiki/sources/docx-92ec692fb0f8.md
+
+## [2026-05-28T01:56:44Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=17341 | cache_read=4696 | cache_creation=22398 | duration_ms=194099 | cost_usd=0.575886
+
+## [2026-05-28T01:56:49Z] wiki-author | id=docx-92ec692fb0f8 | updates=14 | created=8 | updated=6 | contradictions=2 | draft=no
+
+Orita's internal CLAUDE.md is first-party strategic doctrine that materially expands entity coverage (stack tools, partner status, growth metrics) and introduces three durable architecture concepts (escalation levels, workflow/resource agent split, Claude Code velocity model) that earlier Orita sources only gestured at.
+
+## [2026-05-28T01:57:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1387 | cache_read=69340 | cache_creation=14735 | duration_ms=20944 | cost_usd=0.032296
+
+## [2026-05-28T01:57:31Z] ingest | id=docx-7ed3b7965067 | type=docx | domains=orita-cmo | filter=included | domain=orita-cmo | score=0.75
+
+raw=raw/docx/docx-7ed3b7965067.md wiki=wiki/sources/docx-7ed3b7965067.md
+
+## [2026-05-28T02:00:04Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=12888 | cache_read=4696 | cache_creation=24659 | duration_ms=150804 | cost_usd=0.478692
+
+## [2026-05-28T02:00:07Z] wiki-author | id=docx-7ed3b7965067 | updates=7 | created=0 | updated=7 | contradictions=0 | draft=no
+
+The CI agent spec elaborates the previously-stubbed competitive-positioning concept with concrete source taxonomy, signal scoring, action recommendation logic, and temporal decay; ties to escalation levels, Claude Code runtime, Crossbeam/PartnerStack MCP plans, AEO workflow A.11, and Orita's roadmap.
+
+## [2026-05-28T02:00:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=69340 | cache_creation=14116 | duration_ms=24330 | cost_usd=0.034282
+
+## [2026-05-28T02:00:45Z] ingest | id=docx-b90a5e5fdcc4 | type=docx | domains=orita-cmo | filter=included | domain=orita-cmo | score=0.85
+
+raw=raw/docx/docx-b90a5e5fdcc4.md wiki=wiki/sources/docx-b90a5e5fdcc4.md
+
+## [2026-05-28T02:04:32Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=19892 | cache_read=4696 | cache_creation=23879 | duration_ms=224282 | cost_usd=0.648917
+
+## [2026-05-28T02:04:34Z] wiki-author | id=docx-b90a5e5fdcc4 | updates=6 | created=5 | updated=1 | contradictions=0 | draft=no
+
+This docx is the authoritative architecture analysis behind Orita's Agent Escalation Levels concept — it warrants a comprehensive update to that page and creates entity pages for the named frameworks (LangGraph, CrewAI, AutoGen) and the Level 0 reference implementation (Okara.ai / Fatima Rizwan).
+
+## [2026-05-28T02:05:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2370 | cache_read=0 | cache_creation=71059 | duration_ms=29081 | cost_usd=0.100682
+
+## [2026-05-28T02:05:14Z] ingest | id=docx-25c1bcf28fb8 | type=docx | domains=orita-cmo | filter=included | domain=orita-cmo | score=0.85
+
+raw=raw/docx/docx-25c1bcf28fb8.md wiki=wiki/sources/docx-25c1bcf28fb8.md
+
+## [2026-05-28T02:08:36Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=17490 | cache_read=4696 | cache_creation=25247 | duration_ms=199033 | cost_usd=0.597417
+
+## [2026-05-28T02:08:40Z] wiki-author | id=docx-25c1bcf28fb8 | updates=13 | created=3 | updated=10 | contradictions=2 | draft=no
+
+Orita's internal Marketing Automation Plan v0.3 introduces named GTM strategy, growth metrics, customer proof points, TAM/SAM sizing, the AEO/GEO investment rationale (with Forrester/Gartner stats), and a concrete six-workflow-agent + three-resource-agent decomposition — substantial new claims spanning the company, channel partners, vendor stack, and architecture concepts.
+
+## [2026-05-28T02:19:46Z] nlm-add | id=docx-25c1bcf28fb8 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=docx
+
+file=docx-25c1bcf28fb8.docx title='orita-marketing-automation-plan'
+
+## [2026-05-28T02:19:53Z] nlm-add | id=docx-7ed3b7965067 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=docx
+
+file=docx-7ed3b7965067.docx title='orita-competitive-intelligence-agent-spec'
+
+## [2026-05-28T02:20:00Z] nlm-add | id=docx-92ec692fb0f8 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=docx
+
+file=docx-92ec692fb0f8.docx title='orita-claude-md'
+
+## [2026-05-28T02:20:07Z] nlm-add | id=docx-b90a5e5fdcc4 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=docx
+
+file=docx-b90a5e5fdcc4.docx title='orita-agent-architecture-analysis'

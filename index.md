@@ -672,3 +672,8 @@ first to orient before drilling into specific pages.
 - [[sources/pdf-1c554d4c6512]] · pdf · 2025-05-12 from Ron Anaka and Reply · condo-capital-infra
 - [[sources/pdf-de2ba769f276]] · pdf · 2025-06-11 Certificate · condo-capital-infra
 - [[sources/pdf-b73e53ed0c0d]] · pdf · 2025-06-11 Spreadsheet 10 · condo-capital-infra
+- [[sources/pdf-4931157e130a]] · pdf · AI Strategy Planning Session_otter_ai_transcript · orita-cmo
+- [[sources/docx-92ec692fb0f8]] · docx · orita-claude-md · orita-cmo
+- [[sources/docx-7ed3b7965067]] · docx · orita-competitive-intelligence-agent-spec · orita-cmo
+- [[sources/docx-b90a5e5fdcc4]] · docx · orita-agent-architecture-analysis · orita-cmo
+- [[sources/docx-25c1bcf28fb8]] · docx · orita-marketing-automation-plan · orita-cmo
