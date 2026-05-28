@@ -1148,6 +1148,43 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
+## 26. Phase 12 exit checkpoint (2026-05-28)
+
+3 milestones (M111–M112) + 1 operational commit (55 synthesis drafts). 1858 → 1862 tests (+4), 0 regressions.
+
+| Item | Milestone | Tests | Result |
+|------|-----------|-------|--------|
+| discharge-orphans auto-commit after batch | M111 | +4 | Synthesis pages committed immediately after each batch; no more session-boundary data loss |
+| Eval default context budget 500k → 750k | M112 | 0 | ai-native (725k) and condo (614k) both load within budget |
+| RUNBOOK.md eval troubleshooting section | M112 | 0 | ANTHROPIC_API_KEY_RESEARCH setup documented |
+| 55 uncommitted condo synthesis drafts | operational | — | Committed; working tree clean |
+
+Phase 12 exit criteria status:
+- ✓ Working tree clean — 55 synthesis pages committed; no uncommitted drafts
+- ✓ `discharge_orphans` auto-commits — M111 delivered
+- ✓ `wiki lint --scope synthesizes-coverage` — 0 ERRORs (74 WARNINGs for draft pages, correct M104 behavior)
+- ✓ `wiki evaluate --all-domains` context budget — ai-native + condo load cleanly; edge-ai + glp1 unblocked pending `ANTHROPIC_API_KEY_RESEARCH` env var (user config, not engineering)
+
+**Carry-forward to Phase 13:**
+- `ANTHROPIC_API_KEY_RESEARCH` must be set in shell for edge-ai / glp1 eval (see RUNBOOK.md)
+- 379 finalize-batch escalated drafts need `--suggest` once API key is set
+- schema-drift 208 (legacy editorial debt — entity_kind, slug, canonical_name)
+- `wiki migrate` stub; INT-18/INT-19 hand-tests
+
+---
+
+## 25. Phase 12 delivery log (2026-05-28)
+
+### M112 — Phase 12 Round B (eval default context budget + RUNBOOK docs)
+
+`_DEFAULT_MAX_CHARS` raised 500k → 750k in `evaluate/wiki_context.py` to match the evaluate-weekly cron setting (M101 raised it there but left the default inconsistent). ai-native-business (725k) and condo-capital-infra (614k) now load cleanly without `--max-chars` override. RUNBOOK.md: new Evaluation failures table documenting `ANTHROPIC_API_KEY_RESEARCH` setup, context budget override, and missing-goldens symptom. Tests: 1862 (unchanged). Tag: `e449cf2`.
+
+### M111 — Phase 12 Round A (discharge-orphans auto-commit)
+
+`discharge_orphans()` collects `paths_touched` from each successful `query()` call, filters to `wiki/synthesis/*.md` paths, then calls `git add + git commit` after a successful non-dry-run batch. Commit failure is non-fatal (try/except). 4 new tests covering: commit called after batch, skipped on dry-run, skipped when no synthesis paths, survives git failure. Tests: 1858 → 1862 (+4). Tag: `0d1919d`.
+
+---
+
 ## 24. Phase 11 delivery log (2026-05-27)
 
 ### M108 — Phase 11 Round B (finalize-batch Cat A drafts)

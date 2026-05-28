@@ -21953,3 +21953,27 @@ report=.knowledge/lint/2026-05-27T23-31-21Z.md
 ## [2026-05-27T23:48:30Z] lint | scope=all | orphans=531 | stale-drafts=224 | stale-claims=3 | contradictions=60 | missing-pages=67 | citation-density=0 | citation-chains=18 | schema-drift=276 | filter-calibration=30 | inbox-pending=0 | nlm-pending=75 | untagged-sources=1 | idempotency=3 | broken-wikilinks=84 | long-slugs=50 | contradiction-pages=0 | synthesizes-coverage=74 | stale-verified=46 | retracted-citations=0 | domain-purity=0 | link-rot=428 | superseded-citations=0 | paper-canonical-source=46 | confidence-distribution=13 | confidence-propagation=0 | tags-invalid-type=0 | open-questions=0 | answered-no-synthesis=0
 
 report=.knowledge/lint/2026-05-27T23-48-30Z.md
+
+## [2026-05-28T00:16:50Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T00-16-50Z-schema-drift.md
+
+## [2026-05-28T00:19:15Z] lint | scope=synthesizes-coverage | synthesizes-coverage=74
+
+report=.knowledge/lint/2026-05-28T00-19-15Z-synthesizes-coverage.md
+
+## [2026-05-28T00:19:39Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T00-19-39Z-schema-drift.md
+
+## [2026-05-28T00:22:56Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T00-22-56Z-schema-drift.md
+
+## [2026-05-28T00:26:34Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T00-26-34Z-schema-drift.md
+
+## [2026-05-28T00:26:42Z] lint | scope=synthesizes-coverage | synthesizes-coverage=74
+
+report=.knowledge/lint/2026-05-28T00-26-42Z-synthesizes-coverage.md
