@@ -307,3 +307,61 @@ def test_get_video_details_retries_on_429_then_succeeds(monkeypatch):
     assert details
     assert len(calls) == 2
     assert sleeps and sleeps[0] > 0
+
+
+# --- inter-query throttle ----------------------------------------------------
+
+
+def test_search_no_sleep_on_first_call(monkeypatch):
+    """First search() call on a fresh adapter must not sleep."""
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake-key")
+    _install_fake_requests(monkeypatch)
+    sleeps: list[float] = []
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    adapter = yt_mod.YouTubeAdapter()
+    adapter.search("test query", max_results=1)
+
+    assert sleeps == [], f"unexpected sleep on first call: {sleeps}"
+
+
+def test_search_sleeps_between_rapid_consecutive_calls(monkeypatch):
+    """Rapid consecutive calls sleep the remaining inter-query gap."""
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake-key")
+    _install_fake_requests(monkeypatch)
+    sleeps: list[float] = []
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    # search() calls monotonic() twice: once for the elapsed check, once to
+    # stamp _last_search_time.  Use t=100 so the first call sees a large
+    # elapsed (100 - 0.0 = 100 s) and skips sleeping; then t=100 again so
+    # the second call sees elapsed=0 and must sleep.
+    times = iter([100.0, 100.0, 100.0, 100.0])
+    monkeypatch.setattr(yt_mod.time, "monotonic", lambda: next(times))
+
+    adapter = yt_mod.YouTubeAdapter()
+    adapter.search("query one", max_results=1)   # no sleep (elapsed=100s)
+    adapter.search("query two", max_results=1)   # sleep (elapsed=0s)
+
+    assert sleeps, "expected sleep on second rapid call"
+    assert sleeps[-1] == pytest.approx(yt_mod._INTER_QUERY_SLEEP_SECONDS, abs=0.01)
+
+
+def test_search_no_sleep_when_gap_already_large(monkeypatch):
+    """No sleep when the caller has already waited longer than the threshold."""
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake-key")
+    _install_fake_requests(monkeypatch)
+    sleeps: list[float] = []
+    monkeypatch.setattr(yt_mod.time, "sleep", lambda s: sleeps.append(s))
+
+    # 2 monotonic() calls per search() × 2 searches = 4 values.
+    # t=100 → first call skips sleep (100-0=100 s elapsed).
+    # t=110 → second call skips sleep (110-100=10 s elapsed, > threshold).
+    times = iter([100.0, 100.0, 110.0, 110.0])
+    monkeypatch.setattr(yt_mod.time, "monotonic", lambda: next(times))
+
+    adapter = yt_mod.YouTubeAdapter()
+    adapter.search("query one", max_results=1)
+    adapter.search("query two", max_results=1)
+
+    assert sleeps == [], f"unexpected sleep when gap > threshold: {sleeps}"
