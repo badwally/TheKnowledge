@@ -518,13 +518,14 @@ def _make_branch_synthesis_update(
     NotebookLM's opening framing sentences pass citation grounding.
     """
     branch_slug = _slugify(branch_name) or "branch"
-    rel = f"wiki/synthesis/{session_id}-{branch_slug}.md"
+    slug = _bounded_synthesis_slug(session_id, branch_slug)
+    rel = f"wiki/synthesis/{slug}.md"
 
     constituents = _collect_constituent_sources(branch_findings, source_map)
 
     front = {
         "type": "synthesis",
-        "slug": f"{session_id}-{branch_slug}",
+        "slug": slug,
         "title": f"{branch_name} — investigation ({session_id})",
         "domains": [domain],
         "question": research_query,
@@ -595,13 +596,13 @@ def _make_cross_cutting_update(
     constituents: list[str] = []
     if branch_names:
         constituents = sorted({
-            f"synthesis/{session_id}-{_slugify(name) or 'branch'}"
+            f"synthesis/{_bounded_synthesis_slug(session_id, _slugify(name) or 'branch')}"
             for name in branch_names
         })
 
     front = {
         "type": "synthesis",
-        "slug": f"{session_id}-cross-cutting",
+        "slug": _bounded_synthesis_slug(session_id, "cross-cutting"),
         "title": f"Cross-cutting themes ({session_id})",
         "domains": [domain],
         "question": research_query,
@@ -1418,6 +1419,27 @@ def _slugify(text: str, *, max_words: int = 6) -> str:
     cleaned = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
     words = [w for w in cleaned.split("-") if w]
     return "-".join(words[:max_words])
+
+
+_MAX_SYNTHESIS_SLUG = 80  # must match validator._MAX_SLUG_LEN
+
+
+def _bounded_synthesis_slug(session_id: str, suffix: str) -> str:
+    """Return ``{session_id}-{suffix}`` capped at _MAX_SYNTHESIS_SLUG chars.
+
+    When the combined slug would exceed the validator limit, the suffix is
+    trimmed to fit.  The session_id is preserved intact so it remains a
+    unique discriminator across runs.  If session_id alone leaves fewer than
+    4 characters for a suffix, the whole string is hard-truncated (degenerate
+    case — session IDs should never be that long in practice).
+    """
+    combined = f"{session_id}-{suffix}"
+    if len(combined) <= _MAX_SYNTHESIS_SLUG:
+        return combined
+    available = _MAX_SYNTHESIS_SLUG - len(session_id) - 1
+    if available >= 4:
+        return f"{session_id}-{suffix[:available]}"
+    return combined[:_MAX_SYNTHESIS_SLUG]
 
 
 def _now_iso() -> str:
