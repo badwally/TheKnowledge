@@ -14,11 +14,10 @@ last_updated: '2026-05-28T02:08:36Z'
 
 ## Summary
 
-Orita is a seed-stage startup providing AI customer segmentation for brands in the Klaviyo ecosystem, with most customers running on Shopify [[sources/pdf-4931157e130a]]. The company positions itself more broadly in its internal planning as an AI-powered audience intelligence layer for ecommerce brands, with a machine-learning scoring engine that rates every customer profile daily for purchase intent and then executes smart suppressions, reactivations, bot detection, and audience expansion [[sources/docx-25c1bcf28fb8]]. The technology is platform-agnostic at the algorithmic level, and Klaviyo prioritization is a go-to-market choice rather than a technical constraint [[sources/docx-25c1bcf28fb8]].
-
+Orita is an AI-powered audience intelligence layer for ecommerce brands. Its core ML scoring engine rates every customer profile daily for purchase intent, then executes smart suppressions, reactivations, bot detection, and audience expansion — driving higher revenue per send, protected sender reputation, and reduced waste across communication channels [[sources/docx-25c1bcf28fb8]]. The technology is platform-agnostic at the algorithmic level; Orita prioritizes Klaviyo as its go-to-market beachhead because Klaviyo dominates US ecommerce email marketing and cannot replicate Orita's scoring at a technical level today, which has earned Premier Partner status (Klaviyo's highest partner tier) [[sources/docx-25c1bcf28fb8]]. The CMO has, in informal intake conversation, described the company as "AI customer segmentation for brands in the Klaviyo ecosystem" [[sources/pdf-4931157e130a]] — a colloquial framing that maps to Klaviyo customers' immediate experience rather than to Orita's product architecture, which expands across email, SMS, direct mail, and ad-audience optimization [[sources/docx-25c1bcf28fb8]].
 ## Key facts
 
-- Seed-stage AI customer segmentation startup serving the Klaviyo ecosystem [[sources/pdf-4931157e130a]].
+- AI-powered audience intelligence layer for ecommerce brands; daily ML scoring engine driving suppressions, reactivations, bot detection, and audience expansion across email, SMS, direct mail, and ad-audience surfaces [[sources/docx-25c1bcf28fb8]]. Colloquially referenced as "AI customer segmentation for the Klaviyo ecosystem" in informal CMO framing [[sources/pdf-4931157e130a]] — practical-experience description, not full product architecture.
 - Core product outcomes: higher revenue per send, protected sender reputation, reduced waste across communication channels [[sources/docx-25c1bcf28fb8]].
 - Klaviyo prioritization rationale: Klaviyo dominates US ecommerce email, Klaviyo cannot replicate Orita's scoring at a technical level today, and prioritizing Klaviyo earned Premier Partner status (Klaviyo's highest tier) [[sources/docx-25c1bcf28fb8]].
 - Growth: 5x year-over-year, driven by event marketing (eTail conferences, Klaviyo ecosystem events) and word-of-mouth through the agency partner network, with no paid advertising [[sources/docx-25c1bcf28fb8]].
@@ -30,7 +29,6 @@ Orita is a seed-stage startup providing AI customer segmentation for brands in t
 - US market sizing: global email deliverability tools $1.48B in 2026 → $2.22B by 2030 at 10.6% CAGR with ~$630M US share; broader AI audience intelligence US TAM conservatively $2B–$4B [[sources/docx-25c1bcf28fb8]].
 - Klaviyo-focused US SAM: 38,000–60,000 accounts across enterprise / mid-market / growth segments; midpoint ~$400M–$500M with the constraint being go-to-market velocity, not market size [[sources/docx-25c1bcf28fb8]].
 - Omnichannel multiplier rationale: same ML intelligence that optimizes email engagement also optimizes SMS and ad spend suppression, multiplying effective ACV without proportional cost increase [[sources/docx-25c1bcf28fb8]].
-
 ## Sources
 
 - [[sources/pdf-4931157e130a]]

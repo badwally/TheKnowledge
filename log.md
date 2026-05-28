@@ -22123,3 +22123,27 @@ file=docx-92ec692fb0f8.docx title='orita-claude-md'
 ## [2026-05-28T02:20:07Z] nlm-add | id=docx-b90a5e5fdcc4 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=docx
 
 file=docx-b90a5e5fdcc4.docx title='orita-agent-architecture-analysis'
+
+## [2026-05-28T02:22:18Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T02-22-18Z-schema-drift.md
+
+## [2026-05-28T02:22:35Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T02-22-35Z-schema-drift.md
+
+## [2026-05-28T02:27:57Z] edit-section | page=wiki/entities/orita.md | section=Summary
+
+edited section 'Summary' in wiki/entities/orita.md
+
+## [2026-05-28T02:28:15Z] edit-section | page=wiki/entities/orita.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/orita.md
+
+## [2026-05-28T02:28:23Z] edit-section | page=wiki/entities/klaviyo.md | section=Summary
+
+edited section 'Summary' in wiki/entities/klaviyo.md
+
+## [2026-05-28T02:28:44Z] lint | scope=contradiction-pages | contradiction-pages=0
+
+report=.knowledge/lint/2026-05-28T02-28-44Z-contradiction-pages.md
