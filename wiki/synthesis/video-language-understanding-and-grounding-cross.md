@@ -14,6 +14,23 @@ draft_unresolved_claims: 3
 created_at: '2026-04-28T17:20:20Z'
 last_updated: '2026-04-28T17:20:20Z'
 sources_count: 16
+synthesizes:
+- sources/yt--9jPC_bsqf0
+- sources/yt-7-yt-dvaE_Y
+- sources/yt-Ec5uOilCbtA
+- sources/yt-GgE_p7pP4Ig
+- sources/yt-LKlJsKdwYQA
+- sources/yt-MmzK_VSsPoU
+- sources/yt-NmfykPpl1vE
+- sources/yt-Pc4NKS3eT8E
+- sources/yt-TQ6GBhwzRhg
+- sources/yt-VgcOdiRGIAU
+- sources/yt-YCRdjc_jsRs
+- sources/yt-YODyaExFKSU
+- sources/yt-c25XccOQ7UQ
+- sources/yt-cLdd0vkKrBc
+- sources/yt-lEUluMdNHcc
+- sources/yt-zj2s_G3066s
 ---
 
 # Video-Language Understanding and Grounding: Cross-Modal Alignment, VQA, and Text-Conditioned Temporal Localization

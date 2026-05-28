@@ -19,7 +19,7 @@ title: 'Synthesis: CINC Systems 2024-2026 competitive evolution — platform, ca
   capital-planning module. Use wikilink format [[~/code/knowledge/wiki/sources/<slug>]]
   for citations. No numeric footnotes.'
 domains:
-- condo-capital-infra
+- condo
 question: 'Synthesis: CINC Systems 2024-2026 competitive evolution — platform, capitalization,
   M&A pattern, and reserve-study positioning, with Vantaca as the secondary CAM-SaaS-platform
   comparison. Cover: (1) Cephai+ AI agent inventory (invoice processing, EFT reconciliation,
@@ -41,6 +41,19 @@ nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 finalized_at: '2026-05-21T22:37:23Z'
 last_updated: '2026-05-21T22:37:23Z'
 sources_count: 13
+synthesizes:
+- sources/docx-bf4965d0d33a
+- sources/web-2020-06-10-363
+- sources/web-2023-05-02-683
+- sources/web-2023-12-14-8ec
+- sources/web-2024-07-22-f1f
+- sources/web-2024-11-20-cd8
+- sources/web-2025-01-06-1e2
+- sources/web-2025-08-05-4b5
+- sources/web-2025-09-16-709
+- sources/web-2025-10-14-ce0
+- sources/web-2025-10-15-7aa
+- sources/web-2026-04-16-4c4
 ---
 # Synthesis: CINC Systems 2024-2026 competitive evolution — platform, capitalization, M&A pattern, and reserve-study positioning, with Vantaca as the secondary CAM-SaaS-platform comparison. Cover: (1) Cephai+ AI agent inventory (invoice processing, EFT reconciliation, board packets, budget building, violation detection, communications, ACC requests) and the customer jobs each owns; (2) SmartProperty integration state as the deterministic reserve-study floor; (3) Hg Capital December 2023 + Spectrum Equity June 2020 capital structure and the Hg hold-period exit window December 2028-December 2030; (4) M&A pattern observable from the ONR Applications acquisition January 2025; (5) executive buildout since December 2023 (Berenson CPO, Granara CFO, Cohen GM Financial Services, Dolan CMO, Chitayat CTO); (6) US-only geography and the structural exclusion of the Canadian condominium market; (7) Vantaca's October 2025 $300M+ Cove Hill Partners-led raise at $1.25B valuation, the November 2024 HOAi acquisition, the 500+ management companies / 6M+ households coverage, and the absence of any reserve-study integration; (8) build-vs-buy math for both CINC and Vantaca against an organic probabilistic capital-planning module. Use wikilink format for citations. No numeric footnotes.
 

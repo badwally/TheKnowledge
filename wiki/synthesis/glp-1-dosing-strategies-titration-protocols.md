@@ -13,6 +13,31 @@ draft_unresolved_claims: 3
 created_at: '2026-04-28T17:04:39Z'
 last_updated: '2026-04-28T17:04:39Z'
 sources_count: 26
+synthesizes:
+- sources/pubmed-22128031
+- sources/pubmed-27030669
+- sources/pubmed-28266779
+- sources/pubmed-29337226
+- sources/pubmed-33352692
+- sources/pubmed-37148870
+- sources/pubmed-37192005
+- sources/pubmed-37295046
+- sources/pubmed-38561101
+- sources/pubmed-39032839
+- sources/pubmed-39743126
+- sources/pubmed-40245495
+- sources/pubmed-40302255
+- sources/pubmed-40456683
+- sources/pubmed-41870138
+- sources/yt-5oSeLTr3uRk
+- sources/yt-FjyZSXPrbyk
+- sources/yt-IvMtU0XBy4A
+- sources/yt-Ll3SORezgFY
+- sources/yt-MA9KsoZOr3E
+- sources/yt-bvmmlepNU_I
+- sources/yt-d6dC0-mwR7s
+- sources/yt-qJrO3tc4edU
+- sources/yt-qbRtQJj7z2M
 ---
 
 # GLP-1 dosing strategies — titration, microdosing, and compound selection

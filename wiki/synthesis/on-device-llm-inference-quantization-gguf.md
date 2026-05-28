@@ -14,6 +14,17 @@ draft_unresolved_claims: 11
 created_at: '2026-04-28T17:26:18Z'
 last_updated: '2026-04-28T17:26:18Z'
 sources_count: 14
+synthesizes:
+- sources/yt-FviaHPrFhTg
+- sources/yt-G8vzGedNnro
+- sources/yt-P8m5eHAyrFM
+- sources/yt-Sc3zyAzSRP0
+- sources/yt-ZNPkUoPBU84
+- sources/yt-aawk4l9W9YU
+- sources/yt-hQQ8KuhXcwU
+- sources/yt-oaV_8ZSFblg
+- sources/yt-pwP1YcHtF8s
+- sources/yt-wgJX1HndGl0
 ---
 
 # On-Device LLM Inference: Quantization, NPU/Apple Silicon Acceleration, Runtimes, and Quality vs Latency

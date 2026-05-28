@@ -16,22 +16,11 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from gateway import frontmatter as fm, paths
+from gateway.core import parse_iso
 from gateway.lint import LintFinding, SEVERITY_ERROR, SEVERITY_WARNING
 
 STALE_DAYS: int = 365
-_TIME_SENSITIVE_KINDS: frozenset[str] = frozenset({"statute", "standard"})
-
-
-def _parse_iso(value: object) -> datetime | None:
-    if not isinstance(value, str):
-        return None
-    try:
-        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt
-    except ValueError:
-        return None
+_TIME_SENSITIVE_KINDS: frozenset[str] = frozenset({"statute", "regulation", "standard"})
 
 
 def run() -> list[LintFinding]:
@@ -73,7 +62,7 @@ def run() -> list[LintFinding]:
             )
             continue
 
-        verified_at = _parse_iso(raw_value)
+        verified_at = parse_iso(raw_value)
         if verified_at is None:
             findings.append(
                 LintFinding(

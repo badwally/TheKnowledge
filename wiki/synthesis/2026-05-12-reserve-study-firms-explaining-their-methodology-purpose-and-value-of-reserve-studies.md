@@ -16,6 +16,9 @@ draft_started_at: '2026-05-12T20:17:25Z'
 draft_unresolved_claims: 46
 last_updated: '2026-05-12T20:17:25Z'
 sources_count: 3
+synthesizes:
+- sources/web-2025-01-01-246
+- sources/web-2025-01-01-946
 ---
 # Purpose and Value of Reserve Studies for Association Boards — investigation
 

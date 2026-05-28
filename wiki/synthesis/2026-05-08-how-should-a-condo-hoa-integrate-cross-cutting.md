@@ -5,6 +5,7 @@ slug: 2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting
 title: Cross-cutting themes (2026-05-08-how-should-a-condo-hoa-integrate)
 domains:
 - condo
+- condo-capital-infra
 question: How should a condo HOA integrate reserve-fund management, special-assessment
   policy, and long-term preventive + capital maintenance and vendor management into
   a single proactive long-horizon planning system? Survey best practices, frameworks,
@@ -14,6 +15,15 @@ created_at: '2026-05-11T02:04:29Z'
 finalized_at: '2026-05-12T22:46:48Z'
 last_updated: '2026-05-12T22:46:48Z'
 sources_count: 16
+synthesizes:
+- sources/web-2023-03-20-7a4
+- sources/web-2023-06-26-652
+- sources/web-2025-01-01-cc2
+- sources/web-2025-04-12-ca4
+- sources/web-2025-07-09-b13
+- sources/web-2025-10-29-056
+- sources/web-2026-01-01-970
+- sources/web-2026-03-09-423
 ---
 # Cross-cutting themes — 2026-05-08-how-should-a-condo-hoa-integrate
 

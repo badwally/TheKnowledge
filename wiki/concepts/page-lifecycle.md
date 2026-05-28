@@ -4,34 +4,34 @@ type: concept
 slug: page-lifecycle
 canonical_name: Page Lifecycle
 domains:
-- knowledge-management
-draft: true
-draft_started_at: '2026-05-05T00:22:49Z'
-draft_unresolved_claims: 0
-created_at: '2026-05-05T04:01:32Z'
-last_updated: '2026-05-05T04:01:32Z'
+- knowledge-systems
+created_at: '2026-05-28T20:24:02Z'
+last_updated: '2026-05-28T20:24:02Z'
 ---
 
 # Page Lifecycle
 
 ## Summary
 
-WikiLoom assigns each page one of three lifecycle statuses — `active`, `dormant`, or `deprecated` — with optional permanent removal via purge, allowing stale or superseded pages to be retired without breaking inbound references .
+Page lifecycle is the explicit state machine — active → dormant (optional) → deprecated → purged — that governs how knowledge-base pages age, retire, and are permanently removed [[sources/web-2026-04-11-879]].
 
 ## Key claims
 
-- The lifecycle progression is `active → dormant (optional) → deprecated → purged (gone)` .
-- `active` pages are current and surfaced everywhere .
-- `dormant` pages are older than their time window but still visible and usable; the marking is informational ("you might want to refresh this") rather than a verdict on usefulness .
-- Dormant marking is a user action via `wikiloom dormant <page>` .
-- `deprecated` pages move to `wiki/archive/`, are hidden from most workflows, and are reached via `wikiloom merge` or `wikiloom deprecate` .
-- Permanent removal via `wikiloom purge` requires prior deprecation and typed confirmation by default .
-- `wikiloom deprecate <page> --superseded-by <other>` rewrites every inbound `[[X]]` wikilink across non-archived pages to the replacement .
+- Every WikiLoom page has one of three statuses: `active` (current, surfaced everywhere), `dormant` (older than its time window but still visible and usable), or `deprecated` (retired and moved to `wiki/archive/`, hidden from most workflows) [[sources/web-2026-04-11-879]].
+- The dormant status is informational rather than a verdict on usefulness — it is a "you might want to refresh this" signal and is set by the user via `wikiloom dormant <page>` [[sources/web-2026-04-11-879]].
+- Deprecation is reached via `wikiloom merge` or `wikiloom deprecate`; permanent removal is via `wikiloom purge`, which requires the page to already be deprecated [[sources/web-2026-04-11-879]].
+- The full lifecycle is `active → dormant (optional) → deprecated → purged (gone)` [[sources/web-2026-04-11-879]].
+- `wikiloom merge <loser> <winner>` unions bodies (preserving human regions), rewrites inbound `[[loser]]` wikilinks to `[[winner]]`, and deprecates the loser page [[sources/web-2026-04-11-879]].
+- `wikiloom deprecate <page> --superseded-by <other>` rewrites every inbound `[[X]]` wikilink across non-archived pages to the replacement [[sources/web-2026-04-11-879]].
+- `wikiloom purge` deletes both the archive file and the manifest entry and requires typed confirmation by default [[sources/web-2026-04-11-879]].
+- Dormant time windows are configurable per page type and can be inspected via `wikiloom dormant --windows` [[sources/web-2026-04-11-879]].
 
 ## Sources
 
-- — WikiLoom GitHub README
+- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
 
 ## Related
 
 - [[entities/wikiloom]]
+- [[concepts/human-edit-protection]]
+- [[concepts/auto-commit-pattern]]

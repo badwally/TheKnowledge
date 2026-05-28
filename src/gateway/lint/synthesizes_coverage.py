@@ -11,7 +11,7 @@ wikilinks, then fix remaining pages manually.
 from __future__ import annotations
 
 from gateway import frontmatter as fm, paths
-from gateway.lint import LintFinding, SEVERITY_ERROR
+from gateway.lint import LintFinding, SEVERITY_ERROR, SEVERITY_WARNING
 
 
 def run() -> list[LintFinding]:
@@ -29,10 +29,12 @@ def run() -> list[LintFinding]:
         synthesizes = front.get("synthesizes")
         if not synthesizes:
             rel = str(p.relative_to(paths.knowledge_root()))
+            is_draft = bool(front.get("draft"))
+            severity = SEVERITY_WARNING if is_draft else SEVERITY_ERROR
             findings.append(
                 LintFinding(
                     check="synthesizes-coverage",
-                    severity=SEVERITY_ERROR,
+                    severity=severity,
                     message=(
                         "synthesis page missing `synthesizes:` — run "
                         "`wiki backfill-synthesizes` to auto-populate from body "

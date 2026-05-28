@@ -343,16 +343,22 @@ def build_parser() -> argparse.ArgumentParser:
             "Examples:\n"
             "  wiki evaluate glp1\n"
             "  wiki evaluate glp1 --limit 50\n"
-            "  wiki evaluate --scaffold glp1"
+            "  wiki evaluate --scaffold glp1\n"
+            "  wiki evaluate --all-domains"
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p_evaluate.add_argument("domain", nargs="?", default=None,
-                            help="Domain to evaluate (omit when using --scaffold).")
+                            help="Domain to evaluate (omit when using --scaffold or --all-domains).")
     p_evaluate.add_argument("--limit", type=int, default=None,
                             help="Score at most this many goldens.")
     p_evaluate.add_argument("--scaffold", default=None, metavar="DOMAIN",
                             help="Write a template goldens.yaml for the named domain.")
+    p_evaluate.add_argument("--all-domains", action="store_true", default=False,
+                            help="Run evaluation for every domain that has a goldens.yaml file.")
+    p_evaluate.add_argument("--max-chars", type=int, default=None, metavar="N",
+                            help="Override the wiki context budget (default 500000). "
+                                 "Use for large domains that exceed the default limit.")
 
     # context: read-only fetch of a wiki page + N-hop wikilink-resolved neighbors (M51, INT-11)
     p_context = subparsers.add_parser(
@@ -1802,7 +1808,9 @@ def _run_evaluate(ns: argparse.Namespace) -> int:
         evaluate_op(
             domain=ns.domain,
             limit=ns.limit,
+            max_chars=getattr(ns, "max_chars", None),
             scaffold=ns.scaffold,
+            all_domains=getattr(ns, "all_domains", False),
         )
     )
 

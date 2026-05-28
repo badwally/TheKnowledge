@@ -29,6 +29,11 @@ nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
 finalized_at: '2026-05-24T17:42:00Z'
 last_updated: '2026-05-24T17:42:00Z'
 sources_count: 4
+synthesizes:
+- sources/web-2023-07-30-b4c
+- sources/web-2024-03-29-a63
+- sources/web-2026-04-23-e4c
+- sources/web-2026-05-22-03d
 ---
 # What is the AI-native technical stack and build-vs-buy default for a solo or tiny-team operator? Cover: model selection discipline (frontier vs. cheap-and-fast vs. open-weight, orchestration patterns), evals as a core operating function, observability for agentic systems, the 'compose vendor primitives until proven wrong' default, when proprietary infra is actually warranted, data flywheels (real moats vs. cope), and AI-native infra defaults (serverless, vector stores, queueing, trace tooling). Focus on selection criteria, not a tool list. Include the substrate-first framing. Draw on Latent Space AINews coverage of model labs becoming agent labs and AI infra unicorns; Zvi's Gemini 3.5 Flash analysis for model-selection signal; Eugene Yan and Hamel Husain for production AI engineering patterns.
 

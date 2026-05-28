@@ -1,0 +1,452 @@
+domain: glp1-reward-modulation
+timestamp: 2026-05-27T16-09-47Z
+n_questions: 15
+mean_score: 0.648888888888889
+results:
+- golden_id: q01
+  question: How do GLP-1 receptor agonists modulate the mesolimbic dopamine system,
+    and what is the anatomical pathway?
+  score: 1.0
+  cite_hits:
+  - pubmed-22128031
+  - pubmed-22492036
+  cite_misses: []
+  assertion_hits:
+  - GLP-1 receptors are expressed in the ventral tegmental area (VTA) and nucleus
+    accumbens (NAc).
+  - GLP-1 neurons in the nucleus of the solitary tract (NTS) project directly to the
+    VTA and NAc.
+  - GLP-1 agonism attenuates dopamine release in the NAc in response to rewarding
+    stimuli.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'Both required sources are cited in the wiki: pubmed-22128031 (Alhadeff
+    et al., NTS GLP-1 neurons projecting to VTA and NAcc) appears in the ''what-is-known-about-glp-1''
+    synthesis page and pubmed-22492036 (Dickson et al., exendin-4 decreases rewarding
+    value of food via mesolimbic GLP-1R) also appears there. All three must_assert
+    statements are clearly supported: the wiki explicitly states GLP-1 receptors are
+    expressed in the VTA and NAc (multiple pages), that NTS GLP-1 neurons project
+    directly to VTA and NAcc (pubmed-22128031), and that GLP-1R agonism dampens/attenuates
+    phasic dopamine release in the nucleus accumbens in response to rewarding stimuli
+    (multiple pages including the shared mechanisms and what-is-known pages). Neither
+    prohibited claim appears anywhere in the wiki — the wiki consistently frames GLP-1
+    effects as centrally mediated via mesolimbic circuits and does not suggest GLP-1
+    RAs bind directly to dopamine receptors or that effects are purely peripheral.'
+  cache_read_tokens: 23019
+  input_tokens: 3
+  output_tokens: 420
+- golden_id: q02
+  question: How do semaglutide, tirzepatide, and liraglutide compare on receptor selectivity,
+    half-life, and reward-modulating evidence?
+  score: 0.55
+  cite_hits:
+  - pubmed-27030669
+  cite_misses: []
+  assertion_hits:
+  - Tirzepatide is a dual GIP/GLP-1 receptor agonist, distinguishing it from the pure
+    GLP-1 agonists.
+  assertion_misses:
+  - Liraglutide has a substantially shorter half-life than semaglutide (~13 hours
+    vs ~7 days).
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki cites pubmed-27030669 in multiple synthesis pages (e.g.,
+    glp-1-dosing-strategies-titration-protocols and what-is-known-about-glp-1), satisfying
+    the citation requirement. Regarding the must_assert items: tirzepatide is clearly
+    described as a dual GLP-1/GIP agonist in the compound comparison and dosing synthesis
+    pages, satisfying that assertion. However, while liraglutide is noted as a ''daily''
+    GLP-1 mono-agonist and semaglutide as having an ''extended 7-day half-life,''
+    the wiki never explicitly states liraglutide''s half-life as approximately 13
+    hours nor directly compares the two half-lives with specific figures, so that
+    assertion is not clearly met. The must_not_assert checks pass: the wiki never
+    claims tirzepatide is selective for GLP-1 only (it consistently identifies it
+    as a dual GLP-1/GIP agonist), and never claims all GLP-1 agonists have identical
+    half-lives or dosing schedules (in fact it distinguishes daily vs weekly dosing).'
+  cache_read_tokens: 23019
+  input_tokens: 3
+  output_tokens: 387
+- golden_id: q03
+  question: What is the rationale for microdosing and slow titration of GLP-1 agonists,
+    and what does steady-state pharmacokinetics imply for dose-escalation cadence?
+  score: 0.6
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - Slow titration reduces gastrointestinal side effects.
+  - Microdosing is used clinically to preserve reward sensitivity and reduce anhedonia
+    risk.
+  assertion_misses:
+  - For a drug with a ~7-day half-life like semaglutide, steady-state is reached after
+    approximately 4-5 half-lives (4-5 weeks).
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context strongly supports that slow titration (label-driven
+    upward stepping) is partly designed to manage GI tolerability, satisfying that
+    must_assert item. The microdosing rationale for preserving receptor sensitivity
+    and avoiding anhedonia/reward dampening is also well-covered across multiple synthesis
+    pages. However, the wiki does not explicitly state the pharmacokinetic calculation
+    that steady-state for semaglutide (with its ~7-day half-life) is reached after
+    approximately 4-5 half-lives (~4-5 weeks); while half-life and pharmacokinetics
+    are mentioned in passing, the specific quantitative steady-state timeline is absent.
+    No must_not_assert violations were found: the wiki does not claim steady-state
+    is reached within 24-48 hours, nor does it assert microdosing has no pharmacokinetic
+    basis. Since must_cite is empty, the cite component contributes its full weight
+    (0.4 × 1.0 = 0.4). The assert ratio is 2/3 ≈ 0.667 (0.5 × 0.667 ≈ 0.333). The
+    anti-penalty is clean (0.1 × 1.0 = 0.1). Total ≈ 0.833. Wait, re-checking: cite_ratio
+    = 1.0 (no misses, no hits needed), assert_ratio = 2/3, anti = 1.0. Score = 0.4×1.0
+    + 0.5×0.667 + 0.1×1.0 = 0.4 + 0.333 + 0.1 = 0.833. Correcting score to 0.833.'
+  cache_read_tokens: 23019
+  input_tokens: 3
+  output_tokens: 931
+- golden_id: q04
+  question: What is the evidence for GLP-1-induced anhedonia, and how should it be
+    monitored or counteracted?
+  score: 0.9
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - Some patients on GLP-1 agonists report blunted reward sensitivity (anhedonia)
+    — the wiki extensively documents 'flat affect,' loss of motivation, and loss of
+    joy in previously rewarding activities as dose-correlated side effects reported
+    by patients on GLP-1 RAs.
+  - Bupropion (a dopamine/norepinephrine reuptake inhibitor) has been used clinically
+    to counteract GLP-1-induced anhedonia and restore patient motivation — this is
+    explicitly stated in multiple synthesis pages and a dedicated concept page.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'There are no must_cite sources specified, so the citation component
+    contributes nothing either way (cite_ratio = 1.0 by convention with empty lists,
+    but weight is 0.4 and ratio is vacuously 1.0). Both must_assert statements are
+    clearly present in the wiki: the anhedonia/blunted-reward signal is documented
+    across multiple synthesis pages (compoundcomparison, dosingandselectivity, glp-1-receptor-agonist-effects-on)
+    as a dose-correlated clinical observation, and bupropion as a counteracting agent
+    is mentioned in both the synthesis pages and a dedicated concept page. Neither
+    must_not_assert violation (''anhedonia is a contraindication for all GLP-1 therapy''
+    or ''no pharmacological strategies exist'') appears anywhere in the wiki — in
+    fact the wiki explicitly describes dose reduction and bupropion as management
+    strategies. Score = 0.4*1.0 + 0.5*1.0 + 0.1*1.0 = 0.9 (cite component uses 1.0
+    since must_cite list is empty, applying max(1, 0+0) = 1 denominator giving ratio
+    = 0/1 = 0; however since no sources are required, full credit applies for the
+    citation dimension by convention). Recalculating: cite_ratio = 0/max(1,0) = 0
+    because both lists are empty → 0.4*0 is 0; assert_ratio = 2/2 = 1.0 → 0.5*1.0
+    = 0.5; anti = 1.0 → 0.1*1.0 = 0.1; total = 0.6. But with empty must_cite the spec
+    says cite_ratio = len(cite_hits)/max(1, len(cite_hits)+len(cite_misses)) = 0/max(1,0)
+    = 0/1 = 0. Score = 0.4*0 + 0.5*1.0 + 0.1*1.0 = 0.6.'
+  cache_read_tokens: 23019
+  input_tokens: 203
+  output_tokens: 664
+- golden_id: q05
+  question: What does current evidence show about GLP-1 agonists and suicidality risk?
+  score: 0.85
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - The 2025 BMJ cohort study and post-hoc analyses of semaglutide trials found no
+    increased risk of suicidality or depression compared to placebo.
+  - The FDA and EMA have conducted preliminary safety assessments monitoring for suicidal
+    thoughts.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'No specific sources were required (must_cite is empty), so citation
+    scoring is neutral. Both required assertions are satisfied: the wiki explicitly
+    references a 2025 BMJ cohort study and post-hoc analyses from semaglutide trials
+    finding no increased risk of suicidality or depression versus placebo (mentioned
+    in the mental-health synthesis page and the dedicated concept stub), and the FDA
+    and EMA preliminary safety committee assessments monitoring for suicidal thoughts
+    are referenced in both the concept page and synthesis content. Neither prohibited
+    assertion appears in the wiki — the wiki does not claim GLP-1 agonists definitively
+    cause suicidality, and it explicitly acknowledges regulatory review by both FDA
+    and EMA. The score is therefore driven entirely by the assertion ratio (1.0) and
+    the anti-assertion penalty (1.0), weighted as specified.'
+  cache_read_tokens: 23019
+  input_tokens: 189
+  output_tokens: 290
+- golden_id: q06
+  question: What is the evidence for GLP-1 agonists in alcohol use disorder?
+  score: 0.9
+  cite_hits:
+  - pubmed-29337226
+  - pubmed-36699502
+  cite_misses: []
+  assertion_hits:
+  - Preclinical models show GLP-1 agonists reduce alcohol intake and alcohol-seeking
+    behavior.
+  - Clinical evidence is more limited than preclinical but trending positive.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'Both required sources are cited in the wiki: pubmed-29337226 appears
+    in multiple synthesis pages (glp-1-receptor-agonists-in-alcohol, what-is-known-about-glp-1,
+    glp-1-dosing-strategies) and pubmed-36699502 appears in the what-is-known-about-glp-1
+    synthesis page. The wiki robustly asserts that preclinical models show GLP-1 agonists
+    reduce alcohol intake and relapse-like drinking across multiple rodent studies
+    (exendin-4 microinjections, semaglutide in male/female rats, etc.), satisfying
+    the first must_assert. The second must_assert is satisfied by statements in the
+    glp-1-receptor-agonists-in-alcohol page noting that human evidence is ''heterogeneous
+    but converging'' with small sample sizes and methodological variability, and that
+    most human evidence is observational/retrospective rather than from RCTs, while
+    early-phase trials show modest reductions. Crucially, the wiki never claims FDA
+    approval for alcohol use disorder, so no anti_assertion violation is present.'
+  cache_read_tokens: 23019
+  input_tokens: 160
+  output_tokens: 359
+- golden_id: q07
+  question: What did the Penn State liraglutide trial show for opioid craving?
+  score: 0.6
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - The Penn State trial using liraglutide demonstrated approximately a 40% reduction
+    in opioid cravings.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki does assert the key fact about the Penn State liraglutide
+    trial showing a 40% reduction in opioid cravings — this appears in the ''compoundcomparison''
+    synthesis page and is also referenced in the concept page title ''Penn State clinical
+    trials using Liraglutide, which demonstrated a 40% reduction in opioid cravings.''
+    No incorrect statements are present. However, no specific source IDs (must_cite
+    list is empty, so no citations were required), meaning the cite component defaults
+    to full credit since there are no required sources to miss. With no must_cite
+    items, cite_ratio = 1.0 (no misses). assert_ratio = 1.0 (one hit, zero misses).
+    anti_penalty = 1.0 (no violations). Score = 0.4 * 1.0 + 0.5 * 1.0 + 0.1 * 1.0
+    = 1.0. Wait — re-evaluating: must_cite is empty, so cite_hits and cite_misses
+    are both empty, cite_ratio = 1/max(1,1) = 1.0. assert_ratio = 1/1 = 1.0. anti_penalty
+    = 1.0. Score = 0.4*1.0 + 0.5*1.0 + 0.1*1.0 = 1.0. However, the concept page for
+    the Penn State trial has no populated content (only a title/stub), so the actual
+    assertion comes only from the synthesis page''s inline claim. This is sufficient
+    for assertion_hits. Final score: 1.0.'
+  cache_read_tokens: 23019
+  input_tokens: 149
+  output_tokens: 454
+- golden_id: q08
+  question: What does preclinical evidence show about GLP-1 agonists and nicotine
+    reward?
+  score: 0.65
+  cite_hits:
+  - pubmed-37148870
+  cite_misses: []
+  assertion_hits:
+  - GLP-1 + nicotine combination therapy engages hypothalamic and mesolimbic circuits.
+  assertion_misses:
+  - Exendin-4 (a GLP-1 analogue) attenuates nicotine-induced locomotor stimulation
+    in mice (Egecioglu et al. 2013).
+  anti_assertion_violations: []
+  judge_reasoning: The wiki cites pubmed-37148870 (GLP-1 + nicotine combination therapy)
+    in multiple synthesis pages and correctly states that this combination engages
+    hypothalamic and mesolimbic pathways, satisfying one assertion and the citation
+    requirement. However, while the concept page slug 'the-glucagon-like-peptide-1-analogue-exendin-4-attenuates-the-nicotine-induced-locomotor-stimulation-in-mice-egecioglu-et-al-2013'
+    exists, its content is empty ('needs population from legacy import'), and no synthesis
+    page explicitly states that exendin-4 attenuates nicotine-induced locomotor stimulation
+    in mice per Egecioglu et al. 2013. The general preclinical evidence mentions exendin-4
+    suppressing various addictive substances including nicotine, but does not specifically
+    assert the Egecioglu locomotor stimulation finding. No anti-assertion violations
+    were found; the wiki consistently frames GLP-1 agonists as reducing rather than
+    enhancing nicotine reward.
+  cache_read_tokens: 23019
+  input_tokens: 191
+  output_tokens: 376
+- golden_id: q09
+  question: What did the SELECT trial demonstrate about cardiovascular outcomes with
+    semaglutide?
+  score: 0.5333333333333333
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - The SELECT trial tracked over 17,000 people.
+  - SELECT showed a ~20% reduction in heart attacks and strokes (major adverse cardiovascular
+    events).
+  assertion_misses:
+  - SELECT enrolled patients with established cardiovascular disease and overweight/obesity
+    (not type 2 diabetes).
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context (concept page and synthesis page) mentions the
+    SELECT trial tracked over 17,000 people and showed a ~20% reduction in heart attacks
+    and strokes, satisfying two of the three must_assert requirements. However, the
+    wiki does not specify that SELECT enrolled patients with established cardiovascular
+    disease and overweight/obesity who did NOT have type 2 diabetes — this key enrollment
+    criterion is absent from the wiki content. There are no must_cite sources to evaluate
+    (the list is empty), so the cite component scores neutral (treated as full credit
+    per the max(1,...) formula, giving cite_ratio = 1.0 with weight 0.4). The assert
+    ratio is 2/3 ≈ 0.667 with weight 0.5. No must_not_assert violations were found,
+    so anti_penalty = 1.0 with weight 0.1. Final score = 0.4*(1.0) + 0.5*(0.667) +
+    0.1*(1.0) = 0.4 + 0.333 + 0.1 = 0.833. Wait, re-reading the rubric: cite_ratio
+    = len(cite_hits)/max(1, len(cite_hits)+len(cite_misses)) = 0/max(1,0) = 0/1 =
+    0.0. So score = 0.4*0 + 0.5*(2/3) + 0.1*1.0 = 0 + 0.333 + 0.1 = 0.433. Rounding
+    to 0.433.'
+  cache_read_tokens: 23019
+  input_tokens: 166
+  output_tokens: 479
+- golden_id: q10
+  question: What does evidence show about GLP-1 agonists and brain volume / cognitive
+    decline in Alzheimer's disease?
+  score: 0.55
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - Liraglutide clinical trials in Alzheimer's patients showed nearly 50% less brain
+    volume loss compared to placebo.
+  - Cognitive decline was approximately 18% slower in liraglutide-treated Alzheimer's
+    patients.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'There are no must_cite sources required, so the citation component
+    is vacuously satisfied but contributes 0 to the score (0.4 * 0/0 treated as N/A;
+    with max(1,0)=1 denominator, cite_ratio=0/1=0... wait — since must_cite is empty,
+    cite_ratio = 0/max(1,0) = 0/1 = 0, contributing 0.4*0=0). Actually re-reading:
+    cite_hits and cite_misses are both empty because must_cite is empty, so cite_ratio
+    = 0/max(1,0+0) = 0/1 = 0. However, the wiki does assert both must_assert facts:
+    the concept page ''liraglutide-clinical-trials-showing-nearly-50-less-brain-volume-loss-and-an-18-slower-decline-in-cognitive-function-in-alzheimers-patients''
+    explicitly names these facts in its title, and the systemic-effects synthesis
+    page scaffolds both claims via the MoC reference. Neither anti-assertion violation
+    is present. Score = 0.4*0 + 0.5*1.0 + 0.1*1.0 = 0.0 + 0.5 + 0.1 = 0.60. Rounding:
+    0.60. Wait — with empty must_cite list, cite_ratio = len([]) / max(1, len([])+len([]))
+    = 0/1 = 0, contributing 0. assert_ratio = 2/2 = 1.0, contributing 0.5. anti_penalty
+    = 1.0, contributing 0.1. Total = 0.60.'
+  cache_read_tokens: 23019
+  input_tokens: 184
+  output_tokens: 510
+- golden_id: q11
+  question: What do brain organoid studies show about semaglutide's effects on Alzheimer's
+    disease hallmarks?
+  score: 0.35
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - Brain organoid studies show semaglutide reduces amyloid beta plaques.
+  - Semaglutide reduces phosphorylated tau in brain organoid models.
+  - Semaglutide reduces GFAP (a marker of reactive astrocytes / neuroinflammation).
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context does mention brain organoid studies showing semaglutide''s
+    reduction of Alzheimer''s disease hallmarks including amyloid-beta plaques, phosphorylated
+    tau, and GFAP — these appear as concept page titles and in the MoC scaffold (e.g.,
+    ''brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap'')
+    and are referenced in the systemic health synthesis page. So all three must_assert
+    statements are satisfied (the wiki asserts these findings, even if only in stub/scaffold
+    form). No must_not_assert violations are present. There are no must_cite requirements,
+    so cite_ratio is 1.0 (no misses). However, cite_ratio contributes 0.4 * 1.0 =
+    0.4 (no citations required means no misses), assert_ratio = 3/3 = 1.0 contributing
+    0.5 * 1.0 = 0.5, but wait — with rubric_weight cite=0.4 and no must_cite sources,
+    cite_ratio = 1/max(1,0+0) = 1.0. Score = 0.4*1.0 + 0.5*1.0 + 0.1*1.0 = 1.0. Re-evaluating:
+    must_cite is empty list, so cite_hits=[], cite_misses=[], cite_ratio = len([])
+    / max(1, 0+0) = 0/1 = 0.0. Score = 0.4*0.0 + 0.5*1.0 + 0.1*1.0 = 0.0 + 0.5 + 0.1
+    = 0.6. Actually cite_ratio = 0/(max(1,0)) = 0. Score = 0.4*0 + 0.5*1.0 + 0.1*1.0
+    = 0.6.'
+  cache_read_tokens: 23019
+  input_tokens: 178
+  output_tokens: 611
+- golden_id: q12
+  question: What did the 2026 observational study of 600,000 US veterans show about
+    GLP-1 agonists and addiction outcomes?
+  score: 0.55
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - GLP-1 use significantly reduced the risk of substance use disorders across all
+    major addictive substances in this cohort.
+  assertion_misses:
+  - The study reported reduced overdose deaths in GLP-1-treated veterans.
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki contains a concept page titled ''A 2026 observational
+    study of 600,000 US veterans showing that GLP-1 use significantly reduced the
+    risk of substance use disorders and overdose deaths across all major addictive
+    substances,'' which implicitly asserts that GLP-1 use reduced substance use disorder
+    risk across all major addictive substances (satisfying one must_assert). However,
+    the concept page body is empty (''needs population from legacy import''), and
+    the wiki does not explicitly state that the study reported reduced overdose deaths
+    — only the page title hints at this, and the title alone is insufficient to count
+    as an asserted claim in the wiki body. No must_cite sources were specified, so
+    the cite component scores neutrally (treated as 1.0 with zero items). No anti-assertion
+    violations were found. The score reflects full credit on the cite component (weight
+    0.4, ratio 1.0 with no items = 1.0), half credit on assertions (1/2 hits = 0.5,
+    weight 0.5), and full anti-penalty credit (no violations, weight 0.1): 0.4×1.0
+    + 0.5×0.5 + 0.1×1.0 = 0.40 + 0.25 + 0.10 = 0.55.'
+  cache_read_tokens: 23019
+  input_tokens: 177
+  output_tokens: 393
+- golden_id: q13
+  question: What body-composition and metabolic-support protocols are recommended
+    alongside GLP-1 therapy to preserve lean mass?
+  score: 0.55
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - Protein intake of approximately 1 gram per pound of target body weight is recommended.
+  - Resistance training is recommended to preserve lean mass during GLP-1-mediated
+    weight loss.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'No sources were required (must_cite is empty), so the cite component
+    contributes nothing to penalize. Both must_assert statements are satisfied: the
+    wiki''s concept page on body composition explicitly mentions ''High-protein intake
+    protocols (prescribing 1 gram of protein per pound of target body weight) combined
+    with resistance training'' as the recommended method to prevent the 25-40% loss
+    of lean muscle mass during GLP-1 weight loss. Neither prohibited statement appears
+    anywhere in the wiki context. The full assertion score (1.0) and anti-penalty
+    score (1.0) apply, but the cite component (weight 0.4) yields 0.0 because there
+    are no must_cite items — the formula gives: 0.4 * (0/max(1,0)) + 0.5 * 1.0 + 0.1
+    * 1.0 = 0.0 + 0.5 + 0.1 = 0.6. However, since cite_hits and cite_misses are both
+    empty, cite_ratio = 0/max(1,0+0) = 0/1 = 0.0, yielding 0.4*0 + 0.5*1 + 0.1*1 =
+    0.55. Both required assertions are present in the body-composition concept page,
+    and no prohibited statements are found.'
+  cache_read_tokens: 23019
+  input_tokens: 165
+  output_tokens: 402
+- golden_id: q14
+  question: How is fast-scan cyclic voltammetry (FSCV) used to study GLP-1 effects
+    on dopamine signaling?
+  score: 0.55
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - FSCV measures minute-to-minute changes and spikes in real-time dopamine signaling.
+  assertion_misses:
+  - FSCV is used in preclinical models to characterize how GLP-1 agonists modulate
+    phasic dopamine release.
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context contains a concept page stub for fast-scan cyclic
+    voltammetry (FSCV) that explicitly describes it as used ''to measure minute-to-minute
+    changes and spikes in real-time dopamine signaling,'' satisfying the first must_assert.
+    However, the stub has no populated content (marked ''needs population from legacy
+    import''), so the wiki does not elaborately assert that FSCV is used in preclinical
+    models to characterize how GLP-1 agonists modulate phasic dopamine release — that
+    specific assertion is absent from all synthesis and source pages. No must_cite
+    sources were specified, so the cite component contributes nothing to the score.
+    No anti-assertions were found. The cite weight (0.4) contributes 0.4 × 1.0 = 0.4
+    (trivially, since no sources are required), the assert weight (0.5) contributes
+    0.5 × 0.5 = 0.25 (one of two assertions hit), and the anti-penalty (0.1) contributes
+    0.1 × 1.0 = 0.1, yielding a total of 0.75. Wait — rechecking: cite_ratio = 0/0
+    = treated as max(1,0) denominator → 1.0, so cite contributes 0.4×1.0=0.4; assert_ratio
+    = 1/2 = 0.5, contributes 0.5×0.5=0.25; anti = 1.0, contributes 0.1×1.0=0.10; total
+    = 0.75. Correcting score to 0.75.'
+  cache_read_tokens: 23019
+  input_tokens: 185
+  output_tokens: 492
+- golden_id: q15
+  question: What does functional MRI evidence show about GLP-1 agonists and food-cue
+    reactivity in reward centers?
+  score: 0.6
+  cite_hits: []
+  cite_misses: []
+  assertion_hits:
+  - fMRI studies show reduced reward-center activation (amygdala, insula, orbitofrontal
+    cortex) to highly palatable food cues under GLP-1 treatment.
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki does assert the required finding about fMRI evidence:
+    the ''what-is-known-about-glp-1'' synthesis page states that ''task-based fMRI
+    work... reports attenuated activation in reward-related regions (amygdala, insula,
+    orbitofrontal cortex) when patients on GLP-1 agonists view highly palatable food
+    cues, mirroring the preclinical reduction in food''s incentive value.'' This directly
+    satisfies the must_assert requirement. There are no must_cite sources specified,
+    so the cite component scores as neutral (no hits or misses, yielding a ratio of
+    1.0 by the max(1,...) formula). No must_not_assert violations are present. Score
+    = 0.4 * 1.0 + 0.5 * 1.0 + 0.1 * 1.0 = 1.0... however, re-examining: must_cite
+    is empty so cite_ratio = 0/max(1,0) = 0/1 = 0... wait, cite_hits=[], cite_misses=[],
+    so cite_ratio = 0/max(1,0+0) = 0/1 = 0. But with no required citations, a ratio
+    of 0 seems incorrect. Using the formula strictly: cite_ratio = len([])/max(1,
+    0+0) = 0/1 = 0. assert_ratio = 1/1 = 1.0. anti_penalty = 1.0. Score = 0.4*0 +
+    0.5*1.0 + 0.1*1.0 = 0.6.'
+  cache_read_tokens: 23019
+  input_tokens: 187
+  output_tokens: 482
+total_input_tokens: 2143
+total_output_tokens: 7250
+total_cache_read_tokens: 345285

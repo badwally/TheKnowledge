@@ -11,6 +11,17 @@ from gateway import frontmatter as fm, paths
 from gateway.core import OperationResult
 
 
+@pytest.fixture(autouse=True)
+def patch_nlm_notebook(monkeypatch):
+    """Stub out nlm_registry.get_persistent so all tests see a registered notebook.
+
+    Without this, the pre-flight notebook check added to discharge_orphans()
+    would fail in the clean kb_root environment (no real notebooks.yaml).
+    Tests that explicitly test the 'no notebook' path override this fixture.
+    """
+    monkeypatch.setattr("gateway.nlm_registry.get_persistent", lambda domain: "fake-nb-id")
+
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -140,6 +151,33 @@ def test_empty_domain_returns_error(kb_root: Path) -> None:
     assert "domain is required" in result.errors[0]
 
 
+def test_no_notebook_for_domain_fails_fast(kb_root: Path, monkeypatch) -> None:
+    """Pre-flight: domain with no registered NLM notebook fails before querying sources."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    monkeypatch.setattr("gateway.nlm_registry.get_persistent", lambda domain: None)
+    _write_raw_source(kb_root, slug="orphan-x", domain="glp1")
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=5)
+
+    assert not result.success
+    assert "no notebook" in result.errors[0]
+    mock_q.assert_not_called()
+
+
+def test_dry_run_includes_auth_not_validated_note(kb_root: Path) -> None:
+    """Dry-run summary notes that NLM auth is NOT validated."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="dry-src-2", domain="glp1")
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()):
+        result = discharge_orphans("glp1", dry_run=True)
+
+    assert "NLM auth not validated" in result.summary
+
+
 def test_query_failure_recorded_in_errors(kb_root: Path) -> None:
     from gateway.ops.discharge_orphans import discharge_orphans
 
@@ -152,6 +190,109 @@ def test_query_failure_recorded_in_errors(kb_root: Path) -> None:
     assert not result.success
     assert "0 synthesis drafts filed" in result.summary
     assert len(result.errors) == 1
+
+
+# ---------------------------------------------------------------------------
+# _synthesis_question quality (M100)
+# ---------------------------------------------------------------------------
+
+
+def test_synthesis_question_uses_preview_and_domain_topic() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {
+        "title": "Efficacy of semaglutide in reward circuits",
+        "preview": "A 24-week RCT measuring GLP-1 receptor agonist effects on dopamine response.",
+    }
+    q = _synthesis_question(source, domain_topic="GLP-1 pharmacology and reward modulation")
+    assert "GLP-1 pharmacology" in q
+    assert "24-week RCT" in q
+    assert "Efficacy of semaglutide" in q
+
+
+def test_synthesis_question_preview_without_domain_topic() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {
+        "title": "Edge inference for agentic systems",
+        "preview": "Survey of on-device LLM deployment patterns.",
+    }
+    q = _synthesis_question(source)
+    assert "Survey of on-device" in q
+    assert "Edge inference" in q
+    assert "in the context of" not in q
+
+
+def test_synthesis_question_domain_topic_without_preview() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {"title": "Model compression techniques", "preview": ""}
+    q = _synthesis_question(source, domain_topic="Edge AI and model optimization")
+    assert "Edge AI" in q
+    assert "Model compression" in q
+    assert "contribute" in q
+
+
+def test_synthesis_question_falls_back_gracefully() -> None:
+    from gateway.ops.discharge_orphans import _synthesis_question
+
+    source = {"title": "Some paper", "preview": ""}
+    q = _synthesis_question(source)
+    assert "Some paper" in q
+    assert "domain's understanding" in q
+
+
+def test_source_preview_uses_meta_abstract() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {"abstract": "A study of dopamine."}}
+    assert _source_preview(front, "body content") == "A study of dopamine."
+
+
+def test_source_preview_uses_meta_excerpt() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {"excerpt": "Article about edge AI."}}
+    assert _source_preview(front, "body content") == "Article about edge AI."
+
+
+def test_source_preview_falls_back_to_body() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {}}
+    assert _source_preview(front, "Body paragraph here.") == "Body paragraph here."
+
+
+def test_source_preview_prefers_abstract_over_excerpt() -> None:
+    from gateway.ops.discharge_orphans import _source_preview
+
+    front = {"meta": {"abstract": "The abstract.", "excerpt": "The excerpt."}}
+    assert _source_preview(front, "") == "The abstract."
+
+
+def test_discharge_orphans_uses_domain_policy(kb_root: Path) -> None:
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="policy-src", domain="glp1")
+
+    captured: list[str] = []
+
+    def fake_query(question: str, **kwargs):
+        captured.append(question)
+        return _ok_result()
+
+    with patch("gateway.ops.query.query", side_effect=fake_query):
+        with patch("gateway.ops.discharge_orphans.policy_exists", return_value=True):
+            with patch("gateway.ops.discharge_orphans.load_policy") as mock_lp:
+                from unittest.mock import MagicMock
+                pol = MagicMock()
+                pol.domain_topic = "GLP-1 receptor pharmacology"
+                mock_lp.return_value = pol
+                result = discharge_orphans("glp1", limit=1)
+
+    assert result.success
+    assert len(captured) == 1
+    assert "GLP-1 receptor pharmacology" in captured[0]
 
 
 # ---------------------------------------------------------------------------
@@ -185,6 +326,74 @@ def test_cli_parser_discharge_orphans_dry_run() -> None:
     assert ns.dry_run is True
 
 
+# ---------------------------------------------------------------------------
+# M110: skip sources already cited in existing synthesis pages
+# ---------------------------------------------------------------------------
+
+
+def test_skips_source_already_cited_in_synthesis(kb_root: Path) -> None:
+    """Source cited in existing synthesis page is excluded, not re-discharged."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    source_id = "web/already-cited-src"
+    _write_raw_source(kb_root, slug="already-cited-src", domain="glp1", wiki_pages=None)
+
+    # Create a synthesis page that cites this source.
+    synthesis_dir = paths.knowledge_root() / "wiki" / "synthesis"
+    synthesis_dir.mkdir(parents=True, exist_ok=True)
+    (synthesis_dir / "existing-synth.md").write_text(
+        f"Some synthesis content.\n- [[sources/{source_id}]]\n"
+    )
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=5)
+
+    assert result.success
+    assert "no orphan sources found" in result.summary
+    mock_q.assert_not_called()
+
+
+def test_skips_cited_excludes_only_cited_sources(kb_root: Path) -> None:
+    """Cited source is excluded; uncited source is still discharged."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="cited-src", domain="glp1", wiki_pages=None)
+    _write_raw_source(kb_root, slug="orphan-new", domain="glp1", wiki_pages=None)
+
+    synthesis_dir = paths.knowledge_root() / "wiki" / "synthesis"
+    synthesis_dir.mkdir(parents=True, exist_ok=True)
+    (synthesis_dir / "existing.md").write_text(
+        "Content.\n- [[sources/web/cited-src]]\n"
+    )
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=5)
+
+    assert result.success
+    assert "1 synthesis drafts filed" in result.summary
+    mock_q.assert_called_once()
+
+
+def test_dry_run_excludes_cited_sources(kb_root: Path) -> None:
+    """Dry-run count reflects cited-filter: already-cited sources not counted."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    for i in range(3):
+        _write_raw_source(kb_root, slug=f"src-{i}", domain="glp1", wiki_pages=None)
+
+    synthesis_dir = paths.knowledge_root() / "wiki" / "synthesis"
+    synthesis_dir.mkdir(parents=True, exist_ok=True)
+    (synthesis_dir / "existing.md").write_text(
+        "Content.\n- [[sources/web/src-0]]\n- [[sources/web/src-1]]\n"
+    )
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()) as mock_q:
+        result = discharge_orphans("glp1", limit=10, dry_run=True)
+
+    mock_q.assert_not_called()
+    assert "1 synthesis drafts filed" in result.summary  # only src-2 is uncited
+
+
 def test_cli_discharge_orphans_calls_op(kb_root: Path) -> None:
     from gateway.cli import _run_routine_cmd
     import argparse
@@ -201,3 +410,81 @@ def test_cli_discharge_orphans_calls_op(kb_root: Path) -> None:
 
     mock_op.assert_called_once_with("glp1", limit=5, dry_run=True)
     assert rc == 0
+
+
+# ---------------------------------------------------------------------------
+# M111: auto-commit synthesis drafts after batch
+# ---------------------------------------------------------------------------
+
+
+def test_auto_commit_called_after_successful_batch(kb_root: Path) -> None:
+    """Successful discharge runs git add + commit for the synthesis pages."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+    from pathlib import Path
+
+    _write_raw_source(kb_root, slug="commit-src", domain="glp1")
+    synth_path = kb_root / "wiki" / "synthesis" / "ans.md"
+    ok = OperationResult(
+        success=True,
+        summary="Wrote draft: wiki/synthesis/ans.md",
+        data={},
+        paths_touched=[synth_path],
+    )
+
+    with patch("gateway.ops.query.query", return_value=ok):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            mock_sub.run.return_value.returncode = 0
+            mock_sub.run.return_value.stdout = "[main abc1234] chore(discharge-orphans)..."
+            mock_sub.run.return_value.splitlines = lambda: [
+                "[main abc1234] chore(discharge-orphans)..."
+            ]
+            result = discharge_orphans("glp1", limit=1)
+
+    assert result.success
+    assert mock_sub.run.call_count == 2  # git add + git commit
+
+
+def test_auto_commit_skipped_in_dry_run(kb_root: Path) -> None:
+    """Dry-run does not call git commit."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="dry-commit-src", domain="glp1")
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            result = discharge_orphans("glp1", limit=1, dry_run=True)
+
+    mock_sub.run.assert_not_called()
+
+
+def test_auto_commit_skipped_when_no_synthesis_paths(kb_root: Path) -> None:
+    """If query succeeds but returns no synthesis paths, no commit is attempted."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="no-path-src", domain="glp1")
+    ok_no_path = OperationResult(success=True, summary="filed", data={}, paths_touched=[])
+
+    with patch("gateway.ops.query.query", return_value=ok_no_path):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            result = discharge_orphans("glp1", limit=1)
+
+    mock_sub.run.assert_not_called()
+
+
+def test_auto_commit_survives_git_failure(kb_root: Path) -> None:
+    """Git commit failure does not fail the discharge operation."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+    from pathlib import Path
+
+    _write_raw_source(kb_root, slug="fail-commit-src", domain="glp1")
+    synth_path = kb_root / "wiki" / "synthesis" / "ans.md"
+    ok = OperationResult(
+        success=True, summary="Wrote draft", data={}, paths_touched=[synth_path],
+    )
+
+    with patch("gateway.ops.query.query", return_value=ok):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            mock_sub.run.side_effect = Exception("git not available")
+            result = discharge_orphans("glp1", limit=1)
+
+    assert result.success  # operation succeeds even if git commit fails

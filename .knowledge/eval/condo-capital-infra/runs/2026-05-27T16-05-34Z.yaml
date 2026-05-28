@@ -1,0 +1,297 @@
+domain: condo-capital-infra
+timestamp: 2026-05-27T16-05-34Z
+n_questions: 10
+mean_score: 0.09999999999999999
+results:
+- golden_id: q01
+  question: What are the four standard reserve funding goals in the National Reserve
+    Study Standards and how do they differ in risk profile?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-07-3bd
+  assertion_hits: []
+  assertion_misses:
+  - Full Funding maintains a balance equal to 100% of calculated component deterioration
+  - Threshold Funding keeps the balance above a predetermined minimum at all times
+  - Baseline Funding ensures the balance never drops below zero
+  - Statutory Funding meets state-mandated minimum requirements
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does not contain source web-2022-07-07-3bd anywhere
+    in the corpus, and none of the four standard National Reserve Study Standards
+    funding goals (Full Funding, Threshold Funding, Baseline Funding, Statutory Funding)
+    are described with their specific definitions or risk profiles. The synthesis
+    pages and concept pages discuss deterministic vs. probabilistic reserve modeling,
+    CAI Reserve Study Standards in general terms, and various provincial/state regulatory
+    frameworks, but nowhere enumerate or define these four funding tiers with their
+    distinguishing characteristics. The must_not_assert condition is satisfied (no
+    false equivalence between Threshold and Full Funding is stated), so the anti-penalty
+    component scores 1.0, but with a weight of only 0.1, the overall score remains
+    very low due to zero citation hits and zero assertion hits.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 298
+- golden_id: q02
+  question: Which reserve funding goal is most commonly recommended and why?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-07-3bd
+  assertion_hits: []
+  assertion_misses:
+  - Threshold Funding is the most commonly recommended strategy
+  - it balances equitable contributions with adequate funds for major repairs
+  - Baseline Funding is considered high-risk and generally acceptable only in financial
+    distress
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does not contain source web-2022-07-07-3bd anywhere
+    in the provided pages, nor does any page assert that Threshold Funding is the
+    most commonly recommended strategy, explain that it balances equitable contributions
+    with adequate funds for major repairs, or characterize Baseline Funding as high-risk
+    and acceptable only in financial distress. The wiki does briefly mention 'baseline
+    funding' vs. 'highest recommended level of funding' in the GSE 15% concept page
+    and touches on funding plans generally, but none of the three required assertions
+    are made anywhere in the corpus. The required source is entirely absent. The anti-assertion
+    about Full Funding being standard is also not present, so no violation there.
+    The overall score reflects only the anti-penalty component (1.0 × 0.1 = 0.1) since
+    cite_ratio = 0/1 = 0.0 and assert_ratio = 0/3 = 0.0.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 317
+- golden_id: q03
+  question: What is the cost differential between the Component method and the Cash
+    Flow method for reserve contributions, and what is the key criticism of each?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2023-03-20-7a4
+  assertion_hits: []
+  assertion_misses:
+  - Component method ongoing transfers are typically two to three times higher than
+    the Cash Flow method
+  - Cash Flow method creates an illusion of adequacy by ignoring real-world asset
+    depreciation
+  - Component method handles funds inefficiently in separate per-asset accounts
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does not contain source web-2023-03-20-7a4 anywhere
+    in its pages, nor does it discuss the cost differential between the Component
+    method and the Cash Flow method for reserve contributions. The wiki covers reserve
+    fund studies, probabilistic modeling, Weibull distributions, ASTM E917 LCCA, and
+    various Canadian/US regulatory frameworks, but never compares Component vs. Cash
+    Flow reserve contribution methods or their relative cost levels or criticisms.
+    None of the three must_assert statements appear anywhere in the wiki content.
+    The must_not_assert statement ('both methods produce similar contribution levels')
+    is also not asserted, so there is no anti-penalty. The only points earned are
+    the anti-assertion component (no violation found), yielding a score of 0.1 × 1.0
+    = 0.1.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 297
+- golden_id: q04
+  question: What Percent Funded thresholds indicate healthy versus at-risk reserve
+    funds, and what is the mathematical flaw in this metric?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2025-09-05-a37
+  assertion_hits: []
+  assertion_misses:
+  - 70% or higher is considered good to excellent
+  - below 50% is a major red flag indicating a likely special assessment
+  - the metric assumes linear depreciation, ignoring exponential or stepwise deterioration
+    of components like roofs and asphalt
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context does not contain source web-2025-09-05-a37 anywhere
+    in the provided pages, so the citation requirement fails entirely. The wiki does
+    discuss percent-funded concepts (notably in the California Percent-Funded Component
+    Method concept page and the California 30-year reserve projection page), but it
+    does not assert any of the three required facts: that 70%+ is considered good
+    to excellent, that below 50% is a major red flag indicating a likely special assessment,
+    or that the metric assumes linear depreciation ignoring exponential/stepwise deterioration.
+    The California concept page describes the statutory formula as using years-in-service
+    divided by useful life (which is indeed linear), but it does not frame this as
+    a ''mathematical flaw'' or discuss exponential/stepwise deterioration. The wiki
+    does not assert that 50% funded is a healthy reserve level, so there are no anti-assertion
+    violations. The score reflects only the anti-penalty component (no violations
+    = 1.0 * 0.1) with zero credit on citations and assertions.'
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 343
+- golden_id: q05
+  question: What does Florida's Structural Integrity Reserve Study mandate require,
+    and to which buildings does it apply?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-20-7d3
+  assertion_hits: []
+  assertion_misses:
+  - applies to condominium and cooperative buildings three stories or higher
+  - requires completing a SIRS identifying specific structural elements including
+    roof, load-bearing walls, floor, foundation, and fireproofing
+  - after December 31 2024 reserves for structural elements cannot be waived reduced
+    or pooled for other purposes
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does contain some information about Florida SIRS
+    (in the florida-sirs entity page and florida-hb-913-2025 entity page), but the
+    specific required source 'web-2022-07-20-7d3' is not cited anywhere in the wiki.
+    The wiki's SIRS content mentions that SIRS applies to condominium associations
+    and describes it as examining structural elements, but does not specifically state
+    the three-story-or-higher threshold for cooperatives and condominiums in the precise
+    terms required (the milestone inspection page does mention 'three or more habitable
+    stories' but for milestone inspections, not SIRS specifically). The wiki does
+    not assert the specific list of structural elements (roof, load-bearing walls,
+    floor, foundation, fireproofing) nor the post-December 31, 2024 prohibition on
+    waiving, reducing, or pooling reserves for structural elements. The anti-assertion
+    violation is not present. Since the required source is not cited (cite_ratio=0/1=0.0),
+    none of the must_assert facts are clearly stated (assert_ratio=0/3=0.0), and no
+    anti-assertion violations occur (anti_penalty=1.0), the score is 0.3*0.0 + 0.6*0.0
+    + 0.1*1.0 = 0.10.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 434
+- golden_id: q06
+  question: What is Washington State's 1% Rule for reserve studies and what three
+    funding plans must be presented to the board?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2025-01-01-cc2
+  assertion_hits: []
+  assertion_misses:
+  - the 1% Rule requires listing any component whose major maintenance or replacement
+    cost exceeds 1% of the annual budget
+  - the study must present a Full Funding Plan achieving 100% funding by year 30
+  - the study must also present a Baseline Funding Plan and the professional's specific
+    Recommended rate
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context contains no information about Washington State's
+    reserve study requirements, the 1% Rule, or the three funding plans (Full Funding,
+    Baseline Funding, and Recommended rate) that must be presented to the board. The
+    required source 'web-2025-01-01-cc2' is not cited anywhere in the wiki. The content
+    covers various other jurisdictions (Nova Scotia, Ontario, Quebec, BC, California,
+    Florida) and methodology topics, but Washington State's specific reserve study
+    rules are entirely absent. Since none of the must_cite sources are present and
+    none of the must_assert statements are supported by the wiki content, the only
+    partial credit comes from the anti_assertion component — the wiki does not falsely
+    assert that Washington State mandates adoption of the Full Funding Plan (since
+    it says nothing about Washington State at all), earning the full anti-penalty
+    weight of 0.1.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 318
+- golden_id: q07
+  question: What are California's requirements when an HOA board borrows from reserve
+    funds for non-reserve expenses?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2025-09-05-a37
+  assertion_hits: []
+  assertion_misses:
+  - board must document the reason under Civil Code 5515
+  - must adopt a repayment plan and record the decision in open meeting minutes
+  - funds must generally be repaid within one year
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context contains no information about California Civil
+    Code §5515 or the rules governing HOA board borrowing from reserve funds for non-reserve
+    expenses. The required source 'web-2025-09-05-a37' is not cited anywhere in the
+    wiki. None of the three required assertions — documenting the reason under Civil
+    Code 5515, adopting a repayment plan in open meeting minutes, or the one-year
+    repayment requirement — appear anywhere in the provided wiki pages. The wiki does
+    contain California reserve study content (Civil Code §5570, §5550, the 30-year
+    projection, percent-funded method, etc.) but nothing on the borrowing/loan restrictions
+    under §5515. The anti-assertion ('California allows unlimited reserve borrowing
+    without formal process') is not present in the wiki either, so no penalty applies
+    there. The score is therefore driven only by the 0.1 anti-assertion weight (full
+    credit since no violation), with zero credit on citations and assertions.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 315
+- golden_id: q08
+  question: How does the pooled-average problem in percent-funded software distort
+    reserve health reporting?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2025-04-12-ca4
+  assertion_hits: []
+  assertion_misses:
+  - averaging a 90% funded component with a 10% funded component yields an overall
+    metric of 50% even if the HOA lacks cash for near-term critical replacements
+  - the aggregation hides the actual risk of specific high-cost near-term components
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context does not contain source ''web-2025-04-12-ca4''
+    anywhere in its pages or source bodies, so the required citation is entirely absent.
+    Neither of the two must_assert statements appears in the wiki content: the specific
+    numerical example (90% + 10% = 50% average masking near-term cash shortfall) and
+    the assertion that aggregation hides risk of specific high-cost near-term components
+    are not discussed anywhere in the synthesis pages, concept pages, entity pages,
+    or source bodies provided. The wiki does discuss percent-funded methodology (California
+    Civil Code §5570(b)(4) component method) and mentions that reserve-fund health
+    should not be judged from a single point in time, but it never addresses the pooled-average
+    distortion problem described in the golden expectations. The anti-assertion condition
+    is satisfied (the wiki does not claim averaging is accurate), so the anti-penalty
+    term is 1.0, but given the zero cite and zero assert ratios with weights of 0.3
+    and 0.6, the total score is 0.0*0.3 + 0.0*0.6 + 1.0*0.1 = 0.1.'
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 384
+- golden_id: q09
+  question: What is Washington State's repayment schedule requirement when a board
+    borrows reserves for unbudgeted operational costs versus unbudgeted replacements?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2025-10-29-056
+  assertion_hits: []
+  assertion_misses:
+  - borrowing for unbudgeted or unforeseen operational costs requires a mandatory
+    repayment schedule not exceeding 24 months
+  - borrowing for unbudgeted replacements does not trigger the 24-month restriction
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context contains no information about Washington State's
+    reserve fund borrowing rules or repayment schedules. The source 'web-2025-10-29-056'
+    is not cited anywhere in the wiki, and neither of the required assertions about
+    the 24-month repayment schedule for operational borrowing or the distinction between
+    operational and replacement borrowing appear in any of the synthesis pages, concept
+    pages, or entity pages provided. The wiki covers California, Ontario, British
+    Columbia, Nova Scotia, Quebec, Florida, and other jurisdictions but does not address
+    Washington State condominium law at all. Since the source is missing and neither
+    assertion is supported, only the anti-assertion component earns full credit (no
+    violations found), yielding a score of 0.1 × 0.0 + 0.6 × 0.0 + 0.1 × 1.0 = 0.1.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 305
+- golden_id: q10
+  question: What does the National Reserve Study Standards say about how Full Funding
+    compares to Baseline Funding in terms of total homeowner cost over time?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-07-3bd
+  assertion_hits: []
+  assertion_misses:
+  - Full Funding requires reserve transfers 10-15% higher than Baseline Funding
+  - Baseline-funded communities pay the difference through unexpected special assessments
+  - the total long-term cost is similar but Baseline Funding concentrates it in sudden
+    shocks rather than regular contributions
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does not contain source web-2022-07-07-3bd at
+    all, and none of the synthesis, concept, entity, or source pages address the National
+    Reserve Study Standards' comparison of Full Funding versus Baseline Funding in
+    terms of total homeowner cost over time. The closest content is the probabilistic-reserve-modeling
+    and reserve-fund-contribution-smoothing concept pages, which discuss deterministic
+    vs. probabilistic approaches and special assessments generally, but never cite
+    the specific CAI National Reserve Study Standards comparison between Full Funding
+    and Baseline Funding cadences, the 10-15% higher transfer figure, or the total-long-term-cost
+    equivalence framing. The anti-assertion (that Full Funding costs homeowners significantly
+    more in total) is also not asserted, so no penalty applies there, but the absence
+    of the required source and all three must_assert facts results in a very low score
+    driven entirely by the anti-penalty component.
+  cache_read_tokens: 118469
+  input_tokens: 3
+  output_tokens: 326
+total_input_tokens: 30
+total_output_tokens: 3337
+total_cache_read_tokens: 1184690

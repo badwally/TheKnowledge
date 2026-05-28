@@ -1,0 +1,80 @@
+version: 1
+session_id: 2026-05-28-hubspot-crm-api-capability-matrix-read
+domain: orita-cmo
+prompt: 'HubSpot CRM API capability matrix (read, write, association traversal) across
+  three paths: official Anthropic HubSpot MCP server, community MCP variants (peakmojo/mcp-hubspot
+  et al.), direct REST API v3 with Private App auth. Specific focus on object association
+  IDs (company-to-company agency-of-record, contact-to-company role tagging for user/influencer/decision-maker).
+  Survey production patterns for safe writes to a system-of-record CRM: dry-run queues
+  with approval gates (the chosen pattern), semantic invariant guards, shadow-write
+  + diff, rollback logging. Target deployment: 10-concurrent-user team (marketing
+  + sales + CEO) on GCP.'
+generated_at: '2026-05-28T03:21:14Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - safe write patterns for system-of-record databases with approval gates
+  - semantic invariant preservation for automated CRM data pipelines
+  - dry-run query execution with human-in-the-loop validation
+  - shadow write consistency verification for distributed data systems
+  - rollback logging for transactional API write operations
+  - LLM agent tool use for structured database mutation
+  - graph traversal for entity relationship management in CRM systems
+  - concurrent user access control for knowledge management systems
+  youtube:
+  - HubSpot MCP server Claude integration tutorial
+  - Anthropic HubSpot MCP tool use demo
+  - HubSpot REST API v3 private app authentication
+  - HubSpot object associations API company contact
+  - HubSpot CRM association types custom labels
+  - peakmojo mcp-hubspot community server
+  - HubSpot CRM agent automation Python
+  - HubSpot company-to-company associations agency
+  - HubSpot contact role tagging decision maker
+  - CRM safe write dry run approval workflow
+  - HubSpot RevOps automation small team
+  - Claude MCP CRM integration production
+  - HubSpot API rate limits concurrent users
+  - HubSpot GCP deployment cloud functions
+  - MCP server HubSpot read write capabilities comparison
+  - HubSpot sandbox testing before production writes
+  - CRM data integrity automation guardrails
+  - HubSpot associations v4 API tutorial
+  - AI agent CRM write rollback logging pattern
+  - HubSpot ICP scoring automation workflow
+  web:
+  - Anthropic HubSpot MCP server capabilities read write
+  - peakmojo mcp-hubspot vs official HubSpot MCP comparison
+  - HubSpot associations API v3 company-to-company custom types
+  - HubSpot contact association labels user influencer decision-maker
+  - HubSpot private app authentication REST API v3 guide
+  - HubSpot CRM agent dry-run approval gate pattern
+  - safe CRM write automation semantic invariant guard
+  - shadow write diff pattern HubSpot API production
+  - HubSpot object association traversal agency-of-record
+  - MCP HubSpot server tool capabilities matrix 2024
+  - HubSpot CRM GCP Cloud Run deployment architecture
+  - HubSpot rate limiting 10 concurrent users API
+  - rollback logging HubSpot CRM write operations
+  - HubSpot associations API label custom roles B2B
+  - LLM agent HubSpot integration production safety patterns
+  pubmed: []
+  semantic_scholar:
+  - human-in-the-loop approval gates for automated database writes
+  - CRM data quality invariant enforcement automated pipelines
+  - API safety patterns for system-of-record mutation
+  - knowledge graph entity association traversal enterprise systems
+  - LLM tool use structured data write safety
+  - dry-run execution model for reversible system mutations
+  - multi-user concurrent access control CRM automation
+  - shadow mode testing production database operations
+  - rollback and audit logging for AI agent actions
+  - B2B SaaS CRM automation small team deployment patterns
+edited: false
+status: planned

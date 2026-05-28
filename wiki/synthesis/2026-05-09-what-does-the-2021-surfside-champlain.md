@@ -21,6 +21,12 @@ draft_started_at: '2026-05-09T23:12:06Z'
 draft_unresolved_claims: 10
 last_updated: '2026-05-10T00:04:21Z'
 sources_count: 5
+synthesizes:
+- sources/web-2024-01-11-e67
+- sources/web-2024-07-09-f2a
+- sources/web-2025-02-27-05e
+- sources/web-2026-01-01-361
+- sources/web-2026-05-06-9cd
 ---
 # What does the 2021 Surfside / Champlain Towers South collapse and its forensic engineering investigation reveal about the failure modes of underfunded condo reserves, deferred capital maintenance, and inadequate structural inspection regimes — and which of the post-Surfside legislative responses (FL HB 4D/SB 4-D, FL HB 913, NJ S2760, etc.) most directly address those failure modes
 

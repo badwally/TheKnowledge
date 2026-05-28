@@ -20,6 +20,8 @@ draft_started_at: '2026-05-23T19:08:09Z'
 draft_unresolved_claims: 13
 last_updated: '2026-05-24T17:25:30Z'
 sources_count: 12
+synthesizes:
+- sources/web-2025-02-14-794
 ---
 # Cross-cutting themes — 2026-05-23-what-is-the-ai-native-indie
 

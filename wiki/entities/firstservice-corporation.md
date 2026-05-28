@@ -6,11 +6,9 @@ canonical_name: FirstService Corporation
 entity_kind: organization
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-11T23:10:02Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-11T23:10:02Z'
-last_updated: '2026-05-11T23:10:02Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # FirstService Corporation
 

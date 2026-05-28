@@ -17,6 +17,8 @@ draft_started_at: '2026-05-10T01:51:40Z'
 draft_unresolved_claims: 20
 last_updated: '2026-05-10T01:51:40Z'
 sources_count: 1
+synthesizes:
+- sources/web-2025-08-01-8c2
 ---
 # WHAT IS THE BEST PRACTICE FOR PREDICTIVE MAINTENANCE FOR CONDO BUILDINGS WITH >100 UNITS IN CANADA
 

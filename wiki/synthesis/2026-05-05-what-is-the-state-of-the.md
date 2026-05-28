@@ -13,6 +13,16 @@ draft_started_at: '2026-05-05T01:31:43Z'
 draft_unresolved_claims: 0
 last_updated: '2026-05-05T16:00:27Z'
 sources_count: 19
+synthesizes:
+- sources/yt-2czYyrTzILg
+- sources/yt-3Skl6cxH5O4
+- sources/yt-4-FH09AMsp0
+- sources/yt-9O9zZ1lQWiI
+- sources/yt-Fbr_Solax1w
+- sources/yt-N3vHJcHBS-w
+- sources/yt-RXOvZIn-oSA
+- sources/yt-Tud9HLTk8hg
+- sources/yt-l93LrDpIJGY
 ---
 # what is the state of the art for multi-agent edge workflows
 

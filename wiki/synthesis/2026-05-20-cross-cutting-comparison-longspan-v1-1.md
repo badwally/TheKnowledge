@@ -57,6 +57,12 @@ draft_started_at: '2026-05-20T20:02:39Z'
 draft_unresolved_claims: 10
 last_updated: '2026-05-20T20:02:39Z'
 sources_count: 11
+synthesizes:
+- sources/web-2025-01-31-943
+- sources/web-2025-11-10-fd9
+- sources/web-2026-01-13-6bf
+- sources/web-2026-03-04-157
+- sources/web-2026-05-13-b67
 ---
 # Cross-cutting comparison: Longspan v1.1 vs the methodological state of the art for probabilistic capital-asset reserve study engines. Longspan v1.1 is a Bayesian / Weibull / lognormal / Monte Carlo engine with structure-type cohort calibration (60-building BC concrete-frame highrise sample, 108-816 observations per component class), engineer's point estimate blended 1:1 with the cohort Weibull EUL draw, replacement cost drawn from the cohort lognormal, fallback chain POOLED to jurisdiction to structure-family to structure-type, 10,000 Monte Carlo simulations per building, P10/P50/P90 fan output, no work-order conditioning, no first-principles deterioration kernel, no causal narrative. The engine seals to an engineer's professional judgement (NS P.Eng. for the Halifax pilot). Use wikilink format for all citations (no numeric footnotes). The synthesis should: (1) map where Longspan v1.1 sits within the methodological frontier the corpus describes — what it does well, where it sits at the frontier already, and where it lags; (2) identify the top 3-5 v2 design surfaces most strongly supported by the corpus, ranked by expected impact on the Phase 3 board pitch defensibility — specifically the variance-honesty argument vs deterministic methodologies, the partial-pooling cohort architecture, and the engineer-judgement-as-prior framing; (3) identify the 2-3 v3 surfaces that would constitute a methodological moat against acquirer-side (CINC, FirstService, Yardi, Eli Report, SmartProperty) AI-narrative-on-deterministic-engine vendors; (4) explicitly call out what the corpus warrants vs what would require additional research before commitment. Audience is founder + technical co-founder evaluation + Mercer P.Eng. credibility credential + future investor methodology defense. Render the math without Bayesian jargon — plain language even if it takes another sentence.
 

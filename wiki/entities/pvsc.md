@@ -6,11 +6,9 @@ canonical_name: Property Valuation Services Corporation
 entity_kind: organization
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-19T14:50:00Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-19T15:13:35Z'
-last_updated: '2026-05-19T15:13:35Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # Property Valuation Services Corporation
 

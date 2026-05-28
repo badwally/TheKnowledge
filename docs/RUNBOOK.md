@@ -54,6 +54,15 @@ wiki skill-emit <domain>   # writes .claude/skills/wiki-<domain>/SKILL.md
 | `TranscriptionError: HF_TOKEN` | Diarization needs Hugging Face auth | `hf auth login` + accept pyannote model terms |
 | PDF parse error | Malformed or password-protected PDF | Extract text manually; ingest as a `note` source |
 
+### Evaluation failures
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| `ANTHROPIC_API_KEY_RESEARCH not set` | Separate API key for prompt-cached eval judge not configured | Set `export ANTHROPIC_API_KEY_RESEARCH=sk-ant-...` (console.anthropic.com → API keys; use a dedicated key with a $50/month spend cap). Add to shell profile for persistence. |
+| `wiki context for domain X is N chars, exceeds budget` | Domain's synthesis + source bodies exceed the context budget | Run `wiki evaluate <domain> --max-chars 1000000` to override; or prune stale synthesis pages from the domain |
+| `no goldens at .knowledge/eval/<domain>/goldens.yaml` | Domain not scaffolded | `wiki evaluate --scaffold <domain>` |
+| Eval score drops unexpectedly | New synthesis pages changed context; or judge variance | Re-run 2–3 times; check if stale pages were finalized; compare trend CSV |
+
 ### Authorship / query failures
 
 | Symptom | Cause | Fix |

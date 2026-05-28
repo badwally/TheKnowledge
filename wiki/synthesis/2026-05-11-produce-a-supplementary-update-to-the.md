@@ -32,6 +32,10 @@ created_at: '2026-05-11T21:10:42Z'
 nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 last_updated: '2026-05-11T21:10:42Z'
 sources_count: 4
+synthesizes:
+- sources/pdf-bc-housing-2020-maintenance-matters-02
+- sources/pdf-bc-housing-2020-maintenance-matters-06
+- sources/pdf-bc-housing-2020-maintenance-matters-11
 ---
 # Produce a supplementary update to the quantified preventive-maintenance synthesis incorporating BC Housing Maintenance Matters No. 2 (Roofing), No. 6 (Decks and Balconies), and No. 11 (Building Envelope Maintenance and Renewals Program). CRITICAL FORMAT REQUIREMENT: every factual claim must be followed by an inline wikilink in the form (NOT numeric footnotes like [1] or [3-8], which the validator rejects). MM-2 source-id is pdf-bc-housing-2020-maintenance-matters-02; MM-6 is pdf-bc-housing-2020-maintenance-matters-06; MM-11 is pdf-bc-housing-2020-maintenance-matters-11. Sub-sections: (a) roofing inspection cadence and service-life intervals from MM-2, (b) deck and balcony membrane replacement intervals by material type (urethane vs PVC) from MM-6, (c) building envelope maintenance program structure (Plan-Do-Check-Adjust, role definitions, inspection cycles) from MM-11. Replace the forward-looking note at lines 117-125 of wiki/synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance.md.
 

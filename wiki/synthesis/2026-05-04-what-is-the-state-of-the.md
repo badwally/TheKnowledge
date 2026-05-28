@@ -13,6 +13,15 @@ draft_started_at: '2026-05-04T18:49:46Z'
 draft_unresolved_claims: 0
 last_updated: '2026-05-05T04:01:32Z'
 sources_count: 8
+synthesizes:
+- sources/pdf-5bec4feeb233
+- sources/pdf-f478e5f11837
+- sources/pdf-jenny-zhang-2026-hyperagents
+- sources/pdf-nenad-toma-2026-intelligent-ai-delegation
+- sources/pdf-peter-belcak-2025-small-language-models
+- sources/pdf-shu-yang-2026-multi-user-large
+- sources/pdf-wentao-zhang-2026-autogenesis-a-self
+- sources/pdf-zhengding-hu-2026-pancake-hierarchical-memory
 ---
 # what is the state of the art for agentic orchestration
 

@@ -126,11 +126,15 @@ def _parse_judge_response(call_result, *, golden: Golden) -> EvalResult:
             "Judge: malformed JSON for golden %s: %s; first 200 chars: %r",
             golden.id, e, raw[:200],
         )
+        # Rescue path: extract score via regex so a single unescaped-quote
+        # character in an assertion string doesn't zero out the golden.
+        score_match = re.search(r'"score"\s*:\s*([0-9.]+)', raw)
+        rescued_score = float(score_match.group(1)) if score_match else 0.0
         return EvalResult(
             golden_id=golden.id,
             question=golden.question,
-            score=0.0,
-            judge_reasoning=f"judge JSON parse failed: {e}",
+            score=rescued_score,
+            judge_reasoning=f"judge JSON parse failed (score rescued via regex): {e}",
             input_tokens=call_result.input_tokens,
             output_tokens=call_result.output_tokens,
             cache_read_tokens=call_result.cache_read_tokens,

@@ -28,6 +28,8 @@ draft_started_at: '2026-05-23T20:01:53Z'
 draft_unresolved_claims: 27
 last_updated: '2026-05-23T20:01:53Z'
 sources_count: 1
+synthesizes:
+- sources/web-2025-10-04-aae
 ---
 # What is the AI-native marketplace / aggregator archetype for a solo or tiny-team operator in 2026? Cover: definition (AI mediates supply/demand or aggregates fragmented work; operator runs the platform, AI does matching, vetting, ops, dispute resolution); examples in AI-mediated recruiting, freelance-work brokering, supplier matching; how the four pillars specialize — especially economics (variable cost per transaction, take rate vs. SaaS subscription) and defensibility (liquidity moat, integration depth, workflow lock-in); why this is the hardest archetype for solo operators (cold-start problem, two-sided liquidity); explicit conservative go/no-go signals.
 

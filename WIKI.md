@@ -259,7 +259,7 @@ type: entity
 slug: semaglutide
 canonical_name: "Semaglutide"
 aliases: ["Ozempic", "Wegovy", "Rybelsus"]
-entity_kind: drug | person | paper | organization | dataset | product | software | statute | standard | place | event | other
+entity_kind: drug | person | paper | organization | dataset | product | software | statute | regulation | standard | place | event | artifact | other
 domains: ["glp1-reward-modulation"]
 created_at: "2026-04-27T14:32:00Z"
 last_updated: "2026-04-27T18:15:00Z"
@@ -290,7 +290,7 @@ sources_count: 14
 - Entities: [[entities/tirzepatide]], [[entities/liraglutide]]
 ```
 
-Required sections: Summary, Key facts (with citations), Sources, Related. `last_verified_at` is required for `statute` and `standard` kinds (lint ERROR if absent, WARNING if >365 days old — ONT-13).
+Required sections: Summary, Key facts (with citations), Sources, Related. `last_verified_at` is required for `statute`, `regulation`, and `standard` kinds (lint ERROR if absent, WARNING if >365 days old — ONT-13).
 
 ### 4.2 Concept (`wiki/concepts/<slug>.md`)
 

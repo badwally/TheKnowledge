@@ -34,7 +34,6 @@ _KIND_MAP: dict[str, str] = {
     "policy_document": "statute",
     "policy-document": "statute",
     "policy": "statute",
-    "regulation": "statute",
     "law": "statute",
     "legislation": "statute",
     "guideline": "standard",

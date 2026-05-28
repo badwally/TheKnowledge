@@ -15,6 +15,10 @@ draft_started_at: '2026-05-11T19:00:25Z'
 draft_unresolved_claims: 34
 last_updated: '2026-05-11T19:00:25Z'
 sources_count: 3
+synthesizes:
+- sources/web-1998-01-01-7e4
+- sources/web-2024-10-15-6c9
+- sources/web-2025-08-01-8c2
 ---
 # what are the best practices for preventative condo complex maiontenance from perspective of HOA board or operating entity
 

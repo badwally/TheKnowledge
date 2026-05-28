@@ -17,7 +17,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from gateway import frontmatter as fm, paths
-from gateway.core import OperationResult
+from gateway.core import OperationResult, parse_iso
 
 
 _DEFAULT_LOOKBACK_HOURS = 24
@@ -75,18 +75,6 @@ def _utcnow() -> datetime:
     return datetime.now(timezone.utc)
 
 
-def _parse_iso(s: str) -> datetime | None:
-    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d"):
-        try:
-            dt = datetime.strptime(s, fmt)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            return dt
-        except ValueError:
-            continue
-    return None
-
-
 def _collect_stale_drafts(*, now: datetime, stale_days: int) -> list[DraftItem]:
     threshold = timedelta(days=stale_days)
     results: list[DraftItem] = []
@@ -106,7 +94,7 @@ def _collect_stale_drafts(*, now: datetime, stale_days: int) -> list[DraftItem]:
                 continue
             started_raw = front.get("draft_started_at") or front.get("created_at")
             if started_raw:
-                started = _parse_iso(str(started_raw))
+                started = parse_iso(str(started_raw))
             else:
                 started = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
             if started is None:
@@ -161,7 +149,7 @@ def _collect_recently_ingested(*, since: datetime) -> list[IngestedSourceItem]:
             except Exception:
                 continue
             ingested_raw = str(front.get("ingested_at", ""))
-            dt = _parse_iso(ingested_raw) if ingested_raw else None
+            dt = parse_iso(ingested_raw) if ingested_raw else None
             if dt and dt >= since:
                 domains = front.get("domain") or front.get("domains") or []
                 if isinstance(domains, str):

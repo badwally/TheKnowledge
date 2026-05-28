@@ -14,6 +14,10 @@ draft_unresolved_claims: 10
 created_at: '2026-04-28T17:08:35Z'
 last_updated: '2026-04-28T17:08:35Z'
 sources_count: 3
+synthesizes:
+- sources/pubmed-24949661
+- sources/pubmed-27030669
+- sources/pubmed-39515485
 ---
 
 # GLP-1 systemic effects — cardiovascular outcomes, neuroprotection, brain volume, and Alzheimer's risk

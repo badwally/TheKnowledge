@@ -1,0 +1,29 @@
+source_id: pdf-9fcc4e9f57bf
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: primary-source RFS-cycle correspondence; documents board-engineer resolution
+  dynamics for condo-capital-infra calibration
+pinned_at: '2026-05-27T18:13:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: 2025-03-06 SG Comments on Draft 2
+  authors: []
+  url: ''
+content_excerpt: 'Memo to Vaughn Keeble:
+
+  Comments on the Reserve Fund Study, Draft 2:
+
+  1. Number of units At Page ii and Page 1 you note that the building has 123 suites.
+
+  This is correct, but it must be understood that the building has 123 equivalent
+
+  suites. There are actually 118 “doors”- separately occupied units - but four of
+
+  these are double units and two are ~1.5 units (three units made into two).
+
+  Summer Gardens is unusual in that all equivalent units pay the same condo fee
+
+  and have the same common interest. '

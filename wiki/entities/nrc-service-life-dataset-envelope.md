@@ -6,11 +6,9 @@ canonical_name: NRC Service Life Dataset for Non-Structural Building Envelope Ma
 entity_kind: dataset
 domains:
 - condo-capital-infra
-draft: true
-draft_started_at: '2026-05-11T23:23:25Z'
-draft_unresolved_claims: 0
 created_at: '2026-05-11T23:25:03Z'
-last_updated: '2026-05-11T23:25:03Z'
+last_updated: '2026-05-27T19:12:45Z'
+finalized_at: '2026-05-27T19:12:45Z'
 ---
 # NRC Service Life Dataset for Non-Structural Building Envelope Materials
 

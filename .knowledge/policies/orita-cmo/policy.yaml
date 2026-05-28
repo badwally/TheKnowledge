@@ -1,0 +1,143 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: orita-cmo
+  topic: 'Strategic and operational knowledge base for the CMO of Orita.ai, a seed-stage
+    AI audience-intelligence company serving the Klaviyo and ecommerce MarTech ecosystem.
+
+    '
+  field: B2B SaaS marketing strategy, MarTech competitive intelligence, and AI-native
+    GTM operations
+  description: 'Covers competitive intelligence across direct, adjacent, and ecosystem
+    players including M&A signals; GTM and growth execution spanning events, partner
+    and agency networks, AEO/GEO tactics, and outbound prospecting; funnel and marketing-ROI
+    analysis including HubSpot capability, ICP validation against closed-won data,
+    and SMB-MarTech peer benchmarks; and best-practice patterns for Claude-Code-built
+    agent and skill architectures at 10-user-team scale on GCP. Voice-of-the-customer
+    synthesized outputs may cite into this domain; raw VOC primary sources are excluded.
+
+    '
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- 'Analyzes competitive positioning or product differentiation among AI audience-intelligence,
+  email marketing, SMS, or CDP vendors such as Klaviyo, Attentive, Postscript, Simon
+  Data, Bloomreach, or close analogs, including feature comparisons, pricing signals,
+  or go-to-market moves.
+
+  '
+- 'Covers GTM motion specifics for seed-stage B2B SaaS targeting ecommerce brands,
+  including partner-led or agency-channel strategies, event-based pipeline generation,
+  AEO/GEO content tactics, or outbound prospecting sequences with named tools or frameworks.
+
+  '
+- 'Presents funnel metrics, pipeline conversion benchmarks, or CAC/LTV analysis benchmarked
+  against SMB MarTech peers or ecommerce-vertical SaaS companies, with quantified
+  data points such as conversion rates, payback periods, or retention curves.
+
+  '
+- 'Discusses HubSpot CRM configuration, RevOps tooling stacks, or ICP scoring methodologies
+  applicable to a sub-100-customer B2B SaaS funnel with named integration or workflow
+  details.
+
+  '
+- 'Describes architecture patterns, prompt design, skill composition, or operational
+  frameworks for LLM-based agent systems deployed at small-team scale on GCP, specifically
+  Claude or comparable models used in a marketing or sales-operations context.
+
+  '
+- 'Reports M&A activity, funding rounds, or strategic partnership announcements among
+  MarTech, CDP, or ecommerce-adjacent AI vendors that signal competitive positioning
+  or ecosystem shifts relevant to an audience-intelligence platform.
+
+  '
+exclusion_criteria:
+- 'Generic digital-marketing how-to content without competitive, financial, or architectural
+  specificity relevant to B2B SaaS or ecommerce MarTech (e.g., listicles on email
+  best practices with no benchmark data or vendor analysis).
+
+  '
+- 'Consumer-facing ecommerce operations content covering merchandising, fulfillment,
+  or storefront UX with no MarTech, GTM, or audience-intelligence dimension.
+
+  '
+- 'Raw voice-of-the-customer interview transcripts, survey instruments, or primary
+  VOC data files; synthesized VOC outputs that cite into this domain via wiki references
+  are permitted.
+
+  '
+- 'Academic ML papers focused on model architecture, training procedures, or benchmark
+  evaluation without an applied MarTech, GTM, or sales-operations use-case grounding.
+
+  '
+quality_signals:
+  source_authority:
+    positive_signals:
+    - 'Published by a recognized B2B SaaS analyst or data firm such as Gartner, Forrester,
+      G2, Bombora, Datanyze, or Similarweb with named methodology.
+
+      '
+    - 'Authored by a practitioner with a verifiable GTM, RevOps, or MarTech operating
+      role at a named company, including conference talks, operator blogs, or LinkedIn
+      long-form.
+
+      '
+    - 'Sourced from a primary company document such as an investor deck, pricing page,
+      product changelog, or SEC filing providing first-party competitive signal.
+
+      '
+    negative_signals:
+    - Undated or unattributed content with no organizational provenance.
+    - 'Aggregator listicles that restate vendor marketing copy without independent
+      analysis, quantified comparison, or named customer evidence.
+
+      '
+  content_depth:
+    positive_signals:
+    - 'Includes quantified metrics such as conversion rates, pipeline velocity, CAC,
+      retention curves, or benchmark cohort data with disclosed sample sizes or confidence
+      intervals.
+
+      '
+    - 'Presents a specific competitive mechanism or product differentiation argument
+      supported by named customer evidence, win/loss data, or documented feature gaps.
+
+      '
+    - 'Describes a reproducible agent architecture, skill composition, or RevOps workflow
+      with concrete implementation details including tool names, API surfaces, or
+      prompt structure.
+
+      '
+    negative_signals:
+    - 'Trend commentary or market-size assertions without supporting data, named examples,
+      or disclosed methodology.
+
+      '
+    - 'Vendor-produced content that omits pricing, limitations, or competitive context
+      in favor of purely promotional framing.
+
+      '
+  recency:
+    positive_signals:
+    - 'Published or substantially updated within the last 18 months for competitive
+      positioning, GTM benchmarks, or MarTech vendor analysis in a fast-moving landscape.
+
+      '
+    - 'Reflects current API versions, pricing tiers, or product capabilities for tooling
+      and architecture references.
+
+      '
+    negative_signals:
+    - 'Competitive analysis older than 24 months covering vendor feature sets or market
+      share in the ecommerce MarTech space.
+
+      '
+    - Architecture or SDK guidance referencing deprecated model versions, sunset APIs,
+      or tooling that has since been superseded.
+bootstrapped_from_description_hash: 9cf1440892bd44ed

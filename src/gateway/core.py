@@ -11,13 +11,14 @@ Per WIKI.md § 9.2, every gateway operation:
 8. Releases the lock.
 9. Returns a structured result.
 
-This module supplies the shared primitives (atomic write, OperationResult).
+This module supplies the shared primitives (atomic write, OperationResult, parse_iso).
 Operation modules under `gateway/ops/` implement the specific contracts.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 import os
 from pathlib import Path
 import tempfile
@@ -98,6 +99,23 @@ class OperationResult:
             tag = "no-op" if self.no_op else "ok"
             return f"[{tag}] {self.summary}"
         return f"[fail] {'; '.join(self.errors) or self.summary}"
+
+
+def parse_iso(value: object) -> datetime | None:
+    """Parse an ISO-8601 datetime string, returning None on any failure.
+
+    Handles: Z suffix, naive datetimes (assume UTC), date-only strings,
+    non-string/None input.  Never raises.
+    """
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except (ValueError, TypeError):
+        return None
 
 
 def write_atomic(path: Path, content: str) -> None:

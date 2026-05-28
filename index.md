@@ -662,3 +662,24 @@ first to orient before drilling into specific pages.
 - [[sources/web-2026-01-01-936]] · web · HomeRun IQ — Reserve Studies, PCA, SIRS & Capital Planning · condo-software
 - [[sources/web-2025-04-23-889]] · web · Find an Interface partner · condo-software
 - [[sources/web-2026-05-24-100]] · web · Example Domain
+- [[sources/web-2022-07-07-3bd]] · web · Smart Strategies for Effective Reserve Funding
+- [[sources/pdf-58cd32ac73c8]] · pdf · 2024-10-16 Reserve Fund Study Draft 1 · condo-capital-infra
+- [[sources/pdf-da86bd51429b]] · pdf · 2024-12-06 SG Comments on Draft 1 · condo-capital-infra
+- [[sources/pdf-5dad0dbc650c]] · pdf · 2025 Reserve Fund Study Supplement_Merged · condo-capital-infra
+- [[sources/pdf-28d4b9d34712]] · pdf · 2025-02-21 Reserve Fund Study Draft 2 · condo-capital-infra
+- [[sources/pdf-427f1fbfc9c8]] · pdf · 2025-03-14 from Keeble · condo-capital-infra
+- [[sources/pdf-e208682ecbca]] · pdf · 2025-04-01 Memo to Owners - Reserve Fund Study 2025 · condo-capital-infra
+- [[sources/pdf-1c554d4c6512]] · pdf · 2025-05-12 from Ron Anaka and Reply · condo-capital-infra
+- [[sources/pdf-de2ba769f276]] · pdf · 2025-06-11 Certificate · condo-capital-infra
+- [[sources/pdf-b73e53ed0c0d]] · pdf · 2025-06-11 Spreadsheet 10 · condo-capital-infra
+- [[sources/pdf-4931157e130a]] · pdf · AI Strategy Planning Session_otter_ai_transcript · orita-cmo
+- [[sources/docx-92ec692fb0f8]] · docx · orita-claude-md · orita-cmo
+- [[sources/docx-7ed3b7965067]] · docx · orita-competitive-intelligence-agent-spec · orita-cmo
+- [[sources/docx-b90a5e5fdcc4]] · docx · orita-agent-architecture-analysis · orita-cmo
+- [[sources/docx-25c1bcf28fb8]] · docx · orita-marketing-automation-plan · orita-cmo
+- [[sources/yt-ZUIprPSbYO4]] · youtube · Automate Your HubSpot CRM with Claude Code 🤖
+- [[sources/yt-bZo4jVdZfaI]] · youtube · Claude + HubSpot MCP: The Future of CRM is Here. See How I Use It.
+- [[sources/yt-PmViuQw2fNs]] · youtube · Automating MEDDIC: How to Flag Missing Decision Makers in HubSpot
+- [[sources/web-2026-01-01-0e1]] · web · HubSpot MCP Server
+- [[sources/yt-3JqJkRF0_yU]] · youtube · How to Set up HubSpot to BigQuery integration | Tutorial
+- [[sources/web-2026-04-11-879]] · web · GitHub - do-y-lee/wikiloom: WikiLoom turns raw documents into a persistent, compounding knowledge base. The LLM reads sources and writes structured wiki pages.

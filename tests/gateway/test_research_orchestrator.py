@@ -1114,6 +1114,66 @@ def test_cross_cutting_synthesis_omits_synthesizes_when_one_branch():
     assert "synthesizes" not in front
 
 
+# --- _bounded_synthesis_slug --------------------------------------------------
+
+
+def test_bounded_synthesis_slug_passthrough():
+    """Combined slug under 80 chars is returned unchanged."""
+    assert orch._bounded_synthesis_slug("2026-05-28-short", "suffix") == "2026-05-28-short-suffix"
+
+
+def test_bounded_synthesis_slug_trims_suffix_to_fit():
+    """Long suffix is trimmed so total length <= 80."""
+    long_session = "2026-05-28-" + "a" * 50   # 61 chars
+    suffix = "server-architecture-and-infrastructure-scaling"  # 46 chars → combined 108
+    result = orch._bounded_synthesis_slug(long_session, suffix)
+    assert len(result) <= 80
+    assert result.startswith(long_session + "-")
+
+
+def test_bounded_synthesis_slug_exactly_80_passthrough():
+    """A combined slug of exactly 80 chars is not truncated."""
+    session_id = "2026-05-28-" + "x" * 30   # 41 chars
+    suffix = "y" * 38                         # 38 chars; total = 41+1+38 = 80
+    result = orch._bounded_synthesis_slug(session_id, suffix)
+    assert result == f"{session_id}-{suffix}"
+    assert len(result) == 80
+
+
+def test_branch_synthesis_slug_bounded_for_long_session_id():
+    """_make_branch_synthesis_update produces a slug <= 80 chars even with a long session_id."""
+    from gateway import frontmatter as fm
+
+    long_session = "2026-05-28-multi-user-gcp-deployment-patterns-for"  # 49 chars (the real offender)
+    update = orch._make_branch_synthesis_update(
+        domain="orita-cmo",
+        session_id=long_session,
+        branch_name="Server Architecture and Infrastructure Scaling",
+        branch_findings={},
+        research_query="rq",
+        source_map={},
+    )
+    front, _ = fm.parse(update.content)
+    assert len(front["slug"]) <= 80
+
+
+def test_cross_cutting_slug_bounded_for_long_session_id():
+    """_make_cross_cutting_update slug stays <= 80 chars with a long session_id."""
+    from gateway import frontmatter as fm
+
+    long_session = "2026-05-28-multi-user-gcp-deployment-patterns-for"
+    update = orch._make_cross_cutting_update(
+        domain="orita-cmo",
+        session_id=long_session,
+        research_query="rq",
+        synthesis={},
+        source_map={},
+        branch_names=["Branch A", "Branch B"],
+    )
+    front, _ = fm.parse(update.content)
+    assert len(front["slug"]) <= 80
+
+
 # --- ARCH-4: _materialize per-source lock + filter writeback ----------------
 
 

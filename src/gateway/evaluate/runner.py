@@ -33,6 +33,7 @@ class NoGoldensError(FileNotFoundError):
 
 def run_evaluate(domain: str, *,
                  limit: int | None = None,
+                 max_chars: int | None = None,
                  client: AnthropicAPIClient | None = None) -> EvalRunSummary:
     """Run the evaluation for `domain`. Returns an EvalRunSummary (also persisted)."""
     goldens_path = goldens_path_for(domain)
@@ -45,7 +46,8 @@ def run_evaluate(domain: str, *,
     if limit is not None:
         goldens = goldens[:limit]
 
-    wiki_context = load_wiki_context(domain)
+    ctx_kwargs = {"max_chars": max_chars} if max_chars is not None else {}
+    wiki_context = load_wiki_context(domain, **ctx_kwargs)
 
     judge = Judge(client=client)
     results: list[EvalResult] = []

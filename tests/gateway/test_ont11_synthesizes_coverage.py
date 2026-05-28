@@ -65,3 +65,48 @@ def test_mixed_synthesis_pages(kb_root: Path) -> None:
     slugs = {f.metadata.get("slug") for f in findings}
     assert "missing-a" in slugs
     assert "missing-b" in slugs
+
+
+def _write_draft_synthesis(kb_root: Path, slug: str) -> Path:
+    d = kb_root / "wiki" / "synthesis"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "synthesis",
+        "slug": slug,
+        "title": f"Draft {slug}",
+        "domains": ["test"],
+        "question": "What?",
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "draft": True,
+        "draft_started_at": "2026-01-01T00:00:00Z",
+        "sources_count": 0,
+    }
+    p = d / f"{slug}.md"
+    p.write_text(fm.serialize(front, "## Synthesis\n\nContent.\n"))
+    return p
+
+
+def test_draft_page_missing_synthesizes_is_warning_not_error(kb_root: Path) -> None:
+    _write_draft_synthesis(kb_root, "draft-no-synth")
+    findings = run()
+    assert len(findings) == 1
+    assert findings[0].severity == "warning"
+
+
+def test_non_draft_page_missing_synthesizes_is_error(kb_root: Path) -> None:
+    _write_synthesis(kb_root, "finalized-no-synth", with_synthesizes=False)
+    findings = run()
+    assert len(findings) == 1
+    assert findings[0].severity == "error"
+
+
+def test_draft_and_non_draft_mixed_severities(kb_root: Path) -> None:
+    _write_draft_synthesis(kb_root, "draft-missing")
+    _write_synthesis(kb_root, "final-missing", with_synthesizes=False)
+    _write_synthesis(kb_root, "final-present", with_synthesizes=True)
+    findings = run()
+    assert len(findings) == 2
+    by_slug = {f.metadata.get("slug"): f for f in findings}
+    assert by_slug["draft-missing"].severity == "warning"
+    assert by_slug["final-missing"].severity == "error"

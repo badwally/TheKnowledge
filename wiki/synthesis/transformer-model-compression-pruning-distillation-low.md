@@ -14,6 +14,8 @@ draft_unresolved_claims: 10
 created_at: '2026-04-28T17:31:12Z'
 last_updated: '2026-04-28T17:31:12Z'
 sources_count: 12
+synthesizes:
+- sources/yt-wIXr22QTEHg
 ---
 
 # Transformer Model Compression: Pruning, Distillation, Low-Rank Decomposition, and Architectural Compaction

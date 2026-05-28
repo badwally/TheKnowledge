@@ -286,6 +286,53 @@ def test_schema_drift_clean_page_no_findings(kb_root):
     assert flagged == []
 
 
+def test_schema_drift_draft_entity_missing_sections_is_warning_not_error(kb_root):
+    front = {
+        "type": "entity",
+        "slug": "draft-entity",
+        "title": "Draft Entity",
+        "entity_kind": "organization",
+        "domains": ["d-test"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "draft": True,
+        "draft_started_at": "2026-01-01T00:00:00Z",
+    }
+    body = "# Draft Entity\n\n## Summary\n\nStub content.\n"
+    target = paths.wiki_dir() / "entities" / "draft-entity.md"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(fm.serialize(front, body))
+
+    findings = schema_drift.run()
+    flagged = [f for f in findings if "draft-entity" in f.path]
+    # Section-missing on a draft page must produce no ERRORs
+    section_errors = [f for f in flagged if f.metadata.get("rule") == "wiki-page-section-missing"
+                      and f.severity == "error"]
+    assert section_errors == [], f"expected no section ERRORs for draft page, got: {section_errors}"
+
+
+def test_schema_drift_non_draft_entity_missing_sections_is_error(kb_root):
+    front = {
+        "type": "entity",
+        "slug": "final-entity",
+        "title": "Final Entity",
+        "entity_kind": "organization",
+        "domains": ["d-test"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    body = "# Final Entity\n\n## Summary\n\nContent.\n"
+    target = paths.wiki_dir() / "entities" / "final-entity.md"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(fm.serialize(front, body))
+
+    findings = schema_drift.run()
+    flagged = [f for f in findings if "final-entity" in f.path]
+    section_errors = [f for f in flagged if f.metadata.get("rule") == "wiki-page-section-missing"
+                      and f.severity == "error"]
+    assert section_errors, "non-draft page missing sections should produce ERRORs"
+
+
 # --- inbox-pending --------------------------------------------------------
 
 

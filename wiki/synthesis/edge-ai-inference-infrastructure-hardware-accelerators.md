@@ -15,6 +15,20 @@ draft_unresolved_claims: 17
 created_at: '2026-04-28T17:29:27Z'
 last_updated: '2026-04-28T17:29:27Z'
 sources_count: 20
+synthesizes:
+- sources/yt-9xsv-vfSpdk
+- sources/yt-G6V3vJ6ojMQ
+- sources/yt-HcPegfd5-yo
+- sources/yt-PhhIeD_TmKs
+- sources/yt-QKdKcFjjZhE
+- sources/yt-Yy33F_4IMhE
+- sources/yt-ZNPkUoPBU84
+- sources/yt-aGOQIJJv1Tw
+- sources/yt-nn1KJfvj38w
+- sources/yt-pdKgcH9ZxtQ
+- sources/yt-pwP1YcHtF8s
+- sources/yt-uWCX1h9YamI
+- sources/yt-xRV13YwBq0c
 ---
 
 # Edge AI Inference Infrastructure: Hardware Accelerators, Distributed and Federated Edge, and Inference Optimization Beyond Compression

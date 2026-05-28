@@ -41,6 +41,13 @@ YOUTUBE_API_BASE = "https://www.googleapis.com/youtube/v3"
 _MAX_RETRIES_ON_429 = 4
 _BACKOFF_BASE_SECONDS = 2.0
 
+# Minimum gap between consecutive search.list calls on the same adapter
+# instance.  The YouTube Data API v3 per-minute quota is not published
+# but empirically trips under rapid-fire sequential queries.  A 1.5 s
+# floor keeps 20-query plans well under any reasonable per-minute cap
+# without meaningfully extending total run time (20 × 1.5 s = 30 s).
+_INTER_QUERY_SLEEP_SECONDS = 1.5
+
 
 def _get_api_key() -> str:
     """Return the API key or raise `AdapterError` if it is missing."""
@@ -216,6 +223,9 @@ class YouTubeAdapter:
 
     name = "youtube"
 
+    def __init__(self) -> None:
+        self._last_search_time: float = 0.0
+
     def search(
         self,
         query: str,
@@ -223,6 +233,11 @@ class YouTubeAdapter:
         filter_hints: dict | None = None,
         max_results: int = 50,
     ) -> list[CandidateItem]:
+        elapsed = time.monotonic() - self._last_search_time
+        if elapsed < _INTER_QUERY_SLEEP_SECONDS:
+            time.sleep(_INTER_QUERY_SLEEP_SECONDS - elapsed)
+        self._last_search_time = time.monotonic()
+
         api_key = _get_api_key()
         hints = filter_hints or {}
         # Pass-through keys the YouTube API understands directly.

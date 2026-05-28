@@ -1,0 +1,300 @@
+domain: edge-ai-agentic
+timestamp: 2026-05-27T19-03-10Z
+n_questions: 10
+mean_score: 0.7293333333333335
+results:
+- golden_id: q01
+  question: What are the four main hardware accelerator families for edge AI inference
+    and what is the key challenge created by their diversity?
+  score: 0.86
+  cite_hits:
+  - yt-ZNPkUoPBU84
+  cite_misses: []
+  assertion_hits:
+  - mobile NPUs and AI PCs
+  - Apple Silicon with unified memory
+  - NVIDIA edge GPUs such as Jetson Orin
+  - mobile and web GPU acceleration via portable runtimes
+  - heterogeneity means a model tuned for one accelerator often falls back to slow
+    software paths on another
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki''s ''Edge AI Inference Infrastructure'' synthesis page
+    explicitly enumerates all four hardware accelerator families: (1) Mobile NPUs
+    and AI PCs, (2) Apple Silicon with unified memory, (3) NVIDIA edge GPUs (specifically
+    mentioning Jetson Orin), and (4) Mobile/web GPU acceleration via portable runtimes
+    (MediaPipe + WebAssembly + WebGPU). The key challenge of heterogeneity is clearly
+    stated: ''a model tuned for one accelerator often falls back to slow software
+    paths on another because of unsupported operators or differing AI-accelerator
+    architectures.'' The source yt-ZNPkUoPBU84 is cited in that same section. No prohibited
+    assertions about a shared instruction set architecture are present. All five must_assert
+    items and the one must_cite source are satisfied, and no anti-assertions are violated.'
+  cache_read_tokens: 0
+  input_tokens: 184
+  output_tokens: 326
+- golden_id: q02
+  question: Why does Apple Silicon have a structural advantage for on-device LLM inference
+    compared to other edge hardware?
+  score: 0.7
+  cite_hits: []
+  cite_misses:
+  - yt-ZNPkUoPBU84
+  assertion_hits:
+  - Apple M-series and A-series parts share a unified memory pool among CPU, GPU,
+    and Neural Engine
+  - this eliminates costly tensor copies that dominate KV-cache traffic during LLM
+    decoding
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki clearly and correctly asserts both required facts about
+    Apple Silicon's unified memory architecture in the 'on-device-llm-inference-quantization-gguf'
+    and 'edge-ai-inference-infrastructure-hardware-accelerators' synthesis pages,
+    explaining that Apple's M-series/A-series parts use a unified memory pool shared
+    among CPU, GPU, and Neural Engine, and that this eliminates costly tensor copies
+    dominating KV-cache traffic during LLM decoding. The anti-assertion violation
+    does not appear anywhere in the wiki. However, the required citation 'yt-ZNPkUoPBU84'
+    (AI Mini PCs Explained) is never cited in the context of Apple Silicon's unified
+    memory advantage — that source is cited in the edge inference page but in the
+    context of AI Mini PCs/consumer NPUs, not Apple Silicon specifically. The relevant
+    Apple Silicon claims are attributed to other sources (yt-FviaHPrFhTg, yt-wgJX1HndGl0)
+    rather than yt-ZNPkUoPBU84, so the citation requirement is missed.
+  cache_read_tokens: 43418
+  input_tokens: 167
+  output_tokens: 357
+- golden_id: q03
+  question: What is the KV cache memory bottleneck in edge LLM inference and which
+    technique addresses it?
+  score: 0.3
+  cite_hits: []
+  cite_misses:
+  - arxiv-2407.08462
+  assertion_hits:
+  - WKVQuant jointly quantizes both model weights and the KV cache using a two-dimensional
+    strategy
+  assertion_misses:
+  - the KV cache required for long-context auto-regressive generation consumes massive
+    memory at inference time
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki does not cite arxiv-2407.08462 anywhere in the provided
+    context pages. Regarding assertions: the wiki does mention WKVQuant as jointly
+    quantizing weights and the KV cache in a ''2D scheme'' (in the on-device quantization
+    synthesis page), which satisfies the second must_assert. However, the first must_assert
+    — that the KV cache required for long-context auto-regressive generation consumes
+    massive memory at inference time — is not explicitly stated in those terms in
+    the wiki; the synthesis page says ''the KV cache becomes the dominant memory cost
+    for long-context auto-regressive generation'' only in the context of ''Once weights
+    are at 4 bits,'' but this is a borderline case. On closer reading, the on-device
+    synthesis does state ''the KV cache becomes the dominant memory cost for long-context
+    auto-regressive generation,'' which is semantically equivalent to the assertion
+    about massive memory consumption at inference time — however, this statement is
+    closely linked to the conditional ''once weights are at 4 bits,'' making it an
+    incomplete match for the standalone assertion. I''ll count it as a miss. The wiki
+    does not assert that quantizing model weights alone solves the KV cache problem,
+    so no anti-assertion violation. Score: 0.3*0 + 0.6*(1/2) + 0.1*1.0 = 0 + 0.3 +
+    0.1 = 0.4. Wait, recounting: cite_ratio=0/1=0, assert_ratio=1/2=0.5, anti_penalty=1.0.
+    Score = 0.3*0 + 0.6*0.5 + 0.1*1.0 = 0 + 0.3 + 0.1 = 0.4.'
+  cache_read_tokens: 43418
+  input_tokens: 162
+  output_tokens: 516
+- golden_id: q04
+  question: What is the Agent-to-Agent (A2A) protocol and what problem does it solve
+    for multi-agent edge systems?
+  score: 0.7571428571428571
+  cite_hits: []
+  cite_misses:
+  - yt-nn1KJfvj38w
+  assertion_hits:
+  - A2A is Google's open-source protocol allowing agents built on different frameworks
+    to discover, negotiate, and delegate tasks to each other
+  - agents advertise capabilities via standardized agent cards published as JSON-RPC
+    documents at well-known paths over HTTP
+  - it addresses the interoperability gap when agents from LangChain, CrewAI, or other
+    frameworks need to collaborate
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context thoroughly covers A2A protocol across multiple
+    synthesis pages. The 'agentic-ai-workflows-orchestration-patterns-mcp' and 'architecturalpatterns'
+    pages describe A2A as Google's open standard for heterogeneous agents to discover,
+    authenticate, and delegate to each other regardless of model or framework (including
+    LangChain and CrewAI examples). The 'architecturalpatterns' page explicitly describes
+    Agent Cards as JSON documents at well-known URIs, and JSON-RPC over HTTP/HTTPS
+    with SSE for communication. The 'ecosystemdynamics' page notes A2A was pioneered
+    by Google and hosted by the Linux Foundation. All three must_assert statements
+    are clearly supported. However, the required citation 'yt-nn1KJfvj38w' (the 5G
+    Edge AI panel discussion) is never cited in any of the A2A-related content in
+    the wiki — this source is only cited in the edge inference infrastructure synthesis
+    for 5G connectivity context, not for A2A protocol content. No anti-assertion violations
+    were found — the wiki consistently frames A2A as agent-to-agent communication,
+    not agent-to-cloud.
+  cache_read_tokens: 43418
+  input_tokens: 213
+  output_tokens: 413
+- golden_id: q05
+  question: What is Model Context Protocol (MCP) and why is it described as the USB-C
+    for AI?
+  score: 0.7
+  cite_hits: []
+  cite_misses:
+  - yt-FLpS7OfD5-s
+  assertion_hits:
+  - MCP standardizes how AI models connect to external tools such as APIs and web
+    searches and resources such as databases and local files
+  - it replaces bespoke REST API glue-code with a uniform interface
+  - the USB-C analogy reflects that MCP provides a universal connection standard regardless
+    of the underlying tool or resource
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context thoroughly covers MCP: it describes MCP as the
+    ''USB-C for AI applications'' providing a universal standard for agents to connect
+    to local contexts, APIs, and data sources (resources) without bespoke integration
+    code, and notes it standardizes how agents interact with tools and local data
+    by providing strictly typed and validated interfaces. These assertions satisfy
+    all three must_assert items. However, the specific source ''yt-FLpS7OfD5-s'' is
+    never cited anywhere in the wiki context — the MCP descriptions are attributed
+    to sources like yt-l93LrDpIJGY, yt-VChRPFUzJGA, yt-9O9zZ1lQWiI, etc. — resulting
+    in a citation miss. The wiki does not assert that MCP is for agent-to-agent communication
+    rather than model-to-tool integration, so no anti-assertion violation occurs.'
+  cache_read_tokens: 43418
+  input_tokens: 197
+  output_tokens: 338
+- golden_id: q06
+  question: What is the GGUF format and what role does it play in local edge AI deployment?
+  score: 0.6333333333333333
+  cite_hits: []
+  cite_misses:
+  - yt-2t9XrPcAiHg
+  assertion_hits:
+  - GGUF packages model weights, metadata, and quantization structures into a single
+    file for local CPU and GPU execution
+  - it is used primarily by the Llama.cpp runtime
+  assertion_misses:
+  - GGUF enables portable local execution without per-OS binary compilation
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context contains relevant information about GGUF in the
+    on-device-llm-inference-quantization-gguf synthesis page, asserting that GGUF
+    ''bundles weights, tokenizer, and metadata in a single mmap-friendly file'' and
+    is ''the native format of the llama.cpp engine,'' satisfying two of the three
+    must_assert criteria. However, the wiki does not explicitly assert that GGUF enables
+    portable local execution without per-OS binary compilation (it mentions llama.cpp
+    runs the ''same GGUF file on a Raspberry Pi, an M-series Mac, and a 4090'' which
+    implies portability but doesn''t explicitly contrast this with per-OS binary compilation
+    requirements). The required source ''yt-2t9XrPcAiHg'' is not cited anywhere in
+    the wiki context — the closest source is ''yt-P8m5eHAyrFM'' which covers llama.cpp/GGUF
+    but is a different source ID. No anti-assertion violations were found. The score
+    reflects: 0 cite ratio (0.2 weight), ~0.667 assertion ratio (0.7 weight), and
+    full anti-penalty credit (0.1 weight).'
+  cache_read_tokens: 43418
+  input_tokens: 176
+  output_tokens: 402
+- golden_id: q07
+  question: What does empirical evidence show about the impact of deployment strategy
+    on edge AI latency?
+  score: 0.9
+  cite_hits:
+  - arxiv-2403.17154
+  cite_misses: []
+  assertion_hits:
+  - how an edge model is packaged and deployed (container vs binary, cold vs warm
+    start, on-device vs local-network) has first-order effects on latency and apparent
+    performance
+  - deployment should be treated as a tunable layer rather than a neutral wrapper
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context explicitly cites arxiv-2403.17154 in the edge-ai-inference-infrastructure
+    synthesis page, which states that 'Empirical studies show that how an edge model
+    is packaged and deployed — container vs. binary, cold vs. warm start, on-device
+    vs. local-network — has first-order effects on observed latency and even on apparent
+    model performance, independent of the model graph itself.' It also states 'Treating
+    deployment as a tunable layer (not a wrapper) is now mandatory for credible edge
+    SLAs.' Both required assertions are clearly present. The on-device-llm-inference
+    synthesis also echoes this under 'Deployment strategy is a hidden axis,' noting
+    the deployment wrapper itself can dominate latency and shift accuracy. The prohibited
+    claim that deployment strategy has negligible effect compared to model architecture
+    is not asserted anywhere in the wiki. All scoring components are fully satisfied.
+  cache_read_tokens: 43418
+  input_tokens: 165
+  output_tokens: 310
+- golden_id: q08
+  question: What is split inference in the context of edge AI privacy and what does
+    ShadowNet demonstrate?
+  score: 0.9
+  cite_hits:
+  - yt-G6V3vJ6ojMQ
+  cite_misses: []
+  assertion_hits:
+  - split inference partitions a model between a TEE-protected edge component and
+    an offloaded GPU component
+  - ShadowNet uses this approach to recover throughput without exposing model weights
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki''s edge-ai-inference-infrastructure-hardware-accelerators
+    synthesis page explicitly describes ''Trusted-execution-style split inference
+    (e.g., ShadowNet) that partitions a CNN between a TEE-protected edge component
+    and an offloaded GPU component to recover throughput without exposing weights''
+    and cites [[sources/yt-G6V3vJ6ojMQ]]. Both required assertions are satisfied:
+    the TEE/GPU partition is clearly stated, and the throughput-without-exposing-weights
+    goal is also stated. The forbidden claim (that split inference sends the full
+    model to the cloud) does not appear anywhere in the wiki. All scoring components
+    are fully met.'
+  cache_read_tokens: 43418
+  input_tokens: 158
+  output_tokens: 255
+- golden_id: q09
+  question: What distinguishes trust-aware routing in distributed edge inference and
+    why is it more than a latency optimization?
+  score: 0.9
+  cite_hits:
+  - arxiv-2603.28622
+  cite_misses: []
+  assertion_hits:
+  - which node handles a request is a security and quality decision based on attestable
+    reliability signals
+  - trust-aware routing weights node selection by trust metrics before dispatching
+    generative workloads
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context in the 'edge-ai-inference-infrastructure-hardware-accelerators'
+    synthesis page explicitly cites [[sources/arxiv-2603.28622]] and states 'when
+    generative inference is split across edge nodes, *which node* handles a request
+    becomes a security/quality decision, not just a latency one — trust-aware routing
+    schemes weight node selection by attestable reliability signals before dispatching
+    generative workloads.' This directly satisfies both must_assert statements. The
+    source is properly cited. The wiki does not assert that routing is determined
+    solely by latency minimization; in fact it explicitly contrasts trust-aware routing
+    against pure latency optimization, so no anti-assertion violations are found.
+    All scoring components are fully met.
+  cache_read_tokens: 43418
+  input_tokens: 153
+  output_tokens: 255
+- golden_id: q10
+  question: What is the workflow-aware serving gap for agentic LLMs at the edge?
+  score: 0.6428571428571429
+  cite_hits: []
+  cite_misses:
+  - arxiv-2603.16104
+  assertion_hits:
+  - agentic workflows generate redundancy through repeated prompts, overlapping contexts,
+    and parallel exploration across agents
+  - the gap is the lack of systems that cache contexts across an entire DAG of agents
+    to maximize hardware utilization
+  assertion_misses:
+  - current inference engines like vLLM and Llama.cpp optimize individual LLM calls
+    in isolation
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does not cite arxiv-2603.16104 at any point, resulting
+    in a miss for the required citation. On the assertion side, the wiki strongly
+    covers the concept that agentic workflows create massive redundancy (overlapping
+    prompts and contexts) and that workflow-aware systems like Halo/Helium treat agentic
+    workloads as query plan DAGs with KV-cache sharing across the entire workflow
+    — these match two of the three must_assert statements. However, the wiki does
+    not explicitly state that current engines like vLLM and Llama.cpp optimize individual
+    LLM calls in isolation (the framing is about what the new systems do, not about
+    the isolation limitation of the old ones). The anti-assertion requirement is satisfied
+    as the wiki does not claim existing engines already optimize multi-agent workflow
+    contexts automatically.
+  cache_read_tokens: 43418
+  input_tokens: 181
+  output_tokens: 313
+total_input_tokens: 1756
+total_output_tokens: 3485
+total_cache_read_tokens: 390762

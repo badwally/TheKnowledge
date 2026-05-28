@@ -29,6 +29,26 @@ nlm_notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca
 finalized_at: '2026-05-10T00:47:32Z'
 last_updated: '2026-05-10T00:47:32Z'
 sources_count: 19
+synthesizes:
+- sources/web-1998-01-01-7e4
+- sources/web-2013-11-28-cda
+- sources/web-2022-01-01-e0b
+- sources/web-2024-01-11-e67
+- sources/web-2024-05-23-ea9
+- sources/web-2024-10-15-6c9
+- sources/web-2025-01-01-6b5
+- sources/web-2025-02-27-05e
+- sources/web-2025-08-01-8c2
+- sources/web-2025-10-13-a40
+- sources/web-2025-11-24-619
+- sources/web-2025-12-08-df6
+- sources/web-2026-01-01-361
+- sources/web-2026-01-01-58c
+- sources/web-2026-01-01-93d
+- sources/web-2026-01-13-360
+- sources/web-2026-02-18-dff
+- sources/web-2026-02-20-0f3
+- sources/web-2026-03-29-4b9
 ---
 # What are the established best practices for proactive / preventive maintenance of 100+ unit condominium facilities in the United States and Canada, outside the reserve-study mandate? Cover: PM cadences by building system (HVAC, elevators, plumbing risers, fire-life-safety, envelope, balconies, parking deck), regulatory PM drivers by jurisdiction (NYC LL11/FISP, NYC LL87, CA SB 721/326, FL HB 913 operational layer, Ontario Condo Act section 94, BC SPA, Quebec Bill 16 carnet entretien, NJ inspection, Chicago facade, Alberta), industry frameworks (BOMA, IFMA, CAI, CHOA, ACMO), CMMS/EAM stacks for residential (BuildingLink, CondoControl, Yardi, Building Engines), predictive/condition-based PM in residential, insurance loss-control PM, and a minimum-defensible PM program for a 200-unit Florida condo today.
 

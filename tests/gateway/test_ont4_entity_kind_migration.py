@@ -26,8 +26,12 @@ def test_canonical_kind_paper_variants():
 
 
 def test_canonical_kind_statute_variants():
-    for alias in ("policy_document", "policy-document", "policy", "regulation", "law", "legislation"):
+    for alias in ("policy_document", "policy-document", "policy", "law", "legislation"):
         assert _canonical_kind(alias) == "statute", f"Expected 'statute' for {alias!r}"
+
+
+def test_canonical_kind_regulation_is_canonical():
+    assert _canonical_kind("regulation") == "regulation"
 
 
 def test_canonical_kind_standard_variants():

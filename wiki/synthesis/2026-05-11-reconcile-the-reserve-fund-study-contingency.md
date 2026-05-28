@@ -41,6 +41,8 @@ draft_started_at: '2026-05-11T23:00:30Z'
 draft_unresolved_claims: 7
 last_updated: '2026-05-11T23:00:30Z'
 sources_count: 1
+synthesizes:
+- sources/pdf-national-assembly-2020-bill-16-assented
 ---
 # Reconcile the reserve-fund-study / contingency-fund cadence and mandate for three Canadian provinces against their primary statutory sources. (1) NOVA SCOTIA: predictive-analytics docx asserts every-10-years cadence; primary regulatory/ns-condominium-act-summary.md asserts every-5-years post-Bill-38 (2023) for 10+-unit corporations with 20-year horizon and NS-licensed P.Eng. seal required. Which is current as of 2026? Was there a Bill 38 amendment that shifted the cadence from 10 to 5 years, and when did it take effect? (2) NEW BRUNSWICK: docx asserts NB has 10-year primary cadence with 3-year updates; project research and CMHC NB fact sheet web-2018-03-31-c63 indicate NB has NO mandatory reserve-fund-study requirement under Condominium Property Act C-16.05. Which is correct? (3) QUEBEC: docx asserts 5-year cadence and 25-year horizon for contingency-fund study; project research on Bill 16 (2019, c.28) + Decree 991-2025 confirms this. Was the prior entity page qc-bill-16-2019 correct in noting Bill 16 itself did not surface a cadence (because the cadence is in Decree 991-2025, not Bill 16), or stale? Cite primary sources for each conclusion. Acknowledge gaps where the wiki corpus is silent.
 

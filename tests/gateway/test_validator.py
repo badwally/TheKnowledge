@@ -237,10 +237,11 @@ def _entity_front(entity_kind: str) -> dict:
 
 
 def test_entity_kind_enum_exact_set():
-    """ONT-4: ENTITY_KIND_ENUM contains exactly the 12 canonical values."""
+    """ONT-4: ENTITY_KIND_ENUM contains exactly the 14 canonical values."""
     expected = frozenset({
         "person", "organization", "paper", "drug", "dataset",
-        "product", "software", "statute", "standard", "place", "event", "other",
+        "product", "software", "statute", "regulation", "standard",
+        "place", "event", "artifact", "other",
     })
     assert v.ENTITY_KIND_ENUM == expected
 
@@ -347,3 +348,38 @@ def test_slug_too_long_lint_check(kb_root):
     (concepts_dir / f"long-slug.md").write_text(fm.serialize(front, "body\n"))
     findings = lint_long_slugs()
     assert any(f.check == "slug-too-long" and f.severity == SEVERITY_WARNING for f in findings)
+
+
+# --- draft: section-missing downgrade ----------------------------------------
+
+
+def test_validate_wiki_page_sections_strict_mode_errors():
+    """Non-draft page missing a required section produces an error."""
+    result = v.validate_wiki_page_sections("# Concept\n\n## Summary\n\nContent.\n", "concept")
+    assert any(e.rule == "wiki-page-section-missing" for e in result.errors)
+
+
+def test_validate_wiki_page_sections_draft_mode_warns_not_errors():
+    """Draft mode downgrades missing sections from errors to warnings."""
+    result = v.validate_wiki_page_sections("# Concept\n\n## Summary\n\nContent.\n", "concept", draft=True)
+    assert not any(e.rule == "wiki-page-section-missing" for e in result.errors)
+    assert any(w.rule == "wiki-page-section-missing" for w in result.warnings)
+
+
+def test_validate_wiki_page_draft_frontmatter_suppresses_section_errors():
+    """validate_wiki_page reads `draft: true` from frontmatter for section checks."""
+    front = {
+        "type": "entity",
+        "slug": "stub-entity",
+        "title": "Stub Entity",
+        "entity_kind": "organization",
+        "domains": ["test"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "draft": True,
+        "draft_started_at": "2026-01-01T00:00:00Z",
+    }
+    body = "# Stub Entity\n\n## Summary\n\nContent.\n"
+    result = v.validate_wiki_page(front, body, page_type="entity")
+    section_errors = [e for e in result.errors if e.rule == "wiki-page-section-missing"]
+    assert section_errors == [], f"draft entity should have no section ERRORs, got: {section_errors}"
