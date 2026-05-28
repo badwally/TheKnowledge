@@ -243,8 +243,8 @@ notebooks:
     persistent:
       notebook_id: adc34eb9-c798-4530-8b0d-4b166a0bc38a
       created_at: '2026-05-28T01:12:03Z'
-      sources_count: 5
-      last_sync: '2026-05-28T02:20:07Z'
+      sources_count: 10
+      last_sync: '2026-05-28T15:00:54Z'
   risksystems:
     persistent:
       notebook_id: dee0eae4-b11f-4df2-a418-d10fffd42c7e

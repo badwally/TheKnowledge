@@ -22147,3 +22147,1377 @@ edited section 'Summary' in wiki/entities/klaviyo.md
 ## [2026-05-28T02:28:44Z] lint | scope=contradiction-pages | contradiction-pages=0
 
 report=.knowledge/lint/2026-05-28T02-28-44Z-contradiction-pages.md
+
+## [2026-05-28T02:29:04Z] lint | scope=schema-drift | schema-drift=208
+
+report=.knowledge/lint/2026-05-28T02-29-04Z-schema-drift.md
+
+## [2026-05-28T03:20:54Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=start | domain=orita-cmo
+
+start research session for prompt 'HubSpot CRM API capability matrix (read, write, association traversal) across three paths: official Anthropic HubSpot MCP server, community MCP variants (peakmojo/mcp-hubspot et al.), direct REST API v3 with Private App auth. Specific focus on object association IDs (company-to-company agency-of-record, contact-to-company role tagging for user/influencer/decision-maker). Survey production patterns for safe writes to a system-of-record CRM: dry-run queues with approval gates (the chosen pattern), semantic invariant guards, shadow-write + diff, rollback logging. Target deployment: 10-concurrent-user team (marketing + sales + CEO) on GCP.'
+
+## [2026-05-28T03:21:14Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=922 | cache_read=0 | cache_creation=19468 | duration_ms=18226 | cost_usd=0.086841
+
+## [2026-05-28T03:21:14Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-05-28-hubspot-crm-api-capability-matrix-read.yaml
+
+## [2026-05-28T03:53:20Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=start | domain=orita-cmo
+
+start research session for prompt 'HubSpot CRM API capability matrix (read, write, association traversal) across three paths: official Anthropic HubSpot MCP server, community MCP variants (peakmojo/mcp-hubspot et al.), direct REST API v3 with Private App auth. Specific focus on object association IDs (company-to-company agency-of-record, contact-to-company role tagging for user/influencer/decision-maker). Survey production patterns for safe writes to a system-of-record CRM: dry-run queues with approval gates (the chosen pattern), semantic invariant guards, shadow-write + diff, rollback logging. Target deployment: 10-concurrent-user team (marketing + sales + CEO) on GCP.'
+
+## [2026-05-28T03:53:20Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-28T03:53:29Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-28T03:53:33Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=semantic_scholar | n=29
+
+adapter semantic_scholar returned 29 candidates
+
+## [2026-05-28T03:53:37Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-28T03:54:29Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=youtube | n=95
+
+adapter youtube returned 95 candidates
+
+## [2026-05-28T03:54:29Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=merge | n=224
+
+merged 224 candidate(s) across adapters
+
+## [2026-05-28T03:54:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=972 | cache_read=0 | cache_creation=65686 | duration_ms=14423 | cost_usd=0.086975
+
+## [2026-05-28T03:54:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1088 | cache_read=0 | cache_creation=65716 | duration_ms=16050 | cost_usd=0.087593
+
+## [2026-05-28T03:54:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1171 | cache_read=0 | cache_creation=65662 | duration_ms=16163 | cost_usd=0.087941
+
+## [2026-05-28T03:54:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1289 | cache_read=0 | cache_creation=65766 | duration_ms=16448 | cost_usd=0.088661
+
+## [2026-05-28T03:54:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=0 | cache_creation=65727 | duration_ms=16530 | cost_usd=0.087922
+
+## [2026-05-28T03:54:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1340 | cache_read=0 | cache_creation=65770 | duration_ms=17745 | cost_usd=0.088920
+
+## [2026-05-28T03:54:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=0 | cache_creation=65680 | duration_ms=17984 | cost_usd=0.088573
+
+## [2026-05-28T03:54:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1690 | cache_read=0 | cache_creation=65616 | duration_ms=21448 | cost_usd=0.090478
+
+## [2026-05-28T03:55:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=874 | cache_read=55159 | cache_creation=10373 | duration_ms=11113 | cost_usd=0.022860
+
+## [2026-05-28T03:55:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=898 | cache_read=55159 | cache_creation=10676 | duration_ms=11210 | cost_usd=0.023359
+
+## [2026-05-28T03:55:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=891 | cache_read=55159 | cache_creation=10605 | duration_ms=12512 | cost_usd=0.023235
+
+## [2026-05-28T03:55:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=746 | cache_read=0 | cache_creation=78917 | duration_ms=12747 | cost_usd=0.102384
+
+## [2026-05-28T03:55:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1328 | cache_read=55159 | cache_creation=10595 | duration_ms=17143 | cost_usd=0.025408
+
+## [2026-05-28T03:55:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1381 | cache_read=55159 | cache_creation=10650 | duration_ms=17978 | cost_usd=0.025741
+
+## [2026-05-28T03:55:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1554 | cache_read=68002 | cache_creation=10764 | duration_ms=17901 | cost_usd=0.028033
+
+## [2026-05-28T03:55:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2018 | cache_read=0 | cache_creation=75602 | duration_ms=22898 | cost_usd=0.104600
+
+## [2026-05-28T03:55:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=814 | cache_read=68002 | cache_creation=10947 | duration_ms=11463 | cost_usd=0.024562
+
+## [2026-05-28T03:55:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1463 | cache_read=68002 | cache_creation=10776 | duration_ms=17858 | cost_usd=0.027593
+
+## [2026-05-28T03:55:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=791 | cache_read=64632 | cache_creation=10805 | duration_ms=11978 | cost_usd=0.023932
+
+## [2026-05-28T03:55:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1137 | cache_read=68002 | cache_creation=10790 | duration_ms=15845 | cost_usd=0.025981
+
+## [2026-05-28T03:55:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1108 | cache_read=68002 | cache_creation=10732 | duration_ms=14559 | cost_usd=0.025763
+
+## [2026-05-28T03:55:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1917 | cache_read=68002 | cache_creation=10854 | duration_ms=22944 | cost_usd=0.029961
+
+## [2026-05-28T03:55:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=867 | cache_read=68002 | cache_creation=10738 | duration_ms=11789 | cost_usd=0.024566
+
+## [2026-05-28T03:55:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=922 | cache_read=68002 | cache_creation=10765 | duration_ms=14421 | cost_usd=0.024874
+
+## [2026-05-28T03:55:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1544 | cache_read=68002 | cache_creation=10796 | duration_ms=17918 | cost_usd=0.028023
+
+## [2026-05-28T03:55:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=798 | cache_read=68002 | cache_creation=10926 | duration_ms=10674 | cost_usd=0.024456
+
+## [2026-05-28T03:55:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1328 | cache_read=68002 | cache_creation=10928 | duration_ms=17647 | cost_usd=0.027108
+
+## [2026-05-28T03:55:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=724 | cache_read=0 | cache_creation=73745 | duration_ms=12190 | cost_usd=0.095809
+
+## [2026-05-28T03:55:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1922 | cache_read=68002 | cache_creation=10964 | duration_ms=22693 | cost_usd=0.030123
+
+## [2026-05-28T03:55:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1747 | cache_read=55159 | cache_creation=10540 | duration_ms=20367 | cost_usd=0.027434
+
+## [2026-05-28T03:55:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=62942 | cache_creation=10615 | duration_ms=14074 | cost_usd=0.025326
+
+## [2026-05-28T03:55:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1233 | cache_read=0 | cache_creation=73492 | duration_ms=17588 | cost_usd=0.098038
+
+## [2026-05-28T03:55:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=999 | cache_read=69340 | cache_creation=10776 | duration_ms=14131 | cost_usd=0.025407
+
+## [2026-05-28T03:56:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2045 | cache_read=0 | cache_creation=80143 | duration_ms=22083 | cost_usd=0.110412
+
+## [2026-05-28T03:56:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=875 | cache_read=0 | cache_creation=76980 | duration_ms=11792 | cost_usd=0.100608
+
+## [2026-05-28T03:56:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1313 | cache_read=69340 | cache_creation=10968 | duration_ms=17246 | cost_usd=0.027217
+
+## [2026-05-28T03:56:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1995 | cache_read=69340 | cache_creation=10789 | duration_ms=24096 | cost_usd=0.030403
+
+## [2026-05-28T03:56:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=825 | cache_read=69340 | cache_creation=10841 | duration_ms=11019 | cost_usd=0.024618
+
+## [2026-05-28T03:56:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1272 | cache_read=66214 | cache_creation=10795 | duration_ms=15912 | cost_usd=0.026483
+
+## [2026-05-28T03:56:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1486 | cache_read=69340 | cache_creation=10770 | duration_ms=19240 | cost_usd=0.027834
+
+## [2026-05-28T03:56:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1596 | cache_read=66214 | cache_creation=10857 | duration_ms=19373 | cost_usd=0.028181
+
+## [2026-05-28T03:56:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1522 | cache_read=69340 | cache_creation=10971 | duration_ms=17692 | cost_usd=0.028266
+
+## [2026-05-28T03:56:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1368 | cache_read=69340 | cache_creation=10809 | duration_ms=21727 | cost_usd=0.027293
+
+## [2026-05-28T03:56:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1075 | cache_read=69340 | cache_creation=10686 | duration_ms=13534 | cost_usd=0.025674
+
+## [2026-05-28T03:56:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1727 | cache_read=69340 | cache_creation=10786 | duration_ms=21992 | cost_usd=0.029060
+
+## [2026-05-28T03:56:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1437 | cache_read=69340 | cache_creation=10720 | duration_ms=18374 | cost_usd=0.027527
+
+## [2026-05-28T03:56:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1977 | cache_read=69340 | cache_creation=10637 | duration_ms=24446 | cost_usd=0.030123
+
+## [2026-05-28T03:56:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1769 | cache_read=66214 | cache_creation=10816 | duration_ms=21283 | cost_usd=0.028994
+
+## [2026-05-28T03:56:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1625 | cache_read=69340 | cache_creation=10710 | duration_ms=22385 | cost_usd=0.028455
+
+## [2026-05-28T03:56:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2275 | cache_read=69340 | cache_creation=10765 | duration_ms=24375 | cost_usd=0.031773
+
+## [2026-05-28T03:56:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1577 | cache_read=69340 | cache_creation=10686 | duration_ms=18422 | cost_usd=0.028185
+
+## [2026-05-28T03:56:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1435 | cache_read=69340 | cache_creation=10774 | duration_ms=19365 | cost_usd=0.027585
+
+## [2026-05-28T03:56:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1472 | cache_read=69340 | cache_creation=10762 | duration_ms=17223 | cost_usd=0.027755
+
+## [2026-05-28T03:57:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1855 | cache_read=69340 | cache_creation=10845 | duration_ms=22362 | cost_usd=0.029773
+
+## [2026-05-28T03:57:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2264 | cache_read=69340 | cache_creation=10735 | duration_ms=24402 | cost_usd=0.031681
+
+## [2026-05-28T03:57:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1495 | cache_read=69340 | cache_creation=11310 | duration_ms=17154 | cost_usd=0.028555
+
+## [2026-05-28T03:57:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2152 | cache_read=69340 | cache_creation=10771 | duration_ms=25112 | cost_usd=0.031166
+
+## [2026-05-28T03:57:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1740 | cache_read=69340 | cache_creation=10688 | duration_ms=20686 | cost_usd=0.029002
+
+## [2026-05-28T03:57:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2098 | cache_read=69340 | cache_creation=10698 | duration_ms=24561 | cost_usd=0.030804
+
+## [2026-05-28T03:57:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=836 | cache_read=69340 | cache_creation=10720 | duration_ms=11898 | cost_usd=0.024522
+
+## [2026-05-28T03:57:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1195 | cache_read=69340 | cache_creation=10805 | duration_ms=13921 | cost_usd=0.026423
+
+## [2026-05-28T03:57:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1044 | cache_read=69340 | cache_creation=10772 | duration_ms=13305 | cost_usd=0.025627
+
+## [2026-05-28T03:57:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3379 | cache_read=69340 | cache_creation=10704 | duration_ms=38364 | cost_usd=0.037217
+
+## [2026-05-28T03:57:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=69340 | cache_creation=10765 | duration_ms=17222 | cost_usd=0.027753
+
+## [2026-05-28T03:57:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2063 | cache_read=69340 | cache_creation=10705 | duration_ms=25382 | cost_usd=0.030638
+
+## [2026-05-28T03:57:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=865 | cache_read=69340 | cache_creation=10739 | duration_ms=12149 | cost_usd=0.024691
+
+## [2026-05-28T03:57:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=951 | cache_read=66214 | cache_creation=10828 | duration_ms=14382 | cost_usd=0.024919
+
+## [2026-05-28T03:57:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1174 | cache_read=69340 | cache_creation=10838 | duration_ms=14708 | cost_usd=0.026360
+
+## [2026-05-28T03:57:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1327 | cache_read=0 | cache_creation=69084 | duration_ms=17038 | cost_usd=0.092998
+
+## [2026-05-28T03:57:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1346 | cache_read=69340 | cache_creation=10833 | duration_ms=16901 | cost_usd=0.027213
+
+## [2026-05-28T03:57:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1549 | cache_read=69340 | cache_creation=10695 | duration_ms=20664 | cost_usd=0.028056
+
+## [2026-05-28T03:57:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1458 | cache_read=69340 | cache_creation=10720 | duration_ms=20351 | cost_usd=0.027632
+
+## [2026-05-28T03:57:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1713 | cache_read=69340 | cache_creation=10521 | duration_ms=20815 | cost_usd=0.028658
+
+## [2026-05-28T03:57:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1362 | cache_read=69340 | cache_creation=10605 | duration_ms=17873 | cost_usd=0.027008
+
+## [2026-05-28T03:58:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1864 | cache_read=69340 | cache_creation=10630 | duration_ms=22067 | cost_usd=0.029549
+
+## [2026-05-28T03:58:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1748 | cache_read=69340 | cache_creation=10561 | duration_ms=21420 | cost_usd=0.028883
+
+## [2026-05-28T03:58:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1607 | cache_read=62942 | cache_creation=10268 | duration_ms=21142 | cost_usd=0.027172
+
+## [2026-05-28T03:58:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=62942 | cache_creation=10310 | duration_ms=23467 | cost_usd=0.025600
+
+## [2026-05-28T03:58:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1628 | cache_read=69340 | cache_creation=10628 | duration_ms=19822 | cost_usd=0.028367
+
+## [2026-05-28T03:58:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1907 | cache_read=69340 | cache_creation=10599 | duration_ms=21232 | cost_usd=0.029726
+
+## [2026-05-28T03:58:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2256 | cache_read=69340 | cache_creation=10563 | duration_ms=24639 | cost_usd=0.031426
+
+## [2026-05-28T03:58:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1552 | cache_read=69340 | cache_creation=10505 | duration_ms=19382 | cost_usd=0.027833
+
+## [2026-05-28T03:58:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1167 | cache_read=69340 | cache_creation=10579 | duration_ms=16561 | cost_usd=0.026001
+
+## [2026-05-28T03:58:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1107 | cache_read=69340 | cache_creation=10596 | duration_ms=17763 | cost_usd=0.025722
+
+## [2026-05-28T03:58:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=69340 | cache_creation=10589 | duration_ms=17665 | cost_usd=0.027458
+
+## [2026-05-28T03:58:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1694 | cache_read=69340 | cache_creation=10570 | duration_ms=21882 | cost_usd=0.028624
+
+## [2026-05-28T03:58:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1342 | cache_read=69340 | cache_creation=10569 | duration_ms=18576 | cost_usd=0.026863
+
+## [2026-05-28T03:58:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2392 | cache_read=69340 | cache_creation=10509 | duration_ms=25972 | cost_usd=0.032038
+
+## [2026-05-28T03:58:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1469 | cache_read=69340 | cache_creation=10565 | duration_ms=18509 | cost_usd=0.027493
+
+## [2026-05-28T03:58:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1424 | cache_read=69340 | cache_creation=10545 | duration_ms=17621 | cost_usd=0.027243
+
+## [2026-05-28T03:58:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1744 | cache_read=69340 | cache_creation=10541 | duration_ms=22125 | cost_usd=0.028838
+
+## [2026-05-28T03:58:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1408 | cache_read=69340 | cache_creation=10491 | duration_ms=20480 | cost_usd=0.027096
+
+## [2026-05-28T03:58:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1274 | cache_read=69340 | cache_creation=10591 | duration_ms=17648 | cost_usd=0.026551
+
+## [2026-05-28T03:58:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1782 | cache_read=69340 | cache_creation=10581 | duration_ms=21859 | cost_usd=0.029078
+
+## [2026-05-28T03:59:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1870 | cache_read=69340 | cache_creation=10515 | duration_ms=29057 | cost_usd=0.029436
+
+## [2026-05-28T03:59:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1290 | cache_read=69340 | cache_creation=10519 | duration_ms=17446 | cost_usd=0.026541
+
+## [2026-05-28T03:59:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1586 | cache_read=69340 | cache_creation=10537 | duration_ms=21413 | cost_usd=0.028043
+
+## [2026-05-28T03:59:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1591 | cache_read=69340 | cache_creation=10541 | duration_ms=20803 | cost_usd=0.028073
+
+## [2026-05-28T03:59:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1769 | cache_read=69340 | cache_creation=10578 | duration_ms=19200 | cost_usd=0.029010
+
+## [2026-05-28T03:59:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1912 | cache_read=69340 | cache_creation=10509 | duration_ms=23068 | cost_usd=0.029638
+
+## [2026-05-28T03:59:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1342 | cache_read=69340 | cache_creation=10591 | duration_ms=17856 | cost_usd=0.026891
+
+## [2026-05-28T03:59:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1260 | cache_read=69340 | cache_creation=10531 | duration_ms=15569 | cost_usd=0.026406
+
+## [2026-05-28T03:59:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2129 | cache_read=69340 | cache_creation=10543 | duration_ms=23472 | cost_usd=0.030766
+
+## [2026-05-28T03:59:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1390 | cache_read=69340 | cache_creation=10573 | duration_ms=18480 | cost_usd=0.027108
+
+## [2026-05-28T03:59:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1295 | cache_read=69340 | cache_creation=10515 | duration_ms=19373 | cost_usd=0.026561
+
+## [2026-05-28T03:59:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1685 | cache_read=69340 | cache_creation=10575 | duration_ms=19746 | cost_usd=0.028586
+
+## [2026-05-28T03:59:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1655 | cache_read=69340 | cache_creation=10604 | duration_ms=20093 | cost_usd=0.028472
+
+## [2026-05-28T03:59:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1763 | cache_read=69340 | cache_creation=10571 | duration_ms=22751 | cost_usd=0.028971
+
+## [2026-05-28T03:59:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1310 | cache_read=62942 | cache_creation=10270 | duration_ms=17409 | cost_usd=0.025690
+
+## [2026-05-28T03:59:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1441 | cache_read=69340 | cache_creation=10521 | duration_ms=18444 | cost_usd=0.027298
+
+## [2026-05-28T03:59:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1218 | cache_read=69340 | cache_creation=10553 | duration_ms=15464 | cost_usd=0.026223
+
+## [2026-05-28T03:59:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1582 | cache_read=62942 | cache_creation=10252 | duration_ms=22269 | cost_usd=0.027027
+
+## [2026-05-28T03:59:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2239 | cache_read=62942 | cache_creation=10347 | duration_ms=27636 | cost_usd=0.030431
+
+## [2026-05-28T03:59:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1610 | cache_read=69340 | cache_creation=10535 | duration_ms=20226 | cost_usd=0.028161
+
+## [2026-05-28T03:59:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1292 | cache_read=69340 | cache_creation=10545 | duration_ms=16405 | cost_usd=0.026583
+
+## [2026-05-28T03:59:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1660 | cache_read=69340 | cache_creation=10561 | duration_ms=20285 | cost_usd=0.028443
+
+## [2026-05-28T04:00:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1869 | cache_read=69340 | cache_creation=10545 | duration_ms=20460 | cost_usd=0.029468
+
+## [2026-05-28T04:00:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1099 | cache_read=69340 | cache_creation=10561 | duration_ms=15398 | cost_usd=0.025638
+
+## [2026-05-28T04:00:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1342 | cache_read=69340 | cache_creation=10583 | duration_ms=18795 | cost_usd=0.026881
+
+## [2026-05-28T04:00:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1475 | cache_read=69340 | cache_creation=10525 | duration_ms=18659 | cost_usd=0.027473
+
+## [2026-05-28T04:00:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1221 | cache_read=69340 | cache_creation=10569 | duration_ms=16534 | cost_usd=0.026258
+
+## [2026-05-28T04:00:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1391 | cache_read=69340 | cache_creation=10493 | duration_ms=16860 | cost_usd=0.027013
+
+## [2026-05-28T04:00:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1130 | cache_read=69340 | cache_creation=10648 | duration_ms=14566 | cost_usd=0.025902
+
+## [2026-05-28T04:00:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=69340 | cache_creation=10598 | duration_ms=16345 | cost_usd=0.026255
+
+## [2026-05-28T04:00:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1040 | cache_read=69340 | cache_creation=10648 | duration_ms=16290 | cost_usd=0.025452
+
+## [2026-05-28T04:00:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1559 | cache_read=69340 | cache_creation=10559 | duration_ms=19239 | cost_usd=0.027936
+
+## [2026-05-28T04:00:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1859 | cache_read=69340 | cache_creation=10541 | duration_ms=22935 | cost_usd=0.029413
+
+## [2026-05-28T04:00:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1309 | cache_read=62942 | cache_creation=10300 | duration_ms=17226 | cost_usd=0.025722
+
+## [2026-05-28T04:00:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=977 | cache_read=69340 | cache_creation=10529 | duration_ms=15183 | cost_usd=0.024988
+
+## [2026-05-28T04:00:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1866 | cache_read=69340 | cache_creation=10617 | duration_ms=25827 | cost_usd=0.029543
+
+## [2026-05-28T04:00:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1290 | cache_read=69340 | cache_creation=10636 | duration_ms=16818 | cost_usd=0.026687
+
+## [2026-05-28T04:00:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=69340 | cache_creation=10567 | duration_ms=18347 | cost_usd=0.027461
+
+## [2026-05-28T04:00:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1778 | cache_read=69340 | cache_creation=10525 | duration_ms=21132 | cost_usd=0.028988
+
+## [2026-05-28T04:00:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1431 | cache_read=69340 | cache_creation=10543 | duration_ms=17778 | cost_usd=0.027276
+
+## [2026-05-28T04:00:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1561 | cache_read=69340 | cache_creation=10539 | duration_ms=20384 | cost_usd=0.027921
+
+## [2026-05-28T04:00:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1877 | cache_read=69340 | cache_creation=10616 | duration_ms=20725 | cost_usd=0.029597
+
+## [2026-05-28T04:00:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1661 | cache_read=69340 | cache_creation=10531 | duration_ms=19900 | cost_usd=0.028411
+
+## [2026-05-28T04:00:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=69340 | cache_creation=10521 | duration_ms=18346 | cost_usd=0.026883
+
+## [2026-05-28T04:00:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1781 | cache_read=0 | cache_creation=66673 | duration_ms=22232 | cost_usd=0.092254
+
+## [2026-05-28T04:01:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1937 | cache_read=69340 | cache_creation=10596 | duration_ms=22150 | cost_usd=0.029872
+
+## [2026-05-28T04:01:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=69340 | cache_creation=10567 | duration_ms=19329 | cost_usd=0.027616
+
+## [2026-05-28T04:01:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2046 | cache_read=69340 | cache_creation=10588 | duration_ms=24132 | cost_usd=0.030407
+
+## [2026-05-28T04:01:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1893 | cache_read=69340 | cache_creation=10637 | duration_ms=22384 | cost_usd=0.029703
+
+## [2026-05-28T04:01:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1315 | cache_read=62942 | cache_creation=10368 | duration_ms=17735 | cost_usd=0.025837
+
+## [2026-05-28T04:01:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1390 | cache_read=62942 | cache_creation=10395 | duration_ms=19841 | cost_usd=0.026246
+
+## [2026-05-28T04:01:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1331 | cache_read=69340 | cache_creation=10543 | duration_ms=17321 | cost_usd=0.026776
+
+## [2026-05-28T04:01:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1286 | cache_read=69340 | cache_creation=10627 | duration_ms=15182 | cost_usd=0.026656
+
+## [2026-05-28T04:01:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=69340 | cache_creation=10562 | duration_ms=15901 | cost_usd=0.026294
+
+## [2026-05-28T04:01:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3113 | cache_read=62942 | cache_creation=10315 | duration_ms=35564 | cost_usd=0.034761
+
+## [2026-05-28T04:01:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1481 | cache_read=66214 | cache_creation=10578 | duration_ms=17558 | cost_usd=0.027257
+
+## [2026-05-28T04:01:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1857 | cache_read=69340 | cache_creation=10558 | duration_ms=19695 | cost_usd=0.029424
+
+## [2026-05-28T04:01:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3390 | cache_read=69340 | cache_creation=10560 | duration_ms=35214 | cost_usd=0.037092
+
+## [2026-05-28T04:01:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1724 | cache_read=69340 | cache_creation=10558 | duration_ms=20569 | cost_usd=0.028760
+
+## [2026-05-28T04:01:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2031 | cache_read=69340 | cache_creation=10571 | duration_ms=22665 | cost_usd=0.030311
+
+## [2026-05-28T04:01:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=991 | cache_read=69340 | cache_creation=10577 | duration_ms=13724 | cost_usd=0.025118
+
+## [2026-05-28T04:01:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1294 | cache_read=69340 | cache_creation=10560 | duration_ms=16952 | cost_usd=0.026612
+
+## [2026-05-28T04:01:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1400 | cache_read=69340 | cache_creation=10553 | duration_ms=17317 | cost_usd=0.027133
+
+## [2026-05-28T04:01:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1549 | cache_read=66214 | cache_creation=10587 | duration_ms=19425 | cost_usd=0.027608
+
+## [2026-05-28T04:01:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1319 | cache_read=69340 | cache_creation=10588 | duration_ms=16101 | cost_usd=0.026772
+
+## [2026-05-28T04:02:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1537 | cache_read=69340 | cache_creation=10566 | duration_ms=22314 | cost_usd=0.027835
+
+## [2026-05-28T04:02:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1807 | cache_read=69340 | cache_creation=10572 | duration_ms=22120 | cost_usd=0.029192
+
+## [2026-05-28T04:02:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1790 | cache_read=62942 | cache_creation=10320 | duration_ms=22103 | cost_usd=0.028152
+
+## [2026-05-28T04:02:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1899 | cache_read=56023 | cache_creation=10574 | duration_ms=21960 | cost_usd=0.028323
+
+## [2026-05-28T04:02:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1931 | cache_read=69340 | cache_creation=10588 | duration_ms=22074 | cost_usd=0.029832
+
+## [2026-05-28T04:02:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1325 | cache_read=69340 | cache_creation=10566 | duration_ms=17605 | cost_usd=0.026774
+
+## [2026-05-28T04:02:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1847 | cache_read=69340 | cache_creation=10567 | duration_ms=22433 | cost_usd=0.029386
+
+## [2026-05-28T04:02:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1618 | cache_read=69340 | cache_creation=10561 | duration_ms=22115 | cost_usd=0.028233
+
+## [2026-05-28T04:02:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=69340 | cache_creation=10563 | duration_ms=17172 | cost_usd=0.026611
+
+## [2026-05-28T04:02:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1838 | cache_read=69340 | cache_creation=10570 | duration_ms=21748 | cost_usd=0.029344
+
+## [2026-05-28T04:02:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1731 | cache_read=69340 | cache_creation=10579 | duration_ms=20815 | cost_usd=0.028821
+
+## [2026-05-28T04:02:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=748 | cache_read=69340 | cache_creation=10615 | duration_ms=11700 | cost_usd=0.023951
+
+## [2026-05-28T04:02:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=702 | cache_read=69340 | cache_creation=10592 | duration_ms=13399 | cost_usd=0.023692
+
+## [2026-05-28T04:02:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=66214 | cache_creation=10584 | duration_ms=15613 | cost_usd=0.026324
+
+## [2026-05-28T04:02:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1877 | cache_read=69340 | cache_creation=10584 | duration_ms=23033 | cost_usd=0.029557
+
+## [2026-05-28T04:02:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=996 | cache_read=69340 | cache_creation=10571 | duration_ms=11677 | cost_usd=0.025136
+
+## [2026-05-28T04:02:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1760 | cache_read=69340 | cache_creation=10641 | duration_ms=21151 | cost_usd=0.029043
+
+## [2026-05-28T04:02:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2025 | cache_read=56023 | cache_creation=10622 | duration_ms=23612 | cost_usd=0.029013
+
+## [2026-05-28T04:02:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=933 | cache_read=69340 | cache_creation=10592 | duration_ms=12764 | cost_usd=0.024847
+
+## [2026-05-28T04:02:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1117 | cache_read=69340 | cache_creation=10587 | duration_ms=14674 | cost_usd=0.025761
+
+## [2026-05-28T04:02:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1628 | cache_read=69340 | cache_creation=10567 | duration_ms=20124 | cost_usd=0.028291
+
+## [2026-05-28T04:03:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1822 | cache_read=69340 | cache_creation=10623 | duration_ms=23439 | cost_usd=0.029331
+
+## [2026-05-28T04:03:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1805 | cache_read=62942 | cache_creation=10323 | duration_ms=22132 | cost_usd=0.028231
+
+## [2026-05-28T04:03:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1872 | cache_read=69340 | cache_creation=10633 | duration_ms=22731 | cost_usd=0.029593
+
+## [2026-05-28T04:03:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1849 | cache_read=69340 | cache_creation=10559 | duration_ms=21735 | cost_usd=0.029386
+
+## [2026-05-28T04:03:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1330 | cache_read=69340 | cache_creation=10563 | duration_ms=19152 | cost_usd=0.026796
+
+## [2026-05-28T04:03:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2729 | cache_read=62942 | cache_creation=10310 | duration_ms=30423 | cost_usd=0.032835
+
+## [2026-05-28T04:03:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2141 | cache_read=69340 | cache_creation=10560 | duration_ms=26628 | cost_usd=0.030847
+
+## [2026-05-28T04:03:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1810 | cache_read=69340 | cache_creation=10568 | duration_ms=22944 | cost_usd=0.029202
+
+## [2026-05-28T04:03:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=69340 | cache_creation=10575 | duration_ms=18661 | cost_usd=0.027131
+
+## [2026-05-28T04:03:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1549 | cache_read=69340 | cache_creation=10560 | duration_ms=23237 | cost_usd=0.027887
+
+## [2026-05-28T04:03:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1332 | cache_read=69340 | cache_creation=10568 | duration_ms=17186 | cost_usd=0.026812
+
+## [2026-05-28T04:03:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2258 | cache_read=69340 | cache_creation=10548 | duration_ms=27177 | cost_usd=0.031417
+
+## [2026-05-28T04:03:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1196 | cache_read=69340 | cache_creation=10622 | duration_ms=16232 | cost_usd=0.026200
+
+## [2026-05-28T04:03:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1428 | cache_read=69340 | cache_creation=10580 | duration_ms=20409 | cost_usd=0.027307
+
+## [2026-05-28T04:03:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1660 | cache_read=69340 | cache_creation=10564 | duration_ms=19231 | cost_usd=0.028447
+
+## [2026-05-28T04:03:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1366 | cache_read=69340 | cache_creation=10568 | duration_ms=16355 | cost_usd=0.026982
+
+## [2026-05-28T04:03:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1573 | cache_read=69340 | cache_creation=10552 | duration_ms=19603 | cost_usd=0.027997
+
+## [2026-05-28T04:03:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1193 | cache_read=69340 | cache_creation=10571 | duration_ms=13484 | cost_usd=0.026121
+
+## [2026-05-28T04:03:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2877 | cache_read=69340 | cache_creation=10569 | duration_ms=31645 | cost_usd=0.034538
+
+## [2026-05-28T04:04:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2061 | cache_read=69340 | cache_creation=10561 | duration_ms=23717 | cost_usd=0.030448
+
+## [2026-05-28T04:04:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2352 | cache_read=69340 | cache_creation=10617 | duration_ms=27756 | cost_usd=0.031973
+
+## [2026-05-28T04:04:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1742 | cache_read=69340 | cache_creation=10588 | duration_ms=25159 | cost_usd=0.028887
+
+## [2026-05-28T04:04:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2130 | cache_read=69340 | cache_creation=10582 | duration_ms=26533 | cost_usd=0.030819
+
+## [2026-05-28T04:04:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1464 | cache_read=69340 | cache_creation=10602 | duration_ms=18295 | cost_usd=0.027515
+
+## [2026-05-28T04:04:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1814 | cache_read=69340 | cache_creation=10570 | duration_ms=21825 | cost_usd=0.029224
+
+## [2026-05-28T04:04:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1567 | cache_read=69340 | cache_creation=10637 | duration_ms=21322 | cost_usd=0.028073
+
+## [2026-05-28T04:04:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1612 | cache_read=62942 | cache_creation=10294 | duration_ms=18916 | cost_usd=0.027230
+
+## [2026-05-28T04:04:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2077 | cache_read=62942 | cache_creation=10321 | duration_ms=25053 | cost_usd=0.029588
+
+## [2026-05-28T04:04:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1676 | cache_read=69340 | cache_creation=10577 | duration_ms=20484 | cost_usd=0.028543
+
+## [2026-05-28T04:04:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1703 | cache_read=69340 | cache_creation=10580 | duration_ms=20889 | cost_usd=0.028682
+
+## [2026-05-28T04:04:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1549 | cache_read=69340 | cache_creation=10570 | duration_ms=18576 | cost_usd=0.027900
+
+## [2026-05-28T04:04:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1333 | cache_read=69340 | cache_creation=10633 | duration_ms=16991 | cost_usd=0.026898
+
+## [2026-05-28T04:04:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1627 | cache_read=69340 | cache_creation=10582 | duration_ms=19285 | cost_usd=0.028304
+
+## [2026-05-28T04:04:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2637 | cache_read=69340 | cache_creation=10561 | duration_ms=31530 | cost_usd=0.033328
+
+## [2026-05-28T04:04:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1166 | cache_read=69340 | cache_creation=10566 | duration_ms=15757 | cost_usd=0.025980
+
+## [2026-05-28T04:04:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1878 | cache_read=69340 | cache_creation=10556 | duration_ms=23704 | cost_usd=0.029527
+
+## [2026-05-28T04:04:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1353 | cache_read=69340 | cache_creation=10553 | duration_ms=18085 | cost_usd=0.026898
+
+## [2026-05-28T04:04:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1454 | cache_read=69340 | cache_creation=10644 | duration_ms=17959 | cost_usd=0.027517
+
+## [2026-05-28T04:04:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1219 | cache_read=69340 | cache_creation=10569 | duration_ms=16883 | cost_usd=0.026248
+
+## [2026-05-28T04:05:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1377 | cache_read=69340 | cache_creation=10557 | duration_ms=16302 | cost_usd=0.027023
+
+## [2026-05-28T04:05:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1635 | cache_read=69340 | cache_creation=10622 | duration_ms=19946 | cost_usd=0.028394
+
+## [2026-05-28T04:05:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1389 | cache_read=69340 | cache_creation=10622 | duration_ms=17173 | cost_usd=0.027165
+
+## [2026-05-28T04:05:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1877 | cache_read=69340 | cache_creation=10583 | duration_ms=21535 | cost_usd=0.029556
+
+## [2026-05-28T04:05:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1930 | cache_read=69340 | cache_creation=10571 | duration_ms=24077 | cost_usd=0.029806
+
+## [2026-05-28T04:05:14Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=filter | n=3
+
+3 candidate(s) cleared threshold
+
+## [2026-05-28T04:05:19Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=materialize | n=3
+
+materialized 3 source(s) to raw/
+
+## [2026-05-28T04:05:19Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=nlm_persistent | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+persistent notebook adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+## [2026-05-28T13:53:24Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=start | domain=orita-cmo
+
+start research session for prompt 'HubSpot CRM API capability matrix (read, write, association traversal) across three paths: official Anthropic HubSpot MCP server, community MCP variants (peakmojo/mcp-hubspot et al.), direct REST API v3 with Private App auth. Specific focus on object association IDs (company-to-company agency-of-record, contact-to-company role tagging for user/influencer/decision-maker). Survey production patterns for safe writes to a system-of-record CRM: dry-run queues with approval gates (the chosen pattern), semantic invariant guards, shadow-write + diff, rollback logging. Target deployment: 10-concurrent-user team (marketing + sales + CEO) on GCP.'
+
+## [2026-05-28T13:53:24Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-28T13:53:30Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-28T13:53:30Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-28T13:53:39Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=semantic_scholar | n=29
+
+adapter semantic_scholar returned 29 candidates
+
+## [2026-05-28T13:54:25Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=youtube | n=95
+
+adapter youtube returned 95 candidates
+
+## [2026-05-28T13:54:25Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=merge | n=224
+
+merged 224 candidate(s) across adapters
+
+## [2026-05-28T13:54:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1388 | cache_read=0 | cache_creation=14698 | duration_ms=17667 | cost_usd=0.025320
+
+## [2026-05-28T13:54:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1529 | cache_read=0 | cache_creation=14690 | duration_ms=19849 | cost_usd=0.026016
+
+## [2026-05-28T13:54:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1645 | cache_read=0 | cache_creation=14696 | duration_ms=20378 | cost_usd=0.026603
+
+## [2026-05-28T13:54:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1862 | cache_read=0 | cache_creation=14650 | duration_ms=21978 | cost_usd=0.027630
+
+## [2026-05-28T13:54:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1664 | cache_read=0 | cache_creation=14728 | duration_ms=22149 | cost_usd=0.026738
+
+## [2026-05-28T13:54:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1965 | cache_read=0 | cache_creation=14673 | duration_ms=24507 | cost_usd=0.028174
+
+## [2026-05-28T13:54:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1809 | cache_read=4695 | cache_creation=9898 | duration_ms=25574 | cost_usd=0.021895
+
+## [2026-05-28T13:55:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2738 | cache_read=0 | cache_creation=14696 | duration_ms=31454 | cost_usd=0.032068
+
+## [2026-05-28T13:55:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1252 | cache_read=4695 | cache_creation=10013 | duration_ms=15114 | cost_usd=0.019254
+
+## [2026-05-28T13:55:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=992 | cache_read=0 | cache_creation=18088 | duration_ms=13429 | cost_usd=0.027578
+
+## [2026-05-28T13:55:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1772 | cache_read=0 | cache_creation=27803 | duration_ms=21453 | cost_usd=0.043622
+
+## [2026-05-28T13:55:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1728 | cache_read=4695 | cache_creation=9939 | duration_ms=20312 | cost_usd=0.021541
+
+## [2026-05-28T13:55:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1443 | cache_read=8065 | cache_creation=9943 | duration_ms=17934 | cost_usd=0.020458
+
+## [2026-05-28T13:55:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2045 | cache_read=4695 | cache_creation=9908 | duration_ms=24553 | cost_usd=0.023087
+
+## [2026-05-28T13:55:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1676 | cache_read=17538 | cache_creation=10211 | duration_ms=21466 | cost_usd=0.022906
+
+## [2026-05-28T13:55:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1562 | cache_read=17538 | cache_creation=10271 | duration_ms=19390 | cost_usd=0.022411
+
+## [2026-05-28T13:55:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1393 | cache_read=0 | cache_creation=35732 | duration_ms=19177 | cost_usd=0.051638
+
+## [2026-05-28T13:55:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1244 | cache_read=25448 | cache_creation=10295 | duration_ms=16481 | cost_usd=0.021642
+
+## [2026-05-28T13:55:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1361 | cache_read=25448 | cache_creation=10288 | duration_ms=17969 | cost_usd=0.022218
+
+## [2026-05-28T13:55:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1657 | cache_read=0 | cache_creation=35756 | duration_ms=21061 | cost_usd=0.052988
+
+## [2026-05-28T13:55:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1617 | cache_read=25448 | cache_creation=10258 | duration_ms=19260 | cost_usd=0.023460
+
+## [2026-05-28T13:55:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1193 | cache_read=25448 | cache_creation=10334 | duration_ms=17651 | cost_usd=0.021435
+
+## [2026-05-28T13:55:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1694 | cache_read=25448 | cache_creation=10263 | duration_ms=20016 | cost_usd=0.023852
+
+## [2026-05-28T13:55:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1371 | cache_read=25448 | cache_creation=10280 | duration_ms=17613 | cost_usd=0.022258
+
+## [2026-05-28T13:55:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1386 | cache_read=26786 | cache_creation=10313 | duration_ms=17912 | cost_usd=0.022508
+
+## [2026-05-28T13:55:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1529 | cache_read=0 | cache_creation=37048 | duration_ms=19469 | cost_usd=0.053963
+
+## [2026-05-28T13:55:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1523 | cache_read=26786 | cache_creation=10284 | duration_ms=19227 | cost_usd=0.023157
+
+## [2026-05-28T13:55:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1391 | cache_read=26786 | cache_creation=10382 | duration_ms=22034 | cost_usd=0.022619
+
+## [2026-05-28T13:55:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1483 | cache_read=26786 | cache_creation=10286 | duration_ms=18039 | cost_usd=0.022959
+
+## [2026-05-28T13:56:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1353 | cache_read=26786 | cache_creation=10395 | duration_ms=17467 | cost_usd=0.022445
+
+## [2026-05-28T13:56:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1261 | cache_read=26786 | cache_creation=10316 | duration_ms=14595 | cost_usd=0.021887
+
+## [2026-05-28T13:56:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1330 | cache_read=26786 | cache_creation=10274 | duration_ms=17238 | cost_usd=0.022179
+
+## [2026-05-28T13:56:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1153 | cache_read=26786 | cache_creation=10314 | duration_ms=14898 | cost_usd=0.021344
+
+## [2026-05-28T13:56:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1398 | cache_read=26786 | cache_creation=10258 | duration_ms=17540 | cost_usd=0.022499
+
+## [2026-05-28T13:56:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=988 | cache_read=26786 | cache_creation=10270 | duration_ms=14484 | cost_usd=0.020464
+
+## [2026-05-28T13:56:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1999 | cache_read=26786 | cache_creation=10379 | duration_ms=22563 | cost_usd=0.025655
+
+## [2026-05-28T13:56:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1189 | cache_read=26786 | cache_creation=10264 | duration_ms=16726 | cost_usd=0.021462
+
+## [2026-05-28T13:56:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1846 | cache_read=26786 | cache_creation=10252 | duration_ms=20963 | cost_usd=0.024732
+
+## [2026-05-28T13:56:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1875 | cache_read=26786 | cache_creation=10347 | duration_ms=21154 | cost_usd=0.024995
+
+## [2026-05-28T13:56:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2137 | cache_read=26786 | cache_creation=10286 | duration_ms=24862 | cost_usd=0.026229
+
+## [2026-05-28T13:56:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1350 | cache_read=26786 | cache_creation=10278 | duration_ms=14635 | cost_usd=0.022284
+
+## [2026-05-28T13:56:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1216 | cache_read=26786 | cache_creation=10304 | duration_ms=16085 | cost_usd=0.021647
+
+## [2026-05-28T13:56:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1698 | cache_read=26786 | cache_creation=10296 | duration_ms=20467 | cost_usd=0.024047
+
+## [2026-05-28T13:56:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=26786 | cache_creation=10288 | duration_ms=18259 | cost_usd=0.022542
+
+## [2026-05-28T13:56:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=967 | cache_read=26786 | cache_creation=10326 | duration_ms=14683 | cost_usd=0.020429
+
+## [2026-05-28T13:56:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1193 | cache_read=26786 | cache_creation=10268 | duration_ms=16309 | cost_usd=0.021487
+
+## [2026-05-28T13:56:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1430 | cache_read=26786 | cache_creation=10365 | duration_ms=18433 | cost_usd=0.022793
+
+## [2026-05-28T13:56:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2115 | cache_read=26786 | cache_creation=10288 | duration_ms=23550 | cost_usd=0.026122
+
+## [2026-05-28T13:56:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=26786 | cache_creation=10312 | duration_ms=16337 | cost_usd=0.021727
+
+## [2026-05-28T13:56:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1159 | cache_read=26786 | cache_creation=10402 | duration_ms=15549 | cost_usd=0.021484
+
+## [2026-05-28T13:56:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1575 | cache_read=26786 | cache_creation=10236 | duration_ms=19094 | cost_usd=0.023357
+
+## [2026-05-28T13:57:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1481 | cache_read=26786 | cache_creation=10330 | duration_ms=19141 | cost_usd=0.023004
+
+## [2026-05-28T13:57:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1593 | cache_read=26786 | cache_creation=10284 | duration_ms=20687 | cost_usd=0.023507
+
+## [2026-05-28T13:57:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1483 | cache_read=26786 | cache_creation=10330 | duration_ms=19594 | cost_usd=0.023014
+
+## [2026-05-28T13:57:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1149 | cache_read=26786 | cache_creation=10300 | duration_ms=14246 | cost_usd=0.021307
+
+## [2026-05-28T13:57:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1610 | cache_read=26786 | cache_creation=10360 | duration_ms=21631 | cost_usd=0.023687
+
+## [2026-05-28T13:57:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1737 | cache_read=26786 | cache_creation=10302 | duration_ms=20743 | cost_usd=0.024249
+
+## [2026-05-28T13:57:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1200 | cache_read=26786 | cache_creation=10318 | duration_ms=14604 | cost_usd=0.021584
+
+## [2026-05-28T13:57:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1628 | cache_read=26786 | cache_creation=10272 | duration_ms=19332 | cost_usd=0.023667
+
+## [2026-05-28T13:57:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1714 | cache_read=26786 | cache_creation=10310 | duration_ms=20034 | cost_usd=0.024144
+
+## [2026-05-28T13:57:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1460 | cache_read=26786 | cache_creation=10286 | duration_ms=17948 | cost_usd=0.022844
+
+## [2026-05-28T13:57:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1563 | cache_read=26786 | cache_creation=10268 | duration_ms=21195 | cost_usd=0.023337
+
+## [2026-05-28T13:57:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1521 | cache_read=26786 | cache_creation=10298 | duration_ms=18861 | cost_usd=0.023164
+
+## [2026-05-28T13:57:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1713 | cache_read=26786 | cache_creation=10274 | duration_ms=19900 | cost_usd=0.024094
+
+## [2026-05-28T13:57:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1679 | cache_read=26786 | cache_creation=10541 | duration_ms=22085 | cost_usd=0.024258
+
+## [2026-05-28T13:57:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2738 | cache_read=26786 | cache_creation=10282 | duration_ms=32492 | cost_usd=0.029229
+
+## [2026-05-28T13:57:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1121 | cache_read=26786 | cache_creation=10584 | duration_ms=14544 | cost_usd=0.021522
+
+## [2026-05-28T13:57:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2142 | cache_read=26786 | cache_creation=10325 | duration_ms=27368 | cost_usd=0.026303
+
+## [2026-05-28T13:57:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1021 | cache_read=26786 | cache_creation=10504 | duration_ms=13477 | cost_usd=0.020922
+
+## [2026-05-28T13:57:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=820 | cache_read=26786 | cache_creation=10498 | duration_ms=11112 | cost_usd=0.019909
+
+## [2026-05-28T13:57:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1870 | cache_read=26786 | cache_creation=10595 | duration_ms=22611 | cost_usd=0.025280
+
+## [2026-05-28T13:57:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=888 | cache_read=26786 | cache_creation=10411 | duration_ms=11266 | cost_usd=0.020140
+
+## [2026-05-28T13:57:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1000 | cache_read=26786 | cache_creation=10545 | duration_ms=13205 | cost_usd=0.020868
+
+## [2026-05-28T13:58:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=887 | cache_read=26786 | cache_creation=10714 | duration_ms=10923 | cost_usd=0.020514
+
+## [2026-05-28T13:58:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2349 | cache_read=26786 | cache_creation=10434 | duration_ms=27237 | cost_usd=0.027474
+
+## [2026-05-28T13:58:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1355 | cache_read=26786 | cache_creation=10572 | duration_ms=16508 | cost_usd=0.022677
+
+## [2026-05-28T13:58:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1804 | cache_read=26786 | cache_creation=10588 | duration_ms=19893 | cost_usd=0.024942
+
+## [2026-05-28T13:58:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1090 | cache_read=26786 | cache_creation=10582 | duration_ms=12335 | cost_usd=0.021364
+
+## [2026-05-28T13:58:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=26786 | cache_creation=10597 | duration_ms=16504 | cost_usd=0.022398
+
+## [2026-05-28T13:58:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2026 | cache_read=26786 | cache_creation=10688 | duration_ms=24248 | cost_usd=0.026177
+
+## [2026-05-28T13:58:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1232 | cache_read=26786 | cache_creation=10507 | duration_ms=16551 | cost_usd=0.021980
+
+## [2026-05-28T13:58:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1408 | cache_read=26786 | cache_creation=10594 | duration_ms=16637 | cost_usd=0.022969
+
+## [2026-05-28T13:58:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2092 | cache_read=26786 | cache_creation=10652 | duration_ms=25117 | cost_usd=0.026462
+
+## [2026-05-28T13:58:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1636 | cache_read=26786 | cache_creation=10519 | duration_ms=20738 | cost_usd=0.024015
+
+## [2026-05-28T13:58:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1268 | cache_read=26786 | cache_creation=10597 | duration_ms=15860 | cost_usd=0.022273
+
+## [2026-05-28T13:58:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2218 | cache_read=26786 | cache_creation=10690 | duration_ms=25409 | cost_usd=0.027139
+
+## [2026-05-28T13:58:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1062 | cache_read=0 | cache_creation=29627 | duration_ms=14423 | cost_usd=0.042352
+
+## [2026-05-28T13:58:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1038 | cache_read=26786 | cache_creation=10539 | duration_ms=14740 | cost_usd=0.021050
+
+## [2026-05-28T13:58:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1298 | cache_read=26786 | cache_creation=10475 | duration_ms=16358 | cost_usd=0.022270
+
+## [2026-05-28T13:58:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1011 | cache_read=26786 | cache_creation=10542 | duration_ms=13217 | cost_usd=0.020919
+
+## [2026-05-28T13:58:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1053 | cache_read=26786 | cache_creation=10669 | duration_ms=12896 | cost_usd=0.021288
+
+## [2026-05-28T13:58:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1370 | cache_read=26786 | cache_creation=10508 | duration_ms=18371 | cost_usd=0.022672
+
+## [2026-05-28T13:58:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1703 | cache_read=26786 | cache_creation=10671 | duration_ms=21409 | cost_usd=0.024540
+
+## [2026-05-28T13:58:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1037 | cache_read=26786 | cache_creation=10864 | duration_ms=13306 | cost_usd=0.021452
+
+## [2026-05-28T13:58:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1147 | cache_read=26786 | cache_creation=10607 | duration_ms=15473 | cost_usd=0.021680
+
+## [2026-05-28T13:58:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1773 | cache_read=26786 | cache_creation=10646 | duration_ms=21978 | cost_usd=0.024859
+
+## [2026-05-28T13:59:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1117 | cache_read=26786 | cache_creation=10615 | duration_ms=14644 | cost_usd=0.021540
+
+## [2026-05-28T13:59:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1156 | cache_read=26786 | cache_creation=10519 | duration_ms=15351 | cost_usd=0.021615
+
+## [2026-05-28T13:59:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2171 | cache_read=26786 | cache_creation=10578 | duration_ms=26220 | cost_usd=0.026764
+
+## [2026-05-28T13:59:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1961 | cache_read=26786 | cache_creation=10550 | duration_ms=24891 | cost_usd=0.025679
+
+## [2026-05-28T13:59:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=981 | cache_read=26786 | cache_creation=10711 | duration_ms=13366 | cost_usd=0.020980
+
+## [2026-05-28T13:59:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1219 | cache_read=26786 | cache_creation=10532 | duration_ms=15901 | cost_usd=0.021947
+
+## [2026-05-28T13:59:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=998 | cache_read=26786 | cache_creation=10513 | duration_ms=12143 | cost_usd=0.020818
+
+## [2026-05-28T13:59:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1334 | cache_read=26786 | cache_creation=10448 | duration_ms=16284 | cost_usd=0.022417
+
+## [2026-05-28T13:59:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1089 | cache_read=26786 | cache_creation=10653 | duration_ms=13919 | cost_usd=0.021448
+
+## [2026-05-28T13:59:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1168 | cache_read=26786 | cache_creation=10538 | duration_ms=15743 | cost_usd=0.021699
+
+## [2026-05-28T13:59:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1560 | cache_read=26786 | cache_creation=10600 | duration_ms=18693 | cost_usd=0.023737
+
+## [2026-05-28T13:59:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=885 | cache_read=26786 | cache_creation=10584 | duration_ms=11753 | cost_usd=0.020342
+
+## [2026-05-28T13:59:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1033 | cache_read=26786 | cache_creation=10613 | duration_ms=13429 | cost_usd=0.021118
+
+## [2026-05-28T13:59:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1121 | cache_read=26786 | cache_creation=10380 | duration_ms=14771 | cost_usd=0.021267
+
+## [2026-05-28T13:59:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1611 | cache_read=26786 | cache_creation=10559 | duration_ms=19969 | cost_usd=0.023940
+
+## [2026-05-28T13:59:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=26786 | cache_creation=10392 | duration_ms=15106 | cost_usd=0.021372
+
+## [2026-05-28T13:59:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1420 | cache_read=26786 | cache_creation=10402 | duration_ms=17646 | cost_usd=0.022789
+
+## [2026-05-28T13:59:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1340 | cache_read=26786 | cache_creation=10429 | duration_ms=17186 | cost_usd=0.022423
+
+## [2026-05-28T13:59:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2549 | cache_read=26786 | cache_creation=10529 | duration_ms=27973 | cost_usd=0.028593
+
+## [2026-05-28T13:59:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1156 | cache_read=26786 | cache_creation=10517 | duration_ms=14479 | cost_usd=0.021613
+
+## [2026-05-28T13:59:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1373 | cache_read=26786 | cache_creation=10429 | duration_ms=20225 | cost_usd=0.022588
+
+## [2026-05-28T13:59:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=26786 | cache_creation=10447 | duration_ms=23460 | cost_usd=0.025440
+
+## [2026-05-28T13:59:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=26786 | cache_creation=10478 | duration_ms=18245 | cost_usd=0.022574
+
+## [2026-05-28T14:00:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1407 | cache_read=26786 | cache_creation=10514 | duration_ms=19242 | cost_usd=0.022864
+
+## [2026-05-28T14:00:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=743 | cache_read=26786 | cache_creation=10431 | duration_ms=10499 | cost_usd=0.019440
+
+## [2026-05-28T14:00:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1449 | cache_read=26786 | cache_creation=10527 | duration_ms=18158 | cost_usd=0.023090
+
+## [2026-05-28T14:00:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1619 | cache_read=26786 | cache_creation=10447 | duration_ms=20399 | cost_usd=0.023840
+
+## [2026-05-28T14:00:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1413 | cache_read=26786 | cache_creation=10441 | duration_ms=16745 | cost_usd=0.022803
+
+## [2026-05-28T14:00:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2106 | cache_read=26786 | cache_creation=10444 | duration_ms=22842 | cost_usd=0.026272
+
+## [2026-05-28T14:00:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2438 | cache_read=26786 | cache_creation=11053 | duration_ms=25553 | cost_usd=0.028693
+
+## [2026-05-28T14:00:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=903 | cache_read=26786 | cache_creation=10463 | duration_ms=11855 | cost_usd=0.020280
+
+## [2026-05-28T14:00:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1248 | cache_read=26786 | cache_creation=10548 | duration_ms=14167 | cost_usd=0.022112
+
+## [2026-05-28T14:00:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1357 | cache_read=26786 | cache_creation=10569 | duration_ms=16439 | cost_usd=0.022683
+
+## [2026-05-28T14:00:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=915 | cache_read=26786 | cache_creation=10571 | duration_ms=12502 | cost_usd=0.020475
+
+## [2026-05-28T14:00:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2015 | cache_read=26786 | cache_creation=10448 | duration_ms=23234 | cost_usd=0.025822
+
+## [2026-05-28T14:00:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1142 | cache_read=19120 | cache_creation=10474 | duration_ms=15367 | cost_usd=0.020723
+
+## [2026-05-28T14:00:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=848 | cache_read=26786 | cache_creation=10421 | duration_ms=10152 | cost_usd=0.019953
+
+## [2026-05-28T14:00:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1127 | cache_read=26786 | cache_creation=10564 | duration_ms=15623 | cost_usd=0.021527
+
+## [2026-05-28T14:00:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=866 | cache_read=26786 | cache_creation=10581 | duration_ms=10960 | cost_usd=0.020243
+
+## [2026-05-28T14:00:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1534 | cache_read=26786 | cache_creation=10438 | duration_ms=18419 | cost_usd=0.023404
+
+## [2026-05-28T14:00:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1631 | cache_read=26786 | cache_creation=10576 | duration_ms=19194 | cost_usd=0.024062
+
+## [2026-05-28T14:00:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1470 | cache_read=26786 | cache_creation=10463 | duration_ms=17684 | cost_usd=0.023115
+
+## [2026-05-28T14:00:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1578 | cache_read=26786 | cache_creation=10393 | duration_ms=18587 | cost_usd=0.023568
+
+## [2026-05-28T14:00:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1609 | cache_read=26786 | cache_creation=10319 | duration_ms=19044 | cost_usd=0.023630
+
+## [2026-05-28T14:00:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1682 | cache_read=26786 | cache_creation=10326 | duration_ms=21446 | cost_usd=0.024004
+
+## [2026-05-28T14:00:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1641 | cache_read=26786 | cache_creation=10310 | duration_ms=19302 | cost_usd=0.023779
+
+## [2026-05-28T14:00:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2131 | cache_read=26786 | cache_creation=10339 | duration_ms=25358 | cost_usd=0.026265
+
+## [2026-05-28T14:01:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1531 | cache_read=26786 | cache_creation=10334 | duration_ms=19464 | cost_usd=0.023259
+
+## [2026-05-28T14:01:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1588 | cache_read=26786 | cache_creation=10307 | duration_ms=20069 | cost_usd=0.023510
+
+## [2026-05-28T14:01:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1419 | cache_read=26786 | cache_creation=10286 | duration_ms=17826 | cost_usd=0.022639
+
+## [2026-05-28T14:01:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1675 | cache_read=26786 | cache_creation=10313 | duration_ms=20985 | cost_usd=0.023953
+
+## [2026-05-28T14:01:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=26786 | cache_creation=10301 | duration_ms=16492 | cost_usd=0.022288
+
+## [2026-05-28T14:01:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1072 | cache_read=26786 | cache_creation=10321 | duration_ms=16855 | cost_usd=0.020948
+
+## [2026-05-28T14:01:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1991 | cache_read=26786 | cache_creation=10305 | duration_ms=24763 | cost_usd=0.025523
+
+## [2026-05-28T14:01:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1321 | cache_read=26786 | cache_creation=10309 | duration_ms=19773 | cost_usd=0.022178
+
+## [2026-05-28T14:01:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2359 | cache_read=26786 | cache_creation=10303 | duration_ms=30623 | cost_usd=0.027360
+
+## [2026-05-28T14:01:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1339 | cache_read=26786 | cache_creation=10391 | duration_ms=17394 | cost_usd=0.022370
+
+## [2026-05-28T14:01:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2051 | cache_read=26786 | cache_creation=10301 | duration_ms=21084 | cost_usd=0.025818
+
+## [2026-05-28T14:01:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1772 | cache_read=26786 | cache_creation=10364 | duration_ms=20462 | cost_usd=0.024502
+
+## [2026-05-28T14:01:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1880 | cache_read=26786 | cache_creation=10314 | duration_ms=22717 | cost_usd=0.024979
+
+## [2026-05-28T14:01:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1624 | cache_read=26786 | cache_creation=10350 | duration_ms=20994 | cost_usd=0.023744
+
+## [2026-05-28T14:01:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1553 | cache_read=26786 | cache_creation=10309 | duration_ms=20314 | cost_usd=0.023338
+
+## [2026-05-28T14:01:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1022 | cache_read=26786 | cache_creation=10365 | duration_ms=13457 | cost_usd=0.020753
+
+## [2026-05-28T14:01:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2174 | cache_read=26786 | cache_creation=10296 | duration_ms=25533 | cost_usd=0.026427
+
+## [2026-05-28T14:01:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1439 | cache_read=26786 | cache_creation=10317 | duration_ms=17733 | cost_usd=0.022778
+
+## [2026-05-28T14:01:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1452 | cache_read=26786 | cache_creation=10331 | duration_ms=17859 | cost_usd=0.022860
+
+## [2026-05-28T14:01:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1908 | cache_read=26786 | cache_creation=10381 | duration_ms=22801 | cost_usd=0.025203
+
+## [2026-05-28T14:01:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2205 | cache_read=26786 | cache_creation=10315 | duration_ms=23605 | cost_usd=0.026605
+
+## [2026-05-28T14:01:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2196 | cache_read=26786 | cache_creation=10331 | duration_ms=23826 | cost_usd=0.026580
+
+## [2026-05-28T14:02:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1130 | cache_read=26786 | cache_creation=10314 | duration_ms=14407 | cost_usd=0.021229
+
+## [2026-05-28T14:02:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1109 | cache_read=26786 | cache_creation=10374 | duration_ms=14792 | cost_usd=0.021199
+
+## [2026-05-28T14:02:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1590 | cache_read=26786 | cache_creation=10309 | duration_ms=18877 | cost_usd=0.023523
+
+## [2026-05-28T14:02:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1424 | cache_read=26786 | cache_creation=10367 | duration_ms=17424 | cost_usd=0.022765
+
+## [2026-05-28T14:02:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1537 | cache_read=26786 | cache_creation=10327 | duration_ms=18937 | cost_usd=0.023280
+
+## [2026-05-28T14:02:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1846 | cache_read=26786 | cache_creation=10322 | duration_ms=21176 | cost_usd=0.024819
+
+## [2026-05-28T14:02:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1673 | cache_read=26786 | cache_creation=10327 | duration_ms=20364 | cost_usd=0.023960
+
+## [2026-05-28T14:02:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1770 | cache_read=26786 | cache_creation=10310 | duration_ms=20019 | cost_usd=0.024424
+
+## [2026-05-28T14:02:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=763 | cache_read=26786 | cache_creation=10297 | duration_ms=10409 | cost_usd=0.019373
+
+## [2026-05-28T14:02:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1389 | cache_read=26786 | cache_creation=10367 | duration_ms=17049 | cost_usd=0.022590
+
+## [2026-05-28T14:02:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=953 | cache_read=26786 | cache_creation=10274 | duration_ms=18543 | cost_usd=0.020294
+
+## [2026-05-28T14:02:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1121 | cache_read=26786 | cache_creation=10314 | duration_ms=13700 | cost_usd=0.021184
+
+## [2026-05-28T14:02:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1555 | cache_read=26786 | cache_creation=10365 | duration_ms=21878 | cost_usd=0.023418
+
+## [2026-05-28T14:02:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1407 | cache_read=26786 | cache_creation=10305 | duration_ms=15967 | cost_usd=0.022603
+
+## [2026-05-28T14:02:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1585 | cache_read=26786 | cache_creation=10323 | duration_ms=19151 | cost_usd=0.023515
+
+## [2026-05-28T14:02:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1895 | cache_read=26786 | cache_creation=10315 | duration_ms=22242 | cost_usd=0.025055
+
+## [2026-05-28T14:02:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2432 | cache_read=26786 | cache_creation=10310 | duration_ms=26410 | cost_usd=0.027734
+
+## [2026-05-28T14:02:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1482 | cache_read=26786 | cache_creation=10310 | duration_ms=17992 | cost_usd=0.022984
+
+## [2026-05-28T14:02:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1641 | cache_read=26786 | cache_creation=10302 | duration_ms=18770 | cost_usd=0.023769
+
+## [2026-05-28T14:02:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2154 | cache_read=26786 | cache_creation=10302 | duration_ms=24533 | cost_usd=0.026334
+
+## [2026-05-28T14:03:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=26786 | cache_creation=10306 | duration_ms=20637 | cost_usd=0.023634
+
+## [2026-05-28T14:03:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1845 | cache_read=26786 | cache_creation=10303 | duration_ms=22160 | cost_usd=0.024790
+
+## [2026-05-28T14:03:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1132 | cache_read=26786 | cache_creation=10291 | duration_ms=14765 | cost_usd=0.021210
+
+## [2026-05-28T14:03:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1874 | cache_read=26786 | cache_creation=10311 | duration_ms=23006 | cost_usd=0.024945
+
+## [2026-05-28T14:03:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1291 | cache_read=26786 | cache_creation=10303 | duration_ms=17341 | cost_usd=0.022020
+
+## [2026-05-28T14:03:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1202 | cache_read=26786 | cache_creation=10311 | duration_ms=14914 | cost_usd=0.021585
+
+## [2026-05-28T14:03:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2085 | cache_read=26786 | cache_creation=10318 | duration_ms=25515 | cost_usd=0.026009
+
+## [2026-05-28T14:03:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1420 | cache_read=26786 | cache_creation=10365 | duration_ms=17657 | cost_usd=0.022743
+
+## [2026-05-28T14:03:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1453 | cache_read=26786 | cache_creation=10312 | duration_ms=16441 | cost_usd=0.022842
+
+## [2026-05-28T14:03:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1976 | cache_read=26786 | cache_creation=10307 | duration_ms=21260 | cost_usd=0.025450
+
+## [2026-05-28T14:03:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1185 | cache_read=26786 | cache_creation=10311 | duration_ms=16343 | cost_usd=0.021500
+
+## [2026-05-28T14:03:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2415 | cache_read=26786 | cache_creation=10323 | duration_ms=27873 | cost_usd=0.027665
+
+## [2026-05-28T14:03:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1770 | cache_read=26786 | cache_creation=10298 | duration_ms=21746 | cost_usd=0.024409
+
+## [2026-05-28T14:03:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=825 | cache_read=26786 | cache_creation=10383 | duration_ms=10261 | cost_usd=0.019790
+
+## [2026-05-28T14:03:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1306 | cache_read=26786 | cache_creation=10304 | duration_ms=15293 | cost_usd=0.022097
+
+## [2026-05-28T14:03:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=992 | cache_read=26786 | cache_creation=10342 | duration_ms=12501 | cost_usd=0.020574
+
+## [2026-05-28T14:03:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1385 | cache_read=26786 | cache_creation=10299 | duration_ms=18744 | cost_usd=0.022485
+
+## [2026-05-28T14:03:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1868 | cache_read=26786 | cache_creation=10315 | duration_ms=24147 | cost_usd=0.024920
+
+## [2026-05-28T14:03:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1640 | cache_read=26786 | cache_creation=10325 | duration_ms=22289 | cost_usd=0.023793
+
+## [2026-05-28T14:03:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1992 | cache_read=26786 | cache_creation=10319 | duration_ms=24750 | cost_usd=0.025545
+
+## [2026-05-28T14:03:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1751 | cache_read=26786 | cache_creation=10345 | duration_ms=19933 | cost_usd=0.024373
+
+## [2026-05-28T14:03:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1334 | cache_read=26786 | cache_creation=10294 | duration_ms=15807 | cost_usd=0.022224
+
+## [2026-05-28T14:03:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1312 | cache_read=26786 | cache_creation=10323 | duration_ms=15925 | cost_usd=0.022150
+
+## [2026-05-28T14:04:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=26786 | cache_creation=10320 | duration_ms=16869 | cost_usd=0.023107
+
+## [2026-05-28T14:04:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1598 | cache_read=26786 | cache_creation=10321 | duration_ms=22673 | cost_usd=0.023578
+
+## [2026-05-28T14:04:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1579 | cache_read=26786 | cache_creation=10313 | duration_ms=19453 | cost_usd=0.023473
+
+## [2026-05-28T14:04:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1558 | cache_read=26786 | cache_creation=10304 | duration_ms=18461 | cost_usd=0.023357
+
+## [2026-05-28T14:04:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1193 | cache_read=26786 | cache_creation=10310 | duration_ms=15529 | cost_usd=0.021539
+
+## [2026-05-28T14:04:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1328 | cache_read=26786 | cache_creation=10315 | duration_ms=16799 | cost_usd=0.022220
+
+## [2026-05-28T14:04:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=954 | cache_read=26786 | cache_creation=10309 | duration_ms=13694 | cost_usd=0.020343
+
+## [2026-05-28T14:04:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1363 | cache_read=26786 | cache_creation=10296 | duration_ms=18285 | cost_usd=0.022372
+
+## [2026-05-28T14:04:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2545 | cache_read=26786 | cache_creation=10325 | duration_ms=26970 | cost_usd=0.028318
+
+## [2026-05-28T14:04:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=26786 | cache_creation=10300 | duration_ms=16754 | cost_usd=0.023722
+
+## [2026-05-28T14:04:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2015 | cache_read=26786 | cache_creation=10312 | duration_ms=22451 | cost_usd=0.025652
+
+## [2026-05-28T14:04:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=26786 | cache_creation=10304 | duration_ms=16876 | cost_usd=0.021957
+
+## [2026-05-28T14:04:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2167 | cache_read=26786 | cache_creation=10326 | duration_ms=25653 | cost_usd=0.026429
+
+## [2026-05-28T14:04:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1767 | cache_read=26786 | cache_creation=10326 | duration_ms=21789 | cost_usd=0.024429
+
+## [2026-05-28T14:04:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1822 | cache_read=26786 | cache_creation=10306 | duration_ms=24803 | cost_usd=0.024679
+
+## [2026-05-28T14:04:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2148 | cache_read=26786 | cache_creation=10314 | duration_ms=23308 | cost_usd=0.026319
+
+## [2026-05-28T14:04:46Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=filter | n=4
+
+4 candidate(s) cleared threshold
+
+## [2026-05-28T14:04:51Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=materialize | n=4
+
+materialized 4 source(s) to raw/
+
+## [2026-05-28T14:04:51Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=nlm_persistent | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+persistent notebook adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+## [2026-05-28T14:30:46Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=start | domain=orita-cmo
+
+start research session for prompt 'HubSpot CRM API capability matrix (read, write, association traversal) across three paths: official Anthropic HubSpot MCP server, community MCP variants (peakmojo/mcp-hubspot et al.), direct REST API v3 with Private App auth. Specific focus on object association IDs (company-to-company agency-of-record, contact-to-company role tagging for user/influencer/decision-maker). Survey production patterns for safe writes to a system-of-record CRM: dry-run queues with approval gates (the chosen pattern), semantic invariant guards, shadow-write + diff, rollback logging. Target deployment: 10-concurrent-user team (marketing + sales + CEO) on GCP.'
+
+## [2026-05-28T14:30:47Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-28T14:30:47Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-28T14:30:53Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-28T14:30:57Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | adapter=semantic_scholar | n=29
+
+adapter semantic_scholar returned 29 candidates
+
+## [2026-05-28T14:31:40Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=search | target=youtube
+
+error: youtube search returned HTTP 429 after retries exhausted
+
+## [2026-05-28T14:31:40Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=merge | n=138
+
+merged 138 candidate(s) across adapters
+
+## [2026-05-28T14:31:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=797 | cache_read=0 | cache_creation=12798 | duration_ms=12151 | cost_usd=0.019991
+
+## [2026-05-28T14:31:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=932 | cache_read=0 | cache_creation=12761 | duration_ms=13156 | cost_usd=0.020619
+
+## [2026-05-28T14:31:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1057 | cache_read=0 | cache_creation=12780 | duration_ms=13983 | cost_usd=0.021268
+
+## [2026-05-28T14:32:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1352 | cache_read=0 | cache_creation=20787 | duration_ms=17128 | cost_usd=0.032752
+
+## [2026-05-28T14:32:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=765 | cache_read=0 | cache_creation=12694 | duration_ms=17479 | cost_usd=0.019700
+
+## [2026-05-28T14:32:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1468 | cache_read=0 | cache_creation=20676 | duration_ms=19866 | cost_usd=0.033193
+
+## [2026-05-28T14:32:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1761 | cache_read=0 | cache_creation=12852 | duration_ms=20496 | cost_usd=0.024878
+
+## [2026-05-28T14:32:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1481 | cache_read=0 | cache_creation=12784 | duration_ms=21542 | cost_usd=0.023393
+
+## [2026-05-28T14:32:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=498 | cache_read=26786 | cache_creation=10643 | duration_ms=7534 | cost_usd=0.018480
+
+## [2026-05-28T14:32:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=952 | cache_read=0 | cache_creation=37197 | duration_ms=13146 | cost_usd=0.051264
+
+## [2026-05-28T14:32:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1375 | cache_read=0 | cache_creation=37358 | duration_ms=16307 | cost_usd=0.053581
+
+## [2026-05-28T14:32:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1294 | cache_read=26786 | cache_creation=10714 | duration_ms=16450 | cost_usd=0.022549
+
+## [2026-05-28T14:32:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1350 | cache_read=26786 | cache_creation=10688 | duration_ms=15540 | cost_usd=0.022797
+
+## [2026-05-28T14:32:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1248 | cache_read=26786 | cache_creation=10597 | duration_ms=16026 | cost_usd=0.022173
+
+## [2026-05-28T14:32:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1362 | cache_read=0 | cache_creation=29731 | duration_ms=17443 | cost_usd=0.043982
+
+## [2026-05-28T14:32:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1596 | cache_read=26786 | cache_creation=10507 | duration_ms=18686 | cost_usd=0.023800
+
+## [2026-05-28T14:32:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=863 | cache_read=26786 | cache_creation=10533 | duration_ms=11069 | cost_usd=0.020168
+
+## [2026-05-28T14:32:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1312 | cache_read=26786 | cache_creation=10690 | duration_ms=15728 | cost_usd=0.022609
+
+## [2026-05-28T14:32:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=778 | cache_read=26786 | cache_creation=10548 | duration_ms=11346 | cost_usd=0.019762
+
+## [2026-05-28T14:32:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=955 | cache_read=26786 | cache_creation=10658 | duration_ms=14106 | cost_usd=0.020784
+
+## [2026-05-28T14:32:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1652 | cache_read=26786 | cache_creation=10519 | duration_ms=19781 | cost_usd=0.024095
+
+## [2026-05-28T14:32:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=949 | cache_read=26786 | cache_creation=10414 | duration_ms=11718 | cost_usd=0.020449
+
+## [2026-05-28T14:32:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=705 | cache_read=26786 | cache_creation=10481 | duration_ms=10006 | cost_usd=0.019313
+
+## [2026-05-28T14:32:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1403 | cache_read=26786 | cache_creation=10539 | duration_ms=17921 | cost_usd=0.022875
+
+## [2026-05-28T14:32:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1260 | cache_read=26786 | cache_creation=10508 | duration_ms=17045 | cost_usd=0.022122
+
+## [2026-05-28T14:32:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1307 | cache_read=26786 | cache_creation=10732 | duration_ms=15624 | cost_usd=0.022637
+
+## [2026-05-28T14:32:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=911 | cache_read=26786 | cache_creation=10608 | duration_ms=13354 | cost_usd=0.020502
+
+## [2026-05-28T14:32:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1308 | cache_read=26786 | cache_creation=10578 | duration_ms=16329 | cost_usd=0.022449
+
+## [2026-05-28T14:32:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1248 | cache_read=0 | cache_creation=34463 | duration_ms=16677 | cost_usd=0.049327
+
+## [2026-05-28T14:33:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1851 | cache_read=26786 | cache_creation=10646 | duration_ms=23775 | cost_usd=0.025249
+
+## [2026-05-28T14:33:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=964 | cache_read=0 | cache_creation=26295 | duration_ms=14400 | cost_usd=0.037697
+
+## [2026-05-28T14:33:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1745 | cache_read=0 | cache_creation=18241 | duration_ms=20387 | cost_usd=0.031534
+
+## [2026-05-28T14:33:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1115 | cache_read=0 | cache_creation=35967 | duration_ms=15136 | cost_usd=0.050542
+
+## [2026-05-28T14:33:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=819 | cache_read=26786 | cache_creation=10711 | duration_ms=11280 | cost_usd=0.020170
+
+## [2026-05-28T14:33:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1370 | cache_read=0 | cache_creation=36041 | duration_ms=17141 | cost_usd=0.051909
+
+## [2026-05-28T14:33:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2205 | cache_read=8065 | cache_creation=10180 | duration_ms=27400 | cost_usd=0.024564
+
+## [2026-05-28T14:33:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1295 | cache_read=26786 | cache_creation=10448 | duration_ms=16764 | cost_usd=0.022222
+
+## [2026-05-28T14:33:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1146 | cache_read=26786 | cache_creation=10513 | duration_ms=15341 | cost_usd=0.021558
+
+## [2026-05-28T14:33:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1090 | cache_read=26786 | cache_creation=10600 | duration_ms=13199 | cost_usd=0.021387
+
+## [2026-05-28T14:33:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=857 | cache_read=26786 | cache_creation=10584 | duration_ms=10391 | cost_usd=0.020202
+
+## [2026-05-28T14:33:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=990 | cache_read=26786 | cache_creation=10653 | duration_ms=12255 | cost_usd=0.020953
+
+## [2026-05-28T14:33:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1080 | cache_read=26786 | cache_creation=10538 | duration_ms=14816 | cost_usd=0.021259
+
+## [2026-05-28T14:33:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1009 | cache_read=26786 | cache_creation=10552 | duration_ms=12583 | cost_usd=0.020922
+
+## [2026-05-28T14:33:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1216 | cache_read=26786 | cache_creation=10264 | duration_ms=16388 | cost_usd=0.021597
+
+## [2026-05-28T14:33:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1404 | cache_read=26786 | cache_creation=10348 | duration_ms=17709 | cost_usd=0.022642
+
+## [2026-05-28T14:33:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1579 | cache_read=26786 | cache_creation=10312 | duration_ms=19860 | cost_usd=0.023472
+
+## [2026-05-28T14:33:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1494 | cache_read=26786 | cache_creation=10371 | duration_ms=18971 | cost_usd=0.023120
+
+## [2026-05-28T14:33:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1486 | cache_read=26786 | cache_creation=10304 | duration_ms=20820 | cost_usd=0.022997
+
+## [2026-05-28T14:33:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1627 | cache_read=26786 | cache_creation=10342 | duration_ms=20655 | cost_usd=0.023749
+
+## [2026-05-28T14:33:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2088 | cache_read=26786 | cache_creation=10371 | duration_ms=24847 | cost_usd=0.026090
+
+## [2026-05-28T14:33:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=959 | cache_read=26786 | cache_creation=10248 | duration_ms=14134 | cost_usd=0.020292
+
+## [2026-05-28T14:33:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2801 | cache_read=26786 | cache_creation=10268 | duration_ms=30938 | cost_usd=0.029527
+
+## [2026-05-28T14:33:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=26786 | cache_creation=10306 | duration_ms=20369 | cost_usd=0.023914
+
+## [2026-05-28T14:34:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1118 | cache_read=26786 | cache_creation=10322 | duration_ms=16332 | cost_usd=0.021179
+
+## [2026-05-28T14:34:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1156 | cache_read=26786 | cache_creation=10332 | duration_ms=16703 | cost_usd=0.021382
+
+## [2026-05-28T14:34:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1214 | cache_read=26786 | cache_creation=10313 | duration_ms=15684 | cost_usd=0.021648
+
+## [2026-05-28T14:34:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1535 | cache_read=26786 | cache_creation=10278 | duration_ms=20051 | cost_usd=0.023209
+
+## [2026-05-28T14:34:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1300 | cache_read=26786 | cache_creation=10252 | duration_ms=16020 | cost_usd=0.022002
+
+## [2026-05-28T14:34:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1303 | cache_read=26786 | cache_creation=10284 | duration_ms=15562 | cost_usd=0.022057
+
+## [2026-05-28T14:34:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1617 | cache_read=26786 | cache_creation=10308 | duration_ms=19520 | cost_usd=0.023657
+
+## [2026-05-28T14:34:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1306 | cache_read=26786 | cache_creation=10288 | duration_ms=16122 | cost_usd=0.022077
+
+## [2026-05-28T14:34:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2089 | cache_read=26786 | cache_creation=10312 | duration_ms=25819 | cost_usd=0.026022
+
+## [2026-05-28T14:34:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=26786 | cache_creation=10334 | duration_ms=17223 | cost_usd=0.023069
+
+## [2026-05-28T14:34:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1292 | cache_read=26786 | cache_creation=10263 | duration_ms=16830 | cost_usd=0.021975
+
+## [2026-05-28T14:34:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2123 | cache_read=26786 | cache_creation=10319 | duration_ms=25045 | cost_usd=0.026200
+
+## [2026-05-28T14:34:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1198 | cache_read=26786 | cache_creation=10280 | duration_ms=15781 | cost_usd=0.021527
+
+## [2026-05-28T14:34:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2638 | cache_read=26786 | cache_creation=10234 | duration_ms=30275 | cost_usd=0.028669
+
+## [2026-05-28T14:34:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1287 | cache_read=26786 | cache_creation=10262 | duration_ms=16818 | cost_usd=0.021949
+
+## [2026-05-28T14:34:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1546 | cache_read=26786 | cache_creation=10252 | duration_ms=19622 | cost_usd=0.023232
+
+## [2026-05-28T14:34:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2344 | cache_read=26786 | cache_creation=10284 | duration_ms=28025 | cost_usd=0.027262
+
+## [2026-05-28T14:34:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1932 | cache_read=26786 | cache_creation=10321 | duration_ms=21585 | cost_usd=0.025248
+
+## [2026-05-28T14:34:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1237 | cache_read=26786 | cache_creation=10316 | duration_ms=15919 | cost_usd=0.021767
+
+## [2026-05-28T14:34:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1246 | cache_read=26786 | cache_creation=10274 | duration_ms=15973 | cost_usd=0.021759
+
+## [2026-05-28T14:34:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1189 | cache_read=26786 | cache_creation=10258 | duration_ms=15172 | cost_usd=0.021454
+
+## [2026-05-28T14:34:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1863 | cache_read=26786 | cache_creation=10286 | duration_ms=23648 | cost_usd=0.024859
+
+## [2026-05-28T14:34:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1647 | cache_read=26786 | cache_creation=10334 | duration_ms=21350 | cost_usd=0.023839
+
+## [2026-05-28T14:35:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1247 | cache_read=26786 | cache_creation=10318 | duration_ms=16603 | cost_usd=0.021819
+
+## [2026-05-28T14:35:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1285 | cache_read=26786 | cache_creation=10286 | duration_ms=18476 | cost_usd=0.021969
+
+## [2026-05-28T14:35:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1140 | cache_read=26786 | cache_creation=10264 | duration_ms=14730 | cost_usd=0.021217
+
+## [2026-05-28T14:35:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1807 | cache_read=26786 | cache_creation=10314 | duration_ms=23638 | cost_usd=0.024614
+
+## [2026-05-28T14:35:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1431 | cache_read=26786 | cache_creation=10347 | duration_ms=19117 | cost_usd=0.022775
+
+## [2026-05-28T14:35:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1451 | cache_read=26786 | cache_creation=10252 | duration_ms=18479 | cost_usd=0.022757
+
+## [2026-05-28T14:35:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1241 | cache_read=26786 | cache_creation=10357 | duration_ms=16702 | cost_usd=0.021838
+
+## [2026-05-28T14:35:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2330 | cache_read=26786 | cache_creation=10270 | duration_ms=27083 | cost_usd=0.027174
+
+## [2026-05-28T14:35:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1876 | cache_read=26786 | cache_creation=10278 | duration_ms=23327 | cost_usd=0.024914
+
+## [2026-05-28T14:35:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1091 | cache_read=26786 | cache_creation=10288 | duration_ms=14696 | cost_usd=0.021002
+
+## [2026-05-28T14:35:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1029 | cache_read=23660 | cache_creation=10326 | duration_ms=14729 | cost_usd=0.020427
+
+## [2026-05-28T14:35:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1078 | cache_read=26786 | cache_creation=10304 | duration_ms=14516 | cost_usd=0.020957
+
+## [2026-05-28T14:35:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1753 | cache_read=26786 | cache_creation=10304 | duration_ms=21498 | cost_usd=0.024332
+
+## [2026-05-28T14:35:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1165 | cache_read=26786 | cache_creation=10329 | duration_ms=15670 | cost_usd=0.021423
+
+## [2026-05-28T14:35:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1343 | cache_read=23660 | cache_creation=10288 | duration_ms=18093 | cost_usd=0.021949
+
+## [2026-05-28T14:35:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1077 | cache_read=26786 | cache_creation=10312 | duration_ms=14114 | cost_usd=0.020962
+
+## [2026-05-28T14:35:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=26786 | cache_creation=10402 | duration_ms=15577 | cost_usd=0.021839
+
+## [2026-05-28T14:35:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=26786 | cache_creation=10236 | duration_ms=20218 | cost_usd=0.021947
+
+## [2026-05-28T14:35:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1206 | cache_read=23660 | cache_creation=10330 | duration_ms=15742 | cost_usd=0.021317
+
+## [2026-05-28T14:35:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1354 | cache_read=26786 | cache_creation=10302 | duration_ms=16117 | cost_usd=0.022334
+
+## [2026-05-28T14:35:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1414 | cache_read=26786 | cache_creation=10421 | duration_ms=17628 | cost_usd=0.022783
+
+## [2026-05-28T14:36:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=23660 | cache_creation=10284 | duration_ms=20435 | cost_usd=0.023389
+
+## [2026-05-28T14:36:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1307 | cache_read=26786 | cache_creation=10300 | duration_ms=19946 | cost_usd=0.022097
+
+## [2026-05-28T14:36:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2046 | cache_read=23660 | cache_creation=10330 | duration_ms=26490 | cost_usd=0.025516
+
+## [2026-05-28T14:36:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1194 | cache_read=26786 | cache_creation=10272 | duration_ms=15573 | cost_usd=0.021497
+
+## [2026-05-28T14:36:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1137 | cache_read=26786 | cache_creation=10268 | duration_ms=14740 | cost_usd=0.021207
+
+## [2026-05-28T14:36:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1029 | cache_read=26786 | cache_creation=10318 | duration_ms=18783 | cost_usd=0.020729
+
+## [2026-05-28T14:36:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1335 | cache_read=26786 | cache_creation=10371 | duration_ms=19628 | cost_usd=0.022325
+
+## [2026-05-28T14:36:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1477 | cache_read=26786 | cache_creation=10282 | duration_ms=17771 | cost_usd=0.022924
+
+## [2026-05-28T14:36:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1386 | cache_read=26786 | cache_creation=10298 | duration_ms=17896 | cost_usd=0.022489
+
+## [2026-05-28T14:36:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2030 | cache_read=26786 | cache_creation=10286 | duration_ms=23524 | cost_usd=0.025694
+
+## [2026-05-28T14:36:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1758 | cache_read=26786 | cache_creation=10274 | duration_ms=20152 | cost_usd=0.024319
+
+## [2026-05-28T14:36:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1449 | cache_read=26786 | cache_creation=10264 | duration_ms=20126 | cost_usd=0.022762
+
+## [2026-05-28T14:36:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1375 | cache_read=26786 | cache_creation=10380 | duration_ms=16741 | cost_usd=0.022537
+
+## [2026-05-28T14:36:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1415 | cache_read=26786 | cache_creation=10392 | duration_ms=16795 | cost_usd=0.022752
+
+## [2026-05-28T14:36:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=26786 | cache_creation=10590 | duration_ms=24409 | cost_usd=0.025619
+
+## [2026-05-28T14:36:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1248 | cache_read=26786 | cache_creation=10447 | duration_ms=14777 | cost_usd=0.021985
+
+## [2026-05-28T14:36:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1554 | cache_read=26786 | cache_creation=10402 | duration_ms=19508 | cost_usd=0.023459
+
+## [2026-05-28T14:36:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1300 | cache_read=26786 | cache_creation=10429 | duration_ms=17380 | cost_usd=0.022223
+
+## [2026-05-28T14:36:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2282 | cache_read=26786 | cache_creation=10559 | duration_ms=27059 | cost_usd=0.027295
+
+## [2026-05-28T14:36:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1331 | cache_read=26786 | cache_creation=10517 | duration_ms=16556 | cost_usd=0.022488
+
+## [2026-05-28T14:36:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1672 | cache_read=26786 | cache_creation=10429 | duration_ms=20162 | cost_usd=0.024083
+
+## [2026-05-28T14:36:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1410 | cache_read=26786 | cache_creation=10478 | duration_ms=16383 | cost_usd=0.022834
+
+## [2026-05-28T14:37:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1720 | cache_read=26786 | cache_creation=10444 | duration_ms=18926 | cost_usd=0.024342
+
+## [2026-05-28T14:37:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=770 | cache_read=26786 | cache_creation=10431 | duration_ms=10366 | cost_usd=0.019575
+
+## [2026-05-28T14:37:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=23660 | cache_creation=10527 | duration_ms=20071 | cost_usd=0.023113
+
+## [2026-05-28T14:37:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1758 | cache_read=26786 | cache_creation=10514 | duration_ms=23674 | cost_usd=0.024619
+
+## [2026-05-28T14:37:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1704 | cache_read=26786 | cache_creation=11053 | duration_ms=20452 | cost_usd=0.025023
+
+## [2026-05-28T14:37:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1429 | cache_read=26786 | cache_creation=10441 | duration_ms=17168 | cost_usd=0.022883
+
+## [2026-05-28T14:37:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1672 | cache_read=26786 | cache_creation=10448 | duration_ms=22836 | cost_usd=0.024107
+
+## [2026-05-28T14:37:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=873 | cache_read=26786 | cache_creation=10571 | duration_ms=11574 | cost_usd=0.020265
+
+## [2026-05-28T14:37:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1337 | cache_read=26786 | cache_creation=10463 | duration_ms=15239 | cost_usd=0.022450
+
+## [2026-05-28T14:37:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1081 | cache_read=26786 | cache_creation=10515 | duration_ms=14992 | cost_usd=0.021235
+
+## [2026-05-28T14:37:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1210 | cache_read=26786 | cache_creation=10508 | duration_ms=18417 | cost_usd=0.021872
+
+## [2026-05-28T14:37:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3819 | cache_read=26786 | cache_creation=10447 | duration_ms=41054 | cost_usd=0.034840
+
+## [2026-05-28T14:37:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1075 | cache_read=26786 | cache_creation=10564 | duration_ms=14269 | cost_usd=0.021267
+
+## [2026-05-28T14:37:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1700 | cache_read=26786 | cache_creation=10609 | duration_ms=20555 | cost_usd=0.024448
+
+## [2026-05-28T14:37:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=812 | cache_read=26786 | cache_creation=10421 | duration_ms=10778 | cost_usd=0.019773
+
+## [2026-05-28T14:37:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1089 | cache_read=26786 | cache_creation=10642 | duration_ms=14638 | cost_usd=0.021434
+
+## [2026-05-28T14:37:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=26786 | cache_creation=10515 | duration_ms=20050 | cost_usd=0.023990
+
+## [2026-05-28T14:37:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1657 | cache_read=26786 | cache_creation=10499 | duration_ms=19789 | cost_usd=0.024095
+
+## [2026-05-28T14:37:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1702 | cache_read=26786 | cache_creation=10524 | duration_ms=19407 | cost_usd=0.024352
+
+## [2026-05-28T14:37:52Z] research | session_id=2026-05-28-hubspot-crm-api-capability-matrix-read | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-28T14:43:42Z] ingest | id=yt-ZUIprPSbYO4 | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-ZUIprPSbYO4.md wiki=wiki/sources/yt-ZUIprPSbYO4.md
+
+## [2026-05-28T14:46:48Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14830 | cache_read=0 | cache_creation=26976 | duration_ms=184199 | cost_usd=0.539375
+
+## [2026-05-28T14:46:51Z] wiki-author | id=yt-ZUIprPSbYO4 | updates=8 | created=5 | updated=3 | contradictions=0 | draft=no
+
+Source introduces a HubSpot+Claude Code automation methodology with several new entities (Breeze, Tom Granot, the HubSpot admin-skills repo) and extends existing HubSpot, Claude Code, and HubSpot Data Hygiene pages with concrete new claims about MCP read-only scope, Breeze credits, ghost contacts, and the plan/before/execute/after pattern.
+
+## [2026-05-28T14:48:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2132 | cache_read=0 | cache_creation=41752 | duration_ms=25648 | cost_usd=0.062858
+
+## [2026-05-28T14:49:08Z] nlm-add | id=yt-ZUIprPSbYO4 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=youtube
+
+url=https://www.youtube.com/watch?v=ZUIprPSbYO4
+
+## [2026-05-28T14:50:00Z] ingest | id=yt-bZo4jVdZfaI | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-bZo4jVdZfaI.md wiki=wiki/sources/yt-bZo4jVdZfaI.md
+
+## [2026-05-28T14:54:18Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=20356 | cache_read=0 | cache_creation=25329 | duration_ms=255672 | cost_usd=0.667231
+
+## [2026-05-28T14:54:19Z] wiki-author | id=yt-bZo4jVdZfaI | updates=5 | created=4 | updated=1 | contradictions=0 | draft=no
+
+Greg Karelitz's demo introduces HubSpot's official MCP server, Claude Desktop as the operator surface, and the external-AI-as-CRM pattern — none of which exist as pages — and adds an MCP path to the HubSpot entity.
+
+## [2026-05-28T14:54:25Z] nlm-add | id=yt-bZo4jVdZfaI | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=youtube
+
+url-failed-fell-back-to-text url=https://www.youtube.com/watch?v=bZo4jVdZfaI text=10360b
+
+## [2026-05-28T14:54:26Z] ingest | id=yt-PmViuQw2fNs | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-PmViuQw2fNs.md wiki=wiki/sources/yt-PmViuQw2fNs.md
+
+## [2026-05-28T14:57:16Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14268 | cache_read=2487 | cache_creation=22098 | duration_ms=168117 | cost_usd=0.496081
+
+## [2026-05-28T14:57:19Z] wiki-author | id=yt-PmViuQw2fNs | updates=7 | created=7 | updated=0 | contradictions=0 | draft=no
+
+First source establishing MEDDIC and the HubSpot feature mechanics (association labels, segments, deal tags) used to operationalize it — needs concept pages for the framework + each HubSpot primitive, plus an entity for the Jasper / HubSpot Excellence creator.
+
+## [2026-05-28T14:57:22Z] nlm-add | id=yt-PmViuQw2fNs | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=youtube
+
+url=https://www.youtube.com/watch?v=PmViuQw2fNs
+
+## [2026-05-28T14:57:23Z] ingest | id=web-2026-01-01-0e1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-0e1.md wiki=wiki/sources/web-2026-01-01-0e1.md
+
+## [2026-05-28T14:59:09Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8186 | cache_read=2487 | cache_creation=21500 | duration_ms=104200 | cost_usd=0.340294
+
+## [2026-05-28T14:59:10Z] wiki-author | id=web-2026-01-01-0e1 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Official HubSpot MCP product page is the direct authoritative input for the hubspot-mcp entity and grounds a new model-context-protocol concept page; other pages (hubspot, breeze, claude-code, claude-desktop) are only tangentially informed and the truncated existing-page view makes full-content replacement unsafe.
+
+## [2026-05-28T14:59:18Z] nlm-add | id=web-2026-01-01-0e1 | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=web
+
+url=https://developers.hubspot.com/mcp
+
+## [2026-05-28T14:59:20Z] ingest | id=yt-3JqJkRF0_yU | type=youtube | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/youtube/yt-3JqJkRF0_yU.md wiki=wiki/sources/yt-3JqJkRF0_yU.md
+
+## [2026-05-28T15:00:51Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7328 | cache_read=2487 | cache_creation=20308 | duration_ms=89178 | cost_usd=0.311393
+
+## [2026-05-28T15:00:51Z] wiki-author | id=yt-3JqJkRF0_yU | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source introduces two unseen products (Coupler.io as the ETL surface, BigQuery as the destination with concrete IAM/service-account contract); HubSpot is only referenced as a data source and the existing page is truncated in context, so no safe update.
+
+## [2026-05-28T15:00:54Z] nlm-add | id=yt-3JqJkRF0_yU | domain=orita-cmo | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a | type=youtube
+
+url=https://www.youtube.com/watch?v=3JqJkRF0_yU
+
+## [2026-05-28T15:01:55Z] lint | scope=contradiction-pages | contradiction-pages=0
+
+report=.knowledge/lint/2026-05-28T15-01-55Z-contradiction-pages.md

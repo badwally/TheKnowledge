@@ -677,3 +677,8 @@ first to orient before drilling into specific pages.
 - [[sources/docx-7ed3b7965067]] · docx · orita-competitive-intelligence-agent-spec · orita-cmo
 - [[sources/docx-b90a5e5fdcc4]] · docx · orita-agent-architecture-analysis · orita-cmo
 - [[sources/docx-25c1bcf28fb8]] · docx · orita-marketing-automation-plan · orita-cmo
+- [[sources/yt-ZUIprPSbYO4]] · youtube · Automate Your HubSpot CRM with Claude Code 🤖
+- [[sources/yt-bZo4jVdZfaI]] · youtube · Claude + HubSpot MCP: The Future of CRM is Here. See How I Use It.
+- [[sources/yt-PmViuQw2fNs]] · youtube · Automating MEDDIC: How to Flag Missing Decision Makers in HubSpot
+- [[sources/web-2026-01-01-0e1]] · web · HubSpot MCP Server
+- [[sources/yt-3JqJkRF0_yU]] · youtube · How to Set up HubSpot to BigQuery integration | Tutorial
