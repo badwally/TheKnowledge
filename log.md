@@ -25893,3 +25893,7 @@ lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counte
 ## [2026-05-28T23:31:09Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
 
 query against condo-capital-infra corpus
+
+## [2026-05-28T23:31:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-31-17Z-schema-drift.md
