@@ -72,7 +72,7 @@ A careful reader would find the following critical gaps in the corpus:
 
 **2. Lack of Concrete Mathematical or Funding Methodology**
 * **The Gap:** While the sources state that the CAI standards provide a "consistent set of terminology, calculations, and expectations" to minimize differences in "funding recommendations" [2], the corpus does not detail what any of those actual calculations are. 
-* **What is missing:** A careful reader would want to know the mechanics of the methodology. For example, how exactly does a firm calculate the funding requirements for a new "periodic structural inspection" [3]? The sources do not explain the financial models (e.g., cash flow vs. straight-line methods) or how concepts like "percent funded" are determined and presented to a board to provide a "stable and equitable funding plan" [1].
+* **What is missing:** A careful reader would want to know the mechanics of the methodology. For example, how exactly does a firm calculate the funding requirements for a new "periodic structural inspection" [3]? The sources do not explain the financial models (e.g., cash flow vs. straight-line methods) or how concepts like "percent funded" are determined and presented to a board to provide a "stable and equitable funding plan" [1]. [[sources/web-2025-01-01-946]]
 
 **3. Unanswered Financial Tensions for HOA Boards**
 * **The Gap:** The updated methodology actively urges communities to add "proactive preventive maintenance plan and ongoing periodic structural inspections" to their multiyear budgeting plans [3, 4] as a response to the Champlain Towers South collapse [5]. However, the sources do not address the financial tension this creates.
@@ -80,7 +80,7 @@ A careful reader would find the following critical gaps in the corpus:
 
 **4. Missing State-Specific Legal Contexts**
 * **The Gap:** The corpus explicitly shows that data collection for `davis-stirling.com` was blocked by a Cloudflare security service [6, 7]. 
-* **What is missing:** Because Davis-Stirling is the primary body of law governing HOAs in California, the corpus lacks any state-specific legislative frameworks or mandates that dictate how reserve study methodologies must be legally applied in certain jurisdictions. A careful reader would want to know how CAI's overarching international standards [1] intersect with specific state laws governing reserve studies.
+* **What is missing:** Because Davis-Stirling is the primary body of law governing HOAs in California, the corpus lacks any state-specific legislative frameworks or mandates that dictate how reserve study methodologies must be legally applied in certain jurisdictions. A careful reader would want to know how CAI's overarching international standards [1] intersect with specific state laws governing reserve studies. [[sources/web-2025-01-01-246]]
 
 [^1]: [^2]: [^3]: [^4]: [^5]: [^6]: [[sources/web-2025-01-01-246]] [^7]: [[sources/web-2025-01-01-946]]
 

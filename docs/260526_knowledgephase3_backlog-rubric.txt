@@ -1,0 +1,120 @@
+ Current state vs. build plan
+  
+  Phase 3 delivery rate: 9 of 31 items (29%)
+
+  What shipped in M62–M64 skewed heavily toward: outbound integration surfaces (INT-13/14/15/16/17), structural guards (ARCH-14), schema hygiene (ONT-11), and one-time
+  quality hooks (QUAL-13). These were the right calls at the time — they were S-effort, dependency-free, and unblocked the most visible Phase 3 exit criterion ("outbound
+  surfaces").
+  
+  What didn't ship falls into five buckets:
+
+  ┌──────────────────────────┬──────────────────────────────────────────────────────┬───────┐
+  │          Bucket          │                        Items                         │ Count │
+  ├──────────────────────────┼──────────────────────────────────────────────────────┼───────┤
+  │ Heavy ontology rework    │ ONT-1, ONT-5, ONT-7, ONT-9, ONT-13                   │ 5     │
+  ├──────────────────────────┼──────────────────────────────────────────────────────┼───────┤
+  │ Quality monitoring chain │ QUAL-1, QUAL-7, QUAL-8, QUAL-9, QUAL-10, QUAL-14     │ 6     │
+  ├──────────────────────────┼──────────────────────────────────────────────────────┼───────┤
+  │ Agent layer expansion    │ AGT-4, AGT-5, AGT-6, AGT-7, AGT-12, AGT-13           │ 6     │
+  ├──────────────────────────┼──────────────────────────────────────────────────────┼───────┤
+  │ Tool/surface work        │ TOOL-8, TOOL-12, TOOL-13, TOOL-14                    │ 4     │
+  ├──────────────────────────┼──────────────────────────────────────────────────────┼───────┤
+  │ Infrastructure + docs    │ ARCH-12/13/15, TOK-1 follow-up, TOK-10, DOC-5/8/9-12 │ 10    │
+  └──────────────────────────┴──────────────────────────────────────────────────────┴───────┘
+
+  The Phase 3 exit criteria is partially met:
+  - ✓ Outbound surfaces shipped
+  - ✓ 3 agents on schedule, drafts declining
+  - ✓ Eval framework producing per-milestone scores
+  - ✗ Ontology not consolidated (ONT-1 untouched — the anchor item)
+  - ✗ Corpus quality lacks temporal monitoring (QUAL-1 not done)
+  - ✗ Second synthesis backend not operational (ARCH-12 not started)
+
+  ---
+  The rubric for backlog decisions
+
+  Four dimensions, applied in order:
+
+  1. Does it change daily operational outcomes?
+  Work that the system does every day without prompting (scheduled agents, monitors, pollers) compounds permanently. Work that improves authoring ergonomics or schema
+  modeling does not compound — it helps at write time only.
+
+  2. Is the bottleneck engineering or human judgment?
+  If the item requires per-domain calibration (QUAL-10), per-page LLM review (ONT-1), or cross-system coordination (AGT-7), engineering delivers an interface, not an outcome.
+   Human-bottlenecked items have lower effective leverage per sprint.
+
+  3. Is effort proportionate to the use case that actually exists right now?
+  ONT-1 (~1000 concept reclassifications) and ARCH-12 (second NLM backend) are both L-effort. The concept overflow doesn't block any current workflow. The single-vendor risk
+  is real but not acute. L-effort items need a concrete forcing function, not just "this is the right architecture."
+
+  4. Are dependencies satisfied?
+  Several items are technically unblocked but were listed as depending on things that shipped (K2, K4, ONT-3, ONT-4). These should be re-evaluated rather than assumed
+  blocked.
+
+  ---
+  Applying the rubric: what goes to backlog and why
+
+  ┌───────────────────────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                   Item                    │                                                      Backlog reason                                                       │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ONT-1 (claim/finding type, 1000           │ L effort + human-bottlenecked (requires review of 1000 LLM proposals). No workflow is blocked. Do when concept overflow   │
+  │ reclassifications)                        │ creates actual retrieval failures.                                                                                        │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ONT-5/7/9/13                              │ M effort, low daily-use impact. Academic modeling improvements that don't change how the wiki is queried or authored.     │
+  │                                           │ Phase 5.                                                                                                                  │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ QUAL-7/8/14                               │ QUAL-7 (retraction monitor) is valid but affects a small arxiv/pubmed subset. QUAL-8 (citation-claim coherence) is        │
+  │                                           │ L-effort LLM work. QUAL-14 blocked on QUAL-1+7.                                                                           │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ QUAL-10 (held-out gold set)               │ Requires calibration-set curation per domain — human bottleneck, not just engineering. Do when eval is being actively     │
+  │                                           │ used for regressions (it isn't yet).                                                                                      │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ AGT-5/7/13                                │ AGT-5 scope is vague in review doc. AGT-7 requires tight cross-project coordination with capture pipeline. AGT-13         │
+  │                                           │ cascades from AGT-12. Phase 5.                                                                                            │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ARCH-12 (second NLM backend)              │ L-effort. NotebookLM risk is real but not acute. Do when NotebookLM causes a real disruption or when a specific NLM       │
+  │                                           │ limitation is hit.                                                                                                        │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ TOK-10 (Sonnet route for authorship)      │ M effort for minor cost optimization. Current spend is manageable.                                                        │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ DOC-5/8/9-12                              │ Housekeeping. Run a dedicated doc sprint when the corpus hits 5k+ pages or a second contributor joins.                    │
+  ├───────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ARCH-13/15                                │ S-effort but low impact. Opportunistic — do in a quiet slot, not as a primary milestone item.                             │
+  └───────────────────────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+  ---
+  Proposed Phase 4 scope
+  
+  Thesis: Phase 4 bets on agent compounding — scheduled work that runs without prompting — plus closing the one quality gap that's actively accumulating debt (link-rot on web
+   sources).
+
+  ┌──────────────────────────────────────────┬────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │                   Item                   │ Effort │                                                     Rationale                                                     │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ AGT-4 (contradiction sweeper)            │ M      │ Deps satisfied (ONT-3, K2). Only agent type that runs on a corpus and produces citations. Directly reduces        │
+  │                                          │        │ contradiction debt that is currently invisible.                                                                   │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ QUAL-9 (contamination quarantine in      │ S      │ Zero deps. Prevents the M14 contamination class of bug from recurring. Protective, not decorative.                │
+  │ promote-domain)                          │        │                                                                                                                   │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ QUAL-1 (link-rot monitor)                │ M      │ Wayback already wired (QUAL-13). Adds the polling half: writes link_status: to frontmatter, surfaces in lint.     │
+  │                                          │        │ Completes the pair.                                                                                               │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ AGT-6 (brief generator)                  │ S      │ Zero deps. Simple agent, obvious gap. A domain briefing agent runs on a schedule and produces a page per domain — │
+  │                                          │        │  straight compound value.                                                                                         │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ INT-12 (Notion mirror)                   │ M      │ Notion MCP available. Read-only mirror of wiki pages into Notion extends reach without complex write-path         │
+  │                                          │        │ concerns.                                                                                                         │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ AGT-12 (wiki-* skills family)            │ S      │ K2 done. Creates .claude/skills/wiki-* — makes wiki ops more accessible from Claude Code sessions. Low effort,    │
+  │                                          │        │ real surface expansion.                                                                                           │
+  ├──────────────────────────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ TOOL-14 (scheduled contradiction + drift │ M      │ K4 done, ONT-3 done. Dependencies resolved. Closes the gap between contradiction detection (M42/M56) and          │
+  │  detection)                              │        │ automated scheduled monitoring.                                                                                   │
+  └──────────────────────────────────────────┴────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+  Not in Phase 4 but worth watching: QUAL-10 becomes Phase 4 stretch if we run eval on another milestone and find regression — that's the forcing function. TOK-1 follow-up
+  (prompt caching wiring) becomes Phase 4 if API costs spike.
+
+  Phase 4 exit criteria: At least 3 new scheduled agents producing visible output; link-rot surfaced in lint across web-source corpus; Notion mirror live; wiki-* skills
+  accessible in Claude Code.

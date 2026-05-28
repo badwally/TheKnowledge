@@ -245,6 +245,19 @@ notebooks:
       created_at: '2026-05-28T01:12:03Z'
       sources_count: 10
       last_sync: '2026-05-28T15:00:54Z'
+    sessions:
+    - session_id: 2026-05-28-multi-user-gcp-deployment-patterns-for
+      notebook_id: 8558282b-8c10-48e9-8c9a-5ec97c2df879
+      query: 'Multi-user GCP deployment patterns for Claude-based AI agent systems
+        serving a 10-person marketing team: Cloud Run vs GKE for MCP server hosting,
+        Firebase Auth / Identity Platform for OAuth 2.0 + PKCE multi-user session
+        management, rate limiting and quota governance for concurrent Anthropic API
+        and HubSpot API calls, cost attribution per user, and operational monitoring
+        patterns for small-team LLM agent deployments in a MarTech context.'
+      created_at: '2026-05-28T20:32:03Z'
+      status: abandoned
+      sources_count: 3
+      promoted_at: null
   risksystems:
     persistent:
       notebook_id: dee0eae4-b11f-4df2-a418-d10fffd42c7e

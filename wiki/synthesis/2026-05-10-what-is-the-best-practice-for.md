@@ -33,7 +33,7 @@ For a 100+ unit building, predictive efforts should not be wasted on low-varianc
 
 **2. Deploy Non-Invasive IoT and Sensor Fusion**
 Instead of relying on the mandated 3-to-5-year visual inspections dictated by provincial Reserve Fund Studies (such as BC's Depreciation Reports or Ontario's RFS), buildings must transition to continuous monitoring [3-6]. 
-*   **Leverage LoRaWAN and Universal Gateways:** To overcome the technical fragmentation of older buildings, use universal gateways (like BACnet or Modbus) and wireless LoRaWAN sensors that can penetrate concrete and steel without requiring expensive new cable runs [7-11].
+*   **Leverage LoRaWAN and Universal Gateways:** To overcome the technical fragmentation of older buildings, use universal gateways (like BACnet or Modbus) and wireless LoRaWAN sensors that can penetrate concrete and steel without requiring expensive new cable runs [7-11]. [[sources/web-2025-08-01-8c2]]
 *   **Focus on Shared Infrastructure:** Rather than installing sensors in individual units—which requires high friction and 100 individual owner approvals—install vibration and temperature sensors on shared chillers and boilers, door cycle counters on elevators, and flow/pressure meters on central plumbing risers [12-14].
 
 **3. Implement Machine Learning for Fault Detection and Diagnostics (FDD)**

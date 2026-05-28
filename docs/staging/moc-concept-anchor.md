@@ -1,0 +1,1 @@
+- [[concepts/ai-native-substrate]] — **AI as substrate vs. AI as feature vs. AI as product.** Definition, structural differences (organizational/economic/technical), why substrate-first is the solo-founder operative frame, boundary cases (Cursor, Genspark pivot, the "Pets.com dilemma" of pure-AI margins).
