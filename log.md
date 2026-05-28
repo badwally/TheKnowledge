@@ -25897,3 +25897,39 @@ query against condo-capital-infra corpus
 ## [2026-05-28T23:31:17Z] lint | scope=schema-drift | schema-drift=191
 
 report=.knowledge/lint/2026-05-28T23-31-17Z-schema-drift.md
+
+## [2026-05-28T23:31:38Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-31-38Z-schema-drift.md
+
+## [2026-05-28T23:31:40Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:31:40Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:31:52Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:31:52Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:32:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:32:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:32:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:32:41Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
