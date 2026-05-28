@@ -27,7 +27,7 @@ class ContextTooLargeError(RuntimeError):
     """Assembled context exceeds the LLM-prompt budget."""
 
 
-_DEFAULT_MAX_CHARS = 500_000
+_DEFAULT_MAX_CHARS = 750_000
 _DEFAULT_MAX_SOURCE_BODY_CHARS = 30_000
 
 
