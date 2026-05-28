@@ -12,6 +12,7 @@ the source is no longer listed as an orphan after `wiki finalize`.
 from __future__ import annotations
 
 import re
+import subprocess
 
 from gateway import frontmatter as fm, log, paths
 from gateway.core import OperationResult
@@ -104,6 +105,28 @@ def _synthesis_question(source: dict, domain_topic: str = "") -> str:
     return f"What does \"{title}\" contribute to this domain's understanding{context}?"
 
 
+def _git_commit_synthesis_drafts(filepaths: list, domain: str) -> str | None:
+    """Git-add synthesis pages and commit them. Returns short SHA or None on failure."""
+    root = paths.knowledge_root()
+    try:
+        subprocess.run(
+            ["git", "add", "--"] + [str(p) for p in filepaths],
+            cwd=root, capture_output=True, check=True,
+        )
+        result = subprocess.run(
+            ["git", "commit", "-m",
+             f"chore(discharge-orphans): {len(filepaths)} synthesis drafts filed — domain {domain!r}"],
+            cwd=root, capture_output=True, text=True,
+        )
+        if result.returncode == 0:
+            for line in result.stdout.splitlines():
+                if line.startswith("["):
+                    return line.split()[1] if len(line.split()) > 1 else None
+    except Exception:
+        pass
+    return None
+
+
 def discharge_orphans(
     domain: str,
     *,
@@ -146,6 +169,7 @@ def discharge_orphans(
     filed = 0
     skipped = 0
     errors: list[str] = []
+    synthesis_paths: list = []
 
     for source in sources:
         question = _synthesis_question(source, domain_topic)
@@ -155,11 +179,18 @@ def discharge_orphans(
         result = query(question, domain=domain, draft=True)
         if result.success:
             filed += 1
+            synthesis_paths.extend(
+                p for p in result.paths_touched
+                if str(p).endswith(".md") and "wiki/synthesis" in str(p)
+            )
         else:
             skipped += 1
             errors.append(f"{source['id']}: {'; '.join(result.errors)}")
 
     if not dry_run:
+        commit_sha = None
+        if synthesis_paths:
+            commit_sha = _git_commit_synthesis_drafts(synthesis_paths, domain)
         log.append(
             op="discharge-orphans",
             fields={
@@ -168,6 +199,7 @@ def discharge_orphans(
                 "skipped": skipped,
                 "limit": limit,
                 "errors": len(errors),
+                **({"commit": commit_sha} if commit_sha else {}),
             },
             summary=f"discharge-orphans: {filed} drafts filed for domain {domain!r}",
         )

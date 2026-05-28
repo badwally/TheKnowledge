@@ -410,3 +410,81 @@ def test_cli_discharge_orphans_calls_op(kb_root: Path) -> None:
 
     mock_op.assert_called_once_with("glp1", limit=5, dry_run=True)
     assert rc == 0
+
+
+# ---------------------------------------------------------------------------
+# M111: auto-commit synthesis drafts after batch
+# ---------------------------------------------------------------------------
+
+
+def test_auto_commit_called_after_successful_batch(kb_root: Path) -> None:
+    """Successful discharge runs git add + commit for the synthesis pages."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+    from pathlib import Path
+
+    _write_raw_source(kb_root, slug="commit-src", domain="glp1")
+    synth_path = kb_root / "wiki" / "synthesis" / "ans.md"
+    ok = OperationResult(
+        success=True,
+        summary="Wrote draft: wiki/synthesis/ans.md",
+        data={},
+        paths_touched=[synth_path],
+    )
+
+    with patch("gateway.ops.query.query", return_value=ok):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            mock_sub.run.return_value.returncode = 0
+            mock_sub.run.return_value.stdout = "[main abc1234] chore(discharge-orphans)..."
+            mock_sub.run.return_value.splitlines = lambda: [
+                "[main abc1234] chore(discharge-orphans)..."
+            ]
+            result = discharge_orphans("glp1", limit=1)
+
+    assert result.success
+    assert mock_sub.run.call_count == 2  # git add + git commit
+
+
+def test_auto_commit_skipped_in_dry_run(kb_root: Path) -> None:
+    """Dry-run does not call git commit."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="dry-commit-src", domain="glp1")
+
+    with patch("gateway.ops.query.query", return_value=_ok_result()):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            result = discharge_orphans("glp1", limit=1, dry_run=True)
+
+    mock_sub.run.assert_not_called()
+
+
+def test_auto_commit_skipped_when_no_synthesis_paths(kb_root: Path) -> None:
+    """If query succeeds but returns no synthesis paths, no commit is attempted."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+
+    _write_raw_source(kb_root, slug="no-path-src", domain="glp1")
+    ok_no_path = OperationResult(success=True, summary="filed", data={}, paths_touched=[])
+
+    with patch("gateway.ops.query.query", return_value=ok_no_path):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            result = discharge_orphans("glp1", limit=1)
+
+    mock_sub.run.assert_not_called()
+
+
+def test_auto_commit_survives_git_failure(kb_root: Path) -> None:
+    """Git commit failure does not fail the discharge operation."""
+    from gateway.ops.discharge_orphans import discharge_orphans
+    from pathlib import Path
+
+    _write_raw_source(kb_root, slug="fail-commit-src", domain="glp1")
+    synth_path = kb_root / "wiki" / "synthesis" / "ans.md"
+    ok = OperationResult(
+        success=True, summary="Wrote draft", data={}, paths_touched=[synth_path],
+    )
+
+    with patch("gateway.ops.query.query", return_value=ok):
+        with patch("gateway.ops.discharge_orphans.subprocess") as mock_sub:
+            mock_sub.run.side_effect = Exception("git not available")
+            result = discharge_orphans("glp1", limit=1)
+
+    assert result.success  # operation succeeds even if git commit fails
