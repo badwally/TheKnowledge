@@ -20,7 +20,7 @@ from gateway.core import parse_iso
 from gateway.lint import LintFinding, SEVERITY_ERROR, SEVERITY_WARNING
 
 STALE_DAYS: int = 365
-_TIME_SENSITIVE_KINDS: frozenset[str] = frozenset({"statute", "standard"})
+_TIME_SENSITIVE_KINDS: frozenset[str] = frozenset({"statute", "regulation", "standard"})
 
 
 def run() -> list[LintFinding]:

@@ -62,9 +62,11 @@ ENTITY_KIND_ENUM: frozenset[str] = frozenset({
     "product",
     "software",
     "statute",
+    "regulation",
     "standard",
     "place",
     "event",
+    "artifact",
     "other",
 })
 

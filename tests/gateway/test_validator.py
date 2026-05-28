@@ -237,10 +237,11 @@ def _entity_front(entity_kind: str) -> dict:
 
 
 def test_entity_kind_enum_exact_set():
-    """ONT-4: ENTITY_KIND_ENUM contains exactly the 12 canonical values."""
+    """ONT-4: ENTITY_KIND_ENUM contains exactly the 14 canonical values."""
     expected = frozenset({
         "person", "organization", "paper", "drug", "dataset",
-        "product", "software", "statute", "standard", "place", "event", "other",
+        "product", "software", "statute", "regulation", "standard",
+        "place", "event", "artifact", "other",
     })
     assert v.ENTITY_KIND_ENUM == expected
 
