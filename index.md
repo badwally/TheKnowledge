@@ -682,3 +682,4 @@ first to orient before drilling into specific pages.
 - [[sources/yt-PmViuQw2fNs]] · youtube · Automating MEDDIC: How to Flag Missing Decision Makers in HubSpot
 - [[sources/web-2026-01-01-0e1]] · web · HubSpot MCP Server
 - [[sources/yt-3JqJkRF0_yU]] · youtube · How to Set up HubSpot to BigQuery integration | Tutorial
+- [[sources/web-2026-04-11-879]] · web · GitHub - do-y-lee/wikiloom: WikiLoom turns raw documents into a persistent, compounding knowledge base. The LLM reads sources and writes structured wiki pages.

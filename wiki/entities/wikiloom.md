@@ -3,38 +3,37 @@ schema_version: 1
 type: entity
 slug: wikiloom
 canonical_name: WikiLoom
-entity_kind: software
+entity_kind: product
 domains:
-- knowledge-management
-draft: true
-draft_started_at: '2026-05-05T00:22:48Z'
-draft_unresolved_claims: 0
-created_at: '2026-05-05T04:01:32Z'
-last_updated: '2026-05-05T04:01:32Z'
+- knowledge-systems
+created_at: '2026-05-28T20:23:59Z'
+last_updated: '2026-05-28T20:23:59Z'
 ---
 
 # WikiLoom
 
 ## Summary
 
-WikiLoom is a Python tool that ingests documents (PDFs, markdown files, URLs) and uses an LLM to write structured wiki pages with deterministic linking, structural provenance, and human-edit protection . It auto-commits every state-modifying operation to git with a classifying prefix . The project is inspired by Andrej Karpathy's LLM wiki gist .
+WikiLoom is an LLM-driven tool that turns raw documents (PDFs, markdown files, URLs) into a persistent, compounding knowledge base of structured wiki pages with deterministic linking, structural provenance, and human-edit protection [[sources/web-2026-04-11-879]]. It is explicitly inspired by Andrej Karpathy's LLM wiki gist [[sources/web-2026-04-11-879]].
 
 ## Key facts
 
-- Authored by Do-Y-Lee and hosted at github.com/do-y-lee/wikiloom .
-- Installed via `pip install wikiloom` and requires the spaCy `en_core_web_sm` model .
-- Supports Python 3.10–3.13 on Linux, Windows, and Apple Silicon Macs; Python 3.10–3.12 on Intel Macs because `onnxruntime` no longer publishes Intel macOS wheels for 3.13+ .
-- Default LLM provider is Anthropic; OpenAI, Google, and Ollama (zero-cost local) are also supported via the `--provider` flag at `wikiloom init` time .
-- Project layout includes `wikiloom.toml` for config, a `.env` for API keys, and a `.wikiloom/` directory with customizable prompts and a page schema .
-- Exposes 26 CLI commands grouped into ingest, query, lifecycle, hygiene, and observability categories .
-- Default monthly budget is $50, enforced via a pre-flight token-cost check .
-- Default embedding backend is `fastembed` (~66MB), cached in a per-user durable location across macOS, Linux, and Windows .
-- URL ingestion works on static HTML sites but does not handle JavaScript-rendered pages, paywalled content, or sites with bot protection / WAF .
-- Page status lifecycle is `active → dormant (optional) → deprecated → purged (gone)` .
+- WikiLoom is distributed as a Python package installable via `pip install wikiloom` and requires the spaCy `en_core_web_sm` model for its linking engine [[sources/web-2026-04-11-879]].
+- It supports Python 3.10–3.13 on Linux, Windows, and Apple Silicon Macs; Intel Macs are limited to 3.10–3.12 because `onnxruntime` (a transitive embedding dependency) no longer publishes Intel macOS wheels for Python 3.13+ [[sources/web-2026-04-11-879]].
+- Python 3.14 is not yet supported on any platform because spaCy has no 3.14 wheel [[sources/web-2026-04-11-879]].
+- Provider presets include Anthropic (default), OpenAI, Google, and Ollama; the Ollama backend enables zero-cost local operation [[sources/web-2026-04-11-879]].
+- The architecture splits responsibilities: the LLM handles judgment (reading sources, extracting claims, assessing confidence), while linking, backlink graph maintenance, index regeneration, and git commits are deterministic [[sources/web-2026-04-11-879]].
+- Every command that modifies state auto-commits with a classifying prefix such as `ingest:`, `lint:`, `merge:`, or `human-edit:` [[sources/web-2026-04-11-879]].
+- WikiLoom exposes 26 commands grouped into init/save/rebuild, ingest, query and inspection, page lifecycle (merge, deprecate, purge, dormant), maintenance (lint, relink, review, reindex, protect), and observability (status, log, edits, cost) [[sources/web-2026-04-11-879]].
+- A pre-flight budget check refuses ingest runs that would exceed `monthly_budget_usd` in `wikiloom.toml` (default $50/month) [[sources/web-2026-04-11-879]].
+- The default embedding backend is `fastembed`, downloading a ~66MB model once into a durable per-user cache (e.g. `~/Library/Caches/wikiloom/fastembed` on macOS) [[sources/web-2026-04-11-879]].
+- Recommended ingest formats are `.md`, `.txt`, `.rst`, text-based PDFs, and URLs (`http://`/`https://`); `.docx`, `.pptx`, code files, and config/IaC files are supported with caveats; scanned PDFs, Excel, large CSVs, images, and standalone HTML are not supported [[sources/web-2026-04-11-879]].
+- URL ingestion works for static HTML sites but not for JavaScript-rendered apps, paywalled content, or sites with bot protection — users are told to download such pages as PDF and ingest the PDF instead [[sources/web-2026-04-11-879]].
+- WikiLoom is authored by Do-Y-Lee and hosted at github.com/do-y-lee/wikiloom [[sources/web-2026-04-11-879]].
 
 ## Sources
 
-- — WikiLoom GitHub README
+- [[sources/web-2026-04-11-879]] — WikiLoom GitHub README
 
 ## Related
 
