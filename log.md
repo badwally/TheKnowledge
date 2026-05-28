@@ -25933,3 +25933,15 @@ lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counter
 ## [2026-05-28T23:32:41Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
 
 query against condo-capital-infra corpus
+
+## [2026-05-28T23:32:49Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:32:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:32:49Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-32-49Z-schema-drift.md
