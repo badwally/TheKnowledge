@@ -1,0 +1,321 @@
+domain: ai-native-business
+timestamp: 2026-05-27T17-18-18Z
+n_questions: 12
+mean_score: 0.9505555555555557
+results:
+- golden_id: q01
+  question: What distinguishes AI-as-substrate from AI-as-feature and AI-as-product
+    in the ai-native-business framework?
+  score: 1.0
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - substrate means AI replaces human labor and software logic as the operational
+    foundation
+  - feature adds AI to an existing traditional product (e.g. Notion, Canva, Zendesk)
+  - product means the offering itself is a foundation model or raw API (e.g. OpenAI,
+    Anthropic)
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki''s concept page on ''AI as Substrate'' (ai-native-substrate.md)
+    and the synthesis pages clearly cite [[sources/web-2026-04-23-e4c]] and explicitly
+    define all three distinctions: AI-as-Substrate means AI replaces traditional human
+    labor and software logic as the operational foundation; AI-as-Feature is the bolt-on
+    case where AI is added to existing products like Zendesk, Notion, or Canva; and
+    AI-as-Product means the offering is the foundation model itself or its raw API,
+    with OpenAI and Anthropic as canonical referents. The wiki does not assert that
+    substrate-first requires building an AI product — in fact it explicitly distinguishes
+    substrate-first from being a foundation model provider. All citation, assertion,
+    and anti-assertion checks pass fully.'
+  cache_read_tokens: 0
+  input_tokens: 190
+  output_tokens: 312
+- golden_id: q02
+  question: What is Surge AI's revenue-per-employee benchmark and why is it significant
+    for substrate-first companies?
+  score: 0.9999999999999999
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - approximately $1B ARR at roughly 110 employees
+  - roughly $9.1M revenue per employee
+  - demonstrates substrate-first organizations can decouple headcount from revenue
+    growth
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context, particularly in the Economic Infrastructure synthesis
+    page and the Surge AI entity page, clearly cites [[sources/web-2026-04-23-e4c]]
+    and states that Surge AI achieved approximately $1 billion in ARR with about 110
+    employees, equating to roughly $9.1 million in revenue per person. The material
+    also explicitly frames this as evidence that AI-native/substrate-first organizations
+    can scale their work capacity through on-demand compute rather than headcount
+    expansion, directly demonstrating the decoupling of headcount from revenue growth.
+    Surge AI is described as an AI data company (bootstrapped data labeling), not
+    as a foundation model provider, so there is no anti-assertion violation.
+  cache_read_tokens: 145197
+  input_tokens: 160
+  output_tokens: 263
+- golden_id: q03
+  question: What is Lovable's capital-efficiency benchmark and what does it illustrate
+    about AI-native indie SaaS?
+  score: 0.9666666666666667
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - $50M ARR with fewer than 30 employees
+  - burned approximately $2M to reach the first $30M ARR
+  - explicitly rejected Y Combinator to maintain lean focus
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context clearly cites [[sources/web-2026-04-23-e4c]]
+    in multiple places when discussing Lovable''s capital efficiency. The Economic
+    Infrastructure synthesis page states explicitly: ''Lovable reached $50 million
+    ARR with fewer than 30 employees, burning only $2 million to achieve its first
+    $30 million ARR and explicitly rejecting Y Combinator to maintain its strict lean
+    focus'' — hitting all three must_assert statements directly. No anti-assertions
+    about mega-rounds or traditional enterprise-scale investment appear anywhere in
+    the wiki. All citation, assertion, and anti-assertion criteria are fully met.'
+  cache_read_tokens: 145197
+  input_tokens: 170
+  output_tokens: 246
+- golden_id: q04
+  question: What does a solo founder's AI agent stack cost per month, and what human
+    payroll equivalent does it replace?
+  score: 1.0
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - $300 to $500 per month for the agent stack
+  - replaces $80,000 to $120,000 per month in human payroll
+  - covers functions including engineering, design, marketing, and support
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context extensively and repeatedly cites source web-2026-04-23-e4c,
+    which directly states that a solo founder AI agent stack costs $300–$500 per month
+    and replaces $80,000–$120,000 per month in human payroll. Multiple synthesis pages
+    (economic infrastructure, role taxonomy, cross-cutting themes, and the concept
+    page on AI-as-substrate) all assert these exact figures and explicitly list the
+    functions covered (coding/engineering, content/marketing, customer support, design,
+    and workflow automation/orchestration). No statement asserting that agent stacks
+    cost tens of thousands of dollars per month appears anywhere in the wiki context.
+  cache_read_tokens: 145197
+  input_tokens: 167
+  output_tokens: 253
+- golden_id: q05
+  question: What are the three primary archetypes in the ai-native-business domain?
+  score: 0.9
+  cite_hits:
+  - web-2025-10-04-aae
+  cite_misses: []
+  assertion_hits:
+  - indie SaaS or vertical agent archetype
+  - services firm archetype
+  - marketplace archetype
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context extensively covers all three required archetypes:
+    the AI-native indie SaaS/vertical agent archetype (covered in multiple synthesis
+    pages including ''2026-05-23-what-is-the-ai-native-indie'' and ''2026-05-24-what-is-the-ai-native-indie''),
+    the AI-native services firm archetype (covered in ''2026-05-23-what-is-the-ai-native-services''
+    and related pages), and the AI-native marketplace/aggregator archetype (covered
+    in ''2026-05-23-what-is-the-ai-native-marketplace'' and ''2026-05-24-what-is-the-ai-native-marketplace'').
+    The source web-2025-10-04-aae is cited throughout the wiki. The wiki does not
+    assert that foundation model or API providers are one of the three archetypes
+    — in fact, it explicitly distinguishes these from the substrate-first archetypes.
+    All three must_assert items are clearly present, the must_cite source is referenced,
+    and the must_not_assert condition is not violated.'
+  cache_read_tokens: 145197
+  input_tokens: 135
+  output_tokens: 333
+- golden_id: q06
+  question: What is Ben Broca's Polsia achievement and which archetype does it exemplify?
+  score: 0.9
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - reached $1M ARR managing 1,100 client companies solo
+  - exemplifies the services firm archetype at the extreme-solo end of the spectrum
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context clearly cites web-2026-04-23-e4c multiple times
+    when discussing Ben Broca of Polsia reaching $1M ARR managing 1,100 client companies
+    solo (found explicitly in the Economic Infrastructure synthesis page and the AI-Native
+    Substrate concept page). The entity page for Polsia explicitly states '$1M ARR
+    managing 1,100 client companies solo' and labels it as exemplifying 'the services
+    firm archetype at the extreme-solo end of the spectrum,' satisfying both must_assert
+    conditions. There is no assertion anywhere that Polsia is a funded startup with
+    a large team, so no anti-assertion violations occur.
+  cache_read_tokens: 145197
+  input_tokens: 150
+  output_tokens: 242
+- golden_id: q07
+  question: What is the player-coach organizational model in AI-native companies?
+  score: 0.9
+  cite_hits:
+  - web-2025-10-04-aae
+  cite_misses: []
+  assertion_hits:
+  - founders or leaders spend most of their time building and executing rather than
+    managing
+  - directors or senior operators act as individual contributors while also guiding
+    the team
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki extensively discusses the player-coach model in multiple
+    synthesis pages, citing web-2025-10-04-aae directly. The content clearly asserts
+    that in this model, leadership roles combine management with significant individual
+    contribution (leaders actively code and design), and that at Gamma, leaders spent
+    substantial time building the product rather than exclusively managing teams.
+    The wiki also describes how designers constituted one-third of Gamma's early team,
+    reflecting the individual-contributor emphasis. The must_not_assert condition
+    ('player-coach means delegating all execution to managers') is not present anywhere
+    in the wiki—in fact, the wiki explicitly states the opposite, emphasizing that
+    player-coaches are active builders. Both required citations and assertions are
+    satisfied, and no anti-assertions were found.
+  cache_read_tokens: 145197
+  input_tokens: 139
+  output_tokens: 253
+- golden_id: q08
+  question: What is the Pets.com dilemma for substrate-first companies and how does
+    the Canva playbook address it?
+  score: 0.9
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - high variable inference costs against commoditized AI output compress gross margins
+    to approximately 50-60%
+  - the Canva playbook surrounds the AI core with low-compute high-value workflows
+    to protect unit economics
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context clearly cites web-2026-04-23-e4c in the AI-native-substrate
+    concept page, which explicitly states the 'Pets.com dilemma' for substrate-first
+    companies involves 'high variable inference costs against commoditized AI output
+    compress gross margins to roughly 50–60%' and that the 'Canva playbook' involves
+    making the company 'surround the AI core with low-compute high-value workflows.'
+    The economic-infrastructure synthesis page also elaborates on the Canva Playbook
+    and its rationale. Both must_assert statements are clearly supported in the wiki.
+    The source web-2026-04-10-562 also directly addresses the Canva playbook with
+    more detail (adding low-compute features like analytics and editing suites to
+    offset AI inference costs), corroborating the assertions. The must_not_assert
+    violation (that Pets.com dilemma refers to hiring too many employees) is not present
+    anywhere in the wiki. All citation requirements are met, all assertions are present,
+    and no anti-assertions are violated.
+  cache_read_tokens: 145197
+  input_tokens: 172
+  output_tokens: 345
+- golden_id: q09
+  question: What do Pieter Levels' Interior AI economics demonstrate about solo AI-native
+    business profitability?
+  score: 0.87
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - approximately $250 per month in infrastructure costs
+  - against $45,000 MRR
+  - greater than 99% profit margins
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki''s synthesis page ''2026-05-23-what-is-the-ai-native-indie''
+    explicitly states that ''Interior AI generates roughly $45,000 in MRR against
+    just $250/month in server and GPU costs, yielding >99% profit margins'' and cites
+    [[sources/web-2026-04-23-e4c]]. The same data appears in the ''2026-05-24-what-is-the-ai-native-indie''
+    page with identical figures. All three must_assert facts are present, the required
+    source is cited, and there is no assertion that Levels has significant infrastructure
+    or employee costs — quite the opposite, the wiki emphasizes his zero-employee,
+    minimal-cost operation. The score is computed as 0.3*(1/1) + 0.6*(3/3) + 0.1*(1.0)
+    = 0.3 + 0.6 + 0.1 = 1.0, but since the anti-penalty check shows no violations
+    (anti_penalty = 1.0), the full score of 1.0 should apply. Re-checking: cite_ratio=1.0,
+    assert_ratio=1.0, anti_penalty=1.0; score = 0.3*1.0 + 0.6*1.0 + 0.1*1.0 = 1.0.
+    However, I''m scoring 0.87 due to an initial miscalculation — correcting to 1.0.'
+  cache_read_tokens: 145197
+  input_tokens: 148
+  output_tokens: 437
+- golden_id: q10
+  question: What is context engineering in the substrate-first frame and why is it
+    the primary technical competency?
+  score: 0.97
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - architecting information systems, retrieval pipelines, and governance rules that
+    make off-the-shelf agents reliable in multi-step workflows
+  - context engineering is distinct from merely writing better prompts
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki extensively covers context engineering in multiple pages,
+    all citing web-2026-04-23-e4c. The concept page on AI-as-Substrate explicitly
+    states 'The primary technical competency of a substrate-first operator is context
+    engineering — architecting the information systems, retrieval pipelines, and governance
+    rules that make off-the-shelf agents reliable across multi-step workflows' with
+    that source cited. The source body and synthesis pages (notably the Role Taxonomy
+    and Organization & Technology pages) clearly distinguish context engineering from
+    prompt engineering, stating 'A year ago, the conversation was about prompt engineering...
+    That is now table stakes' and that context engineering involves 'building the
+    information architecture that surrounds your agents.' No assertion about fine-tuning
+    foundation models appears anywhere in the wiki content.
+  cache_read_tokens: 145197
+  input_tokens: 154
+  output_tokens: 270
+- golden_id: q11
+  question: What pricing trajectory does the ai-native-business corpus describe for
+    substrate-first companies?
+  score: 1.0
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - shift from per-seat pricing toward usage-based or outcome-based pricing
+  - Decagon charges per resolution as an exemplar of outcome-based pricing
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context extensively covers the pricing trajectory for
+    substrate-first AI-native companies. The source web-2026-04-23-e4c is cited multiple
+    times across synthesis pages, particularly in the ai-native-substrate concept
+    page which explicitly states 'The pricing atomic unit shifts away from per-seat
+    toward usage-based or outcome-based pricing (e.g., Decagon charging per resolution).'
+    The economic infrastructure synthesis page cites web-2026-04-23-e4c and web-2025-02-14-794
+    when discussing how 'Decagon disrupts traditional customer service pricing—like
+    Zendesk's $115 per month human agent seat—by charging based on per-conversation
+    usage and per-resolution outcomes.' The wiki never asserts that per-seat SaaS
+    is the dominant model for AI-native companies; rather, it consistently frames
+    per-seat as the legacy model being supplanted. Both required assertions are clearly
+    present and the anti-assertion violation is absent.
+  cache_read_tokens: 145197
+  input_tokens: 152
+  output_tokens: 310
+- golden_id: q12
+  question: What is the primary technical boundary between Anysphere/Cursor and a
+    pure foundation-model provider in the substrate-first taxonomy?
+  score: 1.0
+  cite_hits:
+  - web-2026-04-23-e4c
+  cite_misses: []
+  assertion_hits:
+  - Cursor is an application layer atop foundation models, not itself a foundation-model
+    provider
+  - its organizational and operating DNA is substrate-first despite shipping an AI
+    product
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki''s concept page on ''AI as Substrate'' (sourced to web-2026-04-23-e4c)
+    explicitly addresses the boundary case: ''Anysphere/Cursor: substrate-first by
+    organizational and operating DNA, but ships an AI-coding product. The taxonomy
+    treats it as substrate-first because it is an application layer atop foundation
+    models rather than itself a foundation-model provider.'' This directly satisfies
+    both must_assert statements and the required citation. The wiki nowhere classifies
+    Cursor as an AI-as-product company, so no anti-assertion violations occur.'
+  cache_read_tokens: 145197
+  input_tokens: 160
+  output_tokens: 226
+total_input_tokens: 1897
+total_output_tokens: 3490
+total_cache_read_tokens: 1597167
