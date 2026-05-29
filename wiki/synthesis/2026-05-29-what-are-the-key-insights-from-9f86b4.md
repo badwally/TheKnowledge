@@ -16,13 +16,13 @@ question: "What are the key insights from \"Federated Learning, AI &amp; Data Se
   \ is not re-fetched in v1)_\n\n# Federated Learning, AI &amp; Data Security Summit\n\
   \n**Channel:** HUB Security  \n**Duration:** PT1H50M55S  \n**Views:** 227  \n**Published:**\
   \ 2021-05-10T07:17:14Z  \n**URL:** https://youtube.com/watch?v=PL39s"
-created_at: '2026-05-29T01:36:26Z'
-last_updated: '2026-05-29T01:36:26Z'
+created_at: '2026-05-29T01:40:40Z'
+last_updated: '2026-05-29T01:40:40Z'
 sources_count: 1
 nlm_notebook_id: e7f21255-0787-4091-ab69-5f79669e1501
 draft: true
-draft_started_at: '2026-05-29T01:36:26Z'
-draft_unresolved_claims: 0
+draft_started_at: '2026-05-29T01:40:40Z'
+draft_unresolved_claims: 1
 ---
 # What are the key insights from "Federated Learning, AI &amp; Data Security Summit" in the context of Edge inference for agentic AI workflows? The source describes: _(legacy import — body is the original summary; full source content is not re-fetched in v1)_
 
@@ -36,20 +36,22 @@ draft_unresolved_claims: 0
 
 ## Synthesis
 
-**Localized Intelligence to Overcome Bandwidth and Latency Bottlenecks**
-Edge devices like connected vehicles and IoT sensors generate massive volumes of data—for instance, a self-driving car can generate up to 40 gigabytes in just eight hours of driving [1] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [2] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Uploading this scale of data to a central cloud server is highly impractical and introduces latency that is unacceptable for safety-critical applications [1] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [2] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. By leveraging federated learning, edge agents can train and execute models locally, circumventing network disruption risks and ensuring the ultra-low latency required for real-time workflows, such as autonomous misbehavior detection and local network intrusion detection [2] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [3] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [4] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [5] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]].
+The **Federated Learning, AI & Data Security Summit** provides foundational strategies for securing distributed edge agents, expanding on the concepts of localized intelligence and zero-trust execution we discussed earlier in our conversation. Here are the key insights:
 
-**Split Learning for Resource-Constrained Edge Hardware**
-For edge agents lacking the local compute power, memory, or network bandwidth to host massive models in their entirety, split learning serves as an efficient alternative [6] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [7] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. The edge agent holds only a sliced portion of the model and computes the forward propagation up to the activation layer [7] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [8] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. It then sends those activations to a server to complete the rest of the computation [8] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. To guarantee privacy, the workflow applies a distance correlation function that minimizes the mathematical relationship between the raw input and the activations, making it impossible for the server to reverse-engineer the agent's sensitive data [9] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [10] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]].
+**Localized Intelligence to Overcome Bandwidth Limits**
+Edge environments generate massive data volumes—such as autonomous vehicles producing 40 gigabytes in eight hours [1] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Uploading this data to a central cloud introduces unacceptable latency and risks total failure during network disruptions [2] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Running inference locally allows edge agents to perform time-sensitive, safety-critical tasks, like network intrusion detection, directly on local gateways without ever relying on the cloud [3, 4].
 
-**Peer-to-Peer (P2P) Orchestration and Blockchain Integration**
-Traditional federated learning relies on a central parameter server, which creates a single point of failure in distributed workflows [11] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. For superior resiliency, edge agents can aggregate models in a decentralized P2P fashion by randomly selecting peers to broadcast their updates to [11] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Furthermore, integrating blockchain into this architecture establishes secure, decentralized orchestration [12] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. A blockchain framework can track model updates, create a reputation system to penalize bad actors, and incentivize independent edge agents to participate through monetary rewards [12] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [13] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [14] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. 
+**Split Learning for Resource-Constrained Agents**
+When edge agents lack the compute or memory to handle massive models, workflows can utilize "split learning" [5, 6]. The edge device computes only a sliced portion of the model up to an activation layer, sending those activations to a more powerful server to finish the computation [7] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. To guarantee privacy, a distance correlation function is applied to the loss function, mathematically minimizing the relationship between the raw input and the activations so the server cannot reverse-engineer the sensitive data [8] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]].
 
-**Zero-Trust Collaboration via Confidential Computing**
-In multi-agent edge environments, agents from different organizations may not trust each other, yet they still need to collaborate to build more accurate models [15] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [16] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Edge workflows can utilize secure aggregation and homomorphic encryption to process encrypted gradient updates, ensuring the actual data remains hidden [17] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [18] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [19] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Furthermore, combining this with confidential computing—where processing happens inside hardware-secured Trusted Execution Environments (TEEs) or enclaves—ensures that "data-in-use" remains completely secure from external observation, sabotage, or leakage during both training and inference [20] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [21] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [19] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]].
+**Decentralized Orchestration via Blockchain**
+Standard federated learning relies on a centralized parameter server, creating a single point of failure for the workflow [9] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. To build resilient multi-agent ecosystems, edge devices can share updates in a peer-to-peer (P2P) fashion or rely on blockchain for orchestration [9, 10]. A blockchain framework eliminates centralization, tracks epoch updates securely, and establishes a reputation system that rewards honest edge agents while penalizing bad actors [10, 11].
 
 **Byzantine Robustness Against Malicious Agents**
-Edge networks are physically distributed, making them highly susceptible to compromised devices or "Sybil attacks," where a malicious actor spins up multiple pseudonymous identities to poison a collaborative model with garbage data [22] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [23] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Edge workflows must employ "Byzantine robustness" to defend against this [24] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. This is achieved by monitoring how much a given agent's updates deviate from the mean, or by spotting malicious updates that cluster too closely together, allowing the system to isolate and penalize the rogue edge agents [22] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]], [23] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]].
+Because edge networks are highly distributed, they are vulnerable to "Sybil attacks," where malicious actors spin up multiple fake identities to poison the system with garbage data [12] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Edge workflows must employ "Byzantine robustness" to defend against this by monitoring how much a given agent's updates deviate from the mean [13] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. Since malicious updates often cluster closely together, the system can intelligently identify and isolate rogue agents [12, 13].
+
+**Zero-Trust "Data-In-Use" Security via Confidential Computing**
+Securing data at rest and in transit is insufficient for collaborative edge AI; data must also be secured while *in use* [14] [[nlm:1d1da756-3b6d-4c6f-b56a-106c190a91f3]]. By leveraging confidential computing, edge agents execute workflows inside hardware-based Trusted Execution Environments (TEEs) or secure enclaves (like Intel SGX or ARM Realm) [14, 15]. This ensures that an agent's active reasoning and sensitive data processing remain completely hidden from external observation, leakage, or sabotage [15, 16].
 
 ## Sources cited
 
