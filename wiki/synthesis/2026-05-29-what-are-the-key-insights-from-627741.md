@@ -18,13 +18,13 @@ question: "What are the key insights from \"Episode 29 - GLP-1 Peptides Explaine
   \ is not re-fetched in v1)_\n\n# Episode 29 - GLP-1 Peptides Explained: Ozempic,\
   \ Retatrutide &amp; The Truth About Fat Loss Drugs\n\n**Channel:** Fraser Bayley\
   \  \n**Duration:** PT1H1M39S  \n**Views:** 16  \n**Published:** 2026-03-18T01:10:09"
-created_at: '2026-05-29T00:30:55Z'
-last_updated: '2026-05-29T00:30:55Z'
+created_at: '2026-05-29T01:34:52Z'
+last_updated: '2026-05-29T01:34:52Z'
 sources_count: 1
 nlm_notebook_id: 089b5d0a-af34-40ab-a82d-0cf311d793ac
 draft: true
-draft_started_at: '2026-05-29T00:30:56Z'
-draft_unresolved_claims: 2
+draft_started_at: '2026-05-29T01:34:53Z'
+draft_unresolved_claims: 0
 ---
 # What are the key insights from "Episode 29 - GLP-1 Peptides Explained: Ozempic, Retatrutide &amp; The Truth About Fat Loss Drugs" in the context of GLP-1 receptor agonist effects on reward system and dosing optimization? The source describes: _(legacy import — body is the original summary; full source content is not re-fetched in v1)_
 
@@ -38,19 +38,19 @@ draft_unresolved_claims: 2
 ## Synthesis
 
 **Direct Action on the Brain's Reward and Satiety Centers**
-GLP-1 peptides operate directly on the brain's satiety center—specifically the hypothalamus—to successfully turn down "food noise," which is the constant, intrusive internal dialogue and craving for highly palatable foods [1, 2]. However, this neurochemical dampening effect is not isolated to food alone. The source notes that users frequently report a **reduced compulsion for other dopaminergic addictions, such as vaping, alcohol, or cannabis** [3] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. This suggests that GLP-1 medications actively turn down the broader neurochemical signaling tied to the brain's reward and addiction responses [3] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
+GLP-1 peptides operate directly on the brain's satiety center—specifically the hypothalamus—to successfully turn down "food noise," which is the constant, intrusive internal dialogue and craving for highly palatable foods [1] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [2] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. However, this neurochemical dampening effect is not isolated to food alone. The source notes that users frequently report a **reduced compulsion for other dopaminergic addictions, such as vaping, alcohol, or cannabis** [3] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. This suggests that GLP-1 medications actively turn down the broader neurochemical signaling tied to the brain's reward and addiction responses [3] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [4] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
 
 **The Danger of Rapid Dose Escalation**
-When managing these medications, the core principle is that **"the dose makes the poison"** [4, 5]. Because these GLP-1 drugs are engineered with extended half-lives to allow for weekly injections, any adverse reactions will linger in the body for days [6] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. Ramping up the dose too high and too fast is the primary cause of severe gastrointestinal distress, such as prolonged nausea, reflux, and constipation [4, 6, 7].
+When managing these medications, the core principle is that **"the dose makes the poison"** [5] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [6] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. Because these GLP-1 drugs are engineered with extended half-lives to allow for weekly injections, any adverse reactions will linger in the body for days [7] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. Ramping up the dose too high and too fast is the primary cause of severe gastrointestinal distress, such as prolonged nausea, reflux, and constipation [7] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [8] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
 
 **Personalized Titration to Optimize Benefits and Limit Side Effects**
-To harness the positive benefits of GLP-1s—like improved insulin sensitivity, fat loss, and diminished cravings—without enduring severe side effects, users should avoid standard "cookie-cutter" doses [8, 9]. The key optimization strategy involves **starting at a low dose and slowly tapering up week-by-week based entirely on the user's biofeedback** [10] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. If a user begins to experience unwanted side effects, such as severe bloating, the immediate optimization response is to "taper the dose back a touch" to find their unique, perfect therapeutic window [5, 10].
+To harness the positive benefits of GLP-1s—like improved insulin sensitivity, fat loss, and diminished cravings—without enduring severe side effects, users should avoid standard "cookie-cutter" doses [9] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [10] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. The key optimization strategy involves **starting at a low dose and slowly tapering up week-by-week based entirely on the user's biofeedback** [11] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. If a user begins to experience unwanted side effects, such as severe bloating, the immediate optimization response is to "taper the dose back a touch" to find their unique, perfect therapeutic window [11] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [6] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
 
 **Strategic "Pulsing" and Microdosing**
-As an alternative to chronic, constant dosing, the source suggests strategic "pulsing" or microdosing of the medication [11] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. Rather than remaining on the drug non-stop, **users might cycle the medication (e.g., 8 weeks on, followed by 4 weeks off) or utilize it in short micro-dosed bursts** [11, 12]. This approach allows individuals to extract the lipid-enhancing, blood sugar-stabilizing, and craving-reduction benefits without overwhelming their biology [11] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
+As an alternative to chronic, constant dosing, the source suggests strategic "pulsing" or microdosing of the medication [12] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. Rather than remaining on the drug non-stop, **users might cycle the medication (e.g., 8 weeks on, followed by 4 weeks off) or utilize it in short micro-dosed bursts** [12] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [13] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. This approach allows individuals to extract the lipid-enhancing, blood sugar-stabilizing, and craving-reduction benefits without overwhelming their biology [12] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
 
 **Dosing Must Be Paired with Muscle Preservation Tactics**
-Finally, optimizing a GLP-1 regimen requires proactive lifestyle adjustments to prevent becoming "skinny fat." Relying solely on the drug without changing habits can lead to losing highly valuable, metabolically active muscle tissue alongside fat—sometimes up to 30% to 40% of the total weight lost on drugs like semaglutide [13, 14]. To safely optimize outcomes, patients **must pair their dosing with intelligent resistance training (such as squats and deadlifts) and consume approximately one gram of protein per pound of their target body weight** [12, 14, 15].
+Finally, optimizing a GLP-1 regimen requires proactive lifestyle adjustments to prevent becoming "skinny fat" [14] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. Relying solely on the drug without changing habits can lead to losing highly valuable, metabolically active muscle tissue alongside fat—sometimes up to 30% to 40% of the total weight lost on drugs like semaglutide [15] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]]. To safely optimize outcomes, patients **must pair their dosing with intelligent resistance training (such as squats and deadlifts) and consume approximately one gram of protein per pound of their target body weight** [15] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]], [16] [[nlm:df055add-372a-487e-a267-83f62b8e76a7]].
 
 ## Sources cited
 
