@@ -12,17 +12,19 @@ question: 'What are the key insights from "Newfoundland-and-Labrador-Fact-Sheet"
   the context of AI-native probabilistic reserve studies for condominium associations
   under regulated reserve-study mandates? The source describes: Newfoundland and Labrador
   Fact Sheet'
-created_at: '2026-05-29T00:58:05Z'
-last_updated: '2026-05-29T00:58:05Z'
+created_at: '2026-05-29T01:39:26Z'
+last_updated: '2026-05-29T01:39:26Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-29T00:58:05Z'
+draft_started_at: '2026-05-29T01:39:26Z'
 draft_unresolved_claims: 4
 ---
 # What are the key insights from "Newfoundland-and-Labrador-Fact-Sheet" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: Newfoundland and Labrador Fact Sheet
 
 ## Synthesis
+
+Based on the "Newfoundland and Labrador Fact Sheet," here are the key insights in the context of AI-native probabilistic reserve studies:
 
 **1. The Massive 10-Year Statutory Blind Spot**
 The fact sheet specifies that for condominiums with 10 or more units, reserve fund studies must project costs for a minimum of 30 years, yet they only legally need to be completed every 10 years [1] [[nlm:fdd04cc8-0d51-4548-968a-0e79b425fae3]]. Under the traditional engineering model, a static PDF study degrades severely over a full decade of real-world economic and operational volatility. **An AI-native continuous-monitoring platform eliminates this extreme statutory blind spot by acting as a living financial system, automatically adjusting the 30-year probabilistic forecast using live vendor quotes, inflation data, and daily bank balances to maintain accuracy between the mandated 10-year inspection cycles.**
