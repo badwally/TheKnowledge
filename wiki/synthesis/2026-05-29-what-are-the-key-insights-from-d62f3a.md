@@ -30,13 +30,13 @@ question: 'What are the key insights from "2025-03-14 from Keeble" in the contex
   Hi Edgar & Dan,
 
   Please find attached Draft 3 of the Reserve Fund Study for '
-created_at: '2026-05-29T01:40:41Z'
-last_updated: '2026-05-29T01:40:41Z'
+created_at: '2026-05-29T01:45:20Z'
+last_updated: '2026-05-29T01:45:20Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-29T01:40:41Z'
-draft_unresolved_claims: 0
+draft_started_at: '2026-05-29T01:45:21Z'
+draft_unresolved_claims: 3
 ---
 # What are the key insights from "2025-03-14 from Keeble" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: From: Vaughn Keeble vkeeble@senseengineering.com
 Subject: Draft 3 RFS - Summer Gardens, 1470 Summer Street, Halifax
@@ -57,7 +57,7 @@ The sources highlight a profound software gap in the traditional engineering ser
 Keeble notes that the delivered draft includes "the standard three cash flow scenarios (Status Quo, Immediately Adequately Funded and Gradual Funding Increase)" [3] [[nlm:9cea4099-03cb-493a-a98b-fa33a9b7f6cb]]. This reflects the rigid, predefined nature of legacy capital planning, which forces condominium boards to choose from static, pre-calculated templates that often fail to match the actual risk tolerance or financial reality of the owners. **AI-native platforms abandon these simplistic, linear buckets entirely.** Instead, they use continuous-monitoring algorithms and stochastic financial optimization to actively compute and map out the mathematically optimal, customized contribution curve tailored specifically to the building's precise deterioration profile.
 
 **4. The High Friction of Manual Draft Revisions**
-The fact that this email delivers "Draft 3" of the reserve fund study, explicitly incorporating "all edits based on your memo and our responses to your comments" [3] [[nlm:9cea4099-03cb-493a-a98b-fa33a9b7f6cb]], highlights the agonizing manual effort required to generate a baseline deterministic study. Exploring corrections or clarifying the building's real-time financial reality requires a slow, manual back-and-forth between volunteers and engineers. **An AI-native, continuous-monitoring platform eliminates this friction by automatically ingesting live operational data**, property management records, and bank balances, ensuring the forecast remains perfectly synchronized with ground-truth operations without requiring endless manual draft revisions.
+The fact that this email delivers "Draft 3" of the reserve fund study, explicitly incorporating "all edits based on your memo and our responses to your comments," highlights the agonizing manual effort required to generate a baseline deterministic study [3-5]. Exploring corrections or clarifying the building's real-time financial reality requires a slow, manual back-and-forth between volunteers and engineers. **An AI-native, continuous-monitoring platform eliminates this friction by automatically ingesting live operational data**, property management records, and bank balances, ensuring the forecast remains perfectly synchronized with ground-truth operations without requiring endless manual draft revisions.
 
 ## Sources cited
 

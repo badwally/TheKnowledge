@@ -34,12 +34,12 @@ question: 'What are the key insights from "Re Board meeting  Thursday Nov 28 at 
   Catherine Bent
 
   catherine.ben'
-created_at: '2026-05-29T01:40:30Z'
-last_updated: '2026-05-29T01:40:30Z'
+created_at: '2026-05-29T01:45:23Z'
+last_updated: '2026-05-29T01:45:23Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-29T01:40:30Z'
+draft_started_at: '2026-05-29T01:45:24Z'
 draft_unresolved_claims: 0
 ---
 # What are the key insights from "Re Board meeting  Thursday Nov 28 at 930 am" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: From: Daniel Campbell dm.campbell@icloud.com
