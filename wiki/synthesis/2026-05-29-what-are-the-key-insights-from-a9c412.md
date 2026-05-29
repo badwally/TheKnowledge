@@ -18,12 +18,12 @@ question: "What are the key insights from \"Wegovy &amp; Ozempic: Will Fat-Jabs 
   # Wegovy &amp; Ozempic: Will Fat-Jabs Boost or Kill Your Sex Drive?\n\n**Channel:**\
   \ Doctor D  \n**Duration:** PT3M10S  \n**Views:** 44  \n**Published:** 2025-07-20T03:00:06Z\
   \  \n**URL:** https://youtube.com/watch"
-created_at: '2026-05-29T00:03:27Z'
-last_updated: '2026-05-29T00:03:27Z'
+created_at: '2026-05-29T00:17:35Z'
+last_updated: '2026-05-29T00:17:35Z'
 sources_count: 1
 nlm_notebook_id: 089b5d0a-af34-40ab-a82d-0cf311d793ac
 draft: true
-draft_started_at: '2026-05-29T00:03:27Z'
+draft_started_at: '2026-05-29T00:17:35Z'
 draft_unresolved_claims: 0
 ---
 # What are the key insights from "Wegovy &amp; Ozempic: Will Fat-Jabs Boost or Kill Your Sex Drive?" in the context of GLP-1 receptor agonist effects on reward system and dosing optimization? The source describes: _(legacy import — body is the original summary; full source content is not re-fetched in v1)_
@@ -45,7 +45,7 @@ GLP-1 medications like Wegovy and Ozempic can push a patient's sex drive in two 
 Conversely, many users—particularly women—report the exact opposite effect: a sudden drop in libido, "emotional flatness," and difficulty connecting intimately [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]]. The video explains that while GLP-1 drugs successfully suppress hunger, they can concurrently **dull other reward circuits in the brain, including those tied to sexual motivation** [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]]. By altering hormone signals connected to dopamine and serotonin, the medications can make the brain feel as though "you don't need food or sex" [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]].
 
 **Context within Dosing Optimization**
-This dynamic perfectly encapsulates the neurobiological double-edged sword of GLP-1s. Because the drug affects multiple interconnected systems—where physical health and body image might improve while reward circuitry simultaneously takes a hit—every person reacts differently based on their gender, mental health, and individual metabolism [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]]. 
+This dynamic perfectly encapsulates the neurobiological double-edged sword of GLP-1s. Because the drug affects multiple interconnected systems—where physical health and body image might improve while reward circuitry simultaneously takes a hit—**every person reacts differently based on their gender, mental health, and individual metabolism** [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]]. 
 
 The source stresses that **patients experiencing these intimacy side effects must actively track how they feel physically and emotionally and communicate with their doctor** [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]]. In the context of dosing optimization, this reinforces the clinical need to closely monitor these side effects to ensure the metabolic and weight-loss benefits of the medication do not come at the severe cost of over-suppressing the dopamine and serotonin pathways necessary for everyday passion and intimacy [1] [[nlm:332b26ed-bb16-4573-815f-1962abdaec0c]].
 
