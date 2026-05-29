@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import re
 import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from gateway import frontmatter as fm, log, paths
 from gateway.core import OperationResult
@@ -21,6 +22,7 @@ from gateway import nlm_registry
 
 
 DEFAULT_LIMIT = 10
+_NLM_MAX_WORKERS = 4  # NLM concurrency cap — beyond ~4 parallel queries NLM rate-limits
 _PREVIEW_MAX = 300
 _SRC_LINK_RE = re.compile(r'\[\[sources/([^\]]+)\]\]')
 
@@ -127,6 +129,25 @@ def _git_commit_synthesis_drafts(filepaths: list, domain: str) -> str | None:
     return None
 
 
+def _query_one(source: dict, domain: str, domain_topic: str) -> tuple[bool, list, str | None]:
+    """Run query() for a single source. Returns (success, synthesis_paths, error_str|None).
+
+    Called from a thread pool — query() creates its own NlmCLIClient per call
+    so there is no shared client state between threads.
+    """
+    from gateway.ops.query import query
+
+    question = _synthesis_question(source, domain_topic)
+    result = query(question, domain=domain, draft=True)
+    if result.success:
+        paths = [
+            p for p in result.paths_touched
+            if str(p).endswith(".md") and "wiki/synthesis" in str(p)
+        ]
+        return True, paths, None
+    return False, [], f"{source['id']}: {'; '.join(result.errors)}"
+
+
 def discharge_orphans(
     domain: str,
     *,
@@ -134,8 +155,6 @@ def discharge_orphans(
     dry_run: bool = False,
 ) -> OperationResult:
     """Batch-synthesize draft wiki pages for orphaned raw sources in `domain`."""
-    from gateway.ops.query import query
-
     if not domain:
         return OperationResult(success=False, errors=["domain is required"])
 
@@ -171,46 +190,50 @@ def discharge_orphans(
     errors: list[str] = []
     synthesis_paths: list = []
 
-    for source in sources:
-        question = _synthesis_question(source, domain_topic)
-        if dry_run:
-            filed += 1
-            continue
-        result = query(question, domain=domain, draft=True)
-        if result.success:
-            filed += 1
-            synthesis_paths.extend(
-                p for p in result.paths_touched
-                if str(p).endswith(".md") and "wiki/synthesis" in str(p)
-            )
-        else:
-            skipped += 1
-            errors.append(f"{source['id']}: {'; '.join(result.errors)}")
-
-    if not dry_run:
-        commit_sha = None
-        if synthesis_paths:
-            commit_sha = _git_commit_synthesis_drafts(synthesis_paths, domain)
-        log.append(
-            op="discharge-orphans",
-            fields={
-                "domain": domain,
-                "filed": filed,
-                "skipped": skipped,
-                "limit": limit,
-                "errors": len(errors),
-                **({"commit": commit_sha} if commit_sha else {}),
-            },
-            summary=f"discharge-orphans: {filed} drafts filed for domain {domain!r}",
+    if dry_run:
+        return OperationResult(
+            success=True,
+            summary=(
+                f"discharge-orphans (dry-run): {len(sources)} synthesis drafts would be filed, "
+                f"0 skipped — domain {domain!r}, limit {limit} [NLM auth not validated]"
+            ),
         )
 
-    mode = " (dry-run)" if dry_run else ""
-    dry_run_note = " [NLM auth not validated]" if dry_run else ""
+    with ThreadPoolExecutor(max_workers=_NLM_MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(_query_one, source, domain, domain_topic): source
+            for source in sources
+        }
+        for future in as_completed(futures):
+            success, paths, error = future.result()
+            if success:
+                filed += 1
+                synthesis_paths.extend(paths)
+            else:
+                skipped += 1
+                errors.append(error)
+
+    commit_sha = None
+    if synthesis_paths:
+        commit_sha = _git_commit_synthesis_drafts(synthesis_paths, domain)
+    log.append(
+        op="discharge-orphans",
+        fields={
+            "domain": domain,
+            "filed": filed,
+            "skipped": skipped,
+            "limit": limit,
+            "errors": len(errors),
+            **({"commit": commit_sha} if commit_sha else {}),
+        },
+        summary=f"discharge-orphans: {filed} drafts filed for domain {domain!r}",
+    )
+
     return OperationResult(
         success=len(errors) == 0,
         errors=errors,
         summary=(
-            f"discharge-orphans{mode}: {filed} synthesis drafts filed, "
-            f"{skipped} skipped — domain {domain!r}, limit {limit}{dry_run_note}"
+            f"discharge-orphans: {filed} synthesis drafts filed, "
+            f"{skipped} skipped — domain {domain!r}, limit {limit}"
         ),
     )
