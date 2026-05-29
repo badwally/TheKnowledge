@@ -40,12 +40,12 @@ question: 'What are the key insights from "2025-06-11 Certificate" in the contex
   OPENING RESERVE FUND BALANCE
 
   The Reserve Fund opening balance on June 30, 2024, was $1'
-created_at: '2026-05-29T00:36:17Z'
-last_updated: '2026-05-29T00:36:17Z'
+created_at: '2026-05-29T00:53:25Z'
+last_updated: '2026-05-29T00:53:25Z'
 sources_count: 2
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-29T00:36:17Z'
+draft_started_at: '2026-05-29T00:53:25Z'
 draft_unresolved_claims: 17
 ---
 # What are the key insights from "2025-06-11 Certificate" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: SUMMER GARDENS – 1470 SUMMER STREET, HALIFAX 7
@@ -69,10 +69,10 @@ In the "Opinion Regarding Adequacy," the engineer provides a rigid, binary certi
 The certificate legally justifies its repair and replacement budgets by stating they are based on a physical analysis, past performance history, and the "typical service lives for similar components" [1, 2]. This phrasing highlights the core limitation of legacy forecasting: it relies heavily on generic, age-based lookup tables rather than continuous, building-specific component condition. **Modern AI-native platforms replace generic "typical service lives" with rigorous reliability modeling, utilizing Weibull survival curves and Markov chains.** By ingesting live Computerized Maintenance Management System (CMMS) work-order data from the property management stack, the AI continuously computes the precise statistical risk of failure based on real-world deterioration, not an arbitrary industry average.
 
 **4. The Built-In Obsolescence of the 5-Year Compliance Cycle**
-The engineer's final certification includes a critical legal caveat: the fund is only deemed adequate provided the study "is to be updated at least every 5 years as required by the Nova Scotia Condominium Act" [1, 2]. This explicitly acknowledges the built-in obsolescence of the traditional consulting model—the condominium board pays for a static PDF that immediately begins degrading in accuracy, requiring another expensive manual intervention in half a decade to fix the accumulating errors. **An AI-native approach transforms this rigid compliance cycle into a continuous-monitoring software reality.** By actively updating with live macroeconomic shifts, actual vendor costs, and real-time operational data, the forecast remains a living, highly accurate tool, breaking free from the statutory 5-year blind spot.
+The engineer's final certification includes a critical legal caveat: the fund is only deemed adequate provided the study "is to be updated at least every 5 years as required by the Nova Scotia Condominium Act" [1, 2]. This explicitly acknowledges the built-in obsolescence of the traditional consulting model—the condominium board pays for a static document that immediately begins degrading in accuracy, requiring another expensive manual intervention in half a decade to fix the accumulating errors. **An AI-native approach transforms this rigid compliance cycle into a continuous-monitoring software reality.** By actively updating with live macroeconomic shifts, actual vendor costs, and real-time operational data, the forecast remains a living, highly accurate tool, breaking free from the statutory 5-year blind spot.
 
 **5. The Human-in-the-Loop "Seal" Requirement**
-The certificate is finalized with a formal legal statement where the engineer declares, "I hereby certify that that this Reserve Fund Study has been prepared in accordance with Clause 78A(C) of the Nova Scotia Condominium Regulations" and applies their professional engineering seal (Vaughn Keeble, P.Eng.) [1, 2]. This validates a crucial insight for any software platform entering this space: while an AI-native engine can vastly outperform manual spreadsheets in probabilistic math, **the regulated compliance market still legally requires a human, licensed expert to take on liability and apply their statutory seal.** The most viable business model is therefore a "tech-enabled service" where the AI engine does the heavy computational lifting, but a licensed Professional Engineer remains in the loop for the final certification.
+The certificate is finalized with a formal legal statement where the engineer declares, "I hereby certify that that this Reserve Fund Study has been prepared in accordance with Clause 78A(C) of the Nova Scotia Condominium Regulations" and applies their professional engineering seal [1, 2]. This validates a crucial insight for any software platform entering this space: while an AI-native engine can vastly outperform manual spreadsheets in probabilistic math, **the regulated compliance market still legally requires a human, licensed expert to take on liability and apply their statutory seal.** The most viable business model is therefore a "tech-enabled service" where the AI engine does the heavy computational lifting, but a licensed Professional Engineer remains in the loop for the final certification.
 
 ## Sources cited
 

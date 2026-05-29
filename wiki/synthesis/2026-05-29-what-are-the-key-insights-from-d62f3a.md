@@ -30,12 +30,12 @@ question: 'What are the key insights from "2025-03-14 from Keeble" in the contex
   Hi Edgar & Dan,
 
   Please find attached Draft 3 of the Reserve Fund Study for '
-created_at: '2026-05-29T00:28:03Z'
-last_updated: '2026-05-29T00:28:03Z'
+created_at: '2026-05-29T00:44:18Z'
+last_updated: '2026-05-29T00:44:18Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-29T00:28:03Z'
+draft_started_at: '2026-05-29T00:44:19Z'
 draft_unresolved_claims: 0
 ---
 # What are the key insights from "2025-03-14 from Keeble" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: From: Vaughn Keeble vkeeble@senseengineering.com

@@ -12,12 +12,12 @@ question: 'What are the key insights from "Newfoundland-and-Labrador-Fact-Sheet"
   the context of AI-native probabilistic reserve studies for condominium associations
   under regulated reserve-study mandates? The source describes: Newfoundland and Labrador
   Fact Sheet'
-created_at: '2026-05-29T00:41:03Z'
-last_updated: '2026-05-29T00:41:03Z'
+created_at: '2026-05-29T00:58:05Z'
+last_updated: '2026-05-29T00:58:05Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-29T00:41:03Z'
+draft_started_at: '2026-05-29T00:58:05Z'
 draft_unresolved_claims: 4
 ---
 # What are the key insights from "Newfoundland-and-Labrador-Fact-Sheet" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: Newfoundland and Labrador Fact Sheet
