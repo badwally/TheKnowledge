@@ -30,12 +30,12 @@ question: 'What are the key insights from "2025-03-14 from Keeble" in the contex
   Hi Edgar & Dan,
 
   Please find attached Draft 3 of the Reserve Fund Study for '
-created_at: '2026-05-30T18:30:13Z'
-last_updated: '2026-05-30T18:30:13Z'
+created_at: '2026-05-30T18:34:30Z'
+last_updated: '2026-05-30T18:34:30Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-30T18:30:13Z'
+draft_started_at: '2026-05-30T18:34:30Z'
 draft_unresolved_claims: 0
 ---
 # What are the key insights from "2025-03-14 from Keeble" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: From: Vaughn Keeble vkeeble@senseengineering.com
@@ -57,7 +57,7 @@ The email exposes a profound software gap in traditional capital planning. To he
 Legacy linear models frequently force boards into catastrophic financial shocks just to keep a static spreadsheet solvent. Keeble’s email vividly illustrates this trap, informing the board that simply capping ongoing contribution increases at 2.5% will demand a massive immediate special assessment of "approximately $3,060,000 (Roughly $25,00 per unit)" [3] [[nlm:9cea4099-03cb-493a-a98b-fa33a9b7f6cb]]. AI-native probabilistic engines natively resolve this exact problem by utilizing Monte Carlo simulations to mathematically compute the optimally smoothed contribution path. This effectively distributes the financial burden across thousands of simulated scenarios, minimizing extreme financial shocks and the need for desperate, massive upfront capital calls.
 
 **The Costly Inefficiency of Endless Manual Draft Revisions**
-The email delivers "Draft 3" of the reserve fund study, with the engineer explicitly noting that they have "incorporated all edits based on your memo and our responses to your comments" [1] [[nlm:9cea4099-03cb-493a-a98b-fa33a9b7f6cb]]. In the legacy consulting model, every data correction, misunderstanding, or misaligned assumption requires an entirely new offline document generation and review cycle. An AI-native platform eliminates this costly friction by functioning as a living financial system; by automatically ingesting live operational data and active work-order history, the AI ensures the capital forecast remains perfectly synchronized with ground-truth operations continuously, bypassing the need for tedious manual draft revisions.
+The email delivers "Draft 3" of the reserve fund study, with the engineer explicitly noting that they have "incorporated all edits based on your memo and our responses to your comments" [1] [[nlm:9cea4099-03cb-493a-a98b-fa33a9b7f6cb]]. In the legacy consulting model, every data correction, misunderstanding, or misaligned assumption requires an entirely new offline document generation and review cycle. An AI-native platform eliminates this costly friction by functioning as a living financial system. By automatically ingesting live operational data and active work-order history, the AI ensures the capital forecast remains perfectly synchronized with ground-truth operations continuously, bypassing the need for tedious manual draft revisions.
 
 ## Sources cited
 

@@ -12,13 +12,13 @@ question: 'What are the key insights from "Newfoundland-and-Labrador-Fact-Sheet"
   the context of AI-native probabilistic reserve studies for condominium associations
   under regulated reserve-study mandates? The source describes: Newfoundland and Labrador
   Fact Sheet'
-created_at: '2026-05-30T18:33:41Z'
-last_updated: '2026-05-30T18:33:41Z'
+created_at: '2026-05-30T18:37:53Z'
+last_updated: '2026-05-30T18:37:53Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-30T18:33:42Z'
-draft_unresolved_claims: 8
+draft_started_at: '2026-05-30T18:37:54Z'
+draft_unresolved_claims: 4
 ---
 # What are the key insights from "Newfoundland-and-Labrador-Fact-Sheet" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: Newfoundland and Labrador Fact Sheet
 
@@ -34,7 +34,7 @@ The provincial guidelines stipulate that the reserve fund study must project the
 If a condominium corporation in the province needs to borrow money or levy a special assessment for extraordinary expenses, it is legally required to secure the consent of at least 66 percent of the owners of the common elements [2, 3]. Legacy deterministic studies frequently trigger sudden capital shortfalls by failing to accurately smooth cash flows, forcing volunteer boards to seek out these difficult supermajority votes. **AI-native probabilistic platforms proactively prevent this legal friction by deploying stochastic financial optimization algorithms**. The software mathematically computes the lowest-friction, optimally smoothed contribution curve, drastically reducing the need for sudden, jarring special assessments and loans.
 
 **4. Upgrading Buyer Disclosures and Estoppel Certificates**
-During a unit resale, the corporation must provide the purchaser with an estoppel certificate detailing the reserve fund balance (updated to no earlier than the end of a month within 90 days of the certificate date), any recent assessments, and copies of the most recent reserve fund study [4, 5]. When a building relies on a 10-year statutory study cycle, providing a potentially decade-old static report creates severe transparency issues for incoming buyers. **Modern AI platforms transform these static disclosures by turning the reserve study into an interactive, continuously updated dashboard**. This ensures the financial data provided to prospective buyers always reflects a mathematically validated, up-to-the-minute operational reality rather than a stale historical snapshot.
+During a unit resale, the corporation must provide the purchaser with an estoppel certificate detailing the reserve fund balance (updated to no earlier than the end of a month within 90 days of the certificate date), current plans to increase the reserve fund, and copies of the most recent reserve fund study and its updates [4, 5]. When a building relies on a 10-year statutory study cycle [1] [[nlm:fdd04cc8-0d51-4548-968a-0e79b425fae3]], providing a potentially decade-old static report creates severe transparency issues for incoming buyers. **Modern AI platforms transform these static disclosures by turning the reserve study into an interactive, continuously updated dashboard**. This ensures the financial data provided to prospective buyers always reflects a mathematically validated, up-to-the-minute operational reality rather than a stale historical snapshot.
 
 ## Sources cited
 
