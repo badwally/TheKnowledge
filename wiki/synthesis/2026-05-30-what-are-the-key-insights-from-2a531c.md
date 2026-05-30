@@ -34,12 +34,12 @@ question: 'What are the key insights from "Summer Gardens Reserve Fund Study" in
   Ron Gregor rgregor@dal.ca, Steve Lunn
 
   stevelunn@e'
-created_at: '2026-05-30T18:43:33Z'
-last_updated: '2026-05-30T18:43:33Z'
+created_at: '2026-05-30T18:47:42Z'
+last_updated: '2026-05-30T18:47:42Z'
 sources_count: 1
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-30T18:43:33Z'
+draft_started_at: '2026-05-30T18:47:43Z'
 draft_unresolved_claims: 3
 ---
 # What are the key insights from "Summer Gardens Reserve Fund Study" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: From: Daniel Campbell dm.campbell@icloud.com

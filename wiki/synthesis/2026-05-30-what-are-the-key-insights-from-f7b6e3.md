@@ -106,12 +106,12 @@ question: 'What are the key insights from "Menu" in the context of AI-native pro
   Sign In
 
   Search'
-created_at: '2026-05-30T18:45:39Z'
-last_updated: '2026-05-30T18:45:39Z'
+created_at: '2026-05-30T18:49:58Z'
+last_updated: '2026-05-30T18:49:58Z'
 sources_count: 0
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-30T18:45:39Z'
+draft_started_at: '2026-05-30T18:49:58Z'
 draft_unresolved_claims: 3
 ---
 # What are the key insights from "Menu" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: Skip to main content
@@ -142,11 +142,11 @@ Search
 
 ## Synthesis
 
-As we noted earlier in our conversation, the text you provided for "Menu" consists entirely of standard website navigational boilerplate (such as "Home," "Catalogue," "User’s Guide," and "Sign In"). 
+As we discussed previously, the text you provided from "Menu" consists entirely of standard website navigational boilerplate (such as "Home," "Catalogue," "User’s Guide," and "Sign In"). 
 
 Because this text simply represents the layout of a webpage's navigation menu, it does not contain any substantive information, data, or key insights regarding AI-native probabilistic reserve studies, condominium associations, or regulated reserve-study mandates. 
 
-If there is another specific document, dataset, or topic from your sources that you would like me to dive into—such as the provincial regulations we have been discussing, specific engineering reports, or the mathematical differences between deterministic spreadsheets and probabilistic models—please let me know and I would be happy to analyze it for you!
+If there is another specific document, dataset, or topic from your sources that you would like me to dive into, please let me know and I would be happy to analyze it for you!
 
 ## Sources cited
 
