@@ -35533,3 +35533,567 @@ pushed 50 source(s) to session notebook (0 skipped)
 ## [2026-05-30T20:06:32Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=source_map | n=50
 
 built source map (50 entries)
+
+## [2026-05-30T20:12:18Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-12-18Z-schema-drift.md
+
+## [2026-05-30T20:13:26Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:13:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:13:37Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:13:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:06Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:06Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:27Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:28Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:30Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:39Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:41Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:43Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:02Z] query | domain=glp1-reward-modulation | unresolved_citations=3,7,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:03Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:04Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:12Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:12Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:15:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:15:31Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:32Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:15:44Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:45Z] query | domain=glp1-reward-modulation | unresolved_citations=6
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:50Z] query | domain=glp1-reward-modulation | unresolved_citations=3,8,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:01Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:01Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:04Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-16-04Z-schema-drift.md
+
+## [2026-05-30T20:16:04Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=6408cb2b]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:16:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:38Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,8,9,10,11,14,19
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:38Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,6,9
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:39Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,17,18,19
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:40Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:45Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:49Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:53Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:54Z] query | domain=glp1-reward-modulation | unresolved_citations=3,8
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:58Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:17:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:17:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:17:14Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,13
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:14Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:17:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:17:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-17-17Z-schema-drift.md
+
+## [2026-05-30T20:17:17Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=82f64f48]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:17:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-17-17Z-schema-drift.md
+
+## [2026-05-30T20:17:17Z] discharge-orphans | domain=ai-native-business | filed=5 | skipped=6 | limit=20 | errors=6
+
+discharge-orphans: 5 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:17:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-17-28Z-schema-drift.md
+
+## [2026-05-30T20:17:28Z] discharge-orphans | domain=condo-capital-infra | filed=15 | skipped=5 | limit=20 | errors=5 | commit=02abea9b]
+
+discharge-orphans: 15 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:17:32Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:35Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-30T20:17:38Z] wiki-author | id=research-2026-05-30-what-is-the-empirical-evidence-that | updates=6 | created=5 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for convergent-ai-brain
+
+## [2026-05-30T20:17:38Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-05-30-what-is-the-empirical-evidence-that: 6 update(s)
+
+## [2026-05-30T20:17:40Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:17:44Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:56Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:59Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:00Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:18:09Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:18Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:21Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:33Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:33Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:18:38Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:46Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:58Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:59Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:19:06Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:19:16Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:19:35Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:19:39Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:19:55Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:20:10Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:20:16Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:20:42Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:21:13Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:21:19Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=promoted | added=41 | failed=9
+
+promoted 41 source(s) into persistent notebook (9 failed)
+
+## [2026-05-30T20:21:46Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:22:18Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:28:11Z] finalize-abandon | page=wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-cross-cutting.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-cross-cutting.md
+
+## [2026-05-30T20:28:12Z] finalize-abandon | page=wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-limitations-divergences-and-align.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-limitations-divergences-and-align.md
