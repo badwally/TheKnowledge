@@ -106,12 +106,12 @@ question: 'What are the key insights from "Menu" in the context of AI-native pro
   Sign In
 
   Search'
-created_at: '2026-05-30T18:20:03Z'
-last_updated: '2026-05-30T18:20:03Z'
+created_at: '2026-05-30T18:24:24Z'
+last_updated: '2026-05-30T18:24:24Z'
 sources_count: 0
 nlm_notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
 draft: true
-draft_started_at: '2026-05-30T18:20:03Z'
+draft_started_at: '2026-05-30T18:24:24Z'
 draft_unresolved_claims: 3
 ---
 # What are the key insights from "Menu" in the context of AI-native probabilistic reserve studies for condominium associations under regulated reserve-study mandates? The source describes: Skip to main content
@@ -142,11 +142,11 @@ Search
 
 ## Synthesis
 
-The text you provided for "Menu" consists entirely of standard website navigational boilerplate (such as "Home," "Catalogue," "User’s Guide," and "Sign In"). 
+As we noted earlier, the text you provided for "Menu" consists entirely of standard website navigational boilerplate (such as "Home," "Catalogue," "User’s Guide," and "Sign In"). 
 
-Because this text simply reflects the layout of a webpage's menu, it does not contain any substantive information or key insights regarding AI-native probabilistic reserve studies, condominium associations, or regulated reserve-study mandates. 
+Because this text is simply the layout of a webpage's menu, it does not contain any substantive information, data, or key insights regarding AI-native probabilistic reserve studies, condominium associations, or regulated reserve-study mandates. 
 
-If there is a specific document from the sources you would like me to analyze instead, please let me know and I will be happy to extract the relevant insights for you!
+If you meant to ask about a different document or would like me to analyze one of the many actual reserve study drafts, regulatory summaries, or vendor profiles in your sources, please let me know and I would be happy to help!
 
 ## Sources cited
 
