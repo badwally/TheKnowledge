@@ -12,12 +12,12 @@ question: 'What are the key insights from "AI’s Public Relations Emergency" in
   context of AI-native business design for solo founders and tiny teams running on
   AI substrate? The source describes: A generation is being told AI is their enemy.
   And they’re starting to believe it.'
-created_at: '2026-05-30T17:34:29Z'
-last_updated: '2026-05-30T17:34:29Z'
+created_at: '2026-05-30T17:36:42Z'
+last_updated: '2026-05-30T17:36:42Z'
 sources_count: 1
 nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
 draft: true
-draft_started_at: '2026-05-30T17:34:30Z'
+draft_started_at: '2026-05-30T17:36:42Z'
 draft_unresolved_claims: 0
 ---
 # What are the key insights from "AI’s Public Relations Emergency" in the context of AI-native business design for solo founders and tiny teams running on AI substrate? The source describes: A generation is being told AI is their enemy. And they’re starting to believe it.

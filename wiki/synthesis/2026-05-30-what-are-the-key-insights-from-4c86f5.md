@@ -12,12 +12,12 @@ question: 'What are the key insights from "Weekly Dose of Optimism #194" in the 
   of AI-native business design for solo founders and tiny teams running on AI substrate?
   The source describes: Reta Phase 3, Colossal Eggs, SpaceX, OpenAI x Erdős, SendCutSend
   + Extra Doses'
-created_at: '2026-05-30T17:34:35Z'
-last_updated: '2026-05-30T17:34:35Z'
+created_at: '2026-05-30T17:36:36Z'
+last_updated: '2026-05-30T17:36:36Z'
 sources_count: 1
 nlm_notebook_id: a66c272c-5af9-4f34-ab22-6ca53764ba7e
 draft: true
-draft_started_at: '2026-05-30T17:34:36Z'
+draft_started_at: '2026-05-30T17:36:37Z'
 draft_unresolved_claims: 2
 ---
 # What are the key insights from "Weekly Dose of Optimism #194" in the context of AI-native business design for solo founders and tiny teams running on AI substrate? The source describes: Reta Phase 3, Colossal Eggs, SpaceX, OpenAI x Erdős, SendCutSend + Extra Doses
