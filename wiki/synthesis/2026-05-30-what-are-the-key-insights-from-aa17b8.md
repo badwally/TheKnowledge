@@ -18,12 +18,12 @@ question: "What are the key insights from \"Can Ozempic&#39;s Weight Loss Power 
   \n# Can Ozempic&#39;s Weight Loss Power Up Your Libido?  Ft. Alexandra Sowa\n\n\
   **Channel:** Rena Malik, M.D.  \n**Duration:** PT15M21S  \n**Views:** 15047  \n\
   **Published:** 2025-04-30T13:00:13Z  \n**URL:** https:/"
-created_at: '2026-05-30T18:45:01Z'
-last_updated: '2026-05-30T18:45:01Z'
+created_at: '2026-05-30T18:48:39Z'
+last_updated: '2026-05-30T18:48:39Z'
 sources_count: 1
 nlm_notebook_id: 089b5d0a-af34-40ab-a82d-0cf311d793ac
 draft: true
-draft_started_at: '2026-05-30T18:45:01Z'
+draft_started_at: '2026-05-30T18:48:39Z'
 draft_unresolved_claims: 0
 ---
 # What are the key insights from "Can Ozempic&#39;s Weight Loss Power Up Your Libido?  Ft. Alexandra Sowa" in the context of GLP-1 receptor agonist effects on reward system and dosing optimization? The source describes: _(legacy import — body is the original summary; full source content is not re-fetched in v1)_
@@ -39,16 +39,16 @@ draft_unresolved_claims: 0
 ## Synthesis
 
 **The Impact on Relationship Dynamics and Shared Rewards**
-GLP-1 medications can significantly alter how couples bond over shared rewarding stimuli, such as bonding over being "foodies" or unwinding with a shared bottle of wine [1, 2]. When one partner loses the desire to engage in these behaviors, it can threaten the relationship's established dynamic and cause friction [2] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. This shift is notable enough that it draws comparisons to bariatric surgery, where patients who experience massive weight loss and increased libido see a divorce rate two times higher than the average population if their partner does not match their new lifestyle [3] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]].
+GLP-1 medications can significantly alter how couples interact over shared rewarding stimuli. When partners who previously bonded over being "Foodies" or unwinding with a shared bottle of wine experience a shift where one partner loses the desire to engage in these behaviors, it can threaten the relationship's established dynamic and cause friction [1, 2]. This shift draws comparisons to bariatric surgery, where patients who experience massive weight loss and increased libido see a divorce rate two times higher than the average population if their partner does not match their new lifestyle [3] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]].
 
 **Libido Changes and Dietary Fat Requirements**
-While weight loss on GLP-1s can boost body confidence and naturally increase testosterone to improve sex drive, there is a critical nutritional caveat [3, 4]. **Patients who fail to consume adequate dietary fat during their weight loss risk inadvertently lowering their testosterone levels—which relies on the cholesterol pathway—leading to a drop in libido** [4] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. Additionally, patients often experience significant fatigue early in their treatment as they figure out how to balance their nutrition, temporarily dampening sexual desire because a "tired person on a Saturday night is just going to want to go to bed" [4, 5]. 
+While weight loss on GLP-1s can boost body confidence and naturally increase testosterone to improve sex drive, there is a critical nutritional caveat. **Patients who fail to consume adequate dietary fat during their weight loss risk inadvertently lowering their testosterone levels—which relies on the cholesterol pathway—leading to a drop in libido** [4] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. Additionally, patients often experience significant fatigue early in their treatment as they figure out how to balance their nutrition, temporarily dampening sexual desire because a "tired person on a Saturday night is just going to want to go to bed" [4] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. 
 
 **Silencing Food Noise and Unmasking Emotional Trauma**
-By quieting the constant internal monologue about food, GLP-1 medications provide what feels like newfound "willpower," allowing patients to implement healthier habits without the exhausting feeling of white-knuckling through cravings [6, 7]. However, as the medication removes food as a primary coping mechanism, **patients frequently find that past emotional traumas, instances of childhood bullying, or discomfort with newfound physical attention suddenly resurface** [8] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. Individuals are encouraged to share these newly uncovered psychological vulnerabilities with their partners to safely navigate the emotional transformation together [8, 9].
+By quieting the constant internal monologue about food, GLP-1 medications provide what feels like newfound "willpower," allowing patients to implement healthier habits without the exhausting feeling of white-knuckling through cravings [5, 6]. However, as the medication removes food as a primary coping mechanism, **patients frequently find that past emotional traumas, instances of childhood bullying, or discomfort with newfound physical attention suddenly resurface** [7] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. Individuals are encouraged to share these newly uncovered psychological vulnerabilities with their partners to safely navigate the emotional transformation together [7, 8].
 
 **Dosing Optimization and Chronic Treatment vs. "Vanity Use"**
-Optimizing the clinical use of these medications requires treating them as a long-term, chronic intervention, similar to taking thyroid hormone (Synthroid) or daily blood pressure medications [10, 11]. Despite a massive real-world discontinuation rate—with an estimated 50% to 75% of patients stopping the medication within the first year—the majority will need to stay on it for life to maintain their weight loss [10, 11]. Finally, the source strongly warns against the "vanity use" of these drugs for cosmetic weight loss, particularly in younger populations [12] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. **Expecting a GLP-1 medication to magically produce a "supermodel" body is unrealistic; they should be utilized to treat chronic conditions and prevent obesity from evolving** [12, 13].
+Optimizing the clinical use of these medications requires treating them as a long-term, chronic intervention, similar to taking thyroid hormone (Synthroid) or daily blood pressure medications [9] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. Despite a massive real-world discontinuation rate—with an estimated 50% to 75% of patients stopping the medication within the first year—the majority will need to stay on it for life to maintain their weight loss [10] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. Finally, the source strongly warns against the "vanity use" of these drugs for cosmetic weight loss, particularly in younger populations [11] [[nlm:ad409c9c-39d3-45d8-84cd-9e322ff4c33e]]. **Expecting a GLP-1 medication to magically produce a "supermodel" body is unrealistic; they should be utilized to treat chronic conditions and prevent obesity from evolving** [11, 12].
 
 ## Sources cited
 
