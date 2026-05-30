@@ -237,11 +237,16 @@ def _entity_front(entity_kind: str) -> dict:
 
 
 def test_entity_kind_enum_exact_set():
-    """ONT-4: ENTITY_KIND_ENUM contains exactly the 14 canonical values."""
+    """ONT-4: ENTITY_KIND_ENUM contains exactly the 16 canonical values.
+
+    'model' and 'benchmark' added for the convergent-ai-brain domain, where
+    ML models (CLIP, DINOv2) and alignment benchmarks (Brain-Score, VTAB) are
+    first-class entities.
+    """
     expected = frozenset({
         "person", "organization", "paper", "drug", "dataset",
         "product", "software", "statute", "regulation", "standard",
-        "place", "event", "artifact", "other",
+        "place", "event", "artifact", "model", "benchmark", "other",
     })
     assert v.ENTITY_KIND_ENUM == expected
 

@@ -1,0 +1,39 @@
+source_id: pdf-minyoung-huh-2024-the-platonic-representation
+domain: convergent-ai-brain
+decision: include
+score: 1.0
+policy_version: convergent-ai-brain-v1
+rationale: 'Foundational anchor: the Platonic Representation Hypothesis is inclusion
+  criterion #3 for this domain. Review-band score (0.5) is a false negative from the
+  ''peripheral brain-ANN alignment'' quality signal — correct for a primary alignment
+  study, but this paper is the domain''s theoretical scaffold and a hand-picked seed
+  source, so it must be included.'
+pinned_at: '2026-05-30T18:25:48Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: The Platonic Representation Hypothesis
+  authors:
+  - Minyoung Huh
+  - Brian Cheung
+  - Tongzhou Wang
+  - Phillip Isola
+  url: ''
+content_excerpt: 'The Platonic Representation Hypothesis
+
+  MinyoungHuh*1 BrianCheung*1 TongzhouWang*1 PhillipIsola*1
+
+  Abstract
+
+  ThePlatonicRepresentationHypothesis
+
+  WearguethatrepresentationsinAImodels,par-
+
+  ticularlydeepnetworks,areconverging. First,we Neural networks, trained with different
+  objectives
+
+  surveymanyexamplesofconvergenceinthelit- ondifferentdataandmodalities,areconvergingtoa
+
+  erature: overtimeandacrossmultipledomains, sharedstatisticalmodelofrealityintheirrepresenta-
+
+  thewaysbywhichdifferentneuralnetworksre'

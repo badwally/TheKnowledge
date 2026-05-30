@@ -1,0 +1,36 @@
+source_id: pdf-5f41a1d2e45f
+domain: convergent-ai-brain
+decision: include
+score: 1.0
+policy_version: convergent-ai-brain-v1
+rationale: 'Foundational anchor: Clark''s ''Whatever next?'' (BBS 2013) is the canonical
+  predictive-processing/Bayesian-brain target article, directly matching inclusion
+  criterion #5 (predictive processing / free-energy as a learning objective shared
+  by brains and trained networks). Rejected score (0.35) is a false negative from
+  quality signals that penalize theory papers lacking first-party alignment measurements;
+  this is a hand-picked seed source.'
+pinned_at: '2026-05-30T18:49:08Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: pdf
+  title: BBS1200047-aop 1..73
+  authors: []
+  url: ''
+content_excerpt: 'BEHAVIORAL AND BRAIN SCIENCES (2013), Page 1of 73
+
+  doi:10.1017/S0140525X12000477
+
+  ’
+
+  EDITOR S NOTE
+
+  Aexceptionallylargenumberofexcellentcommentaryproposalsinspiredaspecialresearchtopicforfurtherdiscussionof
+
+  thistargetarticle’ssubjectmatter,editedbyAxelCleeremansandShimonEdelmaninFrontiersinTheoreticalandPhilo-
+
+  sophicalPsychology.ThisdiscussionhasaprefacebyCleeremansandEdelmanand25commentaries
+  andincludesasep-
+
+  arate rejoinder from Andy Clark. See:
+
+  http://www.frontiersin.org/Theoretical_and_Philosophi'
