@@ -14,6 +14,32 @@ import argcomplete
 from gateway import __version__
 
 
+def _domain_completer(prefix: str, **kwargs) -> list[str]:
+    """Return blessed domain slugs for shell tab-completion on --domain args."""
+    try:
+        from gateway import paths
+        pol_dir = paths.policies_dir()
+        if not pol_dir.exists():
+            return []
+        return [
+            d.name for d in sorted(pol_dir.iterdir())
+            if d.is_dir() and (d / "policy.yaml").exists()
+            and d.name.startswith(prefix)
+        ]
+    except Exception:
+        return []
+
+
+def _attach_domain_completers(parser: argparse.ArgumentParser) -> None:
+    """Walk the parser tree and attach _domain_completer to every --domain action."""
+    for action in parser._actions:
+        if action.dest == "domain":
+            action.completer = _domain_completer
+        if hasattr(action, "choices") and isinstance(action.choices, dict):
+            for subparser in action.choices.values():
+                _attach_domain_completers(subparser)
+
+
 SUBCOMMANDS: dict[str, str] = {
     "ingest": "Ingest a single source (path or URL) into the canonical wiki",
     "batch-ingest": "Ingest a whole vault or directory; supports --legacy-import",
@@ -78,6 +104,9 @@ SUBCOMMANDS: dict[str, str] = {
     "cite-capture": "Ingest a URL if needed and add a citation to a wiki page (AGT-7)",
     "ask-corpus": "Ask the domain's NLM corpus a question and file the answer as a draft synthesis (TOOL-15)",
     "question": "Create or list wiki question pages (TOOL-16)",
+    "list-domains": "List all blessed domains with slug, title, and wiki page count",
+    "list-concepts": "List concept/entity/synthesis pages, optionally filtered to one domain",
+    "moc-add": "Author a wiki/mocs/<slug>.md domain map-of-content page",
 }
 
 IMPLEMENTED: set[str] = {
@@ -143,6 +172,9 @@ IMPLEMENTED: set[str] = {
     "cite-capture",
     "ask-corpus",
     "question",
+    "list-domains",
+    "list-concepts",
+    "moc-add",
 }
 
 
@@ -378,6 +410,68 @@ def build_parser() -> argparse.ArgumentParser:
                            help="Output format (default markdown).")
     p_context.add_argument("--caller", required=True,
                            help="Free-form caller identifier (logged to log.md).")
+
+    # list-domains: enumerate blessed domains (read-only)
+    p_list_domains = subparsers.add_parser(
+        "list-domains",
+        help=SUBCOMMANDS["list-domains"],
+        epilog=(
+            "Examples:\n"
+            "  wiki list-domains\n"
+            "  wiki list-domains --json\n"
+            "  wiki query \"\" --domain \"$(wiki list-domains | fzf | cut -f1)\""
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_list_domains.add_argument("--json", dest="json_out", action="store_true",
+                                help="Output JSON array instead of aligned text")
+
+    # list-concepts: enumerate concept/entity/synthesis pages by domain (read-only)
+    p_list_concepts = subparsers.add_parser(
+        "list-concepts",
+        help=SUBCOMMANDS["list-concepts"],
+        epilog=(
+            "Output is tab-separated slug<TAB>name, one per line — designed for fzf:\n"
+            "  wiki context \"$(wiki list-concepts --domain glp1 | fzf | cut -f1)\"\n"
+            "  wiki list-concepts --kind all --domain orita-cmo"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_list_concepts.add_argument(
+        "--domain", default=None, metavar="SLUG",
+        help="Filter to pages tagged with this domain slug",
+    )
+    p_list_concepts.add_argument(
+        "--kind",
+        choices=["concepts", "entities", "synthesis", "mocs", "all"],
+        default="concepts",
+        help="Page type to list (default: concepts)",
+    )
+    p_list_concepts.add_argument("--json", dest="json_out", action="store_true",
+                                 help="Output JSON array instead of TSV")
+
+    # moc-add: author a wiki/mocs/<slug>.md domain map-of-content page
+    p_moc_add = subparsers.add_parser(
+        "moc-add",
+        help=SUBCOMMANDS["moc-add"],
+        epilog=(
+            "Examples:\n"
+            "  wiki moc-add condo-software --domain condo-software --title 'condo-software — Map of Content' --body-file /tmp/moc.md\n"
+            "  wiki moc-add risksystems --domain risksystems --title 'Risk Systems — Map of Content' --body-file /tmp/moc.md --force"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_moc_add.add_argument("slug", help="Page slug (conventionally matches domain slug)")
+    p_moc_add.add_argument("--domain", required=True, metavar="SLUG",
+                           help="Domain this MOC indexes")
+    p_moc_add.add_argument("--title", required=True,
+                           help="Display title (e.g. 'condo-software — Map of Content')")
+    p_moc_add.add_argument("--body-file", required=True, metavar="PATH",
+                           help="Path to a markdown file containing the page body (no frontmatter)")
+    p_moc_add.add_argument("--draft", action="store_true", default=False,
+                           help="Write as draft (skips citation-grounding errors)")
+    p_moc_add.add_argument("--force", action="store_true", default=False,
+                           help="Overwrite an existing MOC page")
 
     # cite: add [[sources/<id>]] citation tokens to specific lines of a wiki page
     p_cite = subparsers.add_parser("cite", help=SUBCOMMANDS["cite"])
@@ -1263,6 +1357,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
+    _attach_domain_completers(parser)
     argcomplete.autocomplete(parser)
     ns = parser.parse_args(argv)
 
@@ -1394,6 +1489,12 @@ def main(argv: list[str] | None = None) -> int:
         return _run_ask_corpus_cmd(ns)
     if ns.subcommand == "question":
         return _run_question_cmd(ns)
+    if ns.subcommand == "list-domains":
+        return _run_list_domains(ns)
+    if ns.subcommand == "list-concepts":
+        return _run_list_concepts(ns)
+    if ns.subcommand == "moc-add":
+        return _run_moc_add(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2524,6 +2625,35 @@ def _run_daily_cmd(ns: argparse.Namespace) -> int:
     else:
         print(format_daily_review(result, lookback_hours=lookback_hours, stale_days=stale_days), end="")
     return 0
+
+
+def _run_moc_add(ns: argparse.Namespace) -> int:
+    from gateway.ops.moc_add import moc_add
+    body_path = Path(ns.body_file)
+    if not body_path.exists():
+        print(f"error: body file not found: {body_path}", file=sys.stderr)
+        return 1
+    body = body_path.read_text()
+    return _emit_result(moc_add(
+        ns.slug,
+        domain=ns.domain,
+        title=ns.title,
+        body=body,
+        draft=ns.draft,
+        force=ns.force,
+    ))
+
+
+def _run_list_domains(ns: argparse.Namespace) -> int:
+    from gateway.ops.list_domains import list_domains
+    fmt = "json" if ns.json_out else "text"
+    return _emit_result(list_domains(fmt=fmt))
+
+
+def _run_list_concepts(ns: argparse.Namespace) -> int:
+    from gateway.ops.list_concepts import list_concepts
+    fmt = "json" if ns.json_out else "text"
+    return _emit_result(list_concepts(domain=ns.domain, kind=ns.kind, fmt=fmt))
 
 
 if __name__ == "__main__":

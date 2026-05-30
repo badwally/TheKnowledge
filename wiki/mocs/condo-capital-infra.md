@@ -1,41 +1,68 @@
 ---
+schema_version: 1
 type: moc
 slug: condo-capital-infra
+title: condo-capital-infra — Map of Content
 domain: condo-capital-infra
-last_updated: '2026-05-13T16:25:39Z'
-draft: true
-draft_started_at: '2026-05-13T16:25:39Z'
-draft_unresolved_claims: 14
+created_at: '2026-05-29T21:12:33Z'
+last_updated: '2026-05-29T21:12:33Z'
 ---
 # condo-capital-infra — Map of Content
 
 ## Overview
 
-Auto-generated from the corpus-constructive research loop. Anchored on the most recent `wiki research` run.
+The condo-capital-infra domain covers AI-native probabilistic reserve studies for condominium associations — the methodology, regulatory mandates, banking infrastructure, and market landscape underpinning Longspan's reserve study engine. The domain spans five threads: (1) probabilistic modeling methodology, (2) jurisdictional reserve study mandates across the US and Canada, (3) reserve fund banking, investment vehicle rules, and compliance, (4) the competitive landscape of reserve study software, and (5) the M&A surface for a capital-infra acquirer.
 
 ## Key entities
 
-- [[sources/web-2014-02-02-a8a]] — Planning structural inspection and maintenance policies via
-- [[sources/web-2023-08-02-ec3]] — E917 Standard Practice for Measuring Life-Cycle Costs of Buildings ...
-- [[sources/web-2002-10-01-eee]] — The Environmental Life Cycle | NIST
-- [[sources/web-2014-06-26-215]] — life-cycle costs (LCC) of buildings/building systems, practice
-- [[sources/web-2020-03-01-b61]] — Pavement Deterioration Model Using Markov Chain and International Roughness Index
+**Reserve study software**
+- [[entities/smartproperty]] — deterministic reserve study platform; CINC-integrated; the incumbent floor Longspan displaces
+- [[entities/association-reserves]] — leading reserve study firm; APRA-affiliated; methodology standard-setter
+- [[entities/common-area-financial]] — reserve fund investment platform; complementary positioning
+
+**Banking and deposit infrastructure**
+- [[entities/alliance-association-bank]] — specialist HOA banking with HOA-structured deposit products
+- [[entities/axos-bank]] — online bank with HOA reserve fund products
+
+**CAM platform acquirers**
+- [[entities/cinc-systems]] — confirmed SmartProperty integration; Hg Capital hold; exit window 2028-2030
+- [[entities/vantaca]] — $1.25B valuation; zero reserve module; largest acquisition surface
+- [[entities/yardi]] — enterprise incumbent; zero reserve capability; largest integration gap
+
+**Regulatory bodies**
+- [[entities/florida-dbpr]] — Florida DBPR; primary US enforcement body for condo structural inspection compliance
 
 ## Key concepts
 
-- **Component-Level Degradation Modeling** — The sources discuss probabilistic models, specifically Markov chains, used to forecast the future condition and deterioration of structural components over time [1, 2].
-  - Markov Chain Deterioration: Transition probability matrices developed from historical databases, such as the LTPP database for pavement, can predict conditions after a set number of transition periods [1]., The broader literature includes competing Markov models and Hidden Markov models used for predicting cracking and statistical deterioration in civil structures [3].
-  - Corroding and Deteriorating Structures: A 332-state formulation has been applied to model corroding reinforced concrete structures to determine minimum life-cycle costs [2]., Pavement deterioration models track the expansion of distresses like cracks and rutting using condition metrics such as the International Roughness Index (IRI) [1].
-- **Cost and Financial Framing (Life-Cycle Cost Analysis)** — The corpus emphasizes evaluating the long-term economic performance of building systems through established standard practices like ASTM E917 [4, 5].
-  - ASTM E917 Methodology: The LCC framework includes all relevant costs arising from an investment decision, including designing, purchasing, installing, operating, maintaining, repairing, replacing, and disposing of a system [8, 9]., The methodology is used to determine whether a higher initial cost is economically justified by reductions in future expenses, evaluating projects against "do nothing" alternatives [4, 7].
-  - Economic and Environmental Integration: Economic metrics derived via ASTM E917 can be combined with environmental life-cycle assessments (ISO 14040) using the ASTM E1765 standard for Multiattribute Decision Analysis [5].
-- **Data Ingestion, Inspection Updating, and Decision Theory** — Data collection and continuous inspection are integrated into stochastic control frameworks to plan optimal maintenance policies based on uncertain structural data [2].
-  - POMDP for Inspection and Maintenance Policies: The POMDP framework supports uncertain observations, uncertain action outcomes, non-periodic inspections, and choices among various inspection and monitoring types [2]., Solving POMDPs yields optimal policies involving a complex combination of actions, utilizing point-based value iteration solvers for large state spaces [2].
-  - Bayesian Updating and Value of Information: Quasi-Bayes approaches have been cited as a method to optimize inspection and maintenance decisions for infrastructure facilities under performance model uncertainty [10]., Evaluating the value of information is a critical component in planning component inspections and permanent monitoring systems [10].
-- **System-Level and Portfolio Aggregation** — The sources discuss optimizing maintenance and rehabilitation policies not just for individual components, but aggregated across larger networks or multi-component systems [10, 11].
-  - Multi-Component Optimization: Integrated optimization methodologies address both maintenance interventions and spare part selection for multi-component systems [3]., Dynamic programming models can be extended to handle management optimization at a generalized multi-structure level [10].
-  - Infrastructure Network Management: The Pontis system is utilized for maintenance optimization and improvement of entire US bridge networks [11]., Iterative approaches and statewide pavement management systems incorporate joint optimization of maintenance, rehabilitation, and reconstruction planning [10, 11].
+**Probabilistic modeling**
+- [[concepts/probabilistic-reserve-modeling]] — the core methodological differentiator vs deterministic reserve study
+- [[concepts/monte-carlo-reserve-confidence-intervals]] — P10/P50/P90 fan output; the defensibility argument
+- [[concepts/living-reserve-study]] — continuous-update model vs periodic snapshot
+- [[concepts/30-year-cash-flow-projection]] — standard reserve study deliverable structure
+- [[concepts/california-percent-funded-component-method]] — component method for percent-funded calculation
+
+**Reserve fund structure and funding**
+- [[concepts/condominium-reserve-fund-funding-mechanisms]] — three funding mechanisms: threshold, percent funded, cash flow
+- [[concepts/gse-15-percent-reserve-funding-requirement]] — Fannie/Freddie 15% minimum; lender overlay that supersedes state law
+- [[concepts/gic-laddering-strategy]] — GIC laddering for Canadian reserve fund investment optimization
+
+**Jurisdictional mandates**
+- [[concepts/ontario-comprehensive-reserve-fund-study]] — Ontario three-tier classification (O. Reg. 48/01)
+- [[concepts/alberta-reserve-fund-study]] — Alberta qualified person and reserve fund plan requirements
+- [[concepts/california-reserve-funding-disclosure]] — annual reserve funding disclosure requirements
+- [[concepts/california-30-year-reserve-projection]] — California 30-year projection mandate
+
+**Market and competitive**
+- [[concepts/proptech-valuation-multiples]] — PropTech valuation multiples (2025); benchmark for Longspan positioning
+- [[concepts/cam-per-unit-tiered-subscription-pricing]] — dominant CAM SaaS pricing model
 
 ## Synthesis pages
 
-_(populated as `wiki research` and `wiki query` runs file syntheses)_
+- [[synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface]] — Acquirer integration surface for Longspan 2026: per-platform internal-build barriers and pitch gaps (CINC, Vantaca, Yardi, FirstService, HomeRun IQ, ReservePath, CommonArea Financial)
+- [[synthesis/2026-05-24-what-are-the-reserve-fund-investment]] — Cross-jurisdictional reserve fund investment rules: Florida, California, New York, New Jersey, Virginia, Nova Scotia, Ontario, BC, Alberta, Quebec
+
+## Open questions
+
+- What is the correct Longspan pricing architecture at $X/unit/month vs deterministic competitors?
+- Which jurisdiction crosses the threshold for probabilistic mandate first — Florida SIRS mechanics or Ontario RFS Class 1?
+- Does SmartProperty have an open API or is the CINC integration proprietary?

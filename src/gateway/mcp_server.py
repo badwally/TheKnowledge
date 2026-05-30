@@ -371,6 +371,64 @@ def wiki_status() -> dict[str, Any]:
     return _serialize(status())
 
 
+@mcp.tool()
+def wiki_moc_add(
+    slug: str,
+    domain: str,
+    title: str,
+    body: str,
+    draft: bool = False,
+    force: bool = False,
+) -> dict[str, Any]:
+    """Author a wiki/mocs/<slug>.md domain map-of-content page.
+
+    ``slug``: page slug, conventionally matches the domain slug.
+    ``domain``: domain slug this MOC indexes.
+    ``title``: display title (e.g. "condo-software — Map of Content").
+    ``body``: page body markdown, no frontmatter. Must contain sections:
+    Overview, Key entities, Key concepts, Synthesis pages.
+    ``draft``: write as draft (relaxes citation grounding).
+    ``force``: overwrite an existing MOC page.
+    """
+    from gateway.ops.moc_add import moc_add
+
+    return _serialize(moc_add(slug, domain=domain, title=title, body=body,
+                               draft=draft, force=force))
+
+
+@mcp.tool()
+def wiki_list_domains(fmt: str = "text") -> dict[str, Any]:
+    """List all blessed domains with slug, title, and wiki page count.
+
+    Use this before wiki_query or wiki_context to discover available domain
+    slugs without needing to memorise them.  ``fmt``: "text" (aligned table)
+    or "json" (array of {slug, title, wiki_pages}).
+    """
+    from gateway.ops.list_domains import list_domains
+
+    return _serialize(list_domains(fmt=fmt))
+
+
+@mcp.tool()
+def wiki_list_concepts(
+    domain: str | None = None,
+    kind: str = "concepts",
+    fmt: str = "text",
+) -> dict[str, Any]:
+    """List concept, entity, synthesis, or MOC pages — optionally filtered to one domain.
+
+    Output is tab-separated slug<TAB>name per line (text) or a JSON array.
+    Use to check what the wiki already contains before running wiki_query.
+
+    ``kind``: concepts | entities | synthesis | mocs | all.
+    ``domain``: domain slug filter; omit for all domains.
+    ``fmt``: "text" (TSV) or "json".
+    """
+    from gateway.ops.list_concepts import list_concepts
+
+    return _serialize(list_concepts(domain=domain, kind=kind, fmt=fmt))
+
+
 # --- K2 (M47): parity wrappers ---------------------------------------------
 
 
