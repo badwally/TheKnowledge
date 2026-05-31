@@ -165,6 +165,26 @@ def test_run_async_captures_exception(store, kb_root):
     assert task_id in fetched.error
 
 
+def test_run_in_thread_establishes_call_budget(store, kb_root):
+    """Each task runs under a per-run LLM call budget (finding #4)."""
+    from gateway.llm import budget
+
+    seen = {}
+
+    def fn():
+        b = budget.current_budget()
+        seen["max"] = b.max_calls if b else "NO-BUDGET"
+        return {"ok": True}
+
+    rec = store.create("query")
+    store.run_in_thread(rec.task_id, fn)
+    for _ in range(50):
+        if store.get(rec.task_id).status == "done":
+            break
+        threading.Event().wait(0.05)
+    assert seen["max"] == budget.default_max_calls()
+
+
 def test_failure_detail_logged_but_not_returned(store, kb_root):
     """Raw exception detail (e.g. LLM subprocess stderr) goes to log.md
     operator-only; the consumer-facing error field is sanitized (finding #5)."""

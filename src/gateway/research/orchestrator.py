@@ -21,6 +21,7 @@ through the existing `write_atomic` helpers, wiki pages go through
 from __future__ import annotations
 
 import concurrent.futures as _futures
+import contextvars
 import os
 import re
 import sys
@@ -296,8 +297,16 @@ def _run_filter(
     if not candidates:
         return []
 
+    # Propagate the calling context into the pool so per-run state held in
+    # ContextVars — notably the LLM call budget (finding #4) — applies to the
+    # filter calls fanned out across worker threads, not just the main thread.
+    # Each task gets its OWN context copy: a Context cannot be entered by more
+    # than one thread concurrently, but all copies share the same budget object.
     with _futures.ThreadPoolExecutor(max_workers=min(workers, len(candidates))) as pool:
-        futures = [pool.submit(_score_one, i, item) for i, item in enumerate(candidates)]
+        futures = [
+            pool.submit(contextvars.copy_context().run, _score_one, i, item)
+            for i, item in enumerate(candidates)
+        ]
         for fut in _futures.as_completed(futures):
             idx, score = fut.result()
             scores[idx] = score

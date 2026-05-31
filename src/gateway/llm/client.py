@@ -32,6 +32,7 @@ import time
 from typing import Callable
 
 from gateway.core import claude_cli_env
+from gateway.llm import budget
 from gateway.llm.telemetry import CallResult, parse_claude_json
 
 
@@ -139,7 +140,12 @@ class ClaudeCLIClient:
         - Retries on non-zero exit (rate limits, transient overloads)
           with exponential backoff so a 100+ call research run does not
           silently drop decisions on a brief 429/529.
+
+        Charges one unit against the active per-run call budget (finding #4)
+        before dispatch; raises BudgetExceededError if the run's ceiling is
+        crossed. Charged once per logical call, not per retry attempt.
         """
+        budget.charge_one()
         argv = self._build_argv(
             user_prompt=user_prompt,
             system_prompt=system_prompt,
