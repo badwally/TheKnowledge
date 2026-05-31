@@ -23,6 +23,7 @@ from typing import Callable
 
 import anthropic
 
+from gateway.llm import budget
 from gateway.llm.telemetry import CallResult
 
 
@@ -106,7 +107,11 @@ class AnthropicAPIClient:
         wiki context block reused across many small per-question prompts)
         and the system prompt is too short to clear Anthropic's 1024-token
         cache-eligibility floor on its own.
+
+        Charges one unit against the active per-run call budget (finding #4)
+        before dispatch; raises BudgetExceededError if the ceiling is crossed.
         """
+        budget.charge_one()
         system_blocks: list[dict] | str | None = None
         if system_prompt is not None:
             if cache_system_prompt:

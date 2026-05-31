@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from typing import Any, Callable
 
 from gateway import log as log_mod
+from gateway.llm import budget
 
 
 # Default ceiling on concurrently-running web tasks. Each task is a paid
@@ -135,7 +136,10 @@ class TaskStore:
         """Run `fn` in a worker thread, updating the task record on completion."""
         self.mark_running(task_id)
         try:
-            result = await asyncio.to_thread(fn)
+            # Establish a per-run LLM call budget (finding #4); asyncio.to_thread
+            # copies the context so the worker thread shares this budget.
+            with budget.call_budget():
+                result = await asyncio.to_thread(fn)
             payload = result if isinstance(result, dict) else {"value": result}
             self.mark_done(task_id, result=payload)
         except Exception as e:  # noqa: BLE001 — capture all
@@ -160,7 +164,11 @@ class TaskStore:
         def _worker() -> None:
             self.mark_running(task_id)
             try:
-                result = fn()
+                # Per-run LLM call budget (finding #4): set in this worker
+                # thread's context so fn()'s LLM calls — and any it fans out
+                # via contextvars.copy_context — charge against it.
+                with budget.call_budget():
+                    result = fn()
                 payload = result if isinstance(result, dict) else {"value": result}
                 self.mark_done(task_id, result=payload)
             except Exception as e:  # noqa: BLE001 — capture all
