@@ -67,6 +67,8 @@ ENTITY_KIND_ENUM: frozenset[str] = frozenset({
     "place",
     "event",
     "artifact",
+    "model",
+    "benchmark",
     "other",
 })
 

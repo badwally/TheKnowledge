@@ -25,13 +25,13 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from fastapi import APIRouter, Depends, File, Form, Request, UploadFile
+from fastapi import APIRouter, File, Form, Request, UploadFile
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from gateway import log as log_mod
 from gateway.ops.ingest import ingest
-from gateway.web.auth import verify_bearer
+from gateway.web.ingest_input import validate_remote_url
 
 
 router = APIRouter(prefix="/api", tags=["cloud"])
@@ -42,12 +42,6 @@ class CloudIngestRequest(BaseModel):
     domain: str | None = None
     with_plan: bool = False
     draft: bool = False
-
-
-def _resolve_input(raw: str):
-    if raw.startswith(("http://", "https://")):
-        return raw
-    return Path(raw).expanduser().resolve()
 
 
 def _serialize_op_result(result) -> dict[str, Any]:
@@ -64,15 +58,20 @@ def _serialize_op_result(result) -> dict[str, Any]:
 @router.post("/ingest", status_code=202)
 async def post_ingest(
     request: Request,
-    token_name: str = Depends(verify_bearer),
     # multipart form fields (all optional; presence indicates form-data mode)
     file: UploadFile | None = File(default=None),
     domain: str | None = Form(default=None),
     draft: bool = Form(default=False),
     with_plan: bool = Form(default=False),
 ) -> JSONResponse:
-    """Authenticated single-source ingest. Returns 202 + task_id."""
+    """Authenticated single-source ingest. Returns 202 + task_id.
+
+    The bearer token is verified by the app-level ``require_bearer``
+    middleware (see ``gateway.web.app``); the resolved token name is read
+    from ``request.state`` for audit logging.
+    """
     store = request.app.state.task_store
+    token_name = getattr(request.state, "token_name", "unknown")
 
     # Branch on body type. If a file came through multipart, we ingest from
     # the temp file; otherwise we expect a JSON body with `url`.
@@ -100,7 +99,10 @@ async def post_ingest(
                 content={"error": "provide either multipart `file` or JSON body"},
             )
         req = CloudIngestRequest.model_validate(payload)
-        input_value = _resolve_input(req.url)
+        # Reject local-path inputs (finding #3); only http(s) URLs are
+        # ingestable via the JSON body. File uploads use the multipart branch
+        # above, which writes to a server-controlled temp file.
+        input_value = validate_remote_url(req.url)
         domain = req.domain
         draft = req.draft
         with_plan = req.with_plan

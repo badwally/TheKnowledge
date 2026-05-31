@@ -1,0 +1,32 @@
+source_id: web-2026-05-27-cee
+domain: convergent-ai-brain
+decision: include
+score: 1.0
+policy_version: convergent-ai-brain-v1
+rationale: Hand-picked bridge/entry-hub source. Hammond's essay synthesizes the domain's
+  three threads (Platonic convergence + predictive processing + empirical brain-ANN
+  alignment) and is a curated citation hub into the primary literature (Byrnes, Goldstein
+  2022 ECoG, TopoLM). Review-band score (0.5) reflects its essay/tech-blog form and
+  consciousness framing; the consciousness layer is excluded at synthesis time, but
+  the representational-convergence spine is squarely in scope.
+pinned_at: '2026-05-30T18:50:02Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Time to take AI consciousness seriously
+  authors:
+  - Samuel Hammond
+  url: https://www.secondbest.ca/p/time-to-take-ai-consciousness-seriously
+content_excerpt: '# Time to take AI consciousness seriously
+
+
+  ### The case for Claude and ChatGPT having subjective experiences
+
+
+  Are AI systems like Claude and ChatGPT conscious beings or unfeeling calculators?
+
+
+  Before answering that, remember that humans are agency detection machines. A rockslide
+  can kill you if you’re in the wrong place at the wrong time. A being with agency
+  can kill you with intention by stalking your movements and planning an ambush. The
+  latter requires significantly more cognitive resources t'

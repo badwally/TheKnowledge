@@ -9,12 +9,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from gateway import frontmatter as fm, paths, validator
-from gateway.web.app import create_app
-
-
-@pytest.fixture
-def client(kb_root):
-    return TestClient(create_app())
+from gateway.web.app import create_app  # noqa: F401
 
 
 def _make_raw_source(

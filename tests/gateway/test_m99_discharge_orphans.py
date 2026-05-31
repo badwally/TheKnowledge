@@ -130,7 +130,7 @@ def test_dry_run_does_not_call_query(kb_root: Path) -> None:
 
     mock_q.assert_not_called()
     assert "dry-run" in result.summary
-    assert "1 synthesis drafts filed" in result.summary
+    assert "1 synthesis drafts would be filed" in result.summary
 
 
 def test_no_orphans_returns_success(kb_root: Path) -> None:
@@ -391,7 +391,7 @@ def test_dry_run_excludes_cited_sources(kb_root: Path) -> None:
         result = discharge_orphans("glp1", limit=10, dry_run=True)
 
     mock_q.assert_not_called()
-    assert "1 synthesis drafts filed" in result.summary  # only src-2 is uncited
+    assert "1 synthesis drafts would be filed" in result.summary  # only src-2 is uncited
 
 
 def test_cli_discharge_orphans_calls_op(kb_root: Path) -> None:

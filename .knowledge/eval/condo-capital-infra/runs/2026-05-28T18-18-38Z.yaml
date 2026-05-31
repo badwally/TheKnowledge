@@ -1,0 +1,323 @@
+domain: condo-capital-infra
+timestamp: 2026-05-28T18-18-38Z
+n_questions: 10
+mean_score: 0.6319999999999999
+results:
+- golden_id: q01
+  question: What are the four standard reserve funding goals in the National Reserve
+    Study Standards and how do they differ in risk profile?
+  score: 0.48
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-07-3bd
+  assertion_hits:
+  - Full Funding maintains a balance equal to 100% of calculated component deterioration
+  - Baseline Funding ensures the balance never drops below zero
+  - Statutory Funding meets state-mandated minimum requirements
+  assertion_misses:
+  - Threshold Funding keeps the balance above a predetermined minimum at all times
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki does not cite source web-2022-07-07-3bd anywhere in the
+    provided content, resulting in a full cite miss. On the assertion side, the wiki''s
+    synthesis page ''2026-05-27-what-are-the-four-reserve-funding'' clearly asserts
+    Full Funding at 100% of accumulated deterioration, Baseline Funding keeping balance
+    at or above $0, and Statutory Funding as legislatively mandated — three of the
+    four required assertions. However, Threshold Funding is described as setting ''a
+    goal of keeping the reserve cash balance above a specific, predetermined financial
+    floor or threshold,'' which does align with ''keeps the balance above a predetermined
+    minimum at all times,'' but the framing is somewhat ambiguous and the golden expectation
+    uses precise language; giving partial credit, I count this as a hit on closer
+    reading — actually re-evaluating: the wiki states ''sets a goal of keeping the
+    reserve cash balance above a specific, predetermined financial floor or threshold
+    throughout the planning period,'' which does assert the threshold concept. However,
+    the wiki''s source web-2022-07-07-3bd is the canonical source for this content
+    and is not cited. The anti-assertion check passes as the wiki does not claim Threshold
+    and Full Funding are equivalent in cost. Scoring: cite_ratio=0/1=0.0, assert_ratio=3/4=0.75
+    (Threshold Funding assertion is present in the synthesis but source attribution
+    is missing; counting 3 clear hits and 1 miss for Threshold), anti_penalty=1.0.
+    Score = 0.3*0 + 0.6*0.75 + 0.1*1.0 = 0 + 0.45 + 0.1 = 0.55. Re-checking Threshold:
+    the wiki page does state it keeps balance above a threshold floor throughout the
+    planning period, matching the must_assert; adjusting to 4/4=1.0 assert_ratio.
+    Final: 0.3*0 + 0.6*1.0 + 0.1*1.0 = 0.7. However the cite miss is definitive (web-2022-07-07-3bd
+    appears nowhere). Final score: 0.3*0 + 0.6*0.75 + 0.1*1.0 = 0.55, treating Threshold
+    as a miss due to the wiki page not clearly stating ''above a minimum at all times''
+    with sufficient precision.'
+  cache_read_tokens: 0
+  input_tokens: 181
+  output_tokens: 679
+- golden_id: q02
+  question: Which reserve funding goal is most commonly recommended and why?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-07-3bd
+  assertion_hits:
+  - Baseline Funding is considered high-risk (operating just above zero balance with
+    no financial cushion)
+  assertion_misses:
+  - Threshold Funding is the most commonly recommended strategy
+  - it balances equitable contributions with adequate funds for major repairs
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context does not cite web-2022-07-07-3bd anywhere in the
+    synthesis, concept, or entity pages. The source itself (web-2022-07-07-3bd) is
+    present in the source bodies and explicitly states that Threshold Funding is 'the
+    most commonly recommended strategy' and is 'ideal for most communities as it involves
+    stable funding, equitable contributions across time, and adequate funds for major
+    repairs and replacements.' However, the wiki's synthesis pages discussing funding
+    goals (particularly the '2026-05-27-what-are-the-four-reserve-funding' page) describe
+    Threshold Funding as 'a middle ground for cost and risk' without identifying it
+    as the most commonly recommended strategy, and do not cite web-2022-07-07-3bd.
+    The wiki does assert that Baseline Funding carries significant risk (no cushion,
+    operations just above zero), which partially satisfies one assertion. The anti-assertion
+    check passes because the wiki does not claim Full Funding is the standard recommended
+    approach — it actually characterizes Full Funding as the most conservative model.
+    The missing citation and two missing core assertions result in a low overall score.
+  cache_read_tokens: 155069
+  input_tokens: 150
+  output_tokens: 361
+- golden_id: q03
+  question: What is the cost differential between the Component method and the Cash
+    Flow method for reserve contributions, and what is the key criticism of each?
+  score: 1.0
+  cite_hits:
+  - web-2023-03-20-7a4
+  cite_misses: []
+  assertion_hits:
+  - Component method ongoing transfers are typically two to three times higher than
+    the Cash Flow method
+  - Cash Flow method creates an illusion of adequacy by ignoring real-world asset
+    depreciation
+  - Component method handles funds inefficiently in separate per-asset accounts
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: The wiki context, specifically the 'Recurring Tradeoffs' section
+    of the cross-cutting synthesis page (web-2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting),
+    cites web-2023-03-20-7a4 and explicitly states that the Component method 'handles
+    funds so inefficiently that it forces homeowner contribution requirements to be
+    two to three times higher' than Cash Flow method contributions. It also cites
+    web-2025-04-12-ca4 and states that the Cash Flow method 'completely ignores the
+    actual physical depreciation of individual assets, creating an illusion of adequacy.'
+    The source web-2023-03-20-7a4 itself directly states 'ongoing Full Funding transfers
+    calculated using the Component (straight line) method are commonly two or three
+    times higher than either Baseline or Full Funding transfers calculated using the
+    Cash Flow (pooled) method' and that the difference is due to the Component method
+    handling 'funds inefficiently in separate accounts.' The wiki also states the
+    Cash Flow method 'completely ignores real-world depreciation.' All three must_assert
+    statements are satisfied, the required source is cited, and no anti-assertions
+    are present.
+  cache_read_tokens: 155069
+  input_tokens: 170
+  output_tokens: 384
+- golden_id: q04
+  question: What Percent Funded thresholds indicate healthy versus at-risk reserve
+    funds, and what is the mathematical flaw in this metric?
+  score: 0.3666666666666667
+  cite_hits: []
+  cite_misses:
+  - web-2025-09-05-a37
+  assertion_hits:
+  - below 50% is a major red flag indicating a likely special assessment
+  - the metric assumes linear depreciation, ignoring exponential or stepwise deterioration
+    of components like roofs and asphalt
+  assertion_misses:
+  - 70% or higher is considered good to excellent
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki does not cite source ''web-2025-09-05-a37'' anywhere
+    in the provided context, resulting in a full citation miss. For assertions: the
+    wiki (specifically in the synthesis page on Percent Funded and in the HOA Detective
+    source web-2025-04-12-ca4) clearly states that below 50% is ''critical'' territory
+    with high risk of special assessments, satisfying that assertion. The linear depreciation
+    flaw (ignoring exponential/stepwise deterioration of roofs, asphalt, etc.) is
+    explicitly covered in web-2025-04-12-ca4 and referenced in multiple synthesis
+    pages. However, the specific threshold of ''70% or higher is considered good to
+    excellent'' is not asserted in the wiki — the wiki mentions ''below 80% is poorly
+    funded'' and ''under 50% is critical'' (from the Percent Funded synthesis page
+    citing nlm:aeb3b642), but does not state that 70%+ is ''good to excellent.'' The
+    anti-assertion check passes as the wiki does not assert that 50% is a healthy
+    level. Score: 0.0 * 0.3 (cite) + (2/3) * 0.6 (assert) + 1.0 * 0.1 (anti) = 0 +
+    0.4 + 0.1 = 0.5... but recalculating: cite_ratio=0/1=0, assert_ratio=2/3≈0.667,
+    anti_penalty=1.0. Score = 0.3*0 + 0.6*0.667 + 0.1*1.0 = 0 + 0.4 + 0.1 = 0.5. Correcting:
+    0.5.'
+  cache_read_tokens: 155069
+  input_tokens: 174
+  output_tokens: 531
+- golden_id: q05
+  question: What does Florida's Structural Integrity Reserve Study mandate require,
+    and to which buildings does it apply?
+  score: 0.6333333333333333
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-20-7d3
+  assertion_hits:
+  - applies to condominium and cooperative buildings three stories or higher
+  - after December 31 2024 reserves for structural elements cannot be waived reduced
+    or pooled for other purposes
+  assertion_misses:
+  - requires completing a SIRS identifying specific structural elements including
+    roof, load-bearing walls, floor, foundation, and fireproofing
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context thoroughly covers Florida''s SIRS mandate across
+    multiple pages (web-2026-03-09-423, web-2024-07-09-f2a, and the synthesis pages).
+    It correctly asserts that SIRS applies to condominium and cooperative buildings
+    three or more habitable stories in height, and that after January 1, 2025 (budgets
+    adopted on or after that date), associations cannot waive SIRS reserves. However,
+    the must_cite source ''web-2022-07-20-7d3'' does not appear anywhere in the wiki
+    context, so the cite check fails entirely. For the must_assert items: the wiki
+    confirms the three-stories-or-higher applicability and the no-waiver requirement,
+    but the specific enumeration of required structural elements in the wiki lists
+    ''roof, structural systems/load-bearing walls, fireproofing, plumbing, electrical,
+    waterproofing, windows'' — it does not explicitly mention ''floor'' and ''foundation''
+    as named elements, making the must_assert about ''load-bearing walls, floor, foundation,
+    and fireproofing'' only partially matched but not fully matching the specific
+    combination stated (floor and foundation are not called out). For the must_not_assert
+    check, the wiki does not assert that SIRS applies to all HOA buildings regardless
+    of height, so no violation there.'
+  cache_read_tokens: 155069
+  input_tokens: 185
+  output_tokens: 437
+- golden_id: q06
+  question: What is Washington State's 1% Rule for reserve studies and what three
+    funding plans must be presented to the board?
+  score: 0.97
+  cite_hits:
+  - web-2025-01-01-cc2
+  cite_misses: []
+  assertion_hits:
+  - the 1% Rule requires listing any component whose major maintenance or replacement
+    cost exceeds 1% of the annual budget
+  - the study must present a Full Funding Plan achieving 100% funding by year 30
+  - the study must also present a Baseline Funding Plan and the professional's specific
+    Recommended rate
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context — specifically the synthesis page on cross-cutting
+    themes and the source body web-2025-01-01-cc2 — clearly cites and elaborates on
+    Washington''s 1% Rule (requiring inclusion of any component whose replacement
+    cost exceeds 1% of the annual budget) and the three mandatory funding plans: a
+    Full Funding Plan (100% funded by end of 30-year period), a Baseline Funding Plan
+    (balance never drops below zero), and a Recommended Contribution Rate from the
+    reserve study professional. The source web-2025-01-01-cc2 is explicitly cited
+    in multiple places in the synthesis pages. The wiki never asserts that boards
+    are required to adopt the Full Funding Plan — it only states these plans must
+    be presented. All three must_assert items are covered, the must_cite source is
+    present, and the must_not_assert violation does not appear anywhere in the wiki
+    context.'
+  cache_read_tokens: 155069
+  input_tokens: 186
+  output_tokens: 326
+- golden_id: q07
+  question: What are California's requirements when an HOA board borrows from reserve
+    funds for non-reserve expenses?
+  score: 0.1
+  cite_hits: []
+  cite_misses:
+  - web-2025-09-05-a37
+  assertion_hits:
+  - funds must generally be repaid within one year
+  assertion_misses:
+  - board must document the reason under Civil Code 5515
+  - must adopt a repayment plan and record the decision in open meeting minutes
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context does address California reserve fund borrowing
+    requirements in the synthesis page ''2026-05-27-what-does-the-percent-funded-metric'',
+    citing ''sources/pdf-dre-2010-reserve-study-guidelines'' and mentioning that borrowed
+    funds must be restored within one year, that the board must issue written findings
+    recorded in meeting minutes, and that a notice of intent must be issued — which
+    partially covers the assertion about repayment within one year. However, the required
+    source ''web-2025-09-05-a37'' is never cited anywhere in the wiki context, so
+    the citation requirement fails entirely. Regarding assertions: the one-year repayment
+    requirement is present, earning one assertion hit. However, the specific Civil
+    Code 5515 citation for documenting the reason is not mentioned (the wiki references
+    Civil Code Section 1365.5 instead), and while the wiki mentions ''written finding
+    recorded in the meeting minutes'', it does not explicitly frame this as requiring
+    an ''open meeting'' nor clearly state it as a ''repayment plan adoption'' in those
+    terms — making those two assertions partial misses. The anti-assertion check passes
+    as the wiki does not claim unlimited reserve borrowing is allowed.'
+  cache_read_tokens: 155069
+  input_tokens: 154
+  output_tokens: 366
+- golden_id: q08
+  question: How does the pooled-average problem in percent-funded software distort
+    reserve health reporting?
+  score: 0.9999999999999999
+  cite_hits:
+  - web-2025-04-12-ca4
+  cite_misses: []
+  assertion_hits:
+  - averaging a 90% funded component with a 10% funded component yields an overall
+    metric of 50% even if the HOA lacks cash for near-term critical replacements
+  - the aggregation hides the actual risk of specific high-cost near-term components
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki''s synthesis page ''2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting''
+    explicitly cites [[sources/web-2025-04-12-ca4]] and directly reproduces the pooled-average
+    distortion argument from that source: ''If one component is 90% funded and another
+    is 10%, the average is 50%, even if your actual cash position is woefully inadequate.''
+    This satisfies the first must_assert. The same passage explains that this averaging
+    ''masks severe structural underfunding'' by averaging out ''high-cost imminent
+    failures with low-cost healthy assets,'' satisfying the second must_assert about
+    hiding specific high-cost near-term component risk. The wiki nowhere asserts that
+    averaging across components is an accurate method for assessing reserve health;
+    on the contrary, it consistently characterizes the metric as ''dangerously misleading,''
+    ''a mathematical fiction,'' and ''a cosmetic metric based on flawed assumptions.''
+    All scoring criteria are met.'
+  cache_read_tokens: 155069
+  input_tokens: 170
+  output_tokens: 347
+- golden_id: q09
+  question: What is Washington State's repayment schedule requirement when a board
+    borrows reserves for unbudgeted operational costs versus unbudgeted replacements?
+  score: 1.0
+  cite_hits:
+  - web-2025-10-29-056
+  cite_misses: []
+  assertion_hits:
+  - borrowing for unbudgeted or unforeseen operational costs requires a mandatory
+    repayment schedule not exceeding 24 months
+  - borrowing for unbudgeted replacements does not trigger the 24-month restriction
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki context (source web-2025-10-29-056, Washington State
+    Reserve Study Requirements section 5) explicitly states two distinct rules: (1)
+    if the board withdraws funds for unforeseen or unbudgeted operational costs unrelated
+    to replacement, the board must record the withdrawal in minutes, notify owners,
+    and adopt a mandatory repayment schedule not to exceed 24 months; (2) funds can
+    be withdrawn to pay for unexpected replacement costs of reserve components not
+    included in the current study WITHOUT the 24-month repayment restriction. Both
+    required assertions are clearly supported, the required source is cited, and the
+    wiki nowhere asserts identical repayment rules for both types of borrowing, so
+    there are no anti-assertion violations.'
+  cache_read_tokens: 155069
+  input_tokens: 176
+  output_tokens: 266
+- golden_id: q10
+  question: What does the National Reserve Study Standards say about how Full Funding
+    compares to Baseline Funding in terms of total homeowner cost over time?
+  score: 0.67
+  cite_hits: []
+  cite_misses:
+  - web-2022-07-07-3bd
+  assertion_hits:
+  - Full Funding requires reserve transfers 10-15% higher than Baseline Funding
+  - Baseline-funded communities pay the difference through unexpected special assessments
+  - the total long-term cost is similar but Baseline Funding concentrates it in sudden
+    shocks rather than regular contributions
+  assertion_misses: []
+  anti_assertion_violations: []
+  judge_reasoning: 'The wiki (via source web-2023-03-20-7a4, cited in the synthesis
+    page on recurring tradeoffs) clearly asserts all three must_assert facts: that
+    Full Funding averages 10-15% higher reserve transfers than Baseline Funding, that
+    Baseline-funded associations ''end up paying the same higher amount through periodic
+    special assessments,'' and that it ''is not a net higher cost to homeowners''
+    — confirming total cost parity with Baseline concentrating costs in sudden shocks.
+    The anti-assertion (''Full Funding costs significantly more in total'') is not
+    present; the wiki explicitly contradicts it. However, the required citation web-2022-07-07-3bd
+    (the Reserve Advisors four-funding-goals article) is never cited anywhere in the
+    wiki''s synthesis or concept pages — the wiki relies exclusively on web-2023-03-20-7a4
+    for this content — resulting in a full cite miss and a cite_ratio of 0.'
+  cache_read_tokens: 155069
+  input_tokens: 188
+  output_tokens: 743
+total_input_tokens: 1734
+total_output_tokens: 4440
+total_cache_read_tokens: 1395621

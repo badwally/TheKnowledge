@@ -24273,3 +24273,13811 @@ New source is a comprehensive README for WikiLoom, a sibling LLM-wiki tool inspi
 ## [2026-05-28T20:26:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1517 | cache_read=26786 | cache_creation=10489 | duration_ms=19053 | cost_usd=0.023383
 
 ## [2026-05-28T20:26:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1795 | cache_read=26786 | cache_creation=10577 | duration_ms=22418 | cost_usd=0.024883
+
+## [2026-05-28T20:26:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2718 | cache_read=26786 | cache_creation=10502 | duration_ms=30705 | cost_usd=0.029404
+
+## [2026-05-28T20:26:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2673 | cache_read=26786 | cache_creation=10539 | duration_ms=28138 | cost_usd=0.029225
+
+## [2026-05-28T20:26:27Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T20-26-27Z-schema-drift.md
+
+## [2026-05-28T20:26:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1838 | cache_read=26786 | cache_creation=10530 | duration_ms=20685 | cost_usd=0.025039
+
+## [2026-05-28T20:26:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1276 | cache_read=26786 | cache_creation=10867 | duration_ms=16367 | cost_usd=0.022650
+
+## [2026-05-28T20:26:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1953 | cache_read=26786 | cache_creation=10585 | duration_ms=23290 | cost_usd=0.025683
+
+## [2026-05-28T20:26:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1452 | cache_read=26786 | cache_creation=10602 | duration_ms=17812 | cost_usd=0.023199
+
+## [2026-05-28T20:26:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1402 | cache_read=26786 | cache_creation=10515 | duration_ms=16308 | cost_usd=0.022840
+
+## [2026-05-28T20:26:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1440 | cache_read=26786 | cache_creation=11082 | duration_ms=17002 | cost_usd=0.023739
+
+## [2026-05-28T20:26:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1485 | cache_read=26786 | cache_creation=10660 | duration_ms=18073 | cost_usd=0.023437
+
+## [2026-05-28T20:27:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1907 | cache_read=26786 | cache_creation=10586 | duration_ms=23872 | cost_usd=0.025454
+
+## [2026-05-28T20:27:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3297 | cache_read=26786 | cache_creation=10697 | duration_ms=35201 | cost_usd=0.032543
+
+## [2026-05-28T20:27:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1956 | cache_read=26786 | cache_creation=10767 | duration_ms=20645 | cost_usd=0.025925
+
+## [2026-05-28T20:27:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2848 | cache_read=26786 | cache_creation=10551 | duration_ms=30800 | cost_usd=0.030115
+
+## [2026-05-28T20:27:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1881 | cache_read=26786 | cache_creation=10548 | duration_ms=24226 | cost_usd=0.025277
+
+## [2026-05-28T20:27:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=26786 | cache_creation=10608 | duration_ms=17400 | cost_usd=0.022672
+
+## [2026-05-28T20:27:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=26786 | cache_creation=10507 | duration_ms=18232 | cost_usd=0.023175
+
+## [2026-05-28T20:27:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2989 | cache_read=26786 | cache_creation=10651 | duration_ms=29853 | cost_usd=0.030945
+
+## [2026-05-28T20:27:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=915 | cache_read=26786 | cache_creation=10645 | duration_ms=12992 | cost_usd=0.020568
+
+## [2026-05-28T20:27:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1495 | cache_read=26786 | cache_creation=10582 | duration_ms=18033 | cost_usd=0.023389
+
+## [2026-05-28T20:27:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1159 | cache_read=26786 | cache_creation=10608 | duration_ms=14603 | cost_usd=0.021742
+
+## [2026-05-28T20:27:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1442 | cache_read=26786 | cache_creation=10548 | duration_ms=16996 | cost_usd=0.023082
+
+## [2026-05-28T20:27:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1774 | cache_read=26786 | cache_creation=10574 | duration_ms=20508 | cost_usd=0.024774
+
+## [2026-05-28T20:27:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=26786 | cache_creation=10660 | duration_ms=19614 | cost_usd=0.024172
+
+## [2026-05-28T20:27:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2090 | cache_read=23660 | cache_creation=10732 | duration_ms=26492 | cost_usd=0.026239
+
+## [2026-05-28T20:27:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1680 | cache_read=26786 | cache_creation=10296 | duration_ms=21729 | cost_usd=0.023957
+
+## [2026-05-28T20:27:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=26786 | cache_creation=10387 | duration_ms=15104 | cost_usd=0.021365
+
+## [2026-05-28T20:27:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=26786 | cache_creation=10264 | duration_ms=20568 | cost_usd=0.023582
+
+## [2026-05-28T20:27:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1638 | cache_read=26786 | cache_creation=10361 | duration_ms=18675 | cost_usd=0.023828
+
+## [2026-05-28T20:27:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1595 | cache_read=26786 | cache_creation=10332 | duration_ms=19054 | cost_usd=0.023577
+
+## [2026-05-28T20:27:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=26786 | cache_creation=10327 | duration_ms=16286 | cost_usd=0.022300
+
+## [2026-05-28T20:27:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1804 | cache_read=26786 | cache_creation=10308 | duration_ms=23843 | cost_usd=0.024592
+
+## [2026-05-28T20:27:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1297 | cache_read=26786 | cache_creation=10302 | duration_ms=17420 | cost_usd=0.022049
+
+## [2026-05-28T20:28:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=26786 | cache_creation=10355 | duration_ms=16510 | cost_usd=0.022020
+
+## [2026-05-28T20:28:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3105 | cache_read=26786 | cache_creation=10381 | duration_ms=36047 | cost_usd=0.031188
+
+## [2026-05-28T20:28:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1512 | cache_read=26786 | cache_creation=10394 | duration_ms=19473 | cost_usd=0.023239
+
+## [2026-05-28T20:28:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1631 | cache_read=26786 | cache_creation=10327 | duration_ms=20748 | cost_usd=0.023750
+
+## [2026-05-28T20:28:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1813 | cache_read=26786 | cache_creation=10254 | duration_ms=25945 | cost_usd=0.024569
+
+## [2026-05-28T20:28:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1834 | cache_read=26786 | cache_creation=10396 | duration_ms=23074 | cost_usd=0.024852
+
+## [2026-05-28T20:28:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1228 | cache_read=26786 | cache_creation=10304 | duration_ms=16701 | cost_usd=0.021707
+
+## [2026-05-28T20:28:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1022 | cache_read=26786 | cache_creation=10317 | duration_ms=14028 | cost_usd=0.020693
+
+## [2026-05-28T20:28:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1819 | cache_read=26786 | cache_creation=10345 | duration_ms=22524 | cost_usd=0.024713
+
+## [2026-05-28T20:28:23Z] lint | scope=orphans | orphans=589
+
+report=.knowledge/lint/2026-05-28T20-28-23Z-orphans.md
+
+## [2026-05-28T20:28:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1925 | cache_read=26786 | cache_creation=10274 | duration_ms=22089 | cost_usd=0.025154
+
+## [2026-05-28T20:28:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=26786 | cache_creation=10355 | duration_ms=16803 | cost_usd=0.022260
+
+## [2026-05-28T20:28:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3918 | cache_read=26786 | cache_creation=10309 | duration_ms=43497 | cost_usd=0.035163
+
+## [2026-05-28T20:28:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=26786 | cache_creation=10320 | duration_ms=18152 | cost_usd=0.023107
+
+## [2026-05-28T20:28:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1028 | cache_read=26786 | cache_creation=10402 | duration_ms=15254 | cost_usd=0.020829
+
+## [2026-05-28T20:28:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1755 | cache_read=26786 | cache_creation=10288 | duration_ms=21688 | cost_usd=0.024322
+
+## [2026-05-28T20:28:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1734 | cache_read=26786 | cache_creation=10302 | duration_ms=19649 | cost_usd=0.024234
+
+## [2026-05-28T20:28:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1946 | cache_read=26786 | cache_creation=10286 | duration_ms=23194 | cost_usd=0.025274
+
+## [2026-05-28T20:28:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1515 | cache_read=26786 | cache_creation=10252 | duration_ms=18073 | cost_usd=0.023077
+
+## [2026-05-28T20:28:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1363 | cache_read=26786 | cache_creation=10333 | duration_ms=15753 | cost_usd=0.022418
+
+## [2026-05-28T20:28:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=26786 | cache_creation=10352 | duration_ms=17442 | cost_usd=0.023207
+
+## [2026-05-28T20:28:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1749 | cache_read=19120 | cache_creation=10291 | duration_ms=21686 | cost_usd=0.023529
+
+## [2026-05-28T20:29:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1809 | cache_read=26786 | cache_creation=10336 | duration_ms=21035 | cost_usd=0.024652
+
+## [2026-05-28T20:29:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1797 | cache_read=26786 | cache_creation=10322 | duration_ms=23061 | cost_usd=0.024574
+
+## [2026-05-28T20:29:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1688 | cache_read=26786 | cache_creation=10304 | duration_ms=20862 | cost_usd=0.024007
+
+## [2026-05-28T20:29:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1652 | cache_read=26786 | cache_creation=10282 | duration_ms=18731 | cost_usd=0.023799
+
+## [2026-05-28T20:29:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1286 | cache_read=26786 | cache_creation=10331 | duration_ms=17870 | cost_usd=0.022030
+
+## [2026-05-28T20:29:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1082 | cache_read=26786 | cache_creation=10325 | duration_ms=14029 | cost_usd=0.021003
+
+## [2026-05-28T20:29:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1367 | cache_read=26786 | cache_creation=10306 | duration_ms=16611 | cost_usd=0.022404
+
+## [2026-05-28T20:29:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1300 | cache_read=26786 | cache_creation=10284 | duration_ms=15194 | cost_usd=0.022042
+
+## [2026-05-28T20:29:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2140 | cache_read=26786 | cache_creation=10314 | duration_ms=25207 | cost_usd=0.026279
+
+## [2026-05-28T20:29:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1258 | cache_read=26786 | cache_creation=10315 | duration_ms=15080 | cost_usd=0.021870
+
+## [2026-05-28T20:29:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1559 | cache_read=26786 | cache_creation=10337 | duration_ms=18615 | cost_usd=0.023403
+
+## [2026-05-28T20:29:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1838 | cache_read=26786 | cache_creation=10272 | duration_ms=21271 | cost_usd=0.024717
+
+## [2026-05-28T20:29:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1710 | cache_read=26786 | cache_creation=10310 | duration_ms=21067 | cost_usd=0.024124
+
+## [2026-05-28T20:29:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1238 | cache_read=26786 | cache_creation=10290 | duration_ms=16918 | cost_usd=0.021739
+
+## [2026-05-28T20:29:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1360 | cache_read=26786 | cache_creation=10308 | duration_ms=16739 | cost_usd=0.022372
+
+## [2026-05-28T20:29:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1321 | cache_read=26786 | cache_creation=10286 | duration_ms=17786 | cost_usd=0.022149
+
+## [2026-05-28T20:29:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1736 | cache_read=26786 | cache_creation=10350 | duration_ms=22067 | cost_usd=0.024304
+
+## [2026-05-28T20:29:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1367 | cache_read=26786 | cache_creation=10290 | duration_ms=15967 | cost_usd=0.022384
+
+## [2026-05-28T20:29:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1084 | cache_read=0 | cache_creation=26109 | duration_ms=15326 | cost_usd=0.038064
+
+## [2026-05-28T20:29:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1490 | cache_read=19120 | cache_creation=10253 | duration_ms=16661 | cost_usd=0.022186
+
+## [2026-05-28T20:29:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1534 | cache_read=19120 | cache_creation=10293 | duration_ms=18316 | cost_usd=0.022456
+
+## [2026-05-28T20:29:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1551 | cache_read=26786 | cache_creation=10367 | duration_ms=20070 | cost_usd=0.023400
+
+## [2026-05-28T20:29:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=26786 | cache_creation=10308 | duration_ms=17839 | cost_usd=0.022542
+
+## [2026-05-28T20:30:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1450 | cache_read=26786 | cache_creation=10343 | duration_ms=17116 | cost_usd=0.022865
+
+## [2026-05-28T20:30:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:30:10Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:30:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1843 | cache_read=26786 | cache_creation=10290 | duration_ms=22146 | cost_usd=0.024764
+
+## [2026-05-28T20:30:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1615 | cache_read=19120 | cache_creation=10237 | duration_ms=20121 | cost_usd=0.022791
+
+## [2026-05-28T20:30:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1400 | cache_read=26786 | cache_creation=10286 | duration_ms=17683 | cost_usd=0.022544
+
+## [2026-05-28T20:30:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1545 | cache_read=26786 | cache_creation=10276 | duration_ms=19179 | cost_usd=0.023257
+
+## [2026-05-28T20:30:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2405 | cache_read=26786 | cache_creation=10278 | duration_ms=26205 | cost_usd=0.027559
+
+## [2026-05-28T20:30:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1352 | cache_read=26786 | cache_creation=10343 | duration_ms=17198 | cost_usd=0.022375
+
+## [2026-05-28T20:30:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=26786 | cache_creation=10309 | duration_ms=20173 | cost_usd=0.022363
+
+## [2026-05-28T20:30:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1756 | cache_read=26786 | cache_creation=10284 | duration_ms=21136 | cost_usd=0.024322
+
+## [2026-05-28T20:30:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1086 | cache_read=26786 | cache_creation=10320 | duration_ms=15145 | cost_usd=0.021017
+
+## [2026-05-28T20:30:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1334 | cache_read=26786 | cache_creation=10256 | duration_ms=17261 | cost_usd=0.022177
+
+## [2026-05-28T20:30:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1366 | cache_read=26786 | cache_creation=10288 | duration_ms=17630 | cost_usd=0.022377
+
+## [2026-05-28T20:30:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=26786 | cache_creation=10324 | duration_ms=17116 | cost_usd=0.022587
+
+## [2026-05-28T20:30:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1376 | cache_read=26786 | cache_creation=10268 | duration_ms=18752 | cost_usd=0.022402
+
+## [2026-05-28T20:30:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1808 | cache_read=26786 | cache_creation=10296 | duration_ms=21563 | cost_usd=0.024597
+
+## [2026-05-28T20:30:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2421 | cache_read=26786 | cache_creation=10408 | duration_ms=29089 | cost_usd=0.027802
+
+## [2026-05-28T20:30:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1533 | cache_read=26786 | cache_creation=10359 | duration_ms=19560 | cost_usd=0.023300
+
+## [2026-05-28T20:30:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1640 | cache_read=26786 | cache_creation=10355 | duration_ms=20160 | cost_usd=0.023830
+
+## [2026-05-28T20:30:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1402 | cache_read=26786 | cache_creation=10299 | duration_ms=17741 | cost_usd=0.022570
+
+## [2026-05-28T20:30:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1127 | cache_read=26786 | cache_creation=10268 | duration_ms=16692 | cost_usd=0.021157
+
+## [2026-05-28T20:30:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:30:56Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:30:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1144 | cache_read=26786 | cache_creation=10332 | duration_ms=15135 | cost_usd=0.021322
+
+## [2026-05-28T20:31:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1693 | cache_read=26786 | cache_creation=10352 | duration_ms=21662 | cost_usd=0.024092
+
+## [2026-05-28T20:31:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1457 | cache_read=26786 | cache_creation=10411 | duration_ms=19153 | cost_usd=0.022985
+
+## [2026-05-28T20:31:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1582 | cache_read=26786 | cache_creation=10310 | duration_ms=19846 | cost_usd=0.023484
+
+## [2026-05-28T20:31:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1069 | cache_read=26786 | cache_creation=10316 | duration_ms=12592 | cost_usd=0.020927
+
+## [2026-05-28T20:31:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1403 | cache_read=23660 | cache_creation=10250 | duration_ms=16482 | cost_usd=0.022201
+
+## [2026-05-28T20:31:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1434 | cache_read=23660 | cache_creation=10323 | duration_ms=19460 | cost_usd=0.022448
+
+## [2026-05-28T20:31:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1751 | cache_read=23660 | cache_creation=10288 | duration_ms=20649 | cost_usd=0.023989
+
+## [2026-05-28T20:31:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1129 | cache_read=26786 | cache_creation=10324 | duration_ms=15093 | cost_usd=0.021237
+
+## [2026-05-28T20:31:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2136 | cache_read=26786 | cache_creation=10325 | duration_ms=27233 | cost_usd=0.026273
+
+## [2026-05-28T20:31:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1177 | cache_read=26786 | cache_creation=10258 | duration_ms=15367 | cost_usd=0.021394
+
+## [2026-05-28T20:31:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1996 | cache_read=26786 | cache_creation=10347 | duration_ms=23252 | cost_usd=0.025600
+
+## [2026-05-28T20:31:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1872 | cache_read=26786 | cache_creation=10280 | duration_ms=22667 | cost_usd=0.024897
+
+## [2026-05-28T20:31:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1018 | cache_read=26786 | cache_creation=10282 | duration_ms=14557 | cost_usd=0.020629
+
+## [2026-05-28T20:31:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1569 | cache_read=26786 | cache_creation=10282 | duration_ms=20973 | cost_usd=0.023384
+
+## [2026-05-28T20:31:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1323 | cache_read=26786 | cache_creation=10309 | duration_ms=16863 | cost_usd=0.022188
+
+## [2026-05-28T20:31:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:31:42Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:31:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1620 | cache_read=26786 | cache_creation=10288 | duration_ms=20721 | cost_usd=0.023647
+
+## [2026-05-28T20:31:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1042 | cache_read=26786 | cache_creation=10375 | duration_ms=13316 | cost_usd=0.020865
+
+## [2026-05-28T20:31:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1177 | cache_read=26786 | cache_creation=10296 | duration_ms=16561 | cost_usd=0.021442
+
+## [2026-05-28T20:31:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1730 | cache_read=26786 | cache_creation=10318 | duration_ms=20196 | cost_usd=0.024234
+
+## [2026-05-28T20:31:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1384 | cache_read=26786 | cache_creation=10280 | duration_ms=18351 | cost_usd=0.022457
+
+## [2026-05-28T20:31:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1656 | cache_read=26786 | cache_creation=10340 | duration_ms=20372 | cost_usd=0.023892
+
+## [2026-05-28T20:31:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1597 | cache_read=26786 | cache_creation=10361 | duration_ms=20642 | cost_usd=0.023623
+
+## [2026-05-28T20:31:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1844 | cache_read=26786 | cache_creation=10359 | duration_ms=21308 | cost_usd=0.024855
+
+## [2026-05-28T20:31:58Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=filter | n=3
+
+3 candidate(s) cleared threshold
+
+## [2026-05-28T20:32:02Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=materialize | n=3
+
+materialized 3 source(s) to raw/
+
+## [2026-05-28T20:32:02Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=nlm_persistent | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+persistent notebook adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+## [2026-05-28T20:32:03Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=nlm_session | notebook_id=8558282b-8c10-48e9-8c9a-5ec97c2df879
+
+created session notebook 8558282b-8c10-48e9-8c9a-5ec97c2df879
+
+## [2026-05-28T20:32:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:32:23Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:32:25Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=source_add | n=3 | skipped=0
+
+pushed 3 source(s) to session notebook (0 skipped)
+
+## [2026-05-28T20:32:27Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=source_map | n=3
+
+built source map (3 entries)
+
+## [2026-05-28T20:33:09Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:33:09Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:33:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:33:51Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:34:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:34:44Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:35:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:35:32Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:36:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:36:25Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:37:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:37:07Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:37:55Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:37:55Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:37:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:37:56Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:38:26Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:38:26Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:38:31Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:38:31Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e59b03 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:38:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:38:40Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:38:59Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:39:00Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-529d8a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:39:11Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:39:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:39:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:39:19Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:39:37Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-74fb1e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:39:46Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:39:46Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:40:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:40:05Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:40:14Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2476d8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:40:15Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:40:15Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:40:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:40:37Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-28T20:40:37Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:40:38Z] research | session_id=2026-05-28-multi-user-gcp-deployment-patterns-for | step=abandon
+
+abandoned session: apply_plan rejected the synthesis: update[1] (wiki/synthesis/2026-05-28-multi-user-gcp-deployment-patterns-for-server-architecture-and-infrastructure-scaling.md): [slug-too-long] slug: slug is 96 chars (max 80); use --force-long-slug to override; update[2] (wiki/synthesis/2026-05-28-multi-user-gcp-deployment-patterns-for-multi-user-authentication-and-access-governance.md): [slug-too-long] slug: slug is 97 chars (max 80); use --force-long-slug to override; update[3] (wiki/synthesis/2026-05-28-multi-user-gcp-deployment-patterns-for-api-rate-limiting-and-quota-optimization.md): [slug-too-long] slug: slug is 90 chars (max 80); use --force-long-slug to override; update[4] (wiki/synthesis/2026-05-28-multi-user-gcp-deployment-patterns-for-ai-agent-workflows-in-a-marketing.md): [slug-too-long] slug: slug is 83 chars (max 80); use --force-long-slug to override
+
+## [2026-05-28T20:40:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-6bea9d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:40:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:40:54Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:40:58Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:40:58Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:41:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:41:19Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:41:21Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c5332f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:41:36Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:41:36Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:41:44Z] query | domain=condo-capital-infra | unresolved_citations=1,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:41:44Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9b6474 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:41:56Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-3c04e6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:41:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:42:00Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:42:11Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:42:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:42:27Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ad11ad | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:42:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:42:37Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:42:38Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-1cb595 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:42:42Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:42:42Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:43:03Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0952b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:43:21Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:43:21Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:43:22Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:43:23Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:43:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:43:29Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:43:33Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4f2790 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:43:49Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:43:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-28T20:43:51Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T20-43-51Z-schema-drift.md
+
+## [2026-05-28T20:43:51Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=e5e036a]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-28T20:44:00Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:44:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:44:02Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:44:02Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-edc2fd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:44:39Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-3e4199 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:44:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:44:42Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:44:44Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T20-44-44Z-schema-drift.md
+
+## [2026-05-28T20:44:44Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=784b4ad]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-28T20:44:47Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:44:47Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:45:16Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:45:16Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a87fe2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:45:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:45:32Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:45:50Z] research | session_id=2026-05-28-orita-gcp-r3 | step=start | domain=orita-cmo
+
+start research session for prompt 'Multi-user GCP deployment patterns for Claude-based AI agent systems serving a 10-person marketing team: Cloud Run vs GKE for MCP server hosting, Firebase Auth / Identity Platform for OAuth 2.0 + PKCE multi-user session management, rate limiting and quota governance for concurrent Anthropic API and HubSpot API calls, cost attribution per user, and operational monitoring patterns for small-team LLM agent deployments in a MarTech context.'
+
+## [2026-05-28T20:45:50Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-28T20:45:50Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | adapter=arxiv | n=50
+
+adapter arxiv returned 50 candidates
+
+## [2026-05-28T20:45:55Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | target=web
+
+error: Firecrawl search HTTP error: 502 Server Error: Bad Gateway for url: https://api.firecrawl.dev/v1/search
+
+## [2026-05-28T20:45:56Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-28T20:45:59Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c1c7cd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:46:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:46:26Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:46:27Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | target=youtube
+
+error: youtube search returned HTTP 429 after retries exhausted
+
+## [2026-05-28T20:46:27Z] research | session_id=2026-05-28-orita-gcp-r3 | step=merge | n=86
+
+merged 86 candidate(s) across adapters
+
+## [2026-05-28T20:46:36Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-414c5e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:46:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=0 | cache_creation=14885 | duration_ms=17675 | cost_usd=0.025024
+
+## [2026-05-28T20:46:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=0 | cache_creation=14905 | duration_ms=18243 | cost_usd=0.025029
+
+## [2026-05-28T20:46:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1353 | cache_read=0 | cache_creation=14954 | duration_ms=19673 | cost_usd=0.025466
+
+## [2026-05-28T20:46:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1550 | cache_read=0 | cache_creation=22774 | duration_ms=20456 | cost_usd=0.036226
+
+## [2026-05-28T20:46:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1759 | cache_read=0 | cache_creation=22959 | duration_ms=21201 | cost_usd=0.037502
+
+## [2026-05-28T20:46:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=0 | cache_creation=15017 | duration_ms=21981 | cost_usd=0.026939
+
+## [2026-05-28T20:46:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2076 | cache_read=0 | cache_creation=14919 | duration_ms=24505 | cost_usd=0.029037
+
+## [2026-05-28T20:47:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2828 | cache_read=0 | cache_creation=22938 | duration_ms=33476 | cost_usd=0.042820
+
+## [2026-05-28T20:47:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=937 | cache_read=0 | cache_creation=36037 | duration_ms=11987 | cost_usd=0.049739
+
+## [2026-05-28T20:47:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1382 | cache_read=0 | cache_creation=36023 | duration_ms=16913 | cost_usd=0.051947
+
+## [2026-05-28T20:47:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=12605 | cache_creation=10215 | duration_ms=17598 | cost_usd=0.021092
+
+## [2026-05-28T20:47:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1191 | cache_read=25448 | cache_creation=10610 | duration_ms=15366 | cost_usd=0.021770
+
+## [2026-05-28T20:47:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1292 | cache_read=25448 | cache_creation=10519 | duration_ms=16435 | cost_usd=0.022162
+
+## [2026-05-28T20:47:13Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ca82d8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:47:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:47:14Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T20:47:16Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T20-47-16Z-schema-drift.md
+
+## [2026-05-28T20:47:16Z] discharge-orphans | domain=condo-capital-infra | filed=10 | skipped=0 | limit=10 | errors=0 | commit=cc4ca4c]
+
+discharge-orphans: 10 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-28T20:47:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=25448 | cache_creation=10539 | duration_ms=23661 | cost_usd=0.023887
+
+## [2026-05-28T20:47:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1384 | cache_read=0 | cache_creation=26230 | duration_ms=16831 | cost_usd=0.039716
+
+## [2026-05-28T20:47:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1442 | cache_read=25448 | cache_creation=10955 | duration_ms=18521 | cost_usd=0.023457
+
+## [2026-05-28T20:47:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1623 | cache_read=25448 | cache_creation=10577 | duration_ms=19633 | cost_usd=0.023889
+
+## [2026-05-28T20:47:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1738 | cache_read=12605 | cache_creation=10235 | duration_ms=19603 | cost_usd=0.022752
+
+## [2026-05-28T20:47:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1767 | cache_read=12605 | cache_creation=10290 | duration_ms=20144 | cost_usd=0.022966
+
+## [2026-05-28T20:47:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1894 | cache_read=15975 | cache_creation=10633 | duration_ms=24310 | cost_usd=0.024367
+
+## [2026-05-28T20:47:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1055 | cache_read=26786 | cache_creation=10515 | duration_ms=13555 | cost_usd=0.021105
+
+## [2026-05-28T20:47:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1810 | cache_read=26786 | cache_creation=10697 | duration_ms=20460 | cost_usd=0.025108
+
+## [2026-05-28T20:47:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=6206 | cache_read=0 | cache_creation=32641 | duration_ms=61048 | cost_usd=0.071839
+
+## [2026-05-28T20:47:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1795 | cache_read=26786 | cache_creation=10660 | duration_ms=22327 | cost_usd=0.024987
+
+## [2026-05-28T20:47:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1779 | cache_read=26786 | cache_creation=11021 | duration_ms=21183 | cost_usd=0.025358
+
+## [2026-05-28T20:47:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1795 | cache_read=26786 | cache_creation=10551 | duration_ms=20637 | cost_usd=0.024850
+
+## [2026-05-28T20:47:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1267 | cache_read=26786 | cache_creation=10586 | duration_ms=16273 | cost_usd=0.022254
+
+## [2026-05-28T20:48:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3245 | cache_read=0 | cache_creation=37388 | duration_ms=34946 | cost_usd=0.062968
+
+## [2026-05-28T20:48:01Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-6b1040 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:48:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1576 | cache_read=26786 | cache_creation=10548 | duration_ms=18038 | cost_usd=0.023752
+
+## [2026-05-28T20:48:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1850 | cache_read=26786 | cache_creation=10651 | duration_ms=21577 | cost_usd=0.025250
+
+## [2026-05-28T20:48:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1082 | cache_read=0 | cache_creation=26317 | duration_ms=14177 | cost_usd=0.038314
+
+## [2026-05-28T20:48:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=985 | cache_read=26786 | cache_creation=10643 | duration_ms=13015 | cost_usd=0.020915
+
+## [2026-05-28T20:48:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1595 | cache_read=26786 | cache_creation=10507 | duration_ms=18796 | cost_usd=0.023795
+
+## [2026-05-28T20:48:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1383 | cache_read=26786 | cache_creation=10732 | duration_ms=17523 | cost_usd=0.023017
+
+## [2026-05-28T20:48:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1484 | cache_read=0 | cache_creation=34234 | duration_ms=17587 | cost_usd=0.050221
+
+## [2026-05-28T20:48:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1444 | cache_read=26786 | cache_creation=10645 | duration_ms=17987 | cost_usd=0.023213
+
+## [2026-05-28T20:48:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2255 | cache_read=26786 | cache_creation=10706 | duration_ms=26575 | cost_usd=0.027344
+
+## [2026-05-28T20:48:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=896 | cache_read=26786 | cache_creation=10669 | duration_ms=12615 | cost_usd=0.020503
+
+## [2026-05-28T20:48:35Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-6b9665 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:48:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=26786 | cache_creation=10660 | duration_ms=16569 | cost_usd=0.022717
+
+## [2026-05-28T20:48:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1586 | cache_read=26786 | cache_creation=10548 | duration_ms=18596 | cost_usd=0.023802
+
+## [2026-05-28T20:48:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1689 | cache_read=26786 | cache_creation=10395 | duration_ms=21685 | cost_usd=0.024125
+
+## [2026-05-28T20:48:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=26786 | cache_creation=10472 | duration_ms=22620 | cost_usd=0.025472
+
+## [2026-05-28T20:48:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2384 | cache_read=26786 | cache_creation=10436 | duration_ms=27779 | cost_usd=0.027652
+
+## [2026-05-28T20:48:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2121 | cache_read=26786 | cache_creation=10369 | duration_ms=25008 | cost_usd=0.026253
+
+## [2026-05-28T20:48:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1821 | cache_read=26786 | cache_creation=10486 | duration_ms=20735 | cost_usd=0.024899
+
+## [2026-05-28T20:49:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1825 | cache_read=26786 | cache_creation=10395 | duration_ms=24494 | cost_usd=0.024805
+
+## [2026-05-28T20:49:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2401 | cache_read=26786 | cache_creation=10475 | duration_ms=25928 | cost_usd=0.027785
+
+## [2026-05-28T20:49:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4237 | cache_read=26786 | cache_creation=10557 | duration_ms=44575 | cost_usd=0.037068
+
+## [2026-05-28T20:49:09Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:49:09Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-bc3aa1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:49:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1644 | cache_read=26786 | cache_creation=10412 | duration_ms=22394 | cost_usd=0.023922
+
+## [2026-05-28T20:49:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2311 | cache_read=26786 | cache_creation=10555 | duration_ms=26486 | cost_usd=0.027435
+
+## [2026-05-28T20:49:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=26786 | cache_creation=10433 | duration_ms=18277 | cost_usd=0.023508
+
+## [2026-05-28T20:49:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1565 | cache_read=26786 | cache_creation=10530 | duration_ms=19294 | cost_usd=0.023674
+
+## [2026-05-28T20:49:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1846 | cache_read=26786 | cache_creation=10439 | duration_ms=21649 | cost_usd=0.024965
+
+## [2026-05-28T20:49:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1466 | cache_read=26786 | cache_creation=10455 | duration_ms=18019 | cost_usd=0.023085
+
+## [2026-05-28T20:49:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1629 | cache_read=26786 | cache_creation=10408 | duration_ms=18849 | cost_usd=0.023842
+
+## [2026-05-28T20:49:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1357 | cache_read=26786 | cache_creation=10432 | duration_ms=17374 | cost_usd=0.022512
+
+## [2026-05-28T20:49:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1589 | cache_read=26786 | cache_creation=10578 | duration_ms=19613 | cost_usd=0.023854
+
+## [2026-05-28T20:49:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1236 | cache_read=26786 | cache_creation=10545 | duration_ms=15534 | cost_usd=0.022048
+
+## [2026-05-28T20:49:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1655 | cache_read=26786 | cache_creation=10453 | duration_ms=20551 | cost_usd=0.024028
+
+## [2026-05-28T20:49:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1802 | cache_read=26786 | cache_creation=10485 | duration_ms=21856 | cost_usd=0.024803
+
+## [2026-05-28T20:49:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1359 | cache_read=26786 | cache_creation=10528 | duration_ms=16843 | cost_usd=0.022642
+
+## [2026-05-28T20:49:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1204 | cache_read=26786 | cache_creation=10414 | duration_ms=15190 | cost_usd=0.021724
+
+## [2026-05-28T20:49:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1806 | cache_read=26786 | cache_creation=10425 | duration_ms=21253 | cost_usd=0.024748
+
+## [2026-05-28T20:49:46Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c3bc4c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-28T20:49:48Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T20-49-48Z-schema-drift.md
+
+## [2026-05-28T20:49:48Z] discharge-orphans | domain=edge-ai-agentic | filed=20 | skipped=0 | limit=20 | errors=0 | commit=e69e9fd]
+
+discharge-orphans: 20 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-28T20:49:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1298 | cache_read=26786 | cache_creation=10402 | duration_ms=15254 | cost_usd=0.022179
+
+## [2026-05-28T20:49:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1666 | cache_read=26786 | cache_creation=10408 | duration_ms=19400 | cost_usd=0.024027
+
+## [2026-05-28T20:49:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1684 | cache_read=26786 | cache_creation=10414 | duration_ms=18431 | cost_usd=0.024124
+
+## [2026-05-28T20:50:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1668 | cache_read=26786 | cache_creation=10432 | duration_ms=19176 | cost_usd=0.024067
+
+## [2026-05-28T20:50:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1928 | cache_read=26786 | cache_creation=10599 | duration_ms=24974 | cost_usd=0.025575
+
+## [2026-05-28T20:50:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1299 | cache_read=26786 | cache_creation=10490 | duration_ms=15455 | cost_usd=0.022294
+
+## [2026-05-28T20:50:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1272 | cache_read=26786 | cache_creation=10499 | duration_ms=15978 | cost_usd=0.022170
+
+## [2026-05-28T20:50:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1435 | cache_read=26786 | cache_creation=10439 | duration_ms=17802 | cost_usd=0.022910
+
+## [2026-05-28T20:50:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1593 | cache_read=26786 | cache_creation=10423 | duration_ms=20531 | cost_usd=0.023680
+
+## [2026-05-28T20:50:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=873 | cache_read=26786 | cache_creation=10567 | duration_ms=10367 | cost_usd=0.020260
+
+## [2026-05-28T20:50:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2174 | cache_read=0 | cache_creation=29636 | duration_ms=25705 | cost_usd=0.047923
+
+## [2026-05-28T20:50:20Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4ef19c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T20:50:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1144 | cache_read=23660 | cache_creation=10579 | duration_ms=16066 | cost_usd=0.021318
+
+## [2026-05-28T20:50:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1799 | cache_read=26786 | cache_creation=10443 | duration_ms=21058 | cost_usd=0.024735
+
+## [2026-05-28T20:50:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1375 | cache_read=19120 | cache_creation=10426 | duration_ms=18298 | cost_usd=0.021827
+
+## [2026-05-28T20:50:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1686 | cache_read=26786 | cache_creation=10441 | duration_ms=20144 | cost_usd=0.024168
+
+## [2026-05-28T20:50:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1987 | cache_read=26786 | cache_creation=10411 | duration_ms=23896 | cost_usd=0.025635
+
+## [2026-05-28T20:50:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=887 | cache_read=26786 | cache_creation=10498 | duration_ms=13787 | cost_usd=0.020244
+
+## [2026-05-28T20:50:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1804 | cache_read=26786 | cache_creation=10429 | duration_ms=22061 | cost_usd=0.024743
+
+## [2026-05-28T20:50:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1545 | cache_read=26786 | cache_creation=10420 | duration_ms=19335 | cost_usd=0.023437
+
+## [2026-05-28T20:50:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1243 | cache_read=26786 | cache_creation=10398 | duration_ms=14350 | cost_usd=0.021899
+
+## [2026-05-28T20:50:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1432 | cache_read=26786 | cache_creation=10437 | duration_ms=21137 | cost_usd=0.022893
+
+## [2026-05-28T20:50:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1889 | cache_read=26786 | cache_creation=10412 | duration_ms=20616 | cost_usd=0.025147
+
+## [2026-05-28T20:50:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-29d11a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T20:50:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1573 | cache_read=26786 | cache_creation=10560 | duration_ms=24386 | cost_usd=0.023752
+
+## [2026-05-28T20:50:55Z] research | session_id=2026-05-28-orita-gcp-r3 | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-05-28T20:51:21Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:51:21Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T20:52:02Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T20:52:02Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:39:14Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-6a5013 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:39:50Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d3c906 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:40:17Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ad8981 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:40:49Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:40:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:41:19Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-cb7501 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:41:51Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-bda74b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:42:19Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c59961 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:42:47Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-406573 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:43:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-da3b95 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:43:40Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-18c7e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:44:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:44:12Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:44:42Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-bf202e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:45:13Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-6da3d3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:45:45Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7abf57 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:46:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2a8ab1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:46:13Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T21-46-13Z-schema-drift.md
+
+## [2026-05-28T21:46:13Z] discharge-orphans | domain=glp1-reward-modulation | filed=19 | skipped=1 | limit=20 | errors=1 | commit=56ec87b]
+
+discharge-orphans: 19 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-28T21:47:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:47:12Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:47:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:47:48Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:48:15Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-5f9d6d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:48:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:48:46Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:49:15Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:49:16Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:49:48Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-434ba3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:50:15Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-cbc7c7 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:50:43Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:50:43Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:51:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f6b0ff | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:51:44Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:51:44Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:52:15Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f5fa42 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:52:42Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:52:42Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:53:15Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-390e9b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:53:46Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e4bd1c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:54:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:54:20Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:54:51Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-739a36 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:55:21Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-44150d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:55:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0e8875 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:56:29Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-154c35 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:57:00Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T21:57:00Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T21:57:02Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T21-57-02Z-schema-drift.md
+
+## [2026-05-28T21:57:02Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=e0aa806]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-28T23:15:28Z] research | session_id=2026-05-28-orita-gcp-r3 | step=start | domain=orita-cmo
+
+start research session for prompt 'Multi-user GCP deployment patterns for Claude-based AI agent systems serving a 10-person marketing team: Cloud Run vs GKE for MCP server hosting, Firebase Auth / Identity Platform for OAuth 2.0 + PKCE multi-user session management, rate limiting and quota governance for concurrent Anthropic API and HubSpot API calls, cost attribution per user, and operational monitoring patterns for small-team LLM agent deployments in a MarTech context.'
+
+## [2026-05-28T23:15:28Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-05-28T23:15:33Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-28T23:15:35Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | target=youtube
+
+error: youtube search returned HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "error
+
+## [2026-05-28T23:15:38Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | adapter=web | n=100
+
+adapter web returned 100 candidates
+
+## [2026-05-28T23:16:20Z] research | session_id=2026-05-28-orita-gcp-r3 | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-05-28T23:16:20Z] research | session_id=2026-05-28-orita-gcp-r3 | step=merge | n=142
+
+merged 142 candidate(s) across adapters
+
+## [2026-05-28T23:16:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1015 | cache_read=0 | cache_creation=14858 | duration_ms=15206 | cost_usd=0.023655
+
+## [2026-05-28T23:16:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1376 | cache_read=0 | cache_creation=14761 | duration_ms=18307 | cost_usd=0.025339
+
+## [2026-05-28T23:16:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1451 | cache_read=0 | cache_creation=12626 | duration_ms=20100 | cost_usd=0.023046
+
+## [2026-05-28T23:16:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1621 | cache_read=0 | cache_creation=12610 | duration_ms=21203 | cost_usd=0.023876
+
+## [2026-05-28T23:16:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1658 | cache_read=0 | cache_creation=16363 | duration_ms=21617 | cost_usd=0.028752
+
+## [2026-05-28T23:16:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1969 | cache_read=0 | cache_creation=16363 | duration_ms=22966 | cost_usd=0.030307
+
+## [2026-05-28T23:16:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2316 | cache_read=0 | cache_creation=24388 | duration_ms=27190 | cost_usd=0.042073
+
+## [2026-05-28T23:16:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2710 | cache_read=0 | cache_creation=14872 | duration_ms=30236 | cost_usd=0.032148
+
+## [2026-05-28T23:17:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1436 | cache_read=26786 | cache_creation=10412 | duration_ms=18000 | cost_usd=0.022882
+
+## [2026-05-28T23:17:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1626 | cache_read=0 | cache_creation=34190 | duration_ms=20111 | cost_usd=0.050875
+
+## [2026-05-28T23:17:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1393 | cache_read=26786 | cache_creation=10455 | duration_ms=18260 | cost_usd=0.022720
+
+## [2026-05-28T23:17:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2533 | cache_read=0 | cache_creation=37341 | duration_ms=26578 | cost_usd=0.059349
+
+## [2026-05-28T23:17:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1771 | cache_read=26786 | cache_creation=10439 | duration_ms=21378 | cost_usd=0.024590
+
+## [2026-05-28T23:17:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2063 | cache_read=26786 | cache_creation=10433 | duration_ms=23655 | cost_usd=0.026043
+
+## [2026-05-28T23:17:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1334 | cache_read=26786 | cache_creation=10432 | duration_ms=16392 | cost_usd=0.022397
+
+## [2026-05-28T23:17:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1677 | cache_read=26786 | cache_creation=10408 | duration_ms=19997 | cost_usd=0.024082
+
+## [2026-05-28T23:17:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1490 | cache_read=26786 | cache_creation=10578 | duration_ms=16858 | cost_usd=0.023359
+
+## [2026-05-28T23:17:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=26786 | cache_creation=10545 | duration_ms=15301 | cost_usd=0.022453
+
+## [2026-05-28T23:17:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1695 | cache_read=23660 | cache_creation=10485 | duration_ms=20141 | cost_usd=0.023955
+
+## [2026-05-28T23:17:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1398 | cache_read=26786 | cache_creation=10528 | duration_ms=17825 | cost_usd=0.022837
+
+## [2026-05-28T23:17:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1155 | cache_read=26786 | cache_creation=10469 | duration_ms=16041 | cost_usd=0.021548
+
+## [2026-05-28T23:17:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1445 | cache_read=26786 | cache_creation=10414 | duration_ms=17401 | cost_usd=0.022929
+
+## [2026-05-28T23:17:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1735 | cache_read=23660 | cache_creation=10453 | duration_ms=25197 | cost_usd=0.024115
+
+## [2026-05-28T23:17:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1829 | cache_read=26786 | cache_creation=10425 | duration_ms=22668 | cost_usd=0.024863
+
+## [2026-05-28T23:17:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1374 | cache_read=0 | cache_creation=29678 | duration_ms=17217 | cost_usd=0.043976
+
+## [2026-05-28T23:17:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1043 | cache_read=23660 | cache_creation=10493 | duration_ms=13958 | cost_usd=0.020705
+
+## [2026-05-28T23:17:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=870 | cache_read=26786 | cache_creation=10438 | duration_ms=11170 | cost_usd=0.020084
+
+## [2026-05-28T23:17:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2276 | cache_read=26786 | cache_creation=10402 | duration_ms=23950 | cost_usd=0.027069
+
+## [2026-05-28T23:17:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1423 | cache_read=23660 | cache_creation=10439 | duration_ms=16810 | cost_usd=0.022538
+
+## [2026-05-28T23:17:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1514 | cache_read=23660 | cache_creation=10414 | duration_ms=18996 | cost_usd=0.022961
+
+## [2026-05-28T23:17:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1460 | cache_read=26786 | cache_creation=10429 | duration_ms=18064 | cost_usd=0.023023
+
+## [2026-05-28T23:18:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=26786 | cache_creation=10423 | duration_ms=18265 | cost_usd=0.023180
+
+## [2026-05-28T23:18:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1095 | cache_read=23660 | cache_creation=10504 | duration_ms=12990 | cost_usd=0.020979
+
+## [2026-05-28T23:18:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1268 | cache_read=26786 | cache_creation=10518 | duration_ms=15880 | cost_usd=0.022174
+
+## [2026-05-28T23:18:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1838 | cache_read=26786 | cache_creation=10557 | duration_ms=21016 | cost_usd=0.025073
+
+## [2026-05-28T23:18:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1496 | cache_read=26786 | cache_creation=10502 | duration_ms=17204 | cost_usd=0.023294
+
+## [2026-05-28T23:18:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1485 | cache_read=26786 | cache_creation=10506 | duration_ms=18667 | cost_usd=0.023244
+
+## [2026-05-28T23:18:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1727 | cache_read=23660 | cache_creation=10406 | duration_ms=19924 | cost_usd=0.024016
+
+## [2026-05-28T23:18:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=26786 | cache_creation=10429 | duration_ms=17447 | cost_usd=0.023243
+
+## [2026-05-28T23:18:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1155 | cache_read=26786 | cache_creation=10498 | duration_ms=17205 | cost_usd=0.021584
+
+## [2026-05-28T23:18:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3360 | cache_read=26786 | cache_creation=10472 | duration_ms=36842 | cost_usd=0.032577
+
+## [2026-05-28T23:18:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1367 | cache_read=26786 | cache_creation=10437 | duration_ms=16335 | cost_usd=0.022568
+
+## [2026-05-28T23:18:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1996 | cache_read=26786 | cache_creation=10420 | duration_ms=22577 | cost_usd=0.025692
+
+## [2026-05-28T23:18:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1108 | cache_read=23660 | cache_creation=10459 | duration_ms=14214 | cost_usd=0.020988
+
+## [2026-05-28T23:18:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=23660 | cache_creation=10412 | duration_ms=17225 | cost_usd=0.022744
+
+## [2026-05-28T23:18:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1088 | cache_read=23660 | cache_creation=10560 | duration_ms=16461 | cost_usd=0.021014
+
+## [2026-05-28T23:18:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1132 | cache_read=26786 | cache_creation=10296 | duration_ms=17041 | cost_usd=0.021217
+
+## [2026-05-28T23:18:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1109 | cache_read=23660 | cache_creation=10308 | duration_ms=15230 | cost_usd=0.020804
+
+## [2026-05-28T23:18:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=23660 | cache_creation=10264 | duration_ms=19216 | cost_usd=0.022559
+
+## [2026-05-28T23:19:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1644 | cache_read=26786 | cache_creation=10320 | duration_ms=20298 | cost_usd=0.023807
+
+## [2026-05-28T23:19:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1663 | cache_read=26786 | cache_creation=10300 | duration_ms=19354 | cost_usd=0.023877
+
+## [2026-05-28T23:19:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1506 | cache_read=26786 | cache_creation=10302 | duration_ms=16999 | cost_usd=0.023094
+
+## [2026-05-28T23:19:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1848 | cache_read=23660 | cache_creation=10326 | duration_ms=25411 | cost_usd=0.024522
+
+## [2026-05-28T23:19:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1998 | cache_read=26786 | cache_creation=10327 | duration_ms=23369 | cost_usd=0.025585
+
+## [2026-05-28T23:19:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1277 | cache_read=26786 | cache_creation=10355 | duration_ms=15295 | cost_usd=0.022015
+
+## [2026-05-28T23:19:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2780 | cache_read=26786 | cache_creation=10332 | duration_ms=30192 | cost_usd=0.029502
+
+## [2026-05-28T23:19:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1062 | cache_read=26786 | cache_creation=10254 | duration_ms=14533 | cost_usd=0.020814
+
+## [2026-05-28T23:19:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1651 | cache_read=26786 | cache_creation=10394 | duration_ms=21058 | cost_usd=0.023934
+
+## [2026-05-28T23:19:23Z] lint | scope=orphans | orphans=634
+
+report=.knowledge/lint/2026-05-28T23-19-23Z-orphans.md
+
+## [2026-05-28T23:19:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1629 | cache_read=26786 | cache_creation=10335 | duration_ms=19788 | cost_usd=0.023750
+
+## [2026-05-28T23:19:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1648 | cache_read=26786 | cache_creation=10327 | duration_ms=20646 | cost_usd=0.023835
+
+## [2026-05-28T23:19:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=26786 | cache_creation=10345 | duration_ms=17658 | cost_usd=0.022673
+
+## [2026-05-28T23:19:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1948 | cache_read=26786 | cache_creation=10309 | duration_ms=22577 | cost_usd=0.025313
+
+## [2026-05-28T23:19:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1673 | cache_read=26786 | cache_creation=10304 | duration_ms=20459 | cost_usd=0.023932
+
+## [2026-05-28T23:19:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1422 | cache_read=26786 | cache_creation=10355 | duration_ms=18148 | cost_usd=0.022740
+
+## [2026-05-28T23:19:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1993 | cache_read=26786 | cache_creation=10274 | duration_ms=23298 | cost_usd=0.025494
+
+## [2026-05-28T23:19:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2191 | cache_read=26786 | cache_creation=10317 | duration_ms=27140 | cost_usd=0.026538
+
+## [2026-05-28T23:19:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1684 | cache_read=26786 | cache_creation=10288 | duration_ms=19164 | cost_usd=0.023967
+
+## [2026-05-28T23:19:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1364 | cache_read=26786 | cache_creation=10341 | duration_ms=18004 | cost_usd=0.022433
+
+## [2026-05-28T23:19:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1953 | cache_read=26786 | cache_creation=10320 | duration_ms=22747 | cost_usd=0.025352
+
+## [2026-05-28T23:19:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=26786 | cache_creation=10286 | duration_ms=18601 | cost_usd=0.022824
+
+## [2026-05-28T23:19:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2264 | cache_read=26786 | cache_creation=10302 | duration_ms=25439 | cost_usd=0.026884
+
+## [2026-05-28T23:20:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1583 | cache_read=26786 | cache_creation=10252 | duration_ms=18233 | cost_usd=0.023417
+
+## [2026-05-28T23:20:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1446 | cache_read=19120 | cache_creation=10353 | duration_ms=16907 | cost_usd=0.022091
+
+## [2026-05-28T23:20:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1359 | cache_read=26786 | cache_creation=10291 | duration_ms=16190 | cost_usd=0.022345
+
+## [2026-05-28T23:20:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1279 | cache_read=26786 | cache_creation=10336 | duration_ms=18957 | cost_usd=0.022002
+
+## [2026-05-28T23:20:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2198 | cache_read=0 | cache_creation=26041 | duration_ms=26325 | cost_usd=0.043549
+
+## [2026-05-28T23:20:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1660 | cache_read=26786 | cache_creation=10383 | duration_ms=20973 | cost_usd=0.023965
+
+## [2026-05-28T23:20:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1563 | cache_read=26786 | cache_creation=10343 | duration_ms=19519 | cost_usd=0.023430
+
+## [2026-05-28T23:20:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1823 | cache_read=26786 | cache_creation=10304 | duration_ms=21936 | cost_usd=0.024682
+
+## [2026-05-28T23:20:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1241 | cache_read=26786 | cache_creation=10325 | duration_ms=16264 | cost_usd=0.021798
+
+## [2026-05-28T23:20:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1379 | cache_read=26786 | cache_creation=10314 | duration_ms=17688 | cost_usd=0.022474
+
+## [2026-05-28T23:20:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1720 | cache_read=23660 | cache_creation=10331 | duration_ms=21575 | cost_usd=0.023888
+
+## [2026-05-28T23:20:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1252 | cache_read=26786 | cache_creation=10345 | duration_ms=15751 | cost_usd=0.021878
+
+## [2026-05-28T23:20:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1703 | cache_read=26786 | cache_creation=10310 | duration_ms=20662 | cost_usd=0.024089
+
+## [2026-05-28T23:20:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2494 | cache_read=26786 | cache_creation=10306 | duration_ms=27547 | cost_usd=0.028039
+
+## [2026-05-28T23:20:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1447 | cache_read=26786 | cache_creation=10315 | duration_ms=17366 | cost_usd=0.022815
+
+## [2026-05-28T23:20:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1816 | cache_read=26786 | cache_creation=10337 | duration_ms=19932 | cost_usd=0.024688
+
+## [2026-05-28T23:20:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1907 | cache_read=26786 | cache_creation=10290 | duration_ms=22734 | cost_usd=0.025084
+
+## [2026-05-28T23:20:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1998 | cache_read=19120 | cache_creation=10267 | duration_ms=24909 | cost_usd=0.024744
+
+## [2026-05-28T23:20:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3412 | cache_read=26786 | cache_creation=10272 | duration_ms=37370 | cost_usd=0.032587
+
+## [2026-05-28T23:20:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1892 | cache_read=26786 | cache_creation=10350 | duration_ms=23658 | cost_usd=0.025084
+
+## [2026-05-28T23:21:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1445 | cache_read=23660 | cache_creation=10290 | duration_ms=17704 | cost_usd=0.022462
+
+## [2026-05-28T23:21:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1166 | cache_read=23660 | cache_creation=10400 | duration_ms=17307 | cost_usd=0.021204
+
+## [2026-05-28T23:21:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1483 | cache_read=15750 | cache_creation=10245 | duration_ms=18981 | cost_usd=0.021804
+
+## [2026-05-28T23:21:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1686 | cache_read=26786 | cache_creation=10294 | duration_ms=20078 | cost_usd=0.023984
+
+## [2026-05-28T23:21:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1099 | cache_read=26786 | cache_creation=10273 | duration_ms=14329 | cost_usd=0.021023
+
+## [2026-05-28T23:21:08Z] research | session_id=2026-05-28-orita-gcp-r3 | step=filter | target=https://www.qobra.co/blog/top-sales-ops-tools
+
+error: could not parse JSON in filter response: Expecting ',' delimiter: line 1 column 81 (char 80)
+
+## [2026-05-28T23:21:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1211 | cache_read=26786 | cache_creation=10308 | duration_ms=15951 | cost_usd=0.021627
+
+## [2026-05-28T23:21:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1814 | cache_read=26786 | cache_creation=10367 | duration_ms=24853 | cost_usd=0.024715
+
+## [2026-05-28T23:21:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=19120 | cache_creation=10298 | duration_ms=17125 | cost_usd=0.020547
+
+## [2026-05-28T23:21:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1609 | cache_read=26786 | cache_creation=10343 | duration_ms=24587 | cost_usd=0.023660
+
+## [2026-05-28T23:21:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1563 | cache_read=26786 | cache_creation=10339 | duration_ms=22296 | cost_usd=0.023425
+
+## [2026-05-28T23:21:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2087 | cache_read=23660 | cache_creation=10290 | duration_ms=25152 | cost_usd=0.025671
+
+## [2026-05-28T23:21:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=26786 | cache_creation=10337 | duration_ms=21913 | cost_usd=0.023673
+
+## [2026-05-28T23:21:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1206 | cache_read=19120 | cache_creation=10268 | duration_ms=17935 | cost_usd=0.020785
+
+## [2026-05-28T23:21:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1799 | cache_read=26786 | cache_creation=10286 | duration_ms=27730 | cost_usd=0.024539
+
+## [2026-05-28T23:21:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1207 | cache_read=26786 | cache_creation=10320 | duration_ms=18914 | cost_usd=0.021622
+
+## [2026-05-28T23:21:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1532 | cache_read=26786 | cache_creation=10284 | duration_ms=20030 | cost_usd=0.023202
+
+## [2026-05-28T23:21:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1810 | cache_read=26786 | cache_creation=10347 | duration_ms=22621 | cost_usd=0.024670
+
+## [2026-05-28T23:21:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1402 | cache_read=26786 | cache_creation=10349 | duration_ms=20137 | cost_usd=0.022633
+
+## [2026-05-28T23:21:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1619 | cache_read=26786 | cache_creation=10256 | duration_ms=21900 | cost_usd=0.023602
+
+## [2026-05-28T23:22:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1495 | cache_read=26786 | cache_creation=10282 | duration_ms=33425 | cost_usd=0.023014
+
+## [2026-05-28T23:22:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1491 | cache_read=26786 | cache_creation=10296 | duration_ms=21960 | cost_usd=0.023012
+
+## [2026-05-28T23:22:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1760 | cache_read=26786 | cache_creation=10268 | duration_ms=23923 | cost_usd=0.024322
+
+## [2026-05-28T23:22:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:22:07Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:22:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1599 | cache_read=19120 | cache_creation=10283 | duration_ms=20932 | cost_usd=0.022769
+
+## [2026-05-28T23:22:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1587 | cache_read=26786 | cache_creation=10359 | duration_ms=24092 | cost_usd=0.023570
+
+## [2026-05-28T23:22:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=26786 | cache_creation=10360 | duration_ms=16308 | cost_usd=0.022222
+
+## [2026-05-28T23:22:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1597 | cache_read=26786 | cache_creation=10355 | duration_ms=21541 | cost_usd=0.023615
+
+## [2026-05-28T23:22:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1659 | cache_read=26786 | cache_creation=10329 | duration_ms=20853 | cost_usd=0.023893
+
+## [2026-05-28T23:22:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1648 | cache_read=23660 | cache_creation=10332 | duration_ms=18754 | cost_usd=0.023529
+
+## [2026-05-28T23:22:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1232 | cache_read=26786 | cache_creation=10350 | duration_ms=15271 | cost_usd=0.021784
+
+## [2026-05-28T23:22:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1608 | cache_read=26786 | cache_creation=10413 | duration_ms=20432 | cost_usd=0.023743
+
+## [2026-05-28T23:22:31Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-22-31Z-schema-drift.md
+
+## [2026-05-28T23:22:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1356 | cache_read=26786 | cache_creation=10288 | duration_ms=16073 | cost_usd=0.022327
+
+## [2026-05-28T23:22:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1839 | cache_read=19120 | cache_creation=10209 | duration_ms=20954 | cost_usd=0.023876
+
+## [2026-05-28T23:22:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2048 | cache_read=26786 | cache_creation=10310 | duration_ms=25563 | cost_usd=0.025814
+
+## [2026-05-28T23:22:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1422 | cache_read=23660 | cache_creation=10377 | duration_ms=18073 | cost_usd=0.022455
+
+## [2026-05-28T23:22:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1240 | cache_read=26786 | cache_creation=10324 | duration_ms=16731 | cost_usd=0.021792
+
+## [2026-05-28T23:22:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1963 | cache_read=23660 | cache_creation=10323 | duration_ms=24216 | cost_usd=0.025093
+
+## [2026-05-28T23:22:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1742 | cache_read=26786 | cache_creation=10325 | duration_ms=22803 | cost_usd=0.024303
+
+## [2026-05-28T23:22:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2035 | cache_read=26786 | cache_creation=10347 | duration_ms=23105 | cost_usd=0.025795
+
+## [2026-05-28T23:22:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:22:52Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:22:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1199 | cache_read=26786 | cache_creation=10280 | duration_ms=15632 | cost_usd=0.021532
+
+## [2026-05-28T23:23:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=26786 | cache_creation=10319 | duration_ms=16706 | cost_usd=0.022170
+
+## [2026-05-28T23:23:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1253 | cache_read=26786 | cache_creation=10309 | duration_ms=15836 | cost_usd=0.021838
+
+## [2026-05-28T23:23:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1199 | cache_read=26786 | cache_creation=10282 | duration_ms=15593 | cost_usd=0.021534
+
+## [2026-05-28T23:23:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1154 | cache_read=26786 | cache_creation=10318 | duration_ms=14916 | cost_usd=0.021354
+
+## [2026-05-28T23:23:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2137 | cache_read=26786 | cache_creation=10282 | duration_ms=24958 | cost_usd=0.026224
+
+## [2026-05-28T23:23:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1797 | cache_read=23660 | cache_creation=10288 | duration_ms=22090 | cost_usd=0.024219
+
+## [2026-05-28T23:23:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1185 | cache_read=26786 | cache_creation=10296 | duration_ms=15669 | cost_usd=0.021482
+
+## [2026-05-28T23:23:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2345 | cache_read=26786 | cache_creation=10340 | duration_ms=26431 | cost_usd=0.027337
+
+## [2026-05-28T23:23:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2104 | cache_read=26786 | cache_creation=10280 | duration_ms=23298 | cost_usd=0.026057
+
+## [2026-05-28T23:23:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1703 | cache_read=26786 | cache_creation=10314 | duration_ms=20253 | cost_usd=0.024094
+
+## [2026-05-28T23:23:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1508 | cache_read=26786 | cache_creation=10300 | duration_ms=18389 | cost_usd=0.023102
+
+## [2026-05-28T23:23:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2460 | cache_read=26786 | cache_creation=10298 | duration_ms=27947 | cost_usd=0.027859
+
+## [2026-05-28T23:23:35Z] research | session_id=2026-05-28-orita-gcp-r3 | step=filter | n=1
+
+1 candidate(s) cleared threshold
+
+## [2026-05-28T23:23:35Z] research | session_id=2026-05-28-orita-gcp-r3 | step=convert | target=https://www.reddit.com/r/ClaudeAI/comments/1rga7f5/how_i_built_a_13agent_claude_team_where_agents/
+
+error: no extractable content at https://www.reddit.com/r/ClaudeAI/comments/1rga7f5/how_i_built_a_13agent_claude_team_where_agents/
+
+## [2026-05-28T23:23:35Z] research | session_id=2026-05-28-orita-gcp-r3 | step=materialize | n=0
+
+materialized 0 source(s) to raw/
+
+## [2026-05-28T23:23:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:23:38Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:24:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:24:18Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:24:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:24:58Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:25:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:25:36Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:26:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:26:27Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:27:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:27:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:27:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:27:56Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:28:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:28:38Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:29:03Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-29-03Z-schema-drift.md
+
+## [2026-05-28T23:29:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:29:28Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:30:15Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:30:15Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:30:31Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:30:32Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:31:06Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:31:06Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:31:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:31:09Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:31:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-31-17Z-schema-drift.md
+
+## [2026-05-28T23:31:38Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-31-38Z-schema-drift.md
+
+## [2026-05-28T23:31:40Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:31:40Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:31:52Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:31:52Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:32:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:32:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:32:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:32:41Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:32:49Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:32:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:32:49Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-32-49Z-schema-drift.md
+
+## [2026-05-28T23:33:41Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-33-41Z-schema-drift.md
+
+## [2026-05-28T23:36:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:36:01Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:36:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:36:23Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:36:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:36:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:36:58Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:36:58Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:37:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:37:32Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:37:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:37:34Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:38:02Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:38:02Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:38:15Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:38:16Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:38:37Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:38:37Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:38:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:38:59Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:39:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:39:11Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:39:41Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:39:41Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:39:45Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:39:46Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:40:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:40:20Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:40:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:40:36Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:40:55Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:40:55Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:41:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:41:21Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:41:44Z] query | domain=glp1-reward-modulation | unresolved_citations=7,10
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:41:44Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:42:18Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4600b1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:42:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:42:18Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:43:04Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:43:04Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:43:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:43:12Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:43:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:43:49Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:44:01Z] query | domain=glp1-reward-modulation | unresolved_citations=3,18
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:44:01Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:44:32Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c8af10 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:44:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,9,10,11,12,13,14,15
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:44:41Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:45:03Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-03df12 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:45:39Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-457a0e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:46:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:46:02Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:46:10Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-105f68 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:46:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:46:46Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:46:47Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:46:47Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:47:26Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:47:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:47:30Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:48:03Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:48:05Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-48-05Z-schema-drift.md
+
+## [2026-05-28T23:48:05Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=caaf8d5]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-28T23:48:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:48:18Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:48:43Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:48:43Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:48:52Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:49:25Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:49:26Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:49:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:49:50Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:50:01Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:50:01Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:50:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:50:34Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:50:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:50:35Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:51:05Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:51:05Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:51:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:51:24Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:51:26Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-28T23-51-26Z-schema-drift.md
+
+## [2026-05-28T23:51:26Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=95d59d9]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-28T23:51:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:51:48Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:52:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:52:07Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:52:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:52:16Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:52:53Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:52:53Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:53:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:53:03Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:53:39Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:53:40Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:53:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:53:47Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:54:20Z] query | domain=glp1-reward-modulation | unresolved_citations=3,7,13
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:54:20Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:54:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:54:30Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:55:01Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:55:01Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:55:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:55:24Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:55:40Z] query | domain=glp1-reward-modulation | unresolved_citations=7,13
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:55:40Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:56:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:56:12Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:56:42Z] query | domain=glp1-reward-modulation | unresolved_citations=3,6,8
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:56:42Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:57:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:57:09Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:57:21Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:57:22Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:57:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:57:50Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:58:09Z] query | domain=glp1-reward-modulation | unresolved_citations=9,10,13
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:58:10Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:58:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:58:38Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:58:52Z] query | domain=glp1-reward-modulation | unresolved_citations=3,4,7,9
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:58:52Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-28T23:59:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:59:28Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-28T23:59:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,4,8,10
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-28T23:59:34Z] wiki-author | id=query-2026-05-28-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:00:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:00:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:00:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:00:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1cbbd6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:01:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:01:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:01:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:01:23Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-01-23Z-schema-drift.md
+
+## [2026-05-29T00:01:23Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=07431dd]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T00:01:56Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:01:56Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:02:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:02:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:02:28Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:02:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:02:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:02:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:02:59Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:02:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:03:27Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:03:27Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:03:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:03:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:04:10Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:04:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:04:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:04:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:04:47Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:04:50Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:04:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:05:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:05:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:05:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:05:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:05:55Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:05:56Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:06:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:06:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:06:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:06:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:07:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:07:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:07:18Z] query | domain=glp1-reward-modulation | unresolved_citations=7
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:07:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:07:20Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-07-20Z-schema-drift.md
+
+## [2026-05-29T00:07:20Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=65c7ead]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T00:07:54Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:07:54Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:08:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:08:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:08:44Z] query | domain=glp1-reward-modulation | unresolved_citations=16,20
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:08:45Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:08:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:08:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:09:25Z] query | domain=glp1-reward-modulation | unresolved_citations=3,9,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:09:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:09:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:09:37Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:10:10Z] query | domain=glp1-reward-modulation | unresolved_citations=8,9
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:10:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:10:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:10:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:10:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:11:52Z] query | domain=glp1-reward-modulation | unresolved_citations=3,6,7,8,9,13
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:11:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:12:40Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,14,19
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:12:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:13:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:14:06Z] query | domain=glp1-reward-modulation | unresolved_citations=2,5
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:14:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:15:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:15:01Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:15:11Z] query | domain=glp1-reward-modulation | unresolved_citations=2,6
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:15:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:15:13Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-15-13Z-schema-drift.md
+
+## [2026-05-29T00:15:13Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=4b51661]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T00:15:51Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:15:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:15:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:15:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:16:22Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:16:22Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:16:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:16:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:17:04Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:17:04Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:17:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:17:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:17:35Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:17:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:18:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:18:01Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:18:02Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:18:02Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:18:51Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:18:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:18:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:18:57Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:19:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:19:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:19:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:19:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:20:00Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:20:00Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:20:35Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:20:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:20:40Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:20:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:21:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:21:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:21:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:22:00Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:22:01Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:22:03Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:22:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:22:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:22:45Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,18,22
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:22:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:23:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:23:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:23:29Z] query | domain=glp1-reward-modulation | unresolved_citations=1,9,12
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:23:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:24:04Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:24:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:24:10Z] query | domain=glp1-reward-modulation | unresolved_citations=8,14,15,16,19
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:24:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:24:48Z] query | domain=glp1-reward-modulation | unresolved_citations=9
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:24:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:24:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:24:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:24:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-24-59Z-schema-drift.md
+
+## [2026-05-29T00:24:59Z] discharge-orphans | domain=condo-capital-infra | filed=18 | skipped=2 | limit=20 | errors=2 | commit=793b229]
+
+discharge-orphans: 18 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T00:25:37Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:25:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:25:47Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:25:47Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:26:24Z] query | domain=glp1-reward-modulation | unresolved_citations=16
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:26:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:26:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:26:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:27:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:27:16Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:27:19Z] query | domain=glp1-reward-modulation | unresolved_citations=10,11,16
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:27:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:27:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:28:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:28:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:28:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:28:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:28:58Z] query | domain=glp1-reward-modulation | unresolved_citations=3,4,5,6
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:28:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:29:00Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-29-00Z-schema-drift.md
+
+## [2026-05-29T00:29:00Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=60cc90e]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T00:29:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:29:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:29:35Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:29:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:30:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:30:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:30:23Z] cloud-ingest | auth=ios-shortcut-andrew-iphone | task=deb3439e-394a-440c-bf8c-1a35534c142f
+
+cloud ingest queued via token 'ios-shortcut-andrew-iphone'
+
+## [2026-05-29T00:30:24Z] ingest | id=web-2026-05-29-100 | type=web | domains=- | filter=no-domain
+
+raw=raw/web/web-2026-05-29-100.md wiki=wiki/sources/web-2026-05-29-100.md
+
+## [2026-05-29T00:30:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:30:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:30:55Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:30:56Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:31:09Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:31:10Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:31:28Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:31:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:31:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:31:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:32:05Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:32:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:32:42Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:32:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:32:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:32:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:33:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:33:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:33:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:33:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:33:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:33:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:34:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:34:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:34:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:34:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:35:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:35:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:35:33Z] query | domain=glp1-reward-modulation | unresolved_citations=1,8,12
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:35:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:36:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:36:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:36:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:36:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:37:00Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:37:04Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:37:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:37:51Z] query | domain=glp1-reward-modulation | unresolved_citations=4
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:37:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:37:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:37:57Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:38:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:38:32Z] query | domain=glp1-reward-modulation | unresolved_citations=8,9,11
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:38:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:39:19Z] query | domain=glp1-reward-modulation | unresolved_citations=6,7,9,12,17
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:39:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:39:20Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:39:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:39:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:39:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:40:06Z] query | domain=glp1-reward-modulation | unresolved_citations=6,7,10,11,12,19,20
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:40:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:40:39Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:41:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:41:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:41:05Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-41-05Z-schema-drift.md
+
+## [2026-05-29T00:41:05Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=7847f59]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T00:41:48Z] query | domain=glp1-reward-modulation | unresolved_citations=8,9,13,14
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:41:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:41:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:41:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:42:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:42:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:42:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:43:02Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-43-02Z-schema-drift.md
+
+## [2026-05-29T00:43:13Z] query | domain=glp1-reward-modulation | unresolved_citations=6
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:43:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T00:43:15Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-43-15Z-schema-drift.md
+
+## [2026-05-29T00:43:15Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=8867315]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T00:43:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:43:36Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:44:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:44:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:45:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:45:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:45:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:45:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:46:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:46:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:46:53Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-46-53Z-schema-drift.md
+
+## [2026-05-29T00:47:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
+
+lint-warning: query response cited 24 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:47:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:48:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:48:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:49:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:49:36Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:50:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:50:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:51:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:51:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:52:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:52:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:53:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:53:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:54:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:54:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:55:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:55:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:55:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:56:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:56:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:57:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:57:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:58:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T00:58:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T00:58:07Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T00-58-07Z-schema-drift.md
+
+## [2026-05-29T00:58:07Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=46cf093]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:34:52Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:34:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:34:58Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:34:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:00Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:00Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:05Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:07Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-529d8a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:35:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:35:12Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:35:13Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e59b03 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:35:15Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:15Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:35:15Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:16Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a87fe2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:35:20Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:35:21Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:28Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bc3aa1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:35:30Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:31Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:43Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:43Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:35:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-60e4fe | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:35:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:35:47Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d4f62b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:35:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4ec9df | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:36:00Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:01Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:36:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:36:03Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:36:06Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bd8b25 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:36:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:36:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:08Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:36:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:16Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:36:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:36:26Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
+
+lint-warning: query response cited 24 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9f86b4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:36:32Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-dfba37 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:36:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:36:34Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-91bfa3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:36:40Z] query | domain=glp1-reward-modulation | unresolved_citations=3
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:36:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5d2ba9 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:36:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:36:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:36:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:37:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:08Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:37:08Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2ce7d8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:37:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:37:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-930425 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:37:13Z] query | domain=glp1-reward-modulation | unresolved_citations=9
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:37:18Z] query | domain=glp1-reward-modulation | unresolved_citations=9,10,12,13
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:37:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4f7576 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:37:26Z] query | domain=glp1-reward-modulation | unresolved_citations=1,6,11,20
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:27Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:37:33Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9f5e65 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:37:37Z] query | domain=glp1-reward-modulation | unresolved_citations=15
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:37Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:37:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:37:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:45Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:37:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7b1b17 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:37:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-63aa1c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:37:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:37:54Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:37:54Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ce8e13 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:38:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:09Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,12,13,17
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:09Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:38:09Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:38:11Z] query | domain=glp1-reward-modulation | unresolved_citations=3,5,6,7,15,18,21
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:38:12Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:38:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f4c150 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:38:13Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-38-13Z-schema-drift.md
+
+## [2026-05-29T01:38:13Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=8cec817]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:38:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:38:14Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-38-14Z-schema-drift.md
+
+## [2026-05-29T01:38:14Z] discharge-orphans | domain=edge-ai-agentic | filed=20 | skipped=0 | limit=20 | errors=0
+
+discharge-orphans: 20 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:38:34Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:38:44Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:38:50Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:38:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:39:00Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:00Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e59b03 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:39:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:01Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:39:03Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a87fe2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:39:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:39:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:23Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:39:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:39:28Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:28Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-39-28Z-schema-drift.md
+
+## [2026-05-29T01:39:28Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=cf1fda2]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:39:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bc3aa1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:39:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-529d8a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:39:39Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:39Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:39:42Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-60e4fe | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:39:50Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bd8b25 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:39:51Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:39:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:40:06Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:40:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:40:25Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-dfba37 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:40:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:30Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:40:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-91bfa3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:40:34Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9f5e65 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:40:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:40:40Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9f86b4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:40:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:41Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:40:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:40:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:40:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:40:54Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:40:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:41:01Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:01Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ce8e13 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:41:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-682a1d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:41:09Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9dea5f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:41:10Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:41:23Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ec8abb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:41:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:41:27Z] query | domain=glp1-reward-modulation | unresolved_citations=3,6
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:27Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:41:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:41:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:41:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:46Z] query | domain=glp1-reward-modulation | unresolved_citations=4
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:41:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:41:48Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a750a5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:41:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a321c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:41:53Z] query | domain=glp1-reward-modulation | unresolved_citations=12,17
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:41:58Z] query | domain=glp1-reward-modulation | unresolved_citations=12
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:41:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:42:04Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cbce16 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:42:07Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:42:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bf67b7 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:42:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:42:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:42:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:42:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:42:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:42:36Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-34d963 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:42:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f1c4fe | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:42:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:42:43Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-42-43Z-schema-drift.md
+
+## [2026-05-29T01:42:43Z] discharge-orphans | domain=edge-ai-agentic | filed=20 | skipped=0 | limit=20 | errors=0 | commit=6aef52b]
+
+discharge-orphans: 20 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:42:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:42:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:42:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:42:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:42:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:42:59Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,4,5,10,11,12
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:00Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:43:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-43-01Z-schema-drift.md
+
+## [2026-05-29T01:43:01Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=353b6ea]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:43:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:08Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:43:17Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a87fe2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:43:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:43:27Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:27Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bc3aa1 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:43:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-529d8a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:43:30Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e59b03 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:43:37Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:37Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:43:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:43:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:43:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:43:49Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:43:50Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:43:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:43:57Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:43:57Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-60e4fe | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:44:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:13Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:44:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9f86b4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:44:14Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:15Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-dfba37 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:44:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:44:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:44:27Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:27Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bd8b25 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:44:33Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:44:38Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:38Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:44:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:44:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:44:42Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-44-42Z-schema-drift.md
+
+## [2026-05-29T01:44:42Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=d1ac957]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:44:58Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9f5e65 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:44:59Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:44:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:45:00Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:00Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ce8e13 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:45:03Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-91bfa3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:45:05Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-a750a5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:45:20Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:45:22Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:45:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:23Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:45:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:45:28Z] query | domain=edge-ai-agentic | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-bf67b7 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:45:34Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,13
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:45:34Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:45:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:45:44Z] query | domain=glp1-reward-modulation | unresolved_citations=6
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:45:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-25f72c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:45:45Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:45:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e26c05 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:45:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b7186f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:46:13Z] query | domain=glp1-reward-modulation | unresolved_citations=4,9,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:46:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:46:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:46:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:46:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:46:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:46:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-5db96f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:46:21Z] query | domain=glp1-reward-modulation | unresolved_citations=5,9,12
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:46:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-633ea0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against edge-ai-agentic corpus
+
+## [2026-05-29T01:46:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:46:23Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-46-23Z-schema-drift.md
+
+## [2026-05-29T01:46:23Z] discharge-orphans | domain=edge-ai-agentic | filed=18 | skipped=2 | limit=20 | errors=2 | commit=45a1411]
+
+discharge-orphans: 18 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:46:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:46:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T01:46:43Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-46-43Z-schema-drift.md
+
+## [2026-05-29T01:46:44Z] discharge-orphans | domain=condo-capital-infra | filed=7 | skipped=13 | limit=20 | errors=13 | commit=3d958a3]
+
+discharge-orphans: 7 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:46:45Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:47:04Z] query | domain=glp1-reward-modulation | unresolved_citations=2,7
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T01:47:04Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-29T01:47:05Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:47:06Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T01-47-06Z-schema-drift.md
+
+## [2026-05-29T01:47:06Z] discharge-orphans | domain=glp1-reward-modulation | filed=16 | skipped=4 | limit=20 | errors=4 | commit=afe9bed]
+
+discharge-orphans: 16 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:47:15Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:47:27Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:47:29Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:47:48Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:47:48Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:47:50Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:48:08Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:48:08Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:48:23Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:48:30Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:48:31Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:48:50Z] discharge-orphans | domain=edge-ai-agentic | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'edge-ai-agentic'
+
+## [2026-05-29T01:48:55Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:48:58Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:49:15Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:49:31Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:49:32Z] context | caller=cli | target=wiki/concepts/long-covid.md | depth=1 | format=markdown | pages_returned=10
+
+context: caller='cli' target=wiki/concepts/long-covid.md depth=1 pages=10
+
+## [2026-05-29T01:49:36Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-29T01:50:03Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:50:37Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T01:53:07Z] context | caller=cli | target=wiki/concepts/long-covid.md | depth=1 | format=markdown | pages_returned=10
+
+context: caller='cli' target=wiki/concepts/long-covid.md depth=1 pages=10
+
+## [2026-05-29T02:49:35Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T02-49-35Z-schema-drift.md
+
+## [2026-05-29T19:10:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:10:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:10:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:10:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:10:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:10:54Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:11:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:11:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:11:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:11:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:11:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:11:39Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:11:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:11:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:11:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:11:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:12:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:12:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:12:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:12:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:12:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:12:36Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:12:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:12:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:13:04Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:13:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:13:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:13:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:13:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:13:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:13:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:13:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:13:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:14:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:14:02Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:14:12Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:14:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:14:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:14:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:14:15Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T19-14-15Z-schema-drift.md
+
+## [2026-05-29T19:14:16Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=8a3d62d]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T19:14:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:14:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:47Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:54Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:15:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:15:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:16:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:16:36Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:16:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:16:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:16:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:16:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:16:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:16:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:17:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:17:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:17:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:17:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:17:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:17:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:17:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:17:45Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:17:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:18:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:18:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:18:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:18:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:18:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:18:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:18:32Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T19-18-32Z-schema-drift.md
+
+## [2026-05-29T19:18:32Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=5ea372e]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T19:19:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:19:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:19:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:19:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:19:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:19:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:19:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:19:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:19:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:19:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:20:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:20:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:20:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:20:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:20:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:20:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:20:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:20:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:20:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:20:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:20:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:20:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:21:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:21:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:21:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:21:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:21:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:21:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:21:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:21:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:21:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:21:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:44:14Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T19-44-14Z-schema-drift.md
+
+## [2026-05-29T19:44:14Z] discharge-orphans | domain=condo-capital-infra | filed=16 | skipped=4 | limit=20 | errors=4 | commit=1e022c3]
+
+discharge-orphans: 16 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T19:45:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:45:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:45:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:45:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:45:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:45:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:45:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:45:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:45:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:45:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:46:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:46:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:46:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:46:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:46:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:46:08Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:46:48Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:46:48Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:46:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:46:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:46:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:46:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:47:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:47:02Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:47:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:47:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:47:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:47:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:47:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:47:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:47:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:47:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:48:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:48:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:48:23Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:48:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:48:27Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:48:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:48:28Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:48:30Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T19-48-30Z-schema-drift.md
+
+## [2026-05-29T19:48:30Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=daefd4f]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T19:49:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:49:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:49:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:49:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:49:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:49:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:49:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:49:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:50:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:50:57Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:51:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:51:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:51:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:51:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:51:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:51:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:51:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:51:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:52:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:52:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:52:20Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:52:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:52:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:52:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:52:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:53:04Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:53:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:53:06Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T19-53-06Z-schema-drift.md
+
+## [2026-05-29T19:53:07Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=ef542fc]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T19:53:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:53:54Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:53:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:53:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:53:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:53:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:54:04Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:54:04Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:54:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:54:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:54:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:54:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:54:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:54:57Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:55:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:55:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:55:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:55:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:55:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:55:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:55:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:55:37Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:56:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:56:12Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:56:22Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:56:22Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:56:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:56:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:56:26Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:56:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:56:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:56:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:56:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:57:09Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:57:10Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:57:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:57:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:57:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:57:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:57:41Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T19-57-41Z-schema-drift.md
+
+## [2026-05-29T19:57:42Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=0575d5b]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T19:58:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:58:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:58:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:58:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:58:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:58:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:58:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:58:43Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:59:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:59:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:59:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:59:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:59:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:59:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:59:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:59:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T19:59:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T19:59:58Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:00:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:00:23Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:00:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:00:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:00:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:00:37Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:00:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:00:41Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:01:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:10Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:01:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:01:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:01:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:01:54Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:01:57Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T20-01-57Z-schema-drift.md
+
+## [2026-05-29T20:01:57Z] discharge-orphans | domain=condo-capital-infra | filed=19 | skipped=1 | limit=20 | errors=1 | commit=e803787]
+
+discharge-orphans: 19 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T20:02:45Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:02:46Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:02:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:02:49Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:02:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:02:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:03:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:03:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:03:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:03:30Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:03:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:03:39Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:03:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:03:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:03:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:03:50Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:04:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:04:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:04:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:04:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:04:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:04:31Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:04:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:04:32Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:05:06Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:05:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:05:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:05:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:05:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:05:27Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:05:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:05:37Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:05:39Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:05:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:05:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:06:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:06:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:06:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:06:26Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:06:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T20-06-28Z-schema-drift.md
+
+## [2026-05-29T20:06:29Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=5982a57]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T20:07:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:07:05Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:07:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:07:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:07:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:07:18Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:07:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:07:25Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:07:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:07:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:07:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:07:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:08:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:08:09Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:08:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:08:10Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:08:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:08:38Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:08:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:08:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:08:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:08:57Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:09:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:09:06Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:09:17Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:09:17Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:09:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:09:21Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:09:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:09:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:09:45Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:10:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:10:02Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:10:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:10:03Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:10:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:10:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:10:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:10:40Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:10:42Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T20-10-42Z-schema-drift.md
+
+## [2026-05-29T20:10:42Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=df5d889]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T20:11:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:11:24Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:11:34Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:11:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:11:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:11:35Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:11:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:11:55Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:12:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:12:10Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:12:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:12:14Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:12:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:12:29Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:12:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:12:44Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:12:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:12:51Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:12:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:12:52Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:13:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:13:19Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:13:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:13:34Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:13:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:13:36Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:13:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:13:42Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:14:07Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:14:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:14:11Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:14:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:14:13Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:14:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:14:33Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:14:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:14:53Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:14:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-29T20:14:59Z] wiki-author | id=query-2026-05-29-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-29T20:15:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-29T20-15-01Z-schema-drift.md
+
+## [2026-05-29T20:15:01Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=cb3c7e5]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-29T21:05:06Z] moc-add | slug=condo-software | domain=condo-software | draft=no
+
+created wiki/mocs/condo-software.md
+
+## [2026-05-29T21:05:10Z] context | caller=cli | target=wiki/mocs/condo-software.md | depth=1 | format=markdown | pages_returned=43
+
+context: caller='cli' target=wiki/mocs/condo-software.md depth=1 pages=43
+
+## [2026-05-29T21:12:33Z] moc-add | slug=condo-capital-infra | domain=condo-capital-infra | draft=no
+
+created wiki/mocs/condo-capital-infra.md
+
+## [2026-05-29T21:12:33Z] moc-add | slug=condo | domain=condo | draft=no
+
+created wiki/mocs/condo.md
+
+## [2026-05-29T21:12:33Z] moc-add | slug=risksystems | domain=risksystems | draft=no
+
+created wiki/mocs/risksystems.md
+
+## [2026-05-29T21:12:34Z] moc-add | slug=ai-and-agents | domain=ai-and-agents | draft=no
+
+created wiki/mocs/ai-and-agents.md
+
+## [2026-05-29T21:12:40Z] context | caller=cli | target=wiki/mocs/risksystems.md | depth=1 | format=markdown | pages_returned=39
+
+context: caller='cli' target=wiki/mocs/risksystems.md depth=1 pages=39
+
+## [2026-05-29T21:12:40Z] context | caller=cli | target=wiki/mocs/ai-and-agents.md | depth=1 | format=markdown | pages_returned=45
+
+context: caller='cli' target=wiki/mocs/ai-and-agents.md depth=1 pages=45
+
+## [2026-05-30T17:26:23Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:26:24Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:26:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:26:24Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:26:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:26:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:26:29Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:26:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:26:57Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:26:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:04Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:27:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:19Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:27:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:20Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:27:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:28Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:27:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:43Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:27:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:53Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:27:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:27:56Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-27-56Z-schema-drift.md
+
+## [2026-05-30T17:27:56Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=bafddd3]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:28:35Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:28:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:28:37Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:28:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:28:39Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:28:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:28:40Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:28:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:10Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:16Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:21Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:21Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:46Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:49Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:49Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:53Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:29:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:29:55Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-29-55Z-schema-drift.md
+
+## [2026-05-30T17:29:55Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=b849efd]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:30:29Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:30:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:30:39Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:30:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:30:42Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:30:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:30:43Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:30:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:02Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:21Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:22Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:22Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:23Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:30Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:51Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:31:59Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:31:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:32:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-32-01Z-schema-drift.md
+
+## [2026-05-30T17:32:01Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=5ecc487]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:32:37Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:32:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:32:40Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:32:40Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:32:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:32:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:32:44Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:32:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:05Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:17Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:17Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:17Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:18Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:18Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:34Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:49Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:51Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:33:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:33:53Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-33-53Z-schema-drift.md
+
+## [2026-05-30T17:33:53Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=61e305e4]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:34:29Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:34:29Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:34:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:34:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:34:34Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:34:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:34:35Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:34:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:35:03Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:35:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:35:09Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:35:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:35:10Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:35:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:35:12Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:35:12Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:35:39Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:35:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:35:55Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:35:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:36:01Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:36:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:36:03Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-36-03Z-schema-drift.md
+
+## [2026-05-30T17:36:03Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=64e1060f]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:36:36Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:36:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:36:41Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:36:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:36:42Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:36:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:36:47Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:36:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:08Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:18Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:18Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:18Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:20Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:34Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:48Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:57Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:37:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:37:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-37-59Z-schema-drift.md
+
+## [2026-05-30T17:38:00Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=adf89563]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:38:32Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:38:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:38:36Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:38:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:38:38Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:38:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:38:43Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:38:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:03Z] query | domain=ai-native-business | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:10Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:14Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:19Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:43Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:46Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:51Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:39:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:39:53Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-39-53Z-schema-drift.md
+
+## [2026-05-30T17:39:53Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=6ced5a5f]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:40:33Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:40:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:40:34Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:40:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:40:40Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:40:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:40:44Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:40:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:05Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:06Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:14Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:17Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:18Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:31Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:50Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:51Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:41:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:41:54Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-41-54Z-schema-drift.md
+
+## [2026-05-30T17:41:54Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=cfe84de0]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:42:30Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:42:30Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:42:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:42:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:42:32Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:42:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:42:37Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:42:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:01Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:11Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:13Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:20Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:37Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:42Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:45Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:43:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:43:47Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-43-47Z-schema-drift.md
+
+## [2026-05-30T17:43:47Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=8d88253e]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T17:44:22Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:44:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:44:27Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:44:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:44:35Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:44:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:44:37Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:44:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:44:55Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:44:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:03Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:45:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:14Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:45:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:20Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:45:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:22Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:45:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:41Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:45:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:42Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T17:45:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T17:45:44Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T17-45-44Z-schema-drift.md
+
+## [2026-05-30T17:45:44Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=8be852d2]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T18:15:45Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:15:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:15:47Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:15:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:15:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:15:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:15:53Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:15:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:16:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:16:28Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:16:29Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:16:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:38Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:16:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:16:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:16:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:16:54Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:16:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:17:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:17:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:17:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:17:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:17:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:17:39Z] query | domain=glp1-reward-modulation | unresolved_citations=13,14
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:17:44Z] query | domain=glp1-reward-modulation | unresolved_citations=1,6
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:17:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:17:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:17:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:17:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:18:28Z] query | domain=glp1-reward-modulation | unresolved_citations=4,9,14
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:18:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:18:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:18:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:18:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:18:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:18:49Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,10,11,13,14,15,17,18,19,20
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:18:56Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,9,13,16
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:18:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:19:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:19:15Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,4,5,6,8,15,16,20
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:19:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-19-17Z-schema-drift.md
+
+## [2026-05-30T18:19:17Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=4b1768c1]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:19:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:28Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:19:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:19:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:19:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:19:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:19:53Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:19:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:20:00Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:00Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:20:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:20:09Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:20:21Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:21Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:20:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:20:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:20:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:20:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:20:40Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-20-40Z-schema-drift.md
+
+## [2026-05-30T18:20:40Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=fb2e6341]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:20:45Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:20:58Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:20:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:21:13Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:21:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:21:28Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:28Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:21:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:21:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:21:37Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:21:38Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:21:53Z] query | domain=glp1-reward-modulation | unresolved_citations=1,5
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:21:54Z] query | domain=glp1-reward-modulation | unresolved_citations=6
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:21:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:22:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:22:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:18Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:22:22Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:22Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:22:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:22:26Z] query | domain=glp1-reward-modulation | unresolved_citations=5
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:22:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:22:38Z] query | domain=glp1-reward-modulation | unresolved_citations=10
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:22:43Z] query | domain=glp1-reward-modulation | unresolved_citations=4,11,12,13,16,17
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:22:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:23:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:23:09Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:23:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:23:14Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,6,7,8,9,11,12,13,15,16
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:23:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:23:20Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:23:33Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,7,8,10,11,22
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:23:35Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-23-35Z-schema-drift.md
+
+## [2026-05-30T18:23:35Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=8d6b7045]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:23:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:23:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:23:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:23:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:24:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:24:10Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:24:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:24:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:24:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:24:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:24:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:24:46Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1160 | cache_read=0 | cache_creation=20116 | duration_ms=24231 | cost_usd=0.092841 | attempt=0
+
+## [2026-05-30T18:24:46Z] bootstrap-domain | slug=convergent-ai-brain | inclusion_count=6 | exclusion_count=4
+
+authored policy for convergent-ai-brain from description
+
+## [2026-05-30T18:24:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:24:56Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:24:58Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:24:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:00Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:00Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:05Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:25:09Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-25-09Z-schema-drift.md
+
+## [2026-05-30T18:25:09Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=4129a210]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:25:30Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1696 | cache_read=0 | cache_creation=86360 | duration_ms=22911 | cost_usd=0.116438
+
+## [2026-05-30T18:25:30Z] ingest | id=pdf-minyoung-huh-2024-the-platonic-representation | type=pdf | domains=convergent-ai-brain | filter=review | domain=convergent-ai-brain | score=0.5
+
+raw=raw/pdf/pdf-minyoung-huh-2024-the-platonic-representation.md (wiki not written: filter decision=review)
+
+## [2026-05-30T18:25:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:43Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:48Z] filter-correction | id=pdf-minyoung-huh-2024-the-platonic-representation | domain=convergent-ai-brain | decision=include | original_score=0.5
+
+rationale="Foundational anchor: the Platonic Representation Hypothesis is inclusion criterion #3 for this domain. Review-band score (0.5) is a false negative from the 'peripheral brain-ANN alignment' quality signal — correct for a primary alignment study, but this paper is the domain's theoretical scaffold and a hand-picked seed source, so it must be included."
+
+## [2026-05-30T18:25:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,6,7,8,16
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:49Z] query | domain=glp1-reward-modulation | unresolved_citations=10
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:25:50Z] ingest | id=pdf-minyoung-huh-2024-the-platonic-representation | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-minyoung-huh-2024-the-platonic-representation.md wiki=wiki/sources/pdf-minyoung-huh-2024-the-platonic-representation.md
+
+## [2026-05-30T18:25:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:25:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:25:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:25:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:26:07Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:26:10Z] query | domain=glp1-reward-modulation | unresolved_citations=1,5
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:26:29Z] query | domain=glp1-reward-modulation | unresolved_citations=8,9
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:26:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:26:45Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:26:47Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:26:56Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,6,9,10
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:26:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:26:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:27:00Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:27:05Z] query | domain=glp1-reward-modulation | unresolved_citations=11
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:27:08Z] query | domain=glp1-reward-modulation | unresolved_citations=3,12
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:27:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:27:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:27:36Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:27:39Z] query | domain=glp1-reward-modulation | unresolved_citations=3,4,6,11,12
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:27:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:27:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:27:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:27:41Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-27-41Z-schema-drift.md
+
+## [2026-05-30T18:27:41Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=4e208e20]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:28:17Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:17Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:18Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:24Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:28:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:28:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:28:44Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:44Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:28:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:56Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+
+lint-warning: query response cited 22 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:28:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:28:59Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:28:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:29:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:29:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:29:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:29:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:29:25Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:29:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:29:26Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=20564 | cache_read=0 | cache_creation=27058 | duration_ms=213507 | cost_usd=0.683238
+
+## [2026-05-30T18:29:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:29:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:29:32Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-29-32Z-schema-drift.md
+
+## [2026-05-30T18:29:32Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=af1fc889]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:29:35Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:29:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:29:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:29:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:30:03Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:30:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:30:20Z] query | domain=glp1-reward-modulation | unresolved_citations=5,13,14
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:20Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:30:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:30:22Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:30:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:30:38Z] query | domain=glp1-reward-modulation | unresolved_citations=7,15
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:30:53Z] query | domain=glp1-reward-modulation | unresolved_citations=1,4,5,6,7,8,9,10,18,21
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:30:58Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,7,9,13,17
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:30:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:31:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:31:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:31:08Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,8,11
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:31:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:31:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:31:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:31:42Z] query | domain=glp1-reward-modulation | unresolved_citations=3,4,5,6,7,10,14,15,19,20
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:31:45Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-31-45Z-schema-drift.md
+
+## [2026-05-30T18:31:45Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=854800ed]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:31:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:31:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:31:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:31:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:32:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:32:22Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:23Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:32:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:32:31Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:32:37Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:32:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:32:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:32:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:32:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:32:58Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=18273 | cache_read=27058 | cache_creation=0 | duration_ms=194697 | cost_usd=0.470379
+
+## [2026-05-30T18:32:58Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:32:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:33:01Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:33:10Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:33:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:33:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:33:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:28Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:33:35Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:33:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:33:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:33:42Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:33:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:33:44Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-33-44Z-schema-drift.md
+
+## [2026-05-30T18:33:44Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=c5ce2f48]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:34:05Z] query | domain=glp1-reward-modulation | unresolved_citations=9,11,13,14,30,31,33
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:34:14Z] query | domain=glp1-reward-modulation | unresolved_citations=2,7
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:34:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:34:30Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:34:31Z] query | domain=glp1-reward-modulation | unresolved_citations=12,13,17
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:34:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:34:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1,10
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:34:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:34:40Z] query | domain=glp1-reward-modulation | unresolved_citations=10,11
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:34:52Z] query | domain=glp1-reward-modulation | unresolved_citations=2,4,13
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:34:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:35:13Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,6,7,8,9
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:35:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:35:18Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,6,7,9,22,23
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:18Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:35:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:35:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:35:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:35:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:35:36Z] query | domain=glp1-reward-modulation | unresolved_citations=3,5,9,15,18,19
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:35:39Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-35-39Z-schema-drift.md
+
+## [2026-05-30T18:35:39Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=17875e86]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:35:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:35:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:36:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:06Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:36:09Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:36:15Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:15Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:36:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:36:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:36:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:36:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:36:50Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:36:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:36:57Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:58Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:36:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:36:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:37:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:03Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:37:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:37:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:37:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:37:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:37:40Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:37:47Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:37:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:49Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:37:50Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:37:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:37:56Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-37-56Z-schema-drift.md
+
+## [2026-05-30T18:37:56Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=5a368955]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:37:59Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:37:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:38:35Z] query | domain=glp1-reward-modulation | unresolved_citations=6,18
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:38:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:38:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:38:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1,8,13
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:38:47Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:38:48Z] query | domain=glp1-reward-modulation | unresolved_citations=12,13,17,18,22,25,26,27,29
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:38:50Z] query | domain=glp1-reward-modulation | unresolved_citations=6,12
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:38:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:39:00Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:39:17Z] query | domain=glp1-reward-modulation | unresolved_citations=5,7,11
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:39:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:39:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:39:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:39:36Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,7,9,10,13,17,21
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:39:40Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:39:42Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,7,8,9,10,11,12,16,18
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:39:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:39:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:40:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:08Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,11,13
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:40:09Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:40:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:11Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-40-11Z-schema-drift.md
+
+## [2026-05-30T18:40:11Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=964a381d]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:40:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:40:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:40:35Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:40:47Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:40:56Z] query | domain=condo-capital-infra | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:40:57Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:40:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:02Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:41:04Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:04Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:07Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:18Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:41:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:41:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:41:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
+
+lint-warning: query response cited 24 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:47Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:52Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+
+lint-warning: query response cited 23 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:41:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:41:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:41:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:42:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:04Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:42:05Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-42-05Z-schema-drift.md
+
+## [2026-05-30T18:42:05Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=29d7812b]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:42:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:42:13Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:42:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1,6,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:42:50Z] query | domain=glp1-reward-modulation | unresolved_citations=4,9,10,17
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:42:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:42:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:42:54Z] query | domain=glp1-reward-modulation | unresolved_citations=13,17,22
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:42:54Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:42:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:42:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:43:02Z] query | domain=glp1-reward-modulation | unresolved_citations=9,10,19
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:43:07Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,6
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:43:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:43:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:43:36Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:36Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:43:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:43:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:43:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:43:50Z] query | domain=glp1-reward-modulation | unresolved_citations=2
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:43:59Z] query | domain=glp1-reward-modulation | unresolved_citations=1,7,8,10,12
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:43:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:44:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-44-01Z-schema-drift.md
+
+## [2026-05-30T18:44:01Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=6c82c178]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:44:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:44:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:44:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:29Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:44:31Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:44:34Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:44:43Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:43Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:44:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:44:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:01Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:45:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:45:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:12Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:45:15Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:45:22Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:38Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:45:42Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:45:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:45:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:46:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:03Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:46:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:46:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:46:16Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-46-16Z-schema-drift.md
+
+## [2026-05-30T18:46:16Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=697cd777]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:46:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1,5
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:46:23Z] query | domain=glp1-reward-modulation | unresolved_citations=4,9,13
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:46:44Z] query | domain=glp1-reward-modulation | unresolved_citations=7
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:46:52Z] query | domain=glp1-reward-modulation | unresolved_citations=11,16
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:46:59Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:46:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:01Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:02Z] query | domain=glp1-reward-modulation | unresolved_citations=3,4,6,9
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:47:11Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:11Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:14Z] query | domain=glp1-reward-modulation | unresolved_citations=10
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:47:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:25Z] query | domain=glp1-reward-modulation | unresolved_citations=6,7,8,10,11,12,13,16,17,25,28,29
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:47:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:47:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:42Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:47:57Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,8,9,10,11
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:47:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:47:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-47-59Z-schema-drift.md
+
+## [2026-05-30T18:47:59Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=445f0ee0]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:48:07Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=19100 | cache_read=27058 | cache_creation=0 | duration_ms=196297 | cost_usd=0.491054
+
+## [2026-05-30T18:48:12Z] wiki-author | id=pdf-minyoung-huh-2024-the-platonic-representation | updates=12 | created=12 | updated=0 | contradictions=0 | draft=yes
+
+Foundational seed source for the convergent-ai-brain domain — establish the Platonic Representation Hypothesis and its supporting methodological concepts (alignment metrics, model stitching, Anna Karenina scenario, Rosetta Neurons) plus author entities, since no domain pages exist yet.
+
+## [2026-05-30T18:48:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:48:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:48:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:38Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:48:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:48:39Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:48:48Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:48:51Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:48:53Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:48:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1759 | cache_read=68422 | cache_creation=16305 | duration_ms=22209 | cost_usd=0.036026
+
+## [2026-05-30T18:49:00Z] ingest | id=pdf-5f41a1d2e45f | type=pdf | domains=convergent-ai-brain | filter=rejected | domain=convergent-ai-brain | score=0.35
+
+raw=raw/pdf/pdf-5f41a1d2e45f.md (wiki not written: filter decision=rejected)
+
+## [2026-05-30T18:49:01Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:07Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:08Z] filter-correction | id=pdf-5f41a1d2e45f | domain=convergent-ai-brain | decision=include | original_score=0.35
+
+rationale="Foundational anchor: Clark's 'Whatever next?' (BBS 2013) is the canonical predictive-processing/Bayesian-brain target article, directly matching inclusion criterion #5 (predictive processing / free-energy as a learning objective shared by brains and trained networks). Rejected score (0.35) is a false negative from quality signals that penalize theory papers lacking first-party alignment measurements; this is a hand-picked seed source."
+
+## [2026-05-30T18:49:12Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:12Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:49:14Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:18Z] ingest | id=pdf-5f41a1d2e45f | type=pdf | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/pdf/pdf-5f41a1d2e45f.md wiki=wiki/sources/pdf-5f41a1d2e45f.md
+
+## [2026-05-30T18:49:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:49:31Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:49:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:49:44Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:49Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:49:49Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:49:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2239 | cache_read=68422 | cache_creation=15357 | duration_ms=30982 | cost_usd=0.037241
+
+## [2026-05-30T18:49:57Z] ingest | id=web-2026-05-27-cee | type=web | domains=convergent-ai-brain | filter=review | domain=convergent-ai-brain | score=0.5
+
+raw=raw/web/web-2026-05-27-cee.md (wiki not written: filter decision=review)
+
+## [2026-05-30T18:49:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:50:02Z] filter-correction | id=web-2026-05-27-cee | domain=convergent-ai-brain | decision=include | original_score=0.5
+
+rationale="Hand-picked bridge/entry-hub source. Hammond's essay synthesizes the domain's three threads (Platonic convergence + predictive processing + empirical brain-ANN alignment) and is a curated citation hub into the primary literature (Byrnes, Goldstein 2022 ECoG, TopoLM). Review-band score (0.5) reflects its essay/tech-blog form and consciousness framing; the consciousness layer is excluded at synthesis time, but the representational-convergence spine is squarely in scope."
+
+## [2026-05-30T18:50:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:50:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:50:20Z] query | domain=glp1-reward-modulation | unresolved_citations=1,8
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:50:25Z] query | domain=glp1-reward-modulation | unresolved_citations=12,14,17
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:50:30Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,11
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:50:34Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:50:44Z] query | domain=glp1-reward-modulation | unresolved_citations=8,9,11,12
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:50:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:50:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:50:54Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-50-54Z-schema-drift.md
+
+## [2026-05-30T18:50:54Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=982f1132]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:51:07Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,4
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:51:21Z] query | domain=glp1-reward-modulation | unresolved_citations=7,8,10,11,12,13,15,16,17,18,21,25,28,29,30,31
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:51:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:51:25Z] query | domain=glp1-reward-modulation | unresolved_citations=2,4,5
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:51:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:51:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:51:48Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:51:53Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,4,8,11,12
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:51:55Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-51-55Z-schema-drift.md
+
+## [2026-05-30T18:51:55Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=ca82bd34]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:51:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:51:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:52:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:52:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:52:33Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:33Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:52:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:52:41Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:52:44Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:52:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:52:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 19 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:52:56Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:53:08Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:08Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:53:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:53:10Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:53:13Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:53:15Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:53:17Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:53:36Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=24377 | cache_read=4696 | cache_creation=23383 | duration_ms=256044 | cost_usd=0.757942
+
+## [2026-05-30T18:53:39Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:53:41Z] wiki-author | id=pdf-5f41a1d2e45f | updates=12 | created=12 | updated=0 | contradictions=0 | draft=yes
+
+Clark's 2013 BBS target article is a hand-picked foundational seed for the convergent-ai-brain domain; it requires fresh entity and concept pages for predictive processing, hierarchical predictive coding, Bayesian brain, prediction error, surprisal, generative models, analysis-by-synthesis, active inference, the Helmholtz Machine, and the three key thinkers (Clark, Friston, Helmholtz). No existing pages cover this material, and no claims contradict the existing representational-alignment/PRH cluster.
+
+## [2026-05-30T18:53:45Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:53:46Z] ingest | id=web-2026-05-27-cee | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-27-cee.md wiki=wiki/sources/web-2026-05-27-cee.md
+
+## [2026-05-30T18:53:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:53:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:53:59Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:54:03Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:54:06Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:06Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:54:16Z] query | domain=glp1-reward-modulation | unresolved_citations=1,8
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:54:20Z] query | domain=glp1-reward-modulation | unresolved_citations=4
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:21Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:54:31Z] query | domain=glp1-reward-modulation | unresolved_citations=10,19
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:54:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:54:38Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
+lint-warning: query response cited 14 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:54:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:54:54Z] query | domain=glp1-reward-modulation | unresolved_citations=14,18
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:54:55Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:54:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:55:04Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,4
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:55:06Z] query | domain=glp1-reward-modulation | unresolved_citations=6,14,15,22,25
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:55:11Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,16,17,19,20
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:12Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:55:23Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:23Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:55:24Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:24Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:55:26Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-55-26Z-schema-drift.md
+
+## [2026-05-30T18:55:26Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=ccfab24d]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T18:55:38Z] query | domain=glp1-reward-modulation | unresolved_citations=3,6,9
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:55:48Z] query | domain=glp1-reward-modulation | unresolved_citations=5,6,7,8,11,12,13,14,15,16,19,20,21,24,29
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:55:50Z] query | domain=glp1-reward-modulation | unresolved_citations=3,4,5,6,16
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:55:51Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T18:55:53Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-55-53Z-schema-drift.md
+
+## [2026-05-30T18:55:53Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=cd38e258]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T18:56:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:56:14Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:56:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:56:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:56:17Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+
+lint-warning: query response cited 17 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:56:17Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:56:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:56:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:56:58Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:56:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:57:02Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:57:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:09Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:57:10Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:16Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=18263 | cache_read=4696 | cache_creation=24494 | duration_ms=208389 | cost_usd=0.612036
+
+## [2026-05-30T18:57:19Z] wiki-author | id=web-2026-05-27-cee | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Hammond's essay is a curated hub citing the convergence literature's three threads (Byrnes brain-as-algorithm, Platonic convergence, Goldstein/TopoLM brain-LLM alignment); it warrants new author/researcher entities, new paper entities, and several previously-uncovered concepts (universality, simulator theory, persona selection, FBNs), while the consciousness layer is excluded per the filter correction.
+
+## [2026-05-30T18:57:48Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:57:48Z] moc-add | slug=convergent-ai-brain | domain=convergent-ai-brain | draft=yes
+
+created wiki/mocs/convergent-ai-brain.md
+
+## [2026-05-30T18:57:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:53Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:57:54Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:56Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:57:57Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:57:59Z] query | domain=condo-capital-infra | unresolved_citations=1,3,5,6,7,8,9,10,11
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:58:00Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:58:04Z] moc-add | slug=convergent-ai-brain | domain=convergent-ai-brain | draft=yes
+
+created wiki/mocs/convergent-ai-brain.md
+
+## [2026-05-30T18:58:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1405 | cache_read=68422 | cache_creation=12898 | duration_ms=18704 | cost_usd=0.029998
+
+## [2026-05-30T18:58:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:58:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:58:43Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:58:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:58:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:58:49Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8bc2e4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:58:57Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:58:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:59:04Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f7b6e3 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:59:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2052 | cache_read=70104 | cache_creation=13746 | duration_ms=27896 | cost_usd=0.034461
+
+## [2026-05-30T18:59:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1583 | cache_read=70104 | cache_creation=10822 | duration_ms=21485 | cost_usd=0.028461
+
+## [2026-05-30T18:59:32Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:59:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-76c404 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:59:39Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:59:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7e857e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:59:46Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T18:59:46Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-276f6e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T18:59:48Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T18-59-48Z-schema-drift.md
+
+## [2026-05-30T18:59:48Z] discharge-orphans | domain=condo-capital-infra | filed=20 | skipped=0 | limit=20 | errors=0 | commit=193a6524]
+
+discharge-orphans: 20 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T19:00:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3023 | cache_read=70104 | cache_creation=14204 | duration_ms=35491 | cost_usd=0.039888
+
+## [2026-05-30T19:00:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2127 | cache_read=70104 | cache_creation=13912 | duration_ms=26857 | cost_usd=0.035043
+
+## [2026-05-30T19:01:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1958 | cache_read=68422 | cache_creation=11516 | duration_ms=22720 | cost_usd=0.031035
+
+## [2026-05-30T19:01:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1202 | cache_read=69285 | cache_creation=10670 | duration_ms=14107 | cost_usd=0.026284
+
+## [2026-05-30T19:01:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2018 | cache_read=69285 | cache_creation=10633 | duration_ms=23956 | cost_usd=0.030318
+
+## [2026-05-30T19:02:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1639 | cache_read=69285 | cache_creation=10667 | duration_ms=21455 | cost_usd=0.028465
+
+## [2026-05-30T19:02:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1314 | cache_read=69285 | cache_creation=10609 | duration_ms=18420 | cost_usd=0.026768
+
+## [2026-05-30T19:02:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1949 | cache_read=68422 | cache_creation=15422 | duration_ms=23856 | cost_usd=0.035873
+
+## [2026-05-30T19:03:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2440 | cache_read=69860 | cache_creation=10910 | duration_ms=29854 | cost_usd=0.032831
+
+## [2026-05-30T19:03:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1239 | cache_read=69860 | cache_creation=14310 | duration_ms=17509 | cost_usd=0.031077
+
+## [2026-05-30T19:04:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1346 | cache_read=69860 | cache_creation=11465 | duration_ms=18275 | cost_usd=0.028055
+
+## [2026-05-30T19:04:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1539 | cache_read=69860 | cache_creation=13869 | duration_ms=20622 | cost_usd=0.032025
+
+## [2026-05-30T19:05:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1638 | cache_read=0 | cache_creation=75694 | duration_ms=21448 | cost_usd=0.102815
+
+## [2026-05-30T19:05:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2959 | cache_read=68422 | cache_creation=17044 | duration_ms=36373 | cost_usd=0.042950
+
+## [2026-05-30T19:06:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2918 | cache_read=70904 | cache_creation=14134 | duration_ms=35599 | cost_usd=0.039356
+
+## [2026-05-30T19:06:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1677 | cache_read=70904 | cache_creation=11550 | duration_ms=25522 | cost_usd=0.029921
+
+## [2026-05-30T19:07:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1748 | cache_read=70904 | cache_creation=11334 | duration_ms=20999 | cost_usd=0.030006
+
+## [2026-05-30T19:07:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1685 | cache_read=68422 | cache_creation=13194 | duration_ms=21435 | cost_usd=0.031768
+
+## [2026-05-30T19:08:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3239 | cache_read=70010 | cache_creation=11332 | duration_ms=33084 | cost_usd=0.037369
+
+## [2026-05-30T19:08:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1453 | cache_read=70010 | cache_creation=11412 | duration_ms=17526 | cost_usd=0.028539
+
+## [2026-05-30T19:09:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2192 | cache_read=70010 | cache_creation=11487 | duration_ms=27575 | cost_usd=0.032328
+
+## [2026-05-30T19:09:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2109 | cache_read=70010 | cache_creation=14172 | duration_ms=26051 | cost_usd=0.035269
+
+## [2026-05-30T19:09:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1510 | cache_read=69735 | cache_creation=14932 | duration_ms=19620 | cost_usd=0.033197
+
+## [2026-05-30T19:10:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3249 | cache_read=69735 | cache_creation=16636 | duration_ms=39438 | cost_usd=0.044022
+
+## [2026-05-30T19:10:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=62024 | cache_creation=14879 | duration_ms=19759 | cost_usd=0.032274
+
+## [2026-05-30T19:11:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1547 | cache_read=68422 | cache_creation=12807 | duration_ms=18851 | cost_usd=0.030594
+
+## [2026-05-30T19:11:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2522 | cache_read=70290 | cache_creation=10679 | duration_ms=29872 | cost_usd=0.032996
+
+## [2026-05-30T19:12:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1417 | cache_read=70290 | cache_creation=10714 | duration_ms=18105 | cost_usd=0.027515
+
+## [2026-05-30T19:12:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1608 | cache_read=70290 | cache_creation=10704 | duration_ms=20422 | cost_usd=0.028457
+
+## [2026-05-30T19:13:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1658 | cache_read=70290 | cache_creation=10698 | duration_ms=19569 | cost_usd=0.028699
+
+## [2026-05-30T19:13:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2291 | cache_read=0 | cache_creation=67119 | duration_ms=26599 | cost_usd=0.095362
+
+## [2026-05-30T19:13:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1675 | cache_read=56216 | cache_creation=10847 | duration_ms=20385 | cost_usd=0.027563
+
+## [2026-05-30T19:14:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1212 | cache_read=68422 | cache_creation=11785 | duration_ms=17082 | cost_usd=0.027641
+
+## [2026-05-30T19:14:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2076 | cache_read=69533 | cache_creation=10850 | duration_ms=22160 | cost_usd=0.030904
+
+## [2026-05-30T19:15:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2451 | cache_read=69533 | cache_creation=10649 | duration_ms=29499 | cost_usd=0.032528
+
+## [2026-05-30T19:15:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1526 | cache_read=68422 | cache_creation=13201 | duration_ms=19121 | cost_usd=0.030981
+
+## [2026-05-30T19:15:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2031 | cache_read=70152 | cache_creation=12239 | duration_ms=24032 | cost_usd=0.032477
+
+## [2026-05-30T19:16:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1982 | cache_read=70152 | cache_creation=14841 | duration_ms=25316 | cost_usd=0.035484
+
+## [2026-05-30T19:16:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1819 | cache_read=62024 | cache_creation=15636 | duration_ms=24727 | cost_usd=0.034850
+
+## [2026-05-30T19:17:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2096 | cache_read=70152 | cache_creation=14190 | duration_ms=27049 | cost_usd=0.035241
+
+## [2026-05-30T19:17:26Z] lint | scope=filter-calibration | filter-calibration=25
+
+report=.knowledge/lint/2026-05-30T19-17-26Z-filter-calibration.md
+
+## [2026-05-30T19:44:06Z] query | domain=risksystems | unresolved_citations=5,6,8
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T19:45:04Z] query | domain=condo-capital-infra | unresolved_citations=1,4,5,6,7,8,9,10,11,12,18,19,20,21,22,23,24,25,26,27
+
+lint-warning: query response cited 20 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T19:46:27Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T19-46-27Z-schema-drift.md
+
+## [2026-05-30T19:46:51Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'What is the empirical evidence that representational alignment between biological brains and artificial neural networks scales with model competence and capacity? Cover encoding-model and RSA/CKA studies (e.g. Yamins, Schrimpf/Brain-Score, Goldstein ECoG, TopoLM), the role of training objective and scale, and any reported ceilings on alignment.'
+
+## [2026-05-30T19:47:11Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=952 | cache_read=0 | cache_creation=18913 | duration_ms=18673 | cost_usd=0.085210
+
+## [2026-05-30T19:47:11Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=plan | n=58
+
+query plan written to nlm/query_plans/2026-05-30-what-is-the-empirical-evidence-that.yaml
+
+## [2026-05-30T19:47:14Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=search | adapter=pubmed | n=7
+
+adapter pubmed returned 7 candidates
+
+## [2026-05-30T19:47:18Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-30T19:47:22Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=search | adapter=semantic_scholar | n=49
+
+adapter semantic_scholar returned 49 candidates
+
+## [2026-05-30T19:47:29Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-30T19:47:40Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=search | adapter=youtube | n=90
+
+adapter youtube returned 90 candidates
+
+## [2026-05-30T19:47:40Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=merge | n=258
+
+merged 258 candidate(s) across adapters
+
+## [2026-05-30T19:48:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1170 | cache_read=0 | cache_creation=67397 | duration_ms=17182 | cost_usd=0.090104
+
+## [2026-05-30T19:48:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1479 | cache_read=0 | cache_creation=59432 | duration_ms=18993 | cost_usd=0.081693
+
+## [2026-05-30T19:48:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1854 | cache_read=0 | cache_creation=59427 | duration_ms=20446 | cost_usd=0.083562
+
+## [2026-05-30T19:48:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1917 | cache_read=0 | cache_creation=67182 | duration_ms=22849 | cost_usd=0.093571
+
+## [2026-05-30T19:48:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1623 | cache_read=0 | cache_creation=67468 | duration_ms=23123 | cost_usd=0.092458
+
+## [2026-05-30T19:48:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2093 | cache_read=0 | cache_creation=59275 | duration_ms=24988 | cost_usd=0.084567
+
+## [2026-05-30T19:48:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2249 | cache_read=0 | cache_creation=59332 | duration_ms=26280 | cost_usd=0.085418
+
+## [2026-05-30T19:48:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2153 | cache_read=0 | cache_creation=59214 | duration_ms=26328 | cost_usd=0.084791
+
+## [2026-05-30T19:48:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1015 | cache_read=68422 | cache_creation=12523 | duration_ms=14392 | cost_usd=0.027579
+
+## [2026-05-30T19:48:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1003 | cache_read=70113 | cache_creation=10702 | duration_ms=13816 | cost_usd=0.025412
+
+## [2026-05-30T19:48:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1012 | cache_read=70113 | cache_creation=10822 | duration_ms=12966 | cost_usd=0.025607
+
+## [2026-05-30T19:48:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1332 | cache_read=70113 | cache_creation=10843 | duration_ms=15923 | cost_usd=0.027233
+
+## [2026-05-30T19:48:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1360 | cache_read=70113 | cache_creation=10884 | duration_ms=16907 | cost_usd=0.027424
+
+## [2026-05-30T19:48:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1132 | cache_read=70113 | cache_creation=10762 | duration_ms=16480 | cost_usd=0.026132
+
+## [2026-05-30T19:48:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1708 | cache_read=70113 | cache_creation=10928 | duration_ms=20727 | cost_usd=0.029219
+
+## [2026-05-30T19:48:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1790 | cache_read=70113 | cache_creation=10926 | duration_ms=22466 | cost_usd=0.029627
+
+## [2026-05-30T19:48:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1149 | cache_read=70113 | cache_creation=10857 | duration_ms=15977 | cost_usd=0.026336
+
+## [2026-05-30T19:48:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3366 | cache_read=70113 | cache_creation=10961 | duration_ms=36949 | cost_usd=0.037551
+
+## [2026-05-30T19:48:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1901 | cache_read=70113 | cache_creation=10837 | duration_ms=21962 | cost_usd=0.030071
+
+## [2026-05-30T19:48:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2580 | cache_read=70113 | cache_creation=10988 | duration_ms=29532 | cost_usd=0.033654
+
+## [2026-05-30T19:48:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2116 | cache_read=70113 | cache_creation=10854 | duration_ms=25063 | cost_usd=0.031167
+
+## [2026-05-30T19:48:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2982 | cache_read=70113 | cache_creation=10872 | duration_ms=33261 | cost_usd=0.035519
+
+## [2026-05-30T19:49:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2062 | cache_read=70113 | cache_creation=10852 | duration_ms=24671 | cost_usd=0.030894
+
+## [2026-05-30T19:49:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1224 | cache_read=70113 | cache_creation=10866 | duration_ms=15370 | cost_usd=0.026722
+
+## [2026-05-30T19:49:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=994 | cache_read=62024 | cache_creation=12299 | duration_ms=13787 | cost_usd=0.026554
+
+## [2026-05-30T19:49:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1574 | cache_read=70113 | cache_creation=10841 | duration_ms=18940 | cost_usd=0.028441
+
+## [2026-05-30T19:49:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1074 | cache_read=70113 | cache_creation=10817 | duration_ms=14103 | cost_usd=0.025911
+
+## [2026-05-30T19:49:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=938 | cache_read=70113 | cache_creation=10936 | duration_ms=12418 | cost_usd=0.025379
+
+## [2026-05-30T19:49:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1450 | cache_read=70113 | cache_creation=10980 | duration_ms=18996 | cost_usd=0.027994
+
+## [2026-05-30T19:49:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2373 | cache_read=62024 | cache_creation=12251 | duration_ms=29050 | cost_usd=0.033389
+
+## [2026-05-30T19:49:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2385 | cache_read=70113 | cache_creation=10792 | duration_ms=26309 | cost_usd=0.032434
+
+## [2026-05-30T19:49:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1291 | cache_read=70113 | cache_creation=10784 | duration_ms=15375 | cost_usd=0.026954
+
+## [2026-05-30T19:49:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1175 | cache_read=70113 | cache_creation=10925 | duration_ms=15077 | cost_usd=0.026551
+
+## [2026-05-30T19:49:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1420 | cache_read=70113 | cache_creation=10917 | duration_ms=16558 | cost_usd=0.027766
+
+## [2026-05-30T19:49:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3290 | cache_read=63715 | cache_creation=10563 | duration_ms=34173 | cost_usd=0.036033
+
+## [2026-05-30T19:49:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=70113 | cache_creation=10907 | duration_ms=18155 | cost_usd=0.027933
+
+## [2026-05-30T19:49:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1197 | cache_read=0 | cache_creation=77101 | duration_ms=16342 | cost_usd=0.102369
+
+## [2026-05-30T19:49:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1186 | cache_read=55105 | cache_creation=12627 | duration_ms=15720 | cost_usd=0.027232
+
+## [2026-05-30T19:49:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1465 | cache_read=70113 | cache_creation=10921 | duration_ms=21268 | cost_usd=0.027996
+
+## [2026-05-30T19:49:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1870 | cache_read=70113 | cache_creation=10827 | duration_ms=21745 | cost_usd=0.029903
+
+## [2026-05-30T19:49:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1597 | cache_read=70113 | cache_creation=10970 | duration_ms=18221 | cost_usd=0.028717
+
+## [2026-05-30T19:49:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2229 | cache_read=70113 | cache_creation=10835 | duration_ms=26700 | cost_usd=0.031708
+
+## [2026-05-30T19:49:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=870 | cache_read=70113 | cache_creation=10767 | duration_ms=12328 | cost_usd=0.024828
+
+## [2026-05-30T19:50:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1188 | cache_read=70113 | cache_creation=10719 | duration_ms=17040 | cost_usd=0.026358
+
+## [2026-05-30T19:50:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1490 | cache_read=70113 | cache_creation=10815 | duration_ms=17817 | cost_usd=0.027988
+
+## [2026-05-30T19:50:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1182 | cache_read=70113 | cache_creation=10805 | duration_ms=13862 | cost_usd=0.026436
+
+## [2026-05-30T19:50:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1325 | cache_read=70113 | cache_creation=10722 | duration_ms=14688 | cost_usd=0.027047
+
+## [2026-05-30T19:50:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1707 | cache_read=70113 | cache_creation=10947 | duration_ms=21781 | cost_usd=0.029238
+
+## [2026-05-30T19:50:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1268 | cache_read=70113 | cache_creation=10704 | duration_ms=15789 | cost_usd=0.026739
+
+## [2026-05-30T19:50:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2505 | cache_read=70113 | cache_creation=10753 | duration_ms=27535 | cost_usd=0.032986
+
+## [2026-05-30T19:50:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1231 | cache_read=70113 | cache_creation=10745 | duration_ms=15597 | cost_usd=0.026606
+
+## [2026-05-30T19:50:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1272 | cache_read=70113 | cache_creation=10811 | duration_ms=15351 | cost_usd=0.026893
+
+## [2026-05-30T19:50:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=70113 | cache_creation=10804 | duration_ms=16272 | cost_usd=0.026279
+
+## [2026-05-30T19:50:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2178 | cache_read=70113 | cache_creation=10732 | duration_ms=23585 | cost_usd=0.031324
+
+## [2026-05-30T19:50:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1156 | cache_read=70113 | cache_creation=10721 | duration_ms=14627 | cost_usd=0.026201
+
+## [2026-05-30T19:50:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1550 | cache_read=70113 | cache_creation=10781 | duration_ms=20914 | cost_usd=0.028246
+
+## [2026-05-30T19:50:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=730 | cache_read=70113 | cache_creation=10818 | duration_ms=14517 | cost_usd=0.024192
+
+## [2026-05-30T19:50:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1363 | cache_read=70113 | cache_creation=10785 | duration_ms=16298 | cost_usd=0.027316
+
+## [2026-05-30T19:50:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1058 | cache_read=70113 | cache_creation=10905 | duration_ms=13708 | cost_usd=0.025941
+
+## [2026-05-30T19:50:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1805 | cache_read=70113 | cache_creation=10809 | duration_ms=20454 | cost_usd=0.029556
+
+## [2026-05-30T19:50:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1888 | cache_read=70113 | cache_creation=10631 | duration_ms=22240 | cost_usd=0.029748
+
+## [2026-05-30T19:51:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1914 | cache_read=70113 | cache_creation=10685 | duration_ms=24383 | cost_usd=0.029946
+
+## [2026-05-30T19:51:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1545 | cache_read=63715 | cache_creation=10574 | duration_ms=18064 | cost_usd=0.027322
+
+## [2026-05-30T19:51:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1555 | cache_read=70113 | cache_creation=10739 | duration_ms=17302 | cost_usd=0.028218
+
+## [2026-05-30T19:51:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1763 | cache_read=70113 | cache_creation=10684 | duration_ms=20807 | cost_usd=0.029189
+
+## [2026-05-30T19:51:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1003 | cache_read=70113 | cache_creation=10744 | duration_ms=13116 | cost_usd=0.025464
+
+## [2026-05-30T19:51:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1050 | cache_read=70113 | cache_creation=10724 | duration_ms=13390 | cost_usd=0.025674
+
+## [2026-05-30T19:51:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2339 | cache_read=63715 | cache_creation=10522 | duration_ms=28442 | cost_usd=0.031227
+
+## [2026-05-30T19:51:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1028 | cache_read=70113 | cache_creation=10776 | duration_ms=16546 | cost_usd=0.025629
+
+## [2026-05-30T19:51:24Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=filter | target=https://arxiv.org/abs/2504.09480
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T19:51:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=66175 | cache_creation=10751 | duration_ms=22086 | cost_usd=0.028129
+
+## [2026-05-30T19:51:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1852 | cache_read=63715 | cache_creation=10558 | duration_ms=21731 | cost_usd=0.028837
+
+## [2026-05-30T19:51:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1904 | cache_read=70113 | cache_creation=10793 | duration_ms=22666 | cost_usd=0.030031
+
+## [2026-05-30T19:51:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2063 | cache_read=70113 | cache_creation=10647 | duration_ms=26311 | cost_usd=0.030643
+
+## [2026-05-30T19:51:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1744 | cache_read=70113 | cache_creation=10761 | duration_ms=20052 | cost_usd=0.029191
+
+## [2026-05-30T19:51:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1465 | cache_read=70113 | cache_creation=10814 | duration_ms=17515 | cost_usd=0.027862
+
+## [2026-05-30T19:51:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1337 | cache_read=70113 | cache_creation=10787 | duration_ms=17064 | cost_usd=0.027188
+
+## [2026-05-30T19:51:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2361 | cache_read=70113 | cache_creation=10709 | duration_ms=26131 | cost_usd=0.032211
+
+## [2026-05-30T19:51:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2033 | cache_read=70113 | cache_creation=10736 | duration_ms=24868 | cost_usd=0.030604
+
+## [2026-05-30T19:51:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1794 | cache_read=70113 | cache_creation=10775 | duration_ms=22424 | cost_usd=0.029458
+
+## [2026-05-30T19:51:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1122 | cache_read=70113 | cache_creation=10827 | duration_ms=14382 | cost_usd=0.026163
+
+## [2026-05-30T19:51:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1431 | cache_read=70113 | cache_creation=10696 | duration_ms=17762 | cost_usd=0.027544
+
+## [2026-05-30T19:52:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1272 | cache_read=70113 | cache_creation=10724 | duration_ms=15462 | cost_usd=0.026784
+
+## [2026-05-30T19:52:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1453 | cache_read=70113 | cache_creation=10723 | duration_ms=17446 | cost_usd=0.027688
+
+## [2026-05-30T19:52:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2991 | cache_read=70113 | cache_creation=10750 | duration_ms=31071 | cost_usd=0.035412
+
+## [2026-05-30T19:52:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1907 | cache_read=70113 | cache_creation=10682 | duration_ms=23055 | cost_usd=0.029907
+
+## [2026-05-30T19:52:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1094 | cache_read=70113 | cache_creation=10691 | duration_ms=14147 | cost_usd=0.025853
+
+## [2026-05-30T19:52:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2861 | cache_read=70113 | cache_creation=10781 | duration_ms=30417 | cost_usd=0.034801
+
+## [2026-05-30T19:52:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2496 | cache_read=70113 | cache_creation=10858 | duration_ms=28192 | cost_usd=0.033072
+
+## [2026-05-30T19:52:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2660 | cache_read=70113 | cache_creation=10679 | duration_ms=29571 | cost_usd=0.033668
+
+## [2026-05-30T19:52:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1435 | cache_read=70113 | cache_creation=10778 | duration_ms=17482 | cost_usd=0.027667
+
+## [2026-05-30T19:52:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1621 | cache_read=70113 | cache_creation=10714 | duration_ms=20395 | cost_usd=0.028517
+
+## [2026-05-30T19:52:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=70113 | cache_creation=10557 | duration_ms=15416 | cost_usd=0.025971
+
+## [2026-05-30T19:52:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1729 | cache_read=70113 | cache_creation=10855 | duration_ms=20770 | cost_usd=0.029233
+
+## [2026-05-30T19:52:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2092 | cache_read=70113 | cache_creation=10520 | duration_ms=25543 | cost_usd=0.030629
+
+## [2026-05-30T19:52:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1930 | cache_read=70113 | cache_creation=10522 | duration_ms=24327 | cost_usd=0.029822
+
+## [2026-05-30T19:52:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=70113 | cache_creation=10502 | duration_ms=19125 | cost_usd=0.027427
+
+## [2026-05-30T19:52:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1989 | cache_read=70113 | cache_creation=10530 | duration_ms=23089 | cost_usd=0.030127
+
+## [2026-05-30T19:52:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1490 | cache_read=70113 | cache_creation=10550 | duration_ms=19429 | cost_usd=0.027657
+
+## [2026-05-30T19:52:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1633 | cache_read=70113 | cache_creation=10562 | duration_ms=21842 | cost_usd=0.028387
+
+## [2026-05-30T19:52:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1494 | cache_read=70113 | cache_creation=10548 | duration_ms=23467 | cost_usd=0.027674
+
+## [2026-05-30T19:53:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2236 | cache_read=70113 | cache_creation=10518 | duration_ms=28564 | cost_usd=0.031347
+
+## [2026-05-30T19:53:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1654 | cache_read=70113 | cache_creation=10508 | duration_ms=19883 | cost_usd=0.028424
+
+## [2026-05-30T19:53:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1398 | cache_read=70113 | cache_creation=10589 | duration_ms=17504 | cost_usd=0.027246
+
+## [2026-05-30T19:53:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1674 | cache_read=70113 | cache_creation=10588 | duration_ms=22546 | cost_usd=0.028624
+
+## [2026-05-30T19:53:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1722 | cache_read=0 | cache_creation=72948 | duration_ms=22806 | cost_usd=0.099803
+
+## [2026-05-30T19:53:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1643 | cache_read=63715 | cache_creation=10294 | duration_ms=20878 | cost_usd=0.027462
+
+## [2026-05-30T19:53:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1552 | cache_read=70113 | cache_creation=10590 | duration_ms=19135 | cost_usd=0.028017
+
+## [2026-05-30T19:53:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=70113 | cache_creation=10540 | duration_ms=16375 | cost_usd=0.026604
+
+## [2026-05-30T19:53:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1768 | cache_read=70113 | cache_creation=10522 | duration_ms=24347 | cost_usd=0.029012
+
+## [2026-05-30T19:53:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1567 | cache_read=70113 | cache_creation=10554 | duration_ms=20754 | cost_usd=0.028047
+
+## [2026-05-30T19:53:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=70113 | cache_creation=10600 | duration_ms=17303 | cost_usd=0.026974
+
+## [2026-05-30T19:53:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1172 | cache_read=70113 | cache_creation=10616 | duration_ms=14765 | cost_usd=0.026149
+
+## [2026-05-30T19:53:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1352 | cache_read=70113 | cache_creation=10535 | duration_ms=17733 | cost_usd=0.026948
+
+## [2026-05-30T19:53:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1381 | cache_read=70113 | cache_creation=10534 | duration_ms=17952 | cost_usd=0.027092
+
+## [2026-05-30T19:53:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2674 | cache_read=70113 | cache_creation=10552 | duration_ms=32593 | cost_usd=0.033579
+
+## [2026-05-30T19:53:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1227 | cache_read=70113 | cache_creation=10671 | duration_ms=22742 | cost_usd=0.026493
+
+## [2026-05-30T19:53:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1486 | cache_read=70113 | cache_creation=10530 | duration_ms=17057 | cost_usd=0.027612
+
+## [2026-05-30T19:53:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2018 | cache_read=63715 | cache_creation=10249 | duration_ms=23085 | cost_usd=0.029281
+
+## [2026-05-30T19:53:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1969 | cache_read=70113 | cache_creation=10526 | duration_ms=23520 | cost_usd=0.030022
+
+## [2026-05-30T19:53:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1180 | cache_read=70113 | cache_creation=10625 | duration_ms=15107 | cost_usd=0.026201
+
+## [2026-05-30T19:53:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1550 | cache_read=70113 | cache_creation=10506 | duration_ms=17336 | cost_usd=0.027902
+
+## [2026-05-30T19:54:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1694 | cache_read=0 | cache_creation=80955 | duration_ms=21088 | cost_usd=0.109672
+
+## [2026-05-30T19:54:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1696 | cache_read=70113 | cache_creation=10524 | duration_ms=20207 | cost_usd=0.028654
+
+## [2026-05-30T19:54:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1002 | cache_read=70113 | cache_creation=10536 | duration_ms=15281 | cost_usd=0.025199
+
+## [2026-05-30T19:54:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1911 | cache_read=70113 | cache_creation=10538 | duration_ms=21761 | cost_usd=0.029747
+
+## [2026-05-30T19:54:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1236 | cache_read=70113 | cache_creation=10518 | duration_ms=16842 | cost_usd=0.026347
+
+## [2026-05-30T19:54:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1364 | cache_read=70113 | cache_creation=10536 | duration_ms=16992 | cost_usd=0.027009
+
+## [2026-05-30T19:54:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1660 | cache_read=70113 | cache_creation=10528 | duration_ms=20638 | cost_usd=0.028479
+
+## [2026-05-30T19:54:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1496 | cache_read=70113 | cache_creation=10530 | duration_ms=18062 | cost_usd=0.027662
+
+## [2026-05-30T19:54:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1509 | cache_read=70113 | cache_creation=10612 | duration_ms=20234 | cost_usd=0.027829
+
+## [2026-05-30T19:54:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1454 | cache_read=70113 | cache_creation=10538 | duration_ms=18653 | cost_usd=0.027462
+
+## [2026-05-30T19:54:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1704 | cache_read=62447 | cache_creation=10548 | duration_ms=19843 | cost_usd=0.027958
+
+## [2026-05-30T19:54:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1203 | cache_read=56702 | cache_creation=10259 | duration_ms=16617 | cost_usd=0.024517
+
+## [2026-05-30T19:54:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1435 | cache_read=56702 | cache_creation=10235 | duration_ms=18269 | cost_usd=0.025647
+
+## [2026-05-30T19:54:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2384 | cache_read=70113 | cache_creation=10534 | duration_ms=26136 | cost_usd=0.032107
+
+## [2026-05-30T19:54:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1779 | cache_read=70113 | cache_creation=10528 | duration_ms=20657 | cost_usd=0.029074
+
+## [2026-05-30T19:54:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1799 | cache_read=70113 | cache_creation=10548 | duration_ms=22419 | cost_usd=0.029199
+
+## [2026-05-30T19:54:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1215 | cache_read=70113 | cache_creation=10548 | duration_ms=17645 | cost_usd=0.026279
+
+## [2026-05-30T19:54:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1659 | cache_read=70113 | cache_creation=10574 | duration_ms=22296 | cost_usd=0.028532
+
+## [2026-05-30T19:54:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=849 | cache_read=62447 | cache_creation=10545 | duration_ms=13070 | cost_usd=0.023679
+
+## [2026-05-30T19:54:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1146 | cache_read=70113 | cache_creation=10542 | duration_ms=15704 | cost_usd=0.025927
+
+## [2026-05-30T19:54:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1385 | cache_read=70113 | cache_creation=10590 | duration_ms=19030 | cost_usd=0.027182
+
+## [2026-05-30T19:54:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1346 | cache_read=66175 | cache_creation=10546 | duration_ms=16862 | cost_usd=0.026538
+
+## [2026-05-30T19:55:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1434 | cache_read=70113 | cache_creation=10550 | duration_ms=17814 | cost_usd=0.027377
+
+## [2026-05-30T19:55:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=798 | cache_read=63715 | cache_creation=10349 | duration_ms=11554 | cost_usd=0.023306
+
+## [2026-05-30T19:55:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1221 | cache_read=70113 | cache_creation=10544 | duration_ms=17217 | cost_usd=0.026304
+
+## [2026-05-30T19:55:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=63715 | cache_creation=10290 | duration_ms=14803 | cost_usd=0.025307
+
+## [2026-05-30T19:55:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=756 | cache_read=70113 | cache_creation=10576 | duration_ms=10526 | cost_usd=0.024019
+
+## [2026-05-30T19:55:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1882 | cache_read=70113 | cache_creation=10578 | duration_ms=24798 | cost_usd=0.029652
+
+## [2026-05-30T19:55:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1417 | cache_read=70113 | cache_creation=10558 | duration_ms=16476 | cost_usd=0.027302
+
+## [2026-05-30T19:55:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1446 | cache_read=70113 | cache_creation=10570 | duration_ms=18924 | cost_usd=0.027462
+
+## [2026-05-30T19:55:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2344 | cache_read=63715 | cache_creation=10329 | duration_ms=28830 | cost_usd=0.031011
+
+## [2026-05-30T19:55:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1366 | cache_read=70113 | cache_creation=10542 | duration_ms=16663 | cost_usd=0.027027
+
+## [2026-05-30T19:55:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1510 | cache_read=70113 | cache_creation=10560 | duration_ms=17545 | cost_usd=0.027769
+
+## [2026-05-30T19:55:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2571 | cache_read=70113 | cache_creation=10540 | duration_ms=28428 | cost_usd=0.033049
+
+## [2026-05-30T19:55:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1214 | cache_read=70113 | cache_creation=10588 | duration_ms=17630 | cost_usd=0.026324
+
+## [2026-05-30T19:55:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1175 | cache_read=70113 | cache_creation=10520 | duration_ms=16044 | cost_usd=0.026044
+
+## [2026-05-30T19:55:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1076 | cache_read=70113 | cache_creation=10540 | duration_ms=14294 | cost_usd=0.025574
+
+## [2026-05-30T19:55:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1421 | cache_read=70113 | cache_creation=10607 | duration_ms=18714 | cost_usd=0.027383
+
+## [2026-05-30T19:55:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2597 | cache_read=70113 | cache_creation=10536 | duration_ms=30616 | cost_usd=0.033174
+
+## [2026-05-30T19:55:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1684 | cache_read=70113 | cache_creation=10518 | duration_ms=21648 | cost_usd=0.028587
+
+## [2026-05-30T19:55:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=70113 | cache_creation=10534 | duration_ms=17829 | cost_usd=0.027182
+
+## [2026-05-30T19:55:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1406 | cache_read=70113 | cache_creation=10538 | duration_ms=19058 | cost_usd=0.027222
+
+## [2026-05-30T19:56:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1384 | cache_read=70113 | cache_creation=10516 | duration_ms=16714 | cost_usd=0.027084
+
+## [2026-05-30T19:56:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=70113 | cache_creation=10607 | duration_ms=16497 | cost_usd=0.026343
+
+## [2026-05-30T19:56:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1255 | cache_read=70113 | cache_creation=10617 | duration_ms=17646 | cost_usd=0.026566
+
+## [2026-05-30T19:56:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1532 | cache_read=70113 | cache_creation=10532 | duration_ms=22966 | cost_usd=0.027844
+
+## [2026-05-30T19:56:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=891 | cache_read=70113 | cache_creation=10551 | duration_ms=12823 | cost_usd=0.024663
+
+## [2026-05-30T19:56:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2351 | cache_read=66175 | cache_creation=10564 | duration_ms=28724 | cost_usd=0.031586
+
+## [2026-05-30T19:56:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2068 | cache_read=70113 | cache_creation=10628 | duration_ms=26152 | cost_usd=0.030644
+
+## [2026-05-30T19:56:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1479 | cache_read=70113 | cache_creation=10603 | duration_ms=18264 | cost_usd=0.027668
+
+## [2026-05-30T19:56:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1047 | cache_read=70113 | cache_creation=10574 | duration_ms=14219 | cost_usd=0.025472
+
+## [2026-05-30T19:56:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1182 | cache_read=70113 | cache_creation=10599 | duration_ms=16582 | cost_usd=0.026178
+
+## [2026-05-30T19:56:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1131 | cache_read=70113 | cache_creation=10546 | duration_ms=19059 | cost_usd=0.025857
+
+## [2026-05-30T19:56:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1355 | cache_read=0 | cache_creation=68778 | duration_ms=18155 | cost_usd=0.092756
+
+## [2026-05-30T19:56:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1468 | cache_read=66175 | cache_creation=10549 | duration_ms=17487 | cost_usd=0.027152
+
+## [2026-05-30T19:56:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1194 | cache_read=70113 | cache_creation=10563 | duration_ms=15673 | cost_usd=0.026193
+
+## [2026-05-30T19:56:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1506 | cache_read=70113 | cache_creation=10548 | duration_ms=18629 | cost_usd=0.027734
+
+## [2026-05-30T19:56:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1127 | cache_read=70113 | cache_creation=10584 | duration_ms=15190 | cost_usd=0.025884
+
+## [2026-05-30T19:56:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1875 | cache_read=66175 | cache_creation=10631 | duration_ms=26024 | cost_usd=0.029289
+
+## [2026-05-30T19:56:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3688 | cache_read=70113 | cache_creation=10575 | duration_ms=41908 | cost_usd=0.038678
+
+## [2026-05-30T19:56:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1405 | cache_read=70113 | cache_creation=10562 | duration_ms=22324 | cost_usd=0.027247
+
+## [2026-05-30T19:56:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1570 | cache_read=70113 | cache_creation=10569 | duration_ms=20644 | cost_usd=0.028081
+
+## [2026-05-30T19:57:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1817 | cache_read=66175 | cache_creation=10539 | duration_ms=22742 | cost_usd=0.028884
+
+## [2026-05-30T19:57:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1671 | cache_read=70113 | cache_creation=10590 | duration_ms=22709 | cost_usd=0.028612
+
+## [2026-05-30T19:57:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2101 | cache_read=70113 | cache_creation=10582 | duration_ms=24506 | cost_usd=0.030752
+
+## [2026-05-30T19:57:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1507 | cache_read=70113 | cache_creation=10586 | duration_ms=19817 | cost_usd=0.027787
+
+## [2026-05-30T19:57:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2456 | cache_read=70113 | cache_creation=10564 | duration_ms=27538 | cost_usd=0.032504
+
+## [2026-05-30T19:57:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1551 | cache_read=62447 | cache_creation=10535 | duration_ms=19695 | cost_usd=0.027176
+
+## [2026-05-30T19:57:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2779 | cache_read=70113 | cache_creation=10571 | duration_ms=30762 | cost_usd=0.034128
+
+## [2026-05-30T19:57:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=982 | cache_read=70113 | cache_creation=10624 | duration_ms=16443 | cost_usd=0.025209
+
+## [2026-05-30T19:57:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1520 | cache_read=70113 | cache_creation=10581 | duration_ms=19273 | cost_usd=0.027846
+
+## [2026-05-30T19:57:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2040 | cache_read=70113 | cache_creation=10574 | duration_ms=23622 | cost_usd=0.030437
+
+## [2026-05-30T19:57:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1716 | cache_read=70113 | cache_creation=10567 | duration_ms=22401 | cost_usd=0.028808
+
+## [2026-05-30T19:57:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1264 | cache_read=70113 | cache_creation=10570 | duration_ms=16269 | cost_usd=0.026552
+
+## [2026-05-30T19:57:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1776 | cache_read=70113 | cache_creation=10569 | duration_ms=21002 | cost_usd=0.029111
+
+## [2026-05-30T19:57:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1128 | cache_read=70113 | cache_creation=10579 | duration_ms=16050 | cost_usd=0.025883
+
+## [2026-05-30T19:57:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1447 | cache_read=70113 | cache_creation=10587 | duration_ms=20164 | cost_usd=0.027488
+
+## [2026-05-30T19:57:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1670 | cache_read=70113 | cache_creation=10546 | duration_ms=20347 | cost_usd=0.028552
+
+## [2026-05-30T19:57:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1236 | cache_read=63715 | cache_creation=10333 | duration_ms=15553 | cost_usd=0.025476
+
+## [2026-05-30T19:57:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1040 | cache_read=63715 | cache_creation=10323 | duration_ms=14180 | cost_usd=0.024483
+
+## [2026-05-30T19:57:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=70113 | cache_creation=10579 | duration_ms=17322 | cost_usd=0.026968
+
+## [2026-05-30T19:57:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1109 | cache_read=70113 | cache_creation=10586 | duration_ms=14787 | cost_usd=0.025797
+
+## [2026-05-30T19:57:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1199 | cache_read=70113 | cache_creation=10560 | duration_ms=16324 | cost_usd=0.026214
+
+## [2026-05-30T19:58:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2591 | cache_read=70113 | cache_creation=10551 | duration_ms=31764 | cost_usd=0.033163
+
+## [2026-05-30T19:58:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1268 | cache_read=63715 | cache_creation=10323 | duration_ms=17264 | cost_usd=0.025623
+
+## [2026-05-30T19:58:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1268 | cache_read=63715 | cache_creation=10302 | duration_ms=16231 | cost_usd=0.025597
+
+## [2026-05-30T19:58:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1171 | cache_read=70113 | cache_creation=10570 | duration_ms=15585 | cost_usd=0.026087
+
+## [2026-05-30T19:58:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1464 | cache_read=70113 | cache_creation=10542 | duration_ms=18890 | cost_usd=0.027517
+
+## [2026-05-30T19:58:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1500 | cache_read=70113 | cache_creation=10566 | duration_ms=19525 | cost_usd=0.027727
+
+## [2026-05-30T19:58:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1514 | cache_read=70113 | cache_creation=10557 | duration_ms=17939 | cost_usd=0.027786
+
+## [2026-05-30T19:58:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2265 | cache_read=70113 | cache_creation=10562 | duration_ms=27865 | cost_usd=0.031547
+
+## [2026-05-30T19:58:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1388 | cache_read=70113 | cache_creation=10573 | duration_ms=17657 | cost_usd=0.027176
+
+## [2026-05-30T19:58:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1410 | cache_read=70113 | cache_creation=10562 | duration_ms=17406 | cost_usd=0.027272
+
+## [2026-05-30T19:58:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1756 | cache_read=70113 | cache_creation=10590 | duration_ms=23239 | cost_usd=0.029037
+
+## [2026-05-30T19:58:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1307 | cache_read=70113 | cache_creation=10588 | duration_ms=15172 | cost_usd=0.026789
+
+## [2026-05-30T19:58:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1350 | cache_read=70113 | cache_creation=10566 | duration_ms=18200 | cost_usd=0.026977
+
+## [2026-05-30T19:58:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2647 | cache_read=70113 | cache_creation=10645 | duration_ms=31295 | cost_usd=0.033561
+
+## [2026-05-30T19:58:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1222 | cache_read=70113 | cache_creation=10557 | duration_ms=15751 | cost_usd=0.026326
+
+## [2026-05-30T19:58:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1847 | cache_read=70113 | cache_creation=10566 | duration_ms=25670 | cost_usd=0.029462
+
+## [2026-05-30T19:58:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1202 | cache_read=70113 | cache_creation=10589 | duration_ms=18879 | cost_usd=0.026266
+
+## [2026-05-30T19:58:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1283 | cache_read=70113 | cache_creation=10570 | duration_ms=15614 | cost_usd=0.026647
+
+## [2026-05-30T19:58:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1298 | cache_read=63715 | cache_creation=10294 | duration_ms=18358 | cost_usd=0.025737
+
+## [2026-05-30T19:58:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1291 | cache_read=70113 | cache_creation=10564 | duration_ms=22804 | cost_usd=0.026679
+
+## [2026-05-30T19:58:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1176 | cache_read=70113 | cache_creation=10580 | duration_ms=14977 | cost_usd=0.026124
+
+## [2026-05-30T19:58:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1448 | cache_read=70113 | cache_creation=10571 | duration_ms=19193 | cost_usd=0.027473
+
+## [2026-05-30T19:59:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1395 | cache_read=70113 | cache_creation=10583 | duration_ms=16746 | cost_usd=0.027223
+
+## [2026-05-30T19:59:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1458 | cache_read=66175 | cache_creation=10647 | duration_ms=18349 | cost_usd=0.027224
+
+## [2026-05-30T19:59:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1638 | cache_read=70113 | cache_creation=10576 | duration_ms=19690 | cost_usd=0.028429
+
+## [2026-05-30T19:59:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1983 | cache_read=70113 | cache_creation=10578 | duration_ms=24893 | cost_usd=0.030157
+
+## [2026-05-30T19:59:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1891 | cache_read=70113 | cache_creation=10554 | duration_ms=24310 | cost_usd=0.029667
+
+## [2026-05-30T19:59:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1627 | cache_read=70113 | cache_creation=10589 | duration_ms=20863 | cost_usd=0.028391
+
+## [2026-05-30T19:59:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1976 | cache_read=70113 | cache_creation=10557 | duration_ms=24236 | cost_usd=0.030096
+
+## [2026-05-30T19:59:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2188 | cache_read=70113 | cache_creation=10566 | duration_ms=27032 | cost_usd=0.031167
+
+## [2026-05-30T19:59:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1723 | cache_read=70113 | cache_creation=10574 | duration_ms=19526 | cost_usd=0.028852
+
+## [2026-05-30T19:59:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1895 | cache_read=70113 | cache_creation=10578 | duration_ms=21925 | cost_usd=0.029717
+
+## [2026-05-30T19:59:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2318 | cache_read=70113 | cache_creation=10573 | duration_ms=27138 | cost_usd=0.031826
+
+## [2026-05-30T19:59:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2822 | cache_read=70113 | cache_creation=10572 | duration_ms=33151 | cost_usd=0.034344
+
+## [2026-05-30T19:59:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2650 | cache_read=70113 | cache_creation=10601 | duration_ms=29806 | cost_usd=0.033521
+
+## [2026-05-30T19:59:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2174 | cache_read=63715 | cache_creation=10320 | duration_ms=26289 | cost_usd=0.030149
+
+## [2026-05-30T19:59:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=890 | cache_read=70113 | cache_creation=10653 | duration_ms=11810 | cost_usd=0.024786
+
+## [2026-05-30T19:59:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2499 | cache_read=70113 | cache_creation=10588 | duration_ms=28206 | cost_usd=0.032749
+
+## [2026-05-30T19:59:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1364 | cache_read=70113 | cache_creation=10617 | duration_ms=17026 | cost_usd=0.027111
+
+## [2026-05-30T19:59:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1949 | cache_read=70113 | cache_creation=10569 | duration_ms=24873 | cost_usd=0.029976
+
+## [2026-05-30T19:59:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1664 | cache_read=70113 | cache_creation=10589 | duration_ms=21261 | cost_usd=0.028576
+
+## [2026-05-30T19:59:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1106 | cache_read=70113 | cache_creation=10589 | duration_ms=13213 | cost_usd=0.025786
+
+## [2026-05-30T20:00:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1636 | cache_read=70113 | cache_creation=10565 | duration_ms=19500 | cost_usd=0.028406
+
+## [2026-05-30T20:00:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1071 | cache_read=70113 | cache_creation=10579 | duration_ms=14313 | cost_usd=0.025598
+
+## [2026-05-30T20:00:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1869 | cache_read=70113 | cache_creation=10570 | duration_ms=24338 | cost_usd=0.029577
+
+## [2026-05-30T20:00:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1524 | cache_read=70113 | cache_creation=10571 | duration_ms=18832 | cost_usd=0.027853
+
+## [2026-05-30T20:00:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1537 | cache_read=63715 | cache_creation=10332 | duration_ms=16685 | cost_usd=0.026980
+
+## [2026-05-30T20:00:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1153 | cache_read=63715 | cache_creation=10321 | duration_ms=15540 | cost_usd=0.025046
+
+## [2026-05-30T20:00:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=63715 | cache_creation=10322 | duration_ms=18110 | cost_usd=0.025692
+
+## [2026-05-30T20:00:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1844 | cache_read=70113 | cache_creation=10561 | duration_ms=24869 | cost_usd=0.029441
+
+## [2026-05-30T20:00:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1212 | cache_read=70113 | cache_creation=10545 | duration_ms=14604 | cost_usd=0.026261
+
+## [2026-05-30T20:00:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1789 | cache_read=70113 | cache_creation=10554 | duration_ms=21830 | cost_usd=0.029157
+
+## [2026-05-30T20:00:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1838 | cache_read=70113 | cache_creation=10571 | duration_ms=21568 | cost_usd=0.029423
+
+## [2026-05-30T20:00:34Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=filter | n=67
+
+67 candidate(s) cleared threshold
+
+## [2026-05-30T20:00:52Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1101/2024.06.20.599957
+
+error: could not fetch https://doi.org/10.1101/2024.06.20.599957
+
+## [2026-05-30T20:00:58Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1109/icassp55912.2026.11462182
+
+error: could not fetch https://doi.org/10.1109/icassp55912.2026.11462182
+
+## [2026-05-30T20:01:07Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1101/2025.10.06.680822
+
+error: could not fetch https://doi.org/10.1101/2025.10.06.680822
+
+## [2026-05-30T20:01:07Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1101/2022.07.01.498495
+
+error: could not fetch https://doi.org/10.1101/2022.07.01.498495
+
+## [2026-05-30T20:01:08Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1101/2024.06.04.597448
+
+error: could not fetch https://doi.org/10.1101/2024.06.04.597448
+
+## [2026-05-30T20:01:09Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://www.semanticscholar.org/paper/249613319
+
+error: could not fetch https://www.semanticscholar.org/paper/249613319
+
+## [2026-05-30T20:01:09Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://www.semanticscholar.org/paper/280693118
+
+error: could not fetch https://www.semanticscholar.org/paper/280693118
+
+## [2026-05-30T20:01:10Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1101/2025.11.28.691119
+
+error: could not fetch https://doi.org/10.1101/2025.11.28.691119
+
+## [2026-05-30T20:01:11Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://doi.org/10.1101/2024.10.24.620142
+
+error: could not fetch https://doi.org/10.1101/2024.10.24.620142
+
+## [2026-05-30T20:01:19Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://kriegeskortelab.zuckermaninstitute.columbia.edu/sites/default/files/content/KriegeskorteDouglas_2019_CurrOpinNeurobiol.pdf
+
+error: no extractable content at https://kriegeskortelab.zuckermaninstitute.columbia.edu/sites/default/files/content/KriegeskorteDouglas_2019_CurrOpinNeurobiol.pdf
+
+## [2026-05-30T20:01:23Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://www.pnas.org/doi/10.1073/pnas.2105646118
+
+error: could not fetch https://www.pnas.org/doi/10.1073/pnas.2105646118
+
+## [2026-05-30T20:01:25Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://web.mit.edu/evlab/assets/papers/Schrimpf_et_al_2021_PNAS_SI.pdf
+
+error: no extractable content at https://web.mit.edu/evlab/assets/papers/Schrimpf_et_al_2021_PNAS_SI.pdf
+
+## [2026-05-30T20:01:38Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://mschrimpf.altervista.org/wp-content/uploads/2021/03/20210309-Saxe-lab.pdf
+
+error: no extractable content at https://mschrimpf.altervista.org/wp-content/uploads/2021/03/20210309-Saxe-lab.pdf
+
+## [2026-05-30T20:01:41Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://neuroailab.stanford.edu/Yamins_Gazzaniga_Chapter.pdf
+
+error: no extractable content at https://neuroailab.stanford.edu/Yamins_Gazzaniga_Chapter.pdf
+
+## [2026-05-30T20:01:43Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://www.annualreviews.org/content/journals/10.1146/annurev-vision-112823-030616?crawler=true
+
+error: no extractable content at https://www.annualreviews.org/content/journals/10.1146/annurev-vision-112823-030616?crawler=true
+
+## [2026-05-30T20:01:45Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://www.nature.com/articles/s41593-022-01026-4
+
+error: could not fetch https://www.nature.com/articles/s41593-022-01026-4
+
+## [2026-05-30T20:01:50Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=convert | target=https://www.nature.com/articles/s43588-025-00863-0
+
+error: could not fetch https://www.nature.com/articles/s43588-025-00863-0
+
+## [2026-05-30T20:02:09Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=materialize | n=50
+
+materialized 50 source(s) to raw/
+
+## [2026-05-30T20:02:10Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=nlm_persistent | notebook_id=9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+persistent notebook 9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+## [2026-05-30T20:02:11Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=nlm_session | notebook_id=3de60ed7-087a-4355-b702-998eb4ea281b
+
+created session notebook 3de60ed7-087a-4355-b702-998eb4ea281b
+
+## [2026-05-30T20:06:30Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=source_add | n=50 | skipped=0
+
+pushed 50 source(s) to session notebook (0 skipped)
+
+## [2026-05-30T20:06:32Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=source_map | n=50
+
+built source map (50 entries)
+
+## [2026-05-30T20:12:18Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-12-18Z-schema-drift.md
+
+## [2026-05-30T20:13:26Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-a9c412 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:13:34Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-1ad481 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:13:37Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:37Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-627741 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:13:46Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:13:47Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-aa17b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:06Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9
+
+lint-warning: query response cited 9 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:06Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7a9e54 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:19Z] query | domain=glp1-reward-modulation | unresolved_citations=1
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:20Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0ea517 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:25Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:25Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d62f3a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:27Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:27Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:27Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:28Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b8207b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:29Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:30Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-8261b8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:30Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:32Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+
+lint-warning: query response cited 21 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:32Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9fed4e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:39Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:41Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:41Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:41Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ee6650 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:14:42Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c4dc96 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:14:43Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:43Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:14:48Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,9,10
+
+lint-warning: query response cited 10 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:14:48Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f3a697 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:02Z] query | domain=glp1-reward-modulation | unresolved_citations=3,7,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:03Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b538dd | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:03Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:04Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:12Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+
+lint-warning: query response cited 18 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:12Z] query | domain=glp1-reward-modulation | unresolved_citations=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:12Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-089531 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:13Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-f92361 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-2a531c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:15:19Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:19Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d374fa | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:15:31Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:31Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-23742d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:32Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7
+
+lint-warning: query response cited 7 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:33Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e8b369 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:33Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13
+
+lint-warning: query response cited 13 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:34Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9d41c2 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:15:44Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:44Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-c7546e | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:15:45Z] query | domain=glp1-reward-modulation | unresolved_citations=6
+
+lint-warning: query response cited 1 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-cdb97f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:50Z] query | domain=glp1-reward-modulation | unresolved_citations=3,8,10
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:50Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0eb86f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4dace4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:15:52Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+
+lint-warning: query response cited 16 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:15:52Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-0a6268 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:01Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:01Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-03b006 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:01Z] query | domain=ai-native-business | unresolved_citations=1,2,3
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:02Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7eaed0 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:04Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-16-04Z-schema-drift.md
+
+## [2026-05-30T20:16:04Z] discharge-orphans | domain=ai-native-business | filed=11 | skipped=0 | limit=20 | errors=0 | commit=6408cb2b]
+
+discharge-orphans: 11 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:16:06Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+
+lint-warning: query response cited 15 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:07Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-946c34 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:08Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-d83fdb | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:16Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:16Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b3d9ef | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:35Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:35Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3699c5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:38Z] query | domain=glp1-reward-modulation | unresolved_citations=4,5,8,9,10,11,14,19
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:38Z] query | domain=glp1-reward-modulation | unresolved_citations=2,3,6,9
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:38Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7f3043 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:39Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-04de60 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:39Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,6,7,8,17,18,19
+
+lint-warning: query response cited 11 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-5111b6 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:40Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:40Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4c86f5 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:45Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5
+
+lint-warning: query response cited 5 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:45Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-4ab020 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:49Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6,7,8
+
+lint-warning: query response cited 8 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:49Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-ece251 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:16:53Z] query | domain=ai-native-business | unresolved_citations=1,2,3,4,5,6,7,8,9,10,11,12
+
+lint-warning: query response cited 12 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:53Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-9235af | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:16:54Z] query | domain=glp1-reward-modulation | unresolved_citations=3,8
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:55Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-b2f9c8 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:16:58Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:16:58Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-3f6dae | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:17:05Z] query | domain=condo-capital-infra | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:05Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-763d67 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:17:13Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4
+
+lint-warning: query response cited 4 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:14Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-49a270 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:17:14Z] query | domain=glp1-reward-modulation | unresolved_citations=1,2,3,4,5,13
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:14Z] query | domain=ai-native-business | unresolved_citations=1,2
+
+lint-warning: query response cited 2 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-793422 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against glp1-reward-modulation corpus
+
+## [2026-05-30T20:17:15Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-7b3d38 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-native-business corpus
+
+## [2026-05-30T20:17:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-17-17Z-schema-drift.md
+
+## [2026-05-30T20:17:17Z] discharge-orphans | domain=glp1-reward-modulation | filed=20 | skipped=0 | limit=20 | errors=0 | commit=82f64f48]
+
+discharge-orphans: 20 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:17:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-17-17Z-schema-drift.md
+
+## [2026-05-30T20:17:17Z] discharge-orphans | domain=ai-native-business | filed=5 | skipped=6 | limit=20 | errors=6
+
+discharge-orphans: 5 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:26Z] query | domain=condo-capital-infra | unresolved_citations=1,2,3,4,5,6
+
+lint-warning: query response cited 6 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-05-30T20:17:26Z] wiki-author | id=query-2026-05-30-what-are-the-key-insights-from-e5ab69 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against condo-capital-infra corpus
+
+## [2026-05-30T20:17:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-17-28Z-schema-drift.md
+
+## [2026-05-30T20:17:28Z] discharge-orphans | domain=condo-capital-infra | filed=15 | skipped=5 | limit=20 | errors=5 | commit=02abea9b]
+
+discharge-orphans: 15 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:17:32Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:35Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-05-30T20:17:38Z] wiki-author | id=research-2026-05-30-what-is-the-empirical-evidence-that | updates=6 | created=5 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for convergent-ai-brain
+
+## [2026-05-30T20:17:38Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-05-30-what-is-the-empirical-evidence-that: 6 update(s)
+
+## [2026-05-30T20:17:40Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:17:44Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:56Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:17:59Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:00Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:18:09Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:18Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:21Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:33Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:33Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:18:38Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:46Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:18:58Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:18:59Z] discharge-orphans | domain=ai-native-business | filed=0 | skipped=11 | limit=20 | errors=11
+
+discharge-orphans: 0 drafts filed for domain 'ai-native-business'
+
+## [2026-05-30T20:19:06Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:19:16Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:19:35Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:19:39Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:19:55Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:20:10Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:20:16Z] discharge-orphans | domain=glp1-reward-modulation | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'glp1-reward-modulation'
+
+## [2026-05-30T20:20:42Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:21:13Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:21:19Z] research | session_id=2026-05-30-what-is-the-empirical-evidence-that | step=promoted | added=41 | failed=9
+
+promoted 41 source(s) into persistent notebook (9 failed)
+
+## [2026-05-30T20:21:46Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:22:18Z] discharge-orphans | domain=condo-capital-infra | filed=0 | skipped=20 | limit=20 | errors=20
+
+discharge-orphans: 0 drafts filed for domain 'condo-capital-infra'
+
+## [2026-05-30T20:28:11Z] finalize-abandon | page=wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-cross-cutting.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-cross-cutting.md
+
+## [2026-05-30T20:28:12Z] finalize-abandon | page=wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-limitations-divergences-and-align.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-limitations-divergences-and-align.md
+
+## [2026-05-30T20:28:50Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-28-50Z-schema-drift.md
+
+## [2026-05-30T20:28:58Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'What sets the ceiling on representational alignment between biological brains and artificial neural networks? Examine reported alignment ceilings and noise-ceiling normalization, mutual-information bounds on cross-system alignment, the persistent gap between the best models and brain data, whether alignment saturates with model scale, and which architectural or objective differences prevent full convergence.'
+
+## [2026-05-30T20:29:29Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1815 | cache_read=4291 | cache_creation=14460 | duration_ms=29763 | cost_usd=0.082743
+
+## [2026-05-30T20:29:29Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=plan | n=58
+
+query plan written to nlm/query_plans/2026-05-30-what-sets-the-ceiling-on-representational.yaml
+
+## [2026-05-30T20:29:31Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=pubmed | n=0
+
+adapter pubmed returned 0 candidates
+
+## [2026-05-30T20:29:36Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-30T20:29:39Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=semantic_scholar | n=46
+
+adapter semantic_scholar returned 46 candidates
+
+## [2026-05-30T20:29:49Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-30T20:29:58Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=youtube | n=53
+
+adapter youtube returned 53 candidates
+
+## [2026-05-30T20:29:58Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=merge | n=206
+
+merged 206 candidate(s) across adapters
+
+## [2026-05-30T20:30:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=919 | cache_read=0 | cache_creation=52406 | duration_ms=12557 | cost_usd=0.070110
+
+## [2026-05-30T20:30:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1025 | cache_read=0 | cache_creation=52452 | duration_ms=13144 | cost_usd=0.070698
+
+## [2026-05-30T20:30:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1012 | cache_read=0 | cache_creation=52438 | duration_ms=14657 | cost_usd=0.070615
+
+## [2026-05-30T20:30:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1143 | cache_read=0 | cache_creation=52519 | duration_ms=15725 | cost_usd=0.071372
+
+## [2026-05-30T20:30:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1321 | cache_read=0 | cache_creation=60412 | duration_ms=16978 | cost_usd=0.082128
+
+## [2026-05-30T20:30:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2797 | cache_read=48792 | cache_creation=10556 | duration_ms=30750 | cost_usd=0.032067
+
+## [2026-05-30T20:30:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2417 | cache_read=0 | cache_creation=60360 | duration_ms=30953 | cost_usd=0.087543
+
+## [2026-05-30T20:30:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1367 | cache_read=62447 | cache_creation=10843 | duration_ms=17246 | cost_usd=0.026641
+
+## [2026-05-30T20:30:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1047 | cache_read=70113 | cache_creation=10875 | duration_ms=13941 | cost_usd=0.025848
+
+## [2026-05-30T20:30:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3102 | cache_read=0 | cache_creation=52336 | duration_ms=36625 | cost_usd=0.080938
+
+## [2026-05-30T20:30:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1650 | cache_read=70113 | cache_creation=10877 | duration_ms=19679 | cost_usd=0.028866
+
+## [2026-05-30T20:30:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1910 | cache_read=62447 | cache_creation=10887 | duration_ms=23199 | cost_usd=0.029411
+
+## [2026-05-30T20:30:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1342 | cache_read=70113 | cache_creation=10812 | duration_ms=20563 | cost_usd=0.027244
+
+## [2026-05-30T20:30:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1058 | cache_read=70113 | cache_creation=10917 | duration_ms=12357 | cost_usd=0.025956
+
+## [2026-05-30T20:30:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=967 | cache_read=70113 | cache_creation=10839 | duration_ms=12910 | cost_usd=0.025403
+
+## [2026-05-30T20:30:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1217 | cache_read=70113 | cache_creation=10887 | duration_ms=16814 | cost_usd=0.026713
+
+## [2026-05-30T20:30:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=805 | cache_read=70113 | cache_creation=10953 | duration_ms=10381 | cost_usd=0.024736
+
+## [2026-05-30T20:30:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1320 | cache_read=70113 | cache_creation=10837 | duration_ms=16277 | cost_usd=0.027166
+
+## [2026-05-30T20:31:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1395 | cache_read=70113 | cache_creation=10818 | duration_ms=17457 | cost_usd=0.027517
+
+## [2026-05-30T20:31:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=777 | cache_read=70113 | cache_creation=10827 | duration_ms=9925 | cost_usd=0.024438
+
+## [2026-05-30T20:31:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1687 | cache_read=80815 | cache_creation=0 | duration_ms=20939 | cost_usd=0.016524
+
+## [2026-05-30T20:31:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=70113 | cache_creation=10823 | duration_ms=20394 | cost_usd=0.028893
+
+## [2026-05-30T20:31:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=876 | cache_read=70113 | cache_creation=10680 | duration_ms=12700 | cost_usd=0.024749
+
+## [2026-05-30T20:31:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=804 | cache_read=70113 | cache_creation=11065 | duration_ms=11329 | cost_usd=0.024871
+
+## [2026-05-30T20:31:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1152 | cache_read=70113 | cache_creation=10762 | duration_ms=15212 | cost_usd=0.026232
+
+## [2026-05-30T20:31:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1026 | cache_read=70113 | cache_creation=10759 | duration_ms=13847 | cost_usd=0.025598
+
+## [2026-05-30T20:31:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1185 | cache_read=70113 | cache_creation=10947 | duration_ms=15552 | cost_usd=0.026628
+
+## [2026-05-30T20:31:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1693 | cache_read=80967 | cache_creation=0 | duration_ms=19966 | cost_usd=0.016570
+
+## [2026-05-30T20:31:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1991 | cache_read=81039 | cache_creation=0 | duration_ms=22471 | cost_usd=0.018067
+
+## [2026-05-30T20:31:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1814 | cache_read=80965 | cache_creation=0 | duration_ms=21887 | cost_usd=0.017174
+
+## [2026-05-30T20:31:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1551 | cache_read=70113 | cache_creation=10820 | duration_ms=17851 | cost_usd=0.028299
+
+## [2026-05-30T20:31:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2288 | cache_read=80950 | cache_creation=0 | duration_ms=25877 | cost_usd=0.019543
+
+## [2026-05-30T20:31:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2846 | cache_read=62447 | cache_creation=10827 | duration_ms=31433 | cost_usd=0.034016
+
+## [2026-05-30T20:31:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=803 | cache_read=70113 | cache_creation=10770 | duration_ms=14665 | cost_usd=0.024497
+
+## [2026-05-30T20:31:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1012 | cache_read=80979 | cache_creation=0 | duration_ms=12836 | cost_usd=0.013166
+
+## [2026-05-30T20:31:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=967 | cache_read=70113 | cache_creation=10865 | duration_ms=14120 | cost_usd=0.025436
+
+## [2026-05-30T20:31:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3362 | cache_read=70113 | cache_creation=10817 | duration_ms=37400 | cost_usd=0.037351
+
+## [2026-05-30T20:31:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2591 | cache_read=80905 | cache_creation=0 | duration_ms=27987 | cost_usd=0.021053
+
+## [2026-05-30T20:31:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2941 | cache_read=70113 | cache_creation=10803 | duration_ms=32687 | cost_usd=0.035228
+
+## [2026-05-30T20:32:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1279 | cache_read=70113 | cache_creation=10751 | duration_ms=14999 | cost_usd=0.026853
+
+## [2026-05-30T20:32:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1909 | cache_read=70113 | cache_creation=10812 | duration_ms=22270 | cost_usd=0.030079
+
+## [2026-05-30T20:32:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1234 | cache_read=70113 | cache_creation=10899 | duration_ms=16775 | cost_usd=0.026813
+
+## [2026-05-30T20:32:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=930 | cache_read=70113 | cache_creation=10721 | duration_ms=13175 | cost_usd=0.025071
+
+## [2026-05-30T20:32:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1560 | cache_read=63715 | cache_creation=10435 | duration_ms=23345 | cost_usd=0.027223
+
+## [2026-05-30T20:32:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1915 | cache_read=80798 | cache_creation=0 | duration_ms=22318 | cost_usd=0.017663
+
+## [2026-05-30T20:32:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=958 | cache_read=70113 | cache_creation=10815 | duration_ms=13917 | cost_usd=0.025328
+
+## [2026-05-30T20:32:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1510 | cache_read=70113 | cache_creation=10703 | duration_ms=17023 | cost_usd=0.027948
+
+## [2026-05-30T20:32:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1855 | cache_read=70113 | cache_creation=10664 | duration_ms=20596 | cost_usd=0.029624
+
+## [2026-05-30T20:32:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2215 | cache_read=80845 | cache_creation=0 | duration_ms=25633 | cost_usd=0.019167
+
+## [2026-05-30T20:32:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3621 | cache_read=70113 | cache_creation=10661 | duration_ms=42355 | cost_usd=0.038451
+
+## [2026-05-30T20:32:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2913 | cache_read=62447 | cache_creation=10703 | duration_ms=32766 | cost_usd=0.034196
+
+## [2026-05-30T20:32:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=70113 | cache_creation=10822 | duration_ms=21837 | cost_usd=0.027927
+
+## [2026-05-30T20:32:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1237 | cache_read=62447 | cache_creation=10853 | duration_ms=18728 | cost_usd=0.026004
+
+## [2026-05-30T20:32:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1652 | cache_read=62447 | cache_creation=10683 | duration_ms=18787 | cost_usd=0.027866
+
+## [2026-05-30T20:32:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1600 | cache_read=62447 | cache_creation=10675 | duration_ms=21063 | cost_usd=0.027596
+
+## [2026-05-30T20:32:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2541 | cache_read=70113 | cache_creation=10739 | duration_ms=30655 | cost_usd=0.033148
+
+## [2026-05-30T20:32:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2023 | cache_read=70113 | cache_creation=10678 | duration_ms=23445 | cost_usd=0.030482
+
+## [2026-05-30T20:32:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2080 | cache_read=70113 | cache_creation=10891 | duration_ms=25354 | cost_usd=0.031033
+
+## [2026-05-30T20:33:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=969 | cache_read=70113 | cache_creation=10842 | duration_ms=17723 | cost_usd=0.025417
+
+## [2026-05-30T20:33:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1421 | cache_read=66175 | cache_creation=10722 | duration_ms=15896 | cost_usd=0.027133
+
+## [2026-05-30T20:33:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1197 | cache_read=66175 | cache_creation=10711 | duration_ms=15472 | cost_usd=0.025999
+
+## [2026-05-30T20:33:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=950 | cache_read=70113 | cache_creation=10757 | duration_ms=12479 | cost_usd=0.025216
+
+## [2026-05-30T20:33:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1149 | cache_read=56796 | cache_creation=10716 | duration_ms=17450 | cost_usd=0.024828
+
+## [2026-05-30T20:33:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1070 | cache_read=70113 | cache_creation=10846 | duration_ms=14131 | cost_usd=0.025927
+
+## [2026-05-30T20:33:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2375 | cache_read=70113 | cache_creation=10717 | duration_ms=28349 | cost_usd=0.032291
+
+## [2026-05-30T20:33:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=674 | cache_read=70113 | cache_creation=10559 | duration_ms=10246 | cost_usd=0.023588
+
+## [2026-05-30T20:33:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1188 | cache_read=63715 | cache_creation=10439 | duration_ms=15107 | cost_usd=0.025368
+
+## [2026-05-30T20:33:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1485 | cache_read=70113 | cache_creation=10681 | duration_ms=24310 | cost_usd=0.027796
+
+## [2026-05-30T20:33:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1404 | cache_read=63715 | cache_creation=10413 | duration_ms=16523 | cost_usd=0.026416
+
+## [2026-05-30T20:33:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1250 | cache_read=70113 | cache_creation=10669 | duration_ms=15741 | cost_usd=0.026606
+
+## [2026-05-30T20:33:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2275 | cache_read=63715 | cache_creation=10495 | duration_ms=26657 | cost_usd=0.030873
+
+## [2026-05-30T20:33:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1566 | cache_read=70113 | cache_creation=10754 | duration_ms=19808 | cost_usd=0.028292
+
+## [2026-05-30T20:33:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=754 | cache_read=70113 | cache_creation=10739 | duration_ms=13567 | cost_usd=0.024213
+
+## [2026-05-30T20:33:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1366 | cache_read=70113 | cache_creation=10807 | duration_ms=16370 | cost_usd=0.027358
+
+## [2026-05-30T20:33:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=960 | cache_read=70113 | cache_creation=10675 | duration_ms=14424 | cost_usd=0.025163
+
+## [2026-05-30T20:33:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1632 | cache_read=70113 | cache_creation=10760 | duration_ms=18754 | cost_usd=0.028629
+
+## [2026-05-30T20:33:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1686 | cache_read=70113 | cache_creation=10763 | duration_ms=21112 | cost_usd=0.028903
+
+## [2026-05-30T20:33:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2164 | cache_read=70113 | cache_creation=10707 | duration_ms=26727 | cost_usd=0.031223
+
+## [2026-05-30T20:33:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1022 | cache_read=70113 | cache_creation=10716 | duration_ms=15216 | cost_usd=0.025524
+
+## [2026-05-30T20:33:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1036 | cache_read=70113 | cache_creation=10714 | duration_ms=13830 | cost_usd=0.025592
+
+## [2026-05-30T20:33:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1114 | cache_read=70113 | cache_creation=10665 | duration_ms=14164 | cost_usd=0.025921
+
+## [2026-05-30T20:34:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1150 | cache_read=70113 | cache_creation=10824 | duration_ms=14531 | cost_usd=0.026299
+
+## [2026-05-30T20:34:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1192 | cache_read=70113 | cache_creation=10718 | duration_ms=16170 | cost_usd=0.026377
+
+## [2026-05-30T20:34:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1254 | cache_read=70113 | cache_creation=10605 | duration_ms=17948 | cost_usd=0.026546
+
+## [2026-05-30T20:34:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1275 | cache_read=70113 | cache_creation=10581 | duration_ms=17109 | cost_usd=0.026621
+
+## [2026-05-30T20:34:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2051 | cache_read=70113 | cache_creation=10496 | duration_ms=24873 | cost_usd=0.030394
+
+## [2026-05-30T20:34:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1857 | cache_read=70113 | cache_creation=10540 | duration_ms=21553 | cost_usd=0.029479
+
+## [2026-05-30T20:34:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2576 | cache_read=70113 | cache_creation=10709 | duration_ms=31028 | cost_usd=0.033286
+
+## [2026-05-30T20:34:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1173 | cache_read=70113 | cache_creation=10530 | duration_ms=16998 | cost_usd=0.026047
+
+## [2026-05-30T20:34:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1167 | cache_read=70113 | cache_creation=10532 | duration_ms=16038 | cost_usd=0.026019
+
+## [2026-05-30T20:34:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1645 | cache_read=70113 | cache_creation=10538 | duration_ms=23098 | cost_usd=0.028417
+
+## [2026-05-30T20:34:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1598 | cache_read=70113 | cache_creation=10508 | duration_ms=18013 | cost_usd=0.028144
+
+## [2026-05-30T20:34:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1423 | cache_read=70113 | cache_creation=10544 | duration_ms=18221 | cost_usd=0.027314
+
+## [2026-05-30T20:34:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1152 | cache_read=70113 | cache_creation=10516 | duration_ms=15044 | cost_usd=0.025924
+
+## [2026-05-30T20:34:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1248 | cache_read=70113 | cache_creation=10530 | duration_ms=16154 | cost_usd=0.026422
+
+## [2026-05-30T20:34:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1038 | cache_read=70113 | cache_creation=10542 | duration_ms=12832 | cost_usd=0.025387
+
+## [2026-05-30T20:34:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1683 | cache_read=70113 | cache_creation=10514 | duration_ms=21120 | cost_usd=0.028577
+
+## [2026-05-30T20:34:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1518 | cache_read=70113 | cache_creation=10566 | duration_ms=17108 | cost_usd=0.027817
+
+## [2026-05-30T20:34:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1953 | cache_read=70113 | cache_creation=10658 | duration_ms=23716 | cost_usd=0.030107
+
+## [2026-05-30T20:34:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1589 | cache_read=80621 | cache_creation=0 | duration_ms=21920 | cost_usd=0.016015
+
+## [2026-05-30T20:34:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1985 | cache_read=70113 | cache_creation=10516 | duration_ms=23226 | cost_usd=0.030089
+
+## [2026-05-30T20:35:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1482 | cache_read=70113 | cache_creation=10516 | duration_ms=22412 | cost_usd=0.027574
+
+## [2026-05-30T20:35:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1787 | cache_read=70113 | cache_creation=10558 | duration_ms=21476 | cost_usd=0.029152
+
+## [2026-05-30T20:35:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1233 | cache_read=70113 | cache_creation=10562 | duration_ms=15715 | cost_usd=0.026387
+
+## [2026-05-30T20:35:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=70113 | cache_creation=10602 | duration_ms=22830 | cost_usd=0.030557
+
+## [2026-05-30T20:35:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1429 | cache_read=70113 | cache_creation=10522 | duration_ms=16837 | cost_usd=0.027317
+
+## [2026-05-30T20:35:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1423 | cache_read=70113 | cache_creation=10544 | duration_ms=17912 | cost_usd=0.027314
+
+## [2026-05-30T20:35:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2265 | cache_read=70113 | cache_creation=10548 | duration_ms=26960 | cost_usd=0.031529
+
+## [2026-05-30T20:35:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1695 | cache_read=63715 | cache_creation=10293 | duration_ms=21844 | cost_usd=0.027721
+
+## [2026-05-30T20:35:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1318 | cache_read=70113 | cache_creation=10556 | duration_ms=17148 | cost_usd=0.026804
+
+## [2026-05-30T20:35:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1338 | cache_read=70113 | cache_creation=10550 | duration_ms=18084 | cost_usd=0.026897
+
+## [2026-05-30T20:35:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1744 | cache_read=70113 | cache_creation=10580 | duration_ms=22946 | cost_usd=0.028964
+
+## [2026-05-30T20:35:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1598 | cache_read=70113 | cache_creation=10524 | duration_ms=20882 | cost_usd=0.028164
+
+## [2026-05-30T20:35:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1580 | cache_read=70113 | cache_creation=10605 | duration_ms=20211 | cost_usd=0.028176
+
+## [2026-05-30T20:35:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1542 | cache_read=80639 | cache_creation=0 | duration_ms=19982 | cost_usd=0.015782
+
+## [2026-05-30T20:35:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1460 | cache_read=70113 | cache_creation=10546 | duration_ms=19203 | cost_usd=0.027502
+
+## [2026-05-30T20:35:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1088 | cache_read=70113 | cache_creation=10548 | duration_ms=15211 | cost_usd=0.025644
+
+## [2026-05-30T20:35:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1533 | cache_read=70113 | cache_creation=10514 | duration_ms=18514 | cost_usd=0.027827
+
+## [2026-05-30T20:35:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1196 | cache_read=70113 | cache_creation=10534 | duration_ms=16025 | cost_usd=0.026167
+
+## [2026-05-30T20:35:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2019 | cache_read=70113 | cache_creation=10512 | duration_ms=24050 | cost_usd=0.030254
+
+## [2026-05-30T20:35:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=70113 | cache_creation=10506 | duration_ms=19715 | cost_usd=0.027672
+
+## [2026-05-30T20:35:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1329 | cache_read=70113 | cache_creation=10546 | duration_ms=16457 | cost_usd=0.026847
+
+## [2026-05-30T20:35:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1307 | cache_read=63715 | cache_creation=10285 | duration_ms=16068 | cost_usd=0.025771
+
+## [2026-05-30T20:35:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2269 | cache_read=70113 | cache_creation=10516 | duration_ms=26305 | cost_usd=0.031509
+
+## [2026-05-30T20:36:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1566 | cache_read=63715 | cache_creation=10277 | duration_ms=19036 | cost_usd=0.027056
+
+## [2026-05-30T20:36:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=913 | cache_read=70113 | cache_creation=10566 | duration_ms=13992 | cost_usd=0.024792
+
+## [2026-05-30T20:36:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1484 | cache_read=70113 | cache_creation=10630 | duration_ms=21945 | cost_usd=0.027727
+
+## [2026-05-30T20:36:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1620 | cache_read=70113 | cache_creation=10582 | duration_ms=20779 | cost_usd=0.028347
+
+## [2026-05-30T20:36:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1555 | cache_read=70113 | cache_creation=10520 | duration_ms=19760 | cost_usd=0.027944
+
+## [2026-05-30T20:36:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1262 | cache_read=70113 | cache_creation=10578 | duration_ms=15718 | cost_usd=0.026552
+
+## [2026-05-30T20:36:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=70113 | cache_creation=10562 | duration_ms=18160 | cost_usd=0.026927
+
+## [2026-05-30T20:36:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=996 | cache_read=62447 | cache_creation=10485 | duration_ms=14911 | cost_usd=0.024339
+
+## [2026-05-30T20:36:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1448 | cache_read=62447 | cache_creation=10491 | duration_ms=19236 | cost_usd=0.026606
+
+## [2026-05-30T20:36:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1180 | cache_read=70113 | cache_creation=10542 | duration_ms=15260 | cost_usd=0.026097
+
+## [2026-05-30T20:36:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1273 | cache_read=70113 | cache_creation=10534 | duration_ms=24055 | cost_usd=0.026552
+
+## [2026-05-30T20:36:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1147 | cache_read=70113 | cache_creation=10546 | duration_ms=15073 | cost_usd=0.025937
+
+## [2026-05-30T20:36:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1523 | cache_read=70113 | cache_creation=10528 | duration_ms=17754 | cost_usd=0.027794
+
+## [2026-05-30T20:36:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1224 | cache_read=70113 | cache_creation=10502 | duration_ms=15168 | cost_usd=0.026267
+
+## [2026-05-30T20:36:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1767 | cache_read=62447 | cache_creation=10547 | duration_ms=21626 | cost_usd=0.028271
+
+## [2026-05-30T20:36:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=834 | cache_read=70113 | cache_creation=10568 | duration_ms=12058 | cost_usd=0.024399
+
+## [2026-05-30T20:36:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2284 | cache_read=70113 | cache_creation=10612 | duration_ms=27237 | cost_usd=0.031704
+
+## [2026-05-30T20:36:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2117 | cache_read=70113 | cache_creation=10568 | duration_ms=24313 | cost_usd=0.030814
+
+## [2026-05-30T20:36:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1936 | cache_read=70113 | cache_creation=10552 | duration_ms=23075 | cost_usd=0.029889
+
+## [2026-05-30T20:36:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1138 | cache_read=70113 | cache_creation=10576 | duration_ms=17006 | cost_usd=0.025929
+
+## [2026-05-30T20:36:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2260 | cache_read=70113 | cache_creation=10516 | duration_ms=26379 | cost_usd=0.031464
+
+## [2026-05-30T20:36:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1269 | cache_read=70113 | cache_creation=10572 | duration_ms=16800 | cost_usd=0.026579
+
+## [2026-05-30T20:36:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1816 | cache_read=70113 | cache_creation=10512 | duration_ms=21335 | cost_usd=0.029239
+
+## [2026-05-30T20:37:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1397 | cache_read=70113 | cache_creation=10544 | duration_ms=18603 | cost_usd=0.027184
+
+## [2026-05-30T20:37:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1436 | cache_read=66175 | cache_creation=10520 | duration_ms=18635 | cost_usd=0.026956
+
+## [2026-05-30T20:37:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1415 | cache_read=70113 | cache_creation=10538 | duration_ms=18574 | cost_usd=0.027267
+
+## [2026-05-30T20:37:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1292 | cache_read=70113 | cache_creation=10536 | duration_ms=17730 | cost_usd=0.026649
+
+## [2026-05-30T20:37:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=996 | cache_read=70113 | cache_creation=10574 | duration_ms=12554 | cost_usd=0.025217
+
+## [2026-05-30T20:37:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1885 | cache_read=70113 | cache_creation=10514 | duration_ms=21211 | cost_usd=0.029587
+
+## [2026-05-30T20:37:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1185 | cache_read=70113 | cache_creation=10516 | duration_ms=16752 | cost_usd=0.026089
+
+## [2026-05-30T20:37:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2257 | cache_read=70113 | cache_creation=10573 | duration_ms=26897 | cost_usd=0.031521
+
+## [2026-05-30T20:37:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=841 | cache_read=70113 | cache_creation=10582 | duration_ms=12911 | cost_usd=0.024452
+
+## [2026-05-30T20:37:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=942 | cache_read=70113 | cache_creation=10578 | duration_ms=12062 | cost_usd=0.024952
+
+## [2026-05-30T20:37:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1301 | cache_read=70113 | cache_creation=10575 | duration_ms=18849 | cost_usd=0.026743
+
+## [2026-05-30T20:37:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1236 | cache_read=70113 | cache_creation=10570 | duration_ms=15973 | cost_usd=0.026412
+
+## [2026-05-30T20:37:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1691 | cache_read=70113 | cache_creation=10577 | duration_ms=20872 | cost_usd=0.028696
+
+## [2026-05-30T20:37:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1560 | cache_read=80659 | cache_creation=0 | duration_ms=20513 | cost_usd=0.015874
+
+## [2026-05-30T20:37:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1793 | cache_read=70113 | cache_creation=10592 | duration_ms=20498 | cost_usd=0.029224
+
+## [2026-05-30T20:37:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2421 | cache_read=70113 | cache_creation=10632 | duration_ms=30649 | cost_usd=0.032414
+
+## [2026-05-30T20:37:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1757 | cache_read=70113 | cache_creation=10563 | duration_ms=22561 | cost_usd=0.029008
+
+## [2026-05-30T20:37:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1011 | cache_read=70113 | cache_creation=10553 | duration_ms=13785 | cost_usd=0.025266
+
+## [2026-05-30T20:37:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2080 | cache_read=70113 | cache_creation=10570 | duration_ms=25307 | cost_usd=0.030632
+
+## [2026-05-30T20:37:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=908 | cache_read=70113 | cache_creation=10560 | duration_ms=14652 | cost_usd=0.024759
+
+## [2026-05-30T20:37:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=70113 | cache_creation=10563 | duration_ms=17319 | cost_usd=0.026613
+
+## [2026-05-30T20:37:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1386 | cache_read=70113 | cache_creation=10556 | duration_ms=18837 | cost_usd=0.027144
+
+## [2026-05-30T20:38:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=938 | cache_read=70113 | cache_creation=10579 | duration_ms=14360 | cost_usd=0.024933
+
+## [2026-05-30T20:38:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1267 | cache_read=70113 | cache_creation=10647 | duration_ms=14920 | cost_usd=0.026663
+
+## [2026-05-30T20:38:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=70113 | cache_creation=10580 | duration_ms=17874 | cost_usd=0.027239
+
+## [2026-05-30T20:38:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1483 | cache_read=70113 | cache_creation=10583 | duration_ms=16541 | cost_usd=0.027663
+
+## [2026-05-30T20:38:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1323 | cache_read=70113 | cache_creation=10567 | duration_ms=15568 | cost_usd=0.026843
+
+## [2026-05-30T20:38:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2612 | cache_read=70113 | cache_creation=10631 | duration_ms=32492 | cost_usd=0.033368
+
+## [2026-05-30T20:38:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1937 | cache_read=70113 | cache_creation=10583 | duration_ms=24415 | cost_usd=0.029933
+
+## [2026-05-30T20:38:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2634 | cache_read=80661 | cache_creation=0 | duration_ms=31351 | cost_usd=0.021244
+
+## [2026-05-30T20:38:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1026 | cache_read=70113 | cache_creation=10582 | duration_ms=13938 | cost_usd=0.025377
+
+## [2026-05-30T20:38:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1270 | cache_read=70113 | cache_creation=10582 | duration_ms=15928 | cost_usd=0.026597
+
+## [2026-05-30T20:38:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=829 | cache_read=63715 | cache_creation=10294 | duration_ms=11173 | cost_usd=0.023392
+
+## [2026-05-30T20:38:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3506 | cache_read=70113 | cache_creation=10554 | duration_ms=37639 | cost_usd=0.037742
+
+## [2026-05-30T20:38:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1926 | cache_read=63715 | cache_creation=10330 | duration_ms=22526 | cost_usd=0.028922
+
+## [2026-05-30T20:38:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1706 | cache_read=63715 | cache_creation=10316 | duration_ms=21992 | cost_usd=0.027804
+
+## [2026-05-30T20:38:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=921 | cache_read=70113 | cache_creation=10567 | duration_ms=12422 | cost_usd=0.024833
+
+## [2026-05-30T20:38:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1953 | cache_read=70113 | cache_creation=10650 | duration_ms=23943 | cost_usd=0.030097
+
+## [2026-05-30T20:38:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2108 | cache_read=70113 | cache_creation=10584 | duration_ms=24323 | cost_usd=0.030789
+
+## [2026-05-30T20:38:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1249 | cache_read=70113 | cache_creation=10594 | duration_ms=15327 | cost_usd=0.026507
+
+## [2026-05-30T20:38:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1253 | cache_read=70113 | cache_creation=10591 | duration_ms=15361 | cost_usd=0.026523
+
+## [2026-05-30T20:38:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1055 | cache_read=70357 | cache_creation=10582 | duration_ms=14448 | cost_usd=0.025546
+
+## [2026-05-30T20:39:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1207 | cache_read=70113 | cache_creation=10584 | duration_ms=15295 | cost_usd=0.026284
+
+## [2026-05-30T20:39:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1444 | cache_read=70113 | cache_creation=10638 | duration_ms=18019 | cost_usd=0.027537
+
+## [2026-05-30T20:39:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1606 | cache_read=70113 | cache_creation=10556 | duration_ms=18816 | cost_usd=0.028244
+
+## [2026-05-30T20:39:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2205 | cache_read=70113 | cache_creation=10580 | duration_ms=26065 | cost_usd=0.031269
+
+## [2026-05-30T20:39:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1445 | cache_read=70113 | cache_creation=10567 | duration_ms=21974 | cost_usd=0.027453
+
+## [2026-05-30T20:39:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1734 | cache_read=70113 | cache_creation=10573 | duration_ms=24554 | cost_usd=0.028906
+
+## [2026-05-30T20:39:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1973 | cache_read=70113 | cache_creation=10577 | duration_ms=23760 | cost_usd=0.030106
+
+## [2026-05-30T20:39:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2267 | cache_read=70113 | cache_creation=10571 | duration_ms=29479 | cost_usd=0.031568
+
+## [2026-05-30T20:39:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1333 | cache_read=70113 | cache_creation=10573 | duration_ms=19635 | cost_usd=0.026901
+
+## [2026-05-30T20:39:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1335 | cache_read=70113 | cache_creation=10584 | duration_ms=17719 | cost_usd=0.026924
+
+## [2026-05-30T20:39:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1959 | cache_read=70113 | cache_creation=10570 | duration_ms=24311 | cost_usd=0.030027
+
+## [2026-05-30T20:39:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1505 | cache_read=70113 | cache_creation=10561 | duration_ms=21403 | cost_usd=0.027746
+
+## [2026-05-30T20:39:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1650 | cache_read=70113 | cache_creation=10627 | duration_ms=21280 | cost_usd=0.028553
+
+## [2026-05-30T20:39:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1020 | cache_read=80664 | cache_creation=0 | duration_ms=13218 | cost_usd=0.013174
+
+## [2026-05-30T20:39:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2241 | cache_read=70113 | cache_creation=10563 | duration_ms=24701 | cost_usd=0.031428
+
+## [2026-05-30T20:39:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2435 | cache_read=70113 | cache_creation=10563 | duration_ms=27387 | cost_usd=0.032398
+
+## [2026-05-30T20:39:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1721 | cache_read=80682 | cache_creation=0 | duration_ms=20839 | cost_usd=0.016681
+
+## [2026-05-30T20:39:56Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=filter | n=47
+
+47 candidate(s) cleared threshold
+
+## [2026-05-30T20:40:15Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://doi.org/10.1101/2024.06.20.599957
+
+error: could not fetch https://doi.org/10.1101/2024.06.20.599957
+
+## [2026-05-30T20:40:28Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://doi.org/10.64898/2026.02.16.706115
+
+error: could not fetch https://doi.org/10.64898/2026.02.16.706115
+
+## [2026-05-30T20:40:39Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://doi.org/10.1101/2025.07.10.664257
+
+error: could not fetch https://doi.org/10.1101/2025.07.10.664257
+
+## [2026-05-30T20:40:45Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.nature.com/articles/s42256-025-01041-7
+
+error: could not fetch https://www.nature.com/articles/s42256-025-01041-7
+
+## [2026-05-30T20:40:46Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.nature.com/articles/s42256-026-01235-7
+
+error: could not fetch https://www.nature.com/articles/s42256-026-01235-7
+
+## [2026-05-30T20:40:48Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://openreview.net/pdf?id=E1NRrGtIHG
+
+error: no extractable content at https://openreview.net/pdf?id=E1NRrGtIHG
+
+## [2026-05-30T20:40:48Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.biorxiv.org/content/10.1101/2024.10.23.619871v1.full-text
+
+error: could not fetch https://www.biorxiv.org/content/10.1101/2024.10.23.619871v1.full-text
+
+## [2026-05-30T20:40:50Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.biorxiv.org/content/10.64898/2026.02.09.704031v2.full-text
+
+error: could not fetch https://www.biorxiv.org/content/10.64898/2026.02.09.704031v2.full-text
+
+## [2026-05-30T20:40:50Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.nature.com/articles/s41467-024-53147-y
+
+error: could not fetch https://www.nature.com/articles/s41467-024-53147-y
+
+## [2026-05-30T20:40:56Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://aclanthology.org/2024.emnlp-main.1024.pdf
+
+error: could not fetch https://aclanthology.org/2024.emnlp-main.1024.pdf
+
+## [2026-05-30T20:40:59Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://2019.ccneuro.org/proceedings/0000853.pdf
+
+error: no extractable content at https://2019.ccneuro.org/proceedings/0000853.pdf
+
+## [2026-05-30T20:41:04Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=materialize | n=36
+
+materialized 36 source(s) to raw/
+
+## [2026-05-30T20:41:04Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=nlm_persistent | notebook_id=9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+persistent notebook 9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+## [2026-05-30T20:41:05Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=nlm_session | notebook_id=0a9d3d94-9c13-4afc-b7b9-5c7b51e817b2
+
+created session notebook 0a9d3d94-9c13-4afc-b7b9-5c7b51e817b2
+
+## [2026-05-30T20:44:10Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=source_add | n=36 | skipped=0
+
+pushed 36 source(s) to session notebook (0 skipped)
+
+## [2026-05-30T20:44:12Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=source_map | n=36
+
+built source map (36 entries)
+
+## [2026-05-30T20:44:25Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-30T20:44:25Z] wiki-author | id=research-2026-05-30-what-sets-the-ceiling-on-representational | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for convergent-ai-brain
+
+## [2026-05-30T20:44:25Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=apply_plan | pages=3
+
+applied plan: applied plan for research-2026-05-30-what-sets-the-ceiling-on-representational: 2 update(s)
+
+## [2026-05-30T20:46:40Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=promoted | added=25 | failed=4
+
+promoted 25 source(s) into persistent notebook (4 failed)
+
+## [2026-05-30T20:47:33Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'Do predictive or generative training objectives produce representations that align with biological neural data better than discriminative objectives at matched task performance? Compare self-supervised versus supervised models, next-token and masked prediction versus classification, contrastive learning, and what the evidence says about the training objective (versus architecture or scale) as the primary driver of brain-ANN representational alignment.'
+
+## [2026-05-30T20:48:04Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1873 | cache_read=4291 | cache_creation=15146 | duration_ms=29592 | cost_usd=0.086186
+
+## [2026-05-30T20:48:04Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=plan | n=58
+
+query plan written to nlm/query_plans/2026-05-30-do-predictive-or-generative-training-objectives.yaml
+
+## [2026-05-30T20:48:07Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | target=pubmed
+
+error: PubMed esearch returned HTTP 429
+
+## [2026-05-30T20:48:11Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-30T20:48:14Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=semantic_scholar | n=45
+
+adapter semantic_scholar returned 45 candidates
+
+## [2026-05-30T20:48:20Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-30T20:49:01Z] finalize-abandon | page=wiki/synthesis/2026-05-30-what-sets-the-ceiling-on-representational-cross-cutting.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-30-what-sets-the-ceiling-on-representational-cross-cutting.md
+
+## [2026-05-30T20:49:23Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-05-30T20-49-23Z-schema-drift.md
+
+## [2026-05-30T21:46:21Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'What sets the ceiling on representational alignment between biological brains and artificial neural networks? Examine reported alignment ceilings and noise-ceiling normalization, mutual-information bounds on cross-system alignment, the persistent gap between the best models and brain data, whether alignment saturates with model scale, and which architectural or objective differences prevent full convergence.'
+
+## [2026-05-30T21:46:37Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=580 | cache_read=0 | cache_creation=17273 | duration_ms=14829 | cost_usd=0.073480
+
+## [2026-05-30T21:46:37Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=plan | n=60
+
+query plan written to nlm/query_plans/2026-05-30-what-sets-the-ceiling-on-representational.yaml
+
+## [2026-05-30T21:46:38Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | target=pubmed
+
+error: PubMed esearch returned HTTP 429
+
+## [2026-05-30T21:46:44Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=arxiv | n=50
+
+adapter arxiv returned 50 candidates
+
+## [2026-05-30T21:46:48Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-05-30T21:46:55Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-30T21:47:06Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=search | adapter=youtube | n=91
+
+adapter youtube returned 91 candidates
+
+## [2026-05-30T21:47:06Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=merge | n=256
+
+merged 256 candidate(s) across adapters
+
+## [2026-05-30T21:47:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=913 | cache_read=0 | cache_creation=67301 | duration_ms=12401 | cost_usd=0.088699
+
+## [2026-05-30T21:47:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=870 | cache_read=0 | cache_creation=65045 | duration_ms=12686 | cost_usd=0.085664
+
+## [2026-05-30T21:47:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1039 | cache_read=0 | cache_creation=65213 | duration_ms=14343 | cost_usd=0.086719
+
+## [2026-05-30T21:47:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1052 | cache_read=0 | cache_creation=67187 | duration_ms=14812 | cost_usd=0.089252
+
+## [2026-05-30T21:47:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1257 | cache_read=0 | cache_creation=67336 | duration_ms=15807 | cost_usd=0.090463
+
+## [2026-05-30T21:47:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=991 | cache_read=0 | cache_creation=67250 | duration_ms=18776 | cost_usd=0.089026
+
+## [2026-05-30T21:47:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1711 | cache_read=0 | cache_creation=65267 | duration_ms=19866 | cost_usd=0.090147
+
+## [2026-05-30T21:47:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1568 | cache_read=54573 | cache_creation=10588 | duration_ms=23648 | cost_usd=0.026540
+
+## [2026-05-30T21:47:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1061 | cache_read=70113 | cache_creation=10875 | duration_ms=13242 | cost_usd=0.025918
+
+## [2026-05-30T21:47:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1017 | cache_read=0 | cache_creation=77040 | duration_ms=15345 | cost_usd=0.101393
+
+## [2026-05-30T21:47:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1077 | cache_read=70113 | cache_creation=10917 | duration_ms=13577 | cost_usd=0.026051
+
+## [2026-05-30T21:47:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1503 | cache_read=0 | cache_creation=80986 | duration_ms=18263 | cost_usd=0.108756
+
+## [2026-05-30T21:47:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1457 | cache_read=70113 | cache_creation=10887 | duration_ms=17524 | cost_usd=0.027913
+
+## [2026-05-30T21:47:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=70113 | cache_creation=10837 | duration_ms=18781 | cost_usd=0.028086
+
+## [2026-05-30T21:47:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=0 | cache_creation=67625 | duration_ms=19627 | cost_usd=0.092689
+
+## [2026-05-30T21:48:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1605 | cache_read=66175 | cache_creation=10876 | duration_ms=18243 | cost_usd=0.028245
+
+## [2026-05-30T21:48:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1748 | cache_read=70113 | cache_creation=11055 | duration_ms=20213 | cost_usd=0.029578
+
+## [2026-05-30T21:48:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2667 | cache_read=70113 | cache_creation=10782 | duration_ms=28159 | cost_usd=0.033832
+
+## [2026-05-30T21:48:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1447 | cache_read=70113 | cache_creation=10865 | duration_ms=21262 | cost_usd=0.027836
+
+## [2026-05-30T21:48:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1012 | cache_read=70113 | cache_creation=10745 | duration_ms=12831 | cost_usd=0.025511
+
+## [2026-05-30T21:48:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1905 | cache_read=70113 | cache_creation=10868 | duration_ms=22100 | cost_usd=0.030129
+
+## [2026-05-30T21:48:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1034 | cache_read=70113 | cache_creation=10915 | duration_ms=12815 | cost_usd=0.025833
+
+## [2026-05-30T21:48:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2959 | cache_read=70113 | cache_creation=10926 | duration_ms=33942 | cost_usd=0.035472
+
+## [2026-05-30T21:48:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1104 | cache_read=0 | cache_creation=74275 | duration_ms=13417 | cost_usd=0.098372
+
+## [2026-05-30T21:48:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2119 | cache_read=70113 | cache_creation=10852 | duration_ms=27986 | cost_usd=0.031179
+
+## [2026-05-30T21:48:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=996 | cache_read=0 | cache_creation=74523 | duration_ms=13587 | cost_usd=0.098142
+
+## [2026-05-30T21:48:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1101 | cache_read=70113 | cache_creation=10844 | duration_ms=14614 | cost_usd=0.026079
+
+## [2026-05-30T21:48:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1101 | cache_read=70113 | cache_creation=10866 | duration_ms=14592 | cost_usd=0.026107
+
+## [2026-05-30T21:48:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1782 | cache_read=70113 | cache_creation=10889 | duration_ms=22641 | cost_usd=0.029541
+
+## [2026-05-30T21:48:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=946 | cache_read=66175 | cache_creation=10783 | duration_ms=12636 | cost_usd=0.024834
+
+## [2026-05-30T21:48:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1222 | cache_read=66175 | cache_creation=10767 | duration_ms=14794 | cost_usd=0.026194
+
+## [2026-05-30T21:48:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1032 | cache_read=70113 | cache_creation=10848 | duration_ms=13880 | cost_usd=0.025739
+
+## [2026-05-30T21:48:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1718 | cache_read=63715 | cache_creation=10509 | duration_ms=22038 | cost_usd=0.028106
+
+## [2026-05-30T21:48:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=66175 | cache_creation=10798 | duration_ms=19081 | cost_usd=0.027703
+
+## [2026-05-30T21:48:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1469 | cache_read=0 | cache_creation=73250 | duration_ms=20261 | cost_usd=0.098915
+
+## [2026-05-30T21:48:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1364 | cache_read=70113 | cache_creation=10853 | duration_ms=21042 | cost_usd=0.027406
+
+## [2026-05-30T21:48:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=868 | cache_read=66175 | cache_creation=10775 | duration_ms=12244 | cost_usd=0.024434
+
+## [2026-05-30T21:48:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1067 | cache_read=70113 | cache_creation=10869 | duration_ms=12277 | cost_usd=0.025941
+
+## [2026-05-30T21:48:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=723 | cache_read=70113 | cache_creation=10853 | duration_ms=10520 | cost_usd=0.024201
+
+## [2026-05-30T21:48:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1362 | cache_read=70113 | cache_creation=10732 | duration_ms=17318 | cost_usd=0.027244
+
+## [2026-05-30T21:49:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1155 | cache_read=70113 | cache_creation=10972 | duration_ms=14944 | cost_usd=0.026509
+
+## [2026-05-30T21:49:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=70113 | cache_creation=10803 | duration_ms=23343 | cost_usd=0.030218
+
+## [2026-05-30T21:49:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2193 | cache_read=70113 | cache_creation=10792 | duration_ms=26658 | cost_usd=0.031474
+
+## [2026-05-30T21:49:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3186 | cache_read=70113 | cache_creation=10878 | duration_ms=36485 | cost_usd=0.036547
+
+## [2026-05-30T21:49:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3244 | cache_read=70113 | cache_creation=10820 | duration_ms=33934 | cost_usd=0.036764
+
+## [2026-05-30T21:49:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2244 | cache_read=70113 | cache_creation=10744 | duration_ms=26177 | cost_usd=0.031669
+
+## [2026-05-30T21:49:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1944 | cache_read=70113 | cache_creation=10778 | duration_ms=21797 | cost_usd=0.030212
+
+## [2026-05-30T21:49:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2129 | cache_read=56796 | cache_creation=10806 | duration_ms=25022 | cost_usd=0.029840
+
+## [2026-05-30T21:49:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1298 | cache_read=70113 | cache_creation=10767 | duration_ms=16452 | cost_usd=0.026968
+
+## [2026-05-30T21:49:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=66175 | cache_creation=10724 | duration_ms=14897 | cost_usd=0.026660
+
+## [2026-05-30T21:49:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1227 | cache_read=70113 | cache_creation=10894 | duration_ms=14634 | cost_usd=0.026772
+
+## [2026-05-30T21:49:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=987 | cache_read=66175 | cache_creation=10774 | duration_ms=13276 | cost_usd=0.025028
+
+## [2026-05-30T21:49:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1409 | cache_read=70113 | cache_creation=10810 | duration_ms=20094 | cost_usd=0.027577
+
+## [2026-05-30T21:49:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1448 | cache_read=66175 | cache_creation=10842 | duration_ms=18837 | cost_usd=0.027418
+
+## [2026-05-30T21:49:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1716 | cache_read=70113 | cache_creation=10841 | duration_ms=19432 | cost_usd=0.029151
+
+## [2026-05-30T21:49:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=833 | cache_read=70113 | cache_creation=10692 | duration_ms=11795 | cost_usd=0.024549
+
+## [2026-05-30T21:49:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1105 | cache_read=70113 | cache_creation=10760 | duration_ms=14461 | cost_usd=0.025994
+
+## [2026-05-30T21:50:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1819 | cache_read=70113 | cache_creation=10727 | duration_ms=22930 | cost_usd=0.029523
+
+## [2026-05-30T21:50:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5982 | cache_read=70113 | cache_creation=10696 | duration_ms=60960 | cost_usd=0.050299
+
+## [2026-05-30T21:50:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=70113 | cache_creation=10895 | duration_ms=16155 | cost_usd=0.027633
+
+## [2026-05-30T21:50:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1654 | cache_read=70113 | cache_creation=10696 | duration_ms=19142 | cost_usd=0.028659
+
+## [2026-05-30T21:50:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1720 | cache_read=70113 | cache_creation=10761 | duration_ms=20710 | cost_usd=0.029071
+
+## [2026-05-30T21:50:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2010 | cache_read=70113 | cache_creation=10842 | duration_ms=22537 | cost_usd=0.030622
+
+## [2026-05-30T21:50:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1355 | cache_read=70113 | cache_creation=10785 | duration_ms=18855 | cost_usd=0.027276
+
+## [2026-05-30T21:50:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1558 | cache_read=70113 | cache_creation=10723 | duration_ms=20204 | cost_usd=0.028213
+
+## [2026-05-30T21:50:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1962 | cache_read=70113 | cache_creation=10756 | duration_ms=24107 | cost_usd=0.030274
+
+## [2026-05-30T21:50:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1274 | cache_read=70113 | cache_creation=10850 | duration_ms=18257 | cost_usd=0.026952
+
+## [2026-05-30T21:50:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1201 | cache_read=70113 | cache_creation=10774 | duration_ms=14224 | cost_usd=0.026492
+
+## [2026-05-30T21:50:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1588 | cache_read=70113 | cache_creation=10674 | duration_ms=19204 | cost_usd=0.028302
+
+## [2026-05-30T21:50:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3042 | cache_read=70113 | cache_creation=10763 | duration_ms=32819 | cost_usd=0.035683
+
+## [2026-05-30T21:50:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=767 | cache_read=70113 | cache_creation=10790 | duration_ms=12366 | cost_usd=0.024342
+
+## [2026-05-30T21:50:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=997 | cache_read=66175 | cache_creation=10699 | duration_ms=13873 | cost_usd=0.024984
+
+## [2026-05-30T21:50:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1848 | cache_read=70113 | cache_creation=10858 | duration_ms=21157 | cost_usd=0.029832
+
+## [2026-05-30T21:50:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1208 | cache_read=70113 | cache_creation=10798 | duration_ms=15422 | cost_usd=0.026557
+
+## [2026-05-30T21:50:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=849 | cache_read=70113 | cache_creation=10664 | duration_ms=10320 | cost_usd=0.024594
+
+## [2026-05-30T21:50:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=853 | cache_read=70113 | cache_creation=10792 | duration_ms=11883 | cost_usd=0.024774
+
+## [2026-05-30T21:50:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2434 | cache_read=70113 | cache_creation=10725 | duration_ms=29838 | cost_usd=0.032596
+
+## [2026-05-30T21:50:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1261 | cache_read=70113 | cache_creation=10761 | duration_ms=14702 | cost_usd=0.026776
+
+## [2026-05-30T21:50:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=977 | cache_read=70113 | cache_creation=10785 | duration_ms=14990 | cost_usd=0.025386
+
+## [2026-05-30T21:51:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3287 | cache_read=70113 | cache_creation=10776 | duration_ms=36398 | cost_usd=0.036924
+
+## [2026-05-30T21:51:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1107 | cache_read=70113 | cache_creation=10670 | duration_ms=13659 | cost_usd=0.025892
+
+## [2026-05-30T21:51:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1155 | cache_read=70113 | cache_creation=10703 | duration_ms=15706 | cost_usd=0.026173
+
+## [2026-05-30T21:51:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1767 | cache_read=70113 | cache_creation=10708 | duration_ms=21707 | cost_usd=0.029239
+
+## [2026-05-30T21:51:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1094 | cache_read=70113 | cache_creation=10854 | duration_ms=15110 | cost_usd=0.026057
+
+## [2026-05-30T21:51:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1716 | cache_read=66175 | cache_creation=10739 | duration_ms=19791 | cost_usd=0.028629
+
+## [2026-05-30T21:51:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1093 | cache_read=70113 | cache_creation=10863 | duration_ms=14215 | cost_usd=0.026063
+
+## [2026-05-30T21:51:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1181 | cache_read=70113 | cache_creation=10849 | duration_ms=15144 | cost_usd=0.026486
+
+## [2026-05-30T21:51:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1882 | cache_read=70113 | cache_creation=10760 | duration_ms=21821 | cost_usd=0.029879
+
+## [2026-05-30T21:51:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4352 | cache_read=70113 | cache_creation=10870 | duration_ms=48147 | cost_usd=0.042367
+
+## [2026-05-30T21:51:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1470 | cache_read=70113 | cache_creation=10617 | duration_ms=17858 | cost_usd=0.027641
+
+## [2026-05-30T21:51:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2436 | cache_read=70113 | cache_creation=10749 | duration_ms=25423 | cost_usd=0.032636
+
+## [2026-05-30T21:51:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1766 | cache_read=62447 | cache_creation=10724 | duration_ms=20810 | cost_usd=0.028488
+
+## [2026-05-30T21:51:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1112 | cache_read=0 | cache_creation=69825 | duration_ms=16912 | cost_usd=0.092849
+
+## [2026-05-30T21:51:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1495 | cache_read=70113 | cache_creation=10738 | duration_ms=21822 | cost_usd=0.027917
+
+## [2026-05-30T21:51:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1540 | cache_read=63715 | cache_creation=10263 | duration_ms=23035 | cost_usd=0.026908
+
+## [2026-05-30T21:51:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1175 | cache_read=70113 | cache_creation=10508 | duration_ms=17005 | cost_usd=0.026029
+
+## [2026-05-30T21:51:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1528 | cache_read=70113 | cache_creation=10555 | duration_ms=18314 | cost_usd=0.027853
+
+## [2026-05-30T21:51:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=70113 | cache_creation=10520 | duration_ms=16803 | cost_usd=0.027139
+
+## [2026-05-30T21:51:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1179 | cache_read=70113 | cache_creation=10552 | duration_ms=15494 | cost_usd=0.026104
+
+## [2026-05-30T21:52:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=759 | cache_read=70113 | cache_creation=10526 | duration_ms=10877 | cost_usd=0.023972
+
+## [2026-05-30T21:52:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3512 | cache_read=70113 | cache_creation=10714 | duration_ms=40645 | cost_usd=0.037972
+
+## [2026-05-30T21:52:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1424 | cache_read=70113 | cache_creation=10530 | duration_ms=16994 | cost_usd=0.027302
+
+## [2026-05-30T21:52:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2052 | cache_read=70113 | cache_creation=10540 | duration_ms=25307 | cost_usd=0.030454
+
+## [2026-05-30T21:52:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1126 | cache_read=70113 | cache_creation=10591 | duration_ms=14804 | cost_usd=0.025888
+
+## [2026-05-30T21:52:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1344 | cache_read=70113 | cache_creation=10612 | duration_ms=18041 | cost_usd=0.027004
+
+## [2026-05-30T21:52:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1379 | cache_read=70113 | cache_creation=10546 | duration_ms=18353 | cost_usd=0.027097
+
+## [2026-05-30T21:52:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1173 | cache_read=70113 | cache_creation=10553 | duration_ms=14780 | cost_usd=0.026076
+
+## [2026-05-30T21:52:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=835 | cache_read=70113 | cache_creation=10603 | duration_ms=15611 | cost_usd=0.024448
+
+## [2026-05-30T21:52:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1362 | cache_read=66175 | cache_creation=10544 | duration_ms=18295 | cost_usd=0.026616
+
+## [2026-05-30T21:52:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1239 | cache_read=70113 | cache_creation=10531 | duration_ms=16301 | cost_usd=0.026378
+
+## [2026-05-30T21:52:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2679 | cache_read=70113 | cache_creation=10641 | duration_ms=33474 | cost_usd=0.033716
+
+## [2026-05-30T21:52:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2538 | cache_read=70113 | cache_creation=10554 | duration_ms=30390 | cost_usd=0.032902
+
+## [2026-05-30T21:52:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1051 | cache_read=70113 | cache_creation=10536 | duration_ms=14186 | cost_usd=0.025444
+
+## [2026-05-30T21:52:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1412 | cache_read=70113 | cache_creation=10583 | duration_ms=16860 | cost_usd=0.027308
+
+## [2026-05-30T21:52:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1716 | cache_read=70113 | cache_creation=10556 | duration_ms=19642 | cost_usd=0.028794
+
+## [2026-05-30T21:52:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1426 | cache_read=70113 | cache_creation=10527 | duration_ms=19386 | cost_usd=0.027308
+
+## [2026-05-30T21:52:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1990 | cache_read=70113 | cache_creation=10643 | duration_ms=24003 | cost_usd=0.030273
+
+## [2026-05-30T21:52:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1530 | cache_read=70113 | cache_creation=10585 | duration_ms=18440 | cost_usd=0.027901
+
+## [2026-05-30T21:52:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1330 | cache_read=70113 | cache_creation=10544 | duration_ms=19497 | cost_usd=0.026849
+
+## [2026-05-30T21:52:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1560 | cache_read=70113 | cache_creation=10508 | duration_ms=19477 | cost_usd=0.027954
+
+## [2026-05-30T21:53:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2315 | cache_read=70113 | cache_creation=10549 | duration_ms=28745 | cost_usd=0.031781
+
+## [2026-05-30T21:53:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1428 | cache_read=70113 | cache_creation=10547 | duration_ms=19456 | cost_usd=0.027343
+
+## [2026-05-30T21:53:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=880 | cache_read=70113 | cache_creation=10528 | duration_ms=10182 | cost_usd=0.024579
+
+## [2026-05-30T21:53:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1547 | cache_read=70113 | cache_creation=10560 | duration_ms=20322 | cost_usd=0.027954
+
+## [2026-05-30T21:53:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1714 | cache_read=70113 | cache_creation=10509 | duration_ms=22237 | cost_usd=0.028726
+
+## [2026-05-30T21:53:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1068 | cache_read=70113 | cache_creation=10532 | duration_ms=12520 | cost_usd=0.025524
+
+## [2026-05-30T21:53:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1251 | cache_read=66175 | cache_creation=10534 | duration_ms=15847 | cost_usd=0.026048
+
+## [2026-05-30T21:53:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=70113 | cache_creation=10534 | duration_ms=14756 | cost_usd=0.025942
+
+## [2026-05-30T21:53:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=62447 | cache_creation=10557 | duration_ms=16818 | cost_usd=0.026034
+
+## [2026-05-30T21:53:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1603 | cache_read=70113 | cache_creation=10570 | duration_ms=19669 | cost_usd=0.028247
+
+## [2026-05-30T21:53:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1385 | cache_read=70113 | cache_creation=10606 | duration_ms=17961 | cost_usd=0.027202
+
+## [2026-05-30T21:53:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1141 | cache_read=70113 | cache_creation=10546 | duration_ms=16068 | cost_usd=0.025907
+
+## [2026-05-30T21:53:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1426 | cache_read=70113 | cache_creation=10546 | duration_ms=19231 | cost_usd=0.027332
+
+## [2026-05-30T21:53:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1133 | cache_read=70113 | cache_creation=10556 | duration_ms=13685 | cost_usd=0.025879
+
+## [2026-05-30T21:53:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1686 | cache_read=70113 | cache_creation=10561 | duration_ms=20529 | cost_usd=0.028651
+
+## [2026-05-30T21:53:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2157 | cache_read=70113 | cache_creation=10540 | duration_ms=25012 | cost_usd=0.030979
+
+## [2026-05-30T21:53:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1741 | cache_read=70113 | cache_creation=10514 | duration_ms=21745 | cost_usd=0.028867
+
+## [2026-05-30T21:53:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=984 | cache_read=70113 | cache_creation=10562 | duration_ms=14449 | cost_usd=0.025142
+
+## [2026-05-30T21:53:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=812 | cache_read=70113 | cache_creation=10554 | duration_ms=12126 | cost_usd=0.024272
+
+## [2026-05-30T21:53:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=785 | cache_read=70113 | cache_creation=10528 | duration_ms=11501 | cost_usd=0.024104
+
+## [2026-05-30T21:53:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1787 | cache_read=70113 | cache_creation=10548 | duration_ms=21644 | cost_usd=0.029139
+
+## [2026-05-30T21:53:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1075 | cache_read=70113 | cache_creation=10530 | duration_ms=14548 | cost_usd=0.025557
+
+## [2026-05-30T21:53:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=955 | cache_read=66175 | cache_creation=10546 | duration_ms=12675 | cost_usd=0.024583
+
+## [2026-05-30T21:53:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=839 | cache_read=62447 | cache_creation=10519 | duration_ms=11817 | cost_usd=0.023596
+
+## [2026-05-30T21:54:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1107 | cache_read=62447 | cache_creation=10552 | duration_ms=14977 | cost_usd=0.024978
+
+## [2026-05-30T21:54:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1167 | cache_read=0 | cache_creation=59442 | duration_ms=15867 | cost_usd=0.080146
+
+## [2026-05-30T21:54:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=0 | cache_creation=68768 | duration_ms=18351 | cost_usd=0.092963
+
+## [2026-05-30T21:54:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=70113 | cache_creation=10546 | duration_ms=16259 | cost_usd=0.026592
+
+## [2026-05-30T21:54:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1181 | cache_read=70113 | cache_creation=10572 | duration_ms=16447 | cost_usd=0.026139
+
+## [2026-05-30T21:54:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1418 | cache_read=70113 | cache_creation=10546 | duration_ms=17067 | cost_usd=0.027292
+
+## [2026-05-30T21:54:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1318 | cache_read=70113 | cache_creation=10528 | duration_ms=16689 | cost_usd=0.026769
+
+## [2026-05-30T21:54:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1579 | cache_read=70113 | cache_creation=10506 | duration_ms=20263 | cost_usd=0.028047
+
+## [2026-05-30T21:54:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1429 | cache_read=70113 | cache_creation=10570 | duration_ms=17100 | cost_usd=0.027377
+
+## [2026-05-30T21:54:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=70113 | cache_creation=10656 | duration_ms=16607 | cost_usd=0.026729
+
+## [2026-05-30T21:54:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=70113 | cache_creation=10568 | duration_ms=16927 | cost_usd=0.027609
+
+## [2026-05-30T21:54:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1859 | cache_read=70113 | cache_creation=10598 | duration_ms=23065 | cost_usd=0.029562
+
+## [2026-05-30T21:54:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=70113 | cache_creation=10606 | duration_ms=22624 | cost_usd=0.028427
+
+## [2026-05-30T21:54:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2053 | cache_read=70113 | cache_creation=10526 | duration_ms=25671 | cost_usd=0.030442
+
+## [2026-05-30T21:54:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1330 | cache_read=70113 | cache_creation=10578 | duration_ms=15296 | cost_usd=0.026892
+
+## [2026-05-30T21:54:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1072 | cache_read=66175 | cache_creation=10584 | duration_ms=14767 | cost_usd=0.025215
+
+## [2026-05-30T21:54:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1701 | cache_read=70113 | cache_creation=10544 | duration_ms=20972 | cost_usd=0.028704
+
+## [2026-05-30T21:54:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1216 | cache_read=70113 | cache_creation=10588 | duration_ms=15815 | cost_usd=0.026334
+
+## [2026-05-30T21:54:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=70113 | cache_creation=10583 | duration_ms=16488 | cost_usd=0.026313
+
+## [2026-05-30T21:54:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2036 | cache_read=70113 | cache_creation=10532 | duration_ms=25533 | cost_usd=0.030364
+
+## [2026-05-30T21:54:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1227 | cache_read=70113 | cache_creation=10538 | duration_ms=15103 | cost_usd=0.026327
+
+## [2026-05-30T21:54:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=826 | cache_read=70113 | cache_creation=10557 | duration_ms=11346 | cost_usd=0.024346
+
+## [2026-05-30T21:54:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1490 | cache_read=70113 | cache_creation=10540 | duration_ms=19860 | cost_usd=0.027644
+
+## [2026-05-30T21:55:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1761 | cache_read=70113 | cache_creation=10516 | duration_ms=20449 | cost_usd=0.028969
+
+## [2026-05-30T21:55:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=70113 | cache_creation=10640 | duration_ms=18555 | cost_usd=0.027599
+
+## [2026-05-30T21:55:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1015 | cache_read=70113 | cache_creation=10567 | duration_ms=13916 | cost_usd=0.025303
+
+## [2026-05-30T21:55:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=712 | cache_read=63715 | cache_creation=10329 | duration_ms=9277 | cost_usd=0.022851
+
+## [2026-05-30T21:55:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1306 | cache_read=70113 | cache_creation=10561 | duration_ms=15322 | cost_usd=0.026751
+
+## [2026-05-30T21:55:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=902 | cache_read=70113 | cache_creation=10544 | duration_ms=11958 | cost_usd=0.024709
+
+## [2026-05-30T21:55:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=706 | cache_read=70113 | cache_creation=10549 | duration_ms=11567 | cost_usd=0.023736
+
+## [2026-05-30T21:55:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=518 | cache_read=58265 | cache_creation=10538 | duration_ms=10025 | cost_usd=0.021597
+
+## [2026-05-30T21:55:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1094 | cache_read=0 | cache_creation=73686 | duration_ms=13583 | cost_usd=0.097586
+
+## [2026-05-30T21:55:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=682 | cache_read=66175 | cache_creation=10598 | duration_ms=9908 | cost_usd=0.023283
+
+## [2026-05-30T21:55:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1065 | cache_read=62447 | cache_creation=10597 | duration_ms=16833 | cost_usd=0.024824
+
+## [2026-05-30T21:55:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1574 | cache_read=70113 | cache_creation=10538 | duration_ms=20307 | cost_usd=0.028062
+
+## [2026-05-30T21:55:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1191 | cache_read=63715 | cache_creation=10358 | duration_ms=17402 | cost_usd=0.025282
+
+## [2026-05-30T21:55:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1192 | cache_read=70113 | cache_creation=10559 | duration_ms=15303 | cost_usd=0.026178
+
+## [2026-05-30T21:55:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=70113 | cache_creation=10642 | duration_ms=14243 | cost_usd=0.026017
+
+## [2026-05-30T21:55:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1398 | cache_read=70113 | cache_creation=10549 | duration_ms=18260 | cost_usd=0.027196
+
+## [2026-05-30T21:55:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1993 | cache_read=70113 | cache_creation=10546 | duration_ms=25661 | cost_usd=0.030167
+
+## [2026-05-30T21:55:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2701 | cache_read=70113 | cache_creation=10575 | duration_ms=31171 | cost_usd=0.033743
+
+## [2026-05-30T21:55:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=959 | cache_read=70113 | cache_creation=10580 | duration_ms=12322 | cost_usd=0.025039
+
+## [2026-05-30T21:55:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=70113 | cache_creation=10582 | duration_ms=21654 | cost_usd=0.025942
+
+## [2026-05-30T21:55:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1251 | cache_read=70113 | cache_creation=10551 | duration_ms=15631 | cost_usd=0.026463
+
+## [2026-05-30T21:55:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1058 | cache_read=70113 | cache_creation=10561 | duration_ms=13342 | cost_usd=0.025511
+
+## [2026-05-30T21:55:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=70113 | cache_creation=10563 | duration_ms=16608 | cost_usd=0.026613
+
+## [2026-05-30T21:55:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1216 | cache_read=70113 | cache_creation=10574 | duration_ms=19498 | cost_usd=0.026317
+
+## [2026-05-30T21:55:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1725 | cache_read=70113 | cache_creation=10568 | duration_ms=21094 | cost_usd=0.028854
+
+## [2026-05-30T21:56:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1583 | cache_read=70113 | cache_creation=10610 | duration_ms=21106 | cost_usd=0.028197
+
+## [2026-05-30T21:56:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1162 | cache_read=70113 | cache_creation=10555 | duration_ms=16688 | cost_usd=0.026023
+
+## [2026-05-30T21:56:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1573 | cache_read=70113 | cache_creation=10578 | duration_ms=19087 | cost_usd=0.028107
+
+## [2026-05-30T21:56:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1889 | cache_read=70113 | cache_creation=10584 | duration_ms=22943 | cost_usd=0.029694
+
+## [2026-05-30T21:56:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1714 | cache_read=70113 | cache_creation=10555 | duration_ms=20995 | cost_usd=0.028783
+
+## [2026-05-30T21:56:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1543 | cache_read=70113 | cache_creation=10552 | duration_ms=18907 | cost_usd=0.027924
+
+## [2026-05-30T21:56:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1643 | cache_read=70113 | cache_creation=10568 | duration_ms=19893 | cost_usd=0.028444
+
+## [2026-05-30T21:56:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1337 | cache_read=70113 | cache_creation=10606 | duration_ms=17240 | cost_usd=0.026962
+
+## [2026-05-30T21:56:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2428 | cache_read=70113 | cache_creation=10653 | duration_ms=28871 | cost_usd=0.032476
+
+## [2026-05-30T21:56:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1287 | cache_read=70113 | cache_creation=10554 | duration_ms=19636 | cost_usd=0.026647
+
+## [2026-05-30T21:56:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=70113 | cache_creation=10576 | duration_ms=26694 | cost_usd=0.029934
+
+## [2026-05-30T21:56:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=70113 | cache_creation=10560 | duration_ms=18534 | cost_usd=0.028564
+
+## [2026-05-30T21:56:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1062 | cache_read=70113 | cache_creation=10579 | duration_ms=13205 | cost_usd=0.025553
+
+## [2026-05-30T21:56:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1065 | cache_read=70113 | cache_creation=10580 | duration_ms=13605 | cost_usd=0.025569
+
+## [2026-05-30T21:56:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1941 | cache_read=70113 | cache_creation=10595 | duration_ms=22531 | cost_usd=0.029968
+
+## [2026-05-30T21:56:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=881 | cache_read=70113 | cache_creation=10582 | duration_ms=13787 | cost_usd=0.024652
+
+## [2026-05-30T21:56:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1087 | cache_read=70113 | cache_creation=10636 | duration_ms=14129 | cost_usd=0.025749
+
+## [2026-05-30T21:56:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=985 | cache_read=70113 | cache_creation=10544 | duration_ms=12610 | cost_usd=0.025124
+
+## [2026-05-30T21:56:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2839 | cache_read=70113 | cache_creation=10554 | duration_ms=32870 | cost_usd=0.034407
+
+## [2026-05-30T21:56:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1789 | cache_read=70113 | cache_creation=10589 | duration_ms=21744 | cost_usd=0.029201
+
+## [2026-05-30T21:56:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=70113 | cache_creation=10574 | duration_ms=18734 | cost_usd=0.028017
+
+## [2026-05-30T21:57:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1223 | cache_read=70113 | cache_creation=10577 | duration_ms=15527 | cost_usd=0.026356
+
+## [2026-05-30T21:57:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1913 | cache_read=0 | cache_creation=80956 | duration_ms=26029 | cost_usd=0.110768
+
+## [2026-05-30T21:57:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1498 | cache_read=70113 | cache_creation=10567 | duration_ms=18707 | cost_usd=0.027718
+
+## [2026-05-30T21:57:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2140 | cache_read=70113 | cache_creation=10636 | duration_ms=24897 | cost_usd=0.031014
+
+## [2026-05-30T21:57:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1461 | cache_read=70113 | cache_creation=10571 | duration_ms=18269 | cost_usd=0.027538
+
+## [2026-05-30T21:57:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1380 | cache_read=66175 | cache_creation=10648 | duration_ms=18343 | cost_usd=0.026835
+
+## [2026-05-30T21:57:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1488 | cache_read=70113 | cache_creation=10589 | duration_ms=16486 | cost_usd=0.027696
+
+## [2026-05-30T21:57:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1601 | cache_read=63715 | cache_creation=10305 | duration_ms=20041 | cost_usd=0.027266
+
+## [2026-05-30T21:57:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3034 | cache_read=70113 | cache_creation=10584 | duration_ms=33759 | cost_usd=0.035419
+
+## [2026-05-30T21:57:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=827 | cache_read=70113 | cache_creation=10578 | duration_ms=13302 | cost_usd=0.024377
+
+## [2026-05-30T21:57:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1509 | cache_read=70113 | cache_creation=10569 | duration_ms=20266 | cost_usd=0.027776
+
+## [2026-05-30T21:57:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2204 | cache_read=70113 | cache_creation=10539 | duration_ms=27038 | cost_usd=0.031213
+
+## [2026-05-30T21:57:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1689 | cache_read=70113 | cache_creation=10582 | duration_ms=21397 | cost_usd=0.028692
+
+## [2026-05-30T21:57:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1794 | cache_read=70113 | cache_creation=10566 | duration_ms=22033 | cost_usd=0.029197
+
+## [2026-05-30T21:57:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=957 | cache_read=70113 | cache_creation=10563 | duration_ms=11809 | cost_usd=0.025008
+
+## [2026-05-30T21:57:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2056 | cache_read=70113 | cache_creation=10590 | duration_ms=25877 | cost_usd=0.030537
+
+## [2026-05-30T21:57:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1353 | cache_read=70113 | cache_creation=10529 | duration_ms=17109 | cost_usd=0.026946
+
+## [2026-05-30T21:57:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1668 | cache_read=70113 | cache_creation=10584 | duration_ms=21140 | cost_usd=0.028589
+
+## [2026-05-30T21:58:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1092 | cache_read=70113 | cache_creation=10579 | duration_ms=13798 | cost_usd=0.025703
+
+## [2026-05-30T21:58:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=926 | cache_read=70113 | cache_creation=10568 | duration_ms=13575 | cost_usd=0.024859
+
+## [2026-05-30T21:58:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1914 | cache_read=70113 | cache_creation=10597 | duration_ms=22619 | cost_usd=0.029836
+
+## [2026-05-30T21:58:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1954 | cache_read=70113 | cache_creation=10561 | duration_ms=23936 | cost_usd=0.029991
+
+## [2026-05-30T21:58:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1925 | cache_read=70113 | cache_creation=10567 | duration_ms=22156 | cost_usd=0.029853
+
+## [2026-05-30T21:58:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2802 | cache_read=70113 | cache_creation=10653 | duration_ms=32456 | cost_usd=0.034346
+
+## [2026-05-30T21:58:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2187 | cache_read=70113 | cache_creation=10552 | duration_ms=30286 | cost_usd=0.031144
+
+## [2026-05-30T21:58:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1096 | cache_read=70113 | cache_creation=10572 | duration_ms=13962 | cost_usd=0.025714
+
+## [2026-05-30T21:58:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1058 | cache_read=70113 | cache_creation=10558 | duration_ms=12963 | cost_usd=0.025507
+
+## [2026-05-30T21:58:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1286 | cache_read=70113 | cache_creation=10557 | duration_ms=18380 | cost_usd=0.026646
+
+## [2026-05-30T21:58:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1303 | cache_read=70113 | cache_creation=10581 | duration_ms=17011 | cost_usd=0.026761
+
+## [2026-05-30T21:58:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=70113 | cache_creation=10621 | duration_ms=16454 | cost_usd=0.026926
+
+## [2026-05-30T21:58:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2155 | cache_read=70113 | cache_creation=10587 | duration_ms=25292 | cost_usd=0.031028
+
+## [2026-05-30T21:58:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1692 | cache_read=70113 | cache_creation=10589 | duration_ms=20270 | cost_usd=0.028716
+
+## [2026-05-30T21:58:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1029 | cache_read=70113 | cache_creation=10579 | duration_ms=14692 | cost_usd=0.025388
+
+## [2026-05-30T21:58:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1144 | cache_read=70113 | cache_creation=10571 | duration_ms=19168 | cost_usd=0.025953
+
+## [2026-05-30T21:58:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1408 | cache_read=70113 | cache_creation=10563 | duration_ms=17368 | cost_usd=0.027263
+
+## [2026-05-30T21:58:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2335 | cache_read=0 | cache_creation=63196 | duration_ms=28979 | cost_usd=0.090678
+
+## [2026-05-30T21:58:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1110 | cache_read=70113 | cache_creation=10570 | duration_ms=13957 | cost_usd=0.025782
+
+## [2026-05-30T21:58:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1344 | cache_read=70113 | cache_creation=10560 | duration_ms=16816 | cost_usd=0.026939
+
+## [2026-05-30T21:58:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1564 | cache_read=70113 | cache_creation=10543 | duration_ms=19721 | cost_usd=0.028018
+
+## [2026-05-30T21:58:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=70113 | cache_creation=10570 | duration_ms=17797 | cost_usd=0.027022
+
+## [2026-05-30T21:58:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1222 | cache_read=62447 | cache_creation=10517 | duration_ms=15246 | cost_usd=0.025509
+
+## [2026-05-30T21:59:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1918 | cache_read=70113 | cache_creation=10539 | duration_ms=22179 | cost_usd=0.029783
+
+## [2026-05-30T21:59:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1453 | cache_read=70113 | cache_creation=10560 | duration_ms=16681 | cost_usd=0.027484
+
+## [2026-05-30T21:59:00Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=filter | n=37
+
+37 candidate(s) cleared threshold
+
+## [2026-05-30T21:59:17Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://doi.org/10.1101/2024.12.05.626975
+
+error: could not fetch https://doi.org/10.1101/2024.12.05.626975
+
+## [2026-05-30T21:59:17Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://doi.org/10.1109/WcCST67302.2026.11496213
+
+error: could not fetch https://doi.org/10.1109/WcCST67302.2026.11496213
+
+## [2026-05-30T21:59:18Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://doi.org/10.1101/2020.03.23.003046
+
+error: could not fetch https://doi.org/10.1101/2020.03.23.003046
+
+## [2026-05-30T21:59:24Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.sciencedirect.com/science/article/pii/S2589004221009810
+
+error: could not fetch https://www.sciencedirect.com/science/article/pii/S2589004221009810
+
+## [2026-05-30T21:59:27Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.nature.com/articles/s41586-025-09631-6
+
+error: could not fetch https://www.nature.com/articles/s41586-025-09631-6
+
+## [2026-05-30T21:59:27Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://openreview.net/pdf?id=bTkdoh5CuG
+
+error: no extractable content at https://openreview.net/pdf?id=bTkdoh5CuG
+
+## [2026-05-30T21:59:30Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://www.biorxiv.org/content/10.1101/407007v2.full.pdf
+
+error: no extractable content at https://www.biorxiv.org/content/10.1101/407007v2.full.pdf
+
+## [2026-05-30T21:59:31Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=convert | target=https://cbmm.mit.edu/sites/default/files/publications/Brain-Score%20bioRxiv.pdf
+
+error: no extractable content at https://cbmm.mit.edu/sites/default/files/publications/Brain-Score%20bioRxiv.pdf
+
+## [2026-05-30T21:59:49Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=materialize | n=29
+
+materialized 29 source(s) to raw/
+
+## [2026-05-30T21:59:49Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=nlm_persistent | notebook_id=9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+persistent notebook 9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+## [2026-05-30T22:04:46Z] lint | scope=synthesizes-coverage | synthesizes-coverage=304
+
+report=.knowledge/lint/2026-05-30T22-04-46Z-synthesizes-coverage.md
+
+## [2026-05-30T22:04:47Z] lint | scope=orphans | orphans=726
+
+report=.knowledge/lint/2026-05-30T22-04-47Z-orphans.md
+
+## [2026-05-30T22:09:37Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'Do predictive or generative training objectives produce representations that align with biological neural data better than discriminative objectives at matched task performance? Compare self-supervised versus supervised models, next-token and masked prediction versus classification, contrastive learning, and what the evidence says about the training objective versus architecture or scale as the primary driver of brain-ANN representational alignment.'
+
+## [2026-05-30T22:10:06Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1782 | cache_read=0 | cache_creation=19246 | duration_ms=27951 | cost_usd=0.098908
+
+## [2026-05-30T22:10:06Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=plan | n=58
+
+query plan written to nlm/query_plans/2026-05-30-do-predictive-or-generative-training-objectives.yaml
+
+## [2026-05-30T22:10:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=pubmed | n=30
+
+adapter pubmed returned 30 candidates
+
+## [2026-05-30T22:10:12Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=arxiv | n=48
+
+adapter arxiv returned 48 candidates
+
+## [2026-05-30T22:10:17Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=semantic_scholar | n=44
+
+adapter semantic_scholar returned 44 candidates
+
+## [2026-05-30T22:10:22Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-05-30T22:10:35Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=search | adapter=youtube | n=86
+
+adapter youtube returned 86 candidates
+
+## [2026-05-30T22:10:35Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=merge | n=282
+
+merged 282 candidate(s) across adapters
+
+## [2026-05-30T22:11:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1653 | cache_read=0 | cache_creation=59334 | duration_ms=20285 | cost_usd=0.082440
+
+## [2026-05-30T22:11:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1535 | cache_read=0 | cache_creation=59279 | duration_ms=21844 | cost_usd=0.081782
+
+## [2026-05-30T22:11:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1944 | cache_read=56702 | cache_creation=10505 | duration_ms=23792 | cost_usd=0.028529
+
+## [2026-05-30T22:11:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2154 | cache_read=0 | cache_creation=59397 | duration_ms=24641 | cost_usd=0.085024
+
+## [2026-05-30T22:11:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2137 | cache_read=56702 | cache_creation=10524 | duration_ms=25893 | cost_usd=0.029518
+
+## [2026-05-30T22:11:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2069 | cache_read=0 | cache_creation=57316 | duration_ms=26747 | cost_usd=0.081998
+
+## [2026-05-30T22:11:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2175 | cache_read=48792 | cache_creation=10620 | duration_ms=27690 | cost_usd=0.029037
+
+## [2026-05-30T22:11:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3633 | cache_read=0 | cache_creation=59275 | duration_ms=38776 | cost_usd=0.092267
+
+## [2026-05-30T22:11:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1513 | cache_read=70113 | cache_creation=10581 | duration_ms=17552 | cost_usd=0.027811
+
+## [2026-05-30T22:11:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2053 | cache_read=70113 | cache_creation=10964 | duration_ms=23601 | cost_usd=0.030989
+
+## [2026-05-30T22:11:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2566 | cache_read=70113 | cache_creation=10888 | duration_ms=27890 | cost_usd=0.033459
+
+## [2026-05-30T22:11:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1987 | cache_read=70113 | cache_creation=10911 | duration_ms=22559 | cost_usd=0.030593
+
+## [2026-05-30T22:11:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2254 | cache_read=70113 | cache_creation=10882 | duration_ms=25695 | cost_usd=0.031892
+
+## [2026-05-30T22:11:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2259 | cache_read=66175 | cache_creation=10780 | duration_ms=26674 | cost_usd=0.031395
+
+## [2026-05-30T22:11:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1636 | cache_read=70113 | cache_creation=10814 | duration_ms=18369 | cost_usd=0.028717
+
+## [2026-05-30T22:11:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3376 | cache_read=70113 | cache_creation=10870 | duration_ms=37971 | cost_usd=0.037487
+
+## [2026-05-30T22:11:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1251 | cache_read=70113 | cache_creation=10768 | duration_ms=15223 | cost_usd=0.026734
+
+## [2026-05-30T22:11:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1081 | cache_read=70113 | cache_creation=11014 | duration_ms=13170 | cost_usd=0.026192
+
+## [2026-05-30T22:11:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1603 | cache_read=70113 | cache_creation=10899 | duration_ms=20241 | cost_usd=0.028658
+
+## [2026-05-30T22:11:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1455 | cache_read=70113 | cache_creation=10944 | duration_ms=18661 | cost_usd=0.027974
+
+## [2026-05-30T22:11:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1134 | cache_read=70113 | cache_creation=10654 | duration_ms=14571 | cost_usd=0.026007
+
+## [2026-05-30T22:11:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2054 | cache_read=70113 | cache_creation=11012 | duration_ms=23162 | cost_usd=0.031054
+
+## [2026-05-30T22:12:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=890 | cache_read=70113 | cache_creation=11502 | duration_ms=12063 | cost_usd=0.025847
+
+## [2026-05-30T22:12:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1000 | cache_read=70113 | cache_creation=11037 | duration_ms=12655 | cost_usd=0.025816
+
+## [2026-05-30T22:12:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1706 | cache_read=70113 | cache_creation=11042 | duration_ms=20856 | cost_usd=0.029352
+
+## [2026-05-30T22:12:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3764 | cache_read=70113 | cache_creation=10951 | duration_ms=37869 | cost_usd=0.039528
+
+## [2026-05-30T22:12:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1153 | cache_read=70113 | cache_creation=11454 | duration_ms=15032 | cost_usd=0.027102
+
+## [2026-05-30T22:12:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1233 | cache_read=66175 | cache_creation=10908 | duration_ms=15969 | cost_usd=0.026425
+
+## [2026-05-30T22:12:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=924 | cache_read=70113 | cache_creation=10631 | duration_ms=13931 | cost_usd=0.024928
+
+## [2026-05-30T22:12:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1194 | cache_read=70113 | cache_creation=10889 | duration_ms=14031 | cost_usd=0.026601
+
+## [2026-05-30T22:12:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1077 | cache_read=70113 | cache_creation=10791 | duration_ms=13408 | cost_usd=0.025893
+
+## [2026-05-30T22:12:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=892 | cache_read=70113 | cache_creation=10917 | duration_ms=13369 | cost_usd=0.025126
+
+## [2026-05-30T22:12:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=940 | cache_read=70113 | cache_creation=10936 | duration_ms=11946 | cost_usd=0.025389
+
+## [2026-05-30T22:12:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2202 | cache_read=70113 | cache_creation=10724 | duration_ms=25876 | cost_usd=0.031434
+
+## [2026-05-30T22:12:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=775 | cache_read=66175 | cache_creation=10946 | duration_ms=10043 | cost_usd=0.024183
+
+## [2026-05-30T22:12:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1136 | cache_read=58265 | cache_creation=10821 | duration_ms=15909 | cost_usd=0.025041
+
+## [2026-05-30T22:12:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1290 | cache_read=70113 | cache_creation=10832 | duration_ms=16125 | cost_usd=0.027009
+
+## [2026-05-30T22:12:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1502 | cache_read=62447 | cache_creation=10815 | duration_ms=17624 | cost_usd=0.027281
+
+## [2026-05-30T22:12:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=927 | cache_read=70113 | cache_creation=10669 | duration_ms=11068 | cost_usd=0.024991
+
+## [2026-05-30T22:12:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1091 | cache_read=70113 | cache_creation=10907 | duration_ms=13668 | cost_usd=0.026108
+
+## [2026-05-30T22:12:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=961 | cache_read=70113 | cache_creation=10803 | duration_ms=16116 | cost_usd=0.025328
+
+## [2026-05-30T22:12:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1030 | cache_read=70113 | cache_creation=10911 | duration_ms=11660 | cost_usd=0.025808
+
+## [2026-05-30T22:12:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1045 | cache_read=70113 | cache_creation=10900 | duration_ms=13489 | cost_usd=0.025869
+
+## [2026-05-30T22:12:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1011 | cache_read=70113 | cache_creation=10830 | duration_ms=12998 | cost_usd=0.025612
+
+## [2026-05-30T22:12:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=70113 | cache_creation=10999 | duration_ms=16267 | cost_usd=0.027398
+
+## [2026-05-30T22:12:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1657 | cache_read=62447 | cache_creation=10813 | duration_ms=19665 | cost_usd=0.028054
+
+## [2026-05-30T22:12:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1583 | cache_read=70113 | cache_creation=10927 | duration_ms=18103 | cost_usd=0.028593
+
+## [2026-05-30T22:13:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1257 | cache_read=70113 | cache_creation=11400 | duration_ms=17001 | cost_usd=0.027554
+
+## [2026-05-30T22:13:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1999 | cache_read=70113 | cache_creation=10925 | duration_ms=23006 | cost_usd=0.030671
+
+## [2026-05-30T22:13:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1751 | cache_read=81039 | cache_creation=0 | duration_ms=21739 | cost_usd=0.016867
+
+## [2026-05-30T22:13:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1210 | cache_read=70113 | cache_creation=10933 | duration_ms=15187 | cost_usd=0.026736
+
+## [2026-05-30T22:13:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1798 | cache_read=70113 | cache_creation=10791 | duration_ms=19969 | cost_usd=0.029498
+
+## [2026-05-30T22:13:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1201 | cache_read=70113 | cache_creation=10954 | duration_ms=15819 | cost_usd=0.026717
+
+## [2026-05-30T22:13:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1539 | cache_read=70113 | cache_creation=10847 | duration_ms=18469 | cost_usd=0.028273
+
+## [2026-05-30T22:13:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1936 | cache_read=80965 | cache_creation=0 | duration_ms=22368 | cost_usd=0.017784
+
+## [2026-05-30T22:13:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1046 | cache_read=70113 | cache_creation=10913 | duration_ms=16661 | cost_usd=0.025891
+
+## [2026-05-30T22:13:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=668 | cache_read=70113 | cache_creation=10891 | duration_ms=16650 | cost_usd=0.023973
+
+## [2026-05-30T22:13:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1156 | cache_read=63715 | cache_creation=10680 | duration_ms=14126 | cost_usd=0.025510
+
+## [2026-05-30T22:13:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3508 | cache_read=70113 | cache_creation=10831 | duration_ms=37381 | cost_usd=0.038098
+
+## [2026-05-30T22:13:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1599 | cache_read=63715 | cache_creation=10625 | duration_ms=18603 | cost_usd=0.027656
+
+## [2026-05-30T22:13:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=732 | cache_read=70113 | cache_creation=10967 | duration_ms=11882 | cost_usd=0.024388
+
+## [2026-05-30T22:13:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1307 | cache_read=70113 | cache_creation=10829 | duration_ms=15801 | cost_usd=0.027091
+
+## [2026-05-30T22:13:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1277 | cache_read=70113 | cache_creation=10817 | duration_ms=16149 | cost_usd=0.026926
+
+## [2026-05-30T22:13:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=976 | cache_read=70113 | cache_creation=10768 | duration_ms=12054 | cost_usd=0.025359
+
+## [2026-05-30T22:13:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1351 | cache_read=70113 | cache_creation=10908 | duration_ms=17374 | cost_usd=0.027409
+
+## [2026-05-30T22:13:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1116 | cache_read=70113 | cache_creation=10836 | duration_ms=14535 | cost_usd=0.026144
+
+## [2026-05-30T22:13:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1241 | cache_read=70113 | cache_creation=10762 | duration_ms=15900 | cost_usd=0.026677
+
+## [2026-05-30T22:13:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=757 | cache_read=80979 | cache_creation=0 | duration_ms=11208 | cost_usd=0.011891
+
+## [2026-05-30T22:14:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1892 | cache_read=56796 | cache_creation=10900 | duration_ms=22072 | cost_usd=0.028773
+
+## [2026-05-30T22:14:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2010 | cache_read=70357 | cache_creation=10958 | duration_ms=21685 | cost_usd=0.030791
+
+## [2026-05-30T22:14:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1764 | cache_read=70113 | cache_creation=10988 | duration_ms=20482 | cost_usd=0.029574
+
+## [2026-05-30T22:14:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1619 | cache_read=70113 | cache_creation=10929 | duration_ms=20441 | cost_usd=0.028776
+
+## [2026-05-30T22:14:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2410 | cache_read=70113 | cache_creation=10928 | duration_ms=26561 | cost_usd=0.032729
+
+## [2026-05-30T22:14:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1151 | cache_read=0 | cache_creation=66470 | duration_ms=16410 | cost_usd=0.088851
+
+## [2026-05-30T22:14:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1250 | cache_read=70113 | cache_creation=10955 | duration_ms=15807 | cost_usd=0.026963
+
+## [2026-05-30T22:14:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=765 | cache_read=66175 | cache_creation=10835 | duration_ms=10334 | cost_usd=0.023994
+
+## [2026-05-30T22:14:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=808 | cache_read=66175 | cache_creation=10805 | duration_ms=11459 | cost_usd=0.024172
+
+## [2026-05-30T22:14:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1176 | cache_read=58265 | cache_creation=10866 | duration_ms=14742 | cost_usd=0.025297
+
+## [2026-05-30T22:14:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1102 | cache_read=70113 | cache_creation=10732 | duration_ms=13516 | cost_usd=0.025944
+
+## [2026-05-30T22:14:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2156 | cache_read=70113 | cache_creation=10785 | duration_ms=25483 | cost_usd=0.031281
+
+## [2026-05-30T22:14:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1807 | cache_read=66175 | cache_creation=10895 | duration_ms=19598 | cost_usd=0.029279
+
+## [2026-05-30T22:14:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1705 | cache_read=66175 | cache_creation=10790 | duration_ms=21405 | cost_usd=0.028638
+
+## [2026-05-30T22:14:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1755 | cache_read=70113 | cache_creation=10781 | duration_ms=21308 | cost_usd=0.029271
+
+## [2026-05-30T22:14:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1196 | cache_read=70113 | cache_creation=10817 | duration_ms=15269 | cost_usd=0.026521
+
+## [2026-05-30T22:14:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1585 | cache_read=70113 | cache_creation=10629 | duration_ms=19779 | cost_usd=0.028231
+
+## [2026-05-30T22:14:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1143 | cache_read=70113 | cache_creation=10792 | duration_ms=15983 | cost_usd=0.026224
+
+## [2026-05-30T22:14:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1901 | cache_read=70113 | cache_creation=10750 | duration_ms=22789 | cost_usd=0.029962
+
+## [2026-05-30T22:14:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1829 | cache_read=70113 | cache_creation=10759 | duration_ms=20618 | cost_usd=0.029613
+
+## [2026-05-30T22:14:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3096 | cache_read=70113 | cache_creation=10792 | duration_ms=32537 | cost_usd=0.035989
+
+## [2026-05-30T22:14:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1066 | cache_read=70113 | cache_creation=10758 | duration_ms=13730 | cost_usd=0.025797
+
+## [2026-05-30T22:14:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1545 | cache_read=70113 | cache_creation=10762 | duration_ms=18547 | cost_usd=0.028197
+
+## [2026-05-30T22:14:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1335 | cache_read=70113 | cache_creation=10711 | duration_ms=17255 | cost_usd=0.027083
+
+## [2026-05-30T22:14:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2712 | cache_read=70113 | cache_creation=10785 | duration_ms=29059 | cost_usd=0.034061
+
+## [2026-05-30T22:15:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1291 | cache_read=70113 | cache_creation=10707 | duration_ms=16181 | cost_usd=0.026858
+
+## [2026-05-30T22:15:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1100 | cache_read=70113 | cache_creation=10820 | duration_ms=14027 | cost_usd=0.026044
+
+## [2026-05-30T22:15:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=999 | cache_read=70113 | cache_creation=10713 | duration_ms=14011 | cost_usd=0.025406
+
+## [2026-05-30T22:15:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1033 | cache_read=48792 | cache_creation=10503 | duration_ms=13070 | cost_usd=0.023181
+
+## [2026-05-30T22:15:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1295 | cache_read=56702 | cache_creation=10453 | duration_ms=14214 | cost_usd=0.025219
+
+## [2026-05-30T22:15:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=986 | cache_read=70113 | cache_creation=10878 | duration_ms=13179 | cost_usd=0.025547
+
+## [2026-05-30T22:15:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=70113 | cache_creation=10805 | duration_ms=17328 | cost_usd=0.027496
+
+## [2026-05-30T22:15:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=869 | cache_read=70113 | cache_creation=10742 | duration_ms=11975 | cost_usd=0.024792
+
+## [2026-05-30T22:15:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1831 | cache_read=58265 | cache_creation=10626 | duration_ms=21524 | cost_usd=0.028272
+
+## [2026-05-30T22:15:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1126 | cache_read=70113 | cache_creation=10736 | duration_ms=14340 | cost_usd=0.026069
+
+## [2026-05-30T22:15:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1024 | cache_read=70113 | cache_creation=10692 | duration_ms=12615 | cost_usd=0.025504
+
+## [2026-05-30T22:15:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1998 | cache_read=70113 | cache_creation=10747 | duration_ms=28103 | cost_usd=0.030443
+
+## [2026-05-30T22:15:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1443 | cache_read=70113 | cache_creation=10758 | duration_ms=17707 | cost_usd=0.027682
+
+## [2026-05-30T22:15:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=70113 | cache_creation=10717 | duration_ms=16805 | cost_usd=0.027881
+
+## [2026-05-30T22:15:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1747 | cache_read=70113 | cache_creation=10816 | duration_ms=24632 | cost_usd=0.029274
+
+## [2026-05-30T22:15:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=70113 | cache_creation=10631 | duration_ms=19176 | cost_usd=0.028458
+
+## [2026-05-30T22:15:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2548 | cache_read=70113 | cache_creation=10676 | duration_ms=29463 | cost_usd=0.033104
+
+## [2026-05-30T22:15:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1841 | cache_read=70113 | cache_creation=10744 | duration_ms=20040 | cost_usd=0.029654
+
+## [2026-05-30T22:16:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=878 | cache_read=70113 | cache_creation=10847 | duration_ms=11689 | cost_usd=0.024968
+
+## [2026-05-30T22:16:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1274 | cache_read=70113 | cache_creation=10838 | duration_ms=15407 | cost_usd=0.026937
+
+## [2026-05-30T22:16:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1163 | cache_read=70113 | cache_creation=10837 | duration_ms=16027 | cost_usd=0.026381
+
+## [2026-05-30T22:16:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2277 | cache_read=70113 | cache_creation=10809 | duration_ms=27947 | cost_usd=0.031916
+
+## [2026-05-30T22:16:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=876 | cache_read=70113 | cache_creation=10776 | duration_ms=11422 | cost_usd=0.024869
+
+## [2026-05-30T22:16:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2479 | cache_read=70113 | cache_creation=10667 | duration_ms=27569 | cost_usd=0.032748
+
+## [2026-05-30T22:16:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2647 | cache_read=70113 | cache_creation=10712 | duration_ms=29277 | cost_usd=0.033644
+
+## [2026-05-30T22:16:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2456 | cache_read=70113 | cache_creation=10651 | duration_ms=26599 | cost_usd=0.032613
+
+## [2026-05-30T22:16:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1066 | cache_read=70113 | cache_creation=11056 | duration_ms=14003 | cost_usd=0.026169
+
+## [2026-05-30T22:16:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1488 | cache_read=70113 | cache_creation=10751 | duration_ms=17056 | cost_usd=0.027898
+
+## [2026-05-30T22:16:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1141 | cache_read=70113 | cache_creation=10516 | duration_ms=15098 | cost_usd=0.025869
+
+## [2026-05-30T22:16:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1232 | cache_read=70113 | cache_creation=10541 | duration_ms=15776 | cost_usd=0.026356
+
+## [2026-05-30T22:16:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=996 | cache_read=70113 | cache_creation=10520 | duration_ms=12523 | cost_usd=0.025149
+
+## [2026-05-30T22:16:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=66175 | cache_creation=10597 | duration_ms=18575 | cost_usd=0.027152
+
+## [2026-05-30T22:16:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=70113 | cache_creation=10598 | duration_ms=18030 | cost_usd=0.027237
+
+## [2026-05-30T22:16:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1642 | cache_read=70113 | cache_creation=10546 | duration_ms=24784 | cost_usd=0.028412
+
+## [2026-05-30T22:16:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=938 | cache_read=70113 | cache_creation=10508 | duration_ms=13254 | cost_usd=0.024844
+
+## [2026-05-30T22:16:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1041 | cache_read=70113 | cache_creation=10550 | duration_ms=13020 | cost_usd=0.025412
+
+## [2026-05-30T22:16:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1681 | cache_read=70113 | cache_creation=10514 | duration_ms=19087 | cost_usd=0.028567
+
+## [2026-05-30T22:16:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1092 | cache_read=70113 | cache_creation=10575 | duration_ms=14034 | cost_usd=0.025698
+
+## [2026-05-30T22:16:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=63715 | cache_creation=10305 | duration_ms=19272 | cost_usd=0.025966
+
+## [2026-05-30T22:16:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1452 | cache_read=70113 | cache_creation=10538 | duration_ms=18956 | cost_usd=0.027452
+
+## [2026-05-30T22:16:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2743 | cache_read=70113 | cache_creation=10519 | duration_ms=30827 | cost_usd=0.033883
+
+## [2026-05-30T22:17:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1472 | cache_read=70113 | cache_creation=10526 | duration_ms=20543 | cost_usd=0.027537
+
+## [2026-05-30T22:17:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1068 | cache_read=70113 | cache_creation=10518 | duration_ms=13650 | cost_usd=0.025507
+
+## [2026-05-30T22:17:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1688 | cache_read=70113 | cache_creation=10518 | duration_ms=21779 | cost_usd=0.028607
+
+## [2026-05-30T22:17:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1069 | cache_read=70113 | cache_creation=10653 | duration_ms=14042 | cost_usd=0.025681
+
+## [2026-05-30T22:17:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=961 | cache_read=70113 | cache_creation=10540 | duration_ms=13402 | cost_usd=0.024999
+
+## [2026-05-30T22:17:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1367 | cache_read=70113 | cache_creation=10528 | duration_ms=21159 | cost_usd=0.027014
+
+## [2026-05-30T22:17:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1260 | cache_read=70113 | cache_creation=10629 | duration_ms=15739 | cost_usd=0.026606
+
+## [2026-05-30T22:17:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1582 | cache_read=70113 | cache_creation=10534 | duration_ms=20137 | cost_usd=0.028097
+
+## [2026-05-30T22:17:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=824 | cache_read=58265 | cache_creation=10483 | duration_ms=11729 | cost_usd=0.023058
+
+## [2026-05-30T22:17:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1182 | cache_read=58265 | cache_creation=10509 | duration_ms=14322 | cost_usd=0.024881
+
+## [2026-05-30T22:17:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1014 | cache_read=66175 | cache_creation=10570 | duration_ms=14646 | cost_usd=0.024908
+
+## [2026-05-30T22:17:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1786 | cache_read=70113 | cache_creation=10546 | duration_ms=22093 | cost_usd=0.029132
+
+## [2026-05-30T22:17:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2455 | cache_read=70113 | cache_creation=10526 | duration_ms=27062 | cost_usd=0.032452
+
+## [2026-05-30T22:17:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1301 | cache_read=70113 | cache_creation=10625 | duration_ms=15572 | cost_usd=0.026806
+
+## [2026-05-30T22:17:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2384 | cache_read=70113 | cache_creation=10518 | duration_ms=28008 | cost_usd=0.032087
+
+## [2026-05-30T22:17:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1382 | cache_read=70113 | cache_creation=10520 | duration_ms=18389 | cost_usd=0.027079
+
+## [2026-05-30T22:17:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1975 | cache_read=70113 | cache_creation=10550 | duration_ms=22114 | cost_usd=0.030082
+
+## [2026-05-30T22:17:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2813 | cache_read=70113 | cache_creation=10546 | duration_ms=34929 | cost_usd=0.034267
+
+## [2026-05-30T22:17:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2443 | cache_read=70113 | cache_creation=10534 | duration_ms=28310 | cost_usd=0.032402
+
+## [2026-05-30T22:17:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1591 | cache_read=70113 | cache_creation=10544 | duration_ms=22214 | cost_usd=0.028154
+
+## [2026-05-30T22:17:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1466 | cache_read=70113 | cache_creation=10526 | duration_ms=18888 | cost_usd=0.027507
+
+## [2026-05-30T22:17:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1032 | cache_read=62447 | cache_creation=10481 | duration_ms=13133 | cost_usd=0.024514
+
+## [2026-05-30T22:17:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1250 | cache_read=62447 | cache_creation=10499 | duration_ms=15933 | cost_usd=0.025626
+
+## [2026-05-30T22:17:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=62447 | cache_creation=10589 | duration_ms=16686 | cost_usd=0.025639
+
+## [2026-05-30T22:18:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1825 | cache_read=70113 | cache_creation=10534 | duration_ms=23704 | cost_usd=0.029312
+
+## [2026-05-30T22:18:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1066 | cache_read=70113 | cache_creation=10542 | duration_ms=14069 | cost_usd=0.025527
+
+## [2026-05-30T22:18:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1730 | cache_read=63715 | cache_creation=10281 | duration_ms=20895 | cost_usd=0.027881
+
+## [2026-05-30T22:18:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1041 | cache_read=70113 | cache_creation=10630 | duration_ms=13287 | cost_usd=0.025512
+
+## [2026-05-30T22:18:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1480 | cache_read=70113 | cache_creation=10516 | duration_ms=18400 | cost_usd=0.027564
+
+## [2026-05-30T22:18:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1410 | cache_read=70113 | cache_creation=10512 | duration_ms=18140 | cost_usd=0.027209
+
+## [2026-05-30T22:18:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1663 | cache_read=70113 | cache_creation=10510 | duration_ms=21675 | cost_usd=0.028472
+
+## [2026-05-30T22:18:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1617 | cache_read=70113 | cache_creation=10554 | duration_ms=20968 | cost_usd=0.028297
+
+## [2026-05-30T22:18:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1416 | cache_read=70113 | cache_creation=10550 | duration_ms=17190 | cost_usd=0.027287
+
+## [2026-05-30T22:18:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2571 | cache_read=70113 | cache_creation=10565 | duration_ms=31066 | cost_usd=0.033081
+
+## [2026-05-30T22:18:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=70113 | cache_creation=10520 | duration_ms=26030 | cost_usd=0.026894
+
+## [2026-05-30T22:18:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2275 | cache_read=70113 | cache_creation=10530 | duration_ms=36268 | cost_usd=0.031557
+
+## [2026-05-30T22:18:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1031 | cache_read=70113 | cache_creation=10543 | duration_ms=25748 | cost_usd=0.025353
+
+## [2026-05-30T22:18:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=15 | out_tokens=2116 | cache_read=128378 | cache_creation=21778 | duration_ms=39966 | cost_usd=0.050655
+
+## [2026-05-30T22:19:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2711 | cache_read=58265 | cache_creation=10491 | duration_ms=41635 | cost_usd=0.032503
+
+## [2026-05-30T22:19:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1742 | cache_read=62447 | cache_creation=10499 | duration_ms=32454 | cost_usd=0.028086
+
+## [2026-05-30T22:19:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2551 | cache_read=62447 | cache_creation=10507 | duration_ms=37504 | cost_usd=0.032141
+
+## [2026-05-30T22:19:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1817 | cache_read=0 | cache_creation=55273 | duration_ms=37101 | cost_usd=0.078184
+
+## [2026-05-30T22:19:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1498 | cache_read=45081 | cache_creation=10241 | duration_ms=19931 | cost_usd=0.024807
+
+## [2026-05-30T22:19:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1191 | cache_read=45081 | cache_creation=10275 | duration_ms=17799 | cost_usd=0.023315
+
+## [2026-05-30T22:19:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1546 | cache_read=0 | cache_creation=49973 | duration_ms=19726 | cost_usd=0.070204
+
+## [2026-05-30T22:19:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1423 | cache_read=48792 | cache_creation=10241 | duration_ms=19610 | cost_usd=0.024803
+
+## [2026-05-30T22:19:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1938 | cache_read=45081 | cache_creation=10210 | duration_ms=21821 | cost_usd=0.026969
+
+## [2026-05-30T22:19:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1929 | cache_read=45081 | cache_creation=10255 | duration_ms=22646 | cost_usd=0.026980
+
+## [2026-05-30T22:19:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2033 | cache_read=48792 | cache_creation=10283 | duration_ms=23346 | cost_usd=0.027906
+
+## [2026-05-30T22:19:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2027 | cache_read=58265 | cache_creation=10558 | duration_ms=27042 | cost_usd=0.029167
+
+## [2026-05-30T22:19:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=773 | cache_read=70113 | cache_creation=10569 | duration_ms=11583 | cost_usd=0.024096
+
+## [2026-05-30T22:20:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1110 | cache_read=70113 | cache_creation=10550 | duration_ms=13648 | cost_usd=0.025757
+
+## [2026-05-30T22:20:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1356 | cache_read=70113 | cache_creation=10526 | duration_ms=17305 | cost_usd=0.026957
+
+## [2026-05-30T22:20:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=70113 | cache_creation=10518 | duration_ms=17725 | cost_usd=0.026752
+
+## [2026-05-30T22:20:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1777 | cache_read=70113 | cache_creation=10603 | duration_ms=24602 | cost_usd=0.029158
+
+## [2026-05-30T22:20:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1195 | cache_read=70113 | cache_creation=10572 | duration_ms=15406 | cost_usd=0.026209
+
+## [2026-05-30T22:20:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1908 | cache_read=70113 | cache_creation=10528 | duration_ms=23263 | cost_usd=0.029719
+
+## [2026-05-30T22:20:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1126 | cache_read=70113 | cache_creation=10520 | duration_ms=13436 | cost_usd=0.025799
+
+## [2026-05-30T22:20:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3447 | cache_read=70113 | cache_creation=10522 | duration_ms=46985 | cost_usd=0.037407
+
+## [2026-05-30T22:20:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1652 | cache_read=66175 | cache_creation=10571 | duration_ms=28868 | cost_usd=0.028099
+
+## [2026-05-30T22:20:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3207 | cache_read=70113 | cache_creation=10548 | duration_ms=47351 | cost_usd=0.036239
+
+## [2026-05-30T22:20:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2001 | cache_read=70113 | cache_creation=10611 | duration_ms=35218 | cost_usd=0.030288
+
+## [2026-05-30T22:20:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1673 | cache_read=80694 | cache_creation=0 | duration_ms=33741 | cost_usd=0.016442
+
+## [2026-05-30T22:20:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1979 | cache_read=70113 | cache_creation=10563 | duration_ms=31533 | cost_usd=0.030118
+
+## [2026-05-30T22:21:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2379 | cache_read=58265 | cache_creation=10523 | duration_ms=45864 | cost_usd=0.030883
+
+## [2026-05-30T22:21:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1489 | cache_read=45081 | cache_creation=10289 | duration_ms=40878 | cost_usd=0.024822
+
+## [2026-05-30T22:21:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1005 | cache_read=45081 | cache_creation=10298 | duration_ms=23608 | cost_usd=0.022414
+
+## [2026-05-30T22:21:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=688 | cache_read=56702 | cache_creation=10329 | duration_ms=9979 | cost_usd=0.022029
+
+## [2026-05-30T22:21:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=760 | cache_read=56702 | cache_creation=10345 | duration_ms=10768 | cost_usd=0.022409
+
+## [2026-05-30T22:21:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=952 | cache_read=45081 | cache_creation=10290 | duration_ms=26499 | cost_usd=0.022139
+
+## [2026-05-30T22:21:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1376 | cache_read=45081 | cache_creation=10292 | duration_ms=30671 | cost_usd=0.024261
+
+## [2026-05-30T22:21:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1025 | cache_read=56702 | cache_creation=10329 | duration_ms=15365 | cost_usd=0.023714
+
+## [2026-05-30T22:21:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1412 | cache_read=70113 | cache_creation=10630 | duration_ms=17824 | cost_usd=0.027367
+
+## [2026-05-30T22:22:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1942 | cache_read=70113 | cache_creation=10632 | duration_ms=35758 | cost_usd=0.030019
+
+## [2026-05-30T22:23:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=802 | cache_read=70113 | cache_creation=10581 | duration_ms=76161 | cost_usd=0.024256
+
+## [2026-05-30T22:23:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=70113 | cache_creation=10616 | duration_ms=81556 | cost_usd=0.027259
+
+## [2026-05-30T22:23:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1962 | cache_read=70113 | cache_creation=10572 | duration_ms=82887 | cost_usd=0.030044
+
+## [2026-05-30T22:23:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2313 | cache_read=66175 | cache_creation=10566 | duration_ms=83685 | cost_usd=0.031398
+
+## [2026-05-30T22:23:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1839 | cache_read=70113 | cache_creation=10628 | duration_ms=79261 | cost_usd=0.029499
+
+## [2026-05-30T22:23:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2160 | cache_read=80702 | cache_creation=0 | duration_ms=82840 | cost_usd=0.018878
+
+## [2026-05-30T22:23:47Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=GwNhvx0wxdw
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:24:16Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=5hOvZJMWOfs
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:07Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=3zw3l6cKWCA
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:07Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=8sVgLz3-W_s
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=eur2fF8KJlY
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=renzmon5-KM
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=-yhn9lVWtAA
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:11Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=OJOtLy9Xd34
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:25:48Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=ANVLPS043XY
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:26:16Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=T9EQhQL9ufU
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:07Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=tEBsTX2OVgI
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:08Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=QzY57FaENXg
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=4PCPaTDowdE
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=W1jIpcWgpcw
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:10Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=RE6H5gOeZgk
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:12Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=wNTaFlTmWHM
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:27:49Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=mNj6C6O2BcU
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:28:17Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | target=https://www.youtube.com/watch?v=S67-JVoRbrY
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-05-30T22:28:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=873 | cache_read=45081 | cache_creation=10275 | duration_ms=40847 | cost_usd=0.021725
+
+## [2026-05-30T22:28:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=959 | cache_read=45081 | cache_creation=10267 | duration_ms=38985 | cost_usd=0.022145
+
+## [2026-05-30T22:28:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=936 | cache_read=45081 | cache_creation=10307 | duration_ms=43547 | cost_usd=0.022080
+
+## [2026-05-30T22:28:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1432 | cache_read=45081 | cache_creation=10279 | duration_ms=44658 | cost_usd=0.024525
+
+## [2026-05-30T22:28:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=990 | cache_read=45081 | cache_creation=10280 | duration_ms=44764 | cost_usd=0.022316
+
+## [2026-05-30T22:28:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1310 | cache_read=45081 | cache_creation=10301 | duration_ms=46921 | cost_usd=0.023942
+
+## [2026-05-30T22:29:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1517 | cache_read=45081 | cache_creation=10232 | duration_ms=51711 | cost_usd=0.024891
+
+## [2026-05-30T22:29:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1342 | cache_read=45081 | cache_creation=10287 | duration_ms=44651 | cost_usd=0.024085
+
+## [2026-05-30T22:30:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1015 | cache_read=45081 | cache_creation=10294 | duration_ms=40284 | cost_usd=0.022459
+
+## [2026-05-30T22:30:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1198 | cache_read=45081 | cache_creation=10285 | duration_ms=47714 | cost_usd=0.023362
+
+## [2026-05-30T22:30:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1392 | cache_read=45081 | cache_creation=10301 | duration_ms=50217 | cost_usd=0.024352
+
+## [2026-05-30T22:30:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1354 | cache_read=45081 | cache_creation=10303 | duration_ms=48955 | cost_usd=0.024165
+
+## [2026-05-30T22:30:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1300 | cache_read=45081 | cache_creation=10299 | duration_ms=42162 | cost_usd=0.023890
+
+## [2026-05-30T22:30:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1395 | cache_read=45081 | cache_creation=10284 | duration_ms=42268 | cost_usd=0.024346
+
+## [2026-05-30T22:31:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1108 | cache_read=45081 | cache_creation=10248 | duration_ms=40210 | cost_usd=0.022866
+
+## [2026-05-30T22:31:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1675 | cache_read=45081 | cache_creation=10293 | duration_ms=48196 | cost_usd=0.025757
+
+## [2026-05-30T22:31:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=841 | cache_read=45081 | cache_creation=10324 | duration_ms=40498 | cost_usd=0.021626
+
+## [2026-05-30T22:31:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=750 | cache_read=45081 | cache_creation=10287 | duration_ms=41461 | cost_usd=0.021125
+
+## [2026-05-30T22:31:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=803 | cache_read=45081 | cache_creation=10299 | duration_ms=41551 | cost_usd=0.021405
+
+## [2026-05-30T22:31:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1303 | cache_read=45081 | cache_creation=10288 | duration_ms=36051 | cost_usd=0.023891
+
+## [2026-05-30T22:31:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2096 | cache_read=45081 | cache_creation=10295 | duration_ms=52151 | cost_usd=0.027865
+
+## [2026-05-30T22:31:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2316 | cache_read=45081 | cache_creation=10273 | duration_ms=48109 | cost_usd=0.028937
+
+## [2026-05-30T22:32:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1281 | cache_read=45081 | cache_creation=10309 | duration_ms=40001 | cost_usd=0.023807
+
+## [2026-05-30T22:32:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1927 | cache_read=45081 | cache_creation=10279 | duration_ms=50579 | cost_usd=0.027000
+
+## [2026-05-30T22:32:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1058 | cache_read=45081 | cache_creation=10300 | duration_ms=42344 | cost_usd=0.022681
+
+## [2026-05-30T22:33:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1661 | cache_read=45081 | cache_creation=10268 | duration_ms=48772 | cost_usd=0.025656
+
+## [2026-05-30T22:33:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=45081 | cache_creation=10271 | duration_ms=49637 | cost_usd=0.024410
+
+## [2026-05-30T22:33:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=689 | cache_read=45081 | cache_creation=10288 | duration_ms=34423 | cost_usd=0.020821
+
+## [2026-05-30T22:33:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1175 | cache_read=45081 | cache_creation=10270 | duration_ms=38719 | cost_usd=0.023229
+
+## [2026-05-30T22:33:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1070 | cache_read=45081 | cache_creation=10301 | duration_ms=38221 | cost_usd=0.022742
+
+## [2026-05-30T22:33:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=729 | cache_read=45081 | cache_creation=10314 | duration_ms=39306 | cost_usd=0.021054
+
+## [2026-05-30T22:34:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2910 | cache_read=45081 | cache_creation=10307 | duration_ms=60839 | cost_usd=0.031950
+
+## [2026-05-30T22:34:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1534 | cache_read=45081 | cache_creation=10299 | duration_ms=47443 | cost_usd=0.025060
+
+## [2026-05-30T22:34:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=933 | cache_read=45081 | cache_creation=10298 | duration_ms=41255 | cost_usd=0.022054
+
+## [2026-05-30T22:34:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2228 | cache_read=45081 | cache_creation=10302 | duration_ms=54510 | cost_usd=0.028534
+
+## [2026-05-30T22:34:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1290 | cache_read=45081 | cache_creation=10291 | duration_ms=43230 | cost_usd=0.023830
+
+## [2026-05-30T22:34:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1918 | cache_read=45081 | cache_creation=10309 | duration_ms=53582 | cost_usd=0.026992
+
+## [2026-05-30T22:35:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1502 | cache_read=45081 | cache_creation=10302 | duration_ms=43648 | cost_usd=0.024904
+
+## [2026-05-30T22:35:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1239 | cache_read=45081 | cache_creation=10283 | duration_ms=42351 | cost_usd=0.023565
+
+## [2026-05-30T22:35:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=45081 | cache_creation=10306 | duration_ms=54304 | cost_usd=0.023864
+
+## [2026-05-30T22:35:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=917 | cache_read=45081 | cache_creation=10278 | duration_ms=51504 | cost_usd=0.021949
+
+## [2026-05-30T22:35:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=844 | cache_read=45081 | cache_creation=10298 | duration_ms=42709 | cost_usd=0.021609
+
+## [2026-05-30T22:36:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=791 | cache_read=45081 | cache_creation=10267 | duration_ms=50828 | cost_usd=0.021305
+
+## [2026-05-30T22:36:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1664 | cache_read=45081 | cache_creation=10207 | duration_ms=57809 | cost_usd=0.025595
+
+## [2026-05-30T22:36:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1154 | cache_read=45081 | cache_creation=10281 | duration_ms=57329 | cost_usd=0.023137
+
+## [2026-05-30T22:36:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1169 | cache_read=45081 | cache_creation=10281 | duration_ms=55322 | cost_usd=0.023212
+
+## [2026-05-30T22:37:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1387 | cache_read=45081 | cache_creation=10285 | duration_ms=48625 | cost_usd=0.024307
+
+## [2026-05-30T22:37:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=800 | cache_read=45081 | cache_creation=10284 | duration_ms=30282 | cost_usd=0.021371
+
+## [2026-05-30T22:37:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1573 | cache_read=45081 | cache_creation=10285 | duration_ms=42226 | cost_usd=0.025237
+
+## [2026-05-30T22:37:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2536 | cache_read=45081 | cache_creation=10363 | duration_ms=66543 | cost_usd=0.030150
+
+## [2026-05-30T22:37:58Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=filter | n=54
+
+54 candidate(s) cleared threshold
+
+## [2026-05-30T22:38:13Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://pubmed.ncbi.nlm.nih.gov/41067259/
+
+error: PubMed PMID 41067259 returned no abstract
+
+## [2026-05-30T22:38:26Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2206.00436
+
+error: arxiv API lookup failed: 429
+
+## [2026-05-30T22:38:41Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2412.09115
+
+error: arxiv API network error for 2412.09115: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-30T22:38:57Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2505.08316
+
+error: arxiv API network error for 2505.08316: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-30T22:38:57Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.semanticscholar.org/paper/280693118
+
+error: could not fetch https://www.semanticscholar.org/paper/280693118
+
+## [2026-05-30T22:39:08Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2308.13870
+
+error: arxiv API lookup failed: 429
+
+## [2026-05-30T22:39:23Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2602.04512
+
+error: arxiv API network error for 2602.04512: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-30T22:39:39Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2501.03246
+
+error: arxiv API network error for 2501.03246: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-30T22:39:40Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://doi.org/10.1038/s42256-023-00753-y
+
+error: could not fetch https://doi.org/10.1038/s42256-023-00753-y
+
+## [2026-05-30T22:39:40Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://doi.org/10.1101/2022.09.27.508760
+
+error: could not fetch https://doi.org/10.1101/2022.09.27.508760
+
+## [2026-05-30T22:39:51Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2401.06005
+
+error: arxiv API lookup failed: 429
+
+## [2026-05-30T22:40:09Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2604.18572
+
+error: arxiv API network error for 2604.18572: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-05-30T22:40:11Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.nature.com/articles/s42256-026-01235-7
+
+error: could not fetch https://www.nature.com/articles/s42256-026-01235-7
+
+## [2026-05-30T22:40:20Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.nature.com/articles/s41562-022-01516-2
+
+error: could not fetch https://www.nature.com/articles/s41562-022-01516-2
+
+## [2026-05-30T22:40:25Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.nature.com/articles/s43588-025-00863-0
+
+error: could not fetch https://www.nature.com/articles/s43588-025-00863-0
+
+## [2026-05-30T22:40:28Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=http://algonauts.csail.mit.edu/reports_2021/report_rob_the_builder.pdf
+
+error: no extractable content at http://algonauts.csail.mit.edu/reports_2021/report_rob_the_builder.pdf
+
+## [2026-05-30T22:40:33Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.biorxiv.org/content/10.64898/2026.05.15.725490v2.full-text
+
+error: could not fetch https://www.biorxiv.org/content/10.64898/2026.05.15.725490v2.full-text
+
+## [2026-05-30T22:40:46Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.nature.com/articles/s41562-024-02046-9
+
+error: could not fetch https://www.nature.com/articles/s41562-024-02046-9
+
+## [2026-05-30T22:40:48Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.nature.com/articles/s41586-025-09631-6
+
+error: could not fetch https://www.nature.com/articles/s41586-025-09631-6
+
+## [2026-05-30T22:40:52Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.cns.nyu.edu/pub/lcv/yerxa24b.pdf
+
+error: no extractable content at https://www.cns.nyu.edu/pub/lcv/yerxa24b.pdf
+
+## [2026-05-30T22:40:54Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.youtube.com/watch?v=H7LzjJ2J7qw
+
+error: transcript fetch failed for H7LzjJ2J7qw: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=H7LzjJ2J7qw! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-05-30T22:40:55Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.youtube.com/watch?v=ysv2g9M3ong
+
+error: transcript fetch failed for ysv2g9M3ong: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ysv2g9M3ong! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-05-30T22:40:57Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.youtube.com/watch?v=bQhg8H6iS_s
+
+error: transcript fetch failed for bQhg8H6iS_s: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=bQhg8H6iS_s! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-05-30T22:40:59Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=convert | target=https://www.youtube.com/watch?v=xtSh_XotVlo
+
+error: transcript fetch failed for xtSh_XotVlo: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=xtSh_XotVlo! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-05-30T22:40:59Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=materialize | n=30
+
+materialized 30 source(s) to raw/
+
+## [2026-05-30T22:40:59Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=nlm_persistent | notebook_id=9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+persistent notebook 9450c6a9-3175-489a-9e25-cbd38e00bf31
+
+## [2026-05-30T22:41:02Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=nlm_session | notebook_id=8fe340ac-89bd-4dc2-8697-2dc8b864ebf2
+
+created session notebook 8fe340ac-89bd-4dc2-8697-2dc8b864ebf2
+
+## [2026-05-30T22:45:10Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=source_add | n=30 | skipped=0
+
+pushed 30 source(s) to session notebook (0 skipped)
+
+## [2026-05-30T22:45:19Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=source_map | n=30
+
+built source map (30 entries)
+
+## [2026-05-30T22:45:37Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=analysis | branches=0
+
+analysis complete (0 branch(es))
+
+## [2026-05-30T22:45:39Z] wiki-author | id=research-2026-05-30-do-predictive-or-generative-training-objectives | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for convergent-ai-brain
+
+## [2026-05-30T22:45:39Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=apply_plan | pages=3
+
+applied plan: applied plan for research-2026-05-30-do-predictive-or-generative-training-objectives: 2 update(s)
+
+## [2026-05-30T22:49:04Z] research | session_id=2026-05-30-do-predictive-or-generative-training-objectives | step=promoted | added=26 | failed=0
+
+promoted 26 source(s) into persistent notebook
+
+## [2026-05-30T22:50:32Z] research | session_id=2026-05-30-what-sets-the-ceiling-on-representational | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'What sets the ceiling on representational alignment between biological brains and artificial neural networks? Examine reported alignment ceilings and noise-ceiling normalization, mutual-information bounds on cross-system alignment, the persistent gap between the best models and brain data, whether alignment saturates with model scale, and which architectural or objective differences prevent full convergence.'
+
+## [2026-05-30T22:52:08Z] finalize-abandon | page=wiki/synthesis/2026-05-30-do-predictive-or-generative-training-objectives-cross-cutting.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-05-30-do-predictive-or-generative-training-objectives-cross-cutting.md

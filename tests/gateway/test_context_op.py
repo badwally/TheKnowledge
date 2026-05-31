@@ -63,6 +63,33 @@ def test_resolve_target_no_match_raises(kb_root):
         _resolve_target("definitely-does-not-exist")
 
 
+def test_resolve_target_by_canonical_name(kb_root):
+    # Concept and entity pages use canonical_name, not title.
+    page = kb_root / "wiki" / "concepts" / "long-covid.md"
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(fm.serialize(
+        {"type": "concept", "slug": "long-covid",
+         "canonical_name": "Long COVID", "domains": ["health"]},
+        "# Long COVID\n\nBody.\n",
+    ))
+    p = _resolve_target("Long COVID")
+    assert p == page
+
+
+def test_resolve_target_slug_with_spaces(kb_root):
+    # "long covid" (spaces) should resolve to concepts/long-covid.md via
+    # slug normalisation before the expensive title-scan.
+    page = kb_root / "wiki" / "concepts" / "long-covid.md"
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(fm.serialize(
+        {"type": "concept", "slug": "long-covid",
+         "canonical_name": "Long COVID", "domains": ["health"]},
+        "# Long COVID\n\nBody.\n",
+    ))
+    p = _resolve_target("long covid")
+    assert p == page
+
+
 def test_walk_depth_zero_returns_root_only(kb_root):
     root = _write_page(kb_root, "entities", "root-page")
     visited = _walk_neighbors(root, depth=0)

@@ -4,36 +4,32 @@ type: concept
 slug: foundation-models
 canonical_name: Foundation Models
 domains:
-- ai-and-agents
-created_at: '2026-05-05T04:01:32Z'
-last_updated: '2026-05-05T04:01:32Z'
+- convergent-ai-brain
+created_at: '2026-05-30T18:48:10Z'
+last_updated: '2026-05-30T18:48:10Z'
+draft: true
+draft_started_at: '2026-05-30T18:48:11Z'
+draft_unresolved_claims: 0
 ---
 
 # Foundation Models
 
 ## Summary
 
-Foundation models are machine learning models pre-trained on a large set of general data and then fine-tuned through retraining to adapt to a wide range of tasks; large language models such as GPT and BERT are canonical examples [[sources/pdf-822d5467c24e]] [[sources/pdf-ai-2023-japan-s-ai]].
+Foundation models are general-purpose pretrained backbones that support a large range of downstream tasks; the term was coined by Bommasani et al. (2021) [[sources/pdf-minyoung-huh-2024-the-platonic-representation]].
 
 ## Key claims
 
-- The term "foundation model" denotes a machine learning model, such as GPT or BERT, that can be pre-trained on a large set of general data and then fine-tuned through retraining to adapt to a wide range of tasks [[sources/pdf-822d5467c24e]].
-- The scale of computational resources and data used in foundation models has a greater impact on performance than AI models built with conventional development methods, advantaging actors with large funds, data, and human capital [[sources/pdf-822d5467c24e]] [[sources/pdf-ai-2023-japan-s-ai]].
-- After third-party APIs were released for underlying foundation models, large numbers of domestic and foreign companies began incorporating LLMs into products and services, and a wave of new start-ups in the field is anticipated [[sources/pdf-822d5467c24e]].
-- Multimodal foundation models that combine text, images, and sound are emerging, expanding the surface area of applications [[sources/pdf-822d5467c24e]].
-- Japanese policy experts judged that, in the short term, it will not be easy to develop a competitive and unique foundation model solely with domestic resources given how far overseas R&D is ahead [[sources/pdf-822d5467c24e]].
-- Japan's recommended policy response is to accelerate applied R&D on top of overseas foundation models while continuing to invest in domestic basic technology development capabilities for foundation models [[sources/pdf-822d5467c24e]] [[sources/pdf-ai-2023-japan-s-ai]].
-- Japan recommends establishing an "AI hub" that collects information on AI and bridges companies facing challenges with strong technology and research personnel, including community-formation support [[sources/pdf-ai-2023-japan-s-ai]].
-- Building foundation-model AIs requires tremendous computational power at enormous cost, motivating Japan to develop and expand domestic compute infrastructure shareable across government and private sector — referencing the AI Bridging Cloud Infrastructure at the National Institute of Advanced Industrial Science and Technology [[sources/pdf-ai-2023-japan-s-ai]].
-- Japan plans to strengthen the semiconductor industry — particularly the design capabilities and R&D of high-performance semiconductors — to ensure stable access to compute for AI and to support edge-computing growth [[sources/pdf-ai-2023-japan-s-ai]].
+- Modern AI systems are increasingly built atop foundation models, including in robotics (Driess et al. 2023; Brohan et al. 2023), bioinformatics (Ma et al. 2024), and healthcare (Steinberg et al. 2021) [[sources/pdf-minyoung-huh-2024-the-platonic-representation]].
+- The rising number of systems built on the same pretrained backbones is itself cited as evidence of representational convergence — their versatility across tasks implies a level of universality in how they represent data [[sources/pdf-minyoung-huh-2024-the-platonic-representation]].
+- Huh et al. note that convergence toward a small set of foundation models does not by itself imply different foundation models converge to the same representation; the stronger empirical claim is the Platonic Representation Hypothesis [[sources/pdf-minyoung-huh-2024-the-platonic-representation]].
+- AI systems are described as becoming increasingly homogeneous in both architectures and capabilities — modern LLMs handle multiple language tasks with a single set of weights (Srivastava et al. 2022), and unified architectures span modalities (GPT-4V, Gemini, LLaVA — Liu et al. 2023) [[sources/pdf-minyoung-huh-2024-the-platonic-representation]].
 
 ## Sources
 
-- [[sources/pdf-822d5467c24e]]
-- [[sources/pdf-ai-2023-japan-s-ai]]
+- [[sources/pdf-minyoung-huh-2024-the-platonic-representation]]
 
 ## Related
 
-- [[concepts/llm-social-implementation]]
-- [[concepts/cultural-bias-in-ai-data]]
-- [[concepts/national-ai-investment-programs]]
+- [[concepts/representational-convergence]]
+- [[concepts/platonic-representation-hypothesis]]

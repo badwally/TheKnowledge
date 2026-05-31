@@ -1,0 +1,85 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red237\green237\blue237;\red25\green29\blue39;\red224\green224\blue224;
+\red162\green168\blue247;}
+{\*\expandedcolortbl;;\csgenericrgb\c92857\c92857\c92857;\csgenericrgb\c9839\c11388\c15260\c95000;\csgenericrgb\c87761\c87761\c87761;
+\cssrgb\c69412\c72549\c97647;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Knowledge Graph Improvement Prompt\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b \cf2 \cb3 \CocoaLigature0 Goal.
+\f2\b0 \cf4  Produce a comprehensive, ranked, phased roadmap for the \cf5 ~/code/knowledge\cf4  system covering architecture, ontology,\
+   toolchain, surfaces, data quality, token efficiency, extensibility, agent/skill derivation, documentation, and\
+  integrations. Output is a single \cf5 .md\cf4  written for me + future technical hires, structured as two tracks:\
+  \
+  - 
+\f1\b \cf2 Track A (Audit + Incremental).
+\f2\b0 \cf4  Findings and improvements inside the existing architectural envelope (LLM Wiki,\
+  gateway-mediated writes, filesystem-as-DB, NotebookLM as synthesis backend, citation grounding). Treat foundation as\
+  load-bearing; propose deltas, not rewrites.\
+  - 
+\f1\b \cf2 Track B (Greenfield Reference Architecture).
+\f2\b0 \cf4  Optionality-emphasized blueprint for a future company whose vertical is\
+   TBD. Surface where the existing pattern generalizes vs where it would need replacement; portability across verticals\
+  is the design constraint.\
+\
+  
+\f1\b \cf2 Output spec.
+\f2\b0 \cf4 \
+  - Path: \cf5 docs/reviews/2026-05-23-knowledge-system-review.md\cf4 \
+  - Onboardable cold-start (assume reader has read CLAUDE.md + WIKI.md once); include a glossary section.\
+  - Every recommendation carries: 
+\f1\b \cf2 impact (1\'965)
+\f2\b0 \cf4 , 
+\f1\b \cf2 effort (S/M/L/XL)
+\f2\b0 \cf4 , 
+\f1\b \cf2 dependencies
+\f2\b0 \cf4  (other items), 
+\f1\b \cf2 rationale
+\f2\b0 \cf4 , 
+\f1\b \cf2 risk if 
+\f2\b0 \cf4 \
+  
+\f1\b \cf2 skipped
+\f2\b0 \cf4 , 
+\f1\b \cf2 acceptance criteria
+\f2\b0 \cf4  sufficient to spawn a follow-up task.\
+  - Phases: 
+\f1\b \cf2 30 / 90 / 180-day
+\f2\b0 \cf4  for Track A; 
+\f1\b \cf2 Phase 0 (extract reusable core) / Phase 1 (vertical-agnostic substrate) / 
+\f2\b0 \cf4 \
+  
+\f1\b \cf2 Phase 2 (productization)
+\f2\b0 \cf4  for Track B. \
+  - Diagrams in mermaid where they earn the space.\
+  \
+  
+\f1\b \cf2 Execution plan.
+\f2\b0 \cf4  Eight parallel research agents, then orchestrator-synthesis. Lenses:\
+\
+  1. Architectural audit \'97 gateway core, validator, citation model, draft lifecycle, batch vs incremental, query-plan\
+  persistence, idempotency contract, watcher/poller pattern\
+  2. Ontology + schema \'97 frontmatter, page types, citation grammar, slug rules, proposal\uc0\u8594 blessed\u8594 promoted, benchmarked\
+  against CiTO, ISKO, Zettelkasten/Smart Notes, Roam/Obsidian/Tana\
+  3. Toolchain + surfaces \'97 CLI/MCP/web/pollers shipped; missing surfaces (mobile capture, voice, browser extension,\
+  daily review, scheduled agents, cloud-hosted), cloud deployment\
+  4. Data quality + lifecycle \'97 drift, stale claims, link rot, contradictions, domain pollution, validator + lint\
+  extensions, fine-tune loop status (currently ~500 example threshold), gold-standard examples per domain\
+  5. Agent + skill derivation \'97 what agents emerge from existing patterns (research, ingest, triage,\
+  contradiction-finder, brief-generator, editorial review); composition; new gateway ops needed\
+  6. Token efficiency + performance \'97 context budget, caching, retrieval vs raw, BM25/vector index threshold (~10k\
+  pages), prompt structure, M44 token-efficient client learnings\
+  7. Greenfield reference architecture \'97 wiki-as-substrate vs graph-DB vs hybrid; multi-tenant; eval framework;\
+  OSS/commercial positioning; cross-vertical portability\
+  8. Integrations \'97 Apple Notes (shipped), Gmail/Notion/Slack/GitHub/RSS/calendar/podcasts; cross-tool agent loops;\
+  outside-surfaces (mobile, web, Slack)\
+\
+  Each agent returns structured findings (impact/effort/dependency/rationale/risk/acceptance). The orchestrator (me)\
+  merges, dedupes, sequences dependencies, and writes the roadmap.\
+}

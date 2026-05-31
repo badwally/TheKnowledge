@@ -58,7 +58,17 @@ def _resolve_target(query: str) -> Path:
         if candidate.is_file():
             return candidate
 
-    # 3. title-substring fallback
+    # 2b. slug-normalised scan: spaces → hyphens, try each page kind.
+    #     Handles "long covid" → concepts/long-covid.md without a title scan.
+    slug_q = re.sub(r"\s+", "-", q.lower())
+    for kind in _PAGE_KINDS:
+        candidate = kb_root / "wiki" / kind / (slug_q + ".md")
+        if candidate.is_file():
+            return candidate
+
+    # 3. title-substring fallback.
+    #     Concept and entity pages use `canonical_name`; synthesis pages use
+    #     `title`. Check both so neither type is invisible to queries.
     needle = q.lower()
     matches: list[Path] = []
     for kind in _PAGE_KINDS:
@@ -70,7 +80,7 @@ def _resolve_target(query: str) -> Path:
                 front, _ = fm.parse(p.read_text())
             except fm.FrontmatterError:
                 continue
-            title = str(front.get("title") or "").lower()
+            title = str(front.get("title") or front.get("canonical_name") or "").lower()
             if needle in title:
                 matches.append(p)
     if len(matches) == 0:

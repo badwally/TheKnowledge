@@ -8,12 +8,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from gateway import paths
-from gateway.web.app import create_app
-
-
-@pytest.fixture
-def client(kb_root: Path) -> TestClient:
-    return TestClient(create_app())
+from gateway.web.app import create_app  # noqa: F401
 
 
 # --------------------------------------------------------------------------- #

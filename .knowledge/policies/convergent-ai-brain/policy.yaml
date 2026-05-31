@@ -1,0 +1,84 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: convergent-ai-brain
+  topic: Convergent representations between biological brains and artificial neural
+    networks
+  field: Computational neuroscience, representational alignment, and machine learning
+  description: Empirical and theoretical work on why brains and ANNs develop similar
+    internal representations, grounded in the hypothesis that shared task pressures,
+    capacity constraints, and compression biases acting on a common statistical environment
+    drive convergence toward modality-agnostic world models. Covers representational
+    similarity methods, brain-ANN alignment benchmarks, predictive processing and
+    free-energy frameworks, and efficient-coding and universality accounts of convergence.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Applies a representational similarity or alignment method (RSA, CKA, mutual-nearest-neighbor,
+  encoding models, decoding models, or Brain-Score) to compare neural network activations
+  with brain recordings or behavioral data
+- "Investigates cross-modal or cross-architecture convergence \u2014 e.g. vision-language\
+  \ models, self-supervised models, or large-scale transformers benchmarked against\
+  \ neural data from V1, IT, auditory cortex, or language-responsive cortex"
+- Advances or empirically tests the Platonic Representation Hypothesis or a closely
+  related universality/convergence account (e.g. efficient coding, compression bias,
+  simplicity prior, or statistical regularities of natural stimuli as a convergence
+  driver)
+- Reports neural predictivity of ANN layers against electrophysiology, fMRI, ECoG,
+  or MEG recordings with quantified variance-explained or noise-ceiling metrics
+- Examines predictive processing, the free-energy principle, or the Bayesian brain
+  as a learning objective shared by brains and trained neural networks
+- Investigates Olshausen-Field-style sparse coding, independent component analysis,
+  or related efficient-coding frameworks in both biological and artificial systems
+exclusion_criteria:
+- Addresses machine consciousness, phenomenal experience, sentience, or philosophy
+  of mind without grounding claims in representational alignment measurements
+- Covers agentic AI, multi-agent coordination, delegation, or intelligence-explosion
+  arguments with no comparison to biological neural data
+- Reports pure ML scaling, architecture ablation, or benchmark results that make no
+  reference to biological brains, neural recordings, or behavioral neuroscience
+- Neuroscience studies that characterize brain representations without any comparison
+  to or motivation from artificial neural network models
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Peer-reviewed venues in computational neuroscience or representational alignment
+      (Nature Neuroscience, Neuron, PLOS Computational Biology, Journal of Neuroscience,
+      NeurIPS, ICLR, CVPR with neuro track)
+    - Preprints from established labs with prior peer-reviewed record in brain-ANN
+      alignment (e.g. DiCarlo, Yamins, Schrimpf, Huth, Goldstein groups)
+    negative_signals:
+    - Pop-science articles or tech-blog posts that summarize results without citing
+      primary sources or providing quantitative alignment metrics
+    - Predatory or non-peer-reviewed venues with no identifiable review process
+  methodology_rigor:
+    positive_signals:
+    - Reports noise-ceiling-normalized predictivity or otherwise corrects for measurement
+      reliability when comparing model-to-brain fit
+    - Uses multiple brain regions or recording modalities to test alignment claims
+      rather than a single dataset
+    - Benchmarks multiple model families or training regimes to isolate the variable
+      driving convergence
+    negative_signals:
+    - Relies on a single model-brain comparison with no ablation or control condition
+      to distinguish alignment from stimulus-driven correlation
+    - Reports alignment metrics without defining the comparison baseline or null distribution
+  content_depth:
+    positive_signals:
+    - Articulates a mechanistic or theoretical account of why convergence occurs (task
+      pressure, capacity, compression, data statistics) and tests a prediction of
+      that account
+    - Provides layer-resolved or region-resolved alignment analysis rather than a
+      single aggregate similarity score
+    negative_signals:
+    - Treats brain-ANN similarity as a peripheral observation rather than a primary
+      object of study
+    - Presents qualitative or anecdotal comparisons without quantitative similarity
+      measures
+bootstrapped_from_description_hash: 36853f85fcb2c38a

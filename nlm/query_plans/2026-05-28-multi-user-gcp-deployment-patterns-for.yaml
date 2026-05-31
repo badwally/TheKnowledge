@@ -1,0 +1,75 @@
+version: 1
+session_id: 2026-05-28-multi-user-gcp-deployment-patterns-for
+domain: orita-cmo
+prompt: 'Multi-user GCP deployment patterns for Claude-based AI agent systems serving
+  a 10-person marketing team: Cloud Run vs GKE for MCP server hosting, Firebase Auth
+  / Identity Platform for OAuth 2.0 + PKCE multi-user session management, rate limiting
+  and quota governance for concurrent Anthropic API and HubSpot API calls, cost attribution
+  per user, and operational monitoring patterns for small-team LLM agent deployments
+  in a MarTech context.'
+generated_at: '2026-05-28T20:08:13Z'
+plan_client_model: null
+target_counts:
+  arxiv: 5
+  youtube: 20
+  web: 20
+  pubmed: 0
+  semantic_scholar: 5
+queries:
+  arxiv:
+  - LLM agent automation business process operations human-in-the-loop approval
+  - conversational AI production deployment enterprise marketing sales teams
+  - agentic AI systems CRM integration business operations safety constraints
+  - multi-user AI workflow automation approval gates business applications
+  - LLM tool use sales marketing operations automation production
+  youtube:
+  - Claude Code marketing team workflow automation
+  - Claude MCP HubSpot integration RevOps tutorial
+  - AI agent marketing automation GCP deployment
+  - agentic AI RevOps sales automation Claude
+  - MCP server HubSpot CRM AI integration tutorial
+  - AI native marketing stack Claude HubSpot
+  - LLM agent sales operations automation production
+  - Claude AI marketing automation case study
+  - AI RevOps tool HubSpot CRM workflow automation
+  - multi-user Claude agent team deployment
+  - HubSpot CRM AI agent integration marketing
+  - Claude Code team collaboration workflow productivity
+  - agentic marketing automation approval workflow production
+  - AI sales operations automation small team case study
+  - Claude MCP tool integration B2B sales marketing
+  - RevOps AI automation HubSpot marketing small team
+  - small team AI native CMO operations
+  - LLM agent production MarTech workflow deployment
+  - Anthropic Claude team productivity B2B operations
+  - Claude Code agentic workflow business team
+  web:
+  - Claude Code AI agent marketing team deployment architecture case study
+  - MCP server HubSpot CRM integration multi-user team production
+  - agentic AI RevOps workflow automation approval gates small team
+  - Claude MCP HubSpot marketing automation architecture pattern
+  - AI-native CMO toolkit small team GCP deployment patterns
+  - LLM agent marketing operations production deployment case study
+  - Claude Code team workflow automation marketing sales ops
+  - HubSpot CRM AI agent multi-user production deployment monitoring
+  - agentic marketing automation human-in-the-loop approval workflow
+  - AI sales operations tool deployment 10-person team architecture
+  - Claude API HubSpot RevOps integration production patterns 2025
+  - small team AI native marketing stack architecture 2024 2025
+  - Claude MCP tool use marketing team case study production
+  - AI marketing copilot multi-user team deployment patterns
+  - LLM agent B2B SaaS marketing operations production architecture
+  - RevOps AI automation HubSpot small team deployment monitoring cost
+  - agentic workflow marketing team approval gate production safety
+  - AI operations MarTech GCP Cloud Run deployment patterns
+  - HubSpot AI agent team deployment cost attribution per-user
+  - Claude agent marketing automation session management concurrent users
+  pubmed: []
+  semantic_scholar:
+  - LLM agent automation business operations human approval workflows marketing
+  - conversational AI deployment enterprise team marketing sales operations
+  - agentic AI systems production CRM integration business processes
+  - multi-user AI assistant deployment patterns business teams
+  - AI tool use sales marketing operations automation production safety
+edited: true
+status: planned

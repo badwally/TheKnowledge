@@ -13,6 +13,7 @@ from gateway.ops.filter_correct import filter_correct
 from gateway.ops.finalize import finalize
 from gateway.ops.ingest import ingest
 from gateway.ops.query import query
+from gateway.web.ingest_input import validate_remote_url
 from gateway.web.routes.domains import _serialize_authorship_report, _to_response
 from gateway.web.schemas import (
     BootstrapDomainRequest,
@@ -63,20 +64,18 @@ def _serialize_op_result(result) -> dict:
     }
 
 
-def _resolve_input(raw: str):
-    if raw.startswith(("http://", "https://")):
-        return raw
-    return Path(raw).expanduser().resolve()
-
-
 @router.post("/ingest", status_code=202)
 def post_ingest(req: IngestRequest, request: Request) -> JSONResponse:
+    # Reject local-path inputs synchronously (finding #3); only http(s) URLs
+    # are ingestable over the API. Validates before the 202 so the caller
+    # sees a 400 rather than a background-task failure.
+    url = validate_remote_url(req.input)
     store = request.app.state.task_store
     record = store.create("ingest")
 
     def run() -> dict:
         result = ingest(
-            _resolve_input(req.input),
+            url,
             domain=req.domain,
             with_plan=req.with_plan,
             draft=req.draft,

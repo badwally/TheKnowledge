@@ -7,12 +7,7 @@ import yaml
 from fastapi.testclient import TestClient
 
 from gateway import paths
-from gateway.web.app import create_app
-
-
-@pytest.fixture
-def client(kb_root):
-    return TestClient(create_app())
+from gateway.web.app import create_app  # noqa: F401
 
 
 def _seed_query_plan(session_id, *, domain, prompt, queries=None, generated_at=None):

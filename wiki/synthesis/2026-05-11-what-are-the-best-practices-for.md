@@ -41,7 +41,7 @@ A manual is useless without a program to execute it. Boards should utilize a ded
 1.  **Inspections:** Conduct time-based and usage-based visual evaluations to identify asset conditions before they become safety hazards.
 2.  **Corrective Maintenance:** Promptly repair any degradation or damage identified during inspections to stop progressive deterioration.
 3.  **Preventive Maintenance:** Perform recurring, proactive tasks such as lubricating moving parts, applying waterproof sealants, clearing drains, and testing life-safety components. 
-
+ [[sources/web-1998-01-01-7e4]]
 ### 3. Establish Strict Cadences for Critical "Big Six" Systems
 Drawing on industry standards and engineering guidelines, boards must enforce strict seasonal and chronological cadences for high-risk infrastructure:
 *   **Roofs & Building Envelope:** Inspect roofs at least twice a year (spring and fall) and immediately after high-wind or hail storms [18] [[nlm:67ffbdb1-c248-4ec7-be1b-dd57306babd2]]. Keep roof drains and scuppers clear of vegetation to prevent water ponding, which accelerates membrane degradation [19, 20].
@@ -61,7 +61,7 @@ HOA boards are liable for the contractors they hire. Managing vendor relationshi
 
 ### 6. Adopt Data-Driven and Predictive Technologies
 As discussed in our previous analysis of modern PropTech, best-in-class condo maintenance is moving beyond simple calendar schedules:
-*   **Use a CMMS:** Digitize all maintenance logs, warranties, and work orders using a Computerized Maintenance Management System (CMMS) like BuildingLink or CondoControl [44, 45]. This preserves institutional knowledge when board members or property managers inevitably turn over [46] [[nlm:3bd1b45f-1cfd-4abb-afe6-5ae98bafbe46]]. 
+*   **Use a CMMS:** Digitize all maintenance logs, warranties, and work orders using a Computerized Maintenance Management System (CMMS) like BuildingLink or CondoControl [44, 45]. This preserves institutional knowledge when board members or property managers inevitably turn over [46] [[nlm:3bd1b45f-1cfd-4abb-afe6-5ae98bafbe46]]. [[sources/web-1998-01-01-7e4]]
 *   **Deploy Predictive Maintenance (PdM):** For large complexes, utilize IoT (Internet of Things) sensors to track real-time equipment telemetry. Monitoring elevator door cycle counts, boiler flue-gas temperatures, and installing smart water-leak detectors on domestic plumbing lines allows the board to intervene *before* a failure occurs, optimizing operations and slashing insurance premiums [47-51].
 
 ## Sources cited
