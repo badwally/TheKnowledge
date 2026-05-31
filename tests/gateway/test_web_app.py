@@ -138,20 +138,15 @@ def test_filter_correct_endpoint_returns_error_for_missing_source(client, kb_roo
 import time
 
 
-def test_async_ingest_returns_task_id(client, kb_root, tmp_path):
-    """POST /api/ops/ingest returns 202 + task_id; GET /api/tasks/{id} reports completion."""
-    src = tmp_path / "input.md"
-    src.write_text(
-        "---\nid: yt-asyncTest_AB\ntype: youtube\ntitle: t\n"
-        "url: https://x\nauthors: []\n"
-        "ingested_at: 2026-01-01T00:00:00Z\n"
-        "content_hash: sha256:abc\ndomains: []\nnlm_corpus_ids: []\n"
-        "wiki_pages: []\nmeta: {}\n---\nbody\n"
-    )
+def test_async_ingest_returns_task_id(client, kb_root, make_source):
+    """Multipart upload to /api/ingest returns 202 + task_id; GET /api/tasks/{id}
+    reports completion. (Local-path ingest over the API is rejected — finding
+    #3 — so file ingest goes through the sanctioned multipart upload path.)"""
+    content = make_source(id_="yt-asyncTest_AB")
 
     resp = client.post(
-        "/api/ops/ingest",
-        json={"input": str(src), "with_plan": False, "draft": False},
+        "/api/ingest",
+        files={"file": ("input.md", content, "text/markdown")},
     )
     assert resp.status_code == 202
     body = resp.json()

@@ -31,6 +31,7 @@ from pydantic import BaseModel
 
 from gateway import log as log_mod
 from gateway.ops.ingest import ingest
+from gateway.web.ingest_input import validate_remote_url
 
 
 router = APIRouter(prefix="/api", tags=["cloud"])
@@ -41,12 +42,6 @@ class CloudIngestRequest(BaseModel):
     domain: str | None = None
     with_plan: bool = False
     draft: bool = False
-
-
-def _resolve_input(raw: str):
-    if raw.startswith(("http://", "https://")):
-        return raw
-    return Path(raw).expanduser().resolve()
 
 
 def _serialize_op_result(result) -> dict[str, Any]:
@@ -104,7 +99,10 @@ async def post_ingest(
                 content={"error": "provide either multipart `file` or JSON body"},
             )
         req = CloudIngestRequest.model_validate(payload)
-        input_value = _resolve_input(req.url)
+        # Reject local-path inputs (finding #3); only http(s) URLs are
+        # ingestable via the JSON body. File uploads use the multipart branch
+        # above, which writes to a server-controlled temp file.
+        input_value = validate_remote_url(req.url)
         domain = req.domain
         draft = req.draft
         with_plan = req.with_plan
