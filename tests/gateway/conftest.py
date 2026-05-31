@@ -68,3 +68,31 @@ def make_canonical_source(
 def make_source():
     """Test helper available as a fixture."""
     return make_canonical_source
+
+
+@pytest.fixture
+def auth_token(kb_root) -> str:
+    """Mint a bearer token in the temp knowledge root and return the plaintext."""
+    from gateway.web import auth
+
+    return auth.add_token("test-client")
+
+
+@pytest.fixture
+def client(kb_root, auth_token):
+    """Authenticated TestClient for the web API.
+
+    The web API is default-deny (every `/api/*` route except `/api/health`
+    requires a bearer token; see `gateway.web.app.require_bearer`). The
+    Authorization header is attached to every request so existing endpoint
+    tests exercise the handlers rather than the auth gate. Tests that need to
+    assert the gate itself construct their own unauthenticated client (see
+    `test_web_auth.py`).
+    """
+    from fastapi.testclient import TestClient
+
+    from gateway.web.app import create_app
+
+    return TestClient(
+        create_app(), headers={"Authorization": f"Bearer {auth_token}"}
+    )

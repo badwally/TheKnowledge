@@ -7,12 +7,7 @@ from fastapi.testclient import TestClient
 
 from gateway import frontmatter as fm
 from gateway import paths
-from gateway.web.app import create_app
-
-
-@pytest.fixture
-def client(kb_root):
-    return TestClient(create_app())
+from gateway.web.app import create_app  # noqa: F401  (kept for ad-hoc client construction)
 
 
 def _seed_artifact(slug, *, artifact_type, domain, created_at, title="t"):
