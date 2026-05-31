@@ -20,8 +20,9 @@ from gateway.web.routes import cloud as cloud_routes
 from gateway.web.routes import sources as sources_routes
 from gateway.web.routes import today as today_routes
 from gateway.web.routes import inbox as inbox_routes
+from gateway.web.ratelimit import TokenBucketLimiter
 from gateway.web.schemas import HealthResponse
-from gateway.web.tasks import TaskStore
+from gateway.web.tasks import CapacityError, TaskStore
 
 
 _FRONTEND_DIST = Path(__file__).parent.parent.parent.parent / "web" / "dist"
@@ -35,24 +36,45 @@ _PUBLIC_API_PATHS = frozenset({"/api/health"})
 def create_app() -> FastAPI:
     app = FastAPI(title="wiki gateway", version="0.1.0")
     app.state.task_store = TaskStore()
+    app.state.rate_limiter = TokenBucketLimiter()
+
+    @app.exception_handler(CapacityError)
+    async def _capacity_handler(request: Request, exc: CapacityError):
+        # All workers busy — tell the caller to back off rather than
+        # overcommitting paid LLM/NotebookLM jobs (finding #2).
+        return JSONResponse(
+            status_code=503,
+            content={"detail": "server at capacity; retry later"},
+        )
 
     @app.middleware("http")
     async def require_bearer(request: Request, call_next):
-        """Default-deny gate: any /api/* path (except the public allowlist)
-        requires a valid bearer token. Enforced here as middleware rather than
-        per-router so a newly added endpoint is protected by default — a
-        forgotten ``dependencies=[...]`` cannot silently open a write surface.
-        The resolved token name is stashed on ``request.state`` for audit use
-        by downstream handlers (e.g. cloud ingest)."""
+        """Default-deny gate + per-token rate limit for /api/*.
+
+        Auth is enforced here as middleware rather than per-router so a newly
+        added endpoint is protected by default — a forgotten
+        ``dependencies=[...]`` cannot silently open a write surface. The
+        resolved token name is stashed on ``request.state`` for audit use by
+        downstream handlers (e.g. cloud ingest).
+
+        Mutating requests (non-GET) are additionally rate-limited per token so
+        a credentialed caller cannot flood the expensive endpoints (finding
+        #2). Reads/polling (GET) are never limited."""
         path = request.url.path
         if path.startswith("/api/") and path not in _PUBLIC_API_PATHS:
             try:
-                request.state.token_name = verify_bearer(
-                    request.headers.get("authorization")
-                )
+                token_name = verify_bearer(request.headers.get("authorization"))
             except HTTPException as exc:
                 return JSONResponse(
                     status_code=exc.status_code, content={"detail": exc.detail}
+                )
+            request.state.token_name = token_name
+            if request.method != "GET" and not request.app.state.rate_limiter.allow(
+                token_name
+            ):
+                return JSONResponse(
+                    status_code=429,
+                    content={"detail": "rate limit exceeded; slow down"},
                 )
         return await call_next(request)
 

@@ -3,15 +3,86 @@
 from __future__ import annotations
 
 import asyncio
+import threading
 
 import pytest
 
-from gateway.web.tasks import TaskStore
+from gateway.web.tasks import CapacityError, TaskStore
 
 
 @pytest.fixture
 def store():
     return TaskStore()
+
+
+# --- bounded concurrency (260530 review, finding #2) ----------------------
+
+
+def test_run_in_thread_rejects_when_at_capacity():
+    """At max_concurrent in-flight tasks, the next submission raises
+    CapacityError rather than spawning an unbounded daemon thread."""
+    store = TaskStore(max_concurrent=2)
+    release = threading.Event()
+    started = threading.Semaphore(0)
+
+    def blocker() -> dict:
+        started.release()
+        release.wait(timeout=5)
+        return {"ok": True}
+
+    ids = [store.create("ingest") for _ in range(2)]
+    for rec in ids:
+        store.run_in_thread(rec.task_id, blocker)
+
+    # Both workers have entered (acquired their slots).
+    assert started.acquire(timeout=5)
+    assert started.acquire(timeout=5)
+
+    third = store.create("ingest")
+    with pytest.raises(CapacityError):
+        store.run_in_thread(third.task_id, blocker)
+    # The rejected task is recorded as failed, not left dangling "queued".
+    assert store.get(third.task_id).status == "failed"
+
+    release.set()
+
+
+def test_capacity_frees_after_completion():
+    """A slot is released when a task finishes, so new work is admitted."""
+    store = TaskStore(max_concurrent=1)
+    release = threading.Event()
+    started = threading.Semaphore(0)
+
+    def blocker() -> dict:
+        started.release()
+        release.wait(timeout=5)
+        return {"ok": True}
+
+    first = store.create("ingest")
+    store.run_in_thread(first.task_id, blocker)
+    assert started.acquire(timeout=5)
+
+    # Capacity is full.
+    busy = store.create("ingest")
+    with pytest.raises(CapacityError):
+        store.run_in_thread(busy.task_id, blocker)
+
+    # Let the first finish; its slot frees.
+    release.set()
+    for _ in range(50):
+        if store.get(first.task_id).status == "done":
+            break
+        threading.Event().wait(0.05)
+    assert store.get(first.task_id).status == "done"
+
+    # A new task is now admitted (and completes immediately).
+    nxt = store.create("ingest")
+    store.run_in_thread(nxt.task_id, lambda: {"ok": True})
+    for _ in range(50):
+        if store.get(nxt.task_id).status == "done":
+            break
+        threading.Event().wait(0.05)
+    assert store.get(nxt.task_id).status == "done"
 
 
 def test_create_task_returns_record(store):
