@@ -14,6 +14,8 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Callable
 
+from gateway import log as log_mod
+
 
 # Default ceiling on concurrently-running web tasks. Each task is a paid
 # LLM/NotebookLM job on a daemon thread; without a cap a flood of requests
@@ -103,6 +105,32 @@ class TaskStore:
                 record.error = error
                 record.finished_at = _now_iso()
 
+    def _record_exception(self, task_id: str, exc: BaseException) -> None:
+        """Record an uncaught task exception (260530 review finding #5).
+
+        The raw message can embed internal diagnostics — e.g. an LLMError
+        carries the `claude -p` subprocess stderr tail (paths, account/model
+        identifiers). Those must not round-trip to a remote API consumer. The
+        full detail goes to log.md (operator-only); the consumer-facing error
+        field gets a sanitized message with the task_id as correlation handle.
+        """
+        detail = f"{type(exc).__name__}: {exc}"
+        try:
+            log_mod.append(
+                op="task-error",
+                fields={"task": task_id},
+                summary=f"task {task_id} failed — {detail}",
+            )
+        except Exception:  # noqa: BLE001 — logging must not mask the failure
+            pass
+        self.mark_failed(
+            task_id,
+            error=(
+                f"{type(exc).__name__}: task failed; see server logs "
+                f"for task {task_id}"
+            ),
+        )
+
     async def run_async(self, task_id: str, fn: Callable[[], Any]) -> None:
         """Run `fn` in a worker thread, updating the task record on completion."""
         self.mark_running(task_id)
@@ -111,7 +139,7 @@ class TaskStore:
             payload = result if isinstance(result, dict) else {"value": result}
             self.mark_done(task_id, result=payload)
         except Exception as e:  # noqa: BLE001 — capture all
-            self.mark_failed(task_id, error=f"{type(e).__name__}: {e}")
+            self._record_exception(task_id, e)
 
     def run_in_thread(self, task_id: str, fn: Callable[[], Any]) -> None:
         """Spawn a daemon thread to run `fn`, updating the task record on completion.
@@ -136,7 +164,7 @@ class TaskStore:
                 payload = result if isinstance(result, dict) else {"value": result}
                 self.mark_done(task_id, result=payload)
             except Exception as e:  # noqa: BLE001 — capture all
-                self.mark_failed(task_id, error=f"{type(e).__name__}: {e}")
+                self._record_exception(task_id, e)
             finally:
                 self._slots.release()
 

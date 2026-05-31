@@ -147,7 +147,7 @@ def test_run_async_executes_callable_and_records_result(store):
     assert fetched.result == {"summary": "ran"}
 
 
-def test_run_async_captures_exception(store):
+def test_run_async_captures_exception(store, kb_root):
     def boom():
         raise ValueError("bad input")
 
@@ -159,4 +159,35 @@ def test_run_async_captures_exception(store):
     task_id = asyncio.run(runner())
     fetched = store.get(task_id)
     assert fetched.status == "failed"
-    assert "bad input" in fetched.error
+    # Consumer-facing error is sanitized — raw exception text is NOT exposed
+    # (260530 review finding #5); the task_id is the correlation handle.
+    assert "bad input" not in fetched.error
+    assert task_id in fetched.error
+
+
+def test_failure_detail_logged_but_not_returned(store, kb_root):
+    """Raw exception detail (e.g. LLM subprocess stderr) goes to log.md
+    operator-only; the consumer-facing error field is sanitized (finding #5)."""
+    from gateway import paths
+
+    secret = "/Users/x/.secret/creds last stderr: INTERNAL-DIAGNOSTIC"
+
+    def boom():
+        raise RuntimeError(f"`claude -p` failed; {secret}")
+
+    record = store.create("query")
+    store.run_in_thread(record.task_id, boom)
+    for _ in range(50):
+        if store.get(record.task_id).status == "failed":
+            break
+        threading.Event().wait(0.05)
+
+    fetched = store.get(record.task_id)
+    assert fetched.status == "failed"
+    # The leak: raw stderr must NOT be in the response error field.
+    assert secret not in fetched.error
+    assert record.task_id in fetched.error
+    # But the full detail IS recoverable by the operator in log.md.
+    log_text = paths.log_path().read_text()
+    assert secret in log_text
+    assert record.task_id in log_text
