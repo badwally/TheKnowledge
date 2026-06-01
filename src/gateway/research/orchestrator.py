@@ -25,6 +25,7 @@ import contextvars
 import os
 import re
 import sys
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -736,6 +737,74 @@ def _render_sources_cited(
     return out
 
 
+# Indexing-settle defaults. NotebookLM's `source add --wait` returns once the
+# source is *ingested*, not once it is *retrieval-indexed* — so analysis queries
+# fired immediately ground in only the 1-2 fastest-indexed sources, collapsing
+# every footnote to them (the citation-collapse bug). We probe the freshly
+# populated session notebook until the distinct-citation count stops growing
+# before running analysis. Overridable via env for slow/fast corpora and tests.
+_SETTLE_MAX_S = float(os.getenv("RESEARCH_INDEX_SETTLE_MAX_S", "150"))
+_SETTLE_POLL_S = float(os.getenv("RESEARCH_INDEX_SETTLE_POLL_S", "20"))
+
+
+def _wait_for_index_settle(
+    notebook_id: str,
+    probe_query: str,
+    *,
+    client,
+    max_wait: float | None = None,
+    poll_interval: float | None = None,
+    sleep=time.sleep,
+) -> int:
+    """Poll `notebook_id` until NotebookLM's retrieval index settles.
+
+    Returns the distinct-citation count once it stops increasing across two
+    consecutive probes (the index has caught up), or when `max_wait` seconds
+    of cumulative sleeping is reached. `max_wait=0` disables the wait entirely
+    (one probe, no sleeps) — the escape hatch for tests and offline runs.
+
+    `max_wait`/`poll_interval` default to the module globals `_SETTLE_MAX_S`/
+    `_SETTLE_POLL_S` when not passed — resolved at call time (not bound as
+    default args) so tests and callers can patch the globals. `sleep` is
+    injected so tests run without real delays. Probe failures are swallowed:
+    a transient query error must not sink the run, and the analysis step will
+    surface any persistent problem.
+    """
+    if max_wait is None:
+        max_wait = _SETTLE_MAX_S
+    if poll_interval is None:
+        poll_interval = _SETTLE_POLL_S
+
+    def _distinct(probe_n: int) -> int:
+        try:
+            raw = client.notebook_query(notebook_id, probe_query)
+        except Exception:  # noqa: BLE001 — probe is best-effort
+            return probe_n
+        cites = _coerce_citations((raw or {}).get("citations", {}))
+        return len(set(cites.values()))
+
+    prev = _distinct(0)
+    if max_wait <= 0:
+        return prev
+
+    # A plateau only means "settled" once diversity has actually grown — an
+    # early plateau (e.g. 1→1 while indexing is still warming) is exactly the
+    # collapse we are guarding against, so it must not end the wait. Genuinely
+    # tiny corpora that never grow will poll until the cap; the cap bounds that.
+    grown = False
+    slept = 0.0
+    while slept + poll_interval <= max_wait:
+        sleep(poll_interval)
+        slept += poll_interval
+        cur = _distinct(prev)
+        if cur > prev:
+            grown = True
+            prev = cur
+        elif grown:
+            return prev
+    return prev
+
+
 def _coerce_citations(raw: dict) -> dict[int, str]:
     """Tolerate either int or str-int citation keys from NotebookLM."""
     out: dict[int, str] = {}
@@ -1209,6 +1278,23 @@ def research(
                 "n": len(smap or {}),
             },
             summary=f"built source map ({len(smap or {})} entries)",
+        )
+
+        # Step 11.5 — wait for NotebookLM's retrieval index to settle.
+        # `source add --wait` returns on ingest, not on indexing, so querying
+        # now would collapse every citation to the 1-2 fastest-indexed sources.
+        # Probe with the research prompt until distinct-citation count plateaus.
+        settled_n = _wait_for_index_settle(
+            session_nb_id, prompt, client=nlm_client
+        )
+        log.append(
+            "research",
+            fields={
+                "session_id": session_id,
+                "step": "index_settle",
+                "distinct_sources": settled_n,
+            },
+            summary=f"index settled ({settled_n} distinct source(s) visible)",
         )
 
         # Step 12 — analysis.

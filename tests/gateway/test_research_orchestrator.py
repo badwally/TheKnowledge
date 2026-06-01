@@ -27,6 +27,17 @@ from gateway.research.adapters.base import AdapterError
 # --- fixtures --------------------------------------------------------------
 
 
+@pytest.fixture(autouse=True)
+def _disable_index_settle(monkeypatch: pytest.MonkeyPatch):
+    """Neutralize the step-11.5 indexing-settle wait for the whole module.
+
+    The default (150s cap, real sleeps) would make every non-dry-run
+    `research()` test block. The dedicated `test_settle_wait_*` tests pass
+    explicit args and are unaffected by this global override.
+    """
+    monkeypatch.setattr(orch, "_SETTLE_MAX_S", 0.0, raising=False)
+
+
 def _write_policy(kb_root: Path, slug: str, threshold: float = 0.5) -> None:
     pol_dir = kb_root / ".knowledge" / "policies" / slug
     pol_dir.mkdir(parents=True, exist_ok=True)
@@ -1363,3 +1374,79 @@ def test_run_filter_builds_system_prompt_once(monkeypatch, kb_root):
     assert len(build_calls) == 1, (
         f"build_system_prompt called {len(build_calls)} times for 3 candidates; expected 1"
     )
+
+
+# --- index settle-wait (citation-collapse fix) -----------------------------
+
+
+class _SettleClient:
+    """Stub whose distinct-citation count grows over successive queries,
+    emulating NotebookLM retrieval-indexing catching up after source-add.
+    """
+
+    def __init__(self, distinct_per_call: list[int]):
+        # e.g. [1, 1, 3, 5, 5] — distinct sources visible on each poll
+        self._schedule = distinct_per_call
+        self.calls = 0
+
+    def notebook_query(self, notebook_id, question):
+        idx = min(self.calls, len(self._schedule) - 1)
+        n = self._schedule[idx]
+        self.calls += 1
+        citations = {i + 1: f"src-{i}" for i in range(n)}
+        return {"answer": "x", "citations": citations, "sources_used": []}
+
+
+def test_settle_wait_blocks_until_citation_diversity_stabilizes():
+    """Polls until distinct-citation count stops growing, then returns it."""
+    client = _SettleClient([1, 1, 3, 5, 5])
+    sleeps: list[float] = []
+
+    n = orch._wait_for_index_settle(
+        "nb-1",
+        "probe query",
+        client=client,
+        max_wait=1000,
+        poll_interval=10,
+        sleep=sleeps.append,
+    )
+
+    # Stabilized at 5 (two consecutive equal reads), not the initial 1.
+    assert n == 5
+    # It kept polling past the early collapsed reads.
+    assert client.calls >= 4
+
+
+def test_settle_wait_respects_max_wait_cap():
+    """Never sleeps past the cap even if diversity keeps climbing."""
+    client = _SettleClient([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    sleeps: list[float] = []
+
+    orch._wait_for_index_settle(
+        "nb-1",
+        "probe",
+        client=client,
+        max_wait=25,  # only room for 2 polls at interval 10
+        poll_interval=10,
+        sleep=sleeps.append,
+    )
+
+    assert sum(sleeps) <= 25
+
+
+def test_settle_wait_disabled_when_max_wait_zero():
+    """max_wait=0 is the escape hatch: one read, no sleeps."""
+    client = _SettleClient([1, 5])
+    sleeps: list[float] = []
+
+    orch._wait_for_index_settle(
+        "nb-1",
+        "probe",
+        client=client,
+        max_wait=0,
+        poll_interval=10,
+        sleep=sleeps.append,
+    )
+
+    assert sleeps == []
+    assert client.calls <= 1
