@@ -200,6 +200,49 @@ notebooks:
       created_at: '2026-05-23T16:31:19Z'
       sources_count: 144
       last_sync: '2026-05-24T04:53:58Z'
+  convergent-ai-brain:
+    persistent:
+      notebook_id: 0997b925-a7b2-47d2-8dcc-e11fcecf953e
+      created_at: '2026-06-01T19:24:39Z'
+      sources_count: 61
+      last_sync: '2026-06-02T01:03:13Z'
+    sessions:
+    - session_id: 2026-06-01-what-sets-the-ceiling-on-representational
+      notebook_id: e6966799-8845-4c0a-9419-a577cb4310e9
+      query: What sets the ceiling on representational alignment between biological
+        brains and artificial neural networks? Examine reported alignment ceilings
+        and noise-ceiling normalization, mutual-information bounds on cross-system
+        alignment, the persistent gap between the best models and brain data, whether
+        alignment saturates with model scale, and which architectural or objective
+        differences prevent full convergence.
+      created_at: '2026-06-01T23:58:57Z'
+      status: abandoned
+      sources_count: 34
+      promoted_at: null
+    - session_id: 2026-06-01-do-predictive-or-generative-training-objectives
+      notebook_id: 68bac5fb-923e-4ba9-813f-dc8990224571
+      query: Do predictive or generative training objectives produce representations
+        that align with biological neural data better than discriminative objectives
+        at matched task performance? Compare self-supervised versus supervised models,
+        next-token and masked prediction versus classification, contrastive learning,
+        and what the evidence says about the training objective versus architecture
+        or scale as the primary driver of brain-ANN representational alignment.
+      created_at: '2026-06-01T19:55:53Z'
+      status: promoted
+      sources_count: 27
+      promoted_at: '2026-06-01T20:12:11Z'
+    - session_id: 2026-06-02-what-sets-the-ceiling-on-representational
+      notebook_id: 519e0aa2-7683-4509-94ed-857e2beb3118
+      query: What sets the ceiling on representational alignment between biological
+        brains and artificial neural networks? Examine reported alignment ceilings
+        and noise-ceiling normalization, mutual-information bounds on cross-system
+        alignment, the persistent gap between the best models and brain data, whether
+        alignment saturates with model scale, and which architectural or objective
+        differences prevent full convergence.
+      created_at: '2026-06-02T00:37:07Z'
+      status: promoted
+      sources_count: 27
+      promoted_at: '2026-06-02T01:03:13Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2
