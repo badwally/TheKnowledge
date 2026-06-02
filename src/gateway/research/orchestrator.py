@@ -145,6 +145,7 @@ class _MaterializedSource:
     raw_path: str           # canonical relative form, e.g. "raw/web/<slug>"
     front: dict
     score: float
+    word_count: int = 0     # body word count from converter output
 
 
 def _fan_out_search(
@@ -406,6 +407,7 @@ def _materialize(
                 raw_path=rel,
                 front=front,
                 score=score,
+                word_count=len(_body.split()),
             )
         )
 
@@ -745,6 +747,75 @@ def _render_sources_cited(
 # before running analysis. Overridable via env for slow/fast corpora and tests.
 _SETTLE_MAX_S = float(os.getenv("RESEARCH_INDEX_SETTLE_MAX_S", "150"))
 _SETTLE_POLL_S = float(os.getenv("RESEARCH_INDEX_SETTLE_POLL_S", "20"))
+
+# Corpus quality gate — fires between materialize and NLM upload.
+# A corpus whose median body is below _CORPUS_MIN_MEDIAN words AND whose
+# sparse-source fraction exceeds _CORPUS_SPARSE_FRAC is too thin for NLM to
+# synthesise from; it will confabulate content and attribute it to whichever
+# source happens to be richest. Both thresholds must be exceeded so a large
+# corpus with a few stubs still passes. Set RESEARCH_CORPUS_MIN_MEDIAN=0 to
+# bypass (e.g. in tests or when deliberately ingesting abstract-only corpora).
+_CORPUS_MIN_MEDIAN = int(os.getenv("RESEARCH_CORPUS_MIN_MEDIAN", "300"))
+_CORPUS_SPARSE_FRAC = float(os.getenv("RESEARCH_CORPUS_SPARSE_FRAC", "0.60"))
+
+
+def _check_corpus_quality(
+    materialized: list[_MaterializedSource],
+    session_id: str,
+) -> bool:
+    """Return True if the corpus is rich enough for NLM synthesis.
+
+    Logs a step=corpus_quality entry regardless of outcome so the stats are
+    always available in log.md. Returns False (gate blocks NLM upload) when
+    BOTH thresholds are exceeded: median body word count is below
+    _CORPUS_MIN_MEDIAN AND the fraction of sparse sources exceeds
+    _CORPUS_SPARSE_FRAC. Requiring both prevents a single rich source from
+    masking a majority of stubs while still allowing a few stubs in an
+    otherwise healthy corpus.
+
+    Gate is bypassed when _CORPUS_MIN_MEDIAN == 0 (set via env or tests).
+    """
+    if _CORPUS_MIN_MEDIAN == 0:
+        return True
+
+    counts = sorted(ms.word_count for ms in materialized)
+    n = len(counts)
+    if n == 0:
+        return True
+
+    mid = n // 2
+    median = counts[mid] if n % 2 else (counts[mid - 1] + counts[mid]) / 2.0
+    sparse_n = sum(1 for c in counts if c < _CORPUS_MIN_MEDIAN)
+    sparse_frac = sparse_n / n
+
+    log.append(
+        "research",
+        fields={
+            "session_id": session_id,
+            "step": "corpus_quality",
+            "n": n,
+            "median_words": round(median),
+            "sparse_n": sparse_n,
+            "sparse_frac": round(sparse_frac, 2),
+        },
+        summary=(
+            f"corpus quality: {n} sources, median {round(median)} words, "
+            f"{sparse_n}/{n} sparse (<{_CORPUS_MIN_MEDIAN} words)"
+        ),
+    )
+
+    if median < _CORPUS_MIN_MEDIAN and sparse_frac > _CORPUS_SPARSE_FRAC:
+        print(
+            f"[research:{session_id}] corpus_quality: corpus too sparse to synthesize — "
+            f"median {round(median)} words, {sparse_n}/{n} sources below "
+            f"{_CORPUS_MIN_MEDIAN} words. NLM will confabulate from whichever "
+            f"source has the richest content. Resolve paywall/rate-limit access "
+            f"for the target sources, then retry. "
+            f"Set RESEARCH_CORPUS_MIN_MEDIAN=0 to bypass this gate.",
+            file=sys.stderr,
+        )
+        return False
+    return True
 
 
 def _wait_for_index_settle(
@@ -1163,6 +1234,19 @@ def research(
 
     if dry_run:
         return _dry_run_result(session_id, effective_domain, prompt, materialized)
+
+    # Step 7.5 — corpus quality gate.
+    if not _check_corpus_quality(materialized, session_id):
+        return OperationResult(
+            success=False,
+            errors=[
+                f"corpus quality gate: median word count too low — most sources "
+                f"are abstracts or paywall-blocked stubs. NLM synthesis would "
+                f"confabulate. See log.md step=corpus_quality for stats. "
+                f"Resolve source access then retry with a new session ID, or set "
+                f"RESEARCH_CORPUS_MIN_MEDIAN=0 to bypass."
+            ],
+        )
 
     # Step 8 — persistent notebook.
     if nlm_client is None:

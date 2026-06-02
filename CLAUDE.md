@@ -117,6 +117,16 @@ Pollers (API-only sources without a watchable filesystem — Apple Notes, Notion
 - **Legacy migration** (M11–M14) is the only path that imports research-notebook Obsidian vaults. The vaults at `~/code/research-notebook/data/obsidian*/` are read-only inputs to the migrate script.
 - **Source-orphan tail** discharges via `wiki query` synthesis loops, not manual claim extraction. Each query produces a draft synthesis page citing N sources via `[[sources/<id>]]`. Run `wiki lint --scope orphans` to see how many sources still lack inbound citations.
 
+## Research pipeline preconditions
+
+Before running `wiki research --execute <session-id>`:
+
+1. **Sample corpus quality first.** Check word counts on 5–10 of the accepted candidates in `raw/`. If the median body is under ~800 words or the majority are PubMed abstracts or paywall-blocked stubs, the NLM synthesis will confabulate — it will generate content from training data and attribute it to whichever source has the richest extractable text. The corpus quality gate (`step=corpus_quality`) will block the run when median < 300 words AND >60% of sources are sparse, but the check is intentionally a floor, not a ceiling — borderline corpora should be evaluated before committing NLM quota.
+
+2. **Verify convert-failure rate in the query plan logs.** If a prior session for the same query plan shows >50% convert failures (arxiv 429s, PNAS 403s, biorXiv 403s), the corpus will be sparse regardless of how many sources are accepted by the filter. Fix source access (use HTML full-text URLs for biorXiv instead of PDF; wait for arxiv rate limits to reset) before retrying.
+
+3. **Check the `step=index_settle` log entry after the run.** `distinct_sources: 1` or `distinct_sources: 2` after settlement means NLM only indexed a tiny subset — synthesis will collapse even if the source map has many entries.
+
 ## Session-state discipline
 
 `docs/session-state.md` is load-bearing. It records open contracts, in-flight edits, session decisions, and the next atomic step across context compactions and session boundaries.

@@ -34,8 +34,14 @@ def _disable_index_settle(monkeypatch: pytest.MonkeyPatch):
     The default (150s cap, real sleeps) would make every non-dry-run
     `research()` test block. The dedicated `test_settle_wait_*` tests pass
     explicit args and are unaffected by this global override.
+
+    Also disables the step-7.5 corpus quality gate: the stub converter
+    produces ~4-word bodies which would always trigger the sparse-corpus check.
+    Tests that want to exercise the gate opt in by setting _CORPUS_MIN_MEDIAN
+    explicitly.
     """
     monkeypatch.setattr(orch, "_SETTLE_MAX_S", 0.0, raising=False)
+    monkeypatch.setattr(orch, "_CORPUS_MIN_MEDIAN", 0, raising=False)
 
 
 def _write_policy(kb_root: Path, slug: str, threshold: float = 0.5) -> None:
@@ -1019,6 +1025,96 @@ def test_run_filter_empty_candidates_returns_empty(policy_kb):
         )
         == []
     )
+
+
+# --- corpus quality gate ---------------------------------------------------
+
+
+def test_corpus_quality_gate_blocks_sparse_corpus(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """Step-7.5 gate returns failure when corpus is median-sparse."""
+    monkeypatch.setattr(orch, "_CORPUS_MIN_MEDIAN", 500, raising=False)
+    monkeypatch.setattr(orch, "_CORPUS_SPARSE_FRAC", 0.5, raising=False)
+
+    # Build materialized sources all with low word counts.
+    from gateway.research.orchestrator import _MaterializedSource
+    from gateway.research.adapters import CandidateItem
+
+    def _ms(wc: int) -> _MaterializedSource:
+        item = CandidateItem(
+            item_id="x", source_type="web", url="https://x.example/",
+            title="T", description="",
+        )
+        return _MaterializedSource(item=item, raw_path="raw/web/x", front={}, score=0.9, word_count=wc)
+
+    sparse = [_ms(50), _ms(80), _ms(120), _ms(60), _ms(90)]  # all < 500
+    ok = orch._check_corpus_quality(sparse, "test-session")
+    assert not ok
+
+
+def test_corpus_quality_gate_passes_rich_corpus(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """Step-7.5 gate passes when corpus median is above threshold."""
+    monkeypatch.setattr(orch, "_CORPUS_MIN_MEDIAN", 300, raising=False)
+    monkeypatch.setattr(orch, "_CORPUS_SPARSE_FRAC", 0.6, raising=False)
+
+    from gateway.research.orchestrator import _MaterializedSource
+    from gateway.research.adapters import CandidateItem
+
+    def _ms(wc: int) -> _MaterializedSource:
+        item = CandidateItem(
+            item_id="x", source_type="web", url="https://x.example/",
+            title="T", description="",
+        )
+        return _MaterializedSource(item=item, raw_path="raw/web/x", front={}, score=0.9, word_count=wc)
+
+    rich = [_ms(50), _ms(100), _ms(800), _ms(5000), _ms(12000)]  # median=800
+    ok = orch._check_corpus_quality(rich, "test-session")
+    assert ok
+
+
+def test_corpus_quality_gate_passes_when_disabled(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """Gate is bypassed when _CORPUS_MIN_MEDIAN == 0."""
+    monkeypatch.setattr(orch, "_CORPUS_MIN_MEDIAN", 0, raising=False)
+
+    from gateway.research.orchestrator import _MaterializedSource
+    from gateway.research.adapters import CandidateItem
+
+    def _ms(wc: int) -> _MaterializedSource:
+        item = CandidateItem(
+            item_id="x", source_type="web", url="https://x.example/",
+            title="T", description="",
+        )
+        return _MaterializedSource(item=item, raw_path="raw/web/x", front={}, score=0.9, word_count=wc)
+
+    all_stubs = [_ms(0)] * 20
+    ok = orch._check_corpus_quality(all_stubs, "test-session")
+    assert ok
+
+
+def test_corpus_quality_gate_abort_surfaces_in_research(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """research() returns failure (not no-op) when the quality gate fires."""
+    monkeypatch.setattr(orch, "_CORPUS_MIN_MEDIAN", 10000, raising=False)
+    monkeypatch.setattr(orch, "_CORPUS_SPARSE_FRAC", 0.0, raising=False)
+
+    adapter = _StubAdapter(name="web", items=[_candidate("https://x.example/")])
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)  # stub converter → ~4-word body
+
+    nlm = _MockNlm()
+    result = orch.research("test prompt", domain="alpha", nlm_client=nlm)
+
+    assert not result.success
+    assert any("corpus quality" in e.lower() for e in result.errors)
+    # NLM notebook must NOT have been touched.
+    assert len(nlm.creates) == 0
 
 
 # --- M45: synthesizes emission --------------------------------------------

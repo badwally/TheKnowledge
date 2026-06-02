@@ -47,7 +47,7 @@ To unblock H1a, obtain open-access versions of:
 
 | Paper | arxiv / OA link | Why it matters |
 |-------|-----------------|----------------|
-| Goldstein et al. 2022 — ECoG + GPT-2 | arxiv:2202.????? | Primary ECoG evidence |
+| Goldstein et al. 2022 — shared computational principles | PMC:8904253 (Nature Neuroscience) | Primary ECoG + next-word prediction evidence |
 | Schrimpf et al. 2021 — Brain-Score language | biorXiv:10.1101/2020.06.26.174482 | Core benchmark paper |
 | Yamins & DiCarlo 2016 — ventral stream review | PNAS (paywalled) | Foundational scaling evidence |
 | Huth et al. 2016 — semantic fMRI atlas | Nature (paywalled) | Key fMRI encoding model |
