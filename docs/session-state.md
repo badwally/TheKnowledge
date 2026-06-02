@@ -1,6 +1,6 @@
-# Session state — 2026-05-30
+# Session state — 2026-06-02
 
-Last updated: 2026-05-30 (web-API security hardening shipped — PRs #12 + #14 merged to main; branch cleanup; review docs filed)
+Last updated: 2026-06-02 (convergent-ai-brain H1a cleanup; index_settle fix confirmed; H1a deferred on corpus access)
 
 ---
 
@@ -93,9 +93,15 @@ None. Working tree on clean `main`; only untracked items are gateway-managed `nl
 
 ---
 
-## Next atomic step
+## convergent-ai-brain domain status (as of 2026-06-02)
 
-Security/productization stream is complete and on main. Resume the knowledge-build stream:
+| Sub-claim | Status |
+|---|---|
+| H1a — alignment scales with model competence (scaling laws) | **DEFERRED** — corpus access. Key papers (Goldstein ECoG, Brain-Score, Yamins/DiCarlo, Huth atlas) behind PNAS/biorXiv paywalls + arxiv 429s. index_settle fix confirmed working (settled at 11). Revival trigger: arxiv rate limits clear OR preprint links identified. Backlog: `docs/backlog/h1a-corpus-access-paywalled-sources.md`. |
+| H1b — ceiling on representational alignment | **DONE** — 6 pages, 5/6 diverse (distinct 3–8 citations). Commit `53d84f22`. |
+| H2 — objective (predictive vs generative) | **DEFERRED** — corpus too concentrated (19 sources, one dominates). Do not rerun without wider corpus. |
+
+## Next atomic step
 
 1. **Resume discharge-orphans** (after notebook quota resets):
    - `wiki routine discharge-orphans --domain condo-capital-infra --limit 20`
