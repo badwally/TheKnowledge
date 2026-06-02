@@ -40813,3 +40813,457 @@ applied plan: applied plan for research-2026-06-02-what-sets-the-ceiling-on-repr
 ## [2026-06-02T01:03:13Z] research | session_id=2026-06-02-what-sets-the-ceiling-on-representational | step=promoted | added=17 | failed=3
 
 promoted 17 source(s) into persistent notebook (3 failed)
+
+## [2026-06-02T01:04:19Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-02T01-04-19Z-schema-drift.md
+
+## [2026-06-02T01:04:50Z] finalize-abandon | page=wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-cross-cutting.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-cross-cutting.md
+
+## [2026-06-02T01:04:52Z] finalize-abandon | page=wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-performance-and-scale.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-performance-and-scale.md
+
+## [2026-06-02T01:04:53Z] finalize-abandon | page=wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-predictive-contrastiv.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-predictive-contrastiv.md
+
+## [2026-06-02T01:04:55Z] finalize-abandon | page=wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-the-impact-of-generat.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-the-impact-of-generat.md
+
+## [2026-06-02T01:04:56Z] finalize-abandon | page=wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-the-role-of-noise-and.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-01-do-predictive-or-generative-training-objectives-the-role-of-noise-and.md
+
+## [2026-06-02T01:05:06Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=start | domain=convergent-ai-brain
+
+start research session for prompt 'Do predictive or generative training objectives produce representations that align with biological neural data better than discriminative objectives at matched task performance? Compare self-supervised versus supervised models, next-token and masked prediction versus classification, contrastive learning, and what the evidence says about the training objective versus architecture or scale as the primary driver of brain-ANN representational alignment.'
+
+## [2026-06-02T01:05:25Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=922 | cache_read=4291 | cache_creation=15272 | duration_ms=18030 | cost_usd=0.072393
+
+## [2026-06-02T01:05:25Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=plan | n=58
+
+query plan written to nlm/query_plans/2026-06-02-do-predictive-or-generative-training-objectives.yaml
+
+## [2026-06-02T01:05:28Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=search | target=pubmed
+
+error: PubMed efetch returned HTTP 429
+
+## [2026-06-02T01:05:35Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=search | adapter=semantic_scholar | n=48
+
+adapter semantic_scholar returned 48 candidates
+
+## [2026-06-02T01:05:41Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-02T01:05:58Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=search | target=arxiv
+
+error: arxiv API request failed: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=30)
+
+## [2026-06-02T01:06:11Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=search | target=youtube
+
+error: youtube search returned HTTP 429 after retries exhausted
+
+## [2026-06-02T01:06:11Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=merge | n=122
+
+merged 122 candidate(s) across adapters
+
+## [2026-06-02T01:06:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1014 | cache_read=56702 | cache_creation=10981 | duration_ms=12959 | cost_usd=0.024474
+
+## [2026-06-02T01:06:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1641 | cache_read=0 | cache_creation=65853 | duration_ms=18719 | cost_usd=0.090529
+
+## [2026-06-02T01:06:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1589 | cache_read=56702 | cache_creation=10604 | duration_ms=20123 | cost_usd=0.026878
+
+## [2026-06-02T01:06:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1863 | cache_read=56702 | cache_creation=10618 | duration_ms=20865 | cost_usd=0.028266
+
+## [2026-06-02T01:06:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1675 | cache_read=56702 | cache_creation=10663 | duration_ms=22387 | cost_usd=0.027382
+
+## [2026-06-02T01:06:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2163 | cache_read=56702 | cache_creation=10697 | duration_ms=24969 | cost_usd=0.029864
+
+## [2026-06-02T01:06:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1978 | cache_read=56702 | cache_creation=10729 | duration_ms=27295 | cost_usd=0.028979
+
+## [2026-06-02T01:06:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1402 | cache_read=70113 | cache_creation=10996 | duration_ms=18319 | cost_usd=0.027774
+
+## [2026-06-02T01:06:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=780 | cache_read=70113 | cache_creation=11040 | duration_ms=10670 | cost_usd=0.024719
+
+## [2026-06-02T01:06:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=747 | cache_read=70113 | cache_creation=10978 | duration_ms=9819 | cost_usd=0.024477
+
+## [2026-06-02T01:06:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=862 | cache_read=70113 | cache_creation=10952 | duration_ms=12819 | cost_usd=0.025019
+
+## [2026-06-02T01:06:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1295 | cache_read=63715 | cache_creation=10691 | duration_ms=16846 | cost_usd=0.026218
+
+## [2026-06-02T01:06:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3611 | cache_read=56702 | cache_creation=10675 | duration_ms=39637 | cost_usd=0.037077
+
+## [2026-06-02T01:06:56Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=filter | target=https://arxiv.org/abs/2509.04622
+
+error: could not parse JSON in filter response: Unterminated string starting at: line 1 column 30 (char 29)
+
+## [2026-06-02T01:06:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1374 | cache_read=70113 | cache_creation=11046 | duration_ms=17432 | cost_usd=0.027697
+
+## [2026-06-02T01:07:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1108 | cache_read=70113 | cache_creation=11053 | duration_ms=13955 | cost_usd=0.026376
+
+## [2026-06-02T01:07:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1781 | cache_read=56796 | cache_creation=11010 | duration_ms=20211 | cost_usd=0.028355
+
+## [2026-06-02T01:07:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=70113 | cache_creation=10983 | duration_ms=14726 | cost_usd=0.026443
+
+## [2026-06-02T01:07:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1610 | cache_read=66175 | cache_creation=10964 | duration_ms=20132 | cost_usd=0.028380
+
+## [2026-06-02T01:07:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2266 | cache_read=70113 | cache_creation=10929 | duration_ms=27226 | cost_usd=0.032011
+
+## [2026-06-02T01:07:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2040 | cache_read=70113 | cache_creation=10965 | duration_ms=23620 | cost_usd=0.030926
+
+## [2026-06-02T01:07:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1703 | cache_read=70113 | cache_creation=10977 | duration_ms=19699 | cost_usd=0.029256
+
+## [2026-06-02T01:07:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1035 | cache_read=70113 | cache_creation=10967 | duration_ms=12610 | cost_usd=0.025903
+
+## [2026-06-02T01:07:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2943 | cache_read=70113 | cache_creation=10984 | duration_ms=33277 | cost_usd=0.035464
+
+## [2026-06-02T01:07:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3044 | cache_read=70113 | cache_creation=10977 | duration_ms=34473 | cost_usd=0.035961
+
+## [2026-06-02T01:07:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1444 | cache_read=56796 | cache_creation=10948 | duration_ms=16609 | cost_usd=0.026593
+
+## [2026-06-02T01:07:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=842 | cache_read=56796 | cache_creation=10946 | duration_ms=11805 | cost_usd=0.023580
+
+## [2026-06-02T01:07:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1391 | cache_read=70113 | cache_creation=10957 | duration_ms=16280 | cost_usd=0.027671
+
+## [2026-06-02T01:07:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1571 | cache_read=70113 | cache_creation=10880 | duration_ms=19593 | cost_usd=0.028474
+
+## [2026-06-02T01:07:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1536 | cache_read=70113 | cache_creation=11068 | duration_ms=19118 | cost_usd=0.028534
+
+## [2026-06-02T01:07:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1242 | cache_read=70113 | cache_creation=10927 | duration_ms=14623 | cost_usd=0.026888
+
+## [2026-06-02T01:07:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1428 | cache_read=70113 | cache_creation=10987 | duration_ms=17272 | cost_usd=0.027893
+
+## [2026-06-02T01:07:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1373 | cache_read=70113 | cache_creation=10913 | duration_ms=17595 | cost_usd=0.027526
+
+## [2026-06-02T01:07:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2237 | cache_read=70113 | cache_creation=10975 | duration_ms=25714 | cost_usd=0.031923
+
+## [2026-06-02T01:08:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1370 | cache_read=70113 | cache_creation=11004 | duration_ms=16643 | cost_usd=0.027624
+
+## [2026-06-02T01:08:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1025 | cache_read=70113 | cache_creation=11056 | duration_ms=14115 | cost_usd=0.025964
+
+## [2026-06-02T01:08:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2593 | cache_read=70113 | cache_creation=11071 | duration_ms=30044 | cost_usd=0.033823
+
+## [2026-06-02T01:08:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1705 | cache_read=70113 | cache_creation=10984 | duration_ms=20587 | cost_usd=0.029274
+
+## [2026-06-02T01:08:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3213 | cache_read=70113 | cache_creation=11006 | duration_ms=35273 | cost_usd=0.036842
+
+## [2026-06-02T01:08:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1008 | cache_read=70113 | cache_creation=11090 | duration_ms=13220 | cost_usd=0.025922
+
+## [2026-06-02T01:08:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2218 | cache_read=70113 | cache_creation=10936 | duration_ms=23706 | cost_usd=0.031779
+
+## [2026-06-02T01:08:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1948 | cache_read=70113 | cache_creation=10935 | duration_ms=22669 | cost_usd=0.030428
+
+## [2026-06-02T01:08:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2225 | cache_read=70113 | cache_creation=10933 | duration_ms=27102 | cost_usd=0.031811
+
+## [2026-06-02T01:08:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1039 | cache_read=70113 | cache_creation=10898 | duration_ms=13813 | cost_usd=0.025837
+
+## [2026-06-02T01:08:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3664 | cache_read=70113 | cache_creation=11111 | duration_ms=41790 | cost_usd=0.039228
+
+## [2026-06-02T01:08:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1787 | cache_read=70113 | cache_creation=10940 | duration_ms=21352 | cost_usd=0.029629
+
+## [2026-06-02T01:08:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1343 | cache_read=70113 | cache_creation=10961 | duration_ms=19241 | cost_usd=0.027436
+
+## [2026-06-02T01:08:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1407 | cache_read=70113 | cache_creation=11030 | duration_ms=16175 | cost_usd=0.027842
+
+## [2026-06-02T01:08:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1257 | cache_read=70113 | cache_creation=10945 | duration_ms=14305 | cost_usd=0.026986
+
+## [2026-06-02T01:08:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=610 | cache_read=63715 | cache_creation=10506 | duration_ms=9576 | cost_usd=0.022562
+
+## [2026-06-02T01:08:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1886 | cache_read=70113 | cache_creation=10757 | duration_ms=22120 | cost_usd=0.029896
+
+## [2026-06-02T01:08:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=986 | cache_read=66175 | cache_creation=10857 | duration_ms=12724 | cost_usd=0.025127
+
+## [2026-06-02T01:08:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1416 | cache_read=66175 | cache_creation=10787 | duration_ms=16857 | cost_usd=0.027189
+
+## [2026-06-02T01:08:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1561 | cache_read=66175 | cache_creation=10769 | duration_ms=18438 | cost_usd=0.027892
+
+## [2026-06-02T01:08:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1574 | cache_read=66175 | cache_creation=10807 | duration_ms=19059 | cost_usd=0.028004
+
+## [2026-06-02T01:08:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1494 | cache_read=63715 | cache_creation=10508 | duration_ms=18246 | cost_usd=0.026985
+
+## [2026-06-02T01:09:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3270 | cache_read=70113 | cache_creation=10797 | duration_ms=34249 | cost_usd=0.036866
+
+## [2026-06-02T01:09:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=916 | cache_read=80890 | cache_creation=0 | duration_ms=13542 | cost_usd=0.012677
+
+## [2026-06-02T01:09:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1106 | cache_read=70113 | cache_creation=10761 | duration_ms=17951 | cost_usd=0.026001
+
+## [2026-06-02T01:09:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1032 | cache_read=70113 | cache_creation=10797 | duration_ms=13332 | cost_usd=0.025676
+
+## [2026-06-02T01:09:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2047 | cache_read=66175 | cache_creation=10763 | duration_ms=25156 | cost_usd=0.030314
+
+## [2026-06-02T01:09:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1574 | cache_read=70113 | cache_creation=10787 | duration_ms=19063 | cost_usd=0.028373
+
+## [2026-06-02T01:09:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1658 | cache_read=70113 | cache_creation=10779 | duration_ms=22478 | cost_usd=0.028783
+
+## [2026-06-02T01:09:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2422 | cache_read=70113 | cache_creation=10762 | duration_ms=28920 | cost_usd=0.032582
+
+## [2026-06-02T01:09:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=70113 | cache_creation=10787 | duration_ms=18432 | cost_usd=0.027293
+
+## [2026-06-02T01:09:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1056 | cache_read=70113 | cache_creation=10783 | duration_ms=13797 | cost_usd=0.025778
+
+## [2026-06-02T01:09:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1142 | cache_read=70113 | cache_creation=10790 | duration_ms=13658 | cost_usd=0.026217
+
+## [2026-06-02T01:09:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2020 | cache_read=70113 | cache_creation=10773 | duration_ms=24765 | cost_usd=0.030586
+
+## [2026-06-02T01:09:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1737 | cache_read=70113 | cache_creation=10777 | duration_ms=20189 | cost_usd=0.029176
+
+## [2026-06-02T01:09:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1533 | cache_read=70113 | cache_creation=10767 | duration_ms=18374 | cost_usd=0.028143
+
+## [2026-06-02T01:09:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1269 | cache_read=70113 | cache_creation=10795 | duration_ms=15191 | cost_usd=0.026858
+
+## [2026-06-02T01:09:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1604 | cache_read=70113 | cache_creation=10791 | duration_ms=17142 | cost_usd=0.028528
+
+## [2026-06-02T01:09:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1286 | cache_read=70113 | cache_creation=10735 | duration_ms=22457 | cost_usd=0.026868
+
+## [2026-06-02T01:09:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1422 | cache_read=70113 | cache_creation=10775 | duration_ms=17694 | cost_usd=0.027598
+
+## [2026-06-02T01:09:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1650 | cache_read=70113 | cache_creation=10835 | duration_ms=19724 | cost_usd=0.028813
+
+## [2026-06-02T01:09:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1171 | cache_read=70113 | cache_creation=10779 | duration_ms=18690 | cost_usd=0.026348
+
+## [2026-06-02T01:09:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2567 | cache_read=70113 | cache_creation=10799 | duration_ms=29484 | cost_usd=0.033353
+
+## [2026-06-02T01:10:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1203 | cache_read=70113 | cache_creation=10817 | duration_ms=16783 | cost_usd=0.026556
+
+## [2026-06-02T01:10:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1177 | cache_read=70113 | cache_creation=10791 | duration_ms=15858 | cost_usd=0.026393
+
+## [2026-06-02T01:10:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1226 | cache_read=70113 | cache_creation=10779 | duration_ms=15370 | cost_usd=0.026623
+
+## [2026-06-02T01:10:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2067 | cache_read=70113 | cache_creation=10793 | duration_ms=24186 | cost_usd=0.030846
+
+## [2026-06-02T01:10:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1337 | cache_read=70113 | cache_creation=10789 | duration_ms=16533 | cost_usd=0.027191
+
+## [2026-06-02T01:10:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1267 | cache_read=70113 | cache_creation=10797 | duration_ms=15684 | cost_usd=0.026851
+
+## [2026-06-02T01:10:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1537 | cache_read=70113 | cache_creation=10835 | duration_ms=18539 | cost_usd=0.028248
+
+## [2026-06-02T01:10:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1335 | cache_read=70113 | cache_creation=10769 | duration_ms=19395 | cost_usd=0.027156
+
+## [2026-06-02T01:10:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1328 | cache_read=70113 | cache_creation=10799 | duration_ms=20253 | cost_usd=0.027158
+
+## [2026-06-02T01:10:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1732 | cache_read=70113 | cache_creation=10841 | duration_ms=23126 | cost_usd=0.029231
+
+## [2026-06-02T01:10:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1277 | cache_read=70113 | cache_creation=10817 | duration_ms=16606 | cost_usd=0.026926
+
+## [2026-06-02T01:10:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2088 | cache_read=63715 | cache_creation=10576 | duration_ms=24889 | cost_usd=0.030039
+
+## [2026-06-02T01:10:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1523 | cache_read=70113 | cache_creation=10755 | duration_ms=19056 | cost_usd=0.028078
+
+## [2026-06-02T01:10:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1216 | cache_read=70113 | cache_creation=10773 | duration_ms=14947 | cost_usd=0.026566
+
+## [2026-06-02T01:10:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1575 | cache_read=66175 | cache_creation=10765 | duration_ms=19959 | cost_usd=0.027957
+
+## [2026-06-02T01:10:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1545 | cache_read=62447 | cache_creation=10750 | duration_ms=19751 | cost_usd=0.027415
+
+## [2026-06-02T01:10:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1837 | cache_read=62447 | cache_creation=10752 | duration_ms=23319 | cost_usd=0.028878
+
+## [2026-06-02T01:10:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1396 | cache_read=62447 | cache_creation=10730 | duration_ms=16058 | cost_usd=0.026645
+
+## [2026-06-02T01:10:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1301 | cache_read=70113 | cache_creation=10791 | duration_ms=19261 | cost_usd=0.027013
+
+## [2026-06-02T01:10:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=63715 | cache_creation=10560 | duration_ms=15791 | cost_usd=0.025729
+
+## [2026-06-02T01:11:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=70113 | cache_creation=10745 | duration_ms=18398 | cost_usd=0.027971
+
+## [2026-06-02T01:11:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1887 | cache_read=70113 | cache_creation=10812 | duration_ms=24702 | cost_usd=0.029969
+
+## [2026-06-02T01:11:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2226 | cache_read=70113 | cache_creation=10777 | duration_ms=26346 | cost_usd=0.031621
+
+## [2026-06-02T01:11:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1840 | cache_read=70113 | cache_creation=10779 | duration_ms=21761 | cost_usd=0.029693
+
+## [2026-06-02T01:11:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1409 | cache_read=70113 | cache_creation=10781 | duration_ms=18854 | cost_usd=0.027541
+
+## [2026-06-02T01:11:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1628 | cache_read=70113 | cache_creation=10799 | duration_ms=19394 | cost_usd=0.028658
+
+## [2026-06-02T01:11:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1165 | cache_read=70113 | cache_creation=10792 | duration_ms=14838 | cost_usd=0.026334
+
+## [2026-06-02T01:11:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1217 | cache_read=70113 | cache_creation=10763 | duration_ms=15440 | cost_usd=0.026558
+
+## [2026-06-02T01:11:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1074 | cache_read=62447 | cache_creation=10732 | duration_ms=14217 | cost_usd=0.025038
+
+## [2026-06-02T01:11:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1314 | cache_read=70113 | cache_creation=10771 | duration_ms=17101 | cost_usd=0.027053
+
+## [2026-06-02T01:11:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1427 | cache_read=70113 | cache_creation=10787 | duration_ms=18272 | cost_usd=0.027638
+
+## [2026-06-02T01:11:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1777 | cache_read=62447 | cache_creation=10796 | duration_ms=21582 | cost_usd=0.028633
+
+## [2026-06-02T01:11:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1334 | cache_read=70113 | cache_creation=10783 | duration_ms=15885 | cost_usd=0.027168
+
+## [2026-06-02T01:11:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2098 | cache_read=70113 | cache_creation=10769 | duration_ms=25387 | cost_usd=0.030971
+
+## [2026-06-02T01:11:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1513 | cache_read=70113 | cache_creation=10793 | duration_ms=19526 | cost_usd=0.028076
+
+## [2026-06-02T01:11:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=883 | cache_read=70113 | cache_creation=10805 | duration_ms=11458 | cost_usd=0.024941
+
+## [2026-06-02T01:11:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1564 | cache_read=70113 | cache_creation=10811 | duration_ms=23641 | cost_usd=0.028353
+
+## [2026-06-02T01:11:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1330 | cache_read=70113 | cache_creation=10797 | duration_ms=17192 | cost_usd=0.027166
+
+## [2026-06-02T01:11:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1194 | cache_read=70113 | cache_creation=10799 | duration_ms=15370 | cost_usd=0.026488
+
+## [2026-06-02T01:11:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2016 | cache_read=70113 | cache_creation=10777 | duration_ms=25680 | cost_usd=0.030571
+
+## [2026-06-02T01:11:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1090 | cache_read=70113 | cache_creation=10787 | duration_ms=15314 | cost_usd=0.025953
+
+## [2026-06-02T01:11:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1121 | cache_read=70113 | cache_creation=10799 | duration_ms=15376 | cost_usd=0.026123
+
+## [2026-06-02T01:12:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2447 | cache_read=70113 | cache_creation=10757 | duration_ms=29780 | cost_usd=0.032701
+
+## [2026-06-02T01:12:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1596 | cache_read=70113 | cache_creation=10791 | duration_ms=19887 | cost_usd=0.028488
+
+## [2026-06-02T01:12:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1201 | cache_read=70113 | cache_creation=10759 | duration_ms=17893 | cost_usd=0.026473
+
+## [2026-06-02T01:12:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2089 | cache_read=70113 | cache_creation=10785 | duration_ms=25511 | cost_usd=0.030946
+
+## [2026-06-02T01:12:13Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=filter | n=39
+
+39 candidate(s) cleared threshold
+
+## [2026-06-02T01:12:13Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2511.06836
+
+error: arxiv API lookup failed: 429
+
+## [2026-06-02T01:12:31Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2511.16849
+
+error: arxiv API network error for 2511.16849: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-06-02T01:12:31Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://www.semanticscholar.org/paper/280693118
+
+error: could not fetch https://www.semanticscholar.org/paper/280693118
+
+## [2026-06-02T01:12:32Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2503.01830
+
+error: arxiv API lookup failed: 429
+
+## [2026-06-02T01:12:49Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2405.07987
+
+error: arxiv API network error for 2405.07987: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-06-02T01:12:51Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/abs/2501.13628
+
+error: arxiv API lookup failed: 429
+
+## [2026-06-02T01:12:51Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://doi.org/10.1167/jov.24.10.1288
+
+error: HTTP 403 fetching https://doi.org/10.1167/jov.24.10.1288
+
+## [2026-06-02T01:12:52Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://doi.org/10.1101/2025.08.08.669382
+
+error: HTTP 403 fetching https://doi.org/10.1101/2025.08.08.669382
+
+## [2026-06-02T01:12:54Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://arxiv.org/pdf/2405.07987?
+
+error: arxiv API lookup failed: 429
+
+## [2026-06-02T01:12:58Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://direct.mit.edu/neco/article/36/5/963/119791/An-Overview-of-the-Free-Energy-Principle-and
+
+error: HTTP 403 fetching https://direct.mit.edu/neco/article/36/5/963/119791/An-Overview-of-the-Free-Energy-Principle-and
+
+## [2026-06-02T01:13:03Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://openreview.net/pdf/255eb734a31e2f333fdc6b5cc6c5a9997ac43609.pdf
+
+error: no extractable content at https://openreview.net/pdf/255eb734a31e2f333fdc6b5cc6c5a9997ac43609.pdf
+
+## [2026-06-02T01:13:03Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://www.sciencedirect.com/science/article/pii/S1053811921005425
+
+error: HTTP 403 fetching https://www.sciencedirect.com/science/article/pii/S1053811921005425
+
+## [2026-06-02T01:13:05Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://kriegeskortelab.zuckermaninstitute.columbia.edu/sites/default/files/content/KriegeskorteDouglas_2019_CurrOpinNeurobiol.pdf
+
+error: no extractable content at https://kriegeskortelab.zuckermaninstitute.columbia.edu/sites/default/files/content/KriegeskorteDouglas_2019_CurrOpinNeurobiol.pdf
+
+## [2026-06-02T01:13:06Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://www.researchgate.net/publication/382146118_How_Aligned_are_Different_Alignment_Metrics
+
+error: HTTP 403 fetching https://www.researchgate.net/publication/382146118_How_Aligned_are_Different_Alignment_Metrics
+
+## [2026-06-02T01:13:09Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://www.pnas.org/doi/10.1073/pnas.1403112111
+
+error: HTTP 403 fetching https://www.pnas.org/doi/10.1073/pnas.1403112111
+
+## [2026-06-02T01:13:09Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://www.biorxiv.org/content/10.1101/2021.06.15.448556v1.full-text
+
+error: HTTP 403 fetching https://www.biorxiv.org/content/10.1101/2021.06.15.448556v1.full-text
+
+## [2026-06-02T01:13:10Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://www.pnas.org/doi/10.1073/pnas.2014196118
+
+error: HTTP 403 fetching https://www.pnas.org/doi/10.1073/pnas.2014196118
+
+## [2026-06-02T01:13:10Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://proceedings.neurips.cc/paper/2021/file/d384dec9f5f7a64a36b5c8f03b8a6d92-Paper.pdf
+
+error: no extractable content at https://proceedings.neurips.cc/paper/2021/file/d384dec9f5f7a64a36b5c8f03b8a6d92-Paper.pdf
+
+## [2026-06-02T01:13:12Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://klab.tch.harvard.edu/publications/PDFs/gk8174_gillioz_thesis.pdf
+
+error: no extractable content at https://klab.tch.harvard.edu/publications/PDFs/gk8174_gillioz_thesis.pdf
+
+## [2026-06-02T01:13:15Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=convert | target=https://aclanthology.org/2024.emnlp-main.1024.pdf
+
+error: no extractable content at https://aclanthology.org/2024.emnlp-main.1024.pdf
+
+## [2026-06-02T01:13:19Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=materialize | n=19
+
+materialized 19 source(s) to raw/
+
+## [2026-06-02T01:13:19Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=nlm_persistent | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e
+
+persistent notebook 0997b925-a7b2-47d2-8dcc-e11fcecf953e
+
+## [2026-06-02T01:13:20Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=nlm_session | notebook_id=537b7c92-8589-4121-820f-a33ef5485eb3
+
+created session notebook 537b7c92-8589-4121-820f-a33ef5485eb3
+
+## [2026-06-02T01:15:18Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=source_add | n=19 | skipped=0
+
+pushed 19 source(s) to session notebook (0 skipped)
+
+## [2026-06-02T01:15:20Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=source_map | n=19
+
+built source map (19 entries)
+
+## [2026-06-02T01:20:01Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=index_settle | distinct_sources=8
+
+index settled (8 distinct source(s) visible)
+
+## [2026-06-02T01:33:48Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-06-02T01:33:51Z] wiki-author | id=research-2026-06-02-do-predictive-or-generative-training-objectives | updates=7 | created=6 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for convergent-ai-brain
+
+## [2026-06-02T01:33:51Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-06-02-do-predictive-or-generative-training-objectives: 7 update(s)
+
+## [2026-06-02T01:35:22Z] research | session_id=2026-06-02-do-predictive-or-generative-training-objectives | step=promoted | added=13 | failed=0
+
+promoted 13 source(s) into persistent notebook
+
+## [2026-06-02T01:40:02Z] finalize-abandon | page=wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-cross-cutting.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-cross-cutting.md
+
+## [2026-06-02T01:40:03Z] finalize-abandon | page=wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-direct-neural-alignme.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-direct-neural-alignme.md
+
+## [2026-06-02T01:40:05Z] finalize-abandon | page=wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-inductive-biases-obje.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-inductive-biases-obje.md
+
+## [2026-06-02T01:40:06Z] finalize-abandon | page=wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-next-token-prediction.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-next-token-prediction.md
+
+## [2026-06-02T01:40:08Z] finalize-abandon | page=wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-the-impact-of-self-su.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-the-impact-of-self-su.md
+
+## [2026-06-02T01:40:46Z] finalize-abandon | page=wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-the-generative-vs-dis.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-02-do-predictive-or-generative-training-objectives-the-generative-vs-dis.md

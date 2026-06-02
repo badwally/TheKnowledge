@@ -204,8 +204,8 @@ notebooks:
     persistent:
       notebook_id: 0997b925-a7b2-47d2-8dcc-e11fcecf953e
       created_at: '2026-06-01T19:24:39Z'
-      sources_count: 61
-      last_sync: '2026-06-02T01:03:13Z'
+      sources_count: 74
+      last_sync: '2026-06-02T01:35:22Z'
     sessions:
     - session_id: 2026-06-01-what-sets-the-ceiling-on-representational
       notebook_id: e6966799-8845-4c0a-9419-a577cb4310e9
@@ -228,7 +228,7 @@ notebooks:
         and what the evidence says about the training objective versus architecture
         or scale as the primary driver of brain-ANN representational alignment.
       created_at: '2026-06-01T19:55:53Z'
-      status: promoted
+      status: abandoned
       sources_count: 27
       promoted_at: '2026-06-01T20:12:11Z'
     - session_id: 2026-06-02-what-sets-the-ceiling-on-representational
@@ -243,6 +243,18 @@ notebooks:
       status: promoted
       sources_count: 27
       promoted_at: '2026-06-02T01:03:13Z'
+    - session_id: 2026-06-02-do-predictive-or-generative-training-objectives
+      notebook_id: 537b7c92-8589-4121-820f-a33ef5485eb3
+      query: Do predictive or generative training objectives produce representations
+        that align with biological neural data better than discriminative objectives
+        at matched task performance? Compare self-supervised versus supervised models,
+        next-token and masked prediction versus classification, contrastive learning,
+        and what the evidence says about the training objective versus architecture
+        or scale as the primary driver of brain-ANN representational alignment.
+      created_at: '2026-06-02T01:13:20Z'
+      status: abandoned
+      sources_count: 19
+      promoted_at: '2026-06-02T01:35:22Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2
