@@ -204,8 +204,8 @@ notebooks:
     persistent:
       notebook_id: 0997b925-a7b2-47d2-8dcc-e11fcecf953e
       created_at: '2026-06-01T19:24:39Z'
-      sources_count: 74
-      last_sync: '2026-06-02T01:35:22Z'
+      sources_count: 90
+      last_sync: '2026-06-02T03:30:33Z'
     sessions:
     - session_id: 2026-06-01-what-sets-the-ceiling-on-representational
       notebook_id: e6966799-8845-4c0a-9419-a577cb4310e9
@@ -255,6 +255,17 @@ notebooks:
       status: abandoned
       sources_count: 19
       promoted_at: '2026-06-02T01:35:22Z'
+    - session_id: 2026-05-30-what-is-the-empirical-evidence-that
+      notebook_id: e32613a2-48a1-4aa3-8938-a460a86556f8
+      query: What is the empirical evidence that representational alignment between
+        biological brains and artificial neural networks scales with model competence
+        and capacity? Cover encoding-model and RSA/CKA studies (e.g. Yamins, Schrimpf/Brain-Score,
+        Goldstein ECoG, TopoLM), the role of training objective and scale, and any
+        reported ceilings on alignment.
+      created_at: '2026-06-02T03:03:11Z'
+      status: promoted
+      sources_count: 21
+      promoted_at: '2026-06-02T03:30:33Z'
   cycling-and-fitness:
     persistent:
       notebook_id: 9671b541-5a90-4cf6-b089-961398de31f2

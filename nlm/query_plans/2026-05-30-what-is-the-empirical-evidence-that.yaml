@@ -1,0 +1,84 @@
+version: 1
+session_id: 2026-05-30-what-is-the-empirical-evidence-that
+domain: convergent-ai-brain
+prompt: What is the empirical evidence that representational alignment between biological
+  brains and artificial neural networks scales with model competence and capacity?
+  Cover encoding-model and RSA/CKA studies (e.g. Yamins, Schrimpf/Brain-Score, Goldstein
+  ECoG, TopoLM), the role of training objective and scale, and any reported ceilings
+  on alignment.
+generated_at: '2026-05-30T19:47:11Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - representational similarity analysis deep neural networks brain alignment scaling
+  - Brain-Score neural predictivity transformer models ventral stream
+  - encoding models fMRI variance explained model capacity scaling
+  - CKA representational convergence biological artificial neural networks
+  - Platonic Representation Hypothesis universality neural network convergence
+  - self-supervised learning brain alignment neural predictivity benchmarks
+  - vision-language model neural representations IT cortex alignment
+  - noise ceiling neural predictivity ANN layer correspondence electrophysiology
+  youtube:
+  - Brain-Score neural predictivity deep learning
+  - representational similarity analysis neuroscience tutorial
+  - Yamins DiCarlo ventral stream deep learning
+  - Platonic Representation Hypothesis talk
+  - Martin Schrimpf brain language models ECoG
+  - CKA centered kernel alignment neural networks
+  - self-supervised vision model brain alignment
+  - encoding models fMRI neural networks lecture
+  - TopoLM topographic language model brain
+  - Huth semantic atlas fMRI language model
+  - NeurIPS computational neuroscience convergent representations
+  - Josh Tenenbaum brain AI alignment talk
+  - Ila Fiete neural representations artificial networks
+  - CCN conference representational geometry brain AI
+  - Goldstein ECoG language model neural alignment
+  - free energy principle predictive coding neural networks
+  - sparse coding Olshausen Field efficient coding brain
+  - transformer language model cortex alignment talk
+  - Kanwisher brain deep learning comparison lecture
+  - neural scaling laws representational alignment
+  web:
+  - Brain-Score benchmark neural network brain alignment leaderboard
+  - Platonic Representation Hypothesis evidence scaling
+  - encoding model fMRI ANN layer correspondence tutorial
+  - representational similarity analysis RSA neuroscience Python
+  - Schrimpf et al neural predictivity language models 2021
+  - Yamins DiCarlo 2016 ventral stream deep learning review
+  - Goldstein ECoG GPT alignment neural language processing
+  - TopoLM topographic language model brain alignment paper
+  - CKA similarity deep neural network brain representations
+  - noise ceiling correction neural predictivity fMRI benchmark
+  - self-supervised model brain alignment SimCLR DINO neural
+  - vision transformer ViT brain IT cortex comparison
+  - Huth 2016 semantic atlas fMRI natural language
+  - scaling model size brain alignment empirical evidence
+  - efficient coding sparse representation biological artificial systems
+  pubmed:
+  - artificial neural network fMRI representational similarity ventral visual stream
+  - deep convolutional network inferior temporal cortex neural predictivity
+  - encoding model electrocorticography language model variance explained
+  - representational geometry comparison brain neural network MEG
+  - predictive coding free energy principle artificial neural network comparison
+  semantic_scholar:
+  - representational alignment biological artificial neural networks scaling model
+    capacity
+  - Brain-Score neural predictivity benchmark deep learning
+  - encoding model ANN fMRI variance explained noise ceiling
+  - CKA representational similarity convergence brain networks
+  - Platonic Representation Hypothesis convergent representations universality
+  - self-supervised learning neural representations brain alignment
+  - vision transformer brain inferior temporal cortex comparison
+  - language model ECoG cortex alignment Goldstein Huth
+  - training objective scale neural brain alignment empirical
+  - sparse coding efficient coding biological artificial systems comparison
+edited: false
+status: abandoned
+executed_at: '2026-06-02T03:30:33Z'
