@@ -124,7 +124,9 @@ del _allowlist  # keep module namespace clean
 # M45: a synthesizes: list entry like `sources/web-...` or `synthesis/<slug>`.
 # Mixed types within one list are forbidden by the validator (one-level
 # strict typing; see M45 design § 3.6 invariant 1).
-_SYNTHESIZES_ENTRY_RE = re.compile(r"^(sources|synthesis)/[A-Za-z0-9][A-Za-z0-9_-]*$")
+# Slug class allows `.` so dotted source IDs (arxiv-2602.14486; arxiv IDs
+# carry a dot per validator.ID_PATTERNS) are valid `sources/<slug>` targets.
+_SYNTHESIZES_ENTRY_RE = re.compile(r"^(sources|synthesis)/[A-Za-z0-9][A-Za-z0-9._-]*$")
 
 
 def is_aggregate_framing_opener(sentence: str) -> bool:

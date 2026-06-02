@@ -388,3 +388,34 @@ def test_validate_wiki_page_draft_frontmatter_suppresses_section_errors():
     result = v.validate_wiki_page(front, body, page_type="entity")
     section_errors = [e for e in result.errors if e.rule == "wiki-page-section-missing"]
     assert section_errors == [], f"draft entity should have no section ERRORs, got: {section_errors}"
+
+
+# --- synthesizes: entry shape accepts dotted source IDs (arxiv) -------------
+
+
+def test_synthesizes_entry_re_accepts_arxiv_dotted_slug():
+    """arxiv source IDs contain a dot (arxiv-2602.14486); the synthesizes
+    entry regex must accept them — they are valid `sources/<slug>` targets.
+    """
+    assert c._SYNTHESIZES_ENTRY_RE.match("sources/arxiv-2602.14486")
+    assert c._SYNTHESIZES_ENTRY_RE.match("sources/arxiv-0708.0293")
+    assert c._SYNTHESIZES_ENTRY_RE.match("sources/arxiv-2510.08858v2")
+
+
+def test_synthesizes_integrity_accepts_arxiv_sources():
+    """A synthesis page whose `synthesizes:` lists arxiv sources must pass
+    the shape check (regression: dotted slugs were rejected, aborting runs).
+    """
+    front = {
+        "synthesizes": [
+            "sources/arxiv-2602.14486",
+            "sources/arxiv-2510.08858",
+        ]
+    }
+    body = (
+        "## Synthesis\n\nText.\n\n## Included works\n\n"
+        "- [[sources/arxiv-2602.14486]]\n"
+        "- [[sources/arxiv-2510.08858]]\n"
+    )
+    result = v.validate_synthesizes_integrity(front, body)
+    assert not result.errors, [e.rule for e in result.errors]
