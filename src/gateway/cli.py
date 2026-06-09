@@ -63,6 +63,7 @@ SUBCOMMANDS: dict[str, str] = {
     "lint": "Run health checks across the wiki",
     "index": "Rebuild or update the content index",
     "search": "Search wiki + raw sources",
+    "retrieve": "Assemble a bounded, ranked context block answering a question (RAG primitive)",
     "eval-retrieval": "Score retrieval against the golden query set (recall@k, MRR)",
     "status": "Show recent activity, watcher state, pending queues",
     "migrate": "Apply a schema or content migration script",
@@ -167,6 +168,7 @@ IMPLEMENTED: set[str] = {
     "rotate-log",
     "reingest",
     "search",
+    "retrieve",
     "eval-retrieval",
     "index",
     "routine",
@@ -1255,6 +1257,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="Ranking: tiered (title/slug/body tier then BM25) or bm25 (relevance only)",
     )
 
+    # retrieve (WS2): composite RAG primitive — ranked, bounded context block
+    p_retrieve = subparsers.add_parser("retrieve", help=SUBCOMMANDS["retrieve"])
+    p_retrieve.add_argument("query", help="Natural-language question or topic")
+    p_retrieve.add_argument("--domain", default=None, help="Scope retrieval to this domain")
+    p_retrieve.add_argument("--k", type=int, default=12, help="Max sections to retrieve (default: 12)")
+    p_retrieve.add_argument("--budget", type=int, default=40_000, dest="budget_chars",
+                            help="Max characters in the assembled block (default: 40000)")
+    p_retrieve.add_argument("--caller", default="cli", help="Caller identifier (logged)")
+    p_retrieve.add_argument("--json", action="store_true", help="Emit the source manifest as JSON instead of the block")
+
     # eval-retrieval (WS4): score retrieval against the golden set
     p_evalret = subparsers.add_parser("eval-retrieval", help=SUBCOMMANDS["eval-retrieval"])
     p_evalret.add_argument(
@@ -1495,6 +1507,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_reingest_cmd(ns)
     if ns.subcommand == "search":
         return _run_search_cmd(ns)
+    if ns.subcommand == "retrieve":
+        return _run_retrieve_cmd(ns)
     if ns.subcommand == "eval-retrieval":
         return _run_eval_retrieval_cmd(ns)
     if ns.subcommand == "index":
@@ -2541,6 +2555,27 @@ def _run_search_cmd(ns: argparse.Namespace) -> int:
     )
     print(format_results(result, relative_to=_paths.knowledge_root()))
     return 0 if result.hits else 1
+
+
+def _run_retrieve_cmd(ns: argparse.Namespace) -> int:
+    import json as _json
+    from gateway.ops.retrieve import retrieve_op
+
+    result = retrieve_op(
+        ns.query,
+        domain=getattr(ns, "domain", None),
+        k=ns.k,
+        budget_chars=ns.budget_chars,
+        caller=getattr(ns, "caller", "cli"),
+    )
+    if not result.success:
+        print(result.summary or "; ".join(result.errors), file=sys.stderr)
+        return 1
+    if getattr(ns, "json", False):
+        print(_json.dumps(result.data, indent=2))
+    else:
+        print(result.summary)
+    return 0
 
 
 def _run_eval_retrieval_cmd(ns: argparse.Namespace) -> int:

@@ -258,6 +258,37 @@ def wiki_context(
 
 
 @mcp.tool()
+def wiki_retrieve(
+    query: str,
+    domain: str | None = None,
+    k: int = 12,
+    budget_chars: int = 40_000,
+    caller: str | None = None,
+) -> dict[str, Any]:
+    """Retrieve a bounded, ranked context block answering a question (RAG).
+
+    The default first call for grounding an answer in the wiki: BM25 section
+    retrieval over the FTS5 index assembled into one context block, each
+    section wrapped in <page path=... section=...> with [[sources/<id>]]
+    citations preserved. Deterministic and LLM-free (no NotebookLM quota).
+
+    query: natural-language question or topic.
+    domain: optional domain scope.
+    k: max sections (default 12).
+    budget_chars: max characters in the block (default 40000).
+    caller: free-form caller identifier (logged).
+
+    Prefer this over wiki_search (which returns snippets, not usable context)
+    and over wiki_query (heavy NotebookLM synthesis that files a page).
+    """
+    from gateway.ops.retrieve import retrieve_op
+
+    return _serialize(
+        retrieve_op(query, domain=domain, k=k, budget_chars=budget_chars, caller=caller)
+    )
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,

@@ -191,3 +191,40 @@ rankable.
 deferred behind the same trigger (recall@10 < ~0.8 on paraphrases after WS1+WS5,
 or 10k pages). Current recall@10 of 0.889 is already near the keep-deferred line;
 WS5 is expected to clear it.
+
+### M2 — WS2 (complete, 2026-06-09)
+
+**Shipped:**
+- `gateway/ops/retrieve.py` — `retrieve()` (pure: BM25 section retrieval →
+  bounded `<page path=… section=… title=… domain=… score=…>` blocks, citations
+  preserved, per-section and total char caps) and `retrieve_op()` (CLI/MCP entry:
+  logging + `OperationResult` with a source manifest in `.data`).
+- `search_index.section_text(rel_path, heading)` — live section-body read (never
+  serves stale content from the index).
+- `wiki retrieve "<q>" [--domain] [--k] [--budget] [--json]` CLI; MCP
+  `wiki_retrieve` documented as the default grounding call (over `wiki_search`
+  snippets and heavy `wiki_query`).
+- Tests: +10 (`test_ws2_retrieve.py`), incl. budget cap, section truncation,
+  draft exclusion, citation preservation, XML-attr escaping. Full suite **1981**.
+
+**Finding — WS5 justification is now empirical, not just inferred.** A live
+`wiki retrieve "institutional order block in price action trading"` returns three
+*mention* sections (`institutional-reference-points`, `fvg-trader-confluence`,
+`market-structure-trading-checklist`) and **not** the canonical `order-block`
+page. The composite primitive inherits WS1's authority blindness directly, so the
+user-visible context block is currently topical-but-not-canonical. This raises
+WS5's priority from "improves a metric" to "fixes the headline primitive's
+output." No scope change — WS5 as specified (inbound-link authority boost, draft
+demotion) addresses exactly this.
+
+**Decisions:**
+- `retrieve()` excludes drafts **by default** (unlike `search`, which includes
+  them) — a grounding block should default to finalized knowledge. `wiki_search`
+  keeps draft-inclusive behavior for discovery.
+- WS2 calls `search_index.search_fts(order="bm25")` directly (not via
+  `ops.search`) so it gets raw relevance order and full section bodies — as the M1
+  re-plan specified.
+- Default budget 40 KB, per-section cap 4 KB — honors M1's operational caution
+  that the index returns large sections.
+
+**No change to WS5/WS3/WS6/WS8 scope.** Proceeding to WS5 next.

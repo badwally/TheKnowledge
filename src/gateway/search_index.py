@@ -380,6 +380,24 @@ def search_fts(
     return hits[:limit]
 
 
+def section_text(rel_path: str, heading: str) -> str:
+    """Return the body text of the named section of a page (live read).
+
+    Content is read from the file, not the index, so callers never serve
+    stale section bodies. Matches the first section whose heading equals
+    `heading` (the preamble section has heading "").
+    """
+    path = paths.knowledge_root() / rel_path
+    try:
+        _front, body = fm.parse(path.read_text(errors="replace"))
+    except Exception:
+        return ""
+    for h, text in _split_sections(body):
+        if h == heading:
+            return text.strip()
+    return ""
+
+
 def top_pages_for_domain(
     domain: str,
     *,
