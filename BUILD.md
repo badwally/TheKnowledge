@@ -1148,22 +1148,22 @@ Phase 5 ran in two arcs. The first (M68–M77) closed residual Phase 3 obligatio
 
 ---
 
-## 28. Phase 13 exit checkpoint — RAG retrieval (2026-06-09)
+## 30. Phase 14 exit checkpoint — RAG retrieval (2026-06-09)
 
-6 milestones (M113–M118), executed as a self-improving loop (eval + full suite + state-analysis + re-plan at each boundary). 1945 → 2002 tests (+57), 0 regressions. Merged to `main` (fast-forward, `519672d5`) and pushed. Full plan + per-milestone Execution log: `docs/reviews/2026-06-09-rag-retrieval-review.md`. Baseline 1945 = post web-API-hardening (2026-06-02, PRs #12/#14, itself not yet folded into this file — see carry-forward).
+6 milestones (M116–M121), executed as a self-improving loop (eval + full suite + state-analysis + re-plan at each boundary). 1945 → 2002 tests (+57), 0 regressions. Merged to `main` (fast-forward, `519672d5`) and pushed. Full plan + per-milestone Execution log: `docs/reviews/2026-06-09-rag-retrieval-review.md`. Baseline 1945 = post Phase 13 (web-API hardening, recorded below).
 
 Converts the wiki from substring-searchable to a relevance-ranked RAG substrate. Premise checked and rejected: Obsidian was not the lever — the graph + frontmatter it visualizes are vault properties the gateway already owned; the missing piece was a ranking layer that exploits them.
 
 | Item | Milestone | Tests | Result |
 |------|-----------|-------|--------|
-| FTS5 derived index (`.index/wiki.db`) + BM25 `wiki search` + golden-set eval harness | M113 (WS1+WS4) | +26 | Section-level SQLite FTS5, self-healing on read, gitignored; grep 0.000 → FTS recall@10 0.889 on paraphrases |
-| `wiki retrieve` composite RAG primitive + MCP `wiki_retrieve` | M114 (WS2) | +10 | One LLM-free call → bounded `<page>` block, `[[sources/<id>]]` preserved |
-| Graph-authority ranking (`order="authority"`) + `wiki related` | M115 (WS5) | +7 | Inbound-link authority + bidirectional tier match; recall@10 0.926, MRR 0.722 |
-| Budget-aware `wiki context` (`--budget`) | M116 (WS3) | +7 | Over budget: root kept, neighbors authority-ranked + truncated, not dropped |
-| `wiki answer` local grounded synthesis + MCP `wiki_answer` | M117 (WS6) | +7 | NLM-independent; confabulation guard strips ungrounded citations; `--file` drafts a synthesis page |
-| Docs (retrieval ladder, derived-index contract) + eval alignment | M118 (WS8) | 0 | CLAUDE.md/WIKI.md updated; eval measures `order="authority"` (production ranking) |
+| FTS5 derived index (`.index/wiki.db`) + BM25 `wiki search` + golden-set eval harness | M116 (WS1+WS4) | +26 | Section-level SQLite FTS5, self-healing on read, gitignored; grep 0.000 → FTS recall@10 0.889 on paraphrases |
+| `wiki retrieve` composite RAG primitive + MCP `wiki_retrieve` | M117 (WS2) | +10 | One LLM-free call → bounded `<page>` block, `[[sources/<id>]]` preserved |
+| Graph-authority ranking (`order="authority"`) + `wiki related` | M118 (WS5) | +7 | Inbound-link authority + bidirectional tier match; recall@10 0.926, MRR 0.722 |
+| Budget-aware `wiki context` (`--budget`) | M119 (WS3) | +7 | Over budget: root kept, neighbors authority-ranked + truncated, not dropped |
+| `wiki answer` local grounded synthesis + MCP `wiki_answer` | M120 (WS6) | +7 | NLM-independent; confabulation guard strips ungrounded citations; `--file` drafts a synthesis page |
+| Docs (retrieval ladder, derived-index contract) + eval alignment | M121 (WS8) | 0 | CLAUDE.md/WIKI.md updated; eval measures `order="authority"` (production ranking) |
 
-Phase 13 exit criteria status:
+Phase 14 exit criteria status:
 - ✓ Ranked retrieval beats grep — measured (grep 0.000 → recall@10 0.926 on paraphrases)
 - ✓ Eval bar cleared — recall@10 ≥ 0.9 and MRR ≥ 0.6 (0.926 / 0.722), keeping WS7 (vectors) deferred
 - ✓ `wiki retrieve` / `wiki answer` / `wiki related` shipped on CLI + MCP; `wiki search` BM25-ranked
@@ -1173,32 +1173,75 @@ Phase 13 exit criteria status:
 **Carry-forward to Phase 14:**
 - **In-sample eval** — split goldens into tune/validation, or author a blind second set; re-report held-out (session-review priority #1)
 - **WS7 vector/hybrid retrieval** — deferred; trigger: golden recall@10 < ~0.8 after authority, or ~10k pages (unmet)
-- **Web-API hardening (2026-06-02)** also unrecorded in this file — fold in alongside, or accept the review docs as its record
 - `refresh()` full-corpus stat-scan per query (0.07s now, O(corpus)); `retrieve`→`context_op._resolve_target` private coupling — both in session-review §1
 
 ---
 
-## 27. Phase 13 delivery log — RAG retrieval (2026-06-09)
+## 29. Phase 14 delivery log — RAG retrieval (2026-06-09)
 
-Commits (all on main): `d9ff3850` M113 · `ad9f13cf` M114 · `9202ed7d` M115 · `1370e08a` M116 · `2031f4cc` M117 · `a7f56344` M118.
+Commits (all on main): `d9ff3850` M116 · `ad9f13cf` M117 · `9202ed7d` M118 · `1370e08a` M119 · `2031f4cc` M120 · `a7f56344` M121.
 
-### M113 — Phase 13 Round A (WS1 FTS5 index + WS4 eval harness)
+### M116 — Phase 14 Round A (WS1 FTS5 index + WS4 eval harness)
 `gateway/search_index.py`: section-level SQLite FTS5 at `.index/wiki.db`, BM25-weighted (title>slug>heading>body), self-healing on read (mtime/size diff; no write-path hook so an index failure can't break an ingest), materializes wiki→wiki inbound link counts. `ops/search.py` rewired onto it (SRCH-1 tier contract preserved; `order="bm25"` added). `_gather_existing_pages` (ingest plan context) now index-ranked by source title. `wiki index --rebuild` rebuilds the FTS index alongside `index.md`. `gateway/evaluate/retrieval_eval.py` + `.knowledge/eval/retrieval/goldens.yaml` (27 paraphrase goldens) + `wiki eval-retrieval` (CLI-only). 1945 → 1971 (+26).
 
-### M114 — Phase 13 Round B (WS2 wiki retrieve)
+### M117 — Phase 14 Round B (WS2 wiki retrieve)
 `gateway/ops/retrieve.py`: `retrieve()`/`retrieve_op()` — BM25 section retrieval → bounded `<page path=… section=…>` blocks with `[[sources/<id>]]` preserved, per-section (4KB) and total (40KB) char caps; drafts excluded by default. `search_index.section_text()` reads section bodies live. CLI `wiki retrieve` + MCP `wiki_retrieve`. 1971 → 1981 (+10).
 
-### M115 — Phase 13 Round C (WS5 authority ranking + related)
+### M118 — Phase 14 Round C (WS5 authority ranking + related)
 `search_index.search_fts(order="authority")`: blends BM25 with title/slug tier, inbound-link authority (`log1p`), page-kind boost, draft penalty; weights tuned on the golden set (flat across a neighborhood). Bidirectional tier match (tier 3 also when title ⊆ query) — the key fix lifting a term's canonical page above mentions. `related_pages()`/`related_op()` + `wiki related` + MCP `wiki_related` (co-citation neighbors). recall@5 0.741→0.889, recall@10 0.889→0.926, MRR 0.480→0.722. 1981 → 1988 (+7).
 
-### M116 — Phase 13 Round D (WS3 budget-aware context)
+### M119 — Phase 14 Round D (WS3 budget-aware context)
 `context_op(..., budget=N)`: over budget, root kept full and neighbors authority-ranked (domain overlap + inbound count) and per-neighbor truncated instead of dropped; under budget unchanged; JSON ignores budget. `search_index.inbound_counts()` batches the lookup. `--budget` on `wiki context` + MCP `wiki_context`. 1988 → 1995 (+7).
 
-### M117 — Phase 13 Round E (WS6 wiki answer)
+### M120 — Phase 14 Round E (WS6 wiki answer)
 `gateway/ops/answer.py`: retrieve → one grounded Claude call (retrieved block as cached prompt prefix) → answer citing only `[[sources/<id>]]` present in context; ungrounded citations stripped and reported. `file_draft=True` files a draft synthesis page (`provenance: wiki-answer`) via `apply_plan`. Injectable client (tests stub the LLM). CLI `wiki answer` + MCP `wiki_answer`. 1995 → 2002 (+7).
 
-### M118 — Phase 13 Round F (WS8 docs + eval alignment)
+### M121 — Phase 14 Round F (WS8 docs + eval alignment)
 CLAUDE.md operation-guide rows + Retrieval ladder (RAG) section; fixed stale "wiki search is a stub" line. WIKI.md §9 op table + §14.2 rewritten to the shipped FTS5 derived-index contract with the vector-deferral trigger. `retrieval_eval` aligned to `order="authority"` so `wiki eval-retrieval` measures production ranking. +0 tests.
+
+---
+
+## 28. Phase 13 exit checkpoint — web-API hardening (2026-06-02)
+
+3 milestones (M113–M115) + concurrent operational/research work. 1862 → 1945 tests (+83), 0 regressions. Reconstructed retrospectively (the work shipped via PRs #11/#12/#14 outside the formal milestone plan). Authoritative records: `docs/260530_product-readiness-review.md` (the 6-dimension multi-agent review that drove it) and `docs/260530_knowledge_phase13_backlog-rubric.md`.
+
+Hardened the FastAPI service surface from an open write/spend surface on the tailnet to a default-deny service, ahead of multi-consumer exposure (Tailscale web API + iOS Shortcut + MCP). The readiness review raised 9 findings (1 critical · 2 high · 3 medium · 3 low), all 9 confirmed, 0 false positives; the recurring theme was that the CLI enforced invariants the new HTTP surfaces did not, with network-layer trust (Tailscale) standing in for application-layer auth.
+
+| Item | Milestone | Tests | Result |
+|------|-----------|-------|--------|
+| Bound synthesis slugs to validator's 80-char limit | M113 (PR #11) | — | `bbf62786`; research synthesis pages no longer fail validation on long slugs |
+| Default-deny auth on all `/api/*` (except `/health`); local-path-ingest rejection; concurrency cap + per-token rate limit; SSRF guard incl. redirect hops; discoverability surface (`wiki list-domains`/`list-concepts`/`moc-add`) | M114 (PR #12) | → 1935 | `1f49209c`; app-level auth middleware (default-deny by construction); `web/ratelimit.py`, `web/ingest_input.py`; redirect-disabled fetch loop |
+| Sanitize task error responses (operator-only detail); per-run LLM call budget (ContextVar) | M115 (PR #14) | → 1945 | `b2c1584e`; `llm/budget.py` BudgetExceededError; stacked-PR retarget lesson |
+
+New env knobs (safe defaults): `WIKI_MAX_CONCURRENT_TASKS` (4), `WIKI_RATE_LIMIT_PER_MIN` (60), `WIKI_LLM_MAX_CALLS_PER_RUN` (300), `WIKI_ALLOW_PRIVATE_FETCH` (off).
+
+Concurrent operational/research work this period (not milestone-numbered): `convergent-ai-brain` domain harvests (H1b shipped, H1a/H2 abandoned on corpus access — `53d84f22`, `f8f0fa5c`, `b857788a`); research-pipeline robustness (`392c5105` NotebookLM index-settle wait; `8fa40e35` corpus-quality gate; `7d5d56a5` validator dotted-IDs).
+
+Phase 13 exit criteria status:
+- ✓ Auth default-deny on every `/api/*` route except `/health` — app-level middleware; test asserts 401 without token
+- ✓ Expensive endpoints capped — concurrency limit + per-token rate limit + per-run LLM call budget
+- ✓ SSRF guard validates every redirect hop; ingest over API rejects local filesystem paths
+- ✓ Product-readiness review findings closed — 6 of 9 actionable findings resolved in PRs #12/#14
+- ⚠ Lint/orphan regression flagged by the backlog-rubric (synthesizes-coverage ERRORs; orphan wave) — carried forward, not a hardening-phase gate
+
+**Carry-forward (deferred, each with a revival trigger; see `docs/260530_product-readiness-review.md`):**
+- Scheduler silent-failure surfacing; CORS policy; LLM circuit breaker; SSRF DNS-rebinding residual — all low-severity, none triggered
+- Lint regression (synthesizes-coverage) + orphan-wave from discharge — operational, tracked in the backlog-rubric
+
+---
+
+## 27. Phase 13 delivery log — web-API hardening (2026-06-02)
+
+Commits (all on main): `bbf62786` M113 (#11) · `1f49209c` M114 (#12) · `b2c1584e` M115 (#14) · `83874968` docs (readiness + session review).
+
+### M113 — Phase 13 Round A (PR #11 — slug bound)
+`fix(research)`: bound synthesis slugs to the validator's 80-char limit so research-pipeline synthesis pages pass validation. `bbf62786`.
+
+### M114 — Phase 13 Round B (PR #12 — auth, SSRF, abuse limits, discoverability)
+`src/gateway/web/app.py`: app-level `verify_bearer` middleware — default-deny on all `/api/*` except `/health` (holds by construction; a forgotten router can't open a write surface). `web/ingest_input.py`: ingest over the API accepts only http(s) URLs or multipart uploads (local paths rejected). `web/ratelimit.py`: per-token rate limit (429) + concurrency cap (503). `converters/web.py`: SSRF guard switched off opaque auto-redirect to a redirect-disabled `requests` loop validating every hop. Discoverability ops added: `ops/list_domains.py`, `ops/list_concepts.py`, `ops/moc_add.py` (+ MCP). → 1935 tests.
+
+### M115 — Phase 13 Round C (PR #14 — error sanitization + LLM budget)
+`web/tasks.py`: task error responses sanitized (full detail logged operator-only). `llm/budget.py`: per-run LLM call ceiling via ContextVar, propagated to the orchestrator filter pool via per-task `copy_context()`; raises BudgetExceededError. Caught a redirect-bypass SSRF residual mid-PR (folded into the same commit) and a stacked-PR retarget footgun (PR #13 re-landed as #14 onto main). → 1945 tests.
 
 ---
 
