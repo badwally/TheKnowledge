@@ -65,6 +65,7 @@ SUBCOMMANDS: dict[str, str] = {
     "search": "Search wiki + raw sources",
     "retrieve": "Assemble a bounded, ranked context block answering a question (RAG primitive)",
     "related": "List pages co-citing the same sources as a target page (graph neighbors)",
+    "answer": "Answer a question grounded only in the wiki layer (local, NLM-independent)",
     "eval-retrieval": "Score retrieval against the golden query set (recall@k, MRR)",
     "status": "Show recent activity, watcher state, pending queues",
     "migrate": "Apply a schema or content migration script",
@@ -171,6 +172,7 @@ IMPLEMENTED: set[str] = {
     "search",
     "retrieve",
     "related",
+    "answer",
     "eval-retrieval",
     "index",
     "routine",
@@ -1272,6 +1274,17 @@ def build_parser() -> argparse.ArgumentParser:
     p_retrieve.add_argument("--caller", default="cli", help="Caller identifier (logged)")
     p_retrieve.add_argument("--json", action="store_true", help="Emit the source manifest as JSON instead of the block")
 
+    # answer (WS6): local grounded synthesis over the wiki layer
+    p_answer = subparsers.add_parser("answer", help=SUBCOMMANDS["answer"])
+    p_answer.add_argument("question", help="The question to answer from the wiki")
+    p_answer.add_argument("--domain", default=None, help="Scope retrieval to this domain")
+    p_answer.add_argument("--k", type=int, default=12, help="Max sections to ground on (default: 12)")
+    p_answer.add_argument("--budget", type=int, default=40_000, dest="budget_chars",
+                          help="Max characters of grounding context (default: 40000)")
+    p_answer.add_argument("--file", action="store_true", dest="file_draft",
+                          help="File the answer as a draft synthesis page")
+    p_answer.add_argument("--caller", default="cli", help="Caller identifier (logged)")
+
     # related (WS5): co-citation graph neighbors of a page
     p_related = subparsers.add_parser("related", help=SUBCOMMANDS["related"])
     p_related.add_argument("query", help="Target page: path, slug, or title substring")
@@ -1522,6 +1535,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_retrieve_cmd(ns)
     if ns.subcommand == "related":
         return _run_related_cmd(ns)
+    if ns.subcommand == "answer":
+        return _run_answer_cmd(ns)
     if ns.subcommand == "eval-retrieval":
         return _run_eval_retrieval_cmd(ns)
     if ns.subcommand == "index":
@@ -2589,6 +2604,29 @@ def _run_retrieve_cmd(ns: argparse.Namespace) -> int:
         print(_json.dumps(result.data, indent=2))
     else:
         print(result.summary)
+    return 0
+
+
+def _run_answer_cmd(ns: argparse.Namespace) -> int:
+    from gateway.ops.answer import answer_op
+
+    result = answer_op(
+        ns.question,
+        domain=getattr(ns, "domain", None),
+        k=ns.k,
+        budget_chars=ns.budget_chars,
+        file_draft=getattr(ns, "file_draft", False),
+        caller=getattr(ns, "caller", "cli"),
+    )
+    if not result.success:
+        print(result.summary or "; ".join(result.errors), file=sys.stderr)
+        return 1
+    print(result.summary)
+    if result.data.get("filed_path"):
+        print(f"\n[filed draft: {result.data['filed_path']}]", file=sys.stderr)
+    if result.data.get("stripped"):
+        print(f"[stripped {len(result.data['stripped'])} ungrounded citation(s)]",
+              file=sys.stderr)
     return 0
 
 

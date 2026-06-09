@@ -309,3 +309,31 @@ recurrence when CI runs the suite cold.
 
 **Remaining tail:** WS6 (`wiki answer`) and WS8 (docs). WS6 is the only stream
 that makes LLM calls — keep explicit-invocation-only.
+
+### M5 — WS6 (complete, 2026-06-09)
+
+**Shipped:**
+- `gateway/ops/answer.py` — `answer()` (retrieve → one grounded Claude call →
+  cited answer) and `answer_op()` (logging + `OperationResult`, optional
+  `file_draft`). The retrieved block is sent as a **cached prompt prefix**
+  (M50.1 pattern) and the question as the dynamic suffix.
+- **Confabulation guard:** any `[[sources/<id>]]` the model emits that is not in
+  the retrieved context is stripped post-hoc and reported in `stripped`. This is
+  the structural defense against the failure mode the research-pipeline
+  preconditions warn about (models attributing training-data claims to sources).
+- `file_draft=True` files the answer as a **draft** synthesis page via the
+  existing `apply_plan` path, tagged `provenance: wiki-answer` to distinguish
+  local grounded synthesis from NotebookLM output. Always a draft — citation
+  grounding is enforced at `wiki finalize`.
+- `wiki answer` CLI + MCP `wiki_answer` (exposed like `wiki_query`, since the
+  point is agents grounding answers; lighter than query, no NLM quota).
+- The op accepts an injectable `client`, so tests stub the LLM — +7 tests, no
+  real API calls. Full suite **2002 passed**.
+
+**Decision — answer is the wiki-grounded sibling of query, not a replacement.**
+`wiki query` stays the heavy synthesis path over a domain's *raw corpus* via
+NotebookLM; `wiki answer` serves the *authored wiki layer* in seconds with no
+quota. Together they discharge the wiki-grounded slice of ARCH-12 (NLM single
+point of failure) — "what does my wiki already know" no longer requires NLM.
+
+**No re-plan needed.** Only WS8 (docs) remains.

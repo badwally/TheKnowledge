@@ -297,6 +297,32 @@ def wiki_retrieve(
 
 
 @mcp.tool()
+def wiki_answer(
+    question: str,
+    domain: str | None = None,
+    k: int = 12,
+    budget_chars: int = 40_000,
+    file_draft: bool = False,
+    caller: str | None = None,
+) -> dict[str, Any]:
+    """Answer a question grounded ONLY in the authored wiki layer (one LLM call).
+
+    retrieve → single grounded Claude call → answer that cites only
+    [[sources/<id>]] present in the retrieved context (ungrounded citations
+    are stripped). The fast, NotebookLM-independent complement to wiki_query:
+    use this for "what does my wiki already know"; use wiki_query for heavy
+    synthesis over a domain's raw corpus. file_draft=True files the answer as
+    a draft synthesis page.
+    """
+    from gateway.ops.answer import answer_op
+
+    return _serialize(answer_op(
+        question, domain=domain, k=k, budget_chars=budget_chars,
+        file_draft=file_draft, caller=caller,
+    ))
+
+
+@mcp.tool()
 def wiki_related(query: str, limit: int = 10, caller: str | None = None) -> dict[str, Any]:
     """Pages co-citing the same sources as a target page (graph neighbors).
 
