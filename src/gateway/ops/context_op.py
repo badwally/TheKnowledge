@@ -11,7 +11,7 @@ import json
 import re
 
 from gateway import frontmatter as fm
-from gateway import log, paths
+from gateway import log, paths, search_index
 from gateway.core import OperationResult
 
 
@@ -164,6 +164,72 @@ def _render_markdown(pages: list[Path]) -> str:
     return "\n\n---\n\n".join(parts)
 
 
+def _root_domains(root: Path) -> set[str]:
+    try:
+        front, _ = fm.parse(root.read_text())
+    except fm.FrontmatterError:
+        return set()
+    doms = front.get("domains") or []
+    if not isinstance(doms, list):
+        doms = [doms]
+    if front.get("domain"):
+        doms.append(front["domain"])
+    return {str(d) for d in doms if d}
+
+
+def _render_markdown_budgeted(pages: list[Path], budget: int) -> tuple[str, int]:
+    """Render root + neighbors within a character budget (WS3).
+
+    Root is always rendered (full). Neighbors are ranked by authority —
+    inbound-link count (from the index) plus a boost for sharing the root's
+    domain — and each is truncated to its leading content so a few large
+    neighbors can't consume the whole budget. Returns (markdown, pages_kept).
+    """
+    if not pages:
+        return "", 0
+    kb_root = paths.knowledge_root()
+    root, neighbors = pages[0], pages[1:]
+    root_domains = _root_domains(root)
+
+    rels = [str(n.relative_to(kb_root)) for n in neighbors]
+    inbound = search_index.inbound_counts(rels)
+
+    def _authority(n: Path) -> tuple[int, int]:
+        rel = str(n.relative_to(kb_root))
+        overlap = 1 if _root_domains(n) & root_domains else 0
+        return (overlap, inbound.get(rel, 0))
+
+    ranked = sorted(neighbors, key=_authority, reverse=True)
+
+    def _block(p: Path, limit: int | None) -> str:
+        rel = p.relative_to(kb_root)
+        try:
+            front, body = fm.parse(p.read_text())
+        except fm.FrontmatterError:
+            front, body = {}, p.read_text()
+        title = front.get("title") or front.get("slug") or p.stem
+        body = body.rstrip()
+        if limit is not None and len(body) > limit:
+            body = body[:limit].rstrip() + "\n…[truncated for budget]"
+        return f"## {rel} — {title}\n\n{body}"
+
+    parts = [_block(root, None)]
+    total = len(parts[0])
+    kept = 1
+    sep = "\n\n---\n\n"
+    # Per-neighbor cap scales down as more neighbors compete for the budget.
+    per_cap = max(800, budget // max(len(ranked), 1))
+    for n in ranked:
+        remaining = budget - total - len(sep)
+        if remaining <= 200:
+            break
+        block = _block(n, min(per_cap, remaining))
+        parts.append(block)
+        total += len(sep) + len(block)
+        kept += 1
+    return sep.join(parts), kept
+
+
 def _render_json(pages: list[Path]) -> str:
     kb_root = paths.knowledge_root()
 
@@ -191,7 +257,8 @@ def _render_json(pages: list[Path]) -> str:
 def context_op(query: str, *,
                depth: int = 1,
                fmt: str = "markdown",
-               caller: str | None = None) -> OperationResult:
+               caller: str | None = None,
+               budget: int | None = None) -> OperationResult:
     if not caller:
         return OperationResult(
             success=False,
@@ -207,6 +274,11 @@ def context_op(query: str, *,
             success=False,
             errors=[f"--depth must be >= 0, got {depth}"],
         )
+    if budget is not None and budget <= 0:
+        return OperationResult(
+            success=False,
+            errors=[f"--budget must be > 0, got {budget}"],
+        )
 
     try:
         root = _resolve_target(query)
@@ -214,7 +286,19 @@ def context_op(query: str, *,
         return OperationResult(success=False, errors=[str(e)])
 
     pages = _walk_neighbors(root, depth=depth)
-    rendered = _render_markdown(pages) if fmt == "markdown" else _render_json(pages)
+
+    pages_kept = len(pages)
+    if fmt == "json":
+        # Budget does not apply to JSON (structured consumers page themselves).
+        rendered = _render_json(pages)
+    elif budget is not None:
+        full = _render_markdown(pages)
+        if len(full) <= budget:
+            rendered = full
+        else:
+            rendered, pages_kept = _render_markdown_budgeted(pages, budget)
+    else:
+        rendered = _render_markdown(pages)
 
     log.append(
         op="context",
@@ -223,11 +307,14 @@ def context_op(query: str, *,
             "target": str(root.relative_to(paths.knowledge_root())),
             "depth": depth,
             "format": fmt,
-            "pages_returned": len(pages),
+            "budget": budget if budget is not None else "",
+            "pages_returned": pages_kept,
+            "pages_found": len(pages),
         },
         summary=(
             f"context: caller={caller!r} target={root.relative_to(paths.knowledge_root())} "
-            f"depth={depth} pages={len(pages)}"
+            f"depth={depth} pages={pages_kept}/{len(pages)}"
+            + (f" budget={budget}" if budget is not None else "")
         ),
     )
     return OperationResult(

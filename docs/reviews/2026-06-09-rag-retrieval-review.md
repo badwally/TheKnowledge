@@ -279,3 +279,33 @@ ranking should use the same `_authority_key` rather than inventing a parallel sc
   and the `eval-retrieval` floor to the contributor docs, so the golden set governs
   future ranking changes.
 - **WS7** — deferred (trigger unmet).
+
+### M4 — WS3 (complete, 2026-06-09)
+
+**Shipped:**
+- `context_op(..., budget=N)` — when the full markdown render exceeds `budget`,
+  switch to budgeted mode: root rendered first (full), neighbors **authority-ranked**
+  (domain overlap with root, then inbound-link count from the index) and each
+  truncated to a per-neighbor cap so a few large neighbors can't crowd out the rest.
+  Under budget → unchanged full render. JSON format ignores budget (structured
+  consumers paginate themselves).
+- `search_index.inbound_counts()` — batch inbound-link lookup reused by the ranker.
+- `--budget` on `wiki context`; `budget` param on MCP `wiki_context` (documented as
+  the precise-neighborhood tool vs `wiki_retrieve` for question-driven retrieval).
+- Tests: +7 (`test_ws3_budget_context.py`). Full suite **1995 passed**.
+
+**Per the M3 re-plan, no new ranking scheme** — WS3 reuses the same inbound-link
+authority signal WS5 introduced, applied to neighbor selection. `context_op` and
+`retrieve` now share one notion of page importance.
+
+**Note (test hygiene, not a defect):** one transient failure of four `kb_root`-
+isolated, time-based `test_doc5_rotate_log` tests appeared on the first full-suite
+run immediately after the live `.index/wiki.db` was first built, then did not
+reproduce across four subsequent green runs (1995 passed each). Most likely a
+stale SQLite WAL from the initial manual index build coinciding with that run, not
+a code interaction (WS3 touches neither log rotation nor the real knowledge root).
+Flagged here per the "disagreement is a quality incident" rule; watch for
+recurrence when CI runs the suite cold.
+
+**Remaining tail:** WS6 (`wiki answer`) and WS8 (docs). WS6 is the only stream
+that makes LLM calls — keep explicit-invocation-only.

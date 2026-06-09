@@ -431,6 +431,27 @@ def _authority_key(h: IndexHit) -> float:
     return key
 
 
+def inbound_counts(rel_paths: list[str]) -> dict[str, int]:
+    """Inbound wiki→wiki link count for each given page (0 if none)."""
+    if not rel_paths:
+        return {}
+    refresh()
+    conn = _connect()
+    try:
+        out = {r: 0 for r in rel_paths}
+        placeholders = ",".join("?" * len(rel_paths))
+        rows = conn.execute(
+            f"SELECT target_rel, COUNT(*) FROM links "
+            f"WHERE target_rel IN ({placeholders}) GROUP BY target_rel",
+            rel_paths,
+        ).fetchall()
+        for target, cnt in rows:
+            out[target] = int(cnt)
+        return out
+    finally:
+        conn.close()
+
+
 def section_text(rel_path: str, heading: str) -> str:
     """Return the body text of the named section of a page (live read).
 

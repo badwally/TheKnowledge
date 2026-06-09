@@ -416,6 +416,9 @@ def build_parser() -> argparse.ArgumentParser:
                            help="Output format (default markdown).")
     p_context.add_argument("--caller", required=True,
                            help="Free-form caller identifier (logged to log.md).")
+    p_context.add_argument("--budget", type=int, default=None,
+                           help="Max characters (markdown only). Over budget, neighbors are "
+                                "authority-ranked and truncated instead of dropped.")
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -1968,6 +1971,7 @@ def _run_context(ns: argparse.Namespace) -> int:
         depth=ns.depth,
         fmt=ns.format,
         caller=ns.caller,
+        budget=getattr(ns, "budget", None),
     )
     if not result.success:
         for err in result.errors:

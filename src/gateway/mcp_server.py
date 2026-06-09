@@ -244,6 +244,7 @@ def wiki_context(
     depth: int = 1,
     format: str = "markdown",
     caller: str | None = None,
+    budget: int | None = None,
 ) -> dict[str, Any]:
     """Read-only fetch of a wiki page + N-hop wikilink-resolved neighbors.
 
@@ -251,10 +252,17 @@ def wiki_context(
     depth: how many wikilink hops to follow (default 1).
     format: "markdown" or "json".
     caller: free-form caller identifier (logged to log.md). Required.
+    budget: optional max characters (markdown only). Over budget, neighbors
+            are authority-ranked (inbound links + domain overlap) and
+            truncated rather than dropped, so the root and its most important
+            neighbors survive. Use for precise neighborhood expansion around a
+            known page; use wiki_retrieve for question-driven retrieval.
     """
     from gateway.ops.context_op import context_op
 
-    return _serialize(context_op(query, depth=depth, fmt=format, caller=caller))
+    return _serialize(
+        context_op(query, depth=depth, fmt=format, caller=caller, budget=budget)
+    )
 
 
 @mcp.tool()
