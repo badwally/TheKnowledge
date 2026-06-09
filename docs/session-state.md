@@ -6,10 +6,11 @@ Last updated: 2026-06-09 (RAG retrieval build COMPLETE — all 6 workstreams lan
 
 ## Open contracts
 
-**RAG retrieval build — DONE.** All workstreams from
+**RAG retrieval build — DONE and MERGED to main.** All workstreams from
 `docs/reviews/2026-06-09-rag-retrieval-review.md` executed in a self-improving
-loop (eval + tests + state-analysis + re-plan at each boundary). On branch
-`feat/rag-retrieval-fts` (NOT yet merged to main; not pushed).
+loop (eval + tests + state-analysis + re-plan at each boundary). Fast-forward
+merged to `main` (branch `feat/rag-retrieval-fts` deleted). **Not pushed** —
+`main` is 9 commits ahead of `origin/main`; push is the user's call.
 
 Commits (6, each green):
 - `d9ff3850` WS1+WS4 — FTS5 index + ranked search + eval harness
@@ -62,6 +63,6 @@ docs commit. Working tree otherwise carries pre-existing untracked gateway-manag
 
 ## Next atomic step
 
-1. Commit WS8 docs + eval-alignment (in progress).
-2. Present completion summary to the user; await merge decision for
-   `feat/rag-retrieval-fts`.
+1. Optional: `git push` (`main` is 9 ahead of `origin/main`).
+2. Optional: `wiki index --rebuild` on the canonical tree to materialize
+   `.index/wiki.db` (else it builds lazily on first retrieve/search).
