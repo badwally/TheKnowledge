@@ -56,6 +56,10 @@ CLI_ONLY: frozenset[str] = frozenset(
         "serve",
         "migrate",
         "demote-domain",
+        # `eval-retrieval` (WS4) is a dev/measurement harness over the golden
+        # query set. It scores retrieval quality during development; agents
+        # have no reason to invoke it at runtime. CLI-only by design.
+        "eval-retrieval",
         # `schedule` is multi-action and runs arbitrary shell commands.
         # Exposing add/remove/enable to agents would let an agent grant
         # itself persistent execution. Keep CLI-only (K4 / wave-2). If

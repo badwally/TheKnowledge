@@ -1,0 +1,111 @@
+# Retrieval golden set (WS4, 2026-06-09 RAG review).
+#
+# Each entry is a natural-language query and the wiki slug(s) that SHOULD
+# appear in the top-k results. Queries are deliberately paraphrase-style
+# (not exact title copies) so they test retrieval relevance, not string
+# matching. `domain` is optional — when set, the harness scopes the search.
+#
+# `expect` matches by slug (page stem). A query passes recall@k if ANY
+# expected slug appears in the first k hits. MRR uses the best-ranked
+# expected slug.
+#
+# Seeded from highly-linked entities/concepts across the live corpus and
+# from real question phrasings in nlm/query_plans/ and synthesis titles.
+
+queries:
+  # --- condo-software -------------------------------------------------------
+  - q: "what is the Ontario law governing condominium corporations"
+    domain: condo-software
+    expect: [ontario-condominium-act-1998]
+  - q: "British Columbia strata legislation"
+    domain: condo-software
+    expect: [bc-strata-property-act]
+  - q: "tax form HOAs file in the US"
+    domain: condo-software
+    expect: [irs-form-1120-h]
+  - q: "community association management platform CINC"
+    domain: condo-software
+    expect: [cinc-systems]
+  - q: "Vantaca HOA software"
+    domain: condo-software
+    expect: [vantaca]
+  - q: "property management software Yardi"
+    domain: condo-software
+    expect: [yardi]
+  - q: "resident portal building communication tool"
+    domain: condo-software
+    expect: [buildinglink]
+
+  # --- condo-capital-infra --------------------------------------------------
+  - q: "Florida structural reserve study requirement after Surfside"
+    domain: condo-capital-infra
+    expect: [florida-sirs]
+  - q: "probabilistic approach to reserve fund modeling"
+    domain: condo-capital-infra
+    expect: [probabilistic-reserve-modeling, six-probabilistic-components]
+  - q: "industry standards for reserve studies CAI"
+    domain: condo-capital-infra
+    expect: [cai-reserve-study-standards]
+  - q: "technology-driven reserve study company"
+    domain: condo-capital-infra
+    expect: [tech-enabled-reserve-study-firm]
+
+  # --- trading-and-markets --------------------------------------------------
+  - q: "US central bank monetary policy"
+    domain: trading-and-markets
+    expect: [federal-reserve]
+  - q: "institutional order block in price action trading"
+    domain: trading-and-markets
+    expect: [order-block]
+  - q: "imbalance gap in candlestick price"
+    domain: trading-and-markets
+    expect: [fair-value-gap]
+  - q: "shift in market structure trend reversal"
+    domain: trading-and-markets
+    expect: [market-structure-shift]
+  - q: "Zoltan Pozsar shadow banking analyst"
+    domain: trading-and-markets
+    expect: [zoltan-pozsar]
+  - q: "trend following systematic strategy"
+    domain: trading-and-markets
+    expect: [trend-following-strategy]
+  - q: "power of three bearish distribution model"
+    domain: trading-and-markets
+    expect: [market-maker-sell-model]
+
+  # --- glp1-reward-modulation ----------------------------------------------
+  - q: "anhedonia and loss of reward sensitivity"
+    domain: glp1-reward-modulation
+    expect: [reward-deficit-and-anhedonia]
+  - q: "GLP-1 dosing and titration schedule"
+    domain: glp1-reward-modulation
+    expect: [glp-1-dosing-strategies-titration-protocols]
+  - q: "GLP-1 receptor agonists and alcohol use"
+    domain: glp1-reward-modulation
+    expect: [glp-1-receptor-agonists-in-alcohol]
+
+  # --- risksystems ----------------------------------------------------------
+  - q: "Bayesian hierarchical model for risk"
+    domain: risksystems
+    expect: [hierarchical-bayesian-modelling]
+
+  # --- edge-ai-agentic ------------------------------------------------------
+  - q: "tooling for running AI on edge devices"
+    domain: edge-ai-agentic
+    expect: [edge-ai-tooling]
+  - q: "on-device model runtimes for local inference"
+    domain: edge-ai-agentic
+    expect: [on-device-models-and-runtimes]
+
+  # --- ai-and-agents --------------------------------------------------------
+  - q: "retrieval augmented generation over private data"
+    domain: ai-and-agents
+    expect: [retrieval-augmented-generation]
+
+  # --- orita-cmo ------------------------------------------------------------
+  - q: "Orita marketing data company"
+    domain: orita-cmo
+    expect: [orita]
+  - q: "HubSpot CRM platform"
+    domain: orita-cmo
+    expect: [hubspot]

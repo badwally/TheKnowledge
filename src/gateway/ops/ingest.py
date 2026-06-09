@@ -13,7 +13,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from gateway import converters, frontmatter as fm
-from gateway import index, log, paths, validator
+from gateway import index, log, paths, search_index, validator
 from gateway.core import OperationResult, write_atomic
 from gateway.filter import (
     FilterError,
@@ -525,7 +525,7 @@ def _invoke_plan_and_apply(
         plan_client = ClaudeCLIPlanClient(model=_authorship_model(front, body))
 
     source_text = _format_source_for_plan(front, body)
-    existing_pages = _gather_existing_pages(domain)
+    existing_pages = _gather_existing_pages(domain, query=str(front.get("title", "")))
 
     # K5: prefer telemetry-emitting variants. Stubs in tests typically only
     # implement plain `call()` — that path silently skips telemetry.
@@ -578,10 +578,15 @@ def _format_source_for_plan(front: dict, body: str) -> str:
     return fm.serialize(front, head)
 
 
-def _gather_existing_pages(domain: str | None) -> dict[str, str]:
+def _gather_existing_pages(domain: str | None, query: str = "") -> dict[str, str]:
     """Collect existing entity/concept/synthesis pages relevant to the domain.
 
-    TOK-4: two-stage select.
+    WS1: candidate selection is relevance-ranked via the FTS5 index — the
+    source title (`query`) ranks domain pages so the 30-page budget lands on
+    pages most related to the incoming source, not the first 30 by filesystem
+    order. Falls back to a glob scan when the index is empty/unbuilt.
+
+    TOK-4: two-stage select preserved.
     - Stage 1 (default): frontmatter + 200-char snippet per page, capped at 10 KB total.
     - Exception: if ≤5 matching pages exist, send full bodies (small-wiki path).
     Without a domain, returns an empty map.
@@ -590,24 +595,36 @@ def _gather_existing_pages(domain: str | None) -> dict[str, str]:
         return {}
 
     candidates: list[tuple[str, dict, str]] = []  # (rel_path, front, body)
-    for sub in ("entities", "concepts", "synthesis", "mocs"):
-        d = paths.wiki_dir() / sub
-        if not d.exists():
+    root = paths.knowledge_root()
+    for rel in search_index.top_pages_for_domain(
+        domain, query=query or None, limit=_MAX_EXISTING_PAGES
+    ):
+        try:
+            page_front, page_body = fm.parse((root / rel).read_text())
+        except (fm.FrontmatterError, OSError):
             continue
-        for path in d.glob("*.md"):
-            try:
-                page_front, page_body = fm.parse(path.read_text())
-            except fm.FrontmatterError:
+        candidates.append((rel, page_front, page_body))
+
+    if not candidates:
+        # Index empty/unbuilt — fall back to the original glob scan.
+        for sub in ("entities", "concepts", "synthesis", "mocs"):
+            d = paths.wiki_dir() / sub
+            if not d.exists():
                 continue
-            page_domains = list(page_front.get("domains") or [])
-            page_domain = page_front.get("domain") or (page_domains[0] if page_domains else None)
-            if page_domain == domain or domain in page_domains:
-                rel = str(path.relative_to(paths.knowledge_root()))
-                candidates.append((rel, page_front, page_body))
+            for path in d.glob("*.md"):
+                try:
+                    page_front, page_body = fm.parse(path.read_text())
+                except fm.FrontmatterError:
+                    continue
+                page_domains = list(page_front.get("domains") or [])
+                page_domain = page_front.get("domain") or (page_domains[0] if page_domains else None)
+                if page_domain == domain or domain in page_domains:
+                    rel = str(path.relative_to(root))
+                    candidates.append((rel, page_front, page_body))
+                if len(candidates) >= _MAX_EXISTING_PAGES:
+                    break
             if len(candidates) >= _MAX_EXISTING_PAGES:
                 break
-        if len(candidates) >= _MAX_EXISTING_PAGES:
-            break
 
     if not candidates:
         return {}

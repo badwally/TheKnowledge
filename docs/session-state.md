@@ -1,112 +1,77 @@
-# Session state — 2026-06-02
+# Session state — 2026-06-09
 
-Last updated: 2026-06-02 (convergent-ai-brain H1a cleanup; index_settle fix confirmed; H1a deferred on corpus access)
+Last updated: 2026-06-09 (RAG retrieval workstreams — M1 WS1+WS4 complete; executing in self-improving loop)
 
 ---
 
 ## Open contracts
 
-None blocking.
+**RAG retrieval build (this session) — M1 DONE, loop in progress.**
+Executing the workstreams in `docs/reviews/2026-06-09-rag-retrieval-review.md`
+in priority order, with an eval + test + state-analysis + re-plan checkpoint at
+each stream boundary (the loop). Order (revised after M1): WS1+WS4 ✓ → WS2 →
+**WS5 (promoted)** → WS3 → WS6 → WS8. WS7 (vectors) deferred behind trigger.
 
-**Web-API hardening — DONE this session (PRs #12 `1f49209c`, #14 `b2c1584e` on main).**
-Closed all 6 actionable findings from the 2026-05-30 product-readiness review
-(`docs/260530_product-readiness-review.md`). Operational consequences now in effect:
+M1 shipped (all on working tree, not yet committed):
+- `src/gateway/search_index.py` — SQLite FTS5 derived index at `.index/wiki.db`
+  (gitignored). Section-level, BM25-weighted, self-healing (mtime/size diff per
+  query, no write-path hook). Materializes wiki→wiki inbound link counts.
+- `src/gateway/ops/search.py` — rewired onto the index; SRCH-1 tier contract
+  preserved; added `order="bm25"`.
+- `src/gateway/ops/ingest.py` — `_gather_existing_pages` index-ranked by source
+  title (glob fallback); `search_index` import added.
+- `src/gateway/ops/index_rebuild.py` — rebuilds FTS index alongside index.md.
+- `src/gateway/evaluate/retrieval_eval.py` + `.knowledge/eval/retrieval/goldens.yaml`
+  (27 goldens) + `wiki eval-retrieval` CLI (CLI-only; in mcp_server CLI_ONLY).
+- `src/gateway/paths.py` — `index_dir()`, `search_db_path()`.
+- `.gitignore` — `.index/`.
+- Tests: `tests/gateway/test_ws1_search_index.py` (13), `test_ws4_retrieval_eval.py` (4).
 
-- **Auth is default-deny on every `/api/*` route except `/api/health`.** `wiki serve` now
-  requires a valid bearer token for ALL endpoints — including reads. The local browser SPA
-  must send the token (it no longer works token-less). The iOS Shortcut already sends
-  `ios-shortcut-andrew-iphone`, so it is unaffected.
-- **New env knobs** (all have safe defaults; set in the `wiki serve` environment to tune):
-  - `WIKI_MAX_CONCURRENT_TASKS` (default 4) — concurrent paid jobs before HTTP 503.
-  - `WIKI_RATE_LIMIT_PER_MIN` (default 60; 0 disables) — per-token mutating-request rate before 429.
-  - `WIKI_LLM_MAX_CALLS_PER_RUN` (default 300; 0 disables) — per-run LLM call ceiling (BudgetExceededError).
-  - `WIKI_ALLOW_PRIVATE_FETCH` (unset/off) — set to `1` only to let `wiki ingest` fetch internal/private-IP URLs.
-- **Ingest over the API accepts only http(s) URLs or multipart uploads** — local filesystem paths
-  are rejected (use the `wiki ingest` CLI for local files).
+**Full suite: 1971 passed.** Live eval: FTS recall@10 = 0.889 / recall@5 = 0.741
+/ MRR = 0.480, vs grep baseline 0.000 across the board.
 
-Deferred (low-severity; each with a revival trigger):
-- **Scheduler silent-failure surfacing** — failed cron jobs are recorded in `schedule.yaml` + `log.md`
-  but not shown in `wiki status` / `/api/status`. Revive when a scheduled job silently dies unnoticed.
-- **CORS policy** — none configured (safe-by-default; browsers block cross-origin). Revive when adding a
-  cross-origin browser/extension consumer.
-- **LLM circuit breaker** — no shared backpressure across concurrent callers on sustained upstream 429/5xx.
-  Revive if a provider outage causes compounding-retry latency/cost during a real run.
-- **SSRF DNS-rebinding residual** — host validated at check, re-resolved at connect (redirect-bypass IS
-  closed). Revive with a pinned-resolver fetch (resolve once, connect to IP literal + Host header) if the
-  service is exposed beyond the trusted tailnet.
+Carry-forward (gateway build — unchanged): schema-drift ~208; finalize-batch
+~460 researcher pages; orphans (condo-capital-infra, glp1-reward-modulation,
+ai-native-business); edge-ai notebook quota; `wiki migrate` stub.
 
-Carry-forward (gateway build — unchanged):
-- **schema-drift**: ~208 remaining (legacy editorial tail — human judgment).
-- **finalize-batch escalated**: ~460 researcher entity pages with no auto-appliable citations; needs source ingestion.
-- **orphans / discharge-orphans**: resume condo-capital-infra, glp1-reward-modulation, ai-native-business.
-- **edge-ai notebook quota**: ~15 YouTube sources (`yt-rugGoieVQ2Y`, `yt-tVvKlx-oVqc`, `yt-0Wwn5IEqFcg`, …)
-  return persistent `RESOURCE_EXHAUSTED` (code 8) — likely per-source NLM restriction. Filter from
-  `_orphan_sources_for_domain` or ingest via a different path. Do NOT run edge-ai discharge until diagnosed.
-- `wiki migrate` stub remains.
-
-Carry-forward (orita-cmo — unchanged):
-- **R3** (`2026-05-28-orita-gcp-r3`): query plan ready. Retry: `.venv/bin/wiki research --execute 2026-05-28-orita-gcp-r3`
-- **R2** (ICP validation): blocked on user exporting HubSpot closed-won/closed-lost CSVs (12-month window).
-- **nlm login bug**: Chrome must be quit (Cmd-Q) before `nlm login`. Verify with `nlm login --check`.
-
-Carry-forward (iOS Shortcut — K3/M48 — unchanged):
-- **Tailscale**: Mac (`andrew-grants-m2-max.tail477197.ts.net`, `100.109.141.64`) and iPhone connected.
-- **wiki serve**: restart with `wiki serve --bind 0.0.0.0` after reboots (now auth-gated — see above).
-- **Bearer token**: `ios-shortcut-andrew-iphone` in `.knowledge/auth.yaml`.
-- **Next step**: Safari → Share → Wiki Capture → confirm task_id notification → export to `scripts/wiki-capture.shortcut` → commit.
+Carry-forward (orita-cmo, iOS Shortcut, web-API hardening): unchanged from
+2026-06-02 checkpoint — see git history of this file if needed.
 
 ---
 
 ## Files mid-edit
 
-None. Working tree on clean `main`; only untracked items are gateway-managed `nlm/`/`wiki/`/`raw/` content
-(synthesis drafts, source maps, clippings) deliberately left alone (wiki/raw writes go through the gateway).
+None. All M1 edits complete and tested. Working tree has the M1 changes
+uncommitted plus the pre-existing untracked gateway-managed `nlm/`/`raw/`/`wiki/`
+content from before this session (leave alone — gateway-owned).
 
 ---
 
 ## Decisions made this session
 
-- **Multi-agent product-readiness review** (6 dimensions, adversarial verification, refute-by-default):
-  9 findings, 0 false positives; 2 candidates downgraded during verification. Report: `docs/260530_product-readiness-review.md`.
-- **Auth scope = default-deny ALL `/api`** (not mutating-only). User's call — correct posture for a
-  service consuming private research; cost is the SPA needing a token.
-- **Auth via app-level middleware**, not per-router dependencies — default-deny holds by construction;
-  a forgotten router can't open a write surface.
-- **Ingest SSRF guard validates every redirect hop** — switched `_fetch` off `trafilatura.fetch_url`
-  (opaque auto-redirect) to a redirect-disabled `requests` loop. Caught mid-PR by the background security
-  reviewer (redirect-bypass); folded the fix into the same commit before merge.
-- **#4 ceiling counts calls, not USD** — Max-OAuth path's real exposure is quota, not metered dollars.
-  Per-run budget via ContextVar; orchestrator filter pool propagates via per-task `copy_context()`.
-- **Stacked-PR footgun**: PR #13 merged into its base branch (#12) instead of main (merged before retarget).
-  Re-landed its content as PR #14 onto main. Lesson: retarget a stacked PR to main BEFORE merging it.
-- **Branch cleanup**: 35 local branches → `main` only. Deleted 31 merged + 3 verified-stale
-  (`fix/research-bounded-synthesis-slugs` proven strictly behind main via tip-to-tip diff; reflog SHA `180f70df`).
+- **SQLite FTS5 over the May review's throwaway JSON keyword index.** TOK-4
+  already closed the plan-context bottleneck that justified deferral; corpus has
+  grown to ~5.2k pages; goal is now agent retrieval. Build the durable thing once.
+- **Section-level rows, not whole-page.** Enables returning the relevant section
+  (feeds WS2/WS3 budgets).
+- **No write-path index hook.** Self-heal on read instead — an index failure must
+  never break an ingest. Stat-scan cost (~5k stats) measured at 0.07s; acceptable.
+- **Obsidian is not the RAG lever** (review §1) — the graph/frontmatter it
+  visualizes are vault properties the gateway already owns; route retrieval there.
+- **WS5 promoted to right-after-WS2** — M1 eval showed every miss is a canonical
+  page out-ranked by mention pages; inbound-link authority boost is the fix and
+  the data is already in the index.
 
 ---
-
-## Commits this session (all on main)
-
-- PR #12 `1f49209c` — Harden web API: default-deny auth, local-path-ingest rejection, concurrency cap +
-  per-token rate limit, SSRF guard (incl. redirect hops). 1935 tests.
-- PR #14 `b2c1584e` — Sanitize task error responses (log full detail operator-only); per-run LLM call budget. 1945 tests.
-- `83874968` docs — product-readiness review (260530) + session review (260529).
-
----
-
-## convergent-ai-brain domain status (as of 2026-06-02)
-
-| Sub-claim | Status |
-|---|---|
-| H1a — alignment scales with model competence (scaling laws) | **DEFERRED** — corpus access. Key papers (Goldstein ECoG, Brain-Score, Yamins/DiCarlo, Huth atlas) behind PNAS/biorXiv paywalls + arxiv 429s. index_settle fix confirmed working (settled at 11). Revival trigger: arxiv rate limits clear OR preprint links identified. Backlog: `docs/backlog/h1a-corpus-access-paywalled-sources.md`. |
-| H1b — ceiling on representational alignment | **DONE** — 6 pages, 5/6 diverse (distinct 3–8 citations). Commit `53d84f22`. |
-| H2 — objective (predictive vs generative) | **DEFERRED** — corpus too concentrated (19 sources, one dominates). Do not rerun without wider corpus. |
 
 ## Next atomic step
 
-1. **Resume discharge-orphans** (after notebook quota resets):
-   - `wiki routine discharge-orphans --domain condo-capital-infra --limit 20`
-   - `wiki routine discharge-orphans --domain glp1-reward-modulation --limit 20`
-   - `wiki routine discharge-orphans --domain ai-native-business --limit 20`
-   - **Do NOT run edge-ai** until the persistent RESOURCE_EXHAUSTED sources are diagnosed/filtered.
-2. **R3 retry**: `.venv/bin/wiki research --execute 2026-05-28-orita-gcp-r3`
-3. **iOS Shortcut completion**: Safari → Share → Wiki Capture (token already valid under new auth gate).
+1. **WS2** — `wiki retrieve "<question>" [--domain X] [--k N] [--budget CHARS]`:
+   FTS5 section retrieval → filters → bounded (`~30-50KB`) context block with
+   `<page path=... section=...>` wrapping and `[[sources/<id>]]` preserved.
+   Consume `search_index.search_fts(order=...)` directly (not via `ops.search`)
+   for bm25 ordering + raw section bodies. Expose MCP `wiki_retrieve`.
+2. At WS2 conclusion: run `wiki eval-retrieval --compare`, full `pytest`,
+   checkpoint here, append M2 to the review's Execution log, re-plan, then WS5.
+3. **Commit M1** before/at start of WS2 (not yet committed): branch off main,
+   structured commit, the search_index + eval + ingest-rewire as one logical unit.

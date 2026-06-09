@@ -1,34 +1,31 @@
-"""Full-text search over wiki/ and raw/ markdown files (SRCH-1).
+"""Full-text search over wiki/ and raw/ markdown files (SRCH-1 / WS1).
 
-Simple grep-based search — no external deps, fast enough for <5k files.
-Returns ranked results: title match > slug match > body match.
+Backed by the SQLite FTS5 derived index (`gateway.search_index`): BM25
+ranking over section-level rows, self-healing against the filesystem on
+every call. The public contract is unchanged — `search()` still returns a
+`SearchResult` of `SearchHit`s with the SRCH-1 integer tiers (3 title /
+2 slug / 1 body) so existing CLI and MCP consumers and their ordering
+survive. WS1 added `order="bm25"` for pure lexical ranking.
 
 Search scope:
   "wiki"  — wiki/ subtree only (entities, concepts, synthesis, mocs, sources)
   "raw"   — raw/ subtree only (source documents)
   "all"   — both (default)
-
-Ranking (descending):
-  3 — query term found in title frontmatter field
-  2 — query term found in file name (slug)
-  1 — query term found in body
 """
 
 from __future__ import annotations
 
-import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Literal
 
-from gateway import frontmatter as fm, paths
+from gateway import paths, search_index
 
 
 Scope = Literal["wiki", "raw", "all"]
 
 _MAX_SNIPPET = 120
 _DEFAULT_LIMIT = 20
-_DEFAULT_CONTEXT_LINES = 2
 
 
 @dataclass
@@ -56,113 +53,47 @@ def search(
     domain: str | None = None,
     page_type: str | None = None,
     limit: int = _DEFAULT_LIMIT,
+    order: Literal["tiered", "bm25"] = "tiered",
 ) -> SearchResult:
-    """Search wiki/ and/or raw/ for `query`.
+    """Search wiki/ and/or raw/ for `query` via the FTS5 index.
 
     Args:
-        query: Search string. Case-insensitive substring match.
+        query: Search string. Tokenized; each token prefix-matched, OR-joined.
         scope: "wiki", "raw", or "all".
         domain: Filter hits to pages tagged with this domain.
         page_type: Filter hits to pages of this type (e.g. "synthesis", "web").
         limit: Maximum number of hits to return (default 20).
+        order: "tiered" (SRCH-1 tier then BM25) or "bm25" (relevance only).
 
     Returns:
-        SearchResult with hits sorted by score descending.
+        SearchResult with hits sorted per `order`.
     """
     if not query or not query.strip():
         return SearchResult(query=query)
 
-    pattern = re.compile(re.escape(query.strip()), re.IGNORECASE)
-    candidate_dirs: list[Path] = []
-
-    if scope in ("wiki", "all"):
-        candidate_dirs.append(paths.wiki_dir())
-    if scope in ("raw", "all"):
-        candidate_dirs.append(paths.raw_dir())
-
-    hits: list[SearchHit] = []
-    for base in candidate_dirs:
-        if not base.exists():
-            continue
-        for md_path in base.rglob("*.md"):
-            hit = _score_file(md_path, pattern, domain, page_type)
-            if hit is not None:
-                hits.append(hit)
-
-    hits.sort(key=lambda h: (-h.score, h.title.lower()))
-    top = hits[:limit]
-    return SearchResult(hits=top, query=query, total=len(hits))
-
-
-def _score_file(
-    path: Path,
-    pattern: re.Pattern,
-    domain_filter: str | None,
-    type_filter: str | None,
-) -> SearchHit | None:
-    """Return a SearchHit if the file matches, else None."""
-    try:
-        text = path.read_text(errors="replace")
-    except OSError:
-        return None
-
-    try:
-        front, body = fm.parse(text)
-    except Exception:
-        front, body = {}, text
-
-    title = str(front.get("title", ""))
-    page_type = str(front.get("type", ""))
-    slug = path.stem
-    raw_domains: list = front.get("domains", [])
-    if not isinstance(raw_domains, list):
-        raw_domains = [raw_domains] if raw_domains else []
-    page_domain = str(raw_domains[0]) if raw_domains else str(front.get("domain", ""))
-
-    if domain_filter and page_domain != domain_filter:
-        return None
-    if type_filter and page_type != type_filter:
-        return None
-
-    score = 0
-    snippet = ""
-
-    if pattern.search(title):
-        score = max(score, 3)
-        snippet = snippet or _truncate(title)
-
-    if pattern.search(slug):
-        score = max(score, 2)
-        snippet = snippet or _truncate(slug)
-
-    body_match = pattern.search(body)
-    if body_match:
-        score = max(score, 1)
-        if not snippet:
-            snippet = _extract_snippet(body, body_match)
-
-    if score == 0:
-        return None
-
-    return SearchHit(
-        path=path,
-        slug=slug,
-        title=title or slug,
+    index_hits = search_index.search_fts(
+        query.strip(),
+        scope=scope,
+        domain=domain,
         page_type=page_type,
-        domain=page_domain,
-        score=score,
-        snippet=snippet,
+        limit=limit,
+        order=order,
     )
 
-
-def _extract_snippet(body: str, match: re.Match) -> str:
-    """Return the line containing the match, trimmed."""
-    start = body.rfind("\n", 0, match.start()) + 1
-    end = body.find("\n", match.end())
-    if end == -1:
-        end = len(body)
-    line = body[start:end].strip()
-    return _truncate(line)
+    root = paths.knowledge_root()
+    hits = [
+        SearchHit(
+            path=root / h.rel_path,
+            slug=h.slug,
+            title=h.title,
+            page_type=h.page_type,
+            domain=h.domain,
+            score=h.score,
+            snippet=_truncate(h.snippet) if h.snippet else _truncate(h.title),
+        )
+        for h in index_hits
+    ]
+    return SearchResult(hits=hits, query=query, total=len(hits))
 
 
 def _truncate(text: str, max_len: int = _MAX_SNIPPET) -> str:

@@ -63,6 +63,7 @@ SUBCOMMANDS: dict[str, str] = {
     "lint": "Run health checks across the wiki",
     "index": "Rebuild or update the content index",
     "search": "Search wiki + raw sources",
+    "eval-retrieval": "Score retrieval against the golden query set (recall@k, MRR)",
     "status": "Show recent activity, watcher state, pending queues",
     "migrate": "Apply a schema or content migration script",
     "mcp-serve": "Start the MCP server exposing gateway operations as native tools",
@@ -166,6 +167,7 @@ IMPLEMENTED: set[str] = {
     "rotate-log",
     "reingest",
     "search",
+    "eval-retrieval",
     "index",
     "routine",
     "daily",
@@ -1246,6 +1248,22 @@ def build_parser() -> argparse.ArgumentParser:
     p_search.add_argument("--domain", default=None, help="Filter results to this domain")
     p_search.add_argument("--type", dest="page_type", default=None, help="Filter by page/source type")
     p_search.add_argument("--limit", type=int, default=20, help="Maximum number of results (default: 20)")
+    p_search.add_argument(
+        "--order",
+        choices=["tiered", "bm25"],
+        default="tiered",
+        help="Ranking: tiered (title/slug/body tier then BM25) or bm25 (relevance only)",
+    )
+
+    # eval-retrieval (WS4): score retrieval against the golden set
+    p_evalret = subparsers.add_parser("eval-retrieval", help=SUBCOMMANDS["eval-retrieval"])
+    p_evalret.add_argument(
+        "--retriever", choices=["fts", "grep"], default="fts",
+        help="Backend to score: fts (default) or grep (pre-WS1 baseline)",
+    )
+    p_evalret.add_argument("--goldens", default=None, help="Path to goldens.yaml (default: .knowledge/eval/retrieval/goldens.yaml)")
+    p_evalret.add_argument("--k", type=int, default=10, help="Cutoff for recall@k and ranked depth (default: 10)")
+    p_evalret.add_argument("--compare", action="store_true", help="Score both fts and grep side by side")
 
     # routine (TOOL-12)
     p_routine = subparsers.add_parser("routine", help=SUBCOMMANDS["routine"])
@@ -1477,6 +1495,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_reingest_cmd(ns)
     if ns.subcommand == "search":
         return _run_search_cmd(ns)
+    if ns.subcommand == "eval-retrieval":
+        return _run_eval_retrieval_cmd(ns)
     if ns.subcommand == "index":
         return _run_index_cmd(ns)
     if ns.subcommand == "routine":
@@ -2517,9 +2537,24 @@ def _run_search_cmd(ns: argparse.Namespace) -> int:
         domain=getattr(ns, "domain", None),
         page_type=getattr(ns, "page_type", None),
         limit=ns.limit,
+        order=getattr(ns, "order", "tiered"),
     )
     print(format_results(result, relative_to=_paths.knowledge_root()))
     return 0 if result.hits else 1
+
+
+def _run_eval_retrieval_cmd(ns: argparse.Namespace) -> int:
+    from pathlib import Path as _Path
+    from gateway.evaluate import retrieval_eval as _rev
+
+    goldens_path = _Path(ns.goldens) if ns.goldens else None
+    goldens = _rev.load_goldens(goldens_path)
+    retrievers = ["fts", "grep"] if ns.compare else [ns.retriever]
+    for r in retrievers:
+        report = _rev.evaluate(r, goldens=goldens, k=ns.k)
+        print(_rev.format_report(report))
+        print()
+    return 0
 
 
 def _run_routine_cmd(ns: argparse.Namespace) -> int:

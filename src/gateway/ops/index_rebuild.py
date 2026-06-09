@@ -74,17 +74,26 @@ def rebuild(*, dry_run: bool = False) -> OperationResult:
         total_raw=total_raw,
     )
 
+    fts_stats = None
     if not dry_run:
         index_path = paths.index_path()
         write_atomic(index_path, content)
+        # WS1: rebuild the derived FTS5 retrieval index alongside index.md.
+        from gateway import search_index
+        fts_stats = search_index.refresh(rebuild=True)
+
+    summary = f"index rebuilt: {len(entries)} domains, {total_raw} raw sources"
+    if fts_stats is not None:
+        summary += f"; search index: {fts_stats.total_pages} pages"
 
     return OperationResult(
         success=True,
-        summary=f"index rebuilt: {len(entries)} domains, {total_raw} raw sources",
+        summary=summary,
         data={
             "domains": len(entries),
             "raw_sources": total_raw,
             "dry_run": dry_run,
+            "search_index_pages": fts_stats.total_pages if fts_stats else None,
         },
     )
 

@@ -11,6 +11,9 @@ uv.lock
 .vscode/
 .idea/
 
+# Derived retrieval index (rebuild with `wiki index --rebuild`)
+.index/
+
 # Knowledge base runtime state (regenerable / sensitive)
 .knowledge/locks/
 .knowledge/lint/

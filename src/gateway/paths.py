@@ -66,6 +66,14 @@ def policies_dir() -> Path:
     return knowledge_internal() / "policies"
 
 
+def index_dir() -> Path:
+    return knowledge_root() / ".index"
+
+
+def search_db_path() -> Path:
+    return index_dir() / "wiki.db"
+
+
 def index_path() -> Path:
     return knowledge_root() / "index.md"
 
