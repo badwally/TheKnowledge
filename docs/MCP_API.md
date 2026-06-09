@@ -16,11 +16,29 @@ Show recent activity, watcher state, pending queues, and finetune readiness.
 ### `wiki_lint(scope=None)`
 Run health checks. `scope` restricts to one check slug (e.g. `"orphans"`, `"stale-drafts"`). Returns `findings` list and `report_path`.
 
-### `wiki_context(page, hops=1, max_pages=20, format="markdown")`
-Fetch a wiki page + N-hop wikilink-resolved neighbors. Read-only. Used by cross-project agents to consume wiki context without filesystem access.
+### `wiki_context(query, depth=1, format="markdown", caller=None, budget=None)`
+Fetch a known wiki page + N-hop wikilink-resolved neighbors. `query` is a slug, path, or title substring. `budget` (chars, markdown only): over budget, neighbors are authority-ranked (inbound links + domain overlap) and truncated rather than dropped. Read-only. Use for precise neighborhood expansion around a known page; use `wiki_retrieve` for question-driven retrieval.
 
 ### `wiki_agent_log(since="24h")`
 Show per-agent event counts and top payloads for the last N hours.
+
+---
+
+## Retrieve (RAG)
+
+The wiki is a relevance-rankable RAG substrate: SQLite FTS5/BM25 over section-level chunks, plus graph-authority ranking (a term's canonical page outranks pages that merely mention it). Derived index at `.index/wiki.db` — self-healing on read, never canonical. **`wiki_retrieve` is the default first call for grounding an answer in the wiki.**
+
+### `wiki_retrieve(query, domain=None, k=12, budget_chars=40000, caller=None)`
+The default RAG call. One LLM-free call → a bounded, ranked context block of the most relevant sections, each wrapped in `<page path=… section=…>` with `[[sources/<id>]]` citations preserved. Returns the block plus a source manifest. Prefer over `wiki_search` (snippets, not usable context) and `wiki_query` (heavy NotebookLM synthesis).
+
+### `wiki_answer(question, domain=None, k=12, budget_chars=40000, file_draft=False, caller=None)`
+Retrieve → one Claude call grounded only in the retrieved sections; cites only `[[sources/<id>]]` present in context (ungrounded citations stripped). NotebookLM-independent. `file_draft=True` files the answer as a draft synthesis page.
+
+### `wiki_search(query, scope="all", domain=None, page_type=None, limit=20)`
+Ranked full-text search (FTS5/BM25) over `wiki/` + `raw/`. Returns hits with `score`, `snippet`, `path`, `title`, `domain`.
+
+### `wiki_related(query, limit=10, caller=None)`
+Pages co-citing the same sources as a target page (graph neighbors), ranked by shared-citation count then inbound-link authority. `query` resolves like `wiki_context`. LLM-free.
 
 ---
 

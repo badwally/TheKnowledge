@@ -46,24 +46,30 @@ Claude Code sessions have a finite context window. Every `wiki query` call synth
 
 ### The solution hierarchy
 
-Before firing a `wiki query`, work through this ladder:
+Before firing a `wiki query`, work through this ladder. Obsidian search is the **human** entry point; `wiki retrieve` is the **programmatic/agent** equivalent and is the right default inside a Claude Code session.
 
-**Step 1 — Obsidian search** (instant, zero cost)
+**Step 1 — Obsidian search** (human, instant, zero cost)
 `Cmd+Shift+F` → type the topic. If a synthesis or concept page exists, you see it immediately. Read it in Obsidian. Done.
 
-**Step 2 — `wiki context`** (fast, zero LLM cost)
+**Step 1′ — `wiki retrieve`** (agent, fast, zero LLM cost) — the programmatic default
+```sh
+wiki retrieve "GLP-1 effect on food noise" --domain glp1-reward-modulation
+```
+One call returns a ranked, bounded context block of the most relevant *sections* (FTS5/BM25 + graph authority), each wrapped in `<page>` with `[[sources/<id>]]` preserved. This is what an agent should call instead of grepping the vault or reading `index.md`. Add `wiki answer` for a one-call grounded answer; `wiki related "<slug>"` for co-citation neighbors.
+
+**Step 2 — `wiki context`** (fast, zero LLM cost) — when you know the page
 ```sh
 wiki context "food noise" --caller cli
-wiki context "concepts/long-covid" --caller cli
+wiki context "concepts/long-covid" --caller cli --budget 30000
 wiki context "mocs/glp1" --caller cli
 ```
-Walks wikilinks from the matched page to depth 2. Returns assembled markdown without any LLM call. If the result is substantive, you have your answer. Only proceed to Step 3 if context comes up short.
+Walks wikilinks from the matched page to depth N. Returns assembled markdown without any LLM call; `--budget` authority-ranks and truncates neighbors instead of dropping them. If the result is substantive, you have your answer. Only proceed to Step 3 if context comes up short.
 
-**Step 3 — `wiki query`** (slow, LLM cost, creates a new page)
+**Step 3 — `wiki query`** (slow, LLM cost, NotebookLM, creates a new page)
 ```sh
 wiki query "what mechanisms explain GLP-1's effect on food noise?" --domain glp1
 ```
-Use this only when Steps 1 and 2 confirm the wiki does not already have the answer.
+Use this only when Steps 1–2 confirm the *authored wiki layer* does not already have the answer and you need synthesis over the full raw corpus.
 
 ### How Obsidian addresses context window pressure
 

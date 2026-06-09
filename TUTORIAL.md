@@ -90,7 +90,32 @@ cat wiki/sources/<id>.md               # human-readable summary
 
 ## 4. Ask your first question
 
-This is the load-bearing flow. The answer is itself a wiki page.
+There are two paths, fast to heavy. Start with the fast one.
+
+### Retrieve (fast, no LLM, no quota)
+
+```sh
+wiki retrieve "GLP-1 effects on dopamine" --domain glp1-reward-modulation
+```
+
+This returns a ranked, bounded context block — the most relevant *sections* of your wiki, each wrapped in `<page path=… section=…>` with `[[sources/<id>]]` citations intact. Ranking is FTS5/BM25 plus graph authority (a term's canonical page outranks pages that merely mention it). No LLM call, sub-second. It's the default way to pull wiki knowledge into any prompt — yours or an agent's. Related commands:
+
+```sh
+wiki search "dopamine reward" --domain glp1-reward-modulation   # ranked keyword hits
+wiki related "concepts/reward-deficit-and-anhedonia"            # co-citation neighbors
+```
+
+### Answer (one local LLM call, grounded)
+
+```sh
+wiki answer "what does the wiki say about GLP-1 effects on dopamine?" --domain glp1-reward-modulation
+```
+
+Retrieve + one Claude call grounded *only* in the retrieved sections; it cites only `[[sources/<id>]]` that appear in the context (anything the model invents is stripped). NotebookLM-independent. Add `--file` to file the answer as a draft synthesis page.
+
+### Query (heavy, corpus-scale via NotebookLM)
+
+When the authored wiki layer isn't enough and you need synthesis over a domain's full *raw corpus*, the answer is itself a wiki page:
 
 ```sh
 wiki query "what does the corpus say about GLP-1 effects on dopamine?" --draft
@@ -98,8 +123,8 @@ wiki query "what does the corpus say about GLP-1 effects on dopamine?" --draft
 
 What happens:
 
-1. The gateway searches `wiki/` (not `raw/`) for keyword-relevant pages, takes the top matches, and includes them in a prompt.
-2. Claude drafts a synthesis — sentences making claims, each anchored by a `[[sources/<id>]]` wikilink to the source the claim came from.
+1. The gateway queries the domain's persistent NotebookLM corpus (all raw sources for the domain).
+2. NotebookLM drafts a synthesis — claims anchored by `[[sources/<id>]]` wikilinks resolved back to your sources.
 3. The validator checks that every claim is cited. With `--draft`, missing citations downgrade to warnings; without it, missing citations cause the write to fail.
 4. The synthesis lands at `wiki/synthesis/<auto-slug>.md`.
 
@@ -123,7 +148,10 @@ This re-runs the strict validator. If everything is cited, the `draft: true` fla
 
 | You want | Use |
 |---|---|
-| An answer drawn from existing wiki content | `wiki query "..."` |
+| A context block to ground an answer (fastest, no LLM) | `wiki retrieve "..."` |
+| Ranked keyword lookup across wiki + raw | `wiki search "..."` |
+| A short grounded answer from the wiki layer (one LLM call) | `wiki answer "..."` |
+| A synthesis page over a domain's full raw corpus | `wiki query "..."` (NotebookLM) |
 | To ingest a source and write the synthesis in one call | `wiki ingest <url> --with-plan` |
 | A whole-corpus answer across dozens of sources | `wiki nlm-briefing <domain>` (see § 8) |
 | Slides, audio, or a document for a meeting | `wiki nlm-slides`, `wiki nlm-audio`, `wiki nlm-briefing` |
@@ -340,7 +368,9 @@ The reward-circuit synthesis lives at
 ~/code/knowledge/wiki/synthesis/<slug>.md.
 ```
 
-For programmatic access from another Claude Code session, the MCP server (installed in § 2) exposes every gateway operation as a `wiki_*` tool: `wiki_query`, `wiki_ingest`, `wiki_nlm_briefing`, etc. After running `scripts/install_mcp.sh`, **restart Claude Code** once for the tools to load. From then on, any project's session can write to the knowledge base without leaving its own working directory.
+For programmatic access from another Claude Code session, the MCP server (installed in § 2) exposes every gateway operation as a `wiki_*` tool: `wiki_retrieve`, `wiki_answer`, `wiki_query`, `wiki_ingest`, `wiki_nlm_briefing`, etc. After running `scripts/install_mcp.sh`, **restart Claude Code** once for the tools to load. From then on, any project's session can read from and write to the knowledge base without leaving its own working directory.
+
+For grounding an answer from another project, the default call is `wiki_retrieve("<question>", domain=...)` — it returns a bounded, citation-preserving context block in one shot, no need to read `index.md` or grep the vault. Use `wiki_answer` for a short grounded answer, or `wiki_query` for NotebookLM corpus synthesis.
 
 ## 10. Operate the system
 
@@ -387,9 +417,13 @@ Failed ingests land in `raw/inbox/_failed/` with an error sidecar. Check there i
 ## 12. Cheat sheet
 
 ```sh
-# Read
+# Read / retrieve (RAG)
+wiki retrieve "<question>" [--domain X] [--k N] [--budget N]   # ranked, bounded, cited block (default)
+wiki answer "<question>" [--domain X] [--file]                 # retrieve + one grounded LLM call
+wiki search "<query>" [--domain X] [--order tiered|bm25]       # ranked keyword hits
+wiki related "<slug>" [--limit N]                              # co-citation neighbors
+wiki context "<slug>" --caller me [--budget N]                 # page + ranked neighbors
 ls wiki/synthesis/                                 # answer pages
-rg "<term>" wiki/                                  # grep wiki layer
 cat wiki/concepts/<slug>.md
 
 # Ingest
@@ -397,7 +431,7 @@ wiki ingest <path-or-url> [--domain X] [--with-plan] [--draft]
 wiki poll <name>                                   # API-only sources (apple-notes, etc.)
 wiki poll --list
 
-# Query and finalize
+# Query (NotebookLM corpus synthesis) and finalize
 wiki query "<question>" [--domain X] [--draft]
 wiki filter <path>                                 # read-only score
 wiki filter-correct <source-id>                    # pin a corrected example

@@ -4,7 +4,7 @@
 
 This repository is a personal knowledge base built on the filesystem-as-database pattern: sources are Markdown files with YAML frontmatter in `raw/`, wiki pages are Markdown files in `wiki/`, and all mutations go through a single Python package (`src/gateway/`) that enforces citation grounding, source immutability, and provenance tracking before any write lands on disk.
 
-NotebookLM is a heavy-synthesis service called through the gateway (never directly): the gateway sends sources to it, retrieves artifacts, and files them back to `wiki/artifacts/` with bidirectional links. Obsidian renders the citation graph over the same vault — same wikilinks, same Markdown, no separate index. The system has no queue server, no database, and no network dependency for read operations.
+NotebookLM is a heavy-synthesis service called through the gateway (never directly): the gateway sends sources to it, retrieves artifacts, and files them back to `wiki/artifacts/` with bidirectional links. Obsidian renders the citation graph over the same vault — same wikilinks, same Markdown. Retrieval is served by a derived FTS5 index (`.index/wiki.db`) that is rebuildable from the markdown and never canonical. The system has no queue server, no canonical database, and no network dependency for local read operations.
 
 ## Architecture diagram
 
@@ -48,6 +48,8 @@ All mutation paths pass through `GW → VAL → LOCK`. Direct writes to `raw/` o
 
 **NotebookLM layer.** Heavy-synthesis service. The gateway adds sources to NotebookLM corpora via `nlm_client.py`, triggers queries and artifact generation via `research/orchestrator.py`, and files results back to `wiki/artifacts/` with bidirectional links. Agents never call NotebookLM directly — only the gateway does (CLAUDE.md hard rule #2).
 
+**Retrieval layer (derived, `search_index.py`).** A SQLite FTS5 index at `.index/wiki.db` over section-level chunks of `wiki/` + `raw/`. Ranking blends BM25 with title/slug tier, inbound-link authority, page-kind, and a draft penalty (`order="authority"`). It is derived state — gitignored, self-healing on read (mtime/size diff per query; no write-path hook, so an index failure can't break an ingest), rebuilt with `wiki index --rebuild`, never canonical. Serves `wiki retrieve` (bounded cited context blocks), `wiki search`, `wiki related` (co-citation), `wiki context --budget`, and `wiki answer` (retrieve + one grounded LLM call). The `_gather_existing_pages` plan-context selection also ranks through it.
+
 **Obsidian / web UI (read-only).** Obsidian renders the wikilink graph over the same vault. The local web UI (`wiki serve`) serves a FastAPI + React SPA for browsing and research review. Both are strictly read-only consumers; they never write to `raw/` or `wiki/`.
 
 ## Invariant table
@@ -64,6 +66,9 @@ All mutation paths pass through `GW → VAL → LOCK`. Direct writes to `raw/` o
 | Draft citation downgrade: uncited claims in `draft: true` pages are warnings, not errors | `validator.validate_citation_grounding(draft=True)` | M6 |
 | Timestamp required: entity/concept/synthesis pages must carry `created_at`/`last_updated` | `validator.validate_timestamps()` in `validate_wiki_page_frontmatter()` | M58 |
 | MCP parity: every implemented CLI op has a matching MCP tool (or is marked CLI-only) | `tests/gateway/test_mcp_parity.py` — K2 gate before every merge | M42 |
+| Derived index is rebuildable, never canonical: markdown is source of truth | `search_index.py` self-heals on read; `.index/` gitignored; `wiki index --rebuild` | M116 |
+| Retrieval ranking governed by the golden set (no silent regressions) | `.knowledge/eval/retrieval/goldens.yaml` + `wiki eval-retrieval` (recall@k, MRR) | M116 |
+| Web API default-deny: every `/api/*` route except `/api/health` requires a bearer token | app-level middleware in `web/app.py`; `verify_bearer` | M114 |
 
 ## Data flow
 
@@ -82,9 +87,9 @@ End-to-end example: URL → `wiki ingest` → wiki source page.
 
 **No queue server.** The inbox watcher (`watcher.py`) polls `raw/` directly via filesystem events. Polling latency is acceptable for a personal knowledge base; a message queue would add an operational dependency with no throughput benefit at this scale.
 
-**No database.** All state is plain Markdown + YAML. `git log` provides history; `grep` provides search. A BM25/vector index is deferred until the wiki crosses ~10k pages.
+**No canonical database.** All *source-of-truth* state is plain Markdown + YAML; `git log` provides history. Retrieval is served by a **derived** SQLite FTS5 index at `.index/wiki.db` (BM25 + graph-authority ranking) — gitignored, self-healing on read, rebuilt with `wiki index --rebuild`, and never canonical. It can be deleted at any time and rebuilt from the markdown. Hybrid vector retrieval is deferred until golden-set recall drops below ~0.8 on paraphrases or the wiki crosses ~10k pages (see `docs/reviews/2026-06-09-rag-retrieval-review.md`).
 
-**No auth layer.** This is a single-user local tool. The cloud shim (`wiki auth`) issues bearer tokens for the `/api/ingest` endpoint, which is the only networked surface.
+**Auth is default-deny on the networked surface.** The web API (`wiki serve`) requires a valid bearer token on every `/api/*` route except `/api/health` (app-level middleware; Phase 13 hardening). Tokens are issued by the cloud shim (`wiki auth`). The CLI and MCP surfaces are local single-user.
 
 **No multi-tenant.** One operator, one vault, one NotebookLM account. The domain model (`policies/`) partitions content, but there is no user-isolation boundary.
 

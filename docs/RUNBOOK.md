@@ -32,8 +32,9 @@ wiki rotate-log --dry-run        # preview only
 
 ### Rebuild the content index
 ```bash
-wiki index --rebuild
+wiki index --rebuild   # regenerates index.md AND the FTS5 retrieval index (.index/wiki.db)
 ```
+The derived retrieval index (`.index/wiki.db`, gitignored) self-heals on read, so a manual rebuild is rarely required — the first `wiki search`/`retrieve` after a change picks up edits via an mtime/size diff. Rebuild explicitly after a bulk import or if `.index/` is deleted. Score retrieval quality with `wiki eval-retrieval --compare` (recall@k, MRR against `.knowledge/eval/retrieval/goldens.yaml`).
 
 ### Emit domain skill files
 ```bash

@@ -8,6 +8,8 @@ Terms used in the gateway codebase, documentation, and operation guides. One def
 
 **AnthropicAPIClient.** Thin wrapper in `src/gateway/llm/api_client.py` around the Anthropic SDK that records per-call token telemetry (`input_tokens`, `output_tokens`, `cache_creation_input_tokens`, `cache_read_input_tokens`) and logs them to `log.md` via the K5 telemetry path. Shipped M49.
 
+**Authority ranking.** The `order="authority"` mode of `search_index.search_fts` (default for `wiki retrieve`). Blends BM25 relevance with the SRCH-1 title/slug tier, inbound-link authority (`log1p(inbound)`), a page-kind boost, and a draft penalty, so a term's *canonical* page outranks pages that merely mention it. Weights tuned against the retrieval golden set. Shipped M118.
+
 **Choke-point / Discipline Gate.** The invariant that every write to `wiki/` and `raw/` passes through the gateway so validator, citation grounding, log, index, and lock discipline are always applied. Hard rule #1 of the system; enforced socially today, partially structurally via `assert_safe_for_prompt` and `validate_source_frontmatter_diff`.
 
 **Citation grounding.** Every claim in a wiki page must be followed by `[[sources/<id>]]` linking to the source page. The validator rejects pages that violate this rule; draft mode (see below) downgrades the rule to a warning. See `WIKI.md § 5`.
@@ -15,6 +17,8 @@ Terms used in the gateway codebase, documentation, and operation guides. One def
 **CiTO.** Citation Typology Ontology (Shotton 2010). 41 typed citation relations (`supports`, `disputes`, `extends`, `qualifies`, etc.). Not yet adopted in this codebase; a recommended subset is documented in the system review at `docs/reviews/2026-05-23-knowledge-system-review.md § ONT-2`.
 
 **Converter.** A subclass of `Converter` in `src/gateway/converters/` that implements `detect()` and `convert()` for a specific source type (web, youtube, arxiv, pubmed, pdf, voice, audiobook, note, csv, docx, xlsx, pptx, image). Converters write canonical markdown to `raw/<type>/<slug>.md`. See `CLAUDE.md § Adding a new source type`.
+
+**Derived retrieval index (FTS5).** SQLite FTS5 database at `.index/wiki.db` (`src/gateway/search_index.py`) over section-level chunks of `wiki/` + `raw/`, with BM25 + authority ranking. Derived state — gitignored, self-healing on read (mtime/size diff; no write-path hook), rebuilt by `wiki index --rebuild`, never canonical (markdown is source of truth). Serves `wiki search`, `wiki retrieve`, `wiki related`, `wiki context --budget`, and `wiki answer`. Shipped M116.
 
 **Domain proposal lifecycle.** `wiki discover-domains` → draft at `wiki/proposals/<slug>.md` → `wiki promote-domain` → blessed domain with `policy.yaml` and example bank. `wiki demote-domain` reverses a promotion; `wiki reject-proposal` discards a draft proposal without promoting.
 
@@ -47,6 +51,10 @@ Terms used in the gateway codebase, documentation, and operation guides. One def
 **PROV-O.** W3C Provenance Ontology. `wasDerivedFrom`, `wasGeneratedBy`, `wasAttributedTo`. Vocabulary inspiration for the `synthesizes:` frontmatter field on synthesis pages.
 
 **Query plan.** YAML describing a multi-adapter research run (NotebookLM + web + arXiv + S2 + PubMed). Persisted at `nlm/query_plans/<date>-<slug>.yaml`. Reviewed via `wiki research --review <id>`, executed via `wiki research --execute <id>`.
+
+**Retrieval ladder.** The preferred order for grounding an answer in the wiki, fast to heavy: `wiki retrieve` (ranked, bounded, cited context block; default) → `wiki context` (known page + neighbors) → `wiki answer` (one local grounded LLM call) → `wiki query` (NotebookLM corpus synthesis). Documented in `CLAUDE.md`. Shipped Phase 14 (M116–M121).
+
+**Retrieval golden set.** Paraphrase-style `(query, expected slugs)` pairs at `.knowledge/eval/retrieval/goldens.yaml`, scored by `wiki eval-retrieval` (recall@k, MRR) to govern ranking changes — distinct from the per-domain filter **Golden** above. Shipped M116.
 
 **Scheduler.** Cron-driven job substrate in `src/gateway/scheduler/` and `src/gateway/ops/schedule.py`. Manages polling intervals for pollers and other recurring gateway tasks. Managed via `wiki schedule list/add/remove/enable/disable/run`. Shipped M48.
 

@@ -1,6 +1,6 @@
 # ~/code/knowledge/
 
-A personal knowledge base. Sources land as markdown + YAML on the local filesystem. Queries return cited synthesis pages. NotebookLM artifacts file back to the same vault. Obsidian renders the citation graph.
+A personal knowledge base. Sources land as markdown + YAML on the local filesystem. Ranked retrieval (`wiki retrieve`) returns bounded, cited context blocks; queries return cited synthesis pages. NotebookLM artifacts file back to the same vault. Obsidian renders the citation graph.
 
 Implements the LLM Wiki pattern (Karpathy gist `442a6bf555914893e9891c11519de94f`).
 
@@ -26,8 +26,9 @@ Pick the track that matches your goal.
 
 1. [CLAUDE.md](CLAUDE.md) — load first; it is the authoritative agent control surface.
 2. `wiki status` — live snapshot of watcher state, domain counts, and fine-tune readiness.
-3. `wiki context <slug> --caller <you>` — fetch a wiki page plus N-hop neighbors as a structured LLM context block.
-4. [WIKI.md](WIKI.md) § Gateway operations table — every available op, its CLI form, and its MCP equivalent.
+3. `wiki retrieve "<question>" [--domain X]` — the default grounding call: a ranked, bounded context block of the most relevant sections, citations preserved. Prefer over reading `index.md` or grepping.
+4. `wiki context <slug> --caller <you>` — fetch a known wiki page plus N-hop neighbors (budget-aware) as a structured LLM context block.
+5. [WIKI.md](WIKI.md) § Gateway operations table — every available op, its CLI form, and its MCP equivalent.
 
 ---
 
@@ -37,7 +38,7 @@ Three layers, one substrate.
 
 - **Wiki** — canonical. Markdown + YAML, citation graph enforced by the gateway.
 - **NotebookLM** — heavy-synthesis service called *through* the gateway. Artifacts file back to `wiki/artifacts/` with bidirectional links.
-- **Obsidian** — visualization over the same vault. Same wikilinks, same markdown, no separate index.
+- **Obsidian** — visualization over the same vault. Same wikilinks, same markdown. (A derived FTS5 retrieval index lives at `.index/wiki.db` — gitignored, rebuildable, never canonical; markdown remains the source of truth.)
 
 The validator rejects any claim missing `[[sources/<id>]]`, so authored content cannot drift into hallucination. Drafts (`--draft`) downgrade the rule to a lint warning until `wiki finalize` runs.
 
@@ -46,9 +47,10 @@ All writes go through the gateway. Direct edits to `raw/` or `wiki/` are blocked
 ## Workflow
 
 1. **Ingest.** Drop a file or URL into `raw/inbox/` (watched), or run `wiki ingest <input>`. Type-specific converters dispatch on filename / URL pattern. API-only sources (Apple Notes today) ingest via `wiki poll <name>`.
-2. **Query.** `wiki query "<question>" [--domain X]` runs semantic retrieval across mixed media and files a synthesis page grounded in `[[sources/<id>]]` citations.
-3. **Synthesize at corpus scale.** `wiki nlm-briefing | nlm-audio | nlm-slides` route to NotebookLM and file the artifact back as a wiki page.
-4. **Browse.** Open the vault in Obsidian, or run `wiki serve` for the [web UI](#web-ui).
+2. **Retrieve.** `wiki retrieve "<question>" [--domain X]` returns a ranked, bounded context block (FTS5/BM25 + graph authority), citations preserved — the default way to ground an answer in the wiki. `wiki answer` adds one local grounded-synthesis LLM call on top; `wiki search` is ranked keyword lookup.
+3. **Query at corpus scale.** `wiki query "<question>" [--domain X]` synthesizes over a domain's *raw corpus* through NotebookLM and files a synthesis page grounded in `[[sources/<id>]]` citations. Use when the authored wiki layer isn't enough.
+4. **Synthesize artifacts.** `wiki nlm-briefing | nlm-audio | nlm-slides` route to NotebookLM and file the artifact back as a wiki page.
+5. **Browse.** Open the vault in Obsidian, or run `wiki serve` for the [web UI](#web-ui).
 
 **Start here:** [TUTORIAL.md](TUTORIAL.md).
 
@@ -149,7 +151,20 @@ scripts/install_pre_commit_hook.sh   # blocks commits on schema-drift or raw `nl
 wiki --help
 ```
 
-### Ingest and query
+### Retrieve and search (RAG)
+
+The wiki is a relevance-rankable RAG substrate (FTS5/BM25 + graph authority). Preferred call order for grounding an answer: `retrieve` → `context` → `answer` → `query`.
+
+| Command | What it does |
+|---|---|
+| `wiki retrieve "<question>" [--domain X] [--k N] [--budget CHARS]` | **Default RAG call.** One LLM-free call → bounded, ranked context block of the most relevant sections, each wrapped in `<page>` with `[[sources/<id>]]` preserved |
+| `wiki answer "<question>" [--domain X] [--file]` | Retrieve + one grounded Claude call; cites only retrieved sources (ungrounded citations stripped). NotebookLM-independent. `--file` drafts a synthesis page |
+| `wiki search "<query>" [--domain X] [--type T] [--order tiered\|bm25]` | Ranked full-text search (SQLite FTS5/BM25) over `wiki/` + `raw/` |
+| `wiki context <slug> --caller <id> [--depth N] [--budget CHARS]` | Fetch a known page + N-hop wikilink neighbors; over budget, neighbors are authority-ranked and truncated, not dropped |
+| `wiki related "<slug>" [--limit N]` | Co-citation graph neighbors of a page (shared sources), LLM-free |
+| `wiki eval-retrieval [--compare] [--k N]` | Score retrieval against the golden set (recall@k, MRR) — governs ranking changes |
+
+### Ingest, query, research
 
 | Command | What it does |
 |---|---|
@@ -157,7 +172,7 @@ wiki --help
 | `wiki batch-ingest <vault> --legacy-import --domain <slug>` | Migrate a research-notebook Obsidian vault |
 | `wiki filter <input>` | Read-only filter score against the domain policy (no writes) |
 | `wiki filter-correct <id>` | Override a past filter decision; pin as a `user-correction` example |
-| `wiki query "<question>" [--domain X] [--draft]` | Search the wiki and file a synthesis page grounded in `[[sources/<id>]]` citations |
+| `wiki query "<question>" [--domain X] [--draft]` | Synthesize over a domain's raw corpus via NotebookLM; files a synthesis page grounded in `[[sources/<id>]]` citations |
 | `wiki finalize <page> [--abandon]` | Promote a draft to strict (or delete it) |
 | `wiki research "<prompt>" [--domain X] [--review] [--execute ID] [--no-draft]` | Multi-adapter search with per-adapter query expansion. Filter routes to Haiku 4.5 in parallel (`WIKI_FILTER_MAX_WORKERS`, default 8). Synthesis pages commit with `draft: true` by default (`--no-draft` for strict citation grounding at apply_plan). `--review` pauses for plan editing. |
 
@@ -195,7 +210,7 @@ wiki --help
 | `wiki serve [--port 7474] [--bind 127.0.0.1]` | Local browser [web UI](#web-ui) |
 | `wiki mcp-serve` | Start the MCP server (stdio) — exposes every gateway op as `wiki_*` tools |
 
-`wiki index --rebuild`, `wiki search`, and `wiki migrate <name>` remain stubs.
+`wiki index --rebuild` regenerates both `index.md` and the derived FTS5 retrieval index (`.index/wiki.db`). `wiki migrate <name>` remains a stub.
 
 ## State
 
