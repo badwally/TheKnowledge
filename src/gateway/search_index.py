@@ -54,6 +54,8 @@ class IndexHit:
     score: int             # SRCH-1 tier: 3 title, 2 slug, 1 body
     rank: float            # BM25 relevance, higher = better
     inbound_count: int = 0
+    draft: bool = False
+    last_updated: str = ""
 
 
 @dataclass
@@ -284,10 +286,28 @@ def _match_expr(query: str) -> str:
 
 
 def _tier(tokens: list[str], title: str, slug_text: str) -> int:
+    """Lexical match tier: 3 = title, 2 = slug, 1 = body-only.
+
+    Bidirectional containment: tier 3 fires either when every query token is
+    in the title (the query is a phrase within the title) OR when every title
+    token is in the query (the query names this exact page — e.g. title
+    "Order Block" for query "institutional order block in price action"). The
+    second direction keeps a term's canonical page from collapsing to tier 1
+    under verbose natural-language queries.
+    """
+    if not tokens:
+        return 1
+    qset = set(tokens)
     title_l, slug_l = title.lower(), slug_text.lower()
-    if tokens and all(t in title_l for t in tokens):
+    title_tokens = _TOKEN_RE.findall(title_l)
+    if all(t in title_l for t in tokens):
         return 3
-    if tokens and all(t in slug_l for t in tokens):
+    if title_tokens and all(tt in qset for tt in title_tokens):
+        return 3
+    if all(t in slug_l for t in tokens):
+        return 2
+    slug_tokens = _TOKEN_RE.findall(slug_l)
+    if slug_tokens and all(st in qset for st in slug_tokens):
         return 2
     return 1
 
@@ -305,8 +325,10 @@ def search_fts(
     """BM25-ranked section search. Refreshes the index first (self-healing).
 
     Returns the best-matching section per page, at most `limit` pages.
-    `order="tiered"` sorts by SRCH-1 tier then BM25; `order="bm25"` by
-    BM25 alone.
+    `order="tiered"` sorts by SRCH-1 tier then BM25; `order="bm25"` by BM25
+    alone; `order="authority"` (WS5) blends BM25 with title/slug tier,
+    inbound-link authority, page-kind, and a draft penalty — lifting a term's
+    canonical page above pages that merely mention it.
     """
     expr = _match_expr(query)
     if not expr:
@@ -338,7 +360,8 @@ def search_fts(
                (SELECT domain FROM page_domains pd
                  WHERE pd.rel_path = p.rel_path LIMIT 1),
                (SELECT COUNT(*) FROM links l
-                 WHERE l.target_rel = p.rel_path)
+                 WHERE l.target_rel = p.rel_path),
+               p.draft, p.last_updated
         FROM sections
         JOIN pages p ON p.rel_path = sections.rel_path
         WHERE {' AND '.join(where)}
@@ -355,7 +378,7 @@ def search_fts(
         conn.close()
 
     best: dict[str, IndexHit] = {}
-    for rel, heading, r, snip, slug, title, ptype, dom, inbound in rows:
+    for rel, heading, r, snip, slug, title, ptype, dom, inbound, draft, last_updated in rows:
         if rel in best:
             continue
         slug_text = slug  # aliases already folded into the indexed column
@@ -370,14 +393,42 @@ def search_fts(
             score=_tier(tokens, title or "", slug_text),
             rank=-float(r),  # sqlite bm25 is lower-is-better; flip it
             inbound_count=int(inbound),
+            draft=bool(draft),
+            last_updated=str(last_updated or ""),
         )
 
     hits = list(best.values())
     if order == "bm25":
         hits.sort(key=lambda h: (-h.rank, h.title.lower()))
+    elif order == "authority":
+        hits.sort(key=lambda h: (-_authority_key(h), h.title.lower()))
     else:
         hits.sort(key=lambda h: (-h.score, -h.rank, h.title.lower()))
     return hits[:limit]
+
+
+# WS5 authority-ranking weights. BM25 stays the primary lexical signal; the
+# tier (title/slug match) and inbound-link authority lift the *canonical* page
+# of a term above pages that merely mention it; drafts and low-authority stubs
+# are demoted. Tuned against the WS4 golden set (see review Execution log M3).
+_W_TIER = 2.0
+_W_AUTHORITY = 1.5
+_W_TYPE = 1.0
+_DRAFT_PENALTY = 2.0
+# Canonical page kinds outrank source/synthesis pages that cite a term.
+_TYPE_BOOST = {"entity": 1.0, "concept": 1.0, "moc": 0.8, "synthesis": 0.2}
+
+
+def _authority_key(h: IndexHit) -> float:
+    import math
+
+    key = h.rank                      # BM25 relevance (primary)
+    key += _W_TIER * h.score          # title/slug-match canonical signal
+    key += _W_AUTHORITY * math.log1p(h.inbound_count)
+    key += _W_TYPE * _TYPE_BOOST.get(h.page_type, 0.0)
+    if h.draft:
+        key -= _DRAFT_PENALTY
+    return key
 
 
 def section_text(rel_path: str, heading: str) -> str:
@@ -396,6 +447,68 @@ def section_text(rel_path: str, heading: str) -> str:
         if h == heading:
             return text.strip()
     return ""
+
+
+@dataclass
+class RelatedPage:
+    rel_path: str
+    slug: str
+    title: str
+    page_type: str
+    shared: int       # number of shared wikilink targets (co-citation strength)
+    inbound_count: int
+
+
+def related_pages(rel_path: str, *, limit: int = 10) -> list[RelatedPage]:
+    """Pages that cite the same targets as `rel_path` (co-citation), ranked.
+
+    Co-citation strength = count of wikilink targets the two pages share.
+    Ties broken by the candidate's own inbound-link authority. Derived
+    entirely from the materialized link table — no LLM, no extra reads.
+    """
+    refresh()
+    conn = _connect()
+    try:
+        targets = [
+            t for (t,) in conn.execute(
+                "SELECT target_rel FROM links WHERE src_rel = ?", (rel_path,)
+            )
+        ]
+        if not targets:
+            return []
+        placeholders = ",".join("?" * len(targets))
+        rows = conn.execute(
+            f"""
+            SELECT l.src_rel, COUNT(*) AS shared
+            FROM links l
+            WHERE l.target_rel IN ({placeholders}) AND l.src_rel != ?
+            GROUP BY l.src_rel
+            ORDER BY shared DESC
+            LIMIT ?
+            """,
+            (*targets, rel_path, max(limit * 3, 30)),
+        ).fetchall()
+
+        out: list[RelatedPage] = []
+        for src_rel, shared in rows:
+            prow = conn.execute(
+                "SELECT slug, title, page_type FROM pages WHERE rel_path = ?",
+                (src_rel,),
+            ).fetchone()
+            if not prow:
+                continue
+            slug, title, ptype = prow
+            inbound = conn.execute(
+                "SELECT COUNT(*) FROM links WHERE target_rel = ?", (src_rel,)
+            ).fetchone()[0]
+            out.append(RelatedPage(
+                rel_path=src_rel, slug=slug, title=title or slug,
+                page_type=ptype, shared=int(shared), inbound_count=int(inbound),
+            ))
+        out.sort(key=lambda r: (-r.shared, -r.inbound_count, r.title.lower()))
+        return out[:limit]
+    finally:
+        conn.close()
 
 
 def top_pages_for_domain(

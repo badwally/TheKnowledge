@@ -64,6 +64,7 @@ SUBCOMMANDS: dict[str, str] = {
     "index": "Rebuild or update the content index",
     "search": "Search wiki + raw sources",
     "retrieve": "Assemble a bounded, ranked context block answering a question (RAG primitive)",
+    "related": "List pages co-citing the same sources as a target page (graph neighbors)",
     "eval-retrieval": "Score retrieval against the golden query set (recall@k, MRR)",
     "status": "Show recent activity, watcher state, pending queues",
     "migrate": "Apply a schema or content migration script",
@@ -169,6 +170,7 @@ IMPLEMENTED: set[str] = {
     "reingest",
     "search",
     "retrieve",
+    "related",
     "eval-retrieval",
     "index",
     "routine",
@@ -1267,6 +1269,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_retrieve.add_argument("--caller", default="cli", help="Caller identifier (logged)")
     p_retrieve.add_argument("--json", action="store_true", help="Emit the source manifest as JSON instead of the block")
 
+    # related (WS5): co-citation graph neighbors of a page
+    p_related = subparsers.add_parser("related", help=SUBCOMMANDS["related"])
+    p_related.add_argument("query", help="Target page: path, slug, or title substring")
+    p_related.add_argument("--limit", type=int, default=10, help="Max neighbors (default: 10)")
+    p_related.add_argument("--json", action="store_true", help="Emit JSON instead of text")
+
     # eval-retrieval (WS4): score retrieval against the golden set
     p_evalret = subparsers.add_parser("eval-retrieval", help=SUBCOMMANDS["eval-retrieval"])
     p_evalret.add_argument(
@@ -1509,6 +1517,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_search_cmd(ns)
     if ns.subcommand == "retrieve":
         return _run_retrieve_cmd(ns)
+    if ns.subcommand == "related":
+        return _run_related_cmd(ns)
     if ns.subcommand == "eval-retrieval":
         return _run_eval_retrieval_cmd(ns)
     if ns.subcommand == "index":
@@ -2570,6 +2580,21 @@ def _run_retrieve_cmd(ns: argparse.Namespace) -> int:
     )
     if not result.success:
         print(result.summary or "; ".join(result.errors), file=sys.stderr)
+        return 1
+    if getattr(ns, "json", False):
+        print(_json.dumps(result.data, indent=2))
+    else:
+        print(result.summary)
+    return 0
+
+
+def _run_related_cmd(ns: argparse.Namespace) -> int:
+    import json as _json
+    from gateway.ops.retrieve import related_op
+
+    result = related_op(ns.query, limit=ns.limit, caller="cli")
+    if not result.success:
+        print("; ".join(result.errors) or result.summary, file=sys.stderr)
         return 1
     if getattr(ns, "json", False):
         print(_json.dumps(result.data, indent=2))

@@ -74,7 +74,7 @@ def retrieve(
         scope=scope,
         domain=domain,
         limit=k,
-        order="bm25",
+        order="authority",  # WS5: lift canonical pages over mere mentions
         include_drafts=include_drafts,
     )
 
@@ -109,6 +109,50 @@ def retrieve(
         )
 
     return "\n\n".join(blocks), sections
+
+
+def related_op(query: str, *, limit: int = 10, caller: str | None = None) -> OperationResult:
+    """Find pages co-citing the same sources as a target page (WS5).
+
+    `query` resolves to a page the same way `wiki context` does (path, slug,
+    or title substring). Returns a ranked co-citation list — useful for an
+    agent to expand from a known page to its conceptual neighbors without an
+    LLM call.
+    """
+    from gateway.ops.context_op import _resolve_target, NoMatchError, AmbiguousQueryError
+
+    try:
+        target = _resolve_target(query)
+    except (NoMatchError, AmbiguousQueryError) as e:
+        return OperationResult(success=False, errors=[str(e)])
+
+    rel = str(target.relative_to(paths.knowledge_root()))
+    related = search_index.related_pages(rel, limit=limit)
+    if not related:
+        return OperationResult(
+            success=True,
+            summary=f"no co-citation neighbors for {rel}",
+            data={"target": rel, "related": []},
+        )
+
+    lines = [f"Related to {rel} (by shared citations):"]
+    for r in related:
+        lines.append(
+            f"  [{r.shared} shared, {r.inbound_count} inbound] "
+            f"{r.rel_path} — {r.title}"
+        )
+    return OperationResult(
+        success=True,
+        summary="\n".join(lines),
+        data={
+            "target": rel,
+            "related": [
+                {"path": r.rel_path, "slug": r.slug, "title": r.title,
+                 "type": r.page_type, "shared": r.shared, "inbound": r.inbound_count}
+                for r in related
+            ],
+        },
+    )
 
 
 def retrieve_op(

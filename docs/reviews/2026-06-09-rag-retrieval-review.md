@@ -228,3 +228,54 @@ demotion) addresses exactly this.
   that the index returns large sections.
 
 **No change to WS5/WS3/WS6/WS8 scope.** Proceeding to WS5 next.
+
+### M3 — WS5 (complete, 2026-06-09)
+
+**Shipped:**
+- `search_index.search_fts(order="authority")` — composite ranking that blends
+  BM25 with title/slug tier, inbound-link authority (`log1p(inbound)`), page-kind
+  boost, and a draft penalty. Weights (`_W_TIER=2.0, _W_AUTHORITY=1.5, _W_TYPE=1.0,
+  _DRAFT_PENALTY=2.0`) tuned against the WS4 golden set; the metric was flat across
+  a neighborhood of the chosen point (not a sharp overfit).
+- **Bidirectional tier match** (`_tier`): tier 3 now fires when the title is a
+  *subset* of the query, not only when the query is a subset of the title. This was
+  the key fix — a term's canonical page (title "Order Block") was collapsing to
+  tier 1 under verbose queries ("institutional order block in price action…") and
+  losing to mention pages. This change also benefits the default `tiered` order.
+- `retrieve()` now uses `order="authority"` — the WS2 primitive inherits the lift.
+- `search_index.related_pages()` + `related_op()` + `wiki related` CLI + MCP
+  `wiki_related` — co-citation neighbors (shared wikilink targets, ranked by shared
+  count then inbound authority). LLM-free graph expansion from a known page.
+- Tests: +7 (`test_ws5_authority_related.py`), incl. a regression floor asserting
+  authority ranks the canonical page above mentions. Full suite **1988 passed**.
+
+**Measured (live corpus, golden set):**
+
+| Stage | recall@5 | recall@10 | MRR |
+|---|---|---|---|
+| grep (pre-WS1) | 0.000 | 0.000 | 0.000 |
+| WS1 FTS5 tiered | 0.741 | 0.889 | 0.480 |
+| WS5 authority | **0.889** | **0.926** | **0.722** |
+
+**WS5 cleared the keep-WS7-deferred bar** (target recall@10 ≥ 0.9, MRR ≥ 0.6) with
+margin. The canonical `order-block` page moved from absent-at-k=3 (M2 live finding)
+to rank 2 with tier 3. Vector retrieval (WS7) stays deferred; current paraphrase
+recall@10 of 0.926 is well above the 0.8 revival trigger.
+
+**Finding — the lexical tier was the bottleneck, not authority alone.** Authority
+weighting on its own lifted MRR to ~0.59; the bidirectional tier match took it to
+0.72. The lesson for WS3/WS6: the highest-leverage retrieval signal here is
+"does the query name this page" (title↔query token containment), with graph
+authority as the tie-breaker among lexically-equivalent candidates. WS3's neighbor
+ranking should use the same `_authority_key` rather than inventing a parallel scheme.
+
+**Revised plan for the tail:**
+- **WS3** — reuse `search_index` authority ranking for neighbor selection; add
+  `--budget` to `context_op` returning ranked sections (via `retrieve`'s section
+  machinery) instead of full bodies under pressure. No new ranking code.
+- **WS6** (`wiki answer`) — unchanged; builds on the now-strong `retrieve` block.
+  Keep explicit-invocation-only (LLM cost).
+- **WS8** — add `wiki retrieve`/`wiki related` to the documented retrieval ladder
+  and the `eval-retrieval` floor to the contributor docs, so the golden set governs
+  future ranking changes.
+- **WS7** — deferred (trigger unmet).

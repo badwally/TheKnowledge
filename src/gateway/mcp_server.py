@@ -289,6 +289,19 @@ def wiki_retrieve(
 
 
 @mcp.tool()
+def wiki_related(query: str, limit: int = 10, caller: str | None = None) -> dict[str, Any]:
+    """Pages co-citing the same sources as a target page (graph neighbors).
+
+    Cheap, LLM-free expansion from a known page to its conceptual neighbors,
+    ranked by shared-citation count then inbound-link authority. `query`
+    resolves like wiki_context (path, slug, or title substring).
+    """
+    from gateway.ops.retrieve import related_op
+
+    return _serialize(related_op(query, limit=limit, caller=caller))
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,
