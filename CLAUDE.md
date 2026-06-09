@@ -38,7 +38,13 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 |---|---|
 | Ingest single source (URL, PDF, audio, m4b) | `wiki ingest <path-or-url> [--domain X] [--with-plan] [--draft]` |
 | Ingest a whole vault | `wiki batch-ingest <vault> --legacy-import --domain <slug>` |
-| Query the wiki and file a synthesis | `wiki query "<question>" [--domain X] [--draft]` |
+| **Retrieve a grounding context block (default RAG call)** | `wiki retrieve "<question>" [--domain X] [--k N] [--budget CHARS]` |
+| Answer from the wiki layer (local, NLM-independent) | `wiki answer "<question>" [--domain X] [--file]` |
+| Ranked full-text search (FTS5/BM25) | `wiki search "<query>" [--domain X] [--type T] [--order tiered\|bm25]` |
+| Fetch a page + ranked neighbors (budget-aware) | `wiki context "<slug>" --caller <id> [--depth N] [--budget CHARS]` |
+| Co-citation graph neighbors of a page | `wiki related "<slug>" [--limit N]` |
+| Score retrieval against goldens (dev) | `wiki eval-retrieval [--compare] [--k N]` |
+| Query the corpus via NotebookLM and file a synthesis | `wiki query "<question>" [--domain X] [--draft]` |
 | Generate slides from corpus | `wiki nlm-slides <domain> "<topic>"` |
 | Generate audio overview | `wiki nlm-audio <domain> "<topic>"` |
 | Generate briefing doc | `wiki nlm-briefing <domain>` |
@@ -61,7 +67,18 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 | Health check | `wiki lint [--scope <check>]` |
 | Status / watcher heartbeat / pending queue | `wiki status` |
 
-`wiki index --rebuild`, `wiki search`, `wiki migrate <name>` remain stubs (operational sugar). Full reference: `WIKI.md` § Gateway operations.
+`wiki migrate <name>` remains a stub. `wiki index --rebuild` regenerates both `index.md` and the derived FTS5 retrieval index at `.index/wiki.db`. Full reference: `WIKI.md` § Gateway operations.
+
+### Retrieval ladder (RAG)
+
+The wiki is a relevance-rankable RAG substrate (FTS5/BM25 + graph authority; see `docs/reviews/2026-06-09-rag-retrieval-review.md`). For an agent grounding an answer in wiki knowledge, prefer in this order:
+
+1. **`wiki retrieve "<question>"`** — the default first call. One LLM-free call returns a bounded, ranked context block of the most relevant sections, each wrapped in `<page path=… section=…>` with `[[sources/<id>]]` citations preserved. Use this instead of reading `index.md` wholesale or grepping.
+2. **`wiki context "<slug>" --caller …`** — when you already know the page and want its wikilink neighborhood (now `--budget`-aware: neighbors are authority-ranked and truncated, not dropped). `wiki related "<slug>"` surfaces co-citation neighbors.
+3. **`wiki answer "<question>"`** — retrieve + one grounded Claude call; cites only retrieved sources (ungrounded citations stripped). NotebookLM-independent. Makes an LLM call — explicit invocation only.
+4. **`wiki query "<question>"`** — heavy NotebookLM synthesis over a domain's *raw corpus*; files a synthesis page. Use when the wiki layer itself is insufficient and you need corpus-level synthesis.
+
+The retrieval index is derived state: gitignored, self-healing on read (mtime/size diff), and never canonical — markdown stays the source of truth. Ranking changes are governed by the golden set: run `wiki eval-retrieval --compare` before and after (`recall@k`, MRR) — do not regress it.
 
 **Shell completion (TOOL-10):** `argcomplete` is wired. Enable in your shell:
 ```bash

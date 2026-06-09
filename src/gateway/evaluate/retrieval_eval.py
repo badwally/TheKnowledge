@@ -84,8 +84,9 @@ def load_goldens(path: Path | None = None) -> list[GoldenQuery]:
 
 
 def _fts_ranked_slugs(g: GoldenQuery, limit: int) -> list[str]:
+    # Measure the ranking the `retrieve` primitive actually serves (WS5).
     hits = search_index.search_fts(
-        g.q, scope="wiki", domain=g.domain, limit=limit, order="tiered"
+        g.q, scope="wiki", domain=g.domain, limit=limit, order="authority"
     )
     return [h.slug for h in hits]
 

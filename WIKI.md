@@ -746,8 +746,12 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Generate briefing doc | `wiki nlm-briefing <domain>` | `wiki_nlm_briefing` |
 | Revise an artifact | `wiki nlm-revise <artifact-id> "<instructions>"` | `wiki_nlm_revise` |
 | Lint | `wiki lint [--scope <area>]` | `wiki_lint` |
-| Rebuild index | `wiki index --rebuild` | `wiki_index_rebuild` |
-| Search | `wiki search "<query>" [--scope wiki|raw|all]` | `wiki_search` |
+| Rebuild index (incl. FTS5) | `wiki index --rebuild` | `wiki_index_rebuild` |
+| Search (FTS5/BM25) | `wiki search "<query>" [--scope wiki|raw|all] [--order tiered|bm25]` | `wiki_search` |
+| Retrieve grounding block (RAG) | `wiki retrieve "<question>" [--domain X] [--k N] [--budget CHARS]` | `wiki_retrieve` |
+| Answer from wiki layer (local) | `wiki answer "<question>" [--domain X] [--file]` | `wiki_answer` |
+| Co-citation neighbors | `wiki related "<slug>" [--limit N]` | `wiki_related` |
+| Score retrieval vs goldens | `wiki eval-retrieval [--compare] [--k N]` | (CLI only) |
 | Status | `wiki status` | `wiki_status` |
 | Filter correction | `wiki filter-correct <source-id> --include\|--exclude --rationale "<why>"` | `wiki_filter_correct` |
 | Finalize a draft | `wiki finalize <page-path> [--abandon]` | `wiki_finalize` |
@@ -755,7 +759,7 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Propose citations for a draft page | `wiki cite --suggest <page>` | (CLI only) |
 | Run per-domain evaluation (M50) | `wiki evaluate <domain> [--limit N]` | `wiki_evaluate` |
 | Scaffold a new goldens template | `wiki evaluate --scaffold <domain>` | (via `wiki_evaluate`) |
-| Fetch read-only wiki context (M51) | `wiki context <slug-or-query> [--depth N] [--format markdown\|json] --caller <id>` | `wiki_context` |
+| Fetch read-only wiki context (M51; budget-aware) | `wiki context <slug-or-query> [--depth N] [--budget CHARS] [--format markdown\|json] --caller <id>` | `wiki_context` |
 | Bootstrap a new domain (top-down) | `wiki bootstrap-domain "<description>" <slug> [--force]` | (CLI only) |
 | Discover candidate domains (bottom-up) | `wiki discover-domains [--scope GLOB] [--since DATE] [--untagged]` | (CLI only) |
 | Promote a draft proposal | `wiki promote-domain <proposal-slug>` | (CLI only) |
@@ -1009,9 +1013,11 @@ Apple Notes, Notion, Slack, Gmail, etc. — content not available as a watchable
 
 The watcher picks up from there. No pipeline changes. New source types are additive.
 
-### 14.2 qmd or similar (BM25/vector index)
+### 14.2 Derived retrieval index (FTS5 today; vector when warranted)
 
-When the wiki crosses ~10k pages (or fuzzy search starts feeling slow), drop in qmd or equivalent. The markdown remains canonical; the index is derived state. Migration: zero — the index reads the existing files. Update `wiki search` to delegate to qmd; CLI/MCP surface unchanged.
+**Shipped (2026-06-09 RAG review, WS1/WS5):** `gateway.search_index` maintains a SQLite **FTS5** index at `.index/wiki.db` — section-level rows, BM25 ranking, plus a graph-authority order (`order="authority"`) that blends BM25 with title/slug tier, inbound-link count, page-kind, and a draft penalty. The index is **derived state**: gitignored, rebuilt by `wiki index --rebuild`, and self-healing on read (mtime/size diff per query; no write-path hook, so an index failure can't break an ingest). Markdown stays canonical. `wiki search`, `wiki retrieve`, `wiki context --budget`, and `wiki related` all read it.
+
+**Vector / hybrid retrieval is deferred**, not abandoned. Revival trigger (per `docs/reviews/2026-06-09-rag-retrieval-review.md`): the WS4 golden-set eval shows `recall@10` below ~0.8 on paraphrase queries after authority ranking, **or** the wiki crosses ~10k pages. As of the review, authority ranking holds `recall@10 = 0.926` / MRR 0.722, so the trigger is unmet. When it fires, add local embeddings alongside FTS5 with reciprocal-rank fusion; the CLI/MCP surface and the golden-set gate stay unchanged.
 
 ### 14.3 Migration from research-notebook legacy vaults
 

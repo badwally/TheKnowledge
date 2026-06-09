@@ -337,3 +337,35 @@ quota. Together they discharge the wiki-grounded slice of ARCH-12 (NLM single
 point of failure) — "what does my wiki already know" no longer requires NLM.
 
 **No re-plan needed.** Only WS8 (docs) remains.
+
+### M6 — WS8 + loop close (complete, 2026-06-09)
+
+**Shipped:**
+- `CLAUDE.md` — operation guide rows for `retrieve`/`answer`/`search`/`context`/
+  `related`/`eval-retrieval`; corrected the stale "`wiki search` remains a stub"
+  line; added a **Retrieval ladder (RAG)** section documenting the preferred call
+  order and the golden-set governance rule.
+- `WIKI.md` — §9 op table updated; §14.2 rewritten from "qmd someday" to the
+  shipped FTS5 derived-index contract with the explicit vector-deferral trigger.
+- Eval alignment: `retrieval_eval` now measures `order="authority"` — the ranking
+  `retrieve` actually serves — so `wiki eval-retrieval` reflects production, not a
+  path no primitive uses. Live result: recall@5 0.889, recall@10 0.926, MRR 0.722,
+  2 misses@10.
+
+**Loop outcome.** Six milestones (WS1+WS4 → WS2 → WS5 → WS3 → WS6 → WS8), each
+gated by the eval + full suite, each re-planning the tail from what it learned.
+The self-improving structure earned its keep twice: WS2's live finding promoted
+WS5 ahead of WS3, and WS5's own measurement showed the lexical tier — not graph
+authority alone — was the real bottleneck (bidirectional tier match took MRR from
+0.59 to 0.72). Final suite **2002 passed** (from 1945 at session start, +57).
+
+| Capability | Before | After |
+|---|---|---|
+| Wiki search | substring grep, recall 0.000 on paraphrases | FTS5/BM25 + graph authority, recall@10 0.926 |
+| Agent grounding | read 66 KB `index.md` / ad-hoc grep | one `wiki retrieve` call, bounded cited block |
+| Local Q&A | NotebookLM only (quota-bound) | `wiki answer`, NLM-independent, confabulation-guarded |
+| Graph signals | visualized in Obsidian, unused by agents | inbound-link authority in ranking; `wiki related` |
+| Ranking governance | none | golden set + `wiki eval-retrieval`, regression-gated |
+
+**Deferred (unchanged trigger):** WS7 hybrid vector retrieval — revive when
+golden recall@10 drops below ~0.8 after authority ranking, or at ~10k pages.
