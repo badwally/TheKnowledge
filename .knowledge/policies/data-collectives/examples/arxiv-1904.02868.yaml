@@ -1,0 +1,25 @@
+source_id: arxiv-1904.02868
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: 'Ghorbani & Zou, ''Data Shapley: Equitable Valuation of Data for ML'' (ICML
+  2019) — the canonical method for valuing and attributing each contributor''s marginal
+  data value; directly serves criterion 1 (how member contributions are valued and
+  access/payoff allocated).'
+pinned_at: '2026-06-10T22:01:17Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: arxiv
+  title: 'Data Shapley: Equitable Valuation of Data for Machine Learning'
+  authors:
+  - Amirata Ghorbani
+  - James Zou
+  url: https://arxiv.org/abs/1904.02868
+content_excerpt: As data becomes the fuel driving technological and economic growth,
+  a fundamental challenge is how to quantify the value of data in algorithmic predictions
+  and decisions. For example, in healthcare and consumer markets, it has been suggested
+  that individuals should be compensated for the data that they generate, but it is
+  not clear what is an equitable valuation for individual data. In this work, we develop
+  a principled framework to address data valuation in the context of supervised machine
+  lea

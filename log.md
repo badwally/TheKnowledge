@@ -42871,3 +42871,67 @@ retrieve: 'data cooperative vs data trust vs data commons vs federated learning 
 ## [2026-06-10T21:40:03Z] lint | scope=orphans | orphans=752
 
 report=.knowledge/lint/2026-06-10T21-40-03Z-orphans.md
+
+## [2026-06-10T21:41:52Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T21-41-52Z-schema-drift.md
+
+## [2026-06-10T21:42:47Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T21-42-47Z-schema-drift.md
+
+## [2026-06-10T21:57:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3063 | cache_read=0 | cache_creation=15391 | duration_ms=33223 | cost_usd=0.046105
+
+## [2026-06-10T21:57:40Z] ingest | id=arxiv-2305.16052 | type=arxiv | domains=data-collectives | filter=review | domain=data-collectives | score=0.6
+
+raw=raw/arxiv/arxiv-2305.16052.md (wiki not written: filter decision=review)
+
+## [2026-06-10T21:58:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2154 | cache_read=0 | cache_creation=15505 | duration_ms=27912 | cost_usd=0.041788
+
+## [2026-06-10T21:58:15Z] ingest | id=arxiv-1904.02868 | type=arxiv | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/arxiv/arxiv-1904.02868.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T21:58:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1581 | cache_read=0 | cache_creation=15674 | duration_ms=22397 | cost_usd=0.039261
+
+## [2026-06-10T21:58:40Z] ingest | id=web-2020-09-10-e49 | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.78
+
+raw=raw/web/web-2020-09-10-e49.md wiki=wiki/sources/web-2020-09-10-e49.md
+
+## [2026-06-10T22:00:28Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=9287 | cache_read=0 | cache_creation=32755 | duration_ms=105738 | cost_usd=0.559750
+
+## [2026-06-10T22:00:30Z] wiki-author | id=web-2020-09-10-e49 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+Jones & Tonetti (2020) is the canonical theoretical reference on nonrivalry of data and consumer data property rights — neither concept is yet covered in the data-collectives wiki, so the source warrants two new concept pages plus a paper entity; existing concept pages are draft stubs whose full bodies are not visible in this context, so updating them would risk silently dropping unseen claims.
+
+## [2026-06-10T22:01:17Z] filter-correction | id=arxiv-2305.16052 | domain=data-collectives | decision=include | original_score=0.6
+
+rationale="Tsoy & Konstantinov, 'Strategic Data Sharing between Competitors' (NeurIPS 2023) — directly models the incentive economics of competitor data pooling and the result that sharing is fostered by more product differentiation (substitutes weaken the incentive). Core to inclusion criterion 5 (economic theory of pooling, free-rider/coopetition dynamics)."
+
+## [2026-06-10T22:01:17Z] filter-correction | id=arxiv-1904.02868 | domain=data-collectives | decision=include | original_score=0.3
+
+rationale="Ghorbani & Zou, 'Data Shapley: Equitable Valuation of Data for ML' (ICML 2019) — the canonical method for valuing and attributing each contributor's marginal data value; directly serves criterion 1 (how member contributions are valued and access/payoff allocated)."
+
+## [2026-06-10T22:01:18Z] ingest | id=arxiv-2305.16052 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2305.16052.md wiki=wiki/sources/arxiv-2305.16052.md
+
+## [2026-06-10T22:03:33Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11585 | cache_read=4696 | cache_creation=21451 | duration_ms=132843 | cost_usd=0.506508
+
+## [2026-06-10T22:03:35Z] wiki-author | id=arxiv-2305.16052 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+This NeurIPS 2023 paper formalizes the economic-incentive theory of competitor data pooling — a body of theory the existing data-collectives corpus references but does not yet have a grounded home for; pages added cover the paper itself, the trade-off framework, and the headline product-differentiation result.
+
+## [2026-06-10T22:03:36Z] ingest | id=arxiv-1904.02868 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-1904.02868.md wiki=wiki/sources/arxiv-1904.02868.md
+
+## [2026-06-10T22:05:31Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8783 | cache_read=4696 | cache_creation=21612 | duration_ms=113428 | cost_usd=0.438068
+
+## [2026-06-10T22:05:32Z] wiki-author | id=arxiv-1904.02868 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=yes
+
+The Ghorbani & Zou (2019) paper introduces a method (Data Shapley) and is itself a canonical paper for data-collective contribution valuation; both warrant new pages, but existing concept pages are shown only as truncated previews so update bodies would risk dropping unseen claims and citations.
+
+## [2026-06-10T22:05:39Z] retrieve | caller=cli | query=economics of data pooling substitutes Cournot nonrivality Shapley valuation | domain=data-collectives | sections=5 | chars=5816
+
+retrieve: 'economics of data pooling substitutes Cournot nonrivality Shapley valuation' domain=data-collectives sections=5 chars=5816

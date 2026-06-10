@@ -221,3 +221,6 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2024-04-04-ad6]] · web · Data cooperative · data-collectives
 - [[sources/web-2019-04-13-653]] · web · R&D: Can data trusts increase or help data sharing? · data-collectives
 - [[sources/web-2023-04-12-931]] · web · Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms · data-collectives
+- [[sources/web-2020-09-10-e49]] · web · Nonrivalry and the Economics of Data · data-collectives
+- [[sources/arxiv-2305.16052]] · arxiv · Strategic Data Sharing between Competitors · data-collectives
+- [[sources/arxiv-1904.02868]] · arxiv · Data Shapley: Equitable Valuation of Data for Machine Learning · data-collectives

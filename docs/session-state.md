@@ -19,7 +19,7 @@ checkpoint here → schedule next.
 **Task ledger (loop tracks progress here):**
 - [x] Task 1 — bootstrap `data-collectives` domain (policy.yaml created, verified)
 - [x] Task 2 — Stream 0 precedent census (seed) — 7 source pages + 8 concept pages + entities grounded; analytical note at docs/research/data-collectives/stream-0-precedent-census.md
-- [ ] Task 3 — Stream 1 economic/incentive
+- [x] Task 3 — Stream 1 economic/incentive — grounded: nonrivalry-of-data, data-shapley, competitor-data-sharing-tradeoff, product-differentiation-collaboration (+ Jones&Tonetti, Tsoy&Konstantinov, Data Shapley sources). Vives 1984 + Farboodi-Veldkamp verified but full-text won't convert (noted in stream-1 note). KEY: substitutes in same market have weak/negative pooling incentive (Vives Cournot PD).
 - [ ] Task 4 — Stream 2 technical/architecture
 - [ ] Task 5 — Stream 3 legal
 - [ ] Task 6 — Stream 4 regulatory
@@ -81,10 +81,9 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-Execute **Task 3** — Stream 1 economic/incentive. deep-research over cooperative
-game theory, data-as-asset valuation, Shapley-value/data-Shapley pricing, free-rider
-& defection dynamics, and the contribute-your-edge paradox + documented resolutions
-(esp. whether MELLODDY's asymmetric-value-capture mechanism survives when contributors
-are substitutes, not complements — Stream 0 open question 3). Then per-stream recipe:
-ingest+filter-correct sources → grounded concept/entity pages → docs/research note →
-verify → commit. Then advance to Task 4 (Stream 2 technical/architecture).
+Execute **Task 4** — Stream 2 technical/architecture. deep-research over federated
+learning, differential privacy, secure multiparty computation, data clean rooms,
+model-sharing vs data-sharing, and the AGENTIC architecture (agents as contributors /
+consumers / governors of the pool; how agentic AI changes the trust/contribution
+calculus). Then per-stream recipe. Cross-link edge-ai-agentic, ai-and-agents. Advance
+to Task 5 (Stream 3 legal).
