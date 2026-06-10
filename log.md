@@ -41709,3 +41709,1035 @@ abandoned draft wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-im
 ## [2026-06-02T04:19:32Z] finalize-abandon | page=wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-the-role-of-model-scale-and.md | backlinks_removed=0
 
 abandoned draft wiki/synthesis/2026-05-30-what-is-the-empirical-evidence-that-the-role-of-model-scale-and.md
+
+## [2026-06-02T04:21:21Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-02T04-21-21Z-schema-drift.md
+
+## [2026-06-02T04:21:50Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-02T04-21-50Z-schema-drift.md
+
+## [2026-06-02T04:44:54Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-02T04-44-54Z-schema-drift.md
+
+## [2026-06-09T17:17:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4324 | cache_read=0 | cache_creation=23120 | duration_ms=46777 | cost_usd=0.050528
+
+## [2026-06-09T17:17:51Z] ingest | id=web-2026-03-01-17a | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.8
+
+raw=raw/web/web-2026-03-01-17a.md wiki=wiki/sources/web-2026-03-01-17a.md
+
+## [2026-06-09T17:18:37Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=3070 | cache_read=0 | cache_creation=25739 | duration_ms=44983 | cost_usd=0.142577
+
+## [2026-06-09T17:18:38Z] wiki-author | id=web-2026-03-01-17a | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+Source is the primary-authority M&A close announcement confirming Vertica Capital Partners' acquisition of Condo Control Central (Feb 26, 2024), warranting new entity pages for both the acquirer and the acquired platform — neither exists in the wiki.
+
+## [2026-06-09T17:19:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3159 | cache_read=0 | cache_creation=24257 | duration_ms=35377 | cost_usd=0.046124
+
+## [2026-06-09T17:19:23Z] ingest | id=web-2025-08-01-829 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2025-08-01-829.md (wiki not written: filter decision=review)
+
+## [2026-06-09T17:19:41Z] filter-correction | id=web-2025-08-01-829 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Sell-side advisor confirmation of Condo Control acquisition by Vertica Capital; establishes deal type as Founder Sale and Feb 2024 close date — two facts not derivable from press releases alone and cited in Finding-0042.'
+
+## [2026-06-09T17:19:49Z] ingest | id=web-2025-08-01-829 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-08-01-829.md wiki=wiki/sources/web-2025-08-01-829.md
+
+## [2026-06-09T17:20:57Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=4496 | cache_read=3344 | cache_creation=22471 | duration_ms=66533 | cost_usd=0.152715
+
+## [2026-06-09T17:20:58Z] wiki-author | id=web-2025-08-01-829 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=no
+
+Source is the JEGI LEONIS sell-side advisor announcement confirming Condo Control's acquisition by Vertica Capital as a Founder Sale (Feb 2024 close) — facts cited in Finding-0042 that require new entity pages for Condo Control, Vertica Capital, and JEGI LEONIS.
+
+## [2026-06-09T17:21:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2954 | cache_read=0 | cache_creation=24581 | duration_ms=34750 | cost_usd=0.045504
+
+## [2026-06-09T17:21:42Z] ingest | id=web-2026-01-01-c85 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2026-01-01-c85.md wiki=wiki/sources/web-2026-01-01-c85.md
+
+## [2026-06-09T17:23:02Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7516 | cache_read=0 | cache_creation=36339 | duration_ms=79328 | cost_usd=0.415044
+
+## [2026-06-09T17:23:04Z] wiki-author | id=web-2026-01-01-c85 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=no
+
+Source is a Vertica Capital Partners press release naming a June 2024 growth-equity investment in Property Control and disclosing operating metrics for Vertica's prior portfolio company Condo Control; creates the four new entities (investor, both portfolio companies, named spokesperson) needed for acquirer / competitive-landscape tracking in condo-software.
+
+## [2026-06-09T17:23:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2981 | cache_read=5801 | cache_creation=18935 | duration_ms=35299 | cost_usd=0.039162
+
+## [2026-06-09T17:23:48Z] ingest | id=web-2025-08-29-62d | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.55
+
+raw=raw/web/web-2025-08-29-62d.md (wiki not written: filter decision=review)
+
+## [2026-06-09T17:23:59Z] filter-correction | id=web-2025-08-29-62d | domain=condo-software | decision=include | original_score=0.55
+
+rationale="Primary source for Property Control parent brand launch (Aug 29 2025): names 4 sub-products (Condo Control, HOA Central, HOA Sites, Patrol Points), single sign-on, CEO Brian Bosscher, and 'open API' claim — all cited in Finding-0042 and vendors/condo-control.md. These facts cannot be derived from the Vertica June 2024 release."
+
+## [2026-06-09T17:24:05Z] ingest | id=web-2025-08-29-62d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-08-29-62d.md wiki=wiki/sources/web-2025-08-29-62d.md
+
+## [2026-06-09T17:25:36Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7981 | cache_read=4696 | cache_creation=32033 | duration_ms=89052 | cost_usd=0.402104
+
+## [2026-06-09T17:25:37Z] wiki-author | id=web-2025-08-29-62d | updates=6 | created=5 | updated=1 | contradictions=0 | draft=no
+
+Source is the primary announcement of Property Control parent-brand launch; informs the Property Control entity and warrants creating the four named sub-product entities and CEO Brian Bosscher.
+
+## [2026-06-09T17:26:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2899 | cache_read=0 | cache_creation=24914 | duration_ms=36213 | cost_usd=0.045645
+
+## [2026-06-09T17:26:22Z] ingest | id=web-2026-04-24-ee4 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-04-24-ee4.md (wiki not written: filter decision=review)
+
+## [2026-06-09T17:26:33Z] filter-correction | id=web-2026-04-24-ee4 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Live Halifax NS deployment fact for Finding-0042 GTM channel analysis: Sonco Group operates across Atlantic Canada with Condo Control, named contact Kathy Beaman, 70-80% resident portal adoption rate. Confirms Condo Control has live traction in the Longspan primary launch market — actionable intelligence for Finding-0042 partner/channel assessment.'
+
+## [2026-06-09T17:26:39Z] ingest | id=web-2026-04-24-ee4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-24-ee4.md wiki=wiki/sources/web-2026-04-24-ee4.md
+
+## [2026-06-09T17:27:42Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=4708 | cache_read=4696 | cache_creation=32440 | duration_ms=61300 | cost_usd=0.322823
+
+## [2026-06-09T17:27:42Z] wiki-author | id=web-2026-04-24-ee4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source documents a Halifax-based property-management firm's deployment of Condo Control across Atlantic Canada — a named live customer in Longspan's primary launch market — warranting a new Sonco Group entity page; no existing wiki entity covers this organization and no provided pages contain claims that conflict with the source.
+
+## [2026-06-09T17:28:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3178 | cache_read=0 | cache_creation=24666 | duration_ms=38538 | cost_usd=0.046730
+
+## [2026-06-09T17:28:28Z] ingest | id=web-2026-01-29-992 | type=web | domains=condo-software | filter=review | domain=condo-software | score=0.5
+
+raw=raw/web/web-2026-01-29-992.md (wiki not written: filter decision=review)
+
+## [2026-06-09T17:28:38Z] filter-correction | id=web-2026-01-29-992 | domain=condo-software | decision=include | original_score=0.5
+
+rationale='Verified pricing structure for Finding-0042: .50/mo starting price (<50 units), Standard/Modern/Premium Living tiers, AI add-on available at all tiers. These are cited facts in vendors/condo-control.md that have no other citable source in the wiki.'
+
+## [2026-06-09T17:28:44Z] ingest | id=web-2026-01-29-992 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-29-992.md wiki=wiki/sources/web-2026-01-29-992.md
+
+## [2026-06-09T17:30:36Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=6696 | cache_read=3344 | cache_creation=23304 | duration_ms=111040 | cost_usd=0.188839
+
+## [2026-06-09T17:30:37Z] wiki-author | id=web-2026-01-29-992 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Creates a new Condo Control entity page supplying the first citable wiki record of its pricing tiers, feature matrix, AI add-on availability, customer ratings, and reserve-study capability gap — facts previously grounded only in the local vendors/condo-control.md file with no wiki source.
+
+## [2026-06-09T17:33:21Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=9388 | cache_read=3344 | cache_creation=22763 | duration_ms=156043 | cost_usd=0.227190
+
+## [2026-06-09T17:33:21Z] wiki-author | id=web-2025-03-20-542 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=no
+
+Source establishes Condo Control's five public integration-category surfaces (Financial, Payment processing, Security, Hardware, Workflow) and Zapier connectivity — load-bearing for the integration-surface map of Longspan's primary Y1 Canadian CAM integration target; the condo-control entity page is absent from the wiki despite being listed in the source's wiki_pages field.
+
+## [2026-06-09T17:33:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2102 | cache_read=0 | cache_creation=24765 | duration_ms=26831 | cost_usd=0.041474
+
+## [2026-06-09T17:33:59Z] ingest | id=web-2026-02-20-7dd | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-02-20-7dd.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:34:11Z] filter-correction | id=web-2026-02-20-7dd | domain=condo-software | decision=include | original_score=0.2
+
+rationale='Source establishes two specific facts for Finding-0042 competitive analysis: (1) reserve-study PDF summarization capability exists (positions as document Q&A, NOT an adequacy engine — load-bearing distinction for Longspan positioning); (2) 150-language support claim. Both are product-differentiation claims cited in vendors/condo-control.md.'
+
+## [2026-06-09T17:34:17Z] ingest | id=web-2026-02-20-7dd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-20-7dd.md wiki=wiki/sources/web-2026-02-20-7dd.md
+
+## [2026-06-09T17:35:04Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=3390 | cache_read=4696 | cache_creation=32433 | duration_ms=46456 | cost_usd=0.289829
+
+## [2026-06-09T17:36:38Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=6415 | cache_read=37129 | cache_creation=0 | duration_ms=82236 | cost_usd=0.178964
+
+## [2026-06-09T17:36:39Z] wiki-author | id=web-2026-02-20-7dd | updates=2 | created=2 | updated=0 | contradictions=0 | draft=yes
+
+Source establishes Condo Control's AI Property Manager Assistant as a document-Q&A / summarization product (not a reserve-adequacy engine) with 150+ language support — both load-bearing for Longspan positioning per user correction.
+
+## [2026-06-09T17:37:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1807 | cache_read=0 | cache_creation=24482 | duration_ms=22557 | cost_usd=0.039646
+
+## [2026-06-09T17:37:12Z] ingest | id=web-2024-12-17-df4 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2024-12-17-df4.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:37:24Z] filter-correction | id=web-2024-12-17-df4 | domain=condo-software | decision=include | original_score=0.3
+
+rationale='Source provides three cited facts for Finding-0042 not present in any other citable wiki source: (1) founding year 2008 by Brian Bosscher; (2) 50+ employees headcount; (3) 3.5M+ users metric. These are load-bearing for the vendor profile in vendors/condo-control.md.'
+
+## [2026-06-09T17:37:30Z] ingest | id=web-2024-12-17-df4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-12-17-df4.md wiki=wiki/sources/web-2024-12-17-df4.md
+
+## [2026-06-09T17:38:41Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5639 | cache_read=0 | cache_creation=43014 | duration_ms=70253 | cost_usd=0.409837
+
+## [2026-06-09T17:40:03Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5640 | cache_read=4696 | cache_creation=31995 | duration_ms=72718 | cost_usd=0.343342
+
+## [2026-06-09T17:40:04Z] wiki-author | id=web-2024-12-17-df4 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=yes
+
+Vendor About page provides founder origin narrative (Brian Bosscher, 2006 condo purchase → 2007 board service → Condo Control founded) plus stated mission and corporate values; warrants a dedicated Condo Control entity (not yet on disk despite heavy project-memory references) and a Brian Bosscher person entity, both citing the new source.
+
+## [2026-06-09T17:40:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1877 | cache_read=0 | cache_creation=29782 | duration_ms=23348 | cost_usd=0.046620
+
+## [2026-06-09T17:40:38Z] ingest | id=web-2025-01-13-d27 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2025-01-13-d27.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:40:50Z] filter-correction | id=web-2025-01-13-d27 | domain=condo-software | decision=include | original_score=0.4
+
+rationale='Source provides independently-verified G2 review metrics for Finding-0042 competitive analysis: 4.9/5 score, 254 reviews, only condo/HOA specialist among 15 G2 Winter 2025 leaders. These are third-party verified scores, not vendor self-claims — citable for competitive positioning in vendors/condo-control.md.'
+
+## [2026-06-09T17:40:57Z] ingest | id=web-2025-01-13-d27 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-13-d27.md wiki=wiki/sources/web-2025-01-13-d27.md
+
+## [2026-06-09T17:42:22Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7036 | cache_read=4696 | cache_creation=32705 | duration_ms=84445 | cost_usd=0.382679
+
+## [2026-06-09T17:42:23Z] wiki-author | id=web-2025-01-13-d27 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=no
+
+The source is a vendor-blog announcement of Condo Control's G2 Winter 2025 Leader award; no entity page yet exists for Condo Control or G2, so two new entity pages capture the third-party-verified competitive-positioning facts the user flagged as load-bearing for Finding-0042.
+
+## [2026-06-09T17:42:57Z] cite | page=wiki/concepts/document-qa-vs-reserve-adequacy.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/concepts/document-qa-vs-reserve-adequacy.md
+
+## [2026-06-09T17:43:12Z] cite | page=wiki/entities/condo-control-ai-property-manager-assistant.md | additions=1 | sources=1
+
+added 1 citation(s) to wiki/entities/condo-control-ai-property-manager-assistant.md
+
+## [2026-06-09T17:43:19Z] finalize | page=wiki/entities/condo-control-ai-property-manager-assistant.md
+
+finalized wiki/entities/condo-control-ai-property-manager-assistant.md
+
+## [2026-06-09T17:43:19Z] finalize | page=wiki/concepts/document-qa-vs-reserve-adequacy.md
+
+finalized wiki/concepts/document-qa-vs-reserve-adequacy.md
+
+## [2026-06-09T17:50:37Z] edit-section | page=wiki/entities/vertica-capital.md | section=Summary
+
+edited section 'Summary' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:50:47Z] edit-section | page=wiki/entities/vertica-capital.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:50:54Z] edit-section | page=wiki/entities/vertica-capital.md | section=Sources
+
+edited section 'Sources' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:51:00Z] edit-section | page=wiki/entities/vertica-capital.md | section=Related
+
+edited section 'Related' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:51:13Z] edit-section | page=wiki/entities/vertica-capital-partners.md | section=Summary
+
+edited section 'Summary' in wiki/entities/vertica-capital-partners.md
+
+## [2026-06-09T17:51:19Z] edit-section | page=wiki/entities/vertica-capital-partners.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/vertica-capital-partners.md
+
+## [2026-06-09T17:51:26Z] edit-section | page=wiki/entities/vitaly-vorobeychik.md | section=Summary
+
+edited section 'Summary' in wiki/entities/vitaly-vorobeychik.md
+
+## [2026-06-09T17:51:32Z] edit-section | page=wiki/entities/vitaly-vorobeychik.md | section=Related
+
+edited section 'Related' in wiki/entities/vitaly-vorobeychik.md
+
+## [2026-06-09T17:52:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1857 | cache_read=0 | cache_creation=24543 | duration_ms=23417 | cost_usd=0.039972
+
+## [2026-06-09T17:52:03Z] ingest | id=web-2026-01-01-f2e | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-01-01-f2e.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:52:16Z] filter-correction | id=web-2026-01-01-f2e | domain=condo-software | decision=include | original_score=0.2
+
+rationale='Vertica Capital Partners Fund II close (M, Aug 2025) — direct evidence of fund size, LP base, check-size range, and hold-period thesis for the primary Canadian condo-software acquirer. Load-bearing for the Canadian acquisition-path exit thesis in gtm/canadian-acquisition-path.md.'
+
+## [2026-06-09T17:52:21Z] ingest | id=web-2026-01-01-f2e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-f2e.md wiki=wiki/sources/web-2026-01-01-f2e.md
+
+## [2026-06-09T17:53:47Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=6957 | cache_read=4696 | cache_creation=32375 | duration_ms=84764 | cost_usd=0.378642
+
+## [2026-06-09T17:54:28Z] edit-section | page=wiki/entities/vertica-capital.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:54:38Z] edit-section | page=wiki/entities/vertica-capital.md | section=Sources
+
+edited section 'Sources' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:55:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1778 | cache_read=0 | cache_creation=24883 | duration_ms=23187 | cost_usd=0.040002
+
+## [2026-06-09T17:55:09Z] ingest | id=web-2026-01-01-e48 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-01-01-e48.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:55:22Z] filter-correction | id=web-2026-01-01-e48 | domain=condo-software | decision=include | original_score=0.2
+
+rationale="Vertica Capital Partners homepage — confirms Property Control/Condo Control as the 'HOA & Property Management Software' portfolio entry with 7,000+ properties and three strategic acquisitions. Authoritative for fund team (Vitaly + Philip Vorobeychik, Hoey as CFO, Javna as Principal). Load-bearing for the Canadian acquisition-path thesis — names the acquirer portfolio and team."
+
+## [2026-06-09T17:55:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1923 | cache_read=0 | cache_creation=24549 | duration_ms=21947 | cost_usd=0.040309
+
+## [2026-06-09T17:55:51Z] ingest | id=web-2020-03-03-165 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2020-03-03-165.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:55:59Z] filter-correction | id=web-2020-03-03-165 | domain=condo-software | decision=include | original_score=0.0
+
+rationale='Vertica Capital Fund I close (M, March 2020) — establishes Fund I size, founding date, and hold-period baseline for calculating fund lifecycle relative to the Condo Control acquisition (Feb 2024, four years into Fund I). Load-bearing for exit-timing projection in the Canadian acquisition-path thesis.'
+
+## [2026-06-09T17:56:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2692 | cache_read=0 | cache_creation=24451 | duration_ms=34790 | cost_usd=0.044032
+
+## [2026-06-09T17:56:41Z] ingest | id=web-2025-07-02-a17 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2025-07-02-a17.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:57:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1467 | cache_read=5170 | cache_creation=18836 | duration_ms=18043 | cost_usd=0.031405
+
+## [2026-06-09T17:57:14Z] ingest | id=web-2025-10-31-2a4 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2025-10-31-2a4.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T17:57:58Z] filter-correction | id=web-2025-07-02-a17 | domain=condo-software | decision=include | original_score=0.3
+
+rationale="Property Control homepage — confirms Condo Manager as a named sister product within the Property Control portfolio (links to condomanager.com under 'Products'). Also confirms Condo Control as a sister product. This is the authoritative source for the Condo Manager acquisition into Property Control, in absence of a standalone acquisition press release. Load-bearing for Canadian roll-up landscape in gtm/canadian-acquisition-path.md."
+
+## [2026-06-09T17:57:59Z] filter-correction | id=web-2025-10-31-2a4 | domain=condo-software | decision=include | original_score=0.0
+
+rationale="Condo Manager homepage — establishes product identity, Canadian-market positioning (bilingual EN/FR), and accounting-first feature posture for the platform now inside the Property Control roll-up. Confirms condomanager.com as a distinct live product brand under Vertica's Property Control umbrella."
+
+## [2026-06-09T17:58:23Z] edit-section | page=wiki/entities/vertica-capital.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:58:34Z] edit-section | page=wiki/entities/vertica-capital.md | section=Sources
+
+edited section 'Sources' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:58:40Z] edit-section | page=wiki/entities/vertica-capital.md | section=Related
+
+edited section 'Related' in wiki/entities/vertica-capital.md
+
+## [2026-06-09T17:58:57Z] edit-section | page=wiki/entities/property-control.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/property-control.md
+
+## [2026-06-09T17:59:02Z] edit-section | page=wiki/entities/property-control.md | section=Related
+
+edited section 'Related' in wiki/entities/property-control.md
+
+## [2026-06-09T17:59:39Z] concept-add | slug=condo-manager | domain=condo-software | draft=no | cite_sources=(none)
+
+created wiki/concepts/condo-manager.md
+
+## [2026-06-09T18:00:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3945 | cache_read=0 | cache_creation=24252 | duration_ms=44282 | cost_usd=0.050048
+
+## [2026-06-09T18:00:31Z] ingest | id=web-2026-01-29-3d0 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2026-01-29-3d0.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T18:01:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2233 | cache_read=5059 | cache_creation=19522 | duration_ms=26201 | cost_usd=0.036081
+
+## [2026-06-09T18:01:04Z] ingest | id=web-2024-12-02-55a | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2024-12-02-55a.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T18:01:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1113 | cache_read=7037 | cache_creation=22135 | duration_ms=14031 | cost_usd=0.033945
+
+## [2026-06-09T18:01:24Z] ingest | id=web-2023-12-05-282 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2023-12-05-282.md (wiki not written: filter decision=rejected)
+
+## [2026-06-09T18:01:48Z] filter-correction | id=web-2026-01-29-3d0 | domain=condo-software | decision=include | original_score=0.3
+
+rationale="Inhabit/Shiftsuite product page — Shiftsuite is a named Canadian condo association management platform serving the Canadian market since 2002, now under Inhabit ownership (~600K units across Inhabit's portfolio). Establishes Inhabit as a secondary Canadian acquirer candidate for the condo-software landscape. Load-bearing for gtm/canadian-acquisition-path.md acquirer landscape section."
+
+## [2026-06-09T18:01:49Z] filter-correction | id=web-2024-12-02-55a | domain=condo-software | decision=include | original_score=0.2
+
+rationale="Inhabit capital stack announcement — establishes Blackstone Tactical Opportunities + Greater Sum Ventures + Goldman Sachs + Insight Partners + PSG as Inhabit's investor base after the Dec 2024 preferred equity round. Combined with the Shiftsuite/condo-software connection, this is load-bearing for the Canadian acquirer landscape: Inhabit's capital structure (Blackstone-backed) makes it a credible secondary acquirer candidate."
+
+## [2026-06-09T18:01:49Z] filter-correction | id=web-2023-12-05-282 | domain=condo-software | decision=include | original_score=0.0
+
+rationale='Rentsync / BuildingStack merger (Dec 2023) — Canadian PropTech consolidation event. Rentsync + BuildingStack serve the rental housing market, not condo/HOA directly, but this merger is a landscape comp for Canadian PropTech M&A velocity and cross-segment consolidation trends that contextualize the Vertica condo roll-up thesis in gtm/canadian-acquisition-path.md.'
+
+## [2026-06-09T18:02:05Z] ingest | id=web-2026-01-01-e48 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-e48.md wiki=wiki/sources/web-2026-01-01-e48.md
+
+## [2026-06-09T18:03:45Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7845 | cache_read=4696 | cache_creation=33176 | duration_ms=98985 | cost_usd=0.405848
+
+## [2026-06-09T18:04:06Z] edit-section | page=wiki/entities/vertica-capital-partners.md | section=Related
+
+edited section 'Related' in wiki/entities/vertica-capital-partners.md
+
+## [2026-06-09T18:04:14Z] ingest | id=web-2020-03-03-165 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2020-03-03-165.md wiki=wiki/sources/web-2020-03-03-165.md
+
+## [2026-06-09T18:04:19Z] ingest | id=web-2025-07-02-a17 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-07-02-a17.md wiki=wiki/sources/web-2025-07-02-a17.md
+
+## [2026-06-09T18:04:20Z] ingest | id=web-2025-10-31-2a4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-31-2a4.md wiki=wiki/sources/web-2025-10-31-2a4.md
+
+## [2026-06-09T18:04:27Z] ingest | id=web-2026-01-29-3d0 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-29-3d0.md wiki=wiki/sources/web-2026-01-29-3d0.md
+
+## [2026-06-09T18:04:29Z] ingest | id=web-2024-12-02-55a | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-12-02-55a.md wiki=wiki/sources/web-2024-12-02-55a.md
+
+## [2026-06-09T18:04:30Z] ingest | id=web-2023-12-05-282 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-12-05-282.md wiki=wiki/sources/web-2023-12-05-282.md
+
+## [2026-06-09T18:04:51Z] concept-add | slug=inhabit | domain=condo-software | draft=no | cite_sources=(none)
+
+created wiki/concepts/inhabit.md
+
+## [2026-06-09T18:05:03Z] concept-add | slug=shiftsuite | domain=condo-software | draft=no | cite_sources=(none)
+
+created wiki/concepts/shiftsuite.md
+
+## [2026-06-09T18:05:22Z] concept-add | slug=rentsync-buildingstack-merger | domain=condo-software | draft=no | cite_sources=(none)
+
+created wiki/concepts/rentsync-buildingstack-merger.md
+
+## [2026-06-09T18:05:44Z] nlm-add | id=web-2020-03-03-165 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.prnewswire.com/news-releases/vertica-capital-partners-closes-205-million-private-equity-fund-focused-on-the-software-sector-301015280.html
+
+## [2026-06-09T18:05:52Z] nlm-add | id=web-2023-12-05-282 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.newswire.ca/news-releases/rentsync-announces-strategic-merger-with-building-stack-825085528.html
+
+## [2026-06-09T18:05:57Z] nlm-add | id=web-2024-12-02-55a | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://inhabit.com/news/inhabit-secures-investment-from-blackstone-and-greater-sum-ventures-to-accelerate-innovation-and-growth-in-property-management-technology/
+
+## [2026-06-09T18:06:05Z] nlm-add | id=web-2024-12-17-df4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/about-us/
+
+## [2026-06-09T18:06:13Z] nlm-add | id=web-2025-01-13-d27 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/blog/condo-control-wins-winter-2025-leader-award/
+
+## [2026-06-09T18:06:20Z] nlm-add | id=web-2025-07-02-a17 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://propertycontrol.com/
+
+## [2026-06-09T18:06:24Z] nlm-add | id=web-2025-08-01-829 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://jl-co.com/transactions/condo-control-has-been-sold-to-vertica/
+
+## [2026-06-09T18:06:32Z] nlm-add | id=web-2025-08-29-62d | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/blog/property-control-launches-as-the-parent-company/
+
+## [2026-06-09T18:06:38Z] nlm-add | id=web-2025-10-31-2a4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condomanager.com/
+
+## [2026-06-09T18:06:43Z] nlm-add | id=web-2026-01-01-c85 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.verticacp.com/news/property-control-investment.html
+
+## [2026-06-09T18:06:49Z] nlm-add | id=web-2026-01-01-e48 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.verticacp.com/
+
+## [2026-06-09T18:06:55Z] nlm-add | id=web-2026-01-01-f2e | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.verticacp.com/news/fund-ii-close.html
+
+## [2026-06-09T18:07:01Z] nlm-add | id=web-2026-01-29-3d0 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://inhabit.com/solutions/shiftsuite/
+
+## [2026-06-09T18:07:09Z] nlm-add | id=web-2026-01-29-992 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/pricing/
+
+## [2026-06-09T18:07:16Z] nlm-add | id=web-2026-02-20-7dd | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/communication/ai-property-manager-assistant/
+
+## [2026-06-09T18:07:21Z] nlm-add | id=web-2026-03-01-17a | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.fasken.com/en/experience/2026/03/vertica-capital-completes-acquisition-of-condo-control
+
+## [2026-06-09T18:07:28Z] nlm-add | id=web-2026-04-24-ee4 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.condocontrol.com/resources/sonco-group-success-with-condo-control-driving-digital-transformation-across-atlantic-canada/
+
+## [2026-06-09T18:42:34Z] task-error | task=9e392c7c-7bc9-4cda-b2da-7c23be45b6b2
+
+task 9e392c7c-7bc9-4cda-b2da-7c23be45b6b2 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-12/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T18:48:25Z] task-error | task=14244e82-0ca0-4777-94f3-7ed1f699d04d
+
+task 14244e82-0ca0-4777-94f3-7ed1f699d04d failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-15/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T18:49:07Z] task-error | task=4649b87e-f4c6-4235-b447-75b6ded4aef7
+
+task 4649b87e-f4c6-4235-b447-75b6ded4aef7 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-16/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T18:50:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T18-50-59Z-schema-drift.md
+
+## [2026-06-09T18:53:35Z] retrieve | caller=cli | query=institutional order block in price action trading | domain=trading-and-markets | sections=3 | chars=1690
+
+retrieve: 'institutional order block in price action trading' domain=trading-and-markets sections=3 chars=1690
+
+## [2026-06-09T18:54:02Z] task-error | task=8aeb26ab-7c12-400e-877b-4ea58cb9500b
+
+task 8aeb26ab-7c12-400e-877b-4ea58cb9500b failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-18/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T18:54:36Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T18-54-36Z-schema-drift.md
+
+## [2026-06-09T18:59:00Z] retrieve | caller=cli | query=institutional order block in price action trading | domain=trading-and-markets | sections=3 | chars=1690
+
+retrieve: 'institutional order block in price action trading' domain=trading-and-markets sections=3 chars=1690
+
+## [2026-06-09T19:00:41Z] task-error | task=50668415-3f42-4c33-9c83-398fe4385c53
+
+task 50668415-3f42-4c33-9c83-398fe4385c53 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-21/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:01:26Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-01-26Z-schema-drift.md
+
+## [2026-06-09T19:04:18Z] task-error | task=a56ceee7-8ff8-4421-83cb-027988686882
+
+task a56ceee7-8ff8-4421-83cb-027988686882 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-24/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:05:16Z] task-error | task=46fe6585-f4ff-4917-a5bb-c237b06a2c6a
+
+task 46fe6585-f4ff-4917-a5bb-c237b06a2c6a failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-28/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:05:44Z] task-error | task=b563e8c1-777d-4afb-97a0-bb47e071f338
+
+task b563e8c1-777d-4afb-97a0-bb47e071f338 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-29/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:06:06Z] task-error | task=50f52850-8231-4b82-8461-d583e867f53c
+
+task 50f52850-8231-4b82-8461-d583e867f53c failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-30/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:06:30Z] task-error | task=ae21cfb7-8ae3-4bcb-b110-3d7882ae3e74
+
+task ae21cfb7-8ae3-4bcb-b110-3d7882ae3e74 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-31/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:06:54Z] task-error | task=7d0e67b4-6044-45c4-b4a4-62815462659c
+
+task 7d0e67b4-6044-45c4-b4a4-62815462659c failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-32/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:07:19Z] task-error | task=f1194441-102f-42eb-9552-4ca03e296a17
+
+task f1194441-102f-42eb-9552-4ca03e296a17 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-33/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:08:37Z] task-error | task=a3849b33-60e4-45e9-9bfc-415734eec6bd
+
+task a3849b33-60e4-45e9-9bfc-415734eec6bd failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-34/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:08:54Z] task-error | task=cd8d3597-7ada-4f4f-9aac-06d344824d5b
+
+task cd8d3597-7ada-4f4f-9aac-06d344824d5b failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-35/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:09:12Z] task-error | task=b25813ce-fe73-46b2-9ae0-efdb8609cdd7
+
+task b25813ce-fe73-46b2-9ae0-efdb8609cdd7 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-36/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:09:55Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-09-55Z-schema-drift.md
+
+## [2026-06-09T19:13:12Z] task-error | task=c5e63a9a-2044-4642-857c-51cf325a3dcc
+
+task c5e63a9a-2044-4642-857c-51cf325a3dcc failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-38/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:13:45Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-13-45Z-schema-drift.md
+
+## [2026-06-09T19:15:40Z] task-error | task=0ca06dd2-2c62-4acd-b74c-f06380a5d1d3
+
+task 0ca06dd2-2c62-4acd-b74c-f06380a5d1d3 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-39/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:17:13Z] task-error | task=0c40e737-53a4-4fe7-b5c4-8f38e6aac8e5
+
+task 0c40e737-53a4-4fe7-b5c4-8f38e6aac8e5 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-41/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:17:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-17-28Z-schema-drift.md
+
+## [2026-06-09T19:20:42Z] task-error | task=9ce0f06a-0574-4b4e-91e6-a97537f8a1b7
+
+task 9ce0f06a-0574-4b4e-91e6-a97537f8a1b7 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-42/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:21:08Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-21-08Z-schema-drift.md
+
+## [2026-06-09T19:22:34Z] retrieve | caller=cli | query=graph authority ranking for retrieval | domain= | sections=2 | chars=3112
+
+retrieve: 'graph authority ranking for retrieval' domain=- sections=2 chars=3112
+
+## [2026-06-09T19:26:56Z] task-error | task=00572383-9e4f-4e62-9792-495692fc8c54
+
+task 00572383-9e4f-4e62-9792-495692fc8c54 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-43/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-09T19:31:54Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-31-54Z-schema-drift.md
+
+## [2026-06-09T19:46:15Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T19-46-15Z-schema-drift.md
+
+## [2026-06-09T20:16:14Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-09T20-16-14Z-schema-drift.md
+
+## [2026-06-10T03:12:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4116 | cache_read=0 | cache_creation=23690 | duration_ms=49091 | cost_usd=0.050201
+
+## [2026-06-10T03:12:40Z] ingest | id=web-2026-06-03-cc7 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2026-06-03-cc7.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T03:12:57Z] filter-correction | id=web-2026-06-03-cc7 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale="Parent-designated load-bearing source for SmartProperty Atlas competitive-intelligence read (Finding-0043). PRISM data-model description, recursive-learner mechanism, local-climate covariate list, Fannie Mae LL-2026-03 compliance positioning, and the 'billions in replacement values / thousands of communities' scale claim are all methodologically material for the condo-capital-infra competitive methodology map. Thin by academic standards but the only primary source disclosing PRISM architecture."
+
+## [2026-06-10T03:13:01Z] ingest | id=web-2026-06-03-cc7 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-03-cc7.md wiki=wiki/sources/web-2026-06-03-cc7.md
+
+## [2026-06-10T03:15:50Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14073 | cache_read=0 | cache_creation=37301 | duration_ms=167206 | cost_usd=0.584981
+
+## [2026-06-10T03:15:51Z] wiki-author | id=web-2026-06-03-cc7 | updates=3 | created=2 | updated=1 | contradictions=1 | draft=no
+
+SmartProperty Atlas is a substantive new product launch (June 3, 2026) introducing the named PRISM data model and recursive-learner positioning, plus Fannie Mae LL-2026-03 compliance framing — requires a new product entity, a new PRISM entity, and a Living Reserve Study concept update to reflect that Atlas is now the engine behind the brand.
+
+## [2026-06-10T03:16:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4465 | cache_read=0 | cache_creation=25700 | duration_ms=48987 | cost_usd=0.054458
+
+## [2026-06-10T03:16:47Z] ingest | id=web-2026-06-02-fce | type=web | domains=condo-capital-infra | filter=included | domain=condo-capital-infra | score=0.7
+
+raw=raw/web/web-2026-06-02-fce.md wiki=wiki/sources/web-2026-06-02-fce.md
+
+## [2026-06-10T03:18:34Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8734 | cache_read=4696 | cache_creation=33204 | duration_ms=105556 | cost_usd=0.428248
+
+## [2026-06-10T03:19:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1744 | cache_read=0 | cache_creation=29681 | duration_ms=23988 | cost_usd=0.045829
+
+## [2026-06-10T03:19:07Z] ingest | id=web-2025-01-01-1ee | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2025-01-01-1ee.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T03:19:17Z] filter-correction | id=web-2025-01-01-1ee | domain=condo-software | decision=include | original_score=0.4
+
+rationale="Parent-designated load-bearing source for SmartProperty platform architecture competitive read (Finding-0043). Asset Inventory Control + Capital Planning + Capital Project Tracking three-module structure, the operational data loop (real-time vendor updates, actuals-vs-forecast variance), and the 'half-million homes' scale claim are all required for the condo-software ecosystem map. Primary source for platform feature decomposition; no comparable secondary source exists for these specific module boundaries."
+
+## [2026-06-10T03:19:23Z] ingest | id=web-2025-01-01-1ee | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-01-1ee.md wiki=wiki/sources/web-2025-01-01-1ee.md
+
+## [2026-06-10T03:21:16Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=9541 | cache_read=4696 | cache_creation=33196 | duration_ms=111583 | cost_usd=0.448373
+
+## [2026-06-10T03:21:17Z] wiki-author | id=web-2025-01-01-1ee | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Integrate SmartProperty's authoritative platform architecture (three named modules, financial-plan workflow, real-time variance loop, half-million-homes scale) into the SmartProperty entity and Living Reserve Study concept pages for Finding-0043.
+
+## [2026-06-10T03:22:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4101 | cache_read=0 | cache_creation=24424 | duration_ms=44849 | cost_usd=0.051043
+
+## [2026-06-10T03:22:08Z] ingest | id=web-2025-01-01-90b | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.8
+
+raw=raw/web/web-2025-01-01-90b.md wiki=wiki/sources/web-2025-01-01-90b.md
+
+## [2026-06-10T03:26:23Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=16681 | cache_read=0 | cache_creation=26356 | duration_ms=252830 | cost_usd=0.349056
+
+## [2026-06-10T03:26:23Z] wiki-author | id=web-2025-01-01-90b | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+The SmartProperty pricing page provides the first direct vendor pricing documentation — complete core platform feature list, $50/mo add-on module pricing (Maintenance and Accounting Integration), $800-starting Financial Update Reserve Study service with CAI Reserve Study Specialist compliance, and a half-million homes scale claim — warranting concrete additions to the SmartProperty entity and Living Reserve Study concept pages.
+
+## [2026-06-10T03:26:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2447 | cache_read=5151 | cache_creation=20544 | duration_ms=29002 | cost_usd=0.038438
+
+## [2026-06-10T03:26:59Z] ingest | id=web-2025-01-01-587 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.95
+
+raw=raw/web/web-2025-01-01-587.md wiki=wiki/sources/web-2025-01-01-587.md
+
+## [2026-06-10T03:28:11Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5887 | cache_read=4696 | cache_creation=34096 | duration_ms=70951 | cost_usd=0.362648
+
+## [2026-06-10T03:28:12Z] wiki-author | id=web-2025-01-01-587 | updates=3 | created=1 | updated=2 | contradictions=0 | draft=no
+
+SmartProperty About page introduces Damian Esparza as founder/CEO (new entity), confirms San Diego HQ + 500K-home scale + 20K-study analytic base for SmartProperty entity, and adds the 1-in-5 cash-flow-negative statistic + 500K-home adoption claim to the Living Reserve Study concept.
+
+## [2026-06-10T03:29:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5075 | cache_read=5151 | cache_creation=19462 | duration_ms=53005 | cost_usd=0.050226
+
+## [2026-06-10T03:29:11Z] ingest | id=web-2025-01-01-329 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.92
+
+raw=raw/web/web-2025-01-01-329.md wiki=wiki/sources/web-2025-01-01-329.md
+
+## [2026-06-10T03:30:27Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=6208 | cache_read=4696 | cache_creation=32585 | duration_ms=74162 | cost_usd=0.361229
+
+## [2026-06-10T03:30:28Z] wiki-author | id=web-2025-01-01-329 | updates=4 | created=0 | updated=4 | contradictions=0 | draft=no
+
+SmartProperty PM-company-targeted landing page confirms the three-CAM-platform integration ceiling (CINC + Vantaca + AppFolio), adds the Living Reserve Study's portfolio/large-scale-community positioning, and supplies a named large-scale client roster across AZ/CA/UT/IL/NC/NY.
+
+## [2026-06-10T03:30:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2091 | cache_read=5151 | cache_creation=19589 | duration_ms=24107 | cost_usd=0.035464
+
+## [2026-06-10T03:30:58Z] ingest | id=web-2024-08-27-df2 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2024-08-27-df2.md wiki=wiki/sources/web-2024-08-27-df2.md
+
+## [2026-06-10T03:32:49Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=9201 | cache_read=4696 | cache_creation=32595 | duration_ms=109201 | cost_usd=0.436117
+
+## [2026-06-10T03:33:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1825 | cache_read=5151 | cache_creation=19377 | duration_ms=22397 | cost_usd=0.033869
+
+## [2026-06-10T03:33:21Z] ingest | id=web-2025-04-07-b53 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2025-04-07-b53.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T03:33:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2321 | cache_read=5919 | cache_creation=20281 | duration_ms=26500 | cost_usd=0.037556
+
+## [2026-06-10T03:33:50Z] ingest | id=web-2026-03-23-6fd | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2026-03-23-6fd.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T03:34:10Z] filter-correction | id=web-2025-04-07-b53 | domain=condo-software | decision=include | original_score=0.2
+
+rationale='Parent-designated source for SmartProperty international expansion scope (Finding-0043). Confirms NOT Canada — the partnership is UAE/Dubai with Humberts Dubai covering the Jointly Owned Property sector. This geographic scope confirmation is load-bearing for the Longspan Canada-first thesis: SmartProperty has expanded to UAE before Canada, making Canada an uncontested channel surface. The Humberts Dubai counterparty name and JOP sector are citable primary claims unavailable in secondary sources.'
+
+## [2026-06-10T03:34:14Z] filter-correction | id=web-2026-03-23-6fd | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale="Parent-designated source for SmartProperty's Atlas-as-compliance-vehicle positioning (Finding-0043). The post is SmartProperty's primary public statement framing Atlas as the compliance instrument for Fannie Mae LL-2026-03 / Jan 2027 reserve floor. The competitive claim ('only platform purpose-built to document and defend your reserve position') and the explicit Jan 2027 deadline framing are citable for the condo-capital-infra competitive methodology map. No other primary source documents this positioning claim."
+
+## [2026-06-10T03:34:19Z] ingest | id=web-2025-04-07-b53 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-04-07-b53.md wiki=wiki/sources/web-2025-04-07-b53.md
+
+## [2026-06-10T03:36:00Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8662 | cache_read=4696 | cache_creation=32621 | duration_ms=99729 | cost_usd=0.422804
+
+## [2026-06-10T03:36:02Z] wiki-author | id=web-2025-04-07-b53 | updates=5 | created=3 | updated=2 | contradictions=0 | draft=no
+
+Source documents SmartProperty's first international expansion (UAE/Dubai via Humberts Dubai partnership), introducing new entities (Humberts Dubai, Waqar Hasan), a UAE-specific sector concept (Jointly Owned Property), and updating the SmartProperty + Living Reserve Study pages with the international-scope claim.
+
+## [2026-06-10T03:36:03Z] ingest | id=web-2026-03-23-6fd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-03-23-6fd.md wiki=wiki/sources/web-2026-03-23-6fd.md
+
+## [2026-06-10T03:37:28Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=6876 | cache_read=4696 | cache_creation=33788 | duration_ms=83946 | cost_usd=0.385448
+
+## [2026-06-10T03:37:29Z] wiki-author | id=web-2026-03-23-6fd | updates=2 | created=0 | updated=2 | contradictions=0 | draft=no
+
+Parent-designated source for SmartProperty's Atlas-as-compliance-vehicle positioning (Finding-0043); also provides SmartProperty's framing of the Fannie Mae LL-2026-03 rule package with explicit dates and the 'highest recommended funding level' substitution rule when below 15%.
+
+## [2026-06-10T03:38:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2178 | cache_read=0 | cache_creation=24683 | duration_ms=26351 | cost_usd=0.041752
+
+## [2026-06-10T03:38:02Z] ingest | id=web-2025-04-07-817 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2025-04-07-817.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T03:38:12Z] filter-correction | id=web-2025-04-07-817 | domain=condo-software | decision=include | original_score=0.3
+
+rationale="Parent-designated source for SmartProperty club-segment channel (Finding-0043). The Strategic Club Solutions Navigator partnership documents SmartProperty's GTM expansion into the club-management adjacent segment — competitively material for understanding Longspan's total addressable serviceable surface vs SmartProperty's footprint. Club management and HOA management share the same reserve-study compliance obligation structure; this partnership is a direct channel signal. The specific counterparty (Strategic Club Solutions, Navigator platform) is a citable primary claim."
+
+## [2026-06-10T03:38:16Z] ingest | id=web-2025-04-07-817 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-04-07-817.md wiki=wiki/sources/web-2025-04-07-817.md
+
+## [2026-06-10T03:39:44Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7897 | cache_read=4696 | cache_creation=32744 | duration_ms=85915 | cost_usd=0.404448
+
+## [2026-06-10T03:39:46Z] wiki-author | id=web-2025-04-07-817 | updates=6 | created=4 | updated=2 | contradictions=0 | draft=no
+
+Source is the canonical primary record for SmartProperty's club-segment channel expansion via Navigator platform with Strategic Club Solutions; creates the SCS entity + named principals + Navigator concept, and updates SmartProperty + Living Reserve Study with club-segment GTM facts.
+
+## [2026-06-10T03:45:07Z] nlm-add | id=web-2024-08-27-df2 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/blog/smartproperty-and-fnbo
+
+## [2026-06-10T03:45:14Z] nlm-add | id=web-2025-01-01-1ee | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/platform
+
+## [2026-06-10T03:45:22Z] nlm-add | id=web-2025-01-01-329 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/who-we-serve/property-management-companies
+
+## [2026-06-10T03:45:30Z] nlm-add | id=web-2025-01-01-587 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/about
+
+## [2026-06-10T03:45:39Z] nlm-add | id=web-2025-01-01-90b | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/pricing
+
+## [2026-06-10T03:45:47Z] nlm-add | id=web-2025-04-07-817 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/blog/smartproperty-strategic-club-solutions-announce-strategic-partnership
+
+## [2026-06-10T03:45:54Z] nlm-add | id=web-2025-04-07-b53 | domain=condo-software | notebook_id=67857df4-7231-45b0-805e-96bffa063205 | type=web
+
+url=https://www.smartproperty.com/blog/the-living-reserve-study-expands-internationally-with-humberts-dubai-and-smartproperty-partnership
+
+## [2026-06-10T03:51:49Z] nlm-add | id=web-2026-06-03-cc7 | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.smartproperty.com/atlas
+
+## [2026-06-10T03:52:01Z] nlm-add | id=web-2026-06-02-fce | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.smartproperty.com/blog/smartproperty-launches-atlas-reserve-study-intelligence-engine
+
+## [2026-06-10T03:52:14Z] nlm-add | id=web-2026-03-23-6fd | domain=condo-capital-infra | notebook_id=effe1f58-e6ce-4ff0-8728-35c885bff6f4 | type=web
+
+url=https://www.smartproperty.com/blog/fannie-mae-freddie-mac-rules-2026
+
+## [2026-06-10T04:31:13Z] ingest | id=web-2025-08-06-94b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-08-06-94b.md wiki=wiki/sources/web-2025-08-06-94b.md
+
+## [2026-06-10T04:33:33Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=12842 | cache_read=4696 | cache_creation=33117 | duration_ms=138682 | cost_usd=0.530404
+
+## [2026-06-10T04:33:36Z] wiki-author | id=web-2025-08-06-94b | updates=7 | created=1 | updated=6 | contradictions=0 | draft=no
+
+Genispec post adds Decree 991-2025 article-level citations (Arts. 4/8/15), the 25-year repair forecast, the 5-or-10-year logbook review cadence, the August 14, 2028 compliance deadline for logbook + fund study, and introduces a Quebec licensed-engineer reserve-study firm (Genispec) relevant to the Y2 QC ramp.
+
+## [2026-06-10T04:34:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=0 | cache_creation=27341 | duration_ms=18763 | cost_usd=0.041239
+
+## [2026-06-10T04:34:01Z] ingest | id=web-2025-01-01-dca | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2025-01-01-dca.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:34:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=5205 | cache_creation=18954 | duration_ms=19374 | cost_usd=0.031216
+
+## [2026-06-10T04:34:32Z] ingest | id=web-2026-01-01-00d | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2026-01-01-00d.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:35:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1125 | cache_read=5205 | cache_creation=22564 | duration_ms=14830 | cost_usd=0.034359
+
+## [2026-06-10T04:35:08Z] ingest | id=pdf-f81984467b04 | type=pdf | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/pdf/pdf-f81984467b04.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:37:27Z] filter-correction | id=web-2025-01-01-dca | domain=condo-software | decision=include | original_score=0.2
+
+rationale='Primary-source data-rights clause evidence load-bearing for Longspan contract template design; SmartProperty ToS §5 establishes the market-standard aggregated/anonymized corpus-rights clause verbatim — competitive intelligence with directly verifiable contract substance.'
+
+## [2026-06-10T04:37:32Z] filter-correction | id=pdf-f81984467b04 | domain=condo-software | decision=include | original_score=0.3
+
+rationale="Condo Control Software and Services Agreement — actual data-rights terms of Longspan's #1 Y1 Canadian integration target; required reading before any Vertica partnership negotiation."
+
+## [2026-06-10T04:38:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2732 | cache_read=0 | cache_creation=25243 | duration_ms=32837 | cost_usd=0.045222
+
+## [2026-06-10T04:38:58Z] ingest | id=web-2026-06-04-a88 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.35
+
+raw=raw/web/web-2026-06-04-a88.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:40:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1743 | cache_read=5143 | cache_creation=20321 | duration_ms=22626 | cost_usd=0.034639
+
+## [2026-06-10T04:40:00Z] ingest | id=web-2023-05-31-64e | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2023-05-31-64e.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:40:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2001 | cache_read=5143 | cache_creation=20111 | duration_ms=25330 | cost_usd=0.035666
+
+## [2026-06-10T04:40:33Z] ingest | id=web-2022-11-18-6e6 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.2
+
+raw=raw/web/web-2022-11-18-6e6.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:41:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1583 | cache_read=5143 | cache_creation=19349 | duration_ms=21561 | cost_usd=0.032624
+
+## [2026-06-10T04:41:00Z] ingest | id=web-2010-01-01-0de | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.3
+
+raw=raw/web/web-2010-01-01-0de.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:41:18Z] filter-correction | id=web-2026-06-04-a88 | domain=condo-software | decision=include | original_score=0.35
+
+rationale='Shiftsuite homepage — primary source for complete Canadian condo tech stack (8 named applications: Accounting, Property Management, Digital Bill Approvals, Community Websites, Conduit, Online Proxy, Virtual AGM, Electronic Voting); confirms zero reserve/capital-planning module gap; 600K Canadian condo units footprint claim. Load-bearing for ingest-intermediary segment landscape (Finding-0045 Segment 1).'
+
+## [2026-06-10T04:41:23Z] filter-correction | id=web-2023-05-31-64e | domain=condo-software | decision=include | original_score=0.3
+
+rationale='REMI Network — primary source for CMRAO licensing statistics: 2,543 General Licence holders managing 12,400+ condo corps / 900,000+ units in Ontario; 3,333 managers needed; 5.3 corps per licensee. Load-bearing for PM shortage finding in Finding-0045 Segment 3 and for framing the Y1 GTM addressable market size.'
+
+## [2026-06-10T04:41:28Z] filter-correction | id=web-2022-11-18-6e6 | domain=condo-software | decision=include | original_score=0.2
+
+rationale='CondoBI self-managed vs professionally-managed analysis — primary source for 9% higher market value and 18.6% lower fees for self-managed cohort in Toronto/GTA; confirms the 25-30% self-managed share across Canada and its structural significance for the direct-to-board ingest-product channel. Load-bearing for Finding-0045 Segment 4 self-managed board analysis.'
+
+## [2026-06-10T04:41:34Z] filter-correction | id=web-2010-01-01-0de | domain=condo-software | decision=include | original_score=0.3
+
+rationale='PowerStrata for strata management companies — only Canadian strata PM platform found that explicitly links maintenance planning to capital renewal and depreciation reports; BC-only market; primary source confirming the maintenance-to-depreciation-report workflow connection that the Longspan ingest-intermediary product targets. Load-bearing for Finding-0045 Segment 1 CMMS/tooling analysis.'
+
+## [2026-06-10T04:41:39Z] ingest | id=web-2026-06-04-a88 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-04-a88.md wiki=wiki/sources/web-2026-06-04-a88.md
+
+## [2026-06-10T04:43:30Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8635 | cache_read=4696 | cache_creation=33720 | duration_ms=108828 | cost_usd=0.428998
+
+## [2026-06-10T04:43:35Z] ingest | id=web-2023-05-31-64e | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-05-31-64e.md wiki=wiki/sources/web-2023-05-31-64e.md
+
+## [2026-06-10T04:45:29Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=10578 | cache_read=4696 | cache_creation=33868 | duration_ms=111709 | cost_usd=0.478498
+
+## [2026-06-10T04:45:33Z] wiki-author | id=web-2023-05-31-64e | updates=11 | created=11 | updated=0 | contradictions=0 | draft=no
+
+New ACMO statement establishing the CMRAO general/limited licence framework, Ontario condo manager shortfall statistics (2,543 GL holders managing 12,400+ corps / 900,000+ units; 3,333 needed), and the Condo Management Services Act, 2015 licensing regime — all absent from existing wiki coverage and load-bearing for Finding-0045 + Y1 GTM market sizing.
+
+## [2026-06-10T04:45:52Z] ingest | id=web-2010-01-01-0de | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2010-01-01-0de.md wiki=wiki/sources/web-2010-01-01-0de.md
+
+## [2026-06-10T04:47:04Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5727 | cache_read=0 | cache_creation=65584 | duration_ms=69466 | cost_usd=0.553100
+
+## [2026-06-10T04:48:14Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=4306 | cache_read=4696 | cache_creation=33763 | duration_ms=55136 | cost_usd=0.321042
+
+## [2026-06-10T04:48:15Z] wiki-author | id=web-2026-06-04-a88 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+Shiftsuite homepage establishes the canonical 8-application stack, the SparcPay payables partnership, the Conduit free-status-certificate hook, and confirms the zero reserve/capital-planning module gap that defines Shiftsuite's surface for Longspan integration positioning.
+
+## [2026-06-10T04:48:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2506 | cache_read=0 | cache_creation=27407 | duration_ms=28490 | cost_usd=0.046797
+
+## [2026-06-10T04:48:51Z] ingest | id=web-2025-05-26-6f6 | type=web | domains=condo-software | filter=included | domain=condo-software | score=0.7
+
+raw=raw/web/web-2025-05-26-6f6.md wiki=wiki/sources/web-2025-05-26-6f6.md
+
+## [2026-06-10T04:51:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2427 | cache_read=5192 | cache_creation=19748 | duration_ms=30243 | cost_usd=0.037347
+
+## [2026-06-10T04:51:58Z] ingest | id=web-2025-02-14-040 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.4
+
+raw=raw/web/web-2025-02-14-040.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:52:08Z] filter-correction | id=web-2025-02-14-040 | domain=condo-software | decision=include | original_score=0.4
+
+rationale='CPO Management synthesis of CAO 2024 reserve fund survey — primary source for: 64% of Ontario condo corps advised to increase contributions >3%; majority lacked adequate reserve funds (2020 AG audit finding); underfunding rates higher in self-managed corps. Grounds the reserve-adequacy gap and demand for better study quality in Ontario — load-bearing for Finding-0045 Segment 4 and the Longspan value-proposition to Ontario boards.'
+
+## [2026-06-10T04:52:12Z] ingest | id=web-2025-02-14-040 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-02-14-040.md wiki=wiki/sources/web-2025-02-14-040.md
+
+## [2026-06-10T04:52:19Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=18811 | cache_read=4696 | cache_creation=36956 | duration_ms=206403 | cost_usd=0.703623
+
+## [2026-06-10T04:54:32Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=12660 | cache_read=4696 | cache_creation=33091 | duration_ms=138479 | cost_usd=0.525692
+
+## [2026-06-10T04:57:21Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14371 | cache_read=37787 | cache_creation=0 | duration_ms=156376 | cost_usd=0.378194
+
+## [2026-06-10T04:58:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1704 | cache_read=0 | cache_creation=24873 | duration_ms=20490 | cost_usd=0.039619
+
+## [2026-06-10T04:58:49Z] ingest | id=web-2026-01-01-d4f | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2026-01-01-d4f.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T04:59:00Z] filter-correction | id=web-2026-01-01-d4f | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale='REcollab about page — primary source for team composition (4 members: Ipek Yilmaz MSc, C. Deyerman MSc+MEng, Tianne Pane PM, Irem Yaliniz PhD IP Advisor); civil engineer co-founders with no P.Eng. in title; no institutional funding disclosed; US entity (Inc.); Toronto/Calgary/Boston offices. Load-bearing for competitive assessment: no P.Eng. seal chain, pre-institutional, IP structuring underway. Required for vendor entity update per Finding-0047 Q3.'
+
+## [2026-06-10T04:59:04Z] ingest | id=web-2026-01-01-d4f | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-d4f.md wiki=wiki/sources/web-2026-01-01-d4f.md
+
+## [2026-06-10T04:59:59Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=3133 | cache_read=0 | cache_creation=25529 | duration_ms=53206 | cost_usd=0.142735
+
+## [2026-06-10T04:59:59Z] wiki-author | id=web-2026-01-01-d4f | updates=1 | created=0 | updated=1 | contradictions=0 | draft=no
+
+The REcollab about page is the primary source for team composition, credentialing, entity structure, and office footprint — all load-bearing for competitive assessment — requiring an update to the existing recollab entity page.
+
+## [2026-06-10T05:00:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1878 | cache_read=0 | cache_creation=25103 | duration_ms=24584 | cost_usd=0.040777
+
+## [2026-06-10T05:00:29Z] ingest | id=web-2026-01-01-84c | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.2
+
+raw=raw/web/web-2026-01-01-84c.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T05:00:38Z] filter-correction | id=web-2026-01-01-84c | domain=condo-capital-infra | decision=include | original_score=0.2
+
+rationale="REcollab RECOStudy product page — primary source confirming deterministic adequacy framing: percent-funded gauge (17% low), special-assessment risk year flag (2029, High Risk); no P10/P50/P90 confidence intervals; no Monte Carlo; no probabilistic outputs. Competitive differentiation is load-bearing: Longspan's probabilistic engine is structurally different from REcollab's adequacy-flag dashboard. Required for competitive assessment per Finding-0047 Q3."
+
+## [2026-06-10T05:00:43Z] ingest | id=web-2026-01-01-84c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-84c.md wiki=wiki/sources/web-2026-01-01-84c.md
+
+## [2026-06-10T05:02:32Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=6568 | cache_read=3344 | cache_creation=22924 | duration_ms=106736 | cost_usd=0.185494
+
+## [2026-06-10T05:05:00Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=8747 | cache_read=26268 | cache_creation=0 | duration_ms=142521 | cost_usd=0.139091
+
+## [2026-06-10T05:05:01Z] wiki-author | id=web-2026-01-01-84c | updates=2 | created=1 | updated=1 | contradictions=0 | draft=no
+
+REcollab's RECOStudy™ product page is the primary source establishing its deterministic adequacy methodology (percent-funded gauge, SA risk year flag) and confirming the structural absence of probabilistic outputs — facts load-bearing for Longspan competitive differentiation claims.
+
+## [2026-06-10T05:05:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2149 | cache_read=0 | cache_creation=28535 | duration_ms=25364 | cost_usd=0.046422
+
+## [2026-06-10T05:05:38Z] ingest | id=web-2026-02-27-641 | type=web | domains=condo-capital-infra | filter=review | domain=condo-capital-infra | score=0.5
+
+raw=raw/web/web-2026-02-27-641.md (wiki not written: filter decision=review)
+
+## [2026-06-10T05:05:49Z] filter-correction | id=web-2026-02-27-641 | domain=condo-capital-infra | decision=include | original_score=0.5
+
+rationale='StrataPress complete guide to BC Form B certificates — primary source for Form B access rules: owner/buyer/agent request,  fee cap, 5-business-day turnaround, depreciation report as mandatory attachment under BC SPA s.59. No central repository confirmed. Load-bearing for BC corpus-acquisition pathway (Finding-0047 Q5) and the /per-transaction per-building cost model for the July 2026 compliance window.'
+
+## [2026-06-10T05:05:55Z] ingest | id=web-2026-02-27-641 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-02-27-641.md wiki=wiki/sources/web-2026-02-27-641.md
+
+## [2026-06-10T05:07:38Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8701 | cache_read=4696 | cache_creation=36990 | duration_ms=100217 | cost_usd=0.451086
+
+## [2026-06-10T05:08:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2043 | cache_read=0 | cache_creation=27013 | duration_ms=27789 | cost_usd=0.043989
+
+## [2026-06-10T05:08:18Z] ingest | id=web-2007-08-01-6d8 | type=web | domains=condo-capital-infra | filter=rejected | domain=condo-capital-infra | score=0.3
+
+raw=raw/web/web-2007-08-01-6d8.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T05:08:27Z] filter-correction | id=web-2007-08-01-6d8 | domain=condo-capital-infra | decision=include | original_score=0.3
+
+rationale='Canadian Consulting Engineer ACEC-31 model agreement IP article — primary source for: engineer retains copyright by default (Copyright Act s.13); client gets limited-use license (ACEC-31 standard); third-party transfer requires explicit consent; methodology itself not copyrightable (only expression). Directly governs the Longspan data-rights question for reserve-study deliverables. Load-bearing for ingest-product LOI clause design (Finding-0047 Q6).'
+
+## [2026-06-10T05:08:32Z] ingest | id=web-2007-08-01-6d8 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2007-08-01-6d8.md wiki=wiki/sources/web-2007-08-01-6d8.md
+
+## [2026-06-10T05:10:54Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=13137 | cache_read=4696 | cache_creation=34566 | duration_ms=140161 | cost_usd=0.546836
+
+## [2026-06-10T05:13:08Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11130 | cache_read=39262 | cache_creation=0 | duration_ms=121647 | cost_usd=0.297906
+
+## [2026-06-10T05:13:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2972 | cache_read=0 | cache_creation=23818 | duration_ms=34703 | cost_usd=0.044640
+
+## [2026-06-10T05:13:59Z] ingest | id=web-2025-11-17-cf4 | type=web | domains=condo-software | filter=rejected | domain=condo-software | score=0.0
+
+raw=raw/web/web-2025-11-17-cf4.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T05:14:09Z] filter-correction | id=web-2025-11-17-cf4 | domain=condo-software | decision=include | original_score=0.0
+
+rationale='Inhabit OpTech 2025 product launch press release — confirms zero reserve-study, capital-planning, or Canadian-condo-specific product moves post-Blackstone investment; all 2025 features are multifamily/vacation-rental AI (leasing, fraud prevention, compliance). Negative-evidence load-bearing: Shiftsuite reserve-gap is confirmed unchanged as of Nov 2025. Required to ground the Inhabit/Shiftsuite competitive assessment in Finding-0047 Q7.'
+
+## [2026-06-10T05:14:14Z] ingest | id=web-2025-11-17-cf4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-17-cf4.md wiki=wiki/sources/web-2025-11-17-cf4.md
+
+## [2026-06-10T05:16:50Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14137 | cache_read=4696 | cache_creation=33909 | duration_ms=154730 | cost_usd=0.567729
+
+## [2026-06-10T05:16:54Z] wiki-author | id=web-2025-11-17-cf4 | updates=11 | created=9 | updated=2 | contradictions=0 | draft=no
+
+Inhabit's OpTech 2025 product launch — load-bearing as negative evidence that Inhabit's 2025 roadmap is 100% multifamily/vacation-rental AI with zero reserve-study, capital-planning, or Canadian-condo moves; confirms Shiftsuite reserve-gap unchanged as of Nov 2025 for Finding-0047 Q7.
+
+## [2026-06-10T20:49:12Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T20-49-12Z-schema-drift.md
+
+## [2026-06-10T20:52:37Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T20-52-37Z-schema-drift.md
+
+## [2026-06-10T20:53:08Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1402 | cache_read=0 | cache_creation=21349 | duration_ms=29223 | cost_usd=0.149130 | attempt=0
+
+## [2026-06-10T20:53:34Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=3 | out_tokens=1079 | cache_read=4291 | cache_creation=17163 | duration_ms=24621 | cost_usd=0.120459 | attempt=1
+
+## [2026-06-10T20:53:34Z] bootstrap-domain | slug=data-collectives | inclusion_count=6 | exclusion_count=4
+
+authored policy for data-collectives from description

@@ -17,7 +17,7 @@ the verified sources → author concept/synthesis pages → verify grounding →
 checkpoint here → schedule next.
 
 **Task ledger (loop tracks progress here):**
-- [ ] Task 1 — bootstrap `data-collectives` domain
+- [x] Task 1 — bootstrap `data-collectives` domain (policy.yaml created, verified)
 - [ ] Task 2 — Stream 0 precedent census (seed)
 - [ ] Task 3 — Stream 1 economic/incentive
 - [ ] Task 4 — Stream 2 technical/architecture
@@ -59,6 +59,7 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-Execute **Task 1** — bootstrap the `data-collectives` domain (`wiki bootstrap-domain`),
-verify the policy exists (promote if it came up as a proposal), lint, commit. Then the
-loop advances to Task 2 (Stream 0 precedent census).
+Execute **Task 2** — Stream 0 precedent census. deep-research over the pooled-data
+venture taxonomy (US+Canada, EU reference-only, recency-weighted), ingest 6-10 verified
+sources via `wiki ingest --with-plan --draft --domain data-collectives`, author the
+taxonomy synthesis page, verify grounding, commit.

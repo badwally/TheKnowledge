@@ -1,0 +1,90 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: data-collectives
+  topic: Data collectives, cooperatives, trusts, and pooled-data consortia as competitive
+    infrastructure
+  field: Data economics, platform governance, federated machine learning, and technology
+    law
+  description: Mechanisms by which competing or complementary stakeholders commit
+    proprietary data to a shared model or service that all members use to compete
+    in a market. Covers economic incentive design, technical architectures (federated
+    learning, data clean rooms, industry exchanges), legal structures, and regulatory
+    frameworks, with primary emphasis on Canada and secondary emphasis on the United
+    States. Includes agentic and vertical-AI applications built on pooled proprietary
+    data.
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- Analyzes the governance or incentive structure of a data collective, cooperative,
+  trust, or industry data exchange, including how member contributions are valued
+  and how access rights are allocated
+- Discusses federated learning, privacy-preserving computation, or data clean room
+  architectures as mechanisms for pooling proprietary data without centralizing raw
+  records
+- Examines legal or regulatory frameworks governing data sharing among competitors,
+  including Canadian and US competition law, consent and privacy law (PIPEDA, Bill
+  C-27, CPPA), or sector-specific data-pooling regulations
+- Reports on a named industry consortium, data trust, or data cooperative with identifiable
+  participating organizations and a defined shared-model or shared-service output
+- Addresses the economic theory of data as a non-rival or partially excludable good
+  in the context of collective pooling, including network effects, hold-up problems,
+  or free-rider dynamics
+- Covers government or policy interventions that mandate, incentivize, or constrain
+  data sharing among private actors in a vertical market (agriculture, healthcare,
+  financial services, transportation, energy)
+exclusion_criteria:
+- Generic open data or open government data initiatives with no competitive pooling
+  mechanism among private-sector participants
+- Pure data-resale or data-broker marketplaces where no shared model or service is
+  produced from the pooled data
+- Open-source software projects unless they serve as the technical substrate for a
+  named data collective
+- Consumer data privacy advocacy or GDPR/CCPA compliance guides that do not address
+  inter-organizational data pooling
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Peer-reviewed journals in economics, information systems, or law covering data
+      markets or platform governance (Journal of Competition Law and Economics, Information
+      Systems Research, JAIS, Harvard Journal of Law and Technology)
+    - Policy papers or consultation documents from recognized regulatory bodies (Competition
+      Bureau Canada, FTC, European Commission DG COMP, OECD)
+    - Working papers from established economics or law research centers with named
+      authors and institutional affiliation
+    negative_signals:
+    - Vendor whitepapers that promote a specific product without independent analysis
+    - Press releases or marketing copy without citation to underlying research or
+      regulatory filings
+  methodology_rigor:
+    positive_signals:
+    - Presents a formal economic model, game-theoretic analysis, or empirical study
+      with identified data sources and quantified outcomes
+    - Draws on case studies with named organizations, identifiable timelines, and
+      verifiable outcomes
+    - Cites primary legal sources (statutes, regulations, court decisions, regulatory
+      guidance) when making legal or regulatory claims
+    negative_signals:
+    - Makes claims about competitive effects or market structure with no supporting
+      data or citation
+    - Treats federated learning or data clean rooms as generic buzzwords without describing
+      the specific architecture or its limitations
+  content_depth:
+    positive_signals:
+    - Distinguishes among data cooperative, data trust, data collective, and data
+      exchange as distinct governance models with different incentive properties
+    - Addresses at least one concrete failure mode or tension in collective data arrangements
+      (free-rider problem, valuation disputes, antitrust exposure, lock-in)
+    - Discusses the Canadian or US regulatory context explicitly, not only as an afterthought
+    negative_signals:
+    - Treats data sharing as purely a technical problem without addressing governance,
+      legal, or economic dimensions
+    - Covers only hypothetical or speculative arrangements without grounding in existing
+      or proposed real-world examples
+bootstrapped_from_description_hash: 70260fcbb5536ce2
