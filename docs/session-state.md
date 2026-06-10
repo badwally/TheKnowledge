@@ -1,68 +1,64 @@
-# Session state — 2026-06-09
+# Session state — 2026-06-10
 
-Last updated: 2026-06-09 (RAG retrieval build COMPLETE — all 6 workstreams landed on branch feat/rag-retrieval-fts)
+Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop execution starting)
 
 ---
 
 ## Open contracts
 
-**RAG retrieval build — DONE and MERGED to main.** All workstreams from
-`docs/reviews/2026-06-09-rag-retrieval-review.md` executed in a self-improving
-loop (eval + tests + state-analysis + re-plan at each boundary). Fast-forward
-merged to `main` (branch `feat/rag-retrieval-fts` deleted). **Not pushed** —
-`main` is 9 commits ahead of `origin/main`; push is the user's call.
+**data-collectives research foundation — IN PROGRESS (self-paced loop).**
+Spec: `docs/superpowers/specs/2026-06-10-data-collectives-research-foundation-design.md`.
+Plan: `docs/superpowers/plans/2026-06-10-data-collectives-research-foundation.md`.
 
-Commits (6, each green):
-- `d9ff3850` WS1+WS4 — FTS5 index + ranked search + eval harness
-- `ad9f13cf` WS2 — `wiki retrieve` composite RAG primitive
-- `9202ed7d` WS5 — graph-aware authority ranking + `wiki related`
-- `1370e08a` WS3 — budget-aware `wiki context`
-- `2031f4cc` WS6 — `wiki answer` local grounded synthesis
-- (WS8 docs + eval alignment — committing now)
+New citation-grounded wiki domain `data-collectives`, forked from `condo-capital-infra`.
+Policy/market-structure spine; Approach C (agentic dimensional fan-out). Executed as a
+self-paced loop, one plan Task per iteration: deep-research → `wiki ingest --with-plan`
+the verified sources → author concept/synthesis pages → verify grounding → commit →
+checkpoint here → schedule next.
 
-Final state: **2002 tests pass** (1945 at session start, +57). Retrieval eval
-(authority order, live corpus): recall@5 0.889, recall@10 0.926, MRR 0.722.
+**Task ledger (loop tracks progress here):**
+- [ ] Task 1 — bootstrap `data-collectives` domain
+- [ ] Task 2 — Stream 0 precedent census (seed)
+- [ ] Task 3 — Stream 1 economic/incentive
+- [ ] Task 4 — Stream 2 technical/architecture
+- [ ] Task 5 — Stream 3 legal
+- [ ] Task 6 — Stream 4 regulatory
+- [ ] Task 7 — Stream 5 governmental/policy (spine core)
+- [ ] Task 8 — Stream 6 academic
+- [ ] Task 9 — Stream 7 industrial
+- [ ] Task 10 — corpus-quality gate + policy/market synthesis + uncertainty ledger
+- Task 11 (condo application leg) is Stage 2 — separate session/loop, NOT this loop.
 
-**Next decision for the user:** merge `feat/rag-retrieval-fts` → main (PR or
-fast-forward), then optionally `wiki index --rebuild` on the canonical tree to
-build `.index/wiki.db` (gitignored; ~34s, ~86 MB). The index self-heals on read
-so this is optional — first `wiki search`/`retrieve` call builds it lazily.
+**Guardrails (every Task):** foundation pages domain-neutral (no reserve-study /
+condo / Longspan terms — that is Stage 2); citations mandatory (`[[sources/<id>]]`,
+`--draft` then `wiki finalize`); adversarial verification before filing load-bearing
+claims; date precedents, flag pre-2023 for AI-model claims; `wiki retrieve`/`context`
+only, never dump index.md/log.md.
 
-Deferred (unchanged trigger): WS7 hybrid vector retrieval — revive when golden
-recall@10 < ~0.8 after authority ranking, or at ~10k pages. Trigger unmet.
+---
 
-Carry-forward (pre-existing, untouched this session): schema-drift ~208;
-finalize-batch ~460; orphans (condo-capital-infra, glp1-reward-modulation,
-ai-native-business); edge-ai notebook quota; `wiki migrate` stub; orita-cmo R3/R2;
-iOS Shortcut completion; web-API hardening (all from 2026-06-02 checkpoint).
+## RESOLVED
+
+**RAG retrieval build — DONE and MERGED to main (2026-06-09).** All 6 workstreams
+landed; 2002 tests pass; recall@5 0.889 / recall@10 0.926 / MRR 0.722. Deferred WS7
+hybrid vector retrieval (trigger: golden recall@10 < ~0.8 or ~10k pages — unmet).
+`main` was 9 ahead of `origin/main` at that checkpoint; push remains the user's call.
+
+Carry-forward (pre-existing, untouched): schema-drift ~208; finalize-batch ~460;
+orphans (condo-capital-infra, glp1-reward-modulation, ai-native-business); edge-ai
+notebook quota; `wiki migrate` stub; orita-cmo R3/R2; iOS Shortcut; web-API hardening.
 
 ---
 
 ## Files mid-edit
 
-None. All RAG work committed on `feat/rag-retrieval-fts` except the in-flight WS8
-docs commit. Working tree otherwise carries pre-existing untracked gateway-managed
-`nlm/`/`raw/`/`wiki/` content (leave alone — gateway-owned).
-
----
-
-## New retrieval surface (reference)
-
-- `gateway/search_index.py` — FTS5 derived index (`.index/wiki.db`), `search_fts`
-  (orders: tiered/bm25/authority), `section_text`, `inbound_counts`,
-  `related_pages`, `top_pages_for_domain`.
-- `gateway/ops/retrieve.py` — `retrieve()`/`retrieve_op()` (WS2), `related_op()` (WS5).
-- `gateway/ops/answer.py` — `answer()`/`answer_op()` (WS6), injectable LLM client.
-- `gateway/ops/context_op.py` — budget-aware (WS3).
-- `gateway/evaluate/retrieval_eval.py` + `.knowledge/eval/retrieval/goldens.yaml` (WS4).
-- CLI: `wiki retrieve|answer|related|search|context|eval-retrieval`.
-- MCP: `wiki_retrieve`, `wiki_answer`, `wiki_related` (+ updated `wiki_context`,
-  `wiki_search`). `eval-retrieval` is CLI_ONLY.
+None. Working tree carries pre-existing untracked gateway-managed `nlm/`/`raw/`/`wiki/`
+content (gateway-owned — leave alone).
 
 ---
 
 ## Next atomic step
 
-1. Optional: `git push` (`main` is 9 ahead of `origin/main`).
-2. Optional: `wiki index --rebuild` on the canonical tree to materialize
-   `.index/wiki.db` (else it builds lazily on first retrieve/search).
+Execute **Task 1** — bootstrap the `data-collectives` domain (`wiki bootstrap-domain`),
+verify the policy exists (promote if it came up as a proposal), lint, commit. Then the
+loop advances to Task 2 (Stream 0 precedent census).
