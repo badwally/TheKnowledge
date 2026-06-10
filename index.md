@@ -1,689 +1,223 @@
 # Knowledge Index
 
-Last updated: 2026-04-29T16:09:44Z
+Last rebuilt: 2026-06-09T19:21:51Z
+Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 
-Content catalog. Rebuilt by `wiki index --rebuild`. The agent reads this
-first to orient before drilling into specific pages.
+## Domains
+
+### action-recognition-classification
+[[mocs/action-recognition-classification]] · 0 sources
+
+
+### addiction-and-substance-use-disorders
+[[mocs/addiction-and-substance-use-disorders]] · 0 sources
+
+
+### agentic-protocols-and-interoperability
+[[mocs/agentic-protocols-and-interoperability]] · 0 sources
+
+
+### ai-and-agents
+[[mocs/ai-and-agents]] · 26 sources
+
+- Entities: [[entities/a-mem]] · [[entities/adobe-research]] · [[entities/aidan-toner-rodgers]] · [[entities/alex-pentland]] · [[entities/ali-modarressi]] · [[entities/alibaba]] · [[entities/amy-zegart]] · [[entities/anthropic]] · [[entities/antikythera]] · [[entities/ashish-vaswani]] · [[entities/autogenesis-protocol]] · [[entities/b-divya]] · … (95 more)
+- Concepts: [[concepts/academic-industry-ai-talent-migration]] · [[concepts/adaptive-control-mechanisms]] · [[concepts/agent-evaluation]] · [[concepts/agent-governance]] · [[concepts/agent-prompt-engineering]] · [[concepts/agentic-ai]] · [[concepts/agentic-ai-applications]] · [[concepts/agentic-ai-ethical-challenges]] · [[concepts/agentic-ai-vs-traditional-ai]] · [[concepts/agentic-data-synthesis]] · [[concepts/agentic-memory]] · [[concepts/ai-and-worker-wellbeing]] · … (142 more)
+- Synthesis: [[synthesis/2026-05-04-what-is-the-state-of-the]]
+
+### ai-native-business
+[[mocs/ai-native-business]] · 25 sources
+
+- Entities: [[entities/anysphere]] · [[entities/cluely]] · [[entities/cognition-labs]] · [[entities/crosby-ai]] · [[entities/decagon]] · [[entities/gamma-app]] · [[entities/genspark]] · [[entities/harvey-ai]] · [[entities/lindy]] · [[entities/lovable-app]] · [[entities/marc-lou]] · [[entities/medvi]] · … (5 more)
+- Concepts: [[concepts/ai-native-substrate]]
+- Synthesis: [[synthesis/2026-05-23-what-does-the-org-and-operating-ai-native-go-to-market-gtm]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-cross-cutting]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-economic-infrastructure-and-capital-efficiency]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-execution-strategy-and-automation-sequencing]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-role-taxonomy-and-the-human-agent]] · [[synthesis/2026-05-23-what-is-the-ai-native-indie]] · [[synthesis/2026-05-23-what-is-the-ai-native-indie-cross-cutting]] · [[synthesis/2026-05-23-what-is-the-ai-native-marketplace]] · [[synthesis/2026-05-23-what-is-the-ai-native-services]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-cross-cutting]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-defensibility-and-moats-in-ai-services]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-defining-the-ai-native-services-archetype]] · … (62 more)
+
+### ai-temporal-video
+[[mocs/ai-temporal-video]] · 86 sources
+
+- Concepts: [[concepts/3d-cnns-with-spatio-temporal-filter-analysis-i3d-resnet]] · [[concepts/autotrack-spatio-temporal-regularization-for-uavs]] · [[concepts/boundary-refinement-and-post-processing]] · [[concepts/collaborative-static-and-dynamic-vision-language-streams]] · [[concepts/convolutional-and-recurrent-architectures]] · [[concepts/fairmot-joint-detection-and-re-id-via-centernet]] · [[concepts/few-shot-and-unsupervised-learning]] · [[concepts/fourier-phase-correlation-with-log-polar-transformation]] · [[concepts/g-tad-sub-graph-localization]] · [[concepts/gaussian-approximated-post-processing-gap]] · [[concepts/gcan-graph-based-class-level-attention-network]] · [[concepts/graph-based-localization]] · … (34 more)
+- Synthesis: [[synthesis/common-datasets]] · [[synthesis/long-form-video-understanding-reasoning-across]] · [[synthesis/recurring-trade-offs]] · [[synthesis/shared-architectures]] · [[synthesis/temporal-action-detection-in-video-methods]] · [[synthesis/video-language-understanding-and-grounding-cross]] · [[synthesis/video-object-tracking-and-trajectory-prediction]]
+
+### biologically-inspired-advanced-spatio-temporal-computing
+[[mocs/biologically-inspired-advanced-spatio-temporal-computing]] · 0 sources
+
+
+### clinical-dosing-and-lifestyle-protocols
+[[mocs/clinical-dosing-and-lifestyle-protocols]] · 0 sources
+
+
+### competitive-landscape-and-ecosystem-dynamics
+[[mocs/competitive-landscape-and-ecosystem-dynamics]] · 0 sources
+
+
+### condo
+[[mocs/condo]] · 42 sources
+
+- Entities: [[entities/aci-362-2r-00]] · [[entities/ashrae-standard-180-2018]] · [[entities/boma-best-4-murb]] · [[entities/boma-canada]] · [[entities/florida-admin-code-61b-23]] · [[entities/florida-dbpr]] · [[entities/iso-50001]] · [[entities/national-parking-association]] · [[entities/pci-mnl-136-04]] · [[entities/pci-precast-prestressed-concrete-institute]]
+- Concepts: [[concepts/association-contract-bidding]] · [[concepts/community-association-manager-licensure]] · [[concepts/condo-board-fiduciary-duty]] · [[concepts/condo-board-recall]] · [[concepts/condo-electronic-voting]] · [[concepts/dbpr-online-licensure-account]] · [[concepts/developer-control-transition]] · [[concepts/energy-carbon-assessment]] · [[concepts/energy-management-plan]] · [[concepts/legionella-bacteria-control]] · [[concepts/parking-structure-housekeeping]] · [[concepts/parking-structure-maintenance-categories]] · … (2 more)
+- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation]] · [[synthesis/2026-05-09-how-do-the-major-u-s]] · [[synthesis/2026-05-09-what-are-the-documented-integration-gaps]] · [[synthesis/2026-05-09-what-are-the-established-best-practices]] · [[synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance]] · [[synthesis/2026-05-09-what-does-percent-funded-mean-for]] · [[synthesis/2026-05-09-what-does-the-2021-surfside-champlain]] · [[synthesis/2026-05-10-what-is-the-best-practice-for]] · … (17 more)
+
+### condo-capital-infra
+[[mocs/condo-capital-infra]] · 132 sources
+
+- Entities: [[entities/alan-cohen]] · [[entities/apra-reserve-preparers]] · [[entities/ardoor]] · [[entities/ashley-berenson]] · [[entities/associa]] · [[entities/association-reserves]] · [[entities/avidxchange]] · [[entities/bc-assessment]] · [[entities/bc-assessment-search-service]] · [[entities/bc-housing]] · [[entities/bc-housing-maintenance-matters-series]] · [[entities/bcfsa]] · … (79 more)
+- Concepts: [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/cmms-workorder-covariates]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/deck-balcony-component-priors]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (26 more)
+- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-11-reconcile-the-reserve-fund-study-contingency]] · [[synthesis/2026-05-11-what-is-the-established-academic-and]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-cross-cutting]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-integration-of-safety-and-maintenance-into]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-purpose-and-value-of-reserve-studies]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-reserve-study-standards-and-methodology]] · … (77 more)
+
+### condo-software
+[[mocs/condo-software]] · 161 sources
+
+- Entities: [[entities/ace-conference-trade-show]] · [[entities/alberta-condominium-property-act]] · [[entities/alberta-condominium-property-regulation]] · [[entities/alberta-credit-union-act]] · [[entities/alberta-credit-union-deposit-guarantee-fund]] · [[entities/alliance-association-bank]] · [[entities/amsi]] · [[entities/andrea-drennen]] · [[entities/appfolio]] · [[entities/aspire-community-management]] · [[entities/assessment-and-reserve-funding-disclosure-summary]] · [[entities/association-prime]] · … (280 more)
+- Concepts: [[concepts/30-year-cash-flow-projection]] · [[concepts/agentic-ai-cam-workflows]] · [[concepts/ai-native-property-management]] · [[concepts/alberta-12-unit-self-study-exemption]] · [[concepts/alberta-credit-union-deposit-coverage]] · [[concepts/alberta-credit-union-unclaimed-balances]] · [[concepts/alberta-qualified-person-reserve-fund]] · [[concepts/alberta-reserve-fund-plan]] · [[concepts/alberta-reserve-fund-study]] · [[concepts/appfolio-stack]] · [[concepts/automated-lockbox]] · [[concepts/bank-merger-account-continuity]] · … (176 more)
+- Synthesis: [[synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface]] · [[synthesis/2026-05-24-what-are-the-reserve-fund-investment]]
+
+### convergent-ai-brain
+[[mocs/convergent-ai-brain]] · 3 sources
+
+- Entities: [[entities/andy-clark]] · [[entities/brian-cheung]] · [[entities/goldstein-2022-ecog]] · [[entities/hermann-von-helmholtz]] · [[entities/karl-friston]] · [[entities/minyoung-huh]] · [[entities/phillip-isola]] · [[entities/samuel-hammond]] · [[entities/steven-byrnes]] · [[entities/tongzhou-wang]] · [[entities/topolm]]
+- Concepts: [[concepts/active-inference]] · [[concepts/analysis-by-synthesis]] · [[concepts/anna-karenina-scenario]] · [[concepts/bayesian-brain]] · [[concepts/foundation-models]] · [[concepts/functional-brain-networks]] · [[concepts/generative-model-brain]] · [[concepts/helmholtz-machine]] · [[concepts/hierarchical-predictive-coding]] · [[concepts/model-stitching]] · [[concepts/mutual-nearest-neighbor-alignment]] · [[concepts/persona-selection-model]] · … (9 more)
+- Synthesis: [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-alignment-ceilings-and-norm]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-architectural-and-objective]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-cross-cutting]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-mutual-information-bounds-a]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-the-persistent-gap-between-]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-the-role-of-model-scale-in]]
+
+### cycling-and-fitness
+[[mocs/cycling-and-fitness]] · 12 sources
+
+- Entities: [[entities/bethskw]] · [[entities/col-de-bavella]] · [[entities/col-de-vergio]] · [[entities/corsica]] · [[entities/corsica-cyclo-gt-20]] · [[entities/corsican-highlights]] · [[entities/cycling-corsica-self-guided-luxury]] · [[entities/dfw-kettleballs-remix]] · [[entities/dry-fighting-weight]] · [[entities/emma-wilkins]] · [[entities/europe-active]] · [[entities/gr20]] · … (21 more)
+- Concepts: [[concepts/aerobic-capacity]] · [[concepts/aerobic-energy-system]] · [[concepts/atp]] · [[concepts/axs-button]] · [[concepts/axs-system-pairing]] · [[concepts/bleeding-edge]] · [[concepts/brake-bed-in]] · [[concepts/brake-bleed]] · [[concepts/clean-and-press]] · [[concepts/cycling-core-stability]] · [[concepts/cycling-flexibility]] · [[concepts/cycling-injury-prevention]] · … (26 more)
+- Synthesis: [[synthesis/2026-05-27-what-are-the-key-insights-from-23c3de]]
+
+### edge-ai-agentic
+[[mocs/edge-ai-agentic]] · 152 sources
+
+- Concepts: [[concepts/a19-pro-chip]] · [[concepts/agent-to-agent-a2a-protocol]] · [[concepts/ai-edge-torch-generative-api]] · [[concepts/amazon-sagemaker-edge-manager]] · [[concepts/amed-automatic-mixed-precision-quantization]] · [[concepts/anx-protocol]] · [[concepts/apple-machine-learning-ecosystem]] · [[concepts/apple-silicon-and-neural-engines]] · [[concepts/aws-iot-greengrass]] · [[concepts/brainchip-akida]] · [[concepts/chassis-docker-containerization]] · [[concepts/collaborative-compression-for-mixture-of-experts-moe]] · … (63 more)
+- Synthesis: [[synthesis/2026-05-05-what-is-the-state-of-the]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-278c1b]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-529d8a]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-5e19ab]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-dffa60]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-e59b03]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-0952b8]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-2476d8]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-3c04e6]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-3e4199]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-414c5e]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-4f2790]] · … (56 more)
+
+### edge-ai-security-and-privacy
+[[mocs/edge-ai-security-and-privacy]] · 0 sources
+
+
+### edge-hardware-platforms
+[[mocs/edge-hardware-platforms]] · 0 sources
+
+
+### glp1-reward-modulation
+[[mocs/glp1-reward-modulation]] · 127 sources
+
+- Concepts: [[concepts/a-2025-bmj-cohort-study-and-post-hoc-analyses-from-semaglutide-trials-finding-no-increased-risk-of-suicidality-or-depression-compared-to-placebos]] · [[concepts/a-2026-observational-study-of-600000-us-veterans-showing-that-glp-1-use-significantly-reduced-the-risk-of-substance-use-disorders-and-overdose-deaths-across-all-major-addictive-substances]] · [[concepts/application-of-glp-1-plotters-to-calculate-steady-state-pharmacokinetics-drug-half-lives-and-maximum-circulating-concentrations]] · [[concepts/body-composition-and-metabolic-support]] · [[concepts/brain-organoid-studies-demonstrating-semaglutides-reduction-of-alzheimers-disease-hallmarks-including-amyloid-beta-plaques-phosphorylated-tau-and-gfap]] · [[concepts/cardiovascular-outcomes]] · [[concepts/fast-scan-cyclic-voltammetry-used-to-measure-minute-to-minute-changes-and-spikes-in-real-time-dopamine-signaling]] · [[concepts/fda-and-european-medicines-agency-ema-preliminary-safety-committee-assessments-monitoring-for-suicidal-thoughts]] · [[concepts/functional-mri-fmri-imaging-to-evaluate-less-excited-brain-responses-in-reward-centers-amygdala-insula-orbitofrontal-cortex-when-viewing-pictures-of-highly-palatable-food]] · [[concepts/glp-1-neurons-in-the-nucleus-of-the-solitary-tract-project-directly-to-the-ventral-tegmental-area-and-nucleus-accumbens-to-control-for-food-intake-alhadeff-et-al-2012]] · [[concepts/high-protein-intake-protocols-prescribing-1-gram-of-protein-per-pound-of-target-body-weight-combined-with-resistance-training]] · [[concepts/human-clinical-trials-and-observational-studies-on-addiction]] · … (16 more)
+- Synthesis: [[synthesis/2026-05-27-what-are-the-key-insights-from]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-03df12]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-04de60]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-0e8875]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-0ea517]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-0eb86f]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-105f68]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-154c35]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-18c7e4]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-1ad481]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-29d11a]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-2a8ab1]] · … (87 more)
+
+### googles-edge-ai-stack
+[[mocs/googles-edge-ai-stack]] · 0 sources
+
+
+### health
+[[mocs/health]] · 0 sources
+
+- Entities: [[entities/andrew-huberman]] · [[entities/brass-monkey]] · [[entities/environmental-working-group]] · [[entities/rhonda-patrick]] · [[entities/ucsf-osher-center-for-integrative-health]] · [[entities/wim-hof]] · [[entities/wim-hof-method]]
+- Concepts: [[concepts/anti-inflammatory-diet]] · [[concepts/anti-inflammatory-diet-long-covid]] · [[concepts/brown-fat-thermogenesis]] · [[concepts/catecholamine-release-cold-exposure]] · [[concepts/cold-water-immersion]] · [[concepts/cytokine-storm]] · [[concepts/deliberate-cold-exposure]] · [[concepts/dirty-dozen-clean-fifteen]] · [[concepts/hormesis]] · [[concepts/lectin-elimination-diet]] · [[concepts/long-covid]] · [[concepts/long-covid-basic-supplement-protocol]] · … (8 more)
+
+### knowledge-systems
+[[mocs/knowledge-systems]] · 0 sources
+
+- Entities: [[entities/do-y-lee]] · [[entities/karpathy-llm-wiki-gist]] · [[entities/wikiloom]]
+- Concepts: [[concepts/auto-commit-pattern]] · [[concepts/deterministic-linking]] · [[concepts/human-edit-protection]] · [[concepts/llm-wiki-pattern]] · [[concepts/page-lifecycle]] · [[concepts/per-chunk-page-context]] · [[concepts/pre-flight-budget-check]] · [[concepts/structural-provenance]]
+
+### mental-health-and-emotional-regulation
+[[mocs/mental-health-and-emotional-regulation]] · 0 sources
+
+
+### mlops-and-devops-for-edge
+[[mocs/mlops-and-devops-for-edge]] · 0 sources
+
+
+### neurobiology-of-appetite-and-reward
+[[mocs/neurobiology-of-appetite-and-reward]] · 0 sources
+
+
+### on-device-inference-foundations
+[[mocs/on-device-inference-foundations]] · 0 sources
+
+
+### orchestration-and-workflow-frameworks
+[[mocs/orchestration-and-workflow-frameworks]] · 0 sources
+
+
+### orita-cmo
+[[mocs/orita-cmo]] · 10 sources
+
+- Entities: [[entities/aaron]] · [[entities/adrian]] · [[entities/apollo]] · [[entities/autogen]] · [[entities/avoma]] · [[entities/bigquery]] · [[entities/breeze]] · [[entities/caraway]] · [[entities/claude-code]] · [[entities/claude-desktop]] · [[entities/coupler-io]] · [[entities/crewai]] · … (17 more)
+- Concepts: [[concepts/aeo-geo]] · [[concepts/agency-channel-gtm]] · [[concepts/agent-escalation-levels]] · [[concepts/claude-code-velocity-model]] · [[concepts/competitive-positioning]] · [[concepts/economic-buyer]] · [[concepts/external-ai-crm-surface]] · [[concepts/hubspot-association-labels]] · [[concepts/hubspot-data-hygiene]] · [[concepts/hubspot-deal-tags]] · [[concepts/hubspot-segments]] · [[concepts/icp-tiering]] · … (6 more)
+
+### risksystems
+[[mocs/risksystems]] · 4 sources
+
+- Entities: [[entities/abel-diaz-gonzalez]] · [[entities/ajith-parlikad]] · [[entities/alberto-pliego-marugan]] · [[entities/aming-zou]] · [[entities/andre-beck]] · [[entities/andy-hart]] · [[entities/anna-kucerova]] · [[entities/antonios-kamariotis]] · [[entities/arnold-yuan]] · [[entities/asphalt-pavement-lifecycle-review-paper]] · [[entities/austin-coursey]] · [[entities/aware-p]] · … (144 more)
+- Concepts: [[concepts/aleatory-epistemic-uncertainty]] · [[concepts/ambient-vibration-analysis]] · [[concepts/ann-damage-assessment]] · [[concepts/asphalt-pavement-lifecycle-management]] · [[concepts/bayesian-filtering-deterioration]] · [[concepts/bayesian-hierarchical-aft-model]] · [[concepts/bayesian-inference]] · [[concepts/bayesian-transfer-learning]] · [[concepts/bayesian-updating-bridge-resistance]] · [[concepts/bounded-degradation-phenomena]] · [[concepts/bounded-nonstationary-gamma-process]] · [[concepts/bounded-transformed-gamma-process]] · … (101 more)
+- Synthesis: [[synthesis/2026-05-20-bounded-gamma-process-bgp-deterioration-kernel]] · [[synthesis/2026-05-20-cross-cutting-comparison-longspan-v1-1]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-bayesian-hierarchical-modelling-and-partial-pooling]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-cross-cutting]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-expert-judgement-and-prior-elicitation]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-infrastructure-asset-management-systems-and-life]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-stochastic-deterioration-and-survival-processes]] · [[synthesis/2026-05-20-risksystems-02-physics-informed-sciml-bayesian-uncertainty-quantification-and-model-updating]] · [[synthesis/2026-05-20-risksystems-02-physics-informed-sciml-cross-cutting]] · [[synthesis/2026-05-20-risksystems-02-physics-informed-sciml-hybrid-modeling-and-data-driven-structural]] · [[synthesis/2026-05-20-risksystems-03-gp-state-space-ensembles-cross-cutting]] · [[synthesis/2026-05-20-risksystems-03-gp-state-space-ensembles-data-driven-and-deep-learning-approaches]] · … (8 more)
+
+### systemic-health-and-neuroprotection
+[[mocs/systemic-health-and-neuroprotection]] · 0 sources
+
+
+### temporal-action-detection-localization
+[[mocs/temporal-action-detection-localization]] · 0 sources
+
+
+### trading-and-markets
+[[mocs/trading-and-markets]] · 95 sources
+
+- Entities: [[entities/akash-network]] · [[entities/alex-he]] · [[entities/alex-kim]] · [[entities/alex-traderedge]] · [[entities/ali-khan]] · [[entities/allan-malz]] · [[entities/ambrus-capital]] · [[entities/amtrades]] · [[entities/amundi-asset-management]] · [[entities/andrew-aziz]] · [[entities/andrew-constan]] · [[entities/andrew-mccaffery]] · … (205 more)
+- Concepts: [[concepts/200-day-ema-long-term-trend]] · [[concepts/2022-bond-bear-market]] · [[concepts/50-day-ema-intermediate-trend]] · [[concepts/60-40-portfolio-2022-collapse]] · [[concepts/8-21-day-ema-roadmap]] · [[concepts/action-axiom]] · [[concepts/active-vs-passive-qt]] · [[concepts/admitting-vulnerability-trading]] · [[concepts/aggregate-equity-demand-elasticity]] · [[concepts/ai-automation-displacement-effect]] · [[concepts/ai-capital-labor-income-gap]] · [[concepts/ai-macro-forecast-skepticism]] · … (471 more)
+- Synthesis: [[synthesis/2026-05-27-what-are-the-key-insights-from-12460e]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-c6ee7f]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-e0d437]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-fbf497]]
+
+### video-language-understanding-grounding
+[[mocs/video-language-understanding-grounding]] · 0 sources
+
+
+### video-object-tracking-trajectory-prediction
+[[mocs/video-object-tracking-trajectory-prediction]] · 0 sources
+
+
+### (untagged)
+673 sources without a domain tag
+
+## Cross-domain
+
+- Concept: [[concepts/anonymized-financial-statements]] · [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/chain-of-thought-prompting-finance]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (14 more)
+- Entity: [[entitys/association-reserves]] · [[entitys/champlain-towers-south]] · [[entitys/gpt-4-turbo]] · [[entitys/notice-of-future-funding-noff]] · [[entitys/smartproperty-report]] · [[entitys/strategic-inspections]]
+- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]]
+
+## Health
+
+- Orphans: 731 — see `wiki lint --scope orphans`
+- Untriaged inbox: 0 — see `raw/inbox/`
 
 ## Recent ingests
 
-- [[sources/pdf-a3f540369652]] · pdf · 011277054
-- [[sources/pdf-c714fd09a0e2]] · pdf · 1-How-to-plan-prepare-and-practise-a-3-day-water-fast
-- [[sources/pdf-arman-fesharaki-2022-clinical-experience-with]] · pdf · Clinical experience with the &#x03B1;2A-adrenoceptor agonist, guanfacine, and N-acetylcysteine for the treatment of cognitive deficits in &#x201C;Long-COVID19&#x201D;
-- [[sources/pdf-7210efe61aca]] · pdf · 1603404947556_Andrew_Grant_TestOrders_1603404700095
-- [[sources/pdf-ffa7cb0d676b]] · pdf · 19e025e3-6805-46e6-aad5-a64996f0313a.pdf
-- [[sources/pdf-12efc067b9c4]] · pdf · 2-Natural-methods-for-the-relief-of-detox-symptoms-while-fasting
-- [[sources/pdf-bd-2002-microsoft-word-dow]] · pdf · Microsoft Word - Dow Award Paper.doc
-- [[sources/pdf-be69dd282a8c]] · pdf · 2014-Two-centuries-of-trend-following
-- [[sources/pdf-76e772f87e3e]] · pdf · 2017-East-Bay-11x17-with-sponsorsV418
-- [[sources/pdf-722fa9c1c3ec]] · pdf · 2022-Streaming-Summit-Netflix
-- [[sources/pdf-22db99a820c9]] · pdf · 2022+Install+++Measure
-- [[sources/pdf-d196e853ebc0]] · pdf · 2023-Apollo-Economic-and-Capital-Markets-Outlook-White-Paper
-- [[sources/pdf-ai-2023-japan-s-ai]] · pdf · japan's ai whitepaper_summary_etrans
-- [[sources/pdf-752c8824b750]] · pdf · 2106.14204
-- [[sources/pdf-8f021296560c]] · pdf · 2209270_cs_io_2023_en_rgb_digital
-- [[sources/pdf-822d5467c24e]] · pdf · 2304_Japan’s AI Whitepaper_Etrans
-- [[sources/pdf-806192f007eb]] · pdf · 2405.12768
-- [[sources/pdf-790fb6d5b7a9]] · pdf · 2632504
-- [[sources/pdf-619e7fbc6084]] · pdf · Neural_Network_Newsletter_Foundational_Fitness_Protocol
-- [[sources/pdf-7663c24d3159]] · pdf · 65392592bb96259e6c00f4f7_Math of the Multi-Manager_CA
-- [[sources/pdf-pro-api-2024-pro-document]] · pdf · PRO Document
-- [[sources/pdf-3eea925a6037]] · pdf · 73dc960b-75e6-4e36-b517-787ce5c73c0c
-- [[sources/pdf-f12a60b2c8fa]] · pdf · Eventbrite - PDF Ticket
-- [[sources/pdf-ae7c68b9e007]] · pdf · 8651_paper_YaE6zR98
-- [[sources/pdf-e5aced8b7d48]] · pdf · 88dcf98f-e787-4751-a8e9-8f2d700c5d3f
-- [[sources/pdf-muriel-m-2004-6-441-information]] · pdf · 6.441 Information Theory, Lecture 1
-- [[sources/pdf-c9b8f466ea39]] · pdf · akash-position
-- [[sources/pdf-04854302f962]] · pdf · Ambrus Capital - Volatility and the Changing Market Structure Driving U.S. Equities
-- [[sources/pdf-90e7f9350657]] · pdf · annual_outlook_2023
-- [[sources/pdf-869163b2f118]] · pdf · Ari Kiev - 1998 - Trading To Win - The Psychology Of Mastering The Markets - Isbn 0471248428 - 26
-- [[sources/pdf-bf1afc73ac8f]] · pdf · article_2023investmentoutlook_enin
-- [[sources/pdf-7acc9c92267c]] · pdf · article_stockmarketconcentration
-- [[sources/pdf-432fe168a2d1]] · pdf · ATCORSICA_3volets_velo_UK (4)
-- [[sources/pdf-tom-bunker-2022-the-autophagy-protocol]] · pdf · The Autophagy Protocol
-- [[sources/pdf-40482428d656]] · pdf · Balanced Price Ranges
-- [[sources/pdf-9da6062f0265]] · pdf · Beat The Market.qxd
-- [[sources/pdf-1590d4650297]] · pdf · BEST LOSER WINS
-- [[sources/pdf-won-2022-bii-global-outlook]] · pdf · BII Global outlook
-- [[sources/pdf-9613f301a3b5]] · pdf · BobaTrader: Guide to Consistent Daytrading
-- [[sources/pdf-e4972167d950]] · pdf · Bodyblade-Exercise-Guide_Wallchart
-- [[sources/pdf-a6abe93bb85c]] · pdf · BR - Unicorn
-- [[sources/pdf-b2b01a5ad215]] · pdf · brain-care-score
-- [[sources/pdf-291109666e00]] · pdf · Brass_Monkey_DCE_eBook
-- [[sources/pdf-c985b0372d8a]] · pdf · carte GT20 kakemono
-- [[sources/pdf-f03d709c7ff7]] · pdf · CCC-TripNotes-July24-1
-- [[sources/pdf-ari-kiev-2005-stocks-commodities-v]] · pdf · Stocks & Commodities V. 13:2 (82-84): Centered Trading by Ari Kiev, MD
-- [[sources/pdf-7488305fe64d]] · pdf · Cervial Stretch
-- [[sources/pdf-h-keith-2015-the-official-cia]] · pdf · The Official CIA Manual of Trickery and Deception
-- [[sources/pdf-adrian-alberts-2023-via-optionality-a]] · pdf · Via Optionality: A Practical Guide To Levelling Up Your Performance
-- [[sources/pdf-734e612fdf31]] · pdf · Core_Content_Month_5_
-- [[sources/pdf-5bef1fceb745]] · pdf · COVID GMV - Part 1
-- [[sources/pdf-50a1f07b475f]] · pdf · COVID GMV - Part 2
-- [[sources/pdf-e8351bcf5615]] · pdf · COVID GMV - Part 3
-- [[sources/pdf-tfreed-2013-microsoft-word-crackle]] · pdf · Microsoft Word - Crackle Fan TV _Execution Version 10.22.13_.docx
-- [[sources/pdf-a78b30f3c6c3]] · pdf · cycling-corsica-self-guided-luxury
-- [[sources/pdf-21a07e2e3e63]] · pdf · Cycling+Physiology+&+Training+Science+Guide
-- [[sources/pdf-datazoom-2022-datazoom-white-paper]] · pdf · Datazoom_White Paper_Fall2021_Final (Final)
-- [[sources/pdf-0f67256d2a46]] · pdf · DE2500E__0f67256d
-- [[sources/pdf-5458c384bd4e]] · pdf · DE2500E__5458c384
-- [[sources/pdf-8ced6e4710cc]] · pdf · DE2500E__8ced6e47
-- [[sources/pdf-e5f64ceb7435]] · pdf · DE2500E__e5f64ceb
-- [[sources/pdf-da63389cb4c7]] · pdf · DE2500E
-- [[sources/pdf-bd335db7e921]] · pdf · DE2501
-- [[sources/pdf-b98c88d710d6]] · pdf · DE2525A
-- [[sources/pdf-a29e93f8e3d0]] · pdf · DE2593
-- [[sources/pdf-94d14a737c1c]] · pdf · DE429D
-- [[sources/pdf-f139d7bd1924]] · pdf · Deleveraging
-- [[sources/pdf-930894c4fbad]] · pdf · demystifying_ict_109
-- [[sources/pdf-94cecf7a170a]] · pdf · demystifying_ict
-- [[sources/pdf-1ab14c833d75]] · pdf · demystifying_ict_113
-- [[sources/pdf-2a01d855e4a8]] · pdf · Diagram of laser cut for wok table
-- [[sources/pdf-dee0cc8161e1]] · pdf · DIY_Cold_Plunge_Parts_Components_List
-- [[sources/pdf-4585c877938f]] · pdf · DIY-Cold-Plunge-Version2-Framing-Update
-- [[sources/pdf-3d3d42a0717a]] · pdf · document-1208817-1652548252608
-- [[sources/pdf-503a04772afb]] · pdf · document-1231497-1662152072164
-- [[sources/pdf-tw-2007-3379-pdf]] · pdf · 3379.pdf
-- [[sources/pdf-6c93ebb15d0f]] · pdf · Dr._Kristy_Vermeulen_TestOrder__6c93ebb1
-- [[sources/pdf-3955e8a75816]] · pdf · Dr._Kristy_Vermeulen_TestOrder
-- [[sources/pdf-cce4b539ce1c]] · pdf · Draw On Liqudity PDF By daytradingrauf
-- [[sources/pdf-c1cde2a9cc90]] · pdf · EKO_I
-- [[sources/pdf-chi-young-2019-ebv-driven-b]] · pdf · EBV-driven B-cell lymphoproliferative disorders: from biology, classification and differential diagnosis to clinical management
-- [[sources/pdf-f13aa755f8e2]] · pdf · etap-axs-systems-manual
-- [[sources/pdf-3b79b4901728]] · pdf · f162245
-- [[sources/pdf-0211e21ea4aa]] · pdf · FallbackPDF__0211e21e
-- [[sources/pdf-033174a2de42]] · pdf · FallbackPDF__033174a2
-- [[sources/pdf-walter-andrew-2025-03022021-dmc-bp]] · pdf · 03022021_DMC BP _ ent review
-- [[sources/pdf-june-marie-2025-paper-no-200000]] · pdf · Paper No: 200000
-- [[sources/pdf-094f1d9d6548]] · pdf · PowerPoint
-- [[sources/pdf-zhuo-yang-2026-detailed-balance-in]] · pdf · Detailed balance in large language model-driven agents
-- [[sources/pdf-0a9b334e1c2d]] · pdf · FallbackPDF__0a9b334e
-- [[sources/pdf-0b290e83f755]] · pdf · FallbackPDF__0b290e83
-- [[sources/pdf-weyerhaeuser-2025-specifier-s-guide]] · pdf · Specifier's Guide for Parallam Plus PSL
-- [[sources/pdf-0e6b5368a076]] · pdf · PowerPoint
-- [[sources/pdf-118e23fb0ce8]] · pdf · FallbackPDF__118e23fb
-- [[sources/pdf-127a2885bd13]] · pdf · FallbackPDF__127a2885
-- [[sources/pdf-13db284f8534]] · pdf · FallbackPDF__13db284f
-- [[sources/pdf-17529aba7cce]] · pdf · FallbackPDF__17529aba
-- [[sources/pdf-james-evans-2026-agentic-ai-and]] · pdf · Agentic AI and the next intelligence explosion
-- [[sources/pdf-17e6e6e01f3b]] · pdf · FallbackPDF__17e6e6e0
-- [[sources/pdf-julien-delavande-2025-video-killed-the]] · pdf · Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models
-- [[sources/pdf-1c2fdf801c6b]] · pdf · Tutorial – Speaker Install – Morel Australia
-- [[sources/pdf-peter-belcak-2025-small-language-models]] · pdf · Small Language Models are the Future of Agentic AI
-- [[sources/pdf-1fa5e543fab6]] · pdf · FallbackPDF__1fa5e543
-- [[sources/pdf-21e4a1afe49d]] · pdf · GeneceptPatientReport
-- [[sources/pdf-22a560609b73]] · pdf · Artificial Intelligence, Scientific Discovery, and Innovation
-- [[sources/pdf-microsoft-2025-lakehouse-analytics-with]] · pdf · Lakehouse Analytics with Microsoft Fabric and Azure Databricks
-- [[sources/pdf-27d519c0e40e]] · pdf · FallbackPDF__27d519c0
-- [[sources/pdf-anonymous-2025-untitled]] · pdf · untitled
-- [[sources/pdf-288c92444b7b]] · pdf · FallbackPDF__288c9244
-- [[sources/pdf-ari-kohen-2025-the-possibility-of]] · pdf · The Possibility of Secular Human Rights: Alan Gewirth and the Principle of Generic Consistency
-- [[sources/pdf-2a41ed54b530]] · pdf · FallbackPDF__2a41ed54
-- [[sources/pdf-2c7e26235f7e]] · pdf · FallbackPDF__2c7e2623
-- [[sources/pdf-ali-modarressi-2025-nolima-long-context]] · pdf · NoLiMa: Long-Context Evaluation Beyond Literal Matching
-- [[sources/pdf-2e350b47338f]] · pdf · PowerPoint
-- [[sources/pdf-2e3c4f48c406]] · pdf · FallbackPDF__2e3c4f48
-- [[sources/pdf-34da750c8df9]] · pdf · FallbackPDF__34da750c
-- [[sources/pdf-35254d4f46e5]] · pdf · PowerPoint
-- [[sources/pdf-36010c5f79c7]] · pdf · Medical Claim
-- [[sources/pdf-363bd16a840b]] · pdf · FallbackPDF__363bd16a
-- [[sources/pdf-389750b6b88a]] · pdf · PowerPoint
-- [[sources/pdf-stanford-2026-the-stanford-emerging]] · pdf · The Stanford Emerging Technology Review 2026
-- [[sources/pdf-3b145fe51a1c]] · pdf · FallbackPDF__3b145fe5
-- [[sources/pdf-3c418ffaad94]] · pdf · FallbackPDF__3c418ffa
-- [[sources/pdf-3d1d7b855dd1]] · pdf · PowerPoint
-- [[sources/pdf-3feca5629643]] · pdf · Connector Function Description - Pioneer FX-MG8517ZT/UC Service Manual [Page 98] | ManualsLib
-- [[sources/pdf-41bef100a5b8]] · pdf · FallbackPDF__41bef100
-- [[sources/pdf-ashish-vaswani-2025-attention-is-all]] · pdf · Attention is All you Need
-- [[sources/pdf-shu-yang-2026-multi-user-large]] · pdf · Multi-User Large Language Model Agents
-- [[sources/pdf-45ff4497a4fa]] · pdf · PowerPoint
-- [[sources/pdf-46e231d277c1]] · pdf · FallbackPDF__46e231d2
-- [[sources/pdf-4b3c91cf8a4b]] · pdf · FallbackPDF__4b3c91cf
-- [[sources/pdf-4c4d8990038c]] · pdf · FallbackPDF__4c4d8990
-- [[sources/pdf-4d169c0820d1]] · pdf · FallbackPDF__4d169c08
-- [[sources/pdf-ngor-luong-2026-two-loops-how]] · pdf · Two Loops: How China’s Open AI Strategy Reinforces Its Industrial Dominance
-- [[sources/pdf-5125a4afa6b9]] · pdf · FallbackPDF__5125a4af
-- [[sources/pdf-microsoft-office-2025-verizon-all-in]] · pdf · Verizon All-In-One
-- [[sources/pdf-52b4ed5501ea]] · pdf · PowerPoint
-- [[sources/pdf-52c6bed0a109]] · pdf · FallbackPDF__52c6bed0
-- [[sources/pdf-53c7fc83287b]] · pdf · PowerPoint
-- [[sources/pdf-541468a248a7]] · pdf · FallbackPDF__541468a2
-- [[sources/pdf-556aed08cdc5]] · pdf · Lessons learned: ES300 Audio Upgrade; Amplifier Integration AND Bypass - ClubLexus - Lexus Forum Discussion
-- [[sources/pdf-558c0dd2a984]] · pdf · PowerPoint
-- [[sources/pdf-559346dec38e]] · pdf · Chart Note pdf
-- [[sources/pdf-55f3199cb90d]] · pdf · FallbackPDF__55f3199c
-- [[sources/pdf-58fa2c637329]] · pdf · FallbackPDF__58fa2c63
-- [[sources/pdf-591f388e741a]] · pdf · FallbackPDF__591f388e
-- [[sources/pdf-5add0d29d90b]] · pdf · FallbackPDF__5add0d29
-- [[sources/pdf-5bec4feeb233]] · pdf · State of Foundation Models - 2025 (Innovation Endeavors)
-- [[sources/pdf-loisn-2025-microsoft-powerpoint-ssimwave]] · pdf · Microsoft PowerPoint - SSIMWAVE Business Presentation - Jan 21 2022
-- [[sources/pdf-5e6d63eac790]] · pdf · wp-18-16
-- [[sources/pdf-5ecb549cf629]] · pdf · BBS1200047 181..254
-- [[sources/pdf-6184655703a4]] · pdf · FallbackPDF__61846557
-- [[sources/pdf-61ed8424c5e2]] · pdf · PowerPoint
-- [[sources/pdf-tony-cavaliere-2025-powerpoint-presentation]] · pdf · PowerPoint Presentation
-- [[sources/pdf-grant-2025-ceg-cloud-strategy]] · pdf · CEG Cloud Strategy.docx_reduced for EC launch_06242020_AG
-- [[sources/pdf-63c667f14a2e]] · pdf · 24-656 Tiktok Inc. v. Garland (01/17/2025)
-- [[sources/pdf-67a2bd6f0f29]] · pdf · PowerPoint
-- [[sources/pdf-sallyw-2025-8611-pmd]] · pdf · 8611.pmd
-- [[sources/pdf-6ac87798c7cc]] · pdf · FallbackPDF__6ac87798
-- [[sources/pdf-chinthaka-wijebahu-2025-welcome-to-your]] · pdf · Welcome to Your Roadmap To 3DPrinting!
-- [[sources/pdf-6b4cdd6cf0b7]] · pdf · FallbackPDF__6b4cdd6c
-- [[sources/pdf-6d8fa8a07cc7]] · pdf · FallbackPDF__6d8fa8a0
-- [[sources/pdf-6f1b02bd49dd]] · pdf · PowerPoint
-- [[sources/pdf-aetna-2025-summary-of-benefits]] · pdf · Summary of Benefits and Coverage: LYFT INC.
-- [[sources/pdf-72d01ba8e76e]] · pdf · FallbackPDF__72d01ba8
-- [[sources/pdf-louise-pigott-2025-how-healing-happens]] · pdf · How Healing Happens - Primal Trust™ Digital Book
-- [[sources/pdf-76c2d2834830]] · pdf · Three Ways the World is Changing
-- [[sources/pdf-7816642d1569]] · pdf · FallbackPDF__7816642d
-- [[sources/pdf-7900a5ff606e]] · pdf · FallbackPDF__7900a5ff
-- [[sources/pdf-82f653667e9a]] · pdf · FallbackPDF__82f65366
-- [[sources/pdf-83c3ccfff1f1]] · pdf · Agentic AI: Autonomous Intelligence for Complex Goals&#x2014;A Comprehensive Survey
-- [[sources/pdf-8460787494f1]] · pdf · FallbackPDF__84607874
-- [[sources/pdf-848991f80471]] · pdf · FallbackPDF__848991f8
-- [[sources/pdf-84c216d52d04]] · pdf · Recursive_Ecosystem_Shaping_Final
-- [[sources/pdf-876233dd0d49]] · pdf · FallbackPDF__876233dd
-- [[sources/pdf-jenny-zhang-2026-hyperagents]] · pdf · Hyperagents
-- [[sources/pdf-895bb1ddd34b]] · pdf · FallbackPDF__895bb1dd
-- [[sources/pdf-8be12149d4a1]] · pdf · FallbackPDF__8be12149
-- [[sources/pdf-danny-hernandez-2025-measuring-the-algorithmic]] · pdf · Measuring the Algorithmic Efficiency of Neural Networks
-- [[sources/pdf-8dee6c5cd58d]] · pdf · DFW KB Remix calendar /u/Bethskw.docx
-- [[sources/pdf-8fbf2b364865]] · pdf · GeneceptPatientReport
-- [[sources/pdf-ari-kohen-2025-the-problem-of]] · pdf · The Problem of Secular Sacredness: Ronald Dworkin, Michael Perry, and Human Rights Foundationalism
-- [[sources/pdf-938991442a23]] · pdf · FallbackPDF__93899144
-- [[sources/pdf-kimi-team-2026-kimi-k2-open]] · pdf · Kimi K2: Open Agentic Intelligence
-- [[sources/pdf-karak-2025-7d4c9e10]] · pdf · 7D4C9E10
-- [[sources/pdf-9751fb2dd798]] · pdf · FallbackPDF__9751fb2d
-- [[sources/pdf-977a670e03f0]] · pdf · FallbackPDF__977a670e
-- [[sources/pdf-9953c0c8f2cf]] · pdf · FallbackPDF__9953c0c8
-- [[sources/pdf-9af46fc95b67]] · pdf · Es 330 Service Manual & 2012/2013 Navigation DVD - ClubLexus - Lexus Forum Discussion
-- [[sources/pdf-9ddd831efdf7]] · pdf · PowerPoint
-- [[sources/pdf-9eb272833703]] · pdf · FallbackPDF__9eb27283
-- [[sources/pdf-a0e321177c90]] · pdf · PowerPoint
-- [[sources/pdf-a11e1f621db0]] · pdf · FallbackPDF__a11e1f62
-- [[sources/pdf-a2cd445ca148]] · pdf · FallbackPDF__a2cd445c
-- [[sources/pdf-a52b398e6f19]] · pdf · FallbackPDF__a52b398e
-- [[sources/pdf-a79758041dbd]] · pdf · FallbackPDF__a7975804
-- [[sources/pdf-abc1e5ec17ac]] · pdf · FallbackPDF__abc1e5ec
-- [[sources/pdf-rschapir-2025-microsoft-word-perry]] · pdf · Microsoft Word - Perry galleysFINAL.doc
-- [[sources/pdf-aeb6b92cf01f]] · pdf · FallbackPDF__aeb6b92c
-- [[sources/pdf-b28cec1c663b]] · pdf · FallbackPDF__b28cec1c
-- [[sources/pdf-b34b5a100b39]] · pdf · FallbackPDF__b34b5a10
-- [[sources/pdf-b79371635e09]] · pdf · Metabolic and Cellular Differences Between Sedentary and Active Individuals at Rest and During Exercise | bioRxiv
-- [[sources/pdf-b7b2b3d880c3]] · pdf · FallbackPDF__b7b2b3d8
-- [[sources/pdf-b89dc71b2509]] · pdf · FallbackPDF__b89dc71b
-- [[sources/pdf-bbe54d7e147c]] · pdf · FallbackPDF__bbe54d7e
-- [[sources/pdf-vaishak-belle-2026-the-future-is]] · pdf · The Future Is Neuro-Symbolic: Where Has It Been, and Where Is It Going?
-- [[sources/pdf-bf6b5e90754a]] · pdf · PowerPoint
-- [[sources/pdf-c11926cea46f]] · pdf · FallbackPDF__c11926ce
-- [[sources/pdf-c25a6984aba0]] · pdf · FallbackPDF__c25a6984
-- [[sources/pdf-c29c838aa20b]] · pdf · FallbackPDF__c29c838a
-- [[sources/pdf-c2bbfa097edc]] · pdf · FallbackPDF__c2bbfa09
-- [[sources/pdf-c3353c6a032a]] · pdf · FallbackPDF__c3353c6a
-- [[sources/pdf-grant-2025-12072020-v4-dolby]] · pdf · 12072020_v4_Dolby Media Cloud_dmproposal
-- [[sources/pdf-c84859291fb5]] · pdf · FallbackPDF__c8485929
-- [[sources/pdf-ca1d151a5416]] · pdf · FallbackPDF__ca1d151a
-- [[sources/pdf-marketing-penguin-2026-controller-setup-2]] · pdf · Controller Setup 2 Guide
-- [[sources/pdf-cb5c59336180]] · pdf · FallbackPDF__cb5c5933
-- [[sources/pdf-cb610093096f]] · pdf · FallbackPDF__cb610093
-- [[sources/pdf-d22f364536d6]] · pdf · FallbackPDF__d22f3645
-- [[sources/pdf-karak-2025-55f39988]] · pdf · 55F39988
-- [[sources/pdf-ingeborg-walter-2025-high-absolute-bioavailability]] · pdf · High absolute bioavailability of methylene blue given as an aqueous oral formulation
-- [[sources/pdf-d6e18241c650]] · pdf · FallbackPDF__d6e18241
-- [[sources/pdf-d723f6028f6f]] · pdf · FallbackPDF__d723f602
-- [[sources/pdf-d86b1aa6c865]] · pdf · PowerPoint
-- [[sources/pdf-dce04675e7ba]] · pdf · FallbackPDF__dce04675
-- [[sources/pdf-dfb891f5063d]] · pdf · FallbackPDF__dfb891f5
-- [[sources/pdf-e041755b97ee]] · pdf · Supple bodies, healthy minds: yoga, psychedelics and American mental health - PMC
-- [[sources/pdf-e19096af61b2]] · pdf · Eventbrite - PDF Ticket
-- [[sources/pdf-e28cca5e1126]] · pdf · FallbackPDF__e28cca5e
-- [[sources/pdf-e44972f87a27]] · pdf · FallbackPDF__e44972f8
-- [[sources/pdf-e7b345b98541]] · pdf · FallbackPDF__e7b345b9
-- [[sources/pdf-e861f9dd545b]] · pdf · FallbackPDF__e861f9dd
-- [[sources/pdf-zhengding-hu-2026-pancake-hierarchical-memory]] · pdf · Pancake: Hierarchical Memory System for Multi-Agent LLM Serving
-- [[sources/pdf-ea646c451aae]] · pdf · Generic view of today's close
-- [[sources/pdf-ead4392c4bf5]] · pdf · FallbackPDF__ead4392c
-- [[sources/pdf-silicon-valley-2025-state-of-the]] · pdf · State of the Markets H2 2025
-- [[sources/pdf-ned-augenblick-2025-overinference-from-weak]] · pdf · Overinference from Weak Signals and Underinference from Strong Signals
-- [[sources/pdf-f0bdc0d01b69]] · pdf · FallbackPDF__f0bdc0d0
-- [[sources/pdf-f2a5150933db]] · pdf · FallbackPDF__f2a51509
-- [[sources/pdf-f4016087ee51]] · pdf · paper-MacoCache-camera-ready-v2.pdf
-- [[sources/pdf-f478e5f11837]] · pdf · How we built our multi-agent research system \ Anthropic
-- [[sources/pdf-wentao-zhang-2026-autogenesis-a-self]] · pdf · Autogenesis: A Self-Evolving Agent Protocol
-- [[sources/pdf-ir-2025-activities-and-capabilities]] · pdf · Activities and Capabilities Questionnaire - Claimant, 14646.pdf
-- [[sources/pdf-f9a314e4fd77]] · pdf · FallbackPDF__f9a314e4
-- [[sources/pdf-f9fdfe90be1b]] · pdf · FallbackPDF__f9fdfe90
-- [[sources/pdf-nawfal-2025-city-council-report]] · pdf · City Council Report ##-##-####
-- [[sources/pdf-nenad-toma-2026-intelligent-ai-delegation]] · pdf · Intelligent AI Delegation
-- [[sources/pdf-fac2ee1bbc71]] · pdf · FallbackPDF__fac2ee1b
-- [[sources/pdf-fb2e97246010]] · pdf · FallbackPDF__fb2e9724
-- [[sources/pdf-ff158d49ddab]] · pdf · FallbackPDF__ff158d49
-- [[sources/pdf-ff720bad942e]] · pdf · FallbackPDF__ff720bad
-- [[sources/pdf-4021a37e1354]] · pdf · Brookhaven Player Guide
-- [[sources/pdf-4794e17fbb8d]] · pdf · FC8AEB056C2C32F10AFC327BA91F4A45_The_Bohemian_Grove_and_Other_Retreats.rtf
-- [[sources/pdf-7cc82e1da425]] · pdf · Filtration-Sanitation-System-Update-031823
-- [[sources/pdf-063e4f708828]] · pdf · Free_Top_Deck_Plan
-- [[sources/pdf-114cf7d0e529]] · pdf · GDSv2_Richardson
-- [[sources/pdf-397258475bac]] · pdf · Grant Andrew 202110141955000747
-- [[sources/pdf-fadrake-2017-microsoft-word-stretches1]] · pdf · Microsoft Word - Stretches1
-- [[sources/pdf-83f79df08f23]] · pdf · Microsoft Word - Hanuman Chalisa Verses 1-40.docx
-- [[sources/pdf-46c6dd54d41e]] · pdf · high probability conditions
-- [[sources/pdf-a96a6a5b955a]] · pdf · Hino_Burke_2020
-- [[sources/pdf-judy-2022-primer-adjusted-a]] · pdf · Primer Adjusted A.indb
-- [[sources/pdf-b72c5d424466]] · pdf · I'm profitable, now what?
-- [[sources/pdf-3a3f6480ad77]] · pdf · ICT 2022 Mentorship Key Points
-- [[sources/pdf-a98b496e5936]] · pdf · Thread by Trader Theory @Trader_Theory at2022-09-22 13:06:37
-- [[sources/pdf-87087198976b]] · pdf · ING_global_outlook_2023_Dec_2022_OT
-- [[sources/pdf-7924870991a0]] · pdf · Installation-Guide-634M
-- [[sources/pdf-865171447a5f]] · pdf · Installation-Guide-EZ80N
-- [[sources/pdf-6afe62f3662b]] · pdf · Installation-Guide-HB80RL
-- [[sources/pdf-e050817e9316]] · pdf · Invocation Shlokas
-- [[sources/pdf-2f62ecbcd930]] · pdf · italy train ticket
-- [[sources/pdf-d0b9b7e97b5c]] · pdf · Joel-Greenblatt-Class
-- [[sources/pdf-ce80fb8c4e8d]] · pdf · Kitchari Cleanse
-- [[sources/pdf-4b87a8059b38]] · pdf · LBEX-LL 3356480-3356609
-- [[sources/pdf-c1b04b12481d]] · pdf · lecture5-market-wireframing-design
-- [[sources/pdf-e7ff11e4ad9b]] · pdf · Leopold-Aschenbrenner_Existential-risk-and-growth_
-- [[sources/pdf-19ce7da9ecfc]] · pdf · Lesson 11 - Divergence
-- [[sources/pdf-075e9932265b]] · pdf · Lesson 12 - Daily, Weekly, Monthly, Opens (Power of 3 - Simplified)
-- [[sources/pdf-704c439723d0]] · pdf · Lesson_1_Price_and_Liquidity_
-- [[sources/pdf-81305d181382]] · pdf · Lesson_2_Market_Structure_
-- [[sources/pdf-4e80c02052f4]] · pdf · Lesson_3_Market_Structure_Shifts_intro_
-- [[sources/pdf-2698a38c6fa5]] · pdf · Lesson_4_Fair_Value_Gap_FVG
-- [[sources/pdf-69a1f97797ce]] · pdf · Lesson_5_Order_Blocks
-- [[sources/pdf-f2565310670c]] · pdf · Lesson_6_Equilibrium_Discount_and_Premium
-- [[sources/pdf-a3789262265a]] · pdf · Lesson_8_Power_of_3
-- [[sources/pdf-042302b20a5d]] · pdf · Lesson_9_Order_Blocks_2
-- [[sources/pdf-eb11fad6322d]] · pdf · Long-Covid-SymptomsV2
-- [[sources/pdf-operatore12-2005-633492-vespa-lx]] · pdf · 633492 Vespa LX 150 USA.pmd
-- [[sources/pdf-2b2d34f2b0ff]] · pdf · JPM AM Portfolio Insights
-- [[sources/pdf-d7094631fbf1]] · pdf · MMXM_Market_Maker_Models
-- [[sources/pdf-d494901e58f0]] · pdf · mpw_bamboo_scroll_34
-- [[sources/pdf-760efe06b85d]] · pdf · MVRS_8.5X11_Compost_Cart_Poster_Web1
-- [[sources/pdf-b9f0455e9aea]] · pdf · MVRS_8.5X11_Garbage_Cart_Web1
-- [[sources/pdf-35db27800a83]] · pdf · MVRS-8.5X11_Commercial_Recycling_Cart
-- [[sources/pdf-5a5936689043]] · pdf · Nikonomics - The Options Trading Guide to Success
-- [[sources/pdf-2499ff5a11f9]] · pdf · Note
-- [[sources/pdf-807417152f53]] · pdf · pelvic_-_the_pelvic_clock_exercise
-- [[sources/pdf-4787181c2475]] · pdf · Peptide Guide
-- [[sources/pdf-usd11142-2007-playa-pew-sheet1]] · pdf · Playa Pew - Sheet1
-- [[sources/pdf-d75f7b825487]] · pdf · PLUNGE_FULL_PROTOCOLS
-- [[sources/pdf-ae6946f2d209]] · pdf · Pump-Chiller-Plumbing-DIY-Cold-Plunge
-- [[sources/pdf-ed56b074fb11]] · pdf · Q2 2022 - Market Commentary & Outlook
-- [[sources/pdf-853a7755a470]] · pdf · Q3-2022-IACFM-Presentation
-- [[sources/pdf-011cf224a58d]] · pdf · Queens Road Glass
-- [[sources/pdf-095a21801328]] · pdf · REDEF ORIGINAL: Netflix Is a Product & ...any (Netflix Misunderstandings, Pt. 2)
-- [[sources/pdf-20fc3718c3b0]] · pdf · REDEF ORIGINAL: Netflix Isn’t Being Rec...res (Netflix Misunderstandings, Pt. 3)
-- [[sources/pdf-girquark-2022-global-economics-analyst]] · pdf · Global Economics Analyst Macro Outlook 2023 This Cycle Is Different
-- [[sources/pdf-7f978a42b3b4]] · pdf · return_GYRCVFqutW
-- [[sources/pdf-fa83c61dfa2d]] · pdf · RevisitingFedRobbery
-- [[sources/pdf-adam-waytz-2019-ideological-differences-in]] · pdf · Ideological differences in the expanse of the moral circle
-- [[sources/pdf-d2f73a919c86]] · pdf · Cyclists Strength & Conditioning Guide (PPT working file).pptx
-- [[sources/pdf-a0072c763cf8]] · pdf · Scott-Redler-Moving-Averages-eBook
-- [[sources/pdf-s-n-2012-the-discourse-summaries]] · pdf · The Discourse Summaries
-- [[sources/pdf-a25e1c0d5f08]] · pdf · sr677
-- [[sources/pdf-b51938faf250]] · pdf · sram-hrd-hose-shortening-and-bleed-manual
-- [[sources/pdf-d74e7c9bfdc7]] · pdf · SSIMWAVE - Project Pixel - Dolby
-- [[sources/pdf-e2068d89c2a7]] · pdf · ssrn_id4501707_code759326
-- [[sources/pdf-1662a4368954]] · pdf · ssrn-4879527
-- [[sources/pdf-eric-j-2007-microsoft-word-sympathetic]] · pdf · Microsoft Word - Sympathetic Exchange
-- [[sources/pdf-05df32dcb03e]] · pdf · SSRN-id1630903
-- [[sources/pdf-lasse-pedersen-2011-title-how-to]] · pdf · Title: “How to Manage Managed Futures” or “The Way of the Futures”
-- [[sources/pdf-5ef2018823c8]] · pdf · SSRN-id2289097
-- [[sources/pdf-ec9fdef2193c]] · pdf · SSRN-id2585056
-- [[sources/pdf-5a6062a63a4b]] · pdf · SSRN-id3042173
-- [[sources/pdf-sugsu-2020-microsoft-word-hfholdem]] · pdf · Microsoft Word - HFHoldem SSRN
-- [[sources/pdf-2742492120a8]] · pdf · SSRN-id3760365
-- [[sources/pdf-eric-benhamou-2021-powerpoint-presentation]] · pdf · PowerPoint Presentation
-- [[sources/pdf-19445750a197]] · pdf · SSRN-id4166640
-- [[sources/pdf-e63407c2b4f4]] · pdf · SSRN-id4416622
-- [[sources/pdf-2329b8b436f2]] · pdf · SSRN-id4835311
-- [[sources/pdf-bf8fb2766629]] · pdf · Streaming_in_the_Time_of_Coronavirus_FINAL
-- [[sources/pdf-95753e942ede]] · pdf · Studio Velo Receipt For Order #137065
-- [[sources/pdf-a5ea98378b0a]] · pdf · Studio Velo Receipt For Order #137715
-- [[sources/pdf-ali-khan-2023-the-ict-bible]] · pdf · The ICT Bible
-- [[sources/pdf-fb3e28ab676a]] · pdf · The Simple Macroeconomics of AI
-- [[sources/pdf-2248d6cdc39f]] · pdf · The Study: 2-Day AVWAP Rule + Momentum Signal in Day Trading
-- [[sources/pdf-6ba2dc608ac8]] · pdf · The Study: 2-Day AVWAP Rule + Momentum Signal in Day Trading
-- [[sources/pdf-08bcb2d549ba]] · pdf · Thread by Trader Theory @Trader_Theory at2023-01-05 15:10:27
-- [[sources/pdf-13d51286c4cc]] · pdf · Thread by Trader Theory @Trader_Theory at2022-10-17 15:08:36
-- [[sources/pdf-57b1d100694e]] · pdf · Thread by Trader Theory @Trader_Theory at2022-10-25 14:11:56
-- [[sources/pdf-67b6fe78b28c]] · pdf · Thread by Trader Theory @Trader_Theory at2022-09-28 13:37:20
-- [[sources/pdf-sqzme-2020-the-implied-order]] · pdf · The Implied Order Book
-- [[sources/pdf-munger-2021-revised-psychology-of]] · pdf · Revised Psychology of Human Misjudment
-- [[sources/pdf-alberto-frizziero-2023-thenorthloop-intro-eng]] · pdf · TheNorthLoop_intro_ENG
-- [[sources/pdf-6415241c1c51]] · pdf · Thrive-scenarios-for-resilient-leaders
-- [[sources/pdf-f1a591bace1c]] · pdf · Psychedelic Prayers After the Tao Teh Ching
-- [[sources/pdf-8f8106c6aa36]] · pdf · TP_LivingProofLongevityChallenge_2024__8f8106c6
-- [[sources/pdf-0e4bb22e80df]] · pdf · TP_LivingProofLongevityChallenge_2024
-- [[sources/pdf-c57b9a32c399]] · pdf · Trading Models And Checklist
-- [[sources/pdf-3a510f58854c]] · pdf · Trading_Models_And_Checklist (1)
-- [[sources/pdf-41066580ca43]] · pdf · umos-4
-- [[sources/pdf-d3247b9071cf]] · pdf · vol20-no3-191
-- [[sources/pdf-matthew-notowidigdo-2020-gkno-manuscript-1025]] · pdf · GKNO_Manuscript_1025
-- [[sources/pdf-b8cec9d1ec0c]] · pdf · w28967
-- [[sources/pdf-4dbe002c1c7a]] · pdf · w29874
-- [[sources/pdf-9495a5abb859]] · pdf · WEEKLY BIAS FORM
-- [[sources/pdf-f073cccdbfe6]] · pdf · WEEKLY BIAS FORM
-- [[sources/pdf-23eaf3fa1bbb]] · pdf · white_paper
-- [[sources/pdf-6ae97b9c27c7]] · pdf · zoltan-pozsar-aug-2-war-and-interest-rates-1
-- [[sources/pdf-sriram-krishnan-2019-untitled]] · pdf · Untitled
-- [[sources/pdf-d4797e8f4981]] · pdf · 9_Designing+End-to-End+Retrieval-Augmented+Generation(RAG)+Workflows+for+Knowledge-Intensive+Applications
-- [[sources/docx-bf4965d0d33a]] · docx · condo_capital_infra_synthesis_2026-05-08 · condo-capital-infra
-- [[sources/web-2026-01-01-818]] · web · SIRS Reporting and Database · condo-capital-infra
-- [[sources/web-2024-07-09-f2a]] · web · Inspections - DBPR Condominium Information & Resources · condo-capital-infra
-- [[sources/web-2025-01-01-246]] · web · DAVIS-STIRLING ACT · condo-capital-infra
-- [[sources/web-2013-11-28-cda]] · web · Strata depreciation report requirements · condo-capital-infra
-- [[sources/web-2010-01-01-6c4]] · web · 61B-22 : FINANCIAL AND ACCOUNTING REQUIREMENTS; BUDGETS, RESERVES, AND GUARANTEES - Florida Administrative Rules, Law, Code, Register · condo
-- [[sources/web-2010-01-01-d36]] · web · 61B-23 : THE ASSOCIATION - Florida Administrative Rules, Law, Code, Register · condo
-- [[sources/web-2025-04-30-984]] · web · The Florida Senate · condo
-- [[sources/pdf-house-bill-2025-h0913er-docx]] · pdf · _h0913er.docx · condo
-- [[sources/web-2026-01-01-361]] · web · SIRS Reporting and Database · condo
-- [[sources/web-2024-01-11-e67]] · web · New Jersey Enacts Stringent New Inspection, Evaluation, and Maintenance Requirements for Condominium and Co-Op Buildings · condo
-- [[sources/web-2026-05-06-9cd]] · web · Repair Requirements Vary Across Markets! - Façade Maintenance Laws · condo
-- [[sources/web-1998-01-01-7e4]] · web · Building Maintenance Solutions - BuildingLink Canada · condo
-- [[sources/web-2022-01-01-e0b]] · web · Chapter 14 Inspection, Testing, and Maintenance: Fire Alarm Code, 2022 | UpCodes · condo
-- [[sources/web-2024-06-01-906]] · web · NULL - Risk Logic · condo
-- [[sources/web-2024-10-15-6c9]] · web · Condo & HOA Maintenance Tracking · condo
-- [[sources/web-2025-01-01-6b5]] · web · LL87: Energy Audits & Retro Commissioning · condo
-- [[sources/web-2025-02-27-05e]] · web · Local Law 11 | FISP | Facade Inspection Safety Program | NYC | SUPERSTRUCTURES · condo
-- [[sources/web-2025-08-01-8c2]] · web · How One NYC Condo Cut Water Damage Risk—and Insurance Premiums—With Smart Detection · condo
-- [[sources/web-2025-10-13-a40]] · web · Best Practices Reports - Foundation for Community Association Research · condo
-- [[sources/web-2025-11-24-619]] · web · Bill 16 | Guide to Comply with Bill 16 in Quebec in 2026 · condo
-- [[sources/web-2025-12-08-df6]] · web · California Balcony Inspection Law: SB 721 & SB 326 Guide 2026 · condo
-- [[sources/web-2026-01-01-58c]] · web · Chicago | FacadeOrdinance.com · condo
-- [[sources/web-2026-01-01-93d]] · web · Electrical Preventative Maintenance · condo
-- [[sources/web-2026-02-18-dff]] · web · Facility Manager · condo
-- [[sources/web-2026-02-20-0f3]] · web · Prism: CRE’s #1 Building Operations Platform | Building Engines · condo
-- [[sources/web-2026-03-29-4b9]] · web · Strata maintenance guides - VISOA - Vancouver Island Strata Owners Association · condo
-- [[sources/web-2000-01-01-bf7]] · web · The Florida Senate · condo
-- [[sources/web-2014-06-25-7b4]] · web · Submeters Effective Way to Gather Hard Data · condo
-- [[sources/web-2018-07-01-1cf]] · web · The Florida Senate · condo
-- [[sources/web-2018-09-17-ca9]] · web · Bill Text · condo
-- [[sources/web-2024-01-01-ac1]] · web · The Florida Senate · condo
-- [[sources/web-2024-05-23-ea9]] · web · Condominiums : responsibility for repair and maintenance · condo
-- [[sources/web-2024-06-04-fd1]] · web · The Essential Guide to the Key Points of Bill 16 · condo
-- [[sources/web-2025-01-01-742]] · web · Façade Inspection & Safety Program (FISP) Filing Instructions · condo
-- [[sources/web-2026-01-01-927]] · web · Resources · condo
-- [[sources/web-2026-01-07-3f3]] · web · PRESS RELEASES · condo
-- [[sources/web-2026-01-13-360]] · web · Law 16 Quebec: 2025 Compliance Guide for Condo Owners · condo
-- [[sources/web-2026-02-23-5ef]] · web · ASME A17.1-2025: Safety Code for Elevators and Escalators - ANSI Blog · condo
-- [[sources/pdf-6302e90be3b6]] · pdf · boma-best-murb · condo
-- [[sources/pdf-6b0d49e91108]] · pdf · PCI Maintenance Manual for Precast Parking Structures · condo
-- [[sources/pdf-bc-housing-2021-maintenance-matters-20]] · pdf · Maintenance Matters - 20 - Managing Internal Water Systems · condo
-- [[sources/pdf-db0621cb54d0]] · pdf · boma-best-4-1-all-assets · condo
-- [[sources/pdf-ede594f9f127]] · pdf · BestPracticesReport-Maintenance · condo
-- [[sources/web-2024-04-17-715]] · web · Reserve funds : Condominium Property Act · condo-capital-infra
-- [[sources/pdf-bc-housing-2020-maintenance-matters-06]] · pdf · Maintenance Matters - 06 - Deck and Balcony Maintenance Essentials · condo-capital-infra
-- [[sources/pdf-bc-housing-2020-maintenance-matters-11]] · pdf · Maintenance Matters - 11 - Building Envelope Maintenance Program Guide · condo-capital-infra
-- [[sources/web-2026-05-10-f34]] · web · Service life dataset for non-structural building envelope materials - NRC Digital Repository · condo-capital-infra
-- [[sources/pdf-bc-housing-2020-maintenance-matters-02]] · pdf · Maintenance Matters - 02 - Roof Maintenance Tips for Long-Term Protection · condo-capital-infra
-- [[sources/web-2026-05-10-nsa]] · web · Nova Scotia Open Data - Active Condominium Corporations · condo-capital-infra
-- [[sources/csv-7e5affc7bb1b]] · csv · hrm-pplc-building-permits · condo-capital-infra
-- [[sources/web-2026-05-11-852]] · web · Reference Service Life Dataset for non-structural building envelope materials: current state, knowledge gaps and inconsistencies - NRC Publications Archive · condo-capital-infra
-- [[sources/web-2011-08-18-1e7]] · web · https://www.assembly.nl.ca/legislation/sr/annualregs/2011/nr110080.htm · condo-capital-infra
-- [[sources/web-2017-07-26-1f3]] · web · Frequently Asked Questions · condo-capital-infra
-- [[sources/web-2018-03-31-c63]] · web · New-Brunswick-Fact-Sheet · condo-capital-infra
-- [[sources/pdf-fletcher-olivia-2025-h0913c-com]] · pdf · h0913c.COM · condo-capital-infra
-- [[sources/pdf-b922a12f47f0]] · pdf · fl-dbpr-sirs-reporting-form · condo-capital-infra
-- [[sources/pdf-dre-2010-reserve-study-guidelines]] · pdf · Reserve Study Guidelines for Homeowner Association Budgets · condo-capital-infra
-- [[sources/pdf-condominium-authority-2024-report-on-resrve]] · pdf · Report on Resrve Fund Survey Findings · condo-capital-infra
-- [[sources/pdf-national-assembly-2020-bill-16-assented]] · pdf · Bill 16 - Assented to (2019, chapter 28) · condo-capital-infra
-- [[sources/pdf-e3717ebcf2bc]] · pdf · Condominium Act · condo-capital-infra
-- [[sources/web-2026-01-01-577]] · web · Changes to the Condominium Act have been Proclaimed · condo-capital-infra
-- [[sources/web-2024-08-30-283]] · web · N.S. Reg. 60/71 — Condominium Regulations (Nova Scotia), Part K: Reserve-fund Studies (ss. 77-81) · condo-capital-infra
-- [[sources/web-2017-01-13-f20]] · web · Condominium Reserve Fund Studies – Regulated Requirements (Nova Scotia) · condo-capital-infra
-- [[sources/web-2018-01-09-945]] · web · PIPEDA requirements in brief · condo-capital-infra
-- [[sources/web-2023-05-02-683]] · web · CINC Systems Announces Partnership with SmartProperty's Living Reserve Study™ · condo-capital-infra
-- [[sources/web-2023-12-14-8ec]] · web · CINC Systems Secures Meaningful Strategic Investment From Hg to Accelerate Its Growth as a Premier Software Provider to the Community Association Management Industry · condo-capital-infra
-- [[sources/web-2026-04-16-4c4]] · web · CINC Expands Cephai With New AI Capabilities, Single Sign-On, and a Unified Operating Experience for Community Association Management · condo-capital-infra
-- [[sources/docx-818ed0a0ce55]] · docx · predictive-analytics-canadian-condo-2026-05-11 · condo-capital-infra
-- [[sources/web-2026-02-04-5bb]] · web · FirstService (FSV) Q4 2025 Earnings Transcript | The Motley Fool · condo-capital-infra
-- [[sources/web-2025-05-08-91b]] · web · FirstService Residential Acquires Core Real Estate Group · condo-capital-infra
-- [[sources/web-2026-02-18-2af]] · web · News · condo-capital-infra
-- [[sources/web-2025-10-24-c1b]] · web · Elliman sells property management arm to Associa for $85M · condo-capital-infra
-- [[sources/web-2025-01-03-c5d]] · web · Proptech Valuation Multiples: 2025 Insights & Trends | Finro · condo-capital-infra
-- [[sources/web-2026-05-11-f34]] · web · Service life dataset for non-structural building envelope materials - NRC Digital Repository · condo-capital-infra
-- [[sources/web-2026-05-11-4ef]] · web · Service life dataset for non-structural building envelope materials - NRC Digital Repository · condo-capital-infra
-- [[sources/web-2015-12-11-313]] · web · Menu · condo-capital-infra
-- [[sources/web-2024-06-27-ed9]] · web · - Condominium Property Act · condo-capital-infra
-- [[sources/web-2018-03-31-9ad]] · web · Prince-Edward-Island-Fact-Sheet · condo-capital-infra
-- [[sources/web-2018-03-31-a5d]] · web · Newfoundland-and-Labrador-Fact-Sheet · condo-capital-infra
-- [[sources/web-1998-01-01-da9]] · web · About BuildingLink Canada- Condo & Strata Property Management Software · condo-capital-infra
-- [[sources/web-2007-05-15-70e]] · web · Brookfield Residential Services, Ltd., Canada's Largest Condominium Management Company, Selects Yardi Voyager™ · condo-capital-infra
-- [[sources/pdf-3c6b4345c8c4]] · pdf · summergardens-reservestudy · condo-capital-infra
-- [[sources/web-2024-03-12-012]] · web · Yardi Breeze Premier: Unlocking a New Era in Condo and Strata Market in Canada · condo-capital-infra
-- [[sources/web-2025-02-10-057]] · web · NGBR - Sustainable & Smart Building Certification Program - BOMA BEST · condo-capital-infra
-- [[sources/web-2026-03-26-dd1]] · web · Natural Resources Canada's national building energy benchmarking initiative · condo-capital-infra
-- [[sources/web-2025-01-01-14d]] · web · Reserve Study Software for HOAs & Condo Associations | SmartProperty
-- [[sources/web-2025-04-12-ca4]] · web · The Percent Funded Myth - Why Reserve Study Math Fails the Test - HOA Detective™ Blog
-- [[sources/web-2026-03-09-423]] · web · Structural Integrity Reserve Study Explained for Florida Condominiums
-- [[sources/web-2025-01-01-cc2]] · web · RCW 64.90.550
-- [[sources/web-2026-01-01-970]] · web · Reserve Study Standards
-- [[sources/web-2023-03-20-7a4]] · web · What is Full Funding and Baseline Funding?
-- [[sources/web-2025-07-09-b13]] · web · HOA Special Assessment Limits in California: Homeowner Protections | LS Carlson Law
-- [[sources/web-2023-06-26-652]] · web · Changes to CAI’s Reserve Study Standards Explained
-- [[sources/web-1995-01-01-0ff]] · web · https://www.flsenate.gov/Session/Bill/2022D/4D/BillText/e1/HTML
-- [[sources/web-2025-10-29-056]] · web · Washington State Reserve Study Requirements: Your HOA/Condo Compliance Roadmap
-- [[sources/web-2026-01-01-ba8]] · web · Pricing | PropFusion · condo-capital-infra
-- [[sources/web-2026-01-01-47b]] · web · Reserve Study Software for Reserve Specialists | PropFusion · condo-capital-infra
-- [[sources/web-2026-04-27-33b]] · web · Florida Structural Integrity Reserve Study (SIRS) 2026 | PropFusion · condo-capital-infra
-- [[sources/web-2026-05-18-f80]] · web · PropFusion · condo-capital-infra
-- [[sources/web-2025-11-15-556]] · web · Solume Launches AI Driven Reserve Study Management for HOAs · condo-capital-infra
-- [[sources/web-2025-11-08-926]] · web · Endowment Lock · condo-capital-infra
-- [[sources/web-2025-01-23-a1d]] · web · Future Proof Your Florida HOA with Solume's Reserve Study Integration | Solume HOA Software · condo-capital-infra
-- [[sources/web-2026-01-01-488]] · web · Reserve Study | Solume | Smart Community Management · condo-capital-infra
-- [[sources/web-2025-01-07-b6e]] · web · Reserve Study Requirements by State · condo-capital-infra
-- [[sources/web-2015-01-01-3e6]] · web · Asset Lifecycle Management | Facilio · condo-capital-infra
-- [[sources/web-2015-01-01-599]] · web · Enterprise Asset Management Software | Modern EAM Platform · condo-capital-infra
-- [[sources/web-2015-01-01-170]] · web · Facilio Atom: Agentic AI for Facility Operations · condo-capital-infra
-- [[sources/web-2026-02-11-bc9]] · web · Facilio Launches Autonomous AI Agents to Automate Manual Back-Office Work in Facilities Management · condo-capital-infra
-- [[sources/web-2026-01-01-d10]] · web · The Financial OperatingSystem for Asset Managers. · condo-capital-infra
-- [[sources/web-2025-07-03-d90]] · web · Data retrieval and validation for asset onboarding and deriving asset characteristics · condo-capital-infra
-- [[sources/web-2024-10-07-033]] · web · Eli Report Launches Free Condo Document Review Across North America · condo-capital-infra
-- [[sources/web-2024-10-31-4cf]] · web · Condo Document Review | Fast, Easy & Reliable - Eli · condo-capital-infra
-- [[sources/web-2023-10-19-a69]] · web · Special Levy Forecasting Tool & Software - Eli · condo-capital-infra
-- [[sources/web-2020-12-11-687]] · web · Pricing & Plans | Eli Report · condo-capital-infra
-- [[sources/web-2026-03-03-bbe]] · web · BC Condo Owners to Face Costly Levies while Ontario Pays Now: New Data Reveals Canada’s Condo Funding Divide: OctoAI · condo-capital-infra
-- [[sources/web-2019-12-11-cab]] · web · PRESS RELEASE: Helping to Better Inform Condo Buyers, New Real Estate Platform Eli Report Launches in B.C. - Eli Report · condo-capital-infra
-- [[sources/web-2021-04-23-77c]] · web · AI Condo Document Review Platform Eli Report Expands Distribution Through eStrataHub Integration · condo-capital-infra
-- [[sources/web-2025-07-03-321]] · web · Climate Tech Leader AISIX Strengthens Real Estate Intelligence Platform Through Key Partnership Extension · condo-capital-infra
-- [[sources/web-2024-05-17-2fd]] · web · Introducing your Annual Benchmark Report - Eli Report · condo-capital-infra
-- [[sources/web-2024-08-06-5e3]] · web · Vancouver startup revolutionizes condo and townhome assessment with AI-powered tool · condo-capital-infra
-- [[sources/web-2026-05-19-00f]] · web · Property assessment & Assessment search service - frequently asked questions · condo-capital-infra
-- [[sources/web-2026-01-02-6fe]] · web · Property information & trends · condo-capital-infra
-- [[sources/pdf-c974b5dbd563]] · pdf · cao-reserve-fund-guide-2024 · condo-capital-infra
-- [[sources/web-2025-11-06-4cc]] · web · Condo Registry Search - Condominium Authority of Ontario · condo-capital-infra
-- [[sources/web-2025-10-21-a7b]] · web · Open Data Dataset - City of Toronto Open Data Portal · condo-capital-infra
-- [[sources/web-2025-02-05-f51]] · web · Reserve fund requirements for Canadian condominiums and stratas · condo-capital-infra
-- [[sources/web-2022-03-01-ef4]] · web · Data Disclosure · condo-capital-infra
-- [[sources/docx-f70cc64d728a]] · docx · bcfsa-advisory-24-014 · condo-capital-infra
-- [[sources/docx-ea451e0d4901]] · docx · bcfsa-blog-more-professionals-2026-01-26 · condo-capital-infra
-- [[sources/web-2013-11-28-88b]] · web · Choosing a depreciation report provider for a strata · condo-capital-infra
-- [[sources/web-2025-10-21-9f1]] · web · Open Data Dataset - City of Toronto Open Data Portal · condo-capital-infra
-- [[sources/arxiv-2204.12404]] · arxiv · Hierarchical Bayesian Modelling for Knowledge Transfer Across Engineering Fleets via Multitask Learning
-- [[sources/web-2026-05-13-b67]] · web · Sheffield Elicitation Framework
-- [[sources/arxiv-2512.09163]] · arxiv · WTNN: Weibull-Tailored Neural Networks for survival analysis
-- [[sources/web-2012-01-01-57d]] · web · AWARE-P: A software for urban water infrastructure planning
-- [[sources/arxiv-2508.13359]] · arxiv · Unified Modelling of Infrastructure Asset Performance Deterioration -- a bounded gamma process approach
-- [[sources/web-2026-01-13-6bf]] · web · Cleaning Maintenance Logs with LLM Agents for Improved Predictive Maintenance
-- [[sources/arxiv-2505.20725]] · arxiv · A reinforcement learning agent for maintenance of deteriorating systems with increasingly imperfect repairs
-- [[sources/web-2025-11-10-fd9]] · web · A Data-Driven Particle Filter Approach for System-Level Prediction of Remaining Useful Life
-- [[sources/web-2024-10-20-950]] · web · Bridge performance degradation model based on the multi-variate bayesian dynamic linear method - Guojun Yang, Li Tian, Jianbo Mao, Guangwu Tang, Yongfeng Du, 2024
-- [[sources/web-2026-03-04-157]] · web · Rail surface defect prediction and inspection planning using limited maintenance data – a hierarchical Bayesian approach
-- [[sources/arxiv-0708.0293]] · arxiv · Rejoinder: Expert Elicitation for Reliable System Design
-- [[sources/arxiv-1102.5239]] · arxiv · Uncertainty Updating in the Description of Coupled Heat and Moisture Transport in Heterogeneous Materials
-- [[sources/arxiv-2205.03478]] · arxiv · On off-line and on-line Bayesian filtering for uncertainty quantification of structural deterioration
-- [[sources/web-2025-06-07-869]] · web · Damage Identification of a Reinforced Concrete Bridge Pier after an Earthquake based on a Physics-informed Neural Network | Structurae
-- [[sources/web-2025-01-31-943]] · web · An Evaluation on the Time-Dependent Reliability of Reinforced Concrete Structures Considering Non-Stationary Resistance Degradation: A Comprehensive Gamma Process-Based Approach
-- [[sources/web-2023-01-05-939]] · web · PHM Datasets - PHM Society Data Repository
-- [[sources/web-2026-02-01-5c9]] · web · Life-cycle performance, design, maintenance, optimization, and decision-making of asphalt pavement under uncertainty: a review
-- [[sources/web-2007-06-28-abf]] · web · Reliability and Optimization of Structural Systems: Assessment, Design
-- [[sources/web-2025-08-21-7a6]] · web · Model Validation and Uncertainty Quantification, Vol. 3
-- [[sources/web-2025-10-14-bcb]] · web · Infrastructure management via BIM model: integration of structural health monitoring and ANN-based damage assessment
-- [[sources/yt-WJ1BvfOm-94]] · youtube · Predictive Information Criteria in Hierarchical Bayesian Models for Clustered Data
-- [[sources/yt-vx6ATEoEuUE]] · youtube · Stochastic Model for Estimating Network-Scale Deterioration and Effect of Interventions on Bridges
-- [[sources/pubmed-35595821]] · pubmed · Prognostic modeling of predictive maintenance with survival analysis for mobile work equipment.
-- [[sources/web-2024-11-01-b9d]] · web · ASCE Library
-- [[sources/web-2025-01-07-4bf]] · web · Structural Safety - mars 2025 | Structurae
-- [[sources/web-2022-07-07-ac2]] · web · A transformed gamma process for bounded degradation phenomena
-- [[sources/web-2021-03-20-b9c]] · web · Stochastic comparisons and ageing properties of an extended gamma process | Journal of Applied Probability | Cambridge Core
-- [[sources/web-2025-04-07-e6e]] · web · Optimal predictive maintenance for a nonstationary gamma process
-- [[sources/web-2018-12-12-ce5]] · web · Estimating the resistance of aging service-proven bridges with a Gamma process-based deterioration model
-- [[sources/web-2026-05-01-6b7]] · web · Bayesian Survival Models Reveal Wind-Driven Reliability Patterns in Turbines
-- [[sources/arxiv-2508.02749]] · arxiv · Considering Spatial Structure of the Road Network in Pavement Deterioration Modeling
-- [[sources/arxiv-2507.01056]] · arxiv · Evaluating Pavement Deterioration Rates Due to Flooding Events Using Explainable AI
-- [[sources/web-1998-09-20-413]] · web · Selectivity Bias in Modeling Highway Pavement Maintenance Effectiveness | Journal of Infrastructure Systems | Vol 4, No 3
-- [[sources/web-2008-01-01-8c5]] · web · UBC
-- [[sources/web-2008-01-01-451]] · web · UBC
-- [[sources/web-2025-08-05-4b5]] · web · CINC Systems Accelerates Industry-Leading AI Momentum with 100+ Management Companies Signed Up for Cephai+ · condo-capital-infra
-- [[sources/web-2025-10-14-ce0]] · web · CINC Systems Appoints New Executives to Accelerate Company's Growth with AI-Powered Platform Expansion · condo-capital-infra
-- [[sources/web-2024-07-22-f1f]] · web · CINC Systems Bolsters Leadership Amid Record-Breaking Growth · condo-capital-infra
-- [[sources/web-2025-01-06-1e2]] · web · CINC Systems Acquires ONR Applications, Inc. to Deliver the Preeminent HOA Management Experience · condo-capital-infra
-- [[sources/web-2025-09-16-709]] · web · CINC Redefines Community Association Management With Launch of CINC Connect · condo-capital-infra
-- [[sources/web-2025-10-15-7aa]] · web · Vantaca Secures $300M+ Growth Investment at $1.25B Valuation to Cement AI-First Market Leadership · condo-capital-infra
-- [[sources/web-2024-11-20-cd8]] · web · Vantaca Acquires HOAi to Unlock a New Era of HOA Community Management with Cutting-Edge AI · condo-capital-infra
-- [[sources/web-2024-05-15-1b2]] · web · Meet PayHOA, a profitable and once-bootstrapped SaaS startup that just landed a $27.5M Series A | TechCrunch · condo-capital-infra
-- [[sources/web-2026-02-26-870]] · web · CINC Systems Unveils Payables+ AI-Powered Accounts Payable Solution · condo-capital-infra
-- [[sources/web-2020-06-10-363]] · web · CINC Systems Receives Growth Investment from Spectrum Equity and Announces New Senior Executives · condo-capital-infra
-- [[sources/web-2008-01-01-0ad]] · web · ICS® & CDARS® | IntraFi® · condo-software
-- [[sources/web-2026-01-01-21d]] · web · HOA ICS® and CDARS® · condo-software
-- [[sources/pdf-fc88aa6c2822]] · pdf · cai-reserve-fund · condo-software
-- [[sources/pdf-aa9367a8a4a9]] · pdf · cmrao-financial-management-2025-02 · condo-software
-- [[sources/web-2026-01-01-3bf]] · web · Expanding Reserve Fund Investment Options · condo-software
-- [[sources/pdf-dheide-2022-microsoft-word-600]] · pdf · Microsoft Word - 600-003 Investing CRF Guide_with most of ND comments (002) · condo-software
-- [[sources/web-2026-01-01-2fd]] · web · Property Management Accounting & Reporting Software | AppFolio · condo-software
-- [[sources/web-2023-06-06-844]] · web · CINC Systems Announces the Launch of TresRE, a suite of treasury solutions designed to help banks provide real estate companies the ability to bank within their accounting software · condo-software
-- [[sources/web-2024-01-01-4d7]] · web · The Florida Senate · condo-software
-- [[sources/web-2018-07-01-694]] · web · The Florida Senate · condo-software
-- [[sources/web-2026-03-18-a4e]] · web · What Fannie Mae & Freddie Mac’s Latest Policy Changes Mean for Condominium Associations, Lenders, and Homeowners · condo-software
-- [[sources/web-2026-05-23-01f]] · web · Title 55.1. Property and Conveyances · condo-software
-- [[sources/web-2026-05-23-1d6]] · web · Virginia Law · condo-software
-- [[sources/web-2025-06-10-ddd]] · web · Alerts · condo-software
-- [[sources/web-2018-08-01-f87]] · web · FAQ -When Is a Review or Audit Required or Recommended? · condo-software
-- [[sources/web-2026-04-15-f75]] · web · 2026 Fannie Mae and Freddie Mac Condo Requirements: What Boards Need to Know - Eclipse Community Management - HOA and Condo Management · condo-software
-- [[sources/web-2026-05-22-6cd]] · web · Components, Not Solutions · ai-native-business
-- [[sources/web-2026-05-22-caf]] · web · 🔵 Google Search now generates UI on demand · ai-native-business
-- [[sources/web-2026-05-23-366]] · web · [AINews] All Model Labs are now Agent Labs · ai-native-business
-- [[sources/web-2026-05-22-574]] · web · [AINews] New AI Infra unicorns: Exa, Modal, TurboPuffer · ai-native-business
-- [[sources/web-2026-05-22-eb1]] · web · Weekly Dose of Optimism #194 · ai-native-business
-- [[sources/web-2026-05-22-03d]] · web · Gemini 3.5 Flash Looks Good For How Fast It Is · ai-native-business
-- [[sources/web-2026-05-22-ed5]] · web · The Heretic’s Guide to AI’s Stars Part III: Tracepalooza & the Bezzle · ai-native-business
-- [[sources/web-2026-05-22-587]] · web · AI’s Public Relations Emergency · ai-native-business
-- [[sources/web-2026-05-22-f7b]] · web · Build the room before you write the memo. Grab the 4-prompt project room kit: source inventory, duplicate log, missing-context list, grounded draft. · ai-native-business
-- [[sources/web-2026-05-22-a21]] · web · How the Fastest Teams Actually Ship Code with AI · ai-native-business
-- [[sources/web-2026-05-23-66d]] · web · The Marc Andreessen Agent with Claude · ai-native-business
-- [[sources/web-2026-05-23-479]] · web · When the Human Layer Is the Control Layer · ai-native-business
-- [[sources/web-2026-05-23-4c1]] · web · AI vs SaaS: Peak Pessimism · ai-native-business
-- [[sources/web-2026-05-22-e40]] · web · meet the new economy, same as the old economy · ai-native-business
-- [[sources/web-2026-05-23-6c2]] · web · Smart money thesis scanner. · ai-native-business
-- [[sources/web-2026-05-22-113]] · web · Will AI Replace Systems Thinking? · ai-native-business
-- [[sources/web-2024-03-29-a63]] · web · Your AI Product Needs Evals – · ai-native-business
-- [[sources/web-2023-07-30-b4c]] · web · Patterns for Building LLM-based Systems & Products · ai-native-business
-- [[sources/web-2023-09-20-3cb]] · web · Generative AI’s Act Two · ai-native-business
-- [[sources/web-2023-01-19-b4a]] · web · Who Owns the Generative AI Platform? | Andreessen Horowitz · ai-native-business
-- [[sources/web-2014-03-01-97d]] · web · I'm Launching 12 Startups in 12 Months · ai-native-business
-- [[sources/web-2026-04-21-260]] · web · Mortgage eligibility for condos: New rules and relief · condo-software
-- [[sources/web-2026-03-24-bb6]] · web · Fannie Mae Updates Reserve Guidelines for Condominium Associations: Impact to Budgeting, Eligibility, and Property Values | KSN Law Firm · condo-software
-- [[sources/yt-msfECL74sIA]] · youtube · How Pieter Levels Makes Millions From Nomad List
-- [[sources/yt-I08ZeY7QcrE]] · youtube · How Top 1% AI-Native Organizations Actually Make Money | Harvard Business School, Rem Koning
-- [[sources/web-2024-02-07-3a2]] · web · The One-person Billion-dollar Company
-- [[sources/web-2025-02-14-794]] · web · AI Is Driving A Shift Towards Outcome-Based Pricing (December 2024 Enterprise Newsletter) | Andreessen Horowitz
-- [[sources/web-2025-10-04-aae]] · web · The Emerging AI-Native GTM Playbook: 6 Patterns from companies racing to $100M
-- [[sources/web-2026-04-10-562]] · web · AI's Unsustainable Economics: The Path to Positive Margins | Hustle Commons Blog
-- [[sources/web-2026-04-23-e4c]] · web · Solo Founders Are Replacing Employees With AI Agents — Here's the Stack
-- [[sources/web-2024-04-01-048]] · web · Deposits held in trust · condo-software
-- [[sources/web-2014-07-16-7c3]] · web · AMENDMENTS NOT IN FORCE · condo-software
-- [[sources/web-2023-10-01-d55]] · web · O Reg 48/01 | General · condo-software
-- [[sources/web-2023-10-01-0bc]] · web · O Reg 48/01 | General · condo-software
-- [[sources/web-2011-06-02-7ff]] · web · Condominium Property Regulation, Alta Reg 168/2000 · condo-software
-- [[sources/web-2010-04-07-c59]] · web · Trustee Act, R.S.N.S. 1989, c. 479 · condo-software
-- [[sources/web-2014-07-24-031]] · web · Law Document English View · condo-software
-- [[sources/web-2022-09-02-033]] · web · - Civil Code of Québec · condo-software
-- [[sources/web-2025-07-30-00d]] · web · Adoption of the regulation implementing Bill 16 · condo-software
-- [[sources/web-2019-03-07-e42]] · web · Strata Property Regulation amendment clarifies deposit-insurance requirements - British Columbia Law Institute · condo-software
-- [[sources/web-2026-01-01-040]] · web · Investing the Reserve Fund: How to Maximize Return and Minimize Risk · condo-software
-- [[sources/web-2022-02-01-597]] · web · Credit Unions and Deposit Insurance · condo-software
-- [[sources/web-2000-01-01-611]] · web · Our Role · condo-software
-- [[sources/web-2026-01-01-962]] · web · WA ConnectLive · condo-software
-- [[sources/web-2020-01-02-b60]] · web · CIT Completes Acquisition of Mutual of Omaha Bank · condo-software
-- [[sources/web-2026-01-01-33e]] · web · HOA Loans · condo-software
-- [[sources/web-2026-04-14-940]] · web · How to pay for an upcoming HOA project · condo-software
-- [[sources/web-2022-05-20-5f1]] · web · The Spotlight Shines on Alliance Association Bank - CAI Keystone · condo-software
-- [[sources/web-2025-08-28-b49]] · web · Pacific Premier–Umpqua Merger Impact | Community Financials · condo-software
-- [[sources/web-2026-05-23-34b]] · web · Open a Business chequing account · condo-software
-- [[sources/web-2026-04-26-bf8]] · web · Condominium services | FirstOntario Credit Union · condo-software
-- [[sources/web-2025-12-31-dae]] · web · Instructions for Form 1120-H (2025) | Internal Revenue Service · condo-software
-- [[sources/web-2002-09-05-ce9]] · web · ARCHIVED - Condominiums · condo-software
-- [[sources/web-2014-08-18-d79]] · web · 18 August 2014 External T.I. 2014-0528171E5 - Condominium Corporations and 149(1)(l) · condo-software
-- [[sources/web-2026-05-23-697]] · web · 🤖 AI Agents Weekly: Gemini 3.5 Flash, Antigravity 2.0, Codex Thursday, Cohere Command A+, Qwen3.7-Max, and More · ai-native-business
-- [[sources/web-2020-12-01-877]] · web · Form 1028 Guidelines for Homeowners’ Associations Revised: 12/2020 · condo-software
-- [[sources/web-2026-05-15-040]] · web · IRS Form 1120-H: Does an Association Pay Taxes on Reserve Interest? - Association Reserves · condo-software
-- [[sources/web-2026-01-01-a9a]] · web · Is Revenue Ruling 70-604 Still Alive? · condo-software
-- [[sources/web-2025-10-20-a96]] · web · Filing income tax returns - VISOA - Vancouver Island Strata Owners Association · condo-software
-- [[sources/web-2025-11-06-d1c]] · web · Revenu Québec Form CO-17.SP for Co-Ownership Syndicates | T2inc.ca · condo-software
-- [[sources/web-2022-01-01-a78]] · web · Civil Code § 5380 – Management of Association Funds · condo-software
-- [[sources/web-2000-09-30-c39]] · web · Civil Code § 5565 – Reserve Summary Required Elements · condo-software
-- [[sources/web-2025-01-01-946]] · web · DAVIS-STIRLING ACT
-- [[sources/pdf-994c881efb49]] · pdf · cao-guide-finances-2024 · condo-software
-- [[sources/web-2026-03-05-dc5]] · web · Financial Reporting for Condominium Corporations in Ontario: A Complete CPA Guide - Insight Accounting CPA · condo-software
-- [[sources/web-2024-03-06-aca]] · web · What Is The HOA Reserve Funds FDIC Limit? | Clark Simson Miller · condo-software
-- [[sources/web-2025-11-04-f77]] · web · HOA Management Software | Community Association Software by Vantaca · condo-software
-- [[sources/web-2026-04-02-20c]] · web · HOA Management Software Partners | Seamless Integrations · condo-software
-- [[sources/web-2026-05-08-cf8]] · web · Pricing - Buildium · condo-software
-- [[sources/web-2024-01-17-760]] · web · Property Management Software Pricing | AppFolio · condo-software
-- [[sources/web-2025-03-20-542]] · web · Integrations - Condo Control · condo-software
-- [[sources/web-2026-02-18-d33]] · web · Voyager Condo, Co-op & HOA · condo-software
-- [[sources/web-2025-07-16-ce4]] · web · Simple, efficient and integrated property management solution · condo-software
-- [[sources/web-2024-09-04-5f4]] · web · Best HOA Community Management Software | FRONTSTEPS · condo-software
-- [[sources/web-2026-05-14-389]] · web · HOA Software by TownSq | Smart Community Management App · condo-software
-- [[sources/web-2026-03-11-3a6]] · web · HOA Software Pricing | HOA Management Software Pricing - PayHOA · condo-software
-- [[sources/web-2026-01-16-af3]] · web · Condo & HOA Management Software · condo-software
-- [[sources/web-2025-03-13-d73]] · web · 6 Game-Changing Condo Management Software Integrations · condo-software
-- [[sources/web-2022-01-01-3fa]] · web · Integration Options for Accounting - BuildingLink · condo-software
-- [[sources/web-2025-11-25-72b]] · web · MaintainX Secures $150M to Lead AI in Asset Management · condo-software
-- [[sources/web-2026-01-01-ec1]] · web · Work Order Form Fields | MaintainX Help Center · condo-software
-- [[sources/web-2025-09-29-f2f]] · web · Daisy: Interview With Co-Founder & CEO Yotam Cohen About The AI-Driven Property Management Company · condo-software
-- [[sources/web-2025-01-01-880]] · web · Fiix CMMS API Developer's Guide · condo-software
-- [[sources/web-2024-11-01-fc2]] · web · CommunityPay - Automated Reserve Studies · condo-software
-- [[sources/web-2026-01-01-fea]] · web · HOA Accounting & Governance Platform | CommunityPay · condo-software
-- [[sources/web-2020-09-02-290]] · web · Property Management, News and Information - The UpperBee Blog · condo-software
-- [[sources/web-2026-05-24-c93]] · web · Yardi Product/Version Supported with the Yardi - Condo Control Integration · condo-software
-- [[sources/web-2025-10-15-25b]] · web · Condo & Strata Features · condo-software
-- [[sources/web-2026-01-01-f1e]] · web · HOA Governance & Accounting Software | CommunityPay · condo-software
-- [[sources/web-2025-01-31-f4e]] · web · UpperBee, all-in-one property management solution | integrations and applications · condo-software
-- [[sources/web-2026-02-11-4eb]] · web · Fannie Mae 1076 Condo Questionnaire: Why Manual Completion Fails and How Auto-Fill Changes Everything · condo-software
-- [[sources/web-2025-09-18-31a]] · web · CommonArea Financial Surpasses 10,000 Communities on ReserveBuilder™ Platform, Launches Loan Placement Functionality to Address Industry-Wide Funding Gaps · condo-software
-- [[sources/web-2026-01-01-e45]] · web · HomeRun IQ — Reserve Studies, PCA, SIRS & Capital Planning · condo-software
-- [[sources/web-2026-01-01-502]] · web · HomeRun IQ Platform — Reserve Studies, PCA & SIRS · condo-software
-- [[sources/web-2023-05-05-52f]] · web · SmartProperty Integration with CINC Systems Goes Live! · condo-software
-- [[sources/web-2026-01-01-c87]] · web · Software Partners - CINC Systems · condo-software
-- [[sources/web-2024-09-13-69c]] · web · SmartProperty Asset & Project Management Software Integrated with AppFolio · condo-software
-- [[sources/web-2026-01-01-efb]] · web · cyan integrated tech platform · condo-software
-- [[sources/web-2026-01-01-936]] · web · HomeRun IQ — Reserve Studies, PCA, SIRS & Capital Planning · condo-software
-- [[sources/web-2025-04-23-889]] · web · Find an Interface partner · condo-software
-- [[sources/web-2026-05-24-100]] · web · Example Domain
-- [[sources/web-2022-07-07-3bd]] · web · Smart Strategies for Effective Reserve Funding
-- [[sources/pdf-58cd32ac73c8]] · pdf · 2024-10-16 Reserve Fund Study Draft 1 · condo-capital-infra
-- [[sources/pdf-da86bd51429b]] · pdf · 2024-12-06 SG Comments on Draft 1 · condo-capital-infra
-- [[sources/pdf-5dad0dbc650c]] · pdf · 2025 Reserve Fund Study Supplement_Merged · condo-capital-infra
-- [[sources/pdf-28d4b9d34712]] · pdf · 2025-02-21 Reserve Fund Study Draft 2 · condo-capital-infra
-- [[sources/pdf-427f1fbfc9c8]] · pdf · 2025-03-14 from Keeble · condo-capital-infra
-- [[sources/pdf-e208682ecbca]] · pdf · 2025-04-01 Memo to Owners - Reserve Fund Study 2025 · condo-capital-infra
-- [[sources/pdf-1c554d4c6512]] · pdf · 2025-05-12 from Ron Anaka and Reply · condo-capital-infra
-- [[sources/pdf-de2ba769f276]] · pdf · 2025-06-11 Certificate · condo-capital-infra
-- [[sources/pdf-b73e53ed0c0d]] · pdf · 2025-06-11 Spreadsheet 10 · condo-capital-infra
-- [[sources/pdf-4931157e130a]] · pdf · AI Strategy Planning Session_otter_ai_transcript · orita-cmo
-- [[sources/docx-92ec692fb0f8]] · docx · orita-claude-md · orita-cmo
-- [[sources/docx-7ed3b7965067]] · docx · orita-competitive-intelligence-agent-spec · orita-cmo
-- [[sources/docx-b90a5e5fdcc4]] · docx · orita-agent-architecture-analysis · orita-cmo
-- [[sources/docx-25c1bcf28fb8]] · docx · orita-marketing-automation-plan · orita-cmo
-- [[sources/yt-ZUIprPSbYO4]] · youtube · Automate Your HubSpot CRM with Claude Code 🤖
-- [[sources/yt-bZo4jVdZfaI]] · youtube · Claude + HubSpot MCP: The Future of CRM is Here. See How I Use It.
-- [[sources/yt-PmViuQw2fNs]] · youtube · Automating MEDDIC: How to Flag Missing Decision Makers in HubSpot
-- [[sources/web-2026-01-01-0e1]] · web · HubSpot MCP Server
-- [[sources/yt-3JqJkRF0_yU]] · youtube · How to Set up HubSpot to BigQuery integration | Tutorial
-- [[sources/web-2026-04-11-879]] · web · GitHub - do-y-lee/wikiloom: WikiLoom turns raw documents into a persistent, compounding knowledge base. The LLM reads sources and writes structured wiki pages.
-- [[sources/web-2026-05-29-100]] · web · Example Domain
-- [[sources/pdf-minyoung-huh-2024-the-platonic-representation]] · pdf · The Platonic Representation Hypothesis · convergent-ai-brain
-- [[sources/pdf-5f41a1d2e45f]] · pdf · Whatever next? Predictive brains, situated agents, and the future of cognitive science · convergent-ai-brain
-- [[sources/web-2026-05-27-cee]] · web · Time to take AI consciousness seriously · convergent-ai-brain
+- [[sources/yt-uploadTest_AB]] · youtube · Test source
+- [[sources/web-2026-06-03-cc7]] · web · SmartProperty Atlas™ | The Reserve Study Intelligence Engine · condo-capital-infra
+- [[sources/web-2026-06-02-fce]] · web · SmartProperty® Launches Atlas™ the Nation’s First Reserve Study Intelligence Engine · condo-capital-infra
+- [[sources/web-2025-01-01-1ee]] · web · HOA Reserve Study & Capital Planning Platform | SmartProperty · condo-software
+- [[sources/web-2025-01-01-90b]] · web · Reserve Study Software Pricing | SmartProperty · condo-software
+- [[sources/web-2025-01-01-587]] · web · About SmartProperty | Reserve Planning Built for HOAs · condo-software
+- [[sources/web-2025-01-01-329]] · web · Reserve Planning Software for Large-Scale & Master-Planned Communities | SmartProperty · condo-software
+- [[sources/web-2024-08-27-df2]] · web · SmartProperty and FNBO · condo-software
+- [[sources/web-2025-04-07-b53]] · web · The Living Reserve Study® Expands Internationally with Humberts Dubai and SmartProperty® Partnership · condo-software
+- [[sources/web-2026-03-23-6fd]] · web · New Fannie Mae & Freddie Mac Rules Are Coming. Is Your Community Ready? · condo-capital-infra
+- [[sources/web-2025-04-07-817]] · web · SmartProperty & Strategic Club Solutions Announce Strategic Partnership · condo-software
+- [[sources/web-2025-08-06-94b]] · web · Bill 16 in Quebec: In Force Starting August 14, 2025
+- [[sources/web-2026-06-04-a88]] · web · Condo Management Software | Shiftsuite – The Complete Tech Stack · condo-software
+- [[sources/web-2023-05-31-64e]] · web · Who will manage all the future condos in Ontario? - REMI Network · condo-software
+- [[sources/web-2010-01-01-0de]] · web · Power Strata Systems Inc. | Strata Management Software Solutions · condo-software
+- [[sources/web-2025-05-26-6f6]] · web · [Guide] Depreciation Reports & Reserve Fund Studies in Canada - Eli · condo-software
+- [[sources/web-2025-02-14-040]] · web · What every condo board should know about the CAOs' reserve fund report - CPO Management · condo-software
+- [[sources/web-2026-01-01-d4f]] · web · Built by Civil Engineers. For the people who fund, insure, and run buildings. · condo-capital-infra
+- [[sources/web-2026-01-01-84c]] · web · Powerful Financial Planning · condo-capital-infra
+- [[sources/web-2026-02-27-641]] · web · Form B discloses key financial, legal, and operational details specific to the lot and the broader strata corporation. · condo-capital-infra
+- [[sources/web-2007-08-01-6d8]] · web · Protecting Your Designs · condo-capital-infra
+- [[sources/web-2025-11-17-cf4]] · web · Inhabit Launches New Slate of Product Features at OpTech 2025 · condo-software
+- [[sources/web-2025-08-18-fa4]] · web · Year 3 Announcement — MELLODDY · data-collectives
+- [[sources/web-2021-06-25-2aa]] · web · Data Trusts and the Governance of Smart Environments: Lessons from the Failure of Sidewalk Labs’ Urban Data Trust · data-collectives
+- [[sources/web-2021-03-07-5c3]] · web · Mitigating Antitrust Concerns When Competitors Share Data Using Blockchain Technology · data-collectives
+- [[sources/web-2021-05-05-125]] · web · Cooperative | MIDATA · data-collectives
+- [[sources/web-2024-04-04-ad6]] · web · Data cooperative · data-collectives
+- [[sources/web-2019-04-13-653]] · web · R&D: Can data trusts increase or help data sharing? · data-collectives
+- [[sources/web-2023-04-12-931]] · web · Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms · data-collectives

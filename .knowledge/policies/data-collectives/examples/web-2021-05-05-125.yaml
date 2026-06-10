@@ -1,0 +1,29 @@
+source_id: web-2021-05-05-125
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: MIDATA is the canonical member-owned health-data cooperative (Switzerland,
+  founded 2015); squarely matches inclusion criterion 1 (governance/incentive structure
+  of a data cooperative). Filter under-scored an abstract-light landing page.
+pinned_at: '2026-06-10T21:25:40Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Cooperative | MIDATA
+  authors: []
+  url: https://www.midata.coop/en/cooperative/
+content_excerpt: '## About us
+
+
+  MIDATA shows how data can be used for the common good, while at the same time ensuring
+  the citizens’ control over their personal data.
+
+
+  Founded in 2015, the nonprofit cooperative operates a data platform, acts as a trustee
+  for data collection and guarantees the sovereignty of citizens over the use of their
+  data.
+
+
+  The MIDATA model is designed for international application: MIDATA Switzerland supports
+  the foundation of regional or national MIDATA cooperatives that share the data platf'

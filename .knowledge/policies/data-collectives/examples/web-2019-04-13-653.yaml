@@ -1,0 +1,26 @@
+source_id: web-2019-04-13-653
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: The Open Data Institute originated the data-trust construct; this page
+  defines data trusts and documents the 2018 real-world sector pilots (food waste,
+  illegal wildlife trade, GLA/Greenwich city-data). Matches inclusion criteria 1 and
+  4.
+pinned_at: '2026-06-10T21:28:30Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'R&D: Can data trusts increase or help data sharing?'
+  authors:
+  - Miranda Marcus
+  url: https://theodi.org/project/data-trusts
+content_excerpt: '*Could *data trusts* help to increase data sharing while retaining
+  trust from both people and organisations? We’ve been researching the impacts of
+  data trusts in the real world*
+
+
+  To realise the potential benefits of data for our societies and economies we need
+  trustworthy data stewardship. We need to establish different approaches to deciding
+  who should have access to data, for what purposes and to whose benefit, and make
+  it easier for more people to adopt them. Data trusts are one approach to d'

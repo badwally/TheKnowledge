@@ -1,0 +1,33 @@
+source_id: web-2024-04-04-ad6
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Internet Policy Review peer-reviewed glossary entry defining data cooperatives
+  and the MIT Open Algorithms (OPAL) move-the-code-to-the-data access model; core
+  to inclusion criterion 1 (governance/incentive structure) and the privacy-preserving
+  access-design question.
+pinned_at: '2026-06-10T21:28:30Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Data cooperative
+  authors: []
+  url: https://policyreview.info/glossary/data-cooperative
+content_excerpt: '# Data cooperative
+
+
+  ## Abstract
+
+
+  Data cooperatives are a type of data intermediary using long established cooperative
+  models and global regulatory affordances to manage data with or on behalf of members
+  (data producers) for the benefit of members or for trade with external queriers
+  (data users).This article belongs to the Glossary of decentralised technosocial
+  systems, a special section of *Internet Policy Review*.
+
+
+  ## Introduction
+
+
+  Data, cheaply produced, stored, analysed, and sold, is a signif'

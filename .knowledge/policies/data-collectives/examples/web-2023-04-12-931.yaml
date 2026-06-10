@@ -1,0 +1,27 @@
+source_id: web-2023-04-12-931
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Peer-reviewed HGG Advances/Cell Press landscape of the five NIH biomedical
+  data commons (All of Us, AnVIL, BioData Catalyst, GDC, Kids First); canonical data-commons
+  case and the mandate-incentive family (NIH submission required since 2008). Matches
+  inclusion criteria 2, 4, 6.
+pinned_at: '2026-06-10T21:28:31Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Cloud-based biomedical data storage and analysis for genomic research: Landscape
+    analysis of data governance in emerging NIH-supported platforms'
+  authors:
+  - Jacklyn M Dahlquist; Sarah C Nelson; Stephanie M Fullerton
+  url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10173774/
+content_excerpt: '## Summary
+
+
+  The storage, sharing, and analysis of genomic data poses technical and logistical
+  challenges that have precipitated the development of cloud-based computing platforms
+  designed to facilitate collaboration and maximize the scientific utility of data.
+  To understand cloud platforms’ policies and procedures and the implications for
+  different stakeholder groups, in summer 2021, we reviewed publicly available documents
+  (N = 94) sourced from platform websites, scientific literature, and lay '

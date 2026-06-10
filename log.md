@@ -42741,3 +42741,133 @@ report=.knowledge/lint/2026-06-10T20-52-37Z-schema-drift.md
 ## [2026-06-10T20:53:34Z] bootstrap-domain | slug=data-collectives | inclusion_count=6 | exclusion_count=4
 
 authored policy for data-collectives from description
+
+## [2026-06-10T20:56:11Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T20-56-11Z-schema-drift.md
+
+## [2026-06-10T21:10:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1801 | cache_read=0 | cache_creation=15017 | duration_ms=21096 | cost_usd=0.039047
+
+## [2026-06-10T21:10:48Z] ingest | id=arxiv-2504.10058 | type=arxiv | domains=data-collectives | filter=review | domain=data-collectives | score=0.6
+
+raw=raw/arxiv/arxiv-2504.10058.md (wiki not written: filter decision=review)
+
+## [2026-06-10T21:12:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3422 | cache_read=0 | cache_creation=15527 | duration_ms=39747 | cost_usd=0.048172
+
+## [2026-06-10T21:12:48Z] ingest | id=web-2021-05-05-125 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.65
+
+raw=raw/web/web-2021-05-05-125.md (wiki not written: filter decision=review)
+
+## [2026-06-10T21:13:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2517 | cache_read=0 | cache_creation=18225 | duration_ms=29187 | cost_usd=0.049043
+
+## [2026-06-10T21:13:20Z] ingest | id=web-2024-04-04-ad6 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.6
+
+raw=raw/web/web-2024-04-04-ad6.md (wiki not written: filter decision=review)
+
+## [2026-06-10T21:14:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4864 | cache_read=0 | cache_creation=15633 | duration_ms=49860 | cost_usd=0.055594
+
+## [2026-06-10T21:14:14Z] ingest | id=web-2019-04-13-653 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.65
+
+raw=raw/web/web-2019-04-13-653.md (wiki not written: filter decision=review)
+
+## [2026-06-10T21:14:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1992 | cache_read=0 | cache_creation=18473 | duration_ms=25316 | cost_usd=0.046914
+
+## [2026-06-10T21:14:43Z] ingest | id=web-2023-04-12-931 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2023-04-12-931.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T21:15:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3357 | cache_read=0 | cache_creation=16197 | duration_ms=41841 | cost_usd=0.049187
+
+## [2026-06-10T21:15:27Z] ingest | id=web-2025-08-18-fa4 | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.71
+
+raw=raw/web/web-2025-08-18-fa4.md wiki=wiki/sources/web-2025-08-18-fa4.md
+
+## [2026-06-10T21:18:12Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=15469 | cache_read=0 | cache_creation=23278 | duration_ms=161082 | cost_usd=0.619530
+
+## [2026-06-10T21:19:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3434 | cache_read=0 | cache_creation=17113 | duration_ms=40338 | cost_usd=0.051404
+
+## [2026-06-10T21:19:00Z] ingest | id=web-2021-06-25-2aa | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.72
+
+raw=raw/web/web-2021-06-25-2aa.md wiki=wiki/sources/web-2021-06-25-2aa.md
+
+## [2026-06-10T21:21:02Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11288 | cache_read=4696 | cache_creation=19743 | duration_ms=119406 | cost_usd=0.482003
+
+## [2026-06-10T21:21:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2003 | cache_read=0 | cache_creation=18004 | duration_ms=22907 | cost_usd=0.046031
+
+## [2026-06-10T21:21:31Z] ingest | id=web-2021-03-07-5c3 | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.7
+
+raw=raw/web/web-2021-03-07-5c3.md wiki=wiki/sources/web-2021-03-07-5c3.md
+
+## [2026-06-10T21:24:17Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=15468 | cache_read=4696 | cache_creation=21310 | duration_ms=163381 | cost_usd=0.602173
+
+## [2026-06-10T21:24:21Z] wiki-author | id=web-2021-03-07-5c3 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=yes
+
+First source in the data-collectives domain — bootstraps core entities (MOBI, IOTA, Analysis Group) and the antitrust-risk / mitigation concept scaffold (blockchain data sharing, smart contracts, permissioned vs public, sensitive-data management, centralized governance, regulator transparency).
+
+## [2026-06-10T21:25:40Z] filter-correction | id=web-2021-05-05-125 | domain=data-collectives | decision=include | original_score=0.65
+
+rationale='MIDATA is the canonical member-owned health-data cooperative (Switzerland, founded 2015); squarely matches inclusion criterion 1 (governance/incentive structure of a data cooperative). Filter under-scored an abstract-light landing page.'
+
+## [2026-06-10T21:25:40Z] retrieve | caller=cli | query=MIDATA health data cooperative | domain=data-collectives | sections=3 | chars=3583
+
+retrieve: 'MIDATA health data cooperative' domain=data-collectives sections=3 chars=3583
+
+## [2026-06-10T21:25:57Z] ingest | id=web-2021-05-05-125 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2021-05-05-125.md wiki=wiki/sources/web-2021-05-05-125.md
+
+## [2026-06-10T21:27:57Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11320 | cache_read=4696 | cache_creation=19936 | duration_ms=118439 | cost_usd=0.484733
+
+## [2026-06-10T21:28:00Z] wiki-author | id=web-2021-05-05-125 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+MIDATA is the canonical Swiss member-owned health-data cooperative; no existing page covers it, so create the entity plus the governance/usage concepts (data cooperative, citizen-directed administration, secondary use) and the two academic co-developers.
+
+## [2026-06-10T21:28:30Z] filter-correction | id=web-2024-04-04-ad6 | domain=data-collectives | decision=include | original_score=0.6
+
+rationale='Internet Policy Review peer-reviewed glossary entry defining data cooperatives and the MIT Open Algorithms (OPAL) move-the-code-to-the-data access model; core to inclusion criterion 1 (governance/incentive structure) and the privacy-preserving access-design question.'
+
+## [2026-06-10T21:28:30Z] filter-correction | id=web-2019-04-13-653 | domain=data-collectives | decision=include | original_score=0.65
+
+rationale='The Open Data Institute originated the data-trust construct; this page defines data trusts and documents the 2018 real-world sector pilots (food waste, illegal wildlife trade, GLA/Greenwich city-data). Matches inclusion criteria 1 and 4.'
+
+## [2026-06-10T21:28:31Z] filter-correction | id=web-2023-04-12-931 | domain=data-collectives | decision=include | original_score=0.3
+
+rationale='Peer-reviewed HGG Advances/Cell Press landscape of the five NIH biomedical data commons (All of Us, AnVIL, BioData Catalyst, GDC, Kids First); canonical data-commons case and the mandate-incentive family (NIH submission required since 2008). Matches inclusion criteria 2, 4, 6.'
+
+## [2026-06-10T21:28:32Z] ingest | id=web-2024-04-04-ad6 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-04-04-ad6.md wiki=wiki/sources/web-2024-04-04-ad6.md
+
+## [2026-06-10T21:31:59Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=18418 | cache_read=4696 | cache_creation=25388 | duration_ms=204661 | cost_usd=0.716703
+
+## [2026-06-10T21:32:05Z] wiki-author | id=web-2024-04-04-ad6 | updates=15 | created=11 | updated=4 | contradictions=0 | draft=yes
+
+Glossary-grade definition of data cooperatives extends the data-cooperative concept with ICA principles, queriers/OPAL access model, and regulatory taxonomy; introduces several uncovered concepts (data intermediary, platform cooperativism, data altruism, OPAL, platform capitalism, federated cooperatives) and entities (ICA, DGA, SAOS, GISC, Pentland) central to the data-collectives domain.
+
+## [2026-06-10T21:32:08Z] ingest | id=web-2019-04-13-653 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2019-04-13-653.md wiki=wiki/sources/web-2019-04-13-653.md
+
+## [2026-06-10T21:34:04Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=10683 | cache_read=4696 | cache_creation=22147 | duration_ms=114812 | cost_usd=0.490918
+
+## [2026-06-10T21:34:06Z] wiki-author | id=web-2019-04-13-653 | updates=5 | created=5 | updated=0 | contradictions=0 | draft=yes
+
+Source is the ODI's canonical data-trust project page; it establishes the ODI as the originator of the data-trust construct, defines the concept, and documents the 2018 UK government-funded pilots and commissioned research programme — none of which is yet represented in the wiki.
+
+## [2026-06-10T21:34:08Z] ingest | id=web-2023-04-12-931 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-04-12-931.md wiki=wiki/sources/web-2023-04-12-931.md
+
+## [2026-06-10T21:38:03Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=21329 | cache_read=4696 | cache_creation=26575 | duration_ms=233867 | cost_usd=0.801348
+
+## [2026-06-10T21:38:07Z] wiki-author | id=web-2023-04-12-931 | updates=11 | created=11 | updated=0 | contradictions=0 | draft=yes
+
+The source is a canonical landscape analysis of the five NIH-funded biomedical data commons plus dbGaP; it introduces a cluster of new entities (each platform, NIH GDS Policy) and governance concepts (biomedical data commons, tiered access, DAC, inverted data sharing) that have no existing pages in the data-collectives wiki.
+
+## [2026-06-10T21:40:01Z] retrieve | caller=cli | query=data cooperative vs data trust vs data commons vs federated learning consortium incentive to contribute | domain=data-collectives | sections=6 | chars=6756
+
+retrieve: 'data cooperative vs data trust vs data commons vs federated learning consortium incentive to contribute' domain=data-collectives sections=6 chars=6756
+
+## [2026-06-10T21:40:03Z] lint | scope=orphans | orphans=752
+
+report=.knowledge/lint/2026-06-10T21-40-03Z-orphans.md

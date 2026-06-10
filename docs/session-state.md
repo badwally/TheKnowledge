@@ -18,7 +18,7 @@ checkpoint here → schedule next.
 
 **Task ledger (loop tracks progress here):**
 - [x] Task 1 — bootstrap `data-collectives` domain (policy.yaml created, verified)
-- [ ] Task 2 — Stream 0 precedent census (seed)
+- [x] Task 2 — Stream 0 precedent census (seed) — 7 source pages + 8 concept pages + entities grounded; analytical note at docs/research/data-collectives/stream-0-precedent-census.md
 - [ ] Task 3 — Stream 1 economic/incentive
 - [ ] Task 4 — Stream 2 technical/architecture
 - [ ] Task 5 — Stream 3 legal
@@ -34,6 +34,28 @@ condo / Longspan terms — that is Stage 2); citations mandatory (`[[sources/<id
 `--draft` then `wiki finalize`); adversarial verification before filing load-bearing
 claims; date precedents, flag pre-2023 for AI-model claims; `wiki retrieve`/`context`
 only, never dump index.md/log.md.
+
+**Per-stream recipe (learned in Task 2 — REUSE):**
+1. deep-research workflow → verified findings + source URLs.
+2. `wiki ingest "<url>" --with-plan --draft --domain data-collectives` per source
+   (authorship path = Max-OAuth `claude -p`, WORKS).
+3. For obviously-in-domain sources the strict filter put in review/rejected:
+   `wiki filter-correct <id> --include --rationale "…" --domain data-collectives`
+   then RE-INGEST `--with-plan` (correction alone does not author the source page).
+4. Grounded concept/entity/source pages = the canonical stream deliverable.
+5. Preserve the analytical findings + adversarial caveats + open questions in
+   `docs/research/data-collectives/stream-N-*.md` (project doc, NOT wiki — avoids
+   direct-write violation; feeds Task 10 + condo Stage 2).
+6. Verify with `wiki retrieve`; commit.
+
+**AUTH CONSTRAINT (blocks `wiki answer` / SDK path):** `ANTHROPIC_API_KEY_RESEARCH`
+returns 401 (invalid). So `wiki answer` and any SDK-cached call FAIL. Do NOT use
+`wiki answer` per stream. The Max-OAuth `claude -p` path (filter / plan / --with-plan
+authorship) WORKS. Final synthesis (Task 10) goes through `wiki query` (NotebookLM,
+separate browser auth) once the corpus is rich — corpus-quality gate first.
+Known authorship friction: the LLM sometimes picks entity_kind values outside the
+controlled enum (consortium/proposal/project) → that entity page fails but the
+source + other pages still commit. Not blocking.
 
 ---
 
@@ -59,7 +81,10 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-Execute **Task 2** — Stream 0 precedent census. deep-research over the pooled-data
-venture taxonomy (US+Canada, EU reference-only, recency-weighted), ingest 6-10 verified
-sources via `wiki ingest --with-plan --draft --domain data-collectives`, author the
-taxonomy synthesis page, verify grounding, commit.
+Execute **Task 3** — Stream 1 economic/incentive. deep-research over cooperative
+game theory, data-as-asset valuation, Shapley-value/data-Shapley pricing, free-rider
+& defection dynamics, and the contribute-your-edge paradox + documented resolutions
+(esp. whether MELLODDY's asymmetric-value-capture mechanism survives when contributors
+are substitutes, not complements — Stream 0 open question 3). Then per-stream recipe:
+ingest+filter-correct sources → grounded concept/entity pages → docs/research note →
+verify → commit. Then advance to Task 4 (Stream 2 technical/architecture).
