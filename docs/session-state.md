@@ -4,6 +4,15 @@ Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop
 
 ---
 
+## ⏸ LOOP PAUSED (user request 2026-06-10)
+
+**Do NOT auto-resume.** If a `/loop` wakeup fires, read this block and STOP without
+re-arming or launching work — the user paused the loop for context management and
+will re-trigger explicitly. Resume only on an explicit user "go". Resume point is in
+`## Next atomic step` below.
+
+---
+
 ## Open contracts
 
 **data-collectives research foundation — IN PROGRESS (self-paced loop).**
@@ -20,7 +29,7 @@ checkpoint here → schedule next.
 - [x] Task 1 — bootstrap `data-collectives` domain (policy.yaml created, verified)
 - [x] Task 2 — Stream 0 precedent census (seed) — 7 source pages + 8 concept pages + entities grounded; analytical note at docs/research/data-collectives/stream-0-precedent-census.md
 - [x] Task 3 — Stream 1 economic/incentive — grounded: nonrivalry-of-data, data-shapley, competitor-data-sharing-tradeoff, product-differentiation-collaboration (+ Jones&Tonetti, Tsoy&Konstantinov, Data Shapley sources). Vives 1984 + Farboodi-Veldkamp verified but full-text won't convert (noted in stream-1 note). KEY: substitutes in same market have weak/negative pooling incentive (Vives Cournot PD).
-- [ ] Task 4 — Stream 2 technical/architecture
+- [~] Task 4 — Stream 2 technical/architecture — PARTIAL. deep-research DONE (verified, note written); 6 raw sources committed (arxiv-2206.07284, arxiv-2206.03317, arxiv-2409.13004, web-2025-08-21-f21, web-2026-06-03-4ff, web-2023-05-09-53f) but ALL filter-rejected/review → NOT yet grounded. RESUME: filter-correct --include + re-ingest those 6; find alt URLs for ACM-queue confidential-computing (403) + OPAL MIT chapter (PDF won't convert); commit. KEY: agentic-layer gap (see note + below).
 - [ ] Task 5 — Stream 3 legal
 - [ ] Task 6 — Stream 4 regulatory
 - [ ] Task 7 — Stream 5 governmental/policy (spine core)
@@ -46,7 +55,12 @@ only, never dump index.md/log.md.
 5. Preserve the analytical findings + adversarial caveats + open questions in
    `docs/research/data-collectives/stream-N-*.md` (project doc, NOT wiki — avoids
    direct-write violation; feeds Task 10 + condo Stage 2).
-6. Verify with `wiki retrieve`; commit.
+6. Verify with `wiki retrieve`; commit. STAGING DISCIPLINE: never `git add -u wiki/`
+   or `git add wiki/` — the working tree has a pre-existing condo backlog of
+   modified/untracked pages (leave alone). Stage ONLY this stream's files by content
+   match: `git ls-files --others --exclude-standard wiki/ raw/ | grep -lE data-collectives`
+   plus the specific source IDs; add docs/research note + session-state + index.md +
+   log.md + .knowledge/policies/data-collectives explicitly.
 
 **AUTH CONSTRAINT (blocks `wiki answer` / SDK path):** `ANTHROPIC_API_KEY_RESEARCH`
 returns 401 (invalid). So `wiki answer` and any SDK-cached call FAIL. Do NOT use
@@ -81,9 +95,23 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-Execute **Task 4** — Stream 2 technical/architecture. deep-research over federated
-learning, differential privacy, secure multiparty computation, data clean rooms,
-model-sharing vs data-sharing, and the AGENTIC architecture (agents as contributors /
-consumers / governors of the pool; how agentic AI changes the trust/contribution
-calculus). Then per-stream recipe. Cross-link edge-ai-agentic, ai-and-agents. Advance
-to Task 5 (Stream 3 legal).
+**Loop is PAUSED (see top block).** On explicit user "go":
+
+1. FINISH Task 4 grounding: `filter-correct --include` + re-ingest the 6 Stream-2
+   raw sources (arxiv-2206.07284, arxiv-2206.03317, arxiv-2409.13004,
+   web-2025-08-21-f21, web-2026-06-03-4ff, web-2023-05-09-53f); find alt URLs for
+   ACM-queue confidential-computing + OPAL MIT chapter; verify retrieve; commit;
+   mark Task 4 [x].
+2. Then Task 5 (Stream 3 legal): antitrust/competition law on competitor data-sharing
+   (US DOJ/FTC + Canada Competition Bureau), data ownership/trade-secret in pooled
+   data, privacy (PIPEDA, Québec Law 25, US state regimes), liability. Per-stream recipe.
+3. Continue Tasks 6–9 (regulatory, governmental/policy SPINE, academic, industrial).
+4. **Before Task 10**, run ONE targeted deep-research on agentic-AI / vertical-AI on
+   pooled proprietary data (2024–2026) — both Stream 0 and Stream 2 found ZERO verified
+   agentic precedent; this gap is load-bearing for the "why now" synthesis.
+5. Task 10 synthesis via `wiki query` (NLM, corpus-quality gate first; `wiki answer`
+   stays blocked on the 401 research key).
+
+**Recurring agentic-gap finding (carry to Task 10):** privacy-preserving pooling
+substrate is mature; the agentic layer on top is greenfield — no verified 2023–2026
+precedent. Opportunity vs warning is the central "why now" tension.

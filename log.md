@@ -42935,3 +42935,47 @@ The Ghorbani & Zou (2019) paper introduces a method (Data Shapley) and is itself
 ## [2026-06-10T22:05:39Z] retrieve | caller=cli | query=economics of data pooling substitutes Cournot nonrivality Shapley valuation | domain=data-collectives | sections=5 | chars=5816
 
 retrieve: 'economics of data pooling substitutes Cournot nonrivality Shapley valuation' domain=data-collectives sections=5 chars=5816
+
+## [2026-06-10T22:06:51Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T22-06-51Z-schema-drift.md
+
+## [2026-06-10T22:07:25Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T22-07-25Z-schema-drift.md
+
+## [2026-06-10T22:23:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3406 | cache_read=0 | cache_creation=15641 | duration_ms=36520 | cost_usd=0.048320
+
+## [2026-06-10T22:23:52Z] ingest | id=arxiv-2206.07284 | type=arxiv | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.35
+
+raw=raw/arxiv/arxiv-2206.07284.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T22:24:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1296 | cache_read=0 | cache_creation=15771 | duration_ms=17677 | cost_usd=0.038030
+
+## [2026-06-10T22:24:12Z] ingest | id=arxiv-2206.03317 | type=arxiv | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.2
+
+raw=raw/arxiv/arxiv-2206.03317.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T22:24:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2343 | cache_read=0 | cache_creation=15794 | duration_ms=28361 | cost_usd=0.043311
+
+## [2026-06-10T22:24:43Z] ingest | id=arxiv-2409.13004 | type=arxiv | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.1
+
+raw=raw/arxiv/arxiv-2409.13004.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T22:25:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1388 | cache_read=0 | cache_creation=18936 | duration_ms=18559 | cost_usd=0.044820
+
+## [2026-06-10T22:25:06Z] ingest | id=web-2025-08-21-f21 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.25
+
+raw=raw/web/web-2025-08-21-f21.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T22:25:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1966 | cache_read=0 | cache_creation=16938 | duration_ms=26790 | cost_usd=0.043714
+
+## [2026-06-10T22:25:35Z] ingest | id=web-2026-06-03-4ff | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.35
+
+raw=raw/web/web-2026-06-03-4ff.md (wiki not written: filter decision=rejected)
+
+## [2026-06-10T22:26:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3303 | cache_read=0 | cache_creation=19199 | duration_ms=37159 | cost_usd=0.054921
+
+## [2026-06-10T22:26:16Z] ingest | id=web-2023-05-09-53f | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.5
+
+raw=raw/web/web-2023-05-09-53f.md (wiki not written: filter decision=review)
