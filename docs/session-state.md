@@ -4,12 +4,29 @@ Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop
 
 ---
 
-## ▶ STAGE 2 READY (foundation RESOLVED 2026-06-10)
+## ✅ STAGE 2 COMPLETE (2026-06-11) — data-collectives project DONE
 
-Foundation loop COMPLETE (Tasks 1–10, committed c3eaee04..3989c841). Now on **Stage 2 — condo application leg**, to run in a FRESH session.
-Plan: `docs/superpowers/plans/2026-06-11-data-collectives-stage2-condo-application.md`.
-Stage 2 is SYNTHESIS (not fan-out) — do NOT run deep-research workflows (unnecessary + spend cap live). Kick off with: `go` (or re-fire the plan) in a clean session.
-Foundation FULLY closed: citation-grounded wiki synthesis page FILED + finalized at wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md (via wiki answer --file scaffold + wiki edit grounded body + wiki finalize; ANTHROPIC_API_KEY_RESEARCH now valid). Only Stage 2 (condo leg) remains.
+Foundation loop COMPLETE (Tasks 1–10, committed c3eaee04..3989c841). **Stage 2 —
+condo application leg — now COMPLETE.** Deliverable filed:
+`docs/research/data-collectives/stage2-condo-collective.md` — feasibility + design
+position for a reserve-study data collective among engineering firms / PMs / HOAs.
+Pure synthesis over the two grounded domains (data-collectives foundation +
+condo-capital-infra); no re-research; spend cap respected.
+
+**Verdict: Qualified GO** as governance-and-network infrastructure pooling the
+non-rivalrous component-condition signal, Canada-first, reserve-study value (not
+agentic demand) carrying the P&L. Key insight: condo is the STRONGEST application
+of the foundation because the engine is *data-bound* — pooled cross-firm failure
+observations are the binding input to its accuracy ceiling, making contribution
+rational on narrow self-interest. 3 load-bearing assumptions, full risk set
+(cold-start/SME, downstream-model liability resolved via "engine informs, PEng
+firm certifies/owns stamp", substitutes trap, agentic bet), and exit cross-ref to
+condo's ADR-0004 acquirer thesis (CINC/Associa; the co-op caps what an acquirer can
+capture → sell the administrator/workflow layer, not the data).
+
+Stage 2 wiki-grounding (optional Task 3) DEFERRED — recombines two already-grounded
+domains (no new source claims), live Anthropic cap. Revival: explicit user request /
+cap reset (`wiki answer --file` available, ANTHROPIC_API_KEY_RESEARCH valid).
 
 ---
 
@@ -36,7 +53,7 @@ checkpoint here → schedule next.
 - [x] Task 8 — Stream 6 academic — GROUNDED. 6 sources (GKC/Constructing-Commons, Ostrom 8 principles, data-as-labor AEA, Vincent 2025 collective bargaining, Jonker + Duncan critiques). VERDICT: strong theory, near-absent empirics, every org form has a distinct fragility; collectives solving collective-action was REFUTED in verification. Enabling regulation may be a precondition (Jonker). Convergent with S0 failures + S1 substitutes.
 - [x] Task 9 — Stream 7 industrial — GROUNDED. 6 sources (Early Warning Services + Cifas = genuine fraud-utility pooling; LexisNexis = aggregation contrast; a16z data-moat debate; Datavault aspirational; Catena-X SME stall ref). KEY: real cross-competitor pooling concentrates in FRAUD/AML utilities (pool the non-rivalrous signal). Agentic zero-precedent now CONFIRMED across 3 streams (0,2,7). Stream 7 verification partly truncated by Anthropic spend cap.
 - [x] Task 10 — synthesis COMPLETE (analysis). docs/research/synthesis-policy-market.md answers the north-star + full confidence/uncertainty ledger. DEFERRED (external cap, not blocking): the citation-grounded wiki synthesis PAGE via wiki query — file on Anthropic spend-cap reset. wiki answer stays 401-blocked. Agentic targeted pass cancelled (zero-precedent confirmed 3x).
-- Task 11 (condo application leg) is Stage 2 — separate session/loop, NOT this loop.
+- [x] Task 11 / Stage 2 (condo application leg) — COMPLETE 2026-06-11. Deliverable: docs/research/data-collectives/stage2-condo-collective.md. Qualified GO. See top block.
 
 **Guardrails (every Task):** foundation pages domain-neutral (no reserve-study /
 condo / Longspan terms — that is Stage 2); citations mandatory (`[[sources/<id>]]`,
@@ -95,17 +112,18 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-**Loop is PAUSED (see top block).** On explicit user "go":
+**data-collectives project COMPLETE (foundation + Stage 2).** No open work.
 
-1. Task 4 GROUNDED (done). Optionally backfill ACM-Queue + OPAL alt URLs later.
-2. Task 6 (CURRENT) — Stream 4 regulatory: sector data-sharing mandates & safe harbors; AI-regulation status (Canada AIDA — note it died with C-27; US federal EO + state AI laws); open-banking/data-portability mandates as structural precedent for compelled/incentivized pooling.
-Loop COMPLETE. Remaining (explicit user trigger only): (1) on Anthropic spend-cap reset, file the citation-grounded wiki synthesis page (wiki query over domain, corpus-quality gate first) from docs/research/synthesis-policy-market.md; finalize drafts (wiki finalize). (2) Stage 2 condo application leg — separate session/loop per the spec's child prompt.
-4. **Before Task 10**, run ONE targeted deep-research on agentic-AI / vertical-AI on
-   pooled proprietary data (2024–2026) — both Stream 0 and Stream 2 found ZERO verified
-   agentic precedent; this gap is load-bearing for the "why now" synthesis.
-5. Task 10 synthesis via `wiki query` (NLM, corpus-quality gate first; `wiki answer`
-   stays blocked on the 401 research key).
+Remaining items are explicit-user-trigger only:
+1. **Wiki-grounding backfill (both stages), cap-gated.** On Anthropic spend-cap
+   reset or explicit request: file/finalize citation-grounded wiki synthesis pages
+   for the foundation (from synthesis-policy-market.md) and Stage 2 (from
+   stage2-condo-collective.md) via `wiki answer --file` (key now valid) or
+   `wiki query` (corpus-quality gate first).
+2. Optional source backfill: ACM-Queue + OPAL alt URLs (Stream 2); Truveta/Datavant
+   health-pooling cases (Stream 7, truncated by cap).
 
-**Recurring agentic-gap finding (carry to Task 10):** privacy-preserving pooling
-substrate is mature; the agentic layer on top is greenfield — no verified 2023–2026
-precedent. Opportunity vs warning is the central "why now" tension.
+**Carry-forward finding (still load-bearing):** privacy-preserving pooling substrate
+is mature; the agentic layer on top is greenfield — no verified 2023–2026 precedent.
+In Stage 2 this is the explicit unproven bet; the condo P&L closes on reserve-study
+value without it.
