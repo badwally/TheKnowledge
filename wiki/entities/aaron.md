@@ -29,5 +29,5 @@ Aaron is the CEO of Orita and hosts a company-affiliated podcast featuring inter
 ## Related
 
 - [[entities/orita]]
-- [[entities/adrian]]
+- [[entities/adrienne]]
 - [[entities/avoma]]

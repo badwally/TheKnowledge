@@ -143,7 +143,7 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 ### orita-cmo
 [[mocs/orita-cmo]] · 10 sources
 
-- Entities: [[entities/aaron]] · [[entities/adrian]] · [[entities/apollo]] · [[entities/autogen]] · [[entities/avoma]] · [[entities/bigquery]] · [[entities/breeze]] · [[entities/caraway]] · [[entities/claude-code]] · [[entities/claude-desktop]] · [[entities/coupler-io]] · [[entities/crewai]] · … (17 more)
+- Entities: [[entities/aaron]] · [[entities/adrienne]] · [[entities/apollo]] · [[entities/autogen]] · [[entities/avoma]] · [[entities/bigquery]] · [[entities/breeze]] · [[entities/caraway]] · [[entities/claude-code]] · [[entities/claude-desktop]] · [[entities/coupler-io]] · [[entities/crewai]] · … (17 more)
 - Concepts: [[concepts/aeo-geo]] · [[concepts/agency-channel-gtm]] · [[concepts/agent-escalation-levels]] · [[concepts/claude-code-velocity-model]] · [[concepts/competitive-positioning]] · [[concepts/economic-buyer]] · [[concepts/external-ai-crm-surface]] · [[concepts/hubspot-association-labels]] · [[concepts/hubspot-data-hygiene]] · [[concepts/hubspot-deal-tags]] · [[concepts/hubspot-segments]] · [[concepts/icp-tiering]] · … (6 more)
 
 ### risksystems

@@ -38,7 +38,7 @@ Orita is an AI-powered audience intelligence layer for ecommerce brands. Its cor
 ## Related
 
 - [[entities/aaron]]
-- [[entities/adrian]]
+- [[entities/adrienne]]
 - [[entities/klaviyo]]
 - [[entities/hubspot]]
 - [[entities/apollo]]
