@@ -1,0 +1,25 @@
+source_id: web-2019-05-09-487
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: 'a16z ''The Empty Promise of Data Moats'' — foundational to the competitive-moat
+  dynamics question: whether pooled data is a durable moat or commoditized (criterion
+  5, network effects / moat economics).'
+pinned_at: '2026-06-11T06:37:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: The Empty Promise of Data Moats | Andreessen Horowitz
+  authors:
+  - Martin Casado; Peter Lauten
+  url: https://a16z.com/the-empty-promise-of-data-moats/
+content_excerpt: 'Data has long been lauded as a competitive moat for companies, and
+  that narrative’s been further hyped with the recent wave of AI startups. Network
+  effects have been similarly promoted as a defensible force in building software
+  businesses. So of course, we constantly hear about the combination of the two: “data
+  network effects” (heck, we’ve talked about them at length ourselves).
+
+
+  But for enterprise startups — which is where we focus — we now wonder if there’s
+  practical evidence of data network '

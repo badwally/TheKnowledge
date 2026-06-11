@@ -43601,3 +43601,155 @@ retrieve: 'Ostrom knowledge commons data as labor data dignity cooperative fragi
 ## [2026-06-11T05:06:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1801 | cache_read=4699 | cache_creation=13014 | duration_ms=21853 | cost_usd=0.035511
 
 ## [2026-06-11T05:06:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1715 | cache_read=0 | cache_creation=16679 | duration_ms=23809 | cost_usd=0.041941
+
+## [2026-06-11T05:06:55Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T05-06-55Z-schema-drift.md
+
+## [2026-06-11T05:07:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2459 | cache_read=0 | cache_creation=16022 | duration_ms=30812 | cost_usd=0.044347
+
+## [2026-06-11T05:08:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5461 | cache_read=0 | cache_creation=15918 | duration_ms=58370 | cost_usd=0.059149
+
+## [2026-06-11T05:08:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1374 | cache_read=0 | cache_creation=18569 | duration_ms=19120 | cost_usd=0.044016
+
+## [2026-06-11T05:09:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3878 | cache_read=0 | cache_creation=21797 | duration_ms=44066 | cost_usd=0.062992
+
+## [2026-06-11T05:10:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5556 | cache_read=0 | cache_creation=19443 | duration_ms=54292 | cost_usd=0.066674
+
+## [2026-06-11T05:10:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3336 | cache_read=0 | cache_creation=21147 | duration_ms=42491 | cost_usd=0.058982
+
+## [2026-06-11T05:11:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2687 | cache_read=0 | cache_creation=18334 | duration_ms=32133 | cost_usd=0.050111
+
+## [2026-06-11T05:11:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1702 | cache_read=0 | cache_creation=18039 | duration_ms=22755 | cost_usd=0.044596
+
+## [2026-06-11T05:12:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1622 | cache_read=0 | cache_creation=15594 | duration_ms=20070 | cost_usd=0.039306
+
+## [2026-06-11T05:12:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3098 | cache_read=7037 | cache_creation=13036 | duration_ms=36737 | cost_usd=0.042274
+
+## [2026-06-11T05:25:05Z] lint | scope=all | orphans=749 | stale-drafts=879 | stale-claims=3 | contradictions=105 | missing-pages=70 | citation-density=0 | citation-chains=19 | schema-drift=191 | filter-calibration=37 | inbox-pending=0 | nlm-pending=76 | untagged-sources=1 | idempotency=3 | broken-wikilinks=141 | long-slugs=50 | contradiction-pages=0 | synthesizes-coverage=304 | stale-verified=75 | retracted-citations=0 | domain-purity=0 | link-rot=615 | superseded-citations=0 | paper-canonical-source=62 | confidence-distribution=16 | confidence-propagation=0 | tags-invalid-type=0 | open-questions=0 | answered-no-synthesis=0
+
+report=.knowledge/lint/2026-06-11T05-25-05Z.md
+
+## [2026-06-11T06:33:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1616 | cache_read=0 | cache_creation=14961 | duration_ms=21096 | cost_usd=0.038010
+
+## [2026-06-11T06:33:34Z] ingest | id=web-2026-04-03-04f | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.15
+
+raw=raw/web/web-2026-04-03-04f.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T06:34:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1670 | cache_read=0 | cache_creation=16026 | duration_ms=21697 | cost_usd=0.040410
+
+## [2026-06-11T06:34:58Z] ingest | id=web-2026-05-21-5db | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.2
+
+raw=raw/web/web-2026-05-21-5db.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T06:35:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1986 | cache_read=4386 | cache_creation=12205 | duration_ms=26499 | cost_usd=0.034787
+
+## [2026-06-11T06:35:29Z] ingest | id=web-2026-01-01-dec | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.2
+
+raw=raw/web/web-2026-01-01-dec.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T06:35:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1589 | cache_read=4386 | cache_creation=14912 | duration_ms=22923 | cost_usd=0.038216
+
+## [2026-06-11T06:35:55Z] ingest | id=web-2019-05-09-487 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.15
+
+raw=raw/web/web-2019-05-09-487.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T06:36:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2126 | cache_read=4386 | cache_creation=13432 | duration_ms=26161 | cost_usd=0.037941
+
+## [2026-06-11T06:36:24Z] ingest | id=web-2025-10-27-5da | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.15
+
+raw=raw/web/web-2025-10-27-5da.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T06:36:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2795 | cache_read=4386 | cache_creation=13761 | duration_ms=32038 | cost_usd=0.041944
+
+## [2026-06-11T06:36:59Z] ingest | id=web-2026-06-08-406 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.6
+
+raw=raw/web/web-2026-06-08-406.md (wiki not written: filter decision=review)
+
+## [2026-06-11T06:37:26Z] filter-correction | id=web-2026-04-03-04f | domain=data-collectives | decision=include | original_score=0.15
+
+rationale='Early Warning Services — the textbook operating cross-competitor data pool: seven rival US banks contribute proprietary deposit-risk/fraud data into a shared queryable utility all members use (criterion 4, named consortium with identifiable members + shared output).'
+
+## [2026-06-11T06:37:27Z] filter-correction | id=web-2026-05-21-5db | domain=data-collectives | decision=include | original_score=0.2
+
+rationale='Cifas — UK non-profit fraud-data consortium; 500+ members incl. direct banking competitors contribute proprietary fraud markers into a shared National Fraud Database (criterion 4, genuine competitor pooling).'
+
+## [2026-06-11T06:37:27Z] filter-correction | id=web-2026-01-01-dec | domain=data-collectives | decision=include | original_score=0.2
+
+rationale='LexisNexis Telematics Exchange — the canonical CONTRAST case: consumer-permissioned aggregation that insurers buy, NOT cross-competitor pooling; essential for distinguishing genuine pooling from aggregation (criterion 4 boundary case).'
+
+## [2026-06-11T06:37:27Z] filter-correction | id=web-2019-05-09-487 | domain=data-collectives | decision=include | original_score=0.15
+
+rationale="a16z 'The Empty Promise of Data Moats' — foundational to the competitive-moat dynamics question: whether pooled data is a durable moat or commoditized (criterion 5, network effects / moat economics)."
+
+## [2026-06-11T06:37:28Z] filter-correction | id=web-2025-10-27-5da | domain=data-collectives | decision=include | original_score=0.15
+
+rationale='Datavault AI tokenized Data Unions — a 2025 venture explicitly structured as cross-contributor data unions monetizing pooled proprietary data; relevant aspirational commercial model (criterion 4).'
+
+## [2026-06-11T06:37:28Z] filter-correction | id=web-2026-06-08-406 | domain=data-collectives | decision=include | original_score=0.6
+
+rationale='Catena-X SME data-space accelerator — EU automotive data space reference precedent showing real enterprise adoption but stalled network effects requiring public funding (reference tier; cold-start dynamics).'
+
+## [2026-06-11T06:37:29Z] ingest | id=web-2026-04-03-04f | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-03-04f.md wiki=wiki/sources/web-2026-04-03-04f.md
+
+## [2026-06-11T06:38:45Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=6628 | cache_read=0 | cache_creation=27113 | duration_ms=73759 | cost_usd=0.436855
+
+## [2026-06-11T06:38:46Z] wiki-author | id=web-2026-04-03-04f | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+Source is the canonical self-description of Early Warning Services — a bank-owned cross-competitor data pool central to the data-collectives domain — and introduces two affiliated products (Zelle, Paze) with no existing wiki coverage.
+
+## [2026-06-11T06:38:48Z] ingest | id=web-2026-05-21-5db | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-21-5db.md wiki=wiki/sources/web-2026-05-21-5db.md
+
+## [2026-06-11T06:39:55Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5131 | cache_read=4696 | cache_creation=21702 | duration_ms=65927 | cost_usd=0.347668
+
+## [2026-06-11T06:39:55Z] wiki-author | id=web-2026-05-21-5db | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Cifas is a new UK competitor-pooling fraud-data consortium not yet in the wiki; creating an entity page is the highest-value action. I am deliberately not generating updates to early-warning-services, collective-data-governance, or antitrust-risks-data-sharing because only their leading lines were supplied — replacing those pages without their full body would risk overwriting existing claims and citations. Note: I could not verify docs/session-state.md against the working tree from this constrained tool surface; flagging per the SessionStart hook.
+
+## [2026-06-11T06:39:57Z] ingest | id=web-2026-01-01-dec | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-01-01-dec.md wiki=wiki/sources/web-2026-01-01-dec.md
+
+## [2026-06-11T06:42:30Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=13798 | cache_read=0 | cache_creation=24817 | duration_ms=151323 | cost_usd=0.593145
+
+## [2026-06-11T06:42:32Z] wiki-author | id=web-2026-01-01-dec | updates=5 | created=5 | updated=0 | contradictions=0 | draft=yes
+
+Source is a vendor product page for the LexisNexis Telematics Exchange, flagged by user correction as the canonical contrast case (consumer-permissioned aggregation that insurers buy, NOT cross-competitor pooling) — so it warrants new entity pages for the platform, operator, and downstream product, plus concept pages for UBI and telematics aggregation that anchor the aggregation-vs-pooling boundary distinction the corpus needs.
+
+## [2026-06-11T06:42:34Z] ingest | id=web-2019-05-09-487 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2019-05-09-487.md wiki=wiki/sources/web-2019-05-09-487.md
+
+## [2026-06-11T06:45:31Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14952 | cache_read=4696 | cache_creation=26232 | duration_ms=175586 | cost_usd=0.638493
+
+## [2026-06-11T06:45:34Z] wiki-author | id=web-2019-05-09-487 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+The a16z essay is foundational to the moat-economics axis of the data-collectives domain (per the user's filter correction) and introduces a vocabulary (data scale effect vs data network effect, minimum viable corpus, data freshness) that the wiki did not yet cover; creating those concept pages plus the author/publisher entities makes the moat-skepticism stance citable from later synthesis on whether pooled data can be a durable advantage.
+
+## [2026-06-11T06:45:35Z] ingest | id=web-2025-10-27-5da | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-10-27-5da.md wiki=wiki/sources/web-2025-10-27-5da.md
+
+## [2026-06-11T06:49:02Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=17873 | cache_read=4696 | cache_creation=24534 | duration_ms=204608 | cost_usd=0.694538
+
+## [2026-06-11T06:49:04Z] wiki-author | id=web-2025-10-27-5da | updates=5 | created=5 | updated=0 | contradictions=0 | draft=yes
+
+Press release announces a concrete 2025 commercial 'data union' venture (Datavault AI's Insurance and Accounting Data Unions); creating entity pages for the company, the two ventures, the trade-association partner, and the underlying IDE platform — no existing pages cover these; concept-page updates deferred because supplied page snippets were truncated and updating would risk overwriting unseen claims.
+
+## [2026-06-11T06:49:08Z] ingest | id=web-2026-06-08-406 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-08-406.md wiki=wiki/sources/web-2026-06-08-406.md
+
+## [2026-06-11T06:52:02Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=16249 | cache_read=4696 | cache_creation=24922 | duration_ms=173112 | cost_usd=0.657818
+
+## [2026-06-11T06:52:06Z] wiki-author | id=web-2026-06-08-406 | updates=8 | created=8 | updated=0 | contradictions=0 | draft=yes
+
+Catena-X press release introduces a new automotive data-space precedent (entities Catena-X, IDSA, Cofinity-X, Manufacturing-X, BMWE, Data Space Accelerator) and substantiates cold-start dynamics in data collectives — warranting one new concept page (cold-start-problem) plus an industrial-data-space concept page; note I lack file-reading tools so could not verify docs/session-state.md per the SessionStart hook (subagent context), flagging that to the user.
+
+## [2026-06-11T06:52:16Z] retrieve | caller=cli | query=fraud data consortium Early Warning Cifas pooling vs aggregation data moat vertical AI Catena-X | domain=data-collectives | sections=6 | chars=6464
+
+retrieve: 'fraud data consortium Early Warning Cifas pooling vs aggregation data moat vertical AI Catena-X' domain=data-collectives sections=6 chars=6464

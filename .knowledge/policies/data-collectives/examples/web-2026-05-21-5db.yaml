@@ -1,0 +1,36 @@
+source_id: web-2026-05-21-5db
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Cifas — UK non-profit fraud-data consortium; 500+ members incl. direct
+  banking competitors contribute proprietary fraud markers into a shared National
+  Fraud Database (criterion 4, genuine competitor pooling).
+pinned_at: '2026-06-11T06:37:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Fraud Prevention | Identity Fraud | Protective Registration | Cifas
+  authors:
+  - J; L Digital Limited
+  url: https://www.cifas.org.uk/
+content_excerpt: '## Necessary cookies
+
+
+  Necessary cookies enable core functionality such as security, network management,
+  and accessibility. You may disable these by changing your browser settings, but
+  this may affect how the website functions.
+
+
+  ## User Experience cookies
+
+
+  We''d like to set user experience cookies to help us to improve your experience
+  using this website.
+
+
+  ## Our use of cookies
+
+
+  We use necessary cookies to make our site work. We''d also like to set optional
+  analytics cookies to help us improve it. W'

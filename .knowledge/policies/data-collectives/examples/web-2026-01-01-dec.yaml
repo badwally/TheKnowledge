@@ -1,0 +1,25 @@
+source_id: web-2026-01-01-dec
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: 'LexisNexis Telematics Exchange — the canonical CONTRAST case: consumer-permissioned
+  aggregation that insurers buy, NOT cross-competitor pooling; essential for distinguishing
+  genuine pooling from aggregation (criterion 4 boundary case).'
+pinned_at: '2026-06-11T06:37:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Telematics Exchange
+  authors: []
+  url: https://risk.lexisnexis.com/products/telematics-exchange
+content_excerpt: 'With the explosion in connectivity taking place on our roads, the
+  LexisNexis® Telematics Exchange is the answer to the challenge of scaling up the
+  use of vehicle telematics data to better serve customers within their auto insurance
+  experience.
+
+
+  Data sources are different from automotive brand, to vehicle, to device, given the
+  variations of engineering, hardware, and software technology employed. To scale
+  on its own, an insurance carrier would have to design individual scoring methodologies
+  and d'

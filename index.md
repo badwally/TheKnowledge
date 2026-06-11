@@ -255,3 +255,9 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2018-05-10-3b3]] · web · Should We Treat Data as Labor? Moving beyond "Free" · data-collectives
 - [[sources/arxiv-2506.10272]] · arxiv · Collective Bargaining in the Information Economy Can Address AI-Driven Power Concentration · data-collectives
 - [[sources/web-2022-09-01-460]] · web · Ostrom's Eight Design Principles for a Successfully Managed Commons - Agrarian Trust · data-collectives
+- [[sources/web-2026-04-03-04f]] · web · About Us · data-collectives
+- [[sources/web-2026-05-21-5db]] · web · Fraud Prevention | Identity Fraud | Protective Registration | Cifas · data-collectives
+- [[sources/web-2026-01-01-dec]] · web · Telematics Exchange · data-collectives
+- [[sources/web-2019-05-09-487]] · web · The Empty Promise of Data Moats | Andreessen Horowitz · data-collectives
+- [[sources/web-2025-10-27-5da]] · web · Datavault AI Launches 2 Innovative Data Unions to Tokenize Insurance and Accounting Data, Unlocking ARR for Independent Operators · data-collectives
+- [[sources/web-2026-06-08-406]] · web · €23 million Data Space Accelerator launched to fast-track SME integration within the Catena-X ecosystem - Catena-X · data-collectives

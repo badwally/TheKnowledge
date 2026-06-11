@@ -1,0 +1,32 @@
+source_id: web-2026-04-03-04f
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: 'Early Warning Services — the textbook operating cross-competitor data
+  pool: seven rival US banks contribute proprietary deposit-risk/fraud data into a
+  shared queryable utility all members use (criterion 4, named consortium with identifiable
+  members + shared output).'
+pinned_at: '2026-06-11T06:37:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: About Us
+  authors: []
+  url: https://www.earlywarning.com/about
+content_excerpt: '## Our Purpose: Powering prosperity for all
+
+
+  ## The work we do sits at the center of everyday financial life
+
+
+  ### It’s not always seen, but it’s deeply felt.
+
+
+  At Early Warning®, we don’t define prosperity by accumulation alone. We focus on
+  connection, access, and forward motion—supporting how people and institutions participate
+  safely and reliably in the financial system.
+
+
+  When money moves with trust, everyday life moves forward. People can pay rent, support
+  loved ones, run businesses, and plan '
