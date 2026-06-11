@@ -4,9 +4,12 @@ Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop
 
 ---
 
-## ✅ LOOP COMPLETE (2026-06-10)
+## ▶ STAGE 2 READY (foundation RESOLVED 2026-06-10)
 
-Foundation built: domain bootstrapped + Stream 0 census + 7 dimensional streams + Task 10 synthesis, all committed. ~45 grounded sources across concept/entity/source pages; 8 analytical notes in docs/research/data-collectives/. Two follow-ups remain (NOT this loop): (1) file the citation-grounded wiki synthesis page via wiki query once the Anthropic spend cap resets; (2) Stage 2 condo application leg (separate session). Do NOT auto-resume.
+Foundation loop COMPLETE (Tasks 1–10, committed c3eaee04..3989c841). Now on **Stage 2 — condo application leg**, to run in a FRESH session.
+Plan: `docs/superpowers/plans/2026-06-11-data-collectives-stage2-condo-application.md`.
+Stage 2 is SYNTHESIS (not fan-out) — do NOT run deep-research workflows (unnecessary + spend cap live). Kick off with: `go` (or re-fire the plan) in a clean session.
+Still-deferred from foundation: file the citation-grounded wiki synthesis page via `wiki query` on spend-cap reset (analysis already at docs/research/data-collectives/synthesis-policy-market.md).
 
 ---
 
