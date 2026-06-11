@@ -43857,3 +43857,155 @@ edited section 'Sources cited' in wiki/synthesis/2026-06-11-is-a-data-collective
 ## [2026-06-11T13:19:12Z] finalize | page=wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
 
 finalized wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
+
+## [2026-06-11T13:24:19Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T13-24-19Z-schema-drift.md
+
+## [2026-06-11T13:31:10Z] retrieve | caller=cli | query=reserve study component failure data pooled across firms non-rivalrous fraud utility data collective | domain= | sections=2 | chars=3185
+
+retrieve: 'reserve study component failure data pooled across firms non-rivalrous fraud utility data collective' domain=- sections=2 chars=3185
+
+## [2026-06-11T13:31:24Z] retrieve | caller=cli | query=Weibull reserve fund Monte Carlo six probabilistic components roof envelope elevator special assessment | domain= | sections=1 | chars=576
+
+retrieve: 'Weibull reserve fund Monte Carlo six probabilistic components roof envelope elevator special assessment' domain=- sections=1 chars=576
+
+## [2026-06-11T13:31:25Z] retrieve | caller=cli | query=data cooperative pooling building condition failure signal members governance | domain= | sections=3 | chars=3384
+
+retrieve: 'data cooperative pooling building condition failure signal members governance' domain=- sections=3 chars=3384
+
+## [2026-06-11T13:33:10Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T13-33-10Z-schema-drift.md
+
+## [2026-06-11T14:08:17Z] task-error | task=601f4418-54a6-4603-b7e6-89917d4e92dc
+
+task 601f4418-54a6-4603-b7e6-89917d4e92dc failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-118/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-11T14:08:49Z] task-error | task=e2b049c6-d773-4ae2-8bf5-fc65aff0f997
+
+task e2b049c6-d773-4ae2-8bf5-fc65aff0f997 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-119/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-11T14:09:38Z] task-error | task=037e2e00-1f34-430b-abc2-a2907203836d
+
+task 037e2e00-1f34-430b-abc2-a2907203836d failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-120/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-11T14:10:04Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-10-04Z-schema-drift.md
+
+## [2026-06-11T14:11:31Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-11-31Z-schema-drift.md
+
+## [2026-06-11T14:11:33Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-11-33Z-schema-drift.md
+
+## [2026-06-11T14:28:11Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-28-11Z-schema-drift.md
+
+## [2026-06-11T14:41:22Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-41-22Z-schema-drift.md
+
+## [2026-06-11T14:43:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-43-01Z-schema-drift.md
+
+## [2026-06-11T14:43:56Z] retrieve | caller=cli | query=data collective reserve study | domain=data-collectives,condo-capital-infra | sections=7 | chars=7194
+
+retrieve: 'data collective reserve study' domain=data-collectives,condo-capital-infra sections=7 chars=7194
+
+## [2026-06-11T14:44:19Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-44-19Z-schema-drift.md
+
+## [2026-06-11T14:45:31Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-45-31Z-schema-drift.md
+
+## [2026-06-11T14:45:55Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-45-55Z-schema-drift.md
+
+## [2026-06-11T14:46:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-46-59Z-schema-drift.md
+
+## [2026-06-11T14:49:52Z] task-error | task=352d6b05-785b-4c26-8549-9d02a337b1bb
+
+task 352d6b05-785b-4c26-8549-9d02a337b1bb failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-136/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-11T14:50:14Z] answer | caller=cli | question=Is a reserve-study data collective feasible given pooled-data incentives? | domain=data-collectives,condo-capital-infra | sections=8 | cited=7 | stripped=0 | output_tokens=425
+
+answer: 'Is a reserve-study data collective feasible given pooled-data incentives?' domain=data-collectives,condo-capital-infra sections=8 cited=7 stripped=0
+
+## [2026-06-11T14:51:46Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-51-46Z-schema-drift.md
+
+## [2026-06-11T14:59:56Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T14-59-56Z-schema-drift.md
+
+## [2026-06-11T15:00:18Z] answer | caller=cross-domain-brief | question=Build the comprehensive cross-domain case for a stakeholder data collective serving the condo reserve-study market: the pooled-proprietary-data mechanism and its precedents, the condo application (engineering firms + property managers + HOAs, the reserve-study market and incumbent software), viable business models built on top, the agentic-AI architecture and the why-now thesis, the policy/legal/market-structure opening (Canada-first vs US), who captures the market, and the key risks. | domain=data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic | sections=39 | cited=14 | stripped=3 | output_tokens=1500
+
+answer: 'Build the comprehensive cross-domain case for a stakeholder data collective serving the condo reserve-study market: the pooled-proprietary-data mechanism and its precedents, the condo application (engineering firms + property managers + HOAs, the reserve-study market and incumbent software), viable business models built on top, the agentic-AI architecture and the why-now thesis, the policy/legal/market-structure opening (Canada-first vs US), who captures the market, and the key risks.' domain=data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic sections=39 cited=14 stripped=3
+
+## [2026-06-11T15:00:19Z] wiki-author | id=answer-2026-06-11-build-the-comprehensive-cross-domain-case | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic
+
+## [2026-06-11T15:02:02Z] finalize-abandon | page=wiki/synthesis/2026-06-11-build-the-comprehensive-cross-domain-case.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-11-build-the-comprehensive-cross-domain-case.md
+
+## [2026-06-11T15:02:47Z] answer | caller=cross-domain-brief | question=Comprehensive cross-domain brief: a stakeholder data collective for the condo reserve-study market. Cover ALL seven sections, roughly two tight paragraphs each, no preamble and no repetition: (1) the pooled-proprietary-data mechanism and its real precedents and incentive families; (2) the condo application — engineering firms, property managers and HOAs as contributors, the reserve-study market, statutory tailwinds, and the incumbent-software gap; (3) viable business models built on top; (4) the agentic-AI architecture and the why-now thesis; (5) the policy, legal and market-structure opening, Canada-first versus the US; (6) who captures the market and the exit path; (7) the key risks and an explicit uncertainty ledger. Be comprehensive but terse so all seven sections are covered. | domain=data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic | sections=36 | cited=18 | stripped=1 | output_tokens=1500
+
+answer: 'Comprehensive cross-domain brief: a stakeholder data collective for the condo reserve-study market. Cover ALL seven sections, roughly two tight paragraphs each, no preamble and no repetition: (1) the pooled-proprietary-data mechanism and its real precedents and incentive families; (2) the condo application — engineering firms, property managers and HOAs as contributors, the reserve-study market, statutory tailwinds, and the incumbent-software gap; (3) viable business models built on top; (4) the agentic-AI architecture and the why-now thesis; (5) the policy, legal and market-structure opening, Canada-first versus the US; (6) who captures the market and the exit path; (7) the key risks and an explicit uncertainty ledger. Be comprehensive but terse so all seven sections are covered.' domain=data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic sections=36 cited=18 stripped=1
+
+## [2026-06-11T15:02:48Z] wiki-author | id=answer-2026-06-11-comprehensive-cross-domain-brief-a-stakeholder | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic
+
+## [2026-06-11T15:03:39Z] retrieve | caller=cli | query=agentic AI architecture agents need trustworthy grounded domain data to act; vertical AI moat | domain=ai-and-agents,edge-ai-agentic,data-collectives | sections=8 | chars=18903
+
+retrieve: 'agentic AI architecture agents need trustworthy grounded domain data to act; vertical AI moat' domain=ai-and-agents,edge-ai-agentic,data-collectives sections=8 chars=18903
+
+## [2026-06-11T15:03:40Z] retrieve | caller=cli | query=who captures the market data moat network effects acquirer exit CINC SmartProperty Canada AI strategy data sovereignty | domain=data-collectives,condo-capital-infra,condo-software | sections=8 | chars=10934
+
+retrieve: 'who captures the market data moat network effects acquirer exit CINC SmartProperty Canada AI strategy data sovereignty' domain=data-collectives,condo-capital-infra,condo-software sections=8 chars=10934
+
+## [2026-06-11T15:05:21Z] finalize-abandon | page=wiki/synthesis/2026-06-11-comprehensive-cross-domain-brief-a-stakeholder.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-11-comprehensive-cross-domain-brief-a-stakeholder.md
+
+## [2026-06-11T15:05:28Z] answer | caller=cross-domain-brief | question=In one sentence, what is a stakeholder data collective for the condo reserve-study market? | domain=data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic | sections=5 | cited=5 | stripped=0 | output_tokens=148
+
+answer: 'In one sentence, what is a stakeholder data collective for the condo reserve-study market?' domain=data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic sections=5 cited=5 stripped=0
+
+## [2026-06-11T15:05:29Z] wiki-author | id=answer-2026-06-11-in-one-sentence-what-is-a | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for data-collectives,condo-capital-infra,condo,condo-software,ai-native-business,ai-and-agents,edge-ai-agentic
+
+## [2026-06-11T15:07:18Z] edit-section | page=wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md | section=Synthesis
+
+edited section 'Synthesis' in wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md
+
+## [2026-06-11T15:08:05Z] retrieve | caller=cli | query=comprehensive case condo reserve-study data collective business model agentic | domain=data-collectives,condo-capital-infra,condo-software | sections=4 | chars=5031
+
+retrieve: 'comprehensive case condo reserve-study data collective business model agentic' domain=data-collectives,condo-capital-infra,condo-software sections=4 chars=5031
+
+## [2026-06-11T15:08:50Z] edit-section | page=wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md | section=Synthesis
+
+edited section 'Synthesis' in wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md
+
+## [2026-06-11T15:08:51Z] finalize | page=wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md
+
+finalized wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md
+
+## [2026-06-11T15:09:12Z] retrieve | caller=cli | query=condo reserve-study data collective comprehensive case who captures risks | domain=data-collectives,condo-software | sections=3 | chars=3453
+
+retrieve: 'condo reserve-study data collective comprehensive case who captures risks' domain=data-collectives,condo-software sections=3 chars=3453
