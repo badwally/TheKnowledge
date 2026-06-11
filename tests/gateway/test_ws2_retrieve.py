@@ -122,3 +122,30 @@ def test_retrieve_multi_domain_balances_quota(kb_root: Path):
     _block, sections = retrieve("shared signal token", domains=["alpha", "beta"], k=4)
     doms = {s.domain for s in sections}
     assert "alpha" in doms and "beta" in doms, f"expected both domains, got {doms}"
+
+
+def test_retrieve_multi_domain_dedups_and_survives_budget(kb_root: Path):
+    # One page tagged to BOTH domains.
+    d = paths.wiki_dir() / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    both = {
+        "type": "concept", "slug": "dual", "title": "Dual tagged",
+        "domains": ["alpha", "beta"],
+        "created_at": "2026-01-01T00:00:00Z", "last_updated": "2026-05-01T00:00:00Z",
+    }
+    (d / "dual.md").write_text(fm.serialize(both, "## S\n\nshared signal token dual.\n"))
+    # Plus several large single-domain pages so the budget truncates well below
+    # the merged set (8 distinct pages; a budget that admits only ~3 sections).
+    for i in range(4):
+        _page(f"a{i}", f"Alpha {i}", "## S\n\nshared signal token " + ("alpha " * 300), domain="alpha")
+    for i in range(4):
+        _page(f"b{i}", f"Beta {i}", "## S\n\nshared signal token " + ("beta " * 300), domain="beta")
+    search_index.refresh(rebuild=True)
+
+    _block, sections = retrieve(
+        "shared signal token", domains=["alpha", "beta"], k=8, budget_chars=6000,
+    )
+    paths_seen = [s.rel_path for s in sections]
+    assert len(paths_seen) == len(set(paths_seen)), "no page should appear twice"
+    assert len(sections) < 8, "budget should truncate the merged set"
+    assert {s.domain for s in sections} >= {"alpha", "beta"}, "balance survives truncation"
