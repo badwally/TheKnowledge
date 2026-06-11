@@ -748,8 +748,8 @@ Single Python backend; two thin surfaces. CLI for cron, scripts, research-notebo
 | Lint | `wiki lint [--scope <area>]` | `wiki_lint` |
 | Rebuild index (incl. FTS5) | `wiki index --rebuild` | `wiki_index_rebuild` |
 | Search (FTS5/BM25) | `wiki search "<query>" [--scope wiki|raw|all] [--order tiered|bm25]` | `wiki_search` |
-| Retrieve grounding block (RAG) | `wiki retrieve "<question>" [--domain X] [--k N] [--budget CHARS]` | `wiki_retrieve` |
-| Answer from wiki layer (local) | `wiki answer "<question>" [--domain X] [--file]` | `wiki_answer` |
+| Retrieve grounding block (RAG) | `wiki retrieve "<question>" [--domain X \| --domains a,b] [--k N] [--budget CHARS]` | `wiki_retrieve` |
+| Answer from wiki layer (local) | `wiki answer "<question>" [--domain X \| --domains a,b] [--file]` | `wiki_answer` |
 | Co-citation neighbors | `wiki related "<slug>" [--limit N]` | `wiki_related` |
 | Score retrieval vs goldens | `wiki eval-retrieval [--compare] [--k N]` | (CLI only) |
 | Status | `wiki status` | `wiki_status` |
@@ -1016,6 +1016,8 @@ The watcher picks up from there. No pipeline changes. New source types are addit
 ### 14.2 Derived retrieval index (FTS5 today; vector when warranted)
 
 **Shipped (2026-06-09 RAG review, WS1/WS5):** `gateway.search_index` maintains a SQLite **FTS5** index at `.index/wiki.db` — section-level rows, BM25 ranking, plus a graph-authority order (`order="authority"`) that blends BM25 with title/slug tier, inbound-link count, page-kind, and a draft penalty. The index is **derived state**: gitignored, rebuilt by `wiki index --rebuild`, and self-healing on read (mtime/size diff per query; no write-path hook, so an index failure can't break an ingest). Markdown stays canonical. `wiki search`, `wiki retrieve`, `wiki context --budget`, and `wiki related` all read it.
+
+**Cross-domain balanced retrieval (2026-06-11):** `wiki retrieve` and `wiki answer` accept `--domains a,b` (comma-separated). With ≥2 domains the grounding block is assembled by a **per-domain quota merge** — one search per named domain at `ceil(k/N)`, round-robin-interleaved by per-domain rank, de-duped by path — so a page-budget truncation preserves per-domain balance instead of collapsing toward the lexically-dominant domain (a single global k-window does collapse). `--domains` takes precedence over `--domain`. `wiki answer --domains a,b` additionally files **list-valued `domains:` frontmatter**, so a synthesis spanning two domains is tagged to both. The single-domain and global (no-domain) paths are byte-for-byte unchanged, so the golden set is unaffected.
 
 **Vector / hybrid retrieval is deferred**, not abandoned. Revival trigger (per `docs/reviews/2026-06-09-rag-retrieval-review.md`): the WS4 golden-set eval shows `recall@10` below ~0.8 on paraphrase queries after authority ranking, **or** the wiki crosses ~10k pages. As of the review, authority ranking holds `recall@10 = 0.926` / MRR 0.722, so the trigger is unmet. When it fires, add local embeddings alongside FTS5 with reciprocal-rank fusion; the CLI/MCP surface and the golden-set gate stay unchanged.
 

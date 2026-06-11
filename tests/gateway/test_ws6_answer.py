@@ -118,3 +118,24 @@ def test_answer_op_files_draft(kb_root: Path):
 def test_mcp_wiki_answer_registered():
     from gateway import mcp_server
     assert hasattr(mcp_server, "wiki_answer")
+
+
+def test_answer_files_multi_domain_frontmatter(kb_root: Path):
+    _page("widget", "Widget protocol",
+          "## Spec\n\nHandshake [[sources/web-2026-01-01-abc]].\n", domain="alpha")
+    _page("gadget", "Gadget protocol",
+          "## Spec\n\nGadget handshake [[sources/web-2026-01-01-def]].\n", domain="beta")
+    search_index.refresh(rebuild=True)
+    client = _StubClient(
+        "Both use handshakes [[sources/web-2026-01-01-abc]] "
+        "[[sources/web-2026-01-01-def]]."
+    )
+    res = answer_op(
+        "compare widget and gadget handshakes",
+        domains=["alpha", "beta"], file_draft=True, client=client,
+    )
+    assert res.success
+    filed = res.data["filed_path"]
+    text = (paths.knowledge_root() / filed).read_text()
+    front, _body = fm.parse(text)
+    assert front["domains"] == ["alpha", "beta"], front["domains"]

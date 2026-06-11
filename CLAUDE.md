@@ -38,7 +38,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 |---|---|
 | Ingest single source (URL, PDF, audio, m4b) | `wiki ingest <path-or-url> [--domain X] [--with-plan] [--draft]` |
 | Ingest a whole vault | `wiki batch-ingest <vault> --legacy-import --domain <slug>` |
-| **Retrieve a grounding context block (default RAG call)** | `wiki retrieve "<question>" [--domain X] [--k N] [--budget CHARS]` |
+| **Retrieve a grounding context block (default RAG call)** | `wiki retrieve "<question>" [--domain X \| --domains a,b] [--k N] [--budget CHARS]` |
 | Answer from the wiki layer (local, NLM-independent) | `wiki answer "<question>" [--domain X] [--file]` |
 | Ranked full-text search (FTS5/BM25) | `wiki search "<query>" [--domain X] [--type T] [--order tiered\|bm25]` |
 | Fetch a page + ranked neighbors (budget-aware) | `wiki context "<slug>" --caller <id> [--depth N] [--budget CHARS]` |
@@ -74,6 +74,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 The wiki is a relevance-rankable RAG substrate (FTS5/BM25 + graph authority; see `docs/reviews/2026-06-09-rag-retrieval-review.md`). For an agent grounding an answer in wiki knowledge, prefer in this order:
 
 1. **`wiki retrieve "<question>"`** — the default first call. One LLM-free call returns a bounded, ranked context block of the most relevant sections, each wrapped in `<page path=… section=…>` with `[[sources/<id>]]` citations preserved. Use this instead of reading `index.md` wholesale or grepping.
+   - **Cross-domain:** `wiki retrieve "<q>" --domains a,b` (and `wiki answer --domains a,b`) balances the block by per-domain quota (`ceil(k/N)` each, round-robin-interleaved) instead of a single global k-window, which collapses toward the lexically-dominant domain. `wiki answer --domains a,b` files a page tagged to all named domains (list-valued `domains:`). Use this to synthesize across >1 domain — not `--domain X` (hard-excludes the others) or the no-domain global call (unbalanced).
 2. **`wiki context "<slug>" --caller …`** — when you already know the page and want its wikilink neighborhood (now `--budget`-aware: neighbors are authority-ranked and truncated, not dropped). `wiki related "<slug>"` surfaces co-citation neighbors.
 3. **`wiki answer "<question>"`** — retrieve + one grounded Claude call; cites only retrieved sources (ungrounded citations stripped). NotebookLM-independent. Makes an LLM call — explicit invocation only.
 4. **`wiki query "<question>"`** — heavy NotebookLM synthesis over a domain's *raw corpus*; files a synthesis page. Use when the wiki layer itself is insufficient and you need corpus-level synthesis.

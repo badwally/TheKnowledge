@@ -104,3 +104,72 @@ def test_retrieve_op_xml_escaping(kb_root: Path):
 def test_mcp_wiki_retrieve_registered():
     from gateway import mcp_server
     assert hasattr(mcp_server, "wiki_retrieve")
+
+
+def test_retrieve_multi_domain_balances_quota(kb_root: Path):
+    # alpha dominates lexically (5 matching pages); beta has 2.
+    for i in range(5):
+        _page(f"a{i}", f"Alpha {i}", f"## S\n\nshared signal token alpha-{i}.\n", domain="alpha")
+    for i in range(2):
+        _page(f"b{i}", f"Beta {i}", f"## S\n\nshared signal token beta-{i}.\n", domain="beta")
+    search_index.refresh(rebuild=True)
+
+    # Single global call collapses toward the dominant domain...
+    _block_single, single = retrieve("shared signal token", k=4)
+    assert {s.domain for s in single} == {"alpha"}, "precondition: global call collapses to alpha"
+
+    # ...multi-domain quota merge must surface BOTH named domains.
+    _block, sections = retrieve("shared signal token", domains=["alpha", "beta"], k=4)
+    doms = {s.domain for s in sections}
+    assert "alpha" in doms and "beta" in doms, f"expected both domains, got {doms}"
+
+
+def test_retrieve_multi_domain_dedups_and_survives_budget(kb_root: Path):
+    # One page tagged to BOTH domains.
+    d = paths.wiki_dir() / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    both = {
+        "type": "concept", "slug": "dual", "title": "Dual tagged",
+        "domains": ["alpha", "beta"],
+        "created_at": "2026-01-01T00:00:00Z", "last_updated": "2026-05-01T00:00:00Z",
+    }
+    (d / "dual.md").write_text(fm.serialize(both, "## S\n\nshared signal token dual.\n"))
+    # Plus several large single-domain pages so the budget truncates well below
+    # the merged set (8 distinct pages; a budget that admits only ~3 sections).
+    for i in range(4):
+        _page(f"a{i}", f"Alpha {i}", "## S\n\nshared signal token " + ("alpha " * 300), domain="alpha")
+    for i in range(4):
+        _page(f"b{i}", f"Beta {i}", "## S\n\nshared signal token " + ("beta " * 300), domain="beta")
+    search_index.refresh(rebuild=True)
+
+    _block, sections = retrieve(
+        "shared signal token", domains=["alpha", "beta"], k=8, budget_chars=6000,
+    )
+    paths_seen = [s.rel_path for s in sections]
+    assert len(paths_seen) == len(set(paths_seen)), "no page should appear twice"
+    assert len(sections) < 8, "budget should truncate the merged set"
+    assert {s.domain for s in sections} >= {"alpha", "beta"}, "balance survives truncation"
+
+
+def test_retrieve_op_accepts_domains(kb_root: Path):
+    for i in range(3):
+        _page(f"a{i}", f"Alpha {i}", f"## S\n\nshared signal token a{i}.\n", domain="alpha")
+    _page("b0", "Beta 0", "## S\n\nshared signal token b0.\n", domain="beta")
+    search_index.refresh(rebuild=True)
+    res = retrieve_op("shared signal token", domains=["alpha", "beta"], k=4)
+    assert res.success
+    assert res.data["section_count"] >= 2
+
+
+def test_mcp_wiki_retrieve_accepts_domains(kb_root: Path):
+    from gateway.mcp_server import wiki_retrieve
+    for i in range(3):
+        _page(f"a{i}", f"Alpha {i}", f"## S\n\nshared signal token a{i}.\n", domain="alpha")
+    _page("b0", "Beta 0", "## S\n\nshared signal token b0.\n", domain="beta")
+    search_index.refresh(rebuild=True)
+    res = wiki_retrieve("shared signal token", domains="alpha,beta", k=4)
+    assert res["success"]
+    # _serialize exposes the assembled block as `summary`; both named domains
+    # must appear as <page domain="..."> attributes (balanced, not collapsed).
+    assert 'domain="alpha"' in res["summary"]
+    assert 'domain="beta"' in res["summary"]
