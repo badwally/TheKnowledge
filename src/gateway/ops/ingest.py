@@ -10,6 +10,7 @@ Idempotency: safe to re-run; same content_hash → no-op (convergent); missing w
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
 
 from gateway import converters, frontmatter as fm
@@ -47,6 +48,7 @@ def ingest(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    force_include: bool = False,
     fetch_pdf: bool = False,
 ) -> OperationResult:
     """Top-level dispatcher. Accepts a URL string, a non-URL identifier (e.g. a
@@ -69,6 +71,7 @@ def ingest(
             plan_client=plan_client,
             with_plan=with_plan,
             draft=draft,
+            force_include=force_include,
             fetch_pdf=fetch_pdf,
         )
     # Non-URL string that a converter recognizes (e.g. bare arxiv ID,
@@ -86,6 +89,7 @@ def ingest(
                 plan_client=plan_client,
                 with_plan=with_plan,
                 draft=draft,
+                force_include=force_include,
                 fetch_pdf=fetch_pdf,
             )
     path = Path(source).expanduser() if isinstance(source, str) else source
@@ -97,6 +101,7 @@ def ingest(
             plan_client=plan_client,
             with_plan=with_plan,
             draft=draft,
+            force_include=force_include,
         )
     return ingest_canonical(
         path,
@@ -105,6 +110,7 @@ def ingest(
         plan_client=plan_client,
         with_plan=with_plan,
         draft=draft,
+        force_include=force_include,
     )
 
 
@@ -116,6 +122,7 @@ def ingest_file(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    force_include: bool = False,
 ) -> OperationResult:
     """Dispatch a local non-canonical file to a file converter."""
     try:
@@ -135,6 +142,7 @@ def ingest_file(
         plan_client=plan_client,
         with_plan=with_plan,
         draft=draft,
+        force_include=force_include,
     )
 
 
@@ -146,6 +154,7 @@ def ingest_canonical(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    force_include: bool = False,
 ) -> OperationResult:
     """Ingest from a canonical markdown file path."""
     if not input_path.exists():
@@ -160,6 +169,7 @@ def ingest_canonical(
         plan_client=plan_client,
         with_plan=with_plan,
         draft=draft,
+        force_include=force_include,
     )
 
 
@@ -171,6 +181,7 @@ def ingest_url(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    force_include: bool = False,
     fetch_pdf: bool = False,
 ) -> OperationResult:
     """Ingest from a URL via converter dispatch."""
@@ -204,6 +215,7 @@ def ingest_url(
         plan_client=plan_client,
         with_plan=with_plan,
         draft=draft,
+        force_include=force_include,
     )
 
 
@@ -218,6 +230,7 @@ def _ingest_canonical_text(
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
     draft: bool = False,
+    force_include: bool = False,
 ) -> OperationResult:
     """Validate canonical markdown, run filter, commit to raw/ + (if passed) wiki/sources/."""
     try:
@@ -327,13 +340,30 @@ def _ingest_canonical_text(
                     summary=f"already ingested (no-op): {source_id}",
                 )
 
-        # Run the semantic filter (if domain available)
-        effective_domain, filter_decision, filter_warnings = _run_filter(
-            front=front,
-            body=body,
-            explicit_domain=domain,
-            client=filter_client,
-        )
+        # Run the semantic filter (if domain available) — unless the caller
+        # vouches for the source via force_include, which skips the filter LLM
+        # call entirely and pins the decision to included.
+        if force_include:
+            effective_domain = domain or _first_domain(front)
+            filter_decision = "included"
+            filter_warnings = []
+            front["filter"] = {
+                "score": 1.0,
+                "policy_version": "force-include",
+                "rationale": (
+                    "Force-included by caller (--force-include); semantic "
+                    "filter bypassed."
+                ),
+                "decided_at": _now_iso(),
+                "user_correction": None,
+            }
+        else:
+            effective_domain, filter_decision, filter_warnings = _run_filter(
+                front=front,
+                body=body,
+                explicit_domain=domain,
+                client=filter_client,
+            )
 
         canonical_text = fm.serialize(front, body)
         write_atomic(raw_target, canonical_text)
@@ -416,6 +446,10 @@ def _ingest_canonical_text(
 
 
 # --- filter integration -----------------------------------------------------
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def _run_filter(

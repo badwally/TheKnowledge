@@ -261,3 +261,33 @@ def test_gather_existing_pages_wrong_domain_excluded(kb_root):
     """TOK-4: pages from a different domain are not returned."""
     _write_wiki_entity(kb_root, "other-entity", "other-domain", "body\n")
     assert _gather_existing_pages("my-domain") == {}
+
+
+def test_ingest_force_include_bypasses_filter(kb_root, make_source, tmp_path):
+    """--force-include writes the wiki page WITHOUT invoking the semantic filter.
+
+    Eliminates the filter-correct + re-ingest two-pass for caller-vetted sources.
+    """
+
+    class _RaisingFilter:
+        def call(self, prompt: str) -> str:  # pragma: no cover - must never run
+            raise AssertionError("filter must not be called when force_include=True")
+
+    src = _write_source(tmp_path, "input.md", make_source(domains=["data-collectives"]))
+
+    result = ingest_canonical(
+        src,
+        domain="data-collectives",
+        force_include=True,
+        filter_client=_RaisingFilter(),
+    )
+
+    assert result.success, result.errors
+    assert paths.wiki_source_path("yt-testABC_123").exists(), (
+        "force-include must write the wiki source page even with no passing filter"
+    )
+    raw_front, _ = fm.parse(
+        paths.raw_source_path("youtube", "yt-testABC_123").read_text()
+    )
+    assert raw_front["filter"]["policy_version"] == "force-include"
+    assert raw_front["filter"]["score"] == 1.0

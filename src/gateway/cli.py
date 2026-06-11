@@ -239,6 +239,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Plan-client wall-clock budget in seconds (default 300; bump for "
         "large source bodies — 50KB+ PDFs often need 600+).",
     )
+    p_ingest.add_argument(
+        "--force-include",
+        action="store_true",
+        help="Skip the semantic filter and author pages directly — for "
+        "caller-vetted sources (e.g. deep-research-verified). Records a "
+        "forced-include filter decision; avoids the filter-correct + "
+        "re-ingest two-pass.",
+    )
 
     # filter (read-only scoring)
     p_filter = subparsers.add_parser(
@@ -1858,6 +1866,7 @@ def _run_ingest(ns: argparse.Namespace) -> int:
             domain=ns.domain,
             with_plan=getattr(ns, "with_plan", False),
             draft=getattr(ns, "draft", False),
+            force_include=getattr(ns, "force_include", False),
             plan_client=plan_client,
         )
     )
