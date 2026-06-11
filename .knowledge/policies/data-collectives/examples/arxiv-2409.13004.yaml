@@ -1,0 +1,27 @@
+source_id: arxiv-2409.13004
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Differential privacy in federated learning (NIST co-author) — DP-SGD mechanism
+  for privacy-preserving shared models (criterion 2).
+pinned_at: '2026-06-11T02:19:15Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: arxiv
+  title: Data Poisoning and Leakage Analysis in Federated Learning
+  authors:
+  - Wenqi Wei
+  - Tiansheng Huang
+  - Zachary Yahn
+  - Anoop Singhal
+  - Margaret Loper
+  - Ling Liu
+  url: https://arxiv.org/abs/2409.13004
+content_excerpt: 'Data poisoning and leakage risks impede the massive deployment of
+  federated learning in the real world. This chapter reveals the truths and pitfalls
+  of understanding two dominating threats: {\em training data privacy intrusion} and
+  {\em training data poisoning}. We first investigate training data privacy threat
+  and present our observations on when and how training data may be leaked during
+  the course of federated training. One promising defense strategy is to perturb the
+  raw gradient update by a'

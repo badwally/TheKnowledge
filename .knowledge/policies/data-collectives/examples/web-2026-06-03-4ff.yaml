@@ -1,0 +1,28 @@
+source_id: web-2026-06-03-4ff
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Azure Confidential Clean Rooms — a DEPLOYED commercial clean-room/TEE substrate
+  letting parties pool data without exposing raw records to each other or the operator
+  (criterion 2 + named architecture, criterion 4).
+pinned_at: '2026-06-11T02:19:16Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Perform Protected Multiparty Data Collaboration on Azure
+  authors: []
+  url: https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-clean-rooms
+content_excerpt: 'Note
+
+
+  Access to this page requires authorization. You can try signing in or changing directories.
+
+
+  Access to this page requires authorization. You can try changing directories.
+
+
+  Azure Confidential Clean Rooms offers a protected environment, called a *clean room*,
+  that helps organizations overcome the security and privacy challenges of using sensitive
+  data. Organizations can collaborate and analyze data in the clean room using advanced
+  privacy-enhancing features like protected governance and audi'

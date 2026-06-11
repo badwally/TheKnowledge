@@ -4,12 +4,9 @@ Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop
 
 ---
 
-## ⏸ LOOP PAUSED (user request 2026-06-10)
+## ▶ LOOP RESUMED (user "go" 2026-06-10)
 
-**Do NOT auto-resume.** If a `/loop` wakeup fires, read this block and STOP without
-re-arming or launching work — the user paused the loop for context management and
-will re-trigger explicitly. Resume only on an explicit user "go". Resume point is in
-`## Next atomic step` below.
+Active again. Next unit: finish Task 4 grounding (Stream 2), then Tasks 5–10.
 
 ---
 
@@ -29,7 +26,7 @@ checkpoint here → schedule next.
 - [x] Task 1 — bootstrap `data-collectives` domain (policy.yaml created, verified)
 - [x] Task 2 — Stream 0 precedent census (seed) — 7 source pages + 8 concept pages + entities grounded; analytical note at docs/research/data-collectives/stream-0-precedent-census.md
 - [x] Task 3 — Stream 1 economic/incentive — grounded: nonrivalry-of-data, data-shapley, competitor-data-sharing-tradeoff, product-differentiation-collaboration (+ Jones&Tonetti, Tsoy&Konstantinov, Data Shapley sources). Vives 1984 + Farboodi-Veldkamp verified but full-text won't convert (noted in stream-1 note). KEY: substitutes in same market have weak/negative pooling incentive (Vives Cournot PD).
-- [~] Task 4 — Stream 2 technical/architecture — PARTIAL. deep-research DONE (verified, note written); 6 raw sources committed (arxiv-2206.07284, arxiv-2206.03317, arxiv-2409.13004, web-2025-08-21-f21, web-2026-06-03-4ff, web-2023-05-09-53f) but ALL filter-rejected/review → NOT yet grounded. RESUME: filter-correct --include + re-ingest those 6; find alt URLs for ACM-queue confidential-computing (403) + OPAL MIT chapter (PDF won't convert); commit. KEY: agentic-layer gap (see note + below).
+- [x] Task 4 — Stream 2 technical/architecture — GROUNDED. 6 source pages live (FL gradient-inversion, subject MIA, DP-FL, DP survey, Azure Confidential Clean Rooms, NIST US-UK PETs Prize) via filter-correct + re-ingest. ACM-Queue + OPAL chapter still need alt URLs (cited by reference in note). KEY: agentic-layer gap (zero verified precedent — see note).
 - [ ] Task 5 — Stream 3 legal
 - [ ] Task 6 — Stream 4 regulatory
 - [ ] Task 7 — Stream 5 governmental/policy (spine core)
@@ -97,12 +94,8 @@ content (gateway-owned — leave alone).
 
 **Loop is PAUSED (see top block).** On explicit user "go":
 
-1. FINISH Task 4 grounding: `filter-correct --include` + re-ingest the 6 Stream-2
-   raw sources (arxiv-2206.07284, arxiv-2206.03317, arxiv-2409.13004,
-   web-2025-08-21-f21, web-2026-06-03-4ff, web-2023-05-09-53f); find alt URLs for
-   ACM-queue confidential-computing + OPAL MIT chapter; verify retrieve; commit;
-   mark Task 4 [x].
-2. Then Task 5 (Stream 3 legal): antitrust/competition law on competitor data-sharing
+1. Task 4 GROUNDED (done). Optionally backfill ACM-Queue + OPAL alt URLs later.
+2. Task 5 (CURRENT) (Stream 3 legal): antitrust/competition law on competitor data-sharing
    (US DOJ/FTC + Canada Competition Bureau), data ownership/trade-secret in pooled
    data, privacy (PIPEDA, Québec Law 25, US state regimes), liability. Per-stream recipe.
 3. Continue Tasks 6–9 (regulatory, governmental/policy SPINE, academic, industrial).

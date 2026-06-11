@@ -1,0 +1,25 @@
+source_id: arxiv-2206.03317
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Subject membership-inference attacks in cross-silo federated learning —
+  a privacy risk specific to multi-organization data pooling (criterion 2).
+pinned_at: '2026-06-11T02:19:15Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: arxiv
+  title: Subject Membership Inference Attacks in Federated Learning
+  authors:
+  - Anshuman Suri
+  - Pallika Kanani
+  - Virendra J. Marathe
+  - Daniel W. Peterson
+  url: https://arxiv.org/abs/2206.03317
+content_excerpt: Privacy attacks on Machine Learning (ML) models often focus on inferring
+  the existence of particular data points in the training data. However, what the
+  adversary really wants to know is if a particular individual's (subject's) data
+  was included during training. In such scenarios, the adversary is more likely to
+  have access to the distribution of a particular subject than actual records. Furthermore,
+  in settings like cross-silo Federated Learning (FL), a subject's data can be embodied
+  by multipl

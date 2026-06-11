@@ -42979,3 +42979,91 @@ raw=raw/web/web-2026-06-03-4ff.md (wiki not written: filter decision=rejected)
 ## [2026-06-10T22:26:16Z] ingest | id=web-2023-05-09-53f | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.5
 
 raw=raw/web/web-2023-05-09-53f.md (wiki not written: filter decision=review)
+
+## [2026-06-10T22:27:51Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-10T22-27-51Z-schema-drift.md
+
+## [2026-06-11T02:17:46Z] ingest | id=arxiv-2206.07284 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2206.07284.md wiki=wiki/sources/arxiv-2206.07284.md
+
+## [2026-06-11T02:19:15Z] filter-correction | id=arxiv-2206.07284 | domain=data-collectives | decision=include | original_score=0.35
+
+rationale='Survey of gradient-inversion attacks in federated learning — documents the privacy threat model of the core architecture for pooling proprietary data without centralization (criterion 2).'
+
+## [2026-06-11T02:19:15Z] filter-correction | id=arxiv-2206.03317 | domain=data-collectives | decision=include | original_score=0.2
+
+rationale='Subject membership-inference attacks in cross-silo federated learning — a privacy risk specific to multi-organization data pooling (criterion 2).'
+
+## [2026-06-11T02:19:15Z] filter-correction | id=arxiv-2409.13004 | domain=data-collectives | decision=include | original_score=0.1
+
+rationale='Differential privacy in federated learning (NIST co-author) — DP-SGD mechanism for privacy-preserving shared models (criterion 2).'
+
+## [2026-06-11T02:19:16Z] filter-correction | id=web-2025-08-21-f21 | domain=data-collectives | decision=include | original_score=0.25
+
+rationale='2025 survey of differential privacy for shared/federated models — privacy-budget/utility tradeoff governing pooled-model training (criterion 2).'
+
+## [2026-06-11T02:19:16Z] filter-correction | id=web-2026-06-03-4ff | domain=data-collectives | decision=include | original_score=0.35
+
+rationale='Azure Confidential Clean Rooms — a DEPLOYED commercial clean-room/TEE substrate letting parties pool data without exposing raw records to each other or the operator (criterion 2 + named architecture, criterion 4).'
+
+## [2026-06-11T02:19:16Z] filter-correction | id=web-2023-05-09-53f | domain=data-collectives | decision=include | original_score=0.5
+
+rationale='NIST US-UK PETs Prize Challenges — a government-run benchmark of privacy-preserving data-pooling techniques (criterion 6 government intervention + criterion 2).'
+
+## [2026-06-11T02:20:48Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8209 | cache_read=4696 | cache_creation=21643 | duration_ms=89163 | cost_usd=0.424028
+
+## [2026-06-11T02:20:50Z] wiki-author | id=arxiv-2206.07284 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+The source is a narrowly-scoped abstract-only survey of gradient inversion attacks and defenses in distributed training; it warrants one paper entity and two new concept pages (attack taxonomy, defense taxonomy) that anchor the federated-learning privacy threat model for the data-collectives domain. No existing wiki page covers GradInv; updates to adjacent pages are deferred because their bodies are truncated in context and cannot be merged without risking claim loss.
+
+## [2026-06-11T02:20:51Z] ingest | id=arxiv-2206.03317 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2206.03317.md wiki=wiki/sources/arxiv-2206.03317.md
+
+## [2026-06-11T02:22:47Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=10382 | cache_read=4696 | cache_creation=21924 | duration_ms=114236 | cost_usd=0.481163
+
+## [2026-06-11T02:22:49Z] wiki-author | id=arxiv-2206.03317 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=yes
+
+This source introduces a distinct privacy threat class (subject-level membership inference) and federation regime (cross-silo FL) not covered by existing data-collectives pages; it warrants new paper entity plus three new concept pages for the threat, the privacy granularity, and the FL regime.
+
+## [2026-06-11T02:22:50Z] ingest | id=arxiv-2409.13004 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2409.13004.md wiki=wiki/sources/arxiv-2409.13004.md
+
+## [2026-06-11T02:25:10Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=12144 | cache_read=4696 | cache_creation=21915 | duration_ms=138721 | cost_usd=0.525123
+
+## [2026-06-11T02:25:12Z] wiki-author | id=arxiv-2409.13004 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=yes
+
+New Wei et al. (2024) Handbook chapter introduces three not-yet-covered concepts (training data poisoning, model Trojan attacks, dynamic model perturbation) and a named paper entity; existing gradient-inversion-attack / gradient-inversion-defense / cross-silo-federated-learning pages are obvious update candidates but their full bodies were not visible in this prompt, so updates are deferred rather than risk dropping existing citations.
+
+## [2026-06-11T02:25:15Z] ingest | id=web-2025-08-21-f21 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-08-21-f21.md wiki=wiki/sources/web-2025-08-21-f21.md
+
+## [2026-06-11T02:29:06Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=20677 | cache_read=4696 | cache_creation=26697 | duration_ms=228723 | cost_usd=0.786268
+
+## [2026-06-11T02:29:09Z] wiki-author | id=web-2025-08-21-f21 | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+Lay down the foundational DP scaffolding (DP, privacy budget, MI/inversion/extraction triad, privacy-utility tradeoff) that the existing federated-learning defense pages depend on but do not define, plus the survey entity itself.
+
+## [2026-06-11T02:29:10Z] ingest | id=web-2026-06-03-4ff | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-03-4ff.md wiki=wiki/sources/web-2026-06-03-4ff.md
+
+## [2026-06-11T02:31:57Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=15275 | cache_read=4696 | cache_creation=23946 | duration_ms=165358 | cost_usd=0.623708
+
+## [2026-06-11T02:32:00Z] wiki-author | id=web-2026-06-03-4ff | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+Microsoft Learn documentation for Azure Confidential Clean Rooms introduces a deployed commercial TEE-based clean-room substrate plus its supporting primitives (CCF, remote attestation, allowedFields/pre-conditions/post-filters); none of these are covered by existing data-collectives pages, so net-new entity and concept pages are created.
+
+## [2026-06-11T02:32:02Z] ingest | id=web-2023-05-09-53f | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-05-09-53f.md wiki=wiki/sources/web-2023-05-09-53f.md
+
+## [2026-06-11T02:36:31Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=23983 | cache_read=4696 | cache_creation=27257 | duration_ms=266819 | cost_usd=0.874518
+
+## [2026-06-11T02:36:51Z] retrieve | caller=cli | query=federated learning differential privacy clean room confidential computing pooling | domain=data-collectives | sections=5 | chars=5724
+
+retrieve: 'federated learning differential privacy clean room confidential computing pooling' domain=data-collectives sections=5 chars=5724

@@ -1,0 +1,21 @@
+source_id: web-2023-05-09-53f
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: NIST US-UK PETs Prize Challenges — a government-run benchmark of privacy-preserving
+  data-pooling techniques (criterion 6 government intervention + criterion 2).
+pinned_at: '2026-06-11T02:19:16Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: US-UK PETs Prize Challenge
+  authors: []
+  url: https://www.nist.gov/itl/applied-cybersecurity/privacy-engineering/collaboration-space/challenges/us-uk-pets-prize
+content_excerpt: Privacy-enhancing technologies (PETs) have the potential to help
+  us devise data-driven, innovative solutions to tackle the most pressing global societal
+  challenges we're facing, while preserving citizens’ fundamental right to privacy,
+  which constitutes a foundation for democratic societies. By enabling organizations
+  to share and collaboratively analyze sensitive data in a privacy-preserving manner,
+  PETs open up unprecedented opportunities to harness the power of data through innovative
+  and trust

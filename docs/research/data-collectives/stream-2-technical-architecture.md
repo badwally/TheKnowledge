@@ -1,10 +1,13 @@
 # Stream 2 — Technical / architecture (analytical working note)
 
 > Working note, not canonical wiki. Date: 2026-06-10. Deep-research verified
-> (111 agents; peer-reviewed/standards/primary). **Wiki grounding PENDING** —
-> all sources landed filter-rejected/review (the filter reads FL/DP/MPC papers
-> as generic ML-privacy, not competitive-infrastructure); resume must
-> `filter-correct --include` + re-ingest. Raw sources are committed.
+> (111 agents; peer-reviewed/standards/primary). **Grounded** — all 6 sources
+> required `filter-correct --include` + re-ingest (the filter read FL/DP/MPC
+> papers as generic ML-privacy, not competitive-infrastructure). Source pages
+> live for arxiv-2206.07284, arxiv-2206.03317, arxiv-2409.13004,
+> web-2025-08-21-f21 (DP survey), web-2026-06-03-4ff (Azure clean rooms),
+> web-2023-05-09-53f (NIST PETs Prize). ACM-Queue + OPAL chapter still need alt
+> URLs (cited by reference below).
 
 ## The privacy-preserving pooling stack (no single layer suffices)
 

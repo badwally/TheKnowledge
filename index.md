@@ -224,3 +224,9 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2020-09-10-e49]] · web · Nonrivalry and the Economics of Data · data-collectives
 - [[sources/arxiv-2305.16052]] · arxiv · Strategic Data Sharing between Competitors · data-collectives
 - [[sources/arxiv-1904.02868]] · arxiv · Data Shapley: Equitable Valuation of Data for Machine Learning · data-collectives
+- [[sources/arxiv-2206.07284]] · arxiv · A Survey on Gradient Inversion: Attacks, Defenses and Future Directions · data-collectives
+- [[sources/arxiv-2206.03317]] · arxiv · Subject Membership Inference Attacks in Federated Learning · data-collectives
+- [[sources/arxiv-2409.13004]] · arxiv · Data Poisoning and Leakage Analysis in Federated Learning · data-collectives
+- [[sources/web-2025-08-21-f21]] · web · Defending against attacks in deep learning with differential privacy: a survey - Artificial Intelligence Review · data-collectives
+- [[sources/web-2026-06-03-4ff]] · web · Perform Protected Multiparty Data Collaboration on Azure · data-collectives
+- [[sources/web-2023-05-09-53f]] · web · US-UK PETs Prize Challenge · data-collectives

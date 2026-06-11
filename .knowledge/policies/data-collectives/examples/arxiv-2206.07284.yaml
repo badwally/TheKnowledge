@@ -1,0 +1,27 @@
+source_id: arxiv-2206.07284
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Survey of gradient-inversion attacks in federated learning — documents
+  the privacy threat model of the core architecture for pooling proprietary data without
+  centralization (criterion 2).
+pinned_at: '2026-06-11T02:19:15Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: arxiv
+  title: 'A Survey on Gradient Inversion: Attacks, Defenses and Future Directions'
+  authors:
+  - Rui Zhang
+  - Song Guo
+  - Junxiao Wang
+  - Xin Xie
+  - Dacheng Tao
+  url: https://arxiv.org/abs/2206.07284
+content_excerpt: Recent studies have shown that the training samples can be recovered
+  from gradients, which are called Gradient Inversion (GradInv) attacks. However,
+  there remains a lack of extensive surveys covering recent advances and thorough
+  analysis of this issue. In this paper, we present a comprehensive survey on GradInv,
+  aiming to summarize the cutting-edge research and broaden the horizons for different
+  domains. Firstly, we propose a taxonomy of GradInv attacks by characterizing existing
+  attacks into tw

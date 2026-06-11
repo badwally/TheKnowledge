@@ -1,0 +1,25 @@
+source_id: web-2025-08-21-f21
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: 2025 survey of differential privacy for shared/federated models — privacy-budget/utility
+  tradeoff governing pooled-model training (criterion 2).
+pinned_at: '2026-06-11T02:19:16Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Defending against attacks in deep learning with differential privacy: a
+    survey - Artificial Intelligence Review'
+  authors:
+  - Xiangfei; Zhang; Qingchen
+  url: https://link.springer.com/article/10.1007/s10462-025-11350-3
+content_excerpt: '## Abstract
+
+
+  Recently, we have witnessed the revolutionary development of deep learning. As the
+  application domain of deep learning has expanded, its privacy risks have attracted
+  attention since deep leaning methods often use private data for training. Some methods
+  for attacking deep learning, such as membership inference attacks, increase the
+  privacy risks of deep learning models. One risk-reducing defensive strategy with
+  great potential is to apply some degree of random perturbation during the'
