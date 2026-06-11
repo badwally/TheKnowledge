@@ -269,6 +269,7 @@ def wiki_context(
 def wiki_retrieve(
     query: str,
     domain: str | None = None,
+    domains: str | None = None,
     k: int = 12,
     budget_chars: int = 40_000,
     caller: str | None = None,
@@ -281,7 +282,9 @@ def wiki_retrieve(
     citations preserved. Deterministic and LLM-free (no NotebookLM quota).
 
     query: natural-language question or topic.
-    domain: optional domain scope.
+    domain: optional single-domain scope.
+    domains: optional comma-separated domains (e.g. "a,b") for a per-domain-
+        balanced block; takes precedence over domain.
     k: max sections (default 12).
     budget_chars: max characters in the block (default 40000).
     caller: free-form caller identifier (logged).
@@ -291,8 +294,10 @@ def wiki_retrieve(
     """
     from gateway.ops.retrieve import retrieve_op
 
+    dom_list = [d.strip() for d in domains.split(",") if d.strip()] if domains else None
     return _serialize(
-        retrieve_op(query, domain=domain, k=k, budget_chars=budget_chars, caller=caller)
+        retrieve_op(query, domain=domain, domains=dom_list,
+                    k=k, budget_chars=budget_chars, caller=caller)
     )
 
 
@@ -300,6 +305,7 @@ def wiki_retrieve(
 def wiki_answer(
     question: str,
     domain: str | None = None,
+    domains: str | None = None,
     k: int = 12,
     budget_chars: int = 40_000,
     file_draft: bool = False,
@@ -312,12 +318,15 @@ def wiki_answer(
     are stripped). The fast, NotebookLM-independent complement to wiki_query:
     use this for "what does my wiki already know"; use wiki_query for heavy
     synthesis over a domain's raw corpus. file_draft=True files the answer as
-    a draft synthesis page.
+    a draft synthesis page. domains (comma-separated, e.g. "a,b") balances the
+    grounding context across the named domains and files list-valued domains:;
+    it takes precedence over domain.
     """
     from gateway.ops.answer import answer_op
 
+    dom_list = [d.strip() for d in domains.split(",") if d.strip()] if domains else None
     return _serialize(answer_op(
-        question, domain=domain, k=k, budget_chars=budget_chars,
+        question, domain=domain, domains=dom_list, k=k, budget_chars=budget_chars,
         file_draft=file_draft, caller=caller,
     ))
 

@@ -159,3 +159,17 @@ def test_retrieve_op_accepts_domains(kb_root: Path):
     res = retrieve_op("shared signal token", domains=["alpha", "beta"], k=4)
     assert res.success
     assert res.data["section_count"] >= 2
+
+
+def test_mcp_wiki_retrieve_accepts_domains(kb_root: Path):
+    from gateway.mcp_server import wiki_retrieve
+    for i in range(3):
+        _page(f"a{i}", f"Alpha {i}", f"## S\n\nshared signal token a{i}.\n", domain="alpha")
+    _page("b0", "Beta 0", "## S\n\nshared signal token b0.\n", domain="beta")
+    search_index.refresh(rebuild=True)
+    res = wiki_retrieve("shared signal token", domains="alpha,beta", k=4)
+    assert res["success"]
+    # _serialize exposes the assembled block as `summary`; both named domains
+    # must appear as <page domain="..."> attributes (balanced, not collapsed).
+    assert 'domain="alpha"' in res["summary"]
+    assert 'domain="beta"' in res["summary"]
