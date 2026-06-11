@@ -243,3 +243,9 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2026-05-05-b07]] · web · Ag Data Transparent · data-collectives
 - [[sources/web-2025-12-15-d5c]] · web · Data Act · data-collectives
 - [[sources/web-2026-06-09-e4c]] · web · TEFCA · data-collectives
+- [[sources/web-2026-03-26-f82]] · web · The Missing Pillar of Canada’s AI Strategy: Data Supply Chains · data-collectives
+- [[sources/web-2026-06-04-76b]] · web · Canadian Sovereign AI Compute Strategy · data-collectives
+- [[sources/web-2022-06-22-4be]] · web · Government of Canada launches second phase of the Pan-Canadian Artificial Intelligence Strategy · data-collectives
+- [[sources/web-2025-11-28-252]] · web · First Nations Data Governance Strategy - The First Nations Information Governance Centre · data-collectives
+- [[sources/web-2018-02-15-c35]] · web · Canada’s AI-Powered Supply Chains Cluster (Scale AI) · data-collectives
+- [[sources/web-2021-07-29-89d]] · web · National Artificial Intelligence Research Resource · data-collectives

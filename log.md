@@ -43319,3 +43319,125 @@ TEFCA is a US regulatory precedent for governed multi-party health-data exchange
 ## [2026-06-11T03:51:03Z] retrieve | caller=cli | query=open banking consumer data portability mandate AIDA AI regulation info-blocking compelled data sharing | domain=data-collectives | sections=6 | chars=6436
 
 retrieve: 'open banking consumer data portability mandate AIDA AI regulation info-blocking compelled data sharing' domain=data-collectives sections=6 chars=6436
+
+## [2026-06-11T03:51:56Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T03-51-56Z-schema-drift.md
+
+## [2026-06-11T04:08:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1828 | cache_read=0 | cache_creation=16919 | duration_ms=23950 | cost_usd=0.042986
+
+## [2026-06-11T04:08:00Z] ingest | id=web-2026-06-04-76b | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2026-06-04-76b.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:08:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1303 | cache_read=4371 | cache_creation=12857 | duration_ms=17923 | cost_usd=0.032674
+
+## [2026-06-11T04:08:21Z] ingest | id=web-2022-06-22-4be | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.35
+
+raw=raw/web/web-2022-06-22-4be.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:09:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3353 | cache_read=4371 | cache_creation=14774 | duration_ms=39641 | cost_usd=0.046758
+
+## [2026-06-11T04:09:03Z] ingest | id=web-2026-03-26-f82 | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.7
+
+raw=raw/web/web-2026-03-26-f82.md wiki=wiki/sources/web-2026-03-26-f82.md
+
+## [2026-06-11T04:12:49Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=21323 | cache_read=4696 | cache_creation=26383 | duration_ms=224021 | cost_usd=0.799278
+
+## [2026-06-11T04:12:54Z] wiki-author | id=web-2026-03-26-f82 | updates=13 | created=13 | updated=0 | contradictions=0 | draft=yes
+
+Sen's C.D. Howe Commentary 706 names a constellation of Canadian AI-policy entities (Statistics Canada, CIFAR, PCAIS, Mitacs, Evan Solomon), specific administrative datasets (LAD, NACRS), and mechanism-level concepts (data supply chains, social-benefit tests, PETs, data markets) absent from the data-collectives wiki — these substantially extend coverage beyond the existing Bill C-27 / AIDA cluster.
+
+## [2026-06-11T04:13:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2102 | cache_read=4371 | cache_creation=12008 | duration_ms=26884 | cost_usd=0.034971
+
+## [2026-06-11T04:13:23Z] ingest | id=web-2025-11-28-252 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2025-11-28-252.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:14:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3625 | cache_read=4371 | cache_creation=12078 | duration_ms=43725 | cost_usd=0.042726
+
+## [2026-06-11T04:14:09Z] ingest | id=web-2018-02-15-c35 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.45
+
+raw=raw/web/web-2018-02-15-c35.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:14:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2080 | cache_read=4371 | cache_creation=14824 | duration_ms=26284 | cost_usd=0.040493
+
+## [2026-06-11T04:14:38Z] ingest | id=web-2021-07-29-89d | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.4
+
+raw=raw/web/web-2021-07-29-89d.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:15:24Z] filter-correction | id=web-2026-06-04-76b | domain=data-collectives | decision=include | original_score=0.3
+
+rationale='Canadian Sovereign AI Compute Strategy (ISED) — the C$2B federal AI-infrastructure program; central evidence for whether government funding reaches DATA infrastructure (it does not — compute only). Criterion 6 (government interventions).'
+
+## [2026-06-11T04:15:25Z] filter-correction | id=web-2022-06-22-4be | domain=data-collectives | decision=include | original_score=0.35
+
+rationale='Pan-Canadian AI Strategy Phase 2 (ISED) — the C$443M national AI strategy; evidence on whether funding touches data-sharing/pooling vs talent/compute. Criterion 6.'
+
+## [2026-06-11T04:15:25Z] filter-correction | id=web-2025-11-28-252 | domain=data-collectives | decision=include | original_score=0.3
+
+rationale='FNIGC First Nations Data Governance Strategy / OCAP — Indigenous data sovereignty, a distinct and load-bearing Canadian data-governance strand directly about who controls and governs pooled data. Criteria 1 and 6.'
+
+## [2026-06-11T04:15:25Z] filter-correction | id=web-2018-02-15-c35 | domain=data-collectives | decision=include | original_score=0.45
+
+rationale="Scale AI Global Innovation Cluster (ISED) — Canada's AI-supply-chains supercluster; evidence on whether federal cluster funding operates cross-firm data collaboratives vs commercialization. Criterion 6."
+
+## [2026-06-11T04:15:26Z] filter-correction | id=web-2021-07-29-89d | domain=data-collectives | decision=include | original_score=0.4
+
+rationale="NSF NAIRR pilot — the US federal posture on shared AI research data/compute infrastructure; the US contrast benchmark for the 'why Canada' comparative argument. Criterion 6 (US contrast)."
+
+## [2026-06-11T04:15:29Z] ingest | id=web-2026-06-04-76b | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-04-76b.md wiki=wiki/sources/web-2026-06-04-76b.md
+
+## [2026-06-11T04:18:09Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14733 | cache_read=4696 | cache_creation=23144 | duration_ms=159005 | cost_usd=0.602138
+
+## [2026-06-11T04:18:14Z] ingest | id=web-2022-06-22-4be | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-06-22-4be.md wiki=wiki/sources/web-2022-06-22-4be.md
+
+## [2026-06-11T04:22:01Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=20261 | cache_read=4696 | cache_creation=23836 | duration_ms=225564 | cost_usd=0.747258
+
+## [2026-06-11T04:22:04Z] wiki-author | id=web-2022-06-22-4be | updates=9 | created=7 | updated=2 | contradictions=0 | draft=yes
+
+ISED press release announcing PCAIS Phase 2 ($443M, June 2022); expands the existing PCAIS and CIFAR entries with Phase 2 allocations/partners and introduces the ministerial and institutional actors (Champagne, Strome, Mila, Vector, Standards Council, Global Innovation Clusters, ISED) that are referenced across the domain.
+
+## [2026-06-11T04:22:05Z] ingest | id=web-2025-11-28-252 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-28-252.md wiki=wiki/sources/web-2025-11-28-252.md
+
+## [2026-06-11T04:23:33Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7785 | cache_read=4696 | cache_creation=22305 | duration_ms=86831 | cost_usd=0.420048
+
+## [2026-06-11T04:23:34Z] wiki-author | id=web-2025-11-28-252 | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+The FNIGC page introduces three load-bearing data-collectives anchors not yet on disk — the FNIGC organization, the FNDGS strategy paper, and the concept of Indigenous data sovereignty — none of which collide with existing pages.
+
+## [2026-06-11T04:23:36Z] ingest | id=web-2018-02-15-c35 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-02-15-c35.md wiki=wiki/sources/web-2018-02-15-c35.md
+
+## [2026-06-11T04:25:43Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=9977 | cache_read=4696 | cache_creation=22496 | duration_ms=125048 | cost_usd=0.476758
+
+## [2026-06-11T04:25:43Z] wiki-author | id=web-2018-02-15-c35 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+Source is the canonical ISED program page for the Scale AI Cluster; warrants a new entity page and a minimal additive update to the Global Innovation Clusters parent, with the program framed as commercialization/ecosystem support rather than a data-pooling collective.
+
+## [2026-06-11T04:25:44Z] ingest | id=web-2021-07-29-89d | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2021-07-29-89d.md wiki=wiki/sources/web-2021-07-29-89d.md
+
+## [2026-06-11T04:28:33Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14527 | cache_read=4696 | cache_creation=26544 | duration_ms=166817 | cost_usd=0.630988
+
+## [2026-06-11T04:28:35Z] wiki-author | id=web-2021-07-29-89d | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+Source is the canonical US public-private AI research infrastructure (NAIRR) — establish the program, lead agency, NAIRR Secure co-leads, and the two PET-platform private partners that directly inform the data-collectives pooled-infrastructure thesis.
+
+## [2026-06-11T04:29:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2025 | cache_read=0 | cache_creation=16862 | duration_ms=25572 | cost_usd=0.043857
+
+## [2026-06-11T04:29:03Z] ingest | id=web-2025-11-21-9a5 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2025-11-21-9a5.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:29:15Z] retrieve | caller=cli | query=Canada AI strategy sovereign compute data infrastructure funding data trust standard why Canada NAIRR | domain=data-collectives | sections=6 | chars=6534
+
+retrieve: 'Canada AI strategy sovereign compute data infrastructure funding data trust standard why Canada NAIRR' domain=data-collectives sections=6 chars=6534

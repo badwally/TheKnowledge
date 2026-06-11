@@ -1,0 +1,23 @@
+source_id: web-2018-02-15-c35
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Scale AI Global Innovation Cluster (ISED) — Canada's AI-supply-chains supercluster;
+  evidence on whether federal cluster funding operates cross-firm data collaboratives
+  vs commercialization. Criterion 6.
+pinned_at: '2026-06-11T04:15:25Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Canada’s AI-Powered Supply Chains Cluster (Scale AI)
+  authors:
+  - Innovation; Science; Economic Development Canada
+  url: https://ised-isde.canada.ca/site/global-innovation-clusters/en/canadas-ai-powered-supply-chains-cluster-scale-ai
+content_excerpt: The Scale AI Cluster is bringing the retail, manufacturing, transportation,
+  infrastructure, healthcare and information and communications technology (ICT) sectors
+  together to build intelligent supply chains, scaling large and small organizations
+  along the way. Links between businesses is becoming faster and easier as new tools
+  see and predict where and when products are needed, and sales are increasing as
+  they work together in real time. Ultimately, the Scale AI Cluster is making Canada
+  a global

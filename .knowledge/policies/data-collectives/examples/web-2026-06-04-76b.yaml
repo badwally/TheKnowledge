@@ -1,0 +1,27 @@
+source_id: web-2026-06-04-76b
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Canadian Sovereign AI Compute Strategy (ISED) — the C$2B federal AI-infrastructure
+  program; central evidence for whether government funding reaches DATA infrastructure
+  (it does not — compute only). Criterion 6 (government interventions).
+pinned_at: '2026-06-11T04:15:24Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Canadian Sovereign AI Compute Strategy
+  authors:
+  - Innovation; Science; Economic Development Canada
+  url: https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy
+content_excerpt: 'To strengthen Canada''s position as a global leader in artificial
+  intelligence (AI), it is essential for Canadian AI industries and researchers to
+  have access to affordable, cutting‑edge compute infrastructure. By boosting access
+  to powerful computing resources right here in Canada, we can drive innovation, create
+  new opportunities and ensure that Canada stays competitive in the global AI race.
+
+
+  ## What is AI compute?
+
+
+  AI compute refers to the computational resources required for AI systems to pe'

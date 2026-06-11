@@ -1,0 +1,24 @@
+source_id: web-2021-07-29-89d
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: NSF NAIRR pilot — the US federal posture on shared AI research data/compute
+  infrastructure; the US contrast benchmark for the 'why Canada' comparative argument.
+  Criterion 6 (US contrast).
+pinned_at: '2026-06-11T04:15:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: National Artificial Intelligence Research Resource
+  authors: []
+  url: https://www.nsf.gov/focus-areas/ai/nairr
+content_excerpt: 'Artificial intelligence is accelerating discovery, economic competitiveness
+  and the future workforce, making access to advanced AI research and education resources
+  essential to U.S. leadership in innovation.
+
+
+  The U.S. National Science Foundation-led National Artificial Intelligence Research
+  Resource (NAIRR) is a scalable national infrastructure that provides the research
+  and education communities with access to the critical computing, software, data,
+  models, educational resources and expertise n'

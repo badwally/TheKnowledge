@@ -1,0 +1,25 @@
+source_id: web-2025-11-28-252
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: FNIGC First Nations Data Governance Strategy / OCAP — Indigenous data sovereignty,
+  a distinct and load-bearing Canadian data-governance strand directly about who controls
+  and governs pooled data. Criteria 1 and 6.
+pinned_at: '2026-06-11T04:15:25Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: First Nations Data Governance Strategy - The First Nations Information Governance
+    Centre
+  authors: []
+  url: https://fnigc.ca/what-we-do/first-nations-data-governance-strategy/
+content_excerpt: 'The First Nations Data Governance Strategy (FNDGS, or the * Strategy*)
+  responds to a complex and evolving digital environment while providing a plausible
+  incremental plan to achieve First Nations data sovereignty that is designed to ensure
+  no First Nation is left behind.
+
+
+  Budget 2018 provided funding to develop the * Strategy* over three years but, due
+  to the strategic importance of this priority, the state of community readiness,
+  and the advancement of the New Fiscal Relationship between Canada'
