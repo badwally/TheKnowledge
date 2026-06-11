@@ -1,0 +1,30 @@
+source_id: web-2026-02-27-641
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'StrataPress complete guide to BC Form B certificates — primary source
+  for Form B access rules: owner/buyer/agent request,  fee cap, 5-business-day turnaround,
+  depreciation report as mandatory attachment under BC SPA s.59. No central repository
+  confirmed. Load-bearing for BC corpus-acquisition pathway (Finding-0047 Q5) and
+  the /per-transaction per-building cost model for the July 2026 compliance window.'
+pinned_at: '2026-06-10T05:05:49Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Form B discloses key financial, legal, and operational details specific to
+    the lot and the broader strata corporation.
+  authors:
+  - StrataPress
+  url: https://stratapress.com/the-complete-guide-to-form-b-certificates-in-british-columbia/
+content_excerpt: '## Picture this: You’ve found the perfect strata unit in Coquitlam
+  – ocean views, gym access, the works. But as closing day nears, a surprise $3,000
+  special levy hits, tied to a leaky condo repair you never saw coming. Sound familiar?
+
+
+  In British Columbia’s bustling strata market, these curveballs are all too common,
+  unless you arm yourself with a Form B Information Certificate.
+
+
+  Under Section 59 of the Strata Property Act, Form B is more than a form; it’s a
+  transparent snapshot of your potentia'

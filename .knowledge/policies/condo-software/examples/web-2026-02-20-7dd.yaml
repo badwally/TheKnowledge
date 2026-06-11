@@ -1,0 +1,39 @@
+source_id: web-2026-02-20-7dd
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Source establishes two specific facts for Finding-0042 competitive analysis:
+  (1) reserve-study PDF summarization capability exists (positions as document Q&A,
+  NOT an adequacy engine — load-bearing distinction for Longspan positioning); (2)
+  150-language support claim. Both are product-differentiation claims cited in vendors/condo-control.md.'
+pinned_at: '2026-06-09T17:34:11Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: AI Property Manager Assistant - Condo Control
+  authors: []
+  url: https://www.condocontrol.com/communication/ai-property-manager-assistant/
+content_excerpt: 'Reduce calls, emails, and walk-ups with resident self-serve answers
+
+
+  Draft announcements, notices, and FAQs faster with consistent quality
+
+
+  Get board-ready summaries from long financial and governance documents
+
+
+  # Benefits for Property Managers
+
+
+  ### Fewer interruptions, more focus
+
+
+  Residents get instant answers to community-related questions, so managers spend
+  less time repeating the same information and more time on higher-value work.
+
+
+  ### Faster, more consistent communication
+
+
+  Generate first d'

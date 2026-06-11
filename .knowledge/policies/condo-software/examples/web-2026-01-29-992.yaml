@@ -1,0 +1,52 @@
+source_id: web-2026-01-29-992
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Verified pricing structure for Finding-0042: .50/mo starting price (<50
+  units), Standard/Modern/Premium Living tiers, AI add-on available at all tiers.
+  These are cited facts in vendors/condo-control.md that have no other citable source
+  in the wiki.'
+pinned_at: '2026-06-09T17:28:38Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Community Association Software Pricing | Condo Control
+  authors: []
+  url: https://www.condocontrol.com/pricing/
+content_excerpt: '# Full list of features
+
+
+  | Product/ Service | Standard Living | Modern Living | Premium Living |
+
+  | Resident Portal | |||
+
+  | Mobile App | |||
+
+  | Unit File | |||
+
+  | Resident Database | |||
+
+  | Announcements | |||
+
+  | Digital Bulletin Board | |||
+
+  | Events Calendar | |||
+
+  | File Library | |||
+
+  | Budget Mail-Out | |||
+
+  | Online Payments | |||
+
+  | Online Store | |||
+
+  | Maintenance Requests | |||
+
+  | Preventive Maintenance | |||
+
+  | Architectural Change Requests | |||
+
+  | e-Delivery Consent | |||
+
+  | Online Status Certific'

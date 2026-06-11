@@ -9,7 +9,7 @@ Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop
 Foundation loop COMPLETE (Tasks 1–10, committed c3eaee04..3989c841). Now on **Stage 2 — condo application leg**, to run in a FRESH session.
 Plan: `docs/superpowers/plans/2026-06-11-data-collectives-stage2-condo-application.md`.
 Stage 2 is SYNTHESIS (not fan-out) — do NOT run deep-research workflows (unnecessary + spend cap live). Kick off with: `go` (or re-fire the plan) in a clean session.
-Still-deferred from foundation: file the citation-grounded wiki synthesis page via `wiki query` on spend-cap reset (analysis already at docs/research/data-collectives/synthesis-policy-market.md).
+Foundation FULLY closed: citation-grounded wiki synthesis page FILED + finalized at wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md (via wiki answer --file scaffold + wiki edit grounded body + wiki finalize; ANTHROPIC_API_KEY_RESEARCH now valid). Only Stage 2 (condo leg) remains.
 
 ---
 

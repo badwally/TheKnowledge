@@ -1,0 +1,27 @@
+source_id: web-2025-11-17-cf4
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Inhabit OpTech 2025 product launch press release — confirms zero reserve-study,
+  capital-planning, or Canadian-condo-specific product moves post-Blackstone investment;
+  all 2025 features are multifamily/vacation-rental AI (leasing, fraud prevention,
+  compliance). Negative-evidence load-bearing: Shiftsuite reserve-gap is confirmed
+  unchanged as of Nov 2025. Required to ground the Inhabit/Shiftsuite competitive
+  assessment in Finding-0047 Q7.'
+pinned_at: '2026-06-10T05:14:09Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Inhabit Launches New Slate of Product Features at OpTech 2025
+  authors: []
+  url: https://www.prnewswire.com/news-releases/inhabit-launches-new-slate-of-product-features-at-optech-2025-302617408.html
+content_excerpt: '** Features include AI Advancements, Fraud Prevention Solutions
+  and Expanded Compliance Tools for Property Management Companies **
+
+
+  LAS VEGAS, Nov. 17, 2025 /PRNewswire/ -- Inhabit®, the residential industry''s only
+  enterprise-grade software provider offering both full-stack & platform-agnostic
+  point solutions announced a robust lineup of product advancements that help property
+  teams save time, reduce costs and mitigate risk. The new and enhanced solutions
+  address needs in the areas of AI, Fraud '

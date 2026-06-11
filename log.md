@@ -43753,3 +43753,59 @@ Catena-X press release introduces a new automotive data-space precedent (entitie
 ## [2026-06-11T06:52:16Z] retrieve | caller=cli | query=fraud data consortium Early Warning Cifas pooling vs aggregation data moat vertical AI Catena-X | domain=data-collectives | sections=6 | chars=6464
 
 retrieve: 'fraud data consortium Early Warning Cifas pooling vs aggregation data moat vertical AI Catena-X' domain=data-collectives sections=6 chars=6464
+
+## [2026-06-11T06:53:09Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T06-53-09Z-schema-drift.md
+
+## [2026-06-11T06:55:17Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T06-55-17Z-schema-drift.md
+
+## [2026-06-11T06:55:19Z] lint | scope=orphans | orphans=764
+
+report=.knowledge/lint/2026-06-11T06-55-19Z-orphans.md
+
+## [2026-06-11T12:49:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T12-49-59Z-schema-drift.md
+
+## [2026-06-11T12:58:10Z] answer | caller=data-collectives-synthesis | question=Is there a policy and market-structure opening, emphatically in Canada and benchmarked against the US, for stakeholder-pooled industry-specific AI built on proprietary data committed by otherwise-competing firms? Who captures that market, and what does the agentic shift change about the answer? | domain=data-collectives | sections=16 | cited=0 | stripped=0 | output_tokens=339
+
+answer: 'Is there a policy and market-structure opening, emphatically in Canada and benchmarked against the US, for stakeholder-pooled industry-specific AI built on proprietary data committed by otherwise-competing firms? Who captures that market, and what does the agentic shift change about the answer?' domain=data-collectives sections=16 cited=0 stripped=0
+
+## [2026-06-11T12:58:10Z] wiki-author | id=answer-2026-06-11-is-there-a-policy-and-market | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for data-collectives
+
+## [2026-06-11T13:00:10Z] edit-section | page=wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md | section=Synthesis
+
+edited section 'Synthesis' in wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
+
+## [2026-06-11T13:00:45Z] edit-section | page=wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md | section=Synthesis
+
+edited section 'Synthesis' in wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
+
+## [2026-06-11T13:01:41Z] finalize-abandon | page=wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
+
+## [2026-06-11T13:02:11Z] answer | caller=data-collectives-synthesis | question=Is there a policy and market-structure opening, emphatically in Canada and benchmarked against the US, for stakeholder-pooled industry-specific AI built on proprietary data committed by otherwise-competing firms? Who captures that market, and what does the agentic shift change about the answer? | domain=data-collectives | sections=16 | cited=0 | stripped=0 | output_tokens=426
+
+answer: 'Is there a policy and market-structure opening, emphatically in Canada and benchmarked against the US, for stakeholder-pooled industry-specific AI built on proprietary data committed by otherwise-competing firms? Who captures that market, and what does the agentic shift change about the answer?' domain=data-collectives sections=16 cited=0 stripped=0
+
+## [2026-06-11T13:02:11Z] wiki-author | id=answer-2026-06-11-is-there-a-policy-and-market | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for data-collectives
+
+## [2026-06-11T13:02:12Z] edit-section | page=wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md | section=Synthesis
+
+edited section 'Synthesis' in wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
+
+## [2026-06-11T13:02:12Z] finalize | page=wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
+
+finalized wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
+
+## [2026-06-11T13:02:30Z] retrieve | caller=cli | query=synthesis why Canada who captures market agentic | domain=data-collectives | sections=2 | chars=2422
+
+retrieve: 'synthesis why Canada who captures market agentic' domain=data-collectives sections=2 chars=2422

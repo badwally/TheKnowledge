@@ -1,0 +1,28 @@
+source_id: web-2025-08-29-62d
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Primary source for Property Control parent brand launch (Aug 29 2025):
+  names 4 sub-products (Condo Control, HOA Central, HOA Sites, Patrol Points), single
+  sign-on, CEO Brian Bosscher, and ''open API'' claim — all cited in Finding-0042
+  and vendors/condo-control.md. These facts cannot be derived from the Vertica June
+  2024 release.'
+pinned_at: '2026-06-09T17:23:59Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Property Control launches as the parent company behind Condo Control, HOA
+    Central, HOA Sites, and Patrol Points
+  authors:
+  - Phillip Livingston
+  url: https://www.condocontrol.com/blog/property-control-launches-as-the-parent-company/
+content_excerpt: '**New York, NY, August 29, 2025: Property Control **today announced
+  the launch of its parent brand, bringing together **Condo Control, HOA Central,
+  HOA Sites**, and **Patrol Points** to create a single command center for mixed portfolios,
+  including condo towers, HOAs, commercial sites, and mobile patrol teams. With multi-brand
+  single sign-on and a unified subscription, Property Control consolidates resident
+  services, operations, and security oversight into one seamless solution.
+
+
+  “Property manag'

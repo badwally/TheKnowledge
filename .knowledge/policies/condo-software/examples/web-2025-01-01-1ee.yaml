@@ -1,0 +1,44 @@
+source_id: web-2025-01-01-1ee
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Parent-designated load-bearing source for SmartProperty platform architecture
+  competitive read (Finding-0043). Asset Inventory Control + Capital Planning + Capital
+  Project Tracking three-module structure, the operational data loop (real-time vendor
+  updates, actuals-vs-forecast variance), and the 'half-million homes' scale claim
+  are all required for the condo-software ecosystem map. Primary source for platform
+  feature decomposition; no comparable secondary source exists for these specific
+  module boundaries.
+pinned_at: '2026-06-10T03:19:17Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: HOA Reserve Study & Capital Planning Platform | SmartProperty
+  authors: []
+  url: https://www.smartproperty.com/platform
+content_excerpt: '# The Living Reserve Study®
+
+
+  Helping communities and clubs protect, maintain, and plan for the future of their
+  property.
+
+
+  Trusted by Industry Leaders
+
+
+  ## Reserve Component Inventory Control
+
+
+  ## Manage your entire reserve study inventory—clearly and completely
+
+
+
+  Track every component, cost, and detail in one place. Map locations, attach docs,
+  link financials, and generate reports—accessible anytime, even on mobile.
+
+
+  ### Log full asset details
+
+
+  Store specs, suppliers, files, photos, and historical'

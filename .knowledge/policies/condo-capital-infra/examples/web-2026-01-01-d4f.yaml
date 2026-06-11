@@ -1,0 +1,40 @@
+source_id: web-2026-01-01-d4f
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'REcollab about page — primary source for team composition (4 members:
+  Ipek Yilmaz MSc, C. Deyerman MSc+MEng, Tianne Pane PM, Irem Yaliniz PhD IP Advisor);
+  civil engineer co-founders with no P.Eng. in title; no institutional funding disclosed;
+  US entity (Inc.); Toronto/Calgary/Boston offices. Load-bearing for competitive assessment:
+  no P.Eng. seal chain, pre-institutional, IP structuring underway. Required for vendor
+  entity update per Finding-0047 Q3.'
+pinned_at: '2026-06-10T04:59:00Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Built by Civil Engineers. For the people who fund, insure, and run buildings.
+  authors: []
+  url: https://recollab.ai/about
+content_excerpt: 'About REcollab
+
+
+  #
+
+  Built by Civil Engineers. For the people who *fund, insure,* and *run* buildings.
+
+
+  We are a group of civil engineers, data scientists, machine learning engineers,
+  and capital markets experts who understand buildings from the foundation up.
+
+
+  ## Run your buildings like the best ones do.
+
+
+  Join property managers across North America who use REcollab to plan, fund, and
+  future-proof their buildings.
+
+
+  Book a Demo
+
+  '

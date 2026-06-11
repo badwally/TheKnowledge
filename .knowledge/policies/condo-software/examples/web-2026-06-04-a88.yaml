@@ -1,0 +1,31 @@
+source_id: web-2026-06-04-a88
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Shiftsuite homepage — primary source for complete Canadian condo tech
+  stack (8 named applications: Accounting, Property Management, Digital Bill Approvals,
+  Community Websites, Conduit, Online Proxy, Virtual AGM, Electronic Voting); confirms
+  zero reserve/capital-planning module gap; 600K Canadian condo units footprint claim.
+  Load-bearing for ingest-intermediary segment landscape (Finding-0045 Segment 1).'
+pinned_at: '2026-06-10T04:41:18Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo Management Software | Shiftsuite – The Complete Tech Stack
+  authors: []
+  url: https://shiftsuite.com/
+content_excerpt: '## The Complete Tech Stack for Modern Property Management
+
+
+  ## FEATURED
+
+
+  Shiftsuite’s Accounting application is a purpose-built financial management solution
+  designed specifically for condominium and strata property management companies.
+  Unlike generic accounting software, it delivers industry-specific functionality
+  tailored to the complexities of condo corporations, HOAs, and strata portfolios.
+
+
+  Developed in collaboration with leading property management professionals, Accounting+
+  provides preci'

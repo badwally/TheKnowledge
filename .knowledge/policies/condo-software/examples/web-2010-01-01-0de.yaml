@@ -1,0 +1,26 @@
+source_id: web-2010-01-01-0de
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: PowerStrata for strata management companies — only Canadian strata PM platform
+  found that explicitly links maintenance planning to capital renewal and depreciation
+  reports; BC-only market; primary source confirming the maintenance-to-depreciation-report
+  workflow connection that the Longspan ingest-intermediary product targets. Load-bearing
+  for Finding-0045 Segment 1 CMMS/tooling analysis.
+pinned_at: '2026-06-10T04:41:34Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Power Strata Systems Inc. | Strata Management Software Solutions
+  authors: []
+  url: https://www.powerstrata.com/products/powerstrata-for-strata-management-companies/
+content_excerpt: '## PowerStrata for Strata Management Companies
+
+
+  **Property Management Companies in British Columbia** can find themselves managing
+  a host of Strata units and properties, with a wide variety of scale and complexity.
+  They need a secure, comprehensive, all-inclusive strata property management software
+  platform that not only conforms to British Columbia regulations, but is also customizable
+  enough to handle multiple different Strata corporations with different levels of
+  complexity. PowerStrata is a '

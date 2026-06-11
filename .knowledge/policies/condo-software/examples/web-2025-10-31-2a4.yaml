@@ -1,0 +1,33 @@
+source_id: web-2025-10-31-2a4
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Condo Manager homepage — establishes product identity, Canadian-market
+  positioning (bilingual EN/FR), and accounting-first feature posture for the platform
+  now inside the Property Control roll-up. Confirms condomanager.com as a distinct
+  live product brand under Vertica's Property Control umbrella.
+pinned_at: '2026-06-09T17:57:59Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Online Property & Condo management Services, HOA Software - Condo Manager
+  authors: []
+  url: https://www.condomanager.com/
+content_excerpt: '# There''s a better way to manage your condos.
+
+
+  Condo Manager is a leader in integrated accounting, management and communication
+  software that helps your condo/HOA management grow without compromise. Find economies
+  of scale driven through automation that result in immediate productivity gains and
+  expense savings.
+
+
+  ## Simplify property management.
+
+
+  Condo Manager streamlines the property managers'' day-to-day with an advanced accounting
+  solution designed for ease-of-use.
+
+
+  Explore the benefits of Con'

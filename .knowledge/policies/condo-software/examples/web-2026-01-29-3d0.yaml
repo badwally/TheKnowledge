@@ -1,0 +1,45 @@
+source_id: web-2026-01-29-3d0
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Inhabit/Shiftsuite product page — Shiftsuite is a named Canadian condo
+  association management platform serving the Canadian market since 2002, now under
+  Inhabit ownership (~600K units across Inhabit's portfolio). Establishes Inhabit
+  as a secondary Canadian acquirer candidate for the condo-software landscape. Load-bearing
+  for gtm/canadian-acquisition-path.md acquirer landscape section.
+pinned_at: '2026-06-09T18:01:48Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo Association Management Solution | Inhabit
+  authors: []
+  url: https://inhabit.com/solutions/shiftsuite/
+content_excerpt: '# Shiftsuite
+
+
+  ###### Condo Association Management Software
+
+
+  ## What Customers Say
+
+
+  ##### Discover
+
+
+  ## Who We Serve
+
+
+  Shiftsuite is proud to have been innovating the Canadian condo industry with cutting-edge
+  software since 2002. Shiftsuite provides property management software to the condo
+  industry throughout Canada.
+
+
+  ##### Designed For
+
+
+  ### Canadian Condo Associations
+
+
+  We are proud to have served the Canadian condo market for over 20 years. Our team
+  at Shiftsuite has been innovative and solved pr'

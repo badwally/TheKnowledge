@@ -1,0 +1,28 @@
+source_id: web-2025-01-13-d27
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: 'Source provides independently-verified G2 review metrics for Finding-0042
+  competitive analysis: 4.9/5 score, 254 reviews, only condo/HOA specialist among
+  15 G2 Winter 2025 leaders. These are third-party verified scores, not vendor self-claims
+  — citable for competitive positioning in vendors/condo-control.md.'
+pinned_at: '2026-06-09T17:40:50Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo Control wins winter 2025 G2 leader award
+  authors:
+  - Kim Brown
+  url: https://www.condocontrol.com/blog/condo-control-wins-winter-2025-leader-award/
+content_excerpt: 'It’s a happy new year at Condo Control. We’re starting 2025 on a
+  high note, and we have our amazing customers to thank for this exciting achievement!
+
+
+  Condo Control has been recognized as a Property Management Software Leader. This
+  distinguished award was given to us by G2, a trusted peer-to-peer review platform,
+  based on our sustained market presence and high volume of customer feedback.
+
+
+  435 software companies were competing to earn a leader award in the property management
+  category, and we we'

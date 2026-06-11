@@ -1,0 +1,32 @@
+source_id: web-2025-01-01-dca
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Primary-source data-rights clause evidence load-bearing for Longspan contract
+  template design; SmartProperty ToS §5 establishes the market-standard aggregated/anonymized
+  corpus-rights clause verbatim — competitive intelligence with directly verifiable
+  contract substance.
+pinned_at: '2026-06-10T04:37:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Terms & Conditions | SmartProperty
+  authors: []
+  url: https://www.smartproperty.com/terms
+content_excerpt: '# Terms and Conditions
+
+
+
+  ## 1. Definitions.
+
+
+  1.1 “**Customer Data**” means all data and information submitted or otherwise transmitted
+  to the Service by Customer, its agents or service providers, including SmartProperty,
+  which may be engaged by Customer to generate and submit data to the Service on behalf
+  of Customer.
+
+
+  1.2 “**Order Form**” means one or more ordering documents that the parties mutually
+  execute from time to time and which specify the details of the Services and any
+  Professional Se'

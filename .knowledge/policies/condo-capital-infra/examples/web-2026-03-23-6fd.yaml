@@ -1,0 +1,35 @@
+source_id: web-2026-03-23-6fd
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: Parent-designated source for SmartProperty's Atlas-as-compliance-vehicle
+  positioning (Finding-0043). The post is SmartProperty's primary public statement
+  framing Atlas as the compliance instrument for Fannie Mae LL-2026-03 / Jan 2027
+  reserve floor. The competitive claim ('only platform purpose-built to document and
+  defend your reserve position') and the explicit Jan 2027 deadline framing are citable
+  for the condo-capital-infra competitive methodology map. No other primary source
+  documents this positioning claim.
+pinned_at: '2026-06-10T03:34:14Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: New Fannie Mae & Freddie Mac Rules Are Coming. Is Your Community Ready?
+  authors: []
+  url: https://www.smartproperty.com/blog/fannie-mae-freddie-mac-rules-2026
+content_excerpt: '# New Fannie Mae & Freddie Mac Rules Are Coming. Is Your Community
+  Ready?
+
+
+  ## New Fannie Mae & Freddie Mac Rules Are Coming. Is Your Community Ready?
+
+
+  *Published by SmartProperty | March 2026*
+
+
+  On March 18, 2026, Fannie Mae and Freddie Mac announced sweeping changes to condominium
+  project standards and insurance requirements. For community association boards,
+  the window to prepare is short — and the stakes are high.
+
+
+  If your community isn''t positioned to meet these new standards, buyers in your '

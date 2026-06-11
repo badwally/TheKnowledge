@@ -1,0 +1,37 @@
+source_id: web-2026-01-01-84c
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'REcollab RECOStudy product page — primary source confirming deterministic
+  adequacy framing: percent-funded gauge (17% low), special-assessment risk year flag
+  (2029, High Risk); no P10/P50/P90 confidence intervals; no Monte Carlo; no probabilistic
+  outputs. Competitive differentiation is load-bearing: Longspan''s probabilistic
+  engine is structurally different from REcollab''s adequacy-flag dashboard. Required
+  for competitive assessment per Finding-0047 Q3.'
+pinned_at: '2026-06-10T05:00:38Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Powerful Financial Planning
+  authors: []
+  url: https://recollab.ai/core-product
+content_excerpt: 'Our Core Product — RECOStudy™
+
+
+  # Powerful Financial Planning
+
+
+  Turn your Reserve Fund Study into a live, interactive roadmap. Prevent special assessments,
+  track compliance, and make decisions based on real data, not 100-page booklets.
+
+
+  Book a Demo## Just upload what you have.
+
+
+  Recollab reads your unorganized files, extracts inventory and costs, and builds
+  your live dashboard in minutes. You don''t need to sort your folders or bring in
+  an auditor to get started.
+
+
+  Every repair and inspection is logg'

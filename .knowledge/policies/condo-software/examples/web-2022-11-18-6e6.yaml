@@ -1,0 +1,33 @@
+source_id: web-2022-11-18-6e6
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: CondoBI self-managed vs professionally-managed analysis — primary source
+  for 9% higher market value and 18.6% lower fees for self-managed cohort in Toronto/GTA;
+  confirms the 25-30% self-managed share across Canada and its structural significance
+  for the direct-to-board ingest-product channel. Load-bearing for Finding-0045 Segment
+  4 self-managed board analysis.
+pinned_at: '2026-06-10T04:41:28Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Self-Managed vs Professionally-Managed Condominiums. 98 % of Toronto & GTA's
+    Condos Could Spend Less to Maintain a Better Property Value — CondoBI Canada Corporation
+  authors:
+  - Natalia Goryacheva CMA
+  url: https://condobi.ca/news/condo-benchmarking/condo-services-market-transformation/
+content_excerpt: 'Share via:
+
+
+  Based on Condo BI comparison of condo fees and market values of self-managed condominiums
+  and condominiums managed by condo-management companies are very different. Surprisingly,
+  those indicators do not depend on quality and quantity of amenities and inclusions.
+  What they depend on?
+
+
+  It has been sad that condo fee should not be low because it might lead to condo
+  building deterioration. In past articles, Condo BI was trying to answer the questions,
+
+
+  Majority of condo owners might not '

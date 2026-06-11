@@ -1,0 +1,28 @@
+source_id: web-2025-08-01-829
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Sell-side advisor confirmation of Condo Control acquisition by Vertica
+  Capital; establishes deal type as Founder Sale and Feb 2024 close date — two facts
+  not derivable from press releases alone and cited in Finding-0042.
+pinned_at: '2026-06-09T17:19:41Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Condo Control has been sold to Vertica
+  authors: []
+  url: https://jl-co.com/transactions/condo-control-has-been-sold-to-vertica/
+content_excerpt: 'JEGI LEONIS has advised Condo Control on their sale to Vertica.
+
+
+  Founded in 2008 in Toronto, Ontario, Condo Control is a pioneering property management
+  software solution that offers solutions for every task or problem that property
+  managers, board members or owners may face.
+
+
+  The acquisition will accelerate Condo Control’s growth trajectory, positioning the
+  company for success amid strong market demand from property managers and owners
+  for cutting edge property management solutions.
+
+  '

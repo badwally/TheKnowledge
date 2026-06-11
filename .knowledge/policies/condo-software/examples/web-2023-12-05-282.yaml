@@ -1,0 +1,26 @@
+source_id: web-2023-12-05-282
+domain: condo-software
+decision: include
+score: 1.0
+policy_version: condo-software-v1
+rationale: Rentsync / BuildingStack merger (Dec 2023) — Canadian PropTech consolidation
+  event. Rentsync + BuildingStack serve the rental housing market, not condo/HOA directly,
+  but this merger is a landscape comp for Canadian PropTech M&A velocity and cross-segment
+  consolidation trends that contextualize the Vertica condo roll-up thesis in gtm/canadian-acquisition-path.md.
+pinned_at: '2026-06-09T18:01:49Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Rentsync Announces Strategic Merger with Building Stack
+  authors: []
+  url: https://www.newswire.ca/news-releases/rentsync-announces-strategic-merger-with-building-stack-825085528.html
+content_excerpt: 'TORONTO, Dec. 5, 2023 /CNW/ - Rentsync, a leader in marketing solutions
+  for the rental housing industry and the leading online rental marketplace provider
+  in Canada, today announced a merger with Building Stack, a Montreal-based company
+  renowned for creating software for the next generation of property management.
+
+
+
+  The integration of Building Stack into Rentsync''s portfolio marks a significant
+  step towards offering an all-encompassing list-to-lease solution for rental housing
+  industry professio'

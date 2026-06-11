@@ -1,0 +1,35 @@
+source_id: web-2007-08-01-6d8
+domain: condo-capital-infra
+decision: include
+score: 1.0
+policy_version: condo-capital-infra-v1
+rationale: 'Canadian Consulting Engineer ACEC-31 model agreement IP article — primary
+  source for: engineer retains copyright by default (Copyright Act s.13); client gets
+  limited-use license (ACEC-31 standard); third-party transfer requires explicit consent;
+  methodology itself not copyrightable (only expression). Directly governs the Longspan
+  data-rights question for reserve-study deliverables. Load-bearing for ingest-product
+  LOI clause design (Finding-0047 Q6).'
+pinned_at: '2026-06-10T05:08:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Protecting Your Designs
+  authors: []
+  url: https://www.canadianconsultingengineer.com/features/protecting-your-designs/
+content_excerpt: '# Protecting Your Designs
+
+
+  August 1, 2007
+
+
+  By Owen Pawson & Robert Tomkowicz, Miller Thomson, LLP
+
+
+  Engineers typically enter into standard form contracts such as the model agreement
+  published by the Association of Consulting Engineers of Canada (ACEC-31). Article
+  7 of that agreement contains provis...
+
+
+  Engineers typically enter into standard form contracts such as the model agreement
+  published by the Association of Consulting Engineers of Canada (ACEC-31). Article
+  7 of that agreement contains pr'
