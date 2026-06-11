@@ -78,6 +78,7 @@ def answer(
     question: str,
     *,
     domain: str | None = None,
+    domains: list[str] | None = None,
     k: int = 12,
     budget_chars: int = 40_000,
     client=None,
@@ -87,9 +88,13 @@ def answer(
 
     `client` is any object with `call_with_usage(...)->CallResult` (the
     AnthropicAPIClient interface); injected in tests. Constructed lazily from
-    `ANTHROPIC_API_KEY_RESEARCH` when omitted.
+    `ANTHROPIC_API_KEY_RESEARCH` when omitted. When `domains` names ≥2 domains
+    the grounding block is balanced by a per-domain quota merge (see
+    `retrieve`); `domains` takes precedence over the single `domain`.
     """
-    block, sections = retrieve(question, domain=domain, k=k, budget_chars=budget_chars)
+    block, sections = retrieve(
+        question, domain=domain, domains=domains, k=k, budget_chars=budget_chars
+    )
     if not sections:
         return AnswerResult(answer="", sections=[])
 
@@ -124,6 +129,7 @@ def answer_op(
     question: str,
     *,
     domain: str | None = None,
+    domains: list[str] | None = None,
     k: int = 12,
     budget_chars: int = 40_000,
     file_draft: bool = False,
@@ -135,10 +141,12 @@ def answer_op(
 
     `file_draft=True` writes the answer to wiki/synthesis/ via the gateway's
     apply_plan path (always as a draft — citation grounding is then checked at
-    `wiki finalize`).
+    `wiki finalize`). `domains` (≥2) balances the grounding context across the
+    named domains and files list-valued `domains:` frontmatter.
     """
-    res = answer(question, domain=domain, k=k, budget_chars=budget_chars,
-                 client=client, model=model)
+    domain_label = ",".join(domains) if domains else (domain or "")
+    res = answer(question, domain=domain, domains=domains, k=k,
+                 budget_chars=budget_chars, client=client, model=model)
     if not res.sections:
         return OperationResult(
             success=False,
@@ -156,14 +164,14 @@ def answer_op(
         fields={
             "caller": caller or "",
             "question": question,
-            "domain": domain or "",
+            "domain": domain_label,
             "sections": len(res.sections),
             "cited": len(res.source_ids),
             "stripped": len(res.stripped),
             "output_tokens": res.usage.get("output_tokens", 0),
         },
         summary=(
-            f"answer: {question!r} domain={domain or '-'} "
+            f"answer: {question!r} domain={domain_label or '-'} "
             f"sections={len(res.sections)} cited={len(res.source_ids)} "
             f"stripped={len(res.stripped)}"
         ),
@@ -171,7 +179,7 @@ def answer_op(
 
     data = {
         "question": question,
-        "domain": domain,
+        "domain": domain_label or None,
         "answer": res.answer,
         "source_ids": res.source_ids,
         "stripped": res.stripped,
@@ -179,7 +187,7 @@ def answer_op(
     }
 
     if file_draft:
-        filed = _file_draft(question, domain, res)
+        filed = _file_draft(question, domain, res, domains=domains)
         if filed.success:
             data["filed_path"] = filed.summary
         return OperationResult(
@@ -198,7 +206,10 @@ def answer_op(
     )
 
 
-def _file_draft(question: str, domain: str | None, res: AnswerResult) -> OperationResult:
+def _file_draft(
+    question: str, domain: str | None, res: AnswerResult,
+    *, domains: list[str] | None = None,
+) -> OperationResult:
     """Write the answer as a draft synthesis page via apply_plan."""
     import hashlib
     from gateway.ops.apply_plan import apply_plan
@@ -219,7 +230,7 @@ def _file_draft(question: str, domain: str | None, res: AnswerResult) -> Operati
         "type": "synthesis",
         "slug": slug,
         "title": question.strip().rstrip("?"),
-        "domains": [domain] if domain else [],
+        "domains": list(domains) if domains else ([domain] if domain else []),
         "question": question,
         "created_at": now,
         "last_updated": now,
@@ -234,7 +245,8 @@ def _file_draft(question: str, domain: str | None, res: AnswerResult) -> Operati
     ])
     plan = Plan(
         source_id=f"answer-{slug}",
-        rationale=f"wiki answer (local grounded synthesis) for {domain or 'cross-domain'}",
+        rationale=f"wiki answer (local grounded synthesis) for "
+                  f"{','.join(domains) if domains else (domain or 'cross-domain')}",
         updates=[WikiUpdate(
             target_path=rel, update_kind="create",
             content=fm.serialize(front, body),
