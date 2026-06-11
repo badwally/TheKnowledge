@@ -7,7 +7,7 @@ entity_kind: organization
 domains:
 - data-collectives
 created_at: '2026-06-10T21:35:00Z'
-last_updated: '2026-06-10T21:35:00Z'
+last_updated: '2026-06-11T02:55:32Z'
 draft: true
 draft_started_at: '2026-06-10T21:35:00Z'
 draft_unresolved_claims: 0
@@ -17,24 +17,21 @@ draft_unresolved_claims: 0
 
 ## Summary
 
-The Open Data Institute (ODI) is a UK-based research and advisory organisation focused on data infrastructure, governance, and stewardship [[sources/web-2019-04-13-653]]. The ODI originated the "data trust" construct as a legal-structure approach to independent stewardship of data, and ran the first commissioned real-world pilots of the model in 2018 [[sources/web-2019-04-13-653]].
+The Open Data Institute (ODI) is a UK-based research and advisory organisation focused on data infrastructure, governance, and stewardship [[sources/web-2021-03-04-e0f]]. It is one of the institutional endorsers of the Ada Lovelace Institute / AI Council 2021 report on legal mechanisms for data stewardship [[sources/web-2021-03-04-e0f]].
 
 ## Key facts
 
-- The ODI maintains a Data Access Map describing the range of approaches and terminology used for making data accessible to others [[sources/web-2019-04-13-653]].
-- In 2018, the ODI partnered with the UK Office for Artificial Intelligence and Innovate UK to assess data trusts as a potential approach to increasing trust and access to data [[sources/web-2019-04-13-653]].
-- The ODI ran three real-world data-trust pilots: food waste, illegal wildlife trade, and city data with the Greater London Authority and Royal Borough of Greenwich [[sources/web-2019-04-13-653]].
-- The ODI commissioned third-party research on data trusts from Queen Mary University of London, BPE Solicitors LLP, and Pinsent Masons LLP on legal requirements; from Communications Chambers and Involve on decision-making; from BPE Solicitors on the broader legal landscape; from Register Dynamics on technology; from Oxford Insights on certification; and from London Economics on economic function [[sources/web-2019-04-13-653]].
-- Miranda Marcus is credited as the author of the ODI data-trust project page [[sources/web-2019-04-13-653]].
+- The ODI endorsed the Ada Lovelace Institute / AI Council 2021 report "Exploring legal mechanisms for data stewardship" alongside the City of London Law Society and the Data Trusts Initiative [[sources/web-2021-03-04-e0f]].
+- The ODI has been a participant in UK working groups on data trusts and data stewardship, contributing to the legal and policy framing of the three-mechanism toolbox (trusts, cooperatives, corporate/contractual) [[sources/web-2021-03-04-e0f]].
 
 ## Sources
 
-- [[sources/web-2019-04-13-653]] — ODI data trusts project page (2019)
+- [[sources/web-2021-03-04-e0f]] — Ada Lovelace Institute & AI Council, "Exploring legal mechanisms for data stewardship" (2021)
 
 ## Related
 
-- [[concepts/data-trust]]
-- [[concepts/data-intermediary]]
-- [[concepts/data-stewardship]]
-- [[entities/uk-office-for-ai]]
+- [[entities/ada-lovelace-institute]]
+- [[entities/ai-council]]
 - [[entities/innovate-uk]]
+- [[concepts/data-trust]]
+- [[concepts/data-stewardship]]

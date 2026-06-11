@@ -1,0 +1,27 @@
+source_id: web-2023-09-25-318
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Aird Berlis comparison of anonymization/de-identification under PIPEDA
+  vs Bill C-27 — the privacy-law constraint that governs whether personal data can
+  be pooled across firms (criterion 3, consent/de-identification).
+pinned_at: '2026-06-11T03:02:27Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Anonymization and De-Identification: A Comparison of PIPEDA and Bill C-27'
+  authors:
+  - Cathy Jares
+  url: https://www.airdberlis.com/insights/publications/publication/anonymization-and-de-identification-a-comparison-of-pipeda-and-bill-c-27
+content_excerpt: '# Anonymization and De-Identification: A Comparison of PIPEDA and
+  Bill C-27
+
+
+  The proposed *Consumer Privacy Protection Act* (“**CPPA**”) in the federal government’s
+  Bill C-27 will, if passed, replace the *Personal Information Protection and Electronic
+  Documents Act* (“**PIPEDA**”)
+
+  that currently governs the collection, use and disclosure of personal information
+  in certain Canadian jurisdictions. The CPPA will introduce new requirements with
+  respect to “de-identified” and “anonymized” data that w'

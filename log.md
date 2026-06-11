@@ -43067,3 +43067,107 @@ already ingested; backfilled wiki page: raw=raw/web/web-2023-05-09-53f.md wiki=w
 ## [2026-06-11T02:36:51Z] retrieve | caller=cli | query=federated learning differential privacy clean room confidential computing pooling | domain=data-collectives | sections=5 | chars=5724
 
 retrieve: 'federated learning differential privacy clean room confidential computing pooling' domain=data-collectives sections=5 chars=5724
+
+## [2026-06-11T02:37:34Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T02-37-34Z-schema-drift.md
+
+## [2026-06-11T02:51:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1746 | cache_read=0 | cache_creation=19367 | duration_ms=23452 | cost_usd=0.047472
+
+## [2026-06-11T02:51:28Z] ingest | id=web-2024-06-27-57a | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.52
+
+raw=raw/web/web-2024-06-27-57a.md (wiki not written: filter decision=review)
+
+## [2026-06-11T02:51:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1636 | cache_read=4453 | cache_creation=14898 | duration_ms=22216 | cost_usd=0.038429
+
+## [2026-06-11T02:51:54Z] ingest | id=web-2022-01-19-c5a | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2022-01-19-c5a.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T02:52:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2168 | cache_read=4453 | cache_creation=14900 | duration_ms=27048 | cost_usd=0.041093
+
+## [2026-06-11T02:52:25Z] ingest | id=web-2021-03-04-e0f | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.7
+
+raw=raw/web/web-2021-03-04-e0f.md wiki=wiki/sources/web-2021-03-04-e0f.md
+
+## [2026-06-11T02:55:30Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=16288 | cache_read=4696 | cache_creation=26298 | duration_ms=183338 | cost_usd=0.672553
+
+## [2026-06-11T02:55:35Z] wiki-author | id=web-2021-03-04-e0f | updates=11 | created=6 | updated=5 | contradictions=0 | draft=yes
+
+Ada Lovelace / AI Council report is a foundational legal-mechanism survey that directly informs the three core data-collectives governance concepts (trust, cooperative, contractual) and introduces several uncovered institutional actors and a foundational legal concept (fiduciary duty).
+
+## [2026-06-11T02:56:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2069 | cache_read=4453 | cache_creation=12598 | duration_ms=24267 | cost_usd=0.035994
+
+## [2026-06-11T02:56:03Z] ingest | id=web-2023-09-25-318 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.38
+
+raw=raw/web/web-2023-09-25-318.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T02:56:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4654 | cache_read=4453 | cache_creation=15244 | duration_ms=52203 | cost_usd=0.054211
+
+## [2026-06-11T02:56:58Z] ingest | id=web-2023-02-14-d0c | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.7
+
+raw=raw/web/web-2023-02-14-d0c.md wiki=wiki/sources/web-2023-02-14-d0c.md
+
+## [2026-06-11T03:01:12Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=23721 | cache_read=4696 | cache_creation=26895 | duration_ms=251431 | cost_usd=0.864348
+
+## [2026-06-11T03:01:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1673 | cache_read=4453 | cache_creation=12140 | duration_ms=21130 | cost_usd=0.033098
+
+## [2026-06-11T03:01:39Z] ingest | id=web-2019-01-23-bbd | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2019-01-23-bbd.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:02:26Z] filter-correction | id=web-2024-06-27-57a | domain=data-collectives | decision=include | original_score=0.52
+
+rationale='Competition Bureau of Canada Competitor Collaboration Guidelines — the primary Canadian regulator guidance on lawful competitor data-sharing/agreements (s.45 criminal vs s.90.1 civil tracks, safe harbours); directly governs the legal envelope for a data collective among competitors (criterion 3).'
+
+## [2026-06-11T03:02:27Z] filter-correction | id=web-2022-01-19-c5a | domain=data-collectives | decision=include | original_score=0.3
+
+rationale='Competition Bureau draft Competitor Collaboration / ACCA guidelines consultation — the in-transition Canadian competition-law framework for competitor collaborations and information sharing (criterion 3).'
+
+## [2026-06-11T03:02:27Z] filter-correction | id=web-2023-09-25-318 | domain=data-collectives | decision=include | original_score=0.38
+
+rationale='Aird Berlis comparison of anonymization/de-identification under PIPEDA vs Bill C-27 — the privacy-law constraint that governs whether personal data can be pooled across firms (criterion 3, consent/de-identification).'
+
+## [2026-06-11T03:02:27Z] filter-correction | id=web-2019-01-23-bbd | domain=data-collectives | decision=include | original_score=0.3
+
+rationale='Hastings Law Journal article on property in data — foundational to whether contributed/pooled data can be owned and how rights are allocated among contributors (criterion 1, ownership/valuation of member contributions).'
+
+## [2026-06-11T03:02:30Z] ingest | id=web-2024-06-27-57a | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2024-06-27-57a.md wiki=wiki/sources/web-2024-06-27-57a.md
+
+## [2026-06-11T03:06:10Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=19948 | cache_read=4696 | cache_creation=26830 | duration_ms=218366 | cost_usd=0.769373
+
+## [2026-06-11T03:06:13Z] wiki-author | id=web-2024-06-27-57a | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+Canadian Competition Bureau's Competitor Collaboration Guidelines (2021) introduces the regulator, the underlying statute, the document itself, and four concepts (s.45 criminal track, s.90.1 civil track, naked restraints, track determination) that constitute the Canadian legal envelope for data collectives among competitors — gap previously absent from the wiki. Updates to existing draft concepts (antitrust-risks-data-sharing, competitor-data-sharing-tradeoff) skipped because the supplied existing-page views are truncated and a full-page rewrite would risk dropping in-flight draft claims; cross-references added via Related sections on the new pages instead.
+
+## [2026-06-11T03:06:15Z] ingest | id=web-2022-01-19-c5a | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-01-19-c5a.md wiki=wiki/sources/web-2022-01-19-c5a.md
+
+## [2026-06-11T03:09:17Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=15963 | cache_read=4696 | cache_creation=26652 | duration_ms=180102 | cost_usd=0.667968
+
+## [2026-06-11T03:09:21Z] wiki-author | id=web-2022-01-19-c5a | updates=8 | created=0 | updated=8 | contradictions=0 | draft=yes
+
+The 2020 draft Competitor Collaboration Guidelines (the public-consultation precursor to the 2021 final CCG) supplies the Bureau's full analytical framework for routing competitor collaborations between section 45 (criminal) and section 90.1 (civil), plus carve-outs to sections 47, 49, 75-84, 79, and 92 — extending the existing CCG entity and the Canadian-competition-law concept cluster.
+
+## [2026-06-11T03:09:23Z] ingest | id=web-2023-09-25-318 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2023-09-25-318.md wiki=wiki/sources/web-2023-09-25-318.md
+
+## [2026-06-11T03:11:28Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11923 | cache_read=4696 | cache_creation=22789 | duration_ms=123588 | cost_usd=0.528338
+
+## [2026-06-11T03:11:32Z] ingest | id=web-2019-01-23-bbd | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2019-01-23-bbd.md wiki=wiki/sources/web-2019-01-23-bbd.md
+
+## [2026-06-11T03:13:53Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11693 | cache_read=4696 | cache_creation=22415 | duration_ms=139776 | cost_usd=0.518848
+
+## [2026-06-11T03:13:54Z] wiki-author | id=web-2019-01-23-bbd | updates=3 | created=3 | updated=0 | contradictions=0 | draft=yes
+
+Determann's Hastings Law Journal article is a foundational legal-theoretic input on whether pooled/contributed data can be owned at all; the source warrants a paper entity, an author entity, and a new 'data as property' concept page that the existing cooperative/trust/stewardship pages will need to reference. Updates to existing pages are deferred because only truncated previews are visible and an update from truncated content would clobber existing claims.
+
+## [2026-06-11T03:14:04Z] retrieve | caller=cli | query=antitrust competition law competitor data sharing safe harbor data trust property privacy de-identification | domain=data-collectives | sections=6 | chars=6913
+
+retrieve: 'antitrust competition law competitor data sharing safe harbor data trust property privacy de-identification' domain=data-collectives sections=6 chars=6913

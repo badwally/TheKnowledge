@@ -27,7 +27,7 @@ checkpoint here → schedule next.
 - [x] Task 2 — Stream 0 precedent census (seed) — 7 source pages + 8 concept pages + entities grounded; analytical note at docs/research/data-collectives/stream-0-precedent-census.md
 - [x] Task 3 — Stream 1 economic/incentive — grounded: nonrivalry-of-data, data-shapley, competitor-data-sharing-tradeoff, product-differentiation-collaboration (+ Jones&Tonetti, Tsoy&Konstantinov, Data Shapley sources). Vives 1984 + Farboodi-Veldkamp verified but full-text won't convert (noted in stream-1 note). KEY: substitutes in same market have weak/negative pooling incentive (Vives Cournot PD).
 - [x] Task 4 — Stream 2 technical/architecture — GROUNDED. 6 source pages live (FL gradient-inversion, subject MIA, DP-FL, DP survey, Azure Confidential Clean Rooms, NIST US-UK PETs Prize) via filter-correct + re-ingest. ACM-Queue + OPAL chapter still need alt URLs (cited by reference in note). KEY: agentic-layer gap (zero verified precedent — see note).
-- [ ] Task 5 — Stream 3 legal
+- [x] Task 5 — Stream 3 legal — GROUNDED. 6 sources: US DOJ safety-zone withdrawal (Arnold&Porter), Canada Competitor Collaboration Guidelines + draft ACCA, PIPEDA/C-27 de-id, property-in-data (Hastings), data-trust entity forms (Ada Lovelace). KEY: Feb-2023 DOJ withdrawal removed US bright-line safe harbors → case-by-case only; Canada two-track clearer (legal-certainty edge for Canada-first). No property in data → rights are contractual.
 - [ ] Task 6 — Stream 4 regulatory
 - [ ] Task 7 — Stream 5 governmental/policy (spine core)
 - [ ] Task 8 — Stream 6 academic
@@ -95,9 +95,7 @@ content (gateway-owned — leave alone).
 **Loop is PAUSED (see top block).** On explicit user "go":
 
 1. Task 4 GROUNDED (done). Optionally backfill ACM-Queue + OPAL alt URLs later.
-2. Task 5 (CURRENT) (Stream 3 legal): antitrust/competition law on competitor data-sharing
-   (US DOJ/FTC + Canada Competition Bureau), data ownership/trade-secret in pooled
-   data, privacy (PIPEDA, Québec Law 25, US state regimes), liability. Per-stream recipe.
+2. Task 6 (CURRENT) — Stream 4 regulatory: sector data-sharing mandates & safe harbors; AI-regulation status (Canada AIDA — note it died with C-27; US federal EO + state AI laws); open-banking/data-portability mandates as structural precedent for compelled/incentivized pooling.
 3. Continue Tasks 6–9 (regulatory, governmental/policy SPINE, academic, industrial).
 4. **Before Task 10**, run ONE targeted deep-research on agentic-AI / vertical-AI on
    pooled proprietary data (2024–2026) — both Stream 0 and Stream 2 found ZERO verified

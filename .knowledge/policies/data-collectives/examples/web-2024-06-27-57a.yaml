@@ -1,0 +1,37 @@
+source_id: web-2024-06-27-57a
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Competition Bureau of Canada Competitor Collaboration Guidelines — the
+  primary Canadian regulator guidance on lawful competitor data-sharing/agreements
+  (s.45 criminal vs s.90.1 civil tracks, safe harbours); directly governs the legal
+  envelope for a data collective among competitors (criterion 3).
+pinned_at: '2026-06-11T03:02:26Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Competitor Collaboration Guidelines
+  authors:
+  - Government; Innovation; Science; Economic Development Canada; Office; Competition
+    Bureau Canada
+  url: https://competition-bureau.canada.ca/en/how-we-foster-competition/education-and-outreach/competitor-collaboration-guidelines
+content_excerpt: 'The Bureau’s public consultation on Revised Competitor Collaboration
+  Guidelines took place from **July 29, 2020** to **September 28, 2020** and is now
+  closed. The Bureau will post the written responses submitted for the consultation.
+
+
+  **Enforcement guidelines**
+
+
+  May 6, 2021
+
+
+  -
+
+  ## Copyright and permission to reproduce
+
+
+  This publication is not a legal document. It is intended to provide general information
+  and is provided for convenience. To learn more, please refer to the full text of
+  the Acts or'

@@ -230,3 +230,9 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2025-08-21-f21]] · web · Defending against attacks in deep learning with differential privacy: a survey - Artificial Intelligence Review · data-collectives
 - [[sources/web-2026-06-03-4ff]] · web · Perform Protected Multiparty Data Collaboration on Azure · data-collectives
 - [[sources/web-2023-05-09-53f]] · web · US-UK PETs Prize Challenge · data-collectives
+- [[sources/web-2021-03-04-e0f]] · web · Exploring legal mechanisms for data stewardship · data-collectives
+- [[sources/web-2023-02-14-d0c]] · web · No Safe Harbors: DOJ Signals Increased Scrutiny of Information Exchanges | Advisories | Arnold & Porter · data-collectives
+- [[sources/web-2024-06-27-57a]] · web · Competitor Collaboration Guidelines · data-collectives
+- [[sources/web-2022-01-19-c5a]] · web · Draft — Competitor Collaboration Guidelines · data-collectives
+- [[sources/web-2023-09-25-318]] · web · Anonymization and De-Identification: A Comparison of PIPEDA and Bill C-27 · data-collectives
+- [[sources/web-2019-01-23-bbd]] · web · No One Owns Data · data-collectives
