@@ -1,0 +1,26 @@
+source_id: web-2026-06-04-a90
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: ISED Voluntary Code of Conduct on advanced Generative AI — Canada's current
+  AI-governance instrument filling the post-AIDA gap; governs AI built on pooled data
+  (criterion 6, AI regulation status).
+pinned_at: '2026-06-11T03:31:45Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Voluntary Code of Conduct on the Responsible Development and Management of
+    Advanced Generative AI Systems
+  authors:
+  - Innovation; Science; Economic Development Canada
+  url: https://ised-isde.canada.ca/site/ised/en/voluntary-code-conduct-responsible-development-and-management-advanced-generative-ai-systems
+content_excerpt: 'September 2023
+
+
+  Advanced AI systems capable of generating content — such as ChatGPT, DALL·E 2, and
+  Midjourney — have captured the world''s attention. The general-purpose capabilities
+  of these advanced AI systems offer enormous potential for innovation in a number
+  of fields, and they are already being adopted and put to use in a variety of contexts.
+  These advanced systems may be used to perform many different kinds of tasks — such
+  as writing emails, answering complex questions, generating realisti'

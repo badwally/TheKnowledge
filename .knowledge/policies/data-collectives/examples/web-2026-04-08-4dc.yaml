@@ -1,0 +1,25 @@
+source_id: web-2026-04-08-4dc
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: US 21st Century Cures info-blocking rule (HealthIT.gov) — a compelled data-DISCLOSURE
+  regulatory regime governing cross-firm data access; structural precedent for mandated
+  sharing (criterion 6).
+pinned_at: '2026-06-11T03:31:45Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Information Blocking
+  authors:
+  - Avinash Shanbhag
+  url: https://healthit.gov/information-blocking/
+content_excerpt: '# Information Blocking
+
+
+  Most clinical information is digitized, accessible, and shareable thanks to several
+  technology and policy advances making interoperable, electronic health record systems
+  widely available. In 2016, the 21st Century Cures Act (Cures Act) made sharing electronic
+  health information the expected norm in health care and authorized the Secretary
+  of Health and Human Services (HHS) to identify “reasonable and necessary activities
+  that do not constitute information blocking.” Infor'

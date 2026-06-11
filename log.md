@@ -43171,3 +43171,151 @@ Determann's Hastings Law Journal article is a foundational legal-theoretic input
 ## [2026-06-11T03:14:04Z] retrieve | caller=cli | query=antitrust competition law competitor data sharing safe harbor data trust property privacy de-identification | domain=data-collectives | sections=6 | chars=6913
 
 retrieve: 'antitrust competition law competitor data sharing safe harbor data trust property privacy de-identification' domain=data-collectives sections=6 chars=6913
+
+## [2026-06-11T03:14:58Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T03-14-58Z-schema-drift.md
+
+## [2026-06-11T03:27:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2237 | cache_read=0 | cache_creation=18920 | duration_ms=27463 | cost_usd=0.049033
+
+## [2026-06-11T03:27:59Z] ingest | id=web-2025-11-06-ff1 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.5
+
+raw=raw/web/web-2025-11-06-ff1.md (wiki not written: filter decision=review)
+
+## [2026-06-11T03:28:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1952 | cache_read=4397 | cache_creation=12561 | duration_ms=27400 | cost_usd=0.035330
+
+## [2026-06-11T03:28:29Z] ingest | id=web-2026-04-08-4dc | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.2
+
+raw=raw/web/web-2026-04-08-4dc.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:29:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2450 | cache_read=4397 | cache_creation=13628 | duration_ms=31858 | cost_usd=0.039954
+
+## [2026-06-11T03:29:04Z] ingest | id=web-2026-06-04-a90 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.3
+
+raw=raw/web/web-2026-06-04-a90.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:29:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2143 | cache_read=4397 | cache_creation=13952 | duration_ms=27226 | cost_usd=0.039067
+
+## [2026-06-11T03:29:34Z] ingest | id=web-2025-01-17-451 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.2
+
+raw=raw/web/web-2025-01-17-451.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:30:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=4397 | cache_creation=11634 | duration_ms=25745 | cost_usd=0.034001
+
+## [2026-06-11T03:30:03Z] ingest | id=web-2026-05-05-b07 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.35
+
+raw=raw/web/web-2026-05-05-b07.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:30:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2038 | cache_read=4397 | cache_creation=13030 | duration_ms=26590 | cost_usd=0.036698
+
+## [2026-06-11T03:30:33Z] ingest | id=web-2025-12-15-d5c | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.45
+
+raw=raw/web/web-2025-12-15-d5c.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:31:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2618 | cache_read=4397 | cache_creation=12743 | duration_ms=31085 | cost_usd=0.039024
+
+## [2026-06-11T03:31:06Z] ingest | id=web-2026-06-09-e4c | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.45
+
+raw=raw/web/web-2026-06-09-e4c.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T03:31:44Z] filter-correction | id=web-2025-11-06-ff1 | domain=data-collectives | decision=include | original_score=0.5
+
+rationale="Canada's Consumer-Driven Banking Act / open-banking framework (Dept Finance) — the primary data-portability MANDATE and structural template for moving proprietary data between firms at the holder's direction (criterion 6 government intervention + portability)."
+
+## [2026-06-11T03:31:45Z] filter-correction | id=web-2026-04-08-4dc | domain=data-collectives | decision=include | original_score=0.2
+
+rationale='US 21st Century Cures info-blocking rule (HealthIT.gov) — a compelled data-DISCLOSURE regulatory regime governing cross-firm data access; structural precedent for mandated sharing (criterion 6).'
+
+## [2026-06-11T03:31:45Z] filter-correction | id=web-2026-06-04-a90 | domain=data-collectives | decision=include | original_score=0.3
+
+rationale="ISED Voluntary Code of Conduct on advanced Generative AI — Canada's current AI-governance instrument filling the post-AIDA gap; governs AI built on pooled data (criterion 6, AI regulation status)."
+
+## [2026-06-11T03:31:46Z] filter-correction | id=web-2025-01-17-451 | domain=data-collectives | decision=include | original_score=0.2
+
+rationale="Analysis of AIDA's death with Bill C-27 and Canada's AI-regulation gap — the live policy status for AI governance of pooled-data/agentic systems (criterion 6)."
+
+## [2026-06-11T03:31:46Z] filter-correction | id=web-2026-05-05-b07 | domain=data-collectives | decision=include | original_score=0.35
+
+rationale='Ag Data Transparent — a sector data-governance/transparency standard for farm data shared among agtech firms; a real industry data-sharing governance precedent (criteria 4 and 6).'
+
+## [2026-06-11T03:31:46Z] filter-correction | id=web-2025-12-15-d5c | domain=data-collectives | decision=include | original_score=0.45
+
+rationale='EU Data Act — reference precedent for regulated data-sharing/portability obligations among firms (reference tier per domain scope).'
+
+## [2026-06-11T03:31:47Z] filter-correction | id=web-2026-06-09-e4c | domain=data-collectives | decision=include | original_score=0.45
+
+rationale='TEFCA (HealthIT.gov) — US health-data interoperability framework; structural precedent for governed multi-party data exchange (criterion 6).'
+
+## [2026-06-11T03:31:48Z] ingest | id=web-2025-11-06-ff1 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-11-06-ff1.md wiki=wiki/sources/web-2025-11-06-ff1.md
+
+## [2026-06-11T03:35:45Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=22387 | cache_read=4696 | cache_creation=26310 | duration_ms=235295 | cost_usd=0.825148
+
+## [2026-06-11T03:35:49Z] wiki-author | id=web-2025-11-06-ff1 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=yes
+
+Canada's Budget 2025 framework document is the canonical primary source for the Consumer-Driven Banking Act, its delegation to the Bank of Canada, the PIPEDA-anchored economy-wide data-mobility right, and adjacent design choices (derived-data exclusion, reciprocal access, screen-scraping prohibition) — all new to the data-collectives knowledge base and warranting fresh entity/concept pages. (Note: session-state.md verification was not possible from this subagent context — no filesystem tools are available; flagging for the caller.)
+
+## [2026-06-11T03:35:50Z] ingest | id=web-2026-04-08-4dc | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-04-08-4dc.md wiki=wiki/sources/web-2026-04-08-4dc.md
+
+## [2026-06-11T03:37:55Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11403 | cache_read=0 | cache_creation=25525 | duration_ms=123180 | cost_usd=0.540350
+
+## [2026-06-11T03:37:57Z] wiki-author | id=web-2026-04-08-4dc | updates=4 | created=4 | updated=0 | contradictions=0 | draft=yes
+
+Source is the HealthIT.gov canonical explainer of the 21st Century Cures Act information-blocking regime — a US compelled-disclosure precedent relevant to data-collectives as a mandated cross-firm data-access regulatory structure; no existing wiki page covers the statute, the regulatory concept, or the two enforcement agencies, so four new draft pages are warranted with cross-references to the existing Canadian open-banking and data-as-property pages.
+
+## [2026-06-11T03:37:59Z] ingest | id=web-2026-06-04-a90 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-04-a90.md wiki=wiki/sources/web-2026-06-04-a90.md
+
+## [2026-06-11T03:41:14Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=18057 | cache_read=4696 | cache_creation=24456 | duration_ms=193337 | cost_usd=0.698358
+
+## [2026-06-11T03:41:17Z] wiki-author | id=web-2026-06-04-a90 | updates=10 | created=10 | updated=0 | contradictions=0 | draft=yes
+
+Ingest the ISED Voluntary Code of Conduct on Advanced Generative AI Systems as the canonical entity, plus its publisher (ISED), key signatory organizations (Cohere, Mila, Vector Institute, Amii), the named-preserved statute (PIPEDA), and the three substantive AI-governance mechanisms it operationalizes (red-teaming, content watermarking, data poisoning).
+
+## [2026-06-11T03:41:19Z] ingest | id=web-2025-01-17-451 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-01-17-451.md wiki=wiki/sources/web-2025-01-17-451.md
+
+## [2026-06-11T03:43:52Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14545 | cache_read=4696 | cache_creation=25275 | duration_ms=151086 | cost_usd=0.618748
+
+## [2026-06-11T03:43:56Z] wiki-author | id=web-2025-01-17-451 | updates=11 | created=11 | updated=0 | contradictions=0 | draft=yes
+
+Op-ed records AIDA's death-in-committee with Bill C-27 after the Jan-2025 prorogation; create statute/actor/concept pages anchoring Canada's current AI-regulatory gap that frames the data-collectives policy spine.
+
+## [2026-06-11T03:43:57Z] ingest | id=web-2026-05-05-b07 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-05-b07.md wiki=wiki/sources/web-2026-05-05-b07.md
+
+## [2026-06-11T03:45:57Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=10345 | cache_read=4696 | cache_creation=21605 | duration_ms=117700 | cost_usd=0.477048
+
+## [2026-06-11T03:45:58Z] wiki-author | id=web-2026-05-05-b07 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=yes
+
+Source is the official Ag Data Transparent website — primary evidence of a sector-level certification-based data-governance precedent in agriculture; warrants new entity pages for ADT and the named participants (Todd Janzen, NCGA, John Deere), with the ADT page cross-linked to existing agricultural-data-governance entries (GISC) and the contractual-mechanism concept page.
+
+## [2026-06-11T03:45:59Z] ingest | id=web-2025-12-15-d5c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-12-15-d5c.md wiki=wiki/sources/web-2025-12-15-d5c.md
+
+## [2026-06-11T03:47:58Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8870 | cache_read=4696 | cache_creation=23700 | duration_ms=117523 | cost_usd=0.461123
+
+## [2026-06-11T03:47:59Z] wiki-author | id=web-2025-12-15-d5c | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Source warrants a new entity page for the EU Data Act as a reference precedent for regulated B2B data-sharing and cloud-portability obligations; updates to related concept pages (mobility, contractual sharing, DGA) are deferred because only truncated previews of those pages were supplied, so a full-content replacement would risk destroying existing citations.
+
+## [2026-06-11T03:48:00Z] ingest | id=web-2026-06-09-e4c | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-06-09-e4c.md wiki=wiki/sources/web-2026-06-09-e4c.md
+
+## [2026-06-11T03:50:52Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=16169 | cache_read=4696 | cache_creation=23228 | duration_ms=170279 | cost_usd=0.638878
+
+## [2026-06-11T03:50:54Z] wiki-author | id=web-2026-06-09-e4c | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+TEFCA is a US regulatory precedent for governed multi-party health-data exchange; the source warrants new entity pages for TEFCA, its federal sponsor (ONC), and its operator (Sequoia Project), plus concept pages for QHIN, the network-of-networks architecture, and the Common Agreement — all net-new to the data-collectives wiki with no conflicting existing claims.
+
+## [2026-06-11T03:51:03Z] retrieve | caller=cli | query=open banking consumer data portability mandate AIDA AI regulation info-blocking compelled data sharing | domain=data-collectives | sections=6 | chars=6436
+
+retrieve: 'open banking consumer data portability mandate AIDA AI regulation info-blocking compelled data sharing' domain=data-collectives sections=6 chars=6436

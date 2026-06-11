@@ -1,0 +1,27 @@
+source_id: web-2026-06-09-e4c
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: TEFCA (HealthIT.gov) — US health-data interoperability framework; structural
+  precedent for governed multi-party data exchange (criterion 6).
+pinned_at: '2026-06-11T03:31:47Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: TEFCA
+  authors:
+  - Steven Posnack
+  url: https://www.healthit.gov/topic/interoperability/policy/trusted-exchange-framework-and-common-agreement-tefca
+content_excerpt: '# Advancing Nationwide Interoperability with TEFCA®
+
+
+  The Trusted Exchange Framework and Common Agreement™, known as TEFCA®, operates
+  in the United States as a nationwide framework for health information sharing. TEFCA
+  was created by the U.S. Department of Health & Human Services Office of the National
+  Coordinator for Health Information Technology (ONC) to remove barriers for sharing
+  health records electronically among healthcare providers, patients, public health
+  agencies, and payers.
+
+
+  ## A Nati'

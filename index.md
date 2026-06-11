@@ -236,3 +236,10 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2022-01-19-c5a]] · web · Draft — Competitor Collaboration Guidelines · data-collectives
 - [[sources/web-2023-09-25-318]] · web · Anonymization and De-Identification: A Comparison of PIPEDA and Bill C-27 · data-collectives
 - [[sources/web-2019-01-23-bbd]] · web · No One Owns Data · data-collectives
+- [[sources/web-2025-11-06-ff1]] · web · Budget 2025: Canada's Consumer-Driven Banking Framework · data-collectives
+- [[sources/web-2026-04-08-4dc]] · web · Information Blocking · data-collectives
+- [[sources/web-2026-06-04-a90]] · web · Voluntary Code of Conduct on the Responsible Development and Management of Advanced Generative AI Systems · data-collectives
+- [[sources/web-2025-01-17-451]] · web · The Death of Canada’s Artificial Intelligence and Data Act: What Happened, and What’s Next for AI Regulation in Canada? | Montreal AI Ethics Institute · data-collectives
+- [[sources/web-2026-05-05-b07]] · web · Ag Data Transparent · data-collectives
+- [[sources/web-2025-12-15-d5c]] · web · Data Act · data-collectives
+- [[sources/web-2026-06-09-e4c]] · web · TEFCA · data-collectives

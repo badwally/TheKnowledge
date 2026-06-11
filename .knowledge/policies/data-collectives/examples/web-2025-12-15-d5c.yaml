@@ -1,0 +1,26 @@
+source_id: web-2025-12-15-d5c
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: EU Data Act — reference precedent for regulated data-sharing/portability
+  obligations among firms (reference tier per domain scope).
+pinned_at: '2026-06-11T03:31:46Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Data Act
+  authors: []
+  url: https://digital-strategy.ec.europa.eu/en/policies/data-act
+content_excerpt: 'The Data Act is a comprehensive initiative to address the challenges
+  and unleash the opportunities presented by data in the EU, emphasising fair access
+  and user rights, while ensuring the protection of personal data.
+
+
+  ## Background and Highlights
+
+
+  The Regulation on harmonised rules on fair access to and use of data — also known
+  as the **Data Act** — entered into force on 11 January 2024 and into application
+  on 12 September 2025. The Data Act explained provides an in-depth breakdown of the
+  regula'

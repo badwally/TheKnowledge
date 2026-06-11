@@ -1,0 +1,30 @@
+source_id: web-2025-11-06-ff1
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Canada's Consumer-Driven Banking Act / open-banking framework (Dept Finance)
+  — the primary data-portability MANDATE and structural template for moving proprietary
+  data between firms at the holder's direction (criterion 6 government intervention
+  + portability).
+pinned_at: '2026-06-11T03:31:44Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: 'Budget 2025: Canada''s Consumer-Driven Banking Framework'
+  authors: []
+  url: https://www.canada.ca/en/department-finance/programs/financial-sector-policy/open-banking-implementation/budget-2025-canadas-framework-for-consumer-driven-banking.html
+content_excerpt: '# Budget 2025: Canada''s Consumer-Driven Banking Framework
+
+
+  **1. Introduction**
+
+
+  Consumer-driven banking, also known as open banking, refers to a secure framework
+  that lets Canadian individuals and businesses share their financial data with approved
+  service providers of their choice. This framework will give consumersFootnote 1
+  greater control over their data while promoting a competitive and innovative financial
+  sector that strengthens Canada''s position in the global digital economy.
+
+
+  The absenc'
