@@ -118,11 +118,15 @@ content (gateway-owned — leave alone).
 
 **data-collectives project COMPLETE (foundation + Stage 2).** No open work.
 
-**New forward item (gateway, not research):** the Stage 2 grounding exposed a
-**cross-domain synthesis gap** — `wiki answer`/`retrieve` can't assemble a balanced
-grounding context across >1 domain, and `answer.py:222` writes single-valued
-`domains:`. Full handoff in `docs/continuations/2026-06-11.md` (+ `.json`). Resolve
-in a fresh session (TDD + golden-set eval; LLM-free except one smoke test).
+**Cross-domain synthesis gap — RESOLVED 2026-06-11 (PR #15, merged to main at
+089dac39).** `wiki retrieve`/`wiki answer` now take `--domains a,b`: per-domain
+quota merge (ceil(k/N) each, round-robin-interleaved, dedup by path) so balance
+survives budget truncation; `answer` files list-valued `domains:` frontmatter
+(fixes the old single-valued `answer.py:222`). Mirrored on the `wiki_retrieve`/
+`wiki_answer` MCP tools. Golden set unchanged (recall@5 0.889 / recall@10 0.926 /
+MRR 0.722 — single/global paths untouched); 1924 gateway tests pass; live smoke
+test cited both domains. Spec/plan: `docs/superpowers/{specs,plans}/2026-06-11-
+multi-domain-balanced-retrieval*.md`.
 
 Remaining items are explicit-user-trigger only:
 1. **Wiki-grounding backfill (both stages), cap-gated.** On Anthropic spend-cap
