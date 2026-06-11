@@ -104,3 +104,21 @@ def test_retrieve_op_xml_escaping(kb_root: Path):
 def test_mcp_wiki_retrieve_registered():
     from gateway import mcp_server
     assert hasattr(mcp_server, "wiki_retrieve")
+
+
+def test_retrieve_multi_domain_balances_quota(kb_root: Path):
+    # alpha dominates lexically (5 matching pages); beta has 2.
+    for i in range(5):
+        _page(f"a{i}", f"Alpha {i}", f"## S\n\nshared signal token alpha-{i}.\n", domain="alpha")
+    for i in range(2):
+        _page(f"b{i}", f"Beta {i}", f"## S\n\nshared signal token beta-{i}.\n", domain="beta")
+    search_index.refresh(rebuild=True)
+
+    # Single global call collapses toward the dominant domain...
+    _block_single, single = retrieve("shared signal token", k=4)
+    assert {s.domain for s in single} == {"alpha"}, "precondition: global call collapses to alpha"
+
+    # ...multi-domain quota merge must surface BOTH named domains.
+    _block, sections = retrieve("shared signal token", domains=["alpha", "beta"], k=4)
+    doms = {s.domain for s in sections}
+    assert "alpha" in doms and "beta" in doms, f"expected both domains, got {doms}"

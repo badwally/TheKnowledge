@@ -21,6 +21,7 @@ happily return large sections).
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 from gateway import log, paths, search_index
@@ -51,10 +52,39 @@ def _xml_attr(value: str) -> str:
     )
 
 
+def _merge_domains(
+    query: str, domains: list[str], k: int, *, order: str, include_drafts: bool, scope: str,
+) -> list:
+    """Per-domain quota + round-robin interleave, de-duped by rel_path.
+
+    Runs one search per named domain at quota ceil(k/N), then interleaves by
+    per-domain rank so byte-budget truncation downstream preserves balance
+    rather than collapsing toward the lexically-dominant domain.
+    """
+    n = len(domains)
+    quota = math.ceil(k / n)
+    per_domain = [
+        search_index.search_fts(
+            query, scope=scope, domain=d, limit=quota,
+            order=order, include_drafts=include_drafts,
+        )
+        for d in domains
+    ]
+    merged: list = []
+    seen: set[str] = set()
+    for rank in range(quota):
+        for hits in per_domain:
+            if rank < len(hits) and hits[rank].rel_path not in seen:
+                seen.add(hits[rank].rel_path)
+                merged.append(hits[rank])
+    return merged[:k]
+
+
 def retrieve(
     query: str,
     *,
     domain: str | None = None,
+    domains: list[str] | None = None,
     k: int = _DEFAULT_K,
     budget_chars: int = _DEFAULT_BUDGET_CHARS,
     max_section_chars: int = _DEFAULT_MAX_SECTION_CHARS,
@@ -64,19 +94,31 @@ def retrieve(
     """Assemble a bounded context block for `query`. Returns (block, sections).
 
     Pure retrieval — no logging, no LLM. `retrieve_op` wraps this for the
-    CLI/MCP surface (logging + OperationResult).
+    CLI/MCP surface (logging + OperationResult). When `domains` names ≥2
+    domains, the block is balanced by a per-domain quota merge (ceil(k/N) each,
+    round-robin-interleaved) instead of a single global k-window that collapses
+    toward the lexically-dominant domain. `domains` takes precedence over the
+    single `domain`.
     """
     if not query or not query.strip():
         return "", []
 
-    hits = search_index.search_fts(
-        query.strip(),
-        scope=scope,
-        domain=domain,
-        limit=k,
-        order="authority",  # WS5: lift canonical pages over mere mentions
-        include_drafts=include_drafts,
-    )
+    multi = [d for d in (domains or []) if d and d.strip()]
+    if len(multi) >= 2:
+        hits = _merge_domains(
+            query.strip(), multi, k,
+            order="authority", include_drafts=include_drafts, scope=scope,
+        )
+    else:
+        single = multi[0] if multi else domain
+        hits = search_index.search_fts(
+            query.strip(),
+            scope=scope,
+            domain=single,
+            limit=k,
+            order="authority",  # WS5: lift canonical pages over mere mentions
+            include_drafts=include_drafts,
+        )
 
     sections: list[RetrievedSection] = []
     blocks: list[str] = []
