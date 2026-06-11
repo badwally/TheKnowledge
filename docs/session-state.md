@@ -30,7 +30,7 @@ checkpoint here → schedule next.
 - [x] Task 5 — Stream 3 legal — GROUNDED. 6 sources: US DOJ safety-zone withdrawal (Arnold&Porter), Canada Competitor Collaboration Guidelines + draft ACCA, PIPEDA/C-27 de-id, property-in-data (Hastings), data-trust entity forms (Ada Lovelace). KEY: Feb-2023 DOJ withdrawal removed US bright-line safe harbors → case-by-case only; Canada two-track clearer (legal-certainty edge for Canada-first). No property in data → rights are contractual.
 - [x] Task 6 — Stream 4 regulatory — GROUNDED. 7 sources (Canada Consumer-Driven Banking + PIPEDA data-mobility right, US info-blocking/TEFCA, ISED Voluntary GenAI Code, AIDA-death, Ag Data Transparent, EU Data Act ref). KEY: NO regulation compels/funds cross-competitor pooling — only consumer/holder-directed PORTABILITY exists. AIDA dead; Canada has no binding AI statute; US deregulatory. 'Why Canada' must rest on the economy-wide data-mobility right + strategy/funding, NOT regulatory compulsion.
 - [x] Task 7 — Stream 5 governmental/policy (SPINE) — GROUNDED. 7 sources (Sovereign Compute Strategy, Pan-Canadian Phase 2, C.D. Howe missing-pillar, FNIGC/OCAP, Scale AI, NAIRR US-contrast, IAPP data-mobility). VERDICT: Canada funds talent/commercialization/COMPUTE, NOT data infrastructure — no funded mechanism for a data collective. 'Why Canada' rests on (a) CAN/DGSI 100-7 governance standard, (b) economy-wide data-mobility right, (c) data-sovereignty framing — NOT funding/mandate. Compute strategy is a distraction for a data play. Validates user's rhetoric-vs-mechanism skepticism.
-- [ ] Task 8 — Stream 6 academic
+- [x] Task 8 — Stream 6 academic — GROUNDED. 6 sources (GKC/Constructing-Commons, Ostrom 8 principles, data-as-labor AEA, Vincent 2025 collective bargaining, Jonker + Duncan critiques). VERDICT: strong theory, near-absent empirics, every org form has a distinct fragility; collectives solving collective-action was REFUTED in verification. Enabling regulation may be a precondition (Jonker). Convergent with S0 failures + S1 substitutes.
 - [ ] Task 9 — Stream 7 industrial
 - [ ] Task 10 — corpus-quality gate + policy/market synthesis + uncertainty ledger
 - Task 11 (condo application leg) is Stage 2 — separate session/loop, NOT this loop.
@@ -96,7 +96,7 @@ content (gateway-owned — leave alone).
 
 1. Task 4 GROUNDED (done). Optionally backfill ACM-Queue + OPAL alt URLs later.
 2. Task 6 (CURRENT) — Stream 4 regulatory: sector data-sharing mandates & safe harbors; AI-regulation status (Canada AIDA — note it died with C-27; US federal EO + state AI laws); open-banking/data-portability mandates as structural precedent for compelled/incentivized pooling.
-3. Task 8 (CURRENT) — Stream 6 academic: data-cooperative literature (data dignity / RadicalxChange / MIT), federated learning, Ostrom commons governance, mechanism design, data-market/platform economics. Then Task 9 (Stream 7 industrial).
+3. Task 9 (CURRENT) — Stream 7 industrial: who is doing this NOW by sector (health, finance, mobility, manufacturing); vertical-AI startups monetizing pooled proprietary data; competitive-moat dynamics; EU data spaces (Gaia-X/Catena-X) reference. THEN the targeted agentic-precedent pass, THEN Task 10 synthesis.
 4. **Before Task 10**, run ONE targeted deep-research on agentic-AI / vertical-AI on
    pooled proprietary data (2024–2026) — both Stream 0 and Stream 2 found ZERO verified
    agentic precedent; this gap is load-bearing for the "why now" synthesis.

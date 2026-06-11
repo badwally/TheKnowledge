@@ -1,0 +1,39 @@
+source_id: web-2018-05-10-3b3
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Arrieta-Ibarra/Lanier/Weyl et al. 'Should We Treat Data as Labor?' (AEA
+  P&P 2018) — the data-as-labor / collective-bargaining frame for valuing and organizing
+  member data contributions (criteria 1 and 5).
+pinned_at: '2026-06-11T04:54:39Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Should We Treat Data as Labor? Moving beyond "Free"
+  authors:
+  - Arrieta-Ibarra; Imanol; Goff; Leonard; Jiménez-Hernández; Diego; Lanier; Jaron;
+    Weyl; E Glen
+  url: https://www.aeaweb.org/articles?id=10.1257%2Fpandp.20181003
+content_excerpt: '# AEA Papers and Proceedings
+
+
+  ISSN 2574-0768 (Print) | ISSN 2574-0776 (Online)
+
+
+  # Should We Treat Data as Labor? Moving beyond "Free"
+
+
+  AEA Papers and Proceedings
+
+
+  (pp. 38–42)
+
+
+  #### Abstract
+
+
+  In the digital economy, user data is typically treated as capital created by corporations
+  observing willing individuals. This neglects users'' roles in creating data, reducing
+  incentives for users, distributing the gains from the data economy unequally, and
+  stoking fears of automation. Instead, treating data '

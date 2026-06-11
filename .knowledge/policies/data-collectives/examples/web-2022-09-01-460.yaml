@@ -1,0 +1,24 @@
+source_id: web-2022-09-01-460
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Ostrom's eight design principles for governing common-pool resources —
+  the concrete institutional-design rules a data collective's governance must satisfy
+  (criterion 1).
+pinned_at: '2026-06-11T04:54:39Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: Ostrom's Eight Design Principles for a Successfully Managed Commons - Agrarian
+    Trust
+  authors:
+  - Noah Wurtz
+  url: https://www.agrariantrust.org/ostroms-eight-design-principles-for-a-successfully-managed-commons/
+content_excerpt: In the mountains of southern Switzerland, a small village clings
+  to the side of a steep slope that descends to the banks of the Torbelach River.
+  For centuries, Torbel’s inhabitants have grown grain, hay, and fruit trees. During
+  the summer, cattle graze on alpine pastures, providing the community with milk for
+  the cheese making that drives the local economy. The villagers have managed their
+  land in common since the 15th century, keeping careful records of land distribution,
+  agreeing upon regulati

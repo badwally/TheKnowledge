@@ -43441,3 +43441,163 @@ raw=raw/web/web-2025-11-21-9a5.md (wiki not written: filter decision=rejected)
 ## [2026-06-11T04:29:15Z] retrieve | caller=cli | query=Canada AI strategy sovereign compute data infrastructure funding data trust standard why Canada NAIRR | domain=data-collectives | sections=6 | chars=6534
 
 retrieve: 'Canada AI strategy sovereign compute data infrastructure funding data trust standard why Canada NAIRR' domain=data-collectives sections=6 chars=6534
+
+## [2026-06-11T04:30:13Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T04-30-13Z-schema-drift.md
+
+## [2026-06-11T04:43:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1303 | cache_read=4374 | cache_creation=11666 | duration_ms=17576 | cost_usd=0.030292
+
+## [2026-06-11T04:43:57Z] ingest | id=web-2014-08-29-013 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.5
+
+raw=raw/web/web-2014-08-29-013.md (wiki not written: filter decision=review)
+
+## [2026-06-11T04:44:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3020 | cache_read=4374 | cache_creation=12011 | duration_ms=33557 | cost_usd=0.039567
+
+## [2026-06-11T04:44:34Z] ingest | id=web-2018-05-10-3b3 | type=web | domains=data-collectives | filter=review | domain=data-collectives | score=0.5
+
+raw=raw/web/web-2018-05-10-3b3.md (wiki not written: filter decision=review)
+
+## [2026-06-11T04:45:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2330 | cache_read=4374 | cache_creation=14844 | duration_ms=29087 | cost_usd=0.041783
+
+## [2026-06-11T04:45:10Z] ingest | id=web-2023-09-05-c31 | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.75
+
+raw=raw/web/web-2023-09-05-c31.md wiki=wiki/sources/web-2023-09-05-c31.md
+
+## [2026-06-11T04:49:04Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=19410 | cache_read=4696 | cache_creation=26206 | duration_ms=231848 | cost_usd=0.749683
+
+## [2026-06-11T04:49:09Z] wiki-author | id=web-2023-09-05-c31 | updates=11 | created=8 | updated=3 | contradictions=0 | draft=yes
+
+The source is a synthesis paper on four collective data intermediaries (trusts, DAOs, cooperatives, unions) plus the DGA framing, surveillance-capitalism critique, co-creation theory, and a property/rights critique — warranting new concept pages for each intermediary type and supporting concepts, plus integrations into existing data-cooperative / DGA / data-as-property pages.
+
+## [2026-06-11T04:49:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2125 | cache_read=4374 | cache_creation=11737 | duration_ms=26517 | cost_usd=0.034544
+
+## [2026-06-11T04:49:38Z] ingest | id=arxiv-2506.10272 | type=arxiv | domains=data-collectives | filter=review | domain=data-collectives | score=0.5
+
+raw=raw/arxiv/arxiv-2506.10272.md (wiki not written: filter decision=review)
+
+## [2026-06-11T04:50:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2124 | cache_read=4374 | cache_creation=16391 | duration_ms=27779 | cost_usd=0.043847
+
+## [2026-06-11T04:50:09Z] ingest | id=web-2025-06-02-56c | type=web | domains=data-collectives | filter=included | domain=data-collectives | score=0.78
+
+raw=raw/web/web-2025-06-02-56c.md wiki=wiki/sources/web-2025-06-02-56c.md
+
+## [2026-06-11T04:53:06Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14881 | cache_read=0 | cache_creation=39619 | duration_ms=173989 | cost_usd=0.768240
+
+## [2026-06-11T04:53:08Z] wiki-author | id=web-2025-06-02-56c | updates=4 | created=3 | updated=1 | contradictions=0 | draft=yes
+
+Fia & van Maanen (2025) is a peer-reviewed conceptual paper centered on data commons as community-based collective data governance, so the highest-leverage updates are to the collective-data-governance umbrella, a new data-commons concept page, and entity pages for the two scholars.
+
+## [2026-06-11T04:53:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2024 | cache_read=4374 | cache_creation=12755 | duration_ms=25672 | cost_usd=0.036075
+
+## [2026-06-11T04:53:36Z] ingest | id=web-2022-09-01-460 | type=web | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.35
+
+raw=raw/web/web-2022-09-01-460.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T04:54:38Z] filter-correction | id=web-2014-08-29-013 | domain=data-collectives | decision=include | original_score=0.5
+
+rationale="Frischmann/Madison/Strandburg 'Constructing Commons' (Cornell L Rev 2010) — the Governing Knowledge Commons framework adapting Ostrom's commons governance to information/data; foundational to how a data collective's governance is constructed (criterion 1)."
+
+## [2026-06-11T04:54:39Z] filter-correction | id=web-2018-05-10-3b3 | domain=data-collectives | decision=include | original_score=0.5
+
+rationale="Arrieta-Ibarra/Lanier/Weyl et al. 'Should We Treat Data as Labor?' (AEA P&P 2018) — the data-as-labor / collective-bargaining frame for valuing and organizing member data contributions (criteria 1 and 5)."
+
+## [2026-06-11T04:54:39Z] filter-correction | id=arxiv-2506.10272 | domain=data-collectives | decision=include | original_score=0.5
+
+rationale='Vincent/Prewitt/Li (2025) — collective data bargaining as a counterweight to AI-driven capital concentration; directly on whether data collectives can shift bargaining power (criterion 5).'
+
+## [2026-06-11T04:54:39Z] filter-correction | id=web-2022-09-01-460 | domain=data-collectives | decision=include | original_score=0.35
+
+rationale="Ostrom's eight design principles for governing common-pool resources — the concrete institutional-design rules a data collective's governance must satisfy (criterion 1)."
+
+## [2026-06-11T04:54:40Z] ingest | id=web-2014-08-29-013 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2014-08-29-013.md wiki=wiki/sources/web-2014-08-29-013.md
+
+## [2026-06-11T04:56:50Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=11286 | cache_read=4696 | cache_creation=21742 | duration_ms=127812 | cost_usd=0.501943
+
+## [2026-06-11T04:56:52Z] wiki-author | id=web-2014-08-29-013 | updates=4 | created=4 | updated=0 | contradictions=0 | draft=yes
+
+Source is a Cornell Law Review landing page for Madison/Frischmann/Strandburg's 2010 foundational article on the Governing Knowledge Commons framework; the source body is thin (citation metadata + title), so claims are conservatively grounded in title, authors, and venue, and updates focus on creating author entities and the GKC concept page rather than rewriting existing data-commons pages whose full content is not visible in this prompt.
+
+## [2026-06-11T04:56:54Z] ingest | id=web-2018-05-10-3b3 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2018-05-10-3b3.md wiki=wiki/sources/web-2018-05-10-3b3.md
+
+## [2026-06-11T04:57:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2787 | cache_read=0 | cache_creation=19239 | duration_ms=31502 | cost_usd=0.052421
+
+## [2026-06-11T04:57:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3150 | cache_read=0 | cache_creation=18755 | duration_ms=40193 | cost_usd=0.053268
+
+## [2026-06-11T04:58:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1745 | cache_read=0 | cache_creation=19457 | duration_ms=21672 | cost_usd=0.047647
+
+## [2026-06-11T04:58:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2541 | cache_read=0 | cache_creation=18721 | duration_ms=32257 | cost_usd=0.050155
+
+## [2026-06-11T04:59:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2673 | cache_read=0 | cache_creation=19024 | duration_ms=33649 | cost_usd=0.051421
+
+## [2026-06-11T04:59:50Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=16351 | cache_read=4696 | cache_creation=22308 | duration_ms=173926 | cost_usd=0.634228
+
+## [2026-06-11T04:59:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2357 | cache_read=0 | cache_creation=14711 | duration_ms=25877 | cost_usd=0.041215
+
+## [2026-06-11T04:59:52Z] wiki-author | id=web-2018-05-10-3b3 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+Arrieta-Ibarra/Lanier/Weyl 2018 introduces the foundational data-as-labor frame, the data-monopsony diagnosis, and the data-labor-movement proposal — none of which have existing pages; net-new entity/concept creation dominates. (Note: session-state.md could not be re-verified — no filesystem tools in this subagent context — flagging per SessionStart hook contract.)
+
+## [2026-06-11T04:59:54Z] ingest | id=arxiv-2506.10272 | type=arxiv | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/arxiv/arxiv-2506.10272.md wiki=wiki/sources/arxiv-2506.10272.md
+
+## [2026-06-11T05:00:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1920 | cache_read=0 | cache_creation=14721 | duration_ms=22155 | cost_usd=0.039050
+
+## [2026-06-11T05:00:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2702 | cache_read=0 | cache_creation=14726 | duration_ms=28293 | cost_usd=0.042970
+
+## [2026-06-11T05:01:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1802 | cache_read=0 | cache_creation=14675 | duration_ms=23487 | cost_usd=0.038368
+
+## [2026-06-11T05:01:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2239 | cache_read=0 | cache_creation=14728 | duration_ms=26536 | cost_usd=0.040659
+
+## [2026-06-11T05:02:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2109 | cache_read=0 | cache_creation=15226 | duration_ms=27948 | cost_usd=0.041005
+
+## [2026-06-11T05:02:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1515 | cache_read=0 | cache_creation=19082 | duration_ms=21359 | cost_usd=0.045747
+
+## [2026-06-11T05:02:50Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=15669 | cache_read=4696 | cache_creation=21599 | duration_ms=174239 | cost_usd=0.610088
+
+## [2026-06-11T05:02:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1941 | cache_read=0 | cache_creation=18946 | duration_ms=23642 | cost_usd=0.047605
+
+## [2026-06-11T05:02:53Z] wiki-author | id=arxiv-2506.10272 | updates=7 | created=3 | updated=4 | contradictions=0 | draft=yes
+
+Vincent/Prewitt/Li (2025) is a producer-side collective-bargaining thesis that directly informs the data-labor-movement, data-union, data-monopsony, and collective-data-governance pages, and introduces three new concept anchors (information market failure, trusted data intermediary, federated data management tools) that the corpus needs.
+
+## [2026-06-11T05:02:55Z] ingest | id=web-2022-09-01-460 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2022-09-01-460.md wiki=wiki/sources/web-2022-09-01-460.md
+
+## [2026-06-11T05:03:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1976 | cache_read=0 | cache_creation=15546 | duration_ms=24302 | cost_usd=0.040980
+
+## [2026-06-11T05:03:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1469 | cache_read=0 | cache_creation=15270 | duration_ms=22301 | cost_usd=0.037893
+
+## [2026-06-11T05:04:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3091 | cache_read=0 | cache_creation=17589 | duration_ms=33947 | cost_usd=0.050641
+
+## [2026-06-11T05:04:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3003 | cache_read=4699 | cache_creation=15123 | duration_ms=35291 | cost_usd=0.045739
+
+## [2026-06-11T05:05:11Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=12791 | cache_read=4696 | cache_creation=23199 | duration_ms=134232 | cost_usd=0.554138
+
+## [2026-06-11T05:05:14Z] wiki-author | id=web-2022-09-01-460 | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+User-corrected to filter score 1.0 because this source is the canonical statement of Ostrom's eight design principles — the institutional-design rules any data-collective governance must satisfy; create the foundational Ostrom/CPR/Tragedy-of-the-Commons pages this domain has been implicitly leaning on.
+
+## [2026-06-11T05:05:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2547 | cache_read=4699 | cache_creation=12599 | duration_ms=30668 | cost_usd=0.038411
+
+## [2026-06-11T05:05:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1912 | cache_read=0 | cache_creation=16066 | duration_ms=26296 | cost_usd=0.041700
+
+## [2026-06-11T05:05:43Z] ingest | id=arxiv-1912.06229 | type=arxiv | domains=data-collectives | filter=rejected | domain=data-collectives | score=0.4
+
+raw=raw/arxiv/arxiv-1912.06229.md (wiki not written: filter decision=rejected)
+
+## [2026-06-11T05:05:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1541 | cache_read=4699 | cache_creation=11477 | duration_ms=19793 | cost_usd=0.031137
+
+## [2026-06-11T05:05:58Z] retrieve | caller=cli | query=Ostrom knowledge commons data as labor data dignity cooperative fragility collective action | domain=data-collectives | sections=6 | chars=7282
+
+retrieve: 'Ostrom knowledge commons data as labor data dignity cooperative fragility collective action' domain=data-collectives sections=6 chars=7282
+
+## [2026-06-11T05:06:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1801 | cache_read=4699 | cache_creation=13014 | duration_ms=21853 | cost_usd=0.035511
+
+## [2026-06-11T05:06:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1715 | cache_read=0 | cache_creation=16679 | duration_ms=23809 | cost_usd=0.041941

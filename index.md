@@ -249,3 +249,9 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - [[sources/web-2025-11-28-252]] · web · First Nations Data Governance Strategy - The First Nations Information Governance Centre · data-collectives
 - [[sources/web-2018-02-15-c35]] · web · Canada’s AI-Powered Supply Chains Cluster (Scale AI) · data-collectives
 - [[sources/web-2021-07-29-89d]] · web · National Artificial Intelligence Research Resource · data-collectives
+- [[sources/web-2023-09-05-c31]] · web · Data protection beyond data rights: governing data production through collective intermediaries · data-collectives
+- [[sources/web-2025-06-02-56c]] · web · Through thick and thin: data commons, community and the struggle for collective data governance · data-collectives
+- [[sources/web-2014-08-29-013]] · web · Constructing Commons in the Cultural Environment · data-collectives
+- [[sources/web-2018-05-10-3b3]] · web · Should We Treat Data as Labor? Moving beyond "Free" · data-collectives
+- [[sources/arxiv-2506.10272]] · arxiv · Collective Bargaining in the Information Economy Can Address AI-Driven Power Concentration · data-collectives
+- [[sources/web-2022-09-01-460]] · web · Ostrom's Eight Design Principles for a Successfully Managed Commons - Agrarian Trust · data-collectives

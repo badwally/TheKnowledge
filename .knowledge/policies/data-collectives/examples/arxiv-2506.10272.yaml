@@ -1,0 +1,26 @@
+source_id: arxiv-2506.10272
+domain: data-collectives
+decision: include
+score: 1.0
+policy_version: data-collectives-v1
+rationale: Vincent/Prewitt/Li (2025) — collective data bargaining as a counterweight
+  to AI-driven capital concentration; directly on whether data collectives can shift
+  bargaining power (criterion 5).
+pinned_at: '2026-06-11T04:54:39Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: arxiv
+  title: Collective Bargaining in the Information Economy Can Address AI-Driven Power
+    Concentration
+  authors:
+  - Nicholas Vincent
+  - Matthew Prewitt
+  - Hanlin Li
+  url: https://arxiv.org/abs/2506.10272
+content_excerpt: This position paper argues that there is an urgent need to restructure
+  markets for the information that goes into AI systems. Specifically, producers of
+  information goods (such as journalists, researchers, and creative professionals)
+  need to be able to collectively bargain with AI product builders in order to receive
+  reasonable terms and a sustainable return on the informational value they contribute.
+  We argue that without increased market coordination or collective bargaining on
+  the side of the
