@@ -118,6 +118,12 @@ content (gateway-owned — leave alone).
 
 **data-collectives project COMPLETE (foundation + Stage 2).** No open work.
 
+**New forward item (gateway, not research):** the Stage 2 grounding exposed a
+**cross-domain synthesis gap** — `wiki answer`/`retrieve` can't assemble a balanced
+grounding context across >1 domain, and `answer.py:222` writes single-valued
+`domains:`. Full handoff in `docs/continuations/2026-06-11.md` (+ `.json`). Resolve
+in a fresh session (TDD + golden-set eval; LLM-free except one smoke test).
+
 Remaining items are explicit-user-trigger only:
 1. **Wiki-grounding backfill (both stages), cap-gated.** On Anthropic spend-cap
    reset or explicit request: file/finalize citation-grounded wiki synthesis pages

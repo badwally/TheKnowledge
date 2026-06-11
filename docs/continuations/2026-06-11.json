@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-11",
+  "title": "Resolve the cross-domain synthesis gap in the wiki gateway",
+  "task_type": "gateway design + build (not research)",
+  "do_not_reopen": "The data-collectives research project is complete (foundation + Stage 2, both grounded into the wiki). This continuation is only about the tool limitation it exposed.",
+  "problem": {
+    "summary": "No way to produce a grounded synthesis page that draws a balanced grounding context from, and is tagged to, more than one domain.",
+    "verified_2026_06_11": [
+      "wiki answer --domain X hard-excludes other domains; Stage 2 auto-synthesis refused because condo sources were out of the named domain.",
+      "Omitting --domain retrieves globally but a single ranked k-window collapses toward the lexically-dominant domain: cross-domain query returned 2/2 data-collectives sections; condo-heavy query did reach condo-capital-infra; balanced query k=12 returned 3/3 data-collectives.",
+      "wiki answer writes single-valued domain frontmatter at src/gateway/ops/answer.py:222 ('domains': [domain] if domain else [])."
+    ],
+    "current_workaround": "Manual scaffold-then-replace: wiki answer --file (shell) -> wiki edit --section (hand-authored, hand-cited body) -> wiki finalize, then patch domains:/sources_count by direct Edit. Works but undiscoverable and error-prone."
+  },
+  "solution_shapes": [
+    "Multi-value --domains a,b,c on wiki retrieve/answer with per-domain quota merge (retrieve ~k/N per domain, merge + re-rank). Smallest change; fixes balance.",
+    "Dedicated wiki synthesize --domains a,b op: per-domain retrieval + merge + one grounded call + multi-domain frontmatter + finalize.",
+    "Quota-merge inside the global no-domain path (changes default ranking; gated by golden set).",
+    "Independently: make domains: frontmatter list-valued from the authoring op (fixes the tagging point regardless of retrieval fix)."
+  ],
+  "recommended_bias": "Multi-value --domains + per-domain-quota merge (fixes retrieval balance) plus list-valued domains: frontmatter (fixes tagging). Run wiki eval-retrieval --compare before/after any ranking change.",
+  "read_first": [
+    "src/gateway/ops/answer.py (~line 222)",
+    "wiki retrieve op + ranking core (FTS5/BM25 + graph authority)",
+    "docs/reviews/2026-06-09-rag-retrieval-review.md",
+    "CLAUDE.md § Retrieval ladder (RAG)",
+    "WIKI.md § Gateway operations",
+    "wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md",
+    "wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md"
+  ],
+  "constraints": [
+    "Gateway-only writes to wiki/ and raw/; frontmatter via direct Edit only (no gateway op).",
+    "TDD: RED test first for quota-merge / multi-domain behavior.",
+    "Golden-set eval before/after ranking changes: wiki eval-retrieval --compare; do not regress recall@5 0.889 / recall@10 0.926 / MRR 0.722.",
+    "Anthropic spend cap is live; retrieval/merge work is LLM-free, keep any end-to-end answer smoke test to one small call.",
+    ".venv/bin/python and .venv/bin/wiki only.",
+    "Staging discipline: never git add -u or git add wiki/; pre-existing condo backlog in the working tree. Stage src/, tests/, docs, WIKI.md, log.md explicitly."
+  ],
+  "first_atomic_step": "Brainstorm the design, then write a RED test asserting a multi-domain retrieve over a cross-domain query returns sections from each named domain (quota-balanced), not just the dominant one; confirm it fails against current behavior before implementing.",
+  "state_pointers": {
+    "canonical_state": "docs/session-state.md",
+    "deliverables_this_session": [
+      "docs/research/data-collectives/stage2-condo-collective.md (commit e7e591a4)",
+      "wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md (commit 240cdf43)"
+    ]
+  }
+}
