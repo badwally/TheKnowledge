@@ -1291,6 +1291,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_answer = subparsers.add_parser("answer", help=SUBCOMMANDS["answer"])
     p_answer.add_argument("question", help="The question to answer from the wiki")
     p_answer.add_argument("--domain", default=None, help="Scope retrieval to this domain")
+    p_answer.add_argument(
+        "--domains", default=None,
+        help="Comma-separated domains for a balanced cross-domain grounded answer "
+             "(e.g. a,b). Takes precedence over --domain; files list-valued domains:.",
+    )
     p_answer.add_argument("--k", type=int, default=12, help="Max sections to ground on (default: 12)")
     p_answer.add_argument("--budget", type=int, default=40_000, dest="budget_chars",
                           help="Max characters of grounding context (default: 40000)")
@@ -2627,9 +2632,12 @@ def _run_retrieve_cmd(ns: argparse.Namespace) -> int:
 def _run_answer_cmd(ns: argparse.Namespace) -> int:
     from gateway.ops.answer import answer_op
 
+    raw_domains = getattr(ns, "domains", None)
+    domains = [d.strip() for d in raw_domains.split(",") if d.strip()] if raw_domains else None
     result = answer_op(
         ns.question,
         domain=getattr(ns, "domain", None),
+        domains=domains,
         k=ns.k,
         budget_chars=ns.budget_chars,
         file_draft=getattr(ns, "file_draft", False),
