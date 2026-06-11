@@ -201,6 +201,7 @@ def retrieve_op(
     query: str,
     *,
     domain: str | None = None,
+    domains: list[str] | None = None,
     k: int = _DEFAULT_K,
     budget_chars: int = _DEFAULT_BUDGET_CHARS,
     caller: str | None = None,
@@ -209,14 +210,15 @@ def retrieve_op(
     if not query or not query.strip():
         return OperationResult(success=False, errors=["query is required"])
 
+    domain_label = ",".join(domains) if domains else (domain or "")
     block, sections = retrieve(
-        query, domain=domain, k=k, budget_chars=budget_chars
+        query, domain=domain, domains=domains, k=k, budget_chars=budget_chars
     )
     if not sections:
         return OperationResult(
             success=False,
             summary=f"no results for {query!r}"
-            + (f" in domain {domain!r}" if domain else ""),
+            + (f" in domain {domain_label!r}" if domain_label else ""),
         )
 
     log.append(
@@ -224,12 +226,12 @@ def retrieve_op(
         fields={
             "caller": caller or "",
             "query": query,
-            "domain": domain or "",
+            "domain": domain_label,
             "sections": len(sections),
             "chars": len(block),
         },
         summary=(
-            f"retrieve: {query!r} domain={domain or '-'} "
+            f"retrieve: {query!r} domain={domain_label or '-'} "
             f"sections={len(sections)} chars={len(block)}"
         ),
     )
@@ -239,7 +241,7 @@ def retrieve_op(
         summary=block,
         data={
             "query": query,
-            "domain": domain,
+            "domain": domain_label or None,
             "section_count": len(sections),
             "chars": len(block),
             "sources": [

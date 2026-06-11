@@ -149,3 +149,13 @@ def test_retrieve_multi_domain_dedups_and_survives_budget(kb_root: Path):
     assert len(paths_seen) == len(set(paths_seen)), "no page should appear twice"
     assert len(sections) < 8, "budget should truncate the merged set"
     assert {s.domain for s in sections} >= {"alpha", "beta"}, "balance survives truncation"
+
+
+def test_retrieve_op_accepts_domains(kb_root: Path):
+    for i in range(3):
+        _page(f"a{i}", f"Alpha {i}", f"## S\n\nshared signal token a{i}.\n", domain="alpha")
+    _page("b0", "Beta 0", "## S\n\nshared signal token b0.\n", domain="beta")
+    search_index.refresh(rebuild=True)
+    res = retrieve_op("shared signal token", domains=["alpha", "beta"], k=4)
+    assert res.success
+    assert res.data["section_count"] >= 2

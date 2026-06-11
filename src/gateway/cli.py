@@ -1276,6 +1276,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_retrieve = subparsers.add_parser("retrieve", help=SUBCOMMANDS["retrieve"])
     p_retrieve.add_argument("query", help="Natural-language question or topic")
     p_retrieve.add_argument("--domain", default=None, help="Scope retrieval to this domain")
+    p_retrieve.add_argument(
+        "--domains", default=None,
+        help="Comma-separated domains for a per-domain-balanced block (e.g. a,b). "
+             "Takes precedence over --domain.",
+    )
     p_retrieve.add_argument("--k", type=int, default=12, help="Max sections to retrieve (default: 12)")
     p_retrieve.add_argument("--budget", type=int, default=40_000, dest="budget_chars",
                             help="Max characters in the assembled block (default: 40000)")
@@ -2599,9 +2604,12 @@ def _run_retrieve_cmd(ns: argparse.Namespace) -> int:
     import json as _json
     from gateway.ops.retrieve import retrieve_op
 
+    raw_domains = getattr(ns, "domains", None)
+    domains = [d.strip() for d in raw_domains.split(",") if d.strip()] if raw_domains else None
     result = retrieve_op(
         ns.query,
         domain=getattr(ns, "domain", None),
+        domains=domains,
         k=ns.k,
         budget_chars=ns.budget_chars,
         caller=getattr(ns, "caller", "cli"),
