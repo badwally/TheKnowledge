@@ -4,9 +4,9 @@ Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop
 
 ---
 
-## ▶ LOOP RESUMED (user "go" 2026-06-10)
+## ✅ LOOP COMPLETE (2026-06-10)
 
-Active again. Next unit: finish Task 4 grounding (Stream 2), then Tasks 5–10.
+Foundation built: domain bootstrapped + Stream 0 census + 7 dimensional streams + Task 10 synthesis, all committed. ~45 grounded sources across concept/entity/source pages; 8 analytical notes in docs/research/data-collectives/. Two follow-ups remain (NOT this loop): (1) file the citation-grounded wiki synthesis page via wiki query once the Anthropic spend cap resets; (2) Stage 2 condo application leg (separate session). Do NOT auto-resume.
 
 ---
 
@@ -32,7 +32,7 @@ checkpoint here → schedule next.
 - [x] Task 7 — Stream 5 governmental/policy (SPINE) — GROUNDED. 7 sources (Sovereign Compute Strategy, Pan-Canadian Phase 2, C.D. Howe missing-pillar, FNIGC/OCAP, Scale AI, NAIRR US-contrast, IAPP data-mobility). VERDICT: Canada funds talent/commercialization/COMPUTE, NOT data infrastructure — no funded mechanism for a data collective. 'Why Canada' rests on (a) CAN/DGSI 100-7 governance standard, (b) economy-wide data-mobility right, (c) data-sovereignty framing — NOT funding/mandate. Compute strategy is a distraction for a data play. Validates user's rhetoric-vs-mechanism skepticism.
 - [x] Task 8 — Stream 6 academic — GROUNDED. 6 sources (GKC/Constructing-Commons, Ostrom 8 principles, data-as-labor AEA, Vincent 2025 collective bargaining, Jonker + Duncan critiques). VERDICT: strong theory, near-absent empirics, every org form has a distinct fragility; collectives solving collective-action was REFUTED in verification. Enabling regulation may be a precondition (Jonker). Convergent with S0 failures + S1 substitutes.
 - [x] Task 9 — Stream 7 industrial — GROUNDED. 6 sources (Early Warning Services + Cifas = genuine fraud-utility pooling; LexisNexis = aggregation contrast; a16z data-moat debate; Datavault aspirational; Catena-X SME stall ref). KEY: real cross-competitor pooling concentrates in FRAUD/AML utilities (pool the non-rivalrous signal). Agentic zero-precedent now CONFIRMED across 3 streams (0,2,7). Stream 7 verification partly truncated by Anthropic spend cap.
-- [~] Task 10 — synthesis. SPEND-CAP NOTE: heavy deep-research workflows + wiki query (NLM) blocked by Anthropic monthly cap; wiki answer blocked (401). Plan: author the cross-stream synthesis as docs/research/synthesis-policy-market.md (my analysis, no LLM), commit; file the citation-grounded wiki synthesis page via wiki query when the cap resets (deferred, not blocking the intellectual deliverable). Agentic targeted pass CANCELLED (zero-precedent already confirmed 3x).
+- [x] Task 10 — synthesis COMPLETE (analysis). docs/research/synthesis-policy-market.md answers the north-star + full confidence/uncertainty ledger. DEFERRED (external cap, not blocking): the citation-grounded wiki synthesis PAGE via wiki query — file on Anthropic spend-cap reset. wiki answer stays 401-blocked. Agentic targeted pass cancelled (zero-precedent confirmed 3x).
 - Task 11 (condo application leg) is Stage 2 — separate session/loop, NOT this loop.
 
 **Guardrails (every Task):** foundation pages domain-neutral (no reserve-study /
@@ -96,7 +96,7 @@ content (gateway-owned — leave alone).
 
 1. Task 4 GROUNDED (done). Optionally backfill ACM-Queue + OPAL alt URLs later.
 2. Task 6 (CURRENT) — Stream 4 regulatory: sector data-sharing mandates & safe harbors; AI-regulation status (Canada AIDA — note it died with C-27; US federal EO + state AI laws); open-banking/data-portability mandates as structural precedent for compelled/incentivized pooling.
-3. Task 10 (CURRENT) — synthesis. All 7 streams grounded. Author docs/research/synthesis-policy-market.md (no LLM); attempt wiki-grounded synthesis page via wiki query if cap allows, else defer. Agentic pass cancelled (zero-precedent confirmed 3x).
+Loop COMPLETE. Remaining (explicit user trigger only): (1) on Anthropic spend-cap reset, file the citation-grounded wiki synthesis page (wiki query over domain, corpus-quality gate first) from docs/research/synthesis-policy-market.md; finalize drafts (wiki finalize). (2) Stage 2 condo application leg — separate session/loop per the spec's child prompt.
 4. **Before Task 10**, run ONE targeted deep-research on agentic-AI / vertical-AI on
    pooled proprietary data (2024–2026) — both Stream 0 and Stream 2 found ZERO verified
    agentic precedent; this gap is load-bearing for the "why now" synthesis.
