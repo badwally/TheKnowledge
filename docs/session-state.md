@@ -24,9 +24,13 @@ firm certifies/owns stamp", substitutes trap, agentic bet), and exit cross-ref t
 condo's ADR-0004 acquirer thesis (CINC/Associa; the co-op caps what an acquirer can
 capture → sell the administrator/workflow layer, not the data).
 
-Stage 2 wiki-grounding (optional Task 3) DEFERRED — recombines two already-grounded
-domains (no new source claims), live Anthropic cap. Revival: explicit user request /
-cap reset (`wiki answer --file` available, ANTHROPIC_API_KEY_RESEARCH valid).
+Stage 2 wiki-grounding (Task 3) DONE 2026-06-11 (user requested). Grounded synthesis
+page FILED + finalized: wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
+(via wiki answer --file scaffold → wiki edit grounded body → wiki finalize, mirroring
+the foundation page recipe). 19 sources cited across BOTH domains (condo engine
+docx-818ed0a0ce55/bf4965d0d33a + NS studies + acquirer/PropTech sources; foundation
+fraud-utility/substitutes/legal/Catena-X/data-moat sources). finalize passed the
+citation-grounding gate. ANTHROPIC_API_KEY_RESEARCH valid; one small answer call.
 
 ---
 

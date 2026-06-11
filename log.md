@@ -43809,3 +43809,51 @@ finalized wiki/synthesis/2026-06-11-is-there-a-policy-and-market.md
 ## [2026-06-11T13:02:30Z] retrieve | caller=cli | query=synthesis why Canada who captures market agentic | domain=data-collectives | sections=2 | chars=2422
 
 retrieve: 'synthesis why Canada who captures market agentic' domain=data-collectives sections=2 chars=2422
+
+## [2026-06-11T13:02:32Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T13-02-32Z-schema-drift.md
+
+## [2026-06-11T13:05:34Z] retrieve | caller=cli | query=reserve fund study data: building components, condition assessment, useful life, failure rates, probabilistic engine | domain=condo-capital-infra | sections=2 | chars=5217
+
+retrieve: 'reserve fund study data: building components, condition assessment, useful life, failure rates, probabilistic engine' domain=condo-capital-infra sections=2 chars=5217
+
+## [2026-06-11T13:05:36Z] retrieve | caller=cli | query=stakeholder roles engineering firms property managers HOA condo boards reserve study vendors | domain=condo-capital-infra | sections=3 | chars=5706
+
+retrieve: 'stakeholder roles engineering firms property managers HOA condo boards reserve study vendors' domain=condo-capital-infra sections=3 chars=5706
+
+## [2026-06-11T13:05:48Z] retrieve | caller=cli | query=six probabilistic components Weibull failure priors component-level deterioration ML failure probability engine architecture | domain=condo-capital-infra | sections=4 | chars=3979
+
+retrieve: 'six probabilistic components Weibull failure priors component-level deterioration ML failure probability engine architecture' domain=condo-capital-infra sections=4 chars=3979
+
+## [2026-06-11T13:05:50Z] retrieve | caller=cli | query=Canada-first go-to-market acquirer thesis incumbent platforms vendors AppFolio CINC consolidation exit who buys | domain=condo-capital-infra | sections=4 | chars=5236
+
+retrieve: 'Canada-first go-to-market acquirer thesis incumbent platforms vendors AppFolio CINC consolidation exit who buys' domain=condo-capital-infra sections=4 chars=5236
+
+## [2026-06-11T13:06:02Z] retrieve | caller=cli | query=six probabilistic components list structure envelope mechanical; Canada-first reserve study mandates Nova Scotia Ontario BC Quebec regulatory driver demand | domain=condo-capital-infra | sections=3 | chars=6272
+
+retrieve: 'six probabilistic components list structure envelope mechanical; Canada-first reserve study mandates Nova Scotia Ontario BC Quebec regulatory driver demand' domain=condo-capital-infra sections=3 chars=6272
+
+## [2026-06-11T13:10:00Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T13-10-00Z-schema-drift.md
+
+## [2026-06-11T13:17:37Z] answer | caller=cli | question=Is a data collective among condo engineering firms, property managers, and condo corporations feasible for producing a shared reserve-fund-study data service, and how should it be designed? | domain=data-collectives | sections=12 | cited=3 | stripped=2 | output_tokens=195
+
+answer: 'Is a data collective among condo engineering firms, property managers, and condo corporations feasible for producing a shared reserve-fund-study data service, and how should it be designed?' domain=data-collectives sections=12 cited=3 stripped=2
+
+## [2026-06-11T13:17:37Z] wiki-author | id=answer-2026-06-11-is-a-data-collective-among-condo | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for data-collectives
+
+## [2026-06-11T13:18:48Z] edit-section | page=wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md | section=Synthesis
+
+edited section 'Synthesis' in wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
+
+## [2026-06-11T13:19:07Z] edit-section | page=wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md | section=Sources cited
+
+edited section 'Sources cited' in wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
+
+## [2026-06-11T13:19:12Z] finalize | page=wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
+
+finalized wiki/synthesis/2026-06-11-is-a-data-collective-among-condo.md
