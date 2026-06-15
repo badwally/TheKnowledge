@@ -196,3 +196,11 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 
 - Orphans: 760 — see `wiki lint --scope orphans`
 - Untriaged inbox: 0 — see `raw/inbox/`
+
+## Recent ingests
+
+- [[sources/web-2026-05-19-2c0]] · web · Black Crow AI | Full-Funnel Predictive AI for Ecommerce Growth · orita-cmo
+- [[sources/web-2026-05-28-0cb]] · web · OuterSignal Acquires Monocle to Expand AI-Driven Ecommerce Personalization Stack · orita-cmo
+- [[sources/web-2025-04-01-266]] · web · Clustie: AI Marketing Segments - Audiences to boost ROAS, grow AOV and reduce acquisition costs | Shopify App Store · orita-cmo
+- [[sources/web-2025-02-03-42a]] · web · What Is Aampe? How AI Decisioning Is Changing Email Personalization · orita-cmo
+- [[sources/web-2020-01-15-0c4]] · web · Enalito: Email, SMS, ChatBot - Skyrocket conversions with AI emails SMS, WA,Bot,Onsite Widget | Shopify App Store · orita-cmo
