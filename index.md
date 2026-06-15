@@ -1,7 +1,7 @@
 # Knowledge Index
 
-Last rebuilt: 2026-06-09T19:21:51Z
-Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
+Last rebuilt: 2026-06-15T21:12:41Z
+Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 
 ## Domains
 
@@ -20,16 +20,16 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 ### ai-and-agents
 [[mocs/ai-and-agents]] · 26 sources
 
-- Entities: [[entities/a-mem]] · [[entities/adobe-research]] · [[entities/aidan-toner-rodgers]] · [[entities/alex-pentland]] · [[entities/ali-modarressi]] · [[entities/alibaba]] · [[entities/amy-zegart]] · [[entities/anthropic]] · [[entities/antikythera]] · [[entities/ashish-vaswani]] · [[entities/autogenesis-protocol]] · [[entities/b-divya]] · … (95 more)
+- Entities: [[entities/a-mem]] · [[entities/adobe-research]] · [[entities/aidan-toner-rodgers]] · [[entities/alex-pentland]] · [[entities/ali-modarressi]] · [[entities/alibaba]] · [[entities/amy-zegart]] · [[entities/anthropic]] · [[entities/antikythera]] · [[entities/ashish-vaswani]] · [[entities/autogenesis-protocol]] · [[entities/b-divya]] · … (94 more)
 - Concepts: [[concepts/academic-industry-ai-talent-migration]] · [[concepts/adaptive-control-mechanisms]] · [[concepts/agent-evaluation]] · [[concepts/agent-governance]] · [[concepts/agent-prompt-engineering]] · [[concepts/agentic-ai]] · [[concepts/agentic-ai-applications]] · [[concepts/agentic-ai-ethical-challenges]] · [[concepts/agentic-ai-vs-traditional-ai]] · [[concepts/agentic-data-synthesis]] · [[concepts/agentic-memory]] · [[concepts/ai-and-worker-wellbeing]] · … (142 more)
-- Synthesis: [[synthesis/2026-05-04-what-is-the-state-of-the]]
+- Synthesis: [[synthesis/2026-05-04-what-is-the-state-of-the]] · [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]]
 
 ### ai-native-business
 [[mocs/ai-native-business]] · 25 sources
 
 - Entities: [[entities/anysphere]] · [[entities/cluely]] · [[entities/cognition-labs]] · [[entities/crosby-ai]] · [[entities/decagon]] · [[entities/gamma-app]] · [[entities/genspark]] · [[entities/harvey-ai]] · [[entities/lindy]] · [[entities/lovable-app]] · [[entities/marc-lou]] · [[entities/medvi]] · … (5 more)
 - Concepts: [[concepts/ai-native-substrate]]
-- Synthesis: [[synthesis/2026-05-23-what-does-the-org-and-operating-ai-native-go-to-market-gtm]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-cross-cutting]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-economic-infrastructure-and-capital-efficiency]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-execution-strategy-and-automation-sequencing]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-role-taxonomy-and-the-human-agent]] · [[synthesis/2026-05-23-what-is-the-ai-native-indie]] · [[synthesis/2026-05-23-what-is-the-ai-native-indie-cross-cutting]] · [[synthesis/2026-05-23-what-is-the-ai-native-marketplace]] · [[synthesis/2026-05-23-what-is-the-ai-native-services]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-cross-cutting]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-defensibility-and-moats-in-ai-services]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-defining-the-ai-native-services-archetype]] · … (62 more)
+- Synthesis: [[synthesis/2026-05-23-what-does-the-org-and-operating-ai-native-go-to-market-gtm]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-cross-cutting]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-economic-infrastructure-and-capital-efficiency]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-execution-strategy-and-automation-sequencing]] · [[synthesis/2026-05-23-what-does-the-org-and-operating-role-taxonomy-and-the-human-agent]] · [[synthesis/2026-05-23-what-is-the-ai-native-indie]] · [[synthesis/2026-05-23-what-is-the-ai-native-indie-cross-cutting]] · [[synthesis/2026-05-23-what-is-the-ai-native-marketplace]] · [[synthesis/2026-05-23-what-is-the-ai-native-services]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-cross-cutting]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-defensibility-and-moats-in-ai-services]] · [[synthesis/2026-05-23-what-is-the-ai-native-services-defining-the-ai-native-services-archetype]] · … (63 more)
 
 ### ai-temporal-video
 [[mocs/ai-temporal-video]] · 86 sources
@@ -54,21 +54,21 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 
 - Entities: [[entities/aci-362-2r-00]] · [[entities/ashrae-standard-180-2018]] · [[entities/boma-best-4-murb]] · [[entities/boma-canada]] · [[entities/florida-admin-code-61b-23]] · [[entities/florida-dbpr]] · [[entities/iso-50001]] · [[entities/national-parking-association]] · [[entities/pci-mnl-136-04]] · [[entities/pci-precast-prestressed-concrete-institute]]
 - Concepts: [[concepts/association-contract-bidding]] · [[concepts/community-association-manager-licensure]] · [[concepts/condo-board-fiduciary-duty]] · [[concepts/condo-board-recall]] · [[concepts/condo-electronic-voting]] · [[concepts/dbpr-online-licensure-account]] · [[concepts/developer-control-transition]] · [[concepts/energy-carbon-assessment]] · [[concepts/energy-management-plan]] · [[concepts/legionella-bacteria-control]] · [[concepts/parking-structure-housekeeping]] · [[concepts/parking-structure-maintenance-categories]] · … (2 more)
-- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation]] · [[synthesis/2026-05-09-how-do-the-major-u-s]] · [[synthesis/2026-05-09-what-are-the-documented-integration-gaps]] · [[synthesis/2026-05-09-what-are-the-established-best-practices]] · [[synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance]] · [[synthesis/2026-05-09-what-does-percent-funded-mean-for]] · [[synthesis/2026-05-09-what-does-the-2021-surfside-champlain]] · [[synthesis/2026-05-10-what-is-the-best-practice-for]] · … (17 more)
+- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation]] · [[synthesis/2026-05-09-how-do-the-major-u-s]] · [[synthesis/2026-05-09-what-are-the-documented-integration-gaps]] · [[synthesis/2026-05-09-what-are-the-established-best-practices]] · [[synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance]] · [[synthesis/2026-05-09-what-does-percent-funded-mean-for]] · [[synthesis/2026-05-09-what-does-the-2021-surfside-champlain]] · [[synthesis/2026-05-10-what-is-the-best-practice-for]] · … (18 more)
 
 ### condo-capital-infra
-[[mocs/condo-capital-infra]] · 132 sources
+[[mocs/condo-capital-infra]] · 139 sources
 
-- Entities: [[entities/alan-cohen]] · [[entities/apra-reserve-preparers]] · [[entities/ardoor]] · [[entities/ashley-berenson]] · [[entities/associa]] · [[entities/association-reserves]] · [[entities/avidxchange]] · [[entities/bc-assessment]] · [[entities/bc-assessment-search-service]] · [[entities/bc-housing]] · [[entities/bc-housing-maintenance-matters-series]] · [[entities/bcfsa]] · … (79 more)
-- Concepts: [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/cmms-workorder-covariates]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/deck-balcony-component-priors]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (26 more)
-- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-11-reconcile-the-reserve-fund-study-contingency]] · [[synthesis/2026-05-11-what-is-the-established-academic-and]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-cross-cutting]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-integration-of-safety-and-maintenance-into]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-purpose-and-value-of-reserve-studies]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-reserve-study-standards-and-methodology]] · … (77 more)
+- Entities: [[entities/alan-cohen]] · [[entities/apra-reserve-preparers]] · [[entities/ardoor]] · [[entities/ashley-berenson]] · [[entities/associa]] · [[entities/association-reserves]] · [[entities/avidxchange]] · [[entities/bc-assessment]] · [[entities/bc-assessment-search-service]] · [[entities/bc-housing]] · [[entities/bc-housing-maintenance-matters-series]] · [[entities/bcfsa]] · … (86 more)
+- Concepts: [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/cmms-workorder-covariates]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/deck-balcony-component-priors]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (27 more)
+- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-11-reconcile-the-reserve-fund-study-contingency]] · [[synthesis/2026-05-11-what-is-the-established-academic-and]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-cross-cutting]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-integration-of-safety-and-maintenance-into]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-purpose-and-value-of-reserve-studies]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-reserve-study-standards-and-methodology]] · … (78 more)
 
 ### condo-software
-[[mocs/condo-software]] · 161 sources
+[[mocs/condo-software]] · 178 sources
 
-- Entities: [[entities/ace-conference-trade-show]] · [[entities/alberta-condominium-property-act]] · [[entities/alberta-condominium-property-regulation]] · [[entities/alberta-credit-union-act]] · [[entities/alberta-credit-union-deposit-guarantee-fund]] · [[entities/alliance-association-bank]] · [[entities/amsi]] · [[entities/andrea-drennen]] · [[entities/appfolio]] · [[entities/aspire-community-management]] · [[entities/assessment-and-reserve-funding-disclosure-summary]] · [[entities/association-prime]] · … (280 more)
-- Concepts: [[concepts/30-year-cash-flow-projection]] · [[concepts/agentic-ai-cam-workflows]] · [[concepts/ai-native-property-management]] · [[concepts/alberta-12-unit-self-study-exemption]] · [[concepts/alberta-credit-union-deposit-coverage]] · [[concepts/alberta-credit-union-unclaimed-balances]] · [[concepts/alberta-qualified-person-reserve-fund]] · [[concepts/alberta-reserve-fund-plan]] · [[concepts/alberta-reserve-fund-study]] · [[concepts/appfolio-stack]] · [[concepts/automated-lockbox]] · [[concepts/bank-merger-account-continuity]] · … (176 more)
-- Synthesis: [[synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface]] · [[synthesis/2026-05-24-what-are-the-reserve-fund-investment]]
+- Entities: [[entities/ace-conference-trade-show]] · [[entities/acmo]] · [[entities/alberta-condominium-property-act]] · [[entities/alberta-condominium-property-regulation]] · [[entities/alberta-credit-union-act]] · [[entities/alberta-credit-union-deposit-guarantee-fund]] · [[entities/alliance-association-bank]] · [[entities/amsi]] · [[entities/andrea-drennen]] · [[entities/anyone-home]] · [[entities/appfolio]] · [[entities/aspire-community-management]] · … (304 more)
+- Concepts: [[concepts/30-year-cash-flow-projection]] · [[concepts/agentic-ai-cam-workflows]] · [[concepts/ai-native-property-management]] · [[concepts/alberta-12-unit-self-study-exemption]] · [[concepts/alberta-credit-union-deposit-coverage]] · [[concepts/alberta-credit-union-unclaimed-balances]] · [[concepts/alberta-qualified-person-reserve-fund]] · [[concepts/alberta-reserve-fund-plan]] · [[concepts/alberta-reserve-fund-study]] · [[concepts/appfolio-stack]] · [[concepts/automated-lockbox]] · [[concepts/bank-merger-account-continuity]] · … (181 more)
+- Synthesis: [[synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface]] · [[synthesis/2026-05-24-what-are-the-reserve-fund-investment]] · [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]]
 
 ### convergent-ai-brain
 [[mocs/convergent-ai-brain]] · 3 sources
@@ -84,11 +84,18 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 - Concepts: [[concepts/aerobic-capacity]] · [[concepts/aerobic-energy-system]] · [[concepts/atp]] · [[concepts/axs-button]] · [[concepts/axs-system-pairing]] · [[concepts/bleeding-edge]] · [[concepts/brake-bed-in]] · [[concepts/brake-bleed]] · [[concepts/clean-and-press]] · [[concepts/cycling-core-stability]] · [[concepts/cycling-flexibility]] · [[concepts/cycling-injury-prevention]] · … (26 more)
 - Synthesis: [[synthesis/2026-05-27-what-are-the-key-insights-from-23c3de]]
 
+### data-collectives
+[[mocs/data-collectives]] · 50 sources
+
+- Entities: [[entities/21st-century-cures-act]] · [[entities/a16z]] · [[entities/accounting-data-union]] · [[entities/ada-lovelace-institute]] · [[entities/ag-data-transparent]] · [[entities/ai-council]] · [[entities/aida]] · [[entities/all-of-us-research-hub]] · [[entities/amii]] · [[entities/analysis-group]] · [[entities/anindya-sen]] · [[entities/anvil-platform]] · … (111 more)
+- Concepts: [[concepts/ai-content-watermarking]] · [[concepts/ai-red-teaming]] · [[concepts/antitrust-risks-data-sharing]] · [[concepts/biomedical-data-commons]] · [[concepts/blockchain-data-sharing]] · [[concepts/bottom-up-ai-regulation]] · [[concepts/centralized-blockchain-governance]] · [[concepts/citizen-directed-data]] · [[concepts/cold-start-problem]] · [[concepts/collective-data-governance]] · [[concepts/common-agreement]] · [[concepts/common-pool-resources]] · … (86 more)
+- Synthesis: [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]] · [[synthesis/2026-06-11-is-a-data-collective-among-condo]] · [[synthesis/2026-06-11-is-there-a-policy-and-market]]
+
 ### edge-ai-agentic
 [[mocs/edge-ai-agentic]] · 152 sources
 
 - Concepts: [[concepts/a19-pro-chip]] · [[concepts/agent-to-agent-a2a-protocol]] · [[concepts/ai-edge-torch-generative-api]] · [[concepts/amazon-sagemaker-edge-manager]] · [[concepts/amed-automatic-mixed-precision-quantization]] · [[concepts/anx-protocol]] · [[concepts/apple-machine-learning-ecosystem]] · [[concepts/apple-silicon-and-neural-engines]] · [[concepts/aws-iot-greengrass]] · [[concepts/brainchip-akida]] · [[concepts/chassis-docker-containerization]] · [[concepts/collaborative-compression-for-mixture-of-experts-moe]] · … (63 more)
-- Synthesis: [[synthesis/2026-05-05-what-is-the-state-of-the]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-278c1b]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-529d8a]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-5e19ab]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-dffa60]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-e59b03]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-0952b8]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-2476d8]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-3c04e6]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-3e4199]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-414c5e]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-4f2790]] · … (56 more)
+- Synthesis: [[synthesis/2026-05-05-what-is-the-state-of-the]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-278c1b]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-529d8a]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-5e19ab]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-dffa60]] · [[synthesis/2026-05-27-what-are-the-key-insights-from-e59b03]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-0952b8]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-2476d8]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-3c04e6]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-3e4199]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-414c5e]] · [[synthesis/2026-05-28-what-are-the-key-insights-from-4f2790]] · … (57 more)
 
 ### edge-ai-security-and-privacy
 [[mocs/edge-ai-security-and-privacy]] · 0 sources
@@ -182,82 +189,10 @@ Sources: 1548 | Entities: 973 | Concepts: 1245 | Synthesis: 400
 ## Cross-domain
 
 - Concept: [[concepts/anonymized-financial-statements]] · [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/chain-of-thought-prompting-finance]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (14 more)
-- Entity: [[entitys/association-reserves]] · [[entitys/champlain-towers-south]] · [[entitys/gpt-4-turbo]] · [[entitys/notice-of-future-funding-noff]] · [[entitys/smartproperty-report]] · [[entitys/strategic-inspections]]
-- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]]
+- Entity: [[entitys/association-reserves]] · [[entitys/champlain-towers-south]] · [[entitys/damian-esparza]] · [[entitys/genispec]] · [[entitys/gpt-4-turbo]] · [[entitys/notice-of-future-funding-noff]] · [[entitys/prism-data-model]] · [[entitys/quebec-bill-16]] · [[entitys/quebec-bill-16-regulation]] · [[entitys/smartproperty]] · [[entitys/smartproperty-atlas]] · [[entitys/smartproperty-report]] · … (1 more)
+- Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]]
 
 ## Health
 
-- Orphans: 731 — see `wiki lint --scope orphans`
+- Orphans: 760 — see `wiki lint --scope orphans`
 - Untriaged inbox: 0 — see `raw/inbox/`
-
-## Recent ingests
-
-- [[sources/yt-uploadTest_AB]] · youtube · Test source
-- [[sources/web-2026-06-03-cc7]] · web · SmartProperty Atlas™ | The Reserve Study Intelligence Engine · condo-capital-infra
-- [[sources/web-2026-06-02-fce]] · web · SmartProperty® Launches Atlas™ the Nation’s First Reserve Study Intelligence Engine · condo-capital-infra
-- [[sources/web-2025-01-01-1ee]] · web · HOA Reserve Study & Capital Planning Platform | SmartProperty · condo-software
-- [[sources/web-2025-01-01-90b]] · web · Reserve Study Software Pricing | SmartProperty · condo-software
-- [[sources/web-2025-01-01-587]] · web · About SmartProperty | Reserve Planning Built for HOAs · condo-software
-- [[sources/web-2025-01-01-329]] · web · Reserve Planning Software for Large-Scale & Master-Planned Communities | SmartProperty · condo-software
-- [[sources/web-2024-08-27-df2]] · web · SmartProperty and FNBO · condo-software
-- [[sources/web-2025-04-07-b53]] · web · The Living Reserve Study® Expands Internationally with Humberts Dubai and SmartProperty® Partnership · condo-software
-- [[sources/web-2026-03-23-6fd]] · web · New Fannie Mae & Freddie Mac Rules Are Coming. Is Your Community Ready? · condo-capital-infra
-- [[sources/web-2025-04-07-817]] · web · SmartProperty & Strategic Club Solutions Announce Strategic Partnership · condo-software
-- [[sources/web-2025-08-06-94b]] · web · Bill 16 in Quebec: In Force Starting August 14, 2025
-- [[sources/web-2026-06-04-a88]] · web · Condo Management Software | Shiftsuite – The Complete Tech Stack · condo-software
-- [[sources/web-2023-05-31-64e]] · web · Who will manage all the future condos in Ontario? - REMI Network · condo-software
-- [[sources/web-2010-01-01-0de]] · web · Power Strata Systems Inc. | Strata Management Software Solutions · condo-software
-- [[sources/web-2025-05-26-6f6]] · web · [Guide] Depreciation Reports & Reserve Fund Studies in Canada - Eli · condo-software
-- [[sources/web-2025-02-14-040]] · web · What every condo board should know about the CAOs' reserve fund report - CPO Management · condo-software
-- [[sources/web-2026-01-01-d4f]] · web · Built by Civil Engineers. For the people who fund, insure, and run buildings. · condo-capital-infra
-- [[sources/web-2026-01-01-84c]] · web · Powerful Financial Planning · condo-capital-infra
-- [[sources/web-2026-02-27-641]] · web · Form B discloses key financial, legal, and operational details specific to the lot and the broader strata corporation. · condo-capital-infra
-- [[sources/web-2007-08-01-6d8]] · web · Protecting Your Designs · condo-capital-infra
-- [[sources/web-2025-11-17-cf4]] · web · Inhabit Launches New Slate of Product Features at OpTech 2025 · condo-software
-- [[sources/web-2025-08-18-fa4]] · web · Year 3 Announcement — MELLODDY · data-collectives
-- [[sources/web-2021-06-25-2aa]] · web · Data Trusts and the Governance of Smart Environments: Lessons from the Failure of Sidewalk Labs’ Urban Data Trust · data-collectives
-- [[sources/web-2021-03-07-5c3]] · web · Mitigating Antitrust Concerns When Competitors Share Data Using Blockchain Technology · data-collectives
-- [[sources/web-2021-05-05-125]] · web · Cooperative | MIDATA · data-collectives
-- [[sources/web-2024-04-04-ad6]] · web · Data cooperative · data-collectives
-- [[sources/web-2019-04-13-653]] · web · R&D: Can data trusts increase or help data sharing? · data-collectives
-- [[sources/web-2023-04-12-931]] · web · Cloud-based biomedical data storage and analysis for genomic research: Landscape analysis of data governance in emerging NIH-supported platforms · data-collectives
-- [[sources/web-2020-09-10-e49]] · web · Nonrivalry and the Economics of Data · data-collectives
-- [[sources/arxiv-2305.16052]] · arxiv · Strategic Data Sharing between Competitors · data-collectives
-- [[sources/arxiv-1904.02868]] · arxiv · Data Shapley: Equitable Valuation of Data for Machine Learning · data-collectives
-- [[sources/arxiv-2206.07284]] · arxiv · A Survey on Gradient Inversion: Attacks, Defenses and Future Directions · data-collectives
-- [[sources/arxiv-2206.03317]] · arxiv · Subject Membership Inference Attacks in Federated Learning · data-collectives
-- [[sources/arxiv-2409.13004]] · arxiv · Data Poisoning and Leakage Analysis in Federated Learning · data-collectives
-- [[sources/web-2025-08-21-f21]] · web · Defending against attacks in deep learning with differential privacy: a survey - Artificial Intelligence Review · data-collectives
-- [[sources/web-2026-06-03-4ff]] · web · Perform Protected Multiparty Data Collaboration on Azure · data-collectives
-- [[sources/web-2023-05-09-53f]] · web · US-UK PETs Prize Challenge · data-collectives
-- [[sources/web-2021-03-04-e0f]] · web · Exploring legal mechanisms for data stewardship · data-collectives
-- [[sources/web-2023-02-14-d0c]] · web · No Safe Harbors: DOJ Signals Increased Scrutiny of Information Exchanges | Advisories | Arnold & Porter · data-collectives
-- [[sources/web-2024-06-27-57a]] · web · Competitor Collaboration Guidelines · data-collectives
-- [[sources/web-2022-01-19-c5a]] · web · Draft — Competitor Collaboration Guidelines · data-collectives
-- [[sources/web-2023-09-25-318]] · web · Anonymization and De-Identification: A Comparison of PIPEDA and Bill C-27 · data-collectives
-- [[sources/web-2019-01-23-bbd]] · web · No One Owns Data · data-collectives
-- [[sources/web-2025-11-06-ff1]] · web · Budget 2025: Canada's Consumer-Driven Banking Framework · data-collectives
-- [[sources/web-2026-04-08-4dc]] · web · Information Blocking · data-collectives
-- [[sources/web-2026-06-04-a90]] · web · Voluntary Code of Conduct on the Responsible Development and Management of Advanced Generative AI Systems · data-collectives
-- [[sources/web-2025-01-17-451]] · web · The Death of Canada’s Artificial Intelligence and Data Act: What Happened, and What’s Next for AI Regulation in Canada? | Montreal AI Ethics Institute · data-collectives
-- [[sources/web-2026-05-05-b07]] · web · Ag Data Transparent · data-collectives
-- [[sources/web-2025-12-15-d5c]] · web · Data Act · data-collectives
-- [[sources/web-2026-06-09-e4c]] · web · TEFCA · data-collectives
-- [[sources/web-2026-03-26-f82]] · web · The Missing Pillar of Canada’s AI Strategy: Data Supply Chains · data-collectives
-- [[sources/web-2026-06-04-76b]] · web · Canadian Sovereign AI Compute Strategy · data-collectives
-- [[sources/web-2022-06-22-4be]] · web · Government of Canada launches second phase of the Pan-Canadian Artificial Intelligence Strategy · data-collectives
-- [[sources/web-2025-11-28-252]] · web · First Nations Data Governance Strategy - The First Nations Information Governance Centre · data-collectives
-- [[sources/web-2018-02-15-c35]] · web · Canada’s AI-Powered Supply Chains Cluster (Scale AI) · data-collectives
-- [[sources/web-2021-07-29-89d]] · web · National Artificial Intelligence Research Resource · data-collectives
-- [[sources/web-2023-09-05-c31]] · web · Data protection beyond data rights: governing data production through collective intermediaries · data-collectives
-- [[sources/web-2025-06-02-56c]] · web · Through thick and thin: data commons, community and the struggle for collective data governance · data-collectives
-- [[sources/web-2014-08-29-013]] · web · Constructing Commons in the Cultural Environment · data-collectives
-- [[sources/web-2018-05-10-3b3]] · web · Should We Treat Data as Labor? Moving beyond "Free" · data-collectives
-- [[sources/arxiv-2506.10272]] · arxiv · Collective Bargaining in the Information Economy Can Address AI-Driven Power Concentration · data-collectives
-- [[sources/web-2022-09-01-460]] · web · Ostrom's Eight Design Principles for a Successfully Managed Commons - Agrarian Trust · data-collectives
-- [[sources/web-2026-04-03-04f]] · web · About Us · data-collectives
-- [[sources/web-2026-05-21-5db]] · web · Fraud Prevention | Identity Fraud | Protective Registration | Cifas · data-collectives
-- [[sources/web-2026-01-01-dec]] · web · Telematics Exchange · data-collectives
-- [[sources/web-2019-05-09-487]] · web · The Empty Promise of Data Moats | Andreessen Horowitz · data-collectives
-- [[sources/web-2025-10-27-5da]] · web · Datavault AI Launches 2 Innovative Data Unions to Tokenize Insurance and Accounting Data, Unlocking ARR for Independent Operators · data-collectives
-- [[sources/web-2026-06-08-406]] · web · €23 million Data Space Accelerator launched to fast-track SME integration within the Catena-X ecosystem - Catena-X · data-collectives

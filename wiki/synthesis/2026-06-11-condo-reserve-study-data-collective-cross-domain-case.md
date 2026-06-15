@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 type: synthesis
-slug: 2026-06-11-in-one-sentence-what-is-a
+slug: 2026-06-11-condo-reserve-study-data-collective-cross-domain-case
 title: Condo Reserve-Study Data Collective — Comprehensive Cross-Domain Case
 domains:
 - data-collectives
