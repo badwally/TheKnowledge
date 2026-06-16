@@ -55,6 +55,11 @@ def load_secrets_env(path: Path | None = None) -> dict[str, str]:
         if parsed is None:
             continue
         key, value = parsed
+        if not value:
+            # An empty value (`KEY=` or `KEY=""`) is treated as "not provided":
+            # writing it would let an empty FIRECRAWL_API_KEY win over no-key and
+            # suppress the trafilatura fallback. Omit the line to unset, not blank.
+            continue
         if key in os.environ:
             continue
         os.environ[key] = value

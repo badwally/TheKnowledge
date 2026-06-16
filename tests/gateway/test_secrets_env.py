@@ -86,6 +86,37 @@ def test_strips_export_prefix_and_quotes(tmp_path, monkeypatch):
     assert loaded == {"FIRECRAWL_API_KEY": "fc-quoted", "WIKI_WEB_SCRAPER": "fallback"}
 
 
+def test_empty_value_is_skipped(tmp_path, monkeypatch):
+    """A `KEY=` line must NOT set an empty env var. An empty FIRECRAWL_API_KEY
+    would win over no-key (`setdefault`) and make _fetch_firecrawl send an empty
+    bearer instead of falling back to trafilatura."""
+    monkeypatch.delenv("FIRECRAWL_API_KEY", raising=False)
+    monkeypatch.delenv("WIKI_WEB_SCRAPER", raising=False)
+    env_file = tmp_path / "secrets.env"
+    env_file.write_text(
+        "FIRECRAWL_API_KEY=\n"
+        'WIKI_WEB_SCRAPER=""\n'
+        "OK_KEY=present\n"
+    )
+
+    loaded = secrets_env.load_secrets_env(env_file)
+
+    assert loaded == {"OK_KEY": "present"}
+    assert "FIRECRAWL_API_KEY" not in secrets_env.os.environ
+    assert "WIKI_WEB_SCRAPER" not in secrets_env.os.environ
+
+
+def test_embedded_equals_in_value_preserved(tmp_path, monkeypatch):
+    """`split('=', 1)` keeps everything after the first `=` as the value."""
+    monkeypatch.delenv("TOKEN", raising=False)
+    env_file = tmp_path / "secrets.env"
+    env_file.write_text("TOKEN=a=b=c\n")
+
+    loaded = secrets_env.load_secrets_env(env_file)
+
+    assert loaded == {"TOKEN": "a=b=c"}
+
+
 def test_default_path_uses_knowledge_internal(tmp_path, monkeypatch):
     monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
     monkeypatch.delenv("FIRECRAWL_API_KEY", raising=False)
