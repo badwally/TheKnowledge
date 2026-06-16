@@ -10,9 +10,10 @@ A three-repo day. The bulk was `~/code/knowledge` (an orita-cmo domain build ear
 - **`~/code/knowledge` — `orita-cmo` domain.** Competitive-intelligence corpus, a canonical map-of-content, and the company entity page.
 - **`~/code/Condo` — test + docs.** Integration coverage for the d1.2 A1 pattern-gap-rejection branch; a registry building-count correction.
 - **`~/code/local-inference` — new project.** A local MLX two-model inference stack on Apple Silicon, scaffolded with docs.
+- **`~/code/claude-config` — skill engineering.** Built and shipped the `daily-review` skill itself.
 - **Housekeeping.** Session-state checkpoints, two session-review docs, a `data-collectives` brief rename.
 
-Three tracks: an infra fix, a research-domain build, and a greenfield setup — not the single-repo day a glance at `knowledge` would suggest.
+Four tracks: an infra fix, a research-domain build, a greenfield setup, and tooling on the workflow itself — not the single-repo day a glance at `knowledge` would suggest.
 
 ## Why
 
@@ -41,7 +42,10 @@ Three tracks: an infra fix, a research-domain build, and a greenfield setup — 
 **local-inference (committed, new repo):**
 - MLX inference setup — Qwen3.6-35B + Qwen3.5-122B on Apple Silicon, with a `thinking_proxy.py` (`6abc795`); README, project `CLAUDE.md`, and session-state opt-in scaffolding.
 
-**Housekeeping:** session-state checkpoint (`64dc4e53`), session reviews (`1a3e02c1`, `260615_session-review-firecrawl-moc.md`), `data-collectives` brief rename (`e3a701cc`).
+**claude-config (committed + pushed, `origin/master`):**
+- Shipped the **`daily-review` skill** through the full skillify cycle — qualify → RED → write → GREEN → deploy (`3a0226c`). GREEN out-performed a hand-written review by catching repos a single-repo glance missed.
+
+**Housekeeping:** session-state checkpoint (`64dc4e53`), session reviews (`1a3e02c1`, `260615_session-review-firecrawl-moc.md`), `data-collectives` brief rename (`e3a701cc`), the cross-project daily-review doc itself (`f468f17f`).
 
 ## Lessons
 
@@ -49,6 +53,7 @@ Three tracks: an infra fix, a research-domain build, and a greenfield setup — 
 - **Before any fix that adds a global side effect, ask "who else triggers this path?"** Loading a real file in `main()` leaked env into every `main()`-calling test; the constraint was knowable up front but discovered after the suite failed.
 - **Seed schema constraints before authoring, not after.** Checking the MOC's `required_sections` + `citation_grounded` first made it validate on the first try — the inverse of the test-pollution miss, same day.
 - **Empty env values are a footgun.** An empty `FIRECRAWL_API_KEY` *wins* over no-key under set-if-absent and silently breaks fallback chains.
+- **Run the daily review last — it misses its own tail.** This doc was written mid-evening, then went stale twice as the day's own closing moves (the skill commit, the doc commit) landed after it. Building the review tooling is itself reviewable work.
 
 ## Priorities
 
