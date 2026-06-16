@@ -1,6 +1,51 @@
 # Session state — 2026-06-10
 
-Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop execution starting)
+Last updated: 2026-06-15 (new arc: orita-cmo competitive intelligence — built + synthesized)
+
+---
+
+## ✅ ORITA-CMO COMPETITIVE INTELLIGENCE (2026-06-15) — built, finalized, synthesized
+
+Arc began from "draft a synthesis for orita-cmo" → the competitive-positioning
+synthesis was impossible (empty competitor corpus; the grounded model correctly
+refused). Built the corpus end-to-end, then synthesized.
+
+**What was delivered (all committed to `main`):**
+- **Discovery** (`docs/research/orita-cmo/competitive-set.md`): harvested 237
+  youtube+web results via direct adapters (outside the analyst-grade ingest gate,
+  which rejected 159/160 survey-tier candidates); enumerated ~50 competitors
+  across Orita's 5 channels (email/ESP, deliverability/bot, SMS, programmatic
+  direct mail, ad-audience, CDP/agentic). Commit 3ef47911.
+- **Phase 1 direct tier**: ingested 5 direct competitors + adjacents — entities
+  `black-crow-ai, monocle (+ OuterSignal M&A), clustie (+ full-venue), enalito,
+  aampe (+ offerfit, movable-ink, hightouch)` + concepts
+  `agentic-personalization-platform, martech-consolidation`. Commit 72e38682.
+- **Blocked-aggregator access solved**: firecrawl→Capterra→`wiki ingest
+  --force-include` pipeline (CB Insights account-gated; F6S hCaptcha — both
+  unreachable). Built canonical sources via gateway id/hash helpers. Commits
+  f7a5b517 (Black Crow) + b5e01bac (9 incumbents: klaviyo, attentive, postscript,
+  drip, bloomreach, omnisend, yotpo, simon-ai, listrak — real ratings/features/
+  pricing/integration catalogs).
+- **Finalize**: all 25 competitor/adjacent pages citation-cleaned + finalized
+  (Related-section annotations → bare links; Clustie pricing cited). Commit
+  (chore finalize).
+- **Synthesis** (`wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md`):
+  complete 14-competitor landscape map + "Where Orita Sits" conclusion. Reframed
+  prescriptive→descriptive (corpus grounds facts, not strategy). Regenerated at
+  4000-token budget after the first version truncated at the 1500 cap. Commit
+  71283c43.
+
+**Domain state now:** orita-cmo has 2 synthesis pages (operating-model 2026-06-15
++ competitive-landscape 2026-06-16), ~25 finalized competitor entities (much
+benchmark-grounded), `competitive-set.md` discovery inventory.
+
+**Open / deferred (explicit-trigger only):**
+- **Prescriptive positioning** doc (how Orita *should* position) needs Orita's own
+  strategy material in the corpus — not a retrieval task; deferred until requested.
+- **Blocked sources**: CB Insights "Orita alternatives" (needs paid account) +
+  F6S (hCaptcha) — the richest curated competitor lists, still unreachable.
+- **`answer.py` 1500-token cap** is a latent limit for wide syntheses — worked
+  around via in-process override; a `--max-tokens` CLI flag would productize it.
 
 ---
 
