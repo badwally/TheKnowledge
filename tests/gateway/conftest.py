@@ -1,5 +1,6 @@
 """Shared pytest fixtures for gateway tests."""
 
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -8,6 +9,22 @@ import pytest
 from gateway import frontmatter as fm
 from gateway import paths
 from gateway import validator
+
+
+@pytest.fixture(autouse=True)
+def _restore_environ():
+    """Snapshot and restore os.environ around every test.
+
+    cli.main loads .knowledge/secrets.env by writing directly to os.environ
+    (a once-per-process side effect in production). Direct writes outlive
+    monkeypatch's restoration, so without this any test that invokes main
+    would leak FIRECRAWL_API_KEY / WIKI_WEB_SCRAPER into sibling tests."""
+    saved = os.environ.copy()
+    try:
+        yield
+    finally:
+        os.environ.clear()
+        os.environ.update(saved)
 
 
 @pytest.fixture

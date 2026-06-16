@@ -1,6 +1,88 @@
 # Session state — 2026-06-10
 
-Last updated: 2026-06-10 (new arc: data-collectives research foundation — loop execution starting)
+Last updated: 2026-06-15 (firecrawl secrets reach the launchd daemons — shipped)
+
+---
+
+## ✅ FIRECRAWL SECRETS REACH BACKGROUND DAEMONS (2026-06-15) — shipped, tested
+
+**Problem:** launchd agents (`com.knowledge.watcher`, running; `com.knowledge.scheduler`,
+script only — not installed) start from a minimal environment (plist gave only
+`KNOWLEDGE_ROOT` + `PATH`). So `FIRECRAWL_API_KEY` / `WIKI_WEB_SCRAPER` — exported in
+the interactive shell — were invisible to background ingest. Every watcher-ingested
+URL silently degraded to trafilatura-only and 403'd on biorXiv/PNAS with no error
+(the converter swallows Firecrawl misses by design). Same latent gap in the scheduler.
+
+**Fix (Option B — env-file loader, chosen over baking into the plist):**
+- `src/gateway/secrets_env.py` — `load_secrets_env(path=None)`: reads
+  `.knowledge/secrets.env`, applies each `KEY=value` with `os.environ.setdefault`
+  (real env wins), strips `export `/quotes, skips comments/blank/malformed, no-op on
+  missing file. Returns the applied mapping.
+- `src/gateway/cli.py` — `main()` calls `secrets_env.load_secrets_env()` first thing,
+  so BOTH daemons (both dispatch through `main`) and interactive ingest see the secrets.
+- `.knowledge/secrets.env` (gitignored) — `FIRECRAWL_API_KEY` + `WIKI_WEB_SCRAPER=fallback`.
+- `.gitignore` — `.knowledge/secrets.env`.
+- `tests/gateway/conftest.py` — suite-wide autouse `os.environ` snapshot/restore
+  (root-cause fix: `main()` loading a real on-disk file is a global side effect; the
+  suite had no env isolation, so any `main()`-calling test leaked the vars).
+- Watcher reloaded (PID 1744 → 57803), now on the loader code.
+
+**Eval (TDD, all GREEN):** 7 loader unit tests + `main()` integration test; baseline
+repro (trafilatura 403); post-fix live eval — daemon-minimal env → loader → `fallback`
+escalates 403 → Firecrawl, 22,966 words; `env -i` launchd-minimal entrypoint proof;
+full gateway suite **1940 passed, 0 failed**.
+
+**Benefit of Option B:** plists stay clean → key rotation is a one-line file edit, no
+reinstall; the not-yet-installed scheduler inherits the fix for free on install.
+
+**Open / deferred:** none. The scheduler is still script-only (not loaded in launchctl);
+when installed it works without an installer change. Phase-1 firecrawl-scrape plan
+(`docs/plans/2026-06-15-firecrawl-scrape-phase1.md`) is the broader arc this unblocks.
+
+---
+
+## ✅ ORITA-CMO COMPETITIVE INTELLIGENCE (2026-06-15) — built, finalized, synthesized
+
+Arc began from "draft a synthesis for orita-cmo" → the competitive-positioning
+synthesis was impossible (empty competitor corpus; the grounded model correctly
+refused). Built the corpus end-to-end, then synthesized.
+
+**What was delivered (all committed to `main`):**
+- **Discovery** (`docs/research/orita-cmo/competitive-set.md`): harvested 237
+  youtube+web results via direct adapters (outside the analyst-grade ingest gate,
+  which rejected 159/160 survey-tier candidates); enumerated ~50 competitors
+  across Orita's 5 channels (email/ESP, deliverability/bot, SMS, programmatic
+  direct mail, ad-audience, CDP/agentic). Commit 3ef47911.
+- **Phase 1 direct tier**: ingested 5 direct competitors + adjacents — entities
+  `black-crow-ai, monocle (+ OuterSignal M&A), clustie (+ full-venue), enalito,
+  aampe (+ offerfit, movable-ink, hightouch)` + concepts
+  `agentic-personalization-platform, martech-consolidation`. Commit 72e38682.
+- **Blocked-aggregator access solved**: firecrawl→Capterra→`wiki ingest
+  --force-include` pipeline (CB Insights account-gated; F6S hCaptcha — both
+  unreachable). Built canonical sources via gateway id/hash helpers. Commits
+  f7a5b517 (Black Crow) + b5e01bac (9 incumbents: klaviyo, attentive, postscript,
+  drip, bloomreach, omnisend, yotpo, simon-ai, listrak — real ratings/features/
+  pricing/integration catalogs).
+- **Finalize**: all 25 competitor/adjacent pages citation-cleaned + finalized
+  (Related-section annotations → bare links; Clustie pricing cited). Commit
+  (chore finalize).
+- **Synthesis** (`wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md`):
+  complete 14-competitor landscape map + "Where Orita Sits" conclusion. Reframed
+  prescriptive→descriptive (corpus grounds facts, not strategy). Regenerated at
+  4000-token budget after the first version truncated at the 1500 cap. Commit
+  71283c43.
+
+**Domain state now:** orita-cmo has 2 synthesis pages (operating-model 2026-06-15
++ competitive-landscape 2026-06-16), ~25 finalized competitor entities (much
+benchmark-grounded), `competitive-set.md` discovery inventory.
+
+**Open / deferred (explicit-trigger only):**
+- **Prescriptive positioning** doc (how Orita *should* position) needs Orita's own
+  strategy material in the corpus — not a retrieval task; deferred until requested.
+- **Blocked sources**: CB Insights "Orita alternatives" (needs paid account) +
+  F6S (hCaptcha) — the richest curated competitor lists, still unreachable.
+- **`answer.py` 1500-token cap** is a latent limit for wide syntheses — worked
+  around via in-process override; a `--max-tokens` CLI flag would productize it.
 
 ---
 

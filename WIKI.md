@@ -1013,6 +1013,12 @@ Apple Notes, Notion, Slack, Gmail, etc. — content not available as a watchable
 
 The watcher picks up from there. No pipeline changes. New source types are additive.
 
+### 14.1a Background-agent secrets (`.knowledge/secrets.env`)
+
+The launchd daemons (`wiki watch`, `wiki schedule run`) start from a **minimal environment** — they do not inherit the interactive shell, so secrets exported in a shell profile are invisible to them. `gateway.secrets_env.load_secrets_env()` bridges this: `cli.main()` reads `.knowledge/secrets.env` (gitignored) at entrypoint and applies each `KEY=value` line with **`os.environ.setdefault` semantics — a real environment variable always wins**. Format is shell-style (`export ` prefix and surrounding quotes are stripped; `#` comments and blank lines ignored); a missing file is a silent no-op. The plists stay clean (only `KNOWLEDGE_ROOT` + `PATH`), so key rotation is a one-line file edit with no reinstall, and a newly-installed daemon inherits the secrets for free.
+
+Current keys: `FIRECRAWL_API_KEY` (the web converter's Firecrawl scrape path) and `WIKI_WEB_SCRAPER` (default `fallback`: trafilatura first, Firecrawl only on a 403/429/empty extract — see `converters/web.py`). This is the standing home for any future background secret.
+
 ### 14.2 Derived retrieval index (FTS5 today; vector when warranted)
 
 **Shipped (2026-06-09 RAG review, WS1/WS5):** `gateway.search_index` maintains a SQLite **FTS5** index at `.index/wiki.db` — section-level rows, BM25 ranking, plus a graph-authority order (`order="authority"`) that blends BM25 with title/slug tier, inbound-link count, page-kind, and a draft penalty. The index is **derived state**: gitignored, rebuilt by `wiki index --rebuild`, and self-healing on read (mtime/size diff per query; no write-path hook, so an index failure can't break an ingest). Markdown stays canonical. `wiki search`, `wiki retrieve`, `wiki context --budget`, and `wiki related` all read it.

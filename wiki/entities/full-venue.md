@@ -7,10 +7,8 @@ entity_kind: organization
 domains:
 - orita-cmo
 created_at: '2026-06-15T22:18:54Z'
-last_updated: '2026-06-15T22:18:54Z'
-draft: true
-draft_started_at: '2026-06-15T22:26:52Z'
-draft_unresolved_claims: 2
+last_updated: '2026-06-16T00:02:05Z'
+finalized_at: '2026-06-16T00:02:05Z'
 ---
 
 # Full Venue
@@ -33,5 +31,5 @@ Full Venue is a Porto, Portugal-based software vendor and the developer of Clust
 
 ## Related
 
-- [[entities/clustie]] — Full Venue's flagship AI audience-intelligence product.
-- [[entities/orita]] — competitor in the AI audience-intelligence category occupied by Full Venue's Clustie product.
+- [[entities/clustie]]
+- [[entities/orita]]

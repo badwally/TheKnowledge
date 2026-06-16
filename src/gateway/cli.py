@@ -12,6 +12,7 @@ from pathlib import Path
 import argcomplete
 
 from gateway import __version__
+from gateway import secrets_env
 
 
 def _domain_completer(prefix: str, **kwargs) -> list[str]:
@@ -1428,6 +1429,12 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Apply .knowledge/secrets.env before any dispatch so the launchd-started
+    # daemons (watch, schedule run) — which inherit only a minimal environment
+    # — see FIRECRAWL_API_KEY / WIKI_WEB_SCRAPER. setdefault semantics: a real
+    # shell env var always wins.
+    secrets_env.load_secrets_env()
+
     parser = build_parser()
     _attach_domain_completers(parser)
     argcomplete.autocomplete(parser)

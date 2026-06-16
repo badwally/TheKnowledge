@@ -204,3 +204,13 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 - [[sources/web-2025-04-01-266]] · web · Clustie: AI Marketing Segments - Audiences to boost ROAS, grow AOV and reduce acquisition costs | Shopify App Store · orita-cmo
 - [[sources/web-2025-02-03-42a]] · web · What Is Aampe? How AI Decisioning Is Changing Email Personalization · orita-cmo
 - [[sources/web-2020-01-15-0c4]] · web · Enalito: Email, SMS, ChatBot - Skyrocket conversions with AI emails SMS, WA,Bot,Onsite Widget | Shopify App Store · orita-cmo
+- [[sources/web-2026-06-15-ec8]] · web · Black Crow AI Software Review 2026: Features, Integrations, Pros & Cons · orita-cmo
+- [[sources/web-2026-06-15-07f]] · web · Klaviyo — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-95e]] · web · Attentive — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-d6f]] · web · Postscript — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-789]] · web · Drip — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-633]] · web · Bloomreach — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-20d]] · web · Omnisend — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-809]] · web · Yotpo — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-f6f]] · web · Simon Data (Simon AI) — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/web-2026-06-15-78b]] · web · Listrak — Capterra Reviews, Features & Pricing 2026 · orita-cmo
