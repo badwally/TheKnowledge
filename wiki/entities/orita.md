@@ -7,10 +7,8 @@ entity_kind: organization
 domains:
 - orita-cmo
 created_at: '2026-05-28T01:45:50Z'
-last_updated: '2026-06-15T22:14:02Z'
-draft: true
-draft_started_at: '2026-06-15T22:14:02Z'
-draft_unresolved_claims: 0
+last_updated: '2026-06-16T03:46:12Z'
+finalized_at: '2026-06-16T03:46:12Z'
 ---
 
 # Orita
