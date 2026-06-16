@@ -1,6 +1,43 @@
 # Session state — 2026-06-10
 
-Last updated: 2026-06-15 (new arc: orita-cmo competitive intelligence — built + synthesized)
+Last updated: 2026-06-15 (firecrawl secrets reach the launchd daemons — shipped)
+
+---
+
+## ✅ FIRECRAWL SECRETS REACH BACKGROUND DAEMONS (2026-06-15) — shipped, tested
+
+**Problem:** launchd agents (`com.knowledge.watcher`, running; `com.knowledge.scheduler`,
+script only — not installed) start from a minimal environment (plist gave only
+`KNOWLEDGE_ROOT` + `PATH`). So `FIRECRAWL_API_KEY` / `WIKI_WEB_SCRAPER` — exported in
+the interactive shell — were invisible to background ingest. Every watcher-ingested
+URL silently degraded to trafilatura-only and 403'd on biorXiv/PNAS with no error
+(the converter swallows Firecrawl misses by design). Same latent gap in the scheduler.
+
+**Fix (Option B — env-file loader, chosen over baking into the plist):**
+- `src/gateway/secrets_env.py` — `load_secrets_env(path=None)`: reads
+  `.knowledge/secrets.env`, applies each `KEY=value` with `os.environ.setdefault`
+  (real env wins), strips `export `/quotes, skips comments/blank/malformed, no-op on
+  missing file. Returns the applied mapping.
+- `src/gateway/cli.py` — `main()` calls `secrets_env.load_secrets_env()` first thing,
+  so BOTH daemons (both dispatch through `main`) and interactive ingest see the secrets.
+- `.knowledge/secrets.env` (gitignored) — `FIRECRAWL_API_KEY` + `WIKI_WEB_SCRAPER=fallback`.
+- `.gitignore` — `.knowledge/secrets.env`.
+- `tests/gateway/conftest.py` — suite-wide autouse `os.environ` snapshot/restore
+  (root-cause fix: `main()` loading a real on-disk file is a global side effect; the
+  suite had no env isolation, so any `main()`-calling test leaked the vars).
+- Watcher reloaded (PID 1744 → 57803), now on the loader code.
+
+**Eval (TDD, all GREEN):** 7 loader unit tests + `main()` integration test; baseline
+repro (trafilatura 403); post-fix live eval — daemon-minimal env → loader → `fallback`
+escalates 403 → Firecrawl, 22,966 words; `env -i` launchd-minimal entrypoint proof;
+full gateway suite **1940 passed, 0 failed**.
+
+**Benefit of Option B:** plists stay clean → key rotation is a one-line file edit, no
+reinstall; the not-yet-installed scheduler inherits the fix for free on install.
+
+**Open / deferred:** none. The scheduler is still script-only (not loaded in launchctl);
+when installed it works without an installer change. Phase-1 firecrawl-scrape plan
+(`docs/plans/2026-06-15-firecrawl-scrape-phase1.md`) is the broader arc this unblocks.
 
 ---
 
