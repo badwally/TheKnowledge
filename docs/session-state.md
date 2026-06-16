@@ -1,6 +1,35 @@
 # Session state — 2026-06-10
 
-Last updated: 2026-06-15 (firecrawl secrets shipped to origin + orita-cmo MOC — all pushed)
+Last updated: 2026-06-15 (daily-review skill built + deployed via skillify — all pushed)
+
+---
+
+## ✅ DAILY-REVIEW SKILL (2026-06-15) — built via skillify, deployed, pushed
+
+Cross-session arc: turned the ad-hoc "daily review" request into a reusable skill.
+Lives in `~/code/claude-config` (not knowledge), but tracked here as session work.
+
+**Sequence:** re-authored the user's loose prompt to Anthropic best practices →
+ran the full skillify cycle (qualify → RED → write → GREEN → deploy).
+- **Skill:** `~/code/claude-config/skills/daily-review/SKILL.md` (commit `3a0226c`,
+  `origin/master`). Six-section cross-project work journal (where/why/accomplished/
+  lessons/priorities/next); defers code/token/prompt analysis to `session-review`.
+- **RED→GREEN proof:** GREEN out-performed a hand-written review — the cross-project
+  rule caught 2 repos (Condo, local-inference) a single-repo glance missed. Live
+  invocation later caught a 4th (claude-config itself) + the doc's own commit.
+- **Deploy:** symlinked into `~/.claude/skills/daily-review` (user-global → invocable
+  from any repo). README skills table updated.
+- **Bootstrap:** `install.sh` (commit `cff22bb`) — idempotent one-step relink of ALL
+  skills into `~/.claude/skills/` (links new, repoints stale, never clobbers a real
+  dir; `--dry-run`). Closes the machine-local-symlink gap; README points at it.
+- **Today's doc:** `docs/260615_daily-review.md` (commits `f468f17f`, `920bfae7`) —
+  the live deliverable, cross-project across knowledge/Condo/local-inference/claude-config.
+
+**Lesson logged in the doc:** run the daily review LAST — it goes stale by its own tail
+(the skill commit + doc commit landed after the first draft).
+
+**Open / deferred:** none. Multi-machine relink is solved (`install.sh`); no per-machine
+script beyond it is needed (YAGNI until a new machine).
 
 ---
 
