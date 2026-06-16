@@ -1,6 +1,6 @@
 # Session state — 2026-06-10
 
-Last updated: 2026-06-15 (firecrawl secrets reach the launchd daemons — shipped)
+Last updated: 2026-06-15 (firecrawl secrets shipped to origin + orita-cmo MOC — all pushed)
 
 ---
 
@@ -27,17 +27,48 @@ URL silently degraded to trafilatura-only and 403'd on biorXiv/PNAS with no erro
   suite had no env isolation, so any `main()`-calling test leaked the vars).
 - Watcher reloaded (PID 1744 → 57803), now on the loader code.
 
-**Eval (TDD, all GREEN):** 7 loader unit tests + `main()` integration test; baseline
+**Eval (TDD, all GREEN):** 9 loader unit tests + `main()` integration test; baseline
 repro (trafilatura 403); post-fix live eval — daemon-minimal env → loader → `fallback`
 escalates 403 → Firecrawl, 22,966 words; `env -i` launchd-minimal entrypoint proof;
-full gateway suite **1940 passed, 0 failed**.
+full gateway suite **1942 passed, 0 failed**.
 
 **Benefit of Option B:** plists stay clean → key rotation is a one-line file edit, no
 reinstall; the not-yet-installed scheduler inherits the fix for free on install.
 
+**Shipped + follow-ups (all on `origin/main`):**
+- PR #16 merged → `a71d59bb`. NOTE: the PR branch was cut from a local `main` that
+  was 6 commits ahead of origin, so the squash also swept the unpushed orita-cmo arc
+  (55 files) under the firecrawl commit message. No content lost (origin is a superset);
+  local main soft-reset to origin to reconcile. LESSON: in this repo cut branches from
+  `origin/main`, not local `main` (local routinely runs ahead).
+- Follow-up fix `4cf76a13` (session-review #4): empty-value guard in the loader — a
+  `KEY=` / `KEY=""` line no longer writes `""` (an empty FIRECRAWL_API_KEY would win
+  over no-key via set-if-absent and suppress the trafilatura fallback). +2 tests.
+- DECISION (#3): loader stays in `main()` = **global** (all CLI invocations, not just
+  daemons). Parity (URL works in watcher AND by hand) > blast radius; firecrawl only
+  fires after trafilatura already 403'd, so no happy-path spend. REVISIT TRIGGER: when
+  a non-firecrawl secret is added to `secrets.env`, scope that key rather than narrow
+  the loader.
+
 **Open / deferred:** none. The scheduler is still script-only (not loaded in launchctl);
 when installed it works without an installer change. Phase-1 firecrawl-scrape plan
 (`docs/plans/2026-06-15-firecrawl-scrape-phase1.md`) is the broader arc this unblocks.
+
+---
+
+## ✅ ORITA-CMO DOMAIN MOC + ORITA.MD FINALIZE (2026-06-15) — pushed
+
+Rode alongside the firecrawl work in the same session.
+- **MOC** `wiki/mocs/orita-cmo.md` (commit `8f94e49a`): canonical single-read domain hub
+  authored via `wiki moc-add` (gateway path; `citation_grounded=False`). Overview frames
+  Orita's **upstream-only** audience-intelligence position and the **own-execution-vs-
+  Klaviyo-partnership fork**; grouped+glossed entity/concept/synthesis links (0 broken),
+  source clusters, open threads. Built from committed wiki content via an Explore subagent
+  (operating-model arc + 20-concept toolkit) + direct spine reads. Interim narrative doc
+  `docs/research/orita-cmo/domain-synthesis.md` was written then **deleted** (MOC supersedes).
+- **Finalize** `wiki/entities/orita.md` (commit `feb19e46`): draft → finalized; passed the
+  citation-grounding gate; `finalized_at` set. Closes the one stale-draft item the MOC flagged.
+- Session review filed: `docs/260615_session-review-firecrawl-moc.md`.
 
 ---
 
