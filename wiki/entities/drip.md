@@ -7,10 +7,8 @@ entity_kind: product
 domains:
 - orita-cmo
 created_at: '2026-06-15T23:02:55Z'
-last_updated: '2026-06-15T23:02:55Z'
-draft: true
-draft_started_at: '2026-06-15T23:02:55Z'
-draft_unresolved_claims: 5
+last_updated: '2026-06-16T00:02:03Z'
+finalized_at: '2026-06-16T00:02:03Z'
 ---
 
 # Drip
@@ -42,8 +40,8 @@ Drip is an email marketing platform positioned for ecommerce SMBs that helps tea
 
 ## Related
 
-- [[entities/klaviyo]] — adjacent email/SMS platform and Orita's primary channel partner; Drip is a category peer.
-- [[entities/attentive]] — adjacent AI-positioned email/SMS marketing platform in the same competitive landscape.
-- [[entities/postscript]] — Shopify-focused SMS marketing peer in the ecommerce SMB segment.
-- [[concepts/agentic-personalization-platform]] — Drip is a legacy email-marketing reference point against which agentic personalization platforms are positioned.
-- [[concepts/martech-consolidation]] — Drip is one of the legacy email-automation platforms whose category is being absorbed by agentic orchestration layers.
+- [[entities/klaviyo]]
+- [[entities/attentive]]
+- [[entities/postscript]]
+- [[concepts/agentic-personalization-platform]]
+- [[concepts/martech-consolidation]]

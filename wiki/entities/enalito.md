@@ -7,10 +7,8 @@ entity_kind: product
 domains:
 - orita-cmo
 created_at: '2026-06-15T22:30:00Z'
-last_updated: '2026-06-15T22:30:00Z'
-draft: true
-draft_started_at: '2026-06-15T22:30:00Z'
-draft_unresolved_claims: 7
+last_updated: '2026-06-16T00:02:05Z'
+finalized_at: '2026-06-16T00:02:05Z'
 ---
 
 # Enalito
@@ -41,10 +39,10 @@ Enalito is a Shopify-distributed omnichannel marketing automation app that bundl
 
 ## Related
 
-- [[entities/orita]] — Orita's Klaviyo-anchored audience-intelligence positioning shares the AI-segmentation revenue-lever pitch, but Orita is email/SMS-focused where Enalito extends natively to WhatsApp and an AI chatbot.
-- [[entities/clustie]] — Peer Shopify-distributed AI audience-intelligence app; Clustie syncs predicted segments back into Shopify/Klaviyo, where Enalito bundles its own multi-channel campaign-delivery engine.
-- [[entities/aampe]] — Peer agentic AI cross-channel messaging vendor; Aampe targets enterprise infrastructure buyers, where Enalito targets SMB Shopify merchants with packaged tiered pricing.
-- [[entities/black-crow-ai]] — Peer ecommerce AI platform positioned around full-funnel predictive AI and purchase intent.
-- [[entities/monocle]] — Peer lifecycle-marketing startup building autonomous tools to adjust messaging, timing, and offers across email/SMS/web — a narrower channel mix than Enalito's WhatsApp + chatbot inclusion.
-- [[concepts/agentic-personalization-platform]] — Enalito is an example instance of the full-stack agentic personalization platform category.
-- [[concepts/martech-consolidation]] — Enalito's bundled email + SMS + WhatsApp + chatbot + on-site widget stack is a data point in the consolidation trend toward integrated agentic orchestration layers.
+- [[entities/orita]]
+- [[entities/clustie]]
+- [[entities/aampe]]
+- [[entities/black-crow-ai]]
+- [[entities/monocle]]
+- [[concepts/agentic-personalization-platform]]
+- [[concepts/martech-consolidation]]

@@ -7,10 +7,8 @@ entity_kind: product
 domains:
 - orita-cmo
 created_at: '2026-06-15T23:04:02Z'
-last_updated: '2026-06-15T23:04:02Z'
-draft: true
-draft_started_at: '2026-06-15T23:04:02Z'
-draft_unresolved_claims: 6
+last_updated: '2026-06-16T00:02:04Z'
+finalized_at: '2026-06-16T00:02:04Z'
 ---
 
 # Bloomreach
@@ -42,9 +40,9 @@ Bloomreach is a Customer Data Platform (CDP) plus marketing automation product w
 
 ## Related
 
-- [[concepts/martech-consolidation]] — Bloomreach sits as an enterprise-tier CDP + marketing-automation stack in the broader martech consolidation landscape.
-- [[entities/klaviyo]] — competing email/SMS-led marketing platform serving an overlapping but more SMB- and Shopify-centric ecommerce base.
-- [[entities/attentive]] — competing AI-powered SMS/email marketing platform with a retail-enterprise focus.
-- [[entities/postscript]] — Shopify-specific SMS marketing alternative in the adjacent SMS slice.
-- [[entities/drip]] — ecommerce-SMB email marketing alternative for teams not ready for full CDP tooling.
-- [[entities/enalito]] — Shopify-distributed omnichannel marketing automation competitor at the SMB end of the same problem space.
+- [[concepts/martech-consolidation]]
+- [[entities/klaviyo]]
+- [[entities/attentive]]
+- [[entities/postscript]]
+- [[entities/drip]]
+- [[entities/enalito]]

@@ -7,10 +7,8 @@ entity_kind: organization
 domains:
 - orita-cmo
 created_at: '2026-06-15T22:11:09Z'
-last_updated: '2026-06-15T22:54:06Z'
-draft: true
-draft_started_at: '2026-06-15T22:14:02Z'
-draft_unresolved_claims: 0
+last_updated: '2026-06-16T00:00:10Z'
+finalized_at: '2026-06-16T00:00:10Z'
 ---
 
 # Black Crow AI

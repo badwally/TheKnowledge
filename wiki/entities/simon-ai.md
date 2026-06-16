@@ -7,10 +7,8 @@ entity_kind: product
 domains:
 - orita-cmo
 created_at: '2026-06-15T23:09:17Z'
-last_updated: '2026-06-15T23:09:17Z'
-draft: true
-draft_started_at: '2026-06-15T23:09:17Z'
-draft_unresolved_claims: 0
+last_updated: '2026-06-16T00:00:16Z'
+finalized_at: '2026-06-16T00:00:16Z'
 ---
 
 # Simon AI

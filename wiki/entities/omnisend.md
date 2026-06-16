@@ -7,10 +7,8 @@ entity_kind: product
 domains:
 - orita-cmo
 created_at: '2026-06-15T23:05:23Z'
-last_updated: '2026-06-15T23:05:23Z'
-draft: true
-draft_started_at: '2026-06-15T23:05:23Z'
-draft_unresolved_claims: 7
+last_updated: '2026-06-16T00:02:04Z'
+finalized_at: '2026-06-16T00:02:04Z'
 ---
 
 # Omnisend
@@ -42,10 +40,10 @@ Omnisend is an all-in-one ecommerce marketing platform that bundles email campai
 
 ## Related
 
-- [[entities/klaviyo]] — primary Shopify-ecosystem email + SMS competitor in the same SMB ecommerce category.
-- [[entities/postscript]] — SMS-marketing competitor focused on Shopify brands.
-- [[entities/drip]] — ecommerce SMB email-marketing competitor.
-- [[entities/attentive]] — listed by Omnisend as an integration partner and a competitor in retail SMS/email.
-- [[entities/bloomreach]] — larger CDP plus marketing-automation competitor sitting upmarket from Omnisend's SMB focus.
-- [[concepts/martech-consolidation]] — Omnisend exemplifies the SMB all-in-one platform pattern within the broader martech consolidation trend.
-- [[concepts/competitive-positioning]] — relevant input for Orita's CMO agent's competitive-tracking surface.
+- [[entities/klaviyo]]
+- [[entities/postscript]]
+- [[entities/drip]]
+- [[entities/attentive]]
+- [[entities/bloomreach]]
+- [[concepts/martech-consolidation]]
+- [[concepts/competitive-positioning]]

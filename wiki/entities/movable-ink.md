@@ -7,10 +7,8 @@ entity_kind: organization
 domains:
 - orita-cmo
 created_at: '2026-06-15T22:30:00Z'
-last_updated: '2026-06-15T22:30:00Z'
-draft: true
-draft_started_at: '2026-06-15T22:29:16Z'
-draft_unresolved_claims: 0
+last_updated: '2026-06-16T00:00:12Z'
+finalized_at: '2026-06-16T00:00:12Z'
 ---
 
 # Movable Ink

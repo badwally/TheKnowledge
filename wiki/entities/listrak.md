@@ -7,10 +7,8 @@ entity_kind: product
 domains:
 - orita-cmo
 created_at: '2026-06-15T23:10:32Z'
-last_updated: '2026-06-15T23:10:32Z'
-draft: true
-draft_started_at: '2026-06-15T23:10:32Z'
-draft_unresolved_claims: 10
+last_updated: '2026-06-16T00:02:04Z'
+finalized_at: '2026-06-16T00:02:04Z'
 ---
 
 # Listrak
@@ -41,13 +39,13 @@ Listrak is a multi-channel marketing automation platform whose vendor pitch posi
 
 ## Related
 
-- [[entities/klaviyo]] — peer email/SMS marketing platform; Orita's primary channel partner and the dominant comparable in the same enterprise retail segment.
-- [[entities/attentive]] — peer multi-channel (SMS + email) marketing platform also positioned for retail enterprises.
-- [[entities/bloomreach]] — overlapping enterprise-retail marketing automation / CDP competitor.
-- [[entities/omnisend]] — adjacent ecommerce email + SMS platform serving a smaller-business segment than Listrak's enterprise positioning.
-- [[entities/drip]] — adjacent ecommerce email-marketing platform serving the SMB end of the segment.
-- [[entities/postscript]] — SMS-first ecommerce platform overlapping Listrak's SMS surface.
-- [[entities/yotpo]] — adjacent ecommerce marketing platform anchored on UGC with overlapping email/SMS modules.
-- [[entities/simon-ai]] — adjacent CDP + agentic marketing automation product targeting the same enterprise marketing buyer.
-- [[concepts/martech-consolidation]] — Listrak is a mid-rated incumbent in the email/SMS automation category whose competitive position is exposed by the consolidation thesis.
-- [[concepts/competitive-positioning]] — Listrak is a tracked competitor in Orita's competitive landscape.
+- [[entities/klaviyo]]
+- [[entities/attentive]]
+- [[entities/bloomreach]]
+- [[entities/omnisend]]
+- [[entities/drip]]
+- [[entities/postscript]]
+- [[entities/yotpo]]
+- [[entities/simon-ai]]
+- [[concepts/martech-consolidation]]
+- [[concepts/competitive-positioning]]
