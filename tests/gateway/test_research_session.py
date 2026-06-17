@@ -112,7 +112,7 @@ def test_make_session_id_uses_today_when_unspecified(monkeypatch: pytest.MonkeyP
 # --- promote ---------------------------------------------------------------
 
 
-def test_promote_dedups_by_url(monkeypatch: pytest.MonkeyPatch):
+def test_promote_dedups_by_url(kb_root, monkeypatch: pytest.MonkeyPatch):
     # Persistent already has one URL; session has it plus one new one.
     _patch_fetch(
         monkeypatch,
@@ -146,7 +146,9 @@ def test_promote_dedups_by_url(monkeypatch: pytest.MonkeyPatch):
     assert registry.promoted == [("alpha", "2026-04-29-x", 1)]
 
 
-def test_promote_falls_back_to_text_when_no_url(monkeypatch: pytest.MonkeyPatch):
+def test_promote_falls_back_to_text_when_no_url(
+    kb_root, monkeypatch: pytest.MonkeyPatch
+):
     _patch_fetch(
         monkeypatch,
         by_notebook={
@@ -181,7 +183,7 @@ def test_promote_falls_back_to_text_when_no_url(monkeypatch: pytest.MonkeyPatch)
 
 
 def test_promote_records_correct_sources_added_count(
-    monkeypatch: pytest.MonkeyPatch,
+    kb_root, monkeypatch: pytest.MonkeyPatch
 ):
     _patch_fetch(
         monkeypatch,
@@ -211,7 +213,7 @@ def test_promote_records_correct_sources_added_count(
     assert registry.promoted == [("d1", "sess-2", 3)]
 
 
-def test_promote_empty_session_does_nothing(monkeypatch: pytest.MonkeyPatch):
+def test_promote_empty_session_does_nothing(kb_root, monkeypatch: pytest.MonkeyPatch):
     _patch_fetch(
         monkeypatch,
         by_notebook={
@@ -236,7 +238,9 @@ def test_promote_empty_session_does_nothing(monkeypatch: pytest.MonkeyPatch):
     assert registry.promoted == [("d1", "sess-3", 0)]
 
 
-def test_promote_isolates_per_source_failures(monkeypatch: pytest.MonkeyPatch):
+def test_promote_isolates_per_source_failures(
+    kb_root, monkeypatch: pytest.MonkeyPatch
+):
     """One bad URL must not sink promotion of the rest."""
     _patch_fetch(
         monkeypatch,
