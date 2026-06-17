@@ -75,8 +75,9 @@ Per domain:
 ### WS-2 — Dead/missing corpora (mixed track)
 
 **`glp1-reward-modulation`** (48 YT; now-track sync, low synthesis value — biomedical, YouTube is conference-talk tier):
-1. `wiki nlm-sync glp1-reward-modulation` (syncs the 48 YT + any other tagged raw not yet in the stub corpus).
-2. Corpus-quality gate, then `wiki query` if synthesis is wanted. Decide whether this domain is worth reviving before spending synthesis quota.
+**D2 resolved 2026-06-17 — do NOT sync the 48 glp1 YouTube.** Sampling shows they are consumer/influencer health content (emoji clickbait, libido/microdosing takes, "the side effect no one talks about") — exactly the survey-tier noise the filter screens. The domain's real substance is **77 PubMed + 2 arxiv**; injecting 48 wellness videos would degrade a literature-grounded biomedical corpus and invite confabulation. YouTube is the wrong modality here.
+- **YouTube action:** discard (leave untagged / do not sync). Optionally cherry-pick 1–2 genuinely substantive talks ("GLP-1, Mental Health & Reward Processing — What the Research Actually Shows") only if ever specifically wanted.
+- **Separate, out-of-scope item:** glp1's persistent notebook is an empty stub — the 77 PubMed sources were never synthesized. That is the pre-existing `orphans (glp1-reward-modulation)` backlog (a PubMed-corpus gap, not a YouTube one). Not part of this remediation; revive via `wiki nlm-sync` + `wiki query` over the PubMed corpus on its own trigger.
 
 **`ai-temporal-video`** (86 YT; highest YouTube value — it is a video domain). **D1 resolved: stands up as its own domain.**
 
@@ -95,27 +96,37 @@ Per domain:
 2. Tag the 86 raw sources to `ai-temporal-video` (`domains:` frontmatter) and `wiki nlm-sync ai-temporal-video --limit N` to load them into the new notebook, then `wiki query` to synthesize.
 3. **Fresh-discovery gate:** any `wiki research --execute` to expand the corpus beyond the existing 86 is serialized after the semantic-models loop (shared YouTube-adapter key).
 
-### WS-3 — Orphan sessions + ungated harvests (triage; lowest priority)
+### WS-3 — Orphan sessions + ungated harvests
 
-- ~37 YouTube in abandoned sessions (bare notebook ids) + 16 with no source_map (orita-style direct harvests).
-- Triage: for each orphan session, decide promote-to-a-domain (then sync + synthesize) vs discard. The 16 ungated harvests are likely discard (survey-tier, rejected by the gate by design).
-- No YouTube API contention (all `raw/`-resident).
+**D3 resolved 2026-06-17 — the "orphan sessions" are abandoned earlier runs of *existing* domains, not independent projects.** Sampling their source_maps re-parents them cleanly, and they split by quality (the unifying principle: researcher/conference talks are worth syncing; consumer explainers are not):
+
+| Orphan session(s) | Parent domain | Content | Value | Action |
+|---|---|---|---|---|
+| `db1e4b75`, `0a9d3d94`, `3de60ed7` | **convergent-ai-brain** | Research talks — DiCarlo, Olshausen, Kriegeskorte, Brain-Score CCN, Platonic Representation Hypothesis, sparse coding | **HIGH** | Tag YT to `convergent-ai-brain`, fold into **WS-1** sync |
+| `311f9069`, `a0b35624` | condo / condo-capital-infra | Consumer HOA/reserve-study explainers ("What is a Reserve Study", "HOA Reserve Study Basics") | Low | **Skip** — condo domains already richly grounded (44 / 128); explainer videos add little. Optional only on explicit request |
+| `92cefb57` | ai-and-agents (stray) | One eval talk (Braintrust "lessons about Evals") | Trivial | Discard or opportunistic fold |
+| 16 with no source_map | — | Ungated direct-adapter harvests (orita competitive-set, survey-tier) | Discard | Leave; rejected by the gate by design |
+
+**Net:** D3 collapses into WS-1 (re-parent the convergent-ai-brain talks, then sync). No standalone triage workstream. No YouTube API contention (all `raw/`-resident).
 
 ---
 
 ## 4. Execution order (recommended)
 
-1. **WS-1** (now) — clean, mechanical, validates the end-to-end backfill→synthesis recipe on small domains.
-2. **WS-2 glp1 sync** (now) — sync; defer synthesis pending value call.
-3. **WS-2 ai-temporal-video** — resolve the bootstrap-or-fold decision, then sync (now). Fresh expansion gated behind the loop.
-4. **WS-3** — triage after the above; low priority.
+1. **WS-1** (now) — convergent-ai-brain (incl. the re-parented research-talk YT from D3), ai-native-business, risksystems: backfill sync + re-synthesis. Validates the end-to-end recipe.
+2. **WS-2 ai-temporal-video** (now) — bootstrap the domain, tag + sync the 86, synthesize. Fresh *expansion* gated behind the loop.
+3. **Out of scope / parked:** glp1 YouTube (D2 — discard); condo explainer YT + ungated harvests (D3 — skip/discard); glp1 PubMed-corpus revival (separate pre-existing backlog).
 
-All of 1–3 (sync + synthesis) run without touching the YouTube adapter key. Only ai-temporal-video *expansion* (if chosen) waits on the concurrent session.
+WS-1 and WS-2 (sync + synthesis) run without touching the YouTube adapter key. Only ai-temporal-video *expansion* waits on the concurrent session.
 
 ---
 
 ## 5. Open decisions
 
 - **D1 — ai-temporal-video:** RESOLVED 2026-06-17 — stands up as its own bootstrapped domain (not folded). See WS-2.
-- **D2 — glp1 revival:** is synthesizing the glp1 corpus in scope, or sync-only (park it)? YouTube there is low-value.
-- **D3 — WS-3 orphan sessions:** which (if any) abandoned sessions are worth promoting vs discarding.
+- **D2 — glp1 revival:** RESOLVED 2026-06-17 — glp1 YouTube is consumer/influencer content; discard (do not sync). The empty-stub PubMed corpus is a separate, out-of-scope backlog item. See WS-2 glp1.
+- **D3 — orphan sessions:** RESOLVED 2026-06-17 — they are abandoned runs of existing domains; convergent-ai-brain research-talk YT folds into WS-1, condo explainers + ungated harvests are skip/discard. See WS-3.
+
+**All decisions resolved.** Plan is execution-ready (WS-1 + WS-2), gated only on the hold rule (no autonomous start while the semantic-models loop is live) and the fresh-discovery sequencing rule.
+
+**Unifying quality principle (carry into all WS):** sync researcher/conference talks; do not sync consumer/influencer explainers — they degrade a grounded corpus (glp1 wellness videos, condo HOA explainers). The fix's `channel_authority`/`speaker_expertise` signals encode this for *future* runs; for this backfill it is a manual screen.
