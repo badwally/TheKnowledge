@@ -151,6 +151,27 @@ class ClaudeCLIFilterClient:
 # one string.
 
 
+_SOURCE_TYPE_GUIDANCE = """\
+## Source-type guidance
+
+Apply the guidance matching the source's `type` field in the user message:
+
+- **youtube / video**: The `description` is often promotional or truncated and
+  does NOT represent the talk's actual depth (the transcript, fetched later by
+  NotebookLM, does). Do not penalize a video for a thin or marketing-style
+  description. Weight channel authority, speaker and institutional credentials,
+  and venue: university courses and named research labs, recognized conferences,
+  keynotes, and seminars, and established domain practitioners are high-authority
+  even when the blurb is short. Score on source authority plus topical relevance
+  to the inclusion criteria — not on whether the metadata itself demonstrates
+  technical depth. An on-topic lecture or conference talk from an authoritative
+  channel should clear the inclusion bar.
+- **arxiv / pubmed**: The abstract represents the work; score it directly against
+  the inclusion and methodology criteria.
+- **web / pdf**: Judge the fetched body text against the criteria.
+"""
+
+
 _SYSTEM_PROMPT_TEMPLATE = """\
 You are a semantic relevance filter for a personal research knowledge base.
 Score the source provided in the user message against the editorial policy
@@ -165,6 +186,8 @@ and respond with a single JSON object.
 ## Past decisions for calibration
 
 {examples_section}
+
+{source_type_guidance}
 
 ## Instructions
 
@@ -197,6 +220,7 @@ def build_system_prompt(policy: Policy, examples: list[Example]) -> str:
     return _SYSTEM_PROMPT_TEMPLATE.format(
         policy_yaml=policy_yaml,
         examples_section=_format_examples(examples),
+        source_type_guidance=_SOURCE_TYPE_GUIDANCE.rstrip(),
     )
 
 
