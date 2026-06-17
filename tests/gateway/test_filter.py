@@ -542,6 +542,26 @@ def test_system_prompt_includes_youtube_source_type_guidance():
     assert "channel authority" in prompt.lower()
 
 
+def test_system_prompt_surfaces_channel_authority_quality_signals():
+    """Channel-authority signals must reach the prompt so video sources can
+    clear the bar on authority. build_system_prompt dumps the whole policy."""
+    from gateway.filter import semantic
+
+    raw = {
+        "domain": {"slug": "d"},
+        "quality_signals": {
+            "channel_authority": {
+                "positive_signals": ["University course or named research lab"]
+            }
+        },
+    }
+    policy = Policy(domain_slug="d", quality_signals=raw["quality_signals"], raw=raw)
+    prompt = semantic.build_system_prompt(policy, [])
+
+    assert "channel_authority" in prompt
+    assert "University course or named research lab" in prompt
+
+
 def test_claude_cli_strips_anthropic_api_key_from_subprocess_env(monkeypatch):
     """Regression: the gateway's `claude -p` subprocess invocations must drop
     `ANTHROPIC_API_KEY` so the Claude CLI uses the user's Max-plan OAuth login

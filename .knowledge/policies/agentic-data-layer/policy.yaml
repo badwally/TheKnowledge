@@ -82,4 +82,21 @@ quality_signals:
     - Treats the knowledge graph as a black box with no discussion of query interface,
       schema constraints, or retrieval mechanics
     - Summarizes the space without presenting a concrete system, dataset, or evaluation
+  channel_authority:
+    positive_signals:
+    - University course lectures or named research-lab talks (e.g. Stanford, MIT,
+      Berkeley, DeepMind, Anthropic, FAIR)
+    - Recognized conference or workshop sessions (NeurIPS, ICML, ICLR, ISWC, KGC,
+      VLDB, or established industry summits)
+    - Speaker is a published researcher, framework author, or named practitioner
+      in agent systems or knowledge engineering
+    negative_signals:
+    - Influencer or growth-marketing channel with no technical track record
+    - Content primarily promoting a paid course, newsletter, or product upsell
+  speaker_expertise:
+    positive_signals:
+    - Discusses architecture, retrieval, or validation mechanisms with precision
+    - References specific systems, papers, or benchmarks by name
+    negative_signals:
+    - Surface-level overview or hype with no mechanism or implementation detail
 bootstrapped_from_description_hash: 1e454c91394470f1
