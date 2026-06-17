@@ -1,0 +1,68 @@
+version: 1
+session_id: 2026-06-17-how-do-ai-agents-construct-populate
+domain: agentic-data-layer
+prompt: 'How do AI agents construct, populate, and maintain semantic data structures,
+  and how is their output validated against the model? Cover LLM-driven entity and
+  relation extraction into knowledge graphs, ontology population, automated KG construction
+  from unstructured documents, and agentic schema evolution. Cover validation and
+  grounding: SHACL/ShEx/JSON-Schema-constrained generation, ontology grounding to
+  reduce hallucination, and verification and provenance of agent-generated triples
+  or records. Emphasize write-path safety and correctness for long-lived, mutable
+  knowledge models. Operator-architect, pattern-level. Prioritize 2024-2026 arXiv
+  and substantive vendor engineering material.'
+generated_at: '2026-06-17T18:02:11Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 6
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - LLM-driven knowledge graph construction unstructured text evaluation
+  - ontology population entity relation extraction language model benchmark
+  - SHACL-constrained triple generation language model verification
+  - schema-guided information extraction knowledge graph population
+  - automated knowledge graph construction accuracy hallucination reduction
+  - agent-generated triple provenance verification knowledge graph
+  - agentic schema evolution ontology maintenance language model
+  - ontology grounding structured output constrained generation
+  youtube:
+  - LLM knowledge graph construction pipeline tutorial
+  - SHACL validation RDF LLM output verification
+  - NODES 2024 LLM knowledge graph write path
+  - Connected Data London 2024 LLM graph construction
+  - knowledge graph provenance agent audit trail
+  - agentic KG construction quality evaluation benchmark
+  web:
+  - LLM knowledge graph construction write path safety 2025
+  - Neo4j LLM entity extraction graph population tutorial
+  - LlamaIndex PropertyGraphIndex construction agent pipeline
+  - LangChain entity extraction knowledge graph chain pattern
+  - SHACL constraint validation LLM generated RDF triples
+  - ontology population automation large language models benchmark 2024
+  - schema-guided triple production verification pipeline agent
+  - Stardog ontology grounding LLM agent enterprise pattern
+  - knowledge graph provenance agent-generated triples audit
+  - JSON-Schema constrained LLM output structured generation
+  - automated ontology learning unstructured text LLM evaluation
+  - GraphDB Ontotext LLM knowledge graph population tutorial
+  - agentic schema evolution knowledge graph maintenance architecture
+  - entity resolution deduplication knowledge graph agent pipeline
+  - hallucination reduction knowledge graph grounding structured output
+  pubmed: []
+  semantic_scholar:
+  - LLM-driven knowledge graph construction evaluation benchmark
+  - ontology population information extraction language model
+  - SHACL-constrained triple generation agent verification pipeline
+  - schema-guided relation extraction knowledge graph accuracy
+  - automated KG construction unstructured text correctness evaluation
+  - hallucination reduction ontology grounding language model generation
+  - knowledge graph provenance agent-generated content audit trail
+  - agentic schema evolution ontology maintenance correctness
+  - entity resolution linking knowledge graph LLM agent
+  - write-path validation agent knowledge graph mutable model
+edited: true
+status: executed
+executed_at: '2026-06-17T19:16:44Z'

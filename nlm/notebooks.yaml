@@ -1,4 +1,42 @@
 notebooks:
+  agentic-data-layer:
+    persistent:
+      notebook_id: 65f83714-12cc-4ee0-8e98-72cb1ffe8438
+      created_at: '2026-06-17T18:17:01Z'
+      sources_count: 27
+      last_sync: '2026-06-17T19:16:44Z'
+    sessions:
+    - session_id: 2026-06-17-how-do-ai-agents-retrieve-and
+      notebook_id: 64e802d6-32dc-439e-8210-080baa8a0c3a
+      query: How do AI agents retrieve and query semantic data structures at runtime?
+        Cover knowledge-graph RAG and GraphRAG (Microsoft GraphRAG and successors),
+        text-to-query generation (SPARQL, Cypher/GQL, SQL-over-semantic-layer), ontology-grounded
+        retrieval, and exposing semantic layers / metrics layers / triple stores to
+        agents as tools via MCP and function-calling. When does a semantic or graph
+        layer outperform plain vector RAG for an agent? Cover tool/affordance design,
+        read-path caching, and accuracy/faithfulness benchmarks for text-to-query
+        and GraphRAG. Operator-architect, pattern-level, reusable across domains.
+        Prioritize 2024-2026 arXiv and substantive engineering write-ups from graph-DB
+        and semantic-layer vendors.
+      created_at: '2026-06-17T18:17:02Z'
+      status: promoted
+      sources_count: 19
+      promoted_at: '2026-06-17T18:40:45Z'
+    - session_id: 2026-06-17-how-do-ai-agents-construct-populate
+      notebook_id: 0606e2a4-daf0-4221-be26-4a7e350d2815
+      query: 'How do AI agents construct, populate, and maintain semantic data structures,
+        and how is their output validated against the model? Cover LLM-driven entity
+        and relation extraction into knowledge graphs, ontology population, automated
+        KG construction from unstructured documents, and agentic schema evolution.
+        Cover validation and grounding: SHACL/ShEx/JSON-Schema-constrained generation,
+        ontology grounding to reduce hallucination, and verification and provenance
+        of agent-generated triples or records. Emphasize write-path safety and correctness
+        for long-lived, mutable knowledge models. Operator-architect, pattern-level.
+        Prioritize 2024-2026 arXiv and substantive vendor engineering material.'
+      created_at: '2026-06-17T18:53:56Z'
+      status: promoted
+      sources_count: 10
+      promoted_at: '2026-06-17T19:16:44Z'
   ai-and-agents:
     persistent:
       notebook_id: 7eac1296-b611-422e-85bb-6c36f5c8872b
@@ -133,8 +171,8 @@ notebooks:
     persistent:
       notebook_id: effe1f58-e6ce-4ff0-8728-35c885bff6f4
       created_at: '2026-05-10T22:47:04Z'
-      sources_count: 125
-      last_sync: '2026-05-27T18:42:23Z'
+      sources_count: 128
+      last_sync: '2026-06-10T03:52:14Z'
     sessions:
     - session_id: 2026-05-11-what-is-the-established-methodology-stack
       notebook_id: 8d821a9d-c87c-4ebe-b2c0-4a3c560b8cf8
@@ -198,8 +236,8 @@ notebooks:
     persistent:
       notebook_id: 67857df4-7231-45b0-805e-96bffa063205
       created_at: '2026-05-23T16:31:19Z'
-      sources_count: 144
-      last_sync: '2026-05-24T04:53:58Z'
+      sources_count: 168
+      last_sync: '2026-06-10T03:45:54Z'
   convergent-ai-brain:
     persistent:
       notebook_id: 0997b925-a7b2-47d2-8dcc-e11fcecf953e
@@ -323,6 +361,23 @@ notebooks:
       created_at: '2026-05-28T20:32:03Z'
       status: abandoned
       sources_count: 3
+      promoted_at: null
+    - session_id: 2026-06-15-survey-the-competitive-marketplace-for-orita
+      notebook_id: a60c243a-d26f-409d-9f6b-1f305caa4438
+      query: "Survey the competitive marketplace for Orita \u2014 an AI audience-intelligence\
+        \ and purchase-intent scoring layer for ecommerce brands that executes suppressions,\
+        \ reactivations, bot detection, and audience expansion across email (Klaviyo\
+        \ ecosystem), SMS, direct mail, and remarketing/ad-audience optimization.\
+        \ Enumerate competing products and platforms across: (1) email deliverability,\
+        \ list-hygiene and send-suppression; (2) SMS marketing; (3) programmatic/retargeting\
+        \ direct mail; (4) remarketing and ad-audience optimization; (5) advanced\
+        \ agentic AI customer segmentation and predictive audience intelligence (including\
+        \ Clay, Relevance AI, HubSpot Breeze, and CDP/predictive players). For each,\
+        \ identify the vendor, product, which of these channels it covers, and whether\
+        \ it performs agentic or AI-driven segmentation."
+      created_at: '2026-06-15T21:59:14Z'
+      status: abandoned
+      sources_count: 0
       promoted_at: null
   risksystems:
     persistent:
@@ -544,6 +599,46 @@ notebooks:
       created_at: '2026-05-20T22:09:43Z'
       status: ephemeral
       sources_count: 7
+      promoted_at: null
+  semantic-models:
+    persistent:
+      notebook_id: d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+      created_at: '2026-06-17T18:29:32Z'
+      sources_count: 33
+      last_sync: '2026-06-17T19:08:31Z'
+    sessions:
+    - session_id: 2026-06-17-what-are-the-foundational-formalisms-for
+      notebook_id: 0cfca46c-1ca9-4ffc-a6d7-81b0b4f330a0
+      query: 'What are the foundational formalisms for semantic data models, and how
+        do they compare? Cover: the RDF/RDFS/OWL stack (triples, classes, properties,
+        the OWL EL/QL/RL profiles and their reasoning tradeoffs); description logics
+        as the formal underpinning (expressivity vs decidability, reasoning complexity);
+        the property-graph / labeled-property-graph model and how it contrasts with
+        RDF (RDF-star / RDF 1.2, the ISO GQL standardization effort); the conceptual-
+        and logical-modeling lineage (ER, UML, ontologies as conceptual models); and
+        the criteria for choosing a formalism (reasoning needs, interoperability,
+        tooling maturity, query language). Include the canonical W3C specifications,
+        foundational Semantic Web and description-logic sources, and current practitioner
+        comparisons of RDF vs property graphs. Favor authoritative specs and well-grounded
+        technical sources over introductory overviews.'
+      created_at: '2026-06-17T18:29:33Z'
+      status: promoted
+      sources_count: 34
+      promoted_at: '2026-06-17T19:08:31Z'
+    - session_id: 2026-06-17-how-do-practitioners-engineer-ontologies-at
+      notebook_id: 854f6f63-67ec-4c3a-9f06-ca426bff2351
+      query: 'How do practitioners engineer ontologies at production quality? Cover:
+        established methodologies (METHONTOLOGY, NeOn, SAMOD, agile and competency-question-driven
+        design); ontology design patterns (content patterns, logical patterns, the
+        ODP catalog) and anti-patterns; modularization and ontology reuse; ontology
+        alignment and matching (techniques, the OAEI evaluation campaigns, precision
+        and recall tradeoffs); upper and foundational ontologies (BFO, DOLCE, SUMO,
+        gist) and when to commit to one; and ontology lifecycle, versioning, and governance.
+        Include foundational methodology papers, the ontology-design-pattern literature,
+        OAEI results, and current engineering practice.'
+      created_at: '2026-06-17T19:31:37Z'
+      status: ephemeral
+      sources_count: 43
       promoted_at: null
   trading-and-markets:
     persistent:
