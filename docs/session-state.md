@@ -1,6 +1,28 @@
-# Session state — 2026-06-10
+# Session state — 2026-06-17
 
-Last updated: 2026-06-15 (daily-review skill built + deployed via skillify — all pushed)
+Last updated: 2026-06-17 (agentic-data-layer research domain + YouTube-aware filter fix — merged to main)
+
+---
+
+## ✅ AGENTIC-DATA-LAYER DOMAIN + YOUTUBE-AWARE FILTER (2026-06-17) — merged a4b11ac2
+
+**What shipped:**
+- New citation-grounded domain `agentic-data-layer` (sibling to `semantic-models`), vertical-agnostic — the runtime agent↔semantic-structure interface. Bootstrapped + corpus committed `559412b7`: 27-source NLM corpus, 13 synthesis pages, MOC. Plans 1 (consumption) + 2 (production/validation) ran as fan-outs; Plan 3 (architecture/failure-modes) as post-hoc `wiki query` synthesis.
+- YouTube-aware filter fix, merged `a4b11ac2` (branch `feat/youtube-aware-filter`, deleted): per-source-type guidance in `semantic.py`, `channel_authority`/`speaker_expertise` signals in the `agentic-data-layer` policy, lecture/talk query register in `query_planner.py`. 220 tests pass. Plan: `docs/plans/2026-06-17-youtube-aware-filter.md`. SDD ledger: `.git/sdd/progress.md`.
+
+**Decisions:** new domain not expansion of `ai-and-agents`/`semantic-models` (which excludes this layer by design); vertical-agnostic (anchoring to longspan would bias filter/examples); YouTube fix = restore metadata-based awareness, NOT score-post-materialization (research-notebook proved metadata-first works; NLM gets the transcript via `source_add_url` regardless).
+
+**Rejected:** "drop YouTube" (0-accepts was a filter regression, not absent signal); "score post-materialization" (over-engineered — transcript already reaches NLM via URL).
+
+**Open / next (user-trigger):**
+- **Acceptance gate — PASSED 2026-06-17 (session `2026-06-17-what-are-the-current-architecture-and`).** YouTube-heavy re-run with S2 idle: 230 candidates → 77 accepted (33%, vs prior ~11%); planner emitted institution/conference-anchored YouTube queries (Stanford/NeurIPS/KGC/Connected Data London); **31 YouTube sources materialized (vs 0 accepted across prior plans)**, 3 cited in synthesis with full transcripts (1.3k–19k words) — conference keynotes (Eifrem GraphRAG, KGC 2024, NeurIPS'24). semantic_scholar recovered (48 candidates, no 429). corpus_quality median 2512w, distinct_sources 20. The fix works end-to-end.
+- **RESOLVED 2026-06-17 (branch `fix/promote-recover-youtube-url`, commit `d005d17d`, not yet pushed/PR'd).** The promote-to-persistent path dropped sources lacking a `url` in the NLM-side session record into `source_add_text(content="", title=...)` → "Please specify a source" (31 YouTube sources failed persistent-promote, 33/72 promoted). Root cause: NLM's `source list --json` omits `url` for some source types (YouTube especially), so the URL was lost on the round-trip even though raw/ carries it. Fix: `session.promote()` now indexes raw/ by title once (`source_map._index_raw_pages`) and, for any URL-less session source, recovers the canonical URL from the matching raw page → `source_add_url`, or the real body content as a second resort → `source_add_text` with content, falling back to title-only text add for NLM-native sources with no raw page. Recovered URLs still dedup against the persistent corpus. 3 new tests + full gateway suite 1950 passed.
+- Deferred follow-ups: `wiki bootstrap-domain` should auto-generate `channel_authority` signals for video-heavy domains; verify the YouTube converter captures full transcripts for local `wiki retrieve` parity.
+- **Pending memory (awaiting OK):** (1) S2 shared-key concurrency 429; (2) filter lost per-source-type awareness in the port (links [[feedback_general_purpose_inherits_surface_anchors]]).
+
+**Do NOT touch:** the working tree holds the parallel project's uncommitted `wiki/`+`raw/` files and pre-existing session-start edits (condo/quebec wiki, gateway converters, docx) — not this session's work; never `git add -A`/`git add -u`.
+
+Review brief: `docs/260617_session-review.md`.
 
 ---
 
@@ -257,6 +279,8 @@ content (gateway-owned — leave alone).
 ---
 
 ## Next atomic step
+
+**Current (2026-06-17): YouTube-aware filter acceptance gate.** Re-run a YouTube-heavy `agentic-data-layer` query plan when the parallel run frees the shared `S2_API_KEY`; confirm authoritative talks (university lectures, conference keynotes) now appear in `accepted`, and recover Plan 2's missing semantic_scholar branch. See top block + `docs/260617_session-review.md`.
 
 **data-collectives project COMPLETE (foundation + Stage 2).** No open work.
 
