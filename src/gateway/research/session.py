@@ -26,6 +26,8 @@ import re
 from datetime import datetime, timezone
 from typing import TYPE_CHECKING
 
+from gateway import frontmatter as _fm
+from gateway import paths as _paths
 from gateway.research import source_map as _source_map
 
 if TYPE_CHECKING:
@@ -107,12 +109,37 @@ def promote(
         if isinstance(title, str) and title:
             seen_titles.add(title)
 
+    # NLM's `source list` drops the `url` field for some source types
+    # (YouTube especially), so a session source can arrive URL-less even
+    # though its materialized raw/ page carries the canonical URL. Index
+    # raw/ by title once so we can recover that URL (and, failing that, the
+    # real body content) — otherwise the text fallback below sends an empty
+    # source and NLM rejects it with "Please specify a source".
+    _, title_to_path, filename_to_path = _source_map._index_raw_pages()
+
     added = 0
     failed: list[tuple[str, str]] = []
     for src in session_sources:
         url = src.get("url")
+        if not (isinstance(url, str) and url):
+            url = None
         title = src.get("title")
-        if isinstance(url, str) and url:
+        if not (isinstance(title, str) and title):
+            title = None
+
+        # Recover a URL — and, as a second resort, real body content — from
+        # the raw page NLM round-tripped, keyed by title.
+        recovered_content: str | None = None
+        if url is None and title is not None:
+            rel = title_to_path.get(title) or filename_to_path.get(title)
+            if rel:
+                raw_url, raw_text = _read_raw(rel)
+                if raw_url:
+                    url = raw_url
+                elif raw_text:
+                    recovered_content = raw_text
+
+        if url is not None:
             if url in seen_urls:
                 continue
             try:
@@ -123,17 +150,17 @@ def promote(
             seen_urls.add(url)
             added += 1
             continue
-        # No URL — fall back to title-keyed dedup + text add.
-        if isinstance(title, str) and title:
+        # No URL — fall back to title-keyed dedup + text add. Prefer the
+        # real raw content; title-only (content="") remains the last resort
+        # for NLM-native sources with no raw/ page.
+        if title is not None:
             if title in seen_titles:
                 continue
-            # Source body unknown to us at this layer; the title is the
-            # only material we have. The session-notebook source itself
-            # already carries the content NotebookLM-side; this branch
-            # is the "non-URL" tail (e.g., text-only notes).
             try:
                 client.source_add_text(
-                    persistent_notebook_id, content="", title=title
+                    persistent_notebook_id,
+                    content=recovered_content or "",
+                    title=title,
                 )
             except Exception as e:  # noqa: BLE001 — per-source isolation
                 failed.append((title, str(e)))
@@ -143,6 +170,29 @@ def promote(
 
     nlm_registry.mark_promoted(domain, session_id, sources_added=added)
     return added, failed
+
+
+def _read_raw(rel: str) -> tuple[str | None, str | None]:
+    """Read a `raw/<type>/<slug>` page, returning ``(url, full_text)``.
+
+    ``url`` is the frontmatter URL when present and non-empty, else None.
+    ``full_text`` is the entire file (frontmatter + body) — matching what
+    the orchestrator's step-10 source push sends to NotebookLM for URL-less
+    sources. Returns ``(None, None)`` if the file is missing or unreadable.
+    """
+    target = _paths.knowledge_root() / f"{rel}.md"
+    try:
+        text = target.read_text(encoding="utf-8")
+    except OSError:
+        return None, None
+    try:
+        front, _ = _fm.parse(text)
+    except _fm.FrontmatterError:
+        return None, text
+    url = front.get("url")
+    if not (isinstance(url, str) and url):
+        url = None
+    return url, text
 
 
 # --- abandon ---------------------------------------------------------------
