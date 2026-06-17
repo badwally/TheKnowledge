@@ -47,9 +47,12 @@ DEFAULT_TARGET_COUNTS: dict[str, int] = {
 
 _ADAPTER_GUIDANCE: dict[str, str] = {
     "youtube": (
-        "short keyword phrases (3-7 words). prefer specific product, "
-        "protocol, channel, or vendor names; conference talks; "
-        "named frameworks. avoid full sentences."
+        "short keyword phrases (3-7 words). target authoritative talks: "
+        "university lectures and course series, conference keynotes and "
+        "seminars, named research labs, and recognized practitioners. anchor "
+        "on institutions, events, and speaker names (e.g. Stanford, MIT, "
+        "NeurIPS, a named lab or researcher) and named frameworks. avoid "
+        "tutorial and vendor-demo phrasing and full sentences."
     ),
     "arxiv": (
         "paper-language phrases. prefer noun phrases like "

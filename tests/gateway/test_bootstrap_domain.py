@@ -234,6 +234,33 @@ def test_bootstrap_synthetic_reference_in_prompt_not_in_output(kb_root):
     assert "glacier" not in final.lower()
 
 
+def test_bootstrap_prompt_instructs_channel_authority_for_video_domains(kb_root):
+    """Video/talk-heavy domains need channel_authority + speaker_expertise
+    quality_signals so the filter weights source authority over thin video
+    metadata. The policy-gen prompt must carry that instruction (the model
+    decides whether the domain is video-likely and emits the signals)."""
+    client = StubPlanClient(_good_policy_response("video-domain"))
+    result = bootstrap_domain(
+        description="A domain that draws heavily on recorded conference talks, "
+        "seminars, and lecture series with enough descriptive words",
+        slug="video-domain",
+        plan_client=client,
+    )
+    assert result.success, result.errors
+
+    prompt = client.last_prompt or ""
+    # The two signal categories the filter relies on for video sources.
+    assert "channel_authority" in prompt
+    assert "speaker_expertise" in prompt
+    # The trigger condition (video/talk sources) and its rationale.
+    assert "video" in prompt.lower()
+    assert "lecture" in prompt.lower() or "talk" in prompt.lower()
+    # Domain-agnostic: must not hard-code AI-specific venues/institutions
+    # (no surface-anchor leakage from the agentic-data-layer policy).
+    assert "NeurIPS" not in prompt
+    assert "Stanford" not in prompt
+
+
 def test_bootstrap_force_overwrites_non_promoted_policy(kb_root):
     target = policy_path("forceable")
     target.parent.mkdir(parents=True, exist_ok=True)

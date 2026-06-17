@@ -44009,3 +44009,2993 @@ finalized wiki/synthesis/2026-06-11-in-one-sentence-what-is-a.md
 ## [2026-06-11T15:09:12Z] retrieve | caller=cli | query=condo reserve-study data collective comprehensive case who captures risks | domain=data-collectives,condo-software | sections=3 | chars=3453
 
 retrieve: 'condo reserve-study data collective comprehensive case who captures risks' domain=data-collectives,condo-software sections=3 chars=3453
+
+## [2026-06-11T15:09:14Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T15-09-14Z-schema-drift.md
+
+## [2026-06-11T19:25:18Z] retrieve | caller=cli | query=Orita business model, marketing automation project status, agentic system architecture | domain= | sections=7 | chars=5948
+
+retrieve: 'Orita business model, marketing automation project status, agentic system architecture' domain=- sections=7 chars=5948
+
+## [2026-06-11T22:17:27Z] lint | scope=broken-wikilinks | broken-wikilinks=143
+
+report=.knowledge/lint/2026-06-11T22-17-27Z-broken-wikilinks.md
+
+## [2026-06-11T22:17:29Z] lint | scope=broken-wikilinks | broken-wikilinks=143
+
+report=.knowledge/lint/2026-06-11T22-17-29Z-broken-wikilinks.md
+
+## [2026-06-11T22:17:57Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-11T22-17-57Z-schema-drift.md
+
+## [2026-06-15T21:14:49Z] retrieve | caller=cli | query=Orita CMO marketing automation strategy with AI agents | domain=orita-cmo | sections=5 | chars=4083
+
+retrieve: 'Orita CMO marketing automation strategy with AI agents' domain=orita-cmo sections=5 chars=4083
+
+## [2026-06-15T21:14:50Z] retrieve | caller=cli | query=competitive positioning Clay Relevance HubSpot Breeze | domain=orita-cmo | sections=5 | chars=6286
+
+retrieve: 'competitive positioning Clay Relevance HubSpot Breeze' domain=orita-cmo sections=5 chars=6286
+
+## [2026-06-15T21:14:50Z] retrieve | caller=cli | query=workflow agent resource agent architecture marketing function | domain=orita-cmo | sections=5 | chars=4518
+
+retrieve: 'workflow agent resource agent architecture marketing function' domain=orita-cmo sections=5 chars=4518
+
+## [2026-06-15T21:15:43Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T21-15-43Z-schema-drift.md
+
+## [2026-06-15T21:15:46Z] answer | caller=cli | question=How can a single marketing executive operate a full marketing function using AI agents, and what is the operating model? | domain=orita-cmo | sections=12 | cited=2 | stripped=0 | output_tokens=563
+
+answer: 'How can a single marketing executive operate a full marketing function using AI agents, and what is the operating model?' domain=orita-cmo sections=12 cited=2 stripped=0
+
+## [2026-06-15T21:15:46Z] wiki-author | id=answer-2026-06-15-how-can-a-single-marketing-executive | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for orita-cmo
+
+## [2026-06-15T21:16:34Z] finalize | page=wiki/synthesis/2026-06-15-how-can-a-single-marketing-executive.md
+
+finalized wiki/synthesis/2026-06-15-how-can-a-single-marketing-executive.md
+
+## [2026-06-15T21:16:44Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T21-16-44Z-schema-drift.md
+
+## [2026-06-15T21:18:05Z] answer | caller=cli | question=How should Orita position competitively against Clay, Relevance AI, and HubSpot Breeze, and what is its differentiation? | domain=orita-cmo | sections=12 | cited=2 | stripped=1 | output_tokens=296
+
+answer: 'How should Orita position competitively against Clay, Relevance AI, and HubSpot Breeze, and what is its differentiation?' domain=orita-cmo sections=12 cited=2 stripped=1
+
+## [2026-06-15T21:18:05Z] wiki-author | id=answer-2026-06-15-how-should-orita-position-competitively-against | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for orita-cmo
+
+## [2026-06-15T21:18:38Z] finalize-abandon | page=wiki/synthesis/2026-06-15-how-should-orita-position-competitively-against.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-15-how-should-orita-position-competitively-against.md
+
+## [2026-06-15T21:30:55Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=start | domain=orita-cmo
+
+start research session for prompt 'Survey the competitive marketplace for Orita — an AI audience-intelligence and purchase-intent scoring layer for ecommerce brands that executes suppressions, reactivations, bot detection, and audience expansion across email (Klaviyo ecosystem), SMS, direct mail, and remarketing/ad-audience optimization. Enumerate competing products and platforms across: (1) email deliverability, list-hygiene and send-suppression; (2) SMS marketing; (3) programmatic/retargeting direct mail; (4) remarketing and ad-audience optimization; (5) advanced agentic AI customer segmentation and predictive audience intelligence (including Clay, Relevance AI, HubSpot Breeze, and CDP/predictive players). For each, identify the vendor, product, which of these channels it covers, and whether it performs agentic or AI-driven segmentation.'
+
+## [2026-06-15T21:31:28Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1772 | cache_read=0 | cache_creation=21772 | duration_ms=30792 | cost_usd=0.157218
+
+## [2026-06-15T21:31:28Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-15-survey-the-competitive-marketplace-for-orita.yaml
+
+## [2026-06-15T21:36:44Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=start | domain=orita-cmo
+
+start research session for prompt 'Survey the competitive marketplace for Orita — an AI audience-intelligence and purchase-intent scoring layer for ecommerce brands that executes suppressions, reactivations, bot detection, and audience expansion across email (Klaviyo ecosystem), SMS, direct mail, and remarketing/ad-audience optimization. Enumerate competing products and platforms across: (1) email deliverability, list-hygiene and send-suppression; (2) SMS marketing; (3) programmatic/retargeting direct mail; (4) remarketing and ad-audience optimization; (5) advanced agentic AI customer segmentation and predictive audience intelligence (including Clay, Relevance AI, HubSpot Breeze, and CDP/predictive players). For each, identify the vendor, product, which of these channels it covers, and whether it performs agentic or AI-driven segmentation.'
+
+## [2026-06-15T21:36:44Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-06-15T21:36:44Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-15T21:36:44Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-06-15T21:37:12Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-15T21:37:26Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=youtube | n=90
+
+adapter youtube returned 90 candidates
+
+## [2026-06-15T21:37:26Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=merge | n=160
+
+merged 160 candidate(s) across adapters
+
+## [2026-06-15T21:37:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=858 | cache_read=0 | cache_creation=20774 | duration_ms=13074 | cost_usd=0.045846
+
+## [2026-06-15T21:37:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1105 | cache_read=0 | cache_creation=15987 | duration_ms=15607 | cost_usd=0.037507
+
+## [2026-06-15T21:37:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1244 | cache_read=0 | cache_creation=20782 | duration_ms=17509 | cost_usd=0.047792
+
+## [2026-06-15T21:37:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1192 | cache_read=0 | cache_creation=20838 | duration_ms=17644 | cost_usd=0.047644
+
+## [2026-06-15T21:37:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1281 | cache_read=0 | cache_creation=15972 | duration_ms=18473 | cost_usd=0.038357
+
+## [2026-06-15T21:37:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1466 | cache_read=0 | cache_creation=20794 | duration_ms=21493 | cost_usd=0.048926
+
+## [2026-06-15T21:37:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1956 | cache_read=0 | cache_creation=15950 | duration_ms=23879 | cost_usd=0.041688
+
+## [2026-06-15T21:37:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1610 | cache_read=0 | cache_creation=20816 | duration_ms=24253 | cost_usd=0.049690
+
+## [2026-06-15T21:38:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1557 | cache_read=0 | cache_creation=14464 | duration_ms=20900 | cost_usd=0.036721
+
+## [2026-06-15T21:38:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1150 | cache_read=0 | cache_creation=14496 | duration_ms=16740 | cost_usd=0.034750
+
+## [2026-06-15T21:38:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1566 | cache_read=0 | cache_creation=14488 | duration_ms=21295 | cost_usd=0.036814
+
+## [2026-06-15T21:38:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1741 | cache_read=0 | cache_creation=14498 | duration_ms=20652 | cost_usd=0.037709
+
+## [2026-06-15T21:38:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1685 | cache_read=0 | cache_creation=14476 | duration_ms=20115 | cost_usd=0.037385
+
+## [2026-06-15T21:38:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1708 | cache_read=0 | cache_creation=14446 | duration_ms=23432 | cost_usd=0.037440
+
+## [2026-06-15T21:38:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1566 | cache_read=0 | cache_creation=14462 | duration_ms=20287 | cost_usd=0.036762
+
+## [2026-06-15T21:38:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1824 | cache_read=0 | cache_creation=14496 | duration_ms=25381 | cost_usd=0.038120
+
+## [2026-06-15T21:38:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1503 | cache_read=0 | cache_creation=14412 | duration_ms=19240 | cost_usd=0.036347
+
+## [2026-06-15T21:38:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1425 | cache_read=0 | cache_creation=14422 | duration_ms=19811 | cost_usd=0.035977
+
+## [2026-06-15T21:38:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1526 | cache_read=0 | cache_creation=14450 | duration_ms=19222 | cost_usd=0.036538
+
+## [2026-06-15T21:38:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1224 | cache_read=0 | cache_creation=14450 | duration_ms=17784 | cost_usd=0.035028
+
+## [2026-06-15T21:38:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1215 | cache_read=0 | cache_creation=14523 | duration_ms=17859 | cost_usd=0.035129
+
+## [2026-06-15T21:38:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1466 | cache_read=0 | cache_creation=14465 | duration_ms=21397 | cost_usd=0.036268
+
+## [2026-06-15T21:38:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3039 | cache_read=0 | cache_creation=14466 | duration_ms=33270 | cost_usd=0.044135
+
+## [2026-06-15T21:38:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1833 | cache_read=0 | cache_creation=14464 | duration_ms=22736 | cost_usd=0.038101
+
+## [2026-06-15T21:38:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1347 | cache_read=0 | cache_creation=14492 | duration_ms=17315 | cost_usd=0.035727
+
+## [2026-06-15T21:38:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1603 | cache_read=0 | cache_creation=14456 | duration_ms=21988 | cost_usd=0.036935
+
+## [2026-06-15T21:38:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1410 | cache_read=0 | cache_creation=14476 | duration_ms=20915 | cost_usd=0.036010
+
+## [2026-06-15T21:38:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1446 | cache_read=0 | cache_creation=14446 | duration_ms=19014 | cost_usd=0.036130
+
+## [2026-06-15T21:38:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1627 | cache_read=0 | cache_creation=14470 | duration_ms=19638 | cost_usd=0.037083
+
+## [2026-06-15T21:38:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1634 | cache_read=0 | cache_creation=14452 | duration_ms=20819 | cost_usd=0.037082
+
+## [2026-06-15T21:39:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1376 | cache_read=0 | cache_creation=14468 | duration_ms=17503 | cost_usd=0.035824
+
+## [2026-06-15T21:39:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1251 | cache_read=0 | cache_creation=14464 | duration_ms=17370 | cost_usd=0.035191
+
+## [2026-06-15T21:39:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1548 | cache_read=0 | cache_creation=14442 | duration_ms=20196 | cost_usd=0.036632
+
+## [2026-06-15T21:39:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=992 | cache_read=0 | cache_creation=14476 | duration_ms=14956 | cost_usd=0.033920
+
+## [2026-06-15T21:39:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1085 | cache_read=0 | cache_creation=14498 | duration_ms=17137 | cost_usd=0.034429
+
+## [2026-06-15T21:39:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1009 | cache_read=0 | cache_creation=14454 | duration_ms=13188 | cost_usd=0.033961
+
+## [2026-06-15T21:39:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1996 | cache_read=0 | cache_creation=14472 | duration_ms=23614 | cost_usd=0.038932
+
+## [2026-06-15T21:39:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1357 | cache_read=0 | cache_creation=14493 | duration_ms=17417 | cost_usd=0.035779
+
+## [2026-06-15T21:39:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1813 | cache_read=0 | cache_creation=14466 | duration_ms=26012 | cost_usd=0.038005
+
+## [2026-06-15T21:39:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1617 | cache_read=0 | cache_creation=15986 | duration_ms=19178 | cost_usd=0.040065
+
+## [2026-06-15T21:39:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1694 | cache_read=0 | cache_creation=15988 | duration_ms=21351 | cost_usd=0.040454
+
+## [2026-06-15T21:39:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1144 | cache_read=0 | cache_creation=14345 | duration_ms=16122 | cost_usd=0.034418
+
+## [2026-06-15T21:39:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1831 | cache_read=0 | cache_creation=15993 | duration_ms=23333 | cost_usd=0.041149
+
+## [2026-06-15T21:39:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1901 | cache_read=0 | cache_creation=14450 | duration_ms=23550 | cost_usd=0.038413
+
+## [2026-06-15T21:39:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1428 | cache_read=0 | cache_creation=14448 | duration_ms=19074 | cost_usd=0.036044
+
+## [2026-06-15T21:39:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1499 | cache_read=0 | cache_creation=14454 | duration_ms=18545 | cost_usd=0.036411
+
+## [2026-06-15T21:39:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1209 | cache_read=0 | cache_creation=14500 | duration_ms=16364 | cost_usd=0.035053
+
+## [2026-06-15T21:39:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1211 | cache_read=0 | cache_creation=14452 | duration_ms=15888 | cost_usd=0.034967
+
+## [2026-06-15T21:39:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=0 | cache_creation=14484 | duration_ms=17041 | cost_usd=0.036286
+
+## [2026-06-15T21:39:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1761 | cache_read=0 | cache_creation=14460 | duration_ms=22415 | cost_usd=0.037733
+
+## [2026-06-15T21:39:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1884 | cache_read=0 | cache_creation=14460 | duration_ms=24113 | cost_usd=0.038348
+
+## [2026-06-15T21:39:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1445 | cache_read=0 | cache_creation=14458 | duration_ms=18330 | cost_usd=0.036149
+
+## [2026-06-15T21:40:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1193 | cache_read=0 | cache_creation=14470 | duration_ms=15953 | cost_usd=0.034913
+
+## [2026-06-15T21:40:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1399 | cache_read=0 | cache_creation=14464 | duration_ms=17858 | cost_usd=0.035931
+
+## [2026-06-15T21:40:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1685 | cache_read=0 | cache_creation=14458 | duration_ms=22921 | cost_usd=0.037349
+
+## [2026-06-15T21:40:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1619 | cache_read=0 | cache_creation=14474 | duration_ms=19717 | cost_usd=0.037051
+
+## [2026-06-15T21:40:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1858 | cache_read=0 | cache_creation=14502 | duration_ms=22260 | cost_usd=0.038302
+
+## [2026-06-15T21:40:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1236 | cache_read=0 | cache_creation=14448 | duration_ms=17527 | cost_usd=0.035084
+
+## [2026-06-15T21:40:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1363 | cache_read=0 | cache_creation=14521 | duration_ms=16890 | cost_usd=0.035865
+
+## [2026-06-15T21:40:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3081 | cache_read=0 | cache_creation=14452 | duration_ms=36253 | cost_usd=0.044317
+
+## [2026-06-15T21:40:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1880 | cache_read=0 | cache_creation=14498 | duration_ms=23195 | cost_usd=0.038404
+
+## [2026-06-15T21:40:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=964 | cache_read=0 | cache_creation=14484 | duration_ms=14370 | cost_usd=0.033796
+
+## [2026-06-15T21:40:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1617 | cache_read=0 | cache_creation=14504 | duration_ms=25035 | cost_usd=0.037101
+
+## [2026-06-15T21:40:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1637 | cache_read=0 | cache_creation=14501 | duration_ms=21164 | cost_usd=0.037195
+
+## [2026-06-15T21:40:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2174 | cache_read=0 | cache_creation=14514 | duration_ms=30167 | cost_usd=0.039906
+
+## [2026-06-15T21:40:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=0 | cache_creation=14510 | duration_ms=17534 | cost_usd=0.036083
+
+## [2026-06-15T21:40:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2039 | cache_read=0 | cache_creation=14472 | duration_ms=24476 | cost_usd=0.039147
+
+## [2026-06-15T21:40:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1347 | cache_read=0 | cache_creation=14442 | duration_ms=16534 | cost_usd=0.035627
+
+## [2026-06-15T21:40:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1251 | cache_read=0 | cache_creation=14438 | duration_ms=16208 | cost_usd=0.035139
+
+## [2026-06-15T21:40:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2045 | cache_read=0 | cache_creation=14452 | duration_ms=28018 | cost_usd=0.039137
+
+## [2026-06-15T21:40:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2119 | cache_read=0 | cache_creation=14545 | duration_ms=24134 | cost_usd=0.039693
+
+## [2026-06-15T21:40:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1435 | cache_read=0 | cache_creation=14456 | duration_ms=18999 | cost_usd=0.036095
+
+## [2026-06-15T21:40:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1501 | cache_read=0 | cache_creation=14488 | duration_ms=20166 | cost_usd=0.036489
+
+## [2026-06-15T21:41:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1554 | cache_read=0 | cache_creation=14513 | duration_ms=20675 | cost_usd=0.036804
+
+## [2026-06-15T21:41:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1655 | cache_read=0 | cache_creation=14493 | duration_ms=19097 | cost_usd=0.037269
+
+## [2026-06-15T21:41:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2009 | cache_read=0 | cache_creation=14485 | duration_ms=23446 | cost_usd=0.039023
+
+## [2026-06-15T21:41:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=0 | cache_creation=14339 | duration_ms=35864 | cost_usd=0.035996
+
+## [2026-06-15T21:41:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1441 | cache_read=0 | cache_creation=14489 | duration_ms=18381 | cost_usd=0.036191
+
+## [2026-06-15T21:41:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1426 | cache_read=0 | cache_creation=14480 | duration_ms=19695 | cost_usd=0.036098
+
+## [2026-06-15T21:41:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1153 | cache_read=0 | cache_creation=14480 | duration_ms=17201 | cost_usd=0.034733
+
+## [2026-06-15T21:41:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1512 | cache_read=0 | cache_creation=14527 | duration_ms=18790 | cost_usd=0.036622
+
+## [2026-06-15T21:41:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=0 | cache_creation=14471 | duration_ms=19230 | cost_usd=0.036005
+
+## [2026-06-15T21:41:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1157 | cache_read=0 | cache_creation=14494 | duration_ms=16285 | cost_usd=0.034781
+
+## [2026-06-15T21:41:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1529 | cache_read=0 | cache_creation=14497 | duration_ms=19188 | cost_usd=0.036647
+
+## [2026-06-15T21:41:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1359 | cache_read=0 | cache_creation=14517 | duration_ms=17966 | cost_usd=0.035837
+
+## [2026-06-15T21:41:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1802 | cache_read=0 | cache_creation=14490 | duration_ms=24175 | cost_usd=0.037998
+
+## [2026-06-15T21:41:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2121 | cache_read=0 | cache_creation=14489 | duration_ms=25716 | cost_usd=0.039591
+
+## [2026-06-15T21:41:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1302 | cache_read=0 | cache_creation=14477 | duration_ms=16414 | cost_usd=0.035472
+
+## [2026-06-15T21:41:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1870 | cache_read=0 | cache_creation=14496 | duration_ms=22404 | cost_usd=0.038350
+
+## [2026-06-15T21:41:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1200 | cache_read=0 | cache_creation=14477 | duration_ms=17999 | cost_usd=0.034962
+
+## [2026-06-15T21:41:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1959 | cache_read=0 | cache_creation=14362 | duration_ms=22261 | cost_usd=0.038527
+
+## [2026-06-15T21:41:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1970 | cache_read=0 | cache_creation=14494 | duration_ms=25638 | cost_usd=0.038846
+
+## [2026-06-15T21:42:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1676 | cache_read=0 | cache_creation=14464 | duration_ms=21935 | cost_usd=0.037316
+
+## [2026-06-15T21:42:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2099 | cache_read=0 | cache_creation=14475 | duration_ms=24430 | cost_usd=0.039453
+
+## [2026-06-15T21:42:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1635 | cache_read=0 | cache_creation=15998 | duration_ms=20881 | cost_usd=0.040179
+
+## [2026-06-15T21:42:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1164 | cache_read=0 | cache_creation=14509 | duration_ms=15395 | cost_usd=0.034846
+
+## [2026-06-15T21:42:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1274 | cache_read=0 | cache_creation=14501 | duration_ms=16088 | cost_usd=0.035380
+
+## [2026-06-15T21:42:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1333 | cache_read=0 | cache_creation=14505 | duration_ms=18193 | cost_usd=0.035683
+
+## [2026-06-15T21:42:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1690 | cache_read=0 | cache_creation=14483 | duration_ms=25698 | cost_usd=0.037424
+
+## [2026-06-15T21:42:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1808 | cache_read=0 | cache_creation=14488 | duration_ms=22758 | cost_usd=0.038024
+
+## [2026-06-15T21:42:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1392 | cache_read=0 | cache_creation=14496 | duration_ms=23104 | cost_usd=0.035960
+
+## [2026-06-15T21:42:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1266 | cache_read=0 | cache_creation=14454 | duration_ms=93427 | cost_usd=0.035246
+
+## [2026-06-15T21:42:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2145 | cache_read=0 | cache_creation=14490 | duration_ms=25890 | cost_usd=0.039713
+
+## [2026-06-15T21:42:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1465 | cache_read=0 | cache_creation=14489 | duration_ms=21566 | cost_usd=0.036311
+
+## [2026-06-15T21:42:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1926 | cache_read=0 | cache_creation=14484 | duration_ms=26001 | cost_usd=0.038606
+
+## [2026-06-15T21:42:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1631 | cache_read=0 | cache_creation=14515 | duration_ms=21532 | cost_usd=0.037193
+
+## [2026-06-15T21:42:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2019 | cache_read=0 | cache_creation=14499 | duration_ms=24661 | cost_usd=0.039101
+
+## [2026-06-15T21:42:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1907 | cache_read=0 | cache_creation=14376 | duration_ms=22160 | cost_usd=0.038295
+
+## [2026-06-15T21:42:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1876 | cache_read=0 | cache_creation=14503 | duration_ms=22255 | cost_usd=0.038394
+
+## [2026-06-15T21:42:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1446 | cache_read=0 | cache_creation=14491 | duration_ms=19520 | cost_usd=0.036220
+
+## [2026-06-15T21:42:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1982 | cache_read=0 | cache_creation=14515 | duration_ms=24359 | cost_usd=0.038948
+
+## [2026-06-15T21:42:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1344 | cache_read=0 | cache_creation=16003 | duration_ms=19559 | cost_usd=0.038734
+
+## [2026-06-15T21:43:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1176 | cache_read=0 | cache_creation=16003 | duration_ms=14805 | cost_usd=0.037894
+
+## [2026-06-15T21:43:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1557 | cache_read=0 | cache_creation=16002 | duration_ms=22503 | cost_usd=0.039797
+
+## [2026-06-15T21:43:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1912 | cache_read=0 | cache_creation=16026 | duration_ms=22714 | cost_usd=0.041620
+
+## [2026-06-15T21:43:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1416 | cache_read=0 | cache_creation=16020 | duration_ms=17139 | cost_usd=0.039128
+
+## [2026-06-15T21:43:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1521 | cache_read=0 | cache_creation=16002 | duration_ms=18421 | cost_usd=0.039617
+
+## [2026-06-15T21:43:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=0 | cache_creation=16017 | duration_ms=17933 | cost_usd=0.039507
+
+## [2026-06-15T21:43:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1763 | cache_read=0 | cache_creation=16024 | duration_ms=21703 | cost_usd=0.040871
+
+## [2026-06-15T21:43:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2848 | cache_read=0 | cache_creation=16000 | duration_ms=31866 | cost_usd=0.046248
+
+## [2026-06-15T21:43:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1175 | cache_read=0 | cache_creation=16008 | duration_ms=14743 | cost_usd=0.037899
+
+## [2026-06-15T21:43:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1453 | cache_read=0 | cache_creation=16007 | duration_ms=18520 | cost_usd=0.039287
+
+## [2026-06-15T21:43:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=0 | cache_creation=16011 | duration_ms=23706 | cost_usd=0.042315
+
+## [2026-06-15T21:43:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1722 | cache_read=0 | cache_creation=16004 | duration_ms=20499 | cost_usd=0.040626
+
+## [2026-06-15T21:43:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1660 | cache_read=0 | cache_creation=14390 | duration_ms=18580 | cost_usd=0.037088
+
+## [2026-06-15T21:43:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1474 | cache_read=0 | cache_creation=15990 | duration_ms=17189 | cost_usd=0.039358
+
+## [2026-06-15T21:43:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1526 | cache_read=0 | cache_creation=14377 | duration_ms=22818 | cost_usd=0.036392
+
+## [2026-06-15T21:43:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1307 | cache_read=0 | cache_creation=16120 | duration_ms=16323 | cost_usd=0.038783
+
+## [2026-06-15T21:43:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1465 | cache_read=0 | cache_creation=16032 | duration_ms=20291 | cost_usd=0.039397
+
+## [2026-06-15T21:43:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3003 | cache_read=0 | cache_creation=16038 | duration_ms=34700 | cost_usd=0.047099
+
+## [2026-06-15T21:43:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1418 | cache_read=0 | cache_creation=16008 | duration_ms=17797 | cost_usd=0.039114
+
+## [2026-06-15T21:43:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1438 | cache_read=0 | cache_creation=16015 | duration_ms=17463 | cost_usd=0.039228
+
+## [2026-06-15T21:44:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1313 | cache_read=0 | cache_creation=16013 | duration_ms=17120 | cost_usd=0.038599
+
+## [2026-06-15T21:44:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1740 | cache_read=0 | cache_creation=16014 | duration_ms=22227 | cost_usd=0.040736
+
+## [2026-06-15T21:44:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1789 | cache_read=0 | cache_creation=14401 | duration_ms=25975 | cost_usd=0.037755
+
+## [2026-06-15T21:44:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1566 | cache_read=0 | cache_creation=15996 | duration_ms=18258 | cost_usd=0.039830
+
+## [2026-06-15T21:44:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3314 | cache_read=0 | cache_creation=16021 | duration_ms=35336 | cost_usd=0.048620
+
+## [2026-06-15T21:44:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1834 | cache_read=0 | cache_creation=16002 | duration_ms=19490 | cost_usd=0.041182
+
+## [2026-06-15T21:44:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1812 | cache_read=0 | cache_creation=16045 | duration_ms=28355 | cost_usd=0.041158
+
+## [2026-06-15T21:44:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1209 | cache_read=0 | cache_creation=16000 | duration_ms=17193 | cost_usd=0.038053
+
+## [2026-06-15T21:44:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1361 | cache_read=0 | cache_creation=16004 | duration_ms=17646 | cost_usd=0.038821
+
+## [2026-06-15T21:44:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2050 | cache_read=0 | cache_creation=15990 | duration_ms=24606 | cost_usd=0.042238
+
+## [2026-06-15T21:44:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2293 | cache_read=0 | cache_creation=15995 | duration_ms=26620 | cost_usd=0.043463
+
+## [2026-06-15T21:44:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1260 | cache_read=0 | cache_creation=16023 | duration_ms=15875 | cost_usd=0.038354
+
+## [2026-06-15T21:44:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2229 | cache_read=0 | cache_creation=16009 | duration_ms=26006 | cost_usd=0.043171
+
+## [2026-06-15T21:44:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2301 | cache_read=0 | cache_creation=16016 | duration_ms=28137 | cost_usd=0.043545
+
+## [2026-06-15T21:44:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1847 | cache_read=0 | cache_creation=16016 | duration_ms=20844 | cost_usd=0.041275
+
+## [2026-06-15T21:44:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1262 | cache_read=0 | cache_creation=16028 | duration_ms=20162 | cost_usd=0.038374
+
+## [2026-06-15T21:44:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1656 | cache_read=0 | cache_creation=15995 | duration_ms=19401 | cost_usd=0.040278
+
+## [2026-06-15T21:44:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1809 | cache_read=0 | cache_creation=16126 | duration_ms=21375 | cost_usd=0.041305
+
+## [2026-06-15T21:44:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1237 | cache_read=0 | cache_creation=15974 | duration_ms=18127 | cost_usd=0.038141
+
+## [2026-06-15T21:44:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1563 | cache_read=0 | cache_creation=15999 | duration_ms=19551 | cost_usd=0.039821
+
+## [2026-06-15T21:44:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1882 | cache_read=8767 | cache_creation=12057 | duration_ms=22421 | cost_usd=0.034409
+
+## [2026-06-15T21:44:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1177 | cache_read=0 | cache_creation=15983 | duration_ms=15863 | cost_usd=0.037859
+
+## [2026-06-15T21:44:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1062 | cache_read=0 | cache_creation=16002 | duration_ms=15249 | cost_usd=0.037322
+
+## [2026-06-15T21:45:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1179 | cache_read=0 | cache_creation=16012 | duration_ms=14264 | cost_usd=0.037927
+
+## [2026-06-15T21:45:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1625 | cache_read=0 | cache_creation=15975 | duration_ms=20666 | cost_usd=0.040083
+
+## [2026-06-15T21:45:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1677 | cache_read=0 | cache_creation=16018 | duration_ms=18822 | cost_usd=0.040429
+
+## [2026-06-15T21:45:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1247 | cache_read=0 | cache_creation=14389 | duration_ms=16358 | cost_usd=0.035021
+
+## [2026-06-15T21:45:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2742 | cache_read=0 | cache_creation=14356 | duration_ms=31827 | cost_usd=0.042430
+
+## [2026-06-15T21:45:21Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=filter | n=0
+
+0 candidate(s) cleared threshold
+
+## [2026-06-15T21:48:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1854 | cache_read=0 | cache_creation=16992 | duration_ms=24680 | cost_usd=0.043262
+
+## [2026-06-15T21:49:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3870 | cache_read=0 | cache_creation=19467 | duration_ms=43953 | cost_usd=0.058292
+
+## [2026-06-15T21:51:06Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=start | domain=orita-cmo
+
+start research session for prompt 'Survey the competitive marketplace for Orita — an AI audience-intelligence and purchase-intent scoring layer for ecommerce brands that executes suppressions, reactivations, bot detection, and audience expansion across email (Klaviyo ecosystem), SMS, direct mail, and remarketing/ad-audience optimization. Enumerate competing products and platforms across: (1) email deliverability, list-hygiene and send-suppression; (2) SMS marketing; (3) programmatic/retargeting direct mail; (4) remarketing and ad-audience optimization; (5) advanced agentic AI customer segmentation and predictive audience intelligence (including Clay, Relevance AI, HubSpot Breeze, and CDP/predictive players). For each, identify the vendor, product, which of these channels it covers, and whether it performs agentic or AI-driven segmentation.'
+
+## [2026-06-15T21:51:06Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=arxiv | n=0
+
+adapter arxiv skipped (no queries in plan)
+
+## [2026-06-15T21:51:06Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-15T21:51:06Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-06-15T21:51:15Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-15T21:51:35Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=search | adapter=youtube | n=90
+
+adapter youtube returned 90 candidates
+
+## [2026-06-15T21:51:35Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=merge | n=160
+
+merged 160 candidate(s) across adapters
+
+## [2026-06-15T21:51:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1251 | cache_read=0 | cache_creation=46562 | duration_ms=16284 | cost_usd=0.099387
+
+## [2026-06-15T21:51:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=0 | cache_creation=46580 | duration_ms=17149 | cost_usd=0.099798
+
+## [2026-06-15T21:52:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1551 | cache_read=0 | cache_creation=46582 | duration_ms=21367 | cost_usd=0.100927
+
+## [2026-06-15T21:52:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1325 | cache_read=34264 | cache_creation=12331 | duration_ms=22117 | cost_usd=0.034721
+
+## [2026-06-15T21:52:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1578 | cache_read=0 | cache_creation=46570 | duration_ms=23668 | cost_usd=0.101038
+
+## [2026-06-15T21:52:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2015 | cache_read=0 | cache_creation=46558 | duration_ms=24809 | cost_usd=0.103199
+
+## [2026-06-15T21:52:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1918 | cache_read=0 | cache_creation=46626 | duration_ms=27294 | cost_usd=0.102850
+
+## [2026-06-15T21:52:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2363 | cache_read=0 | cache_creation=60267 | duration_ms=32257 | cost_usd=0.132357
+
+## [2026-06-15T21:52:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1938 | cache_read=0 | cache_creation=16000 | duration_ms=23833 | cost_usd=0.041698
+
+## [2026-06-15T21:52:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1763 | cache_read=0 | cache_creation=16010 | duration_ms=19362 | cost_usd=0.040843
+
+## [2026-06-15T21:52:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2472 | cache_read=0 | cache_creation=14351 | duration_ms=31565 | cost_usd=0.041070
+
+## [2026-06-15T21:52:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1942 | cache_read=0 | cache_creation=15988 | duration_ms=23471 | cost_usd=0.041694
+
+## [2026-06-15T21:52:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2389 | cache_read=0 | cache_creation=15958 | duration_ms=27171 | cost_usd=0.043869
+
+## [2026-06-15T21:52:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2193 | cache_read=0 | cache_creation=16008 | duration_ms=25090 | cost_usd=0.042989
+
+## [2026-06-15T21:52:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1180 | cache_read=0 | cache_creation=15934 | duration_ms=14627 | cost_usd=0.037776
+
+## [2026-06-15T21:52:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2170 | cache_read=0 | cache_creation=15974 | duration_ms=27292 | cost_usd=0.042806
+
+## [2026-06-15T21:52:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1590 | cache_read=0 | cache_creation=15924 | duration_ms=20063 | cost_usd=0.039806
+
+## [2026-06-15T21:52:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4119 | cache_read=0 | cache_creation=16008 | duration_ms=43454 | cost_usd=0.052619
+
+## [2026-06-15T21:52:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1340 | cache_read=0 | cache_creation=15962 | duration_ms=18037 | cost_usd=0.038632
+
+## [2026-06-15T21:52:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1287 | cache_read=0 | cache_creation=15962 | duration_ms=17842 | cost_usd=0.038367
+
+## [2026-06-15T21:52:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1787 | cache_read=0 | cache_creation=15978 | duration_ms=21994 | cost_usd=0.040899
+
+## [2026-06-15T21:52:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=0 | cache_creation=16035 | duration_ms=17865 | cost_usd=0.038488
+
+## [2026-06-15T21:53:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1558 | cache_read=0 | cache_creation=16004 | duration_ms=18713 | cost_usd=0.039806
+
+## [2026-06-15T21:53:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2800 | cache_read=0 | cache_creation=15977 | duration_ms=32929 | cost_usd=0.045962
+
+## [2026-06-15T21:53:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1915 | cache_read=0 | cache_creation=15968 | duration_ms=23194 | cost_usd=0.041519
+
+## [2026-06-15T21:53:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2319 | cache_read=0 | cache_creation=15976 | duration_ms=26324 | cost_usd=0.043555
+
+## [2026-06-15T21:53:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1379 | cache_read=0 | cache_creation=15958 | duration_ms=16675 | cost_usd=0.038819
+
+## [2026-06-15T21:53:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1607 | cache_read=0 | cache_creation=15988 | duration_ms=20335 | cost_usd=0.040019
+
+## [2026-06-15T21:53:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1688 | cache_read=0 | cache_creation=15964 | duration_ms=20695 | cost_usd=0.040376
+
+## [2026-06-15T21:53:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1888 | cache_read=0 | cache_creation=15982 | duration_ms=22745 | cost_usd=0.041412
+
+## [2026-06-15T21:53:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=867 | cache_read=7037 | cache_creation=13771 | duration_ms=12597 | cost_usd=0.032589
+
+## [2026-06-15T21:53:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1247 | cache_read=0 | cache_creation=16010 | duration_ms=15794 | cost_usd=0.038263
+
+## [2026-06-15T21:53:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1452 | cache_read=8767 | cache_creation=12037 | duration_ms=17772 | cost_usd=0.032219
+
+## [2026-06-15T21:53:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1898 | cache_read=0 | cache_creation=15980 | duration_ms=22191 | cost_usd=0.041458
+
+## [2026-06-15T21:53:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1730 | cache_read=0 | cache_creation=15954 | duration_ms=23157 | cost_usd=0.040566
+
+## [2026-06-15T21:53:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1353 | cache_read=0 | cache_creation=15978 | duration_ms=18866 | cost_usd=0.038729
+
+## [2026-06-15T21:53:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1163 | cache_read=0 | cache_creation=15966 | duration_ms=16884 | cost_usd=0.037755
+
+## [2026-06-15T21:53:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1318 | cache_read=0 | cache_creation=16005 | duration_ms=16141 | cost_usd=0.038608
+
+## [2026-06-15T21:53:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1806 | cache_read=8767 | cache_creation=12029 | duration_ms=32189 | cost_usd=0.033973
+
+## [2026-06-15T21:53:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1147 | cache_read=0 | cache_creation=15988 | duration_ms=15128 | cost_usd=0.037719
+
+## [2026-06-15T21:53:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1379 | cache_read=0 | cache_creation=15986 | duration_ms=16155 | cost_usd=0.038875
+
+## [2026-06-15T21:53:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1099 | cache_read=0 | cache_creation=15970 | duration_ms=15024 | cost_usd=0.037443
+
+## [2026-06-15T21:53:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1390 | cache_read=0 | cache_creation=15962 | duration_ms=19348 | cost_usd=0.038882
+
+## [2026-06-15T21:53:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2042 | cache_read=0 | cache_creation=15993 | duration_ms=23820 | cost_usd=0.042204
+
+## [2026-06-15T21:53:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1073 | cache_read=0 | cache_creation=15972 | duration_ms=16144 | cost_usd=0.037317
+
+## [2026-06-15T21:54:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1459 | cache_read=0 | cache_creation=15960 | duration_ms=19351 | cost_usd=0.039223
+
+## [2026-06-15T21:54:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1063 | cache_read=0 | cache_creation=16012 | duration_ms=13740 | cost_usd=0.037347
+
+## [2026-06-15T21:54:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1780 | cache_read=0 | cache_creation=15966 | duration_ms=20618 | cost_usd=0.040840
+
+## [2026-06-15T21:54:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1280 | cache_read=0 | cache_creation=15996 | duration_ms=15586 | cost_usd=0.038400
+
+## [2026-06-15T21:54:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1439 | cache_read=0 | cache_creation=15964 | duration_ms=21078 | cost_usd=0.039131
+
+## [2026-06-15T21:54:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1210 | cache_read=0 | cache_creation=15970 | duration_ms=15690 | cost_usd=0.037998
+
+## [2026-06-15T21:54:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=0 | cache_creation=15982 | duration_ms=16973 | cost_usd=0.038762
+
+## [2026-06-15T21:54:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1365 | cache_read=0 | cache_creation=15976 | duration_ms=19526 | cost_usd=0.038785
+
+## [2026-06-15T21:54:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1246 | cache_read=0 | cache_creation=16014 | duration_ms=16490 | cost_usd=0.038266
+
+## [2026-06-15T21:54:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2487 | cache_read=0 | cache_creation=15972 | duration_ms=28958 | cost_usd=0.044387
+
+## [2026-06-15T21:54:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1265 | cache_read=0 | cache_creation=15986 | duration_ms=16320 | cost_usd=0.038305
+
+## [2026-06-15T21:54:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2735 | cache_read=0 | cache_creation=15970 | duration_ms=30498 | cost_usd=0.045623
+
+## [2026-06-15T21:54:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2086 | cache_read=0 | cache_creation=15964 | duration_ms=25193 | cost_usd=0.042366
+
+## [2026-06-15T21:54:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1159 | cache_read=0 | cache_creation=15960 | duration_ms=15427 | cost_usd=0.037723
+
+## [2026-06-15T21:54:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1561 | cache_read=0 | cache_creation=16026 | duration_ms=18248 | cost_usd=0.039865
+
+## [2026-06-15T21:54:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1489 | cache_read=0 | cache_creation=16010 | duration_ms=18507 | cost_usd=0.039473
+
+## [2026-06-15T21:54:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1811 | cache_read=0 | cache_creation=16033 | duration_ms=24695 | cost_usd=0.041129
+
+## [2026-06-15T21:54:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1359 | cache_read=0 | cache_creation=16022 | duration_ms=17815 | cost_usd=0.038847
+
+## [2026-06-15T21:54:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2180 | cache_read=0 | cache_creation=16016 | duration_ms=25066 | cost_usd=0.042940
+
+## [2026-06-15T21:54:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1437 | cache_read=0 | cache_creation=15984 | duration_ms=17600 | cost_usd=0.039161
+
+## [2026-06-15T21:54:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2188 | cache_read=0 | cache_creation=16013 | duration_ms=25248 | cost_usd=0.042974
+
+## [2026-06-15T21:54:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2255 | cache_read=0 | cache_creation=15996 | duration_ms=26330 | cost_usd=0.043275
+
+## [2026-06-15T21:55:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1265 | cache_read=0 | cache_creation=16057 | duration_ms=16703 | cost_usd=0.038447
+
+## [2026-06-15T21:55:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=957 | cache_read=0 | cache_creation=15950 | duration_ms=12552 | cost_usd=0.036693
+
+## [2026-06-15T21:55:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1201 | cache_read=0 | cache_creation=15954 | duration_ms=18405 | cost_usd=0.037921
+
+## [2026-06-15T21:55:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2202 | cache_read=0 | cache_creation=15964 | duration_ms=26283 | cost_usd=0.042946
+
+## [2026-06-15T21:55:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1356 | cache_read=8767 | cache_creation=12017 | duration_ms=17428 | cost_usd=0.031699
+
+## [2026-06-15T21:55:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1532 | cache_read=0 | cache_creation=15968 | duration_ms=18625 | cost_usd=0.039604
+
+## [2026-06-15T21:55:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1203 | cache_read=0 | cache_creation=16025 | duration_ms=16901 | cost_usd=0.038073
+
+## [2026-06-15T21:55:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2384 | cache_read=8767 | cache_creation=12053 | duration_ms=27403 | cost_usd=0.036911
+
+## [2026-06-15T21:55:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1271 | cache_read=0 | cache_creation=16000 | duration_ms=15820 | cost_usd=0.038363
+
+## [2026-06-15T21:55:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1552 | cache_read=0 | cache_creation=16001 | duration_ms=19730 | cost_usd=0.039770
+
+## [2026-06-15T21:55:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2005 | cache_read=0 | cache_creation=14380 | duration_ms=25996 | cost_usd=0.038793
+
+## [2026-06-15T21:55:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1782 | cache_read=0 | cache_creation=15995 | duration_ms=20568 | cost_usd=0.040908
+
+## [2026-06-15T21:55:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1743 | cache_read=0 | cache_creation=15987 | duration_ms=21157 | cost_usd=0.040697
+
+## [2026-06-15T21:55:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3479 | cache_read=0 | cache_creation=15997 | duration_ms=35919 | cost_usd=0.049397
+
+## [2026-06-15T21:55:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1841 | cache_read=0 | cache_creation=16014 | duration_ms=22381 | cost_usd=0.041241
+
+## [2026-06-15T21:55:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1921 | cache_read=0 | cache_creation=15995 | duration_ms=21248 | cost_usd=0.041603
+
+## [2026-06-15T21:55:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1425 | cache_read=0 | cache_creation=16001 | duration_ms=17896 | cost_usd=0.039135
+
+## [2026-06-15T21:55:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1555 | cache_read=0 | cache_creation=16009 | duration_ms=19045 | cost_usd=0.039801
+
+## [2026-06-15T21:55:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=0 | cache_creation=16029 | duration_ms=15440 | cost_usd=0.038476
+
+## [2026-06-15T21:55:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2274 | cache_read=0 | cache_creation=16002 | duration_ms=25397 | cost_usd=0.043382
+
+## [2026-06-15T21:55:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1445 | cache_read=0 | cache_creation=15989 | duration_ms=17012 | cost_usd=0.039211
+
+## [2026-06-15T21:55:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1730 | cache_read=0 | cache_creation=16006 | duration_ms=21655 | cost_usd=0.040670
+
+## [2026-06-15T21:56:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2292 | cache_read=0 | cache_creation=16008 | duration_ms=26696 | cost_usd=0.043484
+
+## [2026-06-15T21:56:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1882 | cache_read=0 | cache_creation=16006 | duration_ms=21337 | cost_usd=0.041430
+
+## [2026-06-15T21:56:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1346 | cache_read=0 | cache_creation=15987 | duration_ms=18985 | cost_usd=0.038712
+
+## [2026-06-15T21:56:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1708 | cache_read=0 | cache_creation=15989 | duration_ms=23702 | cost_usd=0.040526
+
+## [2026-06-15T21:56:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1107 | cache_read=0 | cache_creation=15976 | duration_ms=16610 | cost_usd=0.037495
+
+## [2026-06-15T21:56:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1177 | cache_read=0 | cache_creation=15987 | duration_ms=18165 | cost_usd=0.037867
+
+## [2026-06-15T21:56:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=0 | cache_creation=15995 | duration_ms=16763 | cost_usd=0.038148
+
+## [2026-06-15T21:56:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1450 | cache_read=0 | cache_creation=16017 | duration_ms=17007 | cost_usd=0.039292
+
+## [2026-06-15T21:56:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1769 | cache_read=0 | cache_creation=16013 | duration_ms=22261 | cost_usd=0.040879
+
+## [2026-06-15T21:56:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3346 | cache_read=0 | cache_creation=15998 | duration_ms=35889 | cost_usd=0.048734
+
+## [2026-06-15T21:56:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1675 | cache_read=0 | cache_creation=16008 | duration_ms=20844 | cost_usd=0.040399
+
+## [2026-06-15T21:56:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1992 | cache_read=0 | cache_creation=16021 | duration_ms=23416 | cost_usd=0.042010
+
+## [2026-06-15T21:56:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1597 | cache_read=0 | cache_creation=16001 | duration_ms=19309 | cost_usd=0.039995
+
+## [2026-06-15T21:56:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2043 | cache_read=0 | cache_creation=14490 | duration_ms=24837 | cost_usd=0.039203
+
+## [2026-06-15T21:56:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2434 | cache_read=0 | cache_creation=16000 | duration_ms=28477 | cost_usd=0.044178
+
+## [2026-06-15T21:56:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1711 | cache_read=0 | cache_creation=15996 | duration_ms=20148 | cost_usd=0.040555
+
+## [2026-06-15T21:56:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1646 | cache_read=0 | cache_creation=16011 | duration_ms=20443 | cost_usd=0.040260
+
+## [2026-06-15T21:56:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1695 | cache_read=0 | cache_creation=16001 | duration_ms=19003 | cost_usd=0.040485
+
+## [2026-06-15T21:56:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1690 | cache_read=0 | cache_creation=16027 | duration_ms=20032 | cost_usd=0.040512
+
+## [2026-06-15T21:56:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1132 | cache_read=0 | cache_creation=16026 | duration_ms=13999 | cost_usd=0.037720
+
+## [2026-06-15T21:56:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1567 | cache_read=0 | cache_creation=14390 | duration_ms=18694 | cost_usd=0.036623
+
+## [2026-06-15T21:57:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2317 | cache_read=0 | cache_creation=14402 | duration_ms=24553 | cost_usd=0.040397
+
+## [2026-06-15T21:57:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2312 | cache_read=0 | cache_creation=16003 | duration_ms=28370 | cost_usd=0.043574
+
+## [2026-06-15T21:57:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1766 | cache_read=0 | cache_creation=16003 | duration_ms=21939 | cost_usd=0.040844
+
+## [2026-06-15T21:57:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1680 | cache_read=0 | cache_creation=16020 | duration_ms=19655 | cost_usd=0.040448
+
+## [2026-06-15T21:57:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1246 | cache_read=0 | cache_creation=16002 | duration_ms=15083 | cost_usd=0.038242
+
+## [2026-06-15T21:57:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2170 | cache_read=0 | cache_creation=16002 | duration_ms=25045 | cost_usd=0.042862
+
+## [2026-06-15T21:57:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1664 | cache_read=0 | cache_creation=16024 | duration_ms=20625 | cost_usd=0.040376
+
+## [2026-06-15T21:57:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2124 | cache_read=0 | cache_creation=16003 | duration_ms=23326 | cost_usd=0.042634
+
+## [2026-06-15T21:57:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1217 | cache_read=0 | cache_creation=16017 | duration_ms=15105 | cost_usd=0.038127
+
+## [2026-06-15T21:57:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3245 | cache_read=0 | cache_creation=16000 | duration_ms=34770 | cost_usd=0.048233
+
+## [2026-06-15T21:57:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1514 | cache_read=0 | cache_creation=16007 | duration_ms=19947 | cost_usd=0.039592
+
+## [2026-06-15T21:57:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1068 | cache_read=0 | cache_creation=14383 | duration_ms=14410 | cost_usd=0.034114
+
+## [2026-06-15T21:57:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1601 | cache_read=0 | cache_creation=16013 | duration_ms=19852 | cost_usd=0.040039
+
+## [2026-06-15T21:57:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=0 | cache_creation=16015 | duration_ms=18711 | cost_usd=0.040188
+
+## [2026-06-15T21:57:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1794 | cache_read=0 | cache_creation=16038 | duration_ms=20859 | cost_usd=0.041054
+
+## [2026-06-15T21:57:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1263 | cache_read=0 | cache_creation=16002 | duration_ms=15552 | cost_usd=0.038327
+
+## [2026-06-15T21:57:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1776 | cache_read=0 | cache_creation=14386 | duration_ms=24331 | cost_usd=0.037660
+
+## [2026-06-15T21:57:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1271 | cache_read=0 | cache_creation=16007 | duration_ms=14579 | cost_usd=0.038377
+
+## [2026-06-15T21:57:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1435 | cache_read=0 | cache_creation=15990 | duration_ms=20785 | cost_usd=0.039163
+
+## [2026-06-15T21:57:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1887 | cache_read=0 | cache_creation=16005 | duration_ms=21933 | cost_usd=0.041453
+
+## [2026-06-15T21:57:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1353 | cache_read=0 | cache_creation=16021 | duration_ms=16531 | cost_usd=0.038815
+
+## [2026-06-15T21:57:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=0 | cache_creation=16008 | duration_ms=18249 | cost_usd=0.040174
+
+## [2026-06-15T21:57:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1323 | cache_read=0 | cache_creation=16014 | duration_ms=15930 | cost_usd=0.038651
+
+## [2026-06-15T21:57:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1449 | cache_read=0 | cache_creation=16026 | duration_ms=16619 | cost_usd=0.039305
+
+## [2026-06-15T21:58:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1446 | cache_read=0 | cache_creation=15993 | duration_ms=19331 | cost_usd=0.039224
+
+## [2026-06-15T21:58:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1429 | cache_read=0 | cache_creation=15996 | duration_ms=17637 | cost_usd=0.039145
+
+## [2026-06-15T21:58:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1056 | cache_read=0 | cache_creation=16000 | duration_ms=14204 | cost_usd=0.037288
+
+## [2026-06-15T21:58:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1183 | cache_read=0 | cache_creation=15990 | duration_ms=15533 | cost_usd=0.037903
+
+## [2026-06-15T21:58:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1219 | cache_read=0 | cache_creation=16002 | duration_ms=16901 | cost_usd=0.038107
+
+## [2026-06-15T21:58:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1221 | cache_read=0 | cache_creation=15995 | duration_ms=17138 | cost_usd=0.038103
+
+## [2026-06-15T21:58:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2098 | cache_read=0 | cache_creation=16045 | duration_ms=23139 | cost_usd=0.042588
+
+## [2026-06-15T21:58:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3292 | cache_read=0 | cache_creation=14390 | duration_ms=35044 | cost_usd=0.045248
+
+## [2026-06-15T21:58:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1766 | cache_read=0 | cache_creation=16009 | duration_ms=21393 | cost_usd=0.040856
+
+## [2026-06-15T21:58:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1445 | cache_read=0 | cache_creation=16004 | duration_ms=19200 | cost_usd=0.039241
+
+## [2026-06-15T21:58:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1297 | cache_read=8767 | cache_creation=12076 | duration_ms=16582 | cost_usd=0.031522
+
+## [2026-06-15T21:58:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1222 | cache_read=0 | cache_creation=15975 | duration_ms=15231 | cost_usd=0.038068
+
+## [2026-06-15T21:58:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1397 | cache_read=0 | cache_creation=16016 | duration_ms=18699 | cost_usd=0.039025
+
+## [2026-06-15T21:58:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=0 | cache_creation=16016 | duration_ms=20280 | cost_usd=0.039820
+
+## [2026-06-15T21:58:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1645 | cache_read=0 | cache_creation=16028 | duration_ms=20283 | cost_usd=0.040289
+
+## [2026-06-15T21:58:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1005 | cache_read=0 | cache_creation=15995 | duration_ms=14061 | cost_usd=0.037023
+
+## [2026-06-15T21:58:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1719 | cache_read=0 | cache_creation=16013 | duration_ms=19863 | cost_usd=0.040629
+
+## [2026-06-15T21:58:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1008 | cache_read=0 | cache_creation=15993 | duration_ms=12499 | cost_usd=0.037034
+
+## [2026-06-15T21:58:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=0 | cache_creation=15987 | duration_ms=17404 | cost_usd=0.038707
+
+## [2026-06-15T21:58:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1366 | cache_read=0 | cache_creation=15989 | duration_ms=16264 | cost_usd=0.038816
+
+## [2026-06-15T21:58:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1167 | cache_read=0 | cache_creation=16004 | duration_ms=15941 | cost_usd=0.037851
+
+## [2026-06-15T21:58:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1500 | cache_read=0 | cache_creation=16012 | duration_ms=18341 | cost_usd=0.039532
+
+## [2026-06-15T21:58:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1315 | cache_read=0 | cache_creation=15975 | duration_ms=15821 | cost_usd=0.038533
+
+## [2026-06-15T21:58:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=0 | cache_creation=16018 | duration_ms=18144 | cost_usd=0.039424
+
+## [2026-06-15T21:59:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1415 | cache_read=0 | cache_creation=16014 | duration_ms=18624 | cost_usd=0.039111
+
+## [2026-06-15T21:59:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1602 | cache_read=0 | cache_creation=15986 | duration_ms=20393 | cost_usd=0.039990
+
+## [2026-06-15T21:59:11Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=filter | n=1
+
+1 candidate(s) cleared threshold
+
+## [2026-06-15T21:59:13Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=materialize | n=1
+
+materialized 1 source(s) to raw/
+
+## [2026-06-15T21:59:13Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=corpus_quality | n=1 | median_words=761 | sparse_n=0 | sparse_frac=0.0
+
+corpus quality: 1 sources, median 761 words, 0/1 sparse (<300 words)
+
+## [2026-06-15T21:59:13Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=nlm_persistent | notebook_id=adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+persistent notebook adc34eb9-c798-4530-8b0d-4b166a0bc38a
+
+## [2026-06-15T21:59:14Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=nlm_session | notebook_id=a60c243a-d26f-409d-9f6b-1f305caa4438
+
+created session notebook a60c243a-d26f-409d-9f6b-1f305caa4438
+
+## [2026-06-15T21:59:16Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=source_add | target=https://www.cbinsights.com/company/orita/alternatives-competitors
+
+error: `nlm source add a60c243a-d26f-409d-9f6b-1f305caa4438 --url https://www.cbinsights.com/company/orita/alternatives-competitors --wait` exited 1: Adding https://www.cbinsights.com/company/orita/alternatives-competitors and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-15T21:59:16Z] research | session_id=2026-06-15-survey-the-competitive-marketplace-for-orita | step=abandon
+
+abandoned session: step 10: no sources successfully pushed (1 failed, 0 succeeded)
+
+## [2026-06-15T22:08:57Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T22-08-57Z-schema-drift.md
+
+## [2026-06-15T22:11:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1748 | cache_read=0 | cache_creation=16141 | duration_ms=21499 | cost_usd=0.041030
+
+## [2026-06-15T22:11:32Z] ingest | id=web-2026-05-19-2c0 | type=web | domains=orita-cmo | filter=rejected | domain=orita-cmo | score=0.3
+
+raw=raw/web/web-2026-05-19-2c0.md (wiki not written: filter decision=rejected)
+
+## [2026-06-15T22:11:47Z] filter-correction | id=web-2026-05-19-2c0 | domain=orita-cmo | decision=include | original_score=0.3
+
+rationale='Black Crow AI is a direct Orita-class competitor: full-funnel predictive AI / purchase-intent modeling for ecommerce growth. Core competitive-intelligence subject for orita-cmo regardless of homepage marketing density.'
+
+## [2026-06-15T22:11:48Z] ingest | id=web-2026-05-19-2c0 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2026-05-19-2c0.md wiki=wiki/sources/web-2026-05-19-2c0.md
+
+## [2026-06-15T22:14:01Z] llm-call | op=plan_authorship | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=8975 | cache_read=0 | cache_creation=19601 | duration_ms=130483 | cost_usd=0.252237
+
+## [2026-06-15T22:14:02Z] wiki-author | id=web-2026-05-19-2c0 | updates=2 | created=1 | updated=1 | contradictions=0 | draft=yes
+
+Black Crow AI is a user-confirmed direct Orita-class competitor in full-funnel ecommerce predictive AI and purchase-intent modeling; the source warrants a new competitor entity page and a competitive-landscape addition to the Orita entity page.
+
+## [2026-06-15T22:15:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1772 | cache_read=0 | cache_creation=16790 | duration_ms=22161 | cost_usd=0.042448
+
+## [2026-06-15T22:15:33Z] ingest | id=web-2026-05-28-0cb | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=0.8
+
+raw=raw/web/web-2026-05-28-0cb.md wiki=wiki/sources/web-2026-05-28-0cb.md
+
+## [2026-06-15T22:18:14Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=15180 | cache_read=0 | cache_creation=28127 | duration_ms=158972 | cost_usd=0.660795
+
+## [2026-06-15T22:18:16Z] wiki-author | id=web-2026-05-28-0cb | updates=6 | created=6 | updated=0 | contradictions=0 | draft=yes
+
+Source is a 2026-05-28 M&A announcement (OuterSignal acquires Monocle) directly relevant to Orita's competitive landscape; warrants new entity pages for both companies and their CEOs, plus concept pages capturing the 'full-stack agentic personalization platform' category framing and the broader martech-consolidation theme the deal exemplifies.
+
+## [2026-06-15T22:18:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2731 | cache_read=0 | cache_creation=17149 | duration_ms=33580 | cost_usd=0.047961
+
+## [2026-06-15T22:18:54Z] ingest | id=web-2025-04-01-266 | type=web | domains=orita-cmo | filter=rejected | domain=orita-cmo | score=0.45
+
+raw=raw/web/web-2025-04-01-266.md (wiki not written: filter decision=rejected)
+
+## [2026-06-15T22:18:54Z] filter-correction | id=web-2025-04-01-266 | domain=orita-cmo | decision=include | original_score=0.45
+
+rationale='Direct Orita-class competitor or competitive-intelligence source for orita-cmo (AI audience-intelligence / purchase-intent scoring and ecommerce MarTech competitive set).'
+
+## [2026-06-15T22:18:56Z] ingest | id=web-2025-04-01-266 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-04-01-266.md wiki=wiki/sources/web-2025-04-01-266.md
+
+## [2026-06-15T22:24:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2893 | cache_read=0 | cache_creation=17907 | duration_ms=32900 | cost_usd=0.050287
+
+## [2026-06-15T22:24:32Z] ingest | id=web-2025-02-03-42a | type=web | domains=orita-cmo | filter=review | domain=orita-cmo | score=0.55
+
+raw=raw/web/web-2025-02-03-42a.md (wiki not written: filter decision=review)
+
+## [2026-06-15T22:26:51Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7321 | cache_read=4696 | cache_creation=23893 | duration_ms=88712 | cost_usd=0.424328
+
+## [2026-06-15T22:26:52Z] wiki-author | id=web-2025-04-01-266 | updates=2 | created=2 | updated=0 | contradictions=0 | draft=yes
+
+Source is a Shopify App Store listing for Clustie, a direct Orita-class competitor with concrete pricing, channel, and vendor data warranting a new product entity and its developer organization; existing pages are only available in truncated form, so updates are deferred to a load-aware pass.
+
+## [2026-06-15T22:26:52Z] filter-correction | id=web-2025-02-03-42a | domain=orita-cmo | decision=include | original_score=0.55
+
+rationale='Direct Orita-class competitor / competitive-intelligence source for orita-cmo (AI audience-intelligence, purchase-intent scoring, ecommerce MarTech competitive set).'
+
+## [2026-06-15T22:26:54Z] ingest | id=web-2025-02-03-42a | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2025-02-03-42a.md wiki=wiki/sources/web-2025-02-03-42a.md
+
+## [2026-06-15T22:29:15Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=13342 | cache_read=4696 | cache_creation=24895 | duration_ms=139259 | cost_usd=0.584873
+
+## [2026-06-15T22:29:18Z] wiki-author | id=web-2025-02-03-42a | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+Source is a vendor-comparison naming four AI-decisioning competitors (Aampe, Hightouch, Movable Ink, OfferFit) in Orita's competitive set, plus Aampe's three co-founders; creating clean entity pages is the high-value action while existing concept pages are draft/truncated and unsafe to rewrite.
+
+## [2026-06-15T22:29:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2463 | cache_read=0 | cache_creation=17319 | duration_ms=28764 | cost_usd=0.046961
+
+## [2026-06-15T22:29:49Z] ingest | id=web-2020-01-15-0c4 | type=web | domains=orita-cmo | filter=rejected | domain=orita-cmo | score=0.0
+
+raw=raw/web/web-2020-01-15-0c4.md (wiki not written: filter decision=rejected)
+
+## [2026-06-15T22:29:50Z] filter-correction | id=web-2020-01-15-0c4 | domain=orita-cmo | decision=include | original_score=0.0
+
+rationale='Direct Orita-class competitor / competitive-intelligence source for orita-cmo (AI audience-intelligence, purchase-intent scoring, ecommerce MarTech competitive set).'
+
+## [2026-06-15T22:29:51Z] ingest | id=web-2020-01-15-0c4 | type=web | backfilled_wiki_page=true
+
+already ingested; backfilled wiki page: raw=raw/web/web-2020-01-15-0c4.md wiki=wiki/sources/web-2020-01-15-0c4.md
+
+## [2026-06-15T22:31:38Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8446 | cache_read=0 | cache_creation=26424 | duration_ms=104446 | cost_usd=0.475415
+
+## [2026-06-15T22:31:38Z] wiki-author | id=web-2020-01-15-0c4 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Source is the Enalito Shopify App Store listing, which the user-correction elevated to a 1.0 competitive-intelligence signal for orita-cmo; it establishes a new direct-competitor entity (no existing Enalito page) and adds a data point to the agentic-personalization / martech-consolidation landscape — only the entity create is safe given existing concept pages were shown in truncated form.
+
+## [2026-06-15T22:33:23Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T22-33-23Z-schema-drift.md
+
+## [2026-06-15T22:44:16Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T22-44-16Z-schema-drift.md
+
+## [2026-06-15T22:51:07Z] ingest | id=web-2026-06-15-ec8 | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-ec8.md wiki=wiki/sources/web-2026-06-15-ec8.md
+
+## [2026-06-15T22:54:05Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=14044 | cache_read=4696 | cache_creation=28329 | duration_ms=176446 | cost_usd=0.636763
+
+## [2026-06-15T22:54:06Z] wiki-author | id=web-2026-06-15-ec8 | updates=1 | created=0 | updated=1 | contradictions=0 | draft=yes
+
+Capterra catalog review of Black Crow AI confirms Shopify-only non-headless DTC positioning, integration partners (Attentive, Klaviyo, Shopify Plus), feature inventory, pricing model, support/training options, and the 4.9 (n=8) review aggregate; folding these catalog-level facts into the existing draft entity page. Scope limited to black-crow-ai.md because (a) source is narrow, (b) other related pages are only partially visible in context — replacing them blindly would risk dropping prior claims.
+
+## [2026-06-15T22:55:21Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T22-55-21Z-schema-drift.md
+
+## [2026-06-15T22:57:50Z] ingest | id=web-2026-06-15-07f | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-07f.md wiki=wiki/sources/web-2026-06-15-07f.md
+
+## [2026-06-15T22:59:30Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7878 | cache_read=4696 | cache_creation=29053 | duration_ms=98738 | cost_usd=0.489853
+
+## [2026-06-15T22:59:31Z] wiki-author | id=web-2026-06-15-07f | updates=1 | created=0 | updated=1 | contradictions=1 | draft=yes
+
+Capterra's 2026 Klaviyo product review materially expands Klaviyo's positioning (B2C all-in-one with email/SMS/RCS/WhatsApp/push/ads), quantifies its market footprint (4.6/528, 92% SMB, top industries), and prices the entry tiers — all directly informing the Klaviyo entity page and relevant for Orita's channel-partner and competitive context.
+
+## [2026-06-15T22:59:47Z] ingest | id=web-2026-06-15-95e | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-95e.md wiki=wiki/sources/web-2026-06-15-95e.md
+
+## [2026-06-15T23:01:27Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=7847 | cache_read=4696 | cache_creation=28614 | duration_ms=97914 | cost_usd=0.484688
+
+## [2026-06-15T23:01:27Z] wiki-author | id=web-2026-06-15-95e | updates=1 | created=1 | updated=0 | contradictions=1 | draft=yes
+
+Capterra listing introduces Attentive as a major SMS+email competitor/integration-partner in the orita-cmo competitive landscape — no existing page covers it, so creating a draft entity with positioning, ratings, integrations, feature set, and reviewer demographics.
+
+## [2026-06-15T23:01:38Z] ingest | id=web-2026-06-15-d6f | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-d6f.md wiki=wiki/sources/web-2026-06-15-d6f.md
+
+## [2026-06-15T23:02:43Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5331 | cache_read=4696 | cache_creation=28737 | duration_ms=62889 | cost_usd=0.423018
+
+## [2026-06-15T23:02:43Z] wiki-author | id=web-2026-06-15-d6f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra catalog page documents Postscript as a Shopify-native SMS platform with pricing, feature, integration, and competitive-alternative data — warrants a dedicated entity in the orita-cmo domain.
+
+## [2026-06-15T23:02:56Z] ingest | id=web-2026-06-15-789 | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-789.md wiki=wiki/sources/web-2026-06-15-789.md
+
+## [2026-06-15T23:03:54Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=4278 | cache_read=4696 | cache_creation=28556 | duration_ms=55316 | cost_usd=0.394883
+
+## [2026-06-15T23:03:55Z] wiki-author | id=web-2026-06-15-789 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra's Drip listing is a category-peer competitive datapoint for the orita-cmo domain; create a new entity page for Drip since no existing page covers it, and leave the broader landscape concept pages untouched since the source makes no claims about agentic positioning or martech consolidation.
+
+## [2026-06-15T23:04:03Z] ingest | id=web-2026-06-15-633 | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-633.md wiki=wiki/sources/web-2026-06-15-633.md
+
+## [2026-06-15T23:05:20Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=6189 | cache_read=4696 | cache_creation=28643 | duration_ms=74415 | cost_usd=0.443528
+
+## [2026-06-15T23:05:21Z] wiki-author | id=web-2026-06-15-633 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra profile introduces Bloomreach (CDP + marketing automation) as a new competitor entity in the orita-cmo martech landscape; no existing page covers it.
+
+## [2026-06-15T23:05:23Z] ingest | id=web-2026-06-15-20d | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-20d.md wiki=wiki/sources/web-2026-06-15-20d.md
+
+## [2026-06-15T23:07:01Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8054 | cache_read=4696 | cache_creation=28717 | duration_ms=96221 | cost_usd=0.490893
+
+## [2026-06-15T23:07:02Z] wiki-author | id=web-2026-06-15-20d | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra's June 2026 Omnisend listing supplies a complete vendor profile (ratings, pricing, customer base, features, integrations, sentiment) for a Shopify-ecosystem competitor not yet on the wiki, warranting a new entity page in orita-cmo.
+
+## [2026-06-15T23:07:15Z] ingest | id=web-2026-06-15-809 | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-809.md wiki=wiki/sources/web-2026-06-15-809.md
+
+## [2026-06-15T23:09:11Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=8996 | cache_read=4696 | cache_creation=28848 | duration_ms=114458 | cost_usd=0.515753
+
+## [2026-06-15T23:09:12Z] wiki-author | id=web-2026-06-15-809 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra product listing for Yotpo introduces a previously-uncovered competitor product into the orita-cmo competitive map — a UGC/reviews + loyalty + SMS + email bundle that is a clear martech-consolidation exemplar; existing competitor pages are visible only in truncated form here, so this plan creates the missing Yotpo entity and defers updates to adjacent pages until full visibility is available rather than risk dropping cited claims on rewrite.
+
+## [2026-06-15T23:09:17Z] ingest | id=web-2026-06-15-f6f | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-f6f.md wiki=wiki/sources/web-2026-06-15-f6f.md
+
+## [2026-06-15T23:10:26Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5627 | cache_read=4696 | cache_creation=28831 | duration_ms=66988 | cost_usd=0.431358
+
+## [2026-06-15T23:10:26Z] wiki-author | id=web-2026-06-15-f6f | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra listing for Simon AI is a single-product profile; the primary, safe action is to create the missing Simon AI entity page — existing related pages (agentic-personalization-platform, martech-consolidation, attentive) are truncated in the provided context, so updating them would risk dropping existing claims/citations.
+
+## [2026-06-15T23:10:32Z] ingest | id=web-2026-06-15-78b | type=web | domains=orita-cmo | filter=included | domain=orita-cmo | score=1.0
+
+raw=raw/web/web-2026-06-15-78b.md wiki=wiki/sources/web-2026-06-15-78b.md
+
+## [2026-06-15T23:11:40Z] llm-call | op=plan_authorship | model=claude-opus-4-7 | in_tokens=5 | out_tokens=5008 | cache_read=4696 | cache_creation=28212 | duration_ms=66179 | cost_usd=0.409693
+
+## [2026-06-15T23:11:40Z] wiki-author | id=web-2026-06-15-78b | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+Capterra review page characterizes Listrak as an enterprise retail email/SMS/multi-channel marketing automation platform — a competitor in the orita-cmo landscape that does not yet have a wiki entity page; create the page and integrate it with existing draft competitor entities and the martech consolidation concept.
+
+## [2026-06-15T23:13:16Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-15T23-13-16Z-schema-drift.md
+
+## [2026-06-16T00:00:09Z] finalize | page=wiki/entities/aampe.md
+
+finalized wiki/entities/aampe.md
+
+## [2026-06-16T00:00:10Z] finalize | page=wiki/entities/black-crow-ai.md
+
+finalized wiki/entities/black-crow-ai.md
+
+## [2026-06-16T00:00:11Z] finalize | page=wiki/entities/hightouch.md
+
+finalized wiki/entities/hightouch.md
+
+## [2026-06-16T00:00:11Z] finalize | page=wiki/entities/monocle.md
+
+finalized wiki/entities/monocle.md
+
+## [2026-06-16T00:00:12Z] finalize | page=wiki/entities/movable-ink.md
+
+finalized wiki/entities/movable-ink.md
+
+## [2026-06-16T00:00:12Z] finalize | page=wiki/entities/noam-szpiro.md
+
+finalized wiki/entities/noam-szpiro.md
+
+## [2026-06-16T00:00:12Z] finalize | page=wiki/entities/offerfit.md
+
+finalized wiki/entities/offerfit.md
+
+## [2026-06-16T00:00:13Z] finalize | page=wiki/entities/outersignal.md
+
+finalized wiki/entities/outersignal.md
+
+## [2026-06-16T00:00:13Z] finalize | page=wiki/entities/paul-meinshausen.md
+
+finalized wiki/entities/paul-meinshausen.md
+
+## [2026-06-16T00:00:13Z] finalize | page=wiki/entities/sami-abboud.md
+
+finalized wiki/entities/sami-abboud.md
+
+## [2026-06-16T00:00:14Z] finalize | page=wiki/entities/schaun-wheeler.md
+
+finalized wiki/entities/schaun-wheeler.md
+
+## [2026-06-16T00:00:14Z] finalize | page=wiki/entities/zach-zelner.md
+
+finalized wiki/entities/zach-zelner.md
+
+## [2026-06-16T00:00:14Z] finalize | page=wiki/entities/attentive.md
+
+finalized wiki/entities/attentive.md
+
+## [2026-06-16T00:00:15Z] finalize | page=wiki/entities/postscript.md
+
+finalized wiki/entities/postscript.md
+
+## [2026-06-16T00:00:16Z] finalize | page=wiki/entities/yotpo.md
+
+finalized wiki/entities/yotpo.md
+
+## [2026-06-16T00:00:16Z] finalize | page=wiki/entities/simon-ai.md
+
+finalized wiki/entities/simon-ai.md
+
+## [2026-06-16T00:00:17Z] finalize | page=wiki/concepts/agentic-personalization-platform.md
+
+finalized wiki/concepts/agentic-personalization-platform.md
+
+## [2026-06-16T00:00:17Z] finalize | page=wiki/concepts/martech-consolidation.md
+
+finalized wiki/concepts/martech-consolidation.md
+
+## [2026-06-16T00:01:52Z] edit-section | page=wiki/entities/drip.md | section=Related
+
+edited section 'Related' in wiki/entities/drip.md
+
+## [2026-06-16T00:01:52Z] edit-section | page=wiki/entities/bloomreach.md | section=Related
+
+edited section 'Related' in wiki/entities/bloomreach.md
+
+## [2026-06-16T00:01:52Z] edit-section | page=wiki/entities/omnisend.md | section=Related
+
+edited section 'Related' in wiki/entities/omnisend.md
+
+## [2026-06-16T00:01:53Z] edit-section | page=wiki/entities/listrak.md | section=Related
+
+edited section 'Related' in wiki/entities/listrak.md
+
+## [2026-06-16T00:01:53Z] edit-section | page=wiki/entities/enalito.md | section=Related
+
+edited section 'Related' in wiki/entities/enalito.md
+
+## [2026-06-16T00:01:53Z] edit-section | page=wiki/entities/full-venue.md | section=Related
+
+edited section 'Related' in wiki/entities/full-venue.md
+
+## [2026-06-16T00:01:53Z] edit-section | page=wiki/entities/clustie.md | section=Related
+
+edited section 'Related' in wiki/entities/clustie.md
+
+## [2026-06-16T00:02:03Z] finalize | page=wiki/entities/drip.md
+
+finalized wiki/entities/drip.md
+
+## [2026-06-16T00:02:04Z] finalize | page=wiki/entities/bloomreach.md
+
+finalized wiki/entities/bloomreach.md
+
+## [2026-06-16T00:02:04Z] finalize | page=wiki/entities/omnisend.md
+
+finalized wiki/entities/omnisend.md
+
+## [2026-06-16T00:02:04Z] finalize | page=wiki/entities/listrak.md
+
+finalized wiki/entities/listrak.md
+
+## [2026-06-16T00:02:05Z] finalize | page=wiki/entities/enalito.md
+
+finalized wiki/entities/enalito.md
+
+## [2026-06-16T00:02:05Z] finalize | page=wiki/entities/full-venue.md
+
+finalized wiki/entities/full-venue.md
+
+## [2026-06-16T00:02:45Z] edit-section | page=wiki/entities/clustie.md | section=Key facts
+
+edited section 'Key facts' in wiki/entities/clustie.md
+
+## [2026-06-16T00:02:46Z] finalize | page=wiki/entities/clustie.md
+
+finalized wiki/entities/clustie.md
+
+## [2026-06-16T00:03:25Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T00-03-25Z-schema-drift.md
+
+## [2026-06-16T00:03:54Z] answer | caller=cli | question=How should Orita position competitively against the email/SMS/CDP incumbents (Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak) and the direct AI purchase-intent competitors (Black Crow AI, Monocle, Clustie, Enalito, Aampe), and what is its differentiation? | domain=orita-cmo | sections=16 | cited=3 | stripped=0 | output_tokens=512
+
+answer: 'How should Orita position competitively against the email/SMS/CDP incumbents (Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak) and the direct AI purchase-intent competitors (Black Crow AI, Monocle, Clustie, Enalito, Aampe), and what is its differentiation?' domain=orita-cmo sections=16 cited=3 stripped=0
+
+## [2026-06-16T00:03:54Z] wiki-author | id=answer-2026-06-16-how-should-orita-position-competitively-against | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for orita-cmo
+
+## [2026-06-16T00:04:26Z] finalize-abandon | page=wiki/synthesis/2026-06-16-how-should-orita-position-competitively-against.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-16-how-should-orita-position-competitively-against.md
+
+## [2026-06-16T00:04:54Z] answer | caller=cli | question=Map the competitive landscape Orita operates in: how do the email/SMS/CDP incumbents (Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak) and the direct AI purchase-intent competitors (Black Crow AI, Monocle, Clustie, Enalito, Aampe) differ across channel coverage, AI/agentic depth, target segment, and benchmark standing, and where does Orita's audience-intelligence layer sit among them? | domain=orita-cmo | sections=18 | cited=6 | stripped=0 | output_tokens=1500
+
+answer: "Map the competitive landscape Orita operates in: how do the email/SMS/CDP incumbents (Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak) and the direct AI purchase-intent competitors (Black Crow AI, Monocle, Clustie, Enalito, Aampe) differ across channel coverage, AI/agentic depth, target segment, and benchmark standing, and where does Orita's audience-intelligence layer sit among them?" domain=orita-cmo sections=18 cited=6 stripped=0
+
+## [2026-06-16T00:04:55Z] wiki-author | id=answer-2026-06-16-map-the-competitive-landscape-orita-operates | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for orita-cmo
+
+## [2026-06-16T00:06:04Z] answer | caller=cli | question=Map the competitive landscape Orita operates in. For each competitor — incumbents Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak and direct AI purchase-intent competitors Black Crow AI, Monocle, Clustie, Enalito, Aampe — give channel coverage, AI/agentic depth, target segment, and Capterra benchmark standing, then state where Orita's audience-intelligence layer sits among them. | domain=orita-cmo | sections=30 | cited=6 | stripped=1 | output_tokens=1500
+
+answer: "Map the competitive landscape Orita operates in. For each competitor — incumbents Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak and direct AI purchase-intent competitors Black Crow AI, Monocle, Clustie, Enalito, Aampe — give channel coverage, AI/agentic depth, target segment, and Capterra benchmark standing, then state where Orita's audience-intelligence layer sits among them." domain=orita-cmo sections=30 cited=6 stripped=1
+
+## [2026-06-16T00:06:05Z] wiki-author | id=answer-2026-06-16-map-the-competitive-landscape-orita-operates-320377 | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for orita-cmo
+
+## [2026-06-16T00:06:45Z] finalize-abandon | page=wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md
+
+## [2026-06-16T00:06:46Z] finalize | page=wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates-320377.md
+
+finalized wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates-320377.md
+
+## [2026-06-16T00:06:57Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T00-06-57Z-schema-drift.md
+
+## [2026-06-16T00:15:13Z] answer | caller= | question=Map the competitive landscape Orita operates in. For each competitor — incumbents Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak and direct AI purchase-intent competitors Black Crow AI, Monocle, Clustie, Enalito, Aampe — give channel coverage, AI/agentic depth, target segment, and Capterra benchmark standing in 2-3 tight lines each, then a closing section on where Orita's audience-intelligence layer sits among them. | domain=orita-cmo | sections=29 | cited=8 | stripped=3 | output_tokens=2086
+
+answer: "Map the competitive landscape Orita operates in. For each competitor — incumbents Klaviyo, Attentive, Postscript, Bloomreach, Omnisend, Drip, Yotpo, Simon Data, Listrak and direct AI purchase-intent competitors Black Crow AI, Monocle, Clustie, Enalito, Aampe — give channel coverage, AI/agentic depth, target segment, and Capterra benchmark standing in 2-3 tight lines each, then a closing section on where Orita's audience-intelligence layer sits among them." domain=orita-cmo sections=29 cited=8 stripped=3
+
+## [2026-06-16T00:15:13Z] wiki-author | id=answer-2026-06-16-map-the-competitive-landscape-orita-operates | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+wiki answer (local grounded synthesis) for orita-cmo
+
+## [2026-06-16T00:16:44Z] edit-section | page=wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md | section=Orita Competitive Landscape Map
+
+edited section 'Orita Competitive Landscape Map' in wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md
+
+## [2026-06-16T00:16:45Z] finalize | page=wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md
+
+finalized wiki/synthesis/2026-06-16-map-the-competitive-landscape-orita-operates.md
+
+## [2026-06-16T00:17:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T00-17-01Z-schema-drift.md
+
+## [2026-06-16T00:17:48Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T00-17-48Z-schema-drift.md
+
+## [2026-06-16T02:16:33Z] task-error | task=f806aa92-1712-491d-b0b5-9673fb57ebd5
+
+task f806aa92-1712-491d-b0b5-9673fb57ebd5 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-147/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-16T02:18:00Z] task-error | task=419a3866-105a-4b7a-a395-31af85a3af6f
+
+task 419a3866-105a-4b7a-a395-31af85a3af6f failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-148/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-16T02:19:34Z] task-error | task=404007c4-a267-419c-8558-94e422536e26
+
+task 404007c4-a267-419c-8558-94e422536e26 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-149/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-16T02:24:32Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T02-24-32Z-schema-drift.md
+
+## [2026-06-16T02:36:06Z] context | caller=smoke | target=wiki/entities/orita.md | depth=1 | format=markdown | budget=400 | pages_returned=1 | pages_found=4
+
+context: caller='smoke' target=wiki/entities/orita.md depth=1 pages=1/4 budget=400
+
+## [2026-06-16T02:50:33Z] moc-add | slug=orita-cmo | domain=orita-cmo | draft=no
+
+created wiki/mocs/orita-cmo.md
+
+## [2026-06-16T02:50:48Z] lint | scope=citation-chains | citation-chains=19
+
+report=.knowledge/lint/2026-06-16T02-50-48Z-citation-chains.md
+
+## [2026-06-16T03:30:48Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T03-30-48Z-schema-drift.md
+
+## [2026-06-16T03:46:12Z] finalize | page=wiki/entities/orita.md
+
+finalized wiki/entities/orita.md
+
+## [2026-06-16T03:46:38Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T03-46-38Z-schema-drift.md
+
+## [2026-06-16T03:53:36Z] task-error | task=b95f8579-ea47-405a-9dc0-1508c4d9105a
+
+task b95f8579-ea47-405a-9dc0-1508c4d9105a failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-152/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-16T03:53:58Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T03-53-58Z-schema-drift.md
+
+## [2026-06-16T03:58:00Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T03-58-00Z-schema-drift.md
+
+## [2026-06-16T04:13:11Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T04-13-11Z-schema-drift.md
+
+## [2026-06-16T04:16:07Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T04-16-07Z-schema-drift.md
+
+## [2026-06-16T04:22:40Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-16T04-22-40Z-schema-drift.md
+
+## [2026-06-17T17:40:13Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1254 | cache_read=0 | cache_creation=22651 | duration_ms=25573 | cost_usd=0.154722 | attempt=0
+
+## [2026-06-17T17:40:13Z] bootstrap-domain | slug=semantic-models | inclusion_count=5 | exclusion_count=4
+
+authored policy for semantic-models from description
+
+## [2026-06-17T17:54:50Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=start | domain=semantic-models
+
+start research session for prompt 'What are the foundational formalisms for semantic data models, and how do they compare? Cover: the RDF/RDFS/OWL stack (triples, classes, properties, the OWL EL/QL/RL profiles and their reasoning tradeoffs); description logics as the formal underpinning (expressivity vs decidability, reasoning complexity); the property-graph / labeled-property-graph model and how it contrasts with RDF (RDF-star / RDF 1.2, the ISO GQL standardization effort); the conceptual- and logical-modeling lineage (ER, UML, ontologies as conceptual models); and the criteria for choosing a formalism (reasoning needs, interoperability, tooling maturity, query language). Include the canonical W3C specifications, foundational Semantic Web and description-logic sources, and current practitioner comparisons of RDF vs property graphs. Favor authoritative specs and well-grounded technical sources over introductory overviews.'
+
+## [2026-06-17T17:55:09Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=677 | cache_read=4291 | cache_creation=17897 | duration_ms=17895 | cost_usd=0.118830
+
+## [2026-06-17T17:55:09Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=plan | n=60
+
+query plan written to nlm/query_plans/2026-06-17-what-are-the-foundational-formalisms-for.yaml
+
+## [2026-06-17T17:56:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T17-56-28Z-schema-drift.md
+
+## [2026-06-17T17:57:17Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1609 | cache_read=4291 | cache_creation=18283 | duration_ms=33204 | cost_usd=0.135126 | attempt=0
+
+## [2026-06-17T17:57:47Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=3 | out_tokens=1264 | cache_read=0 | cache_creation=27325 | duration_ms=28921 | cost_usd=0.182919 | attempt=1
+
+## [2026-06-17T17:57:48Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=start | domain=semantic-models
+
+start research session for prompt 'What are the foundational formalisms for semantic data models, and how do they compare? Cover: the RDF/RDFS/OWL stack (triples, classes, properties, the OWL EL/QL/RL profiles and their reasoning tradeoffs); description logics as the formal underpinning (expressivity vs decidability, reasoning complexity); the property-graph / labeled-property-graph model and how it contrasts with RDF (RDF-star / RDF 1.2, the ISO GQL standardization effort); the conceptual- and logical-modeling lineage (ER, UML, ontologies as conceptual models); and the criteria for choosing a formalism (reasoning needs, interoperability, tooling maturity, query language). Include the canonical W3C specifications, foundational Semantic Web and description-logic sources, and current practitioner comparisons of RDF vs property graphs. Favor authoritative specs and well-grounded technical sources over introductory overviews.'
+
+## [2026-06-17T17:57:48Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T17:57:52Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=arxiv | n=30
+
+adapter arxiv returned 30 candidates
+
+## [2026-06-17T17:57:55Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=youtube | n=20
+
+adapter youtube returned 20 candidates
+
+## [2026-06-17T17:58:02Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=web | n=30
+
+adapter web returned 30 candidates
+
+## [2026-06-17T17:58:19Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | target=semantic_scholar
+
+error: S2 API rate limit exceeded after retries; set S2_API_KEY for higher limits
+
+## [2026-06-17T17:58:19Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=merge | n=79
+
+merged 79 candidate(s) across adapters
+
+## [2026-06-17T17:58:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=0 | cache_creation=24360 | duration_ms=15570 | cost_usd=0.055518
+
+## [2026-06-17T17:58:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1272 | cache_read=0 | cache_creation=40254 | duration_ms=15658 | cost_usd=0.086876
+
+## [2026-06-17T17:58:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1766 | cache_read=0 | cache_creation=21405 | duration_ms=19605 | cost_usd=0.051648
+
+## [2026-06-17T17:58:47Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1495 | cache_read=8943 | cache_creation=18280 | duration_ms=30625 | cost_usd=0.134794 | attempt=0
+
+## [2026-06-17T17:58:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1414 | cache_read=0 | cache_creation=40436 | duration_ms=27033 | cost_usd=0.087950
+
+## [2026-06-17T17:58:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1728 | cache_read=0 | cache_creation=16483 | duration_ms=18597 | cost_usd=0.041614
+
+## [2026-06-17T17:59:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1579 | cache_read=0 | cache_creation=16359 | duration_ms=19213 | cost_usd=0.040621
+
+## [2026-06-17T17:59:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1711 | cache_read=8494 | cache_creation=12781 | duration_ms=31555 | cost_usd=0.034974
+
+## [2026-06-17T17:59:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1484 | cache_read=8494 | cache_creation=12742 | duration_ms=18630 | cost_usd=0.033761
+
+## [2026-06-17T17:59:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1452 | cache_read=0 | cache_creation=16399 | duration_ms=27086 | cost_usd=0.040066
+
+## [2026-06-17T17:59:17Z] llm-call | op=plan_bootstrap_domain | model=claude-sonnet-4-6 | in_tokens=3 | out_tokens=1248 | cache_read=8943 | cache_creation=18383 | duration_ms=28242 | cost_usd=0.131710 | attempt=1
+
+## [2026-06-17T17:59:17Z] bootstrap-domain | slug=agentic-data-layer | inclusion_count=5 | exclusion_count=3
+
+authored policy for agentic-data-layer from description
+
+## [2026-06-17T17:59:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1030 | cache_read=8494 | cache_creation=12643 | duration_ms=21803 | cost_usd=0.031293
+
+## [2026-06-17T17:59:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1648 | cache_read=8494 | cache_creation=12982 | duration_ms=18843 | cost_usd=0.035061
+
+## [2026-06-17T17:59:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1776 | cache_read=0 | cache_creation=16363 | duration_ms=36094 | cost_usd=0.041614
+
+## [2026-06-17T17:59:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1046 | cache_read=8494 | cache_creation=12820 | duration_ms=11241 | cost_usd=0.031727
+
+## [2026-06-17T17:59:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1498 | cache_read=8494 | cache_creation=12744 | duration_ms=16921 | cost_usd=0.033835
+
+## [2026-06-17T17:59:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1656 | cache_read=8494 | cache_creation=12738 | duration_ms=34262 | cost_usd=0.034613
+
+## [2026-06-17T17:59:55Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=start | domain=agentic-data-layer
+
+start research session for prompt 'How do AI agents retrieve and query semantic data structures at runtime? Cover knowledge-graph RAG and GraphRAG (Microsoft GraphRAG and successors), text-to-query generation (SPARQL, Cypher/GQL, SQL-over-semantic-layer), ontology-grounded retrieval, and exposing semantic layers / metrics layers / triple stores to agents as tools via MCP and function-calling. When does a semantic or graph layer outperform plain vector RAG for an agent? Cover tool/affordance design, read-path caching, and accuracy/faithfulness benchmarks for text-to-query and GraphRAG. Operator-architect, pattern-level, reusable across domains. Prioritize 2024-2026 arXiv and substantive engineering write-ups from graph-DB and semantic-layer vendors.'
+
+## [2026-06-17T18:00:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1665 | cache_read=0 | cache_creation=16569 | duration_ms=18549 | cost_usd=0.041471
+
+## [2026-06-17T18:00:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1750 | cache_read=0 | cache_creation=16461 | duration_ms=33773 | cost_usd=0.041680
+
+## [2026-06-17T18:00:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2048 | cache_read=8494 | cache_creation=12963 | duration_ms=27388 | cost_usd=0.037023
+
+## [2026-06-17T18:00:24Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1883 | cache_read=4291 | cache_creation=17812 | duration_ms=27580 | cost_usd=0.136410
+
+## [2026-06-17T18:00:24Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-17-how-do-ai-agents-retrieve-and.yaml
+
+## [2026-06-17T18:00:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1475 | cache_read=0 | cache_creation=16444 | duration_ms=19143 | cost_usd=0.040271
+
+## [2026-06-17T18:00:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2151 | cache_read=0 | cache_creation=16474 | duration_ms=42562 | cost_usd=0.043711
+
+## [2026-06-17T18:00:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1119 | cache_read=0 | cache_creation=16357 | duration_ms=15679 | cost_usd=0.038317
+
+## [2026-06-17T18:00:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=606 | cache_read=0 | cache_creation=58874 | duration_ms=9005 | cost_usd=0.120786
+
+## [2026-06-17T18:00:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1744 | cache_read=8494 | cache_creation=12804 | duration_ms=36789 | cost_usd=0.035185
+
+## [2026-06-17T18:00:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1526 | cache_read=0 | cache_creation=16473 | duration_ms=21224 | cost_usd=0.040584
+
+## [2026-06-17T18:01:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2174 | cache_read=0 | cache_creation=16527 | duration_ms=27237 | cost_usd=0.043932
+
+## [2026-06-17T18:01:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2450 | cache_read=0 | cache_creation=16462 | duration_ms=31018 | cost_usd=0.045182
+
+## [2026-06-17T18:01:12Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=start | domain=agentic-data-layer
+
+start research session for prompt 'How do AI agents retrieve and query semantic data structures at runtime? Cover knowledge-graph RAG and GraphRAG (Microsoft GraphRAG and successors), text-to-query generation (SPARQL, Cypher/GQL, SQL-over-semantic-layer), ontology-grounded retrieval, and exposing semantic layers / metrics layers / triple stores to agents as tools via MCP and function-calling. When does a semantic or graph layer outperform plain vector RAG for an agent? Cover tool/affordance design, read-path caching, and accuracy/faithfulness benchmarks for text-to-query and GraphRAG. Operator-architect, pattern-level, reusable across domains. Prioritize 2024-2026 arXiv and substantive engineering write-ups from graph-DB and semantic-layer vendors.'
+
+## [2026-06-17T18:01:12Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T18:01:18Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=search | adapter=arxiv | n=40
+
+adapter arxiv returned 40 candidates
+
+## [2026-06-17T18:01:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1645 | cache_read=0 | cache_creation=16554 | duration_ms=20610 | cost_usd=0.041341
+
+## [2026-06-17T18:01:20Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=search | adapter=youtube | n=30
+
+adapter youtube returned 30 candidates
+
+## [2026-06-17T18:01:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1149 | cache_read=0 | cache_creation=16216 | duration_ms=18740 | cost_usd=0.038185
+
+## [2026-06-17T18:01:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2149 | cache_read=0 | cache_creation=16420 | duration_ms=43613 | cost_usd=0.043593
+
+## [2026-06-17T18:01:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2157 | cache_read=8494 | cache_creation=12814 | duration_ms=25966 | cost_usd=0.037270
+
+## [2026-06-17T18:01:40Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=start | domain=agentic-data-layer
+
+start research session for prompt 'How do AI agents construct, populate, and maintain semantic data structures, and how is their output validated against the model? Cover LLM-driven entity and relation extraction into knowledge graphs, ontology population, automated KG construction from unstructured documents, and agentic schema evolution. Cover validation and grounding: SHACL/ShEx/JSON-Schema-constrained generation, ontology grounding to reduce hallucination, and verification and provenance of agent-generated triples or records. Emphasize write-path safety and correctness for long-lived, mutable knowledge models. Operator-architect, pattern-level. Prioritize 2024-2026 arXiv and substantive vendor engineering material.'
+
+## [2026-06-17T18:01:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1406 | cache_read=0 | cache_creation=16219 | duration_ms=17254 | cost_usd=0.039476
+
+## [2026-06-17T18:01:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1626 | cache_read=0 | cache_creation=16221 | duration_ms=32404 | cost_usd=0.040580
+
+## [2026-06-17T18:01:55Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-17T18:02:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2284 | cache_read=8494 | cache_creation=12528 | duration_ms=27047 | cost_usd=0.037333
+
+## [2026-06-17T18:02:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1357 | cache_read=0 | cache_creation=16199 | duration_ms=18010 | cost_usd=0.039191
+
+## [2026-06-17T18:02:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1578 | cache_read=8494 | cache_creation=12537 | duration_ms=32026 | cost_usd=0.033821
+
+## [2026-06-17T18:02:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1324 | cache_read=0 | cache_creation=16213 | duration_ms=16315 | cost_usd=0.039054
+
+## [2026-06-17T18:02:11Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=2188 | cache_read=4291 | cache_creation=18376 | duration_ms=29934 | cost_usd=0.144369
+
+## [2026-06-17T18:02:11Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-17-how-do-ai-agents-construct-populate.yaml
+
+## [2026-06-17T18:02:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1149 | cache_read=0 | cache_creation=16196 | duration_ms=18153 | cost_usd=0.038145
+
+## [2026-06-17T18:02:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1425 | cache_read=8494 | cache_creation=12552 | duration_ms=20765 | cost_usd=0.033086
+
+## [2026-06-17T18:02:37Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=search | adapter=semantic_scholar | n=50
+
+adapter semantic_scholar returned 50 candidates
+
+## [2026-06-17T18:02:37Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=merge | n=186
+
+merged 186 candidate(s) across adapters
+
+## [2026-06-17T18:02:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1012 | cache_read=0 | cache_creation=16215 | duration_ms=15373 | cost_usd=0.037498
+
+## [2026-06-17T18:02:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1328 | cache_read=0 | cache_creation=16195 | duration_ms=15950 | cost_usd=0.039038
+
+## [2026-06-17T18:02:49Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=filter | target=https://www.youtube.com/watch?v=NzzAxEPpuJQ
+
+error: could not parse JSON in filter response: Expecting ',' delimiter: line 3 column 80 (char 97)
+
+## [2026-06-17T18:02:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2045 | cache_read=8494 | cache_creation=12543 | duration_ms=41522 | cost_usd=0.036168
+
+## [2026-06-17T18:02:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1056 | cache_read=0 | cache_creation=60795 | duration_ms=13472 | cost_usd=0.126878
+
+## [2026-06-17T18:02:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1077 | cache_read=0 | cache_creation=47206 | duration_ms=14318 | cost_usd=0.099805
+
+## [2026-06-17T18:03:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1537 | cache_read=0 | cache_creation=60866 | duration_ms=21291 | cost_usd=0.129425
+
+## [2026-06-17T18:03:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2706 | cache_read=0 | cache_creation=16237 | duration_ms=55018 | cost_usd=0.046012
+
+## [2026-06-17T18:03:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1306 | cache_read=0 | cache_creation=16213 | duration_ms=14405 | cost_usd=0.038964
+
+## [2026-06-17T18:03:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1091 | cache_read=27419 | cache_creation=12521 | duration_ms=22642 | cost_usd=0.033247
+
+## [2026-06-17T18:03:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2185 | cache_read=0 | cache_creation=47247 | duration_ms=26182 | cost_usd=0.105427
+
+## [2026-06-17T18:03:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2971 | cache_read=0 | cache_creation=47263 | duration_ms=33598 | cost_usd=0.109389
+
+## [2026-06-17T18:03:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1694 | cache_read=0 | cache_creation=47188 | duration_ms=34190 | cost_usd=0.102854
+
+## [2026-06-17T18:03:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1683 | cache_read=0 | cache_creation=47181 | duration_ms=36594 | cost_usd=0.102785
+
+## [2026-06-17T18:03:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1751 | cache_read=8411 | cache_creation=12681 | duration_ms=24096 | cost_usd=0.034966
+
+## [2026-06-17T18:03:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2196 | cache_read=8494 | cache_creation=12547 | duration_ms=26273 | cost_usd=0.036931
+
+## [2026-06-17T18:03:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1189 | cache_read=7037 | cache_creation=14182 | duration_ms=25405 | cost_usd=0.035021
+
+## [2026-06-17T18:03:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1361 | cache_read=8411 | cache_creation=12874 | duration_ms=15010 | cost_usd=0.033402
+
+## [2026-06-17T18:03:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1716 | cache_read=0 | cache_creation=16528 | duration_ms=20123 | cost_usd=0.041644
+
+## [2026-06-17T18:03:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2232 | cache_read=0 | cache_creation=60716 | duration_ms=45522 | cost_usd=0.132600
+
+## [2026-06-17T18:03:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2121 | cache_read=0 | cache_creation=16204 | duration_ms=24201 | cost_usd=0.043021
+
+## [2026-06-17T18:03:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1299 | cache_read=8494 | cache_creation=12535 | duration_ms=28203 | cost_usd=0.032422
+
+## [2026-06-17T18:03:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2122 | cache_read=0 | cache_creation=16199 | duration_ms=42389 | cost_usd=0.043016
+
+## [2026-06-17T18:03:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1324 | cache_read=8494 | cache_creation=12537 | duration_ms=26347 | cost_usd=0.032551
+
+## [2026-06-17T18:03:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2473 | cache_read=8411 | cache_creation=12753 | duration_ms=26730 | cost_usd=0.038720
+
+## [2026-06-17T18:03:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1717 | cache_read=0 | cache_creation=16492 | duration_ms=35485 | cost_usd=0.041577
+
+## [2026-06-17T18:03:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2616 | cache_read=8411 | cache_creation=12820 | duration_ms=30345 | cost_usd=0.039569
+
+## [2026-06-17T18:03:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1630 | cache_read=0 | cache_creation=16360 | duration_ms=35289 | cost_usd=0.040878
+
+## [2026-06-17T18:03:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2351 | cache_read=8411 | cache_creation=12795 | duration_ms=27486 | cost_usd=0.038194
+
+## [2026-06-17T18:03:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1200 | cache_read=0 | cache_creation=16196 | duration_ms=24948 | cost_usd=0.038400
+
+## [2026-06-17T18:03:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2282 | cache_read=0 | cache_creation=16260 | duration_ms=23615 | cost_usd=0.043938
+
+## [2026-06-17T18:04:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1976 | cache_read=8411 | cache_creation=12806 | duration_ms=38617 | cost_usd=0.036341
+
+## [2026-06-17T18:04:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1829 | cache_read=0 | cache_creation=16410 | duration_ms=38668 | cost_usd=0.041973
+
+## [2026-06-17T18:04:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2646 | cache_read=0 | cache_creation=16647 | duration_ms=51746 | cost_usd=0.046532
+
+## [2026-06-17T18:04:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2113 | cache_read=0 | cache_creation=16236 | duration_ms=24893 | cost_usd=0.043045
+
+## [2026-06-17T18:04:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1401 | cache_read=0 | cache_creation=16220 | duration_ms=29862 | cost_usd=0.039453
+
+## [2026-06-17T18:04:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1524 | cache_read=8411 | cache_creation=12836 | duration_ms=18548 | cost_usd=0.034141
+
+## [2026-06-17T18:04:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1747 | cache_read=8494 | cache_creation=12544 | duration_ms=20666 | cost_usd=0.034680
+
+## [2026-06-17T18:04:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1287 | cache_read=0 | cache_creation=16244 | duration_ms=26686 | cost_usd=0.038931
+
+## [2026-06-17T18:04:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1467 | cache_read=0 | cache_creation=16357 | duration_ms=18684 | cost_usd=0.040057
+
+## [2026-06-17T18:04:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=8411 | cache_creation=12899 | duration_ms=31864 | cost_usd=0.034227
+
+## [2026-06-17T18:04:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1521 | cache_read=8411 | cache_creation=12809 | duration_ms=33177 | cost_usd=0.034072
+
+## [2026-06-17T18:04:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1626 | cache_read=8411 | cache_creation=12813 | duration_ms=34986 | cost_usd=0.034605
+
+## [2026-06-17T18:04:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1138 | cache_read=0 | cache_creation=16228 | duration_ms=14920 | cost_usd=0.038154
+
+## [2026-06-17T18:04:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1036 | cache_read=0 | cache_creation=16174 | duration_ms=22351 | cost_usd=0.037536
+
+## [2026-06-17T18:04:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2347 | cache_read=8411 | cache_creation=12901 | duration_ms=49256 | cost_usd=0.038386
+
+## [2026-06-17T18:04:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4456 | cache_read=0 | cache_creation=16468 | duration_ms=46177 | cost_usd=0.055224
+
+## [2026-06-17T18:04:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1600 | cache_read=0 | cache_creation=16194 | duration_ms=19926 | cost_usd=0.040396
+
+## [2026-06-17T18:04:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=996 | cache_read=8411 | cache_creation=12840 | duration_ms=14997 | cost_usd=0.031509
+
+## [2026-06-17T18:04:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1256 | cache_read=8411 | cache_creation=12786 | duration_ms=15820 | cost_usd=0.032701
+
+## [2026-06-17T18:04:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1573 | cache_read=8411 | cache_creation=12793 | duration_ms=17786 | cost_usd=0.034300
+
+## [2026-06-17T18:04:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1527 | cache_read=8411 | cache_creation=12839 | duration_ms=19237 | cost_usd=0.034162
+
+## [2026-06-17T18:04:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1697 | cache_read=0 | cache_creation=16188 | duration_ms=22158 | cost_usd=0.040869
+
+## [2026-06-17T18:04:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1472 | cache_read=0 | cache_creation=16437 | duration_ms=30347 | cost_usd=0.040242
+
+## [2026-06-17T18:05:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1930 | cache_read=0 | cache_creation=16192 | duration_ms=23378 | cost_usd=0.042042
+
+## [2026-06-17T18:05:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1397 | cache_read=8411 | cache_creation=12539 | duration_ms=16806 | cost_usd=0.032912
+
+## [2026-06-17T18:05:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1709 | cache_read=8411 | cache_creation=12836 | duration_ms=22158 | cost_usd=0.035066
+
+## [2026-06-17T18:05:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1421 | cache_read=0 | cache_creation=16177 | duration_ms=30992 | cost_usd=0.039467
+
+## [2026-06-17T18:05:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1551 | cache_read=8411 | cache_creation=12559 | duration_ms=20259 | cost_usd=0.033722
+
+## [2026-06-17T18:05:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1833 | cache_read=8411 | cache_creation=12545 | duration_ms=22758 | cost_usd=0.035104
+
+## [2026-06-17T18:05:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3439 | cache_read=8411 | cache_creation=13523 | duration_ms=68357 | cost_usd=0.045090
+
+## [2026-06-17T18:05:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1536 | cache_read=8411 | cache_creation=12871 | duration_ms=31726 | cost_usd=0.034271
+
+## [2026-06-17T18:05:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2839 | cache_read=8494 | cache_creation=12520 | duration_ms=31011 | cost_usd=0.040092
+
+## [2026-06-17T18:05:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2430 | cache_read=8411 | cache_creation=12547 | duration_ms=28581 | cost_usd=0.038093
+
+## [2026-06-17T18:05:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1239 | cache_read=0 | cache_creation=86156 | duration_ms=16231 | cost_usd=0.178515
+
+## [2026-06-17T18:05:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1436 | cache_read=0 | cache_creation=16145 | duration_ms=20014 | cost_usd=0.039478
+
+## [2026-06-17T18:05:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=0 | cache_creation=16180 | duration_ms=15695 | cost_usd=0.038953
+
+## [2026-06-17T18:05:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1827 | cache_read=71578 | cache_creation=14537 | duration_ms=25983 | cost_usd=0.045375
+
+## [2026-06-17T18:05:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2790 | cache_read=8494 | cache_creation=12504 | duration_ms=54464 | cost_usd=0.039815
+
+## [2026-06-17T18:05:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2443 | cache_read=0 | cache_creation=16139 | duration_ms=27754 | cost_usd=0.044501
+
+## [2026-06-17T18:05:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1144 | cache_read=8494 | cache_creation=12510 | duration_ms=24494 | cost_usd=0.031597
+
+## [2026-06-17T18:05:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1663 | cache_read=0 | cache_creation=16160 | duration_ms=37325 | cost_usd=0.040643
+
+## [2026-06-17T18:05:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2219 | cache_read=0 | cache_creation=16298 | duration_ms=26851 | cost_usd=0.043699
+
+## [2026-06-17T18:05:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1615 | cache_read=0 | cache_creation=16142 | duration_ms=20394 | cost_usd=0.040367
+
+## [2026-06-17T18:05:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2319 | cache_read=0 | cache_creation=16135 | duration_ms=26982 | cost_usd=0.043873
+
+## [2026-06-17T18:05:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1469 | cache_read=0 | cache_creation=16132 | duration_ms=32001 | cost_usd=0.039617
+
+## [2026-06-17T18:05:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1929 | cache_read=0 | cache_creation=16120 | duration_ms=41841 | cost_usd=0.041893
+
+## [2026-06-17T18:06:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=0 | cache_creation=16196 | duration_ms=22300 | cost_usd=0.039105
+
+## [2026-06-17T18:06:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1710 | cache_read=8411 | cache_creation=12546 | duration_ms=20950 | cost_usd=0.034491
+
+## [2026-06-17T18:06:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4260 | cache_read=0 | cache_creation=16389 | duration_ms=82436 | cost_usd=0.054086
+
+## [2026-06-17T18:06:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1764 | cache_read=0 | cache_creation=16232 | duration_ms=20203 | cost_usd=0.041292
+
+## [2026-06-17T18:06:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1427 | cache_read=0 | cache_creation=16127 | duration_ms=17934 | cost_usd=0.039397
+
+## [2026-06-17T18:06:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=0 | cache_creation=16140 | duration_ms=18637 | cost_usd=0.039598
+
+## [2026-06-17T18:06:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1500 | cache_read=0 | cache_creation=16129 | duration_ms=17775 | cost_usd=0.039766
+
+## [2026-06-17T18:06:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1092 | cache_read=8494 | cache_creation=12500 | duration_ms=25024 | cost_usd=0.031317
+
+## [2026-06-17T18:06:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1208 | cache_read=34156 | cache_creation=12849 | duration_ms=25761 | cost_usd=0.035162
+
+## [2026-06-17T18:06:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1873 | cache_read=0 | cache_creation=16130 | duration_ms=40565 | cost_usd=0.041633
+
+## [2026-06-17T18:06:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1761 | cache_read=0 | cache_creation=16145 | duration_ms=22002 | cost_usd=0.041103
+
+## [2026-06-17T18:06:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1366 | cache_read=0 | cache_creation=16166 | duration_ms=16199 | cost_usd=0.039170
+
+## [2026-06-17T18:06:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1333 | cache_read=8494 | cache_creation=12528 | duration_ms=15078 | cost_usd=0.032578
+
+## [2026-06-17T18:06:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=8494 | cache_creation=12554 | duration_ms=13748 | cost_usd=0.032030
+
+## [2026-06-17T18:06:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=8411 | cache_creation=12596 | duration_ms=19567 | cost_usd=0.034106
+
+## [2026-06-17T18:06:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4565 | cache_read=0 | cache_creation=14535 | duration_ms=90931 | cost_usd=0.051903
+
+## [2026-06-17T18:06:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1475 | cache_read=0 | cache_creation=16129 | duration_ms=33291 | cost_usd=0.039641
+
+## [2026-06-17T18:06:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=0 | cache_creation=16140 | duration_ms=29542 | cost_usd=0.038993
+
+## [2026-06-17T18:06:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2454 | cache_read=8411 | cache_creation=12546 | duration_ms=27938 | cost_usd=0.038211
+
+## [2026-06-17T18:06:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1889 | cache_read=8411 | cache_creation=12536 | duration_ms=38112 | cost_usd=0.035366
+
+## [2026-06-17T18:06:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1811 | cache_read=0 | cache_creation=16200 | duration_ms=20772 | cost_usd=0.041463
+
+## [2026-06-17T18:06:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1273 | cache_read=0 | cache_creation=16203 | duration_ms=28587 | cost_usd=0.038779
+
+## [2026-06-17T18:06:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1600 | cache_read=0 | cache_creation=16208 | duration_ms=19397 | cost_usd=0.040424
+
+## [2026-06-17T18:06:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1473 | cache_read=8411 | cache_creation=12552 | duration_ms=34299 | cost_usd=0.033318
+
+## [2026-06-17T18:07:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2116 | cache_read=8411 | cache_creation=12559 | duration_ms=45486 | cost_usd=0.036547
+
+## [2026-06-17T18:07:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1257 | cache_read=8494 | cache_creation=12516 | duration_ms=15850 | cost_usd=0.032174
+
+## [2026-06-17T18:07:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1910 | cache_read=0 | cache_creation=16104 | duration_ms=21754 | cost_usd=0.041766
+
+## [2026-06-17T18:07:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1672 | cache_read=0 | cache_creation=16185 | duration_ms=37456 | cost_usd=0.040738
+
+## [2026-06-17T18:07:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1857 | cache_read=8411 | cache_creation=12550 | duration_ms=38430 | cost_usd=0.035234
+
+## [2026-06-17T18:07:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1275 | cache_read=8411 | cache_creation=12555 | duration_ms=15920 | cost_usd=0.032334
+
+## [2026-06-17T18:07:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1923 | cache_read=8411 | cache_creation=12488 | duration_ms=42777 | cost_usd=0.035440
+
+## [2026-06-17T18:07:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2025 | cache_read=8411 | cache_creation=12556 | duration_ms=44443 | cost_usd=0.036086
+
+## [2026-06-17T18:07:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1864 | cache_read=0 | cache_creation=16235 | duration_ms=39081 | cost_usd=0.041798
+
+## [2026-06-17T18:07:29Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=filter | n=27
+
+27 candidate(s) cleared threshold
+
+## [2026-06-17T18:07:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3950 | cache_read=8411 | cache_creation=12547 | duration_ms=77802 | cost_usd=0.045693
+
+## [2026-06-17T18:07:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1780 | cache_read=8411 | cache_creation=12524 | duration_ms=24293 | cost_usd=0.034797
+
+## [2026-06-17T18:07:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2920 | cache_read=0 | cache_creation=16147 | duration_ms=59577 | cost_usd=0.046902
+
+## [2026-06-17T18:07:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1176 | cache_read=0 | cache_creation=16133 | duration_ms=14958 | cost_usd=0.038154
+
+## [2026-06-17T18:07:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2348 | cache_read=8411 | cache_creation=12516 | duration_ms=47829 | cost_usd=0.037621
+
+## [2026-06-17T18:07:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1448 | cache_read=8411 | cache_creation=12560 | duration_ms=17717 | cost_usd=0.033209
+
+## [2026-06-17T18:07:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2164 | cache_read=8411 | cache_creation=12542 | duration_ms=26508 | cost_usd=0.036753
+
+## [2026-06-17T18:07:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2203 | cache_read=0 | cache_creation=16121 | duration_ms=27452 | cost_usd=0.043265
+
+## [2026-06-17T18:08:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1119 | cache_read=0 | cache_creation=16099 | duration_ms=14166 | cost_usd=0.037801
+
+## [2026-06-17T18:08:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1496 | cache_read=0 | cache_creation=16124 | duration_ms=33468 | cost_usd=0.039736
+
+## [2026-06-17T18:08:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1943 | cache_read=0 | cache_creation=16103 | duration_ms=26331 | cost_usd=0.041929
+
+## [2026-06-17T18:08:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2818 | cache_read=8411 | cache_creation=12522 | duration_ms=37968 | cost_usd=0.039983
+
+## [2026-06-17T18:08:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1214 | cache_read=0 | cache_creation=16159 | duration_ms=16570 | cost_usd=0.038396
+
+## [2026-06-17T18:08:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1751 | cache_read=8411 | cache_creation=12560 | duration_ms=38585 | cost_usd=0.034724
+
+## [2026-06-17T18:08:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2229 | cache_read=0 | cache_creation=16115 | duration_ms=48155 | cost_usd=0.043383
+
+## [2026-06-17T18:08:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1700 | cache_read=8411 | cache_creation=12518 | duration_ms=20987 | cost_usd=0.034385
+
+## [2026-06-17T18:08:35Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=materialize | n=27
+
+materialized 27 source(s) to raw/
+
+## [2026-06-17T18:08:35Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=corpus_quality | n=27 | median_words=216 | sparse_n=17 | sparse_frac=0.63
+
+corpus quality: 27 sources, median 216 words, 17/27 sparse (<300 words)
+
+## [2026-06-17T18:08:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2216 | cache_read=8411 | cache_creation=12520 | duration_ms=27503 | cost_usd=0.036969
+
+## [2026-06-17T18:08:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1016 | cache_read=0 | cache_creation=16133 | duration_ms=13901 | cost_usd=0.037354
+
+## [2026-06-17T18:08:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1407 | cache_read=0 | cache_creation=24683 | duration_ms=31299 | cost_usd=0.056409
+
+## [2026-06-17T18:08:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2160 | cache_read=0 | cache_creation=16164 | duration_ms=44688 | cost_usd=0.043136
+
+## [2026-06-17T18:08:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1190 | cache_read=8411 | cache_creation=12510 | duration_ms=18210 | cost_usd=0.031819
+
+## [2026-06-17T18:08:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2151 | cache_read=8411 | cache_creation=12562 | duration_ms=45905 | cost_usd=0.036728
+
+## [2026-06-17T18:08:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1815 | cache_read=0 | cache_creation=16112 | duration_ms=24156 | cost_usd=0.041307
+
+## [2026-06-17T18:08:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2437 | cache_read=0 | cache_creation=16115 | duration_ms=51844 | cost_usd=0.044423
+
+## [2026-06-17T18:09:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1873 | cache_read=0 | cache_creation=16195 | duration_ms=23179 | cost_usd=0.041763
+
+## [2026-06-17T18:09:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2169 | cache_read=0 | cache_creation=16139 | duration_ms=23699 | cost_usd=0.043131
+
+## [2026-06-17T18:09:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=8411 | cache_creation=12540 | duration_ms=14807 | cost_usd=0.031624
+
+## [2026-06-17T18:09:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1972 | cache_read=0 | cache_creation=16149 | duration_ms=22237 | cost_usd=0.042166
+
+## [2026-06-17T18:09:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=984 | cache_read=8411 | cache_creation=12526 | duration_ms=11908 | cost_usd=0.030821
+
+## [2026-06-17T18:09:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=0 | cache_creation=16139 | duration_ms=35818 | cost_usd=0.040631
+
+## [2026-06-17T18:09:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1639 | cache_read=0 | cache_creation=16146 | duration_ms=22474 | cost_usd=0.040495
+
+## [2026-06-17T18:09:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1165 | cache_read=8411 | cache_creation=12576 | duration_ms=14198 | cost_usd=0.031826
+
+## [2026-06-17T18:09:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1100 | cache_read=0 | cache_creation=16139 | duration_ms=17994 | cost_usd=0.037786
+
+## [2026-06-17T18:09:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1903 | cache_read=0 | cache_creation=16139 | duration_ms=20434 | cost_usd=0.041801
+
+## [2026-06-17T18:09:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1461 | cache_read=0 | cache_creation=16093 | duration_ms=17376 | cost_usd=0.039499
+
+## [2026-06-17T18:09:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1821 | cache_read=0 | cache_creation=16135 | duration_ms=23282 | cost_usd=0.041383
+
+## [2026-06-17T18:09:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1584 | cache_read=8411 | cache_creation=12540 | duration_ms=33718 | cost_usd=0.033849
+
+## [2026-06-17T18:09:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1021 | cache_read=0 | cache_creation=16107 | duration_ms=13639 | cost_usd=0.037327
+
+## [2026-06-17T18:09:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1885 | cache_read=0 | cache_creation=16121 | duration_ms=21370 | cost_usd=0.041675
+
+## [2026-06-17T18:09:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2341 | cache_read=8411 | cache_creation=12606 | duration_ms=44602 | cost_usd=0.037766
+
+## [2026-06-17T18:09:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1578 | cache_read=0 | cache_creation=16129 | duration_ms=34064 | cost_usd=0.040156
+
+## [2026-06-17T18:09:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1362 | cache_read=8411 | cache_creation=12490 | duration_ms=16630 | cost_usd=0.032639
+
+## [2026-06-17T18:09:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=0 | cache_creation=16143 | duration_ms=18371 | cost_usd=0.039814
+
+## [2026-06-17T18:09:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1728 | cache_read=0 | cache_creation=16087 | duration_ms=24007 | cost_usd=0.040822
+
+## [2026-06-17T18:09:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1507 | cache_read=0 | cache_creation=16161 | duration_ms=19549 | cost_usd=0.039865
+
+## [2026-06-17T18:10:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1230 | cache_read=0 | cache_creation=16107 | duration_ms=14933 | cost_usd=0.038372
+
+## [2026-06-17T18:10:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1590 | cache_read=0 | cache_creation=16085 | duration_ms=19135 | cost_usd=0.040128
+
+## [2026-06-17T18:10:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1904 | cache_read=8411 | cache_creation=12528 | duration_ms=38368 | cost_usd=0.035425
+
+## [2026-06-17T18:10:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1126 | cache_read=8411 | cache_creation=12524 | duration_ms=14281 | cost_usd=0.031527
+
+## [2026-06-17T18:10:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1456 | cache_read=0 | cache_creation=16127 | duration_ms=16759 | cost_usd=0.039542
+
+## [2026-06-17T18:10:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1972 | cache_read=8411 | cache_creation=12570 | duration_ms=23707 | cost_usd=0.035849
+
+## [2026-06-17T18:10:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=0 | cache_creation=16119 | duration_ms=15042 | cost_usd=0.038711
+
+## [2026-06-17T18:10:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1806 | cache_read=0 | cache_creation=16143 | duration_ms=22465 | cost_usd=0.041324
+
+## [2026-06-17T18:10:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1725 | cache_read=0 | cache_creation=16109 | duration_ms=35860 | cost_usd=0.040851
+
+## [2026-06-17T18:10:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=0 | cache_creation=16125 | duration_ms=35204 | cost_usd=0.039613
+
+## [2026-06-17T18:10:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1087 | cache_read=0 | cache_creation=16159 | duration_ms=14480 | cost_usd=0.037761
+
+## [2026-06-17T18:10:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2070 | cache_read=8411 | cache_creation=12606 | duration_ms=23514 | cost_usd=0.036411
+
+## [2026-06-17T18:10:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1261 | cache_read=0 | cache_creation=16143 | duration_ms=16527 | cost_usd=0.038599
+
+## [2026-06-17T18:10:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3805 | cache_read=0 | cache_creation=16123 | duration_ms=47220 | cost_usd=0.051279
+
+## [2026-06-17T18:10:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1314 | cache_read=0 | cache_creation=16159 | duration_ms=16689 | cost_usd=0.038896
+
+## [2026-06-17T18:10:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2232 | cache_read=0 | cache_creation=16157 | duration_ms=29010 | cost_usd=0.043482
+
+## [2026-06-17T18:10:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1639 | cache_read=0 | cache_creation=16133 | duration_ms=20608 | cost_usd=0.040469
+
+## [2026-06-17T18:10:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1698 | cache_read=8411 | cache_creation=12548 | duration_ms=21858 | cost_usd=0.034435
+
+## [2026-06-17T18:11:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2023 | cache_read=0 | cache_creation=16113 | duration_ms=26459 | cost_usd=0.042349
+
+## [2026-06-17T18:11:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1565 | cache_read=0 | cache_creation=16119 | duration_ms=22953 | cost_usd=0.040071
+
+## [2026-06-17T18:11:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1074 | cache_read=8411 | cache_creation=12520 | duration_ms=13721 | cost_usd=0.031259
+
+## [2026-06-17T18:11:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2363 | cache_read=8411 | cache_creation=12546 | duration_ms=33045 | cost_usd=0.037756
+
+## [2026-06-17T18:11:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1777 | cache_read=0 | cache_creation=16165 | duration_ms=37430 | cost_usd=0.041223
+
+## [2026-06-17T18:11:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1899 | cache_read=8411 | cache_creation=12514 | duration_ms=31671 | cost_usd=0.035372
+
+## [2026-06-17T18:11:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1866 | cache_read=0 | cache_creation=16383 | duration_ms=21181 | cost_usd=0.042104
+
+## [2026-06-17T18:11:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2161 | cache_read=0 | cache_creation=16371 | duration_ms=23249 | cost_usd=0.043555
+
+## [2026-06-17T18:11:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2238 | cache_read=0 | cache_creation=16312 | duration_ms=26169 | cost_usd=0.043822
+
+## [2026-06-17T18:11:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1804 | cache_read=8411 | cache_creation=12631 | duration_ms=21488 | cost_usd=0.035131
+
+## [2026-06-17T18:11:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2524 | cache_read=0 | cache_creation=16292 | duration_ms=29812 | cost_usd=0.045212
+
+## [2026-06-17T18:11:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1826 | cache_read=0 | cache_creation=16274 | duration_ms=22538 | cost_usd=0.041686
+
+## [2026-06-17T18:11:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1357 | cache_read=8411 | cache_creation=12665 | duration_ms=29187 | cost_usd=0.032964
+
+## [2026-06-17T18:11:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1484 | cache_read=8411 | cache_creation=12619 | duration_ms=34623 | cost_usd=0.033507
+
+## [2026-06-17T18:11:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1830 | cache_read=0 | cache_creation=16335 | duration_ms=23490 | cost_usd=0.041828
+
+## [2026-06-17T18:11:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2170 | cache_read=0 | cache_creation=16447 | duration_ms=45604 | cost_usd=0.043752
+
+## [2026-06-17T18:12:06Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=start | domain=semantic-models
+
+start research session for prompt 'What are the foundational formalisms for semantic data models, and how do they compare? Cover: the RDF/RDFS/OWL stack (triples, classes, properties, the OWL EL/QL/RL profiles and their reasoning tradeoffs); description logics as the formal underpinning (expressivity vs decidability, reasoning complexity); the property-graph / labeled-property-graph model and how it contrasts with RDF (RDF-star / RDF 1.2, the ISO GQL standardization effort); the conceptual- and logical-modeling lineage (ER, UML, ontologies as conceptual models); and the criteria for choosing a formalism (reasoning needs, interoperability, tooling maturity, query language). Include the canonical W3C specifications, foundational Semantic Web and description-logic sources, and current practitioner comparisons of RDF vs property graphs. Favor authoritative specs and well-grounded technical sources over introductory overviews.'
+
+## [2026-06-17T18:12:06Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T18:12:06Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-06-17T18:12:08Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=arxiv | n=18
+
+adapter arxiv returned 18 candidates
+
+## [2026-06-17T18:12:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2489 | cache_read=8411 | cache_creation=12670 | duration_ms=52016 | cost_usd=0.038634
+
+## [2026-06-17T18:12:10Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=youtube | n=18
+
+adapter youtube returned 18 candidates
+
+## [2026-06-17T18:12:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=0 | cache_creation=16364 | duration_ms=22787 | cost_usd=0.040516
+
+## [2026-06-17T18:12:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2261 | cache_read=0 | cache_creation=16359 | duration_ms=26014 | cost_usd=0.044031
+
+## [2026-06-17T18:12:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1923 | cache_read=8411 | cache_creation=12752 | duration_ms=44228 | cost_usd=0.035968
+
+## [2026-06-17T18:12:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1930 | cache_read=0 | cache_creation=16334 | duration_ms=22877 | cost_usd=0.042326
+
+## [2026-06-17T18:12:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1935 | cache_read=0 | cache_creation=16259 | duration_ms=22363 | cost_usd=0.042201
+
+## [2026-06-17T18:12:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2574 | cache_read=8411 | cache_creation=12730 | duration_ms=31474 | cost_usd=0.039179
+
+## [2026-06-17T18:12:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=912 | cache_read=0 | cache_creation=16346 | duration_ms=12275 | cost_usd=0.037260
+
+## [2026-06-17T18:12:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1554 | cache_read=0 | cache_creation=16208 | duration_ms=31725 | cost_usd=0.040194
+
+## [2026-06-17T18:12:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=890 | cache_read=8411 | cache_creation=12717 | duration_ms=12177 | cost_usd=0.030733
+
+## [2026-06-17T18:12:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=8411 | cache_creation=12614 | duration_ms=17189 | cost_usd=0.033387
+
+## [2026-06-17T18:12:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1637 | cache_read=0 | cache_creation=16258 | duration_ms=20454 | cost_usd=0.040709
+
+## [2026-06-17T18:12:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1847 | cache_read=8411 | cache_creation=12722 | duration_ms=23267 | cost_usd=0.035528
+
+## [2026-06-17T18:12:36Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=search | adapter=web | n=90
+
+adapter web returned 90 candidates
+
+## [2026-06-17T18:12:36Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=merge | n=122
+
+merged 122 candidate(s) across adapters
+
+## [2026-06-17T18:12:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1455 | cache_read=8411 | cache_creation=12660 | duration_ms=16946 | cost_usd=0.033444
+
+## [2026-06-17T18:12:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1883 | cache_read=8411 | cache_creation=12839 | duration_ms=21281 | cost_usd=0.035942
+
+## [2026-06-17T18:12:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1569 | cache_read=8411 | cache_creation=12811 | duration_ms=19782 | cost_usd=0.034316
+
+## [2026-06-17T18:12:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1918 | cache_read=0 | cache_creation=16456 | duration_ms=21627 | cost_usd=0.042510
+
+## [2026-06-17T18:12:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1615 | cache_read=8494 | cache_creation=12781 | duration_ms=18570 | cost_usd=0.034494
+
+## [2026-06-17T18:12:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2249 | cache_read=8411 | cache_creation=12714 | duration_ms=24992 | cost_usd=0.037522
+
+## [2026-06-17T18:12:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1629 | cache_read=8494 | cache_creation=12725 | duration_ms=19346 | cost_usd=0.034452
+
+## [2026-06-17T18:12:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1360 | cache_read=8411 | cache_creation=12639 | duration_ms=16726 | cost_usd=0.032927
+
+## [2026-06-17T18:13:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1547 | cache_read=0 | cache_creation=16229 | duration_ms=30700 | cost_usd=0.040201
+
+## [2026-06-17T18:13:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2276 | cache_read=0 | cache_creation=28498 | duration_ms=26662 | cost_usd=0.068384
+
+## [2026-06-17T18:13:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1480 | cache_read=0 | cache_creation=16337 | duration_ms=30976 | cost_usd=0.040082
+
+## [2026-06-17T18:13:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1349 | cache_read=8411 | cache_creation=12655 | duration_ms=15455 | cost_usd=0.032904
+
+## [2026-06-17T18:13:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1763 | cache_read=8411 | cache_creation=12666 | duration_ms=34319 | cost_usd=0.034996
+
+## [2026-06-17T18:13:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=717 | cache_read=0 | cache_creation=16317 | duration_ms=8525 | cost_usd=0.036227
+
+## [2026-06-17T18:13:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1732 | cache_read=8411 | cache_creation=12645 | duration_ms=20321 | cost_usd=0.034799
+
+## [2026-06-17T18:13:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1914 | cache_read=0 | cache_creation=16454 | duration_ms=21930 | cost_usd=0.042486
+
+## [2026-06-17T18:13:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2066 | cache_read=8494 | cache_creation=12791 | duration_ms=41761 | cost_usd=0.036769
+
+## [2026-06-17T18:13:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1389 | cache_read=8411 | cache_creation=12722 | duration_ms=29014 | cost_usd=0.033238
+
+## [2026-06-17T18:13:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2324 | cache_read=8494 | cache_creation=12709 | duration_ms=27131 | cost_usd=0.037895
+
+## [2026-06-17T18:13:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1349 | cache_read=0 | cache_creation=16234 | duration_ms=17863 | cost_usd=0.039221
+
+## [2026-06-17T18:13:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1662 | cache_read=0 | cache_creation=16406 | duration_ms=23310 | cost_usd=0.041130
+
+## [2026-06-17T18:13:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3184 | cache_read=8411 | cache_creation=12717 | duration_ms=33414 | cost_usd=0.042203
+
+## [2026-06-17T18:13:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2881 | cache_read=8411 | cache_creation=12684 | duration_ms=55039 | cost_usd=0.040622
+
+## [2026-06-17T18:13:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1195 | cache_read=21238 | cache_creation=0 | duration_ms=15298 | cost_usd=0.008107
+
+## [2026-06-17T18:13:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=834 | cache_read=21314 | cache_creation=0 | duration_ms=9461 | cost_usd=0.006309
+
+## [2026-06-17T18:13:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3524 | cache_read=0 | cache_creation=16289 | duration_ms=38043 | cost_usd=0.050206
+
+## [2026-06-17T18:13:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1137 | cache_read=8411 | cache_creation=12714 | duration_ms=13918 | cost_usd=0.031962
+
+## [2026-06-17T18:13:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1673 | cache_read=0 | cache_creation=16311 | duration_ms=21238 | cost_usd=0.040995
+
+## [2026-06-17T18:13:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1752 | cache_read=0 | cache_creation=16412 | duration_ms=33126 | cost_usd=0.041592
+
+## [2026-06-17T18:13:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=832 | cache_read=8494 | cache_creation=12777 | duration_ms=11110 | cost_usd=0.030571
+
+## [2026-06-17T18:13:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1599 | cache_read=0 | cache_creation=16224 | duration_ms=31416 | cost_usd=0.040451
+
+## [2026-06-17T18:13:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1771 | cache_read=0 | cache_creation=16281 | duration_ms=19379 | cost_usd=0.041425
+
+## [2026-06-17T18:13:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2625 | cache_read=0 | cache_creation=16278 | duration_ms=49550 | cost_usd=0.045689
+
+## [2026-06-17T18:13:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2124 | cache_read=0 | cache_creation=16319 | duration_ms=24077 | cost_usd=0.043266
+
+## [2026-06-17T18:14:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2030 | cache_read=21476 | cache_creation=0 | duration_ms=40051 | cost_usd=0.012306
+
+## [2026-06-17T18:14:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=892 | cache_read=8494 | cache_creation=12683 | duration_ms=11309 | cost_usd=0.030683
+
+## [2026-06-17T18:14:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=750 | cache_read=0 | cache_creation=16362 | duration_ms=11805 | cost_usd=0.036482
+
+## [2026-06-17T18:14:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1817 | cache_read=0 | cache_creation=16371 | duration_ms=19462 | cost_usd=0.041835
+
+## [2026-06-17T18:14:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2539 | cache_read=21298 | cache_creation=0 | duration_ms=27746 | cost_usd=0.014833
+
+## [2026-06-17T18:14:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3025 | cache_read=0 | cache_creation=16260 | duration_ms=34912 | cost_usd=0.047653
+
+## [2026-06-17T18:14:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1373 | cache_read=0 | cache_creation=16229 | duration_ms=17920 | cost_usd=0.039331
+
+## [2026-06-17T18:14:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2685 | cache_read=8494 | cache_creation=12654 | duration_ms=31355 | cost_usd=0.039590
+
+## [2026-06-17T18:14:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2171 | cache_read=16473 | cache_creation=0 | duration_ms=42558 | cost_usd=0.012510
+
+## [2026-06-17T18:14:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2333 | cache_read=16462 | cache_creation=0 | duration_ms=43990 | cost_usd=0.013319
+
+## [2026-06-17T18:14:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1103 | cache_read=0 | cache_creation=16191 | duration_ms=14070 | cost_usd=0.037905
+
+## [2026-06-17T18:14:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4329 | cache_read=8411 | cache_creation=12582 | duration_ms=77198 | cost_usd=0.047658
+
+## [2026-06-17T18:14:52Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=filter | n=20
+
+20 candidate(s) cleared threshold
+
+## [2026-06-17T18:15:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2195 | cache_read=0 | cache_creation=16223 | duration_ms=40876 | cost_usd=0.043429
+
+## [2026-06-17T18:15:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2059 | cache_read=0 | cache_creation=16214 | duration_ms=25649 | cost_usd=0.042731
+
+## [2026-06-17T18:15:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2202 | cache_read=0 | cache_creation=16217 | duration_ms=24022 | cost_usd=0.043452
+
+## [2026-06-17T18:15:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2746 | cache_read=0 | cache_creation=16236 | duration_ms=30838 | cost_usd=0.046210
+
+## [2026-06-17T18:15:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=915 | cache_read=16196 | cache_creation=0 | duration_ms=12493 | cost_usd=0.006203
+
+## [2026-06-17T18:15:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1382 | cache_read=8494 | cache_creation=12525 | duration_ms=17582 | cost_usd=0.032817
+
+## [2026-06-17T18:15:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1434 | cache_read=8494 | cache_creation=12563 | duration_ms=17518 | cost_usd=0.033153
+
+## [2026-06-17T18:15:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2291 | cache_read=0 | cache_creation=16217 | duration_ms=30186 | cost_usd=0.043897
+
+## [2026-06-17T18:15:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1670 | cache_read=8494 | cache_creation=12525 | duration_ms=40990 | cost_usd=0.034257
+
+## [2026-06-17T18:16:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1327 | cache_read=0 | cache_creation=16195 | duration_ms=16582 | cost_usd=0.039033
+
+## [2026-06-17T18:16:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1803 | cache_read=0 | cache_creation=16185 | duration_ms=27164 | cost_usd=0.041393
+
+## [2026-06-17T18:16:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2096 | cache_read=0 | cache_creation=16196 | duration_ms=23596 | cost_usd=0.042880
+
+## [2026-06-17T18:16:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1596 | cache_read=8494 | cache_creation=12540 | duration_ms=18908 | cost_usd=0.033917
+
+## [2026-06-17T18:16:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1663 | cache_read=0 | cache_creation=16204 | duration_ms=18925 | cost_usd=0.040731
+
+## [2026-06-17T18:16:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3407 | cache_read=0 | cache_creation=16197 | duration_ms=60057 | cost_usd=0.049437
+
+## [2026-06-17T18:16:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4766 | cache_read=0 | cache_creation=16217 | duration_ms=49566 | cost_usd=0.056272
+
+## [2026-06-17T18:17:00Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=materialize | n=20
+
+materialized 20 source(s) to raw/
+
+## [2026-06-17T18:17:00Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=corpus_quality | n=20 | median_words=268 | sparse_n=11 | sparse_frac=0.55
+
+corpus quality: 20 sources, median 268 words, 11/20 sparse (<300 words)
+
+## [2026-06-17T18:17:01Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=nlm_persistent | notebook_id=65f83714-12cc-4ee0-8e98-72cb1ffe8438
+
+persistent notebook 65f83714-12cc-4ee0-8e98-72cb1ffe8438
+
+## [2026-06-17T18:17:02Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=nlm_session | notebook_id=64e802d6-32dc-439e-8210-080baa8a0c3a
+
+created session notebook 64e802d6-32dc-439e-8210-080baa8a0c3a
+
+## [2026-06-17T18:17:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1595 | cache_read=0 | cache_creation=16199 | duration_ms=21655 | cost_usd=0.040381
+
+## [2026-06-17T18:17:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1281 | cache_read=8494 | cache_creation=12670 | duration_ms=15076 | cost_usd=0.032602
+
+## [2026-06-17T18:17:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3372 | cache_read=0 | cache_creation=16210 | duration_ms=65793 | cost_usd=0.049288
+
+## [2026-06-17T18:17:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1704 | cache_read=8494 | cache_creation=12548 | duration_ms=34872 | cost_usd=0.034473
+
+## [2026-06-17T18:17:37Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=source_add | target=https://www.sciencedirect.com/science/article/abs/pii/S0169023X26000315
+
+error: `nlm source add 64e802d6-32dc-439e-8210-080baa8a0c3a --url https://www.sciencedirect.com/science/article/abs/pii/S0169023X26000315 --wait` exited 1: Adding https://www.sciencedirect.com/science/article/abs/pii/S0169023X26000315 
+and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-17T18:17:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1104 | cache_read=0 | cache_creation=16184 | duration_ms=26683 | cost_usd=0.037896
+
+## [2026-06-17T18:17:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1396 | cache_read=8494 | cache_creation=12542 | duration_ms=30067 | cost_usd=0.032921
+
+## [2026-06-17T18:17:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1127 | cache_read=0 | cache_creation=16206 | duration_ms=15323 | cost_usd=0.038055
+
+## [2026-06-17T18:17:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1373 | cache_read=0 | cache_creation=16204 | duration_ms=30003 | cost_usd=0.039281
+
+## [2026-06-17T18:17:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=785 | cache_read=0 | cache_creation=16172 | duration_ms=14427 | cost_usd=0.036277
+
+## [2026-06-17T18:17:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1108 | cache_read=0 | cache_creation=16190 | duration_ms=16671 | cost_usd=0.037928
+
+## [2026-06-17T18:18:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1039 | cache_read=8494 | cache_creation=12517 | duration_ms=21866 | cost_usd=0.031086
+
+## [2026-06-17T18:18:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=646 | cache_read=0 | cache_creation=16184 | duration_ms=11956 | cost_usd=0.035606
+
+## [2026-06-17T18:18:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1317 | cache_read=0 | cache_creation=16288 | duration_ms=20656 | cost_usd=0.039169
+
+## [2026-06-17T18:18:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1053 | cache_read=0 | cache_creation=16190 | duration_ms=14666 | cost_usd=0.037653
+
+## [2026-06-17T18:18:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1204 | cache_read=0 | cache_creation=16188 | duration_ms=15681 | cost_usd=0.038404
+
+## [2026-06-17T18:18:43Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=source_add | n=19 | skipped=1
+
+pushed 19 source(s) to session notebook (1 skipped)
+
+## [2026-06-17T18:18:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1159 | cache_read=0 | cache_creation=16162 | duration_ms=15151 | cost_usd=0.038127
+
+## [2026-06-17T18:18:45Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=source_map | n=19
+
+built source map (19 entries)
+
+## [2026-06-17T18:18:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2606 | cache_read=0 | cache_creation=16214 | duration_ms=32186 | cost_usd=0.045466
+
+## [2026-06-17T18:18:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3735 | cache_read=0 | cache_creation=16262 | duration_ms=66454 | cost_usd=0.051207
+
+## [2026-06-17T18:18:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1431 | cache_read=0 | cache_creation=16230 | duration_ms=32027 | cost_usd=0.039623
+
+## [2026-06-17T18:19:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=985 | cache_read=0 | cache_creation=16164 | duration_ms=13169 | cost_usd=0.037261
+
+## [2026-06-17T18:19:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1668 | cache_read=8494 | cache_creation=12508 | duration_ms=18001 | cost_usd=0.034213
+
+## [2026-06-17T18:19:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1995 | cache_read=8494 | cache_creation=12486 | duration_ms=22095 | cost_usd=0.035804
+
+## [2026-06-17T18:19:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1850 | cache_read=0 | cache_creation=16164 | duration_ms=33155 | cost_usd=0.041586
+
+## [2026-06-17T18:19:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1365 | cache_read=0 | cache_creation=16222 | duration_ms=17979 | cost_usd=0.039277
+
+## [2026-06-17T18:19:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1563 | cache_read=0 | cache_creation=16160 | duration_ms=18377 | cost_usd=0.040143
+
+## [2026-06-17T18:19:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1536 | cache_read=8494 | cache_creation=12520 | duration_ms=19635 | cost_usd=0.033577
+
+## [2026-06-17T18:19:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2860 | cache_read=8494 | cache_creation=12552 | duration_ms=33320 | cost_usd=0.040261
+
+## [2026-06-17T18:19:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1696 | cache_read=0 | cache_creation=16182 | duration_ms=31023 | cost_usd=0.040852
+
+## [2026-06-17T18:20:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2580 | cache_read=0 | cache_creation=16178 | duration_ms=28972 | cost_usd=0.045264
+
+## [2026-06-17T18:20:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1321 | cache_read=0 | cache_creation=16228 | duration_ms=15341 | cost_usd=0.039069
+
+## [2026-06-17T18:20:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1177 | cache_read=0 | cache_creation=16220 | duration_ms=13698 | cost_usd=0.038333
+
+## [2026-06-17T18:20:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3405 | cache_read=0 | cache_creation=16188 | duration_ms=35026 | cost_usd=0.049409
+
+## [2026-06-17T18:20:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2979 | cache_read=0 | cache_creation=16218 | duration_ms=52091 | cost_usd=0.047339
+
+## [2026-06-17T18:20:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2141 | cache_read=8494 | cache_creation=12526 | duration_ms=24349 | cost_usd=0.036614
+
+## [2026-06-17T18:20:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1620 | cache_read=0 | cache_creation=16171 | duration_ms=20559 | cost_usd=0.040450
+
+## [2026-06-17T18:20:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1503 | cache_read=8494 | cache_creation=12548 | duration_ms=17538 | cost_usd=0.033468
+
+## [2026-06-17T18:21:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=0 | cache_creation=16176 | duration_ms=18300 | cost_usd=0.039740
+
+## [2026-06-17T18:21:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1582 | cache_read=8494 | cache_creation=12452 | duration_ms=19277 | cost_usd=0.033671
+
+## [2026-06-17T18:21:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1771 | cache_read=0 | cache_creation=16194 | duration_ms=36446 | cost_usd=0.041251
+
+## [2026-06-17T18:21:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1253 | cache_read=0 | cache_creation=16202 | duration_ms=24277 | cost_usd=0.038677
+
+## [2026-06-17T18:21:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1318 | cache_read=0 | cache_creation=16196 | duration_ms=14883 | cost_usd=0.038990
+
+## [2026-06-17T18:21:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3049 | cache_read=0 | cache_creation=16202 | duration_ms=55249 | cost_usd=0.047657
+
+## [2026-06-17T18:21:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1568 | cache_read=0 | cache_creation=16216 | duration_ms=29874 | cost_usd=0.040280
+
+## [2026-06-17T18:21:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1265 | cache_read=0 | cache_creation=16284 | duration_ms=14563 | cost_usd=0.038901
+
+## [2026-06-17T18:21:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1101 | cache_read=0 | cache_creation=16206 | duration_ms=21897 | cost_usd=0.037925
+
+## [2026-06-17T18:21:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1294 | cache_read=8494 | cache_creation=12544 | duration_ms=15205 | cost_usd=0.032415
+
+## [2026-06-17T18:21:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1146 | cache_read=8494 | cache_creation=12506 | duration_ms=15506 | cost_usd=0.031599
+
+## [2026-06-17T18:22:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1047 | cache_read=0 | cache_creation=16278 | duration_ms=19382 | cost_usd=0.037799
+
+## [2026-06-17T18:22:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1264 | cache_read=0 | cache_creation=16236 | duration_ms=14969 | cost_usd=0.038800
+
+## [2026-06-17T18:22:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1219 | cache_read=0 | cache_creation=16186 | duration_ms=15017 | cost_usd=0.038475
+
+## [2026-06-17T18:22:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1178 | cache_read=8494 | cache_creation=12512 | duration_ms=22891 | cost_usd=0.031771
+
+## [2026-06-17T18:22:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1141 | cache_read=8494 | cache_creation=12540 | duration_ms=15771 | cost_usd=0.031642
+
+## [2026-06-17T18:22:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1719 | cache_read=0 | cache_creation=16198 | duration_ms=30626 | cost_usd=0.040999
+
+## [2026-06-17T18:22:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1290 | cache_read=8494 | cache_creation=12544 | duration_ms=26333 | cost_usd=0.032395
+
+## [2026-06-17T18:22:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1047 | cache_read=8494 | cache_creation=12524 | duration_ms=13124 | cost_usd=0.031140
+
+## [2026-06-17T18:22:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1014 | cache_read=8494 | cache_creation=12554 | duration_ms=19439 | cost_usd=0.031035
+
+## [2026-06-17T18:22:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1209 | cache_read=0 | cache_creation=16270 | duration_ms=16315 | cost_usd=0.038593
+
+## [2026-06-17T18:23:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1742 | cache_read=0 | cache_creation=16184 | duration_ms=22306 | cost_usd=0.041086
+
+## [2026-06-17T18:23:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1046 | cache_read=0 | cache_creation=16196 | duration_ms=12908 | cost_usd=0.037630
+
+## [2026-06-17T18:23:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1679 | cache_read=0 | cache_creation=16226 | duration_ms=31406 | cost_usd=0.040855
+
+## [2026-06-17T18:23:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2508 | cache_read=0 | cache_creation=16182 | duration_ms=27944 | cost_usd=0.044912
+
+## [2026-06-17T18:23:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2821 | cache_read=0 | cache_creation=16188 | duration_ms=53199 | cost_usd=0.046489
+
+## [2026-06-17T18:23:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1426 | cache_read=8494 | cache_creation=12510 | duration_ms=18091 | cost_usd=0.033007
+
+## [2026-06-17T18:23:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1991 | cache_read=8494 | cache_creation=12552 | duration_ms=20724 | cost_usd=0.035916
+
+## [2026-06-17T18:23:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1612 | cache_read=8494 | cache_creation=12528 | duration_ms=18324 | cost_usd=0.033973
+
+## [2026-06-17T18:23:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1861 | cache_read=8494 | cache_creation=12517 | duration_ms=26700 | cost_usd=0.035196
+
+## [2026-06-17T18:24:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2076 | cache_read=0 | cache_creation=16210 | duration_ms=23627 | cost_usd=0.042808
+
+## [2026-06-17T18:24:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1344 | cache_read=8494 | cache_creation=12510 | duration_ms=25609 | cost_usd=0.032597
+
+## [2026-06-17T18:24:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1415 | cache_read=0 | cache_creation=16164 | duration_ms=31029 | cost_usd=0.039411
+
+## [2026-06-17T18:24:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1351 | cache_read=0 | cache_creation=16311 | duration_ms=15729 | cost_usd=0.039385
+
+## [2026-06-17T18:24:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1436 | cache_read=0 | cache_creation=16186 | duration_ms=28508 | cost_usd=0.039560
+
+## [2026-06-17T18:24:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1626 | cache_read=0 | cache_creation=16191 | duration_ms=18179 | cost_usd=0.040520
+
+## [2026-06-17T18:24:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2181 | cache_read=0 | cache_creation=16234 | duration_ms=25697 | cost_usd=0.043381
+
+## [2026-06-17T18:24:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1853 | cache_read=0 | cache_creation=16302 | duration_ms=36050 | cost_usd=0.041877
+
+## [2026-06-17T18:24:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1065 | cache_read=8494 | cache_creation=12523 | duration_ms=12635 | cost_usd=0.031228
+
+## [2026-06-17T18:25:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1595 | cache_read=0 | cache_creation=16188 | duration_ms=31210 | cost_usd=0.040359
+
+## [2026-06-17T18:25:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2223 | cache_read=8494 | cache_creation=12538 | duration_ms=26266 | cost_usd=0.037048
+
+## [2026-06-17T18:25:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1124 | cache_read=8494 | cache_creation=12498 | duration_ms=24973 | cost_usd=0.031473
+
+## [2026-06-17T18:25:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1394 | cache_read=0 | cache_creation=16266 | duration_ms=27510 | cost_usd=0.039510
+
+## [2026-06-17T18:25:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1608 | cache_read=0 | cache_creation=16228 | duration_ms=20420 | cost_usd=0.040504
+
+## [2026-06-17T18:25:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1647 | cache_read=0 | cache_creation=16218 | duration_ms=18559 | cost_usd=0.040679
+
+## [2026-06-17T18:25:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1451 | cache_read=8494 | cache_creation=12542 | duration_ms=18073 | cost_usd=0.033196
+
+## [2026-06-17T18:25:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1425 | cache_read=8494 | cache_creation=12534 | duration_ms=19211 | cost_usd=0.033050
+
+## [2026-06-17T18:25:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1378 | cache_read=8494 | cache_creation=12540 | duration_ms=18437 | cost_usd=0.032827
+
+## [2026-06-17T18:25:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1798 | cache_read=0 | cache_creation=16230 | duration_ms=21733 | cost_usd=0.041458
+
+## [2026-06-17T18:26:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2099 | cache_read=8494 | cache_creation=12548 | duration_ms=40857 | cost_usd=0.036448
+
+## [2026-06-17T18:26:07Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=filter | n=37
+
+37 candidate(s) cleared threshold
+
+## [2026-06-17T18:26:27Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=index_settle | distinct_sources=10
+
+index settled (10 distinct source(s) visible)
+
+## [2026-06-17T18:27:06Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=convert | target=https://travesia.mcu.es/bitstream/10421/2425/1/owl2.pdf
+
+error: no extractable content at https://travesia.mcu.es/bitstream/10421/2425/1/owl2.pdf
+
+## [2026-06-17T18:29:28Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=convert | target=https://www.tandfonline.com/doi/full/10.1080/24751839.2019.1686681
+
+error: HTTP 403 fetching https://www.tandfonline.com/doi/full/10.1080/24751839.2019.1686681
+
+## [2026-06-17T18:29:31Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=materialize | n=35
+
+materialized 35 source(s) to raw/
+
+## [2026-06-17T18:29:31Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=corpus_quality | n=35 | median_words=3273 | sparse_n=7 | sparse_frac=0.2
+
+corpus quality: 35 sources, median 3273 words, 7/35 sparse (<300 words)
+
+## [2026-06-17T18:29:32Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=nlm_persistent | notebook_id=d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+persistent notebook d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+## [2026-06-17T18:29:33Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=nlm_session | notebook_id=0cfca46c-1ca9-4ffc-a6d7-81b0b4f330a0
+
+created session notebook 0cfca46c-1ca9-4ffc-a6d7-81b0b4f330a0
+
+## [2026-06-17T18:32:18Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=source_add | target=https://link.springer.com/chapter/10.1007/978-3-540-24750-0_1
+
+error: `nlm source add 0cfca46c-1ca9-4ffc-a6d7-81b0b4f330a0 --url https://link.springer.com/chapter/10.1007/978-3-540-24750-0_1 --wait` exited 1: Adding https://link.springer.com/chapter/10.1007/978-3-540-24750-0_1 and waiting
+for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-17T18:33:37Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=source_add | n=34 | skipped=1
+
+pushed 34 source(s) to session notebook (1 skipped)
+
+## [2026-06-17T18:33:39Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=source_map | n=34
+
+built source map (34 entries)
+
+## [2026-06-17T18:39:03Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-06-17T18:39:06Z] wiki-author | id=research-2026-06-17-how-do-ai-agents-retrieve-and | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+corpus-constructive research session for agentic-data-layer
+
+## [2026-06-17T18:39:06Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-06-17-how-do-ai-agents-retrieve-and: 7 update(s)
+
+## [2026-06-17T18:40:45Z] research | session_id=2026-06-17-how-do-ai-agents-retrieve-and | step=promoted | added=18 | failed=2
+
+promoted 18 source(s) into persistent notebook (2 failed)
+
+## [2026-06-17T18:43:04Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=start | domain=agentic-data-layer
+
+start research session for prompt 'How do AI agents construct, populate, and maintain semantic data structures, and how is their output validated against the model? Cover LLM-driven entity and relation extraction into knowledge graphs, ontology population, automated KG construction from unstructured documents, and agentic schema evolution. Cover validation and grounding: SHACL/ShEx/JSON-Schema-constrained generation, ontology grounding to reduce hallucination, and verification and provenance of agent-generated triples or records. Emphasize write-path safety and correctness for long-lived, mutable knowledge models. Operator-architect, pattern-level. Prioritize 2024-2026 arXiv and substantive vendor engineering material.'
+
+## [2026-06-17T18:43:04Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T18:43:09Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=search | adapter=arxiv | n=40
+
+adapter arxiv returned 40 candidates
+
+## [2026-06-17T18:43:12Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=search | adapter=youtube | n=25
+
+adapter youtube returned 25 candidates
+
+## [2026-06-17T18:43:19Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-17T18:44:16Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=search | target=semantic_scholar
+
+error: S2 API rate limit exceeded after retries; set S2_API_KEY for higher limits
+
+## [2026-06-17T18:44:16Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=merge | n=126
+
+merged 126 candidate(s) across adapters
+
+## [2026-06-17T18:44:28Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=index_settle | distinct_sources=17
+
+index settled (17 distinct source(s) visible)
+
+## [2026-06-17T18:44:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1387 | cache_read=0 | cache_creation=47130 | duration_ms=17415 | cost_usd=0.101203
+
+## [2026-06-17T18:44:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1421 | cache_read=0 | cache_creation=47126 | duration_ms=17622 | cost_usd=0.101365
+
+## [2026-06-17T18:44:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1421 | cache_read=34156 | cache_creation=13041 | duration_ms=19471 | cost_usd=0.036611
+
+## [2026-06-17T18:44:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1633 | cache_read=34156 | cache_creation=13060 | duration_ms=23586 | cost_usd=0.037709
+
+## [2026-06-17T18:44:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2094 | cache_read=34156 | cache_creation=13540 | duration_ms=28027 | cost_usd=0.040974
+
+## [2026-06-17T18:44:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=34156 | cache_creation=13090 | duration_ms=33566 | cost_usd=0.037949
+
+## [2026-06-17T18:44:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1169 | cache_read=8411 | cache_creation=12846 | duration_ms=14308 | cost_usd=0.032386
+
+## [2026-06-17T18:44:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1431 | cache_read=8411 | cache_creation=12772 | duration_ms=17793 | cost_usd=0.033548
+
+## [2026-06-17T18:45:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1017 | cache_read=8411 | cache_creation=12895 | duration_ms=21912 | cost_usd=0.031724
+
+## [2026-06-17T18:45:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2148 | cache_read=34156 | cache_creation=13086 | duration_ms=44105 | cost_usd=0.040336
+
+## [2026-06-17T18:45:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1050 | cache_read=0 | cache_creation=16377 | duration_ms=22499 | cost_usd=0.038012
+
+## [2026-06-17T18:45:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2704 | cache_read=47263 | cache_creation=0 | duration_ms=54056 | cost_usd=0.018254
+
+## [2026-06-17T18:45:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1548 | cache_read=0 | cache_creation=16431 | duration_ms=32249 | cost_usd=0.040610
+
+## [2026-06-17T18:45:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2189 | cache_read=0 | cache_creation=16430 | duration_ms=28146 | cost_usd=0.043813
+
+## [2026-06-17T18:45:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3102 | cache_read=21204 | cache_creation=0 | duration_ms=31618 | cost_usd=0.017638
+
+## [2026-06-17T18:45:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1928 | cache_read=8411 | cache_creation=12849 | duration_ms=23172 | cost_usd=0.036187
+
+## [2026-06-17T18:45:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2322 | cache_read=8411 | cache_creation=12808 | duration_ms=25714 | cost_usd=0.038075
+
+## [2026-06-17T18:45:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1976 | cache_read=0 | cache_creation=16536 | duration_ms=24317 | cost_usd=0.042960
+
+## [2026-06-17T18:45:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2716 | cache_read=21247 | cache_creation=0 | duration_ms=53193 | cost_usd=0.015713
+
+## [2026-06-17T18:45:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=973 | cache_read=0 | cache_creation=16297 | duration_ms=12346 | cost_usd=0.037467
+
+## [2026-06-17T18:46:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5502 | cache_read=8411 | cache_creation=12842 | duration_ms=54483 | cost_usd=0.054043
+
+## [2026-06-17T18:46:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1278 | cache_read=0 | cache_creation=16476 | duration_ms=16259 | cost_usd=0.039350
+
+## [2026-06-17T18:46:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2078 | cache_read=8411 | cache_creation=12911 | duration_ms=24338 | cost_usd=0.037061
+
+## [2026-06-17T18:46:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2702 | cache_read=8411 | cache_creation=12768 | duration_ms=52152 | cost_usd=0.039895
+
+## [2026-06-17T18:46:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1351 | cache_read=8411 | cache_creation=12526 | duration_ms=20334 | cost_usd=0.032656
+
+## [2026-06-17T18:46:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2359 | cache_read=8411 | cache_creation=12915 | duration_ms=47854 | cost_usd=0.038474
+
+## [2026-06-17T18:46:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2548 | cache_read=0 | cache_creation=16382 | duration_ms=50043 | cost_usd=0.045512
+
+## [2026-06-17T18:46:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1550 | cache_read=8411 | cache_creation=12545 | duration_ms=19029 | cost_usd=0.033689
+
+## [2026-06-17T18:46:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1301 | cache_read=0 | cache_creation=16141 | duration_ms=17109 | cost_usd=0.038795
+
+## [2026-06-17T18:46:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1265 | cache_read=8411 | cache_creation=12583 | duration_ms=15910 | cost_usd=0.032340
+
+## [2026-06-17T18:46:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=977 | cache_read=8411 | cache_creation=12542 | duration_ms=12799 | cost_usd=0.030818
+
+## [2026-06-17T18:46:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=8411 | cache_creation=12573 | duration_ms=15277 | cost_usd=0.032405
+
+## [2026-06-17T18:46:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1572 | cache_read=20956 | cache_creation=0 | duration_ms=31805 | cost_usd=0.009964
+
+## [2026-06-17T18:46:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=5073 | cache_read=0 | cache_creation=16389 | duration_ms=94925 | cost_usd=0.058151
+
+## [2026-06-17T18:46:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1951 | cache_read=0 | cache_creation=16151 | duration_ms=23871 | cost_usd=0.042065
+
+## [2026-06-17T18:46:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1140 | cache_read=0 | cache_creation=16141 | duration_ms=14680 | cost_usd=0.037990
+
+## [2026-06-17T18:46:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1415 | cache_read=8411 | cache_creation=12543 | duration_ms=17114 | cost_usd=0.033010
+
+## [2026-06-17T18:46:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=8411 | cache_creation=12544 | duration_ms=17995 | cost_usd=0.033292
+
+## [2026-06-17T18:46:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=985 | cache_read=0 | cache_creation=16133 | duration_ms=20018 | cost_usd=0.037199
+
+## [2026-06-17T18:46:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1646 | cache_read=20957 | cache_creation=0 | duration_ms=20763 | cost_usd=0.010334
+
+## [2026-06-17T18:46:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1465 | cache_read=0 | cache_creation=16135 | duration_ms=20316 | cost_usd=0.039603
+
+## [2026-06-17T18:46:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1723 | cache_read=8411 | cache_creation=12551 | duration_ms=21245 | cost_usd=0.034566
+
+## [2026-06-17T18:47:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2051 | cache_read=8411 | cache_creation=12526 | duration_ms=28025 | cost_usd=0.036156
+
+## [2026-06-17T18:47:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1819 | cache_read=8411 | cache_creation=12559 | duration_ms=26579 | cost_usd=0.035062
+
+## [2026-06-17T18:47:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1603 | cache_read=0 | cache_creation=16159 | duration_ms=19407 | cost_usd=0.040341
+
+## [2026-06-17T18:47:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1418 | cache_read=8411 | cache_creation=12541 | duration_ms=19049 | cost_usd=0.033021
+
+## [2026-06-17T18:47:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1410 | cache_read=8411 | cache_creation=12544 | duration_ms=28935 | cost_usd=0.032987
+
+## [2026-06-17T18:47:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2068 | cache_read=8411 | cache_creation=12561 | duration_ms=27552 | cost_usd=0.036311
+
+## [2026-06-17T18:47:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2255 | cache_read=0 | cache_creation=16136 | duration_ms=25924 | cost_usd=0.043555
+
+## [2026-06-17T18:47:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1154 | cache_read=8411 | cache_creation=12564 | duration_ms=15141 | cost_usd=0.031747
+
+## [2026-06-17T18:47:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1460 | cache_read=0 | cache_creation=16132 | duration_ms=30996 | cost_usd=0.039572
+
+## [2026-06-17T18:47:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1532 | cache_read=0 | cache_creation=16093 | duration_ms=18803 | cost_usd=0.039854
+
+## [2026-06-17T18:47:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1226 | cache_read=0 | cache_creation=16104 | duration_ms=25991 | cost_usd=0.038346
+
+## [2026-06-17T18:47:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1891 | cache_read=0 | cache_creation=16166 | duration_ms=38462 | cost_usd=0.041795
+
+## [2026-06-17T18:47:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2499 | cache_read=0 | cache_creation=16121 | duration_ms=26457 | cost_usd=0.044745
+
+## [2026-06-17T18:47:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1912 | cache_read=0 | cache_creation=16108 | duration_ms=23659 | cost_usd=0.041784
+
+## [2026-06-17T18:47:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1705 | cache_read=8411 | cache_creation=12514 | duration_ms=34831 | cost_usd=0.034402
+
+## [2026-06-17T18:48:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1388 | cache_read=8411 | cache_creation=12520 | duration_ms=16964 | cost_usd=0.032829
+
+## [2026-06-17T18:48:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1617 | cache_read=8411 | cache_creation=12544 | duration_ms=34466 | cost_usd=0.034022
+
+## [2026-06-17T18:48:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1673 | cache_read=8411 | cache_creation=12531 | duration_ms=20455 | cost_usd=0.034276
+
+## [2026-06-17T18:48:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2100 | cache_read=0 | cache_creation=16146 | duration_ms=42182 | cost_usd=0.042800
+
+## [2026-06-17T18:48:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2017 | cache_read=8411 | cache_creation=12550 | duration_ms=26784 | cost_usd=0.036034
+
+## [2026-06-17T18:48:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1787 | cache_read=8411 | cache_creation=12526 | duration_ms=37371 | cost_usd=0.034836
+
+## [2026-06-17T18:48:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=8411 | cache_creation=12547 | duration_ms=32600 | cost_usd=0.033323
+
+## [2026-06-17T18:48:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1648 | cache_read=0 | cache_creation=16131 | duration_ms=20150 | cost_usd=0.040510
+
+## [2026-06-17T18:48:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1754 | cache_read=0 | cache_creation=16109 | duration_ms=23850 | cost_usd=0.040996
+
+## [2026-06-17T18:48:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2154 | cache_read=8411 | cache_creation=12534 | duration_ms=26737 | cost_usd=0.036687
+
+## [2026-06-17T18:48:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1259 | cache_read=0 | cache_creation=16135 | duration_ms=16522 | cost_usd=0.038573
+
+## [2026-06-17T18:48:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3846 | cache_read=8411 | cache_creation=12512 | duration_ms=77477 | cost_usd=0.045103
+
+## [2026-06-17T18:48:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3232 | cache_read=8411 | cache_creation=12494 | duration_ms=35427 | cost_usd=0.041997
+
+## [2026-06-17T18:48:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1717 | cache_read=8411 | cache_creation=12532 | duration_ms=20441 | cost_usd=0.034498
+
+## [2026-06-17T18:49:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1524 | cache_read=8411 | cache_creation=12530 | duration_ms=19266 | cost_usd=0.033529
+
+## [2026-06-17T18:49:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1494 | cache_read=8411 | cache_creation=12494 | duration_ms=31230 | cost_usd=0.033307
+
+## [2026-06-17T18:49:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1866 | cache_read=8411 | cache_creation=12522 | duration_ms=24111 | cost_usd=0.035223
+
+## [2026-06-17T18:49:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1591 | cache_read=8411 | cache_creation=12538 | duration_ms=32933 | cost_usd=0.033880
+
+## [2026-06-17T18:49:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1458 | cache_read=0 | cache_creation=16103 | duration_ms=30314 | cost_usd=0.039504
+
+## [2026-06-17T18:49:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=22 | out_tokens=2409 | cache_read=168163 | cache_creation=27179 | duration_ms=32866 | cost_usd=0.083241
+
+## [2026-06-17T18:49:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1575 | cache_read=0 | cache_creation=16087 | duration_ms=20177 | cost_usd=0.040057
+
+## [2026-06-17T18:49:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=8411 | cache_creation=12500 | duration_ms=18928 | cost_usd=0.033914
+
+## [2026-06-17T18:49:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1739 | cache_read=8411 | cache_creation=12514 | duration_ms=37759 | cost_usd=0.034572
+
+## [2026-06-17T18:49:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1048 | cache_read=8411 | cache_creation=13086 | duration_ms=23403 | cost_usd=0.032261
+
+## [2026-06-17T18:49:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1372 | cache_read=0 | cache_creation=16105 | duration_ms=17004 | cost_usd=0.039078
+
+## [2026-06-17T18:49:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3430 | cache_read=8411 | cache_creation=12536 | duration_ms=61908 | cost_usd=0.043071
+
+## [2026-06-17T18:49:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1503 | cache_read=0 | cache_creation=16093 | duration_ms=28528 | cost_usd=0.039709
+
+## [2026-06-17T18:49:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1718 | cache_read=8411 | cache_creation=12526 | duration_ms=34903 | cost_usd=0.034491
+
+## [2026-06-17T18:49:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1097 | cache_read=0 | cache_creation=16127 | duration_ms=16778 | cost_usd=0.037747
+
+## [2026-06-17T18:49:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1381 | cache_read=8411 | cache_creation=12532 | duration_ms=17234 | cost_usd=0.032818
+
+## [2026-06-17T18:50:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2137 | cache_read=8411 | cache_creation=12522 | duration_ms=35819 | cost_usd=0.036578
+
+## [2026-06-17T18:50:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1917 | cache_read=0 | cache_creation=16089 | duration_ms=37534 | cost_usd=0.041771
+
+## [2026-06-17T18:50:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1249 | cache_read=0 | cache_creation=16137 | duration_ms=23182 | cost_usd=0.038527
+
+## [2026-06-17T18:50:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1603 | cache_read=0 | cache_creation=16111 | duration_ms=32939 | cost_usd=0.040245
+
+## [2026-06-17T18:50:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2238 | cache_read=8411 | cache_creation=12520 | duration_ms=26761 | cost_usd=0.037079
+
+## [2026-06-17T18:50:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1795 | cache_read=8411 | cache_creation=12516 | duration_ms=40146 | cost_usd=0.034856
+
+## [2026-06-17T18:50:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1731 | cache_read=0 | cache_creation=16099 | duration_ms=36802 | cost_usd=0.040861
+
+## [2026-06-17T18:50:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1677 | cache_read=0 | cache_creation=16161 | duration_ms=21403 | cost_usd=0.040715
+
+## [2026-06-17T18:50:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1147 | cache_read=0 | cache_creation=16099 | duration_ms=17072 | cost_usd=0.037941
+
+## [2026-06-17T18:50:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=0 | cache_creation=16163 | duration_ms=18499 | cost_usd=0.039714
+
+## [2026-06-17T18:50:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1655 | cache_read=8411 | cache_creation=12584 | duration_ms=34589 | cost_usd=0.034292
+
+## [2026-06-17T18:50:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1104 | cache_read=0 | cache_creation=16129 | duration_ms=12974 | cost_usd=0.037786
+
+## [2026-06-17T18:50:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1702 | cache_read=8411 | cache_creation=12508 | duration_ms=20330 | cost_usd=0.034375
+
+## [2026-06-17T18:50:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1797 | cache_read=8411 | cache_creation=12506 | duration_ms=22536 | cost_usd=0.034846
+
+## [2026-06-17T18:50:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1793 | cache_read=0 | cache_creation=16109 | duration_ms=36301 | cost_usd=0.041191
+
+## [2026-06-17T18:50:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1502 | cache_read=0 | cache_creation=16125 | duration_ms=21284 | cost_usd=0.039768
+
+## [2026-06-17T18:50:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=16159 | cache_creation=0 | duration_ms=18021 | cost_usd=0.008934
+
+## [2026-06-17T18:50:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2807 | cache_read=8411 | cache_creation=12534 | duration_ms=32108 | cost_usd=0.039952
+
+## [2026-06-17T18:51:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2016 | cache_read=0 | cache_creation=16125 | duration_ms=41298 | cost_usd=0.042338
+
+## [2026-06-17T18:51:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1539 | cache_read=0 | cache_creation=16113 | duration_ms=35519 | cost_usd=0.039929
+
+## [2026-06-17T18:51:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2462 | cache_read=0 | cache_creation=16114 | duration_ms=28193 | cost_usd=0.044546
+
+## [2026-06-17T18:51:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1795 | cache_read=0 | cache_creation=16130 | duration_ms=22580 | cost_usd=0.041243
+
+## [2026-06-17T18:51:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2486 | cache_read=0 | cache_creation=16115 | duration_ms=50232 | cost_usd=0.044668
+
+## [2026-06-17T18:51:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1210 | cache_read=8411 | cache_creation=12496 | duration_ms=28968 | cost_usd=0.031891
+
+## [2026-06-17T18:51:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1260 | cache_read=8411 | cache_creation=12528 | duration_ms=26580 | cost_usd=0.032205
+
+## [2026-06-17T18:51:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1826 | cache_read=8411 | cache_creation=12572 | duration_ms=24235 | cost_usd=0.035123
+
+## [2026-06-17T18:51:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1441 | cache_read=0 | cache_creation=16107 | duration_ms=20948 | cost_usd=0.039427
+
+## [2026-06-17T18:51:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1277 | cache_read=8411 | cache_creation=12518 | duration_ms=17558 | cost_usd=0.032270
+
+## [2026-06-17T18:51:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1027 | cache_read=8411 | cache_creation=12504 | duration_ms=21195 | cost_usd=0.030992
+
+## [2026-06-17T18:51:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1256 | cache_read=0 | cache_creation=16101 | duration_ms=25583 | cost_usd=0.038490
+
+## [2026-06-17T18:51:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1945 | cache_read=8411 | cache_creation=12520 | duration_ms=23712 | cost_usd=0.035614
+
+## [2026-06-17T18:51:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1381 | cache_read=0 | cache_creation=16143 | duration_ms=18066 | cost_usd=0.039199
+
+## [2026-06-17T18:51:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1599 | cache_read=0 | cache_creation=16103 | duration_ms=21192 | cost_usd=0.040209
+
+## [2026-06-17T18:51:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1540 | cache_read=0 | cache_creation=16105 | duration_ms=20459 | cost_usd=0.039918
+
+## [2026-06-17T18:51:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1297 | cache_read=0 | cache_creation=16157 | duration_ms=26931 | cost_usd=0.038807
+
+## [2026-06-17T18:52:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1287 | cache_read=8411 | cache_creation=12548 | duration_ms=19545 | cost_usd=0.032380
+
+## [2026-06-17T18:52:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1809 | cache_read=0 | cache_creation=16133 | duration_ms=36603 | cost_usd=0.041319
+
+## [2026-06-17T18:52:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2258 | cache_read=0 | cache_creation=16165 | duration_ms=44132 | cost_usd=0.043628
+
+## [2026-06-17T18:52:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1846 | cache_read=0 | cache_creation=16129 | duration_ms=37121 | cost_usd=0.041496
+
+## [2026-06-17T18:52:14Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=filter | n=11
+
+11 candidate(s) cleared threshold
+
+## [2026-06-17T18:53:09Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=convert | target=https://dl.acm.org/doi/10.1145/3779436
+
+error: HTTP 403 fetching https://dl.acm.org/doi/10.1145/3779436
+
+## [2026-06-17T18:53:55Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=materialize | n=10
+
+materialized 10 source(s) to raw/
+
+## [2026-06-17T18:53:55Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=corpus_quality | n=10 | median_words=6325 | sparse_n=4 | sparse_frac=0.4
+
+corpus quality: 10 sources, median 6325 words, 4/10 sparse (<300 words)
+
+## [2026-06-17T18:53:55Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=nlm_persistent | notebook_id=65f83714-12cc-4ee0-8e98-72cb1ffe8438
+
+persistent notebook 65f83714-12cc-4ee0-8e98-72cb1ffe8438
+
+## [2026-06-17T18:53:56Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=nlm_session | notebook_id=0606e2a4-daf0-4221-be26-4a7e350d2815
+
+created session notebook 0606e2a4-daf0-4221-be26-4a7e350d2815
+
+## [2026-06-17T18:54:52Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=source_add | n=10 | skipped=0
+
+pushed 10 source(s) to session notebook (0 skipped)
+
+## [2026-06-17T18:54:54Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=source_map | n=10
+
+built source map (10 entries)
+
+## [2026-06-17T19:03:15Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=index_settle | distinct_sources=9
+
+index settled (9 distinct source(s) visible)
+
+## [2026-06-17T19:03:56Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-06-17T19:03:59Z] wiki-author | id=research-2026-06-17-what-are-the-foundational-formalisms-for | updates=7 | created=7 | updated=0 | contradictions=0 | draft=yes
+
+corpus-constructive research session for semantic-models
+
+## [2026-06-17T19:03:59Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-06-17-what-are-the-foundational-formalisms-for: 7 update(s)
+
+## [2026-06-17T19:08:31Z] research | session_id=2026-06-17-what-are-the-foundational-formalisms-for | step=promoted | added=33 | failed=2
+
+promoted 33 source(s) into persistent notebook (2 failed)
+
+## [2026-06-17T19:12:19Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=start | domain=semantic-models
+
+start research session for prompt 'How do practitioners engineer ontologies at production quality? Cover: established methodologies (METHONTOLOGY, NeOn, SAMOD, agile and competency-question-driven design); ontology design patterns (content patterns, logical patterns, the ODP catalog) and anti-patterns; modularization and ontology reuse; ontology alignment and matching (techniques, the OAEI evaluation campaigns, precision and recall tradeoffs); upper and foundational ontologies (BFO, DOLCE, SUMO, gist) and when to commit to one; and ontology lifecycle, versioning, and governance. Include foundational methodology papers, the ontology-design-pattern literature, OAEI results, and current engineering practice.'
+
+## [2026-06-17T19:12:35Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=562 | cache_read=0 | cache_creation=22556 | duration_ms=13830 | cost_usd=0.143772
+
+## [2026-06-17T19:12:35Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-17-how-do-practitioners-engineer-ontologies-at.yaml
+
+## [2026-06-17T19:13:14Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=start | domain=semantic-models
+
+start research session for prompt 'How do practitioners engineer ontologies at production quality? Cover: established methodologies (METHONTOLOGY, NeOn, SAMOD, agile and competency-question-driven design); ontology design patterns (content patterns, logical patterns, the ODP catalog) and anti-patterns; modularization and ontology reuse; ontology alignment and matching (techniques, the OAEI evaluation campaigns, precision and recall tradeoffs); upper and foundational ontologies (BFO, DOLCE, SUMO, gist) and when to commit to one; and ontology lifecycle, versioning, and governance. Include foundational methodology papers, the ontology-design-pattern literature, OAEI results, and current engineering practice.'
+
+## [2026-06-17T19:13:15Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T19:13:15Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-06-17T19:13:16Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=search | adapter=arxiv | n=18
+
+adapter arxiv returned 18 candidates
+
+## [2026-06-17T19:13:18Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=search | adapter=youtube | n=18
+
+adapter youtube returned 18 candidates
+
+## [2026-06-17T19:13:39Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=start | domain=semantic-models
+
+start research session for prompt 'What are the architecture and engineering choices in building and operating knowledge graphs? Cover: KG construction pipelines (from structured sources via R2RML and RML, and from text via entity and relation extraction); storage architectures (RDF triple stores versus native labeled-property-graph databases, indexing and scaling characteristics); query languages and engines (SPARQL 1.1, Cypher, the ISO GQL standard) and their performance tradeoffs; reasoning and inference at scale (materialization versus query rewriting, OWL profile reasoners); knowledge-graph embeddings and their role; and shape validation (SHACL, ShEx). Include triple-store and graph-database technical documentation and benchmarks, reference-architecture writeups, and W3C/ISO specifications. Favor sources with concrete query, schema, or benchmark detail.'
+
+## [2026-06-17T19:13:46Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-17T19:13:46Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=merge | n=105
+
+merged 105 candidate(s) across adapters
+
+## [2026-06-17T19:14:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1474 | cache_read=8494 | cache_creation=12792 | duration_ms=16780 | cost_usd=0.033811
+
+## [2026-06-17T19:14:06Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1552 | cache_read=4291 | cache_creation=18637 | duration_ms=25128 | cost_usd=0.136395
+
+## [2026-06-17T19:14:06Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-17-what-are-the-architecture-and-engineering.yaml
+
+## [2026-06-17T19:14:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2292 | cache_read=8494 | cache_creation=12816 | duration_ms=28690 | cost_usd=0.037949
+
+## [2026-06-17T19:14:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1349 | cache_read=8494 | cache_creation=12746 | duration_ms=29097 | cost_usd=0.033094
+
+## [2026-06-17T19:14:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3980 | cache_read=8494 | cache_creation=12814 | duration_ms=42167 | cost_usd=0.046385
+
+## [2026-06-17T19:14:44Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=start | domain=semantic-models
+
+start research session for prompt 'How is semantic modeling applied as architecture in enterprise data systems? Cover: the semantic layer and metrics-layer pattern (universal semantic layer, headless BI, dbt Semantic Layer, Cube, AtScale, Malloy) and how it relates to formal ontologies; linked-data publishing and schema.org for interoperability; data-fabric and data-mesh semantics (knowledge-graph-backed metadata, active metadata catalogs, canonical data models); semantic integration and mapping patterns across heterogeneous sources; and where formal semantics (RDF/OWL) meets pragmatic enterprise data modeling. Include vendor architecture documentation, standards (schema.org, DCAT), reference architectures, and practitioner accounts of semantic-layer adoption. Favor sources specifying the underlying schema or formalism over capability assertions.'
+
+## [2026-06-17T19:14:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2025 | cache_read=8494 | cache_creation=12799 | duration_ms=41772 | cost_usd=0.036580
+
+## [2026-06-17T19:14:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=0 | cache_creation=16442 | duration_ms=32547 | cost_usd=0.039522
+
+## [2026-06-17T19:14:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3215 | cache_read=8494 | cache_creation=12909 | duration_ms=36858 | cost_usd=0.042750
+
+## [2026-06-17T19:15:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1472 | cache_read=0 | cache_creation=16388 | duration_ms=29015 | cost_usd=0.040144
+
+## [2026-06-17T19:15:13Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1369 | cache_read=0 | cache_creation=27937 | duration_ms=27058 | cost_usd=0.188163
+
+## [2026-06-17T19:15:13Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-17-how-is-semantic-modeling-applied-as.yaml
+
+## [2026-06-17T19:15:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1506 | cache_read=0 | cache_creation=16461 | duration_ms=19115 | cost_usd=0.040460
+
+## [2026-06-17T19:15:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2387 | cache_read=8494 | cache_creation=12871 | duration_ms=28126 | cost_usd=0.038534
+
+## [2026-06-17T19:15:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2170 | cache_read=0 | cache_creation=16365 | duration_ms=26012 | cost_usd=0.043588
+
+## [2026-06-17T19:15:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2088 | cache_read=8494 | cache_creation=12948 | duration_ms=26693 | cost_usd=0.037193
+
+## [2026-06-17T19:15:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1268 | cache_read=8494 | cache_creation=12547 | duration_ms=18102 | cost_usd=0.032291
+
+## [2026-06-17T19:15:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1455 | cache_read=8494 | cache_creation=12853 | duration_ms=20693 | cost_usd=0.033838
+
+## [2026-06-17T19:15:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1795 | cache_read=8494 | cache_creation=12730 | duration_ms=24246 | cost_usd=0.035292
+
+## [2026-06-17T19:15:49Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-06-17T19:15:53Z] wiki-author | id=research-2026-06-17-how-do-ai-agents-construct-populate | updates=7 | created=6 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for agentic-data-layer
+
+## [2026-06-17T19:15:53Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-06-17-how-do-ai-agents-construct-populate: 7 update(s)
+
+## [2026-06-17T19:15:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1542 | cache_read=0 | cache_creation=16214 | duration_ms=24338 | cost_usd=0.040146
+
+## [2026-06-17T19:15:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1845 | cache_read=0 | cache_creation=16209 | duration_ms=20109 | cost_usd=0.041651
+
+## [2026-06-17T19:16:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=990 | cache_read=8494 | cache_creation=12539 | duration_ms=20255 | cost_usd=0.030885
+
+## [2026-06-17T19:16:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1464 | cache_read=0 | cache_creation=16207 | duration_ms=17315 | cost_usd=0.039742
+
+## [2026-06-17T19:16:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3546 | cache_read=8494 | cache_creation=12528 | duration_ms=38485 | cost_usd=0.043643
+
+## [2026-06-17T19:16:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1276 | cache_read=0 | cache_creation=14581 | duration_ms=16244 | cost_usd=0.035550
+
+## [2026-06-17T19:16:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1030 | cache_read=0 | cache_creation=16248 | duration_ms=11894 | cost_usd=0.037654
+
+## [2026-06-17T19:16:44Z] research | session_id=2026-06-17-how-do-ai-agents-construct-populate | step=promoted | added=9 | failed=0
+
+promoted 9 source(s) into persistent notebook
+
+## [2026-06-17T19:16:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1365 | cache_read=0 | cache_creation=16212 | duration_ms=27577 | cost_usd=0.039257
+
+## [2026-06-17T19:16:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3656 | cache_read=8494 | cache_creation=12535 | duration_ms=72695 | cost_usd=0.044207
+
+## [2026-06-17T19:17:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1488 | cache_read=0 | cache_creation=16211 | duration_ms=17870 | cost_usd=0.039870
+
+## [2026-06-17T19:17:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1552 | cache_read=0 | cache_creation=16254 | duration_ms=32657 | cost_usd=0.040276
+
+## [2026-06-17T19:17:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1962 | cache_read=0 | cache_creation=16238 | duration_ms=40204 | cost_usd=0.042294
+
+## [2026-06-17T19:17:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2738 | cache_read=0 | cache_creation=16213 | duration_ms=28821 | cost_usd=0.046124
+
+## [2026-06-17T19:17:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1734 | cache_read=0 | cache_creation=16198 | duration_ms=19490 | cost_usd=0.041074
+
+## [2026-06-17T19:17:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1344 | cache_read=0 | cache_creation=16220 | duration_ms=16911 | cost_usd=0.039168
+
+## [2026-06-17T19:17:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1457 | cache_read=0 | cache_creation=16190 | duration_ms=18796 | cost_usd=0.039673
+
+## [2026-06-17T19:17:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1461 | cache_read=0 | cache_creation=16219 | duration_ms=29471 | cost_usd=0.039751
+
+## [2026-06-17T19:17:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=0 | cache_creation=16220 | duration_ms=41061 | cost_usd=0.042733
+
+## [2026-06-17T19:17:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1313 | cache_read=8494 | cache_creation=12582 | duration_ms=16072 | cost_usd=0.032586
+
+## [2026-06-17T19:18:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1269 | cache_read=0 | cache_creation=16178 | duration_ms=14437 | cost_usd=0.038709
+
+## [2026-06-17T19:18:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1329 | cache_read=0 | cache_creation=16172 | duration_ms=25218 | cost_usd=0.038997
+
+## [2026-06-17T19:18:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1159 | cache_read=8494 | cache_creation=12618 | duration_ms=15648 | cost_usd=0.031888
+
+## [2026-06-17T19:18:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1941 | cache_read=8494 | cache_creation=12530 | duration_ms=22415 | cost_usd=0.035622
+
+## [2026-06-17T19:18:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3034 | cache_read=8494 | cache_creation=12524 | duration_ms=32245 | cost_usd=0.041075
+
+## [2026-06-17T19:18:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1832 | cache_read=0 | cache_creation=16194 | duration_ms=21255 | cost_usd=0.041556
+
+## [2026-06-17T19:18:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1139 | cache_read=0 | cache_creation=16182 | duration_ms=14535 | cost_usd=0.038067
+
+## [2026-06-17T19:18:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1487 | cache_read=0 | cache_creation=16248 | duration_ms=16876 | cost_usd=0.039939
+
+## [2026-06-17T19:18:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2545 | cache_read=8494 | cache_creation=12613 | duration_ms=28229 | cost_usd=0.038808
+
+## [2026-06-17T19:19:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1376 | cache_read=8494 | cache_creation=12528 | duration_ms=16754 | cost_usd=0.032793
+
+## [2026-06-17T19:19:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1655 | cache_read=0 | cache_creation=16158 | duration_ms=32707 | cost_usd=0.040599
+
+## [2026-06-17T19:19:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1471 | cache_read=0 | cache_creation=16216 | duration_ms=28427 | cost_usd=0.039795
+
+## [2026-06-17T19:19:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2210 | cache_read=0 | cache_creation=16212 | duration_ms=43058 | cost_usd=0.043482
+
+## [2026-06-17T19:19:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1734 | cache_read=0 | cache_creation=16237 | duration_ms=21060 | cost_usd=0.041152
+
+## [2026-06-17T19:19:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2495 | cache_read=0 | cache_creation=16176 | duration_ms=26072 | cost_usd=0.044835
+
+## [2026-06-17T19:19:38Z] wiki-author | id=query-2026-06-17-what-architecture-patterns-govern-the-semantic | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against agentic-data-layer corpus
+
+## [2026-06-17T19:19:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1733 | cache_read=0 | cache_creation=16142 | duration_ms=24453 | cost_usd=0.040957
+
+## [2026-06-17T19:19:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1624 | cache_read=8494 | cache_creation=12550 | duration_ms=25115 | cost_usd=0.034077
+
+## [2026-06-17T19:19:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=951 | cache_read=0 | cache_creation=16238 | duration_ms=15259 | cost_usd=0.037239
+
+## [2026-06-17T19:19:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1335 | cache_read=0 | cache_creation=16224 | duration_ms=29676 | cost_usd=0.039131
+
+## [2026-06-17T19:20:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1560 | cache_read=8494 | cache_creation=12524 | duration_ms=18536 | cost_usd=0.033705
+
+## [2026-06-17T19:20:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1988 | cache_read=0 | cache_creation=16226 | duration_ms=21088 | cost_usd=0.042400
+
+## [2026-06-17T19:20:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2887 | cache_read=8494 | cache_creation=12512 | duration_ms=29585 | cost_usd=0.040316
+
+## [2026-06-17T19:20:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1647 | cache_read=8494 | cache_creation=12526 | duration_ms=32376 | cost_usd=0.034144
+
+## [2026-06-17T19:20:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1776 | cache_read=0 | cache_creation=16198 | duration_ms=37356 | cost_usd=0.041284
+
+## [2026-06-17T19:21:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3705 | cache_read=0 | cache_creation=16196 | duration_ms=36263 | cost_usd=0.050925
+
+## [2026-06-17T19:21:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1955 | cache_read=8494 | cache_creation=12482 | duration_ms=22428 | cost_usd=0.035596
+
+## [2026-06-17T19:21:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3335 | cache_read=8494 | cache_creation=12523 | duration_ms=62287 | cost_usd=0.042578
+
+## [2026-06-17T19:21:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1505 | cache_read=0 | cache_creation=16185 | duration_ms=18819 | cost_usd=0.039903
+
+## [2026-06-17T19:21:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1192 | cache_read=0 | cache_creation=16190 | duration_ms=23838 | cost_usd=0.038348
+
+## [2026-06-17T19:21:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=967 | cache_read=8494 | cache_creation=12484 | duration_ms=12610 | cost_usd=0.030660
+
+## [2026-06-17T19:21:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1979 | cache_read=0 | cache_creation=16208 | duration_ms=23443 | cost_usd=0.042319
+
+## [2026-06-17T19:21:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1670 | cache_read=0 | cache_creation=16176 | duration_ms=19493 | cost_usd=0.040710
+
+## [2026-06-17T19:22:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1116 | cache_read=8494 | cache_creation=12514 | duration_ms=22858 | cost_usd=0.031465
+
+## [2026-06-17T19:22:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1706 | cache_read=0 | cache_creation=16188 | duration_ms=21385 | cost_usd=0.040914
+
+## [2026-06-17T19:22:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1605 | cache_read=0 | cache_creation=16206 | duration_ms=18957 | cost_usd=0.040445
+
+## [2026-06-17T19:22:20Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=filter | target=https://dl.acm.org/doi/abs/10.3233/AO-210259
+
+error: `claude -p` timed out after 120.0s
+
+## [2026-06-17T19:22:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1880 | cache_read=0 | cache_creation=16210 | duration_ms=22219 | cost_usd=0.041828
+
+## [2026-06-17T19:22:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1149 | cache_read=8494 | cache_creation=12538 | duration_ms=25790 | cost_usd=0.031678
+
+## [2026-06-17T19:22:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1891 | cache_read=0 | cache_creation=16272 | duration_ms=21926 | cost_usd=0.042007
+
+## [2026-06-17T19:22:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1326 | cache_read=8494 | cache_creation=12506 | duration_ms=16033 | cost_usd=0.032499
+
+## [2026-06-17T19:22:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1389 | cache_read=0 | cache_creation=16182 | duration_ms=16924 | cost_usd=0.039317
+
+## [2026-06-17T19:22:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1119 | cache_read=0 | cache_creation=16228 | duration_ms=15222 | cost_usd=0.038059
+
+## [2026-06-17T19:22:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1273 | cache_read=0 | cache_creation=16202 | duration_ms=17274 | cost_usd=0.038777
+
+## [2026-06-17T19:22:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1315 | cache_read=0 | cache_creation=16318 | duration_ms=31980 | cost_usd=0.039219
+
+## [2026-06-17T19:23:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1053 | cache_read=0 | cache_creation=16198 | duration_ms=13593 | cost_usd=0.037669
+
+## [2026-06-17T19:23:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1604 | cache_read=0 | cache_creation=16170 | duration_ms=19622 | cost_usd=0.040368
+
+## [2026-06-17T19:23:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1514 | cache_read=0 | cache_creation=14601 | duration_ms=17615 | cost_usd=0.036780
+
+## [2026-06-17T19:23:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1830 | cache_read=0 | cache_creation=16190 | duration_ms=21035 | cost_usd=0.041538
+
+## [2026-06-17T19:23:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1191 | cache_read=0 | cache_creation=16188 | duration_ms=15234 | cost_usd=0.038339
+
+## [2026-06-17T19:23:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1623 | cache_read=0 | cache_creation=16264 | duration_ms=19550 | cost_usd=0.040651
+
+## [2026-06-17T19:23:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1660 | cache_read=0 | cache_creation=16212 | duration_ms=19621 | cost_usd=0.040732
+
+## [2026-06-17T19:23:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2198 | cache_read=0 | cache_creation=16200 | duration_ms=28287 | cost_usd=0.043398
+
+## [2026-06-17T19:23:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1325 | cache_read=8494 | cache_creation=12546 | duration_ms=27805 | cost_usd=0.032574
+
+## [2026-06-17T19:23:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1309 | cache_read=0 | cache_creation=16194 | duration_ms=25634 | cost_usd=0.038941
+
+## [2026-06-17T19:24:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2039 | cache_read=0 | cache_creation=16215 | duration_ms=23136 | cost_usd=0.042633
+
+## [2026-06-17T19:24:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1707 | cache_read=0 | cache_creation=14573 | duration_ms=20956 | cost_usd=0.037689
+
+## [2026-06-17T19:24:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1335 | cache_read=0 | cache_creation=16208 | duration_ms=15986 | cost_usd=0.039099
+
+## [2026-06-17T19:24:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1668 | cache_read=0 | cache_creation=16222 | duration_ms=20480 | cost_usd=0.040792
+
+## [2026-06-17T19:24:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1798 | cache_read=0 | cache_creation=16228 | duration_ms=20642 | cost_usd=0.041454
+
+## [2026-06-17T19:24:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1628 | cache_read=8494 | cache_creation=12536 | duration_ms=18798 | cost_usd=0.034069
+
+## [2026-06-17T19:24:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1281 | cache_read=0 | cache_creation=16220 | duration_ms=18517 | cost_usd=0.038853
+
+## [2026-06-17T19:24:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1084 | cache_read=8494 | cache_creation=12514 | duration_ms=12941 | cost_usd=0.031305
+
+## [2026-06-17T19:24:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1670 | cache_read=0 | cache_creation=16210 | duration_ms=19747 | cost_usd=0.040778
+
+## [2026-06-17T19:24:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1478 | cache_read=0 | cache_creation=16166 | duration_ms=17096 | cost_usd=0.039730
+
+## [2026-06-17T19:25:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1262 | cache_read=0 | cache_creation=16216 | duration_ms=17223 | cost_usd=0.038750
+
+## [2026-06-17T19:25:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1286 | cache_read=8494 | cache_creation=12504 | duration_ms=26213 | cost_usd=0.032295
+
+## [2026-06-17T19:25:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2959 | cache_read=8494 | cache_creation=12490 | duration_ms=31898 | cost_usd=0.040632
+
+## [2026-06-17T19:25:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1709 | cache_read=0 | cache_creation=16189 | duration_ms=33402 | cost_usd=0.040931
+
+## [2026-06-17T19:25:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1136 | cache_read=0 | cache_creation=16148 | duration_ms=15719 | cost_usd=0.037984
+
+## [2026-06-17T19:25:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1327 | cache_read=8494 | cache_creation=12476 | duration_ms=15165 | cost_usd=0.032444
+
+## [2026-06-17T19:25:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1256 | cache_read=0 | cache_creation=16238 | duration_ms=25052 | cost_usd=0.038764
+
+## [2026-06-17T19:25:34Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=filter | n=48
+
+48 candidate(s) cleared threshold
+
+## [2026-06-17T19:25:49Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=convert | target=https://arxiv.org/abs/2309.13130
+
+error: arxiv API network error for 2309.13130: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-06-17T19:26:31Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=convert | target=https://arxiv.org/abs/1806.07699
+
+error: arxiv API network error for 1806.07699: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-06-17T19:29:19Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=convert | target=https://ceur-ws.org/Vol-2459/paper4.pdf
+
+error: no extractable content at https://ceur-ws.org/Vol-2459/paper4.pdf
+
+## [2026-06-17T19:31:26Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=convert | target=https://ceur-ws.org/Vol-999/paper4.pdf
+
+error: no extractable content at https://ceur-ws.org/Vol-999/paper4.pdf
+
+## [2026-06-17T19:31:36Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=materialize | n=44
+
+materialized 44 source(s) to raw/
+
+## [2026-06-17T19:31:36Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=corpus_quality | n=44 | median_words=1276 | sparse_n=14 | sparse_frac=0.32
+
+corpus quality: 44 sources, median 1276 words, 14/44 sparse (<300 words)
+
+## [2026-06-17T19:31:36Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=nlm_persistent | notebook_id=d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+persistent notebook d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+## [2026-06-17T19:31:37Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=nlm_session | notebook_id=854f6f63-67ec-4c3a-9f06-ca426bff2351
+
+created session notebook 854f6f63-67ec-4c3a-9f06-ca426bff2351
+
+## [2026-06-17T19:36:43Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=source_add | target=https://www.sciencedirect.com/science/article/pii/S1570826818300477
+
+error: `nlm source add 854f6f63-67ec-4c3a-9f06-ca426bff2351 --url https://www.sciencedirect.com/science/article/pii/S1570826818300477 --wait` exited 1: Adding https://www.sciencedirect.com/science/article/pii/S1570826818300477 and 
+waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-17T19:36:49Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=source_add | n=43 | skipped=1
+
+pushed 43 source(s) to session notebook (1 skipped)
+
+## [2026-06-17T19:36:51Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=source_map | n=43
+
+built source map (43 entries)

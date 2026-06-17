@@ -1,0 +1,102 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: agentic-data-layer
+  topic: Runtime interface between AI agents and semantic data structures
+  field: Knowledge engineering, AI systems, and semantic web
+  description: "Covers how AI agents consume semantic structures at runtime \u2014\
+    \ including knowledge-graph RAG, text-to-SPARQL/Cypher/GQL translation, ontology-grounded\
+    \ retrieval, and semantic or metrics layers exposed as agent tools via MCP or\
+    \ function-calling over graph and triple-store backends. Also covers how agents\
+    \ produce and maintain semantic structures \u2014 LLM-driven entity and relation\
+    \ extraction, ontology population, SHACL-constrained generation, automated KG\
+    \ construction from documents, and verification and provenance of agent-generated\
+    \ triples. Operates at operator-architect altitude: assumes the formalism exists\
+    \ and studies the agent-facing runtime contract, tool and affordance design, evaluation,\
+    \ and failure modes.\n"
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- "Describes an agent or LLM system that queries a knowledge graph, triple store,\
+  \ or property graph at runtime using SPARQL, Cypher, GQL, or equivalent \u2014 including\
+  \ text-to-query translation and grounding retrieved triples in generated output"
+- Covers LLM-driven entity extraction, relation extraction, or ontology population
+  from unstructured documents, with evaluation against a reference schema or gold
+  standard
+- Examines knowledge-graph RAG or GraphRAG architectures in which graph traversal
+  or subgraph retrieval augments an LLM generation step, including ablation or benchmark
+  results
+- Evaluates MCP tools, function-calling interfaces, or semantic-layer APIs that expose
+  graph or ontology backends to agents, including tool-design decisions, affordance
+  structure, and failure mode analysis
+- Reports SHACL- or SHEX-constrained LLM generation, schema-guided triple production,
+  or automated verification of agent-generated RDF/property-graph output against a
+  declared schema
+exclusion_criteria:
+- "Pure knowledge-representation formalism or ontology theory without any agent or\
+  \ LLM runtime component \u2014 OWL axiomatics, description-logic complexity proofs,\
+  \ ontology alignment algorithms evaluated only against ontology benchmarks"
+- Domain-specific ontology construction for AEC, BIM, reserve studies, or other verticals
+  where the contribution is the domain schema rather than the agent-facing runtime
+  contract
+- Generic RAG surveys or embedding-based retrieval papers that do not involve structured
+  graph or triple-store backends
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - "Peer-reviewed venues in semantic web, knowledge engineering, or AI systems\
+      \ \u2014 ISWC, ESWC, TheWebConf, AAAI, ACL, EMNLP, NAACL, NeurIPS"
+    - Workshop proceedings co-located with the above (KGC, KGSWC, LLMs-KG workshops)
+    - Preprints on arXiv cs.AI, cs.CL, cs.IR, or cs.DB with institutional affiliation
+      and clear experimental protocol
+    negative_signals:
+    - Blog posts or vendor white papers without an underlying reproducible experimental
+      result
+    - Preprints lacking any evaluation section or benchmark comparison
+  methodology_rigor:
+    positive_signals:
+    - Reports quantitative evaluation against a named benchmark or held-out graph
+      (KGQA datasets such as WebQSP, LC-QuAD, QALD; KGC benchmarks such as FB15k-237)
+    - Ablates the graph or ontology component against a text-only baseline to isolate
+      the contribution of structured retrieval
+    - Discloses query failure rates, hallucination rates on generated triples, or
+      schema-violation counts with reproducible measurement protocol
+    negative_signals:
+    - Evaluation limited to qualitative examples or cherry-picked outputs without
+      aggregate metrics
+    - No comparison to a baseline system or prior approach
+  content_depth:
+    positive_signals:
+    - Discusses specific failure modes of LLM-to-graph interfaces such as predicate
+      hallucination, namespace errors, cardinality violations, or out-of-schema entity
+      types
+    - Addresses provenance or trust of agent-generated triples, including conflict
+      detection, update strategies, or lineage tracking in the graph
+    negative_signals:
+    - Treats the knowledge graph as a black box with no discussion of query interface,
+      schema constraints, or retrieval mechanics
+    - Summarizes the space without presenting a concrete system, dataset, or evaluation
+  channel_authority:
+    positive_signals:
+    - University course lectures or named research-lab talks (e.g. Stanford, MIT,
+      Berkeley, DeepMind, Anthropic, FAIR)
+    - Recognized conference or workshop sessions (NeurIPS, ICML, ICLR, ISWC, KGC,
+      VLDB, or established industry summits)
+    - Speaker is a published researcher, framework author, or named practitioner
+      in agent systems or knowledge engineering
+    negative_signals:
+    - Influencer or growth-marketing channel with no technical track record
+    - Content primarily promoting a paid course, newsletter, or product upsell
+  speaker_expertise:
+    positive_signals:
+    - Discusses architecture, retrieval, or validation mechanisms with precision
+    - References specific systems, papers, or benchmarks by name
+    negative_signals:
+    - Surface-level overview or hype with no mechanism or implementation detail
+bootstrapped_from_description_hash: 1e454c91394470f1

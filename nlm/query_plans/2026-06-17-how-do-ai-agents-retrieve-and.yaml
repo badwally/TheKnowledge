@@ -1,0 +1,68 @@
+version: 1
+session_id: 2026-06-17-how-do-ai-agents-retrieve-and
+domain: agentic-data-layer
+prompt: How do AI agents retrieve and query semantic data structures at runtime? Cover
+  knowledge-graph RAG and GraphRAG (Microsoft GraphRAG and successors), text-to-query
+  generation (SPARQL, Cypher/GQL, SQL-over-semantic-layer), ontology-grounded retrieval,
+  and exposing semantic layers / metrics layers / triple stores to agents as tools
+  via MCP and function-calling. When does a semantic or graph layer outperform plain
+  vector RAG for an agent? Cover tool/affordance design, read-path caching, and accuracy/faithfulness
+  benchmarks for text-to-query and GraphRAG. Operator-architect, pattern-level, reusable
+  across domains. Prioritize 2024-2026 arXiv and substantive engineering write-ups
+  from graph-DB and semantic-layer vendors.
+generated_at: '2026-06-17T18:00:24Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 6
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - knowledge graph retrieval augmented generation LLM
+  - text-to-SPARQL semantic parsing large language models
+  - subgraph retrieval grounding language model generation
+  - ontology-guided entity relation extraction unstructured text
+  - GraphRAG community summarization knowledge graph benchmark
+  - text-to-Cypher natural language property graph query
+  - SHACL-constrained triple generation verification language model
+  - schema-guided knowledge graph construction information extraction
+  youtube:
+  - Microsoft GraphRAG knowledge graph tutorial
+  - GraphRAG vs vector RAG comparison
+  - NODES 2024 Neo4j LLM integration
+  - Connected Data London 2024 LLM graph
+  - MCP server knowledge graph tools
+  - graph RAG hallucination faithfulness evaluation
+  web:
+  - Microsoft GraphRAG implementation architecture 2024
+  - Neo4j LLM knowledge graph RAG tutorial
+  - LlamaIndex KnowledgeGraphIndex property graph agent
+  - LangChain GraphCypherQAChain agent pattern
+  - dbt semantic layer AI agent integration guide
+  - MCP server knowledge graph tools specification
+  - text-to-SPARQL evaluation LC-QuAD benchmark
+  - GraphRAG vs vector RAG accuracy faithfulness
+  - SHACL constraint LLM output validation RDF
+  - Stardog SPARQL LLM enterprise agent
+  - semantic layer cube.dev LLM query generation
+  - knowledge graph RAG read-path caching architecture
+  - ontology-grounded retrieval agent tool design
+  - GraphDB Ontotext LLM agent integration
+  - property graph semantic layer agent runtime 2025
+  pubmed: []
+  semantic_scholar:
+  - knowledge graph augmented generation faithfulness evaluation
+  - text to SPARQL neural semantic parsing benchmark
+  - GraphRAG community detection subgraph retrieval
+  - ontology population information extraction language model
+  - schema-guided triple production verification pipeline
+  - agent tool design function calling graph database affordance
+  - Cypher GQL natural language generation accuracy
+  - knowledge graph RAG versus dense retrieval ablation
+  - semantic web linked data language model grounding
+  - hallucination reduction knowledge graph structured retrieval
+edited: true
+status: executed
+executed_at: '2026-06-17T18:40:45Z'

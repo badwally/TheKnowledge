@@ -280,6 +280,133 @@ def test_promote_isolates_per_source_failures(monkeypatch: pytest.MonkeyPatch):
     assert registry.promoted == [("d1", "sess-isolated", 2)]
 
 
+def test_promote_recovers_url_from_raw_when_nlm_drops_it(
+    kb_root, make_source, monkeypatch: pytest.MonkeyPatch
+):
+    """NLM `source list` drops the url for some types (YouTube). Promote
+    must recover it from the materialized raw/ page (matched by title) and
+    use source_add_url — not route into the empty-text path that NLM rejects
+    with "Please specify a source"."""
+    raw = kb_root / "raw" / "youtube" / "yt-vid_000001.md"
+    raw.write_text(
+        make_source(
+            type_="youtube",
+            id_="yt-vid_000001",
+            title="Keynote: Graph RAG",
+            url="https://www.youtube.com/watch?v=vid_000001",
+        )
+    )
+    _patch_fetch(
+        monkeypatch,
+        by_notebook={
+            # Session source arrives URL-less — only the title survived.
+            "nb-session": [{"id": "s1", "title": "Keynote: Graph RAG"}],
+            "nb-persistent": [],
+        },
+    )
+
+    client = _RecordingClient()
+    registry = _RegistryStub()
+
+    added, failed = _session.promote(
+        "agentic-data-layer",
+        "sess-yt",
+        persistent_notebook_id="nb-persistent",
+        session_notebook_id="nb-session",
+        client=client,
+        nlm_registry=registry,
+    )
+
+    assert failed == []
+    assert added == 1
+    assert client.add_url_calls == [
+        ("nb-persistent", "https://www.youtube.com/watch?v=vid_000001")
+    ]
+    assert client.add_text_calls == []
+
+
+def test_promote_recovered_url_respects_persistent_dedup(
+    kb_root, make_source, monkeypatch: pytest.MonkeyPatch
+):
+    """A URL recovered from raw/ must still dedup against the persistent
+    corpus — re-promoting an already-present video adds nothing."""
+    raw = kb_root / "raw" / "youtube" / "yt-vid_000002.md"
+    raw.write_text(
+        make_source(
+            type_="youtube",
+            id_="yt-vid_000002",
+            title="Talk: Vector Search",
+            url="https://www.youtube.com/watch?v=vid_000002",
+        )
+    )
+    _patch_fetch(
+        monkeypatch,
+        by_notebook={
+            "nb-session": [{"id": "s1", "title": "Talk: Vector Search"}],
+            "nb-persistent": [
+                {"id": "p1", "url": "https://www.youtube.com/watch?v=vid_000002"}
+            ],
+        },
+    )
+
+    client = _RecordingClient()
+    registry = _RegistryStub()
+
+    added, failed = _session.promote(
+        "d1",
+        "sess-dedup",
+        persistent_notebook_id="nb-persistent",
+        session_notebook_id="nb-session",
+        client=client,
+        nlm_registry=registry,
+    )
+
+    assert added == 0
+    assert failed == []
+    assert client.add_url_calls == []
+    assert client.add_text_calls == []
+
+
+def test_promote_text_fallback_uses_raw_body_when_no_url(
+    kb_root, make_source, monkeypatch: pytest.MonkeyPatch
+):
+    """A genuinely URL-less source (e.g. a note) that has a raw/ page must
+    promote with the real file content, not the empty string."""
+    raw = kb_root / "raw" / "note" / "note-abc123.md"
+    file_text = make_source(
+        type_="note",
+        id_="note-abc123",
+        title="My handwritten note",
+        url="",
+        body="The real note body that NLM needs.\n",
+    )
+    raw.write_text(file_text)
+    _patch_fetch(
+        monkeypatch,
+        by_notebook={
+            "nb-session": [{"id": "s1", "title": "My handwritten note"}],
+            "nb-persistent": [],
+        },
+    )
+
+    client = _RecordingClient()
+    registry = _RegistryStub()
+
+    added, failed = _session.promote(
+        "d1",
+        "sess-note",
+        persistent_notebook_id="nb-persistent",
+        session_notebook_id="nb-session",
+        client=client,
+        nlm_registry=registry,
+    )
+
+    assert added == 1
+    assert failed == []
+    assert client.add_url_calls == []
+    assert client.add_text_calls == [("nb-persistent", file_text, "My handwritten note")]
+
+
 # --- abandon ---------------------------------------------------------------
 
 

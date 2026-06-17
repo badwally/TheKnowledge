@@ -527,6 +527,41 @@ def test_score_prebuilt_system_skips_build_system_prompt(monkeypatch, kb_root):
     assert system_used == "prebuilt system prompt text"
 
 
+def test_system_prompt_includes_youtube_source_type_guidance():
+    """Regression: the port dropped per-source-type guidance, so video
+    candidates were scored on thin descriptions against paper criteria."""
+    from gateway.filter import semantic
+
+    policy = Policy(domain_slug="d", raw={"domain": {"slug": "d"}})
+    prompt = semantic.build_system_prompt(policy, [])
+
+    assert "Source-type guidance" in prompt
+    assert "youtube" in prompt.lower()
+    # The specific regression we are guarding against:
+    assert "do not penalize" in prompt.lower()
+    assert "channel authority" in prompt.lower()
+
+
+def test_system_prompt_surfaces_channel_authority_quality_signals():
+    """Channel-authority signals must reach the prompt so video sources can
+    clear the bar on authority. build_system_prompt dumps the whole policy."""
+    from gateway.filter import semantic
+
+    raw = {
+        "domain": {"slug": "d"},
+        "quality_signals": {
+            "channel_authority": {
+                "positive_signals": ["University course or named research lab"]
+            }
+        },
+    }
+    policy = Policy(domain_slug="d", quality_signals=raw["quality_signals"], raw=raw)
+    prompt = semantic.build_system_prompt(policy, [])
+
+    assert "channel_authority" in prompt
+    assert "University course or named research lab" in prompt
+
+
 def test_claude_cli_strips_anthropic_api_key_from_subprocess_env(monkeypatch):
     """Regression: the gateway's `claude -p` subprocess invocations must drop
     `ANTHROPIC_API_KEY` so the Claude CLI uses the user's Max-plan OAuth login
