@@ -82,6 +82,20 @@ same structure). It must include:
 - `quality_signals`: at least 2 categories (e.g. publication_venue,
   content_depth), each with at least 2 total signals across
   positive_signals and negative_signals.
+- If this domain is likely to draw substantially on video or talk sources
+  (recorded lectures, conference keynotes and seminars, YouTube explainers,
+  podcast or interview transcripts), you MUST also include `channel_authority`
+  and `speaker_expertise` as `quality_signals` categories. Video and audio
+  metadata (titles, descriptions) systematically under-represent the actual
+  content, so the filter has to weight source authority instead. Shape them
+  like the other categories: `positive_signals` for recognized institutions,
+  established venues and events, and credentialed or well-known speakers;
+  `negative_signals` for influencer or growth-marketing channels with no track
+  record and content that mainly upsells a product, course, or newsletter. Use
+  terminology specific to THIS domain's institutions, venues, and practitioners
+  — do not copy generic examples. If the domain is unlikely to use video or
+  talk sources (e.g. a pure lab-science, archival-text, or numerical field),
+  omit these two categories.
 
 Return ONLY the YAML or JSON. No prose, no markdown fences.
 """
