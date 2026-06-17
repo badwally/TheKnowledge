@@ -243,3 +243,24 @@ def test_adapter_idiom_guidance_present_in_prompt() -> None:
     # paper-language for arxiv).
     assert "short keyword" in client.last_prompt
     assert "paper-language" in client.last_prompt
+
+
+def test_youtube_adapter_guidance_targets_lecture_register() -> None:
+    g = qp._ADAPTER_GUIDANCE["youtube"].lower()
+    assert "lecture" in g
+    assert "keynote" in g or "seminar" in g
+    # the old vendor/tutorial bias should be gone
+    assert "tutorial" not in g or "avoid" in g
+
+
+def test_rendered_plan_prompt_carries_youtube_lecture_register() -> None:
+    client = _MockClient('{"youtube": [], "arxiv": [], "web": [], "pubmed": []}')
+    qp.plan_per_adapter_queries(
+        "agents that query semantic data",
+        domain="d",
+        policy=_policy(),
+        adapter_names=["youtube", "arxiv", "web", "pubmed"],
+        plan_client=client,
+    )
+    assert client.last_prompt is not None
+    assert "lecture" in client.last_prompt.lower()
