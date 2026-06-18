@@ -8,8 +8,10 @@ authors:
 - ELSC Video
 ingested_at: '2026-05-30T20:02:09Z'
 content_hash: sha256:513af20279a30ccf9f89318d2c3f555ff5024d5cdfd262968142f673824e8697
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: ELSC Video

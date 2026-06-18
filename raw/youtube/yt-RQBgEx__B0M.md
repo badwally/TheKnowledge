@@ -8,8 +8,10 @@ authors:
 - Kendrick Kay
 ingested_at: '2026-05-30T21:59:37Z'
 content_hash: sha256:ec01218d886b676e25ad2c1037dea59b70e1c9f81cef06cc3564c1df4fd8374e
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Kendrick Kay

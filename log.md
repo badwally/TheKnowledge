@@ -48798,3 +48798,139 @@ raw=raw/youtube/yt-ZpxIKeVvc08.md wiki=wiki/sources/yt-ZpxIKeVvc08.md
 ## [2026-06-18T01:41:59Z] lint | scope=schema-drift | schema-drift=191
 
 report=.knowledge/lint/2026-06-18T01-41-59Z-schema-drift.md
+
+## [2026-06-18T17:53:34Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T17-53-34Z-schema-drift.md
+
+## [2026-06-18T18:01:50Z] nlm-add | id=yt-5kq7M6pcQ5g | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=5kq7M6pcQ5g
+
+## [2026-06-18T18:02:11Z] nlm-add | id=yt--Hau9_8r2Ew | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=-Hau9_8r2Ew
+
+## [2026-06-18T18:02:15Z] nlm-add | id=yt-0W-cRw-EBAc | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=0W-cRw-EBAc
+
+## [2026-06-18T18:02:28Z] nlm-add | id=yt-1_xH2mUFpZw | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=1_xH2mUFpZw
+
+## [2026-06-18T18:02:33Z] nlm-add | id=yt-1mXUFweWOug | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=1mXUFweWOug
+
+## [2026-06-18T18:02:37Z] nlm-add | id=yt-2yPh6BAooSw | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=2yPh6BAooSw
+
+## [2026-06-18T18:02:41Z] nlm-add | id=yt-46vht4LAqGk | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=46vht4LAqGk
+
+## [2026-06-18T18:02:47Z] nlm-add | id=yt-4KpXlmoQtxs | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=4KpXlmoQtxs
+
+## [2026-06-18T18:02:50Z] nlm-add | id=yt-4SaY4uQEewU | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=4SaY4uQEewU
+
+## [2026-06-18T18:02:55Z] nlm-add | id=yt-4j78w__YudU | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=4j78w__YudU
+
+## [2026-06-18T18:02:59Z] nlm-add | id=yt-6PF25foNpf8 | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=6PF25foNpf8
+
+## [2026-06-18T18:03:03Z] nlm-add | id=yt-CI26o8nkh-M | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=CI26o8nkh-M
+
+## [2026-06-18T18:03:07Z] nlm-add | id=yt-FC-m7NRIKRM | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=FC-m7NRIKRM
+
+## [2026-06-18T18:03:11Z] nlm-add | id=yt-IWIiR6mjrXY | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=IWIiR6mjrXY
+
+## [2026-06-18T18:03:15Z] nlm-add | id=yt-IqkOZhfGEYs | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=IqkOZhfGEYs
+
+## [2026-06-18T18:03:19Z] nlm-add | id=yt-RQBgEx__B0M | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=RQBgEx__B0M
+
+## [2026-06-18T18:03:23Z] nlm-add | id=yt-V3GX8KeQS9I | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=V3GX8KeQS9I
+
+## [2026-06-18T18:03:28Z] nlm-add | id=yt-V7AyriUcXZQ | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=V7AyriUcXZQ
+
+## [2026-06-18T18:03:33Z] nlm-add | id=yt-eAstJe16ZUI | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=eAstJe16ZUI
+
+## [2026-06-18T18:03:37Z] nlm-add | id=yt-em8lPQVtfFM | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=em8lPQVtfFM
+
+## [2026-06-18T18:03:42Z] nlm-add | id=yt-fYoW8TxUAco | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=fYoW8TxUAco
+
+## [2026-06-18T18:03:46Z] nlm-add | id=yt-he3geEDHDp4 | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=he3geEDHDp4
+
+## [2026-06-18T18:03:49Z] nlm-add | id=yt-psCQ65zjqPc | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=psCQ65zjqPc
+
+## [2026-06-18T18:03:53Z] nlm-add | id=yt-s5XsmnmIxNI | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=s5XsmnmIxNI
+
+## [2026-06-18T18:03:57Z] nlm-add | id=yt-tyYIuvbV2po | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=tyYIuvbV2po
+
+## [2026-06-18T18:04:01Z] nlm-add | id=yt-vTxMNrRKrDY | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=vTxMNrRKrDY
+
+## [2026-06-18T18:04:06Z] nlm-add | id=yt-ysv2g9M3ong | domain=convergent-ai-brain | notebook_id=0997b925-a7b2-47d2-8dcc-e11fcecf953e | type=youtube
+
+url=https://www.youtube.com/watch?v=ysv2g9M3ong
+
+## [2026-06-18T18:06:07Z] query | domain=convergent-ai-brain | unresolved_citations=12,13,14
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-06-18T18:06:07Z] wiki-author | id=query-2026-06-18-what-sets-the-ceiling-on-representational | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against convergent-ai-brain corpus
+
+## [2026-06-18T18:09:14Z] nlm-add | id=yt-WJ1BvfOm-94 | domain=risksystems | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e | type=youtube
+
+url=https://www.youtube.com/watch?v=WJ1BvfOm-94
+
+## [2026-06-18T18:09:43Z] nlm-add | id=yt-vx6ATEoEuUE | domain=risksystems | notebook_id=dee0eae4-b11f-4df2-a418-d10fffd42c7e | type=youtube
+
+url=https://www.youtube.com/watch?v=vx6ATEoEuUE
+
+## [2026-06-18T18:09:56Z] nlm-add | id=yt-bxBzsSsqQAM | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=youtube
+
+url=https://www.youtube.com/watch?v=bxBzsSsqQAM
+
+## [2026-06-18T18:10:00Z] nlm-add | id=yt-ZpdxjlxbEwY | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=youtube
+
+url=https://www.youtube.com/watch?v=ZpdxjlxbEwY

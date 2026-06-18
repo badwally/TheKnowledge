@@ -8,8 +8,10 @@ authors:
 - MITCBMM
 ingested_at: '2026-05-30T20:02:00Z'
 content_hash: sha256:88245b23b04b7408597b7561b8843f7d2fba6773be1d6e2fd3b065eaa6c3ede9
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: MITCBMM

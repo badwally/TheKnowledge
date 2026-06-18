@@ -8,8 +8,10 @@ authors:
 - Cognitive Computational Neuroscience
 ingested_at: '2026-05-30T20:40:41Z'
 content_hash: sha256:02aab4e2dc2af89eacfdc85a5e0a04a4391479625e55b4e9ab2eb655f961a36f
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Cognitive Computational Neuroscience

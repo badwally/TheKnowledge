@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-vx6ATEoEuUE
 type: youtube
 title: Stochastic Model for Estimating Network-Scale Deterioration and Effect of Interventions
@@ -8,8 +9,10 @@ authors:
 - BayesWorks
 ingested_at: '2026-05-20T18:37:45Z'
 content_hash: sha256:9a6295ba53dee22cd566b7a6a8b1cfffe3453f6d28e8e114e12dda595ef63dd2
-domains: []
-nlm_corpus_ids: []
+domains:
+- risksystems
+nlm_corpus_ids:
+- dee0eae4-b11f-4df2-a418-d10fffd42c7e
 wiki_pages:
 - wiki/entities/bayesworks.md
 - wiki/entities/quebec-bridge-network.md

@@ -8,8 +8,10 @@ authors:
 - Stanford
 ingested_at: '2026-05-30T20:02:05Z'
 content_hash: sha256:5b7a68706a4d3f817abc4363c9fe1e9d65c46e09a5527ebaba3ac4af7051ec1a
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Stanford

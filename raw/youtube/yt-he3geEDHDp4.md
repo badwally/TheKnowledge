@@ -8,8 +8,10 @@ authors:
 - DANDI
 ingested_at: '2026-06-01T19:55:44Z'
 content_hash: sha256:15bd3f059169c2ca0ae8cf71fbb23f964fd503ee3e43ccaa47db22861bd46091
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: DANDI

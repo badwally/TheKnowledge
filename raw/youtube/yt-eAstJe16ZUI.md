@@ -8,8 +8,10 @@ authors:
 - OnNeuro
 ingested_at: '2026-06-02T00:37:05Z'
 content_hash: sha256:d2a354a232a2299fa999b11251c749fa3df8bd88c072c6b27bbe13925fababeb
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: OnNeuro

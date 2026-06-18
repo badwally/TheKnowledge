@@ -9,8 +9,10 @@ authors:
 - MIT Siegel Family Quest for Intelligence
 ingested_at: '2026-06-01T19:24:29Z'
 content_hash: sha256:ca5ae896388cf004a5156ce0715689645106ef3286adb74725038505cd5b8665
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: MIT Siegel Family Quest for Intelligence

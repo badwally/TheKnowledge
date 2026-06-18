@@ -1,7 +1,7 @@
 # Knowledge Index
 
-Last rebuilt: 2026-06-15T21:12:41Z
-Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
+Last rebuilt: 2026-06-18T18:11:05Z
+Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 456
 
 ## Domains
 
@@ -13,6 +13,11 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 [[mocs/addiction-and-substance-use-disorders]] · 0 sources
 
 
+### agentic-data-layer
+[[mocs/agentic-data-layer]] · 0 sources
+
+- Synthesis: [[synthesis/2026-06-17-how-do-ai-agents-construct-populate-agentic-schema-evolution-and-onto]] · [[synthesis/2026-06-17-how-do-ai-agents-construct-populate-automated-knowledge-graph-constru]] · [[synthesis/2026-06-17-how-do-ai-agents-construct-populate-cross-cutting]] · [[synthesis/2026-06-17-how-do-ai-agents-construct-populate-validation-grounding-and-hallucin]] · [[synthesis/2026-06-17-how-do-ai-agents-construct-populate-verification-and-data-provenance]] · [[synthesis/2026-06-17-how-do-ai-agents-construct-populate-write-path-safety-and-mutable-kno]] · [[synthesis/2026-06-17-how-do-ai-agents-retrieve-and-agentic-tool-design-and-execution-workf]] · [[synthesis/2026-06-17-how-do-ai-agents-retrieve-and-benchmarking-metrics-and-faithfulness-e]] · [[synthesis/2026-06-17-how-do-ai-agents-retrieve-and-cross-cutting]] · [[synthesis/2026-06-17-how-do-ai-agents-retrieve-and-graph-vs-vector-vs-hybrid-retrieval]] · [[synthesis/2026-06-17-how-do-ai-agents-retrieve-and-graphrag-and-ontology-grounded-architec]] · [[synthesis/2026-06-17-how-do-ai-agents-retrieve-and-text-to-query-generation-for-semantic]] · … (7 more)
+
 ### agentic-protocols-and-interoperability
 [[mocs/agentic-protocols-and-interoperability]] · 0 sources
 
@@ -20,12 +25,12 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 ### ai-and-agents
 [[mocs/ai-and-agents]] · 26 sources
 
-- Entities: [[entities/a-mem]] · [[entities/adobe-research]] · [[entities/aidan-toner-rodgers]] · [[entities/alex-pentland]] · [[entities/ali-modarressi]] · [[entities/alibaba]] · [[entities/amy-zegart]] · [[entities/anthropic]] · [[entities/antikythera]] · [[entities/ashish-vaswani]] · [[entities/autogenesis-protocol]] · [[entities/b-divya]] · … (94 more)
+- Entities: [[entities/a-mem]] · [[entities/adobe-research]] · [[entities/aidan-toner-rodgers]] · [[entities/alex-pentland]] · [[entities/ali-modarressi]] · [[entities/alibaba]] · [[entities/amy-zegart]] · [[entities/anthropic]] · [[entities/antikythera]] · [[entities/ashish-vaswani]] · [[entities/autogenesis-protocol]] · [[entities/b-divya]] · … (95 more)
 - Concepts: [[concepts/academic-industry-ai-talent-migration]] · [[concepts/adaptive-control-mechanisms]] · [[concepts/agent-evaluation]] · [[concepts/agent-governance]] · [[concepts/agent-prompt-engineering]] · [[concepts/agentic-ai]] · [[concepts/agentic-ai-applications]] · [[concepts/agentic-ai-ethical-challenges]] · [[concepts/agentic-ai-vs-traditional-ai]] · [[concepts/agentic-data-synthesis]] · [[concepts/agentic-memory]] · [[concepts/ai-and-worker-wellbeing]] · … (142 more)
 - Synthesis: [[synthesis/2026-05-04-what-is-the-state-of-the]] · [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]]
 
 ### ai-native-business
-[[mocs/ai-native-business]] · 25 sources
+[[mocs/ai-native-business]] · 27 sources
 
 - Entities: [[entities/anysphere]] · [[entities/cluely]] · [[entities/cognition-labs]] · [[entities/crosby-ai]] · [[entities/decagon]] · [[entities/gamma-app]] · [[entities/genspark]] · [[entities/harvey-ai]] · [[entities/lindy]] · [[entities/lovable-app]] · [[entities/marc-lou]] · [[entities/medvi]] · … (5 more)
 - Concepts: [[concepts/ai-native-substrate]]
@@ -57,25 +62,25 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 - Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-capital-and-preventive-maintenance-frameworks]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-integrated-planning-systems-software-and-best]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-reserve-fund-management-and-funding-strategies]] · [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-special-assessment-policy-and-risk-mitigation]] · [[synthesis/2026-05-09-how-do-the-major-u-s]] · [[synthesis/2026-05-09-what-are-the-documented-integration-gaps]] · [[synthesis/2026-05-09-what-are-the-established-best-practices]] · [[synthesis/2026-05-09-what-are-the-quantified-preventive-maintenance]] · [[synthesis/2026-05-09-what-does-percent-funded-mean-for]] · [[synthesis/2026-05-09-what-does-the-2021-surfside-champlain]] · [[synthesis/2026-05-10-what-is-the-best-practice-for]] · … (18 more)
 
 ### condo-capital-infra
-[[mocs/condo-capital-infra]] · 139 sources
+[[mocs/condo-capital-infra]] · 132 sources
 
-- Entities: [[entities/alan-cohen]] · [[entities/apra-reserve-preparers]] · [[entities/ardoor]] · [[entities/ashley-berenson]] · [[entities/associa]] · [[entities/association-reserves]] · [[entities/avidxchange]] · [[entities/bc-assessment]] · [[entities/bc-assessment-search-service]] · [[entities/bc-housing]] · [[entities/bc-housing-maintenance-matters-series]] · [[entities/bcfsa]] · … (86 more)
-- Concepts: [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/cmms-workorder-covariates]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/deck-balcony-component-priors]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (27 more)
+- Entities: [[entities/alan-cohen]] · [[entities/apra-reserve-preparers]] · [[entities/ardoor]] · [[entities/ashley-berenson]] · [[entities/associa]] · [[entities/association-reserves]] · [[entities/avidxchange]] · [[entities/bc-assessment]] · [[entities/bc-assessment-search-service]] · [[entities/bc-housing]] · [[entities/bc-housing-maintenance-matters-series]] · [[entities/bcfsa]] · … (79 more)
+- Concepts: [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/cmms-workorder-covariates]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/deck-balcony-component-priors]] · [[concepts/gic-laddering-strategy]] · [[concepts/gse-15-percent-reserve-funding-requirement]] · … (25 more)
 - Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-05-11-reconcile-the-reserve-fund-study-contingency]] · [[synthesis/2026-05-11-what-is-the-established-academic-and]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-component-level-degradation-modeling]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cost-and-financial-framing-life-cycle]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-cross-cutting]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-data-ingestion-inspection-updating-and-decision]] · [[synthesis/2026-05-11-what-is-the-established-methodology-stack-system-level-and-portfolio-aggregation]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-cross-cutting]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-integration-of-safety-and-maintenance-into]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-purpose-and-value-of-reserve-studies]] · [[synthesis/2026-05-12-reserve-study-firms-explaining-their-methodology-reserve-study-standards-and-methodology]] · … (78 more)
 
 ### condo-software
-[[mocs/condo-software]] · 178 sources
+[[mocs/condo-software]] · 145 sources
 
-- Entities: [[entities/ace-conference-trade-show]] · [[entities/acmo]] · [[entities/alberta-condominium-property-act]] · [[entities/alberta-condominium-property-regulation]] · [[entities/alberta-credit-union-act]] · [[entities/alberta-credit-union-deposit-guarantee-fund]] · [[entities/alliance-association-bank]] · [[entities/amsi]] · [[entities/andrea-drennen]] · [[entities/anyone-home]] · [[entities/appfolio]] · [[entities/aspire-community-management]] · … (304 more)
-- Concepts: [[concepts/30-year-cash-flow-projection]] · [[concepts/agentic-ai-cam-workflows]] · [[concepts/ai-native-property-management]] · [[concepts/alberta-12-unit-self-study-exemption]] · [[concepts/alberta-credit-union-deposit-coverage]] · [[concepts/alberta-credit-union-unclaimed-balances]] · [[concepts/alberta-qualified-person-reserve-fund]] · [[concepts/alberta-reserve-fund-plan]] · [[concepts/alberta-reserve-fund-study]] · [[concepts/appfolio-stack]] · [[concepts/automated-lockbox]] · [[concepts/bank-merger-account-continuity]] · … (181 more)
+- Entities: [[entities/ace-conference-trade-show]] · [[entities/alberta-condominium-property-act]] · [[entities/alberta-condominium-property-regulation]] · [[entities/alberta-credit-union-act]] · [[entities/alberta-credit-union-deposit-guarantee-fund]] · [[entities/alliance-association-bank]] · [[entities/amsi]] · [[entities/andrea-drennen]] · [[entities/appfolio]] · [[entities/aspire-community-management]] · [[entities/assessment-and-reserve-funding-disclosure-summary]] · [[entities/association-prime]] · … (268 more)
+- Concepts: [[concepts/30-year-cash-flow-projection]] · [[concepts/agentic-ai-cam-workflows]] · [[concepts/ai-native-property-management]] · [[concepts/alberta-12-unit-self-study-exemption]] · [[concepts/alberta-credit-union-deposit-coverage]] · [[concepts/alberta-credit-union-unclaimed-balances]] · [[concepts/alberta-qualified-person-reserve-fund]] · [[concepts/alberta-reserve-fund-plan]] · [[concepts/alberta-reserve-fund-study]] · [[concepts/appfolio-stack]] · [[concepts/automated-lockbox]] · [[concepts/bank-merger-account-continuity]] · … (171 more)
 - Synthesis: [[synthesis/2026-05-24-cross-domain-synthesis-acquirer-integration-surface]] · [[synthesis/2026-05-24-what-are-the-reserve-fund-investment]] · [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]]
 
 ### convergent-ai-brain
-[[mocs/convergent-ai-brain]] · 3 sources
+[[mocs/convergent-ai-brain]] · 30 sources
 
 - Entities: [[entities/andy-clark]] · [[entities/brian-cheung]] · [[entities/goldstein-2022-ecog]] · [[entities/hermann-von-helmholtz]] · [[entities/karl-friston]] · [[entities/minyoung-huh]] · [[entities/phillip-isola]] · [[entities/samuel-hammond]] · [[entities/steven-byrnes]] · [[entities/tongzhou-wang]] · [[entities/topolm]]
 - Concepts: [[concepts/active-inference]] · [[concepts/analysis-by-synthesis]] · [[concepts/anna-karenina-scenario]] · [[concepts/bayesian-brain]] · [[concepts/foundation-models]] · [[concepts/functional-brain-networks]] · [[concepts/generative-model-brain]] · [[concepts/helmholtz-machine]] · [[concepts/hierarchical-predictive-coding]] · [[concepts/model-stitching]] · [[concepts/mutual-nearest-neighbor-alignment]] · [[concepts/persona-selection-model]] · … (9 more)
-- Synthesis: [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-alignment-ceilings-and-norm]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-architectural-and-objective]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-cross-cutting]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-mutual-information-bounds-a]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-the-persistent-gap-between-]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-the-role-of-model-scale-in]]
+- Synthesis: [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-alignment-ceilings-and-norm]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-architectural-and-objective]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-cross-cutting]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-mutual-information-bounds-a]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-the-persistent-gap-between-]] · [[synthesis/2026-06-02-what-sets-the-ceiling-on-representational-the-role-of-model-scale-in]] · [[synthesis/2026-06-18-what-sets-the-ceiling-on-representational]]
 
 ### cycling-and-fitness
 [[mocs/cycling-and-fitness]] · 12 sources
@@ -87,7 +92,7 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 ### data-collectives
 [[mocs/data-collectives]] · 50 sources
 
-- Entities: [[entities/21st-century-cures-act]] · [[entities/a16z]] · [[entities/accounting-data-union]] · [[entities/ada-lovelace-institute]] · [[entities/ag-data-transparent]] · [[entities/ai-council]] · [[entities/aida]] · [[entities/all-of-us-research-hub]] · [[entities/amii]] · [[entities/analysis-group]] · [[entities/anindya-sen]] · [[entities/anvil-platform]] · … (111 more)
+- Entities: [[entities/21st-century-cures-act]] · [[entities/a16z]] · [[entities/accounting-data-union]] · [[entities/ada-lovelace-institute]] · [[entities/ag-data-transparent]] · [[entities/ai-council]] · [[entities/aida]] · [[entities/all-of-us-research-hub]] · [[entities/amii]] · [[entities/analysis-group]] · [[entities/anindya-sen]] · [[entities/anvil-platform]] · … (110 more)
 - Concepts: [[concepts/ai-content-watermarking]] · [[concepts/ai-red-teaming]] · [[concepts/antitrust-risks-data-sharing]] · [[concepts/biomedical-data-commons]] · [[concepts/blockchain-data-sharing]] · [[concepts/bottom-up-ai-regulation]] · [[concepts/centralized-blockchain-governance]] · [[concepts/citizen-directed-data]] · [[concepts/cold-start-problem]] · [[concepts/collective-data-governance]] · [[concepts/common-agreement]] · [[concepts/common-pool-resources]] · … (86 more)
 - Synthesis: [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]] · [[synthesis/2026-06-11-is-a-data-collective-among-condo]] · [[synthesis/2026-06-11-is-there-a-policy-and-market]]
 
@@ -148,17 +153,23 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 
 
 ### orita-cmo
-[[mocs/orita-cmo]] · 10 sources
+[[mocs/orita-cmo]] · 25 sources
 
-- Entities: [[entities/aaron]] · [[entities/adrienne]] · [[entities/apollo]] · [[entities/autogen]] · [[entities/avoma]] · [[entities/bigquery]] · [[entities/breeze]] · [[entities/caraway]] · [[entities/claude-code]] · [[entities/claude-desktop]] · [[entities/coupler-io]] · [[entities/crewai]] · … (17 more)
-- Concepts: [[concepts/aeo-geo]] · [[concepts/agency-channel-gtm]] · [[concepts/agent-escalation-levels]] · [[concepts/claude-code-velocity-model]] · [[concepts/competitive-positioning]] · [[concepts/economic-buyer]] · [[concepts/external-ai-crm-surface]] · [[concepts/hubspot-association-labels]] · [[concepts/hubspot-data-hygiene]] · [[concepts/hubspot-deal-tags]] · [[concepts/hubspot-segments]] · [[concepts/icp-tiering]] · … (6 more)
+- Entities: [[entities/aampe]] · [[entities/aaron]] · [[entities/adrienne]] · [[entities/apollo]] · [[entities/attentive]] · [[entities/autogen]] · [[entities/avoma]] · [[entities/bigquery]] · [[entities/black-crow-ai]] · [[entities/bloomreach]] · [[entities/breeze]] · [[entities/caraway]] · … (40 more)
+- Concepts: [[concepts/aeo-geo]] · [[concepts/agency-channel-gtm]] · [[concepts/agent-escalation-levels]] · [[concepts/agentic-personalization-platform]] · [[concepts/claude-code-velocity-model]] · [[concepts/competitive-positioning]] · [[concepts/economic-buyer]] · [[concepts/external-ai-crm-surface]] · [[concepts/hubspot-association-labels]] · [[concepts/hubspot-data-hygiene]] · [[concepts/hubspot-deal-tags]] · [[concepts/hubspot-segments]] · … (8 more)
+- Synthesis: [[synthesis/2026-06-15-how-can-a-single-marketing-executive]] · [[synthesis/2026-06-16-map-the-competitive-landscape-orita-operates]]
 
 ### risksystems
-[[mocs/risksystems]] · 4 sources
+[[mocs/risksystems]] · 6 sources
 
 - Entities: [[entities/abel-diaz-gonzalez]] · [[entities/ajith-parlikad]] · [[entities/alberto-pliego-marugan]] · [[entities/aming-zou]] · [[entities/andre-beck]] · [[entities/andy-hart]] · [[entities/anna-kucerova]] · [[entities/antonios-kamariotis]] · [[entities/arnold-yuan]] · [[entities/asphalt-pavement-lifecycle-review-paper]] · [[entities/austin-coursey]] · [[entities/aware-p]] · … (144 more)
 - Concepts: [[concepts/aleatory-epistemic-uncertainty]] · [[concepts/ambient-vibration-analysis]] · [[concepts/ann-damage-assessment]] · [[concepts/asphalt-pavement-lifecycle-management]] · [[concepts/bayesian-filtering-deterioration]] · [[concepts/bayesian-hierarchical-aft-model]] · [[concepts/bayesian-inference]] · [[concepts/bayesian-transfer-learning]] · [[concepts/bayesian-updating-bridge-resistance]] · [[concepts/bounded-degradation-phenomena]] · [[concepts/bounded-nonstationary-gamma-process]] · [[concepts/bounded-transformed-gamma-process]] · … (101 more)
 - Synthesis: [[synthesis/2026-05-20-bounded-gamma-process-bgp-deterioration-kernel]] · [[synthesis/2026-05-20-cross-cutting-comparison-longspan-v1-1]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-bayesian-hierarchical-modelling-and-partial-pooling]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-cross-cutting]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-expert-judgement-and-prior-elicitation]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-infrastructure-asset-management-systems-and-life]] · [[synthesis/2026-05-20-risksystems-01-bayesian-hierarchical-survival-stochastic-deterioration-and-survival-processes]] · [[synthesis/2026-05-20-risksystems-02-physics-informed-sciml-bayesian-uncertainty-quantification-and-model-updating]] · [[synthesis/2026-05-20-risksystems-02-physics-informed-sciml-cross-cutting]] · [[synthesis/2026-05-20-risksystems-02-physics-informed-sciml-hybrid-modeling-and-data-driven-structural]] · [[synthesis/2026-05-20-risksystems-03-gp-state-space-ensembles-cross-cutting]] · [[synthesis/2026-05-20-risksystems-03-gp-state-space-ensembles-data-driven-and-deep-learning-approaches]] · … (8 more)
+
+### semantic-models
+[[mocs/semantic-models]] · 0 sources
+
+- Synthesis: [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-cross-cutting]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-lifecycle-versioning-and-]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-methodologies-and-require]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-modularization-and-archit]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-ontology-alignment-and-ma]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-ontology-design-patterns-]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-upper-and-foundational-on]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-cross-cutting]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-data-fabric-and-data-mesh-semanti]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-ontology-based-data-access-obda]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-semantic-integration-and-mapping-]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-the-semantic-layer-and-metrics-la]] · … (13 more)
 
 ### systemic-health-and-neuroprotection
 [[mocs/systemic-health-and-neuroprotection]] · 0 sources
@@ -184,59 +195,15 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 
 
 ### (untagged)
-673 sources without a domain tag
+896 sources without a domain tag
 
 ## Cross-domain
 
-- Concept: [[concepts/anonymized-financial-statements]] · [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/chain-of-thought-prompting-finance]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/document-qa-vs-reserve-adequacy]] · [[concepts/gic-laddering-strategy]] · … (14 more)
-- Entity: [[entitys/association-reserves]] · [[entitys/champlain-towers-south]] · [[entitys/damian-esparza]] · [[entitys/genispec]] · [[entitys/gpt-4-turbo]] · [[entitys/notice-of-future-funding-noff]] · [[entitys/prism-data-model]] · [[entitys/quebec-bill-16]] · [[entitys/quebec-bill-16-regulation]] · [[entitys/smartproperty]] · [[entitys/smartproperty-atlas]] · [[entitys/smartproperty-report]] · … (1 more)
+- Concept: [[concepts/anonymized-financial-statements]] · [[concepts/california-30-year-reserve-projection]] · [[concepts/california-major-component-30-year-exclusion]] · [[concepts/california-percent-funded-component-method]] · [[concepts/canadian-condo-corporation-fee-surplus-non-income-treatment]] · [[concepts/canadian-condo-corporation-reserve-fund-interest-tax-treatment]] · [[concepts/chain-of-thought-prompting-finance]] · [[concepts/cmms-asset-work-order-data-model]] · [[concepts/condominium-fund-accounting]] · [[concepts/condominium-reserve-fund-funding-mechanisms]] · [[concepts/gic-laddering-strategy]] · [[concepts/gse-15-percent-reserve-funding-requirement]] · … (13 more)
+- Entity: [[entitys/association-reserves]] · [[entitys/champlain-towers-south]] · [[entitys/gpt-4-turbo]] · [[entitys/notice-of-future-funding-noff]] · [[entitys/smartproperty-report]] · [[entitys/strategic-inspections]]
 - Synthesis: [[synthesis/2026-05-08-how-should-a-condo-hoa-integrate-cross-cutting]] · [[synthesis/2026-06-11-condo-reserve-study-data-collective-cross-domain-case]]
 
 ## Health
 
-- Orphans: 760 — see `wiki lint --scope orphans`
+- Orphans: 766 — see `wiki lint --scope orphans`
 - Untriaged inbox: 0 — see `raw/inbox/`
-
-## Recent ingests
-
-- [[sources/web-2026-05-19-2c0]] · web · Black Crow AI | Full-Funnel Predictive AI for Ecommerce Growth · orita-cmo
-- [[sources/web-2026-05-28-0cb]] · web · OuterSignal Acquires Monocle to Expand AI-Driven Ecommerce Personalization Stack · orita-cmo
-- [[sources/web-2025-04-01-266]] · web · Clustie: AI Marketing Segments - Audiences to boost ROAS, grow AOV and reduce acquisition costs | Shopify App Store · orita-cmo
-- [[sources/web-2025-02-03-42a]] · web · What Is Aampe? How AI Decisioning Is Changing Email Personalization · orita-cmo
-- [[sources/web-2020-01-15-0c4]] · web · Enalito: Email, SMS, ChatBot - Skyrocket conversions with AI emails SMS, WA,Bot,Onsite Widget | Shopify App Store · orita-cmo
-- [[sources/web-2026-06-15-ec8]] · web · Black Crow AI Software Review 2026: Features, Integrations, Pros & Cons · orita-cmo
-- [[sources/web-2026-06-15-07f]] · web · Klaviyo — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-95e]] · web · Attentive — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-d6f]] · web · Postscript — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-789]] · web · Drip — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-633]] · web · Bloomreach — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-20d]] · web · Omnisend — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-809]] · web · Yotpo — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-f6f]] · web · Simon Data (Simon AI) — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/web-2026-06-15-78b]] · web · Listrak — Capterra Reviews, Features & Pricing 2026 · orita-cmo
-- [[sources/yt-uploadTest_AB]] · youtube · Test source
-- [[sources/yt-hILYM9oBI0M]] · youtube · KGC 2023 Keynote: Knowledge Graphs in Today’s Evolving Landscape & Beyond — Deborah McGuinness, RPI
-- [[sources/yt--30LcwdEIz8]] · youtube · Semantic Layers w/ Artyom Keydunov & Pavel Tiunov (Cube.dev)
-- [[sources/yt-0jDIYzPqZ28]] · youtube · KGC 2022 Talk: 'How To Build A Customer 360 Knowledge Graph for FinTech!' — Gupta & Jere, Intuit
-- [[sources/yt-6-OdjYdEpeU]] · youtube · RDF Data Shape Use Statistics: SHACL use on GitHub
-- [[sources/yt-9Y4AlAVtREI]] · youtube · Neo4j Cypher: Getting started! | Neo4j Tutorial
-- [[sources/yt-a83gfDqgeuE]] · youtube · Whence Whyis? Creating Knowledge Graphs from Documents — Jamie McCusker | KGC
-- [[sources/yt-ai4YdLiCGNM]] · youtube · How to handle data about what does not exist
-- [[sources/yt-Arx3N8tu1Go]] · youtube · Using CIDOC CRM for dynamically querying ArSol, a relational database, from the semantic web.
-- [[sources/yt-e4D0CH8eiv0]] · youtube · Building knowledge graphs in the real world. Expert panel at Connected Data London 2018
-- [[sources/yt-FowtXinAAF8]] · youtube · Shapes applications and tools Part 1: Introduction to RDF data model and motivation
-- [[sources/yt-fS_020V6po8]] · youtube · Lecture 07: Uplift - Mapping Relational Databases to RDF
-- [[sources/yt-H4BbWdhhuEE]] · youtube · KGC 2022 Panel: 'Knowledge Graph Architecture: Where Are We and Where Are We Going?'
-- [[sources/yt-igUnkgp_l14]] · youtube · The Semantics of a Semantic Layer by Dave Mariani
-- [[sources/yt-jn5j0vlqmlk]] · youtube · KGC 2023 Talk — The EU Knowledge Graph by Dennis Diefenbach, The QA Company
-- [[sources/yt-JohxmsHE4dI]] · youtube · Designing and Building Enterprise Knowledge Graphs from Relational Databases in the Real World
-- [[sources/yt-MXiVLwN8lho]] · youtube · Semantic similarity for faster Knowledge Graph delivery at scale. Vassil Momtchev
-- [[sources/yt-NP_XCZCPUw4]] · youtube · Masterclass Shapes Constraint Language KGC 2023
-- [[sources/yt-p3TLEV3oIBY]] · youtube · How to use a Semantic Layer and Data Lakehouse
-- [[sources/yt-Q1aji4uJJgc]] · youtube · KGC 2023 Talk — Using Knowledge Graphs for Navigating Data Assets by RelationalAI's Márton Búr
-- [[sources/yt-QEBVoultYJg]] · youtube · Knowledge Architecture: Strategy+Data Science+Information Architecture - NASA Data to Knowledge
-- [[sources/yt-qGp_Mort9Dg]] · youtube · Ontology-based Data Access made Practical, by Diego Calvanese
-- [[sources/yt-r7Qbb1yuLkE]] · youtube · Wikidata Knowledge Graph to Enable Equitable and Validated Ge... - Jonathan Fraine & Lydia Pintscher
-- [[sources/yt-WH3fVJHM0A4]] · youtube · The Year of the Graph: Evaluating graph databases. Panel discussion at Connected Data London
-- [[sources/yt-Z6Yy1xxWQ_0]] · youtube · Headless BI Architecture and Trade-offs - Pavel Tiunov, Cube Dev
-- [[sources/yt-ZpxIKeVvc08]] · youtube · KGC 2022: 'Yes, You Can Use Knowledge Graphs in Real Life!' — Amazon Web Services & Lexis Nexis

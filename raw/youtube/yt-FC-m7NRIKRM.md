@@ -8,8 +8,10 @@ authors:
 - Paul Scotti
 ingested_at: '2026-06-02T00:37:04Z'
 content_hash: sha256:2d0f8744c291f1a7e9dcef4aed28214a0b1b41e10d742d1c6f6e647f59e70f1d
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Paul Scotti

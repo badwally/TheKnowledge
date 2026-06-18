@@ -8,8 +8,10 @@ authors:
 - CCBM2018
 ingested_at: '2026-05-30T21:59:36Z'
 content_hash: sha256:1fbd6d5c6db04df8629f6df06ee267b90ccba9ff3f89e70a6c65e29dc4d5c8d2
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: CCBM2018

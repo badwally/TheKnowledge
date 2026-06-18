@@ -8,8 +8,10 @@ authors:
 - The Theoretical Neuroscience Channel
 ingested_at: '2026-05-30T21:59:35Z'
 content_hash: sha256:b7227a039235483e2cbcc0237b7b065b9e4bba27e1903fc3f74612625b369faf
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: The Theoretical Neuroscience Channel

@@ -9,8 +9,10 @@ authors:
 - Sabuncu Lab
 ingested_at: '2026-06-01T23:58:56Z'
 content_hash: sha256:3c5a23b9d134f08d909ddd4790e8c8485d8bd525ffa612cff6c0d8badd92bbd9
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Sabuncu Lab

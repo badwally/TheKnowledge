@@ -8,8 +8,10 @@ authors:
 - Hossein Adeli
 ingested_at: '2026-05-30T21:59:47Z'
 content_hash: sha256:126cfc7215c344fa4a42d02f5be7463e56e25e228a18e81be7523d79d36891da
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Hossein Adeli
