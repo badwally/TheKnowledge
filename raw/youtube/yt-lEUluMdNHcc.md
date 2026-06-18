@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-lEUluMdNHcc
 type: youtube
 title: Video LLMs for Temporal Reasoning in Long Videos
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:be6b9ff35b778a786cfe7b9f2381e888b29cdf37d1e64ffd437524a4fb6cf43d
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

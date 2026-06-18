@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-DdAgTEQl_I0
 type: youtube
 title: Spatio-Temporal Filter Analysis Improves 3D-CNN for Action Classification
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:26d66944c7ebbb2b0d459385908500227627b6fa9e24c207a026edece3a23ae1
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

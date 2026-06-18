@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-PFk-eZi7Q5Q
 type: youtube
 title: 'TubeTK: Adopting Tubes to Track Multi-Object in a One-Step Training Model'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:be8d37063612162f34a80afb29938b5709298afb9f95c0ba988233e03a979df3
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

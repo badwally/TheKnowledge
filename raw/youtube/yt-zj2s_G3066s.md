@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-zj2s_G3066s
 type: youtube
 title: '[CVPR 2023] Text-Visual Prompting for Efficient 2D Temporal Video Grounding'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:70247b7cf499d548e7f49f999f4ef3a0285d5a412039571dea49629a1e604b9e
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

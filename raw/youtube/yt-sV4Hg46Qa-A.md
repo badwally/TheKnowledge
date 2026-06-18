@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-sV4Hg46Qa-A
 type: youtube
 title: 'CVPR 2023 : Post-Processing Temporal Action Detection'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:1669a830806615e129d275b41e277b5e6895200f68aa3239263ab55dc34d5943
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

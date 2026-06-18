@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-DJXJTnhdZfg
 type: youtube
 title: Panoptic Segmentation of 4D LiDAR Using Spatio-Temporal Object Proposal Generation
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:8c1f36bf8a37ac8ddf0a787a988cd1e0e5909a0a2bc24c5fc3a6257805c5b84e
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

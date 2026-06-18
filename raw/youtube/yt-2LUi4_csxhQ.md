@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-2LUi4_csxhQ
 type: youtube
 title: Grounding Spatio-temporal Language with Transformers | JRC Workshop 2021
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:47e89b37281e82fad4cf59f9c54523671bc586f9c81100293c571f2b53d3496a
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

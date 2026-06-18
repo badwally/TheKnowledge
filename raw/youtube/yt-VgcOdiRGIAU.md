@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-VgcOdiRGIAU
 type: youtube
 title: 'TubeDETR: Spatio Temporal Video Grounding With Transformers | CVPR 2022'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:d9dc0df14a2a8b481a02804518f446e7a5559fc65bc3a3ca543674c7717f88fd
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

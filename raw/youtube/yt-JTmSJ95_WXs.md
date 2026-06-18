@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-JTmSJ95_WXs
 type: youtube
 title: TAEN Temporal aware embedding network for few shot action recognition
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:9c3ceb3e74363ebc5f10b0125c4276999ba482e81d9f501802257b213b8534eb
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

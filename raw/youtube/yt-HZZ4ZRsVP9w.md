@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-HZZ4ZRsVP9w
 type: youtube
 title: 'ST-GCN: Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:6d412e8235abb9f05a6850986f1184390a2997a83932d5a4ed4f2ad5df8d74e2
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

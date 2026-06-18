@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-f1gJkUI6rA4
 type: youtube
 title: '[CVPR 2023] TriDet: Temporal Action Detection with Relative Boundary Modeling'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:2e5cbde23dba724f571978ded29a4e3325cb935ef56496009b997b778aed04eb
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

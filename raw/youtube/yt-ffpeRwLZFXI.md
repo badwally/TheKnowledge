@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-ffpeRwLZFXI
 type: youtube
 title: Temporal Action Localization for Inertial-based Human Activity Recognition
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:f1a3ac1866d3600719806d5d68b972d23fe6b5af10e21dafecddc1f6eca518d3
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

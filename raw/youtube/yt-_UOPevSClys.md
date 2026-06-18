@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-_UOPevSClys
 type: youtube
 title: Nov 3, 2021 - Dr. Nikola Kasabov, Deep Learning in Spiking Neural Networks
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:aa9d7641b71734d8c24e062ec83fabfd2d23f2b14a2d377a3d65057f0bb28c5b
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-LKlJsKdwYQA
 type: youtube
 title: Local-Global Video-Text Interactions for Temporal Grounding
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:64ead358cfdb4484abfe50181490d4d368937ad38b21906c36c1db15437accbb
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

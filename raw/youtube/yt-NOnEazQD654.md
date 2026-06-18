@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-NOnEazQD654
 type: youtube
 title: 'WACV18: ActionFlowNet: Learning Motion Representation for Action Recognition'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:484dd7bae24fcf1b4dfc368d3eca051d27c55e6ca19bb6e19a80f110e92114d6
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

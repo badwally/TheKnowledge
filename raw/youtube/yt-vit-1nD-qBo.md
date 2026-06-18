@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-vit-1nD-qBo
 type: youtube
 title: Multi Task Video Captioning with Visual and Textual Entailment  | Mohit Bansal
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:33aac3f1cdc68f891894e3c65c93d0fcf9e26c972ec91f0abb7dff4dae4ed83d
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

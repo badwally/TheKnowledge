@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-lGMeXjF2s00
 type: youtube
 title: Use of spatiotemporal information from high-accuracy positioning
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:2390074bf52ef3ff51687cbd9ecd3fbe82e93855bf72675a5447675ba36248f9
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

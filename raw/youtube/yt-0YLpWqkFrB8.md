@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-0YLpWqkFrB8
 type: youtube
 title: Learning Temporal Co-Attention Models for Unsupervised Video Action Localization
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:4f91fbdd2f7c171a056462277772970193afccb2001510d1cb1e7d15c7a08e64
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

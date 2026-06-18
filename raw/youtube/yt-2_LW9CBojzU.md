@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-2_LW9CBojzU
 type: youtube
 title: 'Group 106: Spatial Temporal Convolutional Networks for Action Recognition'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:884eefe44612b1d235032593f2980c5f993a639962bf76defbf772c2114c17d6
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

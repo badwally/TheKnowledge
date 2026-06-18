@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-KiqbTLuYeT4
 type: youtube
 title: 'TransMOT: Spatial-Temporal Graph Transformer for Multiple Object Tracking'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:cc66ff190ff5616c41d00374dc1ac064a00e5f445a25ca6204c20d5aeef23fd1
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

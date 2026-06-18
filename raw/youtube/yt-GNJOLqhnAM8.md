@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-GNJOLqhnAM8
 type: youtube
 title: Deep Learning - 037  Visual object tracking
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:ddf50a799451814c706139331af33f4b88d20d02861929d48ba1420d9a64e71b
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

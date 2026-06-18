@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-COHkVddJVcY
 type: youtube
 title: 'METAL: Minimum Effort Temporal Activity Localization in Untrimmed Videos'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:4fcb8557b1f7c0436293574879a2f3f3704376476877218473d2d6f3ded9ca99
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

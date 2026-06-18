@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-gCNQ7mCTvGM
 type: youtube
 title: 'WACV18: Recurrent Autoregressive Networks for Online Multi-Object Tracking'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:2fce24af2e422734a496dff95f7cdb5d2aeb23369745da9bd2329cef570266a7
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

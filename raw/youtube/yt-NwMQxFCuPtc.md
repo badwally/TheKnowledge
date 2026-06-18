@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-NwMQxFCuPtc
 type: youtube
 title: 'Spatiotemporal Fusion in 3D CNNs: A Probabilistic View'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:19c966eec6199e9e30221ef853c91a55ab1f2025850a9bd458291d9d02a0d33d
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-hKSDJSDRee8
 type: youtube
 title: Multimodal Pretraining for Dense Video Captioning
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:297ff2c909c65b8c243bc280ae3adc91b4d272d01c92de7938632b7b178b9faf
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

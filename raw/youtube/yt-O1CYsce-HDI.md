@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-O1CYsce-HDI
 type: youtube
 title: 'Advanced Computer Vision Final Project: 3D Human-Pose Estimation through Transformers'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:cdc8a002cd3e3c1aff4657d68747f200b114f5a8addadccc6edd70897a5e7844
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

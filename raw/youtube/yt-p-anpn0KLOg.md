@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-p-anpn0KLOg
 type: youtube
 title: 'WACV18: A Temporal Sequence Learning for Action Recognition and Prediction'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:a47f535d72529db425db5476928df7e322bf410f9377984c4174e056e4b2e820
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

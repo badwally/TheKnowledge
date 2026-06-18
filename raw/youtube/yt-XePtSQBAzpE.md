@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-XePtSQBAzpE
 type: youtube
 title: 'RPAN: An End-to-End Recurrent Pose-Attention Network for Action Recognition
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:1df3efcf78f808d568039cf95b9ae893785fa7602bf256f755c5a1bb9b597379
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

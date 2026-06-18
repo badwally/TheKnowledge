@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-gcWXPvAAJo0
 type: youtube
 title: 'WACV18: Temporal Difference Networks for Video Action Recognition'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:5226f6e504c664f52ab4e35baff127ca2bdc0a066bde723b1a600205d6f004d1
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

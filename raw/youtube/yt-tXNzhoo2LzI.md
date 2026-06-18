@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-tXNzhoo2LzI
 type: youtube
 title: 'OpenTAL: Towards Open Set Temporal Action Localization | CVPR 2022'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:db3ae985f00e19401c8cb1efd521fc45548b40bc8fa5a522de7bea8cd4ef7f71
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

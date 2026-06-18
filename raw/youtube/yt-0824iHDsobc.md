@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-0824iHDsobc
 type: youtube
 title: Self-Feedback DETR for Temporal Action Detection
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:2e0d8dc9ee983b0f9cf7a4bcb61b98abc004cf3497e1f300574f8d185070a68f
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

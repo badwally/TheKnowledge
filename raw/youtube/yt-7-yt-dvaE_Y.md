@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-7-yt-dvaE_Y
 type: youtube
 title: 'Molmo2: Open-Source Vision-Language Models with State-of-the-Art Video Grounding'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:e95a8e3e5733271b41e056c277783daa4ce12edc169be5995deb00716c819c03
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

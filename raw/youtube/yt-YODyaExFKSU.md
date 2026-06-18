@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-YODyaExFKSU
 type: youtube
 title: 'TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:2b2ea128ec26681ce9bf57e08ada6da6cd793d2bf6810c48648242522a42a8f4
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

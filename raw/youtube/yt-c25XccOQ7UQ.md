@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-c25XccOQ7UQ
 type: youtube
 title: 'Where Does It Exist: Spatio-Temporal Video Grounding for Multi-Form Sentences'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:f3b0dc43540b46bcb53738a6cb22a05d97eaaa75bd42f0513058220b223d8985
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

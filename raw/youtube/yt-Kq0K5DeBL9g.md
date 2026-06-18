@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-Kq0K5DeBL9g
 type: youtube
 title: '636 - GraphTCN: Spatio-Temporal Interaction Modeling for Human Trajectory
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:434ff53b4dab6646957186b8ba8dd0d7385b338efe515f0424929a12eb4f3234
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

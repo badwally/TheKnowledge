@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-D1wSyZqaAn0
 type: youtube
 title: Video Playback Rate Perception for Self-Supervised Spatio-Temporal Representation
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:cc6e2549f15e963205896c09b47a2cf2b8851acd615a525a049820029ebabbe8
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

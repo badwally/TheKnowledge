@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-2iA8jePZvQc
 type: youtube
 title: MIC 2018 - Spatio-temporal Grounding in Visual Data
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:920ce4e8518ec1cbd1b71dbf50a44494c0c88c681980f16194ee17159c020161
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook
