@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (WS-1 + WS-2 + grouped-citation fix + abbrev-fix/8-drafts-finalized ALL MERGED)
+Last updated: 2026-06-18 (above + 17 under-attributed research drafts ABANDONED via #27 — all merged)
 
 ---
 
@@ -50,11 +50,15 @@ green); (2) genuine **under-attribution**: NLM's `### Specifics` sections genera
 `wiki research` pages use `[N]` + `[^N]:` defs (those resolve fine — the blocker was the abbrev false-positive
 + under-attribution, NOT structural-label matching as the old note guessed).
 
-**Deferred (need explicit go):** (a) the **17 under-attributed** research drafts — only finalizable by
-re-running `wiki research`/`wiki query` over richer corpora or hand-citing genuine claims (NOT a code fix);
-(b) fresh-discovery expansion of ai-temporal-video beyond the 86 (gated behind any live YouTube-adapter
-session); (c) 46 ai-temporal-video concept stubs have empty `title` frontmatter (migration artifact);
-(d) risksystems/ai-native-business re-synthesis (+2 each, marginal — skipped).
+**17 under-attributed drafts — ABANDONED (#27 `5fafbd05`, user call).** They fail the quality gate
+(NLM `### Specifics` prose from sparse/low-quality transcripts, no inline citations) and the user knew the
+source transcripts were weak when pulling them. Deleted via `wiki finalize --abandon` rather than
+force-passed; raw sources untouched. Net for the S3/S4 run: 8 finalized, 17 removed, 0 left as drafts.
+
+**Deferred (need explicit go):** (a) fresh-discovery expansion of ai-temporal-video beyond the 86 (gated
+behind any live YouTube-adapter session); (b) 46 ai-temporal-video concept stubs have empty `title`
+frontmatter (migration artifact); (c) risksystems/ai-native-business re-synthesis (+2 each, marginal —
+skipped).
 
 ---
 
