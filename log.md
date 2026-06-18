@@ -49298,3 +49298,19 @@ created wiki/mocs/ai-temporal-video.md
 ## [2026-06-18T19:05:29Z] moc-add | slug=ai-temporal-video | domain=ai-temporal-video | draft=yes
 
 created wiki/mocs/ai-temporal-video.md
+
+## [2026-06-18T19:48:05Z] finalize-abandon | page=wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
+
+## [2026-06-18T19:48:57Z] wiki-author | id=query-2026-06-18-what-are-the-dominant-method-families | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against ai-temporal-video corpus
+
+## [2026-06-18T19:50:14Z] cite | page=wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md | additions=4 | sources=4
+
+added 4 citation(s) to wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
+
+## [2026-06-18T19:50:23Z] finalize | page=wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
+
+finalized wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md

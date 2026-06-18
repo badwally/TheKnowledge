@@ -11,7 +11,8 @@ domains:
 - ai-temporal-video
 nlm_corpus_ids:
 - 2560f247-933f-4fb3-b477-b680b2d1cda6
-wiki_pages: []
+wiki_pages:
+- wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
 meta:
   source_app: legacy-research-notebook
   legacy_recovery: summary-only
