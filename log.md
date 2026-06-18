@@ -48950,3 +48950,7 @@ query against convergent-ai-brain corpus
 ## [2026-06-18T19:53:17Z] finalize | page=wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md
 
 finalized wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md
+
+## [2026-06-18T21:37:31Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T21-37-31Z-schema-drift.md
