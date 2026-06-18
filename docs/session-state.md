@@ -1,15 +1,27 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-17 (semantic-models research loop streams 3+4 + YouTube transcript-cache seam — COMMITTED, local only)
+Last updated: 2026-06-17 (semantic-models research loop streams 3+4 + YouTube transcript-cache seam — SHIPPED to origin/main via PR #20; git tree cleaned)
 
 ---
 
-## ✅ SEMANTIC-MODELS RESEARCH LOOP — STREAMS 3+4 DONE + COMMITTED (2026-06-17)
+## ✅ SEMANTIC-MODELS RESEARCH LOOP — STREAMS 3+4 SHIPPED (2026-06-17)
 
-**Commits (local `main`, NOT pushed):** `7fdc645d` cache-seam code/infra (youtube.py +
-test + .gitignore); `3789559e` research corpus broad cut (311 files — sm streams 3+4 +
-same-day agentic-data-layer tail; condo/orita/obsidian backlog excluded; safety-checked
-clean). docs/YT-failed-transcript-table/ RTF originals (2.8M) gitignored.
+**Status: COMPLETE + on `origin/main`.** Merged via **PR #20 → `a7f4275e`**. Commits on main:
+`fd2acd09` cache-seam code/infra (youtube.py + test + .gitignore), `23037bb2` research corpus
+broad cut (311 files — sm streams 3+4 + same-day agentic-data-layer tail; condo/orita/obsidian
+backlog excluded), `6f6c9a33` session-state. docs/YT-failed-transcript-table/ RTF originals (2.8M)
+gitignored.
+
+**Git tree cleaned (2026-06-17):** `main` = `origin/main` (0/0, clean worktree). Stale branches
+`refactor/promote-public-title-resolver` + `semantic-models-loop` deleted (were fully on origin/main;
+remote semantic-models-loop auto-deleted on merge). Other-projects' WIP restored to
+`wip/condo-orita-restore` (current working branch, ~227 files vs main). `keep/local-main-20260617`
+preserves the parallel session's unpushed `89a63954` (acceptance-gate contp doc) — leave until that
+session pushes/discards it. NOTE: the cherry-pick that first diverged local main was the wrong move
+(it skipped `4bcf938f` = user's PR #19); resolved via push-branch+PR. See memories
+`feedback_defer_to_git_best_practices` + `feedback_verify_branch_before_commit_shared_tree`.
+
+**Review brief:** `docs/260617_session-review-5.md`.
 
 Plan: `docs/plans/2026-06-17-semantic-models-research-loop.md`. Streams 1+2 ran earlier
 (executed); this session ran **streams 3 (knowledge graphs) + 4 (semantic layers)** with
