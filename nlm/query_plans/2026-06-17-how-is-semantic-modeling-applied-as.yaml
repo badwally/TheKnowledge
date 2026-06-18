@@ -1,0 +1,50 @@
+version: 1
+session_id: 2026-06-17-how-is-semantic-modeling-applied-as
+domain: semantic-models
+prompt: 'How is semantic modeling applied as architecture in enterprise data systems?
+  Cover: the semantic layer and metrics-layer pattern (universal semantic layer, headless
+  BI, dbt Semantic Layer, Cube, AtScale, Malloy) and how it relates to formal ontologies;
+  linked-data publishing and schema.org for interoperability; data-fabric and data-mesh
+  semantics (knowledge-graph-backed metadata, active metadata catalogs, canonical
+  data models); semantic integration and mapping patterns across heterogeneous sources;
+  and where formal semantics (RDF/OWL) meets pragmatic enterprise data modeling. Include
+  vendor architecture documentation, standards (schema.org, DCAT), reference architectures,
+  and practitioner accounts of semantic-layer adoption. Favor sources specifying the
+  underlying schema or formalism over capability assertions.'
+generated_at: '2026-06-17T19:15:13Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 5
+  web: 20
+queries:
+  arxiv:
+  - semantic layer enterprise data architecture formalism
+  - ontology-based data access mediator wrapper heterogeneous sources
+  - data mesh semantic interoperability canonical data model
+  youtube:
+  - universal semantic layer enterprise architecture conference talk
+  - ontology-based data access OBDA research lecture
+  - enterprise knowledge graph metadata data mesh keynote
+  - dbt Semantic Layer headless BI architecture talk
+  - enterprise knowledge graph deployment case study conference
+  web:
+  - dbt Semantic Layer documentation architecture guide
+  - Cube.dev semantic layer headless BI reference
+  - AtScale universal semantic layer enterprise architecture whitepaper
+  - Malloy data modeling language documentation reference
+  - schema.org enterprise adoption structured data best practices
+  - DCAT W3C data catalog vocabulary specification guide
+  - IBM data fabric semantic layer knowledge graph reference architecture
+  - data mesh semantic interoperability canonical data model patterns
+  - DataHub active metadata graph knowledge graph architecture
+  - ontology-based data access OBDA enterprise mediator deployment
+  - linked data enterprise publishing patterns best practices
+  - canonical data model enterprise service bus integration EAI
+  - knowledge graph metadata catalog enterprise deployment guide
+  - semantic layer metrics layer enterprise BI architecture comparison
+  - R2RML RML semantic integration enterprise data warehouse mapping
+  semantic_scholar: []
+edited: true
+status: executed
+executed_at: '2026-06-18T00:33:14Z'

@@ -3,8 +3,8 @@ notebooks:
     persistent:
       notebook_id: 65f83714-12cc-4ee0-8e98-72cb1ffe8438
       created_at: '2026-06-17T18:17:01Z'
-      sources_count: 27
-      last_sync: '2026-06-17T19:16:44Z'
+      sources_count: 60
+      last_sync: '2026-06-17T21:33:19Z'
     sessions:
     - session_id: 2026-06-17-how-do-ai-agents-retrieve-and
       notebook_id: 64e802d6-32dc-439e-8210-080baa8a0c3a
@@ -37,6 +37,17 @@ notebooks:
       status: promoted
       sources_count: 10
       promoted_at: '2026-06-17T19:16:44Z'
+    - session_id: 2026-06-17-what-are-the-current-architecture-and
+      notebook_id: 41ce22cf-ccfd-47b0-8ada-76f09c6b7a8d
+      query: What are the current architecture and engineering patterns for AI agents
+        that query, construct, and validate knowledge graphs and semantic data layers
+        at runtime? Cover GraphRAG and knowledge-graph retrieval, text-to-query (SPARQL/Cypher),
+        MCP and tool design over graph and triple-store backends, SHACL-constrained
+        generation and validation, and evaluation of agent-over-graph systems.
+      created_at: '2026-06-17T21:00:30Z'
+      status: promoted
+      sources_count: 71
+      promoted_at: '2026-06-17T21:33:19Z'
   ai-and-agents:
     persistent:
       notebook_id: 7eac1296-b611-422e-85bb-6c36f5c8872b
@@ -604,8 +615,8 @@ notebooks:
     persistent:
       notebook_id: d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
       created_at: '2026-06-17T18:29:32Z'
-      sources_count: 33
-      last_sync: '2026-06-17T19:08:31Z'
+      sources_count: 121
+      last_sync: '2026-06-18T00:33:14Z'
     sessions:
     - session_id: 2026-06-17-what-are-the-foundational-formalisms-for
       notebook_id: 0cfca46c-1ca9-4ffc-a6d7-81b0b4f330a0
@@ -637,9 +648,43 @@ notebooks:
         Include foundational methodology papers, the ontology-design-pattern literature,
         OAEI results, and current engineering practice.'
       created_at: '2026-06-17T19:31:37Z'
-      status: ephemeral
+      status: promoted
       sources_count: 43
-      promoted_at: null
+      promoted_at: '2026-06-17T20:11:34Z'
+    - session_id: 2026-06-17-what-are-the-architecture-and-engineering
+      notebook_id: 1d0057af-4b8c-4ae9-9fec-84c6124a1210
+      query: 'What are the architecture and engineering choices in building and operating
+        knowledge graphs? Cover: KG construction pipelines (from structured sources
+        via R2RML and RML, and from text via entity and relation extraction); storage
+        architectures (RDF triple stores versus native labeled-property-graph databases,
+        indexing and scaling characteristics); query languages and engines (SPARQL
+        1.1, Cypher, the ISO GQL standard) and their performance tradeoffs; reasoning
+        and inference at scale (materialization versus query rewriting, OWL profile
+        reasoners); knowledge-graph embeddings and their role; and shape validation
+        (SHACL, ShEx). Include triple-store and graph-database technical documentation
+        and benchmarks, reference-architecture writeups, and W3C/ISO specifications.
+        Favor sources with concrete query, schema, or benchmark detail.'
+      created_at: '2026-06-17T23:26:36Z'
+      status: promoted
+      sources_count: 40
+      promoted_at: '2026-06-17T23:54:28Z'
+    - session_id: 2026-06-17-how-is-semantic-modeling-applied-as
+      notebook_id: 2e85ccf3-8d8d-4b72-a7a1-90536d63fe64
+      query: 'How is semantic modeling applied as architecture in enterprise data
+        systems? Cover: the semantic layer and metrics-layer pattern (universal semantic
+        layer, headless BI, dbt Semantic Layer, Cube, AtScale, Malloy) and how it
+        relates to formal ontologies; linked-data publishing and schema.org for interoperability;
+        data-fabric and data-mesh semantics (knowledge-graph-backed metadata, active
+        metadata catalogs, canonical data models); semantic integration and mapping
+        patterns across heterogeneous sources; and where formal semantics (RDF/OWL)
+        meets pragmatic enterprise data modeling. Include vendor architecture documentation,
+        standards (schema.org, DCAT), reference architectures, and practitioner accounts
+        of semantic-layer adoption. Favor sources specifying the underlying schema
+        or formalism over capability assertions.'
+      created_at: '2026-06-18T00:09:06Z'
+      status: promoted
+      sources_count: 12
+      promoted_at: '2026-06-18T00:33:14Z'
   trading-and-markets:
     persistent:
       notebook_id: ccbda94f-7251-42bb-864f-0e1c9850f7ad

@@ -1,0 +1,114 @@
+# Authored by `wiki bootstrap-domain` from a natural-language description.
+# Edit freely; re-run `wiki refine-domain` to evolve the policy.
+
+version: v1
+policy_schema_version: 1
+domain:
+  slug: semantic-models
+  topic: Semantic data models, knowledge representation formalisms, and semantic architecture
+    for data systems
+  field: Knowledge representation, ontology engineering, and semantic web technologies
+  description: "Covers the formalisms, engineering practices, and reference architectures\
+    \ for representing meaning in data \u2014 spanning RDF/OWL/description logics,\
+    \ ontology design and alignment, knowledge-graph construction and querying (SPARQL,\
+    \ GQL/Cypher), reasoning and inference, and semantic layers in data systems (data\
+    \ fabric, data mesh, metrics layers, SHACL/ShEx validation, linked data, interoperability\
+    \ standards). Altitude spans foundational W3C specifications and formal theory\
+    \ through hands-on implementation with triple stores, graph databases, and vendor\
+    \ semantic-layer tooling."
+filter:
+  threshold_include: 0.7
+  threshold_review: 0.5
+  example_count_in_prompt: 12
+  example_strategy: balanced
+inclusion_criteria:
+- "Covers knowledge-representation formalisms \u2014 RDF, RDFS, OWL and its profiles\
+  \ (OWL 2 DL/EL/RL/QL), description logics (ALC, SROIQ), property graphs, or conceptual/logical\
+  \ data modeling with formal grounding"
+- "Addresses ontology engineering practice \u2014 design patterns, modularization,\
+  \ alignment and mapping methodologies, upper/foundational ontologies (BFO, DOLCE,\
+  \ schema.org), or ontology lifecycle and governance"
+- Presents knowledge-graph construction, querying (SPARQL, GQL, Cypher, SHACL/ShEx
+  validation), storage architectures (triple stores, native graph databases), or reasoning
+  and inference engines
+- "Describes semantic architecture components in data systems \u2014 semantic layers,\
+  \ metrics layers, linked-data publishing, data-fabric or data-mesh semantic interoperability,\
+  \ or canonical data model integration patterns"
+- Analyzes W3C or ISO specifications (RDF 1.2, OWL 2, SPARQL 1.1, R2RML, RML, JSON-LD,
+  SKOS) or their implementation conformance and extension points
+exclusion_criteria:
+- Introductory explainers ("what is an ontology?", "what is a knowledge graph?") that
+  present only definitional content without technical depth, formal treatment, or
+  implementation guidance
+- Vendor marketing materials (blog posts, product landing pages) that assert semantic
+  capabilities without specifying the underlying formalisms, schema, or architecture
+- "Sources scoped exclusively to the agentic application layer \u2014 how AI agents\
+  \ consume or produce semantic structures at runtime \u2014 without grounding in\
+  \ the representation formalism or data architecture itself"
+- Sources scoped exclusively to corpus licensing, data acquisition, or dataset curation
+  without addressing the representation or modeling layer
+quality_signals:
+  publication_venue:
+    positive_signals:
+    - Peer-reviewed journals and conferences with established semantic web or knowledge
+      representation focus (Semantic Web journal, Journal of Web Semantics, Applied
+      Ontology, ISWC, ESWC, KR, Description Logics Workshop)
+    - W3C Working Group Notes, Recommendations, and Working Drafts; ISO/IEC standards
+      documents
+    - Workshop proceedings from established venues (OWLED, OM, EKAW, FOIS)
+    - Authoritative vendor and standards engineering documentation and reference
+      implementations (official docs for major triple stores, graph databases, and
+      semantic-layer tools)
+    negative_signals:
+    - Content-free venues — SEO listicle farms, link aggregators, or marketing pages
+      with no technical specification, schema, or architecture
+    - Press releases and product announcements without citation to underlying technical
+      specification or paper
+  content_depth:
+    positive_signals:
+    - Defines formal semantics, model-theoretic interpretations, or complexity results
+      for the constructs it describes
+    - Demonstrates implementation against a real triple store, graph database, or
+      validation engine with concrete query or schema examples
+    - Evaluates trade-offs between representation choices (expressivity vs. tractability,
+      open-world vs. closed-world assumption) with justification
+    negative_signals:
+    - Presents only surface-level taxonomy or bullet-point comparison without underlying
+      formal or architectural reasoning
+    - Asserts correctness or scalability claims without benchmark data, proof sketch,
+      or referenced prior work
+  methodology_rigor:
+    positive_signals:
+    - Grounds design decisions in established ontology engineering methodologies (METHONTOLOGY,
+      NeON, SAMOD) or formal modeling standards
+    - Validates alignment or mapping results against a gold-standard reference ontology
+      or evaluation dataset
+    - "Provides reproducible artifacts \u2014 published ontology IRIs, SPARQL endpoint,\
+      \ GitHub repository, or specification normative reference"
+    negative_signals:
+    - Ontology or schema design presented without discussion of modeling trade-offs
+      or alternative representations considered
+    - Mapping or alignment claims with no quantified evaluation (precision, recall,
+      F-measure, or human-expert validation)
+  channel_authority:
+    positive_signals:
+    - University course lectures or named research-lab talks (e.g. Stanford, MIT,
+      Oxford e-Research, Manchester, or established data-systems labs)
+    - Recognized conference, workshop, or summit sessions (ISWC, ESWC, KR, KGC /
+      Knowledge Graph Conference, Connected Data London, VLDB, SIGMOD, or W3C
+      community group meetings)
+    - Speaker is a published researcher, W3C spec editor, framework or triple-store
+      author, or named practitioner in ontology engineering or knowledge graphs
+    negative_signals:
+    - Influencer or growth-marketing channel with no technical track record
+    - Content primarily promoting a paid course, newsletter, or product upsell
+  speaker_expertise:
+    positive_signals:
+    - Discusses formalism, query, storage, reasoning, or validation mechanisms with
+      precision
+    - References specific specifications, systems, or benchmarks by name (OWL 2
+      profiles, SPARQL 1.1, SHACL, R2RML, named triple stores or graph databases)
+    negative_signals:
+    - Surface-level overview or hype with no mechanism, schema, or implementation
+      detail
+bootstrapped_from_description_hash: f072799bf0d23316

@@ -1,0 +1,50 @@
+version: 1
+session_id: 2026-06-17-what-are-the-architecture-and-engineering
+domain: semantic-models
+prompt: 'What are the architecture and engineering choices in building and operating
+  knowledge graphs? Cover: KG construction pipelines (from structured sources via
+  R2RML and RML, and from text via entity and relation extraction); storage architectures
+  (RDF triple stores versus native labeled-property-graph databases, indexing and
+  scaling characteristics); query languages and engines (SPARQL 1.1, Cypher, the ISO
+  GQL standard) and their performance tradeoffs; reasoning and inference at scale
+  (materialization versus query rewriting, OWL profile reasoners); knowledge-graph
+  embeddings and their role; and shape validation (SHACL, ShEx). Include triple-store
+  and graph-database technical documentation and benchmarks, reference-architecture
+  writeups, and W3C/ISO specifications. Favor sources with concrete query, schema,
+  or benchmark detail.'
+generated_at: '2026-06-17T19:14:06Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 5
+  web: 20
+queries:
+  arxiv:
+  - knowledge graph construction pipeline entity relation extraction survey
+  - RDF triple store scalability indexing distributed query benchmark
+  - OWL reasoning materialization query rewriting scalability comparison
+  youtube:
+  - knowledge graph construction keynote Knowledge Graph Conference KGC
+  - SPARQL reasoning at scale triple store talk ISWC
+  - property graph vs RDF architecture talk Connected Data London
+  - knowledge graph embeddings research talk VLDB
+  - SHACL ShEx validation conference talk semantic web
+  web:
+  - R2RML W3C specification relational database to RDF mapping
+  - RML mapping language documentation tutorial knowledge graph
+  - Apache Jena Fuseki triple store documentation deployment
+  - Ontotext GraphDB documentation reasoning OWL profiles
+  - SPARQL 1.1 W3C specification query language reference
+  - Neo4j Cypher query language documentation guide
+  - ISO GQL graph query language standard 2024 specification
+  - SHACL W3C shapes constraint language specification
+  - OWL reasoner comparison HermiT Pellet ELK performance
+  - BSBM Berlin SPARQL benchmark triple store results
+  - knowledge graph embeddings survey TransE RotatE comparison
+  - Wikidata knowledge graph architecture engineering blog post
+  - SPARQL federated query optimization performance techniques
+  - knowledge graph construction pipeline reference architecture guide
+  semantic_scholar: []
+edited: true
+status: executed
+executed_at: '2026-06-17T23:54:28Z'

@@ -1,0 +1,29 @@
+---
+schema_version: 1
+id: arxiv-2003.05238
+type: arxiv
+title: Compacting Frequent Star Patterns in RDF Graphs
+url: https://arxiv.org/abs/2003.05238
+authors:
+- Farah Karim
+- Maria-Esther Vidal
+- Sören Auer
+ingested_at: '2026-06-17T18:08:11Z'
+content_hash: sha256:f78b423b03922f35f8d696d7b472b2e3680d70b654c718c548ece3f5bf5780a0
+domains: []
+nlm_corpus_ids: []
+wiki_pages: []
+meta:
+  arxiv_id: '2003.05238'
+  categories:
+  - cs.DB
+  doi: 10.1007/s10844-020-00595-9
+  primary_category: cs.DB
+  journal_ref: ''
+  comment: ''
+  abstract_only: true
+published_at: '2020-03-11'
+filter:
+  score: 0.85
+---
+Knowledge graphs have become a popular formalism for representing entities and their properties using a graph data model, e.g., the Resource Description Framework (RDF). An RDF graph comprises entities of the same type connected to objects or other entities using labeled edges annotated with properties. RDF graphs usually contain entities that share the same objects in a certain group of properties, i.e., they match star patterns composed of these properties and objects. In case the number of these entities or properties in these star patterns is large, the size of the RDF graph and query processing are negatively impacted; we refer these star patterns as frequent star patterns. We address the problem of identifying frequent star patterns in RDF graphs and devise the concept of factorized RDF graphs, which denote compact representations of RDF graphs where the number of frequent star patterns is minimized. We also develop computational methods to identify frequent star patterns and generate a factorized RDF graph, where compact RDF molecules replace frequent star patterns. A compact RDF molecule of a frequent star pattern denotes an RDF subgraph that instantiates the corresponding star pattern. Instead of having all the entities matching the original frequent star pattern, a surrogate entity is added and related to the properties of the frequent star pattern; it is linked to the entities that originally match the frequent star pattern. We evaluate the performance of our factorization techniques on several RDF graph benchmarks and compare with a baseline built on top of gSpan, a state-of-the-art algorithm to detect frequent patterns. The outcomes evidence the efficiency of proposed approach and show that our techniques are able to reduce execution time of the baseline approach in at least three orders of magnitude reducing the RDF graph size by up to 66.56%.
