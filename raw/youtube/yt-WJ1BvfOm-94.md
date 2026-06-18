@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-WJ1BvfOm-94
 type: youtube
 title: Predictive Information Criteria in Hierarchical Bayesian Models for Clustered
@@ -8,8 +9,10 @@ authors:
 - Stan
 ingested_at: '2026-05-20T17:36:45Z'
 content_hash: sha256:5e57476b96af2a17020d1dbd025d4f9549b71267805b6fed8ed0dc4d9d61c155
-domains: []
-nlm_corpus_ids: []
+domains:
+- risksystems
+nlm_corpus_ids:
+- dee0eae4-b11f-4df2-a418-d10fffd42c7e
 wiki_pages:
 - wiki/concepts/predictive-information-criteria.md
 - wiki/concepts/deviance-information-criterion.md

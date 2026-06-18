@@ -9,8 +9,10 @@ authors:
 - Neuromatch
 ingested_at: '2026-06-01T19:24:36Z'
 content_hash: sha256:338fe6ffe8b86b24d7ebae5a5eb13d217691ae810591c9ba31304894210db6ff
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Neuromatch

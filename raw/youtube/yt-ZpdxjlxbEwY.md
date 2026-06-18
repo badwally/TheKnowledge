@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-ZpdxjlxbEwY
 type: youtube
 title: How to decide – Build or buy AI infrastructure
@@ -7,8 +8,10 @@ authors:
 - Nutrient
 ingested_at: '2026-05-23T18:54:51Z'
 content_hash: sha256:871818b8c9976cd99b9a7a9dc24b50823e70de0a87ce48d3f3b96af8c43bd312
-domains: []
-nlm_corpus_ids: []
+domains:
+- ai-native-business
+nlm_corpus_ids:
+- a66c272c-5af9-4f34-ab22-6ca53764ba7e
 wiki_pages: []
 meta:
   channel: Nutrient

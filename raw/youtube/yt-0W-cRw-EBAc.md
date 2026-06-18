@@ -8,8 +8,10 @@ authors:
 - Symposia at CSAIL
 ingested_at: '2026-06-01T19:24:32Z'
 content_hash: sha256:e136410535548620eee5729528f32efb6bec2c7ee736a29458665a1ca7466f1a
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Symposia at CSAIL

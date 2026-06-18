@@ -8,8 +8,10 @@ authors:
 - Fenrir LLC
 ingested_at: '2026-05-30T20:41:04Z'
 content_hash: sha256:52bf15198f5fd6b74917ca9ea7f62e19056f49ef956f5f45821ad10533f019c9
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Fenrir LLC

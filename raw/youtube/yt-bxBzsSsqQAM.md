@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-bxBzsSsqQAM
 type: youtube
 title: The 7 Most Powerful Moats For AI Startups
@@ -7,8 +8,10 @@ authors:
 - Y Combinator
 ingested_at: '2026-05-23T18:54:54Z'
 content_hash: sha256:d06e4ca535336790167d003653735161eddcd05da33c21e9e8090a8e57f9766e
-domains: []
-nlm_corpus_ids: []
+domains:
+- ai-native-business
+nlm_corpus_ids:
+- a66c272c-5af9-4f34-ab22-6ca53764ba7e
 wiki_pages: []
 meta:
   channel: Y Combinator

@@ -8,8 +8,10 @@ authors:
 - Neural Reckoning
 ingested_at: '2026-06-01T19:55:46Z'
 content_hash: sha256:5401431f16903520a5c878ca4de441c8de54691b2092973f3def7bb82145d8ef
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Neural Reckoning

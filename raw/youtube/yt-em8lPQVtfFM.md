@@ -9,8 +9,10 @@ authors:
 - Rutgers Center for Cognitive Science (RuCCS)
 ingested_at: '2026-06-01T19:24:38Z'
 content_hash: sha256:9d0d6fd1ef755dbd95a8f2ee46fcb4c29e7a1b1567a9f5e272709a9b771bb94a
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Rutgers Center for Cognitive Science (RuCCS)

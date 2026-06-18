@@ -8,8 +8,10 @@ authors:
 - Simons Institute for the Theory of Computing
 ingested_at: '2026-05-30T20:02:01Z'
 content_hash: sha256:b877eabcb1e3599882bb467d225dc5b3c3a149e5b99e3b2ab96a9a192eecceba
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Simons Institute for the Theory of Computing

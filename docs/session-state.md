@@ -1,6 +1,41 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (git cleanup RESOLVED — working tree clean on canonical main; snapshot preserved on `wip/condo-orita-restore`)
+Last updated: 2026-06-18 (WS-1 YouTube corpus-gap backfill shipped → PR #21)
+
+---
+
+## 🔄 WS-1 YOUTUBE CORPUS-GAP BACKFILL (2026-06-18) — PR #21, awaiting merge
+
+Plan: `docs/plans/2026-06-17-youtube-corpus-gap-remediation.md` (WS-1 = promote-bug backfill).
+Branch `ws1-convergent-ytbackfill` @ `6e9f4d08`, **PR #21** (https://github.com/badwally/TheKnowledge/pull/21).
+
+**Done — 31 YouTube talks backfilled into 3 domain corpora via `nlm-add` (URL-recovery path):**
+- `convergent-ai-brain` — **27** researcher/conference talks (DiCarlo, Olshausen, Schrimpf/Brain-Score,
+  Platonic Representation, Kriegeskorte, Tuckute, …). Persistent corpus 90 → 117. All had real
+  transcripts (median ~11k w; harvested 2026-06-01/02 pre-IP-block).
+- `risksystems` — 2 (Bayesian hierarchical; network-scale deterioration).
+- `ai-native-business` — 2 (AI-startup moats; build-vs-buy). **Skipped 2 off-domain eval talks**
+  (Hamel Husain, Braintrust/Goyal) — ML-eng, not ai-native operating models.
+- Re-synthesized convergent-ai-brain over +27 corpus → `wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md` (**draft**). New talks visibly enter the synthesis.
+- Gap probe: all 3 domains 0 still-OUT. ✓
+
+**Manifest correction (quality finding):** plan estimated ~14 convergent YT; **ground truth 27**. Plan
+attributed via source_maps (mostly absent on disk: `db1e4b75`/`0a9d3d94`/`3de60ed7` have no map file);
+backfill used content match instead. The on-disk orphan maps `311f9069`/`a0b35624` (31 YT) ARE the condo
+explainers the plan correctly flagged skip; `92cefb57` = Braintrust evals (discard). Plan's WS-3 orphan
+attribution to convergent was wrong; the convergent talks were content-resident, not source-map-resident.
+
+**OPEN DECISIONS (surfaced to user — do before WS-1 "finalize" can close):**
+1. **Finalize is gateway-fix-gated.** All 7 convergent synthesis pages on this question (6 from 2026-06-02
+   + the new one) are drafts. `wiki query`/`research` NLM output is not finalize-compatible — same
+   `citations.py` footnote-mapping wall as the 12 S3/S4 drafts (session-state SEMANTIC-MODELS block). One
+   scoped TDD fix unblocks ALL of them. Decision: run the fix now, or leave drafts.
+2. **risksystems / ai-native-business re-synthesis** — only +2 sources each; marginal NLM spend, NOT run.
+   Decision: run anyway, or skip.
+
+**NEXT (WS-2):** `ai-temporal-video` — bootstrap new domain (temporal video *understanding*, not
+generation; canonical description in plan §3 WS-2), tag + sync the 86, synthesize. Fresh-discovery
+expansion gated behind any live YouTube-adapter run; the backfill itself is clear.
 
 ---
 

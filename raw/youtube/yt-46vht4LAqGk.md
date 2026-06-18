@@ -8,8 +8,10 @@ authors:
 - Data Science Gems
 ingested_at: '2026-05-30T20:41:02Z'
 content_hash: sha256:6766d2044c871ba373236bab2e2a5f644c215462afbc5a236027f73124639b6e
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Data Science Gems

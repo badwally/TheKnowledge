@@ -9,8 +9,10 @@ authors:
 - Hirak Jyoti Kashyap
 ingested_at: '2026-05-30T20:02:08Z'
 content_hash: sha256:cc25f117cd183a2977b371604eefbd872dd647b900cdc29ecfeffee27fb703ba
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Hirak Jyoti Kashyap

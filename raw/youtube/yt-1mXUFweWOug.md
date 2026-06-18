@@ -9,8 +9,10 @@ authors:
 - Michael Levin's Academic Content
 ingested_at: '2026-05-30T21:59:43Z'
 content_hash: sha256:8a07878c93aa3c928cbf6f2515f3fcbc7aaa526597dc069bf4e078497e4df565
-domains: []
-nlm_corpus_ids: []
+domains:
+- convergent-ai-brain
+nlm_corpus_ids:
+- 0997b925-a7b2-47d2-8dcc-e11fcecf953e
 wiki_pages: []
 meta:
   channel: Michael Levin's Academic Content
