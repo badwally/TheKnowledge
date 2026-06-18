@@ -48934,3 +48934,19 @@ url=https://www.youtube.com/watch?v=bxBzsSsqQAM
 ## [2026-06-18T18:10:00Z] nlm-add | id=yt-ZpdxjlxbEwY | domain=ai-native-business | notebook_id=a66c272c-5af9-4f34-ab22-6ca53764ba7e | type=youtube
 
 url=https://www.youtube.com/watch?v=ZpdxjlxbEwY
+
+## [2026-06-18T19:52:03Z] finalize-abandon | page=wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md | backlinks_removed=0
+
+abandoned draft wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md
+
+## [2026-06-18T19:53:00Z] query | domain=convergent-ai-brain | unresolved_citations=13,14,15
+
+lint-warning: query response cited 3 NotebookLM source(s) with no `raw/` counterpart
+
+## [2026-06-18T19:53:01Z] wiki-author | id=query-2026-06-18-what-sets-the-ceiling-on-representational | updates=1 | created=1 | updated=0 | contradictions=0 | draft=yes
+
+query against convergent-ai-brain corpus
+
+## [2026-06-18T19:53:17Z] finalize | page=wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md
+
+finalized wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md
