@@ -1,7 +1,7 @@
 # Knowledge Index
 
-Last rebuilt: 2026-06-18T19:05:44Z
-Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 457
+Last rebuilt: 2026-06-18T18:11:05Z
+Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 456
 
 ## Domains
 
@@ -40,7 +40,7 @@ Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 457
 [[mocs/ai-temporal-video]] · 86 sources
 
 - Concepts: [[concepts/3d-cnns-with-spatio-temporal-filter-analysis-i3d-resnet]] · [[concepts/autotrack-spatio-temporal-regularization-for-uavs]] · [[concepts/boundary-refinement-and-post-processing]] · [[concepts/collaborative-static-and-dynamic-vision-language-streams]] · [[concepts/convolutional-and-recurrent-architectures]] · [[concepts/fairmot-joint-detection-and-re-id-via-centernet]] · [[concepts/few-shot-and-unsupervised-learning]] · [[concepts/fourier-phase-correlation-with-log-polar-transformation]] · [[concepts/g-tad-sub-graph-localization]] · [[concepts/gaussian-approximated-post-processing-gap]] · [[concepts/gcan-graph-based-class-level-attention-network]] · [[concepts/graph-based-localization]] · … (34 more)
-- Synthesis: [[synthesis/2026-06-18-what-are-the-dominant-method-families]] · [[synthesis/common-datasets]] · [[synthesis/long-form-video-understanding-reasoning-across]] · [[synthesis/recurring-trade-offs]] · [[synthesis/shared-architectures]] · [[synthesis/temporal-action-detection-in-video-methods]] · [[synthesis/video-language-understanding-and-grounding-cross]] · [[synthesis/video-object-tracking-and-trajectory-prediction]]
+- Synthesis: [[synthesis/common-datasets]] · [[synthesis/long-form-video-understanding-reasoning-across]] · [[synthesis/recurring-trade-offs]] · [[synthesis/shared-architectures]] · [[synthesis/temporal-action-detection-in-video-methods]] · [[synthesis/video-language-understanding-and-grounding-cross]] · [[synthesis/video-object-tracking-and-trajectory-prediction]]
 
 ### biologically-inspired-advanced-spatio-temporal-computing
 [[mocs/biologically-inspired-advanced-spatio-temporal-computing]] · 0 sources
@@ -205,5 +205,5 @@ Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 457
 
 ## Health
 
-- Orphans: 753 — see `wiki lint --scope orphans`
+- Orphans: 766 — see `wiki lint --scope orphans`
 - Untriaged inbox: 0 — see `raw/inbox/`

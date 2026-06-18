@@ -1,50 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (WS-2 ai-temporal-video stood up → PR pending)
-
----
-
-## 🔄 WS-2 ai-temporal-video (2026-06-18) — synced + synthesized, PR pending
-
-Plan: `docs/plans/2026-06-17-youtube-corpus-gap-remediation.md` §3 WS-2.
-Branch `ws2-ai-temporal-video` (cut from WS-1 HEAD `134935d0`; PR base = `ws1-convergent-ytbackfill`
-so the diff stacks clean — GitHub auto-retargets to main when PR #21 merges).
-
-**PLAN PREMISE WAS WRONG (quality finding):** the plan treated `ai-temporal-video` as "never
-bootstrapped — no policy, no notebook." Reality: it was created **2026-04-28 via legacy `migrate`**
-from the research-notebook Obsidian vault (`log.md:25`, sources=86). Already on disk + committed:
-`policy.yaml` (already carries `channel_authority`+`speaker_expertise` signals — the exact thing the
-plan wanted bootstrap to add), 83 calibration examples, 46 concept stubs, 7 synthesis drafts. All 86
-raw/youtube already `domains:`-tagged. So bootstrap + tag steps were already done. **Decision (user,
-AskUserQuestion): keep the existing policy, skip `bootstrap-domain`** — re-bootstrap would need `--force`,
-re-LLM the policy, and orphan the 83 calibrated examples; policy prose only drives the (gated) discovery
-filter, not sync/synthesis.
-
-**Actual gap was narrower — DONE:**
-- **No NotebookLM notebook** → 0/86 in corpus. Fixed: `nlm-sync ai-temporal-video` auto-created notebook
-  `2560f247-933f-4fb3-b477-b680b2d1cda6`, synced **86/86** (66 added + 20 first batch, 0 failed) via
-  `source_add_url` (NLM fetches transcripts Google-side — no YouTube-adapter key, no contention). NLM-side
-  `source_count` reads 93 vs our 86 (NLM counts some sources differently; all 86 targets confirmed added).
-- **Synthesis filed (draft):** `wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md` —
-  corpus-grounded over the full corpus, **27 distinct sources cited** (no distinct_sources collapse, no
-  confabulation; every named method matches a real corpus title). Cross-cutting question (TAD / grounding /
-  tracking / video-LLM + shared temporal mechanisms) — complements, not duplicates, the 7 migration drafts.
-  Left as **draft** (NLM-synthesis not finalize-compatible — same citations.py footnote gap as WS-1).
-- **MOC authored:** `wiki/mocs/ai-temporal-video.md` (was MISSING — `index.md` linked a non-existent file;
-  broken link from the April migration, now fixed). Canonical sections; index rebuilt; 0 wikilink errors.
-
-**Quality screen note:** `nlm-sync` selects purely by `domains` tag — no per-source exclude flag, and there
-is **no gateway op to untag a source** (`filter-correct --exclude` only sets `filter.user_correction`).
-Excluding the one Matlab service ad (`yt-UdCNiBttqR4`, 2m37s) would require a direct write to immutable
-`raw/` (hard rule #1/#6) or an NLM-side delete (hard rule #2) — both barred. Synced as negligible noise
-(1 of 86; won't surface in a temporal-understanding synthesis). The screen's real teeth are on the discovery
-filter, which is gated out of WS-2.
-
-**Deferred (NOT started — need explicit go):** (a) citations.py footnote-mapping fix to unblock finalize for
-ALL NLM-synthesis drafts (incl. these + WS-1's + the 12 S3/S4); (b) fresh-discovery expansion beyond the 86
-(`wiki research --execute`) — gated behind any live YouTube-adapter session (shared key); (c) the 46 concept
-stubs have empty `title` frontmatter (migration artifact) — separate cleanup; (d) re-synthesis of
-risksystems/ai-native-business (WS-1 marginal-skip, unchanged).
+Last updated: 2026-06-18 (WS-1 YouTube corpus-gap backfill shipped → PR #21)
 
 ---
 
@@ -77,9 +33,9 @@ attribution to convergent was wrong; the convergent talks were content-resident,
 2. **risksystems / ai-native-business re-synthesis** — only +2 sources each; marginal NLM spend, NOT run.
    Decision: run anyway, or skip.
 
-**NEXT (WS-2): DONE 2026-06-18** — see the WS-2 block at the top. Domain was already bootstrapped
-(legacy migrate); kept the policy, synced 86/86 to a new NLM notebook, filed a corpus-grounded synthesis
-draft, authored the missing MOC. Branch `ws2-ai-temporal-video`, PR pending.
+**NEXT (WS-2):** `ai-temporal-video` — bootstrap new domain (temporal video *understanding*, not
+generation; canonical description in plan §3 WS-2), tag + sync the 86, synthesize. Fresh-discovery
+expansion gated behind any live YouTube-adapter run; the backfill itself is clear.
 
 ---
 
