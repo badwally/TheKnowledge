@@ -1,41 +1,49 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (WS-1 YouTube corpus-gap backfill shipped → PR #21)
+Last updated: 2026-06-18 (WS-1 + WS-2 + grouped-citation fix ALL MERGED to main)
 
 ---
 
-## 🔄 WS-1 YOUTUBE CORPUS-GAP BACKFILL (2026-06-18) — PR #21, awaiting merge
+## ✅ YOUTUBE CORPUS-GAP REMEDIATION + GROUPED-CITATION FIX (2026-06-18) — ALL MERGED
 
-Plan: `docs/plans/2026-06-17-youtube-corpus-gap-remediation.md` (WS-1 = promote-bug backfill).
-Branch `ws1-convergent-ytbackfill` @ `6e9f4d08`, **PR #21** (https://github.com/badwally/TheKnowledge/pull/21).
+Three PRs shipped to `origin/main` this session (squash-merged, branches deleted):
+- **#23 `256bcf3b`** — grouped-citation renderer fix (`query.py`).
+- **#21 `87fb0099`** — WS-1 YouTube backfill (31 talks → 3 domains).
+- **#22 `56c75bb8`** — WS-2 stand up `ai-temporal-video` (86 sources synced + synthesis + MOC).
 
-**Done — 31 YouTube talks backfilled into 3 domain corpora via `nlm-add` (URL-recovery path):**
-- `convergent-ai-brain` — **27** researcher/conference talks (DiCarlo, Olshausen, Schrimpf/Brain-Score,
-  Platonic Representation, Kriegeskorte, Tuckute, …). Persistent corpus 90 → 117. All had real
-  transcripts (median ~11k w; harvested 2026-06-01/02 pre-IP-block).
-- `risksystems` — 2 (Bayesian hierarchical; network-scale deterioration).
-- `ai-native-business` — 2 (AI-startup moats; build-vs-buy). **Skipped 2 off-domain eval talks**
-  (Hamel Husain, Braintrust/Goyal) — ML-eng, not ai-native operating models.
-- Re-synthesized convergent-ai-brain over +27 corpus → `wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md` (**draft**). New talks visibly enter the synthesis.
-- Gap probe: all 3 domains 0 still-OUT. ✓
+Plan: `docs/plans/2026-06-17-youtube-corpus-gap-remediation.md`.
 
-**Manifest correction (quality finding):** plan estimated ~14 convergent YT; **ground truth 27**. Plan
-attributed via source_maps (mostly absent on disk: `db1e4b75`/`0a9d3d94`/`3de60ed7` have no map file);
-backfill used content match instead. The on-disk orphan maps `311f9069`/`a0b35624` (31 YT) ARE the condo
-explainers the plan correctly flagged skip; `92cefb57` = Braintrust evals (discard). Plan's WS-3 orphan
-attribution to convergent was wrong; the convergent talks were content-resident, not source-map-resident.
+**WS-1 (#21):** 31 YouTube talks backfilled via `nlm-add` URL-recovery: `convergent-ai-brain` +27
+(corpus 90→117), `risksystems` +2, `ai-native-business` +2. Convergent synthesis
+`wiki/synthesis/2026-06-18-what-sets-the-ceiling-on-representational.md` regenerated with the grouped-citation
+fix then **finalized** (0 uncited, 15 sources). Manifest quality finding: plan estimated ~14 convergent YT;
+ground truth 27 (plan's source_map attribution was stale — used content match instead).
 
-**OPEN DECISIONS (surfaced to user — do before WS-1 "finalize" can close):**
-1. **Finalize is gateway-fix-gated.** All 7 convergent synthesis pages on this question (6 from 2026-06-02
-   + the new one) are drafts. `wiki query`/`research` NLM output is not finalize-compatible — same
-   `citations.py` footnote-mapping wall as the 12 S3/S4 drafts (session-state SEMANTIC-MODELS block). One
-   scoped TDD fix unblocks ALL of them. Decision: run the fix now, or leave drafts.
-2. **risksystems / ai-native-business re-synthesis** — only +2 sources each; marginal NLM spend, NOT run.
-   Decision: run anyway, or skip.
+**WS-2 (#22):** `ai-temporal-video` was already bootstrapped (2026-04-28 legacy migrate — policy + 83
+examples + 46 concepts + tagged sources all present), NOT "never bootstrapped" as the plan assumed. Kept the
+calibrated policy (user call); the real gap was a missing NLM notebook. `nlm-sync` auto-created notebook
+`2560f247-…`, synced **86/86** (0 failed). Synthesis
+`wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md` regenerated + **finalized** (0 uncited,
+24 sources). Authored the missing MOC `wiki/mocs/ai-temporal-video.md` (fixed a broken index.md link).
+Memory written: [[feedback_verify_domain_artifacts_before_rebootstrap]].
 
-**NEXT (WS-2):** `ai-temporal-video` — bootstrap new domain (temporal video *understanding*, not
-generation; canonical description in plan §3 WS-2), tag + sync the 86, synthesize. Fresh-discovery
-expansion gated behind any live YouTube-adapter run; the backfill itself is clear.
+**Grouped-citation fix (#23):** root cause of the "NLM drafts won't finalize" wall was NOT citations.py — it
+was `query.py` `_inline_citations` matching only single `[N]` markers, leaving NLM's grouped citations
+(`[4-6]`, `[7, 8]`) bare. Fixed the renderer to expand grouped markers → `[[sources/...]]` (6 TDD tests, no
+validator change, hard rule #3 stays strict). The two existing query drafts were regenerated with the fix
+active and finalized; residual NLM section-intro definitional lines were cited to in-section sources (per-page,
+no policy change — user call).
+
+**Distinct formats finding (carry-forward):** `wiki query` pages use `[N]` + `## Sources cited` (no `[^N]:`
+map); `wiki research` pages (the 12 S3/S4 drafts) use `[N]` + `[^N]:` defs. The grouped-citation fix unblocks
+**query** pages. The S3/S4 **research** drafts remain blocked on a SEPARATE citations.py concern (structural
+`**Label:**` matching + aggregate-opener ungating) — see SEMANTIC-MODELS block below; NOT addressed this
+session (user scoped to renderer + regen).
+
+**Deferred (need explicit go):** (a) S3/S4 research-draft finalize (the citations.py changes above);
+(b) fresh-discovery expansion of ai-temporal-video beyond the 86 (gated behind any live YouTube-adapter
+session); (c) 46 ai-temporal-video concept stubs have empty `title` frontmatter (migration artifact);
+(d) risksystems/ai-native-business re-synthesis (+2 each, marginal — skipped).
 
 ---
 
