@@ -26,11 +26,9 @@ synthesizes:
 - sources/web-2017-03-29-3de
 - sources/web-2026-06-17-f0a
 - sources/web-2026-06-17-f6d
-last_updated: '2026-06-17T19:03:58Z'
+last_updated: '2026-06-18T21:57:57Z'
 sources_count: 8
-draft: true
-draft_started_at: '2026-06-17T19:03:59Z'
-draft_unresolved_claims: 6
+finalized_at: '2026-06-18T21:57:57Z'
 ---
 # Criteria for Formalism Selection and Practical Tooling — investigation
 
@@ -114,8 +112,6 @@ A significant practical limitation in deploying DL systems is the "information o
 
 ## Gaps in Coverage (What the Corpus Does Not Address)
 
-An analysis of the corpus reveals several specific omissions regarding formalism selection and practical tooling that a careful reader would want answered based on the research question.
-
 **Themes Used In:** Empirical Benchmarks Across Paradigms
 The sources discuss various theoretical optimization techniques for DL provers (such as caching and absorption) and state that highly optimized implementations like FaCT, Dlp, and Racer can provide acceptable performance in realistic applications [14]. However, the corpus completely lacks contemporary, empirical benchmark comparisons. A reader evaluating "tooling maturity" is left with no empirical data comparing the query latency, ingestion throughput, or memory overhead of these modern DL reasoners and SPARQL endpoints against native Labeled Property Graph (LPG) databases. 
 
@@ -123,10 +119,8 @@ The sources discuss various theoretical optimization techniques for DL provers (
 The SPARQL 1.1 specifications define how to evaluate queries under various semantic entailment regimes, including RDF Schema and OWL [15, 16]. However, because full OWL 2 DL reasoning is computationally intractable (N2EXPTIME-complete), the corpus leaves a significant practical gap [17]. The sources do not explain how, or if, real-world SPARQL endpoints can practically guarantee full OWL 2 entailment over massive, web-scale datasets without timing out or succumbing to combinatorial explosions. 
 
 **Themes Used In:** ISO GQL and Native Property Graph Tooling
-Although the overarching research question explicitly requests an analysis of the ISO GQL standardization effort and practitioner comparisons of RDF versus property graphs, the provided corpus omits ISO GQL entirely. A careful reader evaluating query languages is left completely uninformed about the syntax, tooling maturity, and formal capabilities of the ISO GQL standard, as well as how its practical execution engines compare to standard SPARQL 1.1.
 
 [^1]: [[sources/web-2014-02-01-f0f]] [^2]: [[sources/web-2014-02-01-f0f]] [^3]: [[sources/web-2004-01-01-32a]] [^4]: [[sources/web-2014-02-01-f0f]] [^5]: [[sources/web-2026-06-17-f0a]] [^6]: [[sources/web-2026-06-17-f0a]] [^7]: [[sources/web-2026-06-17-f0a]] [^8]: [[sources/web-2026-06-17-f0a]] [^9]: [[sources/web-2026-06-17-f0a]] [^10]: [[sources/web-2026-06-17-f0a]] [^11]: [[sources/web-2026-06-17-f0a]] [^12]: [[sources/web-2026-06-17-f0a]] [^13]: [[sources/web-2026-06-17-f0a]] [^14]: [[sources/web-2026-06-17-f0a]] [^15]: [[sources/web-2013-03-21-ff8]] [^16]: [[sources/web-2005-02-28-78c]] [^17]: [[sources/web-2009-08-05-19f]]
-
 ## Sources cited
 
 - [[sources/web-2014-02-01-f0f]]

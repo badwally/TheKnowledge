@@ -20,11 +20,9 @@ created_at: '2026-06-17T19:03:56Z'
 synthesizes:
 - sources/web-2014-02-01-f0f
 - sources/web-2026-06-17-f0a
-last_updated: '2026-06-17T19:03:58Z'
+last_updated: '2026-06-18T21:57:56Z'
 sources_count: 2
-draft: true
-draft_started_at: '2026-06-17T19:03:58Z'
-draft_unresolved_claims: 4
+finalized_at: '2026-06-18T21:57:56Z'
 ---
 # Conceptual and Logical-Modeling Lineage — investigation
 
@@ -101,8 +99,6 @@ Although Conceptual Graphs (CGs) and DLs share a common conceptual lineage deriv
 
 ## Gaps in Coverage (What the Corpus Does Not Address)
 
-An analysis of the corpus reveals several specific omissions regarding the conceptual and logical-modeling lineage that a careful reader would want answered.
-
 **Themes Used In:** Dynamic and Behavioral Modeling in Object-Oriented Systems
 The sources extensively detail how to translate the static, structural components of object-oriented data models and UML schemas into DL knowledge bases [13]. However, they explicitly omit the translation of behavioral and dynamic aspects—such as state transitions, object evolution, methods, daemons, and triggers—which are essential elements of modern software engineering models [14]. A careful reader would be left wondering how, or if, the behavioral semantics of UML and object-oriented databases can ever be reconciled with the purely declarative, static nature of Description Logics [15].
 
@@ -110,7 +106,6 @@ The sources extensively detail how to translate the static, structural component
 The texts discuss UML class diagrams and object-oriented software engineering primarily in the context of historical, late-1990s literature [16]. The corpus lacks any coverage of how contemporary conceptual modeling lineage has evolved with more modern iterations of UML, or how modern software engineering practices integrate with recent W3C standards like the OWL 2 profiles. A reader seeking to understand the current integration strategies between today's software engineering conceptual models and the modern Semantic Web would find this historical gap unresolved [17].
 
 [^1]: [[sources/web-2014-02-01-f0f]] [^2]: [[sources/web-2014-02-01-f0f]] [^3]: [[sources/web-2014-02-01-f0f]] [^4]: [[sources/web-2014-02-01-f0f]] [^5]: [[sources/web-2014-02-01-f0f]] [^6]: [[sources/web-2014-02-01-f0f]] [^7]: [[sources/web-2014-02-01-f0f]] [^8]: [[sources/web-2014-02-01-f0f]] [^9]: [[sources/web-2014-02-01-f0f]] [^10]: [[sources/web-2014-02-01-f0f]] [^11]: [[sources/web-2014-02-01-f0f]] [^12]: [[sources/web-2014-02-01-f0f]] [^13]: [[sources/web-2014-02-01-f0f]] [^14]: [[sources/web-2014-02-01-f0f]] [^15]: [[sources/web-2014-02-01-f0f]] [^16]: [[sources/web-2014-02-01-f0f]] [^17]: [[sources/web-2014-02-01-f0f]]
-
 ## Sources cited
 
 - [[sources/web-2014-02-01-f0f]]

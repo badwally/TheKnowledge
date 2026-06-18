@@ -21,11 +21,9 @@ synthesizes:
 - sources/web-2014-02-01-f0f
 - sources/web-2026-06-17-f0a
 - sources/web-2026-06-17-f6d
-last_updated: '2026-06-17T19:03:57Z'
+last_updated: '2026-06-18T21:57:57Z'
 sources_count: 3
-draft: true
-draft_started_at: '2026-06-17T19:03:57Z'
-draft_unresolved_claims: 4
+finalized_at: '2026-06-18T21:57:57Z'
 ---
 # Description Logics (DLs) as Formal Underpinnings — investigation
 
@@ -121,8 +119,6 @@ Standard DLs lack the modeling tools to distinguish between rigid, unchanging cl
 
 ## Gaps in Coverage (What the Corpus Does Not Address)
 
-An analysis of the corpus reveals several specific omissions regarding the formal underpinnings of DLs that a careful reader would want answered.
-
 **Themes Used In:** Decidability of Highly Expressive Extensions
 The sources explicitly identify a gap in the theoretical understanding of nominals (the "one-of" construct representing specific individuals) when combined with highly expressive DLs. Specifically, the decidability of reasoning in the logic $\mathcal{ALCQIO}_{reg}$ (which combines qualified number restrictions, inverse roles, regular expressions over roles, and nominals) remains an open problem [18].
 
@@ -133,7 +129,6 @@ Building on the theoretical gap regarding nominals, the corpus highlights a prac
 While query answering and query rewriting are well-theorized for simple DLs (like the DL-Lite family and $\mathcal{EL}$), the corpus points out a significant gap in coverage regarding expressive DLs. For state-of-the-art logics like $\mathcal{SHIQ}$ (which includes inverse roles, transitive roles, and qualified number restrictions), it is noted that much less is known about how to actually support conjunctive query evaluation [20].
 
 [^1]: [[sources/web-2014-02-01-f0f]] [^2]: [[sources/web-2014-02-01-f0f]] [^3]: [[sources/web-2014-02-01-f0f]] [^4]: [[sources/web-2014-02-01-f0f]] [^5]: [[sources/web-2014-02-01-f0f]] [^6]: [[sources/web-2014-02-01-f0f]] [^7]: [[sources/web-2014-02-01-f0f]] [^8]: [[sources/web-2014-02-01-f0f]] [^9]: [[sources/web-2014-02-01-f0f]] [^10]: [[sources/web-2014-02-01-f0f]] [^11]: [[sources/web-2014-02-01-f0f]] [^12]: [[sources/web-2014-02-01-f0f]] [^13]: [[sources/web-2014-02-01-f0f]] [^14]: [[sources/web-2014-02-01-f0f]] [^15]: [[sources/web-2014-02-01-f0f]] [^16]: [[sources/web-2014-02-01-f0f]] [^17]: [[sources/web-2014-02-01-f0f]] [^18]: [[sources/web-2014-02-01-f0f]] [^19]: [[sources/web-2014-02-01-f0f]] [^20]: [[sources/web-2014-02-01-f0f]]
-
 ## Sources cited
 
 - [[sources/web-2014-02-01-f0f]]

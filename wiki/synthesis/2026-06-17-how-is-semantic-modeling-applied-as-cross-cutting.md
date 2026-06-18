@@ -21,11 +21,9 @@ synthesizes:
 - synthesis/2026-06-17-how-is-semantic-modeling-applied-as-ontology-based-data-access-obda
 - synthesis/2026-06-17-how-is-semantic-modeling-applied-as-semantic-integration-and-mapping-
 - synthesis/2026-06-17-how-is-semantic-modeling-applied-as-the-semantic-layer-and-metrics-la
-last_updated: '2026-06-18T00:31:36Z'
+last_updated: '2026-06-18T21:55:59Z'
 sources_count: 2
-draft: true
-draft_started_at: '2026-06-18T00:31:36Z'
-draft_unresolved_claims: 3
+finalized_at: '2026-06-18T21:55:59Z'
 ---
 # Cross-cutting themes — 2026-06-17-how-is-semantic-modeling-applied-as
 

@@ -26,11 +26,9 @@ synthesizes:
 - sources/web-2023-03-03-29c
 - sources/web-2024-06-20-8bb
 - sources/web-2025-05-13-020
-last_updated: '2026-06-17T23:50:52Z'
+last_updated: '2026-06-18T21:56:00Z'
 sources_count: 8
-draft: true
-draft_started_at: '2026-06-17T23:50:53Z'
-draft_unresolved_claims: 4
+finalized_at: '2026-06-18T21:56:00Z'
 ---
 # Knowledge Graph Construction Pipelines — investigation
 
