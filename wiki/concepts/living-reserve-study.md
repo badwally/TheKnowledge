@@ -7,30 +7,31 @@ domains:
 - condo-software
 - condo-capital-infra
 created_at: '2026-05-24T01:16:07Z'
-last_updated: '2026-05-24T01:16:07Z'
+last_updated: '2026-06-10T03:39:46Z'
 ---
 
 # Living Reserve Study
 
 ## Summary
 
-Living Reserve Study is SmartProperty's branded product designation for a dynamic, always-current reserve study, positioned explicitly as a replacement for the traditional static reserve study deliverable [[sources/web-2025-01-01-14d]]. The methodology bundles real-time reserve fund tracking, capital planning, component inventory, and project management into a single continuously-updated platform rather than producing a point-in-time engineering report [[sources/web-2025-01-01-14d]]. SmartProperty claims that over a half-million homes use the Living Reserve Study as of the captured homepage state [[sources/web-2025-01-01-14d]].
+The Living Reserve Study (registered as "The Living Reserve Study®") is SmartProperty's branded product designation for a dynamic, always-current reserve study that evolves with property data rather than being delivered as a static point-in-time deliverable [[sources/web-2026-04-02-20c]]. As of April 2025, SmartProperty extended the Living Reserve Study® beyond its core condominium/HOA market into the Large Scale Clubs segment via the Strategic Club Solutions Navigator platform [[sources/web-2025-04-07-817]].
 
 ## Key claims
 
-- Living Reserve Study is the named product and methodology designation used by SmartProperty for its reserve study offering [[sources/web-2025-01-01-14d]].
-- The methodology is positioned explicitly as a replacement for "outdated static reserve studies," framing the static-deliverable model as obsolete [[sources/web-2025-01-01-14d]].
-- Four platform capabilities are bundled under the Living Reserve Study designation: real-time reserve fund tracking, capital planning, component inventory, and project management [[sources/web-2025-01-01-14d]].
-- Marketed scale claim: over a half-million homes use the Living Reserve Study [[sources/web-2025-01-01-14d]].
-- The SmartProperty homepage frames the four scale categories of the product as Living Reserve Studies, Repair and Replace Assets Tracked, Reserves Funding Capital Needs, and Anticipated Capital Expenditures — positioning the methodology as continuously tracking capital needs and anticipated expenditures rather than producing a periodic engineering report [[sources/web-2025-01-01-14d]].
-- The Living Reserve Study brand promise — "Reimagine what a reserve study can do" / "Stay informed. Stay prepared. And never get caught off-guard" — frames the methodology's value as continuous board awareness rather than periodic study deliverable [[sources/web-2025-01-01-14d]].
+- The Living Reserve Study® is positioned as a continuously updated reserve study product rather than a static point-in-time deliverable, contrasting with the deterministic reserve study output exposed through SmartProperty's CAM platform integrations [[sources/web-2026-04-02-20c]].
+- The Living Reserve Study® is the SmartProperty product embedded inside the SCS Navigator platform under the April 7, 2025 partnership, marketed there as "a dynamic financial planning tool that evolves with your club's needs" [[sources/web-2025-04-07-817]].
+- SmartProperty's product framing in the Navigator partnership combines reserve study insights with strategic planning expertise to deliver club-side financial planning and asset management [[sources/web-2025-04-07-817]].
+- The Living Reserve Study® is marketed by SmartProperty as scalable beyond the condominium/HOA market to club and community asset bases that share the same reserve-study compliance obligation structure [[sources/web-2025-04-07-817]].
 
 ## Sources
 
-- [[sources/web-2025-01-01-14d]] — SmartProperty, Reserve Study Software for HOAs & Condo Associations homepage (smartproperty.com), captured 2025-01-01
+- [[sources/web-2026-04-02-20c]] — Vantaca SmartProperty integration baseline
+- [[sources/web-2025-04-07-817]] — SmartProperty & Strategic Club Solutions Announce Strategic Partnership (April 7, 2025)
 
 ## Related
 
 - [[entities/smartproperty]]
-- [[concepts/tech-enabled-reserve-study-firm]]
-- [[concepts/probabilistic-reserve-modeling]]
+- [[entities/strategic-club-solutions]]
+- [[concepts/navigator-platform]]
+- [[entities/damian-esparza]]
+- [[entities/smartproperty-atlas]]

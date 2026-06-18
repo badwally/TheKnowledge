@@ -1,0 +1,83 @@
+version: 1
+session_id: 2026-06-02-do-predictive-or-generative-training-objectives
+domain: convergent-ai-brain
+prompt: Do predictive or generative training objectives produce representations that
+  align with biological neural data better than discriminative objectives at matched
+  task performance? Compare self-supervised versus supervised models, next-token and
+  masked prediction versus classification, contrastive learning, and what the evidence
+  says about the training objective versus architecture or scale as the primary driver
+  of brain-ANN representational alignment.
+generated_at: '2026-06-02T01:05:25Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - self-supervised learning brain alignment neural predictivity
+  - predictive coding versus discriminative objectives representational similarity
+  - next-token prediction visual cortex encoding models
+  - masked autoencoder brain score ventral stream
+  - contrastive learning versus generative models neural alignment
+  - training objective architecture scale brain-ANN alignment
+  - DINO CLIP brain predictivity comparison fMRI
+  - generative pretraining representational geometry biological neural data
+  youtube:
+  - self-supervised models brain alignment neuroscience
+  - predictive coding neural networks biological plausibility
+  - brain score benchmark deep learning visual cortex
+  - Platonic representation hypothesis convergence
+  - CLIP DINO neural predictivity comparison talk
+  - masked image modeling brain alignment NeurIPS
+  - contrastive learning versus generative pretraining representations
+  - encoding models fMRI deep neural networks
+  - next token prediction language brain alignment ECoG
+  - vision transformer brain score IT cortex
+  - generative versus discriminative neural representations CCN
+  - representational similarity analysis RSA neural networks
+  - free energy principle predictive coding deep learning
+  - Yamins DiCarlo ventral stream deep learning
+  - language model brain alignment fMRI ECoG talk
+  - self-supervised audio models auditory cortex alignment
+  - SimCLR MAE brain predictivity comparison workshop
+  - training objective versus architecture neural alignment ICLR
+  - Huth semantic encoding model cortex
+  - efficient coding sparse coding artificial neural networks
+  web:
+  - self-supervised vs supervised model brain alignment benchmark
+  - brain-score training objective comparison generative discriminative
+  - Platonic Representation Hypothesis evidence neural data
+  - MAE DINO CLIP neural predictivity fMRI comparison
+  - predictive coding free energy principle ANN alignment research
+  - next-token prediction language cortex alignment study
+  - contrastive learning brain alignment representational geometry
+  - encoding model variance explained noise ceiling neural networks
+  - training objective versus scale brain ANN alignment driver
+  - masked prediction versus classification visual cortex benchmark
+  - representational similarity analysis deep learning neural recordings
+  - self-supervised vision models ventral stream predictivity
+  - GPT brain alignment language cortex ECoG fMRI
+  - sparse coding efficient coding biological artificial comparison
+  - cross-architecture convergence neural representations visual system
+  pubmed:
+  - artificial neural network fMRI representational similarity visual cortex
+  - deep learning encoding model ventral visual stream predictivity
+  - self-supervised learning brain alignment electrophysiology
+  - predictive coding Bayesian brain neural network comparison
+  - language model ECoG fMRI cortical alignment variance explained
+  semantic_scholar:
+  - self-supervised versus supervised brain alignment neural predictivity
+  - training objective generative discriminative representational alignment brain
+  - brain-score benchmark training objective architecture scale
+  - masked autoencoder visual cortex encoding model fMRI
+  - contrastive learning biological neural data representational geometry
+  - next-token prediction language cortex alignment ECoG MEG
+  - Platonic Representation Hypothesis statistical regularities convergence
+  - DINO CLIP brain alignment ventral stream comparison
+  - predictive coding free energy principle ANN neural data
+  - noise ceiling variance explained neural predictivity training objective
+edited: false
+status: planned

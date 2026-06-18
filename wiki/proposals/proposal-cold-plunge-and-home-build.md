@@ -4,7 +4,25 @@ slug: proposal-cold-plunge-and-home-build
 title: Cold Plunge Build and Home DIY
 proposed_domain: cold-plunge-and-home-build
 status: draft
-member_sources: [pdf-0f67256d2a46, pdf-4585c877938f, pdf-5458c384bd4e, pdf-7cc82e1da425, pdf-8ced6e4710cc, pdf-94d14a737c1c, pdf-a29e93f8e3d0, pdf-ae6946f2d209, pdf-b98c88d710d6, pdf-bd335db7e921, pdf-d75f7b825487, pdf-da63389cb4c7, pdf-dee0cc8161e1, pdf-e5f64ceb7435, pdf-marketing-penguin-2026-controller-setup-2, pdf-2a01d855e4a8, pdf-weyerhaeuser-2025-specifier-s-guide, pdf-chinthaka-wijebahu-2025-welcome-to-your]
+member_sources:
+  - pdf-0f67256d2a46
+  - pdf-4585c877938f
+  - pdf-5458c384bd4e
+  - pdf-7cc82e1da425
+  - pdf-8ced6e4710cc
+  - pdf-94d14a737c1c
+  - pdf-a29e93f8e3d0
+  - pdf-ae6946f2d209
+  - pdf-b98c88d710d6
+  - pdf-bd335db7e921
+  - pdf-d75f7b825487
+  - pdf-da63389cb4c7
+  - pdf-dee0cc8161e1
+  - pdf-e5f64ceb7435
+  - pdf-marketing-penguin-2026-controller-setup-2
+  - pdf-2a01d855e4a8
+  - pdf-weyerhaeuser-2025-specifier-s-guide
+  - pdf-chinthaka-wijebahu-2025-welcome-to-your
 rationale: A coherent build journal — DIY cold plunge framing/components/protocols, multiple DE-series chiller manuals, pump/chiller plumbing, Penguin Chillers controller setup, plus adjacent DIY build references (laser-cut wok table, Parallam structural lumber, 3D-printing roadmap).
 ---
 

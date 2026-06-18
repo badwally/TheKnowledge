@@ -1,0 +1,64 @@
+version: 1
+session_id: 2026-06-15-survey-the-competitive-marketplace-for-orita
+domain: orita-cmo
+prompt: 'Survey the competitive marketplace for Orita — an AI audience-intelligence
+  and purchase-intent scoring layer for ecommerce brands that executes suppressions,
+  reactivations, bot detection, and audience expansion across email (Klaviyo ecosystem),
+  SMS, direct mail, and remarketing/ad-audience optimization. Enumerate competing
+  products and platforms across: (1) email deliverability, list-hygiene and send-suppression;
+  (2) SMS marketing; (3) programmatic/retargeting direct mail; (4) remarketing and
+  ad-audience optimization; (5) advanced agentic AI customer segmentation and predictive
+  audience intelligence (including Clay, Relevance AI, HubSpot Breeze, and CDP/predictive
+  players). For each, identify the vendor, product, which of these channels it covers,
+  and whether it performs agentic or AI-driven segmentation.'
+generated_at: '2026-06-15T21:31:28Z'
+plan_client_model: null
+target_counts:
+  arxiv: 0
+  youtube: 20
+  web: 15
+  pubmed: 0
+  semantic_scholar: 0
+queries:
+  arxiv: []
+  youtube:
+  - Klaviyo list hygiene suppression best practices 2024
+  - Attentive SMS marketing ecommerce strategy
+  - Postscript SMS Klaviyo ecommerce comparison
+  - Simon Data CDP predictive segmentation tutorial
+  - Bloomreach CDP audience intelligence ecommerce
+  - Clay AI prospecting segmentation workflow tutorial
+  - Relevance AI agentic customer segmentation demo
+  - HubSpot Breeze AI marketing automation review
+  - email deliverability tools comparison ecommerce 2025
+  - programmatic direct mail retargeting ecommerce brands
+  - AI audience intelligence purchase intent ecommerce
+  - ad audience optimization remarketing ecommerce strategy
+  - Klaviyo audience expansion suppression automation
+  - predictive segmentation ecommerce email marketing AI
+  - CDP vs ESPs ecommerce MarTech stack comparison
+  - email bot detection click fraud ecommerce marketing
+  - customer winback reactivation automation Klaviyo
+  - AI-native ecommerce marketing stack 2025
+  - audience intelligence platform ecommerce demo
+  - MarTech competitive landscape CDP AI segmentation 2025
+  web:
+  - email list hygiene suppression tools Klaviyo ecosystem comparison 2025
+  - AI purchase intent scoring ecommerce email marketing platforms review
+  - Klaviyo Attentive Postscript SMS marketing competitive landscape 2025
+  - Simon Data Bloomreach Segment CDP predictive segmentation comparison
+  - Clay Relevance AI HubSpot Breeze agentic segmentation ecommerce review
+  - programmatic direct mail retargeting vendors ecommerce comparison Lob Marigold
+  - remarketing ad audience optimization AI tools ecommerce Facebook Google
+  - email deliverability send suppression bot detection vendors ecommerce
+  - predictive audience intelligence platform ecommerce MarTech competitive analysis
+  - customer reactivation winback suppression automation Klaviyo ecommerce brands
+  - audience expansion lookalike modeling ecommerce advertising platforms
+  - CDP AI segmentation ecommerce email SMS direct mail channel review
+  - agentic AI customer segmentation MarTech competitive landscape 2025
+  - Orita AI competitor alternatives ecommerce audience intelligence
+  - ecommerce MarTech stack email SMS ad audiences AI suppression tools
+  pubmed: []
+  semantic_scholar: []
+edited: true
+status: planned

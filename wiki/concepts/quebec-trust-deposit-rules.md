@@ -6,30 +6,29 @@ canonical_name: Quebec Trustee-Deposit Rules for New Project Deposits
 domains:
 - condo-software
 created_at: '2026-05-23T21:08:29Z'
-last_updated: '2026-05-23T21:08:29Z'
+last_updated: '2026-06-10T04:33:36Z'
 ---
 
 # Quebec Trustee-Deposit Rules for New Project Deposits
 
 ## Summary
 
-The Quebec trustee-deposit rules are the buyer-protection provisions in the Bill 16 implementing regulation that, with effect from August 14, 2025, require deposits collected from buyers of units in new divided co-ownership (copropriété divise) real estate projects to be paid to a professional authorized to hold funds in trust — a notary, lawyer, CPA, or certified administrator — rather than to the project promoter directly [[sources/web-2025-07-30-00d]]. The rule is framed as a buyer-protection measure that prevents promoters from cashing buyer deposits directly during the pre-completion period [[sources/web-2025-07-30-00d]].
+The Quebec trustee-deposit rules are the buyer-protection provisions in the Bill 16 implementing regulation (Decree 991-2025) that, with effect from August 14, 2025, require every deposit paid toward the purchase of a divided co-ownership unit to be held in a trust account by a licensed professional [[sources/web-2025-08-06-94b]].
 
 ## Key claims
 
-- The trustee-deposit rule is mandatory under the Bill 16 implementing regulation, with the obligation effective August 14, 2025 [[sources/web-2025-07-30-00d]].
-- The rule applies to deposits required from buyers of units in new real estate projects [[sources/web-2025-07-30-00d]].
-- Deposits must be paid to a professional authorized to hold funds in trust [[sources/web-2025-07-30-00d]].
-- Eligible trustees are limited to: notary, lawyer, CPA, or certified administrator [[sources/web-2025-07-30-00d]].
-- Promoters are no longer permitted to cash buyer deposits directly under the regulation [[sources/web-2025-07-30-00d]].
-- The rule's stated intent is to enhance buyer protection [[sources/web-2025-07-30-00d]].
+- The trust-deposit obligation applies immediately as of August 14, 2025 (no grace period) [[sources/web-2025-08-06-94b]].
+- Deposits must be held in a trust account by one of four classes of licensed professional: notary, lawyer, certified public accountant (CPA), or licensed (certified) administrator [[sources/web-2025-08-06-94b]].
+- Developers and promoters can no longer access these funds before delivery of the unit [[sources/web-2025-08-06-94b]].
+- Policy intent is to protect buyers from construction delays, disputes between developer and buyer, or outright project failures [[sources/web-2025-08-06-94b]].
 
 ## Sources
 
-- [[sources/web-2025-07-30-00d]] — RGCQ, "Adoption of the regulation implementing Bill 16" (July 30, 2025)
+- [[sources/web-2025-07-30-00d]]
+- [[sources/web-2025-08-06-94b]]
 
 ## Related
 
 - [[entities/quebec-bill-16]]
 - [[entities/quebec-bill-16-regulation]]
-- [[entities/civil-code-of-quebec]]
+- [[concepts/quebec-buyer-certificate]]

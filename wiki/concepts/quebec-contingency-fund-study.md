@@ -7,39 +7,34 @@ domains:
 - condo-software
 - condo-capital-infra
 created_at: '2026-05-23T21:08:29Z'
-last_updated: '2026-05-23T21:08:29Z'
+last_updated: '2026-06-10T04:33:35Z'
 ---
 
 # Quebec Contingency Fund Study (5-Year Cycle)
 
 ## Summary
 
-The Quebec contingency fund study is the periodic financial-planning instrument that the Bill 16 implementing regulation makes mandatory for divided co-ownership (copropriété divise) buildings in Quebec, with effect from August 14, 2025 [[sources/web-2025-07-30-00d]]. The study must be carried out by an independent qualified professional on a five-year cycle, drawing on the data in the building's maintenance logbook, and must establish long-term cost estimates, recommend contribution levels, and set a minimum contingency-fund threshold to be maintained at the beginning of each fiscal year [[sources/web-2025-07-30-00d]]. The regulation's stated intent is to avoid unforeseen special assessments and promote sound long-term financial management [[sources/web-2025-07-30-00d]].
+The Quebec contingency fund study (*étude du fonds de prévoyance*) is the periodic financial-planning instrument that the Bill 16 implementing regulation (Decree 991-2025) makes mandatory for every divided co-ownership in Québec, on a five-year cycle, with the first compliance deadline set at August 14, 2028 [[sources/web-2025-08-06-94b]].
 
 ## Key claims
 
-- The contingency fund study is mandatory under the Bill 16 implementing regulation, with the obligation effective August 14, 2025 [[sources/web-2025-07-30-00d]].
-- The study must be performed every five years [[sources/web-2025-07-30-00d]].
-- The study must be based on data from the building's maintenance logbook [[sources/web-2025-07-30-00d]].
-- The study must be carried out by an independent qualified professional [[sources/web-2025-07-30-00d]].
-- Eligible qualified professionals for the contingency fund study are limited to engineers, architects, chartered appraisers, professional technologists, or CPAs; the inclusion of CPAs distinguishes the contingency-fund-study qualified-professional roster from the maintenance-logbook roster [[sources/web-2025-07-30-00d]].
-- The study must establish a long-term cost estimate [[sources/web-2025-07-30-00d]].
-- The study must recommend appropriate contributions [[sources/web-2025-07-30-00d]].
-- The study must set a minimum threshold to be maintained at the beginning of each fiscal year [[sources/web-2025-07-30-00d]].
-- The study must explain the methodology used to arrive at its estimates [[sources/web-2025-07-30-00d]].
-- The regulation's stated intent for the periodic contingency-fund-study requirement is to avoid unforeseen special assessments and promote sound long-term financial management [[sources/web-2025-07-30-00d]].
-- Transitional rule: contingency fund studies produced within the two years prior to August 14, 2025 may be recognized as valid for five years if they meet the regulatory requirements [[sources/web-2025-07-30-00d]].
+- Article 8 of Decree 991-2025 requires the board of directors to obtain a contingency fund study "at least every five years" [[sources/web-2025-08-06-94b]].
+- The study must detail future repairs and the recommended annual contributions to the contingency fund [[sources/web-2025-08-06-94b]].
+- The study must be based on data drawn from the mandatory maintenance logbook — the regulation explicitly chains the fund study to the logbook as its evidentiary substrate [[sources/web-2025-08-06-94b]].
+- The study must reflect the actual condition of the building, planned repairs with their timing and estimated costs, and the current and required balance of the fund [[sources/web-2025-08-06-94b]].
+- Compliance deadline for the first-cycle fund study: August 14, 2028 [[sources/web-2025-08-06-94b]].
+- A reserve fund study conducted before 2020 is presumptively out of compliance with the new requirements [[sources/web-2025-08-06-94b]].
+- The regulation displaces "vague projections" — the study must include hard numbers to guide contributions [[sources/web-2025-08-06-94b]].
 
 ## Sources
 
-- [[sources/web-2025-07-30-00d]] — RGCQ, "Adoption of the regulation implementing Bill 16" (July 30, 2025)
+- [[sources/web-2025-07-30-00d]]
+- [[sources/web-2025-08-06-94b]]
 
 ## Related
 
 - [[entities/quebec-bill-16]]
 - [[entities/quebec-bill-16-regulation]]
-- [[entities/civil-code-of-quebec]]
 - [[concepts/quebec-mandatory-maintenance-logbook]]
 - [[concepts/quebec-buyer-certificate]]
-- [[concepts/statutory-reserve-study-requirements]]
-- [[concepts/statutory-reserve-funding-requirements]]
+- [[entities/genispec]]

@@ -1,0 +1,84 @@
+version: 1
+session_id: 2026-05-30-do-predictive-or-generative-training-objectives
+domain: convergent-ai-brain
+prompt: Do predictive or generative training objectives produce representations that
+  align with biological neural data better than discriminative objectives at matched
+  task performance? Compare self-supervised versus supervised models, next-token and
+  masked prediction versus classification, contrastive learning, and what the evidence
+  says about the training objective versus architecture or scale as the primary driver
+  of brain-ANN representational alignment.
+generated_at: '2026-05-30T22:10:06Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - self-supervised versus supervised neural predictivity brain alignment
+  - predictive training objective representational similarity biological neural data
+  - masked autoencoder visual cortex encoding model comparison
+  - next-token prediction language cortex representational alignment fMRI
+  - contrastive learning brain score ANN discriminative objective
+  - training objective versus architecture neural network brain alignment
+  - generative models neural predictivity ventral stream comparison
+  - scale versus objective driver brain ANN representational convergence
+  youtube:
+  - self-supervised models brain alignment neuroscience
+  - Brain-Score training objective comparison talk
+  - predictive coding neural networks brain representations
+  - DINO ViT visual cortex encoding
+  - GPT language model brain encoding fMRI
+  - contrastive learning brain alignment comparison
+  - masked prediction cortical representations
+  - Platonic representation hypothesis training objective
+  - CLIP brain encoding visual cortex benchmark
+  - NeurIPS brain ANN alignment talk
+  - supervised versus self-supervised neural predictivity
+  - SimCLR MAE brain representations
+  - next token prediction language cortex
+  - Yamins DiCarlo ventral stream deep learning
+  - representational similarity analysis neural networks tutorial
+  - CKA brain ANN training objective
+  - algonauts challenge self-supervised models
+  - free energy predictive brain neural networks
+  - BERT neural language encoding comparison
+  - architecture scale training objective brain convergence
+  web:
+  - Brain-Score self-supervised versus supervised model comparison
+  - Platonic representation hypothesis training objective evidence
+  - DINO brain encoding fMRI neural predictivity
+  - masked autoencoders visual cortex encoding benchmark
+  - self-supervised vision transformers neural predictivity review
+  - GPT language model brain alignment cortex encoding
+  - contrastive versus generative objectives brain alignment
+  - training objective architecture scale brain ANN driver
+  - algonauts challenge self-supervised model results
+  - encoding models self-supervised transformers fMRI comparison
+  - next-token prediction language brain alignment site:arxiv.org OR site:biorxiv.org
+  - RSA CKA brain ANN training objective comparison blog
+  - BrainBench neural network training objective evaluation
+  - neural network representational alignment biological data survey
+  - self-supervised contrastive learning visual cortex variance explained
+  pubmed:
+  - artificial neural networks representational similarity fMRI visual cortex
+  - self-supervised deep learning neural encoding electrophysiology comparison
+  - predictive processing neural network cortical representation alignment
+  - deep neural network training objective brain score biological
+  - convolutional recurrent neural network ventral stream encoding model
+  semantic_scholar:
+  - self-supervised versus supervised training objective neural predictivity brain
+  - predictive generative objectives representational alignment biological neural
+    data
+  - masked prediction next-token cortical representations fMRI encoding
+  - contrastive learning brain alignment discriminative supervised comparison
+  - training objective architecture scale primary driver brain ANN alignment
+  - DINO CLIP GPT brain encoding neural predictivity comparison
+  - generative discriminative representational geometry brain neural data
+  - Platonic representation hypothesis training objective convergence evidence
+  - self-supervised vision language transformers visual cortex encoding model
+  - noise ceiling variance explained training objective brain score benchmark
+edited: false
+status: abandoned

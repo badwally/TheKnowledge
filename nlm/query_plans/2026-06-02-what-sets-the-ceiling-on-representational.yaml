@@ -1,0 +1,82 @@
+version: 1
+session_id: 2026-06-02-what-sets-the-ceiling-on-representational
+domain: convergent-ai-brain
+prompt: What sets the ceiling on representational alignment between biological brains
+  and artificial neural networks? Examine reported alignment ceilings and noise-ceiling
+  normalization, mutual-information bounds on cross-system alignment, the persistent
+  gap between the best models and brain data, whether alignment saturates with model
+  scale, and which architectural or objective differences prevent full convergence.
+generated_at: '2026-06-02T00:24:08Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - noise ceiling normalization neural predictivity variance explained
+  - representational alignment ceiling artificial neural networks brain
+  - mutual information bounds cross-system representational alignment
+  - Brain-Score saturation model scale neural predictivity
+  - persistent gap deep neural networks brain recordings fMRI
+  - encoding model noise ceiling ventral visual stream
+  - architectural inductive bias representational convergence failure
+  - alignment upper bound information-theoretic brain ANN comparison
+  youtube:
+  - Brain-Score noise ceiling neural alignment
+  - neural predictivity ceiling fMRI encoding model
+  - Platonic Representation Hypothesis alignment ceiling
+  - Yamins DiCarlo brain model gap ventral stream
+  - James DiCarlo neural network brain alignment limit
+  - representational similarity analysis ceiling effects
+  - vision transformer brain alignment fMRI comparison
+  - self-supervised learning brain alignment saturation
+  - CLIP brain alignment ceiling language vision
+  - Schrimpf Brain-Score scaling neural predictivity
+  - CKA brain recordings alignment ceiling
+  - NeurIPS representational alignment convergence talk
+  - mutual information brain model alignment bounds
+  - Huth encoding model noise ceiling language cortex
+  - deep learning IT cortex alignment upper bound
+  - computational neuroscience model brain persistent gap
+  - neural network ventral stream ceiling saturation
+  - architectural differences convergence brain ANN talk
+  - cross-architecture representational ceiling neuroscience lecture
+  - alignment gap scaling law neural recordings
+  web:
+  - Brain-Score noise ceiling normalization methodology explained
+  - neural predictivity ceiling effects encoding models fMRI
+  - representational alignment gap brain ANN 2024 review
+  - Platonic Representation Hypothesis alignment ceiling limit
+  - mutual information bounds representational similarity brain
+  - brain-score.org model scaling alignment saturation
+  - fMRI encoding model variance explained noise ceiling
+  - vision transformer vs CNN brain alignment ceiling
+  - self-supervised model brain alignment does it plateau
+  - neural network IT cortex alignment ceiling 2024
+  - model scale brain alignment saturation research
+  - language model brain alignment ceiling fMRI ECoG
+  - architectural inductive bias prevents representational convergence
+  - cross-architecture alignment ceiling visual cortex deep learning
+  - ceiling on brain-model alignment what limits it
+  pubmed:
+  - representational similarity analysis fMRI noise ceiling normalization
+  - encoding model variance explained visual cortex ceiling
+  - neural predictivity inferior temporal cortex artificial neural network
+  - fMRI decoding artificial neural network alignment upper bound
+  - brain-model representational gap electrophysiology explained variance
+  semantic_scholar:
+  - noise ceiling normalization brain-model representational alignment
+  - persistent gap deep neural networks brain recordings
+  - mutual information bound cross-system alignment brain ANN
+  - Brain-Score model scale saturation neural predictivity
+  - architectural differences prevent representational convergence brain
+  - encoding model noise ceiling fMRI variance explained limit
+  - alignment saturation scaling law neural predictivity
+  - inductive bias representational convergence failure neural networks
+  - cross-architecture alignment ceiling visual cortex IT
+  - what limits representational alignment biological artificial systems
+edited: false
+status: planned

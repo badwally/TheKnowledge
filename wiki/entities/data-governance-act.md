@@ -7,7 +7,7 @@ entity_kind: statute
 domains:
 - data-collectives
 created_at: '2026-06-10T21:35:00Z'
-last_updated: '2026-06-10T21:35:00Z'
+last_updated: '2026-06-11T04:49:05Z'
 draft: true
 draft_started_at: '2026-06-10T21:35:00Z'
 draft_unresolved_claims: 0
@@ -17,22 +17,25 @@ draft_unresolved_claims: 0
 
 ## Summary
 
-The European Union's Data Governance Act (DGA) is a regulation aimed at increasing trust in voluntary data sharing by regulating data intermediaries — including limits on reselling data for profit — and by providing affordances such as public registers of intermediaries [[sources/web-2024-04-04-ad6]].
+The European Union's Data Governance Act (DGA) is a regulation aimed at increasing trust in voluntary data sharing by regulating data intermediaries — including for-profit 'data intermediation services' and non-profit 'data altruism organisations' — that act as go-betweens for data subjects and data collectors [[sources/web-2023-09-05-c31]].
 
 ## Key facts
 
-- The DGA is described as the strongest existing regulatory instrument explicitly governing data intermediaries, characterised by transparency requirements on intermediary operations and protections against misuse [[sources/web-2024-04-04-ad6]].
-- It includes prohibitions on reselling data for profit, a practice associated with platform capitalism [[sources/web-2024-04-04-ad6]].
-- It is contrasted with the United Kingdom and United States regimes, which lack the DGA's combination of protections and affordances; the African Union's Data Policy Framework (2022) is identified as providing some support for privacy protections [[sources/web-2024-04-04-ad6]].
-- The DGA is the principal policy precedent that the source cites as a model for promoting data cooperatives [[sources/web-2024-04-04-ad6]].
+- The DGA is the first legislation to enable third-party data governance by regulating for-profit data intermediation services and non-profit data altruism organisations (Regulation 2022/868) [[sources/web-2023-09-05-c31]].
+- The DGA took effect in September 2023 [[sources/web-2023-09-05-c31]].
+- Under the DGA, data intermediaries are permitted to collect, pool, and share data about people to enhance the agency of data subjects and increase individuals' control over data relating to them, helping exercise GDPR rights and negotiating terms of use on a collective basis [[sources/web-2023-09-05-c31]].
+- The DGA is positioned as a partial answer to calls for formalisation of collective rights to privacy and new forms of collective data governance [[sources/web-2023-09-05-c31]].
+- Given the global influence of European data protection, comparable legislation is likely to emerge in other jurisdictions [[sources/web-2023-09-05-c31]].
 
 ## Sources
 
-- [[sources/web-2024-04-04-ad6]]
+- [[sources/web-2023-09-05-c31]]
 
 ## Related
 
-- [[concepts/data-cooperative]]
-- [[concepts/data-intermediary]]
+- [[concepts/collective-data-governance]]
 - [[concepts/data-altruism]]
-- [[concepts/platform-capitalism]]
+- [[concepts/data-cooperative]]
+- [[concepts/data-trust]]
+- [[concepts/data-union]]
+- [[concepts/data-dao]]

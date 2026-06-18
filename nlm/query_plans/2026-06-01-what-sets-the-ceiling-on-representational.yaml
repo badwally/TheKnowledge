@@ -1,0 +1,83 @@
+version: 1
+session_id: 2026-06-01-what-sets-the-ceiling-on-representational
+domain: convergent-ai-brain
+prompt: What sets the ceiling on representational alignment between biological brains
+  and artificial neural networks? Examine reported alignment ceilings and noise-ceiling
+  normalization, mutual-information bounds on cross-system alignment, the persistent
+  gap between the best models and brain data, whether alignment saturates with model
+  scale, and which architectural or objective differences prevent full convergence.
+generated_at: '2026-06-01T23:46:51Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - noise ceiling normalization representational similarity neural networks brain
+  - alignment ceiling Brain-Score artificial neural networks ventral stream
+  - mutual information bounds cross-system representational alignment
+  - persistent gap deep neural networks visual cortex predictivity
+  - representational alignment saturation model scale neural data
+  - architectural constraints brain-like representations convergence
+  - variance explained noise ceiling encoding models fMRI electrophysiology
+  - objective function differences representational convergence biological artificial
+  youtube:
+  - brain score alignment ceiling neural networks
+  - noise ceiling neural predictivity fMRI
+  - representational similarity analysis RSA tutorial
+  - Platonic representation hypothesis convergence talk
+  - James DiCarlo brain score benchmark lecture
+  - deep learning visual cortex alignment gap
+  - CKA centered kernel alignment neuroscience
+  - self-supervised learning visual cortex predictivity
+  - vision transformer brain alignment comparison
+  - CLIP neural predictivity encoding model
+  - model scale brain alignment saturation
+  - NeurIPS representational alignment ceiling talk
+  - Yamins DiCarlo ventral stream models
+  - architecture gap brain alignment ICLR talk
+  - mutual information neural code limits
+  - fMRI deep neural network encoding model talk
+  - convergent representations AI brain CCN conference
+  - efficient coding neural network convergence talk
+  - transformer CNN brain alignment comparison
+  - scaling laws neural predictivity plateau
+  web:
+  - Brain-Score alignment ceiling best models gap
+  - noise ceiling normalization neural predictivity benchmark
+  - representational alignment persistent gap deep neural networks brain
+  - model scale vs brain alignment saturation
+  - Platonic Representation Hypothesis convergence limits ceiling
+  - CKA RSA brain alignment ceiling comparison methods
+  - ventral stream model upper bound neural predictivity
+  - encoding model noise ceiling fMRI electrophysiology
+  - architectural differences prevent full brain alignment
+  - mutual information cross-system neural alignment upper bound
+  - self-supervised model brain score plateau scaling
+  - transformer vs CNN brain alignment representational comparison
+  - language model neural alignment ceiling cortex
+  - cross-architecture representational convergence limits
+  - objective function differences representational alignment failure
+  pubmed:
+  - artificial neural network visual cortex predictivity noise ceiling fMRI
+  - representational similarity analysis biological artificial neural networks alignment
+    bound
+  - encoding model neural predictivity noise ceiling electrophysiology benchmark
+  - cross-system neural representational alignment mutual information bounds
+  - deep neural network brain score variance explained normalization
+  semantic_scholar:
+  - noise ceiling normalization representational alignment neural networks
+  - Brain-Score ceiling persistent gap best models
+  - mutual information bounds cross-system representational alignment
+  - representational alignment saturation model scale neural data
+  - architectural constraints neural predictivity convergence failure
+  - Platonic representation hypothesis convergence ceiling limits
+  - objective function differences brain alignment biological artificial
+  - cross-system representational similarity upper bound
+  - variance explained noise ceiling encoding models fMRI
+  - alignment gap deep neural networks visual cortex scaling
+edited: false
+status: planned

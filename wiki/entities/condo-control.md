@@ -6,35 +6,33 @@ canonical_name: Condo Control
 entity_kind: organization
 domains:
 - condo-software
-created_at: '2026-05-24T03:27:39Z'
-last_updated: '2026-05-24T03:27:39Z'
+created_at: '2026-06-09T17:40:13Z'
+last_updated: '2026-06-09T17:40:13Z'
 ---
 
 # Condo Control
 
 ## Summary
 
-Condo Control is a condominium and HOA resident-engagement / community-management platform that operates a published Yardi integration to import unit, resident, and contact data from Yardi Voyager 7S installations into the Condo Control platform [[sources/web-2026-05-24-c93]]. The integration is documented on the support.condocontrol.com knowledge base and specifies named Yardi API endpoints, minimum interface versions, and supported Yardi property types as the integration's compatibility envelope [[sources/web-2026-05-24-c93]].
+Condo Control is a community management software vendor that specializes in condominium and homeowner association (HOA) management [[sources/web-2025-01-13-d27]]. In January 2025 the company announced it had been named a G2 Winter 2025 Property Management Software Leader, selected as 1 of 15 leaders from a pool of 435 property management software companies competing in the category [[sources/web-2025-01-13-d27]]. Of those 15 leaders, Condo Control was the only one specializing in condominium and HOA management [[sources/web-2025-01-13-d27]].
 
 ## Key facts
 
-- Operates a public-facing support knowledge base at support.condocontrol.com that documents third-party integration architecture, including the Yardi integration [[sources/web-2026-05-24-c93]].
-- Integrates with Yardi by calling two named Yardi Interfaces: the Billing and Payments Interface (for financial data and Unit information / Condo Owner Type) and the Common Data Interface (for Resident information and Alternate Addresses) [[sources/web-2026-05-24-c93]].
-- Calls the Yardi "GetCondoUnitInformation_Login" API endpoint from the Billing and Payments Interface to retrieve a list of Unit Numbers, Addresses, and Resident T-codes [[sources/web-2026-05-24-c93]].
-- Calls the Yardi "GetResidentData" API endpoint from the Common Data Interface, passing in T-codes from GetCondoUnitInformation_Login, to retrieve Resident Names, Emails, Phone Numbers, Alternate Addresses, and Roommates (R-codes) [[sources/web-2026-05-24-c93]].
-- Parses the data returned from the two Yardi Interfaces and imports it into the Condo Control platform [[sources/web-2026-05-24-c93]].
-- Compatibility requirements published by Condo Control: Yardi product must be "Voyager 7S" with Interfaces minimum version PIv14.3, Billing & Payments Interface minimum version PIv7, Common Data Interface minimum version PIv14.1, and Yardi property type must be "Condo" or "Residential" [[sources/web-2026-05-24-c93]].
-- Yardi property type of "Commercial" is not currently supported by the Condo Control integration [[sources/web-2026-05-24-c93]].
-- Directs property managers who cannot determine compatibility to open a Support Ticket with Yardi and supply the version-and-property-type criteria for Yardi to evaluate compatibility [[sources/web-2026-05-24-c93]].
+- Recognized as a G2 Winter 2025 Property Management Software Leader, 1 of 15 selected from 435 competing companies in the property management category [[sources/web-2025-01-13-d27]].
+- Only one of the 15 G2 Winter 2025 property management Leaders that specializes in condominium and HOA management [[sources/web-2025-01-13-d27]].
+- G2 selected Winter 2025 leaders based on market presence (website traffic, new-visitor growth, company age, employee count, website authority, and number of objective reviews) and customer reviews collected through November 19, 2024 [[sources/web-2025-01-13-d27]].
+- Holds an overall G2 customer rating of 4.9/5, with 99% of reviewers giving the software either 4 or 5 stars [[sources/web-2025-01-13-d27]].
+- 97% of reviewers said they would likely recommend Condo Control, and 93% said they believed the product will be valuable to them in the future [[sources/web-2025-01-13-d27]].
+- Scored 94% on G2 ease-of-setup versus an 87% property-management-category average, and 96% on ease-of-use versus an 89% category average [[sources/web-2025-01-13-d27]].
+- Scored 96% on quality of support versus an 89% category average; the company states it does not rely on chatbots and instead operates a human support team alongside a help center [[sources/web-2025-01-13-d27]].
+- Scored 95% on "meets requirements" versus a 90% category average [[sources/web-2025-01-13-d27]].
+- Award announcement was authored by Kim Brown and published on the Condo Control company blog on January 13, 2025 [[sources/web-2025-01-13-d27]].
 
 ## Sources
 
-- [[sources/web-2026-05-24-c93]] — Condo Control, "Yardi Product/Version Supported with the Yardi — Condo Control Integration" (support.condocontrol.com, May 24, 2026)
+- [[sources/web-2025-01-13-d27]] — Condo Control wins winter 2025 G2 leader award (condocontrol.com blog, Kim Brown, 2025-01-13)
 
 ## Related
 
-- [[entities/yardi]]
-- [[entities/yardi-voyager-7s]]
-- [[entities/yardi-billing-and-payments-interface]]
-- [[entities/yardi-common-data-interface]]
-- [[entities/buildinglink]]
+- [[entities/property-control]] — parent brand under which Condo Control sits as a sister product
+- [[entities/g2]] — peer-to-peer software review platform that issued the Winter 2025 Leader award

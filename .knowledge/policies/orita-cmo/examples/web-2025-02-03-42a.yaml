@@ -1,0 +1,29 @@
+source_id: web-2025-02-03-42a
+domain: orita-cmo
+decision: include
+score: 1.0
+policy_version: orita-cmo-v1
+rationale: Direct Orita-class competitor / competitive-intelligence source for orita-cmo
+  (AI audience-intelligence, purchase-intent scoring, ecommerce MarTech competitive
+  set).
+pinned_at: '2026-06-15T22:26:52Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: web
+  title: What Is Aampe? How AI Decisioning Is Changing Email Personalization
+  authors: []
+  url: https://hightouch.com/blog/what-is-aampe
+content_excerpt: 'Email is one of your best marketing levers. But let’s be honest,
+  making it feel personal is harder than ever. Your customers expect more, and traditional
+  A/B tests and segmentation just aren’t cutting it anymore.
+
+
+  That’s where AI Decisioning comes in. It helps you send smarter, faster, more relevant
+  messages automatically and at scale. And Aampe is an AI Decisioning company doing
+  this. And it’s changing the game.
+
+
+  ## What is Aampe?
+
+
+  Aampe is an agentic AI infrastructure platform that helps you d'

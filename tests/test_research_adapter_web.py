@@ -91,9 +91,10 @@ def test_search_parses_firecrawl_results_into_candidate_items(
     items = adapter.search("semaglutide food noise", max_results=10)
 
     # HTTP call shape
-    assert captured["url"] == "https://api.firecrawl.dev/v1/search"
+    assert captured["url"] == "https://api.firecrawl.dev/v2/search"
     assert captured["headers"]["Authorization"] == "Bearer test-key"
     assert captured["headers"]["Content-Type"] == "application/json"
+    # No filter_hints → minimal payload (no stray parameter keys).
     assert captured["json"] == {"query": "semaglutide food noise", "limit": 10}
 
     # Parsed shape
@@ -225,6 +226,84 @@ def test_search_raises_adapter_error_when_api_key_missing(
 
     with pytest.raises(AdapterError, match="FIRECRAWL_API_KEY not set"):
         adapter.search("q")
+
+
+def test_filter_hints_map_to_v2_parameters(monkeypatch: pytest.MonkeyPatch) -> None:
+    """filter_hints are translated to Firecrawl v2 search parameters."""
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-key")
+    captured: dict[str, Any] = {}
+
+    def fake_post(url: str, *, json: dict, headers: dict, timeout: int) -> _FakeResponse:
+        captured["json"] = json
+        return _FakeResponse(json_payload=_canned_response(1))
+
+    monkeypatch.setattr("gateway.research.adapters.web.requests.post", fake_post)
+
+    WebAdapter().search(
+        "representational alignment",
+        max_results=8,
+        filter_hints={
+            "categories": ["research"],
+            "include_domains": ["arxiv.org", "nature.com"],
+            "tbs": "qdr:y",
+            "sources": ["web", "news"],
+            "location": "United States",
+            "scrape_options": {"formats": ["markdown"]},
+        },
+    )
+
+    assert captured["json"] == {
+        "query": "representational alignment",
+        "limit": 8,
+        "categories": ["research"],
+        "sources": ["web", "news"],
+        "tbs": "qdr:y",
+        "location": "United States",
+        "scrapeOptions": {"formats": ["markdown"]},
+        "includeDomains": ["arxiv.org", "nature.com"],
+    }
+
+
+def test_include_domains_wins_over_exclude_domains(monkeypatch: pytest.MonkeyPatch) -> None:
+    """The API forbids both domain filters; include takes precedence."""
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-key")
+    captured: dict[str, Any] = {}
+
+    def fake_post(url: str, *, json: dict, headers: dict, timeout: int) -> _FakeResponse:
+        captured["json"] = json
+        return _FakeResponse(json_payload=_canned_response(1))
+
+    monkeypatch.setattr("gateway.research.adapters.web.requests.post", fake_post)
+
+    WebAdapter().search(
+        "q",
+        filter_hints={"include_domains": ["a.com"], "exclude_domains": ["b.com"]},
+    )
+    assert captured["json"]["includeDomains"] == ["a.com"]
+    assert "excludeDomains" not in captured["json"]
+
+
+def test_search_flattens_v2_grouped_response(monkeypatch: pytest.MonkeyPatch) -> None:
+    """v2 groups results under data.{web,news,images}; web+news are merged, images dropped."""
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-key")
+    payload = {
+        "success": True,
+        "data": {
+            "web": [{"url": "https://example.com/w", "title": "Web", "description": "d"}],
+            "news": [{"url": "https://example.com/n", "title": "News", "snippet": "s"}],
+            "images": [{"imageUrl": "https://example.com/i.png", "title": "Img"}],
+        },
+    }
+    monkeypatch.setattr(
+        "gateway.research.adapters.web.requests.post",
+        lambda *a, **kw: _FakeResponse(json_payload=payload),
+    )
+
+    items = WebAdapter().search("q")
+    urls = {it.url for it in items}
+    assert urls == {"https://example.com/w", "https://example.com/n"}
+    # Image rows (no page url) are excluded.
+    assert all("i.png" not in it.url for it in items)
 
 
 def test_explicit_api_key_overrides_missing_env(

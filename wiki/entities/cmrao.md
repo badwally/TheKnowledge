@@ -6,32 +6,34 @@ canonical_name: Condominium Management Regulatory Authority of Ontario (CMRAO)
 entity_kind: organization
 domains:
 - condo-software
-created_at: '2026-05-23T16:26:14Z'
-last_updated: '2026-05-23T16:26:14Z'
+created_at: '2026-06-10T04:42:00Z'
+last_updated: '2026-06-10T04:42:00Z'
 ---
 
 # Condominium Management Regulatory Authority of Ontario (CMRAO)
 
 ## Summary
 
-The Condominium Management Regulatory Authority of Ontario (CMRAO) is the provincial regulator that licenses condominium managers and condominium management companies in Ontario under the Condominium Management Services Act, 2015 (CMSA), and publishes a Competency Profile and practice guides defining licensee obligations [[sources/pdf-aa9367a8a4a9]].
+The Condominium Management Regulatory Authority of Ontario (CMRAO) is the Ontario regulator that issues condominium manager licences under the Condominium Management Services Act, 2015, administers required educational courses and continuing education, and publishes licensee statistics for the province [[sources/web-2023-05-31-64e]].
 
 ## Key facts
 
-- Licenses condominium managers and condominium management companies as required under the Condominium Management Services Act, 2015 (CMSA) [[sources/pdf-aa9367a8a4a9]].
-- Published "Financial Management: A Practice Guide for Condominium Managers" (February 2025) to help licensees understand fiduciary obligations under the Condominium Act, 1998 and meet the requirements of the CMSA [[sources/pdf-aa9367a8a4a9]].
-- Published the "Report on the Competency Profile for Condominium Managers in Ontario 2019" that defines the obligations of condominium managers and management companies [[sources/pdf-aa9367a8a4a9]].
-- The CMRAO Registrar issues official directives (Registrar's Directives) that licensees must comply with [[sources/pdf-aa9367a8a4a9]].
-- The February 2025 Practice Guide was developed with CMRAO Subject Matter Experts Jeff Lack, CPA and Lyndsey McNally, OLCM, LCCI, CCI (Hon's), and informed by an Advisory Committee [[sources/pdf-aa9367a8a4a9]].
-- The Practice Guide is explicit that it is for information and reference only, is not a substitute for legal advice, and that if there is a conflict between the guide and the legislation, the legislation prevails [[sources/pdf-aa9367a8a4a9]].
+- The CMRAO issues general licences required for condo corporations in Ontario to be managed by a non-volunteer-board licensee, under the Condominium Management Services Act, 2015 [[sources/web-2023-05-31-64e]].
+- The CMRAO general licence requires six educational courses administered by the CMRAO and two or more years of providing condo management services [[sources/web-2023-05-31-64e]].
+- As of July 2023, the CMRAO requires licensees to complete 10 hours of continuing education each year to maintain a licence [[sources/web-2023-05-31-64e]].
+- CMRAO statistics cited in May 2023 reported 2,543 general license holders managing more than 12,400 condo corporations representing 900,000-plus units throughout Ontario, equating to 5.3 condo corporations per general licensee [[sources/web-2023-05-31-64e]].
+- The CMRAO also administers limited licences; 1,638 limited license holders were reported in Ontario, handling some daily administration tasks under the supervision of a general licensed manager [[sources/web-2023-05-31-64e]].
+- ACMO has recommended the CMRAO work with industry stakeholders to create a plan to recruit, educate and license more managers, and to keep licensing fees and educational costs as low as possible to reduce barriers to entry [[sources/web-2023-05-31-64e]].
 
 ## Sources
 
-- [[sources/pdf-aa9367a8a4a9]] — CMRAO Financial Management: A Practice Guide for Condominium Managers (February 2025)
+- [[sources/web-2023-05-31-64e]] — "Who will manage all the future condos in Ontario?" REMI Network, May 31, 2023.
 
 ## Related
 
+- [[entities/acmo]]
+- [[entities/condominium-management-services-act-2015]]
+- [[concepts/cmrao-general-licence]]
+- [[concepts/cmrao-limited-licence]]
+- [[concepts/ontario-condo-manager-shortfall]]
 - [[entities/ontario-condominium-act-1998]]
-- [[entities/ontario-condominium-management-services-act]]
-- [[concepts/ontario-reserve-fund-study]]
-- [[concepts/condominium-manager-fiduciary-obligations]]

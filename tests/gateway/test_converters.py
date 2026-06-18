@@ -147,6 +147,141 @@ def test_web_convert_empty_extract_raises(monkeypatch):
         WebConverter().convert("https://example.com/empty")
 
 
+# --- web converter Firecrawl path (opt-in) ---------------------------------
+
+
+def test_firecrawl_metadata_maps_to_trafilatura_shape():
+    mapped = web_mod._firecrawl_metadata(
+        {
+            "ogTitle": "Fallback Title",
+            "title": "Primary Title",
+            "publishedTime": "2026-05-01T09:00:00Z",
+            "author": "A. Writer",
+            "description": "Lead description.",
+        }
+    )
+    assert mapped == {
+        "title": "Primary Title",
+        "date": "2026-05-01T09:00:00Z",
+        "author": "A. Writer",
+        "description": "Lead description.",
+    }
+
+
+def test_firecrawl_metadata_uses_og_and_article_fallbacks():
+    mapped = web_mod._firecrawl_metadata(
+        {
+            "ogTitle": "OG Title",
+            "article:published_time": "2026-05-02",
+            "article:author": "Ghost",
+            "ogDescription": "OG description.",
+        }
+    )
+    assert mapped["title"] == "OG Title"
+    assert mapped["date"] == "2026-05-02"
+    assert mapped["author"] == "Ghost"
+    assert mapped["description"] == "OG description."
+
+
+def test_web_convert_uses_firecrawl_when_enabled(monkeypatch):
+    monkeypatch.setenv("WIKI_WEB_SCRAPER", "firecrawl")
+    monkeypatch.setattr(
+        web_mod,
+        "_fetch_firecrawl",
+        lambda url: ("# Rendered\n\nJS-only content.", {"title": "Rendered Page", "date": "2026-05-03"}),
+    )
+    # Prove the trafilatura path is not consulted on the happy path.
+    monkeypatch.setattr(web_mod, "_fetch", lambda url: pytest.fail("trafilatura fetch should be bypassed"))
+
+    text = WebConverter().convert("https://example.com/spa")
+    front, body = fm.parse(text)
+    assert front["meta"]["source_app"] == "firecrawl"
+    assert front["title"] == "Rendered Page"
+    assert front["published_at"] == "2026-05-03"
+    assert "JS-only content" in body
+
+
+def test_web_convert_falls_back_to_trafilatura_on_firecrawl_miss(monkeypatch):
+    monkeypatch.setenv("WIKI_WEB_SCRAPER", "firecrawl")
+    monkeypatch.setattr(web_mod, "_fetch_firecrawl", lambda url: None)
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html>...</html>",
+        body="Trafilatura body.\n",
+        metadata={"title": "Static Page", "author": None, "date": None},
+    )
+
+    text = WebConverter().convert("https://example.com/static")
+    front, body = fm.parse(text)
+    assert front["meta"]["source_app"] == "trafilatura"
+    assert "Trafilatura body" in body
+
+
+def test_web_convert_ignores_firecrawl_when_flag_off(monkeypatch):
+    # Default (flag unset): Firecrawl must not be invoked even if it would succeed.
+    monkeypatch.delenv("WIKI_WEB_SCRAPER", raising=False)
+    monkeypatch.setattr(
+        web_mod, "_fetch_firecrawl", lambda url: pytest.fail("Firecrawl must not run with flag off")
+    )
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html>...</html>",
+        body="Default path body.\n",
+        metadata={"title": "Default", "author": None, "date": None},
+    )
+
+    text = WebConverter().convert("https://example.com/default")
+    front, _ = fm.parse(text)
+    assert front["meta"]["source_app"] == "trafilatura"
+
+
+def test_fetch_firecrawl_returns_none_without_key(monkeypatch):
+    monkeypatch.delenv("FIRECRAWL_API_KEY", raising=False)
+    assert web_mod._fetch_firecrawl("https://example.com") is None
+
+
+def test_fallback_mode_prefers_trafilatura_when_it_succeeds(monkeypatch):
+    monkeypatch.setenv("WIKI_WEB_SCRAPER", "fallback")
+    monkeypatch.setattr(
+        web_mod, "_fetch_firecrawl", lambda url: pytest.fail("Firecrawl must not run when trafilatura succeeds")
+    )
+    _install_fake_trafilatura(
+        monkeypatch,
+        html="<html>...</html>",
+        body="Cheap path body.\n",
+        metadata={"title": "Cheap", "author": None, "date": None},
+    )
+
+    text = WebConverter().convert("https://example.com/ok")
+    front, body = fm.parse(text)
+    assert front["meta"]["source_app"] == "trafilatura"
+    assert "Cheap path body" in body
+
+
+def test_fallback_mode_escalates_to_firecrawl_on_trafilatura_failure(monkeypatch):
+    monkeypatch.setenv("WIKI_WEB_SCRAPER", "fallback")
+    monkeypatch.setattr(web_mod, "_fetch", lambda url: None)  # simulate 403/dead fetch
+    monkeypatch.setattr(
+        web_mod,
+        "_fetch_firecrawl",
+        lambda url: ("# Rescued\n\nFull text.", {"title": "Rescued", "date": "2026-05-04"}),
+    )
+
+    text = WebConverter().convert("https://example.com/blocked")
+    front, body = fm.parse(text)
+    assert front["meta"]["source_app"] == "firecrawl"
+    assert front["title"] == "Rescued"
+    assert "Full text" in body
+
+
+def test_fallback_mode_raises_original_error_when_both_fail(monkeypatch):
+    monkeypatch.setenv("WIKI_WEB_SCRAPER", "fallback")
+    monkeypatch.setattr(web_mod, "_fetch", lambda url: None)
+    monkeypatch.setattr(web_mod, "_fetch_firecrawl", lambda url: None)
+    with pytest.raises(ConversionError):
+        WebConverter().convert("https://example.com/doomed")
+
+
 # --- ingest end-to-end via converter ---------------------------------------
 
 

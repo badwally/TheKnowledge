@@ -1,8 +1,16 @@
-"""Web converter: URL → canonical markdown via trafilatura readability.
+"""Web converter: URL → canonical markdown.
 
 Detects HTTP(S) URLs. Fetches the page, extracts main content as markdown,
 pulls out title/author/date metadata, and assembles a canonical source per
 WIKI.md § 3 (type=web).
+
+Acquisition paths share one normalized shape (see `_acquire`), selected by
+`WIKI_WEB_SCRAPER` (see `_web_scraper_mode`): the default requests+trafilatura
+readability extractor; `fallback`, which escalates to a Firecrawl scrape only
+when trafilatura fails (403/429/empty); and `firecrawl`, which scrapes first.
+Firecrawl renders JavaScript and routes through proxies/anti-bot for pages a
+raw GET cannot retrieve. Every Firecrawl miss falls back to trafilatura, so no
+mode regresses ingest relative to the default.
 
 Binary sidecars are not produced (web pages are text-only). Image handling
 is deferred — see WIKI.md tips on image clipping for future work.
@@ -164,6 +172,143 @@ def _extract_metadata(html: str):  # returns trafilatura Document or None
     return trafilatura.extract_metadata(html)
 
 
+# --- Firecrawl scrape (opt-in; default off) ----------------------------------
+#
+# Firecrawl's /scrape endpoint renders JavaScript and handles proxies/anti-bot
+# and PDF parsing — the cases where a raw GET returns a 403/429 or an empty
+# shell. `_fetch_firecrawl` returns None on any miss (no key, non-public
+# target, HTTP/JSON error, empty body) so the caller falls back to the
+# requests+trafilatura path. See `_web_scraper_mode` for ordering.
+
+FIRECRAWL_SCRAPE_URL = "https://api.firecrawl.dev/v2/scrape"
+_FIRECRAWL_TIMEOUT = 45  # seconds; rendered scrapes are slower than a raw GET
+
+
+def _web_scraper_mode() -> str:
+    """Acquisition mode from WIKI_WEB_SCRAPER.
+
+    - ``""`` (default): trafilatura only.
+    - ``"fallback"``: trafilatura first, escalate to Firecrawl only when the
+      cheap path fails (403/429, fetch error, or an empty/JS-shell extract).
+      The cost-smart ordering — one paid roundtrip only on the hard pages.
+    - ``"firecrawl"``: Firecrawl first, trafilatura as the miss-fallback.
+      Max fidelity for a batch of known-hard sources; one paid roundtrip per page.
+    """
+    return os.environ.get("WIKI_WEB_SCRAPER", "").strip().lower()
+
+
+def _fetch_firecrawl(url: str) -> tuple[str, dict] | None:
+    """Scrape `url` via Firecrawl; return (markdown, metadata) or None.
+
+    None is the "fall back to trafilatura" signal. Network and parse errors
+    are swallowed deliberately: a scrape-service outage must degrade ingest,
+    not abort it.
+    """
+    api_key = os.environ.get("FIRECRAWL_API_KEY")
+    if not api_key:
+        return None
+    try:
+        # Firecrawl fetches server-side, but still refuse to hand it an
+        # internal target — keeps parity with the direct-fetch SSRF posture.
+        _assert_public_url(url)
+    except ConversionError:
+        return None
+
+    payload = {
+        "url": url,
+        "formats": ["markdown"],
+        "onlyMainContent": True,
+        "proxy": os.environ.get("WIKI_FIRECRAWL_PROXY", "auto"),
+        "parsers": ["pdf"],
+    }
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    try:
+        resp = requests.post(
+            FIRECRAWL_SCRAPE_URL,
+            json=payload,
+            headers=headers,
+            timeout=_FIRECRAWL_TIMEOUT,
+        )
+        resp.raise_for_status()
+        data = resp.json().get("data") or {}
+    except (requests.RequestException, ValueError):
+        return None
+
+    markdown = data.get("markdown")
+    if not markdown or not markdown.strip():
+        return None
+    return markdown, _firecrawl_metadata(data.get("metadata") or {})
+
+
+def _firecrawl_metadata(meta: dict) -> dict:
+    """Map Firecrawl scrape metadata onto the trafilatura key shape the
+    converter already consumes: title, date, author, description."""
+    return {
+        "title": meta.get("title") or meta.get("ogTitle"),
+        "date": (
+            meta.get("publishedTime")
+            or meta.get("article:published_time")
+            or meta.get("articlePublishedTime")
+        ),
+        "author": meta.get("author") or meta.get("article:author"),
+        "description": meta.get("description") or meta.get("ogDescription") or "",
+    }
+
+
+def _acquire_trafilatura(source: str) -> tuple[str, dict, str]:
+    """Fetch and extract via the requests+trafilatura path.
+
+    Raises ConversionError on a fetch error (incl. HTTP 403/429) or an empty
+    extract — the failure signal the `fallback` mode escalates on.
+    """
+    html = _fetch(source)
+    if not html:
+        raise ConversionError(f"could not fetch {source}")
+    body = _extract_markdown(html)
+    if not body or not body.strip():
+        raise ConversionError(f"no extractable content at {source}")
+    meta = _extract_metadata(html)
+    meta_dict = meta.as_dict() if hasattr(meta, "as_dict") else (meta or {})
+    return body, meta_dict, "trafilatura"
+
+
+def _acquire_firecrawl(source: str) -> tuple[str, dict, str] | None:
+    scraped = _fetch_firecrawl(source)
+    if scraped is None:
+        return None
+    body, meta_dict = scraped
+    return body, meta_dict, "firecrawl"
+
+
+def _acquire(source: str) -> tuple[str, dict, str]:
+    """Return (markdown_body, metadata_dict, source_app) for `source`.
+
+    Dispatches on `_web_scraper_mode()`; `metadata_dict` is normalized to the
+    trafilatura key shape in every branch so the caller is path-agnostic.
+    """
+    mode = _web_scraper_mode()
+
+    if mode == "firecrawl":
+        # Firecrawl first; trafilatura on a Firecrawl miss.
+        return _acquire_firecrawl(source) or _acquire_trafilatura(source)
+
+    if mode == "fallback":
+        # Trafilatura first; escalate to Firecrawl only when the cheap path
+        # fails. If Firecrawl also misses, surface the original failure.
+        try:
+            return _acquire_trafilatura(source)
+        except ConversionError:
+            escalated = _acquire_firecrawl(source)
+            if escalated is not None:
+                return escalated
+            raise
+
+    return _acquire_trafilatura(source)
+
+
 # -----------------------------------------------------------------------------
 
 
@@ -215,17 +360,8 @@ class WebConverter(Converter):
         return source.startswith(("http://", "https://"))
 
     def convert(self, source: str) -> str:
-        html = _fetch(source)
-        if not html:
-            raise ConversionError(f"could not fetch {source}")
-
-        body = _extract_markdown(html)
-        if not body or not body.strip():
-            raise ConversionError(f"no extractable content at {source}")
+        body, meta_dict, source_app = _acquire(source)
         body = body.rstrip("\n") + "\n"
-
-        meta = _extract_metadata(html)
-        meta_dict = meta.as_dict() if hasattr(meta, "as_dict") else (meta or {})
 
         title = meta_dict.get("title") or source
         published_at = _normalize_date(meta_dict.get("date"))
@@ -239,7 +375,7 @@ class WebConverter(Converter):
         archive_url = _wayback_snapshot(source)  # graceful: None on failure
 
         meta_block: dict = {
-            "source_app": "trafilatura",
+            "source_app": source_app,
             "site": _site_from_url(source),
             "excerpt": excerpt,
             "reading_time_minutes": _reading_time_minutes(body),

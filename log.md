@@ -48798,3 +48798,27 @@ raw=raw/youtube/yt-ZpxIKeVvc08.md wiki=wiki/sources/yt-ZpxIKeVvc08.md
 ## [2026-06-18T01:41:59Z] lint | scope=schema-drift | schema-drift=191
 
 report=.knowledge/lint/2026-06-18T01-41-59Z-schema-drift.md
+
+## [2026-06-18T01:42:54Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T01-42-54Z-schema-drift.md
+
+## [2026-06-18T01:43:32Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T01-43-32Z-schema-drift.md
+
+## [2026-06-18T01:45:25Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T01-45-25Z-schema-drift.md
+
+## [2026-06-18T01:53:29Z] finalize | page=wiki/synthesis/2026-06-17-how-is-semantic-modeling-applied-as-cross-cutting.md
+
+finalized wiki/synthesis/2026-06-17-how-is-semantic-modeling-applied-as-cross-cutting.md
+
+## [2026-06-18T01:53:31Z] finalize | page=wiki/synthesis/2026-06-17-how-is-semantic-modeling-applied-as-the-semantic-layer-and-metrics-la.md
+
+finalized wiki/synthesis/2026-06-17-how-is-semantic-modeling-applied-as-the-semantic-layer-and-metrics-la.md
+
+## [2026-06-18T01:57:35Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T01-57-35Z-schema-drift.md

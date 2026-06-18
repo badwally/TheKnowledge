@@ -1,0 +1,84 @@
+version: 1
+session_id: 2026-05-30-what-sets-the-ceiling-on-representational
+domain: convergent-ai-brain
+prompt: What sets the ceiling on representational alignment between biological brains
+  and artificial neural networks? Examine reported alignment ceilings and noise-ceiling
+  normalization, mutual-information bounds on cross-system alignment, the persistent
+  gap between the best models and brain data, whether alignment saturates with model
+  scale, and which architectural or objective differences prevent full convergence.
+generated_at: '2026-05-30T21:46:37Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - noise ceiling normalization neural predictivity variance explained
+  - representational alignment ceiling biological artificial neural networks
+  - mutual information bound cross-system representational alignment
+  - Brain-Score ceiling model-brain similarity gap
+  - representational similarity analysis noise ceiling fMRI
+  - alignment saturation model scale neural predictivity
+  - architectural differences biological artificial convergence limit
+  - sparse coding efficient coding ceiling representational alignment
+  - cross-architecture convergence limit vision models electrophysiology
+  - Platonic Representation Hypothesis alignment upper bound
+  youtube:
+  - neural network brain alignment ceiling explained
+  - Brain-Score best models benchmark gap
+  - representational similarity analysis neuroscience tutorial
+  - noise ceiling neural predictivity fMRI
+  - model scale brain alignment saturation
+  - cross-architecture convergence biological neural networks
+  - efficient coding convergence neuroscience AI
+  - James DiCarlo neural predictivity models
+  - Nikolaus Kriegeskorte representational geometry
+  - NeurIPS brain-score alignment talk
+  - cognitive computational neuroscience model comparison
+  - deep learning visual cortex alignment limits
+  - Platonic Representation Hypothesis talk
+  - ANN brain comparison variance explained
+  - SfN neural network representational alignment
+  - CCN conference brain score models
+  - transformer language model neural alignment
+  - self-supervised models brain predictivity
+  - encoding models decoding models neural data
+  - mutual information neural representations alignment
+  web:
+  - Brain-Score leaderboard alignment ceiling best models
+  - noise ceiling normalization neural predictivity tutorial
+  - representational similarity analysis ceiling variance explained
+  - model-brain alignment saturation scale Anthropic OpenAI
+  - Platonic Representation Hypothesis convergence limits
+  - efficient coding upper bound brain-ANN alignment
+  - persistent gap neural network brain benchmark
+  - fMRI encoding model noise ceiling methodology
+  - cross-architecture representational alignment review 2024
+  - architectures objectives convergence failure modes
+  - neural predictivity ceiling electrophysiology explained
+  - transformer brain alignment mutual information bound
+  - sparse coding ICA convergence biological artificial
+  - Brain-Score V1 IT noise ceiling gap
+  - model scale representational alignment saturation evidence
+  pubmed:
+  - neural network representational similarity fMRI noise ceiling
+  - encoding model brain predictivity variance explained electrophysiology
+  - artificial neural network visual cortex alignment benchmark
+  - representational geometry convergence biological artificial systems
+  - brain score neural network comparison noise normalization
+  semantic_scholar:
+  - noise ceiling representational alignment brain neural networks
+  - mutual information bound cross-system alignment ceiling
+  - Brain-Score gap best model human performance
+  - representational similarity analysis variance explained noise ceiling
+  - alignment saturation scale artificial neural networks brain
+  - sparse coding convergence biological artificial systems
+  - architectural objectives convergence limit neuroscience
+  - Platonic Representation Hypothesis upper bound alignment
+  - cross-architecture convergence vision language models neural data
+  - efficient coding compression representational ceiling brain ANN
+edited: false
+status: abandoned

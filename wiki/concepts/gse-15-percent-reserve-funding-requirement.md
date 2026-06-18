@@ -7,34 +7,30 @@ domains:
 - condo-software
 - condo-capital-infra
 created_at: '2026-05-23T18:15:46Z'
-last_updated: '2026-05-23T18:15:46Z'
+last_updated: '2026-06-10T03:37:29Z'
 ---
 
 # GSE 15% Minimum Reserve Funding Requirement
 
 ## Summary
 
-The GSE 15% Minimum Reserve Funding Requirement is the rule — introduced by Fannie Mae Lender Letter LL-2026-03 and Freddie Mac Bulletin 2026-C on March 18, 2026, effective January 4, 2027 — that raises the minimum annual reserve allocation a condominium association must budget from 10% to 15% of the annual budget in order to remain eligible for GSE-backed conventional financing. A reserve-study carve-out exists: the 15% line-item is waived if the association has a reserve study conducted or updated within the prior three years and is following the highest recommended level of funding (baseline funding is explicitly not allowed as a substitute) [[sources/web-2026-03-18-a4e]].
+The GSE 15% Minimum Reserve Funding Requirement is the rule — introduced by Fannie Mae Lender Letter LL-2026-03 and the parallel Freddie Mac Bulletin announced March 18, 2026 — that raises the minimum acceptable reserve allocation for conventional-mortgage-eligible condominium projects from 10% to 15% of the association's annual budget, effective January 4, 2027 [[sources/web-2026-03-23-6fd]].
 
 ## Key claims
 
-- Fannie Mae and Freddie Mac are increasing the minimum reserve funding requirement from 10% to 15% of the annual budget effective January 4, 2027 [[sources/web-2026-03-18-a4e]].
-- The 15% budget allocation is not required if a condominium association has a reserve study that has been conducted or updated within the last three years and the association is following the highest recommended level of funding; baseline funding is explicitly not an acceptable substitute [[sources/web-2026-03-18-a4e]].
-- CAI Advocacy frames the new floor as a directive to boards, managers, and reserve providers to begin evaluating reserve funding now [[sources/web-2026-03-18-a4e]].
-- Practical implications enumerated by CAI: increased assessments, adjustments to long-term financial planning, and greater scrutiny during the lending process [[sources/web-2026-03-18-a4e]].
-- The reserve-study carve-out creates a structural incentive for associations to commission or update reserve studies on a ≤3-year cycle in order to avoid the flat 15% floor — positioning reserve studies as a lender-pull product, not just a board-discretion product [[sources/web-2026-03-18-a4e]].
-- The CAI explainer enumerates the professional roster boards should engage to plan for compliance: management (CMCA®, AMS®, PCAM®, AAMC®), insurance (CIRMS®), reserve professionals (RS™), and legal advisors (CCAL™ fellows) [[sources/web-2026-03-18-a4e]].
-- Implementation requires planning against both 2026 and 2027 timelines per CAI's guidance [[sources/web-2026-03-18-a4e]].
+- The GSE announcement was made March 18, 2026; the 15% reserve allocation requirement becomes effective January 4, 2027 [[sources/web-2026-03-23-6fd]].
+- The 15% threshold operates as a safe harbor: associations that budget 15% or more of their annual budget to reserves are not required to submit a reserve study under the new standard [[sources/web-2026-03-23-6fd]].
+- For associations funding below 15%, the rule requires submission of a professional reserve study that uses the "highest recommended funding level"; baseline funding is explicitly not accepted as justification for an exception [[sources/web-2026-03-23-6fd]].
+- The rule package is bundled with three other dated changes: the Limited Review process is eliminated August 3, 2026 (historically used in ~65% of condo loans); a $50,000 per-unit maximum insurance deductible takes effect July 1, 2026; and annual servicer insurance verification begins January 1, 2027 [[sources/web-2026-03-23-6fd]].
+- The rule package relaxes several insurance documentation burdens — eliminating strict replacement cost documentation, removing the full-replacement-cost requirement for roofs, and removing mandatory inflation guard — partially offsetting the new reserve and deductible obligations [[sources/web-2026-03-23-6fd]].
+- Smaller associations (10 units or fewer) may qualify for an expanded Waiver of Project Review, but the majority of associations face the full project-review burden under the new standard [[sources/web-2026-03-23-6fd]].
+- Vendor positioning around the rule has begun: SmartProperty's March 23, 2026 blog post frames the company as the compliance documentation vehicle for boards needing to justify sub-15% funding or demonstrate long-term financial stability under the new standard [[sources/web-2026-03-23-6fd]].
 
 ## Sources
 
-- [[sources/web-2026-03-18-a4e]] — Dawn Bauman, "What Fannie Mae & Freddie Mac's Latest Policy Changes Mean for Condominium Associations, Lenders, and Homeowners," CAI Advocacy (March 18, 2026)
+- [[sources/web-2026-03-23-6fd]] — SmartProperty, "New Fannie Mae & Freddie Mac Rules Are Coming. Is Your Community Ready?" (Mar 23, 2026)
 
 ## Related
 
-- [[entities/fannie-mae]]
-- [[entities/freddie-mac]]
-- [[entities/fannie-mae-lender-letter-ll-2026-03]]
-- [[entities/community-associations-institute]]
-- [[concepts/statutory-reserve-funding-requirements]]
-- [[concepts/statutory-reserve-study-requirements]]
+- [[entities/smartproperty-atlas]]
+- [[concepts/condominium-reserve-fund-funding-mechanisms]]

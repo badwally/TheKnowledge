@@ -6,42 +6,39 @@ canonical_name: SmartProperty
 entity_kind: organization
 domains:
 - condo-software
+- condo-capital-infra
 created_at: '2026-05-24T04:39:40Z'
-last_updated: '2026-05-24T04:39:40Z'
+last_updated: '2026-06-10T03:39:45Z'
 ---
 
 # SmartProperty
 
 ## Summary
 
-SmartProperty is an asset and project management software vendor whose product combines inventory management, replacement-cost tracking, monthly financial health reporting, and reserve study data delivery into a single platform for community association management [[sources/web-2024-09-13-69c]]. The product is integrated with AppFolio Property Manager as a named partner within the AppFolio Stack™ third-party integration framework, surfacing reserve-study data alongside AppFolio's accounting actuals to give boards real-time insight into capital decisions [[sources/web-2024-09-13-69c]].
+SmartProperty is an asset and project management software vendor whose flagship product, "The Living Reserve Study®," combines reserve-component inventory management, capital planning, and financial scenario analysis into a continuously updated reserve study deliverable [[sources/web-2026-04-02-20c]]. Damian J. Esparza is the company's Founder [[sources/web-2025-04-07-817]]. SmartProperty's go-to-market reaches the community association management (CAM) market through deterministic platform integrations with CINC Systems, Vantaca, and AppFolio, and as of April 2025 has extended into the Large Scale Clubs segment through a strategic partnership with Strategic Club Solutions embedding the Living Reserve Study® inside the SCS Navigator platform [[sources/web-2025-04-07-817]].
 
 ## Key facts
 
-### Product positioning
-
-- Markets a combined asset management and project management software platform delivering inventory management, replacement costs, and monthly financial health reporting [[sources/web-2024-09-13-69c]].
-- Marketed under the value proposition that community managers can add asset management services to their offerings as a new revenue stream and customer-retention lever, without hiring additional staff [[sources/web-2024-09-13-69c]].
-- Positions the platform's outputs — inventory, replacement costs, and monthly financial health reporting — as supporting board decisions on preventative maintenance, capital projects, and assessment levels [[sources/web-2024-09-13-69c]].
-- Frames marketed outcomes for management-company customers under four named pillars: boost financial transparency, attract and retain more customers, add additional revenue streams, and capitalize on real-time insights [[sources/web-2024-09-13-69c]].
-
-### AppFolio integration
-
-- Integrated with AppFolio Property Manager as a named partner in the AppFolio Stack™ integration framework [[sources/web-2024-09-13-69c]].
-- Integration surfaces reserve-study data inside AppFolio for use by board members [[sources/web-2024-09-13-69c]].
-- Integrates AppFolio's accounting actuals with the SmartProperty capital reserve plan, framed as enabling data-driven decisions and reducing manual reconciliation work [[sources/web-2024-09-13-69c]].
-- Marketed as supporting real-time tracking of inflation, labor increases, or regulatory changes against the capital plan [[sources/web-2024-09-13-69c]].
-- Supports budget creation, charting anticipated expenditures, and planning capital projects within the AppFolio environment [[sources/web-2024-09-13-69c]].
-- Marketed as helping management companies capture portfolio insights by comparing projects between communities, provide quick estimates, and reveal pending capital projects to capture project fees and bulk-bidding opportunities [[sources/web-2024-09-13-69c]].
-- Positioned as helping board members justify fee increases to community membership and reduce liability through objective, data-driven decisions [[sources/web-2024-09-13-69c]].
+- SmartProperty's flagship product is The Living Reserve Study®, a continuously updated reserve study product positioning itself against traditional point-in-time deterministic reserve studies [[sources/web-2026-04-02-20c]].
+- SmartProperty integrates with CINC Systems, Vantaca, and AppFolio — the three CAM platforms that as of 2026 carry a SmartProperty integration; integration scope is accounting-actuals-only with no probabilistic output exposed to the CAM-side workflow [[sources/web-2026-04-02-20c]].
+- Damian J. Esparza is the Founder of SmartProperty, identified by name in the April 7, 2025 Strategic Club Solutions partnership announcement [[sources/web-2025-04-07-817]].
+- SmartProperty announced a strategic partnership with Strategic Club Solutions on April 7, 2025 to bring The Living Reserve Study® to Large Scale Clubs via the SCS Navigator platform [[sources/web-2025-04-07-817]].
+- The SCS partnership is SmartProperty's first publicly disclosed channel expansion outside the condominium/HOA market into the club-management adjacent segment [[sources/web-2025-04-07-817]].
+- SmartProperty positions the Navigator integration as combining its reserve study insights with SCS's strategic planning expertise to deliver a data-driven approach to club asset management and operational strategy [[sources/web-2025-04-07-817]].
 
 ## Sources
 
-- [[sources/web-2024-09-13-69c]] — AppFolio, "SmartProperty Asset & Project Management Software Integrated with AppFolio" (appfolio.com/partners/smartproperty, September 13, 2024)
+- [[sources/web-2026-04-02-20c]] — Vantaca SmartProperty integration baseline and CAM-platform integration ceiling
+- [[sources/web-2025-04-07-817]] — SmartProperty & Strategic Club Solutions Announce Strategic Partnership (April 7, 2025)
 
 ## Related
 
-- [[entities/appfolio]]
-- [[concepts/appfolio-stack]]
-- [[entities/yardi]]
-- [[entities/mri-software]]
+- [[concepts/living-reserve-study]]
+- [[entities/damian-esparza]]
+- [[entities/strategic-club-solutions]]
+- [[entities/ryan-doerr]]
+- [[concepts/navigator-platform]]
+- [[entities/smartproperty-atlas]]
+- [[entities/chris-millner]]
+- [[entities/ryan-davis]]
+- [[entities/ben-currin]]

@@ -7,39 +7,41 @@ canonical_name: Quebec Bill 16 Implementing Regulation (Gazette officielle, July
 entity_kind: statute
 domains:
 - condo-software
+- condo-capital-infra
 created_at: '2026-05-23T21:08:29Z'
-last_updated: '2026-05-23T21:08:29Z'
+last_updated: '2026-06-10T04:33:34Z'
 ---
 
 # Quebec Bill 16 Implementing Regulation (Gazette officielle, July 30, 2025)
 
 ## Summary
 
-The Quebec Bill 16 Implementing Regulation is the regulation published in the *Gazette officielle du Québec* on July 30, 2025 that operationalizes Bill 16 and Bill 31 for divided co-ownership (copropriété divise) buildings, with a force-of-law date of August 14, 2025 [[sources/web-2025-07-30-00d]]. The regulation establishes mandatory standardized maintenance logbooks, a five-year (or ten-year in defined cases) contingency fund study cycle, a buyer-certificate disclosure regime, and trustee-deposit rules for deposits collected from buyers in new real estate projects [[sources/web-2025-07-30-00d]]. A transitional rule permits maintenance logbooks and contingency fund studies produced within the prior two years to be recognized as valid for five years, provided they meet the regulatory requirements [[sources/web-2025-07-30-00d]].
+The Quebec Bill 16 Implementing Regulation, formally Decree 991-2025, is the regulation published in the *Gazette officielle du Québec* on July 30, 2025 that operationalizes the substantive requirements of Quebec Bill 16 for divided co-ownerships [[sources/web-2025-07-30-00d]] [[sources/web-2025-08-06-94b]]. Article 15 of the decree provides that the regulation "comes into force on the fifteenth day following its publication in the Gazette officielle du Québec," producing an effective date of August 14, 2025 [[sources/web-2025-08-06-94b]].
 
 ## Key facts
 
-- Published in the *Gazette officielle du Québec* on July 30, 2025 [[sources/web-2025-07-30-00d]].
-- Came into force on August 14, 2025 [[sources/web-2025-07-30-00d]].
-- Implements Bill 16 as enhanced by Bill 31, with the framework incorporated into the Civil Code of Québec [[sources/web-2025-07-30-00d]].
-- Establishes a mandatory standardized maintenance logbook regime for all divided co-ownership buildings [[sources/web-2025-07-30-00d]].
-- Establishes a mandatory contingency fund study cycle (five years standard; ten years for buildings with a maximum of 8 private units or 3 above-ground storeys, and for qualifying horizontal co-ownerships) [[sources/web-2025-07-30-00d]].
-- Establishes a buyer-certificate disclosure regime for unit sales, provided upon request of the selling co-owner [[sources/web-2025-07-30-00d]].
-- Establishes trustee-deposit rules for new real estate projects, requiring deposits to be paid to a notary, lawyer, CPA, or certified administrator [[sources/web-2025-07-30-00d]].
-- Promoters of new real estate projects are no longer permitted to cash buyer deposits directly [[sources/web-2025-07-30-00d]].
-- Transitional rule: documents (maintenance logbooks or contingency fund studies) produced within the prior two years may be recognized as valid for five years if they meet the regulatory requirements (including preparation by an independent qualified professional) [[sources/web-2025-07-30-00d]].
-- Stated regulatory intent: promote more proactive, transparent, and professional management of divided co-ownerships, addressing long-standing stakeholder concerns [[sources/web-2025-07-30-00d]].
+- Decree number: 991-2025 [[sources/web-2025-08-06-94b]].
+- Published in the *Gazette officielle du Québec* on July 30, 2025; effective August 14, 2025 [[sources/web-2025-08-06-94b]].
+- Article 4 provides that "the maintenance log must be updated by the board of directors at least once a year" [[sources/web-2025-08-06-94b]].
+- Article 8 provides that "a contingency fund study must be obtained by the board of directors at least every five years" [[sources/web-2025-08-06-94b]].
+- Article 15 sets the 15-day delay between publication and entry into force [[sources/web-2025-08-06-94b]].
+- Maintenance logbook must be prepared by an accredited professional (engineer, architect, or other licensed expert), updated annually, fully reviewed every 5 or 10 years depending on building characteristics, and include a 25-year forecast of major repairs [[sources/web-2025-08-06-94b]].
+- Reserve (contingency) fund study must reflect the actual condition of the building, planned repairs with timing and estimated costs, and the current and required balance of the fund [[sources/web-2025-08-06-94b]].
+- Syndicate certificate is mandatory for every unit sale from August 14, 2025 onward and must include the actual balance of the contingency and self-insurance funds, planned or completed repair work, and any current disputes or insurance claims [[sources/web-2025-08-06-94b]].
+- Buyer-deposit funds must be held in a trust account by a licensed professional (notary, lawyer, CPA, or certified administrator) and are not accessible to developers or promoters before delivery [[sources/web-2025-08-06-94b]].
+- Three-year compliance window for the logbook and reserve fund study requirements: deadline August 14, 2028 [[sources/web-2025-08-06-94b]].
 
 ## Sources
 
-- [[sources/web-2025-07-30-00d]] — RGCQ, "Adoption of the regulation implementing Bill 16" (July 30, 2025)
+- [[sources/web-2025-07-30-00d]]
+- [[sources/web-2025-08-06-94b]]
 
 ## Related
 
 - [[entities/quebec-bill-16]]
 - [[entities/civil-code-of-quebec]]
-- [[entities/rgcq]]
 - [[concepts/quebec-mandatory-maintenance-logbook]]
 - [[concepts/quebec-contingency-fund-study]]
 - [[concepts/quebec-buyer-certificate]]
 - [[concepts/quebec-trust-deposit-rules]]
+- [[entities/genispec]]

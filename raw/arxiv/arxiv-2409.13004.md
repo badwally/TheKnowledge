@@ -16,7 +16,11 @@ content_hash: sha256:12325cbebda2c69758514e64003c93e353cb5846871845a4074b74c0880
 domains:
 - data-collectives
 nlm_corpus_ids: []
-wiki_pages: []
+wiki_pages:
+- wiki/entities/data-poisoning-leakage-fl-chapter.md
+- wiki/concepts/training-data-poisoning.md
+- wiki/concepts/model-trojan-attack.md
+- wiki/concepts/dynamic-model-perturbation.md
 meta:
   arxiv_id: '2409.13004'
   categories:
@@ -39,6 +43,10 @@ filter:
     a mechanism enabling competitive stakeholders to pool proprietary data. Clearly
     off-topic for the domain.'
   decided_at: '2026-06-10T22:24:43Z'
-  user_correction: null
+  user_correction:
+    decided_at: '2026-06-11T02:19:15Z'
+    score: 1.0
+    rationale: Differential privacy in federated learning (NIST co-author) — DP-SGD
+      mechanism for privacy-preserving shared models (criterion 2).
 ---
 Data poisoning and leakage risks impede the massive deployment of federated learning in the real world. This chapter reveals the truths and pitfalls of understanding two dominating threats: {\em training data privacy intrusion} and {\em training data poisoning}. We first investigate training data privacy threat and present our observations on when and how training data may be leaked during the course of federated training. One promising defense strategy is to perturb the raw gradient update by adding some controlled randomized noise prior to sharing during each round of federated learning. We discuss the importance of determining the proper amount of randomized noise and the proper location to add such noise for effective mitigation of gradient leakage threats against training data privacy. Then we will review and compare different training data poisoning threats and analyze why and when such data poisoning induced model Trojan attacks may lead to detrimental damage on the performance of the global model. We will categorize and compare representative poisoning attacks and the effectiveness of their mitigation techniques, delivering an in-depth understanding of the negative impact of data poisoning. Finally, we demonstrate the potential of dynamic model perturbation in simultaneously ensuring privacy protection, poisoning resilience, and model performance. The chapter concludes with a discussion on additional risk factors in federated learning, including the negative impact of skewness, data and algorithmic biases, as well as misinformation in training data. Powered by empirical evidence, our analytical study offers some transformative insights into effective privacy protection and security assurance strategies in attack-resilient federated learning.

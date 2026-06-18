@@ -1,0 +1,78 @@
+version: 1
+session_id: 2026-06-17-what-are-the-current-architecture-and
+domain: agentic-data-layer
+prompt: What are the current architecture and engineering patterns for AI agents that
+  query, construct, and validate knowledge graphs and semantic data layers at runtime?
+  Cover GraphRAG and knowledge-graph retrieval, text-to-query (SPARQL/Cypher), MCP
+  and tool design over graph and triple-store backends, SHACL-constrained generation
+  and validation, and evaluation of agent-over-graph systems.
+generated_at: '2026-06-17T20:38:40Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - knowledge graph retrieval augmented generation subgraph grounding LLM
+  - text-to-SPARQL natural language query generation benchmark evaluation
+  - GraphRAG community summarization knowledge graph traversal LLM
+  - text-to-Cypher property graph natural language query language model
+  - SHACL-constrained LLM generation RDF triple validation verification
+  - MCP tool design function calling graph database agent affordance
+  - ontology-grounded retrieval augmented generation faithfulness hallucination
+  - agent knowledge graph query construction runtime evaluation benchmark
+  youtube:
+  - Microsoft GraphRAG architecture deep dive 2024
+  - Neo4j LLM graph integration NODES 2024
+  - text-to-Cypher natural language property graph queries
+  - GraphRAG vs vector RAG comparison faithfulness
+  - MCP server graph database tools agent
+  - Stanford knowledge graph LLM course lecture
+  - SPARQL LLM agent semantic web query generation
+  - Connected Data London 2024 LLM knowledge graph
+  - LlamaIndex property graph index agent tutorial
+  - LangChain GraphCypherQAChain pattern tutorial
+  - KGC 2024 knowledge graph conference LLM
+  - SHACL RDF validation LLM output verification
+  - Wikidata SPARQL LLM agent query generation
+  - NeurIPS 2024 knowledge graph retrieval augmented generation
+  - Stardog enterprise knowledge graph LLM agent
+  - dbt semantic layer LLM query generation
+  - knowledge graph RAG hallucination grounding evaluation
+  - ontology population structured generation verification lecture
+  - graph database agent runtime tool design seminar
+  - FalkorDB GraphRAG agent query architecture
+  web:
+  - Microsoft GraphRAG implementation architecture 2025
+  - Neo4j LLM knowledge graph RAG guide 2025
+  - LlamaIndex PropertyGraphIndex agent query tutorial
+  - LangChain GraphCypherQAChain text-to-Cypher pattern
+  - MCP server knowledge graph SPARQL tools design
+  - text-to-SPARQL evaluation LC-QuAD KGQA benchmark
+  - SHACL validation LLM generated RDF triples pipeline
+  - dbt semantic layer AI agent integration 2025
+  - Stardog SPARQL enterprise LLM agent deployment
+  - GraphRAG vs vector RAG faithfulness evaluation 2025
+  - ontology-grounded agent tool affordance design pattern
+  - knowledge graph RAG read-path caching architecture
+  - FalkorDB GraphRAG agent runtime query blog
+  - Cypher GQL LLM agent property graph 2025
+  - semantic layer metrics layer LLM query generation agent
+  pubmed: []
+  semantic_scholar:
+  - knowledge graph retrieval augmented generation faithfulness evaluation
+  - text-to-SPARQL neural semantic parsing KGQA benchmark
+  - GraphRAG community detection subgraph retrieval language model
+  - text-to-Cypher natural language property graph query generation accuracy
+  - SHACL-constrained triple generation agent verification pipeline
+  - MCP function calling tool design graph database affordance
+  - agent knowledge graph query runtime grounding evaluation
+  - ontology-grounded retrieval structured generation hallucination reduction
+  - graph RAG versus dense vector retrieval ablation study
+  - semantic layer metrics layer LLM natural language query generation
+edited: false
+status: executed
+executed_at: '2026-06-17T21:33:19Z'

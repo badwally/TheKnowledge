@@ -1,0 +1,84 @@
+version: 1
+session_id: 2026-06-01-do-predictive-or-generative-training-objectives
+domain: convergent-ai-brain
+prompt: Do predictive or generative training objectives produce representations that
+  align with biological neural data better than discriminative objectives at matched
+  task performance? Compare self-supervised versus supervised models, next-token and
+  masked prediction versus classification, contrastive learning, and what the evidence
+  says about the training objective versus architecture or scale as the primary driver
+  of brain-ANN representational alignment.
+generated_at: '2026-06-01T19:46:11Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 20
+  web: 15
+  pubmed: 5
+  semantic_scholar: 10
+queries:
+  arxiv:
+  - self-supervised learning neural predictivity fMRI encoding models
+  - predictive versus discriminative objectives representational alignment brain
+  - next-token prediction language models brain encoding variance explained
+  - masked image modeling visual cortex representational similarity
+  - contrastive learning ventral stream alignment brain score
+  - training objective architecture scale neural predictivity disentangling
+  - generative models brain alignment biological neural data
+  - self-supervised audio models auditory cortex neural encoding
+  youtube:
+  - self-supervised learning brain alignment NeurIPS
+  - brain score ANN benchmark talk DiCarlo
+  - predictive coding deep learning neuroscience lecture
+  - GPT language models fMRI brain encoding
+  - contrastive learning neural representations cortex
+  - Platonic representation hypothesis talk
+  - vision transformer visual cortex alignment ICLR
+  - DINO ViT brain alignment
+  - next token prediction language brain encoding
+  - masked autoencoder neural predictivity benchmark
+  - Schrimpf brain score language models
+  - Huth natural speech brain encoding
+  - Yamins DiCarlo ventral stream model
+  - Josh McDermott auditory cortex deep learning
+  - wav2vec HuBERT auditory cortex alignment
+  - self-supervised versus supervised neural representations
+  - training objective representational geometry neuroscience
+  - CKA representational similarity analysis tutorial
+  - foundation models neuroscience alignment talk
+  - generative predictive processing brain deep network
+  web:
+  - brain-score self-supervised versus supervised models benchmark
+  - neural predictivity training objective versus architecture comparison
+  - DINO ViT visual cortex alignment brain score results
+  - GPT brain encoding self-supervised language model
+  - CLIP brain encoding visual cortex fMRI study
+  - masked autoencoder MAE neural predictivity benchmark
+  - contrastive learning representational alignment neuroscience review
+  - wav2vec HuBERT auditory cortex encoding model
+  - next-token prediction brain language areas encoding evidence
+  - Platonic representation hypothesis training objectives evidence
+  - supervised unsupervised neural network brain alignment comparison
+  - training objective scale architecture neural predictivity drivers review
+  - self-supervised learning fMRI encoding model benchmark 2024
+  - predictive processing free energy deep learning brain alignment
+  - CKA RSA brain ANN representational similarity methods review
+  pubmed:
+  - self-supervised neural network visual cortex representational similarity fMRI
+  - deep neural network brain score ventral stream neural predictivity
+  - language model brain encoding electrocorticography fMRI comparison
+  - predictive coding deep learning biological neural data alignment
+  - contrastive learning auditory visual cortex neural encoding models
+  semantic_scholar:
+  - training objective brain alignment self-supervised discriminative supervised comparison
+  - neural predictivity self-supervised contrastive discriminative disentangling
+  - next-token prediction brain encoding language cortex variance explained
+  - masked image modeling visual cortex representational alignment
+  - brain score training objective architecture scale factor analysis
+  - contrastive learning representations neural data biological alignment
+  - Platonic representation hypothesis training objectives convergence evidence
+  - wav2vec HuBERT auditory cortex neural encoding brain score
+  - CLIP vision language model brain alignment fMRI encoding
+  - generative predictive objectives representational similarity biological neural
+    networks
+edited: false
+status: planned
