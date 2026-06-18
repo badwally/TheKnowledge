@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (WS-1 + WS-2 + grouped-citation fix ALL MERGED to main)
+Last updated: 2026-06-18 (WS-1 + WS-2 + grouped-citation fix + abbrev-fix/8-drafts-finalized ALL MERGED)
 
 ---
 
@@ -34,13 +34,24 @@ validator change, hard rule #3 stays strict). The two existing query drafts were
 active and finalized; residual NLM section-intro definitional lines were cited to in-section sources (per-page,
 no policy change — user call).
 
-**Distinct formats finding (carry-forward):** `wiki query` pages use `[N]` + `## Sources cited` (no `[^N]:`
-map); `wiki research` pages (the 12 S3/S4 drafts) use `[N]` + `[^N]:` defs. The grouped-citation fix unblocks
-**query** pages. The S3/S4 **research** drafts remain blocked on a SEPARATE citations.py concern (structural
-`**Label:**` matching + aggregate-opener ungating) — see SEMANTIC-MODELS block below; NOT addressed this
-session (user scoped to renderer + regen).
+**Abbrev-fix + research-draft finalize (#25 `d8863948`):** investigated the S3/S4 research drafts directly
+(NOT trusting the prior note). There were **25** semantic-models 2026-06-17 drafts (not "12"), 209 uncited
+claims. The prior "one citations.py fix unblocks all" framing was WRONG: 0 pages were fixable by
+structural-label/aggregate-opener exemption alone. Real breakdown — (1) claim-detector FALSE POSITIVES: the
+sentence splitter broke on abbreviation periods (`vs.`, `e.g.`, `i.e.`), flagging "X vs. Y" comparison items
+as claims → fixed with `citations._split_sentences()` (abbreviation-masked split, 2 TDD tests, 1960 suite
+green); (2) genuine **under-attribution**: NLM's `### Specifics` sections generate substantive claims
+(`**Name and Key Claim**`, `**Core Approach**`) from sparse corpora with ZERO inline citations.
+**8 finalized** (4 already 0-uncited + 4 after trimming non-citable `## Gaps in Coverage` meta-openers).
+**17 left as drafts** — genuinely under-attributed; finalizing would fabricate provenance (hard rule #3 +
+`test_query_does_not_backstop_uncited_lines`). The gate is working correctly.
 
-**Deferred (need explicit go):** (a) S3/S4 research-draft finalize (the citations.py changes above);
+**Distinct-formats note (resolved):** `wiki query` pages use `[N]` + `## Sources cited` (fixed by #23);
+`wiki research` pages use `[N]` + `[^N]:` defs (those resolve fine — the blocker was the abbrev false-positive
++ under-attribution, NOT structural-label matching as the old note guessed).
+
+**Deferred (need explicit go):** (a) the **17 under-attributed** research drafts — only finalizable by
+re-running `wiki research`/`wiki query` over richer corpora or hand-citing genuine claims (NOT a code fix);
 (b) fresh-discovery expansion of ai-temporal-video beyond the 86 (gated behind any live YouTube-adapter
 session); (c) 46 ai-temporal-video concept stubs have empty `title` frontmatter (migration artifact);
 (d) risksystems/ai-native-business re-synthesis (+2 each, marginal — skipped).
@@ -141,6 +152,7 @@ Code/infra commit (youtube.py + test + .gitignore) is clean+separable — land i
 
 **Open / next (user-trigger):**
 - **Acceptance gate — PASSED 2026-06-17 (session `2026-06-17-what-are-the-current-architecture-and`).** YouTube-heavy re-run with S2 idle: 230 candidates → 77 accepted (33%, vs prior ~11%); planner emitted institution/conference-anchored YouTube queries (Stanford/NeurIPS/KGC/Connected Data London); **31 YouTube sources materialized (vs 0 accepted across prior plans)**, 3 cited in synthesis with full transcripts (1.3k–19k words) — conference keynotes (Eifrem GraphRAG, KGC 2024, NeurIPS'24). semantic_scholar recovered (48 candidates, no 429). corpus_quality median 2512w, distinct_sources 20. The fix works end-to-end.
+  - **RESOLVED 2026-06-18 — confirmation re-run SKIPPED (user call).** The contp (`docs/260617_contp-acceptance-gate-rerun.md`) gated a confirmation re-run on both gates idle; on 2026-06-18 they were. Evaluated and skipped — a third run adds nothing. The fix is confirmed **twice across two domains**: (1) this acceptance gate (33% accept, 31 YT materialized, 3 cited w/ full transcripts); (2) independent re-validation on semantic-models S3+S4 (~17+~12 authoritative conference/keynote videos accepted vs 0 pre-fix — KGC keynotes, Connected Data London, Calvanese OBDA, AtScale/Cube.dev). Fix `a4b11ac2` + all four follow-ups merged to `main`; clean tree, 0/0. Contp obsolete — no further runs.
 - **RESOLVED 2026-06-17 (PR #17 merged to main `7cd021b4`; fix `d005d17d`).** The promote-to-persistent path dropped sources lacking a `url` in the NLM-side session record into `source_add_text(content="", title=...)` → "Please specify a source" (31 YouTube sources failed persistent-promote, 33/72 promoted). Root cause: NLM's `source list --json` omits `url` for some source types (YouTube especially), so the URL was lost on the round-trip even though raw/ carries it. Fix: `session.promote()` now indexes raw/ by title once (`source_map._index_raw_pages`) and, for any URL-less session source, recovers the canonical URL from the matching raw page → `source_add_url`, or the real body content as a second resort → `source_add_text` with content, falling back to title-only text add for NLM-native sources with no raw page. Recovered URLs still dedup against the persistent corpus. 3 new tests + full gateway suite 1950 passed.
 - Deferred follow-ups — **both RESOLVED 2026-06-17:** (1) `wiki bootstrap-domain` now auto-emits `channel_authority` signals for video-heavy domains (`feat/bootstrap-channel-authority`, merged `dc61eb6b`; doc `170f44d8`); (2) YouTube converter transcript capture verified for local `wiki retrieve` parity (`verify/youtube-transcript-capture`, merged `c0177d86`; doc `cec017e7`).
 - **Memory — WRITTEN (OK'd 2026-06-17):** (1) `feedback_s2_shared_key_concurrency`; (2) `feedback_filter_source_type_awareness` (links `feedback_general_purpose_inherits_surface_anchors`). Both already present + indexed in MEMORY.md.
