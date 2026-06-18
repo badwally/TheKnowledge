@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-17 (semantic-models research loop streams 3+4 + YouTube transcript-cache seam — SHIPPED to origin/main via PR #20; git tree cleaned)
+Last updated: 2026-06-18 (git cleanup RESOLVED — working tree clean on canonical main; snapshot preserved on `wip/condo-orita-restore`)
 
 ---
 
@@ -362,7 +362,9 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-**Current (2026-06-17, post review #3): local git reconcile — BLOCKED, explicit-trigger only.** All 3 promote follow-ups merged to `origin/main` (@ `61c97407`): #17 fix (`7cd021b4`), #18 test isolation (`aec29611`), #19 resolver refactor (`4bcf938f`). Local is mid-reconcile: still on branch `refactor/promote-public-title-resolver` (merged + remote-deleted; local branch lingers), and local `main` is behind origin — **both blocked by the parallel session's untracked file `docs/260617_contp-acceptance-gate-rerun.md`** (already committed on origin via `semantic-models` loop commits `c2278e3f`/`1b431086`). User chose to LEAVE it (option 1). NEXT (when the loop pauses): remove/confirm the local untracked copy, `git checkout main`, fast-forward, delete the local branch. **Do NOT `git stash -u` / force-checkout / any autonomous git op — the `semantic-models` loop is live in another window.** Review #3: `docs/260617_session-review-3.md` (meta-finding: loaded-constraint-not-applied gap; optional code cleanup: extract `_walk_raw_pages()` to dedupe the two source_map walk loops).
+**RESOLVED 2026-06-18: git cleanup DONE.** Working tree is clean on canonical `main` (= `origin/main` @ `97eef751`, 0/0 ahead/behind). Chose the tidy path ("just clean tree on main"). Preservation net intact, nothing deleted: `wip/condo-orita-restore` @ `7ba01392` holds the full 228-file / ~474k-line snapshot (condo / orita / semantic-models + agentic-data-layer tails — restore any file via `git checkout wip/condo-orita-restore -- <path>`); `keep/local-main-20260617` @ `6f6c9a33` is the old divergent local main. The redundant branches (`refactor/promote-public-title-resolver`, `semantic-models-loop`) were already deleted before this session; the only remaining step was `git switch main` off the snapshot branch. No git work pending.
+
+_(Superseded reconcile note, kept for trail:)_ the 3 promote follow-ups merged to `origin/main`: #17 fix (`7cd021b4`), #18 test isolation (`aec29611`), #19 resolver refactor (`4bcf938f`). Review #3: `docs/260617_session-review-3.md` (meta-finding: loaded-constraint-not-applied gap; optional code cleanup: extract `_walk_raw_pages()` to dedupe the two source_map walk loops).
 
 **Test-isolation follow-up — RESOLVED 2026-06-17 (PR #18, branch `test/isolate-promote-fixtures`, commit `c61bf3bb`, merged `aec29611`).** The promote URL-drop fix (PR #17, `7cd021b4`) added a `_source_map._index_raw_pages()` call to `session.promote()` that globs the live `raw/` tree; the 5 pre-existing promote tests lacked `kb_root`, so module tests regressed 0.02s → 7.96s with a real-filesystem dependency. Fix: added `kb_root` to all 5 tests (empty tmp tree) — **14 passed in 0.06s**, no assertion changes. Full analysis: `docs/260617_session-review-2.md`. **Public-resolver cleanup — RESOLVED 2026-06-17 (PR #19, commit `4bcf938f`, merged to main).** Added public `source_map.resolve_raw_sources_by_title(titles) -> {title: (url, full_text)}` (batched — single-title would re-walk raw/ per source, 31× on a YouTube-heavy promote); `promote()` calls it once; `_read_raw` + private-API reach into `_index_raw_pages` removed; `_FILENAME_EXTS` extracted/shared. 5 new resolver tests; full gateway suite 1961 passed. **Do NOT start autonomous work — the user is driving the `semantic-models` research loop in a separate window.**
 
