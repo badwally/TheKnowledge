@@ -152,6 +152,25 @@ _FOOTNOTE_REF_RE = re.compile(r"(?<!\[)\[(\d+(?:\s*[,\-]\s*\d+)*)\](?!:)")
 _MIN_CLAIM_WORDS = 5
 _SENTENCE_END_RE = re.compile(r"(?<=[.!?])\s+")
 
+# Abbreviations whose internal/trailing periods are NOT sentence boundaries.
+# NotebookLM syntheses are dense with "X vs. Y" comparisons and "e.g."/"i.e."
+# parentheticals; splitting on those periods manufactures spurious claim
+# fragments (e.g. "Native RDF vs." flagged as an uncited claim).
+_ABBREV_RE = re.compile(
+    r"\b(?:e\.g|i\.e|vs|etc|cf|al|Inc|Fig|approx|Dr|Mr|Ms|Jr|Sr|No|U\.S)\.",
+    re.IGNORECASE,
+)
+_DOT_SENTINEL = "\x00"
+
+
+def _split_sentences(text: str, maxsplit: int = 0) -> list[str]:
+    """Split `text` into sentences on `.!?`, but protect known abbreviation
+    periods (``vs.``, ``e.g.``, ``i.e.``, …) so they don't create spurious
+    sentence boundaries."""
+    masked = _ABBREV_RE.sub(lambda m: m.group(0).replace(".", _DOT_SENTINEL), text)
+    parts = _SENTENCE_END_RE.split(masked, maxsplit)
+    return [p.replace(_DOT_SENTINEL, ".") for p in parts]
+
 
 @dataclass
 class ClaimSentence:
@@ -312,7 +331,7 @@ def find_claim_sentences(body: str) -> list[ClaimSentence]:
             continue
 
         # Split into sentences and qualify each.
-        for sentence in _SENTENCE_END_RE.split(stripped):
+        for sentence in _split_sentences(stripped):
             sentence = sentence.strip()
             if not sentence:
                 continue
@@ -409,7 +428,7 @@ def aggregate_exempt_lines(body: str, front: dict) -> set[int]:
         if not stripped:
             continue
         # Take the first sentence on this line.
-        first_sentence = _SENTENCE_END_RE.split(stripped, 1)[0].strip()
+        first_sentence = _split_sentences(stripped, 1)[0].strip()
         if first_sentence and is_aggregate_framing_opener(first_sentence):
             exempt.add(idx + 1)
             seen_opener_in_section = True

@@ -102,6 +102,29 @@ def test_footnote_ref_without_definition_still_flagged():
     assert len(uncited) == 1
 
 
+def test_claim_detector_does_not_split_comparison_on_vs():
+    """`X vs. Y` comparison-enumeration items must not be split on the
+    'vs.' abbreviation period into a spurious uncited claim. The item has
+    no terminal sentence punctuation, so it is not a claim at all."""
+    body = (
+        "## Comparisons\n\n"
+        "*   Native RDF Triple Stores vs. Labeled-Property-Graph Databases\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert uncited == [], f"got: {[u.text for u in uncited]}"
+
+
+def test_claim_detector_treats_eg_as_one_sentence():
+    """'e.g.' must not break a sentence: an uncited sentence containing it
+    is ONE claim, not two fragments split on the abbreviation period."""
+    body = (
+        "Developers register prefixes on community services e.g. w3id and "
+        "purl for long-term stability of identifiers.\n"
+    )
+    uncited = cit.uncited_claims(body)
+    assert len(uncited) == 1, f"got {len(uncited)}: {[u.text for u in uncited]}"
+
+
 def test_synthesis_metadata_lines_skipped():
     """`**Origin question:**`, `**Session:**`, `**Branch:**` are page
     metadata, not claims — the validator must not flag them."""

@@ -26,11 +26,9 @@ synthesizes:
 - sources/web-2014-02-25-d55
 - sources/web-2026-03-28-ced
 - sources/web-2026-06-16-443
-last_updated: '2026-06-17T19:03:56Z'
+last_updated: '2026-06-18T21:57:58Z'
 sources_count: 8
-draft: true
-draft_started_at: '2026-06-17T19:03:56Z'
-draft_unresolved_claims: 4
+finalized_at: '2026-06-18T21:57:58Z'
 ---
 # The RDF/RDFS/OWL Semantic Web Stack — investigation
 
@@ -114,8 +112,6 @@ Blank nodes (anonymous resources) present an ongoing architectural tension in th
 
 ## Gaps in Coverage (What the Corpus Does Not Address)
 
-An analysis of the corpus reveals several specific omissions regarding the research question that a careful reader would want answered.
-
 **Themes Used In:** ISO GQL and Labeled Property Graphs (LPGs)
 While the corpus provides a theoretical proposal for formally translating between Property Graphs and RDF to enable cross-paradigm querying, it completely omits the requested ISO GQL standardization effort [8]. A careful reader would be left entirely uninformed about the nature, status, or syntactic features of the ISO GQL standard [8].
 
@@ -126,7 +122,6 @@ Although the texts acknowledge that Property Graphs natively attach metadata to 
 The sources define entailment regimes for SPARQL 1.1 that dictate how queries should be evaluated over expressive ontologies [9, 10]. However, since reasoning over expressive Description Logics is highly intractable (e.g., N2EXPTIME-complete), the corpus leaves unanswered how—or if—real-world SPARQL endpoints can practically implement full OWL 2 entailment without timing out or failing on large web-scale datasets [11].
 
 [^1]: [[sources/web-2014-02-01-f0f]] [^2]: [[sources/web-2014-02-01-f0f]] [^3]: [[sources/web-2014-02-01-f0f]] [^4]: [[sources/web-2014-02-01-f0f]] [^5]: [[sources/web-2014-02-01-f0f]] [^6]: [[sources/web-2014-02-01-f0f]] [^7]: [[sources/web-2014-02-01-f0f]] [^8]: [[sources/web-2014-02-01-f0f]] [^9]: [[sources/web-2014-02-01-f0f]] [^10]: [[sources/web-2014-02-01-f0f]] [^11]: [[sources/web-2014-02-01-f0f]]
-
 ## Sources cited
 
 - [[sources/web-2014-02-01-f0f]]

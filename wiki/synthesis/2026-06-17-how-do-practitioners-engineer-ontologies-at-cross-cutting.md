@@ -22,11 +22,9 @@ synthesizes:
 - synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-ontology-alignment-and-ma
 - synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-ontology-design-patterns-
 - synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-upper-and-foundational-on
-last_updated: '2026-06-17T20:07:22Z'
+last_updated: '2026-06-18T21:55:59Z'
 sources_count: 17
-draft: true
-draft_started_at: '2026-06-17T20:07:22Z'
-draft_unresolved_claims: 7
+finalized_at: '2026-06-18T21:55:59Z'
 ---
 # Cross-cutting themes — 2026-06-17-how-do-practitioners-engineer-ontologies-at
 

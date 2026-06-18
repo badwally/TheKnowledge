@@ -19,11 +19,9 @@ created_at: '2026-06-18T00:31:33Z'
 synthesizes:
 - sources/web-2000-01-15-24d
 - sources/web-2026-06-18-836
-last_updated: '2026-06-18T00:31:33Z'
+last_updated: '2026-06-18T21:55:59Z'
 sources_count: 12
-draft: true
-draft_started_at: '2026-06-18T00:31:33Z'
-draft_unresolved_claims: 3
+finalized_at: '2026-06-18T21:55:59Z'
 ---
 # The Semantic Layer and Metrics-Layer Pattern — investigation
 
