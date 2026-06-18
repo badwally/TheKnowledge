@@ -1,7 +1,7 @@
 # Knowledge Index
 
-Last rebuilt: 2026-06-18T21:37:47Z
-Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 457
+Last rebuilt: 2026-06-18T22:17:38Z
+Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 440
 
 ## Domains
 
@@ -169,7 +169,7 @@ Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 457
 ### semantic-models
 [[mocs/semantic-models]] · 0 sources
 
-- Synthesis: [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-cross-cutting]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-lifecycle-versioning-and-]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-methodologies-and-require]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-modularization-and-archit]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-ontology-alignment-and-ma]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-ontology-design-patterns-]] · [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-upper-and-foundational-on]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-cross-cutting]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-data-fabric-and-data-mesh-semanti]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-ontology-based-data-access-obda]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-semantic-integration-and-mapping-]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-the-semantic-layer-and-metrics-la]] · … (13 more)
+- Synthesis: [[synthesis/2026-06-17-how-do-practitioners-engineer-ontologies-at-cross-cutting]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-cross-cutting]] · [[synthesis/2026-06-17-how-is-semantic-modeling-applied-as-the-semantic-layer-and-metrics-la]] · [[synthesis/2026-06-17-what-are-the-architecture-and-engineering-knowledge-graph-constructio]] · [[synthesis/2026-06-17-what-are-the-foundational-formalisms-for-conceptual-and-logical-model]] · [[synthesis/2026-06-17-what-are-the-foundational-formalisms-for-criteria-for-formalism-selec]] · [[synthesis/2026-06-17-what-are-the-foundational-formalisms-for-description-logics-dls-as-fo]] · [[synthesis/2026-06-17-what-are-the-foundational-formalisms-for-the-rdf-rdfs-owl-semantic-we]]
 
 ### systemic-health-and-neuroprotection
 [[mocs/systemic-health-and-neuroprotection]] · 0 sources
@@ -205,5 +205,5 @@ Sources: 1851 | Entities: 1106 | Concepts: 1339 | Synthesis: 457
 
 ## Health
 
-- Orphans: 755 — see `wiki lint --scope orphans`
+- Orphans: 758 — see `wiki lint --scope orphans`
 - Untriaged inbox: 0 — see `raw/inbox/`
