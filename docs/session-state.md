@@ -45,6 +45,22 @@ rough ASR auto-captions — landed in the local
 RAG layer only; the S3/S4 NLM synthesis drafts were NOT regenerated (decision: ASR noise >
 incremental insight; web/arxiv core already grounds them).
 
+**FINALIZE — DEFERRED (user decision 2026-06-17), gateway-fix-gated.** The 12 S3/S4 synthesis
+drafts (committed, `draft: true`) do NOT finalize: `wiki research` NLM-synthesis output is not
+finalize-compatible. Substantive bullets ARE grounded — the validator accepts footnote refs
+(`[N]` inline + `[^N]: [[sources/id]]` map; `citations.py` `_FOOTNOTE_REF_RE`/`_FOOTNOTE_DEF_RE`).
+Blockers: (1) NLM emits structural labels as `*   **Name and Key Claim**: X` (title-case, colon
+OUTSIDE the bold, bullet-prefixed) — `_STRUCTURAL_FRAME_LABEL_RE` expects `**Label:** ` and the
+allowlist has lowercase `"Name and key claim"`, so they miss; (2) aggregate-framing openers
+("Based on the provided sources, several patterns emerge…") ARE in the allowlist but the M45
+exemption is GATED on `synthesizes:` (≥2) + `## Included works`, which `wiki research` pages lack;
+(3) ~15 genuinely uncited cross-cutting/limitations prose sentences (no `[N]` at all). TRIGGER to
+revive: scoped TDD fix in `citations.py` (match NLM's bulleted `**X**:` label form; ungate
+aggregate-opener exemption for synthesizes-less pages) + cite-add the ~15 genuine claims — fixes
+ALL future research syntheses, not just these 12. Batch tools (`finalize-batch`, `draft-close run`)
+only target STALE drafts (>7d); these are today's, so they won't pick them up regardless. Memory
+candidate (not yet written): "wiki research synthesis output is not finalize-compatible".
+
 **OPEN — commit + staging decision (user call, NOT yet done):** working tree is a large mixed
 pile (244 today-mtime untracked raw pages = semantic-models loop + agentic-data-layer tail;
 plus the protected condo/orita/clippings/obsidian backlog). No reliable per-domain handle
