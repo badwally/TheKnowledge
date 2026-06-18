@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+from collections.abc import Iterable
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -44,6 +45,10 @@ contract as `NlmCLIClient`).
 """
 
 _FETCH_TIMEOUT_S: float = 30.0
+
+_FILENAME_EXTS: tuple[str, ...] = ("pdf", "md", "m4a", "m4b", "mp3", "wav")
+"""Extensions a NotebookLM source title may echo as (the uploaded filename
+rather than the human-readable frontmatter title)."""
 
 
 class SourceMapError(RuntimeError):
@@ -146,10 +151,74 @@ def _index_raw_pages() -> tuple[dict[str, str], dict[str, str], dict[str, str]]:
             if isinstance(title, str) and title:
                 title_to_path.setdefault(title, rel)
 
-            for ext in ("pdf", "md", "m4a", "m4b", "mp3", "wav"):
+            for ext in _FILENAME_EXTS:
                 filename_to_path.setdefault(f"{slug}.{ext}", rel)
 
     return url_to_path, title_to_path, filename_to_path
+
+
+def resolve_raw_sources_by_title(
+    titles: Iterable[str],
+) -> dict[str, tuple[str | None, str]]:
+    """Resolve raw/ pages for `titles` in a single tree walk.
+
+    For each requested title that matches a raw page — by frontmatter
+    `title`, else by uploaded filename (``<slug>.<ext>``) — returns
+    ``{title: (url, full_text)}``. ``url`` is the frontmatter URL when
+    present and non-empty, else None; ``full_text`` is the entire file
+    (frontmatter + body), matching what the orchestrator's step-10 push
+    sends NotebookLM for URL-less sources. Unmatched titles are absent.
+
+    Exists because NLM's `source list` drops the `url` field for some source
+    types (YouTube especially): a promoted session source can arrive
+    URL-less even though its materialized raw/ page carries the canonical
+    URL. `session.promote` passes the titles of URL-less sources and
+    recovers the URL — or, failing that, the real body — so the source is
+    added properly rather than as an empty text stub NLM rejects with
+    "Please specify a source". Batched (one walk for all titles) so a
+    YouTube-heavy promote doesn't re-walk raw/ per source.
+    """
+    want = set(titles)
+    out: dict[str, tuple[str | None, str]] = {}
+    if not want:
+        return out
+
+    raw_root = paths.raw_dir()
+    if not raw_root.is_dir():
+        return out
+
+    for source_type in paths.SOURCE_TYPES:
+        type_dir = raw_root / source_type
+        if not type_dir.is_dir():
+            continue
+        for md_path in sorted(type_dir.glob("*.md")):
+            try:
+                text = md_path.read_text(encoding="utf-8")
+                front, _ = fm.parse(text)
+            except (fm.FrontmatterError, OSError, UnicodeDecodeError):
+                continue
+
+            keys: list[str] = []
+            title = front.get("title")
+            if isinstance(title, str) and title in want:
+                keys.append(title)
+            slug = md_path.stem
+            for ext in _FILENAME_EXTS:
+                fn = f"{slug}.{ext}"
+                if fn in want:
+                    keys.append(fn)
+            if not keys:
+                continue
+
+            url = front.get("url")
+            if not (isinstance(url, str) and url):
+                url = None
+            for key in keys:
+                out.setdefault(key, (url, text))
+            if len(out) == len(want):
+                return out
+
+    return out
 
 
 # --- public API -------------------------------------------------------------

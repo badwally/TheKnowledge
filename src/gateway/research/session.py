@@ -26,8 +26,6 @@ import re
 from datetime import datetime, timezone
 from typing import TYPE_CHECKING
 
-from gateway import frontmatter as _fm
-from gateway import paths as _paths
 from gateway.research import source_map as _source_map
 
 if TYPE_CHECKING:
@@ -111,11 +109,20 @@ def promote(
 
     # NLM's `source list` drops the `url` field for some source types
     # (YouTube especially), so a session source can arrive URL-less even
-    # though its materialized raw/ page carries the canonical URL. Index
-    # raw/ by title once so we can recover that URL (and, failing that, the
-    # real body content) — otherwise the text fallback below sends an empty
-    # source and NLM rejects it with "Please specify a source".
-    _, title_to_path, filename_to_path = _source_map._index_raw_pages()
+    # though its materialized raw/ page carries the canonical URL. Resolve
+    # those raw pages by title in one tree walk so we can recover the URL
+    # (and, failing that, the real body content) — otherwise the text
+    # fallback below sends an empty source and NLM rejects it with "Please
+    # specify a source".
+    urlless_titles: list[str] = []
+    for src in session_sources:
+        url = src.get("url")
+        if isinstance(url, str) and url:
+            continue
+        title = src.get("title")
+        if isinstance(title, str) and title:
+            urlless_titles.append(title)
+    recovered = _source_map.resolve_raw_sources_by_title(urlless_titles)
 
     added = 0
     failed: list[tuple[str, str]] = []
@@ -131,13 +138,11 @@ def promote(
         # the raw page NLM round-tripped, keyed by title.
         recovered_content: str | None = None
         if url is None and title is not None:
-            rel = title_to_path.get(title) or filename_to_path.get(title)
-            if rel:
-                raw_url, raw_text = _read_raw(rel)
-                if raw_url:
-                    url = raw_url
-                elif raw_text:
-                    recovered_content = raw_text
+            raw_url, raw_text = recovered.get(title, (None, None))
+            if raw_url:
+                url = raw_url
+            elif raw_text:
+                recovered_content = raw_text
 
         if url is not None:
             if url in seen_urls:
@@ -170,29 +175,6 @@ def promote(
 
     nlm_registry.mark_promoted(domain, session_id, sources_added=added)
     return added, failed
-
-
-def _read_raw(rel: str) -> tuple[str | None, str | None]:
-    """Read a `raw/<type>/<slug>` page, returning ``(url, full_text)``.
-
-    ``url`` is the frontmatter URL when present and non-empty, else None.
-    ``full_text`` is the entire file (frontmatter + body) — matching what
-    the orchestrator's step-10 source push sends to NotebookLM for URL-less
-    sources. Returns ``(None, None)`` if the file is missing or unreadable.
-    """
-    target = _paths.knowledge_root() / f"{rel}.md"
-    try:
-        text = target.read_text(encoding="utf-8")
-    except OSError:
-        return None, None
-    try:
-        front, _ = _fm.parse(text)
-    except _fm.FrontmatterError:
-        return None, text
-    url = front.get("url")
-    if not (isinstance(url, str) and url):
-        url = None
-    return url, text
 
 
 # --- abandon ---------------------------------------------------------------
