@@ -61,25 +61,56 @@ def _coerce_citations(raw: dict) -> dict[int, str]:
     return out
 
 
-_CITE_MARKER_RE = re.compile(r"\[(\d+)\]")
+# Citation markers: single `[N]` and grouped `[N, M]` / `[N-M]` / `[1, 4-6, 9]`.
+# NotebookLM frequently groups citations, so the renderer must expand every
+# number in the group. Lookbehind/lookahead avoid matching inside `[[wikilinks]]`
+# or `[^N]:` footnote definitions.
+_CITE_MARKER_RE = re.compile(r"(?<!\[)\[(\d+(?:\s*[,\-]\s*\d+)*)\](?!:)")
+
+
+def _parse_marker_numbers(raw: str) -> list[int]:
+    """Expand a citation-marker body like ``1, 4-6, 9`` to ``[1, 4, 5, 6, 9]``."""
+    numbers: list[int] = []
+    for chunk in raw.split(","):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        if "-" in chunk:
+            lo_s, _, hi_s = chunk.partition("-")
+            try:
+                lo, hi = int(lo_s.strip()), int(hi_s.strip())
+            except ValueError:
+                continue
+            if lo <= hi:
+                numbers.extend(range(lo, hi + 1))
+        else:
+            try:
+                numbers.append(int(chunk))
+            except ValueError:
+                continue
+    return numbers
 
 
 def _inline_citations(answer: str, resolved: dict[int, str]) -> str:
-    """Replace `[N]` markers with the resolved `[[sources/...]]` wikilink.
+    """Append the resolved `[[sources/...]]` wikilink(s) after each `[N]` marker.
 
-    Markers without a matching citation are left untouched so the
-    operator can still see the original NotebookLM-side numbering.
+    Handles grouped markers (`[4-6]`, `[7, 8]`): every number in the group is
+    resolved and its link appended (deduped, in first-seen order). Markers with
+    no resolvable number are left untouched so the operator can still see the
+    original NotebookLM-side numbering.
     """
     if not resolved:
         return answer
 
     def _sub(match: re.Match) -> str:
-        try:
-            num = int(match.group(1))
-        except ValueError:
+        links: list[str] = []
+        for num in _parse_marker_numbers(match.group(1)):
+            link = resolved.get(num)
+            if link and link not in links:
+                links.append(link)
+        if not links:
             return match.group(0)
-        link = resolved.get(num)
-        return f"{match.group(0)} {link}" if link else match.group(0)
+        return f"{match.group(0)} {' '.join(links)}"
 
     return _CITE_MARKER_RE.sub(_sub, answer)
 
