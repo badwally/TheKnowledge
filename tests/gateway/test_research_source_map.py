@@ -306,3 +306,62 @@ def test_client_argument_accepted_but_unused(
     sentinel = object()
     smap = sm.build_source_map("nb-with-client", client=sentinel)  # type: ignore[arg-type]
     assert smap == {"nlm-1": "raw/web/page"}
+
+
+# --- resolve_raw_sources_by_title ------------------------------------------
+
+
+def test_resolve_by_title_recovers_url_and_full_text(kb_root: Path) -> None:
+    _write_raw(
+        kb_root,
+        source_type="youtube",
+        slug="yt-vid",
+        title="Keynote: Graph RAG",
+        url="https://youtu.be/vid",
+    )
+    expected_text = (kb_root / "raw" / "youtube" / "yt-vid.md").read_text()
+
+    out = sm.resolve_raw_sources_by_title(["Keynote: Graph RAG"])
+
+    assert out == {"Keynote: Graph RAG": ("https://youtu.be/vid", expected_text)}
+
+
+def test_resolve_by_title_url_absent_returns_none_with_body(kb_root: Path) -> None:
+    _write_raw(
+        kb_root,
+        source_type="note",
+        slug="note-1",
+        title="My note",
+        url=None,
+    )
+    expected_text = (kb_root / "raw" / "note" / "note-1.md").read_text()
+
+    out = sm.resolve_raw_sources_by_title(["My note"])
+
+    assert out == {"My note": (None, expected_text)}
+
+
+def test_resolve_by_title_matches_uploaded_filename(kb_root: Path) -> None:
+    # NLM may echo the title as the uploaded filename (`<slug>.<ext>`).
+    _write_raw(
+        kb_root,
+        source_type="pdf",
+        slug="paper",
+        title="A human-readable paper title",
+        url=None,
+    )
+
+    out = sm.resolve_raw_sources_by_title(["paper.pdf"])
+
+    assert "paper.pdf" in out
+    assert out["paper.pdf"][0] is None
+
+
+def test_resolve_by_title_empty_input_skips_walk(kb_root: Path) -> None:
+    _write_raw(kb_root, source_type="web", slug="x", title="X", url="https://x/")
+    assert sm.resolve_raw_sources_by_title([]) == {}
+
+
+def test_resolve_by_title_unmatched_title_absent(kb_root: Path) -> None:
+    _write_raw(kb_root, source_type="web", slug="x", title="X", url="https://x/")
+    assert sm.resolve_raw_sources_by_title(["Nonexistent"]) == {}
