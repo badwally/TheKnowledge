@@ -46999,3 +46999,1802 @@ pushed 43 source(s) to session notebook (1 skipped)
 ## [2026-06-17T19:36:51Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=source_map | n=43
 
 built source map (43 entries)
+
+## [2026-06-17T19:47:21Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T19-47-21Z-schema-drift.md
+
+## [2026-06-17T19:47:31Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=index_settle | distinct_sources=23
+
+index settled (23 distinct source(s) visible)
+
+## [2026-06-17T20:07:18Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=analysis | branches=6
+
+analysis complete (6 branch(es))
+
+## [2026-06-17T20:07:22Z] wiki-author | id=research-2026-06-17-how-do-practitioners-engineer-ontologies-at | updates=8 | created=7 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for semantic-models
+
+## [2026-06-17T20:07:22Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=apply_plan | pages=9
+
+applied plan: applied plan for research-2026-06-17-how-do-practitioners-engineer-ontologies-at: 8 update(s)
+
+## [2026-06-17T20:11:34Z] research | session_id=2026-06-17-how-do-practitioners-engineer-ontologies-at | step=promoted | added=40 | failed=4
+
+promoted 40 source(s) into persistent notebook (4 failed)
+
+## [2026-06-17T20:14:34Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-14-34Z-schema-drift.md
+
+## [2026-06-17T20:16:08Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-16-08Z-schema-drift.md
+
+## [2026-06-17T20:19:14Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-19-14Z-schema-drift.md
+
+## [2026-06-17T20:21:57Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-21-57Z-schema-drift.md
+
+## [2026-06-17T20:37:38Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-37-38Z-schema-drift.md
+
+## [2026-06-17T20:38:08Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=start | domain=agentic-data-layer
+
+start research session for prompt 'What are the current architecture and engineering patterns for AI agents that query, construct, and validate knowledge graphs and semantic data layers at runtime? Cover GraphRAG and knowledge-graph retrieval, text-to-query (SPARQL/Cypher), MCP and tool design over graph and triple-store backends, SHACL-constrained generation and validation, and evaluation of agent-over-graph systems.'
+
+## [2026-06-17T20:38:40Z] llm-call | op=plan_query_planner | model=claude-sonnet-4-6 | in_tokens=2 | out_tokens=1745 | cache_read=0 | cache_creation=23374 | duration_ms=31160 | cost_usd=0.166425
+
+## [2026-06-17T20:38:40Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=plan | n=53
+
+query plan written to nlm/query_plans/2026-06-17-what-are-the-current-architecture-and.yaml
+
+## [2026-06-17T20:38:59Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=start | domain=agentic-data-layer
+
+start research session for prompt 'What are the current architecture and engineering patterns for AI agents that query, construct, and validate knowledge graphs and semantic data layers at runtime? Cover GraphRAG and knowledge-graph retrieval, text-to-query (SPARQL/Cypher), MCP and tool design over graph and triple-store backends, SHACL-constrained generation and validation, and evaluation of agent-over-graph systems.'
+
+## [2026-06-17T20:38:59Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T20:39:04Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=search | adapter=arxiv | n=40
+
+adapter arxiv returned 40 candidates
+
+## [2026-06-17T20:39:17Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-17T20:39:28Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=search | adapter=youtube | n=87
+
+adapter youtube returned 87 candidates
+
+## [2026-06-17T20:40:20Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-40-20Z-schema-drift.md
+
+## [2026-06-17T20:40:23Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=search | adapter=semantic_scholar | n=48
+
+adapter semantic_scholar returned 48 candidates
+
+## [2026-06-17T20:40:23Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=merge | n=230
+
+merged 230 candidate(s) across adapters
+
+## [2026-06-17T20:40:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1120 | cache_read=0 | cache_creation=47712 | duration_ms=16397 | cost_usd=0.101032
+
+## [2026-06-17T20:40:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1159 | cache_read=0 | cache_creation=47924 | duration_ms=18357 | cost_usd=0.101651
+
+## [2026-06-17T20:40:44Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T20-40-44Z-schema-drift.md
+
+## [2026-06-17T20:40:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1749 | cache_read=0 | cache_creation=61939 | duration_ms=23041 | cost_usd=0.132631
+
+## [2026-06-17T20:40:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1890 | cache_read=0 | cache_creation=47726 | duration_ms=24330 | cost_usd=0.104910
+
+## [2026-06-17T20:40:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1993 | cache_read=34472 | cache_creation=13159 | duration_ms=25741 | cost_usd=0.039738
+
+## [2026-06-17T20:40:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2430 | cache_read=0 | cache_creation=47957 | duration_ms=28927 | cost_usd=0.108072
+
+## [2026-06-17T20:40:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=870 | cache_read=0 | cache_creation=17075 | duration_ms=11315 | cost_usd=0.038508
+
+## [2026-06-17T20:40:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1705 | cache_read=0 | cache_creation=47783 | duration_ms=33813 | cost_usd=0.104099
+
+## [2026-06-17T20:41:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1444 | cache_read=0 | cache_creation=24741 | duration_ms=18103 | cost_usd=0.056710
+
+## [2026-06-17T20:41:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1975 | cache_read=0 | cache_creation=47841 | duration_ms=36989 | cost_usd=0.105565
+
+## [2026-06-17T20:41:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1120 | cache_read=0 | cache_creation=15354 | duration_ms=12944 | cost_usd=0.036316
+
+## [2026-06-17T20:41:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1400 | cache_read=0 | cache_creation=16960 | duration_ms=17889 | cost_usd=0.040928
+
+## [2026-06-17T20:41:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1358 | cache_read=0 | cache_creation=17007 | duration_ms=23229 | cost_usd=0.040812
+
+## [2026-06-17T20:41:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3177 | cache_read=0 | cache_creation=16989 | duration_ms=34284 | cost_usd=0.049871
+
+## [2026-06-17T20:41:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1959 | cache_read=0 | cache_creation=17041 | duration_ms=35373 | cost_usd=0.043885
+
+## [2026-06-17T20:41:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2178 | cache_read=0 | cache_creation=16964 | duration_ms=41978 | cost_usd=0.044826
+
+## [2026-06-17T20:41:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1950 | cache_read=0 | cache_creation=21866 | duration_ms=37507 | cost_usd=0.053490
+
+## [2026-06-17T20:41:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1370 | cache_read=0 | cache_creation=17016 | duration_ms=26421 | cost_usd=0.040890
+
+## [2026-06-17T20:41:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2972 | cache_read=0 | cache_creation=16989 | duration_ms=52084 | cost_usd=0.048846
+
+## [2026-06-17T20:41:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1157 | cache_read=8862 | cache_creation=14210 | duration_ms=24573 | cost_usd=0.035099
+
+## [2026-06-17T20:41:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1513 | cache_read=8862 | cache_creation=12869 | duration_ms=29767 | cost_usd=0.034197
+
+## [2026-06-17T20:41:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=969 | cache_read=0 | cache_creation=17013 | duration_ms=16751 | cost_usd=0.038879
+
+## [2026-06-17T20:41:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1573 | cache_read=8862 | cache_creation=12963 | duration_ms=21444 | cost_usd=0.034685
+
+## [2026-06-17T20:41:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2029 | cache_read=8862 | cache_creation=12922 | duration_ms=26932 | cost_usd=0.036883
+
+## [2026-06-17T20:41:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1055 | cache_read=8862 | cache_creation=13050 | duration_ms=13969 | cost_usd=0.032269
+
+## [2026-06-17T20:42:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1844 | cache_read=8862 | cache_creation=13021 | duration_ms=20404 | cost_usd=0.036156
+
+## [2026-06-17T20:42:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1823 | cache_read=8862 | cache_creation=12853 | duration_ms=21114 | cost_usd=0.035715
+
+## [2026-06-17T20:42:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1487 | cache_read=0 | cache_creation=16731 | duration_ms=19231 | cost_usd=0.040905
+
+## [2026-06-17T20:42:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1438 | cache_read=8862 | cache_creation=12647 | duration_ms=18851 | cost_usd=0.033378
+
+## [2026-06-17T20:42:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2677 | cache_read=8862 | cache_creation=13097 | duration_ms=49960 | cost_usd=0.040473
+
+## [2026-06-17T20:42:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1813 | cache_read=8862 | cache_creation=12934 | duration_ms=34874 | cost_usd=0.035827
+
+## [2026-06-17T20:42:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2121 | cache_read=8862 | cache_creation=13078 | duration_ms=37980 | cost_usd=0.037655
+
+## [2026-06-17T20:42:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3422 | cache_read=8862 | cache_creation=13376 | duration_ms=43266 | cost_usd=0.044756
+
+## [2026-06-17T20:42:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2509 | cache_read=8862 | cache_creation=12905 | duration_ms=42795 | cost_usd=0.039249
+
+## [2026-06-17T20:42:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1537 | cache_read=0 | cache_creation=16657 | duration_ms=23497 | cost_usd=0.041007
+
+## [2026-06-17T20:42:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1349 | cache_read=0 | cache_creation=16683 | duration_ms=16775 | cost_usd=0.040119
+
+## [2026-06-17T20:42:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1602 | cache_read=8862 | cache_creation=12643 | duration_ms=19864 | cost_usd=0.034190
+
+## [2026-06-17T20:42:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1854 | cache_read=8862 | cache_creation=12669 | duration_ms=23748 | cost_usd=0.035502
+
+## [2026-06-17T20:42:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3164 | cache_read=8862 | cache_creation=12621 | duration_ms=37636 | cost_usd=0.041956
+
+## [2026-06-17T20:42:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2115 | cache_read=8862 | cache_creation=12641 | duration_ms=26268 | cost_usd=0.036751
+
+## [2026-06-17T20:43:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=8862 | cache_creation=12753 | duration_ms=21487 | cost_usd=0.034745
+
+## [2026-06-17T20:43:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2278 | cache_read=0 | cache_creation=16691 | duration_ms=27847 | cost_usd=0.044780
+
+## [2026-06-17T20:43:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1826 | cache_read=0 | cache_creation=16671 | duration_ms=23537 | cost_usd=0.042480
+
+## [2026-06-17T20:43:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1554 | cache_read=8862 | cache_creation=12655 | duration_ms=29414 | cost_usd=0.033974
+
+## [2026-06-17T20:43:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1387 | cache_read=8862 | cache_creation=12633 | duration_ms=18325 | cost_usd=0.033095
+
+## [2026-06-17T20:43:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2866 | cache_read=0 | cache_creation=16719 | duration_ms=35301 | cost_usd=0.047776
+
+## [2026-06-17T20:43:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1524 | cache_read=8862 | cache_creation=12627 | duration_ms=18369 | cost_usd=0.033768
+
+## [2026-06-17T20:43:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1563 | cache_read=8862 | cache_creation=12723 | duration_ms=18562 | cost_usd=0.034155
+
+## [2026-06-17T20:43:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1980 | cache_read=8862 | cache_creation=12654 | duration_ms=35199 | cost_usd=0.036102
+
+## [2026-06-17T20:43:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1734 | cache_read=0 | cache_creation=16747 | duration_ms=20907 | cost_usd=0.042172
+
+## [2026-06-17T20:43:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1839 | cache_read=0 | cache_creation=16703 | duration_ms=23410 | cost_usd=0.042609
+
+## [2026-06-17T20:43:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2331 | cache_read=0 | cache_creation=16697 | duration_ms=43269 | cost_usd=0.045057
+
+## [2026-06-17T20:43:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2634 | cache_read=8862 | cache_creation=12663 | duration_ms=48481 | cost_usd=0.039390
+
+## [2026-06-17T20:43:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1574 | cache_read=8862 | cache_creation=12662 | duration_ms=20590 | cost_usd=0.034088
+
+## [2026-06-17T20:43:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1979 | cache_read=0 | cache_creation=16685 | duration_ms=37035 | cost_usd=0.043273
+
+## [2026-06-17T20:44:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1482 | cache_read=0 | cache_creation=16724 | duration_ms=27026 | cost_usd=0.040866
+
+## [2026-06-17T20:44:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1785 | cache_read=0 | cache_creation=15112 | duration_ms=33527 | cost_usd=0.039157
+
+## [2026-06-17T20:44:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1582 | cache_read=8862 | cache_creation=12668 | duration_ms=20786 | cost_usd=0.034140
+
+## [2026-06-17T20:44:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2272 | cache_read=8862 | cache_creation=12709 | duration_ms=43512 | cost_usd=0.037672
+
+## [2026-06-17T20:44:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=0 | cache_creation=16761 | duration_ms=27323 | cost_usd=0.043815
+
+## [2026-06-17T20:44:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3598 | cache_read=0 | cache_creation=16699 | duration_ms=39620 | cost_usd=0.051396
+
+## [2026-06-17T20:44:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1700 | cache_read=0 | cache_creation=16751 | duration_ms=21526 | cost_usd=0.042010
+
+## [2026-06-17T20:44:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2466 | cache_read=0 | cache_creation=16735 | duration_ms=28118 | cost_usd=0.045808
+
+## [2026-06-17T20:44:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1466 | cache_read=0 | cache_creation=16761 | duration_ms=27142 | cost_usd=0.040860
+
+## [2026-06-17T20:44:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4329 | cache_read=8862 | cache_creation=12643 | duration_ms=43182 | cost_usd=0.047825
+
+## [2026-06-17T20:44:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1637 | cache_read=8862 | cache_creation=12651 | duration_ms=20076 | cost_usd=0.034381
+
+## [2026-06-17T20:44:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2874 | cache_read=0 | cache_creation=16695 | duration_ms=50685 | cost_usd=0.047768
+
+## [2026-06-17T20:44:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1293 | cache_read=0 | cache_creation=16705 | duration_ms=25377 | cost_usd=0.039883
+
+## [2026-06-17T20:44:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1996 | cache_read=0 | cache_creation=16751 | duration_ms=35408 | cost_usd=0.043490
+
+## [2026-06-17T20:44:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1669 | cache_read=0 | cache_creation=16713 | duration_ms=20744 | cost_usd=0.041779
+
+## [2026-06-17T20:44:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1964 | cache_read=0 | cache_creation=16731 | duration_ms=37965 | cost_usd=0.043290
+
+## [2026-06-17T20:44:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1150 | cache_read=8862 | cache_creation=12635 | duration_ms=15862 | cost_usd=0.031914
+
+## [2026-06-17T20:45:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2099 | cache_read=8862 | cache_creation=12645 | duration_ms=28615 | cost_usd=0.036679
+
+## [2026-06-17T20:45:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1462 | cache_read=8862 | cache_creation=12653 | duration_ms=17053 | cost_usd=0.033510
+
+## [2026-06-17T20:45:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1494 | cache_read=0 | cache_creation=16691 | duration_ms=29804 | cost_usd=0.040860
+
+## [2026-06-17T20:45:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3104 | cache_read=0 | cache_creation=16657 | duration_ms=35754 | cost_usd=0.048842
+
+## [2026-06-17T20:45:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1641 | cache_read=0 | cache_creation=16780 | duration_ms=21003 | cost_usd=0.041773
+
+## [2026-06-17T20:45:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1825 | cache_read=8862 | cache_creation=12711 | duration_ms=21550 | cost_usd=0.035441
+
+## [2026-06-17T20:45:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1823 | cache_read=0 | cache_creation=16707 | duration_ms=22936 | cost_usd=0.042537
+
+## [2026-06-17T20:45:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1472 | cache_read=8862 | cache_creation=12661 | duration_ms=17677 | cost_usd=0.033576
+
+## [2026-06-17T20:45:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2348 | cache_read=8862 | cache_creation=12672 | duration_ms=43804 | cost_usd=0.037978
+
+## [2026-06-17T20:45:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1238 | cache_read=8862 | cache_creation=12657 | duration_ms=14593 | cost_usd=0.032398
+
+## [2026-06-17T20:45:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1199 | cache_read=0 | cache_creation=16693 | duration_ms=14966 | cost_usd=0.039389
+
+## [2026-06-17T20:45:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2562 | cache_read=0 | cache_creation=16719 | duration_ms=47087 | cost_usd=0.046256
+
+## [2026-06-17T20:45:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2000 | cache_read=0 | cache_creation=16727 | duration_ms=23809 | cost_usd=0.043462
+
+## [2026-06-17T20:45:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1646 | cache_read=0 | cache_creation=16688 | duration_ms=33270 | cost_usd=0.041614
+
+## [2026-06-17T20:45:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2095 | cache_read=8862 | cache_creation=12631 | duration_ms=27112 | cost_usd=0.036631
+
+## [2026-06-17T20:45:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1146 | cache_read=0 | cache_creation=16703 | duration_ms=22733 | cost_usd=0.039144
+
+## [2026-06-17T20:45:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1418 | cache_read=8862 | cache_creation=12697 | duration_ms=17765 | cost_usd=0.033378
+
+## [2026-06-17T20:46:01Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1254 | cache_read=8862 | cache_creation=12663 | duration_ms=20797 | cost_usd=0.032490
+
+## [2026-06-17T20:46:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1983 | cache_read=0 | cache_creation=16711 | duration_ms=24653 | cost_usd=0.043345
+
+## [2026-06-17T20:46:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2751 | cache_read=0 | cache_creation=82364 | duration_ms=31429 | cost_usd=0.178491
+
+## [2026-06-17T20:46:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1771 | cache_read=0 | cache_creation=16730 | duration_ms=20911 | cost_usd=0.042323
+
+## [2026-06-17T20:46:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=8862 | cache_creation=12649 | duration_ms=17661 | cost_usd=0.033972
+
+## [2026-06-17T20:46:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3028 | cache_read=8862 | cache_creation=12649 | duration_ms=33734 | cost_usd=0.041332
+
+## [2026-06-17T20:46:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1426 | cache_read=8862 | cache_creation=12635 | duration_ms=26622 | cost_usd=0.033294
+
+## [2026-06-17T20:46:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1832 | cache_read=8862 | cache_creation=12661 | duration_ms=24115 | cost_usd=0.035376
+
+## [2026-06-17T20:46:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3647 | cache_read=8862 | cache_creation=12664 | duration_ms=42280 | cost_usd=0.044457
+
+## [2026-06-17T20:46:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2420 | cache_read=8862 | cache_creation=12691 | duration_ms=29449 | cost_usd=0.038376
+
+## [2026-06-17T20:46:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2116 | cache_read=8862 | cache_creation=12667 | duration_ms=40166 | cost_usd=0.036808
+
+## [2026-06-17T20:46:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2604 | cache_read=8862 | cache_creation=12689 | duration_ms=30699 | cost_usd=0.039292
+
+## [2026-06-17T20:46:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2670 | cache_read=0 | cache_creation=16691 | duration_ms=28927 | cost_usd=0.046740
+
+## [2026-06-17T20:46:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1742 | cache_read=0 | cache_creation=16687 | duration_ms=20424 | cost_usd=0.042092
+
+## [2026-06-17T20:46:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1437 | cache_read=0 | cache_creation=16720 | duration_ms=17846 | cost_usd=0.040633
+
+## [2026-06-17T20:47:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2370 | cache_read=8862 | cache_creation=12663 | duration_ms=45791 | cost_usd=0.038070
+
+## [2026-06-17T20:47:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2659 | cache_read=0 | cache_creation=16720 | duration_ms=30723 | cost_usd=0.046743
+
+## [2026-06-17T20:47:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1652 | cache_read=0 | cache_creation=16690 | duration_ms=32221 | cost_usd=0.041648
+
+## [2026-06-17T20:47:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2063 | cache_read=0 | cache_creation=16708 | duration_ms=27775 | cost_usd=0.043739
+
+## [2026-06-17T20:47:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2294 | cache_read=8862 | cache_creation=12669 | duration_ms=27363 | cost_usd=0.037702
+
+## [2026-06-17T20:47:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1681 | cache_read=0 | cache_creation=16708 | duration_ms=32035 | cost_usd=0.041829
+
+## [2026-06-17T20:47:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2456 | cache_read=0 | cache_creation=16712 | duration_ms=26390 | cost_usd=0.045712
+
+## [2026-06-17T20:47:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1349 | cache_read=0 | cache_creation=16721 | duration_ms=16540 | cost_usd=0.040195
+
+## [2026-06-17T20:47:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2295 | cache_read=8862 | cache_creation=12678 | duration_ms=41786 | cost_usd=0.037725
+
+## [2026-06-17T20:47:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3022 | cache_read=8862 | cache_creation=12657 | duration_ms=32781 | cost_usd=0.041318
+
+## [2026-06-17T20:47:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1881 | cache_read=0 | cache_creation=16701 | duration_ms=21432 | cost_usd=0.042815
+
+## [2026-06-17T20:47:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2803 | cache_read=8862 | cache_creation=12685 | duration_ms=30390 | cost_usd=0.040279
+
+## [2026-06-17T20:47:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4314 | cache_read=8862 | cache_creation=12666 | duration_ms=74070 | cost_usd=0.047796
+
+## [2026-06-17T20:47:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2381 | cache_read=8862 | cache_creation=12665 | duration_ms=46035 | cost_usd=0.038129
+
+## [2026-06-17T20:48:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1997 | cache_read=0 | cache_creation=15103 | duration_ms=37196 | cost_usd=0.040199
+
+## [2026-06-17T20:48:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1733 | cache_read=0 | cache_creation=16695 | duration_ms=33810 | cost_usd=0.042063
+
+## [2026-06-17T20:48:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1598 | cache_read=0 | cache_creation=16715 | duration_ms=18481 | cost_usd=0.041428
+
+## [2026-06-17T20:48:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2040 | cache_read=0 | cache_creation=16715 | duration_ms=25428 | cost_usd=0.043638
+
+## [2026-06-17T20:48:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2555 | cache_read=8862 | cache_creation=12672 | duration_ms=28904 | cost_usd=0.039013
+
+## [2026-06-17T20:48:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1605 | cache_read=0 | cache_creation=16718 | duration_ms=21378 | cost_usd=0.041469
+
+## [2026-06-17T20:48:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2627 | cache_read=8862 | cache_creation=12668 | duration_ms=31584 | cost_usd=0.039365
+
+## [2026-06-17T20:48:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1409 | cache_read=0 | cache_creation=16728 | duration_ms=18074 | cost_usd=0.040509
+
+## [2026-06-17T20:48:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2843 | cache_read=0 | cache_creation=16727 | duration_ms=49790 | cost_usd=0.047677
+
+## [2026-06-17T20:48:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1873 | cache_read=0 | cache_creation=16723 | duration_ms=34831 | cost_usd=0.042819
+
+## [2026-06-17T20:48:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1697 | cache_read=8862 | cache_creation=12671 | duration_ms=21565 | cost_usd=0.034721
+
+## [2026-06-17T20:48:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=0 | cache_creation=16715 | duration_ms=29828 | cost_usd=0.041503
+
+## [2026-06-17T20:48:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1948 | cache_read=0 | cache_creation=16714 | duration_ms=24315 | cost_usd=0.043176
+
+## [2026-06-17T20:48:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1409 | cache_read=0 | cache_creation=16729 | duration_ms=17022 | cost_usd=0.040511
+
+## [2026-06-17T20:48:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2784 | cache_read=0 | cache_creation=16707 | duration_ms=50141 | cost_usd=0.047342
+
+## [2026-06-17T20:48:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2946 | cache_read=0 | cache_creation=16720 | duration_ms=33461 | cost_usd=0.048178
+
+## [2026-06-17T20:49:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1937 | cache_read=8862 | cache_creation=12677 | duration_ms=23632 | cost_usd=0.035933
+
+## [2026-06-17T20:49:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=8862 | cache_creation=12666 | duration_ms=29264 | cost_usd=0.034006
+
+## [2026-06-17T20:49:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1348 | cache_read=8862 | cache_creation=12692 | duration_ms=27513 | cost_usd=0.033018
+
+## [2026-06-17T20:49:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4461 | cache_read=8862 | cache_creation=12685 | duration_ms=48535 | cost_usd=0.048569
+
+## [2026-06-17T20:49:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2690 | cache_read=8862 | cache_creation=12676 | duration_ms=32712 | cost_usd=0.039696
+
+## [2026-06-17T20:49:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1624 | cache_read=0 | cache_creation=16724 | duration_ms=18433 | cost_usd=0.041576
+
+## [2026-06-17T20:49:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2921 | cache_read=8862 | cache_creation=12671 | duration_ms=33626 | cost_usd=0.040841
+
+## [2026-06-17T20:49:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3971 | cache_read=8862 | cache_creation=12673 | duration_ms=40834 | cost_usd=0.046095
+
+## [2026-06-17T20:49:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2914 | cache_read=8862 | cache_creation=12672 | duration_ms=50775 | cost_usd=0.040808
+
+## [2026-06-17T20:49:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1979 | cache_read=8862 | cache_creation=12678 | duration_ms=24682 | cost_usd=0.036145
+
+## [2026-06-17T20:49:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3378 | cache_read=0 | cache_creation=16727 | duration_ms=37852 | cost_usd=0.050352
+
+## [2026-06-17T20:49:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2008 | cache_read=8862 | cache_creation=12691 | duration_ms=25755 | cost_usd=0.036316
+
+## [2026-06-17T20:49:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1913 | cache_read=8862 | cache_creation=12673 | duration_ms=28641 | cost_usd=0.035805
+
+## [2026-06-17T20:50:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1936 | cache_read=8862 | cache_creation=12683 | duration_ms=23445 | cost_usd=0.035940
+
+## [2026-06-17T20:50:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2339 | cache_read=8862 | cache_creation=12679 | duration_ms=26869 | cost_usd=0.037947
+
+## [2026-06-17T20:50:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1743 | cache_read=8862 | cache_creation=12673 | duration_ms=20993 | cost_usd=0.034955
+
+## [2026-06-17T20:50:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3045 | cache_read=0 | cache_creation=16729 | duration_ms=31968 | cost_usd=0.048691
+
+## [2026-06-17T20:50:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2437 | cache_read=0 | cache_creation=16729 | duration_ms=46043 | cost_usd=0.045651
+
+## [2026-06-17T20:50:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1926 | cache_read=8862 | cache_creation=12695 | duration_ms=21561 | cost_usd=0.035914
+
+## [2026-06-17T20:50:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2102 | cache_read=0 | cache_creation=16735 | duration_ms=24823 | cost_usd=0.043988
+
+## [2026-06-17T20:50:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3180 | cache_read=0 | cache_creation=16724 | duration_ms=35787 | cost_usd=0.049356
+
+## [2026-06-17T20:50:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3731 | cache_read=8862 | cache_creation=12661 | duration_ms=66890 | cost_usd=0.044871
+
+## [2026-06-17T20:50:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1585 | cache_read=0 | cache_creation=16710 | duration_ms=30528 | cost_usd=0.041353
+
+## [2026-06-17T20:50:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2740 | cache_read=8862 | cache_creation=12667 | duration_ms=33258 | cost_usd=0.039928
+
+## [2026-06-17T20:50:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2666 | cache_read=0 | cache_creation=16725 | duration_ms=47339 | cost_usd=0.046788
+
+## [2026-06-17T20:50:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2345 | cache_read=0 | cache_creation=16718 | duration_ms=27140 | cost_usd=0.045169
+
+## [2026-06-17T20:51:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3112 | cache_read=8862 | cache_creation=12661 | duration_ms=37245 | cost_usd=0.041776
+
+## [2026-06-17T20:51:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2279 | cache_read=8862 | cache_creation=12666 | duration_ms=27213 | cost_usd=0.037621
+
+## [2026-06-17T20:51:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2385 | cache_read=8862 | cache_creation=12674 | duration_ms=28997 | cost_usd=0.038167
+
+## [2026-06-17T20:51:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3854 | cache_read=0 | cache_creation=16716 | duration_ms=64516 | cost_usd=0.052710
+
+## [2026-06-17T20:51:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1721 | cache_read=8862 | cache_creation=12681 | duration_ms=31922 | cost_usd=0.034861
+
+## [2026-06-17T20:51:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3921 | cache_read=0 | cache_creation=16705 | duration_ms=71893 | cost_usd=0.053023
+
+## [2026-06-17T20:51:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1640 | cache_read=0 | cache_creation=16720 | duration_ms=20080 | cost_usd=0.041648
+
+## [2026-06-17T20:51:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3639 | cache_read=0 | cache_creation=16717 | duration_ms=39321 | cost_usd=0.051637
+
+## [2026-06-17T20:51:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2713 | cache_read=8862 | cache_creation=12679 | duration_ms=29181 | cost_usd=0.039817
+
+## [2026-06-17T20:51:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1807 | cache_read=8862 | cache_creation=12667 | duration_ms=21843 | cost_usd=0.035263
+
+## [2026-06-17T20:51:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1010 | cache_read=0 | cache_creation=16705 | duration_ms=12442 | cost_usd=0.038468
+
+## [2026-06-17T20:51:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3707 | cache_read=8862 | cache_creation=12674 | duration_ms=43482 | cost_usd=0.044777
+
+## [2026-06-17T20:51:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2996 | cache_read=0 | cache_creation=16733 | duration_ms=57045 | cost_usd=0.048454
+
+## [2026-06-17T20:52:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1295 | cache_read=8862 | cache_creation=12677 | duration_ms=16769 | cost_usd=0.032723
+
+## [2026-06-17T20:52:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3211 | cache_read=0 | cache_creation=16719 | duration_ms=58860 | cost_usd=0.049501
+
+## [2026-06-17T20:52:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1906 | cache_read=8862 | cache_creation=12654 | duration_ms=21069 | cost_usd=0.035732
+
+## [2026-06-17T20:52:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1428 | cache_read=0 | cache_creation=15077 | duration_ms=28449 | cost_usd=0.037302
+
+## [2026-06-17T20:52:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2241 | cache_read=8862 | cache_creation=12667 | duration_ms=26513 | cost_usd=0.037433
+
+## [2026-06-17T20:52:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1843 | cache_read=0 | cache_creation=16719 | duration_ms=36219 | cost_usd=0.042661
+
+## [2026-06-17T20:52:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2420 | cache_read=8862 | cache_creation=12676 | duration_ms=43851 | cost_usd=0.038346
+
+## [2026-06-17T20:52:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2332 | cache_read=8862 | cache_creation=12668 | duration_ms=44069 | cost_usd=0.037890
+
+## [2026-06-17T20:52:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1932 | cache_read=0 | cache_creation=16961 | duration_ms=21810 | cost_usd=0.043590
+
+## [2026-06-17T20:52:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3739 | cache_read=8862 | cache_creation=12676 | duration_ms=40263 | cost_usd=0.044941
+
+## [2026-06-17T20:52:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2451 | cache_read=8862 | cache_creation=12758 | duration_ms=26912 | cost_usd=0.038665
+
+## [2026-06-17T20:52:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1730 | cache_read=8862 | cache_creation=12955 | duration_ms=20597 | cost_usd=0.035454
+
+## [2026-06-17T20:52:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1917 | cache_read=0 | cache_creation=16890 | duration_ms=34095 | cost_usd=0.043373
+
+## [2026-06-17T20:52:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2745 | cache_read=0 | cache_creation=16839 | duration_ms=30834 | cost_usd=0.047411
+
+## [2026-06-17T20:52:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1773 | cache_read=8862 | cache_creation=12840 | duration_ms=21597 | cost_usd=0.035439
+
+## [2026-06-17T20:52:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1825 | cache_read=0 | cache_creation=17025 | duration_ms=34043 | cost_usd=0.043183
+
+## [2026-06-17T20:52:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2313 | cache_read=0 | cache_creation=16949 | duration_ms=43069 | cost_usd=0.045471
+
+## [2026-06-17T20:53:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1769 | cache_read=8862 | cache_creation=12871 | duration_ms=22136 | cost_usd=0.035481
+
+## [2026-06-17T20:53:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2030 | cache_read=8862 | cache_creation=12841 | duration_ms=23559 | cost_usd=0.036726
+
+## [2026-06-17T20:53:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1912 | cache_read=0 | cache_creation=16848 | duration_ms=26110 | cost_usd=0.043264
+
+## [2026-06-17T20:53:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1948 | cache_read=0 | cache_creation=16924 | duration_ms=21882 | cost_usd=0.043596
+
+## [2026-06-17T20:53:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3374 | cache_read=0 | cache_creation=16937 | duration_ms=38984 | cost_usd=0.050752
+
+## [2026-06-17T20:53:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2039 | cache_read=8862 | cache_creation=12891 | duration_ms=23374 | cost_usd=0.036871
+
+## [2026-06-17T20:53:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2970 | cache_read=8862 | cache_creation=12879 | duration_ms=52565 | cost_usd=0.041502
+
+## [2026-06-17T20:53:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2666 | cache_read=0 | cache_creation=16826 | duration_ms=47556 | cost_usd=0.046990
+
+## [2026-06-17T20:53:46Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2034 | cache_read=0 | cache_creation=16968 | duration_ms=24824 | cost_usd=0.044114
+
+## [2026-06-17T20:53:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3562 | cache_read=8862 | cache_creation=12833 | duration_ms=59976 | cost_usd=0.044370
+
+## [2026-06-17T20:53:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1042 | cache_read=0 | cache_creation=16842 | duration_ms=13571 | cost_usd=0.038902
+
+## [2026-06-17T20:54:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2343 | cache_read=8862 | cache_creation=12859 | duration_ms=29999 | cost_usd=0.038327
+
+## [2026-06-17T20:54:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4056 | cache_read=8862 | cache_creation=12812 | duration_ms=71315 | cost_usd=0.046798
+
+## [2026-06-17T20:54:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1147 | cache_read=0 | cache_creation=16906 | duration_ms=21330 | cost_usd=0.039555
+
+## [2026-06-17T20:54:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1967 | cache_read=8862 | cache_creation=12903 | duration_ms=35359 | cost_usd=0.036535
+
+## [2026-06-17T20:54:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=15 | out_tokens=2182 | cache_read=8862 | cache_creation=100167 | duration_ms=29929 | cost_usd=0.212145
+
+## [2026-06-17T20:54:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1026 | cache_read=0 | cache_creation=16823 | duration_ms=13832 | cost_usd=0.038784
+
+## [2026-06-17T20:54:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1103 | cache_read=8862 | cache_creation=12695 | duration_ms=15189 | cost_usd=0.031799
+
+## [2026-06-17T20:54:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2197 | cache_read=0 | cache_creation=16806 | duration_ms=41386 | cost_usd=0.044605
+
+## [2026-06-17T20:54:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1053 | cache_read=0 | cache_creation=16892 | duration_ms=12670 | cost_usd=0.039057
+
+## [2026-06-17T20:54:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1511 | cache_read=0 | cache_creation=16906 | duration_ms=19375 | cost_usd=0.041375
+
+## [2026-06-17T20:54:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1411 | cache_read=0 | cache_creation=16751 | duration_ms=16391 | cost_usd=0.040565
+
+## [2026-06-17T20:54:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1460 | cache_read=8862 | cache_creation=12797 | duration_ms=27559 | cost_usd=0.033788
+
+## [2026-06-17T20:54:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2275 | cache_read=8862 | cache_creation=12828 | duration_ms=25716 | cost_usd=0.037925
+
+## [2026-06-17T20:54:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2507 | cache_read=0 | cache_creation=31999 | duration_ms=27179 | cost_usd=0.076541
+
+## [2026-06-17T20:54:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2556 | cache_read=0 | cache_creation=16946 | duration_ms=27729 | cost_usd=0.046680
+
+## [2026-06-17T20:54:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3100 | cache_read=8862 | cache_creation=12833 | duration_ms=33449 | cost_usd=0.042060
+
+## [2026-06-17T20:54:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2636 | cache_read=0 | cache_creation=16957 | duration_ms=47683 | cost_usd=0.047102
+
+## [2026-06-17T20:54:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2433 | cache_read=8862 | cache_creation=12760 | duration_ms=26513 | cost_usd=0.038579
+
+## [2026-06-17T20:55:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2007 | cache_read=0 | cache_creation=16949 | duration_ms=25341 | cost_usd=0.043941
+
+## [2026-06-17T20:55:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2197 | cache_read=0 | cache_creation=16885 | duration_ms=40169 | cost_usd=0.044763
+
+## [2026-06-17T20:55:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1454 | cache_read=0 | cache_creation=16895 | duration_ms=17051 | cost_usd=0.041068
+
+## [2026-06-17T20:55:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1986 | cache_read=0 | cache_creation=16886 | duration_ms=36776 | cost_usd=0.043710
+
+## [2026-06-17T20:55:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2054 | cache_read=0 | cache_creation=16776 | duration_ms=24691 | cost_usd=0.043830
+
+## [2026-06-17T20:55:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3115 | cache_read=8862 | cache_creation=12778 | duration_ms=57160 | cost_usd=0.042025
+
+## [2026-06-17T20:55:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2475 | cache_read=8862 | cache_creation=12873 | duration_ms=42654 | cost_usd=0.039015
+
+## [2026-06-17T20:55:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4771 | cache_read=0 | cache_creation=16856 | duration_ms=49068 | cost_usd=0.057575
+
+## [2026-06-17T20:55:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4620 | cache_read=8862 | cache_creation=12942 | duration_ms=53615 | cost_usd=0.049878
+
+## [2026-06-17T20:56:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2419 | cache_read=8862 | cache_creation=12788 | duration_ms=47676 | cost_usd=0.038565
+
+## [2026-06-17T20:56:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2745 | cache_read=0 | cache_creation=16852 | duration_ms=49196 | cost_usd=0.047437
+
+## [2026-06-17T20:56:08Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=filter | n=77
+
+77 candidate(s) cleared threshold
+
+## [2026-06-17T20:57:21Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=convert | target=https://www.youtube.com/watch?v=k1njvbBmfsw
+
+error: oEmbed lookup failed: 401
+
+## [2026-06-17T20:57:21Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=convert | target=https://www.youtube.com/watch?v=X9yl0pTP9fY
+
+error: oEmbed lookup failed: 401
+
+## [2026-06-17T20:57:22Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=convert | target=https://www.youtube.com/watch?v=uoA8R6dHTt8
+
+error: no transcript available for uoA8R6dHTt8: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=uoA8R6dHTt8! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T20:58:59Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=convert | target=https://doi.org/10.1002/tee.70313
+
+error: HTTP 403 fetching https://doi.org/10.1002/tee.70313
+
+## [2026-06-17T20:59:48Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=convert | target=https://doi.org/10.1016/j.dss.2025.114553
+
+error: no extractable content at https://doi.org/10.1016/j.dss.2025.114553
+
+## [2026-06-17T21:00:29Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=materialize | n=72
+
+materialized 72 source(s) to raw/
+
+## [2026-06-17T21:00:29Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=corpus_quality | n=72 | median_words=2512 | sparse_n=22 | sparse_frac=0.31
+
+corpus quality: 72 sources, median 2512 words, 22/72 sparse (<300 words)
+
+## [2026-06-17T21:00:29Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=nlm_persistent | notebook_id=65f83714-12cc-4ee0-8e98-72cb1ffe8438
+
+persistent notebook 65f83714-12cc-4ee0-8e98-72cb1ffe8438
+
+## [2026-06-17T21:00:30Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=nlm_session | notebook_id=41ce22cf-ccfd-47b0-8ada-76f09c6b7a8d
+
+created session notebook 41ce22cf-ccfd-47b0-8ada-76f09c6b7a8d
+
+## [2026-06-17T21:01:32Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=source_add | target=https://www.sciencedirect.com/science/article/abs/pii/S0169023X26000315
+
+error: `nlm source add 41ce22cf-ccfd-47b0-8ada-76f09c6b7a8d --url https://www.sciencedirect.com/science/article/abs/pii/S0169023X26000315 --wait` exited 1: Adding https://www.sciencedirect.com/science/article/abs/pii/S0169023X26000315 
+and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-17T21:06:23Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=source_add | n=71 | skipped=1
+
+pushed 71 source(s) to session notebook (1 skipped)
+
+## [2026-06-17T21:06:25Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=source_map | n=71
+
+built source map (71 entries)
+
+## [2026-06-17T21:11:33Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=index_settle | distinct_sources=20
+
+index settled (20 distinct source(s) visible)
+
+## [2026-06-17T21:29:50Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=analysis | branches=5
+
+analysis complete (5 branch(es))
+
+## [2026-06-17T21:29:54Z] wiki-author | id=research-2026-06-17-what-are-the-current-architecture-and | updates=7 | created=6 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for agentic-data-layer
+
+## [2026-06-17T21:29:54Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=apply_plan | pages=8
+
+applied plan: applied plan for research-2026-06-17-what-are-the-current-architecture-and: 7 update(s)
+
+## [2026-06-17T21:33:19Z] research | session_id=2026-06-17-what-are-the-current-architecture-and | step=promoted | added=33 | failed=31
+
+promoted 33 source(s) into persistent notebook (31 failed)
+
+## [2026-06-17T22:33:59Z] task-error | task=8c7c0459-63fd-4abb-bb89-10090fa065a6
+
+task 8c7c0459-63fd-4abb-bb89-10090fa065a6 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-3/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-17T22:58:50Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T22-58-50Z-schema-drift.md
+
+## [2026-06-17T22:59:40Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T22-59-40Z-schema-drift.md
+
+## [2026-06-17T23:13:04Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=start | domain=semantic-models
+
+start research session for prompt 'What are the architecture and engineering choices in building and operating knowledge graphs? Cover: KG construction pipelines (from structured sources via R2RML and RML, and from text via entity and relation extraction); storage architectures (RDF triple stores versus native labeled-property-graph databases, indexing and scaling characteristics); query languages and engines (SPARQL 1.1, Cypher, the ISO GQL standard) and their performance tradeoffs; reasoning and inference at scale (materialization versus query rewriting, OWL profile reasoners); knowledge-graph embeddings and their role; and shape validation (SHACL, ShEx). Include triple-store and graph-database technical documentation and benchmarks, reference-architecture writeups, and W3C/ISO specifications. Favor sources with concrete query, schema, or benchmark detail.'
+
+## [2026-06-17T23:13:04Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T23:13:04Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-06-17T23:13:06Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=search | adapter=arxiv | n=15
+
+adapter arxiv returned 15 candidates
+
+## [2026-06-17T23:13:10Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=search | adapter=youtube | n=21
+
+adapter youtube returned 21 candidates
+
+## [2026-06-17T23:13:18Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=search | adapter=web | n=70
+
+adapter web returned 70 candidates
+
+## [2026-06-17T23:13:18Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=merge | n=105
+
+merged 105 candidate(s) across adapters
+
+## [2026-06-17T23:13:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=0 | cache_creation=40749 | duration_ms=16795 | cost_usd=0.087571
+
+## [2026-06-17T23:13:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1620 | cache_read=0 | cache_creation=37840 | duration_ms=27228 | cost_usd=0.083788
+
+## [2026-06-17T23:13:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1893 | cache_read=0 | cache_creation=40724 | duration_ms=34245 | cost_usd=0.090921
+
+## [2026-06-17T23:13:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1483 | cache_read=0 | cache_creation=21908 | duration_ms=17495 | cost_usd=0.051239
+
+## [2026-06-17T23:14:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3699 | cache_read=0 | cache_creation=40745 | duration_ms=39985 | cost_usd=0.099993
+
+## [2026-06-17T23:14:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1419 | cache_read=9016 | cache_creation=12962 | duration_ms=20244 | cost_usd=0.033929
+
+## [2026-06-17T23:14:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1584 | cache_read=9016 | cache_creation=12914 | duration_ms=20008 | cost_usd=0.034658
+
+## [2026-06-17T23:14:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1461 | cache_read=9016 | cache_creation=12894 | duration_ms=25094 | cost_usd=0.034003
+
+## [2026-06-17T23:14:21Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=filter | target=https://arxiv.org/abs/1411.6763
+
+error: could not parse JSON in filter response: Expecting ',' delimiter: line 3 column 449 (char 467)
+
+## [2026-06-17T23:14:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1290 | cache_read=9016 | cache_creation=13056 | duration_ms=14790 | cost_usd=0.033472
+
+## [2026-06-17T23:14:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1510 | cache_read=9016 | cache_creation=12887 | duration_ms=24682 | cost_usd=0.034234
+
+## [2026-06-17T23:14:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1367 | cache_read=0 | cache_creation=17158 | duration_ms=16052 | cost_usd=0.041159
+
+## [2026-06-17T23:14:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1699 | cache_read=9016 | cache_creation=13001 | duration_ms=18038 | cost_usd=0.035407
+
+## [2026-06-17T23:14:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1441 | cache_read=9016 | cache_creation=12908 | duration_ms=16881 | cost_usd=0.033931
+
+## [2026-06-17T23:14:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1814 | cache_read=9016 | cache_creation=13106 | duration_ms=19818 | cost_usd=0.036192
+
+## [2026-06-17T23:14:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1637 | cache_read=9016 | cache_creation=12962 | duration_ms=18793 | cost_usd=0.035019
+
+## [2026-06-17T23:15:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1787 | cache_read=9016 | cache_creation=12706 | duration_ms=29537 | cost_usd=0.035257
+
+## [2026-06-17T23:15:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2582 | cache_read=4196 | cache_creation=12677 | duration_ms=27982 | cost_usd=0.038692
+
+## [2026-06-17T23:15:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1409 | cache_read=4196 | cache_creation=12673 | duration_ms=24501 | cost_usd=0.032819
+
+## [2026-06-17T23:15:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2391 | cache_read=9016 | cache_creation=12682 | duration_ms=39712 | cost_usd=0.038229
+
+## [2026-06-17T23:15:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1232 | cache_read=4196 | cache_creation=12706 | duration_ms=16160 | cost_usd=0.032000
+
+## [2026-06-17T23:15:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2226 | cache_read=9016 | cache_creation=12671 | duration_ms=25795 | cost_usd=0.037382
+
+## [2026-06-17T23:15:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1504 | cache_read=9016 | cache_creation=12674 | duration_ms=20136 | cost_usd=0.033778
+
+## [2026-06-17T23:15:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1239 | cache_read=9016 | cache_creation=12662 | duration_ms=16824 | cost_usd=0.032429
+
+## [2026-06-17T23:15:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1633 | cache_read=9016 | cache_creation=12664 | duration_ms=24101 | cost_usd=0.034403
+
+## [2026-06-17T23:16:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1613 | cache_read=9016 | cache_creation=12640 | duration_ms=21430 | cost_usd=0.034255
+
+## [2026-06-17T23:16:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1379 | cache_read=9016 | cache_creation=12662 | duration_ms=15663 | cost_usd=0.033129
+
+## [2026-06-17T23:16:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1738 | cache_read=4196 | cache_creation=12677 | duration_ms=23627 | cost_usd=0.034472
+
+## [2026-06-17T23:16:13Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1771 | cache_read=9016 | cache_creation=12659 | duration_ms=30654 | cost_usd=0.035083
+
+## [2026-06-17T23:16:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1402 | cache_read=9016 | cache_creation=12661 | duration_ms=15911 | cost_usd=0.033242
+
+## [2026-06-17T23:16:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1179 | cache_read=9016 | cache_creation=12687 | duration_ms=14804 | cost_usd=0.032179
+
+## [2026-06-17T23:16:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1547 | cache_read=4196 | cache_creation=12680 | duration_ms=18651 | cost_usd=0.033523
+
+## [2026-06-17T23:16:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1711 | cache_read=9016 | cache_creation=12679 | duration_ms=30229 | cost_usd=0.034823
+
+## [2026-06-17T23:16:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1582 | cache_read=9016 | cache_creation=12668 | duration_ms=19476 | cost_usd=0.034156
+
+## [2026-06-17T23:17:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1423 | cache_read=4196 | cache_creation=12677 | duration_ms=19821 | cost_usd=0.032897
+
+## [2026-06-17T23:17:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1213 | cache_read=4196 | cache_creation=12643 | duration_ms=14627 | cost_usd=0.031779
+
+## [2026-06-17T23:17:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2136 | cache_read=9016 | cache_creation=12673 | duration_ms=25728 | cost_usd=0.036936
+
+## [2026-06-17T23:17:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3782 | cache_read=9016 | cache_creation=12694 | duration_ms=60157 | cost_usd=0.045208
+
+## [2026-06-17T23:17:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1594 | cache_read=4196 | cache_creation=12631 | duration_ms=20162 | cost_usd=0.033660
+
+## [2026-06-17T23:17:29Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1170 | cache_read=4196 | cache_creation=12711 | duration_ms=15586 | cost_usd=0.031700
+
+## [2026-06-17T23:17:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1487 | cache_read=9016 | cache_creation=12655 | duration_ms=18242 | cost_usd=0.033655
+
+## [2026-06-17T23:17:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2872 | cache_read=4196 | cache_creation=12663 | duration_ms=32449 | cost_usd=0.040114
+
+## [2026-06-17T23:17:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1195 | cache_read=9016 | cache_creation=12627 | duration_ms=16586 | cost_usd=0.032139
+
+## [2026-06-17T23:17:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1341 | cache_read=9016 | cache_creation=12674 | duration_ms=14909 | cost_usd=0.032963
+
+## [2026-06-17T23:17:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1321 | cache_read=4196 | cache_creation=12697 | duration_ms=23322 | cost_usd=0.032427
+
+## [2026-06-17T23:18:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=4006 | cache_read=4196 | cache_creation=12669 | duration_ms=43941 | cost_usd=0.045796
+
+## [2026-06-17T23:18:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2059 | cache_read=4196 | cache_creation=12647 | duration_ms=26193 | cost_usd=0.036017
+
+## [2026-06-17T23:18:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1346 | cache_read=9016 | cache_creation=12675 | duration_ms=23732 | cost_usd=0.032990
+
+## [2026-06-17T23:18:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1767 | cache_read=9016 | cache_creation=12642 | duration_ms=30793 | cost_usd=0.035029
+
+## [2026-06-17T23:18:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1956 | cache_read=9016 | cache_creation=12651 | duration_ms=23680 | cost_usd=0.035992
+
+## [2026-06-17T23:18:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=9016 | cache_creation=12643 | duration_ms=18721 | cost_usd=0.033776
+
+## [2026-06-17T23:18:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1967 | cache_read=9016 | cache_creation=12735 | duration_ms=32669 | cost_usd=0.036215
+
+## [2026-06-17T23:18:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1356 | cache_read=9016 | cache_creation=12663 | duration_ms=17955 | cost_usd=0.033016
+
+## [2026-06-17T23:18:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1206 | cache_read=4196 | cache_creation=12649 | duration_ms=22848 | cost_usd=0.031756
+
+## [2026-06-17T23:18:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1591 | cache_read=9016 | cache_creation=12691 | duration_ms=18216 | cost_usd=0.034247
+
+## [2026-06-17T23:19:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1188 | cache_read=9016 | cache_creation=12641 | duration_ms=17629 | cost_usd=0.032132
+
+## [2026-06-17T23:19:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1327 | cache_read=9016 | cache_creation=12629 | duration_ms=21671 | cost_usd=0.032803
+
+## [2026-06-17T23:19:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1490 | cache_read=9016 | cache_creation=12633 | duration_ms=24555 | cost_usd=0.033626
+
+## [2026-06-17T23:19:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1340 | cache_read=9016 | cache_creation=12657 | duration_ms=15920 | cost_usd=0.032924
+
+## [2026-06-17T23:19:35Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1541 | cache_read=9016 | cache_creation=12629 | duration_ms=19994 | cost_usd=0.033873
+
+## [2026-06-17T23:19:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3236 | cache_read=9016 | cache_creation=12663 | duration_ms=49632 | cost_usd=0.042416
+
+## [2026-06-17T23:19:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1777 | cache_read=9016 | cache_creation=12641 | duration_ms=31689 | cost_usd=0.035077
+
+## [2026-06-17T23:20:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1261 | cache_read=9016 | cache_creation=12653 | duration_ms=19652 | cost_usd=0.032521
+
+## [2026-06-17T23:20:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2604 | cache_read=9016 | cache_creation=12625 | duration_ms=29383 | cost_usd=0.039180
+
+## [2026-06-17T23:20:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2299 | cache_read=9016 | cache_creation=12649 | duration_ms=39520 | cost_usd=0.037703
+
+## [2026-06-17T23:20:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1216 | cache_read=4196 | cache_creation=12629 | duration_ms=15707 | cost_usd=0.031766
+
+## [2026-06-17T23:20:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1907 | cache_read=9016 | cache_creation=12697 | duration_ms=30847 | cost_usd=0.035839
+
+## [2026-06-17T23:20:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2433 | cache_read=9016 | cache_creation=12655 | duration_ms=30208 | cost_usd=0.038385
+
+## [2026-06-17T23:20:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2472 | cache_read=9016 | cache_creation=12619 | duration_ms=38503 | cost_usd=0.038508
+
+## [2026-06-17T23:20:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1761 | cache_read=0 | cache_creation=15227 | duration_ms=23546 | cost_usd=0.039267
+
+## [2026-06-17T23:20:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2057 | cache_read=9016 | cache_creation=12675 | duration_ms=25326 | cost_usd=0.036545
+
+## [2026-06-17T23:20:56Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=filter | target=https://www.tigergraph.com/blog/the-rise-of-gql-a-new-iso-standard-in-graph-query-language/
+
+error: could not parse JSON in filter response: Expecting ',' delimiter: line 3 column 184 (char 201)
+
+## [2026-06-17T23:20:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1110 | cache_read=9016 | cache_creation=12625 | duration_ms=19299 | cost_usd=0.031710
+
+## [2026-06-17T23:21:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1129 | cache_read=9016 | cache_creation=12681 | duration_ms=14889 | cost_usd=0.031917
+
+## [2026-06-17T23:21:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1988 | cache_read=9016 | cache_creation=12734 | duration_ms=33834 | cost_usd=0.036318
+
+## [2026-06-17T23:21:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2114 | cache_read=9016 | cache_creation=12651 | duration_ms=24897 | cost_usd=0.036782
+
+## [2026-06-17T23:21:23Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=9016 | cache_creation=12643 | duration_ms=23658 | cost_usd=0.032921
+
+## [2026-06-17T23:21:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1709 | cache_read=4196 | cache_creation=12709 | duration_ms=22070 | cost_usd=0.034391
+
+## [2026-06-17T23:21:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1097 | cache_read=9016 | cache_creation=12671 | duration_ms=18883 | cost_usd=0.031737
+
+## [2026-06-17T23:21:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1940 | cache_read=9016 | cache_creation=12693 | duration_ms=23060 | cost_usd=0.035996
+
+## [2026-06-17T23:21:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1985 | cache_read=9016 | cache_creation=12637 | duration_ms=33210 | cost_usd=0.036109
+
+## [2026-06-17T23:21:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1252 | cache_read=4196 | cache_creation=12712 | duration_ms=16445 | cost_usd=0.032112
+
+## [2026-06-17T23:21:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1111 | cache_read=4196 | cache_creation=12693 | duration_ms=18489 | cost_usd=0.031369
+
+## [2026-06-17T23:22:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1321 | cache_read=9016 | cache_creation=12645 | duration_ms=23260 | cost_usd=0.032805
+
+## [2026-06-17T23:22:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1628 | cache_read=9016 | cache_creation=12651 | duration_ms=28999 | cost_usd=0.034352
+
+## [2026-06-17T23:22:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1621 | cache_read=9016 | cache_creation=12639 | duration_ms=25961 | cost_usd=0.034293
+
+## [2026-06-17T23:22:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=949 | cache_read=4196 | cache_creation=12661 | duration_ms=13117 | cost_usd=0.030495
+
+## [2026-06-17T23:22:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3366 | cache_read=4196 | cache_creation=12657 | duration_ms=37589 | cost_usd=0.042572
+
+## [2026-06-17T23:22:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1192 | cache_read=9016 | cache_creation=12723 | duration_ms=16624 | cost_usd=0.032316
+
+## [2026-06-17T23:22:47Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1786 | cache_read=0 | cache_creation=15196 | duration_ms=19659 | cost_usd=0.039330
+
+## [2026-06-17T23:22:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1476 | cache_read=9016 | cache_creation=12643 | duration_ms=24672 | cost_usd=0.033576
+
+## [2026-06-17T23:22:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1461 | cache_read=9016 | cache_creation=12653 | duration_ms=17211 | cost_usd=0.033521
+
+## [2026-06-17T23:22:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1817 | cache_read=9016 | cache_creation=12674 | duration_ms=21389 | cost_usd=0.035343
+
+## [2026-06-17T23:23:08Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1087 | cache_read=9016 | cache_creation=12599 | duration_ms=19024 | cost_usd=0.031543
+
+## [2026-06-17T23:23:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1168 | cache_read=9016 | cache_creation=12681 | duration_ms=20422 | cost_usd=0.032112
+
+## [2026-06-17T23:23:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1848 | cache_read=9016 | cache_creation=12627 | duration_ms=34979 | cost_usd=0.035404
+
+## [2026-06-17T23:23:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1738 | cache_read=9016 | cache_creation=12627 | duration_ms=34285 | cost_usd=0.034854
+
+## [2026-06-17T23:23:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2666 | cache_read=9016 | cache_creation=12661 | duration_ms=45615 | cost_usd=0.039562
+
+## [2026-06-17T23:23:45Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3160 | cache_read=9016 | cache_creation=12647 | duration_ms=35183 | cost_usd=0.042004
+
+## [2026-06-17T23:23:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1455 | cache_read=9016 | cache_creation=12691 | duration_ms=20323 | cost_usd=0.033567
+
+## [2026-06-17T23:23:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1042 | cache_read=4196 | cache_creation=12681 | duration_ms=13522 | cost_usd=0.031000
+
+## [2026-06-17T23:24:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1757 | cache_read=9016 | cache_creation=12729 | duration_ms=22192 | cost_usd=0.035153
+
+## [2026-06-17T23:24:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1852 | cache_read=9016 | cache_creation=12695 | duration_ms=32501 | cost_usd=0.035560
+
+## [2026-06-17T23:24:19Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1798 | cache_read=9016 | cache_creation=12683 | duration_ms=19680 | cost_usd=0.035266
+
+## [2026-06-17T23:24:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2784 | cache_read=9016 | cache_creation=12657 | duration_ms=31239 | cost_usd=0.040144
+
+## [2026-06-17T23:24:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1412 | cache_read=9016 | cache_creation=12638 | duration_ms=25543 | cost_usd=0.033246
+
+## [2026-06-17T23:24:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1712 | cache_read=9016 | cache_creation=12624 | duration_ms=20788 | cost_usd=0.034718
+
+## [2026-06-17T23:24:41Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=filter | n=59
+
+59 candidate(s) cleared threshold
+
+## [2026-06-17T23:25:10Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=hILYM9oBI0M
+
+error: transcript fetch failed for hILYM9oBI0M: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=hILYM9oBI0M! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:12Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=jn5j0vlqmlk
+
+error: transcript fetch failed for jn5j0vlqmlk: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=jn5j0vlqmlk! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:13Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=Ve6lavTtnQ8
+
+error: transcript fetch failed for Ve6lavTtnQ8: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Ve6lavTtnQ8! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:15Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=a83gfDqgeuE
+
+error: transcript fetch failed for a83gfDqgeuE: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=a83gfDqgeuE! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:16Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=ZpxIKeVvc08
+
+error: transcript fetch failed for ZpxIKeVvc08: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ZpxIKeVvc08! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:18Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=8cl9IGY4A9E
+
+error: transcript fetch failed for 8cl9IGY4A9E: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=8cl9IGY4A9E! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:19Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=WH3fVJHM0A4
+
+error: transcript fetch failed for WH3fVJHM0A4: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=WH3fVJHM0A4! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:21Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=e4D0CH8eiv0
+
+error: transcript fetch failed for e4D0CH8eiv0: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=e4D0CH8eiv0! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:22Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=QEBVoultYJg
+
+error: transcript fetch failed for QEBVoultYJg: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=QEBVoultYJg! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:23Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=MXiVLwN8lho
+
+error: transcript fetch failed for MXiVLwN8lho: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=MXiVLwN8lho! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:24Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=THekUSlGMyo
+
+error: no transcript available for THekUSlGMyo: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=THekUSlGMyo! This is most likely caused by:
+
+No transcripts were found for any of the requested language codes: ('en',)
+
+For this video (THekUSlGMyo) transcripts are available in the following languages:
+
+(MANUALLY CREATED)
+None
+
+(GENERATED)
+ - nl ("Dutch (auto-generated)")[TRANSLATABLE]
+
+(TRANSLATION LANGUAGES)
+ - en ("English")
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:25Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=FowtXinAAF8
+
+error: transcript fetch failed for FowtXinAAF8: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=FowtXinAAF8! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:27Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=6-OdjYdEpeU
+
+error: transcript fetch failed for 6-OdjYdEpeU: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=6-OdjYdEpeU! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:28Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=NP_XCZCPUw4
+
+error: transcript fetch failed for NP_XCZCPUw4: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=NP_XCZCPUw4! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:31Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=fS_020V6po8
+
+error: transcript fetch failed for fS_020V6po8: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=fS_020V6po8! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:25:44Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=9Y4AlAVtREI
+
+error: transcript fetch failed for 9Y4AlAVtREI: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=9Y4AlAVtREI! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:26:14Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=convert | target=https://www.youtube.com/watch?v=r7Qbb1yuLkE
+
+error: transcript fetch failed for r7Qbb1yuLkE: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=r7Qbb1yuLkE! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-17T23:26:35Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=materialize | n=42
+
+materialized 42 source(s) to raw/
+
+## [2026-06-17T23:26:35Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=corpus_quality | n=42 | median_words=790 | sparse_n=14 | sparse_frac=0.33
+
+corpus quality: 42 sources, median 790 words, 14/42 sparse (<300 words)
+
+## [2026-06-17T23:26:35Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=nlm_persistent | notebook_id=d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+persistent notebook d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+## [2026-06-17T23:26:36Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=nlm_session | notebook_id=1d0057af-4b8c-4ae9-9fec-84c6124a1210
+
+created session notebook 1d0057af-4b8c-4ae9-9fec-84c6124a1210
+
+## [2026-06-17T23:28:21Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T23-28-21Z-schema-drift.md
+
+## [2026-06-17T23:29:13Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=source_add | target=https://www.iso.org/standard/76120.html
+
+error: `nlm source add 1d0057af-4b8c-4ae9-9fec-84c6124a1210 --url https://www.iso.org/standard/76120.html --wait` exited 1: Adding https://www.iso.org/standard/76120.html and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-17T23:30:06Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=source_add | target=https://www.sciencedirect.com/science/article/abs/pii/S0169023X24000338
+
+error: `nlm source add 1d0057af-4b8c-4ae9-9fec-84c6124a1210 --url https://www.sciencedirect.com/science/article/abs/pii/S0169023X24000338 --wait` exited 1: Adding https://www.sciencedirect.com/science/article/abs/pii/S0169023X24000338 
+and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-17T23:30:33Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=source_add | n=40 | skipped=2
+
+pushed 40 source(s) to session notebook (2 skipped)
+
+## [2026-06-17T23:30:35Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=source_map | n=40
+
+built source map (40 entries)
+
+## [2026-06-17T23:34:01Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T23-34-01Z-schema-drift.md
+
+## [2026-06-17T23:35:08Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=index_settle | distinct_sources=27
+
+index settled (27 distinct source(s) visible)
+
+## [2026-06-17T23:35:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T23-35-59Z-schema-drift.md
+
+## [2026-06-17T23:43:28Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T23-43-28Z-schema-drift.md
+
+## [2026-06-17T23:50:52Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=analysis | branches=6
+
+analysis complete (6 branch(es))
+
+## [2026-06-17T23:50:56Z] wiki-author | id=research-2026-06-17-what-are-the-architecture-and-engineering | updates=8 | created=7 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for semantic-models
+
+## [2026-06-17T23:50:56Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=apply_plan | pages=9
+
+applied plan: applied plan for research-2026-06-17-what-are-the-architecture-and-engineering: 8 update(s)
+
+## [2026-06-17T23:52:04Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-17T23-52-04Z-schema-drift.md
+
+## [2026-06-17T23:54:28Z] research | session_id=2026-06-17-what-are-the-architecture-and-engineering | step=promoted | added=37 | failed=2
+
+promoted 37 source(s) into persistent notebook (2 failed)
+
+## [2026-06-17T23:56:32Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=start | domain=semantic-models
+
+start research session for prompt 'How is semantic modeling applied as architecture in enterprise data systems? Cover: the semantic layer and metrics-layer pattern (universal semantic layer, headless BI, dbt Semantic Layer, Cube, AtScale, Malloy) and how it relates to formal ontologies; linked-data publishing and schema.org for interoperability; data-fabric and data-mesh semantics (knowledge-graph-backed metadata, active metadata catalogs, canonical data models); semantic integration and mapping patterns across heterogeneous sources; and where formal semantics (RDF/OWL) meets pragmatic enterprise data modeling. Include vendor architecture documentation, standards (schema.org, DCAT), reference architectures, and practitioner accounts of semantic-layer adoption. Favor sources specifying the underlying schema or formalism over capability assertions.'
+
+## [2026-06-17T23:56:32Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=search | adapter=pubmed | n=0
+
+adapter pubmed skipped (no queries in plan)
+
+## [2026-06-17T23:56:32Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=search | adapter=semantic_scholar | n=0
+
+adapter semantic_scholar skipped (no queries in plan)
+
+## [2026-06-17T23:56:35Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=search | adapter=arxiv | n=15
+
+adapter arxiv returned 15 candidates
+
+## [2026-06-17T23:56:39Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=search | adapter=youtube | n=24
+
+adapter youtube returned 24 candidates
+
+## [2026-06-17T23:56:47Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=search | adapter=web | n=75
+
+adapter web returned 75 candidates
+
+## [2026-06-17T23:56:47Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=merge | n=104
+
+merged 104 candidate(s) across adapters
+
+## [2026-06-17T23:56:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=798 | cache_read=9016 | cache_creation=12841 | duration_ms=9749 | cost_usd=0.030582
+
+## [2026-06-17T23:57:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1374 | cache_read=9016 | cache_creation=12991 | duration_ms=15315 | cost_usd=0.033762
+
+## [2026-06-17T23:57:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=776 | cache_read=9016 | cache_creation=13018 | duration_ms=16925 | cost_usd=0.030826
+
+## [2026-06-17T23:57:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1117 | cache_read=9016 | cache_creation=12975 | duration_ms=20124 | cost_usd=0.032445
+
+## [2026-06-17T23:57:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=823 | cache_read=9016 | cache_creation=13083 | duration_ms=9643 | cost_usd=0.031191
+
+## [2026-06-17T23:57:24Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1016 | cache_read=9016 | cache_creation=13118 | duration_ms=13294 | cost_usd=0.032226
+
+## [2026-06-17T23:57:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1545 | cache_read=9016 | cache_creation=12996 | duration_ms=24664 | cost_usd=0.034627
+
+## [2026-06-17T23:57:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1515 | cache_read=9016 | cache_creation=13233 | duration_ms=24207 | cost_usd=0.034951
+
+## [2026-06-17T23:57:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1721 | cache_read=9016 | cache_creation=12730 | duration_ms=21762 | cost_usd=0.034975
+
+## [2026-06-17T23:57:50Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2209 | cache_read=0 | cache_creation=15308 | duration_ms=25372 | cost_usd=0.041669
+
+## [2026-06-17T23:57:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2007 | cache_read=9016 | cache_creation=12763 | duration_ms=24778 | cost_usd=0.036471
+
+## [2026-06-17T23:58:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1499 | cache_read=9016 | cache_creation=12768 | duration_ms=18854 | cost_usd=0.033941
+
+## [2026-06-17T23:58:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2270 | cache_read=9016 | cache_creation=12738 | duration_ms=38482 | cost_usd=0.037736
+
+## [2026-06-17T23:58:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2576 | cache_read=4196 | cache_creation=12728 | duration_ms=42234 | cost_usd=0.038764
+
+## [2026-06-17T23:58:28Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1165 | cache_read=9016 | cache_creation=12728 | duration_ms=16294 | cost_usd=0.032191
+
+## [2026-06-17T23:58:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1541 | cache_read=9016 | cache_creation=12744 | duration_ms=18698 | cost_usd=0.034103
+
+## [2026-06-17T23:58:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1980 | cache_read=9016 | cache_creation=12786 | duration_ms=33071 | cost_usd=0.036382
+
+## [2026-06-17T23:58:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2426 | cache_read=9016 | cache_creation=12756 | duration_ms=28346 | cost_usd=0.038552
+
+## [2026-06-17T23:58:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1426 | cache_read=9016 | cache_creation=12756 | duration_ms=19583 | cost_usd=0.033552
+
+## [2026-06-17T23:58:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1559 | cache_read=4196 | cache_creation=12738 | duration_ms=24704 | cost_usd=0.033699
+
+## [2026-06-17T23:59:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2962 | cache_read=4196 | cache_creation=12749 | duration_ms=33122 | cost_usd=0.040736
+
+## [2026-06-17T23:59:14Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2421 | cache_read=4196 | cache_creation=12725 | duration_ms=29289 | cost_usd=0.037983
+
+## [2026-06-17T23:59:26Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2554 | cache_read=9016 | cache_creation=12742 | duration_ms=30346 | cost_usd=0.039164
+
+## [2026-06-17T23:59:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2300 | cache_read=4196 | cache_creation=12737 | duration_ms=27193 | cost_usd=0.037402
+
+## [2026-06-17T23:59:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3458 | cache_read=4196 | cache_creation=12733 | duration_ms=40957 | cost_usd=0.043184
+
+## [2026-06-17T23:59:53Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1467 | cache_read=9016 | cache_creation=12754 | duration_ms=18068 | cost_usd=0.033753
+
+## [2026-06-17T23:59:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2587 | cache_read=9016 | cache_creation=12736 | duration_ms=41848 | cost_usd=0.039317
+
+## [2026-06-18T00:00:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2657 | cache_read=9016 | cache_creation=12758 | duration_ms=32765 | cost_usd=0.039711
+
+## [2026-06-18T00:00:05Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2309 | cache_read=9016 | cache_creation=12786 | duration_ms=27393 | cost_usd=0.038027
+
+## [2026-06-18T00:00:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1264 | cache_read=9016 | cache_creation=12724 | duration_ms=22783 | cost_usd=0.032678
+
+## [2026-06-18T00:00:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2009 | cache_read=9016 | cache_creation=12732 | duration_ms=34451 | cost_usd=0.036419
+
+## [2026-06-18T00:00:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1778 | cache_read=4196 | cache_creation=12716 | duration_ms=31385 | cost_usd=0.034750
+
+## [2026-06-18T00:00:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2142 | cache_read=9016 | cache_creation=12734 | duration_ms=36752 | cost_usd=0.037088
+
+## [2026-06-18T00:00:39Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=4196 | cache_creation=12736 | duration_ms=20767 | cost_usd=0.033480
+
+## [2026-06-18T00:00:51Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1344 | cache_read=9016 | cache_creation=12700 | duration_ms=17151 | cost_usd=0.033030
+
+## [2026-06-18T00:00:54Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=916 | cache_read=9016 | cache_creation=12688 | duration_ms=13752 | cost_usd=0.030866
+
+## [2026-06-18T00:00:55Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1189 | cache_read=9016 | cache_creation=12702 | duration_ms=15927 | cost_usd=0.032259
+
+## [2026-06-18T00:01:04Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2043 | cache_read=9016 | cache_creation=12734 | duration_ms=24776 | cost_usd=0.036593
+
+## [2026-06-18T00:01:11Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1407 | cache_read=9016 | cache_creation=12705 | duration_ms=19002 | cost_usd=0.033355
+
+## [2026-06-18T00:01:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1788 | cache_read=9016 | cache_creation=12678 | duration_ms=21600 | cost_usd=0.035206
+
+## [2026-06-18T00:01:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1058 | cache_read=9016 | cache_creation=12730 | duration_ms=13335 | cost_usd=0.031660
+
+## [2026-06-18T00:01:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1383 | cache_read=4196 | cache_creation=12726 | duration_ms=25363 | cost_usd=0.032795
+
+## [2026-06-18T00:01:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1516 | cache_read=9016 | cache_creation=12700 | duration_ms=17825 | cost_usd=0.033890
+
+## [2026-06-18T00:01:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1449 | cache_read=9016 | cache_creation=12714 | duration_ms=17678 | cost_usd=0.033583
+
+## [2026-06-18T00:01:41Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1832 | cache_read=9016 | cache_creation=12712 | duration_ms=22483 | cost_usd=0.035494
+
+## [2026-06-18T00:01:44Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1188 | cache_read=4196 | cache_creation=12748 | duration_ms=20910 | cost_usd=0.031864
+
+## [2026-06-18T00:01:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1319 | cache_read=4196 | cache_creation=12714 | duration_ms=17386 | cost_usd=0.032451
+
+## [2026-06-18T00:01:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1621 | cache_read=9016 | cache_creation=12682 | duration_ms=19439 | cost_usd=0.034379
+
+## [2026-06-18T00:02:09Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1192 | cache_read=9016 | cache_creation=12650 | duration_ms=24283 | cost_usd=0.032170
+
+## [2026-06-18T00:02:15Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1808 | cache_read=9016 | cache_creation=12686 | duration_ms=32253 | cost_usd=0.035322
+
+## [2026-06-18T00:02:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1525 | cache_read=9016 | cache_creation=12689 | duration_ms=27892 | cost_usd=0.033913
+
+## [2026-06-18T00:02:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1222 | cache_read=4196 | cache_creation=12706 | duration_ms=22073 | cost_usd=0.031950
+
+## [2026-06-18T00:02:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1245 | cache_read=9016 | cache_creation=12728 | duration_ms=23924 | cost_usd=0.032591
+
+## [2026-06-18T00:02:36Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1339 | cache_read=9016 | cache_creation=12733 | duration_ms=16299 | cost_usd=0.033071
+
+## [2026-06-18T00:02:40Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1348 | cache_read=4196 | cache_creation=12704 | duration_ms=23866 | cost_usd=0.032576
+
+## [2026-06-18T00:02:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1410 | cache_read=9016 | cache_creation=12706 | duration_ms=25110 | cost_usd=0.033372
+
+## [2026-06-18T00:02:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1382 | cache_read=9016 | cache_creation=12714 | duration_ms=16470 | cost_usd=0.033248
+
+## [2026-06-18T00:02:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1198 | cache_read=4196 | cache_creation=12718 | duration_ms=15188 | cost_usd=0.031854
+
+## [2026-06-18T00:03:07Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1587 | cache_read=9016 | cache_creation=12718 | duration_ms=25950 | cost_usd=0.034281
+
+## [2026-06-18T00:03:12Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1584 | cache_read=9016 | cache_creation=12724 | duration_ms=18981 | cost_usd=0.034278
+
+## [2026-06-18T00:03:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1655 | cache_read=4196 | cache_creation=12772 | duration_ms=28846 | cost_usd=0.034247
+
+## [2026-06-18T00:03:22Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1615 | cache_read=4196 | cache_creation=12714 | duration_ms=28405 | cost_usd=0.033931
+
+## [2026-06-18T00:03:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1174 | cache_read=4196 | cache_creation=12708 | duration_ms=17772 | cost_usd=0.031714
+
+## [2026-06-18T00:03:33Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1318 | cache_read=9016 | cache_creation=12696 | duration_ms=24841 | cost_usd=0.032892
+
+## [2026-06-18T00:03:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1486 | cache_read=4196 | cache_creation=12752 | duration_ms=18516 | cost_usd=0.033362
+
+## [2026-06-18T00:03:42Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1893 | cache_read=9016 | cache_creation=12754 | duration_ms=23230 | cost_usd=0.035883
+
+## [2026-06-18T00:03:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1457 | cache_read=9016 | cache_creation=12712 | duration_ms=18056 | cost_usd=0.033619
+
+## [2026-06-18T00:03:56Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1973 | cache_read=9016 | cache_creation=12736 | duration_ms=22896 | cost_usd=0.036247
+
+## [2026-06-18T00:03:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1282 | cache_read=9016 | cache_creation=12696 | duration_ms=15714 | cost_usd=0.032712
+
+## [2026-06-18T00:04:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1762 | cache_read=9016 | cache_creation=12711 | duration_ms=32770 | cost_usd=0.035142
+
+## [2026-06-18T00:04:17Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1308 | cache_read=9016 | cache_creation=12696 | duration_ms=16236 | cost_usd=0.032842
+
+## [2026-06-18T00:04:18Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1093 | cache_read=9016 | cache_creation=12743 | duration_ms=21602 | cost_usd=0.031861
+
+## [2026-06-18T00:04:30Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2026 | cache_read=9016 | cache_creation=12738 | duration_ms=36679 | cost_usd=0.036516
+
+## [2026-06-18T00:04:34Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1075 | cache_read=9016 | cache_creation=12730 | duration_ms=14294 | cost_usd=0.031745
+
+## [2026-06-18T00:04:37Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1556 | cache_read=9016 | cache_creation=12710 | duration_ms=18587 | cost_usd=0.034110
+
+## [2026-06-18T00:04:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1698 | cache_read=9016 | cache_creation=12714 | duration_ms=20861 | cost_usd=0.034828
+
+## [2026-06-18T00:04:58Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1489 | cache_read=9016 | cache_creation=12736 | duration_ms=18557 | cost_usd=0.033827
+
+## [2026-06-18T00:05:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1329 | cache_read=9016 | cache_creation=12758 | duration_ms=23721 | cost_usd=0.033071
+
+## [2026-06-18T00:05:06Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3097 | cache_read=9016 | cache_creation=12712 | duration_ms=30720 | cost_usd=0.041819
+
+## [2026-06-18T00:05:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3031 | cache_read=9016 | cache_creation=12730 | duration_ms=38087 | cost_usd=0.041525
+
+## [2026-06-18T00:05:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1647 | cache_read=4196 | cache_creation=12734 | duration_ms=21132 | cost_usd=0.034131
+
+## [2026-06-18T00:05:21Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1605 | cache_read=9016 | cache_creation=12767 | duration_ms=18700 | cost_usd=0.034469
+
+## [2026-06-18T00:05:25Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1370 | cache_read=0 | cache_creation=24597 | duration_ms=17177 | cost_usd=0.056052
+
+## [2026-06-18T00:05:31Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1676 | cache_read=9016 | cache_creation=12696 | duration_ms=19779 | cost_usd=0.034682
+
+## [2026-06-18T00:05:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1345 | cache_read=9016 | cache_creation=12698 | duration_ms=15235 | cost_usd=0.033031
+
+## [2026-06-18T00:05:43Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1805 | cache_read=9016 | cache_creation=12753 | duration_ms=21135 | cost_usd=0.035441
+
+## [2026-06-18T00:05:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1939 | cache_read=4196 | cache_creation=12690 | duration_ms=23203 | cost_usd=0.035503
+
+## [2026-06-18T00:05:57Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1300 | cache_read=9016 | cache_creation=12708 | duration_ms=25035 | cost_usd=0.032826
+
+## [2026-06-18T00:06:00Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1185 | cache_read=4196 | cache_creation=12740 | duration_ms=15658 | cost_usd=0.031833
+
+## [2026-06-18T00:06:02Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1853 | cache_read=9016 | cache_creation=12706 | duration_ms=22509 | cost_usd=0.035587
+
+## [2026-06-18T00:06:16Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1171 | cache_read=9016 | cache_creation=12708 | duration_ms=15482 | cost_usd=0.032181
+
+## [2026-06-18T00:06:20Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1408 | cache_read=9016 | cache_creation=12704 | duration_ms=29430 | cost_usd=0.033358
+
+## [2026-06-18T00:06:27Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2511 | cache_read=9016 | cache_creation=12714 | duration_ms=28306 | cost_usd=0.038893
+
+## [2026-06-18T00:06:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1109 | cache_read=9016 | cache_creation=12714 | duration_ms=13966 | cost_usd=0.031883
+
+## [2026-06-18T00:06:32Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1648 | cache_read=4196 | cache_creation=12702 | duration_ms=28661 | cost_usd=0.034072
+
+## [2026-06-18T00:06:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1491 | cache_read=9016 | cache_creation=12762 | duration_ms=19851 | cost_usd=0.033889
+
+## [2026-06-18T00:06:52Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1493 | cache_read=9016 | cache_creation=12736 | duration_ms=18606 | cost_usd=0.033847
+
+## [2026-06-18T00:06:59Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2033 | cache_read=9016 | cache_creation=12704 | duration_ms=37596 | cost_usd=0.036483
+
+## [2026-06-18T00:07:03Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2592 | cache_read=4196 | cache_creation=12700 | duration_ms=30346 | cost_usd=0.038788
+
+## [2026-06-18T00:07:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1444 | cache_read=4196 | cache_creation=12690 | duration_ms=20548 | cost_usd=0.033028
+
+## [2026-06-18T00:07:10Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1407 | cache_read=4196 | cache_creation=12702 | duration_ms=16934 | cost_usd=0.032867
+
+## [2026-06-18T00:07:38Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=1380 | cache_read=9016 | cache_creation=12734 | duration_ms=27285 | cost_usd=0.033278
+
+## [2026-06-18T00:07:48Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=2533 | cache_read=9016 | cache_creation=12722 | duration_ms=43147 | cost_usd=0.039019
+
+## [2026-06-18T00:07:49Z] llm-call | op=filter | model=claude-haiku-4-5-20251001 | in_tokens=8 | out_tokens=3018 | cache_read=4196 | cache_creation=12752 | duration_ms=49009 | cost_usd=0.041022
+
+## [2026-06-18T00:07:49Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=filter | n=26
+
+26 candidate(s) cleared threshold
+
+## [2026-06-18T00:08:05Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://arxiv.org/abs/1707.06974
+
+error: arxiv API network error for 1707.06974: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)
+
+## [2026-06-18T00:08:06Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=igUnkgp_l14
+
+error: transcript fetch failed for igUnkgp_l14: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=igUnkgp_l14! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:08Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=p3TLEV3oIBY
+
+error: transcript fetch failed for p3TLEV3oIBY: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=p3TLEV3oIBY! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:09Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=Q1aji4uJJgc
+
+error: transcript fetch failed for Q1aji4uJJgc: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Q1aji4uJJgc! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:10Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=qGp_Mort9Dg
+
+error: transcript fetch failed for qGp_Mort9Dg: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=qGp_Mort9Dg! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:11Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=Arx3N8tu1Go
+
+error: no transcript available for Arx3N8tu1Go: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Arx3N8tu1Go! This is most likely caused by:
+
+No transcripts were found for any of the requested language codes: ('en',)
+
+For this video (Arx3N8tu1Go) transcripts are available in the following languages:
+
+(MANUALLY CREATED)
+None
+
+(GENERATED)
+ - fr ("French (auto-generated)")[TRANSLATABLE]
+
+(TRANSLATION LANGUAGES)
+ - en ("English")
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:13Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=ai4YdLiCGNM
+
+error: transcript fetch failed for ai4YdLiCGNM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ai4YdLiCGNM! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:14Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=H4BbWdhhuEE
+
+error: transcript fetch failed for H4BbWdhhuEE: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=H4BbWdhhuEE! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:16Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=Z6Yy1xxWQ_0
+
+error: transcript fetch failed for Z6Yy1xxWQ_0: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Z6Yy1xxWQ_0! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:18Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=-30LcwdEIz8
+
+error: transcript fetch failed for -30LcwdEIz8: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=-30LcwdEIz8! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:19Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=9G4539pngVM
+
+error: transcript fetch failed for 9G4539pngVM: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=9G4539pngVM! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:21Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=0jDIYzPqZ28
+
+error: transcript fetch failed for 0jDIYzPqZ28: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=0jDIYzPqZ28! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:08:22Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=convert | target=https://www.youtube.com/watch?v=JohxmsHE4dI
+
+error: transcript fetch failed for JohxmsHE4dI: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=JohxmsHE4dI! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+## [2026-06-18T00:09:05Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=materialize | n=13
+
+materialized 13 source(s) to raw/
+
+## [2026-06-18T00:09:05Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=corpus_quality | n=13 | median_words=7084 | sparse_n=1 | sparse_frac=0.08
+
+corpus quality: 13 sources, median 7084 words, 1/13 sparse (<300 words)
+
+## [2026-06-18T00:09:05Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=nlm_persistent | notebook_id=d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+persistent notebook d55d65ce-8658-4fa3-b13b-3d93bdc4e1cb
+
+## [2026-06-18T00:09:06Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=nlm_session | notebook_id=2e85ccf3-8d8d-4b72-a7a1-90536d63fe64
+
+created session notebook 2e85ccf3-8d8d-4b72-a7a1-90536d63fe64
+
+## [2026-06-18T00:09:52Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=source_add | target=https://direct.mit.edu/dint/article/6/2/457/118751/The-W3C-Data-Catalog-Vocabulary-Version-2
+
+error: `nlm source add 2e85ccf3-8d8d-4b72-a7a1-90536d63fe64 --url https://direct.mit.edu/dint/article/6/2/457/118751/The-W3C-Data-Catalog-Vocabulary-Version-2 --wait` exited 1: Adding 
+https://direct.mit.edu/dint/article/6/2/457/118751/The-W3C-Data-Catalog-Vocabula
+ry-Version-2 and waiting for processing...
+Error: Could not add url source.
+
+Hint: Check the URL is accessible. For YouTube, ensure the video is public.
+
+## [2026-06-18T00:11:19Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=source_add | n=12 | skipped=1
+
+pushed 12 source(s) to session notebook (1 skipped)
+
+## [2026-06-18T00:11:21Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=source_map | n=12
+
+built source map (12 entries)
+
+## [2026-06-18T00:20:08Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=index_settle | distinct_sources=10
+
+index settled (10 distinct source(s) visible)
+
+## [2026-06-18T00:25:47Z] task-error | task=50a94b86-5ea5-4b7d-b5bd-12b73823d158
+
+task 50a94b86-5ea5-4b7d-b5bd-12b73823d158 failed — ValueError: '/private/var/folders/b6/lr58pzc50w39h4qjmvw_h7mr0000gn/T/pytest-of-andrewgrant/pytest-28/test_cloud_multipart_upload_st0/raw/youtube/yt-uploadTest_AB.md' is not in the subpath of '/Users/andrewgrant/code/knowledge' OR one path is relative and the other is absolute.
+
+## [2026-06-18T00:26:48Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T00-26-48Z-schema-drift.md
+
+## [2026-06-18T00:31:33Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=analysis | branches=4
+
+analysis complete (4 branch(es))
+
+## [2026-06-18T00:31:36Z] wiki-author | id=research-2026-06-17-how-is-semantic-modeling-applied-as | updates=6 | created=5 | updated=1 | contradictions=0 | draft=yes
+
+corpus-constructive research session for semantic-models
+
+## [2026-06-18T00:31:36Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=apply_plan | pages=7
+
+applied plan: applied plan for research-2026-06-17-how-is-semantic-modeling-applied-as: 6 update(s)
+
+## [2026-06-18T00:33:14Z] research | session_id=2026-06-17-how-is-semantic-modeling-applied-as | step=promoted | added=11 | failed=1
+
+promoted 11 source(s) into persistent notebook (1 failed)
+
+## [2026-06-18T01:37:57Z] ingest | id=yt-hILYM9oBI0M | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-hILYM9oBI0M.md wiki=wiki/sources/yt-hILYM9oBI0M.md
+
+## [2026-06-18T01:38:10Z] ingest | id=yt--30LcwdEIz8 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt--30LcwdEIz8.md wiki=wiki/sources/yt--30LcwdEIz8.md
+
+## [2026-06-18T01:38:11Z] ingest | id=yt-0jDIYzPqZ28 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-0jDIYzPqZ28.md wiki=wiki/sources/yt-0jDIYzPqZ28.md
+
+## [2026-06-18T01:38:12Z] ingest | id=yt-6-OdjYdEpeU | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-6-OdjYdEpeU.md wiki=wiki/sources/yt-6-OdjYdEpeU.md
+
+## [2026-06-18T01:38:13Z] ingest | id=yt-9Y4AlAVtREI | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-9Y4AlAVtREI.md wiki=wiki/sources/yt-9Y4AlAVtREI.md
+
+## [2026-06-18T01:38:14Z] ingest | id=yt-a83gfDqgeuE | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-a83gfDqgeuE.md wiki=wiki/sources/yt-a83gfDqgeuE.md
+
+## [2026-06-18T01:38:15Z] ingest | id=yt-ai4YdLiCGNM | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-ai4YdLiCGNM.md wiki=wiki/sources/yt-ai4YdLiCGNM.md
+
+## [2026-06-18T01:38:15Z] ingest | id=yt-Arx3N8tu1Go | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-Arx3N8tu1Go.md wiki=wiki/sources/yt-Arx3N8tu1Go.md
+
+## [2026-06-18T01:38:16Z] ingest | id=yt-e4D0CH8eiv0 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-e4D0CH8eiv0.md wiki=wiki/sources/yt-e4D0CH8eiv0.md
+
+## [2026-06-18T01:38:17Z] ingest | id=yt-FowtXinAAF8 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-FowtXinAAF8.md wiki=wiki/sources/yt-FowtXinAAF8.md
+
+## [2026-06-18T01:38:18Z] ingest | id=yt-fS_020V6po8 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-fS_020V6po8.md wiki=wiki/sources/yt-fS_020V6po8.md
+
+## [2026-06-18T01:38:19Z] ingest | id=yt-H4BbWdhhuEE | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-H4BbWdhhuEE.md wiki=wiki/sources/yt-H4BbWdhhuEE.md
+
+## [2026-06-18T01:38:20Z] ingest | id=yt-igUnkgp_l14 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-igUnkgp_l14.md wiki=wiki/sources/yt-igUnkgp_l14.md
+
+## [2026-06-18T01:38:21Z] ingest | id=yt-jn5j0vlqmlk | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-jn5j0vlqmlk.md wiki=wiki/sources/yt-jn5j0vlqmlk.md
+
+## [2026-06-18T01:38:22Z] ingest | id=yt-JohxmsHE4dI | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-JohxmsHE4dI.md wiki=wiki/sources/yt-JohxmsHE4dI.md
+
+## [2026-06-18T01:38:22Z] ingest | id=yt-MXiVLwN8lho | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-MXiVLwN8lho.md wiki=wiki/sources/yt-MXiVLwN8lho.md
+
+## [2026-06-18T01:38:23Z] ingest | id=yt-NP_XCZCPUw4 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-NP_XCZCPUw4.md wiki=wiki/sources/yt-NP_XCZCPUw4.md
+
+## [2026-06-18T01:38:24Z] ingest | id=yt-p3TLEV3oIBY | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-p3TLEV3oIBY.md wiki=wiki/sources/yt-p3TLEV3oIBY.md
+
+## [2026-06-18T01:38:25Z] ingest | id=yt-Q1aji4uJJgc | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-Q1aji4uJJgc.md wiki=wiki/sources/yt-Q1aji4uJJgc.md
+
+## [2026-06-18T01:38:26Z] ingest | id=yt-QEBVoultYJg | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-QEBVoultYJg.md wiki=wiki/sources/yt-QEBVoultYJg.md
+
+## [2026-06-18T01:38:27Z] ingest | id=yt-qGp_Mort9Dg | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-qGp_Mort9Dg.md wiki=wiki/sources/yt-qGp_Mort9Dg.md
+
+## [2026-06-18T01:38:28Z] ingest | id=yt-r7Qbb1yuLkE | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-r7Qbb1yuLkE.md wiki=wiki/sources/yt-r7Qbb1yuLkE.md
+
+## [2026-06-18T01:38:29Z] ingest | id=yt-WH3fVJHM0A4 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-WH3fVJHM0A4.md wiki=wiki/sources/yt-WH3fVJHM0A4.md
+
+## [2026-06-18T01:38:30Z] ingest | id=yt-Z6Yy1xxWQ_0 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-Z6Yy1xxWQ_0.md wiki=wiki/sources/yt-Z6Yy1xxWQ_0.md
+
+## [2026-06-18T01:38:30Z] ingest | id=yt-ZpxIKeVvc08 | type=youtube | domains=- | filter=included | domain=semantic-models | score=1.0
+
+raw=raw/youtube/yt-ZpxIKeVvc08.md wiki=wiki/sources/yt-ZpxIKeVvc08.md
+
+## [2026-06-18T01:41:59Z] lint | scope=schema-drift | schema-drift=191
+
+report=.knowledge/lint/2026-06-18T01-41-59Z-schema-drift.md

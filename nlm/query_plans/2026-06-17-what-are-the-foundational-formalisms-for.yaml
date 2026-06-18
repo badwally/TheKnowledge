@@ -1,0 +1,52 @@
+version: 1
+session_id: 2026-06-17-what-are-the-foundational-formalisms-for
+domain: semantic-models
+prompt: 'What are the foundational formalisms for semantic data models, and how do
+  they compare? Cover: the RDF/RDFS/OWL stack (triples, classes, properties, the OWL
+  EL/QL/RL profiles and their reasoning tradeoffs); description logics as the formal
+  underpinning (expressivity vs decidability, reasoning complexity); the property-graph
+  / labeled-property-graph model and how it contrasts with RDF (RDF-star / RDF 1.2,
+  the ISO GQL standardization effort); the conceptual- and logical-modeling lineage
+  (ER, UML, ontologies as conceptual models); and the criteria for choosing a formalism
+  (reasoning needs, interoperability, tooling maturity, query language). Include the
+  canonical W3C specifications, foundational Semantic Web and description-logic sources,
+  and current practitioner comparisons of RDF vs property graphs. Favor authoritative
+  specs and well-grounded technical sources over introductory overviews.'
+generated_at: '2026-06-17T17:55:09Z'
+plan_client_model: null
+target_counts:
+  arxiv: 5
+  youtube: 5
+  web: 20
+queries:
+  arxiv:
+  - description logic reasoning complexity expressivity survey
+  - property graph versus RDF formal data model comparison
+  - knowledge representation formalism expressiveness comparison
+  youtube:
+  - OWL 2 description logics semantic web lecture
+  - RDF vs property graph knowledge graph explained
+  - SPARQL semantic web query tutorial
+  web:
+  - W3C OWL 2 Web Ontology Language Primer specification
+  - W3C RDF 1.2 Concepts and Abstract Syntax specification
+  - W3C OWL 2 profiles EL QL RL document specification
+  - SPARQL 1.1 Query Language W3C specification
+  - RDF Schema RDFS W3C specification semantics
+  - description logics handbook expressivity decidability reasoning
+  - RDF versus property graph data model detailed comparison
+  - RDF-star RDF 1.2 reification named graphs explained
+  - ISO GQL graph query language standard explained
+  - Berners-Lee Semantic Web foundational vision article
+  - knowledge representation formalisms comparison ontology data model
+  - conceptual data modeling ER UML versus ontology OWL
+  - labeled property graph data modeling guide
+  - SHACL ShEx RDF validation specification comparison
+  - JSON-LD linked data serialization W3C specification
+  - OWL 2 direct semantics model theoretic interpretation
+  - open world versus closed world assumption knowledge representation
+  - triple store versus graph database architecture comparison
+  semantic_scholar: []
+edited: true
+status: executed
+executed_at: '2026-06-17T19:08:31Z'

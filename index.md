@@ -214,3 +214,29 @@ Sources: 1622 | Entities: 1126 | Concepts: 1349 | Synthesis: 409
 - [[sources/web-2026-06-15-809]] · web · Yotpo — Capterra Reviews, Features & Pricing 2026 · orita-cmo
 - [[sources/web-2026-06-15-f6f]] · web · Simon Data (Simon AI) — Capterra Reviews, Features & Pricing 2026 · orita-cmo
 - [[sources/web-2026-06-15-78b]] · web · Listrak — Capterra Reviews, Features & Pricing 2026 · orita-cmo
+- [[sources/yt-uploadTest_AB]] · youtube · Test source
+- [[sources/yt-hILYM9oBI0M]] · youtube · KGC 2023 Keynote: Knowledge Graphs in Today’s Evolving Landscape & Beyond — Deborah McGuinness, RPI
+- [[sources/yt--30LcwdEIz8]] · youtube · Semantic Layers w/ Artyom Keydunov & Pavel Tiunov (Cube.dev)
+- [[sources/yt-0jDIYzPqZ28]] · youtube · KGC 2022 Talk: 'How To Build A Customer 360 Knowledge Graph for FinTech!' — Gupta & Jere, Intuit
+- [[sources/yt-6-OdjYdEpeU]] · youtube · RDF Data Shape Use Statistics: SHACL use on GitHub
+- [[sources/yt-9Y4AlAVtREI]] · youtube · Neo4j Cypher: Getting started! | Neo4j Tutorial
+- [[sources/yt-a83gfDqgeuE]] · youtube · Whence Whyis? Creating Knowledge Graphs from Documents — Jamie McCusker | KGC
+- [[sources/yt-ai4YdLiCGNM]] · youtube · How to handle data about what does not exist
+- [[sources/yt-Arx3N8tu1Go]] · youtube · Using CIDOC CRM for dynamically querying ArSol, a relational database, from the semantic web.
+- [[sources/yt-e4D0CH8eiv0]] · youtube · Building knowledge graphs in the real world. Expert panel at Connected Data London 2018
+- [[sources/yt-FowtXinAAF8]] · youtube · Shapes applications and tools Part 1: Introduction to RDF data model and motivation
+- [[sources/yt-fS_020V6po8]] · youtube · Lecture 07: Uplift - Mapping Relational Databases to RDF
+- [[sources/yt-H4BbWdhhuEE]] · youtube · KGC 2022 Panel: 'Knowledge Graph Architecture: Where Are We and Where Are We Going?'
+- [[sources/yt-igUnkgp_l14]] · youtube · The Semantics of a Semantic Layer by Dave Mariani
+- [[sources/yt-jn5j0vlqmlk]] · youtube · KGC 2023 Talk — The EU Knowledge Graph by Dennis Diefenbach, The QA Company
+- [[sources/yt-JohxmsHE4dI]] · youtube · Designing and Building Enterprise Knowledge Graphs from Relational Databases in the Real World
+- [[sources/yt-MXiVLwN8lho]] · youtube · Semantic similarity for faster Knowledge Graph delivery at scale. Vassil Momtchev
+- [[sources/yt-NP_XCZCPUw4]] · youtube · Masterclass Shapes Constraint Language KGC 2023
+- [[sources/yt-p3TLEV3oIBY]] · youtube · How to use a Semantic Layer and Data Lakehouse
+- [[sources/yt-Q1aji4uJJgc]] · youtube · KGC 2023 Talk — Using Knowledge Graphs for Navigating Data Assets by RelationalAI's Márton Búr
+- [[sources/yt-QEBVoultYJg]] · youtube · Knowledge Architecture: Strategy+Data Science+Information Architecture - NASA Data to Knowledge
+- [[sources/yt-qGp_Mort9Dg]] · youtube · Ontology-based Data Access made Practical, by Diego Calvanese
+- [[sources/yt-r7Qbb1yuLkE]] · youtube · Wikidata Knowledge Graph to Enable Equitable and Validated Ge... - Jonathan Fraine & Lydia Pintscher
+- [[sources/yt-WH3fVJHM0A4]] · youtube · The Year of the Graph: Evaluating graph databases. Panel discussion at Connected Data London
+- [[sources/yt-Z6Yy1xxWQ_0]] · youtube · Headless BI Architecture and Trade-offs - Pavel Tiunov, Cube Dev
+- [[sources/yt-ZpxIKeVvc08]] · youtube · KGC 2022: 'Yes, You Can Use Knowledge Graphs in Real Life!' — Amazon Web Services & Lexis Nexis

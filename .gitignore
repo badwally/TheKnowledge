@@ -87,3 +87,8 @@ wiki/Untitled*
 
 # Frontend
 node_modules/
+
+# Local YouTube transcript cache (IP-throttle fallback)
+.knowledge/transcripts/
+# YouTube transcript RTF originals (local capture reference)
+docs/YT-failed-transcript-table/

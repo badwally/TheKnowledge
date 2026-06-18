@@ -1,0 +1,47 @@
+version: 1
+session_id: 2026-06-17-how-do-practitioners-engineer-ontologies-at
+domain: semantic-models
+prompt: 'How do practitioners engineer ontologies at production quality? Cover: established
+  methodologies (METHONTOLOGY, NeOn, SAMOD, agile and competency-question-driven design);
+  ontology design patterns (content patterns, logical patterns, the ODP catalog) and
+  anti-patterns; modularization and ontology reuse; ontology alignment and matching
+  (techniques, the OAEI evaluation campaigns, precision and recall tradeoffs); upper
+  and foundational ontologies (BFO, DOLCE, SUMO, gist) and when to commit to one;
+  and ontology lifecycle, versioning, and governance. Include foundational methodology
+  papers, the ontology-design-pattern literature, OAEI results, and current engineering
+  practice.'
+generated_at: '2026-06-17T19:12:35Z'
+plan_client_model: null
+target_counts:
+  arxiv: 8
+  youtube: 5
+  web: 20
+queries:
+  arxiv:
+  - ontology engineering methodology competency questions survey
+  - ontology alignment matching techniques OAEI evaluation
+  - upper ontology BFO DOLCE foundational comparison
+  youtube:
+  - ontology engineering methodology tutorial OWL
+  - ontology design patterns ODP catalog semantic web
+  - BFO basic formal ontology tutorial
+  web:
+  - METHONTOLOGY ontology engineering methodology guide
+  - NeOn methodology networked ontologies tutorial
+  - ontology design patterns ODP portal catalog
+  - OAEI ontology alignment evaluation initiative results
+  - BFO basic formal ontology documentation reuse guide
+  - DOLCE descriptive ontology linguistic cognitive engineering
+  - gist enterprise foundational ontology documentation
+  - ontology modularization OPPL patterns best practices
+  - competency questions ontology requirements specification
+  - ontology versioning OWL change management best practices
+  - AgreementMakerLight LogMap ontology matching tools comparison
+  - SUMO suggested upper merged ontology documentation
+  - ontology anti-patterns common mistakes OWL design
+  - Protege ontology engineering workflow production guide
+  - ontology governance lifecycle enterprise deployment
+  semantic_scholar: []
+edited: true
+status: executed
+executed_at: '2026-06-17T20:11:34Z'

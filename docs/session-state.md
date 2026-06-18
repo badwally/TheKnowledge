@@ -1,6 +1,76 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-17 (agentic-data-layer research domain + YouTube-aware filter fix — merged to main)
+Last updated: 2026-06-17 (semantic-models research loop streams 3+4 + YouTube transcript-cache seam — COMMITTED, local only)
+
+---
+
+## ✅ SEMANTIC-MODELS RESEARCH LOOP — STREAMS 3+4 DONE + COMMITTED (2026-06-17)
+
+**Commits (local `main`, NOT pushed):** `7fdc645d` cache-seam code/infra (youtube.py +
+test + .gitignore); `3789559e` research corpus broad cut (311 files — sm streams 3+4 +
+same-day agentic-data-layer tail; condo/orita/obsidian backlog excluded; safety-checked
+clean). docs/YT-failed-transcript-table/ RTF originals (2.8M) gitignored.
+
+Plan: `docs/plans/2026-06-17-semantic-models-research-loop.md`. Streams 1+2 ran earlier
+(executed); this session ran **streams 3 (knowledge graphs) + 4 (semantic layers)** with
+the improved YouTube protocol applied first.
+
+**Improved-protocol gaps closed before executing (the plans + policy predated the YT fixes):**
+- `.knowledge/policies/semantic-models/policy.yaml` — added `channel_authority` +
+  `speaker_expertise` quality signals (mirrors agentic-data-layer; semantic-web/KG venues).
+- Stream 3+4 plan YAMLs — rewrote `youtube:` queries from tutorial→conference/lecture/keynote
+  register. (Runtime fixes — filter per-source-type guidance, promote-recover-URL — are on
+  main and applied automatically at `--execute`.)
+
+**Stream results:** S3 `2026-06-17-what-are-the-architecture-and-engineering` — 105→59
+accepted→37 promoted, 7 synthesis drafts, corpus median 790w, distinct_sources 27. S4
+`2026-06-17-how-is-semantic-modeling-applied-as` — 104→26→11 promoted, 5 synthesis drafts,
+median 7084w, distinct_sources 10. Both `status: executed`. **Protocol validated:** ~17 (S3)
++ ~12 (S4) authoritative conference/keynote videos were *accepted* (vs 0 pre-fix) — KGC
+keynotes (McGuinness, Berners-Lee), Connected Data London, Calvanese OBDA, AtScale/Cube.dev.
+
+**YouTube transcript IP-block + recovery (NEW reusable infra):** all accepted YT videos
+failed transcript convert — YouTube IP-throttles this connection (HTTP 429) across
+youtube-transcript-api AND yt-dlp, authenticated or not. Built a **transcript-cache seam**:
+`converters/youtube.py` `convert()` now checks `.knowledge/transcripts/<id>.{txt,vtt}`
+(overridable via `WIKI_TRANSCRIPT_CACHE`) before the network; parses plain text,
+YouTube-panel `M:SS`-interleaved copy, and WebVTT. 6 new tests (`test_converters_youtube_cache.py`)
++ converter regression green. `.knowledge/transcripts/` gitignored. Doubles as the permanent
+yt-dlp fallback once the IP unthrottles. User manually captured transcripts (RTF via TextEdit)
+→ `textutil` converted → **25 ingested** via `wiki ingest --force-include --domain semantic-models`
+(raw/youtube/yt-*.md + wiki/sources/yt-*.md, `caption_track: cached`). 4 NOT recovered, DROPPED
+(do NOT re-queue): `9G4539pngVM`, `THekUSlGMyo`, `Ve6lavTtnQ8` (foreign-language or low-value
+video per user), `8cl9IGY4A9E` (paste error — duplicated 6-OdjYdEpeU; removed). Content is
+rough ASR auto-captions — landed in the local
+RAG layer only; the S3/S4 NLM synthesis drafts were NOT regenerated (decision: ASR noise >
+incremental insight; web/arxiv core already grounds them).
+
+**FINALIZE — DEFERRED (user decision 2026-06-17), gateway-fix-gated.** The 12 S3/S4 synthesis
+drafts (committed, `draft: true`) do NOT finalize: `wiki research` NLM-synthesis output is not
+finalize-compatible. Substantive bullets ARE grounded — the validator accepts footnote refs
+(`[N]` inline + `[^N]: [[sources/id]]` map; `citations.py` `_FOOTNOTE_REF_RE`/`_FOOTNOTE_DEF_RE`).
+Blockers: (1) NLM emits structural labels as `*   **Name and Key Claim**: X` (title-case, colon
+OUTSIDE the bold, bullet-prefixed) — `_STRUCTURAL_FRAME_LABEL_RE` expects `**Label:** ` and the
+allowlist has lowercase `"Name and key claim"`, so they miss; (2) aggregate-framing openers
+("Based on the provided sources, several patterns emerge…") ARE in the allowlist but the M45
+exemption is GATED on `synthesizes:` (≥2) + `## Included works`, which `wiki research` pages lack;
+(3) ~15 genuinely uncited cross-cutting/limitations prose sentences (no `[N]` at all). TRIGGER to
+revive: scoped TDD fix in `citations.py` (match NLM's bulleted `**X**:` label form; ungate
+aggregate-opener exemption for synthesizes-less pages) + cite-add the ~15 genuine claims — fixes
+ALL future research syntheses, not just these 12. Batch tools (`finalize-batch`, `draft-close run`)
+only target STALE drafts (>7d); these are today's, so they won't pick them up regardless. Memory
+candidate (not yet written): "wiki research synthesis output is not finalize-compatible".
+
+**OPEN — commit + staging decision (user call, NOT yet done):** working tree is a large mixed
+pile (244 today-mtime untracked raw pages = semantic-models loop + agentic-data-layer tail;
+plus the protected condo/orita/clippings/obsidian backlog). No reliable per-domain handle
+(raw frontmatter `domains: []`, bodies never name the domain, source_maps UUID-keyed).
+Cleanly-identifiable sm artifacts: 20 wiki/synthesis `2026-06-17-{architecture-and-engineering,
+semantic-modeling-applied,foundational-formalisms,engineer-ontologies}*.md`, 25 `yt-*`
+raw+source pages, policy.yaml, 4 plan YAMLs, plan doc, `docs/YT-failed-transcript-table.md`.
+Code/infra commit (youtube.py + test + .gitignore) is clean+separable — land it first.
+`docs/YT-failed-transcript-table/` holds 2.8M of RTF originals — do NOT commit. Never
+`git add -u`/`-A`.
 
 ---
 
@@ -16,9 +86,9 @@ Last updated: 2026-06-17 (agentic-data-layer research domain + YouTube-aware fil
 
 **Open / next (user-trigger):**
 - **Acceptance gate — PASSED 2026-06-17 (session `2026-06-17-what-are-the-current-architecture-and`).** YouTube-heavy re-run with S2 idle: 230 candidates → 77 accepted (33%, vs prior ~11%); planner emitted institution/conference-anchored YouTube queries (Stanford/NeurIPS/KGC/Connected Data London); **31 YouTube sources materialized (vs 0 accepted across prior plans)**, 3 cited in synthesis with full transcripts (1.3k–19k words) — conference keynotes (Eifrem GraphRAG, KGC 2024, NeurIPS'24). semantic_scholar recovered (48 candidates, no 429). corpus_quality median 2512w, distinct_sources 20. The fix works end-to-end.
-- **RESOLVED 2026-06-17 (branch `fix/promote-recover-youtube-url`, commit `d005d17d`, not yet pushed/PR'd).** The promote-to-persistent path dropped sources lacking a `url` in the NLM-side session record into `source_add_text(content="", title=...)` → "Please specify a source" (31 YouTube sources failed persistent-promote, 33/72 promoted). Root cause: NLM's `source list --json` omits `url` for some source types (YouTube especially), so the URL was lost on the round-trip even though raw/ carries it. Fix: `session.promote()` now indexes raw/ by title once (`source_map._index_raw_pages`) and, for any URL-less session source, recovers the canonical URL from the matching raw page → `source_add_url`, or the real body content as a second resort → `source_add_text` with content, falling back to title-only text add for NLM-native sources with no raw page. Recovered URLs still dedup against the persistent corpus. 3 new tests + full gateway suite 1950 passed.
-- Deferred follow-ups: `wiki bootstrap-domain` should auto-generate `channel_authority` signals for video-heavy domains; verify the YouTube converter captures full transcripts for local `wiki retrieve` parity.
-- **Pending memory (awaiting OK):** (1) S2 shared-key concurrency 429; (2) filter lost per-source-type awareness in the port (links [[feedback_general_purpose_inherits_surface_anchors]]).
+- **RESOLVED 2026-06-17 (PR #17 merged to main `7cd021b4`; fix `d005d17d`).** The promote-to-persistent path dropped sources lacking a `url` in the NLM-side session record into `source_add_text(content="", title=...)` → "Please specify a source" (31 YouTube sources failed persistent-promote, 33/72 promoted). Root cause: NLM's `source list --json` omits `url` for some source types (YouTube especially), so the URL was lost on the round-trip even though raw/ carries it. Fix: `session.promote()` now indexes raw/ by title once (`source_map._index_raw_pages`) and, for any URL-less session source, recovers the canonical URL from the matching raw page → `source_add_url`, or the real body content as a second resort → `source_add_text` with content, falling back to title-only text add for NLM-native sources with no raw page. Recovered URLs still dedup against the persistent corpus. 3 new tests + full gateway suite 1950 passed.
+- Deferred follow-ups — **both RESOLVED 2026-06-17:** (1) `wiki bootstrap-domain` now auto-emits `channel_authority` signals for video-heavy domains (`feat/bootstrap-channel-authority`, merged `dc61eb6b`; doc `170f44d8`); (2) YouTube converter transcript capture verified for local `wiki retrieve` parity (`verify/youtube-transcript-capture`, merged `c0177d86`; doc `cec017e7`).
+- **Memory — WRITTEN (OK'd 2026-06-17):** (1) `feedback_s2_shared_key_concurrency`; (2) `feedback_filter_source_type_awareness` (links `feedback_general_purpose_inherits_surface_anchors`). Both already present + indexed in MEMORY.md.
 
 **Do NOT touch:** the working tree holds the parallel project's uncommitted `wiki/`+`raw/` files and pre-existing session-start edits (condo/quebec wiki, gateway converters, docx) — not this session's work; never `git add -A`/`git add -u`.
 
@@ -280,7 +350,11 @@ content (gateway-owned — leave alone).
 
 ## Next atomic step
 
-**Current (2026-06-17): YouTube-aware filter acceptance gate.** Re-run a YouTube-heavy `agentic-data-layer` query plan when the parallel run frees the shared `S2_API_KEY`; confirm authoritative talks (university lectures, conference keynotes) now appear in `accepted`, and recover Plan 2's missing semantic_scholar branch. See top block + `docs/260617_session-review.md`.
+**Current (2026-06-17, post review #3): local git reconcile — BLOCKED, explicit-trigger only.** All 3 promote follow-ups merged to `origin/main` (@ `61c97407`): #17 fix (`7cd021b4`), #18 test isolation (`aec29611`), #19 resolver refactor (`4bcf938f`). Local is mid-reconcile: still on branch `refactor/promote-public-title-resolver` (merged + remote-deleted; local branch lingers), and local `main` is behind origin — **both blocked by the parallel session's untracked file `docs/260617_contp-acceptance-gate-rerun.md`** (already committed on origin via `semantic-models` loop commits `c2278e3f`/`1b431086`). User chose to LEAVE it (option 1). NEXT (when the loop pauses): remove/confirm the local untracked copy, `git checkout main`, fast-forward, delete the local branch. **Do NOT `git stash -u` / force-checkout / any autonomous git op — the `semantic-models` loop is live in another window.** Review #3: `docs/260617_session-review-3.md` (meta-finding: loaded-constraint-not-applied gap; optional code cleanup: extract `_walk_raw_pages()` to dedupe the two source_map walk loops).
+
+**Test-isolation follow-up — RESOLVED 2026-06-17 (PR #18, branch `test/isolate-promote-fixtures`, commit `c61bf3bb`, merged `aec29611`).** The promote URL-drop fix (PR #17, `7cd021b4`) added a `_source_map._index_raw_pages()` call to `session.promote()` that globs the live `raw/` tree; the 5 pre-existing promote tests lacked `kb_root`, so module tests regressed 0.02s → 7.96s with a real-filesystem dependency. Fix: added `kb_root` to all 5 tests (empty tmp tree) — **14 passed in 0.06s**, no assertion changes. Full analysis: `docs/260617_session-review-2.md`. **Public-resolver cleanup — RESOLVED 2026-06-17 (PR #19, commit `4bcf938f`, merged to main).** Added public `source_map.resolve_raw_sources_by_title(titles) -> {title: (url, full_text)}` (batched — single-title would re-walk raw/ per source, 31× on a YouTube-heavy promote); `promote()` calls it once; `_read_raw` + private-API reach into `_index_raw_pages` removed; `_FILENAME_EXTS` extracted/shared. 5 new resolver tests; full gateway suite 1961 passed. **Do NOT start autonomous work — the user is driving the `semantic-models` research loop in a separate window.**
+
+**YouTube-aware filter acceptance gate — PASSED 2026-06-17** (see top block; promote bug found there is now RESOLVED via PR #17). Earlier review: `docs/260617_session-review.md`.
 
 **data-collectives project COMPLETE (foundation + Stage 2).** No open work.
 
