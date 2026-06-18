@@ -51,19 +51,45 @@ fixable levers**:
 precision@k measures the filter lever only (ranking within the pool it was given);
 the query lever is captured via human "expected-but-missing" flags (§6).
 
-## 4. Mechanism (verified)
+## 4. Mechanism — `wiki filter-eval` subcommand (reusable)
 
-- `wiki research --review` returns at `orchestrator.py:1167`, persisting only the
-  **query plan** (the emitted `youtube:` queries) — *before* fan-out and filter. It
-  gives the prompting half but no scored candidates.
-- To obtain a scored candidate pool **without materialization**, a small read-only
-  harness calls the search + filter-scoring stages directly
-  (`_fan_out_search` → per-candidate filter scoring). It performs **no transcript
-  fetch** and **no writes to `raw/` or `wiki/`** — so the transcript IP-throttle does
-  not block it, and no gateway hard rule is touched. The harness writes only scratch
-  artifacts under `docs/` (or a tmp path).
-- Whether the harness is a throwaway script or a promoted `wiki` subcommand is an
-  implementation decision (YAGNI: start as a script; promote if the loop recurs).
+Built as a **reusable gateway subcommand**, not a throwaway script, since this is
+intended as a repeatable improvement loop across domains and rounds.
+
+`wiki research --review` returns at `orchestrator.py:1167`, persisting only the
+**query plan** (the emitted `youtube:` queries) — *before* fan-out and filter — so it
+gives the prompting half but no scored candidates. `wiki filter-eval` fills the gap:
+it runs the search + filter-scoring stages directly (`_fan_out_search` →
+per-candidate filter scoring) with **no transcript fetch** and **no writes to `raw/`
+or `wiki/`**. The transcript IP-throttle does not block it, and no hard rule is
+touched (it only reads candidates and writes scratch artifacts under an eval path).
+
+**Interface (two modes):**
+
+```
+# Mode 1 — generate the pool from a queries file
+wiki filter-eval pool <domain> --queries <path> [--max-results N] [--out <dir>]
+    → writes  <out>/pool-blind.md     (user-facing: title/channel/URL/description,
+                                        grouped by subtopic, shuffled within group,
+                                        NO scores)
+              <out>/pool-scored.json  (analysis: per-candidate filter score + tier)
+
+# Mode 2 — score the filter against the user's gold labels
+wiki filter-eval score <domain> --scored <pool-scored.json> --labels <labels.yaml>
+    → prints  precision@10, and the three disagreement buckets
+              (filter false-positives, filter false-negatives, query-coverage gaps)
+```
+
+- The `--queries` file lists prompts/queries tagged by subtopic so the pool can be
+  grouped (§6). `--max-results` controls per-query candidate count (§6 pool sizes).
+- Output defaults under `.knowledge/eval/filter/<domain>/<timestamp>/` (gitignored
+  scratch), overridable via `--out`; the deliverable gold set + write-up are copied
+  into `docs/` (§10).
+- Standard op pattern: `src/gateway/ops/filter_eval.py`, CLI registration in
+  `cli.py`, tests at `tests/gateway/test_filter_eval.py`. Domain is a positional arg
+  (vertical-agnostic — no `semantic-models` hardcoding).
+- Mode 2 is pure-function over the scored pool + labels (no network), so its scoring
+  math is unit-testable without hitting any adapter.
 
 ## 5. Prompt set
 
@@ -79,8 +105,10 @@ prompting-lever analysis.
 
 ## 6. Candidate pool & labeling
 
-- The harness runs the train prompts' YouTube queries → **dedups into one candidate
-  pool (~50 items)** → scores each via the semantic filter. It emits two artifacts:
+- `wiki filter-eval pool` runs the train prompts' YouTube queries → **dedups into one
+  candidate pool of ~100 items** (target ~12/subtopic after dedup; raise
+  `--max-results` per query as needed to hit it) → scores each via the semantic
+  filter. It emits two artifacts:
   - **(a) Blind pool (for the user):** title / channel / URL / description,
     **no scores**, **grouped by subtopic/prompt** (not one flat shuffled list), so
     the user can assess per-subtopic coverage. Order within a subtopic is shuffled.
@@ -117,13 +145,15 @@ exists are minimal and reviewed).
 
 ## 9. Validation (held-out)
 
-Run the **4 validate prompts** through the harness with improvements applied → the
-user does a lighter judgment on the new filter top-k → report **precision@10 before
-vs after on data not used for tuning**. This guards against overfitting to the 10
-train labels.
+Run the **4 validate prompts** through `wiki filter-eval pool` (validate pool ~50)
+with improvements applied → the user does a lighter judgment on the new filter
+top-k → `wiki filter-eval score` reports **precision@10 before vs after on data not
+used for tuning**. This guards against overfitting to the 10 train labels.
 
 ## 10. Deliverables
 
+- **`wiki filter-eval` subcommand** (reusable): op + CLI registration + tests. The
+  durable artifact — usable for future domains and improvement rounds.
 - Gold set (user labels + missing-flags) saved under `docs/` (e.g.
   `docs/research/youtube-filter-sl/`).
 - `policy.yaml` + example-bank + `query_planner` changes (PR).
@@ -132,7 +162,7 @@ train labels.
 
 ## 11. Preconditions
 
-- **YouTube adapter key idle** — no concurrent live research session (the harness
+- **YouTube adapter key idle** — no concurrent live research session (`filter-eval`
   hits YouTube *search* on our key). Transcript fetch is not invoked, so the
   IP-throttle does not block; but search-side rate limits still apply, so do not run
   concurrently with another adapter-hitting session
@@ -144,7 +174,7 @@ train labels.
 - **Small gold set (10 labels):** mitigated by the held-out validate round; claims
   stay qualitative ("precision moved from X→Y on held-out") not statistical.
 - **YouTube search nondeterminism:** controlled by the shared-pool protocol (user
-  labels the exact pool the harness produced; no independent re-run).
+  labels the exact pool `filter-eval` produced; no independent re-run).
 - **Overfitting the filter to one domain:** changes to `query_planner` register are
   reviewed for cross-domain effect; `semantic-models` policy/example changes are
   domain-scoped by construction.
