@@ -14,7 +14,7 @@ import pytest
 
 from gateway import frontmatter as fm
 from gateway import nlm_registry, paths
-from gateway.ops.query import query
+from gateway.ops.query import query, _inline_citations
 from gateway.research import source_map as sm
 
 
@@ -276,3 +276,55 @@ def test_slug_collision_appends_hash(kb_root: Path, monkeypatch):
     # One should be the plain slug, the other should end with a 6-char hex hash
     plain = [s for s in slugs if not s.endswith("-" + s.split("-")[-1]) or len(s.split("-")[-1]) != 6]
     assert len(slugs) == 2
+
+
+# --- grouped-citation marker expansion (_inline_citations) -------------------
+# NotebookLM emits grouped citations like `[4-6]` and `[7, 8]`. The renderer
+# must resolve every number in the group to its `[[sources/...]]` wikilink so
+# the validator's citation-grounding rule sees a source on the claim line.
+
+
+def test_inline_citations_single_marker_unchanged():
+    """Single `[N]` marker keeps the existing `[N] [[sources/...]]` form."""
+    resolved = {1: "[[sources/yt-a]]"}
+    out = _inline_citations("classify them [1].", resolved)
+    assert out == "classify them [1] [[sources/yt-a]]."
+
+
+def test_inline_citations_expands_range_marker():
+    """`[4-6]` resolves all three numbers, marker preserved."""
+    resolved = {4: "[[sources/yt-a]]", 5: "[[sources/yt-b]]", 6: "[[sources/yt-c]]"}
+    out = _inline_citations("Self-Feedback DETR solves this [4-6].", resolved)
+    assert "[4-6]" in out
+    assert "[[sources/yt-a]]" in out
+    assert "[[sources/yt-b]]" in out
+    assert "[[sources/yt-c]]" in out
+
+
+def test_inline_citations_expands_comma_list_marker():
+    """`[7, 8]` resolves both numbers."""
+    resolved = {7: "[[sources/yt-d]]", 8: "[[sources/yt-e]]"}
+    out = _inline_citations("TriDet improves boundaries [7, 8].", resolved)
+    assert "[[sources/yt-d]]" in out
+    assert "[[sources/yt-e]]" in out
+
+
+def test_inline_citations_partial_group_appends_resolved_only():
+    """A group with some unresolved numbers appends only the resolved links."""
+    resolved = {4: "[[sources/yt-a]]"}  # 5, 6 unresolved
+    out = _inline_citations("foo [4-6].", resolved)
+    assert "[[sources/yt-a]]" in out
+
+
+def test_inline_citations_fully_unresolved_group_stays_bare():
+    """A group with no resolvable numbers is left untouched."""
+    resolved = {1: "[[sources/yt-a]]"}
+    out = _inline_citations("foo [4-6].", resolved)
+    assert out == "foo [4-6]."
+
+
+def test_inline_citations_no_duplicate_links_for_repeated_number():
+    """A number appearing twice in a group yields its link once."""
+    resolved = {3: "[[sources/yt-a]]", 4: "[[sources/yt-b]]"}
+    out = _inline_citations("x [3, 3-4].", resolved)
+    assert out.count("[[sources/yt-a]]") == 1
