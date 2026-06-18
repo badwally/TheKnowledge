@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-1Np4_l4sYgs
 type: youtube
 title: 'VideoChat-R1: Enhancing Spatio-Temporal Perception (Apr 2025)'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:895aad6c867a1098dd33068be149a7b3035c43acaba9a2cf9c4456e06d3aad34
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

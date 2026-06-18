@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-ARFsXG7Hbn8
 type: youtube
 title: Towards Grounded Spatio-Temporal Reasoning
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:df2831bb4f46be483ed888fb13cea5354418ca18285d2ee616827ce430025060
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

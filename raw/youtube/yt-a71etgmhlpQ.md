@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-a71etgmhlpQ
 type: youtube
 title: Spatio-Temporal Human-Object Interactions for Action Recognition
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:9f8513fec6feb61041da7e10d965032c0b93e3afcbd1168bbfbafa057881e6bb
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

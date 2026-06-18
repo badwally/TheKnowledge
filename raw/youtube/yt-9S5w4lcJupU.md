@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-9S5w4lcJupU
 type: youtube
 title: Spatio-Temporal Action Detection Under Large Motion
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:59259b7182b96682b07fea749adbc0dcd4ccdaa770186e5b26cdf2e87aaf4c4a
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

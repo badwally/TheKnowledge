@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-3G-Vdmsluw0
 type: youtube
 title: Temporal Activity Detection in Untrimmed Videos with Recurrent Neural Networks
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:7a33f0eb165b4eaf4914a311244b9f5469e09bbae35340beecfbc90a80750490
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

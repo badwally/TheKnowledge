@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-K2Vx4Fsxy0w
 type: youtube
 title: Optimal Spatio-Temporal Path Discovery for Video Event Detection
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:6384dbc1840cf88e5b295c4bea4d5989784eb47f92a82df9b5d9c58f606c3fa2
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

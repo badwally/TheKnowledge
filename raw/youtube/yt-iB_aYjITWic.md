@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-iB_aYjITWic
 type: youtube
 title: Object Relational Graph With Teacher-Recommended Learning for Video Captioning
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:9e8f40dc6425208c340bcc5173a57b2b51b294945241d87aadfc6c728aafbf58
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-Rati_bdqdDY
 type: youtube
 title: Spatio-Temporal Graph for Video Captioning With Knowledge Distillation
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:47ef6b7ec903ed2d63fad5de754e3f7efa4f928cc8d685700ba6d13f3a008680
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

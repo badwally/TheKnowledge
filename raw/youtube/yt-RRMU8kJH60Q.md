@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-RRMU8kJH60Q
 type: youtube
 title: The basics of spatio-temporal graph neural networks
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:4bc7d0e7c1f9e590cfae8b5147a62c9dd14785ff91f97f08cafdd218ca63a873
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

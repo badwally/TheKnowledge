@@ -143,6 +143,12 @@ notebooks:
       status: promoted
       sources_count: 14
       promoted_at: '2026-05-23T19:32:44Z'
+  ai-temporal-video:
+    persistent:
+      notebook_id: 2560f247-933f-4fb3-b477-b680b2d1cda6
+      created_at: '2026-06-18T18:54:30Z'
+      sources_count: 86
+      last_sync: '2026-06-18T19:00:11Z'
   condo:
     persistent:
       notebook_id: 3a25d83f-94d9-49d1-8756-cfd112c753ca

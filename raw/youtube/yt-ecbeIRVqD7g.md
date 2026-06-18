@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-ecbeIRVqD7g
 type: youtube
 title: 3D CNN-Action Recognition Part-1
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:b06df2e37e19d9668b0010b3b6d85959a571efa2aad50f0d5b25ddcfa855155e
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

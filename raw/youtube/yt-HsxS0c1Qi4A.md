@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-HsxS0c1Qi4A
 type: youtube
 title: 'MS-Temba: Revolutionizing Action Detection in Untrimmed Videos'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:e1bfb5ecb5540dbe8fa88710c577e78b698ee386eeb82d042c4883c775f6421e
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

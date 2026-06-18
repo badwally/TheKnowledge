@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-UxYPIgGRSjg
 type: youtube
 title: A Spatiotemporal Oriented Energy Network for Dynamic Texture Recognition
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:05c352c81c0f4a7eb0791520fb9e5d341762b548846eee82bd675e052a0459a2
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

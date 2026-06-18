@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-HpyQV1Ux5NI
 type: youtube
 title: Rui Hou - Action Recognition, Temporal Localization and Detection in Trimmed
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:bda404756c38804be59c9bd06f6e0778638e88ae9951a51044e47210f343e2ee
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

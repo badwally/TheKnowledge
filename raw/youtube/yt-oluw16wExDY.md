@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-oluw16wExDY
 type: youtube
 title: 'VideoLSTM: Convolves, attends, and flows for action recognition'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:66fcedf96de2333056808a8d8b6a567a4b35afdc287d347a7b476c796f5a5e83
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

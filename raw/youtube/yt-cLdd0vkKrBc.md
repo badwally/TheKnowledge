@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-cLdd0vkKrBc
 type: youtube
 title: iPerceive | Applying Common-Sense Reasoning to Dense Video Captioning and Video
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:ee517298f085acdfced677d686504a2d8bd8338b879a5c9da7c1c9ca9f5012d4
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

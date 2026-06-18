@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-u_rUQcIuxJg
 type: youtube
 title: 'AttTrack: Online Deep Attention Transfer for Multi-object Tracking'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:2a13219ea89159dd29a0d1f5376a3eca4efa727f6e113733c7c9167ce07fcad2
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

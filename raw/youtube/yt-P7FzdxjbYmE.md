@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-P7FzdxjbYmE
 type: youtube
 title: 167 - Self-supervised 4D Spatio-temporal Feature Learning via Order Prediction
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:78d58d08dcb5731fe1bcb393360f60ab2be8c7485a01baeca3e606b60f1e9767
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

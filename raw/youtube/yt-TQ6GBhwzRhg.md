@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-TQ6GBhwzRhg
 type: youtube
 title: '[ECCV&#39;24] Training-free Video Temporal Grounding using Large-scale Pre-trained
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:d80955d504e0e539786b01664c1027d78ccded21bebe3ccecc1f542154f4327a
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

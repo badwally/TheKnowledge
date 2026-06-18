@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-GgE_p7pP4Ig
 type: youtube
 title: 'Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:859b7c42d7f22354f814281dd1ebc3cb1aafee8ae761e21c625a65ad5d99430d
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-UDj9hbwuHBU
 type: youtube
 title: Object Tracking and Reidentification with FairMOT
@@ -8,8 +9,10 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:9cfd26532512515b48b340eb61f2458a2ef4356ea808f2bfa2b28bc8c79743c8
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
-wiki_pages: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
+wiki_pages:
+- wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
 meta:
   source_app: legacy-research-notebook
   legacy_recovery: summary-only

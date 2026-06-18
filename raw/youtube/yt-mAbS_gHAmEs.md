@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-mAbS_gHAmEs
 type: youtube
 title: 'WACV18: Modeling temporal structure with LSTM for online action detection'
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:887921c9059bc062aff016e1a24f5ca776e70250dd365c74063f81b2c4500243
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

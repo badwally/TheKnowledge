@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-NmfykPpl1vE
 type: youtube
 title: 'CVPR23: Collaborative Static and Dynamic Vision-Language Streams for Spatio-Temporal
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:fa3f84e2d3e8c76cd4fad283cf9db848650768cb669d0b587eccf6d78efcce15
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

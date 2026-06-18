@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-YCRdjc_jsRs
 type: youtube
 title: 'ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long
@@ -9,8 +10,10 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:1e6ba0fc3822cf8cba29ffd1c516bd01518a215aa35a6218d9f59faea688f11d
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
-wiki_pages: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
+wiki_pages:
+- wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
 meta:
   source_app: legacy-research-notebook
   legacy_recovery: summary-only

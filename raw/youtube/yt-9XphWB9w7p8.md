@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-9XphWB9w7p8
 type: youtube
 title: 'MS-TCN: Multi-Stage Temporal Convolutional Network for Action Segmentation
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:970c1a7605771a7197e1e3105b69db7954ba9bd9071bc889675e17ddc06b8a1c
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

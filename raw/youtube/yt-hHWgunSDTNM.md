@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-hHWgunSDTNM
 type: youtube
 title: 'STINet: Spatio-Temporal-Interactive Network for Pedestrian Detection and Trajectory
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:0aed3d5eec2333493ff7ef2117f3c758615cb988452922e8e0af677894b8f8da
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

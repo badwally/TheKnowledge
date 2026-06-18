@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-dMm-mVKP7hg
 type: youtube
 title: LiDAR-Based Online 3D Video Object Detection With Graph-Based Message Passing
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:987777fd28f993f7a0ed0ed2a2d4ec7e6c6aeb4733414fc80522ac0bd478aec6
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

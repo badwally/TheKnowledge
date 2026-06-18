@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-2w8Mophui1k
 type: youtube
 title: 'AutoTrack: Towards High-Performance Visual Tracking for UAV With Automatic
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:829537c7c5825b56a6585511a5e3a230c8d0ca2d59e597f741a2b634be5076cb
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

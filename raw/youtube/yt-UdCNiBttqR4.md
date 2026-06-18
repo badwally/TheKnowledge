@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-UdCNiBttqR4
 type: youtube
 title: Real Time Moving Vehicle detection using image processing Matlab| +91 9176206235(call/whatsapp)
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:6c9423c2b70dc1114a9e6d3ae868f50d637d4db6fec33d2ef19f876f36c86c6e
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

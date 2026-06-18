@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-mwqOeTJDyx4
 type: youtube
 title: 'G-TAD: Sub-Graph Localization for Temporal Action Detection'
@@ -8,8 +9,10 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:308cb6d732d31306d41e1e8f8d5485b93d45bf49614e25da6a853907e93e7318
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
-wiki_pages: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
+wiki_pages:
+- wiki/synthesis/2026-06-18-what-are-the-dominant-method-families.md
 meta:
   source_app: legacy-research-notebook
   legacy_recovery: summary-only

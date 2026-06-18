@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-IZ7ATkFkLZU
 type: youtube
 title: Spatio temporal processing algorithms of image(.)
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:e621a87c2b8aeede4d81a88f41b731547b72e2bde731fe12f12200da72065447
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

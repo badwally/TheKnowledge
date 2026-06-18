@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-Ec5uOilCbtA
 type: youtube
 title: Video Captioning With Object Aware Spatio Temporal Correlation and Aggregation
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:e2e3b3a69d704c287452158b8ca468ea37e490439380605c9a3bf17c50199f06
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

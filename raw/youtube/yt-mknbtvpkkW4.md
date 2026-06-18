@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-mknbtvpkkW4
 type: youtube
 title: Deep Learning - 044  Action localization
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:cfd1bfaa4df7147775ec76b5e7eac6e9c0b68f67162afce94f6b1bfc03470e06
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

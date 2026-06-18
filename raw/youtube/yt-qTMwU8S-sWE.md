@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-qTMwU8S-sWE
 type: youtube
 title: Real-Time Stampede Risk Prediction from Crowd Videos Using YOLOv8 and Spatio-Temporal
@@ -9,7 +10,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:44fae0b01bb170c0162f1870e741e94682344d364ad8d0fcd7fdb7f9a6fbe617
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook

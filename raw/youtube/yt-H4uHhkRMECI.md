@@ -1,4 +1,5 @@
 ---
+schema_version: 1
 id: yt-H4uHhkRMECI
 type: youtube
 title: Spatio-temporal Relation Modeling for Few-shot Action Recognition | CVPR 2022
@@ -8,7 +9,8 @@ ingested_at: '2026-04-28T15:21:51Z'
 content_hash: sha256:c923bd8647b6bdf60357154016e9fe63df4ffe30a2283ba4d57bd5568a2c5abe
 domains:
 - ai-temporal-video
-nlm_corpus_ids: []
+nlm_corpus_ids:
+- 2560f247-933f-4fb3-b477-b680b2d1cda6
 wiki_pages: []
 meta:
   source_app: legacy-research-notebook
