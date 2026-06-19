@@ -415,6 +415,28 @@ def wiki_related(query: str, limit: int = 10, caller: str | None = None) -> dict
 
 
 @mcp.tool()
+def wiki_preflight(plan_text: str) -> dict[str, Any]:
+    """Read-tier planner/executor pre-flight: gap-coverage + enrichment status.
+
+    Given a proposed research or synthesis plan, returns an estimate of how well
+    the wiki currently covers the plan's topics and whether there are outstanding
+    demand gaps that overlap. LLM-free — no token spend, no intent enqueue.
+
+    Returns data = {
+      "gaps": [...],                # overlapping outstanding gap texts
+      "enrichment_status": {
+        "coverage": "high"|"partial"|"low",
+        "sections_found": int,
+        "matching_gaps": int,
+      }
+    }
+    """
+    from gateway.ops.preflight import preflight
+
+    return _serialize(preflight(plan_text))
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,

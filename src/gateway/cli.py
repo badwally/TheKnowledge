@@ -115,6 +115,7 @@ SUBCOMMANDS: dict[str, str] = {
     "intent-status": "Query a deposited intent_id for its terminal disposition (A1, read-tier)",
     "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
     "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
+    "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -190,6 +191,7 @@ IMPLEMENTED: set[str] = {
     "intent-status",
     "revert-resolution",
     "remediate",
+    "preflight",
 }
 
 
@@ -466,6 +468,18 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         default=False,
         help="Report orphaned pages without submitting de-path intents.",
+    )
+
+    # preflight: read-tier planner/executor pre-flight (D12, read-tier)
+    p_preflight = subparsers.add_parser(
+        "preflight",
+        help=SUBCOMMANDS["preflight"],
+    )
+    p_preflight.add_argument(
+        "plan_text",
+        nargs="?",
+        default="",
+        help="Proposed research or synthesis plan text to check for wiki coverage.",
     )
 
     # list-domains: enumerate blessed domains (read-only)
@@ -1625,6 +1639,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_revert_resolution(ns)
     if ns.subcommand == "remediate":
         return _run_remediate(ns)
+    if ns.subcommand == "preflight":
+        return _run_preflight(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2908,6 +2924,14 @@ def _run_remediate(ns: argparse.Namespace) -> int:
 
     dry_run = getattr(ns, "dry_run", False)
     result = remediate(dry_run=dry_run)
+    return _emit_result(result)
+
+
+def _run_preflight(ns: argparse.Namespace) -> int:
+    from gateway.ops.preflight import preflight
+
+    plan_text = getattr(ns, "plan_text", "") or ""
+    result = preflight(plan_text)
     return _emit_result(result)
 
 
