@@ -195,6 +195,9 @@ evidence before the next phase begins.
 - [ ] Lost-update claim-conservation accounts for every committed intent's payload claims (F1). *Evidence:* reconciliation pass.
 - [ ] Demand clusters meet the purity gate; cold-start and re-embedding-survival hold (I4). *Evidence:* purity + I4 tests.
 - [ ] Remediation de-paths nothing reachable from the provenance graph (G6); de-path is a provenanced, reversible intent. *Evidence:* citation-target survival test.
+- [ ] Reversal/anomaly detectors trip on the §1.5 signals, quiet on healthy traffic (G2). *Evidence:* `test_reversal_detectors.py` three detectors + negative controls. *(Added 2026-06-19 — gate reconciled to test what the phase lands; traceability table listed G2/G7/I3 for Phase 5.)*
+- [ ] Policy edits route through a privileged, allowlisted CommitGate intent; non-allowlisted rejected; merge-map-regressing edit dead-lettered without writing (G7). *Evidence:* `test_policy_change_control.py`. Existing-op migration = triggered backlog (`docs/backlog/librarian-policy-edit-migrate-existing-ops.md`).
+- [ ] Merge-map golden re-eval guards dedup precision; geometry-only adjudication shows regressions (I3). *Evidence:* `test_merge_map_golden.py` + falsifiability control.
 
 ---
 
@@ -254,8 +257,9 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 | Gap-routing & keep-worthiness (§10) | 5 | not-started |
 | DemandLedger — clustering + trigger (§11) | 5 | not-started |
 | Planner/executor pre-flight (§12) | 5 | not-started |
-| Policy keys + change-control (§14) | cross-cutting | not-started |
-| Verification harness — merge-map golden, eval axes, taxonomy detectors (§16) | cross-cutting | not-started |
+| Reversal / anomaly detectors — §1.5 signals (G2) | 5 | not-started |
+| Policy keys + change-control — privileged-intent path (§14, G7) | 5 (mechanism); migration = backlog | not-started |
+| Verification harness — merge-map golden gate (I3), eval axes, taxonomy detectors (§16) | 5 (merge-map gate); rest cross-cutting | not-started |
 
 ---
 

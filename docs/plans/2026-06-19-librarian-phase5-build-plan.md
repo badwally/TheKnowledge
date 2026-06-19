@@ -38,6 +38,10 @@
 | `src/gateway/ops/deposit.py` (modify) | Keep-worthiness fields + orient-vs-ground gate (durable claim needs ingested source) | T3 |
 | `src/gateway/demand_ledger.py` (new) | Online gap clustering (radius + recurrence-mass + cold-start), canonicalization trigger, raw-gap-text retention (I4) | T4 |
 | `src/gateway/ops/preflight.py` (new) | Read-tier plan-time gap pre-flight + enrichment-status check | T4 |
+| `src/gateway/reversal_detectors.py` (new) | Pure reversal/anomaly detectors over snapshots — §1.5 signals (G2) | T5 |
+| `src/gateway/ops/policy_edit.py` (new) | Privileged-intent policy-edit path (G7) | T6 |
+| `src/gateway/lint/policy_provenance.py` (new) | Out-of-band policy-edit detector (G7) | T6 |
+| `.knowledge/eval/dedup/` merge-map golden + `merge_map_eval` | Dedup-precision non-regression gate (I3) | T6 |
 | `src/gateway/embedding_index.py` (modify ~80) | Demand threshold keys | T4 |
 | `src/gateway/tier.py` (modify ~30) | Add `preflight` to READ_OPS | T4 |
 | `src/gateway/mcp_server.py` + `cli.py` (modify) | Register `revert-resolution`, `remediate`, `preflight` | T1/T2/T4 |
@@ -440,6 +444,102 @@ def test_i4_reembed_survives_model_bump_without_resetting_recurrence(kb_root):
 
 ---
 
+# Task 5 — G2 reversal / anomaly detectors
+
+**Lands:** G2 (detect reversal/governance anomalies on the auto-resolution + cascade paths). Populates the §1.5 Option-B gating signals + §2 corpus-health metrics with REAL measured values (today they are `n/a`).
+
+**Rationale:** The §1.5 Option-B triggers (`reversal.auto_resolution_reversal_rate`, `reversal.cross_project_override_rate`, `reversal.observed_cascade_depth`) are the signals that tell the operator when to build Option B (automatic transitive cascade-revert). Without G2 there is no instrument that measures them — the trigger for reviving Option B is itself unobservable. This is the observability gap on the correctness-critical auto-resolution loop. Build it as a pure function over snapshots, mirroring the Phase-4 `provenance.alarms()` pattern exactly.
+
+**Files:**
+- Create: `src/gateway/reversal_detectors.py`
+- Modify: `src/gateway/ops/lint.py` (register a `reversal-anomalies` check that surfaces detector trips) OR expose via `provenance.alarms()`-style call (mirror Phase-4 A7 placement — verify where `alarms()` lives and co-locate)
+- Test: `tests/gateway/test_reversal_detectors.py`
+
+**Interfaces:**
+- Consumes: resolution acts (`.knowledge/contradictions/resolution_acts.jsonl`, incl. reversal markers written by T1's `revert-resolution`); cross-project override markers (a resolution whose loser belongs to a different project/domain than the winner); cascade depth from T1's `CascadeResult.depth`.
+- Produces: `reversal_detectors.detect(snapshot: dict, *, window_days: int = 30) -> list[Alarm]` where `Alarm = @dataclass(frozen=True)(name, value, threshold, tripped: bool, detail)`. Three detectors: `auto_resolution_reversal_rate` (reverted / total auto-resolutions in window), `cross_project_override_rate` (cross-project resolutions / total), `observed_cascade_depth` (max cascade depth seen). Thresholds = ledger §1.5 (5%, 10%, 3).
+
+- [ ] **Step 1 (Verify-Before-Act):** Read the Phase-4 `provenance.alarms()` implementation + its test (`test_producer_telemetry.py`) and mirror its shape EXACTLY (pure function over a snapshot, named negative controls, `min_volume` floor so a tiny sample can't trip a rate). Confirm the resolution-act + reversal-marker fields T1 writes.
+- [ ] **Step 2: Failing test** — each detector trips on its synthetic signal; negative controls: healthy traffic trips none; a below-`min_volume` sample cannot trip a rate detector. Use realistic act records.
+
+```python
+# tests/gateway/test_reversal_detectors.py
+from gateway.reversal_detectors import detect
+
+def test_reversal_rate_trips_above_5pct(kb_root):
+    snap = {"auto_resolutions": 100, "reversed": 6, "cross_project": 0, "total": 100, "max_cascade_depth": 1}
+    alarms = {a.name: a for a in detect(snap)}
+    assert alarms["auto_resolution_reversal_rate"].tripped is True
+
+def test_healthy_traffic_trips_nothing(kb_root):
+    snap = {"auto_resolutions": 100, "reversed": 1, "cross_project": 2, "total": 100, "max_cascade_depth": 2}
+    assert all(not a.tripped for a in detect(snap))
+
+def test_below_min_volume_cannot_trip_rate(kb_root):
+    snap = {"auto_resolutions": 3, "reversed": 2, "cross_project": 0, "total": 3, "max_cascade_depth": 1}
+    alarms = {a.name: a for a in detect(snap)}
+    assert alarms["auto_resolution_reversal_rate"].tripped is False  # min_volume floor
+```
+
+- [ ] **Step 3: Run → FAIL. Step 4: Implement** `detect` (pure, `min_volume` floor, thresholds from §1.5). **Step 5: PASS.**
+- [ ] **Step 6:** Wire a `reversal-anomalies` lint check (or `alarms()`-style entry) that builds the snapshot from the real act log + cascade history and runs `detect`. Register in `ops/lint.py`. Test scope-runs only it. **Commit.**
+
+---
+
+# Task 6 — G7 privileged-intent policy-edit path + I3 merge-map golden gate
+
+**Lands:** G7 (policy change-control enforced, not documented — changes touching dedup/trust/contradiction policy route through the CommitGate as a privileged, allowlisted intent), I3 (merge-map golden re-eval as a non-regression gate on dedup precision). «contradiction.precedence» + policy-version provenance.
+
+**Scope boundary (deliberate):** Build the ENFORCED MECHANISM — the new `policy-edit` privileged-intent path + the gate (eval-compare + merge-map golden re-eval) + the allowlist check + a lint that flags out-of-band policy edits. The MIGRATION of the three existing direct-write ops (`bootstrap-domain`, `promote-domain`, `demote-domain`) onto this channel is the spec's named "migration delta" and is a **triggered backlog item** (regression risk to working domain ops; deserves its own focused validation). Hardcoded threshold constants (`commit_gate.py:626`, `deposit.py:27`) are gated by code-review/PR, not the runtime path — note this explicitly in the lint message so the boundary is documented, not silent.
+
+**Files:**
+- Create: `src/gateway/ops/policy_edit.py`, `.knowledge/eval/dedup/merge_map_golden.yaml` (or reuse `golden.yaml` as the merge-map source — verify in Step 0), `src/gateway/lint/policy_provenance.py`
+- Modify: `src/gateway/commit_gate.py` (accept the `policy-edit` typed intent; run the gate before committing a policy write), `src/gateway/cli.py`, `src/gateway/mcp_server.py`
+- Test: `tests/gateway/test_policy_change_control.py`, `tests/gateway/test_merge_map_golden.py`
+- Backlog (write the file): `docs/backlog/librarian-policy-edit-migrate-existing-ops.md` (trigger: next substantive edit to `bootstrap_domain.py`/`promote_domain.py`/`demote_domain.py`, OR first observed out-of-band policy edit flagged by `policy_provenance` lint).
+
+**Interfaces:**
+- Consumes: `IntentQueue.submit`, `compute_intent_id`, `CommitGate.commit`; the existing dedup golden (`.knowledge/eval/dedup/golden.yaml` from Phase 3); `eval-retrieval --compare`; `policy_validator.validate_policy` (`bootstrap_domain.py` deps).
+- Produces:
+  - `policy_edit(domain: str, policy_data: dict, *, identity: dict, reason: str, queue=None) -> OperationResult` — validates shape, checks `identity` against the build-time allowlist, enqueues a `policy-edit` CommitGate intent (`payload={"op":"policy-edit","domain":...,"policy_data":...,"reason":...,"policy_version":...}`). Non-allowlisted identity → `rejected`.
+  - CommitGate `policy-edit` branch: before committing the policy write, run the gate — `eval-retrieval --compare` must hold ≥ recall.floor AND the merge-map golden re-eval (I3) must not regress merge precision; on failure → `dead_lettered` with the failing metric, policy NOT written.
+  - `merge_map_eval(golden_path, *, root=None) -> MergeMapResult(precision, recall, regressions: list)` — the I3 gate function.
+  - `lint/policy_provenance.run()` — flags any live `policy.yaml` whose last change has no `policy-edit` provenance node (out-of-band edit detector). Message documents that hardcoded constants are gated by code-review, not this path.
+
+### I3 — merge-map golden gate (build first; G7's gate depends on it)
+
+- [ ] **Step 0 (Verify-Before-Act):** Read `.knowledge/eval/dedup/golden.yaml` (Phase-3 dedup golden) and the dedup eval harness (`test_dedup_golden.py` + any `evaluate/` dedup scorer). Decide: extend `golden.yaml` in place as the merge-map source, or add `merge_map_golden.yaml`. Confirm the `dedup.adjudicate` interface the eval calls.
+- [ ] **Step 1: Failing test** — `merge_map_eval` returns precision/recall over the curated merge/link/distinct golden; a deliberately-broken adjudication (geometry-only) shows regressions (falsifiability negative control, mirroring the Phase-3 control). **Step 2: FAIL. Step 3: Implement** `merge_map_eval`. **Step 4: PASS. Commit.**
+
+### G7 — privileged-intent policy-edit path
+
+- [ ] **Step 5: Failing test.**
+
+```python
+# tests/gateway/test_policy_change_control.py
+from gateway.ops.policy_edit import policy_edit
+from gateway.intent_queue import IntentQueue
+
+def test_allowlisted_identity_enqueues_policy_edit(tmp_queue_env):
+    res = policy_edit("med", {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
+                      identity={"agent": "librarian-admin", "role": "policy-admin"},
+                      reason="raise threshold")
+    assert res.success and res.disposition == "queued"
+
+def test_non_allowlisted_identity_rejected(tmp_queue_env):
+    res = policy_edit("med", {"domain": {"slug": "med"}},
+                      identity={"agent": "random-worker"}, reason="x")
+    assert res.disposition == "rejected"
+    assert any("allowlist" in e or "privileg" in e for e in res.errors)
+```
+
+- [ ] **Step 6: FAIL. Step 7: Implement** `policy_edit` (allowlist check → enqueue typed intent). **Step 8: PASS. Commit.**
+- [ ] **Step 9: Failing test (the gate)** — in `tmp_commit_env`, a `policy-edit` intent that would regress the merge-map golden is `dead_lettered` and the policy file is NOT changed (negative control: a benign edit that holds both gates commits). **Step 10: FAIL. Step 11: Implement** the CommitGate `policy-edit` branch (run eval-compare + `merge_map_eval`; gate). **Step 12: PASS. Commit.**
+- [ ] **Step 13: Implement `lint/policy_provenance`** + register; failing test first (an out-of-band-edited policy is flagged; a provenanced one is not). **Commit.**
+- [ ] **Step 14: Register** `policy-edit` in `cli.py` + `mcp_server.py` build-tier (NOT read-tier). **Step 15: Write the migration backlog file** with the concrete trigger. **Commit.**
+
+---
+
 ## Green-gate (verbatim from ledger §4, Phase 5 — all must be `[x]` with evidence)
 
 - [ ] Retraction flags/quarantines transitive `synthesizes:` dependents to a fixpoint, terminating on cycles (G4). *Evidence:* `test_retraction_cascade.py` source→A→B chain + cycle + negative control.
@@ -447,6 +547,11 @@ def test_i4_reembed_survives_model_bump_without_resetting_recurrence(kb_root):
 - [ ] Lost-update claim-conservation accounts for every committed intent's payload claims (F1). *Evidence:* `test_claim_conservation.py` reconciliation pass + dropped-claim negative control.
 - [ ] Demand clusters meet the purity gate; cold-start and re-embedding-survival hold (I4). *Evidence:* `test_demand_ledger.py` purity + cold-start + I4 tests.
 - [ ] Remediation de-paths nothing reachable from the provenance graph (G6); de-path is a provenanced, reversible intent. *Evidence:* `test_remediation.py` citation-target survival test.
+
+**Reconciled additions (the gate tests what the phase lands — see scope decision 2026-06-19):**
+- [ ] Reversal/anomaly detectors trip on the §1.5 signals and stay quiet on healthy traffic (G2). *Evidence:* `test_reversal_detectors.py` three detectors + negative controls (healthy + below-min-volume).
+- [ ] Policy edits route through a privileged, allowlisted CommitGate intent; non-allowlisted identity is rejected; an edit that regresses the merge-map golden is dead-lettered without writing the policy (G7). *Evidence:* `test_policy_change_control.py`.
+- [ ] Merge-map golden re-eval guards dedup precision; a geometry-only adjudication shows regressions (I3). *Evidence:* `test_merge_map_golden.py` + falsifiability negative control.
 
 ## Phase gate (the loop GATE step — a failing eval OR review HALTS)
 
@@ -459,8 +564,8 @@ def test_i4_reembed_survives_model_bump_without_resetting_recurrence(kb_root):
 
 ## Self-Review (run against the build-plan spec)
 
-- **Spec coverage:** G1 (T1 step14-17) · G2 (reversal detectors — surfaced via revert provenance + claim-conservation/auto-resolution-reversal-rate metric; the §1.5 operator-monitored signals are populated by these acts) · G3 (T1 step6-9) · G4 (T1 step1-5) · G6 (T2 step1-4) · G7 (policy change-control — keys land in §1.3; the enforced change-control path is the existing guarded-runtime/eval gate, no new code beyond key registration) · G8 (T1 step10-13) · I3 (merge-map golden — verified at the eval gate against the existing dedup golden; no new code) · I4 (T4 step5-8) · F1 (T2 step5-8) · A4 (T3 step1-4). All accounted for.
-- **G2/G7/I3 note:** these are landed-where-they-attach per the traceability table — G2 via the reversal acts feeding the §1.5 reversal-rate signal, G7 via key registration under the existing change-control gate, I3 via the eval-gate run against the merge-map golden. No invented subsystem. If a reviewer judges any of these needs dedicated code, that is a scoped follow-up, not a silent gap — flag it.
+- **Spec coverage:** G1 (T1 step14-17) · G2 (T5 — dedicated detectors) · G3 (T1 step6-9) · G4 (T1 step1-5) · G6 (T2 step1-4) · G7 (T6 — privileged-intent path; existing-op migration triggered-backlog) · G8 (T1 step10-13) · I3 (T6 — merge-map golden gate) · I4 (T4 step5-8) · F1 (T2 step5-8) · A4 (T3 step1-4). All accounted for with dedicated code + tests.
+- **Scope decision (2026-06-19):** the master build-plan's traceability table lists G2/G7/I3 for Phase 5 but the original green-gate did not test them — a source-doc tension. Resolved by building dedicated code for all three (T5/T6) and reconciling the §4 gate to test them, so "gate green" means complete. G7's existing-op migration (cutting bootstrap/promote/demote off direct file I/O) is the spec's named "migration delta" — explicitly carried as a triggered backlog item (regression risk to working domain ops), not silently dropped. Hardcoded threshold constants are gated by code-review, documented in the `policy_provenance` lint message.
 - **Placeholder scan:** no `TBD`/`handle edge cases`/`similar to Task N`. Test bodies that elide fixture setup (`# ... seed ...`) reference the verified fixture helpers (`tmp_commit_env`, `kb_root`, `_StubClient`) — the implementer fills them from the named helper, not from imagination.
 - **Type consistency:** `OperationResult` fields, `CascadeResult`/`ReverseMergePlan`/`GapCluster` dataclasses, `LintFinding(check, severity, message, path, metadata)`, `NNHit(key, distance)` used consistently across tasks.
 - **Verify-Before-Act:** T1 Step 0 and T2 forced to read the real recorded schemas before asserting — the Phase-3/Phase-4 session-review lesson (don't assert from the op name / reconstructed schema).
