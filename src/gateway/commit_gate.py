@@ -856,6 +856,26 @@ class CommitGate:
 
     # --- reversal apply-path (Phase 5 T1, G1/G3/G8) --------------------
 
+    def _rel_escapes_root(self, rel: str) -> bool:
+        """True if ``rel`` is absolute, contains ``..``, or resolves outside root.
+
+        Defense-in-depth containment check for the destructive commit boundary
+        (BLOCKER 2): every write/delete rel is producer-supplied (payload-derived
+        for reversal/de-path/reverse-merge). A rel that escapes the KB root must
+        be rejected BEFORE any unlink/write — mirrors the recovery use-site guard
+        and the policy-edit containment assert."""
+        if not rel or os.path.isabs(rel):
+            return True
+        # An explicit `..` component is always a traversal attempt.
+        if ".." in Path(rel).parts:
+            return True
+        root_resolved = self._root.resolve()
+        abs_path = (self._root / rel).resolve()
+        return not (
+            abs_path == root_resolved
+            or str(abs_path).startswith(str(root_resolved) + os.sep)
+        )
+
     def _commit_reversal_writes(
         self,
         intent_id: str,
@@ -870,6 +890,19 @@ class CommitGate:
         apply per-file atomic writes, stage adds + removals, commit with the
         Intent-Id trailer, set committed state, record provenance. Shared by
         both reversal kinds so the atomic boundary is identical."""
+        # BLOCKER 2 (defense-in-depth): this is the shared DESTRUCTIVE boundary
+        # (unlink + git rm). Every rel here is producer/payload-supplied. Reject
+        # any traversal/absolute/escaping rel BEFORE touching the tree — fail
+        # closed with NO partial mutation. (The policy-edit path and recovery
+        # already do this at their use sites; this closes the reversal path.)
+        for rel in (*writes.keys(), *deletes):
+            if self._rel_escapes_root(rel):
+                return self._dead_letter(
+                    intent_id,
+                    f"reversal path {rel!r} escapes the KB root — refusing to "
+                    f"write/delete (failing closed, no mutation)",
+                )
+
         declared = list(writes) + list(deletes)
         try:
             self._queue.set_declared_writes(intent_id, declared)
@@ -1151,7 +1184,13 @@ class CommitGate:
                     f"{mm_result.regressions}",
                 )
 
-        # --- All gates passed — write the policy file ---
+        # --- All gates passed — commit the policy file through the gate's
+        # atomic commit boundary (BLOCKER 1). .knowledge/policies/ is git-TRACKED;
+        # a bare write_text leaves a dangling uncommitted change that recover() /
+        # a concurrent `git checkout --` silently reverts (no durable persistence,
+        # no commit-level audit). Route the write through _commit_reversal_writes:
+        # write -> git add -> commit with the Intent-Id trailer -> record
+        # provenance. Tracked policies are treated as corpus.
         import yaml as _yaml
         from gateway.filter.policy import policy_path as _policy_path
         target = _policy_path(domain)
@@ -1172,10 +1211,14 @@ class CommitGate:
                 f"{policies_root} — refusing to write",
             )
 
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(_yaml.dump(policy_data, allow_unicode=True))
+        try:
+            policy_rel = str(target.relative_to(self._root))
+        except ValueError:
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit: target {target} is not under the KB root — refusing to write",
+            )
 
-        # Record provenance node.
         basis: dict = {
             "op": "policy-edit",
             "domain": domain,
@@ -1183,26 +1226,12 @@ class CommitGate:
             "policy_version": payload.get("policy_version"),
             "provenance_type": "policy-edit",
         }
-        try:
-            self._queue.set_state(
-                intent_id, "committed",
-                result={"domain": domain, "policy_path": str(target)},
-            )
-        except KeyError:
-            pass
-
-        if self._provenance is not None:
-            self._provenance.record(intent_id, basis)
-        else:
-            from gateway import provenance as _prov
-            _prov.record(intent_id, basis, root=self._root)
-
-        return OperationResult(
-            success=True,
-            intent_id=intent_id,
-            disposition="committed",
-            canonical_path=target,
-            summary=f"{intent_id}: policy-edit committed for domain {domain!r}",
+        return self._commit_reversal_writes(
+            intent_id,
+            {policy_rel: _yaml.dump(policy_data, allow_unicode=True)},
+            [],
+            basis,
+            summary=f"policy-edit committed for domain {domain!r}",
         )
 
     def _dead_letter(self, intent_id: str, reason: str) -> OperationResult:

@@ -512,3 +512,104 @@ def test_real_merge_then_reverse_preserves_preexisting_aliases(tmp_commit_env):
     assert "claim-X" in body_after
     # Tombstone deleted.
     assert not (root / tombstone_rel).exists()
+
+
+# ===========================================================================
+# BLOCKER 2 (High, defense-in-depth) — reversal/de-path delete-path containment
+# Named negative controls: a traversal rel must DEAD-LETTER, never delete a file
+# outside the root. The destructive path (_commit_reversal_writes) must reject
+# `..`/absolute and assert resolved-path containment under self._root.
+# ===========================================================================
+
+def test_depath_traversal_target_rel_dead_letters_no_delete(tmp_commit_env):
+    """A traversal target_rel through _apply_depath must dead-letter, not delete.
+
+    PoC: target_rel="../VICTIM.md" resolves OUTSIDE the root. The de-path delete
+    path must reject it (fail closed) and leave the sentinel intact.
+    """
+    gate, q, root = tmp_commit_env
+
+    # Sentinel file OUTSIDE the root (sibling dir), the traversal target.
+    victim = root.parent / "VICTIM.md"
+    victim.write_text("do not delete me\n")
+    assert victim.exists()
+
+    # The traversal rel must point at the victim from inside the root.
+    # _apply_depath reads target_rel and (if it exists) routes to the delete path.
+    # Pre-create an in-root file so the existence check passes, then the rel
+    # escapes — OR point straight at the victim via "..". We point at the victim:
+    payload = {
+        "reversal_type": "depath",
+        "target_rel": "../VICTIM.md",
+        "policy_version": "v1",
+    }
+    identity = {"agent": "remediate", "operation": "depath"}
+    iid, gate_res = _run_intent_through_gate(gate, q, payload, identity)
+
+    assert gate_res.disposition == "dead_lettered", (
+        f"traversal de-path must dead-letter; got {gate_res.disposition} "
+        f"({gate_res.summary})"
+    )
+    assert victim.exists(), "traversal de-path DELETED a file outside the root!"
+    assert victim.read_text() == "do not delete me\n"
+
+
+def test_reverse_merge_traversal_tombstone_dead_letters_no_delete(tmp_commit_env):
+    """A traversal tombstone through _commit_reversal_writes deletes must be rejected.
+
+    We drive _commit_reversal_writes directly with a traversal delete rel (the
+    shared destructive boundary all reversal kinds use), proving the containment
+    guard sits at the boundary, not only at one caller.
+    """
+    gate, q, root = tmp_commit_env
+
+    victim = root.parent / "VICTIM2.md"
+    victim.write_text("also do not delete\n")
+    assert victim.exists()
+
+    # Register an intent so set_declared_writes/set_state have a record.
+    payload = {"reversal_type": "reverse-merge", "tombstone_rel": "x"}
+    identity = {"agent": "tester"}
+    iid = compute_intent_id(payload, identity, semantics="trav-tombstone")
+    intent = Intent(intent_id=iid, payload=payload, identity=identity)
+    q.submit(intent)
+    q.claim(now=1.0)
+    q.set_state(iid, "authored")
+
+    # Drive the shared destructive boundary with a traversal delete rel.
+    result = gate._commit_reversal_writes(
+        iid, {}, ["../VICTIM2.md"], {"reversal_type": "reverse-merge"},
+        summary="traversal tombstone delete",
+    )
+
+    assert result.disposition == "dead_lettered", (
+        f"traversal delete must dead-letter; got {result.disposition} ({result.summary})"
+    )
+    assert victim.exists(), "traversal delete DELETED a file outside the root!"
+    assert victim.read_text() == "also do not delete\n"
+
+
+def test_reversal_writes_traversal_write_rel_dead_letters(tmp_commit_env):
+    """A traversal WRITE rel through _commit_reversal_writes must be rejected too."""
+    gate, q, root = tmp_commit_env
+
+    escape_target = root.parent / "ESCAPED_WRITE.md"
+    assert not escape_target.exists()
+
+    payload = {"reversal_type": "restore-depath", "target_rel": "x"}
+    identity = {"agent": "tester"}
+    iid = compute_intent_id(payload, identity, semantics="trav-write")
+    intent = Intent(intent_id=iid, payload=payload, identity=identity)
+    q.submit(intent)
+    q.claim(now=1.0)
+    q.set_state(iid, "authored")
+
+    result = gate._commit_reversal_writes(
+        iid, {"../ESCAPED_WRITE.md": "pwned\n"}, [], {"reversal_type": "restore-depath"},
+        summary="traversal write",
+    )
+
+    assert result.disposition == "dead_lettered", (
+        f"traversal write must dead-letter; got {result.disposition} ({result.summary})"
+    )
+    assert not escape_target.exists(), "traversal write CREATED a file outside the root!"

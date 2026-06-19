@@ -23,6 +23,25 @@ from gateway.ops.policy_edit import policy_edit
 from gateway.intent_queue import IntentQueue
 
 
+# The REAL repo gitignore: only these .knowledge subpaths are ignored;
+# .knowledge/policies/ is git-TRACKED. A blanket ".knowledge/" masks BLOCKER 1
+# (policy writes must go through the gate's commit boundary). Mirror production.
+_REAL_GITIGNORE = (
+    ".index/\n"
+    ".knowledge/locks/\n"
+    ".knowledge/lint/\n"
+    ".knowledge/watcher.*\n"
+    ".knowledge/scheduler.*\n"
+    ".knowledge/auth.yaml\n"
+    ".knowledge/secrets.env\n"
+    ".knowledge/demand/\n"
+    ".knowledge/transcripts/\n"
+    ".knowledge/intents/\n"
+    ".knowledge/provenance/\n"
+    ".knowledge/fencing/\n"
+)
+
+
 # ---------------------------------------------------------------------------
 # Fixtures
 # ---------------------------------------------------------------------------
@@ -61,12 +80,17 @@ def tmp_gate_env(tmp_path, monkeypatch):
     _git("init", "-q")
     _git("config", "user.email", "test@test")
     _git("config", "user.name", "test")
-    (tmp_path / ".gitignore").write_text(".knowledge/\n.index/\n")
+    # BLOCKER 1: match the REAL repo's gitignore — .knowledge/policies/ is
+    # git-TRACKED. A blanket ".knowledge/" masked the bug (policy writes left a
+    # dangling tracked change with no commit).
+    (tmp_path / ".gitignore").write_text(_REAL_GITIGNORE)
     (tmp_path / "README.md").write_text("seed\n")
     _git("add", "README.md", ".gitignore")
     _git("commit", "-qm", "seed")
 
-    # Seed a live domain with a policy file so the gate can find it.
+    # Seed a live domain with a policy file so the gate can find it. Since
+    # .knowledge/policies/ is tracked, COMMIT it (mirrors production where
+    # policies are committed corpus).
     dom_dir = tmp_path / ".knowledge" / "policies" / "med"
     dom_dir.mkdir(parents=True)
     policy_path = dom_dir / "policy.yaml"
@@ -78,6 +102,8 @@ def tmp_gate_env(tmp_path, monkeypatch):
     policy_path.write_text(yaml.dump(initial_policy))
 
     # Copy the real dedup golden so the merge-map gate runs in the tmp env.
+    # The eval/dedup tree is tracked in production; commit it here so the tree
+    # stays clean for the BLOCKER-1 `git status` assertion.
     real_golden = (
         Path(__file__).parent.parent.parent
         / ".knowledge/eval/dedup/golden.yaml"
@@ -85,6 +111,10 @@ def tmp_gate_env(tmp_path, monkeypatch):
     golden_dir = tmp_path / ".knowledge" / "eval" / "dedup"
     golden_dir.mkdir(parents=True, exist_ok=True)
     shutil.copy(real_golden, golden_dir / "golden.yaml")
+
+    _git("add", "--", ".knowledge/policies/med/policy.yaml",
+         ".knowledge/eval/dedup/golden.yaml")
+    _git("commit", "-qm", "seed policy + golden")
 
     q = IntentQueue()
     idx = EmbeddingIndex()
@@ -449,6 +479,83 @@ def test_gate_commits_benign_policy_edit(tmp_gate_env):
 
 
 # ---------------------------------------------------------------------------
+# BLOCKER 1 (Critical) — policy-edit must DURABLY commit the tracked file
+# .knowledge/policies/ is git-tracked; a bare write_text leaves a dangling
+# uncommitted change that recover()/`git checkout --` silently reverts. The
+# write must go through the gate's atomic commit boundary (Intent-Id trailer).
+# ---------------------------------------------------------------------------
+
+def _git_out(root, *args):
+    return subprocess.run(
+        ["git", "-C", str(root), *args], capture_output=True, text=True, check=True
+    ).stdout
+
+
+def test_policy_edit_commit_is_durable_and_tree_clean(tmp_gate_env):
+    """A successful policy-edit creates a commit with the Intent-Id trailer and
+    leaves `git status` clean (no dangling tracked modification)."""
+    gate, q, root, policy_path, initial_policy = tmp_gate_env
+
+    benign_policy = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.72},
+        "version": 2,
+    }
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "med", benign_policy, "durable commit check", policy_path
+    )
+
+    result = gate.commit(authored, fencing_token=q.fencing_token(iid))
+    assert result.disposition == "committed", (
+        f"expected committed; got {result.disposition} ({result.summary}) {result.errors}"
+    )
+
+    # (a) The on-disk policy was updated.
+    assert yaml.safe_load(policy_path.read_text()) == benign_policy
+
+    # (b) A commit exists carrying the Intent-Id trailer for this intent.
+    log_out = _git_out(root, "log", "--format=%H%n%B", "-n", "5")
+    assert f"Intent-Id: {iid}" in log_out, (
+        f"no commit carries the Intent-Id trailer for {iid}; recent log:\n{log_out}"
+    )
+
+    # (c) The policy file is tracked AND the tree is clean — no dangling change
+    #     that recovery / a concurrent `git checkout --` would silently revert.
+    tracked = _git_out(root, "ls-files", "--", ".knowledge/policies/med/policy.yaml").strip()
+    assert tracked == ".knowledge/policies/med/policy.yaml", (
+        f"policy.yaml not tracked after commit: {tracked!r}"
+    )
+    status = _git_out(root, "status", "--porcelain").strip()
+    assert status == "", f"git tree not clean after policy-edit commit:\n{status}"
+
+
+def test_policy_edit_gate_failure_leaves_no_commit_no_change(tmp_gate_env):
+    """A gate-failed policy-edit writes nothing and creates no commit (unchanged)."""
+    gate, q, root, policy_path, initial_policy = tmp_gate_env
+
+    head_before = _git_out(root, "rev-parse", "HEAD").strip()
+
+    regressing = {
+        "domain": {"slug": "med"},
+        "dedup": {"strategy": "geometry-only", "nn_distance_threshold": 0.5},
+        "version": 2,
+    }
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "med", regressing, "should be blocked", policy_path
+    )
+    result = gate.commit(authored, fencing_token=q.fencing_token(iid))
+    assert result.disposition == "dead_lettered"
+
+    # No new commit, no Intent-Id trailer, policy unchanged, tree clean.
+    head_after = _git_out(root, "rev-parse", "HEAD").strip()
+    assert head_after == head_before, "a dead-lettered edit must not create a commit"
+    log_out = _git_out(root, "log", "--format=%B", "-n", "5")
+    assert f"Intent-Id: {iid}" not in log_out
+    assert yaml.safe_load(policy_path.read_text()) == initial_policy
+    assert _git_out(root, "status", "--porcelain").strip() == ""
+
+
+# ---------------------------------------------------------------------------
 # HIGH 1 — FAIL-CLOSED: a gate eval that raises must dead-letter (not skip)
 # ---------------------------------------------------------------------------
 
@@ -518,7 +625,7 @@ def test_gate_dev_skip_env_marker_allows_missing_goldens(tmp_path, monkeypatch):
     _git("init", "-q")
     _git("config", "user.email", "test@test")
     _git("config", "user.name", "test")
-    (tmp_path / ".gitignore").write_text(".knowledge/\n.index/\n")
+    (tmp_path / ".gitignore").write_text(_REAL_GITIGNORE)
     (tmp_path / "README.md").write_text("seed\n")
     _git("add", "README.md", ".gitignore")
     _git("commit", "-qm", "seed")
@@ -528,6 +635,8 @@ def test_gate_dev_skip_env_marker_allows_missing_goldens(tmp_path, monkeypatch):
     policy_path = dom_dir / "policy.yaml"
     initial = {"domain": {"slug": "med"}, "version": 1}
     policy_path.write_text(yaml.dump(initial))
+    _git("add", "--", ".knowledge/policies/med/policy.yaml")
+    _git("commit", "-qm", "seed policy")
     # NOTE: no golden seeded — the dev-skip marker must allow this to pass.
 
     q = IntentQueue()

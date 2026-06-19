@@ -150,7 +150,14 @@ def test_gate_recorded_node_is_recognized_by_lint(tmp_path, monkeypatch):
     _git("init", "-q")
     _git("config", "user.email", "test@test")
     _git("config", "user.name", "test")
-    (tmp_path / ".gitignore").write_text(".knowledge/\n.index/\n")
+    # Match the REAL repo gitignore — .knowledge/policies/ is git-TRACKED so the
+    # gate can `git add` + commit the policy (BLOCKER 1). A blanket ".knowledge/"
+    # would make git refuse to add the policy file.
+    (tmp_path / ".gitignore").write_text(
+        ".index/\n.knowledge/locks/\n.knowledge/lint/\n.knowledge/intents/\n"
+        ".knowledge/provenance/\n.knowledge/fencing/\n.knowledge/demand/\n"
+        ".knowledge/transcripts/\n.knowledge/auth.yaml\n.knowledge/secrets.env\n"
+    )
     (tmp_path / "README.md").write_text("seed\n")
     _git("add", "README.md", ".gitignore")
     _git("commit", "-qm", "seed")
@@ -160,6 +167,10 @@ def test_gate_recorded_node_is_recognized_by_lint(tmp_path, monkeypatch):
     # Domain "oob": out-of-band — policy.yaml exists, no provenance node.
     _write_policy(tmp_path, "oob", {"domain": {"slug": "oob"}, "version": 1})
     (tmp_path / ".knowledge" / "eval" / "dedup").mkdir(parents=True, exist_ok=True)
+    # Commit the seeded tracked policies so the gate's commit boundary starts clean.
+    _git("add", "--", ".knowledge/policies/gated/policy.yaml",
+         ".knowledge/policies/oob/policy.yaml")
+    _git("commit", "-qm", "seed policies")
 
     q = IntentQueue()
     gate = CommitGate(queue=q, embedding_index=EmbeddingIndex())
