@@ -33,3 +33,19 @@ pairs:
   - a: "GLP-1 receptor agonist"
     b: "market structure shift"
     merge: false
+  # --- Phase-3 hard positives: same referent, disjoint surface (lexical encoder
+  #     scores these FAR apart → false no-merge → embeddings are NOT merge authority).
+  - a: "Ozempic"
+    b: "Semaglutide"
+    merge: true            # brand ↔ generic, no shared token
+  - a: "GLP-1 receptor agonist"
+    b: "glucagon-like peptide-1 receptor agonist"
+    merge: true            # abbreviation ↔ expansion, minimal shared surface
+  # --- Phase-3 hard negatives: distinct referents, shared surface (lexical encoder
+  #     scores these CLOSE → false merge → NN geometry alone must not decide).
+  - a: "Type 1 diabetes"
+    b: "Type 2 diabetes"
+    merge: false           # one token differs; distinct disease referents
+  - a: "Federal Reserve Bank of New York"
+    b: "Federal Reserve Bank of San Francisco"
+    merge: false           # shared "Federal Reserve Bank of" prefix; distinct branches

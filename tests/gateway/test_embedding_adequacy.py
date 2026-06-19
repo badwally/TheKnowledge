@@ -32,10 +32,18 @@ def test_namespace_gate_passes_or_fallback_active_and_falsifiable(namespace):
     # active AND falsifiable.
     assert report.passed or (report.fallback_active and report.fallback_falsifiable), \
         report.summary()
-    # The active lexical fallback here actually CLEARS its operating point.
-    assert report.passed, report.summary()
     # And it is falsifiable — not a rubber stamp.
     assert report.fallback_falsifiable, "gate must fail on a flipped golden label"
+
+
+@pytest.mark.parametrize("namespace", ["section", "question"])
+def test_lexical_fallback_clears_easy_namespaces(namespace):
+    """The active lexical fallback clears its operating point on the section and
+    question namespaces (their goldens are within lexical reach). The entity
+    namespace is intentionally NOT here — its hard identity pairs (Phase-3) are
+    beyond lexical reach, so it rides the active+falsifiable fallback (I2)."""
+    report = evaluate_namespace(namespace)
+    assert report.passed, report.summary()
 
 
 @pytest.mark.parametrize("namespace", ["section", "entity", "question"])
@@ -58,15 +66,25 @@ def test_evaluate_all_three_namespaces():
     assert set(reports) == {"section", "entity", "question"}
     for ns, r in reports.items():
         assert r.namespace == ns
-        assert r.passed, r.summary()
+        # Every namespace either clears its gate OR rides the active+falsifiable
+        # fallback (entity, by design — see I2).
+        assert r.passed or (r.fallback_active and r.fallback_falsifiable), r.summary()
 
 
-def test_entity_gate_strictest_threshold_distinguishes_merge():
-    """The entity gate's precision is computed at the strict dedup operating
-    point; merges and no-merges are correctly separated (precision == floor)."""
+def test_entity_gate_hard_cases_force_alias_authority_fallback():
+    """ENTRY GATE 1a: with hard identity pairs, the lexical-fallback encoder
+    cannot hit precision 1.0 by NN geometry, so the alias-authority fallback
+    is active and falsifiable (I2). The gate must not 'pass' in dead space."""
     report = evaluate_namespace("entity")
     assert report.metric == "precision"
-    assert report.value == 1.0, report.summary()
+    # The honest outcome: embedding geometry is inadequate on hard identity, so
+    # the named fallback is active. (If a future neural encoder passes outright,
+    # report.passed is True and this is also acceptable.)
+    assert report.passed or (report.fallback_active and report.fallback_falsifiable), report.summary()
+    if not report.passed:
+        # Prove fitness is NOT being claimed in dead space: the encoder is below
+        # floor on the hardened set (the gate is falsifiable, not vacuous).
+        assert report.value < report.floor, report.summary()
 
 
 def test_forced_encoder_failure_makes_gate_unfalsifiable_or_fail():
