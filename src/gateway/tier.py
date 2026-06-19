@@ -16,19 +16,21 @@ from gateway import mcp_server as _mcp
 
 # Provably side-effect-free AND token-free ops (hyphenated CLI form). Each was
 # verified to perform no corpus/derived write and make no Claude/judge/NLM call.
+#
+# Excluded (build tier):
+#   "agents"  — runs batch agents that write to raw/ and wiki/; spends model tokens
+#   "lint"    — writes a timestamped report to .knowledge/lint/ and appends to log.md
+#   "status"  — conditionally writes a finetune-milestones file and appends to log.md
 READ_OPS: frozenset[str] = frozenset(
     {
         "retrieve",      # FTS/BM25 retrieval ladder — LLM-free
         "search",        # FTS5/BM25 ranked search
         "context",       # page + ranked neighbors
         "related",       # co-citation neighbors
-        "status",        # watcher heartbeat / pending queue
         "intent-status", # intent_id -> disposition (A1 read-tier status op)
-        "lint",          # read-only health check (reports, does not fix)
         "list-concepts",
         "list-domains",
         "agent-log",     # reads operational-provenance log
-        "agents",        # lists agent registry
     }
 )
 
