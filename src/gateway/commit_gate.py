@@ -330,9 +330,25 @@ class CommitGate:
             dedup_disposition = "committed"
             verdict_dedup = self._dedup_recheck(authored)
             if verdict_dedup.decision == "merge" and verdict_dedup.target_slug:
-                authored = self._retarget_to_canonical(
-                    authored, verdict_dedup.target_slug
-                )
+                try:
+                    authored = self._retarget_to_canonical(
+                        authored, verdict_dedup.target_slug
+                    )
+                except self.RebaseConflict:
+                    # A merge whose body cannot be cleanly unioned (section heading
+                    # collision with differing content) must NOT silently drop the
+                    # deposit's body — dead-letter for manual merge (review B1).
+                    self._queue.set_state(
+                        intent_id, "dead_lettered",
+                        result={"reason": "needs-manual-merge"},
+                    )
+                    return OperationResult(
+                        success=False,
+                        intent_id=intent_id,
+                        disposition="dead_lettered",
+                        errors=["merge body requires manual reconciliation"],
+                        summary=f"{intent_id}: dead-lettered (needs-manual-merge)",
+                    )
                 dedup_disposition = "merged"
             authored.decision_basis.setdefault("dedup_verdict", {
                 "decision": verdict_dedup.decision, "rule": verdict_dedup.rule,
@@ -600,10 +616,23 @@ class CommitGate:
     def _retarget_to_canonical(
         self, authored: "AuthoredIntent", target_slug: str
     ) -> "AuthoredIntent":
-        """Merge-reattachment (§5.3): rewrite the deposit so its claims land on the
-        existing canonical page instead of minting the deposited slug. The deposit's
-        ``## Claims`` lines are unioned onto the canonical page's current body. The
-        deposited slug is never written (no duplicate-referent page)."""
+        """Merge-reattachment (§5.3): rewrite the deposit so its content lands on
+        the existing canonical page instead of minting the deposited slug.
+
+        On merge the gate must NOT silently drop the deposit's body, wikilinks, or
+        identity surfaces (review B1):
+
+        - the deposit's frontmatter ``aliases`` + ``canonical_name`` are unioned
+          into the canonical page's alias set (those surfaces are how future
+          deposits find the referent — dropping them regresses dedup recall);
+        - the deposit's non-``## Claims`` sections (with their wikilinks) are
+          carried onto the canonical page when the canonical page lacks that
+          heading; if a section heading collides with non-identical content the
+          merge dead-letters (``needs-manual-merge``) rather than dropping body;
+        - ``## Claims`` bullets are unioned (existing behavior);
+        - a tombstone with ``merged_into:`` is written at the deposited slug so
+          inbound ``[[entities/<slug>]]`` links resolve and the merge is reversible.
+        """
         from gateway import frontmatter as fm
 
         # Resolve the canonical page's REAL location. _dedup_recheck admits both
@@ -620,53 +649,132 @@ class CommitGate:
         if target_rel is None:
             # No canonical page on disk to attach to — fall back to minting as-is.
             return authored
+
+        # The deposit is exactly one write (the deposited slug).
+        dep_rel, dep_content = next(iter(authored.writes.items()))
         target_abs = self._root / target_rel
         target_content = target_abs.read_text()
 
-        # Extract the deposit's claim bullet lines (under a ## Claims heading).
-        reattached: list[str] = []
-        for _rel, content in authored.writes.items():
-            try:
-                _front, body = fm.parse(content)
-            except Exception:
-                body = content
-            in_claims = False
+        try:
+            tgt_front, tgt_body = fm.parse(target_content)
+        except Exception:
+            tgt_front, tgt_body = {}, target_content
+        try:
+            dep_front, dep_body = fm.parse(dep_content)
+        except Exception:
+            dep_front, dep_body = {}, dep_content
+
+        # (a) Union identity surfaces (aliases + canonical_name) into the canonical
+        #     frontmatter so the merged-away surfaces stay discoverable.
+        def _as_list(v):
+            if v is None:
+                return []
+            return list(v) if isinstance(v, (list, tuple)) else [v]
+
+        alias_set = list(_as_list(tgt_front.get("aliases")))
+        for a in (*_as_list(dep_front.get("aliases")),
+                  dep_front.get("canonical_name"), dep_front.get("title")):
+            if a and a not in alias_set and a != tgt_front.get("canonical_name") \
+                    and a != tgt_front.get("title"):
+                alias_set.append(a)
+        if alias_set:
+            tgt_front = dict(tgt_front)
+            tgt_front["aliases"] = alias_set
+
+        # (b) Split both bodies into (heading -> section text). Carry the deposit's
+        #     non-Claims sections that the canonical page lacks; a heading collision
+        #     with differing content is a real merge → dead-letter, not a drop.
+        def _sections(body: str) -> "list[tuple[str, str]]":
+            out: list[tuple[str, str]] = []
+            cur_h = ""
+            cur: list[str] = []
             for line in body.splitlines():
-                stripped = line.strip()
-                if stripped.lower().startswith("## claims"):
-                    in_claims = True
-                    continue
-                if stripped.startswith("## "):
-                    in_claims = False
-                    continue
-                if in_claims and stripped.startswith("- "):
-                    reattached.append(stripped)
+                if line.strip().startswith("## "):
+                    out.append((cur_h, "\n".join(cur)))
+                    cur_h = line.strip()
+                    cur = []
+                else:
+                    cur.append(line)
+            out.append((cur_h, "\n".join(cur)))
+            return out
 
-        new_target = target_content.rstrip()
-        if reattached:
-            existing = set()
-            for line in target_content.splitlines():
-                s = line.strip()
-                if s.startswith("- "):
-                    existing.add(s)
-            additions = [c for c in reattached if c not in existing]
-            if additions:
-                if "## Claims" not in target_content:
-                    new_target += "\n\n## Claims\n"
-                new_target = new_target.rstrip() + "\n" + "\n".join(additions)
-            new_target += "\n"
-        else:
-            new_target += "\n"
+        tgt_sections = _sections(tgt_body)
+        tgt_headings = {h.lower() for h, _ in tgt_sections if h}
+        dep_sections = _sections(dep_body)
 
-        # Base the rewritten write on the target's current HEAD blob so the CAS
-        # classifies it as a same-page concurrent edit (rebase), not a phantom.
+        carried: list[tuple[str, str]] = []
+        dep_claim_bullets: list[str] = []
+        for h, text in dep_sections:
+            hl = h.lower()
+            if hl.startswith("## claims"):
+                dep_claim_bullets += [
+                    ln.strip() for ln in text.splitlines()
+                    if ln.strip().startswith("- ")
+                ]
+                continue
+            if not h:
+                continue  # preamble before first heading — already on canonical stub
+            if hl in tgt_headings:
+                # Heading collision: only safe if byte-identical, else dead-letter.
+                tgt_text = next(
+                    (t for hh, t in tgt_sections if hh.lower() == hl), ""
+                )
+                if text.strip() and text.strip() != tgt_text.strip():
+                    raise self.RebaseConflict(target_rel)  # → needs-manual-merge
+                continue
+            carried.append((h, text))
+
+        # Reassemble the canonical body: existing body + carried sections + unioned
+        # claims.
+        tgt_existing_bullets = {
+            ln.strip() for ln in tgt_body.splitlines()
+            if ln.strip().startswith("- ")
+        }
+        new_body = tgt_body.rstrip()
+        for h, text in carried:
+            new_body = new_body.rstrip() + "\n\n" + h + "\n" + text.rstrip() + "\n"
+        new_claims = [b for b in dep_claim_bullets if b not in tgt_existing_bullets]
+        if new_claims:
+            if "## Claims" not in new_body:
+                new_body = new_body.rstrip() + "\n\n## Claims\n"
+            new_body = new_body.rstrip() + "\n" + "\n".join(new_claims) + "\n"
+        if not new_body.endswith("\n"):
+            new_body += "\n"
+
+        new_target = fm.serialize(tgt_front, new_body)
+
+        # (c) Tombstone at the deposited slug so inbound wikilinks resolve and the
+        #     merge is reversible.
+        tomb_front = {
+            "type": dep_front.get("type", "entity"),
+            "title": dep_front.get("title") or dep_front.get("canonical_name") or "",
+            "merged_into": target_slug,
+            "redirect": f"[[{target_rel[len('wiki/'):-len('.md')]}]]",
+        }
+        tomb_body = (
+            f"# {tomb_front['title']}\n\n"
+            f"Merged into [[{target_rel[len('wiki/'):-len('.md')]}]] "
+            f"(dedup §5.3). This page is a redirect tombstone.\n"
+        )
+        tombstone = fm.serialize(tomb_front, tomb_body)
+
+        # Record the reattachment set in provenance (consistent with §5.3).
+        basis = dict(authored.decision_basis)
+        basis.setdefault("merge_reattachment", {
+            "target": target_rel,
+            "tombstone": dep_rel,
+            "aliases_unioned": alias_set,
+            "sections_carried": [h for h, _ in carried],
+            "claims_unioned": new_claims,
+        })
+
         head_oid = self._head_blob_oid(target_rel)
         return AuthoredIntent(
             intent=authored.intent,
-            writes={target_rel: new_target},
+            writes={target_rel: new_target, dep_rel: tombstone},
             base_oid=authored.base_oid,
-            base_oids={target_rel: head_oid},
-            decision_basis=dict(authored.decision_basis),
+            base_oids={target_rel: head_oid, dep_rel: None},
+            decision_basis=basis,
         )
 
     # --- claim-level contradiction (Phase 3, Task 7) -------------------

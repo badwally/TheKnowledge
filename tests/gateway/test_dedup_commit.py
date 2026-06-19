@@ -14,9 +14,26 @@ import threading
 
 import pytest
 
+from gateway import frontmatter as fm
 from gateway.commit_gate import AuthoredIntent, CommitGate
 from gateway.embedding_index import EmbeddingIndex
 from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
+
+
+def _is_tombstone(path):
+    try:
+        front, _ = fm.parse(path.read_text())
+    except Exception:
+        return False
+    return bool(front.get("merged_into"))
+
+
+def _live_pages(directory, stems):
+    """Pages in `directory` whose stem is in `stems`, excluding merge tombstones."""
+    if not directory.exists():
+        return []
+    return [p for p in directory.glob("*.md")
+            if p.stem in stems and not _is_tombstone(p)]
 
 
 def _git(root, *args, check=True):
@@ -111,9 +128,11 @@ def test_phantom_collision_second_intent_merges_not_mints(tmp_commit_env):
                          ["Ozempic"], ["med"], q=queue)
     res = gate.commit(b, fencing_token=queue.fencing_token(b.intent.intent_id))
     assert res.disposition in ("committed", "merged"), res.summary
-    pages = list((gate._root / "wiki/entities").glob("*.md"))
-    assert len([p for p in pages if p.stem in ("ozempic", "semaglutide")]) == 1
+    live = _live_pages(gate._root / "wiki/entities", {"ozempic", "semaglutide"})
+    assert len(live) == 1, [p.name for p in live]
     assert res.canonical_path.stem == "ozempic"
+    # A tombstone exists at the merged-away slug (no dangling inbound wikilink).
+    assert _is_tombstone(gate._root / "wiki/entities/semaglutide.md")
 
 
 def test_write_skew_two_claims_one_entity_both_survive(tmp_commit_env):
@@ -204,9 +223,8 @@ def test_commit_time_dedup_during_rebuild_sees_consistent_namespace(tmp_commit_e
     t2 = threading.Thread(target=dedup_commit)
     t1.start(); t2.start(); t1.join(); t2.join()
     assert not errors, errors
-    pages = [p for p in (gate._root / "wiki/entities").glob("*.md")
-             if p.stem in ("ozempic", "semaglutide")]
-    assert len(pages) == 1, [p.name for p in pages]
+    live = _live_pages(gate._root / "wiki/entities", {"ozempic", "semaglutide"})
+    assert len(live) == 1, [p.name for p in live]
 
 
 # --- Review fix B1: merge must not silently drop body/wikilinks/aliases -------
@@ -322,11 +340,11 @@ def test_concept_merge_targets_concepts_dir_not_entities(tmp_commit_env):
                           ["claim-Y [[sources/s2]]"], q=queue)
     res = gate.commit(b, queue.fencing_token(b.intent.intent_id))
     assert res.disposition in ("committed", "merged"), res.summary
-    # Exactly one concept page survives; no entities/ duplicate minted.
-    concept_pages = [p for p in (gate._root / "wiki/concepts").glob("*.md")
-                     if p.stem in ("food-noise", "intrusive-food-thoughts")]
-    assert len(concept_pages) == 1, [p.name for p in concept_pages]
+    # Exactly one LIVE concept page survives (tombstone excluded); no entities/
+    # duplicate minted.
+    live = _live_pages(gate._root / "wiki/concepts",
+                       {"food-noise", "intrusive-food-thoughts"})
+    assert len(live) == 1, [p.name for p in live]
     ent_dir = gate._root / "wiki/entities"
-    ent_dupes = list(ent_dir.glob("*.md")) if ent_dir.exists() else []
-    assert not any(p.stem in ("food-noise", "intrusive-food-thoughts")
-                   for p in ent_dupes), [p.name for p in ent_dupes]
+    ent_dupes = _live_pages(ent_dir, {"food-noise", "intrusive-food-thoughts"})
+    assert not ent_dupes, [p.name for p in ent_dupes]
