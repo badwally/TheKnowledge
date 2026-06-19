@@ -29,7 +29,7 @@ from pathlib import Path
 
 from gateway import frontmatter as fm, paths
 
-_SCHEMA_VERSION = 1
+_SCHEMA_VERSION = 2  # v2: pages.trust column (Phase-3 trust tiering, G5)
 
 _HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$", re.MULTILINE)
 _WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)")
@@ -56,6 +56,8 @@ class IndexHit:
     inbound_count: int = 0
     draft: bool = False
     last_updated: str = ""
+    # Server-derived trust tier (Phase 3, G5). 0.5 = neutral; never a gate.
+    trust: float = 0.5
 
 
 @dataclass
@@ -80,6 +82,20 @@ def _connect() -> sqlite3.Connection:
 
 
 def _init_schema(conn: sqlite3.Connection) -> None:
+    # Derived-state migration: if the stored schema version is older than the
+    # current one, drop the data tables so they are recreated with the new
+    # columns. The index is gitignored and self-heals — every row re-derives
+    # from canonical markdown on the next refresh. (CREATE TABLE IF NOT EXISTS
+    # alone cannot add a column to a pre-existing table.)
+    conn.execute("CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)")
+    row = conn.execute(
+        "SELECT value FROM meta WHERE key = 'schema_version'"
+    ).fetchone()
+    stored = int(row[0]) if row and str(row[0]).isdigit() else 0
+    if stored and stored < _SCHEMA_VERSION:
+        for tbl in ("pages", "page_domains", "links"):
+            conn.execute(f"DROP TABLE IF EXISTS {tbl}")
+        conn.execute("DROP TABLE IF EXISTS sections")
     conn.executescript(
         """
         CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT);
@@ -93,7 +109,8 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             draft INTEGER NOT NULL DEFAULT 0,
             mtime REAL NOT NULL,
             size INTEGER NOT NULL,
-            last_updated TEXT NOT NULL DEFAULT ''
+            last_updated TEXT NOT NULL DEFAULT '',
+            trust REAL NOT NULL DEFAULT 0.5
         );
         CREATE TABLE IF NOT EXISTS page_domains (
             rel_path TEXT NOT NULL,
@@ -182,12 +199,28 @@ def _index_file(conn: sqlite3.Connection, path: Path, root_name: str, rel: str) 
         aliases = [aliases]
     slug_text = " ".join([slug, *[str(a) for a in aliases]])
 
+    # Server-derived trust tier (Phase 3, G5). Source pages carry a source_type +
+    # filter_score; authored pages (entity/concept/synthesis/moc) default to
+    # neutral. Self-report is never read here.
+    from gateway import trust as _trust
+
+    src_type = str(front.get("source_type") or "")
+    raw_fs = front.get("filter_score")
+    try:
+        filter_score = float(raw_fs) if raw_fs is not None else None
+    except (TypeError, ValueError):
+        filter_score = None
+    if src_type:
+        trust_val = _trust.server_trust_tier(src_type, filter_score)
+    else:
+        trust_val = _trust.NEUTRAL_TRUST
+
     _remove_file(conn, rel)
     conn.execute(
         "INSERT INTO pages (rel_path, root, slug, page_type, title, entity_kind,"
-        " draft, mtime, size, last_updated) VALUES (?,?,?,?,?,?,?,?,?,?)",
+        " draft, mtime, size, last_updated, trust) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
         (rel, root_name, slug, page_type, title, entity_kind, draft,
-         stat.st_mtime, stat.st_size, last_updated),
+         stat.st_mtime, stat.st_size, last_updated, trust_val),
     )
     conn.executemany(
         "INSERT INTO page_domains (rel_path, domain) VALUES (?,?)",
@@ -361,7 +394,7 @@ def search_fts(
                  WHERE pd.rel_path = p.rel_path LIMIT 1),
                (SELECT COUNT(*) FROM links l
                  WHERE l.target_rel = p.rel_path),
-               p.draft, p.last_updated
+               p.draft, p.last_updated, p.trust
         FROM sections
         JOIN pages p ON p.rel_path = sections.rel_path
         WHERE {' AND '.join(where)}
@@ -378,7 +411,8 @@ def search_fts(
         conn.close()
 
     best: dict[str, IndexHit] = {}
-    for rel, heading, r, snip, slug, title, ptype, dom, inbound, draft, last_updated in rows:
+    for (rel, heading, r, snip, slug, title, ptype, dom, inbound, draft,
+         last_updated, trust) in rows:
         if rel in best:
             continue
         slug_text = slug  # aliases already folded into the indexed column
@@ -395,6 +429,7 @@ def search_fts(
             inbound_count=int(inbound),
             draft=bool(draft),
             last_updated=str(last_updated or ""),
+            trust=float(trust) if trust is not None else 0.5,
         )
 
     hits = list(best.values())
@@ -415,6 +450,10 @@ _W_TIER = 2.0
 _W_AUTHORITY = 1.5
 _W_TYPE = 1.0
 _DRAFT_PENALTY = 2.0
+# «trust.weight_coefficient» — server-derived trust down-weight (Phase 3, G5).
+# Strictly smaller than _W_TIER/_W_AUTHORITY: trust is a tiebreaker, never a gate.
+# Centered at NEUTRAL_TRUST (0.5) so a neutral page is authority-neutral.
+_W_TRUST = 0.5
 # Canonical page kinds outrank source/synthesis pages that cite a term.
 _TYPE_BOOST = {"entity": 1.0, "concept": 1.0, "moc": 0.8, "synthesis": 0.2}
 
@@ -428,6 +467,9 @@ def _authority_key(h: IndexHit) -> float:
     key += _W_TYPE * _TYPE_BOOST.get(h.page_type, 0.0)
     if h.draft:
         key -= _DRAFT_PENALTY
+    # Server-derived trust down-weight, centered at neutral (0.5) so it only
+    # reorders — never removes a candidate (eligibility floor, G5).
+    key += _W_TRUST * (h.trust - 0.5)
     return key
 
 
