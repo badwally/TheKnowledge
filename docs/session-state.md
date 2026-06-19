@@ -11,12 +11,14 @@ Last updated: 2026-06-19 (Librarian PHASE 5 IN PROGRESS — branch `docs/librari
 **Execution mode:** subagent-driven-development — fresh implementer per task (sonnet) + independent task review (opus on destructive/subtle tasks) + fix loop, coordinator window kept lean. Per-task briefs/reports/diffs handed off as files under `.git/sdd/`.
 
 ### Open contracts
-- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) — IN RE-REVIEW `38c8a548..520841f6` (fix closed 2 Criticals cold-start/I4 + TOCTOU + wired demand-loop producer); T5 reversal/anomaly detectors (G2); T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3).
+- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) — IN RE-REVIEW `11dfd554..1419c7ae` (fix made cascade-depth + cross-project detectors LIVE — were inert; dead arm removed); T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) — NOT STARTED (final task; WRITE migration backlog file).
 - **Gate reconciled** (ledger §4 Phase 5 now includes G2/G7/I3 rows) so "gate green" tests everything the phase ships. Phase gate = full suite + `eval-retrieval --compare` ≥ 0.90 + scoped lints + whole-branch review + security review + /session-review + PR.
 - **G7 migration delta** (cut existing bootstrap/promote/demote off direct policy file-I/O onto the new privileged-intent path) = triggered backlog, NOT built this phase. Backlog file to write in T6: `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`.
 
 ### Files mid-edit
-- T4 in FIX (reviewer found cold-start dead code, tautological I4 test, triggered.json TOCTOU; + wiring the demand-loop producer: corpus-miss → DemandLedger.record_gap). T1+T2+T3 complete + review-clean.
+- T5 in RE-REVIEW (fix `1419c7ae` made cascade-depth live via retraction.cascade over real retracted graph + cross-project via real domains: frontmatter; removed inert sidecar + dead reversal_type arm). T1-T4 complete + review-clean. Only T6 remains after T5.
+
+**Recurring pattern this phase (4×):** implementers ship features that pass unit tests but are inert/wrong in production (T2 inert de-path, T4 dead cold-start + tautological I4, T5 inert cascade-depth sidecar). The opus reviewer≠author gate caught every one. Keep this gate; for T6 scrutinize whether the policy-edit gate actually blocks a real regressing edit end-to-end.
 
 ### Decisions made this session
 - Expanded scope to build G2/G7/I3 with dedicated code rather than declare them satisfied (Option A rejected) or backlog them (Option C incoherent for G2 — its revival trigger is the signal G2 itself measures). G7 bounded to the mechanism; existing-op migration triggered-backlog.
