@@ -1,17 +1,35 @@
 """G7 — privileged-intent policy-edit path.
 
 Policy changes govern dedup/trust/contradiction behaviour corpus-wide. They
-route through the CommitGate as a PRIVILEGED, typed intent — never a direct
-file write. This module handles the enqueue side (allowlist check → validate
-shape → submit intent); the CommitGate handles the apply side (eval-compare +
-merge-map golden gate → write or dead-letter).
+route through the CommitGate as a typed intent — never a direct file write. This
+module handles the enqueue side (principal/allowlist check → validate shape →
+submit intent); the CommitGate handles the apply side (eval-compare + merge-map
+golden gate → write or dead-letter).
 
-Allowlist
----------
-The build-time allowlist is an explicit set of (agent, role) pairs. Adding a
-new entry requires a code-review + merge — there is no runtime API to extend
-it. This is intentional: privileged access to life-critical policy paths must
-be gated by human review, not by a config file that an agent could update.
+Trust model
+-----------
+Policy edits are rare, high-impact, human-judgment events (the operator monitors
+the §1.4/§1.5 keys). The trust model is:
+
+- **Not an agent tool.** ``policy-edit`` is human-CLI-only (``wiki policy-edit``).
+  It is NOT registered on any MCP surface (read or build tier), so an agent
+  cannot invoke it through the tool layer. There is no use case for an agent to
+  autonomously rewrite corpus-wide policy.
+- **Server-sourced principal.** Privilege is bound to a server-side principal
+  read from ``GATEWAY_POLICY_PRINCIPAL`` (or ``.knowledge/secrets.env``), NOT to
+  caller arguments. A caller cannot pass an identity to gain privilege. An unset
+  or empty principal is NOT privileged → reject (fail-closed). The server
+  principal is stamped onto the intent for provenance/audit, so the audit
+  principal is unspoofable.
+- **Change-control gates.** The dual eval + merge-map gate, the monotone version
+  bump, and the provenance node enforce change-control on every edit.
+
+This is change-control + an unspoofable audit principal, not a hard boundary
+against a process that already has shell access: a build-tier agent with full
+Bash can shell out to any ``wiki`` command, so an in-request allowlist was never
+a hard boundary against that agent. Confining the op to the CLI and binding
+privilege + audit to a server-sourced principal is the property this layer
+provides; isolating shell access is a gateway-wide concern, not this module's.
 
 Hardcoded threshold constants (e.g. commit_gate.py's COMMIT_LOCK_ACQUIRE_TIMEOUT,
 deposit.py's MAX_BACKLOG) are NOT gated by this runtime path; they require a
@@ -21,6 +39,7 @@ message so the boundary is explicit, not silent.
 
 from __future__ import annotations
 
+import os
 import re
 
 from gateway.core import OperationResult
@@ -34,7 +53,7 @@ _DOMAIN_SLUG_RE = re.compile(r"[a-z0-9][a-z0-9_-]{0,63}")
 
 # ---------------------------------------------------------------------------
 # Build-time allowlist for policy-edit privilege.
-# An identity is allowed iff its (agent, role) pair appears in this set.
+# A SERVER-SOURCED principal (agent, role) is privileged iff it appears here.
 # Adding an entry requires code-review + merge — there is no runtime extension.
 # ---------------------------------------------------------------------------
 _ALLOWLIST: frozenset[tuple[str, str]] = frozenset(
@@ -43,12 +62,34 @@ _ALLOWLIST: frozenset[tuple[str, str]] = frozenset(
     }
 )
 
+# Env var carrying the server-sourced privileged principal, "agent:role".
+# Populated from the real environment or from .knowledge/secrets.env (loaded at
+# the CLI entrypoint via secrets_env.load_secrets_env). NOT caller-supplied.
+_PRINCIPAL_ENV = "GATEWAY_POLICY_PRINCIPAL"
+
 # Default poll-interval hint (seconds) on the async receipt.
 _RETRY_AFTER = 2
 
 
+def _server_principal() -> dict | None:
+    """Resolve the server-sourced principal from the environment.
+
+    Returns ``{"agent": ..., "role": ...}`` parsed from ``GATEWAY_POLICY_PRINCIPAL``
+    (format ``"agent:role"``), or ``None`` if unset/empty/malformed. The principal
+    is NEVER taken from caller arguments — that is the spoofing fix. An unset or
+    malformed principal yields None → the caller is not privileged (fail-closed)."""
+    raw = (os.environ.get(_PRINCIPAL_ENV) or "").strip()
+    if not raw or ":" not in raw:
+        return None
+    agent, _, role = raw.partition(":")
+    agent, role = agent.strip(), role.strip()
+    if not agent or not role:
+        return None
+    return {"agent": agent, "role": role}
+
+
 def _is_allowlisted(identity: dict) -> bool:
-    """Return True iff the identity's (agent, role) is on the build-time allowlist."""
+    """Return True iff the principal's (agent, role) is on the build-time allowlist."""
     agent = identity.get("agent", "")
     role = identity.get("role", "")
     return (agent, role) in _ALLOWLIST
@@ -96,11 +137,16 @@ def policy_edit(
     domain: str,
     policy_data: dict,
     *,
-    identity: dict,
     reason: str,
     queue: IntentQueue | None = None,
 ) -> OperationResult:
-    """Validate and enqueue a privileged policy-edit CommitGate intent.
+    """Validate and enqueue a policy-edit CommitGate intent under a server principal.
+
+    Privilege is bound to the SERVER-SOURCED principal (``GATEWAY_POLICY_PRINCIPAL``),
+    never to caller arguments — this function takes no ``identity``/``agent``/``role``
+    parameter, so a caller cannot pass an identity to gain privilege. An unset,
+    empty, or non-allowlisted principal is rejected (fail-closed). The resolved
+    principal is stamped onto the intent for provenance/audit.
 
     Parameters
     ----------
@@ -108,10 +154,6 @@ def policy_edit(
         The domain slug whose policy.yaml will be updated.
     policy_data:
         The full new policy mapping (must be a non-empty dict).
-    identity:
-        Caller identity. Must match a build-time allowlist entry
-        ``(agent, role)``; non-allowlisted identities are rejected before
-        enqueue.
     reason:
         Human-readable motivation for the change (required; the CommitGate
         records it in the provenance node).
@@ -122,25 +164,39 @@ def policy_edit(
     -------
     OperationResult
         ``disposition="queued"`` on success.
-        ``disposition="rejected"`` if identity is not allowlisted or
-        validation fails.
+        ``disposition="rejected"`` if the server principal is unset/non-allowlisted
+        or validation fails.
     """
     q = queue or IntentQueue()
 
-    # --- Allowlist check (must be first — before any other processing) ---
-    if not _is_allowlisted(identity):
-        agent = identity.get("agent", "<none>")
-        role = identity.get("role", "<none>")
+    # --- Server-sourced principal check (must be first — fail closed) ---
+    # Privilege comes from the server-side principal, NOT from caller args. An
+    # unset/empty/malformed principal is not privileged → reject.
+    principal = _server_principal()
+    if principal is None:
         return OperationResult(
             success=False,
             disposition="rejected",
             errors=[
-                f"identity ({agent!r}, {role!r}) is not on the policy-edit allowlist; "
-                "this is a privileged operation — add the (agent, role) pair to the "
-                "build-time allowlist in ops/policy_edit.py via code-review"
+                f"no server policy-edit principal configured ({_PRINCIPAL_ENV} unset "
+                "or malformed) — this privileged operation is rejected (fail-closed). "
+                "Set the principal in the server environment or .knowledge/secrets.env"
             ],
-            summary=f"policy-edit rejected: {agent!r} not allowlisted",
+            summary="policy-edit rejected: no server principal (fail-closed)",
         )
+    if not _is_allowlisted(principal):
+        return OperationResult(
+            success=False,
+            disposition="rejected",
+            errors=[
+                f"server principal ({principal['agent']!r}, {principal['role']!r}) is not "
+                "on the policy-edit allowlist; this is a privileged operation — add the "
+                "(agent, role) pair to the build-time allowlist in ops/policy_edit.py "
+                "via code-review"
+            ],
+            summary=f"policy-edit rejected: {principal['agent']!r} not allowlisted",
+        )
+    identity = principal
 
     # --- Shape validation ---
     errors = _validate(domain, policy_data, reason)

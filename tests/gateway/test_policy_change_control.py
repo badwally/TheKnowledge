@@ -46,10 +46,18 @@ _REAL_GITIGNORE = (
 # Fixtures
 # ---------------------------------------------------------------------------
 
+# The server-sourced privileged principal (SEC-Critical fix). Privilege is bound
+# to this server-side value, NOT to caller args. Format: "agent:role".
+_ALLOWLISTED_PRINCIPAL = "librarian-admin:policy-admin"
+
+
 @pytest.fixture()
 def tmp_queue_env(tmp_path, monkeypatch):
-    """Minimal queue environment — just needs KNOWLEDGE_ROOT + .knowledge dir."""
+    """Minimal queue environment — KNOWLEDGE_ROOT + .knowledge dir + the
+    server-sourced privileged principal set to the allowlisted value (the
+    happy-path default; SEC tests override/unset it)."""
     monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.setenv("GATEWAY_POLICY_PRINCIPAL", _ALLOWLISTED_PRINCIPAL)
     (tmp_path / ".knowledge").mkdir(parents=True, exist_ok=True)
     return tmp_path
 
@@ -130,7 +138,6 @@ def test_allowlisted_identity_enqueues_policy_edit(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="raise threshold",
     )
     assert res.success and res.disposition == "queued", (
@@ -138,11 +145,12 @@ def test_allowlisted_identity_enqueues_policy_edit(tmp_queue_env):
     )
 
 
-def test_non_allowlisted_identity_rejected(tmp_queue_env):
+def test_non_allowlisted_principal_rejected(tmp_queue_env, monkeypatch):
+    """A server principal NOT on the allowlist is rejected."""
+    monkeypatch.setenv("GATEWAY_POLICY_PRINCIPAL", "random-worker:nobody")
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}},
-        identity={"agent": "random-worker"},
         reason="x",
     )
     assert res.disposition == "rejected", f"expected rejected; got {res.disposition}"
@@ -151,12 +159,88 @@ def test_non_allowlisted_identity_rejected(tmp_queue_env):
     )
 
 
+# ---------------------------------------------------------------------------
+# SEC-Critical — server-sourced principal; privilege not spoofable by caller args
+# ---------------------------------------------------------------------------
+
+def test_policy_edit_rejected_when_principal_unset(tmp_path, monkeypatch):
+    """No server principal configured → rejected (fail-closed), no enqueue."""
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.delenv("GATEWAY_POLICY_PRINCIPAL", raising=False)
+    (tmp_path / ".knowledge").mkdir(parents=True, exist_ok=True)
+
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
+        reason="should fail closed",
+    )
+    assert res.disposition == "rejected", (
+        f"unset principal must fail closed; got {res.disposition}"
+    )
+    assert any("principal" in e.lower() or "privileg" in e.lower() for e in res.errors), (
+        f"error must name the missing principal/privilege; got {res.errors}"
+    )
+    # Nothing enqueued.
+    if res.intent_id:
+        assert IntentQueue().get_state(res.intent_id) is None
+
+
+def test_policy_edit_rejected_when_principal_empty(tmp_path, monkeypatch):
+    """An empty principal value is treated as unset → rejected (fail-closed)."""
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.setenv("GATEWAY_POLICY_PRINCIPAL", "")
+    (tmp_path / ".knowledge").mkdir(parents=True, exist_ok=True)
+
+    res = policy_edit("med", {"domain": {"slug": "med"}}, reason="empty principal")
+    assert res.disposition == "rejected"
+
+
+def test_caller_cannot_spoof_privilege_when_principal_unset(tmp_path, monkeypatch):
+    """SPOOFING PoC: a caller cannot gain privilege via args when no server
+    principal is configured. policy_edit takes no caller identity; even if the
+    process environment carries a non-privileged principal, the allowlisted
+    value cannot be injected by the caller."""
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.delenv("GATEWAY_POLICY_PRINCIPAL", raising=False)
+    (tmp_path / ".knowledge").mkdir(parents=True, exist_ok=True)
+
+    import inspect
+    # The signature must NOT accept a caller-supplied identity/agent/role.
+    params = set(inspect.signature(policy_edit).parameters)
+    assert "identity" not in params, "policy_edit must not accept caller identity"
+    assert "agent" not in params and "role" not in params, (
+        "policy_edit must not accept caller agent/role — privilege is server-sourced"
+    )
+
+    # And with no server principal, the op is rejected (cannot be made privileged).
+    res = policy_edit("med", {"domain": {"slug": "med"}}, reason="spoof attempt")
+    assert res.disposition == "rejected", "spoof: caller must not gain privilege"
+
+
+def test_recorded_provenance_principal_is_server_sourced(tmp_queue_env):
+    """The enqueued intent's identity == the server principal (audit is unspoofable)."""
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
+        reason="server-sourced principal stamp",
+    )
+    assert res.success
+    read = IntentQueue()._read(res.intent_id)
+    assert read is not None
+    identity = read[1].get("identity") or {}
+    assert identity.get("agent") == "librarian-admin", (
+        f"recorded principal must be the server-sourced agent; got {identity}"
+    )
+    assert identity.get("role") == "policy-admin", (
+        f"recorded principal must be the server-sourced role; got {identity}"
+    )
+
+
 def test_policy_edit_enqueued_intent_has_policy_edit_op(tmp_queue_env):
     """Payload op must be 'policy-edit' so the CommitGate dispatch recognises it."""
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="test intent payload",
     )
     assert res.success
@@ -178,7 +262,6 @@ def test_policy_edit_missing_reason_rejected(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="",
     )
     assert res.disposition == "rejected"
@@ -189,7 +272,6 @@ def test_policy_edit_empty_policy_data_rejected(tmp_queue_env):
     res = policy_edit(
         "med",
         {},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="valid reason",
     )
     assert res.disposition == "rejected"
@@ -213,7 +295,6 @@ def test_policy_edit_rejects_stale_version(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}, "version": 5},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="stale edit (same version)",
     )
     assert res.disposition == "rejected", f"stale version must reject; got {res.disposition}"
@@ -228,7 +309,6 @@ def test_policy_edit_rejects_lower_version(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "version": 3},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="downgrade attempt",
     )
     assert res.disposition == "rejected"
@@ -240,7 +320,6 @@ def test_policy_edit_accepts_greater_version(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "version": 6},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="legit bump",
     )
     assert res.disposition == "queued", f"greater version must queue; got {res.disposition}"
@@ -255,7 +334,6 @@ def test_policy_edit_auto_bumps_missing_version(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.8}},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="auto-bump",
     )
     assert res.disposition == "queued"
@@ -663,7 +741,6 @@ def test_policy_edit_rejects_traversal_domain(tmp_queue_env):
         res = policy_edit(
             evil,
             {"domain": {"slug": "x"}, "filter": {"threshold_include": 0.7}},
-            identity={"agent": "librarian-admin", "role": "policy-admin"},
             reason="traversal attempt",
         )
         assert res.disposition == "rejected", (
@@ -679,7 +756,6 @@ def test_policy_edit_accepts_valid_slug(tmp_queue_env):
     res = policy_edit(
         "med",
         {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
-        identity={"agent": "librarian-admin", "role": "policy-admin"},
         reason="valid slug",
     )
     assert res.disposition == "queued", f"valid slug must queue; got {res.disposition}"

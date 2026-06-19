@@ -116,7 +116,7 @@ SUBCOMMANDS: dict[str, str] = {
     "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
     "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
     "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
-    "policy-edit": "Submit a privileged policy-edit CommitGate intent; gates on eval-recall + dedup precision (G7, build-tier)",
+    "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -499,16 +499,9 @@ def build_parser() -> argparse.ArgumentParser:
         required=True,
         help="Human-readable motivation for the change (required).",
     )
-    p_policy_edit.add_argument(
-        "--agent",
-        default="librarian-admin",
-        help="Agent identifier (must be on the build-time allowlist).",
-    )
-    p_policy_edit.add_argument(
-        "--role",
-        default="policy-admin",
-        help="Role identifier (must be on the build-time allowlist).",
-    )
+    # NOTE (SEC-Critical): no --agent/--role flags. The privileged principal is
+    # server-sourced (GATEWAY_POLICY_PRINCIPAL / .knowledge/secrets.env), not a
+    # caller argument — a caller cannot pass an identity to gain privilege.
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -2966,12 +2959,14 @@ def _run_preflight(ns: argparse.Namespace) -> int:
 
 
 def _run_policy_edit(ns: argparse.Namespace) -> int:
-    """CLI handler for `wiki policy-edit` (G7, build-tier).
+    """CLI handler for `wiki policy-edit` (G7, human-CLI-only, SEC-Critical).
 
-    Reads policy_file from disk, submits a privileged CommitGate intent,
-    and returns the async receipt (disposition=queued + intent_id).
-    The CommitGate worker applies the gate (eval-recall + merge-map golden)
-    before writing the policy file.
+    Reads policy_file from disk and submits a policy-edit CommitGate intent. The
+    privileged principal is SERVER-SOURCED (GATEWAY_POLICY_PRINCIPAL, populated
+    from the environment or .knowledge/secrets.env at the CLI entrypoint) — NOT a
+    caller argument. policy_edit rejects (fail-closed) if no allowlisted principal
+    is configured. The CommitGate worker applies the dual gate (eval-recall +
+    merge-map golden) before committing the policy file.
     """
     import sys as _sys
     import yaml as _yaml
@@ -2987,11 +2982,9 @@ def _run_policy_edit(ns: argparse.Namespace) -> int:
         print(f"error: cannot parse policy file: {exc}", file=_sys.stderr)
         return 2
 
-    identity = {"agent": ns.agent, "role": ns.role}
     result = policy_edit(
         ns.domain,
         policy_data,
-        identity=identity,
         reason=ns.reason,
     )
     return _emit_result(result)

@@ -94,6 +94,12 @@ CLI_ONLY: frozenset[str] = frozenset(
         # wiki_question_new + wiki_question_list MCP tools are registered as
         # auxiliaries (TOOL-16). The umbrella name has no 1:1 MCP counterpart.
         "question",
+        # `policy-edit` (G7, SEC-Critical) is a rare, high-impact, human-judgment
+        # op that rewrites corpus-wide dedup/trust/contradiction policy. It is
+        # human-CLI-only — NOT exposed to agents on any MCP surface. Privilege is
+        # bound to a server-sourced principal (GATEWAY_POLICY_PRINCIPAL), not
+        # caller args. Mirrors the demote-domain CLI-only precedent.
+        "policy-edit",
     }
 )
 
@@ -436,35 +442,11 @@ def wiki_preflight(plan_text: str) -> dict[str, Any]:
     return _serialize(preflight(plan_text))
 
 
-@mcp.tool()
-def wiki_policy_edit(
-    domain: str,
-    policy_data: dict,
-    reason: str,
-    agent: str = "librarian-admin",
-    role: str = "policy-admin",
-) -> dict[str, Any]:
-    """Submit a privileged policy-edit CommitGate intent (G7, build-tier).
-
-    Validates the caller identity against the build-time allowlist
-    (agent + role must match an allowed pair) and enqueues a typed
-    policy-edit intent. The CommitGate worker runs two non-regression gates
-    BEFORE writing the policy file:
-      1. fts recall@10 >= 0.90 (eval-retrieval)
-      2. merge-map golden precision (dedup alias-authority must not regress)
-    On regression → dead_lettered; policy file NOT written.
-
-    Non-allowlisted identity → disposition="rejected" (no enqueue).
-    Returns an async receipt (disposition="queued" + intent_id) on success.
-    Poll wiki_intent_status for the terminal disposition.
-
-    Note: hardcoded threshold constants (commit_gate.py, deposit.py) are
-    gated by code-review, not this runtime path.
-    """
-    from gateway.ops.policy_edit import policy_edit
-
-    identity = {"agent": agent, "role": role}
-    return _serialize(policy_edit(domain, policy_data, identity=identity, reason=reason))
+# NOTE (SEC-Critical): `policy-edit` is intentionally NOT registered as an MCP
+# tool. It is human-CLI-only (`wiki policy-edit`) and listed in CLI_ONLY. There
+# is no use case for an agent to autonomously rewrite corpus-wide policy;
+# privilege is bound to a server-sourced principal, not caller args. See
+# gateway/ops/policy_edit.py for the trust model.
 
 
 @mcp.tool()
