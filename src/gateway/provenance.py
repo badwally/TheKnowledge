@@ -82,40 +82,61 @@ def coverage_gap(*, root: Path | None = None) -> list[str]:
             ["git", *args], cwd=repo, capture_output=True, text=True, check=False
         )
 
-    log = _git("log", "--all", "--format=%H", "--name-only")
+    # Prefix each commit's SHA line with \x01 so SHA lines are unambiguously
+    # distinguishable from file-name lines and blank lines — `--name-only` emits
+    # a blank line immediately after the SHA, which a separator-based parser
+    # would mistake for a commit boundary and drop every touched path.
+    log = _git("log", "--all", "--format=\x01%H", "--name-only")
     if log.returncode != 0:
         return []
 
-    corpus_commits: list[str] = []
+    blocks: list[tuple[str, set[str]]] = []
     cur: str | None = None
-    touched_corpus = False
-    blocks: list[tuple[str, bool]] = []
+    cur_paths: set[str] = set()
+
+    def _flush() -> None:
+        if cur is not None:
+            blocks.append((cur, set(cur_paths)))
+
     for line in log.stdout.splitlines():
-        if not line.strip():
-            if cur is not None:
-                blocks.append((cur, touched_corpus))
-            cur = None
-            touched_corpus = False
-            continue
-        if cur is None and len(line.strip()) == 40 and all(
-            c in "0123456789abcdef" for c in line.strip()
-        ):
-            cur = line.strip()
-            touched_corpus = False
-        else:
-            if line.startswith("wiki/") or line.startswith("raw/"):
-                touched_corpus = True
-    if cur is not None:
-        blocks.append((cur, touched_corpus))
+        if line.startswith("\x01"):
+            _flush()
+            cur = line[1:].strip()
+            cur_paths = set()
+        elif cur is not None and (line.startswith("wiki/") or line.startswith("raw/")):
+            cur_paths.add(line.strip())
+    _flush()
 
-    corpus_commits = [sha for sha, touched in blocks if touched]
+    corpus_commits = [(sha, touched) for sha, touched in blocks if touched]
 
-    recorded = {
+    nodes = read_nodes(root=root)
+    # Commits covered by an explicit commit-SHA node (gate-authored).
+    recorded_sha = {
         n["decision_basis"].get("commit")
-        for n in read_nodes(root=root)
+        for n in nodes
         if n.get("decision_basis", {}).get("commit")
     }
-    return [sha for sha in corpus_commits if sha not in recorded]
+    # CORRECTNESS-9: a producer node (e.g. the watcher) records the paths it
+    # produced but not the commit SHA (the watcher daemon commits separately,
+    # after the node is written). A corpus commit whose touched paths are all
+    # produced by such a marker node is covered — it must NOT be flagged as a gap.
+    producer_paths: set[str] = set()
+    for n in nodes:
+        basis = n.get("decision_basis", {})
+        if basis.get("producer"):
+            for p in basis.get("paths_touched", []) or []:
+                producer_paths.add(p)
+
+    gaps: list[str] = []
+    for sha, touched in corpus_commits:
+        if sha in recorded_sha:
+            continue
+        # Covered if every corpus path the commit touched was produced by a
+        # marker node.
+        if touched and touched <= producer_paths:
+            continue
+        gaps.append(sha)
+    return gaps
 
 
 class ProducerTelemetry:

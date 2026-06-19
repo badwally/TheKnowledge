@@ -76,3 +76,53 @@ def test_watcher_ingest_emits_provenance_node(repo):
     watcher_nodes = [n for n in nodes if n["decision_basis"].get("producer") == "watcher"]
     assert len(watcher_nodes) == 1
     assert watcher_nodes[0]["decision_basis"]["source_id"] == "note"
+    # The marker node records the paths it produced (CORRECTNESS-9).
+    assert "raw/web/note.md" in watcher_nodes[0]["decision_basis"]["paths_touched"]
+
+
+def test_real_watcher_commit_not_flagged_as_coverage_gap(repo):
+    """CORRECTNESS-9: a real watcher commit covered by a producer marker is NOT a gap.
+
+    The watcher daemon writes raw/ then commits SEPARATELY (after the provenance
+    node is written, so the node cannot carry the commit SHA). coverage_gap()
+    must treat a corpus commit whose touched paths are all produced by a marker
+    node as covered — not falsely flag it.
+    """
+    from gateway.core import OperationResult
+    from gateway.watcher import WatcherDaemon
+
+    (repo / "raw" / "inbox").mkdir(parents=True)
+    inbox_file = repo / "raw" / "inbox" / "n2.md"
+    inbox_file.write_text("# N2\n")
+    raw_path = repo / "raw" / "web" / "n2.md"
+
+    def _stub_ingest(path):
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        raw_path.write_text("# N2\n")
+        return OperationResult(success=True, summary="ingested",
+                               paths_touched=[raw_path])
+
+    daemon = WatcherDaemon(inbox=repo / "raw" / "inbox", ingest_fn=_stub_ingest)
+    daemon._process(inbox_file)
+
+    # The watcher daemon commits the produced raw path SEPARATELY, after the node.
+    _git(repo, "add", "raw/web/n2.md")
+    _git(repo, "commit", "-qm", "watcher ingest n2")
+    watcher_sha = _git(repo, "rev-parse", "HEAD").stdout.strip()
+
+    # Control: a corpus commit with NEITHER a commit-SHA node NOR a producer
+    # marker IS a real gap — proves coverage_gap actually detects gaps (i.e. the
+    # commit-block parser reads touched paths, not silently dropping them).
+    (repo / "wiki" / "sources").mkdir(parents=True)
+    (repo / "wiki" / "sources" / "orphan.md").write_text("# Orphan\n")
+    _git(repo, "add", "wiki/sources/orphan.md")
+    _git(repo, "commit", "-qm", "uncovered corpus change")
+    orphan_sha = _git(repo, "rev-parse", "HEAD").stdout.strip()
+
+    gaps = provenance.coverage_gap()
+    assert watcher_sha not in gaps, (
+        f"real watcher commit falsely flagged as a coverage gap: {gaps}"
+    )
+    assert orphan_sha in gaps, (
+        f"genuinely uncovered corpus commit not detected as a gap: {gaps}"
+    )

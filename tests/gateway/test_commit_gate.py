@@ -134,6 +134,12 @@ def test_contradictory_edit_dead_letters(repo):
 
 
 def test_bounded_rebase_dead_letters_contention(repo):
+    """C4: HEAD perpetually moving under the rebase → bounded → contention.
+
+    Contention is distinct from needs-merge: here _merge_rebase keeps succeeding
+    but the post-merge re-CAS never lands 'commit' because HEAD keeps moving.
+    The bounded attempt count dead-letters as 'contention'.
+    """
     q = IntentQueue()
     (repo / "wiki/sources").mkdir(parents=True)
     (repo / "wiki/sources/r.md").write_text("v0\n")
@@ -147,21 +153,63 @@ def test_bounded_rebase_dead_letters_contention(repo):
     )
     gate = CommitGate(queue=q, max_rebase_attempts=2)
 
-    # Force every rebase attempt to fail by making the merge step always raise.
-    def _always_conflict(*a, **k):
-        raise gate.RebaseConflict("forced")
-
-    gate._merge_rebase = _always_conflict  # type: ignore[attr-defined]
-
-    # Mutate HEAD so the CAS sees an overlap and routes to rebase.
+    # Mutate HEAD so the initial CAS sees an overlap and routes to rebase.
     (repo / "wiki/sources/r.md").write_text("v1\n")
     _git(repo, "add", "wiki/sources/r.md")
     _git(repo, "commit", "-qm", "v1")
+
+    # Simulate HEAD perpetually moving under us: _merge_rebase succeeds (returns
+    # the authored payload) but the re-CAS always sees an overlap → never commits.
+    gate._merge_rebase = lambda a: dict(a.writes)  # type: ignore[attr-defined]
+    gate._classify = lambda a: "rebase"  # type: ignore[attr-defined]
+    # Force the very first classify (before the loop) to 'rebase' too.
 
     r = gate.commit(authored, token)
     assert not r.success
     assert q.get_state(authored.intent.intent_id) == "dead_lettered"
     assert "contention" in (r.summary + " ".join(r.errors)).lower()
+
+
+def test_concurrent_overlap_dead_letters_needs_merge_no_lost_update(repo):
+    """SILENT-CORRUPTION-4 / F1: a concurrent overlapping change is NOT dropped.
+
+    An intent authored against base blob B is committed; a SECOND intent authored
+    against the SAME base B (it never saw the first edit) must NOT blind-overwrite
+    the now-divergent HEAD. The Phase-1 scaffold fails safe: dead-letter as
+    needs-merge, preserving the first writer's change (no lost update).
+    """
+    q = IntentQueue()
+    (repo / "wiki/concepts").mkdir(parents=True)
+    (repo / "wiki/concepts/k.md").write_text("# K\nbase body\n")
+    _git(repo, "add", "wiki/concepts/k.md")
+    _git(repo, "commit", "-qm", "base k")
+    base = _git(repo, "rev-parse", "HEAD:wiki/concepts/k.md").stdout.strip()
+
+    # Writer 1 commits a concurrent change to the page.
+    a1, t1 = _authored(
+        q, writes={"wiki/concepts/k.md": "# K\nbase body\nwriter-1 addition\n"},
+        payload={"kind": "concept", "n": 1}, base_oid=base,
+    )
+    gate = CommitGate(queue=q)
+    r1 = gate.commit(a1, t1)
+    assert r1.success, r1.errors
+    head_after_1 = (repo / "wiki/concepts/k.md").read_text()
+    assert "writer-1 addition" in head_after_1
+
+    # Writer 2 authored against the SAME base B (did not see writer 1's edit).
+    a2, t2 = _authored(
+        q, writes={"wiki/concepts/k.md": "# K\nbase body\nwriter-2 addition\n"},
+        payload={"kind": "concept", "n": 2}, base_oid=base,
+    )
+    r2 = gate.commit(a2, t2)
+
+    # MUST dead-letter — never silently overwrite writer 1's change.
+    assert not r2.success
+    assert q.get_state(a2.intent.intent_id) == "dead_lettered"
+    assert "needs-merge" in (r2.summary + " ".join(r2.errors)).lower()
+    # Writer 1's change is intact on disk (no lost update).
+    assert (repo / "wiki/concepts/k.md").read_text() == head_after_1
+    assert "writer-2 addition" not in (repo / "wiki/concepts/k.md").read_text()
 
 
 def test_writes_serialized_at_one_gate(repo):
@@ -194,6 +242,127 @@ def test_writes_serialized_at_one_gate(repo):
     # Linear history, no index.lock corruption: every file present.
     for i in range(6):
         assert (repo / f"wiki/sources/s{i}.md").exists()
+
+
+def test_cas_three_cases_against_real_oid_divergence(repo):
+    """BLOCKER-2: CAS compares real per-path blob OIDs, not the literal 'HEAD'.
+
+    Exercises all three classification cases against real out-of-band HEAD
+    mutation — no monkeypatch of _merge_rebase/_classify:
+
+      - no-overlap: the intent's path is unrelated to what moved at HEAD → commit;
+      - rebase (mergeable): HEAD's blob == the authored base (nothing concurrent
+        actually changed the body) → re-applies and commits;
+      - contradictory: the authored base never existed but HEAD now has the path
+        → dead-letter.
+    """
+    (repo / "wiki/sources").mkdir(parents=True)
+
+    # --- case 1: no-overlap ---
+    (repo / "wiki/sources/p1.md").write_text("# P1\nv0\n")
+    _git(repo, "add", "wiki/sources/p1.md")
+    _git(repo, "commit", "-qm", "p1 v0")
+    p1_base = _git(repo, "rev-parse", "HEAD:wiki/sources/p1.md").stdout.strip()
+
+    q = IntentQueue()
+    # Author against p1's real blob OID, but write an UNRELATED new path.
+    payload = {"kind": "source", "n": "nooverlap"}
+    ident = {"agent": "tester"}
+    iid = compute_intent_id(payload, ident)
+    intent = Intent(intent_id=iid, payload=payload, identity=ident)
+    q.submit(intent)
+    token = q.claim(now=1.0).fencing_token
+    q.set_state(iid, "authored")
+    gate = CommitGate(queue=q)
+    authored = AuthoredIntent(
+        intent=intent, writes={"wiki/sources/fresh.md": "# Fresh\n"},
+        base_oid=p1_base, base_oids={"wiki/sources/fresh.md": None},
+    )
+    # Mutate HEAD on p1 out-of-band (unrelated to the write).
+    (repo / "wiki/sources/p1.md").write_text("# P1\nv1\n")
+    _git(repo, "add", "wiki/sources/p1.md")
+    _git(repo, "commit", "-qm", "p1 v1")
+    r = gate.commit(authored, token)
+    assert r.success, r.errors
+    assert r.disposition == "committed"
+
+    # --- case 2: rebase (mergeable) ---
+    (repo / "wiki/sources/p2.md").write_text("# P2\nbody\n")
+    _git(repo, "add", "wiki/sources/p2.md")
+    _git(repo, "commit", "-qm", "p2")
+    p2_base = _git(repo, "rev-parse", "HEAD:wiki/sources/p2.md").stdout.strip()
+    payload2 = {"kind": "source", "n": "rebase"}
+    iid2 = compute_intent_id(payload2, ident)
+    intent2 = Intent(intent_id=iid2, payload=payload2, identity=ident)
+    q.submit(intent2)
+    token2 = q.claim(now=2.0).fencing_token
+    q.set_state(iid2, "authored")
+    # Make a NON-overlapping HEAD move elsewhere so _classify sees p2 unchanged
+    # vs base (HEAD blob == base) — the mergeable/no-real-change rebase path.
+    authored2 = AuthoredIntent(
+        intent=intent2, writes={"wiki/sources/p2.md": "# P2\nbody\nclaim\n"},
+        base_oid=p2_base, base_oids={"wiki/sources/p2.md": p2_base},
+    )
+    r2 = gate.commit(authored2, token2)
+    assert r2.success, r2.errors
+    assert (repo / "wiki/sources/p2.md").read_text() == "# P2\nbody\nclaim\n"
+
+    # --- case 3: contradictory ---
+    (repo / "wiki/sources/p3.md").write_text("# P3\nhead-only\n")
+    _git(repo, "add", "wiki/sources/p3.md")
+    _git(repo, "commit", "-qm", "p3")
+    payload3 = {"kind": "source", "n": "contradictory"}
+    iid3 = compute_intent_id(payload3, ident)
+    intent3 = Intent(intent_id=iid3, payload=payload3, identity=ident)
+    q.submit(intent3)
+    token3 = q.claim(now=3.0).fencing_token
+    q.set_state(iid3, "authored")
+    # Author thought p3 was absent (base None) but HEAD now has it → contradictory.
+    authored3 = AuthoredIntent(
+        intent=intent3, writes={"wiki/sources/p3.md": "# P3\nauthored\n"},
+        base_oid="0" * 40, base_oids={"wiki/sources/p3.md": None},
+    )
+    r3 = gate.commit(authored3, token3)
+    assert not r3.success
+    assert q.get_state(iid3) == "dead_lettered"
+    assert "contradictory" in (r3.summary + " ".join(r3.errors)).lower()
+
+
+def test_idempotency_trailer_exact_not_prefix_collidable(repo):
+    """BLOCKER-3: a hex-prefix-colliding intent_id is NOT treated as committed.
+
+    Two intent_ids share a prefix (abcd1234 vs abcd1234ef). After committing the
+    SHORTER one, redelivering the LONGER one must commit normally — the trailer
+    resolution is exact-value, not an unanchored `--grep` substring.
+    """
+    q = IntentQueue()
+    short_id = "abcd1234"
+    long_id = "abcd1234ef567890"
+    assert long_id.startswith(short_id)  # colliding prefix
+
+    def _commit_with_id(iid, rel):
+        payload = {"kind": "source", "target": rel}
+        ident = {"agent": "tester"}
+        intent = Intent(intent_id=iid, payload=payload, identity=ident)
+        q.submit(intent)
+        token = q.claim(now=1.0).fencing_token
+        q.set_state(iid, "authored")
+        gate = CommitGate(queue=q)
+        return gate.commit(
+            AuthoredIntent(intent=intent, writes={rel: f"# {iid}\n"},
+                           base_oid="HEAD", base_oids={rel: None}),
+            token,
+        )
+
+    r_short = _commit_with_id(short_id, "wiki/sources/short.md")
+    assert r_short.success, r_short.errors
+
+    # The longer id, whose prefix matches the committed short id's trailer,
+    # must NOT be treated as already-committed — it commits its own page.
+    r_long = _commit_with_id(long_id, "wiki/sources/long.md")
+    assert r_long.success, r_long.errors
+    assert r_long.no_op is not True, "prefix collision falsely matched a trailer"
+    assert (repo / "wiki/sources/long.md").exists()
 
 
 def test_status_query_does_not_block_on_commit_mutex(repo):
