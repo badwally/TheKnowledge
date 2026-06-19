@@ -15,13 +15,15 @@ from gateway import mcp_server as _mcp
 
 
 # Provably side-effect-free AND token-free ops (hyphenated CLI form). Each was
-# verified to perform no corpus/derived write and make no Claude/judge/NLM call.
-# A read-tier op may still append to log.md (the operational event stream that
-# nearly every op emits) — that is not a corpus/derived-state mutation and is not
-# disqualifying. The bar is: no write to wiki/, raw/, the FTS/embedding index, or
-# any other .knowledge/ derived artifact, and no model call.
+# verified to make no Claude/judge/NLM call and no write to the canonical corpus
+# (wiki/, raw/) or the embedding index. Two derived-state side effects ARE allowed
+# on a read op and are not disqualifying: (1) an append to log.md, the operational
+# event stream nearly every op emits; (2) a bounded, idempotent self-healing upsert
+# to the gitignored FTS index (.knowledge/wiki.db) that search/retrieve trigger on
+# read. Neither mutates the corpus or spends model tokens.
 #
-# Excluded (build tier) — the disqualifying side effect, not the shared log append:
+# Excluded (build tier) — the disqualifying side effect (a NON-self-healing
+# .knowledge/ artifact write or a model call), not the shared log/FTS upserts:
 #   "agents"  — runs batch agents that write to raw/ and wiki/; spends model tokens
 #   "lint"    — writes a timestamped report file under .knowledge/lint/
 #   "status"  — conditionally writes a finetune-milestones file under .knowledge/
