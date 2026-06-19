@@ -1,6 +1,45 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (above + 17 under-attributed research drafts ABANDONED via #27 — all merged)
+Last updated: 2026-06-19 (Librarian RAG design generation — Pass A done)
+
+---
+
+## 🔄 LIBRARIAN MULTI-AGENT RAG DESIGN GENERATION (2026-06-19) — IN PROGRESS
+
+**Branch:** `docs/librarian-rag-design` (NOT main; inputs were committed here as
+`e38b8c4e`). Running as a self-paced single-window loop (3 short iterations —
+sanctioned by CLAUDE.md "single-window loops fine for ≤2–3 iterations"). User asked
+to "loop through the development process per plan."
+
+**Runbook:** `docs/plans/2026-06-18-librarian-rag-generation-runbook.md`.
+**Inputs (authoritative):** `docs/plans/2026-06-18-librarian-multi-agent-rag-design-prompt.md`,
+`...-constraints.md` (register: C1–C7, I1–I4, A1–A7, G1–G8, F1–F2),
+`docs/backlog/librarian-cascade-revert-automation.md` (Option B POR, G1).
+**Outputs:** `docs/plans/2026-06-18-librarian-multi-agent-rag-design.md` (design,
+evergreen) + `...-checkpoints.md` (ledger, mutable — Pass C).
+
+**Golden baseline (close-out guard):** recall@5 0.852 / recall@10 0.926 / MRR 0.690
+(n=27, fts). Generation must not touch it; Pass C re-runs `eval-retrieval --compare`.
+
+**Pass A — DONE.** Wrote design §0 + §§1–8 (dependency map + 5-phase cut: Commit
+foundation → Identity substrate → Commit-time invariants → Tiered agent surface →
+Lifecycle & demand governance; 2 mermaid). Attachment points grounded in real code:
+`CommitGate` generalizes `discharge_orphans._git_commit_synthesis_drafts`; `wiki-author`
+global flock (`locking.py:27/75`, no-timeout) is the narrow-or-replace delta; flat
+`FastMCP` (`mcp_server.py:37`) → two entrypoints; `_authority_key` (`search_index.py:422`)
+gets trust down-weight, eval-gated; `validator.validate_citation_grounding/_slug_uniqueness/_citation_verbs`;
+`OperationResult`/`_serialize` extended for async receipt (A5). IDs resolved in Pass A:
+C1–C7, I1, A1–A5, A7, G5, G6, G7(partial), F1.
+
+**Surface-anchor correction applied:** prompt says "honest model/restatement";
+rendered as "accurate/plain" per global language ban on the "honest" family.
+
+**Next atomic step: Pass B** — append design §§9–16 (lifecycle/retraction cascade
+G3/G4/G8, gap-routing, demand canonicalization I4, vector index I2/I3/A6, placement,
+deferred §15, verification model + failure-mode taxonomy F1/F2 with detectors+recoveries,
+golden merge-map I3). Then Pass C: ledger + 3 self-checks (component classification;
+«»-key↔ledger-row diff; per-ID coverage table) + close-out eval guard. Do not start
+the build plan (separate downstream step).
 
 ---
 
