@@ -122,6 +122,26 @@ def test_self_reported_trust_cannot_flip_contradiction_winner(tmp_commit_env):
     assert act["winner"]["source"] == "pubmed-1"  # server tier wins; self-report ignored
 
 
+def test_disputes_edge_points_at_loser_when_new_claim_wins(tmp_commit_env):
+    """Review I1: when the NEW claim is the higher-trust winner, the materialized
+    CiTO `disputes` edge must point at the EXISTING (loser) source, not the new
+    one. The hardcoded `loser_src = new` mislabels the winner as contested."""
+    gate, queue, emb = tmp_commit_env
+    # Existing claim is low-trust (web); the incoming claim is high-trust (pubmed)
+    # and WINS by server trust → the loser is the existing web source.
+    _commit_claim(gate, "ozempic", "onset is slow [[sources/web-9]]",
+                  source_type="web")
+    _commit_claim(gate, "ozempic", "onset is rapid [[sources/pubmed-1]]",
+                  source_type="pubmed")
+    act = _read_resolution_acts(gate._root)[-1]
+    assert act["winner"]["source"] == "pubmed-1"  # new claim wins
+    assert act["loser"]["source"] == "web-9"
+    body = (gate._root / "wiki/entities/ozempic.md").read_text()
+    # The disputes edge cites the LOSER (web-9), not the winner (pubmed-1).
+    assert "[[sources/web-9|disputes]]" in body, body
+    assert "[[sources/pubmed-1|disputes]]" not in body, body
+
+
 def test_non_contradicting_claims_do_not_auto_resolve(tmp_commit_env):
     # Negative control: two claims with DIFFERENT subjects union cleanly, no
     # contradiction act recorded.

@@ -727,17 +727,16 @@ class CommitGate:
             "claim": new_line,
             "committed_at": "new",
         }
-        contra.auto_resolve(side_existing, side_new)
+        act = contra.auto_resolve(side_existing, side_new)
 
         # Materialize a CiTO `disputes` edge and keep BOTH claims (loser stays
-        # retrievable — down-weighted by trust at retrieval, never deleted).
-        loser_src = _src(new_line)  # the disputing side cites with `disputes`
-        try:
-            _f2, body2 = fm.parse(content)
-            front2 = content[: content.index(body2)] if body2 in content else ""
-        except Exception:
-            front2, body2 = "", content
-        edge = f"\n## Contested\n- [[sources/{loser_src}|disputes]] {new_line}\n"
+        # retrievable — down-weighted by trust at retrieval, never deleted). The
+        # edge cites the LOSER's source (resolved by policy), not blindly the new
+        # claim — when the new claim is the higher-trust winner the existing claim
+        # is the contested one.
+        loser_src = str((act.get("loser") or {}).get("source") or "")
+        loser_claim = str((act.get("loser") or {}).get("claim") or "")
+        edge = f"\n## Contested\n- [[sources/{loser_src}|disputes]] {loser_claim}\n"
         new_content = content.rstrip() + "\n" + edge
         return AuthoredIntent(
             intent=authored.intent,
