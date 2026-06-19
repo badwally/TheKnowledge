@@ -14,8 +14,11 @@ A page is a de-path CANDIDATE iff ALL of the following hold:
 
 NEVER targets moc or artifact pages (intentional entry-points per orphan check).
 
-De-path intent payload:
-  {"op": "depath", "target_rel": "<wiki-rel-path>", "reversible": True}
+De-path intent payload (a typed CommitGate reversal intent — the gate's
+``_apply_depath`` branch dispatches on ``reversal_type``, mirroring Task 1's
+reversal precedent, and actually executes the tracked delete + provenance):
+  {"reversal_type": "depath", "target_rel": "<wiki-rel-path>", "reversible": True,
+   "policy_version": "corpus-rot-depath-policy-v1"}
 
 The intent is content-addressed (compute_intent_id) so re-running is idempotent.
 dry_run=True → collect candidates, return them in data["depathed"], submit nothing.
@@ -36,28 +39,60 @@ from gateway.lint._walk import walk_wiki_pages
 _DEPATH_EXEMPT_TYPES = frozenset({"moc", "artifact"})
 
 
-def _provenance_reachable_rels(*, root: Path | None = None) -> set[str]:
-    """Return the set of wiki/ rel-paths referenced in any provenance node's decision_basis.
+def _normalize_to_wiki_rel(value: str, kb_root: Path) -> str | None:
+    """Return a kb-relative ``wiki/*.md`` path for ``value``, or None.
 
-    The decision_basis["canonical_path"] is an absolute path string. We translate
-    it to a root-relative rel_path for comparison with the page walker.
+    Handles BOTH forms a provenance node may carry:
+    - an ABSOLUTE path (e.g. ``decision_basis["canonical_path"]``), and
+    - an ALREADY-RELATIVE path (e.g. the nested ``merge_reattachment.target`` /
+      ``.tombstone`` keys, which CommitGate writes as ``wiki/...`` rel-paths).
+    """
+    if not isinstance(value, str) or not value.endswith(".md"):
+        return None
+    # Already a wiki-relative path.
+    if value.startswith("wiki/"):
+        return value
+    # An absolute path → make it kb-relative.
+    try:
+        rel = str(Path(value).relative_to(kb_root))
+    except ValueError:
+        return None
+    return rel if rel.startswith("wiki/") else None
+
+
+def _collect_wiki_rels(obj: object, kb_root: Path, out: set[str]) -> None:
+    """Recursively collect every ``wiki/*.md`` rel-path reachable in ``obj``.
+
+    Walks strings, lists, and nested dicts so a path buried in
+    ``merge_reattachment.target`` / ``.tombstone`` (G8 reverse-merge state) or
+    in a list-valued ``paths_touched`` is found — not just top-level string values.
+    """
+    if isinstance(obj, str):
+        rel = _normalize_to_wiki_rel(obj, kb_root)
+        if rel is not None:
+            out.add(rel)
+    elif isinstance(obj, dict):
+        for v in obj.values():
+            _collect_wiki_rels(v, kb_root, out)
+    elif isinstance(obj, (list, tuple)):
+        for v in obj:
+            _collect_wiki_rels(v, kb_root, out)
+
+
+def _provenance_reachable_rels(*, root: Path | None = None) -> set[str]:
+    """Return the set of wiki/ rel-paths referenced ANYWHERE in any node's basis.
+
+    Critical (G6): this includes NESTED dicts (e.g. ``merge_reattachment.target``
+    and ``.tombstone`` — a live merge tombstone is reachable ONLY via that nested
+    key and would otherwise be silently de-pathed) and list-valued path
+    collections. Both absolute and already-relative path forms are normalized.
     """
     kb_root = root or paths.knowledge_root()
     nodes = provenance.read_nodes(root=root)
     reachable: set[str] = set()
     for node in nodes:
         basis = node.get("decision_basis") or {}
-        for _key, val in basis.items():
-            if not isinstance(val, str):
-                continue
-            # canonical_path is an absolute path; convert to a relative one.
-            try:
-                rel = Path(val).relative_to(kb_root)
-                rel_str = str(rel)
-                if rel_str.startswith("wiki/") and rel_str.endswith(".md"):
-                    reachable.add(rel_str)
-            except ValueError:
-                pass
+        _collect_wiki_rels(basis, kb_root, reachable)
     return reachable
 
 
@@ -113,7 +148,18 @@ def remediate(
         # Genuine orphan: no inbound links AND not provenance-reachable.
         depathed.append(rel)
         if not dry_run:
-            payload = {"op": "depath", "target_rel": rel, "reversible": True}
+            # The de-path is a typed CommitGate reversal intent: the gate's
+            # _apply_depath branch (keyed on reversal_type, mirroring Task 1)
+            # removes the page via the commit machinery, records a provenanced
+            # node carrying the page content, and is reverse-applicable
+            # (restore-depath). reversal_type — NOT a bare op key — is what the
+            # gate dispatches on, so this actually executes.
+            payload = {
+                "reversal_type": "depath",
+                "target_rel": rel,
+                "reversible": True,
+                "policy_version": "corpus-rot-depath-policy-v1",
+            }
             identity = {"agent": "remediate", "operation": "depath"}
             iid = compute_intent_id(payload, identity, semantics="depath")
             intent = Intent(intent_id=iid, payload=payload, identity=identity)

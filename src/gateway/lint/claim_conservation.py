@@ -99,8 +99,10 @@ def _follow_tombstone(path: Path, kb_root: Path) -> Path:
     if not merged_into:
         return path
 
-    # merged_into is a slug like "entities/ozempic"; resolve to wiki/<slug>.md
-    slug = merged_into.lstrip("wiki/")
+    # merged_into is a slug like "entities/ozempic"; resolve to wiki/<slug>.md.
+    # removeprefix (not lstrip — lstrip strips a CHAR SET and would eat leading
+    # w/i/k/ characters off a slug like "wiki" → "iki").
+    slug = merged_into.removeprefix("wiki/")
     # slug may be e.g. "entities/ozempic" or "ozempic" depending on record shape
     candidate = kb_root / "wiki" / f"{slug}.md"
     if candidate.exists():

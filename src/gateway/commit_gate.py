@@ -939,7 +939,74 @@ class CommitGate:
             return self._apply_contradiction_revert(payload, intent_id)
         if kind == "reverse-merge":
             return self._apply_reverse_merge(payload, intent_id)
+        if kind == "depath":
+            return self._apply_depath(payload, intent_id)
+        if kind == "restore-depath":
+            return self._apply_restore_depath(payload, intent_id)
         return self._dead_letter(intent_id, f"unknown reversal_type {kind!r}")
+
+    def _apply_depath(self, payload: dict, intent_id: str) -> OperationResult:
+        """De-path an orphaned uncited page through the gate (G6, Phase 5 Task 2).
+
+        Removes the target page via the commit machinery (tracked git delete),
+        recording the page CONTENT in the provenance node so a ``restore-depath``
+        intent can bring it back. Reversibility invariant: the de-path is a
+        provenanced act and never destroys a page whose content is unrecoverable.
+        A missing target dead-letters (no mutation)."""
+        target_rel = payload.get("target_rel")
+        if not target_rel:
+            return self._dead_letter(intent_id, "depath missing target_rel")
+
+        abs_path = self._root / target_rel
+        if not abs_path.exists():
+            return self._dead_letter(
+                intent_id, f"depath target {target_rel!r} does not exist"
+            )
+
+        # Capture content BEFORE deletion so the act is reversible (the restore
+        # intent re-creates the page from this recorded content — never a guess).
+        try:
+            depathed_content = abs_path.read_text()
+        except OSError as e:
+            return self._dead_letter(intent_id, f"cannot read depath target: {e}")
+
+        basis = {
+            "reversal_type": "depath",
+            "target": target_rel,
+            "depathed_content": depathed_content,
+            "policy_version": payload.get("policy_version"),
+        }
+        return self._commit_reversal_writes(
+            intent_id, {}, [target_rel], basis,
+            summary=f"de-pathed {target_rel}",
+        )
+
+    def _apply_restore_depath(
+        self, payload: dict, intent_id: str
+    ) -> OperationResult:
+        """Restore a previously de-pathed page (reverse of de-path, G6).
+
+        Re-creates the page from the content carried in the intent payload (the
+        de-path provenance node's ``depathed_content``). Missing content →
+        dead-letter (cannot restore without the recorded body)."""
+        target_rel = payload.get("target_rel")
+        content = payload.get("content")
+        if not target_rel:
+            return self._dead_letter(intent_id, "restore-depath missing target_rel")
+        if not content:
+            return self._dead_letter(
+                intent_id, "restore-depath missing content (nothing to restore)"
+            )
+
+        basis = {
+            "reversal_type": "restore-depath",
+            "target": target_rel,
+            "policy_version": payload.get("policy_version"),
+        }
+        return self._commit_reversal_writes(
+            intent_id, {target_rel: content}, [], basis,
+            summary=f"restored de-pathed page {target_rel}",
+        )
 
     def _apply_contradiction_revert(
         self, payload: dict, intent_id: str

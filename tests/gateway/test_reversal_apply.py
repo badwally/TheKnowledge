@@ -355,6 +355,99 @@ def _authored_entity_richbody(gate, slug, canonical, aliases, body):
     return AuthoredIntent(intent=intent, writes={rel: content}, base_oid="HEAD")
 
 
+# ===========================================================================
+# G6 — de-path applies through the gate (Phase 5 Task 2). The de-path is a
+# real CommitGate intent: it removes the page via the commit machinery, records
+# a provenanced node, and is REVERSE-applicable (a restore-depath intent brings
+# the page back). NO monkeypatch of the core commit path.
+# ===========================================================================
+
+def test_depath_removes_page_records_provenance_and_is_reversible(tmp_commit_env):
+    """A depath intent through the gate: page gone + provenance node + restorable."""
+    from gateway import provenance
+
+    gate, q, root = tmp_commit_env
+
+    # Commit a real orphan page through the gate.
+    orphan_rel = "wiki/concepts/orphan.md"
+    (root / "wiki" / "concepts").mkdir(parents=True, exist_ok=True)
+    orphan_content = (
+        "---\ntype: concept\nslug: orphan\ntitle: Orphan\ndomains: [med]\n---\n"
+        "# Orphan\n\nNo inbound links and uncited.\n"
+    )
+    (root / orphan_rel).write_text(orphan_content)
+    _git(root, "add", "--", orphan_rel)
+    _git(root, "commit", "-qm", "seed orphan")
+    assert (root / orphan_rel).exists()
+
+    # Drive the de-path THROUGH the gate.
+    payload = {
+        "reversal_type": "depath",
+        "target_rel": orphan_rel,
+        "reversible": True,
+        "policy_version": "corpus-rot-depath-policy-v1",
+    }
+    identity = {"agent": "remediate", "operation": "depath"}
+    iid, gate_res = _run_intent_through_gate(gate, q, payload, identity)
+
+    assert gate_res.success, gate_res.errors
+    assert gate_res.disposition == "committed"
+    # (a) The page is gone from the tree.
+    assert not (root / orphan_rel).exists(), "de-path must remove the page"
+    # The git tree no longer tracks it.
+    tracked = _git(root, "ls-files", "--", orphan_rel).stdout.strip()
+    assert tracked == "", f"de-pathed page still tracked: {tracked!r}"
+
+    # (b) A provenance node is recorded for the de-path, carrying the content so a
+    #     restore can bring it back (reversibility invariant).
+    nodes = provenance.read_nodes()
+    depath_nodes = [
+        n for n in nodes
+        if n["decision_basis"].get("reversal_type") == "depath"
+    ]
+    assert depath_nodes, f"no de-path provenance node recorded: {nodes}"
+    basis = depath_nodes[-1]["decision_basis"]
+    assert basis.get("target") == orphan_rel
+    assert basis.get("depathed_content"), "node must retain content for restore"
+
+    # (c) A reverse/restore intent restores the page.
+    restore_payload = {
+        "reversal_type": "restore-depath",
+        "target_rel": orphan_rel,
+        "content": basis["depathed_content"],
+        "policy_version": "corpus-rot-depath-policy-v1",
+    }
+    restore_identity = {"agent": "remediate", "operation": "restore-depath"}
+    riid, restore_res = _run_intent_through_gate(
+        gate, q, restore_payload, restore_identity
+    )
+    assert restore_res.success, restore_res.errors
+    assert restore_res.disposition == "committed"
+    assert (root / orphan_rel).exists(), "restore-depath must bring the page back"
+    restored = (root / orphan_rel).read_text()
+    assert "No inbound links and uncited." in restored
+
+
+def test_depath_missing_target_dead_letters_no_mutation(tmp_commit_env):
+    """Negative control: de-pathing a non-existent page dead-letters; no commit."""
+    gate, q, root = tmp_commit_env
+    head_before = _git(root, "rev-parse", "HEAD").stdout.strip()
+
+    payload = {
+        "reversal_type": "depath",
+        "target_rel": "wiki/concepts/does-not-exist.md",
+        "reversible": True,
+        "policy_version": "corpus-rot-depath-policy-v1",
+    }
+    identity = {"agent": "remediate", "operation": "depath"}
+    iid, gate_res = _run_intent_through_gate(gate, q, payload, identity)
+
+    assert not gate_res.success
+    assert gate_res.disposition == "dead_lettered"
+    head_after = _git(root, "rev-parse", "HEAD").stdout.strip()
+    assert head_after == head_before
+
+
 def test_real_merge_then_reverse_preserves_preexisting_aliases(tmp_commit_env):
     """CRITICAL regression: a reverse-merge must NOT delete aliases that predated
     the merge. Drives the REAL merge so the REAL merge_reattachment record is

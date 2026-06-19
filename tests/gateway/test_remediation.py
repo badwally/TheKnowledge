@@ -139,8 +139,14 @@ def test_non_dry_run_submits_depath_intent(kb_root: Path) -> None:
 
     import json
     payloads = [json.loads(p.read_text())["payload"] for p in submitted]
-    depath_payloads = [p for p in payloads if p.get("op") == "depath"]
-    assert len(depath_payloads) >= 1, "submitted intent must have op='depath'"
+    # The de-path is a typed CommitGate reversal intent — it must carry
+    # reversal_type='depath' (the key the gate dispatches on), NOT a bare op key
+    # that the gate ignores. An inert op-keyed payload would never execute.
+    depath_payloads = [p for p in payloads if p.get("reversal_type") == "depath"]
+    assert len(depath_payloads) >= 1, (
+        "submitted intent must carry reversal_type='depath' so the gate's "
+        "_apply_depath branch dispatches it"
+    )
     target_payload = next(
         (p for p in depath_payloads
          if p.get("target_rel") == "wiki/concepts/truly-orphaned.md"),
@@ -150,3 +156,94 @@ def test_non_dry_run_submits_depath_intent(kb_root: Path) -> None:
         "depath intent must carry target_rel='wiki/concepts/truly-orphaned.md'"
     )
     assert target_payload.get("reversible") is True, "depath intent must be reversible=True"
+
+
+def test_active_merge_tombstone_is_skipped_not_depathed(kb_root: Path) -> None:
+    """G6 critical: an active merge tombstone is reachable ONLY via the NESTED
+    merge_reattachment.tombstone provenance key — it has zero inbound links and
+    must NEVER be de-pathed (it is load-bearing for reverse-merge / G8).
+
+    Reproduces the reviewer's silent-data-loss finding: a top-level-only basis
+    scan misses the nested tombstone path and de-paths a live tombstone.
+    """
+    from gateway import search_index
+
+    # The canonical merge target.
+    _concept("semaglutide", "# semaglutide\n\nGLP-1 agonist [[sources/pubmed-1]].\n")
+    # The tombstone left behind by a merge — a redirect with merged_into. It has
+    # ZERO inbound wikilinks. It is reachable ONLY through the nested
+    # merge_reattachment record in the provenance graph.
+    d = paths.wiki_dir() / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    tomb_front = {
+        "type": "concept",
+        "slug": "ozempic-brand",
+        "title": "Ozempic Brand",
+        "merged_into": "concepts/semaglutide",
+        "redirect": "[[concepts/semaglutide]]",
+        "domains": ["med"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    tomb_rel = "wiki/concepts/ozempic-brand.md"
+    (d / "ozempic-brand.md").write_text(
+        fm.serialize(
+            tomb_front,
+            "# Ozempic Brand\n\nMerged into [[concepts/semaglutide]] "
+            "(dedup §5.3). This page is a redirect tombstone.\n",
+        )
+    )
+
+    # Record the merge_reattachment provenance node with the tombstone path NESTED
+    # inside merge_reattachment (exactly as CommitGate writes it).
+    provenance.record(
+        "merge-intent-001",
+        {
+            "merge_reattachment": {
+                "target": "wiki/concepts/semaglutide.md",
+                "tombstone": tomb_rel,
+                "aliases_unioned": ["Ozempic"],
+                "sections_carried": [],
+                "claims_unioned": [],
+            },
+            "policy_version": "test-v1",
+        },
+    )
+
+    search_index.refresh(rebuild=True)
+    res = remediate(dry_run=True)
+
+    assert res.success
+    assert tomb_rel in res.data["skipped_reachable"], (
+        "active merge tombstone (reachable via nested merge_reattachment.tombstone) "
+        "must be in skipped_reachable"
+    )
+    assert tomb_rel not in res.data["depathed"], (
+        "an active merge tombstone must NEVER be de-pathed — silent data loss"
+    )
+    # The merge target is safe (the tombstone links to it, so it also has an
+    # inbound wikilink). Either way it must NEVER be de-pathed.
+    assert "wiki/concepts/semaglutide.md" not in res.data["depathed"]
+
+
+def test_zero_inbound_source_citation_target_is_skipped(kb_root: Path) -> None:
+    """G6 named negative control: a page that is itself a live citation target,
+    reachable from the provenance graph with zero inbound wikilinks, is skipped.
+    """
+    from gateway import search_index
+
+    # 'cited-target' has zero inbound wikilinks but is reachable from provenance.
+    _concept("cited-target", "# cited-target\n\nReal content [[sources/pubmed-7]].\n")
+    # Record a provenance node referencing it as a canonical_path (absolute form).
+    provenance.record(
+        "deposit-intent-007",
+        {"canonical_path": str(kb_root / "wiki/concepts/cited-target.md"),
+         "policy_version": "test-v1"},
+    )
+
+    search_index.refresh(rebuild=True)
+    res = remediate(dry_run=True)
+
+    assert res.success
+    assert "wiki/concepts/cited-target.md" in res.data["skipped_reachable"]
+    assert "wiki/concepts/cited-target.md" not in res.data["depathed"]
