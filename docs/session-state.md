@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 5 — T1-T5 complete; T6 in RE-REVIEW after 2 fix rounds; phase gate NOT yet run. Branch `docs/librarian-phase5`)
+Last updated: 2026-06-19 (Librarian PHASE 5 — all 6 tasks build+review clean; phase gate found+fixed 3 merge-blockers; 2 closure re-reviews running. Branch `docs/librarian-phase5`)
 
 ---
 
@@ -11,21 +11,24 @@ Last updated: 2026-06-19 (Librarian PHASE 5 — T1-T5 complete; T6 in RE-REVIEW 
 **Execution mode:** subagent-driven-development — fresh implementer per task (sonnet) + independent task review (opus on destructive/subtle tasks) + fix loop, coordinator window kept lean. Per-task briefs/reports/diffs handed off as files under `.git/sdd/`.
 
 ### Open contracts
-- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) ✅ `11dfd554..1419c7ae`; T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) — IN RE-REVIEW `2f708f7f..226ccf5f` (build `9ed76ba5..d10ac0ba`; then fixes `f86c6365` security HIGHs, `eadda916`+`757c08b5` inertness Criticals, `226ccf5f` version-bump minor).
-- **T6 NOT yet verified complete** — re-review verdict pending (reviewer `a93772ee65b0e2032`). Phase gate NOT run.
-- **G7 migration delta** written as triggered backlog: `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`.
+- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) ✅ `11dfd554..1419c7ae`; T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) — build+per-task-review clean `2f708f7f..a9889614` (6 fix rounds: security HIGHs, 2 inertness Criticals, version-bump, malformed-dedup fail-open).
+- **ALL 6 TASKS build+per-task-review clean.** PHASE GATE: full suite 2354 pass; eval fts recall@10 0.926 (==baseline); scoped lints at baseline (orphans 758/schema-drift 191/broken-wikilinks 1).
+- **Whole-branch + security review found 3 merge-blockers — ALL FIXED, closure re-reviews running:** C1 policy wrote a git-TRACKED file (`.knowledge/policies/`, 753 files; test fixture's blanket `.knowledge/` gitignore masked it) w/ no commit → now commits through gate w/ Intent-Id trailer (`9acd9247`); SEC-Critical spoofable policy-edit identity → CLI-ONLY + server-sourced `GATEWAY_POLICY_PRINCIPAL` fail-closed (`6d4eef12`); SEC-High reversal-delete no containment → `_rel_escapes_root` (`9acd9247`).
+- **Triggered backlog files** (`3d4c393f`): G7 migration delta, I1 no cluster() driver, I2 no reverse-merge producer, demand-ledger DoS.
 
 ### Files mid-edit
-- T6 in re-review at HEAD `226ccf5f`. (A first T6 run prematurely committed a "T6 complete" session-state at `7d965221` BEFORE the security + 2 inertness fix rounds — corrected here; that claim was wrong.)
+- None build-wise. Two closure re-reviews in flight: whole-branch `a3ca65a1dfb8430f4` (confirm C1) + security `ae26441f21455fba8` (confirm SEC-Critical/High). HEAD `3d4c393f`. (NOTE: subagents twice wrote/overwrote this session-state — a first T6 run committed a premature "T6 complete" at `7d965221`; corrected. Lesson for memory: subagents shouldn't own session-state.)
 
 ### Decisions made this session (T6-specific)
 - Reused `.knowledge/eval/dedup/golden.yaml` as merge_map source (no separate file — duplication adds zero signal).
-- Policy.yaml is gitignored → `_apply_policy_edit` writes directly (no `git add`), records a provenance node under `decision_basis` as the audit trail, marks committed in queue. Empty `writes={}` AuthoredIntent triggers the policy-edit dispatch (idempotency/fencing/provenance confirmed sound by review).
+- **C1 correction:** `.knowledge/policies/` is git-TRACKED (NOT gitignored — only locks/lint/watcher/scheduler/auth/secrets/demand/transcripts are). `_apply_policy_edit` commits the policy write through the gate's atomic boundary (`_commit_reversal_writes`: git add + Intent-Id-trailer commit + provenance), not a bare write_text. Whole-branch review confirmed C1 closed + no pipeline interference.
+- **Policy-edit trust model (user delegated to me; FLAG FOR PR/user ratification):** CLI-ONLY (removed from all MCP surfaces, CLI_ONLY like demote-domain); privilege from server-sourced `GATEWAY_POLICY_PRINCIPAL` (env/.knowledge/secrets.env), unset→fail-closed; resolved principal stamped for audit. Rationale: a full-Bash build-tier agent can shell out anyway, so an in-request allowlist was never a hard boundary; G7's real job = keep op off agent tool surfaces + change-control gate + unspoofable audit.
+- **Cosmetic cleanups pending** (whole-branch review, non-blocking): stale docstring `commit_gate.py:1080-1082` ("gitignored/no git add" — now false); policy-edit commit subject reads `revert(...)` (reuses `_commit_reversal_writes`).
 - **Gate (post-fix, `eadda916`):** the policy-edit gate DERIVES dedup params (blocking_band/identity_threshold/strategy) from the PROPOSED policy_data and runs a parameterized `merge_map_eval`; dead-letters on ANY golden regression for all strategies (was an inert hardcoded `"geometry-only"` string-match before the fix). FAILS CLOSED on any gate-eval exception (`f86c6365`); domain slug-validated + path-containment-checked at both layers.
 - `policy_provenance` lint reads `decision_basis` (the real provenance key, fixed `757c08b5`); detects absence of a policy-edit provenance node; content-hash match is a backlog hardening item.
 
 ### Next atomic step
-Await T6 re-review verdict. If clean: mark T6 complete in `.git/sdd/progress.md`, then run the PHASE GATE: full suite `.venv/bin/python -m pytest`; `wiki lint --scope orphans|schema-drift|broken-wikilinks`; `wiki eval-retrieval --compare` (≥0.90 — also the live check for policy-edit Gate 1, which unit tests skip on missing goldens); whole-branch independent code-review (opus) + security review + /session-review. Then set ledger §4 Phase 5 all [x] + §5 rows green, reconcile §4/§5 vs reality, → PR.
+Whole-branch review = READY TO MERGE (C1 closed), conditional on the security reviewer (`ae26441f21455fba8`) confirming SEC-Critical/SEC-High closed. When it signs off: (optional) final cosmetic cleanup (stale docstring + commit-subject prefix); run `/session-review`; set ledger §4 Phase 5 all `[x]` + §5 Phase-5 rows + G2/G7/I3 rows → green; reconcile §4/§5 vs git+tests (quality-incident diff); push branch + open PR to main (carries the unpushed `dbf4888b` session-state commit + all Phase-5 work); FLAG the policy-edit trust-model choice in the PR body for user ratification. NO Phase 6 — build complete at gate green.
 
 ---
 
