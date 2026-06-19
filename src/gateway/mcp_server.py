@@ -158,6 +158,19 @@ def wiki_ingest(
 
 
 @mcp.tool()
+def wiki_intent_status(intent_id: str) -> dict[str, Any]:
+    """Query a deposited intent_id for its terminal disposition (A1, read-tier).
+
+    Returns the typed disposition union (committed/merged -> canonical_path,
+    rejected/dead_lettered -> reason in summary) or a `retry_after` poll hint on
+    a non-terminal state. Read-only; never takes the commit mutex.
+    """
+    from gateway.ops.intent_status import intent_status
+
+    return _serialize(intent_status(intent_id))
+
+
+@mcp.tool()
 def wiki_filter(input: str, domain: str | None = None) -> dict[str, Any]:
     """Score a candidate source against a domain's policy without writing.
 

@@ -112,6 +112,7 @@ SUBCOMMANDS: dict[str, str] = {
     "list-domains": "List all blessed domains with slug, title, and wiki page count",
     "list-concepts": "List concept/entity/synthesis pages, optionally filtered to one domain",
     "moc-add": "Author a wiki/mocs/<slug>.md domain map-of-content page",
+    "intent-status": "Query a deposited intent_id for its terminal disposition (A1, read-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -184,6 +185,7 @@ IMPLEMENTED: set[str] = {
     "list-domains",
     "list-concepts",
     "moc-add",
+    "intent-status",
 }
 
 
@@ -430,6 +432,15 @@ def build_parser() -> argparse.ArgumentParser:
     p_context.add_argument("--budget", type=int, default=None,
                            help="Max characters (markdown only). Over budget, neighbors are "
                                 "authority-ranked and truncated instead of dropped.")
+
+    # intent-status: query a deposited intent_id for its terminal disposition (A1)
+    p_intent_status = subparsers.add_parser(
+        "intent-status",
+        help=SUBCOMMANDS["intent-status"],
+    )
+    p_intent_status.add_argument("intent_id", help="The deposited intent_id to query.")
+    p_intent_status.add_argument("--json", action="store_true",
+                                 help="Output structured JSON.")
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -1514,6 +1525,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_evaluate(ns)
     if ns.subcommand == "context":
         return _run_context(ns)
+    if ns.subcommand == "intent-status":
+        return _run_intent_status(ns)
     if ns.subcommand == "agent-log":
         return _run_agent_log(ns)
     if ns.subcommand == "contradiction":
@@ -2021,6 +2034,34 @@ def _run_context(ns: argparse.Namespace) -> int:
     # Raw stdout: result.summary is the payload (markdown or JSON), meant to be
     # piped into a sibling project's context loader or `jq`. The standard
     # `ok: ... touched: ...` envelope would corrupt machine-readable formats.
+    print(result.summary)
+    return 0
+
+
+def _run_intent_status(ns: argparse.Namespace) -> int:
+    from gateway.ops.intent_status import intent_status
+
+    result = intent_status(ns.intent_id)
+    if getattr(ns, "json", False):
+        import json as _json
+
+        print(_json.dumps({
+            "success": result.success,
+            "intent_id": result.intent_id,
+            "disposition": result.disposition,
+            "retry_after": result.retry_after,
+            "canonical_path": (
+                str(result.canonical_path)
+                if result.canonical_path is not None else None
+            ),
+            "summary": result.summary,
+            "errors": list(result.errors),
+        }))
+        return 0 if result.success else 1
+    if not result.success:
+        for err in result.errors:
+            print(err, file=sys.stderr)
+        return 1
     print(result.summary)
     return 0
 
