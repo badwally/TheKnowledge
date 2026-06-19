@@ -295,6 +295,13 @@ def test_reverse_merge_restores_canonical_and_deletes_tombstone(tmp_commit_env):
     head_after = _git(root, "rev-parse", "HEAD").stdout.strip()
     assert head_after != head_before
 
+    # The reversal commit subject keeps the revert( prefix (governance audit:
+    # reversal kinds read revert; policy-edit reads policy-edit(<domain>)).
+    subject = _git(root, "log", "--format=%s", "-n", "1").stdout.strip()
+    assert subject.startswith("revert(librarian-commit):"), (
+        f"reversal commit subject must keep the revert( prefix; got {subject!r}"
+    )
+
     # A provenance node records the reverse-merge
     nodes = provenance.read_nodes()
     assert any(

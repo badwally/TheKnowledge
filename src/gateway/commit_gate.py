@@ -883,13 +883,23 @@ class CommitGate:
         deletes: list[str],
         basis: dict,
         summary: str,
+        *,
+        subject_prefix: str = "revert(librarian-commit)",
     ) -> OperationResult:
-        """Apply a reversal's writes + deletes as one provenanced git commit.
+        """Apply a write/delete set as one provenanced git commit through the gate's
+        atomic boundary.
 
         Mirrors the deposit commit boundary: durably declare the write set,
         apply per-file atomic writes, stage adds + removals, commit with the
-        Intent-Id trailer, set committed state, record provenance. Shared by
-        both reversal kinds so the atomic boundary is identical."""
+        Intent-Id trailer, set committed state, record provenance. Shared by the
+        reversal kinds AND the policy-edit path so the atomic boundary is
+        identical.
+
+        ``subject_prefix`` sets the commit-subject prefix so the audit log
+        reflects the real operation: reversal kinds use the default
+        ``revert(librarian-commit)``; policy-edit passes ``policy-edit(<domain>)``.
+        Idempotency keys off the ``Intent-Id:`` trailer, not the subject, so the
+        prefix is purely descriptive and safe to vary."""
         # BLOCKER 2 (defense-in-depth): this is the shared DESTRUCTIVE boundary
         # (unlink + git rm). Every rel here is producer/payload-supplied. Reject
         # any traversal/absolute/escaping rel BEFORE touching the tree — fail
@@ -927,7 +937,7 @@ class CommitGate:
 
         canonical_rel = next(iter(writes)) if writes else (deletes[0] if deletes else "")
         empty = self._git("diff", "--cached", "--quiet", check=False).returncode == 0
-        msg = f"revert(librarian-commit): {canonical_rel}\n\nIntent-Id: {intent_id}\n"
+        msg = f"{subject_prefix}: {canonical_rel}\n\nIntent-Id: {intent_id}\n"
         commit_args = ["commit", "-qm", msg]
         if empty:
             commit_args.insert(1, "--allow-empty")
@@ -1077,9 +1087,13 @@ class CommitGate:
         regex, and the resolved target path is asserted to be contained within
         the policies root, before any write.
 
-        Policy files live under .knowledge/policies/ (gitignored). This method
-        writes them directly (no git add) and records a provenance node. The
-        intent is marked "committed" in the queue on success.
+        Policy files live under .knowledge/policies/, which is git-TRACKED. On a
+        passing gate the write is committed through the gate's atomic boundary
+        (_commit_reversal_writes: write -> git add -> commit with an Intent-Id
+        trailer + subject "policy-edit(<domain>)" -> record a provenance node), so
+        the change is durable and carries a commit-level audit. On gate failure
+        the intent is dead-lettered and nothing is written or committed
+        (fail-closed).
 
         Note: hardcoded threshold constants (COMMIT_LOCK_ACQUIRE_TIMEOUT,
         deposit.py MAX_BACKLOG) are gated by code-review/PR, not this runtime
@@ -1232,6 +1246,7 @@ class CommitGate:
             [],
             basis,
             summary=f"policy-edit committed for domain {domain!r}",
+            subject_prefix=f"policy-edit({domain})",
         )
 
     def _dead_letter(self, intent_id: str, reason: str) -> OperationResult:

@@ -597,6 +597,16 @@ def test_policy_edit_commit_is_durable_and_tree_clean(tmp_gate_env):
         f"no commit carries the Intent-Id trailer for {iid}; recent log:\n{log_out}"
     )
 
+    # (b2) The commit SUBJECT reflects the real operation (governance/audit),
+    #      not the reused reversal prefix. Must read "policy-edit(<domain>): ...".
+    subject = _git_out(root, "log", "--format=%s", "-n", "1").strip()
+    assert subject.startswith("policy-edit(med):"), (
+        f"policy-edit commit subject must reflect the op; got {subject!r}"
+    )
+    assert not subject.startswith("revert("), (
+        f"policy-edit commit must NOT use the revert( prefix; got {subject!r}"
+    )
+
     # (c) The policy file is tracked AND the tree is clean — no dangling change
     #     that recovery / a concurrent `git checkout --` would silently revert.
     tracked = _git_out(root, "ls-files", "--", ".knowledge/policies/med/policy.yaml").strip()
