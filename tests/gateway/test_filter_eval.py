@@ -220,3 +220,59 @@ def test_score_op_reports_precision(tmp_path):
     assert result.success
     assert "precision@10" in result.summary
     assert "1.0" in result.summary or "1.00" in result.summary  # all 10 in top-10
+
+
+# --- Task A4: CLI wiring ---------------------------------------------------
+
+
+def test_cli_filter_eval_score_end_to_end(tmp_path, capsys):
+    import yaml
+    from gateway import cli
+    scored = [{"url": f"https://yt/v{i:02d}", "title": f"t{i}", "channel": "c",
+               "description": "d", "subtopic": "s", "score": 0.9 - i * 0.05,
+               "tier": "accept", "item_id": f"yt:{i}"} for i in range(12)]
+    (tmp_path / "pool-scored.json").write_text(json.dumps(scored))
+    labels = {"best_fit": [f"https://yt/v{i:02d}" for i in range(10)], "missing": {}}
+    (tmp_path / "labels.yaml").write_text(yaml.safe_dump(labels))
+    rc = cli.main([
+        "filter-eval", "score", "semantic-models",
+        "--scored", str(tmp_path / "pool-scored.json"),
+        "--labels", str(tmp_path / "labels.yaml"),
+    ])
+    assert rc == 0
+    assert "precision@10" in capsys.readouterr().out
+
+
+def test_cli_filter_eval_pool_parses_queries_file(tmp_path, monkeypatch):
+    import yaml
+    from gateway import cli
+    qfile = tmp_path / "queries.yaml"
+    qfile.write_text(yaml.safe_dump({"subtopics": {"reasoning": ["reasoning talk"]}}))
+
+    # Replace build_pool so no live search/model runs.
+    monkeypatch.setattr(
+        filter_eval, "build_pool",
+        lambda *a, **k: [filter_eval._pool_row(
+            _yt_candidate("Q1", "Reasoning lecture", "Uni", "desc"), "reasoning", 0.8, "accept")],
+    )
+    rc = cli.main(["filter-eval", "pool", "semantic-models",
+                   "--queries", str(qfile), "--out", str(tmp_path / "out")])
+    assert rc == 0
+    assert (tmp_path / "out" / "pool-scored.json").exists()
+
+
+def test_cli_filter_eval_pool_rejects_queries_file_without_subtopics(tmp_path):
+    import yaml
+    from gateway import cli
+    qfile = tmp_path / "bad.yaml"
+    qfile.write_text(yaml.safe_dump({"not_subtopics": {}}))
+    rc = cli.main(["filter-eval", "pool", "semantic-models",
+                   "--queries", str(qfile), "--out", str(tmp_path / "out")])
+    assert rc == 2  # usage error, not a crash
+
+
+def test_filter_eval_is_cli_only():
+    # filter-eval is a developer measurement harness (hits YouTube search,
+    # writes scratch artifacts) — deliberately NOT on the agent MCP surface.
+    from gateway import mcp_server
+    assert "filter-eval" in mcp_server.CLI_ONLY

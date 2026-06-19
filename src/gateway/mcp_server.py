@@ -60,6 +60,11 @@ CLI_ONLY: frozenset[str] = frozenset(
         # query set. It scores retrieval quality during development; agents
         # have no reason to invoke it at runtime. CLI-only by design.
         "eval-retrieval",
+        # `filter-eval` is a supervised filter/prompt improvement harness: it
+        # hits YouTube *search* on our key and writes scratch eval artifacts.
+        # A developer-run measurement loop (like eval-retrieval), not an agent
+        # runtime op. CLI-only by design.
+        "filter-eval",
         # `schedule` is multi-action and runs arbitrary shell commands.
         # Exposing add/remove/enable to agents would let an agent grant
         # itself persistent execution. Keep CLI-only (K4 / wave-2). If

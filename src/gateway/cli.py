@@ -47,6 +47,7 @@ SUBCOMMANDS: dict[str, str] = {
     "query": "Query the wiki; may invoke NotebookLM for large-corpus questions",
     "filter": "Run the semantic filter on a candidate source (read-only)",
     "filter-correct": "Override a past filter decision; pin as a corrected example",
+    "filter-eval": "Score a candidate pool against human gold labels (pool | score)",
     "backfill-examples": "Populate policy.yaml + example bank from legacy research-notebook artifacts",
     "finetune": "Inspect or distill the per-domain example bank into a tighter policy candidate",
     "nlm-add": "Add a source to a NotebookLM corpus",
@@ -118,6 +119,7 @@ IMPLEMENTED: set[str] = {
     "ingest",
     "filter",
     "filter-correct",
+    "filter-eval",
     "backfill-examples",
     "finetune",
     "status",
@@ -271,6 +273,33 @@ def build_parser() -> argparse.ArgumentParser:
     decision.add_argument("--exclude", action="store_true", help="Override decision to exclude")
     p_correct.add_argument("--rationale", required=True, help="Why the original decision was wrong")
     p_correct.add_argument("--domain", default=None, help="Domain slug if not in source frontmatter")
+
+    # filter-eval: supervised filter/prompt improvement loop (pool | score)
+    p_feval = subparsers.add_parser(
+        "filter-eval",
+        help=SUBCOMMANDS["filter-eval"],
+        epilog=(
+            "Examples:\n"
+            "  wiki filter-eval pool semantic-models --queries docs/research/youtube-filter-sl/queries-train.yaml\n"
+            "  wiki filter-eval score semantic-models --scored pool-scored.json --labels labels-train.yaml"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    p_feval_sub = p_feval.add_subparsers(dest="filter_eval_action", required=True)
+
+    p_feval_pool = p_feval_sub.add_parser("pool", help="Generate + score a candidate pool from a queries file")
+    p_feval_pool.add_argument("domain", help="Domain slug (e.g. semantic-models)")
+    p_feval_pool.add_argument("--queries", required=True, help="YAML: {subtopics: {name: [query, ...]}}")
+    p_feval_pool.add_argument("--max-results", type=int, default=15, dest="max_results",
+                              help="Per-query YouTube candidate cap (default 15)")
+    p_feval_pool.add_argument("--out", default=None, help="Output dir (default .knowledge/eval/filter/<domain>/<ts>/)")
+    p_feval_pool.add_argument("--seed", type=int, default=0, help="Blind-pool shuffle seed (default 0)")
+
+    p_feval_score = p_feval_sub.add_parser("score", help="Score the filter against gold labels")
+    p_feval_score.add_argument("domain", help="Domain slug (for reporting context)")
+    p_feval_score.add_argument("--scored", required=True, help="Path to pool-scored.json")
+    p_feval_score.add_argument("--labels", required=True, help="Path to labels YAML")
+    p_feval_score.add_argument("--k", type=int, default=10, help="precision@k cutoff (default 10)")
 
     # status (no args)
     p_status = subparsers.add_parser(
@@ -1450,6 +1479,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_filter(ns)
     if ns.subcommand == "filter-correct":
         return _run_filter_correct(ns)
+    if ns.subcommand == "filter-eval":
+        return _run_filter_eval_cmd(ns)
     if ns.subcommand == "status":
         return _run_status(ns)
     if ns.subcommand == "watch":
@@ -1893,6 +1924,44 @@ def _run_filter(ns: argparse.Namespace) -> int:
     from gateway.ops.filter_op import filter_source
 
     return _emit_result(filter_source(_resolve_input(ns.input), domain=ns.domain))
+
+
+def _run_filter_eval_cmd(ns: argparse.Namespace) -> int:
+    import datetime as _dt
+    from pathlib import Path as _Path
+
+    import yaml as _yaml
+
+    from gateway.ops import filter_eval
+
+    action = ns.filter_eval_action
+    if action == "pool":
+        try:
+            spec = _yaml.safe_load(_Path(ns.queries).read_text()) or {}
+        except (OSError, _yaml.YAMLError) as e:
+            print(f"error: read queries file: {e}", file=sys.stderr)
+            return 2
+        queries_by_subtopic = spec.get("subtopics") or {}
+        if not queries_by_subtopic:
+            print("error: queries file has no `subtopics:` mapping", file=sys.stderr)
+            return 2
+        if ns.out:
+            out_dir = _Path(ns.out)
+        else:
+            ts = _dt.datetime.now().strftime("%Y%m%d-%H%M%S")  # stamped here, not in the op
+            out_dir = filter_eval.default_out_dir(ns.domain, ts)
+        return _emit_result(filter_eval.pool_op(
+            ns.domain, queries_by_subtopic,
+            out_dir=out_dir, max_results_per_query=ns.max_results, seed=ns.seed,
+        ))
+
+    if action == "score":
+        return _emit_result(filter_eval.score_op(
+            _Path(ns.scored), _Path(ns.labels), k=ns.k,
+        ))
+
+    print(f"error: unknown filter-eval action: {action}", file=sys.stderr)
+    return 2
 
 
 def _run_filter_correct(ns: argparse.Namespace) -> int:
