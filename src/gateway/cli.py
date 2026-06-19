@@ -118,7 +118,7 @@ SUBCOMMANDS: dict[str, str] = {
     "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
     "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
     "commit-worker": "Drain the deposit queue: --once (drain to empty) or --loop (foreground poll) (D0, build-tier)",
-    "demand-cluster": "Cluster logged corpus gaps and optionally submit synthesis intents for triggered clusters (D1, build-tier)",
+    "demand-cluster": "Submit synthesis intents for triggered corpus-gap clusters (requires --trigger; no-op otherwise) (D1, build-tier)",
 }
 
 IMPLEMENTED: set[str] = {
