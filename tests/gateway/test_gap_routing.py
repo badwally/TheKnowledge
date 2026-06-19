@@ -14,13 +14,39 @@ Negative controls are named:
 from __future__ import annotations
 
 import json
+from dataclasses import dataclass
 from pathlib import Path
 
 import pytest
 
-from gateway import paths, frontmatter as fm
+from gateway import paths, frontmatter as fm, search_index
 from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
+from gateway.ops.answer import answer_op
 from gateway.ops.retrieve import retrieve_op
+
+
+# ---------------------------------------------------------------------------
+# Stub LLM client for answer_op (mirrors test_ws6_answer.py)
+# ---------------------------------------------------------------------------
+
+@dataclass
+class _StubResult:
+    text: str
+    output_tokens: int = 42
+    input_tokens: int = 100
+    cache_read_tokens: int = 0
+
+
+class _StubClient:
+    """Records the prompt and returns a canned grounded answer."""
+
+    def __init__(self, reply: str):
+        self.reply = reply
+        self.calls: list[dict] = []
+
+    def call_with_usage(self, **kwargs):
+        self.calls.append(kwargs)
+        return _StubResult(text=self.reply)
 
 
 # ---------------------------------------------------------------------------
@@ -150,3 +176,52 @@ def test_retrieve_miss_no_deposit_logs_corpus_miss(kb_root):
     log_text = _log_text(kb_root)
     assert "corpus_miss=1" in log_text
     assert "suppressed_a4=1" not in log_text
+
+
+# ---------------------------------------------------------------------------
+# answer_op telemetry (SPEC GAP 2) — shares _a4_suppressed with retrieve_op
+# ---------------------------------------------------------------------------
+
+def _last_answer_entry(log_text: str) -> str:
+    """Return the text of the last `answer` log entry."""
+    # Entries start with "## ["; the last answer entry is the final one mentioning op=answer.
+    entries = ["##" + e for e in log_text.split("##") if e.strip()]
+    answer_entries = [e for e in entries if "] answer " in e or "] answer\n" in e]
+    return answer_entries[-1] if answer_entries else ""
+
+
+def test_answer_miss_logs_corpus_miss(kb_root):
+    """answer_op with no wiki context logs corpus_miss=1 (no LLM call needed)."""
+    client = _StubClient("unused")
+    res = answer_op("nothing matches xyzzy", domain="med", caller="agent-1", client=client)
+    assert not res.success
+    # No grounding context → the stub client is never called.
+    assert client.calls == []
+    log_text = _log_text(kb_root)
+    assert "corpus_miss=1" in log_text
+
+
+def test_answer_hit_logs_no_miss(kb_root):
+    """answer_op with grounding context logs corpus_miss=0 on its success entry."""
+    _seed_wiki_page(kb_root, "gastric-emptying", "Gastric emptying slows with GLP-1 [[sources/pubmed-1]].")
+    search_index.refresh(rebuild=True)
+
+    client = _StubClient("Gastric emptying slows [[sources/pubmed-1]].")
+    res = answer_op("gastric emptying", domain="med", caller="agent-1", client=client)
+    assert res.success
+    log_text = _log_text(kb_root)
+    last = _last_answer_entry(log_text)
+    assert "corpus_miss=0" in last
+    assert "corpus_miss=1" not in last
+
+
+def test_answer_a4_suppression(kb_root):
+    """NEGATIVE-A4: answer_op miss suppressed when the same caller has an outstanding deposit."""
+    _enqueue_deposit(kb_root, "agent-1", "pending topic")
+    client = _StubClient("unused")
+    res = answer_op("pending topic", domain="med", caller="agent-1", client=client)
+    assert not res.success
+    assert client.calls == []
+    log_text = _log_text(kb_root)
+    assert "corpus_miss=1" not in log_text
+    assert "suppressed_a4=1" in log_text

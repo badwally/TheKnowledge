@@ -101,7 +101,14 @@ def _validate(payload: dict) -> list[str]:
         value = payload[field_name]
         if value is None:
             continue  # None is always allowed (nullable)
-        if not isinstance(value, allowed_types):
+        # bool subclasses int, so isinstance(True, (int,)) is True. Reject bool
+        # for int-typed fields (e.g. recurrence=True) — it would silently inflate
+        # the T4 DemandLedger recurrence counts. bool is only accepted when bool
+        # is itself an allowed type for the field.
+        is_bool = isinstance(value, bool)
+        bool_allowed = bool in allowed_types
+        type_ok = isinstance(value, allowed_types) and (bool_allowed or not is_bool)
+        if not type_ok:
             type_names = "/".join(t.__name__ for t in allowed_types)
             errors.append(
                 f"{field_name} must be {type_names} or None, got {type(value).__name__!r}"

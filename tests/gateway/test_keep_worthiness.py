@@ -209,3 +209,23 @@ def test_keep_worthiness_recurrence_wrong_type_rejected(tmp_queue_env):
     )
     assert res.disposition == "rejected"
     assert any("recurrence" in e for e in (res.errors or []))
+
+
+def test_keep_worthiness_recurrence_bool_rejected(tmp_queue_env):
+    """NEGATIVE-BOOL-AS-INT: recurrence=True (bool is int subclass) → rejected.
+
+    bool subclasses int, so a naive isinstance(True, (int,)) check would pass
+    silently and inflate the T4 DemandLedger recurrence counts. An int-typed
+    keep-worthiness field must reject bool.
+    """
+    res = deposit(
+        {
+            "page_type": "concept",
+            "title": "W4",
+            "body": "Some claim.",
+            "recurrence": True,  # wrong: bool must not satisfy the int field
+        },
+        {"canonical_name": "W4", "domains": ["med"]},
+    )
+    assert res.disposition == "rejected"
+    assert any("recurrence" in e for e in (res.errors or []))

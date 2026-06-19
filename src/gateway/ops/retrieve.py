@@ -40,6 +40,9 @@ from gateway.core import OperationResult
 # and defensible — avoids over-engineering a semantic-similarity layer here.
 # The match is intentionally loose; false negatives cost an extra A4 log entry,
 # false positives merely suppress a log line.  We accept a loose match.
+# Future hardening: add a domain-match as a second required signal (caller +
+# title-word-overlap + same domain) to reduce over-suppression on common
+# cross-domain vocabulary.
 #
 # Outstanding states per the intent-queue spec: submitted, claimed, authored.
 # Terminal states (committed, rejected, dead_lettered, quarantined) are skipped.

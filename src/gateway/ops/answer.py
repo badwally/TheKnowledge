@@ -187,6 +187,7 @@ def answer_op(
             "cited": len(res.source_ids),
             "stripped": len(res.stripped),
             "output_tokens": res.usage.get("output_tokens", 0),
+            "corpus_miss": 0,
         },
         summary=(
             f"answer: {question!r} domain={domain_label or '-'} "
