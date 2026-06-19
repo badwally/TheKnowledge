@@ -10,7 +10,10 @@ atomic; each record fits well under 4KB. No locking needed.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import os
+import tempfile
 from datetime import datetime, timezone
 from typing import Iterable, TYPE_CHECKING
 
@@ -55,12 +58,34 @@ def resolution_acts_path():
     )
 
 
+def _compute_act_id(record: dict) -> str:
+    """Content-addressed, stable id for a resolution act (Phase 5 T1, G1/G3).
+
+    Derived from the winner+loser sources/claims and the resolved_at timestamp
+    so a given resolution has one stable handle the reversal can name. SHA-256
+    prefix; collision-resistant enough for the act population."""
+    winner = record.get("winner", {}) or {}
+    loser = record.get("loser", {}) or {}
+    basis = json.dumps(
+        {
+            "winner": [winner.get("source"), winner.get("claim")],
+            "loser": [loser.get("source"), loser.get("claim")],
+            "resolved_at": record.get("resolved_at"),
+            "policy_version": record.get("policy_version"),
+        },
+        sort_keys=True,
+        ensure_ascii=True,
+    )
+    return "act-" + hashlib.sha256(basis.encode("utf-8")).hexdigest()[:16]
+
+
 def append_resolution_act(act: dict) -> None:
     """Append one reversible auto-resolution act (Phase-3 Task 7, decision 6).
 
     Append-only JSONL: the act records inputs, the rule, the policy version, the
-    winner and loser, and a timestamp — enough to reverse the resolution. POSIX
-    O_APPEND of a < PIPE_BUF record is atomic; no locking needed."""
+    winner and loser, and a timestamp — enough to reverse the resolution. A stable
+    content-addressed ``act_id`` is stamped so the reversal can name it (G1/G3).
+    POSIX O_APPEND of a < PIPE_BUF record is atomic; no locking needed."""
     target = resolution_acts_path()
     target.parent.mkdir(parents=True, exist_ok=True)
     record = dict(act)
@@ -68,8 +93,58 @@ def append_resolution_act(act: dict) -> None:
         "resolved_at",
         datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     )
+    record.setdefault("act_id", _compute_act_id(record))
     with target.open("a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def find_act(act_id: str) -> dict | None:
+    """Return the resolution act with the given act_id, or None."""
+    for act in read_resolution_acts():
+        if act.get("act_id") == act_id:
+            return act
+    return None
+
+
+def mark_act_reverted(act_id: str, revert_intent_id: str) -> bool:
+    """Rewrite the matched act in place to mark it reverted (G3 re-open).
+
+    Adds a ``reverts_act`` marker so ``retraction.acts_to_reopen`` no longer
+    re-returns it. The JSONL is gitignored derived state, so an in-place rewrite
+    (read-all → mutate → atomic replace) is acceptable. Returns True if a matching
+    act was found and updated."""
+    target = resolution_acts_path()
+    if not target.is_file():
+        return False
+    lines = target.read_text(encoding="utf-8").splitlines()
+    found = False
+    out: list[str] = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            out.append(line)
+            continue
+        if isinstance(obj, dict) and obj.get("act_id") == act_id and "reverts_act" not in obj:
+            obj["reverts_act"] = revert_intent_id
+            found = True
+        out.append(json.dumps(obj, ensure_ascii=False))
+    if not found:
+        return False
+    # Atomic replace
+    fd, tmp_name = tempfile.mkstemp(dir=target.parent, prefix=f".{target.name}.", suffix=".tmp")
+    try:
+        with open(fd, "w", encoding="utf-8") as f:
+            f.write("\n".join(out) + "\n")
+        os.replace(tmp_name, target)
+    except Exception:
+        if os.path.exists(tmp_name):
+            os.unlink(tmp_name)
+        raise
+    return True
 
 
 def read_resolution_acts() -> list[dict]:

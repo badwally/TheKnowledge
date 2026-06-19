@@ -330,6 +330,16 @@ class CommitGate:
                                 f"{fencing_token} < {current})",
                     )
 
+                # (Phase 5 T1, G1/G3/G8) Reversal-type dispatch. A reversal intent
+                # un-canonicalizes a prior action — it carries no normal write set and
+                # must NOT flow through the deposit/dedup/contradiction pipeline. Route
+                # it to a bounded apply helper that computes its own writes/deletes,
+                # commits provenanced, and returns. Reversibility invariant: every
+                # reversal records a provenance act and never destroys a cited page.
+                reversal_type = (authored.intent.payload or {}).get("reversal_type")
+                if reversal_type:
+                    return self._apply_reversal(authored, intent_id, fencing_token)
+
                 # (§6 I1) Deterministic LLM-free dedup re-check, inside the held
                 # commit mutex. A `merge` verdict re-targets the deposit's claims onto
                 # the canonical page (no duplicate-referent slug minted). The verdict
@@ -810,6 +820,247 @@ class CommitGate:
             base_oid=authored.base_oid,
             base_oids={target_rel: head_oid, dep_rel: None},
             decision_basis=basis,
+        )
+
+    # --- reversal apply-path (Phase 5 T1, G1/G3/G8) --------------------
+
+    def _commit_reversal_writes(
+        self,
+        intent_id: str,
+        writes: dict[str, str],
+        deletes: list[str],
+        basis: dict,
+        summary: str,
+    ) -> OperationResult:
+        """Apply a reversal's writes + deletes as one provenanced git commit.
+
+        Mirrors the deposit commit boundary: durably declare the write set,
+        apply per-file atomic writes, stage adds + removals, commit with the
+        Intent-Id trailer, set committed state, record provenance. Shared by
+        both reversal kinds so the atomic boundary is identical."""
+        declared = list(writes) + list(deletes)
+        try:
+            self._queue.set_declared_writes(intent_id, declared)
+        except KeyError:
+            pass
+
+        touched: list[Path] = []
+        for rel, content in writes.items():
+            abs_path = self._root / rel
+            write_atomic(abs_path, content)
+            touched.append(abs_path)
+        for rel in deletes:
+            abs_path = self._root / rel
+            if abs_path.exists():
+                abs_path.unlink()
+
+        add_paths = [str(self._root / rel) for rel in writes]
+        if add_paths:
+            self._git("add", "--", *add_paths)
+        for rel in deletes:
+            self._git("rm", "-q", "--ignore-unmatch", "--", rel, check=False)
+
+        canonical_rel = next(iter(writes)) if writes else (deletes[0] if deletes else "")
+        empty = self._git("diff", "--cached", "--quiet", check=False).returncode == 0
+        msg = f"revert(librarian-commit): {canonical_rel}\n\nIntent-Id: {intent_id}\n"
+        commit_args = ["commit", "-qm", msg]
+        if empty:
+            commit_args.insert(1, "--allow-empty")
+        self._git(*commit_args)
+        sha = self._git("rev-parse", "HEAD").stdout.strip()
+
+        self._queue.set_state(
+            intent_id, "committed",
+            result={"commit": sha, "disposition": "reverted"},
+        )
+        # Reversibility invariant: a reversal MUST record a provenance node. Use
+        # the injected provenance if present, else the module-level recorder (both
+        # write the same .knowledge/provenance/nodes.jsonl).
+        prov_basis = {**basis, "commit": sha}
+        if self._provenance is not None:
+            self._provenance.record(intent_id, prov_basis)
+        else:
+            from gateway import provenance as _prov
+            _prov.record(intent_id, prov_basis, root=self._root)
+
+        canonical_path = (self._root / canonical_rel) if canonical_rel else None
+        return OperationResult(
+            success=True,
+            intent_id=intent_id,
+            disposition="committed",
+            canonical_path=canonical_path,
+            paths_touched=touched,
+            summary=f"{intent_id}: {summary} at {sha[:8]}",
+        )
+
+    def _dead_letter(self, intent_id: str, reason: str) -> OperationResult:
+        """Dead-letter a reversal that cannot apply, without touching the corpus."""
+        try:
+            self._queue.set_state(intent_id, "dead_lettered", result={"reason": reason})
+        except KeyError:
+            pass
+        return OperationResult(
+            success=False,
+            intent_id=intent_id,
+            disposition="dead_lettered",
+            errors=[reason],
+            summary=f"{intent_id}: dead-lettered ({reason})",
+        )
+
+    def _apply_reversal(
+        self, authored: "AuthoredIntent", intent_id: str, fencing_token: int
+    ) -> OperationResult:
+        """Dispatch a reversal intent to its kind-specific apply helper."""
+        payload = authored.intent.payload or {}
+        kind = payload.get("reversal_type")
+        if kind == "contradiction-resolution":
+            return self._apply_contradiction_revert(payload, intent_id)
+        if kind == "reverse-merge":
+            return self._apply_reverse_merge(payload, intent_id)
+        return self._dead_letter(intent_id, f"unknown reversal_type {kind!r}")
+
+    def _apply_contradiction_revert(
+        self, payload: dict, intent_id: str
+    ) -> OperationResult:
+        """Undo a claim-contradiction auto-resolve (G1, G3).
+
+        Reads the named act, locates the page carrying the materialized
+        ``## Contested`` edge (cites the loser source), strips that section, and
+        marks the act reverted so ``acts_to_reopen`` no longer returns it. Both
+        claims survive (the loser was never deleted). Unknown act → dead-letter."""
+        from gateway import contradictions_log, frontmatter as fm
+
+        act_id = payload.get("reverts_act")
+        act = contradictions_log.find_act(act_id) if act_id else None
+        if act is None:
+            return self._dead_letter(intent_id, f"unknown act {act_id!r}")
+
+        loser = act.get("loser", {}) or {}
+        loser_src = str(loser.get("source") or "")
+        edge_token = f"[[sources/{loser_src}|disputes]]"
+
+        # Locate the page whose body carries the ## Contested edge citing the loser.
+        wiki = self._root / "wiki"
+        target_rel: str | None = None
+        target_body: str | None = None
+        target_front: dict | None = None
+        if wiki.exists():
+            for p in sorted(wiki.rglob("*.md")):
+                try:
+                    front, body = fm.parse(p.read_text())
+                except Exception:
+                    continue
+                if "## Contested" in body and edge_token in body:
+                    target_rel = str(p.relative_to(self._root))
+                    target_body = body
+                    target_front = front
+                    break
+
+        if target_rel is None:
+            return self._dead_letter(
+                intent_id, f"no page carries the contested edge for act {act_id!r}"
+            )
+
+        # Strip the ## Contested section (from its header to the next ## or EOF).
+        new_body = self._strip_section(target_body, "## Contested")
+        new_content = fm.serialize(target_front, new_body)
+
+        basis = {
+            "reversal_type": "contradiction-resolution",
+            "reverts_act": act_id,
+            "policy_version": payload.get("policy_version"),
+            "target": target_rel,
+        }
+        result = self._commit_reversal_writes(
+            intent_id, {target_rel: new_content}, [], basis,
+            summary=f"reverted contradiction act {act_id}",
+        )
+        if result.success:
+            contradictions_log.mark_act_reverted(act_id, intent_id)
+        return result
+
+    @staticmethod
+    def _strip_section(body: str, header: str) -> str:
+        """Remove a markdown section (its header line through the line before the
+        next same-or-higher-level header, or EOF). Trailing whitespace normalized."""
+        lines = body.splitlines()
+        out: list[str] = []
+        i = 0
+        n = len(lines)
+        while i < n:
+            if lines[i].strip() == header:
+                # skip until the next top-level (## ) header or EOF
+                i += 1
+                while i < n and not lines[i].lstrip().startswith("## "):
+                    i += 1
+                continue
+            out.append(lines[i])
+            i += 1
+        text = "\n".join(out).rstrip() + "\n"
+        return text
+
+    def _apply_reverse_merge(self, payload: dict, intent_id: str) -> OperationResult:
+        """Restore a deduped page from the recorded reattachment set (G8).
+
+        Builds the reverse_merge_plan from the tombstone + provenance node, strips
+        the unioned aliases/sections/claims B contributed off the canonical, and
+        deletes the tombstone. Uses the RECORDED reattachment set (never a diff
+        guess — drops hide in diffs, Phase-3 lesson). Non-tombstone → dead-letter."""
+        from gateway import retraction, frontmatter as fm
+
+        tombstone_rel = payload.get("tombstone_rel")
+        if not tombstone_rel:
+            return self._dead_letter(intent_id, "reverse-merge missing tombstone_rel")
+
+        try:
+            plan = retraction.reverse_merge_plan(tombstone_rel, root=self._root)
+        except (FileNotFoundError, ValueError, KeyError) as e:
+            return self._dead_letter(intent_id, f"no reverse-merge plan: {e}")
+
+        canon_abs = self._root / plan.canonical_rel
+        if not canon_abs.exists():
+            return self._dead_letter(
+                intent_id, f"canonical {plan.canonical_rel} absent"
+            )
+        try:
+            front, body = fm.parse(canon_abs.read_text())
+        except Exception as e:
+            return self._dead_letter(intent_id, f"cannot parse canonical: {e}")
+
+        # Strip the aliases B contributed (frontmatter aliases: list).
+        aliases = list(front.get("aliases", []) or [])
+        to_remove = set(plan.aliases_to_remove)
+        front["aliases"] = [a for a in aliases if a not in to_remove]
+
+        # Strip the sections B carried.
+        for header in plan.sections_to_remove:
+            body = self._strip_section(body, header)
+
+        # Strip the claims B contributed (exact bullet-line match, citation-tolerant).
+        claim_lines = {c.strip() for c in plan.claims_to_remove}
+        kept: list[str] = []
+        for line in body.splitlines():
+            if line.strip() in claim_lines:
+                continue
+            kept.append(line)
+        body = "\n".join(kept).rstrip() + "\n"
+
+        new_content = fm.serialize(front, body)
+        basis = {
+            "reversal_type": "reverse-merge",
+            "tombstone": tombstone_rel,
+            "target": plan.canonical_rel,
+            "aliases_removed": plan.aliases_to_remove,
+            "sections_removed": plan.sections_to_remove,
+            "claims_removed": plan.claims_to_remove,
+            "policy_version": payload.get("policy_version"),
+        }
+        return self._commit_reversal_writes(
+            intent_id,
+            {plan.canonical_rel: new_content},
+            [plan.tombstone_to_delete],
+            basis,
+            summary=f"reverse-merged {tombstone_rel} into {plan.canonical_rel}",
         )
 
     # --- claim-level contradiction (Phase 3, Task 7) -------------------
