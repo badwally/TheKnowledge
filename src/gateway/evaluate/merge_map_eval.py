@@ -42,13 +42,22 @@ class MergeMapResult:
     regressions: list[tuple[str, str, str, str]] = field(default_factory=list)
 
 
+# Production dedup parameters (the live baseline; see dedup.adjudicate callers).
+# A policy edit that proposes DIFFERENT params is simulated against the golden
+# with those params, and gated on any merge-precision regression vs this baseline.
+DEFAULT_BLOCKING_BAND = 0.15
+DEFAULT_IDENTITY_THRESHOLD = 0.30
+
+
 def merge_map_eval(
     golden_path: Path,
     *,
     root: Path | None = None,
     adjudicator: Callable | None = None,
+    blocking_band: float = DEFAULT_BLOCKING_BAND,
+    identity_threshold: float = DEFAULT_IDENTITY_THRESHOLD,
 ) -> MergeMapResult:
-    """Score the curated dedup golden with the real adjudicator.
+    """Score the curated dedup golden with the real adjudicator under given params.
 
     Parameters
     ----------
@@ -62,12 +71,21 @@ def merge_map_eval(
     adjudicator:
         Optional override adjudicator function with signature
         ``(identity: DepositIdentity, candidates: list[Candidate]) -> str``.
-        When None, uses the real ``dedup.adjudicate`` with the standard
-        blocking_band=0.15 and identity_threshold=0.30.
+        When None, uses the real ``dedup.adjudicate`` with the supplied
+        ``blocking_band`` / ``identity_threshold``.
+    blocking_band:
+        The blocking-band parameter passed to ``adjudicate`` (the candidate-net
+        width below which a cross-kind pair may link). Defaults to the production
+        baseline. The CommitGate derives this from the PROPOSED policy_data so
+        the gate evaluates the proposed policy, not a fixed config.
+    identity_threshold:
+        The identity-threshold parameter passed to ``adjudicate``. Defaults to
+        the production baseline; overridden from proposed policy_data at the gate.
 
     Returns
     -------
-    MergeMapResult with precision, recall, and a list of regressions.
+    MergeMapResult with precision, recall, and a list of regressions under the
+    given params.
     """
     data = yaml.safe_load(golden_path.read_text())
     cases = data.get("cases", [])
@@ -106,8 +124,8 @@ def merge_map_eval(
             verdict = adjudicate(
                 identity,
                 [candidate],
-                blocking_band=0.15,
-                identity_threshold=0.30,
+                blocking_band=blocking_band,
+                identity_threshold=identity_threshold,
             )
             got = verdict.decision
             rule = verdict.rule

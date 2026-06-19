@@ -927,6 +927,69 @@ class CommitGate:
 
     # --- Policy-edit gate (Phase 5 T6, G7) -----------------------------------
 
+    @staticmethod
+    def _derive_dedup_params(proposed_dedup: dict):
+        """Map a proposed policy's ``dedup`` block to adjudication parameters.
+
+        Returns ``(blocking_band, identity_threshold, adjudicator_or_None)``.
+
+        The dedup parameters that govern adjudication are read FROM the proposed
+        policy so the gate evaluates the proposed policy (not a fixed config):
+          - ``blocking_band`` / ``identity_threshold`` — passed to the real
+            ``dedup.adjudicate`` (defaults to the production baseline if absent).
+          - ``nn_distance_threshold`` — a loose policy often expresses the
+            candidate-net width here; map it onto ``blocking_band`` when no
+            explicit ``blocking_band`` is given (a wide net turns DISTINCT
+            sibling pairs into spurious links — a merge-map regression).
+          - ``strategy == "geometry-only"`` — a fundamentally different
+            adjudication model (merge by geometry alone, ignoring alias
+            authority); simulated with a dedicated adjudicator since it cannot
+            be expressed via the real ``adjudicate`` params.
+
+        Any other strategy flows through the real ``adjudicate`` under the
+        derived params, so a corrupting policy is caught by the golden
+        regardless of how it is named.
+        """
+        from gateway.evaluate.merge_map_eval import (
+            DEFAULT_BLOCKING_BAND,
+            DEFAULT_IDENTITY_THRESHOLD,
+        )
+
+        strategy = proposed_dedup.get("strategy")
+
+        # nn_distance_threshold, when present, widens the candidate net — map it
+        # onto blocking_band unless an explicit blocking_band is given.
+        nn_threshold = proposed_dedup.get("nn_distance_threshold")
+        blocking_band = proposed_dedup.get("blocking_band")
+        if blocking_band is None:
+            blocking_band = (
+                float(nn_threshold) if nn_threshold is not None
+                else DEFAULT_BLOCKING_BAND
+            )
+        else:
+            blocking_band = float(blocking_band)
+
+        identity_threshold = proposed_dedup.get("identity_threshold")
+        identity_threshold = (
+            float(identity_threshold) if identity_threshold is not None
+            else DEFAULT_IDENTITY_THRESHOLD
+        )
+
+        if strategy == "geometry-only":
+            from gateway.dedup import Candidate, DepositIdentity
+            geo_threshold = (
+                float(nn_threshold) if nn_threshold is not None else identity_threshold
+            )
+
+            def _geometry_only(identity: DepositIdentity, candidates: list) -> str:
+                if not candidates:
+                    return "distinct"
+                return "merge" if candidates[0].nn_distance <= geo_threshold else "distinct"
+
+            return blocking_band, identity_threshold, _geometry_only
+
+        return blocking_band, identity_threshold, None
+
     # Strict domain-slug regex (HIGH 2: path-traversal guard). A domain slug
     # is computed into a filesystem path; an unvalidated slug like "../../etc/x"
     # escapes the policies root. The same regex is enforced at the policy_edit()
@@ -1012,7 +1075,14 @@ class CommitGate:
                 f"policy-edit gate: eval-retrieval failed ({exc!r}) — failing closed",
             )
 
-        # --- Gate 2: merge-map golden (no regressions on real adjudicator) ---
+        # --- Gate 2: merge-map golden under the PROPOSED policy's dedup params ---
+        # CRITICAL: the gate must EVALUATE THE PROPOSED POLICY, not a fixed
+        # config. We derive the dedup adjudication parameters from policy_data
+        # and simulate adjudication with THOSE params against the golden. Any
+        # merge-map regression (a decision that no longer matches the golden's
+        # ground truth) under the proposed params dead-letters — for ALL
+        # strategies, not a single hardcoded string.
+        #
         # FAIL-CLOSED: any eval exception dead-letters; missing golden only
         # skips under the dev marker.
         golden_path = self._root / ".knowledge" / "eval" / "dedup" / "golden.yaml"
@@ -1025,9 +1095,18 @@ class CommitGate:
                 )
             log.warning("policy-edit: merge-map golden gate dev-skipped (missing golden)")
         else:
+            blocking_band, identity_threshold, custom_adjudicator = (
+                self._derive_dedup_params(policy_data.get("dedup") or {})
+            )
             try:
                 from gateway.evaluate.merge_map_eval import merge_map_eval
-                mm_result = merge_map_eval(golden_path, root=self._root)
+                mm_result = merge_map_eval(
+                    golden_path,
+                    root=self._root,
+                    adjudicator=custom_adjudicator,
+                    blocking_band=blocking_band,
+                    identity_threshold=identity_threshold,
+                )
             except Exception as exc:
                 return self._dead_letter(
                     intent_id,
@@ -1036,40 +1115,11 @@ class CommitGate:
             if mm_result.regressions:
                 return self._dead_letter(
                     intent_id,
-                    f"policy-edit gate: merge-map golden has {len(mm_result.regressions)}"
-                    f" regression(s) — policy not written: {mm_result.regressions}",
+                    f"policy-edit gate: proposed policy regresses merge-map golden "
+                    f"precision — {len(mm_result.regressions)} case(s) mis-scored "
+                    f"(precision={mm_result.precision:.3f}); policy NOT written: "
+                    f"{mm_result.regressions}",
                 )
-
-            # --- Gate 2b: proposed dedup strategy check ---
-            proposed_dedup = policy_data.get("dedup") or {}
-            proposed_strategy = proposed_dedup.get("strategy")
-            if proposed_strategy == "geometry-only":
-                try:
-                    from gateway.evaluate.merge_map_eval import merge_map_eval
-                    from gateway.dedup import Candidate, DepositIdentity
-                    nn_threshold = float(proposed_dedup.get("nn_distance_threshold", 0.30))
-
-                    def _geometry_only(identity: DepositIdentity, candidates: list) -> str:
-                        if not candidates:
-                            return "distinct"
-                        return "merge" if candidates[0].nn_distance <= nn_threshold else "distinct"
-
-                    sim_result = merge_map_eval(
-                        golden_path, root=self._root, adjudicator=_geometry_only
-                    )
-                except Exception as exc:
-                    return self._dead_letter(
-                        intent_id,
-                        f"policy-edit gate: proposed-strategy eval failed ({exc!r}) — "
-                        f"failing closed",
-                    )
-                if sim_result.regressions:
-                    return self._dead_letter(
-                        intent_id,
-                        f"policy-edit gate: proposed dedup.strategy='geometry-only' "
-                        f"regresses {len(sim_result.regressions)} merge-map golden "
-                        f"case(s) — policy not written: {sim_result.regressions}",
-                    )
 
         # --- All gates passed — write the policy file ---
         import yaml as _yaml

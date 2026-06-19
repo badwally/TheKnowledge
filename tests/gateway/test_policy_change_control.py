@@ -245,6 +245,56 @@ def test_gate_dead_letters_regressing_policy_edit(tmp_gate_env):
     )
 
 
+def test_gate_dead_letters_disguised_regressing_policy(tmp_gate_env):
+    """CRITICAL 1: a corpus-corrupting policy NOT named 'geometry-only' is dead-lettered.
+
+    The original gate only dead-lettered a hardcoded string match
+    (dedup.strategy == "geometry-only"). A genuinely corpus-corrupting policy
+    expressed differently — loose strategy, near-1.0 nn threshold, dedup disabled
+    — sailed through and was written to disk.
+
+    The gate must DERIVE the dedup parameters from policy_data, simulate
+    adjudication with THOSE params against the golden, and dead-letter on ANY
+    merge-precision regression — for all strategies, not one string.
+
+    This policy sets a wide blocking_band (0.99) so the lexical-fallback distances
+    in the golden cause type1/type2 and Fed-branch DISTINCT pairs to be mis-merged.
+    """
+    gate, q, root, policy_path, initial_policy = tmp_gate_env
+
+    disguised_regressing = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.7},
+        # No literal "geometry-only" anywhere. A loose, near-everything-merges
+        # config that corrupts identity.
+        "dedup": {
+            "strategy": "loose",
+            "nn_distance_threshold": 0.99,
+            "blocking_band": 0.99,
+            "identity_threshold": 0.99,
+            "enabled": False,
+        },
+        "version": 2,
+    }
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "med", disguised_regressing, "loosen dedup (disguised)", policy_path
+    )
+
+    token = q.fencing_token(iid)
+    result = gate.commit(authored, fencing_token=token)
+
+    assert result.disposition == "dead_lettered", (
+        f"disguised regressing policy must be dead-lettered; got {result.disposition}\n"
+        f"summary={result.summary}\nerrors={result.errors}"
+    )
+    assert any("regress" in e.lower() or "precision" in e.lower() for e in result.errors), (
+        f"dead-letter error must name the failing merge-precision metric; got {result.errors}"
+    )
+    # Policy file must NOT have been changed.
+    on_disk = yaml.safe_load(policy_path.read_text())
+    assert on_disk == initial_policy, "policy mutated despite dead-lettering a regressing edit"
+
+
 def test_gate_commits_benign_policy_edit(tmp_gate_env):
     """A benign edit that holds both gates commits and the policy IS updated.
 
