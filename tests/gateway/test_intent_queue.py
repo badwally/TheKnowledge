@@ -8,6 +8,8 @@ _pending dict which loses events while down.
 
 from __future__ import annotations
 
+import threading
+
 import pytest
 
 from gateway import paths
@@ -119,5 +121,82 @@ def test_fencing_token_persists_across_instances(root):
     q = IntentQueue()
     iid = q.submit(_intent())
     q.claim(lease_ttl=120.0, now=1.0)
+    q2 = IntentQueue()
+    assert q2.fencing_token(iid) == 1
+
+
+def test_concurrent_claim_one_winner_distinct_monotonic_tokens(root):
+    """SILENT-CORRUPTION-7: N concurrent claimers, exactly one wins per intent.
+
+    The acquire primitive must be an atomic rename, so two claimers cannot both
+    "win" candidates[0] with the same old+1 token. With several submitted
+    intents and many threads, each intent must be claimed exactly once and the
+    fencing tokens issued must all be distinct (1 per intent, monotonic).
+    """
+    q = IntentQueue()
+    n_intents = 8
+    iids = set()
+    for i in range(n_intents):
+        iid = q.submit(_intent(payload={"kind": "source", "n": i}))
+        iids.add(iid)
+
+    claims = []
+    errors = []
+    claims_lock = threading.Lock()
+    barrier = threading.Barrier(16)
+
+    def _worker():
+        barrier.wait()
+        # Each worker drains until empty.
+        while True:
+            try:
+                c = q.claim(lease_ttl=120.0, now=1.0)
+            except Exception as e:  # a losing claimer must NOT crash (atomic acquire)
+                with claims_lock:
+                    errors.append(e)
+                return
+            if c is None:
+                return
+            with claims_lock:
+                claims.append(c)
+
+    threads = [threading.Thread(target=_worker) for _ in range(16)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    assert errors == [], f"claim() raced and crashed: {errors!r}"
+
+    # Every intent claimed exactly once — no double-claim, no lost intent.
+    claimed_ids = [c.intent.intent_id for c in claims]
+    assert sorted(claimed_ids) == sorted(iids), (
+        f"expected each intent claimed once, got {claimed_ids}"
+    )
+    assert len(claimed_ids) == len(set(claimed_ids)), "an intent was double-claimed"
+    # Each intent's fencing token is 1 (first issue), one per intent.
+    for c in claims:
+        assert c.fencing_token == 1
+
+
+def test_fencing_survives_queue_record_loss(root):
+    """ROBUSTNESS-6: durable fencing counter outlives the queue record.
+
+    A crash that loses the claimed/ record must NOT reset the highest issued
+    fencing token to zero — otherwise a resurrected slow worker's stale token
+    would be accepted. The durable counter persists outside the per-state file.
+    """
+    q = IntentQueue()
+    iid = q.submit(_intent())
+    c = q.claim(lease_ttl=120.0, now=1.0)
+    assert c.fencing_token == 1
+
+    # Simulate a crash that loses the queue record entirely.
+    found = q._find(iid)
+    assert found is not None
+    found[1].unlink()
+    assert q._find(iid) is None
+
+    # The durable fencing token still reports the highest issued value.
     q2 = IntentQueue()
     assert q2.fencing_token(iid) == 1

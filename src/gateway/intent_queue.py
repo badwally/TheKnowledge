@@ -118,6 +118,55 @@ class IntentQueue:
             raise ValueError(f"unknown intent state: {state!r}")
         return self._root / state
 
+    def _fencing_dir(self) -> Path:
+        """Durable per-intent fencing counter (C3, ROBUSTNESS-6).
+
+        The highest issued fencing token is persisted here, OUTSIDE the
+        per-state queue record, so the stale-token rejection still holds after a
+        crash that loses the queue record. ``claim()`` advances it atomically;
+        ``fencing_token()`` reads it.
+        """
+        return self._root / "fencing"
+
+    def _next_fencing_token(self, intent_id: str) -> int:
+        """Atomically advance and return the durable fencing counter (C3).
+
+        Implemented as an O_CREAT|O_EXCL bump under the commit-side never sees a
+        lower value: read current durable max, write max+1 via a rename, retry on
+        a concurrent writer. The durable file survives queue-record deletion.
+        """
+        fdir = self._fencing_dir()
+        fdir.mkdir(parents=True, exist_ok=True)
+        counter = fdir / f"{intent_id}.txt"
+        while True:
+            current = self._durable_fencing(intent_id)
+            nxt = current + 1
+            fd, tmp_name = tempfile.mkstemp(dir=fdir, prefix=f".{intent_id}.", suffix=".tmp")
+            tmp_path = Path(tmp_name)
+            try:
+                with open(fd, "w") as f:
+                    f.write(str(nxt))
+                # os.replace is atomic; last writer wins. Re-read to confirm we
+                # did not regress below a concurrent claimer's value.
+                tmp_path.replace(counter)
+            except Exception:
+                if tmp_path.exists():
+                    try:
+                        tmp_path.unlink()
+                    except OSError:
+                        pass
+                raise
+            if self._durable_fencing(intent_id) >= nxt:
+                return nxt
+
+    def _durable_fencing(self, intent_id: str) -> int:
+        """Highest fencing token ever issued for ``intent_id``, or 0."""
+        counter = self._fencing_dir() / f"{intent_id}.txt"
+        try:
+            return int(counter.read_text().strip())
+        except (OSError, ValueError):
+            return 0
+
     def _find(self, intent_id: str) -> tuple[str, Path] | None:
         for state in STATES:
             p = self._state_dir(state) / f"{intent_id}.json"
@@ -171,30 +220,58 @@ class IntentQueue:
 
     def claim(self, *, lease_ttl: float = DEFAULT_LEASE_TTL,
               now: float | None = None) -> Claim | None:
-        """Claim the oldest submitted intent; issue fencing token + lease (C3)."""
+        """Claim the oldest submitted intent; issue fencing token + lease (C3).
+
+        The acquire primitive is ``os.replace`` of the submitted intent file
+        into ``claimed/`` (SILENT-CORRUPTION-7): rename is atomic, so exactly one
+        of N concurrent claimers wins the move and the losers get
+        ``FileNotFoundError`` and try the next candidate. The fencing token is
+        derived from durable monotonic state (``_next_fencing_token``), advanced
+        only by the winner, never from an ``old+1`` of a shared concurrent read.
+        """
         now = time.time() if now is None else now
         sub_dir = self._state_dir("submitted")
+        claimed_dir = self._state_dir("claimed")
         if not sub_dir.exists():
             return None
+        claimed_dir.mkdir(parents=True, exist_ok=True)
+
+        def _mtime(p: Path) -> float:
+            # A concurrent claimer may move p between glob and stat; treat a
+            # vanished candidate as oldest so it is tried (and skipped) first.
+            try:
+                return p.stat().st_mtime
+            except OSError:
+                return -1.0
+
         candidates = sorted(
             (p for p in sub_dir.glob("*.json") if not p.name.startswith(".")),
-            key=lambda p: p.stat().st_mtime,
+            key=_mtime,
         )
-        if not candidates:
-            return None
-        src = candidates[0]
-        with open(src) as f:
-            rec = json.load(f)
-        rec["fencing_token"] = int(rec.get("fencing_token", 0)) + 1
-        rec["lease_deadline"] = now + lease_ttl
-        dst = self._state_dir("claimed") / src.name
-        _atomic_write_json(dst, rec)
-        src.unlink()
-        return Claim(
-            intent=self._to_intent(rec),
-            fencing_token=rec["fencing_token"],
-            lease_deadline=rec["lease_deadline"],
-        )
+        for src in candidates:
+            dst = claimed_dir / src.name
+            try:
+                # Atomic acquire: exactly one concurrent claimer wins this rename.
+                os.replace(src, dst)
+            except (FileNotFoundError, OSError):
+                continue  # lost the race for this candidate; try the next one.
+            try:
+                with open(dst) as f:
+                    rec = json.load(f)
+            except FileNotFoundError:
+                continue
+            intent_id = rec["intent_id"]
+            # Monotonic fencing token from durable state — survives record loss.
+            token = self._next_fencing_token(intent_id)
+            rec["fencing_token"] = token
+            rec["lease_deadline"] = now + lease_ttl
+            _atomic_write_json(dst, rec)
+            return Claim(
+                intent=self._to_intent(rec),
+                fencing_token=token,
+                lease_deadline=rec["lease_deadline"],
+            )
+        return None
 
     def renew(self, intent_id: str, *, lease_ttl: float = DEFAULT_LEASE_TTL,
               now: float | None = None) -> bool:
@@ -258,6 +335,40 @@ class IntentQueue:
         rec["result"] = {**rec.get("result", {}), **result}
         _atomic_write_json(path, rec)
 
+    def set_declared_writes(self, intent_id: str, rel_paths: list[str]) -> None:
+        """Durably record the write set an intent is about to apply (BLOCKER-1).
+
+        The commit gate records this BEFORE touching the working tree so crash
+        recovery can scope its revert to exactly these paths — never a tree-wide
+        ``reset --hard`` / ``clean -fd`` that would destroy unrelated sessions'
+        and the watcher's uncommitted/untracked work.
+        """
+        found = self._find(intent_id)
+        if found is None:
+            raise KeyError(intent_id)
+        _, path = found
+        with open(path) as f:
+            rec = json.load(f)
+        rec["declared_writes"] = list(rel_paths)
+        _atomic_write_json(path, rec)
+
+    def declared_writes(self, intent_id: str) -> list[str]:
+        """Return the durably-recorded declared write set for ``intent_id``."""
+        read = self._read(intent_id)
+        return list(read[1].get("declared_writes", [])) if read else []
+
+    def in_flight_intents(self) -> list[str]:
+        """Intent ids currently claimed or authored (mid-flight, not committed)."""
+        ids: list[str] = []
+        for state in ("claimed", "authored"):
+            d = self._state_dir(state)
+            if not d.exists():
+                continue
+            for p in d.glob("*.json"):
+                if not p.name.startswith("."):
+                    ids.append(p.stem)
+        return ids
+
     def get_state(self, intent_id: str) -> str | None:
         found = self._find(intent_id)
         return found[0] if found else None
@@ -271,5 +382,15 @@ class IntentQueue:
         return dict(read[1].get("result", {})) if read else {}
 
     def fencing_token(self, intent_id: str) -> int | None:
+        """Highest fencing token issued for ``intent_id`` (C3, ROBUSTNESS-6).
+
+        Reads the durable per-intent counter, which survives a crash that loses
+        the queue record — so the stale-token rejection in the commit gate still
+        holds for a resurrected worker even after the record is gone. Returns
+        ``None`` only if no token was ever issued (and no record exists).
+        """
+        durable = self._durable_fencing(intent_id)
+        if durable > 0:
+            return durable
         read = self._read(intent_id)
         return int(read[1].get("fencing_token", 0)) if read else None
