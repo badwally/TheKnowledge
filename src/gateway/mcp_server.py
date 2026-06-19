@@ -171,6 +171,22 @@ def wiki_intent_status(intent_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
+def wiki_deposit(
+    payload: dict[str, Any],
+    identity: dict[str, Any],
+    depends_on: str | None = None,
+) -> dict[str, Any]:
+    """Typed deposit (build-tier, A5). Validate the typed Intent shape, enqueue
+    DURABLY before ack, and return an async receipt (`disposition="queued"` +
+    `intent_id` + `retry_after`). Poll `wiki_intent_status` for the terminal
+    disposition. Authoring runs concurrently on workers; only commit is serial.
+    """
+    from gateway.ops.deposit import deposit
+
+    return _serialize(deposit(payload, identity, depends_on=depends_on))
+
+
+@mcp.tool()
 def wiki_filter(input: str, domain: str | None = None) -> dict[str, Any]:
     """Score a candidate source against a domain's policy without writing.
 
