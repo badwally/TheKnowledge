@@ -35,6 +35,7 @@ in the rationale; the design states the role.
 | «commit.max_rebase_attempts» | 8 | High enough to clear normal same-entity contention via rebase-merge; low enough to bound livelock before dead-lettering `contention` (C4). | Dead-letter `contention` rate rises, or oldest-rebased-intent age grows. | build-time · commit liveness only |
 | «commit.lease_ttl» | 120 s, heartbeat-renewable | Longer than typical worker authorship so live work is not reclaimed; short enough to reclaim a crashed worker promptly (C3). | Spurious reclaims (legit authorship > TTL) OR slow crashed-worker recovery. | build-time · worker-reclaim correctness |
 | «deposit.max_wait» | 30 s | Bounded total poll before an agent proceeds on carried-forward content (A1); covers a typical commit-queue drain without starving the agent. | Agents starve waiting, OR proceed-too-early causes stale grounding. | build-time (per-agent overridable) · agent-side latency only |
+| «deposit.max_backlog» | 256 (`deposit.MAX_BACKLOG`, Phase 4) | Server-side shed ceiling: `deposit()` returns `rejected:overloaded`+`retry_after` when `submitted/` depth ≥ this, so producers back off rather than growing an unbounded queue (A1 backpressure). Design names backpressure but not its mechanism — queue-depth shed is the async-clean, deterministically-testable choice (deposit holds no commit lock; authoring is concurrent). | `rejected:overloaded` rate rises under normal load (raise), OR queue grows unboundedly before shedding (lower). One producer starving others → see backlog `librarian-deposit-per-producer-fairness` (per-producer sub-ceiling). | build-time · deposit admission only |
 
 ### 1.2 Dedup & identity (design §6, §13)
 
@@ -180,11 +181,13 @@ evidence before the next phase begins.
 - [x] Multi-label domain resolution commits all resolved domains; empty-set quarantines. *Evidence:* `test_domain_resolution.py` (multi-domain commit; unknown dropped; empty → `quarantined`, writes nothing untagged).
 - [x] Any `_authority_key` change passes `eval-retrieval --compare` (≥ recall.floor_at_k). *Evidence:* trust down-weight `_W_TRUST*(trust-0.5)`, `_W_TRUST=0.5` < `_W_TIER`/`_W_AUTHORITY`; `eval-retrieval --compare` fts recall@10 = 0.926 (== baseline, ≥ 0.90 floor); eligibility floor keeps low-trust pages retrievable; `server_trust_tier` takes no self-report arg (G5).
 
-### Phase 4 — Tiered agent surface
-- [ ] Read-tier server registers exactly the read-classified op set (A2). *Evidence:* parity-style test.
-- [ ] An agent author can code the deposit wait-loop from the spec; status-query returns the typed disposition union with `retry_after` (A1). *Evidence:* consumer-contract test / worked example.
-- [ ] Lock acquisition is bounded, never indefinite (A3). *Evidence:* bounded-acquire test (migration off `flock` no-timeout).
-- [ ] Per-producer telemetry alarms fire on rejection-spike / dedup-merge-spike / deposit-silence (A7). *Evidence:* detector tests.
+### Phase 4 — Tiered agent surface — GATE PASSED 2026-06-19
+- [x] Read-tier server registers exactly the read-classified op set (A2). *Evidence:* `test_tier_parity.py` — `build_read_tier_server()` registered set == `tier.read_tier_tool_names()`; default-deny allowlist (8 read ops + 2 aux); negative control pins `wiki_ingest/query/deposit/filter/edit` absent. Review dropped `agents`/`lint`/`status` (not side-effect-free) → build tier.
+- [x] An agent author can code the deposit wait-loop from the spec; status-query returns the typed disposition union with `retry_after` (A1). *Evidence:* `test_backpressure.py` — `deposit()` returns `queued`+`retry_after` below `«deposit.max_backlog»`, `rejected:overloaded`+`retry_after` at/above (enqueues nothing); `intent-status` (read-tier) returns terminal disposition.
+- [x] Lock acquisition is bounded, never indefinite (A3). *Evidence:* `test_bounded_acquire.py` — `file_lock(name, *, timeout=…)` bounded via `LOCK_EX|LOCK_NB`+deadline→`LockTimeout` (real holder, real fcntl, no monkeypatch); `timeout=None` byte-identical blocking back-compat for 30+ call sites; `commit_gate` barrier uses 30s bound and returns `disposition="retry-later"` on timeout (no queue-state mutation, intent stays durable).
+- [x] Per-producer telemetry alarms fire on rejection-spike / dedup-merge-spike / deposit-silence (A7). *Evidence:* `test_producer_telemetry.py` — `provenance.alarms()` (pure over snapshots) fires each detector on its synthetic signal; negative controls (healthy traffic fires none; below-`min_volume` cannot trip a spike).
+
+*Gate: full suite 2182 passed (2163 baseline + 19); `eval-retrieval --compare` fts recall@10 0.926 (== baseline, no retrieval code touched); per-scope lint at pre-existing baseline (orphans 758 / schema-drift 191 / broken-wikilinks 1 / link-rot 733 — none Phase-4); independent whole-branch review (opus) GO; independent security review (opus) ship-it (F1 doc overstatement fixed; F2 deposit per-producer fairness + F3 file_lock path-traversal → backlog with triggers).*
 
 ### Phase 5 — Lifecycle & demand governance
 - [ ] Retraction flags/quarantines transitive `synthesizes:` dependents to a fixpoint, terminating on cycles (G4). *Evidence:* source→A→B chain test.
@@ -244,8 +247,8 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 | Embedding index — three namespaces, upsert-on-commit, shadow-swap rebuild (§13) | 2 | green |
 | Deposit API — typed intent tool + authorship workers (§3, §4) | 3 | green |
 | Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | green (review-hardened 2026-06-18) |
-| Read/build tier split — two MCP entrypoints + op-to-tier table (§7) | 4 | not-started |
-| Deposit consumer contract — wait/backpressure (§3, §12) | 4 | not-started |
+| Read/build tier split — two MCP entrypoints + op-to-tier table (§7) | 4 | green (2026-06-19) |
+| Deposit consumer contract — wait/backpressure (§3, §12) | 4 | green (2026-06-19) |
 | Corpus-rot governance — remediation + fragmentation lint (§8) | 5 | not-started |
 | Lifecycle & retraction cascade — Option A (§9) | 5 | not-started |
 | Gap-routing & keep-worthiness (§10) | 5 | not-started |
