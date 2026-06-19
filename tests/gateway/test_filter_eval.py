@@ -4,7 +4,46 @@ Unit tests only — no live network or model calls. The Mode-1 pool builder's
 search + filter seams are dependency-injected; the Mode-2 scorer is pure.
 """
 
+import json
+
+import pytest
+
 from gateway.ops import filter_eval
+from gateway.research.adapters.base import CandidateItem
+
+
+def _yt_candidate(vid, title, channel, desc):
+    # Realistic payload: full title/channel/description + source_metadata,
+    # matching the real YouTubeAdapter shape (NOT a minimal stub).
+    return CandidateItem(
+        item_id=f"yt:{vid}",
+        source_type="youtube",
+        url=f"https://www.youtube.com/watch?v={vid}",
+        title=title,
+        authors=[channel],
+        publish_date="2024-05-01T00:00:00Z",
+        description=desc,
+        content_type="video",
+        source_metadata={"video_id": vid, "channel_name": channel, "view_count": 4200},
+    )
+
+
+class _StubFilterClient:
+    """Returns a fixed score keyed by a title substring. No model call.
+
+    gateway.filter.semantic.score() has no call_split on this stub, so it
+    falls back to .call(system + "\\n" + user). parse_response() expects a
+    JSON object {"score", "rationale"}, so that is what we return.
+    """
+
+    def __init__(self, scores_by_title):
+        self._scores = scores_by_title
+
+    def call(self, prompt: str) -> str:
+        for needle, sc in self._scores.items():
+            if needle in prompt:
+                return json.dumps({"score": sc, "rationale": f"stub decision for {needle}"})
+        return json.dumps({"score": 0.0, "rationale": "stub default"})
 
 
 def _pool_item(url, score, *, subtopic="kg-construction", title=None, channel="ACME Talks"):
@@ -58,3 +97,73 @@ def test_score_pool_is_deterministic_under_score_ties():
     r1 = filter_eval.score_pool(pool, labels, k=1)
     r2 = filter_eval.score_pool(list(reversed(pool)), labels, k=1)
     assert r1["hits"] == r2["hits"]  # tie-break stable regardless of input order
+
+
+# --- Task A2: build_pool (Mode-1) -----------------------------------------
+
+
+def test_build_pool_scores_and_tags_every_candidate():
+    # Two subtopics; subtopic A surfaces a strong + a weak video, B a mid one.
+    pool_by_subtopic = {
+        "kg-construction": [
+            _yt_candidate("AAA1", "Building Knowledge Graphs at Scale (KGC keynote)", "KGConf", "Keynote on KG construction pipelines."),
+            _yt_candidate("AAA2", "10 SEO tricks for 2024", "GrowthHacks", "Clickbait marketing video."),
+        ],
+        "query-languages": [
+            _yt_candidate("BBB1", "SPARQL 1.2 deep dive (Connected Data London)", "CDL", "Conference talk on SPARQL engines."),
+        ],
+    }
+
+    def fake_search(queries, *, max_results):
+        # The op calls search_fn once per subtopic; route by the query text.
+        for sub, items in pool_by_subtopic.items():
+            if any(sub in q for q in queries):
+                return items
+        return []
+
+    stub_client = _StubFilterClient({
+        "Building Knowledge Graphs": 0.9,
+        "10 SEO tricks": 0.1,
+        "SPARQL 1.2": 0.6,
+    })
+
+    scored = filter_eval.build_pool(
+        "semantic-models",
+        {"kg-construction": ["kg-construction talks"], "query-languages": ["query-languages talks"]},
+        max_results_per_query=15,
+        search_fn=fake_search,
+        filter_client=stub_client,
+    )
+
+    by_url = {c["url"]: c for c in scored}
+    assert len(scored) == 3  # all candidates scored, none dropped
+    assert by_url["https://www.youtube.com/watch?v=AAA1"]["subtopic"] == "kg-construction"
+    assert by_url["https://www.youtube.com/watch?v=AAA1"]["channel"] == "KGConf"
+    assert by_url["https://www.youtube.com/watch?v=AAA1"]["tier"] == "accept"
+    assert by_url["https://www.youtube.com/watch?v=AAA2"]["tier"] == "reject"
+    assert by_url["https://www.youtube.com/watch?v=BBB1"]["subtopic"] == "query-languages"
+
+
+def test_build_pool_dedups_across_subtopics_first_subtopic_wins():
+    shared = _yt_candidate("DUP1", "Ontology alignment survey (ISWC)", "ISWC", "Survey talk.")
+
+    def fake_search(queries, *, max_results):
+        return [shared]  # same video surfaces for every subtopic query
+
+    stub_client = _StubFilterClient({"Ontology alignment": 0.8})
+    scored = filter_eval.build_pool(
+        "semantic-models",
+        {"alignment": ["alignment q"], "ontology-engineering": ["onto q"]},
+        search_fn=fake_search,
+        filter_client=stub_client,
+    )
+    assert len(scored) == 1  # deduped by url
+    assert scored[0]["subtopic"] == "alignment"  # first subtopic in file order wins
+
+
+def test_build_pool_raises_when_no_youtube_adapter(monkeypatch):
+    # Negative control: the real default search path must fail loudly when
+    # the youtube adapter is unavailable, not silently return an empty pool.
+    monkeypatch.setattr(filter_eval, "enabled_adapters", lambda **_: [])
+    with pytest.raises(filter_eval.FilterEvalError):
+        filter_eval.default_youtube_search(["q"], max_results=5)
