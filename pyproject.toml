@@ -54,4 +54,10 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra"
+addopts = "-ra --strict-markers"
+markers = [
+    "unit: fast, no I/O, no external deps — inner loop (default for unmarked tests)",
+    "integration: touches real files, git repos, or gateway state — slower, requires fixtures",
+    "e2e: full CLI or MCP round-trip end-to-end — slowest, gates release",
+    "slow: test takes >5s or exercises a soak/load path — excluded from fast inner loop",
+]
