@@ -28,6 +28,10 @@ LOCK_NAMES: frozenset[str] = frozenset(
         "nlm-registry",      # mutations to nlm/notebooks.yaml or nlm/source_maps/
         "log",               # log.md append (M47 fix for ARCH-1 racy log)
         "index",             # index.md update (M47 fix for ARCH-1 racy index)
+        # Librarian Phase 1 (decision 1): the single serial commit barrier.
+        # Replaces the global `wiki-author` barrier for the commit step (§4
+        # migration delta); authoring runs concurrently, only commit is serial.
+        "librarian-commit",
     }
 )
 
