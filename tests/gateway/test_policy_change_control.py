@@ -366,6 +366,57 @@ def test_gate_dead_letters_disguised_regressing_policy(tmp_gate_env):
     assert on_disk == initial_policy, "policy mutated despite dead-lettering a regressing edit"
 
 
+@pytest.mark.parametrize(
+    "bad_dedup, label",
+    [
+        ("garbage", "dedup-is-str"),
+        (["x"], "dedup-is-list"),
+        ({"nn_distance_threshold": "abc"}, "nn_threshold-non-numeric"),
+        ({"blocking_band": "wide"}, "blocking_band-non-numeric"),
+        ({"identity_threshold": "x"}, "identity_threshold-non-numeric"),
+    ],
+)
+def test_gate_fails_closed_on_malformed_dedup(tmp_gate_env, bad_dedup, label):
+    """IMPORTANT: malformed caller-controlled dedup dead-letters (fails closed).
+
+    policy_data is parsed from arbitrary YAML via CLI/MCP. A non-dict dedup
+    (str/list) or a non-numeric threshold previously crashed the gate worker
+    with an uncaught AttributeError/ValueError in _derive_dedup_params (called
+    outside the try/except), bypassing the HIGH-1 fail-closed invariant.
+
+    The gate must dead-letter (policy unchanged) and NEVER let an exception
+    escape commit().
+    """
+    gate, q, root, policy_path, initial_policy = tmp_gate_env
+
+    malformed_policy = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.7},
+        "dedup": bad_dedup,
+        "version": 2,
+    }
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "med", malformed_policy, f"malformed dedup ({label})", policy_path
+    )
+
+    token = q.fencing_token(iid)
+    # commit() must NOT raise — a malformed policy must dead-letter, not crash.
+    result = gate.commit(authored, fencing_token=token)
+
+    assert result.disposition == "dead_lettered", (
+        f"malformed dedup ({label}) must fail closed; got {result.disposition}\n"
+        f"summary={result.summary}\nerrors={result.errors}"
+    )
+    assert any("clos" in e.lower() or "fail" in e.lower() for e in result.errors), (
+        f"dead-letter error must indicate failing closed; got {result.errors}"
+    )
+    # Policy file must NOT have been changed.
+    on_disk = yaml.safe_load(policy_path.read_text())
+    assert on_disk == initial_policy, (
+        f"policy mutated despite malformed-dedup dead-letter ({label})"
+    )
+
+
 def test_gate_commits_benign_policy_edit(tmp_gate_env):
     """A benign edit that holds both gates commits and the policy IS updated.
 

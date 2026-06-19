@@ -955,30 +955,55 @@ class CommitGate:
             DEFAULT_IDENTITY_THRESHOLD,
         )
 
+        # FAIL-CLOSED (IMPORTANT): policy_data is caller-controlled (parsed from
+        # arbitrary YAML via CLI/MCP). A non-dict dedup block (str/list) or a
+        # non-numeric threshold must raise a clean ValueError that the gate's
+        # try/except converts to a dead-letter — never an uncaught crash. This
+        # method is called INSIDE that try block; it validates aggressively here.
+        if not isinstance(proposed_dedup, dict):
+            raise ValueError(
+                f"policy dedup block must be a mapping, got "
+                f"{type(proposed_dedup).__name__!r}"
+            )
+
+        def _coerce_float(value, field_name):
+            """Coerce a proposed numeric param; raise ValueError on a bad value."""
+            try:
+                return float(value)
+            except (TypeError, ValueError):
+                raise ValueError(
+                    f"policy dedup.{field_name} must be numeric, got {value!r}"
+                )
+
         strategy = proposed_dedup.get("strategy")
 
         # nn_distance_threshold, when present, widens the candidate net — map it
         # onto blocking_band unless an explicit blocking_band is given.
         nn_threshold = proposed_dedup.get("nn_distance_threshold")
+        nn_threshold_f = (
+            _coerce_float(nn_threshold, "nn_distance_threshold")
+            if nn_threshold is not None else None
+        )
         blocking_band = proposed_dedup.get("blocking_band")
         if blocking_band is None:
             blocking_band = (
-                float(nn_threshold) if nn_threshold is not None
+                nn_threshold_f if nn_threshold_f is not None
                 else DEFAULT_BLOCKING_BAND
             )
         else:
-            blocking_band = float(blocking_band)
+            blocking_band = _coerce_float(blocking_band, "blocking_band")
 
         identity_threshold = proposed_dedup.get("identity_threshold")
         identity_threshold = (
-            float(identity_threshold) if identity_threshold is not None
+            _coerce_float(identity_threshold, "identity_threshold")
+            if identity_threshold is not None
             else DEFAULT_IDENTITY_THRESHOLD
         )
 
         if strategy == "geometry-only":
             from gateway.dedup import Candidate, DepositIdentity
             geo_threshold = (
-                float(nn_threshold) if nn_threshold is not None else identity_threshold
+                nn_threshold_f if nn_threshold_f is not None else identity_threshold
             )
 
             def _geometry_only(identity: DepositIdentity, candidates: list) -> str:
@@ -1095,10 +1120,15 @@ class CommitGate:
                 )
             log.warning("policy-edit: merge-map golden gate dev-skipped (missing golden)")
         else:
-            blocking_band, identity_threshold, custom_adjudicator = (
-                self._derive_dedup_params(policy_data.get("dedup") or {})
-            )
             try:
+                # FAIL-CLOSED: _derive_dedup_params is INSIDE the try so a
+                # malformed caller-controlled dedup block (non-dict, non-numeric
+                # threshold) dead-letters instead of crashing the gate worker.
+                # `policy_data.get("dedup")` may be a truthy non-dict (str/list);
+                # _derive_dedup_params validates isinstance(dict) and raises.
+                blocking_band, identity_threshold, custom_adjudicator = (
+                    self._derive_dedup_params(policy_data.get("dedup") or {})
+                )
                 from gateway.evaluate.merge_map_eval import merge_map_eval
                 mm_result = merge_map_eval(
                     golden_path,
