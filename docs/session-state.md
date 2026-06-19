@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 5 IN PROGRESS — branch `docs/librarian-phase5`; T1 complete, T2 in re-review)
+Last updated: 2026-06-19 (Librarian PHASE 5 — T6 COMPLETE; all 6 tasks shipped; branch `docs/librarian-phase5` ready for phase gate)
 
 ---
 
@@ -11,28 +11,21 @@ Last updated: 2026-06-19 (Librarian PHASE 5 IN PROGRESS — branch `docs/librari
 **Execution mode:** subagent-driven-development — fresh implementer per task (sonnet) + independent task review (opus on destructive/subtle tasks) + fix loop, coordinator window kept lean. Per-task briefs/reports/diffs handed off as files under `.git/sdd/`.
 
 ### Open contracts
-- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) — IN RE-REVIEW `11dfd554..1419c7ae` (fix made cascade-depth + cross-project detectors LIVE — were inert; dead arm removed); T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) — NOT STARTED (final task; WRITE migration backlog file).
-- **Gate reconciled** (ledger §4 Phase 5 now includes G2/G7/I3 rows) so "gate green" tests everything the phase ships. Phase gate = full suite + `eval-retrieval --compare` ≥ 0.90 + scoped lints + whole-branch review + security review + /session-review + PR.
-- **G7 migration delta** (cut existing bootstrap/promote/demote off direct policy file-I/O onto the new privileged-intent path) = triggered backlog, NOT built this phase. Backlog file to write in T6: `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`.
+- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) ✅ `11dfd554..1419c7ae`; T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) ✅ `2f708f7f..d10ac0ba`.
+- **ALL 6 TASKS COMPLETE.** Next: phase gate (full suite + `eval-retrieval --compare` ≥0.90 + scoped lints orphans/schema-drift/broken-wikilinks + whole-branch review + security review + /session-review → ledger §4 all [x] → PR).
+- **G7 migration delta** written as triggered backlog: `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`.
 
 ### Files mid-edit
-- T5 in RE-REVIEW (fix `1419c7ae` made cascade-depth live via retraction.cascade over real retracted graph + cross-project via real domains: frontmatter; removed inert sidecar + dead reversal_type arm). T1-T4 complete + review-clean. Only T6 remains after T5.
+None. All tasks shipped.
 
-**Recurring pattern this phase (4×):** implementers ship features that pass unit tests but are inert/wrong in production (T2 inert de-path, T4 dead cold-start + tautological I4, T5 inert cascade-depth sidecar). The opus reviewer≠author gate caught every one. Keep this gate; for T6 scrutinize whether the policy-edit gate actually blocks a real regressing edit end-to-end.
-
-### Decisions made this session
-- Expanded scope to build G2/G7/I3 with dedicated code rather than declare them satisfied (Option A rejected) or backlog them (Option C incoherent for G2 — its revival trigger is the signal G2 itself measures). G7 bounded to the mechanism; existing-op migration triggered-backlog.
-- Reversal/de-path are CommitGate intents keyed on `reversal_type` (`contradiction-resolution`, `reverse-merge`, `depath`/`restore-depath`) — a bounded dispatch branch in `commit_gate._apply_reversal`, NOT a commit-core rewrite.
-
-### Rejected approaches this session
-- Option A (declare G2/G7/I3 satisfied via existing mechanisms) — writes false `green` into the ledger.
-- Plan-only reverse-merge (G8) — gate demands restoration BEHAVIOR; reverse-merge must apply through the gate.
-- Full-union `aliases_unioned` at merge time — caused reverse-merge to delete pre-existing aliases (Critical, fixed: record B-only).
+### Decisions made this session (T6-specific)
+- Reused `.knowledge/eval/dedup/golden.yaml` as merge_map source (no separate merge_map_golden.yaml — purpose-built for this scoring, duplication adds zero signal).
+- Policy.yaml is gitignored → `_apply_policy_edit` writes directly (no `git add`), records provenance node, marks committed in queue. Empty `writes={}` AuthoredIntent triggers the policy-edit dispatch.
+- Gate 2b: `dedup.strategy="geometry-only"` in policy_data triggers simulation + dead-letters if it regresses the golden — enforces the constraint at policy-change time.
+- `policy_provenance` lint detects absence of provenance node (not content-hash match) — content-hash check tracked in migration backlog as a hardening item.
 
 ### Next atomic step
-Await T4 fix → re-review (reviewer `a8cbf1588a6afe711`). If clean: mark T4 complete, then T5 (G2 reversal/anomaly detectors — clone Phase-4 provenance.alarms pattern) via `task-brief 5` → sonnet impl → sonnet review; then T6 (G7 privileged-intent policy-edit path + I3 merge-map golden gate; WRITE the migration backlog file `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`) → opus review. Then phase gate: full suite + `eval-retrieval --compare` ≥0.90 + scoped lints (orphans/schema-drift/broken-wikilinks) + whole-branch opus review + security review + /session-review → set ledger §4 all [x] + §5 rows green → PR. BASE for next task = current HEAD after each task-complete checkpoint.
-
-**Review-loop value this phase:** the reviewer≠author gate has already caught 1 Critical silent-corruption (T1 alias over-restore + linked latent prov-recording gap) and 2 Criticals (T2 inert de-path + nested-reachability data loss) the implementers' own tests missed. Keep opus reviewers on the destructive/subtle tasks.
+Phase gate: run `wiki lint --scope orphans`, `wiki lint --scope schema-drift`, `wiki lint --scope broken-wikilinks`. Run `wiki eval-retrieval --compare`. Then whole-branch independent code-review + security review + /session-review. Update ledger §4 Phase 5 all [x]. Open PR.
 
 ---
 
