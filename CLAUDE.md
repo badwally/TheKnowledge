@@ -145,6 +145,10 @@ Before running `wiki research --execute <session-id>`:
 
 3. **Check the `step=index_settle` log entry after the run.** `distinct_sources: 1` or `distinct_sources: 2` after settlement means NLM only indexed a tiny subset — synthesis will collapse even if the source map has many entries.
 
+## Multi-agent build discipline
+
+Before authoring a phase plan (`writing-plans`) or fanning out a subagent-driven build (`subagent-driven-development`), read **`docs/MULTI-AGENT-BUILD-PLAYBOOK.md`**. It is the single source for the standing build rule, the independent-reviewer dispatch template, and the **inert-in-production hunt list** (the canonical "does this fire on real data?" checklist) — every entry paid for by a real defect that shipped past an implementer's green tests across the 5-phase Librarian build. Fold each new `/session-review` finding back into it.
+
 ## Session-state discipline
 
 `docs/session-state.md` is load-bearing. It records open contracts, in-flight edits, session decisions, and the next atomic step across context compactions and session boundaries.

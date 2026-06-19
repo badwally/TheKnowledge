@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 5 COMPLETE — gate passed; PR #31 open, awaiting merge + policy-edit trust-model ratification. Branch `docs/librarian-phase5` @ `c2cce9d2`)
+Last updated: 2026-06-19 (Librarian PHASE 5 MERGED — PR #31 → merge commit `ee97cc9e` on origin/main; trust model RATIFIED; branch deleted; local main == origin/main. The 5-phase Librarian build is COMPLETE. Session-review brief: docs/260619_session-review-2.md)
 
 ---
 
@@ -28,7 +28,7 @@ Last updated: 2026-06-19 (Librarian PHASE 5 COMPLETE — gate passed; PR #31 ope
 - `policy_provenance` lint reads `decision_basis` (the real provenance key, fixed `757c08b5`); detects absence of a policy-edit provenance node; content-hash match is a backlog hardening item.
 
 ### Next atomic step
-DONE — Phase 5 shipped. PR #31 (https://github.com/badwally/TheKnowledge/pull/31) open, base `main`, carries `dbf4888b` session-state + all Phase-5 work. HEAD `c2cce9d2`; both final gates passed (whole-branch READY, security SHIP IT); ledger §4/§5 green. Awaiting: (1) user merge of PR #31; (2) user RATIFICATION of the policy-edit trust model (CLI-only + server-sourced `GATEWAY_POLICY_PRINCIPAL`, fail-closed). On merge: delete branch, fast-forward local main. NO Phase 6 — the 5-phase Librarian build is complete. 4 triggered-backlog follow-ups under `docs/backlog/` (policy-edit migration, demand-cluster driver, reverse-merge producer, demand-ledger DoS bound).
+NONE — Phase 5 MERGED (PR #31 → `ee97cc9e`), branch deleted, local main == origin/main, trust model ratified. The 5-phase Librarian multi-agent RAG build is COMPLETE; no Phase 6. Optional, trigger-gated only: 4 backlog follow-ups under `docs/backlog/` (policy-edit op migration, demand-cluster driver, reverse-merge producer, demand-ledger DoS bound) — action only when each file's revival trigger fires. Session-review findings: docs/260619_session-review-2.md.
 
 ---
 
@@ -55,12 +55,11 @@ exploitable — sentinel deleted) → guarded at use site + `set_declared_writes
 **Gateway suite 2002 passed; recall@10 0.926 unmoved.** Gate: eval ✓, independent code-review GO ✓,
 security ✓.
 
-**STANDING BUILD RULE (session-review finding, apply every phase):** the builder's self-tests were
-shallow on the highest-risk paths (monkeypatched the core merge/CAS; isolated-repo recovery test
-asserted the UNSAFE behavior as correct). Every phase builder MUST write adversarial tests with
-negative controls for concurrency / destructive-op / idempotency paths and must NOT monkeypatch the
-core path under test. Every gate MUST run an INDEPENDENT review (reviewer ≠ author) — it caught what
-the builder missed. Keep the background security review.
+**STANDING BUILD RULE → MIGRATED.** The standing build rule (adversarial tests + named negative
+controls, no monkeypatching the core path, realistic merge/reattachment payloads, independent
+reviewer≠author gate + security review, failing eval/review HALTS) now lives — with the reviewer
+dispatch template and the inert-in-production hunt list — in the evergreen
+**`docs/MULTI-AGENT-BUILD-PLAYBOOK.md`** (single source; read it before any phase plan or build).
 
 **Phase-3 carry-forward (residual, non-blocking):** (a) the fail-safe rebase branch in `commit_gate`
 is where Phase 3's structured-claim merge plugs in (§5.1 case-2 mergeable rebase currently
