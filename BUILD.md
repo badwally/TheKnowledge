@@ -1294,6 +1294,33 @@ Pre-flight notebook check added to `discharge_orphans()`: fails fast with "no no
 
 ---
 
+## 24. Librarian multi-agent RAG build (2026-06-18/19)
+
+A distinct epic from the gateway operational phases above (BUILD.md "Phase N" = gateway taxonomy; this is the Librarian multi-agent RAG taxonomy). Turns the gateway into a substrate safe for **multiple concurrent agents** to read and write: a serial commit gate, identity/dedup at commit time, a tiered agent surface, and lifecycle + demand governance. Design: `docs/plans/2026-06-18-librarian-multi-agent-rag-design.md` (§0–16, evergreen) + `…-checkpoints.md` (mutable ledger). Built one fresh session per phase, PLAN (`writing-plans`) → EXECUTE (`subagent-driven-development`) → GATE.
+
+**Phases 1–4 (precursors).** Shipped via **PR #29** (Phases 1–3, merge `8a509406`) + **PR #30** (Phase 4, merge `5517f1f7`); per-phase records in `docs/session-state.md`.
+- **P1 Commit foundation** — durable intent queue, `CommitGate` (serial commit, MVCC CAS, fencing, scoped crash recovery), operational-provenance log (C1–C7, A5, A1, A7).
+- **P2 Identity substrate** — three-namespace embedding index (section/entity/question), upsert-on-commit, shadow-swap rebuild, per-namespace adequacy gates; active encoder `lexical-fallback-v1` (I2, A6, F2).
+- **P3 Commit-time invariants** — LLM-free replayable dedup adjudicator (alias-authority, NN recall-only, cross-kind-never-merge), domain resolution, contradiction auto-resolve, eval-gated trust tiering, typed deposit (I1, C5, F1, G5).
+- **P4 Tiered agent surface** — read/build tier split (two MCP entrypoints, default-deny), bounded lock acquire, deposit backpressure, per-producer telemetry alarms (A2, A3, A4-seam, A7).
+
+**Phase 5 — Lifecycle & demand governance (this delivery).** Merged via **PR #31** (merge `ee97cc9e`). 6 tasks, subagent-driven (fresh implementer + independent review + fix loop per task). Lands G1–G4, G6–G8, I3, I4, F1 (claim-conservation), A4 + decisions 10–12.
+
+- **T1 — Retraction cascade + resolution reversal** (G1/G3/G4/G8): `retraction.py` fixpoint cascade over the `synthesizes:`+`[[sources]]` graphs (cycle-terminating); `revert-resolution` + reverse-merge APPLY through the CommitGate (remove `## Contested`/restore claims; restore B-only aliases/sections/claims + delete tombstone). SHAs `1b9ac9bd..80246a96`.
+- **T2 — Remediation + claim-conservation** (G6/F1): `remediate` de-path as a reversible gate intent that never touches a provenance-reachable/cited page (reachability recurses nested provenance paths); fragmentation lint; claim-conservation reconciliation. `c3fd4a12..1ddd99a6`.
+- **T3 — Gap-routing + keep-worthiness** (A4, dec 10): corpus-miss telemetry + A4 carry-forward suppression; orient-vs-ground gate (durable claim needs an ingested source); volatile-not-canonicalized. `b47722f1..d6a0a3c2`.
+- **T4 — DemandLedger + preflight** (I4, dec 11/12): online gap clustering (cold-start + recurrence-mass gating, exactly-one canonicalization trigger, raw-text retention surviving a model bump); read-tier plan-time pre-flight; demand loop wired (corpus-miss → record_gap). `38c8a548..9927a3c8`.
+- **T5 — Reversal/anomaly detectors** (G2): three live detectors over real data (auto-resolution-reversal-rate via `reverts_act`; cross-project-override via real `domains:`; observed cascade-depth via live `retraction.cascade`) feeding the §1.5 Option-B signals. `11dfd554..1419c7ae`.
+- **T6 — Policy-edit governance + merge-map golden gate** (G7/I3): privileged policy-edit path — CLI-only (off all MCP surfaces), privilege from server-sourced `GATEWAY_POLICY_PRINCIPAL` (fail-closed); the CommitGate gate runs `eval-retrieval --compare` + a parameterized merge-map golden re-eval against the **proposed** policy and dead-letters any regression; tracked policy committed through the gate with an Intent-Id trailer. `2f708f7f..a9889614`.
+
+**Gate:** full suite **2182 → 2354 (+172)**, 0 regressions; `eval-retrieval --compare` fts recall@10 **0.926** (== baseline, ≥0.90 floor — no retrieval-ranking code touched); scoped lints at baseline (orphans 758 / schema-drift 191 / broken-wikilinks 1). 6 independent per-task reviews + whole-branch review (READY) + security review (SHIP IT). Ledger §4 Phase 5 GATE PASSED; §5 all rows green.
+
+**Quality note (the load-bearing finding).** The independent reviewer≠author gate caught a real defect in **every one of the 6 tasks** — all invisible to the implementer's own passing tests, clustered into one failure mode: *features that pass happy-path unit tests but are inert/wrong against real production data* (inert de-path op, dead cold-start gate, tautological I4 test, unwired cascade-depth sidecar, hardcoded-string policy gate, wrong-key provenance lint) — plus **2 HIGH security findings** (fail-open gate, path-traversal) and a spoofable-identity Critical on the governance path. All fixed TDD. This finding is codified in `docs/MULTI-AGENT-BUILD-PLAYBOOK.md` (reviewer dispatch template + inert-in-production hunt list), shipped via **PR #32** (merge `dbfa31cf`), and in session memory.
+
+**Follow-ups (triggered backlog, deferred):** `docs/backlog/` — policy-edit op migration (the spec's migration delta), demand-cluster driver, reverse-merge producer op, demand-ledger DoS bound. No Phase 6 — the 5-phase build is complete.
+
+---
+
 ## 23. Phase 11 exit checkpoint (2026-05-27)
 
 2 milestones (M107–M108) delivered. 1852 → 1854 tests (+2), 0 regressions.
