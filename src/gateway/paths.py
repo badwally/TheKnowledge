@@ -84,6 +84,16 @@ def search_db_path() -> Path:
     return index_dir() / "wiki.db"
 
 
+def embedding_db_path() -> Path:
+    """Derived embedding store (Librarian Phase 2, §13). Gitignored under .index/."""
+    return index_dir() / "embeddings.db"
+
+
+def embedding_shadow_db_path() -> Path:
+    """Shadow location for a shadow-swap embedding rebuild (A6)."""
+    return index_dir() / "embeddings.shadow.db"
+
+
 def index_path() -> Path:
     return knowledge_root() / "index.md"
 

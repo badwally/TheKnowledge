@@ -32,6 +32,10 @@ LOCK_NAMES: frozenset[str] = frozenset(
         # Replaces the global `wiki-author` barrier for the commit step (§4
         # migration delta); authoring runs concurrently, only commit is serial.
         "librarian-commit",
+        # Librarian Phase 2 (A6): quiesce window for the embedding shadow-swap.
+        # A rebuild holds it for the atomic os.replace; commits hold it for their
+        # post-commit upsert, so no commit reads a half-swapped index.
+        "librarian-embedding-rebuild",
     }
 )
 
