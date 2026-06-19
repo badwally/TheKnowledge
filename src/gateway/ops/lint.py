@@ -32,6 +32,7 @@ from gateway.lint import (
     missing_pages,
     nlm_pending,
     orphans,
+    policy_provenance,
     retracted_citations,
     schema_drift,
     stale_claims,
@@ -81,6 +82,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("fragmentation", fragmentation.run),
     ("claim-conservation", claim_conservation.run),
     ("reversal-anomalies", reversal_anomalies.run),
+    ("policy-provenance", policy_provenance.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
