@@ -44,6 +44,7 @@ from gateway.lint import (
     claim_confidence,
     invalid_tags,
     unanswered_questions,
+    reversal_anomalies,
 )
 
 
@@ -79,6 +80,7 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("answered-no-synthesis", unanswered_questions.run_answered_no_synthesis),
     ("fragmentation", fragmentation.run),
     ("claim-conservation", claim_conservation.run),
+    ("reversal-anomalies", reversal_anomalies.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}

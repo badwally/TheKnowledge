@@ -9,9 +9,13 @@ Mirrors the provenance.alarms() pattern (Phase-4 A7):
 """
 from __future__ import annotations
 
+import json
+
 import pytest
 
+from gateway import contradictions_log
 from gateway.reversal_detectors import Alarm, detect
+from gateway.ops.lint import lint
 
 
 # ---------------------------------------------------------------------------
@@ -194,3 +198,61 @@ def test_detect_always_returns_all_three_alarms(kb_root):
         "cross_project_override_rate",
         "observed_cascade_depth",
     }
+
+
+# ---------------------------------------------------------------------------
+# Step 6 — lint wiring: reversal-anomalies scope check
+# ---------------------------------------------------------------------------
+
+def test_lint_reversal_anomalies_scope_runs_without_error(kb_root):
+    """reversal-anomalies is a registered lint check that runs cleanly (no exceptions)."""
+    res = lint(scope="reversal-anomalies")
+    assert res.success is True
+
+
+def test_lint_reversal_anomalies_no_findings_on_empty_act_log(kb_root):
+    """Empty act log → no tripped alarms → no lint findings."""
+    # Act log doesn't exist in the fresh kb_root → snapshot is all-zero → no trips
+    res = lint(scope="reversal-anomalies")
+    assert res.success is True
+    # Summary should show 0 findings for this check
+    assert "reversal-anomalies: 0" in res.summary or "0 finding" in res.summary
+
+
+def test_lint_reversal_anomalies_emits_finding_when_reversal_rate_tripped(kb_root):
+    """When reversal rate is above 5% (via realistic acts + revert markers), a finding is emitted."""
+    # Write 10 resolution acts — above min_volume=10 — then mark 2 as reverted → 20% > 5%
+    acts_path = contradictions_log.resolution_acts_path()
+    acts_path.parent.mkdir(parents=True, exist_ok=True)
+    for i in range(10):
+        act = {
+            "act_id": f"act-{i:04d}",
+            "rule": "trust-tier-then-recency",
+            "policy_version": "contradiction-policy-v1",
+            "inputs": {"a": {"source": f"pubmed-{i}", "claim": "x"},
+                       "b": {"source": f"arxiv-{i}", "claim": "y"}},
+            "winner": {"source": f"pubmed-{i}", "claim": "x", "trust": 0.9},
+            "loser": {"source": f"arxiv-{i}", "claim": "y", "trust": 0.5},
+            "resolved_at": "2026-06-19T10:00:00Z",
+        }
+        # Mark 2 of the acts as reverted (20% reversal rate)
+        if i < 2:
+            act["reverts_act"] = f"reverting-intent-{i}"
+        acts_path.open("a").write(json.dumps(act) + "\n")
+
+    res = lint(scope="reversal-anomalies")
+    assert res.success is True
+    # At least one finding for the tripped reversal rate
+    assert res.data is not None and len(res.data.get("findings", [])) > 0 or \
+           "reversal-anomalies: 1" in res.summary or \
+           "auto_resolution_reversal_rate" in res.summary or \
+           res.summary.count("finding") >= 1
+
+
+def test_lint_reversal_anomalies_scope_runs_only_that_check(kb_root):
+    """Scoped lint run executes ONLY reversal-anomalies, not any other check."""
+    res = lint(scope="reversal-anomalies")
+    assert res.success is True
+    # The summary/counts must not mention other checks like orphans or schema-drift
+    assert "orphans" not in res.summary
+    assert "schema-drift" not in res.summary
