@@ -349,7 +349,17 @@ class IntentQueue:
         _, path = found
         with open(path) as f:
             rec = json.load(f)
-        rec["declared_writes"] = list(rel_paths)
+        # Defense-in-depth: declared writes are self-declared by the producer and
+        # are later DELETED by crash recovery. Reject any entry that is absolute
+        # or contains a ``..`` segment so a path that could escape the root never
+        # persists. Validate at write time, re-verify at the recover() use site.
+        safe: list[str] = []
+        for rel in rel_paths:
+            p = Path(rel)
+            if p.is_absolute() or ".." in p.parts:
+                continue
+            safe.append(rel)
+        rec["declared_writes"] = safe
         _atomic_write_json(path, rec)
 
     def declared_writes(self, intent_id: str) -> list[str]:

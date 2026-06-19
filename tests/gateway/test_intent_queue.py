@@ -200,3 +200,27 @@ def test_fencing_survives_queue_record_loss(root):
     # The durable fencing token still reports the highest issued value.
     q2 = IntentQueue()
     assert q2.fencing_token(iid) == 1
+
+
+def test_set_declared_writes_rejects_traversal_and_absolute_paths(root, tmp_path):
+    """Defense-in-depth: declared writes are self-declared by the producer, and
+    crash recovery DELETES them. A path that escapes the root (``..`` segment or
+    absolute) must never persist into the queue record. Validate at write time.
+    """
+    q = IntentQueue()
+    iid = q.submit(_intent())
+    q.claim(lease_ttl=120.0, now=1.0)
+
+    abs_path = str((tmp_path / "outside" / "escape.md"))
+    q.set_declared_writes(
+        iid,
+        [
+            "wiki/sources/ok.md",
+            "../escape.md",
+            "wiki/../../escape.md",
+            abs_path,
+        ],
+    )
+
+    # Only the in-root path survives; every escaping entry is dropped.
+    assert q.declared_writes(iid) == ["wiki/sources/ok.md"]

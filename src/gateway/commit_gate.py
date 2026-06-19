@@ -40,12 +40,16 @@ It generalizes ``discharge_orphans._git_commit_synthesis_drafts`` (always
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import logging
+import os
 from pathlib import Path
 import subprocess
 
 from gateway import locking, paths
 from gateway.core import OperationResult, write_atomic
 from gateway.intent_queue import Intent, IntentQueue
+
+log = logging.getLogger(__name__)
 
 
 # «commit.max_rebase_attempts» (ledger §1.1).
@@ -398,14 +402,26 @@ class CommitGate:
 
         Unrelated tracked modifications and untracked files are left untouched.
         """
+        root_resolved = self._root.resolve()
         for intent_id in self._queue.in_flight_intents():
             for rel in self._queue.declared_writes(intent_id):
+                # Defense-in-depth (recovery DELETES files): declared paths are
+                # self-declared by the producer. Even though set_declared_writes
+                # validates at write time, re-verify containment at the use site
+                # before any destructive op — never checkout/unlink a path that
+                # resolves outside the root.
+                abs_path = (self._root / rel).resolve()
+                if not (
+                    abs_path == root_resolved
+                    or str(abs_path).startswith(str(root_resolved) + os.sep)
+                ):
+                    log.warning("declared write escapes root, skipping: %s", rel)
+                    continue
                 if self._is_tracked(rel):
                     # Restore the committed version of a path the intent dirtied.
                     self._git("checkout", "--", rel, check=False)
                 else:
                     # Remove only the specific file the intent newly created.
-                    abs_path = self._root / rel
                     try:
                         if abs_path.is_file():
                             abs_path.unlink()

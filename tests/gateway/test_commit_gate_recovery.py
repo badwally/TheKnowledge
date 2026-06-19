@@ -90,3 +90,42 @@ def test_recover_reverts_only_failed_intent_writes_preserving_unrelated(repo):
     # Intent re-runs from claimed -> back to submitted for a fresh claim.
     assert iid in reclaimed
     assert q.get_state(iid) == "submitted"
+
+
+def test_recover_does_not_delete_files_outside_root(repo, tmp_path):
+    """Defense-in-depth: even if a malicious/buggy producer smuggles a traversal
+    path past declaration validation and it reaches ``recover()``, the unlink
+    (and the tracked-path ``git checkout``) MUST NOT escape ``self._root``. A
+    sentinel file in a sibling tmp dir outside the repo must survive.
+    """
+    q = IntentQueue()
+    payload = {"kind": "source", "target": "tracked.md"}
+    ident = {"agent": "tester"}
+    iid = compute_intent_id(payload, ident)
+    q.submit(Intent(intent_id=iid, payload=payload, identity=ident))
+    q.claim(lease_ttl=0.001, now=1.0)
+
+    # A sentinel OUTSIDE the repo root that a traversal delete could reach.
+    outside = tmp_path.parent / "sibling-outside"
+    outside.mkdir(parents=True, exist_ok=True)
+    sentinel = outside / "sentinel.md"
+    sentinel.write_text("must survive\n")
+
+    # Write the declared-write record DIRECTLY (bypassing the validating
+    # set_declared_writes) to simulate a record that already holds an escaping
+    # path — recover() must still refuse to act on it.
+    rel_traversal = f"../{outside.name}/sentinel.md"
+    found = q._find(iid)
+    assert found is not None
+    import json
+
+    rec = json.loads(found[1].read_text())
+    rec["declared_writes"] = [rel_traversal]
+    found[1].write_text(json.dumps(rec))
+
+    gate = CommitGate(queue=q)
+    gate.recover(now=10_000.0)
+
+    # The sentinel outside the root is untouched.
+    assert sentinel.exists()
+    assert sentinel.read_text() == "must survive\n"
