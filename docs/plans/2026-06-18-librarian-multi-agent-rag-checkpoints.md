@@ -164,11 +164,11 @@ Keyed to the design §0 phase names. Each phase lists what must be green and the
 evidence before the next phase begins.
 
 ### Phase 1 — Commit foundation
-- [ ] Never-regress invariants hold: writes serialized at one gate; reads non-blocking against a committed ref; validator rejects ungrounded claims. *Evidence:* the three invariant tests pass.
-- [ ] Torn-write recovery: kill-mid-reattachment leaves `git status` clean post-restart; intent re-runs from `claimed`. *Evidence:* C1 integration test.
-- [ ] Idempotency from committed state: redelivering a committed `intent_id` writes nothing. *Evidence:* C2 test scanning committed history.
-- [ ] Fencing: a resurrected slow worker cannot overwrite the reclaimer's commit. *Evidence:* C3 test.
-- [ ] Every committed corpus change has an operational-provenance ancestor (incl. watcher/poller ingest, C7). *Evidence:* provenance-coverage check.
+- [x] Never-regress invariants hold: writes serialized at one gate; reads non-blocking against a committed ref; validator rejects ungrounded claims. *Evidence:* `test_commit_gate.py::test_writes_serialized_at_one_gate`, `::test_status_query_does_not_block_on_commit_mutex`; validator unchanged (full suite 1994 green).
+- [x] Torn-write recovery: kill-mid-reattachment leaves `git status` clean post-restart; intent re-runs from `claimed`. *Evidence:* `test_commit_gate_recovery.py::test_recover_resets_dirty_tree_and_reclaims` (C1).
+- [x] Idempotency from committed state: redelivering a committed `intent_id` writes nothing. *Evidence:* `test_commit_gate.py::test_redeliver_committed_intent_is_noop_from_history` (C2; scans `git log --grep`, survives queue-record deletion).
+- [x] Fencing: a resurrected slow worker cannot overwrite the reclaimer's commit. *Evidence:* `test_commit_gate.py::test_stale_fencing_token_rejected` (C3).
+- [x] Every committed corpus change has an operational-provenance ancestor (incl. watcher/poller ingest, C7). *Evidence:* `test_provenance_coverage.py::test_every_committed_change_has_ancestor` + `::test_watcher_ingest_emits_provenance_node`.
 
 ### Phase 2 — Identity substrate
 - [ ] Each embedding namespace's adequacy gate passes against its own golden set, or its named fallback is active and falsifiable (I2). *Evidence:* per-namespace gate report.
@@ -203,10 +203,10 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 
 | Component (design §) | Phase | Status |
 |---|---|---|
-| Intent queue — durable dir + on-disk lifecycle states (§3, §14) | 1 | not-started |
-| Async return type — IntentReceipt / OperationResult ext + status-query (§3) | 1 | not-started |
-| CommitGate — serial commit, MVCC CAS, fencing, crash recovery (§5) | 1 | not-started |
-| Operational-provenance log + per-producer telemetry (§3) | 1 | not-started |
+| Intent queue — durable dir + on-disk lifecycle states (§3, §14) | 1 | green |
+| Async return type — IntentReceipt / OperationResult ext + status-query (§3) | 1 | green |
+| CommitGate — serial commit, MVCC CAS, fencing, crash recovery (§5) | 1 | green |
+| Operational-provenance log + per-producer telemetry (§3) | 1 | green |
 | Embedding index — three namespaces, upsert-on-commit, shadow-swap rebuild (§13) | 2 | not-started |
 | Deposit API — typed intent tool + authorship workers (§3, §4) | 3 | not-started |
 | Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | not-started |

@@ -1,6 +1,25 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian RAG design generation — Pass A done)
+Last updated: 2026-06-18 (Librarian PHASE 1 — Commit foundation: DONE)
+
+---
+
+## ✅ LIBRARIAN PHASE 1 — COMMIT FOUNDATION (2026-06-18) — DONE
+
+**Branch:** `docs/librarian-rag-design`. Plan: `docs/plans/2026-06-18-librarian-phase1-build-plan.md`.
+All five tasks shipped TDD, per-task commits: T1.1 intent queue (durable dir,
+fencing+lease, C3/C7), T1.2 OperationResult async fields + _serialize (A5),
+T1.3 intent-status op + CLI/MCP (A1), T1.4 CommitGate — commit mutex + MVCC CAS +
+idempotency-from-history + fencing + crash recovery (C1/C2/C3/C4, decision 1),
+T1.5 operational-provenance log + C7 watcher routing + A7 telemetry stub.
+
+**Gate:** pytest 1994 passed (baseline 1960; +34 new). eval-retrieval recall@10
+0.926 (unmoved — no retrieval code touched). Ledger §4 Phase-1 green-gate all [x];
+§5 four Phase-1 rows = green. C1/C2/C3/C7 detector tests named in §4.
+
+**Next atomic step:** Phase 2 — Identity substrate (embedding index, 3 namespaces,
+upsert-on-commit, shadow-swap rebuild). Fresh session via the Phase-2 contp in the
+roadmap. Phase 2's `EMB` upsert-on-commit hangs off the now-green CommitGate.
 
 ---
 
