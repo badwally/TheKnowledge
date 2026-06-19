@@ -57,6 +57,11 @@ log = logging.getLogger(__name__)
 # «commit.max_rebase_attempts» (ledger §1.1).
 DEFAULT_MAX_REBASE_ATTEMPTS = 8
 
+# Bounded acquisition for the serial commit barrier (A3): the committer must
+# never block indefinitely. On timeout the intent is left for a later pass
+# (re-queue / retry), not hung.
+COMMIT_LOCK_ACQUIRE_TIMEOUT = 30.0  # «commit.lock_acquire_timeout»
+
 
 @dataclass(frozen=True)
 class AuthoredIntent:
@@ -291,7 +296,7 @@ class CommitGate:
 
     def commit(self, authored: AuthoredIntent, fencing_token: int) -> OperationResult:
         intent_id = authored.intent.intent_id
-        with locking.file_lock("librarian-commit"):
+        with locking.file_lock("librarian-commit", timeout=COMMIT_LOCK_ACQUIRE_TIMEOUT):
             # (C2) Idempotency from committed state — scan history first.
             prior = self._already_committed(intent_id)
             if prior is not None:
