@@ -927,21 +927,34 @@ class CommitGate:
 
     # --- Policy-edit gate (Phase 5 T6, G7) -----------------------------------
 
+    # Strict domain-slug regex (HIGH 2: path-traversal guard). A domain slug
+    # is computed into a filesystem path; an unvalidated slug like "../../etc/x"
+    # escapes the policies root. The same regex is enforced at the policy_edit()
+    # enqueue layer — this is the defense-in-depth backstop at the gate.
+    _DOMAIN_SLUG_RE = re.compile(r"[a-z0-9][a-z0-9_-]{0,63}")
+
     def _apply_policy_edit(
         self, authored: "AuthoredIntent", intent_id: str
     ) -> OperationResult:
         """Apply a privileged policy-edit intent with dual-gate non-regression check.
 
-        Gate protocol (order matters — both must pass before any write):
+        Gate protocol (order matters — all must pass before any write):
           1. eval-retrieval --compare (fts recall@10 ≥ RECALL_FLOOR=0.90).
           2. merge_map_eval on the curated dedup golden (no regressions in
              merge precision — guards alias-authority discipline).
+          2b. If the policy proposes a ``dedup.strategy``, simulate it against
+             the merge-map golden and reject if it regresses (e.g. geometry-only).
 
-        If the policy_data contains a ``dedup.strategy`` key, the gate also
-        simulates that strategy against the merge-map golden to check whether
-        the proposed change would itself regress dedup precision. A strategy of
-        ``"geometry-only"`` is always rejected — it is known to mis-score the
-        type1-vs-type2-distinct and fed-branches-distinct cases.
+        FAIL-CLOSED (HIGH 1): a gate-eval exception DEAD-LETTERS the intent
+        (policy NOT written). The gate must never fail open — an error in the
+        eval path is treated as a gate failure, not a skip. The ONLY legitimate
+        skip is for a missing golden/retrieval set in a dev/test environment,
+        and that is gated on the explicit ``GATEWAY_DEV_SKIP_POLICY_GATES`` env
+        marker, never a blanket exception catch.
+
+        PATH-TRAVERSAL (HIGH 2): the domain slug is validated against a strict
+        regex, and the resolved target path is asserted to be contained within
+        the policies root, before any write.
 
         Policy files live under .knowledge/policies/ (gitignored). This method
         writes them directly (no git add) and records a provenance node. The
@@ -952,83 +965,133 @@ class CommitGate:
         path. The boundary is documented in lint/policy_provenance.py.
         """
         RECALL_FLOOR = 0.90
+        dev_skip = bool(os.environ.get("GATEWAY_DEV_SKIP_POLICY_GATES"))
 
         payload = authored.intent.payload or {}
         domain = payload.get("domain")
         policy_data = payload.get("policy_data")
         reason = payload.get("reason", "")
 
-        if not domain:
+        if not domain or not isinstance(domain, str):
             return self._dead_letter(intent_id, "policy-edit missing domain")
+        # HIGH 2: reject a domain slug that is not a strict slug (path-traversal guard).
+        if not self._DOMAIN_SLUG_RE.fullmatch(domain):
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit: invalid domain slug {domain!r} "
+                f"(must match [a-z0-9][a-z0-9_-]{{0,63}}) — possible path traversal",
+            )
         if not policy_data or not isinstance(policy_data, dict):
             return self._dead_letter(intent_id, "policy-edit missing policy_data")
 
         # --- Gate 1: eval-retrieval --compare (recall@10 ≥ RECALL_FLOOR) ---
+        # FAIL-CLOSED: any eval exception dead-letters. The only skip is a
+        # missing golden under the explicit dev-skip marker.
         try:
             from gateway.evaluate import retrieval_eval as _rev
             goldens = _rev.load_goldens()
-            if goldens:  # skip if no goldens configured (dev/test env)
-                report = _rev.evaluate("fts", goldens=goldens, k=10)
-                recall = report.recall_at(10)
-                if recall < RECALL_FLOOR:
-                    return self._dead_letter(
-                        intent_id,
-                        f"policy-edit gate: fts recall@10={recall:.3f} < floor {RECALL_FLOOR}"
-                        f" — policy not written",
-                    )
+            report = _rev.evaluate("fts", goldens=goldens, k=10)
+            recall = report.recall_at(10)
+            if recall < RECALL_FLOOR:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: fts recall@10={recall:.3f} < floor {RECALL_FLOOR}"
+                    f" — policy not written",
+                )
+        except FileNotFoundError as exc:
+            if not dev_skip:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: retrieval goldens not found ({exc!r}) — "
+                    f"failing closed (set GATEWAY_DEV_SKIP_POLICY_GATES to skip in dev)",
+                )
+            log.warning("policy-edit: eval-retrieval gate dev-skipped (%s)", exc)
         except Exception as exc:
-            log.warning("policy-edit: eval-retrieval gate skipped (%s)", exc)
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit gate: eval-retrieval failed ({exc!r}) — failing closed",
+            )
 
         # --- Gate 2: merge-map golden (no regressions on real adjudicator) ---
-        try:
-            from gateway.evaluate.merge_map_eval import merge_map_eval
-            golden_path = self._root / ".knowledge" / "eval" / "dedup" / "golden.yaml"
-            if golden_path.exists():
-                mm_result = merge_map_eval(golden_path, root=self._root)
-                if mm_result.regressions:
-                    return self._dead_letter(
-                        intent_id,
-                        f"policy-edit gate: merge-map golden has {len(mm_result.regressions)}"
-                        f" regression(s) — policy not written: {mm_result.regressions}",
-                    )
-        except Exception as exc:
-            log.warning("policy-edit: merge-map golden gate skipped (%s)", exc)
-
-        # --- Gate 2b: proposed dedup strategy check ---
-        # If the policy proposes a geometry-only dedup strategy, simulate it
-        # against the merge-map golden and gate on the result.
-        proposed_dedup = policy_data.get("dedup") or {}
-        proposed_strategy = proposed_dedup.get("strategy")
-        if proposed_strategy == "geometry-only":
+        # FAIL-CLOSED: any eval exception dead-letters; missing golden only
+        # skips under the dev marker.
+        golden_path = self._root / ".knowledge" / "eval" / "dedup" / "golden.yaml"
+        if not golden_path.exists():
+            if not dev_skip:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: dedup golden not found at {golden_path} — "
+                    f"failing closed (set GATEWAY_DEV_SKIP_POLICY_GATES to skip in dev)",
+                )
+            log.warning("policy-edit: merge-map golden gate dev-skipped (missing golden)")
+        else:
             try:
                 from gateway.evaluate.merge_map_eval import merge_map_eval
-                from gateway.dedup import Candidate, DepositIdentity
-                nn_threshold = float(proposed_dedup.get("nn_distance_threshold", 0.30))
+                mm_result = merge_map_eval(golden_path, root=self._root)
+            except Exception as exc:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: merge-map golden eval failed ({exc!r}) — failing closed",
+                )
+            if mm_result.regressions:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: merge-map golden has {len(mm_result.regressions)}"
+                    f" regression(s) — policy not written: {mm_result.regressions}",
+                )
 
-                def _geometry_only(identity: DepositIdentity, candidates: list) -> str:
-                    if not candidates:
-                        return "distinct"
-                    return "merge" if candidates[0].nn_distance <= nn_threshold else "distinct"
+            # --- Gate 2b: proposed dedup strategy check ---
+            proposed_dedup = policy_data.get("dedup") or {}
+            proposed_strategy = proposed_dedup.get("strategy")
+            if proposed_strategy == "geometry-only":
+                try:
+                    from gateway.evaluate.merge_map_eval import merge_map_eval
+                    from gateway.dedup import Candidate, DepositIdentity
+                    nn_threshold = float(proposed_dedup.get("nn_distance_threshold", 0.30))
 
-                golden_path = self._root / ".knowledge" / "eval" / "dedup" / "golden.yaml"
-                if golden_path.exists():
+                    def _geometry_only(identity: DepositIdentity, candidates: list) -> str:
+                        if not candidates:
+                            return "distinct"
+                        return "merge" if candidates[0].nn_distance <= nn_threshold else "distinct"
+
                     sim_result = merge_map_eval(
                         golden_path, root=self._root, adjudicator=_geometry_only
                     )
-                    if sim_result.regressions:
-                        return self._dead_letter(
-                            intent_id,
-                            f"policy-edit gate: proposed dedup.strategy='geometry-only' "
-                            f"regresses {len(sim_result.regressions)} merge-map golden "
-                            f"case(s) — policy not written: {sim_result.regressions}",
-                        )
-            except Exception as exc:
-                log.warning("policy-edit: proposed strategy gate skipped (%s)", exc)
+                except Exception as exc:
+                    return self._dead_letter(
+                        intent_id,
+                        f"policy-edit gate: proposed-strategy eval failed ({exc!r}) — "
+                        f"failing closed",
+                    )
+                if sim_result.regressions:
+                    return self._dead_letter(
+                        intent_id,
+                        f"policy-edit gate: proposed dedup.strategy='geometry-only' "
+                        f"regresses {len(sim_result.regressions)} merge-map golden "
+                        f"case(s) — policy not written: {sim_result.regressions}",
+                    )
 
-        # --- Both gates passed — write the policy file ---
+        # --- All gates passed — write the policy file ---
         import yaml as _yaml
         from gateway.filter.policy import policy_path as _policy_path
         target = _policy_path(domain)
+
+        # HIGH 2 (defense in depth): assert the resolved target is contained
+        # within the policies root before writing — even though the slug passed
+        # the regex, a symlinked or otherwise unexpected policies dir could let
+        # a write escape. Containment is the load-bearing invariant.
+        policies_root = (self._root / ".knowledge" / "policies").resolve()
+        resolved_target = target.resolve()
+        if not (
+            resolved_target == policies_root
+            or str(resolved_target).startswith(str(policies_root) + os.sep)
+        ):
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit: resolved path {resolved_target} escapes policies root "
+                f"{policies_root} — refusing to write",
+            )
+
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(_yaml.dump(policy_data, allow_unicode=True))
 

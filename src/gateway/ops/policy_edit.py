@@ -21,8 +21,16 @@ message so the boundary is explicit, not silent.
 
 from __future__ import annotations
 
+import re
+
 from gateway.core import OperationResult
 from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
+
+# Strict domain-slug regex (HIGH 2: path-traversal guard). A domain slug is
+# computed into a filesystem path (.knowledge/policies/<slug>/policy.yaml); an
+# unvalidated slug like "../../etc/x" escapes the policies root. Enforced here at
+# the enqueue layer AND at the CommitGate apply layer (defense in depth).
+_DOMAIN_SLUG_RE = re.compile(r"[a-z0-9][a-z0-9_-]{0,63}")
 
 # ---------------------------------------------------------------------------
 # Build-time allowlist for policy-edit privilege.
@@ -51,6 +59,12 @@ def _validate(domain: str, policy_data: dict, reason: str) -> list[str]:
     errors: list[str] = []
     if not domain or not isinstance(domain, str):
         errors.append("domain must be a non-empty string")
+    elif not _DOMAIN_SLUG_RE.fullmatch(domain):
+        # HIGH 2: reject path-traversal / non-slug domains before they reach the gate.
+        errors.append(
+            f"invalid domain slug {domain!r} (must match [a-z0-9][a-z0-9_-]{{0,63}}) "
+            f"— possible path traversal"
+        )
     if not policy_data or not isinstance(policy_data, dict):
         errors.append("policy_data must be a non-empty dict")
     if not reason or not isinstance(reason, str) or not reason.strip():

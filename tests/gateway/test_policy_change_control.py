@@ -46,6 +46,11 @@ def tmp_gate_env(tmp_path, monkeypatch):
     from gateway.embedding_index import EmbeddingIndex
 
     monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    # Dev-skip the retrieval gate's MISSING-GOLDEN case only — a unit env has no
+    # indexed corpus to score. This does NOT bypass a real regression or an
+    # eval exception (both still fail closed); the merge-map golden IS seeded
+    # below and runs for real.
+    monkeypatch.setenv("GATEWAY_DEV_SKIP_POLICY_GATES", "1")
 
     def _git(*args):
         subprocess.run(
@@ -269,3 +274,165 @@ def test_gate_commits_benign_policy_edit(tmp_gate_env):
     assert on_disk == benign_policy, (
         f"policy file not updated after benign commit; got {on_disk}"
     )
+
+
+# ---------------------------------------------------------------------------
+# HIGH 1 — FAIL-CLOSED: a gate eval that raises must dead-letter (not skip)
+# ---------------------------------------------------------------------------
+
+def test_gate_fails_closed_when_eval_raises(tmp_gate_env, monkeypatch):
+    """If a gate eval raises, the intent is dead-lettered and the policy is unchanged.
+
+    Adversarial control for the fail-open vulnerability: previously the gate
+    caught all exceptions and continued (log-and-skip), so a regressing edit
+    sailed through whenever an eval threw. The gate must FAIL CLOSED — any
+    gate-eval exception dead-letters the intent without writing the policy.
+
+    We force the merge-map gate to raise by making merge_map_eval blow up.
+    This is NOT a monkeypatch of the gate itself — it simulates a real
+    downstream failure (corrupt golden, import error, etc.).
+    """
+    gate, q, root, policy_path, initial_policy = tmp_gate_env
+
+    # Force merge_map_eval to raise — simulates a corrupt golden / runtime fault.
+    import gateway.evaluate.merge_map_eval as mm_mod
+
+    def _boom(*args, **kwargs):
+        raise RuntimeError("simulated eval fault")
+
+    monkeypatch.setattr(mm_mod, "merge_map_eval", _boom)
+
+    benign_policy = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.75},
+        "version": 2,
+    }
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "med", benign_policy, "edit during eval fault", policy_path
+    )
+
+    token = q.fencing_token(iid)
+    result = gate.commit(authored, fencing_token=token)
+
+    assert result.disposition == "dead_lettered", (
+        f"gate must fail CLOSED on eval exception; got {result.disposition}\n"
+        f"summary={result.summary}\nerrors={result.errors}"
+    )
+    assert any("fail" in e.lower() and "clos" in e.lower() for e in result.errors), (
+        f"dead-letter error must indicate failing closed; got {result.errors}"
+    )
+    # Policy file must NOT have been changed.
+    on_disk = yaml.safe_load(policy_path.read_text())
+    assert on_disk == initial_policy, "policy mutated despite fail-closed dead-letter"
+
+
+def test_gate_dev_skip_env_marker_allows_missing_goldens(tmp_path, monkeypatch):
+    """With the explicit dev-skip env marker, a missing golden is skipped (not dead-lettered).
+
+    This proves the fail-closed default is bypassable ONLY via an explicit
+    opt-in env marker — never a blanket catch-all. Without goldens AND with the
+    marker set, a benign edit commits.
+    """
+    import subprocess
+    from gateway.commit_gate import CommitGate
+    from gateway.embedding_index import EmbeddingIndex
+
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.setenv("GATEWAY_DEV_SKIP_POLICY_GATES", "1")
+
+    def _git(*args):
+        subprocess.run(["git", "-C", str(tmp_path), *args], check=True, capture_output=True)
+
+    _git("init", "-q")
+    _git("config", "user.email", "test@test")
+    _git("config", "user.name", "test")
+    (tmp_path / ".gitignore").write_text(".knowledge/\n.index/\n")
+    (tmp_path / "README.md").write_text("seed\n")
+    _git("add", "README.md", ".gitignore")
+    _git("commit", "-qm", "seed")
+
+    dom_dir = tmp_path / ".knowledge" / "policies" / "med"
+    dom_dir.mkdir(parents=True)
+    policy_path = dom_dir / "policy.yaml"
+    initial = {"domain": {"slug": "med"}, "version": 1}
+    policy_path.write_text(yaml.dump(initial))
+    # NOTE: no golden seeded — the dev-skip marker must allow this to pass.
+
+    q = IntentQueue()
+    gate = CommitGate(queue=q, embedding_index=EmbeddingIndex())
+
+    benign = {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.8}, "version": 2}
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "med", benign, "edit with dev-skip", policy_path
+    )
+    result = gate.commit(authored, fencing_token=q.fencing_token(iid))
+    assert result.disposition == "committed", (
+        f"dev-skip marker should allow commit with missing goldens; got "
+        f"{result.disposition} ({result.summary})"
+    )
+
+
+# ---------------------------------------------------------------------------
+# HIGH 2 — PATH TRAVERSAL on the domain slug
+# ---------------------------------------------------------------------------
+
+def test_policy_edit_rejects_traversal_domain(tmp_queue_env):
+    """policy_edit() rejects a domain slug containing path-traversal sequences."""
+    for evil in ("../escape", "../../etc/passwd", "med/../../../tmp/x"):
+        res = policy_edit(
+            evil,
+            {"domain": {"slug": "x"}, "filter": {"threshold_include": 0.7}},
+            identity={"agent": "librarian-admin", "role": "policy-admin"},
+            reason="traversal attempt",
+        )
+        assert res.disposition == "rejected", (
+            f"domain {evil!r} must be rejected at policy_edit(); got {res.disposition}"
+        )
+        assert any("slug" in e.lower() or "invalid" in e.lower() for e in res.errors), (
+            f"error must name the invalid slug; got {res.errors}"
+        )
+
+
+def test_policy_edit_accepts_valid_slug(tmp_queue_env):
+    """A valid slug still queues (negative control of the traversal rejection)."""
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}},
+        identity={"agent": "librarian-admin", "role": "policy-admin"},
+        reason="valid slug",
+    )
+    assert res.disposition == "queued", f"valid slug must queue; got {res.disposition}"
+
+
+def test_gate_dead_letters_traversal_domain(tmp_gate_env):
+    """The gate dead-letters a traversal domain and writes NO file outside policies root.
+
+    Defense in depth: even if a traversal intent reaches the gate (bypassing
+    the policy_edit() check), the gate must reject it. We snapshot the tree
+    before + after to prove no file escaped the policies root.
+    """
+    gate, q, root, policy_path, initial_policy = tmp_gate_env
+
+    # A sentinel path outside the policies root that traversal would target.
+    escape_target = root / "ESCAPED.yaml"
+    assert not escape_target.exists()
+
+    evil_policy = {"domain": {"slug": "x"}, "filter": {"threshold_include": 0.7}, "version": 2}
+    # Build the intent directly with a traversal domain (bypasses policy_edit()).
+    authored, iid = _make_policy_edit_authored_intent(
+        gate, q, "../ESCAPED", evil_policy, "traversal at gate", policy_path
+    )
+
+    token = q.fencing_token(iid)
+    result = gate.commit(authored, fencing_token=token)
+
+    assert result.disposition == "dead_lettered", (
+        f"gate must dead-letter traversal domain; got {result.disposition}\n"
+        f"summary={result.summary} errors={result.errors}"
+    )
+    # No file written outside the policies root.
+    assert not escape_target.exists(), "traversal wrote a file outside the policies root!"
+    assert not (root / "ESCAPED.yaml").exists()
+    # The legit policy is untouched.
+    on_disk = yaml.safe_load(policy_path.read_text())
+    assert on_disk == initial_policy
