@@ -201,12 +201,30 @@ evidence before the next phase begins.
 
 Per-component status, updated by the build agent. Status ∈ {not-started, in-progress, green}.
 
+> **Phase-1 hardened (2026-06-18).** Independent review found blocking and
+> silent-corruption defects in the Phase-1 commit foundation; all fixed TDD
+> (RED-before, GREEN-after), full gateway suite 2000 green, retrieval recall@10
+> unmoved (0.926). Specifically: (1) crash recovery is now scoped to the failed
+> intent's durably-recorded declared write set (`git checkout --` tracked,
+> `rm` untracked) — never a tree-wide `reset --hard` / `clean -fd` that destroys
+> other sessions' and the watcher's uncommitted/untracked work; (2) the MVCC CAS
+> compares real per-path blob OIDs (`git rev-parse HEAD:<path>`), not the literal
+> string `"HEAD"`; (3) idempotency resolves the `Intent-Id` trailer value exactly
+> (no unanchored substring `--grep`, prefix-collision-safe); (4) the Phase-1
+> merge scaffold fails safe — a real overlap dead-letters `needs-merge` instead
+> of silently dropping a concurrent change (F1); (5) the rebase loop re-CASes the
+> whole write set per-path against fresh HEAD; (6) the fencing token is durable
+> per-intent state surviving queue-record loss; (7) `claim()` is atomic via
+> `os.replace` with monotonic durable tokens (no double-claim race); (9) the
+> watcher provenance node carries a producer marker with repo-relative paths so a
+> real watcher commit is not falsely flagged as a `coverage_gap`.
+
 | Component (design §) | Phase | Status |
 |---|---|---|
 | Intent queue — durable dir + on-disk lifecycle states (§3, §14) | 1 | green |
 | Async return type — IntentReceipt / OperationResult ext + status-query (§3) | 1 | green |
-| CommitGate — serial commit, MVCC CAS, fencing, crash recovery (§5) | 1 | green |
-| Operational-provenance log + per-producer telemetry (§3) | 1 | green |
+| CommitGate — serial commit, MVCC CAS, fencing, crash recovery (§5) | 1 | green (hardened 2026-06-18) |
+| Operational-provenance log + per-producer telemetry (§3) | 1 | green (hardened 2026-06-18) |
 | Embedding index — three namespaces, upsert-on-commit, shadow-swap rebuild (§13) | 2 | not-started |
 | Deposit API — typed intent tool + authorship workers (§3, §4) | 3 | not-started |
 | Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | not-started |

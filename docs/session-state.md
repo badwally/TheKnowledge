@@ -17,6 +17,8 @@ T1.5 operational-provenance log + C7 watcher routing + A7 telemetry stub.
 0.926 (unmoved — no retrieval code touched). Ledger §4 Phase-1 green-gate all [x];
 §5 four Phase-1 rows = green. C1/C2/C3/C7 detector tests named in §4.
 
+**Phase-1 hardened (2026-06-18):** independent review found blocking + silent-corruption defects (scoped-recovery, real per-path CAS OIDs, exact Intent-Id trailer, fail-safe merge, atomic+monotonic claim, durable fencing, watcher coverage-marker) — all fixed TDD (RED-before/GREEN-after); gateway suite now 2000 passed, recall@10 still 0.926; see ledger §5 "Phase-1 hardened" note.
+
 **Next atomic step:** Phase 2 — Identity substrate (embedding index, 3 namespaces,
 upsert-on-commit, shadow-swap rebuild). Fresh session via the Phase-2 contp in the
 roadmap. Phase 2's `EMB` upsert-on-commit hangs off the now-green CommitGate.
