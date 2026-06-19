@@ -28,18 +28,20 @@ Real act-log fields (verified from contradictions_log.py + ops/contradiction.py)
   + ``reverts_act`` (str) added by mark_act_reverted() when reversed — this is
     the reversal marker T1 writes.
 
-Cross-project detection: a resolution act where
-  winner["source_domain"] != loser["source_domain"]  (if populated by T1)
-  OR where the source-ID prefixes differ across project/domain boundaries.
+Cross-project detection: a resolution act counts as cross-project iff the winner
+source's real wiki domain (from raw/ frontmatter ``domains:``) is disjoint from the
+loser source's. Acts whose source domain cannot be resolved are EXCLUDED, not
+guessed — we under-detect honestly rather than fire on source-type heterogeneity.
 
-Cascade depth: CascadeResult.depth from retraction.cascade() (T1).
+Cascade depth: computed LIVE — collect currently-retracted source ids from raw
+frontmatter and run ``retraction.cascade`` over the real ``synthesizes:`` graph,
+taking the max ``CascadeResult.depth``. No inert sidecar.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 from typing import Any
 
 from gateway import contradictions_log
@@ -174,22 +176,40 @@ def detect(
 
 
 # ---------------------------------------------------------------------------
-# Snapshot builder — reads the real act log + cascade history
+# Snapshot builder — LIVE signals over the real corpus + act log
 # ---------------------------------------------------------------------------
 
-def build_snapshot(*, root: Path | None = None, window_days: int = 30) -> dict:
-    """Build a snapshot dict from the real resolution-act log and cascade history.
+def build_snapshot(*, window_days: int = 30) -> dict:
+    """Build a snapshot dict from real corpus state — every signal is live.
 
-    Called by the ``reversal-anomalies`` lint check. Reads:
-    - ``.knowledge/contradictions/resolution_acts.jsonl`` (via ``contradictions_log``)
-    - Cascade-depth history from ``.knowledge/contradictions/cascade_depths.jsonl``
-      (written by T1's retraction.cascade() when depth > 0; optional — absent → 0).
+    Called by the ``reversal-anomalies`` lint check. All three signals are
+    computed from current on-disk state; none depend on an inert sidecar:
 
-    Cross-project detection heuristic: a resolution act is "cross-project" when
-    the winner's source domain prefix differs from the loser's. T1 may annotate
-    acts with ``winner.domain`` / ``loser.domain``; if not present, the source ID
-    slug prefix is used as a proxy (best-effort — false positives possible until T1
-    annotates).
+    auto_resolutions / reversed
+        Counted from ``.knowledge/contradictions/resolution_acts.jsonl`` (read via
+        ``contradictions_log.read_resolution_acts``). An act counts as **reversed**
+        iff it carries a ``reverts_act`` marker — the only reversal field T1 writes
+        (``contradictions_log.mark_act_reverted``). ``reversal_type`` is an
+        intent-queue payload field, NOT an act field, so it is never consulted here.
+
+    cross_project
+        Resolves each act's winner/loser source to its **real wiki domain** from the
+        raw source frontmatter (``domains:``). An act is cross-project iff the
+        winner's and loser's resolved domains are disjoint. If either source's domain
+        cannot be resolved (missing raw file / empty ``domains:``), the act is
+        **excluded** from the cross-project computation — we under-detect honestly
+        rather than guess from an id prefix.
+
+    max_cascade_depth
+        Computed LIVE: collect every currently-retracted source id from raw
+        frontmatter (``retracted: true``, same discovery as
+        ``lint/retracted_citations``) and run ``retraction.cascade`` over the real
+        ``synthesizes:`` graph; take the max observed ``CascadeResult.depth``. Zero
+        retractions → depth 0.
+
+    All reads resolve through ``paths``/``contradictions_log``, which honor the
+    ``KNOWLEDGE_ROOT`` env var, so tests under the ``kb_root`` fixture stay isolated
+    to the temp root.
     """
     cutoff = datetime.now(timezone.utc) - timedelta(days=window_days)
     cutoff_str = cutoff.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -207,25 +227,23 @@ def build_snapshot(*, root: Path | None = None, window_days: int = 30) -> dict:
             continue
         auto_resolutions += 1
 
-        # Reversal marker: T1's mark_act_reverted() adds ``reverts_act`` to the
-        # act entry (see contradictions_log.mark_act_reverted). For the reversal
-        # rate we count acts that have been reverted (have a reversal_type intent
-        # in the queue OR have a ``reverts_act`` marker stamped on them). In the
-        # current schema the reverted act itself gets ``reverts_act`` appended;
-        # a separate revert-intent record is enqueued. We look for both:
-        if act.get("reverts_act") or act.get("reversal_type") == "contradiction-resolution":
+        # Reversal marker: ONLY reverts_act (T1's mark_act_reverted writes it onto
+        # the act entry). reversal_type is not an act field — never counted.
+        if act.get("reverts_act"):
             reversed_count += 1
 
-        # Cross-project heuristic
+        # Cross-project: compare the REAL wiki domains of winner vs loser sources.
         winner = act.get("winner") or {}
         loser = act.get("loser") or {}
-        winner_domain = winner.get("domain") or _domain_from_source(winner.get("source", ""))
-        loser_domain = loser.get("domain") or _domain_from_source(loser.get("source", ""))
-        if winner_domain and loser_domain and winner_domain != loser_domain:
+        winner_domains = _domains_for_source(winner.get("source", ""))
+        loser_domains = _domains_for_source(loser.get("source", ""))
+        if winner_domains is None or loser_domains is None:
+            # Unresolvable domain on either side → exclude (under-detect honestly).
+            continue
+        if winner_domains.isdisjoint(loser_domains):
             cross_project += 1
 
-    # Cascade depth: read from optional sidecar log
-    max_cascade_depth = _read_max_cascade_depth(root=root, cutoff_str=cutoff_str)
+    max_cascade_depth = _live_max_cascade_depth()
 
     return {
         "auto_resolutions": auto_resolutions,
@@ -236,51 +254,59 @@ def build_snapshot(*, root: Path | None = None, window_days: int = 30) -> dict:
     }
 
 
-def _domain_from_source(source: str) -> str:
-    """Heuristic: extract a domain token from a source identifier.
+def _domains_for_source(source_id: str) -> set[str] | None:
+    """Resolve a source id to its real wiki domains from raw/ frontmatter.
 
-    For sources like ``"pubmed-123"`` → ``"pubmed"``;
-    ``"web-abc"`` → ``"web"`` etc. Returns ``""`` if unparseable.
+    Returns the set of domains, or ``None`` if the source cannot be resolved
+    (no raw file found, unreadable, or empty ``domains:``). Callers treat
+    ``None`` as "exclude this act" rather than guessing.
     """
-    if not source:
-        return ""
-    # If the source has an explicit domain separator (e.g. "med/pubmed-1") take the first segment
-    parts = str(source).split("/")
-    if len(parts) >= 2:
-        return parts[0]
-    # Otherwise take the type prefix before the first hyphen
-    return parts[0].split("-")[0] if "-" in parts[0] else ""
+    if not source_id:
+        return None
+    from gateway import frontmatter as fm, paths
 
-
-def _cascade_depths_path(root: Path | None) -> Path:
-    from gateway import paths as _paths
-    base = _paths.knowledge_root() if root is None else root
-    return base / ".knowledge" / "contradictions" / "cascade_depths.jsonl"
-
-
-def _read_max_cascade_depth(*, root: Path | None, cutoff_str: str) -> int:
-    """Read the max cascade depth from the optional sidecar log.
-
-    If the file doesn't exist (T1 not yet shipped or no cascades), returns 0.
-    Each line: ``{"depth": int, "recorded_at": "..."}``
-    """
-    import json
-    path = _cascade_depths_path(root)
-    if not path.exists():
-        return 0
-    max_depth = 0
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
+    raw = paths.raw_dir()
+    for source_type in paths.SOURCE_TYPES:
+        candidate = raw / source_type / f"{source_id}.md"
+        if not candidate.exists():
             continue
         try:
-            obj = json.loads(line)
-        except json.JSONDecodeError:
+            front, _ = fm.parse(candidate.read_text())
+        except Exception:
+            return None
+        domains = front.get("domains") or []
+        if not domains:
+            return None
+        return {str(d) for d in domains}
+    return None
+
+
+def _live_max_cascade_depth() -> int:
+    """Max observed cascade depth over the current retraction graph (live).
+
+    Collects all currently-retracted source ids from raw frontmatter (same
+    discovery as ``lint/retracted_citations``) and drives ``retraction.cascade``
+    over the real ``synthesizes:`` graph. No retractions → 0.
+    """
+    from gateway import frontmatter as fm, paths, retraction
+
+    raw = paths.raw_dir()
+    if not raw.exists():
+        return 0
+    retracted: set[str] = set()
+    for source_type in paths.SOURCE_TYPES:
+        d = raw / source_type
+        if not d.exists():
             continue
-        recorded_at = obj.get("recorded_at", "")
-        if recorded_at and recorded_at < cutoff_str:
-            continue
-        depth = int(obj.get("depth", 0))
-        if depth > max_depth:
-            max_depth = depth
-    return max_depth
+        for p in d.glob("*.md"):
+            try:
+                front, _ = fm.parse(p.read_text())
+            except Exception:
+                continue
+            if front.get("retracted"):
+                retracted.add(str(front.get("id", p.stem)))
+
+    if not retracted:
+        return 0
+    result = retraction.cascade(retracted)
+    return int(result.depth)

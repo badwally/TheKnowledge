@@ -116,6 +116,7 @@ def test_known_checks_includes_all_documented_checks():
         "answered-no-synthesis",
         "fragmentation",
         "claim-conservation",
+        "reversal-anomalies",
     }
     assert KNOWN_CHECKS == expected
 
