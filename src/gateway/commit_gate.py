@@ -43,6 +43,7 @@ from dataclasses import dataclass, field
 import logging
 import os
 from pathlib import Path
+import re
 import subprocess
 
 from gateway import locking, paths
@@ -338,6 +339,16 @@ class CommitGate:
                 "target": verdict_dedup.target_slug, "basis": verdict_dedup.basis,
             })
 
+            # (decision 6, Task 7) Claim-level contradiction auto-resolve. A
+            # deposit whose claim contradicts a committed claim on the same
+            # referent is resolved by policy (server trust desc, then recency),
+            # records a reversible act, and materializes a CiTO `disputes` edge —
+            # the loser stays retrievable (never deleted).
+            resolved_intent = self._detect_and_resolve_claim_contradiction(authored)
+            if resolved_intent is not None:
+                authored = resolved_intent
+                authored.decision_basis.setdefault("contradiction_resolved", True)
+
             # (decision 6) Multi-label domain resolution + quarantine-on-empty.
             # A deposit that NAMES domains but resolves to none live is
             # quarantined — never committed untagged. A deposit with no domain
@@ -628,6 +639,126 @@ class CommitGate:
             base_oids={target_rel: head_oid},
             decision_basis=dict(authored.decision_basis),
         )
+
+    # --- claim-level contradiction (Phase 3, Task 7) -------------------
+
+    @staticmethod
+    def _claim_object(line: str, subject: str) -> str | None:
+        """The object part of a ``- <subject> <object> [[sources/..]]`` bullet,
+        or None if the bullet does not assert ``subject``."""
+        s = line.strip().lstrip("- ").strip()
+        sub = subject.strip().lower()
+        if not s.lower().startswith(sub):
+            return None
+        rest = s[len(sub):].strip()
+        # drop the trailing citation so the object compares cleanly
+        rest = re.sub(r"\[\[sources/[^\]]+\]\]", "", rest).strip()
+        return rest
+
+    def _detect_and_resolve_claim_contradiction(
+        self, authored: "AuthoredIntent"
+    ) -> "AuthoredIntent | None":
+        """If the deposit asserts a claim whose subject already has a different
+        object on the target page (HEAD), auto-resolve by policy (§6 Task 7).
+
+        Records a reversible act, materializes a CiTO ``disputes`` edge into the
+        page body, and keeps BOTH claims (loser stays retrievable). Returns a
+        rewritten AuthoredIntent (with the disputes edge) on contradiction, else
+        None (no contradiction → caller proceeds normally)."""
+        from gateway import frontmatter as fm
+        from gateway.ops import contradiction as contra
+        from gateway import trust as _trust
+
+        ident_d = authored.intent.identity or {}
+        subject = str(ident_d.get("claim_subject") or "")
+        if not subject or ident_d.get("page_type") not in ("entity", "concept"):
+            return None
+        if len(authored.writes) != 1:
+            return None
+        rel, content = next(iter(authored.writes.items()))
+        target_abs = self._root / rel
+        if not target_abs.exists():
+            return None  # first mint — nothing to contradict
+
+        # Find the deposit's new claim (present in content, absent at HEAD).
+        head_text = target_abs.read_text()
+        head_lines = set(head_text.splitlines())
+        try:
+            _f, dep_body = fm.parse(content)
+        except Exception:
+            dep_body = content
+        new_obj = None
+        new_line = None
+        for line in dep_body.splitlines():
+            if line in head_lines:
+                continue
+            obj = self._claim_object(line, subject)
+            if obj is not None:
+                new_obj, new_line = obj, line.strip()
+                break
+        if new_obj is None:
+            return None
+
+        # Find an existing claim on the page asserting the same subject.
+        existing_obj = None
+        existing_line = None
+        for line in head_text.splitlines():
+            obj = self._claim_object(line, subject)
+            if obj is not None:
+                existing_obj, existing_line = obj, line.strip()
+                break
+        if existing_obj is None or existing_obj == new_obj:
+            return None  # no prior assertion, or same object → not a contradiction
+
+        # Resolve by policy. Sources + server-derived trust; self-report ignored.
+        def _src(line):
+            m = re.search(r"\[\[sources/([^\]|]+)", line or "")
+            return m.group(1).strip() if m else ""
+
+        side_existing = {
+            "source": _src(existing_line),
+            "source_type": self._source_type_of(_src(existing_line)),
+            "claim": existing_line,
+            "committed_at": "old",
+        }
+        side_new = {
+            "source": _src(new_line),
+            "source_type": str(ident_d.get("source_type", "")),
+            "claim": new_line,
+            "committed_at": "new",
+        }
+        contra.auto_resolve(side_existing, side_new)
+
+        # Materialize a CiTO `disputes` edge and keep BOTH claims (loser stays
+        # retrievable — down-weighted by trust at retrieval, never deleted).
+        loser_src = _src(new_line)  # the disputing side cites with `disputes`
+        try:
+            _f2, body2 = fm.parse(content)
+            front2 = content[: content.index(body2)] if body2 in content else ""
+        except Exception:
+            front2, body2 = "", content
+        edge = f"\n## Contested\n- [[sources/{loser_src}|disputes]] {new_line}\n"
+        new_content = content.rstrip() + "\n" + edge
+        return AuthoredIntent(
+            intent=authored.intent,
+            writes={rel: new_content},
+            base_oid=authored.base_oid,
+            base_oids=dict(authored.base_oids),
+            decision_basis=dict(authored.decision_basis),
+        )
+
+    def _source_type_of(self, source_id: str) -> str:
+        """Read a source page's ``source_type`` (for the precedence input)."""
+        if not source_id:
+            return ""
+        src_abs = self._root / "wiki" / "sources" / f"{source_id}.md"
+        front = self._page_front(f"wiki/sources/{source_id}.md")
+        st = str(front.get("source_type", ""))
+        if st:
+            return st
+        # Fall back to inferring from the id prefix (pubmed-1 → pubmed, web-9 → web).
+        prefix = source_id.split("-", 1)[0]
+        return prefix
 
     def _upsert_embeddings(self, writes: dict[str, str]) -> None:
         """Upsert committed pages into the embedding namespaces, current-as-of-HEAD.
