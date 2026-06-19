@@ -114,6 +114,8 @@ def test_known_checks_includes_all_documented_checks():
         "tags-invalid-type",
         "open-questions",
         "answered-no-synthesis",
+        "fragmentation",
+        "claim-conservation",
     }
     assert KNOWN_CHECKS == expected
 
