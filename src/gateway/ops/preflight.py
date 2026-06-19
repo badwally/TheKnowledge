@@ -53,6 +53,8 @@ def preflight(
     from gateway.demand_ledger import DemandLedger, _load_gaps
 
     # --- Step 1: FTS retrieval (LLM-free) to estimate coverage ---
+    # retrieve() reads the FTS index keyed off KNOWLEDGE_ROOT; test isolation is via
+    # the KNOWLEDGE_ROOT env (kb_root fixture), so there is no `root` arg to thread.
     _block, sections = retrieve(plan_text.strip(), k=8)
     sections_found = len(sections)
 
@@ -66,19 +68,14 @@ def preflight(
 
     # --- Step 2: Check DemandLedger for overlapping outstanding gaps ---
     # Load raw gaps from .knowledge/demand/gaps.jsonl — no clustering, no embedding.
+    # Resolve the path via the DemandLedger (root-aware) rather than re-importing.
     # Simple word-overlap heuristic (same as A4 carry-forward suppression).
     plan_words = {w for w in plan_text.lower().split() if len(w) > 3}
     matching_gaps: list[str] = []
 
     if plan_words:
-        gaps_path = (
-            (root / ".knowledge" / "demand" / "gaps.jsonl")
-            if root is not None
-            else None
-        )
-        records = _load_gaps(gaps_path) if gaps_path else _load_gaps(
-            __import__("gateway.demand_ledger", fromlist=["_gaps_path"])._gaps_path()
-        )
+        gaps_path = DemandLedger(root=root)._gaps_path()
+        records = _load_gaps(gaps_path)
         seen_texts: set[str] = set()
         for r in records:
             gap_words = {w for w in r.text.lower().split() if len(w) > 3}
