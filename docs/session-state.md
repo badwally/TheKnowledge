@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 4 GATE PASSED on `docs/librarian-phase4`; PR pending — Phase 5 = fresh session)
+Last updated: 2026-06-19 (Librarian PHASE 4 MERGED to main via PR #30; branch deleted — Phase 5 = fresh session)
 
 ---
 
@@ -204,7 +204,7 @@ per-phase rule, **Phase 4 runs in a FRESH session via the Phase-4 contp.**
 
 ---
 
-## ✅ LIBRARIAN PHASE 4 — TIERED AGENT SURFACE (2026-06-19) — GATE PASSED (PR pending)
+## ✅ LIBRARIAN PHASE 4 — TIERED AGENT SURFACE (2026-06-19) — MERGED to main (PR #30, `5517f1f7`)
 
 **Branch:** `docs/librarian-phase4` (cut off `main` @ `d931e568` — the stale contp named the deleted
 `docs/librarian-rag-design`; deviation flagged + corrected). Plan: `docs/plans/2026-06-19-librarian-phase4-build-plan.md`.
@@ -249,10 +249,16 @@ WITHOUT verifying each against its op implementation. **Verify-Before-Act on a s
 when a plan classifies ops into a privilege tier, the PLAN step must check each op's actual side effects, not
 assert from the op name.** The reviewer≠author gate paid for itself a 4th phase running.
 
-**Next atomic step:** open the PR (`docs/librarian-phase4` → `main`), then `/clear`. **Phase 5 = FRESH session**
-via the Phase-5 contp in the master build-plan (Lifecycle & demand governance — retraction cascade G3/G4/G8,
-revert-resolution G1, corpus-rot governance §8, DemandLedger I4, gap-routing §10, planner/executor pre-flight).
-The full-lint aggregate RC is confirming in a background run (per-scope evidence is already conclusive).
+**MERGED 2026-06-19.** PR #30 (`feat(librarian): multi-agent RAG — Phase 4`) merged to `origin/main` via
+merge commit `5517f1f7` (merge-commit strategy — per-task SHAs preserved). Remote + local branch
+`docs/librarian-phase4` deleted. Local main fast-forwarded to `5517f1f7`; working tree clean. The stray full
+`wiki lint` runs were killed (the watcher daemon `wiki watch` PID 1157 left running — it's supposed to be).
+
+**Next atomic step:** `/clear`, then **Phase 5 = FRESH session** via the Phase-5 contp in the master build-plan
+(Lifecycle & demand governance — retraction cascade G3/G4/G8, revert-resolution G1, corpus-rot governance §8,
+DemandLedger I4, gap-routing §10, planner/executor pre-flight). Cut `docs/librarian-phase5` off the post-#30
+main. This session-state update is the only unpushed local-main commit and rides into Phase 5's PR (Phase-3
+precedent).
 
 ---
 
