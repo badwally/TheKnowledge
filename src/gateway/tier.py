@@ -16,11 +16,15 @@ from gateway import mcp_server as _mcp
 
 # Provably side-effect-free AND token-free ops (hyphenated CLI form). Each was
 # verified to perform no corpus/derived write and make no Claude/judge/NLM call.
+# A read-tier op may still append to log.md (the operational event stream that
+# nearly every op emits) — that is not a corpus/derived-state mutation and is not
+# disqualifying. The bar is: no write to wiki/, raw/, the FTS/embedding index, or
+# any other .knowledge/ derived artifact, and no model call.
 #
-# Excluded (build tier):
+# Excluded (build tier) — the disqualifying side effect, not the shared log append:
 #   "agents"  — runs batch agents that write to raw/ and wiki/; spends model tokens
-#   "lint"    — writes a timestamped report to .knowledge/lint/ and appends to log.md
-#   "status"  — conditionally writes a finetune-milestones file and appends to log.md
+#   "lint"    — writes a timestamped report file under .knowledge/lint/
+#   "status"  — conditionally writes a finetune-milestones file under .knowledge/
 READ_OPS: frozenset[str] = frozenset(
     {
         "retrieve",      # FTS/BM25 retrieval ladder — LLM-free
