@@ -276,3 +276,24 @@ def test_filter_eval_is_cli_only():
     # writes scratch artifacts) — deliberately NOT on the agent MCP surface.
     from gateway import mcp_server
     assert "filter-eval" in mcp_server.CLI_ONLY
+
+
+# --- Review fixes (independent review, GO-WITH-FIXES) ----------------------
+
+
+def test_build_pool_raises_when_filter_systematically_fails():
+    # Inert-in-production guard: if every filter call fails (e.g. auth down),
+    # build_pool must raise loudly, NOT return an all-0.0 pool that looks like
+    # "the filter rejected everything".
+    def fake_search(queries, *, max_results):
+        return [_yt_candidate(f"F{i}", f"Talk {i}", "Ch", "desc about graphs") for i in range(4)]
+
+    class _AlwaysFailClient:
+        def call(self, prompt):  # empty response -> FilterError in parse_response
+            return ""
+
+    with pytest.raises(filter_eval.FilterEvalError):
+        filter_eval.build_pool(
+            "semantic-models", {"s": ["q"]},
+            search_fn=fake_search, filter_client=_AlwaysFailClient(),
+        )

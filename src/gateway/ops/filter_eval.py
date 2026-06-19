@@ -28,7 +28,7 @@ from gateway.filter import (
     select,
 )
 from gateway.filter.policy import Policy
-from gateway.filter.semantic import FilterClient, FilterError
+from gateway.filter.semantic import FilterClient, FilterError, build_system_prompt
 from gateway.research.adapters import enabled_adapters
 from gateway.research.adapters.base import CandidateItem
 from gateway.research.orchestrator import _fan_out_search
@@ -157,6 +157,10 @@ def build_pool(
     policy = load_policy(domain)
     examples = select(load_all(domain), policy)
     search = search_fn or default_youtube_search
+    # TOK-3: build the system prompt once for the batch (policy+examples are
+    # identical across candidates) so scores match the live _run_filter path
+    # without rebuilding the prompt per candidate.
+    prebuilt_system = build_system_prompt(policy, examples)
 
     seen: set[str] = set()
     tagged: list[tuple[str, CandidateItem]] = []  # (subtopic, item)
@@ -169,17 +173,28 @@ def build_pool(
             tagged.append((subtopic, item))
 
     scored: list[dict] = []
+    n_errors = 0
     for subtopic, item in tagged:
         front = _front(item, domain)
         body_head = item.description or item.title
         try:
-            result = filter_score(front, body_head, policy, examples, client=filter_client)
+            result = filter_score(front, body_head, policy, examples,
+                                  client=filter_client, _prebuilt_system=prebuilt_system)
         except FilterError:
-            # Score failures are recorded as reject-tier with score 0 so the
-            # candidate stays visible in the pool rather than vanishing.
+            # Record the failure as reject/0.0 so the candidate stays visible,
+            # but count it: a systemic failure (auth down, CLI missing) must
+            # NOT masquerade as an all-reject pool (inert-in-production guard).
+            n_errors += 1
             scored.append(_pool_row(item, subtopic, 0.0, "reject"))
             continue
         scored.append(_pool_row(item, subtopic, result.score, _tier(result.score, policy)))
+
+    if tagged and n_errors / len(tagged) > 0.5:
+        raise FilterEvalError(
+            f"filter scoring failed for {n_errors}/{len(tagged)} candidates "
+            "(check ANTHROPIC_API_KEY / claude CLI availability); "
+            "refusing to write an all-reject pool that looks like real rejections"
+        )
     return scored
 
 
@@ -250,8 +265,8 @@ def pool_op(
         success=True,
         paths_touched=[blind, scored_json],
         summary=(f"pool: {len(scored)} candidates across {n_subtopics} subtopics "
-                 f"({n_accept} accept-tier). Label {blind.name}, then "
-                 f"`wiki filter-eval score {domain} --scored {scored_json.name} --labels <labels.yaml>`"),
+                 f"({n_accept} accept-tier). Label {blind}, then "
+                 f"`wiki filter-eval score {domain} --scored {scored_json} --labels <labels.yaml>`"),
     )
 
 
