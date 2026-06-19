@@ -59,6 +59,14 @@ class CascadeResult:
 
 
 @dataclass(frozen=True)
+class CascadeDetail:
+    """Per-page detail from a cascade walk (used by the lint check)."""
+    rel: str                # rel_path of the flagged page
+    depth: int              # BFS depth (1 = direct source citation)
+    retracted_source: str   # the retracted source id that triggered this path
+
+
+@dataclass(frozen=True)
 class ReverseMergePlan:
     """Plan to undo a dedup merge: what to strip from canonical + what to delete."""
     canonical_rel: str          # the merge target page (to remove contributions from)
@@ -99,23 +107,121 @@ def _load_wiki_pages() -> list[tuple[str, Path, dict, str]]:
     return result
 
 
+def _run_cascade_bfs(
+    retracted_source_ids: set[str],
+    pages: list[tuple[str, Path, dict, str]],
+) -> tuple[CascadeResult, list[CascadeDetail]]:
+    """Core BFS over the synthesizes: + [[sources/]] citation graph.
+
+    Returns (CascadeResult, list[CascadeDetail]) — the latter carries per-page
+    depth and the triggering retracted_source_id. Used by both cascade() and
+    cascade_detail().
+
+    Algorithm:
+    1. Seed: any wiki page whose body directly cites [[sources/<id>]] where id ∈
+       retracted_source_ids (direct dependents, depth=1).
+    2. Expand: for each flagged page P, find pages Q where Q's synthesizes: list
+       references P (slug, "type/slug", or "type/slug" without wiki/ prefix).
+    3. Cycle detection: when a BFS neighbor is already visited, set
+       terminated_on_cycle=True and skip re-enqueueing.
+    4. Fixpoint: stop when the queue is empty.
+    5. Return sorted by rel_path for determinism.
+    """
+    if not pages:
+        return CascadeResult(flagged=[], terminated_on_cycle=False, depth=0), []
+
+    # Build reverse index: synthesizes-target-string → list of dependents' rels
+    # (Q synthesizes P → Q is a dependent of P; "P" appears as synthesizes_reverse key)
+    synthesizes_reverse: dict[str, list[str]] = {}
+    for rel, path, front, body in pages:
+        for target in front.get("synthesizes", []) or []:
+            target_str = str(target)
+            synthesizes_reverse.setdefault(target_str, []).append(rel)
+
+    rel_by_path: dict[str, tuple[Path, dict, str]] = {r: (p, f, b) for r, p, f, b in pages}
+
+    def _dependents_of(rel: str, path: Path, front: dict) -> list[str]:
+        """Return rels of all pages whose synthesizes: references this page."""
+        slug = front.get("slug") or path.stem
+        page_type = front.get("type", "")
+        # A synthesizes: entry can be:
+        #   - "synthesis/slug" (most common)
+        #   - "slug" (bare)
+        #   - "type/slug" (e.g. "entities/ozempic")
+        #   - rel without wiki/ prefix: "synthesis/slug.md" stripped of .md
+        candidates: list[str] = [slug]
+        if page_type:
+            candidates.append(f"{page_type}/{slug}")
+        rel_no_wiki = rel[len("wiki/"):] if rel.startswith("wiki/") else rel
+        rel_no_ext = rel_no_wiki[:-len(".md")] if rel_no_wiki.endswith(".md") else rel_no_wiki
+        candidates.append(rel_no_ext)
+
+        deps: list[str] = []
+        seen_deps: set[str] = set()
+        for c in candidates:
+            for dep_rel in synthesizes_reverse.get(c, []):
+                if dep_rel not in seen_deps:
+                    seen_deps.add(dep_rel)
+                    deps.append(dep_rel)
+        return deps
+
+    from collections import deque
+    visited: set[str] = set()
+    queue: deque[tuple[str, int, str]] = deque()  # (rel, depth, triggering_source_id)
+    details: list[CascadeDetail] = []
+    terminated_on_cycle = False
+    max_depth = 0
+
+    # Seed: pages that directly cite any retracted source (sorted for determinism)
+    for rel, path, front, body in sorted(pages, key=lambda t: t[0]):
+        triggering: str | None = None
+        for link in find_wikilinks(body):
+            sid = _source_id_from_rel(link.target)
+            if sid and sid in retracted_source_ids:
+                triggering = sid
+                break
+        if triggering and rel not in visited:
+            visited.add(rel)
+            details.append(CascadeDetail(rel=rel, depth=1, retracted_source=triggering))
+            queue.append((rel, 1, triggering))
+
+    # BFS expansion
+    while queue:
+        rel, depth, src_id = queue.popleft()
+        max_depth = max(max_depth, depth)
+
+        if rel not in rel_by_path:
+            continue
+
+        path, front, body = rel_by_path[rel]
+        for dep_rel in _dependents_of(rel, path, front):
+            if dep_rel in visited:
+                terminated_on_cycle = True
+            else:
+                visited.add(dep_rel)
+                details.append(CascadeDetail(rel=dep_rel, depth=depth + 1, retracted_source=src_id))
+                queue.append((dep_rel, depth + 1, src_id))
+
+    details_sorted = sorted(details, key=lambda d: d.rel)
+    flagged_sorted = [d.rel for d in details_sorted]
+
+    result = CascadeResult(
+        flagged=flagged_sorted,
+        terminated_on_cycle=terminated_on_cycle,
+        depth=max_depth,
+    )
+    return result, details_sorted
+
+
 def cascade(
     retracted_source_ids: set[str],
     *,
     root: Path | None = None,
 ) -> CascadeResult:
     """Walk the synthesizes: + [[sources/]] citation graph and return all
-    transitively-flagged wiki pages.
+    transitively-flagged wiki pages, cycle-terminating.
 
-    Algorithm:
-    1. Seed: any wiki page whose body directly cites [[sources/<id>]] where id ∈
-       retracted_source_ids (direct dependents, depth=1).
-    2. Expand: for each flagged page P, find pages Q where Q's synthesizes: list
-       contains P's slug or the path variant. Unflagged neighbors → queue (depth+1).
-    3. Cycle detection: track an in-progress set (grey nodes). A back-edge to a
-       grey node sets terminated_on_cycle=True and does NOT re-enqueue it.
-    4. Fixpoint: stop when the queue is empty.
-    5. Return flagged in deterministic discovery order (BFS level-sorted).
+    Returns CascadeResult with flagged rel_paths in deterministic (sorted) order.
     """
     if root is not None:
         import os
@@ -125,102 +231,30 @@ def cascade(
         return CascadeResult(flagged=[], terminated_on_cycle=False, depth=0)
 
     pages = _load_wiki_pages()
+    result, _ = _run_cascade_bfs(retracted_source_ids, pages)
+    return result
 
-    # Index: slug → (rel_str, front, body)
-    slug_index: dict[str, tuple[str, dict, str]] = {}
-    for rel, path, front, body in pages:
-        slug = front.get("slug") or path.stem
-        slug_index[slug] = (rel, front, body)
 
-    # Build reverse index: page_rel → list of page_rels that synthesize it
-    # (Q synthesizes P → Q is a dependent of P)
-    synthesizes_reverse: dict[str, list[str]] = {}
-    for rel, path, front, body in pages:
-        for target in front.get("synthesizes", []) or []:
-            target_str = str(target)
-            # Normalize: "synthesis/a" → slug "a"
-            # Could be "sources/...", "synthesis/...", plain slug, or rel_path
-            key = target_str
-            synthesizes_reverse.setdefault(key, []).append(rel)
+def cascade_detail(
+    retracted_source_ids: set[str],
+    *,
+    root: Path | None = None,
+) -> list[CascadeDetail]:
+    """Like cascade() but returns per-page CascadeDetail (rel, depth, retracted_source).
 
-    # Helper: get all reverse-synthesizes dependents of a given flagged rel/slug
-    def _dependents_of(rel: str, path: Path, front: dict) -> list[str]:
-        slug = front.get("slug") or path.stem
-        page_type = front.get("type", "")
-        # The synthesizes: field can use various forms. We check all plausible keys:
-        # - "synthesis/slug" (most common for synthesis pages)
-        # - "slug" (bare)
-        # - the rel_path "wiki/synthesis/slug.md"
-        candidates: list[str] = [slug]
-        if page_type:
-            candidates.append(f"{page_type}/{slug}")
-        # Also the rel without the wiki/ prefix for cross-type refs:
-        rel_no_wiki = rel[len("wiki/"):] if rel.startswith("wiki/") else rel
-        rel_no_ext = rel_no_wiki[:-len(".md")] if rel_no_wiki.endswith(".md") else rel_no_wiki
-        candidates.append(rel_no_ext)
+    Used by the retracted-citations lint check to produce per-page findings
+    with depth metadata.
+    """
+    if root is not None:
+        import os
+        os.environ["KNOWLEDGE_ROOT"] = str(root)
 
-        deps: list[str] = []
-        for c in candidates:
-            deps.extend(synthesizes_reverse.get(c, []))
-        return deps
+    if not retracted_source_ids:
+        return []
 
-    # BFS
-    visited: set[str] = set()      # already enqueued/processed
-    flagged_ordered: list[str] = []
-    terminated_on_cycle = False
-    max_depth = 0
-
-    # Seed: pages that directly cite any retracted source
-    from collections import deque
-    queue: deque[tuple[str, int]] = deque()  # (rel, depth)
-    rel_by_path: dict[str, tuple[Path, dict, str]] = {r: (p, f, b) for r, p, f, b in pages}
-
-    for rel, path, front, body in pages:
-        for link in find_wikilinks(body):
-            sid = _source_id_from_rel(link.target)
-            if sid and sid in retracted_source_ids:
-                if rel not in visited:
-                    visited.add(rel)
-                    flagged_ordered.append(rel)
-                    queue.append((rel, 1))
-                break
-
-    # BFS expansion — build a forward-edge set to detect cycles
-    # A cycle exists when a page P's dependent D is already in visited
-    # (it was already flagged/enqueued earlier in the BFS, meaning there
-    # is a path from a seed to D, and D also synthesizes P which synthesizes
-    # something that led to P — closing a loop).
-    while queue:
-        rel, depth = queue.popleft()
-        max_depth = max(max_depth, depth)
-
-        if rel not in rel_by_path:
-            continue
-
-        path, front, body = rel_by_path[rel]
-        for dep_rel in _dependents_of(rel, path, front):
-            if dep_rel in visited:
-                # dep_rel was already seen — it has a path to the flagged set
-                # AND is being synthesized by rel, which is already in the
-                # flagged set. This is a cycle in the synthesizes: graph.
-                terminated_on_cycle = True
-            else:
-                visited.add(dep_rel)
-                flagged_ordered.append(dep_rel)
-                queue.append((dep_rel, depth + 1))
-
-    # Sort within BFS tiers for deterministic order: sort the full list by rel_path
-    # while preserving the guarantee that all depth-1 come before depth-2, etc.
-    # Since BFS order is already level-sequential, a final sort by rel_path
-    # within each BFS level gives determinism. For simplicity (and to match the
-    # spec's "deterministic discovery order"), we sort the complete flagged list.
-    flagged_sorted = sorted(flagged_ordered)
-
-    return CascadeResult(
-        flagged=flagged_sorted,
-        terminated_on_cycle=terminated_on_cycle,
-        depth=max_depth,
-    )
+    pages = _load_wiki_pages()
+    _, details = _run_cascade_bfs(retracted_source_ids, pages)
+    return details
 
 
 # ---------------------------------------------------------------------------

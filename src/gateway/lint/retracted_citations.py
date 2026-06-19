@@ -16,7 +16,7 @@ from pathlib import Path
 
 from gateway import frontmatter as fm, paths
 from gateway.citations import find_wikilinks
-from gateway.lint import LintFinding, SEVERITY_ERROR
+from gateway.lint import LintFinding, SEVERITY_ERROR, SEVERITY_WARNING
 
 
 def _collect_retracted_ids() -> frozenset[str]:
@@ -48,6 +48,10 @@ def run() -> list[LintFinding]:
         return []
 
     findings: list[LintFinding] = []
+    # Track which pages were already flagged as direct-cite (depth=1) to avoid
+    # emitting a duplicate cascade finding for the same page.
+    direct_flagged: set[str] = set()
+
     for p in sorted(wiki.rglob("*.md")):
         try:
             _, body = fm.parse(p.read_text())
@@ -64,6 +68,7 @@ def run() -> list[LintFinding]:
             continue
 
         rel = str(p.relative_to(paths.knowledge_root()))
+        direct_flagged.add(rel)
         for target in sorted(set(cited_retracted)):
             source_id = target[len("sources/"):]
             findings.append(
@@ -76,8 +81,34 @@ def run() -> list[LintFinding]:
                         "or replace the citation (QUAL-7)"
                     ),
                     path=rel,
-                    metadata={"retracted_source": source_id},
+                    metadata={"retracted_source": source_id, "depth": 1},
                 )
             )
+
+    # Cascade: surface transitive synthesizes: dependents (G4, Phase 5 T1).
+    # Import here to avoid circular imports at module load time.
+    from gateway.retraction import cascade_detail
+    details = cascade_detail(set(retracted_ids))
+    for detail in details:
+        # Skip pages already flagged as direct cites (depth=1) — they already
+        # carry a more specific SEVERITY_ERROR finding above.
+        if detail.rel in direct_flagged:
+            continue
+        findings.append(
+            LintFinding(
+                check="retracted-citations",
+                severity=SEVERITY_WARNING,
+                message=(
+                    f"page is a transitive dependent of retracted source "
+                    f"`{detail.retracted_source}` via synthesizes: graph "
+                    f"(depth={detail.depth}) — review for downstream impact (QUAL-7)"
+                ),
+                path=detail.rel,
+                metadata={
+                    "retracted_source": detail.retracted_source,
+                    "depth": detail.depth,
+                },
+            )
+        )
 
     return findings

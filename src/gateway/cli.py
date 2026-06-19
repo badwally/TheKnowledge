@@ -113,6 +113,7 @@ SUBCOMMANDS: dict[str, str] = {
     "list-concepts": "List concept/entity/synthesis pages, optionally filtered to one domain",
     "moc-add": "Author a wiki/mocs/<slug>.md domain map-of-content page",
     "intent-status": "Query a deposited intent_id for its terminal disposition (A1, read-tier)",
+    "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -186,6 +187,7 @@ IMPLEMENTED: set[str] = {
     "list-concepts",
     "moc-add",
     "intent-status",
+    "revert-resolution",
 }
 
 
@@ -441,6 +443,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_intent_status.add_argument("intent_id", help="The deposited intent_id to query.")
     p_intent_status.add_argument("--json", action="store_true",
                                  help="Output structured JSON.")
+
+    # revert-resolution: enqueue a contradiction-resolution reversal (G1, build-tier)
+    p_revert_resolution = subparsers.add_parser(
+        "revert-resolution",
+        help=SUBCOMMANDS["revert-resolution"],
+    )
+    p_revert_resolution.add_argument(
+        "act_id",
+        help="The resolution act id to revert (from resolution_acts.jsonl).",
+    )
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -1595,6 +1607,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_list_concepts(ns)
     if ns.subcommand == "moc-add":
         return _run_moc_add(ns)
+    if ns.subcommand == "revert-resolution":
+        return _run_revert_resolution(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2864,6 +2878,13 @@ def _run_list_concepts(ns: argparse.Namespace) -> int:
     from gateway.ops.list_concepts import list_concepts
     fmt = "json" if ns.json_out else "text"
     return _emit_result(list_concepts(domain=ns.domain, kind=ns.kind, fmt=fmt))
+
+
+def _run_revert_resolution(ns: argparse.Namespace) -> int:
+    from gateway.ops.revert_resolution import revert_resolution
+
+    result = revert_resolution(ns.act_id, {"agent": "cli"})
+    return _emit_result(result)
 
 
 if __name__ == "__main__":

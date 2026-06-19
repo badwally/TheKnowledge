@@ -187,6 +187,21 @@ def wiki_deposit(
 
 
 @mcp.tool()
+def wiki_revert_resolution(act_id: str) -> dict[str, Any]:
+    """Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier).
+
+    Durably enqueues a revert-resolution intent before returning. The CommitGate
+    applies the reversal (removes the ## Contested / disputes edge, restores claim
+    status) and records a provenance node linking reverts_act. Returns an async
+    receipt (disposition="queued" + intent_id + retry_after).
+    Poll wiki_intent_status for the terminal disposition.
+    """
+    from gateway.ops.revert_resolution import revert_resolution
+
+    return _serialize(revert_resolution(act_id, {"agent": "mcp"}))
+
+
+@mcp.tool()
 def wiki_filter(input: str, domain: str | None = None) -> dict[str, Any]:
     """Score a candidate source against a domain's policy without writing.
 
