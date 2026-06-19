@@ -1,6 +1,34 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 4 GATE PASSED on `docs/librarian-phase4`; PR pending — Phase 5 = fresh session)
+Last updated: 2026-06-19 (Librarian PHASE 5 COMPLETE — gate passed; PR #31 open, awaiting merge + policy-edit trust-model ratification. Branch `docs/librarian-phase5` @ `c2cce9d2`)
+
+---
+
+## 🔨 LIBRARIAN PHASE 5 — LIFECYCLE & DEMAND GOVERNANCE (IN PROGRESS, 2026-06-19)
+
+**Branch:** `docs/librarian-phase5` (cut off post-#30 `main` @ `a4450eee` base; HEAD includes the unpushed `dbf4888b` session-state commit that rides into Phase 5's PR per Phase-3 precedent). Plan: `docs/plans/2026-06-19-librarian-phase5-build-plan.md`. Ledger: `docs/plans/2026-06-18-librarian-multi-agent-rag-checkpoints.md` §4 Phase 5. SDD progress ledger: `.git/sdd/progress.md` (per-task SHAs + Minors).
+
+**Execution mode:** subagent-driven-development — fresh implementer per task (sonnet) + independent task review (opus on destructive/subtle tasks) + fix loop, coordinator window kept lean. Per-task briefs/reports/diffs handed off as files under `.git/sdd/`.
+
+### Open contracts
+- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) ✅ `11dfd554..1419c7ae`; T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) — build+per-task-review clean `2f708f7f..a9889614` (6 fix rounds: security HIGHs, 2 inertness Criticals, version-bump, malformed-dedup fail-open).
+- **ALL 6 TASKS build+per-task-review clean.** PHASE GATE: full suite 2354 pass; eval fts recall@10 0.926 (==baseline); scoped lints at baseline (orphans 758/schema-drift 191/broken-wikilinks 1).
+- **Whole-branch + security review found 3 merge-blockers — ALL FIXED, closure re-reviews running:** C1 policy wrote a git-TRACKED file (`.knowledge/policies/`, 753 files; test fixture's blanket `.knowledge/` gitignore masked it) w/ no commit → now commits through gate w/ Intent-Id trailer (`9acd9247`); SEC-Critical spoofable policy-edit identity → CLI-ONLY + server-sourced `GATEWAY_POLICY_PRINCIPAL` fail-closed (`6d4eef12`); SEC-High reversal-delete no containment → `_rel_escapes_root` (`9acd9247`).
+- **Triggered backlog files** (`3d4c393f`): G7 migration delta, I1 no cluster() driver, I2 no reverse-merge producer, demand-ledger DoS.
+
+### Files mid-edit
+- None build-wise. Two closure re-reviews in flight: whole-branch `a3ca65a1dfb8430f4` (confirm C1) + security `ae26441f21455fba8` (confirm SEC-Critical/High). HEAD `3d4c393f`. (NOTE: subagents twice wrote/overwrote this session-state — a first T6 run committed a premature "T6 complete" at `7d965221`; corrected. Lesson for memory: subagents shouldn't own session-state.)
+
+### Decisions made this session (T6-specific)
+- Reused `.knowledge/eval/dedup/golden.yaml` as merge_map source (no separate file — duplication adds zero signal).
+- **C1 correction:** `.knowledge/policies/` is git-TRACKED (NOT gitignored — only locks/lint/watcher/scheduler/auth/secrets/demand/transcripts are). `_apply_policy_edit` commits the policy write through the gate's atomic boundary (`_commit_reversal_writes`: git add + Intent-Id-trailer commit + provenance), not a bare write_text. Whole-branch review confirmed C1 closed + no pipeline interference.
+- **Policy-edit trust model (user delegated to me; FLAG FOR PR/user ratification):** CLI-ONLY (removed from all MCP surfaces, CLI_ONLY like demote-domain); privilege from server-sourced `GATEWAY_POLICY_PRINCIPAL` (env/.knowledge/secrets.env), unset→fail-closed; resolved principal stamped for audit. Rationale: a full-Bash build-tier agent can shell out anyway, so an in-request allowlist was never a hard boundary; G7's real job = keep op off agent tool surfaces + change-control gate + unspoofable audit.
+- **Cosmetic cleanups pending** (whole-branch review, non-blocking): stale docstring `commit_gate.py:1080-1082` ("gitignored/no git add" — now false); policy-edit commit subject reads `revert(...)` (reuses `_commit_reversal_writes`).
+- **Gate (post-fix, `eadda916`):** the policy-edit gate DERIVES dedup params (blocking_band/identity_threshold/strategy) from the PROPOSED policy_data and runs a parameterized `merge_map_eval`; dead-letters on ANY golden regression for all strategies (was an inert hardcoded `"geometry-only"` string-match before the fix). FAILS CLOSED on any gate-eval exception (`f86c6365`); domain slug-validated + path-containment-checked at both layers.
+- `policy_provenance` lint reads `decision_basis` (the real provenance key, fixed `757c08b5`); detects absence of a policy-edit provenance node; content-hash match is a backlog hardening item.
+
+### Next atomic step
+DONE — Phase 5 shipped. PR #31 (https://github.com/badwally/TheKnowledge/pull/31) open, base `main`, carries `dbf4888b` session-state + all Phase-5 work. HEAD `c2cce9d2`; both final gates passed (whole-branch READY, security SHIP IT); ledger §4/§5 green. Awaiting: (1) user merge of PR #31; (2) user RATIFICATION of the policy-edit trust model (CLI-only + server-sourced `GATEWAY_POLICY_PRINCIPAL`, fail-closed). On merge: delete branch, fast-forward local main. NO Phase 6 — the 5-phase Librarian build is complete. 4 triggered-backlog follow-ups under `docs/backlog/` (policy-edit migration, demand-cluster driver, reverse-merge producer, demand-ledger DoS bound).
 
 ---
 
@@ -204,7 +232,7 @@ per-phase rule, **Phase 4 runs in a FRESH session via the Phase-4 contp.**
 
 ---
 
-## ✅ LIBRARIAN PHASE 4 — TIERED AGENT SURFACE (2026-06-19) — GATE PASSED (PR pending)
+## ✅ LIBRARIAN PHASE 4 — TIERED AGENT SURFACE (2026-06-19) — MERGED to main (PR #30, `5517f1f7`)
 
 **Branch:** `docs/librarian-phase4` (cut off `main` @ `d931e568` — the stale contp named the deleted
 `docs/librarian-rag-design`; deviation flagged + corrected). Plan: `docs/plans/2026-06-19-librarian-phase4-build-plan.md`.
@@ -249,10 +277,16 @@ WITHOUT verifying each against its op implementation. **Verify-Before-Act on a s
 when a plan classifies ops into a privilege tier, the PLAN step must check each op's actual side effects, not
 assert from the op name.** The reviewer≠author gate paid for itself a 4th phase running.
 
-**Next atomic step:** open the PR (`docs/librarian-phase4` → `main`), then `/clear`. **Phase 5 = FRESH session**
-via the Phase-5 contp in the master build-plan (Lifecycle & demand governance — retraction cascade G3/G4/G8,
-revert-resolution G1, corpus-rot governance §8, DemandLedger I4, gap-routing §10, planner/executor pre-flight).
-The full-lint aggregate RC is confirming in a background run (per-scope evidence is already conclusive).
+**MERGED 2026-06-19.** PR #30 (`feat(librarian): multi-agent RAG — Phase 4`) merged to `origin/main` via
+merge commit `5517f1f7` (merge-commit strategy — per-task SHAs preserved). Remote + local branch
+`docs/librarian-phase4` deleted. Local main fast-forwarded to `5517f1f7`; working tree clean. The stray full
+`wiki lint` runs were killed (the watcher daemon `wiki watch` PID 1157 left running — it's supposed to be).
+
+**Next atomic step:** `/clear`, then **Phase 5 = FRESH session** via the Phase-5 contp in the master build-plan
+(Lifecycle & demand governance — retraction cascade G3/G4/G8, revert-resolution G1, corpus-rot governance §8,
+DemandLedger I4, gap-routing §10, planner/executor pre-flight). Cut `docs/librarian-phase5` off the post-#30
+main. This session-state update is the only unpushed local-main commit and rides into Phase 5's PR (Phase-3
+precedent).
 
 ---
 

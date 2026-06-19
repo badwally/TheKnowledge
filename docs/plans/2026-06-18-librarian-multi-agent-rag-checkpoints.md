@@ -189,12 +189,17 @@ evidence before the next phase begins.
 
 *Gate: full suite 2182 passed (2163 baseline + 19); `eval-retrieval --compare` fts recall@10 0.926 (== baseline, no retrieval code touched); per-scope lint at pre-existing baseline (orphans 758 / schema-drift 191 / broken-wikilinks 1 / link-rot 733 — none Phase-4); independent whole-branch review (opus) GO; independent security review (opus) ship-it (F1 doc overstatement fixed; F2 deposit per-producer fairness + F3 file_lock path-traversal → backlog with triggers).*
 
-### Phase 5 — Lifecycle & demand governance
-- [ ] Retraction flags/quarantines transitive `synthesizes:` dependents to a fixpoint, terminating on cycles (G4). *Evidence:* source→A→B chain test.
-- [ ] Retracting a winning source re-opens its resolution acts (G3); `revert-resolution` is provenanced + reversible (G1); reversed merge restores from the reattachment set (G8). *Evidence:* G3/G1/G8 tests.
-- [ ] Lost-update claim-conservation accounts for every committed intent's payload claims (F1). *Evidence:* reconciliation pass.
-- [ ] Demand clusters meet the purity gate; cold-start and re-embedding-survival hold (I4). *Evidence:* purity + I4 tests.
-- [ ] Remediation de-paths nothing reachable from the provenance graph (G6); de-path is a provenanced, reversible intent. *Evidence:* citation-target survival test.
+### Phase 5 — Lifecycle & demand governance — GATE PASSED 2026-06-19
+- [x] Retraction flags/quarantines transitive `synthesizes:` dependents to a fixpoint, terminating on cycles (G4). *Evidence:* `test_retraction_cascade.py` source→A→B chain + cycle-termination + unrelated-page negative control.
+- [x] Retracting a winning source re-opens its resolution acts (G3); `revert-resolution` is provenanced + reversible (G1); reversed merge restores from the reattachment set (G8). *Evidence:* `test_revert_resolution.py` + `test_reversal_apply.py` — reversals APPLY end-to-end through the real gate (remove `## Contested`/restore claims; reverse-merge restores B-only aliases/sections/claims + deletes tombstone). Review caught + fixed a reverse-merge alias over-restore (Critical) + a latent unrecorded-reattachment gap.
+- [x] Lost-update claim-conservation accounts for every committed intent's payload claims (F1). *Evidence:* `test_claim_conservation.py` reconciliation over committed/merged intent records (merge-aware via `merged_into`) + dropped-claim negative control.
+- [x] Demand clusters meet the purity gate; cold-start and re-embedding-survival hold (I4). *Evidence:* `test_demand_ledger.py` purity (paraphrase→1, distinct→2) + cold-start (one-off contributes 0 mass; param flips a borderline trigger) + I4 (real different-dimension encoder; clustering survives the bump). Review caught + fixed dead cold-start + a tautological I4 test (Criticals).
+- [x] Remediation de-paths nothing reachable from the provenance graph (G6); de-path is a provenanced, reversible intent. *Evidence:* `test_remediation.py` — de-path runs through the real gate (git rm + provenance + restore-applicable); reachability recurses nested `merge_reattachment` paths; negative controls (active merge tombstone, zero-inbound citation target) → `skipped_reachable`. Review caught + fixed an inert de-path op + nested-reachability data loss (Criticals).
+- [x] Reversal/anomaly detectors trip on the §1.5 signals, quiet on healthy traffic (G2). *Evidence:* `test_reversal_detectors.py` — three detectors fire on real data (cascade-depth computed live from `retraction.cascade` over retracted-source graph; cross-project from real `domains:` frontmatter; reversal-rate from `reverts_act`) + negative controls. Review caught + fixed an inert cascade-depth sidecar + wrong-signal cross-project (Criticals).
+- [x] Policy edits route through a privileged CommitGate intent (server-sourced `GATEWAY_POLICY_PRINCIPAL`, fail-closed; CLI-only, off all MCP surfaces); merge-map-regressing edit dead-lettered without writing (G7). *Evidence:* `test_policy_change_control.py` — gate derives dedup params from the PROPOSED policy + dead-letters on any golden regression; commits the tracked policy through the gate w/ Intent-Id trailer. Security review caught + fixed fail-open gate + path-traversal + spoofable identity (2 HIGH + 1 Critical). Existing-op migration = triggered backlog.
+- [x] Merge-map golden re-eval guards dedup precision; geometry-only adjudication shows regressions (I3). *Evidence:* `test_merge_map_golden.py` real `adjudicate` over the curated golden + falsifiability control (geometry-only regresses).
+
+*Gate: full suite 2354+ passed; `eval-retrieval --compare` fts recall@10 0.926 (== baseline, ≥0.90 floor); scoped lints at baseline (orphans 758 / schema-drift 191 / broken-wikilinks 1); 6 independent per-task reviews + whole-branch review (GO/READY) + security review (SHIP IT). The reviewer≠author gate caught a silent-corruption or inert-in-production defect in EVERY task (T1 alias over-restore, T2 inert de-path, T3 bool-as-int, T4 dead cold-start + tautological I4, T5 inert cascade-depth, T6 inert gate + 2 HIGH security) — all fixed TDD.*
 
 ---
 
@@ -249,13 +254,14 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 | Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | green (review-hardened 2026-06-18) |
 | Read/build tier split — two MCP entrypoints + op-to-tier table (§7) | 4 | green (2026-06-19) |
 | Deposit consumer contract — wait/backpressure (§3, §12) | 4 | green (2026-06-19) |
-| Corpus-rot governance — remediation + fragmentation lint (§8) | 5 | not-started |
-| Lifecycle & retraction cascade — Option A (§9) | 5 | not-started |
-| Gap-routing & keep-worthiness (§10) | 5 | not-started |
-| DemandLedger — clustering + trigger (§11) | 5 | not-started |
-| Planner/executor pre-flight (§12) | 5 | not-started |
-| Policy keys + change-control (§14) | cross-cutting | not-started |
-| Verification harness — merge-map golden, eval axes, taxonomy detectors (§16) | cross-cutting | not-started |
+| Corpus-rot governance — remediation + fragmentation lint (§8) | 5 | green (2026-06-19; T2 review-hardened — de-path runs through gate, nested reachability) |
+| Lifecycle & retraction cascade — Option A (§9) | 5 | green (2026-06-19; T1 review-hardened — reversals apply end-to-end, B-only alias restore) |
+| Gap-routing & keep-worthiness (§10) | 5 | green (2026-06-19; T3) |
+| DemandLedger — clustering + trigger (§11) | 5 | green (2026-06-19; T4 review-hardened — live cold-start + real-encoder I4; cluster()-driver = backlog) |
+| Planner/executor pre-flight (§12) | 5 | green (2026-06-19; T4 read-tier preflight) |
+| Reversal / anomaly detectors — §1.5 signals (G2) | 5 | green (2026-06-19; T5 review-hardened — detectors live on real data) |
+| Policy keys + change-control — privileged-intent path (§14, G7) | 5 (mechanism); migration = backlog | green (2026-06-19; T6 review+security-hardened — CLI-only, server-sourced principal, fail-closed) |
+| Verification harness — merge-map golden gate (I3), eval axes, taxonomy detectors (§16) | 5 (merge-map gate); rest cross-cutting | green (2026-06-19; T6 merge-map gate live) |
 
 ---
 

@@ -94,6 +94,12 @@ CLI_ONLY: frozenset[str] = frozenset(
         # wiki_question_new + wiki_question_list MCP tools are registered as
         # auxiliaries (TOOL-16). The umbrella name has no 1:1 MCP counterpart.
         "question",
+        # `policy-edit` (G7, SEC-Critical) is a rare, high-impact, human-judgment
+        # op that rewrites corpus-wide dedup/trust/contradiction policy. It is
+        # human-CLI-only — NOT exposed to agents on any MCP surface. Privilege is
+        # bound to a server-sourced principal (GATEWAY_POLICY_PRINCIPAL), not
+        # caller args. Mirrors the demote-domain CLI-only precedent.
+        "policy-edit",
     }
 )
 
@@ -184,6 +190,37 @@ def wiki_deposit(
     from gateway.ops.deposit import deposit
 
     return _serialize(deposit(payload, identity, depends_on=depends_on))
+
+
+@mcp.tool()
+def wiki_revert_resolution(act_id: str) -> dict[str, Any]:
+    """Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier).
+
+    Durably enqueues a revert-resolution intent before returning. The CommitGate
+    applies the reversal (removes the ## Contested / disputes edge, restores claim
+    status) and records a provenance node linking reverts_act. Returns an async
+    receipt (disposition="queued" + intent_id + retry_after).
+    Poll wiki_intent_status for the terminal disposition.
+    """
+    from gateway.ops.revert_resolution import revert_resolution
+
+    return _serialize(revert_resolution(act_id, {"agent": "mcp"}))
+
+
+@mcp.tool()
+def wiki_remediate(dry_run: bool = False) -> dict[str, Any]:
+    """Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier).
+
+    Scans wiki pages for genuinely-orphaned, uncited, provenance-unreachable pages
+    and submits a reversible de-path CommitGate intent for each. A page is a
+    candidate iff it has zero inbound wiki-links AND is not reachable from the
+    provenance graph. dry_run=True reports candidates without submitting intents.
+
+    Returns data={"depathed": [...], "skipped_reachable": [...]}.
+    """
+    from gateway.ops.remediate import remediate
+
+    return _serialize(remediate(dry_run=dry_run))
 
 
 @mcp.tool()
@@ -381,6 +418,35 @@ def wiki_related(query: str, limit: int = 10, caller: str | None = None) -> dict
     from gateway.ops.retrieve import related_op
 
     return _serialize(related_op(query, limit=limit, caller=caller))
+
+
+@mcp.tool()
+def wiki_preflight(plan_text: str) -> dict[str, Any]:
+    """Read-tier planner/executor pre-flight: gap-coverage + enrichment status.
+
+    Given a proposed research or synthesis plan, returns an estimate of how well
+    the wiki currently covers the plan's topics and whether there are outstanding
+    demand gaps that overlap. LLM-free — no token spend, no intent enqueue.
+
+    Returns data = {
+      "gaps": [...],                # overlapping outstanding gap texts
+      "enrichment_status": {
+        "coverage": "high"|"partial"|"low",
+        "sections_found": int,
+        "matching_gaps": int,
+      }
+    }
+    """
+    from gateway.ops.preflight import preflight
+
+    return _serialize(preflight(plan_text))
+
+
+# NOTE (SEC-Critical): `policy-edit` is intentionally NOT registered as an MCP
+# tool. It is human-CLI-only (`wiki policy-edit`) and listed in CLI_ONLY. There
+# is no use case for an agent to autonomously rewrite corpus-wide policy;
+# privilege is bound to a server-sourced principal, not caller args. See
+# gateway/ops/policy_edit.py for the trust model.
 
 
 @mcp.tool()

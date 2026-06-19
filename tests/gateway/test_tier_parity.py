@@ -46,3 +46,28 @@ def test_full_server_still_registers_everything():
     """The full server (mcp_server.mcp) is unchanged — superset of the read tier."""
     full = {t.name for t in mcp_server.mcp._tool_manager.list_tools()}
     assert set(tier.read_tier_tool_names()) <= full
+
+
+def test_policy_edit_is_not_an_mcp_tool_anywhere():
+    """SEC-Critical: policy-edit is HUMAN-CLI-ONLY. wiki_policy_edit must be
+    absent from BOTH the read-tier server and the full (build-tier) server, and
+    must not exist as a module-level wiki_* tool. There is no use case for an
+    agent to autonomously rewrite corpus-wide policy."""
+    read_server = mcp_server.build_read_tier_server()
+    read_tools = {t.name for t in read_server._tool_manager.list_tools()}
+    full_tools = {t.name for t in mcp_server.mcp._tool_manager.list_tools()}
+
+    assert "wiki_policy_edit" not in read_tools, (
+        "policy-edit must not be on the read-tier surface"
+    )
+    assert "wiki_policy_edit" not in full_tools, (
+        "policy-edit must not be on the build-tier MCP surface (human-CLI-only)"
+    )
+    assert not hasattr(mcp_server, "wiki_policy_edit"), (
+        "wiki_policy_edit must not be defined as an MCP tool"
+    )
+
+
+def test_policy_edit_is_cli_only():
+    """policy-edit is in CLI_ONLY (no MCP surface), mirroring demote-domain."""
+    assert "policy-edit" in mcp_server.CLI_ONLY

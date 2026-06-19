@@ -200,8 +200,13 @@ def test_thresholds_per_namespace_distinct(root):
     from gateway.embedding_index import thresholds
 
     t = thresholds()
-    assert set(t) == {"section", "entity", "question"}
-    # entity (co-reference identity) is the strictest operating point
+    # Three namespace keys (Phase 2) + three demand-ledger keys (Phase 5, T4)
+    namespace_keys = {"section", "entity", "question"}
+    demand_keys = {"demand.proximity_radius", "demand.recurrence_mass", "demand.cold_start_min_recurrences"}
+    assert namespace_keys <= set(t), f"missing namespace keys: {namespace_keys - set(t)}"
+    assert demand_keys <= set(t), f"missing demand keys: {demand_keys - set(t)}"
+    # entity (co-reference identity) is the strictest namespace operating point
     assert t["entity"] < t["section"] < t["question"]
-    # negative control: they are not all equal (three operating points, not one)
-    assert len(set(t.values())) == 3
+    # negative control: namespace values are not all equal (three operating points, not one)
+    ns_values = {t["section"], t["entity"], t["question"]}
+    assert len(ns_values) == 3

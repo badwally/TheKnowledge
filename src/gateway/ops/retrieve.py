@@ -21,15 +21,83 @@ happily return large sections).
 
 from __future__ import annotations
 
+import json
 import math
 from dataclasses import dataclass
+from pathlib import Path
 
 from gateway import log, paths, search_index
 from gateway.core import OperationResult
 
+# --- A4 carry-forward suppression -------------------------------------------
+#
+# Before logging a corpus-miss, check whether the same caller already has an
+# outstanding deposit (in submitted/claimed/authored state) whose topic overlaps
+# the query.  If so, suppress the miss: log corpus_miss=0 + suppressed_a4=1.
+#
+# Topic-match rule: any non-trivial word (> 3 chars, lowercased) that appears
+# in both the query and the deposit's payload["title"] is sufficient.  Simple
+# and defensible — avoids over-engineering a semantic-similarity layer here.
+# The match is intentionally loose; false negatives cost an extra A4 log entry,
+# false positives merely suppress a log line.  We accept a loose match.
+# Future hardening: add a domain-match as a second required signal (caller +
+# title-word-overlap + same domain) to reduce over-suppression on common
+# cross-domain vocabulary.
+#
+# Outstanding states per the intent-queue spec: submitted, claimed, authored.
+# Terminal states (committed, rejected, dead_lettered, quarantined) are skipped.
+
+_A4_OUTSTANDING_STATES = ("submitted", "claimed", "authored")
+_A4_MIN_WORD_LEN = 3
+
+
+def _a4_suppressed(caller: str | None, query: str) -> bool:
+    """Return True if the caller has an outstanding deposit whose title overlaps query."""
+    if not caller:
+        return False
+    intents_dir = paths.intents_dir()
+    query_words = {w for w in query.lower().split() if len(w) > _A4_MIN_WORD_LEN}
+    if not query_words:
+        return False
+    for state in _A4_OUTSTANDING_STATES:
+        state_dir = intents_dir / state
+        if not state_dir.exists():
+            continue
+        for p in state_dir.glob("*.json"):
+            if p.name.startswith("."):
+                continue
+            try:
+                rec = json.loads(p.read_text())
+            except (OSError, json.JSONDecodeError):
+                continue
+            # Caller match: identity["caller"] must equal caller
+            identity = rec.get("identity", {})
+            if identity.get("caller") != caller:
+                continue
+            # Topic match: overlap between query words and deposit title words
+            title = str(rec.get("payload", {}).get("title", ""))
+            title_words = {w for w in title.lower().split() if len(w) > _A4_MIN_WORD_LEN}
+            if query_words & title_words:
+                return True
+    return False
+
 _DEFAULT_BUDGET_CHARS = 40_000
 _DEFAULT_MAX_SECTION_CHARS = 4_000
 _DEFAULT_K = 12
+
+
+def _record_demand_gap(query: str, caller: str | None) -> None:
+    """Record a genuine corpus miss as a DemandLedger gap (decision 11 producer).
+
+    Best-effort telemetry: a failure here must never break the read op, so any
+    exception is swallowed (the miss is already logged to log.md regardless).
+    """
+    try:
+        from gateway.demand_ledger import DemandLedger
+
+        DemandLedger().record_gap(query, caller=caller)
+    except Exception:
+        pass
 
 
 @dataclass
@@ -215,8 +283,35 @@ def retrieve_op(
         query, domain=domain, domains=domains, k=k, budget_chars=budget_chars
     )
     if not sections:
+        # Corpus-miss telemetry (decision 10).  A4 suppression: if the same caller
+        # has an outstanding deposit whose topic overlaps this query, do not count
+        # this as a gap — the agent already has work in flight covering the topic.
+        suppressed = _a4_suppressed(caller, query)
+        miss_fields: dict = {
+            "caller": caller or "",
+            "query": query,
+            "domain": domain_label,
+            "corpus_miss": 0 if suppressed else 1,
+        }
+        if suppressed:
+            miss_fields["suppressed_a4"] = 1
+        log.append(
+            op="retrieve",
+            fields=miss_fields,
+            summary=(
+                f"retrieve: {query!r} domain={domain_label or '-'} "
+                f"corpus_miss={'suppressed' if suppressed else '1'}"
+            ),
+        )
+        # Demand-loop producer (decision 11): a genuine, non-suppressed corpus miss
+        # is an open demand signal — record the raw query as a gap in the DemandLedger.
+        # Recording to gitignored .knowledge/demand/ is read-tier-consistent (same
+        # class as the log.md append above — telemetry, not corpus mutation).
+        if not suppressed:
+            _record_demand_gap(query, caller)
         return OperationResult(
             success=False,
+            paths_touched=[paths.log_path()],
             summary=f"no results for {query!r}"
             + (f" in domain {domain_label!r}" if domain_label else ""),
         )
@@ -229,6 +324,7 @@ def retrieve_op(
             "domain": domain_label,
             "sections": len(sections),
             "chars": len(block),
+            "corpus_miss": 0,
         },
         summary=(
             f"retrieve: {query!r} domain={domain_label or '-'} "

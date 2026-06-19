@@ -113,6 +113,10 @@ SUBCOMMANDS: dict[str, str] = {
     "list-concepts": "List concept/entity/synthesis pages, optionally filtered to one domain",
     "moc-add": "Author a wiki/mocs/<slug>.md domain map-of-content page",
     "intent-status": "Query a deposited intent_id for its terminal disposition (A1, read-tier)",
+    "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
+    "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
+    "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
+    "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -186,6 +190,10 @@ IMPLEMENTED: set[str] = {
     "list-concepts",
     "moc-add",
     "intent-status",
+    "revert-resolution",
+    "remediate",
+    "preflight",
+    "policy-edit",
 }
 
 
@@ -441,6 +449,59 @@ def build_parser() -> argparse.ArgumentParser:
     p_intent_status.add_argument("intent_id", help="The deposited intent_id to query.")
     p_intent_status.add_argument("--json", action="store_true",
                                  help="Output structured JSON.")
+
+    # revert-resolution: enqueue a contradiction-resolution reversal (G1, build-tier)
+    p_revert_resolution = subparsers.add_parser(
+        "revert-resolution",
+        help=SUBCOMMANDS["revert-resolution"],
+    )
+    p_revert_resolution.add_argument(
+        "act_id",
+        help="The resolution act id to revert (from resolution_acts.jsonl).",
+    )
+
+    # remediate: corpus-rot sweep — de-path orphaned uncited pages (G6, build-tier)
+    p_remediate = subparsers.add_parser(
+        "remediate",
+        help=SUBCOMMANDS["remediate"],
+    )
+    p_remediate.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=False,
+        help="Report orphaned pages without submitting de-path intents.",
+    )
+
+    # preflight: read-tier planner/executor pre-flight (D12, read-tier)
+    p_preflight = subparsers.add_parser(
+        "preflight",
+        help=SUBCOMMANDS["preflight"],
+    )
+    p_preflight.add_argument(
+        "plan_text",
+        nargs="?",
+        default="",
+        help="Proposed research or synthesis plan text to check for wiki coverage.",
+    )
+
+    # policy-edit: privileged policy-edit CommitGate intent (G7, build-tier)
+    p_policy_edit = subparsers.add_parser(
+        "policy-edit",
+        help=SUBCOMMANDS["policy-edit"],
+    )
+    p_policy_edit.add_argument("domain", help="Domain slug to update.")
+    p_policy_edit.add_argument(
+        "policy_file",
+        help="Path to the new policy.yaml (must be valid YAML).",
+    )
+    p_policy_edit.add_argument(
+        "--reason",
+        required=True,
+        help="Human-readable motivation for the change (required).",
+    )
+    # NOTE (SEC-Critical): no --agent/--role flags. The privileged principal is
+    # server-sourced (GATEWAY_POLICY_PRINCIPAL / .knowledge/secrets.env), not a
+    # caller argument — a caller cannot pass an identity to gain privilege.
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -1595,6 +1656,14 @@ def main(argv: list[str] | None = None) -> int:
         return _run_list_concepts(ns)
     if ns.subcommand == "moc-add":
         return _run_moc_add(ns)
+    if ns.subcommand == "revert-resolution":
+        return _run_revert_resolution(ns)
+    if ns.subcommand == "remediate":
+        return _run_remediate(ns)
+    if ns.subcommand == "preflight":
+        return _run_preflight(ns)
+    if ns.subcommand == "policy-edit":
+        return _run_policy_edit(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2864,6 +2933,61 @@ def _run_list_concepts(ns: argparse.Namespace) -> int:
     from gateway.ops.list_concepts import list_concepts
     fmt = "json" if ns.json_out else "text"
     return _emit_result(list_concepts(domain=ns.domain, kind=ns.kind, fmt=fmt))
+
+
+def _run_revert_resolution(ns: argparse.Namespace) -> int:
+    from gateway.ops.revert_resolution import revert_resolution
+
+    result = revert_resolution(ns.act_id, {"agent": "cli"})
+    return _emit_result(result)
+
+
+def _run_remediate(ns: argparse.Namespace) -> int:
+    from gateway.ops.remediate import remediate
+
+    dry_run = getattr(ns, "dry_run", False)
+    result = remediate(dry_run=dry_run)
+    return _emit_result(result)
+
+
+def _run_preflight(ns: argparse.Namespace) -> int:
+    from gateway.ops.preflight import preflight
+
+    plan_text = getattr(ns, "plan_text", "") or ""
+    result = preflight(plan_text)
+    return _emit_result(result)
+
+
+def _run_policy_edit(ns: argparse.Namespace) -> int:
+    """CLI handler for `wiki policy-edit` (G7, human-CLI-only, SEC-Critical).
+
+    Reads policy_file from disk and submits a policy-edit CommitGate intent. The
+    privileged principal is SERVER-SOURCED (GATEWAY_POLICY_PRINCIPAL, populated
+    from the environment or .knowledge/secrets.env at the CLI entrypoint) — NOT a
+    caller argument. policy_edit rejects (fail-closed) if no allowlisted principal
+    is configured. The CommitGate worker applies the dual gate (eval-recall +
+    merge-map golden) before committing the policy file.
+    """
+    import sys as _sys
+    import yaml as _yaml
+    from gateway.ops.policy_edit import policy_edit
+
+    policy_file = Path(ns.policy_file)
+    if not policy_file.exists():
+        print(f"error: policy file not found: {policy_file}", file=_sys.stderr)
+        return 2
+    try:
+        policy_data = _yaml.safe_load(policy_file.read_text()) or {}
+    except Exception as exc:
+        print(f"error: cannot parse policy file: {exc}", file=_sys.stderr)
+        return 2
+
+    result = policy_edit(
+        ns.domain,
+        policy_data,
+        reason=ns.reason,
+    )
+    return _emit_result(result)
 
 
 if __name__ == "__main__":

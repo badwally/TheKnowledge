@@ -37,6 +37,7 @@ READ_OPS: frozenset[str] = frozenset(
         "list-concepts",
         "list-domains",
         "agent-log",     # reads operational-provenance log
+        "preflight",     # planner/executor pre-flight gap-coverage check (T4, D12)
     }
 )
 

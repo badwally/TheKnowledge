@@ -330,6 +330,26 @@ class CommitGate:
                                 f"{fencing_token} < {current})",
                     )
 
+                # (Phase 5 T1, G1/G3/G8) Reversal-type dispatch. A reversal intent
+                # un-canonicalizes a prior action — it carries no normal write set and
+                # must NOT flow through the deposit/dedup/contradiction pipeline. Route
+                # it to a bounded apply helper that computes its own writes/deletes,
+                # commits provenanced, and returns. Reversibility invariant: every
+                # reversal records a provenance act and never destroys a cited page.
+                reversal_type = (authored.intent.payload or {}).get("reversal_type")
+                if reversal_type:
+                    return self._apply_reversal(authored, intent_id, fencing_token)
+
+                # (Phase 5 T6, G7) Privileged policy-edit dispatch. A policy-edit
+                # intent carries the new policy in its payload (not in `writes`) and
+                # writes to the gitignored .knowledge/policies/ tree. It bypasses the
+                # deposit/dedup/contradiction pipeline and routes to a dedicated apply
+                # helper that gates on eval-retrieval recall + merge-map golden
+                # precision BEFORE writing the policy file.
+                payload_op = (authored.intent.payload or {}).get("op")
+                if payload_op == "policy-edit":
+                    return self._apply_policy_edit(authored, intent_id)
+
                 # (§6 I1) Deterministic LLM-free dedup re-check, inside the held
                 # commit mutex. A `merge` verdict re-targets the deposit's claims onto
                 # the canonical page (no duplicate-referent slug minted). The verdict
@@ -527,16 +547,28 @@ class CommitGate:
                     self._upsert_embeddings(writes)
 
                 # (decision 3) Operational-provenance node — recorded inside the gate.
+                # The merge_reattachment record (set by _retarget_to_canonical) is
+                # load-bearing for reverse-merge (G8), so it MUST be carried into the
+                # node and the node MUST be recorded even when no provenance recorder
+                # was injected (reversibility invariant). Fall back to the module-level
+                # recorder; both write the same .knowledge/provenance/nodes.jsonl.
+                basis = {
+                    "policy_version": authored.decision_basis.get("policy_version"),
+                    "dedup_score": authored.decision_basis.get("dedup_score"),
+                    "dedup_candidates": authored.decision_basis.get("dedup_candidates", []),
+                    "merge_rebase_branch": rebase_branch,
+                    "commit": sha,
+                    "canonical_path": str(canonical_path),
+                }
+                if "merge_reattachment" in authored.decision_basis:
+                    basis["merge_reattachment"] = authored.decision_basis["merge_reattachment"]
                 if self._provenance is not None:
-                    basis = {
-                        "policy_version": authored.decision_basis.get("policy_version"),
-                        "dedup_score": authored.decision_basis.get("dedup_score"),
-                        "dedup_candidates": authored.decision_basis.get("dedup_candidates", []),
-                        "merge_rebase_branch": rebase_branch,
-                        "commit": sha,
-                        "canonical_path": str(canonical_path),
-                    }
                     self._provenance.record(intent_id, basis)
+                elif "merge_reattachment" in basis:
+                    # No injected recorder, but a merge happened — persist the
+                    # reattachment record so the merge stays reversible.
+                    from gateway import provenance as _prov
+                    _prov.record(intent_id, basis, root=self._root)
 
                 return OperationResult(
                     success=True,
@@ -687,12 +719,20 @@ class CommitGate:
                 return []
             return list(v) if isinstance(v, (list, tuple)) else [v]
 
-        alias_set = list(_as_list(tgt_front.get("aliases")))
+        preexisting_aliases = list(_as_list(tgt_front.get("aliases")))
+        alias_set = list(preexisting_aliases)
+        # B-only aliases: the surfaces this deposit CONTRIBUTED (added beyond the
+        # canonical's pre-existing set). Recorded for reverse-merge so the reverse
+        # removes only B's contributions — never an alias that predated the merge
+        # (review CRITICAL: aliases_unioned must be B-only, matching how
+        # claims_unioned/sections_carried already record B-only).
+        aliases_contributed: list[str] = []
         for a in (*_as_list(dep_front.get("aliases")),
                   dep_front.get("canonical_name"), dep_front.get("title")):
             if a and a not in alias_set and a != tgt_front.get("canonical_name") \
                     and a != tgt_front.get("title"):
                 alias_set.append(a)
+                aliases_contributed.append(a)
         if alias_set:
             tgt_front = dict(tgt_front)
             tgt_front["aliases"] = alias_set
@@ -798,7 +838,9 @@ class CommitGate:
         basis.setdefault("merge_reattachment", {
             "target": target_rel,
             "tombstone": dep_rel,
-            "aliases_unioned": alias_set,
+            # B-ONLY aliases (contributed by this deposit), NOT the full union —
+            # reverse-merge strips exactly these, leaving pre-merge aliases intact.
+            "aliases_unioned": aliases_contributed,
             "sections_carried": [h for h, _ in carried],
             "claims_unioned": new_claims,
         })
@@ -810,6 +852,638 @@ class CommitGate:
             base_oid=authored.base_oid,
             base_oids={target_rel: head_oid, dep_rel: None},
             decision_basis=basis,
+        )
+
+    # --- reversal apply-path (Phase 5 T1, G1/G3/G8) --------------------
+
+    def _rel_escapes_root(self, rel: str) -> bool:
+        """True if ``rel`` is absolute, contains ``..``, or resolves outside root.
+
+        Defense-in-depth containment check for the destructive commit boundary
+        (BLOCKER 2): every write/delete rel is producer-supplied (payload-derived
+        for reversal/de-path/reverse-merge). A rel that escapes the KB root must
+        be rejected BEFORE any unlink/write — mirrors the recovery use-site guard
+        and the policy-edit containment assert."""
+        if not rel or os.path.isabs(rel):
+            return True
+        # An explicit `..` component is always a traversal attempt.
+        if ".." in Path(rel).parts:
+            return True
+        root_resolved = self._root.resolve()
+        abs_path = (self._root / rel).resolve()
+        return not (
+            abs_path == root_resolved
+            or str(abs_path).startswith(str(root_resolved) + os.sep)
+        )
+
+    def _commit_reversal_writes(
+        self,
+        intent_id: str,
+        writes: dict[str, str],
+        deletes: list[str],
+        basis: dict,
+        summary: str,
+        *,
+        subject_prefix: str = "revert(librarian-commit)",
+    ) -> OperationResult:
+        """Apply a write/delete set as one provenanced git commit through the gate's
+        atomic boundary.
+
+        Mirrors the deposit commit boundary: durably declare the write set,
+        apply per-file atomic writes, stage adds + removals, commit with the
+        Intent-Id trailer, set committed state, record provenance. Shared by the
+        reversal kinds AND the policy-edit path so the atomic boundary is
+        identical.
+
+        ``subject_prefix`` sets the commit-subject prefix so the audit log
+        reflects the real operation: reversal kinds use the default
+        ``revert(librarian-commit)``; policy-edit passes ``policy-edit(<domain>)``.
+        Idempotency keys off the ``Intent-Id:`` trailer, not the subject, so the
+        prefix is purely descriptive and safe to vary."""
+        # BLOCKER 2 (defense-in-depth): this is the shared DESTRUCTIVE boundary
+        # (unlink + git rm). Every rel here is producer/payload-supplied. Reject
+        # any traversal/absolute/escaping rel BEFORE touching the tree — fail
+        # closed with NO partial mutation. (The policy-edit path and recovery
+        # already do this at their use sites; this closes the reversal path.)
+        for rel in (*writes.keys(), *deletes):
+            if self._rel_escapes_root(rel):
+                return self._dead_letter(
+                    intent_id,
+                    f"reversal path {rel!r} escapes the KB root — refusing to "
+                    f"write/delete (failing closed, no mutation)",
+                )
+
+        declared = list(writes) + list(deletes)
+        try:
+            self._queue.set_declared_writes(intent_id, declared)
+        except KeyError:
+            pass
+
+        touched: list[Path] = []
+        for rel, content in writes.items():
+            abs_path = self._root / rel
+            write_atomic(abs_path, content)
+            touched.append(abs_path)
+        for rel in deletes:
+            abs_path = self._root / rel
+            if abs_path.exists():
+                abs_path.unlink()
+
+        add_paths = [str(self._root / rel) for rel in writes]
+        if add_paths:
+            self._git("add", "--", *add_paths)
+        for rel in deletes:
+            self._git("rm", "-q", "--ignore-unmatch", "--", rel, check=False)
+
+        canonical_rel = next(iter(writes)) if writes else (deletes[0] if deletes else "")
+        empty = self._git("diff", "--cached", "--quiet", check=False).returncode == 0
+        msg = f"{subject_prefix}: {canonical_rel}\n\nIntent-Id: {intent_id}\n"
+        commit_args = ["commit", "-qm", msg]
+        if empty:
+            commit_args.insert(1, "--allow-empty")
+        self._git(*commit_args)
+        sha = self._git("rev-parse", "HEAD").stdout.strip()
+
+        self._queue.set_state(
+            intent_id, "committed",
+            result={"commit": sha, "disposition": "reverted"},
+        )
+        # Reversibility invariant: a reversal MUST record a provenance node. Use
+        # the injected provenance if present, else the module-level recorder (both
+        # write the same .knowledge/provenance/nodes.jsonl).
+        prov_basis = {**basis, "commit": sha}
+        if self._provenance is not None:
+            self._provenance.record(intent_id, prov_basis)
+        else:
+            from gateway import provenance as _prov
+            _prov.record(intent_id, prov_basis, root=self._root)
+
+        canonical_path = (self._root / canonical_rel) if canonical_rel else None
+        return OperationResult(
+            success=True,
+            intent_id=intent_id,
+            disposition="committed",
+            canonical_path=canonical_path,
+            paths_touched=touched,
+            summary=f"{intent_id}: {summary} at {sha[:8]}",
+        )
+
+    # --- Policy-edit gate (Phase 5 T6, G7) -----------------------------------
+
+    @staticmethod
+    def _derive_dedup_params(proposed_dedup: dict):
+        """Map a proposed policy's ``dedup`` block to adjudication parameters.
+
+        Returns ``(blocking_band, identity_threshold, adjudicator_or_None)``.
+
+        The dedup parameters that govern adjudication are read FROM the proposed
+        policy so the gate evaluates the proposed policy (not a fixed config):
+          - ``blocking_band`` / ``identity_threshold`` — passed to the real
+            ``dedup.adjudicate`` (defaults to the production baseline if absent).
+          - ``nn_distance_threshold`` — a loose policy often expresses the
+            candidate-net width here; map it onto ``blocking_band`` when no
+            explicit ``blocking_band`` is given (a wide net turns DISTINCT
+            sibling pairs into spurious links — a merge-map regression).
+          - ``strategy == "geometry-only"`` — a fundamentally different
+            adjudication model (merge by geometry alone, ignoring alias
+            authority); simulated with a dedicated adjudicator since it cannot
+            be expressed via the real ``adjudicate`` params.
+
+        Any other strategy flows through the real ``adjudicate`` under the
+        derived params, so a corrupting policy is caught by the golden
+        regardless of how it is named.
+        """
+        from gateway.evaluate.merge_map_eval import (
+            DEFAULT_BLOCKING_BAND,
+            DEFAULT_IDENTITY_THRESHOLD,
+        )
+
+        # FAIL-CLOSED (IMPORTANT): policy_data is caller-controlled (parsed from
+        # arbitrary YAML via CLI/MCP). A non-dict dedup block (str/list) or a
+        # non-numeric threshold must raise a clean ValueError that the gate's
+        # try/except converts to a dead-letter — never an uncaught crash. This
+        # method is called INSIDE that try block; it validates aggressively here.
+        if not isinstance(proposed_dedup, dict):
+            raise ValueError(
+                f"policy dedup block must be a mapping, got "
+                f"{type(proposed_dedup).__name__!r}"
+            )
+
+        def _coerce_float(value, field_name):
+            """Coerce a proposed numeric param; raise ValueError on a bad value."""
+            try:
+                return float(value)
+            except (TypeError, ValueError):
+                raise ValueError(
+                    f"policy dedup.{field_name} must be numeric, got {value!r}"
+                )
+
+        strategy = proposed_dedup.get("strategy")
+
+        # nn_distance_threshold, when present, widens the candidate net — map it
+        # onto blocking_band unless an explicit blocking_band is given.
+        nn_threshold = proposed_dedup.get("nn_distance_threshold")
+        nn_threshold_f = (
+            _coerce_float(nn_threshold, "nn_distance_threshold")
+            if nn_threshold is not None else None
+        )
+        blocking_band = proposed_dedup.get("blocking_band")
+        if blocking_band is None:
+            blocking_band = (
+                nn_threshold_f if nn_threshold_f is not None
+                else DEFAULT_BLOCKING_BAND
+            )
+        else:
+            blocking_band = _coerce_float(blocking_band, "blocking_band")
+
+        identity_threshold = proposed_dedup.get("identity_threshold")
+        identity_threshold = (
+            _coerce_float(identity_threshold, "identity_threshold")
+            if identity_threshold is not None
+            else DEFAULT_IDENTITY_THRESHOLD
+        )
+
+        if strategy == "geometry-only":
+            from gateway.dedup import Candidate, DepositIdentity
+            geo_threshold = (
+                nn_threshold_f if nn_threshold_f is not None else identity_threshold
+            )
+
+            def _geometry_only(identity: DepositIdentity, candidates: list) -> str:
+                if not candidates:
+                    return "distinct"
+                return "merge" if candidates[0].nn_distance <= geo_threshold else "distinct"
+
+            return blocking_band, identity_threshold, _geometry_only
+
+        return blocking_band, identity_threshold, None
+
+    # Strict domain-slug regex (HIGH 2: path-traversal guard). A domain slug
+    # is computed into a filesystem path; an unvalidated slug like "../../etc/x"
+    # escapes the policies root. The same regex is enforced at the policy_edit()
+    # enqueue layer — this is the defense-in-depth backstop at the gate.
+    _DOMAIN_SLUG_RE = re.compile(r"[a-z0-9][a-z0-9_-]{0,63}")
+
+    def _apply_policy_edit(
+        self, authored: "AuthoredIntent", intent_id: str
+    ) -> OperationResult:
+        """Apply a privileged policy-edit intent with dual-gate non-regression check.
+
+        Gate protocol (order matters — all must pass before any write):
+          1. eval-retrieval --compare (fts recall@10 ≥ RECALL_FLOOR=0.90).
+          2. merge_map_eval on the curated dedup golden (no regressions in
+             merge precision — guards alias-authority discipline).
+          2b. If the policy proposes a ``dedup.strategy``, simulate it against
+             the merge-map golden and reject if it regresses (e.g. geometry-only).
+
+        FAIL-CLOSED (HIGH 1): a gate-eval exception DEAD-LETTERS the intent
+        (policy NOT written). The gate must never fail open — an error in the
+        eval path is treated as a gate failure, not a skip. The ONLY legitimate
+        skip is for a missing golden/retrieval set in a dev/test environment,
+        and that is gated on the explicit ``GATEWAY_DEV_SKIP_POLICY_GATES`` env
+        marker, never a blanket exception catch.
+
+        PATH-TRAVERSAL (HIGH 2): the domain slug is validated against a strict
+        regex, and the resolved target path is asserted to be contained within
+        the policies root, before any write.
+
+        Policy files live under .knowledge/policies/, which is git-TRACKED. On a
+        passing gate the write is committed through the gate's atomic boundary
+        (_commit_reversal_writes: write -> git add -> commit with an Intent-Id
+        trailer + subject "policy-edit(<domain>)" -> record a provenance node), so
+        the change is durable and carries a commit-level audit. On gate failure
+        the intent is dead-lettered and nothing is written or committed
+        (fail-closed).
+
+        Note: hardcoded threshold constants (COMMIT_LOCK_ACQUIRE_TIMEOUT,
+        deposit.py MAX_BACKLOG) are gated by code-review/PR, not this runtime
+        path. The boundary is documented in lint/policy_provenance.py.
+        """
+        RECALL_FLOOR = 0.90
+        dev_skip = bool(os.environ.get("GATEWAY_DEV_SKIP_POLICY_GATES"))
+
+        payload = authored.intent.payload or {}
+        domain = payload.get("domain")
+        policy_data = payload.get("policy_data")
+        reason = payload.get("reason", "")
+
+        if not domain or not isinstance(domain, str):
+            return self._dead_letter(intent_id, "policy-edit missing domain")
+        # HIGH 2: reject a domain slug that is not a strict slug (path-traversal guard).
+        if not self._DOMAIN_SLUG_RE.fullmatch(domain):
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit: invalid domain slug {domain!r} "
+                f"(must match [a-z0-9][a-z0-9_-]{{0,63}}) — possible path traversal",
+            )
+        if not policy_data or not isinstance(policy_data, dict):
+            return self._dead_letter(intent_id, "policy-edit missing policy_data")
+
+        # --- Gate 1: eval-retrieval --compare (recall@10 ≥ RECALL_FLOOR) ---
+        # FAIL-CLOSED: any eval exception dead-letters. The only skip is a
+        # missing golden under the explicit dev-skip marker.
+        try:
+            from gateway.evaluate import retrieval_eval as _rev
+            goldens = _rev.load_goldens()
+            report = _rev.evaluate("fts", goldens=goldens, k=10)
+            recall = report.recall_at(10)
+            if recall < RECALL_FLOOR:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: fts recall@10={recall:.3f} < floor {RECALL_FLOOR}"
+                    f" — policy not written",
+                )
+        except FileNotFoundError as exc:
+            if not dev_skip:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: retrieval goldens not found ({exc!r}) — "
+                    f"failing closed (set GATEWAY_DEV_SKIP_POLICY_GATES to skip in dev)",
+                )
+            log.warning("policy-edit: eval-retrieval gate dev-skipped (%s)", exc)
+        except Exception as exc:
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit gate: eval-retrieval failed ({exc!r}) — failing closed",
+            )
+
+        # --- Gate 2: merge-map golden under the PROPOSED policy's dedup params ---
+        # CRITICAL: the gate must EVALUATE THE PROPOSED POLICY, not a fixed
+        # config. We derive the dedup adjudication parameters from policy_data
+        # and simulate adjudication with THOSE params against the golden. Any
+        # merge-map regression (a decision that no longer matches the golden's
+        # ground truth) under the proposed params dead-letters — for ALL
+        # strategies, not a single hardcoded string.
+        #
+        # FAIL-CLOSED: any eval exception dead-letters; missing golden only
+        # skips under the dev marker.
+        golden_path = self._root / ".knowledge" / "eval" / "dedup" / "golden.yaml"
+        if not golden_path.exists():
+            if not dev_skip:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: dedup golden not found at {golden_path} — "
+                    f"failing closed (set GATEWAY_DEV_SKIP_POLICY_GATES to skip in dev)",
+                )
+            log.warning("policy-edit: merge-map golden gate dev-skipped (missing golden)")
+        else:
+            try:
+                # FAIL-CLOSED: _derive_dedup_params is INSIDE the try so a
+                # malformed caller-controlled dedup block (non-dict, non-numeric
+                # threshold) dead-letters instead of crashing the gate worker.
+                # `policy_data.get("dedup")` may be a truthy non-dict (str/list);
+                # _derive_dedup_params validates isinstance(dict) and raises.
+                blocking_band, identity_threshold, custom_adjudicator = (
+                    self._derive_dedup_params(policy_data.get("dedup") or {})
+                )
+                from gateway.evaluate.merge_map_eval import merge_map_eval
+                mm_result = merge_map_eval(
+                    golden_path,
+                    root=self._root,
+                    adjudicator=custom_adjudicator,
+                    blocking_band=blocking_band,
+                    identity_threshold=identity_threshold,
+                )
+            except Exception as exc:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: merge-map golden eval failed ({exc!r}) — failing closed",
+                )
+            if mm_result.regressions:
+                return self._dead_letter(
+                    intent_id,
+                    f"policy-edit gate: proposed policy regresses merge-map golden "
+                    f"precision — {len(mm_result.regressions)} case(s) mis-scored "
+                    f"(precision={mm_result.precision:.3f}); policy NOT written: "
+                    f"{mm_result.regressions}",
+                )
+
+        # --- All gates passed — commit the policy file through the gate's
+        # atomic commit boundary (BLOCKER 1). .knowledge/policies/ is git-TRACKED;
+        # a bare write_text leaves a dangling uncommitted change that recover() /
+        # a concurrent `git checkout --` silently reverts (no durable persistence,
+        # no commit-level audit). Route the write through _commit_reversal_writes:
+        # write -> git add -> commit with the Intent-Id trailer -> record
+        # provenance. Tracked policies are treated as corpus.
+        import yaml as _yaml
+        from gateway.filter.policy import policy_path as _policy_path
+        target = _policy_path(domain)
+
+        # HIGH 2 (defense in depth): assert the resolved target is contained
+        # within the policies root before writing — even though the slug passed
+        # the regex, a symlinked or otherwise unexpected policies dir could let
+        # a write escape. Containment is the load-bearing invariant.
+        policies_root = (self._root / ".knowledge" / "policies").resolve()
+        resolved_target = target.resolve()
+        if not (
+            resolved_target == policies_root
+            or str(resolved_target).startswith(str(policies_root) + os.sep)
+        ):
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit: resolved path {resolved_target} escapes policies root "
+                f"{policies_root} — refusing to write",
+            )
+
+        try:
+            policy_rel = str(target.relative_to(self._root))
+        except ValueError:
+            return self._dead_letter(
+                intent_id,
+                f"policy-edit: target {target} is not under the KB root — refusing to write",
+            )
+
+        basis: dict = {
+            "op": "policy-edit",
+            "domain": domain,
+            "reason": reason,
+            "policy_version": payload.get("policy_version"),
+            "provenance_type": "policy-edit",
+        }
+        return self._commit_reversal_writes(
+            intent_id,
+            {policy_rel: _yaml.dump(policy_data, allow_unicode=True)},
+            [],
+            basis,
+            summary=f"policy-edit committed for domain {domain!r}",
+            subject_prefix=f"policy-edit({domain})",
+        )
+
+    def _dead_letter(self, intent_id: str, reason: str) -> OperationResult:
+        """Dead-letter a reversal that cannot apply, without touching the corpus."""
+        try:
+            self._queue.set_state(intent_id, "dead_lettered", result={"reason": reason})
+        except KeyError:
+            pass
+        return OperationResult(
+            success=False,
+            intent_id=intent_id,
+            disposition="dead_lettered",
+            errors=[reason],
+            summary=f"{intent_id}: dead-lettered ({reason})",
+        )
+
+    def _apply_reversal(
+        self, authored: "AuthoredIntent", intent_id: str, fencing_token: int
+    ) -> OperationResult:
+        """Dispatch a reversal intent to its kind-specific apply helper."""
+        payload = authored.intent.payload or {}
+        kind = payload.get("reversal_type")
+        if kind == "contradiction-resolution":
+            return self._apply_contradiction_revert(payload, intent_id)
+        if kind == "reverse-merge":
+            return self._apply_reverse_merge(payload, intent_id)
+        if kind == "depath":
+            return self._apply_depath(payload, intent_id)
+        if kind == "restore-depath":
+            return self._apply_restore_depath(payload, intent_id)
+        return self._dead_letter(intent_id, f"unknown reversal_type {kind!r}")
+
+    def _apply_depath(self, payload: dict, intent_id: str) -> OperationResult:
+        """De-path an orphaned uncited page through the gate (G6, Phase 5 Task 2).
+
+        Removes the target page via the commit machinery (tracked git delete),
+        recording the page CONTENT in the provenance node so a ``restore-depath``
+        intent can bring it back. Reversibility invariant: the de-path is a
+        provenanced act and never destroys a page whose content is unrecoverable.
+        A missing target dead-letters (no mutation)."""
+        target_rel = payload.get("target_rel")
+        if not target_rel:
+            return self._dead_letter(intent_id, "depath missing target_rel")
+
+        abs_path = self._root / target_rel
+        if not abs_path.exists():
+            return self._dead_letter(
+                intent_id, f"depath target {target_rel!r} does not exist"
+            )
+
+        # Capture content BEFORE deletion so the act is reversible (the restore
+        # intent re-creates the page from this recorded content — never a guess).
+        try:
+            depathed_content = abs_path.read_text()
+        except OSError as e:
+            return self._dead_letter(intent_id, f"cannot read depath target: {e}")
+
+        basis = {
+            "reversal_type": "depath",
+            "target": target_rel,
+            "depathed_content": depathed_content,
+            "policy_version": payload.get("policy_version"),
+        }
+        return self._commit_reversal_writes(
+            intent_id, {}, [target_rel], basis,
+            summary=f"de-pathed {target_rel}",
+        )
+
+    def _apply_restore_depath(
+        self, payload: dict, intent_id: str
+    ) -> OperationResult:
+        """Restore a previously de-pathed page (reverse of de-path, G6).
+
+        Re-creates the page from the content carried in the intent payload (the
+        de-path provenance node's ``depathed_content``). Missing content →
+        dead-letter (cannot restore without the recorded body)."""
+        target_rel = payload.get("target_rel")
+        content = payload.get("content")
+        if not target_rel:
+            return self._dead_letter(intent_id, "restore-depath missing target_rel")
+        if not content:
+            return self._dead_letter(
+                intent_id, "restore-depath missing content (nothing to restore)"
+            )
+
+        basis = {
+            "reversal_type": "restore-depath",
+            "target": target_rel,
+            "policy_version": payload.get("policy_version"),
+        }
+        return self._commit_reversal_writes(
+            intent_id, {target_rel: content}, [], basis,
+            summary=f"restored de-pathed page {target_rel}",
+        )
+
+    def _apply_contradiction_revert(
+        self, payload: dict, intent_id: str
+    ) -> OperationResult:
+        """Undo a claim-contradiction auto-resolve (G1, G3).
+
+        Reads the named act, locates the page carrying the materialized
+        ``## Contested`` edge (cites the loser source), strips that section, and
+        marks the act reverted so ``acts_to_reopen`` no longer returns it. Both
+        claims survive (the loser was never deleted). Unknown act → dead-letter."""
+        from gateway import contradictions_log, frontmatter as fm
+
+        act_id = payload.get("reverts_act")
+        act = contradictions_log.find_act(act_id) if act_id else None
+        if act is None:
+            return self._dead_letter(intent_id, f"unknown act {act_id!r}")
+
+        loser = act.get("loser", {}) or {}
+        loser_src = str(loser.get("source") or "")
+        edge_token = f"[[sources/{loser_src}|disputes]]"
+
+        # Locate the page whose body carries the ## Contested edge citing the loser.
+        wiki = self._root / "wiki"
+        target_rel: str | None = None
+        target_body: str | None = None
+        target_front: dict | None = None
+        if wiki.exists():
+            for p in sorted(wiki.rglob("*.md")):
+                try:
+                    front, body = fm.parse(p.read_text())
+                except Exception:
+                    continue
+                if "## Contested" in body and edge_token in body:
+                    target_rel = str(p.relative_to(self._root))
+                    target_body = body
+                    target_front = front
+                    break
+
+        if target_rel is None:
+            return self._dead_letter(
+                intent_id, f"no page carries the contested edge for act {act_id!r}"
+            )
+
+        # Strip the ## Contested section (from its header to the next ## or EOF).
+        new_body = self._strip_section(target_body, "## Contested")
+        new_content = fm.serialize(target_front, new_body)
+
+        basis = {
+            "reversal_type": "contradiction-resolution",
+            "reverts_act": act_id,
+            "policy_version": payload.get("policy_version"),
+            "target": target_rel,
+        }
+        result = self._commit_reversal_writes(
+            intent_id, {target_rel: new_content}, [], basis,
+            summary=f"reverted contradiction act {act_id}",
+        )
+        if result.success:
+            contradictions_log.mark_act_reverted(act_id, intent_id)
+        return result
+
+    @staticmethod
+    def _strip_section(body: str, header: str) -> str:
+        """Remove a markdown section (its header line through the line before the
+        next same-or-higher-level header, or EOF). Trailing whitespace normalized."""
+        lines = body.splitlines()
+        out: list[str] = []
+        i = 0
+        n = len(lines)
+        while i < n:
+            if lines[i].strip() == header:
+                # skip until the next top-level (## ) header or EOF
+                i += 1
+                while i < n and not lines[i].lstrip().startswith("## "):
+                    i += 1
+                continue
+            out.append(lines[i])
+            i += 1
+        text = "\n".join(out).rstrip() + "\n"
+        return text
+
+    def _apply_reverse_merge(self, payload: dict, intent_id: str) -> OperationResult:
+        """Restore a deduped page from the recorded reattachment set (G8).
+
+        Builds the reverse_merge_plan from the tombstone + provenance node, strips
+        the unioned aliases/sections/claims B contributed off the canonical, and
+        deletes the tombstone. Uses the RECORDED reattachment set (never a diff
+        guess — drops hide in diffs, Phase-3 lesson). Non-tombstone → dead-letter."""
+        from gateway import retraction, frontmatter as fm
+
+        tombstone_rel = payload.get("tombstone_rel")
+        if not tombstone_rel:
+            return self._dead_letter(intent_id, "reverse-merge missing tombstone_rel")
+
+        try:
+            plan = retraction.reverse_merge_plan(tombstone_rel, root=self._root)
+        except (FileNotFoundError, ValueError, KeyError) as e:
+            return self._dead_letter(intent_id, f"no reverse-merge plan: {e}")
+
+        canon_abs = self._root / plan.canonical_rel
+        if not canon_abs.exists():
+            return self._dead_letter(
+                intent_id, f"canonical {plan.canonical_rel} absent"
+            )
+        try:
+            front, body = fm.parse(canon_abs.read_text())
+        except Exception as e:
+            return self._dead_letter(intent_id, f"cannot parse canonical: {e}")
+
+        # Strip the aliases B contributed (frontmatter aliases: list).
+        aliases = list(front.get("aliases", []) or [])
+        to_remove = set(plan.aliases_to_remove)
+        front["aliases"] = [a for a in aliases if a not in to_remove]
+
+        # Strip the sections B carried.
+        for header in plan.sections_to_remove:
+            body = self._strip_section(body, header)
+
+        # Strip the claims B contributed (exact bullet-line match, citation-tolerant).
+        claim_lines = {c.strip() for c in plan.claims_to_remove}
+        kept: list[str] = []
+        for line in body.splitlines():
+            if line.strip() in claim_lines:
+                continue
+            kept.append(line)
+        body = "\n".join(kept).rstrip() + "\n"
+
+        new_content = fm.serialize(front, body)
+        basis = {
+            "reversal_type": "reverse-merge",
+            "tombstone": tombstone_rel,
+            "target": plan.canonical_rel,
+            "aliases_removed": plan.aliases_to_remove,
+            "sections_removed": plan.sections_to_remove,
+            "claims_removed": plan.claims_to_remove,
+            "policy_version": payload.get("policy_version"),
+        }
+        return self._commit_reversal_writes(
+            intent_id,
+            {plan.canonical_rel: new_content},
+            [plan.tombstone_to_delete],
+            basis,
+            summary=f"reverse-merged {tombstone_rel} into {plan.canonical_rel}",
         )
 
     # --- claim-level contradiction (Phase 3, Task 7) -------------------

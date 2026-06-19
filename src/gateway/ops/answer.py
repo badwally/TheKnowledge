@@ -148,8 +148,31 @@ def answer_op(
     res = answer(question, domain=domain, domains=domains, k=k,
                  budget_chars=budget_chars, client=client, model=model)
     if not res.sections:
+        # Corpus-miss telemetry (decision 10) — mirrors retrieve_op.
+        from gateway.ops.retrieve import _a4_suppressed
+        suppressed = _a4_suppressed(caller, question)
+        miss_fields: dict = {
+            "caller": caller or "",
+            "question": question,
+            "domain": domain_label,
+            "corpus_miss": 0 if suppressed else 1,
+        }
+        if suppressed:
+            miss_fields["suppressed_a4"] = 1
+        log.append(
+            op="answer",
+            fields=miss_fields,
+            summary=f"no wiki context found for {question!r}"
+            + (f" in domain {domain!r}" if domain else ""),
+        )
+        # Demand-loop producer (decision 11): mirror retrieve_op — a genuine,
+        # non-suppressed corpus miss records a gap in the DemandLedger.
+        if not suppressed:
+            from gateway.ops.retrieve import _record_demand_gap
+            _record_demand_gap(question, caller)
         return OperationResult(
             success=False,
+            paths_touched=[paths.log_path()],
             summary=f"no wiki context found for {question!r}"
             + (f" in domain {domain!r}" if domain else ""),
         )
@@ -169,6 +192,7 @@ def answer_op(
             "cited": len(res.source_ids),
             "stripped": len(res.stripped),
             "output_tokens": res.usage.get("output_tokens", 0),
+            "corpus_miss": 0,
         },
         summary=(
             f"answer: {question!r} domain={domain_label or '-'} "

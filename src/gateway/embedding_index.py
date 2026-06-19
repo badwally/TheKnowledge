@@ -65,18 +65,30 @@ REBUILD_LOCK = "librarian-embedding-rebuild"
 
 # --- threshold operating points (§1.2; calibrated Phase 2, bound to model_version)
 
-def thresholds() -> dict[str, float]:
+def thresholds() -> dict[str, float | int]:
     """Per-namespace cosine-DISTANCE operating points (match := dist <= threshold).
 
-    Three operating points / threshold keys, not one (design §13):
+    Three namespace operating points / threshold keys (design §13):
     - section  → «embed.retrieval_relevance_threshold» (query→passage relevance)
     - entity   → «embed.dedup_identity_threshold» (strict co-reference identity)
     - question → «embed.demand_gap_threshold» (coarse topical-gap)
+
+    Three DemandLedger parameters (Phase 5, decision 11):
+    - demand.proximity_radius        → «demand.proximity_radius» (cluster merge radius ≈ 0.40,
+                                       within the question band ~0.70 but tighter — paraphrase
+                                       detection, not mere topic overlap)
+    - demand.recurrence_mass         → «demand.recurrence_mass» (5 — trigger threshold)
+    - demand.cold_start_min_recurrences → «demand.cold_start_min_recurrences» (3 — gap must
+                                          recur at least this many times before clustering)
     """
     return {
         "section": 0.55,    # «embed.retrieval_relevance_threshold»
         "entity": 0.30,     # «embed.dedup_identity_threshold» (strictest)
         "question": 0.70,   # «embed.demand_gap_threshold» (coarsest)
+        # --- DemandLedger parameters (Phase 5 / decision 11) ---
+        "demand.proximity_radius": 0.40,        # paraphrase-merge within question namespace
+        "demand.recurrence_mass": 5,            # cluster mass threshold → canonicalization trigger
+        "demand.cold_start_min_recurrences": 3, # occurrences before a gap enters clustering
     }
 
 

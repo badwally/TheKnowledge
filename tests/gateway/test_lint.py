@@ -114,6 +114,10 @@ def test_known_checks_includes_all_documented_checks():
         "tags-invalid-type",
         "open-questions",
         "answered-no-synthesis",
+        "fragmentation",
+        "claim-conservation",
+        "reversal-anomalies",
+        "policy-provenance",  # G7 (T6): out-of-band policy-edit detector
     }
     assert KNOWN_CHECKS == expected
 
