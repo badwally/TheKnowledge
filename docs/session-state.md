@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (Librarian PHASE 1 gate PASSED — advancing to Phase 2)
+Last updated: 2026-06-18 (Librarian PHASE 2 gate PASSED — Phase 3 = fresh session)
 
 ---
 
@@ -71,10 +71,35 @@ all [x]; §5 EMB row green; §1.2 «embed.*» calibrated + bound; §3 rebuild ro
 
 **Review fixes (2026-06-18):** Finding 1 lost-row race fixed — `rebuild_from_canonical` now holds `REBUILD_LOCK` across scan+build+swap (was swap-only), so a commit upsert can no longer be clobbered (test `test_commit_during_rebuild_row_survives_without_rebuild`; 1b masking test strengthened to assert survival with NO intervening rebuild). Finding 3 F2 chain tested — swallowed commit upsert reported as `extra` by `diff_against_live` (`test_swallowed_commit_upsert_is_caught_by_diff_against_live` + clean negative control). Finding 4 "honest" family removed from Phase-2 code/docstrings. pytest 2037 passed; recall@10 = 0.926.
 
-**Next atomic step:** Phase 3 — Commit-time invariants (domain resolution, LLM-free replayable dedup
-I1 plugging into the `commit_gate` fail-safe rebase branch, contradiction, trust; write-skew C5/F1;
-phantom-collision). The entity namespace + freshness from Phase 2 are the inputs Phase-3 dedup
-blocks against. contp in the Phase-2 build-plan §"Continuation prompt".
+**Independent review: GO (conditional).** No blocking defect for Phase 2 itself; substrate
+correctly built + honestly tested (shadow-swap atomicity, upsert freshness, F2 all verified;
+adequacy-gate falsifiability mechanism real via constant-encoder negative control). The two
+conditional items: #1 rebuild race — FIXED above. #2 → carried as a Phase-3 ENTRY GATE (below).
+
+**⚠ PHASE-3 ENTRY GATES (must hold before Phase-3 dedup ships — review-surfaced):**
+1. **Entity golden set is too easy.** It omits the hard dedup cases; the active `lexical-fallback-v1`
+   encoder gets them backwards — Ozempic vs Semaglutide (brand↔generic) at cosine dist 1.0 (false
+   no-merge), "Type 1 diabetes" vs "Type 2 diabetes" at 0.198 (false merge), shared-prefix Fed
+   branches at 0.25 (false merge). The «embed.dedup_identity_threshold»=0.30 sits in dead space, so
+   the gate passes without proving fitness. Phase 3 MUST: (a) harden `.knowledge/eval/embedding/entity.yaml`
+   with hard positives (brand/generic, abbrev/expansion) + hard negatives (shared-prefix distinct
+   referents), AND (b) wire alias/canonical-name exact-match as dedup AUTHORITY with embeddings
+   recall-only (design §13 I2 fallback + I1 adjudicator: aliases authoritative, cross-kind never
+   merge) — do NOT trust embedding-NN geometry alone for the merge decision.
+2. **Confirm the rebuild-race fix under concurrent dedup load** — Phase-3 dedup reads the entity
+   namespace at commit; verify a commit-time dedup during a rebuild sees a consistent namespace.
+
+**Next atomic step:** Phase 3 — Commit-time invariants (domain resolution; LLM-free replayable dedup
+I1 = deterministic precedence over entity_kind + alias/canonical exact-match + domain overlap +
+blocking-NN band, plugging into the `commit_gate` fail-safe rebase branch; claim-level contradiction
+auto-resolve «contradiction.precedence»; trust tiering on `_authority_key` eval-gated; write-skew
+C5/F1; phantom-collision; merge-reattachment; merge-map golden I3; policy change-control G7; lost-update
+F1). Honor the entry gates above first. The entity namespace + freshness from Phase 2 are the inputs
+Phase-3 dedup blocks against. contp in the Phase-3 section of the master build-plan.
+
+**CONTEXT-MANAGEMENT SEAM:** This window has run Phases 1–2 (build+review+fix each). Per the hard 50%
+ceiling + fresh-session-per-phase rule, Phase 3 (the 11-task dedup keystone, highest-risk) should run
+in a FRESH session via the Phase-3 contp. This is the agreed context discipline, not a blocker.
 
 ---
 
