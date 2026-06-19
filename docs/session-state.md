@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (Librarian PHASE 1 — Commit foundation: DONE)
+Last updated: 2026-06-18 (Librarian PHASE 1 gate PASSED — advancing to Phase 2)
 
 ---
 
@@ -17,11 +17,35 @@ T1.5 operational-provenance log + C7 watcher routing + A7 telemetry stub.
 0.926 (unmoved — no retrieval code touched). Ledger §4 Phase-1 green-gate all [x];
 §5 four Phase-1 rows = green. C1/C2/C3/C7 detector tests named in §4.
 
-**Phase-1 hardened (2026-06-18):** independent review found blocking + silent-corruption defects (scoped-recovery, real per-path CAS OIDs, exact Intent-Id trailer, fail-safe merge, atomic+monotonic claim, durable fencing, watcher coverage-marker) — all fixed TDD (RED-before/GREEN-after); gateway suite now 2000 passed, recall@10 still 0.926; see ledger §5 "Phase-1 hardened" note.
+**Phase-1 hardened + GATE FULLY PASSED (2026-06-18).** Independent review found 3 BLOCKING +
+silent-corruption defects (tree-wide destructive recovery → scoped; CAS vs literal "HEAD" →
+real per-path blob OIDs; substring Intent-Id grep → exact trailer compare; blind-overwrite merge
+→ fail-safe dead-letter; non-atomic claim → os.replace + durable monotonic fencing; watcher
+coverage-marker) — all fixed TDD; independent re-review returned **GO**. Then background security
+review found a MEDIUM path-traversal in scoped-recovery `unlink`/`checkout` (test confirmed it was
+exploitable — sentinel deleted) → guarded at use site + `set_declared_writes` rejects `..`/abs.
+**Gateway suite 2002 passed; recall@10 0.926 unmoved.** Gate: eval ✓, independent code-review GO ✓,
+security ✓.
 
-**Next atomic step:** Phase 2 — Identity substrate (embedding index, 3 namespaces,
-upsert-on-commit, shadow-swap rebuild). Fresh session via the Phase-2 contp in the
-roadmap. Phase 2's `EMB` upsert-on-commit hangs off the now-green CommitGate.
+**STANDING BUILD RULE (session-review finding, apply every phase):** the builder's self-tests were
+shallow on the highest-risk paths (monkeypatched the core merge/CAS; isolated-repo recovery test
+asserted the UNSAFE behavior as correct). Every phase builder MUST write adversarial tests with
+negative controls for concurrency / destructive-op / idempotency paths and must NOT monkeypatch the
+core path under test. Every gate MUST run an INDEPENDENT review (reviewer ≠ author) — it caught what
+the builder missed. Keep the background security review.
+
+**Phase-3 carry-forward (residual, non-blocking):** (a) the fail-safe rebase branch in `commit_gate`
+is where Phase 3's structured-claim merge plugs in (§5.1 case-2 mergeable rebase currently
+dead-letters `needs-merge`); (b) `git log --all` scans in `_already_committed`/`coverage_gap` are
+O(history) — scale-watch.
+
+**Next atomic step:** Phase 2 — Identity substrate (embedding index, 3 namespaces, upsert-on-commit
+off the now-green CommitGate, shadow-swap rebuild, per-namespace adequacy gates I2, rebuild-and-diff
+detector F2). ENCODER FORK (resolve in-build, do NOT add heavyweight ML deps autonomously): build a
+pluggable encoder interface + the three-namespace machinery; default the ACTIVE path to the design's
+lexical fallback (I2: dedup→alias/lexical, demand→lexical-canonicalized) so the gate passes honestly
+without a 2GB torch dep; a neural encoder is a later opt-in decision. Record whichever is active in
+«embed.model_version».
 
 ---
 
