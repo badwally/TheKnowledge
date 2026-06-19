@@ -21,6 +21,7 @@ uv.lock
 .knowledge/scheduler.*
 .knowledge/auth.yaml
 .knowledge/secrets.env
+.knowledge/demand/
 
 # Claude Code local settings — may contain API keys in allow-list entries
 .claude/settings.local.json
