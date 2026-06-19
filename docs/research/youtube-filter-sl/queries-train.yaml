@@ -1,0 +1,52 @@
+# Train queries for the YouTube filter supervised-improvement exercise.
+# 8 subtopics; validate subtopics live in queries-validate.yaml (held out).
+#
+# Register: institution / conference / researcher-anchored (KGC, ISWC, ESWC,
+# Connected Data London, Stanford, VLDB, named researchers) — NOT tutorial
+# register. The YouTube-aware filter scores pre-fetch metadata, so the query
+# must surface authoritative talks, not how-to videos. See
+# docs/superpowers/specs/2026-06-18-youtube-filter-supervised-improvement-design.md §5-§6.
+#
+# Consumed by: wiki filter-eval pool semantic-models --queries <this file>
+# Shape: {subtopics: {name: [query, ...]}}
+
+subtopics:
+  kg-construction:
+    - "knowledge graph construction keynote KGC Knowledge Graph Conference"
+    - "building enterprise knowledge graphs at scale conference talk"
+    - "knowledge graph construction pipeline ISWC lecture"
+
+  query-languages-engines:
+    - "SPARQL query engine internals Connected Data London"
+    - "graph query language design VLDB keynote"
+    - "Cypher GQL graph query standard conference talk"
+
+  reasoning-inference:
+    - "OWL description logic reasoning Ian Horrocks lecture"
+    - "ontology reasoning inference engine ISWC keynote"
+    - "automated reasoning knowledge graphs research talk"
+
+  shacl-shape-validation:
+    - "SHACL shapes constraint validation tutorial ESWC"
+    - "RDF data validation SHACL ShEx conference talk"
+    - "knowledge graph quality shape constraints lecture"
+
+  storage-architectures:
+    - "RDF triplestore architecture internals conference talk"
+    - "graph database storage engine design keynote"
+    - "scalable knowledge graph storage VLDB research talk"
+
+  kg-embeddings:
+    - "knowledge graph embeddings TransE survey lecture"
+    - "graph representation learning NeurIPS knowledge graph"
+    - "knowledge graph embedding models research keynote"
+
+  ontology-engineering-methodologies:
+    - "ontology engineering methodology NeOn lecture"
+    - "ontology development process conference talk"
+    - "ontology design competency questions ESWC"
+
+  semantic-layer:
+    - "semantic layer data architecture conference keynote"
+    - "metrics layer headless BI semantic model talk"
+    - "enterprise semantic layer AtScale Cube conference"

@@ -1,0 +1,27 @@
+# Validate queries — HELD OUT from all filter/prompt tuning.
+# 4 subtopics distinct from the 8 train subtopics. Used only after improvements
+# are applied, to measure precision@10 on data not used for tuning (spec §9).
+#
+# Same register + shape as queries-train.yaml.
+# Consumed by: wiki filter-eval pool semantic-models --queries <this file>
+
+subtopics:
+  ontology-design-patterns:
+    - "ontology design patterns content patterns ISWC lecture"
+    - "reusable ontology patterns conference talk"
+    - "ODP ontology design pattern best practices keynote"
+
+  alignment-matching:
+    - "ontology alignment matching OAEI conference talk"
+    - "schema matching knowledge graph integration lecture"
+    - "entity alignment ontology matching research keynote"
+
+  upper-foundational-ontologies:
+    - "upper ontology BFO foundational ontology lecture"
+    - "DOLCE foundational ontology conference talk"
+    - "top-level ontology UFO Giancarlo Guizzardi keynote"
+
+  obda-virtual-kg:
+    - "ontology-based data access OBDA Calvanese lecture"
+    - "virtual knowledge graph Ontop conference talk"
+    - "OBDA mappings relational to RDF research keynote"
