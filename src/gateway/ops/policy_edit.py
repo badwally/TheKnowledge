@@ -54,6 +54,26 @@ def _is_allowlisted(identity: dict) -> bool:
     return (agent, role) in _ALLOWLIST
 
 
+def _read_on_disk_version(domain: str) -> int:
+    """Return the on-disk policy version for ``domain`` (0 if no policy yet).
+
+    Used by the version-conflict guard: a policy edit must propose a version
+    strictly greater than the current on-disk version. A missing or malformed
+    version reads as 0 so a first edit (version 1) is accepted.
+    """
+    import yaml
+    from gateway.filter.policy import policy_path
+
+    p = policy_path(domain)
+    if not p.exists():
+        return 0
+    try:
+        data = yaml.safe_load(p.read_text()) or {}
+        return int(data.get("version", 0))
+    except (OSError, ValueError, TypeError, yaml.YAMLError):
+        return 0
+
+
 def _validate(domain: str, policy_data: dict, reason: str) -> list[str]:
     """Return a list of validation errors for the policy-edit shape (empty = ok)."""
     errors: list[str] = []
@@ -132,9 +152,36 @@ def policy_edit(
             summary=f"policy-edit validation failed: {errors[0]}",
         )
 
-    # --- Compute policy_version: current + 1 (monotone bump) ---
-    current_version = int(policy_data.get("version", 1))
-    policy_version = current_version
+    # --- Version-conflict guard + monotone bump («policy-version provenance») ---
+    # Read the on-disk version; the proposed version MUST be strictly greater so
+    # a stale edit (built against an older policy) cannot silently overwrite a
+    # newer one. If the proposed policy omits a version, auto-bump to on-disk + 1.
+    on_disk_version = _read_on_disk_version(domain)
+    proposed_version = policy_data.get("version")
+    if proposed_version is None:
+        policy_version = on_disk_version + 1
+        policy_data = {**policy_data, "version": policy_version}
+    else:
+        try:
+            policy_version = int(proposed_version)
+        except (TypeError, ValueError):
+            return OperationResult(
+                success=False,
+                disposition="rejected",
+                errors=[f"policy version must be an integer, got {proposed_version!r}"],
+                summary="policy-edit rejected: non-integer version",
+            )
+        if policy_version <= on_disk_version:
+            return OperationResult(
+                success=False,
+                disposition="rejected",
+                errors=[
+                    f"policy version conflict: proposed version {policy_version} is not "
+                    f"greater than on-disk version {on_disk_version} for domain {domain!r} "
+                    f"— rebase the edit on the current policy and bump the version"
+                ],
+                summary=f"policy-edit rejected: version {policy_version} <= {on_disk_version}",
+            )
 
     # --- Enqueue the typed CommitGate intent ---
     payload: dict = {

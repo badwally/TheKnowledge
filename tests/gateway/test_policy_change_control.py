@@ -166,6 +166,77 @@ def test_policy_edit_empty_policy_data_rejected(tmp_queue_env):
 
 
 # ---------------------------------------------------------------------------
+# MINOR — «policy-version provenance»: version-conflict guard + monotone bump
+# ---------------------------------------------------------------------------
+
+def _seed_on_disk_policy(root, domain, version):
+    pol_dir = root / ".knowledge" / "policies" / domain
+    pol_dir.mkdir(parents=True, exist_ok=True)
+    (pol_dir / "policy.yaml").write_text(
+        yaml.dump({"domain": {"slug": domain}, "version": version})
+    )
+
+
+def test_policy_edit_rejects_stale_version(tmp_queue_env):
+    """A proposed version not greater than the on-disk version is rejected."""
+    _seed_on_disk_policy(tmp_queue_env, "med", 5)
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.7}, "version": 5},
+        identity={"agent": "librarian-admin", "role": "policy-admin"},
+        reason="stale edit (same version)",
+    )
+    assert res.disposition == "rejected", f"stale version must reject; got {res.disposition}"
+    assert any("version" in e.lower() and "conflict" in e.lower() for e in res.errors), (
+        f"error must name the version conflict; got {res.errors}"
+    )
+
+
+def test_policy_edit_rejects_lower_version(tmp_queue_env):
+    """A proposed version below the on-disk version is rejected."""
+    _seed_on_disk_policy(tmp_queue_env, "med", 5)
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "version": 3},
+        identity={"agent": "librarian-admin", "role": "policy-admin"},
+        reason="downgrade attempt",
+    )
+    assert res.disposition == "rejected"
+
+
+def test_policy_edit_accepts_greater_version(tmp_queue_env):
+    """A proposed version strictly greater than on-disk is accepted + carried."""
+    _seed_on_disk_policy(tmp_queue_env, "med", 5)
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "version": 6},
+        identity={"agent": "librarian-admin", "role": "policy-admin"},
+        reason="legit bump",
+    )
+    assert res.disposition == "queued", f"greater version must queue; got {res.disposition}"
+    read = IntentQueue()._read(res.intent_id)
+    assert read is not None
+    assert read[1]["payload"]["policy_version"] == 6
+
+
+def test_policy_edit_auto_bumps_missing_version(tmp_queue_env):
+    """An edit omitting version auto-bumps to on-disk + 1 (monotone)."""
+    _seed_on_disk_policy(tmp_queue_env, "med", 5)
+    res = policy_edit(
+        "med",
+        {"domain": {"slug": "med"}, "filter": {"threshold_include": 0.8}},
+        identity={"agent": "librarian-admin", "role": "policy-admin"},
+        reason="auto-bump",
+    )
+    assert res.disposition == "queued"
+    read = IntentQueue()._read(res.intent_id)
+    assert read is not None
+    payload = read[1]["payload"]
+    assert payload["policy_version"] == 6, f"expected auto-bump to 6; got {payload['policy_version']}"
+    assert payload["policy_data"]["version"] == 6, "policy_data must carry the bumped version"
+
+
+# ---------------------------------------------------------------------------
 # G7 Step 9 — CommitGate gate tests (through the REAL gate, no monkeypatch)
 # ---------------------------------------------------------------------------
 
