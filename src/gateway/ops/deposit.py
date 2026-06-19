@@ -20,6 +20,12 @@ _DEPOSIT_PAGE_TYPES = frozenset({"entity", "concept", "source", "synthesis"})
 # Default poll-interval hint (seconds) on the async receipt.
 _RETRY_AFTER = 2
 
+# Server-side shed ceiling «deposit.max_backlog»: when the submitted backlog is at
+# or above this, deposit sheds load (A1 backpressure) so producers back off rather
+# than growing an unbounded queue. «deposit.max_wait» (agent total-wait bound) is a
+# separate, agent-facing contract surfaced via retry_after.
+MAX_BACKLOG = 256
+
 
 def _validate(payload: dict) -> list[str]:
     """Return a list of validation errors for the typed deposit shape (empty = ok)."""
@@ -60,6 +66,16 @@ def deposit(
         )
 
     q = queue or IntentQueue()
+
+    if q.depth() >= MAX_BACKLOG:
+        return OperationResult(
+            success=False,
+            disposition="rejected:overloaded",
+            retry_after=_RETRY_AFTER,
+            errors=["deposit queue is at capacity; retry after backoff"],
+            summary="deposit shed: queue overloaded",
+        )
+
     # Carry the page_type into identity so the CommitGate's dedup re-check + domain
     # resolution + contradiction detection can read it without re-parsing payload.
     ident = dict(identity)

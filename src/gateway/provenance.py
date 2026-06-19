@@ -17,8 +17,9 @@ C7: every committed corpus change — including watcher/poller ingest — must
 resolve to a provenance node. ``coverage_gap()`` returns committed corpus-touching
 commits with no node.
 
-A7 (stub): ``ProducerTelemetry`` tracks per-producer accept/reject/merge counts.
-Alarms are wired in Phase 4; here only the counters exist.
+A7: ``ProducerTelemetry`` tracks per-producer accept/reject/merge counts.
+``alarms()`` runs three detectors (rejection-spike, dedup-merge-spike,
+deposit-silence) over a telemetry snapshot; see ``ALARM_THRESHOLDS`` for defaults.
 """
 
 from __future__ import annotations
@@ -140,10 +141,10 @@ def coverage_gap(*, root: Path | None = None) -> list[str]:
 
 
 class ProducerTelemetry:
-    """Per-producer accept/reject/merge counters (A7 stub).
+    """Per-producer accept/reject/merge counters (A7).
 
-    Alarms (rejection-spike, dedup-merge spike, deposit-silence) are wired in
-    Phase 4; Phase 1 ships the counters the alarms read.
+    ``alarms()`` consumes ``snapshot()`` output to detect rejection-spike,
+    dedup-merge-spike, and deposit-silence conditions.
     """
 
     def __init__(self) -> None:
@@ -156,3 +157,61 @@ class ProducerTelemetry:
 
     def snapshot(self) -> dict[str, dict[str, int]]:
         return {ident: dict(kinds) for ident, kinds in self._counts.items()}
+
+
+ALARM_THRESHOLDS: dict[str, float] = {
+    "rejection_rate": 0.5,  # reject / total
+    "merge_rate": 0.8,      # merge / (accept+merge) — only-non-novel producer
+    "min_volume": 5,        # below this, spikes are suppressed as noise
+}
+
+
+def alarms(
+    snapshot: dict[str, dict[str, int]],
+    *,
+    prev_snapshot: dict[str, dict[str, int]] | None = None,
+    thresholds: dict[str, float] | None = None,
+) -> list[dict]:
+    """Per-producer alarm detectors (A7). Pure over snapshots — replayable.
+
+    - rejection-spike: reject/total >= rejection_rate, total >= min_volume
+    - dedup-merge-spike: merge/(accept+merge) >= merge_rate, (accept+merge) >= min_volume
+    - deposit-silence: a producer active in prev_snapshot with no new activity now
+    """
+    th = {**ALARM_THRESHOLDS, **(thresholds or {})}
+    min_volume = th["min_volume"]
+    out: list[dict] = []
+
+    for identity, kinds in snapshot.items():
+        accept = kinds.get("accept", 0)
+        reject = kinds.get("reject", 0)
+        merge = kinds.get("merge", 0)
+        total = accept + reject + merge
+
+        if total >= min_volume and reject / total >= th["rejection_rate"]:
+            out.append({
+                "identity": identity,
+                "alarm": "rejection-spike",
+                "detail": {"reject": reject, "total": total, "rate": reject / total},
+            })
+
+        novel_denom = accept + merge
+        if novel_denom >= min_volume and merge / novel_denom >= th["merge_rate"]:
+            out.append({
+                "identity": identity,
+                "alarm": "dedup-merge-spike",
+                "detail": {"merge": merge, "accept": accept, "rate": merge / novel_denom},
+            })
+
+    if prev_snapshot is not None:
+        for identity, prev_kinds in prev_snapshot.items():
+            prev_total = sum(prev_kinds.values())
+            cur_total = sum(snapshot.get(identity, {}).values())
+            if prev_total > 0 and cur_total <= prev_total:
+                out.append({
+                    "identity": identity,
+                    "alarm": "deposit-silence",
+                    "detail": {"prev_total": prev_total, "cur_total": cur_total},
+                })
+
+    return out

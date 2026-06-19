@@ -12,6 +12,7 @@ registry is informational today; a future milestone may enforce it at
 import contextlib
 import fcntl
 import re
+import time
 from typing import Iterator
 
 from gateway import paths
@@ -52,6 +53,18 @@ LOCK_NAME_PREFIXES: frozenset[str] = frozenset(
 _PREFIX_RE = re.compile(r"^(?P<prefix>[a-z][a-z0-9]*)-[A-Za-z0-9._-]+$")
 
 
+POLL_INTERVAL = 0.01  # seconds between non-blocking acquire attempts
+
+
+class LockTimeout(TimeoutError):
+    """A bounded file_lock acquisition missed its deadline."""
+
+    def __init__(self, name: str, timeout: float) -> None:
+        super().__init__(f"could not acquire lock {name!r} within {timeout}s")
+        self.name = name
+        self.timeout = timeout
+
+
 def is_known_lock_name(name: str) -> bool:
     """Return True if `name` is sanctioned per LOCK_NAMES / LOCK_NAME_PREFIXES.
 
@@ -68,8 +81,13 @@ def is_known_lock_name(name: str) -> bool:
 
 
 @contextlib.contextmanager
-def file_lock(name: str) -> Iterator[None]:
+def file_lock(name: str, *, timeout: float | None = None) -> Iterator[None]:
     """Acquire an exclusive lock identified by `name`.
+
+    `timeout=None` blocks indefinitely (LOCK_EX) — the historical behavior, kept
+    for every existing call site. A float bounds the acquisition: poll with
+    LOCK_EX|LOCK_NB until acquired or the deadline passes, then raise LockTimeout
+    (A3 — the commit barrier must never block indefinitely).
 
     Lock files are persistent (we don't delete them) so two processes locking
     the same name see the same inode. Empty lock files are harmless.
@@ -80,7 +98,21 @@ def file_lock(name: str) -> Iterator[None]:
 
     # Open in append mode so we don't truncate; the file's content is unused.
     with open(lock_path, "a") as f:
-        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        if timeout is None:
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        else:
+            deadline = time.monotonic() + timeout
+            while True:
+                try:
+                    fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    break
+                except OSError:
+                    if time.monotonic() >= deadline:
+                        raise LockTimeout(name, timeout)
+                    time.sleep(POLL_INTERVAL)
+        # Positioned inside the acquired path: LOCK_UN runs only when the lock
+        # was actually held. A LockTimeout from the polling branch above exits
+        # before reaching here, so the fd never held the lock and no unlock is needed.
         try:
             yield
         finally:

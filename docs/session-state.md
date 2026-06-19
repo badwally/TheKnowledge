@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (Librarian PHASE 3 gate PASSED — Phase 4 = fresh session)
+Last updated: 2026-06-19 (Librarian PHASE 4 GATE PASSED on `docs/librarian-phase4`; PR pending — Phase 5 = fresh session)
 
 ---
 
@@ -176,6 +176,14 @@ won → points at the policy-resolved loser.
 same source). Cosmetic, functionally correct. Revival trigger: any CiTO-edge rendering pass or a reader
 complaint about duplicated citations.
 
+**MERGED TO MAIN — 2026-06-19.** Phase 1+2+3 (whole `docs/librarian-rag-design` arc, 57 files / ~10,330
+insertions) merged via **PR #29** (`feat(librarian): multi-agent RAG — Phases 1–3`), merge commit
+`8a509406` on `origin/main`. N1 fix `6790772f` confirmed ancestor of `origin/main`. Merge-commit strategy
+(per-task/per-fix SHAs preserved for BUILD.md/ledger refs). Branch `docs/librarian-rag-design` **deleted**
+(remote + local) — fully merged, 0 commits not in main, verified before delete. No git work pending; the
+8 task commits + 4 review-fix commits (B1 `a1e4c509`, I1 `fb21cdb9`, I2 `4e76a5cd`, N1 `6790772f`) are all
+on main. Working tree clean on `main`. **Phase 4 still = FRESH SESSION via the Phase-4 contp (below).**
+
 **Phase-4 carry-forward (residual, non-blocking):** (a) `_merge_kind` normalization treats all
 `wiki/concepts/` pages as kind `concept` — if a concept page ever carries a finer `entity_kind`, revisit;
 (b) `auto_resolve` is called from the commit path WITHOUT `filter_score`, so contradiction trust there is
@@ -193,6 +201,58 @@ in the Phase-4 section of the master build-plan (`...-multi-agent-rag-build-plan
 **CONTEXT-MANAGEMENT SEAM:** This window ran Phase-3 PLAN→EXECUTE→GATE (build subagent + independent
 review + 2 fix loops) and stayed lean by keeping the build/review/fix in subagents. Per the fresh-session-
 per-phase rule, **Phase 4 runs in a FRESH session via the Phase-4 contp.**
+
+---
+
+## ✅ LIBRARIAN PHASE 4 — TIERED AGENT SURFACE (2026-06-19) — GATE PASSED (PR pending)
+
+**Branch:** `docs/librarian-phase4` (cut off `main` @ `d931e568` — the stale contp named the deleted
+`docs/librarian-rag-design`; deviation flagged + corrected). Plan: `docs/plans/2026-06-19-librarian-phase4-build-plan.md`.
+Ran PLAN (writing-plans, 3 tasks grounded in real interfaces) → EXECUTE (subagent-driven-development: fresh
+implementer + task-review + fix per task) → GATE (whole-branch review + security review). Stayed lean: all
+build/review/fix in subagents.
+
+**Shipped (7 commits `9fa43ac1`..`f12e0a66`, + doc commit `58aa73c5`):**
+- **T1 (A2, decision 7)** — `src/gateway/tier.py`: op→tier classification, DEFAULT-DENY (read-tier only if
+  provably side-effect-free AND token-free; else build). `mcp_server.build_read_tier_server()` = 2nd FastMCP
+  registering exactly `tier.read_tier_tool_names()`. READ_OPS = {retrieve, search, context, related,
+  intent-status, list-concepts, list-domains, agent-log} + aux {poll-list, question-list}. **Task-review caught
+  3 mis-classified ops** (`agents`/`lint`/`status` write `.knowledge/` state or spend tokens) → dropped to build
+  (`9d0fb655`). A read-tier op MAY append log.md + trigger the self-healing FTS upsert (gitignored, no corpus
+  mutation, no tokens) — that is not disqualifying (comments `f4deeff2`/`f12e0a66`).
+- **T2 (A1, A3)** — `locking.file_lock(name, *, timeout=None)`: bounded acquire (`LOCK_EX|LOCK_NB`+deadline→
+  `LockTimeout`); `timeout=None` byte-identical blocking back-compat for 30+ call sites. `commit_gate` barrier
+  uses 30s bound; on `LockTimeout` returns `disposition="retry-later"` (no queue-state mutation — intent stays
+  durable; fix `b39c0ea1`). `IntentQueue.depth()`; `deposit()` sheds `rejected:overloaded`+`retry_after` at
+  `depth()≥MAX_BACKLOG=256` (queue-depth backpressure — deposit holds NO commit lock; authoring concurrent).
+- **T3 (A7)** — `provenance.alarms()`: pure function, 3 detectors (rejection-spike / dedup-merge-spike /
+  deposit-silence) + negative controls.
+
+**GATE PASSED:** full suite **2182 passed** (2163 baseline + 19); `eval-retrieval --compare` fts recall@10
+**0.926** (== baseline — no retrieval code touched); per-scope lint at pre-existing baseline (orphans 758 /
+schema-drift 191 / broken-wikilinks 1 = the known "File name too long" OSError / link-rot 733 — NONE Phase-4,
+which added zero corpus content). Independent whole-branch review (opus): **GO** (no Critical/Important; 3 Minors
+deferred). Independent security review (opus): **ship it** — boundary holds, lock safe, no new exploit. Ledger
+§4 Phase-4 all [x] w/ evidence; §5 tier+consumer rows green; §1.1 new «deposit.max_backlog» row.
+
+**Security/review findings → backlog (concrete triggers):** F1 (Low, doc) — my comment overstated read-tier
+(claimed no FTS-index write, but read ops self-heal the gitignored FTS db) → FIXED `f12e0a66`. F2 (Medium,
+build-tier DoS) — global `MAX_BACKLOG` no per-producer fairness → `docs/backlog/librarian-deposit-per-producer-fairness.md`
+(trigger: >1 concurrent producer in prod). F3 (Low, pre-existing) — `file_lock` name→path unsanitized
+(path-traversal) → `docs/backlog/locking-lockname-path-traversal.md` (trigger: next lock-name call-site edit).
+Plus `docs/backlog/wiki-lint-unscoped-unbounded-slow.md` (unscoped lint hung 1h28m — network checks no
+per-check timeout; trigger: when a gate needs bounded full-lint).
+
+**SESSION-REVIEW FINDING (apply next phase):** the task-review gate caught the 3 mis-classified read ops the
+plan's own affirmative READ_OPS list got wrong — I authored the plan with `agents`/`lint`/`status` as read
+WITHOUT verifying each against its op implementation. **Verify-Before-Act on a security-critical allowlist:
+when a plan classifies ops into a privilege tier, the PLAN step must check each op's actual side effects, not
+assert from the op name.** The reviewer≠author gate paid for itself a 4th phase running.
+
+**Next atomic step:** open the PR (`docs/librarian-phase4` → `main`), then `/clear`. **Phase 5 = FRESH session**
+via the Phase-5 contp in the master build-plan (Lifecycle & demand governance — retraction cascade G3/G4/G8,
+revert-resolution G1, corpus-rot governance §8, DemandLedger I4, gap-routing §10, planner/executor pre-flight).
+The full-lint aggregate RC is confirming in a background run (per-scope evidence is already conclusive).
 
 ---
 

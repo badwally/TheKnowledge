@@ -380,6 +380,13 @@ class IntentQueue:
                     ids.append(p.stem)
         return ids
 
+    def depth(self) -> int:
+        """Number of intents currently in submitted/ (queue backlog, for A1 backpressure)."""
+        sub_dir = self._state_dir("submitted")
+        if not sub_dir.exists():
+            return 0
+        return sum(1 for p in sub_dir.glob("*.json"))
+
     def get_state(self, intent_id: str) -> str | None:
         found = self._find(intent_id)
         return found[0] if found else None

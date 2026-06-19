@@ -1372,6 +1372,26 @@ def wiki_question_list(domain: str | None = None, status: str | None = None) -> 
     return question_list(domain=domain, status=status)
 
 
+# --- read-tier server factory ----------------------------------------------
+
+
+def build_read_tier_server() -> "FastMCP":
+    """A read-tier MCP server: registers EXACTLY the read-classified tool set
+    (gateway.tier.read_tier_tool_names()). Build tools are absent — a read-tier
+    mount calling a build tool gets tool-not-found, not a silent no-op (A2)."""
+    import sys
+    from gateway import tier  # local import: tier imports mcp_server
+
+    read = FastMCP("knowledge-gateway-read", instructions=_INSTRUCTIONS)
+    module = sys.modules[__name__]
+    for name in sorted(tier.read_tier_tool_names()):
+        fn = getattr(module, name, None)
+        if fn is None or not callable(fn):
+            raise RuntimeError(f"read-tier tool {name!r} has no implementation in mcp_server")
+        read.tool()(fn)
+    return read
+
+
 # --- entry point -----------------------------------------------------------
 
 
