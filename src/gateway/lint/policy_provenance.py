@@ -68,7 +68,11 @@ def run(*, root: Path | None = None) -> list[LintFinding]:
                     node = json.loads(line)
                 except json.JSONDecodeError:
                     continue
-                basis = node.get("basis") or {}
+                # CRITICAL 2: provenance.record() persists the basis under
+                # "decision_basis" (provenance.py:48), NOT "basis". Reading the
+                # wrong key flagged EVERY domain unconditionally (including
+                # correctly-gated ones). Read the real key.
+                basis = node.get("decision_basis") or {}
                 if (
                     basis.get("op") == "policy-edit"
                     and basis.get("provenance_type") == "policy-edit"
