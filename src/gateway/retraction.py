@@ -80,9 +80,14 @@ class ReverseMergePlan:
 # G4 — transitive synthesizes: cascade to a fixpoint, cycle-terminating
 # ---------------------------------------------------------------------------
 
-def _rel(path: Path) -> str:
-    """Return a path relative to KNOWLEDGE_ROOT as a string."""
-    return str(path.relative_to(paths.knowledge_root()))
+def _kb_root(root: Path | None) -> Path:
+    """Resolve the knowledge root WITHOUT mutating global env (review IMPORTANT)."""
+    return root if root is not None else paths.knowledge_root()
+
+
+def _rel(path: Path, kb: Path) -> str:
+    """Return a path relative to the knowledge root as a string."""
+    return str(path.relative_to(kb))
 
 
 def _source_id_from_rel(rel: str) -> str | None:
@@ -92,9 +97,9 @@ def _source_id_from_rel(rel: str) -> str | None:
     return None
 
 
-def _load_wiki_pages() -> list[tuple[str, Path, dict, str]]:
+def _load_wiki_pages(kb: Path) -> list[tuple[str, Path, dict, str]]:
     """Load all wiki pages as (rel_str, path, front, body). Skips malformed."""
-    wiki = paths.wiki_dir()
+    wiki = kb / "wiki"
     if not wiki.exists():
         return []
     result: list[tuple[str, Path, dict, str]] = []
@@ -103,7 +108,7 @@ def _load_wiki_pages() -> list[tuple[str, Path, dict, str]]:
             front, body = fm.parse(p.read_text())
         except Exception:
             continue
-        result.append((_rel(p), p, front, body))
+        result.append((_rel(p, kb), p, front, body))
     return result
 
 
@@ -223,14 +228,10 @@ def cascade(
 
     Returns CascadeResult with flagged rel_paths in deterministic (sorted) order.
     """
-    if root is not None:
-        import os
-        os.environ["KNOWLEDGE_ROOT"] = str(root)
-
     if not retracted_source_ids:
         return CascadeResult(flagged=[], terminated_on_cycle=False, depth=0)
 
-    pages = _load_wiki_pages()
+    pages = _load_wiki_pages(_kb_root(root))
     result, _ = _run_cascade_bfs(retracted_source_ids, pages)
     return result
 
@@ -245,14 +246,10 @@ def cascade_detail(
     Used by the retracted-citations lint check to produce per-page findings
     with depth metadata.
     """
-    if root is not None:
-        import os
-        os.environ["KNOWLEDGE_ROOT"] = str(root)
-
     if not retracted_source_ids:
         return []
 
-    pages = _load_wiki_pages()
+    pages = _load_wiki_pages(_kb_root(root))
     _, details = _run_cascade_bfs(retracted_source_ids, pages)
     return details
 
@@ -270,11 +267,10 @@ def acts_to_reopen(
 
     Skips acts that have already been reverted (carry a 'reverts_act' key).
     """
-    if root is not None:
-        import os
-        os.environ["KNOWLEDGE_ROOT"] = str(root)
-
-    acts = contradictions_log.read_resolution_acts()
+    if root is None:
+        acts = contradictions_log.read_resolution_acts()
+    else:
+        acts = _read_resolution_acts_at(root)
     result: list[dict] = []
     for act in acts:
         # Skip already-reverted acts
@@ -285,6 +281,25 @@ def acts_to_reopen(
         if winner_source in retracted_source_ids:
             result.append(act)
     return result
+
+
+def _read_resolution_acts_at(root: Path) -> list[dict]:
+    """Read resolution_acts.jsonl under an explicit root (no env mutation)."""
+    path = root / ".knowledge" / "contradictions" / "resolution_acts.jsonl"
+    if not path.is_file():
+        return []
+    out: list[dict] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(obj, dict):
+            out.append(obj)
+    return out
 
 
 # ---------------------------------------------------------------------------

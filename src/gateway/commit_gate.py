@@ -537,16 +537,28 @@ class CommitGate:
                     self._upsert_embeddings(writes)
 
                 # (decision 3) Operational-provenance node — recorded inside the gate.
+                # The merge_reattachment record (set by _retarget_to_canonical) is
+                # load-bearing for reverse-merge (G8), so it MUST be carried into the
+                # node and the node MUST be recorded even when no provenance recorder
+                # was injected (reversibility invariant). Fall back to the module-level
+                # recorder; both write the same .knowledge/provenance/nodes.jsonl.
+                basis = {
+                    "policy_version": authored.decision_basis.get("policy_version"),
+                    "dedup_score": authored.decision_basis.get("dedup_score"),
+                    "dedup_candidates": authored.decision_basis.get("dedup_candidates", []),
+                    "merge_rebase_branch": rebase_branch,
+                    "commit": sha,
+                    "canonical_path": str(canonical_path),
+                }
+                if "merge_reattachment" in authored.decision_basis:
+                    basis["merge_reattachment"] = authored.decision_basis["merge_reattachment"]
                 if self._provenance is not None:
-                    basis = {
-                        "policy_version": authored.decision_basis.get("policy_version"),
-                        "dedup_score": authored.decision_basis.get("dedup_score"),
-                        "dedup_candidates": authored.decision_basis.get("dedup_candidates", []),
-                        "merge_rebase_branch": rebase_branch,
-                        "commit": sha,
-                        "canonical_path": str(canonical_path),
-                    }
                     self._provenance.record(intent_id, basis)
+                elif "merge_reattachment" in basis:
+                    # No injected recorder, but a merge happened — persist the
+                    # reattachment record so the merge stays reversible.
+                    from gateway import provenance as _prov
+                    _prov.record(intent_id, basis, root=self._root)
 
                 return OperationResult(
                     success=True,
@@ -697,12 +709,20 @@ class CommitGate:
                 return []
             return list(v) if isinstance(v, (list, tuple)) else [v]
 
-        alias_set = list(_as_list(tgt_front.get("aliases")))
+        preexisting_aliases = list(_as_list(tgt_front.get("aliases")))
+        alias_set = list(preexisting_aliases)
+        # B-only aliases: the surfaces this deposit CONTRIBUTED (added beyond the
+        # canonical's pre-existing set). Recorded for reverse-merge so the reverse
+        # removes only B's contributions — never an alias that predated the merge
+        # (review CRITICAL: aliases_unioned must be B-only, matching how
+        # claims_unioned/sections_carried already record B-only).
+        aliases_contributed: list[str] = []
         for a in (*_as_list(dep_front.get("aliases")),
                   dep_front.get("canonical_name"), dep_front.get("title")):
             if a and a not in alias_set and a != tgt_front.get("canonical_name") \
                     and a != tgt_front.get("title"):
                 alias_set.append(a)
+                aliases_contributed.append(a)
         if alias_set:
             tgt_front = dict(tgt_front)
             tgt_front["aliases"] = alias_set
@@ -808,7 +828,9 @@ class CommitGate:
         basis.setdefault("merge_reattachment", {
             "target": target_rel,
             "tombstone": dep_rel,
-            "aliases_unioned": alias_set,
+            # B-ONLY aliases (contributed by this deposit), NOT the full union —
+            # reverse-merge strips exactly these, leaving pre-merge aliases intact.
+            "aliases_unioned": aliases_contributed,
             "sections_carried": [h for h, _ in carried],
             "claims_unioned": new_claims,
         })

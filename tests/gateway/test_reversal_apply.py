@@ -324,3 +324,98 @@ def test_reverse_merge_non_target_dead_letters_no_mutation(tmp_commit_env):
     assert head_after == head_before
     # The page is untouched
     assert (root / "wiki/entities/semaglutide.md").exists()
+
+
+# ===========================================================================
+# G8 — REAL merge drives the reattachment record, then reverse (regression guard
+# for over-restore of pre-existing aliases). This does NOT fabricate the
+# provenance node — it commits A, deposits a same-referent B, lets the real
+# dedup/_retarget_to_canonical write the real merge_reattachment, then reverses.
+# ===========================================================================
+
+def _authored_entity_richbody(gate, slug, canonical, aliases, body):
+    """A same-referent entity deposit with a full body (real-merge driver)."""
+    rel = f"wiki/entities/{slug}.md"
+    q = gate._queue
+    al = "[" + ", ".join(aliases) + "]"
+    content = (
+        f"---\ntype: entity\ntitle: {canonical}\nentity_kind: drug\n"
+        f"canonical_name: {canonical}\naliases: {al}\ndomains: [med]\n---\n{body}"
+    )
+    payload = {"kind": "entity", "target": rel}
+    identity = {
+        "agent": "tester", "page_type": "entity", "entity_kind": "drug",
+        "canonical_name": canonical, "aliases": list(aliases), "domains": ["med"],
+    }
+    iid = compute_intent_id(payload, identity, semantics=slug)
+    intent = Intent(intent_id=iid, payload=payload, identity=identity, head_oid="HEAD")
+    q.submit(intent)
+    q.claim(now=1.0)
+    q.set_state(iid, "authored")
+    return AuthoredIntent(intent=intent, writes={rel: content}, base_oid="HEAD")
+
+
+def test_real_merge_then_reverse_preserves_preexisting_aliases(tmp_commit_env):
+    """CRITICAL regression: a reverse-merge must NOT delete aliases that predated
+    the merge. Drives the REAL merge so the REAL merge_reattachment record is
+    written, then reverses through the gate."""
+    from gateway import frontmatter as fm
+
+    gate, q, root = tmp_commit_env
+
+    # Canonical A with a PRE-EXISTING alias "Semaglutide".
+    _commit_entity(
+        gate, "ozempic", "Ozempic", ["Semaglutide"],
+        "# Overview\nstub.\n\n## Claims\n- claim-X [[sources/s1]]\n",
+    )
+
+    # Same-referent deposit B brings its OWN aliases "Wegovy" + a new section.
+    rich_body = (
+        "# Overview\nstub.\n\n"
+        "## Mechanism\nActs as a GLP-1 agonist; see [[entities/glp1]].\n\n"
+        "## Claims\n- claim-Y [[sources/s2]]\n"
+    )
+    dep = _authored_entity_richbody(
+        gate, "semaglutide", "Semaglutide", ["Wegovy"], rich_body
+    )
+    res = gate.commit(dep, q.fencing_token(dep.intent.intent_id))
+    # Require the real merge to have happened (else the regression cannot be guarded).
+    assert res.disposition == "merged", (
+        f"expected real merge, got {res.disposition}: {res.summary}"
+    )
+
+    canonical_rel = "wiki/entities/ozempic.md"
+    tombstone_rel = "wiki/entities/semaglutide.md"
+    assert (root / tombstone_rel).exists(), "no tombstone after real merge"
+
+    # Sanity: pre-existing alias + B's alias both on the canonical post-merge.
+    front_pre, _ = fm.parse((root / canonical_rel).read_text())
+    assert "Semaglutide" in (front_pre.get("aliases") or [])
+    assert "Wegovy" in (front_pre.get("aliases") or [])
+
+    # Reverse-merge THROUGH the gate.
+    payload = {
+        "reversal_type": "reverse-merge",
+        "tombstone_rel": tombstone_rel,
+        "policy_version": "contradiction-reversal-policy-v1",
+    }
+    identity = {"agent": "tester", "operation": "revert-resolution"}
+    iid, gate_res = _run_intent_through_gate(gate, q, payload, identity)
+    assert gate_res.success, gate_res.errors
+    assert gate_res.disposition == "committed"
+
+    # The PRE-EXISTING alias must SURVIVE; B's contributed alias must be removed.
+    front_after, body_after = fm.parse((root / canonical_rel).read_text())
+    aliases_after = front_after.get("aliases") or []
+    assert "Semaglutide" in aliases_after, (
+        f"pre-existing alias deleted by reverse-merge: {aliases_after}"
+    )
+    assert "Wegovy" not in aliases_after, (
+        f"B's alias not removed by reverse-merge: {aliases_after}"
+    )
+    # B's contributed section/claim removed; A's original survives.
+    assert "## Mechanism" not in body_after, body_after
+    assert "claim-Y" not in body_after, body_after
+    assert "claim-X" in body_after
+    # Tombstone deleted.
+    assert not (root / tombstone_rel).exists()
