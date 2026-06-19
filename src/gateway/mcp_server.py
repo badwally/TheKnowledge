@@ -100,6 +100,11 @@ CLI_ONLY: frozenset[str] = frozenset(
         # bound to a server-sourced principal (GATEWAY_POLICY_PRINCIPAL), not
         # caller args. Mirrors the demote-domain CLI-only precedent.
         "policy-edit",
+        # `commit-worker` (D0, privileged/destructive) is the production queue
+        # drainer — it claims intents and commits git changes. Agents must NOT
+        # self-trigger git commits; the operator owns invocation via cron or on-demand.
+        # CLI-only by design.
+        "commit-worker",
     }
 )
 
