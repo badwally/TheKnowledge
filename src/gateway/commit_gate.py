@@ -93,11 +93,19 @@ class CommitGate:
         queue: IntentQueue | None = None,
         provenance=None,
         max_rebase_attempts: int = DEFAULT_MAX_REBASE_ATTEMPTS,
+        embedding_index=None,
     ):
         self._root = root or paths.knowledge_root()
         self._queue = queue or IntentQueue()
         self._provenance = provenance
         self._max_rebase = max_rebase_attempts
+        # Librarian Phase 2 (§13): the committer upserts a committed page's
+        # embedding rows current-as-of-HEAD, so the next intent in the same
+        # serialization window can NN-search the entity namespace and see it
+        # (incremental upsert on commit — commit-time dedup reads this index, so
+        # a lazy per-query rebuild would make a write wrong). None → no-op,
+        # preserving Phase-1 back-compat.
+        self._embedding_index = embedding_index
 
     # --- git helpers ----------------------------------------------------
 
@@ -360,6 +368,15 @@ class CommitGate:
                 result={"canonical_path": str(canonical_path), "commit": sha},
             )
 
+            # (§13, A6) Incremental upsert on commit — AFTER the git commit (the
+            # atomic boundary), so the embedding rows are current-as-of-HEAD for
+            # the next intent's dedup. Quiesce on the embedding-rebuild lock so a
+            # concurrent shadow-swap never interleaves with this write. Derived
+            # state: a failure here self-heals on the next upsert/rebuild and must
+            # not fail an already-committed intent.
+            if self._embedding_index is not None:
+                self._upsert_embeddings(writes)
+
             # (decision 3) Operational-provenance node — recorded inside the gate.
             if self._provenance is not None:
                 basis = {
@@ -380,6 +397,27 @@ class CommitGate:
                 paths_touched=touched,
                 summary=f"{intent_id}: committed {canonical_rel} at {sha[:8]}",
             )
+
+    def _upsert_embeddings(self, writes: dict[str, str]) -> None:
+        """Upsert committed pages into the embedding namespaces, current-as-of-HEAD.
+
+        Quiesces on the embedding-rebuild lock (A6) so a concurrent shadow-swap
+        never interleaves. Derived state: any failure self-heals on the next
+        upsert/rebuild and never fails an already-committed intent.
+        """
+        from gateway import frontmatter as fm
+        from gateway.embedding_index import REBUILD_LOCK
+
+        try:
+            with locking.file_lock(REBUILD_LOCK):
+                for rel, content in writes.items():
+                    try:
+                        front, _ = fm.parse(content)
+                    except Exception:
+                        front = {}
+                    self._embedding_index.upsert_page(rel, content, front)
+        except Exception:  # pragma: no cover - derived index never blocks a commit
+            log.warning("embedding upsert-on-commit failed (will self-heal)", exc_info=True)
 
     # --- recovery -------------------------------------------------------
 
