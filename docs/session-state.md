@@ -1,6 +1,33 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 5 MERGED — PR #31 → merge commit `ee97cc9e` on origin/main; trust model RATIFIED; branch deleted; local main == origin/main. The 5-phase Librarian build is COMPLETE. Session-review brief: docs/260619_session-review-2.md)
+Last updated: 2026-06-19 (COMMITTER + TEST-HARNESS build IN PROGRESS on `test/multi-agent-test-harness` — D0 built + under review. Prior: Librarian PHASE 5 MERGED, 5-phase build COMPLETE.)
+
+---
+
+## 🔨 PRODUCTION COMMITTER + MULTI-AGENT TEST HARNESS (IN PROGRESS, 2026-06-19)
+
+**Branch:** `test/multi-agent-test-harness` (cut off main @ `0a688378`; HEAD pre-build was `bd6e5f1e` contp doc). Plan: `docs/plans/2026-06-19-librarian-committer-test-harness-build-plan.md`. Contp: `docs/260619_contp-multi-agent-test-harness.md`. SDD ledger: `.git/sdd/progress.md` (per-task briefs/reports/diffs under `.git/sdd/`). Playbook binding: `docs/MULTI-AGENT-BUILD-PLAYBOOK.md`.
+
+**Objective:** close the keystone gap (async deposit→commit has NO production drainer) by building the REAL committer (Option 2, ratified — NOT a simulator) + a 6-tier test harness driving the real system. 8 tasks: D0 committer, D1 demand-cluster CLI, M1 pytest markers, T2 integration flows, T3 N-agent soak, T4 surface E2E, T6 inert-in-production property tests, G1 pre-merge gate script.
+
+### Open contracts
+- **D0 (KEYSTONE) — built, UNDER REVIEW.** Commit `3f7762eb` (`author_deposit` + `drain_once` + `run_worker` + `wiki commit-worker` CLI). Full suite 2278 pass; 8 D0 tests + negative controls. Opus task-review (`review-D0`) + opus security review (`sec-D0`) running in background — NOT yet adjudicated. Two implementer-flagged concerns awaiting reviewer verdict: (1) write-skew test deviation (changed two same-title "Ozempic" deposits → different slugs Ozempic/Semaglutide, claiming same-slug can't union — possible same-slug data-loss path sidestepped); (2) `entity_kind` defaults to `"drug"` when absent (surface-anchor leakage from the drug-domain fixture).
+- D1, M1, T2, T3, T4, T6, G1 — NOT STARTED.
+
+### Files mid-edit
+- None. D0's commit is clean. Untracked & NOT yet committed: `docs/plans/2026-06-19-librarian-committer-test-harness-build-plan.md`, `docs/backlog/librarian-committer-daemon-install.md` (mine — fold into branch). `.git/sdd/` briefs+reports+diff are git-internal (not tracked).
+
+### Decisions made this session
+- Committer ships **on-demand only** (`wiki commit-worker --once`/`--loop`); launchd daemon deferred → `docs/backlog/librarian-committer-daemon-install.md`. **Option B (scheduler-cron `wiki schedule add ... commit-worker --once`) preferred over a launchd daemon when revived** — bounded drain, no standing unattended git-committer on a shared branch-switching tree. Revival trigger: security clears the committer surface AND a dedicated-checkout/branch-pin story exists.
+- `author_deposit` is the THIN renderer (body verbatim, frontmatter mirrors `_authored_entity`). Richer page-type rendering = triggered backlog.
+- Reviews: opus on every concurrency/destructive/governance task + background security review on the privileged committer surface. Sonnet implementers.
+
+### Rejected approaches this session
+- **Test-reference simulator (Option 1)** — rejected by user ratification: testing a simulator while production lacks the drainer = the inert-in-production trap this exercise exists to kill.
+- **Launchd always-on committer daemon now** — rejected: unattended git-committer on a working tree shared with branch-switching sessions could land commits on the wrong branch; brand-new privileged code shouldn't run unattended before baking. (Watcher is immune — untracked writes only; committer is not.)
+
+### Next atomic step
+Await `review-D0` + `sec-D0` verdicts. If any Critical/Important/HIGH: dispatch ONE fix subagent (sonnet) with the combined findings → re-review. If clean: mark D0 complete in `.git/sdd/progress.md`, then dispatch D1 implementer (demand-cluster CLI, sonnet). Build order D0→D1→M1→T2→T3→T4→T6→G1; one implementer at a time (shared tree).
 
 ---
 
