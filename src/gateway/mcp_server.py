@@ -107,6 +107,16 @@ def _serialize(result: OperationResult) -> dict[str, Any]:
         "paths_touched": [str(p) for p in result.paths_touched],
         "errors": list(result.errors),
         "warnings": list(result.warnings),
+        # Librarian async-deposit fields (Phase 1, A5). Always present; None
+        # for legacy results so existing consumers see a stable shape.
+        "intent_id": result.intent_id,
+        "disposition": result.disposition,
+        "retry_after": result.retry_after,
+        "canonical_path": (
+            str(result.canonical_path)
+            if result.canonical_path is not None
+            else None
+        ),
     }
 
 
