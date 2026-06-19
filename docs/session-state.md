@@ -69,6 +69,8 @@ pre-existing source-orphans, not Phase-2). Adversarial: concurrent-read-during-r
 negative control; constant-encoder negative control fails the entity gate. Ledger §4 Phase-2 gate
 all [x]; §5 EMB row green; §1.2 «embed.*» calibrated + bound; §3 rebuild row = 7.26s / 4023 pages.
 
+**Review fixes (2026-06-18):** Finding 1 lost-row race fixed — `rebuild_from_canonical` now holds `REBUILD_LOCK` across scan+build+swap (was swap-only), so a commit upsert can no longer be clobbered (test `test_commit_during_rebuild_row_survives_without_rebuild`; 1b masking test strengthened to assert survival with NO intervening rebuild). Finding 3 F2 chain tested — swallowed commit upsert reported as `extra` by `diff_against_live` (`test_swallowed_commit_upsert_is_caught_by_diff_against_live` + clean negative control). Finding 4 "honest" family removed from Phase-2 code/docstrings. pytest 2037 passed; recall@10 = 0.926.
+
 **Next atomic step:** Phase 3 — Commit-time invariants (domain resolution, LLM-free replayable dedup
 I1 plugging into the `commit_gate` fail-safe rebase branch, contradiction, trust; write-skew C5/F1;
 phantom-collision). The entity namespace + freshness from Phase 2 are the inputs Phase-3 dedup
