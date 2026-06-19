@@ -11,23 +11,25 @@ Last updated: 2026-06-19 (COMMITTER + TEST-HARNESS build IN PROGRESS on `test/mu
 **Objective:** close the keystone gap (async deposit→commit has NO production drainer) by building the REAL committer (Option 2, ratified — NOT a simulator) + a 6-tier test harness driving the real system. 8 tasks: D0 committer, D1 demand-cluster CLI, M1 pytest markers, T2 integration flows, T3 N-agent soak, T4 surface E2E, T6 inert-in-production property tests, G1 pre-merge gate script.
 
 ### Open contracts
-- **D0 (KEYSTONE) — built, UNDER REVIEW.** Commit `3f7762eb` (`author_deposit` + `drain_once` + `run_worker` + `wiki commit-worker` CLI). Full suite 2278 pass; 8 D0 tests + negative controls. Opus task-review (`review-D0`) + opus security review (`sec-D0`) running in background — NOT yet adjudicated. Two implementer-flagged concerns awaiting reviewer verdict: (1) write-skew test deviation (changed two same-title "Ozempic" deposits → different slugs Ozempic/Semaglutide, claiming same-slug can't union — possible same-slug data-loss path sidestepped); (2) `entity_kind` defaults to `"drug"` when absent (surface-anchor leakage from the drug-domain fixture).
-- D1, M1, T2, T3, T4, T6, G1 — NOT STARTED.
+- **D0 (KEYSTONE) — DONE.** Build `3f7762eb` + fix `a5149421`. Opus review found 2 Critical (crash-reclaim inert in prod; dedup/merge inert in prod CLI — `CommitGate(embedding_index=None)`) + 2 Important (same-slug silent-overwrite; retry-later strand) + 2 Minor (entity_kind="drug" leak; empty-slug dotfile) + security LOW-1 (`_rel_escapes_root`) — ALL FIXED; re-review **Approved**; sec-D0 **SHIP IT** (0 HIGH). Full suite 2285. 3 fail-safe re-review Minors → backlog (NEW-1/NEW-3 union-parity; NEW-2 retry-later direct-test routed to T3 soak coverage).
+- **D1 (demand-cluster CLI) — built, UNDER REVIEW.** Commit `6b020a74` (`wiki demand-cluster` + `wiki_demand_cluster` MCP tool; closes backlog I1). 5 tests incl. named negative control; full suite 2290. `review-D1` (sonnet) running — adjudicating whether the MCP-tool exposure is correctly build-tier (like remediate) vs CLI_ONLY.
+- M1, T2, T3, T4, T6, G1 — NOT STARTED.
 
 ### Files mid-edit
-- None. D0's commit is clean. Untracked & NOT yet committed: `docs/plans/2026-06-19-librarian-committer-test-harness-build-plan.md`, `docs/backlog/librarian-committer-daemon-install.md` (mine — fold into branch). `.git/sdd/` briefs+reports+diff are git-internal (not tracked).
+- None. D0+D1 commits clean. Untracked (fold into branch at a checkpoint): `docs/backlog/librarian-committer-samelslug-union-parity.md`. (Plan + daemon-backlog already committed at `aeda02a5`.) `.git/sdd/` briefs/reports/reviews/diffs are git-internal (not tracked).
 
 ### Decisions made this session
 - Committer ships **on-demand only** (`wiki commit-worker --once`/`--loop`); launchd daemon deferred → `docs/backlog/librarian-committer-daemon-install.md`. **Option B (scheduler-cron `wiki schedule add ... commit-worker --once`) preferred over a launchd daemon when revived** — bounded drain, no standing unattended git-committer on a shared branch-switching tree. Revival trigger: security clears the committer surface AND a dedicated-checkout/branch-pin story exists.
 - `author_deposit` is the THIN renderer (body verbatim, frontmatter mirrors `_authored_entity`). Richer page-type rendering = triggered backlog.
-- Reviews: opus on every concurrency/destructive/governance task + background security review on the privileged committer surface. Sonnet implementers.
+- **Same-slug deposit (two deposits → same slug): UNION into the existing page** (user decision) — no silent overwrite. Shipped as `_union_same_slug` (net-new bullet union; dead-letters needs-manual-merge on non-bullet structural change — fail-safe, no data loss). Full cross-slug parity deferred → `docs/backlog/librarian-committer-samelslug-union-parity.md`.
+- Reviews: opus on every concurrency/destructive/governance task + background security review on the privileged committer surface. Sonnet implementers + sonnet review on additive tasks.
 
 ### Rejected approaches this session
 - **Test-reference simulator (Option 1)** — rejected by user ratification: testing a simulator while production lacks the drainer = the inert-in-production trap this exercise exists to kill.
 - **Launchd always-on committer daemon now** — rejected: unattended git-committer on a working tree shared with branch-switching sessions could land commits on the wrong branch; brand-new privileged code shouldn't run unattended before baking. (Watcher is immune — untracked writes only; committer is not.)
 
 ### Next atomic step
-Await `review-D0` + `sec-D0` verdicts. If any Critical/Important/HIGH: dispatch ONE fix subagent (sonnet) with the combined findings → re-review. If clean: mark D0 complete in `.git/sdd/progress.md`, then dispatch D1 implementer (demand-cluster CLI, sonnet). Build order D0→D1→M1→T2→T3→T4→T6→G1; one implementer at a time (shared tree).
+Await `review-D1` verdict. If clean: mark D1 complete in `.git/sdd/progress.md`, dispatch M1 (pytest markers + fast/full split, sonnet). Then T2→T3→T4→T6→G1. Build order D0✅→D1(review)→M1→T2→T3→T4→T6→G1; one implementer at a time (shared tree). T3 must explicitly assert retry-later re-queue / non-stranding (closes D0 NEW-2). Final: whole-branch opus review + security review + /session-review → push branch + PR. Resume map: `.git/sdd/progress.md`.
 
 ---
 
