@@ -437,6 +437,37 @@ def wiki_preflight(plan_text: str) -> dict[str, Any]:
 
 
 @mcp.tool()
+def wiki_policy_edit(
+    domain: str,
+    policy_data: dict,
+    reason: str,
+    agent: str = "librarian-admin",
+    role: str = "policy-admin",
+) -> dict[str, Any]:
+    """Submit a privileged policy-edit CommitGate intent (G7, build-tier).
+
+    Validates the caller identity against the build-time allowlist
+    (agent + role must match an allowed pair) and enqueues a typed
+    policy-edit intent. The CommitGate worker runs two non-regression gates
+    BEFORE writing the policy file:
+      1. fts recall@10 >= 0.90 (eval-retrieval)
+      2. merge-map golden precision (dedup alias-authority must not regress)
+    On regression → dead_lettered; policy file NOT written.
+
+    Non-allowlisted identity → disposition="rejected" (no enqueue).
+    Returns an async receipt (disposition="queued" + intent_id) on success.
+    Poll wiki_intent_status for the terminal disposition.
+
+    Note: hardcoded threshold constants (commit_gate.py, deposit.py) are
+    gated by code-review, not this runtime path.
+    """
+    from gateway.ops.policy_edit import policy_edit
+
+    identity = {"agent": agent, "role": role}
+    return _serialize(policy_edit(domain, policy_data, identity=identity, reason=reason))
+
+
+@mcp.tool()
 def wiki_concept_add(
     slug: str,
     canonical_name: str,

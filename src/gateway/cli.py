@@ -116,6 +116,7 @@ SUBCOMMANDS: dict[str, str] = {
     "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
     "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
     "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
+    "policy-edit": "Submit a privileged policy-edit CommitGate intent; gates on eval-recall + dedup precision (G7, build-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -192,6 +193,7 @@ IMPLEMENTED: set[str] = {
     "revert-resolution",
     "remediate",
     "preflight",
+    "policy-edit",
 }
 
 
@@ -480,6 +482,32 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="?",
         default="",
         help="Proposed research or synthesis plan text to check for wiki coverage.",
+    )
+
+    # policy-edit: privileged policy-edit CommitGate intent (G7, build-tier)
+    p_policy_edit = subparsers.add_parser(
+        "policy-edit",
+        help=SUBCOMMANDS["policy-edit"],
+    )
+    p_policy_edit.add_argument("domain", help="Domain slug to update.")
+    p_policy_edit.add_argument(
+        "policy_file",
+        help="Path to the new policy.yaml (must be valid YAML).",
+    )
+    p_policy_edit.add_argument(
+        "--reason",
+        required=True,
+        help="Human-readable motivation for the change (required).",
+    )
+    p_policy_edit.add_argument(
+        "--agent",
+        default="librarian-admin",
+        help="Agent identifier (must be on the build-time allowlist).",
+    )
+    p_policy_edit.add_argument(
+        "--role",
+        default="policy-admin",
+        help="Role identifier (must be on the build-time allowlist).",
     )
 
     # list-domains: enumerate blessed domains (read-only)
@@ -1641,6 +1669,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_remediate(ns)
     if ns.subcommand == "preflight":
         return _run_preflight(ns)
+    if ns.subcommand == "policy-edit":
+        return _run_policy_edit(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2932,6 +2962,38 @@ def _run_preflight(ns: argparse.Namespace) -> int:
 
     plan_text = getattr(ns, "plan_text", "") or ""
     result = preflight(plan_text)
+    return _emit_result(result)
+
+
+def _run_policy_edit(ns: argparse.Namespace) -> int:
+    """CLI handler for `wiki policy-edit` (G7, build-tier).
+
+    Reads policy_file from disk, submits a privileged CommitGate intent,
+    and returns the async receipt (disposition=queued + intent_id).
+    The CommitGate worker applies the gate (eval-recall + merge-map golden)
+    before writing the policy file.
+    """
+    import sys as _sys
+    import yaml as _yaml
+    from gateway.ops.policy_edit import policy_edit
+
+    policy_file = Path(ns.policy_file)
+    if not policy_file.exists():
+        print(f"error: policy file not found: {policy_file}", file=_sys.stderr)
+        return 2
+    try:
+        policy_data = _yaml.safe_load(policy_file.read_text()) or {}
+    except Exception as exc:
+        print(f"error: cannot parse policy file: {exc}", file=_sys.stderr)
+        return 2
+
+    identity = {"agent": ns.agent, "role": ns.role}
+    result = policy_edit(
+        ns.domain,
+        policy_data,
+        identity=identity,
+        reason=ns.reason,
+    )
     return _emit_result(result)
 
 
