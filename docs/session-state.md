@@ -4,7 +4,7 @@ Last updated: 2026-06-19 (Librarian RAG design generation — Pass A done)
 
 ---
 
-## 🔄 LIBRARIAN MULTI-AGENT RAG DESIGN GENERATION (2026-06-19) — IN PROGRESS
+## ✅ LIBRARIAN MULTI-AGENT RAG DESIGN GENERATION (2026-06-19) — DONE (all 3 passes)
 
 **Branch:** `docs/librarian-rag-design` (NOT main; inputs were committed here as
 `e38b8c4e`). Running as a self-paced single-window loop (3 short iterations —
@@ -43,16 +43,30 @@ C1–C7, I1, A1–A5, A7, G5, G6, G7(partial), F1.
 **Surface-anchor correction applied:** prompt says "honest model/restatement";
 rendered as "accurate/plain" per global language ban on the "honest" family.
 
-**Next atomic step: Pass C** — write the ledger `...-checkpoints.md` (tunable thresholds
-with rationale+revisit-trigger+change-control; corpus-health metrics; liveness/backpressure;
-phase-boundary checkpoints keyed to the §0 phase names — Commit foundation / Identity
-substrate / Commit-time invariants / Tiered agent surface / Lifecycle & demand governance;
-live progress). Ledger MUST have a row for every «»-key in the design. Then the 3 self-checks:
-(1) classify every component into {commit-gate, typed deposit tool, demand ledger, embedding
-index, intent-queue mechanism, policy key} — flag any that fit none; (2) grep design for «
-tokens, diff against ledger rows, print the list+matches; (3) per-ID constraints coverage
-table. Reconcile gaps, checkpoint, commit. Close-out: re-run `eval-retrieval --compare` (guard;
-baseline recall@5 0.852/recall@10 0.926/MRR 0.690). Do not start the build plan (separate step).
+**Pass C — DONE.** Wrote the ledger `...-checkpoints.md` (20 threshold rows = one per design
+«»-key + 3 mandated extras [recall.floor_at_k, corpus.untagged/orphan ceilings]; corpus-health
+metrics; liveness/backpressure incl. per-component rebuild-time + per-failure-mode counters;
+5 phase-boundary checkpoints keyed to §0 names; live-progress table). Self-checks all PASS:
+(1) classification — every runtime component maps to {commit-gate / typed deposit tool / demand
+ledger / embedding index / intent-queue / policy key}; 3 are compositions/config NOT new
+subsystems (read/build tier split = MCP registration partition; planner/executor pre-flight =
+read-tier composition; verification harness = test infra) — none invented. (2) «»-keys: 20/20
+have ledger rows, 0 missing (grep-verified). (3) per-ID coverage: all 28 constraint IDs
+(C1–C7, I1–I4, A1–A7, G1–G8, F1–F2) resolved with a §-anchor; G1's Option-B portion explicitly
+deferred §15 with trigger. Each §16-taxonomy bad state has a detector + bounded recovery.
+
+**Close-out guard PASSED:** `eval-retrieval --compare` fts unmoved at recall@5 0.852 /
+recall@10 0.926 / MRR 0.690 (== baseline; generation touched no retrieval code).
+
+**Outputs on `docs/librarian-rag-design`:** design `...-design.md` (§0–16, evergreen) +
+ledger `...-checkpoints.md` (mutable). Commits: Pass A `321c8a13`, Pass B `5f0cf527`, Pass C
+(this). **Loop COMPLETE** — ran as a single-window 3-iteration self-paced loop (no scheduled
+wakeups; no external wait between passes).
+
+**Next (separate downstream step, NOT started):** derive a phased build plan from the design
+§0 dependency map + 5-phase cut and the ledger phase-boundary checkpoints. Branch is NOT main;
+merge `docs/librarian-rag-design` → main is the user's call (push-branch+PR per repo git
+discipline). Carried-in `log.md` change is watcher-daemon-owned; never staged.
 
 ---
 
