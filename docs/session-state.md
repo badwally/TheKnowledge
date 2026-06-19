@@ -21,6 +21,15 @@ evergreen) + `...-checkpoints.md` (ledger, mutable — Pass C).
 **Golden baseline (close-out guard):** recall@5 0.852 / recall@10 0.926 / MRR 0.690
 (n=27, fts). Generation must not touch it; Pass C re-runs `eval-retrieval --compare`.
 
+**Pass B — DONE.** Appended design §§9–16 (lifecycle/retraction cascade G3/G4/G8 +
+revert-resolution Option A; gap-routing + keep-worthiness; DemandLedger I4; three-namespace
+vector index I2/A6 + pre-commit embedding chicken/egg; placement + change-control G7;
+§15 deferred incl. Option B trigger; §16 verification: merge-map golden redefinition I3,
+dedup-precision/demand-purity/grounding-faithfulness axes via judge.py, full failure-mode
+taxonomy table — F1/F2 + 9 bad states each with detector+bounded recovery; tested
+rebuild-from-canonical per derived component). Design doc COMPLETE. IDs added in Pass B:
+G1–G4, G7, G8, I2, I3, I4, A6, F2 (+ G5/G6/F1/A7 reinforced).
+
 **Pass A — DONE.** Wrote design §0 + §§1–8 (dependency map + 5-phase cut: Commit
 foundation → Identity substrate → Commit-time invariants → Tiered agent surface →
 Lifecycle & demand governance; 2 mermaid). Attachment points grounded in real code:
@@ -34,12 +43,16 @@ C1–C7, I1, A1–A5, A7, G5, G6, G7(partial), F1.
 **Surface-anchor correction applied:** prompt says "honest model/restatement";
 rendered as "accurate/plain" per global language ban on the "honest" family.
 
-**Next atomic step: Pass B** — append design §§9–16 (lifecycle/retraction cascade
-G3/G4/G8, gap-routing, demand canonicalization I4, vector index I2/I3/A6, placement,
-deferred §15, verification model + failure-mode taxonomy F1/F2 with detectors+recoveries,
-golden merge-map I3). Then Pass C: ledger + 3 self-checks (component classification;
-«»-key↔ledger-row diff; per-ID coverage table) + close-out eval guard. Do not start
-the build plan (separate downstream step).
+**Next atomic step: Pass C** — write the ledger `...-checkpoints.md` (tunable thresholds
+with rationale+revisit-trigger+change-control; corpus-health metrics; liveness/backpressure;
+phase-boundary checkpoints keyed to the §0 phase names — Commit foundation / Identity
+substrate / Commit-time invariants / Tiered agent surface / Lifecycle & demand governance;
+live progress). Ledger MUST have a row for every «»-key in the design. Then the 3 self-checks:
+(1) classify every component into {commit-gate, typed deposit tool, demand ledger, embedding
+index, intent-queue mechanism, policy key} — flag any that fit none; (2) grep design for «
+tokens, diff against ledger rows, print the list+matches; (3) per-ID constraints coverage
+table. Reconcile gaps, checkpoint, commit. Close-out: re-run `eval-retrieval --compare` (guard;
+baseline recall@5 0.852/recall@10 0.926/MRR 0.690). Do not start the build plan (separate step).
 
 ---
 

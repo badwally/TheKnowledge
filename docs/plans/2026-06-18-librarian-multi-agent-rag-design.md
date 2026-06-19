@@ -721,5 +721,434 @@ the provenance graph (G6 reachability test).
 
 ---
 
-_End of Pass A (§0 + §§1–8). Pass B appends §§9–16; Pass C writes the ledger and
-runs the three self-checks._
+## 9. Knowledge lifecycle & retraction cascade
+
+The corpus must **un-canonicalize**, not only canonicalize (decision 9). A source can
+become wrong after it lands — retracted, superseded, decayed — and that wrongness must
+propagate to the dependent claims and synthesis pages that cite it.
+
+**Attachment point.** Wires the existing primitives by name: the `retracted` /
+`retracted_at` and `superseded_by` / `supersedes` frontmatter fields (WIKI.md §3.1,
+lines 113–120), the `pubmed_retractions.py` poller (`pollers/pubmed_retractions.py`),
+and the existing `stale-claims` and `retracted-citations` lint passes
+(`ops/lint.py:33`, `:35`, registered at `:52`, `:68`). Extends these from
+detect-and-flag into a provenanced cascade.
+
+**Un-canonicalization is itself an intent through the CommitGate** (decision 9), so the
+cascade is provenanced and reversible. Staleness/decay is a **first-class state**, not a
+draft-age timer — a claim can be live, stale (its source superseded), or quarantined
+(its source retracted), recorded on the page and in the provenance graph.
+
+**Retraction propagation.** When a source is retracted or superseded, the cascade:
+
+1. Walks the **content-provenance** graph (the `[[sources/<id>]]` citation edges and
+   raw `wiki_pages:` backlinks) to find directly-dependent claims and synthesis pages,
+   and flags / downgrades / quarantines them per policy «retraction.cascade_trigger».
+2. **Transitive closure over `synthesizes:`** (G4). Because `synthesizes:` is
+   one-level-strict (a second-derivative synthesis does not directly cite the retracted
+   source), the cascade walks the `synthesizes:` closure to a **fixpoint**, with a
+   cycle/termination assertion. A source → synthesis-A → synthesis-B chain flags or
+   quarantines **both** A and B. (`validator.validate_synthesizes_integrity`,
+   `validator.py:594`, gives the typed `synthesizes:` edges the walk follows.)
+3. **Retracted-winner un-suppression** (G3). A retraction also traverses the
+   **operational-provenance** graph for resolution acts (§6) where the retracted source
+   was the *winning input*, and re-opens each — re-running the contradiction rule against
+   the surviving inputs, which may promote the former loser. This is the
+   "orphaned-correct-claim after winner retraction" taxonomy bad state (§16), detected
+   by a standing lint over resolution acts whose winning source is now retracted. Note
+   this is broader than the citation graph: a winner can be retracted without the
+   synthesis that relied on the *resolution* directly citing it.
+
+**Resolution-reversal primitive — Option A** (G1, decision per
+`docs/backlog/librarian-cascade-revert-automation.md`). A `revert-resolution <act-id>`
+op, enacted as a CommitGate intent: un-suppress the loser, re-open the contradiction
+edge, re-run the rule against current inputs, provenanced. The down-weighted loser
+stays retrievable throughout, never de-pathed (G2). **Merge reversibility** (G8) reuses
+the pre-merge reattachment set recorded in §5.3: a reversal un-merges B from A without
+git archaeology. *Automatic transitive cascade-revert is Option B — plan of record,
+deferred (§15)*; Option A ships the reversal primitive and the complete decision-basis
+recording (§3.3) that B will sit on.
+
+**Reversal detectors + metrics (G2)** — the measured triggers that gate building
+Option B: a contested-claims lint (a lower-trust claim auto-overruled),
+cross-project-override rate «reversal.cross_project_override_rate»,
+auto-resolution-reversal rate «reversal.auto_resolution_reversal_rate», and observed
+cascade-depth «reversal.observed_cascade_depth». These are corpus-health metrics in the
+ledger; crossing them is the Option B trigger.
+
+**Migration delta.** The lint passes detect today but do not cascade or re-author;
+retraction/supersession do not currently re-open resolution acts (no operational-
+provenance graph exists, §3.3). The cascade, the `synthesizes:`-closure walk, the
+resolution-act re-opening, and `revert-resolution` are all net, built on the CommitGate
+and the provenance graph.
+
+**Acceptance criteria.** Retracting a source flags/quarantines both direct citers and
+transitive `synthesizes:` dependents to a fixpoint, terminating on cycles (G4 chain
+test). Retracting a winning source re-opens every resolution act it won and re-runs the
+rule (G3 test); the standing lint surfaces any orphaned-correct-claim. `revert-resolution`
+un-suppresses the loser and re-opens the edge as a provenanced, reversible act, leaving
+the loser retrievable throughout. A reversed merge restores B's pre-merge inbound links
+from the recorded reattachment set (G8 test).
+
+---
+
+## 10. Runtime gap-routing & keep-worthiness
+
+Separate the agent's **immediate need** (get unblocked) from the system's
+**compounding need** (keep knowledge) (decision 10).
+
+**The corpus-first ladder.** Immediate need walks `retrieve` → `answer` → in-session web
+fallback only if the corpus is thin, and **never blocks on the librarian**. The ladder
+spans tiers (§7): `retrieve` is read-tier; `answer` and web are build-tier.
+**Reconciliation:** a read-tier-only agent executes only the `retrieve` rung; when it
+bottoms out (corpus thin), it does not silently fail — it escalates to a
+build-tier-capable agent or has its mount upgraded (§7). The ladder is not executable
+end-to-end by a read-tier-only mount, and the design says so rather than implying a
+single agent walks all rungs.
+
+**Attachment point.** The ladder composes existing ops — `retrieve` (`ops/retrieve.py`)
+and `answer` (`ops/answer.py`); the net piece is the corpus-miss logging and the
+bottom-out escalation contract. Adds-alongside.
+
+**Orient vs ground — the asymmetry** (decision 10). An in-session web fetch may **orient**
+reasoning but may **not ground a durable claim**. This is enforceable **only at the
+deposit gate**: the librarian rejects a durable claim whose only provenance is a
+non-ingested web URL — it must first become a source intent (§4). It is **not**
+enforceable in the agent's own out-of-corpus artifacts (the agent can write whatever it
+wants in its own scratch space; the gate governs only what becomes canonical). The
+design states this asymmetry plainly rather than pretending the gate controls the agent's
+reasoning.
+
+**Corpus-miss telemetry.** Every web fall-through logs a corpus-miss, feeding the
+DemandLedger (§11). Miss-logging suppresses a miss only for the **session's own**
+outstanding/terminal `intent_id`s, never another agent's identical query (A4) — so an
+agent re-querying to observe its own deposit does not pollute demand signal (§12).
+
+**Keep-worthiness heuristics (four), placed where the state each needs lives** (decision 10):
+
+- **Task-local, declared on the typed deposit tool:** *half-life/volatility* (do not
+  canonicalize volatile facts) and *load-bearing*. Both are required fields on the
+  deposit Intent (§4). Load-bearing is **agent-self-reported and gameable**; the
+  server-side mitigation is a recurrence/citation-back audit of self-report drift (a
+  producer that flags everything load-bearing but whose deposits are never cited back is
+  flagged — a §16 detector related to A7).
+- **Corpus-global, as librarian intake gates:** *domain-core* (satisfied if core to at
+  least one resolved domain — consistent with multi-label resolution, §6) and
+  *recurrence* (a gap seen repeatedly, measured by the DemandLedger, §11).
+
+**Acceptance criteria.** A durable claim whose only provenance is a non-ingested URL is
+rejected at deposit until the URL is ingested as a source (orient-vs-ground test). A web
+fall-through logs a corpus-miss; an agent re-querying its own outstanding deposit logs
+none (A4 suppression test). A volatile-flagged deposit is not canonicalized. A
+deposit core to at least one resolved domain passes the domain-core gate even if
+peripheral to the others.
+
+---
+
+## 11. Demand-aggregated canonicalization
+
+A **DemandLedger** owned by the librarian, fed by logged corpus-misses (§10) and
+deposit-intents, emitting a canonicalization trigger when a gap-signature crosses a
+policy threshold (decision 11).
+
+**Attachment point.** A net component — a durable ledger (a SQLite table or an on-disk
+log, consistent with the start-boring restraint, §14) plus an online clusterer over the
+demand embedding namespace (§13). Adds-alongside; it reads the embedding index and
+writes canonicalization triggers, never the corpus directly (a trigger becomes a build-
+tier synthesis intent).
+
+**Method (not just "proximity"):**
+
+- **Gap-signature** = the embedding of the miss/intent's question text in the
+  question-grained demand namespace (§13), with **normalization** for short query strings
+  (which embed unstably) — the ledger retains the raw gap-signature **text**, not only the
+  vector (I4), so a model-version bump re-embeds and re-clusters from text and preserves
+  recurrence counts.
+- **Online clustering** assigns each new gap-signature to an existing cluster within
+  «demand.proximity_radius» or opens a new one; assignments are **recomputed, not frozen**,
+  when the embedding model version changes (the drift contract — the embedding version is
+  recorded in the ledger, «embed.model_version»).
+- **Two distinct thresholds:** a proximity **radius** («demand.proximity_radius») for
+  cluster membership AND a recurrence-**mass** count («demand.recurrence_mass») for the
+  trigger.
+- **Cold-start rule:** a gap needs «demand.cold_start_min_recurrences» recurrences before
+  it can trigger; a first occurrence is logged, not clustered away.
+
+**The trigger.** When a cluster's recurrence-mass crosses threshold, the ledger emits a
+**canonicalization trigger** — a build-tier synthesis intent (§4) that enriches the gap.
+**Full multi-source synthesis is reserved for plan-time enrichment and demand-threshold
+triggers; it is never fired ad hoc from inside a live session** (decision 11), which keeps
+live agent latency bounded and synthesis spend deliberate.
+
+**Migration delta.** No demand aggregation exists today; corpus-misses are not logged.
+Net component.
+
+**Acceptance criteria.** A gap recurring above mass triggers exactly one canonicalization
+intent, not one per occurrence (dedup-by-cluster test). A first-occurrence gap is logged
+and does not trigger (cold-start test). An embedding-model-version bump re-clusters from
+retained text and a near-threshold gap retains its recurrence count, not reset to zero
+(I4 test). The clusterer assigns two paraphrases of the same gap to one cluster and two
+distinct gaps to two clusters (purity test, §16).
+
+---
+
+## 12. Planner/executor split & async coupling
+
+Research dependencies resolve at **plan time** via a read-tier **gap pre-flight**, so
+execution agents run against an already-enriched corpus and never discover-and-wait
+(decision 12). Coupling is asynchronous both directions.
+
+**Attachment point.** The pre-flight is a read-tier composition over `retrieve` and the
+DemandLedger (§11); the executor-facing status checks are read-tier ops (§7). Adds-
+alongside; no new write path.
+
+**The consistency model, stated explicitly.** Reads are **snapshot-isolated** (resolve at
+a committed ref, §2) and writes are **async** (commit happens later, §3). Therefore
+**read-your-own-writes within a session is NOT guaranteed via the read tier**. Two patterns
+break and are named:
+
+- *Intra-session multi-step grounding* — an agent deposits, then re-`retrieve`s expecting
+  to see its own deposit.
+- *Planner enriching then immediately querying* — the planner fires an enrichment intent,
+  then queries the read tier for the result before it commits.
+
+**Mitigation:** carry the deposit's returned canonical content forward **in-context** (the
+status-query's `committed`/`merged` disposition returns the canonical content/path, §3);
+do **not** re-`retrieve` to observe your own deposit — doing so also logs a false
+corpus-miss (§10, §11) and pollutes demand signal. Carry-forward distinguishes
+**provisional** (the agent's own submitted text, flagged pre-canonical, for in-session
+reasoning) from **authoritative** (canonical content + path obtained only from a terminal
+status, including `merged` → a *different* page) (A4).
+
+**Agent-facing observability** (A1, A3). The async model requires: intent-status lookup by
+`intent_id` (§3) and a plan-time **enrichment-status check** the executor polls — distinct
+from the operator-facing `wiki status` (`ops/status.py`). If exposed to agents, both join
+the read-tier set (§7). Status responses carry `retry_after` (A1) and a backpressure load
+signal (A3) so the poll-or-proceed decision reads a real signal.
+
+Stronger read-your-writes (a session-pinned view that includes the agent's own
+uncommitted deposit) is **deferred (§15)** with a measured trigger.
+
+**Acceptance criteria.** A plan-time gap pre-flight that finds a thin area emits an
+enrichment intent and the executor runs after it commits, never blocking mid-execution
+(pre-flight test). An agent that carries forward its deposit's returned content grounds
+correctly without re-`retrieve` (carry-forward test); an agent that re-`retrieve`s its own
+outstanding deposit gets snapshot-isolated results and logs no corpus-miss (A4 test). The
+enrichment-status check is read-tier and returns a terminal/non-terminal disposition with a
+poll hint.
+
+---
+
+## 13. The vector index
+
+**One** embedding model/store (shared infrastructure), but **not** one vector space or one
+threshold (decision 13).
+
+**Attachment point.** A net embedding index that **adds alongside** `search_index.py` (the
+FTS index), following the same derived-state discipline — gitignored, rebuildable, never
+canonical (ARCHITECTURE.md "Retrieval layer"). The build trigger is the **multi-agent-write
+requirement** (commit-time dedup needs it), **not** corpus size — distinct from the
+deferred hybrid-vector-retrieval trigger (ARCHITECTURE.md "What is explicitly not here":
+~10k pages / recall < 0.8).
+
+**Three namespaces at three granularities**, serving three similarity notions:
+
+- **Section-grained** for retrieval (relevance; query→passage asymmetric) — operating
+  point «embed.retrieval_relevance_threshold».
+- **Entity/concept-grained** canonical-identity for dedup (co-reference; high threshold) —
+  «embed.dedup_identity_threshold».
+- **Question-grained** for demand clustering (topical-gap; coarse) —
+  «embed.demand_gap_threshold».
+
+Three operating points / threshold keys, not one, each evaluated (§16). **Per-namespace
+adequacy gate (I2):** one shared encoder pulls geometry in incompatible directions, so each
+namespace ships its **own golden set** and a named **fallback** if the shared model fails its
+gate — dedup falls back to alias/lexical blocking as authority with embeddings recall-only;
+demand falls back to lexical-canonicalized gap-signatures. The shared encoder is starting
+infrastructure, not a correctness guarantee; each operating point's gate is independently
+falsifiable.
+
+**The pre-commit embedding path (chicken/egg).** A deposited intent's identity text is
+embedded **on the worker** and NN-searched against the entity namespace **at the authored
+snapshot**; the candidate is **re-checked at commit** against the namespace as of HEAD (§5.2,
+§6). The intent is **not yet in the index** at this point — that is the resolution: the
+worker embeds ad hoc for the lookup; the row is upserted only on commit.
+
+**Freshness is a correctness dependency of commit-time dedup.** The FTS index can self-heal
+lazily per query (`search_index.refresh`, `search_index.py:234`), but commit-time dedup
+**reads the embedding index**, so the committer must ensure embedding rows for
+already-committed pages are **current as of HEAD before the dedup check** — an **incremental
+upsert on commit**, not a lazy per-query rebuild (lazy works for FTS, not embeddings).
+**Rebuild concurrency (A6):** a derived-index rebuild writes to a **shadow location** and
+atomically swaps (readers see old-complete or new-complete, never half); because commit-time
+dedup depends on freshness, commits are **quiesced** or read a pinned pre-rebuild snapshot
+during an embedding-namespace rebuild.
+
+**Threshold–model-version binding.** Each operating point is bound to a named
+«embed.model_version». A model change requires **re-embedding the entity namespace** and
+**re-calibrating** against a golden merge/no-merge set (§16), and a **standing canary**
+tracks the NN-distance distribution (densification shifts thresholds).
+
+**Migration delta.** No embedding index exists; `search_index.py` is FTS-only. The pre-commit
+embedding path, the incremental-upsert-on-commit, and the shadow-swap rebuild are all net.
+The FTS index's lazy-rebuild model is the explicit contrast — the embedding index cannot be
+lazy because a write (dedup) depends on it.
+
+**Acceptance criteria.** Each namespace's adequacy gate passes against its own golden set, or
+its named fallback is active and falsifiable (I2 test). A deposited referent is deduped at
+commit against pages committed earlier in the same serialization window (freshness test). A
+rebuild produces a complete index via shadow-swap with no half-state visible to a concurrent
+`retrieve`, and no duplicate canonical page commits during a rebuild (A6 test). A
+model-version bump re-embeds the entity namespace and re-runs the golden merge/no-merge
+calibration before the new thresholds take effect.
+
+---
+
+## 14. Placement & restraint
+
+Each piece of logic lives where the state it needs lives (decision 14). Nothing here is a
+new subsystem: it is gates on the librarian intake path, a typed deposit tool, a demand
+ledger, an embedding index, and policy keys.
+
+**Policy, not code.** Thresholds and weights are **policy** — they extend
+`.knowledge/policies/<domain>/policy.yaml`, git-versioned via `policy_versions/` (WIKI.md
+§10). They are not code constants. (Pass A's §6 trust/dedup keys and §11/§13 keys all resolve
+to policy values, carried in the ledger and inheriting `policy_versions/` history.)
+
+**Change-control (G7), enforced not documented.** Distinguish **build-time tuning** from
+**runtime mutation**: a runtime agent must **not** silently move the semantic-identity or
+dedup thresholds. Each threshold names who may change it and its blast radius (ledger
+change-control column). Changes touching dedup/trust/contradiction keys route **through the
+CommitGate as a privileged intent** with allowlisted (build-time) identity, gated by
+`eval-retrieval --compare` and golden-merge re-eval. *Migration delta:* the validator's
+**lenient mode accepts hand-edited `policy.yaml` today** (WIKI.md §10.1, lines 836–838 — the
+strict validator runs only on `bootstrap-domain` output); routing privileged policy changes
+through the CommitGate with an eval gate is net behavior over that lenient path.
+
+**Start boring (decision 14).** The intent queue **starts as a watched directory of intent
+files** (generalizing `raw/inbox/`, watched by `watcher.py`) and graduates to a SQLite-backed
+queue or broker **only if measured volume forces it** (§15). But even as a directory it must
+encode the §3 lifecycle states as **durable on-disk facts** (subdirectories per state, or
+status frontmatter), **not in-memory watcher events** — the current `watcher.py` holds pending
+work in an in-memory `_pending` dict (`watcher.py:78`) and loses events fired while down, which
+is unacceptable for an intent that has been acked. Do not over-build.
+
+**The integrity boundary, restated plainly.** Markdown is canonical; the indexes are derived
+and rebuildable; `git commit` is the only atomic primitive (§2). No component claims a
+cross-store transaction.
+
+**Acceptance criteria.** A dedup/trust/contradiction threshold change by a non-allowlisted
+identity is rejected at the gate; an allowlisted change is accepted only after
+`eval-retrieval --compare` passes (G7 test). The intent queue survives a watcher restart with
+no acked intent lost — every `submitted`/`claimed` intent is recoverable from on-disk state
+(durability test). No threshold appears as a code constant where a policy key is required (a
+grep-style audit over the implementation).
+
+---
+
+## 15. Deferred implementation choices
+
+Each is consolidated here with its **measured trigger**; a planning step needs no further
+architectural decision beyond this list.
+
+- **Commit-gate mechanism — dedicated committer process vs commit mutex** (decision 1).
+  *Trigger:* measured commit-gate contention (ledger «liveness.commit_p99») or a need for
+  cross-process commit ordering the mutex cannot give. Either satisfies the single-
+  serialization-point invariant; the choice is implementation-time.
+- **Queue substrate — watched directory vs SQLite-backed queue / broker** (decision 14).
+  *Trigger:* measured queue depth / oldest-unprocessed-intent age (ledger liveness) exceeding
+  what directory-scan throughput sustains. Start with the directory (§14).
+- **Keep-worthiness server-side classifier** (decision 10). *Trigger:* measured
+  load-bearing self-report drift (the A7/§10 audit shows producers gaming the self-report).
+  Until then, self-report + the recurrence/citation-back audit suffice.
+- **Stronger read-your-writes** (decision 12). *Trigger:* a measured rate of broken
+  intra-session grounding the carry-forward mitigation does not cover. Until then, snapshot
+  isolation + carry-forward.
+- **Confidentiality / project-isolation upgrade** (decision, §1). *Trigger:* a project
+  introducing **third-party-confidential material** into the corpus. Until then, the open
+  shared substrate with project-as-tag stands.
+- **Automatic transitive cascade-revert — Option B** (G1/G2, POR per
+  `docs/backlog/librarian-cascade-revert-automation.md`). *Trigger:* any of
+  «reversal.auto_resolution_reversal_rate», «reversal.cross_project_override_rate», or
+  «reversal.observed_cascade_depth» crossing its ledger threshold (bad auto-resolutions
+  becoming frequent or deep), OR a public/multi-tenant exposure decision. Option A (§9) ships
+  the reversal primitive and decision-basis recording B builds on; B is additive, not a
+  rewrite.
+
+---
+
+## 16. Verification model & non-regression invariants
+
+**Verification method per component** is stated in each section's acceptance criteria above;
+this section adds the cross-cutting invariants, the redefined golden set, the extra eval axes,
+and the failure-mode taxonomy.
+
+**Never-regress invariants** (a regression here is a build-stopping defect): writes are
+serialized at one commit gate; reads are non-blocking against a committed snapshot; the
+validator rejects ungrounded claims (`validator.validate_citation_grounding`). Each has a test
+that fails if the invariant breaks.
+
+**The golden retrieval set, redefined to survive corpus mutation.** Today
+`retrieval_eval.py` matches `slug in g.expect` **literally** (`retrieval_eval.py:145`), so a
+merged-away `expect` slug silently fails recall. Redefinition: goldens express
+**canonical-referent identity resolved through a merge-map** — an `expect` slug that was merged
+away is satisfied by its **canonical successor**. Recall is measured against current HEAD with
+the map applied; each recall reading is **stamped with its corpus-HEAD hash**;
+**golden-staleness** (% unresolvable `expect` slugs) is tracked as a corpus-health metric.
+**Non-circularity (I3):** the merge-map is provenance/tombstone-derived (a record of merges
+that happened), and dedup precision is judged against an **independent, human-curated**
+merge/link/distinct golden set; a merge enters the recall map **only after** the dedup golden
+confirms it correct — a wrong merge fails the eval rather than laundering itself into a pass.
+Golden-staleness tracks unresolvable AND unconfirmed-merge `expect` slugs. *Migration delta:*
+`retrieval_eval.py` literal match → merge-map resolution + HEAD-hash stamping is net.
+
+**Eval axes beyond recall@k/MRR:**
+
+- **Dedup precision/recall** against the golden merge/link/distinct set.
+- **Demand-cluster purity** (paraphrases of one gap cluster together; distinct gaps do not).
+- **Grounding answerability + faithfulness** for the agent-grounding use, reusing
+  `evaluate/judge.py` (`Judge.score(golden, wiki_context)`, `judge.py:74`, with its
+  cite/assert/anti rubric). Name the **budget-truncation failure mode**: a page ranked
+  in-window but whose answer-section is truncated by the context budget is a **grounding miss
+  though a recall hit** — the recall metric alone does not catch it; the faithfulness axis does.
+
+**Authority-change gate.** Any `_authority_key` / ranking change (e.g. trust-weighting, §6)
+must pass `eval-retrieval --compare` as a **merge precondition** (ARCHITECTURE.md invariant
+table — the golden set governs ranking).
+
+**Failure-mode taxonomy.** Each named bad state pairs a **detector** (the test, lint,
+invariant check, or metric that surfaces it) with a **bounded recovery**. A failure mode with
+no detector is a design defect. A concurrent system's worst failures raise no exception, so
+they are named to be caught.
+
+| Bad state | Detector | Bounded recovery |
+|---|---|---|
+| Torn multi-store write (crash mid-reattachment, C1) | restart `git status`-clean check; kill-mid-reattachment test | `git reset --hard HEAD` + `git clean -fd`; re-run intent from `claimed` (§5.5) |
+| Lost update on concurrent same-entity merge (C5, F1) | claim-conservation reconciliation pass (§5.5, F1) | re-author the unaccounted intent against HEAD via the rebase-merge path (§5.1) |
+| Stale-index dedup miss (A6) | rebuild-and-diff equivalence (F2); commit-during-rebuild dedup test | incremental upsert to HEAD then re-run the dedup check; quiesce commits during rebuild |
+| Dangling wikilink / de-pathed citation target (G6) | `wiki lint` broken-wikilink + citation-target reachability check | re-path from the provenance reattachment set (§5.3); reverse the de-path intent (§8) |
+| Poison / dead-lettered intent (C4, C6) | dead-letter count + reason; per-entity contention metric | inspect reason; resubmit corrected, or accept dead-letter (contention/broken-dependency) |
+| Orphaned citation (orphaning rot) | orphan lint (no inbound citation) | quarantine via CommitGate intent; never delete |
+| Orphaned-correct-claim after winner retraction (G3) | standing lint over resolution acts whose winning source is retracted | re-open the resolution act; re-run the rule against survivors (§9) |
+| Mis-resolved contradiction (G1/G2) | contested-claims lint; auto-resolution-reversal rate | `revert-resolution <act-id>` (§9); Option B cascade if triggered (§15) |
+| Index-rebuild divergence (F2) | rebuild into shadow, diff against live | swap to the rebuilt index; investigate the diff source |
+| Silent / compounding producer failure (A7) | per-producer rejection-spike, dedup-merge-spike, deposit-silence alarms | throttle/quarantine the producer's intents; operator review |
+
+**Tested rebuild-from-canonical for every derived component.** The FTS index, **each**
+embedding namespace, and the backlink graph each ship a **tested** rebuild-from-canonical path
+whose rebuild-time is a tracked ledger metric — so "rebuild it" is a verified, time-bounded
+recovery, not an assumption. (FTS already rebuilds via `wiki index --rebuild`,
+`search_index.refresh(rebuild=True)`; the embedding namespaces and backlink graph are net and
+must add the same.)
+
+**Acceptance criteria.** The never-regress invariant tests fail loudly if any invariant
+breaks. Recall is reported against a HEAD-hash-stamped, merge-map-resolved golden snapshot, and
+golden-staleness is tracked. Every taxonomy row has a passing detector test and a documented
+recovery. Each derived component rebuilds from canonical in a measured, bounded time. No
+`_authority_key` change merges without passing `eval-retrieval --compare`.
+
+---
+
+_End of Pass B (§§9–16). Design document complete. Pass C writes the companion ledger
+`docs/plans/2026-06-18-librarian-multi-agent-rag-checkpoints.md` and runs the three
+self-checks against both persisted files._
