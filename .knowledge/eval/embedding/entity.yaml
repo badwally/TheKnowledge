@@ -1,0 +1,51 @@
+# Entity-namespace adequacy golden (co-reference identity / dedup).
+# Each pair is two identity surfaces (title + aliases). `merge: true` means the
+# two name the SAME referent (distance must be <= dedup_identity_threshold);
+# `merge: false` means distinct referents (distance must be > threshold).
+# Metric: precision on the merge decision at the threshold. Floor recorded in the
+# gate report. Bound to «embed.model_version».
+namespace: entity
+threshold_key: embed.dedup_identity_threshold
+metric: precision
+floor: 1.0
+pairs:
+  - a: "Semaglutide Ozempic Wegovy"
+    b: "Semaglutide Ozempic"
+    merge: true
+  - a: "Federal Reserve"
+    b: "Federal Reserve System"
+    merge: true
+  - a: "GLP-1 receptor agonist"
+    b: "GLP-1 receptor agonists"
+    merge: true
+  - a: "Order Block"
+    b: "Order Blocks"
+    merge: true
+  - a: "Semaglutide Ozempic"
+    b: "Tirzepatide Mounjaro"
+    merge: false
+  - a: "Federal Reserve"
+    b: "European Central Bank"
+    merge: false
+  - a: "Order Block"
+    b: "Fair Value Gap"
+    merge: false
+  - a: "GLP-1 receptor agonist"
+    b: "market structure shift"
+    merge: false
+  # --- Phase-3 hard positives: same referent, disjoint surface (lexical encoder
+  #     scores these FAR apart → false no-merge → embeddings are NOT merge authority).
+  - a: "Ozempic"
+    b: "Semaglutide"
+    merge: true            # brand ↔ generic, no shared token
+  - a: "GLP-1 receptor agonist"
+    b: "glucagon-like peptide-1 receptor agonist"
+    merge: true            # abbreviation ↔ expansion, minimal shared surface
+  # --- Phase-3 hard negatives: distinct referents, shared surface (lexical encoder
+  #     scores these CLOSE → false merge → NN geometry alone must not decide).
+  - a: "Type 1 diabetes"
+    b: "Type 2 diabetes"
+    merge: false           # one token differs; distinct disease referents
+  - a: "Federal Reserve Bank of New York"
+    b: "Federal Reserve Bank of San Francisco"
+    merge: false           # shared "Federal Reserve Bank of" prefix; distinct branches

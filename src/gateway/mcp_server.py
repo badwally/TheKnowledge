@@ -107,6 +107,16 @@ def _serialize(result: OperationResult) -> dict[str, Any]:
         "paths_touched": [str(p) for p in result.paths_touched],
         "errors": list(result.errors),
         "warnings": list(result.warnings),
+        # Librarian async-deposit fields (Phase 1, A5). Always present; None
+        # for legacy results so existing consumers see a stable shape.
+        "intent_id": result.intent_id,
+        "disposition": result.disposition,
+        "retry_after": result.retry_after,
+        "canonical_path": (
+            str(result.canonical_path)
+            if result.canonical_path is not None
+            else None
+        ),
     }
 
 
@@ -145,6 +155,35 @@ def wiki_ingest(
             draft=draft,
         )
     )
+
+
+@mcp.tool()
+def wiki_intent_status(intent_id: str) -> dict[str, Any]:
+    """Query a deposited intent_id for its terminal disposition (A1, read-tier).
+
+    Returns the typed disposition union (committed/merged -> canonical_path,
+    rejected/dead_lettered -> reason in summary) or a `retry_after` poll hint on
+    a non-terminal state. Read-only; never takes the commit mutex.
+    """
+    from gateway.ops.intent_status import intent_status
+
+    return _serialize(intent_status(intent_id))
+
+
+@mcp.tool()
+def wiki_deposit(
+    payload: dict[str, Any],
+    identity: dict[str, Any],
+    depends_on: str | None = None,
+) -> dict[str, Any]:
+    """Typed deposit (build-tier, A5). Validate the typed Intent shape, enqueue
+    DURABLY before ack, and return an async receipt (`disposition="queued"` +
+    `intent_id` + `retry_after`). Poll `wiki_intent_status` for the terminal
+    disposition. Authoring runs concurrently on workers; only commit is serial.
+    """
+    from gateway.ops.deposit import deposit
+
+    return _serialize(deposit(payload, identity, depends_on=depends_on))
 
 
 @mcp.tool()

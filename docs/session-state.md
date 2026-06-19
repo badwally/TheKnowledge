@@ -1,6 +1,282 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (above + 17 under-attributed research drafts ABANDONED via #27 — all merged)
+Last updated: 2026-06-18 (Librarian PHASE 3 gate PASSED — Phase 4 = fresh session)
+
+---
+
+## ✅ LIBRARIAN PHASE 1 — COMMIT FOUNDATION (2026-06-18) — DONE
+
+**Branch:** `docs/librarian-rag-design`. Plan: `docs/plans/2026-06-18-librarian-phase1-build-plan.md`.
+All five tasks shipped TDD, per-task commits: T1.1 intent queue (durable dir,
+fencing+lease, C3/C7), T1.2 OperationResult async fields + _serialize (A5),
+T1.3 intent-status op + CLI/MCP (A1), T1.4 CommitGate — commit mutex + MVCC CAS +
+idempotency-from-history + fencing + crash recovery (C1/C2/C3/C4, decision 1),
+T1.5 operational-provenance log + C7 watcher routing + A7 telemetry stub.
+
+**Gate:** pytest 1994 passed (baseline 1960; +34 new). eval-retrieval recall@10
+0.926 (unmoved — no retrieval code touched). Ledger §4 Phase-1 green-gate all [x];
+§5 four Phase-1 rows = green. C1/C2/C3/C7 detector tests named in §4.
+
+**Phase-1 hardened + GATE FULLY PASSED (2026-06-18).** Independent review found 3 BLOCKING +
+silent-corruption defects (tree-wide destructive recovery → scoped; CAS vs literal "HEAD" →
+real per-path blob OIDs; substring Intent-Id grep → exact trailer compare; blind-overwrite merge
+→ fail-safe dead-letter; non-atomic claim → os.replace + durable monotonic fencing; watcher
+coverage-marker) — all fixed TDD; independent re-review returned **GO**. Then background security
+review found a MEDIUM path-traversal in scoped-recovery `unlink`/`checkout` (test confirmed it was
+exploitable — sentinel deleted) → guarded at use site + `set_declared_writes` rejects `..`/abs.
+**Gateway suite 2002 passed; recall@10 0.926 unmoved.** Gate: eval ✓, independent code-review GO ✓,
+security ✓.
+
+**STANDING BUILD RULE (session-review finding, apply every phase):** the builder's self-tests were
+shallow on the highest-risk paths (monkeypatched the core merge/CAS; isolated-repo recovery test
+asserted the UNSAFE behavior as correct). Every phase builder MUST write adversarial tests with
+negative controls for concurrency / destructive-op / idempotency paths and must NOT monkeypatch the
+core path under test. Every gate MUST run an INDEPENDENT review (reviewer ≠ author) — it caught what
+the builder missed. Keep the background security review.
+
+**Phase-3 carry-forward (residual, non-blocking):** (a) the fail-safe rebase branch in `commit_gate`
+is where Phase 3's structured-claim merge plugs in (§5.1 case-2 mergeable rebase currently
+dead-letters `needs-merge`); (b) `git log --all` scans in `_already_committed`/`coverage_gap` are
+O(history) — scale-watch.
+
+**Next atomic step:** Phase 2 — Identity substrate (embedding index, 3 namespaces, upsert-on-commit
+off the now-green CommitGate, shadow-swap rebuild, per-namespace adequacy gates I2, rebuild-and-diff
+detector F2). ENCODER FORK (resolve in-build, do NOT add heavyweight ML deps autonomously): build a
+pluggable encoder interface + the three-namespace machinery; default the ACTIVE path to the design's
+lexical fallback (I2: dedup→alias/lexical, demand→lexical-canonicalized) so the gate passes honestly
+without a 2GB torch dep; a neural encoder is a later opt-in decision. Record whichever is active in
+«embed.model_version».
+
+---
+
+## ✅ LIBRARIAN PHASE 2 — IDENTITY SUBSTRATE (2026-06-18) — DONE
+
+**Branch:** `docs/librarian-rag-design`. Plan: `docs/plans/2026-06-18-librarian-phase2-build-plan.md`.
+Embedding index added ALONGSIDE the FTS index (derived/gitignored/rebuildable). Per-task commits:
+T1/T2 `embedding_index.py` (pluggable `Encoder` protocol + active `LexicalFallbackEncoder` =
+`lexical-fallback-v1`, dim 256, pure-numpy hashed token-set + char-3-gram; three namespaces
+section/entity/question with distinct cosine-distance operating points 0.55/0.30/0.70), T3
+incremental upsert-on-commit in `commit_gate.py` (freshness — earlier-in-window page visible to the
+next intent's entity-NN; `embedding_index=None` back-compat no-op; quiesce on
+`librarian-embedding-rebuild` lock), T4 shadow-swap rebuild (`os.replace` atomic) + rebuild-and-diff
+(F2, `index-rebuild-divergence`), T5 per-namespace adequacy gates + golden sets under
+`.knowledge/eval/embedding/` (I2; all three PASS at floor 1.0, falsifiable).
+
+**Gate PASSED:** pytest 2034 passed (baseline 1998 + 4 recovered flakes + 32 new Phase-2 tests; the
+4 `test_doc5_rotate_log` baseline flakes pass in a full clean run — order-dependent, unrelated).
+eval-retrieval recall@10 = 0.926 (unmoved — no FTS retrieval touched). `wiki lint` RC=0 (758
+pre-existing source-orphans, not Phase-2). Adversarial: concurrent-read-during-rebuild + non-atomic
+negative control; constant-encoder negative control fails the entity gate. Ledger §4 Phase-2 gate
+all [x]; §5 EMB row green; §1.2 «embed.*» calibrated + bound; §3 rebuild row = 7.26s / 4023 pages.
+
+**Review fixes (2026-06-18):** Finding 1 lost-row race fixed — `rebuild_from_canonical` now holds `REBUILD_LOCK` across scan+build+swap (was swap-only), so a commit upsert can no longer be clobbered (test `test_commit_during_rebuild_row_survives_without_rebuild`; 1b masking test strengthened to assert survival with NO intervening rebuild). Finding 3 F2 chain tested — swallowed commit upsert reported as `extra` by `diff_against_live` (`test_swallowed_commit_upsert_is_caught_by_diff_against_live` + clean negative control). Finding 4 "honest" family removed from Phase-2 code/docstrings. pytest 2037 passed; recall@10 = 0.926.
+
+**Independent review: GO (conditional).** No blocking defect for Phase 2 itself; substrate
+correctly built + honestly tested (shadow-swap atomicity, upsert freshness, F2 all verified;
+adequacy-gate falsifiability mechanism real via constant-encoder negative control). The two
+conditional items: #1 rebuild race — FIXED above. #2 → carried as a Phase-3 ENTRY GATE (below).
+
+**⚠ PHASE-3 ENTRY GATES (must hold before Phase-3 dedup ships — review-surfaced):**
+1. **Entity golden set is too easy.** It omits the hard dedup cases; the active `lexical-fallback-v1`
+   encoder gets them backwards — Ozempic vs Semaglutide (brand↔generic) at cosine dist 1.0 (false
+   no-merge), "Type 1 diabetes" vs "Type 2 diabetes" at 0.198 (false merge), shared-prefix Fed
+   branches at 0.25 (false merge). The «embed.dedup_identity_threshold»=0.30 sits in dead space, so
+   the gate passes without proving fitness. Phase 3 MUST: (a) harden `.knowledge/eval/embedding/entity.yaml`
+   with hard positives (brand/generic, abbrev/expansion) + hard negatives (shared-prefix distinct
+   referents), AND (b) wire alias/canonical-name exact-match as dedup AUTHORITY with embeddings
+   recall-only (design §13 I2 fallback + I1 adjudicator: aliases authoritative, cross-kind never
+   merge) — do NOT trust embedding-NN geometry alone for the merge decision.
+2. **Confirm the rebuild-race fix under concurrent dedup load** — Phase-3 dedup reads the entity
+   namespace at commit; verify a commit-time dedup during a rebuild sees a consistent namespace.
+
+**Next atomic step:** Phase 3 — Commit-time invariants (domain resolution; LLM-free replayable dedup
+I1 = deterministic precedence over entity_kind + alias/canonical exact-match + domain overlap +
+blocking-NN band, plugging into the `commit_gate` fail-safe rebase branch; claim-level contradiction
+auto-resolve «contradiction.precedence»; trust tiering on `_authority_key` eval-gated; write-skew
+C5/F1; phantom-collision; merge-reattachment; merge-map golden I3; policy change-control G7; lost-update
+F1). Honor the entry gates above first. The entity namespace + freshness from Phase 2 are the inputs
+Phase-3 dedup blocks against. contp in the Phase-3 section of the master build-plan.
+
+**CONTEXT-MANAGEMENT SEAM:** This window has run Phases 1–2 (build+review+fix each). Per the hard 50%
+ceiling + fresh-session-per-phase rule, Phase 3 (the 11-task dedup keystone, highest-risk) should run
+in a FRESH session via the Phase-3 contp. This is the agreed context discipline, not a blocker.
+
+---
+
+## ✅ LIBRARIAN PHASE 3 — COMMIT-TIME INVARIANTS (2026-06-18) — DONE
+
+**Branch:** `docs/librarian-rag-design`. Plan: `docs/plans/2026-06-18-librarian-phase3-build-plan.md`
+(PLAN→EXECUTE→GATE; build report `...-phase3-build-report.md`). Ran one fresh window: PLAN
+(writing-plans, 8 bite-sized tasks grounded in real interfaces) → EXECUTE (one cohesive build
+subagent, fresh context, TDD + per-task commit) → GATE (independent review + fix loop). The dedup
+adjudicator is DETERMINISTIC + LLM-free at commit (I1) — pure `dedup.adjudicate`, no model call, no
+index access in the held `librarian-commit` lock; replayable from logged inputs.
+
+**Shipped (8 build commits `a3835f63`..`140aac74`, 4 review-fix commits `fb21cdb9`/`4e76a5cd`/`a1e4c509`/`6790772f`):**
+- **T1 entry-gate 1a** — hardened `.knowledge/eval/embedding/entity.yaml` with genuinely-hard cases
+  (disjoint-surface positives Ozempic↔Semaglutide / GLP-1↔expansion; shared-surface negatives Type1↔Type2,
+  Fed-NY↔Fed-SF). Entity adequacy gate now honestly rides the active+falsifiable alias-authority fallback
+  (I2) instead of asserting `value==1.0` in dead space.
+- **T2 entry-gate 1b / KEYSTONE I1** — `src/gateway/dedup.py`: deterministic precedence
+  {merge,link,distinct}. Merge AUTHORITY = alias/canonical exact-or-normalized match + same `entity_kind`;
+  embeddings RECALL-ONLY (NN never merges on geometry alone); cross-kind NEVER merges. Total order
+  `(round(nn,6), slug)` → replayable.
+- **T3 I3** — `.knowledge/eval/dedup/golden.yaml` human-curated merge/link/distinct set + geometry-only
+  falsifiability negative control. (Deviation: RULE-3 link gate tightened `identity_threshold`→`blocking_band`
+  so distinct siblings stay `distinct`, not spuriously linked — golden is authority.)
+- **T4 C5/F1/entry-gate 2** — adjudicator wired into the commit serial re-check; write-skew (both claims
+  survive via `_claim_union` three-way add/add), phantom collision (merge into canonical, no duplicate),
+  concurrent-dedup-during-rebuild reads a consistent namespace (REBUILD_LOCK quiesce; REAL rebuild, no
+  monkeypatch). Negative control: genuinely-conflicting claims dead-letter.
+- **T5** — `domain_resolve.py`: multi-label domain resolution; empty set → `quarantined` (never silent-untag).
+- **T6 G5 (EVAL-GATED)** — `trust.py` server-derived tier (source-type + filter score; NO self-report arg);
+  `_authority_key` down-weight `_W_TRUST*(trust-0.5)`, `_W_TRUST=0.5` < tier/authority weights; eligibility
+  floor keeps low-trust pages retrievable. (Deviation: `_SCHEMA_VERSION` 1→2 drop-on-mismatch to add
+  `pages.trust` to the derived, gitignored, self-healing index — reviewer-verified safe.)
+- **T7** — `ops/contradiction.auto_resolve`: claim-level CiTO `disputes` edge + reversible provenance act
+  (rule + policy version), precedence = server trust-tier then recency; loser down-weighted, stays
+  retrievable. G5 negative control: self-reported trust cannot flip the winner.
+- **T8** — `ops/deposit.py` typed deposit op (durable enqueue-before-ack, async receipt) + MCP build-tier
+  `wiki_deposit` tool; authoring concurrent, only commit serial.
+
+**GATE PASSED:** full suite **2163 passed** (baseline ~2037 + Phase-3 + review-fix tests; clean re-runs).
+eval-retrieval fts recall@10 **0.926** (== baseline; trust down-weight added ZERO ranking regression),
+recall@5 0.852, MRR 0.690. Lint: `broken-wikilinks` clean except 1 pre-existing `OSError: File name too
+long` infra finding (not Phase-3). Ledger §4 Phase-3 all [x]; §5 both Phase-3 rows green; §1.2/§1.4 keys
+exercised («dedup.blocking_nn_threshold»=0.15, «embed.dedup_identity_threshold»=0.30,
+«trust.weight_coefficient»=0.5, «contradiction.precedence»).
+
+**Independent review (reviewer ≠ author): GO-WITH-FIXES → all blocking+important closed → effectively GO.**
+Verified correct first-pass: the keystone (determinism/alias-authority/recall-only), the 3 concurrency
+tests (real paths, no monkeypatch), golden falsifiability, trust/G5, quarantine, T6 migration. Findings
+fixed TDD (RED-before, re-reviewed): **B1 (BLOCKING)** merge silently dropped deposit body/wikilinks/aliases,
+no tombstone → unions aliases + carries body + `merged_into:` tombstone + dead-letter `needs-manual-merge`
+on collision; **N1** same drop via the preamble → carried under `## Merged context`; **I2** concept merge
+mis-targeted `entities/` → real-rel-path target; **I1** disputes edge pointed at the new claim even when it
+won → points at the policy-resolved loser.
+
+**SESSION-REVIEW FINDINGS (capture, apply next phase):**
+1. **Builder self-tests under-cover silent-corruption (no-exception) paths — AGAIN.** All 4 dedup defects
+   lived on the merge-reattachment path and were invisible to the builder's tests because every test
+   deposit body was *claims-only*. Minimal/stub fixtures hide invariant violations on transform/merge
+   paths. SHARPEN the standing rule: **merge/transform/reattachment tests MUST use realistic payloads
+   (full multi-section body, frontmatter aliases, inbound+body wikilinks, non-empty preamble), not minimal
+   stubs.** The independent review + re-review caught every one — the reviewer≠author gate remains
+   load-bearing and paid for itself a third phase running.
+2. **The discipline works where the plan mandates it at the right granularity.** The keystone, concurrency,
+   trust/G5, and golden-falsifiability paths were honestly built first-pass *because* the plan specified
+   adversarial tests + named negative controls per task. The gap was only where the plan's example test
+   bodies were simplified — i.e. the failure was in fixture realism, not in test-discipline intent.
+3. **Plan referenced a non-existent CLI scope** (`wiki lint --scope dedup`); the real dedup-integrity check
+   is `broken-wikilinks`. Minor; the builder used the right check. Lesson: verify CLI subcommand/scope
+   names before a plan references them (Verify-Before-Act on operations, not just code).
+
+**Tracked MINOR (N2, non-blocking):** the materialized `disputes`-edge line double-cites the loser source
+(the loser claim text already carries its own `[[sources/…]]`; the edge prepends a `…|disputes` link to the
+same source). Cosmetic, functionally correct. Revival trigger: any CiTO-edge rendering pass or a reader
+complaint about duplicated citations.
+
+**Phase-4 carry-forward (residual, non-blocking):** (a) `_merge_kind` normalization treats all
+`wiki/concepts/` pages as kind `concept` — if a concept page ever carries a finer `entity_kind`, revisit;
+(b) `auto_resolve` is called from the commit path WITHOUT `filter_score`, so contradiction trust there is
+source-type-only (the filter-score blend in `trust.server_trust_tier` is inert on that path — wire it when
+the deposit carries a filter score); (c) the Phase-1 O(history) `git log --all` scans in
+`_already_committed`/`coverage_gap` remain a scale-watch.
+
+**Next atomic step:** Phase 4 — Tiered agent surface (read/build tier split = two MCP entrypoints + op→tier
+table A2; deposit consumer contract A1 = the wait/backpressure loop an agent author codes from spec, typed
+disposition union + `retry_after`; bounded lock acquisition A3 off `flock` no-timeout; per-producer telemetry
+alarms A7 = rejection-spike / dedup-merge-spike / deposit-silence detectors). The `wiki_deposit` tool + the
+async receipt + `intent_status` from Phases 1+3 are the inputs Phase 4's consumer contract builds on. contp
+in the Phase-4 section of the master build-plan (`...-multi-agent-rag-build-plan.md`), reproduced below.
+
+**CONTEXT-MANAGEMENT SEAM:** This window ran Phase-3 PLAN→EXECUTE→GATE (build subagent + independent
+review + 2 fix loops) and stayed lean by keeping the build/review/fix in subagents. Per the fresh-session-
+per-phase rule, **Phase 4 runs in a FRESH session via the Phase-4 contp.**
+
+---
+
+## ✅ LIBRARIAN MULTI-AGENT RAG DESIGN GENERATION (2026-06-19) — DONE (all 3 passes)
+
+**Branch:** `docs/librarian-rag-design` (NOT main; inputs were committed here as
+`e38b8c4e`). Running as a self-paced single-window loop (3 short iterations —
+sanctioned by CLAUDE.md "single-window loops fine for ≤2–3 iterations"). User asked
+to "loop through the development process per plan."
+
+**Runbook:** `docs/plans/2026-06-18-librarian-rag-generation-runbook.md`.
+**Inputs (authoritative):** `docs/plans/2026-06-18-librarian-multi-agent-rag-design-prompt.md`,
+`...-constraints.md` (register: C1–C7, I1–I4, A1–A7, G1–G8, F1–F2),
+`docs/backlog/librarian-cascade-revert-automation.md` (Option B POR, G1).
+**Outputs:** `docs/plans/2026-06-18-librarian-multi-agent-rag-design.md` (design,
+evergreen) + `...-checkpoints.md` (ledger, mutable — Pass C).
+
+**Golden baseline (close-out guard):** recall@5 0.852 / recall@10 0.926 / MRR 0.690
+(n=27, fts). Generation must not touch it; Pass C re-runs `eval-retrieval --compare`.
+
+**Pass B — DONE.** Appended design §§9–16 (lifecycle/retraction cascade G3/G4/G8 +
+revert-resolution Option A; gap-routing + keep-worthiness; DemandLedger I4; three-namespace
+vector index I2/A6 + pre-commit embedding chicken/egg; placement + change-control G7;
+§15 deferred incl. Option B trigger; §16 verification: merge-map golden redefinition I3,
+dedup-precision/demand-purity/grounding-faithfulness axes via judge.py, full failure-mode
+taxonomy table — F1/F2 + 9 bad states each with detector+bounded recovery; tested
+rebuild-from-canonical per derived component). Design doc COMPLETE. IDs added in Pass B:
+G1–G4, G7, G8, I2, I3, I4, A6, F2 (+ G5/G6/F1/A7 reinforced).
+
+**Pass A — DONE.** Wrote design §0 + §§1–8 (dependency map + 5-phase cut: Commit
+foundation → Identity substrate → Commit-time invariants → Tiered agent surface →
+Lifecycle & demand governance; 2 mermaid). Attachment points grounded in real code:
+`CommitGate` generalizes `discharge_orphans._git_commit_synthesis_drafts`; `wiki-author`
+global flock (`locking.py:27/75`, no-timeout) is the narrow-or-replace delta; flat
+`FastMCP` (`mcp_server.py:37`) → two entrypoints; `_authority_key` (`search_index.py:422`)
+gets trust down-weight, eval-gated; `validator.validate_citation_grounding/_slug_uniqueness/_citation_verbs`;
+`OperationResult`/`_serialize` extended for async receipt (A5). IDs resolved in Pass A:
+C1–C7, I1, A1–A5, A7, G5, G6, G7(partial), F1.
+
+**Surface-anchor correction applied:** prompt says "honest model/restatement";
+rendered as "accurate/plain" per global language ban on the "honest" family.
+
+**Pass C — DONE.** Wrote the ledger `...-checkpoints.md` (20 threshold rows = one per design
+«»-key + 3 mandated extras [recall.floor_at_k, corpus.untagged/orphan ceilings]; corpus-health
+metrics; liveness/backpressure incl. per-component rebuild-time + per-failure-mode counters;
+5 phase-boundary checkpoints keyed to §0 names; live-progress table). Self-checks all PASS:
+(1) classification — every runtime component maps to {commit-gate / typed deposit tool / demand
+ledger / embedding index / intent-queue / policy key}; 3 are compositions/config NOT new
+subsystems (read/build tier split = MCP registration partition; planner/executor pre-flight =
+read-tier composition; verification harness = test infra) — none invented. (2) «»-keys: 20/20
+have ledger rows, 0 missing (grep-verified). (3) per-ID coverage: all 28 constraint IDs
+(C1–C7, I1–I4, A1–A7, G1–G8, F1–F2) resolved with a §-anchor; G1's Option-B portion explicitly
+deferred §15 with trigger. Each §16-taxonomy bad state has a detector + bounded recovery.
+
+**Close-out guard PASSED:** `eval-retrieval --compare` fts unmoved at recall@5 0.852 /
+recall@10 0.926 / MRR 0.690 (== baseline; generation touched no retrieval code).
+
+**Outputs on `docs/librarian-rag-design`:** design `...-design.md` (§0–16, evergreen) +
+ledger `...-checkpoints.md` (mutable). Commits: Pass A `321c8a13`, Pass B `5f0cf527`, Pass C
+(this). **Loop COMPLETE** — ran as a single-window 3-iteration self-paced loop (no scheduled
+wakeups; no external wait between passes).
+
+**Build plan — DERIVED + reviewed (2026-06-18/19).** `docs/plans/2026-06-18-librarian-multi-agent-rag-build-plan.md`
+(597 lines) is the master roadmap = the LOOP PROGRAM. It sequences the 5 phases (Commit
+foundation → Identity substrate → Commit-time invariants → Tiered agent surface → Lifecycle &
+demand governance) per design §0, each with goal/components/build-order, verbatim ledger §4
+green-gate, right-sized task table (files + interfaces + constraint-IDs + «ledger-keys»), and a
+paste-ready per-phase contp. Loop protocol: one FRESH session per phase, PLAN (writing-plans,
+phase-scoped) → EXECUTE (subagent-driven-development) → GATE = (1) eval green-gate +
+`eval-retrieval --compare` ≥ recall.floor_at_k + lints + failure-mode detector tests, (2)
+`code-review` skill on diff, (3) `/session-review`, (4) `/contp` + checkpoint + commit + `/clear`.
+A failing eval OR code review HALTS (no advance). Hard rule: main window never exceeds 50% context
+(fresh-session-per-phase + /clear at gates + subagent-driven execution). All 28 constraint IDs
+land (traceability table). NOTE: file was authored by a parallel session (shared tree); this
+session reviewed it (read-only Explore agent) and patched 3 defects — added C6 to the Phase-1
+traceability row; corrected the false "Phase 1 plan already written" claim (it is written at
+Phase 1's session start, like every phase); fixed the Phase 1 contp to WRITE its bite-sized plan
+via writing-plans rather than assume it exists.
+
+**Next: execute Phase 1 (Commit foundation)** as the first loop iteration — FRESH session via the
+Phase 1 contp in the build plan. It will PLAN (write `...-librarian-phase1-build-plan.md`) →
+EXECUTE → GATE. Do this after a context-management step (the user flagged 26% now; /clear before
+Phase 1 to start clean). Branch is NOT main; merge `docs/librarian-rag-design` → main is the
+user's call (push-branch+PR). Carried-in `log.md` change is watcher-daemon-owned; never staged.
 
 ---
 

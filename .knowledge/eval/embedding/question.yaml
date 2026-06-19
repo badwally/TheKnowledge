@@ -1,0 +1,18 @@
+# Question-namespace adequacy golden (topical-gap / demand clustering).
+# Each cluster is a set of paraphrased gap-signatures that must co-cluster within
+# demand_gap_threshold; signatures across clusters must NOT co-cluster.
+# Metric: cluster purity (1.0 = every within-cluster pair is near AND every
+# cross-cluster pair is far). Bound to «embed.model_version».
+namespace: question
+threshold_key: embed.demand_gap_threshold
+metric: purity
+floor: 1.0
+clusters:
+  glp1-titration:
+    - "How do I titrate GLP-1 dosing?"
+    - "What is the GLP-1 titration schedule?"
+    - "GLP-1 dose escalation and titration"
+  order-block:
+    - "What is an order block?"
+    - "How does an institutional order block form?"
+    - "How does an order block form in price action?"

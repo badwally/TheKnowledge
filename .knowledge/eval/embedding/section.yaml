@@ -1,0 +1,19 @@
+# Section-namespace adequacy golden (query->passage relevance / retrieval).
+# Each case is a query and a set of section texts; the `relevant` section must be
+# the nearest neighbor (recall@1) and within retrieval_relevance_threshold.
+# Metric: recall@1. Bound to «embed.model_version».
+namespace: section
+threshold_key: embed.retrieval_relevance_threshold
+metric: recall@1
+floor: 1.0
+sections:
+  glp1-dosing: "Dosing and titration\nGLP-1 receptor agonist dosing starts low and titrates weekly to reduce nausea."
+  order-block: "Order block formation\nAn institutional order block forms where large orders cluster in price action."
+  fed-policy: "Monetary policy\nThe Federal Reserve sets the federal funds rate to manage inflation."
+queries:
+  - query: "GLP-1 dosing and titration schedule"
+    relevant: glp1-dosing
+  - query: "institutional order block in price action"
+    relevant: order-block
+  - query: "US central bank federal funds rate"
+    relevant: fed-policy

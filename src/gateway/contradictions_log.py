@@ -48,6 +48,48 @@ def append_contradictions(contradictions: "Iterable[Contradiction]") -> int:
     return len(items)
 
 
+def resolution_acts_path():
+    return (
+        paths.knowledge_root() / ".knowledge" / "contradictions"
+        / "resolution_acts.jsonl"
+    )
+
+
+def append_resolution_act(act: dict) -> None:
+    """Append one reversible auto-resolution act (Phase-3 Task 7, decision 6).
+
+    Append-only JSONL: the act records inputs, the rule, the policy version, the
+    winner and loser, and a timestamp — enough to reverse the resolution. POSIX
+    O_APPEND of a < PIPE_BUF record is atomic; no locking needed."""
+    target = resolution_acts_path()
+    target.parent.mkdir(parents=True, exist_ok=True)
+    record = dict(act)
+    record.setdefault(
+        "resolved_at",
+        datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    )
+    with target.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def read_resolution_acts() -> list[dict]:
+    target = resolution_acts_path()
+    if not target.is_file():
+        return []
+    out: list[dict] = []
+    for line in target.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(obj, dict):
+            out.append(obj)
+    return out
+
+
 def read_records() -> list[dict]:
     """Read all records from the log. Tolerates malformed lines (skips them).
 

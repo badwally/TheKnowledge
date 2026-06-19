@@ -213,10 +213,10 @@ class WatcherDaemon:
                 log.warning("  %s", w)
             # Emit ingest.complete event so AGT-1 subscribers can pick it up.
             if result.paths_touched:
+                source_id = result.paths_touched[0].stem
                 try:
                     import uuid
                     from gateway import events as _events
-                    source_id = result.paths_touched[0].stem
                     _events.emit(
                         "ingest.complete",
                         payload={"source_id": source_id},
@@ -225,6 +225,34 @@ class WatcherDaemon:
                     )
                 except Exception as _e:
                     log.warning("event emission failed for %s: %s", path.name, _e)
+                # C7 / CORRECTNESS-9: a watcher ingest is a committed corpus
+                # change, so it must produce an operational-provenance node — no
+                # corpus state without an ancestor. The ingest is the "intent";
+                # the producer is the watcher. The watcher daemon commits the raw
+                # path SEPARATELY (after this node is written), so the node cannot
+                # carry the commit SHA — it records the REPO-RELATIVE paths it
+                # produced as a producer marker, and `coverage_gap` treats a
+                # commit whose touched paths are all marker-produced as covered.
+                try:
+                    from gateway import provenance as _prov
+
+                    root = paths.knowledge_root()
+                    rel_paths = []
+                    for p in result.paths_touched:
+                        try:
+                            rel_paths.append(str(Path(p).resolve().relative_to(root.resolve())))
+                        except ValueError:
+                            rel_paths.append(str(p))
+                    _prov.record(
+                        f"watcher-ingest:{source_id}",
+                        {
+                            "producer": "watcher",
+                            "source_id": source_id,
+                            "paths_touched": rel_paths,
+                        },
+                    )
+                except Exception as _e:
+                    log.warning("provenance record failed for %s: %s", path.name, _e)
             # Successful ingest -> file is now in raw/<type>/<id>.md;
             # the inbox copy is no longer needed.
             try:

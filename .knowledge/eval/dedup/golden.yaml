@@ -1,0 +1,29 @@
+# Independent, human-curated dedup golden (§16 I3). Judges the adjudicator's
+# decision directly — NOT embedding geometry. nn_distance is the lexical-fallback
+# encoder's ACTUAL distance for the pair (recorded so the test exercises the
+# recall-only path honestly).
+cases:
+  - name: brand-generic-same-drug
+    a: {entity_kind: drug, canonical_name: "Ozempic", aliases: ["Semaglutide"], domains: ["med"]}
+    b: {slug: "semaglutide", entity_kind: drug, canonical_name: "Semaglutide", aliases: ["Ozempic", "Wegovy"], domains: ["med"], nn_distance: 1.0}
+    expect: merge
+  - name: abbrev-expansion-same-concept
+    a: {entity_kind: concept, canonical_name: "GLP-1 receptor agonist", aliases: ["GLP-1 RA"], domains: ["med"]}
+    b: {slug: "glp1-receptor-agonist", entity_kind: concept, canonical_name: "glucagon-like peptide-1 receptor agonist", aliases: ["GLP-1 receptor agonist"], domains: ["med"], nn_distance: 0.9}
+    expect: merge
+  - name: type1-vs-type2-distinct
+    a: {entity_kind: concept, canonical_name: "Type 1 diabetes", domains: ["med"]}
+    b: {slug: "type-2-diabetes", entity_kind: concept, canonical_name: "Type 2 diabetes", domains: ["med"], nn_distance: 0.198}
+    expect: distinct
+  - name: fed-branches-distinct
+    a: {entity_kind: organization, canonical_name: "Federal Reserve Bank of New York", domains: ["econ"]}
+    b: {slug: "frb-sf", entity_kind: organization, canonical_name: "Federal Reserve Bank of San Francisco", domains: ["econ"], nn_distance: 0.25}
+    expect: distinct
+  - name: cross-kind-same-name-distinct
+    a: {entity_kind: drug, canonical_name: "Insulin", domains: ["med"]}
+    b: {slug: "insulin-concept", entity_kind: concept, canonical_name: "Insulin", domains: ["med"], nn_distance: 0.0}
+    expect: distinct
+  - name: near-related-link
+    a: {entity_kind: concept, canonical_name: "reward blunting", domains: ["med"]}
+    b: {slug: "food-noise", entity_kind: concept, canonical_name: "food noise", domains: ["med"], nn_distance: 0.12}
+    expect: link

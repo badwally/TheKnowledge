@@ -50,6 +50,16 @@ def locks_dir() -> Path:
     return knowledge_internal() / "locks"
 
 
+def intents_dir() -> Path:
+    """Durable intent-queue root (Librarian Phase 1, decision 14)."""
+    return knowledge_internal() / "intents"
+
+
+def provenance_dir() -> Path:
+    """Operational-provenance graph root (Librarian Phase 1, decision 3)."""
+    return knowledge_internal() / "provenance"
+
+
 def events_dir() -> Path:
     return knowledge_internal() / "events"
 
@@ -72,6 +82,16 @@ def index_dir() -> Path:
 
 def search_db_path() -> Path:
     return index_dir() / "wiki.db"
+
+
+def embedding_db_path() -> Path:
+    """Derived embedding store (Librarian Phase 2, §13). Gitignored under .index/."""
+    return index_dir() / "embeddings.db"
+
+
+def embedding_shadow_db_path() -> Path:
+    """Shadow location for a shadow-swap embedding rebuild (A6)."""
+    return index_dir() / "embeddings.shadow.db"
 
 
 def index_path() -> Path:

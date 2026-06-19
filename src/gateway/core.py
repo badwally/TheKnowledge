@@ -93,6 +93,12 @@ class OperationResult:
     no_op: bool = False  # True when idempotent re-run skipped writes
     authorship_report: AuthorshipReport | None = None
     data: dict = field(default_factory=dict)
+    # Librarian async-deposit fields (Phase 1, A5). Default None so existing
+    # consumers reading the fixed legacy field set are unaffected.
+    intent_id: str | None = None
+    disposition: str | None = None  # queued / committed / merged / rejected / ...
+    retry_after: int | None = None  # poll-interval hint on non-terminal status
+    canonical_path: Path | None = None  # committed / merged page path
 
     def __str__(self) -> str:  # pragma: no cover — debug aid
         if self.success:

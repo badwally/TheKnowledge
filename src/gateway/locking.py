@@ -28,6 +28,14 @@ LOCK_NAMES: frozenset[str] = frozenset(
         "nlm-registry",      # mutations to nlm/notebooks.yaml or nlm/source_maps/
         "log",               # log.md append (M47 fix for ARCH-1 racy log)
         "index",             # index.md update (M47 fix for ARCH-1 racy index)
+        # Librarian Phase 1 (decision 1): the single serial commit barrier.
+        # Replaces the global `wiki-author` barrier for the commit step (§4
+        # migration delta); authoring runs concurrently, only commit is serial.
+        "librarian-commit",
+        # Librarian Phase 2 (A6): quiesce window for the embedding shadow-swap.
+        # A rebuild holds it for the atomic os.replace; commits hold it for their
+        # post-commit upsert, so no commit reads a half-swapped index.
+        "librarian-embedding-rebuild",
     }
 )
 

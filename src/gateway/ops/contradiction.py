@@ -2,6 +2,7 @@
 
 list_contradictions() — list open contradiction pages.
 resolve_contradiction() — update status/resolution, set contested on sources.
+auto_resolve() — claim-level auto-resolution by policy (Phase-3 Task 7).
 """
 
 from __future__ import annotations
@@ -11,8 +12,59 @@ from pathlib import Path
 
 import yaml
 
-from gateway import frontmatter as fm, paths
+from gateway import contradictions_log, frontmatter as fm, paths, trust
 from gateway.core import OperationResult, write_atomic
+
+
+# «contradiction.policy_version» (ledger §1.1).
+CONTRADICTION_POLICY_VERSION = "contradiction-policy-v1"
+
+
+def _side_trust(side: dict) -> float:
+    """Server-derived trust for a contradiction side (G5): NEVER reads any
+    self-reported trust the agent may have attached — only source_type +
+    server-computed filter_score."""
+    return trust.server_trust_tier(
+        str(side.get("source_type", "")), side.get("filter_score")
+    )
+
+
+def auto_resolve(
+    side_a: dict,
+    side_b: dict,
+    *,
+    policy_version: str = CONTRADICTION_POLICY_VERSION,
+) -> dict:
+    """Resolve a two-sided claim contradiction by policy and record a reversible
+    act (design §6, decision 6, G5).
+
+    Precedence: server-derived trust tier DESC, then recency DESC. Self-reported
+    trust is never an input (closes the buggy-agent-inflates-trust vector). Each
+    side is ``{source, source_type, filter_score?, claim, committed_at?}``. The
+    loser is NEVER deleted — it stays retrievable (eligibility floor, Task 6);
+    the act is the reversible record. Returns the act dict (also appended to the
+    JSONL log)."""
+    ta, tb = _side_trust(side_a), _side_trust(side_b)
+    if ta != tb:
+        winner, loser = (side_a, side_b) if ta > tb else (side_b, side_a)
+    else:
+        # tie on trust → recency desc (later committed_at wins); stable fallback
+        # to side_b (the incoming deposit) on a total tie.
+        ca = str(side_a.get("committed_at", ""))
+        cb = str(side_b.get("committed_at", ""))
+        winner, loser = (side_a, side_b) if ca > cb else (side_b, side_a)
+
+    act = {
+        "rule": "trust-tier-then-recency",
+        "policy_version": policy_version,
+        "inputs": {"a": side_a, "b": side_b},
+        "winner": {"source": winner.get("source"), "claim": winner.get("claim"),
+                   "trust": _side_trust(winner)},
+        "loser": {"source": loser.get("source"), "claim": loser.get("claim"),
+                  "trust": _side_trust(loser)},
+    }
+    contradictions_log.append_resolution_act(act)
+    return act
 
 
 def _contradictions_dir() -> Path:
