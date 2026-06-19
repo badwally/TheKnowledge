@@ -338,6 +338,34 @@ class CommitGate:
                 "target": verdict_dedup.target_slug, "basis": verdict_dedup.basis,
             })
 
+            # (decision 6) Multi-label domain resolution + quarantine-on-empty.
+            # A deposit that NAMES domains but resolves to none live is
+            # quarantined — never committed untagged. A deposit with no domain
+            # hint at all is left untouched (back-compat).
+            ident_d = authored.intent.identity or {}
+            named = ident_d.get("domains") or (
+                [ident_d["domain"]] if ident_d.get("domain") else []
+            )
+            if named:
+                from gateway import domain_resolve
+
+                resolved = domain_resolve.resolve_domains(
+                    ident_d, domain_resolve.live_domains()
+                )
+                if not resolved:
+                    self._queue.set_state(
+                        intent_id, "quarantined",
+                        result={"reason": "no-resolvable-domain"},
+                    )
+                    return OperationResult(
+                        success=False,
+                        intent_id=intent_id,
+                        disposition="quarantined",
+                        errors=["no resolvable live domain"],
+                        summary=f"{intent_id}: quarantined (no resolvable domain)",
+                    )
+                authored.decision_basis.setdefault("resolved_domains", resolved)
+
             # (§5.1) MVCC compare-and-swap.
             verdict = self._classify(authored)
             writes = authored.writes

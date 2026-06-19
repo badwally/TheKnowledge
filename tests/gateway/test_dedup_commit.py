@@ -35,6 +35,11 @@ def tmp_commit_env(tmp_path, monkeypatch):
     (tmp_path / "README.md").write_text("seed\n")
     _git(tmp_path, "add", "README.md", ".gitignore")
     _git(tmp_path, "commit", "-qm", "seed")
+    # live domains so commit-time domain resolution does not quarantine.
+    for dom in ("med", "econ"):
+        pol = tmp_path / ".knowledge" / "policies" / dom
+        pol.mkdir(parents=True)
+        (pol / "policy.yaml").write_text(f"domain: {dom}\n")
     q = IntentQueue()
     idx = EmbeddingIndex()
     gate = CommitGate(queue=q, embedding_index=idx)

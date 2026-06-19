@@ -44,6 +44,7 @@ STATES: tuple[str, ...] = (
     "committed",
     "rejected",
     "dead_lettered",
+    "quarantined",
 )
 
 # Default «commit.lease_ttl» (ledger §1.1). Callers may override.
