@@ -47,6 +47,7 @@ import subprocess
 
 from gateway import locking, paths
 from gateway.core import OperationResult, write_atomic
+from gateway.embedding_index import REBUILD_LOCK
 from gateway.intent_queue import Intent, IntentQueue
 
 log = logging.getLogger(__name__)
@@ -195,19 +196,71 @@ class CommitGate:
                 return "contradictory"
         return verdict
 
+    def _blob_content(self, oid: str | None) -> str | None:
+        """Content of a blob OID, or None if it cannot be read."""
+        if not oid or set(oid) == {"0"} or oid == "HEAD":
+            return None
+        r = self._git("cat-file", "-p", oid, check=False)
+        if r.returncode != 0:
+            return None
+        return r.stdout
+
+    @staticmethod
+    def _claim_union(base: str, head: str, authored: str) -> str | None:
+        """Three-way union of appended ``## Claims`` bullet lines (§5.1 Phase-3).
+
+        Returns the merged body when BOTH the HEAD change and the authored change
+        relative to ``base`` are pure ADDITIONS of distinct claim bullets (no line
+        removed, no existing bullet rewritten). Otherwise returns None → the caller
+        dead-letters as ``needs-merge`` (a genuine conflict — e.g. the same claim
+        rewritten to a contradictory object — is NOT blind-merged; Task 7 handles
+        contradiction)."""
+        base_lines = base.splitlines()
+        head_lines = head.splitlines()
+        auth_lines = authored.splitlines()
+        base_set = set(base_lines)
+
+        def _added_bullets(new_lines):
+            added = [ln for ln in new_lines if ln not in base_set]
+            # every change must be an ADDED bullet line (not a removal or a
+            # non-bullet body rewrite)
+            if any(ln not in set(new_lines) for ln in base_lines):
+                return None  # a base line was removed → not a pure addition
+            for ln in added:
+                if ln.strip() and not ln.strip().startswith("- "):
+                    return None  # a non-bullet line changed → not claim-only
+            return added
+
+        head_add = _added_bullets(head_lines)
+        auth_add = _added_bullets(auth_lines)
+        if head_add is None or auth_add is None:
+            return None
+
+        # Start from HEAD (it already includes the concurrent addition), then
+        # append the authored bullets HEAD doesn't yet have.
+        head_set = set(head_lines)
+        new_bullets = [ln for ln in auth_add if ln not in head_set]
+        if not new_bullets:
+            return head if head.endswith("\n") else head + "\n"
+        merged_lines = list(head_lines)
+        # ensure there is a Claims section to append under
+        if not any(ln.strip().lower().startswith("## claims") for ln in merged_lines):
+            merged_lines += ["", "## Claims"]
+        merged_lines += new_bullets
+        out = "\n".join(merged_lines)
+        return out + "\n" if not out.endswith("\n") else out
+
     def _merge_rebase(self, authored: AuthoredIntent) -> dict[str, str]:
         """Re-apply the authored payload onto current HEAD (§5.1 case 2).
 
-        SILENT-CORRUPTION-4: the Phase-1 scaffold MUST fail safe. The structured
-        three-way claim merge is Phase 3; until then the only mergeable case we
-        accept without dropping a concurrent change is one where HEAD's current
-        content for the path is byte-identical to what the authoring snapshot saw
-        — i.e. nothing concurrent actually changed this page's body, so the
-        authored content can be applied. Any real divergence (HEAD now differs
-        from the authored base) is a potential lost update and is raised as a
-        RebaseConflict, which the commit loop dead-letters as ``needs-merge``
-        rather than blind-overwriting (the old ``head_content in content``
-        substring test silently dropped the concurrent edit, F1).
+        Phase-1 failed safe (any divergence → dead-letter). Phase-3 adds a
+        structured claim-union: when both the concurrent HEAD change and the
+        authored change relative to the authored base are pure additions of
+        distinct ``## Claims`` bullets, union them onto HEAD (C5 write-skew — both
+        claims survive). Any other divergence (a base line removed, a non-bullet
+        body rewrite, or the same claim rewritten to a contradictory object) is a
+        potential lost update / contradiction and is raised as RebaseConflict,
+        which the commit loop dead-letters as ``needs-merge`` (F1).
         """
         merged: dict[str, str] = {}
         for rel, content in authored.writes.items():
@@ -221,10 +274,16 @@ class CommitGate:
                 # HEAD unchanged vs the authoring snapshot — safe to apply.
                 merged[rel] = content
                 continue
-            # HEAD's blob differs from the authored base. A trivial scaffold
-            # cannot reconcile two divergent bodies without risking a lost
-            # update — fail safe to dead-letter.
-            raise self.RebaseConflict(rel)
+            # HEAD's blob differs from the authored base. Attempt a structured
+            # claim-union; fail safe to dead-letter if it is not a clean add/add.
+            head_content = self._blob_content(head_oid)
+            base_content = self._blob_content(base)
+            if head_content is None or base_content is None:
+                raise self.RebaseConflict(rel)
+            unioned = self._claim_union(base_content, head_content, content)
+            if unioned is None:
+                raise self.RebaseConflict(rel)
+            merged[rel] = unioned
         return merged
 
     # --- the gate -------------------------------------------------------
@@ -262,6 +321,22 @@ class CommitGate:
                     summary=f"{intent_id}: rejected (stale fencing token "
                             f"{fencing_token} < {current})",
                 )
+
+            # (§6 I1) Deterministic LLM-free dedup re-check, inside the held
+            # commit mutex. A `merge` verdict re-targets the deposit's claims onto
+            # the canonical page (no duplicate-referent slug minted). The verdict
+            # basis is recorded into provenance for replay.
+            dedup_disposition = "committed"
+            verdict_dedup = self._dedup_recheck(authored)
+            if verdict_dedup.decision == "merge" and verdict_dedup.target_slug:
+                authored = self._retarget_to_canonical(
+                    authored, verdict_dedup.target_slug
+                )
+                dedup_disposition = "merged"
+            authored.decision_basis.setdefault("dedup_verdict", {
+                "decision": verdict_dedup.decision, "rule": verdict_dedup.rule,
+                "target": verdict_dedup.target_slug, "basis": verdict_dedup.basis,
+            })
 
             # (§5.1) MVCC compare-and-swap.
             verdict = self._classify(authored)
@@ -355,17 +430,29 @@ class CommitGate:
             # the gitignored `.knowledge/` tree — the trailer is the source of truth.
             self._git("add", "--", *[str(p) for p in touched])
             canonical_rel = next(iter(writes))
+            # A merge-reattachment whose claims are all already present produces no
+            # staged diff. That is a successful idempotent attach, not an error —
+            # `git commit` would abort on an empty tree. Use --allow-empty so the
+            # Intent-Id trailer is still recorded (idempotency/provenance) and the
+            # disposition stays `merged`.
+            empty = self._git(
+                "diff", "--cached", "--quiet", check=False
+            ).returncode == 0
             msg = (
                 f"feat(librarian-commit): {canonical_rel}\n\n"
                 f"Intent-Id: {intent_id}\n"
             )
-            self._git("commit", "-qm", msg)
+            commit_args = ["commit", "-qm", msg]
+            if empty:
+                commit_args.insert(1, "--allow-empty")
+            self._git(*commit_args)
             sha = self._git("rev-parse", "HEAD").stdout.strip()
 
             canonical_path = self._root / canonical_rel
             self._queue.set_state(
                 intent_id, "committed",
-                result={"canonical_path": str(canonical_path), "commit": sha},
+                result={"canonical_path": str(canonical_path), "commit": sha,
+                        "dedup": dedup_disposition},
             )
 
             # (§13, A6) Incremental upsert on commit — AFTER the git commit (the
@@ -392,11 +479,127 @@ class CommitGate:
             return OperationResult(
                 success=True,
                 intent_id=intent_id,
-                disposition="committed",
+                disposition=dedup_disposition,
                 canonical_path=canonical_path,
                 paths_touched=touched,
-                summary=f"{intent_id}: committed {canonical_rel} at {sha[:8]}",
+                summary=f"{intent_id}: {dedup_disposition} {canonical_rel} at {sha[:8]}",
             )
+
+    # --- dedup re-check (Phase 3, §6 I1) -------------------------------
+
+    def _page_front(self, rel: str) -> dict:
+        """Parse the committed page's frontmatter (current-as-of-HEAD)."""
+        from gateway import frontmatter as fm
+
+        abs_path = self._root / rel
+        try:
+            front, _ = fm.parse(abs_path.read_text())
+        except Exception:
+            return {}
+        return front or {}
+
+    def _dedup_recheck(self, authored: "AuthoredIntent"):
+        """Deterministic, LLM-free dedup at the serial gate (§6 I1). Reads the entity
+        namespace as of HEAD (recall-only) under REBUILD_LOCK quiesce so a concurrent
+        shadow-swap cannot show a half-state (entry gate 2). Returns a replayable
+        Verdict; NEVER calls a model."""
+        from gateway import dedup
+
+        ident_d = authored.intent.identity or {}
+        if ident_d.get("page_type") not in ("entity", "concept"):
+            return dedup.Verdict("distinct", None, "not-an-entity-deposit", {})
+        identity = dedup.DepositIdentity(
+            entity_kind=ident_d.get("entity_kind", ""),
+            canonical_name=ident_d.get("canonical_name", ""),
+            aliases=tuple(ident_d.get("aliases", ()) or ()),
+            domains=tuple(ident_d.get("domains", ()) or ()),
+        )
+        candidates: list[dedup.Candidate] = []
+        if self._embedding_index is not None:
+            text = " ".join([identity.canonical_name, *identity.aliases]).strip()
+            with locking.file_lock(REBUILD_LOCK):  # quiesce vs shadow-swap (entry gate 2)
+                hits = self._embedding_index.nn("entity", text, k=10) if text else []
+            for h in hits:
+                rel = h.key
+                # Skip the deposit's own slug (it is not yet committed, but defensive).
+                if rel in authored.writes:
+                    continue
+                front = self._page_front(rel)
+                candidates.append(dedup.Candidate(
+                    slug=Path(rel).stem,
+                    entity_kind=front.get("entity_kind", ""),
+                    canonical_name=front.get("canonical_name", front.get("title", "")),
+                    aliases=tuple(front.get("aliases", ()) or ()),
+                    domains=tuple(front.get("domains", ()) or ()),
+                    nn_distance=h.distance,
+                ))
+        band = 0.15   # «dedup.blocking_nn_threshold»
+        thr = 0.30    # «embed.dedup_identity_threshold»
+        return dedup.adjudicate(
+            identity, candidates, blocking_band=band, identity_threshold=thr
+        )
+
+    def _retarget_to_canonical(
+        self, authored: "AuthoredIntent", target_slug: str
+    ) -> "AuthoredIntent":
+        """Merge-reattachment (§5.3): rewrite the deposit so its claims land on the
+        existing canonical page instead of minting the deposited slug. The deposit's
+        ``## Claims`` lines are unioned onto the canonical page's current body. The
+        deposited slug is never written (no duplicate-referent page)."""
+        from gateway import frontmatter as fm
+
+        target_rel = f"wiki/entities/{target_slug}.md"
+        target_abs = self._root / target_rel
+        if not target_abs.exists():
+            # No canonical page on disk to attach to — fall back to minting as-is.
+            return authored
+        target_content = target_abs.read_text()
+
+        # Extract the deposit's claim bullet lines (under a ## Claims heading).
+        reattached: list[str] = []
+        for _rel, content in authored.writes.items():
+            try:
+                _front, body = fm.parse(content)
+            except Exception:
+                body = content
+            in_claims = False
+            for line in body.splitlines():
+                stripped = line.strip()
+                if stripped.lower().startswith("## claims"):
+                    in_claims = True
+                    continue
+                if stripped.startswith("## "):
+                    in_claims = False
+                    continue
+                if in_claims and stripped.startswith("- "):
+                    reattached.append(stripped)
+
+        new_target = target_content.rstrip()
+        if reattached:
+            existing = set()
+            for line in target_content.splitlines():
+                s = line.strip()
+                if s.startswith("- "):
+                    existing.add(s)
+            additions = [c for c in reattached if c not in existing]
+            if additions:
+                if "## Claims" not in target_content:
+                    new_target += "\n\n## Claims\n"
+                new_target = new_target.rstrip() + "\n" + "\n".join(additions)
+            new_target += "\n"
+        else:
+            new_target += "\n"
+
+        # Base the rewritten write on the target's current HEAD blob so the CAS
+        # classifies it as a same-page concurrent edit (rebase), not a phantom.
+        head_oid = self._head_blob_oid(target_rel)
+        return AuthoredIntent(
+            intent=authored.intent,
+            writes={target_rel: new_target},
+            base_oid=authored.base_oid,
+            base_oids={target_rel: head_oid},
+            decision_basis=dict(authored.decision_basis),
+        )
 
     def _upsert_embeddings(self, writes: dict[str, str]) -> None:
         """Upsert committed pages into the embedding namespaces, current-as-of-HEAD.
