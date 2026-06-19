@@ -298,6 +298,59 @@ def test_merge_preserves_aliases_body_and_writes_tombstone(tmp_commit_env):
     assert t_front.get("merged_into") == "ozempic", t_front
 
 
+def test_merge_preserves_preamble_wikilink_or_dead_letters(tmp_commit_env):
+    """Review N1: a merge must NOT silently drop the deposit's PREAMBLE (text
+    before the first `## ` heading). A preamble carrying a unique wikilink must
+    survive on the canonical page OR the merge must dead-letter — never a silent
+    drop (same class as B1)."""
+    from gateway import frontmatter as fm
+
+    gate, queue, emb = tmp_commit_env
+    base = _authored_entity("A", "ozempic", "drug", "Ozempic",
+                            ["Semaglutide"], ["med"],
+                            claims=["claim-X [[sources/s1]]"], q=queue)
+    gate.commit(base, queue.fencing_token(base.intent.intent_id))
+
+    # The unique wikilink lives in the PREAMBLE (before any ## heading).
+    preamble_body = (
+        "# Overview\nKey ref: [[entities/glp1-receptor]].\n\n"
+        "## Claims\n- claim-Y [[sources/s2]]\n"
+    )
+    dep = _authored_entity_richbody(
+        "B", "semaglutide", "drug", "Semaglutide",
+        ["Ozempic"], ["med"], preamble_body, q=queue)
+    res = gate.commit(dep, queue.fencing_token(dep.intent.intent_id))
+    assert res.disposition in ("committed", "merged", "dead_lettered"), res.summary
+
+    if res.disposition == "dead_lettered":
+        return  # acceptable: refuse the merge rather than drop the preamble link
+
+    body = (gate._root / "wiki/entities/ozempic.md").read_text()
+    assert "[[entities/glp1-receptor]]" in body, (
+        "preamble wikilink silently dropped on merge:\n" + body
+    )
+
+
+def test_inert_stub_preamble_merges_cleanly_no_dead_letter(tmp_commit_env):
+    """N1 negative control: an inert `stub.` preamble (no unique content vs the
+    canonical stub) must STILL merge cleanly — no false dead-letter on the common
+    boilerplate case."""
+    gate, queue, emb = tmp_commit_env
+    base = _authored_entity("A", "ozempic", "drug", "Ozempic",
+                            ["Semaglutide"], ["med"],
+                            claims=["claim-X [[sources/s1]]"], q=queue)
+    gate.commit(base, queue.fencing_token(base.intent.intent_id))
+    # Same inert `# Overview\nstub.` preamble as the canonical page.
+    dep = _authored_entity_richbody(
+        "B", "semaglutide", "drug", "Semaglutide",
+        ["Ozempic"], ["med"],
+        "# Overview\nstub.\n\n## Claims\n- claim-Y [[sources/s2]]\n", q=queue)
+    res = gate.commit(dep, queue.fencing_token(dep.intent.intent_id))
+    assert res.disposition in ("committed", "merged"), res.summary
+    body = (gate._root / "wiki/entities/ozempic.md").read_text()
+    assert "claim-Y" in body and "claim-X" in body, body
+
+
 # --- Review fix I2: concept merge must target wiki/concepts, not wiki/entities -
 
 

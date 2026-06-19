@@ -702,6 +702,13 @@ class CommitGate:
         tgt_headings = {h.lower() for h, _ in tgt_sections if h}
         dep_sections = _sections(dep_body)
 
+        # Canonical preamble (text before the first ## heading), normalized to a
+        # set of non-blank lines for subset comparison.
+        tgt_preamble = next((t for h, t in tgt_sections if not h), "")
+        tgt_pre_lines = {
+            ln.strip() for ln in tgt_preamble.splitlines() if ln.strip()
+        }
+
         carried: list[tuple[str, str]] = []
         dep_claim_bullets: list[str] = []
         for h, text in dep_sections:
@@ -713,7 +720,19 @@ class CommitGate:
                 ]
                 continue
             if not h:
-                continue  # preamble before first heading — already on canonical stub
+                # Preamble (before the first ## heading). A non-empty preamble that
+                # introduces content NOT already on the canonical preamble must not
+                # be silently dropped (review N1, same class as B1): carry the
+                # novel lines onto the canonical page under a heading. An empty /
+                # byte-equal / subset preamble (the common `# Overview\nstub.`
+                # case) stays inert — no false dead-letter.
+                novel = [
+                    ln for ln in text.splitlines()
+                    if ln.strip() and ln.strip() not in tgt_pre_lines
+                ]
+                if novel:
+                    carried.append(("## Merged context", "\n".join(novel)))
+                continue
             if hl in tgt_headings:
                 # Heading collision: only safe if byte-identical, else dead-letter.
                 tgt_text = next(
