@@ -63,10 +63,28 @@ ledger `...-checkpoints.md` (mutable). Commits: Pass A `321c8a13`, Pass B `5f0cf
 (this). **Loop COMPLETE** — ran as a single-window 3-iteration self-paced loop (no scheduled
 wakeups; no external wait between passes).
 
-**Next (separate downstream step, NOT started):** derive a phased build plan from the design
-§0 dependency map + 5-phase cut and the ledger phase-boundary checkpoints. Branch is NOT main;
-merge `docs/librarian-rag-design` → main is the user's call (push-branch+PR per repo git
-discipline). Carried-in `log.md` change is watcher-daemon-owned; never staged.
+**Build plan — DERIVED + reviewed (2026-06-18/19).** `docs/plans/2026-06-18-librarian-multi-agent-rag-build-plan.md`
+(597 lines) is the master roadmap = the LOOP PROGRAM. It sequences the 5 phases (Commit
+foundation → Identity substrate → Commit-time invariants → Tiered agent surface → Lifecycle &
+demand governance) per design §0, each with goal/components/build-order, verbatim ledger §4
+green-gate, right-sized task table (files + interfaces + constraint-IDs + «ledger-keys»), and a
+paste-ready per-phase contp. Loop protocol: one FRESH session per phase, PLAN (writing-plans,
+phase-scoped) → EXECUTE (subagent-driven-development) → GATE = (1) eval green-gate +
+`eval-retrieval --compare` ≥ recall.floor_at_k + lints + failure-mode detector tests, (2)
+`code-review` skill on diff, (3) `/session-review`, (4) `/contp` + checkpoint + commit + `/clear`.
+A failing eval OR code review HALTS (no advance). Hard rule: main window never exceeds 50% context
+(fresh-session-per-phase + /clear at gates + subagent-driven execution). All 28 constraint IDs
+land (traceability table). NOTE: file was authored by a parallel session (shared tree); this
+session reviewed it (read-only Explore agent) and patched 3 defects — added C6 to the Phase-1
+traceability row; corrected the false "Phase 1 plan already written" claim (it is written at
+Phase 1's session start, like every phase); fixed the Phase 1 contp to WRITE its bite-sized plan
+via writing-plans rather than assume it exists.
+
+**Next: execute Phase 1 (Commit foundation)** as the first loop iteration — FRESH session via the
+Phase 1 contp in the build plan. It will PLAN (write `...-librarian-phase1-build-plan.md`) →
+EXECUTE → GATE. Do this after a context-management step (the user flagged 26% now; /clear before
+Phase 1 to start clean). Branch is NOT main; merge `docs/librarian-rag-design` → main is the
+user's call (push-branch+PR). Carried-in `log.md` change is watcher-daemon-owned; never staged.
 
 ---
 
