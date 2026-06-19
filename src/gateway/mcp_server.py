@@ -202,6 +202,22 @@ def wiki_revert_resolution(act_id: str) -> dict[str, Any]:
 
 
 @mcp.tool()
+def wiki_remediate(dry_run: bool = False) -> dict[str, Any]:
+    """Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier).
+
+    Scans wiki pages for genuinely-orphaned, uncited, provenance-unreachable pages
+    and submits a reversible de-path CommitGate intent for each. A page is a
+    candidate iff it has zero inbound wiki-links AND is not reachable from the
+    provenance graph. dry_run=True reports candidates without submitting intents.
+
+    Returns data={"depathed": [...], "skipped_reachable": [...]}.
+    """
+    from gateway.ops.remediate import remediate
+
+    return _serialize(remediate(dry_run=dry_run))
+
+
+@mcp.tool()
 def wiki_filter(input: str, domain: str | None = None) -> dict[str, Any]:
     """Score a candidate source against a domain's policy without writing.
 

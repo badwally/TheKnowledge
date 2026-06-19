@@ -114,6 +114,7 @@ SUBCOMMANDS: dict[str, str] = {
     "moc-add": "Author a wiki/mocs/<slug>.md domain map-of-content page",
     "intent-status": "Query a deposited intent_id for its terminal disposition (A1, read-tier)",
     "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
+    "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -188,6 +189,7 @@ IMPLEMENTED: set[str] = {
     "moc-add",
     "intent-status",
     "revert-resolution",
+    "remediate",
 }
 
 
@@ -452,6 +454,18 @@ def build_parser() -> argparse.ArgumentParser:
     p_revert_resolution.add_argument(
         "act_id",
         help="The resolution act id to revert (from resolution_acts.jsonl).",
+    )
+
+    # remediate: corpus-rot sweep — de-path orphaned uncited pages (G6, build-tier)
+    p_remediate = subparsers.add_parser(
+        "remediate",
+        help=SUBCOMMANDS["remediate"],
+    )
+    p_remediate.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=False,
+        help="Report orphaned pages without submitting de-path intents.",
     )
 
     # list-domains: enumerate blessed domains (read-only)
@@ -1609,6 +1623,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_moc_add(ns)
     if ns.subcommand == "revert-resolution":
         return _run_revert_resolution(ns)
+    if ns.subcommand == "remediate":
+        return _run_remediate(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2884,6 +2900,14 @@ def _run_revert_resolution(ns: argparse.Namespace) -> int:
     from gateway.ops.revert_resolution import revert_resolution
 
     result = revert_resolution(ns.act_id, {"agent": "cli"})
+    return _emit_result(result)
+
+
+def _run_remediate(ns: argparse.Namespace) -> int:
+    from gateway.ops.remediate import remediate
+
+    dry_run = getattr(ns, "dry_run", False)
+    result = remediate(dry_run=dry_run)
     return _emit_result(result)
 
 

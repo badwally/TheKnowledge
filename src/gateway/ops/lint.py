@@ -19,10 +19,12 @@ from gateway.lint import (
     broken_wikilinks,
     citation_chains,
     citation_density,
+    claim_conservation,
     contradiction_pages,
     contradictions,
     domain_purity,
     filter_calibration,
+    fragmentation,
     idempotency,
     inbox_pending,
     link_rot,
@@ -75,6 +77,8 @@ _CHECKS: list[tuple[str, Callable[[], list[LintFinding]]]] = [
     ("tags-invalid-type", invalid_tags.run),
     ("open-questions", unanswered_questions.run_open_questions),
     ("answered-no-synthesis", unanswered_questions.run_answered_no_synthesis),
+    ("fragmentation", fragmentation.run),
+    ("claim-conservation", claim_conservation.run),
 ]
 
 KNOWN_CHECKS = {slug for slug, _ in _CHECKS}
