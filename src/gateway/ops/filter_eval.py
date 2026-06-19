@@ -12,6 +12,14 @@ Vertical-agnostic: domain is always a parameter, never hardcoded.
 
 from __future__ import annotations
 
+import json
+import random
+from pathlib import Path
+
+import yaml
+
+from gateway import paths
+from gateway.core import OperationResult
 from gateway.filter import (
     load_all,
     load_policy,
@@ -173,3 +181,105 @@ def build_pool(
             continue
         scored.append(_pool_row(item, subtopic, result.score, _tier(result.score, policy)))
     return scored
+
+
+# --- Mode 1 artifact writers + op entrypoints ------------------------------
+
+
+def default_out_dir(domain: str, timestamp: str) -> Path:
+    return paths.knowledge_root() / ".knowledge" / "eval" / "filter" / domain / timestamp
+
+
+def write_scored_pool(scored: list[dict], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(scored, indent=2, ensure_ascii=False))
+
+
+def write_blind_pool(scored: list[dict], path: Path, *, seed: int = 0) -> None:
+    """Markdown grouped by subtopic, shuffled within group, NO scores/tiers."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    rng = random.Random(seed)
+    lines = ["# Blind candidate pool", "",
+             "Pick the 10 best-fit videos overall (across subtopics). Per subtopic,",
+             "note any 'expected but missing' talks/channels. Scores are hidden.", ""]
+    # Preserve subtopic file order; shuffle within each subtopic.
+    ordered_subtopics = list(dict.fromkeys(c["subtopic"] for c in scored))
+    for sub in ordered_subtopics:
+        group = [c for c in scored if c["subtopic"] == sub]
+        rng.shuffle(group)
+        lines.append(f"## {sub}")
+        lines.append("")
+        for c in group:
+            lines.append(f"- **{c['title']}** — {c['channel']}")
+            lines.append(f"  - {c['url']}")
+            desc = (c.get("description") or "").strip().replace("\n", " ")
+            if desc:
+                lines.append(f"  - {desc[:300]}")
+        lines.append("")
+    path.write_text("\n".join(lines))
+
+
+def pool_op(
+    domain: str,
+    queries_by_subtopic: dict[str, list[str]],
+    *,
+    out_dir: Path,
+    max_results_per_query: int = 15,
+    seed: int = 0,
+    search_fn=None,
+    filter_client: FilterClient | None = None,
+) -> OperationResult:
+    try:
+        scored = build_pool(
+            domain, queries_by_subtopic,
+            max_results_per_query=max_results_per_query,
+            search_fn=search_fn, filter_client=filter_client,
+        )
+    except FilterEvalError as e:
+        return OperationResult(success=False, errors=[str(e)])
+    if not scored:
+        return OperationResult(success=True, no_op=True,
+                               summary="no candidates returned for any subtopic")
+    blind = out_dir / "pool-blind.md"
+    scored_json = out_dir / "pool-scored.json"
+    write_scored_pool(scored, scored_json)
+    write_blind_pool(scored, blind, seed=seed)
+    n_accept = sum(1 for c in scored if c["tier"] == "accept")
+    n_subtopics = len({c["subtopic"] for c in scored})
+    return OperationResult(
+        success=True,
+        paths_touched=[blind, scored_json],
+        summary=(f"pool: {len(scored)} candidates across {n_subtopics} subtopics "
+                 f"({n_accept} accept-tier). Label {blind.name}, then "
+                 f"`wiki filter-eval score {domain} --scored {scored_json.name} --labels <labels.yaml>`"),
+    )
+
+
+def score_op(scored_pool_path: Path, labels_path: Path, *, k: int = 10) -> OperationResult:
+    try:
+        scored = json.loads(Path(scored_pool_path).read_text())
+        labels = yaml.safe_load(Path(labels_path).read_text()) or {}
+    except (OSError, json.JSONDecodeError, yaml.YAMLError) as e:
+        return OperationResult(success=False, errors=[f"load inputs: {e}"])
+    report = score_pool(scored, labels, k=k)
+    return OperationResult(success=True, summary=_format_report(report))
+
+
+def _format_report(report: dict) -> str:
+    k = report["k"]
+    fps = [c["url"] for c in report["filter_false_positives"]]
+    fns = [c["url"] for c in report["filter_false_negatives"]]
+    gaps = report["query_coverage_gaps"]
+    lines = [
+        f"precision@{k} = {report['precision_at_k']:.2f}  "
+        f"({len(report['hits'])}/{k} of the user's best-fit in filter top-{k})",
+        f"  filter false-positives (in top-{k}, not user-picked): "
+        f"{', '.join(fps) if fps else '(none)'}",
+        f"  filter false-negatives (user-picked, ranked outside top-{k}): "
+        f"{', '.join(fns) if fns else '(none)'}",
+        "  query-coverage gaps: "
+        + (", ".join(f"{s}: {len(v)}" for s, v in gaps.items()) if gaps else "(none)"),
+    ]
+    for w in report["label_warnings"]:
+        lines.append(f"  WARNING: {w}")
+    return "\n".join(lines)

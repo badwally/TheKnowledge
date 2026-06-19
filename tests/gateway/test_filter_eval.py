@@ -167,3 +167,56 @@ def test_build_pool_raises_when_no_youtube_adapter(monkeypatch):
     monkeypatch.setattr(filter_eval, "enabled_adapters", lambda **_: [])
     with pytest.raises(filter_eval.FilterEvalError):
         filter_eval.default_youtube_search(["q"], max_results=5)
+
+
+# --- Task A3: artifact writers + op entrypoints ----------------------------
+
+
+def test_write_blind_pool_groups_by_subtopic_and_hides_scores(tmp_path):
+    scored = [
+        {"item_id": "yt:A", "url": "https://yt/A", "title": "Alpha talk", "channel": "C1",
+         "description": "d", "subtopic": "kg-construction", "score": 0.9, "tier": "accept"},
+        {"item_id": "yt:B", "url": "https://yt/B", "title": "Beta talk", "channel": "C2",
+         "description": "d", "subtopic": "query-languages", "score": 0.2, "tier": "reject"},
+    ]
+    out = tmp_path / "pool-blind.md"
+    filter_eval.write_blind_pool(scored, out, seed=0)
+    text = out.read_text()
+    assert "## kg-construction" in text and "## query-languages" in text
+    assert "Alpha talk" in text and "https://yt/A" in text and "C1" in text
+    assert "0.9" not in text and "accept" not in text  # NO scores/tiers leaked
+
+
+def test_pool_op_writes_both_artifacts(tmp_path):
+    def fake_search(queries, *, max_results):
+        return [_yt_candidate("ZZ1", "Reasoning over ontologies (DL lecture)", "Uni", "OWL DL reasoning.")]
+    stub = _StubFilterClient({"Reasoning over ontologies": 0.85})
+    out = tmp_path / "run1"
+    result = filter_eval.pool_op(
+        "semantic-models",
+        {"reasoning": ["reasoning q"]},
+        out_dir=out,
+        search_fn=fake_search,
+        filter_client=stub,
+    )
+    assert result.success
+    blind = out / "pool-blind.md"
+    scored_json = out / "pool-scored.json"
+    assert blind.exists() and scored_json.exists()
+    data = json.loads(scored_json.read_text())
+    assert data[0]["tier"] == "accept" and data[0]["subtopic"] == "reasoning"
+    assert {str(p) for p in result.paths_touched} >= {str(blind), str(scored_json)}
+
+
+def test_score_op_reports_precision(tmp_path):
+    import yaml
+    scored = [{"url": f"https://yt/v{i:02d}", "title": f"t{i}", "channel": "c",
+               "description": "d", "subtopic": "s", "score": 0.9 - i * 0.05,
+               "tier": "accept", "item_id": f"yt:{i}"} for i in range(12)]
+    (tmp_path / "pool-scored.json").write_text(json.dumps(scored))
+    labels = {"best_fit": [f"https://yt/v{i:02d}" for i in range(10)], "missing": {}}
+    (tmp_path / "labels.yaml").write_text(yaml.safe_dump(labels))
+    result = filter_eval.score_op(tmp_path / "pool-scored.json", tmp_path / "labels.yaml", k=10)
+    assert result.success
+    assert "precision@10" in result.summary
+    assert "1.0" in result.summary or "1.00" in result.summary  # all 10 in top-10
