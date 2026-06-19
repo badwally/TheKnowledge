@@ -61,6 +61,7 @@ DEFAULT_MAX_REBASE_ATTEMPTS = 8
 # never block indefinitely. On timeout the intent is left for a later pass
 # (re-queue / retry), not hung.
 COMMIT_LOCK_ACQUIRE_TIMEOUT = 30.0  # «commit.lock_acquire_timeout»
+COMMIT_LOCK_RETRY_AFTER = 5  # seconds — poll-interval hint returned on barrier contention
 
 
 @dataclass(frozen=True)
@@ -296,253 +297,263 @@ class CommitGate:
 
     def commit(self, authored: AuthoredIntent, fencing_token: int) -> OperationResult:
         intent_id = authored.intent.intent_id
-        with locking.file_lock("librarian-commit", timeout=COMMIT_LOCK_ACQUIRE_TIMEOUT):
-            # (C2) Idempotency from committed state — scan history first.
-            prior = self._already_committed(intent_id)
-            if prior is not None:
-                result = self._queue.get_result(intent_id)
-                return OperationResult(
-                    success=True,
-                    no_op=True,
-                    intent_id=intent_id,
-                    disposition="committed",
-                    canonical_path=(
-                        Path(result["canonical_path"])
-                        if result.get("canonical_path") else None
-                    ),
-                    summary=f"{intent_id}: already committed at {prior[:8]}",
-                )
-
-            # (C3) Fencing — reject a stale (non-highest) token.
-            current = self._queue.fencing_token(intent_id)
-            if current is not None and fencing_token < current:
-                self._queue.set_result(
-                    intent_id, {"reason": "stale-fencing-token"}
-                )
-                return OperationResult(
-                    success=False,
-                    intent_id=intent_id,
-                    disposition="rejected",
-                    errors=["stale fencing token"],
-                    summary=f"{intent_id}: rejected (stale fencing token "
-                            f"{fencing_token} < {current})",
-                )
-
-            # (§6 I1) Deterministic LLM-free dedup re-check, inside the held
-            # commit mutex. A `merge` verdict re-targets the deposit's claims onto
-            # the canonical page (no duplicate-referent slug minted). The verdict
-            # basis is recorded into provenance for replay.
-            dedup_disposition = "committed"
-            verdict_dedup = self._dedup_recheck(authored)
-            if verdict_dedup.decision == "merge" and verdict_dedup.target_slug:
-                try:
-                    authored = self._retarget_to_canonical(
-                        authored, verdict_dedup.target_slug
+        try:
+            with locking.file_lock("librarian-commit", timeout=COMMIT_LOCK_ACQUIRE_TIMEOUT):
+                # (C2) Idempotency from committed state — scan history first.
+                prior = self._already_committed(intent_id)
+                if prior is not None:
+                    result = self._queue.get_result(intent_id)
+                    return OperationResult(
+                        success=True,
+                        no_op=True,
+                        intent_id=intent_id,
+                        disposition="committed",
+                        canonical_path=(
+                            Path(result["canonical_path"])
+                            if result.get("canonical_path") else None
+                        ),
+                        summary=f"{intent_id}: already committed at {prior[:8]}",
                     )
-                except self.RebaseConflict:
-                    # A merge whose body cannot be cleanly unioned (section heading
-                    # collision with differing content) must NOT silently drop the
-                    # deposit's body — dead-letter for manual merge (review B1).
+
+                # (C3) Fencing — reject a stale (non-highest) token.
+                current = self._queue.fencing_token(intent_id)
+                if current is not None and fencing_token < current:
+                    self._queue.set_result(
+                        intent_id, {"reason": "stale-fencing-token"}
+                    )
+                    return OperationResult(
+                        success=False,
+                        intent_id=intent_id,
+                        disposition="rejected",
+                        errors=["stale fencing token"],
+                        summary=f"{intent_id}: rejected (stale fencing token "
+                                f"{fencing_token} < {current})",
+                    )
+
+                # (§6 I1) Deterministic LLM-free dedup re-check, inside the held
+                # commit mutex. A `merge` verdict re-targets the deposit's claims onto
+                # the canonical page (no duplicate-referent slug minted). The verdict
+                # basis is recorded into provenance for replay.
+                dedup_disposition = "committed"
+                verdict_dedup = self._dedup_recheck(authored)
+                if verdict_dedup.decision == "merge" and verdict_dedup.target_slug:
+                    try:
+                        authored = self._retarget_to_canonical(
+                            authored, verdict_dedup.target_slug
+                        )
+                    except self.RebaseConflict:
+                        # A merge whose body cannot be cleanly unioned (section heading
+                        # collision with differing content) must NOT silently drop the
+                        # deposit's body — dead-letter for manual merge (review B1).
+                        self._queue.set_state(
+                            intent_id, "dead_lettered",
+                            result={"reason": "needs-manual-merge"},
+                        )
+                        return OperationResult(
+                            success=False,
+                            intent_id=intent_id,
+                            disposition="dead_lettered",
+                            errors=["merge body requires manual reconciliation"],
+                            summary=f"{intent_id}: dead-lettered (needs-manual-merge)",
+                        )
+                    dedup_disposition = "merged"
+                authored.decision_basis.setdefault("dedup_verdict", {
+                    "decision": verdict_dedup.decision, "rule": verdict_dedup.rule,
+                    "target": verdict_dedup.target_slug, "basis": verdict_dedup.basis,
+                })
+
+                # (decision 6, Task 7) Claim-level contradiction auto-resolve. A
+                # deposit whose claim contradicts a committed claim on the same
+                # referent is resolved by policy (server trust desc, then recency),
+                # records a reversible act, and materializes a CiTO `disputes` edge —
+                # the loser stays retrievable (never deleted).
+                resolved_intent = self._detect_and_resolve_claim_contradiction(authored)
+                if resolved_intent is not None:
+                    authored = resolved_intent
+                    authored.decision_basis.setdefault("contradiction_resolved", True)
+
+                # (decision 6) Multi-label domain resolution + quarantine-on-empty.
+                # A deposit that NAMES domains but resolves to none live is
+                # quarantined — never committed untagged. A deposit with no domain
+                # hint at all is left untouched (back-compat).
+                ident_d = authored.intent.identity or {}
+                named = ident_d.get("domains") or (
+                    [ident_d["domain"]] if ident_d.get("domain") else []
+                )
+                if named:
+                    from gateway import domain_resolve
+
+                    resolved = domain_resolve.resolve_domains(
+                        ident_d, domain_resolve.live_domains()
+                    )
+                    if not resolved:
+                        self._queue.set_state(
+                            intent_id, "quarantined",
+                            result={"reason": "no-resolvable-domain"},
+                        )
+                        return OperationResult(
+                            success=False,
+                            intent_id=intent_id,
+                            disposition="quarantined",
+                            errors=["no resolvable live domain"],
+                            summary=f"{intent_id}: quarantined (no resolvable domain)",
+                        )
+                    authored.decision_basis.setdefault("resolved_domains", resolved)
+
+                # (§5.1) MVCC compare-and-swap.
+                verdict = self._classify(authored)
+                writes = authored.writes
+                rebase_branch = "no-overlap"
+
+                if verdict == "contradictory":
                     self._queue.set_state(
-                        intent_id, "dead_lettered",
-                        result={"reason": "needs-manual-merge"},
+                        intent_id, "dead_lettered", result={"reason": "contradictory-edit"}
                     )
                     return OperationResult(
                         success=False,
                         intent_id=intent_id,
                         disposition="dead_lettered",
-                        errors=["merge body requires manual reconciliation"],
-                        summary=f"{intent_id}: dead-lettered (needs-manual-merge)",
+                        errors=["contradictory edit at HEAD"],
+                        summary=f"{intent_id}: dead-lettered (contradictory edit)",
                     )
-                dedup_disposition = "merged"
-            authored.decision_basis.setdefault("dedup_verdict", {
-                "decision": verdict_dedup.decision, "rule": verdict_dedup.rule,
-                "target": verdict_dedup.target_slug, "basis": verdict_dedup.basis,
-            })
 
-            # (decision 6, Task 7) Claim-level contradiction auto-resolve. A
-            # deposit whose claim contradicts a committed claim on the same
-            # referent is resolved by policy (server trust desc, then recency),
-            # records a reversible act, and materializes a CiTO `disputes` edge —
-            # the loser stays retrievable (never deleted).
-            resolved_intent = self._detect_and_resolve_claim_contradiction(authored)
-            if resolved_intent is not None:
-                authored = resolved_intent
-                authored.decision_basis.setdefault("contradiction_resolved", True)
+                if verdict == "rebase":
+                    rebase_branch = "rebase"
+                    attempts = 0
+                    while True:
+                        attempts += 1
+                        try:
+                            writes = self._merge_rebase(authored)
+                        except self.RebaseConflict:
+                            # SILENT-CORRUPTION-4 / F1: a real overlap the Phase-1
+                            # scaffold cannot reconcile. Fail safe — dead-letter as
+                            # needs-merge rather than blind-overwrite a concurrent
+                            # change. Spinning attempts cannot help (HEAD is stable
+                            # within the held commit mutex), so dead-letter now.
+                            self._queue.set_state(
+                                intent_id, "dead_lettered",
+                                result={"reason": "needs-merge"},
+                            )
+                            return OperationResult(
+                                success=False,
+                                intent_id=intent_id,
+                                disposition="dead_lettered",
+                                errors=["concurrent overlapping change requires merge"],
+                                summary=f"{intent_id}: dead-lettered (needs-merge)",
+                            )
+                        # CORRECTNESS-5: re-CAS the WHOLE merged write set against
+                        # each path's fresh HEAD blob. After _merge_rebase, every
+                        # path is HEAD-unchanged or absent, so the rebased payload
+                        # CAS-matches and we proceed.
+                        rebased = AuthoredIntent(
+                            intent=authored.intent,
+                            writes=writes,
+                            base_oid=authored.base_oid,
+                            base_oids={
+                                rel: self._head_blob_oid(rel) for rel in writes
+                            },
+                        )
+                        if self._classify(rebased) == "commit":
+                            break
+                        if attempts >= self._max_rebase:
+                            self._queue.set_state(
+                                intent_id, "dead_lettered",
+                                result={"reason": "contention"},
+                            )
+                            return OperationResult(
+                                success=False,
+                                intent_id=intent_id,
+                                disposition="dead_lettered",
+                                errors=["max rebase attempts exceeded"],
+                                summary=f"{intent_id}: dead-lettered (contention)",
+                            )
 
-            # (decision 6) Multi-label domain resolution + quarantine-on-empty.
-            # A deposit that NAMES domains but resolves to none live is
-            # quarantined — never committed untagged. A deposit with no domain
-            # hint at all is left untouched (back-compat).
-            ident_d = authored.intent.identity or {}
-            named = ident_d.get("domains") or (
-                [ident_d["domain"]] if ident_d.get("domain") else []
-            )
-            if named:
-                from gateway import domain_resolve
+                # BLOCKER-1: durably record the declared write set BEFORE touching
+                # the tree, so crash recovery can scope its revert to exactly these
+                # paths (tracked → `git checkout --`; untracked → `rm`) instead of a
+                # tree-wide `reset --hard` / `clean -fd` that would destroy unrelated
+                # sessions' and the watcher's uncommitted work.
+                try:
+                    self._queue.set_declared_writes(intent_id, list(writes))
+                except KeyError:
+                    pass  # queue record may legitimately be absent (idempotent path)
 
-                resolved = domain_resolve.resolve_domains(
-                    ident_d, domain_resolve.live_domains()
+                # Apply writes (per-file atomic; the git commit is the atomic boundary).
+                touched: list[Path] = []
+                for rel, content in writes.items():
+                    abs_path = self._root / rel
+                    write_atomic(abs_path, content)
+                    touched.append(abs_path)
+
+                # Idempotency is keyed off committed state via the `Intent-Id:` commit
+                # trailer (C2, §5.4), resolved by `git log --grep` on redelivery. The
+                # trailer cannot lag the commit (the queue status file can lag by one
+                # crash). An `applied_intents` record is intentionally NOT written to
+                # the gitignored `.knowledge/` tree — the trailer is the source of truth.
+                self._git("add", "--", *[str(p) for p in touched])
+                canonical_rel = next(iter(writes))
+                # A merge-reattachment whose claims are all already present produces no
+                # staged diff. That is a successful idempotent attach, not an error —
+                # `git commit` would abort on an empty tree. Use --allow-empty so the
+                # Intent-Id trailer is still recorded (idempotency/provenance) and the
+                # disposition stays `merged`.
+                empty = self._git(
+                    "diff", "--cached", "--quiet", check=False
+                ).returncode == 0
+                msg = (
+                    f"feat(librarian-commit): {canonical_rel}\n\n"
+                    f"Intent-Id: {intent_id}\n"
                 )
-                if not resolved:
-                    self._queue.set_state(
-                        intent_id, "quarantined",
-                        result={"reason": "no-resolvable-domain"},
-                    )
-                    return OperationResult(
-                        success=False,
-                        intent_id=intent_id,
-                        disposition="quarantined",
-                        errors=["no resolvable live domain"],
-                        summary=f"{intent_id}: quarantined (no resolvable domain)",
-                    )
-                authored.decision_basis.setdefault("resolved_domains", resolved)
+                commit_args = ["commit", "-qm", msg]
+                if empty:
+                    commit_args.insert(1, "--allow-empty")
+                self._git(*commit_args)
+                sha = self._git("rev-parse", "HEAD").stdout.strip()
 
-            # (§5.1) MVCC compare-and-swap.
-            verdict = self._classify(authored)
-            writes = authored.writes
-            rebase_branch = "no-overlap"
-
-            if verdict == "contradictory":
+                canonical_path = self._root / canonical_rel
                 self._queue.set_state(
-                    intent_id, "dead_lettered", result={"reason": "contradictory-edit"}
+                    intent_id, "committed",
+                    result={"canonical_path": str(canonical_path), "commit": sha,
+                            "dedup": dedup_disposition},
                 )
+
+                # (§13, A6) Incremental upsert on commit — AFTER the git commit (the
+                # atomic boundary), so the embedding rows are current-as-of-HEAD for
+                # the next intent's dedup. Quiesce on the embedding-rebuild lock so a
+                # concurrent shadow-swap never interleaves with this write. Derived
+                # state: a failure here self-heals on the next upsert/rebuild and must
+                # not fail an already-committed intent.
+                if self._embedding_index is not None:
+                    self._upsert_embeddings(writes)
+
+                # (decision 3) Operational-provenance node — recorded inside the gate.
+                if self._provenance is not None:
+                    basis = {
+                        "policy_version": authored.decision_basis.get("policy_version"),
+                        "dedup_score": authored.decision_basis.get("dedup_score"),
+                        "dedup_candidates": authored.decision_basis.get("dedup_candidates", []),
+                        "merge_rebase_branch": rebase_branch,
+                        "commit": sha,
+                        "canonical_path": str(canonical_path),
+                    }
+                    self._provenance.record(intent_id, basis)
+
                 return OperationResult(
-                    success=False,
+                    success=True,
                     intent_id=intent_id,
-                    disposition="dead_lettered",
-                    errors=["contradictory edit at HEAD"],
-                    summary=f"{intent_id}: dead-lettered (contradictory edit)",
+                    disposition=dedup_disposition,
+                    canonical_path=canonical_path,
+                    paths_touched=touched,
+                    summary=f"{intent_id}: {dedup_disposition} {canonical_rel} at {sha[:8]}",
                 )
-
-            if verdict == "rebase":
-                rebase_branch = "rebase"
-                attempts = 0
-                while True:
-                    attempts += 1
-                    try:
-                        writes = self._merge_rebase(authored)
-                    except self.RebaseConflict:
-                        # SILENT-CORRUPTION-4 / F1: a real overlap the Phase-1
-                        # scaffold cannot reconcile. Fail safe — dead-letter as
-                        # needs-merge rather than blind-overwrite a concurrent
-                        # change. Spinning attempts cannot help (HEAD is stable
-                        # within the held commit mutex), so dead-letter now.
-                        self._queue.set_state(
-                            intent_id, "dead_lettered",
-                            result={"reason": "needs-merge"},
-                        )
-                        return OperationResult(
-                            success=False,
-                            intent_id=intent_id,
-                            disposition="dead_lettered",
-                            errors=["concurrent overlapping change requires merge"],
-                            summary=f"{intent_id}: dead-lettered (needs-merge)",
-                        )
-                    # CORRECTNESS-5: re-CAS the WHOLE merged write set against
-                    # each path's fresh HEAD blob. After _merge_rebase, every
-                    # path is HEAD-unchanged or absent, so the rebased payload
-                    # CAS-matches and we proceed.
-                    rebased = AuthoredIntent(
-                        intent=authored.intent,
-                        writes=writes,
-                        base_oid=authored.base_oid,
-                        base_oids={
-                            rel: self._head_blob_oid(rel) for rel in writes
-                        },
-                    )
-                    if self._classify(rebased) == "commit":
-                        break
-                    if attempts >= self._max_rebase:
-                        self._queue.set_state(
-                            intent_id, "dead_lettered",
-                            result={"reason": "contention"},
-                        )
-                        return OperationResult(
-                            success=False,
-                            intent_id=intent_id,
-                            disposition="dead_lettered",
-                            errors=["max rebase attempts exceeded"],
-                            summary=f"{intent_id}: dead-lettered (contention)",
-                        )
-
-            # BLOCKER-1: durably record the declared write set BEFORE touching
-            # the tree, so crash recovery can scope its revert to exactly these
-            # paths (tracked → `git checkout --`; untracked → `rm`) instead of a
-            # tree-wide `reset --hard` / `clean -fd` that would destroy unrelated
-            # sessions' and the watcher's uncommitted work.
-            try:
-                self._queue.set_declared_writes(intent_id, list(writes))
-            except KeyError:
-                pass  # queue record may legitimately be absent (idempotent path)
-
-            # Apply writes (per-file atomic; the git commit is the atomic boundary).
-            touched: list[Path] = []
-            for rel, content in writes.items():
-                abs_path = self._root / rel
-                write_atomic(abs_path, content)
-                touched.append(abs_path)
-
-            # Idempotency is keyed off committed state via the `Intent-Id:` commit
-            # trailer (C2, §5.4), resolved by `git log --grep` on redelivery. The
-            # trailer cannot lag the commit (the queue status file can lag by one
-            # crash). An `applied_intents` record is intentionally NOT written to
-            # the gitignored `.knowledge/` tree — the trailer is the source of truth.
-            self._git("add", "--", *[str(p) for p in touched])
-            canonical_rel = next(iter(writes))
-            # A merge-reattachment whose claims are all already present produces no
-            # staged diff. That is a successful idempotent attach, not an error —
-            # `git commit` would abort on an empty tree. Use --allow-empty so the
-            # Intent-Id trailer is still recorded (idempotency/provenance) and the
-            # disposition stays `merged`.
-            empty = self._git(
-                "diff", "--cached", "--quiet", check=False
-            ).returncode == 0
-            msg = (
-                f"feat(librarian-commit): {canonical_rel}\n\n"
-                f"Intent-Id: {intent_id}\n"
-            )
-            commit_args = ["commit", "-qm", msg]
-            if empty:
-                commit_args.insert(1, "--allow-empty")
-            self._git(*commit_args)
-            sha = self._git("rev-parse", "HEAD").stdout.strip()
-
-            canonical_path = self._root / canonical_rel
-            self._queue.set_state(
-                intent_id, "committed",
-                result={"canonical_path": str(canonical_path), "commit": sha,
-                        "dedup": dedup_disposition},
-            )
-
-            # (§13, A6) Incremental upsert on commit — AFTER the git commit (the
-            # atomic boundary), so the embedding rows are current-as-of-HEAD for
-            # the next intent's dedup. Quiesce on the embedding-rebuild lock so a
-            # concurrent shadow-swap never interleaves with this write. Derived
-            # state: a failure here self-heals on the next upsert/rebuild and must
-            # not fail an already-committed intent.
-            if self._embedding_index is not None:
-                self._upsert_embeddings(writes)
-
-            # (decision 3) Operational-provenance node — recorded inside the gate.
-            if self._provenance is not None:
-                basis = {
-                    "policy_version": authored.decision_basis.get("policy_version"),
-                    "dedup_score": authored.decision_basis.get("dedup_score"),
-                    "dedup_candidates": authored.decision_basis.get("dedup_candidates", []),
-                    "merge_rebase_branch": rebase_branch,
-                    "commit": sha,
-                    "canonical_path": str(canonical_path),
-                }
-                self._provenance.record(intent_id, basis)
-
+        except locking.LockTimeout:
             return OperationResult(
-                success=True,
+                success=False,
                 intent_id=intent_id,
-                disposition=dedup_disposition,
-                canonical_path=canonical_path,
-                paths_touched=touched,
-                summary=f"{intent_id}: {dedup_disposition} {canonical_rel} at {sha[:8]}",
+                disposition="retry-later",
+                retry_after=COMMIT_LOCK_RETRY_AFTER,
+                errors=["commit barrier busy; retry later"],
+                summary=f"{intent_id}: commit deferred (commit-barrier contention)",
             )
 
     # --- dedup re-check (Phase 3, §6 I1) -------------------------------

@@ -110,6 +110,9 @@ def file_lock(name: str, *, timeout: float | None = None) -> Iterator[None]:
                     if time.monotonic() >= deadline:
                         raise LockTimeout(name, timeout)
                     time.sleep(POLL_INTERVAL)
+        # Positioned inside the acquired path: LOCK_UN runs only when the lock
+        # was actually held. A LockTimeout from the polling branch above exits
+        # before reaching here, so the fd never held the lock and no unlock is needed.
         try:
             yield
         finally:
