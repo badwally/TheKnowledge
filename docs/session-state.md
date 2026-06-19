@@ -1,6 +1,38 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (above + 17 under-attributed research drafts ABANDONED via #27 — all merged)
+Last updated: 2026-06-19 (YouTube-filter supervised-improvement exercise — Phases A+B SHIPPED on branch `exp/youtube-filter-supervised` in worktree `/Users/andrewgrant/code/knowledge-wt-youtube-filter`; Phase C operational/blocked)
+
+---
+
+## 🎯 YOUTUBE-FILTER SUPERVISED-IMPROVEMENT EXERCISE (2026-06-19) — Phases A+B DONE, Phase C blocked
+
+**Branch:** `exp/youtube-filter-supervised` (ISOLATED git worktree at `/Users/andrewgrant/code/knowledge-wt-youtube-filter`, cut outside the main repo tree so the concurrent committer/test-harness session on `test/multi-agent-test-harness` is untouched — user directive: "nothing to do with that other project").
+**Spec:** `docs/superpowers/specs/2026-06-18-youtube-filter-supervised-improvement-design.md` (approved).
+**Plan:** `docs/superpowers/plans/2026-06-19-youtube-filter-supervised-improvement.md` (this session, via writing-plans).
+**Test env (worktree has no .venv):** `PYTHONPATH=src /Users/andrewgrant/code/knowledge/.venv/bin/python -m pytest`.
+
+### Open contracts
+- **Phase A — `wiki filter-eval` subcommand: DONE.** 6 commits `dee82d20`..`b5e5902e`. Mode-2 `score_pool` (pure precision@k + buckets), Mode-1 `build_pool` (injectable search_fn + filter_client seams), artifact writers (`write_blind_pool` no-scores / `write_scored_pool`), entrypoints `pool_op`/`score_op`, CLI nested subparsers `pool|score` + `_run_filter_eval_cmd`, marked CLI_ONLY (developer harness like eval-retrieval). 14 filter_eval tests + parity; full gateway suite **1974 passed**.
+- **Phase A gate — independent review (feature-dev:code-reviewer, ≠author): GO-WITH-FIXES → all 3 applied + verified.** (1) systemic-failure guard: `build_pool` raises `FilterEvalError` when >50% candidates fail to score, instead of an all-0.0 pool that masquerades as real rejections (inert-in-production guard, RED test added); (2) `_prebuilt_system` passed to `filter_score` (TOK-3 parity w/ live `_run_filter`, ~5x faster); (3) summary uses full paths not bare filenames.
+- **Phase B — 12 prompts + train/validate queries: DONE.** `e1dfaf09`. `docs/research/youtube-filter-sl/{prompts.md,queries-train.yaml (8 subtopics/24q),queries-validate.yaml (4 held-out/12q)}`. Conference/institution register.
+
+### Files mid-edit
+- None. Working tree clean on the worktree branch; 7 commits ahead of `origin/exp/youtube-filter-supervised` (incl. the 2 pre-existing spec commits as ancestors). NOT pushed — awaiting user's finishing decision (recommended: push + PR for the filter-eval tool; Phase C changes land as a separate later PR).
+
+### Decisions made this session
+- Caught branch/tree mismatch at session start (was on `test/multi-agent-test-harness` with another session's staged committer work) → isolated the YouTube exercise in a worktree, never touched the other project.
+- `filter-eval` is CLI_ONLY (hits YouTube search + writes scratch; not an agent runtime op) — parity gate `test_mcp_parity` caught the omission, marked it like `eval-retrieval`.
+- `.knowledge/eval/filter/` added to `.gitignore` (spec assumed it was ignored; `.knowledge/eval/` actually holds *tracked* golden sets).
+- Filter response format is JSON `{"score","rationale"}` (verified `parse_response`), not `SCORE:/RATIONALE:` text — stub corrected before writing.
+- `score_pool` join key = `url`; tie-break `(-score, url)` for deterministic precision.
+
+### Rejected approaches this session
+- Stash/switch the current branch (would disturb the concurrent committer session's staged work) — used a worktree instead.
+- Reusing `_run_filter` for scoring (it discards rejected candidates; filter-eval needs ALL candidates scored with tiers) — scored each candidate directly via `gateway.filter.score`.
+- `.name`-only paths in the summary command string (fails on copy-paste from another cwd) — full paths.
+
+### Next atomic step
+**Phase C (operational, user-gated) — run in a dedicated session when the YouTube adapter key is idle (spec §11).** Sequence (plan Phase C): C1 `.venv/bin/wiki filter-eval pool semantic-models --queries docs/research/youtube-filter-sl/queries-train.yaml` (~100 candidates, ~25+ min filter run) → hand blind pool to user → C2 user authors `labels-train.yaml` (10 best-fit URLs + missing-flags), `wiki filter-eval score` → C3 derive improvements (filter-correct/examples/policy/query_planner; NOTE friction — filter-correct needs an INGESTED source_id, pool candidates aren't ingested; resolve per plan C3) → C4 held-out validate on queries-validate.yaml → C5 write-up `results.md`. Before any commit from the worktree, verify `git branch --show-current` == `exp/youtube-filter-supervised`.
 
 ---
 
