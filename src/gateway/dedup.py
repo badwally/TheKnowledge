@@ -99,9 +99,13 @@ def adjudicate(
         if id_names & cand_names:
             return Verdict("merge", c.slug, "alias-canonical-exact-match", basis)
         # RULE 3 (recall-only): same-kind, NO name match. Embedding NN alone does
-        # NOT merge. If it is within the strict identity threshold AND domains
-        # overlap, propose a LINK (related), never a merge.
-        if c.nn_distance <= identity_threshold and (id_domains & frozenset(c.domains)):
+        # NOT merge. A LINK (related) is proposed only when the pair is within the
+        # tight topical blocking_band AND domains overlap. The looser
+        # identity_threshold is the merge-candidacy geometry window, but merge
+        # requires alias authority — so a same-kind near-but-not-tight pair (two
+        # distinct sibling referents like Type-1/Type-2 diabetes or two Fed
+        # branches) stays DISTINCT, neither merged nor spuriously linked.
+        if c.nn_distance <= blocking_band and (id_domains & frozenset(c.domains)):
             if best_link is None:
                 best_link = c
 
