@@ -225,3 +225,64 @@ def test_answer_a4_suppression(kb_root):
     log_text = _log_text(kb_root)
     assert "corpus_miss=1" not in log_text
     assert "suppressed_a4=1" in log_text
+
+
+# ---------------------------------------------------------------------------
+# DEMAND-LOOP WIRING — a genuine corpus miss feeds the DemandLedger
+# ---------------------------------------------------------------------------
+
+def _recorded_gaps(kb_root: Path) -> list[str]:
+    """Read the raw gap texts recorded by the DemandLedger."""
+    p = kb_root / ".knowledge" / "demand" / "gaps.jsonl"
+    if not p.exists():
+        return []
+    out = []
+    for line in p.read_text().splitlines():
+        line = line.strip()
+        if line:
+            out.append(json.loads(line)["text"])
+    return out
+
+
+def test_retrieve_genuine_miss_records_demand_gap(kb_root):
+    """A genuine retrieve miss (corpus_miss=1, not A4-suppressed) records a gap
+    in the DemandLedger — wiring the demand loop's producer."""
+    retrieve_op("totally novel uncovered topic alpha", domain="med", caller="agent-1")
+    gaps = _recorded_gaps(kb_root)
+    assert "totally novel uncovered topic alpha" in gaps
+
+
+def test_retrieve_a4_suppressed_miss_records_no_demand_gap(kb_root):
+    """NEGATIVE-A4: an A4-suppressed miss records NO demand gap (the agent already
+    has work in flight; it is not an open demand signal)."""
+    _enqueue_deposit(kb_root, "agent-1", "pending topic")
+    retrieve_op("pending topic", domain="med", caller="agent-1")
+    gaps = _recorded_gaps(kb_root)
+    assert "pending topic" not in gaps
+
+
+def test_retrieve_hit_records_no_demand_gap(kb_root):
+    """NEGATIVE-HIT: a successful retrieve records NO demand gap."""
+    _seed_wiki_page(kb_root, "gastric-emptying", "Gastric emptying rate slows with GLP-1.")
+    search_index.refresh(rebuild=True)
+    retrieve_op("gastric emptying", domain="med", caller="agent-1")
+    gaps = _recorded_gaps(kb_root)
+    assert "gastric emptying" not in gaps
+
+
+def test_answer_genuine_miss_records_demand_gap(kb_root):
+    """answer_op genuine miss also records a demand gap."""
+    client = _StubClient("unused")
+    answer_op("another uncovered novel topic beta", domain="med",
+              caller="agent-1", client=client)
+    gaps = _recorded_gaps(kb_root)
+    assert "another uncovered novel topic beta" in gaps
+
+
+def test_answer_a4_suppressed_miss_records_no_demand_gap(kb_root):
+    """NEGATIVE-A4: answer_op A4-suppressed miss records NO demand gap."""
+    _enqueue_deposit(kb_root, "agent-1", "pending topic")
+    client = _StubClient("unused")
+    answer_op("pending topic", domain="med", caller="agent-1", client=client)
+    gaps = _recorded_gaps(kb_root)
+    assert "pending topic" not in gaps

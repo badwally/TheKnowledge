@@ -86,6 +86,20 @@ _DEFAULT_MAX_SECTION_CHARS = 4_000
 _DEFAULT_K = 12
 
 
+def _record_demand_gap(query: str, caller: str | None) -> None:
+    """Record a genuine corpus miss as a DemandLedger gap (decision 11 producer).
+
+    Best-effort telemetry: a failure here must never break the read op, so any
+    exception is swallowed (the miss is already logged to log.md regardless).
+    """
+    try:
+        from gateway.demand_ledger import DemandLedger
+
+        DemandLedger().record_gap(query, caller=caller)
+    except Exception:
+        pass
+
+
 @dataclass
 class RetrievedSection:
     rel_path: str
@@ -289,6 +303,12 @@ def retrieve_op(
                 f"corpus_miss={'suppressed' if suppressed else '1'}"
             ),
         )
+        # Demand-loop producer (decision 11): a genuine, non-suppressed corpus miss
+        # is an open demand signal — record the raw query as a gap in the DemandLedger.
+        # Recording to gitignored .knowledge/demand/ is read-tier-consistent (same
+        # class as the log.md append above — telemetry, not corpus mutation).
+        if not suppressed:
+            _record_demand_gap(query, caller)
         return OperationResult(
             success=False,
             paths_touched=[paths.log_path()],

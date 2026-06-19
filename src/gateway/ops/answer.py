@@ -165,6 +165,11 @@ def answer_op(
             summary=f"no wiki context found for {question!r}"
             + (f" in domain {domain!r}" if domain else ""),
         )
+        # Demand-loop producer (decision 11): mirror retrieve_op — a genuine,
+        # non-suppressed corpus miss records a gap in the DemandLedger.
+        if not suppressed:
+            from gateway.ops.retrieve import _record_demand_gap
+            _record_demand_gap(question, caller)
         return OperationResult(
             success=False,
             paths_touched=[paths.log_path()],

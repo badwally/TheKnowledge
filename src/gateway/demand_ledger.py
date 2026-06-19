@@ -25,12 +25,17 @@ from __future__ import annotations
 import hashlib
 import json
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from gateway import paths
-from gateway.embedding_index import EmbeddingIndex, LexicalFallbackEncoder, thresholds
+import numpy as np
+
+from gateway import locking, paths
+from gateway.embedding_index import LexicalFallbackEncoder, thresholds
+
+# Lock guarding the read-modify-write of triggered.json (TOCTOU fix).
+_DEMAND_TRIGGER_LOCK = "librarian-demand-trigger"
 
 
 # ---------------------------------------------------------------------------
@@ -172,15 +177,22 @@ class DemandLedger:
 
         Algorithm:
         1. Load all raw gap texts from .knowledge/demand/gaps.jsonl.
-        2. Apply cold-start gate: texts appearing < cold_start_min_recurrences times
-           are logged but not eligible for clustering.
-        3. Embed eligible texts into the `question` namespace and cluster greedily:
-           each text is assigned to the first existing cluster whose centroid is within
-           proximity_radius; otherwise a new cluster is started.
-        4. Clusters at or above recurrence_mass trigger exactly one canonicalization
-           intent (dedup via triggered.json).
+        2. Embed every unique text into the `question` namespace and cluster greedily:
+           each text joins the first cluster whose centroid is within proximity_radius;
+           otherwise a new cluster is started. All texts appear in the output (purity).
+        3. Trigger-mass cold-start gate: a cluster's TRIGGER mass counts only those
+           member-texts whose OWN occurrence-count >= cold_start_min_recurrences. A
+           one-off (count below cold-start) contributes 0 toward the trigger, so a
+           non-recurring paraphrase cannot push a below-mass cluster over. This makes
+           cold_start_min_recurrences a live behavioral parameter (not dead code).
+        4. A cluster whose TRIGGER mass >= recurrence_mass fires exactly one
+           canonicalization intent. Dedup is on a STABLE cluster identity (the
+           cold-start-eligible member text that sorts first) so a member joining the
+           cluster after it triggered cannot re-trigger it. The read-modify-write of
+           triggered.json runs under a file lock (TOCTOU-safe).
 
-        Returns list of GapCluster (all clusters, not just triggered ones).
+        `recurrence_mass` on each returned GapCluster is the TOTAL occurrence mass
+        (all members) for reporting; the trigger decision uses the gated trigger-mass.
         """
         t = thresholds()
         proximity_radius: float = float(t["demand.proximity_radius"])
@@ -191,21 +203,18 @@ class DemandLedger:
         if not records:
             return []
 
-        # Count occurrences per unique text (case-insensitive strip)
+        # Count occurrences per unique text (insertion-ordered)
         text_counts: dict[str, int] = {}
         for r in records:
             key = r.text
             text_counts[key] = text_counts.get(key, 0) + 1
 
-        # All unique texts are clustered (for structure + purity).
-        # The cold-start gate controls trigger eligibility, not cluster membership.
         all_texts = list(text_counts.keys())
         if not all_texts:
             return []
 
-        # Embed all texts
+        # Embed all unique texts (one batch)
         vecs = self._encoder.embed(all_texts)
-        import numpy as np
 
         def _cosine_dist(a: list[float], b: list[float]) -> float:
             va = np.asarray(a, dtype=np.float32)
@@ -214,7 +223,8 @@ class DemandLedger:
             return 1.0 - sim  # vectors are L2-normalised
 
         # Greedy clustering: assign each text to the nearest centroid within radius,
-        # or start a new cluster. Centroid is the first text in the cluster.
+        # or start a new cluster. Centroid is the first text in the cluster (the
+        # display centroid; the dedup key is computed separately and is stable).
         clusters: list[dict[str, Any]] = []  # [{centroid_text, centroid_vec, members}]
 
         for text, vec in zip(all_texts, vecs):
@@ -235,50 +245,78 @@ class DemandLedger:
                     "members": [(text, count)],
                 })
 
-        # Load already-triggered clusters (dedup gate)
-        triggered_set = _load_triggered(self._triggered_path())
-
-        result: list[GapCluster] = []
-        new_triggered: set[str] = set()
-
+        # Compute per-cluster derived quantities OUTSIDE the lock (no I/O).
+        derived: list[dict[str, Any]] = []
         for cl in clusters:
             member_texts = [m[0] for m in cl["members"]]
-            mass = sum(m[1] for m in cl["members"])
+            total_mass = sum(m[1] for m in cl["members"])
+            # Trigger mass: only members whose OWN count >= cold_start_min contribute.
+            eligible_members = [m for m in cl["members"] if m[1] >= cold_start_min]
+            trigger_mass = sum(m[1] for m in eligible_members)
+            # Stable dedup identity (drift-proof): the per-member cid of EVERY
+            # cold-start-eligible member. A cluster is "already triggered" if ANY of
+            # its current eligible members' cids is in the triggered set — so a NEW
+            # member joining after the trigger cannot make the cluster re-fire,
+            # regardless of which member would otherwise be chosen as an anchor.
+            member_cids = {_cluster_id(m[0]) for m in eligible_members}
+            derived.append({
+                "centroid_text": cl["centroid_text"],
+                "member_texts": member_texts,
+                "total_mass": total_mass,
+                "trigger_mass": trigger_mass,
+                "member_cids": member_cids,
+            })
 
-            cid = _cluster_id(cl["centroid_text"])
-            already_triggered = cid in triggered_set
-            # Cold-start gate: cluster must have total mass >= cold_start_min_recurrences
-            # before it is eligible to trigger (prevents first-occurrence triggers).
-            # Trigger also requires mass >= recurrence_mass (the heavy threshold).
-            eligible_for_trigger = mass >= cold_start_min
-            should_trigger = eligible_for_trigger and (mass >= recurrence_mass) and not already_triggered
-
-            if should_trigger:
-                self._submit_canonicalization_trigger(cl["centroid_text"], member_texts, mass)
-                new_triggered.add(cid)
-
-            result.append(GapCluster(
-                centroid_text=cl["centroid_text"],
-                member_texts=member_texts,
-                recurrence_mass=mass,
-                triggered=should_trigger or already_triggered,
-            ))
-
-        # Persist any new triggers
-        if new_triggered:
-            updated = triggered_set | new_triggered
-            _save_triggered(self._triggered_path(), updated)
+        # TOCTOU-safe read-modify-write of triggered.json: re-read UNDER the lock,
+        # decide, submit, then persist the union — all while holding the lock.
+        result: list[GapCluster] = []
+        with locking.file_lock(_DEMAND_TRIGGER_LOCK):
+            triggered_set = _load_triggered(self._triggered_path())
+            new_triggered: set[str] = set()
+            for d in derived:
+                # Already triggered if ANY eligible member's cid was recorded before,
+                # OR was recorded by an earlier cluster in this same run.
+                seen = triggered_set | new_triggered
+                already_triggered = bool(d["member_cids"] & seen)
+                should_trigger = (
+                    d["trigger_mass"] >= recurrence_mass and not already_triggered
+                )
+                if should_trigger:
+                    self._submit_canonicalization_trigger(
+                        d["centroid_text"], d["member_texts"], d["trigger_mass"],
+                        anchor_cid=min(d["member_cids"]),
+                    )
+                    # Record ALL eligible member cids so any one of them recognizes
+                    # the cluster on a later run (drift-proof dedup).
+                    new_triggered |= d["member_cids"]
+                result.append(GapCluster(
+                    centroid_text=d["centroid_text"],
+                    member_texts=d["member_texts"],
+                    recurrence_mass=d["total_mass"],
+                    triggered=should_trigger or already_triggered,
+                ))
+            if new_triggered:
+                _save_triggered(
+                    self._triggered_path(), triggered_set | new_triggered
+                )
 
         return result
 
     def _submit_canonicalization_trigger(
-        self, centroid_text: str, member_texts: list[str], mass: int
+        self, centroid_text: str, member_texts: list[str], mass: int,
+        *, anchor_cid: str | None = None,
     ) -> None:
         """Submit exactly one build-tier synthesis intent for a gap cluster.
 
         Mirrors the deposit() pattern from ops/deposit.py. The intent payload
         is a synthesis type with the cluster's centroid as the title, so the
         CommitGate can canonicalize it as a synthesis page.
+
+        The intent_id is computed over a STABLE identity (the cluster anchor_cid,
+        which does not change when a member joins) so the durable queue can
+        backstop the in-process dedup: a drifted cluster that slipped past the
+        triggered.json check would still content-address to the same intent_id and
+        be coalesced, rather than producing a duplicate canonicalization intent.
         """
         from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
 
@@ -296,7 +334,10 @@ class DemandLedger:
             "source": "canonicalization_trigger",
             "page_type": "synthesis",
         }
-        iid = compute_intent_id(payload, identity, semantics="demand-trigger")
+        # Stable id basis: anchor_cid (drift-proof) — NOT the full drifting payload.
+        # Falls back to the centroid text if no anchor is supplied.
+        id_basis = {"cluster_anchor": anchor_cid or _cluster_id(centroid_text)}
+        iid = compute_intent_id(id_basis, identity, semantics="demand-trigger")
         intent = Intent(intent_id=iid, payload=payload, identity=identity)
         q = self._queue or IntentQueue()
         q.submit(intent)
