@@ -50,6 +50,16 @@ def locks_dir() -> Path:
     return knowledge_internal() / "locks"
 
 
+def intents_dir() -> Path:
+    """Durable intent-queue root (Librarian Phase 1, decision 14)."""
+    return knowledge_internal() / "intents"
+
+
+def provenance_dir() -> Path:
+    """Operational-provenance graph root (Librarian Phase 1, decision 3)."""
+    return knowledge_internal() / "provenance"
+
+
 def events_dir() -> Path:
     return knowledge_internal() / "events"
 
