@@ -17,7 +17,7 @@ import subprocess
 import pytest
 
 from gateway.commit_gate import AuthoredIntent, CommitGate
-from gateway.embedding_index import EmbeddingIndex
+from gateway.embedding_index import EmbeddingIndex, LexicalFallbackEncoder
 from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
 
 
@@ -121,3 +121,58 @@ def test_commit_upserts_section_namespace(repo):
 
     sec = idx.nn("section", "GLP-1 receptor agonist overview", k=5)
     assert any(h.key.startswith("wiki/entities/semaglutide.md#") for h in sec)
+
+
+class _FailingEncoder(LexicalFallbackEncoder):
+    """Real encoder that raises on embed() — swallowed by the commit's
+    derived-index guard, so the commit succeeds but the page never lands in the
+    live embedding store. Not a monkeypatch of the commit path: the failure is
+    injected through the encoder the production upsert path actually calls."""
+
+    def embed(self, texts):
+        raise RuntimeError("encoder down")
+
+
+def test_swallowed_commit_upsert_is_caught_by_diff_against_live(repo):
+    """Finding 3 (F2 chain). The commit's embedding upsert is swallowed (encoder
+    fails; commit still succeeds; page absent from the live store). The F2 probe
+    ``diff_against_live`` MUST report the page — it is in canonical (on disk,
+    committed) but not in the live index → reported as ``extra``. Proves a
+    swallowed upsert is caught by F2 rather than silently causing a stale-index
+    dedup miss."""
+    q = IntentQueue()
+    # Inject the failing encoder into the index the COMMIT upserts through.
+    broken_idx = EmbeddingIndex(encoder=_FailingEncoder())
+    gate = CommitGate(queue=q, embedding_index=broken_idx)
+
+    a, ta = _authored(q, writes={"wiki/entities/semaglutide.md": _ENTITY_A})
+    r = gate.commit(a, ta)
+    # The commit still succeeds — the derived-index failure never blocks a commit.
+    assert r.success, r.errors
+    # The page is on disk (committed) but absent from the live embedding store.
+    assert (repo / "wiki/entities/semaglutide.md").exists()
+    assert EmbeddingIndex().nn("entity", "Semaglutide", k=5) == []
+
+    # F2 catches it: a real-encoder rebuild from canonical CONTAINS the page,
+    # the live store does NOT → reported as `extra` (in canonical, not in index).
+    report = EmbeddingIndex().diff_against_live()
+    assert report.divergent
+    assert "entity#wiki/entities/semaglutide.md" in report.extra, report.extra
+    assert any(
+        e.startswith("section#wiki/entities/semaglutide.md") for e in report.extra
+    ), report.extra
+    # Negative control: nothing is reported MISSING (no orphaned live row).
+    assert not report.missing, report.missing
+
+
+def test_diff_against_live_clean_when_upsert_succeeds(repo):
+    """Negative control for the F2 chain: when the commit upsert succeeds, the
+    live store matches canonical and diff_against_live reports NO divergence —
+    so the `extra` report above is caused by the swallowed upsert, not by a
+    spurious always-divergent probe."""
+    q = IntentQueue()
+    gate = CommitGate(queue=q, embedding_index=EmbeddingIndex())
+    a, ta = _authored(q, writes={"wiki/entities/semaglutide.md": _ENTITY_A})
+    assert gate.commit(a, ta).success
+    report = EmbeddingIndex().diff_against_live()
+    assert not report.divergent, (report.missing, report.extra, report.vector_mismatch)

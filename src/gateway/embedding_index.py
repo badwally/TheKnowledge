@@ -24,7 +24,7 @@ gate (`evaluate.embedding_eval`).
 later behind «embed.model_version». The ACTIVE default is the I2 lexical fallback
 (`LexicalFallbackEncoder`, `lexical-fallback-v1`): a deterministic,
 pure-numpy hashed lexical vector (token-set + char-3-gram), L2-normalized. It is
-honest and falsifiable — starting infrastructure, not a correctness guarantee.
+falsifiable starting infrastructure, not a correctness guarantee.
 
 **Rebuild concurrency (A6).** ``rebuild_from_canonical`` writes a complete fresh
 index to a shadow location and atomically swaps it in (``os.replace``), so a
@@ -372,12 +372,23 @@ class EmbeddingIndex:
         """Shadow-swap rebuild (A6): build a complete index into the shadow
         location, then atomically swap it in. A concurrent reader sees
         old-complete or new-complete, never half.
+
+        Finding 1 (lost-row race): the lock spans scan→build→swap, not just the
+        swap. A commit-time upsert (``commit_gate._upsert_embeddings``) takes the
+        same ``REBUILD_LOCK``, so a row committed to the live store after the
+        rebuild's scan but before its swap can no longer be clobbered by the swap
+        — the commit upsert and the whole rebuild are now mutually exclusive. A
+        commit landing during a rebuild blocks until the swap completes, then
+        upserts into the freshly-swapped live store (its row survives); a rebuild
+        landing during a commit waits for the upsert, then scans a corpus that
+        already reflects it.
         """
         shadow = paths.embedding_shadow_db_path()
         t0 = time.monotonic()
-        pages, rows = self._build_into(shadow)
-        # Atomic swap under the rebuild lock — the only quiesce window.
+        # Hold the lock across scan+build+swap so a concurrent commit upsert is
+        # serialized against the entire rebuild, not just the os.replace window.
         with locking.file_lock(REBUILD_LOCK):
+            pages, rows = self._build_into(shadow)
             # WAL side files were checkpointed on close; replace the main db file.
             os.replace(shadow, self._db_path)
             for ext in ("-wal", "-shm"):

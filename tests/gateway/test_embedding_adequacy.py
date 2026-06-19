@@ -2,7 +2,7 @@
 
 Each namespace ships its own golden set under .knowledge/eval/embedding/ and an
 independently-falsifiable gate. The active lexical fallback must pass its own
-(honestly weak) gate OR be marked active+falsifiable. The falsifiability probe is
+(accurately weak) gate OR be marked active+falsifiable. The falsifiability probe is
 adversarial: flipping a golden label must FLIP the gate verdict — a gate that
 passes regardless of labels is a rubber stamp and a defect.
 """

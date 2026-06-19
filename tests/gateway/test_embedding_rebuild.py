@@ -185,13 +185,27 @@ def test_nonatomic_rebuild_exposes_half_state_negative_control(wiki):
     assert partials, f"expected a partial count, saw {sorted(set(observed))}"
 
 
-def test_commit_quiesced_during_rebuild(wiki, monkeypatch):
-    """A commit's embedding upsert and a rebuild swap serialize on the rebuild
-    lock; post-state is consistent regardless of interleaving (real thread+lock)."""
-    import subprocess
+class _GatedRebuildEncoder(LexicalFallbackEncoder):
+    """Real encoder whose FIRST embed() call (the rebuild's build phase) blocks
+    until ``release`` is set, signalling ``in_build`` first. Lets a test land a
+    concurrent commit-upsert squarely inside the rebuild's scan→swap window
+    WITHOUT monkeypatching os.replace or the core path under test."""
 
-    from gateway.commit_gate import AuthoredIntent, CommitGate
-    from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
+    def __init__(self, in_build, release):
+        self._in_build = in_build
+        self._release = release
+        self._gated = False
+
+    def embed(self, texts):
+        if not self._gated:
+            self._gated = True
+            self._in_build.set()
+            self._release.wait(timeout=5.0)
+        return super().embed(texts)
+
+
+def _git_init_with_entities(wiki, n=4, prefix="seed"):
+    import subprocess
 
     def _git(*args):
         return subprocess.run(["git", *args], cwd=wiki, capture_output=True, text=True, check=True)
@@ -202,25 +216,21 @@ def test_commit_quiesced_during_rebuild(wiki, monkeypatch):
     (wiki / ".gitignore").write_text(".knowledge/\n.index/\n")
     _git("add", ".gitignore")
     _git("commit", "-qm", "seed")
-    for i in range(4):
-        _write_entity(wiki, f"seed{i}", f"Seed {i}")
+    for i in range(n):
+        _write_entity(wiki, f"{prefix}{i}", f"Seed {i}")
     _git("add", "wiki")
     _git("commit", "-qm", "seed entities")
 
-    idx = EmbeddingIndex()
-    idx.rebuild_from_canonical()
 
-    # Start a slow rebuild in the background (holds the lock at swap time).
-    rebuild_done = threading.Event()
+def _commit_late_entity(wiki):
+    """Run a real commit through the CommitGate for `wiki/entities/late.md`,
+    upserting its embedding rows on the commit path. Returns the OperationResult."""
+    from gateway.commit_gate import AuthoredIntent, CommitGate
+    from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
 
-    def do_rebuild():
-        EmbeddingIndex(encoder=_SlowEncoder(delay=0.02)).rebuild_from_canonical()
-        rebuild_done.set()
-
-    # A commit concurrent with the rebuild.
     q = IntentQueue()
     gate = CommitGate(queue=q, embedding_index=EmbeddingIndex())
-    page = ("---\ntype: entity\ntitle: Late Entity\naliases: []\n---\n# Overview\nx\n")
+    page = "---\ntype: entity\ntitle: Late Entity\naliases: []\n---\n# Overview\nx\n"
     payload = {"kind": "entity", "target": "wiki/entities/late.md"}
     ident = {"agent": "t"}
     iid = compute_intent_id(payload, ident)
@@ -232,17 +242,92 @@ def test_commit_quiesced_during_rebuild(wiki, monkeypatch):
     authored = AuthoredIntent(
         intent=intent, writes={"wiki/entities/late.md": page}, base_oid="HEAD"
     )
+    return gate.commit(authored, token)
+
+
+def test_commit_during_rebuild_row_survives_without_rebuild(wiki):
+    """Finding 1 (lost-row rebuild race). A REAL commit upserts a page into the
+    LIVE store while a REAL rebuild is mid-flight; the rebuild's scan ran BEFORE
+    the commit landed, so its shadow lacks the late page. After both join, with
+    NO intervening rebuild, the committed row MUST still be in the live store.
+
+    No monkeypatch of os.replace. The gated encoder pins the rebuild inside its
+    build window (after scan, before swap) so the commit upsert lands during it —
+    the exact interleaving that the scan→swap window must be mutually exclusive
+    against. RED on current code (swap clobbers the upsert); GREEN once the
+    rebuild holds REBUILD_LOCK across scan+build+swap."""
+    _git_init_with_entities(wiki, n=4)
+    EmbeddingIndex().rebuild_from_canonical()
+
+    in_build = threading.Event()
+    release = threading.Event()
+    rebuild_done = threading.Event()
+
+    def do_rebuild():
+        EmbeddingIndex(
+            encoder=_GatedRebuildEncoder(in_build, release)
+        ).rebuild_from_canonical()
+        rebuild_done.set()
 
     t = threading.Thread(target=do_rebuild)
     t.start()
-    r = gate.commit(authored, token)  # blocks on the rebuild lock if mid-swap
+    try:
+        # Wait until the rebuild is inside its build phase (scan already done).
+        assert in_build.wait(timeout=5.0), "rebuild never entered build phase"
+        # Land a real commit-upsert into the live store. With the fix, this blocks
+        # on REBUILD_LOCK until the rebuild fully completes; without the fix it
+        # races and the impending swap clobbers it.
+        commit_thread_result: list = []
+
+        def do_commit():
+            commit_thread_result.append(_commit_late_entity(wiki))
+
+        ct = threading.Thread(target=do_commit)
+        ct.start()
+        # Give the commit a beat to reach (and, on broken code, pass) its upsert.
+        time.sleep(0.1)
+    finally:
+        release.set()
+        t.join(timeout=10.0)
+        ct.join(timeout=10.0)
+
+    assert rebuild_done.is_set()
+    assert commit_thread_result and commit_thread_result[0].success, commit_thread_result
+
+    # No intervening rebuild — the committed row must already be in the LIVE store.
+    hits = EmbeddingIndex().nn("entity", "Late Entity", k=5)
+    assert any(h.key == "wiki/entities/late.md" for h in hits), (
+        "committed row was clobbered by the rebuild swap (lost-row race)"
+    )
+
+
+def test_commit_quiesced_during_rebuild(wiki, monkeypatch):
+    """A commit's embedding upsert and a rebuild swap serialize on the rebuild
+    lock; post-state is consistent regardless of interleaving (real thread+lock).
+
+    Finding 1b: assert the late row survives in the LIVE store WITHOUT any
+    intervening rebuild (the prior version did a final rebuild and accepted
+    'recoverable by a fresh rebuild', which masked the lost-row race)."""
+    _git_init_with_entities(wiki, n=4)
+
+    idx = EmbeddingIndex()
+    idx.rebuild_from_canonical()
+
+    # Start a slow rebuild in the background (holds the lock across scan→swap).
+    rebuild_done = threading.Event()
+
+    def do_rebuild():
+        EmbeddingIndex(encoder=_SlowEncoder(delay=0.02)).rebuild_from_canonical()
+        rebuild_done.set()
+
+    t = threading.Thread(target=do_rebuild)
+    t.start()
+    r = _commit_late_entity(wiki)  # blocks on the rebuild lock if mid-rebuild
     t.join()
 
     assert r.success, r.errors
     assert rebuild_done.is_set()
-    # The committed page survived: it is either in the live store (committed after
-    # the swap) or recoverable by a fresh rebuild. Either way no crash, no torn db.
-    EmbeddingIndex().rebuild_from_canonical()
+    # The committed page survived in the LIVE store with NO intervening rebuild.
     hits = EmbeddingIndex().nn("entity", "Late Entity", k=5)
     assert any(h.key == "wiki/entities/late.md" for h in hits)
 

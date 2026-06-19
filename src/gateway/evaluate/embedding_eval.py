@@ -2,10 +2,10 @@
 
 One shared encoder pulls geometry in incompatible directions, so each namespace
 ships its OWN golden set and an INDEPENDENTLY-FALSIFIABLE gate (design §13). The
-active encoder is the lexical fallback (`lexical-fallback-v1`); it is honest
+active encoder is the lexical fallback (`lexical-fallback-v1`); it is
 starting infrastructure, not a correctness guarantee. Each operating point's gate
 is falsifiable: flip a golden label and the gate flips. The active fallback must
-pass its own (honestly weak) gate or be marked active+falsifiable.
+pass its own (accurately weak) gate or be marked active+falsifiable.
 
 Golden sets live under `.knowledge/eval/embedding/{section,entity,question}.yaml`.
 
