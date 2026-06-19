@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (Librarian PHASE 2 gate PASSED — Phase 3 = fresh session)
+Last updated: 2026-06-18 (Librarian PHASE 3 gate PASSED — Phase 4 = fresh session)
 
 ---
 
@@ -100,6 +100,99 @@ Phase-3 dedup blocks against. contp in the Phase-3 section of the master build-p
 **CONTEXT-MANAGEMENT SEAM:** This window has run Phases 1–2 (build+review+fix each). Per the hard 50%
 ceiling + fresh-session-per-phase rule, Phase 3 (the 11-task dedup keystone, highest-risk) should run
 in a FRESH session via the Phase-3 contp. This is the agreed context discipline, not a blocker.
+
+---
+
+## ✅ LIBRARIAN PHASE 3 — COMMIT-TIME INVARIANTS (2026-06-18) — DONE
+
+**Branch:** `docs/librarian-rag-design`. Plan: `docs/plans/2026-06-18-librarian-phase3-build-plan.md`
+(PLAN→EXECUTE→GATE; build report `...-phase3-build-report.md`). Ran one fresh window: PLAN
+(writing-plans, 8 bite-sized tasks grounded in real interfaces) → EXECUTE (one cohesive build
+subagent, fresh context, TDD + per-task commit) → GATE (independent review + fix loop). The dedup
+adjudicator is DETERMINISTIC + LLM-free at commit (I1) — pure `dedup.adjudicate`, no model call, no
+index access in the held `librarian-commit` lock; replayable from logged inputs.
+
+**Shipped (8 build commits `a3835f63`..`140aac74`, 4 review-fix commits `fb21cdb9`/`4e76a5cd`/`a1e4c509`/`6790772f`):**
+- **T1 entry-gate 1a** — hardened `.knowledge/eval/embedding/entity.yaml` with genuinely-hard cases
+  (disjoint-surface positives Ozempic↔Semaglutide / GLP-1↔expansion; shared-surface negatives Type1↔Type2,
+  Fed-NY↔Fed-SF). Entity adequacy gate now honestly rides the active+falsifiable alias-authority fallback
+  (I2) instead of asserting `value==1.0` in dead space.
+- **T2 entry-gate 1b / KEYSTONE I1** — `src/gateway/dedup.py`: deterministic precedence
+  {merge,link,distinct}. Merge AUTHORITY = alias/canonical exact-or-normalized match + same `entity_kind`;
+  embeddings RECALL-ONLY (NN never merges on geometry alone); cross-kind NEVER merges. Total order
+  `(round(nn,6), slug)` → replayable.
+- **T3 I3** — `.knowledge/eval/dedup/golden.yaml` human-curated merge/link/distinct set + geometry-only
+  falsifiability negative control. (Deviation: RULE-3 link gate tightened `identity_threshold`→`blocking_band`
+  so distinct siblings stay `distinct`, not spuriously linked — golden is authority.)
+- **T4 C5/F1/entry-gate 2** — adjudicator wired into the commit serial re-check; write-skew (both claims
+  survive via `_claim_union` three-way add/add), phantom collision (merge into canonical, no duplicate),
+  concurrent-dedup-during-rebuild reads a consistent namespace (REBUILD_LOCK quiesce; REAL rebuild, no
+  monkeypatch). Negative control: genuinely-conflicting claims dead-letter.
+- **T5** — `domain_resolve.py`: multi-label domain resolution; empty set → `quarantined` (never silent-untag).
+- **T6 G5 (EVAL-GATED)** — `trust.py` server-derived tier (source-type + filter score; NO self-report arg);
+  `_authority_key` down-weight `_W_TRUST*(trust-0.5)`, `_W_TRUST=0.5` < tier/authority weights; eligibility
+  floor keeps low-trust pages retrievable. (Deviation: `_SCHEMA_VERSION` 1→2 drop-on-mismatch to add
+  `pages.trust` to the derived, gitignored, self-healing index — reviewer-verified safe.)
+- **T7** — `ops/contradiction.auto_resolve`: claim-level CiTO `disputes` edge + reversible provenance act
+  (rule + policy version), precedence = server trust-tier then recency; loser down-weighted, stays
+  retrievable. G5 negative control: self-reported trust cannot flip the winner.
+- **T8** — `ops/deposit.py` typed deposit op (durable enqueue-before-ack, async receipt) + MCP build-tier
+  `wiki_deposit` tool; authoring concurrent, only commit serial.
+
+**GATE PASSED:** full suite **2163 passed** (baseline ~2037 + Phase-3 + review-fix tests; clean re-runs).
+eval-retrieval fts recall@10 **0.926** (== baseline; trust down-weight added ZERO ranking regression),
+recall@5 0.852, MRR 0.690. Lint: `broken-wikilinks` clean except 1 pre-existing `OSError: File name too
+long` infra finding (not Phase-3). Ledger §4 Phase-3 all [x]; §5 both Phase-3 rows green; §1.2/§1.4 keys
+exercised («dedup.blocking_nn_threshold»=0.15, «embed.dedup_identity_threshold»=0.30,
+«trust.weight_coefficient»=0.5, «contradiction.precedence»).
+
+**Independent review (reviewer ≠ author): GO-WITH-FIXES → all blocking+important closed → effectively GO.**
+Verified correct first-pass: the keystone (determinism/alias-authority/recall-only), the 3 concurrency
+tests (real paths, no monkeypatch), golden falsifiability, trust/G5, quarantine, T6 migration. Findings
+fixed TDD (RED-before, re-reviewed): **B1 (BLOCKING)** merge silently dropped deposit body/wikilinks/aliases,
+no tombstone → unions aliases + carries body + `merged_into:` tombstone + dead-letter `needs-manual-merge`
+on collision; **N1** same drop via the preamble → carried under `## Merged context`; **I2** concept merge
+mis-targeted `entities/` → real-rel-path target; **I1** disputes edge pointed at the new claim even when it
+won → points at the policy-resolved loser.
+
+**SESSION-REVIEW FINDINGS (capture, apply next phase):**
+1. **Builder self-tests under-cover silent-corruption (no-exception) paths — AGAIN.** All 4 dedup defects
+   lived on the merge-reattachment path and were invisible to the builder's tests because every test
+   deposit body was *claims-only*. Minimal/stub fixtures hide invariant violations on transform/merge
+   paths. SHARPEN the standing rule: **merge/transform/reattachment tests MUST use realistic payloads
+   (full multi-section body, frontmatter aliases, inbound+body wikilinks, non-empty preamble), not minimal
+   stubs.** The independent review + re-review caught every one — the reviewer≠author gate remains
+   load-bearing and paid for itself a third phase running.
+2. **The discipline works where the plan mandates it at the right granularity.** The keystone, concurrency,
+   trust/G5, and golden-falsifiability paths were honestly built first-pass *because* the plan specified
+   adversarial tests + named negative controls per task. The gap was only where the plan's example test
+   bodies were simplified — i.e. the failure was in fixture realism, not in test-discipline intent.
+3. **Plan referenced a non-existent CLI scope** (`wiki lint --scope dedup`); the real dedup-integrity check
+   is `broken-wikilinks`. Minor; the builder used the right check. Lesson: verify CLI subcommand/scope
+   names before a plan references them (Verify-Before-Act on operations, not just code).
+
+**Tracked MINOR (N2, non-blocking):** the materialized `disputes`-edge line double-cites the loser source
+(the loser claim text already carries its own `[[sources/…]]`; the edge prepends a `…|disputes` link to the
+same source). Cosmetic, functionally correct. Revival trigger: any CiTO-edge rendering pass or a reader
+complaint about duplicated citations.
+
+**Phase-4 carry-forward (residual, non-blocking):** (a) `_merge_kind` normalization treats all
+`wiki/concepts/` pages as kind `concept` — if a concept page ever carries a finer `entity_kind`, revisit;
+(b) `auto_resolve` is called from the commit path WITHOUT `filter_score`, so contradiction trust there is
+source-type-only (the filter-score blend in `trust.server_trust_tier` is inert on that path — wire it when
+the deposit carries a filter score); (c) the Phase-1 O(history) `git log --all` scans in
+`_already_committed`/`coverage_gap` remain a scale-watch.
+
+**Next atomic step:** Phase 4 — Tiered agent surface (read/build tier split = two MCP entrypoints + op→tier
+table A2; deposit consumer contract A1 = the wait/backpressure loop an agent author codes from spec, typed
+disposition union + `retry_after`; bounded lock acquisition A3 off `flock` no-timeout; per-producer telemetry
+alarms A7 = rejection-spike / dedup-merge-spike / deposit-silence detectors). The `wiki_deposit` tool + the
+async receipt + `intent_status` from Phases 1+3 are the inputs Phase 4's consumer contract builds on. contp
+in the Phase-4 section of the master build-plan (`...-multi-agent-rag-build-plan.md`), reproduced below.
+
+**CONTEXT-MANAGEMENT SEAM:** This window ran Phase-3 PLAN→EXECUTE→GATE (build subagent + independent
+review + 2 fix loops) and stayed lean by keeping the build/review/fix in subagents. Per the fresh-session-
+per-phase rule, **Phase 4 runs in a FRESH session via the Phase-4 contp.**
 
 ---
 

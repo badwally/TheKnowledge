@@ -174,11 +174,11 @@ evidence before the next phase begins.
 - [x] Commit-time freshness: a deposit dedups against pages committed earlier in the same serialization window. *Evidence:* `test_commit_freshness.py::test_commit_upserts_entity_namespace_freshness` (real CommitGate + real EmbeddingIndex; earlier-in-window page visible to the next intent's entity-NN; `embedding_index=None` negative control proves the upsert is the cause, not a lazy rebuild).
 
 ### Phase 3 — Commit-time invariants
-- [ ] Two concurrent same-entity intents both survive (write-skew, C5/F1). *Evidence:* write-skew test, zero broken wikilinks.
-- [ ] Phantom collision attaches citations to the canonical page, no duplicate minted. *Evidence:* colliding-intent integration test.
-- [ ] Commit-phase dedup is LLM-free and replayable: same logged inputs → same verdict (I1). *Evidence:* replay test.
-- [ ] Multi-label domain resolution commits all resolved domains; empty-set quarantines. *Evidence:* domain test.
-- [ ] Any `_authority_key` change passes `eval-retrieval --compare` (≥ recall.floor_at_k). *Evidence:* eval-gate run.
+- [x] Two concurrent same-entity intents both survive (write-skew, C5/F1). *Evidence:* `test_dedup_commit.py::test_write_skew_two_claims_one_entity_both_survive` (real CommitGate + real EmbeddingIndex, no monkeypatch; `_claim_union` three-way add/add); zero broken wikilinks; negative control `::test_genuinely_conflicting_claims_still_dead_letter`.
+- [x] Phantom collision attaches citations to the canonical page, no duplicate minted. *Evidence:* `test_dedup_commit.py::test_phantom_collision_second_intent_merges_not_mints` (second same-referent intent merges; exactly one canonical page survives); merge-reattachment preserves aliases/non-Claims body/wikilinks/preamble + writes a `merged_into:` tombstone, heading/body collision → `needs-manual-merge` (no silent drop — review B1/N1).
+- [x] Commit-phase dedup is LLM-free and replayable: same logged inputs → same verdict (I1). *Evidence:* pure `dedup.adjudicate` (no model call, no index access); `test_dedup_replay.py::test_same_inputs_same_verdict_replay` (reversed candidate order → identical verdict via total `(round(nn,6), slug)` order). Merge authority = alias/canonical exact-or-normalized + same kind; NN recall-only; cross-kind never merges. Independent dedup golden `test_dedup_golden.py` + geometry-only falsifiability control.
+- [x] Multi-label domain resolution commits all resolved domains; empty-set quarantines. *Evidence:* `test_domain_resolution.py` (multi-domain commit; unknown dropped; empty → `quarantined`, writes nothing untagged).
+- [x] Any `_authority_key` change passes `eval-retrieval --compare` (≥ recall.floor_at_k). *Evidence:* trust down-weight `_W_TRUST*(trust-0.5)`, `_W_TRUST=0.5` < `_W_TIER`/`_W_AUTHORITY`; `eval-retrieval --compare` fts recall@10 = 0.926 (== baseline, ≥ 0.90 floor); eligibility floor keeps low-trust pages retrievable; `server_trust_tier` takes no self-report arg (G5).
 
 ### Phase 4 — Tiered agent surface
 - [ ] Read-tier server registers exactly the read-classified op set (A2). *Evidence:* parity-style test.
@@ -217,6 +217,24 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 > watcher provenance node carries a producer marker with repo-relative paths so a
 > real watcher commit is not falsely flagged as a `coverage_gap`.
 
+> **Phase-3 review-hardened (2026-06-18).** Independent review (reviewer ≠ author) of
+> the dedup keystone returned GO-WITH-FIXES; one BLOCKING + three IMPORTANT findings
+> fixed TDD, all on the merge-reattachment path the builder's self-tests under-covered
+> (claims-only test bodies hid the defects): **B1** merge silently dropped the deposit's
+> non-Claims body / wikilinks / frontmatter aliases with no tombstone (silent corpus
+> corruption + dedup-recall regression, since dropped aliases are the surfaces future
+> deposits match on) → now unions aliases, carries body+wikilinks, writes a `merged_into:`
+> tombstone, and dead-letters `needs-manual-merge` on a heading/body collision; **N1** the
+> same silent-drop leaked through the deposit *preamble* → now carried under `## Merged
+> context`, inert stub preambles stay inert; **I2** concept merges mis-targeted
+> `wiki/entities/` (would mint a duplicate for `wiki/concepts/` candidates) → target now
+> derived from the candidate's real rel_path, `_merge_kind` normalization preserves
+> cross-kind-never-merge; **I1** the CiTO `disputes` edge pointed at the new claim even
+> when policy ruled it the winner → now points at the policy-resolved loser. Full suite
+> **2163 passed** (baseline ~2037 + Phase-3 + review-fix tests); eval-retrieval recall@10
+> **0.926** (== baseline). One tracked **MINOR (N2)**: the disputes-edge line double-cites
+> the loser source (cosmetic; the loser claim already carries its own citation).
+
 | Component (design §) | Phase | Status |
 |---|---|---|
 | Intent queue — durable dir + on-disk lifecycle states (§3, §14) | 1 | green |
@@ -224,8 +242,8 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 | CommitGate — serial commit, MVCC CAS, fencing, crash recovery (§5) | 1 | green (hardened 2026-06-18) |
 | Operational-provenance log + per-producer telemetry (§3) | 1 | green (hardened 2026-06-18) |
 | Embedding index — three namespaces, upsert-on-commit, shadow-swap rebuild (§13) | 2 | green |
-| Deposit API — typed intent tool + authorship workers (§3, §4) | 3 | not-started |
-| Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | not-started |
+| Deposit API — typed intent tool + authorship workers (§3, §4) | 3 | green |
+| Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | green (review-hardened 2026-06-18) |
 | Read/build tier split — two MCP entrypoints + op-to-tier table (§7) | 4 | not-started |
 | Deposit consumer contract — wait/backpressure (§3, §12) | 4 | not-started |
 | Corpus-rot governance — remediation + fragmentation lint (§8) | 5 | not-started |
