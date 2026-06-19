@@ -3029,7 +3029,12 @@ def _run_commit_worker(ns: argparse.Namespace) -> int:
     --once  drain to empty then exit (cron / on-demand).
     --loop  foreground poll until SIGINT / KeyboardInterrupt (manual monitoring).
     Neither flag defaults to --once.
+
+    Constructs EmbeddingIndex() so _dedup_recheck fires in production (CRITICAL #2):
+    without it, two different-slug deposits for the same referent both commit as
+    separate pages — the merge path never runs.
     """
+    from gateway.embedding_index import EmbeddingIndex
     from gateway.ops.committer import run_worker
 
     once = getattr(ns, "once", False)
@@ -3040,8 +3045,9 @@ def _run_commit_worker(ns: argparse.Namespace) -> int:
         # Neither flag: default to --once (drain then exit).
         once = True
 
+    idx = EmbeddingIndex()
     try:
-        run_worker(once=once, poll_interval=poll_interval)
+        run_worker(once=once, poll_interval=poll_interval, embedding_index=idx)
     except Exception as exc:
         import sys as _sys
         print(f"commit-worker failed: {exc}", file=_sys.stderr)

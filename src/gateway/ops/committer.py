@@ -9,11 +9,15 @@ Usage:
 Design:
 - author_deposit() is a thin renderer: body passes through VERBATIM; frontmatter
   mirrors the _authored_entity fixture convention (fm.serialize + slug from title).
-- drain_once() claims one intent, authors it, commits via CommitGate, returns
-  DrainResult. Returns None when the queue is empty.
-- run_worker() loops drain_once() until empty (once=True) or until signalled
-  (once=False). Each iteration is independent — a poison intent dead-letters via
-  the gate's own handler (not via a loop-level swallow), but a backstop except
+  When the target page already exists (same-slug second deposit), the new deposit's
+  claims are unioned into the existing page rather than overwriting it.
+- drain_once() reclaims expired leases before claiming (crash recovery), then
+  claims one intent, authors it, commits via CommitGate, returns DrainResult.
+  Returns None when the queue is empty.
+- run_worker() calls gate.recover() at startup (crash recovery: revert partial
+  writes, reclaim), then loops drain_once() until empty (once) or until signalled
+  (loop). Each iteration is independent — a poison intent dead-letters via the
+  gate's own handler (not via a loop-level swallow), but a backstop except
   prevents one bad record from killing the loop.
 """
 
@@ -27,7 +31,7 @@ from datetime import datetime, timezone
 
 from gateway import frontmatter as fm
 from gateway.commit_gate import AuthoredIntent, CommitGate
-from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
+from gateway.intent_queue import Intent, IntentQueue
 from gateway.core import OperationResult
 
 log = logging.getLogger(__name__)
@@ -75,6 +79,71 @@ def _now_iso() -> str:
 
 
 # ---------------------------------------------------------------------------
+# Same-slug union helper
+# ---------------------------------------------------------------------------
+
+
+def _union_same_slug(existing_content: str, new_body: str) -> str | None:
+    """Union new_body's ``## Claims`` bullets into existing_content's body.
+
+    Returns the merged full document (frontmatter + unioned body), or None if
+    the union cannot be applied cleanly (new_body contains non-bullet lines
+    beyond a Claims section header, which would be a structural change that
+    requires manual merge).
+
+    Strategy: extract net-new bullet lines from new_body (lines starting with
+    "- " that are not already in existing_body) and append them to the existing
+    body. Non-bullet content in new_body (beyond the ## Claims header) is
+    rejected → caller dead-letters (needs-manual-merge).
+
+    The existing page's frontmatter is preserved with last_updated refreshed.
+    """
+    try:
+        existing_front, existing_body = fm.parse(existing_content)
+    except Exception:
+        return None
+
+    # Update last_updated in-place so the merged page reflects the new write time.
+    existing_front["last_updated"] = _now_iso()
+
+    # Parse new_body: accept only bullet additions (lines starting with "- ")
+    # and ## Claims section headers. Any other non-empty, non-whitespace line
+    # is a structural change → cannot union blindly.
+    existing_lines = existing_body.splitlines()
+    existing_set = set(existing_lines)
+
+    new_lines = new_body.splitlines()
+    net_new_bullets: list[str] = []
+    for ln in new_lines:
+        stripped = ln.strip()
+        if not stripped:
+            continue  # blank line — skip
+        if stripped.lower().startswith("## claims"):
+            continue  # Claims section header — skip (may already be present)
+        if stripped.startswith("- "):
+            if ln not in existing_set:
+                net_new_bullets.append(ln)
+        else:
+            # Non-bullet, non-header content in the new body — structural change.
+            return None
+
+    if not net_new_bullets:
+        # All new claims already present — idempotent; return existing unchanged.
+        return fm.serialize(existing_front, existing_body)
+
+    # Append net-new bullets; ensure a ## Claims section exists.
+    merged_lines = list(existing_lines)
+    if not any(ln.strip().lower().startswith("## claims") for ln in merged_lines):
+        merged_lines += ["", "## Claims"]
+    merged_lines += net_new_bullets
+    merged_body = "\n".join(merged_lines)
+    if not merged_body.endswith("\n"):
+        merged_body += "\n"
+
+    return fm.serialize(existing_front, merged_body)
+
+
+# ---------------------------------------------------------------------------
 # author_deposit
 # ---------------------------------------------------------------------------
 
@@ -86,12 +155,20 @@ def author_deposit(intent: Intent, gate: CommitGate | None = None) -> AuthoredIn
     Frontmatter mirrors the _authored_entity fixture: fm.serialize over the
     canonical key set per page_type, slug derived from title.
 
-    If ``gate`` is provided, the real HEAD blob OID for the target file is
-    captured at authoring time so the CAS can classify a concurrent edit as a
-    mergeable "rebase" rather than a "contradictory" phantom (write-skew path).
+    When gate is provided:
+    - The real HEAD blob OID for the target file is captured at authoring time
+      so the CAS can classify a concurrent edit as "rebase" rather than
+      "contradictory" (write-skew path for cross-slug dedup union).
+    - If the target file ALREADY EXISTS (same-slug second deposit), the new
+      deposit's body claims are unioned into the existing page. This prevents
+      silent overwrite of earlier claims. If the union fails (non-bullet
+      contradiction), a ValueError is raised so the gate dead-letters.
 
-    Supports: entity, concept, synthesis. (source deposits via CommitGate are
-    uncommon; not rendered here — raise ValueError so the gate dead-letters.)
+    Supports: entity, concept, synthesis. (source deposits are uncommon;
+    not rendered here — raise ValueError so the gate dead-letters.)
+
+    Raises ValueError for: empty title, empty slug (all-punctuation title),
+    unsupported page_type, or un-unionable same-slug body.
     """
     payload = intent.payload
     page_type = payload.get("page_type")
@@ -102,10 +179,17 @@ def author_deposit(intent: Intent, gate: CommitGate | None = None) -> AuthoredIn
         raise ValueError(f"author_deposit: empty title in intent {intent.intent_id!r}")
     if page_type not in _PAGE_TYPE_DIR:
         raise ValueError(
-            f"author_deposit: unsupported page_type {page_type!r} in intent {intent.intent_id!r}"
+            f"author_deposit: unsupported page_type {page_type!r} "
+            f"in intent {intent.intent_id!r}"
         )
 
     slug = _title_to_slug(title)
+    if not slug:
+        raise ValueError(
+            f"author_deposit: title {title!r} produces empty slug "
+            f"in intent {intent.intent_id!r}"
+        )
+
     now = _now_iso()
     page_dir = _PAGE_TYPE_DIR[page_type]
     rel = f"{page_dir}/{slug}.md"
@@ -115,11 +199,13 @@ def author_deposit(intent: Intent, gate: CommitGate | None = None) -> AuthoredIn
             "type": "entity",
             "slug": slug,
             "canonical_name": title,
-            "entity_kind": payload.get("entity_kind") or "drug",
             "domains": list(payload.get("domains") or []),
             "created_at": now,
             "last_updated": now,
         }
+        entity_kind = payload.get("entity_kind")
+        if entity_kind:
+            front["entity_kind"] = entity_kind
         aliases = list(payload.get("aliases") or [])
         if aliases:
             front["aliases"] = aliases
@@ -159,11 +245,26 @@ def author_deposit(intent: Intent, gate: CommitGate | None = None) -> AuthoredIn
     content = fm.serialize(front, body)
 
     # Capture the real HEAD blob OID for this file at authoring time.
-    # This enables the CAS to classify a concurrent edit as "rebase" (mergeable)
-    # rather than "contradictory" (phantom) when two deposits target the same page.
     base_blob: str | None = None
     if gate is not None:
         base_blob = gate._head_blob_oid(rel)
+
+    if base_blob is not None:
+        # The target page already exists in the committed tree (same-slug second deposit).
+        # Union the new deposit's claims into the existing page rather than overwriting.
+        existing_content = gate._blob_content(base_blob)
+        if existing_content is not None:
+            merged = _union_same_slug(existing_content, body)
+            if merged is None:
+                raise ValueError(
+                    f"author_deposit: same-slug body union failed for {rel!r} "
+                    f"in intent {intent.intent_id!r} — non-bullet change or contradiction; "
+                    f"intent dead-lettered (needs-manual-merge)"
+                )
+            content = merged
+        # After same-slug union, set base_oids[rel] = base_blob so the CAS
+        # sees head_oid == base (no external change between authoring and commit)
+        # and classifies as "commit" — clean apply of the merged content.
 
     authored = AuthoredIntent(
         intent=intent,
@@ -187,9 +288,17 @@ def drain_once(
 ) -> DrainResult | None:
     """Claim one intent, author it, commit it. Return DrainResult or None if empty.
 
+    Reclaims expired leases from claimed/ before claiming so a crashed worker's
+    intent is not permanently stranded (crash-reclaim production path, CRITICAL #1).
+
     Disposition values mirror CommitGate.commit() OperationResult.disposition:
     committed / merged / dead_lettered / retry-later / quarantined / rejected.
+
+    A retry-later intent is moved back to submitted/ so a later pass can retry it.
     """
+    # Crash recovery: return any expired leases to submitted/ before we try to claim.
+    queue.reclaim_expired()
+
     claim = queue.claim(lease_ttl=lease_ttl)
     if claim is None:
         return None
@@ -200,10 +309,8 @@ def drain_once(
     try:
         authored = author_deposit(intent, gate)
     except Exception as exc:
-        # author_deposit raised (e.g. empty title, unsupported page_type).
-        # Dead-letter manually: record via CommitGate's _dead_letter path by
-        # building a minimal AuthoredIntent with no writes and committing it;
-        # or directly set queue state to dead_lettered.
+        # author_deposit raised (e.g. empty title, empty slug, unsupported page_type,
+        # or same-slug body-union failure). Dead-letter the intent.
         log.warning("author_deposit failed for %s: %s", intent_id, exc)
         try:
             queue.set_state(intent_id, "dead_lettered", result={"error": str(exc)})
@@ -218,6 +325,14 @@ def drain_once(
 
     result: OperationResult = gate.commit(authored, claim.fencing_token)
     disposition = result.disposition or ("committed" if result.success else "failed")
+
+    # For retry-later: move the intent back to submitted/ so the next worker pass
+    # can retry it. The gate does not move it — the committer owns that transition.
+    if disposition == "retry-later":
+        try:
+            queue.set_state(intent_id, "submitted")
+        except Exception as inner:
+            log.error("could not re-queue retry-later intent %s: %s", intent_id, inner)
 
     return DrainResult(
         disposition=disposition,
@@ -238,8 +353,15 @@ def run_worker(
     poll_interval: float = 2.0,
     queue: IntentQueue | None = None,
     gate: CommitGate | None = None,
+    embedding_index=None,
 ) -> None:
     """Drain the queue once (once=True) or poll indefinitely (once=False).
+
+    Accepts an optional ``embedding_index`` so the production CLI path can wire
+    in ``EmbeddingIndex()`` and enable ``_dedup_recheck`` (the merge path).
+
+    At startup, calls ``gate.recover()`` to revert any partial writes from a
+    crashed prior worker and reclaim their intents (crash recovery).
 
     Each iteration is independent. A poison intent dead-letters (either via the
     gate's own CAS pipeline or via the backstop in drain_once), and the loop
@@ -250,7 +372,16 @@ def run_worker(
     handle). Normal bad intents dead-letter via the gate, not via this catch.
     """
     q = queue or IntentQueue()
-    g = gate or CommitGate(queue=q)
+    if gate is None:
+        gate = CommitGate(queue=q, embedding_index=embedding_index)
+    g = gate
+
+    # Crash recovery: revert partial writes from prior crashed worker and
+    # reclaim their intents back to submitted/ before we start draining.
+    try:
+        g.recover()
+    except Exception as exc:
+        log.error("gate.recover() failed at startup: %s", exc)
 
     if once:
         while True:
