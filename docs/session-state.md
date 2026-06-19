@@ -11,12 +11,12 @@ Last updated: 2026-06-19 (Librarian PHASE 5 IN PROGRESS — branch `docs/librari
 **Execution mode:** subagent-driven-development — fresh implementer per task (sonnet) + independent task review (opus on destructive/subtle tasks) + fix loop, coordinator window kept lean. Per-task briefs/reports/diffs handed off as files under `.git/sdd/`.
 
 ### Open contracts
-- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) — IN RE-REVIEW `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4); T5 reversal/anomaly detectors (G2); T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3).
+- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) — IN FIX `38c8a548..fff5c61f` (review found 2 Criticals: cold-start dead code, tautological I4 test); T5 reversal/anomaly detectors (G2); T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3).
 - **Gate reconciled** (ledger §4 Phase 5 now includes G2/G7/I3 rows) so "gate green" tests everything the phase ships. Phase gate = full suite + `eval-retrieval --compare` ≥ 0.90 + scoped lints + whole-branch review + security review + /session-review + PR.
 - **G7 migration delta** (cut existing bootstrap/promote/demote off direct policy file-I/O onto the new privileged-intent path) = triggered backlog, NOT built this phase. Backlog file to write in T6: `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`.
 
 ### Files mid-edit
-- T3 fix `d6a0a3c2` landed (bool-as-int keep-worthiness type check + answer_op corpus_miss=0 + answer_op telemetry tests); awaiting re-review verdict before marking complete. T1+T2 complete + review-clean.
+- T4 in FIX (reviewer found cold-start dead code, tautological I4 test, triggered.json TOCTOU; + wiring the demand-loop producer: corpus-miss → DemandLedger.record_gap). T1+T2+T3 complete + review-clean.
 
 ### Decisions made this session
 - Expanded scope to build G2/G7/I3 with dedicated code rather than declare them satisfied (Option A rejected) or backlog them (Option C incoherent for G2 — its revival trigger is the signal G2 itself measures). G7 bounded to the mechanism; existing-op migration triggered-backlog.
@@ -28,7 +28,7 @@ Last updated: 2026-06-19 (Librarian PHASE 5 IN PROGRESS — branch `docs/librari
 - Full-union `aliases_unioned` at merge time — caused reverse-merge to delete pre-existing aliases (Critical, fixed: record B-only).
 
 ### Next atomic step
-Await T3 re-review verdict. If clean: mark T3 complete in `.git/sdd/progress.md`, then T4 (DemandLedger clustering+trigger+I4 + read-tier preflight) via `task-brief 4` → sonnet implementer → review (T4 is subtle — clustering purity/cold-start/I4 re-embed — consider opus reviewer). Then T5 (G2 detectors), T6 (G7+I3, write the migration backlog file), then phase gate (full suite + eval-compare ≥0.90 + scoped lints + whole-branch opus review + security review + /session-review) → reconcile ledger §4/§5 → PR. BASE for T4 = current HEAD after the T3-complete checkpoint.
+Await T4 fix → re-review (reviewer `a8cbf1588a6afe711`). If clean: mark T4 complete, then T5 (G2 reversal/anomaly detectors — clone Phase-4 provenance.alarms pattern) via `task-brief 5` → sonnet impl → sonnet review; then T6 (G7 privileged-intent policy-edit path + I3 merge-map golden gate; WRITE the migration backlog file `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`) → opus review. Then phase gate: full suite + `eval-retrieval --compare` ≥0.90 + scoped lints (orphans/schema-drift/broken-wikilinks) + whole-branch opus review + security review + /session-review → set ledger §4 all [x] + §5 rows green → PR. BASE for next task = current HEAD after each task-complete checkpoint.
 
 **Review-loop value this phase:** the reviewer≠author gate has already caught 1 Critical silent-corruption (T1 alias over-restore + linked latent prov-recording gap) and 2 Criticals (T2 inert de-path + nested-reachability data loss) the implementers' own tests missed. Keep opus reviewers on the destructive/subtle tasks.
 
