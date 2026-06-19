@@ -207,3 +207,126 @@ def test_commit_time_dedup_during_rebuild_sees_consistent_namespace(tmp_commit_e
     pages = [p for p in (gate._root / "wiki/entities").glob("*.md")
              if p.stem in ("ozempic", "semaglutide")]
     assert len(pages) == 1, [p.name for p in pages]
+
+
+# --- Review fix B1: merge must not silently drop body/wikilinks/aliases -------
+
+
+def _authored_entity_richbody(intent_id, slug, kind, canonical, aliases, domains,
+                              body, q):
+    """An entity deposit with an arbitrary full body (non-Claims sections,
+    wikilinks, frontmatter aliases)."""
+    rel = f"wiki/entities/{slug}.md"
+    al = "[" + ", ".join(aliases) + "]"
+    content = (
+        f"---\ntype: entity\ntitle: {canonical}\nentity_kind: {kind}\n"
+        f"canonical_name: {canonical}\naliases: {al}\ndomains: [med]\n---\n{body}"
+    )
+    payload = {"kind": "entity", "target": rel}
+    identity = {
+        "agent": "tester", "page_type": "entity", "entity_kind": kind,
+        "canonical_name": canonical, "aliases": list(aliases),
+        "domains": list(domains),
+    }
+    iid = compute_intent_id(payload, identity, semantics=intent_id)
+    intent = Intent(intent_id=iid, payload=payload, identity=identity, head_oid="HEAD")
+    q.submit(intent)
+    q.claim(now=1.0)
+    q.set_state(iid, "authored")
+    return AuthoredIntent(intent=intent, writes={rel: content}, base_oid="HEAD")
+
+
+def test_merge_preserves_aliases_body_and_writes_tombstone(tmp_commit_env):
+    """Review B1: a merge must NOT silently drop the deposit's non-Claims body,
+    wikilink, or frontmatter aliases — and must leave a tombstone at the
+    deposited slug so inbound wikilinks resolve and the merge is reversible."""
+    from gateway import frontmatter as fm
+
+    gate, queue, emb = tmp_commit_env
+    base = _authored_entity("A", "ozempic", "drug", "Ozempic",
+                            ["Semaglutide"], ["med"],
+                            claims=["claim-X [[sources/s1]]"], q=queue)
+    gate.commit(base, queue.fencing_token(base.intent.intent_id))
+
+    rich_body = (
+        "# Overview\nstub.\n\n"
+        "## Mechanism\nActs as a GLP-1 agonist; see [[entities/glp1]].\n\n"
+        "## Claims\n- claim-Y [[sources/s2]]\n"
+    )
+    dep = _authored_entity_richbody(
+        "B", "semaglutide", "drug", "Semaglutide",
+        ["Ozempic", "Wegovy"], ["med"], rich_body, q=queue)
+    res = gate.commit(dep, queue.fencing_token(dep.intent.intent_id))
+    assert res.disposition in ("committed", "merged", "dead_lettered"), res.summary
+
+    canonical = gate._root / "wiki/entities/ozempic.md"
+    deposited = gate._root / "wiki/entities/semaglutide.md"
+
+    if res.disposition == "dead_lettered":
+        # An acceptable outcome: refuse to merge rather than drop body. Then the
+        # deposit's body is preserved as-deposited (nothing silently lost).
+        return
+
+    # Merged: the canonical page must retain the new alias (dedup-recall surface).
+    front, body = fm.parse(canonical.read_text())
+    aliases = front.get("aliases") or []
+    assert "Wegovy" in aliases, f"alias dropped on merge: {aliases}"
+    # The non-Claims section / wikilink must survive (no silent body drop).
+    assert "## Mechanism" in body and "[[entities/glp1]]" in body, body
+    assert "claim-Y" in body, body
+    # A tombstone/redirect exists at the deposited slug → no dangling wikilink.
+    assert deposited.exists(), "no tombstone at the merged-away slug"
+    t_front, _ = fm.parse(deposited.read_text())
+    assert t_front.get("merged_into") == "ozempic", t_front
+
+
+# --- Review fix I2: concept merge must target wiki/concepts, not wiki/entities -
+
+
+def _authored_concept(intent_id, slug, canonical, aliases, domains, claims, q):
+    rel = f"wiki/concepts/{slug}.md"
+    al = "[" + ", ".join(aliases) + "]"
+    body = "# Overview\nstub.\n"
+    if claims:
+        body += "\n## Claims\n" + "\n".join(f"- {c}" for c in claims) + "\n"
+    content = (
+        f"---\ntype: concept\ntitle: {canonical}\ncanonical_name: {canonical}\n"
+        f"aliases: {al}\ndomains: [med]\n---\n{body}"
+    )
+    payload = {"kind": "concept", "target": rel}
+    identity = {
+        "agent": "tester", "page_type": "concept", "entity_kind": "concept",
+        "canonical_name": canonical, "aliases": list(aliases),
+        "domains": list(domains),
+    }
+    iid = compute_intent_id(payload, identity, semantics=intent_id)
+    intent = Intent(intent_id=iid, payload=payload, identity=identity, head_oid="HEAD")
+    q.submit(intent)
+    q.claim(now=1.0)
+    q.set_state(iid, "authored")
+    return AuthoredIntent(intent=intent, writes={rel: content}, base_oid="HEAD")
+
+
+def test_concept_merge_targets_concepts_dir_not_entities(tmp_commit_env):
+    """Review I2: a concept-vs-concept merge must attach to the candidate's real
+    wiki/concepts/ page — not a hardcoded wiki/entities/ path that mints a
+    duplicate."""
+    gate, queue, emb = tmp_commit_env
+    a = _authored_concept("A", "food-noise", "Food noise",
+                          ["intrusive food thoughts"], ["med"],
+                          ["claim-X [[sources/s1]]"], q=queue)
+    gate.commit(a, queue.fencing_token(a.intent.intent_id))
+    # Same referent, disjoint surface alias-authority match, different slug.
+    b = _authored_concept("B", "intrusive-food-thoughts", "Intrusive food thoughts",
+                          ["Food noise"], ["med"],
+                          ["claim-Y [[sources/s2]]"], q=queue)
+    res = gate.commit(b, queue.fencing_token(b.intent.intent_id))
+    assert res.disposition in ("committed", "merged"), res.summary
+    # Exactly one concept page survives; no entities/ duplicate minted.
+    concept_pages = [p for p in (gate._root / "wiki/concepts").glob("*.md")
+                     if p.stem in ("food-noise", "intrusive-food-thoughts")]
+    assert len(concept_pages) == 1, [p.name for p in concept_pages]
+    ent_dir = gate._root / "wiki/entities"
+    ent_dupes = list(ent_dir.glob("*.md")) if ent_dir.exists() else []
+    assert not any(p.stem in ("food-noise", "intrusive-food-thoughts")
+                   for p in ent_dupes), [p.name for p in ent_dupes]

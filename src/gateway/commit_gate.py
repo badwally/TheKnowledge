@@ -537,6 +537,17 @@ class CommitGate:
             return {}
         return front or {}
 
+    @staticmethod
+    def _merge_kind(page_type: str, entity_kind: str) -> str:
+        """The kind used for the cross-kind merge guard. A concept page is its own
+        kind (`concept`); an entity page is its declared `entity_kind` (e.g.
+        `drug`). This keeps cross-kind protection (drug vs concept never merge)
+        while letting concept-vs-concept merge even when the page omits
+        `entity_kind` (review I2)."""
+        if page_type == "concept":
+            return "concept"
+        return entity_kind or page_type
+
     def _dedup_recheck(self, authored: "AuthoredIntent"):
         """Deterministic, LLM-free dedup at the serial gate (§6 I1). Reads the entity
         namespace as of HEAD (recall-only) under REBUILD_LOCK quiesce so a concurrent
@@ -545,10 +556,15 @@ class CommitGate:
         from gateway import dedup
 
         ident_d = authored.intent.identity or {}
-        if ident_d.get("page_type") not in ("entity", "concept"):
+        page_type = ident_d.get("page_type")
+        if page_type not in ("entity", "concept"):
             return dedup.Verdict("distinct", None, "not-an-entity-deposit", {})
+        # Normalized merge kind: a concept page rarely sets `entity_kind`, so the
+        # deposit and the candidate must compare on the SAME basis or every concept
+        # reads as cross-kind and never merges (review I2). For concepts the kind is
+        # the page type; for entities it is the declared entity_kind.
         identity = dedup.DepositIdentity(
-            entity_kind=ident_d.get("entity_kind", ""),
+            entity_kind=self._merge_kind(page_type, ident_d.get("entity_kind", "")),
             canonical_name=ident_d.get("canonical_name", ""),
             aliases=tuple(ident_d.get("aliases", ()) or ()),
             domains=tuple(ident_d.get("domains", ()) or ()),
@@ -564,9 +580,12 @@ class CommitGate:
                 if rel in authored.writes:
                     continue
                 front = self._page_front(rel)
+                cand_type = str(front.get("type", ""))
                 candidates.append(dedup.Candidate(
                     slug=Path(rel).stem,
-                    entity_kind=front.get("entity_kind", ""),
+                    entity_kind=self._merge_kind(
+                        cand_type, front.get("entity_kind", "")
+                    ),
                     canonical_name=front.get("canonical_name", front.get("title", "")),
                     aliases=tuple(front.get("aliases", ()) or ()),
                     domains=tuple(front.get("domains", ()) or ()),
@@ -587,11 +606,21 @@ class CommitGate:
         deposited slug is never written (no duplicate-referent page)."""
         from gateway import frontmatter as fm
 
-        target_rel = f"wiki/entities/{target_slug}.md"
-        target_abs = self._root / target_rel
-        if not target_abs.exists():
+        # Resolve the canonical page's REAL location. _dedup_recheck admits both
+        # entity and concept deposits and the entity namespace indexes concept
+        # pages, so the canonical page may live under wiki/concepts/ — never
+        # hardcode wiki/entities/ (review I2: a concept would hit the not-exists
+        # fallback and mint a duplicate).
+        target_rel = None
+        for sub in ("entities", "concepts"):
+            cand_rel = f"wiki/{sub}/{target_slug}.md"
+            if (self._root / cand_rel).exists():
+                target_rel = cand_rel
+                break
+        if target_rel is None:
             # No canonical page on disk to attach to — fall back to minting as-is.
             return authored
+        target_abs = self._root / target_rel
         target_content = target_abs.read_text()
 
         # Extract the deposit's claim bullet lines (under a ## Claims heading).
