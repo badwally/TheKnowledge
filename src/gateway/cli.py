@@ -118,6 +118,7 @@ SUBCOMMANDS: dict[str, str] = {
     "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
     "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
     "commit-worker": "Drain the deposit queue: --once (drain to empty) or --loop (foreground poll) (D0, build-tier)",
+    "demand-cluster": "Cluster logged corpus gaps and optionally submit synthesis intents for triggered clusters (D1, build-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -196,6 +197,7 @@ IMPLEMENTED: set[str] = {
     "preflight",
     "policy-edit",
     "commit-worker",
+    "demand-cluster",
 }
 
 
@@ -472,6 +474,18 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         default=False,
         help="Report orphaned pages without submitting de-path intents.",
+    )
+
+    # demand-cluster: gap clustering + optional synthesis trigger (D1, build-tier)
+    p_demand_cluster = subparsers.add_parser(
+        "demand-cluster",
+        help=SUBCOMMANDS["demand-cluster"],
+    )
+    p_demand_cluster.add_argument(
+        "--trigger",
+        action="store_true",
+        default=False,
+        help="Submit a synthesis intent for each triggered cluster (demand_trigger=True).",
     )
 
     # preflight: read-tier planner/executor pre-flight (D12, read-tier)
@@ -1688,6 +1702,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_revert_resolution(ns)
     if ns.subcommand == "remediate":
         return _run_remediate(ns)
+    if ns.subcommand == "demand-cluster":
+        return _run_demand_cluster(ns)
     if ns.subcommand == "preflight":
         return _run_preflight(ns)
     if ns.subcommand == "policy-edit":
@@ -2977,6 +2993,14 @@ def _run_remediate(ns: argparse.Namespace) -> int:
 
     dry_run = getattr(ns, "dry_run", False)
     result = remediate(dry_run=dry_run)
+    return _emit_result(result)
+
+
+def _run_demand_cluster(ns: argparse.Namespace) -> int:
+    from gateway.ops.demand_cluster import demand_cluster
+
+    trigger = getattr(ns, "trigger", False)
+    result = demand_cluster(trigger=trigger)
     return _emit_result(result)
 
 
