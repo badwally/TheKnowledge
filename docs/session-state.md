@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 5 — all 6 tasks build+review clean; phase gate found+fixed 3 merge-blockers; 2 closure re-reviews running. Branch `docs/librarian-phase5`)
+Last updated: 2026-06-19 (Librarian PHASE 5 COMPLETE — gate passed; PR #31 open, awaiting merge + policy-edit trust-model ratification. Branch `docs/librarian-phase5` @ `c2cce9d2`)
 
 ---
 
@@ -28,7 +28,7 @@ Last updated: 2026-06-19 (Librarian PHASE 5 — all 6 tasks build+review clean; 
 - `policy_provenance` lint reads `decision_basis` (the real provenance key, fixed `757c08b5`); detects absence of a policy-edit provenance node; content-hash match is a backlog hardening item.
 
 ### Next atomic step
-Whole-branch review = READY TO MERGE (C1 closed), conditional on the security reviewer (`ae26441f21455fba8`) confirming SEC-Critical/SEC-High closed. When it signs off: (optional) final cosmetic cleanup (stale docstring + commit-subject prefix); run `/session-review`; set ledger §4 Phase 5 all `[x]` + §5 Phase-5 rows + G2/G7/I3 rows → green; reconcile §4/§5 vs git+tests (quality-incident diff); push branch + open PR to main (carries the unpushed `dbf4888b` session-state commit + all Phase-5 work); FLAG the policy-edit trust-model choice in the PR body for user ratification. NO Phase 6 — build complete at gate green.
+DONE — Phase 5 shipped. PR #31 (https://github.com/badwally/TheKnowledge/pull/31) open, base `main`, carries `dbf4888b` session-state + all Phase-5 work. HEAD `c2cce9d2`; both final gates passed (whole-branch READY, security SHIP IT); ledger §4/§5 green. Awaiting: (1) user merge of PR #31; (2) user RATIFICATION of the policy-edit trust model (CLI-only + server-sourced `GATEWAY_POLICY_PRINCIPAL`, fail-closed). On merge: delete branch, fast-forward local main. NO Phase 6 — the 5-phase Librarian build is complete. 4 triggered-backlog follow-ups under `docs/backlog/` (policy-edit migration, demand-cluster driver, reverse-merge producer, demand-ledger DoS bound).
 
 ---
 
