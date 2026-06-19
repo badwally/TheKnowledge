@@ -49,6 +49,33 @@ without a 2GB torch dep; a neural encoder is a later opt-in decision. Record whi
 
 ---
 
+## ✅ LIBRARIAN PHASE 2 — IDENTITY SUBSTRATE (2026-06-18) — DONE
+
+**Branch:** `docs/librarian-rag-design`. Plan: `docs/plans/2026-06-18-librarian-phase2-build-plan.md`.
+Embedding index added ALONGSIDE the FTS index (derived/gitignored/rebuildable). Per-task commits:
+T1/T2 `embedding_index.py` (pluggable `Encoder` protocol + active `LexicalFallbackEncoder` =
+`lexical-fallback-v1`, dim 256, pure-numpy hashed token-set + char-3-gram; three namespaces
+section/entity/question with distinct cosine-distance operating points 0.55/0.30/0.70), T3
+incremental upsert-on-commit in `commit_gate.py` (freshness — earlier-in-window page visible to the
+next intent's entity-NN; `embedding_index=None` back-compat no-op; quiesce on
+`librarian-embedding-rebuild` lock), T4 shadow-swap rebuild (`os.replace` atomic) + rebuild-and-diff
+(F2, `index-rebuild-divergence`), T5 per-namespace adequacy gates + golden sets under
+`.knowledge/eval/embedding/` (I2; all three PASS at floor 1.0, falsifiable).
+
+**Gate PASSED:** pytest 2034 passed (baseline 1998 + 4 recovered flakes + 32 new Phase-2 tests; the
+4 `test_doc5_rotate_log` baseline flakes pass in a full clean run — order-dependent, unrelated).
+eval-retrieval recall@10 = 0.926 (unmoved — no FTS retrieval touched). `wiki lint` RC=0 (758
+pre-existing source-orphans, not Phase-2). Adversarial: concurrent-read-during-rebuild + non-atomic
+negative control; constant-encoder negative control fails the entity gate. Ledger §4 Phase-2 gate
+all [x]; §5 EMB row green; §1.2 «embed.*» calibrated + bound; §3 rebuild row = 7.26s / 4023 pages.
+
+**Next atomic step:** Phase 3 — Commit-time invariants (domain resolution, LLM-free replayable dedup
+I1 plugging into the `commit_gate` fail-safe rebase branch, contradiction, trust; write-skew C5/F1;
+phantom-collision). The entity namespace + freshness from Phase 2 are the inputs Phase-3 dedup
+blocks against. contp in the Phase-2 build-plan §"Continuation prompt".
+
+---
+
 ## ✅ LIBRARIAN MULTI-AGENT RAG DESIGN GENERATION (2026-06-19) — DONE (all 3 passes)
 
 **Branch:** `docs/librarian-rag-design` (NOT main; inputs were committed here as

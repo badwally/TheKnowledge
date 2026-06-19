@@ -41,10 +41,10 @@ in the rationale; the design states the role.
 | Key | Initial value | Rationale for start | Revisit trigger | Change-control · blast radius |
 |---|---|---|---|---|
 | «dedup.blocking_nn_threshold» | cosine dist ≤ 0.15 (generous) | Stage-1 blocking is recall-oriented — over-generate candidates; the LLM-free adjudicator (I1) prunes for precision. A tight block would miss true merges no later stage can recover. | Dedup recall misses true merges, OR candidate sets explode. | guarded runtime · dedup recall |
-| «embed.dedup_identity_threshold» | cosine dist ≤ 0.08 (strict) *(calibrate Phase 2)* | Co-reference identity must be strict — a false merge is silent corruption (§16 taxonomy), worse than a missed merge. | Golden merge/no-merge precision drops, OR the densification canary shifts. | guarded runtime + eval gate · dedup precision |
-| «embed.retrieval_relevance_threshold» | cosine ~0.30 *(calibrate Phase 2)* | Query→passage asymmetric relevance operating point for section-grained retrieval. | Model-version bump, OR retrieval recall regresses on the golden set. | guarded runtime · retrieval recall |
-| «embed.demand_gap_threshold» | cosine ~0.40 (coarse) *(calibrate Phase 2)* | Topical-gap clustering tolerates breadth — paraphrases of one gap should co-cluster. | Demand-cluster purity drops (§16 axis). | build-time · demand clustering |
-| «embed.model_version» | (named encoder id + dim, set at Phase 2) | Binds all three operating points; a change requires re-embedding the entity namespace and re-calibrating before new thresholds take effect (§13). | Encoder upgrade or replacement. | guarded runtime · ALL embedding namespaces (re-embed + recalibrate) |
+| «embed.dedup_identity_threshold» | cosine dist ≤ 0.30 *(calibrated Phase 2 for `lexical-fallback-v1`; entity gate precision 1.0, merges 0.05–0.19 vs no-merges 0.83–1.08)* | Co-reference identity must be strict — a false merge is silent corruption (§16 taxonomy), worse than a missed merge. | Golden merge/no-merge precision drops, OR the densification canary shifts. | guarded runtime + eval gate · dedup precision |
+| «embed.retrieval_relevance_threshold» | cosine ≤ 0.55 *(calibrated Phase 2 for `lexical-fallback-v1`; section gate recall@1 1.0)* | Query→passage asymmetric relevance operating point for section-grained retrieval. | Model-version bump, OR retrieval recall regresses on the golden set. | guarded runtime · retrieval recall |
+| «embed.demand_gap_threshold» | cosine ≤ 0.70 (coarse) *(calibrated Phase 2 for `lexical-fallback-v1`; question gate purity 1.0, within-cluster max 0.591 vs cross-cluster min 0.748)* | Topical-gap clustering tolerates breadth — paraphrases of one gap should co-cluster. | Demand-cluster purity drops (§16 axis). | build-time · demand clustering |
+| «embed.model_version» | `lexical-fallback-v1` (dim 256) *(set Phase 2; I2 active lexical fallback, pure-numpy hashed token-set + char-3-gram — neural encoder pluggable behind the `Encoder` protocol)* | Binds all three operating points; a change requires re-embedding the entity namespace and re-calibrating before new thresholds take effect (§13). | Encoder upgrade or replacement. | guarded runtime · ALL embedding namespaces (re-embed + recalibrate) |
 
 ### 1.3 Demand aggregation (design §11)
 
@@ -135,9 +135,7 @@ every derived component ships a tested, time-bounded rebuild):
 | Component | Rebuild-time target | Last successful rebuild |
 |---|---|---|
 | FTS index (`search_index.refresh(rebuild=True)`) | bounded; record wall-time | — |
-| Embedding namespace: retrieval (section) | bounded; record | — (not built) |
-| Embedding namespace: dedup (entity/concept) | bounded; record | — (not built) |
-| Embedding namespace: demand (question) | bounded; record | — (not built) |
+| Embedding namespaces (all three, `EmbeddingIndex.rebuild_from_canonical`, shadow-swap) | bounded; record | 2026-06-18 · 7.26 s · 4023 pages / 19255 rows · `lexical-fallback-v1` (section + entity in one canonical walk; question is DemandLedger-fed, Phase 5) |
 | Backlink graph | bounded; record | — (not built) |
 
 **Per-failure-mode occurrence counts** (design §16 taxonomy — each a tracked counter with an
@@ -171,9 +169,9 @@ evidence before the next phase begins.
 - [x] Every committed corpus change has an operational-provenance ancestor (incl. watcher/poller ingest, C7). *Evidence:* `test_provenance_coverage.py::test_every_committed_change_has_ancestor` + `::test_watcher_ingest_emits_provenance_node`.
 
 ### Phase 2 — Identity substrate
-- [ ] Each embedding namespace's adequacy gate passes against its own golden set, or its named fallback is active and falsifiable (I2). *Evidence:* per-namespace gate report.
-- [ ] Rebuild-from-canonical produces a complete index via shadow-swap; no half-state visible to a concurrent `retrieve`; wall-time recorded (A6, F2). *Evidence:* rebuild + concurrent-read test; ledger §3 rebuild-time row populated.
-- [ ] Commit-time freshness: a deposit dedups against pages committed earlier in the same serialization window. *Evidence:* freshness test.
+- [x] Each embedding namespace's adequacy gate passes against its own golden set, or its named fallback is active and falsifiable (I2). *Evidence:* `test_embedding_adequacy.py` — all three pass at floor 1.0 (section recall@1, entity precision, question purity) for the active `lexical-fallback-v1`, each falsifiable (flipped-label probe + constant-encoder negative control).
+- [x] Rebuild-from-canonical produces a complete index via shadow-swap; no half-state visible to a concurrent `retrieve`; wall-time recorded (A6, F2). *Evidence:* `test_embedding_rebuild.py::test_concurrent_read_during_rebuild_no_half_state` (real reader thread during a real slow-encoder rebuild, `os.replace` not monkeypatched; non-atomic negative control proves the detector); `RebuildStats.wall_seconds` recorded; `test_rebuild_and_diff_detects_divergence` (F2).
+- [x] Commit-time freshness: a deposit dedups against pages committed earlier in the same serialization window. *Evidence:* `test_commit_freshness.py::test_commit_upserts_entity_namespace_freshness` (real CommitGate + real EmbeddingIndex; earlier-in-window page visible to the next intent's entity-NN; `embedding_index=None` negative control proves the upsert is the cause, not a lazy rebuild).
 
 ### Phase 3 — Commit-time invariants
 - [ ] Two concurrent same-entity intents both survive (write-skew, C5/F1). *Evidence:* write-skew test, zero broken wikilinks.
@@ -225,7 +223,7 @@ Per-component status, updated by the build agent. Status ∈ {not-started, in-pr
 | Async return type — IntentReceipt / OperationResult ext + status-query (§3) | 1 | green |
 | CommitGate — serial commit, MVCC CAS, fencing, crash recovery (§5) | 1 | green (hardened 2026-06-18) |
 | Operational-provenance log + per-producer telemetry (§3) | 1 | green (hardened 2026-06-18) |
-| Embedding index — three namespaces, upsert-on-commit, shadow-swap rebuild (§13) | 2 | not-started |
+| Embedding index — three namespaces, upsert-on-commit, shadow-swap rebuild (§13) | 2 | green |
 | Deposit API — typed intent tool + authorship workers (§3, §4) | 3 | not-started |
 | Commit-time invariants — domain, dedup (I1), contradiction, trust (§6) | 3 | not-started |
 | Read/build tier split — two MCP entrypoints + op-to-tier table (§7) | 4 | not-started |

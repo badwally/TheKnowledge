@@ -256,7 +256,10 @@ class EmbeddingIndex:
         """
         from gateway import frontmatter as fm
 
-        _front, body = fm.parse(content)
+        try:
+            _front, body = fm.parse(content)
+        except Exception:
+            body = content
         rows: list[tuple[str, str, str]] = []
 
         for heading, sec_body in _split_sections(body):
@@ -305,13 +308,18 @@ class EmbeddingIndex:
 
     # -- rebuild (Task 4) --
 
-    def _scan_canonical(self) -> list[tuple[str, str, dict]]:
-        """(rel_path, content, front) for every canonical wiki page."""
+    def _scan_canonical(self) -> list[tuple[str, dict, str]]:
+        """(rel_path, front, body) for every canonical wiki page.
+
+        Mirrors ``search_index._index_file``: a page that fails frontmatter
+        parsing degrades to ``front={}, body=content`` rather than aborting the
+        whole rebuild (the real corpus contains a few frontmatter-less pages).
+        """
         from gateway import frontmatter as fm
 
         root = paths.knowledge_root()
         wiki = paths.wiki_dir()
-        out: list[tuple[str, str, dict]] = []
+        out: list[tuple[str, dict, str]] = []
         if not wiki.exists():
             return out
         for p in sorted(wiki.rglob("*.md")):
@@ -322,10 +330,10 @@ class EmbeddingIndex:
             except OSError:
                 continue
             try:
-                front, _ = fm.parse(content)
+                front, body = fm.parse(content)
             except Exception:
-                front = {}
-            out.append((str(p.relative_to(root)), content, front))
+                front, body = {}, content
+            out.append((str(p.relative_to(root)), front, body))
         return out
 
     def _build_into(self, db_path: Path) -> tuple[int, int]:
@@ -343,10 +351,7 @@ class EmbeddingIndex:
         pages = 0
         rows_total = 0
         try:
-            for rel_path, content, front in self._scan_canonical():
-                from gateway import frontmatter as fm
-
-                _front, body = fm.parse(content)
+            for rel_path, front, body in self._scan_canonical():
                 rows: list[tuple[str, str, str]] = []
                 for heading, sec_body in _split_sections(body):
                     sec_text = f"{heading}\n{sec_body}".strip()
