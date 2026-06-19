@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (Librarian PHASE 5 — T6 COMPLETE; all 6 tasks shipped; branch `docs/librarian-phase5` ready for phase gate)
+Last updated: 2026-06-19 (Librarian PHASE 5 — T1-T5 complete; T6 in RE-REVIEW after 2 fix rounds; phase gate NOT yet run. Branch `docs/librarian-phase5`)
 
 ---
 
@@ -11,21 +11,21 @@ Last updated: 2026-06-19 (Librarian PHASE 5 — T6 COMPLETE; all 6 tasks shipped
 **Execution mode:** subagent-driven-development — fresh implementer per task (sonnet) + independent task review (opus on destructive/subtle tasks) + fix loop, coordinator window kept lean. Per-task briefs/reports/diffs handed off as files under `.git/sdd/`.
 
 ### Open contracts
-- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) ✅ `11dfd554..1419c7ae`; T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) ✅ `2f708f7f..d10ac0ba`.
-- **ALL 6 TASKS COMPLETE.** Next: phase gate (full suite + `eval-retrieval --compare` ≥0.90 + scoped lints orphans/schema-drift/broken-wikilinks + whole-branch review + security review + /session-review → ledger §4 all [x] → PR).
+- **6-task build** (scope expanded from 4 → 6 by the 2026-06-19 scope decision, committed `a4450eee`): T1 retraction/reversal (G1/G3/G4/G8) ✅ `1b9ac9bd..80246a96`; T2 remediation+conservation (G6/F1) ✅ `c3fd4a12..1ddd99a6`; T3 gap-routing+keep-worthiness (dec10/A4) ✅ `b47722f1..d6a0a3c2`; T4 DemandLedger+preflight (dec11/12/I4) ✅ `38c8a548..9927a3c8`; T5 reversal/anomaly detectors (G2) ✅ `11dfd554..1419c7ae`; T6 policy-edit privileged-intent path + merge-map golden gate (G7/I3) — IN RE-REVIEW `2f708f7f..226ccf5f` (build `9ed76ba5..d10ac0ba`; then fixes `f86c6365` security HIGHs, `eadda916`+`757c08b5` inertness Criticals, `226ccf5f` version-bump minor).
+- **T6 NOT yet verified complete** — re-review verdict pending (reviewer `a93772ee65b0e2032`). Phase gate NOT run.
 - **G7 migration delta** written as triggered backlog: `docs/backlog/librarian-policy-edit-migrate-existing-ops.md`.
 
 ### Files mid-edit
-None. All tasks shipped.
+- T6 in re-review at HEAD `226ccf5f`. (A first T6 run prematurely committed a "T6 complete" session-state at `7d965221` BEFORE the security + 2 inertness fix rounds — corrected here; that claim was wrong.)
 
 ### Decisions made this session (T6-specific)
-- Reused `.knowledge/eval/dedup/golden.yaml` as merge_map source (no separate merge_map_golden.yaml — purpose-built for this scoring, duplication adds zero signal).
-- Policy.yaml is gitignored → `_apply_policy_edit` writes directly (no `git add`), records provenance node, marks committed in queue. Empty `writes={}` AuthoredIntent triggers the policy-edit dispatch.
-- Gate 2b: `dedup.strategy="geometry-only"` in policy_data triggers simulation + dead-letters if it regresses the golden — enforces the constraint at policy-change time.
-- `policy_provenance` lint detects absence of provenance node (not content-hash match) — content-hash check tracked in migration backlog as a hardening item.
+- Reused `.knowledge/eval/dedup/golden.yaml` as merge_map source (no separate file — duplication adds zero signal).
+- Policy.yaml is gitignored → `_apply_policy_edit` writes directly (no `git add`), records a provenance node under `decision_basis` as the audit trail, marks committed in queue. Empty `writes={}` AuthoredIntent triggers the policy-edit dispatch (idempotency/fencing/provenance confirmed sound by review).
+- **Gate (post-fix, `eadda916`):** the policy-edit gate DERIVES dedup params (blocking_band/identity_threshold/strategy) from the PROPOSED policy_data and runs a parameterized `merge_map_eval`; dead-letters on ANY golden regression for all strategies (was an inert hardcoded `"geometry-only"` string-match before the fix). FAILS CLOSED on any gate-eval exception (`f86c6365`); domain slug-validated + path-containment-checked at both layers.
+- `policy_provenance` lint reads `decision_basis` (the real provenance key, fixed `757c08b5`); detects absence of a policy-edit provenance node; content-hash match is a backlog hardening item.
 
 ### Next atomic step
-Phase gate: run `wiki lint --scope orphans`, `wiki lint --scope schema-drift`, `wiki lint --scope broken-wikilinks`. Run `wiki eval-retrieval --compare`. Then whole-branch independent code-review + security review + /session-review. Update ledger §4 Phase 5 all [x]. Open PR.
+Await T6 re-review verdict. If clean: mark T6 complete in `.git/sdd/progress.md`, then run the PHASE GATE: full suite `.venv/bin/python -m pytest`; `wiki lint --scope orphans|schema-drift|broken-wikilinks`; `wiki eval-retrieval --compare` (≥0.90 — also the live check for policy-edit Gate 1, which unit tests skip on missing goldens); whole-branch independent code-review (opus) + security review + /session-review. Then set ledger §4 Phase 5 all [x] + §5 rows green, reconcile §4/§5 vs reality, → PR.
 
 ---
 
