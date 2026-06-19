@@ -1,6 +1,6 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-18 (Librarian PHASE 3 gate PASSED — Phase 4 = fresh session)
+Last updated: 2026-06-19 (Librarian PHASE 1–3 MERGED to main via PR #29; branch deleted — Phase 4 = fresh session)
 
 ---
 
@@ -175,6 +175,14 @@ won → points at the policy-resolved loser.
 (the loser claim text already carries its own `[[sources/…]]`; the edge prepends a `…|disputes` link to the
 same source). Cosmetic, functionally correct. Revival trigger: any CiTO-edge rendering pass or a reader
 complaint about duplicated citations.
+
+**MERGED TO MAIN — 2026-06-19.** Phase 1+2+3 (whole `docs/librarian-rag-design` arc, 57 files / ~10,330
+insertions) merged via **PR #29** (`feat(librarian): multi-agent RAG — Phases 1–3`), merge commit
+`8a509406` on `origin/main`. N1 fix `6790772f` confirmed ancestor of `origin/main`. Merge-commit strategy
+(per-task/per-fix SHAs preserved for BUILD.md/ledger refs). Branch `docs/librarian-rag-design` **deleted**
+(remote + local) — fully merged, 0 commits not in main, verified before delete. No git work pending; the
+8 task commits + 4 review-fix commits (B1 `a1e4c509`, I1 `fb21cdb9`, I2 `4e76a5cd`, N1 `6790772f`) are all
+on main. Working tree clean on `main`. **Phase 4 still = FRESH SESSION via the Phase-4 contp (below).**
 
 **Phase-4 carry-forward (residual, non-blocking):** (a) `_merge_kind` normalization treats all
 `wiki/concepts/` pages as kind `concept` — if a concept page ever carries a finer `entity_kind`, revisit;
