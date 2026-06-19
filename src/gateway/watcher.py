@@ -213,10 +213,10 @@ class WatcherDaemon:
                 log.warning("  %s", w)
             # Emit ingest.complete event so AGT-1 subscribers can pick it up.
             if result.paths_touched:
+                source_id = result.paths_touched[0].stem
                 try:
                     import uuid
                     from gateway import events as _events
-                    source_id = result.paths_touched[0].stem
                     _events.emit(
                         "ingest.complete",
                         payload={"source_id": source_id},
@@ -225,6 +225,22 @@ class WatcherDaemon:
                     )
                 except Exception as _e:
                     log.warning("event emission failed for %s: %s", path.name, _e)
+                # C7: a watcher ingest is a committed corpus change, so it must
+                # produce an operational-provenance node — no corpus state
+                # without an ancestor. The ingest is the "intent"; the producer
+                # is the watcher.
+                try:
+                    from gateway import provenance as _prov
+                    _prov.record(
+                        f"watcher-ingest:{source_id}",
+                        {
+                            "producer": "watcher",
+                            "source_id": source_id,
+                            "paths_touched": [str(p) for p in result.paths_touched],
+                        },
+                    )
+                except Exception as _e:
+                    log.warning("provenance record failed for %s: %s", path.name, _e)
             # Successful ingest -> file is now in raw/<type>/<id>.md;
             # the inbox copy is no longer needed.
             try:
