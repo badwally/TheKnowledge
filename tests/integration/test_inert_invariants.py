@@ -66,18 +66,20 @@ def _authored(q, *, writes, payload=None, base_oid=None, root=None):
 def kb_root(tmp_path, monkeypatch):
     """Real git repo with KNOWLEDGE_ROOT pointing to tmp_path.
 
-    Creates the minimal directory structure that production always has after
-    the first ingest (raw/, wiki/) so lint checks that call paths.raw_dir()
-    or paths.wiki_dir() do not crash on missing directories.
-    .knowledge/ is gitignored (derived state); policies/ and eval/ are tracked
-    (they must be committed through the gate — per governance_flow pattern).
+    Does NOT pre-create raw/ or wiki/ — lint checks must guard against missing
+    directories in production (the Critical fix: superseded_citations.py now
+    has the same guard as its siblings). Tests that need those dirs create them
+    via _seed_source() / _seed_wiki_concept(), matching production ingest.
+
+    .knowledge/ derived state is gitignored; .knowledge/policies/ and
+    .knowledge/eval/ are git-TRACKED (governance path, per C1 fix).
     """
     monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
     _git(tmp_path, "init", "-q")
     _git(tmp_path, "config", "user.email", "test@test")
     _git(tmp_path, "config", "user.name", "test")
-    # Mirror the real production gitignore: .knowledge/ derived state is ignored,
-    # but .knowledge/policies/ and .knowledge/eval/ are git-TRACKED (per C1 fix).
+    # Mirror the real production gitignore: derived state gitignored;
+    # policies/ and eval/ are tracked (must be committed through the gate).
     (tmp_path / ".gitignore").write_text(
         ".knowledge/locks/\n"
         ".knowledge/lint/\n"
@@ -94,10 +96,6 @@ def kb_root(tmp_path, monkeypatch):
         ".index/\n"
     )
     (tmp_path / "README.md").write_text("seed\n")
-    # Minimal directory structure (empty but present) so lint checks do not
-    # crash on missing dirs — matches production state after first ingest.
-    (tmp_path / "raw").mkdir()
-    (tmp_path / "wiki").mkdir()
     _git(tmp_path, "add", "README.md", ".gitignore")
     _git(tmp_path, "commit", "-qm", "seed")
     return tmp_path
@@ -165,21 +163,11 @@ def _seed_wiki_concept(root: Path, slug: str, body: str) -> Path:
 # ===========================================================================
 
 
-def _lint_check_ids():
-    """Return (slug, runner) pairs from the REAL lint registry."""
-    return list(lint_op._CHECKS)
-
-
-def _run_one_lint(slug: str, root: Path) -> list:
-    """Run a single lint check scoped to `slug` under the given root."""
-    result = lint_op.lint(scope=slug)
-    if not result.success:
-        return []
-    return result.metadata.get("findings", []) if hasattr(result, "metadata") else []
+_LINT_CHECKS = list(lint_op._CHECKS)  # enumerate once at collection
 
 
 @pytest.mark.integration
-@pytest.mark.parametrize("slug,runner", _lint_check_ids(), ids=[s for s, _ in _lint_check_ids()])
+@pytest.mark.parametrize("slug,runner", _LINT_CHECKS, ids=[s for s, _ in _LINT_CHECKS])
 def test_lint_check_fires_on_real_signal(slug, runner, kb_root, monkeypatch):
     """Each lint check fires on a real on-disk signal that triggers it.
 
@@ -887,44 +875,69 @@ def test_reversal_anomalies_lint_cascade_depth_uses_live_retraction_not_sidecar(
 
 
 # ===========================================================================
-# Step 5: No apply-branch-less intent type
+# Step 5: No apply-branch-less intent type — cross-reference producer ops
 # ===========================================================================
-# Enumerate the REAL reversal_type values dispatched in commit_gate._apply_reversal
-# and assert each has a non-dead-letter apply branch. Enumerated from the
-# real dispatch at commit_gate.py:1282-1296 — not a hardcoded list.
+# Hunt #1 invariant: every reversal_type a PRODUCER OP submits must have a
+# non-dead-letter apply branch in the gate.
+#
+# Producer ops (the enqueuer side — ops that call q.submit() with reversal_type):
+#   - ops/revert_resolution.py: "contradiction-resolution"
+#   - ops/remediate.py: "depath"
+#
+# The parametrize below enumerates the reversal_type strings FROM THOSE SOURCE
+# FILES, not from _apply_reversal itself. That way removing a producer OR
+# removing its gate handler both make the test go RED — the real hunt #1 defect.
+#
+# "reverse-merge" and "restore-depath" have NO dedicated producer op — they are
+# only used as gate-internal provenance keys (the gate embeds them when recording
+# the basis of a depath/merge commit). No external caller submits them via
+# IntentQueue. The hunt-#1 backlog item (below) tracks adding canonical constants.
+# Until then, the per-branch containment tests in Step 3 are the guard.
+#
+# Backlog: docs/backlog/librarian-t6-reversal-type-producer-enum.md
 # ===========================================================================
 
 
-def _known_reversal_types() -> list[str]:
-    """Extract reversal_type strings dispatched in CommitGate._apply_reversal.
+def _producer_reversal_types() -> list[str]:
+    """Extract reversal_type values from the PRODUCER op source files.
 
-    Reads the SOURCE CODE of commit_gate._apply_reversal() and extracts all
-    kind == <string> branches. This is registry-driven (not a hardcoded list):
-    adding a new elif here must make the parametrize below pick it up.
+    Reads ops/revert_resolution.py and ops/remediate.py — the ops that call
+    q.submit() with a reversal_type payload — and extracts the literal string
+    values. This cross-references the PRODUCER side, not the gate dispatch,
+    so a producer emitting a type the gate cannot handle goes RED.
     """
-    import inspect
-    import gateway.commit_gate as cg_mod
-    source = inspect.getsource(cg_mod.CommitGate._apply_reversal)
-
     import re
-    # Match `if kind == "..."` and `elif kind == "..."` branches.
-    matches = re.findall(r'if kind == ["\']([^"\']+)["\']', source)
-    return matches
+    import importlib
+    import pathlib
+
+    gateway_ops = pathlib.Path(__file__).parent.parent.parent / "src" / "gateway" / "ops"
+    producer_files = [
+        gateway_ops / "revert_resolution.py",
+        gateway_ops / "remediate.py",
+    ]
+    found: list[str] = []
+    for f in producer_files:
+        src = f.read_text()
+        # Match "reversal_type": "<value>" — the payload key producers write.
+        for m in re.finditer(r'"reversal_type":\s*["\']([^"\']+)["\']', src):
+            val = m.group(1)
+            if val not in found:
+                found.append(val)
+    return found
 
 
 @pytest.mark.integration
-@pytest.mark.parametrize("reversal_type", _known_reversal_types())
-def test_known_reversal_type_has_apply_branch(reversal_type, kb_root):
-    """Every reversal_type dispatched in _apply_reversal has a non-dead-letter path.
+@pytest.mark.parametrize("reversal_type", _producer_reversal_types())
+def test_producer_reversal_type_has_gate_apply_branch(reversal_type, kb_root):
+    """Every reversal_type a producer op enqueues has a non-dead-letter gate branch.
 
-    Hunt #1: T2 de-path enqueued a payload with no gate handler → dead-lettered,
-    de-pathed nothing. This invariant makes that defect fail a test.
+    Hunt #1 real cross-reference: the parametrize comes from the PRODUCER source
+    (ops/revert_resolution.py + ops/remediate.py), not from the gate's own
+    _apply_reversal. A producer emitting a type the gate doesn't handle goes RED.
 
-    For each reversal_type string found in _apply_reversal's source:
-    - Submit an intent with that reversal_type.
-    - The gate must NOT produce 'unknown reversal_type' in the dead-letter reason.
-    - (It may still dead-letter for a VALID reason like missing target/act — that is
-      correct routing behavior, not a missing branch.)
+    The gate may still dead-letter for a VALID operational reason (missing target,
+    unknown act, etc.) — that is correct routing. The assertion is only that the
+    dead-letter reason is NOT 'unknown reversal_type' (which means no branch).
     """
     q = IntentQueue()
     gate = CommitGate(root=kb_root, queue=q)
@@ -940,13 +953,10 @@ def test_known_reversal_type_has_apply_branch(reversal_type, kb_root):
 
     result = gate.commit(authored, claim.fencing_token)
 
-    # The gate MUST route to a specific apply helper — not fall through to the
-    # "unknown reversal_type" dead-letter. Even a valid dead-letter is acceptable
-    # (missing target, missing content, missing act) — the test checks the routing.
     error_text = " ".join([result.summary or ""] + (result.errors or []))
     assert "unknown reversal_type" not in error_text.lower(), (
-        f"reversal_type={reversal_type!r} fell through to unknown-reversal dead-letter. "
-        f"This reversal_type has no apply branch — hunt #1 defect. "
+        f"reversal_type={reversal_type!r} (produced by a real op) fell through "
+        f"to unknown-reversal dead-letter — hunt #1 defect. "
         f"result={result}"
     )
 
