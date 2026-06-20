@@ -1610,3 +1610,28 @@ These are not migration script work; they require LLM-driven authorship over alr
 - **Concept body backfill.** Migrated concepts have stub sections (`## Summary _(needs population)_` etc.) because legacy concept pages had no body content beyond a "Methods" cross-reference list. Backfill is per-concept LLM work via `wiki query` or `wiki ingest --with-plan`.
 - **Source citation graph.** Legacy MOCs use numeric `[1, 2]` citations without a number→ID map. Resolving these into `[[sources/<id>]]` requires per-MOC LLM authorship that re-grounds claims. 127 source orphans persist until this is done.
 - **Synthesis backreferences.** 3 synthesis pages are orphan because no MOC references them. Either MOCs gain a "Synthesis pages" section linking each one, or this surfaces in a future `wiki lint --scope orphans --quiet-mocs` exclude rule.
+
+---
+
+## 31. Test-harness expansion delivery log (2026-06-20)
+
+Closes the 6 coverage seams left by the merged Production Committer + Multi-Agent Test Harness build (PR #35/#36/#37). Built via `subagent-driven-development` in an isolated worktree (own env-parity venv), one implementer at a time on the shared tree, with an independent reviewer ≠ author gate + fix loop per task, a whole-branch review, and a security spot-check on the one production change. Merged via **PR #38** (`485427ad`); the playbook B2 lesson it produced merged via **PR #39** (`02c73ca9`). Full review record: `docs/260620_session-review.md`.
+
+**Baseline → final:** full suite **2491 → ≈2534** (+43; ±1 from the order-dependent `test_doc5_rotate_log` flaky). Exit gate green: recall@10 0.926 (≥0.90), merge-map 0 regressions, embedding OK (entity namespace below floor, accepted via the intentional falsifiable-fallback I2 contract), scoped lints at baseline 758/191/1.
+
+| Task | Seam closed | Tier | Key commit(s) | Review |
+|---|---|---|---|---|
+| P1 | No full multi-agent deposit→commit→read e2e | e2e | `3e048e53` | opus Approved (3 mutations confirmed RED→GREEN) |
+| P2 | T6 Step-1 positive lint coverage 5/32 | integration | `f02fe244`..`22f33f08` | opus Approved after 1 fix — 32/32 via live-registry guard; 4 LLM checks driven by a plain-class `_StubClient` through the real `run(client=…)` seam |
+| P3 | Concurrent same-slug race no longer driven | slow | `755579da`..`341013d2` | opus Approved after 1 fix — single-threaded `run_worker` → 3 concurrent `drain_once` drainers; real CAS contradiction path |
+| P4 | `TESTING.md` "Hypothesis" claim vs parametrized impl | unit | `39f15b9f`..`2176a719` | sonnet Approved after 1 fix — 3 real property tests (`hypothesis` added to `[dev]`); property 3 widened to 150 genuine examples |
+| P5 | Gate exists but nothing runs it | hook | `61f40400` | sonnet Approved — `scripts/pre-push` propagates the gate's exit; inert-hook negative control has teeth |
+| P6 | No drain-loop observability for the autonomous committer | unit+e2e | `ec09c1b8` | opus Approved + security **SHIP IT** — `commit-worker --verbose` emits the already-computed `DrainResult`; default-off byte-identical; `drain_once` untouched |
+
+Fix-wave `3c2a44a7` cleaned 4 defer-safe Minors (stale comment, unused import, dangling installer ref, DRY'd P6 emit).
+
+**New surface (production):** `run_worker(*, sink=None, …)` in `src/gateway/ops/committer.py` + `wiki commit-worker --verbose` in `cli.py` — additive, default-off observability emitting `intent_id`/`disposition`/`reason` (no payload/body/credentials). `scripts/pre-push` (manual symlink install). `hypothesis>=6.0` in the `[dev]` extra.
+
+**What the meta-gate earned (the build's headline):** every one of the three non-trivial tasks (P2/P3/P4) passed the implementer's own green tests but was BLOCKed by independent review for being **inert** — a lazily-xfailed deterministically-drivable lint check, a serialized "race", and a 5-value generator masquerading as a Hypothesis property. P2's coverage push also surfaced **two real pre-existing production defects**: lint checks registered under a slug they don't emit (`citation-chains`→`dangling-synthesizes-ref`, `long-slugs`→`slug-too-long`), masked for the whole prior build by empty-repo negative controls.
+
+**Carried forward (triggered-backlog, not in this delivery):** the 2 lint slug-mismatch registry fixes (`docs/backlog/librarian-citation-chains-slug-mismatch.md`, `…-long-slugs-slug-mismatch.md`; touch `LINT_BASELINES`), the P2 LLM-coverage note, and the prior build's out-of-scope items (committer daemon, demand-cluster scheduled trigger, same-slug union body-parity, reverse-merge producer, demand-ledger DoS bound).

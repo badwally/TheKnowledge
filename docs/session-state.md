@@ -1,12 +1,12 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-20 (TEST-HARNESS EXPANSION build IN PROGRESS on worktree branch `worktree-test-harness-expansion`. Prior: Committer+test-harness PR #35/#36/#37 MERGED; Librarian 5-phase build COMPLETE.)
+Last updated: 2026-06-20 (TEST-HARNESS EXPANSION build MERGED — PR #38 `485427ad` + playbook follow-up PR #39 `02c73ca9`. Prior: Committer+test-harness PR #35/#36/#37 MERGED; Librarian 5-phase build COMPLETE.)
 
 ---
 
-## 🔨 TEST-HARNESS EXPANSION (IN PROGRESS, 2026-06-20)
+## ✅ TEST-HARNESS EXPANSION (MERGED 2026-06-20)
 
-**Worktree:** `.claude/worktrees/test-harness-expansion`, branch `worktree-test-harness-expansion` (off main @ `7d5918a4`; own venv, env-parity 173 pkgs). Plan: `docs/plans/2026-06-20-test-harness-expansion-build-plan.md`. SDD ledger: `.git/worktrees/test-harness-expansion/sdd/progress.md` (authoritative per-task progress). Mode: subagent-driven-development, one implementer at a time (shared tree), opus review on P1/P2/P3/P6 + sonnet on P4/P5.
+**MERGED to `main` @ `02c73ca9`** (PR #38 build `485427ad`; PR #39 playbook B2 `02c73ca9`). Worktree REMOVED; both merged branches deleted; local main pulled level. Plan: `docs/plans/2026-06-20-test-harness-expansion-build-plan.md`. Mode was subagent-driven-development, one implementer at a time, opus review on P1/P2/P3/P6 + sonnet on P4/P5. NOTE: the per-task SDD ledger lived in the worktree's `.git/.../sdd/` and was discarded on worktree removal — the per-task summary below + `docs/260620_session-review.md` are the durable record.
 
 ### Open contracts
 - **Baseline:** full suite **2491 passed** @ `1fae97da` (fresh, not hardcoded). chore `1fae97da` = gitignore .claude/worktrees/.
@@ -16,10 +16,10 @@ Last updated: 2026-06-20 (TEST-HARNESS EXPANSION build IN PROGRESS on worktree b
 - **P4 (Hypothesis property tests) — DONE.** Commits `39f15b9f`..`2176a719` (review clean after 1 fix round). `hypothesis>=6.0` in `[dev]`. Sonnet Approved-with-Important round-1 (property 3 disguised parametrize, 5 examples); fix widened to titles×n_rounds → 150 genuine examples; re-review Approved (per-intent-id fencing invariant faithful — implementer's source pushback correct). Coordinator-verified full suite **2526**.
 - **P5 (pre-push gate hook) — DONE.** Commit `61f40400`. `scripts/pre-push` propagates gate exit (set -euo pipefail + terminal eval); 5 tests both directions + teeth-verified inert-hook negative control via GATE_CMD stub; docs in CLAUDE.md + playbook B6. Sonnet Approved (1 Minor → fix-wave).
 - **P6 (commit-worker trace mode — privileged committer, ONLY prod-code task) — DONE.** Commit `ec09c1b8`. `run_worker` gains `sink=None`; emits per-intent `DrainResult` trace (intent_id/disposition/reason) at the previously-discarded site; `drain_once` byte-unchanged; CLI `commit-worker --verbose`. Opus Approved (mutation-confirmed default-off byte-identical + real-reason-from-DrainResult). Security **SHIP IT 0 HIGH** (pure observability, privilege boundary unchanged, ephemeral stdout, body never leaks; 1 LOW theoretical no-action). Suite 2533.
-- **ALL 6 TASKS DONE.** Whole-branch opus review **READY TO MERGE** (no new Critical/Important; cross-task coherence clean; meta-gate teeth re-confirmed by reviewer mutation; all 6 Minors defer-safe). Pre-flight gate PASSED @ `ec09c1b8`. Fix-wave `3c2a44a7` cleaned 4 defer-safe Minors (P2 stale comment, P3 unused import, P5 dangling installer ref, P6 DRY emit helper — behavior-preserving). Binding exit gate on `3c2a44a7` → then push branch + PR to main (user merges).
+- **ALL 6 TASKS DONE + MERGED.** Whole-branch opus review READY TO MERGE; fix-wave `3c2a44a7` cleaned 4 defer-safe Minors; binding exit gate PASSED on `3c2a44a7` (suite ≈2534, recall@10 0.926, merge-map 0 regressions, embedding OK, lints 758/191/1). Merged via PR #38 (`485427ad`). Playbook B2 lesson + Evidence folded via PR #39 (`02c73ca9`). `docs/260620_session-review.md` written.
 
 ### Files mid-edit
-- None. All P1–P6 + fix-wave commits clean on the worktree branch (`7d5918a4..3c2a44a7`). This session-state commit rides into the PR (Phase-3/5 precedent).
+- None for the build. In flight: `docs/test-harness-expansion-writeup` branch (this session-state refresh + `docs/260620_session-review.md` + BUILD.md delivery section + playbook B5 venv-parity note), pending its own PR.
 
 ### Decisions made this session
 - Worktree gets its OWN venv (editable install resolves `gateway` to worktree src) so P6's source edits are testable in isolation — main's venv points at main's src.
@@ -33,7 +33,7 @@ Last updated: 2026-06-20 (TEST-HARNESS EXPANSION build IN PROGRESS on worktree b
 - P3 brief Step 1 said "via run_worker" — internally inconsistent with the plan's own "drive the REAL producer, not serialized" bar. run_worker is a single-threaded drainer; same-slug intents never contend. Caught by opus review instrumenting the outcome distribution. Lesson: when a plan step names a drain mechanism, verify it actually produces the contention the task is testing.
 
 ### Next atomic step
-Confirm binding exit gate green on `3c2a44a7`, then: commit this session-state, push `worktree-test-harness-expansion`, open PR to main (user merges — never reconcile locally on the shared tree). Post-merge: /session-review → fold the P3 plan-defect lesson into MULTI-AGENT-BUILD-PLAYBOOK B2; the 2 slug-mismatch backlog docs (citation-chains, long-slugs) + P2 LLM-coverage stay open under docs/backlog/ until their triggers fire.
+Open the PR for `docs/test-harness-expansion-writeup` (session-review + BUILD.md delivery section + playbook B5 venv-parity note). After merge, the one open follow-up is the 2 lint slug-mismatch registry fixes (`docs/backlog/librarian-citation-chains-slug-mismatch.md`, `…-long-slugs-slug-mismatch.md`) — real production bugs touching `LINT_BASELINES`; act when their trigger fires. P2 LLM-coverage note also open under docs/backlog/.
 
 ---
 
