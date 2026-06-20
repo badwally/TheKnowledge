@@ -499,6 +499,22 @@ class CommitGate:
                     pass  # queue record may legitimately be absent (idempotent path)
 
                 # Apply writes (per-file atomic; the git commit is the atomic boundary).
+                # Defense-in-depth: reject any rel that escapes the KB root (LOW-1).
+                # Safe today because author_deposit's slug sanitization prevents escape;
+                # this guard ensures a future deposit producer cannot bypass containment.
+                for rel in writes:
+                    if self._rel_escapes_root(rel):
+                        self._queue.set_state(
+                            intent_id, "dead_lettered",
+                            result={"reason": "rel-escapes-root", "rel": rel},
+                        )
+                        return OperationResult(
+                            success=False,
+                            intent_id=intent_id,
+                            disposition="dead_lettered",
+                            errors=[f"rel {rel!r} escapes KB root — rejected"],
+                            summary=f"{intent_id}: dead-lettered (rel-escapes-root)",
+                        )
                 touched: list[Path] = []
                 for rel, content in writes.items():
                     abs_path = self._root / rel

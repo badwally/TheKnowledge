@@ -15,7 +15,10 @@ def run() -> list[LintFinding]:
     """Find wiki pages that cite superseded sources."""
     # Collect superseded source IDs
     superseded: dict[str, str] = {}  # old_id → new_id
-    for type_dir in sorted(paths.raw_dir().iterdir()):
+    raw = paths.raw_dir()
+    if not raw.exists():
+        return []
+    for type_dir in sorted(raw.iterdir()):
         if not type_dir.is_dir():
             continue
         for p in sorted(type_dir.glob("*.md")):

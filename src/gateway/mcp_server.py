@@ -100,6 +100,11 @@ CLI_ONLY: frozenset[str] = frozenset(
         # bound to a server-sourced principal (GATEWAY_POLICY_PRINCIPAL), not
         # caller args. Mirrors the demote-domain CLI-only precedent.
         "policy-edit",
+        # `commit-worker` (D0, privileged/destructive) is the production queue
+        # drainer — it claims intents and commits git changes. Agents must NOT
+        # self-trigger git commits; the operator owns invocation via cron or on-demand.
+        # CLI-only by design.
+        "commit-worker",
     }
 )
 
@@ -221,6 +226,32 @@ def wiki_remediate(dry_run: bool = False) -> dict[str, Any]:
     from gateway.ops.remediate import remediate
 
     return _serialize(remediate(dry_run=dry_run))
+
+
+@mcp.tool()
+def wiki_demand_cluster(trigger: bool = False) -> dict[str, Any]:
+    """Cluster logged corpus gaps and optionally submit synthesis intents (D1, build-tier).
+
+    Calls DemandLedger.cluster() to surface recurring gap clusters. With trigger=True,
+    submits a page_type=synthesis, demand_trigger=True intent for each triggered cluster
+    (dedup-safe: ledger tracks triggered.json). Returns data={"clusters": [...]}.
+    """
+    from gateway.ops.demand_cluster import demand_cluster
+
+    result = demand_cluster(trigger=trigger)
+    # GapCluster dataclasses are not JSON-serializable; convert to dicts for MCP output.
+    clusters_serialized = [
+        {
+            "centroid_text": c.centroid_text,
+            "member_texts": c.member_texts,
+            "recurrence_mass": c.recurrence_mass,
+            "triggered": c.triggered,
+        }
+        for c in result.data.get("clusters", [])
+    ]
+    serialized = _serialize(result)
+    serialized["data"] = {"clusters": clusters_serialized}
+    return serialized
 
 
 @mcp.tool()

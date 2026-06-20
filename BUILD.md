@@ -1319,6 +1319,19 @@ A distinct epic from the gateway operational phases above (BUILD.md "Phase N" = 
 
 **Follow-ups (triggered backlog, deferred):** `docs/backlog/` — policy-edit op migration (the spec's migration delta), demand-cluster driver, reverse-merge producer op, demand-ledger DoS bound. No Phase 6 — the 5-phase build is complete.
 
+**Production Committer + Multi-Agent Test Harness (post-Phase-5, branch `test/multi-agent-test-harness`).** Closes the keystone gap exposed by the 5-phase build: async deposit→commit had **no production drainer** (the gate existed, nothing drove it). 8 tasks, subagent-driven (fresh implementer + independent review + fix loop per task; opus review on concurrency/destructive/meta-gate tasks, security review on the privileged surface). Plan: `docs/plans/2026-06-19-librarian-committer-test-harness-build-plan.md`. Ledger: `.git/sdd/progress.md`.
+
+- **D0 — Production committer** (`committer.py`): `author_deposit` (thin renderer) + `drain_once` + `run_worker` + `wiki commit-worker --once/--loop`; routes deposit + policy-edit + `reversal_type` intents through the CommitGate. On-demand only (launchd daemon deferred → backlog). `3f7762eb` + `a5149421`.
+- **D1 — `wiki demand-cluster`** driver (backlog I1): `trigger=False` report-only / `trigger=True` submits to the correctly-rooted queue. `6b020a74..5094831c`.
+- **M1 — pytest marker registry** (unit/integration/e2e/slow) + `--strict-markers` + `docs/TESTING.md`. `08b481ff`.
+- **T2 — Integration flows** (lifecycle / demand / governance). **Surfaced the keystone defect:** the committer dead-lettered 3 enqueued intent types (policy-edit + contradiction-resolution + depath reversals) — fixed the COMMITTER (`_is_gate_dispatched` classifier), not the test. `80ba33bb` + `2b5729b9`.
+- **T3 — N-agent concurrency soak** on real fcntl locks: all-terminal/no-torn-write, stale-fencing-reject, backpressure@MAX_BACKLOG=256, retry-later re-queue, write-skew both-survive. `741b04aa` + `2c62417c`.
+- **T4 — Surface E2E**: MCP read-tier exact-set allowlist + build-tools-absent negative control + deposit round-trip (commits) + CLI git-state for all 5 commands. `d1729739` + `9b7c4e07`.
+- **T6 — Inert-in-production property tests (meta-gate)**: the hunt list as executable invariants over the real registries. **Surfaced a real production crash** — `superseded_citations` cold-start `FileNotFoundError` (only 1 of 32 lint checks unguarded) → fixed production + unmasked the fixture. `5f67eb08` + `a4c3d785`.
+- **G1 — Pre-merge gate script** (`gateway/scripts/gate.py`): full suite + tiers + recall@10 ≥ 0.90 + merge-map no-regress + embedding I2 + scoped lints, fail-fast non-zero. Now the standing pre-merge gate (PLAYBOOK B6, CLAUDE.md). `4457f72a` + `1a4f932c`.
+
+**Gate:** pre-merge gate **PASS @ `c59cb0d1`** — full suite **2491 passed**, fts recall@10 **0.926** (≥0.90 floor), merge-map 0 regressions, embedding namespaces OK (real I2 contract), scoped lints at baseline (758/191/1). Whole-branch review **READY TO MERGE**; security review **SHIP IT (0 HIGH)** — autonomous-apply boundary sound, enqueue-only trust model intact. A pre-existing flaky negative-control test (`test_nonatomic_rebuild_exposes_half_state`) that intermittently reddened the gate was made deterministic (`c59cb0d1`). Session-review: `docs/260619_session-review-3.md`; new playbook findings: hunt-question #7 (property test reading its own answer key), "the meta-gate can itself be inert," B2 gate-pass-condition cross-check, B4 reviewer-delivery-contract, B6 the gate itself.
+
 ---
 
 ## 23. Phase 11 exit checkpoint (2026-05-27)

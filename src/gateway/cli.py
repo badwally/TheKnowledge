@@ -117,6 +117,8 @@ SUBCOMMANDS: dict[str, str] = {
     "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
     "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
     "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
+    "commit-worker": "Drain the deposit queue: --once (drain to empty) or --loop (foreground poll) (D0, build-tier)",
+    "demand-cluster": "Submit synthesis intents for triggered corpus-gap clusters (requires --trigger; no-op otherwise) (D1, build-tier)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -194,6 +196,8 @@ IMPLEMENTED: set[str] = {
     "remediate",
     "preflight",
     "policy-edit",
+    "commit-worker",
+    "demand-cluster",
 }
 
 
@@ -472,6 +476,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Report orphaned pages without submitting de-path intents.",
     )
 
+    # demand-cluster: gap clustering + optional synthesis trigger (D1, build-tier)
+    p_demand_cluster = subparsers.add_parser(
+        "demand-cluster",
+        help=SUBCOMMANDS["demand-cluster"],
+    )
+    p_demand_cluster.add_argument(
+        "--trigger",
+        action="store_true",
+        default=False,
+        help="Submit a synthesis intent for each triggered cluster (demand_trigger=True).",
+    )
+
     # preflight: read-tier planner/executor pre-flight (D12, read-tier)
     p_preflight = subparsers.add_parser(
         "preflight",
@@ -502,6 +518,32 @@ def build_parser() -> argparse.ArgumentParser:
     # NOTE (SEC-Critical): no --agent/--role flags. The privileged principal is
     # server-sourced (GATEWAY_POLICY_PRINCIPAL / .knowledge/secrets.env), not a
     # caller argument — a caller cannot pass an identity to gain privilege.
+
+    # commit-worker: on-demand drain of the deposit queue (D0, build-tier)
+    p_commit_worker = subparsers.add_parser(
+        "commit-worker",
+        help=SUBCOMMANDS["commit-worker"],
+    )
+    _cw_mode = p_commit_worker.add_mutually_exclusive_group()
+    _cw_mode.add_argument(
+        "--once",
+        action="store_true",
+        default=False,
+        help="Drain the submitted queue to empty, then exit.",
+    )
+    _cw_mode.add_argument(
+        "--loop",
+        action="store_true",
+        default=False,
+        help="Poll the queue indefinitely until interrupted (Ctrl-C).",
+    )
+    p_commit_worker.add_argument(
+        "--poll-interval",
+        type=float,
+        default=2.0,
+        metavar="SECONDS",
+        help="Seconds between poll attempts in --loop mode (default: 2.0).",
+    )
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -1660,10 +1702,14 @@ def main(argv: list[str] | None = None) -> int:
         return _run_revert_resolution(ns)
     if ns.subcommand == "remediate":
         return _run_remediate(ns)
+    if ns.subcommand == "demand-cluster":
+        return _run_demand_cluster(ns)
     if ns.subcommand == "preflight":
         return _run_preflight(ns)
     if ns.subcommand == "policy-edit":
         return _run_policy_edit(ns)
+    if ns.subcommand == "commit-worker":
+        return _run_commit_worker(ns)
 
     return _not_yet_implemented(ns.subcommand)
 
@@ -2950,6 +2996,14 @@ def _run_remediate(ns: argparse.Namespace) -> int:
     return _emit_result(result)
 
 
+def _run_demand_cluster(ns: argparse.Namespace) -> int:
+    from gateway.ops.demand_cluster import demand_cluster
+
+    trigger = getattr(ns, "trigger", False)
+    result = demand_cluster(trigger=trigger)
+    return _emit_result(result)
+
+
 def _run_preflight(ns: argparse.Namespace) -> int:
     from gateway.ops.preflight import preflight
 
@@ -2988,6 +3042,41 @@ def _run_policy_edit(ns: argparse.Namespace) -> int:
         reason=ns.reason,
     )
     return _emit_result(result)
+
+
+def _run_commit_worker(ns: argparse.Namespace) -> int:
+    """CLI handler for `wiki commit-worker` (D0, build-tier, privileged/destructive).
+
+    Drains the deposit queue by claiming → authoring → committing each submitted
+    intent. Build-tier only — NOT in the MCP read allowlist.
+
+    --once  drain to empty then exit (cron / on-demand).
+    --loop  foreground poll until SIGINT / KeyboardInterrupt (manual monitoring).
+    Neither flag defaults to --once.
+
+    Constructs EmbeddingIndex() so _dedup_recheck fires in production (CRITICAL #2):
+    without it, two different-slug deposits for the same referent both commit as
+    separate pages — the merge path never runs.
+    """
+    from gateway.embedding_index import EmbeddingIndex
+    from gateway.ops.committer import run_worker
+
+    once = getattr(ns, "once", False)
+    loop = getattr(ns, "loop", False)
+    poll_interval = getattr(ns, "poll_interval", 2.0)
+
+    if not once and not loop:
+        # Neither flag: default to --once (drain then exit).
+        once = True
+
+    idx = EmbeddingIndex()
+    try:
+        run_worker(once=once, poll_interval=poll_interval, embedding_index=idx)
+    except Exception as exc:
+        import sys as _sys
+        print(f"commit-worker failed: {exc}", file=_sys.stderr)
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
