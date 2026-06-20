@@ -141,48 +141,40 @@ def test_concurrent_read_during_rebuild_no_half_state(wiki):
 
 def test_nonatomic_rebuild_exposes_half_state_negative_control(wiki):
     """Negative control: a deliberately NON-atomic rebuild (incremental upserts
-    directly into the live store) DOES expose partial counts to a concurrent
-    reader — proving the half-state detector in the test above is real."""
+    directly into the live store) DOES expose partial counts to an external
+    reader — proving the half-state detector in the atomic test above is real.
+
+    Deterministic by construction: an external reader index (a separate
+    instance, fresh connection per read) samples the live store after EVERY
+    single upsert, so the partial counts are observed without depending on
+    thread-scheduling timing. The prior concurrent-reader form was flaky — under
+    GIL/SQLite contention the poller could sample only the 0 and n endpoints and
+    miss every intermediate state (saw `[0, 12]`), failing spuriously."""
     n = 12
     for i in range(n):
         _write_entity(wiki, f"e{i}", f"Entity {i}")
 
+    from gateway import frontmatter as fm
+
+    writer = EmbeddingIndex()
+    reader = EmbeddingIndex()  # a SEPARATE index instance — an external reader
+
     observed: list[int] = []
-    stop = threading.Event()
-    started = threading.Event()
+    for i in range(n):
+        p = wiki / "wiki" / "entities" / f"e{i}.md"
+        content = p.read_text()
+        front, _ = fm.parse(content)
+        # Non-atomic: commit one page at a time into the LIVE store.
+        writer.upsert_page(f"wiki/entities/e{i}.md", content, front)
+        # The external reader sees the live store mid-rebuild, after each commit.
+        observed.append(_count_entity_rows(reader))
 
-    def reader():
-        rd = EmbeddingIndex()
-        started.set()
-        while not stop.is_set():
-            try:
-                observed.append(_count_entity_rows(rd))
-            except Exception:
-                pass
-            time.sleep(0.001)
-
-    rt = threading.Thread(target=reader)
-    rt.start()
-    started.wait()
-    try:
-        # Non-atomic: upsert one page at a time into the LIVE store with a delay.
-        live = EmbeddingIndex(encoder=_SlowEncoder(delay=0.03))
-        from gateway import frontmatter as fm
-
-        for i in range(n):
-            p = wiki / "wiki" / "entities" / f"e{i}.md"
-            content = p.read_text()
-            front, _ = fm.parse(content)
-            live.upsert_page(f"wiki/entities/e{i}.md", content, front)
-            time.sleep(0.005)  # widen the visible-partial window between commits
-    finally:
-        stop.set()
-        rt.join()
-
-    # A partial count (strictly between 0 and n) WAS observed — the reader can
-    # see half-state through a non-atomic path, so the atomic test is meaningful.
+    # Every strictly-partial count 1..n-1 was visible to the external reader —
+    # the non-atomic path leaks half-state (unlike the atomic shadow-swap, which
+    # the test above proves never exposes a partial).
     partials = [c for c in observed if 0 < c < n]
-    assert partials, f"expected a partial count, saw {sorted(set(observed))}"
+    assert partials, f"expected partial counts, saw {sorted(set(observed))}"
+    assert _count_entity_rows(reader) == n, "full set not visible after rebuild"
 
 
 class _GatedRebuildEncoder(LexicalFallbackEncoder):
