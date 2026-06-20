@@ -245,9 +245,14 @@ class IntentQueue:
             except OSError:
                 return -1.0
 
+        # Order by mtime, then by name as a STABLE tiebreak. Without the name
+        # key, two intents submitted in the same mtime tick fall back to
+        # os.scandir / glob order (filesystem-dependent, not guaranteed), which
+        # makes a single-pass same-slug merge pick a nondeterministic canonical
+        # winner. (mtime, name) is a total deterministic drain order.
         candidates = sorted(
             (p for p in sub_dir.glob("*.json") if not p.name.startswith(".")),
-            key=_mtime,
+            key=lambda p: (_mtime(p), p.name),
         )
         for src in candidates:
             dst = claimed_dir / src.name

@@ -82,6 +82,51 @@ def test_claim_issues_monotonic_fencing_token_and_lease(root):
     assert c2.fencing_token == 2
 
 
+def test_claim_breaks_mtime_ties_by_name_deterministically(root, monkeypatch):
+    """On an mtime tie, claim() must drain in a deterministic (name) order.
+
+    Without a stable secondary sort key, two intents submitted in the same
+    mtime tick are claimed in os.scandir / glob order, which is not guaranteed
+    — the latent nondeterminism that makes a same-slug merge pick a random
+    canonical winner (the flaky committer test). This forces an adversarial
+    (name-descending) glob order and an mtime tie, and asserts claim() still
+    yields the lexicographically-smaller intent id first.
+    """
+    import os
+    from pathlib import Path
+
+    q = IntentQueue()
+    a = _intent(payload={"kind": "source", "url": "https://example.com/aaa"})
+    b = _intent(payload={"kind": "source", "url": "https://example.com/bbb"})
+    q.submit(a)
+    q.submit(b)
+    smaller, _larger = sorted([a.intent_id, b.intent_id])
+
+    # Force an mtime tie on both submitted files.
+    sub = q._state_dir("submitted")
+    files = [p for p in sub.glob("*.json") if not p.name.startswith(".")]
+    assert len(files) == 2
+    tie = 1_000_000.0
+    for f in files:
+        os.utime(f, (tie, tie))
+
+    # Adversarial directory iteration: yield candidates name-DESCENDING, so a
+    # stable sort on equal mtime would otherwise claim the larger name first.
+    real_glob = Path.glob
+
+    def fake_glob(self, pattern):
+        return iter(sorted(real_glob(self, pattern), key=lambda p: p.name, reverse=True))
+
+    monkeypatch.setattr(Path, "glob", fake_glob)
+
+    claim = q.claim(now=1000.0)
+    assert claim is not None
+    assert claim.intent.intent_id == smaller, (
+        "claim() must break mtime ties by name (deterministic), not by "
+        f"directory-iteration order; got {claim.intent.intent_id}, expected {smaller}"
+    )
+
+
 def test_claim_returns_none_when_empty(root):
     q = IntentQueue()
     assert q.claim() is None

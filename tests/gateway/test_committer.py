@@ -381,11 +381,26 @@ def test_cli_commit_worker_once_drives_real_union(repo, queue, gate):
     rc = cli_mod.main(["commit-worker", "--once"])
     assert rc == 0
 
-    # Both claims must be present — proves dedup/merge fired through the CLI path
-    canonical = repo / "wiki" / "entities" / "liraglutide.md"
-    assert canonical.exists(), "canonical liraglutide.md should exist"
-    text = canonical.read_text()
-    assert "Claim L1." in text and "Claim L2." in text
+    # Direction-agnostic: the merge fires and unions both claims onto ONE
+    # canonical page; the other slug becomes a merged_into tombstone. Which of
+    # the two aliased slugs wins canonical is determined by drain order, which
+    # is now deterministic (intent_queue.claim() orders by (mtime, name)) but
+    # not semantically pinned to a particular slug — so assert the invariant
+    # (one canonical carries both claims, the other redirects), not the winner.
+    liraglutide = repo / "wiki" / "entities" / "liraglutide.md"
+    victoza = repo / "wiki" / "entities" / "victoza.md"
+    assert liraglutide.exists() and victoza.exists(), (
+        "both the canonical page and its merge tombstone must exist"
+    )
+    texts = {p: p.read_text() for p in (liraglutide, victoza)}
+    carriers = [p for p, t in texts.items() if "Claim L1." in t and "Claim L2." in t]
+    assert len(carriers) == 1, (
+        f"exactly one canonical page must carry both claims; got {[p.name for p in carriers]}"
+    )
+    loser = (set(texts) - set(carriers)).pop()
+    assert "merged_into:" in texts[loser], (
+        f"the non-canonical slug ({loser.name}) must be a merged_into tombstone"
+    )
 
 
 # Negative control: single deposit via cli.main commits without merge.
