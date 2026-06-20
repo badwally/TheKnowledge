@@ -1,5 +1,13 @@
 # Backlog: long-slugs registry slug mismatch
 
+**RESOLVED 2026-06-20** (branch `fix/lint-registry-slug-mismatch`). Took Option 1
+(rename the emitted `check=`): `long_slugs.run()` now emits `check="long-slugs"`
+to match the registry key, leaving the public `--scope long-slugs` name and
+`LINT_BASELINES` untouched. Also removes the confusing name-collision with the
+unrelated validator rule `slug-too-long` (validator.py — a separate subsystem,
+left as-is). Positive-coverage tests unmasked (`test_inert_invariants.py`,
+`test_validator.py`); the `assert f.check == slug` tripwire now holds for this slug.
+
 **Filed:** 2026-06-20
 **Source:** Task P2 (T6 Step-1 lint positive coverage), test_inert_invariants.py
 **Priority:** Low (functionally correct; cosmetic inconsistency)

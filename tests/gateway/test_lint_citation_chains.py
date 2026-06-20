@@ -54,7 +54,12 @@ def test_dangling_synthesizes_ref_flagged(kb_root):
     )
     _write_source(kb_root, "web-known")
     findings = citation_chains.run()
-    dangling = [f for f in findings if f.check == "dangling-synthesizes-ref"]
+    dangling = [
+        f
+        for f in findings
+        if f.check == "citation-chains"
+        and f.metadata.get("kind") == "dangling-synthesizes-ref"
+    ]
     assert len(dangling) == 1
     assert "sources/web-MISSING" in dangling[0].metadata["target"]
 
@@ -70,8 +75,13 @@ def test_clean_synthesizes_no_findings(kb_root):
         synthesizes=["sources/web-a", "sources/web-b"],
     )
     findings = citation_chains.run()
-    assert not any(f.check == "dangling-synthesizes-ref" for f in findings)
-    assert not any(f.check == "aggregate-framing-without-synthesizes" for f in findings)
+    assert not any(
+        f.metadata.get("kind") == "dangling-synthesizes-ref" for f in findings
+    )
+    assert not any(
+        f.metadata.get("kind") == "aggregate-framing-without-synthesizes"
+        for f in findings
+    )
 
 
 def test_aggregate_framing_without_synthesizes_warns(kb_root):
@@ -82,7 +92,12 @@ def test_aggregate_framing_without_synthesizes_warns(kb_root):
         synthesizes=None,  # no synthesizes: field — legacy page
     )
     findings = citation_chains.run()
-    framing = [f for f in findings if f.check == "aggregate-framing-without-synthesizes"]
+    framing = [
+        f
+        for f in findings
+        if f.check == "citation-chains"
+        and f.metadata.get("kind") == "aggregate-framing-without-synthesizes"
+    ]
     assert len(framing) == 1
     assert framing[0].severity == "warning"
     assert "page-legacy" in framing[0].path
@@ -98,7 +113,10 @@ def test_no_framing_no_warning(kb_root):
     )
     _write_source(kb_root, "web-x")
     findings = citation_chains.run()
-    assert not any(f.check == "aggregate-framing-without-synthesizes" for f in findings)
+    assert not any(
+        f.metadata.get("kind") == "aggregate-framing-without-synthesizes"
+        for f in findings
+    )
 
 
 def test_synthesis_tier_ref_resolves(kb_root):
@@ -116,4 +134,6 @@ def test_synthesis_tier_ref_resolves(kb_root):
         synthesizes=["synthesis/page-leaf-1", "synthesis/page-leaf-2"],
     )
     findings = citation_chains.run()
-    assert not any(f.check == "dangling-synthesizes-ref" for f in findings)
+    assert not any(
+        f.metadata.get("kind") == "dangling-synthesizes-ref" for f in findings
+    )

@@ -1,5 +1,15 @@
 # Backlog: citation-chains registry slug mismatch
 
+**RESOLVED 2026-06-20** (branch `fix/lint-registry-slug-mismatch`). Took the
+"rename the emitted `check=` to match the registered slug" direction (not the
+Option-2 split below — `citation_chains.run()` emits two distinct sub-checks and
+the unification kept a single public `--scope citation-chains` name). Both
+`LintFinding(check=...)` calls now emit `"citation-chains"`; the dangling-vs-
+aggregate sub-type is preserved in `metadata["kind"]`. Positive-coverage tests
+unmasked (`test_inert_invariants.py`, `test_lint_citation_chains.py`); the
+`assert f.check == slug` tripwire at `test_inert_invariants.py:~194` now holds
+for this slug. No `LINT_BASELINES` change (citation-chains is not a gate baseline).
+
 **Filed:** 2026-06-20
 **Source:** Task P2 (T6 Step-1 lint positive coverage), test_inert_invariants.py
 **Priority:** Medium (silent mismatch; parametrized negative control masks it)
