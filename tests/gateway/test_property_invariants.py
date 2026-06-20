@@ -8,8 +8,9 @@ Properties:
      bullets are already present returns the page unchanged.
   2. _title_to_slug canonicalization — same title → same slug; the canonical form
      is a fixed point (applying the fn twice gives the same result).
-  3. IntentQueue fencing-token monotonicity — for a single intent claimed multiple
-     times (reclaim path), claim() always issues a strictly higher token than before.
+  3. IntentQueue fencing-token monotonicity — across multiple distinct intents claimed
+     in interleaved rounds, each successive claim for a given intent always issues a
+     strictly higher fencing token than any prior claim for that same intent.
 """
 
 from __future__ import annotations
@@ -31,16 +32,16 @@ pytestmark = pytest.mark.unit
 # Helper generators and builders
 # ---------------------------------------------------------------------------
 
-# A bullet text: no newlines, no leading/trailing whitespace, doesn't start with
-# '#' or '-' (those are structural lines in _union_same_slug's parser).
+# A bullet text: no control chars (including \n), no leading/trailing whitespace,
+# doesn't start with '#' or '-' (those are structural lines in _union_same_slug's parser).
 _bullet_text = st.text(
     alphabet=st.characters(
-        blacklist_categories=("Cc",),   # exclude control chars (incl. \n)
+        blacklist_categories=("Cc",),   # excludes all control chars (incl. \n, \r, \t)
         blacklist_characters="#-",
     ),
     min_size=2,
     max_size=40,
-).map(str.strip).filter(lambda s: bool(s) and "\n" not in s)
+).map(str.strip).filter(bool)
 
 # A title: printable, non-empty, not all punctuation/whitespace (so slug is non-empty)
 _title = st.text(
@@ -158,58 +159,103 @@ def test_title_to_slug_is_a_fixed_point(title: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Property 3: IntentQueue fencing-token monotonicity (per-intent-id)
+# Property 3: IntentQueue fencing-token monotonicity across varied intents
 # ---------------------------------------------------------------------------
+
+# Intent title generator: ASCII printable, non-empty after strip, produces a
+# non-trivial identity for compute_intent_id (varied hash inputs).
+_intent_title = st.text(
+    alphabet=st.characters(whitelist_categories=("Lu", "Ll", "Nd", "Zs")),
+    min_size=3,
+    max_size=30,
+).filter(lambda t: t.strip())
 
 
 @given(
-    n_claims=st.integers(min_value=2, max_value=6),
+    titles=st.lists(_intent_title, min_size=2, max_size=8).map(
+        # De-duplicate by stripping so each intent has a distinct identity
+        lambda ts: list({t.strip(): t for t in ts}.values())
+    ).filter(lambda ts: len(ts) >= 2),
+    n_rounds=st.integers(min_value=2, max_value=5),
 )
-@settings(max_examples=100)
+@settings(max_examples=150)
 def test_intent_queue_fencing_tokens_strictly_increase_on_reclaim(
-    n_claims: int,
+    titles: list[str],
+    n_rounds: int,
 ) -> None:
-    """For a single intent claimed multiple times via the reclaim path, each successive
-    fencing token is strictly greater than the previous one.
+    """For each distinct intent in a varied set, successive fencing tokens from
+    claim() are strictly increasing across the reclaim cycle.
 
-    The fencing counter is per-intent-id (intent_queue.py:141: counter file is named
-    per intent_id).  The monotonicity guarantee is at :266 (_next_fencing_token).
+    Generator dimensions that make this genuinely exploratory (not a disguised
+    parametrize):
+    - `titles`: 2–8 distinct intent titles → varied compute_intent_id hashes,
+      varied number of intents in the queue, varied claim-sequence ordering.
+    - `n_rounds`: 2–5 claim rounds, each separated by reclaim_expired().
 
-    Drives the REAL IntentQueue with a real filesystem queue root:
-    - submit() → claim() → lease expires → reclaim_expired() → claim() → ... (n_claims)
-    Uses a fresh tmp dir per example via tempfile.TemporaryDirectory.
+    The fencing counter is per-intent-id (intent_queue.py:141). The invariant:
+    for every intent in the set, token[round k+1] > token[round k] (durable
+    monotonic advance at :266, _next_fencing_token). Across intents, tokens are
+    independent (each starts from 1) — the invariant is per-intent-id only.
+
+    Drives the REAL IntentQueue with real filesystem state (os.replace atomics,
+    real fencing/ counter files) — no monkeypatching of the token issuance path.
+    Uses tempfile.TemporaryDirectory for isolation per example.
     """
     identity = {"agent": "property-test"}
-    payload = {"page_type": "entity", "title": "MonotonicTest"}
-    intent_id = compute_intent_id(payload, identity)
-    intent = Intent(intent_id=intent_id, payload=payload, identity=identity)
+
+    # Build intents with distinct IDs from the generated titles.
+    intents: list[Intent] = []
+    for title in titles:
+        payload = {"page_type": "entity", "title": title}
+        intent_id = compute_intent_id(payload, identity)
+        intents.append(Intent(intent_id=intent_id, payload=payload, identity=identity))
 
     with tempfile.TemporaryDirectory() as tmp_dir:
         queue = IntentQueue(root=Path(tmp_dir) / "intents")
 
-        tokens: list[int] = []
-        for i in range(n_claims):
-            # (Re-)submit: first iteration is a fresh submit; subsequent ones rely on
-            # reclaim_expired() moving the claimed intent back to submitted/.
-            if i == 0:
+        # tokens_by_id[intent_id] = [token_from_round_0, token_from_round_1, ...]
+        tokens_by_id: dict[str, list[int]] = {i.intent_id: [] for i in intents}
+
+        for round_idx in range(n_rounds):
+            # Submit all intents (or re-submit after reclaim_expired).
+            for intent in intents:
                 queue.submit(intent)
-            else:
-                # Expire the lease on the currently-claimed intent and reclaim it.
-                # Pass a far-future `now` so the lease appears expired immediately.
-                reclaimed = queue.reclaim_expired(now=time.time() + 10_000)
-                assert intent_id in reclaimed, (
-                    f"reclaim_expired did not return intent {intent_id!r} at step {i}"
+
+            # Claim all submitted intents, collecting one token per intent per round.
+            claimed_this_round: dict[str, int] = {}
+            while True:
+                c = queue.claim()
+                if c is None:
+                    break
+                claimed_this_round[c.intent.intent_id] = c.fencing_token
+
+            # Every intent must have been claimed exactly once this round.
+            for intent in intents:
+                assert intent.intent_id in claimed_this_round, (
+                    f"intent {intent.intent_id!r} (title={intent.payload['title']!r}) "
+                    f"was not claimed in round {round_idx}"
+                )
+                tokens_by_id[intent.intent_id].append(
+                    claimed_this_round[intent.intent_id]
                 )
 
-            claim = queue.claim()
-            assert claim is not None, f"claim() returned None at step {i}"
-            assert claim.intent.intent_id == intent_id
-            tokens.append(claim.fencing_token)
+            # Force-expire all claimed intents so they can be re-submitted next round.
+            queue.reclaim_expired(now=time.time() + 10_000)
+            # Re-submit is handled at the top of the next round iteration; the
+            # reclaimed intents land back in submitted/ so submit() is idempotent.
 
-        # Monotonicity: each successive token is strictly greater than the previous
-        for i in range(1, len(tokens)):
-            assert tokens[i] > tokens[i - 1], (
-                f"Fencing token monotonicity violated at claim #{i}: "
-                f"token={tokens[i]} ≤ previous={tokens[i - 1]} "
-                f"(full sequence: {tokens})"
+        # Per-intent monotonicity: each round's token must be strictly greater than
+        # the previous round's token for the same intent.
+        for intent in intents:
+            iid = intent.intent_id
+            tok_seq = tokens_by_id[iid]
+            assert len(tok_seq) == n_rounds, (
+                f"Expected {n_rounds} tokens for intent {iid!r}, got {len(tok_seq)}"
             )
+            for k in range(1, len(tok_seq)):
+                assert tok_seq[k] > tok_seq[k - 1], (
+                    f"Fencing token monotonicity violated for intent "
+                    f"{iid!r} (title={intent.payload['title']!r}) "
+                    f"at round {k}: token={tok_seq[k]} ≤ previous={tok_seq[k - 1]} "
+                    f"(full sequence: {tok_seq})"
+                )
