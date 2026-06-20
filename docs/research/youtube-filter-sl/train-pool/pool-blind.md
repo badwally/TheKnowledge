@@ -1,0 +1,322 @@
+# Blind candidate pool
+
+Pick the 10 best-fit videos overall (across subtopics). Per subtopic,
+note any 'expected but missing' talks/channels. Scores are hidden.
+
+## kg-construction
+
+- **KGC 2022 Keynote - David Meza, &#39;NASA Knowledge Graphs: An Ever Expanding Universe&#39;** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=K2EWl7Mn9Ac
+  - Knowledge graphs help uncover value from your data by creating relationships across different domains. These relationships can ...
+- **ISWC 2020 -- Donatello: Knowledge Graph Visualization Framework** — Vitalis Wiens
+  - https://www.youtube.com/watch?v=0bGKTkVTQbU
+  - This is a demo video for ISWC 2020 posters and demos track. Link to GitHub running the live demo ...
+- **Building The Fashion Knowledge Graph - Katariina Kari - DINAcon 2019** — Institut Public Sector Transformation (IPST)
+  - https://www.youtube.com/watch?v=QkgAFKL26Vg
+  - Das erste Keynote-Referat an der dritten DINAcon: Katariina Kari is an Ontologist at the Zalando Tech-Hub in Helsinki. Katariina ...
+- **Building a Data Marketplace at Scale: A Semantic Data Architecture** — Enterprise Knowledge, LLC
+  - https://www.youtube.com/watch?v=5knKyWUUWAg
+  - Speakers: Brian Schurmann Michels & Henrik Gudbrand Petersen (Novo Nordisk) ...
+- **ISWC2021 P&amp;D: BERT-based Semantic Query Graph Extraction for Knowledge Graph Question Answering** — Jason Liang
+  - https://www.youtube.com/watch?v=R1FH9-yBRcQ
+  - Teaser video for our paper to be presented at the 20th International Semantic Web Conference (ISWC) 2021 Poster & Demo Track ...
+- **KGC 2023 Keynote: Knowledge Graphs in Today’s Evolving Landscape &amp; Beyond — Deborah McGuinness, RPI** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=hILYM9oBI0M
+  - artificialintelligence #techtalk #LLMs #ChatGPT #GenerativeAI #SemanticAI The Artificial Intelligence landscape is changing at an ...
+- **Sir Tim Berners-Lee on AI and the Semantic Web | KGC 2026 Lifetime Achievement Award** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=Ve6lavTtnQ8
+  - Sir Tim Berners-Lee, inventor of the World Wide Web, accepts the KGC 2026 Lifetime Achievement Award alongside Ora Lassila ...
+- **What Are Knowledge Graphs?** — KMWorld Conference
+  - https://www.youtube.com/watch?v=iTIgCzqPSrE
+  - TopQuadrant Sr. Semantic Solutions Architect Daniel Mekonnen outlines knowledge graph basics in this clip from his ...
+- **KGC 2023 Masterclass: Converting Legacy Enterprise Data into Knowledge Graphs with AI and JSON LD** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=Kp_Q0rd3fuA
+  - Large enterprises face challenges in adopting knowledge graphs and semantic models due to investments in legacy technologies ...
+- **Unlocking the Potential of Pharmacogenomics  A Semantic Approach to Precision Medicine KGC 2024** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=xoTiZDL1TE0
+  - Unlocking the Potential of Pharmacogenomics A Semantic Approach to Precision Medicine KGC 2024 Saurav Dhungana ...
+- **KGC 2023 Talk — The EU Knowledge Graph by Dennis Diefenbach, The QA Company** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=jn5j0vlqmlk
+  - The CEO of The QA Company, Dennis Diefenbach, presents his talk on the EU Knowledge Graph. He explains how the European ...
+- **BFree: Enabling Battery-free Sensor Prototyping with Python - UbiComp 2021 Presentation** — Embedded and Networked Systems TU Delft
+  - https://www.youtube.com/watch?v=G-LVg8fWXtw
+  - Paper: BFree: Enabling Battery-free Sensor Prototyping with Python Download: https://dl.acm.org/doi/abs/10.1145/3432191 ...
+- **Semantics-driven Keyword Search over Knowledge Graphs – L.Feddoul** — Fusion UniJena
+  - https://www.youtube.com/watch?v=jLSsHdviWHc
+  - Presented at the Doctoral Consortium at the 19th International Semantic Web Conference ...
+- **KGC 2023 Talk — Using Knowledge Graphs for Navigating Data Assets by RelationalAI&#39;s Márton Búr** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=Q1aji4uJJgc
+  - This talk is delivered by the Knowledge Engineer at @relationalai RelationalAI, Márton Búr, who specializes in research involving ...
+- **Analyzing Blockchain and Bitcoin Transaction Data as Graph** — Oracle Developers
+  - https://www.youtube.com/watch?v=w8OEVobyhFE
+  - Blockchain technology and Bitcoin will potentially revolutionize business transactions. Blockchain offers a robust, decentralized ...
+
+## query-languages-engines
+
+- **Enrich Your Enterprise Knowledge Graph with Linked Open Data via JSON-LD - SCaLE 19x** — AllegroGraph
+  - https://www.youtube.com/watch?v=VJtW8WhbqSA
+  - Brief Description JSON-LD effectively delivers the many benefits of JSON into the linked data world. Linked Open Data is a vast ...
+- **Graph Chat with Chang She, CEO of LanceDB** — GraphGeeks
+  - https://www.youtube.com/watch?v=DC6oSJlGJj0
+  - Join David Hughes (GraphGeeks community) for a Graph Chat with Chang She, CEO and Co-founder of LanceDB, filmed at the ...
+- **GQL – Introduction to a new query language standard (16th LDBC TUC meeting)** — GDC Graph Data Council (formerly: LDBC)
+  - https://www.youtube.com/watch?v=653lUJF-Bi0
+  - Event: 16th LDBC Technical User Community meeting URL: https://ldbcouncil.org/event/sixteenth-tuc-meeting/ Presenter: Stefan ...
+- **Systems @Scale 2019 - Accordion Better Memory Organization for LSM Key Value Stores** — Justin Miller
+  - https://www.youtube.com/watch?v=KJVSi9pn0Cg
+  - Eshcar Hillel, Senior Research Scientist, Verizon Media https://code.fb.com/core-data/systems-scale/ Log-structured merge (LSM) ...
+- **[VLDB 2021] CoroBase: Coroutine-Oriented Main-Memory Database Engine** — Yongjun He
+  - https://www.youtube.com/watch?v=-tK8yJ5ulI8
+- **RDF vs. Property Graph: Is your Graph Semantic? - Jesús Barrasa, Neo4j** — Connected Data
+  - https://www.youtube.com/watch?v=8cl9IGY4A9E
+  - What's the difference between RDF and Property Graph databases? In this technical talk, Jesus Barrasa from Neo4j delivers a ...
+- **[SIGMOD] Natural Language Based Exploration with Relational Databases in Chatbot** — POSTECH DSLAB
+  - https://www.youtube.com/watch?v=gOon0hkbItg
+  - SIGMOD 2021 Keynote.
+- **openCypher: Transactions and Analytics with Neo4j and Cypher for Spark** — Neo4j
+  - https://www.youtube.com/watch?v=y5GtnoFg6os
+  - The openCypher project aims to turn the Cypher graph query language into an open, collaborative standard. The first openCypher ...
+- **How We Design Cypher** — Neo4j
+  - https://www.youtube.com/watch?v=Wx03Yu8EKpI
+  - The Cypher language is continuously evolved to be the perfect fit for the needs of the graph revolution. This talk looks at the ...
+- **Optimal Column Layout for Hybrid Workloads (VLDB 2020)** — Data-Intensive Systems and Computing Lab - BU
+  - https://www.youtube.com/watch?v=AsjqfidHNAQ
+  - Manos Athanassoulis' talk at VLDB 2020 Authors: Manos Athanassoulis (BU), Kenneth Bøgh (Uber Technologies Inc.), Stratos ...
+- **Ashleigh Faith | &quot;Adding more context to ML, using taxonomies &amp; knowledge graphs&quot; Masterclass teaser** — Connected Data
+  - https://www.youtube.com/watch?v=uOVl4wqHUXc
+  - Book your ticket here https://learning-from-machines-april-2021-meetup.connected-data.london/checkout/select-tickets/ Event ...
+- **Integrating Property Graphs Into the SQL Standard – Keith Hare, JCC Consulting** — Neo4j
+  - https://www.youtube.com/watch?v=hlhbUeoCPio
+  - Get a snapshot of the current SQL modernization efforts that make it easier to present tabular data as property graphs, and a brief ...
+- **Knowledge Graph Construction - Lecture** — LINQS Lab
+  - https://www.youtube.com/watch?v=5OGMYQaIPKw
+  - In this lecture, I cover the key problems in Information Extraction with a focus on building knowledge bases from web text sources.
+- **Search++ (aka. Linked Data driven Precision &quot;Find&quot;)** — Kingsley Idehen
+  - https://www.youtube.com/watch?v=YkzghnkuOzA
+  - Using the quest for a Camcorder to demonstrate how the Linked Data Cloud facilitates precision "Find" via query disambiguation ...
+- **Data Vocalization at VLDB 2017** — Immanuel Trummer
+  - https://www.youtube.com/watch?v=pSDNYyFq604
+  - Talk slides: http://www.itrummer.org/slides/Vocalization5.pdf Research on data visualization aims at finding the best way to ...
+
+## reasoning-inference
+
+- **Ian Horrocks: Standardizing OWL** — IEEEComputerSociety
+  - https://www.youtube.com/watch?v=bl4JshvshT8
+  - Author Charles Severance provides an audio recording of his Computing Conversations column, in which he discusses his ...
+- **2016-06-29 - Ian Horrocks – Logic ∧ Reasoning ∧ Scalability ⊨ ⊥ ?** — Institut des sciences cognitives - UQAM
+  - https://www.youtube.com/watch?v=i11lo6A92uE
+  - École d'été 2016 sur le raisonnement - Summer school 2016 on reasoning. Monday June 27th, 2016-06-27 - Ian Horrocks – Logic ...
+- **AI Explained - Knowledge Graphs | Turning Raw Data Into Useful Information** — SandboxAQ
+  - https://www.youtube.com/watch?v=Q5izD6Xlb8o
+  - Have you ever wondered how social media platforms seem to know you so well? Well, It involves the same mechanism scientists ...
+- **K-CAP 2021 - Keynote Talk: Ian Horrocks** — Knowledge Capture
+  - https://www.youtube.com/watch?v=LbQHV8ltHR0
+- **Ian Horrocks: &quot;KR and the Semantic Web: What We Did Right (and Wrong)&quot; (COST DKG Talk Series)** — COST DKG
+  - https://www.youtube.com/watch?v=jfb04V8WY6Y
+  - Abstract: Augmenting the web to include some form of Knowledge Representation (KR) was one of the first directions for Semantic ...
+- **What is a Knowledge Graph?** — IBM Technology
+  - https://www.youtube.com/watch?v=y7sXDpffzQQ
+  - Learn more about Knowledge Graph → http://ibm.biz/knowledge-graph-guide Watch "What is Natural Language Processing?
+- **IJCLR 2021 - NeSy Invited Talk by Ian Horrocks: Knowledge Graphs: Theory, Applications &amp; Challenges** — Inst. Informatics & Telecomms @ NCSR Demokritos
+  - https://www.youtube.com/watch?v=HgSd-EN22QQ
+  - IJCLR 2021 - NeSy Invited Talk Ian Horrocks: Knowledge Graphs: Theory, Applications & Challenges.
+- **GraphRAG vs. Traditional RAG: Higher Accuracy &amp; Insight with LLM** — IBM Technology
+  - https://www.youtube.com/watch?v=Aw7iQjKAX2k
+  - Want to learn more about Want to learn more about Generative AI + Machine Learning? Read the ebook here ...
+- **[Webinar Recording] Reasoning with Big Knowledge Graphs  Choices, Pitfalls and Proven Recipes** — Ontotext
+  - https://www.youtube.com/watch?v=l0Ts7vpFuBw
+  - The knowledge graph (KG) represents a shared conceptualization across the organization describing all important business ...
+- **NODES AI 2026 - Agent Reasoning with Graph World Models** — Neo4j
+  - https://www.youtube.com/watch?v=DwFD_ffS21E
+  - Join Lucas Godfrey at NODES AI for this session: "Agent Reasoning with Graph World Models". World models have long been a ...
+
+## shacl-shape-validation
+
+- **Masterclass Shapes Constraint Language KGC 2023** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=NP_XCZCPUw4
+  - Masterclass Shapes Constraint Language KGC 2023 Veronika Heimsbakk | Knowledge Graph Lead at Capgemini connect ...
+- **Shapes applications and tools Part 1: Introduction to RDF data model and motivation** — Jose Emilio Labra Gayo
+  - https://www.youtube.com/watch?v=FowtXinAAF8
+  - Part 1 of tutorial given at International Semantic Web Conference (ISWC) 2020 titled "Shapes applications and tools" More ...
+- **RDF Data Shape Use Statistics: SHACL use on GitHub** — IDLabResearch
+  - https://www.youtube.com/watch?v=6-OdjYdEpeU
+  - In this talk for the International Semantic Web Conference (ISWC 2020), Sven Lieber explains what constraints are, why we want ...
+- **Knowledge Graphs - 3.6 Quality Assurance with SHACL Constraints** — ISE FIZ Karlsruhe
+  - https://www.youtube.com/watch?v=LooicwBXqUk
+  - Knowledge Graphs - Foundations and Applications Querying Knowledge Graphs with SPARQL Speakers: Prof. Dr. Harald Sack ...
+- **Shapes applications and tools: Part 4. ShEx and SHACL compared** — Jose Emilio Labra Gayo
+  - https://www.youtube.com/watch?v=THekUSlGMyo
+  - Part 1 of tutorial given at International Semantic Web Conference (ISWC) 2020 titled "Shapes applications and tools" More ...
+- **Building functional programs with bananas, catalysts, shacl&#39;s and shapes – Alistair Johnson** — Typelevel
+  - https://www.youtube.com/watch?v=AIjlZdlhOk4
+  - This is a talk that combines both the practical, but often overlooked, topic of SBT with cutting edge distributed data technologies.
+- **Shapes applications and tools: Part 3, Introduction to SHACL** — Jose Emilio Labra Gayo
+  - https://www.youtube.com/watch?v=vcZkEcC5PQg
+  - Part 1 of tutorial given at International Semantic Web Conference (ISWC) 2020 titled "Shapes applications and tools" More ...
+- **SHACL-based data life cycle management. Robert David, Maura Moran** — Connected Data
+  - https://www.youtube.com/watch?v=aSqmIxbnE48
+  - PoolParty Semantic Suite is Semantic Web Company's platform for enterprise information integration based on Linked Data ...
+- **RDF Data Quality Assessment - connecting the pieces. Dimitris Kontokostas. Connected Data** — Connected Data
+  - https://www.youtube.com/watch?v=sK51llNtUy4
+  - RDF and graph databases are steadily increasing their adoption and are no longer choices of niche-only communities. For almost ...
+- **Towards Knowledge Graph-Agnostic SPARQL Query Validation for improving Question Answering** — Aleksandr Perevalov
+  - https://www.youtube.com/watch?v=U0EV1hZ1dOw
+  - Abstract:* A Knowledge Graph Question Answering (KGQA) system needs to generate a SPARQL query over a knowledge graph ...
+
+## storage-architectures
+
+- **CliqueSquare : distributed database** — InriaInnovation
+  - https://www.youtube.com/watch?v=Av3YP2Wu0xA
+  - RDF data management platform based on Hadoop architecture. CliqueSquare to manage very large volumes of RDF data in ...
+- **Research 2425** — VLDB 2021
+  - https://www.youtube.com/watch?v=HRlDYbn6SMY
+  - Title: Columnar Storage and List-based Processing for Graph Database Management Systems Paper Link: ...
+- **Microsoft Data Amp 2017 | Scott Guthrie Keynote** — Microsoft Cloud
+  - https://www.youtube.com/watch?v=hDfaHeza1fU
+  - Watch Scott Guthrie, Executive Vice President of the Cloud and Enterprise group in Microsoft, give his keynote at Microsoft Data ...
+- **Distributed SQL Summit 2020 | The Distributed Database Behind Twitter** — Yugabyte
+  - https://www.youtube.com/watch?v=ZhgSDOZpOQg
+  - Twitter is giving hundreds of millions of people around the world the power to create and share ideas and information instantly ...
+- **Tunable Stream Graph Embeddings at Scale - Serafeim Papadias @ VLDB 2020** — BIFOLD Berlin
+  - https://www.youtube.com/watch?v=kFx4yKWFY5E
+  - Tunable Stream Graph Embeddings at Scale” Serafeim Papadias (TU Berlin), supervised by Volker Markl (TU Berlin / DFKI) Ph.D ...
+- **Columnar Storage and List-processor for Graph Database Management systems | Talk** — Pranjal Gupta
+  - https://www.youtube.com/watch?v=2xN27cvfuEw
+  - VLDB 2021 Research Paper Talk.
+- **Part 6/7: MySQL Conference: Inside the PBXT Storage Engine** — PrimeBase
+  - https://www.youtube.com/watch?v=gsLEdZuR3nk
+  - Abstract: PBXT is a MVCC (multi-version concurrency control) based, transactional storage engine for MySQL. Developed from ...
+- **[VLDB&#39;22] Ginex: SSD-enabled Billion-scale Graph Neural Network Training on a Single Machine (...)** — ARC SNU
+  - https://www.youtube.com/watch?v=zP2oDmPOLrU
+  - [VLDB'22] Ginex: SSD-enabled Billion-scale Graph Neural Network Training on a Single Machine via Provably Optimal ...
+- **How to Design &amp; Build Semantic Applications with Linked Data** — Dublin Core Metadata Initiative (DCMI)
+  - https://www.youtube.com/watch?v=m11X-T-v6kg
+  - This webinar will demonstrate how to design and build rich end-user search and discovery applications using Linked Data.
+- **NebulaGraph Community Talk - Kùzu Graph Database Management System** — NebulaGraph DB
+  - https://www.youtube.com/watch?v=A-9mU_XDKyA
+  - The Kùzu graph database management system (GDBMS): an embeddable and feature-rich open-source DBMS that is optimized ...
+- **A Humane Guide to Graph Database Internals by Jim Webber** — Big Things Conference
+  - https://www.youtube.com/watch?v=fOFbDaaCwYo
+  - Databases are everywhere, but did you ever wonder what goes on inside the box? In this talk we'll dive into the internals of Neo4j ...
+- **Dave of FoundationDB gives us the 101 introduction** — Eric Pugh
+  - https://www.youtube.com/watch?v=Pq2Awy7KS2o
+  - Dave Rosenthal of FoundationDB and some of his colleagues joined OpenSource Connections for a day of hacking. To kick ...
+
+## kg-embeddings
+
+- **KDD Invited Talks--Revisiting Knowledge Graph Completion From a Practical Perspective--Danai Koutra** — Association for Computing Machinery (ACM)
+  - https://www.youtube.com/watch?v=wUUYqfqOHXs
+- **Graph Representation Learning with Deep Learning** — IEEE Student Branch - University of Jaffna
+  - https://www.youtube.com/watch?v=KAs1UA0HJJM
+  - Mining graph data has become a popular research topic in Computer Science and has been widely studied in both academia and ...
+- **Social mobility || Sociology #socialmobility #socialogy #shorts #upsc #interview** — UNLOCKED INTERVIEWS
+  - https://www.youtube.com/watch?v=4nvQgJc6GLw
+  - Social mobility || Sociology #social mobility #socialogy #shorts #upsc #interview Welcome to "Unlocked Interviews"!
+- **Keynote 3 - Using Knowledge Graph data in Large Language Models** — Swiss Text
+  - https://www.youtube.com/watch?v=SHHHJXwHeWM
+  - Speaker: Enrique Alfonseca Large Language Models (LLMs) have led to large improvements in state-of-the-art results across ...
+- **NeurIPS 2019: Understanding the Representation Power of Graph Neural Nets in Learning Graph Topology** — Nima Dehmamy
+  - https://www.youtube.com/watch?v=kk_x0wOvZYQ
+  - Video to our paper at NeurIPS 2019 Paper: https://arxiv.org/pdf/1907.05008.pdf Code and slides: ...
+- **Machine Learning with Graphs:  Research Papers** — Mini_Academic_Advantage
+  - https://www.youtube.com/watch?v=HTr7Ke61-mY
+  - 1. Word Embedding (CBOL, SkipGram, GloVe) 2. Recurrent Neural Networks (RNN, LSTM) 3. Convolutional Neural Networks ...
+- **On Graph and Knowledge Embedding** — USC Information Sciences Institute
+  - https://www.youtube.com/watch?v=LvNu_xRlXBE
+  - 9 February, 2018 Shou-De Lin, National Taiwan University Abstract: The task of graph embedding aims at representing graph ...
+- **Google Graph Mining and Learning @ NeurIPS 2020: GNNs and Graph Embeddings -- Bryan Perozzi** — Amol Kapoor
+  - https://www.youtube.com/watch?v=sgRY9-p7z20
+  - In this talk, Bryan Perozzi presents an overview of Graph Embeddings and Graph Convolutions. The talk begins with a high level ...
+- **KGC 2022 Keynote: &#39;Deep Learning with Knowledge Graphs&#39; by Stanford&#39;s Prof. Jure Leskovec** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=T4afZsyHmUc
+  - In this keynote, Stanford University's Professor Jure Leskovec discusses the recent methodological advancements that ...
+- **[NeurIPS 2022] Motif-Aware Representation Learning on Continuous-Time Dynamic Graphs** — Ming Jin
+  - https://www.youtube.com/watch?v=oUy6eSdOhms
+  - Continuous-time dynamic graphs naturally abstract many real-world systems, such as social and transactional networks. While the ...
+- **KGC23 Keynote: The Future of Knowledge Graphs in a World of LLMs — Denny Vrandečić, Wikimedia** — The Knowledge Graph Conference 
+  - https://www.youtube.com/watch?v=ww99npDh4cg
+  - Keynote Session: The Future of Knowledge Graphs in a World of Large Language Models by Denny Vrandečić (Wikimedia ...
+- **Representation Learning on Graphs** — Caleb Ziems
+  - https://www.youtube.com/watch?v=DKF5wStj5Us
+  - In this video, we discuss three major strategies for graph embeddings, which are used in many visualization tasks and machine ...
+
+## ontology-engineering-methodologies
+
+- **Anne Sophie Meincke: Development and evolution reconceived - Lessons from process ontology** — CLEA, Free University of Brussels (VUB)
+  - https://www.youtube.com/watch?v=PFDNAACS6XU
+  - According to a new movement within the philosophy of biology, living beings are to be conceived of not as substances or things ...
+- **MOOC Ontological Engineering 3.1: NeOn Methodology. Introduction** — UPM
+  - https://www.youtube.com/watch?v=o1DcImd1vyg
+  - Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.
+- **MOOC Ontological Engineering 3.2: NeOn Methodology. Scenarios** — UPM
+  - https://www.youtube.com/watch?v=2n3rLu82Hgw
+  - Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.
+- **MOOC Ontological Engineering 2.4: Finding relevant ontologies (I)** — UPM
+  - https://www.youtube.com/watch?v=-DWIQ8HWPno
+  - Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.
+- **Application of Ontology Design Patterns in the Development of Subject Ontologies** — Computer Science & IT Conference Proceedings
+  - https://www.youtube.com/watch?v=RvoI3rcYO2E
+  - Application of Ontology Design Patterns in the Development of Subject Ontologies for Multidisciplinary Representation of ...
+- **MOOC Ontological Engineering 4.1: Ontology Requirements. Introduction** — UPM
+  - https://www.youtube.com/watch?v=MUDP_Ee2yZ0
+  - Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.
+- **OBO Foundry Tutorial: Introduction to workflows and best practices for ontology development Part 1** — obo-academy
+  - https://www.youtube.com/watch?v=83lI3u7KX0g
+  - OBO tutorial presented at the ICBO conference in 2023. Learn more: https://oboacademy.github.io/obook/courses/icbo2023/ Part ...
+- **Ontological Engineering Explained | Douglas Lenat and Lex Fridman** — Lex Clips
+  - https://www.youtube.com/watch?v=7Jlc8OxWPZY
+  - Lex Fridman Podcast full episode: https://www.youtube.com/watch?v=3wMKoSRbGVs Please support this podcast by checking ...
+- **Toward Data Driven Ontologies for Mental Function** — Office of Behavioral and Social Sciences Research
+  - https://www.youtube.com/watch?v=EwOHERNd3aQ
+  - Event Date: August 20, 2018 Presenter: Russell A. Poldrack, Ph.D. The National Institutes of Health (NIH) Office of Behavioral and ...
+- **Current roadmap for the ETSI. SAREF ontology** — Building Digital Twin International Congress
+  - https://www.youtube.com/watch?v=J5DkXcDvzvw
+  - Dr. Raúl García-Castro from @UPM presents as speaker about Current roadmap for the ETSI. SAREF ontology" at 4th #BDTIC.
+
+## semantic-layer
+
+- **What Is AtScale? - Semantic Layer Overview** — AtScale
+  - https://www.youtube.com/watch?v=y2mLcirdlPo
+  - AtScale enables smarter decision-making by accelerating the flow of data-driven insights. The company's semantic layer platform ...
+- **AI-powered conversational interface for the semantic layer** — Cube
+  - https://www.youtube.com/watch?v=FotEaaf20gY
+  - Announcing Cube's integration and partnership with Delphi Labs. Read more in the blog: ...
+- **Agentic Analytics Summit. Semantic Layers, Ontologies, and AI, Oh My!** — Cube
+  - https://www.youtube.com/watch?v=s_rDUWyiZOM
+  - Josh Klahr from Snowflake explores how AI has transformed the landscape for semantic layers, ontologies, and knowledge ...
+- **What is a semantic layer in data analytics | #data #analytics #businessintelligence** — superdatabrothers
+  - https://www.youtube.com/watch?v=KdHOOE9mvzo
+  - What is a semantic layer in data analytics? Simply put, it's a layer that sits between your database and any downstream ...
+- **Keynote: Using a Semantic Layer to Drive AI &amp; BI Impact At Scale** — Database Trends and Applications
+  - https://www.youtube.com/watch?v=efafCOgq16o
+  - Using a semantic layer makes data accessible and accelerates the business impact of AI and BI at your organization. Youssef ...
+- **Securities Trading Analysis - AtScale &amp; Snowflake** — AtScale
+  - https://www.youtube.com/watch?v=YaAKUu13rHA
+  - Follow us for more updates and news on social media! Our Website: https://www.atscale.com/ Twitter: https://twitter.com/AtScale ...
+- **How to Implement a Semantic Layer for Your Lakehouse** — Databricks
+  - https://www.youtube.com/watch?v=GoDNc274RG4
+  - Learn how semantic layers are becoming a critical component of a modern analytics stack. Connect with us: Website: ...
+- **Cloud-native Semantic Layer on Data Lake** — Databricks
+  - https://www.youtube.com/watch?v=ZXnjSclrNrc
+  - With larger volume and more real-time data stored in data lake, it becomes more complex to manage these data and serve ...
+- **apply() Conference 2022 | The dbt Semantic Layer** — Tecton
+  - https://www.youtube.com/watch?v=ezqsNzwN0p4
+  - The dbt Semantic Layer by: Drew Banin, Co-Founder & CPO, DBT Labs In this talk, Drew will discuss the dbt Semantic Layer and ...
+- **How a Semantic Layer Makes Data Mesh Work At Scale** — DATAVERSITY
+  - https://www.youtube.com/watch?v=e6uvf1ytMEI
+  - Data Mesh is a trending approach to building a decentralized data architecture by leveraging a domain-oriented, self-service ...
+- **Deliver “Speed of Thought” Queries on Billions of Rows on Snowflake | AtScale** — AtScale
+  - https://www.youtube.com/watch?v=PCnSWteKpL8
+  - The AtScale Adaptive Cache turbo-charges your Snowflake queries, optimizing your Snowflake data warehouse automatically ...
+- **dbt Product Spotlight: dbt Semantic Layer** — dbt Labs
+  - https://www.youtube.com/watch?v=DS7Ub_CmBR0
+  - The dbt Semantic Layer is built directly into dbt Cloud to eliminate metric inconsistencies, reduce manual SQL work, and deliver ...
+- **Introduction to Headless BI [webinar]** — GoodData·AI
+  - https://www.youtube.com/watch?v=p7LtEnA4hkw
+  - Created by developers, for developers—Headless BI with GoodData Cloud Native. Like with databases, with GoodData.CN, we ...
+- **Why AtScale? | A Virtual Data Warehouse for Better BI** — AtScale
+  - https://www.youtube.com/watch?v=f6dNoZFw4-c
+  - AtScale's Founder and Chief Strategy Officer Dave Mariani gives an overview of AtScale, which is a virtualized data warehouse ...
+- **How Rittman Analytics delivers the semantic layer today with Cube** — Cube
+  - https://www.youtube.com/watch?v=EWZmQlCvX3M
+  - In this webinar, we are joined by seasoned data enthusiasts from Rittman Analytics. Olivier and Lewis will demonstrate how ...

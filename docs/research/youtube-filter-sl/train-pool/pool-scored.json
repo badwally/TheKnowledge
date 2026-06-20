@@ -1,0 +1,992 @@
+[
+  {
+    "item_id": "yt:jn5j0vlqmlk",
+    "url": "https://www.youtube.com/watch?v=jn5j0vlqmlk",
+    "title": "KGC 2023 Talk — The EU Knowledge Graph by Dennis Diefenbach, The QA Company",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "The CEO of The QA Company, Dennis Diefenbach, presents his talk on the EU Knowledge Graph. He explains how the European ...",
+    "subtopic": "kg-construction",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:K2EWl7Mn9Ac",
+    "url": "https://www.youtube.com/watch?v=K2EWl7Mn9Ac",
+    "title": "KGC 2022 Keynote - David Meza, &#39;NASA Knowledge Graphs: An Ever Expanding Universe&#39;",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Knowledge graphs help uncover value from your data by creating relationships across different domains. These relationships can ...",
+    "subtopic": "kg-construction",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:hILYM9oBI0M",
+    "url": "https://www.youtube.com/watch?v=hILYM9oBI0M",
+    "title": "KGC 2023 Keynote: Knowledge Graphs in Today’s Evolving Landscape &amp; Beyond — Deborah McGuinness, RPI",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "artificialintelligence #techtalk #LLMs #ChatGPT #GenerativeAI #SemanticAI The Artificial Intelligence landscape is changing at an ...",
+    "subtopic": "kg-construction",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:Ve6lavTtnQ8",
+    "url": "https://www.youtube.com/watch?v=Ve6lavTtnQ8",
+    "title": "Sir Tim Berners-Lee on AI and the Semantic Web | KGC 2026 Lifetime Achievement Award",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Sir Tim Berners-Lee, inventor of the World Wide Web, accepts the KGC 2026 Lifetime Achievement Award alongside Ora Lassila ...",
+    "subtopic": "kg-construction",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:xoTiZDL1TE0",
+    "url": "https://www.youtube.com/watch?v=xoTiZDL1TE0",
+    "title": "Unlocking the Potential of Pharmacogenomics  A Semantic Approach to Precision Medicine KGC 2024",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Unlocking the Potential of Pharmacogenomics A Semantic Approach to Precision Medicine KGC 2024 Saurav Dhungana ...",
+    "subtopic": "kg-construction",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:5knKyWUUWAg",
+    "url": "https://www.youtube.com/watch?v=5knKyWUUWAg",
+    "title": "Building a Data Marketplace at Scale: A Semantic Data Architecture",
+    "channel": "Enterprise Knowledge, LLC",
+    "description": "Speakers: Brian Schurmann Michels & Henrik Gudbrand Petersen (Novo Nordisk) ...",
+    "subtopic": "kg-construction",
+    "score": 0.72,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:Q1aji4uJJgc",
+    "url": "https://www.youtube.com/watch?v=Q1aji4uJJgc",
+    "title": "KGC 2023 Talk — Using Knowledge Graphs for Navigating Data Assets by RelationalAI&#39;s Márton Búr",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "This talk is delivered by the Knowledge Engineer at @relationalai RelationalAI, Márton Búr, who specializes in research involving ...",
+    "subtopic": "kg-construction",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:iTIgCzqPSrE",
+    "url": "https://www.youtube.com/watch?v=iTIgCzqPSrE",
+    "title": "What Are Knowledge Graphs?",
+    "channel": "KMWorld Conference",
+    "description": "TopQuadrant Sr. Semantic Solutions Architect Daniel Mekonnen outlines knowledge graph basics in this clip from his ...",
+    "subtopic": "kg-construction",
+    "score": 0.4,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:Kp_Q0rd3fuA",
+    "url": "https://www.youtube.com/watch?v=Kp_Q0rd3fuA",
+    "title": "KGC 2023 Masterclass: Converting Legacy Enterprise Data into Knowledge Graphs with AI and JSON LD",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Large enterprises face challenges in adopting knowledge graphs and semantic models due to investments in legacy technologies ...",
+    "subtopic": "kg-construction",
+    "score": 0.82,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:QkgAFKL26Vg",
+    "url": "https://www.youtube.com/watch?v=QkgAFKL26Vg",
+    "title": "Building The Fashion Knowledge Graph - Katariina Kari - DINAcon 2019",
+    "channel": "Institut Public Sector Transformation (IPST)",
+    "description": "Das erste Keynote-Referat an der dritten DINAcon: Katariina Kari is an Ontologist at the Zalando Tech-Hub in Helsinki. Katariina ...",
+    "subtopic": "kg-construction",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:0bGKTkVTQbU",
+    "url": "https://www.youtube.com/watch?v=0bGKTkVTQbU",
+    "title": "ISWC 2020 -- Donatello: Knowledge Graph Visualization Framework",
+    "channel": "Vitalis Wiens",
+    "description": "This is a demo video for ISWC 2020 posters and demos track. Link to GitHub running the live demo ...",
+    "subtopic": "kg-construction",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:R1FH9-yBRcQ",
+    "url": "https://www.youtube.com/watch?v=R1FH9-yBRcQ",
+    "title": "ISWC2021 P&amp;D: BERT-based Semantic Query Graph Extraction for Knowledge Graph Question Answering",
+    "channel": "Jason Liang",
+    "description": "Teaser video for our paper to be presented at the 20th International Semantic Web Conference (ISWC) 2021 Poster & Demo Track ...",
+    "subtopic": "kg-construction",
+    "score": 0.72,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:jLSsHdviWHc",
+    "url": "https://www.youtube.com/watch?v=jLSsHdviWHc",
+    "title": "Semantics-driven Keyword Search over Knowledge Graphs – L.Feddoul",
+    "channel": "Fusion UniJena",
+    "description": "Presented at the Doctoral Consortium at the 19th International Semantic Web Conference ...",
+    "subtopic": "kg-construction",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:w8OEVobyhFE",
+    "url": "https://www.youtube.com/watch?v=w8OEVobyhFE",
+    "title": "Analyzing Blockchain and Bitcoin Transaction Data as Graph",
+    "channel": "Oracle Developers",
+    "description": "Blockchain technology and Bitcoin will potentially revolutionize business transactions. Blockchain offers a robust, decentralized ...",
+    "subtopic": "kg-construction",
+    "score": 0.1,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:G-LVg8fWXtw",
+    "url": "https://www.youtube.com/watch?v=G-LVg8fWXtw",
+    "title": "BFree: Enabling Battery-free Sensor Prototyping with Python - UbiComp 2021 Presentation",
+    "channel": "Embedded and Networked Systems TU Delft",
+    "description": "Paper: BFree: Enabling Battery-free Sensor Prototyping with Python Download: https://dl.acm.org/doi/abs/10.1145/3432191 ...",
+    "subtopic": "kg-construction",
+    "score": 0.15,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:8cl9IGY4A9E",
+    "url": "https://www.youtube.com/watch?v=8cl9IGY4A9E",
+    "title": "RDF vs. Property Graph: Is your Graph Semantic? - Jesús Barrasa, Neo4j",
+    "channel": "Connected Data",
+    "description": "What's the difference between RDF and Property Graph databases? In this technical talk, Jesus Barrasa from Neo4j delivers a ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:uOVl4wqHUXc",
+    "url": "https://www.youtube.com/watch?v=uOVl4wqHUXc",
+    "title": "Ashleigh Faith | &quot;Adding more context to ML, using taxonomies &amp; knowledge graphs&quot; Masterclass teaser",
+    "channel": "Connected Data",
+    "description": "Book your ticket here https://learning-from-machines-april-2021-meetup.connected-data.london/checkout/select-tickets/ Event ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.65,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:YkzghnkuOzA",
+    "url": "https://www.youtube.com/watch?v=YkzghnkuOzA",
+    "title": "Search++ (aka. Linked Data driven Precision &quot;Find&quot;)",
+    "channel": "Kingsley Idehen",
+    "description": "Using the quest for a Camcorder to demonstrate how the Linked Data Cloud facilitates precision \"Find\" via query disambiguation ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.72,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:VJtW8WhbqSA",
+    "url": "https://www.youtube.com/watch?v=VJtW8WhbqSA",
+    "title": "Enrich Your Enterprise Knowledge Graph with Linked Open Data via JSON-LD - SCaLE 19x",
+    "channel": "AllegroGraph",
+    "description": "Brief Description JSON-LD effectively delivers the many benefits of JSON into the linked data world. Linked Open Data is a vast ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:5OGMYQaIPKw",
+    "url": "https://www.youtube.com/watch?v=5OGMYQaIPKw",
+    "title": "Knowledge Graph Construction - Lecture",
+    "channel": "LINQS Lab",
+    "description": "In this lecture, I cover the key problems in Information Extraction with a focus on building knowledge bases from web text sources.",
+    "subtopic": "query-languages-engines",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:-tK8yJ5ulI8",
+    "url": "https://www.youtube.com/watch?v=-tK8yJ5ulI8",
+    "title": "[VLDB 2021] CoroBase: Coroutine-Oriented Main-Memory Database Engine",
+    "channel": "Yongjun He",
+    "description": "",
+    "subtopic": "query-languages-engines",
+    "score": 0.15,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:KJVSi9pn0Cg",
+    "url": "https://www.youtube.com/watch?v=KJVSi9pn0Cg",
+    "title": "Systems @Scale 2019 - Accordion Better Memory Organization for LSM Key Value Stores",
+    "channel": "Justin Miller",
+    "description": "Eshcar Hillel, Senior Research Scientist, Verizon Media https://code.fb.com/core-data/systems-scale/ Log-structured merge (LSM) ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.1,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:gOon0hkbItg",
+    "url": "https://www.youtube.com/watch?v=gOon0hkbItg",
+    "title": "[SIGMOD] Natural Language Based Exploration with Relational Databases in Chatbot",
+    "channel": "POSTECH \bDSLAB",
+    "description": "SIGMOD 2021 Keynote.",
+    "subtopic": "query-languages-engines",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:pSDNYyFq604",
+    "url": "https://www.youtube.com/watch?v=pSDNYyFq604",
+    "title": "Data Vocalization at VLDB 2017",
+    "channel": "Immanuel Trummer",
+    "description": "Talk slides: http://www.itrummer.org/slides/Vocalization5.pdf Research on data visualization aims at finding the best way to ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.25,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:AsjqfidHNAQ",
+    "url": "https://www.youtube.com/watch?v=AsjqfidHNAQ",
+    "title": "Optimal Column Layout for Hybrid Workloads (VLDB 2020)",
+    "channel": "Data-Intensive Systems and Computing Lab - BU",
+    "description": "Manos Athanassoulis' talk at VLDB 2020 Authors: Manos Athanassoulis (BU), Kenneth Bøgh (Uber Technologies Inc.), Stratos ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.3,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:653lUJF-Bi0",
+    "url": "https://www.youtube.com/watch?v=653lUJF-Bi0",
+    "title": "GQL – Introduction to a new query language standard (16th LDBC TUC meeting)",
+    "channel": "GDC Graph Data Council (formerly: LDBC)",
+    "description": "Event: 16th LDBC Technical User Community meeting URL: https://ldbcouncil.org/event/sixteenth-tuc-meeting/ Presenter: Stefan ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:y5GtnoFg6os",
+    "url": "https://www.youtube.com/watch?v=y5GtnoFg6os",
+    "title": "openCypher: Transactions and Analytics with Neo4j and Cypher for Spark",
+    "channel": "Neo4j",
+    "description": "The openCypher project aims to turn the Cypher graph query language into an open, collaborative standard. The first openCypher ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:Wx03Yu8EKpI",
+    "url": "https://www.youtube.com/watch?v=Wx03Yu8EKpI",
+    "title": "How We Design Cypher",
+    "channel": "Neo4j",
+    "description": "The Cypher language is continuously evolved to be the perfect fit for the needs of the graph revolution. This talk looks at the ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:hlhbUeoCPio",
+    "url": "https://www.youtube.com/watch?v=hlhbUeoCPio",
+    "title": "Integrating Property Graphs Into the SQL Standard – Keith Hare, JCC Consulting",
+    "channel": "Neo4j",
+    "description": "Get a snapshot of the current SQL modernization efforts that make it easier to present tabular data as property graphs, and a brief ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:DC6oSJlGJj0",
+    "url": "https://www.youtube.com/watch?v=DC6oSJlGJj0",
+    "title": "Graph Chat with Chang She, CEO of LanceDB",
+    "channel": "GraphGeeks",
+    "description": "Join David Hughes (GraphGeeks community) for a Graph Chat with Chang She, CEO and Co-founder of LanceDB, filmed at the ...",
+    "subtopic": "query-languages-engines",
+    "score": 0.48,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:bl4JshvshT8",
+    "url": "https://www.youtube.com/watch?v=bl4JshvshT8",
+    "title": "Ian Horrocks: Standardizing OWL",
+    "channel": "IEEEComputerSociety",
+    "description": "Author Charles Severance provides an audio recording of his Computing Conversations column, in which he discusses his ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.95,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:jfb04V8WY6Y",
+    "url": "https://www.youtube.com/watch?v=jfb04V8WY6Y",
+    "title": "Ian Horrocks: &quot;KR and the Semantic Web: What We Did Right (and Wrong)&quot; (COST DKG Talk Series)",
+    "channel": "COST DKG",
+    "description": "Abstract: Augmenting the web to include some form of Knowledge Representation (KR) was one of the first directions for Semantic ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:i11lo6A92uE",
+    "url": "https://www.youtube.com/watch?v=i11lo6A92uE",
+    "title": "2016-06-29 - Ian Horrocks – Logic ∧ Reasoning ∧ Scalability ⊨ ⊥ ?",
+    "channel": "Institut des sciences cognitives - UQAM",
+    "description": "École d'été 2016 sur le raisonnement - Summer school 2016 on reasoning. Monday June 27th, 2016-06-27 - Ian Horrocks – Logic ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:LbQHV8ltHR0",
+    "url": "https://www.youtube.com/watch?v=LbQHV8ltHR0",
+    "title": "K-CAP 2021 - Keynote Talk: Ian Horrocks",
+    "channel": "Knowledge Capture",
+    "description": "",
+    "subtopic": "reasoning-inference",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:HgSd-EN22QQ",
+    "url": "https://www.youtube.com/watch?v=HgSd-EN22QQ",
+    "title": "IJCLR 2021 - NeSy Invited Talk by Ian Horrocks: Knowledge Graphs: Theory, Applications &amp; Challenges",
+    "channel": "Inst. Informatics & Telecomms @ NCSR Demokritos",
+    "description": "IJCLR 2021 - NeSy Invited Talk Ian Horrocks: Knowledge Graphs: Theory, Applications & Challenges.",
+    "subtopic": "reasoning-inference",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:DwFD_ffS21E",
+    "url": "https://www.youtube.com/watch?v=DwFD_ffS21E",
+    "title": "NODES AI 2026 - Agent Reasoning with Graph World Models",
+    "channel": "Neo4j",
+    "description": "Join Lucas Godfrey at NODES AI for this session: \"Agent Reasoning with Graph World Models\". World models have long been a ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.55,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:l0Ts7vpFuBw",
+    "url": "https://www.youtube.com/watch?v=l0Ts7vpFuBw",
+    "title": "[Webinar Recording] Reasoning with Big Knowledge Graphs  Choices, Pitfalls and Proven Recipes",
+    "channel": "Ontotext",
+    "description": "The knowledge graph (KG) represents a shared conceptualization across the organization describing all important business ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:y7sXDpffzQQ",
+    "url": "https://www.youtube.com/watch?v=y7sXDpffzQQ",
+    "title": "What is a Knowledge Graph?",
+    "channel": "IBM Technology",
+    "description": "Learn more about Knowledge Graph → http://ibm.biz/knowledge-graph-guide Watch \"What is Natural Language Processing?",
+    "subtopic": "reasoning-inference",
+    "score": 0.2,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:Q5izD6Xlb8o",
+    "url": "https://www.youtube.com/watch?v=Q5izD6Xlb8o",
+    "title": "AI Explained - Knowledge Graphs | Turning Raw Data Into Useful Information",
+    "channel": "SandboxAQ",
+    "description": "Have you ever wondered how social media platforms seem to know you so well? Well, It involves the same mechanism scientists ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.45,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:Aw7iQjKAX2k",
+    "url": "https://www.youtube.com/watch?v=Aw7iQjKAX2k",
+    "title": "GraphRAG vs. Traditional RAG: Higher Accuracy &amp; Insight with LLM",
+    "channel": "IBM Technology",
+    "description": "Want to learn more about Want to learn more about Generative AI + Machine Learning? Read the ebook here ...",
+    "subtopic": "reasoning-inference",
+    "score": 0.38,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:U0EV1hZ1dOw",
+    "url": "https://www.youtube.com/watch?v=U0EV1hZ1dOw",
+    "title": "Towards Knowledge Graph-Agnostic SPARQL Query Validation for improving Question Answering",
+    "channel": "Aleksandr Perevalov",
+    "description": "Abstract:* A Knowledge Graph Question Answering (KGQA) system needs to generate a SPARQL query over a knowledge graph ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:FowtXinAAF8",
+    "url": "https://www.youtube.com/watch?v=FowtXinAAF8",
+    "title": "Shapes applications and tools Part 1: Introduction to RDF data model and motivation",
+    "channel": "Jose Emilio Labra Gayo",
+    "description": "Part 1 of tutorial given at International Semantic Web Conference (ISWC) 2020 titled \"Shapes applications and tools\" More ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:6-OdjYdEpeU",
+    "url": "https://www.youtube.com/watch?v=6-OdjYdEpeU",
+    "title": "RDF Data Shape Use Statistics: SHACL use on GitHub",
+    "channel": "IDLabResearch",
+    "description": "In this talk for the International Semantic Web Conference (ISWC 2020), Sven Lieber explains what constraints are, why we want ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:THekUSlGMyo",
+    "url": "https://www.youtube.com/watch?v=THekUSlGMyo",
+    "title": "Shapes applications and tools: Part 4. ShEx and SHACL compared",
+    "channel": "Jose Emilio Labra Gayo",
+    "description": "Part 1 of tutorial given at International Semantic Web Conference (ISWC) 2020 titled \"Shapes applications and tools\" More ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:NP_XCZCPUw4",
+    "url": "https://www.youtube.com/watch?v=NP_XCZCPUw4",
+    "title": "Masterclass Shapes Constraint Language KGC 2023",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Masterclass Shapes Constraint Language KGC 2023 Veronika Heimsbakk | Knowledge Graph Lead at Capgemini connect ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:AIjlZdlhOk4",
+    "url": "https://www.youtube.com/watch?v=AIjlZdlhOk4",
+    "title": "Building functional programs with bananas, catalysts, shacl&#39;s and shapes – Alistair Johnson",
+    "channel": "Typelevel",
+    "description": "This is a talk that combines both the practical, but often overlooked, topic of SBT with cutting edge distributed data technologies.",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:LooicwBXqUk",
+    "url": "https://www.youtube.com/watch?v=LooicwBXqUk",
+    "title": "Knowledge Graphs - 3.6 Quality Assurance with SHACL Constraints",
+    "channel": "ISE FIZ Karlsruhe",
+    "description": "Knowledge Graphs - Foundations and Applications Querying Knowledge Graphs with SPARQL Speakers: Prof. Dr. Harald Sack ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:vcZkEcC5PQg",
+    "url": "https://www.youtube.com/watch?v=vcZkEcC5PQg",
+    "title": "Shapes applications and tools: Part 3, Introduction to SHACL",
+    "channel": "Jose Emilio Labra Gayo",
+    "description": "Part 1 of tutorial given at International Semantic Web Conference (ISWC) 2020 titled \"Shapes applications and tools\" More ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:sK51llNtUy4",
+    "url": "https://www.youtube.com/watch?v=sK51llNtUy4",
+    "title": "RDF Data Quality Assessment - connecting the pieces. Dimitris Kontokostas. Connected Data",
+    "channel": "Connected Data",
+    "description": "RDF and graph databases are steadily increasing their adoption and are no longer choices of niche-only communities. For almost ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:aSqmIxbnE48",
+    "url": "https://www.youtube.com/watch?v=aSqmIxbnE48",
+    "title": "SHACL-based data life cycle management. Robert David, Maura Moran",
+    "channel": "Connected Data",
+    "description": "PoolParty Semantic Suite is Semantic Web Company's platform for enterprise information integration based on Linked Data ...",
+    "subtopic": "shacl-shape-validation",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:Av3YP2Wu0xA",
+    "url": "https://www.youtube.com/watch?v=Av3YP2Wu0xA",
+    "title": "CliqueSquare : distributed database",
+    "channel": "InriaInnovation",
+    "description": "RDF data management platform based on Hadoop architecture. CliqueSquare to manage very large volumes of RDF data in ...",
+    "subtopic": "storage-architectures",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:m11X-T-v6kg",
+    "url": "https://www.youtube.com/watch?v=m11X-T-v6kg",
+    "title": "How to Design &amp; Build Semantic Applications with Linked Data",
+    "channel": "Dublin Core Metadata Initiative (DCMI)",
+    "description": "This webinar will demonstrate how to design and build rich end-user search and discovery applications using Linked Data.",
+    "subtopic": "storage-architectures",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:hDfaHeza1fU",
+    "url": "https://www.youtube.com/watch?v=hDfaHeza1fU",
+    "title": "Microsoft Data Amp 2017 | Scott Guthrie Keynote",
+    "channel": "Microsoft Cloud",
+    "description": "Watch Scott Guthrie, Executive Vice President of the Cloud and Enterprise group in Microsoft, give his keynote at Microsoft Data ...",
+    "subtopic": "storage-architectures",
+    "score": 0.35,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:fOFbDaaCwYo",
+    "url": "https://www.youtube.com/watch?v=fOFbDaaCwYo",
+    "title": "A Humane Guide to Graph Database Internals by Jim Webber",
+    "channel": "Big Things Conference",
+    "description": "Databases are everywhere, but did you ever wonder what goes on inside the box? In this talk we'll dive into the internals of Neo4j ...",
+    "subtopic": "storage-architectures",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:gsLEdZuR3nk",
+    "url": "https://www.youtube.com/watch?v=gsLEdZuR3nk",
+    "title": "Part 6/7: MySQL Conference: Inside the PBXT Storage Engine",
+    "channel": "PrimeBase",
+    "description": "Abstract: PBXT is a MVCC (multi-version concurrency control) based, transactional storage engine for MySQL. Developed from ...",
+    "subtopic": "storage-architectures",
+    "score": 0.05,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:Pq2Awy7KS2o",
+    "url": "https://www.youtube.com/watch?v=Pq2Awy7KS2o",
+    "title": "Dave of FoundationDB gives us the 101 introduction",
+    "channel": "Eric Pugh",
+    "description": "Dave Rosenthal of FoundationDB and some of his colleagues joined OpenSource Connections for a day of hacking. To kick ...",
+    "subtopic": "storage-architectures",
+    "score": 0.6,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:ZhgSDOZpOQg",
+    "url": "https://www.youtube.com/watch?v=ZhgSDOZpOQg",
+    "title": "Distributed SQL Summit 2020 | The Distributed Database Behind Twitter",
+    "channel": "Yugabyte",
+    "description": "Twitter is giving hundreds of millions of people around the world the power to create and share ideas and information instantly ...",
+    "subtopic": "storage-architectures",
+    "score": 0.15,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:HRlDYbn6SMY",
+    "url": "https://www.youtube.com/watch?v=HRlDYbn6SMY",
+    "title": "Research 2425",
+    "channel": "VLDB 2021",
+    "description": "Title: Columnar Storage and List-based Processing for Graph Database Management Systems Paper Link: ...",
+    "subtopic": "storage-architectures",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:2xN27cvfuEw",
+    "url": "https://www.youtube.com/watch?v=2xN27cvfuEw",
+    "title": "Columnar Storage and List-processor for Graph Database Management systems | Talk",
+    "channel": "Pranjal Gupta",
+    "description": "VLDB 2021 Research Paper Talk.",
+    "subtopic": "storage-architectures",
+    "score": 0.48,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:kFx4yKWFY5E",
+    "url": "https://www.youtube.com/watch?v=kFx4yKWFY5E",
+    "title": "Tunable Stream Graph Embeddings at Scale - Serafeim Papadias @ VLDB 2020",
+    "channel": "BIFOLD Berlin",
+    "description": "Tunable Stream Graph Embeddings at Scale” Serafeim Papadias (TU Berlin), supervised by Volker Markl (TU Berlin / DFKI) Ph.D ...",
+    "subtopic": "storage-architectures",
+    "score": 0.45,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:zP2oDmPOLrU",
+    "url": "https://www.youtube.com/watch?v=zP2oDmPOLrU",
+    "title": "[VLDB&#39;22] Ginex: SSD-enabled Billion-scale Graph Neural Network Training on a Single Machine (...)",
+    "channel": "ARC SNU",
+    "description": "[VLDB'22] Ginex: SSD-enabled Billion-scale Graph Neural Network Training on a Single Machine via Provably Optimal ...",
+    "subtopic": "storage-architectures",
+    "score": 0.4,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:A-9mU_XDKyA",
+    "url": "https://www.youtube.com/watch?v=A-9mU_XDKyA",
+    "title": "NebulaGraph Community Talk - Kùzu Graph Database Management System",
+    "channel": "NebulaGraph DB",
+    "description": "The Kùzu graph database management system (GDBMS): an embeddable and feature-rich open-source DBMS that is optimized ...",
+    "subtopic": "storage-architectures",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:LvNu_xRlXBE",
+    "url": "https://www.youtube.com/watch?v=LvNu_xRlXBE",
+    "title": "On Graph and Knowledge Embedding",
+    "channel": "USC Information Sciences Institute",
+    "description": "9 February, 2018 Shou-De Lin, National Taiwan University Abstract: The task of graph embedding aims at representing graph ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:DKF5wStj5Us",
+    "url": "https://www.youtube.com/watch?v=DKF5wStj5Us",
+    "title": "Representation Learning on Graphs",
+    "channel": "Caleb Ziems",
+    "description": "In this video, we discuss three major strategies for graph embeddings, which are used in many visualization tasks and machine ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:HTr7Ke61-mY",
+    "url": "https://www.youtube.com/watch?v=HTr7Ke61-mY",
+    "title": "Machine Learning with Graphs:  Research Papers",
+    "channel": "Mini_Academic_Advantage",
+    "description": "1. Word Embedding (CBOL, SkipGram, GloVe) 2. Recurrent Neural Networks (RNN, LSTM) 3. Convolutional Neural Networks ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.35,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:4nvQgJc6GLw",
+    "url": "https://www.youtube.com/watch?v=4nvQgJc6GLw",
+    "title": "Social mobility || Sociology #socialmobility #socialogy #shorts #upsc #interview",
+    "channel": "UNLOCKED INTERVIEWS",
+    "description": "Social mobility || Sociology #social mobility #socialogy #shorts #upsc #interview Welcome to \"Unlocked Interviews\"!",
+    "subtopic": "kg-embeddings",
+    "score": 0.0,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:kk_x0wOvZYQ",
+    "url": "https://www.youtube.com/watch?v=kk_x0wOvZYQ",
+    "title": "NeurIPS 2019: Understanding the Representation Power of Graph Neural Nets in Learning Graph Topology",
+    "channel": "Nima Dehmamy",
+    "description": "Video to our paper at NeurIPS 2019 Paper: https://arxiv.org/pdf/1907.05008.pdf Code and slides: ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.2,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:oUy6eSdOhms",
+    "url": "https://www.youtube.com/watch?v=oUy6eSdOhms",
+    "title": "[NeurIPS 2022] Motif-Aware Representation Learning on Continuous-Time Dynamic Graphs",
+    "channel": "Ming Jin",
+    "description": "Continuous-time dynamic graphs naturally abstract many real-world systems, such as social and transactional networks. While the ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.25,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:KAs1UA0HJJM",
+    "url": "https://www.youtube.com/watch?v=KAs1UA0HJJM",
+    "title": "Graph Representation Learning with Deep Learning",
+    "channel": "IEEE Student Branch - University of Jaffna",
+    "description": "Mining graph data has become a popular research topic in Computer Science and has been widely studied in both academia and ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.45,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:sgRY9-p7z20",
+    "url": "https://www.youtube.com/watch?v=sgRY9-p7z20",
+    "title": "Google Graph Mining and Learning @ NeurIPS 2020: GNNs and Graph Embeddings -- Bryan Perozzi",
+    "channel": "Amol Kapoor",
+    "description": "In this talk, Bryan Perozzi presents an overview of Graph Embeddings and Graph Convolutions. The talk begins with a high level ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.15,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:T4afZsyHmUc",
+    "url": "https://www.youtube.com/watch?v=T4afZsyHmUc",
+    "title": "KGC 2022 Keynote: &#39;Deep Learning with Knowledge Graphs&#39; by Stanford&#39;s Prof. Jure Leskovec",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "In this keynote, Stanford University's Professor Jure Leskovec discusses the recent methodological advancements that ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:SHHHJXwHeWM",
+    "url": "https://www.youtube.com/watch?v=SHHHJXwHeWM",
+    "title": "Keynote 3 - Using Knowledge Graph data in Large Language Models",
+    "channel": "Swiss Text",
+    "description": "Speaker: Enrique Alfonseca Large Language Models (LLMs) have led to large improvements in state-of-the-art results across ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:wUUYqfqOHXs",
+    "url": "https://www.youtube.com/watch?v=wUUYqfqOHXs",
+    "title": "KDD Invited Talks--Revisiting Knowledge Graph Completion From a Practical Perspective--Danai Koutra",
+    "channel": "Association for Computing Machinery (ACM)",
+    "description": "",
+    "subtopic": "kg-embeddings",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:ww99npDh4cg",
+    "url": "https://www.youtube.com/watch?v=ww99npDh4cg",
+    "title": "KGC23 Keynote: The Future of Knowledge Graphs in a World of LLMs — Denny Vrandečić, Wikimedia",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Keynote Session: The Future of Knowledge Graphs in a World of Large Language Models by Denny Vrandečić (Wikimedia ...",
+    "subtopic": "kg-embeddings",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:o1DcImd1vyg",
+    "url": "https://www.youtube.com/watch?v=o1DcImd1vyg",
+    "title": "MOOC Ontological Engineering 3.1: NeOn Methodology. Introduction",
+    "channel": "UPM",
+    "description": "Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:2n3rLu82Hgw",
+    "url": "https://www.youtube.com/watch?v=2n3rLu82Hgw",
+    "title": "MOOC Ontological Engineering 3.2: NeOn Methodology. Scenarios",
+    "channel": "UPM",
+    "description": "Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:-DWIQ8HWPno",
+    "url": "https://www.youtube.com/watch?v=-DWIQ8HWPno",
+    "title": "MOOC Ontological Engineering 2.4: Finding relevant ontologies (I)",
+    "channel": "UPM",
+    "description": "Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:7Jlc8OxWPZY",
+    "url": "https://www.youtube.com/watch?v=7Jlc8OxWPZY",
+    "title": "Ontological Engineering Explained | Douglas Lenat and Lex Fridman",
+    "channel": "Lex Clips",
+    "description": "Lex Fridman Podcast full episode: https://www.youtube.com/watch?v=3wMKoSRbGVs Please support this podcast by checking ...",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:MUDP_Ee2yZ0",
+    "url": "https://www.youtube.com/watch?v=MUDP_Ee2yZ0",
+    "title": "MOOC Ontological Engineering 4.1: Ontology Requirements. Introduction",
+    "channel": "UPM",
+    "description": "Vídeo producido por el Gabinete de Tele-Educación de la Universidad Politécnica de Madrid.",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:EwOHERNd3aQ",
+    "url": "https://www.youtube.com/watch?v=EwOHERNd3aQ",
+    "title": "Toward Data Driven Ontologies for Mental Function",
+    "channel": "Office of Behavioral and Social Sciences Research",
+    "description": "Event Date: August 20, 2018 Presenter: Russell A. Poldrack, Ph.D. The National Institutes of Health (NIH) Office of Behavioral and ...",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:83lI3u7KX0g",
+    "url": "https://www.youtube.com/watch?v=83lI3u7KX0g",
+    "title": "OBO Foundry Tutorial: Introduction to workflows and best practices for ontology development Part 1",
+    "channel": "obo-academy",
+    "description": "OBO tutorial presented at the ICBO conference in 2023. Learn more: https://oboacademy.github.io/obook/courses/icbo2023/ Part ...",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:PFDNAACS6XU",
+    "url": "https://www.youtube.com/watch?v=PFDNAACS6XU",
+    "title": "Anne Sophie Meincke: Development and evolution reconceived - Lessons from process ontology",
+    "channel": "CLEA, Free University of Brussels (VUB)",
+    "description": "According to a new movement within the philosophy of biology, living beings are to be conceived of not as substances or things ...",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:J5DkXcDvzvw",
+    "url": "https://www.youtube.com/watch?v=J5DkXcDvzvw",
+    "title": "Current roadmap for the ETSI. SAREF ontology",
+    "channel": "Building Digital Twin International Congress",
+    "description": "Dr. Raúl García-Castro from @UPM presents as speaker about Current roadmap for the ETSI. SAREF ontology\" at 4th #BDTIC.",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.79,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:RvoI3rcYO2E",
+    "url": "https://www.youtube.com/watch?v=RvoI3rcYO2E",
+    "title": "Application of Ontology Design Patterns in the Development of Subject Ontologies",
+    "channel": "Computer Science & IT Conference Proceedings",
+    "description": "Application of Ontology Design Patterns in the Development of Subject Ontologies for Multidisciplinary Representation of ...",
+    "subtopic": "ontology-engineering-methodologies",
+    "score": 0.65,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:efafCOgq16o",
+    "url": "https://www.youtube.com/watch?v=efafCOgq16o",
+    "title": "Keynote: Using a Semantic Layer to Drive AI &amp; BI Impact At Scale",
+    "channel": "Database Trends and Applications",
+    "description": "Using a semantic layer makes data accessible and accelerates the business impact of AI and BI at your organization. Youssef ...",
+    "subtopic": "semantic-layer",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:GoDNc274RG4",
+    "url": "https://www.youtube.com/watch?v=GoDNc274RG4",
+    "title": "How to Implement a Semantic Layer for Your Lakehouse",
+    "channel": "Databricks",
+    "description": "Learn how semantic layers are becoming a critical component of a modern analytics stack. Connect with us: Website: ...",
+    "subtopic": "semantic-layer",
+    "score": 0.65,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:ZXnjSclrNrc",
+    "url": "https://www.youtube.com/watch?v=ZXnjSclrNrc",
+    "title": "Cloud-native Semantic Layer on Data Lake",
+    "channel": "Databricks",
+    "description": "With larger volume and more real-time data stored in data lake, it becomes more complex to manage these data and serve ...",
+    "subtopic": "semantic-layer",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:e6uvf1ytMEI",
+    "url": "https://www.youtube.com/watch?v=e6uvf1ytMEI",
+    "title": "How a Semantic Layer Makes Data Mesh Work At Scale",
+    "channel": "DATAVERSITY",
+    "description": "Data Mesh is a trending approach to building a decentralized data architecture by leveraging a domain-oriented, self-service ...",
+    "subtopic": "semantic-layer",
+    "score": 0.63,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:ezqsNzwN0p4",
+    "url": "https://www.youtube.com/watch?v=ezqsNzwN0p4",
+    "title": "apply() Conference 2022 | The dbt Semantic Layer",
+    "channel": "Tecton",
+    "description": "The dbt Semantic Layer by: Drew Banin, Co-Founder & CPO, DBT Labs In this talk, Drew will discuss the dbt Semantic Layer and ...",
+    "subtopic": "semantic-layer",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:DS7Ub_CmBR0",
+    "url": "https://www.youtube.com/watch?v=DS7Ub_CmBR0",
+    "title": "dbt Product Spotlight: dbt Semantic Layer",
+    "channel": "dbt Labs",
+    "description": "The dbt Semantic Layer is built directly into dbt Cloud to eliminate metric inconsistencies, reduce manual SQL work, and deliver ...",
+    "subtopic": "semantic-layer",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:p7LtEnA4hkw",
+    "url": "https://www.youtube.com/watch?v=p7LtEnA4hkw",
+    "title": "Introduction to Headless BI [webinar]",
+    "channel": "GoodData·AI",
+    "description": "Created by developers, for developers—Headless BI with GoodData Cloud Native. Like with databases, with GoodData.CN, we ...",
+    "subtopic": "semantic-layer",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:KdHOOE9mvzo",
+    "url": "https://www.youtube.com/watch?v=KdHOOE9mvzo",
+    "title": "What is a semantic layer in data analytics | #data #analytics #businessintelligence",
+    "channel": "superdatabrothers",
+    "description": "What is a semantic layer in data analytics? Simply put, it's a layer that sits between your database and any downstream ...",
+    "subtopic": "semantic-layer",
+    "score": 0.25,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:FotEaaf20gY",
+    "url": "https://www.youtube.com/watch?v=FotEaaf20gY",
+    "title": "AI-powered conversational interface for the semantic layer",
+    "channel": "Cube",
+    "description": "Announcing Cube's integration and partnership with Delphi Labs. Read more in the blog: ...",
+    "subtopic": "semantic-layer",
+    "score": 0.35,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:EWZmQlCvX3M",
+    "url": "https://www.youtube.com/watch?v=EWZmQlCvX3M",
+    "title": "How Rittman Analytics delivers the semantic layer today with Cube",
+    "channel": "Cube",
+    "description": "In this webinar, we are joined by seasoned data enthusiasts from Rittman Analytics. Olivier and Lewis will demonstrate how ...",
+    "subtopic": "semantic-layer",
+    "score": 0.6,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:y2mLcirdlPo",
+    "url": "https://www.youtube.com/watch?v=y2mLcirdlPo",
+    "title": "What Is AtScale? - Semantic Layer Overview",
+    "channel": "AtScale",
+    "description": "AtScale enables smarter decision-making by accelerating the flow of data-driven insights. The company's semantic layer platform ...",
+    "subtopic": "semantic-layer",
+    "score": 0.25,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:s_rDUWyiZOM",
+    "url": "https://www.youtube.com/watch?v=s_rDUWyiZOM",
+    "title": "Agentic Analytics Summit. Semantic Layers, Ontologies, and AI, Oh My!",
+    "channel": "Cube",
+    "description": "Josh Klahr from Snowflake explores how AI has transformed the landscape for semantic layers, ontologies, and knowledge ...",
+    "subtopic": "semantic-layer",
+    "score": 0.7,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:f6dNoZFw4-c",
+    "url": "https://www.youtube.com/watch?v=f6dNoZFw4-c",
+    "title": "Why AtScale? | A Virtual Data Warehouse for Better BI",
+    "channel": "AtScale",
+    "description": "AtScale's Founder and Chief Strategy Officer Dave Mariani gives an overview of AtScale, which is a virtualized data warehouse ...",
+    "subtopic": "semantic-layer",
+    "score": 0.25,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:YaAKUu13rHA",
+    "url": "https://www.youtube.com/watch?v=YaAKUu13rHA",
+    "title": "Securities Trading Analysis - AtScale &amp; Snowflake",
+    "channel": "AtScale",
+    "description": "Follow us for more updates and news on social media! Our Website: https://www.atscale.com/ Twitter: https://twitter.com/AtScale ...",
+    "subtopic": "semantic-layer",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:PCnSWteKpL8",
+    "url": "https://www.youtube.com/watch?v=PCnSWteKpL8",
+    "title": "Deliver “Speed of Thought” Queries on Billions of Rows on Snowflake | AtScale",
+    "channel": "AtScale",
+    "description": "The AtScale Adaptive Cache turbo-charges your Snowflake queries, optimizing your Snowflake data warehouse automatically ...",
+    "subtopic": "semantic-layer",
+    "score": 0.2,
+    "tier": "reject"
+  }
+]
