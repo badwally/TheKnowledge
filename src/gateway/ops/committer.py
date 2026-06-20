@@ -408,11 +408,26 @@ def run_worker(
     queue: IntentQueue | None = None,
     gate: CommitGate | None = None,
     embedding_index=None,
+    sink=None,
 ) -> None:
     """Drain the queue once (once=True) or poll indefinitely (once=False).
 
     Accepts an optional ``embedding_index`` so the production CLI path can wire
     in ``EmbeddingIndex()`` and enable ``_dedup_recheck`` (the merge path).
+
+    Accepts an optional ``sink`` callable for production observability (P6).
+    When provided, the drain loop calls ``sink(record)`` after each intent with
+    a dict containing stable structured keys::
+
+        {
+            "intent_id":   str,   # the claimed intent's ID
+            "disposition": str,   # committed / merged / dead_lettered / retry-later / ...
+            "reason":      str,   # detail / error text (from DrainResult.detail/errors)
+        }
+
+    ``sink`` is **default-off**: when not provided the loop is byte-identical to
+    the pre-P6 path (zero behavior change). The sink is called AFTER the existing
+    ``log.info`` line; it must not swallow or mask any exception.
 
     At startup, calls ``gate.recover()`` to revert any partial writes from a
     crashed prior worker and reclaim their intents (crash recovery).
@@ -449,6 +464,16 @@ def run_worker(
             if result is None:
                 break
             log.info("drained %s → %s", result.intent_id, result.disposition)
+            if sink is not None:
+                # Emit stable structured keys only — no payload/body/credentials.
+                # reason: prefer detail (the human-readable summary); fall back to
+                # the first error string when detail is empty (dead-letter path).
+                reason = result.detail or (result.errors[0] if result.errors else "")
+                sink({
+                    "intent_id": result.intent_id,
+                    "disposition": result.disposition,
+                    "reason": reason,
+                })
     else:
         try:
             while True:
@@ -460,6 +485,13 @@ def run_worker(
                     continue
                 if result is not None:
                     log.info("drained %s → %s", result.intent_id, result.disposition)
+                    if sink is not None:
+                        reason = result.detail or (result.errors[0] if result.errors else "")
+                        sink({
+                            "intent_id": result.intent_id,
+                            "disposition": result.disposition,
+                            "reason": reason,
+                        })
                 else:
                     time.sleep(poll_interval)
         except KeyboardInterrupt:
