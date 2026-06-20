@@ -92,6 +92,37 @@ The two Phase-5 review rounds the *plan author* caused were both plan-time verif
 - **Targeted reads over wide reads.** Opening a long `session-state.md` with a full read cost ~25k tokens for ~2k of use; `grep -n` the section, then offset-read.
 - **Load deferred-tool schemas before calling** (e.g. `ToolSearch select:SendMessage`) to avoid validation-retry loops; keep `SendMessage` summaries ≤200 chars.
 
+### B6. Pre-merge gate (standing requirement for every merge to main)
+
+Every merge to `main` must pass the pre-merge gate. Run it as:
+
+```bash
+.venv/bin/python -m gateway.scripts.gate
+```
+
+The gate exits non-zero on the FIRST failure and runs these steps in order:
+
+| Step | What it checks | Failure = |
+|---|---|---|
+| 1 | Full pytest suite (`pytest -q`) | Any test failure |
+| 2 | Fast + new tiers (`-m "not slow and not e2e"`) | Any unit/integration/property failure |
+| 3 | `retrieval_eval` fts recall@10 | < 0.90 (floor) |
+| 4 | `merge_map_eval` regressions | `regressions != []` |
+| 5 | `embedding_eval` all namespaces | Any `passed=False` |
+| 6 | Scoped lints: orphans / schema-drift / broken-wikilinks | Count exceeds baseline |
+
+Baselines (update in `gateway/scripts/gate.py:LINT_BASELINES` when a scope genuinely improves):
+
+| Scope | Baseline |
+|---|---|
+| orphans | 758 |
+| schema-drift | 191 |
+| broken-wikilinks | 1 |
+
+**The recall floor is `>= 0.90` exactly** (baseline 0.926). Do not lower it; do not skip the gate for "minor" changes — a gate that always exits 0 is inert (hunt #1).
+
+The floor-check logic is in `check_recall_floor()` (`src/gateway/scripts/gate.py`) — importable and unit-tested in `tests/test_gate_script.py` without running the full suite. The unit tests include named negative controls (below-floor input must return `passed=False`).
+
 ---
 
 ## Part C — Maintenance (so this doesn't ossify)

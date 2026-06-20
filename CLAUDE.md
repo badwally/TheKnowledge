@@ -149,6 +149,16 @@ Before running `wiki research --execute <session-id>`:
 
 Before authoring a phase plan (`writing-plans`) or fanning out a subagent-driven build (`subagent-driven-development`), read **`docs/MULTI-AGENT-BUILD-PLAYBOOK.md`**. It is the single source for the standing build rule, the independent-reviewer dispatch template, and the **inert-in-production hunt list** (the canonical "does this fire on real data?" checklist) — every entry paid for by a real defect that shipped past an implementer's green tests across the 5-phase Librarian build. Fold each new `/session-review` finding back into it.
 
+## Pre-merge gate
+
+Every merge to `main` must pass the pre-merge gate (Part B6 of the playbook):
+
+```bash
+.venv/bin/python -m gateway.scripts.gate
+```
+
+Runs in sequence and exits non-zero on the first failure: full suite → fast tiers → retrieval eval (recall@10 ≥ 0.90) → merge-map eval (no regressions) → embedding eval (all namespaces pass) → scoped lints at baseline. Floor-check logic lives in `src/gateway/scripts/gate.py`; unit tests in `tests/test_gate_script.py`.
+
 ## Session-state discipline
 
 `docs/session-state.md` is load-bearing. It records open contracts, in-flight edits, session decisions, and the next atomic step across context compactions and session boundaries.
