@@ -97,6 +97,7 @@ The two Phase-5 review rounds the *plan author* caused were both plan-time verif
 - **Capture command output in one pass.** `eval-retrieval --compare` was run 3× because `tail -20` truncated the recall numbers; `grep -iE "Retriever:|recall@|MRR"` gets arms + metrics in one call.
 - **Targeted reads over wide reads.** Opening a long `session-state.md` with a full read cost ~25k tokens for ~2k of use; `grep -n` the section, then offset-read.
 - **Load deferred-tool schemas before calling** (e.g. `ToolSearch select:SendMessage`) to avoid validation-retry loops; keep `SendMessage` summaries ≤200 chars.
+- **Stand up a build worktree's venv from the PARENT's `pip freeze`, not `pip install -e '.[dev]'`.** This repo imports `numpy` (and other transitive deps) that are NOT declared in `dependencies`, so a fresh `.[dev]` install runs the suite but FAILS the pre-commit `wiki lint` hook with `ModuleNotFoundError` — discovered only at the first commit. Replicate parity up front: `parent/.venv/bin/python -m pip freeze --exclude-editable > /tmp/f && wt/.venv/bin/python -m pip install -r /tmp/f` then `pip install -e .` (worktree needs its OWN editable venv so source edits resolve to the worktree, not the parent). The pip cache makes the full-parity install fast. (Test-harness-expansion: cost one failed commit + a freeze-diff round.)
 
 ### B6. Pre-merge gate (standing requirement for every merge to main)
 
