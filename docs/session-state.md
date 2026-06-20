@@ -1,6 +1,39 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-19 (COMMITTER + TEST-HARNESS build IN PROGRESS on `test/multi-agent-test-harness` — D0 built + under review. Prior: Librarian PHASE 5 MERGED, 5-phase build COMPLETE.)
+Last updated: 2026-06-20 (TEST-HARNESS EXPANSION build IN PROGRESS on worktree branch `worktree-test-harness-expansion`. Prior: Committer+test-harness PR #35/#36/#37 MERGED; Librarian 5-phase build COMPLETE.)
+
+---
+
+## 🔨 TEST-HARNESS EXPANSION (IN PROGRESS, 2026-06-20)
+
+**Worktree:** `.claude/worktrees/test-harness-expansion`, branch `worktree-test-harness-expansion` (off main @ `7d5918a4`; own venv, env-parity 173 pkgs). Plan: `docs/plans/2026-06-20-test-harness-expansion-build-plan.md`. SDD ledger: `.git/worktrees/test-harness-expansion/sdd/progress.md` (authoritative per-task progress). Mode: subagent-driven-development, one implementer at a time (shared tree), opus review on P1/P2/P3/P6 + sonnet on P4/P5.
+
+### Open contracts
+- **Baseline:** full suite **2491 passed** @ `1fae97da` (fresh, not hardcoded). chore `1fae97da` = gitignore .claude/worktrees/.
+- **P1 (e2e deposit→commit→read) — DONE.** Commit `3e048e53`. Opus Approved (A+B PASS; 3 mutations confirmed RED→GREEN). Suite 2493.
+- **P2 (T6 32/32 positive lint coverage) — DONE.** Commits `f02fe244`..`22f33f08` (review clean after 1 fix round). Opus BLOCKed round-1 (4 LLM checks lazily xfailed despite injectable `run(client=)` seam); fix wired plain-class `_StubClient` driving all 4 real producers, 0 xfail; re-review Approved. Suite 2521. 2 real production defects backlogged (citation-chains/long-slugs registry-slug-vs-emitted mismatch — meta-gate working).
+- **P3 (concurrent same-slug race in soak) — DONE.** Commits `755579da`..`341013d2` (review clean after 1 fix round). Opus BLOCKed round-1 (single-threaded `run_worker` serialized the race — Critical); fix = 3 concurrent `drain_once` drainers (mirror S1), genuine CAS contention; re-review Approved (20-trial probe confirmed `contradictory-edit` dead-letter under real contention). Suite 2523.
+- **P4 (Hypothesis property tests) — DONE.** Commits `39f15b9f`..`2176a719` (review clean after 1 fix round). `hypothesis>=6.0` in `[dev]`. Sonnet Approved-with-Important round-1 (property 3 disguised parametrize, 5 examples); fix widened to titles×n_rounds → 150 genuine examples; re-review Approved (per-intent-id fencing invariant faithful — implementer's source pushback correct). Coordinator-verified full suite **2526**.
+- **P5 (pre-push gate hook) — DONE.** Commit `61f40400`. `scripts/pre-push` propagates gate exit (set -euo pipefail + terminal eval); 5 tests both directions + teeth-verified inert-hook negative control via GATE_CMD stub; docs in CLAUDE.md + playbook B6. Sonnet Approved (1 Minor → fix-wave).
+- **P6 (commit-worker trace mode — privileged committer, ONLY prod-code task) — DONE.** Commit `ec09c1b8`. `run_worker` gains `sink=None`; emits per-intent `DrainResult` trace (intent_id/disposition/reason) at the previously-discarded site; `drain_once` byte-unchanged; CLI `commit-worker --verbose`. Opus Approved (mutation-confirmed default-off byte-identical + real-reason-from-DrainResult). Security **SHIP IT 0 HIGH** (pure observability, privilege boundary unchanged, ephemeral stdout, body never leaks; 1 LOW theoretical no-action). Suite 2533.
+- **ALL 6 TASKS DONE.** Whole-branch opus review **READY TO MERGE** (no new Critical/Important; cross-task coherence clean; meta-gate teeth re-confirmed by reviewer mutation; all 6 Minors defer-safe). Pre-flight gate PASSED @ `ec09c1b8`. Fix-wave `3c2a44a7` cleaned 4 defer-safe Minors (P2 stale comment, P3 unused import, P5 dangling installer ref, P6 DRY emit helper — behavior-preserving). Binding exit gate on `3c2a44a7` → then push branch + PR to main (user merges).
+
+### Files mid-edit
+- None. All P1–P6 + fix-wave commits clean on the worktree branch (`7d5918a4..3c2a44a7`). This session-state commit rides into the PR (Phase-3/5 precedent).
+
+### Decisions made this session
+- Worktree gets its OWN venv (editable install resolves `gateway` to worktree src) so P6's source edits are testable in isolation — main's venv points at main's src.
+- Backlog-not-fix for P2's 2 slug-mismatch defects + 4 LLM-dependent checks (production lint changes are out of P2's test-only scope).
+
+### Rejected approaches this session
+- Using main's venv from the worktree (rejected): its editable install points at main's src, so P6's source edits would be invisible — built a dedicated worktree venv instead.
+- run_worker(once=True) for the P3 same-slug contention test (rejected, was the BLOCKed round-1): single-threaded sequential drain serializes the race; replaced with concurrent drain_once drainers (the brief's Step-1 wording was the plan defect — higher-bar Global Constraint governs).
+
+### Plan defects (for session-review / playbook B2)
+- P3 brief Step 1 said "via run_worker" — internally inconsistent with the plan's own "drive the REAL producer, not serialized" bar. run_worker is a single-threaded drainer; same-slug intents never contend. Caught by opus review instrumenting the outcome distribution. Lesson: when a plan step names a drain mechanism, verify it actually produces the contention the task is testing.
+
+### Next atomic step
+Confirm binding exit gate green on `3c2a44a7`, then: commit this session-state, push `worktree-test-harness-expansion`, open PR to main (user merges — never reconcile locally on the shared tree). Post-merge: /session-review → fold the P3 plan-defect lesson into MULTI-AGENT-BUILD-PLAYBOOK B2; the 2 slug-mismatch backlog docs (citation-chains, long-slugs) + P2 LLM-coverage stay open under docs/backlog/ until their triggers fire.
 
 ---
 
