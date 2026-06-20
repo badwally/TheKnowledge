@@ -159,6 +159,22 @@ Every merge to `main` must pass the pre-merge gate (Part B6 of the playbook):
 
 Runs in sequence and exits non-zero on the first failure: full suite → fast tiers → retrieval eval (recall@10 ≥ 0.90) → merge-map eval (no regressions) → embedding eval (all namespaces pass) → scoped lints at baseline. Floor-check logic lives in `src/gateway/scripts/gate.py`; unit tests in `tests/test_gate_script.py`.
 
+### Hook install (one-time, after cloning)
+
+The gate is wired into `scripts/pre-push`. Hooks are not version-controlled; install once per clone:
+
+```bash
+ln -sf "$(pwd)/scripts/pre-push" .git/hooks/pre-push
+```
+
+After install, every `git push` runs the full gate automatically. To run evals + lints only (skip the full suite — safe when you already ran it in the same session):
+
+```bash
+scripts/pre-push --skip-suite
+```
+
+CI always runs the full gate (no `--skip-suite`). Do not skip the gate for "minor" changes — a gate that always exits 0 is inert (hunt #1).
+
 ## Session-state discipline
 
 `docs/session-state.md` is load-bearing. It records open contracts, in-flight edits, session decisions, and the next atomic step across context compactions and session boundaries.

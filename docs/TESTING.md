@@ -44,7 +44,7 @@ Always use `.venv/bin/python -m pytest` — never the system `python`. The syste
 | T3 | `slow` + `integration` | Soak / concurrency tests |
 | T4 | `e2e` | CLI and MCP end-to-end round-trips |
 | T5 | _(eval gate, separate)_ | Retrieval eval — run via `wiki eval-retrieval` |
-| T6 | `unit` / `integration` | Property-based tests (Hypothesis) |
+| T6 | `unit` | Property-based tests (Hypothesis) — `tests/gateway/test_property_invariants.py`; parametrized tests in the existing suite are T1. |
 
 ## Eval floor
 

@@ -21,14 +21,18 @@ Taxonomy source of truth:
 
 from __future__ import annotations
 
+import json
+import sqlite3
 import subprocess
 from pathlib import Path
 
+import numpy as np
 import pytest
+import yaml
 
 from gateway import frontmatter as fm, paths, provenance
 from gateway.commit_gate import AuthoredIntent, CommitGate
-from gateway.embedding_index import EmbeddingIndex
+from gateway.embedding_index import EmbeddingIndex, LexicalFallbackEncoder
 from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
 from gateway.ops import lint as lint_op
 
@@ -187,6 +191,9 @@ def test_lint_check_fires_on_real_signal(slug, runner, kb_root, monkeypatch):
         f"{slug}: run() must return list[LintFinding], got {type(findings_clean)}"
     )
     # Assert that all findings carry the correct check slug (no cross-contamination).
+    # Latent tripwire: this correctly goes RED once any check emits a finding whose
+    # .check field mismatches its registry slug (e.g., citation-chains or long-slugs
+    # if they fire on real data with a mis-wired slug) — that is intended behavior.
     for f in findings_clean:
         assert f.check == slug, (
             f"{slug}: finding.check={f.check!r} — runner emitted a finding "
@@ -1025,4 +1032,1426 @@ def test_policy_edit_op_has_apply_branch(kb_root, monkeypatch):
            "unknown reversal_type" not in error_text.lower(), (
         f"policy-edit op fell through to unknown-op dead-letter — hunt #1 defect; "
         f"result={result}"
+    )
+
+
+# ===========================================================================
+# Step 1 (continued): Positive-signal cases for the remaining 26 lint checks
+# ===========================================================================
+# Each test below drives the REAL on-disk condition a check reads.
+# LLM-driven checks (contradictions, missing-pages, filter-calibration,
+# stale-claims WARNING mode) and the fragmentation check are covered by
+# deterministic, non-xfail tests: LLM transport is stubbed via the
+# injectable `run(client=...)` seam (_StubClient), so the real
+# disk-gather → prompt-build → parse → finding path runs without a live
+# subprocess. Fragmentation is driven by a real embedding-DB write.
+# The "every KNOWN_CHECKS slug has a positive case" guard at the bottom
+# is derived from the LIVE registry (_CHECKS), not a frozen list.
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# Helper: write a minimal wiki/sources/<id>.md page
+# ---------------------------------------------------------------------------
+
+
+def _seed_wiki_source_page(
+    root: Path,
+    source_id: str,
+    *,
+    domains: list[str] | None = None,
+    confidence: str | None = None,
+    extra_front: dict | None = None,
+) -> Path:
+    """Write a minimal wiki/sources/<id>.md page (producer: gate deposit path)."""
+    d = root / "wiki" / "sources"
+    d.mkdir(parents=True, exist_ok=True)
+    front: dict = {
+        "type": "source",
+        "source_id": source_id,
+        "source_type": "web",
+        "title": f"Test source {source_id}",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "domains": domains or [],
+    }
+    if confidence is not None:
+        front["confidence"] = confidence
+    if extra_front:
+        front.update(extra_front)
+    p = d / f"{source_id}.md"
+    p.write_text(fm.serialize(front, "Source summary.\n"))
+    return p
+
+
+# ---------------------------------------------------------------------------
+# stale-drafts
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_stale_drafts_fires_on_old_draft(kb_root):
+    """stale-drafts fires on a wiki page with draft:true older than 7 days.
+
+    Producer: _seed_wiki_concept() writes real wiki/concepts/<slug>.md with
+    draft:true and a draft_started_at in the past — the same frontmatter
+    shape the gate writes after a draft deposit.
+    """
+    from gateway.lint import stale_drafts
+
+    assert stale_drafts.run() == []
+
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "concept",
+        "slug": "old-draft-concept",
+        "canonical_name": "Old Draft Concept",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "draft": True,
+        "draft_started_at": "2025-01-01T00:00:00Z",  # 17+ months old → well over 7 days
+        "draft_unresolved_claims": 3,
+    }
+    (d / "old-draft-concept.md").write_text(fm.serialize(front, "## Claims\n\nDraft body.\n"))
+
+    findings = stale_drafts.run()
+    assert any(f.check == "stale-drafts" for f in findings), (
+        "stale-drafts: a wiki concept with draft:true older than 7 days must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# stale-claims (deterministic mode — no LLM)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_stale_claims_fires_on_two_academic_sources_with_gap(kb_root):
+    """stale-claims (deterministic mode) fires when a wiki page cites an older
+    arxiv source and a newer same-domain arxiv source exists (≥3 year gap).
+
+    Producer: two raw/arxiv/<id>.md sources (via _seed_source with source_type='arxiv')
+    and a concept page citing the older one via [[sources/<old-id>]]. The deterministic
+    mode emits an INFO finding per domain without an LLM call.
+    """
+    from gateway.lint import stale_claims
+
+    assert stale_claims.run() == []
+
+    # Older arxiv source: published 2020.
+    old_src_dir = kb_root / "raw" / "arxiv"
+    old_src_dir.mkdir(parents=True, exist_ok=True)
+    old_front = {
+        "id": "arxiv-old-2020",
+        "type": "arxiv",
+        "title": "Old Study 2020",
+        "url": "https://arxiv.org/abs/2020.00001",
+        "authors": ["Author A"],
+        "published_at": "2020-06-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "aaa111",
+        "domains": ["sc-domain"],
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+    }
+    (old_src_dir / "arxiv-old-2020.md").write_text(
+        fm.serialize(old_front, "Old study body with findings.\n")
+    )
+
+    # Newer arxiv source: published 2024 (≥3 year gap).
+    new_front = {
+        "id": "arxiv-new-2024",
+        "type": "arxiv",
+        "title": "Newer Study 2024",
+        "url": "https://arxiv.org/abs/2024.00001",
+        "authors": ["Author B"],
+        "published_at": "2024-06-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "bbb222",
+        "domains": ["sc-domain"],
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+    }
+    (old_src_dir / "arxiv-new-2024.md").write_text(
+        fm.serialize(new_front, "Newer study body with better findings.\n")
+    )
+
+    # Wiki concept page citing the OLD source: constitutes a stale claim candidate.
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    concept_front = {
+        "type": "concept",
+        "slug": "stale-concept",
+        "canonical_name": "Stale Concept",
+        "domains": ["sc-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    # A claim sentence (≥5 words) citing the older source.
+    body = "## Key claims\n\nThe intervention shows a significant effect. [[sources/arxiv-old-2020]]\n"
+    (d / "stale-concept.md").write_text(fm.serialize(concept_front, body))
+
+    findings = stale_claims.run()
+    assert any(f.check == "stale-claims" for f in findings), (
+        "stale-claims (deterministic): with a concept citing an older arxiv source "
+        "and a newer same-domain arxiv source ≥3 years later, must emit INFO finding; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# citation-density
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_citation_density_fires_on_undercited_concept(kb_root):
+    """citation-density fires when a concept page's cited-claim ratio < 0.6.
+
+    Producer: _seed_wiki_concept() writes a concept page with plain claim
+    sentences and no [[sources/...]] links → ratio = 0.0.
+    """
+    from gateway.lint import citation_density
+
+    assert citation_density.run() == []
+
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "concept",
+        "slug": "undercited-concept",
+        "canonical_name": "Undercited Concept",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    # Three claim sentences (≥5 words each, ending in period), none cited.
+    body = (
+        "## Key claims\n\n"
+        "This intervention reduces the primary outcome significantly.\n"
+        "The effect size is large and clinically meaningful.\n"
+        "Long-term follow-up confirms durable benefit.\n"
+    )
+    (d / "undercited-concept.md").write_text(fm.serialize(front, body))
+
+    findings = citation_density.run()
+    assert any(f.check == "citation-density" for f in findings), (
+        "citation-density: concept with 0/3 cited claims must flag below 0.6 threshold; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# citation-chains (dangling synthesizes ref)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_citation_chains_fires_on_dangling_synthesizes_ref(kb_root):
+    """citation-chains fires when a synthesis page's synthesizes: entry does not exist.
+
+    Producer: write a synthesis page with synthesizes: pointing to a missing target.
+    The check (citation_chains.run()) emits findings with check='dangling-synthesizes-ref',
+    not 'citation-chains'. This mismatch is a registry defect tracked at
+    docs/backlog/librarian-citation-chains-slug-mismatch.md.
+    """
+    from gateway.lint import citation_chains
+
+    assert citation_chains.run() == []
+
+    syn_dir = kb_root / "wiki" / "synthesis"
+    syn_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "synthesis",
+        "slug": "dangling-synth",
+        "title": "Dangling Synthesis",
+        "domains": ["test-domain"],
+        "question": "Does X cause Y?",
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "sources_count": 1,
+        # Points to a sources/ entry that does not exist on disk.
+        "synthesizes": ["sources/ghost-source-abc"],
+    }
+    body = (
+        "## Synthesis\n\nBased on the evidence.\n\n"
+        "## Sources cited\n\n- [[sources/ghost-source-abc]]\n\n"
+        "## Included works\n\n- [[sources/ghost-source-abc]]\n"
+    )
+    (syn_dir / "dangling-synth.md").write_text(fm.serialize(front, body))
+
+    findings = citation_chains.run()
+    # The module emits check='dangling-synthesizes-ref' (not 'citation-chains').
+    # This is a real on-disk condition; the slug mismatch is the discovered defect.
+    assert any(f.check == "dangling-synthesizes-ref" for f in findings), (
+        "citation-chains: synthesis with synthesizes: pointing to a missing source "
+        "must emit a dangling-synthesizes-ref finding; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# inbox-pending
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_inbox_pending_fires_on_file_in_inbox(kb_root):
+    """inbox-pending fires when a .md file is in raw/inbox/.
+
+    Producer: write a markdown file directly to raw/inbox/ — simulating a
+    source that arrived via the inbox converter but has not been routed.
+    """
+    from gateway.lint import inbox_pending
+
+    assert inbox_pending.run() == []
+
+    inbox_dir = kb_root / "raw" / "inbox"
+    inbox_dir.mkdir(parents=True, exist_ok=True)
+    (inbox_dir / "pending-clip.md").write_text("---\ntitle: Clip\n---\nBody.\n")
+
+    findings = inbox_pending.run()
+    assert any(f.check == "inbox-pending" for f in findings), (
+        "inbox-pending: a .md file in raw/inbox/ must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# nlm-pending
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_nlm_pending_fires_on_eligible_unsynced_source(kb_root):
+    """nlm-pending fires when a raw source is eligible for a domain corpus
+    but its nlm_corpus_ids does not include the notebook_id.
+
+    Producer: write nlm/notebooks.yaml (the real NLM registry) with a
+    domain entry, then write a raw source with filter.score ≥ threshold
+    and no nlm_corpus_ids entry for that notebook.
+    """
+    from gateway.lint import nlm_pending
+
+    assert nlm_pending.run() == []
+
+    # Write the real NLM registry (nlm/notebooks.yaml).
+    # The registry loader looks under the top-level 'notebooks:' key
+    # (nlm_registry._load_records: data.get("notebooks", {})).
+    nlm_dir = kb_root / "nlm"
+    nlm_dir.mkdir(parents=True, exist_ok=True)
+    (nlm_dir / "notebooks.yaml").write_text(
+        "notebooks:\n"
+        "  nlm-test-domain:\n"
+        "    notebook_id: nb-test-001\n"
+        "    created_at: '2026-01-01'\n"
+        "    sources_count: 0\n"
+    )
+
+    # Write a raw source with filter.score >= 0.7 in the nlm-test-domain,
+    # but nlm_corpus_ids does NOT include nb-test-001.
+    src_dir = kb_root / "raw" / "web"
+    src_dir.mkdir(parents=True, exist_ok=True)
+    src_front = {
+        "id": "web-nlm-eligible",
+        "type": "web",
+        "title": "NLM-eligible source",
+        "url": "https://example.com/eligible",
+        "authors": [],
+        "published_at": "2026-01-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "ccc333",
+        "domains": ["nlm-test-domain"],
+        "filter": {"score": 0.85, "decision": "include"},
+        "nlm_corpus_ids": [],  # not synced yet
+        "wiki_pages": [],
+        "meta": {},
+    }
+    (src_dir / "web-nlm-eligible.md").write_text(
+        fm.serialize(src_front, "Eligible source body.\n")
+    )
+
+    findings = nlm_pending.run()
+    assert any(f.check == "nlm-pending" for f in findings), (
+        "nlm-pending: a source with score ≥ threshold not in nlm_corpus_ids must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# untagged-sources
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_untagged_sources_fires_on_domainless_source_page(kb_root):
+    """untagged-sources fires when a wiki/sources/ page has no domains: tag.
+
+    Producer: write a wiki/sources/<id>.md with empty domains: — exactly
+    the shape the gate writes for untagged deposit results.
+    """
+    from gateway.lint import untagged_sources
+
+    assert untagged_sources.run() == []
+
+    _seed_wiki_source_page(kb_root, "untagged-src-001", domains=[])
+
+    findings = untagged_sources.run()
+    assert any(f.check == "untagged-sources" for f in findings), (
+        "untagged-sources: a wiki/sources page with no domains must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# idempotency
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_idempotency_fires_on_registry_entry_with_no_policy(kb_root):
+    """idempotency fires when a domain is in nlm/notebooks.yaml but lacks a policy.
+
+    Producer: write nlm/notebooks.yaml with a domain entry but do NOT write
+    the corresponding .knowledge/policies/<domain>/policy.yaml. This is the
+    'no-policy' idempotency variant.
+    """
+    from gateway.lint import idempotency
+
+    assert idempotency.run() == []
+
+    # Registry loader expects top-level 'notebooks:' key.
+    nlm_dir = kb_root / "nlm"
+    nlm_dir.mkdir(parents=True, exist_ok=True)
+    (nlm_dir / "notebooks.yaml").write_text(
+        "notebooks:\n"
+        "  no-policy-domain:\n"
+        "    notebook_id: nb-orphan-001\n"
+        "    created_at: '2026-01-01'\n"
+        "    sources_count: 0\n"
+    )
+    # Intentionally do NOT create .knowledge/policies/no-policy-domain/policy.yaml.
+
+    findings = idempotency.run()
+    assert any(f.check == "idempotency" for f in findings), (
+        "idempotency: a domain in nlm/notebooks.yaml with no policy file must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# long-slugs
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_long_slugs_fires_on_grandfathered_oversized_slug(kb_root):
+    """long-slugs fires on a wiki page whose slug exceeds 80 characters.
+
+    Producer: write a wiki/concepts/<slug>.md with a slug > 80 chars.
+    Note: the module (long_slugs.run) emits findings with check='slug-too-long',
+    not 'long-slugs'. This slug mismatch is a real registry defect — the
+    parametrized negative control (empty repo) never catches it because
+    the empty repo produces no findings. Tracked at
+    docs/backlog/librarian-long-slugs-slug-mismatch.md.
+    """
+    from gateway.lint import long_slugs
+
+    assert long_slugs.run() == []
+
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    oversized_slug = "a-very-long-slug-that-exceeds-the-eighty-character-limit-set-by-ont-8-for-wiki-pages"
+    assert len(oversized_slug) > 80
+    front = {
+        "type": "concept",
+        "slug": oversized_slug,
+        "canonical_name": "Long Slug Concept",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    (d / f"{oversized_slug[:80]}.md").write_text(
+        fm.serialize(front, "## Key claims\n\nBody.\n")
+    )
+
+    findings = long_slugs.run()
+    # The module emits check='slug-too-long' (not 'long-slugs'): registry slug mismatch.
+    assert any(f.check == "slug-too-long" and "slug" in f.message.lower() for f in findings), (
+        "long-slugs: a page with slug > 80 chars must produce a finding; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# contradiction-pages
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_contradiction_pages_fires_on_open_major_contradiction(kb_root):
+    """contradiction-pages fires on an open+major wiki/contradictions/*.md page.
+
+    Producer: write a wiki/contradictions/<slug>.md with status:open and
+    severity:major — the same format the gate writes for contradiction pages.
+    """
+    from gateway.lint import contradiction_pages
+
+    assert contradiction_pages.run() == []
+
+    contra_dir = kb_root / "wiki" / "contradictions"
+    contra_dir.mkdir(parents=True, exist_ok=True)
+    content = (
+        "---\n"
+        "type: contradiction\n"
+        "slug: open-major-conflict\n"
+        "parties:\n"
+        "  - wiki/concepts/concept-a\n"
+        "  - wiki/concepts/concept-b\n"
+        "severity: major\n"
+        "status: open\n"
+        "---\n"
+        "## Summary\n\nTwo concepts contradict each other.\n"
+    )
+    (contra_dir / "open-major-conflict.md").write_text(content)
+
+    findings = contradiction_pages.run()
+    assert any(f.check == "contradiction-pages" for f in findings), (
+        "contradiction-pages: an open+major contradiction page must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# synthesizes-coverage
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_synthesizes_coverage_fires_on_synthesis_without_synthesizes(kb_root):
+    """synthesizes-coverage fires when a synthesis page lacks synthesizes: frontmatter.
+
+    Producer: write a wiki/synthesis/<slug>.md with no synthesizes: field.
+    """
+    from gateway.lint import synthesizes_coverage
+
+    assert synthesizes_coverage.run() == []
+
+    syn_dir = kb_root / "wiki" / "synthesis"
+    syn_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "synthesis",
+        "slug": "no-synthesizes",
+        "title": "Missing synthesizes field",
+        "domains": ["test-domain"],
+        "question": "Does X cause Y?",
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "sources_count": 0,
+        # deliberately omit synthesizes:
+    }
+    (syn_dir / "no-synthesizes.md").write_text(
+        fm.serialize(front, "## Synthesis\n\nBody.\n\n## Sources cited\n\nNone.\n")
+    )
+
+    findings = synthesizes_coverage.run()
+    assert any(f.check == "synthesizes-coverage" for f in findings), (
+        "synthesizes-coverage: synthesis page without synthesizes: must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# stale-verified
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_stale_verified_fires_on_statute_without_last_verified_at(kb_root):
+    """stale-verified fires when a statute entity page lacks last_verified_at.
+
+    Producer: write a wiki/entities/<slug>.md with entity_kind:statute and
+    no last_verified_at field.
+    """
+    from gateway.lint import stale_verified
+
+    assert stale_verified.run() == []
+
+    entity_dir = kb_root / "wiki" / "entities"
+    entity_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "entity",
+        "slug": "unverified-statute",
+        "canonical_name": "Unverified Statute",
+        "entity_kind": "statute",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        # deliberately omit last_verified_at
+    }
+    (entity_dir / "unverified-statute.md").write_text(
+        fm.serialize(front, "## Summary\n\nA statute.\n\n## Key facts\n\nFact.\n\n## Sources\n\n## Related\n\n")
+    )
+
+    findings = stale_verified.run()
+    assert any(f.check == "stale-verified" for f in findings), (
+        "stale-verified: statute entity missing last_verified_at must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# domain-purity
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_domain_purity_fires_on_source_tagged_to_multiple_blessed_domains(kb_root):
+    """domain-purity fires when a wiki/sources page is tagged to multiple blessed domains.
+
+    Producer: write two policy.yaml files (establishing two blessed domains), then
+    write a wiki/sources/<id>.md tagged to both. This mirrors the cross-domain
+    contamination the check guards against.
+    """
+    from gateway.lint import domain_purity
+
+    assert domain_purity.run() == []
+
+    # Establish two blessed domains (real policy.yaml files in .knowledge/policies/).
+    for domain in ("dom-alpha", "dom-beta"):
+        pol_dir = kb_root / ".knowledge" / "policies" / domain
+        pol_dir.mkdir(parents=True, exist_ok=True)
+        (pol_dir / "policy.yaml").write_text(yaml.dump({
+            "domain": {"slug": domain, "name": domain.title()},
+            "filter": {"threshold_include": 0.7, "threshold_exclude": 0.3},
+            "version": 1,
+        }))
+
+    # Write a wiki/sources page tagged to BOTH blessed domains.
+    _seed_wiki_source_page(
+        kb_root, "cross-domain-src", domains=["dom-alpha", "dom-beta"]
+    )
+
+    findings = domain_purity.run()
+    assert any(f.check == "domain-purity" for f in findings), (
+        "domain-purity: source tagged to 2 blessed domains must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# link-rot
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_link_rot_fires_on_dead_web_source(kb_root):
+    """link-rot fires when a raw/web source has link_status:dead.
+
+    Producer: write raw/web/<id>.md with link_status:dead — the same
+    frontmatter field the link-checker writes after detecting a dead URL.
+    """
+    from gateway.lint import link_rot
+
+    assert link_rot.run() == []
+
+    src_dir = kb_root / "raw" / "web"
+    src_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "id": "dead-link-src",
+        "type": "web",
+        "title": "Dead Link Source",
+        "url": "https://example.com/gone",
+        "authors": [],
+        "published_at": "2026-01-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "ddd444",
+        "domains": ["test-domain"],
+        "link_status": "dead",
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+    }
+    (src_dir / "dead-link-src.md").write_text(
+        fm.serialize(front, "Source body.\n")
+    )
+
+    findings = link_rot.run()
+    assert any(f.check == "link-rot" for f in findings), (
+        "link-rot: raw/web source with link_status:dead must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# superseded-citations
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_superseded_citations_fires_on_wiki_citing_superseded_source(kb_root):
+    """superseded-citations fires when a wiki page cites a source marked superseded_by.
+
+    Producer: write raw/web/<old-id>.md with superseded_by:<new-id>, then write
+    a wiki concept page with [[sources/<old-id>]]. This mirrors the update path
+    when a source is superseded by a newer version.
+    """
+    from gateway.lint import superseded_citations
+
+    assert superseded_citations.run() == []
+
+    # Write the superseded raw source.
+    src_dir = kb_root / "raw" / "web"
+    src_dir.mkdir(parents=True, exist_ok=True)
+    old_front = {
+        "id": "old-src-v1",
+        "type": "web",
+        "title": "Old Source v1",
+        "url": "https://example.com/old",
+        "authors": [],
+        "published_at": "2020-01-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "eee555",
+        "domains": ["test-domain"],
+        "superseded_by": "new-src-v2",  # this source has been superseded
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+    }
+    (src_dir / "old-src-v1.md").write_text(fm.serialize(old_front, "Old source body.\n"))
+
+    # Write a wiki concept page that cites the superseded source.
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    concept_front = {
+        "type": "concept",
+        "slug": "citing-superseded",
+        "canonical_name": "Citing Superseded",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    body = "## Key claims\n\nSome claim [[sources/old-src-v1]].\n"
+    (d / "citing-superseded.md").write_text(fm.serialize(concept_front, body))
+
+    findings = superseded_citations.run()
+    assert any(f.check == "superseded-citations" for f in findings), (
+        "superseded-citations: wiki page citing a superseded source must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# paper-canonical-source
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_paper_canonical_source_fires_on_paper_entity_without_canonical(kb_root):
+    """paper-canonical-source fires on an entity page with entity_kind:paper
+    that lacks a canonical_source field.
+
+    Producer: write a wiki/entities/<slug>.md with entity_kind:paper and no
+    canonical_source — the gap this check guards against.
+    """
+    from gateway.lint import paper_canonical_source
+
+    assert paper_canonical_source.run() == []
+
+    entity_dir = kb_root / "wiki" / "entities"
+    entity_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "entity",
+        "slug": "paper-no-canonical",
+        "canonical_name": "Paper No Canonical",
+        "entity_kind": "paper",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        # deliberately omit canonical_source
+    }
+    (entity_dir / "paper-no-canonical.md").write_text(
+        fm.serialize(
+            front,
+            "## Summary\n\nA paper.\n\n## Key facts\n\nFact.\n\n## Sources\n\n## Related\n\n",
+        )
+    )
+
+    findings = paper_canonical_source.run()
+    assert any(f.check == "paper-canonical-source" for f in findings), (
+        "paper-canonical-source: paper entity without canonical_source must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# confidence-distribution
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_confidence_distribution_fires_on_any_annotated_concept(kb_root):
+    """confidence-distribution emits an INFO finding per domain when concept
+    pages exist, regardless of annotation status.
+
+    Producer: write a wiki/concepts/<slug>.md with a domains: tag. The check
+    emits INFO per domain — this confirms the check is not inert on a
+    populated wiki.
+    """
+    from gateway.lint import claim_confidence
+
+    assert claim_confidence.run_distribution() == []
+
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "concept",
+        "slug": "distribution-concept",
+        "canonical_name": "Distribution Concept",
+        "domains": ["cd-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "confidence": "established",
+    }
+    (d / "distribution-concept.md").write_text(
+        fm.serialize(front, "## Key claims\n\nA claim.\n")
+    )
+
+    findings = claim_confidence.run_distribution()
+    assert any(f.check == "confidence-distribution" for f in findings), (
+        "confidence-distribution: any concept page must trigger a per-domain INFO finding; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# confidence-propagation
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_confidence_propagation_fires_on_overconfident_synthesis(kb_root):
+    """confidence-propagation fires when a synthesis page's confidence is
+    stronger than its weakest cited source's confidence warrants.
+
+    Producer:
+    - wiki/sources/<id>.md with confidence:speculative (the source wiki page)
+    - wiki/synthesis/<slug>.md with synthesizes:[sources/<id>] and confidence:established
+    The check fires when synthesis rank (0=established) < source rank (2=speculative).
+    """
+    from gateway.lint import claim_confidence
+
+    assert claim_confidence.run_propagation() == []
+
+    # Source wiki page with speculative confidence.
+    _seed_wiki_source_page(
+        kb_root, "speculative-src-001",
+        domains=["cp-domain"],
+        confidence="speculative",
+    )
+
+    # Synthesis page citing that source with established (overconfident) confidence.
+    syn_dir = kb_root / "wiki" / "synthesis"
+    syn_dir.mkdir(parents=True, exist_ok=True)
+    syn_front = {
+        "type": "synthesis",
+        "slug": "overconfident-synth",
+        "title": "Overconfident Synthesis",
+        "domains": ["cp-domain"],
+        "question": "Does X cause Y?",
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "sources_count": 1,
+        "synthesizes": ["sources/speculative-src-001"],
+        "confidence": "established",  # stronger than the source warrants
+    }
+    body = (
+        "## Synthesis\n\nSome finding.\n\n"
+        "## Included works\n\n- [[sources/speculative-src-001]]\n\n"
+        "## Sources cited\n\n- [[sources/speculative-src-001]]\n"
+    )
+    (syn_dir / "overconfident-synth.md").write_text(fm.serialize(syn_front, body))
+
+    findings = claim_confidence.run_propagation()
+    assert any(f.check == "confidence-propagation" for f in findings), (
+        "confidence-propagation: synthesis with established confidence citing a "
+        "speculative source must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# tags-invalid-type
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_tags_invalid_type_fires_on_scalar_string_tags(kb_root):
+    """tags-invalid-type fires when a wiki page's tags: field is a scalar string.
+
+    Producer: write a wiki/concepts/<slug>.md with tags as a plain string
+    instead of a list[str] — the shape that a manual edit might produce.
+    """
+    from gateway.lint import invalid_tags
+
+    assert invalid_tags.run() == []
+
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    # Write raw YAML so the tags field is a scalar string (not a list).
+    content = (
+        "---\n"
+        "type: concept\n"
+        "slug: bad-tags-concept\n"
+        "canonical_name: Bad Tags Concept\n"
+        "domains:\n"
+        "  - test-domain\n"
+        "created_at: 2026-01-01T00:00:00Z\n"
+        "last_updated: 2026-01-01T00:00:00Z\n"
+        "tags: not-a-list\n"  # scalar string instead of list[str]
+        "---\n"
+        "## Key claims\n\nBody.\n"
+    )
+    (d / "bad-tags-concept.md").write_text(content)
+
+    findings = invalid_tags.run()
+    assert any(f.check == "tags-invalid-type" for f in findings), (
+        "tags-invalid-type: concept page with tags as scalar string must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# open-questions
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_open_questions_fires_on_open_question_page(kb_root):
+    """open-questions fires on a wiki question page with status:open.
+
+    Producer: write a wiki/questions/<slug>.md with type:question and status:open.
+    """
+    from gateway.lint import unanswered_questions
+
+    assert unanswered_questions.run_open_questions() == []
+
+    q_dir = kb_root / "wiki" / "questions"
+    q_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "question",
+        "slug": "open-q-001",
+        "title": "Does X cause Y in adults?",
+        "domains": ["test-domain"],
+        "status": "open",
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    (q_dir / "open-q-001.md").write_text(
+        fm.serialize(front, "## Question\n\nDoes X cause Y?\n\n## Context\n\nBackground.\n")
+    )
+
+    findings = unanswered_questions.run_open_questions()
+    assert any(f.check == "open-questions" for f in findings), (
+        "open-questions: a question page with status:open must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# answered-no-synthesis
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_answered_no_synthesis_fires_on_answered_question_without_link(kb_root):
+    """answered-no-synthesis fires on an answered question page with no synthesis:.
+
+    Producer: write a wiki/questions/<slug>.md with type:question, status:answered,
+    and no synthesis: field.
+    """
+    from gateway.lint import unanswered_questions
+
+    assert unanswered_questions.run_answered_no_synthesis() == []
+
+    q_dir = kb_root / "wiki" / "questions"
+    q_dir.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "question",
+        "slug": "answered-no-synth-q",
+        "title": "Does Y affect Z?",
+        "domains": ["test-domain"],
+        "status": "answered",
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        # deliberately omit synthesis:
+    }
+    (q_dir / "answered-no-synth-q.md").write_text(
+        fm.serialize(front, "## Question\n\nDoes Y affect Z?\n\n## Context\n\nBackground.\n")
+    )
+
+    findings = unanswered_questions.run_answered_no_synthesis()
+    assert any(f.check == "answered-no-synthesis" for f in findings), (
+        "answered-no-synthesis: answered question with no synthesis: must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# fragmentation (embedding DB required)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_fragmentation_fires_on_near_duplicate_entity_vectors(kb_root):
+    """fragmentation fires when the entity embedding namespace contains two
+    near-identical concept/entity vectors (cosine distance ≤ entity threshold).
+
+    Producer: use LexicalFallbackEncoder (pure-numpy, no LLM) to produce
+    two embeddings for the same text, then write them into the embedding
+    SQLite DB at the path paths.embedding_db_path() reads.
+    The fragmentation check reads the DB directly (raw SQL on the 'entity'
+    namespace), so writing the real DB IS driving the real producer.
+    """
+    from gateway.lint import fragmentation
+    from gateway.embedding_index import LexicalFallbackEncoder, thresholds
+
+    # Negative control: no embedding DB → no findings.
+    assert fragmentation.run() == []
+
+    # Create the embedding DB at the real path the check reads.
+    db_path = paths.embedding_db_path()
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(db_path))
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS vectors (
+            namespace TEXT NOT NULL,
+            key TEXT NOT NULL,
+            dim INTEGER NOT NULL,
+            vec BLOB NOT NULL,
+            model_version TEXT NOT NULL DEFAULT '',
+            PRIMARY KEY (namespace, key)
+        )
+    """)
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_vec_ns ON vectors(namespace)")
+
+    # Use the real lexical encoder to produce two near-identical vectors.
+    encoder = LexicalFallbackEncoder()
+    text = "food noise reward blunting GLP-1 appetite suppression"
+    vecs = encoder.embed([text, text + " dopamine"])  # nearly identical texts
+    for key, vec in [("concept/food-noise", vecs[0]), ("concept/food-noise-v2", vecs[1])]:
+        blob = np.asarray(vec, dtype=np.float32).tobytes()
+        conn.execute(
+            "INSERT OR REPLACE INTO vectors (namespace, key, dim, vec, model_version) "
+            "VALUES (?, ?, ?, ?, ?)",
+            ("entity", key, len(vec), blob, encoder.model_version),
+        )
+    conn.commit()
+    conn.close()
+
+    findings = fragmentation.run()
+    assert any(f.check == "fragmentation" for f in findings), (
+        "fragmentation: two near-identical entity vectors must form a cluster and be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# claim-conservation
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_claim_conservation_fires_when_committed_claim_absent_from_page(kb_root):
+    """claim-conservation fires when a committed intent's payload claim bullet
+    is absent from the canonical wiki page.
+
+    Producer: write a committed intent JSON record at
+    .knowledge/intents/committed/<id>.json — the same path IntentQueue.set_state()
+    writes when the CommitGate commits an intent — and a wiki page that is missing
+    one of the payload's ## Claims bullets.
+    """
+    from gateway.lint import claim_conservation
+
+    assert claim_conservation.run() == []
+
+    # Write a wiki concept page that OMITS the claimed bullet.
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+    canon_front = {
+        "type": "concept",
+        "slug": "missing-claim-concept",
+        "canonical_name": "Missing Claim Concept",
+        "domains": ["test-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    canon_path = d / "missing-claim-concept.md"
+    canon_path.write_text(
+        fm.serialize(canon_front, "## Key claims\n\n- This claim is present.\n")
+    )
+
+    # Write the committed intent record referencing this page.
+    # The payload body has a ## Claims section with a bullet NOT in the canon page.
+    # _parse_claim_bullets looks for `## Claims` (case-insensitive, exact match);
+    # "## Key claims" does NOT match because it contains extra words.
+    committed_dir = kb_root / ".knowledge" / "intents" / "committed"
+    committed_dir.mkdir(parents=True, exist_ok=True)
+    intent_id = "abcd1234ef567890"
+    record = {
+        "intent_id": intent_id,
+        "payload": {
+            "kind": "concept",
+            "target": "wiki/concepts/missing-claim-concept.md",
+            "body": (
+                "## Claims\n"
+                "- This claim is present.\n"
+                "- This claim was lost after merge.\n"  # absent from canon page
+            ),
+        },
+        "identity": {"agent": "tester"},
+        "result": {
+            "canonical_path": str(canon_path),
+        },
+    }
+    (committed_dir / f"{intent_id}.json").write_text(json.dumps(record))
+
+    findings = claim_conservation.run()
+    assert any(f.check == "claim-conservation" for f in findings), (
+        "claim-conservation: committed claim bullet absent from canonical page must be flagged; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# LLM-driven checks: contradictions, missing-pages, filter-calibration,
+# stale-claims WARNING mode
+# ---------------------------------------------------------------------------
+# Each check accepts `client: FilterClient | None = None` — the documented
+# test seam. Injecting a stub client drives the check's real disk-gather →
+# prompt-build → response-parse → finding-construction path deterministically.
+# Only the LLM transport is stubbed; no check logic is bypassed.
+# ---------------------------------------------------------------------------
+
+
+class _StubClient:
+    """Minimal FilterClient stub for LLM-driven lint checks.
+
+    Returns a canned JSON string; the caller configures the exact payload via
+    the `response` constructor argument so each check's real parser runs against
+    a well-formed response that produces a known finding.
+    """
+
+    def __init__(self, response: str) -> None:
+        self._response = response
+
+    def call(self, prompt: str) -> str:
+        return self._response
+
+
+@pytest.mark.integration
+def test_contradictions_fires_with_stub_client(kb_root):
+    """contradictions fires when two concept pages have ≥4 claims and the stub
+    client returns a JSON pair identifying a contradiction.
+
+    Real path exercised: _gather_claims_by_domain() → _build_prompt() →
+    client.call() → _parse_response() → _findings_for_pairs() → LintFinding.
+    Only transport is stubbed (no ClaudeCLIFilterClient invoked).
+    """
+    from gateway.lint import contradictions
+
+    # Seed two concept pages in the same domain with enough claim sentences
+    # (≥4 total, _MIN_CLAIMS_PER_DOMAIN=4) to pass the domain guard.
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+
+    def _concept(slug: str, body: str) -> None:
+        front = {
+            "type": "concept",
+            "slug": slug,
+            "canonical_name": slug.replace("-", " ").title(),
+            "domains": ["ct-domain"],
+            "created_at": "2026-01-01T00:00:00Z",
+            "last_updated": "2026-01-01T00:00:00Z",
+        }
+        (d / f"{slug}.md").write_text(fm.serialize(front, body))
+
+    _concept(
+        "alpha-concept",
+        "## Claims\n\n"
+        "The intervention increases the primary outcome in adults. [[sources/arxiv-1]]\n"
+        "Long-term follow-up confirms the durable effect. [[sources/arxiv-2]]\n",
+    )
+    _concept(
+        "beta-concept",
+        "## Claims\n\n"
+        "The intervention decreases the primary outcome in adults. [[sources/arxiv-3]]\n"
+        "Short-term responses do not persist beyond three months. [[sources/arxiv-4]]\n",
+    )
+
+    # Stub returns a single contradiction between claim 1 (alpha-concept, claim 1)
+    # and claim 3 (beta-concept, claim 1) — both are the 1-indexed positions in
+    # the sorted domain claim list that _build_prompt() constructs.
+    stub = _StubClient('{"contradictions": [{"a": 1, "b": 3, "rationale": "directly opposing claims"}]}')
+
+    findings = contradictions.run(client=stub)
+    assert any(f.check == "contradictions" for f in findings), (
+        "contradictions: stub client returning a valid pair must produce a finding; "
+        f"findings={findings}"
+    )
+
+
+@pytest.mark.integration
+def test_missing_pages_fires_with_stub_client(kb_root):
+    """missing-pages fires when the stub client suggests a term absent from the domain.
+
+    Real path exercised: _gather_by_domain() → _build_prompt() → client.call() →
+    _parse_response() → _findings_for_domain() → LintFinding.
+    Only transport is stubbed.
+    """
+    from gateway.lint import missing_pages
+
+    # Seed a synthesis page so the domain has content to summarise.
+    d = kb_root / "wiki" / "synthesis"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "synthesis",
+        "slug": "mp-synthesis",
+        "title": "Missing Pages Synthesis",
+        "domains": ["mp-domain"],
+        "sources": [],
+        "synthesizes": [],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "draft": False,
+    }
+    (d / "mp-synthesis.md").write_text(
+        fm.serialize(
+            front,
+            "## Synthesis\n\nGLP-1 receptor agonists appear repeatedly in this domain.\n",
+        )
+    )
+
+    # Stub suggests one new concept slug not already in the domain's existing pages.
+    stub = _StubClient(
+        '{"missing": [{"name": "GLP-1 Receptor Agonist", "kind": "concept", '
+        '"slug": "glp1-receptor-agonist", "occurrences_estimate": 5, '
+        '"rationale": "Mentioned in synthesis but lacks a dedicated concept page."}]}'
+    )
+
+    findings = missing_pages.run(client=stub)
+    assert any(f.check == "missing-pages" for f in findings), (
+        "missing-pages: stub client returning a valid suggestion must produce a finding; "
+        f"findings={findings}"
+    )
+
+
+@pytest.mark.integration
+def test_filter_calibration_fires_with_stub_client(kb_root):
+    """filter-calibration fires when the stub client returns a score that
+    deviates from the stored score by more than _OUTLIER_THRESHOLD (0.20).
+
+    Real path exercised: _candidates_by_domain() → load_policy() →
+    _sample() → score() (using stub client) → _findings_for_domain() → LintFinding.
+    Only transport is stubbed (score() falls back to client.call() when
+    call_split / call_split_with_usage are absent on the stub).
+    """
+    from gateway.lint import filter_calibration
+    from gateway import paths
+
+    domain = "fc-domain"
+
+    # Policy file — required by filter_calibration.run() before re-scoring.
+    policy_path = paths.policies_dir() / domain / "policy.yaml"
+    policy_path.parent.mkdir(parents=True, exist_ok=True)
+    policy_path.write_text(
+        f"domain:\n  slug: {domain}\n  topic: Test topic\nversion: v1\n"
+    )
+
+    # Raw source with a stored filter.score; _candidates_by_domain() requires this.
+    raw_dir = kb_root / "raw" / "web"
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    stored_score = 0.90  # stored high
+    source_front = {
+        "id": "web-fc-source",
+        "type": "web",
+        "title": "Filter Calibration Test Source",
+        "url": "https://example.com/fc-source",
+        "authors": [],
+        "published_at": "2026-01-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "fc123",
+        "domains": [domain],
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+        "filter": {
+            "score": stored_score,
+            "policy_version": f"{domain}-v1",
+            "rationale": "High relevance.",
+            "decided_at": "2026-01-01T00:00:00Z",
+            "user_correction": None,
+        },
+    }
+    (raw_dir / "web-fc-source.md").write_text(
+        fm.serialize(source_front, "Source body content for filter calibration.\n")
+    )
+
+    # Stub returns a low score (0.20) — delta vs stored (0.90) is -0.70, above
+    # _OUTLIER_THRESHOLD (0.20), so _findings_for_domain emits a WARNING finding.
+    stub = _StubClient('{"score": 0.20, "rationale": "Relevance lower than original assessment."}')
+
+    findings = filter_calibration.run(sample_size=1, client=stub)
+    assert any(f.check == "filter-calibration" for f in findings), (
+        "filter-calibration: stub returning a divergent score must produce a finding; "
+        f"findings={findings}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# stale-claims WARNING mode (the deterministic INFO mode is covered above)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_stale_claims_warning_mode_fires_with_stub_client(kb_root):
+    """stale-claims WARNING (LLM mode, sample_size>0) fires when the stub client
+    identifies a confirmed supersede.
+
+    Real path exercised: _gather_stale_candidates() (two arxiv sources with a
+    ≥3-year gap plus a wiki page citing the older one) → _build_prompt() →
+    client.call() → _parse_response() → LintFinding(severity=WARNING).
+    Only transport is stubbed.
+    """
+    from gateway.lint import stale_claims
+
+    # Re-create the same two-source on-disk signal used by the INFO-mode test,
+    # so _gather_stale_candidates() populates the domain list.
+    old_src_dir = kb_root / "raw" / "arxiv"
+    old_src_dir.mkdir(parents=True, exist_ok=True)
+
+    def _arxiv(source_id: str, year: str) -> None:
+        front = {
+            "id": source_id,
+            "type": "arxiv",
+            "title": f"Study {year}",
+            "url": f"https://arxiv.org/abs/{source_id}",
+            "authors": ["Author"],
+            "published_at": f"{year}-06-01",
+            "ingested_at": "2026-01-01T00:00:00Z",
+            "content_hash": source_id.replace("-", ""),
+            "domains": ["scw-domain"],
+            "nlm_corpus_ids": [],
+            "wiki_pages": [],
+            "meta": {},
+        }
+        (old_src_dir / f"{source_id}.md").write_text(
+            fm.serialize(front, f"Study body for {source_id}.\n")
+        )
+
+    _arxiv("arxiv-scw-old-2020", "2020")
+    _arxiv("arxiv-scw-new-2024", "2024")
+
+    # Concept page citing the old source — a stale-claim candidate.
+    cw_dir = kb_root / "wiki" / "concepts"
+    cw_dir.mkdir(parents=True, exist_ok=True)
+    cw_front = {
+        "type": "concept",
+        "slug": "scw-concept",
+        "canonical_name": "SCW Concept",
+        "domains": ["scw-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    (cw_dir / "scw-concept.md").write_text(
+        fm.serialize(
+            cw_front,
+            "## Key claims\n\n"
+            "The intervention shows a significant effect in adults. [[sources/arxiv-scw-old-2020]]\n",
+        )
+    )
+
+    # Stub says the newer source supersedes the cited one for this specific claim.
+    stub = _StubClient(
+        '{"superseded_by": "arxiv-scw-new-2024", "rationale": "Larger RCT with same endpoint published 2024."}'
+    )
+
+    findings = stale_claims.run(sample_size=1, client=stub)
+    assert any(
+        f.check == "stale-claims" and f.severity == "warning" for f in findings
+    ), (
+        "stale-claims WARNING: stub identifying a supersede must produce a warning finding; "
+        f"findings={findings}"
+    )
+
+
+# ===========================================================================
+# Meta-gate guard: every KNOWN_CHECKS slug must have a positive-signal case
+# ===========================================================================
+# This guard is derived from the LIVE registry (lint_op.KNOWN_CHECKS) — not
+# a frozen list. If a new check is added to _CHECKS without a positive case
+# here, THIS TEST GOES RED. That is the intended behavior (hunt #4/#6 guard).
+# ===========================================================================
+
+
+# Mapping from registry slug → test function name that provides the positive signal.
+# The non-xfail positive cases:
+_POSITIVE_SLUG_COVERAGE: dict[str, str] = {
+    # Already covered before this task (lines 198-356):
+    "orphans": "test_orphans_fires_on_real_isolated_page",
+    "broken-wikilinks": "test_broken_wikilinks_fires_on_real_missing_target",
+    "retracted-citations": "test_retracted_citations_fires_on_real_retracted_source",
+    "schema-drift": "test_schema_drift_fires_on_real_malformed_page",
+    "policy-provenance": "test_policy_provenance_fires_on_unprovenanced_policy",
+    "reversal-anomalies": "test_reversal_anomalies_lint_fires_via_real_contradictions_log",
+    # Covered in this task (Step 1 continued above):
+    "stale-drafts": "test_stale_drafts_fires_on_old_draft",
+    "stale-claims": "test_stale_claims_fires_on_two_academic_sources_with_gap",
+    "citation-density": "test_citation_density_fires_on_undercited_concept",
+    "citation-chains": "test_citation_chains_fires_on_dangling_synthesizes_ref",
+    "inbox-pending": "test_inbox_pending_fires_on_file_in_inbox",
+    "nlm-pending": "test_nlm_pending_fires_on_eligible_unsynced_source",
+    "untagged-sources": "test_untagged_sources_fires_on_domainless_source_page",
+    "idempotency": "test_idempotency_fires_on_registry_entry_with_no_policy",
+    "long-slugs": "test_long_slugs_fires_on_grandfathered_oversized_slug",
+    "contradiction-pages": "test_contradiction_pages_fires_on_open_major_contradiction",
+    "synthesizes-coverage": "test_synthesizes_coverage_fires_on_synthesis_without_synthesizes",
+    "stale-verified": "test_stale_verified_fires_on_statute_without_last_verified_at",
+    "domain-purity": "test_domain_purity_fires_on_source_tagged_to_multiple_blessed_domains",
+    "link-rot": "test_link_rot_fires_on_dead_web_source",
+    "superseded-citations": "test_superseded_citations_fires_on_wiki_citing_superseded_source",
+    "paper-canonical-source": "test_paper_canonical_source_fires_on_paper_entity_without_canonical",
+    "confidence-distribution": "test_confidence_distribution_fires_on_any_annotated_concept",
+    "confidence-propagation": "test_confidence_propagation_fires_on_overconfident_synthesis",
+    "tags-invalid-type": "test_tags_invalid_type_fires_on_scalar_string_tags",
+    "open-questions": "test_open_questions_fires_on_open_question_page",
+    "answered-no-synthesis": "test_answered_no_synthesis_fires_on_answered_question_without_link",
+    "fragmentation": "test_fragmentation_fires_on_near_duplicate_entity_vectors",
+    "claim-conservation": "test_claim_conservation_fires_when_committed_claim_absent_from_page",
+    # LLM-driven (stub-client tests — no live subprocess required):
+    "contradictions": "test_contradictions_fires_with_stub_client",
+    "missing-pages": "test_missing_pages_fires_with_stub_client",
+    "filter-calibration": "test_filter_calibration_fires_with_stub_client",
+    # stale-claims WARNING mode is tested in test_stale_claims_warning_mode_fires_with_stub_client
+    # (additional coverage; the registry slug "stale-claims" is mapped above via the INFO test)
+}
+
+
+@pytest.mark.integration
+def test_every_known_check_has_a_positive_case():
+    """Guard: every slug in the LIVE _CHECKS registry has a positive-signal case.
+
+    Derived from lint_op.KNOWN_CHECKS (the real registry) — NOT a frozen list.
+    Adding a new entry to _CHECKS without a positive case here makes this test RED.
+    This is hunt #4/#6: the suite must not be inert on newly-registered checks.
+    """
+    uncovered = lint_op.KNOWN_CHECKS - set(_POSITIVE_SLUG_COVERAGE)
+    assert not uncovered, (
+        f"The following lint checks have no positive-signal test case: {sorted(uncovered)}. "
+        "Add a positive-signal test (or xfail with backlog pointer) and add the slug "
+        "to _POSITIVE_SLUG_COVERAGE in test_inert_invariants.py."
     )

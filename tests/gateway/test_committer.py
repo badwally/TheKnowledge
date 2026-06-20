@@ -1,6 +1,7 @@
 """Production committer: author_deposit + drain_once + run_worker (D0).
 
-Original adversarial scenarios (1–8) + post-T2 review routing scenarios (9–11):
+Original adversarial scenarios (1–8) + post-T2 review routing scenarios (9–11)
++ trace mode (12–13):
 
   1. Autonomous commit (happy path): deposit → drain_once → committed on disk + git.
   2. Crash mid-author, lease reclaim: expired lease is reclaimed by drain_once itself.
@@ -13,6 +14,8 @@ Original adversarial scenarios (1–8) + post-T2 review routing scenarios (9–1
   9. policy-edit intent routed through drain_once → gate (not dead-lettered in author_deposit).
  10. reversal_type intent (contradiction-resolution) routed through drain_once → gate.
  11. Genuinely-unknown intent (no page_type, no op, no reversal_type) still dead-letters.
+ 12. Trace mode: run_worker(sink=...) emits per-intent trace lines for both good + dead-letter.
+ 13. Trace mode default-off: run_worker() without sink emits nothing (zero behavior change).
 
 Real fcntl locks, real git repo, real CommitGate — no monkeypatching of core path.
 Redirect only KNOWLEDGE_ROOT (via monkeypatch.setenv).
@@ -668,4 +671,113 @@ def test_reversal_type_intent_routed_not_dead_lettered_in_author_deposit(repo, q
         f"dead-letter reason does not match gate dispatch ('unknown act ...'); "
         f"got: {res.detail!r}. This means the routing fix is not working — "
         f"drain_once is still sending to author_deposit instead of gate.commit()."
+    )
+
+
+# ---------------------------------------------------------------------------
+# Test 12: Trace mode — sink captures per-intent trace lines (P6)
+# ---------------------------------------------------------------------------
+
+
+def test_trace_mode_captures_committed_and_dead_letter(repo, queue, gate):
+    """run_worker(once=True, sink=...) emits one trace record per drained intent.
+
+    Queue contains:
+      - one GOOD entity deposit → disposition="committed"
+      - one BAD deposit (empty title → dead_lettered via author_deposit path)
+
+    Assertions:
+      - sink receives exactly two records (both intents drained).
+      - The committed record has disposition="committed" and an intent_id.
+      - The dead-letter record has disposition="dead_lettered" and a non-empty reason
+        that comes from the REAL drain path (author_deposit raises ValueError on empty
+        title → the dead-letter reason must reference the real error, not a fabricated
+        string).
+      - The dead-letter record's reason key is NOT a fabricated static string — it
+        must match the actual exception text produced by author_deposit.
+    """
+    # Queue a good deposit
+    good_id = _deposit_entity(title="TraceGoodDrug", body="b [[sources/s1]]", queue=queue)
+
+    # Queue a bad deposit (empty title → author_deposit raises ValueError → dead_lettered).
+    # This drives the REAL dead-letter path (same as test 8 above) so the reason is real.
+    bad_payload = {"page_type": "entity", "title": "---", "body": "b [[sources/s1]]"}
+    bad_identity = {"entity_kind": "drug", "canonical_name": "---"}
+    bad_res = deposit(bad_payload, bad_identity, queue=queue)
+    assert bad_res.success, f"bad deposit rejected unexpectedly: {bad_res.errors}"
+    bad_id = bad_res.intent_id
+
+    # Collect trace records via the sink
+    trace_records: list[dict] = []
+
+    def _sink(record: dict) -> None:
+        trace_records.append(record)
+
+    run_worker(once=True, queue=queue, gate=gate, sink=_sink)
+
+    # Both intents must be traced
+    assert len(trace_records) == 2, (
+        f"Expected 2 trace records (committed + dead_lettered), got {len(trace_records)}: "
+        f"{trace_records}"
+    )
+
+    by_intent = {r["intent_id"]: r for r in trace_records}
+
+    # Good intent must show as committed
+    assert good_id in by_intent, f"good intent {good_id} not in trace: {by_intent}"
+    good_trace = by_intent[good_id]
+    assert good_trace["disposition"] == "committed", (
+        f"good intent disposition must be 'committed'; got {good_trace['disposition']!r}"
+    )
+
+    # Bad intent must show as dead_lettered with a real reason (not a fabricated string)
+    assert bad_id in by_intent, f"bad intent {bad_id} not in trace: {by_intent}"
+    bad_trace = by_intent[bad_id]
+    assert bad_trace["disposition"] == "dead_lettered", (
+        f"bad intent disposition must be 'dead_lettered'; got {bad_trace['disposition']!r}"
+    )
+    # The reason must be non-empty — it comes from the real author_deposit exception
+    reason = bad_trace.get("reason", "")
+    assert reason, (
+        f"dead-letter trace record must carry a non-empty reason; got: {bad_trace}"
+    )
+    # The reason must NOT be a fabricated static string — it must reference what
+    # author_deposit actually raises for an empty-slug title.
+    assert "fabricated" not in reason.lower(), (
+        f"reason appears to be a placeholder; got: {reason!r}"
+    )
+    # author_deposit raises ValueError with "empty slug" or similar for "---" title
+    assert any(kw in reason.lower() for kw in ("slug", "title", "empty", "invalid")), (
+        f"dead-letter reason does not match expected author_deposit error; got: {reason!r}"
+    )
+
+    # Trace records must contain the required stable keys (no payload/body leakage)
+    required_keys = {"intent_id", "disposition", "reason"}
+    for rec in trace_records:
+        assert required_keys <= set(rec.keys()), (
+            f"trace record missing required keys; got keys: {set(rec.keys())}"
+        )
+        # Security: no body/payload content in the trace
+        assert "body" not in rec, f"trace record must not contain 'body': {rec}"
+        assert "payload" not in rec, f"trace record must not contain 'payload': {rec}"
+
+
+# Negative control (Test 13): default-off — run_worker without sink emits nothing.
+def test_trace_mode_default_off_no_sink_zero_behavior_change(repo, queue, gate):
+    """run_worker() without a sink must behave identically to the pre-P6 state.
+
+    This is the default-off guarantee: the drain logic is byte-identical when
+    no sink is passed. We verify this by running the full drain without a sink
+    and confirming:
+      - The intent commits normally (no regression in drain behavior).
+      - No attribute error or exception from the missing sink.
+    """
+    _deposit_entity(title="NoTraceDrug", body="b [[sources/s1]]", queue=queue)
+
+    # Must not raise — default-off sink is None
+    run_worker(once=True, queue=queue, gate=gate)
+
+    # Drain behavior unchanged: page committed to disk
+    assert (repo / "wiki" / "entities" / "notracedrug.md").exists(), (
+        "drain without sink must still commit pages normally (default-off guarantee)"
     )

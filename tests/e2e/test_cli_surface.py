@@ -283,3 +283,80 @@ def test_cli_commit_worker_once_drains_deposited_page(repo: Path):
     assert "Intent-Id:" in latest_msg or expected_slug in latest_msg, (
         f"Latest commit does not look like a librarian deposit commit:\n{latest_msg}"
     )
+
+
+# ---------------------------------------------------------------------------
+# Step 3f: commit-worker --once --verbose emits JSON trace lines (P6)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.e2e
+def test_cli_commit_worker_verbose_emits_trace_line(repo: Path, capsys):
+    """commit-worker --once --verbose emits a JSON trace line per drained intent.
+
+    Drives the real CLI path via cli.main(["commit-worker", "--once", "--verbose"])
+    and asserts that:
+      - stdout contains a JSON line with the Intent-Id and disposition.
+      - The trace records the real disposition ("committed"), not a placeholder.
+      - No payload body content leaks into the trace output.
+    """
+    import json
+
+    from gateway.ops.deposit import deposit
+
+    payload = {
+        "page_type": "concept",
+        "title": "CLI Verbose Trace Concept",
+        "body": "## Overview\nTrace E2E test page.\n",
+        "durable": False,
+    }
+    identity = {"agent": "e2e-verbose-test"}
+
+    receipt = deposit(payload, identity)
+    assert receipt.success, f"deposit failed: {receipt}"
+    intent_id = receipt.intent_id
+
+    rc = cli.main(["commit-worker", "--once", "--verbose"])
+
+    assert rc == 0, f"commit-worker --once --verbose returned {rc}"
+
+    captured = capsys.readouterr()
+    stdout = captured.out.strip()
+
+    # At least one JSON line must be present
+    assert stdout, (
+        f"--verbose produced no stdout output; expected JSON trace lines for intent {intent_id}"
+    )
+
+    # Parse every output line as JSON and collect trace records
+    trace_records = []
+    for line in stdout.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            record = json.loads(line)
+        except json.JSONDecodeError:
+            continue  # non-JSON lines (e.g. log output) are ignored
+        trace_records.append(record)
+
+    assert trace_records, (
+        f"No valid JSON trace records found in stdout:\n{stdout}"
+    )
+
+    # Find the record for our intent
+    matched = [r for r in trace_records if r.get("intent_id") == intent_id]
+    assert matched, (
+        f"No trace record for intent_id={intent_id!r}; records: {trace_records}"
+    )
+
+    rec = matched[0]
+    assert rec["disposition"] == "committed", (
+        f"Expected disposition='committed'; got {rec['disposition']!r}"
+    )
+    # Required stable keys present
+    for key in ("intent_id", "disposition", "reason"):
+        assert key in rec, f"trace record missing key {key!r}: {rec}"
+    # No payload body leakage
+    assert "body" not in rec, f"trace record must not contain 'body': {rec}"
+    assert "payload" not in rec, f"trace record must not contain 'payload': {rec}"

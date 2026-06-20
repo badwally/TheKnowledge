@@ -17,12 +17,17 @@ Properties asserted (per brief):
       B bullet-only → drain) driving author_deposit._union_same_slug deterministically.
   S6: Retry-later re-queue — an intent that hits the lock barrier is re-queued and
       eventually drains (closes the D0 coverage gap: retry-later branch in drain_once).
+  S7: Concurrent same-slug race — two intents sharing a slug fired truly concurrently
+      under the real commit lock: every intent reaches a terminal state, the shared-slug
+      page is well-formed (no torn write), and no depositor's content is silently lost.
 
 Named negative controls (per brief):
   NC1: Single-threaded run of N intents → same terminal-state set (concurrency-safety,
        not just throughput).
   NC2: Stale-fencing negative: a CURRENT token commits where the stale one was refused.
   NC3: Backpressure negative: below MAX_BACKLOG, deposit returns "queued" (not shed).
+  NC4: Torn-write detection guard — _validate_page goes RED on a truncated page,
+       proving the well-formed assertion in S7 has teeth.
 """
 
 from __future__ import annotations
@@ -40,7 +45,7 @@ from gateway import locking
 from gateway import validator
 from gateway.commit_gate import CommitGate
 from gateway.intent_queue import IntentQueue
-from gateway.ops.committer import drain_once, run_worker
+from gateway.ops.committer import drain_once
 from gateway.ops.deposit import MAX_BACKLOG, deposit
 
 
@@ -751,4 +756,325 @@ def test_single_threaded_produces_same_terminal_set(
     terminal_values = set(states.values())
     assert terminal_values <= _terminal_states(), (
         f"NC1: unexpected state values: {terminal_values - _terminal_states()}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# S7: Concurrent same-slug race — two intents genuinely contend on one slug
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.slow
+@pytest.mark.integration
+def test_concurrent_same_slug_all_terminal_no_torn_write(
+    repo: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """S7: Concurrent same-slug race — real contention, no torn write, no silent loss.
+
+    Two out of five depositor threads target the SAME slug ("RaceEntity"); the
+    other three use distinct slugs.  All five intents are submitted to the queue
+    before draining starts.  Three concurrent drain_once drainer threads then
+    race to process them — mirroring the S1 soak's _M_DRAINERS=3 concurrent
+    drainer model — so the two RaceEntity intents genuinely contend for the real
+    fcntl commit lock.  Neither is pre-ordered by the test harness.
+
+    Contention mechanics: both RaceEntity claims are in submitted/ simultaneously.
+    Drainer A claims one, drainer B claims the other.  Both call author_deposit()
+    concurrently against the same HEAD (page not yet committed).  Whichever hits
+    gate.commit() first writes the page; the other hits the CAS contradiction
+    check (commit_gate.py:196-200) and is dead-lettered.  This exercises the
+    contradiction/dead-letter path that deterministic serial draining bypasses.
+
+    Assertions:
+      (a) Every intent reaches a terminal state — none stranded in claimed/.
+      (b) The shared-slug page on disk is well-formed: parses as valid
+          frontmatter + body with no torn write (the same _validate_page check
+          that catches malformed YAML or missing required fields at line 138).
+      (c) No silent loss at the CONTENT level: both Claim-Race-Alpha and
+          Claim-Race-Beta are accounted for — either both appear in the
+          committed page (union path) OR the on-page claim is present AND the
+          missing claim appears in the dead-letter error record.  A claim that
+          disappears from both disk and the queue state record is silent loss.
+
+    Valid outcomes for the two RaceEntity depositors (non-deterministic — either
+    may win the lock; per S5 comment at ~line 225, assert the SET not a winner):
+      A) one committed + one dead_lettered  (concurrent authoring → CAS contradiction)
+      B) both committed/merged              (unlikely under concurrent drain but valid
+                                            if one drainer happens to author after the
+                                            other committed; _union_same_slug merges)
+
+    COMMIT_LOCK_ACQUIRE_TIMEOUT is lowered to 0.5 s (same as main soak) so the
+    test is fast while still exercising the real barrier.  The lock itself is
+    NOT monkeypatched.
+    """
+    monkeypatch.setattr(commit_gate_mod, "COMMIT_LOCK_ACQUIRE_TIMEOUT", 0.5)
+
+    # Write sources only for the unique-slug depositors (shared-slug bodies
+    # are bullet-only; no [[sources/...]] links so durable=False).
+    for i in range(3):
+        _write_source(repo, f"web-race-unique-{i:03d}")
+
+    queue = IntentQueue()
+    gate = CommitGate(queue=queue)
+
+    # Unique-slug payloads (3).
+    unique_payloads = [
+        (
+            {
+                "page_type": "entity",
+                "title": f"RaceUniqueEntity{i:03d}",
+                "entity_kind": "other",
+                "domains": ["glp1"],
+                "body": (
+                    f"RaceUniqueEntity{i:03d} is a distinct entity in the race test.\n\n"
+                    f"## Claims\n"
+                    f"- Claim {i}: unique depositor. [[sources/web-race-unique-{i:03d}]]\n"
+                ),
+            },
+            {"domains": ["glp1"], "entity_kind": "other"},
+        )
+        for i in range(3)
+    ]
+
+    # Shared-slug payloads (2) — both target "RaceEntity"; bullet-only bodies
+    # matching the S5 payload contract (_union_same_slug accepts ## Claims +
+    # "- " lines; non-bullet preamble causes bail-to-None → dead-letter).
+    shared_payloads = [
+        (
+            {
+                "page_type": "entity",
+                "title": "RaceEntity",
+                "entity_kind": "other",
+                "domains": ["glp1"],
+                "body": (
+                    "## Claims\n"
+                    f"- Claim-Race-{label}: shared-slug depositor claim.\n"
+                ),
+            },
+            {"domains": ["glp1"], "entity_kind": "other"},
+        )
+        for label in ("Alpha", "Beta")
+    ]
+
+    all_payloads = unique_payloads + shared_payloads  # 5 total
+
+    # Submit all five intents to the queue first (no draining yet).
+    all_intent_ids: list[str] = []
+    for payload, identity in all_payloads:
+        res = deposit(payload, identity, queue=queue)
+        assert res.success and res.intent_id, (
+            f"S7: deposit failed: {res.errors}"
+        )
+        all_intent_ids.append(res.intent_id)
+
+    assert len(all_intent_ids) == 5, (
+        f"S7: expected 5 intents deposited; got {len(all_intent_ids)}"
+    )
+
+    # Three concurrent drain_once drainer threads — mirrors the S1 soak's
+    # _M_DRAINERS=3 model.  All three start simultaneously via a rendezvous
+    # barrier so the two RaceEntity intents genuinely contend: both can be
+    # claimed and authored concurrently before either commits.
+    drainer_errors: list[str] = []
+    errors_lock = threading.Lock()
+    drain_start = threading.Event()
+
+    def drainer() -> None:
+        drain_start.wait(timeout=10)
+        try:
+            while True:
+                result = drain_once(queue, gate)
+                if result is None:
+                    break
+        except Exception as exc:
+            with errors_lock:
+                drainer_errors.append(str(exc))
+
+    drainer_threads = [
+        threading.Thread(target=drainer, daemon=True)
+        for _ in range(3)
+    ]
+    for t in drainer_threads:
+        t.start()
+
+    # Release all three drainers simultaneously — maximises contention on the
+    # two shared-slug intents.
+    drain_start.set()
+    for t in drainer_threads:
+        t.join(timeout=60)
+
+    assert not drainer_errors, f"S7: drainer threads raised: {drainer_errors}"
+
+    # (a) Every intent must be in a terminal state — none stranded in claimed/.
+    states = _wait_all_terminal(queue, all_intent_ids, timeout=30.0)
+    stuck = {
+        iid: s for iid, s in states.items()
+        if s is not None and s not in _terminal_states()
+    }
+    assert not stuck, (
+        f"S7: intents not in terminal state: {stuck}. Full states: {states}"
+    )
+    missing_records = [iid for iid, s in states.items() if s is None]
+    assert not missing_records, (
+        f"S7: intent records missing (state=None) after race: {missing_records}"
+    )
+
+    # (b) The shared-slug page on disk must be well-formed (no torn write).
+    slug_path = repo / "wiki" / "entities" / "raceentity.md"
+    assert slug_path.exists(), (
+        "S7: shared-slug page 'raceentity.md' does not exist after race — "
+        "at least one RaceEntity intent must have committed"
+    )
+    # _validate_page calls fm.parse (catches torn YAML) + validator (catches
+    # missing required fields) — the same check documented at line 138.
+    _validate_page(slug_path)
+
+    # (c) No silent loss — CONTENT-level check for both RaceEntity claims.
+    #
+    # Valid outcomes (non-deterministic; assert the SET, not a specific winner):
+    #   A) one committed + one dead_lettered  (most likely — concurrent authoring
+    #      against the same HEAD; CAS contradiction kills the second; dead-letter
+    #      record is durable evidence the intent was processed, not dropped)
+    #   B) both committed/merged              (if one drainer authored after the
+    #      other committed, _union_same_slug merged the bullets; both claims on page)
+    #
+    # "Silent loss" = a depositor's intent vanishes from the queue state record
+    # AND its claim label is absent from the committed page — content and
+    # record are both gone with no trace.
+
+    page_text = slug_path.read_text()
+
+    # Identify how many RaceEntity intents dead-lettered vs committed.
+    # The last two intent_ids in all_intent_ids are the shared-slug pair
+    # (unique_payloads first, then shared_payloads — deterministic submission order).
+    race_ids = all_intent_ids[3:]  # [Alpha_id, Beta_id]
+    race_states = {iid: states[iid] for iid in race_ids}
+
+    race_dead_lettered = [iid for iid, s in race_states.items() if s == "dead_lettered"]
+    race_committed = [iid for iid, s in race_states.items() if s in ("committed", "merged")]
+
+    # At least one of the two RaceEntity intents must have committed.
+    assert len(race_committed) >= 1, (
+        f"S7: neither RaceEntity intent committed; race_states={race_states}"
+    )
+
+    # Content-level assertion branches on the observed outcome:
+    if len(race_dead_lettered) == 0:
+        # Outcome B: both committed/merged — BOTH claim labels must be on the page.
+        # Mirror S5's AND assertion: the union path must not drop a claim.
+        assert "Claim-Race-Alpha" in page_text, (
+            f"S7 outcome B: Claim-Race-Alpha missing from page after union. "
+            f"page[:400]:\n{page_text[:400]}"
+        )
+        assert "Claim-Race-Beta" in page_text, (
+            f"S7 outcome B: Claim-Race-Beta missing from page after union. "
+            f"page[:400]:\n{page_text[:400]}"
+        )
+    else:
+        # Outcome A: one committed + one dead_lettered — the WINNER's claim must
+        # be on the page; the LOSER's intent is tracked as dead_lettered (not
+        # silently dropped).  The dead-letter record's error is "same-slug body
+        # union failed" or CAS contradiction — it does not carry the claim text,
+        # so we assert disposition tracking, not error content.
+        assert len(race_dead_lettered) == 1, (
+            f"S7: more than one RaceEntity dead-lettered: {race_states}"
+        )
+        assert len(race_committed) == 1, (
+            f"S7: expected exactly one RaceEntity committed: {race_states}"
+        )
+        # Winner's claim is on the page.
+        assert any(f"Claim-Race-{label}" in page_text for label in ("Alpha", "Beta")), (
+            f"S7 outcome A: winner's claim absent from committed page — silent loss. "
+            f"page[:400]:\n{page_text[:400]}"
+        )
+        # Loser's dead-letter record must exist (get_result returns the error dict).
+        dl_iid = race_dead_lettered[0]
+        dl_result = queue.get_result(dl_iid)
+        assert dl_result, (
+            f"S7: dead-lettered RaceEntity intent {dl_iid} has no result record — "
+            f"dead-letter was not durably recorded (silent loss of disposition)"
+        )
+
+    # Disposition set must be a subset of valid terminal states.
+    all_dispositions = set(states.values())
+    assert all_dispositions <= _terminal_states(), (
+        f"S7: unexpected dispositions: {all_dispositions - _terminal_states()}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# NC4: Torn-write detection guard — _validate_page goes RED on a truncated page
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.slow
+@pytest.mark.integration
+def test_negative_control_torn_write_detection(repo: Path) -> None:
+    """NC4: _validate_page goes RED on a truncated (torn-write) page.
+
+    Reuses the torn-write guard mechanism documented at line 138 ("goes RED on
+    a torn write / malformed YAML") to prove the 'well-formed' assertion in
+    test_concurrent_same_slug_all_terminal_no_torn_write has teeth.
+
+    Construction:
+      1. Write a well-formed wiki page to disk.
+      2. Verify _validate_page passes (control: the page IS valid).
+      3. Truncate the page mid-frontmatter (simulating a torn write at the OS
+         buffer level where a partial flush leaves an unclosed YAML block).
+      4. Assert _validate_page raises — proving it would catch a real torn write.
+
+    If this test passes, the S7 well-formed assertion is meaningful.  If this
+    test were somehow removed or weakened, S7's (b) assertion would have no
+    evidence of teeth.
+    """
+    # Write a well-formed entity page — identical structure to what the committer
+    # would produce so the negative control matches the production code path.
+    page_dir = repo / "wiki" / "entities"
+    page_dir.mkdir(parents=True, exist_ok=True)
+    page_path = page_dir / "tornwriteentity.md"
+
+    from gateway import frontmatter as fm
+
+    front = {
+        "type": "entity",
+        "slug": "tornwriteentity",
+        "canonical_name": "TornWriteEntity",
+        "entity_kind": "other",
+        "domains": ["glp1"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    body = (
+        "TornWriteEntity is a test entity for the torn-write negative control.\n\n"
+        "## Claims\n"
+        "- Claim: this entity must survive the well-formed check.\n"
+    )
+    page_path.write_text(fm.serialize(front, body))
+
+    # Control: a well-formed page passes _validate_page with no exception.
+    _validate_page(page_path)  # must NOT raise
+
+    # Truncate the page mid-frontmatter — cut off after the first 20 bytes,
+    # leaving an unclosed YAML block (no closing '---' delimiter).
+    full_content = page_path.read_text()
+    truncated = full_content[:20]  # cuts mid-frontmatter, no closing '---'
+    page_path.write_text(truncated)
+
+    # NC4: _validate_page must raise FrontmatterError on the truncated content.
+    # fm.parse raises FrontmatterError ("missing closing '---' delimiter") which
+    # propagates up through _validate_page — the same path a real torn write
+    # would trigger.  We narrow the catch to FrontmatterError (a ValueError
+    # subclass) so an unrelated exception cannot mask a real failure.
+    from gateway.frontmatter import FrontmatterError
+
+    raised = False
+    try:
+        _validate_page(page_path)
+    except FrontmatterError:
+        raised = True
+
+    assert raised, (
+        "NC4: _validate_page did NOT raise FrontmatterError on a truncated "
+        "(torn-write) page — the well-formed assertion in S7 has no teeth. "
+        "This is a test quality defect: fix _validate_page to raise on malformed content."
     )

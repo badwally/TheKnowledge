@@ -93,3 +93,4 @@ node_modules/
 .knowledge/transcripts/
 # YouTube transcript RTF originals (local capture reference)
 docs/YT-failed-transcript-table/
+.claude/worktrees/

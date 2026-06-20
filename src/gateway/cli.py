@@ -544,6 +544,15 @@ def build_parser() -> argparse.ArgumentParser:
         metavar="SECONDS",
         help="Seconds between poll attempts in --loop mode (default: 2.0).",
     )
+    p_commit_worker.add_argument(
+        "--verbose",
+        action="store_true",
+        default=False,
+        help=(
+            "Emit a structured trace line (JSON) to stdout for each drained intent, "
+            "showing intent_id, disposition, and reason. Off by default."
+        ),
+    )
 
     # list-domains: enumerate blessed domains (read-only)
     p_list_domains = subparsers.add_parser(
@@ -3050,30 +3059,42 @@ def _run_commit_worker(ns: argparse.Namespace) -> int:
     Drains the deposit queue by claiming → authoring → committing each submitted
     intent. Build-tier only — NOT in the MCP read allowlist.
 
-    --once  drain to empty then exit (cron / on-demand).
-    --loop  foreground poll until SIGINT / KeyboardInterrupt (manual monitoring).
-    Neither flag defaults to --once.
+    --once     drain to empty then exit (cron / on-demand).
+    --loop     foreground poll until SIGINT / KeyboardInterrupt (manual monitoring).
+    --verbose  emit one JSON trace line per intent to stdout (stable keys:
+               intent_id, disposition, reason). Off by default.
+
+    Neither --once nor --loop defaults to --once.
 
     Constructs EmbeddingIndex() so _dedup_recheck fires in production (CRITICAL #2):
     without it, two different-slug deposits for the same referent both commit as
     separate pages — the merge path never runs.
     """
+    import json as _json
+    import sys as _sys
+
     from gateway.embedding_index import EmbeddingIndex
     from gateway.ops.committer import run_worker
 
     once = getattr(ns, "once", False)
     loop = getattr(ns, "loop", False)
     poll_interval = getattr(ns, "poll_interval", 2.0)
+    verbose = getattr(ns, "verbose", False)
 
     if not once and not loop:
         # Neither flag: default to --once (drain then exit).
         once = True
 
+    # Build a trace sink only when --verbose is set; None otherwise (default-off).
+    sink = None
+    if verbose:
+        def sink(record: dict) -> None:
+            print(_json.dumps(record), flush=True)
+
     idx = EmbeddingIndex()
     try:
-        run_worker(once=once, poll_interval=poll_interval, embedding_index=idx)
+        run_worker(once=once, poll_interval=poll_interval, embedding_index=idx, sink=sink)
     except Exception as exc:
-        import sys as _sys
         print(f"commit-worker failed: {exc}", file=_sys.stderr)
         return 1
     return 0
