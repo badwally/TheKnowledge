@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# scripts/pre-push — pre-merge gate enforcer
+#
+# Run the pre-merge gate before every push. A failing gate exits non-zero
+# and aborts the push. Exit code is propagated EXACTLY from the gate so
+# CI step detection sees the raw failure code.
+#
+# Install (hooks are not version-controlled; install once after cloning):
+#   ln -sf "$(pwd)/scripts/pre-push" .git/hooks/pre-push
+#
+# Or use the installer:
+#   bash scripts/install_pre_push_hook.sh
+#
+# Usage:
+#   scripts/pre-push            — full gate (suite + evals + lints); required
+#                                 for any push that will become a PR to main.
+#   scripts/pre-push --skip-suite  — evals + lints only; suite already run.
+#                                    Useful for fast local iteration when you
+#                                    ran the full suite in the same shell session.
+#                                    CI always runs the FULL gate (no --skip-suite).
+#
+# Seam for unit tests:
+#   The GATE_CMD env-var overrides the default gate invocation. Tests set it
+#   to a stub that exits with a controlled code so the test suite never spawns
+#   the real gate (which would trigger minutes of evals). Production callers
+#   leave GATE_CMD unset and get the real gate.
+
+set -euo pipefail
+
+KB_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Resolve the gate command. Tests override GATE_CMD; production uses the real gate.
+if [[ -z "${GATE_CMD:-}" ]]; then
+    GATE_CMD="${KB_ROOT}/.venv/bin/python -m gateway.scripts.gate"
+fi
+
+# Forward any flags (e.g. --skip-suite) passed to this hook directly to the gate.
+# When invoked as a git hook, git passes the remote name and URL as $1 and $2.
+# We drop git's positional args and only forward explicit flags.
+EXTRA_FLAGS=()
+for arg in "$@"; do
+    case "${arg}" in
+        --skip-suite)
+            EXTRA_FLAGS+=("--skip-suite")
+            ;;
+        # Ignore git's "remote" and "url" positional args silently.
+        *)
+            ;;
+    esac
+done
+
+# Run the gate. Use eval so GATE_CMD may contain spaces (e.g. "python -m ...").
+# The exit code is propagated unchanged — do NOT wrap in `if ...; then exit 0`.
+# A hook that always exits 0 is inert (hunt #1).
+eval "${GATE_CMD}" "${EXTRA_FLAGS[@]+"${EXTRA_FLAGS[@]}"}"

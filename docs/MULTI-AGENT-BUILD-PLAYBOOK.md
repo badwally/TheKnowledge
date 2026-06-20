@@ -128,6 +128,14 @@ Baselines (update in `gateway/scripts/gate.py:LINT_BASELINES` when a scope genui
 
 The floor-check logic is in `check_recall_floor()` (`src/gateway/scripts/gate.py`) — importable and unit-tested in `tests/test_gate_script.py` without running the full suite. The unit tests include named negative controls (below-floor input must return `passed=False`).
 
+**The gate is now hook-enforceable** via `scripts/pre-push`. Install once per clone:
+
+```bash
+ln -sf "$(pwd)/scripts/pre-push" .git/hooks/pre-push
+```
+
+After install, every `git push` runs the gate automatically. Hooks are NOT version-controlled (they live in `.git/hooks/`, which is not tracked); the symlink step is manual, like the existing PreCompact and SessionStart hooks. The hook honours a `GATE_CMD` env-var override so unit tests can stub the gate invocation without running the full suite — see `tests/test_gate_hook.py`. A fast local variant (`--skip-suite`) skips steps 1–2; CI runs the full gate unconditionally.
+
 ---
 
 ## Part C — Maintenance (so this doesn't ossify)
