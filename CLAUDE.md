@@ -159,6 +159,14 @@ Every merge to `main` must pass the pre-merge gate (Part B6 of the playbook):
 
 Runs in sequence and exits non-zero on the first failure: full suite → fast tiers → retrieval eval (recall@10 ≥ 0.90) → merge-map eval (no regressions) → embedding eval (all namespaces pass) → scoped lints at baseline. Floor-check logic lives in `src/gateway/scripts/gate.py`; unit tests in `tests/test_gate_script.py`.
 
+### Dev dependencies (one-time, after cloning)
+
+The gate's full suite imports the `[dev]` extras (e.g. `hypothesis` for the property tests). A checkout whose `.venv` lacks them fails the gate at **Step 1 collection** with `ModuleNotFoundError: No module named 'hypothesis'` — before any test runs, so it reads like a broken suite rather than a missing dep. Sync the venv once per clone (and after any `[dev]` dependency is added — a dep added in an isolated worktree's venv does not propagate to other checkouts):
+
+```bash
+.venv/bin/pip install -e '.[dev]'
+```
+
 ### Hook install (one-time, after cloning)
 
 The gate is wired into `scripts/pre-push`. Hooks are not version-controlled; install once per clone:
