@@ -204,12 +204,15 @@ def step_embedding_eval() -> GateCheckResult:
     return check_embedding_namespaces(reports)
 
 
-def _parse_lint_count(output: str, scope: str) -> int:
+def _parse_lint_count(output: str, scope: str) -> int | None:
     """Extract the finding count from wiki lint --scope output.
 
     Output format:
         ok: lint: N finding(s)
           scope: N
+
+    Returns None if the scope line is absent or unparseable — callers must
+    treat None as a gate failure (fail-closed), not as count 0.
     """
     for line in output.splitlines():
         stripped = line.strip()
@@ -220,18 +223,45 @@ def _parse_lint_count(output: str, scope: str) -> int:
                     return int(parts[1].strip())
                 except ValueError:
                     pass
-    return 0
+    return None
 
 
 def step_scoped_lints() -> GateCheckResult:
-    """Run scoped lints and check counts are at or below baselines."""
+    """Run scoped lints and check counts are at or below baselines.
+
+    Fail-closed: if a lint subprocess exits non-zero, or if the count line
+    is absent/unparseable in its output, the step fails immediately rather
+    than treating the missing count as 0 (which would silently pass the gate
+    on a broken invocation).
+    """
     _banner("Step 6: Scoped lints (orphans / schema-drift / broken-wikilinks)")
     scope_counts: dict[str, int] = {}
     for scope in LINT_BASELINES:
         cmd = [sys.executable, "-m", "gateway.cli", "lint", "--scope", scope]
         result = subprocess.run(cmd, capture_output=True, text=True, check=False)
         output = result.stdout + result.stderr
+
+        if result.returncode != 0:
+            print(f"lint --scope {scope}: subprocess exited {result.returncode}", flush=True)
+            print(output, flush=True)
+            return GateCheckResult(
+                passed=False,
+                message=(
+                    f"lint --scope {scope} exited {result.returncode} (subprocess failure)  FAIL"
+                ),
+            )
+
         count = _parse_lint_count(output, scope)
+        if count is None:
+            print(f"lint --scope {scope}: count line absent or unparseable in output:", flush=True)
+            print(output, flush=True)
+            return GateCheckResult(
+                passed=False,
+                message=(
+                    f"lint --scope {scope}: cannot parse count from output (fail-closed)  FAIL"
+                ),
+            )
+
         scope_counts[scope] = count
         print(f"lint --scope {scope}: {count}", flush=True)
     return check_lint_counts(scope_counts)

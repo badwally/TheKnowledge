@@ -12,6 +12,7 @@ from gateway.scripts.gate import (
     LINT_BASELINES,
     RECALL_FLOOR,
     GateCheckResult,
+    _parse_lint_count,
     check_embedding_namespaces,
     check_lint_counts,
     check_merge_map,
@@ -264,7 +265,80 @@ class TestCheckLintCounts:
         result = check_lint_counts(counts)
         assert "orphans" in result.message
 
-    def test_missing_scope_treated_as_zero(self):
-        """A scope not present in the counts dict is treated as 0 (improvement)."""
-        result = check_lint_counts({})
-        assert result.passed is True
+
+# ---------------------------------------------------------------------------
+# _parse_lint_count — fail-closed sentinel behaviour
+# ---------------------------------------------------------------------------
+
+
+class TestParseLintCount:
+    """Unit tests for _parse_lint_count's sentinel-None (fail-closed) contract.
+
+    The step_scoped_lints caller treats None as a gate failure, so these tests
+    verify the parser returns None exactly when the scope line is absent or
+    unparseable, rather than silently returning 0.
+    """
+
+    # Real output sample from wiki lint --scope orphans
+    _REAL_ORPHANS_OUTPUT = (
+        "ok: lint: 758 finding(s)\n"
+        "  orphans: 758\n"
+        "report: /tmp/2026-06-20T00-00-00Z-orphans.md\n"
+        "  touched: /tmp/2026-06-20T00-00-00Z-orphans.md\n"
+        "  touched: /Users/andrewgrant/code/knowledge/log.md"
+    )
+
+    def test_parses_real_output(self):
+        """Parser extracts count from the real wiki lint --scope output format."""
+        count = _parse_lint_count(self._REAL_ORPHANS_OUTPUT, "orphans")
+        assert count == 758, f"expected 758, got {count!r}"
+
+    def test_parses_schema_drift(self):
+        output = "ok: lint: 191 finding(s)\n  schema-drift: 191\nreport: /tmp/x.md"
+        count = _parse_lint_count(output, "schema-drift")
+        assert count == 191
+
+    def test_parses_broken_wikilinks(self):
+        output = "ok: lint: 1 finding(s)\n  broken-wikilinks: 1\nreport: /tmp/x.md"
+        count = _parse_lint_count(output, "broken-wikilinks")
+        assert count == 1
+
+    # NEGATIVE CONTROLS — these must return None (fail-closed), NOT 0
+
+    def test_absent_scope_line_returns_none(self):
+        """NEGATIVE CONTROL: absent scope line must return None, not 0.
+
+        Pre-fix behaviour returned 0 → check_lint_counts saw 0 <= baseline → PASS.
+        Post-fix: None is returned; step_scoped_lints treats None as gate failure.
+        """
+        output = "ok: lint: 0 finding(s)\nreport: /tmp/x.md"
+        count = _parse_lint_count(output, "orphans")
+        assert count is None, (
+            "NEGATIVE CONTROL FAILED: absent scope line should return None (fail-closed), "
+            f"got {count!r} instead"
+        )
+
+    def test_empty_output_returns_none(self):
+        """NEGATIVE CONTROL: empty output (broken subprocess) must return None."""
+        count = _parse_lint_count("", "orphans")
+        assert count is None, (
+            "NEGATIVE CONTROL FAILED: empty output should return None, "
+            f"got {count!r}"
+        )
+
+    def test_unparseable_value_returns_none(self):
+        """NEGATIVE CONTROL: non-integer after scope: returns None."""
+        output = "ok: lint: ? finding(s)\n  orphans: not-a-number\nreport: /tmp/x.md"
+        count = _parse_lint_count(output, "orphans")
+        assert count is None, (
+            "NEGATIVE CONTROL FAILED: non-integer count value should return None, "
+            f"got {count!r}"
+        )
+
+    def test_wrong_scope_returns_none(self):
+        """NEGATIVE CONTROL: output for a different scope returns None for the requested scope."""
+        output = "ok: lint: 191 finding(s)\n  schema-drift: 191\nreport: /tmp/x.md"
+        count = _parse_lint_count(output, "orphans")
+        assert count is None, (
+            "NEGATIVE CONTROL FAILED: output for schema-drift should not parse as orphans"
+        )
