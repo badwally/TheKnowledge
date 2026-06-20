@@ -1,17 +1,20 @@
-"""Integration — governance flow: policy-edit intent via gate → eval + merge-map gate →
+"""Integration — governance flow: policy-edit intent via production committer → eval + merge-map gate →
 dead-letters on a regressing policy, commits on a benign one.
 
-Drives the REAL CommitGate._apply_policy_edit() path end-to-end:
+Drives the REAL production path end-to-end (C1 fix, post-T2 D0 reopen):
   policy_edit() (ops/policy_edit.py) → IntentQueue.submit() →
-  CommitGate.commit() → eval-retrieval gate → merge-map golden gate →
+  run_worker/drain_once (ops/committer.py) → CommitGate.commit() →
+  _apply_policy_edit() → eval-retrieval gate → merge-map golden gate →
   dead-letter (regressing) OR commit (benign).
 
-No monkeypatching of the core gate path. The real policy_data is evaluated
-by the gate against the real dedup golden — not a hardcoded string match.
+Tests A and B drive the path via run_worker(once=True) — the real production
+committer — NOT via a direct gate.commit() call.  gate.commit()-direct tests
+for _apply_policy_edit() gate-unit coverage are in test_policy_change_control.py.
 
 Named negative controls (brief Step 4 / hunt #5):
   - The regressing policy (wide blocking_band that merges distinct pairs) goes to
-    dead-letter. The gate must evaluate the PROPOSED dedup params, not a string.
+    dead-letter via the gate's merge-map gate. The committer routes it there (not
+    author_deposit) — the dead-letter reason names the precision regression.
   - The benign policy (filter threshold adjustment, no dedup change) commits.
 
 GATEWAY_DEV_SKIP_POLICY_GATES=1 is set so the retrieval-golden gate is bypassed
@@ -32,6 +35,7 @@ import yaml
 from gateway.commit_gate import AuthoredIntent, CommitGate
 from gateway.embedding_index import EmbeddingIndex
 from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
+from gateway.ops.committer import run_worker
 from gateway.ops.policy_edit import policy_edit
 
 
@@ -125,57 +129,24 @@ def gate_env(tmp_path, monkeypatch):
 
 
 # ---------------------------------------------------------------------------
-# Helper: build a policy-edit AuthoredIntent directly (for full gate control)
-# Mirrors _make_policy_edit_authored_intent in test_policy_change_control.py.
-# ---------------------------------------------------------------------------
-
-
-def _make_policy_edit_intent(gate, q, domain: str, policy_data: dict, reason: str):
-    """Craft an AuthoredIntent for a policy-edit without going through policy_edit().
-
-    Full control over policy_data lets us construct genuinely-regressing and
-    genuinely-benign policies. The gate reads domain + policy_data from the
-    payload — the real proposed policy, not a string match (hunt #5).
-    """
-    payload = {
-        "op": "policy-edit",
-        "domain": domain,
-        "policy_data": policy_data,
-        "reason": reason,
-        "policy_version": int(policy_data.get("version", 1)),
-    }
-    identity = {"agent": "librarian-admin", "role": "policy-admin"}
-    iid = compute_intent_id(payload, identity, semantics=f"policy-edit:{domain}:{reason}")
-    intent = Intent(intent_id=iid, payload=payload, identity=identity, head_oid="HEAD")
-    q.submit(intent)
-    q.claim(now=1.0)
-    q.set_state(iid, "authored")
-
-    # Empty writes: the gate reads domain + policy_data from the payload and
-    # constructs the write itself inside _apply_policy_edit.
-    authored = AuthoredIntent(
-        intent=intent,
-        writes={},
-        base_oid="HEAD",
-        decision_basis={"policy_edit": True, "reason": reason},
-    )
-    return authored, iid
-
-
-# ---------------------------------------------------------------------------
-# Test A: regressing policy → dead-letter (the gate must evaluate the REAL policy)
+# Test A: regressing policy → dead-lettered BY THE GATE via run_worker
+# (the production committer routes the intent, not dead-letters in author_deposit)
 # ---------------------------------------------------------------------------
 
 
 @pytest.mark.integration
 def test_governance_regressing_policy_dead_lettered(gate_env):
-    """A policy with wide blocking_band that merges distinct pairs is dead-lettered.
+    """A policy with wide blocking_band that merges distinct pairs is dead-lettered
+    by the gate's merge-map golden gate, via the REAL production committer path.
+
+    Production path: policy_edit() → q.submit() → run_worker (drain_once routes to
+    gate.commit()) → _apply_policy_edit() → merge-map golden gate → dead-letter.
 
     The gate evaluates the PROPOSED dedup params (blocking_band=0.99) against the
-    golden — this causes genuine merge-map precision regression (distinct pairs are
-    incorrectly merged). The policy file is NOT written.
+    golden — genuine merge-map precision regression. The policy file is NOT written.
 
     This test goes RED if:
+      - The committer dead-letters in author_deposit (wrong routing — not gate path).
       - The gate uses a hardcoded string match instead of evaluating the real policy
         (hunt #5). A policy without "geometry-only" in the name would sail through.
       - The merge-map gate is bypassed or skipped.
@@ -195,20 +166,32 @@ def test_governance_regressing_policy_dead_lettered(gate_env):
         },
         "version": 2,
     }
-    authored, iid = _make_policy_edit_intent(
-        gate, q, "med", regressing_policy, "loosen dedup to near-everything-merges"
+    enqueue_result = policy_edit(
+        "med", regressing_policy,
+        reason="loosen dedup to near-everything-merges",
+        queue=q,
     )
+    assert enqueue_result.success, f"policy_edit enqueue failed: {enqueue_result.errors}"
+    iid = enqueue_result.intent_id
 
-    token = q.fencing_token(iid)
-    result = gate.commit(authored, fencing_token=token)
+    # Drive via the REAL production committer: run_worker(once=True) routes the
+    # policy-edit intent to gate.commit() → _apply_policy_edit() → dead-letter.
+    run_worker(once=True, queue=q, gate=gate)
 
-    assert result.disposition == "dead_lettered", (
-        f"regressing policy must be dead-lettered; got {result.disposition}\n"
-        f"summary={result.summary}\nerrors={result.errors}"
+    state = q.get_state(iid)
+    assert state == "dead_lettered", (
+        f"regressing policy must be dead_lettered; queue state={state!r}"
     )
-    assert any("regress" in e.lower() or "precision" in e.lower() for e in result.errors), (
-        f"dead-letter error must name the merge-precision regression; got {result.errors}"
+    result_meta = q.get_result(iid) or {}
+    reason = result_meta.get("reason", "")
+    # The dead-letter reason must come from the gate's merge-map gate, not author_deposit.
+    assert "page_type" not in reason.lower(), (
+        f"dead-letter came from author_deposit path (page_type error): {reason!r}"
     )
+    assert any(
+        kw in reason.lower() for kw in ("regress", "precision", "merge-map", "policy")
+    ), f"dead-letter reason must name a policy gate failure; got: {reason!r}"
+
     # Policy file must NOT have been changed
     on_disk = yaml.safe_load(policy_path.read_text())
     assert on_disk == initial_policy, (
@@ -216,57 +199,25 @@ def test_governance_regressing_policy_dead_lettered(gate_env):
     )
 
 
-@pytest.mark.integration
-def test_governance_regressing_policy_queue_state_is_dead_lettered(gate_env):
-    """Queue state reflects dead-letter after a regressing policy is rejected.
-
-    Verifies the gate transitions the intent to dead_lettered in the queue,
-    not just returns a dead_lettered OperationResult.
-    """
-    gate, q, root, policy_path, initial_policy = gate_env
-
-    regressing_policy = {
-        "domain": {"slug": "med", "name": "Medicine"},
-        "filter": {"threshold_include": 0.7},
-        "dedup": {
-            "blocking_band": 0.98,
-            "identity_threshold": 0.98,
-        },
-        "version": 2,
-    }
-    authored, iid = _make_policy_edit_intent(
-        gate, q, "med", regressing_policy, "regressing-queue-state-check"
-    )
-
-    token = q.fencing_token(iid)
-    gate.commit(authored, fencing_token=token)
-
-    state = q.get_state(iid)
-    assert state == "dead_lettered", (
-        f"intent queue state must be dead_lettered after regressing policy; got {state}"
-    )
-
-
 # ---------------------------------------------------------------------------
-# Test B: benign policy → commits (negative control of the negative control)
+# Test B: benign policy → committed via run_worker (negative control of negative control)
 # ---------------------------------------------------------------------------
 
 
 @pytest.mark.integration
 def test_governance_benign_policy_commits(gate_env):
-    """A benign edit that passes both gates is committed and the policy IS updated.
+    """A benign policy-edit intent routed through run_worker is committed by the gate.
 
-    This is the negative control of the negative control: if the gate dead-lettered
-    ALL policy edits, this test would catch it (and reveal that the guard is broken).
+    Production path: policy_edit() → q.submit() → run_worker → _apply_policy_edit() → committed.
 
     The benign policy only adjusts the filter threshold (no dedup change) so it
     cannot regress the merge-map golden. The gate evaluates the real policy data
     via _derive_dedup_params and finds no regression.
 
     This test goes RED if:
+      - The committer dead-letters in author_deposit (wrong routing).
       - The gate dead-letters even benign edits (over-aggressive gate).
       - The policy file is not updated after a passing gate.
-      - The commit is not durable (no Intent-Id trailer in git log).
     """
     gate, q, root, policy_path, initial_policy = gate_env
 
@@ -277,18 +228,22 @@ def test_governance_benign_policy_commits(gate_env):
         # which are the production baseline → no regression.
         "version": 2,
     }
-    authored, iid = _make_policy_edit_intent(
-        gate, q, "med", benign_policy, "raise filter threshold slightly"
+    enqueue_result = policy_edit(
+        "med", benign_policy,
+        reason="raise filter threshold slightly",
+        queue=q,
     )
+    assert enqueue_result.success, f"policy_edit enqueue failed: {enqueue_result.errors}"
+    iid = enqueue_result.intent_id
 
-    token = q.fencing_token(iid)
-    result = gate.commit(authored, fencing_token=token)
+    # Drive via the REAL production committer
+    run_worker(once=True, queue=q, gate=gate)
 
-    assert result.disposition == "committed", (
-        f"benign policy must commit; got {result.disposition}\n"
-        f"summary={result.summary}\nerrors={result.errors}"
+    state = q.get_state(iid)
+    assert state == "committed", (
+        f"benign policy must be committed via run_worker; queue state={state!r}"
     )
-    # Policy file MUST have been updated
+    # Policy file MUST have been updated on disk
     on_disk = yaml.safe_load(policy_path.read_text())
     assert on_disk == benign_policy, (
         f"policy file not updated after benign commit; on_disk={on_disk}"
@@ -297,7 +252,7 @@ def test_governance_benign_policy_commits(gate_env):
 
 @pytest.mark.integration
 def test_governance_benign_commit_is_durable_in_git(gate_env):
-    """A successful benign policy-edit creates a git commit with Intent-Id trailer.
+    """A benign policy-edit via run_worker creates a git commit with Intent-Id trailer.
 
     Verifies the commit goes through the gate's atomic boundary (_commit_reversal_writes)
     so the policy change is durable and carries a commit-level audit trail.
@@ -313,15 +268,19 @@ def test_governance_benign_commit_is_durable_in_git(gate_env):
         "filter": {"threshold_include": 0.72, "threshold_exclude": 0.3},
         "version": 2,
     }
-    authored, iid = _make_policy_edit_intent(
-        gate, q, "med", benign_policy, "durable commit verification"
+    enqueue_result = policy_edit(
+        "med", benign_policy,
+        reason="durable commit verification",
+        queue=q,
     )
+    assert enqueue_result.success, f"policy_edit enqueue failed: {enqueue_result.errors}"
+    iid = enqueue_result.intent_id
 
-    token = q.fencing_token(iid)
-    result = gate.commit(authored, fencing_token=token)
+    run_worker(once=True, queue=q, gate=gate)
 
-    assert result.disposition == "committed", (
-        f"expected committed; got {result.disposition} ({result.summary})"
+    state = q.get_state(iid)
+    assert state == "committed", (
+        f"expected committed via run_worker; queue state={state!r}"
     )
 
     # The git log must carry the Intent-Id trailer for this intent
@@ -333,42 +292,33 @@ def test_governance_benign_commit_is_durable_in_git(gate_env):
     # `git status` must be clean — no dangling uncommitted policy change
     status_out = _git(root, "status", "--porcelain").stdout
     assert not status_out.strip(), (
-        f"git status not clean after benign policy commit; status:\n{status_out}"
+        f"git status not clean after benign policy commit via run_worker; status:\n{status_out}"
     )
 
 
 # ---------------------------------------------------------------------------
-# Test C: policy_edit() → full end-to-end via queue → gate (drive BOTH branches
-# using the real enqueue path, not the AuthoredIntent shortcut)
+# Test C: full end-to-end via policy_edit() enqueue → run_worker (real operator path)
 # ---------------------------------------------------------------------------
 
 
 @pytest.mark.integration
-def test_governance_full_flow_via_policy_edit_enqueue_then_gate_commit(gate_env):
-    """Full end-to-end: policy_edit() enqueues → claim → gate.commit() commits.
+def test_governance_full_flow_via_policy_edit_enqueue_then_run_worker(gate_env):
+    """Full operator path: policy_edit() enqueues → run_worker drains → commits.
 
-    Policy-edit intents are NOT routed through drain_once/run_worker. The production
-    flow is:
-      policy_edit() → q.submit()                  (enqueue as privileged intent)
-      claim = q.claim()                            (acquire by the committer or CLI)
-      gate.commit(authored, token) with op=policy-edit payload
-        → _apply_policy_edit() (dual-gate) → commit or dead-letter.
-
-    drain_once() dead-letters policy-edit intents because author_deposit() cannot
-    render them (no page_type/title). That dead-letter behavior is correct and
-    intentional — policy-edit is a separate privileged path.
-
-    This test drives the REAL enqueue path via policy_edit() and then verifies the
-    claim → gate.commit() path commits successfully for a benign policy.
+    This is the REAL production path an operator triggers:
+      wiki policy-edit → policy_edit() → q.submit() → (wiki commit-worker)
+      → run_worker → drain_once → [policy-edit routing] → gate.commit()
+      → _apply_policy_edit() → commit (benign) or dead-letter (regressing).
 
     This test goes RED if:
-      - policy_edit() fails to enqueue the intent.
+      - policy_edit() fails to enqueue.
+      - run_worker fails to route the policy-edit intent to the gate (routes to
+        author_deposit instead → dead-letter on page_type error).
       - gate.commit() does not recognize the policy-edit op (dispatch miss).
       - The gate dead-letters a benign policy driven by the real enqueue path.
     """
     gate, q, root, policy_path, initial_policy = gate_env
 
-    # Enqueue via the real policy_edit() op (uses server-sourced principal from env)
     benign_policy = {
         "domain": {"slug": "med", "name": "Medicine"},
         "filter": {"threshold_include": 0.73, "threshold_exclude": 0.3},
@@ -377,38 +327,23 @@ def test_governance_full_flow_via_policy_edit_enqueue_then_gate_commit(gate_env)
     enqueue_result = policy_edit(
         "med",
         benign_policy,
-        reason="end-to-end gate commit test",
+        reason="full operator-path test",
         queue=q,
     )
-    assert enqueue_result.success, (
-        f"policy_edit enqueue failed: {enqueue_result.errors}"
-    )
+    assert enqueue_result.success, f"policy_edit enqueue failed: {enqueue_result.errors}"
     assert enqueue_result.disposition == "queued"
     iid = enqueue_result.intent_id
 
-    # Claim the intent (as a committer would), then build an AuthoredIntent and commit.
-    # The gate's policy-edit dispatch reads domain + policy_data from the PAYLOAD,
-    # so writes={} is correct — the gate builds its own write in _apply_policy_edit.
-    claim = q.claim(now=1.0)
-    assert claim is not None, "could not claim enqueued policy-edit intent"
-    q.set_state(iid, "authored")
+    # Real production committer path — no manual claim or AuthoredIntent construction
+    run_worker(once=True, queue=q, gate=gate)
 
-    intent = claim.intent
-    authored = AuthoredIntent(
-        intent=intent,
-        writes={},
-        base_oid="HEAD",
-        decision_basis={"policy_edit": True},
-    )
-    result = gate.commit(authored, fencing_token=claim.fencing_token)
-
-    assert result.disposition == "committed", (
-        f"end-to-end benign policy gate commit: {result.disposition}\n"
-        f"summary={result.summary}\nerrors={result.errors}"
+    state = q.get_state(iid)
+    assert state == "committed", (
+        f"full operator path: policy must be committed via run_worker; state={state!r}"
     )
 
     # Policy must be on disk with the new values
     on_disk = yaml.safe_load(policy_path.read_text())
     assert on_disk == benign_policy, (
-        f"policy not updated after full gate commit; on_disk={on_disk}"
+        f"policy not updated after full operator-path commit; on_disk={on_disk}"
     )

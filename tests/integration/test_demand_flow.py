@@ -147,11 +147,31 @@ def test_demand_loop_recurring_gap_triggers_synthesis(repo):
         "run_worker did not commit any synthesis page for the demand-triggered cluster"
     )
 
-    # The page content must reference the centroid topic
+    # The page content must reference the centroid topic.
+    # The synthesis intent uses centroid_text as the page title (demand_ledger.py:325),
+    # so the committed page's title/question fields must match the gap text exactly.
+    # We assert the exact centroid-derived slug appears in the filename and the
+    # canonical_name or question field contains the full centroid text.
+    from gateway import frontmatter as fm
     committed_text = synthesis_pages[0].read_text()
-    # Title contains the gap text (slug-derived from centroid_text)
-    assert "semaglutide" in committed_text.lower() or "appetite" in committed_text.lower(), (
-        f"synthesis page does not reference the gap topic; content={committed_text[:300]}"
+    try:
+        front, _ = fm.parse(committed_text)
+    except Exception:
+        front = {}
+    # The slug must be derived from the centroid gap_text (not a generic fallback slug).
+    # _title_to_slug("how does semaglutide reduce appetite in the hypothalamus") →
+    # "how-does-semaglutide-reduce-appetite-in-the-hypothalamus"
+    expected_slug = "how-does-semaglutide-reduce-appetite-in-the-hypothalamus"
+    page_slug = synthesis_pages[0].stem
+    assert page_slug == expected_slug, (
+        f"synthesis page slug does not match centroid-derived slug; "
+        f"got {page_slug!r}, expected {expected_slug!r}"
+    )
+    # The title/question field must carry the centroid gap text verbatim.
+    title_field = front.get("title") or front.get("question") or ""
+    assert gap_text in title_field, (
+        f"synthesis page title/question must contain the centroid gap text; "
+        f"got title_field={title_field!r}"
     )
 
 

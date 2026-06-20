@@ -131,15 +131,17 @@ def gate(repo, queue):
 
 
 @pytest.mark.integration
-def test_lifecycle_deposit_commit_dedup_merge(repo, queue, gate):
-    """deposit → run_worker commits → second deposit same entity → dedup-merge inside commit.
+def test_lifecycle_same_slug_union_second_deposit(repo, queue, gate):
+    """deposit → commit → second deposit (same slug) → same-slug union inside author_deposit.
+
+    NOTE: this test covers the same-slug union path in author_deposit._union_same_slug(),
+    NOT the cross-slug _dedup_recheck → _retarget_to_canonical merge path (see
+    test_lifecycle_cross_slug_dedup_merge_disposition_merged for that).
 
     Uses realistic payload: full multi-section body, aliases, inbound + body wikilinks,
     non-empty preamble.
 
-    Drives the REAL _dedup_recheck + _retarget_to_canonical path inside CommitGate.commit().
-    This test goes RED if the dedup-merge path is broken (the second deposit would overwrite
-    rather than merge, or be dead-lettered, rather than producing a "merged" disposition).
+    This test goes RED if same-slug union overwrites instead of merging, or dead-letters.
     """
     _write_source(repo, "web-glp1-001")
 
@@ -171,7 +173,7 @@ def test_lifecycle_deposit_commit_dedup_merge(repo, queue, gate):
     assert "[[sources/web-glp1-001]]" in content_v1              # wikilinks preserved
     assert _git_committed(repo, "wiki/entities/semaglutide.md"), "not git-committed"
 
-    # Second deposit — same entity title → triggers same-slug union
+    # Second deposit — same entity title → triggers same-slug union in author_deposit
     # Uses only bullet-body additions to satisfy _union_same_slug constraints
     _deposit_entity(
         title="Semaglutide",
@@ -189,7 +191,7 @@ def test_lifecycle_deposit_commit_dedup_merge(repo, queue, gate):
     r2 = drain_once(queue, gate)
     assert r2 is not None
     # Same-slug deposits are unioned inside author_deposit (not via _dedup_recheck)
-    # and committed with disposition "committed" or "merged" — both valid.
+    # and committed with disposition "committed" — both valid.
     assert r2.disposition in ("committed", "merged"), (
         f"second deposit (same slug): {r2.disposition}, detail={r2.detail}, errors={r2.errors}"
     )
@@ -198,6 +200,79 @@ def test_lifecycle_deposit_commit_dedup_merge(repo, queue, gate):
     # Net-new bullet must appear (union applied)
     assert "Approved by FDA" in content_v2 or "cardiovascular risk" in content_v2, (
         "new claims from second deposit not unioned into page"
+    )
+
+
+@pytest.mark.integration
+def test_lifecycle_cross_slug_dedup_merge_disposition_merged(repo, queue, gate):
+    """Two different-slug deposits for the same referent → _dedup_recheck merges → disposition=="merged".
+
+    Drives the REAL cross-slug dedup path: commit_gate._dedup_recheck() returns
+    decision="merge" → _retarget_to_canonical() retargets the second deposit onto
+    the first → committed with disposition="merged" (not "committed").
+
+    The assertion disposition=="merged" exactly is the load-bearing check: it passes
+    only if _retarget_to_canonical ran.  "committed" would mean the dedup path was
+    skipped (e.g. the embedding index was not wired or the alias match failed).
+
+    This test goes RED if:
+      - _dedup_recheck does not identify the deposits as the same referent.
+      - _retarget_to_canonical is not called (disposition would be "committed").
+      - The merge fails and dead-letters instead.
+    """
+    _write_source(repo, "web-glp1-001")
+    _write_source(repo, "web-glp1-002")
+
+    # First deposit — commits as canonical page
+    _deposit_entity(
+        title="Ozempic",
+        body=(
+            "Ozempic is the brand name for semaglutide, a GLP-1 receptor agonist. "
+            "[[sources/web-glp1-001]]\n\n"
+            "## Claims\n"
+            "- Claim A: Once-weekly subcutaneous injection. [[sources/web-glp1-001]]\n"
+        ),
+        aliases=["Semaglutide"],
+        entity_kind="drug",
+        domains=["glp1"],
+        queue=queue,
+    )
+    r1 = drain_once(queue, gate)
+    assert r1 is not None
+    assert r1.disposition == "committed", (
+        f"first deposit (ozempic) must commit; got {r1.disposition}"
+    )
+    assert (repo / "wiki" / "entities" / "ozempic.md").exists()
+
+    # Second deposit — DIFFERENT slug but refers to the same drug (Semaglutide = Ozempic)
+    # The alias overlap + embedding similarity triggers _dedup_recheck → merge decision.
+    _deposit_entity(
+        title="Semaglutide",
+        body=(
+            "## Claims\n"
+            "- Claim B: Reduces HbA1c by ~1.5% in type 2 diabetes. [[sources/web-glp1-002]]\n"
+        ),
+        aliases=["Ozempic"],
+        entity_kind="drug",
+        domains=["glp1"],
+        queue=queue,
+    )
+    r2 = drain_once(queue, gate)
+    assert r2 is not None
+    # EXACT disposition assertion: must be "merged", not "committed".
+    # "committed" means the dedup-merge path was skipped — a coverage gap.
+    assert r2.disposition == "merged", (
+        f"cross-slug dedup-merge: expected disposition='merged' (via _retarget_to_canonical); "
+        f"got {r2.disposition!r}, detail={r2.detail!r}. "
+        f"If 'committed': _dedup_recheck did not identify the pair as same-referent — "
+        f"check alias overlap and EmbeddingIndex wiring."
+    )
+
+    # Both claims must survive on the canonical page
+    canonical = repo / "wiki" / "entities" / "ozempic.md"
+    text = canonical.read_text()
+    assert "Claim A:" in text and "Claim B:" in text, (
+        f"both claims must be present after merge; canonical content:\n{text[:500]}"
     )
 
 

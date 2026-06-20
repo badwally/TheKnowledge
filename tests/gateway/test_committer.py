@@ -1,6 +1,6 @@
 """Production committer: author_deposit + drain_once + run_worker (D0).
 
-Four original adversarial scenarios + four fix-driven scenarios:
+Original adversarial scenarios (1–8) + post-T2 review routing scenarios (9–11):
 
   1. Autonomous commit (happy path): deposit → drain_once → committed on disk + git.
   2. Crash mid-author, lease reclaim: expired lease is reclaimed by drain_once itself.
@@ -10,6 +10,9 @@ Four original adversarial scenarios + four fix-driven scenarios:
   6. Same-slug second deposit unions not overwrites.
   7. Retry-later intent is reclaimable after reclaim pass.
   8. Empty-slug title dead-letters cleanly.
+  9. policy-edit intent routed through drain_once → gate (not dead-lettered in author_deposit).
+ 10. reversal_type intent (contradiction-resolution) routed through drain_once → gate.
+ 11. Genuinely-unknown intent (no page_type, no op, no reversal_type) still dead-letters.
 
 Real fcntl locks, real git repo, real CommitGate — no monkeypatching of core path.
 Redirect only KNOWLEDGE_ROOT (via monkeypatch.setenv).
@@ -23,12 +26,19 @@ import time
 
 import pytest
 
+import shutil
+from pathlib import Path
+
+import yaml
+
 from gateway import cli as cli_mod
 from gateway.commit_gate import CommitGate
 from gateway.embedding_index import EmbeddingIndex
-from gateway.intent_queue import IntentQueue
+from gateway.intent_queue import Intent, IntentQueue, compute_intent_id
 from gateway.ops.committer import DrainResult, author_deposit, drain_once, run_worker
 from gateway.ops.deposit import deposit
+from gateway.ops.policy_edit import policy_edit
+from gateway.ops.revert_resolution import revert_resolution
 
 
 # ---------------------------------------------------------------------------
@@ -40,6 +50,32 @@ def _git(root, *args, check=True):
     return subprocess.run(
         ["git", *args], cwd=root, capture_output=True, text=True, check=check
     )
+
+
+# Path to the production dedup golden (seeded into tmp env for governance gate tests).
+_REAL_GOLDEN = (
+    Path(__file__).parent.parent.parent
+    / ".knowledge" / "eval" / "dedup" / "golden.yaml"
+)
+
+# Same gitignore as test_governance_flow: .knowledge/policies/ is git-TRACKED so that
+# durable-commit assertions work.  Only untracked runtime dirs are excluded.
+_POLICY_GITIGNORE = (
+    ".index/\n"
+    ".knowledge/locks/\n"
+    ".knowledge/lint/\n"
+    ".knowledge/watcher.*\n"
+    ".knowledge/scheduler.*\n"
+    ".knowledge/auth.yaml\n"
+    ".knowledge/secrets.env\n"
+    ".knowledge/demand/\n"
+    ".knowledge/transcripts/\n"
+    ".knowledge/intents/\n"
+    ".knowledge/provenance/\n"
+    ".knowledge/fencing/\n"
+)
+
+_ALLOWLISTED_PRINCIPAL = "librarian-admin:policy-admin"
 
 
 @pytest.fixture
@@ -58,6 +94,50 @@ def repo(tmp_path, monkeypatch):
         pol.mkdir(parents=True)
         (pol / "policy.yaml").write_text(f"domain: {dom}\n")
     return tmp_path
+
+
+@pytest.fixture
+def policy_repo(tmp_path, monkeypatch):
+    """Repo with policy + dedup golden seeded so the CommitGate policy-edit gate runs.
+
+    Uses a tracked .knowledge/policies/ (not gitignored) and seeds the dedup golden
+    so merge-map gate runs for real.  GATEWAY_DEV_SKIP_POLICY_GATES=1 skips the
+    retrieval-golden gate (no FTS index in unit env).
+    """
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.setenv("GATEWAY_DEV_SKIP_POLICY_GATES", "1")
+    monkeypatch.setenv("GATEWAY_POLICY_PRINCIPAL", _ALLOWLISTED_PRINCIPAL)
+
+    _git(tmp_path, "init", "-q")
+    _git(tmp_path, "config", "user.email", "test@test")
+    _git(tmp_path, "config", "user.name", "test")
+    (tmp_path / ".gitignore").write_text(_POLICY_GITIGNORE)
+    (tmp_path / "README.md").write_text("seed\n")
+    _git(tmp_path, "add", "README.md", ".gitignore")
+    _git(tmp_path, "commit", "-qm", "seed")
+
+    # Seed an initial domain policy (committed — tracked)
+    dom_dir = tmp_path / ".knowledge" / "policies" / "med"
+    dom_dir.mkdir(parents=True)
+    initial_policy: dict = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.7, "threshold_exclude": 0.3},
+        "version": 1,
+    }
+    policy_file = dom_dir / "policy.yaml"
+    policy_file.write_text(yaml.dump(initial_policy))
+
+    # Seed the dedup golden so the merge-map gate runs for real.
+    golden_dir = tmp_path / ".knowledge" / "eval" / "dedup"
+    golden_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(_REAL_GOLDEN, golden_dir / "golden.yaml")
+
+    _git(tmp_path, "add", "--",
+         ".knowledge/policies/med/policy.yaml",
+         ".knowledge/eval/dedup/golden.yaml")
+    _git(tmp_path, "commit", "-qm", "seed policy + golden")
+
+    return tmp_path, policy_file, initial_policy
 
 
 @pytest.fixture
@@ -421,3 +501,171 @@ def test_empty_slug_negative_valid_title(repo, queue, gate):
     assert res is not None
     assert res.disposition == "committed"
     assert (repo / "wiki" / "entities" / "validdrug.md").exists()
+
+
+# ---------------------------------------------------------------------------
+# Test 9: policy-edit intent routed through drain_once → gate (post-T2 D0 fix)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+def test_policy_edit_intent_routed_not_dead_lettered_in_author_deposit(policy_repo, monkeypatch):
+    """A policy-edit intent enqueued via policy_edit() is COMMITTED via run_worker.
+
+    Today (pre-fix) drain_once dead-letters it in author_deposit (no page_type).
+    After the fix, drain_once must detect op=="policy-edit" and route to gate.commit()
+    with an empty-writes AuthoredIntent so _apply_policy_edit() can apply it.
+
+    RED before fix: disposition=="dead_lettered" (author_deposit raises ValueError).
+    GREEN after fix: disposition=="committed" (benign policy passes dual gate).
+
+    This test goes RED if:
+      - The committer still sends policy-edit to author_deposit (dead-lettered).
+      - The gate's _apply_policy_edit is not reached.
+      - A benign policy is incorrectly dead-lettered by the gate.
+    """
+    tmp_path, policy_file, initial_policy = policy_repo
+    q = IntentQueue()
+    idx = EmbeddingIndex()
+    gate = CommitGate(queue=q, embedding_index=idx)
+
+    benign_policy = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.75, "threshold_exclude": 0.35},
+        "version": 2,
+    }
+    enqueue_result = policy_edit("med", benign_policy, reason="test routing fix", queue=q)
+    assert enqueue_result.success, f"policy_edit enqueue failed: {enqueue_result.errors}"
+    assert enqueue_result.disposition == "queued"
+    iid = enqueue_result.intent_id
+
+    # drain_once must route to gate, not dead-letter in author_deposit
+    res = drain_once(q, gate)
+    assert res is not None
+    assert res.disposition == "committed", (
+        f"policy-edit intent must be committed (via gate dispatch), "
+        f"not dead-lettered in author_deposit; got disposition={res.disposition!r}, "
+        f"detail={res.detail!r}"
+    )
+
+    # Policy file must be updated on disk with the new values
+    on_disk = yaml.safe_load(policy_file.read_text())
+    assert on_disk == benign_policy, (
+        f"policy file not updated after gate commit; on_disk={on_disk}"
+    )
+
+
+@pytest.mark.integration
+def test_policy_edit_regressing_policy_dead_lettered_by_gate_not_author_deposit(
+    policy_repo, monkeypatch
+):
+    """A regressing policy-edit intent is dead-lettered BY THE GATE, not author_deposit.
+
+    Pre-fix: dead-lettered in author_deposit (ValueError: unsupported page_type).
+    Post-fix: routed to gate._apply_policy_edit → dead-lettered by merge-map gate
+    (regression in dedup precision). The distinction is that the gate's dead-letter
+    reason must name the merge-precision failure, not a page_type error.
+
+    This test goes RED if:
+      - The committer dead-letters for "unsupported page_type" (author_deposit path).
+      - The gate commits a regressing policy (gate not evaluating real params).
+    """
+    tmp_path, policy_file, initial_policy = policy_repo
+    q = IntentQueue()
+    idx = EmbeddingIndex()
+    gate = CommitGate(queue=q, embedding_index=idx)
+
+    regressing_policy = {
+        "domain": {"slug": "med", "name": "Medicine"},
+        "filter": {"threshold_include": 0.7, "threshold_exclude": 0.3},
+        "dedup": {"blocking_band": 0.99, "identity_threshold": 0.99},
+        "version": 2,
+    }
+    enqueue_result = policy_edit(
+        "med", regressing_policy, reason="regress test routing", queue=q
+    )
+    assert enqueue_result.success, f"policy_edit enqueue failed: {enqueue_result.errors}"
+    iid = enqueue_result.intent_id
+
+    res = drain_once(q, gate)
+    assert res is not None
+    assert res.disposition == "dead_lettered", (
+        f"regressing policy must be dead-lettered; got {res.disposition!r}"
+    )
+    # The dead-letter reason must come from the gate's merge-map gate, NOT from
+    # author_deposit's "unsupported page_type" error.
+    gate_reason = res.detail or ""
+    assert "page_type" not in gate_reason.lower(), (
+        f"dead-letter from author_deposit path (page_type error), not gate: {gate_reason!r}"
+    )
+    assert any(
+        kw in gate_reason.lower() for kw in ("regress", "precision", "merge-map", "policy")
+    ), f"dead-letter reason does not name a policy gate failure: {gate_reason!r}"
+
+    # Policy file must NOT be changed (gate failed closed)
+    on_disk = yaml.safe_load(policy_file.read_text())
+    assert on_disk == initial_policy, (
+        f"policy mutated despite dead-lettering a regressing edit; on_disk={on_disk}"
+    )
+
+
+# Negative control: genuinely-invalid intent (no page_type, no op, no reversal_type) still dead-letters.
+def test_unknown_intent_with_no_routing_key_still_dead_letters(repo, queue, gate):
+    """An intent with no page_type, no op=="policy-edit", and no reversal_type must
+    still be dead-lettered — the new routing must not accidentally swallow unknowns.
+
+    This test goes RED if the fix routes genuinely-unknown intents to the gate's
+    deposit path or silently ignores them.
+    """
+    # Build a genuinely-unknown intent (not a deposit, not a policy-edit, not a reversal)
+    payload = {"custom_field": "irrelevant", "some_data": "xyz"}
+    identity = {"agent": "test"}
+    iid = compute_intent_id(payload, identity, semantics="unknown-test")
+    intent = Intent(intent_id=iid, payload=payload, identity=identity)
+    q = queue
+    q.submit(intent)
+
+    res = drain_once(q, gate)
+    assert res is not None
+    assert res.disposition == "dead_lettered", (
+        f"unknown intent must still dead-letter; got {res.disposition!r}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Test 10: reversal_type intent routed through drain_once → gate (post-T2 D0 fix)
+# ---------------------------------------------------------------------------
+
+
+def test_reversal_type_intent_routed_not_dead_lettered_in_author_deposit(repo, queue, gate):
+    """A reversal_type="contradiction-resolution" intent enqueued via revert_resolution()
+    is routed to gate._apply_reversal() by drain_once, not dead-lettered in author_deposit.
+
+    RED before fix: drain_once dead-letters it in author_deposit with "empty title" error
+    (no page_type/title → author_deposit raises ValueError before the gate sees it).
+    GREEN after fix: gate._apply_contradiction_revert dead-letters it with "unknown act ..."
+    (the act doesn't exist in this test fixture — that is expected; what matters is
+    the dead-letter reason comes from the gate's dispatch, not author_deposit).
+
+    The distinguishing assertion: the dead-letter reason must contain "unknown act"
+    (gate dispatch) rather than "empty title" or "unsupported page_type" (author_deposit).
+    """
+    identity = {"agent": "test", "session": "s1"}
+    enqueue_result = revert_resolution(
+        "nonexistent-act-id-for-routing-test", identity, queue=queue
+    )
+    assert enqueue_result.success, f"revert_resolution enqueue failed: {enqueue_result.errors}"
+
+    res = drain_once(queue, gate)
+    assert res is not None
+    assert res.disposition == "dead_lettered", (
+        f"reversal with unknown act must be dead-lettered; got {res.disposition!r}"
+    )
+    # The dead-letter reason must come from the gate's _apply_contradiction_revert
+    # ("unknown act ..."), NOT from author_deposit ("empty title" / "unsupported page_type").
+    gate_reason = (res.detail or "").lower()
+    assert "unknown act" in gate_reason, (
+        f"dead-letter reason does not match gate dispatch ('unknown act ...'); "
+        f"got: {res.detail!r}. This means the routing fix is not working — "
+        f"drain_once is still sending to author_deposit instead of gate.commit()."
+    )

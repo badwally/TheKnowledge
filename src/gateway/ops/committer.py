@@ -280,6 +280,26 @@ def author_deposit(intent: Intent, gate: CommitGate | None = None) -> AuthoredIn
 # ---------------------------------------------------------------------------
 
 
+def _is_gate_dispatched(payload: dict) -> bool:
+    """Return True if the intent should be routed directly to gate.commit() without
+    going through author_deposit().
+
+    The gate dispatches two non-deposit intent classes before reaching the deposit/
+    dedup/contradiction pipeline:
+      - ``reversal_type`` present  → gate._apply_reversal()     (Phase 5 T1/G1/G3/G8)
+      - ``op == "policy-edit"``    → gate._apply_policy_edit()  (Phase 5 T6/G7)
+
+    These intents carry no normal write set; the gate constructs their own writes
+    internally. They must bypass author_deposit() (which requires page_type/title)
+    and be handed to gate.commit() as an AuthoredIntent with writes={}.
+    """
+    if payload.get("reversal_type"):
+        return True
+    if payload.get("op") == "policy-edit":
+        return True
+    return False
+
+
 def drain_once(
     queue: IntentQueue,
     gate: CommitGate,
@@ -295,6 +315,14 @@ def drain_once(
     committed / merged / dead_lettered / retry-later / quarantined / rejected.
 
     A retry-later intent is moved back to submitted/ so a later pass can retry it.
+
+    Intent routing (post-T2 D0 reopen):
+      - reversal_type present or op=="policy-edit" → gate-dispatched: skips
+        author_deposit and calls gate.commit() with AuthoredIntent(writes={}).
+        The gate's own dispatch in commit() (commit_gate.py:333–351) routes to
+        _apply_reversal / _apply_policy_edit, which construct their own writes.
+      - page_type present (deposit) → author_deposit() → gate.commit() (existing path).
+      - Neither: genuinely unknown → author_deposit raises ValueError → dead-letters.
     """
     # Crash recovery: return any expired leases to submitted/ before we try to claim.
     queue.reclaim_expired()
@@ -305,6 +333,32 @@ def drain_once(
 
     intent = claim.intent
     intent_id = intent.intent_id
+    payload = intent.payload or {}
+
+    if _is_gate_dispatched(payload):
+        # Non-deposit gate-dispatched intent: build an empty-writes AuthoredIntent
+        # and hand it to gate.commit(). The gate's dispatch block (commit_gate.py:333–351)
+        # will route to _apply_reversal or _apply_policy_edit based on the payload keys.
+        # The gate constructs the actual filesystem writes internally.
+        authored = AuthoredIntent(
+            intent=intent,
+            writes={},
+            base_oid="HEAD",
+        )
+        result: OperationResult = gate.commit(authored, claim.fencing_token)
+        disposition = result.disposition or ("committed" if result.success else "failed")
+        # retry-later: return to submitted/ for a future pass.
+        if disposition == "retry-later":
+            try:
+                queue.set_state(intent_id, "submitted")
+            except Exception as inner:
+                log.error("could not re-queue retry-later intent %s: %s", intent_id, inner)
+        return DrainResult(
+            disposition=disposition,
+            intent_id=intent_id,
+            detail=result.summary,
+            errors=list(result.errors),
+        )
 
     try:
         authored = author_deposit(intent, gate)
@@ -323,7 +377,7 @@ def drain_once(
             errors=[str(exc)],
         )
 
-    result: OperationResult = gate.commit(authored, claim.fencing_token)
+    result = gate.commit(authored, claim.fencing_token)
     disposition = result.disposition or ("committed" if result.success else "failed")
 
     # For retry-later: move the intent back to submitted/ so the next worker pass
