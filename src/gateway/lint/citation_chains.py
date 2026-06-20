@@ -1,13 +1,11 @@
 """M45 citation-chains lint scope.
 
-Walks the `synthesizes:` graph across synthesis pages and reports breaks:
+Walks the `synthesizes:` graph across synthesis pages and reports breaks.
+All findings are emitted under the registered slug `citation-chains`; the
+specific break is carried in `metadata["kind"]`:
 
 - **dangling-synthesizes-ref**: `synthesizes:` entry points to a page that
   doesn't exist on disk (e.g., a renamed or deleted constituent).
-- **synthesizes-shape**: malformed entries (not matching
-  `(sources|synthesis)/<slug>`) or mixed-tier lists.
-- **synthesizes-included-works-drift**: `## Included works` section absent
-  or its wikilinks don't mirror `synthesizes:` 1:1.
 - **aggregate-framing-without-synthesizes**: a synthesis page contains an
   aggregate-framing opener (`Based on the provided sources...`) but no
   `synthesizes:` frontmatter to back it — the page is making aggregate
@@ -63,7 +61,7 @@ def run() -> list[LintFinding]:
             if _has_aggregate_framing(body):
                 findings.append(
                     LintFinding(
-                        check="aggregate-framing-without-synthesizes",
+                        check="citation-chains",
                         severity=SEVERITY_WARNING,
                         message=(
                             "synthesis page contains aggregate-framing opener "
@@ -73,6 +71,7 @@ def run() -> list[LintFinding]:
                             "to ground them, or rewrite the openers with citations"
                         ),
                         path=rel_path,
+                        metadata={"kind": "aggregate-framing-without-synthesizes"},
                     )
                 )
             continue
@@ -87,7 +86,7 @@ def run() -> list[LintFinding]:
             if entry not in existing_identities:
                 findings.append(
                     LintFinding(
-                        check="dangling-synthesizes-ref",
+                        check="citation-chains",
                         severity=SEVERITY_ERROR,
                         message=(
                             f"`synthesizes:` entry {entry!r} does not exist on "
@@ -95,7 +94,7 @@ def run() -> list[LintFinding]:
                             f"missing page"
                         ),
                         path=rel_path,
-                        metadata={"target": entry},
+                        metadata={"target": entry, "kind": "dangling-synthesizes-ref"},
                     )
                 )
 

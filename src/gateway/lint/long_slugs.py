@@ -27,7 +27,7 @@ def run() -> list[LintFinding]:
             rel = str(path.relative_to(kb_root))
             findings.append(
                 LintFinding(
-                    check="slug-too-long",
+                    check="long-slugs",
                     severity=SEVERITY_WARNING,
                     message=(
                         f"slug is {len(str(slug))} chars (max {_MAX_SLUG_LEN}); "

@@ -1255,9 +1255,8 @@ def test_citation_chains_fires_on_dangling_synthesizes_ref(kb_root):
     """citation-chains fires when a synthesis page's synthesizes: entry does not exist.
 
     Producer: write a synthesis page with synthesizes: pointing to a missing target.
-    The check (citation_chains.run()) emits findings with check='dangling-synthesizes-ref',
-    not 'citation-chains'. This mismatch is a registry defect tracked at
-    docs/backlog/librarian-citation-chains-slug-mismatch.md.
+    The check emits findings under its registered slug 'citation-chains'; the
+    dangling-vs-aggregate sub-type is preserved in metadata['kind'].
     """
     from gateway.lint import citation_chains
 
@@ -1285,11 +1284,14 @@ def test_citation_chains_fires_on_dangling_synthesizes_ref(kb_root):
     (syn_dir / "dangling-synth.md").write_text(fm.serialize(front, body))
 
     findings = citation_chains.run()
-    # The module emits check='dangling-synthesizes-ref' (not 'citation-chains').
-    # This is a real on-disk condition; the slug mismatch is the discovered defect.
-    assert any(f.check == "dangling-synthesizes-ref" for f in findings), (
+    # Emitted under the registered slug; sub-type preserved in metadata['kind'].
+    assert any(
+        f.check == "citation-chains"
+        and f.metadata.get("kind") == "dangling-synthesizes-ref"
+        for f in findings
+    ), (
         "citation-chains: synthesis with synthesizes: pointing to a missing source "
-        "must emit a dangling-synthesizes-ref finding; "
+        "must emit a citation-chains finding (kind=dangling-synthesizes-ref); "
         f"findings={findings}"
     )
 
@@ -1453,11 +1455,7 @@ def test_long_slugs_fires_on_grandfathered_oversized_slug(kb_root):
     """long-slugs fires on a wiki page whose slug exceeds 80 characters.
 
     Producer: write a wiki/concepts/<slug>.md with a slug > 80 chars.
-    Note: the module (long_slugs.run) emits findings with check='slug-too-long',
-    not 'long-slugs'. This slug mismatch is a real registry defect — the
-    parametrized negative control (empty repo) never catches it because
-    the empty repo produces no findings. Tracked at
-    docs/backlog/librarian-long-slugs-slug-mismatch.md.
+    The check emits findings under its registered slug 'long-slugs'.
     """
     from gateway.lint import long_slugs
 
@@ -1480,8 +1478,7 @@ def test_long_slugs_fires_on_grandfathered_oversized_slug(kb_root):
     )
 
     findings = long_slugs.run()
-    # The module emits check='slug-too-long' (not 'long-slugs'): registry slug mismatch.
-    assert any(f.check == "slug-too-long" and "slug" in f.message.lower() for f in findings), (
+    assert any(f.check == "long-slugs" and "slug" in f.message.lower() for f in findings), (
         "long-slugs: a page with slug > 80 chars must produce a finding; "
         f"findings={findings}"
     )

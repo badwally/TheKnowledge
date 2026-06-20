@@ -352,7 +352,7 @@ def test_slug_too_long_lint_check(kb_root):
     front = {"type": "concept", "slug": slug, "title": "long", "domain": "d", "domains": ["d"]}
     (concepts_dir / f"long-slug.md").write_text(fm.serialize(front, "body\n"))
     findings = lint_long_slugs()
-    assert any(f.check == "slug-too-long" and f.severity == SEVERITY_WARNING for f in findings)
+    assert any(f.check == "long-slugs" and f.severity == SEVERITY_WARNING for f in findings)
 
 
 # --- draft: section-missing downgrade ----------------------------------------

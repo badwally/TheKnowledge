@@ -1,6 +1,50 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-20 (TEST-HARNESS EXPANSION build MERGED — PR #38 `485427ad` + playbook follow-up PR #39 `02c73ca9`. Prior: Committer+test-harness PR #35/#36/#37 MERGED; Librarian 5-phase build COMPLETE.)
+Last updated: 2026-06-20 (LINT-REGISTRY SLUG-MISMATCH FIX in flight on branch `fix/lint-registry-slug-mismatch`, cut off main `c22b8bb1`. Prior: TEST-HARNESS EXPANSION MERGED PR #38/#39; Librarian 5-phase build COMPLETE.)
+
+---
+
+## 🔧 LINT-REGISTRY SLUG-MISMATCH FIX (IN FLIGHT 2026-06-20)
+
+**Branch:** `fix/lint-registry-slug-mismatch` (off main `c22b8bb1`). Closes the two
+production bugs backlogged from P2: lint checks registered under a slug they don't emit,
+so a `wiki lint --scope <slug>` consumer filtering on the registered slug got nothing.
+
+### Open contracts
+- **Direction decided:** rename the emitted `check=` to match the registered slug for BOTH
+  checks (preserves public `--scope citation-chains`/`long-slugs` names; the only single-slug
+  option for citation-chains short of a split, which the brief excluded).
+- **citation_chains.py** — both findings now emit `check="citation-chains"`; dangling-vs-
+  aggregate sub-type preserved in `metadata["kind"]`. **long_slugs.py** — emits `check="long-slugs"`.
+- **Tests (TDD RED→GREEN):** updated `test_inert_invariants.py` (2 positive tests, comments
+  removed), `test_lint_citation_chains.py` (filter on slug + metadata kind), `test_validator.py:355`.
+  The `assert f.check == slug` tripwire (`test_inert_invariants.py:~194`) now holds for both slugs.
+- **Verified live:** `--scope citation-chains` → 28 findings under `## citation-chains`;
+  `--scope long-slugs` → 50 under `## long-slugs` (== historical M96 count). No `LINT_BASELINES`
+  change (citation-chains/long-slugs are not gate baselines; orphans/schema-drift/broken-wikilinks
+  unchanged). Both backlog docs marked RESOLVED.
+- **Gate:** RE-RUNNING (full suite green so far ~62%). First run failed at Step 1 — main's `.venv`
+  lacked `hypothesis` (declared `[dev]` dep added by merged P4, never synced into this checkout).
+  Installed `hypothesis>=6.0`; re-running.
+
+### Files mid-edit
+- None — all edits complete; awaiting gate green, then commit + push branch + PR (user merges).
+
+### Decisions made this session
+- Rename emitted→registered (not registry→emitted, not split). Preserves public scope names;
+  lowest blast radius. Sub-type kept in `metadata["kind"]` so no information lost in the collapse.
+- Also fixes a latent report inconsistency: `_write_report` summary was keyed by registry slug
+  but detail sections by emitted `f.check` — now both agree.
+
+### Rejected approaches this session
+- Option-2 split (two registrations for citation-chains): excluded by the brief's two-direction
+  framing; would change the public `--scope` name and require splitting `run()`.
+- Touching validator.py's `slug-too-long` ValidationError rule: separate subsystem, left as-is.
+
+### Next atomic step
+Confirm gate exit 0, then: guard `git branch --show-current`==`fix/lint-registry-slug-mismatch`,
+stage explicit paths only (the 7 changed files — never index.md/log.md/.knowledge/.claude), commit,
+push branch, open PR to main. User merges.
 
 ---
 
