@@ -23,12 +23,15 @@ so a `wiki lint --scope <slug>` consumer filtering on the registered slug got no
   `--scope long-slugs` → 50 under `## long-slugs` (== historical M96 count). No `LINT_BASELINES`
   change (citation-chains/long-slugs are not gate baselines; orphans/schema-drift/broken-wikilinks
   unchanged). Both backlog docs marked RESOLVED.
-- **Gate:** RE-RUNNING (full suite green so far ~62%). First run failed at Step 1 — main's `.venv`
-  lacked `hypothesis` (declared `[dev]` dep added by merged P4, never synced into this checkout).
-  Installed `hypothesis>=6.0`; re-running.
+- **Gate PASSED** @ commit `f83dfc3e`: 2534 passed; recall@10 0.926; merge-map 0 regressions;
+  embedding OK; scoped lints at baseline (758/191/1). First run failed at Step 1 — main's `.venv`
+  lacked `hypothesis` (declared `[dev]` dep added by merged P4, never synced into this checkout);
+  installed `hypothesis>=6.0` and re-ran green. (Heads-up: any FRESH main checkout needs
+  `pip install -e '.[dev]'` before the gate's full suite can collect `test_property_invariants.py`.)
+- **PR #41 OPEN** (https://github.com/badwally/TheKnowledge/pull/41) — awaiting user merge.
 
 ### Files mid-edit
-- None — all edits complete; awaiting gate green, then commit + push branch + PR (user merges).
+- None. All work shipped in PR #41 (commit `f83dfc3e`); awaiting user merge.
 
 ### Decisions made this session
 - Rename emitted→registered (not registry→emitted, not split). Preserves public scope names;
@@ -42,9 +45,9 @@ so a `wiki lint --scope <slug>` consumer filtering on the registered slug got no
 - Touching validator.py's `slug-too-long` ValidationError rule: separate subsystem, left as-is.
 
 ### Next atomic step
-Confirm gate exit 0, then: guard `git branch --show-current`==`fix/lint-registry-slug-mismatch`,
-stage explicit paths only (the 7 changed files — never index.md/log.md/.knowledge/.claude), commit,
-push branch, open PR to main. User merges.
+NONE on my side — PR #41 is open and gate-green; user merges. After merge, both backlog docs are
+RESOLVED and no follow-up is triggered. (If a fresh main checkout is used next, run
+`pip install -e '.[dev]'` so the gate's full suite can collect the hypothesis-dependent tests.)
 
 ---
 
