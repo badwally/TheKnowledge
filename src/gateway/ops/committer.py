@@ -452,6 +452,18 @@ def run_worker(
     except Exception as exc:
         log.error("gate.recover() failed at startup: %s", exc)
 
+    def _emit(result) -> None:
+        # Emit stable structured keys only — no payload/body/credentials.
+        # reason: prefer detail (the human-readable summary); fall back to
+        # the first error string when detail is empty (dead-letter path).
+        if sink is not None:
+            reason = result.detail or (result.errors[0] if result.errors else "")
+            sink({
+                "intent_id": result.intent_id,
+                "disposition": result.disposition,
+                "reason": reason,
+            })
+
     if once:
         while True:
             try:
@@ -464,16 +476,7 @@ def run_worker(
             if result is None:
                 break
             log.info("drained %s → %s", result.intent_id, result.disposition)
-            if sink is not None:
-                # Emit stable structured keys only — no payload/body/credentials.
-                # reason: prefer detail (the human-readable summary); fall back to
-                # the first error string when detail is empty (dead-letter path).
-                reason = result.detail or (result.errors[0] if result.errors else "")
-                sink({
-                    "intent_id": result.intent_id,
-                    "disposition": result.disposition,
-                    "reason": reason,
-                })
+            _emit(result)
     else:
         try:
             while True:
@@ -485,13 +488,7 @@ def run_worker(
                     continue
                 if result is not None:
                     log.info("drained %s → %s", result.intent_id, result.disposition)
-                    if sink is not None:
-                        reason = result.detail or (result.errors[0] if result.errors else "")
-                        sink({
-                            "intent_id": result.intent_id,
-                            "disposition": result.disposition,
-                            "reason": reason,
-                        })
+                    _emit(result)
                 else:
                     time.sleep(poll_interval)
         except KeyboardInterrupt:

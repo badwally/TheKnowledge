@@ -8,9 +8,6 @@
 # Install (hooks are not version-controlled; install once after cloning):
 #   ln -sf "$(pwd)/scripts/pre-push" .git/hooks/pre-push
 #
-# Or use the installer:
-#   bash scripts/install_pre_push_hook.sh
-#
 # Usage:
 #   scripts/pre-push            — full gate (suite + evals + lints); required
 #                                 for any push that will become a PR to main.

@@ -45,7 +45,7 @@ from gateway import locking
 from gateway import validator
 from gateway.commit_gate import CommitGate
 from gateway.intent_queue import IntentQueue
-from gateway.ops.committer import drain_once, run_worker
+from gateway.ops.committer import drain_once
 from gateway.ops.deposit import MAX_BACKLOG, deposit
 
 

@@ -1039,9 +1039,12 @@ def test_policy_edit_op_has_apply_branch(kb_root, monkeypatch):
 # Step 1 (continued): Positive-signal cases for the remaining 26 lint checks
 # ===========================================================================
 # Each test below drives the REAL on-disk condition a check reads.
-# Checks that require an LLM subprocess (contradictions, missing-pages,
-# filter-calibration) and fragmentation (embedding DB) are xfail with a
-# backlog pointer — these are genuine gaps, not fabrication gaps.
+# LLM-driven checks (contradictions, missing-pages, filter-calibration,
+# stale-claims WARNING mode) and the fragmentation check are covered by
+# deterministic, non-xfail tests: LLM transport is stubbed via the
+# injectable `run(client=...)` seam (_StubClient), so the real
+# disk-gather → prompt-build → parse → finding path runs without a live
+# subprocess. Fragmentation is driven by a real embedding-DB write.
 # The "every KNOWN_CHECKS slug has a positive case" guard at the bottom
 # is derived from the LIVE registry (_CHECKS), not a frozen list.
 # ===========================================================================
