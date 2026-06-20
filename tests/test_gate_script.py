@@ -342,3 +342,53 @@ class TestParseLintCount:
         assert count is None, (
             "NEGATIVE CONTROL FAILED: output for schema-drift should not parse as orphans"
         )
+
+
+# ---------------------------------------------------------------------------
+# step_concurrency_repeat — repetition for flake surfacing (#2)
+# ---------------------------------------------------------------------------
+
+
+class TestConcurrencyRepeat:
+    """The gate runs the `concurrency`-marked tests N times so a single-pass
+    suite cannot clear a nondeterministic flake by chance. These unit tests
+    drive the step with `_run_pytest` stubbed — no real pytest subprocess.
+    """
+
+    def test_runs_pytest_concurrency_repeat_times_when_green(self, monkeypatch):
+        import gateway.scripts.gate as gate
+
+        calls = []
+
+        def _fake(args):
+            calls.append(args)
+            return gate.GateCheckResult(passed=True, message="pytest: PASS")
+
+        monkeypatch.setattr(gate, "_run_pytest", _fake)
+        result = gate.step_concurrency_repeat()
+        assert result.passed is True
+        assert len(calls) == gate.CONCURRENCY_REPEAT, (
+            f"must run the concurrency subset {gate.CONCURRENCY_REPEAT}x; ran {len(calls)}"
+        )
+        # Every run must select the concurrency marker, not the whole suite.
+        for args in calls:
+            assert "concurrency" in args and "-m" in args, f"run did not scope to -m concurrency: {args}"
+
+    def test_fails_on_first_failing_run_and_stops(self, monkeypatch):
+        import gateway.scripts.gate as gate
+
+        calls = []
+
+        def _fake(args):
+            calls.append(args)
+            # Fail on the 2nd run; the step must stop there (a 1/3 flake must not
+            # be able to clear the gate by passing the remaining runs).
+            passed = len(calls) != 2
+            return gate.GateCheckResult(passed=passed, message="x")
+
+        monkeypatch.setattr(gate, "_run_pytest", _fake)
+        result = gate.step_concurrency_repeat()
+        assert result.passed is False, (
+            "NEGATIVE CONTROL: a single failing concurrency run must fail the gate"
+        )
+        assert len(calls) == 2, f"must stop on the first failure; ran {len(calls)}"

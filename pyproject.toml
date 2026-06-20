@@ -61,4 +61,5 @@ markers = [
     "integration: touches real files, git repos, or gateway state — slower, requires fixtures",
     "e2e: full CLI or MCP round-trip end-to-end — slowest, gates release",
     "slow: test takes >5s or exercises a soak/load path — excluded from fast inner loop",
+    "concurrency: order-/timing-dependent (drain order, N-agent contention) — re-run N× by the gate to surface flakes",
 ]

@@ -191,3 +191,101 @@ def test_mcp_deposit_round_trip_commits_page(repo: Path, monkeypatch: pytest.Mon
     # Also verify HEAD advanced past seed
     commits = _git(repo, "log", "--oneline").stdout.strip().splitlines()
     assert len(commits) >= 2, f"Expected at least 2 commits (seed + deposit), got: {commits}"
+
+
+# ---------------------------------------------------------------------------
+# #3 — read-tier carry-forward: an agent reads its OWN just-committed write
+# THROUGH the real read-tier MCP mount (not the CLI/op path).
+# ---------------------------------------------------------------------------
+# This is the loop the deterministic harness substitutes for: deposit (build
+# tier call_tool) → commit (run_worker) → read-your-writes via the read-tier
+# server call_tool. Existing e2e reads via cli.main(["retrieve", ...]); none
+# drives a READ op through build_read_tier_server().
+
+
+@pytest.mark.e2e
+def test_read_tier_carry_forward_reads_own_committed_write(
+    repo: Path, monkeypatch: pytest.MonkeyPatch
+):
+    """deposit (build mount) → drain → retrieve THROUGH the read-tier mount.
+
+    Negative control: before the drain, the read-tier retrieve must NOT surface
+    the page — proving the assertion tests the COMMIT, not the enqueue.
+    """
+    from gateway.intent_queue import IntentQueue
+    from gateway.ops.committer import run_worker
+
+    title = "Carryforward Probe Entity"
+    slug = "carryforward-probe-entity"
+    payload = {
+        "page_type": "concept",
+        "title": title,
+        "body": "## Overview\nA page deposited via the build mount for carry-forward.\n",
+        "durable": False,
+    }
+    identity = {"agent": "e2e-carryforward"}
+
+    async def _retrieve_via_read_tier(query: str) -> str:
+        async with create_connected_server_and_client_session(
+            build_read_tier_server()
+        ) as client:
+            result = await client.call_tool("wiki_retrieve", {"query": query})
+            return result.content[0].text
+
+    # --- Negative control: nothing committed yet → read-tier must not surface it.
+    # Assert on the SLUG, not the title: wiki_retrieve echoes the query string in
+    # its summary, so the title would match even with zero results; the slug only
+    # appears when the page itself is retrieved.
+    before = asyncio.run(_retrieve_via_read_tier(title))
+    assert slug not in before, (
+        f"read-tier surfaced the page before it was committed; output={before[:300]}"
+    )
+
+    # --- Deposit through the BUILD mount (the privileged write surface).
+    async def _deposit() -> dict:
+        async with create_connected_server_and_client_session(mcp_server.mcp) as client:
+            result = await client.call_tool(
+                "wiki_deposit", {"payload": payload, "identity": identity}
+            )
+            return json.loads(result.content[0].text)
+
+    receipt = asyncio.run(_deposit())
+    assert receipt["success"] and receipt["disposition"] == "queued", receipt
+
+    # --- Commit it.
+    run_worker(once=True, queue=IntentQueue())
+    assert (repo / "wiki" / "concepts" / f"{slug}.md").exists(), "page not committed"
+
+    # --- Carry-forward: the SAME agent reads its own write THROUGH the read mount.
+    # The slug appears only if the page itself is in the retrieved block (the
+    # echoed query carries the title, never the hyphenated slug).
+    after = asyncio.run(_retrieve_via_read_tier(title))
+    assert slug in after, (
+        f"read-tier mount did not surface the just-committed page (read-your-writes "
+        f"failed across the tier boundary); output={after[:500]}"
+    )
+
+
+@pytest.mark.e2e
+def test_read_tier_mount_cannot_deposit(repo: Path):
+    """The read-tier mount must not expose a write path: calling wiki_deposit on
+    it is rejected (isError) and enqueues nothing — the boundary holds at call
+    time, not merely in the advertised tool set."""
+    from gateway.intent_queue import IntentQueue
+
+    async def _attempt_write():
+        async with create_connected_server_and_client_session(
+            build_read_tier_server()
+        ) as client:
+            return await client.call_tool(
+                "wiki_deposit",
+                {"payload": {"page_type": "concept", "title": "X"}, "identity": {}},
+            )
+
+    result = asyncio.run(_attempt_write())
+    assert getattr(result, "isError", False) is True, (
+        "read-tier mount did not reject wiki_deposit as an error result"
+    )
+    assert IntentQueue().depth() == 0, (
+        "read-tier wiki_deposit ENQUEUED an intent — write boundary breached"
+    )

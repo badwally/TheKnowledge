@@ -1,6 +1,55 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-20 (LINT-REGISTRY SLUG-MISMATCH FIX in flight on branch `fix/lint-registry-slug-mismatch`, cut off main `c22b8bb1`. Prior: TEST-HARNESS EXPANSION MERGED PR #38/#39; Librarian 5-phase build COMPLETE.)
+Last updated: 2026-06-20 (AS-BUILT REVIEW FOLLOW-UPS in flight. Merged this session: PR #41 lint-slug-mismatch, #42 dev-deps note, #43 e2e-challenge-cases. Open: PR #44 committer-drain-determinism; branch `chore/gate-tests-what-ships` (3-item gate hardening, stacked on #44).)
+
+---
+
+## 🔧 AS-BUILT REVIEW FOLLOW-UPS (IN FLIGHT 2026-06-20)
+
+Driven by `docs/260620_librarian-rag-as-built-review.md`. Reviewed it, verified its one live finding, fixed it, then took the 3 gate-design weaknesses it surfaced.
+
+### Open contracts
+- **PR #44 `fix/committer-drain-determinism` (OPEN, gate-green @ 2535):** the flaky merge-direction
+  test. Root cause was NOT the review's "timestamp in intent id" (it's a pure content hash) — it was
+  `IntentQueue.claim()` sorting by mtime alone, ties → nondeterministic `os.scandir` order. Fix:
+  `(mtime, name)` total order + RED-first unit test + direction-agnostic committer assertion. 20/20
+  unpinned, all pinned seeds pass.
+- **Branch `chore/gate-tests-what-ships` (stacked on #44), 3 items — gate now green:**
+  - **#1 live entity-recall guard** — `test_lifecycle_flow.py` 2 new tests drive the REAL EmbeddingIndex
+    → `_dedup_recheck` → adjudicate on the alias-merge; explicit distance floor (live 0.276, RED at ~1.0)
+    + disjoint negative control (0.955). Teeth-verified. Finding: the merge-map golden RECORDS distances
+    the live encoder doesn't produce (brand/generic 1.0 vs 0.276; link 0.12 vs 1.0) → backlog
+    `docs/backlog/librarian-merge-map-golden-live-fidelity.md`.
+  - **#2 concurrency repetition** — new `concurrency` pytest marker on 5 order/contention tests; gate
+    `step_concurrency_repeat` re-runs `-m concurrency` ×5 (CONCURRENCY_REPEAT=5, ~3s); RED-first unit
+    tests in `test_gate_script.py`. A 1/3 flake now clears the gate at ~0.4%, not 33%.
+  - **#3 read-tier carry-forward E2E** — `test_mcp_surface.py` 2 new e2e: deposit via build mount →
+    run_worker → read own write THROUGH `build_read_tier_server().call_tool("wiki_retrieve")` (the
+    contract the deterministic harness substitutes for) + pre-drain negative control; boundary test
+    proves the read mount rejects `wiki_deposit` (isError, enqueues nothing). Confirmed the write
+    boundary HOLDS (not a defect — initial test logic was wrong).
+
+### Files mid-edit
+- None. All edits complete; gate re-run finishing. Then commit `chore/gate-tests-what-ships` (base the
+  PR on `fix/committer-drain-determinism` — stacked; GitHub auto-retargets to main when #44 merges).
+
+### Decisions made this session
+- Drain determinism via `(mtime, name)` tiebreak (user chose "claim() tiebreak + test" over test-only/
+  semantic-rule). Lowest-risk; only ADDS order where there was a nondeterministic tie.
+- #3 scoped to an AUTOMATED e2e (user chose) — no production-wiki mutation; runs in seeded temp root.
+- #1 guards the alias-merge RECALL path live (faithful, distance 0.276); the `link` path has no
+  faithful live case on the lexical encoder (disjoint surfaces score 1.0) → documented, not forced.
+
+### Rejected approaches this session
+- Review's stated root cause (timestamp in content-addressed intent id) — wrong; corrected to mtime-tie.
+- Re-recording / live-driving the merge-map golden distances now — touches a gate floor; deferred to
+  the backlog doc (trigger: next golden touch or neural-encoder swap).
+- Repeating the SLOW soak tests ×5 — instead marked the fast order-sensitive subset (~1.5s) for cheap
+  repetition; the soak tests already stress contention in a single run.
+
+### Next atomic step
+Confirm gate exit 0, commit the 3-item work on `chore/gate-tests-what-ships`, push, open PR (base
+`fix/committer-drain-determinism`). User merges #44 then this. No production-wiki writes occurred.
 
 ---
 

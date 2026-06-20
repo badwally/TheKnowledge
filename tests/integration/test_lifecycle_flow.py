@@ -468,3 +468,118 @@ def test_full_lifecycle_chain_run_worker(repo, queue, gate):
     assert _git_committed(repo, "wiki/entities/tirzepatide.md"), (
         "tirzepatide.md not in git history"
     )
+
+
+# ---------------------------------------------------------------------------
+# #1 — live entity embedding RECALL guard (gate-tests-what-ships)
+# ---------------------------------------------------------------------------
+# The embedding adequacy gate accepts the entity namespace via fallback (it
+# ships below floor), and merge_map_eval feeds the adjudicator a *recorded*
+# nn_distance — so NEITHER gate floor drives the LIVE entity encoder through
+# candidate-gather → adjudicate. This test does: a real upsert into the entity
+# namespace, then the production query text, asserting the live encoder still
+# scores a true alias pair well inside the net (RED if it collapses toward 1.0),
+# and that the real _dedup_recheck merges on alias authority. A disjoint entity
+# is the named negative control.
+#
+# Faithfulness note: the merge-map golden RECORDS dist=1.0 for Ozempic↔Semaglutide
+# (it embeds canonical names only); the production path embeds name+aliases, so
+# the LIVE distance is ~0.28. See docs/backlog/librarian-merge-map-golden-live-fidelity.md.
+
+
+@pytest.mark.integration
+def test_live_entity_embedding_recall_surfaces_alias_merge(repo, queue, gate):
+    """The LIVE entity index must surface a true alias-merge candidate, and the
+    real _dedup_recheck must merge it on alias authority.
+
+    Goes RED if the entity encoder regresses so a name+alias pair drifts out of
+    the recall net (distance → ~1.0), which the recorded-distance merge_map_eval
+    and the fallback-accepted embedding gate would both miss.
+    """
+    _write_source(repo, "web-glp1-001")
+
+    # Commit a real canonical entity page → upserts into the LIVE entity namespace.
+    _deposit_entity(
+        title="Semaglutide",
+        body="## Claims\n- A GLP-1 receptor agonist. [[sources/web-glp1-001]]\n",
+        aliases=["Ozempic", "Wegovy"],
+        domains=["glp1"],
+        queue=queue,
+    )
+    r1 = drain_once(queue, gate)
+    assert r1 is not None and r1.disposition == "committed", (
+        f"first deposit: {getattr(r1, 'disposition', None)}"
+    )
+    assert (repo / "wiki" / "entities" / "semaglutide.md").exists()
+
+    # RECALL (load-bearing): the production query text for an "Ozempic" deposit
+    # must surface the committed semaglutide page from the LIVE index, well inside
+    # the net. Live ~0.28; a regression to ~1.0 (e.g. aliases not embedded) REDs.
+    idx = gate._embedding_index
+    hits = idx.nn("entity", "Ozempic Semaglutide", k=10)
+    by_key = {h.key: h.distance for h in hits}
+    assert "wiki/entities/semaglutide.md" in by_key, (
+        f"live entity index did not surface the true alias candidate; hits={by_key}"
+    )
+    assert by_key["wiki/entities/semaglutide.md"] < 0.5, (
+        "entity encoder recall regressed — a true name+alias pair is no longer "
+        f"scored inside the net; distance={by_key['wiki/entities/semaglutide.md']:.3f}"
+    )
+
+    # MERGE via the real serial-gate adjudication (alias authority, not geometry).
+    _deposit_entity(
+        title="Ozempic",
+        body="## Claims\n- Once-weekly subcutaneous injection. [[sources/web-glp1-001]]\n",
+        aliases=["Semaglutide"],
+        domains=["glp1"],
+        queue=queue,
+    )
+    r2 = drain_once(queue, gate)
+    assert r2 is not None and r2.disposition == "merged", (
+        f"cross-slug alias deposit must MERGE via live recall+adjudicate; "
+        f"got {getattr(r2, 'disposition', None)}, errors={getattr(r2, 'errors', None)}"
+    )
+    canonical = (repo / "wiki" / "entities" / "semaglutide.md").read_text()
+    assert "GLP-1 receptor agonist" in canonical and "Once-weekly" in canonical, (
+        "both claims must land on the canonical page after the merge"
+    )
+    tomb = (repo / "wiki" / "entities" / "ozempic.md").read_text()
+    assert "merged_into:" in tomb, "the merged slug must become a merged_into tombstone"
+
+
+@pytest.mark.integration
+def test_disjoint_entity_is_not_a_recall_hit(repo, queue, gate):
+    """Negative control: an entity with no shared identity surface is NOT scored
+    as a near recall hit and does NOT merge — proving the recall signal above is
+    discriminating, not trivially returning everything."""
+    _write_source(repo, "web-glp1-001")
+    _deposit_entity(
+        title="Semaglutide",
+        body="## Claims\n- A GLP-1 receptor agonist. [[sources/web-glp1-001]]\n",
+        aliases=["Ozempic", "Wegovy"],
+        domains=["glp1"],
+        queue=queue,
+    )
+    assert drain_once(queue, gate).disposition == "committed"
+
+    idx = gate._embedding_index
+    hits = {h.key: h.distance for h in idx.nn("entity", "Warfarin Coumadin", k=10)}
+    # Even if returned in a tiny index, the disjoint name must score far (~1.0),
+    # not inside the alias-merge net.
+    if "wiki/entities/semaglutide.md" in hits:
+        assert hits["wiki/entities/semaglutide.md"] > 0.8, (
+            f"a disjoint entity must score far from semaglutide; got {hits}"
+        )
+
+    _deposit_entity(
+        title="Warfarin",
+        body="## Claims\n- A vitamin K antagonist anticoagulant. [[sources/web-glp1-001]]\n",
+        aliases=["Coumadin"],
+        domains=["glp1"],
+        queue=queue,
+    )
+    r = drain_once(queue, gate)
+    assert r.disposition == "committed", (
+        f"disjoint entity must mint its own page, not merge; got {r.disposition}"
+    )
+    assert (repo / "wiki" / "entities" / "warfarin.md").exists()
