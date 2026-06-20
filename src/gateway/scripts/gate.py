@@ -165,6 +165,33 @@ def step_fast_tiers() -> GateCheckResult:
     return _run_pytest(["-q", "-m", "not slow and not e2e"])
 
 
+# Number of times the `concurrency`-marked subset is re-run. A nondeterministic
+# flake that passes ~1/k of the time clears a single-pass gate ~1/k of the time;
+# repeating N× drops that to ~(1/k)^N. 5 is a cheap floor (the marked subset runs
+# in ~1.5s) that turns a 1/3-pass flake from a coin flip into ~0.4%.
+CONCURRENCY_REPEAT = 5
+
+
+def step_concurrency_repeat() -> GateCheckResult:
+    """Re-run the `concurrency`-marked tests CONCURRENCY_REPEAT× (flake surfacing).
+
+    The full suite (Step 1) runs each test once, so an order-/timing-dependent
+    test that fails intermittently can clear the gate by chance. Re-running the
+    concurrency subset makes that vanishingly unlikely. Fails closed on the first
+    failing run.
+    """
+    _banner(f"Step 2b: Concurrency tests ×{CONCURRENCY_REPEAT} (flake surfacing)")
+    for i in range(CONCURRENCY_REPEAT):
+        print(f"--- concurrency run {i + 1}/{CONCURRENCY_REPEAT} ---", flush=True)
+        result = _run_pytest(["-q", "-m", "concurrency"])
+        if not result.passed:
+            return GateCheckResult(
+                passed=False,
+                message=f"concurrency: FAIL on run {i + 1}/{CONCURRENCY_REPEAT}",
+            )
+    return GateCheckResult(passed=True, message=f"concurrency: PASS ×{CONCURRENCY_REPEAT}")
+
+
 def step_retrieval_eval() -> GateCheckResult:
     """Run retrieval eval and check recall@10 >= RECALL_FLOOR."""
     _banner("Step 3: Retrieval eval (fts recall@10 >= 0.90)")
@@ -283,6 +310,7 @@ def run_gate(*, skip_suite: bool = False) -> int:
         steps += [
             ("Step 1: full suite", step_full_suite),
             ("Step 2: fast tiers", step_fast_tiers),
+            ("Step 2b: concurrency repetition", step_concurrency_repeat),
         ]
     steps += [
         ("Step 3: retrieval eval", step_retrieval_eval),

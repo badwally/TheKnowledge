@@ -360,6 +360,7 @@ def test_write_skew_negative_single_deposit(repo, queue, gate):
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.concurrency
 def test_cli_commit_worker_once_drives_real_union(repo, queue, gate):
     # Drive the union through the REAL cli.main(["commit-worker","--once"]) path
     # (not the fixture-injected gate) to prove EmbeddingIndex is wired in production.
@@ -421,6 +422,7 @@ def test_cli_commit_worker_once_single_deposit(repo, queue, gate):
 # ---------------------------------------------------------------------------
 
 
+@pytest.mark.concurrency
 def test_same_slug_second_deposit_unions_not_overwrites(repo, queue, gate):
     # First deposit: commit "Ozempic" with Claim A.
     # Second deposit: same title "Ozempic", different body (Claim B).

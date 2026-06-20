@@ -220,6 +220,7 @@ def _make_payloads(n: int) -> list[tuple[dict, dict]]:
 
 @pytest.mark.slow
 @pytest.mark.integration
+@pytest.mark.concurrency
 def test_soak_all_intents_reach_terminal_state(repo: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     """S1+S2+M1: N concurrent depositors + M concurrent drainers.
 
@@ -347,6 +348,7 @@ def test_soak_all_intents_reach_terminal_state(repo: Path, monkeypatch: pytest.M
 
 @pytest.mark.slow
 @pytest.mark.integration
+@pytest.mark.concurrency
 def test_write_skew_same_slug_both_claims_survive(repo: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     """S5: Two same-slug deposits → both claims present after union (deterministic).
 
@@ -766,6 +768,7 @@ def test_single_threaded_produces_same_terminal_set(
 
 @pytest.mark.slow
 @pytest.mark.integration
+@pytest.mark.concurrency
 def test_concurrent_same_slug_all_terminal_no_torn_write(
     repo: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
