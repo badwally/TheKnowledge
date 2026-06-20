@@ -30,6 +30,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
+    "hypothesis>=6.0",
 ]
 whisper = [
     "mlx-whisper>=0.4",
