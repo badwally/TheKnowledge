@@ -28,3 +28,11 @@ As a result, the T6 Step-5 cross-reference parametrize (`test_producer_reversal_
 ## Why this was deferred
 
 The missing canonical constant is a convenience/coupling issue, not a correctness defect. The per-branch containment tests in Step 3 (`test_gate_dead_letters_*`) cover all four branches independently. The gap is that adding a new reversal_type without a gate handler does not auto-fail a test until the enum exists.
+
+## Related hardening — confine reversal/restore writes to an allowlisted subtree
+
+**Filed by:** final security review of `test/multi-agent-test-harness` (2026-06-19, SHIP IT / 0 HIGH — this is a deferred hardening note, not a finding).
+
+`_rel_escapes_root` (the containment guard on the deposit/reversal/policy write sinks) blocks absolute paths and `..` traversal but does **not** confine writes to `wiki/` + `.knowledge/policies/`. Verified empirically: `.knowledge/policies/foo/policy.yaml` and `.git/hooks/post-commit` PASS the guard; `../etc/passwd`, `/etc/passwd`, `wiki/../.git/config` are REJECTED. This only matters for `restore-depath` / `reverse-merge`, whose `target_rel` + `content` are fully payload-controlled — and those two have **no production producer** (reaching them requires a direct FS write to `.knowledge/intents/submitted/`, i.e. someone who could already write `.git/hooks/post-commit` directly). No escalation beyond the documented enqueue-only trust model.
+
+**What to do when the trigger above fires** (i.e. when `restore-depath`/`reverse-merge` get a real producer op, removing the direct-FS-write precondition): add a positive-allowlist containment check that confines reversal/restore write targets to `wiki/` + `.knowledge/policies/` (reject anything else, including `.git/`), rather than relying on `_rel_escapes_root`'s non-escaping check alone. Pair it with a negative-control test that a `.git/hooks/...` target dead-letters.
