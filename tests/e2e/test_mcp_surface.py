@@ -14,6 +14,7 @@ Step 2: MCP deposit round-trip via the build server.
 from __future__ import annotations
 
 import asyncio
+import json
 import subprocess
 from pathlib import Path
 
@@ -157,7 +158,6 @@ def test_mcp_deposit_round_trip_commits_page(repo: Path, monkeypatch: pytest.Mon
                 {"payload": payload, "identity": identity},
             )
             # result.content is a list of TextContent; parse the first item
-            import json
             text = result.content[0].text
             return json.loads(text)
 
@@ -182,10 +182,11 @@ def test_mcp_deposit_round_trip_commits_page(repo: Path, monkeypatch: pytest.Mon
     content = page_path.read_text()
     assert "Test Concept MCP E2E" in content, f"title missing from committed page: {content[:300]}"
 
-    # Assert the commit appears in git log
-    log = _git(repo, "log", "--oneline", "-5").stdout
-    assert expected_slug in log or intent_id[:8] in log or "deposit" in log.lower(), (
-        f"No recognizable commit found in git log after deposit round-trip.\nLog:\n{log}"
+    # Assert the commit carries the provenance trailer stamped by CommitGate
+    latest_msg = _git(repo, "log", "-1", "--format=%B").stdout
+    assert "Intent-Id:" in latest_msg, (
+        f"Latest commit does not carry an Intent-Id: trailer — "
+        f"CommitGate did not record provenance.\nCommit message:\n{latest_msg}"
     )
     # Also verify HEAD advanced past seed
     commits = _git(repo, "log", "--oneline").stdout.strip().splitlines()
