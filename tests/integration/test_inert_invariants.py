@@ -191,6 +191,9 @@ def test_lint_check_fires_on_real_signal(slug, runner, kb_root, monkeypatch):
         f"{slug}: run() must return list[LintFinding], got {type(findings_clean)}"
     )
     # Assert that all findings carry the correct check slug (no cross-contamination).
+    # Latent tripwire: this correctly goes RED once any check emits a finding whose
+    # .check field mismatches its registry slug (e.g., citation-chains or long-slugs
+    # if they fire on real data with a mis-wired slug) — that is intended behavior.
     for f in findings_clean:
         assert f.check == slug, (
             f"{slug}: finding.check={f.check!r} — runner emitted a finding "
@@ -2122,111 +2125,265 @@ def test_claim_conservation_fires_when_committed_claim_absent_from_page(kb_root)
 
 
 # ---------------------------------------------------------------------------
-# LLM-dependent checks: contradictions, missing-pages, filter-calibration
+# LLM-driven checks: contradictions, missing-pages, filter-calibration,
+# stale-claims WARNING mode
 # ---------------------------------------------------------------------------
-# These three checks require a live Claude CLI subprocess to produce findings.
-# The parametrized negative control (empty repo → no findings) already proves
-# the runner is wired and callable. The positive trigger requires a real LLM
-# call that cannot be made cheaply in an integration test suite.
-# Backlog: docs/backlog/librarian-lint-llm-positive-coverage.md
+# Each check accepts `client: FilterClient | None = None` — the documented
+# test seam. Injecting a stub client drives the check's real disk-gather →
+# prompt-build → response-parse → finding-construction path deterministically.
+# Only the LLM transport is stubbed; no check logic is bypassed.
 # ---------------------------------------------------------------------------
+
+
+class _StubClient:
+    """Minimal FilterClient stub for LLM-driven lint checks.
+
+    Returns a canned JSON string; the caller configures the exact payload via
+    the `response` constructor argument so each check's real parser runs against
+    a well-formed response that produces a known finding.
+    """
+
+    def __init__(self, response: str) -> None:
+        self._response = response
+
+    def call(self, prompt: str) -> str:
+        return self._response
 
 
 @pytest.mark.integration
-@pytest.mark.xfail(
-    reason=(
-        "contradictions positive trigger requires a live Claude CLI subprocess. "
-        "The check is wired and callable (proven by negative control). "
-        "See docs/backlog/librarian-lint-llm-positive-coverage.md"
-    ),
-    strict=False,
-)
-def test_contradictions_positive_signal_requires_llm(kb_root):
-    """contradictions fires when two wiki pages assert contradictory facts.
+def test_contradictions_fires_with_stub_client(kb_root):
+    """contradictions fires when two concept pages have ≥4 claims and the stub
+    client returns a JSON pair identifying a contradiction.
 
-    Positive trigger: requires a live Claude CLI subprocess (ClaudeCLIFilterClient).
-    This xfail marks the gap without deleting the assertion — when a real mock
-    or CLI stub is available, remove the xfail and wire it.
+    Real path exercised: _gather_claims_by_domain() → _build_prompt() →
+    client.call() → _parse_response() → _findings_for_pairs() → LintFinding.
+    Only transport is stubbed (no ClaudeCLIFilterClient invoked).
     """
     from gateway.lint import contradictions
 
-    # Even this negative control proves the check is not inert (no exception, returns list).
-    findings = contradictions.run()
-    assert isinstance(findings, list)
-    # Positive: assert that at least one finding fires — xfail because LLM is needed.
-    assert any(f.check == "contradictions" for f in findings)
+    # Seed two concept pages in the same domain with enough claim sentences
+    # (≥4 total, _MIN_CLAIMS_PER_DOMAIN=4) to pass the domain guard.
+    d = kb_root / "wiki" / "concepts"
+    d.mkdir(parents=True, exist_ok=True)
+
+    def _concept(slug: str, body: str) -> None:
+        front = {
+            "type": "concept",
+            "slug": slug,
+            "canonical_name": slug.replace("-", " ").title(),
+            "domains": ["ct-domain"],
+            "created_at": "2026-01-01T00:00:00Z",
+            "last_updated": "2026-01-01T00:00:00Z",
+        }
+        (d / f"{slug}.md").write_text(fm.serialize(front, body))
+
+    _concept(
+        "alpha-concept",
+        "## Claims\n\n"
+        "The intervention increases the primary outcome in adults. [[sources/arxiv-1]]\n"
+        "Long-term follow-up confirms the durable effect. [[sources/arxiv-2]]\n",
+    )
+    _concept(
+        "beta-concept",
+        "## Claims\n\n"
+        "The intervention decreases the primary outcome in adults. [[sources/arxiv-3]]\n"
+        "Short-term responses do not persist beyond three months. [[sources/arxiv-4]]\n",
+    )
+
+    # Stub returns a single contradiction between claim 1 (alpha-concept, claim 1)
+    # and claim 3 (beta-concept, claim 1) — both are the 1-indexed positions in
+    # the sorted domain claim list that _build_prompt() constructs.
+    stub = _StubClient('{"contradictions": [{"a": 1, "b": 3, "rationale": "directly opposing claims"}]}')
+
+    findings = contradictions.run(client=stub)
+    assert any(f.check == "contradictions" for f in findings), (
+        "contradictions: stub client returning a valid pair must produce a finding; "
+        f"findings={findings}"
+    )
 
 
 @pytest.mark.integration
-@pytest.mark.xfail(
-    reason=(
-        "missing-pages positive trigger requires a live Claude CLI subprocess. "
-        "The check is wired and callable (proven by negative control). "
-        "See docs/backlog/librarian-lint-llm-positive-coverage.md"
-    ),
-    strict=False,
-)
-def test_missing_pages_positive_signal_requires_llm(kb_root):
-    """missing-pages fires when an LLM identifies an unrepresented concept.
+def test_missing_pages_fires_with_stub_client(kb_root):
+    """missing-pages fires when the stub client suggests a term absent from the domain.
 
-    Positive trigger: requires a live Claude CLI subprocess (ClaudeCLIFilterClient).
+    Real path exercised: _gather_by_domain() → _build_prompt() → client.call() →
+    _parse_response() → _findings_for_domain() → LintFinding.
+    Only transport is stubbed.
     """
     from gateway.lint import missing_pages
 
-    findings = missing_pages.run()
-    assert isinstance(findings, list)
-    assert any(f.check == "missing-pages" for f in findings)
+    # Seed a synthesis page so the domain has content to summarise.
+    d = kb_root / "wiki" / "synthesis"
+    d.mkdir(parents=True, exist_ok=True)
+    front = {
+        "type": "synthesis",
+        "slug": "mp-synthesis",
+        "title": "Missing Pages Synthesis",
+        "domains": ["mp-domain"],
+        "sources": [],
+        "synthesizes": [],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+        "draft": False,
+    }
+    (d / "mp-synthesis.md").write_text(
+        fm.serialize(
+            front,
+            "## Synthesis\n\nGLP-1 receptor agonists appear repeatedly in this domain.\n",
+        )
+    )
+
+    # Stub suggests one new concept slug not already in the domain's existing pages.
+    stub = _StubClient(
+        '{"missing": [{"name": "GLP-1 Receptor Agonist", "kind": "concept", '
+        '"slug": "glp1-receptor-agonist", "occurrences_estimate": 5, '
+        '"rationale": "Mentioned in synthesis but lacks a dedicated concept page."}]}'
+    )
+
+    findings = missing_pages.run(client=stub)
+    assert any(f.check == "missing-pages" for f in findings), (
+        "missing-pages: stub client returning a valid suggestion must produce a finding; "
+        f"findings={findings}"
+    )
 
 
 @pytest.mark.integration
-@pytest.mark.xfail(
-    reason=(
-        "filter-calibration positive trigger requires a live Claude CLI subprocess. "
-        "The check is wired and callable (proven by negative control). "
-        "See docs/backlog/librarian-lint-llm-positive-coverage.md"
-    ),
-    strict=False,
-)
-def test_filter_calibration_positive_signal_requires_llm(kb_root):
-    """filter-calibration fires when a re-scored sample deviates from the stored score.
+def test_filter_calibration_fires_with_stub_client(kb_root):
+    """filter-calibration fires when the stub client returns a score that
+    deviates from the stored score by more than _OUTLIER_THRESHOLD (0.20).
 
-    Positive trigger: requires a live Claude CLI subprocess (ClaudeCLIFilterClient).
+    Real path exercised: _candidates_by_domain() → load_policy() →
+    _sample() → score() (using stub client) → _findings_for_domain() → LintFinding.
+    Only transport is stubbed (score() falls back to client.call() when
+    call_split / call_split_with_usage are absent on the stub).
     """
     from gateway.lint import filter_calibration
+    from gateway import paths
 
-    findings = filter_calibration.run()
-    assert isinstance(findings, list)
-    assert any(f.check == "filter-calibration" for f in findings)
+    domain = "fc-domain"
+
+    # Policy file — required by filter_calibration.run() before re-scoring.
+    policy_path = paths.policies_dir() / domain / "policy.yaml"
+    policy_path.parent.mkdir(parents=True, exist_ok=True)
+    policy_path.write_text(
+        f"domain:\n  slug: {domain}\n  topic: Test topic\nversion: v1\n"
+    )
+
+    # Raw source with a stored filter.score; _candidates_by_domain() requires this.
+    raw_dir = kb_root / "raw" / "web"
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    stored_score = 0.90  # stored high
+    source_front = {
+        "id": "web-fc-source",
+        "type": "web",
+        "title": "Filter Calibration Test Source",
+        "url": "https://example.com/fc-source",
+        "authors": [],
+        "published_at": "2026-01-01",
+        "ingested_at": "2026-01-01T00:00:00Z",
+        "content_hash": "fc123",
+        "domains": [domain],
+        "nlm_corpus_ids": [],
+        "wiki_pages": [],
+        "meta": {},
+        "filter": {
+            "score": stored_score,
+            "policy_version": f"{domain}-v1",
+            "rationale": "High relevance.",
+            "decided_at": "2026-01-01T00:00:00Z",
+            "user_correction": None,
+        },
+    }
+    (raw_dir / "web-fc-source.md").write_text(
+        fm.serialize(source_front, "Source body content for filter calibration.\n")
+    )
+
+    # Stub returns a low score (0.20) — delta vs stored (0.90) is -0.70, above
+    # _OUTLIER_THRESHOLD (0.20), so _findings_for_domain emits a WARNING finding.
+    stub = _StubClient('{"score": 0.20, "rationale": "Relevance lower than original assessment."}')
+
+    findings = filter_calibration.run(sample_size=1, client=stub)
+    assert any(f.check == "filter-calibration" for f in findings), (
+        "filter-calibration: stub returning a divergent score must produce a finding; "
+        f"findings={findings}"
+    )
 
 
 # ---------------------------------------------------------------------------
-# stale-claims LLM mode (the deterministic INFO mode is covered above)
+# stale-claims WARNING mode (the deterministic INFO mode is covered above)
 # ---------------------------------------------------------------------------
 
 
 @pytest.mark.integration
-@pytest.mark.xfail(
-    reason=(
-        "stale-claims WARNING-severity positive trigger requires a live Claude CLI "
-        "subprocess (sample_size > 0). The deterministic INFO mode is covered by "
-        "test_stale_claims_fires_on_two_academic_sources_with_gap above. "
-        "See docs/backlog/librarian-lint-llm-positive-coverage.md"
-    ),
-    strict=False,
-)
-def test_stale_claims_llm_mode_positive_signal_requires_llm(kb_root):
-    """stale-claims WARNING (LLM mode) requires a Claude CLI subprocess.
+def test_stale_claims_warning_mode_fires_with_stub_client(kb_root):
+    """stale-claims WARNING (LLM mode, sample_size>0) fires when the stub client
+    identifies a confirmed supersede.
 
-    The deterministic INFO mode (sample_size=0) is already covered by the
-    test_stale_claims_fires_on_two_academic_sources_with_gap test. This xfail
-    marks the gap for the LLM-verified WARNING severity path.
+    Real path exercised: _gather_stale_candidates() (two arxiv sources with a
+    ≥3-year gap plus a wiki page citing the older one) → _build_prompt() →
+    client.call() → _parse_response() → LintFinding(severity=WARNING).
+    Only transport is stubbed.
     """
     from gateway.lint import stale_claims
 
-    # We'd need the two-source setup and then sample_size > 0 to get a WARNING.
-    findings = stale_claims.run(sample_size=1)
-    assert isinstance(findings, list)
-    assert any(f.check == "stale-claims" and f.severity == "WARNING" for f in findings)
+    # Re-create the same two-source on-disk signal used by the INFO-mode test,
+    # so _gather_stale_candidates() populates the domain list.
+    old_src_dir = kb_root / "raw" / "arxiv"
+    old_src_dir.mkdir(parents=True, exist_ok=True)
+
+    def _arxiv(source_id: str, year: str) -> None:
+        front = {
+            "id": source_id,
+            "type": "arxiv",
+            "title": f"Study {year}",
+            "url": f"https://arxiv.org/abs/{source_id}",
+            "authors": ["Author"],
+            "published_at": f"{year}-06-01",
+            "ingested_at": "2026-01-01T00:00:00Z",
+            "content_hash": source_id.replace("-", ""),
+            "domains": ["scw-domain"],
+            "nlm_corpus_ids": [],
+            "wiki_pages": [],
+            "meta": {},
+        }
+        (old_src_dir / f"{source_id}.md").write_text(
+            fm.serialize(front, f"Study body for {source_id}.\n")
+        )
+
+    _arxiv("arxiv-scw-old-2020", "2020")
+    _arxiv("arxiv-scw-new-2024", "2024")
+
+    # Concept page citing the old source — a stale-claim candidate.
+    cw_dir = kb_root / "wiki" / "concepts"
+    cw_dir.mkdir(parents=True, exist_ok=True)
+    cw_front = {
+        "type": "concept",
+        "slug": "scw-concept",
+        "canonical_name": "SCW Concept",
+        "domains": ["scw-domain"],
+        "created_at": "2026-01-01T00:00:00Z",
+        "last_updated": "2026-01-01T00:00:00Z",
+    }
+    (cw_dir / "scw-concept.md").write_text(
+        fm.serialize(
+            cw_front,
+            "## Key claims\n\n"
+            "The intervention shows a significant effect in adults. [[sources/arxiv-scw-old-2020]]\n",
+        )
+    )
+
+    # Stub says the newer source supersedes the cited one for this specific claim.
+    stub = _StubClient(
+        '{"superseded_by": "arxiv-scw-new-2024", "rationale": "Larger RCT with same endpoint published 2024."}'
+    )
+
+    findings = stale_claims.run(sample_size=1, client=stub)
+    assert any(
+        f.check == "stale-claims" and f.severity == "warning" for f in findings
+    ), (
+        "stale-claims WARNING: stub identifying a supersede must produce a warning finding; "
+        f"findings={findings}"
+    )
 
 
 # ===========================================================================
@@ -2272,10 +2429,12 @@ _POSITIVE_SLUG_COVERAGE: dict[str, str] = {
     "answered-no-synthesis": "test_answered_no_synthesis_fires_on_answered_question_without_link",
     "fragmentation": "test_fragmentation_fires_on_near_duplicate_entity_vectors",
     "claim-conservation": "test_claim_conservation_fires_when_committed_claim_absent_from_page",
-    # LLM-dependent (covered by xfail tests above):
-    "contradictions": "test_contradictions_positive_signal_requires_llm",
-    "missing-pages": "test_missing_pages_positive_signal_requires_llm",
-    "filter-calibration": "test_filter_calibration_positive_signal_requires_llm",
+    # LLM-driven (stub-client tests — no live subprocess required):
+    "contradictions": "test_contradictions_fires_with_stub_client",
+    "missing-pages": "test_missing_pages_fires_with_stub_client",
+    "filter-calibration": "test_filter_calibration_fires_with_stub_client",
+    # stale-claims WARNING mode is tested in test_stale_claims_warning_mode_fires_with_stub_client
+    # (additional coverage; the registry slug "stale-claims" is mapped above via the INFO test)
 }
 
 
