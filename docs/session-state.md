@@ -12,8 +12,10 @@ Last updated: 2026-06-19 (COMMITTER + TEST-HARNESS build IN PROGRESS on `test/mu
 
 ### Open contracts
 - **D0 (KEYSTONE) — DONE.** Build `3f7762eb` + fix `a5149421`. Opus review found 2 Critical (crash-reclaim inert in prod; dedup/merge inert in prod CLI — `CommitGate(embedding_index=None)`) + 2 Important (same-slug silent-overwrite; retry-later strand) + 2 Minor (entity_kind="drug" leak; empty-slug dotfile) + security LOW-1 (`_rel_escapes_root`) — ALL FIXED; re-review **Approved**; sec-D0 **SHIP IT** (0 HIGH). Full suite 2285. 3 fail-safe re-review Minors → backlog (NEW-1/NEW-3 union-parity; NEW-2 retry-later direct-test routed to T3 soak coverage).
-- **D1 (demand-cluster CLI) — built, UNDER REVIEW.** Commit `6b020a74` (`wiki demand-cluster` + `wiki_demand_cluster` MCP tool; closes backlog I1). 5 tests incl. named negative control; full suite 2290. `review-D1` (sonnet) running — adjudicating whether the MCP-tool exposure is correctly build-tier (like remediate) vs CLI_ONLY.
-- M1, T2, T3, T4, T6, G1 — NOT STARTED.
+- **D1 (demand-cluster CLI) — DONE.** Build `6b020a74` + fix `599130c2` (Critical: inert `--trigger` gate — `cluster()` always auto-submits, no dry-run; redesigned trigger=False=report-only no-op / trigger=True submits to correctly-rooted queue) + help-fix `5094831c`. Re-review Approved. MCP-tool build-tier adjudicated correct (== remediate).
+- **M1 (pytest markers) — DONE.** Commit `08b481ff`. 4 markers + `--strict-markers` + `docs/TESTING.md`; split verified (2377/2375). Approved (1 Minor: stale doc path TESTING.md:55).
+- **T2 (integration flows) — built, UNDER REVIEW.** Commit `80ba33bb` (13 tests: lifecycle/demand/governance, drive real committer + real ops). Full suite 2388. `review-T2` (opus) running. **KEY OPEN QUESTION the reviewer is adjudicating:** the implementer found `drain_once`/`run_worker` DEAD-LETTER policy-edit intents (author_deposit can't render them) and revised the governance test to call `gate.commit()` directly — IS that a real D0 inert-in-production gap (committer can't drain an enqueued intent type) or is policy-edit genuinely synchronous (no gap)? Verdict pending — may require a D0 fix before T3/T6.
+- T3, T4, T6, G1 — NOT STARTED.
 
 ### Files mid-edit
 - None. D0+D1 commits clean. Untracked (fold into branch at a checkpoint): `docs/backlog/librarian-committer-samelslug-union-parity.md`. (Plan + daemon-backlog already committed at `aeda02a5`.) `.git/sdd/` briefs/reports/reviews/diffs are git-internal (not tracked).
@@ -29,7 +31,7 @@ Last updated: 2026-06-19 (COMMITTER + TEST-HARNESS build IN PROGRESS on `test/mu
 - **Launchd always-on committer daemon now** — rejected: unattended git-committer on a working tree shared with branch-switching sessions could land commits on the wrong branch; brand-new privileged code shouldn't run unattended before baking. (Watcher is immune — untracked writes only; committer is not.)
 
 ### Next atomic step
-Await `review-D1` verdict. If clean: mark D1 complete in `.git/sdd/progress.md`, dispatch M1 (pytest markers + fast/full split, sonnet). Then T2→T3→T4→T6→G1. Build order D0✅→D1(review)→M1→T2→T3→T4→T6→G1; one implementer at a time (shared tree). T3 must explicitly assert retry-later re-queue / non-stranding (closes D0 NEW-2). Final: whole-branch opus review + security review + /session-review → push branch + PR. Resume map: `.git/sdd/progress.md`.
+Await `review-T2` (opus) verdict — esp. the governance policy-edit adjudication. If it finds a real D0 committer-routing gap (policy-edit intents enqueued but dead-lettered by the committer): fix D0 (route non-deposit reversal_type/op intents to gate.commit() instead of author_deposit) BEFORE T3/T6, and un-mask the T2 governance test. If no gap: mark T2 complete, dispatch T3 (N-agent soak, opus). Build order D0✅→D1✅→M1✅→T2(review)→T3→T4→T6→G1; one implementer at a time. T3 must explicitly assert retry-later re-queue / non-stranding (closes D0 NEW-2). T6 will systematically check "every enqueued intent type has a committer apply-branch" — the policy-edit question is a preview of that. Final: whole-branch opus review + security review + /session-review → push branch + PR. Resume map: `.git/sdd/progress.md`.
 
 ---
 
