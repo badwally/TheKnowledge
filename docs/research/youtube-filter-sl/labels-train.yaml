@@ -1,0 +1,35 @@
+# Gold labels — semantic-models YouTube filter, train pool (C2).
+# Human ground truth (independent of policy.yaml). Authored by the user via the
+# labeling Sheet on 2026-06-21; only X marks counted as best_fit (numeric cells
+# in the BEST FIT column were explicitly dropped).
+#
+# best_fit: the 10 strongest-fit videos overall (column F = X), as watch URLs.
+# missing:  canonical talks the user expects but that are ABSENT from the pool
+#           (column G URLs, attributed to the column-A subtopic) -> coverage gaps.
+
+best_fit:
+  - https://www.youtube.com/watch?v=DwFD_ffS21E   # NODES AI 2026 — Agent Reasoning w/ Graph World Models (reasoning-inference)
+  - https://www.youtube.com/watch?v=5OGMYQaIPKw   # Knowledge Graph Construction — Lecture (query-languages-engines)
+  - https://www.youtube.com/watch?v=m11X-T-v6kg   # Design & Build Semantic Apps w/ Linked Data (storage-architectures)
+  - https://www.youtube.com/watch?v=KAs1UA0HJJM   # Graph Representation Learning w/ Deep Learning (kg-embeddings)
+  - https://www.youtube.com/watch?v=SHHHJXwHeWM   # Using KG data in LLMs — keynote (kg-embeddings)
+  - https://www.youtube.com/watch?v=T4afZsyHmUc   # KGC 2022 — Jure Leskovec, Stanford (kg-embeddings)
+  - https://www.youtube.com/watch?v=83lI3u7KX0g   # OBO Foundry Tutorial Pt 1 (ontology-engineering-methodologies)
+  - https://www.youtube.com/watch?v=PCnSWteKpL8   # Speed of Thought Queries — AtScale (semantic-layer)
+  - https://www.youtube.com/watch?v=s_rDUWyiZOM   # Agentic Analytics Summit — Cube (semantic-layer)
+  - https://www.youtube.com/watch?v=5knKyWUUWAg   # Building a Data Marketplace at Scale (kg-construction)
+
+missing:
+  kg-construction:
+    - https://www.youtube.com/watch?v=TPGlkaHXu0A
+    - https://www.youtube.com/watch?v=_yn6-N6Z-oA
+  kg-embeddings:
+    - https://www.youtube.com/watch?v=uLWmVK-6z5E
+    - https://www.youtube.com/watch?v=isI_TUMoP60
+  ontology-engineering-methodologies:
+    - https://www.youtube.com/watch?v=XFMsGFHS6cI
+  query-languages-engines: []
+  reasoning-inference: []
+  shacl-shape-validation: []
+  storage-architectures: []
+  semantic-layer: []
