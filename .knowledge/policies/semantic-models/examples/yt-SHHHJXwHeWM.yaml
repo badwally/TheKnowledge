@@ -1,0 +1,16 @@
+source_id: yt-SHHHJXwHeWM
+domain: semantic-models
+decision: include
+score: 0.88
+policy_version: semantic-models-v1
+rationale: KG + LLM integration focused on how knowledge-graph data feeds models —
+  representation-side KG-LLM work, include.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: Keynote 3 - Using Knowledge Graph data in Large Language Models
+  url: https://www.youtube.com/watch?v=SHHHJXwHeWM
+  channel: Swiss Text
+content_excerpt: 'Speaker: Enrique Alfonseca Large Language Models (LLMs) have led
+  to large improvements in state-of-the-art results across ...'

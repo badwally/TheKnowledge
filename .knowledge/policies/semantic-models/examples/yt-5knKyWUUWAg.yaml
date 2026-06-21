@@ -1,0 +1,16 @@
+source_id: yt-5knKyWUUWAg
+domain: semantic-models
+decision: include
+score: 0.82
+policy_version: semantic-models-v1
+rationale: Applied semantic data architecture / knowledge-graph construction at scale
+  from a practitioner consultancy; applied architecture depth, include.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: 'Building a Data Marketplace at Scale: A Semantic Data Architecture'
+  url: https://www.youtube.com/watch?v=5knKyWUUWAg
+  channel: Enterprise Knowledge, LLC
+content_excerpt: 'Speakers: Brian Schurmann Michels & Henrik Gudbrand Petersen (Novo
+  Nordisk) ...'

@@ -1,0 +1,17 @@
+source_id: yt-i11lo6A92uE
+domain: semantic-models
+decision: exclude
+score: 0.45
+policy_version: semantic-models-v1
+rationale: On-topic description-logic theory, but the pool heavily over-surfaces single-author
+  foundational-theory talks; down-weight a redundant theory talk relative to applied
+  / representation-learning / semantic-layer coverage.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: edge-case
+frontmatter_snapshot:
+  type: youtube
+  title: 2016-06-29 - Ian Horrocks – Logic ∧ Reasoning ∧ Scalability ⊨ ⊥ ?
+  url: https://www.youtube.com/watch?v=i11lo6A92uE
+  channel: Institut des sciences cognitives - UQAM
+content_excerpt: École d'été 2016 sur le raisonnement - Summer school 2016 on reasoning.
+  Monday June 27th, 2016-06-27 - Ian Horrocks – Logic ...

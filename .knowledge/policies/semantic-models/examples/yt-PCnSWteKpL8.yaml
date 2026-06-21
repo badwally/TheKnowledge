@@ -1,0 +1,17 @@
+source_id: yt-PCnSWteKpL8
+domain: semantic-models
+decision: include
+score: 0.8
+policy_version: semantic-models-v1
+rationale: Semantic-layer / metrics-layer architecture talk at scale; in-scope per
+  the semantic-layer carve-out even though vendor-delivered, because it addresses
+  the architecture layer.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: Deliver “Speed of Thought” Queries on Billions of Rows on Snowflake | AtScale
+  url: https://www.youtube.com/watch?v=PCnSWteKpL8
+  channel: AtScale
+content_excerpt: The AtScale Adaptive Cache turbo-charges your Snowflake queries,
+  optimizing your Snowflake data warehouse automatically ...

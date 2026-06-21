@@ -1,0 +1,17 @@
+source_id: yt-T4afZsyHmUc
+domain: semantic-models
+decision: include
+score: 0.95
+policy_version: semantic-models-v1
+rationale: Deep learning with knowledge graphs from a leading researcher (Leskovec)
+  at a recognized venue; representation-learning altitude, strong include.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: 'KGC 2022 Keynote: &#39;Deep Learning with Knowledge Graphs&#39; by Stanford&#39;s
+    Prof. Jure Leskovec'
+  url: https://www.youtube.com/watch?v=T4afZsyHmUc
+  channel: 'The Knowledge Graph Conference '
+content_excerpt: In this keynote, Stanford University's Professor Jure Leskovec discusses
+  the recent methodological advancements that ...

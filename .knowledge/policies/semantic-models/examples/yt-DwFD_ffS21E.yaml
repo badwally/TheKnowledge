@@ -1,0 +1,17 @@
+source_id: yt-DwFD_ffS21E
+domain: semantic-models
+decision: include
+score: 0.85
+policy_version: semantic-models-v1
+rationale: Applied agent-reasoning over knowledge graphs from a recognized graph-database
+  venue; KG+agent work addressing the representation/architecture side clears the
+  bar without formal-theory content.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: NODES AI 2026 - Agent Reasoning with Graph World Models
+  url: https://www.youtube.com/watch?v=DwFD_ffS21E
+  channel: Neo4j
+content_excerpt: 'Join Lucas Godfrey at NODES AI for this session: "Agent Reasoning
+  with Graph World Models". World models have long been a ...'

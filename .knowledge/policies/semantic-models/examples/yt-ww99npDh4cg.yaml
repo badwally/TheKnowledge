@@ -1,0 +1,18 @@
+source_id: yt-ww99npDh4cg
+domain: semantic-models
+decision: exclude
+score: 0.45
+policy_version: semantic-models-v1
+rationale: Broad survey keynote on KGs in a world of LLMs; prioritize talks with concrete
+  applied, construction, or representation-learning content over high-level survey
+  keynotes.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: edge-case
+frontmatter_snapshot:
+  type: youtube
+  title: 'KGC23 Keynote: The Future of Knowledge Graphs in a World of LLMs — Denny
+    Vrandečić, Wikimedia'
+  url: https://www.youtube.com/watch?v=ww99npDh4cg
+  channel: 'The Knowledge Graph Conference '
+content_excerpt: 'Keynote Session: The Future of Knowledge Graphs in a World of Large
+  Language Models by Denny Vrandečić (Wikimedia ...'

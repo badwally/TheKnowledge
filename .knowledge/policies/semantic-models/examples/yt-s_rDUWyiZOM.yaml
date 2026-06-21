@@ -1,0 +1,16 @@
+source_id: yt-s_rDUWyiZOM
+domain: semantic-models
+decision: include
+score: 0.8
+policy_version: semantic-models-v1
+rationale: Semantic-layer + ontology + AI architecture summit talk; addresses the
+  modeling/architecture layer and the KG-LLM connection — include.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: Agentic Analytics Summit. Semantic Layers, Ontologies, and AI, Oh My!
+  url: https://www.youtube.com/watch?v=s_rDUWyiZOM
+  channel: Cube
+content_excerpt: Josh Klahr from Snowflake explores how AI has transformed the landscape
+  for semantic layers, ontologies, and knowledge ...

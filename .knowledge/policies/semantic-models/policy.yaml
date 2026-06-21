@@ -36,15 +36,24 @@ inclusion_criteria:
   \ or canonical data model integration patterns"
 - Analyzes W3C or ISO specifications (RDF 1.2, OWL 2, SPARQL 1.1, R2RML, RML, JSON-LD,
   SKOS) or their implementation conformance and extension points
+- Covers knowledge-graph representation learning and embeddings (graph neural networks,
+  KG completion, node/graph representation learning) or the integration of knowledge
+  graphs with large language models and agents, where the focus is the representation,
+  its construction, or its evaluation
 exclusion_criteria:
 - Introductory explainers ("what is an ontology?", "what is a knowledge graph?") that
   present only definitional content without technical depth, formal treatment, or
   implementation guidance
 - Vendor marketing materials (blog posts, product landing pages) that assert semantic
-  capabilities without specifying the underlying formalisms, schema, or architecture
-- "Sources scoped exclusively to the agentic application layer \u2014 how AI agents\
-  \ consume or produce semantic structures at runtime \u2014 without grounding in\
-  \ the representation formalism or data architecture itself"
+  capabilities without specifying the underlying formalisms, schema, or architecture.
+  Recognized conference, summit, or webinar talks on semantic-layer / metrics-layer
+  architecture are in scope even when delivered by a vendor, provided they address the
+  modeling or architecture layer rather than being solely a product pitch
+- Sources scoped exclusively to the agentic application layer (how AI agents consume
+  or produce semantic structures at runtime) with no treatment of the representation,
+  the knowledge graph itself, or the semantic/data architecture. Talks connecting
+  knowledge graphs or semantic layers to LLM or agent use ARE in scope when they
+  address the representation or architecture side
 - Sources scoped exclusively to corpus licensing, data acquisition, or dataset curation
   without addressing the representation or modeling layer
 quality_signals:
@@ -72,6 +81,10 @@ quality_signals:
       validation engine with concrete query or schema examples
     - Evaluates trade-offs between representation choices (expressivity vs. tractability,
       open-world vs. closed-world assumption) with justification
+    - Presents applied knowledge-graph or semantic-layer implementation, graph
+      representation-learning / embedding methods, or knowledge-graph + LLM integration
+      with concrete systems, datasets, or methods (applied depth counts equally with
+      formal-theory depth; do not require model-theoretic content to score highly)
     negative_signals:
     - Presents only surface-level taxonomy or bullet-point comparison without underlying
       formal or architectural reasoning
@@ -95,8 +108,9 @@ quality_signals:
     - University course lectures or named research-lab talks (e.g. Stanford, MIT,
       Oxford e-Research, Manchester, or established data-systems labs)
     - Recognized conference, workshop, or summit sessions (ISWC, ESWC, KR, KGC /
-      Knowledge Graph Conference, Connected Data London, VLDB, SIGMOD, or W3C
-      community group meetings)
+      Knowledge Graph Conference, Connected Data London, VLDB, SIGMOD, NeurIPS, KDD,
+      ICLR, or W3C community group meetings; recognized semantic-layer / metrics-layer
+      summits and practitioner conferences)
     - Speaker is a published researcher, W3C spec editor, framework or triple-store
       author, or named practitioner in ontology engineering or knowledge graphs
     negative_signals:

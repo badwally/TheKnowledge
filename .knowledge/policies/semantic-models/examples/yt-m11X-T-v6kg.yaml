@@ -1,0 +1,16 @@
+source_id: yt-m11X-T-v6kg
+domain: semantic-models
+decision: include
+score: 0.85
+policy_version: semantic-models-v1
+rationale: Applied semantic-application / linked-data implementation guidance from
+  an authoritative standards body (DCMI); include.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: How to Design &amp; Build Semantic Applications with Linked Data
+  url: https://www.youtube.com/watch?v=m11X-T-v6kg
+  channel: Dublin Core Metadata Initiative (DCMI)
+content_excerpt: This webinar will demonstrate how to design and build rich end-user
+  search and discovery applications using Linked Data.

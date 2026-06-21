@@ -1,0 +1,16 @@
+source_id: yt-KAs1UA0HJJM
+domain: semantic-models
+decision: include
+score: 0.9
+policy_version: semantic-models-v1
+rationale: Knowledge-graph representation learning / embeddings is in-scope per the
+  representation-learning criterion; score on topical fit, not formal-logic content.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: Graph Representation Learning with Deep Learning
+  url: https://www.youtube.com/watch?v=KAs1UA0HJJM
+  channel: IEEE Student Branch - University of Jaffna
+content_excerpt: Mining graph data has become a popular research topic in Computer
+  Science and has been widely studied in both academia and ...

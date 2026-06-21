@@ -1,0 +1,17 @@
+source_id: yt-83lI3u7KX0g
+domain: semantic-models
+decision: include
+score: 0.9
+policy_version: semantic-models-v1
+rationale: Applied ontology-development workflows and best practices from an authoritative
+  community (OBO Foundry); include.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: 'OBO Foundry Tutorial: Introduction to workflows and best practices for ontology
+    development Part 1'
+  url: https://www.youtube.com/watch?v=83lI3u7KX0g
+  channel: obo-academy
+content_excerpt: 'OBO tutorial presented at the ICBO conference in 2023. Learn more:
+  https://oboacademy.github.io/obook/courses/icbo2023/ Part ...'

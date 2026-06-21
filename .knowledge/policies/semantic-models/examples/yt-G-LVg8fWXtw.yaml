@@ -1,0 +1,17 @@
+source_id: yt-G-LVg8fWXtw
+domain: semantic-models
+decision: exclude
+score: 0.0
+policy_version: semantic-models-v1
+rationale: Off-topic — embedded battery-free sensor prototyping (UbiComp); not about
+  knowledge representation or semantic data; exclude.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: high-confidence
+frontmatter_snapshot:
+  type: youtube
+  title: 'BFree: Enabling Battery-free Sensor Prototyping with Python - UbiComp 2021
+    Presentation'
+  url: https://www.youtube.com/watch?v=G-LVg8fWXtw
+  channel: Embedded and Networked Systems TU Delft
+content_excerpt: 'Paper: BFree: Enabling Battery-free Sensor Prototyping with Python
+  Download: https://dl.acm.org/doi/abs/10.1145/3432191 ...'

@@ -1,0 +1,16 @@
+source_id: yt-5OGMYQaIPKw
+domain: semantic-models
+decision: include
+score: 0.9
+policy_version: semantic-models-v1
+rationale: Hands-on knowledge-graph construction lecture from a named research lab;
+  applied construction depth is fully in-scope.
+pinned_at: '2026-06-21T22:40:22Z'
+pinned_by: user-correction
+frontmatter_snapshot:
+  type: youtube
+  title: Knowledge Graph Construction - Lecture
+  url: https://www.youtube.com/watch?v=5OGMYQaIPKw
+  channel: LINQS Lab
+content_excerpt: In this lecture, I cover the key problems in Information Extraction
+  with a focus on building knowledge bases from web text sources.
