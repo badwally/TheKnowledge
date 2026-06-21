@@ -1052,8 +1052,14 @@ def research(
     review: bool = False,
     execute_session: str | None = None,
     external_plan_path: str | None = None,
+    force: bool = False,
 ) -> OperationResult:
-    """Run the full corpus-constructive research loop. See module docstring."""
+    """Run the full corpus-constructive research loop. See module docstring.
+
+    ``force=True`` (the CLI ``--retry`` flag) replaces an already-registered
+    session of the same id instead of hard-erroring on the collision — the
+    convergent-ops path for retrying a query whose prior run failed on quota.
+    """
     # Resume modes: --execute loads a persisted plan; --queries loads an
     # external YAML. In both cases the prompt and (for --execute) domain
     # come from the plan file, not the call args.
@@ -1286,9 +1292,18 @@ def research(
             success=False,
             errors=[f"create session notebook: {e}"],
         )
-    nlm_registry.register_session(
-        effective_domain, session_id, session_nb_id, query=prompt
-    )
+    try:
+        nlm_registry.register_session(
+            effective_domain, session_id, session_nb_id, query=prompt, force=force
+        )
+    except ValueError as e:
+        # Session-id collision (same prompt re-run). Return a clean, actionable
+        # error instead of an uncaught raise — the convergent-ops retry path is
+        # `--retry` (force=True), which replaces the prior session.
+        return OperationResult(
+            success=False,
+            errors=[str(e), "re-run with --retry to replace the existing session"],
+        )
     log.append(
         "research",
         fields={

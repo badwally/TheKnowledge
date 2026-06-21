@@ -146,21 +146,63 @@ def test_promote_dedups_by_url(kb_root, monkeypatch: pytest.MonkeyPatch):
     assert registry.promoted == [("alpha", "2026-04-29-x", 1)]
 
 
-def test_promote_falls_back_to_text_when_no_url(
+def test_promote_skips_urlless_textless_source_not_fail(
     kb_root, monkeypatch: pytest.MonkeyPatch
 ):
+    """A source with no URL and no recovered body is SKIPPED, never sent via an
+    empty `--text` (which nlm rejects and would miscount as failed)."""
     _patch_fetch(
         monkeypatch,
         by_notebook={
             "nb-session": [
-                # No URL — should route to source_add_text by title.
                 {"id": "s1", "title": "Note one"},
-                {"id": "s2", "title": "Note two"},
+                {"id": "s2", "title": "Note two"},  # no URL, no recoverable body
             ],
             "nb-persistent": [
                 {"id": "p1", "title": "Note one"},  # already there
             ],
         },
+    )
+    # No raw/ page recovers a body for these titles.
+    monkeypatch.setattr(
+        _session._source_map, "resolve_raw_sources_by_title", lambda titles: {}
+    )
+
+    client = _RecordingClient()
+    registry = _RegistryStub()
+
+    added, failed = _session.promote(
+        "alpha",
+        "sess-1",
+        persistent_notebook_id="nb-persistent",
+        session_notebook_id="nb-session",
+        client=client,
+        nlm_registry=registry,
+    )
+
+    # The bodyless source is skipped — no empty-text add, not counted as failed.
+    assert added == 0
+    assert failed == []
+    assert client.add_url_calls == []
+    assert client.add_text_calls == []
+
+
+def test_promote_adds_text_when_real_body_recovered(
+    kb_root, monkeypatch: pytest.MonkeyPatch
+):
+    """When a raw/ page recovers a real body for a urlless source, it promotes
+    via `source_add_text` with that body (the legitimate text-fallback path)."""
+    _patch_fetch(
+        monkeypatch,
+        by_notebook={
+            "nb-session": [{"id": "s2", "title": "Note two"}],
+            "nb-persistent": [],
+        },
+    )
+    monkeypatch.setattr(
+        _session._source_map,
+        "resolve_raw_sources_by_title",
+        lambda titles: {"Note two": (None, "Recovered body text.")},
     )
 
     client = _RecordingClient()
@@ -177,9 +219,8 @@ def test_promote_falls_back_to_text_when_no_url(
 
     assert added == 1
     assert failed == []
-    # Note two routed via text; Note one was deduped.
     assert client.add_url_calls == []
-    assert client.add_text_calls == [("nb-persistent", "", "Note two")]
+    assert client.add_text_calls == [("nb-persistent", "Recovered body text.", "Note two")]
 
 
 def test_promote_records_correct_sources_added_count(

@@ -1117,6 +1117,59 @@ def test_corpus_quality_gate_abort_surfaces_in_research(
     assert len(nlm.creates) == 0
 
 
+# --- session-id collision retry (backlog: research-session-id-collision) ---
+
+
+def test_research_collision_without_force_errors_gracefully(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """Re-running a query whose session_id is already registered returns a clean
+    error pointing at --retry — not an uncaught raise."""
+    from gateway import nlm_registry
+
+    prompt = "what sets the ceiling on representational"
+    sid = orch._session.make_session_id(prompt)
+    nlm_registry.register_session("alpha", sid, "nb-prior", query=prompt)
+
+    adapter = _StubAdapter(name="web", items=[_candidate("https://x.example/")])
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+
+    result = orch.research(prompt, domain="alpha", nlm_client=_MockNlm())
+
+    assert not result.success
+    blob = " ".join(result.errors).lower()
+    assert "already registered" in blob
+    assert "--retry" in blob
+
+
+def test_research_force_reregisters_colliding_session(
+    monkeypatch: pytest.MonkeyPatch, policy_kb: Path
+):
+    """`force=True` (the --retry flag) replaces the existing session instead of
+    hard-erroring on the collision — the run converges past registration."""
+    from gateway import nlm_registry
+
+    prompt = "what sets the ceiling on representational"
+    sid = orch._session.make_session_id(prompt)
+    nlm_registry.register_session("alpha", sid, "nb-prior", query=prompt)
+
+    adapter = _StubAdapter(name="web", items=[_candidate("https://x.example/")])
+    _patch_adapters(monkeypatch, [adapter])
+    _patch_filter_score(monkeypatch, score_value=0.9)
+    _patch_converter_dispatch(monkeypatch)
+
+    result = orch.research(prompt, domain="alpha", force=True, nlm_client=_MockNlm())
+
+    # Whatever happens downstream, the registration collision is gone.
+    blob = " ".join(result.errors).lower()
+    assert "already registered" not in blob
+    # The session was re-registered against the new notebook.
+    sess = nlm_registry.get_session("alpha", sid)
+    assert sess is not None and sess["notebook_id"] != "nb-prior"
+
+
 # --- M45: synthesizes emission --------------------------------------------
 
 

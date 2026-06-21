@@ -853,6 +853,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="Skip NotebookLM creation; report a structured plan only",
     )
     p_research.add_argument(
+        "--retry",
+        "--force",
+        dest="force",
+        action="store_true",
+        help=(
+            "Replace an already-registered session of the same id instead of "
+            "erroring on collision. Use to re-run a query whose prior run "
+            "failed (e.g. on NotebookLM quota) without manually abandoning it."
+        ),
+    )
+    p_research.add_argument(
         "--review",
         action="store_true",
         help=(
@@ -2438,6 +2449,7 @@ def _run_research(ns: argparse.Namespace) -> int:
             review=ns.review,
             execute_session=ns.execute_session,
             external_plan_path=ns.external_plan_path,
+            force=ns.force,
         )
     )
 

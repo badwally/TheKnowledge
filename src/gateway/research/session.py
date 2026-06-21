@@ -26,6 +26,7 @@ import re
 from datetime import datetime, timezone
 from typing import TYPE_CHECKING
 
+from gateway import log
 from gateway.research import source_map as _source_map
 
 if TYPE_CHECKING:
@@ -125,6 +126,7 @@ def promote(
     recovered = _source_map.resolve_raw_sources_by_title(urlless_titles)
 
     added = 0
+    skipped = 0
     failed: list[tuple[str, str]] = []
     for src in session_sources:
         url = src.get("url")
@@ -155,16 +157,31 @@ def promote(
             seen_urls.add(url)
             added += 1
             continue
-        # No URL — fall back to title-keyed dedup + text add. Prefer the
-        # real raw content; title-only (content="") remains the last resort
-        # for NLM-native sources with no raw/ page.
+        # No URL — fall back to title-keyed dedup + text add, but ONLY when a
+        # real recovered body exists. An empty `--text` is rejected by nlm
+        # ("Please specify a source") and would be miscounted as a `failed`
+        # promotion (the empty-text bug — dropped high-value video/talk sources).
+        # A source with neither a URL nor a body is skipped explicitly.
         if title is not None:
             if title in seen_titles:
+                continue
+            if not recovered_content:
+                seen_titles.add(title)
+                skipped += 1
+                log.append(
+                    "research",
+                    fields={
+                        "session_id": session_id,
+                        "step": "promote_skipped",
+                        "title": title[:80],
+                    },
+                    summary=f"skipped source with no URL or text body: {title[:80]}",
+                )
                 continue
             try:
                 client.source_add_text(
                     persistent_notebook_id,
-                    content=recovered_content or "",
+                    content=recovered_content,
                     title=title,
                 )
             except Exception as e:  # noqa: BLE001 — per-source isolation
