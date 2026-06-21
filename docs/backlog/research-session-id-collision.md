@@ -1,13 +1,31 @@
-# Backlog: `wiki research` Re-Run Collides on Session ID
+# Backlog: `wiki research` session status overstates success on quota-failed runs
 
 **Category:** Gateway / Research Efficiency
-**Priority:** Medium
-**Effort:** ~2-3 hours
-**Trigger to action:** Any retry of a research query whose synthesis failed (e.g. NLM `RESOURCE_EXHAUSTED`) and needs regeneration
+**Priority:** Low (was Medium) · **Effort:** ~1-2 hours
+**Trigger to action:** When a research run's synthesis is wholly error stubs (e.g. NLM `RESOURCE_EXHAUSTED`) yet the session is still marked `promoted`, and lint/retry logic needs to tell real syntheses from quota casualties.
 
 ---
 
-## Problem
+## RESOLVED (2026-06-21, PR — research papercuts): the re-run hard-error
+
+The recurring pain — a re-run of the same prompt hard-erroring on session-id
+collision and forcing a manual `--abandon` — is fixed. `wiki research --retry`
+(`--force`) threads `force=True` to `register_session`, replacing the prior
+session; on collision *without* `--retry`, `research()` now returns a clean
+`OperationResult` pointing at `--retry` instead of an uncaught raise. (Acceptance
+criteria 1 + 3 below are met.)
+
+## REMAINING (criterion 2 only): status accuracy
+
+`status=promoted` reflects **source** promotion (N sources copied into the
+persistent corpus), not **synthesis** success — so a run whose synthesis was
+100% `RESOURCE_EXHAUSTED` but still promoted its sources reads as `promoted`.
+Distinguishing this needs the synthesis-quality signal threaded from the analysis
+layer (detect an all-error-stub synthesis) into a new `failed`/`partial` terminal
+status — deeper than the retry papercut, hence deferred. When built, a `failed`
+session should auto-replace on re-run like `abandoned` does today.
+
+## Problem (original)
 
 `wiki research "<prompt>"` derives the session ID deterministically from the
 prompt's leading words. Re-running the same (or a similar) prompt — the normal
