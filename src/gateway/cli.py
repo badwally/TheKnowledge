@@ -114,6 +114,8 @@ SUBCOMMANDS: dict[str, str] = {
     "moc-add": "Author a wiki/mocs/<slug>.md domain map-of-content page",
     "intent-status": "Query a deposited intent_id for its terminal disposition (A1, read-tier)",
     "revert-resolution": "Enqueue a reversal of an auto-resolve contradiction act (G1, build-tier)",
+    "reverse-merge": "Enqueue a reverse-merge to restore a canonical from a dedup tombstone (G8, recovery)",
+    "restore-depath": "Enqueue a restore of a previously de-pathed page from recorded content (recovery)",
     "remediate": "Sweep for orphaned uncited pages and submit de-path intents (G6, build-tier)",
     "preflight": "Read-tier plan/executor pre-flight: gap-coverage + enrichment status (D12, read-tier)",
     "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
@@ -193,6 +195,8 @@ IMPLEMENTED: set[str] = {
     "moc-add",
     "intent-status",
     "revert-resolution",
+    "reverse-merge",
+    "restore-depath",
     "remediate",
     "preflight",
     "policy-edit",
@@ -462,6 +466,26 @@ def build_parser() -> argparse.ArgumentParser:
     p_revert_resolution.add_argument(
         "act_id",
         help="The resolution act id to revert (from resolution_acts.jsonl).",
+    )
+
+    # reverse-merge: enqueue a G8 reverse-merge from a dedup tombstone (recovery)
+    p_reverse_merge = subparsers.add_parser(
+        "reverse-merge",
+        help=SUBCOMMANDS["reverse-merge"],
+    )
+    p_reverse_merge.add_argument(
+        "tombstone_rel",
+        help="Wiki-relative path of the merge tombstone (e.g. wiki/entities/ozempic-brand.md).",
+    )
+
+    # restore-depath: enqueue a restore of a previously de-pathed page (recovery)
+    p_restore_depath = subparsers.add_parser(
+        "restore-depath",
+        help=SUBCOMMANDS["restore-depath"],
+    )
+    p_restore_depath.add_argument(
+        "target_rel",
+        help="Wiki-relative path of the de-pathed page to restore (e.g. wiki/concepts/orphan.md).",
     )
 
     # remediate: corpus-rot sweep — de-path orphaned uncited pages (G6, build-tier)
@@ -1709,6 +1733,10 @@ def main(argv: list[str] | None = None) -> int:
         return _run_moc_add(ns)
     if ns.subcommand == "revert-resolution":
         return _run_revert_resolution(ns)
+    if ns.subcommand == "reverse-merge":
+        return _run_reverse_merge(ns)
+    if ns.subcommand == "restore-depath":
+        return _run_restore_depath(ns)
     if ns.subcommand == "remediate":
         return _run_remediate(ns)
     if ns.subcommand == "demand-cluster":
@@ -2995,6 +3023,18 @@ def _run_revert_resolution(ns: argparse.Namespace) -> int:
 
     result = revert_resolution(ns.act_id, {"agent": "cli"})
     return _emit_result(result)
+
+
+def _run_reverse_merge(ns: argparse.Namespace) -> int:
+    from gateway.ops.reverse_merge import reverse_merge
+
+    return _emit_result(reverse_merge(ns.tombstone_rel, {"agent": "cli"}))
+
+
+def _run_restore_depath(ns: argparse.Namespace) -> int:
+    from gateway.ops.reverse_merge import restore_depath
+
+    return _emit_result(restore_depath(ns.target_rel, {"agent": "cli"}))
 
 
 def _run_remediate(ns: argparse.Namespace) -> int:
