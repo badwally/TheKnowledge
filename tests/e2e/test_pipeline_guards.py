@@ -32,9 +32,12 @@ from pathlib import Path
 import pytest
 import yaml
 
+import io
+
 from gateway import frontmatter as fm
 from gateway import paths, validator
 from gateway.filter.semantic import FilterResult
+from gateway.ops import ingest as ingest_op
 from gateway.ops.finalize import finalize
 from gateway.research import orchestrator as orch
 from gateway.research.adapters import CandidateItem
@@ -331,3 +334,190 @@ def test_e2e2_finalize_fails_until_uncited_claim_is_cited(kb_root: Path):
     front_final, _ = fm.parse(page.read_text())
     assert "draft" not in front_final
     assert "finalized_at" in front_final
+
+
+# ===========================================================================
+# E2E-1 — ingest → filter → convert → wiki page (the spine)
+# ===========================================================================
+#
+# Drives the REAL pdf converter (pdfplumber, offline), the REAL ingest op,
+# the REAL validator + source-immutability check, and REAL source-page
+# authoring. The two-pass *filter* is the one external LLM dependency, so it
+# is stubbed deterministically here (exactly as E2E-9 stubs NLM) — the filter
+# decision logic that the stub feeds (threshold compare → wiki-page-or-not) is
+# still the real ingest code. The filter's *judgment* (source-type blindness)
+# has no faithful offline case; it is exercised by a one-time live hand-run
+# against a real corpus, not the gate.
+#
+# The PDF is generated in-process (a ~800-byte text-bearing PDF, no external
+# dependency, no committed binary fixture) so the converter has a real file to
+# parse.
+
+
+def _make_min_pdf(lines: list[str]) -> bytes:
+    """Assemble a minimal one-page text-bearing PDF, computing xref offsets so
+    pdfminer/pdfplumber can parse it. `lines=[]` yields a no-text PDF."""
+    parts = ["BT", "/F1 12 Tf", "72 720 Td", "14 TL"]
+    for i, ln in enumerate(lines):
+        esc = ln.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+        if i:
+            parts.append("T*")
+        parts.append(f"({esc}) Tj")
+    parts.append("ET")
+    content = "\n".join(parts).encode()
+    objs = [
+        b"<</Type /Catalog /Pages 2 0 R>>",
+        b"<</Type /Pages /Kids [3 0 R] /Count 1>>",
+        b"<</Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+        b"/Contents 4 0 R /Resources <</Font <</F1 5 0 R>>>>>>",
+        b"<</Length %d>>\nstream\n" % len(content) + content + b"\nendstream",
+        b"<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>",
+    ]
+    out = io.BytesIO()
+    out.write(b"%PDF-1.4\n")
+    offsets = []
+    for i, o in enumerate(objs, 1):
+        offsets.append(out.tell())
+        out.write(b"%d 0 obj\n" % i + o + b"\nendobj\n")
+    xref = out.tell()
+    out.write(b"xref\n0 %d\n" % (len(objs) + 1))
+    out.write(b"0000000000 65535 f \n")
+    for off in offsets:
+        out.write(b"%010d 00000 n \n" % off)
+    out.write(
+        b"trailer\n<</Size %d /Root 1 0 R>>\nstartxref\n%d\n%%%%EOF\n"
+        % (len(objs) + 1, xref)
+    )
+    return out.getvalue()
+
+
+_RICH_LINES = [
+    f"Self-evolving agents revise their own harness during run number {n} of the study."
+    for n in range(20)
+]  # ~280 words — comfortably above the stub's 100-word include bar
+_SPARSE_LINES = ["A two line stub.", "No technical substance here."]  # ~8 words
+
+
+def _e2e1_kb(kb_root: Path) -> Path:
+    """`kb_root` plus a registered domain `seagents` with a real policy file."""
+    pol = kb_root / ".knowledge" / "policies" / "seagents"
+    pol.mkdir(parents=True, exist_ok=True)
+    (pol / "policy.yaml").write_text(
+        yaml.safe_dump(
+            {
+                "version": "0.1.0",
+                "domain": {
+                    "slug": "seagents",
+                    "topic": "Self-evolving LLM agents",
+                    "field": "LLM agents",
+                    "description": "Self-evolving / self-improving LLM agents.",
+                },
+                "filter": {
+                    "threshold_include": 0.7,
+                    "threshold_review": 0.5,
+                    "example_count_in_prompt": 0,
+                    "example_strategy": "balanced",
+                },
+                "inclusion_criteria": ["Studies self-evolving LLM agents"],
+                "exclusion_criteria": ["Thin stubs with no substance"],
+                "quality_signals": {},
+            }
+        )
+    )
+    return kb_root
+
+
+def _patch_filter_by_length(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Stub the filter LLM: a rich body scores include, a thin body scores
+    reject. Deterministic; the real ingest threshold logic consumes it."""
+
+    def _score(front, body, policy, examples=None, client=None, **kw):
+        wc = len(body.split())
+        return FilterResult(
+            score=0.95 if wc >= 100 else 0.10,
+            rationale=f"stub by length (wc={wc})",
+            policy_version=f"{policy.domain_slug}-v1",
+            decided_at=_now(),
+        )
+
+    monkeypatch.setattr(ingest_op, "filter_score", _score)
+
+
+def _only_pdf_raw(kb_root: Path) -> Path:
+    pdfs = list((kb_root / "raw" / "pdf").glob("*.md"))
+    assert len(pdfs) == 1, f"expected one raw pdf page, got {pdfs}"
+    return pdfs[0]
+
+
+def test_e2e1_rich_pdf_lands_with_source_page_and_immutable_body(
+    monkeypatch: pytest.MonkeyPatch, kb_root: Path
+):
+    """A rich PDF ingests through the REAL converter: it lands in raw/pdf/, an
+    accepted source page is authored with raw-provenance grounding, and the
+    raw body is byte-identical to the converter output after the filter block
+    is written to frontmatter (immutable body, mutable frontmatter)."""
+    _e2e1_kb(kb_root)
+    _patch_filter_by_length(monkeypatch)
+    pdf = kb_root / "rich.pdf"
+    pdf.write_bytes(_make_min_pdf(_RICH_LINES))
+
+    # Body the converter produces, before ingest persists it.
+    _, conv_body = fm.parse(ingest_op.converters.dispatch(str(pdf)).convert(str(pdf)))
+
+    result = ingest_op.ingest(pdf, domain="seagents")
+    assert result.success
+
+    raw = _only_pdf_raw(kb_root)
+    raw_front, raw_body = fm.parse(raw.read_text())
+    # Immutability: frontmatter gained a filter block; the body is untouched.
+    assert "filter" in raw_front
+    assert raw_body == conv_body
+
+    # Accepted → a source page was authored, grounded to its raw provenance.
+    source_page = paths.wiki_source_path(raw_front["id"])
+    assert source_page.exists()
+    sp_text = source_page.read_text()
+    assert f"[[raw/pdf/{raw_front['id']}]]" in sp_text
+
+    # Re-ingest is a no-op and does not mutate the immutable body.
+    again = ingest_op.ingest(pdf, domain="seagents")
+    assert again.no_op
+    _, raw_body_2 = fm.parse(raw.read_text())
+    assert raw_body_2 == conv_body
+
+
+def test_e2e1_sparse_pdf_is_filtered_out_no_source_page(
+    monkeypatch: pytest.MonkeyPatch, kb_root: Path
+):
+    """A thin PDF lands in raw/ (the immutable record) but is filtered out —
+    NO wiki/sources page is authored. The rich/sparse pair is the complementary
+    control: a tautological 'always author' gate would fail this half."""
+    _e2e1_kb(kb_root)
+    _patch_filter_by_length(monkeypatch)
+    pdf = kb_root / "sparse.pdf"
+    pdf.write_bytes(_make_min_pdf(_SPARSE_LINES))
+
+    result = ingest_op.ingest(pdf, domain="seagents")
+    assert result.success  # ingest succeeds; the source is recorded
+
+    raw = _only_pdf_raw(kb_root)
+    raw_front, _ = fm.parse(raw.read_text())
+    assert raw_front["filter"]["score"] < 0.7  # rejected band
+    assert not paths.wiki_source_path(raw_front["id"]).exists()
+
+
+def test_e2e1_unextractable_pdf_fails_not_silent_success(
+    monkeypatch: pytest.MonkeyPatch, kb_root: Path
+):
+    """A PDF with no extractable text must surface a conversion FAILURE, not a
+    silent success that writes an empty source — the convert-failure-as-success
+    trap. No raw/pdf page is written."""
+    _e2e1_kb(kb_root)
+    _patch_filter_by_length(monkeypatch)
+    pdf = kb_root / "empty.pdf"
+    pdf.write_bytes(_make_min_pdf([]))  # valid PDF, zero text
+
+    result = ingest_op.ingest(pdf, domain="seagents")
+    assert not result.success
+    assert any("conversion failed" in e.lower() for e in result.errors)
+    assert list((kb_root / "raw" / "pdf").glob("*.md")) == []
