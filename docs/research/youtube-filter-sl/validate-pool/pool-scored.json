@@ -1,0 +1,392 @@
+[
+  {
+    "item_id": "yt:4eJAfc7emV8",
+    "url": "https://www.youtube.com/watch?v=4eJAfc7emV8",
+    "title": "6th TUC Meeting - &quot;SADI: Semantic Automated Discovery and Integration&quot; by Mark D. Wilkinson (UPM)",
+    "channel": "LDBC",
+    "description": "Sixth Linked Data Benchmark Council (LDBC) Technical User Community (TUC) meeting. 19th and 20th of March 2015, ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:xbBpFQ0oFqg",
+    "url": "https://www.youtube.com/watch?v=xbBpFQ0oFqg",
+    "title": "JenTab: Matching Tabular Data to Knowledge Graphs",
+    "channel": "Fusion UniJena",
+    "description": "Presented at the Ontology Matching Workshop at the 19th International Semantic Web Conference ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.83,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:uCdZPuw3fqw",
+    "url": "https://www.youtube.com/watch?v=uCdZPuw3fqw",
+    "title": "MARIO: Robotics for people. Using frames in assistive robotics",
+    "channel": "MARIO Project",
+    "description": "3rd Webinar on Companion Robots sponsored by the MARIO EU Project (http://mario-project.eu/) # Abstract People with dementia ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.05,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:LBuomIBSjcw",
+    "url": "https://www.youtube.com/watch?v=LBuomIBSjcw",
+    "title": "Addressing the Semantic Gap Between Video Sensors and Applications",
+    "channel": "acmmmsys",
+    "description": "Presented at NOSSDAV 2013. In this paper, we propose a framework to support the bridging of applications and computer-vision ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.0,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:zK0gGZHsxZA",
+    "url": "https://www.youtube.com/watch?v=zK0gGZHsxZA",
+    "title": "Practical Reasoning over a Web 3.0 Database",
+    "channel": "AllegroGraph",
+    "description": "The complex problems we face today involve knowledge and datasets growing in size at unprecedented rates. In government to ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.45,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:-UmSqppRGXg",
+    "url": "https://www.youtube.com/watch?v=-UmSqppRGXg",
+    "title": "Ontology 101, Expert Engagement Part 1: 12 10 25",
+    "channel": "John Beverley",
+    "description": "This is the first meeting of a recurring 6-week series designed to help participants build real-world ontology development skills ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:7OnlyZwwJqw",
+    "url": "https://www.youtube.com/watch?v=7OnlyZwwJqw",
+    "title": "KGC 2022: A Standard Ontology Library of Patterns for Cross-Domain Reuse —  Thematix Partners LLC",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "Key high-level modeling patterns have been identified over the last several years that are increasingly replacing ad hoc ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:SLPZ26gklQQ",
+    "url": "https://www.youtube.com/watch?v=SLPZ26gklQQ",
+    "title": "Ontology 101 - Engagement Part 1",
+    "channel": "John Beverley",
+    "description": "Ontology Engineering 101 Working Group This is the first meeting of a recurring 6-week series designed to help participants build ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.4,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:dyw0VgSrs2A",
+    "url": "https://www.youtube.com/watch?v=dyw0VgSrs2A",
+    "title": "STLab Seminar - Extraction of common conceptual components from multiple ontologies",
+    "channel": "Semantic Technology Laboratory",
+    "description": "Extraction of common conceptual components from multiple ontologies by Valentina Carriero. Understanding large ontologies ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:TDntQR00Oks",
+    "url": "https://www.youtube.com/watch?v=TDntQR00Oks",
+    "title": "AI Psychology — HCLS Platforms Reuse of Mental Health Questionnaires via Knowledge Graphs",
+    "channel": "The Knowledge Graph Conference ",
+    "description": "This presentation delves deeply into the pivotal role that questionnaires play in the realm of mental health screening, with a ...",
+    "subtopic": "ontology-design-patterns",
+    "score": 0.75,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:y7sXDpffzQQ",
+    "url": "https://www.youtube.com/watch?v=y7sXDpffzQQ",
+    "title": "What is a Knowledge Graph?",
+    "channel": "IBM Technology",
+    "description": "Learn more about Knowledge Graph → http://ibm.biz/knowledge-graph-guide Watch \"What is Natural Language Processing?",
+    "subtopic": "alignment-matching",
+    "score": 0.32,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:MBA1iF1cPu0",
+    "url": "https://www.youtube.com/watch?v=MBA1iF1cPu0",
+    "title": "Part 17: schema matching and lexicon extension",
+    "channel": "Farshad Noravesh",
+    "description": "",
+    "subtopic": "alignment-matching",
+    "score": 0.55,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:Aw7iQjKAX2k",
+    "url": "https://www.youtube.com/watch?v=Aw7iQjKAX2k",
+    "title": "GraphRAG vs. Traditional RAG: Higher Accuracy &amp; Insight with LLM",
+    "channel": "IBM Technology",
+    "description": "Want to learn more about Want to learn more about Generative AI + Machine Learning? Read the ebook here ...",
+    "subtopic": "alignment-matching",
+    "score": 0.55,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:auaaRIznoWk",
+    "url": "https://www.youtube.com/watch?v=auaaRIznoWk",
+    "title": "Learning to Match Schemas Using Knowledge Graph",
+    "channel": "ACM SIGKDD India Chapter",
+    "description": "",
+    "subtopic": "alignment-matching",
+    "score": 0.6,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:sr257blfdY8",
+    "url": "https://www.youtube.com/watch?v=sr257blfdY8",
+    "title": "Taxonomy, Ontology, Knowledge Graph, and Semantics",
+    "channel": "Ontology Explained: Philosophy and AI",
+    "description": "Casey here distinguishes a few important terms in the ontology space: Taxonomy, Ontology, Knowledge Graph, and Semantics.",
+    "subtopic": "alignment-matching",
+    "score": 0.35,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:hDjPNdB1w9E",
+    "url": "https://www.youtube.com/watch?v=hDjPNdB1w9E",
+    "title": "Knowledge Graph Integration for Explainable AI in Scientific Discovery",
+    "channel": "GOBLIN COST Action",
+    "description": "Task: 1.3 – Integration and interlinking of Knowledge Graphs When: Thursday May 28th (CEST) Abstract AI for science requires ...",
+    "subtopic": "alignment-matching",
+    "score": 0.72,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:qkcs7oW2KrA",
+    "url": "https://www.youtube.com/watch?v=qkcs7oW2KrA",
+    "title": "Philosophical Ontology and Domain Modeling - An Introduction to the OntoUML Approach (part 2)",
+    "channel": "Giancarlo Guizzardi",
+    "description": "This is the part 2 of a tutorial presented at the IEEE International Requirements Engineering Conference (IEEE RE). The part ...",
+    "subtopic": "alignment-matching",
+    "score": 0.85,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:IbrEepRQIvs",
+    "url": "https://www.youtube.com/watch?v=IbrEepRQIvs",
+    "title": "NLP Annotation Workshop - Welcome",
+    "channel": "The Qualcomm Institute",
+    "description": "iDash NLP Annotation Workshop Saturday, September 29, 2012 Calit2, Atkinson Hall Auditorium, UCSD.",
+    "subtopic": "alignment-matching",
+    "score": 0.0,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:o7syNWwaSoU",
+    "url": "https://www.youtube.com/watch?v=o7syNWwaSoU",
+    "title": "MedDRA-ICD Mapping Evaluation Based on UMLS and OHDSI",
+    "channel": "Biomedical Ontology World",
+    "description": "Objective: In this era of big data, integrating data from different sources is essential for secondary data analyses. Heterogeneous ...",
+    "subtopic": "alignment-matching",
+    "score": 0.55,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:bqE5FLs2-xA",
+    "url": "https://www.youtube.com/watch?v=bqE5FLs2-xA",
+    "title": "Overview of BFO for the Industry Ontology Foundry",
+    "channel": "Basic Formal Ontology",
+    "description": "Lecture by Barry Smith to the NIST Industry Ontology Foundry Value Proposition (Use Case) Working Group, February 17, 2017.",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:rF-8sYeNeDQ",
+    "url": "https://www.youtube.com/watch?v=rF-8sYeNeDQ",
+    "title": "What is a Formal Ontology?",
+    "channel": "Parthenos Project",
+    "description": "Dr. George Bruseker (ICS-FORTH) presents a lecture on what is (and also what ISN'T) a Formal Ontology, and how they can help ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.5,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:glmdyYbEjyc",
+    "url": "https://www.youtube.com/watch?v=glmdyYbEjyc",
+    "title": "Overview of BFO for the Industrial Ontologies Foundry",
+    "channel": "Barry Smith",
+    "description": "Basic Formal Ontology is a small top-level ontology designed to promote interoperability between domain ontologies defined on ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:Lo7iPP2wKgw",
+    "url": "https://www.youtube.com/watch?v=Lo7iPP2wKgw",
+    "title": "Introduction to BFO and to the Industrial Ontologies Foundry",
+    "channel": "Barry Smith",
+    "description": "Provides an introduction to Basic Formal Ontology (BFO) with special focus on engineering. Describes the way BFO came into ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:I-V77bIYGzc",
+    "url": "https://www.youtube.com/watch?v=I-V77bIYGzc",
+    "title": "Introduction to Basic Formal Ontology (September 2019)",
+    "channel": "Biomedical Ontology World",
+    "description": "By Barry Smith #BFO Biomedical Ontology World is a channel to publish talks, lessons, and interviews for ontology development ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:qwJeAx6HOfo",
+    "url": "https://www.youtube.com/watch?v=qwJeAx6HOfo",
+    "title": "5th SCOR Online Seminar – Roberta Ferrario on Ontology of Digital Twins",
+    "channel": "SCOR",
+    "description": "The 5th SCOR Online Seminar Wednesday, April 29, 2026 Roberta Ferrario (ISTC-CNR, LOA) “Beyond Copies: Digital Twins as ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:2AuU-tmEqic",
+    "url": "https://www.youtube.com/watch?v=2AuU-tmEqic",
+    "title": "Ontologies and Conceptual Modeling",
+    "channel": "Giancarlo Guizzardi",
+    "description": "This is an invited talk delivered by Giancarlo Guizzardi at Stockholm University, Sweden. December 2020. The OntoUML Tool can ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:wR-0ERDWhbU",
+    "url": "https://www.youtube.com/watch?v=wR-0ERDWhbU",
+    "title": "GSC Seminar - A Simulation Ontology for Ground Vehicle Design | Gregory M. Mocko",
+    "channel": "Graduate Student Community at GCOE OU (GSC-GCOE)",
+    "description": "The acquisition and development of next-generation ground vehicles use simulations to predict functional objectives early in the ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:aux_zcK7XSI",
+    "url": "https://www.youtube.com/watch?v=aux_zcK7XSI",
+    "title": "ISO/IEC 21838",
+    "channel": "Barry Smith",
+    "description": "Keynote presentation at ONTOBRAS 2020, covering the new top-level ontology standard of the International Standards ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:cTFb4mzl9dI",
+    "url": "https://www.youtube.com/watch?v=cTFb4mzl9dI",
+    "title": "General Theory of General Intelligence: Foundational Ontology (3/10)",
+    "channel": "SingularityNET",
+    "description": "This episode has been reuploaded for improved quality. This is Episode 3 in a series of videos discussing the General Theory of ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.45,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:ENGEIhbnAx4",
+    "url": "https://www.youtube.com/watch?v=ENGEIhbnAx4",
+    "title": "Philosophical Ontology and Domain Modeling - An Introduction to the OntoUML Approach (part 1)",
+    "channel": "Giancarlo Guizzardi",
+    "description": "This is the part 1 of a tutorial presented at the IEEE International Requirements Engineering Conference (IEEE RE). The part ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.8,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:YL1HLG1d37I",
+    "url": "https://www.youtube.com/watch?v=YL1HLG1d37I",
+    "title": "Philosophical Ontology and Domain Modeling - An Introduction to the OntoUML Approach (part 3)",
+    "channel": "Giancarlo Guizzardi",
+    "description": "This is the part 3 of a tutorial presented at the IEEE International Requirements Engineering Conference (IEEE RE). The part ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:zAllxm0V-fU",
+    "url": "https://www.youtube.com/watch?v=zAllxm0V-fU",
+    "title": "MIM community 20250624",
+    "channel": "ArchiXL",
+    "description": "This video is a recording of a session of the MIM community on information modeling held at june 24th, 2025. A Whirlwind Tour to ...",
+    "subtopic": "upper-foundational-ontologies",
+    "score": 0.55,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:qGp_Mort9Dg",
+    "url": "https://www.youtube.com/watch?v=qGp_Mort9Dg",
+    "title": "Ontology-based Data Access made Practical, by Diego Calvanese",
+    "channel": "EDBT-INTENDED Summer School 2022",
+    "description": "EDBT-INTENDED summer school July 4–9, 2022, Bordeaux, France https://edbtschool22.labri.fr/ Tutorial 9: ONTOLOGY-BASED ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:0-6ioJnFZPs",
+    "url": "https://www.youtube.com/watch?v=0-6ioJnFZPs",
+    "title": "DL 2020 - Rewriting Count Queries over DL-Lite TBoxes with Cardinality Restrictions",
+    "channel": "KR conference series",
+    "description": "Diego Calvanese, Julien Corman, Davide Lanti and Simon Razniewski: Rewriting Count Queries over DL-Lite TBoxes with ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.9,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:aGf3Cedvqe4",
+    "url": "https://www.youtube.com/watch?v=aGf3Cedvqe4",
+    "title": "DL 2020 - The Virtual Knowledge Graph System Ontop (Extended Abstract)",
+    "channel": "KR conference series",
+    "description": "Guohui Xiao, Davide Lanti, Roman Kontchakov, Sarah Komla Ebri, Elem Guzel Kalayci, Linfang Ding, Julien Corman, Benjamin ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.88,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:N-3uTCT3bvQ",
+    "url": "https://www.youtube.com/watch?v=N-3uTCT3bvQ",
+    "title": "Presentation of Ontopic Studio 2022.1 at the Knowledge Graph Conference - KGC",
+    "channel": "Ontopic",
+    "description": "Benjamin Cogrel, CTO of Ontopic, makes a quick tour through Ontopic Studio and shows how Ontopic Studio can be used as a ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.4,
+    "tier": "reject"
+  },
+  {
+    "item_id": "yt:bivjz9LeUgg",
+    "url": "https://www.youtube.com/watch?v=bivjz9LeUgg",
+    "title": "Knowledge Graph Conference: Streaming Graphs, Because We Cannot Afford to Query Anymore -Ryan Wright",
+    "channel": "thatDot",
+    "description": "Quine streaming graph can process millions of complex, multi-hop graph events per second. But what design decisions and ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.78,
+    "tier": "accept"
+  },
+  {
+    "item_id": "yt:HImnxApfMlA",
+    "url": "https://www.youtube.com/watch?v=HImnxApfMlA",
+    "title": "An introductory journey to the Virtual Knowledge Graph approach to data access and data integration",
+    "channel": "Ontologies In Agriculture",
+    "description": "Virtual Knowledge Graphs (VKGs) have recently gained attention due to their flexible data model, which reduces the effort needed ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.68,
+    "tier": "review"
+  },
+  {
+    "item_id": "yt:cTEI3IC3djQ",
+    "url": "https://www.youtube.com/watch?v=cTEI3IC3djQ",
+    "title": "Experiences with implementing GeoSPARQL in the Virtual Knowledge Graph system Ontop  by Guohui Xiao",
+    "channel": "Marco Neumann",
+    "description": "Experiences with implementing GeoSPARQL in the Virtual Knowledge Graph system Ontop a presentation Guohui Xiao - Free ...",
+    "subtopic": "obda-virtual-kg",
+    "score": 0.8,
+    "tier": "accept"
+  }
+]
