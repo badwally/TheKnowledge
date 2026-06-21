@@ -928,6 +928,21 @@ class CommitGate:
                     f"reversal path {rel!r} escapes the KB root — refusing to "
                     f"write/delete (failing closed, no mutation)",
                 )
+            # Positive-allowlist containment: reversal/policy writes touch ONLY
+            # the corpus (wiki/) and policy store (.knowledge/policies/). A rel
+            # that does not escape the root can still be dangerous (e.g.
+            # `.git/hooks/post-commit`); confine targets to the allowlisted
+            # subtrees and dead-letter anything else. Closes the gap for the
+            # payload-controlled reverse-merge / restore-depath targets.
+            norm = str(rel).replace(os.sep, "/")
+            if not (
+                norm.startswith("wiki/") or norm.startswith(".knowledge/policies/")
+            ):
+                return self._dead_letter(
+                    intent_id,
+                    f"reversal path {rel!r} is outside the allowlisted subtree "
+                    f"(wiki/, .knowledge/policies/) — failing closed, no mutation",
+                )
 
         declared = list(writes) + list(deletes)
         try:
@@ -1282,18 +1297,26 @@ class CommitGate:
     def _apply_reversal(
         self, authored: "AuthoredIntent", intent_id: str, fencing_token: int
     ) -> OperationResult:
-        """Dispatch a reversal intent to its kind-specific apply helper."""
+        """Dispatch a reversal intent to its kind-specific apply helper.
+
+        Keyed on the canonical ``REVERSAL_TYPES`` enum: a type in the enum
+        without a handler entry (or a payload type not in the enum) falls
+        through to the dead-letter — surfaced by the producer cross-reference
+        test (hunt #1)."""
+        from gateway.ops._reversal_types import REVERSAL_TYPES
+
         payload = authored.intent.payload or {}
         kind = payload.get("reversal_type")
-        if kind == "contradiction-resolution":
-            return self._apply_contradiction_revert(payload, intent_id)
-        if kind == "reverse-merge":
-            return self._apply_reverse_merge(payload, intent_id)
-        if kind == "depath":
-            return self._apply_depath(payload, intent_id)
-        if kind == "restore-depath":
-            return self._apply_restore_depath(payload, intent_id)
-        return self._dead_letter(intent_id, f"unknown reversal_type {kind!r}")
+        handlers = {
+            "contradiction-resolution": self._apply_contradiction_revert,
+            "reverse-merge": self._apply_reverse_merge,
+            "depath": self._apply_depath,
+            "restore-depath": self._apply_restore_depath,
+        }
+        handler = handlers.get(kind) if kind in REVERSAL_TYPES else None
+        if handler is None:
+            return self._dead_letter(intent_id, f"unknown reversal_type {kind!r}")
+        return handler(payload, intent_id)
 
     def _apply_depath(self, payload: dict, intent_id: str) -> OperationResult:
         """De-path an orphaned uncited page through the gate (G6, Phase 5 Task 2).

@@ -921,6 +921,7 @@ def _producer_reversal_types() -> list[str]:
     producer_files = [
         gateway_ops / "revert_resolution.py",
         gateway_ops / "remediate.py",
+        gateway_ops / "reverse_merge.py",
     ]
     found: list[str] = []
     for f in producer_files:
@@ -939,8 +940,9 @@ def test_producer_reversal_type_has_gate_apply_branch(reversal_type, kb_root):
     """Every reversal_type a producer op enqueues has a non-dead-letter gate branch.
 
     Hunt #1 real cross-reference: the parametrize comes from the PRODUCER source
-    (ops/revert_resolution.py + ops/remediate.py), not from the gate's own
-    _apply_reversal. A producer emitting a type the gate doesn't handle goes RED.
+    (ops/revert_resolution.py + ops/remediate.py + ops/reverse_merge.py), not from
+    the gate's own _apply_reversal. A producer emitting a type the gate doesn't
+    handle goes RED.
 
     The gate may still dead-letter for a VALID operational reason (missing target,
     unknown act, etc.) — that is correct routing. The assertion is only that the
@@ -965,6 +967,19 @@ def test_producer_reversal_type_has_gate_apply_branch(reversal_type, kb_root):
         f"reversal_type={reversal_type!r} (produced by a real op) fell through "
         f"to unknown-reversal dead-letter — hunt #1 defect. "
         f"result={result}"
+    )
+
+
+@pytest.mark.integration
+def test_reversal_types_constant_matches_producer_source():
+    """The canonical REVERSAL_TYPES enum and the set producers actually emit must
+    agree — a producer adding a type absent from the enum (or an enum value no
+    producer emits) is drift the gate dispatch keys on REVERSAL_TYPES would mask.
+    """
+    from gateway.ops._reversal_types import REVERSAL_TYPES
+
+    assert set(_producer_reversal_types()) == set(REVERSAL_TYPES), (
+        "producer-emitted reversal_types diverge from the REVERSAL_TYPES enum"
     )
 
 

@@ -56,6 +56,14 @@ CLI_ONLY: frozenset[str] = frozenset(
         "serve",
         "migrate",
         "demote-domain",
+        # `reverse-merge` / `restore-depath` are destructive recovery/undo
+        # affordances: reverse-merge rewrites a canonical and deletes a
+        # tombstone; restore-depath re-creates a previously removed page. Like
+        # demote-domain, these are operator corrections for a bad dedup merge /
+        # de-path — not routine agent actions. CLI-only by design (keep the
+        # destructive recovery surface off the agent tier).
+        "reverse-merge",
+        "restore-depath",
         # `eval-retrieval` (WS4) is a dev/measurement harness over the golden
         # query set. It scores retrieval quality during development; agents
         # have no reason to invoke it at runtime. CLI-only by design.

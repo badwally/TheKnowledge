@@ -620,3 +620,146 @@ def test_reversal_writes_traversal_write_rel_dead_letters(tmp_commit_env):
         f"traversal write must dead-letter; got {result.disposition} ({result.summary})"
     )
     assert not escape_target.exists(), "traversal write CREATED a file outside the root!"
+
+
+# ===========================================================================
+# Producer ops for the two recovery reversal kinds (backlog: reverse-merge /
+# restore-depath have no producer op). These drive the REAL producer ->
+# REAL committer drain -> REAL gate apply, closing the operator-reachability gap.
+# ===========================================================================
+
+
+def test_reverse_merge_producer_drains_to_restore(tmp_commit_env):
+    """`reverse_merge(tombstone_rel)` submits an intent the real committer drains
+    into a gate reverse-merge — restoring the canonical and deleting the tombstone.
+    Drives a REAL merge first so the reattachment record is genuine."""
+    from gateway import frontmatter as fm
+    from gateway.ops.reverse_merge import reverse_merge
+    from gateway.ops.committer import drain_once
+
+    gate, q, root = tmp_commit_env
+
+    _commit_entity(
+        gate, "ozempic", "Ozempic", ["Semaglutide"],
+        "# Overview\nstub.\n\n## Claims\n- claim-X [[sources/s1]]\n",
+    )
+    rich_body = (
+        "# Overview\nstub.\n\n## Mechanism\nGLP-1 agonist [[entities/glp1]].\n\n"
+        "## Claims\n- claim-Y [[sources/s2]]\n"
+    )
+    dep = _authored_entity_richbody(gate, "semaglutide", "Semaglutide", ["Wegovy"], rich_body)
+    res = gate.commit(dep, q.fencing_token(dep.intent.intent_id))
+    assert res.disposition == "merged", f"need a real merge: {res.disposition} {res.summary}"
+
+    canonical_rel = "wiki/entities/ozempic.md"
+    tombstone_rel = "wiki/entities/semaglutide.md"
+    assert (root / tombstone_rel).exists()
+
+    # PRODUCER submits; REAL committer drains it.
+    prod = reverse_merge(tombstone_rel, queue=q)
+    assert prod.success, prod.errors
+    dr = drain_once(q, gate)
+    assert dr is not None and dr.disposition == "committed", dr
+
+    front_after, body_after = fm.parse((root / canonical_rel).read_text())
+    aliases_after = front_after.get("aliases") or []
+    assert "Semaglutide" in aliases_after  # pre-existing alias survives
+    assert "Wegovy" not in aliases_after    # B's alias removed
+    assert "claim-Y" not in body_after
+    assert "claim-X" in body_after
+    assert not (root / tombstone_rel).exists()
+
+
+def test_reverse_merge_producer_rejects_traversal_rel(tmp_commit_env):
+    """Producer-layer containment: a `..`/absolute tombstone_rel is rejected
+    BEFORE submission — nothing reaches the queue."""
+    from gateway.ops.reverse_merge import reverse_merge
+
+    gate, q, root = tmp_commit_env
+    depth_before = q.depth()
+    for bad in ("../escape.md", "/etc/passwd", "wiki/../.git/config", "wiki\\..\\.git\\config"):
+        out = reverse_merge(bad, queue=q)
+        assert not out.success, bad
+    assert q.depth() == depth_before, "a rejected producer call must not enqueue"
+
+
+def test_restore_depath_producer_looks_up_provenance_and_restores(tmp_commit_env):
+    """`restore_depath(rel)` finds the recorded depathed_content in provenance and
+    submits a restore intent the committer drains — bringing the page back. The
+    operator supplies only the rel; content is never caller-injected."""
+    from gateway.ops.reverse_merge import restore_depath
+    from gateway.ops.committer import drain_once
+
+    gate, q, root = tmp_commit_env
+
+    orphan_rel = "wiki/concepts/orphan.md"
+    (root / "wiki" / "concepts").mkdir(parents=True, exist_ok=True)
+    orphan_content = (
+        "---\ntype: concept\nslug: orphan\ntitle: Orphan\ndomains: [med]\n---\n"
+        "# Orphan\n\nNo inbound links and uncited.\n"
+    )
+    (root / orphan_rel).write_text(orphan_content)
+    _git(root, "add", "--", orphan_rel)
+    _git(root, "commit", "-qm", "seed orphan")
+
+    # Real de-path (records depathed_content in provenance).
+    iid, dres = _run_intent_through_gate(
+        gate, q,
+        {"reversal_type": "depath", "target_rel": orphan_rel, "reversible": True},
+        {"agent": "remediate", "operation": "depath"},
+    )
+    assert dres.disposition == "committed"
+    assert not (root / orphan_rel).exists()
+
+    # PRODUCER restores — content pulled from provenance, not passed in.
+    prod = restore_depath(orphan_rel, queue=q)
+    assert prod.success, prod.errors
+    dr = drain_once(q, gate)
+    assert dr is not None and dr.disposition == "committed", dr
+    assert (root / orphan_rel).exists()
+    assert "No inbound links and uncited." in (root / orphan_rel).read_text()
+
+
+def test_restore_depath_producer_without_recorded_content_fails(tmp_commit_env):
+    """No depath provenance for the rel → producer fails and enqueues nothing
+    (cannot restore content it never recorded)."""
+    from gateway.ops.reverse_merge import restore_depath
+
+    gate, q, root = tmp_commit_env
+    depth_before = q.depth()
+    out = restore_depath("wiki/concepts/never-depathed.md", queue=q)
+    assert not out.success
+    assert q.depth() == depth_before
+
+
+def test_reversal_write_outside_allowlist_dead_letters(tmp_commit_env):
+    """Positive-allowlist containment: a reversal write targeting `.git/hooks/`
+    (INSIDE the root, so `_rel_escapes_root` passes it) must still dead-letter —
+    reversal writes are confined to wiki/ + .knowledge/policies/. No file written."""
+    gate, q, root = tmp_commit_env
+
+    payload = {"reversal_type": "restore-depath", "target_rel": ".git/hooks/post-commit"}
+    identity = {"agent": "tester"}
+    iid = compute_intent_id(payload, identity, semantics="git-hook-write")
+    intent = Intent(intent_id=iid, payload=payload, identity=identity)
+    q.submit(intent)
+    q.claim(now=1.0)
+    q.set_state(iid, "authored")
+
+    result = gate._commit_reversal_writes(
+        iid, {".git/hooks/post-commit": "#!/bin/sh\necho pwned\n"}, [],
+        {"reversal_type": "restore-depath"}, summary="git hook write",
+    )
+    assert result.disposition == "dead_lettered", result.summary
+    assert not (root / ".git" / "hooks" / "post-commit").exists()
+
+
+def test_reverse_merge_restore_depath_are_cli_only():
+    """The two recovery producers are destructive undo affordances — CLI-only,
+    not on the agent MCP surface (mirrors demote-domain / policy-edit)."""
+    from gateway import mcp_server
+
+    assert "reverse-merge" in mcp_server.CLI_ONLY
+    assert "restore-depath" in mcp_server.CLI_ONLY
+    assert not hasattr(mcp_server, "wiki_reverse_merge")
+    assert not hasattr(mcp_server, "wiki_restore_depath")
