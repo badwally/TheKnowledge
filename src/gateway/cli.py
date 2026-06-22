@@ -266,6 +266,13 @@ def build_parser() -> argparse.ArgumentParser:
         "forced-include filter decision; avoids the filter-correct + "
         "re-ingest two-pass.",
     )
+    p_ingest.add_argument(
+        "--fetch-pdf",
+        action="store_true",
+        help="For converters that support it (currently arxiv), download the "
+        "source PDF and use its full text as the body instead of the abstract. "
+        "Saves the PDF as a sidecar. Errors for source types that don't support it.",
+    )
 
     # filter (read-only scoring)
     p_filter = subparsers.add_parser(
@@ -2060,6 +2067,7 @@ def _run_ingest(ns: argparse.Namespace) -> int:
             with_plan=getattr(ns, "with_plan", False),
             draft=getattr(ns, "draft", False),
             force_include=getattr(ns, "force_include", False),
+            fetch_pdf=getattr(ns, "fetch_pdf", False),
             plan_client=plan_client,
         )
     )
