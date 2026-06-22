@@ -55,9 +55,13 @@ def _parse_entries(text: str) -> list[tuple[str | None, str]]:
         if m:
             if current_lines:
                 parts.append((current_ts, "".join(current_lines)))
-            current_ts = m.group(1).rstrip("Z").rstrip("+00:00")
-            if current_ts.endswith("+00:00"):
-                current_ts = current_ts[:-6]
+            # Capture the raw timestamp verbatim. Normalization (Z / +00:00 /
+            # naive) happens at the consumer via `.replace("Z", "+00:00")` +
+            # `fromisoformat`. Do NOT strip here: `str.rstrip("+00:00")` treats
+            # its argument as a character SET {'+','0',':'}, which mangles any
+            # timestamp whose trailing digits fall in that set (e.g. ...:30Z →
+            # ...:3), making fromisoformat raise and the entry never archive.
+            current_ts = m.group(1)
             current_lines = [line]
         else:
             current_lines.append(line)

@@ -58,6 +58,20 @@ def test_parse_entries_splits_correctly():
     assert parts[0][0] is None  # preamble has no timestamp
 
 
+def test_parse_entries_preserves_timestamp_ending_in_zero():
+    """Regression: `.rstrip("+00:00")` strips a character SET, so a timestamp
+    whose seconds end in 0 (e.g. ...:30Z) was mangled to single-digit seconds
+    (...:3), making downstream `datetime.fromisoformat` raise — the entry then
+    fell into the op's `except ValueError` branch and was never archived. The
+    parsed timestamp must round-trip through the same fromisoformat the op uses."""
+    text = "# Header\n\nPreamble.\n\n## [2020-06-15T08:30:50Z] op\n\nContent.\n"
+    parts = _parse_entries(text)
+    ts = parts[1][0]
+    assert ts is not None
+    dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    assert (dt.minute, dt.second) == (30, 50)
+
+
 # --- rotation integration tests ------------------------------------------------
 
 
@@ -98,6 +112,24 @@ def test_rotate_log_preserves_recent_entries(kb_root: Path) -> None:
     archive_files = list(paths.knowledge_root().glob("log.archive.*.md"))
     assert len(archive_files) == 1
     assert old_date in archive_files[0].read_text()
+
+
+def test_rotate_log_archives_entry_with_zero_seconds(kb_root: Path) -> None:
+    """Regression for the wall-clock flake: an old entry whose timestamp seconds
+    end in 0 must still be archived. Uses a FIXED long-past timestamp (seconds
+    `50`) so the test is deterministic regardless of the current second. On the
+    pre-fix code the `.rstrip("+00:00")` mangling made fromisoformat raise, so
+    the entry was mis-classified as recent and left in log.md."""
+    _write_log(kb_root, "# Knowledge Log\n\nPreamble.\n\n## [2020-06-15T08:30:50Z] old\n\nContent.\n")
+
+    result = rotate_log(keep_days=KEEP_DAYS)
+
+    assert result.success
+    log_text = paths.log_path().read_text()
+    assert "old" not in log_text
+    archive_files = list(paths.knowledge_root().glob("log.archive.*.md"))
+    assert len(archive_files) == 1
+    assert "old" in archive_files[0].read_text()
 
 
 def test_rotate_log_nothing_to_archive(kb_root: Path) -> None:
