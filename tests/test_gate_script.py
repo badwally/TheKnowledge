@@ -9,6 +9,7 @@ Negative controls are named and must go RED on below-floor / regressed input.
 import pytest
 
 from gateway.scripts.gate import (
+    ADVISORY_LINT_SCOPES,
     LINT_BASELINES,
     RECALL_FLOOR,
     GateCheckResult,
@@ -231,14 +232,24 @@ class TestCheckLintCounts:
         result = check_lint_counts(counts)
         assert result.passed is True
 
-    # Negative control — any scope above baseline must fail
-    def test_orphans_above_baseline_fails(self):
-        """NEGATIVE CONTROL: orphans count above baseline must fail the gate."""
+    # orphans is a backlog-depth metric the architecture expects to GROW on
+    # every ingest (CLAUDE.md "Source-orphan tail"); it must NOT be a gated
+    # regression floor — that coupled routine ingest to the merge gate.
+    def test_orphans_not_in_baselines(self):
+        """orphans must not be a gated baseline (it is advisory only)."""
+        assert "orphans" not in LINT_BASELINES
+        assert "orphans" in ADVISORY_LINT_SCOPES
+
+    def test_orphans_far_above_old_baseline_does_not_gate(self):
+        """A large orphan count must NOT fail the gate — orphans is advisory.
+
+        This is the inversion of the former negative control: ingesting sources
+        legitimately grows the orphan tail, and that must not block a merge."""
         counts = dict(LINT_BASELINES)
-        counts["orphans"] = LINT_BASELINES["orphans"] + 1
+        counts["orphans"] = 100_000
         result = check_lint_counts(counts)
-        assert result.passed is False, (
-            "NEGATIVE CONTROL FAILED: orphans above baseline did not fail the gate"
+        assert result.passed is True, (
+            "orphans is advisory; a high orphan count must not fail the gate"
         )
 
     def test_schema_drift_above_baseline_fails(self):
@@ -261,9 +272,9 @@ class TestCheckLintCounts:
 
     def test_message_includes_scope(self):
         counts = dict(LINT_BASELINES)
-        counts["orphans"] = LINT_BASELINES["orphans"] + 5
+        counts["schema-drift"] = LINT_BASELINES["schema-drift"] + 5
         result = check_lint_counts(counts)
-        assert "orphans" in result.message
+        assert "schema-drift" in result.message
 
 
 # ---------------------------------------------------------------------------

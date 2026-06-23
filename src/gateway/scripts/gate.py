@@ -6,7 +6,7 @@ Sequence:
   3. retrieval_eval recall@10 >= RECALL_FLOOR (0.90)
   4. merge_map_eval regressions == []
   5. embedding_eval all namespaces passed
-  6. Scoped lints: orphans / schema-drift / broken-wikilinks at baseline
+  6. Scoped lints: schema-drift / broken-wikilinks at baseline (orphans advisory)
 
 Invoke:
   .venv/bin/python -m gateway.scripts.gate [--skip-suite] [--eval-only]
@@ -28,11 +28,22 @@ from typing import NamedTuple
 # over regressions). The gate fires on NEW regressions above these counts.
 # ---------------------------------------------------------------------------
 RECALL_FLOOR: float = 0.90  # do not lower; baseline 0.926
+
+# Gated lint scopes — genuine defect counts that should only ever go down.
+# A count above its baseline is a regression and fails the gate.
 LINT_BASELINES: dict[str, int] = {
-    "orphans": 758,
     "schema-drift": 191,
     "broken-wikilinks": 1,
 }
+
+# Advisory lint scopes — run and printed for visibility but NOT gated.
+# `orphans` is a backlog-DEPTH metric, not a defect count: the architecture
+# expects it to grow on every ingest (a freshly-ingested source has no inbound
+# citation until a synthesis/`wiki query` pass discharges it — see CLAUDE.md
+# "Source-orphan tail"). Gating it on a static floor coupled routine ingest to
+# the merge gate (ingesting one document failed an unrelated PR). Monitor it via
+# `wiki lint --scope orphans`; do not block merges on it.
+ADVISORY_LINT_SCOPES: tuple[str, ...] = ("orphans",)
 
 # Path to the dedup golden used by merge_map_eval
 _DEDUP_GOLDEN = Path(".knowledge/eval/dedup/golden.yaml")
@@ -261,9 +272,15 @@ def step_scoped_lints() -> GateCheckResult:
     than treating the missing count as 0 (which would silently pass the gate
     on a broken invocation).
     """
-    _banner("Step 6: Scoped lints (orphans / schema-drift / broken-wikilinks)")
+    gated = "  /  ".join(LINT_BASELINES)
+    advisory = "  /  ".join(ADVISORY_LINT_SCOPES)
+    _banner(f"Step 6: Scoped lints (gated: {gated}; advisory: {advisory})")
     scope_counts: dict[str, int] = {}
-    for scope in LINT_BASELINES:
+    # Run gated scopes (fail-closed on subprocess/parse failure) and advisory
+    # scopes (printed for visibility, never gated). Only gated counts feed
+    # check_lint_counts.
+    for scope in (*LINT_BASELINES, *ADVISORY_LINT_SCOPES):
+        is_advisory = scope in ADVISORY_LINT_SCOPES
         cmd = [sys.executable, "-m", "gateway.cli", "lint", "--scope", scope]
         result = subprocess.run(cmd, capture_output=True, text=True, check=False)
         output = result.stdout + result.stderr
@@ -271,6 +288,10 @@ def step_scoped_lints() -> GateCheckResult:
         if result.returncode != 0:
             print(f"lint --scope {scope}: subprocess exited {result.returncode}", flush=True)
             print(output, flush=True)
+            if is_advisory:
+                # Don't fail the gate on an advisory-scope subprocess hiccup.
+                print(f"lint --scope {scope}: advisory — not gated (skipping)", flush=True)
+                continue
             return GateCheckResult(
                 passed=False,
                 message=(
@@ -282,6 +303,9 @@ def step_scoped_lints() -> GateCheckResult:
         if count is None:
             print(f"lint --scope {scope}: count line absent or unparseable in output:", flush=True)
             print(output, flush=True)
+            if is_advisory:
+                print(f"lint --scope {scope}: advisory — not gated (skipping)", flush=True)
+                continue
             return GateCheckResult(
                 passed=False,
                 message=(
@@ -289,8 +313,11 @@ def step_scoped_lints() -> GateCheckResult:
                 ),
             )
 
-        scope_counts[scope] = count
-        print(f"lint --scope {scope}: {count}", flush=True)
+        if is_advisory:
+            print(f"lint --scope {scope}: {count}  (advisory — not gated)", flush=True)
+        else:
+            scope_counts[scope] = count
+            print(f"lint --scope {scope}: {count}", flush=True)
     return check_lint_counts(scope_counts)
 
 
