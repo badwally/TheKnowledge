@@ -1,19 +1,19 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-23 (RAG draft-visibility fix — Hole 1 — DONE on branch `fix/rag-draft-visibility`, gate-green, awaiting commit/push/PR.)
+Last updated: 2026-06-23 (SESSION-REVIEW written → `docs/260623_session-review.md`. Authorship-loop chain MERGED to main `5a09f341`: #52 de-flake, #53 arxiv-sort-out, #54 gate-orphans-advisory, #55 authorship-loop comprehensive fix, #56 real production ingest of the RLM paper (loop verified end-to-end on a real PDF). #50/#51 merged 2026-06-21. #34 youtube-filter worktree separate, untouched.
+AUTHORSHIP OPEN FOLLOW-UPS (trigger-gated, none active): (a) body-shrink tripwire shipped UNTESTED + `0.5` magic number → add test + extract `_BODY_SHRINK_FLOOR` (apply_plan.py:256-267); (b) no-loss/shrink guards lack a retraction override (functional hole); (c) contradiction-quarantine fast-follow (noted in #55); (d) PRUNE this session-state.md — ~45k tokens, truncates on read (review §3).
+NOTE: the RAG draft-visibility work is now DONE + MERGED (PR #57 fix, #59 numpy-dep) — see the top section.)
 
----
+## ✅ RAG DRAFT-VISIBILITY FIX — HOLE 1 (2026-06-23) — DONE + MERGED (PR #57; numpy-dep PR #59)
 
-## ✅ RAG DRAFT-VISIBILITY FIX — HOLE 1 (2026-06-23) — DONE, gate-green, PR pending
-
-**Branch:** `fix/rag-draft-visibility` (isolated worktree at `~/code/knowledge-wt-rag-draft-visibility`, cut from main `305b4136`). Brief: `docs/260622_rag-retrieval-draft-visibility-brief.md`; adversarial read: `docs/260623_rag-draft-visibility-adversarial-read.md`. Objective: stop `wiki retrieve` hard-excluding draft pages so the ~1,100 legacy-migrated curated concept/entity/synthesis pages are reachable by the default agent grounding path, WITHOUT degrading citation fidelity.
+**Branch:** `fix/rag-draft-visibility` (isolated worktree at `~/code/knowledge-wt-rag-draft-visibility`, cut from main `305b4136`; merged + deleted). Brief: `docs/260622_rag-retrieval-draft-visibility-brief.md`; adversarial read: `docs/260623_rag-draft-visibility-adversarial-read.md`. Objective: stop `wiki retrieve` hard-excluding draft pages so the ~1,100 legacy-migrated curated concept/entity/synthesis pages are reachable by the default agent grounding path, WITHOUT degrading citation fidelity.
 
 ### Design decisions (settled WITH user via AskUserQuestion; "Approve integrated design")
 - **Q1 = A+D, structural section-body content-gate.** Reframe: grounding-worthiness is a SECTION property; `draft` is a PAGE property — legacy pages are HYBRID (real lede/Methods + placeholder sections). Corpus evidence killed two contp framings: the placeholder is a FAMILY (~1,090 occ across 5+ marker strings, not just `_(needs population from legacy import)_` = 688), and a string-match-ANYWHERE gate is wrong (the `_(legacy import — body is the original summary…)_` marker × 150 lives in page TITLES of real citation-grounded synthesis pages). Predicate is structural: skip a section iff its stripped body is solely a lone italic-parenthetical `^_\([^)]*\)_$`. Covers the family, ignores title markers, can't false-positive on real prose.
 - **Q2 = yes**, annotate `draft="true"` on the `<page>` tag (more justified post-A+D: we deliberately ground on unfinalized-citation content).
 - **Q3 = persist + commit scorer + synthetic-fixture pytest; NO gate.py wiring.** `eval-retrieval` scores the FTS layer, not the retrieve assembly; the synthetic-fixture pytest gates the MECHANISM via the suite (corpus-independent), the goldens+scorer measure real-corpus recall (manual, corpus-drift-fragile). Forward-pointer backlog: index-time grounding-worthiness flag.
 
-### Implementation (all in worktree)
+### Implementation
 - `src/gateway/ops/retrieve.py`: `is_placeholder_section()` predicate + module comment; `retrieve()` default `include_drafts=False→True`; section content-gate skip at the loop; `draft="true"` annotation; docstring updated.
 - `tests/gateway/test_ws2_retrieve.py`: replaced `test_retrieve_excludes_drafts_by_default` with the new contract — predicate truth-table (parametrized true/false), G-POS admit-substantive-draft, G-NEG-1 skip-placeholder-section, hybrid-keeps-substantive, demotion (finalized > draft), Q2 annotation. 29/29 green.
 - `.knowledge/eval/retrieval/semantic_mismatch.yaml` (21 probe queries; all 19 unique `expect` slugs verified to resolve on disk — finding-2 precondition cleared).
@@ -27,65 +27,224 @@ Last updated: 2026-06-23 (RAG draft-visibility fix — Hole 1 — DONE on branch
 - `eval-retrieval --compare` FTS recall@10 = **0.926 unmoved** (fix doesn't touch the FTS layer; `search_fts` already defaulted `include_drafts=True`).
 - **Pre-merge gate PASSED** (exit 0): full suite + fast tiers + retrieval 0.926 + merge-map 0 regressions + embedding namespaces OK + lints baseline (schema-drift 191 / broken-wikilinks 1).
 
-### Venv gotchas found (pre-existing, out of Hole 1 scope)
-- The pre-built worktree `.venv` is a `uv` venv (no `pip`); install dev deps with `VIRTUAL_ENV=$(pwd)/.venv uv pip install -e '.[dev]'`.
-- `.venv` was missing `hypothesis` (dev extra) AND `numpy`. **`numpy` is UNDECLARED in `pyproject.toml`** despite `embedding_index`/`demand_ledger` importing it — a real packaging gap (a fresh CI checkout would fail collection). Pre-existing on main; flagged for the user, NOT fixed here (scope). Installed both into the worktree venv.
+### Merged
+- **PR #57** `fix(rag): demote-not-exclude drafts in wiki retrieve (Hole 1)` → main `e5c43afe`; branch deleted.
+- **PR #59** `chore(deps): declare numpy as a base dependency` → main `b03f1b85`; branch deleted. numpy was UNDECLARED in `pyproject.toml` despite `embedding_index`/`demand_ledger`/`lint.fragmentation`/`evaluate.embedding_eval` importing it (a fresh checkout failed the gate at full-suite collection). Declared `numpy>=1.24`; verified a clean `-e .` venv resolves it.
+- Worktree-venv gotcha for the record: the pre-built worktree `.venv` is a `uv` venv (no `pip`); install dev deps with `VIRTUAL_ENV=$(pwd)/.venv uv pip install -e '.[dev]'`.
 
 ### Next atomic step
-Commit (retrieve.py + test + goldens yaml + scorer + backlog doc + this session-state) on `fix/rag-draft-visibility`, push, open PR to main (user merges). Branch verified == `fix/rag-draft-visibility`; no wiki/ or raw/ writes. After merge: re-baseline the probe before any Hole 2 (embedding/hybrid) work; Hole 3 (finalize/cull ~1,100 perma-drafts) is a separate parallel curation track.
+NONE — both PRs merged, local main pulled to `b03f1b85`. The `session-state.md` divergence this fix caused (PR #57 committed the journal off the stale `305b4136` base, diverging from the main checkout's newer uncommitted journal) was reconciled by folding this DONE section into the current journal. Trigger-gated follow-ups: re-baseline the probe before any Hole 2 (embedding/hybrid retrieval); Hole 3 (finalize/cull ~1,100 perma-drafts) is a separate parallel curation track; `docs/backlog/rag-index-time-grounding-worthiness.md` (trigger: `wiki search` surfacing stubs OR a 2nd section-text consumer needing the gate).
 
 ---
 
-## 🔧 AS-BUILT REVIEW FOLLOW-UPS (IN FLIGHT 2026-06-20)
+## 🔨 AUTHORSHIP-LOOP COMPREHENSIVE FIX (branch `fix/authorship-loop-comprehensive`, 2026-06-23)
 
-Driven by `docs/260620_librarian-rag-as-built-review.md`. Reviewed it, verified its one live finding, fixed it, then took the 3 gate-design weaknesses it surfaced.
+User: "fix the --with-plan authorship loop, it is essential ... adversarial analysis ... comprehensive, don't be lazy." Three parallel adversarial investigators (operator UX, agent-author UX, robustness/correctness — agent IDs a8300a9145d9779a5, a6314f365f9e65955, a4b8077a309fcffc3) surfaced the headline: on any `update` the agent does a full-page overwrite from a citation-free 200-char snippet and the gateway had NO check that the rewrite didn't destroy existing cited knowledge (latent silent data loss).
 
 ### Open contracts
-- **PR #44 `fix/committer-drain-determinism` (OPEN, gate-green @ 2535):** the flaky merge-direction
-  test. Root cause was NOT the review's "timestamp in intent id" (it's a pure content hash) — it was
-  `IntentQueue.claim()` sorting by mtime alone, ties → nondeterministic `os.scandir` order. Fix:
-  `(mtime, name)` total order + RED-first unit test + direction-agnostic committer assertion. 20/20
-  unpinned, all pinned seeds pass.
-- **Branch `chore/gate-tests-what-ships` (stacked on #44), 3 items — gate now green:**
-  - **#1 live entity-recall guard** — `test_lifecycle_flow.py` 2 new tests drive the REAL EmbeddingIndex
-    → `_dedup_recheck` → adjudicate on the alias-merge; explicit distance floor (live 0.276, RED at ~1.0)
-    + disjoint negative control (0.955). Teeth-verified. Finding: the merge-map golden RECORDS distances
-    the live encoder doesn't produce (brand/generic 1.0 vs 0.276; link 0.12 vs 1.0) → backlog
-    `docs/backlog/librarian-merge-map-golden-live-fidelity.md`.
-  - **#2 concurrency repetition** — new `concurrency` pytest marker on 5 order/contention tests; gate
-    `step_concurrency_repeat` re-runs `-m concurrency` ×5 (CONCURRENCY_REPEAT=5, ~3s); RED-first unit
-    tests in `test_gate_script.py`. A 1/3 flake now clears the gate at ~0.4%, not 33%.
-  - **#3 read-tier carry-forward E2E** — `test_mcp_surface.py` 2 new e2e: deposit via build mount →
-    run_worker → read own write THROUGH `build_read_tier_server().call_tool("wiki_retrieve")` (the
-    contract the deterministic harness substitutes for) + pre-drain negative control; boundary test
-    proves the read mount rejects `wiki_deposit` (isError, enqueues nothing). Confirmed the write
-    boundary HOLDS (not a defect — initial test logic was wrong).
+- **Branch `fix/authorship-loop-comprehensive` (off main `22275d35`) — built, gate-GREEN, NOT yet pushed/PR'd.** 7 commits (T1 prompt; T1.2 full-bodies + T2 integrity; T3 repair; T4 operator; gitignore). +895/−96 across plan.py, ingest.py, apply_plan.py, cli.py + tests.
+  - **T1 (plan.py):** inject `ENTITY_KIND_ENUM` + kind-map; single the `{{}}` brace artifact; operational same-line citation rule; "gateway auto-stamps timestamps"; worked example.
+  - **T1.2 (ingest.py `_gather_existing_pages`):** send FULL bodies (relevance-ranked, 60KB budget `_EXISTING_PAGES_BUDGET`, drop overflow not truncate); removed `_STAGE1_*` snippet constants.
+  - **T2 (apply_plan.py) structural guards:** T2.7 no-citation-loss (`_source_citation_set`) + body-shrink>50% tripwire; T2.8 all-or-nothing snapshot/restore in Phase 2; T2.9 cross-kind slug collision (`_cross_kind_slug_conflict`); T2.10 convergent no-op on byte-identical update body.
+  - **T3 (ingest.py):** `_call_plan_client` extracted; `_invoke_plan_and_apply` repair loop (`_MAX_REPAIR_ATTEMPTS=1`, exactly ≤2 calls) feeding validator errors back via `build_plan_repair_prompt`.
+  - **T4:** `--dry-run` (threaded ingest→…→`_invoke_plan_and_apply`, `_dry_run_plan`); unified fresh/re-run contract (failure→warning + report on both); fail-fast on no-policy domain (cli `_run_ingest`); `_persist_rejected_plan` → `.knowledge/rejected-plans/` (gitignored).
+  - Tests: new `test_authorship_integrity.py` (10), `test_plan_client.py` (+5), `test_ingest.py` full-bodies inversion, `test_cli_ingest_fetch_pdf.py` (+4); one existing report test updated for convergence. Full surface 203 pass; pre-merge gate PASSED.
 
 ### Files mid-edit
-- None. All edits complete; gate re-run finishing. Then commit `chore/gate-tests-what-ships` (base the
-  PR on `fix/committer-drain-determinism` — stacked; GitHub auto-retargets to main when #44 merges).
+- None — all committed on the branch. session-state (this file) is the usual uncommitted noise (NOT staged).
 
 ### Decisions made this session
-- Drain determinism via `(mtime, name)` tiebreak (user chose "claim() tiebreak + test" over test-only/
-  semantic-rule). Lowest-risk; only ADDS order where there was a nondeterministic tie.
-- #3 scoped to an AUTOMATED e2e (user chose) — no production-wiki mutation; runs in seeded temp root.
-- #1 guards the alias-merge RECALL path live (faithful, distance 0.276); the `link` path has no
-  faithful live case on the lexical encoder (disjoint surfaces score 1.0) → documented, not forced.
+- Comprehensive over minimal (user directive): structural gateway guarantees, not just the 2 observed bug fixes. Knowledge is monotonic-by-default — an update may only add citations; deliberate retraction is a separate audited act (NOT the flaky --with-plan agent).
+- `--dry-run` semantic: previews AUTHORSHIP (entity/concept writes) only; the source page still ingests normally. dry_run without --with-plan warns + is ignored.
+- Deferred (fast-follow, noted in PR): contradiction-quarantine (major contradiction → draft/contested) — bigger, touches contested semantics.
 
 ### Rejected approaches this session
-- Review's stated root cause (timestamp in content-addressed intent id) — wrong; corrected to mtime-tie.
-- Re-recording / live-driving the merge-map golden distances now — touches a gate floor; deferred to
-  the backlog doc (trigger: next golden touch or neural-encoder swap).
-- Repeating the SLOW soak tests ×5 — instead marked the fast order-sensitive subset (~1.5s) for cheap
-  repetition; the soak tests already stress contention in a single run.
+- D1-only minimal patch (full-bodies + repair) — rejected by user ("don't be lazy"); did the full structural set.
+- Append-only update contract (D2) — heavier plan-schema redesign; the no-loss GUARD achieves the integrity goal at lower blast radius.
 
 ### Next atomic step
-Confirm gate exit 0, commit the 3-item work on `chore/gate-tests-what-ships`, push, open PR (base
-`fix/committer-drain-determinism`). User merges #44 then this. No production-wiki writes occurred.
+DONE — **PR #55 OPEN, gate-green, awaiting USER merge.** Independent review (agent a16a4c9d98fb5361b) returned SHIP-WITH-FIXES; I1 (dry-run didn't validate → extracted shared `validate_plan`) + M5 (moc cross-kind) + M7 (all-no-op short-circuit) + M1-M4 (comment/docstring) + M6 (parse-error repair test) all addressed TDD, re-gated green. 8 commits on branch. Deferred fast-follows noted in the PR (contradiction-quarantine; retraction override). After merge, sync local main + delete branch. No other action triggered.
 
 ---
 
-## 🔧 LINT-REGISTRY SLUG-MISMATCH FIX (IN FLIGHT 2026-06-20)
+## 🔎 INGEST POST-MORTEM + FIX A (#54 MERGED, 2026-06-23) — Bug 2 now being fixed on the branch above
+User flagged that ingesting one PDF into a known domain was a 15-min/token-heavy ordeal. Two parallel investigators (general-purpose) root-caused with file:line evidence:
+- **Bug 1 (FIXED in #54):** orphan count is a backlog-DEPTH metric the architecture expects to grow on every ingest (`lint/orphans.py:62-74`, `CLAUDE.md:136`, `discharge_orphans.py`), but it sat in `gate.py` `LINT_BASELINES` with strict `current>baseline→FAIL` and a static 758. So one ingest tripped an unrelated merge gate. Fix A = split gated (schema-drift/broken-wikilinks) from new `ADVISORY_LINT_SCOPES=(orphans,)`; Step 6 still prints orphans but doesn't gate. TDD, teeth-verified by mutation.
+- **Bug 2 (NOT fixed — triggered backlog):** `wiki ingest --with-plan` authorship loop is structurally broken: (a) entity_kind controlled vocab is NEVER injected into the agent prompt (`plan.py:269`) → agent free-forms invalid `system` → validator rejects (`validator.py:374-385`); (b) existing pages handed to the agent as 200-char snippets (`ingest.py:529,674`) that truncate before the `[[sources/]]` citation → agent rewrites whole page citation-less → grounding validator rejects (`validator.py:547-585`); (c) apply is all-or-nothing (`apply_plan.py:153-167`), no validate-then-repair retry. Fresh ingest downgrades plan-failure to warning (`ingest.py:423-443`); re-run hard-fails (`ingest.py:311-329`). FIXES C+D+E: inject ENTITY_KIND_ENUM into prompt; send full bodies for update targets; add bounded repair retry. TRIGGER: next time rich authored-pages-on-ingest is needed. Investigator agent IDs: a627670a323afdadb (authorship), a5c5962a5bda06fcb (orphan-gate).
+
+---
+
+## ✅ DE-FLAKE #52 + ARXIV-BRANCH SORT-OUT #53 (BOTH MERGED, 2026-06-23)
+
+### De-flake (PR #52 `fix/rotate-log-timestamp-rstrip` — MERGED `aeac5280`)
+Root cause of the intermittent full-suite gate flake: `rotate_log._parse_entries` did `m.group(1).rstrip("Z").rstrip("+00:00")`; `str.rstrip` takes a CHARACTER SET `{'+','0',':'}` not a suffix, so any entry timestamp whose seconds end in 0 (`...:50Z`) mangled to single-digit seconds, `fromisoformat` raised, the op's `except` mis-classified the entry as recent → never archived. The 4 old-entry tests share the wall-clock second at build → fail as a group when it ends in {10,20,30,40,50} (~8-16%). Fix: capture raw timestamp (the `if endswith("+00:00")` line was already correct; the `.rstrip` chain was redundant + wrong). 1 prod line + 2 deterministic TDD tests (teeth-verified, file 30×: 0 fail). Gate green; merged.
+
+### Arxiv-branch sort-out (PR #53 `ingest/arxiv-2606-fulltext-fetch-pdf-flag` — MERGED `a239a0da`)
+The now-closed other session had committed `--fetch-pdf` flag + full-text arxiv-2606.11926 ingest **directly onto local main** (unpushed, branch ref gone). Recovered non-destructively: recreated the branch at the commit, moved local main back to origin/main (NO `--hard` — classifier blocked it; used `branch -f`), pushed the branch, opened PR #53.
+- **Gate blocked only at Step 6:** the new source bumped orphans 758→759 (no inbound citation). User chose "cite the source now."
+- **Automated cite paths failed:** `wiki answer` strips citations it can't ground on the stub source page; `wiki ingest --with-plan` (the M6 authorship loop) failed validation two different ways (entity_kind `system` not in vocab; then rewrote existing concept pages dropping their citations). The M6 authorship loop is NOT production-reliable — confirmed.
+- **Resolution (deterministic):** added a grounded Arbor Key-claims bullet (coordinator/executor split, persistent hypothesis tree, HTR, 2.5× held-out gain across six tasks — all verified in raw body lines 67-76) citing `[[sources/arxiv-2606.11926]]` to `wiki/concepts/multi-agent-system.md` via `wiki edit`, + added the source to its Sources list. Orphans back to 758. Full gate PASSED; merged.
+
+### Files mid-edit
+- None. Both PRs merged; local main `a239a0da` == origin/main, clean. session-state (this file) carries the usual uncommitted noise — NOT staged.
+
+### Decisions made this session
+- Arxiv recovery was non-destructive (branch-recreate + `branch -f main origin/main`), never `git reset --hard` on the shared tree.
+- Cited the orphan via a manual grounded `wiki edit` claim on a well-matched existing concept page, NOT the flaky `--with-plan` agent or a baseline bump.
+
+### Rejected approaches this session
+- `git reset --hard origin/main` to clean local main (blocked by classifier; non-destructive `branch -f` achieved the same).
+- Bumping LINT_BASELINES 758→759, and holding #53 open — user chose to cite instead.
+- `wiki answer` / `wiki ingest --with-plan` to cite (both failed; M6 authorship loop unreliable).
+
+### Next atomic step
+NONE — both #52 and #53 merged; main clean. Backlog back to scale/exposure-gated items only (build-checkpoint §2). POSSIBLE FOLLOW-UP (trigger-gated, not active): the M6 `wiki ingest --with-plan` authorship loop is unreliable (invalid entity_kind from the agent; rewrites existing pages stripping citations) — worth hardening when M6 authorship is next touched. #34 youtube-filter still in its own worktree.
+
+---
+
+## ✅ BACKLOG ITEMS — reverse-merge producer + research papercuts (PRs #50, #51 MERGED 2026-06-21)
+
+User directive "do 1 then 2" off the backlog review: (1) reverse-merge-producer-op, (2) two research papercuts.
+
+### Open contracts
+- **PR #50 `feat/reverse-merge-producer-op` (off main `0621192d`) — OPEN, gate-green, review SHIP.** Operator
+  producer ops `wiki reverse-merge <tombstone>` / `wiki restore-depath <rel>` for the two CommitGate reversal
+  kinds that had no producer. `ops/reverse_merge.py` + `ops/_reversal_types.py` (REVERSAL_TYPES enum) +
+  `_apply_reversal` dispatch-dict refactor + **positive-allowlist** in `_commit_reversal_writes` (confine to
+  wiki/ + .knowledge/policies/; `.git/hooks/` now dead-letters). CLI_ONLY (off agent surface). restore-depath
+  content from provenance (non-injectable). Closed backlog: `librarian-reverse-merge-producer-op.md` +
+  `librarian-t6-reversal-type-producer-enum.md` (both deleted in the PR). Independent review (general-purpose,
+  reviewer≠author): SHIP, no blocking; took the cheap MINOR (reject backslash rels).
+- **PR #51 `feat/research-papercuts` (off main `0621192d`) — OPEN, gate-green.** (A) `session.promote` skips
+  no-URL/no-body sources (`step=promote_skipped`) instead of empty `--text` (was miscounted `failed`) —
+  `nlm-source-add-empty-text.md` deleted. (B) `wiki research --retry`/`--force` → `register_session(force=True)`;
+  collision without --retry returns a clean OperationResult (not a raise). Corrected the bug-encoding test
+  `test_promote_falls_back_to_text_when_no_url`. `research-session-id-collision.md` TRIMMED to criterion 2 only.
+
+### Files mid-edit
+- None — both PRs committed + pushed. Working tree on main; session-state + log.md + index.md carry the usual
+  unstaged shared-tree noise (never staged).
+
+### Decisions made this session
+- reverse-merge/restore-depath → **CLI_ONLY** (not build-tier MCP like the sibling revert_resolution/remediate):
+  destructive undo of a specific human/gate decision; reviewer concurred. restore-depath content pulled from
+  provenance, never a caller arg.
+- Allowlist containment added to the SHARED `_commit_reversal_writes` (covers reversal + policy-edit), on top of
+  `_rel_escapes_root` — closes the payload-controlled-target gap now that a real producer removes the
+  direct-FS-write precondition.
+- Research criterion-2 (status=failed/partial state) DEFERRED — needs the synthesis-quality signal threaded from
+  the analysis layer (detect all-error-stub synthesis); deeper than a papercut.
+
+### Rejected approaches this session
+- Promote 3-tuple return `(added, failed, skipped)` — rejected for blast radius; logged the skip inside
+  `promote()` and kept the 2-tuple (orchestrator's `failed` count is already truthful).
+- Touching PR #34's live branch — another session holds it with uncommitted Phase C work; deferred (note left).
+
+### Next atomic step
+NONE on the two items — **PRs #50 + #51 awaiting user merge** (suggested order: #50 then #51; both off main
+`0621192d`, no stacked children). NEWLY SURFACED follow-up: the pre-existing **`test_doc5_rotate_log`
+nondeterministic flake** intermittently reds the full-suite gate step (failed 2 runs with different tests, then
+clean at 2555; main exhibits it; no `paths` caching). A focused de-flake (S effort) is the recommended next
+backlog pickup — it reds CI for everyone. Remaining backlog otherwise scale/exposure-gated (see build-checkpoint
+§2). PR #34 still other-session-owned (merge recipe left at knowledge-wt-youtube-filter/MERGE-RECIPE-...).
+
+---
+
+## ✅ E2E CHALLENGE CASES — pipeline guards (ALL 10 MERGED, program COMPLETE, 2026-06-20)
+
+Program: turn the 10 specs in `docs/e2e-challenge-cases.md` into executable `tests/e2e/` tests, TDD,
+driving the REAL producer. All in `tests/e2e/test_pipeline_guards.py` (`@pytest.mark.e2e`).
+
+### Triage outcome (all 10 — done first, per the program)
+- **COVERED, not rebuilt:** E2E-5 (committer same-slug union, `test_committer`), E2E-6 (phantom-base
+  dead-letter, `test_inert_invariants:572`), E2E-8 (lint registry slug + cold-start, `test_inert_invariants`
+  parametrized + PR #41), E2E-10 (read-tier boundary, `test_mcp_surface` + `test_tier_parity`),
+  **E2E-3 (FULL — `test_ws2_retrieve` already does `--domains` quota balancing; the prior guess it was
+  under-covered was WRONG)**, **E2E-7 merge-execution (`test_dedup_commit:298` `merged_into=="ozempic"`
+  tombstone + `test_lifecycle_flow` `disposition=="merged"`)**.
+- **BUILT (PR #47, commit `552e3208`):** E2E-9, E2E-2.
+- **BUILT (PR #48, commit `e7bdf65d`):** E2E-1 ingest spine (3 tests).
+- **BUILT (PR #49, commit `70e9871f`):** E2E-4 recall-floor/self-heal (3 tests) — scoped to what the gate
+  does NOT cover (self-heal on mtime/size; incremental-heal == cold-rebuild parity; recall floor + no MRR
+  regression under +24 additive sources). Both gate-unique tests teeth-verified: killing self-heal in
+  `search_index.refresh` → both RED. NOT a duplicate of the gate's production-golden recall check.
+
+### What shipped
+- **E2E-9** — existing unit test fabricates `_MaterializedSource(word_count=...)` AND overrides thresholds to
+  10000/0.0. New e2e drive real `research()` at SHIPPED defaults (300/0.60): sparse blocks with **NLM never
+  created** (`_MockNlm.source_add` hard-fails); rich passes via real `_materialize` (negative control).
+  Teeth-verified: forcing `_check_corpus_quality` inert → sparse guard RED.
+- **E2E-2** — non-draft→`--draft`→`finalize` arc: uncited REJECTED; `--draft`→WARNING; `finalize` fails
+  until cited then succeeds + clears flag. Self-falsifying complementary pairs.
+- **E2E-1** — real pdf converter (pdfplumber, offline) + real ingest + validator + source-immutability +
+  source-page authoring; filter LLM stubbed deterministically by body length (as E2E-9 stubs NLM); PDF
+  generated in-process (~800-byte text-bearing, no committed binary, `_make_min_pdf`). rich lands + source
+  page + **byte-identical body** + no-op re-ingest; thin filtered-out no source page (teeth-verified by
+  mutation: force author-regardless → RED); unextractable PDF → conversion FAILURE not silent success.
+  **LIVE hand-run** (real filter LLM, temp KB, the user's *Harness Updating* paper): 6721-word PDF → filter
+  **0.95** included; 20-word off-topic stub → **0.0** rejected no wiki page; raw body byte-identical;
+  re-ingest no-op. Reported, not gated. **No production-wiki writes.**
+  FINDING: basic source page grounds via `[[raw/pdf/<id>]]` provenance, not `[[sources/<id>]]` (the
+  `[[sources/<id>]]` form is how downstream pages cite; richer summary needs `--with-plan`'s authorship loop).
+
+### Gate
+Both PRs `.venv/bin/python -m gateway.scripts.gate` PASSED: full suite + concurrency ×5 + recall@10 0.926 +
+merge-map 0 regressions + embedding OK (entity namespace via documented falsifiable lexical-fallback) +
+scoped lints 758/191/1.
+
+### Next atomic step
+NONE — **program COMPLETE.** All 10 e2e challenge cases built or covered; PRs #47/#48/#49 MERGED; local main
+`0621192d`, all branches deleted. `tests/e2e/test_pipeline_guards.py` = 11 tests (E2E-1 ×3, E2E-2 ×3,
+E2E-4 ×3, E2E-9 ×2); E2E-3/5/6/7/8/10 covered by pre-existing suites. No follow-up triggered. This
+session-state update is an uncommitted working-tree edit on `main` (shared tree — no direct main commit;
+rides into a future PR or is read as-is by the next session).
+
+---
+
+## ✅ AS-BUILT REVIEW FOLLOW-UPS (MERGED 2026-06-20)
+
+Driven by `docs/260620_librarian-rag-as-built-review.md`. Reviewed it, verified its one live finding, fixed it, then took the 3 gate-design weaknesses it surfaced. **ALL MERGED to main `b6e2623f`.**
+
+### Resolved
+- **PR #44 committer-drain-determinism (MERGED `d463e8d6`).** The flaky merge-direction test. Root cause
+  was NOT the review's "timestamp in intent id" (it's a pure content hash) — it was `IntentQueue.claim()`
+  sorting by mtime alone, ties → nondeterministic `os.scandir` order. Fix: `(mtime, name)` total order +
+  RED-first unit test + direction-agnostic committer assertion. 20/20 unpinned, all pinned seeds pass.
+- **PR #46 gate-tests-what-ships (MERGED, merge `b6e2623f`).** Three "green but measures nothing" gaps:
+  - **#1 live entity-recall guard** — `test_lifecycle_flow.py` drives the REAL EmbeddingIndex →
+    `_dedup_recheck` → adjudicate on the alias-merge; distance floor (live 0.276, RED at ~1.0) + disjoint
+    neg-control (0.955). Open finding → `docs/backlog/librarian-merge-map-golden-live-fidelity.md`: the
+    merge-map golden RECORDS distances the live encoder never produces (brand/generic 1.0 vs 0.276; link
+    0.12 vs 1.0). TRIGGER: next merge-map golden touch OR neural-encoder swap.
+  - **#2 concurrency repetition** — `concurrency` marker on 5 order/contention tests; gate
+    `step_concurrency_repeat` re-runs `-m concurrency` ×5 (CONCURRENCY_REPEAT=5). 1/3 flake now clears at ~0.4%.
+  - **#3 read-tier carry-forward E2E** — `test_mcp_surface.py`: deposit→commit→read own write THROUGH
+    `build_read_tier_server().call_tool("wiki_retrieve")` + boundary test (read mount rejects wiki_deposit,
+    isError, enqueues nothing). Write boundary HOLDS.
+- **PR #41 lint-registry slug-mismatch (MERGED).** citation-chains/long-slugs now emit their registered
+  slug; sub-type in `metadata["kind"]`. Backlog docs RESOLVED.
+- **PR #42 dev-deps note (MERGED).** `pip install -e '.[dev]'` post-clone step in CLAUDE.md (hypothesis).
+- **PR #43 e2e-challenge-cases (MERGED).** `docs/e2e-challenge-cases.md` — 10 full-pipeline scenarios.
+
+### Open follow-ups (trigger-gated, none active)
+- Merge-map golden live-fidelity (above). Plus the standing review items NOT taken: entity namespace
+  ships below floor accepted-via-fallback (now partially guarded by #1's live recall test); the as-built
+  review's "live agent against the read-tier mount on PRODUCTION corpus" (only the automated e2e was built).
+- Pre-existing backlog under `docs/backlog/` (committer daemon, demand-cluster trigger, same-slug union
+  body-parity, reverse-merge producer, demand-ledger DoS) — each fires on its own trigger.
+
+### Next atomic step
+NEW PROGRAM (user-directed): work through the 10 cases in `docs/e2e-challenge-cases.md` — turn the
+scenario specs into executable `tests/e2e/` tests, TDD, driving the REAL producer (cardinal rule in
+that doc). FIRST action: triage each E2E-1..10 against existing tests (grep `tests/`) into
+covered/partial/missing — several are already covered (E2E-5 committer, E2E-6/E2E-8 test_inert_invariants
++ PR #41, E2E-10 read-tier boundary via test_mcp_surface). Build only the genuinely-missing, highest-
+priority first (doc says run 5/7/9 first; of those #9 NLM-confab-guard is the least-covered). Gate green
+before any merge. Arc above is complete (tree clean, gate green @ b6e2623f, 2541 passed).
+
+---
+
+## ✅ LINT-REGISTRY SLUG-MISMATCH FIX (MERGED 2026-06-20 — PR #41)
 
 **Branch:** `fix/lint-registry-slug-mismatch` (off main `c22b8bb1`). Closes the two
 production bugs backlogged from P2: lint checks registered under a slug they don't emit,
