@@ -46,6 +46,7 @@ def ingest(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
     fetch_pdf: bool = False,
@@ -69,6 +70,7 @@ def ingest(
             filter_client=filter_client,
             plan_client=plan_client,
             with_plan=with_plan,
+            dry_run=dry_run,
             draft=draft,
             force_include=force_include,
             fetch_pdf=fetch_pdf,
@@ -87,6 +89,7 @@ def ingest(
                 filter_client=filter_client,
                 plan_client=plan_client,
                 with_plan=with_plan,
+                dry_run=dry_run,
                 draft=draft,
                 force_include=force_include,
                 fetch_pdf=fetch_pdf,
@@ -99,6 +102,7 @@ def ingest(
             filter_client=filter_client,
             plan_client=plan_client,
             with_plan=with_plan,
+            dry_run=dry_run,
             draft=draft,
             force_include=force_include,
         )
@@ -108,6 +112,7 @@ def ingest(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -120,6 +125,7 @@ def ingest_file(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
 ) -> OperationResult:
@@ -140,6 +146,7 @@ def ingest_file(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -152,6 +159,7 @@ def ingest_canonical(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
 ) -> OperationResult:
@@ -167,6 +175,7 @@ def ingest_canonical(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -179,6 +188,7 @@ def ingest_url(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
     fetch_pdf: bool = False,
@@ -213,6 +223,7 @@ def ingest_url(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -228,6 +239,7 @@ def _ingest_canonical_text(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
 ) -> OperationResult:
@@ -315,17 +327,27 @@ def _ingest_canonical_text(
                         or (existing_front.get("domains") or [None])[0],
                         plan_client=plan_client,
                         draft=draft,
+                        dry_run=dry_run,
                     )
-                    return OperationResult(
-                        success=plan_result.success,
+                    # T4.13: same contract as the fresh path — the source is
+                    # already ingested, so authorship failure is a non-fatal
+                    # warning (not a hard error), and the authorship report is
+                    # always surfaced.
+                    ran = OperationResult(
+                        success=True,
                         paths_touched=[*backfilled_paths, *plan_result.paths_touched],
-                        warnings=plan_result.warnings,
-                        errors=plan_result.errors,
-                        summary=(
-                            f"already ingested; ran --with-plan: "
-                            f"{plan_result.summary}"
+                        warnings=list(plan_result.warnings),
+                        authorship_report=(
+                            plan_result.authorship_report if plan_result.success else None
                         ),
+                        summary=f"already ingested; ran --with-plan: {plan_result.summary}",
                     )
+                    if not plan_result.success:
+                        ran.warnings.append(
+                            "wiki authorship failed (source already committed): "
+                            + "; ".join(plan_result.errors)
+                        )
+                    return ran
 
                 if backfilled_paths:
                     return OperationResult(
@@ -426,6 +448,7 @@ def _ingest_canonical_text(
             domain=effective_domain,
             plan_client=plan_client,
             draft=draft,
+            dry_run=dry_run,
         )
         if plan_result.success:
             result_obj.paths_touched.extend(plan_result.paths_touched)
@@ -635,6 +658,12 @@ def _invoke_plan_and_apply(
                 result.warnings.append(
                     f"authorship succeeded after {attempt} repair attempt(s)"
                 )
+            if not result.success and not dry_run:
+                # T4.15: persist the rejected plan so the operator can inspect /
+                # repair it without re-paying for the Opus call.
+                scratch = _persist_rejected_plan(front["id"], raw, errors)
+                if scratch is not None:
+                    result.warnings.append(f"rejected plan saved to {scratch}")
             return result
 
         # T3: feed the validator/parse errors back for one corrective pass.
@@ -642,6 +671,27 @@ def _invoke_plan_and_apply(
         user = build_plan_repair_prompt(
             source_text, existing_pages, prior_response=raw, errors=errors
         )
+
+
+def _persist_rejected_plan(source_id: str, raw: str, errors: list[str]) -> Path | None:
+    """T4.15: write a rejected authorship plan + its validator errors to a
+    scratch file under `.knowledge/rejected-plans/` and return the path. The
+    operator can inspect/repair it instead of re-running the Opus call. The
+    directory is gitignored scratch state; failure to write is non-fatal."""
+    try:
+        d = paths.knowledge_root() / ".knowledge" / "rejected-plans"
+        d.mkdir(parents=True, exist_ok=True)
+        target = d / f"{source_id}.md"
+        error_block = "\n".join(f"- {e}" for e in errors)
+        target.write_text(
+            f"# Rejected authorship plan: {source_id}\n\n"
+            f"## Validator errors\n\n{error_block}\n\n"
+            f"## Agent response\n\n```\n{raw}\n```\n",
+            encoding="utf-8",
+        )
+        return target
+    except OSError:
+        return None
 
 
 def _dry_run_plan(plan) -> OperationResult:
