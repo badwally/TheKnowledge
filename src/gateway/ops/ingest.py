@@ -646,7 +646,9 @@ def _invoke_plan_and_apply(
 
         if plan is not None:
             result = (
-                _dry_run_plan(plan) if dry_run else apply_plan(plan, draft=draft)
+                _dry_run_plan(plan, draft=draft)
+                if dry_run
+                else apply_plan(plan, draft=draft)
             )
             errors = [] if result.success else list(result.errors)
         else:
@@ -694,20 +696,34 @@ def _persist_rejected_plan(source_id: str, raw: str, errors: list[str]) -> Path 
         return None
 
 
-def _dry_run_plan(plan) -> OperationResult:
-    """T4.12: validate a plan and report what it WOULD do, writing nothing."""
+def _dry_run_plan(plan, *, draft: bool = False) -> OperationResult:
+    """T4.12 / I1: VALIDATE a plan (same Phase-1 checks as a real run: no-loss,
+    shrink, cross-kind, schema, entity-kind) and report what it WOULD do —
+    writing nothing. Reporting green on a plan the real run would reject defeats
+    the purpose, so a validation failure is surfaced as a failure (and the repair
+    loop engages on it, same as a live run)."""
     from gateway.core import AuthorshipReport
+    from gateway.ops.apply_plan import validate_plan
 
+    errors, warnings, parsed = validate_plan(plan, draft=draft)
+    if errors:
+        return OperationResult(success=False, errors=errors, warnings=warnings)
+
+    # Report from the VALIDATED, writable set (convergent no-ops excluded) so the
+    # preview matches what a real run would actually change.
+    created = [u.target_path for u, _pt, _f, _b in parsed if u.update_kind == "create"]
+    updated = [u.target_path for u, _pt, _f, _b in parsed if u.update_kind == "update"]
     report = AuthorshipReport(
-        pages_created=[u.target_path for u in plan.updates if u.update_kind == "create"],
-        pages_updated=[u.target_path for u in plan.updates if u.update_kind == "update"],
+        pages_created=created,
+        pages_updated=updated,
         contradictions=list(plan.contradictions),
     )
     return OperationResult(
         success=True,
+        warnings=warnings,
         summary=(
-            f"[dry-run] would author {len(plan.updates)} page(s) for {plan.source_id}: "
-            f"{len(report.pages_created)} create, {len(report.pages_updated)} update; "
+            f"[dry-run] would author {len(parsed)} page(s) for {plan.source_id}: "
+            f"{len(created)} create, {len(updated)} update; "
             f"{len(plan.contradictions)} contradiction(s)"
         ),
         authorship_report=report,
@@ -724,13 +740,15 @@ def _gather_existing_pages(domain: str | None, query: str = "") -> dict[str, str
     """Collect existing entity/concept/synthesis pages relevant to the domain.
 
     WS1: candidate selection is relevance-ranked via the FTS5 index — the
-    source title (`query`) ranks domain pages so the 30-page budget lands on
-    pages most related to the incoming source, not the first 30 by filesystem
-    order. Falls back to a glob scan when the index is empty/unbuilt.
+    source title (`query`) ranks domain pages so the budget lands on pages most
+    related to the incoming source, not the first N by filesystem order. Falls
+    back to an UNRANKED glob scan when the index is empty/unbuilt (in which case
+    the budget drop is filesystem-order, not relevance-order).
 
-    TOK-4: two-stage select preserved.
-    - Stage 1 (default): frontmatter + 200-char snippet per page, capped at 10 KB total.
-    - Exception: if ≤5 matching pages exist, send full bodies (small-wiki path).
+    T1.2: FULL page bodies are sent (so the agent can preserve their citations
+    when producing an `update`), bounded by `_EXISTING_PAGES_BUDGET` bytes;
+    overflow pages are DROPPED rather than truncated mid-citation. The top-ranked
+    page is always included even if it alone exceeds the budget.
     Without a domain, returns an empty map.
     """
     if not domain:

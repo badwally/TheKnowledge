@@ -356,3 +356,67 @@ def test_dry_run_reports_plan_without_writing(kb_root, make_source):
     assert "[dry-run]" in result.summary
     assert result.authorship_report.pages_created == ["wiki/entities/arbor-system.md"]
     assert not (paths.wiki_dir() / "entities" / "arbor-system.md").exists(), "dry-run wrote a file"
+
+
+def test_dry_run_validates_and_surfaces_errors(kb_root, make_source):
+    """I1: dry-run must VALIDATE (no-loss/schema/entity-kind), not just echo the
+    plan. An invalid plan (and an invalid repair) must report failure and write
+    nothing — dry-run that reports green on a rejectable plan is a footgun."""
+    _seed_source(kb_root, make_source)
+    client = _QueuedPlanClient([_entity_plan_json("boguskind1"), _entity_plan_json("boguskind2")])
+
+    result = _invoke_plan_and_apply(
+        front=_FRONT, body="b", domain="d-integ", plan_client=client, draft=False, dry_run=True
+    )
+
+    assert not result.success, "dry-run must surface the validation failure"
+    assert any("entity" in e.lower() and "kind" in e.lower() for e in result.errors), result.errors
+    assert not (paths.wiki_dir() / "entities" / "arbor-system.md").exists()
+
+
+def test_dry_run_repairs_then_reports_valid_plan(kb_root, make_source):
+    """Dry-run engages the repair loop too: a fixable first plan is repaired and
+    the report reflects the VALID plan — still writing nothing."""
+    _seed_source(kb_root, make_source)
+    client = _QueuedPlanClient([_entity_plan_json("badkind"), _entity_plan_json("software")])
+
+    result = _invoke_plan_and_apply(
+        front=_FRONT, body="b", domain="d-integ", plan_client=client, draft=False, dry_run=True
+    )
+
+    assert result.success, result.errors
+    assert client.calls == 2  # repaired in dry-run
+    assert result.authorship_report.pages_created == ["wiki/entities/arbor-system.md"]
+    assert not (paths.wiki_dir() / "entities" / "arbor-system.md").exists()
+
+
+def test_repair_handles_unparseable_first_response(kb_root, make_source):
+    """M6: the repair loop also recovers from a malformed-JSON first response,
+    not just validation errors."""
+    _seed_source(kb_root, make_source)
+    client = _QueuedPlanClient(["this is not json at all", _entity_plan_json("software")])
+
+    result = _invoke_plan_and_apply(
+        front=_FRONT, body="b", domain="d-integ", plan_client=client, draft=False
+    )
+
+    assert result.success, result.errors
+    assert client.calls == 2
+    assert (paths.wiki_dir() / "entities" / "arbor-system.md").exists()
+
+
+def test_cross_kind_guard_covers_moc(kb_root, make_source):
+    """M5: a concept create colliding with an existing MOC slug is rejected
+    (the cross-kind scan includes mocs)."""
+    _seed_source(kb_root, make_source)
+    d = paths.wiki_dir() / "mocs"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "ai-and-agents.md").write_text(
+        fm.serialize({"type": "moc", "slug": "ai-and-agents", "domain": "d-integ"}, "# MOC\n")
+    )
+
+    update = _concept_update("ai-and-agents", "yt-integ001A", kind="create")
+    result = apply_plan(Plan(source_id="yt-integ001A", updates=[update]))
+
+    assert not result.success
+    assert any("cross-kind" in e.lower() for e in result.errors), result.errors
