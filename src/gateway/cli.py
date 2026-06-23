@@ -254,8 +254,9 @@ def build_parser() -> argparse.ArgumentParser:
     p_ingest.add_argument(
         "--dry-run",
         action="store_true",
-        help="With --with-plan: run the authorship agent and print which pages it "
-        "WOULD create/update (and any contradictions) without writing them.",
+        help="With --with-plan: run the authorship agent and print which "
+        "entity/concept pages it WOULD create/update (and any contradictions) "
+        "without writing them. The source page itself still ingests normally.",
     )
     p_ingest.add_argument(
         "--plan-timeout",
