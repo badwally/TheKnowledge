@@ -420,3 +420,35 @@ def test_cross_kind_guard_covers_moc(kb_root, make_source):
 
     assert not result.success
     assert any("cross-kind" in e.lower() for e in result.errors), result.errors
+
+
+# --- T2.7b: body-shrink tripwire (was shipped untested — review §1 High) -----
+
+
+def test_update_shrinking_body_past_floor_is_rejected(kb_root, make_source):
+    """An update that PRESERVES all citations but cuts the body past the shrink
+    floor is rejected as a suspicious rewrite that likely drops claims. Isolates
+    the shrink guard from the citation-loss guard (same single citation kept)."""
+    _seed_source(kb_root, make_source)
+    _write_existing_concept(kb_root, "big", "yt-integ001A", extra_claims=30)
+
+    # Same citation preserved, but a tiny body (well under 50% of the original).
+    update = _concept_update("big", "yt-integ001A", kind="update", extra_claims=0)
+    result = apply_plan(Plan(source_id="yt-integ001A", updates=[update]))
+
+    assert not result.success
+    assert any("body-shrink" in e for e in result.errors), result.errors
+    # On-disk page untouched (still large).
+    assert "claim number 30" in (paths.wiki_dir() / "concepts" / "big.md").read_text()
+
+
+def test_update_growing_body_is_not_shrink_rejected(kb_root, make_source):
+    """Negative control: an update that GROWS the page (citations preserved) must
+    not trip the shrink guard."""
+    _seed_source(kb_root, make_source)
+    _write_existing_concept(kb_root, "big", "yt-integ001A", extra_claims=2)
+
+    update = _concept_update("big", "yt-integ001A", kind="update", extra_claims=12)
+    result = apply_plan(Plan(source_id="yt-integ001A", updates=[update]))
+
+    assert result.success, result.errors

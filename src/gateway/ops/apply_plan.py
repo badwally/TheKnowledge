@@ -24,6 +24,12 @@ from gateway.plan import Plan, WikiUpdate
 _LOCK_NAME = "wiki-author"
 _TIMESTAMP_PAGE_TYPES = frozenset({"entity", "concept", "synthesis"})
 
+# T2.7b: an "update" whose new body is smaller than this fraction of the prior
+# body is rejected as a suspicious rewrite that likely drops claims. A floor, not
+# a target — re-authoring should add, not gut. (No override today; a deliberate
+# >50% condensation is unsupported via the authorship loop — see validate_plan.)
+_BODY_SHRINK_FLOOR = 0.5
+
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -259,7 +265,7 @@ def validate_plan(
         # (Known limitation: this also blocks a legitimate >50% condensation;
         # no override exists today.)
         if existing_body_for_update is not None and body.strip():
-            if len(body) < 0.5 * len(existing_body_for_update):
+            if len(body) < _BODY_SHRINK_FLOOR * len(existing_body_for_update):
                 errors.append(
                     f"update[{i}] ({target_rel}): body-shrink — update body is "
                     f"{len(body)} chars vs existing {len(existing_body_for_update)} "
@@ -332,10 +338,6 @@ def validate_plan(
 
 
 # --- helpers ---------------------------------------------------------------
-
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def _existing_slugs_for_type(page_type: str) -> list[str]:
