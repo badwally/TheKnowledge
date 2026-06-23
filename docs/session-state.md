@@ -1,6 +1,38 @@
 # Session state — 2026-06-17
 
-Last updated: 2026-06-20 (AS-BUILT REVIEW FOLLOW-UPS in flight. Merged this session: PR #41 lint-slug-mismatch, #42 dev-deps note, #43 e2e-challenge-cases. Open: PR #44 committer-drain-determinism; branch `chore/gate-tests-what-ships` (3-item gate hardening, stacked on #44).)
+Last updated: 2026-06-23 (RAG draft-visibility fix — Hole 1 — DONE on branch `fix/rag-draft-visibility`, gate-green, awaiting commit/push/PR.)
+
+---
+
+## ✅ RAG DRAFT-VISIBILITY FIX — HOLE 1 (2026-06-23) — DONE, gate-green, PR pending
+
+**Branch:** `fix/rag-draft-visibility` (isolated worktree at `~/code/knowledge-wt-rag-draft-visibility`, cut from main `305b4136`). Brief: `docs/260622_rag-retrieval-draft-visibility-brief.md`; adversarial read: `docs/260623_rag-draft-visibility-adversarial-read.md`. Objective: stop `wiki retrieve` hard-excluding draft pages so the ~1,100 legacy-migrated curated concept/entity/synthesis pages are reachable by the default agent grounding path, WITHOUT degrading citation fidelity.
+
+### Design decisions (settled WITH user via AskUserQuestion; "Approve integrated design")
+- **Q1 = A+D, structural section-body content-gate.** Reframe: grounding-worthiness is a SECTION property; `draft` is a PAGE property — legacy pages are HYBRID (real lede/Methods + placeholder sections). Corpus evidence killed two contp framings: the placeholder is a FAMILY (~1,090 occ across 5+ marker strings, not just `_(needs population from legacy import)_` = 688), and a string-match-ANYWHERE gate is wrong (the `_(legacy import — body is the original summary…)_` marker × 150 lives in page TITLES of real citation-grounded synthesis pages). Predicate is structural: skip a section iff its stripped body is solely a lone italic-parenthetical `^_\([^)]*\)_$`. Covers the family, ignores title markers, can't false-positive on real prose.
+- **Q2 = yes**, annotate `draft="true"` on the `<page>` tag (more justified post-A+D: we deliberately ground on unfinalized-citation content).
+- **Q3 = persist + commit scorer + synthetic-fixture pytest; NO gate.py wiring.** `eval-retrieval` scores the FTS layer, not the retrieve assembly; the synthetic-fixture pytest gates the MECHANISM via the suite (corpus-independent), the goldens+scorer measure real-corpus recall (manual, corpus-drift-fragile). Forward-pointer backlog: index-time grounding-worthiness flag.
+
+### Implementation (all in worktree)
+- `src/gateway/ops/retrieve.py`: `is_placeholder_section()` predicate + module comment; `retrieve()` default `include_drafts=False→True`; section content-gate skip at the loop; `draft="true"` annotation; docstring updated.
+- `tests/gateway/test_ws2_retrieve.py`: replaced `test_retrieve_excludes_drafts_by_default` with the new contract — predicate truth-table (parametrized true/false), G-POS admit-substantive-draft, G-NEG-1 skip-placeholder-section, hybrid-keeps-substantive, demotion (finalized > draft), Q2 annotation. 29/29 green.
+- `.knowledge/eval/retrieval/semantic_mismatch.yaml` (21 probe queries; all 19 unique `expect` slugs verified to resolve on disk — finding-2 precondition cleared).
+- `scripts/probe_retrieve.py` — reproducible retrieve-path scorer (G-POS recall + G-NEG-1 pollution count).
+- `docs/backlog/rag-index-time-grounding-worthiness.md` — the principled long-term form (FTS section-column; also gates `wiki search`, which the retrieve-side predicate does NOT).
+
+### Validation evidence (before/after on the SAME tree via git stash of retrieve.py)
+- **G-POS recall@10: 0.095 (2/21) → 0.381 (8/21)**; all 3 lexically-easy controls flipped MISS→HIT. (Above the ~0.33 FTS soft ceiling; ceiling is a reference, not a bar — finding 7.)
+- **G-NEG-1 placeholder pollution: 4 → 0.** The 4 pre-fix leaks came from NON-draft pages (M6 stub sections) — the content-gate fixed a PRE-EXISTING pollution bug, not just a new one.
+- **G-NEG-2: no fix-caused displacement.** `active-vs-passive-qt` (finalized) is rank 15 BEFORE and AFTER — identical top-5; the brief's "rank 5" was stale corpus drift (06-22→06-23, finding 8). `automated-lockbox` + `30-year-cash-flow-projection` still HIT. Its k=10 miss is a pre-existing FTS ranking limit (Hole 2), not this fix.
+- `eval-retrieval --compare` FTS recall@10 = **0.926 unmoved** (fix doesn't touch the FTS layer; `search_fts` already defaulted `include_drafts=True`).
+- **Pre-merge gate PASSED** (exit 0): full suite + fast tiers + retrieval 0.926 + merge-map 0 regressions + embedding namespaces OK + lints baseline (schema-drift 191 / broken-wikilinks 1).
+
+### Venv gotchas found (pre-existing, out of Hole 1 scope)
+- The pre-built worktree `.venv` is a `uv` venv (no `pip`); install dev deps with `VIRTUAL_ENV=$(pwd)/.venv uv pip install -e '.[dev]'`.
+- `.venv` was missing `hypothesis` (dev extra) AND `numpy`. **`numpy` is UNDECLARED in `pyproject.toml`** despite `embedding_index`/`demand_ledger` importing it — a real packaging gap (a fresh CI checkout would fail collection). Pre-existing on main; flagged for the user, NOT fixed here (scope). Installed both into the worktree venv.
+
+### Next atomic step
+Commit (retrieve.py + test + goldens yaml + scorer + backlog doc + this session-state) on `fix/rag-draft-visibility`, push, open PR to main (user merges). Branch verified == `fix/rag-draft-visibility`; no wiki/ or raw/ writes. After merge: re-baseline the probe before any Hole 2 (embedding/hybrid) work; Hole 3 (finalize/cull ~1,100 perma-drafts) is a separate parallel curation track.
 
 ---
 

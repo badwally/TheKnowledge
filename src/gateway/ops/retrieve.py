@@ -23,11 +23,42 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
 from gateway import log, paths, search_index
 from gateway.core import OperationResult
+
+# --- Hole 1: draft section content-gate --------------------------------------
+#
+# `retrieve` admits draft pages into the candidate pool (demote-not-exclude, see
+# `include_drafts` below) so the ~1,100 legacy-migrated curated concept/entity/
+# synthesis pages are reachable. The dominant legacy draft is HYBRID: a real
+# lede/Methods plus placeholder sections whose entire body is a lone markdown-
+# italic parenthetical — `_(needs population from legacy import)_` and ~1,090
+# siblings (`_(summary not yet generated …)_`, `_(claims not yet extracted)_`,
+# `_(no cross-references yet)_`, `_(no citations returned)_`). These carry zero
+# grounding value, so they are gated out at the SECTION level (the substantive
+# sections of the same page still surface). The predicate is structural — a
+# section body that, stripped, is solely a single italic parenthetical — so it
+# covers the whole marker family without enumerating each string, and cannot
+# match a real section that merely contains a parenthetical aside.
+#
+# Forward pointer: the principled long-term form is an index-time grounding-
+# worthiness flag reusable by `wiki search` too — see
+# docs/backlog/rag-index-time-grounding-worthiness.md.
+_PLACEHOLDER_SECTION_RE = re.compile(r"^_\([^)]*\)_$")
+
+
+def is_placeholder_section(text: str) -> bool:
+    """True iff `text` is solely a lone italic-parenthetical placeholder stub.
+
+    Section-body-scoped: matches an unpopulated legacy/M6 placeholder section
+    (whose entire stripped body is `_(...)_`) and nothing else. Empty text is
+    handled by the caller's empty-section skip, not here.
+    """
+    return bool(_PLACEHOLDER_SECTION_RE.fullmatch(text.strip()))
 
 # --- A4 carry-forward suppression -------------------------------------------
 #
@@ -157,7 +188,7 @@ def retrieve(
     budget_chars: int = _DEFAULT_BUDGET_CHARS,
     max_section_chars: int = _DEFAULT_MAX_SECTION_CHARS,
     scope: str = "wiki",
-    include_drafts: bool = False,
+    include_drafts: bool = True,
 ) -> tuple[str, list[RetrievedSection]]:
     """Assemble a bounded context block for `query`. Returns (block, sections).
 
@@ -167,6 +198,12 @@ def retrieve(
     round-robin-interleaved) instead of a single global k-window that collapses
     toward the lexically-dominant domain. `domains` takes precedence over the
     single `domain`.
+
+    Drafts are admitted by default (`include_drafts=True`, Hole 1): the legacy
+    migration committed the curated layer as `draft: true`, so excluding drafts
+    hid ~1,100 pages from the default grounding path. Drafts compete in the pool
+    demoted by `_DRAFT_PENALTY`; placeholder-stub sections are content-gated out
+    (`is_placeholder_section`); surfaced drafts are tagged `draft="true"`.
     """
     if not query or not query.strip():
         return "", []
@@ -195,6 +232,10 @@ def retrieve(
         text = search_index.section_text(h.rel_path, h.heading)
         if not text:
             continue
+        # Hole 1 content-gate: drop unpopulated placeholder-stub sections so an
+        # admitted draft never floats `_(needs population…)_` into the block.
+        if is_placeholder_section(text):
+            continue
         if len(text) > max_section_chars:
             text = text[:max_section_chars].rstrip() + "\n…[section truncated]"
         attrs = (
@@ -205,6 +246,10 @@ def retrieve(
         if h.domain:
             attrs += f' domain="{_xml_attr(h.domain)}"'
         attrs += f' score="{h.score}"'
+        # Q2: mark unfinalized provenance so a consumer (incl. `wiki answer`'s
+        # LLM) knows this page's citation grounding is a downgraded lint warning.
+        if h.draft:
+            attrs += ' draft="true"'
         block = f"<page {attrs}>\n{text}\n</page>"
         if total + len(block) > budget_chars and blocks:
             break

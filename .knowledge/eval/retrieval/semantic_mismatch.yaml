@@ -1,0 +1,82 @@
+# Semantic-mismatch probe golden set (Hole 1, 2026-06-23 RAG draft-visibility fix).
+#
+# Lineage: docs/260622_rag-retrieval-draft-visibility-brief.md (Appendix A).
+# Deliberately lay/paraphrased queries that AVOID each target page's jargon
+# vocabulary, plus 3 lexically-easy CONTROLS. Built to measure the curated-layer
+# recall of the actual `wiki retrieve` path (not the FTS layer that
+# `wiki eval-retrieval` scores). Score it with the retrieve-path scorer at
+# scripts/probe_retrieve.py — NOT `wiki eval-retrieval` (wrong layer).
+#
+# `expect` matches by slug; recall@k passes if ANY expected slug is in top-k.
+# Every slug below was verified to resolve to a real page on 2026-06-23.
+
+queries:
+  # ---- glp1-reward-modulation (jargon-dense) ----
+  - q: "why do people on weight-loss shots feel less pleasure and lose their drive"
+    domain: glp1-reward-modulation
+    expect: [reward-deficit-and-anhedonia]
+  - q: "how these appetite drugs change the brain's feel-good chemical circuitry"
+    domain: glp1-reward-modulation
+    expect: [mesolimbic-dopamine-system-modulation]
+  - q: "a medication to bring back motivation lost while using appetite suppressants"
+    domain: glp1-reward-modulation
+    expect: [the-clinical-application-of-bupropion-a-dopamine-and-norepinephrine-reuptake-inhibitor-to-counteract-glp-1-induced-anhedonia-and-restore-patient-motivation]
+  - q: "could these injections protect the aging brain against memory-loss conditions"
+    domain: glp1-reward-modulation
+    expect: [neurodegenerative-disease-prevention]
+  - q: "the gut-to-brain nerve route that signals the reward area to stop eating"
+    domain: glp1-reward-modulation
+    expect: [glp-1-neurons-in-the-nucleus-of-the-solitary-tract-project-directly-to-the-ventral-tegmental-area-and-nucleus-accumbens-to-control-for-food-intake-alhadeff-et-al-2012]
+  # ---- edge-ai-agentic ----
+  - q: "running machine-learning models directly on iphone processors"
+    domain: edge-ai-agentic
+    expect: [apple-silicon-and-neural-engines]
+  - q: "keeping data encrypted even while it is being processed on a device"
+    domain: edge-ai-agentic
+    expect: [confidential-computing-and-secure-enclaves]
+  - q: "brain-inspired low-power chips that mimic how neurons fire"
+    domain: edge-ai-agentic
+    expect: [custom-and-neuromorphic-silicon]
+  - q: "a standard that lets autonomous AI assistants talk to one another"
+    domain: edge-ai-agentic
+    expect: [agent-to-agent-a2a-protocol]
+  # ---- trading-and-markets ----
+  - q: "the year stocks and bonds fell together and wrecked balanced retirement funds"
+    domain: trading-and-markets
+    expect: [60-40-portfolio-2022-collapse, 2022-bond-bear-market]
+  - q: "central bank shrinking its balance sheet by selling bonds versus letting them mature"
+    domain: trading-and-markets
+    expect: [active-vs-passive-qt]
+  - q: "how much share prices move when investors collectively buy more stock"
+    domain: trading-and-markets
+    expect: [aggregate-equity-demand-elasticity]
+  # ---- data-collectives ----
+  - q: "why a new data-sharing network has little value until enough members join"
+    domain: data-collectives
+    expect: [cold-start-problem]
+  - q: "shared resources many can use but are hard to fence off, like fisheries or grazing land"
+    domain: data-collectives
+    expect: [common-pool-resources]
+  - q: "training one shared model across companies without pooling their raw records"
+    domain: data-collectives
+    expect: [cross-silo-federated-learning]
+  - q: "rules letting customers share their bank-account data with outside apps"
+    domain: data-collectives
+    expect: [consumer-driven-banking]
+  # ---- condo-software ----
+  - q: "a long-range forecast of a building's major repair funding needs"
+    domain: condo-software
+    expect: [30-year-cash-flow-projection]
+  - q: "a service that receives and processes homeowner dues checks automatically"
+    domain: condo-software
+    expect: [automated-lockbox]
+  # ---- CONTROLS (lexically easy — should pass; failed ONLY because draft-excluded) ----
+  - q: "Apple Neural Engine on-device inference"
+    domain: edge-ai-agentic
+    expect: [apple-silicon-and-neural-engines]
+  - q: "federated learning across silos"
+    domain: data-collectives
+    expect: [cross-silo-federated-learning]
+  - q: "mesolimbic dopamine system"
+    domain: glp1-reward-modulation
+    expect: [mesolimbic-dopamine-system-modulation]

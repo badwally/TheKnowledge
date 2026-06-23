@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from gateway import frontmatter as fm, paths, search_index
-from gateway.ops.retrieve import retrieve, retrieve_op
+from gateway.ops.retrieve import is_placeholder_section, retrieve, retrieve_op
 
 
 def _page(slug: str, title: str, body: str, domain: str = "d", draft: bool = False) -> None:
@@ -63,11 +63,116 @@ def test_retrieve_caps_section_size(kb_root: Path):
     assert len(sections[0].text) <= 600
 
 
-def test_retrieve_excludes_drafts_by_default(kb_root: Path):
+# ---- Hole 1: draft visibility (demote-not-exclude + section content-gate) ----
+# Brief: docs/260622_rag-retrieval-draft-visibility-brief.md.
+# The legacy migration committed ~1,100 curated concept/entity/synthesis pages as
+# draft:true. Hard-excluding drafts from `retrieve` made the curated layer invisible
+# to the default agent grounding path. Fix: admit drafts into the pool (demoted by
+# _DRAFT_PENALTY), gate out placeholder-stub *sections* at the section level, and
+# annotate surfaced drafts so consumers know provenance is unfinalized.
+
+# Marker family verified on disk 2026-06-23: a placeholder section's body is a lone
+# markdown-italic parenthetical (`_(...)_`) and nothing else. ~1,090 occurrences span
+# _(needs population from legacy import)_, _(summary not yet generated …)_,
+# _(claims not yet extracted)_, _(no cross-references yet)_, _(no citations returned)_.
+_PLACEHOLDER = "_(needs population from legacy import)_"
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "_(needs population from legacy import)_",
+        "_(summary not yet generated — agent-driven authorship lands in M6)_",
+        "_(claims not yet extracted)_",
+        "_(no cross-references yet)_",
+        "_(no citations returned)_",
+        "  _(needs population from legacy import)_  \n",  # surrounding whitespace
+    ],
+)
+def test_is_placeholder_section_true(text: str):
+    assert is_placeholder_section(text) is True
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "",  # empty is handled by the empty-section skip, not this predicate
+        "Real prose with substance and a [[sources/web-2026-01-01-abc]] citation.",
+        # A real section that merely *contains* a parenthetical note is not a stub.
+        "_(legacy note)_ followed by substantive grounding content about the topic.",
+        # Two parentheticals wrapping real content must not be mistaken for a stub.
+        "_(a)_ real content in the middle _(b)_",
+        "Body text ending in a parenthetical _(aside)_",
+    ],
+)
+def test_is_placeholder_section_false(text: str):
+    assert is_placeholder_section(text) is False
+
+
+def test_retrieve_admits_substantive_draft(kb_root: Path):
+    # G-POS: a draft page with real content is now reachable (was hard-excluded).
     _page("draftp", "Draft term page", "## X\n\nunique draftonly content here.\n", draft=True)
     search_index.refresh(rebuild=True)
     _block, sections = retrieve("draftonly content", domain="d")
-    assert sections == []
+    assert [s.slug for s in sections] == ["draftp"]
+
+
+def test_retrieve_skips_placeholder_section(kb_root: Path):
+    # G-NEG-1: a draft whose matched section is a placeholder stub must NOT surface,
+    # and the placeholder marker must never leak into the assembled block.
+    _page(
+        "stub", "Stub page",
+        f"## Summary\n\n{_PLACEHOLDER}\n",
+        draft=True,
+    )
+    search_index.refresh(rebuild=True)
+    # Query matches the placeholder's own tokens — the only thing that could match.
+    block, sections = retrieve("needs population legacy import", domain="d")
+    assert all(s.slug != "stub" for s in sections)
+    assert "needs population from legacy import" not in block
+
+
+def test_retrieve_keeps_substantive_section_of_hybrid_draft(kb_root: Path):
+    # The dominant legacy draft is HYBRID: real lede/Methods + placeholder sections.
+    # The substantive section must surface; the placeholder section must not pollute.
+    _page(
+        "hybrid", "Hybrid draft",
+        "## Methods\n\nReal grounding content about vagal afferent signaling here.\n\n"
+        f"## Summary\n\n{_PLACEHOLDER}\n",
+        draft=True,
+    )
+    search_index.refresh(rebuild=True)
+    block, sections = retrieve("vagal afferent signaling", domain="d")
+    assert [s.slug for s in sections] == ["hybrid"]
+    assert 'section="Methods"' in block
+    assert "needs population from legacy import" not in block
+
+
+def test_retrieve_demotes_draft_below_finalized(kb_root: Path):
+    # G-NEG-2 / demotion: when a finalized and a draft page match equally, the
+    # finalized page outranks the draft (admitted, not promoted over canonical).
+    _page("final", "Final page", "## S\n\nsentinel topic alpha content.\n", draft=False)
+    _page("drafty", "Drafty page", "## S\n\nsentinel topic alpha content.\n", draft=True)
+    search_index.refresh(rebuild=True)
+    _block, sections = retrieve("sentinel topic alpha", domain="d")
+    slugs = [s.slug for s in sections]
+    assert "final" in slugs and "drafty" in slugs
+    assert slugs.index("final") < slugs.index("drafty"), f"finalized must outrank draft: {slugs}"
+
+
+def test_retrieve_annotates_draft_pages(kb_root: Path):
+    # Q2: surfaced drafts carry draft="true" so consumers (incl. wiki answer's LLM)
+    # know the provenance is unfinalized; finalized pages carry no such marker.
+    _page("dft", "Draft annotated", "## S\n\nannotation sentinel content draftside.\n", draft=True)
+    _page("fin", "Final annotated", "## S\n\nannotation sentinel content finalside.\n", draft=False)
+    search_index.refresh(rebuild=True)
+    block, _ = retrieve("annotation sentinel content", domain="d")
+    import re
+    # The draft page's <page> tag has draft="true"; the finalized one does not.
+    draft_tag = re.search(r'<page[^>]*title="Draft annotated"[^>]*>', block)
+    final_tag = re.search(r'<page[^>]*title="Final annotated"[^>]*>', block)
+    assert draft_tag and 'draft="true"' in draft_tag.group(0)
+    assert final_tag and 'draft="true"' not in final_tag.group(0)
 
 
 def test_retrieve_empty_query(kb_root: Path):
