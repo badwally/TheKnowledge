@@ -32,7 +32,6 @@ from gateway.plan import (
     Plan,
     PlanClient,
     PlanError,
-    build_plan_prompt,
     parse_plan_response,
 )
 
@@ -47,6 +46,7 @@ def ingest(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
     fetch_pdf: bool = False,
@@ -70,6 +70,7 @@ def ingest(
             filter_client=filter_client,
             plan_client=plan_client,
             with_plan=with_plan,
+            dry_run=dry_run,
             draft=draft,
             force_include=force_include,
             fetch_pdf=fetch_pdf,
@@ -88,6 +89,7 @@ def ingest(
                 filter_client=filter_client,
                 plan_client=plan_client,
                 with_plan=with_plan,
+                dry_run=dry_run,
                 draft=draft,
                 force_include=force_include,
                 fetch_pdf=fetch_pdf,
@@ -100,6 +102,7 @@ def ingest(
             filter_client=filter_client,
             plan_client=plan_client,
             with_plan=with_plan,
+            dry_run=dry_run,
             draft=draft,
             force_include=force_include,
         )
@@ -109,6 +112,7 @@ def ingest(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -121,6 +125,7 @@ def ingest_file(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
 ) -> OperationResult:
@@ -141,6 +146,7 @@ def ingest_file(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -153,6 +159,7 @@ def ingest_canonical(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
 ) -> OperationResult:
@@ -168,6 +175,7 @@ def ingest_canonical(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -180,6 +188,7 @@ def ingest_url(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
     fetch_pdf: bool = False,
@@ -214,6 +223,7 @@ def ingest_url(
         filter_client=filter_client,
         plan_client=plan_client,
         with_plan=with_plan,
+        dry_run=dry_run,
         draft=draft,
         force_include=force_include,
     )
@@ -229,6 +239,7 @@ def _ingest_canonical_text(
     filter_client: FilterClient | None = None,
     plan_client: PlanClient | None = None,
     with_plan: bool = False,
+    dry_run: bool = False,
     draft: bool = False,
     force_include: bool = False,
 ) -> OperationResult:
@@ -316,17 +327,27 @@ def _ingest_canonical_text(
                         or (existing_front.get("domains") or [None])[0],
                         plan_client=plan_client,
                         draft=draft,
+                        dry_run=dry_run,
                     )
-                    return OperationResult(
-                        success=plan_result.success,
+                    # T4.13: same contract as the fresh path — the source is
+                    # already ingested, so authorship failure is a non-fatal
+                    # warning (not a hard error), and the authorship report is
+                    # always surfaced.
+                    ran = OperationResult(
+                        success=True,
                         paths_touched=[*backfilled_paths, *plan_result.paths_touched],
-                        warnings=plan_result.warnings,
-                        errors=plan_result.errors,
-                        summary=(
-                            f"already ingested; ran --with-plan: "
-                            f"{plan_result.summary}"
+                        warnings=list(plan_result.warnings),
+                        authorship_report=(
+                            plan_result.authorship_report if plan_result.success else None
                         ),
+                        summary=f"already ingested; ran --with-plan: {plan_result.summary}",
                     )
+                    if not plan_result.success:
+                        ran.warnings.append(
+                            "wiki authorship failed (source already committed): "
+                            + "; ".join(plan_result.errors)
+                        )
+                    return ran
 
                 if backfilled_paths:
                     return OperationResult(
@@ -427,6 +448,7 @@ def _ingest_canonical_text(
             domain=effective_domain,
             plan_client=plan_client,
             draft=draft,
+            dry_run=dry_run,
         )
         if plan_result.success:
             result_obj.paths_touched.extend(plan_result.paths_touched)
@@ -525,10 +547,14 @@ def _first_domain(front: dict) -> str | None:
 
 _MAX_EXISTING_PAGES = 30
 _MAX_BODY_CHARS = 16000
-# TOK-4: two-stage select for existing-pages prompt block
-_STAGE1_SNIPPET_CHARS = 200      # chars of body sent in stage-1 per page
-_STAGE1_FULL_BODY_THRESHOLD = 5  # send full body when wiki has ≤ this many pages
-_STAGE1_PROMPT_CAP = 10_000      # byte cap for the entire existing-pages block
+# T1.2: existing pages are sent to the authorship agent as FULL bodies so it can
+# preserve their `[[sources/]]` citations when producing an `update` (the old
+# 200-char snippet truncated before the trailing citation, forcing the agent to
+# drop it). Bounded by a byte budget; relevance-ranked overflow pages are
+# DROPPED rather than truncated mid-citation — N complete pages beat N+M
+# half-pages. 60 KB sits comfortably alongside the 16 KB source body and ~7 KB
+# system prompt within the Opus context window.
+_EXISTING_PAGES_BUDGET = 60_000  # bytes for the entire existing-pages block
 
 # TOK-10: voice notes and Notion/Slack/Apple-Notes snippets don't need Opus.
 _SMALL_SOURCE_TYPES: frozenset[str] = frozenset({"voice", "note"})
@@ -544,6 +570,39 @@ def _authorship_model(front: dict, body: str) -> str:
     return model_for("plan_authorship")
 
 
+# T3: how many validate-then-repair rounds to attempt on a rejected plan. The
+# validator emits precise, file-relative errors (entity-kind, citation-grounding
+# with line numbers); feeding them back lets the agent fix one bad page in an
+# otherwise-good multi-page plan instead of discarding all 5-15 pages.
+_MAX_REPAIR_ATTEMPTS = 1
+
+
+def _call_plan_client(plan_client: PlanClient, *, system: str, user: str) -> str:
+    """Dispatch one planning call, preferring telemetry-emitting variants.
+
+    Stubs in tests typically implement only `call_split` or `call`; the
+    telemetry variants are skipped there. The repair loop passes a different
+    `user` each round while `system` stays constant."""
+    from gateway.log import log_llm_call
+
+    call_split_with_usage = getattr(plan_client, "call_split_with_usage", None)
+    call_with_usage = getattr(plan_client, "call_with_usage", None)
+    call_split = getattr(plan_client, "call_split", None)
+
+    if callable(call_split_with_usage):
+        result = call_split_with_usage(system=system, user=user)
+        log_llm_call("plan_authorship", result)
+        return result.text
+    if callable(call_split):
+        return call_split(system=system, user=user)
+    combined = system + "\n" + user
+    if callable(call_with_usage):
+        result = call_with_usage(combined)
+        log_llm_call("plan_authorship", result)
+        return result.text
+    return plan_client.call(combined)
+
+
 def _invoke_plan_and_apply(
     *,
     front: dict,
@@ -551,59 +610,124 @@ def _invoke_plan_and_apply(
     domain: str | None,
     plan_client: PlanClient | None,
     draft: bool,
+    dry_run: bool = False,
+    max_repair: int = _MAX_REPAIR_ATTEMPTS,
 ) -> OperationResult:
     if plan_client is None:
         from gateway.plan import ClaudeCLIPlanClient
-        from gateway.llm import model_for
 
         plan_client = ClaudeCLIPlanClient(model=_authorship_model(front, body))
+
+    from gateway.plan import (
+        build_plan_repair_prompt,
+        build_plan_system_prompt,
+        build_plan_user_prompt,
+    )
 
     source_text = _format_source_for_plan(front, body)
     existing_pages = _gather_existing_pages(domain, query=str(front.get("title", "")))
 
-    # K5: prefer telemetry-emitting variants. Stubs in tests typically only
-    # implement plain `call()` — that path silently skips telemetry.
-    call_split_with_usage = getattr(plan_client, "call_split_with_usage", None)
-    call_with_usage = getattr(plan_client, "call_with_usage", None)
-    call_split = getattr(plan_client, "call_split", None)
-    try:
-        if callable(call_split_with_usage):
-            from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
-            from gateway.log import log_llm_call
+    system = build_plan_system_prompt()
+    user = build_plan_user_prompt(source_text, existing_pages)
 
-            result = call_split_with_usage(
-                system=build_plan_system_prompt(),
-                user=build_plan_user_prompt(source_text, existing_pages),
+    attempt = 0
+    while True:
+        try:
+            raw = _call_plan_client(plan_client, system=system, user=user)
+        except Exception as e:
+            return OperationResult(success=False, errors=[f"plan client failed: {e}"])
+
+        try:
+            plan = parse_plan_response(raw, expected_source_id=front["id"])
+            parse_errors: list[str] = []
+        except PlanError as e:
+            plan = None
+            parse_errors = [f"plan JSON could not be parsed: {e}"]
+
+        if plan is not None:
+            result = (
+                _dry_run_plan(plan, draft=draft)
+                if dry_run
+                else apply_plan(plan, draft=draft)
             )
-            log_llm_call("plan_authorship", result)
-            raw = result.text
-        elif callable(call_split):
-            from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
-
-            raw = call_split(
-                system=build_plan_system_prompt(),
-                user=build_plan_user_prompt(source_text, existing_pages),
-            )
-        elif callable(call_with_usage):
-            from gateway.log import log_llm_call
-
-            result = call_with_usage(build_plan_prompt(source_text, existing_pages))
-            log_llm_call("plan_authorship", result)
-            raw = result.text
+            errors = [] if result.success else list(result.errors)
         else:
-            raw = plan_client.call(build_plan_prompt(source_text, existing_pages))
-    except Exception as e:
-        return OperationResult(success=False, errors=[f"plan client failed: {e}"])
+            result = OperationResult(success=False, errors=parse_errors)
+            errors = parse_errors
 
-    try:
-        plan = parse_plan_response(raw, expected_source_id=front["id"])
-    except PlanError as e:
-        return OperationResult(
-            success=False,
-            errors=[f"could not parse plan: {e}"],
+        if result.success or attempt >= max_repair:
+            if attempt > 0 and result.success:
+                result.warnings.append(
+                    f"authorship succeeded after {attempt} repair attempt(s)"
+                )
+            if not result.success and not dry_run:
+                # T4.15: persist the rejected plan so the operator can inspect /
+                # repair it without re-paying for the Opus call.
+                scratch = _persist_rejected_plan(front["id"], raw, errors)
+                if scratch is not None:
+                    result.warnings.append(f"rejected plan saved to {scratch}")
+            return result
+
+        # T3: feed the validator/parse errors back for one corrective pass.
+        attempt += 1
+        user = build_plan_repair_prompt(
+            source_text, existing_pages, prior_response=raw, errors=errors
         )
 
-    return apply_plan(plan, draft=draft)
+
+def _persist_rejected_plan(source_id: str, raw: str, errors: list[str]) -> Path | None:
+    """T4.15: write a rejected authorship plan + its validator errors to a
+    scratch file under `.knowledge/rejected-plans/` and return the path. The
+    operator can inspect/repair it instead of re-running the Opus call. The
+    directory is gitignored scratch state; failure to write is non-fatal."""
+    try:
+        d = paths.knowledge_root() / ".knowledge" / "rejected-plans"
+        d.mkdir(parents=True, exist_ok=True)
+        target = d / f"{source_id}.md"
+        error_block = "\n".join(f"- {e}" for e in errors)
+        target.write_text(
+            f"# Rejected authorship plan: {source_id}\n\n"
+            f"## Validator errors\n\n{error_block}\n\n"
+            f"## Agent response\n\n```\n{raw}\n```\n",
+            encoding="utf-8",
+        )
+        return target
+    except OSError:
+        return None
+
+
+def _dry_run_plan(plan, *, draft: bool = False) -> OperationResult:
+    """T4.12 / I1: VALIDATE a plan (same Phase-1 checks as a real run: no-loss,
+    shrink, cross-kind, schema, entity-kind) and report what it WOULD do —
+    writing nothing. Reporting green on a plan the real run would reject defeats
+    the purpose, so a validation failure is surfaced as a failure (and the repair
+    loop engages on it, same as a live run)."""
+    from gateway.core import AuthorshipReport
+    from gateway.ops.apply_plan import validate_plan
+
+    errors, warnings, parsed = validate_plan(plan, draft=draft)
+    if errors:
+        return OperationResult(success=False, errors=errors, warnings=warnings)
+
+    # Report from the VALIDATED, writable set (convergent no-ops excluded) so the
+    # preview matches what a real run would actually change.
+    created = [u.target_path for u, _pt, _f, _b in parsed if u.update_kind == "create"]
+    updated = [u.target_path for u, _pt, _f, _b in parsed if u.update_kind == "update"]
+    report = AuthorshipReport(
+        pages_created=created,
+        pages_updated=updated,
+        contradictions=list(plan.contradictions),
+    )
+    return OperationResult(
+        success=True,
+        warnings=warnings,
+        summary=(
+            f"[dry-run] would author {len(parsed)} page(s) for {plan.source_id}: "
+            f"{len(created)} create, {len(updated)} update; "
+            f"{len(plan.contradictions)} contradiction(s)"
+        ),
+        authorship_report=report,
+    )
 
 
 def _format_source_for_plan(front: dict, body: str) -> str:
@@ -616,13 +740,15 @@ def _gather_existing_pages(domain: str | None, query: str = "") -> dict[str, str
     """Collect existing entity/concept/synthesis pages relevant to the domain.
 
     WS1: candidate selection is relevance-ranked via the FTS5 index — the
-    source title (`query`) ranks domain pages so the 30-page budget lands on
-    pages most related to the incoming source, not the first 30 by filesystem
-    order. Falls back to a glob scan when the index is empty/unbuilt.
+    source title (`query`) ranks domain pages so the budget lands on pages most
+    related to the incoming source, not the first N by filesystem order. Falls
+    back to an UNRANKED glob scan when the index is empty/unbuilt (in which case
+    the budget drop is filesystem-order, not relevance-order).
 
-    TOK-4: two-stage select preserved.
-    - Stage 1 (default): frontmatter + 200-char snippet per page, capped at 10 KB total.
-    - Exception: if ≤5 matching pages exist, send full bodies (small-wiki path).
+    T1.2: FULL page bodies are sent (so the agent can preserve their citations
+    when producing an `update`), bounded by `_EXISTING_PAGES_BUDGET` bytes;
+    overflow pages are DROPPED rather than truncated mid-citation. The top-ranked
+    page is always included even if it alone exceeds the budget.
     Without a domain, returns an empty map.
     """
     if not domain:
@@ -663,20 +789,17 @@ def _gather_existing_pages(domain: str | None, query: str = "") -> dict[str, str
     if not candidates:
         return {}
 
-    use_full = len(candidates) <= _STAGE1_FULL_BODY_THRESHOLD
-
+    # Send FULL bodies (relevance-ranked) up to the byte budget; drop overflow
+    # pages rather than truncate — a truncated page would lose its citations and
+    # the agent would then drop them on update. Always include at least the
+    # top-ranked page even if it alone exceeds the budget (better one full
+    # high-relevance page than none).
     out: dict[str, str] = {}
     total = 0
     for rel, page_front, page_body in candidates:
-        if use_full:
-            content = fm.serialize(page_front, page_body)
-        else:
-            snippet = page_body[:_STAGE1_SNIPPET_CHARS]
-            if len(page_body) > _STAGE1_SNIPPET_CHARS:
-                snippet += "…"
-            content = fm.serialize(page_front, snippet)
+        content = fm.serialize(page_front, page_body)
         size = len(content.encode())
-        if not use_full and total + size > _STAGE1_PROMPT_CAP:
+        if out and total + size > _EXISTING_PAGES_BUDGET:
             break
         out[rel] = content
         total += size

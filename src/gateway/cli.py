@@ -252,6 +252,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Allow partial citations on agent-generated pages; mark as draft",
     )
     p_ingest.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="With --with-plan: run the authorship agent and print which pages it "
+        "WOULD create/update (and any contradictions) without writing them.",
+    )
+    p_ingest.add_argument(
         "--plan-timeout",
         type=float,
         default=None,
@@ -2056,6 +2062,25 @@ def _emit_result(result, *, no_op_label: str = "no-op", ok_label: str = "ok") ->
 def _run_ingest(ns: argparse.Namespace) -> int:
     from gateway.ops.ingest import ingest
     from gateway.plan import ClaudeCLIPlanClient
+    from gateway.filter.policy import policy_exists
+
+    with_plan = getattr(ns, "with_plan", False)
+    dry_run = getattr(ns, "dry_run", False)
+
+    # T4.14: fail fast on an authorship-intent conflict. With --with-plan and an
+    # explicit --domain that has no policy, the filter silently skips and zero
+    # pages are authored while the run still reports ok — the worst trap. Refuse
+    # up front with an actionable message instead.
+    if with_plan and ns.domain and not policy_exists(ns.domain):
+        print(
+            f"operation failed:\n  - --with-plan needs a domain with a policy, but "
+            f"{ns.domain!r} has none. Run `wiki bootstrap-domain` / "
+            f"`wiki discover-domains`, or drop --domain.",
+            file=sys.stderr,
+        )
+        return 1
+    if dry_run and not with_plan:
+        print("warning: --dry-run only affects --with-plan authorship; ignored", file=sys.stderr)
 
     timeout_s = getattr(ns, "plan_timeout", None)
     plan_client = ClaudeCLIPlanClient(timeout_s=timeout_s) if timeout_s else None
@@ -2064,7 +2089,8 @@ def _run_ingest(ns: argparse.Namespace) -> int:
         ingest(
             _resolve_input(ns.input),
             domain=ns.domain,
-            with_plan=getattr(ns, "with_plan", False),
+            with_plan=with_plan,
+            dry_run=dry_run,
             draft=getattr(ns, "draft", False),
             force_include=getattr(ns, "force_include", False),
             fetch_pdf=getattr(ns, "fetch_pdf", False),

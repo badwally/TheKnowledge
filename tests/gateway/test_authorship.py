@@ -1175,11 +1175,18 @@ def test_apply_plan_report_distinguishes_create_and_update(kb_root, make_source)
     result1 = apply_plan(plan1)
     assert result1.success
 
-    # Now update it
-    plan2 = Plan(
-        source_id="yt-applyTest1A",
-        updates=[_make_concept_update("evolving-concept", "yt-applyTest1A", kind="update")],
+    # Now make a REAL update (adds a claim; identical re-apply is a no-op by
+    # T2.10 convergence, so the update must genuinely change content). It must
+    # preserve the existing citation (T2.7 no-loss guard).
+    upd = _make_concept_update("evolving-concept", "yt-applyTest1A", kind="update")
+    front_u, body_u = fm.parse(upd.content)
+    body_u = body_u.replace(
+        "## Key claims\n",
+        "## Key claims\n\n- A second claim added by this update [[sources/yt-applyTest1A]].\n",
+        1,
     )
+    upd.content = fm.serialize(front_u, body_u)
+    plan2 = Plan(source_id="yt-applyTest1A", updates=[upd])
     result2 = apply_plan(plan2)
     assert result2.success
     assert result2.authorship_report is not None

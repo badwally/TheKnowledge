@@ -101,6 +101,45 @@ def test_build_plan_system_prompt_is_static():
     assert '"source_id"' in a
 
 
+def test_system_prompt_lists_entity_kind_enum():
+    """T1.1: the agent must be given the controlled entity_kind vocabulary,
+    not left to free-form a value the validator rejects."""
+    from gateway.validator import ENTITY_KIND_ENUM
+
+    prompt = build_plan_system_prompt()
+    for kind in ENTITY_KIND_ENUM:
+        assert kind in prompt, f"entity_kind value {kind!r} missing from prompt"
+
+
+def test_system_prompt_json_example_has_single_braces():
+    """T1.3: the example JSON must be valid (single braces), not the leftover
+    .format() doubled-brace artifact that showed the agent malformed JSON."""
+    prompt = build_plan_system_prompt()
+    assert "{{" not in prompt
+    assert "}}" not in prompt
+
+
+def test_system_prompt_states_inline_citation_rule():
+    """T1.4: the operational grounding rule (same-line citation) must be stated."""
+    prompt = build_plan_system_prompt().lower()
+    assert "same line" in prompt
+
+
+def test_system_prompt_says_gateway_stamps_timestamps():
+    """T1.5: tell the agent not to emit timestamps (gateway auto-stamps)."""
+    prompt = build_plan_system_prompt().lower()
+    assert "created_at" in prompt and "last_updated" in prompt
+
+
+def test_system_prompt_includes_worked_example():
+    """T1.6: at least one concrete valid page example (few-shot)."""
+    prompt = build_plan_system_prompt()
+    # A dedicated worked-example block, not just the abstract citation syntax.
+    assert "## Worked example" in prompt
+    # The example demonstrates an inline citation on a claim line.
+    assert "[[sources/example-source-id]]" in prompt
+
+
 def test_build_plan_user_prompt_includes_source_and_pages():
     user = build_plan_user_prompt("source body here", {"wiki/concepts/foo.md": "foo body"})
     assert "Source under evaluation" in user
