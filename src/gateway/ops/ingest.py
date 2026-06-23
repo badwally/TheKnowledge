@@ -525,10 +525,14 @@ def _first_domain(front: dict) -> str | None:
 
 _MAX_EXISTING_PAGES = 30
 _MAX_BODY_CHARS = 16000
-# TOK-4: two-stage select for existing-pages prompt block
-_STAGE1_SNIPPET_CHARS = 200      # chars of body sent in stage-1 per page
-_STAGE1_FULL_BODY_THRESHOLD = 5  # send full body when wiki has ≤ this many pages
-_STAGE1_PROMPT_CAP = 10_000      # byte cap for the entire existing-pages block
+# T1.2: existing pages are sent to the authorship agent as FULL bodies so it can
+# preserve their `[[sources/]]` citations when producing an `update` (the old
+# 200-char snippet truncated before the trailing citation, forcing the agent to
+# drop it). Bounded by a byte budget; relevance-ranked overflow pages are
+# DROPPED rather than truncated mid-citation — N complete pages beat N+M
+# half-pages. 60 KB sits comfortably alongside the 16 KB source body and ~7 KB
+# system prompt within the Opus context window.
+_EXISTING_PAGES_BUDGET = 60_000  # bytes for the entire existing-pages block
 
 # TOK-10: voice notes and Notion/Slack/Apple-Notes snippets don't need Opus.
 _SMALL_SOURCE_TYPES: frozenset[str] = frozenset({"voice", "note"})
@@ -663,20 +667,17 @@ def _gather_existing_pages(domain: str | None, query: str = "") -> dict[str, str
     if not candidates:
         return {}
 
-    use_full = len(candidates) <= _STAGE1_FULL_BODY_THRESHOLD
-
+    # Send FULL bodies (relevance-ranked) up to the byte budget; drop overflow
+    # pages rather than truncate — a truncated page would lose its citations and
+    # the agent would then drop them on update. Always include at least the
+    # top-ranked page even if it alone exceeds the budget (better one full
+    # high-relevance page than none).
     out: dict[str, str] = {}
     total = 0
     for rel, page_front, page_body in candidates:
-        if use_full:
-            content = fm.serialize(page_front, page_body)
-        else:
-            snippet = page_body[:_STAGE1_SNIPPET_CHARS]
-            if len(page_body) > _STAGE1_SNIPPET_CHARS:
-                snippet += "…"
-            content = fm.serialize(page_front, snippet)
+        content = fm.serialize(page_front, page_body)
         size = len(content.encode())
-        if not use_full and total + size > _STAGE1_PROMPT_CAP:
+        if out and total + size > _EXISTING_PAGES_BUDGET:
             break
         out[rel] = content
         total += size

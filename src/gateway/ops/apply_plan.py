@@ -31,8 +31,13 @@ def _now_iso() -> str:
 
 def _count_source_links(body: str) -> int:
     """Count distinct [[sources/<id>]] links in a body (for sources_count)."""
+    return len(_source_citation_set(body))
+
+
+def _source_citation_set(body: str) -> set[str]:
+    """Return the set of distinct [[sources/<id>]] link strings in a body."""
     import re
-    return len(set(re.findall(r"\[\[sources/[^\]]+\]\]", body)))
+    return set(re.findall(r"\[\[sources/[^\]]+\]\]", body))
 
 
 def _stamp_timestamps(
@@ -108,13 +113,68 @@ def apply_plan(
         # If the update targets an existing page, exclude its current slug
         # from the duplicate check (we're rewriting that exact slug).
         existing_front_for_update: dict | None = None
+        existing_body_for_update: str | None = None
         if update.update_kind == "update":
             existing = _try_read_page(target_rel)
             if existing is not None:
-                existing_front_for_update, _ = existing
+                existing_front_for_update, existing_body_for_update = existing
                 current_slug = existing_front_for_update.get("slug")
                 if current_slug and current_slug in existing_slugs:
                     existing_slugs = [s for s in existing_slugs if s != current_slug]
+
+        # T2.7: no-citation-loss guard. An update rewrites the page wholesale; if
+        # the new body drops a `[[sources/...]]` citation the page already had,
+        # that is silent knowledge destruction (the agent rebuilt the page from a
+        # partial view). Knowledge is monotonic-by-default — reject the drop.
+        # Deliberate retraction is a separate, audited act, not an authorship
+        # side-effect.
+        if existing_body_for_update is not None:
+            dropped = _source_citation_set(existing_body_for_update) - _source_citation_set(body)
+            if dropped:
+                errors.append(
+                    f"update[{i}] ({target_rel}): citation-loss — drops prior "
+                    f"citation(s) {sorted(dropped)}; an update must preserve every "
+                    f"existing [[sources/...]] citation and only add"
+                )
+                continue
+        # T2.7b: body-shrink tripwire. Even when citations are shared, a body
+        # that shrinks past half its prior size on an "update" signals dropped
+        # claims. Reject as suspicious — re-authoring should add, not gut.
+        if existing_body_for_update is not None and body.strip():
+            if len(body) < 0.5 * len(existing_body_for_update):
+                errors.append(
+                    f"update[{i}] ({target_rel}): body-shrink — update body is "
+                    f"{len(body)} chars vs existing {len(existing_body_for_update)} "
+                    f"(>50% smaller); refusing a suspicious rewrite that likely drops claims"
+                )
+                continue
+
+        # T2.10: convergent no-op. If an update's body is byte-identical to
+        # what's already on disk, re-authoring it would only thrash
+        # last_updated and the file mtime. Skip it entirely so re-runs converge
+        # instead of churn (matches the idempotent-and-convergent op contract).
+        if (
+            update.update_kind == "update"
+            and existing_body_for_update is not None
+            and body == existing_body_for_update
+        ):
+            continue
+
+        # T2.9: cross-kind slug collision. A slug must be unique across page
+        # kinds — if `food-noise` already exists as a concept, an entity page of
+        # the same slug splits citations across two canonical pages and makes
+        # `[[food-noise]]` ambiguous. Reject a target whose slug already lives
+        # under a different kind's directory.
+        slug = front.get("slug")
+        if slug:
+            conflict_kind = _cross_kind_slug_conflict(str(slug), page_type)
+            if conflict_kind is not None:
+                errors.append(
+                    f"update[{i}] ({target_rel}): slug-cross-kind-collision — slug "
+                    f"{slug!r} already exists as a {conflict_kind} page; slugs must be "
+                    f"unique across page kinds"
+                )
+                continue
 
         # ONT-6: auto-stamp created_at / last_updated / sources_count on
         # entity, concept, and synthesis pages so the validator's required-
@@ -157,15 +217,43 @@ def apply_plan(
             warnings=warnings,
         )
 
-    # --- Phase 2: apply atomically ---
+    # --- Phase 2: apply atomically (all-or-nothing across pages) ---
+    # write_atomic is per-file atomic, but a multi-page plan must not half-apply:
+    # if page N's write fails, pages 1..N-1 are rolled back to their prior state
+    # (restored for updates, unlinked for creates). T2.8.
     paths_touched: list[Path] = []
     with file_lock(_LOCK_NAME):
+        snapshots: list[tuple[Path, str | None]] = []
         for update, page_type, front, body in parsed:
             target = paths.knowledge_root() / update.target_path
-            target.parent.mkdir(parents=True, exist_ok=True)
-            write_atomic(target, update.content)
-            paths_touched.append(target)
+            prior = target.read_text(encoding="utf-8") if target.exists() else None
+            snapshots.append((target, prior))
 
+        try:
+            for update, page_type, front, body in parsed:
+                target = paths.knowledge_root() / update.target_path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                write_atomic(target, update.content)
+                paths_touched.append(target)
+        except Exception as e:  # noqa: BLE001 — any write failure triggers rollback
+            for target, prior in snapshots:
+                try:
+                    if prior is None:
+                        if target.exists():
+                            target.unlink()
+                    else:
+                        write_atomic(target, prior)
+                except OSError:
+                    pass  # best-effort restore; report the original failure
+            return OperationResult(
+                success=False,
+                errors=[
+                    f"atomic apply failed on {len(parsed)}-page plan; rolled back: {e}"
+                ],
+            )
+
+        # Pages committed. The following are post-commit bookkeeping (each is
+        # individually defensive and does not raise on the common paths).
         # Update the source's `wiki_pages:` so backlinks are tracked.
         _record_backlinks(plan.source_id, [u.target_path for u in plan.updates])
 
@@ -230,6 +318,21 @@ def _existing_slugs_for_type(page_type: str) -> list[str]:
         if slug:
             out.append(str(slug))
     return out
+
+
+def _cross_kind_slug_conflict(slug: str, target_page_type: str) -> str | None:
+    """Return the page_type that already owns `slug` under a DIFFERENT kind's
+    directory, or None. Used to forbid `food-noise` existing as both a concept
+    and an entity (split citations / ambiguous wikilink resolution)."""
+    for pt in ("entity", "concept", "synthesis"):
+        if pt == target_page_type:
+            continue
+        schema = wiki_pages.schema_for_type(pt)
+        if schema is None:
+            continue
+        if (paths.knowledge_root() / schema.directory / f"{slug}.md").exists():
+            return pt
+    return None
 
 
 def _try_read_page(rel_path: str) -> tuple[dict, str] | None:

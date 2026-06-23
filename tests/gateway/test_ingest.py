@@ -221,21 +221,30 @@ def _write_wiki_entity(kb_root: Path, slug: str, domain: str, body: str) -> None
     (d / f"{slug}.md").write_text(fm.serialize(front, body))
 
 
-def test_gather_existing_pages_30_page_stage1_under_15kb(kb_root):
-    """TOK-4: stage-1 output for a 30-page fixture must fit within 15 KB."""
-    long_body = "x" * 5000 + "\n"  # 5 KB body per page
+def test_gather_existing_pages_sends_full_bodies_within_budget(kb_root):
+    """T1.2: existing pages are sent as FULL bodies (so the agent can preserve
+    their citations on update), bounded by a byte budget — overflow pages are
+    DROPPED, never truncated mid-citation. The old 200-char snippet path cut
+    before the trailing [[sources/]] citation, which is why updates dropped
+    citations."""
+    from gateway.ops.ingest import _EXISTING_PAGES_BUDGET
+
+    long_body = "x" * 5000 + "\nclaim sentence here [[sources/s1]]\n"  # ~5 KB
     for i in range(30):
         _write_wiki_entity(kb_root, f"entity-{i:02d}", "test-domain", long_body)
 
     pages = _gather_existing_pages("test-domain")
 
-    assert len(pages) == 30
-    prompt_block = build_plan_user_prompt("source text", pages)
-    # The existing-pages section alone must be ≤15 KB
-    existing_section_bytes = len("\n".join(pages.values()).encode())
-    assert existing_section_bytes <= 15_000, (
-        f"Stage-1 existing-pages block is {existing_section_bytes} bytes (limit 15 000)"
-    )
+    # Every returned page carries its FULL body (incl. trailing citation), not a
+    # truncated snippet.
+    for content in pages.values():
+        assert "[[sources/s1]]" in content, "full body (with citation) must be sent"
+        assert "…" not in content, "no snippet-truncation ellipsis"
+    # The budget is enforced by dropping overflow pages, so 30×5KB does not all fit.
+    total = sum(len(c.encode()) for c in pages.values())
+    assert total <= _EXISTING_PAGES_BUDGET, f"{total} bytes exceeds budget"
+    assert len(pages) < 30, "overflow pages must be dropped, not all 30 sent"
+    assert len(pages) >= 1
 
 
 def test_gather_existing_pages_small_wiki_sends_full_body(kb_root):
