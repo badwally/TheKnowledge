@@ -10,6 +10,7 @@ license = { text = "MIT" }
 requires-python = ">=3.11"
 dependencies = [
     "PyYAML>=6.0",
+    "numpy>=1.24",  # embedding_index / demand_ledger / lint.fragmentation / embedding_eval
     "trafilatura>=1.10",
     "watchdog>=4.0",
     "mcp>=1.0",
