@@ -142,6 +142,9 @@ meta:
   categories: ["q-bio.NC", "q-bio.QM"]
   doi: "<doi if available>"
   abstract: "<abstract text>"
+  abstract_only: true   # default; body is the abstract. Pass `wiki ingest --fetch-pdf`
+                        # to download the PDF and use its full text as the body
+                        # (saved as a `raw/arxiv/<id>.pdf` sidecar; sets this false).
 
 # type: pubmed
 meta:

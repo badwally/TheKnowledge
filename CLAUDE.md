@@ -36,7 +36,7 @@ This file is the agent control surface. `WIKI.md` is the conventions reference. 
 
 | Task | Command |
 |---|---|
-| Ingest single source (URL, PDF, audio, m4b) | `wiki ingest <path-or-url> [--domain X] [--with-plan] [--draft]` |
+| Ingest single source (URL, PDF, audio, m4b) | `wiki ingest <path-or-url> [--domain X] [--with-plan] [--draft] [--fetch-pdf]` |
 | Ingest a whole vault | `wiki batch-ingest <vault> --legacy-import --domain <slug>` |
 | **Retrieve a grounding context block (default RAG call)** | `wiki retrieve "<question>" [--domain X \| --domains a,b] [--k N] [--budget CHARS]` |
 | Answer from the wiki layer (local, NLM-independent) | `wiki answer "<question>" [--domain X] [--file]` |

@@ -17,6 +17,7 @@ A system in which multiple LLM agents — each autonomously using tools in a loo
 
 ## Key claims
 
+
 - A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together, and introduces new challenges in agent coordination, evaluation, and reliability [[sources/pdf-f478e5f11837]].
 - Multi-agent systems excel especially for breadth-first queries that involve pursuing multiple independent directions simultaneously, by distributing work across agents with separate context windows to add capacity for parallel reasoning [[sources/pdf-f478e5f11837]].
 - In Anthropic's BrowseComp analysis, three factors explained 95% of the performance variance: token usage alone explained 80% of the variance, with the number of tool calls and model choice as the remaining explanatory factors [[sources/pdf-f478e5f11837]].
@@ -25,10 +26,11 @@ A system in which multiple LLM agents — each autonomously using tools in a loo
 - Domains that require all agents to share the same context, or that involve many dependencies between agents, are not a good fit today; most coding tasks involve fewer truly parallelizable subtasks than research, and current LLM agents are not yet great at coordinating and delegating in real time [[sources/pdf-f478e5f11837]].
 - Multi-agent systems excel at valuable tasks that involve heavy parallelization, information that exceeds single context windows, and interfacing with numerous complex tools [[sources/pdf-f478e5f11837]].
 
+- Arbor instantiates the coordinator/executor multi-agent split for long-horizon autonomous research: a persistent long-lived coordinator maintains global research state as a hypothesis tree (iterating Observe → Ideate → Select → Dispatch → Backpropagate → Decide), while short-lived executors each implement and test a single hypothesis in an isolated git worktree — an approach termed Hypothesis-Tree Refinement (HTR). Across six real research tasks spanning model training, harness engineering, and data synthesis, Arbor achieves the best held-out result on all six, attaining more than 2.5× the average relative held-out gain over baselines [[sources/arxiv-2606.11926]].
 ## Sources
 
 - [[sources/pdf-f478e5f11837]]
-
+- [[sources/arxiv-2606.11926]]
 ## Related
 
 - [[concepts/orchestrator-worker-pattern]]
