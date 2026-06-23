@@ -32,7 +32,6 @@ from gateway.plan import (
     Plan,
     PlanClient,
     PlanError,
-    build_plan_prompt,
     parse_plan_response,
 )
 
@@ -548,6 +547,39 @@ def _authorship_model(front: dict, body: str) -> str:
     return model_for("plan_authorship")
 
 
+# T3: how many validate-then-repair rounds to attempt on a rejected plan. The
+# validator emits precise, file-relative errors (entity-kind, citation-grounding
+# with line numbers); feeding them back lets the agent fix one bad page in an
+# otherwise-good multi-page plan instead of discarding all 5-15 pages.
+_MAX_REPAIR_ATTEMPTS = 1
+
+
+def _call_plan_client(plan_client: PlanClient, *, system: str, user: str) -> str:
+    """Dispatch one planning call, preferring telemetry-emitting variants.
+
+    Stubs in tests typically implement only `call_split` or `call`; the
+    telemetry variants are skipped there. The repair loop passes a different
+    `user` each round while `system` stays constant."""
+    from gateway.log import log_llm_call
+
+    call_split_with_usage = getattr(plan_client, "call_split_with_usage", None)
+    call_with_usage = getattr(plan_client, "call_with_usage", None)
+    call_split = getattr(plan_client, "call_split", None)
+
+    if callable(call_split_with_usage):
+        result = call_split_with_usage(system=system, user=user)
+        log_llm_call("plan_authorship", result)
+        return result.text
+    if callable(call_split):
+        return call_split(system=system, user=user)
+    combined = system + "\n" + user
+    if callable(call_with_usage):
+        result = call_with_usage(combined)
+        log_llm_call("plan_authorship", result)
+        return result.text
+    return plan_client.call(combined)
+
+
 def _invoke_plan_and_apply(
     *,
     front: dict,
@@ -555,59 +587,81 @@ def _invoke_plan_and_apply(
     domain: str | None,
     plan_client: PlanClient | None,
     draft: bool,
+    dry_run: bool = False,
+    max_repair: int = _MAX_REPAIR_ATTEMPTS,
 ) -> OperationResult:
     if plan_client is None:
         from gateway.plan import ClaudeCLIPlanClient
-        from gateway.llm import model_for
 
         plan_client = ClaudeCLIPlanClient(model=_authorship_model(front, body))
+
+    from gateway.plan import (
+        build_plan_repair_prompt,
+        build_plan_system_prompt,
+        build_plan_user_prompt,
+    )
 
     source_text = _format_source_for_plan(front, body)
     existing_pages = _gather_existing_pages(domain, query=str(front.get("title", "")))
 
-    # K5: prefer telemetry-emitting variants. Stubs in tests typically only
-    # implement plain `call()` — that path silently skips telemetry.
-    call_split_with_usage = getattr(plan_client, "call_split_with_usage", None)
-    call_with_usage = getattr(plan_client, "call_with_usage", None)
-    call_split = getattr(plan_client, "call_split", None)
-    try:
-        if callable(call_split_with_usage):
-            from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
-            from gateway.log import log_llm_call
+    system = build_plan_system_prompt()
+    user = build_plan_user_prompt(source_text, existing_pages)
 
-            result = call_split_with_usage(
-                system=build_plan_system_prompt(),
-                user=build_plan_user_prompt(source_text, existing_pages),
+    attempt = 0
+    while True:
+        try:
+            raw = _call_plan_client(plan_client, system=system, user=user)
+        except Exception as e:
+            return OperationResult(success=False, errors=[f"plan client failed: {e}"])
+
+        try:
+            plan = parse_plan_response(raw, expected_source_id=front["id"])
+            parse_errors: list[str] = []
+        except PlanError as e:
+            plan = None
+            parse_errors = [f"plan JSON could not be parsed: {e}"]
+
+        if plan is not None:
+            result = (
+                _dry_run_plan(plan) if dry_run else apply_plan(plan, draft=draft)
             )
-            log_llm_call("plan_authorship", result)
-            raw = result.text
-        elif callable(call_split):
-            from gateway.plan import build_plan_system_prompt, build_plan_user_prompt
-
-            raw = call_split(
-                system=build_plan_system_prompt(),
-                user=build_plan_user_prompt(source_text, existing_pages),
-            )
-        elif callable(call_with_usage):
-            from gateway.log import log_llm_call
-
-            result = call_with_usage(build_plan_prompt(source_text, existing_pages))
-            log_llm_call("plan_authorship", result)
-            raw = result.text
+            errors = [] if result.success else list(result.errors)
         else:
-            raw = plan_client.call(build_plan_prompt(source_text, existing_pages))
-    except Exception as e:
-        return OperationResult(success=False, errors=[f"plan client failed: {e}"])
+            result = OperationResult(success=False, errors=parse_errors)
+            errors = parse_errors
 
-    try:
-        plan = parse_plan_response(raw, expected_source_id=front["id"])
-    except PlanError as e:
-        return OperationResult(
-            success=False,
-            errors=[f"could not parse plan: {e}"],
+        if result.success or attempt >= max_repair:
+            if attempt > 0 and result.success:
+                result.warnings.append(
+                    f"authorship succeeded after {attempt} repair attempt(s)"
+                )
+            return result
+
+        # T3: feed the validator/parse errors back for one corrective pass.
+        attempt += 1
+        user = build_plan_repair_prompt(
+            source_text, existing_pages, prior_response=raw, errors=errors
         )
 
-    return apply_plan(plan, draft=draft)
+
+def _dry_run_plan(plan) -> OperationResult:
+    """T4.12: validate a plan and report what it WOULD do, writing nothing."""
+    from gateway.core import AuthorshipReport
+
+    report = AuthorshipReport(
+        pages_created=[u.target_path for u in plan.updates if u.update_kind == "create"],
+        pages_updated=[u.target_path for u in plan.updates if u.update_kind == "update"],
+        contradictions=list(plan.contradictions),
+    )
+    return OperationResult(
+        success=True,
+        summary=(
+            f"[dry-run] would author {len(plan.updates)} page(s) for {plan.source_id}: "
+            f"{len(report.pages_created)} create, {len(report.pages_updated)} update; "
+            f"{len(plan.contradictions)} contradiction(s)"
+        ),
+        authorship_report=report,
+    )
 
 
 def _format_source_for_plan(front: dict, body: str) -> str:

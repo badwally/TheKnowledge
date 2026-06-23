@@ -12,10 +12,53 @@ from pathlib import Path
 
 import pytest
 
+import json
+
 from gateway import frontmatter as fm
 from gateway import paths
 from gateway.ops.apply_plan import apply_plan
+from gateway.ops.ingest import _invoke_plan_and_apply
 from gateway.plan import Plan, WikiUpdate
+
+
+class _QueuedPlanClient:
+    """Stub plan client returning queued responses; counts calls (for the
+    repair loop). Implements `call_split` (the dispatch's preferred stub path)."""
+
+    def __init__(self, responses):
+        self._responses = list(responses)
+        self.calls = 0
+
+    def call_split(self, *, system: str, user: str) -> str:
+        self.calls += 1
+        return self._responses.pop(0)
+
+
+def _entity_plan_json(entity_kind: str, source_id: str = "yt-integ001A") -> str:
+    front = {
+        "type": "entity",
+        "slug": "arbor-system",
+        "canonical_name": "Arbor",
+        "entity_kind": entity_kind,
+        "domains": ["d-integ"],
+    }
+    body = (
+        f"# Arbor\n\n## Summary\n\nArbor is grounded in the source [[sources/{source_id}]].\n\n"
+        f"## Key facts\n\n- A fact established by the source [[sources/{source_id}]].\n\n"
+        f"## Sources\n\n- [[sources/{source_id}]]\n\n## Related\n\n- [[concepts/related-thing]]\n"
+    )
+    return json.dumps(
+        {
+            "source_id": source_id,
+            "updates": [
+                {
+                    "target_path": "wiki/entities/arbor-system.md",
+                    "update_kind": "create",
+                    "content": fm.serialize(front, body),
+                }
+            ],
+        }
+    )
 
 
 def _seed_source(kb_root, make_source, source_id="yt-integ001A", domain="d-integ"):
@@ -259,3 +302,57 @@ def test_reapplying_identical_body_does_not_thrash_last_updated(kb_root, make_so
     assert front_after["last_updated"] == lu_before, (
         "last_updated thrashed on an identical-body re-apply (not convergent)"
     )
+
+
+# --- T3: validate-then-repair loop ------------------------------------------
+
+_FRONT = {"id": "yt-integ001A", "type": "youtube", "title": "Arbor", "domains": ["d-integ"]}
+
+
+def test_authorship_repairs_after_validator_rejection(kb_root, make_source):
+    """First plan uses entity_kind 'system' (rejected); the gateway feeds the
+    validator error back and the agent's corrected plan ('software') applies."""
+    _seed_source(kb_root, make_source)
+    client = _QueuedPlanClient([_entity_plan_json("system"), _entity_plan_json("software")])
+
+    result = _invoke_plan_and_apply(
+        front=_FRONT, body="source body", domain="d-integ", plan_client=client, draft=False
+    )
+
+    assert result.success, result.errors
+    assert client.calls == 2, "should have made one repair attempt"
+    pf, _ = fm.parse((paths.wiki_dir() / "entities" / "arbor-system.md").read_text())
+    assert pf["entity_kind"] == "software"
+
+
+def test_authorship_gives_up_after_max_repair(kb_root, make_source):
+    """If both the original and the repair are invalid, fail cleanly after the
+    bounded number of attempts (no infinite loop)."""
+    _seed_source(kb_root, make_source)
+    client = _QueuedPlanClient([_entity_plan_json("system"), _entity_plan_json("alsobad")])
+
+    result = _invoke_plan_and_apply(
+        front=_FRONT, body="source body", domain="d-integ", plan_client=client, draft=False
+    )
+
+    assert not result.success
+    assert client.calls == 2
+    assert not (paths.wiki_dir() / "entities" / "arbor-system.md").exists()
+
+
+# --- T4.12: dry-run -----------------------------------------------------------
+
+
+def test_dry_run_reports_plan_without_writing(kb_root, make_source):
+    """--dry-run validates the plan and reports created/updated, writing nothing."""
+    _seed_source(kb_root, make_source)
+    client = _QueuedPlanClient([_entity_plan_json("software")])
+
+    result = _invoke_plan_and_apply(
+        front=_FRONT, body="b", domain="d-integ", plan_client=client, draft=False, dry_run=True
+    )
+
+    assert result.success
+    assert "[dry-run]" in result.summary
+    assert result.authorship_report.pages_created == ["wiki/entities/arbor-system.md"]
+    assert not (paths.wiki_dir() / "entities" / "arbor-system.md").exists(), "dry-run wrote a file"

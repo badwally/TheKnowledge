@@ -436,6 +436,62 @@ def build_plan_user_prompt(source_text: str, existing_pages: dict[str, str]) -> 
     )
 
 
+_PLAN_REPAIR_TEMPLATE = """\
+Your previous plan was REJECTED by the gateway validator. Fix ONLY the listed
+errors and return a corrected JSON plan in the exact same schema. Preserve every
+other update unchanged, and do not introduce new errors. In particular: keep all
+existing `[[sources/<id>]]` citations (dropping one is rejected), use only the
+allowed `entity_kind` values, give every claim sentence an inline same-line
+citation, and include all required sections.
+
+## Validator errors to fix
+
+{errors}
+
+## Your previous (rejected) response
+
+```
+{prior_response}
+```
+
+## Source under evaluation (unchanged)
+
+```
+{source_text}
+```
+
+## Existing wiki pages (unchanged)
+
+{existing_pages_section}
+"""
+
+
+def build_plan_repair_prompt(
+    source_text: str,
+    existing_pages: dict[str, str],
+    *,
+    prior_response: str,
+    errors: list[str],
+) -> str:
+    """Per-attempt repair payload: the validator errors + the rejected response,
+    asking the agent to fix only those errors. Reuses the static system prompt."""
+    if not existing_pages:
+        existing_section = "_(no existing wiki pages yet for this domain)_"
+    else:
+        blocks = [
+            f"### {path}\n\n```\n{existing_pages[path]}\n```"
+            for path in sorted(existing_pages.keys())
+        ]
+        existing_section = "\n\n".join(blocks)
+    error_lines = "\n".join(f"- {e}" for e in errors) or "- (no detail provided)"
+    return _PLAN_REPAIR_TEMPLATE.format(
+        errors=error_lines,
+        prior_response=prior_response.replace("\x00", "")[:20000],
+        source_text=source_text.replace("\x00", ""),
+        existing_pages_section=existing_section,
+    )
+
+
 def build_plan_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
     """Backwards-compatible: concatenated system + user prompt.
 
