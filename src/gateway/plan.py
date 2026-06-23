@@ -256,11 +256,15 @@ existing wiki claims.
 
 - Slugs: lowercase, hyphenated, semantic; reflect the entity/concept's canonical short name (e.g., `<topic-name>`, `<framework-name>`, `<statute-id>`).
 
-- Citation grounding is mandatory. Every factual claim in entity / concept /
-  synthesis pages must be followed by `[[sources/<id>]]` linking to the
-  source page. The validator rejects pages without proper citation.
+- Citation grounding is mandatory. The validator's rule is operational, not
+  vague: **every claim sentence (5+ words, ending in `.` or `!`) must carry a
+  `[[sources/<id>]]` citation ON THE SAME LINE as the claim.** A citation in the
+  Sources section does NOT satisfy a claim line elsewhere — cite inline, on each
+  claim line. Rhetorical questions and short labels are exempt. The validator
+  rejects any page with an uncited claim line.
 
-- Each page has required sections (full schemas in WIKI.md):
+- Each page has required sections (exact names; the validator rejects a page
+  missing any of them):
   - entity:    Summary, Key facts, Sources, Related
   - concept:   Summary, Key claims, Sources, Related
   - synthesis: Synthesis, Sources cited (and optional Open questions)
@@ -269,6 +273,19 @@ existing wiki claims.
   - entity:    type, slug, canonical_name, entity_kind, domains
   - concept:   type, slug, canonical_name, domains
   - synthesis: type, slug, title, domains, question
+
+- `entity_kind` (entity pages only) MUST be exactly one of this controlled
+  vocabulary — any other value is rejected:
+  __ENTITY_KIND_ENUM__
+  Pick the closest: a company/lab/agency → `organization`; a research paper →
+  `paper`; a law or bill → `statute` or `regulation`; a published spec → `standard`;
+  a method/architecture/framework/system → `model` or `artifact`; a software tool
+  or library → `software`; a named dataset → `dataset`; an evaluation/benchmark →
+  `benchmark`; a person → `person`; a commercial product → `product`; a medication
+  → `drug`; if nothing fits → `other`.
+
+- Do NOT emit `created_at`, `last_updated`, or `sources_count` — the gateway
+  auto-stamps these. Emitting a malformed timestamp will be rejected.
 
 ## Your task
 
@@ -307,32 +324,36 @@ Severity levels:
 Return ONLY a JSON object:
 
 ```
-{{
+{
   "source_id": "<exact source_id from the source frontmatter>",
   "rationale": "<one sentence: why these updates>",
   "updates": [
-    {{
+    {
       "target_path": "wiki/entities/<slug>.md",
       "update_kind": "create" | "update",
       "content": "<FULL canonical markdown for the page (frontmatter + body)>",
       "rationale": "<why this page changes>"
-    }}
+    }
   ],
   "contradictions": [
-    {{
+    {
       "existing_page": "wiki/concepts/<slug>.md",
       "existing_claim": "<the existing claim text>",
       "new_claim": "<the conflicting claim from the new source>",
       "source_id": "<source_id of the new source>",
       "severity": "minor" | "moderate" | "major"
-    }}
+    }
   ]
-}}
+}
 ```
 
 Touch as many pages as the source genuinely informs (typically 5–15).
-For `update`s, the `content` field replaces the page entirely — preserve
-existing claims and citations and integrate the new ones.
+For `update`s, the `content` field replaces the page entirely. The full current
+body of every page you update is provided to you below — you MUST copy every
+existing claim and its `[[sources/<id>]]` citation verbatim into your new
+`content` and then integrate the new claims. **The gateway rejects any update
+that drops a citation the page already had** — never delete a prior claim or
+citation while integrating; only add.
 
 If no contradictions are found, return an empty `"contradictions": []`.
 
@@ -348,6 +369,23 @@ If no contradictions are found, return an empty `"contradictions": []`.
 If the source genuinely warrants a new entity/concept, create it. Otherwise
 update the existing one. Concept and entity pages must have every claim
 followed by `[[sources/<id>]]` linking to a source already on disk.
+
+## Worked example
+
+A valid `create` for a concept page, showing inline same-line citations and the
+exact required sections (frontmatter timestamps omitted — the gateway stamps them):
+
+```
+{
+  "target_path": "wiki/concepts/hypothesis-tree-search.md",
+  "update_kind": "create",
+  "content": "---\\ntype: concept\\nslug: hypothesis-tree-search\\ncanonical_name: Hypothesis-Tree Search\\ndomains:\\n- ai-and-agents\\n---\\n\\n# Hypothesis-Tree Search\\n\\n## Summary\\n\\nA search strategy that stores research state as a persistent tree of hypotheses, expanding and pruning branches as evidence accrues [[sources/example-source-id]].\\n\\n## Key claims\\n\\n- A persistent coordinator maintains global state while short-lived executors test one hypothesis each in isolation [[sources/example-source-id]].\\n- The approach reported more than 2.5x the average baseline gain across six research tasks [[sources/example-source-id]].\\n\\n## Sources\\n\\n- [[sources/example-source-id]]\\n\\n## Related\\n\\n- [[concepts/autonomous-research-agent]]\\n",
+  "rationale": "New concept introduced by this source"
+}
+```
+
+Note every claim sentence ends with `[[sources/example-source-id]]` on the same
+line, all four required sections are present, and no timestamps are emitted.
 """
 
 
@@ -365,8 +403,16 @@ _PLAN_USER_TEMPLATE = """\
 
 
 def build_plan_system_prompt() -> str:
-    """Static prefix: conventions + task instructions + JSON schema."""
-    return _PLAN_SYSTEM_PROMPT
+    """Conventions + task instructions + JSON schema.
+
+    Injects the live `entity_kind` controlled vocabulary so the agent picks from
+    the closed set the validator enforces (rather than free-forming a rejected
+    value). Deterministic for a given validator enum.
+    """
+    from gateway.validator import ENTITY_KIND_ENUM
+
+    enum_line = ", ".join(f"`{k}`" for k in sorted(ENTITY_KIND_ENUM))
+    return _PLAN_SYSTEM_PROMPT.replace("__ENTITY_KIND_ENUM__", enum_line)
 
 
 def build_plan_user_prompt(source_text: str, existing_pages: dict[str, str]) -> str:
