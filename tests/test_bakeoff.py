@@ -21,5 +21,5 @@ def test_score_config_reports_recall_and_zero_leaks(kb_root: Path, tmp_path: Pat
     g.write_text(yaml.safe_dump({"queries": [
         {"q": "losing pleasure and drive", "domain": "d", "expect": ["anhedonia"]}]}))
     res = score_config(str(g), k=10)
-    assert res["n"] == 1 and 0.0 <= res["recall_at_k"] <= 1.0
+    assert res["n"] == 1 and res["recall_at_k"] == 1.0
     assert res["placeholder_leaks"] == 0
