@@ -94,6 +94,12 @@ def embedding_shadow_db_path() -> Path:
     return index_dir() / "embeddings.shadow.db"
 
 
+def retrieval_embedding_db_path() -> Path:
+    """Dense neural retrieval index (Hole 2). Separate from the lexical embedding
+    index so dedup/demand stay on lexical-fallback-v1. Derived/gitignored."""
+    return index_dir() / "retrieval.db"
+
+
 def index_path() -> Path:
     return knowledge_root() / "index.md"
 
