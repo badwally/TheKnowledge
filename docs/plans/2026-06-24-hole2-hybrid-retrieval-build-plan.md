@@ -787,6 +787,8 @@ git commit -m "docs(rag): Hole-2 bake-off results + locked retrieval config"
 - Consumes: the winning encoder spec (Task C3).
 - Produces: `retrieve_op(...)` runs the hybrid path by default; the lexical-only path stays reachable via `hybrid=False` for the bake-off control and tests.
 
+**Carry-forward finding (whole-branch review, 2026-06-24):** `_hybrid_hits` currently hardcodes `search_fts(..., include_drafts=True)` and ignores the caller's `include_drafts`. Inert while hybrid is opt-in, but it becomes a live inconsistency the moment this task makes hybrid the default (a `retrieve(include_drafts=False, hybrid=True)` caller would still get drafts). **Fix as part of D1:** thread `include_drafts` through `_hybrid_hits` into its lexical leg (`src/gateway/ops/retrieve.py`, the `_hybrid_hits` `search_fts` call), and add a test that `retrieve(include_drafts=False, hybrid=True)` excludes drafts.
+
 - [ ] **Step 1: Write the failing test**
 
 ```python
