@@ -278,3 +278,22 @@ def test_mcp_wiki_retrieve_accepts_domains(kb_root: Path):
     # must appear as <page domain="..."> attributes (balanced, not collapsed).
     assert 'domain="alpha"' in res["summary"]
     assert 'domain="beta"' in res["summary"]
+
+
+# ---------------------------------------------------------------------------
+# RRF fusion helper
+# ---------------------------------------------------------------------------
+from gateway.ops.retrieve import _rrf_fuse
+
+
+def test_rrf_fuse_rewards_agreement_and_merges():
+    lexical = ["a", "b", "c"]
+    dense   = ["b", "d", "a"]
+    fused = _rrf_fuse([lexical, dense], k_rrf=60)
+    assert set(fused) == {"a", "b", "c", "d"}     # union, deduped
+    assert fused[0] == "b"                          # appears high in BOTH lists → top
+    assert fused.index("a") < fused.index("c")      # 'a' in both beats 'c' in one
+
+
+def test_rrf_fuse_single_list_preserves_order():
+    assert _rrf_fuse([["x", "y", "z"]]) == ["x", "y", "z"]

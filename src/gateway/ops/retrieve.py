@@ -179,6 +179,21 @@ def _merge_domains(
     return merged[:k]
 
 
+def _rrf_fuse(ranked_lists: list[list[str]], k_rrf: int = 60) -> list[str]:
+    """Reciprocal Rank Fusion. score(id) = Σ 1/(k_rrf + rank) over each list the id
+    appears in (rank is 0-based). Returns ids by descending fused score; ties broken
+    by first-seen order for determinism."""
+    scores: dict[str, float] = {}
+    first_seen: dict[str, int] = {}
+    seq = 0
+    for lst in ranked_lists:
+        for rank, ident in enumerate(lst):
+            scores[ident] = scores.get(ident, 0.0) + 1.0 / (k_rrf + rank)
+            if ident not in first_seen:
+                first_seen[ident] = seq; seq += 1
+    return sorted(scores, key=lambda i: (-scores[i], first_seen[i]))
+
+
 def retrieve(
     query: str,
     *,
