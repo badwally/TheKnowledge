@@ -26,3 +26,14 @@ def test_dense_section_hits_finds_paraphrase_match(kb_root: Path):
     assert hits, "expected dense neighbors"
     assert any(rel.endswith("vagal.md") for rel, _heading, _dist in hits)
     assert all(isinstance(d, float) for _r, _h, d in hits)
+
+
+def test_hits_for_sections_populates_page_metadata(kb_root: Path):
+    _page("alpha", "## Mechanism\n\nbody about alpha topic.\n")
+    search_index.refresh(rebuild=True)
+    rel = "wiki/concepts/alpha.md"
+    hits = search_index.hits_for_sections([(rel, "Mechanism"), (rel, "Nonexistent")])
+    assert (rel, "Mechanism") in hits
+    h = hits[(rel, "Mechanism")]
+    assert h.slug == "alpha" and h.title == "alpha" and h.page_type == "concept"
+    assert (rel, "Nonexistent") not in hits          # missing section omitted
