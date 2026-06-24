@@ -65,6 +65,7 @@ Candidate sweep (initial): Qwen3-Embedding-{0.6B, 4B} × dim {256, 512, native} 
   - merge-map eval: 0 regressions (untouched — dedup encoder unchanged).
   - embedding namespaces OK (`entity`/`question` unchanged; `section` retrieval is a new, separately-gated metric).
   - **New acceptance metric:** probe recall@10 ≥ target (~0.85) on `semantic_mismatch`, wired as a retrieve-path eval (the Hole-1 `probe_retrieve.py` scorer promoted into the harness).
+  - **Synthetic invariant gate (D2, locked):** `tests/test_retrieval_probe_gate.py` — hybrid surfaces "anhedonia" for lay query "inability to feel happiness" where lexical-only returns nothing; teeth-verified (precondition holds RED, hybrid assertion holds GREEN with stub encoder). Floor: hybrid must surface jargon page; lexical-only must not.
 - **Dimension not pinned at 256** — bake-off sweeps it; operating points recalibrated for the winner.
 
 **Plug-in points (real code):**
