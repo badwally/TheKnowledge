@@ -121,6 +121,7 @@ SUBCOMMANDS: dict[str, str] = {
     "policy-edit": "Submit a policy-edit CommitGate intent under the server principal; gates on eval-recall + dedup precision (G7, human-CLI-only)",
     "commit-worker": "Drain the deposit queue: --once (drain to empty) or --loop (foreground poll) (D0, build-tier)",
     "demand-cluster": "Submit synthesis intents for triggered corpus-gap clusters (requires --trigger; no-op otherwise) (D1, build-tier)",
+    "eval-embedding-bakeoff": "Sweep retrieval encoder configs on the probe + latency (Hole-2, C2)",
 }
 
 IMPLEMENTED: set[str] = {
@@ -202,6 +203,7 @@ IMPLEMENTED: set[str] = {
     "policy-edit",
     "commit-worker",
     "demand-cluster",
+    "eval-embedding-bakeoff",
 }
 
 
@@ -1492,6 +1494,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_evalret.add_argument("--k", type=int, default=10, help="Cutoff for recall@k and ranked depth (default: 10)")
     p_evalret.add_argument("--compare", action="store_true", help="Score both fts and grep side by side")
 
+    # eval-embedding-bakeoff (Hole-2, C2): sweep encoder configs on probe + latency
+    p_bake = subparsers.add_parser("eval-embedding-bakeoff", help=SUBCOMMANDS["eval-embedding-bakeoff"])
+    p_bake.add_argument("--goldens", default=".knowledge/eval/retrieval/semantic_mismatch.yaml",
+                        help="Path to goldens YAML (default: .knowledge/eval/retrieval/semantic_mismatch.yaml)")
+    p_bake.add_argument("--k", type=int, default=10, help="Recall cutoff (default: 10)")
+
     # routine (TOOL-12)
     p_routine = subparsers.add_parser("routine", help=SUBCOMMANDS["routine"])
     p_routine_sub = p_routine.add_subparsers(dest="routine_name", metavar="NAME")
@@ -1738,6 +1746,8 @@ def main(argv: list[str] | None = None) -> int:
         return _run_answer_cmd(ns)
     if ns.subcommand == "eval-retrieval":
         return _run_eval_retrieval_cmd(ns)
+    if ns.subcommand == "eval-embedding-bakeoff":
+        return _run_eval_embedding_bakeoff_cmd(ns)
     if ns.subcommand == "index":
         return _run_index_cmd(ns)
     if ns.subcommand == "routine":
@@ -2928,6 +2938,19 @@ def _run_eval_retrieval_cmd(ns: argparse.Namespace) -> int:
         report = _rev.evaluate(r, goldens=goldens, k=ns.k)
         print(_rev.format_report(report))
         print()
+    return 0
+
+
+def _run_eval_embedding_bakeoff_cmd(ns: argparse.Namespace) -> int:
+    import json as _json
+    import os as _os
+    import yaml as _y
+    from gateway.scripts.bakeoff import run_sweep
+
+    qs = [(e["q"], e.get("domain")) for e in _y.safe_load(open(ns.goldens))["queries"]]
+    configs = [{"encoder": _os.environ.get("WIKI_RETRIEVAL_ENCODER", "stub"), "k_rrf": 60}]
+    rows = run_sweep(configs, ns.goldens, qs, k=ns.k)
+    print(_json.dumps(rows, indent=2))
     return 0
 
 

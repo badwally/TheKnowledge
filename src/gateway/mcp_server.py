@@ -68,6 +68,10 @@ CLI_ONLY: frozenset[str] = frozenset(
         # query set. It scores retrieval quality during development; agents
         # have no reason to invoke it at runtime. CLI-only by design.
         "eval-retrieval",
+        # `eval-embedding-bakeoff` (Hole-2, C2) is a dev/measurement harness that
+        # sweeps encoder configs and scores latency. Agents have no reason to
+        # trigger encoder sweeps at runtime. CLI-only by design.
+        "eval-embedding-bakeoff",
         # `schedule` is multi-action and runs arbitrary shell commands.
         # Exposing add/remove/enable to agents would let an agent grant
         # itself persistent execution. Keep CLI-only (K4 / wave-2). If
