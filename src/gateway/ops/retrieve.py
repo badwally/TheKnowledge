@@ -184,9 +184,10 @@ def _merge_domains(
 # Dense-weighted RRF. The dense bi-encoder's top-10 is far stronger than BM25 on
 # paraphrase queries (4B bake-off: dense-only R@10 0.905 vs equal-weight hybrid 0.667),
 # so the dense list earns a higher fusion weight; BM25 stays at 1.0 to keep
-# lexically-exact queries reachable. Tunable via WIKI_RRF_DENSE_WEIGHT for the sweep;
-# the chosen value is the module default below.
-_DENSE_RRF_WEIGHT = 1.0
+# lexically-exact queries reachable. w=2.0 is the robust knee of the 4B sweep
+# (probe R@10 0.667→0.857; easy goldens un-regressed); higher w approaches dense-only.
+# Tunable via WIKI_RRF_DENSE_WEIGHT to re-sweep without a rebuild.
+_DENSE_RRF_WEIGHT = 2.0
 
 
 def _dense_rrf_weight() -> float:
@@ -211,12 +212,15 @@ def _rrf_fuse(ranked_lists: list[list[str]], k_rrf: int = 60,
     return sorted(scores, key=lambda i: (-scores[i], first_seen[i]))
 
 
-def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str) -> list:
+def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str,
+                 include_drafts: bool) -> list:
     """Fuse BM25 (authority order) with dense section NN via dense-weighted RRF;
-    best-per-page, ≤k."""
+    best-per-page, ≤k. `include_drafts` is honored on the lexical leg (carried from
+    the caller, not hard-coded) so the hybrid path obeys the same draft gate as the
+    FTS-only path; dense hits are content-gated downstream in `retrieve`."""
     lexical = search_index.search_fts(
         query, scope=scope, domain=domain, limit=k * 2,
-        order="authority", include_drafts=True,
+        order="authority", include_drafts=include_drafts,
     )
     lex_ids = [f"{h.rel_path}#{h.heading}" for h in lexical]
     dense = dense_section_hits(query, k=k * 2)  # (rel, heading, dist)
@@ -250,7 +254,7 @@ def retrieve(
     max_section_chars: int = _DEFAULT_MAX_SECTION_CHARS,
     scope: str = "wiki",
     include_drafts: bool = True,
-    hybrid: bool = False,
+    hybrid: bool = True,
 ) -> tuple[str, list[RetrievedSection]]:
     """Assemble a bounded context block for `query`. Returns (block, sections).
 
@@ -266,6 +270,12 @@ def retrieve(
     hid ~1,100 pages from the default grounding path. Drafts compete in the pool
     demoted by `_DRAFT_PENALTY`; placeholder-stub sections are content-gated out
     (`is_placeholder_section`); surfaced drafts are tagged `draft="true"`.
+
+    `hybrid=True` is the default single-domain path (Hole 2): BM25 is fused with
+    dense section NN via dense-weighted RRF (`_DENSE_RRF_WEIGHT`) so paraphrase
+    queries reach pages BM25 alone misses. With no built/loaded dense index the
+    dense leg returns nothing and the path degrades to lexical-only. The neural
+    encoder is ENV-selected (`WIKI_RETRIEVAL_ENCODER`); CI/tests use the stub.
     """
     if not query or not query.strip():
         return "", []
@@ -279,7 +289,8 @@ def retrieve(
     else:
         single = multi[0] if multi else domain
         if hybrid:
-            hits = _hybrid_hits(query.strip(), domain=single, k=k, scope=scope)
+            hits = _hybrid_hits(query.strip(), domain=single, k=k, scope=scope,
+                                include_drafts=include_drafts)
         else:
             hits = search_index.search_fts(
                 query.strip(),

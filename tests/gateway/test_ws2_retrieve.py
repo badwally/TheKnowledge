@@ -318,6 +318,13 @@ def test_dense_rrf_weight_reads_env_at_call_time(monkeypatch):
     assert _dense_rrf_weight() == 3.5                         # sweep override honored
 
 
+def test_dense_rrf_weight_default_is_calibrated_knee():
+    # Baked from the 4B sweep: w=2.0 is the robust knee (probe R@10 0.667→0.857
+    # without regressing the easy goldens). Pinned so a default change is deliberate.
+    from gateway.ops.retrieve import _DENSE_RRF_WEIGHT
+    assert _DENSE_RRF_WEIGHT == 2.0
+
+
 # ---------------------------------------------------------------------------
 # B3: hybrid BM25+dense path
 # ---------------------------------------------------------------------------
