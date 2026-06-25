@@ -53,7 +53,13 @@ class MlxQwen3Encoder:
         self._ensure()
         out = generate(self._model, self._tok, list(texts), max_length=self.max_length)
         # mlx-embeddings returns a BaseModelOutput; .text_embeds is the pooled (n, native_dim) matrix.
-        arr = np.array(out.text_embeds, dtype=np.float32)[:, : self.dim]   # Matryoshka truncate
+        # Quantized builds (4B/8B *-DWQ) emit bfloat16, whose PEP-3118 buffer numpy can't read
+        # directly; .tolist() materializes to Python floats first (also avoids importing mlx.core,
+        # keeping the stub/fake test path CI-safe). float32 builds (0.6B-8bit) skip the round-trip.
+        te = out.text_embeds
+        if not isinstance(te, np.ndarray):
+            te = te.tolist()
+        arr = np.asarray(te, dtype=np.float32)[:, : self.dim]   # Matryoshka truncate
         norms = np.linalg.norm(arr, axis=1, keepdims=True)
         arr = arr / np.clip(norms, 1e-12, None)
         return arr.tolist()
