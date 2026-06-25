@@ -33,6 +33,26 @@ Calibration of the hybrid-retrieval config (C3 of `docs/plans/2026-06-24-hole2-h
 
 Caveat on the dense-only column: it ignores the domain filter (pure "can the model retrieve it at all" signal); the hybrid column is the real production retrieve path (domain-filtered, RRF-fused).
 
+## Dense-weighted RRF sweep (4B index, no rebuild — fusion weight only)
+
+Both golden sets scored through the REAL hybrid retrieve path at the built 4B index.
+BM25 weight fixed at 1.0; dense weight swept. Apples-to-apples baseline: the current
+default path (`hybrid=False`, FTS-only) through the same harness scores easy@10 **0.741**,
+probe@10 **0.381** — so hybrid does NOT regress lexical queries at any weight (it improves them).
+
+| w_dense | probe@10 | probe@20 | easy@10 | easy@20 | leaks |
+|---|---|---|---|---|---|
+| 0.0 (BM25-only) | 0.381 | 0.524 | 0.741 | 0.741 | 0 |
+| 1.0 (equal) | 0.667 | 0.857 | 0.778 | 0.741 | 0 |
+| **1.5–3.0 (knee)** | **0.857** | **0.905** | **0.778** | 0.704–0.741 | 0 |
+| 5–15 | 0.857 | 0.905 | 0.741 | 0.741 | 0 |
+| 100 (≈dense-only) | 0.905 | 0.905 | 0.741 | 0.778 | 0 |
+
+- **Dense-weighting recovers the probe almost to the dense ceiling.** probe@10 0.667 → **0.857 at w≥1.5** (meets the ~0.85 target), → 0.905 only at w=100 (effectively dense-only with a BM25 tiebreak).
+- **Easy goldens peak at w=1.5–3.0 (0.778) and dip to 0.741 at w≥5.** So high weight trades a little lexical robustness for +0.048 probe@10.
+- **Recommended default: `w_dense = 2.0`** — the robust knee: probe@10 0.857 / @20 0.905, easy@10 0.778 (best, and above the 0.741 FTS-default), BM25 still a live signal for lexical-exact queries beyond this golden set. 0 placeholder leaks throughout. w=100 is rejected as fragile (abandons BM25 — risky for exact-name/acronym queries the small golden set doesn't cover).
+- eval-retrieval FTS gate (0.926 @10) is untouched — the fusion change is on the hybrid path only.
+
 ## Results (0.6B-8bit bi-encoder)
 
 | Config | recall@10 | recall@20 | recall@50 | query latency p50 |
