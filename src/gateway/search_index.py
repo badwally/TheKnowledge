@@ -442,6 +442,42 @@ def search_fts(
     return hits[:limit]
 
 
+def hits_for_sections(pairs: list[tuple[str, str]]) -> dict[tuple[str, str], "IndexHit"]:
+    """Build IndexHits for explicit (rel_path, heading) sections (dense candidates).
+    score/rank are 0 — hybrid fusion ranks via RRF, not these fields."""
+    if not pairs:
+        return {}
+    refresh()
+    rels = list({rel for rel, _h in pairs})
+    placeholders = ",".join("?" * len(rels))
+    conn = _connect()
+    try:
+        rows = conn.execute(
+            f"""SELECT p.rel_path, p.slug, p.title, p.page_type,
+                   (SELECT domain FROM page_domains pd WHERE pd.rel_path = p.rel_path LIMIT 1),
+                   (SELECT COUNT(*) FROM links l WHERE l.target_rel = p.rel_path),
+                   p.draft, p.last_updated, p.trust
+                FROM pages p WHERE p.rel_path IN ({placeholders})""", rels,
+        ).fetchall()
+    finally:
+        conn.close()
+    by_rel = {r[0]: r for r in rows}
+    out: dict[tuple[str, str], IndexHit] = {}
+    for rel, heading in pairs:
+        r = by_rel.get(rel)
+        if r is None or not section_text(rel, heading):
+            continue
+        _, slug, title, ptype, dom, inbound, draft, last_updated, trust = r
+        out[(rel, heading)] = IndexHit(
+            rel_path=rel, slug=slug, title=title or slug, page_type=ptype,
+            domain=dom or "", heading=heading, snippet="", score=0,
+            rank=0.0, inbound_count=int(inbound), draft=bool(draft),
+            last_updated=str(last_updated or ""),
+            trust=float(trust) if trust is not None else 0.5,
+        )
+    return out
+
+
 # WS5 authority-ranking weights. BM25 stays the primary lexical signal; the
 # tier (title/slug match) and inbound-link authority lift the *canonical* page
 # of a term above pages that merely mention it; drafts and low-authority stubs

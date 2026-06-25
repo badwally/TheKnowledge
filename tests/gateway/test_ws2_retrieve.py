@@ -278,3 +278,49 @@ def test_mcp_wiki_retrieve_accepts_domains(kb_root: Path):
     # must appear as <page domain="..."> attributes (balanced, not collapsed).
     assert 'domain="alpha"' in res["summary"]
     assert 'domain="beta"' in res["summary"]
+
+
+# ---------------------------------------------------------------------------
+# RRF fusion helper
+# ---------------------------------------------------------------------------
+from gateway.ops.retrieve import _rrf_fuse
+
+
+def test_rrf_fuse_rewards_agreement_and_merges():
+    lexical = ["a", "b", "c"]
+    dense   = ["b", "d", "a"]
+    fused = _rrf_fuse([lexical, dense], k_rrf=60)
+    assert set(fused) == {"a", "b", "c", "d"}     # union, deduped
+    assert fused[0] == "b"                          # appears high in BOTH lists → top
+    assert fused.index("a") < fused.index("c")      # 'a' in both beats 'c' in one
+
+
+def test_rrf_fuse_single_list_preserves_order():
+    assert _rrf_fuse([["x", "y", "z"]]) == ["x", "y", "z"]
+
+
+# ---------------------------------------------------------------------------
+# B3: hybrid BM25+dense path
+# ---------------------------------------------------------------------------
+from gateway.ops import retrieve as retr
+
+
+def test_hybrid_surfaces_paraphrase_miss(kb_root: Path, monkeypatch):
+    # 'reward-deficit' page uses jargon; query is lay. BM25 alone misses it.
+    _page("rewarddef", "Reward deficit", "## Body\n\nAnhedonia: blunted reward sensitivity and lost motivation.\n")
+    _page("filler", "Filler page", "## Body\n\ngastric emptying vagal tax filing widget unrelated.\n")
+    search_index.refresh(rebuild=True)
+    from gateway.retrieval_index import retrieval_index
+    retrieval_index().rebuild_from_canonical()
+    # stub encoder is paraphrase-tolerant → dense pulls rewarddef for the lay query
+    block, sections = retr.retrieve("losing pleasure and drive", domain="d", hybrid=True)
+    assert any(s.slug == "rewarddef" for s in sections)
+
+
+def test_hybrid_preserves_hole1_placeholder_gate(kb_root: Path):
+    _page("stubby", "Stubby page", "## Summary\n\n_(needs population from legacy import)_\n", draft=True)
+    search_index.refresh(rebuild=True)
+    from gateway.retrieval_index import retrieval_index
+    retrieval_index().rebuild_from_canonical()
+    block, _ = retr.retrieve("needs population legacy import", domain="d", hybrid=True)
+    assert "needs population from legacy import" not in block

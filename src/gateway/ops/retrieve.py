@@ -29,6 +29,7 @@ from pathlib import Path
 
 from gateway import log, paths, search_index
 from gateway.core import OperationResult
+from gateway.retrieval_index import dense_section_hits
 
 # --- Hole 1: draft section content-gate --------------------------------------
 #
@@ -179,6 +180,49 @@ def _merge_domains(
     return merged[:k]
 
 
+def _rrf_fuse(ranked_lists: list[list[str]], k_rrf: int = 60) -> list[str]:
+    """Reciprocal Rank Fusion. score(id) = Σ 1/(k_rrf + rank) over each list the id
+    appears in (rank is 0-based). Returns ids by descending fused score; ties broken
+    by first-seen order for determinism."""
+    scores: dict[str, float] = {}
+    first_seen: dict[str, int] = {}
+    seq = 0
+    for lst in ranked_lists:
+        for rank, ident in enumerate(lst):
+            scores[ident] = scores.get(ident, 0.0) + 1.0 / (k_rrf + rank)
+            if ident not in first_seen:
+                first_seen[ident] = seq; seq += 1
+    return sorted(scores, key=lambda i: (-scores[i], first_seen[i]))
+
+
+def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str) -> list:
+    """Fuse BM25 (authority order) with dense section NN via RRF; best-per-page, ≤k."""
+    lexical = search_index.search_fts(
+        query, scope=scope, domain=domain, limit=k * 2,
+        order="authority", include_drafts=True,
+    )
+    lex_ids = [f"{h.rel_path}#{h.heading}" for h in lexical]
+    dense = dense_section_hits(query, k=k * 2)  # (rel, heading, dist)
+    dense_ids = [f"{rel}#{heading}" for rel, heading, _d in dense]
+    dense_meta = search_index.hits_for_sections([(r, h) for r, h, _ in dense])
+
+    by_id = {f"{h.rel_path}#{h.heading}": h for h in lexical}
+    for (rel, heading), hit in dense_meta.items():
+        by_id.setdefault(f"{rel}#{heading}", hit)
+
+    fused_ids = _rrf_fuse([lex_ids, dense_ids])
+    out, seen_pages = [], set()
+    for ident in fused_ids:
+        hit = by_id.get(ident)
+        if hit is None or hit.rel_path in seen_pages:   # best-section-per-page
+            continue
+        seen_pages.add(hit.rel_path)
+        out.append(hit)
+        if len(out) >= k:
+            break
+    return out
+
+
 def retrieve(
     query: str,
     *,
@@ -189,6 +233,7 @@ def retrieve(
     max_section_chars: int = _DEFAULT_MAX_SECTION_CHARS,
     scope: str = "wiki",
     include_drafts: bool = True,
+    hybrid: bool = False,
 ) -> tuple[str, list[RetrievedSection]]:
     """Assemble a bounded context block for `query`. Returns (block, sections).
 
@@ -216,14 +261,17 @@ def retrieve(
         )
     else:
         single = multi[0] if multi else domain
-        hits = search_index.search_fts(
-            query.strip(),
-            scope=scope,
-            domain=single,
-            limit=k,
-            order="authority",  # WS5: lift canonical pages over mere mentions
-            include_drafts=include_drafts,
-        )
+        if hybrid:
+            hits = _hybrid_hits(query.strip(), domain=single, k=k, scope=scope)
+        else:
+            hits = search_index.search_fts(
+                query.strip(),
+                scope=scope,
+                domain=single,
+                limit=k,
+                order="authority",  # WS5: lift canonical pages over mere mentions
+                include_drafts=include_drafts,
+            )
 
     sections: list[RetrievedSection] = []
     blocks: list[str] = []
