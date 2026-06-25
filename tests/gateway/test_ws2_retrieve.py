@@ -299,6 +299,25 @@ def test_rrf_fuse_single_list_preserves_order():
     assert _rrf_fuse([["x", "y", "z"]]) == ["x", "y", "z"]
 
 
+def test_rrf_fuse_dense_weight_biases_ranking():
+    # Two disjoint lists; equal weight interleaves by rank, a heavy 2nd-list weight
+    # lifts the dense list's items above the lexical list's. (The 4B calibration:
+    # dense top-10 is stronger than BM25 on paraphrase, so it earns a higher weight.)
+    lex = ["L0", "L1"]
+    dense = ["D0", "D1"]
+    assert _rrf_fuse([lex, dense], weights=[1.0, 1.0])[0] == "L0"   # tie → first-seen (lexical)
+    assert _rrf_fuse([lex, dense], weights=[1.0, 5.0])[0] == "D0"   # dense weight wins
+    assert _rrf_fuse([lex, dense], weights=[1.0, 0.0]) [:2] == ["L0", "L1"]  # dense muted → lexical only
+
+
+def test_dense_rrf_weight_reads_env_at_call_time(monkeypatch):
+    from gateway.ops.retrieve import _dense_rrf_weight, _DENSE_RRF_WEIGHT
+    monkeypatch.delenv("WIKI_RRF_DENSE_WEIGHT", raising=False)
+    assert _dense_rrf_weight() == _DENSE_RRF_WEIGHT          # module default when unset
+    monkeypatch.setenv("WIKI_RRF_DENSE_WEIGHT", "3.5")
+    assert _dense_rrf_weight() == 3.5                         # sweep override honored
+
+
 # ---------------------------------------------------------------------------
 # B3: hybrid BM25+dense path
 # ---------------------------------------------------------------------------

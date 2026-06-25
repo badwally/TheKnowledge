@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -180,23 +181,39 @@ def _merge_domains(
     return merged[:k]
 
 
-def _rrf_fuse(ranked_lists: list[list[str]], k_rrf: int = 60) -> list[str]:
-    """Reciprocal Rank Fusion. score(id) = Σ 1/(k_rrf + rank) over each list the id
-    appears in (rank is 0-based). Returns ids by descending fused score; ties broken
-    by first-seen order for determinism."""
+# Dense-weighted RRF. The dense bi-encoder's top-10 is far stronger than BM25 on
+# paraphrase queries (4B bake-off: dense-only R@10 0.905 vs equal-weight hybrid 0.667),
+# so the dense list earns a higher fusion weight; BM25 stays at 1.0 to keep
+# lexically-exact queries reachable. Tunable via WIKI_RRF_DENSE_WEIGHT for the sweep;
+# the chosen value is the module default below.
+_DENSE_RRF_WEIGHT = 1.0
+
+
+def _dense_rrf_weight() -> float:
+    """Read at call time so the bake-off sweep can vary it within one process."""
+    return float(os.environ.get("WIKI_RRF_DENSE_WEIGHT", _DENSE_RRF_WEIGHT))
+
+
+def _rrf_fuse(ranked_lists: list[list[str]], k_rrf: int = 60,
+              weights: list[float] | None = None) -> list[str]:
+    """Weighted Reciprocal Rank Fusion. score(id) = Σ wₗ/(k_rrf + rank) over each list
+    l the id appears in (rank is 0-based; wₗ defaults to 1.0). Returns ids by descending
+    fused score; ties broken by first-seen order for determinism."""
+    weights = weights if weights is not None else [1.0] * len(ranked_lists)
     scores: dict[str, float] = {}
     first_seen: dict[str, int] = {}
     seq = 0
-    for lst in ranked_lists:
+    for w, lst in zip(weights, ranked_lists):
         for rank, ident in enumerate(lst):
-            scores[ident] = scores.get(ident, 0.0) + 1.0 / (k_rrf + rank)
+            scores[ident] = scores.get(ident, 0.0) + w / (k_rrf + rank)
             if ident not in first_seen:
                 first_seen[ident] = seq; seq += 1
     return sorted(scores, key=lambda i: (-scores[i], first_seen[i]))
 
 
 def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str) -> list:
-    """Fuse BM25 (authority order) with dense section NN via RRF; best-per-page, ≤k."""
+    """Fuse BM25 (authority order) with dense section NN via dense-weighted RRF;
+    best-per-page, ≤k."""
     lexical = search_index.search_fts(
         query, scope=scope, domain=domain, limit=k * 2,
         order="authority", include_drafts=True,
@@ -210,7 +227,7 @@ def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str) -> list:
     for (rel, heading), hit in dense_meta.items():
         by_id.setdefault(f"{rel}#{heading}", hit)
 
-    fused_ids = _rrf_fuse([lex_ids, dense_ids])
+    fused_ids = _rrf_fuse([lex_ids, dense_ids], weights=[1.0, _dense_rrf_weight()])
     out, seen_pages = [], set()
     for ident in fused_ids:
         hit = by_id.get(ident)
