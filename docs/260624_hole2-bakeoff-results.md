@@ -1,5 +1,21 @@
 # Hole 2 bake-off — results & locked decision (2026-06-24)
 
+> **Update 2026-06-25 — the "locked decision" below is being PROPERLY completed.**
+> The 0.6B-only run never tested the 4B (the obvious middle model in the matrix) or the
+> 8B, so the model choice was not actually settled — it is being finished now (4B-4bit-DWQ
+> and 8B-4bit-DWQ through the same instruction+cache+memo pipeline; frontier table → user pick).
+>
+> **bf16 bug found + fixed (commit `68d3af8a`).** The encoder was validated ONLY on
+> 0.6B-8bit, which emits float32. The quantized 4B/8B `*-DWQ` builds emit **bfloat16**,
+> whose PEP-3118 buffer numpy cannot read directly (`Item size 2 ... format B item size 1`)
+> — the encoder crashed on first embed for both bigger models. Fix: route non-ndarray mlx
+> output through `.tolist()` before `np.asarray` (float32 fast-path preserved, no `mlx.core`
+> import so the stub/fake test path stays CI-safe). Verified on the real 4B (2560-dim,
+> L2-normalized). Without this fix the 4B/8B half of the bake-off could not run at all — so
+> the prior "8B not needed" conclusion was reached on a pipeline that could not have measured
+> the 8B. Productionization unit tests (encoder/cache/instruction/memo) also landed in `68d3af8a`.
+
+
 Calibration of the hybrid-retrieval config (C3 of `docs/plans/2026-06-24-hole2-hybrid-retrieval-build-plan.md`), run on the **real corpus** (5,866 pages / 28,435 sections / 4,034 canonical pages → 19,317 section vectors) against the `semantic_mismatch` probe (21 paraphrase queries). Local MLX on the M3 Max via `mlx-embeddings`.
 
 ## Results (0.6B-8bit bi-encoder)
