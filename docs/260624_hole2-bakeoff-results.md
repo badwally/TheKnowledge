@@ -18,6 +18,21 @@
 
 Calibration of the hybrid-retrieval config (C3 of `docs/plans/2026-06-24-hole2-hybrid-retrieval-build-plan.md`), run on the **real corpus** (5,866 pages / 28,435 sections / 4,034 canonical pages → 19,317 section vectors) against the `semantic_mismatch` probe (21 paraphrase queries). Local MLX on the M3 Max via `mlx-embeddings`.
 
+## Frontier so far (0.6B vs 4B — same instruction+cache+memo pipeline, real corpus, semantic_mismatch probe)
+
+| Model | hybrid R@10 | hybrid R@20 | hybrid R@50 | **dense-only R@10** | latency p50 | rebuild |
+|---|---|---|---|---|---|---|
+| Qwen3-Embedding-0.6B-8bit (1024d) | 0.619 | 0.810 | 0.857 | 0.667 | 219ms | 65 min |
+| **Qwen3-Embedding-4B-4bit-DWQ (2560d)** | 0.667 | 0.857 | **0.905** | **0.905** | 279ms (p90 328) | 159 min |
+
+8B-4bit-DWQ (4096d) pending — paused at user request to assess 4B first.
+
+**Two findings overturn the prior "0.6B is sufficient" lock:**
+1. **The 4B's dense ceiling is far higher: dense-only R@10 = 0.905 vs the 0.6B's 0.667 (+0.24).** And it is FLAT across @10/@20/@50 (0.905 everywhere) — the 4B puts the right page in the *top-10* for 19/21 queries; the 2 it misses it never retrieves even at @50. The prior verdict ("the gap is ranking, not retrieval power; 0.6B is enough") was wrong: the retrieval ceiling was the MODEL, not the corpus. recall@50 also rose 0.857→0.905 (1 more previously-unretrievable query brought into reach).
+2. **The RRF fusion is now the bottleneck, not the model.** hybrid R@10 = 0.667 is far BELOW dense-only R@10 = 0.905 — equal-weight RRF with BM25 demotes ~5 correct top-10 dense answers to rank 11–50 (hybrid only recovers to 0.905 by @50). The path to the ~0.85 @10 target is **dense-weighted RRF** (already on the post-pick TODO), not a bigger model. This quantifies prior finding #4 (BM25 hurts paraphrase) at full magnitude.
+
+Caveat on the dense-only column: it ignores the domain filter (pure "can the model retrieve it at all" signal); the hybrid column is the real production retrieve path (domain-filtered, RRF-fused).
+
 ## Results (0.6B-8bit bi-encoder)
 
 | Config | recall@10 | recall@20 | recall@50 | query latency p50 |
