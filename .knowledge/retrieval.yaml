@@ -1,0 +1,14 @@
+# Dense retrieval encoder for the Hole-2 hybrid path.
+#
+# Read by gateway.retrieval_encoder._resolve_encoder_spec(). Precedence:
+#   WIKI_RETRIEVAL_ENCODER env var  >  this file (`encoder:`)  >  'stub'.
+# The env wins, so CI/tests force the deterministic stub; this checked-in value
+# is the durable production default so the 4B encoder activates without a
+# per-shell export.
+#
+# INVARIANT: the dense index (.index/retrieval.db) must be built under this same
+# spec — its vector dim must match. After changing `encoder`, rebuild via
+# retrieval_index().rebuild_from_canonical(). A dim mismatch is caught and
+# degraded to lexical-only (gateway.retrieval_index.dense_section_hits), not
+# crashed — but the dense leg is then inert until the index is rebuilt.
+encoder: mlx:mlx-community/Qwen3-Embedding-4B-4bit-DWQ:2560

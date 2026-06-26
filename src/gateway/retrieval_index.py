@@ -6,9 +6,14 @@ entity/question/section namespaces it serves for dedup/demand/lint — is untouc
 """
 from __future__ import annotations
 
+import logging
+
 from gateway import paths
 from gateway.embedding_index import EmbeddingIndex
 from gateway.retrieval_encoder import retrieval_encoder
+
+log = logging.getLogger(__name__)
+_DENSE_WARNED: set = set()  # warn-once keys for degraded dense retrieval
 
 
 def retrieval_index() -> EmbeddingIndex:
@@ -59,7 +64,26 @@ def dense_section_hits(query: str, k: int) -> list[tuple[str, str, float]]:
         return []
     enc = idx._encoder
     embed_q = getattr(enc, "embed_query", enc.embed)   # stub has no embed_query
-    qv = np.asarray(embed_q([query])[0], dtype=np.float32)
+    try:
+        qv = np.asarray(embed_q([query])[0], dtype=np.float32)
+    except Exception as e:  # model load / inference failure (e.g. mlx absent)
+        wkey = ("embed", type(e).__name__)
+        if wkey not in _DENSE_WARNED:
+            _DENSE_WARNED.add(wkey)
+            log.warning("dense retrieval disabled — encoder embed failed (%s: %s); "
+                        "serving lexical-only", type(e).__name__, e)
+        return []
+    if qv.shape[0] != mat.shape[1]:
+        # Index built under a different encoder than the one now active (dim
+        # mismatch). Degrade to lexical-only rather than crash the matmul; the
+        # fix is to rebuild the index or align WIKI_RETRIEVAL_ENCODER / config.
+        wkey = ("dim", qv.shape[0], mat.shape[1])
+        if wkey not in _DENSE_WARNED:
+            _DENSE_WARNED.add(wkey)
+            log.warning("dense retrieval disabled — query dim %d != index dim %d "
+                        "(rebuild the dense index or align the retrieval encoder); "
+                        "serving lexical-only", qv.shape[0], mat.shape[1])
+        return []
     dists = 1.0 - (mat @ qv)
     order = np.argsort(dists)[:k]
     out: list[tuple[str, str, float]] = []

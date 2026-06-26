@@ -143,3 +143,42 @@ def test_stub_has_no_embed_query_so_dense_path_falls_back():
     # dense_section_hits selects getattr(enc, "embed_query", enc.embed); the stub
     # must NOT expose embed_query so the lexical stub stays symmetric.
     assert not hasattr(StubRetrievalEncoder(), "embed_query")
+
+
+def _write_retrieval_config(tmp_path, spec):
+    (tmp_path / ".knowledge").mkdir(parents=True, exist_ok=True)
+    (tmp_path / ".knowledge" / "retrieval.yaml").write_text(f"encoder: {spec}\n")
+
+
+def test_resolve_encoder_spec_env_overrides_config(monkeypatch, tmp_path):
+    # Env var beats the checked-in config so CI/tests (and ad-hoc overrides) stay
+    # on the stub even when a production retrieval.yaml is present.
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    _write_retrieval_config(tmp_path, "mlx:org/model-4B:2560")
+    monkeypatch.setenv("WIKI_RETRIEVAL_ENCODER", "stub")
+    assert re._resolve_encoder_spec() == "stub"
+
+
+def test_resolve_encoder_spec_reads_config_when_env_unset(monkeypatch, tmp_path):
+    # The durable production default: env unset → the config file's encoder is used,
+    # so the neural encoder activates without a per-shell export.
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    _write_retrieval_config(tmp_path, "mlx:org/model-4B:2560")
+    monkeypatch.delenv("WIKI_RETRIEVAL_ENCODER", raising=False)   # undo the autouse stub
+    assert re._resolve_encoder_spec() == "mlx:org/model-4B:2560"
+
+
+def test_resolve_encoder_spec_falls_back_to_stub_without_config(monkeypatch, tmp_path):
+    # Neither env nor config → stub (fresh clone / CI with no .knowledge/retrieval.yaml).
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    monkeypatch.delenv("WIKI_RETRIEVAL_ENCODER", raising=False)
+    assert re._resolve_encoder_spec() == "stub"
+
+
+def test_resolve_encoder_spec_tolerates_malformed_config(monkeypatch, tmp_path):
+    # A malformed config must never break retrieval — fall through to stub.
+    monkeypatch.setenv("KNOWLEDGE_ROOT", str(tmp_path))
+    (tmp_path / ".knowledge").mkdir(parents=True, exist_ok=True)
+    (tmp_path / ".knowledge" / "retrieval.yaml").write_text("encoder: [unclosed\n")
+    monkeypatch.delenv("WIKI_RETRIEVAL_ENCODER", raising=False)
+    assert re._resolve_encoder_spec() == "stub"

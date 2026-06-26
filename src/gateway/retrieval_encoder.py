@@ -80,11 +80,38 @@ def _build_encoder(spec: str):
     raise ValueError(f"unknown WIKI_RETRIEVAL_ENCODER: {spec!r}")
 
 
+def _resolve_encoder_spec() -> str:
+    """Encoder spec precedence: WIKI_RETRIEVAL_ENCODER env > the checked-in
+    `.knowledge/retrieval.yaml` (`encoder:` key) > 'stub'.
+
+    The env var wins so CI/tests (and ad-hoc overrides) force the stub; the
+    config file is the durable production default, so the neural encoder
+    activates without a per-shell export. Absent/unparseable config → 'stub'.
+    The dense index MUST be built under the resolved spec — a dim mismatch is
+    caught and degraded to lexical-only in `dense_section_hits`.
+    """
+    env = os.environ.get("WIKI_RETRIEVAL_ENCODER")
+    if env:
+        return env
+    from gateway import paths
+    cfg = paths.knowledge_internal() / "retrieval.yaml"
+    if cfg.exists():
+        try:
+            import yaml
+            data = yaml.safe_load(cfg.read_text()) or {}
+            spec = data.get("encoder")
+            if spec:
+                return str(spec)
+        except Exception:
+            pass  # malformed config never breaks retrieval — fall through to stub
+    return "stub"
+
+
 def retrieval_encoder():
-    """Factory: env WIKI_RETRIEVAL_ENCODER selects the encoder.
-    'stub' (default) | 'mlx:<model_id>:<dim>'. Memoized per spec so the neural
-    model is loaded once per process, not rebuilt (and reloaded) every query."""
-    spec = os.environ.get("WIKI_RETRIEVAL_ENCODER", "stub")
+    """Factory: `_resolve_encoder_spec()` selects the encoder.
+    'stub' | 'mlx:<model_id>:<dim>'. Memoized per spec so the neural model is
+    loaded once per process, not rebuilt (and reloaded) every query."""
+    spec = _resolve_encoder_spec()
     enc = _ENCODER_CACHE.get(spec)
     if enc is None:
         enc = _ENCODER_CACHE[spec] = _build_encoder(spec)

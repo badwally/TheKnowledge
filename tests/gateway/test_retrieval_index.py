@@ -73,6 +73,52 @@ def test_dense_hits_use_embed_query_when_encoder_is_asymmetric(kb_root: Path, mo
     assert hits                                       # still returns neighbors
 
 
+def test_dense_section_hits_degrades_on_dim_mismatch(kb_root: Path, monkeypatch):
+    """An index built under one encoder, queried under another of a different dim
+    (e.g. 2560-dim 4B index vs 256-dim stub query) must NOT crash the matmul — it
+    degrades to lexical-only (returns []), so the hybrid path still serves BM25."""
+    _page("vagal", "## Mechanism\n\nThe drug slows gastric emptying via the vagus nerve.\n")
+    ri._VEC_CACHE.clear()
+    ri._DENSE_WARNED.clear()
+    real = retrieval_index()
+    real.rebuild_from_canonical()                    # db populated at the stub dim
+    wrong_dim = real._encoder.dim + 7                 # deliberately mismatched
+
+    class _WrongDim:
+        def embed(self, texts):                           # real encoders expose both
+            return [np.ones(wrong_dim, dtype=np.float32).tolist() for _ in texts]
+
+        def embed_query(self, texts):
+            return [np.ones(wrong_dim, dtype=np.float32).tolist() for _ in texts]
+
+    fake_idx = SimpleNamespace(_db_path=real._db_path, _encoder=_WrongDim())
+    monkeypatch.setattr(ri, "retrieval_index", lambda: fake_idx)
+    hits = dense_section_hits("delays gastric emptying", k=3)   # must not raise
+    assert hits == []
+
+
+def test_dense_section_hits_degrades_on_embed_failure(kb_root: Path, monkeypatch):
+    """A neural encoder that fails to load/infer (e.g. mlx absent on a fresh clone)
+    must degrade to lexical-only, never propagate the exception into retrieve()."""
+    _page("vagal", "## Mechanism\n\nThe drug slows gastric emptying via the vagus nerve.\n")
+    ri._VEC_CACHE.clear()
+    ri._DENSE_WARNED.clear()
+    real = retrieval_index()
+    real.rebuild_from_canonical()
+
+    class _Broken:
+        def embed(self, texts):                           # real encoders expose both
+            raise RuntimeError("model weights not found")
+
+        def embed_query(self, texts):
+            raise RuntimeError("model weights not found")
+
+    fake_idx = SimpleNamespace(_db_path=real._db_path, _encoder=_Broken())
+    monkeypatch.setattr(ri, "retrieval_index", lambda: fake_idx)
+    hits = dense_section_hits("delays gastric emptying", k=3)   # must not raise
+    assert hits == []
+
+
 def test_section_vector_cache_keyed_on_db_mtime(kb_root: Path):
     """The in-memory vector cache (the 590ms latency fix) returns the SAME matrix
     object on an unchanged db, and re-reads only when the db mtime advances."""
