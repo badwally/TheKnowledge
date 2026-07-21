@@ -350,3 +350,35 @@ def test_hybrid_preserves_hole1_placeholder_gate(kb_root: Path):
     retrieval_index().rebuild_from_canonical()
     block, _ = retr.retrieve("needs population legacy import", domain="d", hybrid=True)
     assert "needs population from legacy import" not in block
+
+
+def test_hybrid_dense_leg_honors_include_drafts_false(kb_root: Path):
+    # A DRAFT page with a SUBSTANTIVE (non-placeholder) section, reachable only via
+    # the dense paraphrase leg — BM25 misses the lay query, and with
+    # include_drafts=False the lexical leg excludes drafts anyway. The dense leg must
+    # ALSO honor the gate, else the draft leaks back in (the carry-forward half-fix:
+    # _hybrid_hits threaded include_drafts into search_fts but not the dense leg).
+    _page("draftreward", "Reward deficit (draft)",
+          "## Body\n\nAnhedonia: blunted reward sensitivity and lost motivation.\n", draft=True)
+    _page("filler", "Filler page", "## Body\n\ngastric emptying vagal tax filing widget unrelated.\n")
+    search_index.refresh(rebuild=True)
+    from gateway.retrieval_index import retrieval_index
+    retrieval_index().rebuild_from_canonical()
+    _block, sections = retr.retrieve("losing pleasure and drive", domain="d",
+                                     hybrid=True, include_drafts=False)
+    assert not any(s.slug == "draftreward" for s in sections)
+
+
+def test_hybrid_dense_leg_admits_draft_when_include_drafts_true(kb_root: Path):
+    # Complement / negative control: the SAME draft is admitted under the default
+    # include_drafts=True, proving the gate above is conditional — not a blanket
+    # dense-leg exclusion that would re-hide the ~1,100 legacy drafts (Hole 1).
+    _page("draftreward", "Reward deficit (draft)",
+          "## Body\n\nAnhedonia: blunted reward sensitivity and lost motivation.\n", draft=True)
+    _page("filler", "Filler page", "## Body\n\ngastric emptying vagal tax filing widget unrelated.\n")
+    search_index.refresh(rebuild=True)
+    from gateway.retrieval_index import retrieval_index
+    retrieval_index().rebuild_from_canonical()
+    _block, sections = retr.retrieve("losing pleasure and drive", domain="d",
+                                     hybrid=True, include_drafts=True)
+    assert any(s.slug == "draftreward" for s in sections)

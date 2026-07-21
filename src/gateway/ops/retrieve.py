@@ -215,9 +215,11 @@ def _rrf_fuse(ranked_lists: list[list[str]], k_rrf: int = 60,
 def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str,
                  include_drafts: bool) -> list:
     """Fuse BM25 (authority order) with dense section NN via dense-weighted RRF;
-    best-per-page, ≤k. `include_drafts` is honored on the lexical leg (carried from
-    the caller, not hard-coded) so the hybrid path obeys the same draft gate as the
-    FTS-only path; dense hits are content-gated downstream in `retrieve`."""
+    best-per-page, ≤k. `include_drafts` is honored on BOTH legs: the lexical leg
+    filters at the SQL level (`search_fts`), and — because the dense NN leg has no
+    draft filter of its own — draft-page hits it contributes are dropped below when
+    `include_drafts` is False. Placeholder-stub sections are separately content-gated
+    downstream in `retrieve` regardless of draft status."""
     lexical = search_index.search_fts(
         query, scope=scope, domain=domain, limit=k * 2,
         order="authority", include_drafts=include_drafts,
@@ -236,6 +238,8 @@ def _hybrid_hits(query: str, *, domain: str | None, k: int, scope: str,
     for ident in fused_ids:
         hit = by_id.get(ident)
         if hit is None or hit.rel_path in seen_pages:   # best-section-per-page
+            continue
+        if not include_drafts and hit.draft:            # dense leg has no SQL draft filter
             continue
         seen_pages.add(hit.rel_path)
         out.append(hit)
