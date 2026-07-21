@@ -2,7 +2,28 @@
 
 Last updated: 2026-06-23 (SESSION-REVIEW written → `docs/260623_session-review.md`. Authorship-loop chain MERGED to main `5a09f341`: #52 de-flake, #53 arxiv-sort-out, #54 gate-orphans-advisory, #55 authorship-loop comprehensive fix, #56 real production ingest of the RLM paper (loop verified end-to-end on a real PDF). #50/#51 merged 2026-06-21. #34 youtube-filter worktree separate, untouched.
 AUTHORSHIP OPEN FOLLOW-UPS (trigger-gated, none active): (a) body-shrink tripwire shipped UNTESTED + `0.5` magic number → add test + extract `_BODY_SHRINK_FLOOR` (apply_plan.py:256-267); (b) no-loss/shrink guards lack a retraction override (functional hole); (c) contradiction-quarantine fast-follow (noted in #55); (d) PRUNE this session-state.md — ~45k tokens, truncates on read (review §3).
-NOTE: the RAG draft-visibility work is now DONE + MERGED (PR #57 fix, #59 numpy-dep) — see the top section.)
+NOTE: the RAG draft-visibility work is now DONE + MERGED (PR #57 fix, #59 numpy-dep) — see the Hole-1 section below.
+NOTE (2026-07-21): RAG Hole-2 hybrid retrieval DONE + MERGED + ACTIVATED — see the top section. Worktree removed, feature branch deleted, artifacts transplanted here. Session-review brief: `docs/260625_session-review.md`.
+
+## ✅ RAG HOLE 2 — HYBRID RETRIEVAL (DONE + MERGED + ACTIVATED, PR #61 → main `df271bd7`)
+
+**Merged** 2026-06-26 (PR #61 `feat(rag): activate Hole-2 hybrid retrieval — 4B encoder + dense-weighted RRF (w=2)`). **Activated in production** (main checkout has `.knowledge/retrieval.yaml`, so `wiki retrieve` resolves the 4B encoder against the 2560-dim `.index/retrieval.db`). Spec: `docs/260624_hole2-hybrid-retrieval-design.md`; results: `docs/260624_hole2-bakeoff-results.md`; review: `docs/260625_session-review.md`.
+
+### What shipped (2 commits: `f206543c`, `f383ea95`)
+- **Model LOCKED: Qwen3-Embedding-4B-4bit-DWQ (2560-dim).** 8B rejected on three converging lines (MTEB 4B→8B +0.98pts within quant noise; the 2 residual misses are hard lay-vs-clinical paraphrases BM25 misses too; 8B subset-rerank leaves recall@10 unmoved for a 2-4× ingest tax + 1.6× memory). 8B weights stay on disk; revisit only for multilingual / far-out-of-distribution growth.
+- **`_DENSE_RRF_WEIGHT = 2.0`** (robust knee of the 4B sweep; easy goldens un-regressed; pinned in test). Re-sweepable via `WIKI_RRF_DENSE_WEIGHT`.
+- **Hybrid is the default single-domain retrieve path** (`hybrid=False→True`); degrades to lexical-only when no dense index is loaded.
+- **Encoder activation = guard + config-file default.** `_resolve_encoder_spec()` precedence: `WIKI_RETRIEVAL_ENCODER` env > `.knowledge/retrieval.yaml` > `stub`. Env wins so CI/tests force stub; the checked-in config is the durable prod default (no per-shell export). `dense_section_hits` dim-mismatch + embed-failure guard degrades to lexical-only (warn-once), never crashes retrieve. Autouse conftest fixture forces stub across the suite.
+- **Validation:** prod 4B rebuild 4034 pages / 19,317 vectors / 166 min; probe hybrid@10 0.857, @20 0.905, 0 leaks; gate PASSED twice (suite 2643, FTS recall@10 0.926).
+
+### Open follow-ups (trigger-gated, NOT active)
+- **[HIGH, latent] Hybrid dense leg ignores `include_drafts`** (`ops/retrieve.py` + `retrieval_index.dense_section_hits`) — draft gate is half-applied; dormant only because the default is `include_drafts=True`. Fast-follow on the next retrieve.py touch: draft-gate dense hits when excluded + add the `hybrid=True, include_drafts=False` exclusion test. (Review §1 finding #1.)
+- **Hole-3 curation (separate session):** lay-vocab content-enrich the 2 short draft pages `reward-deficit-and-anhedonia` + `mesolimbic-dopamine-system-modulation` (real fix for the 2 residual flat-at-all-k probe misses); broader perma-draft finalize/cull.
+
+### Housekeeping (COMPLETE, 2026-07-21)
+Main synced past the divergent local `157524bc` (merged with `df271bd7`); worktree `knowledge-wt-rag-draft-visibility` removed; local branch `feat/hole2-0.6b-activation` deleted; review brief + this journal section transplanted from the worktree. Memory atoms added this arc: [[feedback_audit_prod_preconditions_at_default_flip]], [[feedback_no_nohup_for_tracked_background_jobs]].
+
+---
 
 ## ✅ RAG DRAFT-VISIBILITY FIX — HOLE 1 (2026-06-23) — DONE + MERGED (PR #57; numpy-dep PR #59)
 
