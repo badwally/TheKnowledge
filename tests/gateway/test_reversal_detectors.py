@@ -10,6 +10,7 @@ Mirrors the provenance.alarms() pattern (Phase-4 A7):
 from __future__ import annotations
 
 import json
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
@@ -67,15 +68,31 @@ def _raw_source(
     (raw_dir / f"{source_id}.md").write_text(fm.serialize(front, body))
 
 
+def _recent_iso(days_ago: int = 1) -> str:
+    """A resolution timestamp inside build_snapshot's 30-day window, relative to now.
+
+    build_snapshot() only counts acts with resolved_at >= now - window_days (30).
+    A FIXED fixture date silently ages out once wall-clock passes it — the acts then
+    read as zero and every count-based assertion fails on a date that has nothing to
+    do with the behavior under test. Anchoring the fixture to `now` matches the
+    wall-clock-relative production window, so the tests stay valid regardless of when
+    the suite runs.
+    """
+    return (datetime.now(timezone.utc) - timedelta(days=days_ago)).strftime(
+        "%Y-%m-%dT%H:%M:%SZ"
+    )
+
+
 def _write_act(
     *,
     act_id: str,
     winner_source: str,
     loser_source: str,
     reverted: bool = False,
-    resolved_at: str = "2026-06-19T10:00:00Z",
+    resolved_at: str | None = None,
 ) -> None:
     """Append a realistic resolution act to the temp-root act log."""
+    resolved_at = resolved_at or _recent_iso()
     acts_path = contradictions_log.resolution_acts_path()
     acts_path.parent.mkdir(parents=True, exist_ok=True)
     act = {
@@ -311,7 +328,7 @@ def test_lint_reversal_anomalies_emits_finding_when_reversal_rate_tripped(kb_roo
                        "b": {"source": f"arxiv-{i}", "claim": "y"}},
             "winner": {"source": f"pubmed-{i}", "claim": "x", "trust": 0.9},
             "loser": {"source": f"arxiv-{i}", "claim": "y", "trust": 0.5},
-            "resolved_at": "2026-06-19T10:00:00Z",
+            "resolved_at": _recent_iso(),
         }
         # Mark 2 of the acts as reverted (20% reversal rate)
         if i < 2:
@@ -441,7 +458,7 @@ def test_reversal_counted_only_via_reverts_act(kb_root):
                    "b": {"source": "pubmed-r0", "claim": "y"}},
         "winner": {"source": "pubmed-r0", "claim": "x", "trust": 0.9},
         "loser": {"source": "pubmed-r0", "claim": "y", "trust": 0.5},
-        "resolved_at": "2026-06-19T10:00:00Z",
+        "resolved_at": _recent_iso(),
         "reversal_type": "contradiction-resolution",  # NOT a real act field
     }
     with acts_path.open("a") as f:
