@@ -1,3 +1,5 @@
+
+
 # ~/code/knowledge/
 
 A personal knowledge base. Sources land as markdown + YAML on the local filesystem. Ranked retrieval (`wiki retrieve`) returns bounded, cited context blocks; queries return cited synthesis pages. NotebookLM artifacts file back to the same vault. Obsidian renders the citation graph.
@@ -80,7 +82,7 @@ Markdown converters dispatch on filename / URL pattern. Each lives at `src/gatew
 |---|---|---|
 | `web` | Any URL | Firecrawl + boilerplate strip |
 | `youtube`, `arxiv`, `pubmed` | Domain-matched URLs | Per-source API + transcript / abstract |
-| `pdf` | Local file | `pdfminer.six` |
+| `pdf` | Local file | `pdfplumber` |
 | `voice` | `.m4a` / `.mp3` / `.wav` | `mlx-whisper` + pyannote diarization (Apple Silicon) |
 | `audiobook` | `.m4b` | Same as voice with chapter-aware segmentation |
 | `note` | Apple Notes (poller) | JXA bridge → markdown |
